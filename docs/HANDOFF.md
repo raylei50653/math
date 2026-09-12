@@ -2,6 +2,20 @@
 
 更新：2026-09-12。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
+## 2026-09-12 Lean 補件：strip 圖語義與 residual 類數下界
+
+新增 `Math/StripGraph.lean`（strip 圖、`Extendable`、附 `search_iff`／`verdict_iff` 正確性證明的回溯著色檢查器、
+`residual_injective`）、`scripts/export_stepwise.py` → `Math/StepwiseGenerated.lean`（fan 4／5 代表字、
+separator、轉移表；純資料、記錄 JSON SHA-256）、`Math/StepwiseReplay.lean`、`Math/StripGraphAudit.lean`。
+**proved in Lean**：`fan4_nerode_lower_bound`／`fan5_nerode_lower_bound`——單列 fan 4／5 的真實可延伸語言
+至少有 55／97 個右殘餘；全部 1485／4656 組 separator 由已驗證的檢查器重判，不信任 Python DFA。
+`fan5_extendable_iff`：長度 $\le7$ 的全部 21,845 個字上，匯出表格的 live 等於 `Extendable`（有限一致性）。
+四個重放定理用 `native_decide`；其餘為普通證明。負控制（竄改 separator／live）會失敗。
+**沒有主張**：表格是殘餘自動機（上界）、signature 最小性、雙側 437 類、對齊循環證書的 Lean 實例化、
+disk embedding。細節與信任邊界見 [研究文件 §9i](stepwise_state_sufficiency.md#9i-leanstrip-圖語義已驗證的著色檢查器與-residual-類數下界)。
+重現：`python scripts/export_stepwise.py --check`、`lake build`、`lake env lean Math/StripGraphAudit.lean`
+（審計輸出 `artifacts/stepwise/lean-strip-audit.txt`）。
+
 ## 本輪 commit 的接手入口
 
 **目前主線：fan 5 的雙側接合，不要開始 fan 6。** 先讀本節及下方雙側摘要，
@@ -23,8 +37,8 @@
 **不可遺失的約定**：沿指定方向首次遇色依序命名 b,c,d；左右框架需保留共同顏色對應。
 437 是所有有限中央字（含空字）的固定色標分類；若只剩一洞，允許色集合只有 16 種。
 各自換色 orbit、固定 gap 長度的輸出、完整 residual，是不同等價關係。
-所有 strip 分類為 computationally observed；proved in Lean 的只有泛型定理，
-尚無生成 DFA／strip 圖語義的 Lean soundness，也沒有 disk embedding 結論。
+所有 strip 分類為 computationally observed；proved in Lean 的是泛型定理，加上（見上節）strip 圖語義
+與 fan 4／5 的 residual 類數下界 55／97。尚無生成 DFA 的 Lean soundness（上界），也沒有 disk embedding 結論。
 
 本輪可重現檢查（Python 只需標準庫；各 `--check` 重算並逐 byte 比對 artifact）：
 
@@ -34,8 +48,10 @@ python scripts/stepwise_fan4_quotient.py --check
 python scripts/stepwise_fan4_signatures.py --check
 python scripts/stepwise_fan5_signatures.py --check
 python scripts/stepwise_fan5_bilateral.py --check
+python scripts/export_stepwise.py --check
 lake build
 lake env lean Math/StepwiseStateAudit.lean
+lake env lean Math/StripGraphAudit.lean
 ```
 
 Lean 公理審計輸出保存於 `artifacts/stepwise/lean-state-audit.txt`。

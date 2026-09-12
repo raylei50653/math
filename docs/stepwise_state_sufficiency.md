@@ -526,7 +526,8 @@ Python 已逐項驗證此局部色域規則與完整殘餘自動機的全部穩�
   逐一驗證 action 與 transition 等變性。另用不依賴 frontier 建構器的整圖回溯，
   重驗所有長度 $\le6$ 的 canonical 字、全部新反例及循環重複 $k=0,1,2,5$。
 - 泛型 Lean 定理**尚未實例化到 Python 表格**，也未證 strip 圖到 DFA 的 soundness 或 disk embedding。
-  有限整圖 replay 不冒充這些一般證明。
+  有限整圖 replay 不冒充這些一般證明。§9i 之後：strip 圖語義與已驗證的著色檢查器已在 Lean 定義，
+  fan 4／5 的 separator 已在 Lean 重判（residual 類數下界 55／97）；六個對齊自動機的循環證書仍未實例化。
 
 ```bash
 python scripts/stepwise_aligned_reference.py          # 重建試跑七，約半分鐘
@@ -973,11 +974,67 @@ python scripts/stepwise_fan5_bilateral.py --check
 **尚未替全部 425 種無限語言逐一整理成可讀結構族**。
 以上沒有新增 Lean 的 strip 圖語義證明。
 
+## 9i. Lean：strip 圖語義、已驗證的著色檢查器與 residual 類數下界
+
+本節補上 §9d–9g 一直標記為「尚未接 Lean」的第一段橋接。範圍仍限單列 strip（fan 4、fan 5）；
+雙側 437 類（§9h）與六個對齊自動機的循環證書（§9d）尚未形式化。
+
+**strip 圖語義（`Math/StripGraph.lean`，普通證明，無 native）**
+
+- `stripEdges fans n`／`interiorVertices fans n`：以 fan 列表與邊界長度 $n$ 生成的有限 strip 圖，
+  與 `direct_colouring` 相同的頂點納入規則（只納入整個下方 fan 已出現的頂點；列長 $n, n+1-f_1, \dots$）。
+- `Extendable fans w`：存在 $f : \mathbb{N}\times\mathbb{N}\to \mathrm{Fin}\,4$，在第 0 列等於邊界字 $w$，
+  且在所有生成邊上兩端異色。`agrees_boundary_iff` 把邊界條件寫成 $\forall i<|w|,\ f(0,i)=w_i$。
+- `search`：沿頂點列表回溯、每步用 `consistent` 剪枝的著色搜尋。
+  `search_iff`：在「初始指派為函數」與「每條邊的端點已指派或在待訪列表」兩個前提下，
+  `search = true` **若且唯若**存在滿足規格的著色。兩個前提由 `funcCheck`／`coversCheck` 逐實例計算，
+  所以 `verdict fans w : Option Bool` 回傳 `some b` 時有 `verdict_iff : Extendable fans w ↔ b = true`
+  （`verdict_true`、`verdict_false`）。
+- `residual fans w := {s | Extendable fans (w ++ s)}`。`residual_ne_of_verdict`：同一後綴一收一拒則殘餘不同。
+  `separatesAll fans reps seps`：對代表列表每個 $q<r$ 找到一筆 $(q,r,s)$ 且兩端 verdict 相反。
+  `residual_injective`／`residual_range_ncard`：`separatesAll = true` 蘊涵代表的殘餘兩兩不同，
+  其像集基數恰為代表個數。
+
+**重放（`Math/StepwiseReplay.lean`，`native_decide`）**
+
+- `scripts/export_stepwise.py` 把 `fan4_signatures.json`／`fan5_signatures.json` 的代表字、separator 與
+  最小化轉移表匯出成 `Math/StepwiseGenerated.lean`（純資料，記錄來源 SHA-256；`--check` 逐 byte 比對）。
+  JSON 是不受信任的輸入：Lean 不使用 Python 的 cut-set DFA，只用 `verdict` 重判每個 separator 端點。
+- `fan4_separated`／`fan5_separated`：1485／4656 組 separator 全部由 `verdict` 判為一收一拒。
+- **`fan4_nerode_lower_bound : 55 ≤ (Set.range (residual [4])).encard`**、
+  **`fan5_nerode_lower_bound : 97 ≤ (Set.range (residual [5])).encard`**：
+  單列 fan 4／fan 5 的真實可延伸語言至少有 55／97 個不同的右殘餘（Nerode 類）。
+  這是對 §9f–9g「最小化為 55／97 類」的 **Lean 下界**；上界（表格恰為殘餘自動機）沒有形式化。
+- `fan4_table_replay`／`fan5_table_replay` 與 `fan5_extendable_iff`：對全部 21,845 個長度 $\le7$ 的邊界字
+  （不做對稱過濾），匯出表格的 live 旗標等於 `Extendable`。這是表格的有限一致性檢查，
+  不是「表格是殘餘自動機」的證明。
+- 負控制（`example … = false`）：刪掉一筆 separator、把一筆換成不區分的字、或把 dead 類改成 live，
+  檢查都會失敗，確認檢查不是空洞的。
+
+**信任邊界**
+
+- 普通證明：`search_iff`、`verdict_iff`、`residual_injective`、`residual_range_ncard` 只依賴標準公理
+  （`propext`、`Classical.choice`、`Quot.sound`）。
+- `native_decide`：四個重放定理各引入一條 `_native` 公理；審計輸出在 `artifacts/stepwise/lean-strip-audit.txt`。
+- 沒有主張：表格轉移的 soundness／完備性、對齊 signature（8／11 種）的最小性、雙側 437 類、
+  任意深度 strip、disk embedding。`Extendable` 只是有限前綴 strip 的可著色性，不是未來任意後綴皆可完成。
+
+重現：
+
+```bash
+python scripts/export_stepwise.py --check
+lake build
+lake env lean Math/StripGraphAudit.lean
+```
+
 ## 10. 目前可以說的話（第七次修正後）
 
 1. **命名已固定**：指定方向首次遇到其他顏色的順序為 $b,c,d$。同一重命名必須同時作用於狀態與後綴。
 2. **proved in Lean**：泛型 DFA 的對齊換色、參照框架局部更新、共同循環保持可區分性的定理。
    這些是附有明確前提的普通證明，不包含 strip 圖到 DFA 的 soundness。
+   另有（§9i）strip 圖語義 `Extendable`、已驗證的著色檢查器 `verdict_iff`（普通證明），
+   以及以 `native_decide` 重判全部 separator 得到的
+   `fan4_nerode_lower_bound`（$\ge55$）與 `fan5_nerode_lower_bound`（$\ge97$）。
 3. **computationally observed（完整有限計算）**：六個 strip 有可局部更新的對齊殘餘自動機，
    穩態活狀態數為 3、4、12、13、28、41；各有排除任意固定 window 的共同循環證書（9d）。
    狀態數相對於保留整張顏色參照表的模型，不是一般深度的最優容量下界。
@@ -993,6 +1050,7 @@ python scripts/stepwise_fan5_bilateral.py --check
 7. **computationally observed（完整分類）**：fan 4／5 分別有 55／97 個固定色標 residual classes，
    配合顏色參照框架為 8／11 種 signature（含 dead）。增加的 42 個類全是左端暫態；
    成熟部分的三種 A 色域態與 T 具有相同轉移。結構抽取、全轉移與逐對最小性證書見 §9f–9g。
+   其中「至少 55／97 類」已是 Lean 定理（§9i）；「恰好」與 signature 最小性仍是 computationally observed。
 
 ## 11. 需要的資料與下一步
 
@@ -1008,6 +1066,8 @@ python scripts/stepwise_fan5_bilateral.py --check
 3. **外部也做成 strip**：兩個自動機的乘積，才有 6c 的固定／存在／全稱三種外部。
 4. **允許重染（Kempe）**：需要圖層級 Succ 與實際內部著色；「連通性」型關係只會在這裡出現。
 5. **Lean 化**：8.3–8.6 是有限枚舉，可用 `Math/BoundaryRelations.lean` 的 relation／meet 表述；strip 自動機（第 9、9b 節）可接 `Math/ColorDFA.lean` 的形式。
-   第七次已有 `Math/StepwiseState.lean` 的泛型 DFA 定理；strip 圖語義與生成表格仍未形式化。
+   第七次已有 `Math/StepwiseState.lean` 的泛型 DFA 定理；§9i 已形式化 strip 圖語義、驗證過的著色檢查器
+   與 fan 4／5 的 residual 下界。尚未做：六個對齊自動機的循環證書實例化 `pumped_distinction`、
+   雙側 437 類重放、表格轉移的 soundness（上界）。
 
 待釐清 1 已部分回答（8.2）；待釐清 2、3 未動。

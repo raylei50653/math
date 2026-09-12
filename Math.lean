@@ -25,3 +25,6 @@ import Math.FanPentagon
 import Math.C5PairForcing
 import Math.PPRelations
 import Math.StepwiseState
+import Math.StripGraph
+import Math.StepwiseGenerated
+import Math.StepwiseReplay
