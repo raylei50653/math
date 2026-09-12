@@ -2,6 +2,29 @@
 
 更新：2026-09-12。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
+## 2026-09-12 最新：逐步填色的資訊充分性（四次試跑已完成，未 commit）
+
+使用者提出的新研究問題與四次試跑結果都在 [stepwise_state_sufficiency.md](stepwise_state_sufficiency.md)：
+第一部分（第 0–6 節）是問題陳述——把逐步四色填色看成決策樹，問哪些資訊足以判定「存在仍可成功的後繼」（Q1）
+與「安全剪枝」（Q2），狀態表示 $S(H)$ 的充分性判準是「同狀態、可被 continuation 區分 ⇒ 不充分」；
+第二部分（第 7–11 節）是試跑結果與目前能說的話。
+
+| 試跑 | 檢驗場 | 主要結論 | 腳本 → `artifacts/stepwise/` |
+|---|---|---|---|
+| 一 | C5：87 個 fan-pentagon patch 為內部，同族 × 10 dihedral 對齊為外部，向前填 $b_0..b_4$ | 未填色歷史永遠可完成（4CT）⇒ 判準必須含已承諾顏色；Σ 的所有壓縮被反例否定；window 3 在深度 4 有 75% 接合圖不充分；$B_{in}\lor B_{out}$ 深度 3 抓不到任何死分支 | `stepwise_sufficiency.py` → `first_run.json` |
+| 二 | 同上 | 死分支的局部認證：尾端 ≤2 色 0%、尾端 3 色 12.8%、加色數 78%（多為退化）；只靠 $\Sigma_{in}$ 就死 41.8% | `stepwise_local_fail.py` → `local_fail.json` |
+| 三 | 同上，Nerode 不可區分 | window 外需 6／4／3 bits；pair 強迫狀態看不到色數；剩一點 5 個關係夠，剩兩點需完整條件投影關係 | `stepwise_window_state.py` → `window_state.json` |
+| 四 | 無限長邊界的一段：平移生成 strip（fan 2／3／4） | fan 2 狀態為空；fan 3／4 只需一個 ± bit「剛封閉 fan 的內部頂點是否被強迫」，window 不需要 | `stepwise_strip.py` → `strip.json` |
+
+`python scripts/check_stepwise.py`（約 15 秒，純 stdlib）重跑四個腳本並比對 21 個關鍵數字，目前全部一致。
+**全部 computationally observed，沒有 Lean 結果。**
+
+目前能說的話（文件第 10 節）：判準的 $H$ 必須含顏色；閉環是 C5 退化的原因，strip 上狀態是常數個 bit；
+$b^\pm$ 型變數實驗上是**內部頂點的強迫狀態**而非邊界 pair 關係；C5 上「必定 fail」多半是 meet 層級事實。
+下一步候選（第 11 節）：C6–C8 patch 庫、strip 內部 grammar 沿邊界變化、外部也做成 strip 取乘積、
+允許 Kempe 換色（需圖層級 Succ）、Lean 化（可接 `BoundaryRelations.lean`／`ColorDFA.lean`）。
+使用者尚未指定下一步；待釐清 2、3（是否允許換色、$S$ 是否判合法性）未動。
+
 ## 2026-09-12 最新：pp-expression 層
 
 使用者接續要求採用 CSP pp-definability 的下一步；已實作小型 JSON pp 公式，

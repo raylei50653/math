@@ -1,0 +1,608 @@
+{
+ "scope": {
+  "inside": "87 fan-pentagon disk patches, Sigma recomputed from edges",
+  "continuation": "same 87 patches glued from outside, 10 dihedral alignments",
+  "history": "inside patch plus colours committed to b0..b_{n-1}, forward only",
+  "completable": "some completion of the prefix lies in Sigma_in meet aligned Sigma_out"
+ },
+ "part_a_uncoloured": {
+  "pairs": 75690,
+  "completable": 75690,
+  "note": "an uncoloured inside patch can never be distinguished from another by a planar outside patch: every glued graph is planar, hence 4-colourable"
+ },
+ "part_b_compressed_inside_state": {
+  "sigma": {
+   "classes": 87,
+   "pairs_same_state_different_sigma": 0,
+   "distinguished": 0,
+   "not_distinguished": 0,
+   "shallowest_distinguishing_depth": {},
+   "example": null,
+   "undistinguished_pairs": []
+  },
+  "size": {
+   "classes": 6,
+   "pairs_same_state_different_sigma": 1120,
+   "distinguished": 1120,
+   "not_distinguished": 0,
+   "shallowest_distinguishing_depth": {
+    "3": 901,
+    "4": 219
+   },
+   "example": {
+    "depth": 3,
+    "prefix": [
+     0,
+     1,
+     0
+    ],
+    "inside_ok": 4,
+    "inside_dead": 1,
+    "outside": 1,
+    "alignment": [
+     4,
+     0,
+     1,
+     2,
+     3
+    ]
+   },
+   "undistinguished_pairs": []
+  },
+  "three_profile": {
+   "classes": 21,
+   "pairs_same_state_different_sigma": 276,
+   "distinguished": 276,
+   "not_distinguished": 0,
+   "shallowest_distinguishing_depth": {
+    "3": 130,
+    "4": 146
+   },
+   "example": {
+    "depth": 3,
+    "prefix": [
+     0,
+     1,
+     0
+    ],
+    "inside_ok": 3,
+    "inside_dead": 0,
+    "outside": 4,
+    "alignment": [
+     3,
+     4,
+     0,
+     1,
+     2
+    ]
+   },
+   "undistinguished_pairs": []
+  },
+  "pairs": {
+   "classes": 1,
+   "pairs_same_state_different_sigma": 3741,
+   "distinguished": 3741,
+   "not_distinguished": 0,
+   "shallowest_distinguishing_depth": {
+    "3": 3041,
+    "4": 700
+   },
+   "example": {
+    "depth": 3,
+    "prefix": [
+     0,
+     1,
+     0
+    ],
+    "inside_ok": 0,
+    "inside_dead": 1,
+    "outside": 1,
+    "alignment": [
+     4,
+     0,
+     1,
+     2,
+     3
+    ]
+   },
+   "undistinguished_pairs": []
+  },
+  "all_windows": {
+   "classes": 1,
+   "pairs_same_state_different_sigma": 3741,
+   "distinguished": 3741,
+   "not_distinguished": 0,
+   "shallowest_distinguishing_depth": {
+    "3": 3041,
+    "4": 700
+   },
+   "example": {
+    "depth": 3,
+    "prefix": [
+     0,
+     1,
+     0
+    ],
+    "inside_ok": 0,
+    "inside_dead": 1,
+    "outside": 1,
+    "alignment": [
+     4,
+     0,
+     1,
+     2,
+     3
+    ]
+   },
+   "undistinguished_pairs": []
+  },
+  "windows+three": {
+   "classes": 21,
+   "pairs_same_state_different_sigma": 276,
+   "distinguished": 276,
+   "not_distinguished": 0,
+   "shallowest_distinguishing_depth": {
+    "3": 130,
+    "4": 146
+   },
+   "example": {
+    "depth": 3,
+    "prefix": [
+     0,
+     1,
+     0
+    ],
+    "inside_ok": 3,
+    "inside_dead": 0,
+    "outside": 4,
+    "alignment": [
+     3,
+     4,
+     0,
+     1,
+     2
+    ]
+   },
+   "undistinguished_pairs": []
+  }
+ },
+ "part_c_stepwise": {
+  "glued_graphs": 75690,
+  "window_sufficiency": {
+   "1": {
+    "depth1": {
+     "sufficient": 75690,
+     "insufficient": 0
+    },
+    "depth2": {
+     "sufficient": 75690,
+     "insufficient": 0
+    },
+    "depth3": {
+     "sufficient": 70270,
+     "insufficient": 5420
+    },
+    "depth4": {
+     "sufficient": 14320,
+     "insufficient": 61370
+    }
+   },
+   "2": {
+    "depth1": {
+     "sufficient": 75690,
+     "insufficient": 0
+    },
+    "depth2": {
+     "sufficient": 75690,
+     "insufficient": 0
+    },
+    "depth3": {
+     "sufficient": 70270,
+     "insufficient": 5420
+    },
+    "depth4": {
+     "sufficient": 14320,
+     "insufficient": 61370
+    }
+   },
+   "3": {
+    "depth1": {
+     "sufficient": 75690,
+     "insufficient": 0
+    },
+    "depth2": {
+     "sufficient": 75690,
+     "insufficient": 0
+    },
+    "depth3": {
+     "sufficient": 75690,
+     "insufficient": 0
+    },
+    "depth4": {
+     "sufficient": 18840,
+     "insufficient": 56850
+    }
+   },
+   "4": {
+    "depth1": {
+     "sufficient": 75690,
+     "insufficient": 0
+    },
+    "depth2": {
+     "sufficient": 75690,
+     "insufficient": 0
+    },
+    "depth3": {
+     "sufficient": 75690,
+     "insufficient": 0
+    },
+    "depth4": {
+     "sufficient": 75690,
+     "insufficient": 0
+    }
+   }
+  },
+  "dead_branch_detection": {
+   "depth1": {
+    "alive": 75690
+   },
+   "depth2": {
+    "alive": 75690
+   },
+   "depth3": {
+    "alive": 145960,
+    "unseen_by_either": 5420
+   },
+   "depth4": {
+    "alive": 293060,
+    "seen_by_both": 6050,
+    "seen_by_inside_only": 29620,
+    "seen_by_outside_only": 29620,
+    "unseen_by_either": 20100
+   }
+  },
+  "example_per_window": {
+   "1": {
+    "inside": 0,
+    "outside": 0,
+    "alignment": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "depth": 4,
+    "window": 1,
+    "colliding_window": [
+     0
+    ],
+    "prefixes": {
+     "(0, 1, 0, 1)": true,
+     "(0, 1, 0, 2)": true,
+     "(0, 1, 2, 0)": true,
+     "(0, 1, 2, 1)": true,
+     "(0, 1, 2, 3)": false
+    }
+   },
+   "2": {
+    "inside": 0,
+    "outside": 0,
+    "alignment": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "depth": 4,
+    "window": 2,
+    "colliding_window": [
+     0,
+     1
+    ],
+    "prefixes": {
+     "(0, 1, 0, 1)": true,
+     "(0, 1, 0, 2)": true,
+     "(0, 1, 2, 0)": true,
+     "(0, 1, 2, 1)": true,
+     "(0, 1, 2, 3)": false
+    }
+   },
+   "3": {
+    "inside": 0,
+    "outside": 0,
+    "alignment": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "depth": 4,
+    "window": 3,
+    "colliding_window": [
+     0,
+     1,
+     2
+    ],
+    "prefixes": {
+     "(0, 1, 0, 2)": true,
+     "(0, 1, 2, 0)": true,
+     "(0, 1, 2, 3)": false
+    }
+   }
+  }
+ },
+ "part_d_outside_scope": {
+  "outsides": 870,
+  "library_union_patterns": 10,
+  "library_intersection_patterns": 0,
+  "prefixes": [
+   {
+    "depth": 1,
+    "prefix": [
+     0
+    ],
+    "insides_alive_for_some_outside": 87,
+    "insides_alive_for_every_outside": 87,
+    "insides_alive_by_inside_alone": 87
+   },
+   {
+    "depth": 2,
+    "prefix": [
+     0,
+     0
+    ],
+    "insides_alive_for_some_outside": 0,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 0
+   },
+   {
+    "depth": 2,
+    "prefix": [
+     0,
+     1
+    ],
+    "insides_alive_for_some_outside": 87,
+    "insides_alive_for_every_outside": 87,
+    "insides_alive_by_inside_alone": 87
+   },
+   {
+    "depth": 3,
+    "prefix": [
+     0,
+     0,
+     0
+    ],
+    "insides_alive_for_some_outside": 0,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 0
+   },
+   {
+    "depth": 3,
+    "prefix": [
+     0,
+     0,
+     1
+    ],
+    "insides_alive_for_some_outside": 0,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 0
+   },
+   {
+    "depth": 3,
+    "prefix": [
+     0,
+     1,
+     0
+    ],
+    "insides_alive_for_some_outside": 87,
+    "insides_alive_for_every_outside": 37,
+    "insides_alive_by_inside_alone": 87
+   },
+   {
+    "depth": 3,
+    "prefix": [
+     0,
+     1,
+     1
+    ],
+    "insides_alive_for_some_outside": 0,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 0
+   },
+   {
+    "depth": 3,
+    "prefix": [
+     0,
+     1,
+     2
+    ],
+    "insides_alive_for_some_outside": 87,
+    "insides_alive_for_every_outside": 81,
+    "insides_alive_by_inside_alone": 87
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "insides_alive_for_some_outside": 0,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 0
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "insides_alive_for_some_outside": 0,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 0
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "insides_alive_for_some_outside": 0,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 0
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     0,
+     1,
+     1
+    ],
+    "insides_alive_for_some_outside": 0,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 0
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     0,
+     1,
+     2
+    ],
+    "insides_alive_for_some_outside": 0,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 0
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     1,
+     0,
+     0
+    ],
+    "insides_alive_for_some_outside": 0,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 0
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     1,
+     0,
+     1
+    ],
+    "insides_alive_for_some_outside": 65,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 65
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     1,
+     0,
+     2
+    ],
+    "insides_alive_for_some_outside": 81,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 81
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "insides_alive_for_some_outside": 0,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 0
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "insides_alive_for_some_outside": 0,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 0
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     1,
+     1,
+     2
+    ],
+    "insides_alive_for_some_outside": 0,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 0
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     1,
+     2,
+     0
+    ],
+    "insides_alive_for_some_outside": 87,
+    "insides_alive_for_every_outside": 37,
+    "insides_alive_by_inside_alone": 87
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     1,
+     2,
+     1
+    ],
+    "insides_alive_for_some_outside": 81,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 81
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     1,
+     2,
+     2
+    ],
+    "insides_alive_for_some_outside": 0,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 0
+   },
+   {
+    "depth": 4,
+    "prefix": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "insides_alive_for_some_outside": 80,
+    "insides_alive_for_every_outside": 0,
+    "insides_alive_by_inside_alone": 80
+   }
+  ]
+ }
+}

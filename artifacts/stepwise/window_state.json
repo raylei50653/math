@@ -1,0 +1,258 @@
+{
+ "scope": "History H = (inside patch Sigma_in, legal ring prefix a(0..m-1)), forward-only.\nContinuation = the remaining ring colours followed by a library outside patch\n(87 patches x 10 dihedral alignments).  Two histories are *indistinguishable*\n(Myhill-Nerode) iff every continuation gives the same completable/dead verdict.\nThe window is the last three committed colours (for m = 5 the ring is closed and the\nwindow is taken around position 0: a(4), a(0), a(1)).",
+ "outside_separates_all_patterns": true,
+ "depths": {
+  "m=3": {
+   "full_pool_keys": 13,
+   "full_pool_merged_classes": 34,
+   "full_pool_counterexample": {
+    "history_1": {
+     "inside": 1,
+     "prefix": [
+      0,
+      1,
+      2
+     ]
+    },
+    "history_2": {
+     "inside": 3,
+     "prefix": [
+      0,
+      1,
+      2
+     ]
+    },
+    "shared_key": {
+     "window": [
+      0,
+      1,
+      2
+     ],
+     "eq(0,1)": false,
+     "eq(0,2)": false,
+     "eq(1,2)": false,
+     "ncol>=3": true,
+     "ncol=4": false,
+     "pair(0,3)": "free",
+     "pair(0,4)": "forced_different",
+     "pair(1,3)": "free",
+     "pair(1,4)": "free",
+     "pair(2,3)": "forced_different",
+     "pair(2,4)": "free",
+     "pair(3,4)": "forced_different",
+     "four_ok": true,
+     "three_ok": true
+    },
+    "continuation": {
+     "rest_of_ring": [
+      0,
+      3
+     ],
+     "outside": 1,
+     "alignment": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    "pattern_1": [
+     0,
+     1,
+     2,
+     0,
+     3
+    ],
+    "accepted_1": true,
+    "pattern_2": [
+     0,
+     1,
+     2,
+     0,
+     3
+    ],
+    "accepted_2": false
+   },
+   "histories": 174,
+   "alive": 174,
+   "legal_prefixes": 2,
+   "nerode_classes": 47,
+   "nerode_classes_alive": 47,
+   "window_values": 2,
+   "nerode_classes_per_window": {
+    "(0, 1, 0)": 7,
+    "(0, 1, 2)": 40
+   },
+   "extra_bits_needed": 6,
+   "pool_size": 14,
+   "minimal_predicate_sets": {
+    "size": null,
+    "sets": [],
+    "count": 0
+   },
+   "minimal_predicate_sets_alive_only": {
+    "size": null,
+    "sets": [],
+    "count": 0
+   }
+  },
+  "m=4": {
+   "full_pool_keys": 21,
+   "full_pool_merged_classes": 0,
+   "full_pool_counterexample": null,
+   "histories": 435,
+   "alive": 394,
+   "legal_prefixes": 5,
+   "nerode_classes": 20,
+   "nerode_classes_alive": 17,
+   "window_values": 2,
+   "nerode_classes_per_window": {
+    "(0, 1, 0)": 5,
+    "(0, 1, 2)": 15
+   },
+   "extra_bits_needed": 4,
+   "pool_size": 14,
+   "minimal_predicate_sets": {
+    "size": 5,
+    "sets": [
+     [
+      "eq(0,2)",
+      "eq(0,3)",
+      "pair(1,4)",
+      "pair(2,4)",
+      "four_ok"
+     ],
+     [
+      "eq(0,2)",
+      "ncol=4",
+      "pair(1,4)",
+      "pair(2,4)",
+      "four_ok"
+     ],
+     [
+      "eq(0,2)",
+      "pair(1,4)",
+      "pair(2,4)",
+      "four_ok",
+      "three_ok"
+     ],
+     [
+      "eq(0,3)",
+      "ncol=4",
+      "pair(1,4)",
+      "pair(2,4)",
+      "four_ok"
+     ]
+    ],
+    "count": 4
+   },
+   "minimal_predicate_sets_alive_only": {
+    "size": 4,
+    "sets": [
+     [
+      "eq(0,3)",
+      "pair(1,4)",
+      "pair(2,4)",
+      "four_ok"
+     ]
+    ],
+    "count": 1
+   }
+  },
+  "m=5": {
+   "full_pool_keys": 20,
+   "full_pool_merged_classes": 0,
+   "full_pool_counterexample": null,
+   "histories": 870,
+   "alive": 650,
+   "legal_prefixes": 10,
+   "nerode_classes": 11,
+   "nerode_classes_alive": 10,
+   "window_values": 2,
+   "nerode_classes_per_window": {
+    "(0, 1, 0)": 4,
+    "(0, 1, 2)": 8
+   },
+   "extra_bits_needed": 3,
+   "pool_size": 13,
+   "minimal_predicate_sets": {
+    "size": 5,
+    "sets": [
+     [
+      "eq(0,2)",
+      "eq(0,3)",
+      "eq(1,3)",
+      "eq(2,4)",
+      "accepted"
+     ],
+     [
+      "eq(0,2)",
+      "eq(0,3)",
+      "eq(1,3)",
+      "ncol=4",
+      "accepted"
+     ],
+     [
+      "eq(0,2)",
+      "eq(0,3)",
+      "eq(2,4)",
+      "ncol=4",
+      "accepted"
+     ],
+     [
+      "eq(0,2)",
+      "eq(1,3)",
+      "eq(2,4)",
+      "ncol=4",
+      "accepted"
+     ],
+     [
+      "eq(0,3)",
+      "eq(1,3)",
+      "eq(2,4)",
+      "ncol=4",
+      "accepted"
+     ]
+    ],
+    "count": 5
+   },
+   "minimal_predicate_sets_alive_only": {
+    "size": 4,
+    "sets": [
+     [
+      "eq(0,2)",
+      "eq(0,3)",
+      "eq(1,3)",
+      "eq(2,4)"
+     ],
+     [
+      "eq(0,2)",
+      "eq(0,3)",
+      "eq(1,3)",
+      "ncol=4"
+     ],
+     [
+      "eq(0,2)",
+      "eq(0,3)",
+      "eq(2,4)",
+      "ncol=4"
+     ],
+     [
+      "eq(0,2)",
+      "eq(1,3)",
+      "eq(2,4)",
+      "ncol=4"
+     ],
+     [
+      "eq(0,3)",
+      "eq(1,3)",
+      "eq(2,4)",
+      "ncol=4"
+     ]
+    ],
+    "count": 5
+   }
+  }
+ }
+}
