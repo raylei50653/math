@@ -21,3 +21,5 @@ import Math.AttachmentGaps
 import Math.AttachmentOrder
 import Math.GeoRejectBridge
 import Math.AttachmentEndpoints
+import Math.FanPentagon
+import Math.C5PairForcing

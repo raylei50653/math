@@ -4,6 +4,10 @@
 
 五邊界染色研究的定義、有限枚舉、反例證書與信任分類見 [第一階段報告](docs/phase1.md)；最新的 triangle grammar 有限狀態模型（ColorDFA／GeometryDFA、Nerode quotient、Z5 profiles）見 [automata.md](docs/automata.md)。
 
+內部五邊形加兩條對角線的 87-state 研究見 [fan_pentagon.md](docs/fan_pentagon.md)；
+以完整 boundary relation 為主狀態、派生同一 C5 條件 pair forcing 的庫見
+[boundary_relations.md](docs/boundary_relations.md)。
+
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 
 ## 本機需求
@@ -52,6 +56,8 @@ lake exe cache get
 | `Math/Basic.lean` | 起始例子，從這裡改 |
 | `Math/ColorDFA.lean`, `Math/GeometryDFA.lean` | triangle grammar 的染色／幾何自動機與 Lean 證明 |
 | `scripts/triangle_automata.py`, `artifacts/automata/` | 自動機資料的產生器與決定性輸出 |
+| `Math/BoundaryRelations.lean`, `Math/C5PairForcing.lean` | 泛型完整 boundary relation 與同一 C5 的投影／條件強迫 |
+| `scripts/c5_relation_library.py`, `artifacts/boundary_relations/` | 87 個完整 states、派生 pair 查詢與最小條件規則 |
 | `Math.lean` | 函式庫根，`import` 子模組 |
 | `lakefile.toml` | 依賴（mathlib）與編譯選項 |
 | `lean-toolchain` | 這個專案用的 Lean 版本 |

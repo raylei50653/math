@@ -2,9 +2,63 @@
 
 更新：2026-09-12。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-本輪已啟動 topology completeness，見 [topology_completeness.md](topology_completeness.md)：一般 triangle disk embedding → 分開共用端點 → 切開 annulus → 端點環序一致的紙上論證已落盤。`Math/AttachmentEndpoints.lean` 證明端點環序 → normal form → `AnnulusAccept` 的編譯接口；**沒有證明 embedding → 端點環序，完整 topology completeness 仍 unresolved in Lean**。下一步需獨立 embedding 模型與 Jordan／vertex-star splitting／spanning-arc cutting，不要把端點環序作為 embedding 定義或重做 grammar 分類。
+## 2026-09-12 新方向：五邊形內部與同一 C5 的條件強迫庫
 
-**本輪停止點（使用者要求先到這，整理後 commit + push）**：未啟動上述拓撲形式化，也沒有待完成的背景程序。新對話若續作，先讀本文件、`docs/topology_completeness.md`、`Math/AttachmentEndpoints.lean`，從獨立 embedding 模型及端點抽取開始；不要重證已完成的編譯接口。此輪完整 `lake build` 通過（8797 jobs；新檔無警告，既有 AttachmentOrder warnings 保留）；`lake env lean Math/AutomataAudit.lean` 通過，兩個新定理只有 `propext / Classical.choice / Quot.sound`，實際輸出在 `artifacts/automata/lean-audit.txt`。未重跑枚舉。
+使用者已啟動新研究：把內部 K3 換成五邊形 12345 加 13、14，結果見
+[fan_pentagon.md](fan_pentagon.md)。完整 `2^25` grammar 的獨立 replay 已完成：
+174,456 disk-accepted masks、87 exact Σ（含全部原 42、新增 45）；三色 profiles
+仍是原 21 種，最少 2 且大小 2 仍相鄰。全 grammar 結論是 **computationally observed**。
+新例子 `mask=1116616 / Σbits=767` 接受 216 個 labeled assignments，恰拒絕 01231
+的全域換色；`Math/FanPentagon.lean` 有 exact Σ native 證書與普通局部衝突證明。
+
+最新使用者 scope：**先做 generic boundary relation，但本輪只實作／驗證同一個 C5
+boundary 上的 pair forcing；pairwise relation 必須由完整 boundary relation 投影得到，
+不要反過來用 pair constraints 代表完整狀態。** 見 [boundary_relations.md](boundary_relations.md)。
+`Math/BoundaryRelations.lean` 給泛型 full relation / condition / projection / nonvacuous forcing；
+`Math/C5PairForcing.lean` 證 R767 與全體 proper C5 所有 pair projections 相同，卻有不同
+conditional forcing。Python catalog 收錄 87 個完整 states 及 750 條派生最小條件推論，
+來源、幾何 witness 與計算重驗分開保存。不啟動雙 C5 串接、一般 transducer 或任意 n 搜尋。
+
+本輪驗證已完成：完整 `lake build` 通過（8800 jobs；只有既有 `AttachmentOrder` warnings）；
+`Math/FanPentagonAudit.lean` 公理審計通過，無 `sorryAx`，實際輸出
+`artifacts/fan_pentagon/lean-audit.txt`。泛型 relation 法則沒有 native 依賴；具體 C5
+有限反例及 exact Σ 的 native 依賴已標明。Python 完整 grammar replay、211,410 個
+條件 pair 查詢、3,828 對 aligned meet、實際 inside/outside union 染色皆通過。
+搜尋四份核心輸出與 relation catalog 重建逐 byte 一致。驗證當時的 source／artifact hashes
+保存在 `artifacts/boundary_relations/validation.json`；其中 `source_state` 記錄的是提交前的
+驗證快照，並非要求工作樹維持未提交。
+
+**本輪停止點：使用者要求先到這，整理交接後 commit + push。研究已暫停，沒有背景程序
+或待完成驗證。** 新對話先讀本節、`docs/boundary_relations.md`、`docs/fan_pentagon.md`，
+再看 `Math/BoundaryRelations.lean`、`Math/C5PairForcing.lean` 與
+`scripts/boundary_relations.py`。先使用現有 catalog 查詢，不自動重跑完整搜尋。
+
+若使用者要求繼續，接續主題是**同一個 C5 上的多條件強迫，以及真實內外 patches
+如何共同實現條件**；保留完整 relation 作主狀態與具名 boundary 對齊。可從
+R767 的 `b1=b4 ∧ b0≠b2 ⇒ b0=b3`、R91∩R935 才強迫 `b0=b2` 的例子開始。
+下一個研究問題尚未指定；不自行啟動雙 C5 串接、一般 transducer、增加頂點搜尋，
+也不自動切回先前的 topology completeness 工作。
+
+接手所需操作與證據：
+
+```bash
+python scripts/c5_relation_library.py query 767 --given 'b1=b4' --given 'b0!=b2'
+python scripts/c5_relation_library.py meet 91 935
+```
+
+* 完整 states 與派生規則：`artifacts/boundary_relations/library.json`。
+* 真實內外合成圖：`artifacts/boundary_relations/inside_outside.json`。
+* 全庫 query／meet replay：`artifacts/boundary_relations/replay.json`。
+* 全 grammar 搜尋／重驗：`artifacts/fan_pentagon/summary.json`、`replay.json`。
+* Lean 公理界線：`artifacts/fan_pentagon/lean-audit.txt`。
+
+以下 topology completeness 段落是先前工作的停止點；本輪沒有補上 embedding → endpoint order。
+
+## 先前停止點：triangle topology completeness（歷史背景）
+
+先前已啟動 topology completeness，見 [topology_completeness.md](topology_completeness.md)：一般 triangle disk embedding → 分開共用端點 → 切開 annulus → 端點環序一致的紙上論證已落盤。`Math/AttachmentEndpoints.lean` 證明端點環序 → normal form → `AnnulusAccept` 的編譯接口；**沒有證明 embedding → 端點環序，完整 topology completeness 仍 unresolved in Lean**。若日後明確重啟此線，需獨立 embedding 模型與 Jordan／vertex-star splitting／spanning-arc cutting，不要把端點環序作為 embedding 定義或重做 grammar 分類。
+
+**先前一輪的停止紀錄**：未啟動上述拓撲形式化。該輪完整 `lake build` 通過（8797 jobs；新檔無警告，既有 AttachmentOrder warnings 保留）；`lake env lean Math/AutomataAudit.lean` 通過，兩個新定理只有 `propext / Classical.choice / Quot.sound`，實際輸出在 `artifacts/automata/lean-audit.txt`。該輪未重跑枚舉。這不是本輪的接手指令。
 
 ## 30 秒摘要
 
@@ -301,4 +355,4 @@ python3 scripts/export_certificates.py --split --namespace FiveBoundary.GadgetTa
 
 ## 可貼給新對話的起始訊息
 
-> 請先讀 `/home/ray/math/docs/HANDOFF.md`、`docs/topology_completeness.md` 與 `Math/AttachmentEndpoints.lean`。目前方向是 triangle grammar 的一般合法 disk embedding ⇒ AnnulusAccept。紙上路線為 triangle separation → 共用端點分成 slots → 沿 spanning arc 切開 annulus → Jordan 交錯端點障礙 → 兩側端點環序一致。Lean 已證 `normalForm_of_endpoint_order` 與 `annulusAccept_of_endpoint_order`，但尚無獨立 disk embedding 定義，也未形式化 embedding ⇒ 端點環序；不要把 horder 加進 embedding 定義而宣稱 completeness。若續作，從這個拓撲抽取缺口開始。geometry normal form、六種 incidence regimes 環序及 GeoReject bridge 已完成，不要重做或重跑枚舉；不自動轉到 C6／C7、grammar 外接線或十二類 quotient 分類。上輪 build 與公理審計通過，使用者要求暫停並 commit + push。
+> 請先讀 `/home/ray/math/docs/HANDOFF.md` 最上方最新停止點、`docs/boundary_relations.md` 與 `docs/fan_pentagon.md`。目前已完成內部五邊形加 13、14 的完整搜尋：87 個 exact Σ（原 K3 是 42），以及 generic full boundary relation 和同一有序 C5 上的條件 pair forcing 庫。完整 relation 是唯一主狀態，先套用共同條件、再投影；不得反過來用 pair constraints 代表完整狀態。750 條條件規則、211,410 個 pair 查詢與 3,828 個 aligned meet 已獨立重驗；Lean 已證泛型法則及 pair projections 相同但 conditional forcing 不同的具體反例。普通證明、native finite checks、外部計算／幾何證據分開標示。入口是 `Math/BoundaryRelations.lean`、`Math/C5PairForcing.lean`、`scripts/boundary_relations.py` 和 `scripts/c5_relation_library.py`。使用者要求先暫停並 commit + push，沒有待完成驗證或背景程序。先使用既有 catalog，不自動重跑枚舉；下一個研究問題尚未指定，不自動開雙 C5 串接、一般 transducer、更多頂點搜尋或重啟歷史 topology completeness 工作。
