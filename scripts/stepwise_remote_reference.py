@@ -12,8 +12,8 @@ Test bed: the exact strip automata of stepwise_strip_width.py.  For each shape t
 class of a live boundary word is the ground truth for "what the future can still see".
 
 Part A (exact, on the DFA): finite range.  Is the class a function of the last k letters?
-  Pairs of live states in different classes are pushed forward letter by letter; the class
-  is k-definite iff no such pair survives k letters.  'none' means no bounded window works.
+  Pairs of live states in different classes are pushed forward letter by letter until
+  empty or a nonempty fixed point. 'none' means no bounded window works.
 
 Part B (live words of length T..T+5, T = left-end transient; exhaustive or a CAP random
         sample): colour-referenced features.
@@ -38,7 +38,11 @@ Part C: run channels.  The history is cut greedily from the right into maximal 2
   below `cap` and only mod 2 beyond it.  Candidate = window 3 + self + the last R runs.
   Reports the minimal (cap, R) that is sufficient, if any with cap <= 8, R <= 5.
   Candidate state = (last k letters normalised, chosen features).  Sufficient iff equal
-  candidate states never have different Nerode classes up to a global colour permutation.  Reports minimal sufficient subsets and, for
+  candidate states never have different Nerode classes up to a global colour permutation.
+  WARNING: Parts B/C use independent colour orbits and are historical diagnostics,
+  not aligned sufficiency tests. Use stepwise_aligned_reference.py for the corrected
+  test under directional first-encounter naming (dist(a,b)<dist(a,c)<dist(a,d)).
+  Reports minimal sufficient subsets and, for
   the full feature set with window 3, a counterexample pair if it still fails.
 """
 from collections import defaultdict
@@ -54,7 +58,6 @@ from stepwise_sufficiency import OUT
 SHAPES = [(3,), (4,), (3, 4), (3, 3, 4), (2, 3), (2, 2, 3), (2, 4), (2, 2, 4), (2, 3, 4), (3, 2, 4)]
 SPAN = 5
 CAP = 60_000
-K_MAX = 12
 MAX_RUNS, MAX_CAP = 5, 8
 FEATURES = ['present', 'parity', 'after', 'before', 'two_col', 'a_parity', 'order', 'self', 'alt', 'first', 'origin']
 
@@ -67,7 +70,8 @@ def finite_range(order, delta, cls):
         q_live[cls[i]] = bool(order[i])
     live = sorted(q for q in q_delta if q_live[q])
     pairs = {(p, q) for p in live for q in live if p < q}
-    for k in range(K_MAX + 1):
+    k = 0
+    while True:
         if not pairs:
             return k
         nxt = set()
@@ -76,8 +80,11 @@ def finite_range(order, delta, cls):
                 a, b = q_delta[p][c], q_delta[q][c]
                 if a != b and q_live[a] and q_live[b]:
                     nxt.add((a, b) if a < b else (b, a))
+        if nxt == pairs:
+            return None
+        assert nxt < pairs
         pairs = nxt
-    return None
+        k += 1
 
 
 def class_orbits(order, cls):

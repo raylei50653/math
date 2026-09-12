@@ -2,7 +2,134 @@
 
 更新：2026-09-12。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 2026-09-12 最新：逐步填色的資訊充分性（六次試跑已完成；試跑五、六未 commit）
+## 本輪 commit 的接手入口
+
+**目前主線：fan 5 的雙側接合，不要開始 fan 6。** 先讀本節及下方雙側摘要，
+再讀 [研究文件 §9h](stepwise_state_sufficiency.md#9h-fan-5-雙側接合437-個完整-residual成熟部分-25-類)。
+單側最小 signature 的前置結果在 §9f–9g；命名與證明邊界在 §9d。
+
+已完成的工作包括：修正獨立換色 quotient 的充分性判準、移除固定 window 檢驗的任意截止、
+泛型 Lean 對齊／更新／pumping 定理、fan 4／5 完整單側分類，以及 fan 5 雙側 437 類最小化。
+程式與 JSON 證書一併保存；先利用現有分類，不必重跑前六次歷史搜尋。
+
+**接下來可直接做的研究**：把雙側的 425 種無限語言整理成可讀結構族。
+其中成熟 A/A 對應的 24 種交替／奇偶語言已解釋，剩餘 401 種尚未完成結構命名。
+從 `fan5_bilateral.json` 的 `classes` 開始：每類含 `left/right` 代表、
+`left_delta/right_delta`、語言種類及長度 ≤4 真值向量。
+`pair_to_class` 將左右組合映到類別；右側 ID 的意義查 `right_states`，
+不能直接把右側 ID 當作單側 ID，應使用其 `reversed_word_class`。
+候選結構 signature 應在完整 437 類上驗證雙向更新與類別一一對應，不能只拿樣本無碰撞當證明。
+
+**不可遺失的約定**：沿指定方向首次遇色依序命名 b,c,d；左右框架需保留共同顏色對應。
+437 是所有有限中央字（含空字）的固定色標分類；若只剩一洞，允許色集合只有 16 種。
+各自換色 orbit、固定 gap 長度的輸出、完整 residual，是不同等價關係。
+所有 strip 分類為 computationally observed；proved in Lean 的只有泛型定理，
+尚無生成 DFA／strip 圖語義的 Lean soundness，也沒有 disk embedding 結論。
+
+本輪可重現檢查（Python 只需標準庫；各 `--check` 重算並逐 byte 比對 artifact）：
+
+```bash
+python scripts/stepwise_aligned_reference.py --check
+python scripts/stepwise_fan4_quotient.py --check
+python scripts/stepwise_fan4_signatures.py --check
+python scripts/stepwise_fan5_signatures.py --check
+python scripts/stepwise_fan5_bilateral.py --check
+lake build
+lake env lean Math/StepwiseStateAudit.lean
+```
+
+Lean 公理審計輸出保存於 `artifacts/stepwise/lean-state-audit.txt`。
+`run_repeat_loop`、`pumped_distinction` 不依賴公理；其餘僅列出標準 `Quot.sound`／`propext`。
+上述檢查在本輪提交前重驗；未 push。
+
+## 2026-09-12 fan 5 雙側接合完成第一輪
+
+仍限 fan 5，沒有 fan 6。使用者問左右同時參照後授權開始。
+**computationally observed**：K(L,R)={X | LXR 可著色} 的完整固定色標分類為 437 類，
+由 97 個左 residual ×97 個右逆像集合的全部 9409 組最小化。
+右集合與 reversed-R 的單側類有已驗證轉移雙射；左右需保留共同顏色對應。
+細分計數 2→31→267→425→437→437；每類長度≤4 的341-bit向量皆不同，
+149017 個 bit 全部獨立整圖 replay，另重驗9409組空字接合。
+兩端局部更新均封閉且交換；一洞允許色投影有16種，不能把它當完整gap residual。
+成熟 A/A 的1296組壓成25類：1128組無解，其餘為24種指定兩色交替＋長度奇偶語言。
+一般437類中：空語言1，有限非空11（{ε} 加至多兩個允許色），無限425。
+全部類與轉移已保存；一般425種無限語言尚未全部整理成可讀結構族。
+左 cbaba、右 ababc／ababd 在各自框架都是 A_d/A_d，卻分別能填 b／任何gap都無解，
+示範相對顏色對應不可省略。未新增Lean strip圖語義證明。
+詳見 `docs/stepwise_state_sufficiency.md` §9h；`artifacts/stepwise/fan5_bilateral.json`。
+重現：`python scripts/stepwise_fan5_bilateral.py --check`。
+
+## 2026-09-12 fan 5 的 97 類完整解剖
+
+使用者要求先完成 fan 5，**不要繼續 fan 6**。
+**computationally observed**：97 個固定色標 residual classes =
+E 1＋S 4＋P 12＋U_aba 12＋U_cba 24＋A 36＋F 6＋T 1＋dead 1。
+配合指定首次遇色框架為 11 種 signature（含 dead）。
+F 只保留允許再填一次的無序兩色集合 B，語言 `{ε} ∪ B`；T 的語言 `{ε}`。
+四字 `baba`／`caba` 可與真實內部色域態合併；三字 `aba`／`cba` 必須保留為 U。
+成熟 cut 用三色時全部是 T；只用兩色時為 A_cd/A_c/A_d。
+與 fan 4 相比，多出的 42 個類全屬長度 3／4 的左端暫態，成熟活 signature 仍只有 A 三種及 T。
+先前 `acaba`／`cbaba` 的碰撞解成 T／A_d；分類後不必每態都永久保留第四個邊界色。
+全部 822 原始狀態的 3288 次結構更新通過；4656 對 separator 的 9312 端點獨立整圖 replay 通過。
+未新增 Lean 圖語義證明。詳見 `docs/stepwise_state_sufficiency.md` §9g；
+完整分類、cut 變體、轉移與最小性證書：`artifacts/stepwise/fan5_signatures.json`。
+重現：`python scripts/stepwise_fan5_signatures.py --check`。
+
+## 2026-09-12 fan 4 完整 signature → fan 5 collision
+
+**computationally observed**：fan 4 完整最小化為 55 個固定色標 residual classes，
+由外部首次遇色框架＋8 種 signature（含 dead）表示：E、S、P、A_cd、A_c、A_d、T、dead。
+三字 `aba` 與成熟 `(aba,{c,d})` 合併；三字 `cba` 與成熟 `(aba,{c})` 合併，
+所以「是否已引入內部點」不是必要狀態欄位。全部 1485 對都有 separator，兩端皆獨立整圖 replay。
+移植同一結構 recipe 到 fan 5 自己的 cut，第一個等長 collision 是 `acba` / `dcba`，
+同為虛擬 A_c，接 `b` 前收後拒；第一個成熟 collision 是 `acaba` / `cbaba`，
+同為 A_d，接 `b` 前拒後收。遺失的是仍將進入下一 fan 的第四個邊界色。
+尚未證明補這一欄已是 fan 5 最小表示，尚未接 Lean。
+詳見 `docs/stepwise_state_sufficiency.md` §9f；完整分類、轉移、separator 與著色證書：
+`artifacts/stepwise/fan4_signatures.json`；重現：
+`python scripts/stepwise_fan4_signatures.py --check`。
+
+## 2026-09-12 fan 4 對 fan 3 quotient 續作
+
+**computationally observed**：最短等長成熟共同活歷史對為 `cbaba` / `cbcba`，
+fan 3 完整 cut 同為 `(b,a,d)`，fan 4 接同一 `b` 分別接受／拒絕。
+fan 4 的四狀態語義為 `(aba,{c,d})`、`(aba,{c})`、`(aba,{d})`、`(cba,{d})`；
+最後一種目前可著色，但任何非空延伸都失敗，殘餘語言為 `{ε}`。
+已對全部原始可達狀態驗證成熟 cut 分類與局部轉移，並獨立整圖 replay；未接 Lean。
+詳見 `docs/stepwise_state_sufficiency.md` §9e；重現：
+`python scripts/stepwise_fan4_quotient.py --check`。
+
+## 2026-09-12 最新續作：對齊參照狀態（試跑七）
+
+使用者已明確指定命名規則：固定方向後，以首次遇到其他顏色的次序命名 $b,c,d$，
+$\mathrm{dist}(a,b)<\mathrm{dist}(a,c)<\mathrm{dist}(a,d)$。本輪 strip 方向是向已填歷史回看。
+**命名規則不等於特徵摘要；反例否定某個摘要，不能宣稱這個命名本身抹掉 identity，或必須改指向別的 occurrence。**
+
+最新有效結論見 [stepwise_state_sufficiency.md §9d–10](stepwise_state_sufficiency.md#9d-指定方向的對齊參照與局部更新試跑七)。
+舊試跑六把殘餘關係各自除以換色，沒有保留與參照框架的對齊，故其「充分」結論需修正。
+試跑七對狀態與共同後綴採同一框架；fan 3 已有短反例 $1210$ 與 $2010$，再填 2 時一拒一收，
+雖然兩者都恰用 $a,b,c$。應保留的是 frontier 被迫為哪個相對色，而不只是是否被迫。
+
+- **computationally observed（完整有限計算）**：六個形狀 $(3),(4),(2,3),(2,4),(2,2,3),(2,2,4)$
+  的對齊殘餘自動機，穩態活狀態數 3、4、12、13、28、41；完整局部更新表已保存。
+  狀態 = 顏色參照表＋對齊殘餘類，讀新色後 move-to-front 並同步換色殘餘類。
+  全特徵池＋window 3 在三個埋藏 fan 3／深層形狀失敗，均有共同後綴和獨立整圖 replay。
+- **computationally observed（完整有限計算）**：六個形狀都有共同循環證書排除任意固定 window。
+  舊 `finite_range` 的截止 12 已改成迭代至空集或固定點。
+- **proved in Lean**：`Math/StepwiseState.lean` 的泛型換色、register 更新與共同循環保持區分定理，普通證明；
+  **尚未**把 Python 表格或 strip 圖語義接到 Lean。審計見 `Math/StepwiseStateAudit.lean`。
+- **conjectured／未證**：一般深度的 $|Q|$ 無界與二次／指數成長。深度 $d\le3$ 的數據不能證明無界，
+  也不能否定固定種類、內容可變的 registers。舊「任何固定容量都不夠」結論撤回。
+
+入口：`scripts/stepwise_aligned_reference.py`、`artifacts/stepwise/aligned_reference.json`。
+`python scripts/stepwise_aligned_reference.py --check` 重做全部新計算、獨立整圖 replay 並逐 byte 比對；
+`lake build` 與 `lake env lean Math/StepwiseStateAudit.lean` 檢查形式部分。
+下一步保持此命名，從對齊 transition 表反推每色應帶的 latent constraint 資訊，
+再用完整 closure 驗證候選的局部更新；不再以樣本或獨立 residual orbit 判充分。
+
+下方六次試跑是歷史記錄；涉及無界成長、單 bit 充分或命名抹掉 identity 的敘述以本節與 §9d–10 修正為準。
+
+## 2026-09-12 最新：逐步填色的資訊充分性（前六次歷史記錄）
 
 使用者提出的新研究問題與四次試跑結果都在 [stepwise_state_sufficiency.md](stepwise_state_sufficiency.md)：
 第一部分（第 0–6 節）是問題陳述——把逐步四色填色看成決策樹，問哪些資訊足以判定「存在仍可成功的後繼」（Q1）
