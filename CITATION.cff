@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this repository's Lean development, generators, or artifacts in your work, please cite it as below."
+title: "Lean 4 formalization of boundary-colouring structure and triangle disk-gadget synthesis for the four-colour problem"
+type: software
+authors:
+  - family-names: Lei
+    given-names: Yue-Hui
+abstract: >-
+  Lean 4 + mathlib development studying the boundary-colouring structure of the
+  four-colour problem. It provides an exact boundary-colouring relation over
+  ordered boundary injections, finite enumeration of C5 boundary states, a gadget
+  relation algebra, and a deterministic certificate pipeline that re-checks graph,
+  boundary and colouring claims in Lean instead of trusting the Python search.
+  The finite-state layer models a fixed triangle grammar twice: ColorDFA carries an
+  exact Sigma semantics for every attachment word as ordinary Lean proofs, whereas
+  GeometryDFA only claims forward soundness (an accepted word yields a rotation
+  system passing an Euler and face checker), its completeness direction remaining
+  an explicit topology gap. Results are reported under a stated trust hierarchy
+  ("proved in Lean", "computationally observed", "conjectured"). The repository does
+  not prove the four-colour theorem, and neither assumes it as an axiom nor uses it
+  as a search oracle.
+license: Apache-2.0
+version: "0.1.0"
+repository-code: "https://github.com/raylei50653/math"
+url: "https://github.com/raylei50653/math"
+keywords:
+  - Lean 4
+  - mathlib
+  - formal verification
+  - four-colour problem
+  - graph colouring
+  - boundary colouring
+  - planar graphs
+  - gadget synthesis
+  - deterministic finite automaton
+  - Nerode quotient

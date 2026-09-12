@@ -1,0 +1,140 @@
+{
+  "agreement": {
+    "apex_planar": 7194,
+    "disagreements": [],
+    "geometry_accept": 7194,
+    "sigma_disagreements": [],
+    "words": 32768
+  },
+  "disk_states": 42,
+  "grammar": "ordered C5 + interior K3 + arbitrary boundary-to-K3 attachments; words of 5 letters over 8 subsets",
+  "nerode_states_per_layer": {
+    "color": [
+      1,
+      8,
+      64,
+      462,
+      1940,
+      273
+    ],
+    "geometry": [
+      1,
+      8,
+      30,
+      39,
+      18,
+      2
+    ],
+    "moore": [
+      1,
+      8,
+      58,
+      234,
+      261,
+      43
+    ],
+    "single_bad": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "three_colour": [
+      1,
+      8,
+      58,
+      207,
+      165,
+      22
+    ]
+  },
+  "networkx": "3.5",
+  "pair_admissible": [
+    {
+      "admissible_moves": 36,
+      "classes": 1,
+      "layer": 0,
+      "live_classes": 1,
+      "possible_moves": 64
+    },
+    {
+      "admissible_moves": 468,
+      "classes": 37,
+      "layer": 1,
+      "live_classes": 36,
+      "possible_moves": 2304
+    },
+    {
+      "admissible_moves": 756,
+      "classes": 469,
+      "layer": 2,
+      "live_classes": 468,
+      "possible_moves": 29952
+    },
+    {
+      "admissible_moves": 792,
+      "classes": 613,
+      "layer": 3,
+      "live_classes": 612,
+      "possible_moves": 39168
+    },
+    {
+      "admissible_moves": 108,
+      "classes": 73,
+      "layer": 4,
+      "live_classes": 72,
+      "possible_moves": 4608
+    }
+  ],
+  "pair_states_per_layer": [
+    1,
+    37,
+    469,
+    613,
+    73,
+    2
+  ],
+  "phase": "Finite-state synthesis of triangle disk gadgets",
+  "raw_product_states_per_layer": [
+    1,
+    8,
+    64,
+    512,
+    4096,
+    32768
+  ],
+  "raw_product_states_with_live_geometry_per_layer": [
+    1,
+    8,
+    63,
+    415,
+    1916,
+    7194
+  ],
+  "realized_three_profiles": 21,
+  "sha256": {
+    "disk_embeddings.jsonl": "6c59f738a79b060f35fee6caf2d761d3805d9fac540328ba7d02d2b0a471f1ee",
+    "disk_states.json": "66d96f47fcbcb63f17c07447ec6eb34ef75bdbaed08e60c6dd2079b3c8652c38",
+    "nerode_color.json": "3f27411bcb4f8cb486b5ee62332dd2dd775d2191e97f043291cd3f4427b484bb",
+    "nerode_geometry.json": "d0dd86b1f3503c068ea63cd251dd1ddbf9839058198b8189e62de1c05a499fba",
+    "nerode_moore.json": "71ce74267d640de4f41d994cdc97c822db9a771cb2ad8afecde4b8f2ba1f7593",
+    "nerode_pair.json": "d8bf7a1556989d20065afe08bba1f82144de1ab1b4fd93d3931f04b969eb3e84",
+    "nerode_single_bad.json": "bb04c366e0797504e8ac460610255ac4105d50ecf419a96358dd81a92b3398e3",
+    "nerode_three_colour.json": "34e32b600baad5186d2efd9cdc28308025d16e4f37e9ae5cc8632cc93a5bf2ad",
+    "t4_pairs.json": "6392da6ca35e52ce74ae250bed3b42e71106fdcd5a41ce9aaa930a48d5e2a4f1",
+    "words.jsonl": "b9574285d989a02c00db8b618ca136cca45e2a24d97277bfca2cacae233188be",
+    "z5_profiles.json": "78d31a7a046ce1b103219f7b79c96d922754a475bb7beeaf7cbc1dbece5df162"
+  },
+  "t4": {
+    "ordered_mask_pairs": 1080,
+    "state_pairs": 10
+  },
+  "trust": {
+    "color_dfa": "exact semantics replayed in Lean (Math/ColorDFA.lean)",
+    "geometry_dfa": "forward direction only: each accepted word carries an explicit rotation system checked by Euler/face traversal; agreement with the apex test is exhaustive observation, not a completeness proof",
+    "nerode": "computationally observed minimal state counts inside this grammar",
+    "z5": "observed profile statistics; not a theorem about arbitrary disk patches"
+  }
+}
