@@ -14,6 +14,7 @@ import Math.GeoRejectBridge
 import Math.AttachmentSaturated
 import Math.AttachmentGaps
 import Math.AttachmentOrder
+import Math.AttachmentEndpoints
 
 /-! Actual trusted dependencies of the finite-state layer. -/
 #print axioms FiveBoundary.ColorDFA.runFrom_spec
@@ -91,3 +92,5 @@ import Math.AttachmentOrder
 #print axioms FiveBoundary.Hall.runOK_profile_ge_two
 #print axioms FiveBoundary.Hall.runOK_two_profile_adjacent
 #print axioms FiveBoundary.Hall.normalForm_rejection_bound
+#print axioms FiveBoundary.GeometryDFA.normalForm_of_endpoint_order
+#print axioms FiveBoundary.GeometryDFA.annulusAccept_of_endpoint_order

@@ -2,6 +2,10 @@
 
 更新：2026-09-12。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
+本輪已啟動 topology completeness，見 [topology_completeness.md](topology_completeness.md)：一般 triangle disk embedding → 分開共用端點 → 切開 annulus → 端點環序一致的紙上論證已落盤。`Math/AttachmentEndpoints.lean` 證明端點環序 → normal form → `AnnulusAccept` 的編譯接口；**沒有證明 embedding → 端點環序，完整 topology completeness 仍 unresolved in Lean**。下一步需獨立 embedding 模型與 Jordan／vertex-star splitting／spanning-arc cutting，不要把端點環序作為 embedding 定義或重做 grammar 分類。
+
+**本輪停止點（使用者要求先到這，整理後 commit + push）**：未啟動上述拓撲形式化，也沒有待完成的背景程序。新對話若續作，先讀本文件、`docs/topology_completeness.md`、`Math/AttachmentEndpoints.lean`，從獨立 embedding 模型及端點抽取開始；不要重證已完成的編譯接口。此輪完整 `lake build` 通過（8797 jobs；新檔無警告，既有 AttachmentOrder warnings 保留）；`lake env lean Math/AutomataAudit.lean` 通過，兩個新定理只有 `propext / Classical.choice / Quot.sound`，實際輸出在 `artifacts/automata/lean-audit.txt`。未重跑枚舉。
+
 ## 30 秒摘要
 
 已建立 Lean 的 exact boundary-coloring relation、有限枚舉、gadget relation algebra 與不信任 Python 的證書重驗流程。固定有序 C5 的 Σ 可以無損壓成十個 S4-orbit bits。
@@ -34,7 +38,7 @@
 * 區分「平面圖中指定 C5」與「C5 是單側 disk 外邊界」。前者可 BAD，不可偷換成後者的反例。
 * 區分已證與計算觀察；不可把有限搜尋無反例外推為一般定理。
 * 先做 document-first。除非使用者明確 `/graphify`，或文件無法解釋跨檔架構，不自動跑 Graphify。
-* 未獲要求不開 sub-agents、不 commit／push。現有專案檔案在 `git status` 中均為 untracked；不可視為可刪的臨時產物。
+* 未獲要求不開 sub-agents、不 commit／push。專案已納入 Git；每輪先檢查實際 `git status`，不要沿用早期「全部 untracked」的歷史狀態，也不可將研究產物視為可刪的臨時檔。
 
 ## 2. 信任分類
 
@@ -254,6 +258,7 @@ EQ 圖 K5−xy 自身 planar，但 x,y 不可能同面；若同面便能加 xy �
 | `Math/AttachmentNormalForm.lean` | cut-necklace normal form 雙向等價、packet alphabet／junction 唯一性、degree incidence、min-degree ≥ 2 的交集界 ≤ 1；不 import Hall |
 | `Math/NormalFormHall.lean` | normal form ⇒ 排除兩個涉及 unique 位置的 triple Hall witnesses |
 | `Math/GeoRejectBridge.lean` | 完整 `|R|≤3`、等號 `(2,3,3)` 與 cyclic 3-interval、profile ≥ 2 與等號相鄰對 |
+| `Math/AttachmentEndpoints.lean` | 任意 Nodup endpoint packets 加三-block 環序 → normal form → AnnulusAccept；不含拓撲抽取證明 |
 | `Math/AttachmentSignature.lean` | packet inventory、六種 incidence regimes、飽和時三 junction 加兩 singleton、兩種 degree 型 |
 | `Math/AttachmentGaps.lean` | 三 junction 含空位的雙向 gap normal form；C5 gap 長度與 empty／singleton inventory |
 | `Math/AttachmentSaturated.lean` | 三 junction 的 cyclic order、constant gaps、雙向 normal form，以及 C5 飽和時 x+y+z=2 |
@@ -296,4 +301,4 @@ python3 scripts/export_certificates.py --split --namespace FiveBoundary.GadgetTa
 
 ## 可貼給新對話的起始訊息
 
-> 請先讀 `/home/ray/math/docs/HANDOFF.md` 與 `docs/attachment_normal_form.md`。geometry normal form → GeoReject bridge 已完成，見 `Math/GeoRejectBridge.lean`：`RunOK` 下 `|R|≤3`；等號時 degree 型 `(2,3,3)`、R 為 cyclic 3-interval；threeProfile 至少兩個，恰兩個時相鄰。證明用 normal form 的 fan／共同鄰居界與 attachment budget，不引用十二類觀察或 native profile 檢查。六種 incidence regimes 的環序也均已證，不要重做。一般 disk embedding ⇒ AnnulusAccept 的 topology completeness、grammar 外 topology soundness 與整體十二類 quotient 分類仍未證；後續方向由使用者指定，不自動轉到 C6／C7 idea 或搜尋。
+> 請先讀 `/home/ray/math/docs/HANDOFF.md`、`docs/topology_completeness.md` 與 `Math/AttachmentEndpoints.lean`。目前方向是 triangle grammar 的一般合法 disk embedding ⇒ AnnulusAccept。紙上路線為 triangle separation → 共用端點分成 slots → 沿 spanning arc 切開 annulus → Jordan 交錯端點障礙 → 兩側端點環序一致。Lean 已證 `normalForm_of_endpoint_order` 與 `annulusAccept_of_endpoint_order`，但尚無獨立 disk embedding 定義，也未形式化 embedding ⇒ 端點環序；不要把 horder 加進 embedding 定義而宣稱 completeness。若續作，從這個拓撲抽取缺口開始。geometry normal form、六種 incidence regimes 環序及 GeoReject bridge 已完成，不要重做或重跑枚舉；不自動轉到 C6／C7、grammar 外接線或十二類 quotient 分類。上輪 build 與公理審計通過，使用者要求暫停並 commit + push。

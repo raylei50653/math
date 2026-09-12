@@ -20,3 +20,4 @@ import Math.AttachmentSaturated
 import Math.AttachmentGaps
 import Math.AttachmentOrder
 import Math.GeoRejectBridge
+import Math.AttachmentEndpoints

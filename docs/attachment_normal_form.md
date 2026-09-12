@@ -1,5 +1,7 @@
 # Attachment geometry normal form
 
+2026-09-12 topology 續作：見 [topology_completeness.md](topology_completeness.md) 的一般 triangle disk embedding → endpoint order 紙上論證。`AttachmentEndpoints.lean` 已證 endpoint order → 本文件 normal form；topology completeness 仍未在 Lean 中封口。
+
 2026-09-12 更新。先刻畫 attachment geometry，再把 `GeoReject` 當成 corollary。固定原有 triangle grammar；normal-form 與 incidence 續作均未重跑 word 枚舉。
 
 ## 已證的雙向 normal form

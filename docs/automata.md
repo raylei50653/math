@@ -1,5 +1,7 @@
 # Finite-state synthesis of triangle disk gadgets
 
+2026-09-12 topology completeness 續作見 [topology_completeness.md](topology_completeness.md)。annulus 切割與端點環序的紙上論證已落盤；`AttachmentEndpoints.lean` 已證環序到 `AnnulusAccept` 的編譯步驟。一般 embedding 到該環序尚未 Lean 化，原 topology 信任邊界不變。
+
 2026-09-11。延續 [gadgets.md](gadgets.md) 的固定 grammar：
 
 ```text
