@@ -2,6 +2,21 @@
 
 更新：2026-09-12。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
+## 2026-09-12 最新：pp-expression 層
+
+使用者接續要求採用 CSP pp-definability 的下一步；已實作小型 JSON pp 公式，
+以明確具名自由／存在變數與 EQ、NEQ、catalog 完整 relation 的原子合取求值。
+見 [pp_relations.md](pp_relations.md) 與 `scripts/pp_relations.py`。
+本輪以 R767 條件查詢、同 C5 投影、R91∩R935 及無解例子驗證；
+`scripts/check_pp_relations.py` 的 106 個公式與七個不合法輸入案例通過。
+結論是 **computationally observed**，沒有新增 pp 層的 Lean soundness 證明。
+原子保留既有 graph／geometry witness 的來源與 hashes；合成幾何仍 unchecked。
+
+公式、結果與獨立 replay 在 `artifacts/pp_relations/`。未重跑原始枚舉，未啟動
+雙 C5／一般 transducer 搜尋或 topology completeness。下方「暫停並 commit + push」
+是前一階段歷史停止點；使用者已要求將本輪 pp 變更 commit／push。接手先讀新 pp 文件，
+再依需求讀下面原有 boundary relation 背景。
+
 ## 2026-09-12 新方向：五邊形內部與同一 C5 的條件強迫庫
 
 使用者已啟動新研究：把內部 K3 換成五邊形 12345 加 13、14，結果見

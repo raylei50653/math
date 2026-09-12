@@ -1,5 +1,9 @@
 # 完整 boundary relation 與同一 C5 上的條件 pair forcing
 
+後續已加入 [pp-expression 層](pp_relations.md)：把完整 relation 原子、共同條件
+及存在量化存成公式，獨立 replay R767 與 R91∩R935。新 Python 層為
+computationally observed，與本文既有 Lean 定理及幾何證據分開。
+
 2026-09-12。使用者指定：先建立 generic boundary relation；本輪只實作／驗證
 **同一個有序 C5** 上的 pair forcing。Pairwise relation 必須由完整 relation 投影，
 不得反向以 pair constraints 代表完整狀態。不實作兩個 C5 的串接或一般 transducer。
