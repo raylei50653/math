@@ -11,7 +11,9 @@ import Math.GeometryWitness
 The low-degree branch of the geometry-to-Hall bridge: if any interior vertex has at
 most one attachment, only a pinned pair can reject, and all rejected unique positions
 lie in the common neighbours of the other two interior vertices. `RunOK` bounds that
-intersection by two. The branch with all three degrees at least two remains open. -/
+intersection by two. This file closes the low-degree branch; the complementary
+all-degrees-at-least-two branch is closed in `GeoRejectBridge`, yielding the full
+rejection-profile bound. -/
 
 namespace FiveBoundary.Hall
 open ColorDFA GeometryDFA Finset
