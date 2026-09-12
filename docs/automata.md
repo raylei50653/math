@@ -178,7 +178,7 @@ GeoReject  w u   := (∃ k ≠ k', SeesAll k ∧ SeesAll k')          -- witness
 | `runOK_profile_ge_three_of_low_degree` | 經 `threeProfile_eq_geo`，此分支至少接受三個三色 orbit。 |
 | `runOK_large_rejection_cases` | 若 `|R| ≥ 3`，degree multiset 只能是 `(2,2,2)`、`(2,2,3)`、`(2,2,4)`、`(2,3,3)`。這四型由 `∀ k, d_k ≥ 2` 與 `Σ_k d_k ≤ 8` 的普通算術證明得到。 |
 
-**完整 bridge 仍未封口。** 接下來須用 block／winding 排除前三種 degree 型的 `|R| ≥ 3`，並對 `(2,3,3)` 證 `|R| ≤ 3`、等於 3 時為 cyclic 3-interval。已證的四型 reduction 是必要條件，沒有證明四型都能有三個拒絕位置。現有的 `z5_profiles_checked` 仍是完整目標的 native 有限檢查，不能用它代替這段結構證明。
+**本節記錄 2026-09-11 的中間狀態；完整 bridge 已於 2026-09-12 封口（見下節）。** 當時 接下來須用 block／winding 排除前三種 degree 型的 `|R| ≥ 3`，並對 `(2,3,3)` 證 `|R| ≤ 3`、等於 3 時為 cyclic 3-interval。已證的四型 reduction 是必要條件，沒有證明四型都能有三個拒絕位置。現有的 `z5_profiles_checked` 仍是完整目標的 native 有限檢查，不能用它代替這段結構證明。
 
 驗證：完整 `lake build` 通過（8789 jobs），`lake env lean Math/AutomataAudit.lean` 通過；新增主要定理只依賴 `propext / Classical.choice / Quot.sound`，實際輸出已更新至 `artifacts/automata/lean-audit.txt`。沒有重跑搜尋或 generated data。
 
@@ -190,19 +190,27 @@ GeoReject  w u   := (∃ k ≠ k', SeesAll k ∧ SeesAll k')          -- witness
 
 `AttachmentNormalForm.lean` 已普通證明 `AnnulusAccept w ↔` 三-block necklace `0^a 1^b 2^c` 旋轉後切成五個無重複 packet 所生成的 word。定義只含 orientation、block 長度、offset、五個切段長度，不含 run 或 Hall；反向證明重建 fan rotations。`a,b,c` 恰為 degrees。min-degree ≥ 2 時，packets 只有空、singleton 或順向 pair，每種 pair 最多一次；共同鄰居 ≤ 1 是此 normal form 的 corollary，度數滿足 singleton 數加左右 shared-junction 指示值的公式。
 
-`NormalFormHall.geoReject_iff_pair_or_opposite` 對所有 accepting words 排除兩個涉及 unique 位置的 triple witnesses，只剩 pair witness 與 `∀ k, HitsOdd ∧ HitsEven`。完整拒絕集合界與 cyclic 3-interval 尚未證，十二種形狀的窮盡性也尚未 Lean 化。下一步從 normal-form 參數完成幾何分型，不以十二類觀察或 native profile 檢查代替結構證明。
+`NormalFormHall.geoReject_iff_pair_or_opposite` 對所有 accepting words 排除兩個涉及 unique 位置的 triple witnesses，只剩 pair witness 與 `∀ k, HitsOdd ∧ HitsEven`。後續 `GeoRejectBridge.lean` 已證完整拒絕集合界與 cyclic 3-interval（見下節）。十二種形狀的窮盡性仍未 Lean 化，也不是 bridge 的前提。
 
 ## Incidence 與飽和 cyclic normal form（2026-09-12）
 
 `AttachmentSignature.lean` 從 normal-form packet alphabet 證 `Z+X+E=5`、`X+2E=A`，再推出六種 incidence regimes。`A=8` 恰為三個 junction 全共享、兩個 singleton、無空 boundary。
 
-`AttachmentSaturated.lean` 普通證明三個 junction 的循環順序與中間 gap 的 singleton 類型，得到雙向 normal form `01 · [1]^y · 12 · [2]^z · 20 · [0]^x`。此核心 theorem 不依賴 boundary 長度；C5 飽和時 x+y+z=2，給出同一 block 放兩個 singleton 或兩個 block 各放一個的兩種配置。沒有枚舉 words 或 packet 排列。其餘五個 regimes 的完整環序分型、整體十二類窮盡性與 |R| 的最終 corollary 仍未完成。詳見 [attachment_normal_form.md](attachment_normal_form.md)。
+`AttachmentSaturated.lean` 普通證明三個 junction 的循環順序與中間 gap 的 singleton 類型，得到雙向 normal form `01 · [1]^y · 12 · [2]^z · 20 · [0]^x`。此核心 theorem 不依賴 boundary 長度；C5 飽和時 x+y+z=2，給出同一 block 放兩個 singleton 或兩個 block 各放一個的兩種配置。沒有枚舉 words 或 packet 排列。後續 `AttachmentGaps.lean`／`AttachmentOrder.lean` 已補齊其餘 regimes 的環序，`GeoRejectBridge.lean` 已證 |R| corollary；整體十二類窮盡性仍未證。詳見 [attachment_normal_form.md](attachment_normal_form.md)。
+
+## Geometry normal form → GeoReject 已封口（2026-09-12）
+
+**proved in Lean**：`Math/GeoRejectBridge.lean` 的 `runOK_rejection_le_three` 證 `RunOK → |R|≤3`；`runOK_three_rejection_structure` 證等號時 degree 型為 `(2,3,3)`，degree 2 的鄰居是 `{t,t+1}`，且 `R={t+2,t+3,t+4}`。`normalForm_rejection_bound` 直接從 attachment normal form 得到 bound 與 cyclic 3-interval。
+
+證明使用 normal form 已推出的 fan ≤ 2、共同鄰居 ≤ 1，以及 attachment budget。degree 2 頂點限制 `R` 在其三個非鄰居內；非相鄰的 degree 2 attachment 只能給至多一個 opposite witness，加至多一個 pair witness，故不能有三個拒絕。無 attachment-word 枚舉、無十二類窮盡性假設、無 native profile 依賴。
+
+經 `threeProfile_eq_geo`，`runOK_profile_ge_two` 與 `runOK_two_profile_adjacent` 證至少接受兩個三色 orbit、恰兩個時為原 boundary 標號上的相鄰對。這將先前 Z5 的 profile 大小／最小形狀觀察提升為此 grammar 下的結構定理；21 種 profile 的可實現性統計與十二類 shape quotient 仍各自維持原信任分類。一般 disk completeness 仍 unresolved。證明細節見 [attachment_normal_form.md](attachment_normal_form.md)。
 
 ## 檔案與重現
 
 * `scripts/triangle_automata.py`：產生 `artifacts/automata/`（words、disk embeddings、disk states、Z5 profiles、T4 pairs、五台 Nerode 機、pair machine、summary 與 sha256）。
 * `scripts/check_automata.py`：不 import 產生器的獨立 replay：暴力 Σ、NetworkX apex 測試、`PlanarEmbedding.check_structure` 與 face traversal、Nerode 分割重算、pair machine 轉移與 live set 重算、Hall witness 對照、hash。
-* `Math/ColorDFA.lean`、`Math/GeometryDFA.lean`、`Math/HallTriangle.lean`、`Math/AttachmentBlock.lean`、`Math/GeometryWitness.lean`、`Math/AttachmentBudget.lean`、`Math/GeometryProfile.lean`、`Math/AttachmentNormalForm.lean`、`Math/NormalFormHall.lean`、`Math/AttachmentSignature.lean`、`Math/AttachmentSaturated.lean`、`Math/AutomataReplay.lean`、`Math/AutomataAudit.lean`。
+* `Math/ColorDFA.lean`、`Math/GeometryDFA.lean`、`Math/HallTriangle.lean`、`Math/AttachmentBlock.lean`、`Math/GeometryWitness.lean`、`Math/AttachmentBudget.lean`、`Math/GeometryProfile.lean`、`Math/AttachmentNormalForm.lean`、`Math/NormalFormHall.lean`、`Math/GeoRejectBridge.lean`、`Math/AttachmentSignature.lean`、`Math/AttachmentSaturated.lean`、`Math/AutomataReplay.lean`、`Math/AutomataAudit.lean`。
 
 ```bash
 uv run --with networkx==3.5 python scripts/triangle_automata.py

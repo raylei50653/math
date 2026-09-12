@@ -207,10 +207,35 @@ V 中 [q+1] 至少一個，W 中 [q+2] 至少一個
 
 空 packet 的位置保留。連同三-junction 分支，六種 incidence regimes 現在都有參數化環序結果；這不等於 D5×S3 quotient 的十二類唯一代表或窮盡性定理。
 
-## 下一步與信任範圍
+## Geometry normal form → GeoReject bridge（2026-09-12）
 
-下一步從已證的一／兩／三 junction 幾何 normal forms 推拒絕集合的 corollary：完整 `|R| ≤ 3`，且 `|R| = 3` 時 R 為 cyclic 3-interval，目前仍未證。`rejectionSet` 現有結果是低 degree 分支的 `≤ 2` 與四種 degree 型 reduction。不要重做已完成的三個 scalar regimes。前輪 read-only 分類的 12 個 D5×S3 shape classes 作為整體仍是 **computationally observed**；不要把它們當作證明前提，也不要重新盲枚舉 words。
+**proved in Lean**：`Math/GeoRejectBridge.lean` 完成完整上界與等號結構。所有結論以 `RunOK w ρ` 為前提；`normalForm_rejection_bound` 另直接以 `AttachmentNormalForm w` 為前提。
 
-本文件所有列名定理都是無 `sorry`、無 `native_decide` 的 Lean 證明；局部 Fin 3 packet 事實使用 kernel `decide`。完整依賴見 `artifacts/automata/lean-audit.txt`。normal form 與 `AnnulusAccept` 的等價不補上「任意 disk embedding ⇒ AnnulusAccept」的 topology completeness，也不建立 grammar 外的 graph-wiring soundness。
+| 定理 | 結論 |
+| --- | --- |
+| `runOK_rejection_le_three` | `|rejectionSet w| ≤ 3`。 |
+| `runOK_three_rejection_degrees` | `|R|=3` 時有一個 degree 2 頂點，其餘兩個 degree 都是 3。 |
+| `runOK_three_rejection_structure` | `|R|=3` 時存在 k、t，`N_k={t,t+1}`，其餘 degree 為 3，且 `R={t+2,t+3,t+4}`。保留原 C5 標號。 |
+| `normalForm_rejection_bound` | normal form ⇒ `|R|≤3`，等號時 `R={t,t+1,t+2}`。 |
+| `runOK_profile_ge_two` | 至少接受兩個三色 orbit。 |
+| `runOK_two_profile_adjacent` | 恰好接受兩個時，`threeProfile w={t,t+1}`。 |
+
+證明用 normal form 已推出的 fan 大小 ≤ 2 與共同鄰居 ≤ 1，無須再展開六種環序或十二類 shape：
+
+1. 低 degree 分支沿用原有 `|R|≤2`。其餘分支由總 attachment ≤ 8 得到一個 degree 2 頂點 k。
+2. `rejectionSet_subset_compl_of_degree_two` 證 `R⊆N_kᶜ`。在 `N_k` 上，pair witness 必須使用其餘兩點，造成三點 fan；opposite triple witness 則使 k 看到三類，需要 degree ≥ 3。兩者都矛盾，因此 `|R|≤3`。
+3. 等號迫使 `R=N_kᶜ`。若還有第二個 degree 2 頂點，其鄰居集也等於 `Rᶜ`，共同鄰居便有兩個，違反 normal form。再用總數 ≤ 8 得到 `(2,3,3)`。
+4. k 的兩個 attachment 若不相鄰，局部 C5 位置算術給出 opposite witness 至多一個位置；pair witness 位於另外兩點的共同鄰居，也至多一個。故此時 `|R|≤2`，等號 3 只能出現在相鄰 attachment，其補集正是 cyclic 3-interval。
+5. 由既有 `threeProfile_eq_geo` 轉回染色語意，得到 profile 的兩個 corollaries。
+
+`nonadjacent_opposite_le_one` 僅對兩個 `Fin 5` boundary indices 的位置算術用 `decide +kernel`；未枚舉 attachment words，未引用 `z5_profiles_checked` 或十二類觀察。
+
+## 尚未完成與信任範圍
+
+整體 12 個 D5×S3 shape classes 的窮盡性仍為 **computationally observed**；本 bridge 不需要此分類。一般 disk embedding ⇒ `AnnulusAccept` 的 topology completeness 仍為 **unresolved**，本輪不將結論外推到任意 disk patch。
+
+本文件所有列名定理都是無 `sorry`、無 `native_decide` 的 Lean 證明；局部 Fin 3 packet 與 Fin 5 位置事實使用 kernel `decide`。完整依賴見 `artifacts/automata/lean-audit.txt`。normal form 與 `AnnulusAccept` 的等價不補上「任意 disk embedding ⇒ AnnulusAccept」的 topology completeness，也不建立 grammar 外的 graph-wiring soundness。
 
 2026-09-12 驗證：`AttachmentOrder.lean` 已納入 `Math.lean`；補上兩處計數證明的 `List.count_nil` 簡化後，完整 `lake build` 通過（8795 jobs，仍有 linter warnings）。`lake env lean Math/AutomataAudit.lean` 通過；新增八項主要定理的依賴均限於 `propext / Classical.choice / Quot.sound`，沒有 native 依賴。實際審計輸出已更新至 `artifacts/automata/lean-audit.txt`。
+
+2026-09-12 bridge 驗證：完整 `lake build` 通過（8796 jobs；新檔無警告，既有 `AttachmentOrder` linter warnings 保留）。`lake env lean Math/AutomataAudit.lean` 通過；新增 12 個定理的公理依賴均為 `propext / Classical.choice / Quot.sound`，沒有 `sorryAx` 或 native 依賴。實際輸出已更新至 `artifacts/automata/lean-audit.txt`。沒有重跑 word 枚舉或 topology 診斷。

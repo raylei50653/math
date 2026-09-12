@@ -14,13 +14,13 @@
 
 2026-09-12 最新：attachment geometry 的 cut-necklace normal form 已雙向 Lean 封口；本輪又完成 **incidence 六種 regime 與飽和分支的 cyclic normal form**。`Math/AttachmentSignature.lean` 證 `(E,X,Z)`（shared junction／singleton／空 boundary 數）只可能是 `(1,4,0),(2,2,1),(2,3,0),(3,0,2),(3,1,1),(3,2,0)`。`A=8` 當且僅當 `(E,X,Z)=(3,2,0)`。
 
-`Math/AttachmentSaturated.lean` 普通證明：三種 junction 都出現、各 packet 非空且 Nodup 時，one-turn ⇔ cyclic word 為 `01 · [1]^y · 12 · [2]^z · 20 · [0]^x`。這個 list theorem 不限制 boundary 長度；C5 飽和時再得到 `x+y+z=2`。因此 degree 型 `(4,2,2)`／`(2,3,3)` 的 singleton 配置與環序都已從幾何推得。**續作 `Math/AttachmentGaps.lean` 已完成三 junction 含空 boundary 的雙向環序：`01 · U · 12 · V · 20 · W`，三段各只允許空 packet 或 singleton 1／2／0，保留原空位。C5 時三段總長為 2，singleton 數加空位數為 2。一／兩 junction 的三個 regimes 也已由下段 AttachmentOrder 涵蓋；下一步推 GeoReject corollary，不要重做環序分支。**
+`Math/AttachmentSaturated.lean` 普通證明：三種 junction 都出現、各 packet 非空且 Nodup 時，one-turn ⇔ cyclic word 為 `01 · [1]^y · 12 · [2]^z · 20 · [0]^x`。這個 list theorem 不限制 boundary 長度；C5 飽和時再得到 `x+y+z=2`。因此 degree 型 `(4,2,2)`／`(2,3,3)` 的 singleton 配置與環序都已從幾何推得。**續作 `Math/AttachmentGaps.lean` 已完成三 junction 含空 boundary 的雙向環序：`01 · U · 12 · V · 20 · W`，三段各只允許空 packet 或 singleton 1／2／0，保留原空位。C5 時三段總長為 2，singleton 數加空位數為 2。一／兩 junction 的三個 regimes 也已由下段 AttachmentOrder 涵蓋；GeoReject bridge 現已完成（見下段），不要重做環序分支。**
 
-`Math/AttachmentOrder.lean` 已完成一／兩 junction 的三個 regimes（**proved in Lean**）：`one_junction_normalForm` 給出 `(1,4,0)` 的 C5 形式；`two_junction_cyclic_gaps` 與 `two_junction_gap_inventory` 涵蓋 `(2,2,1)`、`(2,3,0)`，保留空 boundary 位置。六種 incidence regimes 的參數化環序均已涵蓋，下一步是從這些 normal forms 推 GeoReject corollary，不要重做環序分支。
+`Math/AttachmentOrder.lean` 已完成一／兩 junction 的三個 regimes（**proved in Lean**）：`one_junction_normalForm` 給出 `(1,4,0)` 的 C5 形式；`two_junction_cyclic_gaps` 與 `two_junction_gap_inventory` 涵蓋 `(2,2,1)`、`(2,3,0)`，保留空 boundary 位置。六種 incidence regimes 的參數化環序均已涵蓋，後續 GeoReject bridge 現已完成（見下段），不要重做環序分支。
 
-`NormalFormHall.geoReject_iff_pair_or_opposite` 已是第一個幾何 corollary，排除 unique triple witnesses；完整 `|R| ≤ 3` 與等號時 cyclic 3-interval 仍未證。`rejectionSet` 目前只有低 degree 的 `≤ 2` 與四種 degree 型 reduction。整體十二類 D5×S3 shape 的窮盡性仍是 **computationally observed**，不能當作已證前提。詳見 [attachment_normal_form.md](attachment_normal_form.md)。
+**2026-09-12 最新 bridge 已完成（proved in Lean）**：`Math/GeoRejectBridge.lean` 從 normal form 的 fan ≤ 2、共同鄰居 ≤ 1 與 attachment budget 推出 `runOK_rejection_le_three`。`runOK_three_rejection_structure` 證 `|R|=3` 時 degree 型為 `(2,3,3)`，degree 2 的鄰居為 `{t,t+1}`，`R={t+2,t+3,t+4}`。`normalForm_rejection_bound` 直接以 `AttachmentNormalForm` 為前提。另證 `runOK_profile_ge_two` 與 `runOK_two_profile_adjacent`。不需展開十二類 shape、不枚舉 words，也不引用 native profile 檢查。十二類窮盡性仍是 computationally observed，topology completeness 仍 unresolved。詳見 [attachment_normal_form.md](attachment_normal_form.md)。
 
-本輪已將 `AttachmentOrder.lean` import 進 `Math.lean`，並修正其兩處計數證明缺少 `List.count_nil` 的簡化步驟；`lake build` 通過（8795 jobs，仍有 linter warnings）。公理審計已加入一／兩 junction 的主要定理。沒有重跑 word 枚舉或拓撲診斷；先前完整證書 replay、拓撲診斷及決定性重跑的結果見階段報告。
+2026-09-12 bridge 驗證：完整 `lake build` 通過（8796 jobs；新檔無警告，既有 `AttachmentOrder` linter warnings 保留）。`lake env lean Math/AutomataAudit.lean` 通過；新增 12 個定理的公理依賴均為 `propext / Classical.choice / Quot.sound`，沒有 `sorryAx` 或 native 依賴。實際輸出已更新至 `artifacts/automata/lean-audit.txt`。沒有重跑 word 枚舉或 topology 診斷。
 
 ## 1. 使用者要求與禁止事項
 
@@ -230,6 +230,8 @@ EQ 圖 K5−xy 自身 planar，但 x,y 不可能同面；若同面便能加 xy �
 
 **2026-09-11 normal form 續作**：`annulusAccept_iff_normalForm` 與 nondegenerate 版本已證；singleton／shared-junction incidence 公式、pair 唯一性、min-degree ≥ 2 時共同鄰居 ≤ 1 已證。`geoReject_iff_pair_or_opposite` 是第一個以該幾何層為前提的拒絕 corollary。所有新主要定理無 native 依賴。具體參數、雙向證法、具名定理與未解邊界見 [attachment_normal_form.md](attachment_normal_form.md)。
 
+**2026-09-12 bridge 封口**：上述 §7.3 的「下一步」與未封口敘述是歷史進度。現在 `GeoRejectBridge.lean` 已證完整 bound、等號 degree／cyclic interval 結構與 profile corollaries。證明只需 normal form 的 incidence corollaries，未逐型展開環序；一般 disk completeness 與 grammar 外 topology soundness 仍未證。
+
 ## 8. 檔案導航
 
 | 檔案 | 接手時看什麼 |
@@ -251,6 +253,7 @@ EQ 圖 K5−xy 自身 planar，但 x,y 不可能同面；若同面便能加 xy �
 | `Math/GeometryProfile.lean` | 低 degree 時 `|R| ≤ 2`、profile ≥ 3，以及 `|R| ≥ 3` 的四種 degree 型 reduction；無 native |
 | `Math/AttachmentNormalForm.lean` | cut-necklace normal form 雙向等價、packet alphabet／junction 唯一性、degree incidence、min-degree ≥ 2 的交集界 ≤ 1；不 import Hall |
 | `Math/NormalFormHall.lean` | normal form ⇒ 排除兩個涉及 unique 位置的 triple Hall witnesses |
+| `Math/GeoRejectBridge.lean` | 完整 `|R|≤3`、等號 `(2,3,3)` 與 cyclic 3-interval、profile ≥ 2 與等號相鄰對 |
 | `Math/AttachmentSignature.lean` | packet inventory、六種 incidence regimes、飽和時三 junction 加兩 singleton、兩種 degree 型 |
 | `Math/AttachmentGaps.lean` | 三 junction 含空位的雙向 gap normal form；C5 gap 長度與 empty／singleton inventory |
 | `Math/AttachmentSaturated.lean` | 三 junction 的 cyclic order、constant gaps、雙向 normal form，以及 C5 飽和時 x+y+z=2 |
@@ -293,4 +296,4 @@ python3 scripts/export_certificates.py --split --namespace FiveBoundary.GadgetTa
 
 ## 可貼給新對話的起始訊息
 
-> 請先讀 `/home/ray/math/docs/HANDOFF.md` 與 `docs/attachment_normal_form.md`。依使用者要求先 geometry normal form，再推 GeoReject corollary。`AttachmentNormalForm.lean` 已證 AnnulusAccept ⇔ cut-necklace normal form；nondegenerate packet 只有空／singleton／順向 pair。最新 `AttachmentSignature.lean` 已把 (junction,singleton,empty) 數縮到六種 regime；`AttachmentSaturated.lean` 已普通證明三 junction、無空 packet 的 cyclic normal form `01 · [1]^y · 12 · [2]^z · 20 · [0]^x`，在 C5 八條 attachment 時 x+y+z=2。三 junction 加空 boundary 也已由 `AttachmentGaps.lean` 雙向封口，且保留原空位；下一步處理剩下三種 regime 的環序（一 junction `(1,4,0)`、兩 junction `(2,2,1)`／`(2,3,0)`），再推 |R| ≤ 3 與 cyclic 3-interval。不要把十二類觀察當前提，不重跑 word 枚舉，不假設四色定理或 disk completeness。
+> 請先讀 `/home/ray/math/docs/HANDOFF.md` 與 `docs/attachment_normal_form.md`。geometry normal form → GeoReject bridge 已完成，見 `Math/GeoRejectBridge.lean`：`RunOK` 下 `|R|≤3`；等號時 degree 型 `(2,3,3)`、R 為 cyclic 3-interval；threeProfile 至少兩個，恰兩個時相鄰。證明用 normal form 的 fan／共同鄰居界與 attachment budget，不引用十二類觀察或 native profile 檢查。六種 incidence regimes 的環序也均已證，不要重做。一般 disk embedding ⇒ AnnulusAccept 的 topology completeness、grammar 外 topology soundness 與整體十二類 quotient 分類仍未證；後續方向由使用者指定，不自動轉到 C6／C7 idea 或搜尋。

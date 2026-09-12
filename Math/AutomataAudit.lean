@@ -10,6 +10,7 @@ import Math.GeometryWitness
 import Math.GeometryProfile
 import Math.AttachmentNormalForm
 import Math.NormalFormHall
+import Math.GeoRejectBridge
 import Math.AttachmentSaturated
 import Math.AttachmentGaps
 import Math.AttachmentOrder
@@ -78,3 +79,15 @@ import Math.AttachmentOrder
 #print axioms FiveBoundary.GeometryDFA.NecklaceCuts.two_junction_cyclic_gaps
 #print axioms FiveBoundary.GeometryDFA.NecklaceCuts.one_junction_normalForm
 #print axioms FiveBoundary.GeometryDFA.NecklaceCuts.two_junction_gap_inventory
+#print axioms FiveBoundary.Hall.runOK_exists_degree_two
+#print axioms FiveBoundary.Hall.rejectionSet_subset_compl_of_degree_two
+#print axioms FiveBoundary.Hall.runOK_rejection_le_three
+#print axioms FiveBoundary.Hall.rejectionSet_eq_compl_of_three
+#print axioms FiveBoundary.Hall.runOK_three_rejection_degrees
+#print axioms FiveBoundary.Hall.nonadjacent_opposite_le_one
+#print axioms FiveBoundary.Hall.rejectionSet_subset_opposite_union_common
+#print axioms FiveBoundary.Hall.runOK_three_rejection_adjacent
+#print axioms FiveBoundary.Hall.runOK_three_rejection_structure
+#print axioms FiveBoundary.Hall.runOK_profile_ge_two
+#print axioms FiveBoundary.Hall.runOK_two_profile_adjacent
+#print axioms FiveBoundary.Hall.normalForm_rejection_bound
