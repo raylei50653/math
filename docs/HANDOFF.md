@@ -1,6 +1,76 @@
 # 新對話交接：四色 boundary-state／constraint gadget 研究
 
-更新：2026-09-12。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
+更新：2026-09-13。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
+
+## 最新停止點：等待使用者整理數據
+
+使用者要求「先到這」，本輪完成交接後 commit + push，研究暫停。
+接手先讀 [討論表示法](state_language.md) → [可重驗觀察表](../artifacts/state_views/examples.md)
+→ [局部封環研究](local_closure.md)。等待使用者提供整理後的數據或指定問題，
+不要自動開新搜尋、擴充活動面 grammar、研究博弈策略，或繼續下方歷史 fan 5 工作。
+
+目前可用：圖介面分離與完整關係替換的 Lean 證明、固定端點非交叉路徑的摘要定理與有限分類、
+多起點分支／接合／預選／強迫的統一表示法，以及同一 C5 的具體觀察表。
+一般移動前緣的充分幾何狀態仍未建立；State／Choice 是討論規格，不能當已實作的通用引擎。
+所有 proved in Lean、computationally observed 與 conjectured 邊界見各文件。
+
+本輪驗證已完成：`lake build`（新模組無 warning；既有 AttachmentOrder warnings）、
+`lake env lean Math/LocalClosureAudit.lean`（輸出在 `artifacts/local_closure/lean-audit.txt`，
+無 sorryAx／native 公理）、兩個 Python `--check`、文件連結與 `git diff --check`。
+沒有待續的背景研究或待補的數學驗證；後續修改才需依範圍重驗。
+
+重現入口：
+
+```bash
+python scripts/local_closure.py --check
+python scripts/state_views.py --check
+lake build
+lake env lean Math/LocalClosureAudit.lean
+```
+
+可貼給接手者：
+
+> 先讀 docs/HANDOFF.md 最新停止點、docs/state_language.md、artifacts/state_views/examples.md。
+> 我正在整理數據，先使用既有表示法理解接下來提供的材料。研究目前暫停，不自動擴大枚舉、
+> 開活動面 grammar 或博弈控制。染色完整關係與幾何合法性分開；Choice 是替代方案，join 是同時約束。
+
+## 2026-09-13 討論表示法與觀察表
+
+使用者要求先整理表述，方便討論多起點延伸、接合、預選分化與狀態強迫。
+統一入口：[state_language.md](state_language.md)，採 `Interface / State / Branch / Choice` 四個物件，
+以及 `condition / split / join / forget / query / compat / view` 七個動詞。
+明確區分替代選擇 Choice、限制同時成立 join、已證等效才合併的 deduplicate。
+這是表示法規格；一般幾何 State／Choice API 尚未實作，不能把候選摘要當已證充分狀態。
+
+[狀態觀察表](../artifacts/state_views/examples.md) 可直接看完整色型、相容矩陣與條件強迫。
+`python scripts/state_views.py --check` 以既有 loader 核對 catalog，重算七份狀態、四個接合格，
+用全域色置換展開的 labeled rows 重驗交集、條件化與 query，逐 byte 比對文件。
+本輪只有表示法文件與觀察表工具，沒有新圖搜尋／Lean 定理；幾何仍分別標示。
+
+## 2026-09-13 局部封環與固定端點接線：第一輪
+
+後續提問：週期／博弈式控制依使用者要求僅記為未來注意事項，見 `local_closure.md` §8，不啟動該研究線。
+
+使用者提出施工邊界內凹、局部封環及有限狀態問題，授權開始研究。
+新入口：[local_closure.md](local_closure.md)。原 fan 5 停止點保留為另一研究線，沒有開始 fan 6。
+
+**proved in Lean（普通證明）：** `Math/LocalClosure.lean` 的實際 simple-graph 接合
+`summary_glue`、任意 separated graph context 的 `replacement`、正確消去／空關係剪枝、
+`relation_count` = $2^{4^k}$、degree-two path 色中性與 hub 的缺色條件。
+`Math/LocalWiring.lean` 對 fixed-endpoint pairwise-conflict grammar 證明 forbidden-set
+摘要更新封閉、全部未來 context 等價 iff 摘要相等，並實例化交錯 chord grammar。
+
+**computationally observed：** 固定 3／4／5／6 個有序端點的非交叉路徑插入 grammar，
+活 residual 1／3／11／45 類（含可達 dead：1／4／12／46）。全 support、轉移與 separator replay。
+C4 wheel 封閉中心留下「不能用滿四色」，84→60 個賦色，但所有 pair projections 相同。
+P=0–x–2、Q=1–y–3 與共同 T=0–z–2 的四份完整染色關係皆為 84；P+T 可同側，Q+T 有交錯／apex K5 subdivision 障礙。
+具体圖著色、座標與 subdivision 檢查已完成；topology implication 未 Lean 化。
+
+重現：`python scripts/local_closure.py --check`、`lake build`、
+`lake env lean Math/LocalClosureAudit.lean`；artifact 在 `artifacts/local_closure/`。
+**沒有主張**任意 disk patches 或移動前緣的幾何有限 signature。
+下一個有意義的擴充是活動面上的 introduce／close／forget，先檢驗新增端點與面資訊的必要性；
+不直接擴大枚舉，不把固定端點純插入模型當一般施工模型。
 
 ## 2026-09-12 Lean 補件：strip 圖語義與 residual 類數下界
 
@@ -16,7 +86,7 @@ disk embedding。細節與信任邊界見 [研究文件 §9i](stepwise_state_suf
 重現：`python scripts/export_stepwise.py --check`、`lake build`、`lake env lean Math/StripGraphAudit.lean`
 （審計輸出 `artifacts/stepwise/lean-strip-audit.txt`）。
 
-## 本輪 commit 的接手入口
+## 歷史：2026-09-12 fan 5 接手入口（目前不自動續作）
 
 **目前主線：fan 5 的雙側接合，不要開始 fan 6。** 先讀本節及下方雙側摘要，
 再讀 [研究文件 §9h](stepwise_state_sufficiency.md#9h-fan-5-雙側接合437-個完整-residual成熟部分-25-類)。
@@ -542,6 +612,6 @@ python3 scripts/export_certificates.py --split --namespace FiveBoundary.GadgetTa
 
 避免直接建立 4^(5+k) 個完整 coloring 的大 Finset；使用已證等價的 split-interior checker。若在 `∀ b` 中重複計算同一 `splitSigma`，應先 `let actual := ...`。要檢查少數 Links 時用 `List.all`，不要透過 `∀ links ∈ list` 讓 native 決定程序枚舉整個 Links 型別。不要同時啟動會寫同一個 `.olean` 的多個 `lake build`。
 
-## 可貼給新對話的起始訊息
+## 歷史：較早的 C5 catalog 起始訊息（最新入口見文件頂端）
 
 > 請先讀 `/home/ray/math/docs/HANDOFF.md` 最上方最新停止點、`docs/boundary_relations.md` 與 `docs/fan_pentagon.md`。目前已完成內部五邊形加 13、14 的完整搜尋：87 個 exact Σ（原 K3 是 42），以及 generic full boundary relation 和同一有序 C5 上的條件 pair forcing 庫。完整 relation 是唯一主狀態，先套用共同條件、再投影；不得反過來用 pair constraints 代表完整狀態。750 條條件規則、211,410 個 pair 查詢與 3,828 個 aligned meet 已獨立重驗；Lean 已證泛型法則及 pair projections 相同但 conditional forcing 不同的具體反例。普通證明、native finite checks、外部計算／幾何證據分開標示。入口是 `Math/BoundaryRelations.lean`、`Math/C5PairForcing.lean`、`scripts/boundary_relations.py` 和 `scripts/c5_relation_library.py`。使用者要求先暫停並 commit + push，沒有待完成驗證或背景程序。先使用既有 catalog，不自動重跑枚舉；下一個研究問題尚未指定，不自動開雙 C5 串接、一般 transducer、更多頂點搜尋或重啟歷史 topology completeness 工作。

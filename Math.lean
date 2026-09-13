@@ -28,3 +28,5 @@ import Math.StepwiseState
 import Math.StripGraph
 import Math.StepwiseGenerated
 import Math.StepwiseReplay
+import Math.LocalClosure
+import Math.LocalWiring
