@@ -466,3 +466,152 @@ uv run --with rustworkx==0.17.1 python scripts/c5_cell_reduced.py --k 6 --jobs 3
 `sigma_bridge.json`：十 bit 的規格、逐域覆蓋與逐 bit 比對結果（§0.4）；bridge 只讀 `cells.json`，不寫它。
 `--quick` 寫的是 `sigma_bridge_quick.json`（$k=0..2$ 全宇宙＋$k=2,3$ DFS＋catalogue＋case＋30 個隨機 graph），
 不會覆蓋完整報告。
+
+## 9. Reduced DFS 的完整性證明（嚴格限制在 `c5_cell_reduced.py` 的 R1+SYM search path）
+
+使用者提問：核對 `scripts/c5_cell_reduced.py` 的 R1+SYM DFS 是否真的完整——即每一個
+「degree $\ge4$」（R1-倖存）的 unlabeled 內部圖，DFS 是否保證至少走訪並記錄一個標號代表。
+本節**只**證明這件事，不碰 R2、`enumerate_reduced` 的前綴平行化與 §6.0 前提表格第 3 項
+（程式實作本身沒有 bug）、也不碰 $K_6=K_5$。證明是普通數學論證（鴿籠＋二進位單調＋對程式結構的
+直接歸納），**不是 Lean**；§7.2 已指出的「SYM 鴿籠步驟未 Lean 化，只用窮舉 checker 驗證」現在多了
+一條與 $k$ 無關的一般證明（下面的引理 2），但仍未寫進 `Math/SymRelabel.lean`。
+
+### 9.0 記號（對齊 `block_edge_order`／`viable`／`_dfs`，L49–L130）
+
+固定 $k$。`block_edge_order(k)`（L49–59）把 $E=5+5k+\binom k2$ 條邊排成：索引 $0..4$ 是 5 條
+chords；然後對 $m=0,\dots,k-1$ 依序 append 區塊 $m$，佔索引 $[\mathrm{first}_m,\mathrm{last}_m]$：
+先 5 個 attachment bit（偏移 $i$ ↔ 邊 $(i,x_m)$，$i=0..4$，$x_m:=5+m$），再 $m$ 個 back-edge bit
+（偏移 $l$ ↔ 邊 $(x_l,x_m)$，$0\le l<m$）。對 mask $M\in\{0,1\}^E$（等同 $U(k)$ 的一個邊子集）定義：
+
+* $a_m(M):=(M\gg\mathrm{first}_m)\bmod32$ —— 區塊 $m$ 的 5-bit attachment 值，即 `att_value(M,m)`（L79–81）；
+* $\mathrm{touch}_m\subset\{0,\dots,E-1\}$ —— 與 $x_m$ 相連的**全部**邊索引（區塊 $m$ 自己的 attachment／
+  back-edge bit，加上所有 $m'>m$ 的區塊裡 $(x_m,x_{m'})$ 那個 back-edge bit），這是 `_W['touch'][m]`（L73），
+  與 $M$ 無關、只依賴 $k$；$d_m(M):=\mathrm{popcount}(M\wedge\mathrm{touch}_m)$ 是 $x_m$ 在 $M$ 裡的 degree；
+* $\mathrm{R1}(M)$：$d_m(M)\ge4$ 對每個 $m$；$\mathrm{SYM}(M)$：$a_0(M)\ge a_1(M)\ge\cdots\ge a_{k-1}(M)$；
+* relabelling：對 $\rho\in\mathrm{Sym}(\{0,\dots,k-1\})$，$\rho\cdot M$ 是把每個內部頂點 $x_m$ 改名成
+  $x_{\rho(m)}$（boundary $0..4$ 與 chords 不動）後得到的邊子集，重新用同一套 $U(k)$ 座標表示。
+
+**觀察 0（DFS 不變量）。** 在 `_dfs(mask,start,stop,...)`（L115–130）的 for 迴圈跑到變數 $e$ 時，
+`mask` 的位元 $<e$ 已經「決定」（本次或祖先呼叫加入的記為 1，跳過的記為 0），位元 $\ge e$ 恆為 0——
+因為 mask 只在遞迴進入下一層（`mask | 1 << e`）時才會把位元 $e$ 設成 1，而下一層的 `start` 一定是
+$e+1$，故任何已設為 1 的位元索引必 $<$ 目前呼叫關心的 loop 變數。對呼叫深度歸納即得。
+`viable(mask,e)`（L84–96）的每一次呼叫都在此不變量下發生。
+
+### 9.1 引理 1（attachment mask 的搬運，對應提問 1）
+
+對任意 $\rho\in S_k$ 與任意 $M$，$a_{\rho(m)}(\rho\cdot M)=a_m(M)$（從而 $d_{\rho(m)}(\rho\cdot M)=d_m(M)$）
+對每個 $m$ 成立。
+
+**證明。** $a_m$ 只讀「boundary 頂點 $i$（$i=0..4$）是否與 $x_m$ 相鄰」這五個 bit；relabelling 逐點固定
+boundary（只改內部頂點的名字），所以「$i$ 與新頂點 $x_{\rho(m)}$ 相鄰」等價於「$i$ 與舊頂點 $x_m$ 相鄰」——
+這正是 `Math/SymRelabel.lean` 已證的 `relabel_adj`（$(relabel\,\pi\,G).Adj\,u\,v\iff G.Adj(\pi u,\pi v)$）
+取 $u=i$（$\pi$ 固定的 boundary 點）、$v=x_m$ 的直接特例，該檔案 §3 的註解已指出這條推論但未展開；
+這裡把它在 reduced enumerator 自己的座標系（block edge order，`att_value` 讀的座標）裡寫出來。
+degree 版本同理：$\mathrm{touch}_m$ 的每條邊（boundary–interior 或 interior–interior）在 relabelling 下
+逐條搬到 $\mathrm{touch}_{\rho(m)}$ 的對應邊（$\rho$ 是雙射，interior–interior 邊 $(x_l,x_m)$ 搬到
+$(x_{\rho(l)},x_{\rho(m)})$ 仍是合法邊），故整個鄰域搬運，popcount 不變。$\blacksquare$
+
+### 9.2 引理 2（非遞增代表必存在，對應提問 2）
+
+對任意 $M$，存在 $\rho\in S_k$ 使 $\mathrm{SYM}(\rho\cdot M)$ 成立；且 $\rho\cdot M$ 與 $M$ 同為
+apex-planar、同滿足或同不滿足 $\mathrm{R1}$（即 $\rho\cdot M$ 仍是合法圖，且是否 R1-倖存不變）。
+
+**證明。** 取 $\rho^{-1}$ 為把數列 $(a_0(M),\dots,a_{k-1}(M))$ 排成非遞增的任一置換（任何有限整數
+數列都可排序；同分時任取一種破法，例如原索引小者排前面）。由引理 1（$m:=\rho^{-1}(j)$ 代入
+$a_{\rho(m)}(\rho\cdot M)=a_m(M)$），$a_j(\rho\cdot M)=a_{\rho^{-1}(j)}(M)$，故
+$a_0(\rho\cdot M)\ge a_1(\rho\cdot M)\ge\cdots\ge a_{k-1}(\rho\cdot M)$，即 $\mathrm{SYM}(\rho\cdot M)$。
+$\mathrm{R1}$ 部分由引理 1 的 degree 版本（$d_m$ 的多重集不變，R1 是「每個都 $\ge4$」，與標號無關）。
+apex-planarity 不變是因為 relabelling 只是把圖的頂點重新命名（boundary 與 apex 完全不動的圖同構），
+不改變「加上 apex 是否平面」這個與標號無關的性質。$\blacksquare$
+
+（這比 §7.2／`c5_sym_check.py` 的 `A3` 多了一步：`A3` 只在小 $k$ 的全宇宙上窮舉驗證存在性；
+這裡的排序論證對任意 $k$ 都成立，是一般數學事實，不需要窮舉。它仍然只是普通證明，不是 Lean。）
+
+### 9.3 引理 3（區塊定案結構，對應提問 4）
+
+`block_edge_order` 依 $m=0,1,\dots,k-1$ 依序 append 區塊，故 $\mathrm{first}_m$ 嚴格遞增，且
+$\mathrm{first}_m=\mathrm{last}_{m-1}+1$。因此對任意 $e$ 與任意 $m$，只要 $\mathrm{first}_m<e$
+（即 `viable` 的迴圈跑到了 $m$）：區塊 $0,\dots,m-1$（連同 5 條 chords）的所有邊索引都 $<e$。
+
+**證明。** 直接由構造：$\mathrm{first}_m<e\Rightarrow\mathrm{last}_{m-1}=\mathrm{first}_m-1<e$，
+而區塊 $0,\dots,m-1$ 的索引都 $\le\mathrm{last}_{m-1}$（區塊依 $m$ 遞增排列）。$\blacksquare$
+
+**推論（程式假設的「已定案／尚可改變」）。** 在觀察 0 的不變量下，只要 $\mathrm{first}_m<e$，
+`att_value(mask,m-1)`（L94 讀的值）就是**任何**與 mask 在 $[0,e)$ 一致的延伸圖裡 $x_{m-1}$ 的
+**最終**值——因為區塊 $m-1$ 已整段 $<e$、不會再被改變；而 `att_value(mask,m)` 只是延伸圖裡 $x_m$
+最終值的一個**下界**（區塊 $m$ 裡 $\ge e$ 的位元目前讀作 0，延伸可能把某些改成 1，二進位值只增不減）。
+這正是程式（L94 的比較只對 $m-1$ 用「確定值」、對 $m$ 用「目前值」）默認、也是使用者第 4 點要求核對的
+不對稱假設；引理 3 證明了它成立。
+
+### 9.4 命題 4（early-prune 的可靠性，對應提問 3）
+
+在觀察 0 的不變量下，若 `viable(mask,e)`（L84–96）回傳 `False`，則不存在任何延伸
+$M\supseteq(\mathrm{mask}\cap[0,e))$（即 $M$ 在 $[0,e)$ 上與 mask 相同，$[e,E)$ 任意）同時滿足
+$\mathrm{R1}(M)$ 與 $\mathrm{SYM}(M)$。
+
+**證明。** `viable` 對每個 $\mathrm{first}_m<e$ 的 $m$ 有兩種可能觸發 `False` 的條件（L92、L94）：
+
+**(a)** $\mathrm{popcount}(\mathrm{mask}\wedge\mathrm{touch}_m)+\mathrm{undecided}_m(e)<4$，其中
+$\mathrm{undecided}_m(e):=\mathrm{popcount}(\mathrm{touch}_m\gg e)$ 是 $\mathrm{touch}_m$ 裡位置 $\ge e$
+的位元數。任意延伸 $M$ 的 $d_m(M)=\mathrm{popcount}(M\wedge\mathrm{touch}_m)\le
+\mathrm{popcount}(\mathrm{mask}\wedge\mathrm{touch}_m)+\mathrm{undecided}_m(e)<4$（$M$ 在 $\ge e$ 部分
+至多把那 $\mathrm{undecided}_m(e)$ 個位元全設成 1）。故每個延伸都有 $d_m(M)<4$，$\mathrm{R1}$ 對每個
+延伸都失敗。
+
+**(b)** $m\ge1$ 且 $a_m(\mathrm{mask})>a_{m-1}(\mathrm{mask})$。由引理 3 的推論：對任意延伸 $M$，
+$a_{m-1}(M)=a_{m-1}(\mathrm{mask})$（區塊 $m-1$ 已定案）；而 $a_m(M)\ge a_m(\mathrm{mask})$（把 mask 在
+區塊 $m$ 裡 $\ge e$ 的 0 位元換成 $M$ 的值，二進位值只增不減）。故
+$a_m(M)\ge a_m(\mathrm{mask})>a_{m-1}(\mathrm{mask})=a_{m-1}(M)$，每個延伸都在 $(m-1,m)$ 處違反
+$\mathrm{SYM}$ 的非遞增要求。
+
+兩種情形都得出「每個延伸都違反 R1 或 SYM」。`_dfs` 在 `viable` 回傳 `False` 時直接 `return`（L120–122），
+放棄該呼叫剩下所有 $e'\ge e$ 的兩個分支（加入／不加入邊 $e'$），上面的論證涵蓋了**所有**這些分支，
+故此剪枝不會漏掉任何合法完成。$\blacksquare$
+
+### 9.5 定理 5（完整性，對應提問 5）
+
+設 $\hat G$ 是任一 R1-倖存的 unlabeled 內部圖（某個標號 $M$ apex-planar 且 $\mathrm{R1}(M)$ 成立）。
+則存在一個標號代表 $M^*$（同構於 $\hat G$，且 $\mathrm{SYM}(M^*)$ 成立）使得 reduced DFS 必定走訪到它，
+並在 `_record`（L99–112）把它計入 `per_sigma`。
+
+**證明。** 由引理 2 取 $M^*:=\rho\cdot M$，$\mathrm{SYM}(M^*)$、$\mathrm{R1}(M^*)$、apex-planarity 皆成立。
+對每個 $e=0,\dots,E$ 令 $\mathrm{mask}_e:=M^*\cap[0,e)$；證明 `viable(mask_e,e)` 恆真（$e=E$ 時
+$\mathrm{undecided}_m(E)=0$，即完整版 R1+SYM 檢查）：
+
+* (a) 型：$d_m(M^*)\ge4$（R1），而 $d_m(M^*)\le\mathrm{popcount}(\mathrm{mask}_e\wedge\mathrm{touch}_m)
+  +\mathrm{undecided}_m(e)$（$M^*$ 本身就是命題 4(a) 論證裡的一個延伸），故該和 $\ge4$，(a) 不觸發。
+* (b) 型：由引理 3，$a_{m-1}(\mathrm{mask}_e)=a_{m-1}(M^*)$；又 $a_m(\mathrm{mask}_e)\le a_m(M^*)$
+  （把 $M^*$ 在區塊 $m$ 裡 $\ge e$ 的位元清成 0，二進位值只減不增）。由 $\mathrm{SYM}(M^*)$，
+  $a_m(M^*)\le a_{m-1}(M^*)$，串起來 $a_m(\mathrm{mask}_e)\le a_{m-1}(\mathrm{mask}_e)$，(b) 不觸發。
+
+故 `viable` 在通往 $M^*$ 的整條軌跡上都真，DFS 不會提前剪掉這條路徑（命題 4 是唯一的剪枝點）。
+平面性檢查（L126）在刪邊下單調（$M^*$ 加 apex 平面 $\Rightarrow$ 其任何邊子集加 apex 也平面），故每當
+軌跡需要「加入」$M^*$ 的某位元時 `rx.is_planar` 必真、遞迴得以深入；需要「排除」時迴圈原地繼續到下一個
+$e$，同樣不受影響。因此軌跡必然抵達 `mask=M*, start=E` 的呼叫，其 `_record` 開頭的
+`viable(M*,E)` 守門（即完整版 R1+SYM 檢查，就是上面兩點取 $e=E$ 本身）為真，$M^*$ 被計入
+`per_sigma`。$\blacksquare$
+
+### 9.6 結論與界線
+
+合併引理 1、2、命題 4、定理 5：R1+SYM 剪枝的 reduced DFS，對每一個 R1-倖存的 unlabeled 內部圖，
+都保證至少走訪並記錄一個 SYM（attachment mask 非遞增）意義下的標號代表；因此它輸出的「新 Σ」
+（不在 $K_{k-1}$ 裡的 Σ）集合，在「R1 保 Σ」這個前提（§6.0 前提 1，已 Lean 化）之下是完整的——
+這把 §6.0 前提表格裡「2b SYM 的鴿籠步驟」與「3 程式正確實作 `viable`／`block_edge_order`／`_dfs`」
+兩項，從「窮舉 checker 在小 $k$ 經驗驗證」提升為對這三個函式本身的直接數學證明。
+
+**仍未涵蓋、本節刻意不碰的部分：**
+
+* **R2**（`r2_reduction`、§6 的分隔環規則）——完全不同的論證（Lean `replacement` + 目錄自舉），
+  本節未動。
+* **前綴平行化**（`enumerate_reduced` 的 `dfs_prefix` 切 `PREFIX` 再丟給 `Pool`／`_task`，L161–199）——
+  `_task` 從某個 `viable` 已驗證過的前綴節點 `(mask,prefix)` 出發、以 `_dfs(mask,prefix,E,...)` 續跑，
+  結構上與單一行程的 `_dfs` 遞迴完全相同（只是把某個深度以下的子樹搬到另一個行程執行），本節的論證
+  逐字適用於每個子樹；但「`dfs_prefix` 枚舉的節點集合恰好覆蓋單行程 DFS 在該深度會產生的所有節點、
+  互不重複」這件事本身沒有在此重新證明（它是純粹的樹狀切割，不涉及 R1/SYM）。
+* **`compat_tables`／`surviving` 對 Σ 的計算是否正確**——那是 §0 bridge（`c5_sigma_bridge.py`）的範圍，
+  與 R1/SYM 剪枝正交（DFS 走到哪個 mask，Σ 怎麼從沿路的 AND 算出來，是兩件不同的事）。
+* **$K_6=K_5$、$K_7=K_5$**——仍需要額外引用 R1 的 Lean 引理（`sigma_eq_delete_private`）把「新 Σ 只能
+  來自 R1-倖存者」與本節的「R1-倖存者的新 Σ 全部被走訪到」接起來；本節只證明後半。
+* 本節的證明是**普通數學論證**（鴿籠排序、二進位單調、對 `block_edge_order` 構造的直接歸納），
+  **未寫成 Lean**；引理 1 對應 `Math/SymRelabel.lean` §3 註解裡點名「未形式化」的 `attMask` 搬運事實，
+  這裡把它在 reduced enumerator 的座標系裡寫出證明，但仍是普通證明，不是 `.lean` 檔案裡的定理。
