@@ -1179,6 +1179,114 @@ python scripts/stepwise_layer_refinement.py          # 約 4 秒，寫 artifacts
 python scripts/stepwise_layer_refinement.py --check  # 重算並逐 byte 比對
 ```
 
+## 9k. Obstruction／recovery map：$(3,3,3)$ 起出現的 trap 是什麼、在別的形狀能不能穩定找到
+
+**computationally observed（同 §9j 模型；31 個形狀完整枚舉；尚未 proved in Lean）**。2026-09-13。
+問題：$(3)^n$ 的 trap 類數 $24(n-1-h)2^{n-2-h}$ 看起來指數多，它們是不是少數幾種 obstruction schema 加整數參數？
+在別的形狀有沒有同樣的結構？以及 $Q=W_\forall\,\dot\cup\,R\,\dot\cup\,\mathrm{trap}_h\,\dot\cup\,\mathrm{dead}$（$R=W_\exists\setminus W_\forall$，$I=Q\setminus W_\exists$）各層之間怎麼走。
+腳本 `scripts/stepwise_trap_structure.py`，artifact `artifacts/stepwise/trap_structure.json`。
+
+### A. 唯一的機制：forced cone 裡的預定碰撞
+
+$(3)^n$ 的每個非邊界頂點 $R_r[i]$ 有鄰居 $R_{r-1}[i],R_{r-1}[i+1],R_{r-1}[i+2],R_r[i-1]$，其中
+$R_{r-1}[i],R_{r-1}[i+1],R_r[i-1]$ 兩兩相鄰、恆為三色，所以
+
+$$R_r[i]=\operatorname{comp}(R_{r-1}[i],R_{r-1}[i+1],R_r[i-1])\quad\text{（第四色）},\qquad
+\text{合法}\iff R_{r-1}[i+2]\ne R_r[i].$$
+
+於是**每一列都由下一列與自己的左鄰居決定**，唯一的自由是邊界 $b_{t+1}\in\{b_{t-1},u_{t-2}\}$（repeat／new 兩步）。
+從 configuration $(L_{t-1},L_t)$ 往前傳播「三個已知鄰居 ⇒ 第四色被迫」得到 **forced cone**：
+列 $r$ 在層 $\le t+r$ 的值、列 $r$ 在層 $\le t+r-1$ 的合法性，都與未來的邊界選擇無關。
+cone 裡有頂點四個鄰居已知且四色 ⇒ 該局面最多再走到那一層之前（sound）。
+在 $(3)^n$（$n\le6$）逐一 assert：**每個穩態 configuration 的 horizon 恰等於 cone 第一個碰撞層減一**，
+即 $I=\{\text{cone 有碰撞}\}$；dead 是碰撞在層 $t+1$，trap$_h$ 是碰撞在層 $t+h+1$。
+碰撞永遠是同一種：列 $r-1$ 三個連續頂點三色、列 $r$ 的左鄰居是第四色。
+
+### B. $(3)^n$ 的 trap schema：一個剛性 pattern $P_h$、一個放置位置、其他列自由
+
+對每個 trap 取 cone 裡第一個碰撞的頂點（恰一個），記其列為 $r$。全部 $n\le6$ 逐類 assert：
+
+- horizon $h$ 的 trap 的碰撞列 $r$ 取遍 $[h+2,n]$；每個 $(h,r)$ 恰 $24\cdot2^{n-2-h}$ 類、每類 1 個 raw configuration、$2^{n-2-h}$ 個 $S_4$ orbit。
+  所以 $24(n-1-h)2^{n-2-h}=\sum_{r=h+2}^{n}24\cdot2^{n-2-h}$：因子 $(n-1-h)$ 是放置位置數，$2^{n-2-h}$ 是不參與的 $n-h-2$ 列各 2 種著色，24 是換色。
+- 把 configuration 限制到列 $r-h-2,\ldots,r$（$h+3$ 列 × 2 層），同一 $(h,r)$ 的全部成員在 $S_4$ 下**只有一個 pattern** $P_h$，且與 $r$、$n$ 無關；
+  $P_h$ 就是 $(3)^{h+2}$ 唯一的 horizon-$h$ orbit。
+- $P_h$ 的形狀（列 $0$ 為 $(A,B)$）：舊層那一欄在列 $0..h+1$ 交替 $A,B,A,B,\ldots$、頂列是第三色；
+  新層那一欄在列 $0$ 為 $B$、列 $1..h+1$ 在 $\{C,D\}$ 交替、頂列被迫。
+  例：$P_1=\begin{smallmatrix}0&1\\1&2\\0&3\\2&1\end{smallmatrix}$，$P_2=\begin{smallmatrix}0&1\\1&3\\0&2\\1&3\\2&0\end{smallmatrix}$，$P_3=\begin{smallmatrix}0&1\\1&2\\0&3\\1&2\\0&3\\2&1\end{smallmatrix}$（列由下往上寫，每列 = (舊層, 新層)）。
+- 走一步：trap$(h,r)$ 的兩個後繼都是 trap$(h-1,r)$，**死的是同一個頂點**（邊界選擇可能在同一層再添一個碰撞）；
+  所以剛性部分每步往上移一列、最底列被釋放。horizon 增長不是新機制，是同一個碰撞被埋在更多被迫列之下。
+- horizon 1 的可讀規則（echo）：在 cone 裡，$R_{r-2}(t+1)=R_{r-1}(t)$ 且 $R_r(t+1)=R_{r-2}(t)$（層 $t+1$ 的被迫值回響層 $t$ 的已承諾值），$r\in[3,n]$；
+  逐 configuration assert「horizon $=1$ ⇔ 活且恰有一個 $r$ 命中」。
+  $(3,3,3)$ 的座標版本（$x=(b_{t-1},u_{t-3},v_{t-5},w_{t-7};\,b_t,u_{t-2},v_{t-4},w_{t-6})$）：
+  令 $U=\operatorname{comp}(b_{t-1},b_t,u_{t-2})$、$V=\operatorname{comp}(u_{t-3},u_{t-2},v_{t-4})$、$W=\operatorname{comp}(v_{t-5},v_{t-4},w_{t-6})$（被迫的 $u_{t-1},v_{t-3},w_{t-5}$），
+  dead ⇔ $U=V$ 或 $V=W$；**trap ⇔ 活且 $U=v_{t-4}$ 且 $W=u_{t-2}$**（此時 $v_{t-2}=\operatorname{comp}(u_{t-2},U,V)$ 撞上被迫的 $w_{t-4}$）。
+  384 個穩態 configuration 逐一驗證：264 viable、24 trap、96 dead。
+
+回答第 1、2 個問題：$(3)^n$ 的 trap 只有**一種** collision type；behavioural class 數無界是因為（放置列 $r$、horizon $h$、換色、不相干列的 $2^{n-h-2}$ 種著色）這些參數，
+機制本身有限。
+
+### C. 別的形狀：certificate 穩定嗎
+
+把同一 cone 當 certificate 跑 31 個形狀（§9j 的 16 個加 $(2,3,3),(3,3,2),(3,2,3,3),(3,3,2,3),(2,3,3,3),(2,2,3,3),(3,2,2,3),(3,4),(4,3),(3,3,4),(4,3,3),(3,4,3),(4,4,4),(2,3,4),(3,2,4)$）：
+
+| 形狀 | trap（horizon：類數） | 純 cone 精確 | 需要的內部 case split 數（依 horizon） |
+|---|---|---|---|
+| $(3)^n$, $n\le6$ | $h\le n-2$ | 是 | 0 |
+| $(3,2,3),(3,3,2),(3,2,2,3)$；$(4),(5),(6),(7),(4,4),(5,5),(4,3),(4,3,3),(4,4,4)$ | 無 | 是 | 0 |
+| $(3,4),(3,4,3)$ | 無 | 是 | dead 需 0–1 |
+| $(3,3,4)$ | 1：24 | 是 | dead 0–1；$h{=}1$ 需 2 |
+| $(2,3,3)$ | 1：24 | 否 | dead 1；$h{=}1$ 需 2 |
+| $(3,2,3,3)$ | 1：96、2：48 | 否 | $h{=}1$ 需 1–3；$h{=}2$ 需 5 |
+| $(3,3,2,3)$ | 1：72 | 否 | 1–2 |
+| $(2,3,3,3)$ | 1：120、2：24 | 否 | 2；3 |
+| $(2,2,3,3)$ | 1：72、2：48 | 否 | 3–4；6 |
+| $(2,3,4)$ | 1：24 | 否 | 3 |
+| $(3,2,4)$ | 1：48 | 否 | 5 |
+| $(2,4)$ | 無 | 否（48 個 dead 不是單點碰撞） | dead 需 1–2 |
+
+fan-2 列的頂點只有三個鄰居，通常不被迫；但只要允許對**內部**頂點做 case split（選項集取「已知鄰居禁用色的補集」，是真實選項的超集，所以判死仍 sound；
+**邊界頂點永不分支**），certificate 在全部 31 個形狀上與真實 horizon 逐 configuration 相等。
+即：所有觀察到的 trap／dead 都由內部列決定，邊界的自由選擇從不參與判死；fan-3 的 trap 是「零分支」的特例，fan-2 列把同一機制變成有限個二選一的分支。
+lookahead 固定為（列數 + 3）層。
+
+### D. Recovery map：$W_\forall\to R\to I$ 單向
+
+類層級的 $Q=W_\forall\,\dot\cup\,R\,\dot\cup\,\mathrm{trap}_h\,\dot\cup\,\mathrm{dead}$，$R$ 上的 $b(q)=|\mathrm{Succ}(q)|$、$g(q)=|\{a:T(q,a)\in W_\exists\}|$、$\rho=g/b$，
+以及以 $K=W_\forall$ 為目標的 backward basin $d_K$：
+
+| 形狀 | $W_\forall$ | $R$ | trap | dead | $R$ 的 $(b,g)$ 分佈 | $d_K$ |
+|---|---:|---:|---|---:|---|---|
+| $(3,3)$ | 24 | 24 | — | 1 | $(2,1)$×24 | 全部 $\infty$ |
+| $(3,3,3)$ | 48 | 72 | 24 | 1 | $(2,1)$×72 | 全部 $\infty$ |
+| $(3^4),(3^5),(3^6)$ | 96, 192, 384 | 168, 360, 744 | 120, 408, 1176 | 1 | 全部 $(2,1)$ | 全部 $\infty$ |
+| $(3,2,3)$ | 72 | 96 | — | 1 | $(2,1)$×48, $(2,2)$×24, $(4,2)$×24 | 全部 $\infty$ |
+| $(3,2,2,3)$ | 216 | 336 | — | 1 | $(2,1),(2,2),(4,2)$×96, $(4,4),(6,6)$×24 | 全部 $\infty$ |
+| $(2,3,3)$ / $(2,3,3,3)$ / $(2,2,3,3)$ | 72 / 144 / 216 | 48 / 144 / 96 | 24 / 144 / 120 | 1 | $g=1$，$b\in\{2,4,6\}$ | 全部 $\infty$ |
+| $(3,2,3,3)$ / $(3,3,2,3)$ | 144 / 144 | 216 / 216 | 144 / 72 | 1 | $(2,1)$×168, $(2,2)$×24, $(4,2)$×24 | 全部 $\infty$ |
+| fan $\ge4$ 的 15 個形狀 | **0** | 全部活類 | 0 或 24–48 | 1 | $g=1$（$(2,4)$：$b=4,6$；$(2,3,4)$：$b$ 到 12） | 無目標 |
+
+讀法：
+
+1. **$R$ 從不回到 $W_\forall$**（31 個形狀全部 `robust_reachable_from_R = false`）：$W_\forall$ 的 backward basin 就是它自己。
+   三層之間只有 $W_\forall\to W_\forall$、$R\to R$、$R\to I$、$I\to I$；latent 的衝突一旦出現就永久存在，只能一直不觸發。
+2. **$(3)^n$ 的局部規則**（逐類 assert）：$W_\forall$ 的兩步都留在 $W_\forall$；$R$ 的 **repeat**（$b_{t+1}=b_{t-1}$）留在 $R$、**new**（$b_{t+1}=u_{t-2}$）必進 $I$。
+   所以 $\rho\equiv\frac12$，安全策略是「一旦不 robust，永遠 repeat」（§9j 的 $(3,3)$ B 族推廣到所有 $n$）；隨機走法在 $R$ 每步一半機會死，這就是 §9j 只看到 $W_\forall$ 的原因。
+3. **問題 5（只靠局部資訊避開 $I$）在 $(3)^n$ 成立**：$q\in I\iff\operatorname{cone}(q)$ 有碰撞、$q\in W_\forall\iff\operatorname{cone}(\mathrm{new}(q))$ 無碰撞（repeat 永遠安全），
+   cone 是 $O(n^2)$ 個頂點的無分支確定性傳播、lookahead $n-1$ 層；在含 fan-2 列的形狀要加內部分支，仍不看邊界。
+4. fan $\ge4$ 的形狀 $W_\forall=\varnothing$，$R=W_\exists$ 整個；每類至少一步致命且只有一步安全（$g=1$），$b$ 可到 12（$(2,3,4)$），$\rho$ 最低 $1/12$。
+   這裡沒有 recovery 問題，只有每步都必須選對的問題。
+
+### 驗證範圍與重現
+
+- 31 個形狀：cone 與 split certificate 逐穩態 configuration 對真實 horizon；$(3)^n$：碰撞唯一、$(h,r)$ 分組計數、限制 pattern 唯一且等於 $P_h$、$P_h$ 形狀、後繼保持碰撞頂點、echo 規則；
+  $(3,3,3)$ 座標規則逐 configuration；repeat／new 表逐類；recovery map 逐類。
+- **沒有主張**：一般 $n$ 的證明、任意平面圖、環形版本、存在性 residual 的對應、Lean。
+
+```bash
+python scripts/stepwise_trap_structure.py          # 約 3 秒，寫 artifacts/stepwise/trap_structure.json
+python scripts/stepwise_trap_structure.py --check  # 重算並逐 byte 比對
+```
+
 ## 10. 目前可以說的話（第七次修正後）
 
 1. **命名已固定**：指定方向首次遇到其他顏色的順序為 $b,c,d$。同一重命名必須同時作用於狀態與後綴。
@@ -1211,6 +1319,12 @@ python scripts/stepwise_layer_refinement.py --check  # 重算並逐 byte 比對
    strategy core（$\exists$ 安全步）與 robust core（$\forall$ 步安全）不同，fan $\ge4$ 的 robust core 為空。
    長路徑樣本只看到 robust core。$(3)^n$ 的計數律（活類 $12n2^{n-1}$ 等）只在 $n\le6$ 觀察到。
 
+9. **computationally observed（§9k，obstruction／recovery map）**：$(3)^n$ 的 trap 只有一種機制——forced cone 裡的預定碰撞
+   （列 $r-1$ 三色窗口 + 列 $r$ 左鄰居第四色）；horizon-$h$ trap = 剛性 pattern $P_h$（$(3)^{h+2}$ 唯一的 horizon-$h$ orbit）放在列 $r-h-2..r$，
+   其他列自由，計數律 $24(n-1-h)2^{n-2-h}$ 由此解釋，走一步 = 同一碰撞的 $P_{h-1}$。
+   cone certificate 在 $(3)^n$ 精確；加內部（永不邊界）case split 後在 31 個形狀精確。
+   $R=W_\exists\setminus W_\forall$ 從不回到 $W_\forall$；$(3)^n$ 上 repeat 永遠安全、new 從 $R$ 必進 $I$。
+
 ## 11. 需要的資料與下一步
 
 1. **C6–C8 的 patch 庫**：C5 的 window 與全前綴最多差一個頂點；要看局部性是否隨環長恢復需要更長的環。repo 沒有，需推廣 fan_pentagon 搜尋器。
@@ -1229,8 +1343,8 @@ python scripts/stepwise_layer_refinement.py --check  # 重算並逐 byte 比對
    與 fan 4／5 的 residual 下界。尚未做：六個對齊自動機的循環證書實例化 `pumped_distinction`、
    雙側 437 類重放、表格轉移的 soundness（上界）。
 
-6. **§9j 之後**：(a) 把 $(3,3,3)$ 以上的 orbit 圖與 trap 命名成可讀規則（目前只有 $(3)$、$(3,3)$ 有逐類驗證的規則），
-   並嘗試證明 $(3)^n$ 的計數律；(b) 在同一分層框架下比較「承諾內部色」與「存在性內部色」的 core（前者的 $W_\exists$ 投影到邊界字是否等於後者的活類）；
+6. **§9j 之後**：(a) 已在 §9k 完成 trap 的命名（$P_h$ 放置 + echo 規則）與計數律的結構解釋（仍是有限 $n$ 的觀察，未證一般 $n$）；
+   剩下 $W_\forall$ 與 $R$ 本身的可讀規則（$(3)^n$ 上是「new 之後的 cone 有無碰撞」，還沒有座標式）與 fan-2 形狀的 split pattern 命名；(b) 在同一分層框架下比較「承諾內部色」與「存在性內部色」的 core（前者的 $W_\exists$ 投影到邊界字是否等於後者的活類）；
    (c) 引入環形（分隔圈）版本時，兩層局部性只能來自非分隔的層，需另定模型；(d) Lean 化 constraint-map 定理的一般形式（$k$ 層局部 ⇒ 辨識深度 $\le k$）。
 
 待釐清 1 已部分回答（8.2）；待釐清 2、3 未動。

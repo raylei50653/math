@@ -72,6 +72,24 @@ P=0–x–2、Q=1–y–3 與共同 T=0–z–2 的四份完整染色關係皆�
 下一個有意義的擴充是活動面上的 introduce／close／forget，先檢驗新增端點與面資訊的必要性；
 不直接擴大枚舉，不把固定端點純插入模型當一般施工模型。
 
+## 2026-09-13 Obstruction／recovery map：$(3,3,3)$ 起的 trap 結構（§9k）
+
+新增 `scripts/stepwise_trap_structure.py` → `artifacts/stepwise/trap_structure.json`（約 3 秒，`--check` 逐 byte 比對），
+研究文件 [§9k](stepwise_state_sufficiency.md#9k-obstructionrecovery-map333-起出現的-trap-是什麼在別的形狀能不能穩定找到)。
+同 §9j 模型，31 個形狀（原 16 個 + 含 fan-2 列／fan-4 頂列的 15 個）。
+
+**computationally observed**：
+
+- $(3)^n$ 非邊界列全由下一列與左鄰居決定（$\operatorname{comp}$ 規則），自由只在邊界的 repeat／new 兩步。
+  forced cone（三個已知鄰居 ⇒ 第四色）是精確的 trap certificate：horizon = cone 第一個碰撞層 − 1，碰撞只有一種型態。
+- trap$(h)$ = 剛性 pattern $P_h$（$(3)^{h+2}$ 唯一的 horizon-$h$ orbit，$h+3$ 列）放在列 $r-h-2..r$、$r\in[h+2,n]$，其他列自由：
+  $24(n-1-h)2^{n-2-h}=\sum_r 24\cdot2^{n-2-h}$。走一步 = 同一碰撞頂點的 trap$(h-1,r)$。horizon 1 的 echo 規則與 $(3,3,3)$ 的座標規則逐 configuration 驗證。
+- 含 fan-2 列的形狀有 trap（$(2,3,3),(3,2,3,3),(2,2,3,3),\ldots$，horizon 到 2），純 cone 不精確；加上**只對內部頂點**的 case split（邊界永不分支）後 31 個形狀全部精確。
+- Recovery map：$R=W_\exists\setminus W_\forall$ 在 31 個形狀都不會回到 $W_\forall$；$(3)^n$ 上 $W_\forall$ 兩步都安全、$R$ 的 repeat 留在 $R$、new 必進 $I$（$\rho\equiv1/2$）。
+  fan $\ge4$ 的形狀 $W_\forall=\varnothing$、每類 $g=1$。
+
+**沒有主張**：一般 $n$、任意平面圖、環形、Lean。`check_stepwise.py` 已納入 6 個關鍵數字。
+
 ## 2026-09-13 兩層 raw configuration 的未來細分（committed-colour 分層 strip）
 
 新增 `scripts/stepwise_layer_refinement.py` → `artifacts/stepwise/layer_refinement.json`（約 4 秒，`--check` 逐 byte 比對），

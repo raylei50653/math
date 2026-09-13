@@ -77,6 +77,14 @@ RUNS = {
         ('shapes', 'fans24', 'orbits'),
         ('existential_comparison', 'fans23', 'fixed_point_depth'),
     ]),
+    'stepwise_trap_structure.py': ('trap_structure.json', [
+        ('shapes', 'fans333', 'recovery', 'counts'),
+        ('shapes', 'fans333333', 'certificates', 'cone_exact'),
+        ('shapes', 'fans3233', 'certificates', 'splits_needed_by_horizon'),
+        ('shapes', 'fans2233', 'recovery', 'counts', 'trap_by_horizon'),
+        ('nested_fan3', 'schema', 'per_depth', 'fans333333', 'total_traps'),
+        ('nested_fan3', 'fans333_rule', 'counts'),
+    ]),
 }
 SLOW_ONLY = {'stepwise_strip_width.py': ['fans2223', 'fans2224', 'fans2233']}   # absent from --fast reruns
 
