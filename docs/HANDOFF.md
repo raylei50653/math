@@ -2,7 +2,26 @@
 
 更新：2026-09-13。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：等待使用者整理數據
+## 最新停止點：R1 已 Lean 化
+
+使用者指定目前最該補的 Lean 是 R1（優先級明顯高於 SYM／enumerator bridge／R2）。
+已在 `Math/LocalClosure.lean` 證明：密封私有頂點 $\deg(v)\le 3$ 時
+
+\[
+\operatorname{Summary}(g,b)\iff\operatorname{Summary}(g-v,b),
+\]
+
+並推出 C5 形式 $\Sigma(G)=\Sigma(G-v)$。核心 lemma 是「cardinality $\le 3$ 的顏色集合必有剩餘色」；
+`two_step_free` 現在是它的 degree-2 特例。公理審計在 `artifacts/local_closure/lean-audit.txt`，
+無 `sorryAx`／native 公理。
+
+$K_6=K_5$、$K_7=K_5$ 現在少掉 R1 這個數學信任缺口；剩下最大的缺口是
+「Python reduced search 是否正確實作 R1+SYM」，以及仍未 Lean 化的 SYM。
+R2 的染色 replacement 已由既有 `replacement` 保證，disk／planarity 幾何條件仍留在拓撲信任層，不急著整塊 Lean 化。
+
+驗證：`lake build`、`lake env lean Math/LocalClosureAudit.lean`。沒有重跑 $k=6,7$ 搜尋。
+
+## 先前停止點：等待使用者整理數據
 
 使用者要求「先到這」，本輪完成交接後 commit + push，研究暫停。
 接手先讀 [討論表示法](state_language.md) → [可重驗觀察表](../artifacts/state_views/examples.md)
@@ -52,9 +71,11 @@ $|K_0..K_5|$ = 11／22／52／87／112／132；原 K3 grammar 42 個與五邊形
 把 $k=5$ 從 17 min 壓到 2.6 s、$k=6$ 66 s；$k\le5$ 新 Σ 與精確枚舉逐一相同。R2（長度 $\le5$ 分隔環、inside relation 有較小 disk
 實現；自舉自 C3／C4／C5 目錄）在 $k=3,4,5$ 恰好把「Σ 舊」倖存者全部約掉、「Σ 新」倖存者全部不可約。
 **$K_6=K_5=K_7=132$，但這是條件式結論（前提見 §7.0）：精確枚舉在 $k\ge6$ 不可行（$2^{50}$、$2^{60}$），
-$k=6,7$ 的數字全來自 reduced 搜尋，只在 R1 引理（內點 degree $\le3$ 可刪，有短證明、未 Lean 化）、SYM 標號正規化、
-以及「程式正確實作兩者」（只在 $k\le5$ 以精確枚舉驗證）都成立時有效。$K_\infty=K_5$ 更弱，仍是 conjectured。**
-沒有 Lean 證書。未做：把 R2 做成生成階段剪枝以攻 $k\ge8$、nested cell 的 annulus relation、從 strip grammar 自動抽可密封 5-cycle。
+$k=6,7$ 的數字全來自 reduced 搜尋。R1 引理（內點 degree $\le3$ 可刪）現已 Lean 化（`summary_eq_deletePrivate`、
+`sigma_eq_delete_private`）；仍依賴 SYM 標號正規化（未 Lean 化），以及「程式正確實作兩者」（只在 $k\le5$ 以精確枚舉驗證）。
+$K_\infty=K_5$ 更弱，仍是 conjectured。**
+未做：SYM 的 Lean 化、C5 enumerator ↔ 10-bit $\Sigma$ 語意 bridge、把 R2 做成生成階段剪枝以攻 $k\ge8$、
+nested cell 的 annulus relation、從 strip grammar 自動抽可密封 5-cycle。
 
 ```bash
 uv run --with rustworkx==0.17.1 --with networkx==3.5 python scripts/c5_cell_enumerator.py --k 5 --jobs 30
@@ -84,7 +105,8 @@ uv run --with rustworkx==0.17.1 python scripts/c5_cell_reduced.py --k 6 --jobs 3
 
 **proved in Lean（普通證明）：** `Math/LocalClosure.lean` 的實際 simple-graph 接合
 `summary_glue`、任意 separated graph context 的 `replacement`、正確消去／空關係剪枝、
-`relation_count` = $2^{4^k}$、degree-two path 色中性與 hub 的缺色條件。
+`relation_count` = $2^{4^k}$、degree-two path 色中性與 hub 的缺色條件，
+以及 R1：密封私有頂點 $\deg(v)\le 3$ 時 `summary_eq_deletePrivate`／C5 形式 `sigma_eq_delete_private`。
 `Math/LocalWiring.lean` 對 fixed-endpoint pairwise-conflict grammar 證明 forbidden-set
 摘要更新封閉、全部未來 context 等價 iff 摘要相等，並實例化交錯 chord grammar。
 

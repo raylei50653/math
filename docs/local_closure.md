@@ -45,6 +45,18 @@ $F$ 不可再讀取 $x$。所有仍會被將來的邊、預染色条件或共享
 這是所有 labeled relation tables 的數目，不是可實現 disk patches 的數目，也不表示需要枚舉全部 tables。
 全程 $k\le K$ 才得到統一有限的染色狀態空間；每一步有限、最外圈固定，都不足以證明施工前緣有统一界。
 
+**proved in Lean（普通證明）：** R1 `color_free_of_card_le_three`／`exists_colour_of_degree_le_three`／`summary_eq_deletePrivate`：
+
+\[
+v\in I,\ \deg(v)\le 3
+\Longrightarrow
+\operatorname{Summary}(g,b)\iff\operatorname{Summary}(g-v,b).
+\]
+
+核心是：最多三個鄰居最多使用三色，`Fin 4` 必有剩餘色。`two_step_free` 現在是這個引理在兩個禁用色時的特例。
+C5 形式 `sigma_eq_delete_private` 把同一事實寫成 $\Sigma(G)=\Sigma(G-v)$（$v$ 不在 boundary 像裡）。
+這只是染色摘要；不涉及平面、disk embedding，也不重證 `summary_glue`／`replacement`／`seal_future`。
+
 ## 2. 一個真正封閉局部環留下的高階條件
 
 取外環 $0$–$1$–$2$–$3$–$0$，內部中心 $x$ 接到全部四點。這是可直接畫在 disk 內的 wheel。
@@ -153,6 +165,7 @@ Support 的生成使用端點交錯，独立幾何 replay 使用整數 orientati
 
 **proved in Lean（普通證明）：** `two_step_free`、`path_network_free`：任意兩個端點色總有不同於兩者的第三色，
 任意多個獨立二邊路徑可同時延伸。因此這些路徑不對已給定的邊界色增加限制。
+`two_step_free` 由 `color_free_of_card_le_three` 推出；degree $\le 3$ 的密封內點刪除見 §1 的 R1。
 這是 path constraints 的泛型證明；本輪未把此特殊路徑圖 constructor 另連到 `Summary`。
 
 **computationally observed（整圖 replay）：** $P,Q,P+T,Q+T$ 全部有相同的 84 個完整 labeled boundary colorings。
@@ -178,7 +191,7 @@ lake build
 lake env lean Math/LocalClosureAudit.lean
 ```
 
-新 Lean 定理全部為普通證明（`two_step_free` 使用 kernel `decide`，不是 `native_decide`）；
+新 Lean 定理全部為普通證明（含 R1：`summary_eq_deletePrivate`、`sigma_eq_delete_private`）；
 公理審計輸出保存於 `artifacts/local_closure/lean-audit.txt`。無 `sorryAx` 或 native compiler axioms。
 Python 表格不是 Lean 的可信輸入，枚舉類數和具體 graph replay 仍標示 computationally observed。
 既有大型 catalog、strip 和 topology completeness 搜尋沒有重跑。

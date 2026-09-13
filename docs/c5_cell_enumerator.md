@@ -9,8 +9,8 @@ $$
 只把「內部對 C5 邊界造成的限制」暴露給外部，並為這個分解設計窮舉器。
 本文件是設計說明加第一輪 $k\le5$ 的精確枚舉、以及用 reduction 跳過 $k=6,7$ 的觀察；程式為
 `scripts/c5_cell_enumerator.py`（精確）與 `scripts/c5_cell_reduced.py`（reduction 版），
-產物在 `artifacts/c5_cells/`。所有數字都是 **computationally observed**，
-沒有新的 Lean 證書；引用到的 Lean 定理是既有的 `Math/LocalClosure.lean`。
+產物在 `artifacts/c5_cells/`。所有數字都是 **computationally observed**。
+R1（低度內點刪除保 $\Sigma$）已在 `Math/LocalClosure.lean` 證明；catalogue 計數本身沒有 Lean 證書。
 
 ## 1. 答案：可以，條件是「密封」與「C5 在內側是 face」
 
@@ -150,9 +150,9 @@ $(5,8)$ BAD。exact $T_4$ 需要 $3+3$，與先前 11 頂點結果一致。$k\le
 ## 5. 界線與後續
 
 * 精確枚舉止於 $k=5$（$2^{40}$）；$k=6,7$ **跑不動**，只有 §7 的 reduction 版，其「新 Σ 完整」是
-  條件式（§7.0：R1 引理＋SYM＋程式正確，只在 $k\le5$ 經驗驗證），labeled 計數在那個模式下也**不是**全宇宙計數。
+  條件式（§7.0：R1 已 Lean 化；仍依賴 SYM＋程式正確，只在 $k\le5$ 經驗驗證），labeled 計數在那個模式下也**不是**全宇宙計數。
   $k\ge8$ 需要把 R2 變成生成階段的剪枝，或改走 near-triangulation → 邊子集；未實作。
-* 沒有 Lean 證書；`--check` 以 NetworkX planarity 與全染色 brute force 獨立重驗每個 witness 的 Σ 與 disk 性質。
+* R1（低度內點刪除保 $\Sigma$）已有 Lean 證書；catalogue 本身與 $k=6,7$ reduced 搜尋沒有 Lean 證書。`--check` 以 NetworkX planarity 與全染色 brute force 獨立重驗每個 witness 的 Σ 與 disk 性質。
 * catalogue key 未取 D5 商（$k\le5$ 的 132 個 Σ 是 24 個 D5 orbits），與既有 library 慣例一致。
 * nested cell 的 annulus relation（十個 port）尚未枚舉；pp 求值器有十個變數的上限，剛好夠一層。
 * 內部非密封、或 C5 在內側非 face，都不是 cell；不得把 Σ 當成那些情況的充分狀態。
@@ -170,21 +170,21 @@ $k=7$ 是 $2^{60}$——**精確枚舉在 $k\ge6$ 是跑不動的**，不是慢�
 
 | # | 前提 | 狀態 |
 | --- | --- | --- |
-| 1 | **R1 引理**：內部頂點 $v$ 若 $\deg(v)\le3$，則 $\Sigma(G)=\Sigma(G-v)$ | 有短證明（見下），**未 Lean 化**；只對「內點」用，boundary 固定不動 |
+| 1 | **R1 引理**：內部頂點 $v$ 若 $\deg(v)\le3$，則 $\Sigma(G)=\Sigma(G-v)$ | **proved in Lean**：`summary_eq_deletePrivate`（一般 boundary）、`sigma_eq_delete_private`（C5 形式）；只對「內點」用，boundary 固定不動 |
 | 2 | **SYM 只是標號正規化**：$\Sigma$ 與內部標號無關，按 attachment mask 排序後每個 unlabeled 圖至少留一個代表 | 組合事實，未 Lean 化 |
 | 3 | **程式正確實作 1 與 2** | 只在 $k\le5$ 以精確枚舉驗證（`matches_exact_catalogue: true`）；這是經驗驗證，不是證明 |
 
-R1 的證明：$G-v$ 的任何正常染色限制到 $G$ 還是正常的，故 $\Sigma(G)\subseteq\Sigma(G-v)$；反向地，$G-v$ 的染色留給 $v$ 的鄰居至多 3 色，四色中必有一色可用，故 $\Sigma(G-v)\subseteq\Sigma(G)$。
+R1 的證明（現已 Lean 化）：$G-v$ 的任何正常染色限制到 $G$ 還是正常的，故 $\Sigma(G)\subseteq\Sigma(G-v)$；反向地，$G-v$ 的染色留給 $v$ 的鄰居至多 3 色，四色中必有一色可用，故 $\Sigma(G-v)\subseteq\Sigma(G)$。
 因此**若前提 1–3 成立**，第 $k$ 層的新 Σ 只可能來自「每個內點 degree $\ge4$」的圖，
 $K_k=K_{k-1}\cup\Sigma(\text{倖存者})$ 就是完整的，$K_6=K_5$ 也就成立。
 
-**反面必須寫清楚**：若 R1 引理或程式有誤，$K_6=K_5$ 就不成立；目前**沒有**獨立的 $k=6$ 精確枚舉可以對照
+**反面必須寫清楚**：R1 本身已不是數學信任缺口；若 SYM 或程式有誤，$K_6=K_5$ 仍不成立。目前**沒有**獨立的 $k=6$ 精確枚舉可以對照
 （那正是它跑不動的原因），所以這個結論的信任層級低於 §3 的 $k\le5$ 精確數字，
-也低於任何 Lean 證書。§7 表格的「新 Σ」欄一律讀作「reduced 搜尋所到範圍內的新 Σ」。
+也低於 R1 這條 Lean 證書。§7 表格的「新 Σ」欄一律讀作「reduced 搜尋所到範圍內的新 Σ」。
 
-$k\le5$ 的比對（`matches_exact_catalogue`）同時是 R1+SYM 的**經驗驗證**：若 R1 在該層有誤，
-reduced 搜尋會漏掉某些新 Σ，比對就會失敗。但它只驗證到 $k=5$——一個「$k=5$ 時 degree $\le3$ 可刪，
-$k\ge6$ 卻需要 degree $\ge5$」的規則不會被這筆資料抓到。這是 $K_6=K_5$ 與 $K_{\le5}$ 精確結果之間
+$k\le5$ 的比對（`matches_exact_catalogue`）現在是程式（與 SYM）的**經驗驗證**：R1 引理本身已 Lean 化，
+比對失敗只會指向實作或 SYM，而不是 lemma。但它只驗證到 $k=5$——一個「$k=5$ 時 degree $\le3$ 可刪，
+$k\ge6$ 卻需要 degree $\ge5$」的錯誤實作不會被這筆資料抓到。這是 $K_6=K_5$ 與 $K_{\le5}$ 精確結果之間
 最實在的差距。
 
 R2 不參與 $K_6=K_5$：它只把舊 Σ 的倖存者歸類（$k\le6$ 全部可約、新的全部不可約），是診斷，
