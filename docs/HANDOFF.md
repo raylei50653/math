@@ -2,7 +2,35 @@
 
 更新：2026-09-13。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：R1 已 Lean 化
+## 最新停止點：C5 cell 的 10-bit mask ≡ Σ bridge 已對齊（2026-09-13）
+
+使用者要求建立並驗證「`c5_cell_enumerator.py` 的十 bit mask ≡ 規格 $\Sigma$」——只做表示／語意對齊，
+不新增數學搜尋結果。規格、production 對照表、逐域覆蓋與信任層級在
+[c5_cell_enumerator.md](c5_cell_enumerator.md) §0；checker 是 `scripts/c5_sigma_bridge.py`，
+報告 `artifacts/c5_cells/sigma_bridge.json`。
+
+**結果（computationally verified，不是 Lean 定理）**：production 的十 bit 與獨立 reference $\Sigma$ **逐 bit 相等，零 mismatch**。
+覆蓋：$k\le3$ 是**全宇宙**（$U(k)$ 的每一個邊子集，$2^5/2^{10}/2^{16}/2^{23}$ 個 graph，含非平面者）；
+$k=4$ 走 DFS 接受節點（20,904,415 個，exhaustive）；$k\le5$ catalogue 的 132 個 witness 全過（含空內部、chords-only、$k_{\mathrm{eff}}=1..5$）；
+另加 20 個手工極端 case（邊界 $K_4$／$K_5$、孤立內點、內點 $K_4$／$K_5$…）與 60 個隨機 graph。
+checker 用三條互相獨立的路線（boundary-first 回溯、逐 orbit 代表元可行性、$4^{5+k}$ 全枚舉）對 production
+（production `compat_tables` + `_record`；DFS 模式連 AND 摺疊都跑 production 自己的 `_dfs`，用 spy 掛 `_record` 取 mask）對撞；
+S4 orbit 不變性另抽驗 200 節點／$k$，零失敗。
+
+**沒做、也不主張**：沒有 Lean 化 SYM；R1／R2 沒動；沒有跑新的 $k=6,7$ 搜尋，也沒有 $k\ge8$；
+$K_6=K_5$／$K_\infty=K_5$ 的信任層級不變（bridge 只覆蓋 $k\le5$ 的 mask 語義，而且 $k=4$ 只覆蓋 enumerator 接受的節點）；
+沒有改 catalogue 定義或 D5 商規則；`cells.json` 沒有被改寫（checker 只讀，並在報告裡記 sha256），
+132 個 key 與 nested 計數 11／22／52／87／112／132 由 witness 邊集反向重算後完全一致。
+
+重現（`--quick` 是約 20 秒的例行版，寫 `sigma_bridge_quick.json`；完整版寫 `sigma_bridge.json`）：
+
+```bash
+uv run --with networkx==3.5 --with rustworkx==0.17.1 python scripts/c5_sigma_bridge.py --quick
+uv run --with networkx==3.5 --with rustworkx==0.17.1 python scripts/c5_sigma_bridge.py \
+  --cases --product --catalogue --random 60 --all-masks 0 --all-masks 1 --all-masks 2 --all-masks 3 --dfs 2 --dfs 3 --dfs 4
+```
+
+## 先前停止點：R1 已 Lean 化
 
 使用者指定目前最該補的 Lean 是 R1（優先級明顯高於 SYM／enumerator bridge／R2）。
 已在 `Math/LocalClosure.lean` 證明：密封私有頂點 $\deg(v)\le 3$ 時
@@ -74,14 +102,34 @@ $|K_0..K_5|$ = 11／22／52／87／112／132；原 K3 grammar 42 個與五邊形
 $k=6,7$ 的數字全來自 reduced 搜尋。R1 引理（內點 degree $\le3$ 可刪）現已 Lean 化（`summary_eq_deletePrivate`、
 `sigma_eq_delete_private`）；仍依賴 SYM 標號正規化（未 Lean 化），以及「程式正確實作兩者」（只在 $k\le5$ 以精確枚舉驗證）。
 $K_\infty=K_5$ 更弱，仍是 conjectured。**
-未做：SYM 的 Lean 化、C5 enumerator ↔ 10-bit $\Sigma$ 語意 bridge、把 R2 做成生成階段剪枝以攻 $k\ge8$、
+未做：SYM 的 Lean 化、把 R2 做成生成階段剪枝以攻 $k\ge8$、
 nested cell 的 annulus relation、從 strip grammar 自動抽可密封 5-cycle。
+（**已補**：C5 enumerator ↔ 10-bit $\Sigma$ 語意 bridge，見上方最新停止點與
+[c5_cell_enumerator.md](c5_cell_enumerator.md) §0；那是表示對齊，不是 SYM 或 $K_6=K_5$ 的證明。）
 
 ```bash
 uv run --with rustworkx==0.17.1 --with networkx==3.5 python scripts/c5_cell_enumerator.py --k 5 --jobs 30
 uv run --with networkx==3.5 python scripts/c5_cell_enumerator.py --check
 uv run --with rustworkx==0.17.1 python scripts/c5_cell_reduced.py --k 6 --jobs 30 --r2
 ```
+
+## 2026-09-13 C5 cell 十 bit mask ↔ Σ bridge（表示對齊）
+
+使用者要求把「`c5_cell_enumerator.py` 的十 bit mask」與「Lean／文件裡的 $\Sigma$」對齊，並回答
+「對任意被 checker 接受的 C5 cell graph，production 的十 bit 是否逐 bit 等於規格？」。
+完整規格在 [c5_cell_enumerator.md](c5_cell_enumerator.md) §0，checker 是 `scripts/c5_sigma_bridge.py`。
+
+規格要點：cell graph 是 $(k,M)$，$M\subseteq U(k)$（5 chords＋$5k$ attachments＋$\binom k2$ interior 邊，
+邊界 C5 不佔 bit）；bit $j$ = 1 ⟺ 第 $j$ 個 pattern（`PATTERN_ORDER`＝`REPS`＝兩個 library 的順序）這個
+$S_4$ orbit 有**至少一個**合法內部延伸；$S_4$（全域換色）進 key，$D_5$（邊界重標）不進 key，
+只在外部對齊時用——所以 `bits` 是帶標號的 key，132 個 Σ 是 24 個 $D_5$ orbits。
+
+做法：reference 完全照定義重寫（boundary-first 回溯、逐 orbit 代表元可行性、$4^{5+k}$ 全枚舉三條路線），
+`PATTERN_ORDER` 與 orbit 代表元也在 checker 內重新推導再與 production／兩個 library 比對；
+production 那側在 DFS 模式直接跑 `enumerate_cells`，spy 掛 `_record` 逐節點取 mask。
+$k\le3$ 全宇宙（所有邊子集）＋$k=4$ DFS 接受節點＋$k\le5$ 全部 132 個 catalogue witness＋20 個手工極端 case
+＋60 個隨機 graph，全部零 mismatch，逐 bit 相等；`cells.json` 未被改寫，catalogue 數字不變。
+信任層級：**executable checked／computationally verified（有限域），不是 Lean 證明**，也沒有覆蓋 $k\ge6$。
 
 ## 2026-09-13 討論表示法與觀察表
 

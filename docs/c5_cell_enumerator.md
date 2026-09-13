@@ -11,6 +11,141 @@ $$
 `scripts/c5_cell_enumerator.py`（精確）與 `scripts/c5_cell_reduced.py`（reduction 版），
 產物在 `artifacts/c5_cells/`。所有數字都是 **computationally observed**。
 R1（低度內點刪除保 $\Sigma$）已在 `Math/LocalClosure.lean` 證明；catalogue 計數本身沒有 Lean 證書。
+**§0 先給出 `bits` 的完整規格與「production 輸出 ≡ 規格」的獨立 checker（computationally verified，非 Lean）。**
+
+## 0. 十 bit mask 的規格（specification）與 bridge 驗證
+
+本節是 `cells.json` 裡 `bits` 這個數字的完整規格，以及「production 輸出 ≡ 規格」的獨立驗證。
+被驗物件：`scripts/c5_cell_enumerator.py`；checker：`scripts/c5_sigma_bridge.py`；
+報告：`artifacts/c5_cells/sigma_bridge.json`。信任層級：**computationally verified（有限域，清單見 §0.4）；
+不是 Lean 證明，也不是對所有 $k$ 的定理**。本節只做表示／語意對齊，沒有新增數學搜尋結果，
+也沒有更動任何 catalogue 數字（見 §0.5）。
+
+### 0.1 cell graph 與 mask 的座標系
+
+固定 $k\ge0$，內部私有頂點 $X=\{5,\dots,4+k\}$，邊宇宙
+
+\[
+U(k)=\underbrace{\{(0,2),(0,3),(1,3),(1,4),(2,4)\}}_{5\ \text{chords}}
+\ \cup\ \underbrace{\{(i,5+m):0\le i<5,\ 0\le m<k\}}_{5k\ \text{boundary–interior}}
+\ \cup\ \underbrace{\{(5+m,5+l):0\le m<l<k\}}_{\binom k2\ \text{interior–interior}}
+\]
+
+以固定 list 順序排（chords → 依 $m$ 再依 $i$ 的 attachments → 字典序 interior pairs），第 $j$ 條邊就是 bit $j$
+（little-endian）。一個 mask $M$ 就是 $U(k)$ 的一個子集；**邊界 C5 $0$-$1$-$2$-$3$-$4$-$0$ 永遠存在、不佔 bit**。
+`cells.json` 的 `edge_universe` 就是這份順序，`k_eff` 是 witness 實際用到的內部頂點數
+（孤立內點不佔 bit，所以同一個 mask 可以對多個 $k$）。
+
+### 0.2 一個 bit 的精確語義
+
+$\mathrm{proper}(C_5)$ 是邊界五邊形的正常四色著色（240 個）。$S_4$ 是**全域**換色（boundary 與 interior 同時置換）。
+$[b]$ 是 $b$ 的 $S_4$ orbit，代表元取字典序最小者——等價於 `boundary_relations.normalize` 的首次出現正規化。
+
+`PATTERN_ORDER`（= `cells.json` 的 `pattern_order` = production `REPS` = 兩個 library 的同一順序）：
+
+\[
+[0,1,0,1,2]\ [0,1,0,2,1]\ [0,1,0,2,3]\ [0,1,2,0,1]\ [0,1,2,0,2]\ [0,1,2,0,3]\ [0,1,2,1,2]\ [0,1,2,1,3]\ [0,1,2,3,1]\ [0,1,2,3,2]
+\]
+
+\[
+\Sigma(k,M)=\bigl\{\,[b]:\ b\in\mathrm{proper}(C_5),\ \exists x:X\to\{0,1,2,3\},\
+\mathrm{proper}_{\,C_5\cup M}(b,x)\,\bigr\}
+\]
+
+\[
+\mathrm{bit}_j(k,M)=1\iff \texttt{PATTERN\_ORDER}[j]\in\Sigma(k,M),
+\qquad
+\texttt{bits}(k,M)=\sum_{j=0}^{9}\mathrm{bit}_j(k,M)\,2^j
+\]
+
+**bit=1 的完整讀法**：這個邊界顏色類**至少有一個**合法內部延伸（含 chords、attachments、interior 邊）。
+bit=0 是「一個都沒有」。它不是「所有延伸都長這樣」，也不是「外部一定配合得了」——
+外部那半是另一層（§1 的 $R_A$、§2b 的 condition／residual）。
+可行性對 orbit 良定義：若 $x$ 是 $b$ 的延伸，則 $\sigma\circ x$ 是 $\sigma\circ b$ 的延伸；
+所以「用代表元測可行性」與「orbit 內任一元素可延伸」等價（§0.4 對每個 $k$ 抽 200 個接受節點實測）。
+
+### 0.3 canonicalization：S4 進 key，D5 不進
+
+| 作用 | 何時作用 | 實作 |
+| --- | --- | --- |
+| $S_4$ 全域換色 | **進** catalogue key：每個 bit 只記一個 orbit | `boundary_relations.normalize`（首次出現正規化） |
+| $D_5$ 邊界重標 | **不進** key；只在外部對齊兩側標號時用 | `D5` pattern-index 置換表、`act_mask` |
+
+因此 `bits` 是**帶標號**的 key（$b_0,\dots,b_4$ 固定，與既有 library 慣例相同）；
+$k\le5$ 的 132 個 Σ 是 24 個 $D_5$ orbits，$D_5$ 商不改變 catalogue，也不改變任何一個 bit。
+
+### 0.4 production 對照與 bridge 結果
+
+| 規格 | production 實作 | 位置 |
+| --- | --- | --- |
+| $U(k)$ 的邊順序 | `edge_universe(k)` | `c5_cell_enumerator.py` L66–70 |
+| `PATTERN_ORDER` | `REPS`（全部 proper C5 pattern 的 S4 代表元，排序；`assert len == 10`） | L38–40 |
+| $[b]$ | `boundary_relations.normalize` | `boundary_relations.py` L12–14 |
+| $\exists x$ 正常延伸 | `compat_tables`：每條邊對每個 pattern 的 $4^k$ 相容賦色 bitset；DFS 路徑上依序 AND | L73–88、L149 |
+| $\mathrm{bit}_j$ = bitset 非空 | `bits = sum(1 << j for j, s in enumerate(surviving) if s)` | L125（`_record`） |
+| graph 的邊集 | DFS 路徑 mask（`mask \| 1 << e`） | L139–153 |
+| $\Sigma$ | `per_sigma` 的 key | L128 |
+
+checker 用**兩條獨立路線**對撞：
+
+* **reference（只用手寫定義）**：`ref_bits` 先枚舉 240 個 boundary colouring、再對 interior 做約束回溯；
+  `ref_bitwise` 對十個 orbit 代表元各自獨立測可行性；`ref_bits_product` 暴力跑完 $4^{5+k}$ 個賦色。
+  `PATTERN_ORDER` 與 $[b]$ 也在 checker 內用不同演算法重新推導（`orbit_rep` = 24 個置換取最小），
+  再與 production `REPS`、`cells.json`、`boundary_relations/library.json`、`fan_pentagon/states.json` 的順序比對。
+* **production**：`compat_tables` 的值域 + production `_record` 的 bit 編碼；DFS 模式更直接跑 production 的
+  `enumerate_cells`，用 spy 掛在 `_record` 上，逐個接受節點取 mask——**連 AND 摺疊都是 production 自己的程式**。
+
+指令與覆蓋（`--product` 額外用 $4^{5+k}$ 全枚舉交叉檢查 reference 自己）：
+
+```bash
+uv run --with networkx==3.5 --with rustworkx==0.17.1 python scripts/c5_sigma_bridge.py \
+  --cases --product --catalogue --random 60 \
+  --all-masks 0 --all-masks 1 --all-masks 2 --all-masks 3 --dfs 2 --dfs 3 --dfs 4
+```
+
+| 域 | 覆蓋 | 結果 |
+| --- | --- | --- |
+| $k\le3$ 全部 graph | $U(k)$ 的**每一個**邊子集（32／1,024／65,536／8,388,608 個，含非平面者） | 0 mismatch |
+| $k=2$ DFS 接受節點 | 6,606／6,606（exhaustive，distinct Σ = 52 = $\lvert K_2\rvert$） | 0 mismatch |
+| $k=3$ DFS 接受節點 | 312,067／312,067（exhaustive，distinct Σ = 87 = $\lvert K_3\rvert$） | 0 mismatch |
+| $k=4$ DFS 接受節點 | 20,904,415／20,904,415（exhaustive，distinct Σ = 112 = $\lvert K_4\rvert$） | 0 mismatch |
+| $k\le5$ catalogue | 132／132 個 witness（含空內部、chords-only、$k_{\mathrm{eff}}=1..5$），另重驗 apex-planarity | 0 mismatch |
+| 手工極端 case | 20 個（$K_5$ 邊界、$K_4$ 邊界、空內部、孤立內點、內點 $K_4$／$K_5$、五點全 attach…） | 0 mismatch |
+| 隨機 graph | 60 個（$k\le3$），reference 另與 $4^{5+k}$ 全枚舉對照 | 0 mismatch |
+
+DFS 模式另對每個 $k$ 的前 200 個接受節點加驗 S4 orbit 不變性（orbit 內 24 個成員可行性一致）與
+orbit-union 版 $\Sigma$，同樣 0 失敗；所有節點都是 `prod_bits` 與 `ref_bitwise` 的十個 bit 逐一相等。
+整輪約 21 分鐘（$k=4$ 的 2,090 萬節點約 16 分鐘、$k\le3$ 全宇宙約 4 分鐘），exit code 0。
+
+### 0.5 這條 bridge 的信任層級與界線
+
+信任鏈（每一段都有對應的檢查，不是只有頭尾比對）：
+
+$$
+\text{graph}
+\xrightarrow{\ \texttt{ref\_feasible}\ }
+\text{boundary colouring feasibility}
+\xrightarrow{\ \text{十個 orbit bit}\ }
+\Sigma
+\xrightarrow{\ \texttt{PATTERN\_ORDER}\ }
+\text{10-bit encoding}
+\xrightarrow{\ \texttt{prod\_bits}\,/\,\text{DFS spy}\ }
+\text{enumerator output}
+$$
+
+* 這是 **executable checked／computationally verified**：有限域上的逐 bit 相等，**不是 Lean 定理**。
+  Lean 裡只有一般性的 $\operatorname{Summary}$／$\Sigma$ 語義（`Math/Boundary.lean`、`Math/LocalClosure.lean`），
+  **沒有**對應「十 bit 編碼」或 DFS 的 Lean 物件；本次沒有新增任何 Lean。
+* $k\le3$ 是**全宇宙**（所有邊子集）；$k=4$ **只涵蓋 enumerator 接受的 20,904,415 個節點**（不是 $2^{31}$ 全宇宙）；
+  $k=5$ 只涵蓋 catalogue witness 與手工 case，**不是** $2^{40}$ 全宇宙。$k\ge6$ 沒有精確枚舉，未驗。
+* 幾何不在這條鏈上：apex-planarity 決定誰進 catalogue，不決定 $\Sigma$。checker 對 catalogue 重驗了
+  disk 條件（NetworkX planarity），但「mask ≡ Σ」與 planarity 無關。
+* 沒有驗到：SYM（內部標號正規化）、R1／R2 的實作、reduced $k=6,7$ 搜尋、$K_6=K_5$、$K_\infty=K_5$、
+  D5 對齊下的 `Σ_in & g·Σ_out` 語義（只驗了 pattern 順序在四個檔案一致）。
+  本文件其他地方對這些的保留不變。
+* catalogue 數字沒有變：不重跑 enumerator、不改 `cells.json`；checker 反向從 witness 邊集重算 Σ，
+  得到同一組 132 個 key 與同一組 nested 計數（11／22／52／87／112／132），
+  並記錄 `cells.json` 的 sha256。
 
 ## 1. 答案：可以，條件是「密封」與「C5 在內側是 face」
 
@@ -152,7 +287,7 @@ $(5,8)$ BAD。exact $T_4$ 需要 $3+3$，與先前 11 頂點結果一致。$k\le
 * 精確枚舉止於 $k=5$（$2^{40}$）；$k=6,7$ **跑不動**，只有 §7 的 reduction 版，其「新 Σ 完整」是
   條件式（§7.0：R1 已 Lean 化；仍依賴 SYM＋程式正確，只在 $k\le5$ 經驗驗證），labeled 計數在那個模式下也**不是**全宇宙計數。
   $k\ge8$ 需要把 R2 變成生成階段的剪枝，或改走 near-triangulation → 邊子集；未實作。
-* R1（低度內點刪除保 $\Sigma$）已有 Lean 證書；catalogue 本身與 $k=6,7$ reduced 搜尋沒有 Lean 證書。`--check` 以 NetworkX planarity 與全染色 brute force 獨立重驗每個 witness 的 Σ 與 disk 性質。
+* R1（低度內點刪除保 $\Sigma$）已有 Lean 證書；catalogue 本身與 $k=6,7$ reduced 搜尋沒有 Lean 證書。`--check` 以 NetworkX planarity 與全染色 brute force 獨立重驗每個 witness 的 Σ 與 disk 性質；§0 的 `c5_sigma_bridge.py` 另外把「十 bit mask ≡ Σ」逐 bit 對齊（$k\le3$ 全宇宙、$k=4$ 全部接受節點、$k\le5$ 全部 witness）。
 * catalogue key 未取 D5 商（$k\le5$ 的 132 個 Σ 是 24 個 D5 orbits），與既有 library 慣例一致。
 * nested cell 的 annulus relation（十個 port）尚未枚舉；pp 求值器有十個變數的上限，剛好夠一層。
 * 內部非密封、或 C5 在內側非 face，都不是 cell；不得把 Σ 當成那些情況的充分狀態。
@@ -173,6 +308,9 @@ $k=7$ 是 $2^{60}$——**精確枚舉在 $k\ge6$ 是跑不動的**，不是慢�
 | 1 | **R1 引理**：內部頂點 $v$ 若 $\deg(v)\le3$，則 $\Sigma(G)=\Sigma(G-v)$ | **proved in Lean**：`summary_eq_deletePrivate`（一般 boundary）、`sigma_eq_delete_private`（C5 形式）；只對「內點」用，boundary 固定不動 |
 | 2 | **SYM 只是標號正規化**：$\Sigma$ 與內部標號無關，按 attachment mask 排序後每個 unlabeled 圖至少留一個代表 | 組合事實，未 Lean 化 |
 | 3 | **程式正確實作 1 與 2** | 只在 $k\le5$ 以精確枚舉驗證（`matches_exact_catalogue: true`）；這是經驗驗證，不是證明 |
+
+（§0 的 bridge 與前提 3 **不是同一件事**：bridge 只保證「給定一張圖，十 bit 的讀寫與 $\Sigma$ 一致」，
+不保證 reduced 搜尋的 degree 剪枝與 SYM 正規化正確，因此不改變本節的條件式地位。）
 
 R1 的證明（現已 Lean 化）：$G-v$ 的任何正常染色限制到 $G$ 還是正常的，故 $\Sigma(G)\subseteq\Sigma(G-v)$；反向地，$G-v$ 的染色留給 $v$ 的鄰居至多 3 色，四色中必有一色可用，故 $\Sigma(G-v)\subseteq\Sigma(G)$。
 因此**若前提 1–3 成立**，第 $k$ 層的新 Σ 只可能來自「每個內點 degree $\ge4$」的圖，
@@ -232,6 +370,9 @@ R2-可約，Σ 新的全部 R2-不可約：
 ```bash
 uv run --with rustworkx==0.17.1 --with networkx==3.5 python scripts/c5_cell_enumerator.py --k 5 --jobs 30   # 17 min → cells.json
 uv run --with networkx==3.5 python scripts/c5_cell_enumerator.py --check                                    # 獨立重驗每個 witness
+uv run --with networkx==3.5 --with rustworkx==0.17.1 python scripts/c5_sigma_bridge.py --quick          # ~20 s → sigma_bridge_quick.json
+uv run --with networkx==3.5 --with rustworkx==0.17.1 python scripts/c5_sigma_bridge.py \
+  --cases --product --catalogue --random 60 --all-masks 0 --all-masks 1 --all-masks 2 --all-masks 3 --dfs 2 --dfs 3 --dfs 4   # 十 bit mask ≡ Σ（§0）→ sigma_bridge.json
 uv run --with rustworkx==0.17.1 python scripts/c5_cell_reduced.py --k 5 --jobs 30 --r2                      # 3 s → reduced_k5.json
 uv run --with rustworkx==0.17.1 python scripts/c5_cell_reduced.py --k 6 --jobs 30 --r2                      # ~2 min → reduced_k6.json
 ```
@@ -239,3 +380,6 @@ uv run --with rustworkx==0.17.1 python scripts/c5_cell_reduced.py --k 6 --jobs 3
 `cells.json`：`pattern_order`、`edge_universe`、`search`（accepted／rejected／calls／coverage）、
 `nested_by_k_eff`、profile 統計、與兩個既有 library 的比對、`separating_c5`、`residual`，
 以及每個 Σ 的 `k_eff`、最省 witness 邊集、labeled／canonical 計數、三色 profile、dead prefixes。
+`sigma_bridge.json`：十 bit 的規格、逐域覆蓋與逐 bit 比對結果（§0.4）；bridge 只讀 `cells.json`，不寫它。
+`--quick` 寫的是 `sigma_bridge_quick.json`（$k=0..2$ 全宇宙＋$k=2,3$ DFS＋catalogue＋case＋30 個隨機 graph），
+不會覆蓋完整報告。
