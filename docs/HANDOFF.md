@@ -34,6 +34,34 @@ lake env lean Math/LocalClosureAudit.lean
 > 我正在整理數據，先使用既有表示法理解接下來提供的材料。研究目前暫停，不自動擴大枚舉、
 > 開活動面 grammar 或博弈控制。染色完整關係與幾何合法性分開；Choice 是替代方案，join 是同時約束。
 
+## 2026-09-13 C5 cell 窮舉器：C5 邊界＋密封內部，只暴露 Σ；reduction 跳過 $k=6,7$
+
+使用者問「C5 能不能當子結構：C5 boundary＋內部結構＋外部 attachments，只把內部對邊界的限制往外暴露」，
+並要求設計窮舉器。設計與觀察在 [c5_cell_enumerator.md](c5_cell_enumerator.md)。
+答案：可以，條件是內部**密封**（不再有未來邊／預染色／共享 frame）且 **C5 在內側是 face**；
+染色側由既有 Lean `summary_glue`／`seal_future` 保證無損，幾何側靠「兩個 disk 沿 C5 黏合必平面」（拓撲信任）。
+窮舉器分三層：inner（k 個私有頂點的全部邊集，含 chords；DFS＋apex-planarity 剪枝；只以十 bit Σ 去重；`--jobs` 前綴切子樹平行）
+→ exposure（D5 對齊、AND、condition、residual automaton、dead prefix、pp 原子）→ outer（另一個 cell／承諾顏色 reader／pp context）。
+
+**Computationally observed：** 精確枚舉 $k\le5$（$2^{40}$，30 workers 17 min，`--check` 零錯）：nested catalogue
+$|K_0..K_5|$ = 11／22／52／87／112／132；原 K3 grammar 42 個與五邊形 grammar 87 個 Σ 全在 $K_5$；
+允許 chords 後三色 profile 可為 1，profile 2 不再必相鄰；separating C5 的 meet 涵蓋全部 1,023 個非空 mask，
+最便宜 BAD 是 chord `[0,2]` ∧ chords `[0,3],[1,3]`（boundary $K_4$），exact $T_4$ 需 $3+3$；residual mask 193 種。
+
+**Reduction（`scripts/c5_cell_reduced.py`）：** R1（內點 degree $\le3$ 可刪）＋SYM（attachment mask 非遞增）當單調剪枝，
+把 $k=5$ 從 17 min 壓到 2.6 s、$k=6$ 66 s；$k\le5$ 新 Σ 與精確枚舉逐一相同。R2（長度 $\le5$ 分隔環、inside relation 有較小 disk
+實現；自舉自 C3／C4／C5 目錄）在 $k=3,4,5$ 恰好把「Σ 舊」倖存者全部約掉、「Σ 新」倖存者全部不可約。
+**$K_6=K_5=K_7=132$，但這是條件式結論（前提見 §7.0）：精確枚舉在 $k\ge6$ 不可行（$2^{50}$、$2^{60}$），
+$k=6,7$ 的數字全來自 reduced 搜尋，只在 R1 引理（內點 degree $\le3$ 可刪，有短證明、未 Lean 化）、SYM 標號正規化、
+以及「程式正確實作兩者」（只在 $k\le5$ 以精確枚舉驗證）都成立時有效。$K_\infty=K_5$ 更弱，仍是 conjectured。**
+沒有 Lean 證書。未做：把 R2 做成生成階段剪枝以攻 $k\ge8$、nested cell 的 annulus relation、從 strip grammar 自動抽可密封 5-cycle。
+
+```bash
+uv run --with rustworkx==0.17.1 --with networkx==3.5 python scripts/c5_cell_enumerator.py --k 5 --jobs 30
+uv run --with networkx==3.5 python scripts/c5_cell_enumerator.py --check
+uv run --with rustworkx==0.17.1 python scripts/c5_cell_reduced.py --k 6 --jobs 30 --r2
+```
+
 ## 2026-09-13 討論表示法與觀察表
 
 使用者要求先整理表述，方便討論多起點延伸、接合、預選分化與狀態強迫。
