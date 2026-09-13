@@ -2,7 +2,52 @@
 
 更新：2026-09-13。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：C5 cell 的 10-bit mask ≡ Σ bridge 已對齊（2026-09-13）
+## 最新停止點：SYM 已拆解為「Lean 核心 ＋ 窮舉 checker」（2026-09-13）
+
+使用者要求：證明重新標號 interior vertices 不改變 C5 boundary-colouring feasibility，因此不改變
+10-bit Σ key；並核對 production enumerator 的 canonicalization 是否只依賴此等價。
+**只做 SYM**：沒碰 R1、R2、$k\ge6$、$K_6=K_5$，也沒改 catalogue 或 `cells.json`。
+完整規格、定理表與 checker 覆蓋在 [c5_cell_enumerator.md](c5_cell_enumerator.md) §7。
+
+**proved in Lean（新增 `Math/SymRelabel.lean`，namespace `FiveBoundary.Sym`）**：設 $\pi$ 是固定
+boundary 逐點的置換、`relabel π G := G.comap π`，則
+
+$$\Sigma(\texttt{relabel}\,\pi\,G)=\Sigma(G)\qquad(\texttt{Sigma\_relabel}),$$
+
+逐 bit 形式 `sigma_iff_relabel`、cell 座標特例 `Sigma_relabel_interior`、
+「兩個固定 boundary 的 relabelling 同 $\Sigma$」`Sigma_relabel_eq`、染色對應
+`proper_relabel`（$\mathrm{Proper}(\texttt{relabel}\,\pi\,G)\,c\iff\mathrm{Proper}\,G\,(c\circ\pi^{-1})$）。
+**推論**：十 bit 的每一 bit 是 unlabeled 內部的性質，所以同一個 unlabeled 圖的任兩個標號有相同的
+10-bit 輸出，reduced enumerator 用它當 key 合法。公理審計
+`artifacts/sym_relabel/lean-audit.txt`：這些定理只有 `propext`／`Quot.sound`，沒有 `sorryAx`／native 公理
+（`patternOrder_length`／`patternOrder_toFinset` 兩條 list 事實另有 `native_decide` 計算公理）。
+
+**computationally verified（`scripts/c5_sym_check.py` → `artifacts/c5_cells/sym_check.json`）**：
+production 的 SYM canonicalization 只依賴這個等價 ——
+`interior_perm_maps` 與獨立重寫的 relabel map 相同且生成 $S_k$（`A1`）；
+attachment mask 的多重集在 relabelling 下不變（`A2`，$k=3$ 抽驗 5,991,865 次）；
+**全宇宙**每張圖都有非遞增 relabelling（`A3`：$k\le3$ 的 $2^5/2^{10}/2^{16}/2^{23}$ 個 graph，
+`without_sorted_relabel = 0`）；SYM 是 orbit union 且與規格逐圖相同（`A4`）；
+R1 倖存者中每個 orbit 至少留一個 SYM 代表（`A4'`）；`cells.json` 的 `canonical_masks` 是 orbit
+最大值計數，每 orbit 恰一個（`A5`／`A5'`，$k_{\mathrm{eff}}\le3$ 的 76 個 witness 全過）。
+
+**沒做、也不主張**：
+* SYM 的**鴿籠步驟**（每個 unlabeled 圖都有非遞增 mask 代表＝把內點按 mask 排序）與 attachment mask
+  的搬運**尚未 Lean 化**，只有 §7.3 的窮舉驗證；`Math/SymRelabel.lean` 明確標示 6.1 的定理不依賴它們。
+* $k=4,5$ 的 orbit 檢查沒跑（production `interior_perm_maps` 只建到 $k\le3$；$2^{31}$／$2^{40}$ 不可行）。
+* R1／R2 沒動；沒有跑 $k\ge6$；$K_6=K_5$／$K_\infty=K_5$ 的信任層級不變（§6.0 的前提表已按此更新：
+  第 2 條拆成 2a「$\Sigma$ 與標號無關」＝已 Lean 化、2b「鴿籠排序」＝未 Lean 化）。
+* 既有保留不變：catalogue 不取 D5 商、mask 是帶標號 key、幾何（apex-planarity）不在這條鏈上。
+
+重現：
+
+```bash
+lake build && lake env lean Math/SymRelabelAudit.lean          # 公理審計 → artifacts/sym_relabel/lean-audit.txt
+uv run --with rustworkx==0.17.1 --with networkx==3.5 python scripts/c5_sym_check.py --quick          # ~1 min
+uv run --with rustworkx==0.17.1 --with networkx==3.5 python scripts/c5_sym_check.py --k 2 --k 3      # k<=3 全宇宙
+```
+
+## 先前停止點：C5 cell 的 10-bit mask ≡ Σ bridge 已對齊（2026-09-13）
 
 使用者要求建立並驗證「`c5_cell_enumerator.py` 的十 bit mask ≡ 規格 $\Sigma$」——只做表示／語意對齊，
 不新增數學搜尋結果。規格、production 對照表、逐域覆蓋與信任層級在
@@ -100,7 +145,8 @@ $|K_0..K_5|$ = 11／22／52／87／112／132；原 K3 grammar 42 個與五邊形
 實現；自舉自 C3／C4／C5 目錄）在 $k=3,4,5$ 恰好把「Σ 舊」倖存者全部約掉、「Σ 新」倖存者全部不可約。
 **$K_6=K_5=K_7=132$，但這是條件式結論（前提見 §7.0）：精確枚舉在 $k\ge6$ 不可行（$2^{50}$、$2^{60}$），
 $k=6,7$ 的數字全來自 reduced 搜尋。R1 引理（內點 degree $\le3$ 可刪）現已 Lean 化（`summary_eq_deletePrivate`、
-`sigma_eq_delete_private`）；仍依賴 SYM 標號正規化（未 Lean 化），以及「程式正確實作兩者」（只在 $k\le5$ 以精確枚舉驗證）。
+`sigma_eq_delete_private`）；仍依賴 SYM 的鴿籠步驟（未 Lean 化；SYM 的核心「$\Sigma$ 與標號無關」已於 `Math/SymRelabel.lean` 證明，
+見上方最新停止點），以及「程式正確實作兩者」（只在 $k\le5$ 以精確枚舉驗證）。
 $K_\infty=K_5$ 更弱，仍是 conjectured。**
 未做：SYM 的 Lean 化、把 R2 做成生成階段剪枝以攻 $k\ge8$、
 nested cell 的 annulus relation、從 strip grammar 自動抽可密封 5-cycle。

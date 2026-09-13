@@ -247,7 +247,7 @@ flowchart LR
 | $|K_{k}|$（distinct Σ） | 11 | 22 | 52 | 87 | 112 | 132 |
 | 新增 | 11 | 11 | 30 | 35 | 25 | 20 |
 
-（本節全部是精確枚舉輸出。$K_6$、$K_7$ 見 §7，是**條件式**結論，前提寫在 §7.0。）
+（本節全部是精確枚舉輸出。$K_6$、$K_7$ 見 §6，是**條件式**結論，前提寫在 §6.0。）
 
 **與既有 library 的關係。** 原 K3 grammar 的 42 個 Σ 全部在 $K_3$；內部五邊形 grammar 的 87 個 Σ
 有 52 個在 $K_3$、77 個在 $K_4$、全部 87 個在 $K_5$。$K_3$ 也恰好 87 個，是巧合，集合不同。
@@ -284,30 +284,31 @@ $(5,8)$ BAD。exact $T_4$ 需要 $3+3$，與先前 11 頂點結果一致。$k\le
 
 ## 5. 界線與後續
 
-* 精確枚舉止於 $k=5$（$2^{40}$）；$k=6,7$ **跑不動**，只有 §7 的 reduction 版，其「新 Σ 完整」是
-  條件式（§7.0：R1 已 Lean 化；仍依賴 SYM＋程式正確，只在 $k\le5$ 經驗驗證），labeled 計數在那個模式下也**不是**全宇宙計數。
+* 精確枚舉止於 $k=5$（$2^{40}$）；$k=6,7$ **跑不動**，只有 §6 的 reduction 版，其「新 Σ 完整」是
+  條件式（§6.0：R1 與 SYM 的核心已 Lean 化；仍依賴 SYM 的鴿籠步驟與程式正確，只在 $k\le5$ 經驗驗證），labeled 計數在那個模式下也**不是**全宇宙計數。
   $k\ge8$ 需要把 R2 變成生成階段的剪枝，或改走 near-triangulation → 邊子集；未實作。
 * R1（低度內點刪除保 $\Sigma$）已有 Lean 證書；catalogue 本身與 $k=6,7$ reduced 搜尋沒有 Lean 證書。`--check` 以 NetworkX planarity 與全染色 brute force 獨立重驗每個 witness 的 Σ 與 disk 性質；§0 的 `c5_sigma_bridge.py` 另外把「十 bit mask ≡ Σ」逐 bit 對齊（$k\le3$ 全宇宙、$k=4$ 全部接受節點、$k\le5$ 全部 witness）。
 * catalogue key 未取 D5 商（$k\le5$ 的 132 個 Σ 是 24 個 D5 orbits），與既有 library 慣例一致。
 * nested cell 的 annulus relation（十個 port）尚未枚舉；pp 求值器有十個變數的上限，剛好夠一層。
 * 內部非密封、或 C5 在內側非 face，都不是 cell；不得把 Σ 當成那些情況的充分狀態。
 
-## 7. 用 $k\le5$ 找 reduction，跳過 $k=6,7$
+## 6. 用 $k\le5$ 找 reduction，跳過 $k=6,7$
 
 問題：精確枚舉在 $k=5$ 花 17 分鐘（$2^{40}$），$k=6$ 是 $2^{50}\approx1.1\times10^{15}$，
 $k=7$ 是 $2^{60}$——**精確枚舉在 $k\ge6$ 是跑不動的**，不是慢，是不可行。
 目標只是 Σ 的 catalogue，所以可以丟掉「Σ 已在 $K_{k-1}$」的圖。從 $k\le5$ 的資料抽出三條規則
 （`scripts/c5_cell_reduced.py`）：
 
-### 7.0 前提：$K_6=K_5$、$K_7=K_5$ 是**條件式**結論
+### 6.0 前提：$K_6=K_5$、$K_7=K_5$ 是**條件式**結論
 
 **$k\ge6$ 沒有任何精確枚舉結果。** 下面的 $k=6,7$ 數字全部來自 reduced 搜尋，其正確性依賴三件事：
 
 | # | 前提 | 狀態 |
 | --- | --- | --- |
 | 1 | **R1 引理**：內部頂點 $v$ 若 $\deg(v)\le3$，則 $\Sigma(G)=\Sigma(G-v)$ | **proved in Lean**：`summary_eq_deletePrivate`（一般 boundary）、`sigma_eq_delete_private`（C5 形式）；只對「內點」用，boundary 固定不動 |
-| 2 | **SYM 只是標號正規化**：$\Sigma$ 與內部標號無關，按 attachment mask 排序後每個 unlabeled 圖至少留一個代表 | 組合事實，未 Lean 化 |
-| 3 | **程式正確實作 1 與 2** | 只在 $k\le5$ 以精確枚舉驗證（`matches_exact_catalogue: true`）；這是經驗驗證，不是證明 |
+| 2a | **SYM 的核心：$\Sigma$ 與內部標號無關** | **proved in Lean**：`Sigma_relabel`／`sigma_iff_relabel`（`Math/SymRelabel.lean`），見 §7 |
+| 2b | **SYM 的鴿籠步驟**：每個 unlabeled 圖都有一個「attachment mask 非遞增」的代表 | 組合事實（把內點按 mask 排序）；**未 Lean 化**，以窮舉 checker 驗證（§7，`A3`／`A4'`） |
+| 3 | **程式正確實作 1 與 2** | 只在 $k\le5$ 以精確枚舉驗證（`matches_exact_catalogue: true`）；另有 §7 的 SYM 專用 checker；這些都是經驗驗證，不是證明 |
 
 （§0 的 bridge 與前提 3 **不是同一件事**：bridge 只保證「給定一張圖，十 bit 的讀寫與 $\Sigma$ 一致」，
 不保證 reduced 搜尋的 degree 剪枝與 SYM 正規化正確，因此不改變本節的條件式地位。）
@@ -316,9 +317,9 @@ R1 的證明（現已 Lean 化）：$G-v$ 的任何正常染色限制到 $G$ 還
 因此**若前提 1–3 成立**，第 $k$ 層的新 Σ 只可能來自「每個內點 degree $\ge4$」的圖，
 $K_k=K_{k-1}\cup\Sigma(\text{倖存者})$ 就是完整的，$K_6=K_5$ 也就成立。
 
-**反面必須寫清楚**：R1 本身已不是數學信任缺口；若 SYM 或程式有誤，$K_6=K_5$ 仍不成立。目前**沒有**獨立的 $k=6$ 精確枚舉可以對照
+**反面必須寫清楚**：R1 與 SYM 的**核心**（$\Sigma$ 與內部標號無關）都已不是數學信任缺口；SYM 剩下的缺口只有鴿籠步驟（2b）與程式實作（3）。若這兩者之一有誤，$K_6=K_5$ 仍不成立。目前**沒有**獨立的 $k=6$ 精確枚舉可以對照
 （那正是它跑不動的原因），所以這個結論的信任層級低於 §3 的 $k\le5$ 精確數字，
-也低於 R1 這條 Lean 證書。§7 表格的「新 Σ」欄一律讀作「reduced 搜尋所到範圍內的新 Σ」。
+也低於 R1 這條 Lean 證書。§6 表格的「新 Σ」欄一律讀作「reduced 搜尋所到範圍內的新 Σ」。
 
 $k\le5$ 的比對（`matches_exact_catalogue`）現在是程式（與 SYM）的**經驗驗證**：R1 引理本身已 Lean 化，
 比對失敗只會指向實作或 SYM，而不是 lemma。但它只驗證到 $k=5$——一個「$k=5$ 時 degree $\le3$ 可刪，
@@ -331,7 +332,7 @@ R2 不參與 $K_6=K_5$：它只把舊 Σ 的倖存者歸類（$k\le6$ 全部可�
 | 規則 | 敘述 | 為什麼保 Σ | 用法 |
 | --- | --- | --- | --- |
 | R1 | 內部頂點 degree $\le3$ | 最後再染它，永遠有色：$\Sigma(G)=\Sigma(G-v)$ | 邊序改成「每個內部頂點一個 block」，degree 定案就剪枝（單調） |
-| SYM | 內部頂點的五 bit attachment mask 非遞增 | 任何內部圖都可以這樣重標 | 剪枝（每個 unlabeled 圖至少留一個） |
+| SYM | 內部頂點的五 bit attachment mask 非遞減 | **保 Σ**：`Sigma_relabel`（§7）；「任何內部圖都可以這樣重標」是獨立的鴿籠事實（§7，Python 驗證） | 剪枝（每個 unlabeled 圖至少留一個） |
 | R2 | 長度 $\le5$ 的 cycle 把非空內部集合 $S$ 與 boundary 隔開，且 inside relation 有 $<|S|$ 個頂點的 disk 實現 | inside 換成較小實現：Lean `replacement` 保 Σ，cycle 內側清空後再黏 disk patch 保平面 | 葉子過濾（不單調，加邊可能破壞分隔） |
 
 R2 用到的 inside relation 目錄就是 cell catalogue 自己：C3 永遠可清空、C4 的 7 個關係（$\le3$ 頂點）由
@@ -340,7 +341,7 @@ R2 用到的 inside relation 目錄就是 cell catalogue 自己：C3 永遠可�
 **Computationally observed（`--r2`）：** $k=3,4,5$ 的 R1+SYM 倖存者分成兩類，剛好互補——Σ 舊的全部
 R2-可約，Σ 新的全部 R2-不可約：
 
-| $k$ | 精確 DFS 節點 | R1+SYM 節點 | 倖存者 | 其中 Σ 舊（全 R2-可約） | Σ 新（全不可約） | 新 Σ（條件式，見 §7.0） | 秒 |
+| $k$ | 精確 DFS 節點 | R1+SYM 節點 | 倖存者 | 其中 Σ 舊（全 R2-可約） | Σ 新（全不可約） | 新 Σ（條件式，見 §6.0） | 秒 |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 3 | 3.1×10⁵ | 9,514 | 205 | 125 | 80 | 35 | 0.1 |
 | 4 | 2.1×10⁷ | 1.8×10⁵ | 1,920 | 1,860 | 60 | 25 | 0.3 |
@@ -352,8 +353,8 @@ R2-可約，Σ 新的全部 R2-不可約：
 
 1. **R1+SYM 把 $k=5$ 從 17 分鐘壓到 2.6 秒、$k=6$ 從 $2^{50}$（不可行）壓到 66 秒、$k=7$ 從 $2^{60}$ 壓到 36 分鐘**，
    且 $k\le5$ 的新 Σ 與精確枚舉逐一相同（`matches_exact_catalogue`）。這就是「用 $k\le5$ 跳過大部分 $k=6$」的答案：
-   不是 C++，是 degree 剪枝加標號正規化。前提與信任層級見 §7.0。
-2. **$K_6=K_5$、$K_7=K_5$（條件式）**：在 §7.0 的前提 1–3 下，第六、七個內部頂點都不產生任何新 Σ。
+   不是 C++，是 degree 剪枝加標號正規化。前提與信任層級見 §6.0。
+2. **$K_6=K_5$、$K_7=K_5$（條件式）**：在 §6.0 的前提 1–3 下，第六、七個內部頂點都不產生任何新 Σ。
    新增序列 11, 11, 30, 35, 25, 20, 0, 0。這兩個等號**不是**精確枚舉的輸出，而是 reduced 搜尋加上
    R1 引理的推論；沒有可對照的 $k=6$ 精確結果。$K_\infty=K_5$（132 個 Σ、24 個 D5 orbit）更弱，仍是 **conjectured**：
    有限層飽和不是證明，而且就算 R1 成立，$k\ge8$ 的倖存者仍指數成長（$k=7$ 已 1.9×10⁹ 節點、36 分鐘），
@@ -365,7 +366,89 @@ R2-可約，Σ 新的全部 R2-不可約：
 `reduced_k{k}.json` 保存每個倖存 Σ 的計數與最省 witness、R2 統計與 C4 目錄；labeled 計數在這個模式下
 **不是**全宇宙計數，只有新 Σ 集合是完整的。
 
-## 6. 檔案與重現
+## 7. SYM：內部標號正規化（proved in Lean ＋ 窮舉 checker）
+
+使用者要求：證明重新標號 interior vertices 不改變 C5 boundary-colouring feasibility，因此不改變
+10-bit Σ key；並核對 production enumerator 的 canonicalization 是否只依賴此等價。
+本節只做 SYM，**不碰 R1、R2、$k\ge6$、$K_6=K_5$，也不改 catalogue**。
+
+### 7.1 Lean：$\Sigma$ 與內部標號無關
+
+`Math/SymRelabel.lean`（namespace `FiveBoundary.Sym`；公理審計
+`artifacts/sym_relabel/lean-audit.txt`）。設 $G$ 是 $\mathrm{Fin}\,n$ 上的 simple graph，$B$ 是五點
+boundary injection，$\pi$ 是**固定 boundary 逐點**的置換，`relabel π G := G.comap π`。
+
+| 定理 | 內容 | 信任 |
+| --- | --- | --- |
+| `Sigma_relabel` | $\pi$ 固定 $B$ 的點時 $\Sigma(\texttt{relabel}\,\pi\,G)=\Sigma(G)$ | 普通證明 |
+| `Sigma_relabel_interior` | cell 座標 $\mathrm{Fin}(5+k)$、boundary `firstBoundary` 的特例 | 普通證明 |
+| `sigma_iff_relabel` | 逐 bit 形式：$b\in\Sigma(\texttt{relabel}\,\pi\,G)\iff b\in\Sigma(G)$ | 普通證明 |
+| `Sigma_relabel_eq` | 兩個固定 boundary 的 relabelling 給同一個 $\Sigma$ | 普通證明 |
+| `proper_relabel` | $\mathrm{Proper}(\texttt{relabel}\,\pi\,G)\,c\iff\mathrm{Proper}\,G\,(c\circ\pi^{-1})$ | 普通證明 |
+| `patternOrder_length` / `patternOrder_toFinset` | 十個 pattern 的順序與 `colorReps` 一致、恰十個 | `native_decide` |
+
+證明就是「重標是 graph 的自同構」：$c\mapsto c\circ\pi^{-1}$ 是 $G$ 的正常染色與
+$\texttt{relabel}\,\pi\,G$ 的正常染色之間的雙射；因為 $\pi$ 固定 boundary，
+$\texttt{boundaryColoring}\,B\,(c\circ\pi^{-1})=\texttt{boundaryColoring}\,B\,c$，兩邊的
+boundary projection 相同，故 $\Sigma$ 逐元素相等。**推論**：十 bit 的每一個 bit（「這個 boundary
+pattern 至少有一個合法內部延伸」）是 unlabeled 內部的性質，不是編號的性質；因此同一個 unlabeled
+圖的任兩個標號有相同的十 bit 輸出，reduced enumerator 用它當 key 是合法的。
+
+公理依賴：上表前五條只有 `propext`／`Quot.sound`（`patternOrder_*` 另有 `native_decide` 的計算公理），
+沒有 `sorryAx`。
+
+### 7.2 Lean 未做：attachment mask 的搬運與鴿籠排序
+
+`SYM` 在程式裡是「內點的五 bit attachment mask 非遞增」這一條剪枝，它的合法性由兩件事組成：
+
+1. **搬運**：`relabel` 把 $x_m$ 的 mask 搬到 $x_{\sigma(m)}$，所以 mask 的多重集（因而「非遞增」這個
+   性質）在 relabelling 下保持 —— 這是 §7.1 的 mask 版本，`Math/SymRelabel.lean` 只在註解中記錄
+   其論證（`(relabel π G).Adj u v ↔ G.Adj (π u) (π v)` 加上 `π (B i) = B i`），**尚未 Lean 化**；
+2. **存在**：每個 unlabeled 圖都有非遞增的代表（把內點按 mask 排序）—— 純鴿籠事實，**未 Lean 化**。
+
+兩者都由下面的窮舉 checker 覆蓋；§7.1 的定理不依賴它們。
+
+### 7.3 Checker：`scripts/c5_sym_check.py`
+
+只讀 `cells.json`，從 edge universe 獨立重算，不寫任何 enumerator 產物。報告
+`artifacts/c5_cells/sym_check.json`（`--quick` 寫 `sym_check_quick.json`）。
+
+| 檢查 | 內容 |
+| --- | --- |
+| `A0` | production 的 per-vertex block 順序（`att_value`）與 $U(k)$ 的 bit 順序描述同一組五 bit mask |
+| `A1` | production `interior_perm_maps` ≡ 獨立寫的 relabel map；生成集合對合成與反元素封閉、階數為 $k!$ |
+| `A2` | mask 的多重集在 relabelling 下不變（抽樣 relabelling 逐個比對） |
+| `A3` | **全宇宙**：每張圖都存在非遞增 relabelling（`without_sorted_relabel = 0`） |
+| `A4` | `SYM` 是 orbit union：一個 orbit 全留或全丟；且與「attachment mask 值非遞增」的規格逐圖相同 |
+| `A4'` | 在 R1 倖存者中，每個 orbit 至少有一個 `SYM` 代表（剪枝不丟任何 unlabeled 圖） |
+| `A5` | `cells.json` 的 `canonical_masks` 是 orbit 最大值計數：每個 orbit 恰有一個 canonical mask |
+| `A5'` | catalogue 的 132 個 witness 中 $k_{\mathrm{eff}}\le3$ 的 76 個，其 `canonical_masks` 與 orbit 最大值一致 |
+
+`A0` 是必要的座標校正：$k\ge3$ 時 production 的 per-vertex block 在 mask 裡**不連續**
+（前面 block 的 interior–interior 邊插在中間），所以「用 $U(k)$ 的 bit 順序讀 mask」與
+「用 production 的 block 偏移讀 mask」是兩套座標；checker 兩套都算並逐圖比對，確認它們描述同一組
+mask，之後才比較 `sym_ok`（$U(k)$ 順序）與 `prod_sym_ok`（production 順序）。
+
+`A4` 順帶釘死一件事實：production 讀的是 **attachment mask 原始五 bit 值**的非遞增
+（`att_value`），比「attachment 數目」的非遞增更細；兩者在 $k\ge2$ 就會分歧
+（$k=2$：65,536 張中有 14,080 張不同），checker 兩種讀法都驗，兩者都 `orbits lost = 0`。
+
+```bash
+uv run --with rustworkx==0.17.1 --with networkx==3.5 python scripts/c5_sym_check.py --quick   # k<=2 全宇宙 ＋ catalogue
+uv run --with rustworkx==0.17.1 --with networkx==3.5 python scripts/c5_sym_check.py --k 2 --k 3   # ＋ k=3 全宇宙（8.4M 圖）
+```
+
+### 7.4 界線
+
+* 這是 **proved in Lean（§7.1）＋ computationally verified（§7.3）** 的組合，**不是**「SYM 全 Lean 化」。
+* 沒有動 R1、R2、$k\ge6$ 搜尋、$K_6=K_5$、catalogue 定義或任何 `cells.json` 內容。
+* $k=4,5$ 的 orbit 檢查**沒跑**：production 的 `interior_perm_maps` 只在 $k\le3$ 建表，
+  $k=4$ 是 $24$ 個置換、$k=5$ 是 $120$ 個，全宇宙 $2^{31}$／$2^{40}$ 不可行；
+  §7.1 的 Lean 定理對所有 $k$ 成立且與 $k$ 無關，未覆蓋的只是 §7.2 那兩條的**窮舉**部分。
+* §7.1 只說「$\Sigma$ 是 relabelling 不變量」；「catalogue 不取 D5 商」、「mask 是帶標號 key」等既有
+  保留不變。
+
+## 8. 檔案與重現
 
 ```bash
 uv run --with rustworkx==0.17.1 --with networkx==3.5 python scripts/c5_cell_enumerator.py --k 5 --jobs 30   # 17 min → cells.json
