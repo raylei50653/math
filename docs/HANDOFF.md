@@ -72,6 +72,24 @@ P=0–x–2、Q=1–y–3 與共同 T=0–z–2 的四份完整染色關係皆�
 下一個有意義的擴充是活動面上的 introduce／close／forget，先檢驗新增端點與面資訊的必要性；
 不直接擴大枚舉，不把固定端點純插入模型當一般施工模型。
 
+## 2026-09-13 兩層 raw configuration 的未來細分（committed-colour 分層 strip）
+
+新增 `scripts/stepwise_layer_refinement.py` → `artifacts/stepwise/layer_refinement.json`（約 4 秒，`--check` 逐 byte 比對），
+研究文件 [§9j](stepwise_state_sufficiency.md#9j-兩層-raw-configuration-的未來細分已承諾顏色的分層-strip)。
+模型是明確指定的 instantiation：strip grammar 但**所有引入頂點的顏色都已承諾**，層 = $w$ 個引入步驟的頂點，
+$w$ 取到恰好兩層局部（$2w\ge\max f-1$ 且某 $f>w+1$，皆 assert）；raw configuration $=(L_{t-1},L_t)$，action = 合法的整個下一層。
+
+**computationally observed（16 個形狀，完整枚舉＋逐深度 Moore refinement＋獨立整圖 replay）**：
+
+- 辨識 behavioural class 的未來深度 $\le2$（兩層局部性的一般論證；第 2 層在 $(3,3),(5),(6),(7),(3^n)$ 等確實需要）。
+- 活類 ⇔ constraint map（下兩層每個頂點的禁用色集合）；dead 只有一類。$(3)$：12 類 $=(b_t,\{b_{t-1},u_{t-2}\})$；
+  $(3,3)$：A（robust，24 類）／B（viable 但一步致命，24 類）／dead，規則逐類驗證。
+- 可延伸性不局部：$(3)^n$ 有 horizon 到 $n-2$ 的 trap（Q2 lookahead 隨深度增長）；strategy core $36\cdot2^{n-1}-24$、robust core $12\cdot2^{n-1}$、
+  活類 $12n2^{n-1}$（$n\le6$ 觀察）；fan $\ge4$ 形狀的 robust core 為空，隨機合法走法 100 層存活 0。
+- 存在性邊界 residual 的對照曲線：辨識深度 2–5 個邊界步（$(2,3)$ 為 5），沒有兩層局部性。
+
+**沒有主張**：任意平面圖、環形版本、重染、一般 $n$ 的計數律、Lean。`check_stepwise.py` 已納入 8 個關鍵數字。
+
 ## 2026-09-12 Lean 補件：strip 圖語義與 residual 類數下界
 
 新增 `Math/StripGraph.lean`（strip 圖、`Extendable`、附 `search_iff`／`verdict_iff` 正確性證明的回溯著色檢查器、

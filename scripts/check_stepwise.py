@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Re-run the six stepwise trial scripts and compare key numbers with artifacts/stepwise/.
+"""Re-run the stepwise trial scripts and compare key numbers with artifacts/stepwise/.
 
 python scripts/check_stepwise.py          # ~9 min, pure stdlib (strip_width dominates)
 python scripts/check_stepwise.py --fast   # ~2 min: strip_width skips its three slowest shapes
@@ -66,6 +66,16 @@ RUNS = {
         ('fans24', 'minimal_sufficient', 'window0'),
         ('fans224', 'run_channels', 'minimal_cap_runs'),
         ('fans23', 'window3_all_features', 'sufficient'),
+    ]),
+    'stepwise_layer_refinement.py': ('layer_refinement.json', [
+        ('shapes', 'fans33', 'refinement_counts'),
+        ('shapes', 'fans33', 'stationary_classes'),
+        ('shapes', 'fans333', 'horizon_classes'),
+        ('shapes', 'fans333333', 'core_classes'),
+        ('shapes', 'fans333333', 'robust_core_classes'),
+        ('shapes', 'fans5', 'fixed_point_depth'),
+        ('shapes', 'fans24', 'orbits'),
+        ('existential_comparison', 'fans23', 'fixed_point_depth'),
     ]),
 }
 SLOW_ONLY = {'stepwise_strip_width.py': ['fans2223', 'fans2224', 'fans2233']}   # absent from --fast reruns
