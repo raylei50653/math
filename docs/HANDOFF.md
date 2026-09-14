@@ -2,7 +2,44 @@
 
 更新：2026-09-14。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：`viable` 剪枝可靠性已 Lean 化（2026-09-14）
+## 最新停止點：圖層與 incidence／搜尋狀態已接通（2026-09-14）
+
+本輪依使用者指定，完成 degree、attachment mask 的 bridge。詳細規格見
+[c5_cell_enumerator.md §12](c5_cell_enumerator.md)。
+
+**proved in Lean**：新 [Math/ReducedGraphBridge.lean](../Math/ReducedGraphBridge.lean)，已匯入
+`Math.lean`。對任意 k 具體定義 production interior-edge index 與 `touch`，證邊索引單射、
+鄰居與 incident edge 一一對應；`degree_eq_graph`、`attValue_eq_attMask` 把有限集合的 degree／
+attachment 值等同於實際圖的 degree／`Sym.attMask`。`survivor_iff` 雙向連接圖層 R1+SYM；
+`viable_of_graph`、`graph_rejection_sound`、`retained_graph_owner` 接上 prefix 剪枝與 ownership。
+
+`Represents G M` 精確表示所有 interior edges；`encode G` 與 `represents_encode` 給出具體實例，
+`represents_with_chords` 允許任意五個 chord bits。boundary-only adjacency 不在此 representation
+內，因此不能由它推完整圖相等或同 Σ。`touch` 包含較晚 blocks 的內點邊，沒有漏算 degree。
+
+**computationally verified**：新 `scripts/c5_graph_bridge_check.py` 核對 k≤2 的 **66,592** 張圖、
+**132,096** 個內點觀測：graph↔interior encoding round trip、degree、attachment 全部零差異。
+另核對 k=0..12 的 layout，兩項負控制通過。報告 `artifacts/c5_cells/graph_bridge_check.json`。
+
+驗證：`lake build`、新公理審計、新 checker `--check`、既有 viable checker `--check`、
+`git diff --check` 通過。新模組無 warning；既有 build warnings 保留。
+公理輸出 `artifacts/c5_cells/graph-bridge-lean-audit.txt` 無 `sorryAx`／native 公理。
+
+**仍未證／下一步**：Python shift/popcount／建表執行、DFS reachability、平行 scheduler、
+planarity oracle 尚未形式化；`retained_graph_owner` 仍需目標 prefix 已在候選集。
+下一個可接續工作是把遞迴搜尋狀態轉移與 prefix reachability 接上此圖層 bridge。
+本輪未改 production／`cells.json`、未擴大 catalogue 搜尋、未加強剪枝；$K_\infty=K_5$ 仍為猜想。
+本輪及先前本地修改均保留，未 commit／push。
+
+```bash
+lake build
+lake env lean Math/ReducedGraphBridgeAudit.lean
+uv run --with rustworkx==0.17.1 python scripts/c5_graph_bridge_check.py --check
+uv run --with rustworkx==0.17.1 python scripts/c5_viable_check.py --check
+git diff --check
+```
+
+## 先前停止點：`viable` 剪枝可靠性已 Lean 化（2026-09-14）
 
 使用者要求繼續，本輪完成上一個停止點列出的 `viable` soundness。
 完整規格、定理與可完成性反例見 [c5_cell_enumerator.md §11](c5_cell_enumerator.md)。

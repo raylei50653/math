@@ -33,4 +33,5 @@ import Math.SymRelabel
 import Math.SymNormalForm
 import Math.PrefixPartition
 import Math.ReducedViable
+import Math.ReducedGraphBridge
 import Math.LocalWiring

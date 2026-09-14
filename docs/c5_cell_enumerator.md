@@ -824,3 +824,73 @@ lake env lean Math/ReducedViableAudit.lean
 
 下一個證明缺口是把 incidence table／bit 編码與实际圖的 degree、attachment mask 接起來，
 或形式化遞迴搜尋的 reachability。$K_\infty=K_5$ 的猜想地位不變。
+
+
+## 12. 圖層 degree／attachment 與搜尋狀態的 bridge（2026-09-14）
+
+**proved in Lean**：[Math/ReducedGraphBridge.lean](../Math/ReducedGraphBridge.lean)
+（namespace `FiveBoundary.ReducedGraphBridge`），已匯入 `Math.lean`。任意 $k$，不用有限枚舉。
+
+### 12.1 具體座標與 representation
+
+圖頂點為 `Fin (5+k)`，固定 boundary 0..4、內點 $x_m=5+m$。
+`Edge k` 是所有 $u<v$ 且 $v≥5$ 的頂點對；其 production index 為
+
+$$\operatorname{edgeIndex}(u,v)=\operatorname{blockStart}(v-5)+u.$$
+
+當 $u<5$ 是 attachment；當 $u=5+l$ 是 back edge，offset 正是 $5+l$。
+`blockIndex_injective`／`edgeIndex_injective` 證 block 不重疊及編碼單射；
+`edgeIndex_lt` 證索引小於 `blockStart k`。
+`touch k m` 是所有以 $x_m$ 為任一端點的 edge indices，因此也包含**較晚 block 的邊**。
+`incident_injective` 及 `degree_eq_graph` 的有限集合雙射證明保證每個鄰居恰計一次。
+
+`Represents G M` 要求每條 interior edge 的 index 在有限集合 $M$ 中，當且僅當它是圖的邊。
+這項條件不是懸空的假設：`encode G` 明確從圖的 interior edges 建集合，
+`represents_encode` 證其成立；`represents_with_chords` 允許再聯集任意 $C⊆[0,5)$。
+五個 chord bits 不影響內點 degree／attachment；此 representation **刻意不描述 boundary-only
+adjacency**，不能拿來主張完整圖相等或相同 Σ。它也不要求 C5、平面性或 apex oracle。
+圖是原本的 cell，不包含 production 平面性檢查用的額外 apex。
+
+### 12.2 已接通的定理
+
+對任何 `Represents G M`：
+
+| 定理 | 結論 |
+| --- | --- |
+| `degree_eq_graph` | `degree (touch k) M m = G.degree (5+m)` |
+| `attachment_index` | boundary bit i 的 index 正是 `blockStart m+i` |
+| `attValue_eq_attMask` | `attValue M m = Sym.attMask G B (5+m)`，保留固定 boundary 次序與 $2^i$ 權重 |
+| `survivor_iff` | 搜尋 `Survivor` 等價於圖上所有內點 degree≥4 且 `Sym.SortedAttachments G` |
+| `viable_of_graph` | 上述圖的每個 prefix 通過 `Viable` |
+| `graph_rejection_sound` | 被拒絕的 prefix 不可能表示任何 graph-level R1+SYM 完成圖 |
+| `retained_graph_owner` | 候選集已有目標 prefix 時，過濾後仍保留其 owner |
+
+因此 §11 的任意 incidence table 現在已有具體圖層實例，而圖上的 numeric-mask
+antitone 條件也與搜尋的相鄰比較**雙向等價**，包含 $k=0$ 與相同 masks。
+`retained_graph_owner` 仍保留候選 prefix 可達的前提；沒有聲稱 DFS 已形式化。
+
+### 12.3 獨立 production replay 與界線
+
+**computationally verified**：[scripts/c5_graph_bridge_check.py](../scripts/c5_graph_bridge_check.py)
+對 $k=0,1,2$ 的 **66,592** 張完整圖（所有 chord choices、包含非平面圖）重建鄰居集合，
+逐圖檢查 interior encoding round trip，並對 **132,096** 個內點觀測比較 graph degree、
+incidence cardinality、production popcount，以及 graph attachment、加權和、production shift/mask。
+所有差異為零。$k=0..12$ 另做完整 edge layout／incidence 檢查，沒有大 k 圖搜尋。
+交換兩個 attachment bits、漏掉較晚內點的 incidence 兩項負控制都被拒絕。
+報告 [graph_bridge_check.json](../artifacts/c5_cells/graph_bridge_check.json) 含來源與 catalogue hashes，
+`--check` 逐 byte replay；此 checker 不是 Lean extraction。
+
+```bash
+lake build
+lake env lean Math/ReducedGraphBridgeAudit.lean
+uv run --with rustworkx==0.17.1 python scripts/c5_graph_bridge_check.py --check
+uv run --with rustworkx==0.17.1 python scripts/c5_viable_check.py --check
+git diff --check
+```
+
+新模組與公理審計通過；審計輸出 `artifacts/c5_cells/graph-bridge-lean-audit.txt` 只有
+`propext`／`Classical.choice`／`Quot.sound`，無 `sorryAx` 或 native 公理。
+本輪沒有改 production、既有 checker 或 `cells.json`，沒有新 catalogue 搜尋。
+尚未形式化 Python 整數 bit 操作／建表執行、DFS reachability、multiprocessing 或 planarity oracle。
+下一個具體缺口是搜尋狀態轉移及候選 prefix 的 reachability；更強剪枝仍只是另外記錄的方向。
+$K_\infty=K_5$ 仍是猜想。

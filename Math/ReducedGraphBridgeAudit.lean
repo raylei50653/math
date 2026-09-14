@@ -1,0 +1,16 @@
+import Math.ReducedGraphBridge
+
+#print axioms FiveBoundary.ReducedGraphBridge.blockIndex_injective
+#print axioms FiveBoundary.ReducedGraphBridge.edgeIndex_injective
+#print axioms FiveBoundary.ReducedGraphBridge.edgeIndex_lt
+#print axioms FiveBoundary.ReducedGraphBridge.incident_injective
+#print axioms FiveBoundary.ReducedGraphBridge.represents_encode
+#print axioms FiveBoundary.ReducedGraphBridge.represents_with_chords
+#print axioms FiveBoundary.ReducedGraphBridge.mem_touch
+#print axioms FiveBoundary.ReducedGraphBridge.degree_eq_graph
+#print axioms FiveBoundary.ReducedGraphBridge.attachment_index
+#print axioms FiveBoundary.ReducedGraphBridge.attValue_eq_attMask
+#print axioms FiveBoundary.ReducedGraphBridge.survivor_iff
+#print axioms FiveBoundary.ReducedGraphBridge.viable_of_graph
+#print axioms FiveBoundary.ReducedGraphBridge.graph_rejection_sound
+#print axioms FiveBoundary.ReducedGraphBridge.retained_graph_owner
