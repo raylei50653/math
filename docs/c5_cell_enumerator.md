@@ -740,3 +740,87 @@ lake env lean Math/PrefixPartitionAudit.lean
 下一個明確缺口是把 §9.4 的 **`viable` 不會拒絕合法完成**寫成 Lean 定理，對齊 degree 的
 「目前已選＋尚可選上界」與 SYM 的「前一 block 已定案、目前 block 只能增加」。Prefix 的
 `covered_iff` 已把這項需求獨立出來，無需增加枚舉頂點數。
+
+## 11. `viable` 剪枝可靠性：Lean 模型與完整前綴檢查（2026-09-14）
+
+§10 的下一步已完成。**proved in Lean**：在明確的有限邊集合模型中，每個 R1+SYM 倖存圖的
+所有前綴都通過 `Viable`，因此被拒絕的前綴沒有 R1+SYM 完成圖。另以 production 的真實
+`viable` 對 $k\le2$ 的全部部分狀態重驗，零誤剪、零規格差異。沒有新增圖搜尋或改 production。
+
+### 11.1 模型與一般證明
+
+[Math/ReducedViable.lean](../Math/ReducedViable.lean) 定義：
+
+* `blockStart 0 = 5`、`blockStart (m+1) = blockStart m + 5 + m`，對應五條 chords 與各內點的
+  五條 attachments＋m 條 back edges。`blockStart_strictMono` 保證 production 遇到第一個未開始
+  block 後 `break`，正好略過所有後續 blocks。
+* `attValue M m = ∑ i∈range 5, if blockStart m+i∈M then 2^i else 0`，固定 bit 權重與邊界次序。
+* `degree touch M m = |M∩touch(m)|`。`touch` 是明示的有限 incidence table 參數；此定理對任何
+  這種 table 成立，**不假裝已證 Python 建表與實際 graph.degree 的 bridge**。
+* `Survivor` 要求每個內點 degree≥4、相鄰 attachment 數值非遞增；`Viable` 只檢查
+  `blockStart m < cut` 的 blocks，使用與 production 相同的 degree 上界和 mask 比較。
+
+令 $P=M\cap[0,e)$。證明鏈為：
+
+| 定理 | 內容 |
+| --- | --- |
+| `degree_upper` | $|M\cap T_m|\le|P\cap T_m|+|T_m\cap[e,\infty)|$，由集合包含與 union 的 cardinality 上界 |
+| `attValue_prefix_le` | 清除未定案 bits 只能降低 attachment 數值 |
+| `previous_block_fixed` | 若第 m+1 block 已開始，前一 block 的五個 bits 全低於 e，故前一 mask 已等於最終值 |
+| `viable_of_survivor` | `Survivor k touch M → Viable k touch P e`，任意 k、e、M |
+| `rejection_sound` | `¬Viable k touch P e → ¬∃M, prefixPart e M=P ∧ Survivor k touch M` |
+| `retained_owner` | 若合法目標的 prefix 已在候選 task 集中，套 `Viable` 過濾後仍有 owner；銜接 §10 |
+
+這補齊 §9.4 的有限集合／數值論證。所有定理為普通 Lean 證明；公理審計入口
+`Math/ReducedViableAudit.lean`，輸出 `artifacts/c5_cells/viable-lean-audit.txt` 無 `sorryAx`／native 公理。
+`retained_owner` 仍明確保留「prefix 已在未過濾候選集」的前提，
+沒有形式化整個遞迴 DFS、multiprocessing、Python shift/popcount 或 planarity oracle。
+
+### 11.2 全部部分狀態的獨立檢查
+
+[scripts/c5_viable_check.py](../scripts/c5_viable_check.py) 用完整圖的鄰接座標直接計算 R1+SYM，
+再將所有 survivor 投影到每個 cut，得到**確實存在完成圖**的全部前綴。這個 oracle 不呼叫
+`viable`，也不使用平面性或 DFS。隨後枚舉每個 cut 的全部 `mask < 2^cut`，檢查：
+
+1. production `viable(mask,cut)` 等於有限集合規格；
+2. 凡 oracle 證實有完成圖的前綴，都不被 production 拒絕；
+3. 在 `cut=E`，production guard 與完整 R1+SYM 條件相等。
+
+包含所有非平面圖，故這項誤剪檢查比只檢查平面搜尋路徑更廣。有限集合規格是獨立 Python 實作，
+不是 Lean extraction；數學定理與 production 的大 k 實作之間仍有程式信任層。
+
+| k | 完整圖宇宙 | 全部 prefix 狀態 | R1+SYM 完整圖 | 誤剪 | 規格差異 | 通過但無完成圖 |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 0 | 32 | 63 | 32 | 0 | 0 | 0 |
+| 1 | 1,024 | 2,047 | 192 | 0 | 0 | 0 |
+| 2 | 65,536 | 131,071 | 5,024 | 0 | 0 | 3,264 |
+
+合計 **133,181** 個部分狀態；production touch table 在這三個 k 與邊座標逐一對齊。
+另只做 $k=0..12$ block layout 檢查，未生成大 k 染色表或圖宇宙。負控制確認 production／spec
+不一致及兩者共同誤剪（由完成圖 oracle 抓出）都會使 checker 失敗。
+
+### 11.3 新觀察：`viable=True` 不是精確可完成性
+
+按 `(cut,mask)` 次序找到的首例為 $k=2,e=11,P=224$（production block 座標）：
+已選 bits 5、6、7，即 $x_0$ 接 boundary 0、1、2；其 mask=7。$x_1$ 的 bit 0 已決定為 0，
+其餘四個 attachment bits 與 $x_0x_1$ 邊尚未決定。
+
+production 回 True：$x_0$ 的 degree 上界 $3+1=4$，$x_1$ 的上界 $0+5=5$，目前 masks $7\ge0$。
+但 $x_0$ 要達 degree≥4 必須加 $x_0x_1$；$x_1$ 因此仍至少需要三條 boundary 邊。
+它可用的 boundary bits 為 1、2、3、4，取至少三個的最小數值為 $2+4+8=14>7$，必違反 SYM。
+所以剩餘五 bits 的全部 32 個完成圖都失敗；上述完整圖 oracle 已包含這些完成圖。
+
+這不是誤剪或漏解，而是 **安全但保守的通過**。production 的 docstring「Can some continuation…」
+應讀成必要條件篩選，不能解讀為充分必要的可完成性 oracle。
+後續可研究把 degree 所需 attachment 數量與 numeric mask 上界合併的更強必要条件；本輪未改剪枝。
+
+報告 `artifacts/c5_cells/viable_check.json` 含 source／catalogue hash，`--check` 逐 byte replay：
+
+```bash
+uv run --with rustworkx==0.17.1 python scripts/c5_viable_check.py --check
+lake build
+lake env lean Math/ReducedViableAudit.lean
+```
+
+下一個證明缺口是把 incidence table／bit 編码與实际圖的 degree、attachment mask 接起來，
+或形式化遞迴搜尋的 reachability。$K_\infty=K_5$ 的猜想地位不變。

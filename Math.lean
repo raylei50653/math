@@ -32,4 +32,5 @@ import Math.LocalClosure
 import Math.SymRelabel
 import Math.SymNormalForm
 import Math.PrefixPartition
+import Math.ReducedViable
 import Math.LocalWiring

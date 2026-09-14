@@ -2,7 +2,50 @@
 
 更新：2026-09-14。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：prefix 平行切分的唯一歸屬與 production replay（2026-09-14）
+## 最新停止點：`viable` 剪枝可靠性已 Lean 化（2026-09-14）
+
+使用者要求繼續，本輪完成上一個停止點列出的 `viable` soundness。
+完整規格、定理與可完成性反例見 [c5_cell_enumerator.md §11](c5_cell_enumerator.md)。
+
+**proved in Lean**：新 [Math/ReducedViable.lean](../Math/ReducedViable.lean)，已匯入 `Math.lean`。
+`blockStart` 明確跟隨 production block 大小；`degree_upper` 證目前選中＋尚可選的 degree 上界，
+`previous_block_fixed` 證上一個 attachment mask 已定案。`viable_of_survivor` 保證任意 k 的
+R1+SYM 完成圖之所有 prefix 都通過有限集合模型的 `Viable`；`rejection_sound` 排除任何合法完成。
+`retained_owner` 已銜接上一輪 `covered_iff`，保證候選集中的合法 owner 不被這項過濾丟失。
+
+**computationally verified**：新 `scripts/c5_viable_check.py` 不使用 DFS 或平面性，從 $k=0,1,2$
+的完整邊宇宙直接求所有 R1+SYM 圖，再投影各 cut 的確實可完成 prefixes。全部 **133,181** 個
+部分狀態與 production 比較，零誤剪、零有限集合規格差異；終端 guard 與 R1+SYM 完整條件一致。
+另只檢查 $k=0..12$ 的 block layout，沒有大 k 搜尋。報告 `artifacts/c5_cells/viable_check.json`。
+
+**新觀察**：k=2 有 3,264 個 `viable=True` 但不存在 R1+SYM 完成圖的前綴。首例 `(cut=11,mask=224)`：
+$x_0$ 已接 boundary 0、1、2（mask 7）；$x_1$ 的 boundary bit 0 已排除。degree 要求迫使兩內點相連，
+且 $x_1$ 至少還需三個 attachment bits，最小 mask 14>7，違反 SYM。這是通過條件保守，不是剪枝錯誤。
+production `viable` 不能被當作精確的「是否有完成圖」oracle。
+
+**界線**：Lean 使用明示的有限 incidence table `touch`，還未證它與實際 graph.degree 的 bridge；
+Python shift/popcount／建表／DFS reachability／planarity oracle 仍非已形式化。`retained_owner` 保留
+「目標 prefix 已在原候選集」的前提。本輪不改 production 或 `cells.json`，沒有新 catalogue 搜尋；
+$K_\infty=K_5$ 仍是猜想。前幾輪的本地修改已保留，尚未 commit／push。
+
+重現：
+
+本輪 `lake build`、公理審計、checker `--check` 與 `git diff --check` 均通過；新模組無 warning。
+公理輸出 `artifacts/c5_cells/viable-lean-audit.txt` 僅含 `propext`／`Classical.choice`／`Quot.sound`，
+沒有 `sorryAx`／native 公理。build 仍有既有 `AttachmentOrder`／`SymRelabel` warnings。
+
+```bash
+lake build
+lake env lean Math/ReducedViableAudit.lean
+uv run --with rustworkx==0.17.1 python scripts/c5_viable_check.py --check
+git diff --check
+```
+
+**後續方向**：優先補 incidence table／bit 編碼與 graph degree、attachment mask 的 bridge，
+使現有 graph 層 R1／SYM 與此次搜尋狀態層直接相接。另一個有具體反例支撐的方向，是把 degree
+所需 attachment 數目與 numeric mask 上界結合成更強剪枝；目前僅記錄，未修改 production。
+
+## 先前停止點：prefix 平行切分的唯一歸屬與 production replay（2026-09-14）
 
 使用者要求「繼續下一步」，本輪完成前述 prefix 切分研究。詳細證明與信任邊界在
 [c5_cell_enumerator.md §10](c5_cell_enumerator.md)。

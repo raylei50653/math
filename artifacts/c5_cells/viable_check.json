@@ -1,0 +1,57 @@
+{
+  "cases": [
+    {
+      "edge_bits": 5,
+      "false_rejections": 0,
+      "first_passing_without_completion": null,
+      "full_graphs": 32,
+      "k": 0,
+      "passing_without_completion": 0,
+      "prefix_states": 63,
+      "rejected_states": 0,
+      "specification_mismatches": 0,
+      "survivor_graphs": 32,
+      "terminal_guard_exact": true
+    },
+    {
+      "edge_bits": 10,
+      "false_rejections": 0,
+      "first_passing_without_completion": null,
+      "full_graphs": 1024,
+      "k": 1,
+      "passing_without_completion": 0,
+      "prefix_states": 2047,
+      "rejected_states": 1344,
+      "specification_mismatches": 0,
+      "survivor_graphs": 192,
+      "terminal_guard_exact": true
+    },
+    {
+      "edge_bits": 16,
+      "false_rejections": 0,
+      "first_passing_without_completion": {
+        "cut": 11,
+        "mask": 224
+      },
+      "full_graphs": 65536,
+      "k": 2,
+      "passing_without_completion": 3264,
+      "prefix_states": 131071,
+      "rejected_states": 108512,
+      "specification_mismatches": 0,
+      "survivor_graphs": 5024,
+      "terminal_guard_exact": true
+    }
+  ],
+  "negative_controls": {
+    "production_disagreement_rejected": true,
+    "shared_unsound_rejection_rejected": true
+  },
+  "scope": "all prefix states k<=2; no planarity assumption; layout-only k<=12",
+  "source_sha256": {
+    "Math/ReducedViable.lean": "fee28be9065f043ebdfbedf0b89ed83014bba4d18443be889fa10ea1c2b4eb96",
+    "artifacts/c5_cells/cells.json": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+    "scripts/c5_cell_reduced.py": "ddcf1e3660816bae2b4bf43c0b287c34e73b9cd450a28132e3a0add86b69f635",
+    "scripts/c5_viable_check.py": "079ac7977298776d69703aa914683c3388123baa2c89eb6272b88ef5f88301b0"
+  }
+}
