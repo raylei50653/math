@@ -606,7 +606,8 @@ $\mathrm{undecided}_m(E)=0$，即完整版 R1+SYM 檢查）：
 故 `viable` 在通往 $M^*$ 的整條軌跡上都真，DFS 不會提前剪掉這條路徑（命題 4 是唯一的剪枝點）。
 平面性檢查（L126）在刪邊下單調（$M^*$ 加 apex 平面 $\Rightarrow$ 其任何邊子集加 apex 也平面），故每當
 軌跡需要「加入」$M^*$ 的某位元時 `rx.is_planar` 必真、遞迴得以深入；需要「排除」時迴圈原地繼續到下一個
-$e$，同樣不受影響。因此軌跡必然抵達 `mask=M*, start=E` 的呼叫，其 `_record` 開頭的
+$e$，同樣不受影響。因此軌跡必然抵達 `mask=M*` 的呼叫（非空時 `start=1+max(M*)`，
+未必等於 `E`；空圖是根呼叫），其 `_record` 開頭的
 `viable(M*,E)` 守門（即完整版 R1+SYM 檢查，就是上面兩點取 $e=E$ 本身）為真，$M^*$ 被計入
 `per_sigma`。$\blacksquare$
 
@@ -623,6 +624,7 @@ $e$，同樣不受影響。因此軌跡必然抵達 `mask=M*, start=E` 的呼叫
 * **R2**（`r2_reduction`、§6 的分隔環規則）——完全不同的論證（Lean `replacement` + 目錄自舉），
   本節未動。
 * **前綴平行化**（`enumerate_reduced` 的 `dfs_prefix` 切 `PREFIX` 再丟給 `Pool`／`_task`，L161–199）——
+  **2026-09-14 已補 §10 的分割定理、程式結構論證與有限 replay；以下保留原本的未覆蓋說明。**
   `_task` 從某個 `viable` 已驗證過的前綴節點 `(mask,prefix)` 出發、以 `_dfs(mask,prefix,E,...)` 續跑，
   結構上與單一行程的 `_dfs` 遞迴完全相同（只是把某個深度以下的子樹搬到另一個行程執行），本節的論證
   逐字適用於每個子樹；但「`dfs_prefix` 枚舉的節點集合恰好覆蓋單行程 DFS 在該深度會產生的所有節點、
@@ -634,3 +636,107 @@ $e$，同樣不受影響。因此軌跡必然抵達 `mask=M*, start=E` 的呼叫
 * 本節的證明是**普通數學論證**（鴿籠排序、二進位單調、對 `block_edge_order` 構造的直接歸納），
   **未寫成 Lean**；引理 1 對應 `Math/SymRelabel.lean` §3 註解裡點名「未形式化」的 `attMask` 搬運事實，
   這裡把它在 reduced enumerator 的座標系裡寫出證明，但仍是普通證明，不是 `.lean` 檔案裡的定理。
+
+## 10. Prefix 平行切分：唯一歸屬、記錄分支與 production replay（2026-09-14）
+
+本節回答 §9 留下的切分問題。**結果：沒有發現 production 切分缺陷。** 完成任意有限邊集合的
+Lean 唯一歸屬定理、針對實際迴圈的紙面覆蓋論證，以及 $k=0..3$ 的逐圖 production 比對。
+不同信任層分開列出；這不是 Python／multiprocessing 的形式化驗證。
+
+### 10.1 集合分割（proved in Lean）
+
+令 $M\subseteq[0,E)$ 是目標圖的帶標號邊集合，$0\le p\le E$ 是切分位置。定義
+
+$$A_p(M)=\{e\in M:e<p\},\qquad S_p(M)=\{e\in M:p\le e\}.$$
+
+task 標籤 $A$ 的語意是「固定低位元為 $A$，只從 $[p,E)$ 加邊」。所以 task $A$ 能產生 $M$
+恰好等於 $A=A_p(M)$。在 [Math/PrefixPartition.lean](../Math/PrefixPartition.lean)：
+
+| 定理 | 內容 |
+| --- | --- |
+| `reconstruct` | $A_p(M)\cup S_p(M)=M$ |
+| `prefix_union` | 從合法 prefix／suffix 的 union 取低位元，恢復原 prefix |
+| `owns_iff` | `Owns p A M` 當且僅當 $A=A_p(M)$ |
+| `unique_owner` / `owners_equal` | 每個目標恰有一個可能標籤；不同標籤不能產生同一目標 |
+| `covered_iff` | 經 task 過濾後，目標仍被覆蓋當且僅當其 $A_p(M)$ 被保留 |
+| `owner_at_end` | 所有邊都低於切分位置時，owner 就是目標本身 |
+
+對任意有限集合、任意切分位置成立，包含空集合與兩端切分。普通證明，公理審計入口
+`Math/PrefixPartitionAudit.lean`，輸出 `artifacts/c5_cells/prefix-lean-audit.txt` 只有
+`propext`／`Classical.choice`／`Quot.sound`，無 `sorryAx`／native 公理。
+這些定理**沒有假設 task 列表自動完整**：`covered_iff` 明確留下
+「目標 prefix 未被剪掉」這個 obligation；列表提交是否重複也要另外驗證。
+
+### 10.2 `dfs_prefix` 與 `_task` 的完整性（紙面程式結構論證）
+
+固定一張 apex-planar 且通過 R1+SYM 的目標圖 $M$，取 $A=A_p(M)$。
+
+1. `dfs_prefix` 在每次呼叫 append `(mask,p)`，不僅在最大索引抵達 $p-1$ 時 append。
+   子呼叫只加入 $e\ge start$ 並改成 `start=e+1`。任何低位元集合只能由其已選索引的嚴格遞增序列
+   走到，因此每個候選 label 至多 append 一次。空 prefix 由根呼叫處理。
+2. 沿著 $A$ 的遞增序列行走時，所有部分圖都是 $M$ 的子圖，故通過 apex-planarity。
+   所有遇到的 `viable(mask,e)` 也都通過：否則 §9.4 的剪枝可靠性會排除仍存在的完成 $M$。
+   故 `dfs_prefix` 必 append $(A,p)$。尾端 `viable(A,p)` 過濾同理不能移除它。
+3. `_task(A,p)` 從初始化的 boundary＋apex 基圖加入 $A$，從全染色表逐一 AND $A$ 的限制，
+   然後呼叫 `_dfs(A,p,E,...)`。沿 $S_p(M)$ 的遞增序列，同樣由子圖單調性與剪枝可靠性到達 $M$。
+   `_record` 在每次 `_dfs` **進入時**執行，不必等到 `start=E`；suffix 為空時就在 task 根記錄。
+4. `_dfs` 的嚴格遞增加入順序保證同一 task 不重複到達同一圖；`owners_equal` 排除不同 task
+   到達同一圖。每個 $(A,p)$ 又只提交一次，所以記錄不重複。
+
+這是對 source 結構的一般論證，仍依賴 §9.4 剪枝可靠性、planarity oracle 正確性，以及執行期間
+graph add/remove 與 task 調度按 source 的正常語意完成。它不處理 worker crash／重送／執行器故障。
+
+### 10.3 兩條互斥的記錄路徑
+
+production 的 $p$ 在 $k=0$ 時為 $E$，$k\ge1$ 時取前兩個可用 interior blocks 的末端加一：
+$k=1,2$ 仍有 $p=E$，$k\ge3$ 為 $p=16<E$。
+
+* **$p<E$**：`dfs_prefix` 不呼叫 `_record`。即使某張目標只有低位元邊，也由對應 task 的根呼叫
+  記錄。所有記錄都發生在 worker；task 間依上節分割。
+* **$p=E$**：`dfs_prefix` 每次進入都 `_record`，worker 分支完全不執行。尾端過濾 `nodes` 不會
+  撤銷任何記錄，也不需撤銷：`_record` 自己已檢查 `viable(mask,E)`。`prefix_tasks` 這個統計欄位
+  在此只表示過濾後的 prefix 數，**不是實際提交的 task 數**（實際為 0）。
+
+`_merge` 對各 Σ 的 count 求和、witness 取 `(edge_count,mask)` 最小值、mask list 串接。
+因此單次消費互不重複的 task 輸出時，count／witness／mask 多重集與完成順序無關；list 順序可不同。
+其首次插入會直接採用 cell dictionary，後續原地更新；checker 重播不同完成順序前先 deepcopy
+每個原始 task 輸出，以免把合併後的字典誤當原始輸出。
+
+### 10.4 可重驗 production 證據（computationally verified）
+
+[scripts/c5_prefix_check.py](../scripts/c5_prefix_check.py) 不改 production 或 catalogue：
+
+* 純集合模型：$E=0..9$ 的全部 55 個切分情境，所有目標逐一驗證唯一 owner 與一次覆蓋。
+* 實際 production：$k=0..3$ 各跑單一 `_dfs`、實際 `enumerate_reduced` 配逆序同步 task 執行器、
+  實際 `enumerate_reduced` 配雙程序 Pool。同步執行器只替代 Pool，保留原 `dfs_prefix`／`_task`／
+  `_dfs`／`viable`／`_record`／`_merge`，並捕捉每次記錄的 owner。
+* 逐一比對完整帶標號 mask 多重集、各圖 Σ、每個 Σ 的 count 與最小 witness；不只比 Σ key 集合。
+  每次同步 record 檢查 graph 與 mask 一致，成功記錄時重新摺疊全部選中邊的限制表；每個 task 前後
+  檢查基圖恢復。染色表重建仍使用 production tables，不是獨立的 Σ 語意 bridge。
+* 負控制：在實際 k=3 task 提交處移除一個有結果的 owner、重複提交 task，兩者均被 checker 拒絕；
+  重複結果 mask 也被拒絕。production 程式沒有為此修改。
+
+| k | E | p | 記錄分支 | 實際提交 tasks | 倖存帶標號圖 | 此層倖存 Σ keys |
+| ---: | ---: | ---: | --- | ---: | ---: | ---: |
+| 0 | 5 | 5 | direct | 0 | 11 | 11 |
+| 1 | 10 | 10 | direct | 0 | 11 | 11 |
+| 2 | 16 | 16 | direct | 0 | 30 | 30 |
+| 3 | 23 | 16 | workers | 645 | 205 | 61 |
+
+三條 production 路徑逐圖一致，零漏記、零重記。表格是 **R1+SYM 倖存者**，不是 nested catalogue
+$K_k$，也不是 $k=3$ 的 $2^{23}$ 張圖全宇宙枚舉。有限 replay 不能排除所有大 k 的 Python bug。
+這次沒有新跑 $k\ge4$、R2 或新 catalogue 搜尋，$K_\infty=K_5$ 的猜想地位不變。
+
+報告 `artifacts/c5_cells/prefix_check.json` 保存 source／catalogue SHA-256、檢查範圍與逐圖結果摘要 hash。
+`--check` 重新計算並逐 byte 比對報告；不寫 production 輸出。
+
+```bash
+uv run --with rustworkx==0.17.1 python scripts/c5_prefix_check.py
+uv run --with rustworkx==0.17.1 python scripts/c5_prefix_check.py --check
+lake build
+lake env lean Math/PrefixPartitionAudit.lean
+```
+
+下一個明確缺口是把 §9.4 的 **`viable` 不會拒絕合法完成**寫成 Lean 定理，對齊 degree 的
+「目前已選＋尚可選上界」與 SYM 的「前一 block 已定案、目前 block 只能增加」。Prefix 的
+`covered_iff` 已把這項需求獨立出來，無需增加枚舉頂點數。

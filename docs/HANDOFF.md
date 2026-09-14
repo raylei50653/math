@@ -2,7 +2,52 @@
 
 更新：2026-09-14。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：自行選題研究，補齊 SYM 排序定理並修正 checker（2026-09-14）
+## 最新停止點：prefix 平行切分的唯一歸屬與 production replay（2026-09-14）
+
+使用者要求「繼續下一步」，本輪完成前述 prefix 切分研究。詳細證明與信任邊界在
+[c5_cell_enumerator.md §10](c5_cell_enumerator.md)。
+
+**proved in Lean**：[Math/PrefixPartition.lean](../Math/PrefixPartition.lean)，已由 `Math.lean` 匯入。
+對任何有限邊集合 $M$、任何 cut $p$，task 的唯一可能標籤是 $M\cap[0,p)$。
+`unique_owner`／`owners_equal` 證唯一性；`covered_iff` 精確指出剪枝後覆蓋當且僅當這個 prefix
+被保留；`owner_at_end` 處理全邊皆在 prefix 的 direct-record 情況。普通證明，沒有 native finite check。
+這是集合分割定理，不是 Python DFS 或 scheduler 的形式化證明。
+
+**紙面程式論證**：`dfs_prefix` 每次進入都 append 候選，不是只 append 最後索引到 cut 的圖。
+嚴格遞增的已選索引給每個 label 唯一路徑；§9 的剪枝可靠性保證合法目標的 prefix 被保留。
+`prefix<E` 時 parent 完全不 record，全部交 worker；`prefix=E` 時 parent 直接 record，完全不啟動
+worker。順帶修正 §9 的「必須到 `start=E` 才記錄」說法：實際 `_record` 在每次 DFS 進入時執行。
+
+**computationally verified**：新 `scripts/c5_prefix_check.py` 比對 actual production 單一 `_dfs`、
+逆序同步執行實際 `_task`、真正的雙程序 Pool，保留完整帶標號 mask 多重集、Σ、count、witness。
+$k=0,1,2$ 走 direct 分支，倖存圖數 11／11／30；$k=3$ 有 645 個 tasks、205 張倖存圖、61 個
+此層倖存 Σ keys，三路逐图一致且每圖只記錄一次。另檢查每次同步 record 的 graph/mask、成功記錄的
+完整染色表 AND、每個 task 的 graph 恢復與完成順序無關性；移除有產出 task／重複 task 的負控制均被拒絕。
+純集合模型另窮舉 $E=0..9$ 的 55 個 cut 情境、9,217 組 target/cut。
+
+報告 `artifacts/c5_cells/prefix_check.json` 含來源與 `cells.json` hash；`--check` 逐 byte replay。
+沒有改 production enumerator 或 `cells.json`，沒有新跑 $k\ge4$。表中是 reduced 倖存者，不能當
+nested catalogue 的 $K_k$。Python/pruning/planarity 的完整正確性與 $K_\infty=K_5$ 仍未證明。
+
+重現：
+
+本輪 `lake build`、`PrefixPartitionAudit`、checker `--check` 與 `git diff --check` 均通過；
+新模組無 warning，build 仍有既有 `AttachmentOrder`／`SymRelabel` warnings。
+公理輸出 `artifacts/c5_cells/prefix-lean-audit.txt` 只有 `propext`／`Classical.choice`／`Quot.sound`，
+無 `sorryAx`／native 公理。
+
+```bash
+uv run --with rustworkx==0.17.1 python scripts/c5_prefix_check.py --check
+lake build
+lake env lean Math/PrefixPartitionAudit.lean
+git diff --check
+```
+
+**下一個明確問題**：把 §9.4 的 `viable` soundness 寫進 Lean——degree 的已選＋尚可選上界，
+以及 SYM 前一 block 已定案／目前 block 只能增加的比較。這可接上 `covered_iff` 所保留的 obligation。
+本輪只完成 prefix；未開始這段新證明。所有修改仍在本地，未 commit／push。
+
+## 先前停止點：自行選題研究，補齊 SYM 排序定理並修正 checker（2026-09-14）
 
 使用者要求「看一下有什麼方向值得挖並自行開始研究」，因此恢復一輪有界研究。
 依目前證據，方向優先序如下：
