@@ -2,7 +2,37 @@
 
 更新：2026-09-14。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：popcount cardinality 與整數 viable 已接通（2026-09-14）
+## 最新停止點：K∞=K5 的 Kempe 切入，集中到兩個待排除 orbit（2026-09-14）
+
+**使用者已要求先停在這裡。** 保留目前結果，等待新的研究指示。
+使用者指定 Dvořák–Swart 的 [A note on extendable sets of colorings and rooted minors,
+arXiv:2504.07764v1](https://arxiv.org/html/2504.07764v1) 為後續重要參考。
+恢復時優先對照其 §1 的 planar realizability、Kempe constraints 與 reducibility 觀點；
+目前只作方向參考，尚未由該文導出 933／941 不可實現性或 K∞=K5。
+
+使用者要求從原猜想找切入點，本輪改做任意大小 cell 的結構必要條件；沒有再枚舉大 k。
+完整論證與範圍見 [c5_kempe_screen.md](c5_kempe_screen.md)。
+
+**computationally verified**：1,023 個非空十 bit masks 經平面 Kempe screen 剩 153；再以
+與全部已知外側 cell 非空相交（**使用 4CT 和 disk gluing**）剩 142，包含全部既有 132。
+差額恰為兩個 D5 orbit：933 類（T4 加一個三色 pattern），941 類（T4 加兩個 singleton
+位置不相鄰的三色 patterns），各五個固定標號 masks。
+
+**候選引理，UNPROVED**：任意 disk cell 若五個四色 boundary patterns 全可延伸，則至少
+兩個三色 patterns 可延伸；恰好兩個時 singleton 位置相鄰。此引理配合上述必要條件，有限
+檢查恰剩既有 132 keys，因此是一條通往 K∞=K5 的條件式路線。一般 Kempe/disk soundness
+仍是紙面論證，尚未 Lean 化；候選引理是實際數學缺口，不是已證結論。
+
+已試 boundary push（五位置、spoke 有／無）共 1,530 個轉移，153 masks 對其封閉，故僅
+重複此操作加 Kempe screen 無法繼續排除。下一步宜直接研究 933／941 不可實現性，以及
+不同完整染色間的 connectivity 限制；T4 全收可先推出 boundary 無 chord。
+
+驗證：`python3 scripts/c5_kempe_screen.py --check`、既有 132 witness 的 NetworkX／全染色
+checker（零 mismatch）、`git diff --check`。新報告 `artifacts/c5_cells/kempe_screen.json`
+保留 obligations、拒絕 witness、hash 與負控制。沒有新 Lean 模組，未改 production／
+`cells.json`。使用者後續已要求 commit／push 此輪成果；研究維持暫停，原猜想地位未變。
+
+## 先前停止點：popcount cardinality 與整數 viable 已接通（2026-09-14）
 
 **proved in Lean**：[Math/IntegerViable.lean](../Math/IntegerViable.lean)，已匯入 `Math.lean`。
 可執行 `popcount` 使用 `Nat.bitIndices.length`；`popcount_encode` 對任意有限集合證
