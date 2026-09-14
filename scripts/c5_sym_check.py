@@ -26,18 +26,16 @@ beyond that equivalence:
   A2  The five-bit attachment mask of an interior vertex is transported by relabelling; the multiset
       of attachment sizes is relabelling-invariant (this is the fact SYM sorts).
   A3  Every graph has *some* relabelling whose attachment masks are non-increasing — the pigeonhole
-      step that makes the SYM cut lossless.  Exhaustive over the whole universe for small k and over
-      the stored survivor witnesses for the larger k.
-  A4  SYM marks whole orbits: the set of masks kept by the reduced enumerator's `viable` predicate is
-      invariant under relabelling (it is an orbit union), and no orbit has survivors but no
-      non-increasing representative.
+      step that makes the SYM cut lossless. Exhaustive over the requested small-k universes.
+  A4  SYM intersects every orbit and agrees with production's numeric attachment-mask order.
+      It generally splits orbits: sortedness itself is not invariant under relabelling.
   A5  The catalogue's `canonical_masks` counter is a relabelling-orbit count: it counts the masks of
       each Σ-class that are the maximum of their own relabelling orbit, and every orbit has exactly
       one such mask.
 
 Together A1-A5 say that the production canonicalisation consults nothing but the interior-relabelling
-equivalence: the relabel map is the symmetric-group action, SYM is an orbit union whose losslessness
-is the pigeonhole fact, and the canonical counter is the orbit maximum.
+equivalence: the relabel map is the symmetric-group action and SYM retains at least one
+representative per orbit. The canonical counter has a separate orbit-maximum check.
 
 Nothing here modifies `cells.json` or any enumerator; the script only reads the artefacts and
 re-derives the claims from the edge universe.  Trust level: computationally verified on the printed
@@ -146,8 +144,8 @@ def sym_spec_card(mask, k, edges):
 def sym_spec_value(mask, k, edges):
     """SYM read by attachment-mask *value*: the five-bit masks are non-increasing as integers.
 
-    This is the reading that matches production (`att_value` returns the raw bit block), and it is a
-    refinement of the size reading: mask values non-increasing implies sizes non-increasing.
+    This matches production (`att_value` returns the raw bit block). Numeric order and
+    popcount order are incomparable: (16, 15) passes only numeric order, (15, 16) only size order.
     """
     m = att_masks(mask, k, edges)
     return nonincreasing(m)
@@ -282,16 +280,18 @@ def build_orbit_partition(masks, full):
 
 def check_pigeonhole(k, edges, log, masks, orbits):
     """A3: every graph has a non-increasing relabelling (the SYM cut loses no unlabelled graph)."""
-    orbit_ok = {orb: any(nonincreasing(att_sizes(x, k, edges)) for x in orb) for orb in orbits}
+    orbit_ok = {orb: any(sym_spec_value(x, k, edges) for x in orb) for orb in orbits}
     missing = [m for orb in orbits if not orbit_ok[orb] for m in orb]
     out = dict(k=k, graphs=len(masks), without_sorted_relabel=len(missing),
                first_missing=(missing[0] if missing else None))
+    if missing:
+        raise AssertionError(out)
     log(f"A3 pigeonhole: {out}")
     return out
 
 
 def check_sym_orbits(k, edges, log, masks, orbits, c_to_r):
-    """A4: SYM keeps whole relabelling orbits, and agrees with the attachment-mask specification.
+    """A4: SYM hits every orbit, and agrees with the numeric attachment-mask specification.
 
     Caller must have already run `R._setup(k)` and set `R._W['blocks']`; `c_to_r` (`edge_reindex`)
     translates a reference-order mask into `R`'s block-edge order for `prod_sym_ok`.
@@ -299,21 +299,28 @@ def check_sym_orbits(k, edges, log, masks, orbits, c_to_r):
     card_mismatch = 0
     value_mismatch = 0
     prod_mismatch = 0
+    value_only = size_only = 0
     for mask in masks:
         s = sym_ok(mask, k, edges)
         if s != sym_spec_card(mask, k, edges):
             card_mismatch += 1
+            value_only += int(s)
+            size_only += int(not s)
         if s != sym_spec_value(mask, k, edges):
             value_mismatch += 1
         if s != prod_sym_ok(act(mask, c_to_r), k):
             prod_mismatch += 1
-    # orbit union: a mask and all its relabellings are kept or dropped together
-    orbit_bad = sum(1 for orb in orbits if len({sym_ok(m, k, edges) for m in orb}) != 1)
+    # Split orbits are expected. An orbit with no retained representative is an error.
+    orbit_split = sum(1 for orb in orbits if len({sym_ok(m, k, edges) for m in orb}) != 1)
+    orbit_lost = sum(1 for orb in orbits if not any(sym_ok(m, k, edges) for m in orb))
     out = dict(k=k, graphs=len(masks), orbits=len(orbits),
                value_spec_mismatches=value_mismatch, size_spec_mismatches=card_mismatch,
-               production_mismatches=prod_mismatch, orbits_split_by_sym=orbit_bad,
-               value_spec_stricter_than_size=(value_mismatch > 0))
-    log(f"A4 SYM is an orbit union: {out}")
+               production_mismatches=prod_mismatch, orbits_split_by_sym=orbit_split,
+               orbits_without_sym_representative=orbit_lost,
+               numeric_only_graphs=value_only, size_only_graphs=size_only)
+    if value_mismatch or prod_mismatch or orbit_lost:
+        raise AssertionError(out)
+    log(f"A4 SYM orbit coverage and production agreement: {out}")
     return out
 
 

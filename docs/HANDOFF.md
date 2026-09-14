@@ -1,8 +1,51 @@
 # 新對話交接：四色 boundary-state／constraint gadget 研究
 
-更新：2026-09-13。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
+更新：2026-09-14。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：SYM 已拆解為「Lean 核心 ＋ 窮舉 checker」（2026-09-13）
+## 最新停止點：自行選題研究，補齊 SYM 排序定理並修正 checker（2026-09-14）
+
+使用者要求「看一下有什麼方向值得挖並自行開始研究」，因此恢復一輪有界研究。
+依目前證據，方向優先序如下：
+
+1. **reduced 搜尋的完整性鏈**：已有 R1 與重標不變性，可逐段消除未形式化環節。
+   本輪選定並完成 attachment-mask 搬運與排序代表存在性；同時發現並修正 checker 的語意錯誤。
+2. **前綴平行切分是否完整且不重複**：§9 尚未涵蓋 `dfs_prefix` 的覆蓋；下一個明確問題是
+   對每個目標邊集合證明它恰屬於一個 prefix task，並核對 prefix 上提前 `_record` 的部分。
+   應先做可重驗的有限集合分割模型，再銜接 production；尚未開始。
+3. **$K_\infty=K_5$ 的結構性原因**：需要任意大 cell 的 reduction／不可約障礙定理。
+   目前有限目錄穩定不足以推出此命題；R2 的一般充分性及 disk replacement 幾何仍是難點。
+
+**proved in Lean**：新 [Math/SymNormalForm.lean](../Math/SymNormalForm.lean)，已由 `Math.lean` 匯入。
+`attMask` 以固定 boundary 次序編碼五 bit；`attMask_relabel` 證搬運；`interiorPerm` 明確延伸
+內點置換並逐點固定 boundary；`exists_sorted_relabel` 對**任意 $k$**給出非遞增 masks 的重標代表，
+且完整 $\Sigma$ 與原圖相等。包含空內部與 mask 相同的情況，不用 native finite check。
+
+**checker 修正與 computationally verified**：SYM 不是 orbit union；正確要求是每個 orbit 至少
+保留一個代表。舊報告其實已記錄 k=2 有 31,744 個 split orbits。另 mask 數值排序與 attachment
+數目排序互不蘊含，舊 A3 誤查後者；已改查數值排序。A3／A4 的丟失代表以及 A4 規格／production
+mismatch 現在會拋錯。重新跑 $k=0,1,2$ 全宇宙，k=2 的 33,792 個 orbit **零丟失**、production
+**零 mismatch**；數值／數目排序分歧 14,080 張（numeric-only 3,520；size-only 10,560）。
+新報告 `artifacts/c5_cells/sym_check_quick.json`；舊 `sym_check.json` 保留為歷史輸出，不能當新版 A3。
+
+**界線**：本輪完成圖層 SYM 排序存在性，沒有形式化 Python DFS／bit 操作／平行切分，沒有重跑
+$k\ge3$ 全宇宙或新 cell 搜尋。`cells.json` 未變；$K_6=K_5$／$K_7=K_5$ 仍為條件式結果，
+$K_\infty=K_5$ 仍是猜想。下方舊停止點中的「排序未 Lean 化」與「orbit union」由本節更正。
+
+驗證入口：
+
+本輪 `lake build`、公理審計、quick checker、`git diff --check` 均通過。新模組無 warning；
+build 仍有既有 `AttachmentOrder`／`SymRelabel` warnings。公理輸出保存在
+`artifacts/sym_relabel/normal-form-lean-audit.txt`，只有 `propext`／`Classical.choice`／`Quot.sound`，
+無 `sorryAx`／native 公理。另以記憶體內注入錯誤確認 A3 缺代表、A4 production 不一致會拋錯。
+
+```bash
+lake build
+lake env lean Math/SymNormalFormAudit.lean
+uv run --with rustworkx==0.17.1 --with networkx==3.5 python scripts/c5_sym_check.py --quick
+git diff --check
+```
+
+## 先前停止點：SYM 已拆解為「Lean 核心 ＋ 窮舉 checker」（2026-09-13）
 
 使用者要求：證明重新標號 interior vertices 不改變 C5 boundary-colouring feasibility，因此不改變
 10-bit Σ key；並核對 production enumerator 的 canonicalization 是否只依賴此等價。
@@ -27,7 +70,8 @@ production 的 SYM canonicalization 只依賴這個等價 ——
 `interior_perm_maps` 與獨立重寫的 relabel map 相同且生成 $S_k$（`A1`）；
 attachment mask 的多重集在 relabelling 下不變（`A2`，$k=3$ 抽驗 5,991,865 次）；
 **全宇宙**每張圖都有非遞增 relabelling（`A3`：$k\le3$ 的 $2^5/2^{10}/2^{16}/2^{23}$ 個 graph，
-`without_sorted_relabel = 0`）；SYM 是 orbit union 且與規格逐圖相同（`A4`）；
+`without_sorted_relabel = 0`；舊 A3 實際查數目排序，見最新更正）；SYM 與規格逐圖相同（`A4`，
+舊「orbit union」解讀有誤，見最新停止點）；
 R1 倖存者中每個 orbit 至少留一個 SYM 代表（`A4'`）；`cells.json` 的 `canonical_masks` 是 orbit
 最大值計數，每 orbit 恰一個（`A5`／`A5'`，$k_{\mathrm{eff}}\le3$ 的 76 個 witness 全過）。
 

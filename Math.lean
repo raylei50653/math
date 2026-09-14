@@ -30,4 +30,5 @@ import Math.StepwiseGenerated
 import Math.StepwiseReplay
 import Math.LocalClosure
 import Math.SymRelabel
+import Math.SymNormalForm
 import Math.LocalWiring

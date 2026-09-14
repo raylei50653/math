@@ -30,10 +30,9 @@ audited in `Math/SymRelabelAudit.lean`.  The finite orbit facts reused from `Mat
 (`colorReps` coverage, disjointness, minimality) are `native_decide` there, exactly as documented for
 that file.
 
-The attachment masks of §3, their sorting (§7 rule `SYM`) and the orbit quotient of §5 are *not*
-formalised here; they are verified computationally on the whole universe for `k ≤ 3` by
-`scripts/c5_sym_check.py` and recorded in `docs/c5_cell_enumerator.md` §8.  Only §1–§2 (the relabelling
-invariance of `Sigma`, which is the SYM claim itself) is proved below, and §4's two list facts.
+Attachment-mask transport and existence of sorted representatives for arbitrary `k` are proved
+in `Math/SymNormalForm.lean`, which imports this file. Python implementation checks remain separate.
+The orbit quotient of §5 is not formalised here.
 -/
 set_option linter.style.nativeDecide false
 set_option linter.style.setOption false
@@ -147,23 +146,21 @@ theorem Sigma_relabel_eq {G : SimpleGraph (Fin n)} (π σ : Equiv.Perm (Fin n)) 
     Sigma (relabel π G) B = Sigma (relabel σ G) B := by
   rw [Sigma_relabel π B hπ, Sigma_relabel σ B hσ]
 
-/-! ### 3. The attachment masks (verified in Python, not formalised here)
+/-! ### 3. The attachment masks (formalised in `Math/SymNormalForm.lean`)
 
 `SYM` in `c5_cell_reduced.py` reads the five-bit boundary-attachment mask of each private vertex and
 keeps only graphs whose masks are non-increasing.  Two facts make that cut a pure labelling
 normalisation:
 
 * *transport*: relabelling moves the mask of a private vertex to the relabelled vertex, so the mask
-  multiset (in particular the sortedness predicate) is a relabelling invariant;
+  multiset is a relabelling invariant (sortedness of the indexed tuple is not);
 * *existence*: every graph has such a relabelling — sort the private vertices by mask.
 
-Both are checked exhaustively by `scripts/c5_sym_check.py` over the whole edge universe for `k ≤ 3`
-(`A2` transport, `A3` existence, `A4` orbit-union, `A4'` losslessness among the `R1` survivors, `A5`
-the orbit-maximum count behind `canonical_masks`), and the report is
-`artifacts/c5_cells/sym_check.json`.  They are **not** formalised here: the graph-level statement that
-the mask is transported by a relabelling is `attMask (relabel π G) m' = attMask G m` (the argument is
-`(relabel π G).Adj u v ↔ G.Adj (π u) (π v)` plus `π (B i) = B i`), and the existence half is the
-pigeonhole step of sorting a finite list.  Neither is needed by any theorem in this file. -/
+The importing module proves `attMask_relabel`, `attMask_relabel_interior`, and
+`exists_sorted_relabel`, including preservation of `Sigma`, for every `k`.
+`scripts/c5_sym_check.py` separately checks numeric mask order against production.
+The SYM cut intersects every orbit; it is not an orbit union. Neither transport nor sorting
+is needed by any theorem in this file. -/
 
 /-! ### 5. The ten-bit key (specification; orbit machinery verified in Python)
 
@@ -203,9 +200,9 @@ cell is unchanged by relabelling its private vertices, i.e. feasibility per boun
 property of the unlabelled interior.  That is the SYM equivalence itself, and it is what makes the
 ten-bit key a function of the unlabelled graph.
 
-**Verified in Python, not here:** the attachment-mask bookkeeping of the `SYM` cut (§3), the orbit
-quotient behind the ten-bit key (§5) and the sorting that supplies a non-increasing representative
-(`docs/c5_cell_enumerator.md` §7–§8, `scripts/c5_sym_check.py`).
+**Proved in the importing `Math/SymNormalForm.lean`:** attachment-mask transport and existence
+of a non-increasing representative (§3). The Python coordinate bridge and the orbit quotient
+behind the ten-bit key (§5) retain their separate computational trust boundaries.
 
 Nothing in this file mentions `R1`, `R2`, `K₆ = K₅` or the catalogue. -/
 

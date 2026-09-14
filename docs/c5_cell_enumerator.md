@@ -307,7 +307,7 @@ $k=7$ 是 $2^{60}$——**精確枚舉在 $k\ge6$ 是跑不動的**，不是慢�
 | --- | --- | --- |
 | 1 | **R1 引理**：內部頂點 $v$ 若 $\deg(v)\le3$，則 $\Sigma(G)=\Sigma(G-v)$ | **proved in Lean**：`summary_eq_deletePrivate`（一般 boundary）、`sigma_eq_delete_private`（C5 形式）；只對「內點」用，boundary 固定不動 |
 | 2a | **SYM 的核心：$\Sigma$ 與內部標號無關** | **proved in Lean**：`Sigma_relabel`／`sigma_iff_relabel`（`Math/SymRelabel.lean`），見 §7 |
-| 2b | **SYM 的鴿籠步驟**：每個 unlabeled 圖都有一個「attachment mask 非遞增」的代表 | 組合事實（把內點按 mask 排序）；**未 Lean 化**，以窮舉 checker 驗證（§7，`A3`／`A4'`） |
+| 2b | **SYM 的排序步驟**：每個 unlabeled 圖都有一個「attachment mask 非遞增」的代表 | **proved in Lean**：`FiveBoundary.Sym.exists_sorted_relabel`（`Math/SymNormalForm.lean`），任意 $k$，包含 mask 搬運與同 $\Sigma$；見 §7.2 |
 | 3 | **程式正確實作 1 與 2** | 只在 $k\le5$ 以精確枚舉驗證（`matches_exact_catalogue: true`）；另有 §7 的 SYM 專用 checker；這些都是經驗驗證，不是證明 |
 
 （§0 的 bridge 與前提 3 **不是同一件事**：bridge 只保證「給定一張圖，十 bit 的讀寫與 $\Sigma$ 一致」，
@@ -317,7 +317,7 @@ R1 的證明（現已 Lean 化）：$G-v$ 的任何正常染色限制到 $G$ 還
 因此**若前提 1–3 成立**，第 $k$ 層的新 Σ 只可能來自「每個內點 degree $\ge4$」的圖，
 $K_k=K_{k-1}\cup\Sigma(\text{倖存者})$ 就是完整的，$K_6=K_5$ 也就成立。
 
-**反面必須寫清楚**：R1 與 SYM 的**核心**（$\Sigma$ 與內部標號無關）都已不是數學信任缺口；SYM 剩下的缺口只有鴿籠步驟（2b）與程式實作（3）。若這兩者之一有誤，$K_6=K_5$ 仍不成立。目前**沒有**獨立的 $k=6$ 精確枚舉可以對照
+**反面必須寫清楚**：R1、SYM 的 $\Sigma$ 不變性與排序代表存在性（2b）都已有 Lean 證明；剩下的是程式實作（3）。實作若有誤，現有資料仍不足以保證 $K_6=K_5$。目前**沒有**獨立的 $k=6$ 精確枚舉可以對照
 （那正是它跑不動的原因），所以這個結論的信任層級低於 §3 的 $k\le5$ 精確數字，
 也低於 R1 這條 Lean 證書。§6 表格的「新 Σ」欄一律讀作「reduced 搜尋所到範圍內的新 Σ」。
 
@@ -397,16 +397,24 @@ pattern 至少有一個合法內部延伸」）是 unlabeled 內部的性質，�
 公理依賴：上表前五條只有 `propext`／`Quot.sound`（`patternOrder_*` 另有 `native_decide` 的計算公理），
 沒有 `sorryAx`。
 
-### 7.2 Lean 未做：attachment mask 的搬運與鴿籠排序
+### 7.2 任意 $k$ 的 attachment mask 搬運與排序代表（2026-09-14 已 Lean 化）
 
 `SYM` 在程式裡是「內點的五 bit attachment mask 非遞增」這一條剪枝，它的合法性由兩件事組成：
 
-1. **搬運**：`relabel` 把 $x_m$ 的 mask 搬到 $x_{\sigma(m)}$，所以 mask 的多重集（因而「非遞增」這個
-   性質）在 relabelling 下保持 —— 這是 §7.1 的 mask 版本，`Math/SymRelabel.lean` 只在註解中記錄
-   其論證（`(relabel π G).Adj u v ↔ G.Adj (π u) (π v)` 加上 `π (B i) = B i`），**尚未 Lean 化**；
-2. **存在**：每個 unlabeled 圖都有非遞增的代表（把內點按 mask 排序）—— 純鴿籠事實，**未 Lean 化**。
+1. **搬運**：`attMask G B v = ∑ i, if G.Adj (B i) v then 2^i else 0`。
+   `attMask_relabel` 證明固定 boundary 的 pullback 重標滿足
+   $a_{\mathrm{relabel}\,\pi\,G}(v)=a_G(\pi(v))$。
+2. **存在**：`interiorPerm σ` 在 $\mathrm{Fin}(5+k)$ 上逐點固定 boundary，將新內點 $m$ 對應到舊內點
+   $\sigma(m)$。`exists_sorted_relabel` 用數值順序的對偶排序取得 $\sigma$，使新圖的 masks 非遞增，
+   並同時證明新圖與原圖的完整 $\Sigma$ 相等。對任意 $k$ 成立，含 $k=0$ 與相同 mask 的情況。
 
-兩者都由下面的窮舉 checker 覆蓋；§7.1 的定理不依賴它們。
+定理在 [Math/SymNormalForm.lean](../Math/SymNormalForm.lean)，由 `Math.lean` 匯入；
+公理審計入口 `Math/SymNormalFormAudit.lean`，輸出保存於
+`artifacts/sym_relabel/normal-form-lean-audit.txt`。這是普通 Lean 證明，不依賴 `native_decide`。
+§7.1 的定理不依賴此新模組；Python 的 bit 座標與 DFS 執行仍是分開的信任層。
+
+**修正先前說法：** 多重集不變不代表目前順序的 sortedness 不變。SYM 一般會拆開 orbit，
+要求是**每個 orbit 至少保留一個代表**，不是 orbit union，也不要求恰好一個代表。
 
 ### 7.3 Checker：`scripts/c5_sym_check.py`
 
@@ -419,7 +427,7 @@ pattern 至少有一個合法內部延伸」）是 unlabeled 內部的性質，�
 | `A1` | production `interior_perm_maps` ≡ 獨立寫的 relabel map；生成集合對合成與反元素封閉、階數為 $k!$ |
 | `A2` | mask 的多重集在 relabelling 下不變（抽樣 relabelling 逐個比對） |
 | `A3` | **全宇宙**：每張圖都存在非遞增 relabelling（`without_sorted_relabel = 0`） |
-| `A4` | `SYM` 是 orbit union：一個 orbit 全留或全丟；且與「attachment mask 值非遞增」的規格逐圖相同 |
+| `A4` | 每個 orbit 至少有一個 SYM 代表；與「attachment mask 值非遞增」及 production 逐圖相同；orbit 被拆開只是統計，並非錯誤 |
 | `A4'` | 在 R1 倖存者中，每個 orbit 至少有一個 `SYM` 代表（剪枝不丟任何 unlabeled 圖） |
 | `A5` | `cells.json` 的 `canonical_masks` 是 orbit 最大值計數：每個 orbit 恰有一個 canonical mask |
 | `A5'` | catalogue 的 132 個 witness 中 $k_{\mathrm{eff}}\le3$ 的 76 個，其 `canonical_masks` 與 orbit 最大值一致 |
@@ -430,8 +438,15 @@ pattern 至少有一個合法內部延伸」）是 unlabeled 內部的性質，�
 mask，之後才比較 `sym_ok`（$U(k)$ 順序）與 `prod_sym_ok`（production 順序）。
 
 `A4` 順帶釘死一件事實：production 讀的是 **attachment mask 原始五 bit 值**的非遞增
-（`att_value`），比「attachment 數目」的非遞增更細；兩者在 $k\ge2$ 就會分歧
+（`att_value`），與「attachment 數目」的非遞增互不蘊含；兩者在 $k\ge2$ 就會分歧
 （$k=2$：65,536 張中有 14,080 張不同），checker 兩種讀法都驗，兩者都 `orbits lost = 0`。
+
+2026-09-14 重驗：$k=2$ 的 33,792 個 orbit 中，31,744 個被 SYM 拆開，但 **0 個丟失**；
+numeric-only 圖 3,520 張，size-only 圖 10,560 張。例如 masks `(16,15)` 只通過數值排序，
+`(15,16)` 只通過數目排序。舊版 A3 誤用數目排序，已改成數值排序；A3／A4 的代表丟失與 A4
+production／規格 mismatch 現在會拋錯，不能僅列出失敗數字後正常結束。
+此次重建 `sym_check_quick.json`（$k=0,1,2$ 全宇宙）；`sym_check.json` 保留為舊版 $k=2,3$ 歷史報告，
+其中 `value_spec_stricter_than_size` 不應作數學解讀，A3 也不應當作數值排序的新版驗證。
 
 ```bash
 uv run --with rustworkx==0.17.1 --with networkx==3.5 python scripts/c5_sym_check.py --quick   # k<=2 全宇宙 ＋ catalogue
@@ -440,11 +455,11 @@ uv run --with rustworkx==0.17.1 --with networkx==3.5 python scripts/c5_sym_check
 
 ### 7.4 界線
 
-* 這是 **proved in Lean（§7.1）＋ computationally verified（§7.3）** 的組合，**不是**「SYM 全 Lean 化」。
+* SYM 的圖層不變性與排序存在性已 **proved in Lean（§7.1–7.2）**；Python 實作仍由 §7.3 分開檢查。
 * 沒有動 R1、R2、$k\ge6$ 搜尋、$K_6=K_5$、catalogue 定義或任何 `cells.json` 內容。
 * $k=4,5$ 的 orbit 檢查**沒跑**：production 的 `interior_perm_maps` 只在 $k\le3$ 建表，
   $k=4$ 是 $24$ 個置換、$k=5$ 是 $120$ 個，全宇宙 $2^{31}$／$2^{40}$ 不可行；
-  §7.1 的 Lean 定理對所有 $k$ 成立且與 $k$ 無關，未覆蓋的只是 §7.2 那兩條的**窮舉**部分。
+  §7.1–7.2 的 Lean 定理對所有 $k$ 成立；未做大 $k$ 的 Python 全宇宙檢查。
 * §7.1 只說「$\Sigma$ 是 relabelling 不變量」；「catalogue 不取 D5 商」、「mask 是帶標號 key」等既有
   保留不變。
 
@@ -468,6 +483,10 @@ uv run --with rustworkx==0.17.1 python scripts/c5_cell_reduced.py --k 6 --jobs 3
 不會覆蓋完整報告。
 
 ## 9. Reduced DFS 的完整性證明（嚴格限制在 `c5_cell_reduced.py` 的 R1+SYM search path）
+
+2026-09-14 更新：下文是先前的紙面論證；其中 mask 搬運與排序代表存在性現已在 §7.2 Lean 化。
+下文「尚未形式化」的歷史說明由此更新取代。前綴切分另見 §10；DFS 剪枝與 production 實作
+未因此自動形式化。
 
 使用者提問：核對 `scripts/c5_cell_reduced.py` 的 R1+SYM DFS 是否真的完整——即每一個
 「degree $\ge4$」（R1-倖存）的 unlabeled 內部圖，DFS 是否保證至少走訪並記錄一個標號代表。
