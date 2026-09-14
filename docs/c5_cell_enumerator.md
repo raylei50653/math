@@ -894,3 +894,81 @@ git diff --check
 尚未形式化 Python 整數 bit 操作／建表執行、DFS reachability、multiprocessing 或 planarity oracle。
 下一個具體缺口是搜尋狀態轉移及候選 prefix 的 reachability；更強剪枝仍只是另外記錄的方向。
 $K_\infty=K_5$ 仍是猜想。
+
+## 13. DFS 狀態轉移與 prefix reachability（2026-09-14）
+
+**proved in Lean**：[Math/ReducedDFS.lean](../Math/ReducedDFS.lean)，已匯入 `Math.lean`。
+本節補上 §12 的候選 prefix 可達性，並接通 worker 到達完整目標與 terminal guard。
+定理對任意有限目標邊集合、cut、k 成立；不是 Python 執行語意的驗證。
+
+### 13.1 控制位置與 production 對齊
+
+`Reach guard oracle stop base lo phase P s` 是有限集合搜尋的歸納可達關係。
+`base,lo` 表示 parent 的 `∅,0`，或 worker 的固定 prefix 與 cut。
+`Phase.node` 是遞迴進入點：production 在此 append task 或嘗試 `_record`；
+`Phase.scan` 是 for-loop 檢查位置。
+
+| 轉移 | 條件與效果 |
+| --- | --- |
+| `root` | 初始 node，無 guard；production 也先進入才測迴圈 |
+| `begin` | node 進入相同 `(P,s)` 的 scan |
+| `next` | `e<stop` 且 `guard P e` 才能掃描下一索引；P 不變 |
+| `take` | 同一 guard 加上 `oracle (insert e P)`，進入 child `(insert e P,e+1)` |
+
+`next` 抽象表示 child 處理完／oracle 拒絕後繼續 sibling，不建模 Python call stack、
+graph add/remove 或 multiprocessing。child 與下一個 scan 的 `stop-index` 都嚴格下降
+（`remaining_decreases`）；`begin` 只是切換控制位置。
+`state_invariant` 證明索引界、所有已選邊 `<s`、base 保留，以及 `prefixPart lo P=base`。
+因此 worker 不會改掉固定 prefix，新增邊不會重複先前已選邊。
+
+**關鍵**：production 的 `viable(P,e)` 失敗是 `return`，不是 `continue`。
+只驗下一條目標邊的 guard 並不足夠。本證明按每個自然數 cut 歸納：
+若 e 不在目標 M，使用 `next`；若 e 在 M，使用 `take` 再 `begin`。
+每一步的 P 都是 `prefixPart e M`，所以 `viable_of_graph` 正好保證**每個略過索引**也通過。
+
+### 13.2 證明鏈
+
+| 定理 | 結論 |
+| --- | --- |
+| `prefix_succ` | 下一個 prefix 是插入 e 或維持原集合，依 e 是否屬於 M 決定 |
+| `prefix_reachable` | 若所需 guards 與 oracle 接受成立，每個 cut 的 prefix 都是某個 node，且 scan 可到該 cut |
+| `mem_candidates` | prefix 屬於由 reachable nodes 定義的有限候選集；不再假設候選 membership |
+| `retained_graph_owner` | R1+SYM graph 的 prefix 可達且通過切分後過濾，因此有 owner |
+| `worker_reachable` | `M⊆[0,E)` 且 `p≤E` 時，從目標 prefix 出發可到達完整 M 的 node |
+| `split_graph_complete` | 唯一 retained label 擁有可到達 M 的 worker entry，且 `Viable M E` 通過 |
+
+`candidates` 具體定義為 `powerset(range p)` 中存在 reachable node 的集合，不是任意候選參數。
+`prefix_reachable` 同時保留 node entry 的實際 start（只保證 `start≤cut`）與 scan 的 cut；
+不能把二者混成「只有 start=cut 才 append」。空 prefix、空 suffix、`p=0`、`p=E` 均包含。
+`p=E` 時 owner 就是 M，parent 可直接記錄；形式化 worker root 退化為同一個 M，
+不表示 production 應再啟動 worker。唯一性是 **task label 唯一**，不是 scheduler 恰好執行一次。
+
+### 13.3 明列的信任邊界與驗證
+
+`split_graph_complete` 的 oracle 前提是：對所有 `e<E` 且 `e∈M`，
+`oracle (prefixPart (e+1) M)` 成立。這只要求目標路徑上的加邊結果被接受，
+沒有偷渡「所有 oracle 都完整」或「平面性已證」。若要由完整目標的 apex-planarity 推出
+此條件，仍需平面性刪邊封閉性、oracle 正確性與 graph mutation 的實作連接。
+`Represents` 仍只涵蓋 interior edges；完整圖的 boundary chords／固定 C5／apex 並未在此補齊。
+染色表 AND、Python shift/popcount／建表、遞迴程式與此關係模型的 refinement、
+scheduler 的執行次數與完成性，仍未形式化。`remaining_decreases` 不是 Python termination 定理。
+
+**computationally verified（既有報告重驗）**：prefix checker 的 E≤9 集合切分、k≤3 production
+單 DFS／逆序 tasks／真雙程序 Pool 全通過；k=3 仍為 645 tasks、205 張倖存圖。
+viable checker 的 133,181 個部分狀態與 graph bridge checker 的 66,592 張圖也逐 byte replay 通過。
+這些是既有 Python 證據，不是新增 Lean extraction 或大 k 搜尋。
+
+```bash
+lake build
+lake env lean Math/ReducedDFSAudit.lean
+uv run --with rustworkx==0.17.1 python scripts/c5_prefix_check.py --check
+uv run --with rustworkx==0.17.1 python scripts/c5_viable_check.py --check
+uv run --with rustworkx==0.17.1 python scripts/c5_graph_bridge_check.py --check
+git diff --check
+```
+
+新模組無 warning，公理審計 [dfs-lean-audit.txt](../artifacts/c5_cells/dfs-lean-audit.txt)
+僅含 `propext`／`Classical.choice`／`Quot.sound`，沒有 `sorryAx`／native 公理。
+沒有改 production 或 `cells.json`，沒有擴大 catalogue 搜尋；$K_\infty=K_5$ 仍為猜想。
+下一個可分離的缺口是有限集合與 Python bit 編碼／運算的 refinement；
+平面性 oracle 與 scheduler 仍應各自保留獨立 obligation。

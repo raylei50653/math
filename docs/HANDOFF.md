@@ -2,7 +2,38 @@
 
 更新：2026-09-14。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：圖層與 incidence／搜尋狀態已接通（2026-09-14）
+## 最新停止點：DFS 控制轉移與 prefix reachability 已 Lean 化（2026-09-14）
+
+**proved in Lean**：[Math/ReducedDFS.lean](../Math/ReducedDFS.lean)，已匯入 `Math.lean`。
+詳細規格見 [c5_cell_enumerator.md §13](c5_cell_enumerator.md)。`Reach` 區分遞迴 node 與迴圈 scan，
+包含 `viable` 失敗即 return 的影響：連略過的每個索引都必須通過 guard。
+`state_invariant` 證 increasing-index 與固定 prefix；`prefix_reachable`／`mem_candidates`
+消除「目標 prefix 已在候選集」前提。`worker_reachable` 到達完整目標；
+`split_graph_complete` 接上圖層 R1+SYM、唯一 retained owner 與 terminal recording guard。
+包含空 prefix／suffix 與 direct 分支；不要求記錄時 start=E。
+
+**明列前提／仍未證**：目標路徑每次加邊後的 oracle 接受仍是明確前提，未證 planarity oracle。
+本輪形式化的是有限集合上的控制可達關係，並非 Python 程式 refinement；
+Python bit 操作／建表、graph mutation／完整 boundary-apex representation、染色表與 scheduler
+仍未形式化。唯一性是 task label 唯一，不是 scheduler 恰執行一次。$K_\infty=K_5$ 仍為猜想。
+下一個可接續缺口是有限集合與 bit 編碼／運算的 refinement；平面性與 scheduler 分開處理。
+
+驗證：`lake build`、`ReducedDFSAudit`、既有 prefix／viable／graph bridge checkers 的 `--check`、
+`git diff --check` 通過。新模組無 warning；既有 warnings 保留。
+[公理輸出](../artifacts/c5_cells/dfs-lean-audit.txt) 無 `sorryAx`／native 公理。
+production replay 仍為 k=3 的 645 tasks、205 張倖存圖；没有新增 catalogue 搜尋。
+沒有改 production 或 `cells.json`；本輪與既有本地修改均保留，未 commit／push。
+
+```bash
+lake build
+lake env lean Math/ReducedDFSAudit.lean
+uv run --with rustworkx==0.17.1 python scripts/c5_prefix_check.py --check
+uv run --with rustworkx==0.17.1 python scripts/c5_viable_check.py --check
+uv run --with rustworkx==0.17.1 python scripts/c5_graph_bridge_check.py --check
+git diff --check
+```
+
+## 先前停止點：圖層與 incidence／搜尋狀態已接通（2026-09-14）
 
 本輪依使用者指定，完成 degree、attachment mask 的 bridge。詳細規格見
 [c5_cell_enumerator.md §12](c5_cell_enumerator.md)。
