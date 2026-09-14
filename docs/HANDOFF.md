@@ -2,7 +2,28 @@
 
 更新：2026-09-14。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：bitmask 表示與整數 DFS 對應已 Lean 化（2026-09-14）
+## 最新停止點：popcount cardinality 與整數 viable 已接通（2026-09-14）
+
+**proved in Lean**：[Math/IntegerViable.lean](../Math/IntegerViable.lean)，已匯入 `Math.lean`。
+可執行 `popcount` 使用 `Nat.bitIndices.length`；`popcount_encode` 對任意有限集合證
+`popcount (encode M) = M.card`，不受機器 word 寬度限制。AND／右移計數分別等於
+intersection／suffix cardinality。整數 Bool `viable` 使用這些計數與五位 numeric attachment。
+`viable_encode_iff` 雙向接上集合版；`viable_decode_iff` 處理 n<2^E 的原始整數。
+`integer_viable_of_graph`、`integer_rejection_sound`、`viable_reach_iff` 接通圖層
+R1+SYM、拒絕可靠性與兩種 DFS 控制模型。詳見 [§15](c5_cell_enumerator.md#15-popcount-與整數-viable2026-09-14)。
+
+驗證：`lake build`、`IntegerViableAudit`（含 257-bit、空 k、未開 block 與 numeric-order
+反例的普通 `decide`）、既有 bitmask／viable `--check`、`git diff --check`。
+[公理輸出](../artifacts/c5_cells/integer-viable-lean-audit.txt) 無 `sorryAx`／native 公理。
+既有 viable 重播仍為 133,181 prefixes、零誤剪／零規格差異；沒有新 catalogue 搜尋。
+
+**尚未認證**：Python `bin(...).count('1')`／迴圈／建表的執行語義、完整 graph／apex、
+染色表、planarity oracle 與 scheduler。此次 Bool guard 以有限 `all` 表達同一條件，
+沒有形式化 Python 的 early-break 執行。`viable=True` 仍不保證存在完成圖。
+$K_\infty=K_5$ 仍是猜想。可接續染色表 AND 語義，或另立 Python 執行 refinement；
+平面性仍是獨立缺口。既有修改保留，production／`cells.json` 未改，未 commit／push。
+
+## 先前停止點：bitmask 表示與整數 DFS 對應已 Lean 化（2026-09-14）
 
 本輪自行選題，接續 reduced 搜尋完整性鏈，補 §13 留下的集合／整數表示缺口。
 **proved in Lean**：[Math/EdgeMask.lean](../Math/EdgeMask.lean)，已匯入 `Math.lean`。

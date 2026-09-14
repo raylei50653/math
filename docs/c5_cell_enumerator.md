@@ -1047,3 +1047,55 @@ git diff --check
 公理審計 [bitmask-lean-audit.txt](../artifacts/c5_cells/bitmask-lean-audit.txt) 無 `sorryAx`／native 公理。
 新模組無 warning；既有 warnings 保留。production／`cells.json` 未改，未擴大 catalogue 搜尋。
 所有既有本地修改保留，未 commit／push。
+
+
+## 15. popcount 與整數 viable（2026-09-14）
+
+**proved in Lean**：[Math/IntegerViable.lean](../Math/IntegerViable.lean)，namespace
+`FiveBoundary.EdgeMask`，已匯入 `Math.lean`。這節完成 §14 的 Lean 計數／guard 缺口；
+Python 語言執行語義仍未形式化。
+
+`popcount n := n.bitIndices.length` 是可執行定義；mathlib 的 `bitIndices` 使用二進位遞迴，
+不是枚舉 0..n。`popcount_even`／`popcount_odd` 證明偶數右移保留計數、奇數多一位。
+`bitIndices_encode` 用 testBit membership 證索引集合正好為 M，再由無重複性證
+`popcount_encode : popcount (encode M) = M.card`。沒有固定 word 寬度或有限枚舉前提。
+
+| 定理 | 結果 |
+| --- | --- |
+| `popcount_inter` | `popcount (encode M AND encode N) = (M ∩ N).card` |
+| `popcount_shift` | `popcount (encode M >> cut) = (suffix cut M).card` |
+| `viable_encode_iff` | 整數 Bool guard=true ↔ 集合版 `ReducedViable.Viable` |
+| `viable_decode_iff` | 對 n<2^E，以 decode E n 接上同一等價；不遺失高位 |
+| `integer_viable_of_survivor` | 每個 R1+SYM survivor 的整數 prefix 都通過 guard |
+| `integer_viable_of_graph` | 透過既有 `Represents`／`survivor_iff` 接上 graph degree 與 attachment |
+| `integer_rejection_sound` | 被拒絕的整數 n 不可能等於任何 survivor 的 cut prefix |
+| `viable_reach_iff` | 將實際整數 guard 接入 §14 的整數／集合 DFS 雙向等價 |
+
+`viable k touch n cut` 的 touch 是自然數 incidence masks。它對有限 `List.range k`
+做兩個 `all`：已開 blocks 的 current AND popcount＋remaining shifted popcount 至少 4，
+以及相鄰已開 blocks 的五位 attachment 數值非遞增。後者保留數值大小，不能改用 popcount。
+等價對所有有限 P 與 cut 成立，不額外要求 P 的 bits 已全部小於 cut。
+
+此定義提供可執行 Bool 與規格等價；不主張其求值順序與 Python 的交錯檢查／early break 相同。
+`touch` 編碼與圖層的連接已由前節提供，但 Python 建表程式執行仍是獨立 obligation。
+`viable=True` 也不代表存在完成圖：§11 的 3,264 個反例仍然適用。
+
+驗證：新 [IntegerViableAudit](../Math/IntegerViableAudit.lean) 用普通 `decide` 檢查
+257-bit 稀疏／密集數、k=0、未開 block、degree 不足與通過，以及 `(15,16)`／`(16,15)`
+的 numeric-order 差異（使用明示的合成 incidence mask，並非宣稱其為 production graph）。
+公理輸出 [integer-viable-lean-audit.txt](../artifacts/c5_cells/integer-viable-lean-audit.txt)
+無 `sorryAx`／native 公理。既有 Python bitmask／viable 報告逐 byte replay 通過，
+後者仍為 133,181 prefixes、零誤剪／零規格差異。這些是既有有限運算重播，不是 Lean extraction。
+
+```bash
+lake build
+lake env lean Math/IntegerViableAudit.lean
+python3 scripts/c5_bitmask_check.py --check
+uv run --with rustworkx==0.17.1 python scripts/c5_viable_check.py --check
+git diff --check
+```
+
+完整 Python 搜尋、graph mutation／完整 boundary-apex representation、染色表 AND 語義、
+planarity oracle 與 scheduler 仍未認證；$K_\infty=K_5$ 仍是猜想。
+下一個可分離方向是染色表 AND 的語義 bridge，或 Python 執行 refinement；沒有啟動這些工作。
+production／`cells.json` 未改，沒有新增 catalogue 搜尋。既有修改保留，未 commit／push。

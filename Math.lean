@@ -36,4 +36,5 @@ import Math.ReducedViable
 import Math.ReducedGraphBridge
 import Math.ReducedDFS
 import Math.EdgeMask
+import Math.IntegerViable
 import Math.LocalWiring
