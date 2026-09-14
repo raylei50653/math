@@ -1,30 +1,63 @@
 # 新對話交接：四色 boundary-state／constraint gadget 研究
 
-更新：2026-09-14。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
+更新：2026-09-15。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：K∞=K5 的 Kempe 切入，集中到兩個待排除 orbit（2026-09-14）
+## 最新停止點：adjacent-singleton 計數恆等式與必要條件的不足（2026-09-15）
 
-**使用者已要求先停在這裡。** 保留目前結果，等待新的研究指示。
+使用者要求找剩餘缺口後，本輪已完成以下研究與紀錄，後續要求 commit／push。
+下次由下列 blocking-path connectivity 缺口接續；本次提交不另開新搜尋。詳細結果見
+[c5_adjacent_singleton_counts.md](c5_adjacent_singleton_counts.md)。
+
+**紙面證明，未 Lean 化**：對任意 C5 disk cell，令 x_uv 是四色 repeated-pair uv 的延伸數，
+y_i 是 singleton-i 的延伸數，則五條 chord 的 x_uv+y_u+y_v 都相同。
+證法是 inclusion–exclusion 加上 disk components 的 noncrossing partition；非零 boundary
+partition indicators 只有 discrete partition 與五個單 chord partitions。
+
+**computationally verified**：132 個既有 witness 的完整計數均符合；42 個 noncrossing
+partitions 的有限部分全檢查。新整數證書給出 11 個 independent supports 的抽象計數向量，
+同時滿足恆等式與三個 complementary Kempe splits 的非負整數 orbit 分解。
+其構造為 abstract all-four vector t 加上 singleton 位置的 pentagon fan 計數。
+非空 independent support 仍通過既有 exterior screen。這些不是 realizing graphs，
+證明的是這兩類計數必要條件仍不足以排除候選。
+
+另外補驗 142 個 Kempe+exterior states 的全部 1,420 個 boundary push transitions，仍封閉。
+因此反覆這十種 push 並在每一步重新套 exterior，也沒有新的排除力。
+
+**具體下一步**：反證時選相鄰兩個缺失 singleton 位置，利用 T4 選完整染色
+(A,B,A,C,D)，得到兩條強制 B–C／B–D blocking paths。它們可在 B 色頂點相交；
+缺口是換色後／不同四色 fibers 間的同圖 connectivity 相容性，不能直接宣稱交錯路徑矛盾。
+主 Adjacent-singleton lemma 與 K∞=K5 仍未證。
+
+驗證：新 checker `python3 scripts/c5_adjacent_singleton_counts.py --check`、既有 Kempe
+checker `--check`、`git diff --check`。證書為 `artifacts/c5_cells/adjacent_singleton_counts.json`。
+沒有大圖枚舉、新 Lean 模組或 production catalogue 修改。
+
+## 先前停止點：C5 adjacent-singleton problem（2026-09-15 表述更新）
+
+**研究維持暫停；本次僅更新問題表述。** 核心改為 adjacent-singleton lemma，數字 masks
+留在計算證書對照；沒有新搜尋或不可實現性證明。
 使用者指定 Dvořák–Swart 的 [A note on extendable sets of colorings and rooted minors,
 arXiv:2504.07764v1](https://arxiv.org/html/2504.07764v1) 為後續重要參考。
 恢復時優先對照其 §1 的 planar realizability、Kempe constraints 與 reducibility 觀點；
-目前只作方向參考，尚未由該文導出 933／941 不可實現性或 K∞=K5。
+目前只作方向參考，尚未由該文導出 adjacent-singleton lemma 或 K∞=K5。
 
 使用者要求從原猜想找切入點，本輪改做任意大小 cell 的結構必要條件；沒有再枚舉大 k。
 完整論證與範圍見 [c5_kempe_screen.md](c5_kempe_screen.md)。
 
 **computationally verified**：1,023 個非空十 bit masks 經平面 Kempe screen 剩 153；再以
 與全部已知外側 cell 非空相交（**使用 4CT 和 disk gluing**）剩 142，包含全部既有 132。
-差額恰為兩個 D5 orbit：933 類（T4 加一個三色 pattern），941 類（T4 加兩個 singleton
-位置不相鄰的三色 patterns），各五個固定標號 masks。
+差額恰為兩個 D5 orbit：T4 加 singleton support，或加 independent 2-set support；
+各五個固定標號 masks，數值見主文件 §4.3 的 computational certificate 對照。
 
-**候選引理，UNPROVED**：任意 disk cell 若五個四色 boundary patterns 全可延伸，則至少
-兩個三色 patterns 可延伸；恰好兩個時 singleton 位置相鄰。此引理配合上述必要條件，有限
+**Adjacent-singleton lemma，UNPROVED**：任意 C5 disk cell，若 T4 ⊆ Σ(G)，則
+E(C5[P(G)]) ≠ ∅；P(G) 是可延伸三色 states 的 singleton 位置集合。相鄰兩位置可由不同
+完整染色延伸。由 α(C5)=2，反證可統一假設 P(G) independent，再按需要分情況。
+一般 cell 不一定全收 T4；這是套用引理的條件分支。此引理配合上述必要條件，有限
 檢查恰剩既有 132 keys，因此是一條通往 K∞=K5 的條件式路線。一般 Kempe/disk soundness
 仍是紙面論證，尚未 Lean 化；候選引理是實際數學缺口，不是已證結論。
 
 已試 boundary push（五位置、spoke 有／無）共 1,530 個轉移，153 masks 對其封閉，故僅
-重複此操作加 Kempe screen 無法繼續排除。下一步宜直接研究 933／941 不可實現性，以及
+重複此操作加 Kempe screen 無法繼續排除。下一步宜研究 T4 全收能否與 independent singleton support 共存，以及
 不同完整染色間的 connectivity 限制；T4 全收可先推出 boundary 無 chord。
 
 驗證：`python3 scripts/c5_kempe_screen.py --check`、既有 132 witness 的 NetworkX／全染色
