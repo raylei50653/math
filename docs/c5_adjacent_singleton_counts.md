@@ -2,6 +2,10 @@
 
 2026-09-15。接續 [主問題](c5_kempe_screen.md#4-c5-adjacent-singleton-problemunproved)。
 
+**後續進展**：[near-triangulation／文獻 count-cone 歸約](c5_count_cone_bridge.md)
+已補上「保留一個關鍵染色的補完仍是反例」紙面引理，並把較強目標 m≤0 對應到
+Dvořák–Lidický Conjecture 9。主問題仍未證；最新交接以上述文件為準。
+
 **本輪結果**：得到適用於任意有限 C5 disk cell 的延伸計數恆等式（下文紙面證明，未 Lean 化），
 並給出滿足該式與 complementary Kempe orbit 計數分解的抽象 independent-support 例子。
 因此這兩類計數必要條件，即使加上目前 exterior／push screen，仍不足以證 adjacent-singleton lemma。

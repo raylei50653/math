@@ -2,7 +2,32 @@
 
 更新：2026-09-15。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：adjacent-singleton 計數恆等式與必要條件的不足（2026-09-15）
+## 最新停止點：反例歸約到 near-triangulation／count-cone 猜想（2026-09-15）
+
+詳細證明與來源：[c5_count_cone_bridge.md](c5_count_cone_bridge.md)。
+
+**紙面證明，未 Lean 化**：若 T4 全收且 P independent，選包含 P 的 chord e，保留
+repeated-pair e 的一個完整染色。任何同邊界 disk supergraph H 只要保留這個染色，便有
+P(H)⊆e、m(H)=x_e(H)>0；計數恆等式重新推出全部 x_f(H)>0。因此 H 仍是反例。
+移除 boundary block 外的枝塊，再逐面以 proper ears／二色 residual polygon 加 hub 補完，
+可把任意反例轉成 near-triangulation 反例（允許平行邊，可能增加內點）。
+
+**文獻連接**：Dvořák–Lidický, *Coloring count cones of planar graphs*,
+[arXiv:1907.04066v2](https://arxiv.org/pdf/1907.04066v2)，Conjecture 9 經 XOR boundary-edge
+對應，正是 3Σy≥Σx，等價於 m≤0。這是足以推出本題引理的較強猜想，不能當成已證。
+其 Corollary 20（引用的電腦輔助定理，未在本倉庫重播）適用 dual 頂點數 <30；由
+dual_vertices=2k+4，排除 k≤12 的 near-triangulation 反例。不能直接推一般 disk 的同大小上界。
+
+**computationally verified**：240→60 的 XOR 四對一映射、十種記號對應、六個線性基底、
+11 個 independent supports、132 個舊 witness counts、11 個抽象向量的 slack −5；
+長度 3..9 的 1,231 個 polygon color orbits 補完驗證及缺三角形負控制。
+新 checker `scripts/c5_count_cone_bridge.py --check`，證書 `artifacts/c5_cells/count_cone_bridge.json`。
+
+**下一步**：在 near-triangulation 中排除 `P⊆e 且 x_e>0`；只需這個特殊 support 分支，
+不必先證完整 m≤0 猜想。可利用三角面背景重看 blocking paths；同圖 connectivity 矛盾仍未建立。
+Adjacent-singleton lemma 與 K∞=K5 仍未證。無新 Lean 模組、無大圖枚舉、未改 production／cells.json。
+
+## 先前停止點：adjacent-singleton 計數恆等式與必要條件的不足（2026-09-15）
 
 使用者要求找剩餘缺口後，本輪已完成以下研究與紀錄，後續要求 commit／push。
 下次由下列 blocking-path connectivity 缺口接續；本次提交不另開新搜尋。詳細結果見
