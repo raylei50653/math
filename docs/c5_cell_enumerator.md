@@ -972,3 +972,78 @@ git diff --check
 沒有改 production 或 `cells.json`，沒有擴大 catalogue 搜尋；$K_\infty=K_5$ 仍為猜想。
 下一個可分離的缺口是有限集合與 Python bit 編碼／運算的 refinement；
 平面性 oracle 與 scheduler 仍應各自保留獨立 obligation。
+
+## 14. 有限邊集合與自然數 bitmask 的 bridge（2026-09-14）
+
+本輪自行選題，接續 §13 的表示缺口。**proved in Lean**：
+[Math/EdgeMask.lean](../Math/EdgeMask.lean)，namespace `FiveBoundary.EdgeMask`，已匯入 `Math.lean`。
+定理對任意有限自然數集合成立，不限 k 或機器 word 寬度。
+
+### 14.1 編碼與運算
+
+`encode M` 對 M 的每個索引 e，以 OR 摺疊 `2^e`。`testBit_encode` 證明第 e 位為 1
+當且僅當 e∈M，因此 `encode_injective` 保證不同集合不會碰撞；`encode_eq_sum` 另證
+它等於 production 建表用的 `∑ e∈M, 2^e`，不是另設未證明等價的編碼。
+
+| 定理 | 精確對應 |
+| --- | --- |
+| `encode_insert` | insert e M ↔ `encode M OR (1 << e)`；即使 e 已存在仍成立 |
+| `encode_inter` | M∩N ↔ bitwise AND |
+| `encode_prefix` | M∩[0,p) ↔ `encode M AND ((1 << p)-1)` |
+| `encode_lt` | M 的所有索引 <E ⇒ encode M <2^E |
+| `decode_encode` | 有界解碼 encode M 得到 prefixPart E M |
+| `encode_decode` | 解碼再編碼 n 得到清掉 E 以上 bits 的 n |
+| `encode_decode_of_lt` | n<2^E 時整數往返無損 |
+| `encode_shifted` | 右移 p ↔ 留下 e≥p 並將索引重編為 e-p |
+| `shifted_card` | 此重編不改變 suffix 的 cardinality |
+| `attachment_value` | `(encode M >> blockStart m) AND 31 = attValue M m`，保留五位數值次序 |
+
+**必要條件的反例**：decode 3 8=∅，重新 encode 為 0，不是 8。因此無損整數往返必須
+保留 width bound；不能由有界解碼推所有自然數皆無損。OR 加邊也不能任意改成 XOR：
+已存在的 bit 會被 XOR 清掉。這些邊界都納入 replay 的負控制。
+
+### 14.2 整數 DFS 與 task label
+
+新增整數版 `EdgeMask.Reach`，保留 §13 的 node／scan、guard 失敗即不能前進的語意，
+child 使用實際算式 `n OR (1 << e)`。`reach_encode` 向前搬運集合版 reachability，
+`reach_lift` 向後重建集合路徑，`reach_iff` 給出兩種模型的**雙向等價**。
+兩側 guard／oracle 必須透過 encode 對齊；這是明示的 predicate 搬運，不是 Python refinement。
+`integer_owner` 證目標 M 的唯一整數 task label 正是
+`encode M AND ((1 << p)-1)`，包含空集合與 p=0。
+
+### 14.3 有限重播與剩餘缺口
+
+**computationally verified**：[scripts/c5_bitmask_check.py](../scripts/c5_bitmask_check.py)
+用算術除法／冪次和作 reference，核對 Python OR、AND、shift、五位擷取與 suffix bit count：
+
+* width=0..10 全部 2,047 個 mask、22,528 個 cut 觀測（包括 cut 超過 width）；
+* width=0..6 全部 5,461 組 intersection pairs；
+* width=64、65、128、257 的 20 個空／稀疏／密集案例，確認不誤套固定 word 截斷；
+* XOR 誤用、shift 偏一、無界 round trip、attachment 位次倒置四項負控制均被拒絕。
+
+零差異，報告 [bitmask_check.json](../artifacts/c5_cells/bitmask_check.json) 可逐 byte replay，
+含來源與 catalogue hashes。這個新 checker 檢查運算式，沒有執行 production DFS，
+也不是 Lean extraction；實際 production 路徑另由既有 prefix／graph bridge checkers 重驗：
+k=3 仍為 645 tasks／205 張倖存圖，圖層仍覆蓋 k≤2 的 66,592 張圖。
+
+**尚未證**：`bin(n).count('1')` 的 Python 執行語意及其與 cardinality 的一般定理、
+整數版 `viable` 的完整對齊、建表程式執行、graph mutation／完整 boundary-apex representation、
+染色表 AND 的染色語義、Python call stack／scheduler、planarity oracle。
+本輪只把集合表示推進到 Lean 自然數 bitwise 與整數控制關係，不是整個 enumerator 已認證。
+
+下一個有界方向是定義可執行的 popcount 並證其等於選中 bit 數，接上 `degree` 與剩餘
+incidence 的 cardinality，進而證整數 `viable` 等價於 §11。較長期的結構題仍是任意大 cell
+的 reduction／不可約障礙；有限 catalogue 穩定並未證出 $K_\infty=K_5$。
+
+```bash
+lake build
+lake env lean Math/EdgeMaskAudit.lean
+python scripts/c5_bitmask_check.py --check
+uv run --with rustworkx==0.17.1 python scripts/c5_graph_bridge_check.py --check
+uv run --with rustworkx==0.17.1 python scripts/c5_prefix_check.py --check
+git diff --check
+```
+
+公理審計 [bitmask-lean-audit.txt](../artifacts/c5_cells/bitmask-lean-audit.txt) 無 `sorryAx`／native 公理。
+新模組無 warning；既有 warnings 保留。production／`cells.json` 未改，未擴大 catalogue 搜尋。
+所有既有本地修改保留，未 commit／push。

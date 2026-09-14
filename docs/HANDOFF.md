@@ -2,7 +2,31 @@
 
 更新：2026-09-14。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：DFS 控制轉移與 prefix reachability 已 Lean 化（2026-09-14）
+## 最新停止點：bitmask 表示與整數 DFS 對應已 Lean 化（2026-09-14）
+
+本輪自行選題，接續 reduced 搜尋完整性鏈，補 §13 留下的集合／整數表示缺口。
+**proved in Lean**：[Math/EdgeMask.lean](../Math/EdgeMask.lean)，已匯入 `Math.lean`。
+詳細定理、反例與信任邊界見 [c5_cell_enumerator.md §14](c5_cell_enumerator.md)。
+
+任意有限邊集合：encode 單射、OR 編碼等於冪次和、insert／AND／prefix／右移的精確對應，
+以及五位數值擷取等於 `attValue`。整數版與集合版 DFS 在 encode 搬運 guard／oracle 後
+由 `reach_iff` 雙向等價；唯一整數 task label 是 `encode M AND ((1 << p)-1)`。
+無損有界解碼必須要求 n<2^E：decode 3 8 再 encode 得 0，是不能刪掉此前提的反例。
+
+**computationally verified**：新 bitmask checker 檢查 2,047 masks／22,528 cuts、
+5,461 intersection pairs、20 個最高 257-bit 案例；零差異，四項負控制均被拒絕。
+既有 production prefix／graph bridge checker 逐 byte replay 通過；沒有新增 catalogue 搜尋。
+
+**下一步／尚未證**：可執行 popcount 與 cardinality 的一般定理，接上整數 `viable`。
+Python 執行、完整 graph／apex、染色表語義、planarity oracle 與 scheduler 仍各有缺口；
+此次雙向等價僅是兩種 Lean 控制模型。$K_\infty=K_5$ 仍為猜想。
+
+驗證：`lake build`、`EdgeMaskAudit`、bitmask／prefix／graph bridge `--check`、
+`git diff --check`。公理輸出 [bitmask-lean-audit.txt](../artifacts/c5_cells/bitmask-lean-audit.txt)
+無 `sorryAx`／native 公理。新模組無 warning；既有 warnings 保留。
+production、`cells.json` 未改；既有本地修改保留，未 commit／push。
+
+## 先前停止點：DFS 控制轉移與 prefix reachability 已 Lean 化（2026-09-14）
 
 **proved in Lean**：[Math/ReducedDFS.lean](../Math/ReducedDFS.lean)，已匯入 `Math.lean`。
 詳細規格見 [c5_cell_enumerator.md §13](c5_cell_enumerator.md)。`Reach` 區分遞迴 node 與迴圈 scan，

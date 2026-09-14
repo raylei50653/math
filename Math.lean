@@ -35,4 +35,5 @@ import Math.PrefixPartition
 import Math.ReducedViable
 import Math.ReducedGraphBridge
 import Math.ReducedDFS
+import Math.EdgeMask
 import Math.LocalWiring
