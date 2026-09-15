@@ -9,7 +9,38 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：Singleton 的等高覆蓋限制與 B₂ 準備策略（2026-09-15）
+## 最新停止點：B₂ guard 精確判準與來源修復接口（2026-09-15）
+
+詳見 [guard 修復報告](c5_guard_repair.md)。已補固定 AB@0、AC@4 後綴成功
+iff guard 的紙面證明，以及 BC@2 加共同 B/C 角色重命名後的來源集合更新公式。
+來源充分條件 P 要求 BC component trace `{2,4}`、位置 2 在預測 W* 中孤立，
+以及同一 cut 的 D13 quotient ranks `1→1`、D23 ranks `1→0`。
+條件式紙面引理給 `P ⇒ 修復後 guard 且 χ 下降 1`，未 Lean 化。
+P 仍分別要求隔離與成本條件，尚未證明更小共同結構會迫使兩者成立。
+
+固定 B₂：72 個原 guard 的充要判準、24 個修復後 guard、168 個後綴步的來源
+成本公式均已回放；24/24 失敗來源符合 P。但 72 個準備後完整來源只有 3 個共同
+色置換軌道，失敗 24 個恰是同一結構的 24 種標號。不能誇大結構多樣性。
+
+接手：[新報告 §3–6](c5_guard_repair.md#3-修復-guard-的來源集合更新公式)
+→ `scripts/c5_guard_repair.py` 的 `repair_source`、`source_cost`。
+待攻：由更弱 component／cut／owner 條件同時推出隔離與成本，及準備如何產生
+並保持這些條件。沒有一般後綴成本定理或最小資訊定理。範圍仍為固定 B₂，
+未擴圖、重搜閉包、改動舊證書或新增 Lean；本輪程式、證書與文件隨本次提交發布。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_guard_repair.py --check
+uv run --with networkx==3.5 python scripts/c5_singleton_preparation.py --check
+lake build
+git diff --check
+```
+
+驗證：上述兩個 checker 的 `--check`、`lake build`（僅既有 lint）、
+`git diff --check`、新檔 whitespace 與報告連結檢查均通過。沒有背景工作。
+
+以下為先前停止點。
+
+## 先前停止點：Singleton 的等高覆蓋限制與 B₂ 準備策略（2026-09-15）
 
 詳見 [singleton 準備策略](c5_singleton_preparation.md)。既有 χ=2 非 Goal 的
 936 個完整狀態形成 20 個等高分量；四度 singleton 直接成功出口只覆蓋兩個
