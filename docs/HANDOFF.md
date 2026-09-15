@@ -9,7 +9,68 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：多候選 edge-state 與局部結構坍縮（2026-09-15）
+## 最新停止點：同 cut 長度的合法 disk 重接反例（2026-09-15）
+
+詳見 [c5_equal_cut_witness.md](c5_equal_cut_witness.md)。已在既有 survivor-811
+同一 22 頂點 disk 上構造兩個完整染色：同 boundary、T、cycles `(1,1,1)`、
+同 `Comp_AB(0)` 規則，cut 長度皆 **21**，目標 αβ pairings 卻為
+`(0,4),(1,2)`／`(0,1),(2,4)`，目標 cycles 為 `(1,3,1)`／`(1,2,1)`。
+兩 source 都無一步 escape；第一個目標可 BC 到 singleton-4，第二個仍無一步 escape。
+另有逐中間相容的 5 步路徑連接兩 source，故也固定同 Kempe class。
+
+**可實現性已具體驗證**：精確有理數座標給出凸五邊形內 37 個三角面，
+逐邊無交叉、正面積、不含其他頂點、總面積 `51/2`；報告 §2 給鋪滿 disk 的紙面證明。
+完整 proper colorings、maximal components、cut 及 dual 重接均重播，未 Lean 化。
+checker `scripts/c5_equal_cut_witness.py --check`；證書保存圖、座標、染色與路徑。
+前輪 196 transitions 零衝突結論保留為有限觀察，現在一般 cut 長度充分性已被反例否定。
+
+下一個缺口是各舊 component 切邊數的更強觀察：本例該欄不同，尚未反駁其充分性。
+未生成新圖或擴大 catalogue；沒有多步充分 state、最小接口或 K∞=K≤5 證明。
+本 checker、兩個 cut 前序 checkers、四個 edge 系列 checkers、`lake build`、
+報告連結與 `git diff --check` 通過；Lean 僅既有 lint。使用者已授權將本輪與依賴的
+兩輪 cut 成果一併 commit/push。
+
+## 先前停止點：cut 粗觀察的有限比較（2026-09-15）
+
+詳見 [c5_cut_observations.md](c5_cut_observations.md)。完成前輪指定的同批
+196 transitions 比較：固定原色 boundary、T、cycles 與色對的基底有 44 個
+後繼衝突組；加 cut 長度後 150 組、0 衝突，其中 34 組含不同完整 source 染色。
+再加各舊 component 切邊數／原邊數得到 180／186 組，仍 0 衝突。
+**未找到 cut 長度不足的反例；也未證一般充分性。**
+
+另保存原 transitions 2、12：同基底、同 `Comp_AC(0)` 選取規則及同 target
+boundary，cut 長度 8／4 對應不同 αβ pairing、cycles 與一步相容性。
+checker 重播全部合法 actions、588 次接口預測，證書保存全分組及來源 hashes。
+接手：本節 → 報告 §1、§4 → `scripts/c5_cut_observations.py`。
+下一步可研究同切邊數而不同 retained-port 分區的紙面重接歧義，但需另證
+可由合法 disk 染色與 Kempe action 實現；抽象接口歧義本身不夠。
+新 checker、原 cut 接口 checker、`lake build`、新報告連結及 `git diff --check`
+通過；Lean 僅既有 lint。未新增圖搜尋或 Lean，未 commit/push；前輪未提交檔案保留。
+
+## 先前停止點：同 relation 的 BC 坍縮差異與 cut 接口（2026-09-15）
+
+詳見 [c5_cut_interfaces.md](c5_cut_interfaces.md)。固定前輪 Errera disk，在既有
+一步相容／兩步逐中間相容階段中，篩出同原色 boundary、同 T 的 4 個完整 witnesses
+與 10 條歷史；source cycles 都為 `(0,0,2)`。統一操作 `Comp_BC(0)`：四列 βγ cycles
+皆 2→1，但只有兩列目標仍無一步 escape；另兩列新生 αγ cycle，再 BD `{2}` 即到
+singleton-1。嚴格指定舊 component `{0,5,12,14}` 則只在第一列合法。
+
+新增「刪 cut 後 retained components 的 ports／boundary terminals 分區，再加新 cut
+邊」的一步重建接口；紙面連通分量引理說明其正確性，未 Lean 化。
+checker 在既有 196 transitions 的 588 組 systems 上，預測 pairing／cycle counts
+與直接目標重算完全相同。這個接口依賴指定合法 action，大小也未有常數界；
+不宣稱能自行列舉下一步 actions 或作為多步充分 state。
+
+接手：本節 → [報告 §1–2、§4](c5_cut_interfaces.md) →
+`scripts/c5_cut_interfaces.py` 的 `interfaces/predict`。
+證書 `artifacts/c5_cells/cut_interfaces.json` 保存四個比較及原始歷史索引。
+下一步僅在同一批 transitions 測 cut 長度／切割次數等粗觀察是否丟失重接結果；
+未擴大 catalogue、啟動 polygon grammar 或 safety game。
+
+新接口 checker、四個既有 edge 系列 checkers、`lake build`、新增文件連結與
+`git diff --check` 全通過；Lean 僅既有 lint。沒有新增 Lean，未 commit/push。
+
+## 先前停止點：多候選 edge-state 與局部結構坍縮（2026-09-15）
 
 使用者要求實作同時保存多個合法相對關係，並確認「坍縮」指 paths／cycles／區域
 在 switch 後重接、合併或消失。詳見 [c5_edge_choices.md](c5_edge_choices.md)。
