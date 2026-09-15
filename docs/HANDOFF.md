@@ -9,7 +9,78 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：cycle-count ablation／三步機制（2026-09-15）
+## 最新停止點：策略障礙區域／必要低谷／cut 計數（2026-09-15）
+
+詳見 [策略障礙報告](c5_strategy_barriers.md)。只用既有 5,952 states 閉包。
+state 126 的 χ≤3 分量 B₃ 有 384 states、全為 χ=3、無目標；
+192 條升到 4 的出口全部能接上不返回 B₃ 的峰值≤4 成功路徑。
+任一起點至多兩步等高後即可走低出口，保存路徑總長≤6。
+state 84／531 的 χ≤2 分量 B₂ 有 72 states、全為 χ=2、無目標；
+48 條升到 3 的出口均可不返回地成功，至多一步等高、總長≤3。
+
+更強的負結果：247 在 3≤χ≤4 高度帶的分量有 600 states、無目標；
+門檻 4 內的 240 條出口只到 120 個 χ=2、κ=3 states。
+所以任意峰值≤4 成功歷程都必須先到 2、之後回升至少到 3；不能用跳過低谷的
+相同完整出口替換修復。這是完整固定圖 Python 證據，不是一般跨圖定理。
+
+cut 重接紙面計數引理：保留 common retained graph H，收縮後的 multigraph Q
+必須保留 loops／parallel edges／isolates；β(H∪A)=β(H)+β(Q)，故
+Δcycles=β(Qnew)−β(Qold)。核對 240 低出口及 7 witness transitions；
+126→14 由一個平行邊 cycle 變成 loop＋另一個平行邊 cycle。
+附有條件式「等高→低出口→不返回成功續接」規範歷程引理的紙面證明，未 Lean 化。
+checker `scripts/c5_strategy_barriers.py --check`，證書
+`artifacts/c5_cells/strategy_barriers.json`。456 條宏操作路徑共 1,645 步均已回放。
+本輪與前輪 checker 的 `--check`、`lake build`（僅既有 lint）、文件連結與
+`git diff --check` 通過；兩輪程式、證書與報告隨本次交接一併提交。
+下一入口：報告 §3–6、240 低出口中 24 條 `(2,-1,0)` 排列的補償型重接；
+研究結構如何保證出口及續接，不自動擴新圖或添加摘要特徵。
+
+### 接手順序與重現
+
+1. 先讀 [策略落地](c5_strategy_safe.md) §1、§3，固定圖、escape、boundary-root
+   grammar 與 χ 的定義；本路線 χ 是 cycle 總數，和舊消融報告的布林 χ 不同。
+2. 再讀 [策略障礙](c5_strategy_barriers.md) §3–5，區分有限出口證書與尚未 Lean 化
+   的條件引理。下一題是結構如何保證受控出口和成功續接，並非重跑閉包搜尋。
+3. `strategy_barriers.json` 的 `exit_cut_audits` 保存 240 個出口；取三組
+   `systems[*].delta` 排序等於 `[-1,0,2]` 的 24 筆，即下一輪補償型候選。
+   `source`／`target` 是 `strategy_safe.json` 的 `states` 索引；圖、完整原色染色、
+   component、cut 邊號皆可回查。索引綁定證書 hashes，不當作跨版本穩定名稱。
+4. 需要重播時執行以下命令；`--check` 不覆寫證書。沒有背景工作或待完成驗證。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_strategy_safe.py --check
+uv run --with networkx==3.5 python scripts/c5_strategy_barriers.py --check
+lake build
+git diff --check
+```
+
+以下「先前停止點」均為歷史；其中的下一步、半徑限制與未提交字樣不是目前待辦。
+以本節為準；本輪沒有跨圖策略、摘要充分性、介面寬度或五內點代表定理。
+
+## 先前停止點：策略受限成功路徑／完整固定圖閉包（2026-09-15）
+
+詳見 [策略落地報告](c5_strategy_safe.md)。固定 survivor-811 的既有兩個 seeds，
+完整 Kempe closure 共 5,952 個原色完整染色、66,720 條 component-labeled 邊；
+boundary-root closure 相同，47,616 條邊。全體在 full／boundary-root 規則下均能 escape。
+新增複雜度 χ＝三組 dual cycle counts 總和；「每步 χ 不增」只保留 3,168 states，
+舊 radius 2 的 106 起點只保留 96。state 126 的 χ=3、最小成功峰值 κ=4，
+有 `3→4→4→3` 成功路徑及門檻 3 下的封閉失敗集合證書。
+另 504 states 不需超過初始峰值、但仍需途中回升，state 247 是具體 witness。
+
+門檻 4 下，所有 5,112 個初始 χ≤4 的 states 都能留在該集合成功；
+舊 corpus 中涵蓋 94/106，其餘初始即超門檻。反向 BFS 產生 rank／policy，
+逐狀態驗證下降及失敗補集封閉；NetworkX 獨立核對 components、cycles、全部距離。
+checker `scripts/c5_strategy_safe.py --check`，完整證書
+`artifacts/c5_cells/strategy_safe.json`。只有固定圖 Python 計算證據，未新增 Lean、
+未證跨圖策略／摘要充分性／介面寬度／完整 Σ 小代表結論。
+本輪 `--check` 逐 byte 重播、`lake build`（僅既有 lint）、文件連結與
+`git diff --check` 通過；未 commit/push。
+
+下一入口：先從報告 §4 的必要升高與回升 witnesses 找 cut 重接機制／替換引理；
+不必重找舊區分詞，不自動增加摘要特徵或新圖。舊 radius 2 限制已由本輪使用者
+要求落地而擴成此單圖完整閉包，沒有擴 graph catalogue。
+
+## 先前停止點：cycle-count ablation／三步機制（2026-09-15）
 
 詳見 [消融報告](c5_cycle_ablation.md)。固定 radius 2 的 106 染色，移除 cycles：
 84 桶、24 對；21 對最短深度 2，3 對最短深度 3（2 對合法 escape，1 對 legality）。
