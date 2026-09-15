@@ -9,7 +9,58 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：edge／pairing state 已精確核對，但加 cycle counts 仍不足（2026-09-15）
+## 最新停止點：多候選 edge-state 與局部結構坍縮（2026-09-15）
+
+使用者要求實作同時保存多個合法相對關係，並確認「坍縮」指 paths／cycles／區域
+在 switch 後重接、合併或消失。詳見 [c5_edge_choices.md](c5_edge_choices.md)。
+已實作 `EdgeModel/Branch/Choice`、`switch/condition/split/query/view`；完整染色作
+共同見證，原色框架與每條歷史保留，view 分組不合併 witnesses。
+固定 Errera 兩個既有起點：一步 20 branches／20 colorings／12 joint rows；
+兩步 196／119／53。分欄投影混合會額外造出 8 個兩步不可達 tuples；
+同 source pairing 冒用另一 witness 的後繼也有明確負控制。
+每步都要求無一步 escape 時，兩步留下 124 branches；只篩最後一步留下 132，
+多出的 8 條曾經過不相容中間狀態，證書保留其區別。
+
+**實際結構坍縮**：第一起點先 AB `{0,1,2,9,11,15}`，再局部 BC `{0,5,12,14}`。
+後一步保留 αβ、重接另外兩系統，使 βγ cycles 2→1、type-1 regions 4→3，
+兩端仍無一步 escape。已排除全域換色造成的 system 名稱置換；完整 edge／vertex
+交集矩陣顯示分裂與合併可同時發生，不把數目減少誤寫成刪除完整舊 component。
+這否定「結構坍縮必立即打破相容」的局部猜想，未提供全 class invariant。
+
+checker `scripts/c5_edge_choices.py --check`；證書 `artifacts/c5_cells/edge_choices.json`。
+本次整理提交範圍：joint incidence、switch traces、多候選 API 的三組 checker／證書與報告，
+以及此交接入口。四個 edge 系列 checkers（含既有 `c5_edge_states.py`）、`lake build`、
+文件連結與 `git diff --check` 通過；Lean 僅既有 lint。沒有新增 Lean 或新圖搜尋。
+
+**接手順序**：本節 → [choices 報告 §1–4、§6](c5_edge_choices.md) →
+`scripts/c5_edge_choices.py` 的 `Choice.switch/condition/view`、`EdgeModel.edge_replay`。
+最小輸入是 `edge_choices.json` 頂層 `graph`、`seeds`、`structural_cycle_loss`；
+`stages` 的每個 branch 用 `origin` 與 `history` 索引 `transition_table`，可逐步回放。
+下一步固定上述局部 BC 重接，對比其他同 source relation 候選的坍縮差異；
+保留各自完整 witnesses、原色框架與中間相容條件。完整 witness 後端不是已證有限壓縮 state。
+
+**已完成的輔助入口**：[joint incidence 報告](c5_edge_incidence.md)。三種 incidence
+壓縮都分開原 Errera regression，但都仍有 successor collision；不要從舊節的
+「尚未執行 incidence」重新開始。那些說明是歷史停止點，最新狀態以本節為準。
+**研究停在此處**；未擴大 catalogue／survivor、不啟動 polygon grammar 或 safety game。
+
+## 先前停止點：edge switch 與接口坍縮（2026-09-15）
+
+使用者澄清關注 edge-state 怎麼 switch 和狀態坍縮；詳見
+[c5_edge_switches.md](c5_edge_switches.md)。固定 Errera 加五條既有 survivor routes，
+六條 traces、14 次 switches，保存完整 cut、三組 components 重接及中間相容狀態。
+Errera 內部 CD move 同時切換 βγ 的兩個 cycles，使 S={0,5}→{0}、T={2,10}→{2}、
+接口邊 (5,10) 退出接口；boundary pairings 與 cycle counts 不變，仍無一步 escape。
+再做 AC{0}、AD{2} 才到 singleton-1。這是實際接口消失，原圖邊未刪除；
+指定 component switch 可逆，不是 C5→C3/C4 收縮定理。
+已確認的中間狀態標作「實際可實現＋無一步 escape」，不宣稱全 class 封閉。
+590 route 的 cycles 可新生再消失，不能以 cycle 數當嚴格下降量。
+checker `scripts/c5_edge_switches.py --check`；證書 `artifacts/c5_cells/edge_switches.json`。
+新 checker、原 edge checker、既有 incidence 草稿重播、`lake build`、`git diff --check`
+通過；Lean 僅既有 lint。沒有新圖搜尋、Lean 修改、commit/push。
+下一步沿具體 cut 的 interface 重接規則研究；polygon 壓縮仍需另定義 interface。
+
+## 先前停止點：edge／pairing state 已精確核對，但加 cycle counts 仍不足（2026-09-15）
 
 詳見 [c5_edge_states.md](c5_edge_states.md)。**紙面轉換＋固定圖精確計算，未新增 Lean**。
 使用既有 3 個 survivor、120 個 Errera 對齊 controls、132 個 catalogue witnesses；

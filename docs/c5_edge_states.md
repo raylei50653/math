@@ -14,6 +14,10 @@ edge-type／pairing／polygon 候選表示之最小固定圖實驗。
 既有 [C5ParityWord.lean](../Math/C5ParityWord.lean) 已證 boundary edge word 加基準色
 可恢復 boundary；本輪全圖／dual／transition 論證沒有自動繼承該形式化保證。
 
+**後續已完成**：[joint incidence 壓縮檢查](c5_edge_incidence.md)、
+[具體 switch traces](c5_edge_switches.md)、[多候選 edge-state 與結構坍縮](c5_edge_choices.md)。
+下文 §7 為當時的歷史入口；最新接手狀態請先看 `docs/HANDOFF.md`，不要重啟已完成的 incidence 篩查。
+
 ## 1. 完整 edge 表示與 terminal 壓縮要分開
 
 固定 `A=0, B=1, C=2, D=3`，`α=1, β=2, γ=3`，`δ(uv)=c(u) xor c(v)`。
