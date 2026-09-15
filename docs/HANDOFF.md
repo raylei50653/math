@@ -2,7 +2,51 @@
 
 更新：2026-09-15。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：B₅ face 分解確認，單次 gluing 的限制已釐清（2026-09-15）
+## 研究路線總覽（2026-09-15 文件整理）
+
+新增 [C5 boundary relations：有界代表與特殊反例路線](c5_boundary_relations.md)。
+區分待證主命題 `K∞=K≤5`、與它等價的全域較小代表存在性，以及指定局部規則的
+額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
+此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
+
+## 最新停止點：同一 Kempe class 的計數恆等式與正參數定位（2026-09-15）
+
+詳見 [c5_kempe_class_counts.md](c5_kempe_class_counts.md)。
+**紙面證明＋精確有限證書，未 Lean 化**：每個完整四色染色 Kempe class 都滿足
+`x_uv+y_u+y_v=L_K`。四個 boundary words 的 signed functional 在 complementary split
+的 70 個 noncrossing swap orbits 上皆為零；五次旋轉共 350 個整數等式。
+完整 orbit 的 boundary 原像數相同，使此恆等式可限制到任一 class。
+
+若全圖 `P(G)⊆e` 且 `x_e(G)>0`，包含任一 x_e 延伸的 class K 便有
+`m_K=x_e(K)>0` 與全部 `x_f(K)>0`。每個 class 都分解為
+`x_e(K)t+Σ_{i∈e}y_i(K)F_i`；正參數可定位在同一 class，不依賴文獻 ray 完備性。
+其 support 可達性結論也可由原 Kempe screen 得到，本輪不宣稱新增 mask 排除。
+
+驗證：132 個既有 witnesses 的真實 Kempe classes 與完整計數；另用固定 14-vertex disk 圖
+驗證 10 個不同 classes，並加入 crossing-chord／缺項負控制。
+checker `scripts/c5_kempe_class_counts.py --check`，證書 `artifacts/c5_cells/kempe_class_counts.json`。
+沒有大圖枚舉、新 Lean 模組或既有 catalogue 修改。
+
+**下一步**：保留全圖 P(G)⊆e，利用同一 class 內可達的五個四色 fibres，
+明確分析換色對其他色對 paths/components 的影響；尚無最終 connectivity 矛盾。
+不能對單一 class 套 exterior／4CT，也不能假定它自身是另一張 disk 圖的 relation。
+Adjacent-singleton lemma 與 K∞=K≤5 仍未證。
+
+**接手順序與具體起點**：先讀上述 class 報告 §1–3、§5，再讀
+[c5_adjacent_singleton_counts.md §4](c5_adjacent_singleton_counts.md#4-可以直接使用的反證起點)。
+可用 D₅ 對齊為 `e={0,2}`，選 `c|C5=(A,B,A,C,D)`；缺失 singleton 3、4
+強迫 c 中的 B–C 路徑 1↔3 與 B–D 路徑 1↔4。兩路可共享 B 色頂點，
+不能直接用交錯端點判矛盾。下一份成果應明列一次換色前後保留／改變的 connectivity，
+而不是重跑 catalogue、push screen 或普通單次 pairing。
+
+**重播**：`python3 scripts/c5_kempe_class_counts.py --check`、
+`python3 scripts/c5_adjacent_singleton_counts.py --check`、
+`python3 scripts/c5_kempe_screen.py --check`；Lean 基線用 `lake build`。
+本次三個 checker、文件連結、`git diff --check` 與 `lake build` 全部通過；
+Lean build 僅重播既有 lint 警告，本輪未修改 Lean 原始碼。
+本次依使用者要求整理、驗證後 commit／push，研究停在此處，未繼續新搜尋。
+
+## 先前停止點：B₅ face 分解確認，單次 gluing 的限制已釐清（2026-09-15）
 
 詳見 [c5_b5_face.md](c5_b5_face.md)，checker `scripts/c5_b5_face.py --check`，
 證書 `artifacts/c5_cells/b5_face.json`。本輪未新增 Lean／大圖枚舉。
