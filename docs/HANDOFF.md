@@ -9,7 +9,26 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：Kempe surgery 與 cut 接口引理已 Lean 化（2026-09-15）
+## 最新停止點：behavior refinement 第一輪（2026-09-15）
+
+使用者提案已納入 [c5_behavior_refinement.md](c5_behavior_refinement.md)，
+實作與紙面證明見 [第一輪報告](c5_behavior_refinement_results.md)。
+固定 survivor-811；30 個 boundary-root actions，同步 BFS 深度 2。
+原 c/d 完整觀察最短 1 步區分，escape 觀察最短 2 步；指定
+`AB@0; BC@2` 已完整重播。一般 source induced-connectivity iff 已有明確
+boundary trace 前提與紙面證明，尚未 Lean 化。
+
+兩起點半徑 1 corpus：18 個完整染色、32 條歷史。固定色框 predicate 後仍有
+2 對色框外衝突；按實際 boundary 色框實例化 predicate 可分開它們。
+結果 18 桶皆 singleton，零剩餘 pairs，**不構成多步充分性證據**。
+checker `scripts/c5_behavior_refinement.py --check`；證書
+`artifacts/c5_cells/behavior_refinement.json`。沒有 observation-based dedup、
+compatibility 剪枝、新圖搜尋或 K∞=K≤5 結論。
+下一步：Lean 化一般 iff，再考慮同圖半徑 2 corpus 的非平凡剩餘桶。
+新舊 witness checker、`lake build`、文件連結與 `git diff --check` 通過；
+本輪成果隨此交接一併提交。
+
+## 先前停止點：Kempe surgery 與 cut 接口引理已 Lean 化（2026-09-15）
 
 新增 [Math/KempeSurgery.lean](../Math/KempeSurgery.lean)（普通證明，無 `native_decide`、
 無 `sorry`；審計 `Math/KempeSurgeryAudit.lean`，輸出
