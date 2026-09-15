@@ -9,7 +9,42 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：B₂ guard 精確判準與來源修復接口（2026-09-15）
+## 最新停止點：修復介面碰撞與 retained-port 分割（2026-09-15）
+
+詳見 [介面研究報告](c5_repair_interface.md)；[來源修復報告](c5_guard_repair.md)
+§3.1、§4.1 已補鄰居歸屬等價式與成本分量數公式，均為紙面推導，未 Lean 化。
+研究目標是來源共同介面 I(c) ⇒ 修復後 guard 且 Δχ≤0，先證充分性，再談最小性。
+
+沿用既有 5,952-state 閉包，指定 boundary 型有 600 states／25 個共同色軌道；
+19 軌道符合 Q trace `{2,4}`，其中 13 個原 guard 失敗。找到關鍵碰撞 7／17：
+完整 Q、位置 2 鄰居色與逐邊 typed cut 相同，修復後 guard 都真，但 χ 成本為
+−1／+1。7 正是原 B₂ 有效修復色軌道；兩者只差 cut 外 singleton BC@8。
+它切換 retained primal 路徑 `0–8–14` 的存在，並改變 dual owner 分割。
+故這份候選介面若接受 7，也會接受不安全的 17，不能單獨保證安全修復。
+
+紙面壓縮引理：primal 只需 root、指定鄰居與 cut 端點的 retained 分割；dual
+可略去兩側共同不接觸 cut ports 的 owners，Δκ 不變。兩側分割仍分別抽取，
+尚未證共同結構機制或最小資訊，也沒有一般準備保持／後綴成本定理。
+
+接手：新報告 §3–4 → `scripts/c5_repair_interface.py` 的 `port_interface`、
+證書 `artifacts/c5_cells/repair_interface.json` 的 `primary_witness` 與 `rows`。
+下一題是 retained 路徑對 primal／dual 分割的共同約束，或準備如何強制它；
+候選條件必須能處理 singleton-8 反例，不再增加同一色軌道的成功標號。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_repair_interface.py --check
+uv run --with networkx==3.5 python scripts/c5_guard_repair.py --check
+uv run --with networkx==3.5 python scripts/c5_singleton_preparation.py --check
+lake build
+git diff --check
+```
+
+本輪未新增圖、重搜閉包或新增 Lean；既有 checker／證書保持原樣。
+驗證：上述三個 checker 的 `--check`、`lake build`（8,819 jobs，僅既有 lint）、
+`git diff --check` 及新檔 whitespace／文件連結檢查通過。沒有背景工作。
+文件、checker 與新證書隨本次提交發布。
+
+## 先前停止點：B₂ guard 精確判準與來源修復接口（2026-09-15）
 
 詳見 [guard 修復報告](c5_guard_repair.md)。已補固定 AB@0、AC@4 後綴成功
 iff guard 的紙面證明，以及 BC@2 加共同 B/C 角色重命名後的來源集合更新公式。
