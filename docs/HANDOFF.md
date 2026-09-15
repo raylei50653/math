@@ -9,7 +9,21 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：behavior refinement 第一輪（2026-09-15）
+## 最新停止點：固定 predicate 的半徑 2 辨識實驗（2026-09-15）
+
+詳見 [第二輪報告](c5_behavior_radius2.md)。依使用者覆核，先問固定色框 predicate
+下是否有非全域換色的同摘要染色可被短 continuation 區分。
+同圖半徑 2：106 個完整染色、482 條歷史；基底 100 桶／6 對衝突，固定 ψ
+101 桶／5 對，實際色框 ψ 106 桶／0 對。基底 6 對全部屬原反例對的一個共同
+全域換色軌道，未發現新機制；細化後無非單點桶，仍無充分性證據。
+補驗半徑 1 的基底 15 桶／3 對，以及完整 22 頂點的 B↔C、B↔D 關係。
+一般 iff 是已有紙面證明的帶條件策略規則，尚未 Lean 化；仍需完整染色計算。
+新 checker `scripts/c5_behavior_radius2.py --check` 與證書
+`artifacts/c5_cells/behavior_radius2.json`。兩輪 checker、`lake build` 與
+`git diff --check` 通過。停在半徑 2，未 commit/push；下一入口仍是固定摘要的
+非單點桶與非換色副本衝突，或另行 Lean 化一般 iff。
+
+## 先前停止點：behavior refinement 第一輪（2026-09-15）
 
 使用者提案已納入 [c5_behavior_refinement.md](c5_behavior_refinement.md)，
 實作與紙面證明見 [第一輪報告](c5_behavior_refinement_results.md)。

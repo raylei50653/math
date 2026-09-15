@@ -59,13 +59,16 @@ corpus 完整取 c、d 的半徑 **1** 鄰域（以上 boundary-root grammar，�
 
 | 觀察 | buckets | 同桶不同染色 pairs | 深度 ≤2 escape 衝突 |
 |---|---:|---:|---:|
+| 原色 boundary + pairings + cycles | 15 | 3 | 3 |
 | 原色 boundary + pairings + cycles + 固定色框 ψ | 16 | 2 | 2 |
 | 上述基底 + 隨實際 boundary 色框實例化的 ψ | 18 | 0 | 0 |
 
 固定色框 ψ 僅在 2 個染色適用，其餘記 inapplicable，不能視為 false。
 剩餘兩對的 boundary 分別為 `(A,C,B,A,D)` 與 `(A,D,C,A,B)`，區分詞為
 `AC@0; BC@0` 與 `AB@0; AC@2`。它們均在原 ψ 適用範圍外；
-因此不是指定色框 iff 的反例。
+因此不是指定色框 iff 的反例。完整 22 頂點比對確認它們分別是原反例對共同做
+B↔C、B↔D 的版本（後者兩側排序相反）；這是同一機制的色框泛化。
+此比對與新增基底列由[第二輪 checker](../scripts/c5_behavior_radius2.py)重驗。
 
 把 §3 的四個色標按當前 boundary `(a,b,c,a,d)` 實例化，並仍要求相同
 boundary trace，可在 **9** 個染色上定義對應 predicate，也分開上述兩對。
@@ -91,6 +94,5 @@ git diff --check
 本輪驗證：上列兩個 checker、`lake build`（8819 jobs，僅既有 lint）、
 新增文件的本地連結與 `git diff --check` 均通過；成果隨本輪提交。
 
-下一個有價值的步驟：先 Lean 化 §3 的 boundary-trace iff；之後可在同圖半徑 2
-corpus 尋找加入色框 predicate 後仍同桶的不同染色，再搜尋短區分詞。
-半徑 2 corpus 尚未執行，沒有有限狀態充分性／最小性結論。
+後續已依使用者覆核先做[半徑 2 辨識實驗](c5_behavior_radius2.md)：106 個染色，
+細化後仍全是單點桶；沒有新的反例機制或充分性結論。一般 iff 尚未 Lean 化。
