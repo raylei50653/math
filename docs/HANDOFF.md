@@ -9,7 +9,44 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：固定 predicate 的半徑 2 辨識實驗（2026-09-15）
+## 最新停止點：cycle-count ablation／三步機制（2026-09-15）
+
+詳見 [消融報告](c5_cycle_ablation.md)。固定 radius 2 的 106 染色，移除 cycles：
+84 桶、24 對；21 對最短深度 2，3 對最短深度 3（2 對合法 escape，1 對 legality）。
+兩對合法三步 witness 是同一個共同換色 pair orbit。選定詞 `AB@0; AC@1; AD@1`，
+source boundary `(A,C,D,A,B)`、ψ=true；cycles `(1,1,1)`／`(0,1,2)`。
+第一步後 pairings 與六色對 boundary partitions 仍相同，第二步後首次不同；
+第三步 singleton-2／singleton-1。NetworkX 獨立檢查全部 931 個較短詞不區分。
+
+新來源 χ 用兩層誘導連通性查詢；在明確兩個 component traces guard 下，
+一般三步 `singleton-1 iff ¬χ` 已有紙面證明，尚未 Lean 化，不用平面性或 cycles。
+選定 witness 的最後誘導集只差頂點 12／8：12 橋接共同子圖中含 1、4 的分量，
+8 只碰含 1 的分量。新 χ 在 22 個染色適用；細化後 87 桶、20 對，仍全有兩步衝突。
+cycles 提供額外辨識力，但未證它是任何充分狀態的必要欄位；尚不能用 χ 全面取代。
+checker `scripts/c5_cycle_ablation.py --check`、證書
+`artifacts/c5_cells/cycle_ablation.json`。三輪 checker、`lake build`、`git diff --check`
+通過。停在 radius 2／continuation 深度 3；本輪程式、證書與文件隨本次交接提交。
+
+### 接手順序與下一步
+
+1. 先讀 [消融報告](c5_cycle_ablation.md) §2–5：具體 witness、一般 iff 的完整 guard、
+   單頂點橋接機制，以及細化後仍有衝突的限制。
+2. 對照 `scripts/c5_cycle_ablation.py` 的 `source_rule` 與 `report`；原始 corpus 在
+   `artifacts/c5_cells/behavior_radius2.json`，本輪沒有擴大它。
+3. 若續做機制分析，直接從 `cycle_ablation.json` 的
+   `refined_residual_pair_indices` 索引 `pairs`，取得剩餘 20 對與各自兩步詞／完整回放；
+   不必重新找已完成的三步 witness。先比較共同換色軌道，再追蹤來源連通條件。
+4. 若選擇形式驗證，從報告 §3 的一般三步 iff 與 `Math/KempeSurgery.lean` 開始；
+   兩步 iff、三步 iff、單頂點加入引理目前都是紙面證明，尚未 Lean 化。
+
+執行 `uv run --with networkx==3.5 python scripts/c5_cycle_ablation.py --check`
+可重播本輪並逐 byte 核對證書；不加 `--check` 會覆寫證書，修改程式後需一併更新其 hash。
+原色 action labels、完整染色及各自 maximal component 必須保留；`None` 不等於 false。
+不依摘要合併 states，不自動擴 radius 3 或新圖。這裡列的是後續入口，沒有背景研究或待完成驗證。
+
+以下「先前停止點」保留歷史敘述；其中的下一步與未提交字樣不是目前待辦，接手以上節為準。
+
+## 先前停止點：固定 predicate 的半徑 2 辨識實驗（2026-09-15）
 
 詳見 [第二輪報告](c5_behavior_radius2.md)。依使用者覆核，先問固定色框 predicate
 下是否有非全域換色的同摘要染色可被短 continuation 區分。

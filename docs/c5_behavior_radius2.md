@@ -66,3 +66,6 @@ git diff --check
 本輪停在半徑 2。下一個有辨識力的入口仍是先取得固定細化摘要的非單點桶，
 再檢查非換色副本的短 continuation 衝突；單純提高染色數量不是充分性進展。
 一般 iff 的 Lean 化是另一項明確可做的形式驗證工作。
+
+後續依使用者指定改做 [cycle-count ablation／三步機制分析](c5_cycle_ablation.md)，
+保持本輪 corpus 不變；已找到一般三步來源 iff 與單頂點橋接診斷。
