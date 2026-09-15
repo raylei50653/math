@@ -308,7 +308,7 @@ $k=7$ 是 $2^{60}$——**精確枚舉在 $k\ge6$ 是跑不動的**，不是慢�
 | 1 | **R1 引理**：內部頂點 $v$ 若 $\deg(v)\le3$，則 $\Sigma(G)=\Sigma(G-v)$ | **proved in Lean**：`summary_eq_deletePrivate`（一般 boundary）、`sigma_eq_delete_private`（C5 形式）；只對「內點」用，boundary 固定不動 |
 | 2a | **SYM 的核心：$\Sigma$ 與內部標號無關** | **proved in Lean**：`Sigma_relabel`／`sigma_iff_relabel`（`Math/SymRelabel.lean`），見 §7 |
 | 2b | **SYM 的排序步驟**：每個 unlabeled 圖都有一個「attachment mask 非遞增」的代表 | **proved in Lean**：`FiveBoundary.Sym.exists_sorted_relabel`（`Math/SymNormalForm.lean`），任意 $k$，包含 mask 搬運與同 $\Sigma$；見 §7.2 |
-| 3 | **程式正確實作 1 與 2** | 只在 $k\le5$ 以精確枚舉驗證（`matches_exact_catalogue: true`）；另有 §7 的 SYM 專用 checker；這些都是經驗驗證，不是證明 |
+| 3 | **程式正確實作 1 與 2** | 只在 $k\le5$ 以精確枚舉驗證（`matches_exact_catalogue: true`）；另有 §7 的 SYM 專用 checker；這些都是經驗驗證，不是證明；**2026-09-15 起另有 §14 的獨立重現**：不用 SYM、不同邊序、不同 planarity／Σ 實作的 C++ 搜尋在 $k=6$ 得到同樣的 132 個 Σ、零新 Σ |
 
 （§0 的 bridge 與前提 3 **不是同一件事**：bridge 只保證「給定一張圖，十 bit 的讀寫與 $\Sigma$ 一致」，
 不保證 reduced 搜尋的 degree 剪枝與 SYM 正規化正確，因此不改變本節的條件式地位。）
@@ -1099,3 +1099,66 @@ git diff --check
 planarity oracle 與 scheduler 仍未認證；$K_\infty=K_5$ 仍是猜想。
 下一個可分離方向是染色表 AND 的語義 bridge，或 Python 執行 refinement；沒有啟動這些工作。
 production／`cells.json` 未改，沒有新增 catalogue 搜尋。既有修改保留，未 commit／push。
+
+## 14. $K_6=K_5$ 的獨立重現：不同 search path、不同實作（2026-09-15）
+
+§6.0 前提 3（「程式正確實作 R1 與 SYM」）到此之前只有 $k\le5$ 的精確比對可依靠。
+一個只在 $k\ge6$ 才出錯的實作（例如漏掉某個 branch）不會被 $k\le5$ 的資料抓到。
+本節用**另一支獨立寫的搜尋**在 $k=6$ 重跑，目標不是重複 production，而是走一條不同的路徑：
+
+| 項目 | production `c5_cell_reduced.py` | cross-check `scripts/cpp/c5_crosscheck.cpp` |
+| --- | --- | --- |
+| 剪枝 | R1 ＋ SYM（attachment mask 非遞增） | **只有 R1**（`--sym none`，不做任何標號正規化） |
+| 邊序 | chords → 每頂點 [5 attachments, 與較早內點的邊] | chords → 每頂點 [**與較早內點的邊, 5 attachments**]（`within_first`） |
+| planarity | rustworkx Left–Right | **Boost Boyer–Myrvold** |
+| Σ | 4^k 位元 compat table 的 AND | **逐 pattern 回溯染色**（無 bitset） |
+| 平行 | Python `multiprocessing`，prefix = 前兩個 block | C++ `std::thread`，prefix = 前 16 個 edge bit，heavy-first 佇列 |
+| 語言 | Python | C++17 |
+
+去掉 SYM 之後每個 unlabeled 圖會被它的所有標號版本各走一次，搜尋樹大 19.6 倍，
+但也就完全不依賴 SYM 的實作（§7 只證明 SYM 的數學，不證明 production 的實作）。
+
+**結果（`artifacts/c5_cells/k6_independent_crosscheck.json`）：**
+
+| $k$ | 配置 | DFS 節點 | 倖存者 | planarity 呼叫 | distinct Σ | `new_vs_K5` | `missing_vs_K5` | 秒（30 threads） |
+| ---: | --- | ---: | ---: | ---: | ---: | --- | --- | ---: |
+| 5 | R1 only, within_first | 19,412,318 | 2,114,445 | 3.1×10⁷ | 132（level-5 新 Σ = 20，`matches_exact_catalogue: true`） | `[]` | `[]` | 12 |
+| 6 | R1 only, within_first | **1,386,405,025** | **122,013,105** | 3.6×10⁹（其中 0.9×10⁹ 由 bad-edge 繼承省下） | **132** | **`[]`** | **`[]`** | 743 |
+| 7 | R1 ＋ SYM:**count**（attachment 個數非遞增，比 production 的 mask 序粗），within_first | 5,536,830,032 | 70,554,539 | 7.1×10⁹（其中 2.5×10⁹ 由 bad-edge 繼承省下） | 132 | `[]` | `[]` | 3,215 |
+
+也就是：在一條與 production 完全不同的 search path 上，第六個內點仍然不產生任何新 Σ，
+且 $K_5$ 的 132 個 Σ 全部被重新實現。132 個 witness 逐一用 NetworkX `check_planarity`
+與 Python 版回溯 Σ（`scripts/c5_k6_crosscheck.py`）複驗。
+
+$k=7$ 的 R1-only 估計要 15–25 小時，改用 `--sym count`：只要求五 bit attachment mask 的**個數**非遞增。
+這仍是無損的（把內點按 attachment 個數排序即可，§7.2 的 `exists_sorted_relabel` 論證對任何全序 key 都成立），
+但比 production 的 mask 數值序粗（平手更多、走的樹是 production 的 2.9 倍），且邊序不同、
+實作不同。結果同樣是 132 Σ、零新 Σ（`artifacts/c5_cells/k7_independent_crosscheck.json`）。
+注意 `count` 條件的無損性沒有 Lean 證書（Lean 只證了 mask 數值序），所以 $k=7$ 這條的獨立性
+弱於 $k=6$ 的 R1-only。
+
+**C++ 與 Python 版互相校準**（同一配置下 nodes／survivors／pruned／每個 Σ 的計數逐位相同）：
+$k=3,4,5$ 的 R1-only 兩版完全一致；C++ 用 `--sym nonincreasing --order production` 跑 $k=5$ 得到
+nodes 3,332,691／survivors 28,781／pruned 3,117,925，與 production `reduced_k5.json` 逐位相同，
+nonplanar 2,436,591 等於 production 的 `rejected`——所以 C++ 版的 generic `viable` 與 production 的
+block 式剪枝在 $k=5$ 等價。
+
+**兩段式 DFS 的一個安全加速**：非平面性在 supergraph 下單調，某節點加邊 $e$ 已非平面則所有子孫也是。
+C++ 版在每個節點先把所有候選邊各測一次，再遞迴，子孫繼承已知的 bad 邊集合，不再測試。
+這不改變走訪的樹、節點數、倖存者與 Σ（$k=5$：省下 12.8M／31.2M 次 planarity 呼叫；$k=6$ 單段式與兩段式
+的每個 Σ 計數逐位相同，`nonplanar + skipped_known_nonplanar` = 2,230,055,922 等於單段式的 nonplanar，18 → 12 分鐘）。
+
+**信任層級**：這仍是 computationally observed。它把 §6.0 前提 3 從「單一實作、僅 $k\le5$ 驗證」
+提升為「兩個獨立實作、兩條不同 search path、兩個 planarity oracle、兩個 Σ evaluator 在 $k=6$ 得到相同的
+132 個 Σ」，但不是證明：兩者共用的是 R1 引理（Lean）與邊宇宙的定義；apex-planarity 的判定仍是
+外部程式庫。$K_\infty=K_5$ 的地位不變。
+
+```bash
+g++ -O2 -std=c++17 -pthread -o /tmp/c5_crosscheck scripts/cpp/c5_crosscheck.cpp     # 需要 boost headers
+/tmp/c5_crosscheck --k 6 --sym none --order within_first --threads 30 > /tmp/cpp_k6_none.json   # ~12 min
+/tmp/c5_crosscheck --k 7 --sym count --order within_first --threads 30 > /tmp/cpp_k7_count.json  # ~54 min
+uv run --with rustworkx==0.17.1 --with networkx==3.5 python scripts/c5_k6_crosscheck.py \
+  --k 6 --sym none --order within_first --from-cpp /tmp/cpp_k6_none.json \
+  --out artifacts/c5_cells/k6_independent_crosscheck.json                                   # K5 比對 + witness 複驗
+uv run --with rustworkx==0.17.1 python scripts/c5_k6_crosscheck.py --k 5 --sym none --order within_first   # 純 Python 版，26 s
+```

@@ -172,7 +172,7 @@ observed／verified、**[P]** 紙面證明未 Lean 化、**[?]** conjectured／u
 10.4 R1 [L]；SYM：`Sigma_relabel`（Σ 與標號無關）＋ `exists_sorted_relabel`（任意 k 的非遞增代表）[L]；
      checker A1–A5'（$k\le3$ 全宇宙；**k = 4, 5 orbit 檢查未跑**）[C]。
 10.5 R2（長度 ≤ 5 分隔環 + 較小 disk 實現）：診斷用，非 $K_6=K_5$ 前提 [C]。
-10.6 $K_6 = K_7 = K_5 = 132$ **條件式**：前提表（R1 [L]、SYM 2a/2b [L]、程式正確實作 [C, 僅 $k\le5$ 驗證]）；
+10.6 $K_6 = K_7 = K_5 = 132$ **條件式**：前提表（R1 [L]、SYM 2a/2b [L]、程式正確實作 [C, $k\le5$ 精確驗證；$k=6$ 另由獨立 C++ 搜尋（R1-only、不同邊序、Boost 平面性、回溯 Σ）重現 132 Σ／零新 Σ，`k6_independent_crosscheck.json`；$k=7$ 以 SYM:count（較粗、無 Lean）＋不同邊序重現，`k7_independent_crosscheck.json`]）；
      新增序列 11,11,30,35,25,20,0,0；$K_\infty=K_5$ [?]。
 10.7 Reduced DFS 完整性鏈（全部普通證明、無 native）[L]：
      - `PrefixPartition`：`unique_owner`／`covered_iff`／`owner_at_end`；
