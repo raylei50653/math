@@ -9,7 +9,43 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：全程禁止補償型升高（2026-09-15）
+## 最新停止點：更換保留系統的替代出口（2026-09-15）
+
+詳見 [替代出口報告](c5_alternative_exit.md)。固定既有 48-state R，對照同一完整
+來源 3022 的 BD@4／AD@1；保存原色框、原邊號及兩套完整 retained-block 重接。
+AD@1 成功的來源 guard 是位置 3 的鄰居全為 B/C，使其獨自成 AD component，
+故位置 1 的 AD component 僅接觸 boundary `{1}`，交換即 singleton-4。
+其 cut 恰是保留 D₁₂ 的 `(0,1)` path。另兩系統重接時，舊 D₂₃ cycle 原封轉入
+D₁₃，另閉合一個 quotient hexagon 與一個 loop；兩者共用 face 35 的 cut port。
+所以 D₂₃ 計數不變卻不是完整保留，最終 cycles `(1,2,1)`、χ=4。
+
+報告 §4 給帶來源 cut／retained 接線前提的替代出口紙面引理，未 Lean 化。
+來源 predicate 不讀目標／Goal 表；R 的 48/48 均符合、角色 AD@1 均直接成功。
+共同色角色套用在完整來源與全部系統，不分別正規化操作、不按摘要合併狀態。
+另外回放每個來源到 3022 的等高路徑，保留較弱的區域策略論述。
+「任意禁補償峰值≤4 成功路徑首次離開 R 必為 2→4」由舊封閉證書直接推出。
+
+接手：報告 §3–4 → `scripts/c5_alternative_exit.py` 的 `source_schema`。
+待證缺口是更弱的共同 port／retained path 條件能否迫使此接線，及一般等高區域
+能否到達它；本輪只證帶明確接口前提的引理，不把它當一般存在性定理。
+未擴圖或重搜閉包，沒有新增 Lean。程式、證書與報告隨本次交接一併提交。
+證書入口是 `artifacts/c5_cells/alternative_exit.json`：`comparison` 保存 3022 的
+兩個出口，`region_checks` 保存來源條件與 48 個實例，`neutral_routes_to_anchor`
+保存回到 3022 的路徑；所有 state IDs 均由來源 hashes 綁定至 `strategy_safe.json`。
+後續研究需從上述未證缺口續接，不重跑 K=4 成功判定，也不自動擴圖。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_alternative_exit.py --check
+uv run --with networkx==3.5 python scripts/c5_strategy_no_comp.py --check
+lake build
+git diff --check
+```
+
+新 checker 與禁補償 checker 的 `--check`、`lake build`（僅既有 lint）、報告連結
+及 `git diff --check` 通過。停在此處，沒有背景研究或待完成驗證。
+以下「先前停止點」均為歷史；舊接手方向及未提交字樣不是目前待辦。
+
+## 先前停止點：全程禁止補償型升高（2026-09-15）
 
 詳見 [禁補償策略報告](c5_strategy_no_comp.md)。沿用完整 5,952 states 閉包，
 從 boundary-root grammar 全部刪除有序 cycle 增量排序為 `[-1,0,2]` 的 984 條有向邊。
