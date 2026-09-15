@@ -1,0 +1,4622 @@
+{
+  "trust": "Finite fixed-graph certificates plus paper cube and disk arguments; not Lean. AB-local invariance is not the global independent-singleton hypothesis.",
+  "hashes": {
+    "scripts/c5_ab_swap_cube.py": "d0d337918fbb0b6e2b0f77b06823dab6f85075887669154a7b570d18f52f77eb",
+    "artifacts/c5_cells/cells.json": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+    "scripts/c5_kempe_connectivity.py": "c6666671a8c00930d815b5bcce082be1933933a14e6dd3cb4fde3e2d840b7a92",
+    "scripts/c5_kempe_class_counts.py": "3f3827adb2194373fa3a65221b91206a7693312eed7b940ebefafb30f2a176a2",
+    "scripts/c5_adjacent_singleton_counts.py": "546fa7cce5eb9d7bc8e62e74db6055b8d52a545580ec47a9e41b6aeb0cecb595",
+    "scripts/c5_kempe_screen.py": "033fd7d6d2ff673ca1f7b78b8958b729351942092d58e027ea7d6b8713560a70"
+  },
+  "fixed_graph": {
+    "source": "https://raw.githubusercontent.com/sagemath/sage/10.6/src/sage/graphs/generators/smallgraphs.py",
+    "source_function": "ErreraGraph",
+    "deleted_vertex": 0,
+    "new_to_old": [
+      1,
+      14,
+      16,
+      7,
+      15,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        10
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        2,
+        10
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        3,
+        15
+      ],
+      [
+        4,
+        11
+      ],
+      [
+        4,
+        15
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        5,
+        11
+      ],
+      [
+        5,
+        12
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        11
+      ],
+      [
+        6,
+        12
+      ],
+      [
+        6,
+        13
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        12
+      ],
+      [
+        7,
+        13
+      ],
+      [
+        7,
+        14
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        8,
+        13
+      ],
+      [
+        8,
+        14
+      ],
+      [
+        8,
+        15
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        9,
+        14
+      ],
+      [
+        9,
+        15
+      ],
+      [
+        10,
+        12
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        11,
+        13
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        12,
+        14
+      ],
+      [
+        13,
+        15
+      ]
+    ],
+    "oriented_disk_faces": [
+      [
+        0,
+        1,
+        5
+      ],
+      [
+        0,
+        11,
+        4
+      ],
+      [
+        0,
+        5,
+        11
+      ],
+      [
+        1,
+        2,
+        10
+      ],
+      [
+        1,
+        10,
+        5
+      ],
+      [
+        2,
+        3,
+        9
+      ],
+      [
+        2,
+        9,
+        10
+      ],
+      [
+        3,
+        4,
+        15
+      ],
+      [
+        3,
+        15,
+        9
+      ],
+      [
+        4,
+        11,
+        15
+      ],
+      [
+        5,
+        6,
+        11
+      ],
+      [
+        5,
+        12,
+        6
+      ],
+      [
+        5,
+        10,
+        12
+      ],
+      [
+        6,
+        12,
+        7
+      ],
+      [
+        6,
+        7,
+        13
+      ],
+      [
+        6,
+        13,
+        11
+      ],
+      [
+        7,
+        8,
+        13
+      ],
+      [
+        7,
+        14,
+        8
+      ],
+      [
+        7,
+        12,
+        14
+      ],
+      [
+        8,
+        14,
+        9
+      ],
+      [
+        8,
+        9,
+        15
+      ],
+      [
+        8,
+        15,
+        13
+      ],
+      [
+        9,
+        14,
+        10
+      ],
+      [
+        10,
+        14,
+        12
+      ],
+      [
+        11,
+        13,
+        15
+      ]
+    ],
+    "start": [
+      0,
+      1,
+      0,
+      2,
+      3,
+      2,
+      3,
+      0,
+      3,
+      1,
+      3,
+      1,
+      1,
+      2,
+      2,
+      0
+    ],
+    "ab_cube": {
+      "components": [
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "vertices": [
+            0,
+            1,
+            2,
+            9,
+            11,
+            15
+          ]
+        },
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "vertices": [
+            7,
+            12
+          ]
+        }
+      ],
+      "raw_size": 4,
+      "normalized_size": 2,
+      "states": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            3,
+            0,
+            3,
+            1,
+            3,
+            1,
+            1,
+            2,
+            2,
+            0
+          ],
+          "blocker_paths": [
+            [
+              1,
+              5,
+              12,
+              14,
+              9,
+              3
+            ],
+            [
+              1,
+              10,
+              12,
+              6,
+              11,
+              4
+            ]
+          ],
+          "blockers": true,
+          "interface": [
+            [
+              5,
+              10
+            ]
+          ],
+          "new_links": [
+            true,
+            true
+          ],
+          "gate": true,
+          "full": true,
+          "S": [
+            0,
+            5
+          ],
+          "T": [
+            2,
+            10
+          ],
+          "new_link_paths": [
+            [
+              2,
+              10,
+              5,
+              6,
+              7,
+              8,
+              15,
+              4
+            ],
+            [
+              0,
+              5,
+              10,
+              14,
+              7,
+              13,
+              15,
+              3
+            ]
+          ]
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            3,
+            1,
+            3,
+            1,
+            3,
+            1,
+            0,
+            2,
+            2,
+            0
+          ],
+          "blocker_paths": [
+            [
+              1,
+              5,
+              11,
+              13,
+              7,
+              14,
+              9,
+              3
+            ],
+            [
+              1,
+              10,
+              9,
+              8,
+              7,
+              6,
+              11,
+              4
+            ]
+          ],
+          "blockers": true,
+          "interface": [
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              14,
+              10
+            ]
+          ],
+          "new_links": [
+            true,
+            true
+          ],
+          "gate": true,
+          "full": true,
+          "S": [
+            0,
+            5,
+            12,
+            14
+          ],
+          "T": [
+            2,
+            6,
+            10,
+            12
+          ],
+          "new_link_paths": [
+            [
+              2,
+              10,
+              14,
+              8,
+              15,
+              4
+            ],
+            [
+              0,
+              5,
+              6,
+              13,
+              15,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    "common_path_controls": [
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "persistent_vertices": [
+          1,
+          3,
+          5,
+          9,
+          11,
+          13,
+          14
+        ],
+        "source_component": [
+          1,
+          5,
+          11,
+          13
+        ],
+        "target": 3,
+        "common_path": null
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "persistent_vertices": [
+          1,
+          4,
+          6,
+          8,
+          9,
+          10,
+          11
+        ],
+        "source_component": [
+          1,
+          8,
+          9,
+          10
+        ],
+        "target": 4,
+        "common_path": null
+      }
+    ],
+    "complementary_cube": {
+      "components": [
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "vertices": [
+            0,
+            1,
+            2,
+            9,
+            11,
+            15
+          ]
+        },
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "vertices": [
+            7,
+            12
+          ]
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "vertices": [
+            3,
+            4
+          ]
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "vertices": [
+            5,
+            6,
+            8,
+            10,
+            13,
+            14
+          ]
+        }
+      ],
+      "raw_size": 16,
+      "normalized_size": 4,
+      "states": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            3,
+            0,
+            3,
+            1,
+            3,
+            1,
+            1,
+            2,
+            2,
+            0
+          ],
+          "blocker_paths": [
+            [
+              1,
+              5,
+              12,
+              14,
+              9,
+              3
+            ],
+            [
+              1,
+              10,
+              12,
+              6,
+              11,
+              4
+            ]
+          ],
+          "blockers": true,
+          "interface": [
+            [
+              5,
+              10
+            ]
+          ],
+          "new_links": [
+            true,
+            true
+          ],
+          "gate": true,
+          "full": true,
+          "S": [
+            0,
+            5
+          ],
+          "T": [
+            2,
+            10
+          ],
+          "new_link_paths": [
+            [
+              2,
+              10,
+              5,
+              6,
+              7,
+              8,
+              15,
+              4
+            ],
+            [
+              0,
+              5,
+              10,
+              14,
+              7,
+              13,
+              15,
+              3
+            ]
+          ]
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            3,
+            1,
+            3,
+            1,
+            3,
+            1,
+            0,
+            2,
+            2,
+            0
+          ],
+          "blocker_paths": [
+            [
+              1,
+              5,
+              11,
+              13,
+              7,
+              14,
+              9,
+              3
+            ],
+            [
+              1,
+              10,
+              9,
+              8,
+              7,
+              6,
+              11,
+              4
+            ]
+          ],
+          "blockers": true,
+          "interface": [
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              14,
+              10
+            ]
+          ],
+          "new_links": [
+            true,
+            true
+          ],
+          "gate": true,
+          "full": true,
+          "S": [
+            0,
+            5,
+            12,
+            14
+          ],
+          "T": [
+            2,
+            6,
+            10,
+            12
+          ],
+          "new_link_paths": [
+            [
+              2,
+              10,
+              14,
+              8,
+              15,
+              4
+            ],
+            [
+              0,
+              5,
+              6,
+              13,
+              15,
+              3
+            ]
+          ]
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            2,
+            0,
+            2,
+            1,
+            2,
+            1,
+            1,
+            3,
+            3,
+            0
+          ],
+          "blocker_paths": [
+            [
+              1,
+              10,
+              9,
+              3
+            ],
+            [
+              1,
+              5,
+              11,
+              4
+            ]
+          ],
+          "blockers": true,
+          "interface": [],
+          "new_links": [
+            false,
+            false
+          ],
+          "gate": false,
+          "full": false,
+          "S": [
+            0
+          ],
+          "T": [
+            2
+          ],
+          "new_link_paths": [
+            null,
+            null
+          ]
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            2,
+            1,
+            2,
+            1,
+            2,
+            1,
+            0,
+            3,
+            3,
+            0
+          ],
+          "blocker_paths": [
+            [
+              1,
+              10,
+              9,
+              3
+            ],
+            [
+              1,
+              5,
+              11,
+              4
+            ]
+          ],
+          "blockers": true,
+          "interface": [],
+          "new_links": [
+            false,
+            false
+          ],
+          "gate": false,
+          "full": false,
+          "S": [
+            0
+          ],
+          "T": [
+            2
+          ],
+          "new_link_paths": [
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "cd_first_escape": {
+      "singleton": 1,
+      "moves": [
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "component": [
+            5,
+            6,
+            8,
+            10,
+            13,
+            14
+          ],
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            2,
+            0,
+            2,
+            1,
+            2,
+            1,
+            1,
+            3,
+            3,
+            0
+          ]
+        },
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "component": [
+            0
+          ],
+          "coloring": [
+            2,
+            1,
+            0,
+            2,
+            3,
+            3,
+            2,
+            0,
+            2,
+            1,
+            2,
+            1,
+            1,
+            3,
+            3,
+            0
+          ]
+        },
+        {
+          "pair": [
+            0,
+            3
+          ],
+          "component": [
+            2
+          ],
+          "coloring": [
+            2,
+            1,
+            3,
+            2,
+            3,
+            3,
+            2,
+            0,
+            2,
+            1,
+            2,
+            1,
+            1,
+            3,
+            3,
+            0
+          ]
+        }
+      ]
+    },
+    "shortest_escape": {
+      "singleton": 1,
+      "moves": [
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "component": [
+            0,
+            5
+          ],
+          "coloring": [
+            2,
+            1,
+            0,
+            2,
+            3,
+            0,
+            3,
+            0,
+            3,
+            1,
+            3,
+            1,
+            1,
+            2,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "component": [
+            0,
+            3,
+            4
+          ],
+          "coloring": [
+            3,
+            1,
+            0,
+            3,
+            2,
+            0,
+            3,
+            0,
+            3,
+            1,
+            3,
+            1,
+            1,
+            2,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "component": [
+            2
+          ],
+          "coloring": [
+            3,
+            1,
+            2,
+            3,
+            2,
+            0,
+            3,
+            0,
+            3,
+            1,
+            3,
+            1,
+            1,
+            2,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    "classes": [
+      {
+        "representative": [
+          0,
+          1,
+          0,
+          1,
+          2,
+          2,
+          0,
+          2,
+          1,
+          2,
+          3,
+          1,
+          1,
+          3,
+          0,
+          0
+        ],
+        "size": 100,
+        "counts": [
+          8,
+          8,
+          12,
+          8,
+          8,
+          12,
+          8,
+          12,
+          12,
+          12
+        ],
+        "chord_totals": [
+          28,
+          28,
+          28,
+          28,
+          28
+        ]
+      }
+    ],
+    "singleton_support": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "catalogue_replay": [
+    {
+      "mask": 91,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 95,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 123,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 127,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            3,
+            1,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            3,
+            1,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 165,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 167,
+      "extensions": 3,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 189,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 191,
+      "extensions": 3,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 199,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 219,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 223,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            0,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            0,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 229,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 231,
+      "extensions": 3,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            3
+          ],
+          "states": 2,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 251,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 253,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 255,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 271,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 314,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 319,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 347,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 351,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            0,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            0,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 379,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 383,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            2,
+            3,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 424,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 426,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 429,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 431,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 440,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 442,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 445,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            3,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 447,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 463,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 475,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 479,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            3,
+            0,
+            0
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 489,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 491,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 493,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            3,
+            1,
+            2
+          ],
+          "states": 2,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 495,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 505,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 507,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 509,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            1,
+            3,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            3,
+            1,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 511,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 564,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 567,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 572,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 575,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 603,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 607,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            2,
+            1,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            2,
+            1,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 628,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 631,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 632,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 635,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 636,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": true,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 639,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 693,
+      "extensions": 4,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 695,
+      "extensions": 4,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            1,
+            1
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            3,
+            1,
+            1
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            3,
+            1,
+            1
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 701,
+      "extensions": 3,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            0,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            0,
+            3,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            3,
+            3
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 703,
+      "extensions": 6,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            0,
+            1,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            0,
+            1,
+            3,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            0,
+            1,
+            3,
+            1
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            0,
+            1,
+            3,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            3,
+            1,
+            3,
+            1
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            0,
+            1,
+            2,
+            1
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 721,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 727,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 731,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 735,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            3,
+            2,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 757,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 759,
+      "extensions": 3,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 761,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 763,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 765,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 767,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 774,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 775,
+      "extensions": 3,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 782,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 783,
+      "extensions": 3,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            1
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            3
+          ],
+          "states": 2,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 822,
+      "extensions": 4,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            0,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            0,
+            3
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            0,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 823,
+      "extensions": 4,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            1,
+            1
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            3,
+            1,
+            1
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            2,
+            1,
+            1
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 830,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 831,
+      "extensions": 3,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 854,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 855,
+      "extensions": 3,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            2,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 859,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 862,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 863,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 886,
+      "extensions": 3,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            0,
+            2,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            0,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            2,
+            2
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 887,
+      "extensions": 6,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            0,
+            1,
+            2,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            0,
+            1,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            0,
+            1,
+            3,
+            1
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            0,
+            1,
+            2,
+            1
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            0,
+            1,
+            2,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            2,
+            1,
+            2,
+            1
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 890,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 891,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 894,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 895,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 935,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            3
+          ],
+          "states": 2,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 942,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 943,
+      "extensions": 4,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            3,
+            2
+          ],
+          "states": 2,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 951,
+      "extensions": 10,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            1,
+            2,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            1,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            1,
+            3,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            3,
+            2,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            3,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            1,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            1,
+            3,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            3,
+            2,
+            3
+          ],
+          "states": 2,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 956,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": true,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 957,
+      "extensions": 4,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            1,
+            0,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            1,
+            0,
+            3,
+            3
+          ],
+          "states": 2,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            1,
+            0,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 958,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 959,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 960,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 961,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 966,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 967,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 970,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 971,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 974,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            0,
+            1,
+            3
+          ],
+          "states": 2,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 975,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 976,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 977,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 982,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            2,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 983,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 986,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 987,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 990,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            1,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            3,
+            1,
+            2,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 991,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 997,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 999,
+      "extensions": 4,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            2,
+            3
+          ],
+          "states": 2,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 1000,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 1001,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 1002,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 1003,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 1005,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            0,
+            3,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            0,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 1006,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            0,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            0,
+            2,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 1007,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 1012,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": true,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 1013,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 1014,
+      "extensions": 4,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            1,
+            0,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            1,
+            0,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            3,
+            1,
+            0,
+            2,
+            2
+          ],
+          "states": 2,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 1015,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 1016,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 1017,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 1018,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 1019,
+      "extensions": 0,
+      "cubes": []
+    },
+    {
+      "mask": 1020,
+      "extensions": 2,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": false,
+          "all_full": false
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3,
+            2
+          ],
+          "states": 1,
+          "all_blockers": true,
+          "all_gate": true,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 1021,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 1022,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            1,
+            2
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    },
+    {
+      "mask": 1023,
+      "extensions": 1,
+      "cubes": [
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3
+          ],
+          "states": 1,
+          "all_blockers": false,
+          "all_gate": false,
+          "all_full": false
+        }
+      ]
+    }
+  ],
+  "negative_controls": {
+    "boundary_only_states": 2,
+    "full_relative_states": 4,
+    "missing_face_rejected": true
+  }
+}

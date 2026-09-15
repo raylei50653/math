@@ -275,6 +275,13 @@ $$
 
 ### 5.1 與現有成果的對照
 
+- [AB 全交換續作](c5_ab_swap_cube.md) 以交換立方體引理與固定 16 頂點 Errera disk
+  證明局部 blockers／接口／兩次新生連通可在任意 AB 序列下保持；該圖仍有三步 CD
+  起始 escape。排除局部 AB 必逃逸引理，未排除全圖 independent-singleton 分支。
+- [換色 connectivity 續作](c5_kempe_connectivity.md) 給混合色對的精確刪除／收縮／star
+  更新公式，並從特殊反例推出兩個指定 components 間的實際 C–D 接口邊。
+  既有 disk 控制例顯示兩次新生連通可同時存在；後續 AB 相容性結果見上一項。
+  一般論證為紙面證明，有限驗證重播既有 witnesses，未新增 mask 排除。
 - [Kempe-class 計數續作](c5_kempe_class_counts.md) 將 chord-total 恆等式限制到
   同一完整染色 class，並定位特殊分支的正參數；這是紙面證明加有限證書，未 Lean 化。
   不對單一 class 套 exterior 條件；最終 connectivity obstruction 仍缺。

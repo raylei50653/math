@@ -134,6 +134,11 @@ proper C5 使用至少三色，S₄ 在 boundary assignments 上的作用自由�
 
 ## 5. 下一個精確入口
 
+**2026-09-15 續作**：[換色 connectivity 報告](c5_kempe_connectivity.md) 已明列一次 swap
+的精確更新，推出強制 C–D 接口邊，並用真實 disk 控制例釐清兩個指定操作仍不足。
+後續 [AB 交換立方體報告 §6](c5_ab_swap_cube.md) 已否定局部 AB 必逃逸引理，
+最新入口為固定 `AB|CD` 的全部獨立交換；以下保留本輪原停止點。
+
 對同一 disk 圖 G，保留**全圖** P(G)⊆e 的假設，從 x_e 的一個完整染色 c 開始。
 現在可以在 c 的同一 class 中自由選取所需四色 boundary fibre 的代表；
 下一步應指定一個實際換色序列與其保留的 paths/components，證明能得到 singleton

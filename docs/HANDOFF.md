@@ -9,7 +9,82 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：同一 Kempe class 的計數恆等式與正參數定位（2026-09-15）
+## 最新停止點：AB 全交換仍可維持阻擋，固定 Errera disk 證書（2026-09-15）
+
+詳見 [c5_ab_swap_cube.md](c5_ab_swap_cube.md)。
+**紙面引理＋精確固定圖證書，未 Lean 化**：AB induced components 在任意 AB 交換下
+不變；r 個 components 的全部序列恰為 2ʳ 個有標號結果，固定 boundary 顏色框架後
+為 2ʳ⁻¹ 個結果。blockers 可寫成共用 component bits 控制的 signed vertex activation。
+
+**局部候選引理已被反例否定**：「初始 blockers／接口／兩次新生連通成立，便能只靠
+AB 序列打破它們」。從 Sage 10.6 ErreraGraph 刪舊頂點 0 得到固定 16 頂點 C5 disk；
+證書包含重標號、40 邊、25 個定向三角面與 disk 複形檢查。指定染色的 AB components
+為 `{0,1,2,9,11,15}`、`{7,12}`；兩個對齊結果皆通過所有上述條件，故任意 AB
+序列皆維持。兩條 blockers 都沒有跨兩個狀態的共同固定 path；不能交換 ∀／∃ 量詞。
+
+**仍可逃逸**：先交換內部 CD component `{5,6,8,10,13,14}`，blockers 保留但接口
+消失，再依次交換 AC `{0}`、AD `{2}`，得到 singleton-1。全 Kempe BFS 證最短 escape
+恰為三步。該圖每個 x=12、每個 y=8，100 個 S₄ orbits 同屬一個 class，
+全圖 P 為全部五點，**不是** `P⊆{0,2}` 反例。
+
+既有 132 witnesses 的 176 個 x₀₂ extensions 分成 166 個 AB cubes；其中全程保留
+blockers／blockers 加接口／blockers 加兩次新生連通，分別為 20／4／0 個 cubes。
+因此新固定控制例也防止把舊樣本的零當成普遍定理。本輪沒有新圖 catalogue 搜尋。
+
+**下一步**：先讀新報告 §1–6。固定 complementary split `AB|CD` 的全部獨立交換，
+能否也始終維持 blockers 與兩次新生連通？本例四個對齊狀態中恰兩個失敗，
+一般情形尚未解答。另一入口是使用全圖 P 假設的額外結構；本輪沒有排除 AB 作為
+更完整證明一部分的用途。Adjacent-singleton lemma 與 K∞=K≤5 仍未證。
+
+**接手順序**：本節 → [AB 報告 §1–6](c5_ab_swap_cube.md) →
+[connectivity 報告 §1–3](c5_kempe_connectivity.md)。可直接沿用
+`scripts/c5_ab_swap_cube.py` 的 `cube(adj, start, ((0,1),(2,3)))` 與 `observe`：
+觀察條件為兩條 blockers 加兩次新生連通，接口非空是其必要結果。
+先區分「局部條件能否在整個 split orbit 保持」與「全圖 P⊆{0,2} 能否實現」；
+本輪只處理前者的 AB 子問題。不要重跑 catalogue，也不要把只交換 boundary
+component 誤當成全部獨立交換。此次整理後研究停在此入口，不另開新搜尋。
+
+重播 `python3 scripts/c5_ab_swap_cube.py --check`，加原 connectivity/class/count/screen
+四個 checkers、`lake build`、`git diff --check`。新證書
+`artifacts/c5_cells/ab_swap_cube.json`；無 Lean／production catalogue／前輪證書修改。
+提交範圍為 connectivity surgery 與 AB cube 兩輪的報告、checkers、證書及交接索引。
+上述五個 checkers、文件連結、`git diff --check` 與 `lake build` 全通過；
+Lean build 僅重播既有 lint 警告。
+
+## 先前停止點：換色 connectivity surgery 與強制 C–D 接口（2026-09-15）
+
+詳見 [c5_kempe_connectivity.md](c5_kempe_connectivity.md)。
+**紙面證明，未 Lean 化**：一次 AC component swap 精確保留 AC／BD induced graphs；
+其餘四個色對以「刪除被換走的頂點、收縮剩餘 components、加入新色頂點的 stars」
+重建。不能先收縮原 components 再刪頂點，因刪除可切斷舊路徑。
+
+在全圖 `P(G)⊆{0,2}`、`c|C5=(A,B,A,C,D)` 下，令
+`S=Comp_AC(0)`、`T=Comp_AD(2)`。初始 BC 1↔3／BD 1↔4 blockers 與 disk separation
+給 `S∩C5={0}`、`T∩C5={2}`。交換 S 後必新生 AD 2↔4，交換 T 後必新生 AC 0↔3，
+否則再一次 swap 即得到禁止的 singleton-1。沿新路徑第一次離開舊 component，推出
+**必存在實際內部邊 `E(C∩S,D∩T)≠∅`**；不假定 S、T 不相交。
+
+**computationally verified**：132 個既有 witnesses、1,810 個完整染色 representatives、
+16,680 次 component swaps、66,720 次混合色對重建全通過。
+固定 8 頂點 witness 935 同時通過兩個新生連通測試：`S={0,6}`、`T={2,7}`、接口邊 67。
+它反駁「不相交的交換區域仍會保留彼此的 component」；同時交換舊 S、T 會使邊 67 同色。
+此圖全圖 `P={3,4}`，不是反例；改先交換 AB `{0,1,2}`，再交換 AC `{1,6}`，
+兩步即得到 singleton-4。證書包含完整染色／邊／定向 disk faces 與最短 escape。
+
+**下一步**：先讀新報告 §1–5。沿包含 boundary `{0,1,2}` 的 AB component 操作，
+必要時全域重命名 A/B，重新追蹤兩個 blockers 與接口。更一般可檢查 AB components
+的全部獨立交換；尚無定理保證某次必失敗或存在單調下降量。
+接口存在本身不造成平面矛盾；Adjacent-singleton lemma 與 K∞=K≤5 仍未證。
+不對單一 class 套 exterior／4CT。本輪無新 mask 排除、無新圖搜尋、無 Lean 修改。
+
+重播：`python3 scripts/c5_kempe_connectivity.py --check`，再跑原 class/count/screen
+三個 checkers、`lake build` 與 `git diff --check`。新證書
+`artifacts/c5_cells/kempe_connectivity.json`。與後續 AB cube 成果一併整理提交；
+此節的下一步是歷史停止點，最新接手入口以上節為準。
+上述四個 checkers、文件連結、`git diff --check` 與 `lake build` 全部通過；
+Lean build 僅重播既有 lint 警告。
+
+## 先前停止點：同一 Kempe class 的計數恆等式與正參數定位（2026-09-15）
 
 詳見 [c5_kempe_class_counts.md](c5_kempe_class_counts.md)。
 **紙面證明＋精確有限證書，未 Lean 化**：每個完整四色染色 Kempe class 都滿足
