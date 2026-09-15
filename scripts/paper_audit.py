@@ -1,0 +1,186 @@
+#!/usr/bin/env python3
+"""Paper-level Lean trust audit.
+
+Runs `lake env lean Math/PaperAudit.lean`, parses every `#print axioms` line, classifies the
+proof mechanism of each audited declaration from its own source text, and writes
+
+  artifacts/paper_audit/lean-audit.txt              raw `#print axioms` output
+  artifacts/paper_audit/audit_table.md              declaration | module | axioms | mechanism
+  artifacts/paper_audit/native_decide_inventory.txt every `native_decide` in Math/*.lean
+
+`--check` re-derives everything and compares byte-for-byte with the stored artifacts.
+Only the standard library; no NetworkX.  Run after `lake build`.
+"""
+import argparse, glob, json, re, subprocess, sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "artifacts" / "paper_audit"
+AUDIT = ROOT / "Math" / "PaperAudit.lean"
+STD = {"propext", "Classical.choice", "Quot.sound"}
+# Modules whose statements are about data exported from / transcribed from `artifacts/`
+# (search outputs).  A Lean proof there certifies the embedded data, not the search's completeness.
+DATA_MODULES = {"GeneratedCertificates", "ConstructedOriginal", "ConstructedMinimal", "GadgetLibrary",
+                "GadgetTargets", "StepwiseGenerated", "Certificates", "ConstructedAnalysis",
+                "GadgetSynthesis", "AutomataReplay", "StepwiseReplay", "FanPentagon"}
+DECL = re.compile(r"^\s*(?:@\[[^\]]*\]\s*)?(?:private\s+|protected\s+|noncomputable\s+)*"
+                  r"(theorem|lemma|def|abbrev|structure|inductive|instance|opaque|example)"
+                  r"(?:\s+([A-Za-z_][A-Za-z0-9_.!?']*))?")
+
+
+def strip_comments(lines):
+    """Blank out `--` line comments and `/- ... -/` blocks so grep-style scans see code only."""
+    out, depth = [], 0
+    for line in lines:
+        res, i = [], 0
+        while i < len(line):
+            if line.startswith("/-", i):
+                depth += 1; i += 2; continue
+            if depth and line.startswith("-/", i):
+                depth -= 1; i += 2; continue
+            if depth:
+                i += 1; continue
+            if line.startswith("--", i):
+                break
+            res.append(line[i]); i += 1
+        out.append("".join(res))
+    return out
+
+
+def scan_sources():
+    """Map fully-qualified name -> (kind, file, line, code body without comments)."""
+    bodies, occurrences = {}, []
+    for f in sorted(glob.glob(str(ROOT / "Math" / "*.lean"))):
+        rel = str(Path(f).relative_to(ROOT))
+        code = strip_comments(open(f, encoding="utf-8").read().split("\n"))
+        ns, cur, i = [], "<none>", 0
+        while i < len(code):
+            line = code[i]
+            m = re.match(r"^\s*namespace\s+([A-Za-z0-9_.]+)", line)
+            if m:
+                ns.append(m.group(1)); i += 1; continue
+            m = re.match(r"^\s*end\s+([A-Za-z0-9_.]+)\s*$", line)
+            if m and ns and m.group(1) == ns[-1]:
+                ns.pop(); i += 1; continue
+            m = DECL.match(line)
+            if m:
+                kind, name = m.group(1), m.group(2) or "<example>"
+                cur = ("." .join(ns) + "." if ns else "") + name
+                j, body = i + 1, [line]
+                while j < len(code) and not DECL.match(code[j]) and \
+                        not re.match(r"^\s*(namespace|section|end)\b|^#", code[j]):
+                    body.append(code[j]); j += 1
+                if kind != "example":
+                    bodies[cur] = (kind, rel, i + 1, "\n".join(body))
+                for k in range(i, j):
+                    if re.search(r"\bnative_decide\b", code[k]):
+                        occurrences.append((rel, k + 1, cur))
+                i = j; continue
+            if re.search(r"\bnative_decide\b", line):
+                occurrences.append((rel, i + 1, cur))
+            i += 1
+    return bodies, occurrences
+
+
+def run_lean():
+    proc = subprocess.run(["lake", "env", "lean", str(AUDIT)], cwd=ROOT,
+                          capture_output=True, text=True)
+    if proc.returncode != 0:
+        sys.stderr.write(proc.stdout + proc.stderr)
+        raise SystemExit("lake env lean failed")
+    return proc.stdout
+
+
+def parse_axioms(text):
+    rows = []
+    for name, lst in re.findall(
+            r"'([^']+)' (?:depends on axioms: \[(.*?)\]|does not depend on any axioms)", text, re.S):
+        rows.append((name, [a.strip() for a in lst.replace("\n", " ").split(",") if a.strip()]))
+    return rows
+
+
+def classify(axioms, kind, body):
+    nonstd = [a for a in axioms if a not in STD]
+    if kind in ("def", "abbrev", "structure", "inductive"):
+        return "definition"
+    if any("native_decide" in a for a in nonstd):
+        return "native_decide"
+    if re.search(r"\bnative_decide\b", body):
+        return "native_decide(own)"
+    if re.search(r"\bdecide\b", body):
+        return "decide"
+    return "ordinary"
+
+
+def build_table(text, bodies):
+    lines = ["# Paper audit table", "",
+             "Generated by `python3 scripts/paper_audit.py`. Columns: declaration | module | axioms "
+             "(std = propext, Classical.choice, Quot.sound; `native:<decl>` = a "
+             "`_native.native_decide.ax_*` dependency introduced by that declaration) | mechanism "
+             "(ordinary kernel proof / decide / native_decide / definition) | data "
+             "(`artifact-data(<module>)` when the statement or its native check is about data "
+             "exported from or transcribed from `artifacts/`, i.e. the Lean proof certifies the "
+             "embedded data but not the completeness of the search that produced it).", "",
+             "| declaration | module | axioms | mechanism | data |", "| --- | --- | --- | --- | --- |"]
+    counts = {}
+    for name, axioms in parse_axioms(text):
+        kind, rel, ln, body = bodies.get(name, ("?", "?", 0, ""))
+        mech = classify(axioms, kind, body)
+        counts[mech] = counts.get(mech, 0) + 1
+        nat = sorted({a.split("._native")[0] for a in axioms if "native_decide" in a})
+        other = [a for a in axioms if a not in STD and "native_decide" not in a]
+        if not axioms:
+            ax = "none"
+        else:
+            ax = "std" if set(axioms) <= STD else "std + " + ", ".join(
+                [f"native:{n}" for n in nat] + [f"NONSTD:{a}" for a in other])
+        mods = {Path(rel).stem} | {bodies[n][1].split("/")[-1][:-5] for n in nat if n in bodies}
+        data = ", ".join(f"artifact-data({m})" for m in sorted(mods & DATA_MODULES)) or "-"
+        if data != "-":
+            counts["artifact-data"] = counts.get("artifact-data", 0) + 1
+        lines.append(f"| `{name}` | `{rel}:{ln}` | {ax} | {mech} | {data} |")
+    lines += ["", "## Totals", ""] + [f"- {k}: {v}" for k, v in sorted(counts.items())]
+    lines.append(f"- audited declarations: {sum(v for k, v in counts.items() if k != 'artifact-data')}")
+    return "\n".join(lines) + "\n"
+
+
+def build_inventory(occurrences):
+    lines = ["# native_decide occurrences in Math/*.lean (comments stripped; file:line  enclosing declaration)",
+             "# rebuild: python3 scripts/paper_audit.py ; cross-check: grep -n native_decide Math/*.lean"]
+    per = {}
+    for rel, ln, cur in occurrences:
+        if rel.endswith("PaperAudit.lean"):
+            continue
+        per[rel] = per.get(rel, 0) + 1
+        lines.append(f"{rel}:{ln}  {cur}")
+    lines.append(f"# total occurrences: {sum(per.values())} in {len(per)} files")
+    lines += [f"#   {c:3d}  {f}" for f, c in sorted(per.items(), key=lambda x: (-x[1], x[0]))]
+    return "\n".join(lines) + "\n"
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--check", action="store_true", help="compare with stored artifacts")
+    args = ap.parse_args()
+    text = run_lean()
+    bodies, occ = scan_sources()
+    outputs = {"lean-audit.txt": text, "audit_table.md": build_table(text, bodies),
+               "native_decide_inventory.txt": build_inventory(occ)}
+    bad = [n for n, ax in parse_axioms(text)
+           if any(a not in STD and "native_decide" not in a for a in ax)]
+    if bad or "sorryAx" in text:
+        raise SystemExit(f"non-standard axioms or sorry detected: {bad}")
+    if args.check:
+        diff = [k for k, v in outputs.items() if (OUT / k).read_text(encoding="utf-8") != v]
+        if diff:
+            raise SystemExit(f"MISMATCH: {diff}")
+        print("paper audit artifacts match")
+    else:
+        OUT.mkdir(parents=True, exist_ok=True)
+        for k, v in outputs.items():
+            (OUT / k).write_text(v, encoding="utf-8")
+        print("wrote", ", ".join(outputs))
+
+
+if __name__ == "__main__":
+    main()
