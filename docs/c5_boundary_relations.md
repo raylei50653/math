@@ -275,6 +275,10 @@ $$
 
 ### 5.1 與現有成果的對照
 
+- [Edge／pairing state 實驗](c5_edge_states.md) 精確核對 primal Kempe swap 的 dual
+  cut 規則，列出五個 fibres 的一步 blockers；三組 pairings 能恢復 boundary connectivity，
+  但固定 Errera disk 中同 T、同 cycle counts 的兩個染色有 3／2 步 escape 差異，
+  故尚不能作精確的後繼狀態。H1–H5 與 polygon interface 完備性仍未證。
 - [高度數 disk 家族續作](c5_corner_disks.md) 找到三個完整 `AB|CD` 立方體 survivor
   （所有對齊狀態維持 blockers＋接口＋兩次新生連通，escape 全從 split 之外開始），
   否定「固定立方體必失敗」的局部命題；corner-compliant CD 翻轉有六種機制，無單一 CD 引理。

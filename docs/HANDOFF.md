@@ -9,7 +9,48 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：高度數 disk 家族——CD 機制不唯一，完整 AB|CD 立方體可以全程存活（2026-09-15）
+## 最新停止點：edge／pairing state 已精確核對，但加 cycle counts 仍不足（2026-09-15）
+
+詳見 [c5_edge_states.md](c5_edge_states.md)。**紙面轉換＋固定圖精確計算，未新增 Lean**。
+使用既有 3 個 survivor、120 個 Errera 對齊 controls、132 個 catalogue witnesses；
+沒有新圖搜尋。199 個三角化 disk 做 dual audit，56 個非三角化 witness 只做 primal XOR
+audit，沒有依染色偷偷補圖。12,301 個染色 representatives、118,690 次 swaps，
+其中 109,660 次 dual cut checks、34,053 個 boundary partition checks 全通過。
+
+**精確規則**：交換色對 `{a,b}` 的 component S，令 `k=a xor b`，則只有 cut 邊的
+type XOR k；dual cut 是另外兩種 types 的**若干完整 paths/cycles 的聯集**，不一定
+只有一條。該 two-type system 的 pairing 保留，另外兩組可能改變。
+三組 pairings 加 boundary word 可恢復六個色對的 boundary connectivity，能判斷
+一步 escape；五個四色 fibres 的 blockers 已列於新報告 §3。
+
+**不足見證**：固定 Errera disk 上，同圖、同 class、同 ABACD boundary 的兩個染色，
+T 完全相同，三組 cycle counts 也同為 `(0,0,2)`，最短 escape 卻為 **3、2**，而且
+一步 successor T 集合不同。兩者正由前輪內部 CD component 交換相連。
+故 `T=(w,π12,π13,π23)` 與 `T+cycle counts` 都不是 future-sufficient state。
+三個 survivor 的五個 aligned 起點皆同 T，escape 第一步均為 AD：保留 π12、改變
+π13 和 π23。這只是固定圖觀察，沒有證 five-fibre incompatibility 或 H1–H5。
+
+**下一個有界入口**：先用三組 systems 的 shared-edge／region incidence 或完整
+interface relation 區分這對 Errera states，再測同 state 不同後繼。尚未執行此步。
+H1 必須量化同一 uncoloured embedded network 的多個染色及其全 class transitions；
+跨染色曲線不能疊畫 crossing 後直接判矛盾。dual path 端點位於 boundary 邊內，
+`C5→C3+C4` 亦需先定義 interface 壓縮，沒有自動成立的 polygon grammar。
+不擴大 catalogue 或 survivor 家族，不重跑先前生成器。
+
+**接手順序**：本節 → [edge 報告 §2–3、§5.2、§6–7](c5_edge_states.md) →
+`scripts/c5_edge_states.py` 的 `Dual.systems`／`Dual.state`／`Dual.boundary_partition`。
+最小輸入是證書頂層 `same_class_regression`：包含固定 Errera 的兩個完整染色、
+連接兩者的 CD component 與獨立有標號 BFS routes；圖的邊／面在
+`graphs[name="errera-0"]`。下一輪先增加能區分此對的觀察量，再沿用 `audit_graph`
+檢查同 state 的後繼集合；只分開此對尚不等於證明新 state 充分。
+
+重播 `uv run --with networkx==3.5 python scripts/c5_edge_states.py --check`；
+證書 `artifacts/c5_cells/edge_states.json`，含五個 fibre obligations、survivor 全 moves、
+逐圖 transition hashes、collision 見證及原色框架 escape。新 checker、獨立有標號 BFS、
+既有 complementary checker、`lake build` 與 `git diff --check` 均通過；
+Lean 僅既有 lint 警告。研究停在上述入口，未執行下一輪 incidence 實驗。
+
+## 先前停止點：高度數 disk 家族——CD 機制不唯一，完整 AB|CD 立方體可以全程存活（2026-09-15）
 
 詳見 [c5_corner_disks.md](c5_corner_disks.md)。**精確有限證書＋紙面小引理，未 Lean 化**：
 上節入口 (i) 的回答。固定 seed 生成 2,000 個三角化 C5 disk（`n_int` 11–20，120 次邊翻轉，
