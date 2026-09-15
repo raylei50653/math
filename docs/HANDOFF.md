@@ -2,7 +2,33 @@
 
 更新：2026-09-15。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：計數層、XOR 邊字與補完二分法已 Lean 化（2026-09-15）
+## 最新停止點：B₅ face 分解確認，單次 gluing 的限制已釐清（2026-09-15）
+
+詳見 [c5_b5_face.md](c5_b5_face.md)，checker `scripts/c5_b5_face.py --check`，
+證書 `artifacts/c5_cells/b5_face.json`。本輪未新增 Lean／大圖枚舉。
+
+**computationally verified＋引用 Lemma 6 的 ray 完備性**：從 Dvořák–Lidický Figure 3
+轉錄 12 個 5-poles 並直接枚舉邊染色；全部 raw rays 已為 primitive。
+`R₅,₁₂=t`，`F₀=R₅,₉`，`F₂=R₅,₇`。兩個 requested faces 恰為
+`cone(t,F₀)` 與 `cone(t,F₀,F₂)`，全部 11 個 independent supports 亦成立。
+在 `P⊆{0,2},x₀₂>0` 下唯一分解 `n=ct+aF₀+bF₂`，`c=m=x₀₂>0`。
+
+**Fan-trap corollary（引用 Lemma 13.2 的紙面推論）**：independent P 排除 (ii)/(iii)，
+每個三色 boundary extension 可產生某個完整 fan family。沒有證明整個 Kempe component
+被困在同一 fan；不應把可達 family 寫成 invariant-set 結論。
+
+**gluing 結果**：完整 12×12 pairing 與 10 個 D₅ alignments 已重播。
+planar context `Q=R₅,₃` 同時消掉 F₀,F₂，但 gluing 給 **6c>0**，不是 4CT 矛盾。
+只有 wheel ray 與 t 正交，而它與每個 fan pairing=6；故對 c>0 且至少一個正 fan，
+任何非零 q∈B₅ 都有正 pairing。這排除單一非零 plane 5-pole 的零染色 closure 路線，
+不排除需要額外圖結構的多步方法。下一步需超出普通 pairing，才能證 face 上 c=0。
+**後續方向／已知缺口**：先提出超出單次 pairing 的圖變換或 bridge 結構引理，
+逐項證平面性、count 變換與 bridge 性質；目前尚無此構造。另一入口是同圖不同染色間的
+Kempe connectivity 相容性，尚未建立。12-ray 完備性仍依賴文獻，fan corollary 的平行邊
+適用性需補論證，拓撲未 Lean 化。詳見報告 §5「後續方向與已知缺口」。
+Adjacent-singleton lemma 與 K∞=K5 仍未證。本次使用者要求整理後 commit／push，不另開新搜尋。
+
+## 先前停止點：計數層、XOR 邊字與補完二分法已 Lean 化（2026-09-15）
 
 **proved in Lean**：三個新模組已匯入 `Math.lean`，公理審計
 [count-cone-lean-audit.txt](../artifacts/c5_cells/count-cone-lean-audit.txt) 中 31 條定理
