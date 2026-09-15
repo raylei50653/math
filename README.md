@@ -14,6 +14,9 @@ C5 有界代表主命題、最小反例路線與局部壓縮的區分見
 Kempe 行為驅動的狀態細化見 [研究提案](docs/c5_behavior_refinement.md) 與
 [第一輪結果](docs/c5_behavior_refinement_results.md)。
 
+新增點／邊對完整染色關係、兩點強迫與影響範圍的第一輪觀察見
+[extension_effects.md](docs/extension_effects.md)。
+
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 
 ## 本機需求

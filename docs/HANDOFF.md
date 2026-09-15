@@ -9,7 +9,35 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：修復介面碰撞與 retained-port 分割（2026-09-15）
+## 最新研究支線：新增點／邊的關係影響（2026-09-15）
+
+使用者指定開啟「加入額外點或邊會對相對關係影響和範圍」研究。
+入口：[新增點／邊觀察](extension_effects.md)。先固定有序 C5 的完整染色關係，
+完整核對 5 個 chords、32 個單內點鄰居集、1,024 對雙內點鄰居集的未連／連邊圖，
+共 2,085 圖、500,400 次整圖延伸查詢；未篩選 disk 合法性。
+
+單內點 6/32 嚴格縮小關係但所有 pair 投影不變；雙內點間加邊 206/1,024
+嚴格縮小，其中 105 個 pair 投影仍相同。給出共同 singleton 可用色的精確刪除判準，
+以及一般圖無固定影響半徑的紙面構造；本輪新增結論未 Lean 化。
+兩個三鄰居點經加邊產生同色強迫的 witness 有 disk 放置障礙，不當成 planar 結果。
+
+接手：新報告 §2–4 → `scripts/extension_effects.py` →
+`artifacts/extension_effects/observations.json`。下一步是先有幾何證書、再分類
+disk 合法擴張中的 pair forcing 與共享介面；尚未開始該分類或跨圖 Kempe 搜尋。
+既有修復介面的停止點保留於下節，不重搜原閉包。
+
+```bash
+python scripts/extension_effects.py --check
+lake build
+lake env lean Math/LocalClosureAudit.lean
+git diff --check
+```
+
+本輪上述檢查均通過：build 8,819 jobs（僅既有 lint），既有介面定理審計無
+sorryAx／native compiler axioms；新報告連結與 whitespace 檢查通過。
+沒有新增 Lean 或背景工作；本輪報告、checker 與完整證書隨本次提交發布。
+
+## 原路線停止點：修復介面碰撞與 retained-port 分割（2026-09-15）
 
 詳見 [介面研究報告](c5_repair_interface.md)；[來源修復報告](c5_guard_repair.md)
 §3.1、§4.1 已補鄰居歸屬等價式與成本分量數公式，均為紙面推導，未 Lean 化。
