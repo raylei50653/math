@@ -55,6 +55,7 @@ import Math.IntegerViable
 import Math.C5Counts
 import Math.C5ParityWord
 import Math.NearTriangulation
+import Math.KempeSurgery
 
 /-!
 # Paper-level trust audit
@@ -270,3 +271,13 @@ and `sorryAx` must never appear. This file does not change any statement or proo
 #print axioms FiveBoundary.NearTriangulation.ear_or_hub
 #print axioms FiveBoundary.NearTriangulation.counts
 #print axioms FiveBoundary.NearTriangulation.corollary20_range
+
+/-! ## §11 Kempe surgery: one-swap connectivity update and cut-interface contraction -/
+#print axioms FiveBoundary.KempeSurgery.reachable_sup_iff_quotient
+#print axioms FiveBoundary.KempeSurgery.componentEquiv
+#print axioms FiveBoundary.KempeSurgery.swapOn_proper
+#print axioms FiveBoundary.KempeSurgery.pairGraph_swap_same
+#print axioms FiveBoundary.KempeSurgery.pairGraph_swap_complementary
+#print axioms FiveBoundary.KempeSurgery.pairGraph_swap_mixed
+#print axioms FiveBoundary.KempeSurgery.mixed_reachable_iff_quotient
+#print axioms FiveBoundary.KempeSurgery.swapOn_univPair

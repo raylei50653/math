@@ -9,7 +9,35 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：同 cut 長度的合法 disk 重接反例（2026-09-15）
+## 最新停止點：Kempe surgery 與 cut 接口引理已 Lean 化（2026-09-15）
+
+新增 [Math/KempeSurgery.lean](../Math/KempeSurgery.lean)（普通證明，無 `native_decide`、
+無 `sorry`；審計 `Math/KempeSurgeryAudit.lean`，輸出
+`artifacts/c5_cells/kempe-surgery-lean-audit.txt`，全部只依賴 `propext`、`Classical.choice`、
+`Quot.sound`）。補掉兩個先前標為「紙面證明，未 Lean 化」的一般圖引理，任意頂點型別，不用平面性：
+
+- **cut 接口的收縮引理**（[c5_cut_interfaces.md §2](c5_cut_interfaces.md)）：
+  `quotientGraph H A` 以 `H` 的 connected components 為節點、`A` 邊為弧。
+  `reachable_sup_iff_reflTransGen`、`reachable_sup_iff_quotient` 證 `H ⊔ A` 的可達性等於
+  quotient 的可達性；`componentEquiv : (H ⊔ A).ConnectedComponent ≃ (quotientGraph H A).ConnectedComponent`。
+  孤立分量自動保留（它們就是 quotient 節點）。
+- **一次 swap 的六色對更新**（[c5_kempe_connectivity.md §1](c5_kempe_connectivity.md)）：
+  `KempeSet G c a b S`（含於 `{a,b}` 頂點、對 `{a,b}` 鄰接封閉，涵蓋單一 component 與
+  components 聯集）；`swapOn c a b S`。`swapOn_proper`；`pairGraph_swap_same`（AC 不動）、
+  `pairGraph_swap_complementary`（BD 不動）；`pairGraph_swap_mixed`：
+  `pairGraph (swapOn c a b S) a d = retained G c a d S ⊔ stars G c b d S`，證明中用到
+  properness（`b ∩ S` 內無邊）與封閉性（`b ∩ S` 與 `a \ S` 無邊）；
+  `mixed_reachable_iff_quotient` 把兩者接起來。另有 `swapOn_univPair`（全域 transposition ＝
+  交換全部 `{a,b}` 頂點，對應 class 對 S₄ 封閉）、`swapOn_comm_of_disjoint`、
+  `kempeSet_swapOn`、`swapOn_swapOn`。
+
+**仍是紙面／未 Lean 化**：cut 接口的「目標分量必為 path 或 cycle」（三角化 dual 的度數論證）；
+kempe_connectivity §2–3 的 disk separation 與強制接口邊；class 計數的均勻原像論證；
+equal-cut witness 的可實現性；所有拓撲信任層。沒有新圖搜尋、沒有改動任何 checker。
+驗證：`lake build`（8819 jobs，新檔無警告）、`lake env lean Math/KempeSurgeryAudit.lean`、
+`Math/PaperAudit.lean` 已加入 §11 Kempe surgery 條目。未 commit/push。
+
+## 先前停止點：同 cut 長度的合法 disk 重接反例（2026-09-15）
 
 詳見 [c5_equal_cut_witness.md](c5_equal_cut_witness.md)。已在既有 survivor-811
 同一 22 頂點 disk 上構造兩個完整染色：同 boundary、T、cycles `(1,1,1)`、

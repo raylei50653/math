@@ -1,7 +1,7 @@
 # 固定 BC switch：同 source relation 的坍縮差異與 cut 接口
 
 2026-09-15。接續 [多候選 edge-state](c5_edge_choices.md) §6。
-**成果是固定圖的精確 Python 證書，加上一個一般圖連通性的紙面重建引理；未 Lean 化。**
+**成果是固定圖的精確 Python 證書，加上一個一般圖連通性的重建引理；後者已於 2026-09-15 Lean 化（見 §2），path／cycle 結構仍是紙面。**
 
 ## 1. 比較範圍與結果
 
@@ -52,6 +52,13 @@ H∪A 的連通分量一一對應。證明：H∪A 的路徑可壓成分量間 w
 H 各分量內的路徑連接相鄰 A 邊，抬回原圖。boundary terminal 標記隨此對應保留。
 因合法染色在三角化 dual 上給出內點度數 2、有效 boundary terminals 度數 1，
 目標分量必為 path 或 cycle，故上述標記足以恢復 pairing 與 cycle 數。
+
+**2026-09-15 Lean 化**（[Math/KempeSurgery.lean](../Math/KempeSurgery.lean)）：
+`quotientGraph H A` 以 `H` 的 connected components 為節點、`A` 邊為弧；
+`reachable_sup_iff_quotient` 證 `(H ⊔ A).Reachable u v ↔` quotient 中兩分量可達，
+`componentEquiv` 給 `H ⊔ A` 的 components 與 quotient components 的一一對應。
+任意頂點型別，不用平面性；保留孤立分量是 quotient 節點的定義所含。
+「合法染色在三角化 dual 上度數 2／1，目標分量必為 path 或 cycle」仍是紙面層。
 
 這裡是在 quotient 上計算**連通分量**，不是計算 quotient 的 graph cycle rank；
 一個已完整保留的舊 cycle 即使被壓成孤立節點，也必須仍算一個 cycle。

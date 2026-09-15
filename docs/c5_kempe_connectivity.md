@@ -2,7 +2,7 @@
 
 2026-09-15。接續 [class 計數定位](c5_kempe_class_counts.md) 的停止點。
 
-**本輪結果（紙面證明，未 Lean 化）**：一次 Kempe swap 的四個混合色對，可用
+**本輪結果（§1 的 surgery 引理已於 2026-09-15 Lean 化，見 §1 末；§2–3 仍為紙面）**：一次 Kempe swap 的四個混合色對，可用
 「先刪頂點、收縮剩餘 components、再加入星形連接」精確重建 connectivity。
 在 `P(G)⊆{0,2}`、`c|C5=(A,B,A,C,D)` 下，得到下述強制 C–D 接口邊引理。
 它把跨染色的必要條件定位到同一張圖的實際內部邊，但尚未導出矛盾。
@@ -35,6 +35,17 @@ c′ 由交換 S 內 A、C 得到。記 A_S=A∩S、C_S=C∩S，色集合皆以 
 也無邊，否則該 AC 邊會把外部 A 頂點連入 S。因此 H 外的邊恰是上述 D-neighbor
 stars。收縮連通塊保持剩餘頂點間的可達性，得精確對應。其他三對同理。
 此引理不需要平面性，亦適用於平行邊。
+
+**2026-09-15 Lean 化**（[Math/KempeSurgery.lean](../Math/KempeSurgery.lean)，普通證明，
+無 `native_decide`）：`swapOn c a b S` 在任意頂點型別上交換 Kempe set `S`
+（`KempeSet`：含於 `{a,b}` 頂點且對 `{a,b}` 鄰接封閉）。`swapOn_proper` 保持 proper；
+`pairGraph_swap_same`／`pairGraph_swap_complementary` 給 AC、BD 兩列的「原封不動」；
+`pairGraph_swap_mixed` 是上表四個混合列的精確等式
+`pairGraph (swapOn c a b S) a d = retained G c a d S ⊔ stars G c b d S`；
+`mixed_reachable_iff_quotient` 把混合色對的 connectivity 化為 retained components 的
+quotient graph 加 stars 的可達性。`swapOn_univPair` 是「全域 transposition＝交換全部
+`{a,b}` 頂點」，`swapOn_comm_of_disjoint`／`swapOn_swapOn` 是交換的可交換性與對合。
+上述負控制與本節以下的 disk separation 仍是紙面層。
 
 不能先收縮原本的 AD components 再刪 A_S：刪除可能把一個 component 切開。
 最小負控制是 D–A–D 路徑，交換單點 A 的 AC component；兩端 D 從連通變成不連通。
