@@ -1,0 +1,104 @@
+% Skeleton only — section structure mirrors outline.md; fill from docs/HANDOFF.md.
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,longtable}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{openproblem}[theorem]{Open problem}
+
+% Trust labels (see outline.md §0 / HANDOFF §2)
+\newcommand{\Lean}{\textcolor{green!50!black}{[L]}}     % proved in Lean
+\newcommand{\LeanN}{\textcolor{green!50!black}{[L, native]}} % Lean, native\_decide axiom
+\newcommand{\Data}{\textcolor{teal!70!black}{[artifact-data]}}   % statement about exported data
+\newcommand{\Comp}{\textcolor{blue!60!black}{[C]}}       % computationally observed / verified
+\newcommand{\Paper}{\textcolor{orange!80!black}{[P]}}    % paper proof, not formalised
+\newcommand{\Open}{\textcolor{red!70!black}{[?]}}        % conjectured / unresolved
+\newcommand{\lean}[1]{\texttt{#1}}                       % Lean identifier
+\newcommand{\Sig}{\Sigma}
+\newcommand{\Tfour}{T_4}
+\newcommand{\Kk}[1]{K_{#1}}
+
+\title{Boundary-colouring states of planar patches with a five-cycle boundary:\\
+finite-state models, sealed $C_5$ cells, and a Lean-verified reduction chain}
+\author{Yue-Hui Lei}
+\date{Draft, \today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+% TODO: from outline.md §0. State explicitly what is NOT claimed (no proof of 4CT; no 4CT oracle
+% except the exterior-cell screen in §11; separating C5 ≠ disk boundary; K_∞=K_5 is a conjecture).
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+% outline §1: motivation, why C5, the two distinctions, results table, literature.
+
+\section{Trust hierarchy and verification protocol}\label{sec:trust}
+% outline §2: [L]/[C]/[P]/[?]; per-module native_decide table; 18 axiom audits; --check replay protocol;
+% topology trust layer.
+\begin{table}[h]\centering
+\begin{tabular}{lll}\toprule
+Module & finite checks & audit file \\ \midrule
+% TODO: generate from `grep -c native_decide Math/*.lean` and artifacts/**/lean-audit*.txt
+\bottomrule\end{tabular}
+\caption{Lean modules, kind of finite check, and axiom audit.}
+\end{table}
+
+\section{Preliminaries: the five-boundary relation \texorpdfstring{$\Sig$}{Sigma}}\label{sec:prelim}
+% outline §3: Sigma, GOOD/BAD/T4, 240/10/2, ten-bit encoding, gluing = intersection,
+% alignment counterexample, intersection transitions.
+
+\section{Finite searches and the separating-\texorpdfstring{$C_5$}{C5} counterexample}\label{sec:search}
+% outline §4.
+
+\section{Gadget synthesis and geometric obstructions}\label{sec:gadgets}
+% outline §5: primitives, K3 grammar (42 states, 10 targets), Jordan interlacement, P/Q/R example.
+
+\section{Finite-state synthesis on the triangle grammar}\label{sec:automata}
+% outline §6: ColorDFA, GeometryDFA, Hall closure, attachment block, GeoReject, normal form,
+% incidence regimes, |R| ≤ 3 bridge, Z5, topology completeness gap.
+
+\section{Generic boundary relations, fan pentagon, pp-expressions}\label{sec:relations}
+% outline §7.
+
+\section{Stepwise colouring: information sufficiency and strip automata}\label{sec:stepwise}
+% outline §8.
+
+\section{Local closure and fixed-endpoint wiring}\label{sec:local}
+% outline §9.
+
+\section{Sealed \texorpdfstring{$C_5$}{C5} cells and the reduced-search completeness chain}\label{sec:cells}
+% outline §10: spec, |K_0..K_5| = 11/22/52/87/112/132, Sigma bridge, R1/SYM, R2,
+% conditional K_6=K_7=K_5, Lean chain (PrefixPartition → ... → IntegerViable), remaining gaps.
+
+\section{Towards \texorpdfstring{$\Kk\infty=\Kk5$}{K∞=K5}: necessary conditions and the adjacent-singleton gap}\label{sec:kinf}
+% outline §11: Kempe screen, adjacent-singleton lemma (UNPROVED), chord-total identity,
+% XOR parity words, Conjecture 9 translation, near-triangulation reduction, B5 face.
+\begin{conjecture}[Adjacent-singleton lemma, unproved]
+For every finite planar disk cell $G$ with ordered boundary $C_5$,
+$\Tfour\subseteq\Sig(G)$ implies $E(C_5[P(G)])\neq\varnothing$.
+\end{conjecture}
+
+\section{Open problems}\label{sec:open}
+% outline §12.
+
+\appendix
+\section{Reproducibility}\label{app:repro}
+% outline §13: toolchain, one-shot check list, timings, artifact index with sha256.
+\section{Lean module and theorem index}\label{app:index}
+% outline §13 last bullet.
+
+\bibliographystyle{plain}
+\bibliography{refs}
+\end{document}
