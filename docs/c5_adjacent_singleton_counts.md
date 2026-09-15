@@ -6,7 +6,7 @@
 已補上「保留一個關鍵染色的補完仍是反例」紙面引理，並把較強目標 m≤0 對應到
 Dvořák–Lidický Conjecture 9。主問題仍未證；最新交接以上述文件為準。
 
-**本輪結果**：得到適用於任意有限 C5 disk cell 的延伸計數恆等式（下文紙面證明，未 Lean 化），
+**本輪結果**：得到適用於任意有限 C5 disk cell 的延伸計數恆等式（下文紙面證明；代數半部後續已 Lean 化，見 §2 信任範圍），
 並給出滿足該式與 complementary Kempe orbit 計數分解的抽象 independent-support 例子。
 因此這兩類計數必要條件，即使加上目前 exterior／push screen，仍不足以證 adjacent-singleton lemma。
 **沒有得到 realizing graph、不可實現性證明或 K∞=K5。**
@@ -70,7 +70,10 @@ x_{uv}+y_u+y_v=3a_0+\sum_e a_e,
 與 uv 無關。證畢。
 
 **信任範圍**：一般 inclusion–exclusion 與 disk 中不相交 components 的 noncrossing 性是
-上述紙面論證；尚未形式化到 Lean。checker 窮盡 42 個 noncrossing partitions，確認其中
+上述紙面論證，尚未形式化到 Lean。從係數 `a₀, a_e` 到恆等式的代數半部已 Lean 化：
+[Math/C5Counts.lean](../Math/C5Counts.lean) 的 `ofCoefficients_chordTotalConst`，以及
+`x_eq_m_add`（`x_uv = m + Σ_{i∉{u,v}} y_i`）；§3.2 的 `N_P` 由 `NP_chordTotalConst`、
+`NP_support` 對任意 `P` 給出。checker 窮盡 42 個 noncrossing partitions，確認其中
 只有 6 個 indicator 非零，且每個都滿足此式；這是有限部分的檢查，不代替 topology bridge。
 
 ## 3. 為什麼加上計數仍不能封口
@@ -189,4 +192,5 @@ partitions 的有限檢查、各 split 的 70 個 boundary swap orbits（附 par
 
 負控制：C5 加兩條交錯 chords 02、13 的計數不滿足 §2；這張圖不能以指定 C5 作 disk boundary。
 任意把全 1 計數中的第一項加 1，也被恆等式拒絕。
-數字 masks 僅保留於 JSON 對照，production catalogue 沒有修改。無新 Lean 模組。本輪成果依使用者指示整理為 commit／push 的提交範圍。
+數字 masks 僅保留於 JSON 對照，production catalogue 沒有修改。本輪成果依使用者指示整理為 commit／push 的提交範圍。
+（計數層的代數部分於後續輪次 Lean 化，見上文信任範圍與 [count-cone §6](c5_count_cone_bridge.md#6-lean-化範圍2026-09-15-補)。）

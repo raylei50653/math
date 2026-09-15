@@ -2,7 +2,49 @@
 
 更新：2026-09-15。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
-## 最新停止點：反例歸約到 near-triangulation／count-cone 猜想（2026-09-15）
+## 最新停止點：計數層、XOR 邊字與補完二分法已 Lean 化（2026-09-15）
+
+**proved in Lean**：三個新模組已匯入 `Math.lean`，公理審計
+[count-cone-lean-audit.txt](../artifacts/c5_cells/count-cone-lean-audit.txt) 中 31 條定理
+全部只依賴 `propext / Classical.choice / Quot.sound`；所有有限檢查是 kernel `decide`，
+沒有 `native_decide`、沒有 `sorry`。
+
+- [Math/C5Counts.lean](../Math/C5Counts.lean)（`FiveBoundary.C5Counts`）：chord `j = {j, j+2}`
+  與非相鄰 pair 的一一對應；由 inclusion–exclusion 係數 `a₀, a_e` 組成的計數必滿足
+  chord total 恆等式（`ofCoefficients_chordTotalConst`）；在恆等式下
+  `x_j = m + Σ_{i∉chord j} y_i`、`Σx = 5m + 3Σy`、`slack = −5m`，翻譯後的 Conjecture 9
+  `Σx ≤ 3Σy` 等價於 `m ≤ 0`（`conjecture9_iff`）。每個 independent set 含於某條 chord
+  （`independent_subset_chord`）。反例保持引理的代數半部 `all_chords_positive`：
+  `y ≥ 0`、support ⊆ chord e、`x_e > 0` ⟹ `m = x_e > 0` 且五個 `x` 全正，
+  故違反翻譯後的猜想（`counterexample_violates_conjecture9`）。抽象向量
+  `N_P = t + Σ_{i∈P} f_i` 對任意 `P` 滿足恆等式、`m = 1`、slack `−5`、support 恰為 `P`。
+- [Math/C5ParityWord.lean](../Math/C5ParityWord.lean)（`FiveBoundary.ParityWord`）：`xor4` 為
+  Z₂² 加法；邊字 `edgeWord b j = b_j xor b_{j+1}`；translate 是既有 `colorAction` 的特例。
+  `eq_of_edgeWord`：base colour 加邊字決定 b；`fiber_eq_translates`／`fiber_card`：
+  同邊字的 proper assignments 恰為四個 XOR translates。`extensionCount` 定義為固定
+  boundary assignment 的完整染色數，`extensionCount_colorAction` 證色置換不變，故
+  `extensionCount_of_edgeWord`：同邊字延伸數相等（文獻的 dual 計數＝我們的固定 assignment
+  計數，不乘 4）。`IsParityWord`（無 0、三個非零字母各奇數次）：60 個字、`integrate` 為右逆、
+  proper ⟹ parity（`decide` 1024 例），`fiber_partition` 給 240 = 4·60。
+  文獻 a₀=(1,1,2,3,1)→singleton-3、b₀=(1,2,1,1,3)→repeated pair {2,4} 均由 `decide` 驗證。
+- [Math/NearTriangulation.lean](../Math/NearTriangulation.lean)：任意長度的 n-週期 proper
+  cycle colouring，若無 ear（`c i ≠ c (i+2)`）則二週期（`two_periodic_of_no_ear`）、n 為偶數
+  （`even_of_no_ear`）、只用兩色且存在 hub 色使所有 cone 三角形 proper
+  （`exists_hub_of_no_ear`）；`ear_or_hub` 是 `fill_polygon` 迴圈的二分法，適用於一般長度，
+  不只 checker 的 3..9。Euler 計數 `counts`：`3t = 2E − 5` 與 Euler 公式給
+  `t = 2k+3`、`E = 3(k+5) − 8`、dual 頂點 `2k+4`；`corollary20_range`：`2k+4 < 30 ↔ k ≤ 12`。
+
+**仍未 Lean 化（拓撲信任層）**：inclusion–exclusion 從 disk graph 產生 `a₀, a_e` 形狀的步驟
+（noncrossing partition、disk components 不相交）；block decomposition 與 `Σ(B)=Σ(G)`；
+face 結構、平行邊與 `fill_polygon` 的遞迴終止／Euler 特徵；dual graph 與文獻
+near-cubic 類別的對應；Conjecture 9 本身與引用的 Corollary 20。Lean 的 `Counts` 只是十個
+整數，`ofCoefficients` 是假設而非從圖推出。Adjacent-singleton lemma 與 K∞=K5 仍未證。
+
+驗證：`lake build`（8818 jobs，新檔無警告）、`lake env lean Math/C5CountsAudit.lean`
+（含 `decide` 抽查）、`python3 scripts/c5_count_cone_bridge.py --check`、`git diff --check`。
+無新枚舉、未改 production／`cells.json`。
+
+## 先前停止點：反例歸約到 near-triangulation／count-cone 猜想（2026-09-15）
 
 詳細證明與來源：[c5_count_cone_bridge.md](c5_count_cone_bridge.md)。
 
@@ -25,7 +67,8 @@ dual_vertices=2k+4，排除 k≤12 的 near-triangulation 反例。不能直接�
 
 **下一步**：在 near-triangulation 中排除 `P⊆e 且 x_e>0`；只需這個特殊 support 分支，
 不必先證完整 m≤0 猜想。可利用三角面背景重看 blocking paths；同圖 connectivity 矛盾仍未建立。
-Adjacent-singleton lemma 與 K∞=K5 仍未證。無新 Lean 模組、無大圖枚舉、未改 production／cells.json。
+Adjacent-singleton lemma 與 K∞=K5 仍未證。無大圖枚舉、未改 production／cells.json。
+（代數與邊字部分已於下一輪 Lean 化，見最新停止點。）
 
 ## 先前停止點：adjacent-singleton 計數恆等式與必要條件的不足（2026-09-15）
 

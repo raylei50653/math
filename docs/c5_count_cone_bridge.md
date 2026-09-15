@@ -2,7 +2,7 @@
 
 2026-09-15。接續 [計數恆等式](c5_adjacent_singleton_counts.md)。
 
-**新進展（紙面證明，未 Lean 化）**：任何 adjacent-singleton 反例都能轉成
+**新進展（紙面證明；代數與邊字部分已 Lean 化，見 §6）**：任何 adjacent-singleton 反例都能轉成
 同一有序 C5 邊界的 near-triangulation 反例（允許 parallel edges）。只需保留一個
 關鍵完整染色；補邊後的 T4 全收由計數恆等式重新推出，不需要假設補邊保留全部染色。
 
@@ -129,7 +129,29 @@ dual 的 outer-face vertex degree=5，其他 face vertices degree=3，符合文�
   刪除三角形的負控制會被拒絕。一般長度的成立理由是 §3 的歸納，不是這項有限測試。
 
 checker 不證文獻 Conjecture 9，也不替代 block decomposition、disk embedding、dual integration
-的一般數學證明。本輪沒有新 Lean 模組、沒有重跑大圖 catalogue、沒有改 production 或 cells.json。
+的一般數學證明。本輪沒有重跑大圖 catalogue、沒有改 production 或 cells.json。
+
+## 6. Lean 化範圍（2026-09-15 補）
+
+三個模組已匯入 `Math.lean`；公理審計
+[count-cone-lean-audit.txt](../artifacts/c5_cells/count-cone-lean-audit.txt) 中每條定理只依賴
+`propext / Classical.choice / Quot.sound`，有限檢查全為 kernel `decide`。
+
+| 本文段落 | Lean 定理 | 狀態 |
+| --- | --- | --- |
+| §1 240→60 四對一、fiber 為 XOR translates | `ParityWord.fiber_eq_translates`、`fiber_card`、`fiber_partition`、`parityWord_count` | 一般證明＋`decide` |
+| §1 固定 assignment 延伸數不乘 4 | `ParityWord.extensionCount_of_edgeWord` | 一般證明（任意 `G`） |
+| §1 a₀、b₀ 積分為 singleton-3／pair {2,4} | `ParityWord.word_a_singleton`、`word_b_pair` | `decide` |
+| §1 Conjecture 9 ⟺ m≤0、slack=−5m | `C5Counts.conjecture9_iff`、`slack_eq`、`sum_x` | 一般證明 |
+| §1 抽象例子 slack −5 | `C5Counts.NP_slack`、`NP_m`（任意 `P`） | 一般證明 |
+| §2 independent set ⊆ chord | `C5Counts.independent_subset_chord` | `decide` |
+| §2 m(H)=x_e(H)>0 ⟹ 全部 x_f>0 | `C5Counts.all_chords_positive`、`counterexample_violates_conjecture9` | 一般證明（代數半部） |
+| §3.2 ear 或二色偶長 polygon＋hub | `NearTriangulation.ear_or_hub`、`even_of_no_ear`、`exists_hub_of_no_ear` | 一般證明（任意長度） |
+| §4 Euler 計數與 k≤12 | `NearTriangulation.counts`、`corollary20_range` | `omega` |
+
+**未 Lean 化**：§2 中 `Σ(H)⊆Σ(G)` 與 `c` 延伸到 `H` 的圖論語義（Lean 只以 `y ≥ 0`、
+support ⊆ chord、`x_e > 0` 為假設）；§3.1 block decomposition；§3.2 面結構、平行邊、
+`fill_polygon` 遞迴與 Euler 特徵檢查；§4 dual graph 對應、文獻 Conjecture 9 與 Corollary 20。
 
 ```bash
 python3 scripts/c5_count_cone_bridge.py --check

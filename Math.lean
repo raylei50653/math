@@ -38,3 +38,6 @@ import Math.ReducedDFS
 import Math.EdgeMask
 import Math.IntegerViable
 import Math.LocalWiring
+import Math.C5Counts
+import Math.C5ParityWord
+import Math.NearTriangulation
