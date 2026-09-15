@@ -9,7 +9,76 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：更換保留系統的替代出口（2026-09-15）
+## 最新停止點：Singleton 的等高覆蓋限制與 B₂ 準備策略（2026-09-15）
+
+詳見 [singleton 準備策略](c5_singleton_preparation.md)。既有 χ=2 非 Goal 的
+936 個完整狀態形成 20 個等高分量；四度 singleton 直接成功出口只覆蓋兩個
+48-state 分量，其餘 840 個不能等高到達該出口。
+B₂（含 84、531）恰是一個未覆蓋的 72-state 分量。其 boundary 型
+`(A,B,C,A,B)` 要靠單點改色直接成功只能改位置 0 或 4，但固定圖四度 boundary
+頂點是 1、3；報告 §3 給純 boundary 紙面證明。
+
+B₂ 的 72/72 起點均可先交換位置 1 的 singleton BD component，χ:2→4；
+再用來源 connectivity guard 選擇 2–3 步 χ 不增、不返回 B₂ 的成功後綴。
+guard 從 `(A,D,C,A,B)` 的 `S=Comp_AB(0)` 定義
+`W=C色頂點 ∪ (A色頂點\S) ∪ (B色頂點∩S)`，要求 2、4 在 G[W] 不連通。
+成立則 AB@0、AC@4 必到 singleton-1；此染色引理有紙面證明，未 Lean 化。
+48 個直接符合，24 個先做 BC@2 形成 guard。全程高度分別 `2→4→3→2`、
+`2→4→3→3→2`，72 條共 240 步全部回放，避開禁用型 `[-1,0,2]`。
+後綴規則不查 ID／Goal 表選操作，另以獨立有向最短路核對其長度。
+
+接手：報告 §5–7 → `scripts/c5_singleton_preparation.py` 的 `tail_guard`、
+`structural_tail`。待證的是 guard 失敗時 BC@2 能修復它的結構條件，以及大 component
+操作 χ 不增的共同來源理由；這兩項目前都是固定 B₂ 證據。
+舊 B₂ 已有峰值 3 成功路徑，本輪提供較易描述的峰值 4 策略，不聲稱改善最小峰值。
+未擴圖、重搜閉包或新增 Lean；本輪及上一輪程式、證書與報告隨本次交接一併提交。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_singleton_preparation.py --check
+uv run --with networkx==3.5 python scripts/c5_local_exit.py --check
+uv run --with networkx==3.5 python scripts/c5_strategy_barriers.py --check
+lake build
+git diff --check
+```
+
+新 checker、局部出口 checker、barriers checker 的 `--check`、`lake build`
+（僅既有 lint）、新文件連結與 whitespace 檢查通過。沒有待完成驗證或背景工作。
+以下均為歷史停止點，以本節為準。
+
+## 先前停止點：四度 boundary singleton 的局部出口（2026-09-15）
+
+詳見 [局部出口報告](c5_local_exit.md)。沿用既有固定圖與閉包，找到更短的 K=4
+出口來源條件：boundary `(C,D,C,A,B)` 的位置 3 若 degree=4、鄰居全用 B/C，
+直接做 **AD@3、component={3}**，即得 singleton-4。
+四條 cut 邊在 dual 中形成 terminal 2 到 terminal 3 的 path。
+刪 cut 後，另兩系統各只補一條 terminal 邊與一條內部邊，因此各自 cycle 增量
+在 `{-1,0,1}`；D₁₂ 完整保留。從 χ≤2 出發峰值≤4，且不可能是禁用型 `[-1,0,2]`。
+報告 §2–3 有 retained-owner 精確公式與一般紙面證明，未 Lean 化。
+
+R 的 48/48 均符合；anchor 為 `3022→1112`，cycles `(1,0,1)→(1,1,2)`。
+既有閉包中同一 ordered boundary 型有 384 個來源，96 個通過局部 guard，
+全數回放得到上述 cycle 向量；其中另 48 個不屬 R，不宣稱也有峰值必要性。
+新引理使用不同操作 AD@3；未證舊 AD@1 引理前提 1–2 推出其完整重接前提 3–4。
+新證書 `artifacts/c5_cells/local_exit.json` 保存完整 retained blocks、原始邊與來源 hashes。
+
+接手：報告 §2–5 → `scripts/c5_local_exit.py` 的 `local_source`。
+下一缺口是沒有此 singleton 的障礙區域，能否經等高 boundary-root 操作形成它，
+或需要另一種局部出口。一般區域可達性、一般 K=4 與 `K∞=K≤5` 仍未證。
+未擴圖、未重搜閉包、未新增 Lean；程式、證書與報告隨本次交接一併提交。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_local_exit.py --check
+uv run --with networkx==3.5 python scripts/c5_alternative_exit.py --check
+uv run --with networkx==3.5 python scripts/c5_strategy_no_comp.py --check
+lake build
+git diff --check
+```
+
+新 checker、替代出口 checker、禁補償 checker 的 `--check`、`lake build`
+（僅既有 lint）、新文件連結與 whitespace 檢查通過。沒有待完成驗證或背景工作。
+以下各節均為歷史停止點，以本節為準。
+
+## 先前停止點：更換保留系統的替代出口（2026-09-15）
 
 詳見 [替代出口報告](c5_alternative_exit.md)。固定既有 48-state R，對照同一完整
 來源 3022 的 BD@4／AD@1；保存原色框、原邊號及兩套完整 retained-block 重接。
