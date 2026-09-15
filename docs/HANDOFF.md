@@ -9,7 +9,41 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：策略障礙區域／必要低谷／cut 計數（2026-09-15）
+## 最新停止點：全程禁止補償型升高（2026-09-15）
+
+詳見 [禁補償策略報告](c5_strategy_no_comp.md)。沿用完整 5,952 states 閉包，
+從 boundary-root grammar 全部刪除有序 cycle 增量排序為 `[-1,0,2]` 的 984 條有向邊。
+K=4 勝集維持 5,112；K=3 從 2,664 減為 2,616，失去 48 states。
+從 state 3022 出發的剩餘安全可達集合恰是這 48 states，全 χ=2、無 Goal；
+門檻 3 內全部 96 條離開邊都是補償型。因此此類操作在 K=3 對部分起點必要，
+在 K=4 可以全程避開。保留勝態的最短路最多分別增加 1／3 步。
+
+B₃ 普通／補償低出口為 168／24，B₂ 為 48／0。舊證書連通性已能推出任一起點
+可等高到普通出口，再接不返回的成功後綴；這一推論本身不限制後綴操作。
+報告補入「存在一個好出口即可」的弱版紙面引理，以及 XOR cut 保留一組完整
+系統的證明；未 Lean 化。新 checker 回放全部 47,616 rooted 邊並核對 preserved system。
+
+接手：報告 §1–2 → `strategy_no_comp.json` 的 `thresholds["3"].witness` 與
+`thresholds["4"].policy`。若求 K=4 策略，研究禁補償策略；若求最小峰值，分析
+新 48-state 區域的強制出口。這取代先分析舊 24 筆正例的優先順序，不擴新圖。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_strategy_no_comp.py --check
+uv run --with networkx==3.5 python scripts/c5_strategy_barriers.py --check
+lake build
+git diff --check
+```
+
+本輪為固定圖 Python 證據；新 checker 與 barriers checker 的 `--check`、
+`lake build`（僅既有 lint）、文件連結及 `git diff --check` 通過。
+程式、證書與報告隨本次交接一併提交；沒有背景研究或待完成驗證。
+完整染色、Goal、seeds 與 component labels 回查 `strategy_safe.json`；
+新證書的來源 SHA-256 綁定其索引。先選 K=4 策略或最小峰值方向，再續研究。
+
+以下全部「先前停止點」是歷史；舊下一步與未提交字樣不是目前待辦，
+最新接手入口以上節為準。
+
+## 先前停止點：策略障礙區域／必要低谷／cut 計數（2026-09-15）
 
 詳見 [策略障礙報告](c5_strategy_barriers.md)。只用既有 5,952 states 閉包。
 state 126 的 χ≤3 分量 B₃ 有 384 states、全為 χ=3、無目標；
@@ -35,7 +69,7 @@ checker `scripts/c5_strategy_barriers.py --check`，證書
 下一入口：報告 §3–6、240 低出口中 24 條 `(2,-1,0)` 排列的補償型重接；
 研究結構如何保證出口及續接，不自動擴新圖或添加摘要特徵。
 
-### 接手順序與重現
+### 當時的接手順序與重現（歷史）
 
 1. 先讀 [策略落地](c5_strategy_safe.md) §1、§3，固定圖、escape、boundary-root
    grammar 與 χ 的定義；本路線 χ 是 cycle 總數，和舊消融報告的布林 χ 不同。
