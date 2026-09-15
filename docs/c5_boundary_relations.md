@@ -275,6 +275,12 @@ $$
 
 ### 5.1 與現有成果的對照
 
+- [高度數 disk 家族續作](c5_corner_disks.md) 找到三個完整 `AB|CD` 立方體 survivor
+  （所有對齊狀態維持 blockers＋接口＋兩次新生連通，escape 全從 split 之外開始），
+  否定「固定立方體必失敗」的局部命題；corner-compliant CD 翻轉有六種機制，無單一 CD 引理。
+- [完整 AB|CD 立方體續作](c5_complementary_cube.md) 在既有 corpus 與 Errera 刪點家族
+  中都找不到全程維持 blockers＋接口＋兩次新生連通的立方體；所有 CD bit 失敗都是
+  0 或 2 鄰域的 corner collapse，給出一個必要 corner 條件，但屬低度數產物，非一般定理。
 - [AB 全交換續作](c5_ab_swap_cube.md) 以交換立方體引理與固定 16 頂點 Errera disk
   證明局部 blockers／接口／兩次新生連通可在任意 AB 序列下保持；該圖仍有三步 CD
   起始 escape。排除局部 AB 必逃逸引理，未排除全圖 independent-singleton 分支。

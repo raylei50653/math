@@ -167,7 +167,8 @@ AB 與 CD 是 complementary pairs；其 components 各自且彼此保持，所�
 本輪「固定 AB orbit 的全部狀態均通過」及明確 CD escape 是上述圖的直接有限驗證，
 不是引用該文得到的一般定理；不據此宣稱相關問題目前的完整文獻狀態。
 
-**下一個可檢驗命題**：擴大到固定 complementary split `AB|CD` 的全部獨立交換，
+**下一個可檢驗命題（續作見 [完整 AB|CD 立方體報告](c5_complementary_cube.md)）**：
+擴大到固定 complementary split `AB|CD` 的全部獨立交換，
 是否仍能有一張 disk 圖與起點，讓所有對齊狀態都通過 blockers 與兩次新生連通？
 本例對這個更強問題給的是「會失敗」，尚未回答一般情形。
 可用同一個共用 bits 模型檢查；不能讓各狀態分別選不相干的圖或 partition。

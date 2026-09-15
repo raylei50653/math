@@ -9,7 +9,75 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新停止點：AB 全交換仍可維持阻擋，固定 Errera disk 證書（2026-09-15）
+## 最新停止點：高度數 disk 家族——CD 機制不唯一，完整 AB|CD 立方體可以全程存活（2026-09-15）
+
+詳見 [c5_corner_disks.md](c5_corner_disks.md)。**精確有限證書＋紙面小引理，未 Lean 化**：
+上節入口 (i) 的回答。固定 seed 生成 2,000 個三角化 C5 disk（`n_int` 11–20，120 次邊翻轉，
+無 boundary chord），保留 0、2 內部度數皆 ≥ 4 的 1,318 個；25,288 個 `x₀₂` extensions、
+7,750 個對齊 `AB|CD` 立方體，全部沿用前輪 observers 逐狀態重算。
+
+**結果**：(a) 接口層 502 次 CD 翻轉只有 6 次 corner violation；其餘 496 次分成保留接口
+208、吞掉接口 182（全部接口邊在被翻轉 component 內 179、端點脫離 3）、打破 blockers 106。
+最強狀態出發的 4 次 CD 翻轉全部保留最強條件。「CD 必破接口」「CD 必保 blockers」
+都是前輪低度數樣本的產物，**沒有可抽的 CD 引理**。(b) **三個完整立方體 survivor**
+（disk 590／811／891，20／22／23 頂點，維度 (0,0)、(0,1)、(0,1)）在所有對齊狀態同時維持
+blockers、接口與兩次新生連通；最短 escape 一律從 split 之外開始：`Comp_AD(0)∋4`
+（2 步到 singleton-1，兩例）或 `T`（3 步到 singleton-3）。候選局部引理「完整 AB|CD
+立方體必在某狀態失敗」**為假**；矛盾（若有）必須用跨 split 的色對與 class 內其他四色
+fibres。(c) 8 個不含禁止 singleton 的 Kempe classes 都是 `x₀₂=0` 型，不是候選。
+
+**下一步**：只剩入口 (ii)。固定全圖 `P(G)⊆{0,2}`，在同一 class 內同時使用五個四色
+fibres：survivor 顯示第二層必要條件是交換 `Comp_AD(0)∋4`、`T`、`Comp_AC(2)∋3`、`S`
+所到的四色 fibre 各自不得有 1 步 escape。先列出每個四色 fibre 的 blockers 條件，
+以 survivor 證書中的 `cross_moves` 表為測試資料，看它們在 survivor 上如何被違反。
+不要再擴大本家族或換 seed 找更多 survivor，也不要重跑 catalogue。
+
+**接手順序**：本節 → [corner disks 報告 §2–3、§6](c5_corner_disks.md) →
+[complementary 報告 §6](c5_complementary_cube.md) → [connectivity 報告 §2–3](c5_kempe_connectivity.md)。
+可沿用 `scripts/c5_corner_disks.py` 的 `random_disk`、`cross_moves`、`survivor_detail`。
+
+重播 `python3 scripts/c5_corner_disks.py --check`（約 20 秒），加前六個 checkers、
+`git diff --check`。新證書 `artifacts/c5_cells/corner_disks.json`；
+無 Lean／production catalogue／前輪證書修改。
+
+## 先前停止點：完整 AB|CD 立方體無 survivor，失敗機制為 corner collapse（2026-09-15）
+
+詳見 [c5_complementary_cube.md](c5_complementary_cube.md)。
+**精確有限證書＋紙面推論，未 Lean 化**：固定 `e={0,2}`、`c|C5=(A,B,A,C,D)`，
+對齊 `AB|CD` 立方體的自由 bits 恰為內部 AB／CD components（U₀、V₀ 固定＝全域
+A/B、C/D 置換），checker 逐 bit 實際交換並與全部有標號 orbit 的 normalize 對照。
+每個狀態在其實際染色上重算 blockers、`S`、`T`、接口、兩次新生連通與最短 escape。
+
+**結果**：既有 132 witnesses 的 176 個 `x₀₂` extensions 成 123 個立方體，
+全程維持 blockers／blockers＋接口／再加兩次新生連通者為 11／2／**0**
+（AB 子立方體 166／20／4／0 與前輪逐項相同）。Errera 三角化 12 個 5 度頂點刪點
+×10 個 D₅ 對齊＝120 個 disk、600 個立方體：80／**0**／**0**。
+所有 CD bit 造成的接口失敗（corpus 2 次、家族 160 次）皆為同一機制：被翻轉的內部
+CD component 含 0 的全部 C 鄰點且不含其 D 鄰點（或 2 的對偶），翻轉後 `S={0}`
+或 `T={2}`，接口空，blockers 保留，escape 恰 2。AB bit 只會保留一切或直接打破 blockers。
+
+**真正候選不存在**：`P⊆{0,2}` 且 `x₀₂>0` 由 chord 恆等式強迫五個 x 全正，catalogue
+無此 Σ（424、960、1000 有 `P⊆{0,2}` 但 `x₀₂=0`）；全部樣本都是控制例。
+
+**Corner 條件（紙面推論）**：若全圖 `P(G)⊆{0,2}`，每個對齊狀態、每個內部 CD
+component V 都須 `N_C(0)⊄V` 或 `N_D(0)∩V≠∅`，且 2 的 D/C 對偶。它是接口引理的直接
+後果，且恰好解釋全部觀察到的 CD 失敗；但只涉及 0、2 的鄰域，樣本中 0、2 僅有 2–3 個
+內部鄰點，所以是低度數產物，**不是**「CD 必破」定理。成功標準屬 B。
+
+**下一步（(i) 已由上節完成，零 survivor 已被否定）**：不再擴大低度數樣本。(i) 設計 0、2
+內部度數 ≥4 且所有對齊狀態滿足 corner 條件的固定 disk，看 CD bit 是否仍破壞接口，
+若仍破壞才有新機制可抽成引理；(ii) 改用全圖 `P(G)⊆{0,2}`，把 corner 條件與接口引理
+套到同一 class 的五個四色 fibres。不要把兩處的零外推為證明。
+
+**接手順序**：本節 → [complementary 報告 §1–2、§6–8](c5_complementary_cube.md) →
+[AB 報告 §1–2](c5_ab_swap_cube.md) → [connectivity 報告 §2–3](c5_kempe_connectivity.md)。
+可沿用 `scripts/c5_complementary_cube.py` 的 `aligned_cube`、`observe`、`singleton_distances`。
+
+重播 `python3 scripts/c5_complementary_cube.py --check`（約 1 秒），加前五個 checkers、
+`git diff --check`。新證書 `artifacts/c5_cells/complementary_cube.json`；
+無 Lean／production catalogue／前輪證書修改。六個 checkers 與 `git diff --check` 全通過。
+
+## 先前停止點：AB 全交換仍可維持阻擋，固定 Errera disk 證書（2026-09-15）
 
 詳見 [c5_ab_swap_cube.md](c5_ab_swap_cube.md)。
 **紙面引理＋精確固定圖證書，未 Lean 化**：AB induced components 在任意 AB 交換下
@@ -31,9 +99,9 @@ AB 序列打破它們」。從 Sage 10.6 ErreraGraph 刪舊頂點 0 得到固定
 blockers／blockers 加接口／blockers 加兩次新生連通，分別為 20／4／0 個 cubes。
 因此新固定控制例也防止把舊樣本的零當成普遍定理。本輪沒有新圖 catalogue 搜尋。
 
-**下一步**：先讀新報告 §1–6。固定 complementary split `AB|CD` 的全部獨立交換，
-能否也始終維持 blockers 與兩次新生連通？本例四個對齊狀態中恰兩個失敗，
-一般情形尚未解答。另一入口是使用全圖 P 假設的額外結構；本輪沒有排除 AB 作為
+**下一步（已由上節完成）**：固定 complementary split `AB|CD` 的全部獨立交換，
+能否也始終維持 blockers 與兩次新生連通？本例四個對齊狀態中恰兩個失敗；
+上節在 corpus 與 Errera 刪點家族中都沒有找到 survivor。另一入口是使用全圖 P 假設的額外結構；本輪沒有排除 AB 作為
 更完整證明一部分的用途。Adjacent-singleton lemma 與 K∞=K≤5 仍未證。
 
 **接手順序**：本節 → [AB 報告 §1–6](c5_ab_swap_cube.md) →
