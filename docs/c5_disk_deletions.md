@@ -149,3 +149,7 @@ argv 執行，再比對四份 ASCII 輸出；不把外部生成器的成功退�
 
 下一個有界問題是：對上述 A、B，比較從全部保持 Σ 的刪邊後繼出發的嚴格出口，
 判斷自環差異是否會變成真正的多步 catalogue 差異。本輪停在單邊實驗，未啟動該搜尋。
+
+後續：[A/B same-Σ closure 實驗](c5_disk_weak_successors.md) 已獨立完成這一對的
+全部刪邊格；weak exits、全部 observable traces 與有限 weak bisimulation 均相同。
+此後續結論僅限 A/B 的後代，不擴張本報告對全體母圖的一步排除範圍。

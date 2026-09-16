@@ -9,7 +9,36 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新實驗：C5 disk 三角化與單邊刪除（2026-09-16）
+## 最新實驗：A/B same-Σ closure 與 weak successors（2026-09-16）
+
+報告：[A/B 的 weak successor 實驗](c5_disk_weak_successors.md)。上一輪已獨立提交
+`403e2bd`。本輪只展開 A=`k3-t175`、B=`k3-t180` 的全部非外圈邊子集，維持 k=3。
+兩格共 4,096 狀態、22,528 transitions；3,968 個不同具名圖逐一核對完整 relation。
+
+**落在第三分支，但只限這兩張母圖的刪邊域：** 根 silent closure 分別 64／1，
+E(A)=E(B)={255,967}；兩格聯集每個同 Σ 狀態都具相同 weak exits，
+因此在隱藏 silent 步數與具體刪邊身分的語義下，Σ 等價構成 weak bisimulation。
+全部 observable traces 也相同，最長只有兩次 strict 放寬；不只是 depth 2/3 抽查。
+
+共同機制是兩因子：Q=`b0≠b3`，H=`b0,b1,b2,b3 不用滿四色`。
+Q iff 保留 chord 03；H iff 保留 A 的四條 spokes／B 的十條非 chord 邊。
+公式對每個子集都驗證，weak quotient 為 `Q∩H → Q/H → Ω`。
+**未擴到其他母圖、全體 k≤3 或 k≥4；不推論一般 Σ 安全商或 completion。**
+
+接手：新報告 §2–4 → `scripts/c5_disk_weak_successors.py` →
+`artifacts/c5_disk_weak_successors/observations.json`。下一個有界問題是其他同 Σ
+母圖是否也有共同兩因子分解；本輪停止於 A/B，未啟動該搜尋。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_disk_weak_successors.py --check
+lake build
+git diff --check
+```
+
+驗證通過：新 checker 逐 byte 重播、兩因子公式全子集核對、文件連結與 whitespace、
+`lake build`（8,819 jobs，僅既有 lint）。本輪另作獨立 commit；未 push，沒有背景工作。
+
+## 前輪實驗：C5 disk 三角化與單邊刪除（2026-09-16）
 
 報告：[固定 C5 disk 單邊刪除](c5_disk_deletions.md)。plantri 5.8 的
 `-P5 -c2 -m2` 生成 k=0..3 的 1、4、14、69 個嵌入同構類；展開固定 boundary
