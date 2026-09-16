@@ -25,6 +25,10 @@ A/B 完整刪邊格的 same-Σ closure、共同兩因子判準與 weak bisimulat
 固定 C5 同頂點 completion 的紙面證明、Lean weak-bisimulation／trace bridge，
 及全部 k≤3 cells 的條件式覆蓋與外部信任邊界見
 [c5_completion_weak_bisimulation.md](docs/c5_completion_weak_bisimulation.md)。
+87-state weak quotient 的 inclusion covers／可達 order 反例、完整 mismatch 與 D5 audit 見
+[c5_weak_quotient.md](docs/c5_weak_quotient.md)。
+相鄰雙 singleton 完全釋放等候選定理、87-state 有限核對與反例控制見
+[c5_weak_candidates.md](docs/c5_weak_candidates.md)。
 
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 

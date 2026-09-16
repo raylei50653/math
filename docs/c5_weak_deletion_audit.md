@@ -4,6 +4,10 @@
 **完整指定刪邊域內沒有找到同 Σ、不同 W 的反例。** 這是 Python 有限計算證據，
 加上下述一般紙面匹配論證；未新增 Lean 定理。
 
+**後續 quotient 分析：** [87-state relation-order audit](c5_weak_quotient.md)
+直接使用本證書，否定 W=covers 及 TC(W)=inclusion；D5 equivariance 全數通過。
+沒有重跑本篇全量 audit。
+
 **後續更新（同日）：** [completion 與 Lean bridge](c5_completion_weak_bisimulation.md)
 已分別補上完整紙面 completion 與 Lean 一般 weak-bisimulation／trace theorem。
 接受其中明列的 topology、plantri 完備性及本篇 Python 計算信任後，結論可

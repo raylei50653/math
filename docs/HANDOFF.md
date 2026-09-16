@@ -9,7 +9,61 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新理論交付：C5 completion 與 Lean weak-bisimulation bridge（2026-09-16）
+## 最新候選定理：相鄰雙 singleton 完全釋放（2026-09-16）
+
+報告：[weak deletion 候選定理](c5_weak_candidates.md)。首選命題：若包含全部 T4，
+且恰好缺失 singleton 位於相鄰 boundary 頂點的兩個三色 patterns，則 W 恰有
+「各放回一個、一起放回兩個」三個出口。五個位置、15 條邊全部符合；一般情況未證。
+五個位置是同一 D5 orbit，候選式由同一份 87-state 資料歸納並回測，尚無域外驗證。
+下一個證明缺口是三種 critical-edge 型態的存在性；H 可隨型態不同。
+
+較廣有限規律：T4⊆Σ 的 16 個來源，其 W 恰為 observed strict upper cone，
+共 50 邊；也按 k=0..3 分別核對。全部 86 個非 Ω 來源滿足 ∪W=Ω；
+56 個分支來源滿足 ∩W=Σ。由 forbidden patterns 定義的 30-state family
+恰好辨識所有 W={Ω} 狀態，其中單缺失 orbit 的 10 類可由單調性直接紙面證明。
+
+checker：[c5_weak_candidates.py](../scripts/c5_weak_candidates.py)；
+[完整結果](../artifacts/c5_weak_candidates/observations.json)。
+亦保存失敗控制及 235-edge 抽象替代 DAG，證明上述規則仍不足以決定全部 W。
+驗證：candidate／quotient `--check`、`lake build`（8,820 jobs）、文件連結及 whitespace 通過。
+未跑 k=4、未重跑 deletion audit、未修改原 quotient 證書、未新增 Lean theorem。
+停止於候選式與有限核對；優先證相鄰雙 singleton 命題，不自動擴大枚舉。
+
+**接手順序：** 先讀報告 §1 的命題 A 與單缺失 orbit 紙面基底，再讀證書的
+`candidates.adjacent_singleton_pair`。下一步只處理 `(1,0)、(0,1)、(1,1)`
+三種釋放型態：各自尋找 silent-reachable H 與一條 critical edge，或找出此命題的
+結構障礙；不要假定兩個 boundary fibers 共用完整 coloring。
+這裡是兩個**缺失** singleton patterns，與既有 Kempe 相鄰 singleton 存在性引理不同。
+
+本輪最小重播只需：
+
+```bash
+python scripts/c5_weak_quotient.py --check
+python scripts/c5_weak_candidates.py --check
+```
+
+以下各節保留歷史背景與當時的指令；本輪接手不需要重跑舊全量 deletion audit。
+
+## 前輪有限分析：87-state weak quotient（2026-09-16）
+
+報告：[weak quotient 與 relation inclusion order](c5_weak_quotient.md)。
+直接讀取封存 `c5_weak_deletion_audit`，沒有重跑全量 audit、沒有跑 k=4。
+W 有 225 邊；inclusion covers 也有 225 邊，但只有 105 邊重合，各有 120 差異。
+TC(W) 有 266 對，strict inclusion 有 706 對，缺少 440 對；W 的 reduction 有
+185 邊，最長 DAG depth 3。D5 全部 870 次比較通過。
+
+最小 relation witness：`165⊊167⊊431`，`W(165)={431,757}`，
+從 165 只能到 `{431,757,1023}`。所以 W 會跳過 realizable 中間點，
+也無法到達某些 inclusion covers。所有 mismatch 與逐項證據已保存於
+[JSON](../artifacts/c5_weak_quotient/observations.json)，含節點度數、depth 與完整 reduction。
+此結果否定兩個具體 order 公式，沒有排除其他 relation-only rule；
+一般 weak deletion congruence 仍未證。本輪未新增 Lean。
+
+重現：`python scripts/c5_weak_quotient.py --check`。
+驗證：quotient `--check`、`lake build`（8,820 jobs）、文件連結及 whitespace 通過。
+停止於此有界分析；不自動擴展到 k=4 或重跑來源全量 audit。
+
+## 前輪理論交付：C5 completion 與 Lean weak-bisimulation bridge（2026-09-16）
 
 報告：[completion 與 weak-bisimulation 信任鏈](c5_completion_weak_bisimulation.md)。
 **固定 drawing、同頂點、同有序 C5 的 completion 已有完整紙面證明；
