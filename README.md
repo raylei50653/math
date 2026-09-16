@@ -22,6 +22,9 @@ A/B 完整刪邊格的 same-Σ closure、共同兩因子判準與 weak bisimulat
 [c5_disk_weak_successors.md](docs/c5_disk_weak_successors.md)。
 完整 k≤3 母圖刪邊閉包的 weak-deletion congruence audit（1,246,132 raw states，零碰撞）見
 [c5_weak_deletion_audit.md](docs/c5_weak_deletion_audit.md)。
+固定 C5 同頂點 completion 的紙面證明、Lean weak-bisimulation／trace bridge，
+及全部 k≤3 cells 的條件式覆蓋與外部信任邊界見
+[c5_completion_weak_bisimulation.md](docs/c5_completion_weak_bisimulation.md)。
 
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 

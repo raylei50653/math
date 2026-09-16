@@ -42,3 +42,4 @@ import Math.C5Counts
 import Math.C5ParityWord
 import Math.NearTriangulation
 import Math.KempeSurgery
+import Math.WeakBisimulation

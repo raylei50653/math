@@ -4,6 +4,13 @@
 **完整指定刪邊域內沒有找到同 Σ、不同 W 的反例。** 這是 Python 有限計算證據，
 加上下述一般紙面匹配論證；未新增 Lean 定理。
 
+**後續更新（同日）：** [completion 與 Lean bridge](c5_completion_weak_bisimulation.md)
+已分別補上完整紙面 completion 與 Lean 一般 weak-bisimulation／trace theorem。
+接受其中明列的 topology、plantri 完備性及本篇 Python 計算信任後，結論可
+覆蓋全部 k≤3 production cells；母圖只商內點置換的 transport 見後續 §3.1。
+下文保留本次計算的原始域與歷史信任聲明；「completion 未證」是後續之前的狀態。
+計算證書及 checker 沒有更動，也沒有重跑。
+
 ## 1. 搜尋域與結果
 
 從既有 plantri 5.8 `-P5 -c2 -m2` 產生、固定 C5 boundary 標號的全部

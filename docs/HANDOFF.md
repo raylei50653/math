@@ -9,7 +9,40 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新實驗：Full k≤3 weak-deletion congruence audit（2026-09-16）
+## 最新理論交付：C5 completion 與 Lean weak-bisimulation bridge（2026-09-16）
+
+報告：[completion 與 weak-bisimulation 信任鏈](c5_completion_weak_bisimulation.md)。
+**固定 drawing、同頂點、同有序 C5 的 completion 已有完整紙面證明；
+一般 weak-bisimulation bridge 與有限 observable trace equality 已在 Lean 證明。**
+
+completion 先以極大增廣排除不連通與割點，再證 bounded faces 為三角形；
+涵蓋 production 的孤立內點、bridges、chords、外圈二度點與 separating triangles。
+報告另證 apex-planarity 與存在 disk drawing 的對齊，及 parent 類與
+plantri `-P5 -c2 -m2` 的一致性。補邊不要求保持 Σ。
+
+封存 audit 的母圖只商內點置換，因此任意 cell 經固定 boundary 的內點置換
+成為保存母圖的 descendant；Σ、W 與全部刪邊路徑在此置換下不變。
+**接受紙面 topology、外部 plantri 完備性與封存 Python 計算後，有界結論
+可覆蓋全部 k≤3 production cells，含跨 k 比較。** 169,643 仍僅是 audit
+實際出現的不同具名圖數，不能改稱全部具名 cells 數量。
+
+Lean：[WeakBisimulation](../Math/WeakBisimulation.lean) 的
+`kernel_isWeakBisimulation`、`IsWeakBisimulation.observableTraces_eq`、
+`kernel_observableTraces_eq`，以及直接沿用既有 Σ 的 specialization。
+它們是顯式 hW 假設下的 kernel theorem；未將有限 audit 或 embedding 放入 axiom。
+
+**精確停止點：** completion 的覆蓋缺口在紙面層已封閉；topology primitives、
+plantri 生成完備性、Python／encoding／標號 transport 仍非 Lean 全枚舉證明。
+一般 weak deletion congruence conjecture 不變。未跑 k=4、未重跑既有 audit，
+未修改 checker 或 132-state catalogue，未處理 K∞=K≤5。
+審核見 [新 theorem audit](../artifacts/weak_bisimulation/lean-audit.txt)。
+驗證：`lake build`（8,820 jobs）、8 個新 theorem 的 axiom audit、既有公開
+定理 audit 與 baseline 逐 byte 比較、本地文件連結與 whitespace 全部通過。
+核心 bridge 無 axiom dependency；trace-set equality 僅 `propext`／`Quot.sound`。
+
+以下保存前輪計算與歷史停止點；其中「completion 未證」描述當時狀態。
+
+## 前輪實驗：Full k≤3 weak-deletion congruence audit（2026-09-16）
 
 報告：[完整 weak-deletion audit](c5_weak_deletion_audit.md)。從既有 726 張
 plantri triangulated parents 枚舉全部非外圈邊子集，保留所有頂點。
