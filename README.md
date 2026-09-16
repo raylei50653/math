@@ -16,6 +16,8 @@ Kempe 行為驅動的狀態細化見 [研究提案](docs/c5_behavior_refinement.
 
 新增點／邊對完整染色關係、兩點強迫與影響範圍的第一輪觀察見
 [extension_effects.md](docs/extension_effects.md)。
+固定 C5 disk 三角化母圖的 `k≤3` 單邊刪除實驗、具體碰撞與排除範圍見
+[c5_disk_deletions.md](docs/c5_disk_deletions.md)。
 
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 

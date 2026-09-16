@@ -1,6 +1,6 @@
 # 新對話交接：四色 boundary-state／constraint gadget 研究
 
-更新：2026-09-15。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
+更新：2026-09-16。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
 ## 研究路線總覽（2026-09-15 文件整理）
 
@@ -9,7 +9,43 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新研究支線：新增點／邊的關係影響（2026-09-15）
+## 最新實驗：C5 disk 三角化與單邊刪除（2026-09-16）
+
+報告：[固定 C5 disk 單邊刪除](c5_disk_deletions.md)。plantri 5.8 的
+`-P5 -c2 -m2` 生成 k=0..3 的 1、4、14、69 個嵌入同構類；展開固定 boundary
+標號並只商內點置換後，共 726 張母圖，枚舉 7,500 次非外圈單邊刪除。
+幾何逐面核對；4,906 個圖的完整 relation 以 1,177,440 次 boundary 回溯交叉驗證。
+
+得到 87 個 Σ，均在既有 132-state catalogue 內。**不是所有 k≤3 cells 的枚舉**；
+未做多邊刪除、k≥4 或 completion lemma。累積 relation 10→21→51→87，未觀察到飽和。
+同 k、同 Σ 的 11,070 對母圖中，k=3 有五組「所有單步後繼」碰撞，但差異
+全部只是能否保持原 Σ；嚴格後繼碰撞為零。具體 A=`k3-t175`、B=`k3-t180`
+均為 Σ=199，後繼分別為 `{199,255,967}`、`{255,967}`。
+這反駁 Σ 決定完整單步後繼，**尚未反駁忽略自環後的 catalogue 合併**，也未證其安全。
+
+接手：新報告 §1、§3 的精確排除範圍 → `scripts/c5_disk_deletions.py` →
+`artifacts/c5_disk_deletions/observations.json`。下一個有界問題是上述 A、B 的
+保持 Σ 刪邊後繼是否有不同嚴格出口；本輪未啟動多步搜尋。
+信任邊界：plantri 生成完備性為外部依賴，Python 幾何與 coloring 為有限計算，未新增 Lean。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_disk_deletions.py --check
+lake build
+git diff --check
+```
+
+驗證通過：新 checker 逐 byte 重播、四份 plantri 輸出重新生成一致、
+`lake build`（8,819 jobs，僅既有 lint）、文件連結與 whitespace 檢查。
+本輪單邊實驗與先前 §7 三角化說明一併提交；未 push，沒有背景工作。
+
+## 前一支線：新增點／邊的關係影響（2026-09-15）
+
+2026-09-16 補充：[新增點／邊觀察 §7](extension_effects.md#7-拓撲結構三角剖分作為-maximal-constraint-normal-form)
+整理三角剖分作為 maximal-constraint normal form 的結構觀點：將內部面統一為三角形，
+研究更受限的結構及其平面拼接。可將全圖補成三角剖分，四色存在性足以化約，
+但完整邊界關係可能嚴格縮小；三角形面不排除 C5 等長環。
+另區分球面三角剖分與固定 C5 disk 的內部三角剖分及其合法操作限制。
+本次僅文件整理，未新增 Lean、計算或啟動後續研究；原停止點保留。
 
 使用者指定開啟「加入額外點或邊會對相對關係影響和範圍」研究。
 入口：[新增點／邊觀察](extension_effects.md)。先固定有序 C5 的完整染色關係，
