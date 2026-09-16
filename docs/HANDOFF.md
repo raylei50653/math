@@ -9,7 +9,37 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新實驗：A/B same-Σ closure 與 weak successors（2026-09-16）
+## 最新實驗：Full k≤3 weak-deletion congruence audit（2026-09-16）
+
+報告：[完整 weak-deletion audit](c5_weak_deletion_audit.md)。從既有 726 張
+plantri triangulated parents 枚舉全部非外圈邊子集，保留所有頂點。
+**1,246,132 raw states、169,643 個不同具名圖、6,811,300 transitions、87 個 Σ，
+同 Σ 的 W 碰撞為零。** 比較涵蓋跨母圖、全部後代與不同 k。
+
+W 用單邊刪除 DAG DP，並對每個狀態以同 Σ submask strict exits 的 subset-zeta
+聚合獨立核對；Σ 以相容賦色交集與完整內點賦色枚舉交叉核對。
+每個母圖根再直接枚舉 silent submasks 的出口。沒有枚舉 traces 或逐圖對跑 bisimulation。
+全域 W 一致性加紙面匹配引理，給出**此封閉有限域內** ker(Σ) 是 weak bisimulation；
+有限 observable trace equality 是 consequence。
+
+**不等同所有 k≤3 cells；completion 仍未證。** 一般 weak deletion congruence
+仍是 conjecture，未新增 Lean。A/B 兩因子解釋維持獨立支線，未泛化。
+
+接手：報告 §2–4 → `scripts/c5_weak_deletion_audit.py` →
+`artifacts/c5_weak_deletion_audit/observations.json` 的 `sigma_variants`。
+下一題可選 k=4 反例搜尋或結構證明；本輪停止於此，未啟動兩者。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_weak_deletion_audit.py --check
+lake build
+git diff --check
+```
+
+驗證通過：完整 checker `--check` 逐 byte 重播、`lake build`（8,819 jobs，
+僅既有 lint）、文件連結與 whitespace。沒有背景工作。
+本輪 checker、證書與文件隨本次提交發布；以下為歷史停止點。
+
+## 前輪實驗：A/B same-Σ closure 與 weak successors（2026-09-16）
 
 報告：[A/B 的 weak successor 實驗](c5_disk_weak_successors.md)。上一輪已獨立提交
 `403e2bd`。本輪只展開 A=`k3-t175`、B=`k3-t180` 的全部非外圈邊子集，維持 k=3。

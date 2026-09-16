@@ -20,6 +20,8 @@ Kempe 行為驅動的狀態細化見 [研究提案](docs/c5_behavior_refinement.
 [c5_disk_deletions.md](docs/c5_disk_deletions.md)。
 A/B 完整刪邊格的 same-Σ closure、共同兩因子判準與 weak bisimulation 有限驗證見
 [c5_disk_weak_successors.md](docs/c5_disk_weak_successors.md)。
+完整 k≤3 母圖刪邊閉包的 weak-deletion congruence audit（1,246,132 raw states，零碰撞）見
+[c5_weak_deletion_audit.md](docs/c5_weak_deletion_audit.md)。
 
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 
