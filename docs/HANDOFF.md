@@ -9,7 +9,61 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新候選定理：相鄰雙 singleton 完全釋放（2026-09-16）
+## 最新研究：repair sets、dual flows 與非同面控制（2026-09-16）
+
+報告：[repair sets、dual flows 與非同面控制](c5_weak_flow_repairs.md)。
+候選 A 未證；三出口已有 deletion-side 精確充要條件。對每個缺失 pattern r，
+令 R_r 是 inclusion-minimal 的刪邊修復集。單側 p 出口 iff 某個 p-repair
+不包含任何 q-repair；共同出口 iff 兩 repairs 共享最後邊 e，且它們的 union−e
+尚不包含任一側 repair。
+
+固定 disk drawing 後，四色寫成 F₂²；primal edge 色差是 plane dual flow。
+repair sets 恰是相應 boundary demand flows 的 minimal zero-edge sets。
+相鄰 p,q demands 只在 outer dual vertex z 的兩條相鄰 edges 上相差同一非零量。
+因此剩餘缺口已成為明確的 plane-dual 5-pole flow-repair intersection lemma。
+
+新增負控制由兩個單缺失 K5 obstruction 沿 C5 分置兩側組成。聯集是平面圖且
+relation 仍為 Ω\{p0,p1}，但 repair families 互斥，W 只有兩個單側出口、沒有 Ω。
+其 C5 不同面：加 boundary apex 後含顯式 K3,3 subdivision。這證明一般平面性、
+relation 與單調性都不足；證明必須使用五條 dual boundary edges 同繞 z 的 cyclic disk 結構。
+
+五個 disk representatives 各側 9 個單邊 repairs：共享 8、各自私有 1；
+新 checker 從全部 5×1,024 subset tables 重算。控制的 16,384 subsets 以兩種
+coloring 算法交叉核對，另回溯 root 與 14 個單刪圖。未跑 k=4 disk search、
+未重播全量 audit、未新增 Lean theorem。本節與前輪 critical-core 產物一併發布；
+接手時以本文件頂端的 flow-repair stopping point 為準。
+
+**下一個窄問題：** 先證 repair 排他性式 (2) 的一側。假設每個 minimal p-zero-set
+都包含 q-zero-set，利用兩 demands 只差 z 上相鄰兩邊的 flow symmetric difference，
+嘗試導出第三個已知可延拓 demand 的矛盾；若失敗，只找最小 abstract 5-pole control
+並測 cyclic planarity，不擴大一般圖枚舉。
+
+重播：`uv run --with networkx==3.5 python scripts/c5_weak_flow_repairs.py --check`，
+再跑 critical-core、candidate、quotient checkers；完整驗證狀態見新報告 §5。
+驗證已通過：四個 checker、`lake build`（8,820 jobs）、142 個本地連結與 whitespace。
+
+## 前輪研究：相鄰雙缺失的最小阻礙化約（2026-09-16）
+
+報告：[最小阻礙與三種 critical-edge 出口](c5_weak_critical_cores.md)。
+候選 A 未證；本輪已在紙面證出三出口的精確充要條件，不需要平面性：
+只釋放 p iff 存在 minimal q-obstruction 接受 p；反向對稱。
+同時釋放 iff 有 minimal p/q-obstructions A、B 與共同邊 e，使
+(A∪B)−e 同時接受 p,q。須排除所有替代阻礙，不能只說 e 擊中所選 A、B。
+
+五個封存代表各有唯一的 p/q 阻礙：各 9 邊、共享 8 邊、各 1 私有邊。
+全 5,120 個代表子集核對兩因子公式，15 個直接出口另核對 240-row 回溯。
+這是同一 D5 orbit 的機制解釋，非域外驗證，亦未分析每個同 Σ 具體圖。
+未跑 k=4、未重播全量 deletion audit、未新增 Lean theorem。
+
+**下一個窄問題：** 先處理報告 §2 式 (3) 的兩族阻礙分離：是否任意候選 A
+disk graph 的每側，都存在接受另一缺失 singleton 的 minimal obstruction？
+再處理式 (4) 的共同 pivotal edge；不假定唯一阻礙，不假定兩 fibers 共用 coloring。
+
+重播：`uv run --with networkx==3.5 python scripts/c5_weak_critical_cores.py --check`，
+另跑下節兩個小 checker。新報告已連至 README 與候選報告，並納入後續 publication commit。
+驗證：三個 checker、`lake build`（8,820 jobs）、135 個本地連結與 whitespace 通過。
+
+## 前輪候選定理：相鄰雙 singleton 完全釋放（2026-09-16）
 
 報告：[weak deletion 候選定理](c5_weak_candidates.md)。首選命題：若包含全部 T4，
 且恰好缺失 singleton 位於相鄰 boundary 頂點的兩個三色 patterns，則 W 恰有

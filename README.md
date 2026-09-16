@@ -29,6 +29,10 @@ A/B 完整刪邊格的 same-Σ closure、共同兩因子判準與 weak bisimulat
 [c5_weak_quotient.md](docs/c5_weak_quotient.md)。
 相鄰雙 singleton 完全釋放等候選定理、87-state 有限核對與反例控制見
 [c5_weak_candidates.md](docs/c5_weak_candidates.md)。
+三出口的最小阻礙充要條件與五個代表的兩因子機制見
+[c5_weak_critical_cores.md](docs/c5_weak_critical_cores.md)；一般候選仍未證。
+其 deletion-side repair／plane-dual flow 化約及平面但非同面控制見
+[c5_weak_flow_repairs.md](docs/c5_weak_flow_repairs.md)。
 
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 

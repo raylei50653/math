@@ -7,6 +7,10 @@
 最值得先證的是下述**相鄰雙 singleton 完全釋放**。它不需要未知的
 「所有 realizable relations」作右端，也不只是重述 Σ-congruence。
 
+後續進度：[最小阻礙與 critical-edge 出口](c5_weak_critical_cores.md) 已給出
+三出口的一般紙面充要條件，並核對五個既有代表的「共享八邊、各一私有邊」
+唯一阻礙機制；候選 A 的一般 planar existence 部分仍未證。
+
 ## 1. 首選候選：相鄰雙 singleton 完全釋放
 
 以下先在共同 S4 的十個 orbit patterns 上書寫，等價於其完整有序 rows 的聯集。
