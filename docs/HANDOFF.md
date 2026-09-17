@@ -9,6 +9,95 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
+## 最新研究：bridge pruning 補齊四環混合型（2026-09-17）
+
+報告：[Bridge forcer 替換與四環混合型](c5_shared_pair_bridge.md)。完成上一輪
+「兩對共用點 triangles 以 bridge path 相連」問題，並補齊恰四環全部型態。
+全 degree-4、內部連通、恰四個 triangle blocks、其餘 blocks 為 bridges 的
+disk minimal q-obstruction 不存在，不需 T4；允許任意連接樹與外掛樹。
+
+新紙面引理：bridge 外側 singleton forcer 若為非 D，吸收成一條 spoke；
+若為 D，收縮成一個接三種 q 色的葉點。兩者都保持 boundary 固定的 minor、
+全 degree-4、固定 q 不可延拓與逐邊 minimality。D 葉點刪任一色 s 的 spoke
+時，母點取 D、葉點取 s，補齊新邊的 minimality 證明。未宣稱完整 relation 保持。
+
+因此可隔離任意共用點 triangle cluster，外側即使含 cycles 亦可剪除。
+四環的 cluster 大小 2／3／4 分別套既有排除；全部大小 1 則套互斥環至多二。
+864 個 rooted pair 配置有 12 個 singleton，D 與其他色各三個；D 不能只靠
+list 層排除。三個 D 正常形吻合既有兩環 shared 模板，沒有新拓撲搜尋。
+
+**下一方向：任意純共用點 triangle tree 的 palette 相容性與局部 minor。**
+bridge 混合已可化到 clusters；先找較大 cluster 能否保留必要介面縮到既有
+障礙，不直接增加五環 catalog，也不把 cut vertex 二色禁集當 bridge singleton。
+一般任意環數、較長 odd cycles、K4 blocks、degree≥5 與 K∞=K≤5 仍未解。
+
+本輪是紙面化約與 Python 控制，未新增 Lean theorem。重播入口：
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_shared_pair_bridge.py --check
+```
+
+完整依賴重播命令見新報告 §4。本輪與五個依賴 checkers、`lake build`
+（8,821 jobs，僅既有 lint）、文件連結及 whitespace 通過。本次發布一併包含
+四環鏈型、分叉型與 bridge pruning 三輪的 scripts、證書、報告及 README／HANDOFF。
+研究停止在上述任意共用點 triangle tree 問題，無背景研究程序。
+以下舊停止點保留歷史語境。
+
+## 最新研究：四環共用點分叉型（2026-09-17）
+
+報告：[四環共用點分叉型](c5_four_triangle_star.md)。中央 triangle 三個不同
+頂點各共用一個末端 triangle，允許任意外掛樹；全 degree-4、逐非 boundary
+邊 minimal 的 disk q-obstruction 不存在，不需 T4。
+
+三個末端的二色禁集共同阻擋，恰在六個非共用點的 residual lists 全同。
+46,656 個配置由實圖回溯、介面拼接與判準交叉核對。P 含 D／不含 D 分別
+得到九／十五內點模板；532,608 個必要 minors 全非 disk，由 111 份 K3,3
+subdivisions 覆蓋。這是紙面化約加 Python 證書，未新增 Lean theorem。
+
+四節點樹只有鏈與三叉，因此結合前輪，四環全經共用點相連的情形已排除；
+尚未涵蓋環間含 bridge 的混合連接型，更不是任意環數的排除。
+
+**下一個窄問題：兩對共用點 triangles，以 bridge path 相連。**
+先分析一對 triangles 的連接端 root 可取色介面，判斷 bridge 強迫色能否
+為 D，再選吸收或必要 minor；不增加 bridge 路徑長度作盲目枚舉。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_four_triangle_star.py --check
+uv run --with networkx==3.5 python scripts/c5_four_triangle_chain.py --check
+lake build
+git diff --check
+```
+
+兩個 checkers、`lake build`（8,821 jobs，僅既有 lint）、文件連結與 whitespace
+通過。保留前輪未提交產物，兩輪均未提交或推送，無背景研究程序。
+以下舊停止點保留歷史語境，以本節為準。
+
+## 最新研究：四環共用點鏈與禁集 transfer（2026-09-17）
+
+報告：[四環共用點鏈](c5_four_triangle_chain.md)。接手 HEAD `f147591`、工作樹
+乾淨；沿前輪指定方向完成四個 triangles 依序共用不同 cut vertices 的排除，
+允許任意外掛樹，全 degree-4、逐非 boundary 邊 minimal，不需 T4。
+
+二色禁集 F 穿過側點 list R 的 triangle：若 R=四色\F，輸出 R；否則輸出
+空集，且空集不再恢復。四環鏈不可著色恰在兩個互補 palettes 交替，只有六型。
+46,656 個 residual-list 配置以實圖回溯獨立核對；十二內點正常形的 24,576 個
+必要 minors 全非 disk，由 16 份 K3,3 subdivisions 覆蓋。這是紙面化約加
+Python 證書，未新增 Lean theorem，未宣稱任意共用點 block tree 已排除。
+
+**下一個窄問題：四環共用點的分叉型**，中央 triangle 的三個不同頂點各接
+一個末端 triangle。先推導中央三個 residual lists 的阻擋條件，再作必要 minor；
+尚未涵蓋四環 bridge／共用點混合連接型，也不自動增加鏈長或外掛樹深度。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_four_triangle_chain.py --check
+uv run --with networkx==3.5 python scripts/c5_shared_triangle_blocks.py --check
+lake build
+git diff --check
+```
+
+兩個 checkers、`lake build`（8,821 jobs，僅既有 lint）、文件連結及 whitespace
+通過。本輪產物未提交或推送，沒有背景研究程序。以下較早停止點保留歷史語境。
+
 ## 最新 Lean 化：block 報告反覆使用的 forcing-list 基礎引理（2026-09-17）
 
 新增 [Math/ForcingLists.lean](../Math/ForcingLists.lean)（普通證明，無 `native_decide`、

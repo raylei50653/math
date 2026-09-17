@@ -61,6 +61,12 @@ triangle 的紙面化約、證書與多 block 停止點見 [c5_pentagon_branches
 末端吸收的任意環數推廣見 [c5_three_triangle_blocks.md](docs/c5_three_triangle_blocks.md)。
 三環共用 cut vertex 的二色禁集介面、18,688 個必要 minors 與恰三環的完整排除見
 [c5_shared_triangle_blocks.md](docs/c5_shared_triangle_blocks.md)；任意多個共用點環仍未解。
+四環共用點鏈的禁集 transfer、24,576 個必要 minors 全排除與下一個分叉型問題見
+[c5_four_triangle_chain.md](docs/c5_four_triangle_chain.md)。
+四環共用點分叉型的 532,608 個必要 minors 全排除，完成四環純共用點連接的
+兩種形狀；bridge 混合型停止點見 [c5_four_triangle_star.md](docs/c5_four_triangle_star.md)。
+Bridge forcer 替換保留 degree-4 與逐邊 minimality，補齊恰四環全部混合連接型；
+任意共用點 cluster 的剩餘缺口見 [c5_shared_pair_bridge.md](docs/c5_shared_pair_bridge.md)。
 
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 
