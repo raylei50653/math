@@ -9,7 +9,112 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新研究：四內點核心與無界 odd-path 家族（2026-09-17）
+## 最新研究：triangle block 的接枝限制（2026-09-17）
+
+報告：[triangle forcing branches](c5_triangle_branches.md)。全 degree-4、
+內部唯一 cycle 為 triangle 的 minimal q-obstruction，triangle 的共同剩餘
+palette 必含未用色 D，向外的 tree edges 至多兩條，且兩條必在不同頂點。
+紙面 forcing／minor 化約加 177,280 個 canonical lifts 的 NetworkX 檢查；
+拒絕端本輪只保存枚舉 hash 與計數，未保存逐例 subdivisions，未新增 Lean。
+
+「最多一枝」被反例否定：不同頂點各接一個兩點 forcer 有 2 個 disk templates，
+均只缺 q；一枝另有 16 個。兩枝八張增長圖的完整 240 rows、disk 與逐邊
+minimality 均通過。任意奇數同-neighborhood 路徑替換的 relation 恆等式可沿用，
+但本輪不把有限 embedding 核對稱為無界 disk 增長證明。
+
+**下一個窄問題：** 比較任意 disk forcing tree 與兩點 forcer 的完整 root-color
+介面（10 canonical boundary rows × 4-bit masks）。minor 壓縮只保持 q 下
+強迫色，不能反推其他 patterns 的可延拓性；先測介面差異，再求 relation 等價。
+不要再只增加 tails 長度，不假定整個 Gallai tree 只有一個 cycle。
+triangle 加任意樹的單缺失性、其他 cycles／多 blocks／degree≥5 與共同出口未解。
+
+重播：`uv run --with networkx==3.5 python scripts/c5_triangle_branches.py --check`，
+再跑 tree checker、`lake build`、本地文件連結與 `git diff --check`。
+驗證通過：triangle、tree、odd-join 三個 checker、`lake build`（8,820 jobs）。
+發布整理另核對 19 個來源／輸入 hashes、158 個本地文件連結與 whitespace；
+研究驗證後僅調整交接文件，未修改已驗證的 scripts／證書。
+**接手順序：** 先讀 [triangle 報告 §1、§3–4](c5_triangle_branches.md)，
+再讀 [tree 報告 §3](c5_tree_cores.md) 的 forcing minor 壓縮；
+從 `artifacts/c5_triangle_branches/observations.json` 的 `disk_templates`
+及 `longer_two_tail_lifts` 取現成基底，勿重啟一般圖枚舉。
+
+**本次發布範圍：** odd-join、tree、triangle 三輪的 scripts、JSON 證書、
+報告及入口文件一併納入本次提交。沒有背景研究程序或待補的實驗結果；
+下一輪從上述 root-color 介面問題開始。前輪段落的問題保留歷史語境，
+最新停止點以本節為準。完整發布重播指令：
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_odd_join_cores.py --check
+uv run --with networkx==3.5 python scripts/c5_tree_cores.py --check
+uv run --with networkx==3.5 python scripts/c5_triangle_branches.py --check
+lake build
+git diff --check
+```
+
+## 前輪研究：任意大小的 degree-4 樹核心分離（2026-09-17）
+
+報告：[degree-4 樹核心](c5_tree_cores.md)。條件式一般結論：disk/T4 minimal
+q-obstruction 若所有有效內點完整 degree 都等於 4，且內部圖是樹，就只拒絕 q。
+紙面 forcing／minor／路徑化約加 Python 有限證書；未新增 Lean theorem。
+
+樹邊切開的兩個 rooted components 都唯一強迫同一個 edge palette。
+任意 forcing subtree 可壓成一點 D-forcer 或兩點 A-forcer；因此分叉必產生
+六內點 Y minor。2,304 個 Y lifts 全部非 disk，逐一保存 subdivision 證書。
+所以內部圖必為偶數路徑。其 palettes 可改變，但小型拓撲排除迫使至多一次
+切換；每個恆定 run 再以完整 relation 等價縮成兩點，得到二／四／六內點基底。
+
+兩-run 路徑是新的無界非 odd-join 家族，仍只缺指定 singleton。
+另測一個「兩個 K4−e 接合再加 universal vertex」的八點 quotient：2,048 個 lifts、
+48 個 disk、32 個 disk/T4，全都只缺 q。其中 16 個 disk lifts 全 degree-4，
+內部形狀是三角形加尾巴，指出下一個未解 cyclic block；不是所有五內點的分類。
+
+**下一個窄問題：** 先研究全 degree-4、含一個 triangle／odd-cycle block 的核心。
+能否把掛在 block 上的 forcing trees 化成有限 attachments，並保存證單缺失
+所需的 relation？新報告 §3 的壓縮只保 minor，不能直接當 relation 等價；
+一般 Gallai tree 也可能有多個 cycle blocks，不能默認只有一個。
+含 degree≥5 的核心與共同 pivotal edge 都仍獨立未解。
+
+**接手順序：** 新報告 §2–4 的強迫色與分叉排除，再讀 §5 的 path word 化約，
+最後 §6 的五內點 cyclic probe。單側出口若失敗，該側每個 minimal core 都不屬於
+odd-join，且至少有 degree≥5 內點或 cycle；一般候選 A 尚未證。
+沒有背景研究工作；本節產物與 odd-join、triangle 後續成果一併納入本次發布提交。
+
+重播：`uv run --with networkx==3.5 python scripts/c5_tree_cores.py --check`，
+再跑 odd-join checker、`lake build` 與文件檢查。
+驗證通過：兩個 checkers、`lake build`（8,820 jobs）、150 個本地連結與 whitespace。
+新拒絕端共有 3,070 份逐路徑核對的 subdivision 證書，另引用前輪 256 份。
+
+## 前輪研究：整個 odd-join 家族的單缺失分離（2026-09-17）
+
+報告：[整個 odd-join 家族](c5_odd_join_cores.md)。上一停止點的任意奇環長度問題
+已有條件式一般結論：若 disk/T4 minimal q-obstruction 的 boundary-color quotient
+是 `K2 ∨ C_(2m+1)`，則它只拒絕 q。紙面化約加 Python 有限證書，未新增 Lean theorem。
+
+Boundary triangle 只有兩種位置。若路徑中段 attachments 不恆定，可取兩個不同
+中段點並收縮其他路段，得到固定大小的非 disk minor；384 個必要排除例全有
+可逐邊核對的 K5／K3,3 subdivision。故中段接線恆定；奇偶路徑著色公式再把
+任意長度縮成四內點，同時保存完整 relation。K5 小基底另處理。
+這一次覆蓋整個 quotient 家族，不只原先的一條可伸長構造。
+
+移除 disk 條件有明確負控制：同一 quotient 家族可接受全部 T4 並缺兩個 singleton。
+另對 48 個較長 lifts 核對全部 240 boundary rows；有限核對不是無界結論本身。
+一般候選 A 的單側與共同出口仍未證；單側出口若失敗，該側每個 minimal core
+至少五有效內點，且都不屬於此 odd-join 家族。
+
+**下一個窄問題：** 研究 odd-join 之外的 minimal quotient。先從 degree-4 Gallai
+部分與 degree≥5 內點的接線找下一種 critical 機制，問它能否接受 T4 並同時拒絕
+另一個 singleton，再檢查有序 C5 lifts 的 disk 合法性。不直接擴大一般 k=5
+枚舉，不再增加奇環長度；共同 pivotal edge 是另一個尚未處理的缺口。
+
+**接手順序：** 讀新報告 §2–4 的兩型、minor 化約與完整 relation 等價，再看 §5
+非 disk 控制。不要將 boundary 色類識別視為 planar contraction，也不要假設所有
+minimal obstructions 都是 odd-join。沒有背景研究工作；本節產物一併納入本次發布提交。
+
+重播：`uv run --with networkx==3.5 python scripts/c5_odd_join_cores.py --check`，
+另跑 four-vertex、list-core checkers、`lake build` 與文件檢查。
+驗證通過：三個 checkers、`lake build`（8,820 jobs）、144 個本地連結與 whitespace。
+
+## 前輪研究：四內點核心與無界 odd-path 家族（2026-09-17）
 
 報告：[四內點最小阻礙](c5_four_vertex_cores.md)。候選 A 一般三出口仍未證。
 接續 list-critical 化約，完整核對四有效內點的六個連通內部形狀與所有可用 lists，

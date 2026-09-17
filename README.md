@@ -39,6 +39,14 @@ degree-4 Gallai 結構與局部構造探針見
 四內點核心的完整 list 分型、單側出口障礙的五內點下界，
 以及無界 odd-path 最小阻礙家族見
 [c5_four_vertex_cores.md](docs/c5_four_vertex_cores.md)。
+整個 `K2 ∨ C_(2m+1)` quotient 家族的單缺失分離、有限拓撲 minor 證書與
+任意長度的 relation-preserving 路徑縮減見
+[c5_odd_join_cores.md](docs/c5_odd_join_cores.md)；一般三出口仍未證。
+任意大小的 degree-4 樹核心分離、forcing minor 排除分叉、至多一次 palette 切換，
+以及第一個五內點 cyclic quotient 探針見
+[c5_tree_cores.md](docs/c5_tree_cores.md)。
+單 triangle block 的接枝位置限制、兩尾 disk 存活者與 root-color 介面缺口見
+[c5_triangle_branches.md](docs/c5_triangle_branches.md)。
 
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 
