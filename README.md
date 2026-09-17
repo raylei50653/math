@@ -47,6 +47,10 @@ degree-4 Gallai 結構與局部構造探針見
 [c5_tree_cores.md](docs/c5_tree_cores.md)。
 單 triangle block 的接枝位置限制、兩尾 disk 存活者與 root-color 介面缺口見
 [c5_triangle_branches.md](docs/c5_triangle_branches.md)。
+兩點 root／bridge 介面的四點路徑反例，以及 triangle context 的有限篩選見
+[c5_root_interfaces.md](docs/c5_root_interfaces.md)。
+任意長度的 triangle 路徑枝單缺失化約、160 個拒絕端 subdivision 與分叉停止點見
+[c5_triangle_path_reduction.md](docs/c5_triangle_path_reduction.md)。
 
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 

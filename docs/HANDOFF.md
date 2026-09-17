@@ -9,7 +9,74 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新研究：triangle block 的接枝限制（2026-09-17）
+## 最新研究：triangle 加任意長路徑枝（2026-09-17）
+
+報告：[triangle 路徑枝化約](c5_triangle_path_reduction.md)。條件式一般結論：
+全 degree-4 的 disk/T4 minimal q-obstruction 若內部唯一 cycle 是 triangle，
+且外掛樹都是從接枝 root 開始的路徑，則只缺 q；路徑長度無上界。
+紙面 minor／transfer 化約加 Python 有限證書，未新增 Lean theorem。
+
+先把每枝縮成保留原 root／leaf spokes 的 endpoint minor，必落入既有 18 個
+canonical disk bases。120 個切換 minor 排除異 palette；20 個三-run minors
+排除接線來回改變。但「同 palette 接線恆定」是錯的：合法兩-run 只能是
+`X,Y^(2m),leaf`，且僅在單枝 context 出現。八個 `X,X,Y,leaf` minors 非 disk。
+
+奇偶 transfer 把任意長枝縮成兩點或八個四點正常形；八個的完整 bridge 介面
+皆等於原 endpoint 兩點枝，故逐枝替換保持 relation，最後只缺 q。
+本輪全部 160 個拒絕模板保存 subdivision；沿用的 18-base 完備性仍依賴前輪
+canonical 枚舉。前輪 standalone 四點反例仍成立，不能移除 triangle context。
+
+**下一個窄問題：** 處理 triangle 外掛樹的第一個分叉。保留 triangle 側，
+壓縮朝外純樹分支，測 triangle–path–fork 的固定 minors；不能直接套用純樹
+Y-minor，因朝 triangle 的分量含 cycle。不要再增加無分叉 tails 長度。
+接手先讀新報告 §2–5、§7，再看 tree 報告 §3 的 forcing minor 壓縮。
+
+重播：`uv run --with networkx==3.5 python scripts/c5_triangle_path_reduction.py --check`，
+再跑 root-interface、triangle checkers、`lake build`、文件與 whitespace 檢查。
+驗證通過：三個 checkers、`lake build`（8,820 jobs）、154 個文件連結、
+11 個來源／輸入 hashes 與 whitespace。發布整理另核對 155 個文件連結及上述
+hashes，未改動已通過重播的研究 scripts／證書。沒有背景研究或未完成的實驗。
+**本次發布範圍：** root-interface 與 triangle-path-reduction 兩輪的 scripts、
+JSON 證書、報告，以及 README／本交接文件一併提交。研究已停止在上述第一個
+分叉問題，沒有待補的實驗或背景程序。以下前輪的「下一個問題」保留歷史語境，
+最新接手範圍以本節為準。完整重播：
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_triangle_path_reduction.py --check
+uv run --with networkx==3.5 python scripts/c5_root_interfaces.py --check
+uv run --with networkx==3.5 python scripts/c5_triangle_branches.py --check
+lake build
+git diff --check
+```
+
+## 前輪研究：root 介面反例與 triangle context（2026-09-17）
+
+報告：[root 介面與 context](c5_root_interfaces.md)。任意 disk forcing tree
+不能直接用兩點枝保持完整 root 介面；四點路徑已是反例。單 bridge 真正只需
+每列的「空／singleton 四種／至少兩色」六值資訊，此充分性有直接拼接證明；
+降到這個介面後，仍有四點路徑無任何同規格兩點 disk 代表。
+
+完整測試 2、4、6 點的 path palette grammar：19,232 lifts、243 個 disk，
+52 種 root signatures、41 種 bridge signatures。111 個 lifts 無兩點 root
+代表，其中 99 個連 bridge 代表也沒有。全部 240 root masks 以 DP 與獨立
+pinned-root 回溯交叉核對，未新增 Lean theorem。
+
+將它們逐一替換上一輪 18 個 triangle templates 的單一 branch slot：800 次
+接合中 108 次是 disk，全部只缺 q、逐邊 minimal；新介面全被排除。
+這只涵蓋固定 contexts 和短路徑，沒有證明任意 triangle forcing tree 化約。
+
+**下一個窄問題：** 尋找 triangle context 排除 palette 切換及同 palette
+異 attachments 的固定 minor，先處理路徑再處理分叉，目標是 bridge 介面等價
+且可同面替換。不要再嘗試無 context 的兩點介面普遍等價；保留新四點負控制。
+接手先讀新報告 §1–2、§4–5，再讀 triangle 報告 §1 的接枝限制。
+
+重播：`uv run --with networkx==3.5 python scripts/c5_root_interfaces.py --check`，
+再跑 triangle checker、`lake build`、文件連結與 `git diff --check`。
+驗證通過：新 checker 逐 byte 重播、triangle checker、`lake build`（8,820 jobs）、
+147 個文件連結、9 個來源／輸入 hashes 與 whitespace。
+本輪產物與後續 triangle 路徑枝化約一併發布；最新停止點見文件頂端。
+
+## 前輪研究：triangle block 的接枝限制（2026-09-17）
 
 報告：[triangle forcing branches](c5_triangle_branches.md)。全 degree-4、
 內部唯一 cycle 為 triangle 的 minimal q-obstruction，triangle 的共同剩餘
