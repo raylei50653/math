@@ -1,7 +1,7 @@
 # 文件狀態與可能變化追蹤
 
-更新日期：2026-09-17。前輪整理基準為 `fb6216e`；本輪從 `76e6f44` 的乾淨
-工作樹接手，完成 triangle-tree palette／minor 研究，結果見 §6。
+更新日期：2026-09-17。前輪整理基準為 `fb6216e`；目前 HEAD 為 `7fdc19e`。
+恰一個長環研究見 §7；本輪保留其未提交成果，完成多長環遞迴與連續縮減，見 §8。
 此頁是目前文件索引及後續觀察紀錄，詳細數學敘述仍以原報告為準。
 研究主入口是 [HANDOFF.md](HANDOFF.md)，逐輪原始交接保存在
 [HANDOFF_HISTORY.md](HANDOFF_HISTORY.md)。新成果是紙面歸納與化約控制，未擴大 disk catalog。
@@ -11,7 +11,7 @@
 | 需求 | 入口 | 用途 |
 | --- | --- | --- |
 | 接續當前研究 | [HANDOFF.md](HANDOFF.md) | 現況、精確停止點、信任界線及最小重播命令 |
-| 找報告或追蹤待變化項目 | 本頁 §2–4 | 68 份專題文件的分組索引、已被後續處理的舊問題、仍待驗證的方向 |
+| 找報告或追蹤待變化項目 | 本頁 §2–4 | 70 份專題文件的分組索引、已被後續處理的舊問題、仍待驗證的方向 |
 | 核對主命題與證明路線 | [C5 boundary relations](c5_boundary_relations.md) | K∞=K≤5、有界代表與局部壓縮的區分；§5.1 是早期路線成果，近期 block 進度見交接 |
 | 核對某項數學結論 | §2 對應專題報告 | 前提、紙面論證、具名 Lean 定理、script／artifact 與驗證限制 |
 | 查當時的數字、命令或發布說明 | [歷史交接](HANDOFF_HISTORY.md) | 原 2,695 行全文保留；「最新／下一步／未提交」只描述各輪當時狀態 |
@@ -38,6 +38,8 @@
 | [互斥多環](c5_three_triangle_blocks.md)、[三環共用點](c5_shared_triangle_blocks.md) | 頂點互斥 triangles 任意總數至多二；恰三環全部連接型排除；不能把「互斥」限制去掉 |
 | [四環鏈](c5_four_triangle_chain.md)、[四環分叉](c5_four_triangle_star.md)、[bridge pruning](c5_shared_pair_bridge.md) | 恰四環全部連接型排除；其下一題由新 triangle-tree 報告處理；一般替換仍是紙面，介面及拓撲控制為 Python 證書 |
 | [任意 triangle tree](c5_triangle_tree_palettes.md) | 七種介面歸納、非 D 二色禁集吸收與閉鄰域 minor；全 degree-4 連通 triangles／bridges 類別中，triangles 必互斥且至多二，不需 T4；未 Lean 化 |
+| [長 odd-cycle root](c5_odd_cycle_roots.md) | 一般 root 有十一種介面；不可著色時仍為互補 pairs；保留三點縮成 triangle，排除恰一個長環加任意 triangles／bridges，不需 T4；紙面＋既有證書，未 Lean 化 |
+| [多長 odd-cycle](c5_multi_odd_cycles.md) | 十一種介面在任意有限環樹封閉；連續 minor 排除 odd-cycles／bridges 類別中的所有長環，剩餘 triangles 互斥且至多二；不需 T4，紙面＋有限證書，未 Lean 化 |
 
 ### 2.2 Kempe、計數與固定圖策略
 
@@ -79,9 +81,11 @@
 | 四環鏈的「下一題分叉型」 | [四環分叉](c5_four_triangle_star.md) 已完成 |
 | 四環分叉的「bridge 混合型未涵蓋」 | [bridge pruning](c5_shared_pair_bridge.md) 已補齊恰四環；任意 cluster 再由下一列的新報告處理 |
 | bridge pruning 的「任意共用點 cluster 未解」 | [palette／minor 報告](c5_triangle_tree_palettes.md) 已排除任意大小的非平凡 cluster；下一題是較長 odd-cycle 的共用點介面 |
+| triangle-tree 的「下一題一個長 odd-cycle」 | [長環 root 報告](c5_odd_cycle_roots.md) 已完成介面分類及恰一個長環的排除 |
+| 長環 root 的「下一題兩個長環」 | [多長環報告](c5_multi_odd_cycles.md) 已完成兩環的連續縮減，並明列任意多長環的歸納與終止論證；下一題為 K4／bridge 介面 |
 | 較早 handoff 的「completion 未證」 | [同頂點 completion](c5_completion_weak_bisimulation.md) 已有紙面證明；topology 未 Lean 化仍成立 |
 | 較早 block 報告說「未新增 Lean theorem」 | 指該輪整個化約；後來共有 list 引理進入 [ForcingLists.lean](../Math/ForcingLists.lean)，不代表 minor／disk 論證也進入 Lean |
-| 各輪「尚未提交／推送」 | 屬於當時狀態；前輪整理的 `fb6216e` 已包含此前三輪成果。本輪從 `76e6f44` 接手，新工作隨本次 commit 保存，未 push |
+| 各輪「尚未提交／推送」 | 屬於當時狀態；從 `7fdc19e` 接續的兩輪長環研究隨本次提交一併發布；即時發布狀態以 Git 為準 |
 | enumerator 兩個「§14」 | edge-mask 仍為 §14；獨立 cross-check 改為 §16，對應導引一併更正 |
 
 本輪對近期主線報告補上後續連結，保留原輪次內容。歷史交接以快照方式保存，
@@ -90,7 +94,7 @@
 ## 4. 可能出現新變化的地方
 
 以下起於 **2026-09-17 閱讀既有材料時的追蹤紀錄**。R1–R3 已由同日接手研究
-完成，R4–R6 保留，新增 R7。各項成果層級與範圍仍以連結報告為準。
+完成，R4–R6 保留；後續完成 R7–R8，新增 R9。各項成果層級與範圍仍以連結報告為準。
 
 ### R1：bridge pruning 給出任意總環數的 cluster 隔離
 
@@ -148,11 +152,32 @@
 
 ### R7：較長 odd-cycle 與 triangles 共用點的介面
 
+- **狀態：2026-09-17 已完成，紙面論證與有限控制。**
+- [長環 root 報告](c5_odd_cycle_roots.md)：一般七種介面不封閉，須加四種
+  三色集合；不可著色的 mixed cluster 仍強迫相鄰環互補 pairs。
+- 保留長環三點及至少一個共用點，縮成 triangle，透過 degree-list 貪婪
+  引理核對 minimality，接回 triangle-tree 排除。全 degree-4、恰一個
+  長 odd-cycle 加任意 triangles／bridges 的 disk minimal q-obstruction 不存在。
+- 不需 T4；未聲稱完整 Σ 保持或新增 Lean theorem。30 個具名 minor 控制
+  已連到既有小型模板 subdivisions；一般覆蓋由紙面論證承擔。
+
+### R8：兩個長 odd-cycle blocks 的介面與連續縮減
+
+- **狀態：2026-09-17 已完成，紙面論證與有限控制。**
+- [多長環報告](c5_multi_odd_cycles.md)：十一種訊息在任意有限 odd-cycle
+  tree 封閉，不可著色仍等價於互補 palettes；三色訊息只能出現在可著色配置。
+- 保留兩長環間的路徑，連續縮減每步維持 boundary 固定、degree、q 拒絕及
+  minimality。另固定環樹一條邊，按長環數嚴格下降，明確涵蓋任意多長環。
+- 全 degree-4、連通的 odd-cycles／bridges disk minimal q-obstruction
+  沒有長環，triangles 必互斥且至多二。不需 T4；未宣稱完整 Σ 或新增 Lean theorem。
+
+### R9：K4 block 的三色 residual lists 與 bridge 介面
+
 - **狀態：下一個窄問題，未啟動。**
-- 範圍：全 degree-4、只有一個長度至少 5 的 odd-cycle block，其他非 bridge
-  blocks 為 triangles。先求 root 可取色集合與 minimality 必要條件。
-- 不先假定 triangle 的七種介面封閉；只有前提吻合才套用
-  [兩-spoke 引理](c5_triangle_tree_palettes.md)。一般 K4／混合長環與 degree≥5 仍獨立保留。
+- 在完整 degree=4 下，K4 無法與其他 cycle block 共用點，只能經 bridges
+  接到其餘 blocks。先核對其四頂點的三色 residual lists／bridge forcing。
+- 再找 boundary 固定的必要 minor 或 disk 排除；保留新 spokes 的 minimality
+  核對。含 K4 的一般 block tree 及 degree≥5 尚未由 R8 涵蓋。
 
 ## 5. 前輪文件整理與驗證紀錄（基準 fb6216e）
 
@@ -189,3 +214,35 @@ deletion audit 或 k=6／7 搜尋。那些結果引用原報告及其既有驗�
 
 無界結論依賴新紙面歸納／minor 及既有小型 topology 證書，不能把結構控制
 視為一般定理的計算證明。本輪產物隨本次 commit 保存，未 push；停止在 R7，未啟動大枚舉。
+
+## 7. 長 odd-cycle 研究與驗證紀錄（基準 7fdc19e）
+
+完成 R7，新報告、script、artifact 已整合至 README／HANDOFF。
+既有 scripts／artifacts、Lean 原始碼與歷史交接未改；沒有新 planarity search。
+
+| 本輪核對 | 結果 |
+| --- | --- |
+| 新 `c5_odd_cycle_roots.py --check` | 逐 byte 重播通過；C3／C5／C7 共 120,099 個 rooted 輸入、16,807 個 unrooted C5 輸入、30 個具名 shortening 控制；核對 root、criticality、branch sets、目標同構及既有 pruning／subdivisions |
+| triangle-tree checker | 49 個 apex、343 個根 triangle、48 個替換輸入、48 個結構控制與 63 次 pruning 重播通過 |
+| pentagon checker | 67,648 個既有 lifts、56 份 subdivisions 全量重播通過 |
+| `lake build` | 通過，8,821 jobs；僅既有 `AttachmentOrder`／`SymRelabel` lint 警告。本輪無 Lean 修改，未重跑公理審計 |
+| 文件與 whitespace | 623 個 README／docs 本地檔案連結存在、69 份專題報告有索引；新檔 whitespace 與 `git diff --check` 通過 |
+
+沒有重跑更早六份 triangle 依賴的全量枚舉，也沒有擴大 disk catalog。
+新結果是紙面論證與有限證書；主命題仍未證。研究未 commit／push，停止在 R8。
+
+## 8. 多長 odd-cycle 研究與驗證紀錄（基準 7fdc19e，接續未提交成果）
+
+完成 R8，並以明確歸納及終止論證推廣到任意有限長環數。新增報告、script、
+artifact，更新 README／HANDOFF 與前報告後續入口；前輪程式／證書原封保留。
+
+| 本輪核對 | 結果 |
+| --- | --- |
+| 新 `c5_multi_odd_cycles.py --check` | 逐 byte 重播通過：14,762 個 rooted 輸入、121 對介面接合、2 個三色遞迴控制、60 個結構控制及 138 次縮減；各中間圖核對 degree／criticality／root 訊息，branch sets 合成回來源並接既有小模板 subdivisions |
+| 三份直接依賴 checker | odd-cycle root、triangle-tree、pentagon 均通過；單環 67,648 lifts／56 subdivisions 沿用既有證書全量重播，無新 planarity search |
+| `lake build` | 通過，8,821 jobs；只有既有 `AttachmentOrder`／`SymRelabel` lint；本輪無 Lean 修改，未重跑公理審計 |
+| 文件與 whitespace | 636 個 README／docs 本地檔案連結存在、70 份專題報告有索引；新檔 whitespace 及 `git diff --check` 通過 |
+
+沒有擴大 disk catalog 或重播更早六份 triangle 依賴的全量枚舉。任意長度／
+環數的覆蓋屬紙面證明，固定 q minor 不聲稱完整 Σ 保持。兩輪研究的程式、
+證書、報告與交接隨本次提交一併發布；停止在 R9 的 K4／bridge 介面，主命題仍未證。

@@ -1,9 +1,9 @@
 # 研究交接：目前狀態與接手入口
 
 更新：2026-09-17。工作目錄 `/home/ray/math`。
-本輪接手基準是本地 HEAD `76e6f44`；開始時工作樹乾淨。
-新增任意 triangle tree 的紙面 palette／minor 論證與 Python 控制；未新增
-Lean theorem。本輪產物隨本次 commit 保存，未 push；前輪整理基準 `fb6216e` 見 STATUS §5。
+本輪接手基準是本地 HEAD `7fdc19e`；接手時前輪長環成果尚未提交，已保留。
+新增多長 odd-cycle 遞迴／連續 minor 論證與 Python 控制；未新增 Lean theorem。
+兩輪研究與程式／證書隨本次提交一併發布；前輪紀錄見 STATUS §7，本輪見 §8。
 
 先讀本頁，再讀 [文件狀態與變化追蹤](STATUS.md) 及指定報告。
 逐輪數字、舊停止點與發布紀錄完整保存在 [歷史交接](HANDOFF_HISTORY.md)。
@@ -16,16 +16,16 @@ Lean theorem。本輪產物隨本次 commit 保存，未 push；前輪整理基�
 候選 A 的 minimal obstruction 路線：先研究單側出口，再處理共同出口。
 這裡的「相鄰雙缺失」與舊 Kempe 路線的「相鄰可實現 singleton」是不同命題。
 
-最新報告是 [任意 triangle tree 的 palette 與共用點排除](c5_triangle_tree_palettes.md)：
-在 C5 disk、固定三色 pattern q、所有有效內點完整 degree=4、內部連通、
-逐非 boundary 邊 minimal q-obstruction 的前提下，若 blocks 只有 triangles
-與 bridges，則 **triangles 必頂點互斥，且總數至多二**。不需 T4，
-允許任意外掛樹、bridge 連接樹，原先不限制環數。
+最新報告是 [多長 odd-cycle 的遞迴與連續縮減](c5_multi_odd_cycles.md)：
+一般 rooted 奇環的十一種介面在任意有限環樹封閉；全 cluster 不可著色仍
+強迫互補二色 palettes。先處理兩長環的接合位置與兩種收縮次序，再以保留
+一條環樹邊、長環數嚴格下降的終止證明涵蓋任意多長環。
 
-相鄰 triangle palettes 必互補。不含 D 的子樹二色禁集可替換成共享點上的
-兩條 spokes，保持 boundary 固定的 minor、degree-4、固定 q 及逐邊 minimality。
-保留一個不含 D 的中心環及全部鄰環，便縮到已排除的二／三／四環星形。
-**沒有證明替換保持完整 Σ；較長 odd-cycle／K4 混合 blocks 仍未處理。**
+因此在 C5 disk、固定三色 q、所有有效內點完整 degree=4、內部連通、逐非
+boundary 邊 minimal q-obstruction 的前提下，**若 blocks 只有 odd cycles
+與 bridges，便沒有長度至少 5 的 cycle；triangles 必頂點互斥且至多二**。
+不需 T4，外掛樹與原始環數不限。縮圖 minimality 由 degree-list 貪婪引理
+獨立保證。**未聲稱完整 Σ 保持；含 K4 的 block tree 仍未處理。**
 
 | 已處理範圍 | 結果與前提 | 報告 |
 | --- | --- | --- |
@@ -36,6 +36,8 @@ Lean theorem。本輪產物隨本次 commit 保存，未 push；前輪整理基�
 | 所有 triangles 頂點互斥，其餘 blocks 為 bridges | triangle 數至多二，允許任意總環數；不需 T4 | [互斥多環](c5_three_triangle_blocks.md) |
 | 恰三／四個 triangle blocks，其餘為 bridges | 全部連接型排除；不需 T4 | [三環](c5_shared_triangle_blocks.md)、[四環](c5_shared_pair_bridge.md) |
 | 任意 triangles／bridges block tree | 無非平凡共用點 cluster，triangles 必互斥且至多二；不需 T4 | [任意 triangle tree](c5_triangle_tree_palettes.md) |
+| 恰一個長 odd-cycle，其餘 triangles／bridges | 全部排除，不需 T4；一般 root 有十一種介面，obstruction 仍用互補 pairs | [長環 root](c5_odd_cycle_roots.md) |
+| 任意 odd cycles／bridges block tree | 沒有長環；triangles 互斥且至多二，不需 T4；任意深度遞迴與連續縮減 | [多長環](c5_multi_odd_cycles.md) |
 
 以上各 block 結果都是紙面化約配合 Python 有限證書；不能統稱已 Lean 化。
 共同 forcing-list 基礎已有 [Math/ForcingLists.lean](../Math/ForcingLists.lean)：
@@ -45,19 +47,17 @@ bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle �
 
 ## 2. 精確停止點與下一個窄問題
 
-**一個長度至少 5 的 odd-cycle block，與 triangles 共用 cut vertices 時的 root 介面。**
-先讀 [新 palette／minor 報告 §2–4](c5_triangle_tree_palettes.md)，再讀
-[單環排除](c5_pentagon_branches.md)。triangle-tree 分支已完成，不再增加環數。
+**全 degree-4 情形中的 K4 block 與 bridge 介面。**
+先讀 [新報告 §1–4、§6](c5_multi_odd_cycles.md)。R8 完成，包括任意多長環。
 
-1. 求 odd-cycle 的 rooted 可取色集合，先檢查 triangle 的七種介面是否仍封閉。
-2. 區分一般 list 配置與 minimal obstruction 真正允許的配置，再找必要 minor。
-3. 若使用兩-spoke 替換，核對禁集不含 D、對側 root 能取禁集中的每色、
-   degree 與 boundary 固定等前提；完整 Σ 不在已證保留範圍。
+1. 核對 K4 四個頂點扣除外枝後的三色 residual lists 與 bridge forcing。
+2. 在 degree=4 範圍，K4 無法與另一 cycle block 共用點；先處理 bridge 連接。
+3. 尋找 boundary 固定的必要 minor 或 disk 排除；不要假設完整 Σ 保持。
 
 不直接增加五環 catalog、bridge 路徑長度或外掛樹深度。
-R1–R3 已由本輪處理；其他追蹤項目與新 R7 見 [STATUS.md](STATUS.md)。
+R1–R3、R7–R8 已處理；其他追蹤項目與新 R9 見 [STATUS.md](STATUS.md)。
 
-一般多環中較長 odd-cycle／K4 blocks、degree≥5 內點仍未處理。
+含 K4 的一般 block tree、degree≥5 內點仍未處理。
 triangle-tree 分支完成後，一般單側出口、共同 pivotal edge、候選 A、
 一般 weak-deletion congruence 與 `K∞=K≤5` 仍需各自的證明。
 
@@ -94,12 +94,14 @@ triangle-tree 分支完成後，一般單側出口、共同 pivotal edge、候�
 
 ## 5. 重播入口與本次核對
 
-最新研究的最小入口（完整六份依賴重播見 [報告 §5](c5_triangle_tree_palettes.md)）：
+最新研究的最小入口（依賴與信任範圍見 [報告 §5](c5_multi_odd_cycles.md)）：
 
 ```bash
+uv run --with networkx==3.5 python scripts/c5_multi_odd_cycles.py --check
+uv run --with networkx==3.5 python scripts/c5_odd_cycle_roots.py --check
 uv run --with networkx==3.5 python scripts/c5_triangle_tree_palettes.py --check
+uv run --with networkx==3.5 python scripts/c5_pentagon_branches.py --check
 lake build
-lake env lean Math/ForcingListsAudit.lean
 git diff --check
 ```
 

@@ -1,5 +1,11 @@
 # 任意 triangle tree 的 palette 規則與共用點排除
 
+後續：[長 odd-cycle 的 root 介面](c5_odd_cycle_roots.md) 已處理本文的下一題：
+一般七種介面不封閉，但不可著色時仍有互補 palettes；恰一個長環與任意
+triangles／bridges 的情形已排除。本文證書保留為依賴，現況見 [交接](HANDOFF.md)。
+再後續的 [多長環報告](c5_multi_odd_cycles.md) 已排除任意 odd-cycles／bridges
+類別中的所有長環，並接回本文的 triangles 互斥且至多二結論。
+
 2026-09-17。接手 HEAD `76e6f44`、工作樹乾淨；接續
 [bridge pruning](c5_shared_pair_bridge.md) 的任意共用點 cluster 問題。
 
