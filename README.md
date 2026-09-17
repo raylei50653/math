@@ -51,6 +51,8 @@ degree-4 Gallai 結構與局部構造探針見
 [c5_root_interfaces.md](docs/c5_root_interfaces.md)。
 任意長度的 triangle 路徑枝單缺失化約、160 個拒絕端 subdivision 與分叉停止點見
 [c5_triangle_path_reduction.md](docs/c5_triangle_path_reduction.md)。
+任意外掛樹的第一個分叉已由 90,112 個 minors 全數排除；單 triangle、全 degree-4
+的單缺失推廣與下一個 cycle-5 問題見 [c5_triangle_forks.md](docs/c5_triangle_forks.md)。
 
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 

@@ -9,7 +9,39 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新研究：triangle 加任意長路徑枝（2026-09-17）
+## 最新研究：triangle 外掛樹的分叉排除（2026-09-17）
+
+報告：[triangle 第一個分叉](c5_triangle_forks.md)。接手時工作區乾淨，
+HEAD 為 `1c6948b`；本輪接續指定的第一個分叉問題，未重啟歷史搜尋。
+
+保留 triangle 側，將最近分叉的朝外 forcing trees 壓成一／兩點 minors；
+degree-4 分叉可先吸收一個朝外非 D 分支，化成 degree-3。刪掉通往
+triangle 的 stem 中間點 spokes 再收縮，只剩 **90,112 個固定 lifts**，
+全部非 disk；**88 份共用 subdivisions** 覆蓋所有 lifts。
+收縮後容許 triangle 端 c 與 fork 端 p 不同，不假設保持 q-obstruction。
+
+因此全 degree-4、內部唯一 cycle 是 triangle 的 disk minimal q-obstruction
+不可能有外掛樹分叉。結合前輪任意長路徑枝化約，若接受全部 T4，則只缺 q；
+現在外掛樹大小與深度均不限。這是紙面 minor 化約加 Python 有限證書，
+未新增 Lean theorem，也未解一般 odd cycles、多 blocks、degree≥5 或 K∞=K≤5。
+
+**下一個窄問題：** 內部唯一 cycle 長度 5，先測共同 palette 與接枝位置的
+必要 minors；不要直接沿用 triangle 的 palette 含 D／至多兩枝結論。
+最新接手入口為新報告 §2–4、§6；以下舊「下一步」只保留歷史語境。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_triangle_forks.py --check
+uv run --with networkx==3.5 python scripts/c5_triangle_path_reduction.py --check
+lake build
+git diff --check
+```
+
+新 checker 重建每個 lift 並驗 subdivision，重播不依賴 planarity search。
+本次提交包含 script、JSON 證書、報告及 README／HANDOFF 更新；未推送。
+驗證通過：新 checker、path-reduction checker、`lake build`（8,820 jobs）、
+153 個文件連結、七個來源 hashes 與 whitespace；沒有背景研究程序。
+
+## 前輪研究：triangle 加任意長路徑枝（2026-09-17）
 
 報告：[triangle 路徑枝化約](c5_triangle_path_reduction.md)。條件式一般結論：
 全 degree-4 的 disk/T4 minimal q-obstruction 若內部唯一 cycle 是 triangle，
