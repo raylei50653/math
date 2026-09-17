@@ -9,7 +9,144 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新研究：triangle 外掛樹的分叉排除（2026-09-17）
+## 最新研究：三環共用 cut vertex 的排除（2026-09-17）
+
+報告：[三環共用 cut vertex](c5_shared_triangle_blocks.md)。全 degree-4、
+內部連通、恰三個 triangle blocks 且其餘 blocks 為 bridges 的 disk minimal
+q-obstruction 不存在，不需 T4。本輪補齊共用點情形，結合前輪互斥三環
+排除，完成恰三環的全部連接型態；允許任意外掛樹與 bridge 連接樹。
+
+只有一對共用點時，第三環的 palette 必含 D，可沿其朝內 bridge 吸收
+整個非 D 強迫分量，歸回兩環共用點排除。三環共用點鏈則有兩個飽和
+共享頂點：兩端環各給二色禁集 P、Q，中間非共用點給二色 list R；
+不可著色恰為 P=Q=四色\R。7,776 個 residual-list 配置獨立核對此介面。
+依 R 是否含 D 保留四個／一個 D-forcer，18,688 個必要 minors 全非 disk，
+54 份 K3,3 subdivisions 覆蓋，六個 palette controls 核對逐邊 criticality。
+
+這是紙面化約加有限 Python 證書，未新增 Lean theorem；未宣稱吸收保持
+完整 relation。**尚不能推出任意共用點 block tree 的 triangle 數至多二**：
+共用點的二色禁集不能當成 bridge 的 singleton 強迫色。
+
+**下一個窄問題：** 四個 triangles 依序共用不同 cut vertices 的鏈。
+先推導末端二色禁集穿過下一環的 transfer，再判斷是否能保留必要 minor
+縮到三環；不再增加 bridge 路徑或外掛樹深度。接手讀新報告 §1–5。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_shared_triangle_blocks.py --check
+uv run --with networkx==3.5 python scripts/c5_three_triangle_blocks.py --check
+uv run --with networkx==3.5 python scripts/c5_two_triangle_blocks.py --check
+lake build
+git diff --check
+```
+
+本次發布包含 cycle-5、兩 triangle blocks、互斥三環與共用點三環四輪的
+scripts／證書／報告，以及 README／HANDOFF。研究停止在上述四環共用點鏈，
+驗證結果見新報告末尾；沒有背景研究程序。
+以下舊停止點保留歷史語境，以本節為準。
+
+## 前輪研究：互斥 triangle blocks 至多二（2026-09-17）
+
+報告：[三個互斥 triangle blocks](c5_three_triangle_blocks.md)。全 degree-4、
+內部連通、所有非 bridge blocks 為頂點互斥 triangles 的 disk minimal
+q-obstruction，triangle 數至多二。不需額外 T4 假設；允許任意外掛樹與
+連接樹，但不涵蓋 triangles 共用 cut vertex。
+
+關鍵新步驟：非 D 強迫分量吸收成一條 spoke，不只保 minor，也保留固定 q
+的逐邊 minimality 與 degree-4。因此吸收末端 triangle 後可套前輪兩環分類，
+將任意三環連接樹歸到九內點、兩條直接 bridges、無外掛樹的正常形。
+中間環同點／異點接橋的 50,688／101,440 個 lifts 全非 disk，806 份共用
+subdivisions 覆蓋，72 個 palette controls 核對 degree 與逐邊 criticality。
+再反覆吸收末端環，排除任意 k≥3 的互斥 triangle blocks。
+
+這是紙面化約加有限 Python 證書，未新增 Lean theorem；未宣稱完整 relation
+或 rooted interface 在吸收下不變。單 triangle 單缺失仍保留既有 T4 條件。
+
+**下一個窄問題：** 三個 triangle blocks 中至少一對共用 cut vertex。
+先分析共享點的禁色集合與第三環介面，不能把 cut vertex 當 bridge；
+不再增加互斥 triangles 的數目、連接路徑長度或外掛樹深度。
+接手讀新報告 §1–5，再接兩環報告的 shared-cut-vertex 情形。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_three_triangle_blocks.py --check
+uv run --with networkx==3.5 python scripts/c5_two_triangle_blocks.py --check
+lake build
+git diff --check
+```
+
+本輪保留前兩輪 cycle-5 與兩 triangle blocks 的未提交產物，一併更新 README／
+HANDOFF；未提交或推送。驗證通過：本輪與兩環 checkers、`lake build`
+（8,820 jobs，僅既有 lint）、166 個本地文件連結、九個來源 hashes、一個
+依賴證書 hash 與 whitespace；沒有背景研究程序。
+以下舊停止點保留歷史語境，以本節為準。
+
+## 前輪研究：兩個 triangle blocks 的六內點正常形（2026-09-17）
+
+報告：[兩個 triangle blocks](c5_two_triangle_blocks.md)。接續前輪未提交的
+cycle-5 研究，保留其全部產物。全 degree-4 的 disk minimal q-obstruction，
+若內部連通、恰有兩個 triangle blocks 且其餘皆 bridges，則兩環必由一條
+直接 bridge 相連，沒有額外外掛樹；只剩六內點，全部只缺 q，不需另假設 T4。
+
+共用 cut vertex 的 768 個 minors 非 disk。整條連接路徑收縮後有 128 個
+disk 基底，不能直接排除：64 個 c=d 是只缺 q 的 obstruction，另 64 個
+c≠d 可延拓 q。保留一／兩個路徑中間點的 512／768 個 minors 全被排除，
+再排除 5,120 個外樹擴張。連同 1,088 個 no_D 控制，共 16,000 個 lifts，
+15,872 個拒絕端由 649 份 subdivisions 覆蓋；接受端保存完整 relation 與 rotation。
+
+紙面化約涵蓋任意外樹大小、分叉及連接路徑長度，未新增 Lean theorem。
+連通 D-forcer 的單點壓縮可含 cycle；保留 root 的兩點非 D-forcer 化約仍只用
+在真正的外掛樹。不能從兩環結果跳到所有 Gallai block trees。
+
+**下一個窄問題：** 三個 triangle blocks 的 cut-vertex／bridge 連接型態。
+保留第三環，或先研究其 rooted 介面；不要把含 cycle 的 component 當兩點樹
+forcer。接手先讀新報告 §2–5、§7，不再增加兩環間 path 或外樹深度。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_two_triangle_blocks.py --check
+uv run --with networkx==3.5 python scripts/c5_pentagon_branches.py --check
+uv run --with networkx==3.5 python scripts/c5_triangle_forks.py --check
+lake build
+git diff --check
+```
+
+本輪與前輪 cycle-5 的 scripts、證書、報告、README／HANDOFF 尚未提交或推送。
+新 checker、cycle-5／triangle-fork checkers、`lake build`（8,820 jobs）、161 個
+本地連結、九個來源 hashes 與 whitespace 全通過。沒有背景研究程序。
+以下舊「下一步」保留歷史語境，以本節停止點為準。
+
+## 前輪研究：cycle-5 接枝的整體排除（2026-09-17）
+
+報告：[cycle-5 接枝限制](c5_pentagon_branches.md)。本輪從 `63b532a` 的乾淨
+工作區接續指定方向。結果不只是接枝數量限制：全 degree-4、內部唯一 cycle
+長度 5 的 disk minimal q-obstruction **不存在**；此排除不需要 T4。
+
+先由 bridge minimality 得到共同 cycle 兩色 palette P。P 含 D 時，吸收所有
+非 D 強迫枝成 boundary spokes，得 1,088 個零枝 minors；P 不含 D 時，
+各 cycle 頂點保留一個單點 D-forcer，得 66,560 個 minors。合計 **67,648 個
+全非 disk**，56 份共用 subdivisions 逐例覆蓋，checker 不重跑 planarity search。
+外掛樹大小、深度與分叉無上界；未宣稱收縮保持完整 relation。
+
+相同吸收後，任意長度 ≥5 的唯一 cycle 可刪 spokes 並收縮到五點，故同樣
+排除；偶環則由兩色 list 引理排除。因此全 degree-4 的連通單環核心只剩
+triangle；若接受全部 T4，沿用前輪得到只缺 q。這是紙面 minor 論證加有限
+證書，未新增 Lean theorem，不是一般多 cycle blocks 或 K∞=K≤5 的證明。
+
+**下一個窄問題：** 兩個 triangle blocks 的必要 minors，先區分共用 cut vertex
+與 bridge path 相連。含 cycle 的一側不能冒充 forcing tree。不要再增加唯一
+cycle 長度或 triangle tails；最新接手入口為新報告 §1–4、§6。
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_pentagon_branches.py --check
+uv run --with networkx==3.5 python scripts/c5_triangle_forks.py --check
+lake build
+git diff --check
+```
+
+本輪產物為新 script、JSON 證書、報告與 README／HANDOFF 更新；未提交或推送。
+驗證通過：新 checker、triangle-fork checker、`lake build`（8,820 jobs）、
+155 個本地連結、八個來源 hashes 與 whitespace。沒有背景研究程序。
+以下舊「下一步」保留歷史語境，以本節停止點為準。
+
+## 前輪研究：triangle 外掛樹的分叉排除（2026-09-17）
 
 報告：[triangle 第一個分叉](c5_triangle_forks.md)。接手時工作區乾淨，
 HEAD 為 `1c6948b`；本輪接續指定的第一個分叉問題，未重啟歷史搜尋。

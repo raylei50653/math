@@ -53,6 +53,14 @@ degree-4 Gallai 結構與局部構造探針見
 [c5_triangle_path_reduction.md](docs/c5_triangle_path_reduction.md)。
 任意外掛樹的第一個分叉已由 90,112 個 minors 全數排除；單 triangle、全 degree-4
 的單缺失推廣與下一個 cycle-5 問題見 [c5_triangle_forks.md](docs/c5_triangle_forks.md)。
+Cycle-5 的 67,648 個必要 minors 全非 disk；任意連通單環 degree-4 核心歸到
+triangle 的紙面化約、證書與多 block 停止點見 [c5_pentagon_branches.md](docs/c5_pentagon_branches.md)。
+恰兩個 triangle blocks 的直接 bridge 六內點正常形、64 個單缺失 lifts 與
+16,000 個必要模板見 [c5_two_triangle_blocks.md](docs/c5_two_triangle_blocks.md)。
+互斥 triangle blocks 的數目至多二：三環 152,128 個正常形全非 disk，
+末端吸收的任意環數推廣見 [c5_three_triangle_blocks.md](docs/c5_three_triangle_blocks.md)。
+三環共用 cut vertex 的二色禁集介面、18,688 個必要 minors 與恰三環的完整排除見
+[c5_shared_triangle_blocks.md](docs/c5_shared_triangle_blocks.md)；任意多個共用點環仍未解。
 
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 
