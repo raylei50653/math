@@ -12,11 +12,12 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 各輪完整紀錄；其中「下一步／未提交」只描述當時 |
 
-2026-09-17 最新成果：[bridge forcer 替換](docs/c5_shared_pair_bridge.md) 補齊
-全 degree-4、內部連通、恰四個 triangle blocks 且其餘為 bridges 的
-disk minimal q-obstruction 排除，不需 T4。下一個窄問題是任意純共用點
-triangle tree 的 palette 相容性與局部 minor。成果是紙面化約配合 Python
-證書；共有 list 引理已在 `Math/ForcingLists.lean`，整個拓撲化約尚未 Lean 化。
+2026-09-17 最新成果：[任意 triangle tree 的 palette 與 minor](docs/c5_triangle_tree_palettes.md)
+排除任意大小的非平凡共用點 cluster：在全 degree-4、內部連通、blocks
+只有 triangles／bridges 的 C5 disk minimal q-obstruction 中，triangles
+必頂點互斥且至多二個，不需 T4。下一題是一個較長 odd-cycle block 與
+triangles 共用點時的 root 介面。成果是紙面歸納配合 Python 證書；共有
+list 引理已在 `Math/ForcingLists.lean`，新 minor／拓撲化約尚未 Lean 化。
 
 | 其他閱讀方向 | 入口 |
 | --- | --- |

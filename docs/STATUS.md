@@ -1,16 +1,17 @@
 # 文件狀態與可能變化追蹤
 
-整理日期：2026-09-17。依本地 HEAD `fb6216e` 的文件、程式與既有證書核對；
-開始時工作樹乾淨。此頁是目前文件索引及後續觀察紀錄，詳細數學敘述仍以原報告為準。
+更新日期：2026-09-17。前輪整理基準為 `fb6216e`；本輪從 `76e6f44` 的乾淨
+工作樹接手，完成 triangle-tree palette／minor 研究，結果見 §6。
+此頁是目前文件索引及後續觀察紀錄，詳細數學敘述仍以原報告為準。
 研究主入口是 [HANDOFF.md](HANDOFF.md)，逐輪原始交接保存在
-[HANDOFF_HISTORY.md](HANDOFF_HISTORY.md)。本次沒有新增研究結論或擴大搜尋範圍。
+[HANDOFF_HISTORY.md](HANDOFF_HISTORY.md)。新成果是紙面歸納與化約控制，未擴大 disk catalog。
 
 ## 1. 閱讀順序與文件角色
 
 | 需求 | 入口 | 用途 |
 | --- | --- | --- |
 | 接續當前研究 | [HANDOFF.md](HANDOFF.md) | 現況、精確停止點、信任界線及最小重播命令 |
-| 找報告或追蹤待變化項目 | 本頁 §2–4 | 67 份專題文件的分組索引、已被後續處理的舊問題、仍待驗證的方向 |
+| 找報告或追蹤待變化項目 | 本頁 §2–4 | 68 份專題文件的分組索引、已被後續處理的舊問題、仍待驗證的方向 |
 | 核對主命題與證明路線 | [C5 boundary relations](c5_boundary_relations.md) | K∞=K≤5、有界代表與局部壓縮的區分；§5.1 是早期路線成果，近期 block 進度見交接 |
 | 核對某項數學結論 | §2 對應專題報告 | 前提、紙面論證、具名 Lean 定理、script／artifact 與驗證限制 |
 | 查當時的數字、命令或發布說明 | [歷史交接](HANDOFF_HISTORY.md) | 原 2,695 行全文保留；「最新／下一步／未提交」只描述各輪當時狀態 |
@@ -35,7 +36,8 @@
 | [triangle 路徑枝](c5_triangle_path_reduction.md)、[第一分叉](c5_triangle_forks.md) | 任意長路徑、任意外掛樹的全 degree-4 單 triangle 分支已處理；T4 下只缺 q |
 | [cycle-5／單環](c5_pentagon_branches.md)、[兩 triangle blocks](c5_two_triangle_blocks.md) | 全 degree-4 單環長度至少 5 排除；兩 triangle blocks 只剩直接 bridge 六內點正常形，存活者只缺 q |
 | [互斥多環](c5_three_triangle_blocks.md)、[三環共用點](c5_shared_triangle_blocks.md) | 頂點互斥 triangles 任意總數至多二；恰三環全部連接型排除；不能把「互斥」限制去掉 |
-| [四環鏈](c5_four_triangle_chain.md)、[四環分叉](c5_four_triangle_star.md)、[bridge pruning](c5_shared_pair_bridge.md) | 恰四環全部連接型排除；當前停止在任意純共用點 triangle tree；一般替換仍是紙面，介面及拓撲控制為 Python 證書 |
+| [四環鏈](c5_four_triangle_chain.md)、[四環分叉](c5_four_triangle_star.md)、[bridge pruning](c5_shared_pair_bridge.md) | 恰四環全部連接型排除；其下一題由新 triangle-tree 報告處理；一般替換仍是紙面，介面及拓撲控制為 Python 證書 |
+| [任意 triangle tree](c5_triangle_tree_palettes.md) | 七種介面歸納、非 D 二色禁集吸收與閉鄰域 minor；全 degree-4 連通 triangles／bridges 類別中，triangles 必互斥且至多二，不需 T4；未 Lean 化 |
 
 ### 2.2 Kempe、計數與固定圖策略
 
@@ -75,10 +77,11 @@
 | 兩環報告的「下一題三環」 | [互斥三環](c5_three_triangle_blocks.md) 與 [共用點三環](c5_shared_triangle_blocks.md) 已補齊恰三環 |
 | 三環共用點的「下一題四環鏈」 | [四環鏈](c5_four_triangle_chain.md) 已完成 |
 | 四環鏈的「下一題分叉型」 | [四環分叉](c5_four_triangle_star.md) 已完成 |
-| 四環分叉的「bridge 混合型未涵蓋」 | [bridge pruning](c5_shared_pair_bridge.md) 已補齊恰四環；一般更大 cluster 仍未解 |
+| 四環分叉的「bridge 混合型未涵蓋」 | [bridge pruning](c5_shared_pair_bridge.md) 已補齊恰四環；任意 cluster 再由下一列的新報告處理 |
+| bridge pruning 的「任意共用點 cluster 未解」 | [palette／minor 報告](c5_triangle_tree_palettes.md) 已排除任意大小的非平凡 cluster；下一題是較長 odd-cycle 的共用點介面 |
 | 較早 handoff 的「completion 未證」 | [同頂點 completion](c5_completion_weak_bisimulation.md) 已有紙面證明；topology 未 Lean 化仍成立 |
 | 較早 block 報告說「未新增 Lean theorem」 | 指該輪整個化約；後來共有 list 引理進入 [ForcingLists.lean](../Math/ForcingLists.lean)，不代表 minor／disk 論證也進入 Lean |
-| 各輪「尚未提交／推送」 | 屬於當時狀態；本次起點 HEAD `fb6216e` 已包含近期三輪成果，工作樹乾淨；本次未查遠端同步狀態 |
+| 各輪「尚未提交／推送」 | 屬於當時狀態；前輪整理的 `fb6216e` 已包含此前三輪成果。本輪從 `76e6f44` 接手，新工作隨本次 commit 保存，未 push |
 | enumerator 兩個「§14」 | edge-mask 仍為 §14；獨立 cross-check 改為 §16，對應導引一併更正 |
 
 本輪對近期主線報告補上後續連結，保留原輪次內容。歷史交接以快照方式保存，
@@ -86,39 +89,34 @@
 
 ## 4. 可能出現新變化的地方
 
-以下均為 **2026-09-17 閱讀既有材料時的追蹤紀錄**。優先級是接手建議；
-不表示已有新證書、啟動新搜尋或證明了一般化。後續若有進展，應補日期、
-來源、驗證命令、適用範圍與反例，再更新此處狀態。
+以下起於 **2026-09-17 閱讀既有材料時的追蹤紀錄**。R1–R3 已由同日接手研究
+完成，R4–R6 保留，新增 R7。各項成果層級與範圍仍以連結報告為準。
 
-### R1：bridge pruning 可能給出更強的 cluster 篩選
+### R1：bridge pruning 給出任意總環數的 cluster 隔離
 
-- **狀態：可由現有紙面論證檢查的推論，尚未另立一般定理。**
-- 來源：[bridge pruning §1、§3](c5_shared_pair_bridge.md)。隔離選定 cluster 的論證
-  沒有限制外側 triangle 總數；在同樣全 degree-4、連通、所有其他 blocks 為 bridges／triangles
-  的 minimal q-obstruction 中，任何大小 2、3、4 的完整 cluster 似乎都可直接排除。
-- 下一個確認：逐項核對對任意總環數的反覆替換是否始終維持原假設；若成立，
-  剩餘 cluster 尺寸只能為 1 或至少 5，且全為 1 的三環以上情形已有互斥結果排除。
-  這不等於從一個大 cluster 任選四環就能剪出已排除模板。
+- **狀態：2026-09-17 已確認，紙面推論。**
+- [新報告 §1](c5_triangle_tree_palettes.md) 核對每條外向 bridge 的替換保留
+  全部前提，外側可含任意數量 cycles。可先隔離任意 maximal cluster。
+- 配合 R2、R3，任意大小至少二的 cluster 皆排除，超過原來只篩 2／3／4 的推論。
+  仍不能任選四環刪去其餘部分；可用選法是 R3 的完整閉鄰域。
 
-### R2：鏈與分叉的 palette 規則可能統一為樹上遞迴
+### R2：鏈與分叉的 palette 規則統一為樹上遞迴
 
-- **狀態：優先研究候選，未證。**
-- 來源：[鏈的 transfer](c5_four_triangle_chain.md) 與 [分叉禁集](c5_four_triangle_star.md)。
-  鏈上非空二色禁集只在互補 palette 時傳遞，空禁集不恢復；分叉的不可著色
-  則要求三個末端 palettes 相同。兩者提示可檢驗一套任意 triangle tree 的相容規則。
-- 下一個確認：先寫清 root 可取色集合、分叉合併與 minimality 的作用，
-  用既有鏈／分叉與 rooted pair 的 D singleton 當控制。即使 list 規則成立，
-  仍要另證可實現的 disk minor，不能把 palette 遞迴當作拓撲排除。
+- **狀態：2026-09-17 紙面歸納完成，局部代數與具名控制重播通過。**
+- [新報告 §2](c5_triangle_tree_palettes.md)：任意 rooted 子樹可取色集合只有
+  六個二色集合或 U。全圖不可著色恰在每環有二色 palette、相鄰環互補，
+  每個私有點 list 等於所屬環 palette；故每棵樹恰六種拒絕配置。
+- bridge root 的三色 list／singleton 與此處共享點 U-list 是不同介面；
+  rooted pair 的 D singleton 不被誤排除。此規則本身未宣稱 disk 性。
 
-### R3：從大 cluster 抽出小 minor 是真正的幾何接點
+### R3：從大 cluster 抽出保留閉鄰域的小 minor
 
-- **狀態：優先缺口，已有介面反例約束。**
-- 來源：[root 介面反例](c5_root_interfaces.md)、[四環鏈](c5_four_triangle_chain.md)、
-  [bridge pruning](c5_shared_pair_bridge.md)。共享點已由兩個 triangles 用滿 degree=4，
-  其介面是二色禁集；刪去／收縮子樹可能改變度數、list 與逐邊 minimality。
-- 下一個確認：選一條可歸納的局部替換，逐一核對 boundary 固定、必要 minor、
-  q 不可延拓，以及後續排除定理真正需要的假設。不能借用 bridge 的 singleton
-  證明，也不能假定固定 q 替換保持完整 root interface 或 Σ。
+- **狀態：2026-09-17 紙面 minor 完成，48 個結構控制／63 次子樹吸收通過。**
+- [新報告 §3–4](c5_triangle_tree_palettes.md)：不含 D 的二色禁集可吸收成
+  兩條 spokes。新 spoke minimality 使用對側 root 能取禁集兩色的前提。
+- 保留不含 D 的中心環與全部鄰環，外側禁集全不含 D；所得二／三／四環
+  星形接上既有排除。保持 boundary 固定、degree、固定 q 及 minimality；
+  不聲稱完整 Σ 或任意 boundary pattern 的介面等價。
 
 ### R4：bridge pruning 的證明已穩定，可能值得接入 Lean
 
@@ -127,7 +125,7 @@
   singleton／swap 的代數已形式化；新 D 葉點三條 spokes 的刪邊延拓論證已補齊。
 - 下一個確認：先定義 boundary 固定的圖替換與 edge-minimality，將染色延拓和
   degree 保持分開證；minor／disk 層另外建立所需模型，不能用新增 topology 公理代替。
-  這條線提升證明可信度，本身不封閉任意 cluster 的研究缺口。
+  可一併處理新兩-spoke 替換；本輪 cluster 缺口已在紙面層完成，尚未形式化。
 
 ### R5：candidate A 的共同出口仍需獨立追蹤
 
@@ -148,7 +146,15 @@
   碰撞／完整 witness history 控制。一步重建、固定圖策略與跨圖 weak congruence
   不能相互替代；本次沒有理由直接擴大 k 或重搜 survivor 閉包。
 
-## 5. 本次整理與驗證紀錄
+### R7：較長 odd-cycle 與 triangles 共用點的介面
+
+- **狀態：下一個窄問題，未啟動。**
+- 範圍：全 degree-4、只有一個長度至少 5 的 odd-cycle block，其他非 bridge
+  blocks 為 triangles。先求 root 可取色集合與 minimality 必要條件。
+- 不先假定 triangle 的七種介面封閉；只有前提吻合才套用
+  [兩-spoke 引理](c5_triangle_tree_palettes.md)。一般 K4／混合長環與 degree≥5 仍獨立保留。
+
+## 5. 前輪文件整理與驗證紀錄（基準 fb6216e）
 
 - 原 `HANDOFF.md` 全文移存歷史，新的交接集中於當前結果與停止點。
 - 建立本頁全索引與 R1–R6 追蹤；README 改成分層入口；近期報告補上後續狀態，
@@ -167,3 +173,19 @@
 deletion audit 或 k=6／7 搜尋。那些結果引用原報告及其既有驗證紀錄。
 
 文件整理與上述驗證已完成，隨本次提交發布；未啟動後續研究或大範圍枚舉。
+
+## 6. 本輪接手研究與驗證紀錄（基準 76e6f44）
+
+本輪選擇 R2，推導 palette 規則後接上 R3 的兩-spoke minor，並確認 R1。
+新報告、script、artifact 已整合至 README／HANDOFF；既有證書與 Lean 原始碼未改。
+
+| 本輪核對 | 結果 |
+| --- | --- |
+| 新 `c5_triangle_tree_palettes.py --check` | 逐 byte 重播通過：49 個 apex 輸入、343 個根 triangle 輸入、48 個替換輸入、48 個結構控制及 63 次子樹吸收；核對來源／目標 criticality、boundary 固定的 minor branch sets、既有模板同構與 subdivisions |
+| 六份依賴 checker | bridge pruning、兩環、共用點三環、互斥多環、四環鏈及四環 star 均通過；重播既有拓撲證書，沒有新 planarity search |
+| `lake build` | 通過，8,821 jobs；只有既有 `AttachmentOrder`／`SymRelabel` lint 警告 |
+| `lake env lean Math/ForcingListsAudit.lean` | 既有 20 個定理均只依賴 `propext`、`Classical.choice`、`Quot.sound`；本輪未新增 Lean 定理 |
+| 文件與變更範圍 | 611 個本地連結存在、68 份專題報告全部有索引；新檔 whitespace 與 `git diff --check` 通過；既有 scripts／artifacts、Lean 原始碼與歷史交接未改 |
+
+無界結論依賴新紙面歸納／minor 及既有小型 topology 證書，不能把結構控制
+視為一般定理的計算證明。本輪產物隨本次 commit 保存，未 push；停止在 R7，未啟動大枚舉。

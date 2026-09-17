@@ -1,5 +1,9 @@
 # Bridge forcer 替換與四環混合連接型
 
+後續狀態（2026-09-17）：[任意 triangle tree](c5_triangle_tree_palettes.md)
+已完成本文的 cluster 停止點；一般 triangles／bridges 類別中，triangles
+必頂點互斥且至多二。本文四環證書與 singleton 替換仍作依賴保留。
+
 2026-09-17。接續 [四環分叉型](c5_four_triangle_star.md)。
 本輪先完成兩對共用點 triangles 的 bridge-path 問題，再用同一替換引理
 補齊四環所有混合連接型。**全 degree-4、內部連通、恰四個 triangle blocks
