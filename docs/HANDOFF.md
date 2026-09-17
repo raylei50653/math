@@ -1,6 +1,6 @@
 # 新對話交接：四色 boundary-state／constraint gadget 研究
 
-更新：2026-09-16。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
+更新：2026-09-17。工作目錄 `/home/ray/math`。**新對話先讀本文件，再依需要讀分階段報告；不要從零重跑已完成的搜尋。**
 
 ## 研究路線總覽（2026-09-15 文件整理）
 
@@ -9,7 +9,69 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
-## 最新研究：repair sets、dual flows 與非同面控制（2026-09-16）
+## 最新研究：四內點核心與無界 odd-path 家族（2026-09-17）
+
+報告：[四內點最小阻礙](c5_four_vertex_cores.md)。候選 A 一般三出口仍未證。
+接續 list-critical 化約，完整核對四有效內點的六個連通內部形狀與所有可用 lists，
+只剩 P4、diamond、K4 共 18 組 minimal list assignments。
+展開 boundary attachments 得 4,965 個模板，200 個 disk，其中 100 個接受全部 T4；
+100 個都只拒絕指定 singleton。模板含 automorphism 重複，不是不重複圖數。
+因此，若候選 A 的某單側出口失敗，該側每個 minimal obstruction 至少五個有效內點。
+這是紙面化約加 Python／NetworkX 核對的條件式結論，未新增 Lean theorem。
+
+100 個 disk/T4 templates 的同色 boundary quotient 都是 `K2 ∨ C5`。
+另找到可反覆延長的 P4 core：用帶兩個共同 boundary 鄰居的三邊路徑替換一條邊，
+保持 disk、單缺失 relation 與逐邊 minimality；得到 k=4,6,8,… 的無界家族，
+quotient 為 `K2 ∨ C_(k+1)`。任意 k 由紙面歸納，計算另核對 k=4、6 及局部 patch。
+因此一般 T4 disk 最小阻礙不能假定有固定內點上限；這些單缺失圖不是候選 A 反例。
+
+**下一個窄問題：** 對任意 `K2 ∨ C_(2m+1)` 型 boundary-color quotient，
+disk＋全部 T4 能否保證 minimal obstruction 只缺一個 singleton？先研究整個
+無界 odd-cycle 家族的分離性，不直接擴大 k=5 枚舉。不假定所有 cores 都是此型。
+共同 pivotal edge 仍是獨立問題。
+
+**接手順序與停止範圍：** 先讀新報告 §3 的同色 quotient，再讀 §4 的局部替換引理，
+最後處理 §5 的整個 odd-cycle 家族分離問題。先固定 missing singleton q，明確列出
+三個 boundary 色類在 `K2 ∨ C_(2m+1)` 中的位置及其拆回有序 C5 的 attachments；
+不要假設同色識別保存平面性，也不要假設 p、q 共用完整 coloring。
+四內點分類已完成；不重跑舊全量 audit，不自動擴大 k=5 枚舉。沒有背景研究工作。
+
+重播：`uv run --with networkx==3.5 python scripts/c5_four_vertex_cores.py --check`，
+另跑 list-core checker、`lake build` 與文件檢查。兩輪 scripts、證書、報告與入口文件
+一併納入本次發布提交。
+驗證通過：兩個 checker、`lake build`（8,820 jobs）、142 個本地連結及 whitespace。
+
+以下前輪段落保留研究歷史；其中的「下一個問題」以本節最新停止點為準。
+
+## 前輪研究：list-critical cores 與小阻礙分離（2026-09-17）
+
+報告：[list-critical cores 與小阻礙分離](c5_weak_list_cores.md)。
+候選 A 未證。本輪紙面分類了至多三個有效內點的 minimal singleton obstruction：
+只能是同一單色 list 的內部邊，或同一兩色 list 的內部三角形。
+固定 boundary、只商內點置換共 190 個模板，35 個 disk，其中 25 個接受 T4；
+這 25 個全部只拒絕指定的一個 singleton。完整 relations、逐邊 minimality 和
+boundary-apex planarity 已核對；分類及 apex/disk 等價屬紙面，計算未進 Lean。
+
+**條件式進展：** 任意大小來源 G 若有至多三有效內點的 minimal q-obstruction，
+就有只釋放 p 的出口。故單側出口失敗要求該側所有 minimal obstructions 至少四個
+有效內點。一般 minimal obstruction 的有效內點 degree≥4；degree-4 點誘導
+Gallai forest（紙面推論，引用 degree-choosability 定理）。共同出口仍未處理。
+
+只在兩 patterns 改色頂點的 star 刪邊，五個舊代表都只能共同釋放，故這種局部化不足。
+另測一個代表的 22 次 disk vertex splits：13 個保留 relation，但全是 degree-3
+附加點，兩側核心仍為舊三角形；106,496 個 subset 核對，不算非平凡域外支持。
+未跑 k=4 全圖搜尋，未重播舊全量 audit，未新增 Lean theorem。
+
+**下一個窄問題：** 找或排除四個有效內點的 minimal q-obstruction，它接受 T4
+卻同時拒絕相鄰 p。先按 degree/list 與 Gallai 結構分型；找到這種 core 只反駁
+較強的逐-core 分離猜想，尚不自動反駁候選 A，因可能有其他可分離的 cores。
+
+重播：`uv run --with networkx==3.5 python scripts/c5_weak_list_cores.py --check`。
+另重播 flow-repair、critical-core、candidate、quotient checkers；驗證細節見新報告。
+上述五個 checker、`lake build`（8,820 jobs）、136 個本地連結與 whitespace 均通過。
+本輪產物與四內點後續成果一併納入本次發布提交；原四內點問題已由上節完成。
+
+## 前輪研究：repair sets、dual flows 與非同面控制（2026-09-16）
 
 報告：[repair sets、dual flows 與非同面控制](c5_weak_flow_repairs.md)。
 候選 A 未證；三出口已有 deletion-side 精確充要條件。對每個缺失 pattern r，

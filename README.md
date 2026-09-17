@@ -33,6 +33,12 @@ A/B 完整刪邊格的 same-Σ closure、共同兩因子判準與 weak bisimulat
 [c5_weak_critical_cores.md](docs/c5_weak_critical_cores.md)；一般候選仍未證。
 其 deletion-side repair／plane-dual flow 化約及平面但非同面控制見
 [c5_weak_flow_repairs.md](docs/c5_weak_flow_repairs.md)。
+最新的 list-critical core 分類、至多三內點的單側出口條件式結論、
+degree-4 Gallai 結構與局部構造探針見
+[c5_weak_list_cores.md](docs/c5_weak_list_cores.md)。
+四內點核心的完整 list 分型、單側出口障礙的五內點下界，
+以及無界 odd-path 最小阻礙家族見
+[c5_four_vertex_cores.md](docs/c5_four_vertex_cores.md)。
 
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 
