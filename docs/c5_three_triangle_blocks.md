@@ -1,5 +1,8 @@
 # 三個互斥 triangle blocks 的排除
 
+後續狀態（2026-09-17 文件整理）：本文下一題的共用 cut vertex 情形已由
+[共用點三環](c5_shared_triangle_blocks.md) 處理；本報告的任意環數結論仍限頂點互斥。現況見 [交接](HANDOFF.md)。
+
 2026-09-17。接續 [兩環分類](c5_two_triangle_blocks.md)。
 全 degree-4 的 disk minimal q-obstruction，若內部連通、所有非 bridge blocks
 都是**頂點互斥的 triangles**，則 triangle 數至多二。

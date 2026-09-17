@@ -1,5 +1,9 @@
 # Triangle block 的 forcing branches：兩尾仍可同面
 
+後續狀態（2026-09-17 文件整理）：root 介面的限制見 [介面反例](c5_root_interfaces.md)；
+任意長路徑及外掛樹分叉已由 [路徑化約](c5_triangle_path_reduction.md) 與
+[分叉排除](c5_triangle_forks.md) 處理。以下保留本輪結果；現況見 [交接](HANDOFF.md)。
+
 2026-09-17。接續 [degree-4 樹核心](c5_tree_cores.md)。
 這輪選擇 triangle block 的接枝問題，沒有擴大一般 k=5 圖枚舉。
 **值得續挖的是 block 與 forcing tree 之間的完整染色介面。**

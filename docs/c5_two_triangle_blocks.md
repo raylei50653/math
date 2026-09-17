@@ -1,5 +1,8 @@
 # 兩個 triangle blocks：直接 bridge 的有限正常形
 
+後續狀態（2026-09-17 文件整理）：[互斥三環](c5_three_triangle_blocks.md) 與
+[共用點三環](c5_shared_triangle_blocks.md) 已補齊恰三環；最新四環成果見 [交接](HANDOFF.md)。
+
 2026-09-17。接續 [cycle-5 接枝排除](c5_pentagon_branches.md)。
 **兩個 triangle 不必被排除：有 disk minimal q-obstructions。**
 但全 degree-4 時，共用 cut vertex、較長的連接路徑、以及任何額外外掛樹

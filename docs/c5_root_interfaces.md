@@ -1,5 +1,8 @@
 # Root 介面反例與 triangle context 的篩選
 
+後續狀態（2026-09-17 文件整理）：[triangle 路徑化約](c5_triangle_path_reduction.md)
+已處理本文提出的 triangle context 問題；完整 root 介面的反例仍有效。現況見 [交接](HANDOFF.md)。
+
 2026-09-17。接續 [triangle branches](c5_triangle_branches.md) 的停止點。
 **最值得續挖的是 triangle context 下的介面化約，而非任意 disk forcing tree
 都等價於兩點 forcer。** 後一命題已被四點路徑否定，甚至把 root 介面降到

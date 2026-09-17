@@ -1,5 +1,9 @@
 # C5 boundary relations：有界代表與特殊反例路線
 
+文件狀態補註（2026-09-17）：本頁保留主命題與早期路線對照；近期活躍工作是
+weak-deletion 候選 A 的 minimal obstruction 分類，最新到四個 triangle blocks。
+當前優先順序見 [研究交接](HANDOFF.md)，完整索引與可能變化見 [STATUS.md](STATUS.md)。
+
 2026-09-15。本文是研究目標與證明路線總覽；主命題仍待證。
 現有結果與信任範圍見 [研究交接](HANDOFF.md)。
 

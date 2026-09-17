@@ -1,5 +1,8 @@
 # Cycle-5 接枝限制：整個單環核心被排除
 
+後續狀態（2026-09-17 文件整理）：本文的兩 triangle blocks 停止點已由
+[兩環正常形](c5_two_triangle_blocks.md) 處理；當前方向見 [交接](HANDOFF.md)。
+
 2026-09-17。接續 [triangle 分叉排除](c5_triangle_forks.md)。
 原問題是內部唯一 cycle 長度 5 的共同 palette 與接枝位置限制；結果更強：
 **全 degree-4 的 C5 disk minimal q-obstruction 不可能有這種內部圖**，

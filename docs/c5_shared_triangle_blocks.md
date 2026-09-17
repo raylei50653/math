@@ -1,5 +1,8 @@
 # 三個 triangle blocks 共用 cut vertex 的排除
 
+後續狀態（2026-09-17 文件整理）：本文下一題的 [四環鏈](c5_four_triangle_chain.md)
+及其 [分叉](c5_four_triangle_star.md)、[bridge 混合型](c5_shared_pair_bridge.md) 已完成。現況見 [交接](HANDOFF.md)。
+
 2026-09-17。接續 [互斥三環](c5_three_triangle_blocks.md) 與
 [兩環分類](c5_two_triangle_blocks.md)。固定 boundary C5、`q=01012`、
 未用色 `D=3`，所有有效內點完整 degree=4，內部圖 H 連通，

@@ -1,5 +1,8 @@
 # Triangle 加任意長路徑枝：bridge 介面化約
 
+後續狀態（2026-09-17 文件整理）：本文的外掛樹分叉停止點已由
+[第一分叉排除](c5_triangle_forks.md) 處理；下文「仍未解」指本輪當時狀態。現況見 [交接](HANDOFF.md)。
+
 2026-09-17。接續 [root 介面探索](c5_root_interfaces.md)。
 **路徑枝的長度缺口已可封口；外掛樹的分叉仍未解。**
 結論是紙面 forcing／minor／transfer 化約加 Python 有限證書，未新增 Lean theorem。

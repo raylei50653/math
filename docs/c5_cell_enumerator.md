@@ -308,7 +308,7 @@ $k=7$ 是 $2^{60}$——**精確枚舉在 $k\ge6$ 是跑不動的**，不是慢�
 | 1 | **R1 引理**：內部頂點 $v$ 若 $\deg(v)\le3$，則 $\Sigma(G)=\Sigma(G-v)$ | **proved in Lean**：`summary_eq_deletePrivate`（一般 boundary）、`sigma_eq_delete_private`（C5 形式）；只對「內點」用，boundary 固定不動 |
 | 2a | **SYM 的核心：$\Sigma$ 與內部標號無關** | **proved in Lean**：`Sigma_relabel`／`sigma_iff_relabel`（`Math/SymRelabel.lean`），見 §7 |
 | 2b | **SYM 的排序步驟**：每個 unlabeled 圖都有一個「attachment mask 非遞增」的代表 | **proved in Lean**：`FiveBoundary.Sym.exists_sorted_relabel`（`Math/SymNormalForm.lean`），任意 $k$，包含 mask 搬運與同 $\Sigma$；見 §7.2 |
-| 3 | **程式正確實作 1 與 2** | 只在 $k\le5$ 以精確枚舉驗證（`matches_exact_catalogue: true`）；另有 §7 的 SYM 專用 checker；這些都是經驗驗證，不是證明；**2026-09-15 起另有 §14 的獨立重現**：不用 SYM、不同邊序、不同 planarity／Σ 實作的 C++ 搜尋在 $k=6$ 得到同樣的 132 個 Σ、零新 Σ |
+| 3 | **程式正確實作 1 與 2** | 只在 $k\le5$ 以精確枚舉驗證（`matches_exact_catalogue: true`）；另有 §7 的 SYM 專用 checker；這些都是經驗驗證，不是證明；**2026-09-15 起另有 §16 的獨立重現**：不用 SYM、不同邊序、不同 planarity／Σ 實作的 C++ 搜尋在 $k=6$ 得到同樣的 132 個 Σ、零新 Σ |
 
 （§0 的 bridge 與前提 3 **不是同一件事**：bridge 只保證「給定一張圖，十 bit 的讀寫與 $\Sigma$ 一致」，
 不保證 reduced 搜尋的 degree 剪枝與 SYM 正規化正確，因此不改變本節的條件式地位。）
@@ -1100,7 +1100,7 @@ planarity oracle 與 scheduler 仍未認證；$K_\infty=K_5$ 仍是猜想。
 下一個可分離方向是染色表 AND 的語義 bridge，或 Python 執行 refinement；沒有啟動這些工作。
 production／`cells.json` 未改，沒有新增 catalogue 搜尋。既有修改保留，未 commit／push。
 
-## 14. $K_6=K_5$ 的獨立重現：不同 search path、不同實作（2026-09-15）
+## 16. $K_6=K_5$ 的獨立重現：不同 search path、不同實作（2026-09-15）
 
 §6.0 前提 3（「程式正確實作 R1 與 SYM」）到此之前只有 $k\le5$ 的精確比對可依靠。
 一個只在 $k\ge6$ 才出錯的實作（例如漏掉某個 branch）不會被 $k\le5$ 的資料抓到。

@@ -1,5 +1,8 @@
 # Triangle 外掛樹：第一個分叉的 minor 排除
 
+後續狀態（2026-09-17 文件整理）：本文的下一題 cycle-5 已由
+[單環排除](c5_pentagon_branches.md) 處理；後續多 block 進度見 [交接](HANDOFF.md)。
+
 2026-09-17。接續 [路徑枝化約](c5_triangle_path_reduction.md)。
 本輪排除任意深度的第一個分叉，因此把前輪單缺失結論推廣到
 **內部唯一 cycle 是 triangle、外掛樹任意大小**的全 degree-4 核心。

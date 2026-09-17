@@ -1,5 +1,9 @@
 # 四個 triangle blocks 的共用點分叉型
 
+後續狀態（2026-09-17 文件整理）：[bridge pruning](c5_shared_pair_bridge.md)
+已補齊本文未涵蓋的四環混合型；本文成果已納入 `fb6216e`，
+下文未提交字樣是當時紀錄。現況見 [交接](HANDOFF.md)。
+
 2026-09-17。接續 [四環共用點鏈](c5_four_triangle_chain.md) 的停止點。
 保留前輪尚未提交的鏈型產物。
 

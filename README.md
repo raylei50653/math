@@ -1,72 +1,31 @@
 # math
 
-新對話接手請先讀 [研究交接文件](docs/HANDOFF.md)：目前進展、最新拓撲障礙、信任分類、未完成事項與重現方式。
+C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
+**主命題 `K∞=K≤5` 仍未證。**
 
-五邊界染色研究的定義、有限枚舉、反例證書與信任分類見 [第一階段報告](docs/phase1.md)；最新的 triangle grammar 有限狀態模型（ColorDFA／GeometryDFA、Nerode quotient、Z5 profiles）見 [automata.md](docs/automata.md)。
+## 研究入口
 
-內部五邊形加兩條對角線的 87-state 研究見 [fan_pentagon.md](docs/fan_pentagon.md)；
-以完整 boundary relation 為主狀態、派生同一 C5 條件 pair forcing 的庫見
-[boundary_relations.md](docs/boundary_relations.md)。
+| 文件 | 用途 |
+| --- | --- |
+| [研究交接](docs/HANDOFF.md) | 當前成果、精確停止點、信任範圍及重播入口；新對話先讀 |
+| [文件狀態與變化追蹤](docs/STATUS.md) | 全部專題報告索引、已完成的舊問題，以及值得追蹤的新方向 |
+| [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
+| [歷史交接](docs/HANDOFF_HISTORY.md) | 各輪完整紀錄；其中「下一步／未提交」只描述當時 |
 
-C5 有界代表主命題、最小反例路線與局部壓縮的區分見
-[c5_boundary_relations.md](docs/c5_boundary_relations.md)。
+2026-09-17 最新成果：[bridge forcer 替換](docs/c5_shared_pair_bridge.md) 補齊
+全 degree-4、內部連通、恰四個 triangle blocks 且其餘為 bridges 的
+disk minimal q-obstruction 排除，不需 T4。下一個窄問題是任意純共用點
+triangle tree 的 palette 相容性與局部 minor。成果是紙面化約配合 Python
+證書；共有 list 引理已在 `Math/ForcingLists.lean`，整個拓撲化約尚未 Lean 化。
 
-Kempe 行為驅動的狀態細化見 [研究提案](docs/c5_behavior_refinement.md) 與
-[第一輪結果](docs/c5_behavior_refinement_results.md)。
-
-新增點／邊對完整染色關係、兩點強迫與影響範圍的第一輪觀察見
-[extension_effects.md](docs/extension_effects.md)。
-固定 C5 disk 三角化母圖的 `k≤3` 單邊刪除實驗、具體碰撞與排除範圍見
-[c5_disk_deletions.md](docs/c5_disk_deletions.md)。
-A/B 完整刪邊格的 same-Σ closure、共同兩因子判準與 weak bisimulation 有限驗證見
-[c5_disk_weak_successors.md](docs/c5_disk_weak_successors.md)。
-完整 k≤3 母圖刪邊閉包的 weak-deletion congruence audit（1,246,132 raw states，零碰撞）見
-[c5_weak_deletion_audit.md](docs/c5_weak_deletion_audit.md)。
-固定 C5 同頂點 completion 的紙面證明、Lean weak-bisimulation／trace bridge，
-及全部 k≤3 cells 的條件式覆蓋與外部信任邊界見
-[c5_completion_weak_bisimulation.md](docs/c5_completion_weak_bisimulation.md)。
-87-state weak quotient 的 inclusion covers／可達 order 反例、完整 mismatch 與 D5 audit 見
-[c5_weak_quotient.md](docs/c5_weak_quotient.md)。
-相鄰雙 singleton 完全釋放等候選定理、87-state 有限核對與反例控制見
-[c5_weak_candidates.md](docs/c5_weak_candidates.md)。
-三出口的最小阻礙充要條件與五個代表的兩因子機制見
-[c5_weak_critical_cores.md](docs/c5_weak_critical_cores.md)；一般候選仍未證。
-其 deletion-side repair／plane-dual flow 化約及平面但非同面控制見
-[c5_weak_flow_repairs.md](docs/c5_weak_flow_repairs.md)。
-最新的 list-critical core 分類、至多三內點的單側出口條件式結論、
-degree-4 Gallai 結構與局部構造探針見
-[c5_weak_list_cores.md](docs/c5_weak_list_cores.md)。
-四內點核心的完整 list 分型、單側出口障礙的五內點下界，
-以及無界 odd-path 最小阻礙家族見
-[c5_four_vertex_cores.md](docs/c5_four_vertex_cores.md)。
-整個 `K2 ∨ C_(2m+1)` quotient 家族的單缺失分離、有限拓撲 minor 證書與
-任意長度的 relation-preserving 路徑縮減見
-[c5_odd_join_cores.md](docs/c5_odd_join_cores.md)；一般三出口仍未證。
-任意大小的 degree-4 樹核心分離、forcing minor 排除分叉、至多一次 palette 切換，
-以及第一個五內點 cyclic quotient 探針見
-[c5_tree_cores.md](docs/c5_tree_cores.md)。
-單 triangle block 的接枝位置限制、兩尾 disk 存活者與 root-color 介面缺口見
-[c5_triangle_branches.md](docs/c5_triangle_branches.md)。
-兩點 root／bridge 介面的四點路徑反例，以及 triangle context 的有限篩選見
-[c5_root_interfaces.md](docs/c5_root_interfaces.md)。
-任意長度的 triangle 路徑枝單缺失化約、160 個拒絕端 subdivision 與分叉停止點見
-[c5_triangle_path_reduction.md](docs/c5_triangle_path_reduction.md)。
-任意外掛樹的第一個分叉已由 90,112 個 minors 全數排除；單 triangle、全 degree-4
-的單缺失推廣與下一個 cycle-5 問題見 [c5_triangle_forks.md](docs/c5_triangle_forks.md)。
-Cycle-5 的 67,648 個必要 minors 全非 disk；任意連通單環 degree-4 核心歸到
-triangle 的紙面化約、證書與多 block 停止點見 [c5_pentagon_branches.md](docs/c5_pentagon_branches.md)。
-恰兩個 triangle blocks 的直接 bridge 六內點正常形、64 個單缺失 lifts 與
-16,000 個必要模板見 [c5_two_triangle_blocks.md](docs/c5_two_triangle_blocks.md)。
-互斥 triangle blocks 的數目至多二：三環 152,128 個正常形全非 disk，
-末端吸收的任意環數推廣見 [c5_three_triangle_blocks.md](docs/c5_three_triangle_blocks.md)。
-三環共用 cut vertex 的二色禁集介面、18,688 個必要 minors 與恰三環的完整排除見
-[c5_shared_triangle_blocks.md](docs/c5_shared_triangle_blocks.md)；任意多個共用點環仍未解。
-四環共用點鏈的禁集 transfer、24,576 個必要 minors 全排除與下一個分叉型問題見
-[c5_four_triangle_chain.md](docs/c5_four_triangle_chain.md)。
-四環共用點分叉型的 532,608 個必要 minors 全排除，完成四環純共用點連接的
-兩種形狀；bridge 混合型停止點見 [c5_four_triangle_star.md](docs/c5_four_triangle_star.md)。
-Bridge forcer 替換保留 degree-4 與逐邊 minimality，補齊恰四環全部混合連接型；
-任意共用點 cluster 的剩餘缺口見 [c5_shared_pair_bridge.md](docs/c5_shared_pair_bridge.md)。
+| 其他閱讀方向 | 入口 |
+| --- | --- |
+| 基礎定義與 relation 語意 | [phase 1](docs/phase1.md)、[boundary relations](docs/boundary_relations.md)、[state language](docs/state_language.md) |
+| 固定 grammar 與幾何 | [automata](docs/automata.md)、[fan pentagon](docs/fan_pentagon.md)、[topology completeness](docs/topology_completeness.md) |
+| 有界 cell 枚舉 | [cell enumerator](docs/c5_cell_enumerator.md) |
+| Weak deletion 與目前核心分類路線 | [completion／bisimulation](docs/c5_completion_weak_bisimulation.md)、[候選 A](docs/c5_weak_candidates.md)、[完整進度索引](docs/STATUS.md) |
+| Kempe 及 state 充分性 | [behavior 提案](docs/c5_behavior_refinement.md)、[第一輪結果](docs/c5_behavior_refinement_results.md)、[repair 介面碰撞](docs/c5_repair_interface.md) |
+| 新增點／邊的影響 | [extension effects](docs/extension_effects.md) |
 
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 

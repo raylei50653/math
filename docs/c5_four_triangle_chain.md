@@ -1,5 +1,9 @@
 # 四個 triangle blocks 的共用點鏈
 
+後續狀態（2026-09-17 文件整理）：[四環分叉](c5_four_triangle_star.md) 與
+[bridge 混合型](c5_shared_pair_bridge.md) 已完成；本文成果已納入 `fb6216e`，
+下文未提交字樣是當時紀錄。現況見 [交接](HANDOFF.md)。
+
 2026-09-17。接手 HEAD `f147591`、工作樹乾淨；接續
 [三環共用點報告](c5_shared_triangle_blocks.md) §5 的指定窄問題。
 
