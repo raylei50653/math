@@ -56,6 +56,7 @@ import Math.C5Counts
 import Math.C5ParityWord
 import Math.NearTriangulation
 import Math.KempeSurgery
+import Math.ForcingLists
 
 /-!
 # Paper-level trust audit
@@ -281,3 +282,14 @@ and `sorryAx` must never appear. This file does not change any statement or proo
 #print axioms FiveBoundary.KempeSurgery.pairGraph_swap_mixed
 #print axioms FiveBoundary.KempeSurgery.mixed_reachable_iff_quotient
 #print axioms FiveBoundary.KempeSurgery.swapOn_univPair
+
+/-! ## §12 Forcing lists: bridge forcing, swap symmetry, palette cover, two-colour cycles -/
+#print axioms FiveBoundary.ForcingLists.listColorable_iff_bridge
+#print axioms FiveBoundary.ForcingLists.bridge_forced
+#print axioms FiveBoundary.ForcingLists.forced_eq_of_symmetric
+#print axioms FiveBoundary.ForcingLists.forced_palettes
+#print axioms FiveBoundary.ForcingLists.card_eq_of_forced_palettes
+#print axioms FiveBoundary.ForcingLists.cycle_uncolorable_iff
+#print axioms FiveBoundary.ForcingLists.c5_two_lists_uncolorable_iff
+#print axioms FiveBoundary.ForcingLists.shared_chain_interface
+#print axioms FiveBoundary.ForcingLists.apex_extension_iff

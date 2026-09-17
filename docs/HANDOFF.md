@@ -9,6 +9,32 @@
 額外完備性要求；§5.1 對照既有 screen、completion、Lean 代數與 B₅ face 的實際進度。
 此總覽整理主命題與證明路線；最新研究成果與停止點以下節為準。
 
+## 最新 Lean 化：block 報告反覆使用的 forcing-list 基礎引理（2026-09-17）
+
+新增 [Math/ForcingLists.lean](../Math/ForcingLists.lean)（普通證明，無 `native_decide`、
+無 `sorry`；審計 `Math/ForcingListsAudit.lean`，輸出
+`artifacts/c5_cells/forcing-lists-lean-audit.txt`，全部只依賴 `propext`、`Classical.choice`、
+`Quot.sound`；`Math/PaperAudit.lean` §12）。這些引理從樹核心到共用點三環的每份報告都當
+紙面基礎重用，語義已固定，因此一次證在任意頂點型別上，不用平面性、disk 或四色公理。
+`ListProper G L c`／`ListColorable G L` 是帶 list `L : V → Finset Color` 的 proper 染色；
+boundary spokes 的 q 色限制以 list 表示。
+
+| 報告中的紙面引理 | Lean |
+| --- | --- |
+| 刪 bridge `uv` 後兩側可著色、原圖不可，則兩側 root 唯一強迫同一色（[樹核心 §2](c5_tree_cores.md)、[cycle-5 §1](c5_pentagon_branches.md)） | `listColorable_iff_bridge`（`A` 側與 `Aᶜ` 側可取色集合 `availOn`，可著色 iff 兩側可取異色）、`bridge_forced`（兩側 `availOn` 為同一 singleton） |
+| 非 D 的 c-forcer 必碰到 c 色 boundary；D-forcer 必碰到全部三個 q 色（[兩環 §2](c5_two_triangle_blocks.md)、[三環 §2](c5_three_triangle_blocks.md)） | `listProper_swap`、`avail_swap_iff`（`a`、`b` 在每個 list 同進同出時 root 可取色集合對 swap 不變）、`forced_eq_of_symmetric`／`exists_asymmetric_of_forced`（root 唯一強迫 `a≠b` 則某點 list 分開 `a`、`b`，即有該色 spoke） |
+| 各 incident bridge 的強迫色互異、都在 `L(v)` 且恰覆蓋 `L(v)`（[樹核心 §2](c5_tree_cores.md)、[共用點 §2](c5_shared_triangle_blocks.md)） | `forced_palettes`（阻擋＋逐邊 minimality ⇒ 強迫色 injective、值域 = list）、`card_eq_of_forced_palettes`（枝數 = `#L`） |
+| 兩色 lists 的環：不全同必可著色；同 P 奇環不可、偶環可（[cycle-5 §1、§4](c5_pentagon_branches.md)） | `cycleGraph n`（`Fin (n+2)`，`cycleGraph 3 = C5` 為 `rfl`）、`cycle_colorable_of_lists_ne`、`odd_cycle_common_uncolorable`、`even_cycle_common_colorable`、`cycle_two_lists_uncolorable_iff`、`cycle_uncolorable_iff`（lists ≥2 色版本，含某點 ≥3 色必可著色 `cycle_colorable_of_three`）、`c5_two_lists_uncolorable_iff`（`6^5` 核對中恰六個拒絕配置的一般證明） |
+| 三個二色 lists 的 triangle 不可著色 iff 全同；共用點鏈介面 `P=Q=四色\R`（[共用點 §2](c5_shared_triangle_blocks.md)） | `triangle_two_lists_uncolorable_iff`、`shared_chain_interface`（`7,776` 配置核對的一般證明） |
+| triangle apex 的 36-case 禁色規則：兩 lists 不同則任意 apex 色可延拓，相同為 P 則恰禁 P（[兩環 §3](c5_two_triangle_blocks.md)） | `apex_extension_iff`、`apex_forbidden_eq` |
+
+**仍是紙面／未 Lean 化**：吸收非 D 分量成 spoke 並保持 degree-4 與逐邊 minimality
+（三環 §2）、D-forcer 單點壓縮、minor 閉性與 Kuratowski 障礙、`|L(v)|=deg_H(v)` 的
+spoke 計數、block-cut tree 結構，以及所有 planarity／disk 有限證書。這些引理只給
+list-colouring 層；把它們接到具體 obstruction 仍靠各報告的紙面化約。
+驗證：`lake build`（8,765 jobs，新檔無警告）、`lake env lean Math/ForcingListsAudit.lean`。
+沒有新圖搜尋、沒有改動任何 checker 或證書。
+
 ## 最新研究：三環共用 cut vertex 的排除（2026-09-17）
 
 報告：[三環共用 cut vertex](c5_shared_triangle_blocks.md)。全 degree-4、
