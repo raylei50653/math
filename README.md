@@ -12,62 +12,30 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 各輪完整紀錄；其中「下一步／未提交」只描述當時 |
 
-2026-09-18 本次整合 R11–R15 五輪成果，研究三-spoke 型：唯一 degree-5
-內點 z 接三條 boundary 邊，H−z 為單一二接點分量，其餘內點完整 degree=4。
-在 C5 disk、minimal q-obstruction 及接受全部 T4 的前提下，結果如下。
+最新 R31：[同末端不同二接點正常形拓撲](docs/c5_degree5_same_terminal_triangles.md)
+完成 C3–C3–C3 簡單臂的 408 模板、327,968 種接線非 disk 覆蓋；
+完整 F={D}、degrees 與 19,020 份刪邊著色通過。
+下一步為此型補任意長來源 boundary 固定 minors，再合成拓撲證書回來源。
+R27 末端各一臂與 R30 中間不同二接點鏈型已排除，**一般三環仍未排除**。
+紙面＋Python，未新增 Lean theorem。R24–R31 隨本次提交整合；
+發布核對範圍見 [STATUS §37](docs/STATUS.md#37-r24r31-整合提交與發布核對)。
 
-| 分量範圍 | 已完成結果與證書 | 報告 |
+目前主線研究三-spoke 型：唯一 degree-5 內點 z 接三條 boundary 邊，
+H−z 為單一二接點分量，其餘內點完整 degree=4；沿用 C5 disk、
+minimal q-obstruction、接受全部 T4 與各報告的 forcing-list 前提。
+
+| 範圍 | 目前狀態 | 入口 |
 | --- | --- | --- |
-| 任意連通二接點分量 | 十二種位置縮為兩個鏡像 pentagon；保存非 minimal 的 disk 雙缺失控制 | [區域化約](docs/c5_degree5_sectors.md) |
-| 任意樹 | 分枝消去及色序列縮為五型；648 個實際接線全部非 disk | [樹分量](docs/c5_degree5_tree_components.md) |
-| 恰一個 triangle，其餘 bridges | 任意接點位置／臂長／外枝排除；528 個必要模板、89,224 個接線全部非 disk | [單 triangle](docs/c5_degree5_triangle_components.md) |
-| 恰一個任意 odd-cycle，其餘 bridges | 保留接點縮成 triangle／樹後排除；147 張來源的固定-q 延拓、minimality 及真正 minors 核對通過 | [單長奇環](docs/c5_degree5_odd_cycle_components.md) |
-| 恰兩個共用點 triangles，其餘 bridges | 任意接點位置／外枝排除；888 個必要模板、295,920 個接線全部非 disk | [共用點雙 triangle](docs/c5_degree5_shared_triangles.md) |
+| 全 degree-4 | T4 下只缺指定 q；紙面合成與有限證書，未整體 Lean 化 | [K4／degree-4 合成](docs/c5_k4_blocks.md) |
+| 三-spoke，零／一／二個 odd-cycle blocks | 任意樹、單環與雙環已排除，含任意環長與既定接點位置 | [單環](docs/c5_degree5_odd_cycle_components.md)、[雙環合成 R24](docs/c5_degree5_shared_cycle_minors.md) |
+| 三環共用點鏈，末端各一臂 | 正常形與任意長來源 minors 已完成 | [R25–R27](docs/c5_degree5_three_cycle_minors.md) |
+| 三環共用點鏈，兩個不同中間接點 | C3–C5–C3 正常形與任意長來源 minors 已完成 | [R29–R30](docs/c5_degree5_middle_cycle_minors.md) |
+| 三環共用點鏈，同末端不同二接點 | R31 正常形完成；任意長來源 minors 是下一個缺口 | [R31](docs/c5_degree5_same_terminal_triangles.md) |
+| 其他三環型與一般 degree-5 | 尚未完成；list 介面不等於圖層排除 | [全部接點位置 R28](docs/c5_degree5_three_cycle_positions.md)、[變化追蹤](docs/STATUS.md#4-可能出現新變化的地方) |
+| Lean 基礎 | forcing-list 與 15 個接合定理已形式化；不涵蓋整個 minor／disk 論證 | [定理與界線](docs/lean_root_interfaces.md) |
 
-另以連通外框 K5 minor 排除 z 至少有一條 boundary spoke 時各 degree-4
-分量的 K4 block；此項只需 planarity，t=0 未涵蓋。
-
-前輪 R17：[互斥雙環的任意外臂](docs/c5_degree5_bridge_arms.md) 已排除兩側
-外臂各在不同於 bridge 端點的環點接入：36,672 模板的 246,645,568 種接線
-由 709 份非平面 subdivisions 完整覆蓋；72 張長來源／216 次縮減通過。
-承接 [R16 直接私有接點](docs/c5_degree5_bridge_triangles.md) 的同側化約及短子型。
-前輪 R18：[同點接入的標記二色介面](docs/c5_degree5_bridge_marks.md) 已核對
-完整 root 公式，得到一側同點 858 型／兩側同點 186 型；每型代表的四種
-z 色及逐邊刪除 coloring 通過，另核對 12,711 次標記色序列縮減。
-前輪 R19：[標記路徑 minor 與同點排除](docs/c5_degree5_bridge_mark_minors.md)
-已補完 1,044 型全部 571,400 接線的非 disk 覆蓋，以及 198 張長來源／432 次
-真正 minor 縮減。結合 R15–R17，**三-spoke 分量恰含兩個 triangle blocks、
-其餘 bridges 的全部接點位置已排除**，不限路徑長度及外枝分叉。
-前輪 R20：[長奇環加 triangle 的完整條件 root](docs/c5_degree5_long_triangle_roots.md)
-已證同點／不同點的四列介面與保留接點的 triangle 一致；67 個外臂 profiles、
-60,300 次耦合查詢及三色 root／雙禁色控制已保存。
-前輪 R21：[混合雙環來源 minor](docs/c5_degree5_long_triangle_minors.md)
-補完四種接點組合的 144 張來源、8,946 份刪邊著色及合成非平面 minor。
-**一長奇環＋triangle 的互斥雙環已排除**。
-前輪 R22：[互斥雙長環連續縮減](docs/c5_degree5_two_long_cycles.md)
-完成雙長環的 144 張來源、兩種縮減順序、576 個逐步 minor 與四階段
-37,224 份刪邊著色；**任意長度互斥雙 odd-cycle 已排除**。
-本輪 [R23 共用點介面](docs/c5_degree5_shared_cycle_roots.md) 證明縮環保持
-四列可延拓判定，但完整 root／交集可能改變，已保存反向控制。
-下一步為共用點長環的真正來源 minor、minimality 與 R15 拓撲合成。
-上述成果是紙面化約＋Python 有限證書，未新增 Lean theorem；一般 degree-5、
-共同出口與 `K∞=K≤5` 仍未證。精確停止點與重播入口見
-[HANDOFF](docs/HANDOFF.md)。本次發布整合 R21–R23 與 15 個普通 Lean
-接合基礎定理；範圍見 [Lean 說明](docs/lean_root_interfaces.md)，發布核對見
-[STATUS §27](docs/STATUS.md)。既有 R16–R20 提交核對見同頁 §22。
-
-前輪成果：[唯一 degree-5 的完整接點介面](docs/c5_degree5_interfaces.md)。
-保留 degree-4 分量的全部接點關係，得到 minimality 的不可刪減禁色覆蓋條件；
-刪去分量任一邊即解除該分量限制，固定來源圖的全部刪邊後代至多需四個二元開關。
-32 個既有 disk witnesses 的完整 boundary rows 已核對；一般 degree-5 的
-disk／T4 單缺失結論仍未證；三-spoke 分支的最新停止點見上方報告。
-
-前輪成果：[K4 block 排除與全 degree-4 單缺失](docs/c5_k4_blocks.md)。
-K4 的四個外接方向必通往 boundary，產生 K5 minor，故全 degree-4 的 planar
-minimal q-obstruction 沒有 K4 block。結合 Gallai-tree 化約與既有 odd-cycle
-分類，**接受全部 T4 的 C5 disk minimal q-obstruction 若全 degree-4，便只缺 q**。
-不限內點數；依賴外部 degree-choosability 定理、紙面論證與 Python 證書，未新增
-Lean theorem；後續 degree-5 染色介面見上方新報告。
+完整報告索引、已被續作解決的舊問題與歷次驗證見 [STATUS](docs/STATUS.md)。
+一般 degree≥5、單側／共同出口與 `K∞=K≤5` 仍未證。
 
 | 其他閱讀方向 | 入口 |
 | --- | --- |

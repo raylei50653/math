@@ -1,13 +1,14 @@
 # 研究交接：目前狀態與接手入口
 
 更新：2026-09-18。工作目錄 `/home/ray/math`。
-本次發布自 `3d6a647`（R16–R20）接續整合 R21–R23 與 Lean 接合基礎。
-本輪 R23 完成共用點雙奇環的四列可延拓 list 判準：縮環保持 F，
-但完整 root 集與交集可改變，已保存反向控制。尚待來源 minor／
-degrees／逐邊刪除著色與 R15 拓撲證書合成，未新增 disk 排除。
-R21–R23 的研究成果仍為紙面＋Python；本次發布核對見 STATUS §27。
-其後補入 15 個共同接點／中心接合／共用 root 的普通 Lean 基礎定理；
-範圍與尚未形式化部分見 [Lean 接合基礎](lean_root_interfaces.md)，不改變 R23 停止點。
+最新研究從 HEAD `e14874d` 與未提交 R24–R30 接手，完成 R31 同末端
+不同二接點的 C3–C3–C3 簡單臂正常形拓撲。408 模板、327,968 種
+接線全部非 disk，完整 F={D}、degrees 與 19,020 份刪邊著色通過。
+下一步為此型建立任意長來源 boundary 固定 minors，再合成 R31 證書。
+R27 末端各一臂與 R30 中間不同二接點鏈型已排除；一般三環仍未完成。
+R24–R31 隨本次提交整合；發布核對見 STATUS §37，R31 研究驗證見 §35，
+文件盤點見 §36。既有 R21–R23 發布見 §27。
+仍為紙面＋Python，未新增 Lean theorem。
 
 先讀本頁，再讀 [文件狀態與變化追蹤](STATUS.md) 及指定報告。
 逐輪數字、舊停止點與發布紀錄完整保存在 [歷史交接](HANDOFF_HISTORY.md)。
@@ -20,19 +21,55 @@ R21–R23 的研究成果仍為紙面＋Python；本次發布核對見 STATUS §
 候選 A 的 minimal obstruction 路線：先研究單側出口，再處理共同出口。
 這裡的「相鄰雙缺失」與舊 Kempe 路線的「相鄰可實現 singleton」是不同命題。
 
-最新介面進展見 [R23 共用點雙奇環](c5_degree5_shared_cycle_roots.md)：
-縮環保持四列可延拓判定，但不保持完整 root 色集；圖層排除尚未完成。
+最新完成 [R31 同末端不同二接點正常形](c5_degree5_same_terminal_triangles.md)：
+保留無接點末端的二色限制，408 個模板的全部 327,968 種接線由
+68 份 subdivisions、435 次子 cube 引用覆蓋。四列、degrees、minimality
+通過；任意長來源 minors 尚未完成，不能把正常形直接視為此型一般排除。
 
-最新已完成的排除報告是 [互斥雙長環連續縮減](c5_degree5_two_long_cycles.md)：
-拒絕 D 的雙側 singleton 必要性不要求另一側為 triangle。第一次縮環
-保留兩側完整四列、外臂及中間 bridge，第二側前提繼續成立。
-144 張來源核對左右兩個縮減順序，合成 branch sets 相同；18,432 次
-直接 root pinning 及 37,224 份四階段刪邊著色通過。
-**任意長度的兩個互斥 odd-cycle blocks 已排除**；共用點含長環仍開放。
+前輪完成 [R30 任意長中間二接點來源 minors](c5_degree5_middle_cycle_minors.md)：
+三環縮到 C3–C5–C3，保留兩共用點、兩接點與 palette 錨點；再縮重複色
+外臂，boundary 固定，z 可吸收臂點。逐步驗 degrees、四列 F={D}、
+刪邊著色，並將 R29 非平面證書合成回來源。這個任意長鏈型已排除。
 
+前輪完成 [R29 中間 C5 正常形](c5_degree5_middle_pentagon.md)：
+保留兩共用點與兩接點，分類全部 12 個具名循環位置，建立簡單色序列
+外臂與實際 attachments。4,896 個模板的全部接線有非 disk 證書，
+完整 F={D}、degrees 與 minimality 通過；長來源 minor 由 R30 補完。
+
+前輪完成 [R28 全部接點位置介面](c5_degree5_three_cycle_positions.md)：
+相同完整接合判準涵蓋同末端、末端與中間、同中間、同點會合。
+不同點完整 F={D}；同點有 1,872 組雙拒絕控制，不能只檢查 D。
+兩接點同中間不同點時，保留兩個共用點及接點的目標必須容納四點，
+此縮環方案使用 C5。R28 只證四列 list 語義；中間二接點正常形拓撲由 R29 補完，長來源由 R30 補完。
+
+前輪完成 [R27 三環鏈來源 minors](c5_degree5_three_cycle_minors.md)：
+保留兩共用點、末端接點與 palette 錨點，任意長環縮成 triangles，再縮
+重複色外臂。全部 boundary 固定；縮臂可吸收進 z，不要求 z singleton。
+96 份來源控制核對所有八個縮環子集、六種順序與逐步縮臂，再合成 R26
+非平面 minor。這個末端二臂鏈型已排除；其他三環型仍開放。
+
+前輪完成 [R26 三個 triangle 鏈正常形](c5_degree5_three_triangles.md)：
+408 個模板、327,968 個實際接線全部非 disk，保存 72 份 subdivisions；
+完整 degrees、F={D} 與逐邊刪除著色通過。長來源合成由 R27 補完。
+
+前輪完成 [R25 三環共用點鏈介面](c5_degree5_three_cycle_roots.md)：
+兩臂各在末端環時，拒絕 D 強迫 T–S–T 交替 palettes；四列 F={D}，
+任意子集縮環保持可延拓布林值。完整二接點關係與 pinning 不保持，
+獨立 root 投影會誤判；三項反向控制已保存。該型 disk 排除由 R26–R27 接續。
+
+前輪完成 [R24 共用點雙奇環來源 minor](c5_degree5_shared_cycle_minors.md)：
+保留共同點與接點縮環，保持四列可延拓布林值、F={D}、degrees 與
+minimality；180 張來源直接核對並合成 R15 非平面 minor。
+**三-spoke／連通二接點分量恰含兩個 odd-cycle blocks 的任意長度與位置
+已排除**，含互斥與共用點。完整 root／交集仍不保持，見
+[R23 反向控制](c5_degree5_shared_cycle_roots.md)。
+
+前輪 [互斥雙長環連續縮減](c5_degree5_two_long_cycles.md) 完成
+144 張來源的兩種縮減順序、18,432 次 root pinning 與 37,224 份
+四階段刪邊著色；其互斥雙環結論與 R24 合成。
 前輪 [混合雙環來源 minor](c5_degree5_long_triangle_minors.md) 已補完
 一長環＋triangle 的四型來源；144 張／8,946 份刪邊著色及來源非平面
-minor 保留不變。本輪以其具名控制構造真正雙長環來源。
+minor 保留不變；R22 以其具名控制構造真正雙長環來源。
 
 前輪 [完整條件 root](c5_degree5_long_triangle_roots.md) 已證拒絕 D
 強迫共同 palette，並保存 67 個臂 profiles、60,300 次耦合查詢及
@@ -137,8 +174,9 @@ triangle 分類，現在得到：**接受全部 T4 的 C5 disk minimal q-obstruc
 | 唯一 degree-5、三條 z-spokes、H−z 恰含兩個互斥 triangles，其餘 bridges | 同側旁支、不同環點及同點接入全部排除；任意臂長／外枝；紙面＋Python，未 Lean 化 | [R16 bridge](c5_degree5_bridge_triangles.md)、[R17 外臂](c5_degree5_bridge_arms.md)、[R19 同點](c5_degree5_bridge_mark_minors.md) |
 | 唯一 degree-5、三條 z-spokes、H−z 恰含一長奇環與一 triangle，兩環互斥，其餘 bridges | 任意環長／臂長／外枝排除；144 張來源 minor 控制，紙面＋Python，未 Lean 化 | [混合雙環](c5_degree5_long_triangle_minors.md) |
 | 唯一 degree-5、三條 z-spokes、H−z 恰含兩個互斥 odd cycles，其餘 bridges | 任意兩環長／臂長／外枝排除；雙長環 144 張來源、576 個逐步 minor，紙面＋Python，未 Lean 化 | [雙長環](c5_degree5_two_long_cycles.md) |
+| 唯一 degree-5、三條 z-spokes、H−z 恰含兩個共用點 odd cycles，其餘 bridges | 任意環長／接點位置／外枝排除；180 張來源及 R15 拓撲合成，紙面＋Python，未 Lean 化 | [R24 共用點雙奇環](c5_degree5_shared_cycle_minors.md) |
 
-恰兩個 triangles 的全部位置及任意長度互斥雙環已處理；共用點含長環尚未列作排除。
+恰兩個 odd-cycle blocks 的全部位置及任意環長已處理；三環已完成 R27 末端二臂及 R30 中間不同二接點共用點鏈型，一般三環及更多環仍開放。
 
 以上各 block 結果都是紙面化約配合 Python 有限證書；不能統稱已 Lean 化。
 共同 forcing-list 基礎已有 [Math/ForcingLists.lean](../Math/ForcingLists.lean)：
@@ -152,18 +190,22 @@ bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle �
 
 ## 2. 精確停止點與下一個窄問題
 
-**任意互斥雙 odd-cycle 已排除；共用點長環已有 list 判準，下一題是圖層來源 minor。**
-先讀 [R23](c5_degree5_shared_cycle_roots.md)，再讀
-[R15 共用點位置分類及介面](c5_degree5_shared_triangles.md)。R17／R19 大覆蓋不需重跑。
+**恰兩個 odd-cycle blocks 已排除；三環共用點鏈的末端各一臂、兩個不同
+中間接點亦已排除。** 同末端不同二接點僅完成 R31 正常形拓撲。
+先讀 [R31](c5_degree5_same_terminal_triangles.md)，來源 minor 構造參考
+[R30](c5_degree5_middle_cycle_minors.md)，list 介面讀
+[R28](c5_degree5_three_cycle_positions.md)。既有大覆蓋不需重跑。
 
-1. 共用 root 的兩側色集各至少二色；交集為空 iff 私有 lists 分別
-   為互補共同 palettes。三個接點型的縮環保持四列可延拓布林值與 F。
-2. **完整 root 及交集不保持**，R23 已有來源控制；後續 checker
-   應核對四列可延拓判準。同點型還須排除 F 含第二禁色的退化情形。
-3. 保存保留共同點／接點的真正來源 minor、degrees／逐邊刪除著色及
-   R15 非平面 minor 合成，涵蓋一長環與雙長環及偶數 arc。
+1. 固定兩個不同接點都在同一末端環，建立任意長來源到 R31 的
+   C3–C3–C3 boundary 固定 minors。接點末端保留共用點與兩接點；
+   中間保留兩共用點與 S 錨點；無接點末端保留共用點與兩個 T 錨點。
+2. 再縮重複色外臂，保留實際 boundary 接線，允許 z 吸收臂點；
+   逐步核對 degrees、完整四列 F={D} 與逐邊刪除著色。
+3. 將 R31 已存 subdivision 合成回來源，核對 branch sets 及來源實際邊。
+   不以 R28 list 布林等價或正常形全覆蓋直接代替來源圖層證據。
 
-更多環的一般分拆 (2)、其他接點分拆仍開放；其餘追蹤見 [STATUS.md](STATUS.md)。
+末端與中間／同點的新圖層排除、環間 bridge 三環型、其他分拆 (2)
+及一般三環仍開放；完整 Q(a) 與 Σ 不宣稱保持。
 
 一般 degree≥5、單側出口、共同 pivotal edge、候選 A、
 一般 weak-deletion congruence 與 `K∞=K≤5` 仍需各自的證明。
@@ -199,11 +241,27 @@ bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle �
 - Lean／mathlib 鎖定 `v4.34.0-rc2`；不為接手自動 `lake update`。
   Python 使用報告指定的 `uv run --with ...`；不並行寫同一 `.olean`。
 
-## 5. 重播入口與本次核對
+## 5. 重播入口與驗證範圍
 
-本輪入口為 [R23 §4](c5_degree5_shared_cycle_roots.md)；前輪見 [R22 §4](c5_degree5_two_long_cycles.md)；既有入口保留（範圍見 [R19 §5](c5_degree5_bridge_mark_minors.md)；R18 見 [報告 §5](c5_degree5_bridge_marks.md)；R11–R17 完整入口亦保留）：
+前次文件盤點只核對索引、連結與 whitespace，未重跑研究驗證。
+本次提交的 R24–R31 checker 與 Lean build 核對結果另見 STATUS §37。
+以下為各研究輪的既有重播入口與驗證紀錄。
+
+R31 研究輪入口為 [R31 §3](c5_degree5_same_terminal_triangles.md)；該輪只重播新正常形 checker。
+R28 紙面判準及既有 helpers 沿用，R30／R29 等舊 standalone checker 未重跑。
+前輪入口為 [R30 §4](c5_degree5_middle_cycle_minors.md)，逐筆核對所用 R29 路徑。
+前輪入口為 [R29 §3](c5_degree5_middle_pentagon.md)，前輪另重播 R28。
+前輪入口為 [R27 §4](c5_degree5_three_cycle_minors.md)；前輪為 [R26 §3](c5_degree5_three_triangles.md)；前輪為 [R25 §4](c5_degree5_three_cycle_roots.md)；前輪為 [R24 §4](c5_degree5_shared_cycle_minors.md)；前輪為 [R23 §4](c5_degree5_shared_cycle_roots.md)；前輪見 [R22 §4](c5_degree5_two_long_cycles.md)；既有入口保留（範圍見 [R19 §5](c5_degree5_bridge_mark_minors.md)；R18 見 [報告 §5](c5_degree5_bridge_marks.md)；R11–R17 完整入口亦保留）：
 
 ```bash
+uv run --with networkx==3.5 python scripts/c5_degree5_same_terminal_triangles.py --check
+uv run --with networkx==3.5 python scripts/c5_degree5_middle_cycle_minors.py --check
+uv run --with networkx==3.5 python scripts/c5_degree5_middle_pentagon.py --check
+uv run python scripts/c5_degree5_three_cycle_positions.py --check
+uv run --with networkx==3.5 python scripts/c5_degree5_three_cycle_minors.py --check
+uv run --with networkx==3.5 python scripts/c5_degree5_three_triangles.py --check
+uv run python scripts/c5_degree5_three_cycle_roots.py --check
+uv run --with networkx==3.5 python scripts/c5_degree5_shared_cycle_minors.py --check
 uv run python scripts/c5_degree5_shared_cycle_roots.py --check
 uv run --with networkx==3.5 python scripts/c5_degree5_two_long_cycles.py --check
 uv run --with networkx==3.5 python scripts/c5_degree5_long_triangle_minors.py --check

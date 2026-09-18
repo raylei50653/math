@@ -1,7 +1,9 @@
 # 文件狀態與可能變化追蹤
 
-更新日期：2026-09-18。R11–R15 已發布於 `b55abf4`；R16–R19 尚未提交，見 §17–20。
-發布前核對見 §16；共用點雙 triangle、單長奇環、單 triangle、樹及區域見 §15–11。
+更新日期：2026-09-18。本次提交自 `e14874d` 整合 R24–R31 與文件盤點。
+最新研究 R31 見 §35，文件盤點見 §36，本次發布核對見 §37；既有發布核對見 §27。
+各輪當時的未提交狀態保留於原節；即時提交與遠端 SHA 以 Git 為準。
+早期發布核對見 §16；共用點雙 triangle、單長奇環、單 triangle、樹及區域見 §15–11。
 先前兩輪長環研究與發布紀錄保留於 §7–8。
 此頁是目前文件索引及後續觀察紀錄，詳細數學敘述仍以原報告為準。
 研究主入口是 [HANDOFF.md](HANDOFF.md)，逐輪原始交接保存在
@@ -28,7 +30,13 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [標記路徑 minor 與同點排除](c5_degree5_bridge_mark_minors.md) | 1,044 型／571,400 接線完整非 disk 覆蓋；198 長來源／432 次真正 minors；結合 R15–R17 排除恰兩個 triangles，兩環含長環仍開放 |
+| [同末端不同二接點正常形](c5_degree5_same_terminal_triangles.md) | R31：408 模板／327,968 接線非 disk；任意長來源 minors 待補，是目前下一題 |
+| [中間二接點來源 minors](c5_degree5_middle_cycle_minors.md)、[中間 C5 正常形](c5_degree5_middle_pentagon.md) | R29–R30：正常形覆蓋與 boundary 固定來源 minors 合成，排除任意長中間不同二接點鏈型 |
+| [三環鏈全部接點位置](c5_degree5_three_cycle_positions.md) | R28 完整 list 接合；不同點 F={D}，同點保留完整 F；中間二接點圖層由 R29–R30 補完，同末端由 R31 完成正常形 |
+| [末端二臂來源 minors](c5_degree5_three_cycle_minors.md)、[三個 triangle 正常形](c5_degree5_three_triangles.md)、[三環鏈 root](c5_degree5_three_cycle_roots.md) | R25–R27：完整接合、正常形與來源 minors 已接通，排除末端各一臂的任意長共用點鏈型；一般三環未完成 |
+| [共用點雙奇環來源 minors](c5_degree5_shared_cycle_minors.md)、[共用點四列介面](c5_degree5_shared_cycle_roots.md) | R23–R24：四列布林縮環與真正來源 minors 分開驗證；結合互斥型完成恰兩個 odd-cycle blocks，完整 root／交集不保持 |
+| [互斥雙長環](c5_degree5_two_long_cycles.md)、[混合雙環來源 minors](c5_degree5_long_triangle_minors.md)、[混合雙環 root](c5_degree5_long_triangle_roots.md) | R20–R22：混合 root 介面、來源 minors 與連續縮減已接通，互斥雙環任意長度排除 |
+| [標記路徑 minor 與同點排除](c5_degree5_bridge_mark_minors.md) | 1,044 型／571,400 接線完整非 disk 覆蓋；198 長來源／432 次真正 minors；結合 R15–R17 排除恰兩個 triangles；含長環後由 R21–R24 補完 |
 | [同點接入標記介面](c5_degree5_bridge_marks.md) | 36 組 root 查詢、858＋186 型及 12,711 次色序列縮減；來源 minors 與拓撲覆蓋由 R19 補完 |
 | [互斥雙環任意外臂](c5_degree5_bridge_arms.md) | 兩側不同環點接入的任意外臂排除；36,672 模板／246,645,568 接線完整覆蓋，同點接入後由 R18–R19 補完 |
 | [互斥雙環 bridge](c5_degree5_bridge_triangles.md) | 同側接點化回單環；直接私有接點子型任意長 bridge 排除，132 模板／43,696 lifts 非 disk；剩餘外臂位置後由 R17–R19 補完 |
@@ -51,7 +59,7 @@
 | [三-spoke 區域化約](c5_degree5_sectors.md) | 單一二接點分量縮到兩個鏡像 pentagon；完整接合代數與非 minimal disk 控制，最終排除仍未解；紙面＋證書，未 Lean 化 |
 | [三-spoke 任意樹分量／連通外框](c5_degree5_tree_components.md) | 任意樹的固定-q 化約與五種閉色序列、648 個必要 lifts 排除；t≥1 的 degree-4 分量不含 K4；含 cycle 的分拆 (2) 仍未解，未 Lean 化 |
 | [三-spoke 單 triangle 二接點](c5_degree5_triangle_components.md) | 旁支／共同／不同接點三型全部排除；528 模板、89,224 接線非 disk，不限 bridges 長度或分叉；單長環由下一列處理，未 Lean 化 |
-| [三-spoke 單長奇環二接點](c5_degree5_odd_cycle_components.md) | 保留接點縮成 triangle，保持全部固定-q z 色及 minimality；任意單 odd-cycle 加 bridges 排除，147 張具名來源 minor 控制；多環仍開放，未 Lean 化 |
+| [三-spoke 單長奇環二接點](c5_degree5_odd_cycle_components.md) | 保留接點縮成 triangle，保持全部固定-q z 色及 minimality；任意單 odd-cycle 加 bridges 排除，147 張具名來源 minor 控制；雙環由 R15–R24 補完，一般多環仍開放，未 Lean 化 |
 | [三-spoke 共用點雙 triangle](c5_degree5_shared_triangles.md) | 共用 cut vertex 的任意二接點位置／外枝排除；888 模板、295,920 接線非 disk；互斥雙 triangle 後由 R16–R19 補完，未 Lean 化 |
 
 ### 2.2 Kempe、計數與固定圖策略
@@ -71,6 +79,7 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [Lean 接合基礎](lean_root_interfaces.md) | 15 個普通 Lean 定理與報告對照；刪邊解除、奇環剛性及 minor／disk 層仍未形式化 |
 | [研究目標](c5_boundary_relations.md) | 主命題未證；全域存在小代表、指定局部規則的完備性必須分開 |
 | [phase 1](phase1.md)、[BAD 構造](construction.md)、[gadgets](gadgets.md) | 基礎 exact relation／有限 Lean 證書與 gadget synthesis；一般 planar、separating C5 的 BAD 不構成 disk 反例 |
 | [automata](automata.md)、[attachment normal form](attachment_normal_form.md)、[topology completeness](topology_completeness.md) | 固定 triangle grammar 的染色語義、normal form、GeoReject 與 endpoint-order 編譯已形式化；embedding 抽取與 topology soundness 仍在紙面層 |
@@ -104,9 +113,14 @@
 | 單 triangle 報告的「下一題恰一個長 odd-cycle」 | [單長奇環報告](c5_degree5_odd_cycle_components.md) 已完成保留接點縮環及三型排除；下一題為恰兩個 triangle blocks |
 | 單長奇環報告的「下一題恰兩個 triangles」 | [共用點雙環報告](c5_degree5_shared_triangles.md) 已排除共用 cut vertex 分支；下一題收窄為兩個互斥 triangles 的 bridge 路徑 |
 | R16／R17 的「外臂／同點接入未處理」及 R18 的「來源 minor／拓撲覆蓋未完成」 | [R19](c5_degree5_bridge_mark_minors.md) 補齊同點接入；結合 R15–R17，恰兩個 triangle blocks 已排除。下一題是長奇環與 triangle 的耦合 root 介面 |
+| R20／R23 的「長環來源 minor 未完成」 | [R21](c5_degree5_long_triangle_minors.md)、[R22](c5_degree5_two_long_cycles.md)、[R24](c5_degree5_shared_cycle_minors.md) 補完混合、互斥雙長環與共用點雙奇環 |
+| R24 的「下一題三環完整二接點關係」 | [R25](c5_degree5_three_cycle_roots.md) 已完成末端二臂介面；[R28](c5_degree5_three_cycle_positions.md) 擴至同鏈全部接點位置 |
+| R25／R26 的「末端二臂來源 minor 待補」 | [R27](c5_degree5_three_cycle_minors.md) 已補完任意長來源與拓撲合成 |
+| R28／R29 的「中間二接點圖層／來源 minor 未解」 | [R29](c5_degree5_middle_pentagon.md) 完成正常形，[R30](c5_degree5_middle_cycle_minors.md) 補完來源 minors |
+| R30 的「同末端不同二接點正常形待做」 | [R31](c5_degree5_same_terminal_triangles.md) 已完成正常形；此型任意長來源 minors 仍開放 |
 | 較早 handoff 的「completion 未證」 | [同頂點 completion](c5_completion_weak_bisimulation.md) 已有紙面證明；topology 未 Lean 化仍成立 |
 | 較早 block 報告說「未新增 Lean theorem」 | 指該輪整個化約；後來共有 list 引理進入 [ForcingLists.lean](../Math/ForcingLists.lean)，不代表 minor／disk 論證也進入 Lean |
-| 各輪「尚未提交／推送」 | 屬於當時狀態；長環兩輪已隨 `dad5940`、R9–R10 已隨 `be97121` 發布；本次整合 R11–R15，核對見 §16；即時發布狀態以 Git 為準 |
+| 各輪「尚未提交／推送」 | 屬於當時狀態；長環兩輪已隨 `dad5940`、R9–R10 已隨 `be97121` 發布；R11–R15、R16–R20、R21–R23 的發布分見 §16、§22、§27；R24–R31 隨本次提交整合，見 §37；即時發布狀態以 Git 為準 |
 | enumerator 兩個「§14」 | edge-mask 仍為 §14；獨立 cross-check 改為 §16，對應導引一併更正 |
 
 本輪對近期主線報告補上後續連結，保留原輪次內容。歷史交接以快照方式保存，
@@ -114,12 +128,21 @@
 
 ## 4. 可能出現新變化的地方
 
-以下起於 **2026-09-17 閱讀既有材料時的追蹤紀錄**。R1–R3 已由同日接手研究
-完成，R4–R6 保留；後續完成 R7–R9、R10 染色介面、R11 區域化約、R12 樹分支、
-R13 單 triangle、R14 單長奇環與 R15 共用點雙 triangle 分支。
-R16–R19 隨後完成互斥雙 triangles；兩環含長 odd-cycle、更多環三-spoke
-分量與一般 degree-5 排除仍開放。
-各項成果層級與範圍仍以連結報告為準。
+截至 **2026-09-18／R31** 的待追蹤項目如下；這是文件盤點提出的後續觀察，
+不是新增研究結果。每項只有達到對應證據條件後，才更新結論。
+
+| 項目 | 現況與可能的新變化 | 更新結論前要看到的證據 |
+| --- | --- | --- |
+| 同末端不同二接點的任意長來源 | **優先**：R31 只完成正常形；補齊後可擴大到此型任意環長／臂長 | boundary 固定 branch sets，保留共用點／兩接點／palette 錨點，逐步 degrees、完整四列、刪邊著色及 R31 拓撲合成；參考 [R30](c5_degree5_middle_cycle_minors.md) |
+| 末端與中間、同點會合 | [R28](c5_degree5_three_cycle_positions.md) 已有 list 介面，圖層未完成；同點存在 1,872 組雙拒絕控制 | 同點須查完整 F 與 minimality，再建實際接線、正常形拓撲及來源 minors；不能只核對 D |
+| 環間 bridge、其他分拆 (2)、更多環 | 現有 R27／R30 只覆蓋指定共用點鏈，尚無一般三環定理 | 各連接型的共同接點關係、化約及來源拓撲；無接點末端不可未驗證就刪除 |
+| 可重用 Lean 基礎 | [接合定理](lean_root_interfaces.md) 已完成；degree-list slack、R10 全列刪邊解除、R23 奇環剛性可再推進 | 明確 Lean theorem 與 axiom audit；build 成功不使紙面圖替換自動形式化 |
+| 一般單側／共同出口 | degree-4 與部分 degree-5 block 成果尚不能推出候選 A | 分別補一般分離與共同 pivotal edge 證明；兩個單側出口不足以推出共同出口 |
+| 文件與發布同步 | R24–R31 報告、scripts、artifacts 隨本次提交整合；入口容易落後逐輪紀錄 | 新成果同步 README、HANDOFF、此頁索引／追蹤表與前輪後續連結；發布時另核對 Git 及對應 checker |
+
+以下 R1–R15 保留早期追蹤來源；其輪次狀態以各節為準。
+R16–R24 已完成恰兩個 odd-cycle blocks；R25–R31 的演進見 §29–35。
+R4–R6 仍為保留方向，不因本次整理而重啟研究或擴大枚舉。
 
 ### R1：bridge pruning 給出任意總環數的 cluster 隔離
 
@@ -786,3 +809,302 @@ certificates／reports、15 個普通 Lean 接合定理與 audit、README／HAND
 R21–R23 的一般研究論證仍為紙面＋Python；新 Lean 定理的範圍見
 [接合基礎](lean_root_interfaces.md)。R23 共用點長環來源 minor、
 degrees／刪邊著色及拓撲合成仍是下一步，未新增 disk 排除結論。
+
+
+## 28. R24 共用點雙奇環來源 minor 與排除
+
+2026-09-18，從乾淨 HEAD `e14874d` 接手，完成
+[共用點雙奇環來源 minor](c5_degree5_shared_cycle_minors.md)。三段 arc
+收縮保留共同點與接點；共享 root branch set 合併兩側吸收頂點後仍
+連通，兩種縮減順序的合成相同。由 R23 四列判準保持 F={D}，再以
+完整 degrees／分量解除引理重建 minimality，接 R15 任意臂長及拓撲覆蓋。
+
+**三-spoke、連通二接點分量恰含兩個 odd-cycle blocks 的全部位置與
+任意環長已排除**（互斥為 R22，共用點為 R24）。這是紙面＋Python，
+未新增 Lean theorem，不保持完整 root 或 Σ。
+
+| 核對 | 結果 |
+| --- | --- |
+| R23 checker | 唯讀逐 byte 通過；14,641／46,656 組一般 lists 與三類四列查詢 |
+| R24 來源 | 180 張；三類各 60；36 個目標，有序環長 (5,3)、(3,7)、(5,7)、(7,9)、(9,5) |
+| Minor／四列 | 360 條兩步縮減，720 個逐步 minors（混合型含 identity）；四階段 2,880 次 z 色查詢 |
+| 刪邊著色 | 來源 11,520 份，四階段合計 36,360 份；直接核對 pins 及全部邊 |
+| 拓撲 | 重驗所用 R15 subdivisions，逐來源合成 K5／K3,3 minor；新 checker 停用 planarity APIs 後逐 byte 通過 |
+| 反向控制 | 同點閉序列 (D,0,D) 的長環／triangle 圖皆 F={0,D}；刪 z–b0 仍不可著色，排除 minimality |
+| 既有資料 | R15／R17／R19 大覆蓋未重跑；核對依賴指紋，既有 scripts／artifacts 不變 |
+| Lean | `lake build` 通過，8,822 jobs，僅既有 AttachmentOrder／SymRelabel lint；未重跑無變更的 root axiom audit |
+| 文件 | README／HANDOFF／R23 後續入口更新，新增 R24 報告；連結與 whitespace 核對 |
+
+本輪未 commit／push。下一題為三環共用點鏈，先求中間環的完整有序
+二接點關係，不能以獨立 root 色集接合。一般更多環、其他 degree-5
+分拆、共同出口及 `K∞=K≤5` 仍開放。
+
+## 29. R25 三環共用點鏈的 fixed-q 介面
+
+2026-09-18，接手 HEAD `e14874d` 與未提交 R24。新增
+[三環鏈介面](c5_degree5_three_cycle_roots.md)：兩臂分處末端環，保留
+中間環完整有序二接點關係，以 R2∩(E1×E3) 接合。奇環 list 引理與
+R23 root 剛性推出拒絕 D 時 T–S–T palettes，全部四列 F={D}。
+保留接點與 palette 錨點的 list 縮環可按任意順序做，保持可延拓性。
+
+| 本輪核對 | 結果 |
+| --- | --- |
+| R25 中間環 | 5,324 組 C5 完整 relations 與獨立暴力 coloring 一致；644,204 組端點限制核對拒絕充要條件 |
+| R25 三環鏈 | 324,120 組四列查詢；四組有序環長、全部接點位置、六 palettes、67 profiles 中所有 D 相容組合；全部八種縮環子集 |
+| R25 反向控制 | 完整中間關係改變、實際接合關係改變、邊際投影接合假陽性；保存具體 lists／profiles／pin |
+| R25 重播 | 新 checker 唯讀逐 byte 通過；無 topology oracle |
+| R24 重播 | 180 張來源、720 個逐步 minors、36,360 份四階段刪邊著色通過；既有 scripts／artifacts 未修改 |
+| Lean | `lake build` 通過，8,822 jobs，僅既有 lint；未新增 Lean theorem、未重跑 root axiom audit |
+| 文件 | README／HANDOFF 更新；新增報告連結、whitespace 核對通過 |
+
+R15／R17／R19 大覆蓋與 R20／R23 standalone checker 本輪未重跑。
+本輪依賴 R20 path profiles 實作與既有 root 紙面論證；新結果的信任層
+為紙面＋Python 固定域控制，不是來源 minor、完整 Σ 或三環 disk 排除。
+
+下一步先建立三個 triangle 鏈正常形的實際 attachments／臂接線，核對
+完整 degrees、四列與逐邊刪除著色，再做 topology 證書；之後接長環
+boundary 固定來源 minors。其他三環接點型與一般更多環仍開放。
+R24–R25 均未 commit／push。
+
+## 30. R26 三個 triangle 鏈正常形拓撲
+
+2026-09-18，接手 HEAD `e14874d` 與未提交 R24–R25。新增
+[三個 triangle 鏈正常形](c5_degree5_three_triangles.md)：兩臂各接
+末端私有點、T–S–T palettes、臂為簡單色序列。完成該有限正常形域的
+全部實際接線、degrees、四列、逐邊刪除著色與非 disk 證書。
+
+| 本輪核對 | 結果 |
+| --- | --- |
+| 模板及接線 | 408 個有序模板；327,968 個實際接線，全部非 disk |
+| 完整 fixed-q 介面 | 408 個代表圖各四種 z 色，共 1,632 次；全部 F={D}；另直接核對原圖 q 拒絕 |
+| Minimality | 保存 19,020 份代表圖非 boundary 邊刪除著色，直接驗證 pins、色域及每條邊 |
+| 同模板搬運 | 每張接線核對頂點、內部邊、degree=4／5 及各內點 boundary 色多重集；按 attachment role 搬運 fixed-q 證書 |
+| 拓撲 | 72 份 K3,3 subdivisions 覆蓋所有 boundary-apex augmentations；逐接線驗證實際路徑 |
+| R26 重播 | 停用 planarity APIs 後唯讀逐 byte 通過；完整 327,968 接線 coverage digest 一致 |
+| R25 重播 | 唯讀逐 byte 通過：5,324 組中間 relations、644,204 組端點限制、324,120 組四列查詢 |
+| Lean | `lake build` 通過，8,822 jobs，僅既有 lint；未新增 Lean theorem、未重跑 root axiom audit |
+| 文件 | 新增報告及 README／HANDOFF／R25 後續入口；文件連結與 whitespace 通過 |
+
+本輪未重跑 R15／R17／R19 大覆蓋、R24 及 R20／R23 standalone checker；
+既有研究 scripts／artifacts 未改動。R26 生成時用 NetworkX 找 subdivision；
+重播停用 planarity APIs，只檢查保存的證書路徑、完整接線 coverage digest
+與本地程式依賴 fingerprints。
+
+下一步以 R26 已存正常形為目標，補任意長環與重複色臂的 boundary
+固定來源 minors、四列與刪邊著色，再合成非平面證書回來源。本輪尚未
+宣布任意三環鏈排除，更未完成其他接點型、一般 degree-5 或 `K∞=K≤5`。
+R24–R26 均未 commit／push。
+
+## 31. R27 三環共用點鏈來源 minors
+
+2026-09-18，接手 HEAD `e14874d` 與未提交 R24–R26。新增
+[三環鏈來源 minors](c5_degree5_three_cycle_minors.md)，完成兩外臂各在
+末端私有點之共用點鏈的任意長環與重複色臂化約；其餘三環型仍開放。
+
+| 本輪核對 | 結果 |
+| --- | --- |
+| 有限來源 | 48 個 seed 選取、兩種擴充，共 96 份控制／90 張不同標號來源；有序環長 (5,7,9)、(7,9,5) |
+| 縮環 | 每來源全部八個子集、十二個逐步 minor；共 1,152 步；576 條順序核對合成相等 |
+| 縮臂 | 288 個逐步 minor，含整條臂吸收進 z；boundary singleton 始終固定 |
+| 四列 | 1,056 個圖階段、4,224 次 z 色，全部 F={D}；另核對 q 拒絕 |
+| Minimality | 保存並直接驗證 82,848 份完整非 boundary 邊刪除著色 |
+| 拓撲 | 96 份來源控制全部合成 R26 已存 subdivision 為來源 augmentation 非平面 minor |
+| 重播 | 生成與 --check 均停用 planarity APIs；核對程式／輸入 hashes，緊湊 JSON 唯讀逐 byte 通過 |
+| Lean | `lake build` 通過（8,822 jobs，既有 lint）；未新增 Lean theorem |
+
+R26 全部接線覆蓋、R25 standalone checker 及 R15／R17／R19 大覆蓋
+本輪未重跑；依賴既有紙面與覆蓋，直接重驗本輪所用 R26 subdivisions。
+未改動既有研究 scripts／artifacts；README／HANDOFF／R26 已補後續入口，
+本輪文件連結與 `git diff --check` 通過。證書保留全部 witnesses，採緊湊
+JSON（15,331,986 bytes）。
+下一步分類同鏈其他接點位置，先檢查無接點末端環消去能否回到已知少環
+結果；一般三環、bridge 連接型、degree≥5 與 `K∞=K≤5` 仍開放。
+R24–R27 未 commit／push。
+
+## 32. R28 三環鏈全部接點位置介面
+
+2026-09-18，接手 HEAD `e14874d` 與未提交 R24–R27。新增
+[全部接點位置介面](c5_degree5_three_cycle_positions.md)，沿用完整
+有序接合，把 T–S–T 剛性擴至同末端、末端與中間、同中間及同點會合。
+不同接點完整 F={D}；同點 root 為其有效 palette 的互補 pair，仍須
+檢查全部四列。無接點的共用點末端環留下二色限制，不能直接刪去。
+
+兩個不同接點同在中間環時，兩共用點加兩接點共四個不同標記；本輪
+保留標記的 list 縮環目標為 C3–C5–C3，其餘位置為三個 triangles。
+只證任意子集替換保持四列布林值／F，不宣稱完整 Q、Σ 或圖層 minor。
+
+| 本輪核對 | 結果 |
+| --- | --- |
+| 任意 lists | 三個 triangles 的五個私有 lists 各取全部 11 種至少二色集合；161,051 組用獨立圖回溯核對，恰六組拒絕 |
+| 接點控制 | 環長 (3,3,3)、(5,5,5)、(5,7,9)；全部中間第二共用點位置及可重複接點對，67 個 profiles 中所有 D 相容組合 |
+| 四列查詢 | 614,736 組，包含 573,552 組不同點、41,184 組同點；各驗全部四種 z 色與八個縮環子集 |
+| C5 目標 | 39,960 組兩個不同接點同中間環的查詢 |
+| 獨立條件化圖控制 | 54,096 列 triangle 查詢另用不依賴 transfer 的圖回溯核對 |
+| 反向控制 | 同點另拒一色 1,872 組；保存一份具體 witness，另存刪末端環改變延拓性、有序關係改變、四標記需 C5 三份控制 |
+| R28 重播 | 新 checker 唯讀逐 byte 通過；保存直接本地程式依賴 hashes 與 query digest；無 topology oracle |
+| R27 重播 | 96 份來源、1,152 縮環、288 縮臂、4,224 次 z 色及 82,848 份刪邊著色通過；不修改既有證書 |
+| Lean | `lake build` 通過（8,822 jobs，僅既有 lint）；未新增 Lean theorem、未重跑 root axiom audit |
+| 文件 | README／HANDOFF／R27 補最新入口；本地連結及 whitespace 通過 |
+
+R25／R26 standalone checker、R15／R17／R19 大覆蓋、R20／R23 standalone
+checker 本輪未重跑。新 checker 引用 R20 的 path profiles 與 R25 有序
+關係實作，另以上述獨立圖回溯核對；一般長度範圍由 R28 紙面推導承擔。
+既有 scripts／artifacts 未改動。本輪沒有新增來源 minor 或 disk 排除。
+
+下一步優先建立 C3–C5–C3 型的實際接線、degrees、四列及逐邊刪除著色，
+再求拓撲證書或障礙；R26 的三個 triangles 覆蓋不能直接引用到此型。
+其他新位置圖層排除、環間 bridge 型與一般三環仍開放，`K∞=K≤5` 未證。
+R24–R28 未 commit／push。
+
+## 33. R29 C3–C5–C3 中間二接點正常形
+
+2026-09-18，接手 HEAD `e14874d` 與未提交 R24–R28。新增
+[C3–C5–C3 實際接線與拓撲](c5_degree5_middle_pentagon.md)，完成兩個
+不同接點同在中間 C5、末端均為 triangle、簡單色序列外臂的正常形。
+全部接線非 disk；任意長來源 minor 尚未建立，未宣布一般三環排除。
+
+| 本輪核對 | 結果 |
+| --- | --- |
+| 循環位置 | 第一共用點在 slot 0，第二共用點四種位置，每種三組私有接點對；共 12 種，不除去鏡像重複 |
+| 必要模板 | 每位置 408 個 palette／有序簡單臂組合，共 4,896 個 |
+| 實際接線 | 19,693,824 種具名接線；不是非同構圖數；全部非 disk |
+| 四列 | 19,584 次 z 色查詢，全部完整 F={D}；另驗原圖 q 拒絕 |
+| Minimality | 286,128 份非 boundary 邊刪除後完整 q-coloring，逐頂點／pin／邊核對 |
+| 同模板搬運 | 每個獨立變數只替換同內點的 b1／b3 spoke，核對邊差集與變數互異；任意组合保 degrees 與 fixed-q 著色 |
+| 拓撲 | 428 份保存的 K3,3 subdivisions；4,908 次子 cube 引用覆蓋全部接線 |
+| Cube 運算 | 四變數全部 6,561 組 cube 對用獨立真值表核對差集及互斥 |
+| R29 重播 | 停用 planarity APIs，直接驗保存路徑及完整 cube 覆蓋；來源／載入依賴 hashes 與 25,993,740-byte 緊湊 JSON 唯讀逐 byte 通過 |
+| R28 重播 | 161,051 組任意 lists、614,736 組四列查詢及反向控制通過 |
+| Lean | `lake build` 通過（8,822 jobs，僅既有 lint）；未新增 Lean theorem、未重跑 root axiom audit |
+| 文件 | README／HANDOFF／R28 補後續入口；本地連結及 `git diff --check` 通過 |
+
+R27／R26 standalone checker、R15／R17／R19 大覆蓋、R20／R23 standalone
+checker 本輪未重跑；未引用其拓撲覆蓋代替本輪 C5 正常形證書。沿用
+R13 attachment／simple-walk helpers、既有圖著色與 subdivision checker、
+R17 cube 差集，相關載入本地程式 hashes 均記入新證書；未修改既有 scripts
+或 artifacts。本輪證書不依賴舊 observations.json。
+
+下一步建立任意長奇環與重複色臂來源到本輪正常形的 boundary 固定 minors，
+保留四個中間標記及 palette 錨點，再合成非平面證書回來源。
+其他接點型、環間 bridge 型及一般三環仍開放，完整 Q／Σ 不宣稱保持，
+`K∞=K≤5` 未證。R24–R29 未 commit／push。
+
+## 34. R30 中間二接點三環鏈來源 minors
+
+2026-09-18，接手 HEAD `e14874d` 與未提交 R24–R29。新增
+[中間二接點任意長來源 minors](c5_degree5_middle_cycle_minors.md)，保留
+兩共用點、兩接點與 palette 錨點，縮任意長奇環至 C3–C5–C3，再縮
+重複色外臂，合成 R29 已存非平面證書回來源。
+**三環共用點鏈、兩個不同私有接點均在中間環的任意長型已排除。**
+前提仍是三-spoke、唯一 degree-5、其餘 degree-4、接受全部 T4 的 disk
+minimal q-obstruction，及既有 forcing-list 正規化；一般三環未排除。
+
+| 本輪核對 | 結果 |
+| --- | --- |
+| 來源域 | 12 位置×6 palettes×4 有序終色對，共 288 個 seed／288 張不同標號來源圖 |
+| 長環 | 長度 (5,7,9) 或 (7,11,5)，中間五段含偶數 arcs；全部八個縮環子集 |
+| 縮環 minors | 3,456 個逐步 boundary 固定 minors；1,728 個縮環順序核對合成相等 |
+| 縮臂 minors | 864 步，含前綴／內部／後綴閉段；36 張來源最後兩臂均直接接 z |
+| 保留點 | 所有階段 branch sets 非空、互斥、連通；boundary singleton；九個環保留點各自分離，縮臂可吸收進 z |
+| 四列與 degrees | 3,168 個圖階段、12,672 次 z 色查詢，完整 F={D}，z degree=5，其餘有效內點 degree=4 |
+| Minimality | 273,168 份非 boundary 邊刪除後完整 q-coloring，逐 pin／頂點／邊核對；原圖 q 拒絕 |
+| 拓撲合成 | 288 個實際 R29 目標模板；使用 162 份不同已存 K3,3 subdivisions，得到 288 份來源 augmentation 的 K3,3 minor |
+| R30 重播 | 生成及 checker 都停用 planarity APIs；來源／載入依賴及 R29 artifact hashes、52,270,485-byte JSON 唯讀逐 byte 核對 |
+| Lean | `lake build` 通過（8,822 jobs，僅既有 lint）；未新增 Lean theorem、未重跑 root axiom audit |
+| 文件 | README／HANDOFF 更新精確停止點，R29 補後續入口；本地連結及 `git diff --check` 核對 |
+
+任意長度結論由紙面 branch-set 構造、R28 接合判準及 R29 正常形全覆蓋
+共同承擔，有限來源控制不是任意長度的枚舉證明。R29 全部 19,693,824
+接線覆蓋與 R28 standalone checker 本輪未重跑；核對 R29 程式指紋，
+逐筆直接驗本輪所用 subdivisions，再驗合成來源每條模型邊。
+R27／R26、R15／R17／R19 大覆蓋亦未重跑。既有 scripts／artifacts 未改。
+
+下一步是同末端兩個不同私有接點的 C3–C3–C3 正常形實際接線與拓撲
+覆蓋；不能直接刪無接點末端環，也不能套用 R26 的不同接點位置域。
+末端與中間、同點會合、環間 bridge、其他分拆 (2) 及一般三環仍開放。
+完整 Q／Σ 不宣稱保持；`K∞=K≤5` 未證。R24–R30 未 commit／push。
+
+## 35. R31 同末端不同二接點正常形
+
+2026-09-18，接手 HEAD `e14874d` 與未提交 R24–R30。新增
+[同末端不同二接點正常形拓撲](c5_degree5_same_terminal_triangles.md)，
+完成 C3–C3–C3、兩臂同在一個末端不同私有點、簡單色序列外臂的
+全部實際接線非 disk 覆蓋。保留另一無接點末端環的二色限制。
+任意長來源 minor 尚待建立；一般三環仍未排除。
+
+| 本輪核對 | 結果 |
+| --- | --- |
+| 必要模板 | 六個中間 palettes、有序簡單臂對，共 408 個 |
+| 實際接線 | 327,968 種具名接線，全部非 disk；不是非同構圖數 |
+| 四列與 degrees | 1,632 次 z 色查詢，完整 F={D}；z degree=5，其餘有效內點 degree=4；原圖 q 拒絕 |
+| Minimality | 19,020 份非 boundary 邊刪除後完整 q-coloring，逐 pin／頂點／邊核對 |
+| 同模板搬運 | 每個變數只替換同內點的 b1／b3 spoke，逐一核對邊差集及變數互異；搬運全部 fixed-q 著色 |
+| 拓撲 | 68 份保存 subdivisions、435 次子 cube 引用，覆蓋全部接線 |
+| Cube 控制 | 四變數全部 6,561 組 cube 對，真值表核對差集及互斥性 |
+| R31 重播 | 停用 planarity APIs，直接驗路徑及完整 cube 覆蓋；來源／本地依賴 hashes、1,592,286-byte JSON 唯讀逐 byte 通過 |
+| Lean | `lake build` 通過（8,822 jobs，僅既有 lint）；未新增 theorem、未重跑 root axiom audit |
+| 文件 | README／HANDOFF 更新入口，R30 補後續連結；本地連結及 whitespace 核對 |
+
+沿用 R13 attachment／simple-walk helpers、既有圖著色與 subdivision
+validator、R17 cube 差集，載入本地程式 hashes 記入新證書。未讀取舊
+observations.json，未修改既有 scripts／artifacts。R28 紙面判準引用，
+standalone checker 未重跑；R30／R29／R27／R26、R15／R17／R19
+既有大覆蓋亦未重跑。本輪拓撲覆蓋不引用 R26 的不同位置域。
+
+下一步建立此型任意長來源 boundary 固定 minors，保留共用點、兩接點
+及中間／無接點末端 palette 錨點；再縮外臂並合成 R31 拓撲證書回來源。
+末端與中間、同點、環間 bridge、其他分拆 (2) 及一般三環仍開放。
+完整 Q／Σ 不宣稱保持，`K∞=K≤5` 未證。R24–R31 未 commit／push。
+
+## 36. 文件現況盤點與變化追蹤
+
+2026-09-18，文件整理；沒有新增數學結論。接手時 HEAD 與本地
+`origin/main` 均為 `e14874dbf4426150a19bf4435b90ff0fad98bb07`；
+未連線核對遠端。既有四份 tracked 文件變更與 R24–R31 八組未追蹤
+報告／script／artifact 保留，未 commit／push。
+
+- 將 STATUS 頁首從 R28 更新至 R31；README 去除重複的逐輪敘述，
+  改為目前適用範圍與報告入口。HANDOFF 區分最新研究驗證與本次文件盤點。
+- §2 補入先前遺漏的 12 份文件，涵蓋 R20–R31 與 Lean 接合基礎；
+  共 97 份 docs Markdown，其中本頁為索引，另外 96 份均有 §1–2 入口。
+- §3 補已被續作解決的停止點；R25／R27／R28 及 Lean 接合說明補最新
+  後續入口，原研究輪的論證與驗證紀錄保留。
+- §4 記錄六項可能改變結論或文件狀態的方向，列明需要的新證據。
+- 本次核對文件索引覆蓋、本地 Markdown 連結及 `git diff --check`。
+  未重跑 Python 研究 checker、Lean build 或 axiom audit；前輪驗證只引用
+  原紀錄，尤其 R31 見 §35。未修改 scripts、artifacts 或 Lean 原始碼。
+
+精確停止點仍是 R31 同末端不同二接點的任意長來源 minors，見
+[HANDOFF §2](HANDOFF.md#2-精確停止點與下一個窄問題)。一般三環、一般
+degree-5 與 `K∞=K≤5` 仍未證。
+
+## 37. R24–R31 整合提交與發布核對
+
+2026-09-18，依使用者 `commit + push` 指示，自 `e14874d` 整合
+R24–R31 的八份報告、八個 scripts、八份 artifacts，以及文件入口、
+後續連結與變化追蹤。提交前遠端 `main` 與本地 HEAD 均為
+`e14874dbf4426150a19bf4435b90ff0fad98bb07`；使用一般 push，不強制覆寫。
+本節描述此次提交的驗證範圍，最終提交 SHA 與推送結果以 Git 為準。
+
+| 核對 | 結果 |
+| --- | --- |
+| R24 共用點雙奇環 minors | `c5_degree5_shared_cycle_minors.py --check` 通過，180 張來源 |
+| R25 三環鏈 root | `c5_degree5_three_cycle_roots.py --check` 通過，324,120 次四列查詢 |
+| R26 末端二臂正常形 | `c5_degree5_three_triangles.py --check` 通過，408 模板／327,968 接線 |
+| R27 末端二臂來源 minors | `c5_degree5_three_cycle_minors.py --check` 通過，96 張來源 |
+| R28 全部接點位置介面 | `c5_degree5_three_cycle_positions.py --check` 通過，含 1,872 組同點雙拒絕控制 |
+| R29 中間 C5 正常形 | `c5_degree5_middle_pentagon.py --check` 通過，4,896 模板／19,693,824 接線 |
+| R30 中間二接點來源 minors | `c5_degree5_middle_cycle_minors.py --check` 通過，288 張來源／273,168 份刪邊著色 |
+| R31 同末端正常形 | `c5_degree5_same_terminal_triangles.py --check` 通過，408 模板／327,968 接線 |
+| Lean | `lake build` 通過，8,822 jobs；僅既有 lint，未新增 Lean theorem |
+| 文件 | docs 全索引、本地連結目標及 `git diff --check` 核對通過 |
+
+上述 scripts 均位於 `scripts/`，統一使用
+`uv run --with networkx==3.5 python scripts/<檔名> --check`；唯讀重建
+並比對既有證書，不重新搜尋拓撲 witnesses。研究 scripts／artifacts
+內容未因發布而修改。R15／R17／R19 等較早 standalone checker 與
+Lean axiom audit 本次未重跑；其既有紀錄與本次重播範圍分開。
+
+本次發布不擴大數學結論：R31 同末端型任意長來源 minors 仍待補，
+一般三環、degree-5、共同出口及 `K∞=K≤5` 仍未證。各專題報告與本頁
+歷史節中的「未提交」描述該研究輪當時狀態，並非此次整合後的發布狀態。

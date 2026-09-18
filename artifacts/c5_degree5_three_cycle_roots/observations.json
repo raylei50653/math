@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "scope": "Three shared odd-cycle chain, one arm on each terminal cycle: fixed-q lists only; no graph minor, minimality or topology claim.",
+  "source_sha256": {
+    "scripts/c5_degree5_three_cycle_roots.py": "6210b8ff631c3a982f2d52832d159da70ae7b61f6c5ccae2d3047649a99ca484",
+    "scripts/c5_degree5_long_triangle_roots.py": "409b725f33c23e4106bb808421ed64c33748ec2d7908d0fc35bae85bb90d7d4d"
+  },
+  "summary": {
+    "middle_c5": 5324,
+    "chain_four_rows": 324120,
+    "middle_endpoint_restrictions": 644204,
+    "arm_profiles": 67,
+    "replacement_subsets": 8
+  },
+  "query_sha256": "84ecd713dc63c8491fba4bea5a767476a635eb5b9a0a9101f4b598db9a7580a5",
+  "negative_controls": {
+    "changed_middle_relation": {
+      "source_lists": [
+        15,
+        3,
+        15,
+        3,
+        3,
+        3,
+        3
+      ],
+      "source_position": 2,
+      "target_lists": [
+        15,
+        15,
+        3
+      ],
+      "target_position": 1,
+      "source_relation": 65484,
+      "target_relation": 31692,
+      "distinguishing_pin": [
+        2,
+        2
+      ]
+    },
+    "changed_joined_relation": {
+      "lengths": [
+        5,
+        7,
+        9
+      ],
+      "positions": [
+        1,
+        2,
+        1
+      ],
+      "middle_palette": 3,
+      "arm_paths": [
+        [
+          9
+        ],
+        [
+          9
+        ]
+      ],
+      "z_color": 0,
+      "source": 65484,
+      "target": 31692,
+      "source_end_roots": [
+        15,
+        15
+      ],
+      "target_end_roots": [
+        15,
+        15
+      ]
+    },
+    "independent_projections_false_positive": {
+      "middle_lists": [
+        15,
+        15,
+        3
+      ],
+      "position": 1,
+      "relation": 31692,
+      "projections": [
+        15,
+        15
+      ],
+      "end_roots": [
+        3,
+        3
+      ],
+      "exact_accepts": false,
+      "projected_accepts": true,
+      "terminal_private_palette": 12
+    }
+  }
+}

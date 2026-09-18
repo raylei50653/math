@@ -105,6 +105,9 @@ git diff --check
 
 ## 5. 精確停止點
 
+後續：[R24](c5_degree5_shared_cycle_minors.md) 已補完以下圖層來源 minor
+及拓撲合成，新增共用點雙奇環排除。以下保留 R23 當輪停止點。
+
 下一步建立這三類的真正 boundary 固定來源 minor，保留 r 和接點，
 核對完整 degrees、四列可延拓布林值與每條非 boundary 刪邊著色，
 再合成 R15 的既有非平面證書。至少涵蓋一長環及雙長環、偶數 arc、

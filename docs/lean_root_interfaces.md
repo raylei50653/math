@@ -65,3 +65,8 @@ checkers。其後發布輪另重播 R20–R23 checkers，全數通過，見 STAT
 後續 Lean 可先補一般連通 degree-list 的 slack 貪婪引理，再推導 R10
 全列刪邊解除；R23 圖層研究仍按 [HANDOFF §2](HANDOFF.md) 推進。
 一般 degree-5、共同出口與 `K∞=K≤5` 未解。本次與 R21–R23 一併發布。
+
+後續狀態（2026-09-18 文件盤點）：R23 來源 minor 缺口已由
+[R24](c5_degree5_shared_cycle_minors.md) 補完；目前圖層停止點移至
+[R31 同末端型](c5_degree5_same_terminal_triangles.md) 的任意長來源 minors。
+上述 Lean 待補項仍保留，未因 R24–R31 的紙面／Python 成果而完成。
