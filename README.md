@@ -12,13 +12,16 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 各輪完整紀錄；其中「下一步／未提交」只描述當時 |
 
-最新：[3903 跨列交換](docs/c5_sector_cross_row.md)。
-保留交換色對及互補色對分割的跨列閉包，從 670 個 profiles 刪去 67 個後
-穩定在 603 個；十個接受列均仍存活，尚不能推出一般共同路徑見證。
-既有 22 張控制各有單一 Kempe 軌道，全部 19 列的 1,100 份正規化染色
-均在至多三次交換內到達某接受列的共同見證；此上界只適用於固定控制。
-下一缺口是混合色對的分量變化與共同交換歷史。不增加圖大小，
-一般 3903 非平面仍未證；前輪見 [強迫連通抽取](docs/c5_sector_forced_connectivity.md)。
+最新：[3903 單步混合色對相容性](docs/c5_sector_mixed_transition.md)。
+不依賴平面性的 retained-component／star 引理，已在 22 張既有控制的
+12,580 條交換、50,320 項混合色對核對通過。同圖的兩份染色具有相同
+profile 397、相同完整交換分量，卻產生不同混合後繼；六個框分割不足以
+決定精確更新。未據此刪除抽象後繼，原閉包仍為 603 個 profiles。
+下一缺口是單步帶框標記的分量／star incidence 介面能否提供可靠篩選；
+不擴建歷史狀態機，一般 3903 非平面仍未證。
+本輪提交發布整理見 [STATUS §47](docs/STATUS.md#47-3903-單步混合相容性提交與接手核對)。
+前輪：[跨列閉包](docs/c5_sector_cross_row.md)、
+[強迫連通抽取](docs/c5_sector_forced_connectivity.md)。
 
 保留 R31：[同末端不同二接點正常形拓撲](docs/c5_degree5_same_terminal_triangles.md)
 完成 C3–C3–C3 簡單臂的 408 模板、327,968 種接線非 disk 覆蓋；

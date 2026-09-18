@@ -1,0 +1,1463 @@
+{
+  "schema": 1,
+  "baseline": "e097be67487bd3d455733e4fab1a1ab2744e557c",
+  "scope": "General graph single maximal-component mixed-pair surgery; fixed saved corpus only; no new graph, no history state, no disk test on nonplanar controls.",
+  "input_sha256": {
+    "Math/KempeSurgery.lean": "6deec3581f45b4ae94a74b4754f507c493e4bed919ac252683ba63cf74071640",
+    "artifacts/c5_sector_cross_row/observations.json": "39accd5789e29b76242622ebe5891eab27449fcb0dcfd22a420389074037c439",
+    "artifacts/c5_sector_positive_control/observations.json": "c34558fa1570ccb717b01b0e917488bba559c42e095b8e548fbd61dad99c8337",
+    "scripts/boundary_relations.py": "6f69347417fcc12775ecd0c5edf653b2ade43c664d0aac1da623b41eecc7ee25",
+    "scripts/c5_cell_enumerator.py": "456dc759f0038a9c4455fcd12df6d37e14edca0a2411e32af585efedb4de6e6e",
+    "scripts/c5_k4_blocks.py": "63ec478a5911eee3d2e1000e2ac032cf56f75272b179f97990f04fb814a2148d",
+    "scripts/c5_sector_cross_row.py": "7f503deec127417c32c1614fa35e3caab3727b8ac698724471ebebde64b17830",
+    "scripts/c5_sector_forced_connectivity.py": "90c2c5f03878955738a03ffa3d6a619a1a9a64c7a7bf61403114c02715d37563",
+    "scripts/c5_sector_mixed_transition.py": "5441414cd1c86829607ea6203ee849132cd3c006aff50ffd77e73f7bcb0c6841",
+    "scripts/c5_sector_targets.py": "1db47a09d9ae765966310d0d17f3912e52bf9633b6cd7625ab088b2aeb690e56"
+  },
+  "lemma": {
+    "preconditions": [
+      "proper four-coloring",
+      "one maximal a/b component S",
+      "a,b,d distinct"
+    ],
+    "interface": [
+      "components of G[(a outside S) union d]",
+      "each b-in-S vertex and its incidence to retained components",
+      "frame vertex ownership"
+    ],
+    "conclusion": "New a/d connectivity equals retained-component quotient wired by inserted b-in-S stars; all four mixed pairs use the same coloring and S."
+  },
+  "control_audits": [
+    {
+      "source_index": 41,
+      "colorings": 48,
+      "moves": 532,
+      "mixed_pair_checks": 2128,
+      "interior_only_moves": 80,
+      "full_recomputed_trace_sha256": "2acaf7604b9279c26ad96d82a18029d33270d4bc56a0baf998a3c1f3af220cc0"
+    },
+    {
+      "source_index": 42,
+      "colorings": 72,
+      "moves": 850,
+      "mixed_pair_checks": 3400,
+      "interior_only_moves": 176,
+      "full_recomputed_trace_sha256": "7d27830a373308820f97edc89236ec2fd29623300e6603a8860e13fa1308dfab"
+    },
+    {
+      "source_index": 44,
+      "colorings": 49,
+      "moves": 562,
+      "mixed_pair_checks": 2248,
+      "interior_only_moves": 82,
+      "full_recomputed_trace_sha256": "9c70462f1d5c6bd533ae756d13f7d3b84a4dc2f737b8e3d40445b96c914edf6a"
+    },
+    {
+      "source_index": 45,
+      "colorings": 65,
+      "moves": 756,
+      "mixed_pair_checks": 3024,
+      "interior_only_moves": 122,
+      "full_recomputed_trace_sha256": "c3c2406eed0dae68fee026078779eea82827ad1502000ec492004b18a25c58c0"
+    },
+    {
+      "source_index": 47,
+      "colorings": 36,
+      "moves": 396,
+      "mixed_pair_checks": 1584,
+      "interior_only_moves": 44,
+      "full_recomputed_trace_sha256": "2f95e232e5508554f3245d4ed16b5f9cef677d0c6888c20bfffc7450a64f2b6d"
+    },
+    {
+      "source_index": 48,
+      "colorings": 34,
+      "moves": 374,
+      "mixed_pair_checks": 1496,
+      "interior_only_moves": 38,
+      "full_recomputed_trace_sha256": "eea76e4e1f96c14714881667c5144b248ea6c7ab6ec9c98a01f022d20c0d9aaa"
+    },
+    {
+      "source_index": 49,
+      "colorings": 47,
+      "moves": 526,
+      "mixed_pair_checks": 2104,
+      "interior_only_moves": 70,
+      "full_recomputed_trace_sha256": "e1a570f5e5c84c547ef975b06b0241559893e8c4b19eb36f88fa29c67fc98480"
+    },
+    {
+      "source_index": 50,
+      "colorings": 68,
+      "moves": 798,
+      "mixed_pair_checks": 3192,
+      "interior_only_moves": 138,
+      "full_recomputed_trace_sha256": "f0580ce1b789c942ffdab0dda9a81860df9728a5194546cff1bff0dd98d47890"
+    },
+    {
+      "source_index": 51,
+      "colorings": 51,
+      "moves": 592,
+      "mixed_pair_checks": 2368,
+      "interior_only_moves": 90,
+      "full_recomputed_trace_sha256": "e6b0972f10872e38c21ef7002093cfabc9828eafa9b9c75fd885a1091ccf430a"
+    },
+    {
+      "source_index": 53,
+      "colorings": 46,
+      "moves": 530,
+      "mixed_pair_checks": 2120,
+      "interior_only_moves": 72,
+      "full_recomputed_trace_sha256": "0ddb4dcbeb6712611326aea5527e3be5bb0f738ba5d5ba29b93e255f5d6b4d2e"
+    },
+    {
+      "source_index": 54,
+      "colorings": 34,
+      "moves": 374,
+      "mixed_pair_checks": 1496,
+      "interior_only_moves": 38,
+      "full_recomputed_trace_sha256": "2ba041c99a395da476a44540a2951f0dee3a62bdf5664569107e3eec93a48929"
+    },
+    {
+      "source_index": 161,
+      "colorings": 34,
+      "moves": 374,
+      "mixed_pair_checks": 1496,
+      "interior_only_moves": 38,
+      "full_recomputed_trace_sha256": "e1810c605fce2fb1c8387f16be4e624382637f0d6ff5c61becbd1a2233870002"
+    },
+    {
+      "source_index": 162,
+      "colorings": 49,
+      "moves": 562,
+      "mixed_pair_checks": 2248,
+      "interior_only_moves": 82,
+      "full_recomputed_trace_sha256": "8f35a7667e3afe01a98df2f41dfdec076439a2c4c838bb882c0d840e25261d01"
+    },
+    {
+      "source_index": 164,
+      "colorings": 72,
+      "moves": 850,
+      "mixed_pair_checks": 3400,
+      "interior_only_moves": 176,
+      "full_recomputed_trace_sha256": "01e0159ecc4ad3e95a5fc9d22f4d0492b42017764906eaca55190fcaafe0a6af"
+    },
+    {
+      "source_index": 165,
+      "colorings": 68,
+      "moves": 798,
+      "mixed_pair_checks": 3192,
+      "interior_only_moves": 138,
+      "full_recomputed_trace_sha256": "5f7b90859c7ea7173fc4f2993c82d1af42ebb0e8c928df63bce35ab9a222dc4a"
+    },
+    {
+      "source_index": 167,
+      "colorings": 34,
+      "moves": 374,
+      "mixed_pair_checks": 1496,
+      "interior_only_moves": 38,
+      "full_recomputed_trace_sha256": "90a246fa0a4d1e828d940d4d457ab0ecf746756297980d9c64e60d9f03280c9e"
+    },
+    {
+      "source_index": 168,
+      "colorings": 48,
+      "moves": 532,
+      "mixed_pair_checks": 2128,
+      "interior_only_moves": 80,
+      "full_recomputed_trace_sha256": "7b1952f3a9e5e5e0414de3cc29914ca25a9d8fc941c542d8c3e27d7e87050a98"
+    },
+    {
+      "source_index": 169,
+      "colorings": 47,
+      "moves": 526,
+      "mixed_pair_checks": 2104,
+      "interior_only_moves": 70,
+      "full_recomputed_trace_sha256": "2ce13ebc27d41d3de359efb1520801226baf538609e4b5e42c5a9777a865f5ff"
+    },
+    {
+      "source_index": 170,
+      "colorings": 65,
+      "moves": 756,
+      "mixed_pair_checks": 3024,
+      "interior_only_moves": 122,
+      "full_recomputed_trace_sha256": "1c2f558222c737df698ce3d3761b18c788976a2913f85022b92b7011cc5e6b6b"
+    },
+    {
+      "source_index": 171,
+      "colorings": 46,
+      "moves": 530,
+      "mixed_pair_checks": 2120,
+      "interior_only_moves": 72,
+      "full_recomputed_trace_sha256": "6b86109c940d82d292660b7f49d8b321b83059b5b92147382e61029f8bca3b48"
+    },
+    {
+      "source_index": 173,
+      "colorings": 51,
+      "moves": 592,
+      "mixed_pair_checks": 2368,
+      "interior_only_moves": 90,
+      "full_recomputed_trace_sha256": "f1577ffecd7bff9b8fd9f92a4734779e7ed7be0534221acf5c985b7f0ca992e6"
+    },
+    {
+      "source_index": 174,
+      "colorings": 36,
+      "moves": 396,
+      "mixed_pair_checks": 1584,
+      "interior_only_moves": 44,
+      "full_recomputed_trace_sha256": "8b7ce66e5dfab9f8b955977d18c334170d70efc953cd1376d248df7877f84615"
+    }
+  ],
+  "selected_abstract_move": {
+    "state": 397,
+    "source": {
+      "row": [
+        0,
+        1,
+        0,
+        2,
+        1
+      ],
+      "partitions": [
+        [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            3
+          ]
+        ]
+      ]
+    },
+    "action_index": 2,
+    "pair": [
+      0,
+      1
+    ],
+    "block": [
+      0,
+      1,
+      2
+    ],
+    "successor": 330,
+    "successor_profile": {
+      "row": [
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      "partitions": [
+        [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            2,
+            3,
+            4
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ]
+        ]
+      ]
+    }
+  },
+  "collision": {
+    "vertices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9
+    ],
+    "sector_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        8,
+        9
+      ]
+    ],
+    "examples": [
+      {
+        "source_index": 41,
+        "coloring_id": 19,
+        "move_id": 0,
+        "source_state": 397,
+        "source_coloring": [
+          0,
+          1,
+          0,
+          2,
+          1,
+          2,
+          3,
+          2,
+          1
+        ],
+        "move": {
+          "pair": [
+            0,
+            1
+          ],
+          "component": [
+            0,
+            1,
+            2,
+            9
+          ],
+          "target": 13
+        },
+        "raw_target": [
+          1,
+          0,
+          1,
+          2,
+          1,
+          2,
+          3,
+          2,
+          0
+        ],
+        "frame_color_mapping": {
+          "1": 0,
+          "0": 1,
+          "2": 2,
+          "3": 3
+        },
+        "normalized_target_profile": [
+          [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              4
+            ]
+          ],
+          [
+            [
+              0,
+              2,
+              3,
+              4
+            ]
+          ],
+          [
+            [
+              0
+            ],
+            [
+              2
+            ],
+            [
+              4
+            ]
+          ],
+          [
+            [
+              1,
+              3
+            ]
+          ],
+          [
+            [
+              1
+            ]
+          ],
+          [
+            [
+              3
+            ]
+          ]
+        ],
+        "interfaces": [
+          {
+            "mixed_pair": [
+              0,
+              2
+            ],
+            "deleted": [
+              0,
+              2
+            ],
+            "retained_blocks": [
+              [
+                3
+              ],
+              [
+                6
+              ],
+              [
+                8
+              ]
+            ],
+            "inserted_stars": [
+              {
+                "vertex": 1,
+                "neighbors": [
+                  6,
+                  8
+                ],
+                "retained_blocks": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "vertex": 9,
+                "neighbors": [
+                  3,
+                  8
+                ],
+                "retained_blocks": [
+                  0,
+                  2
+                ]
+              }
+            ],
+            "quotient_edges": [
+              [
+                0,
+                4
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "before_components": [
+              [
+                0,
+                6
+              ],
+              [
+                2,
+                3,
+                8
+              ]
+            ],
+            "after_components": [
+              [
+                1,
+                3,
+                6,
+                8,
+                9
+              ]
+            ],
+            "after_frame_partition": [
+              [
+                1,
+                3
+              ]
+            ]
+          },
+          {
+            "mixed_pair": [
+              0,
+              3
+            ],
+            "deleted": [
+              0,
+              2
+            ],
+            "retained_blocks": [
+              [
+                7
+              ]
+            ],
+            "inserted_stars": [
+              {
+                "vertex": 1,
+                "neighbors": [
+                  7
+                ],
+                "retained_blocks": [
+                  0
+                ]
+              },
+              {
+                "vertex": 9,
+                "neighbors": [],
+                "retained_blocks": []
+              }
+            ],
+            "quotient_edges": [
+              [
+                0,
+                1
+              ]
+            ],
+            "before_components": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                7
+              ]
+            ],
+            "after_components": [
+              [
+                1,
+                7
+              ],
+              [
+                9
+              ]
+            ],
+            "after_frame_partition": [
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "mixed_pair": [
+              1,
+              2
+            ],
+            "deleted": [
+              1,
+              9
+            ],
+            "retained_blocks": [
+              [
+                3,
+                4,
+                6
+              ],
+              [
+                8
+              ]
+            ],
+            "inserted_stars": [
+              {
+                "vertex": 0,
+                "neighbors": [
+                  6
+                ],
+                "retained_blocks": [
+                  0
+                ]
+              },
+              {
+                "vertex": 2,
+                "neighbors": [
+                  3,
+                  8
+                ],
+                "retained_blocks": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "quotient_edges": [
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "before_components": [
+              [
+                1,
+                3,
+                4,
+                6,
+                8,
+                9
+              ]
+            ],
+            "after_components": [
+              [
+                0,
+                2,
+                3,
+                4,
+                6,
+                8
+              ]
+            ],
+            "after_frame_partition": [
+              [
+                0,
+                2,
+                3,
+                4
+              ]
+            ]
+          },
+          {
+            "mixed_pair": [
+              1,
+              3
+            ],
+            "deleted": [
+              1,
+              9
+            ],
+            "retained_blocks": [
+              [
+                4,
+                7
+              ]
+            ],
+            "inserted_stars": [
+              {
+                "vertex": 0,
+                "neighbors": [],
+                "retained_blocks": []
+              },
+              {
+                "vertex": 2,
+                "neighbors": [],
+                "retained_blocks": []
+              }
+            ],
+            "quotient_edges": [],
+            "before_components": [
+              [
+                1,
+                4,
+                7
+              ],
+              [
+                9
+              ]
+            ],
+            "after_components": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                4,
+                7
+              ]
+            ],
+            "after_frame_partition": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                4
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "source_index": 41,
+        "coloring_id": 24,
+        "move_id": 0,
+        "source_state": 397,
+        "source_coloring": [
+          0,
+          1,
+          0,
+          2,
+          1,
+          3,
+          2,
+          3,
+          1
+        ],
+        "move": {
+          "pair": [
+            0,
+            1
+          ],
+          "component": [
+            0,
+            1,
+            2,
+            9
+          ],
+          "target": 15
+        },
+        "raw_target": [
+          1,
+          0,
+          1,
+          2,
+          1,
+          3,
+          2,
+          3,
+          0
+        ],
+        "frame_color_mapping": {
+          "1": 0,
+          "0": 1,
+          "2": 2,
+          "3": 3
+        },
+        "normalized_target_profile": [
+          [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              4
+            ]
+          ],
+          [
+            [
+              0
+            ],
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          [
+            [
+              0,
+              4
+            ],
+            [
+              2
+            ]
+          ],
+          [
+            [
+              1
+            ],
+            [
+              3
+            ]
+          ],
+          [
+            [
+              1
+            ]
+          ],
+          [
+            [
+              3
+            ]
+          ]
+        ],
+        "interfaces": [
+          {
+            "mixed_pair": [
+              0,
+              2
+            ],
+            "deleted": [
+              0,
+              2
+            ],
+            "retained_blocks": [
+              [
+                3
+              ],
+              [
+                7
+              ]
+            ],
+            "inserted_stars": [
+              {
+                "vertex": 1,
+                "neighbors": [
+                  7
+                ],
+                "retained_blocks": [
+                  1
+                ]
+              },
+              {
+                "vertex": 9,
+                "neighbors": [
+                  3
+                ],
+                "retained_blocks": [
+                  0
+                ]
+              }
+            ],
+            "quotient_edges": [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "before_components": [
+              [
+                0
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                7
+              ]
+            ],
+            "after_components": [
+              [
+                1,
+                7
+              ],
+              [
+                3,
+                9
+              ]
+            ],
+            "after_frame_partition": [
+              [
+                1
+              ],
+              [
+                3
+              ]
+            ]
+          },
+          {
+            "mixed_pair": [
+              0,
+              3
+            ],
+            "deleted": [
+              0,
+              2
+            ],
+            "retained_blocks": [
+              [
+                6
+              ],
+              [
+                8
+              ]
+            ],
+            "inserted_stars": [
+              {
+                "vertex": 1,
+                "neighbors": [
+                  6,
+                  8
+                ],
+                "retained_blocks": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "vertex": 9,
+                "neighbors": [
+                  8
+                ],
+                "retained_blocks": [
+                  1
+                ]
+              }
+            ],
+            "quotient_edges": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "before_components": [
+              [
+                0,
+                6
+              ],
+              [
+                2,
+                8
+              ]
+            ],
+            "after_components": [
+              [
+                1,
+                6,
+                8,
+                9
+              ]
+            ],
+            "after_frame_partition": [
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "mixed_pair": [
+              1,
+              2
+            ],
+            "deleted": [
+              1,
+              9
+            ],
+            "retained_blocks": [
+              [
+                3,
+                4,
+                7
+              ]
+            ],
+            "inserted_stars": [
+              {
+                "vertex": 0,
+                "neighbors": [],
+                "retained_blocks": []
+              },
+              {
+                "vertex": 2,
+                "neighbors": [
+                  3
+                ],
+                "retained_blocks": [
+                  0
+                ]
+              }
+            ],
+            "quotient_edges": [
+              [
+                0,
+                2
+              ]
+            ],
+            "before_components": [
+              [
+                1,
+                3,
+                4,
+                7,
+                9
+              ]
+            ],
+            "after_components": [
+              [
+                0
+              ],
+              [
+                2,
+                3,
+                4,
+                7
+              ]
+            ],
+            "after_frame_partition": [
+              [
+                0
+              ],
+              [
+                2,
+                3,
+                4
+              ]
+            ]
+          },
+          {
+            "mixed_pair": [
+              1,
+              3
+            ],
+            "deleted": [
+              1,
+              9
+            ],
+            "retained_blocks": [
+              [
+                4,
+                6
+              ],
+              [
+                8
+              ]
+            ],
+            "inserted_stars": [
+              {
+                "vertex": 0,
+                "neighbors": [
+                  6
+                ],
+                "retained_blocks": [
+                  0
+                ]
+              },
+              {
+                "vertex": 2,
+                "neighbors": [
+                  8
+                ],
+                "retained_blocks": [
+                  1
+                ]
+              }
+            ],
+            "quotient_edges": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "before_components": [
+              [
+                1,
+                4,
+                6,
+                8,
+                9
+              ]
+            ],
+            "after_components": [
+              [
+                0,
+                4,
+                6
+              ],
+              [
+                2,
+                8
+              ]
+            ],
+            "after_frame_partition": [
+              [
+                0,
+                4
+              ],
+              [
+                2
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "saved_successor_checks": [
+      {
+        "coloring_id": 19,
+        "raw_pair": [
+          0,
+          2
+        ],
+        "normalized_pair": [
+          1,
+          2
+        ],
+        "successor_partition": [
+          [
+            1,
+            3
+          ]
+        ],
+        "actual_partition": [
+          [
+            1,
+            3
+          ]
+        ],
+        "compatible": true
+      },
+      {
+        "coloring_id": 19,
+        "raw_pair": [
+          0,
+          3
+        ],
+        "normalized_pair": [
+          1,
+          3
+        ],
+        "successor_partition": [
+          [
+            1
+          ]
+        ],
+        "actual_partition": [
+          [
+            1
+          ]
+        ],
+        "compatible": true
+      },
+      {
+        "coloring_id": 19,
+        "raw_pair": [
+          1,
+          2
+        ],
+        "normalized_pair": [
+          0,
+          2
+        ],
+        "successor_partition": [
+          [
+            0
+          ],
+          [
+            2,
+            3,
+            4
+          ]
+        ],
+        "actual_partition": [
+          [
+            0,
+            2,
+            3,
+            4
+          ]
+        ],
+        "compatible": false
+      },
+      {
+        "coloring_id": 19,
+        "raw_pair": [
+          1,
+          3
+        ],
+        "normalized_pair": [
+          0,
+          3
+        ],
+        "successor_partition": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        "actual_partition": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        "compatible": true
+      },
+      {
+        "coloring_id": 24,
+        "raw_pair": [
+          0,
+          2
+        ],
+        "normalized_pair": [
+          1,
+          2
+        ],
+        "successor_partition": [
+          [
+            1,
+            3
+          ]
+        ],
+        "actual_partition": [
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ],
+        "compatible": false
+      },
+      {
+        "coloring_id": 24,
+        "raw_pair": [
+          0,
+          3
+        ],
+        "normalized_pair": [
+          1,
+          3
+        ],
+        "successor_partition": [
+          [
+            1
+          ]
+        ],
+        "actual_partition": [
+          [
+            1
+          ]
+        ],
+        "compatible": true
+      },
+      {
+        "coloring_id": 24,
+        "raw_pair": [
+          1,
+          2
+        ],
+        "normalized_pair": [
+          0,
+          2
+        ],
+        "successor_partition": [
+          [
+            0
+          ],
+          [
+            2,
+            3,
+            4
+          ]
+        ],
+        "actual_partition": [
+          [
+            0
+          ],
+          [
+            2,
+            3,
+            4
+          ]
+        ],
+        "compatible": true
+      },
+      {
+        "coloring_id": 24,
+        "raw_pair": [
+          1,
+          3
+        ],
+        "normalized_pair": [
+          0,
+          3
+        ],
+        "successor_partition": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        "actual_partition": [
+          [
+            0,
+            4
+          ],
+          [
+            2
+          ]
+        ],
+        "compatible": false
+      }
+    ]
+  },
+  "closure_effect": {
+    "status": "not filtered: profile does not determine the surgery interface",
+    "conditional_failures": 3,
+    "globally_excluded_successors": [],
+    "profile_deletions": 0,
+    "inherited_fixed_point": 603,
+    "fixed_point_recomputed": false
+  },
+  "summary": {
+    "controls": 22,
+    "colorings": 1100,
+    "moves": 12580,
+    "mixed_pair_checks": 50320,
+    "interior_only_moves": 1900,
+    "collision_source": 41,
+    "collision_state": 397,
+    "saved_action": 2,
+    "saved_successor": 330,
+    "profile_deletions": 0,
+    "inherited_profiles": 603
+  }
+}

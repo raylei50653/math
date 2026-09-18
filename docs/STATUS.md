@@ -1,7 +1,8 @@
 # 文件狀態與可能變化追蹤
 
-更新日期：2026-09-18。本次提交自 `e14874d` 整合 R24–R31 與文件盤點。
-最新研究 R31 見 §35，文件盤點見 §36，本次發布核對見 §37；既有發布核對見 §27。
+更新日期：2026-09-18。最新研究為 [單步混合色對相容性](c5_sector_mixed_transition.md)，見 §46；本輪提交發布整理見 §47。
+先前提交自 `e14874d` 整合 R24–R31 與文件盤點。
+R31 研究見 §35，文件盤點見 §36，該次發布核對見 §37；既有發布核對見 §27。
 各輪當時的未提交狀態保留於原節；即時提交與遠端 SHA 以 Git 為準。
 早期發布核對見 §16；共用點雙 triangle、單長奇環、單 triangle、樹及區域見 §15–11。
 先前兩輪長環研究與發布紀錄保留於 §7–8。
@@ -1256,3 +1257,46 @@ artifacts，並同步 README／HANDOFF／STATUS。研究輪中的
 混合色對分量的實際變化與共同交換歷史；一般 3903 非平面仍未證。
 未增加圖大小、未新增 Lean theorem。提交後 push 至 origin/main，
 並核對本地／tracking／remote SHA 一致及乾淨狀態；最終結果以 Git 為準。
+
+
+## 46. 3903 單步混合色對相容性與介面碰撞
+
+2026-09-18，基準 `e097be6`。見 [報告](c5_sector_mixed_transition.md)。
+一般圖單步 surgery：刪去交換分量內舊色點、縮 retained 分量、加入
+另一舊色的 stars，即精確重建混合色對。對照既有 KempeSurgery Lean
+定理，但其內部資料不是框分割所包含的資訊；未新增 Lean theorem。
+
+重用 22 張圖、1,100 份保存染色及 12,580 條交換，50,320 個混合色對
+逐一比較 surgery 與直接新誘導圖，全部通過。第 41 張圖染色 19／24
+在同 profile 397、同完整 S 下有不同混合後繼。保存 action 2→330
+與這兩份完整見證的三個不符項，但未排除其他實現，未刪抽象後繼。
+603 profiles 沿用；不重複迭代舊規則，不擴建歷史狀態機。
+下一缺口限於單步帶框標記的 retained-component／star incidence 增補。
+
+新 checker、兩個前輪 checker、`lake build`、變更文件連結及
+`git diff --check` 通過；其餘 standalone checker、minimality 與 R 系列
+大覆蓋未重跑。一般 3903 非平面、其他目標、R31 與主命題不變。
+本輪未 commit／push。
+
+
+## 47. 3903 單步混合相容性提交與接手核對
+
+2026-09-18，依使用者「整理確認接手狀態清楚 commit + push」指示，
+整合 [單步混合相容性報告](c5_sector_mixed_transition.md)、新 checker、
+確定性證書及 README／HANDOFF／STATUS。研究輪的未提交記述保留為歷史。
+
+接手先讀 HANDOFF，再讀報告 §1–4：來源 397、action 2、保存後繼 330；
+同圖 41 的 c19／c24 及相同完整 S 給出不同混合後繼。三個條件式不符
+不能排除其他實現，因此零刪除、603 profiles 沿用。下一問是單步
+帶框標記的 retained-component／star incidence 能否給可靠必要條件；
+不擴建歷史狀態機，不重跑同一閉包規則作研究推進。一般 3903 非平面、
+一般共同見證、R31 與主命題仍未證。
+
+本對話研究輪已通過三個 checker、`lake build`（8,822 jobs，僅既有 lint）、
+文件連結與 whitespace 檢查。提交整理只更新文件，程式及證書保持
+已驗版本；核對證書所有輸入 SHA256、文件連結與 staged whitespace，
+沿用前述 checker／build 結果。其他 standalone checker、原圖 minimality
+及 R 系列大覆蓋未重跑。
+
+提交後 push 至 origin/main，核對本地／tracking／remote SHA 一致及
+乾淨工作目錄；最終發布結果以 Git 為準。
