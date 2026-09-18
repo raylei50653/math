@@ -38,14 +38,23 @@ z 色及逐邊刪除 coloring 通過，另核對 12,711 次標記色序列縮減
 已補完 1,044 型全部 571,400 接線的非 disk 覆蓋，以及 198 張長來源／432 次
 真正 minor 縮減。結合 R15–R17，**三-spoke 分量恰含兩個 triangle blocks、
 其餘 bridges 的全部接點位置已排除**，不限路徑長度及外枝分叉。
-本輪 R20：[長奇環加 triangle 的完整條件 root](docs/c5_degree5_long_triangle_roots.md)
+前輪 R20：[長奇環加 triangle 的完整條件 root](docs/c5_degree5_long_triangle_roots.md)
 已證同點／不同點的四列介面與保留接點的 triangle 一致；67 個外臂 profiles、
 60,300 次耦合查詢及三色 root／雙禁色控制已保存。
-下一步是混合來源的真正 boundary 固定 minor 與逐邊刪除著色，尚未記作排除。
+前輪 R21：[混合雙環來源 minor](docs/c5_degree5_long_triangle_minors.md)
+補完四種接點組合的 144 張來源、8,946 份刪邊著色及合成非平面 minor。
+**一長奇環＋triangle 的互斥雙環已排除**。
+前輪 R22：[互斥雙長環連續縮減](docs/c5_degree5_two_long_cycles.md)
+完成雙長環的 144 張來源、兩種縮減順序、576 個逐步 minor 與四階段
+37,224 份刪邊著色；**任意長度互斥雙 odd-cycle 已排除**。
+本輪 [R23 共用點介面](docs/c5_degree5_shared_cycle_roots.md) 證明縮環保持
+四列可延拓判定，但完整 root／交集可能改變，已保存反向控制。
+下一步為共用點長環的真正來源 minor、minimality 與 R15 拓撲合成。
 上述成果是紙面化約＋Python 有限證書，未新增 Lean theorem；一般 degree-5、
 共同出口與 `K∞=K≤5` 仍未證。精確停止點與重播入口見
-[HANDOFF](docs/HANDOFF.md)，本輪驗證見 [STATUS §21](docs/STATUS.md)；
-本次提交整合 R16–R20，提交核對見同頁 §22，前次發布見 §16。
+[HANDOFF](docs/HANDOFF.md)。本次發布整合 R21–R23 與 15 個普通 Lean
+接合基礎定理；範圍見 [Lean 說明](docs/lean_root_interfaces.md)，發布核對見
+[STATUS §27](docs/STATUS.md)。既有 R16–R20 提交核對見同頁 §22。
 
 前輪成果：[唯一 degree-5 的完整接點介面](docs/c5_degree5_interfaces.md)。
 保留 degree-4 分量的全部接點關係，得到 minimality 的不可刪減禁色覆蓋條件；
@@ -122,6 +131,7 @@ lake exe cache get
 | `Math/C5Counts.lean`, `Math/C5ParityWord.lean`, `Math/NearTriangulation.lean` | C5 延伸計數恆等式、XOR 邊字四對一、polygon 補完二分法與 Euler 計數；審計 `Math/C5CountsAudit.lean` |
 | `Math/KempeSurgery.lean` | 一次 Kempe swap 的六色對精確更新（AC／BD 不動、混合色對＝retained graph＋stars）與「刪 cut、收縮 components、加邊」的連通分量一一對應；審計 `Math/KempeSurgeryAudit.lean` |
 | `Math/ForcingLists.lean` | block 報告反覆使用的 forcing-list 基礎引理：bridge 兩側同色 singleton 強迫、forcer 的 c/D swap 對稱（c-forcer 必碰 c 色 boundary）、incident palettes 互異且恰覆蓋 list、兩色 list 環不可著色 iff 奇環且 lists 全同（含 `C5`、triangle、`P=Q=四色\R` 介面、apex 36-case 規則）；審計 `Math/ForcingListsAudit.lean` |
+| `Math/RootInterfaces.lean` | 多接點共同關係／禁色、中心 `A \ ⋃ F` 接合、共用 root 交集、單步路徑訊息與 private 色計數；15 個普通 Lean 定理，見 [說明](docs/lean_root_interfaces.md) 及 `Math/RootInterfacesAudit.lean` |
 | `Math.lean` | 函式庫根，`import` 子模組 |
 | `lakefile.toml` | 依賴（mathlib）與編譯選項 |
 | `lean-toolchain` | 這個專案用的 Lean 版本 |

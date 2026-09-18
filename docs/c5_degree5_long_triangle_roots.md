@@ -5,6 +5,10 @@
 本次提交核對見 [STATUS §22](STATUS.md#22-r16r20-提交整理與核對)。
 
 
+後續（R21）：[混合雙環來源 minor](c5_degree5_long_triangle_minors.md) 已補完
+四型實際來源、逐邊刪除著色及非平面 minor 合成，完成互斥混合雙環排除。
+以下保留 R20 當時的停止點。
+
 2026-09-18，R20。接續 [R19](c5_degree5_bridge_mark_minors.md)，保留
 R16–R19 scripts／artifacts。本輪完成指定的**四列條件 root 介面**及
 cycle-to-triangle 的 list 語意等價；尚未新增實際來源圖的 minor／非 disk

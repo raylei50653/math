@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "scope": "Fixed-q shared-cycle list acceptance only; neither full root preservation nor graph/topology certificate.",
+  "source_sha256": {
+    "scripts/c5_degree5_shared_cycle_roots.py": "798e7b4efc988595f54a1d59def2ddf25f4f7717b441634680e0e38e7da7dc94",
+    "scripts/c5_degree5_long_triangle_roots.py": "409b725f33c23e4106bb808421ed64c33748ec2d7908d0fc35bae85bb90d7d4d"
+  },
+  "summary": {
+    "arbitrary_c5": 14641,
+    "pair_c7": 46656,
+    "same_cycle": 27750,
+    "split_cycles": 10560,
+    "same_point": 5280,
+    "arm_profiles": 67
+  },
+  "query_sha256": "cbd1e4d1d4186a4b4aa752338950cda99e5d160d73cd6a03d1a74f15feef37ec",
+  "forbidden_masks": {
+    "same_cycle:8": 27750,
+    "same_point:8": 5040,
+    "same_point:9": 80,
+    "same_point:10": 80,
+    "same_point:12": 80,
+    "split_cycles:8": 10560
+  },
+  "negative_controls": {
+    "changed_side_root": {
+      "case": "same_cycle",
+      "palette": 3,
+      "arm_paths": [
+        [],
+        []
+      ],
+      "z_color": 0,
+      "source_lists": [
+        15,
+        10,
+        10,
+        3,
+        3
+      ],
+      "target_lists": [
+        15,
+        10,
+        10
+      ],
+      "source_root": 13,
+      "target_root": 5
+    },
+    "changed_joint_root": {
+      "case": "same_cycle",
+      "palette": 3,
+      "arm_paths": [
+        [],
+        []
+      ],
+      "z_color": 0,
+      "source_lists": [
+        15,
+        10,
+        3,
+        10,
+        3
+      ],
+      "target_lists": [
+        15,
+        10,
+        10
+      ],
+      "other_root": 3,
+      "source_joint": 3,
+      "target_joint": 1
+    }
+  }
+}

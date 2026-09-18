@@ -666,3 +666,123 @@ R16–R18 scripts／artifacts 原封保留。本輪亦未 commit／push。
 研究停止點不變：混合長環＋triangle 的完整四列 root 介面已完成，尚待真正
 來源 minor、degrees／逐邊刪除著色及非平面 minor 合成。未新增 Lean theorem。
 推送後的本地／tracking／遠端 SHA 核對由交付訊息記錄。
+
+## 23. R21 混合互斥雙環的來源 minor 與排除
+
+2026-09-18，從乾淨 HEAD `3d6a647` 接手，選擇 R20 明列的真正來源 minor
+缺口，完成 [一長奇環＋triangle 排除](c5_degree5_long_triangle_minors.md)。
+在唯一 degree-5、三-spoke、連通二接點分量、接受全部 T4 的 C5 disk
+minimal q-obstruction 前提下，恰含一長奇環與一 triangle 的互斥雙環
+分量不存在；不限制環長、臂長或無接點外枝。沒有新增 Lean theorem。
+
+| 本輪核對 | 結果 |
+| --- | --- |
+| 接手 R20 重播 | 四列 root／67 profiles／60,300 耦合查詢及反向控制，唯讀逐 byte 通過 |
+| 一般來源構造 | 保留長環接點及實際 attachments，三段 arc 收縮為 triangle；完整四列及 degrees 保持，再依分量解除引理重建 minimality |
+| 有限控制域 | 四種有序接點型各 36 張，共 144 張；六個 palettes、環長 5／7／9；48 個既有目標，涵蓋短／長路徑代表 |
+| 著色及 minor | 來源／目標全部 z 色與逐邊刪除 coloring 通過；來源 8,946 份刪邊著色；boundary 固定 minor 與合成來源 K5／K3,3 minor 逐張驗證 |
+| 新 checker | `c5_degree5_long_triangle_minors.py --check` 唯讀逐 byte 通過；保存來源及輸入指紋，不呼叫 planarity oracle |
+| 既有覆蓋 | 直接重播所用 subdivisions；未重跑 R17／R19 大枚舉，既有 scripts／artifacts 不變 |
+| `lake build` | 通過，8,821 jobs；僅既有 SymRelabel／AttachmentOrder lint |
+| 文件整合 | README／HANDOFF／R20 後續入口與新報告已整合，本地連結及 whitespace 核對通過 |
+
+本輪為紙面化約＋有限 Python 證書，不保持完整 Σ 或任意二元 pinning。
+無界排除使用 R20 一般公式、三段 arc 的一般 minor 構造及 R17／R19
+既有任意路徑縮減與完整接線覆蓋；144 張來源僅驗證實作與機制。
+
+下一題是兩個互斥長 odd-cycle blocks 的連續縮減：先核對第一次縮環
+對第二側前提的保留，再保存兩步及合成來源證書。共用點長環、更多環、
+其他 degree-5 分拆、一般出口及 `K∞=K≤5` 仍開放。本輪未 commit／push。
+
+## 24. R22 兩個互斥長奇環的連續縮減
+
+2026-09-18，從 HEAD `3d6a647` 及未提交 R21 繼續，完成
+[雙長環連續縮減](c5_degree5_two_long_cycles.md)。拒絕 D 的雙側 singleton
+必要性不依賴另一側為 triangle；第一側縮環保持雙側完整四列、另一側
+attachments／lists／degrees、中間 bridge 與 F={D}，故第二側可接續縮減。
+結合 R16–R21，唯一 degree-5、三-spoke、連通二接點分量恰含兩個互斥
+odd-cycle blocks、其餘 bridges 時，接受全部 T4 的 disk minimal
+q-obstruction 不存在，不限制兩環長度與路徑長度。
+
+| 本輪核對 | 結果 |
+| --- | --- |
+| 真正雙長環來源 | 144 張，四種有序接點型各 36 張；有序環長 (5,7)、(7,9)、(9,5)，21 組實際 palette pairs |
+| 連續縮減 | 左右兩個順序共 288 條兩步縮減、576 個逐步 minor，合成 branch sets 相同，boundary 及 z 始終 singleton |
+| 完整四列 | 四階段圖各自切開 bridge 方向，18,432 次直接 (z色,root色) pinning；兩側四列跨階段一致 |
+| degrees／minimality | 來源、兩種中間圖、雙 triangle 目標直接核對；來源 12,258 份刪邊著色，四階段合計 37,224 份 |
+| 非平面 minor | 重驗既有 target subdivision，逐來源合成並驗證 K5／K3,3 minor |
+| 新 checker | `c5_degree5_two_long_cycles.py --check` 唯讀逐 byte 通過，不呼叫 planarity oracle |
+| 既有資料 | R21 及更早 scripts／artifacts 不變；核對來源與輸入指紋，直接重算所用圖與 witnesses，未重跑大拓撲覆蓋 |
+| `lake build` | 通過，8,821 jobs；僅既有 SymRelabel／AttachmentOrder lint，未新增 Lean theorem |
+| 文件 | README／HANDOFF／R21 後續入口與 R22 報告已整合，本地連結與 whitespace 核對通過 |
+
+成果仍為紙面化約＋Python 有限證書；144 張來源不代表無界枚舉或全部
+接線窮盡，不宣稱完整 Σ 或任意 pinning 保持。下一題為共用 cut vertex
+且至少一環長於三的雙環：先求共同點的完整 root 集與交集，不套用
+bridge 兩端 singleton 判準。其他 degree-5 分拆、一般出口及主命題
+仍未證。R21–R22 均未 commit／push。
+
+## 25. R23 共用點雙奇環的四列可延拓介面
+
+2026-09-18，核對 HEAD `3d6a647` 及未提交 R21–R22 後，沿交接進入
+[共用點長環介面](c5_degree5_shared_cycle_roots.md)。證明自由 root 奇環
+色集至少二色，恰為二色 iff 私有 lists 全為共同二色 palette。因此
+共用點雙環拒絕 iff 兩側私有 lists 為互補共同 palettes。
+
+三種接點型保留 r 及接點縮環，保持四列可延拓布林值與完整 F；
+完整側 root 集甚至共同點交集可改變，已保存兩個具體反向控制。
+同點型另外保留雙禁色控制，未將僅拒絕 D 當成 minimality。
+
+| 本輪核對 | 結果 |
+| --- | --- |
+| 接手 R22 | 唯讀 checker 通過：144 來源、576 逐步 minor、37,224 份四階段刪邊著色 |
+| 一般 list 控制 | C5 全部 14,641 組至少二色 lists 與獨立暴力著色一致；C7 46,656 組二色 lists 核對剛性 |
+| 四列比較 | 67 個外臂 profiles；同環不同點 27,750、分處兩環 10,560、同點 5,280 組；環長 3／5／7／9 |
+| 新 checker | `uv run python scripts/c5_degree5_shared_cycle_roots.py --check` 唯讀逐 byte 通過，保存來源指紋及 query digest |
+| 既有覆蓋 | 未重跑 R15／R17／R19 大型拓撲覆蓋；既有研究 scripts／artifacts 不變 |
+| Lean | `lake build` 通過，8,821 jobs，只有既有 lint；未新增 Lean theorem |
+
+本輪是紙面 list 論證＋有限 Python 證書，未新增 disk 排除或完整 Σ
+保持結論。分處兩環的有限控制採同長同位置，不宣稱所有環長／位置對
+窮盡。無界介面判準由報告的一般論證承擔。
+
+下一步為共用點一長環／雙長環真正來源 minor、degrees／逐邊刪除
+著色與 R15 非平面 minor 合成。README／HANDOFF 已更新；
+R21–R23 未 commit／push，一般 degree-5 與 `K∞=K≤5` 仍未證。
+
+
+## 26. 可重用接合語義的 Lean 基礎
+
+2026-09-18。在 R21–R23 未提交成果上補入
+[RootInterfaces](lean_root_interfaces.md)，由 `Math.lean` 匯入。
+15 個普通 Lean 定理涵蓋共同接點／禁色、中心 `A \ ⋃ F` 接合、共用
+root 交集、路徑一步訊息與不可刪減覆蓋的 private 色計數。
+
+- 全部新定理 axiom audit 僅含標準 axioms 的子集，無 `sorryAx`／`Lean.ofReduceBool`。
+- `lake build`、`lake env lean Math/RootInterfacesAudit.lean`、`git diff --check` 通過。
+- 未重跑研究 Python checkers 或大拓撲覆蓋；既有研究 scripts／artifacts 不變。
+- degree-4 全列刪邊解除、R23 奇環 root 剛性、縮環及圖層／拓撲合成仍未形式化。
+
+R23 下一題仍是共用點長環來源 minor；本輪不新增 disk 排除。
+所有本地研究成果及本輪 Lean／文件均未 commit／push。
+
+
+## 27. R21–R23 與 Lean 接合基礎發布核對
+
+2026-09-18，使用者要求 commit + push。本次整合三輪研究 scripts／
+certificates／reports、15 個普通 Lean 接合定理與 audit、README／HANDOFF。
+前述 §23–26 的「未提交」保留作當輪歷史，當前發布範圍以本節為準。
+
+| 核對 | 結果 |
+| --- | --- |
+| R20 `c5_degree5_long_triangle_roots.py --check` | 通過：67 個 profiles、60,300 次耦合查詢 |
+| R21 `c5_degree5_long_triangle_minors.py --check` | 通過：144 張來源、8,946 份刪邊著色 |
+| R22 `c5_degree5_two_long_cycles.py --check` | 通過：144 張來源、576 個逐步 minors、18,432 次 root pinning、37,224 份四階段刪邊著色 |
+| R23 `c5_degree5_shared_cycle_roots.py --check` | 通過：14,641 組 C5／46,656 組 C7；三類四列查詢 27,750／10,560／5,280 |
+| Lean | 沿用同一工作階段、未再更動程式碼的全庫 build（8,822 jobs）及全部 15 個定理的 axiom audit；無 sorryAx／Lean.ofReduceBool，只有既有 lint |
+| 發布檢查 | diff whitespace 與文件連結核對；發布前遠端 main 為 `3d6a647` |
+
+未重跑 R15／R17／R19 大型拓撲覆蓋；未改動研究 scripts／artifacts。
+R21–R23 的一般研究論證仍為紙面＋Python；新 Lean 定理的範圍見
+[接合基礎](lean_root_interfaces.md)。R23 共用點長環來源 minor、
+degrees／刪邊著色及拓撲合成仍是下一步，未新增 disk 排除結論。

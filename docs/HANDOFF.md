@@ -1,11 +1,13 @@
 # 研究交接：目前狀態與接手入口
 
 更新：2026-09-18。工作目錄 `/home/ray/math`。
-本次提交整合基準 `b55abf4`（R11–R15）之後的 R16–R20。R19 已完成
-同點接入的長來源 minors 與全部 571,400 接線拓撲覆蓋；結合 R15–R17，
-三-spoke 的恰兩個 triangle blocks 分量已排除，含共用點與互斥兩型。
-成果為紙面分析及 Python 證書，未新增 Lean theorem。R20 完成混合長環的
-四列 root 介面；研究核對見 STATUS §21，本次提交核對見 §22，前次發布見 §16。
+本次發布自 `3d6a647`（R16–R20）接續整合 R21–R23 與 Lean 接合基礎。
+本輪 R23 完成共用點雙奇環的四列可延拓 list 判準：縮環保持 F，
+但完整 root 集與交集可改變，已保存反向控制。尚待來源 minor／
+degrees／逐邊刪除著色與 R15 拓撲證書合成，未新增 disk 排除。
+R21–R23 的研究成果仍為紙面＋Python；本次發布核對見 STATUS §27。
+其後補入 15 個共同接點／中心接合／共用 root 的普通 Lean 基礎定理；
+範圍與尚未形式化部分見 [Lean 接合基礎](lean_root_interfaces.md)，不改變 R23 停止點。
 
 先讀本頁，再讀 [文件狀態與變化追蹤](STATUS.md) 及指定報告。
 逐輪數字、舊停止點與發布紀錄完整保存在 [歷史交接](HANDOFF_HISTORY.md)。
@@ -18,12 +20,23 @@
 候選 A 的 minimal obstruction 路線：先研究單側出口，再處理共同出口。
 這裡的「相鄰雙缺失」與舊 Kempe 路線的「相鄰可實現 singleton」是不同命題。
 
-最新報告是 [長奇環加 triangle 的完整條件 root](c5_degree5_long_triangle_roots.md)：
-拒絕 D 強迫長環私有 lists 為共同二色 S。不同接點型的 D 列為 singleton，
-其他列為原三色 list；同點型為 (U\S) 減外臂 singleton 禁色。
-兩者與保留接點的 triangle 四列相同；67 個臂 transfer profiles、60,300 次
-耦合查詢及三色 root／雙禁色反向控制已保存。**混合雙環尚待實際來源
-minor、degrees／逐邊刪除 coloring 及既有非平面 minor 合成，未列為排除。**
+最新介面進展見 [R23 共用點雙奇環](c5_degree5_shared_cycle_roots.md)：
+縮環保持四列可延拓判定，但不保持完整 root 色集；圖層排除尚未完成。
+
+最新已完成的排除報告是 [互斥雙長環連續縮減](c5_degree5_two_long_cycles.md)：
+拒絕 D 的雙側 singleton 必要性不要求另一側為 triangle。第一次縮環
+保留兩側完整四列、外臂及中間 bridge，第二側前提繼續成立。
+144 張來源核對左右兩個縮減順序，合成 branch sets 相同；18,432 次
+直接 root pinning 及 37,224 份四階段刪邊著色通過。
+**任意長度的兩個互斥 odd-cycle blocks 已排除**；共用點含長環仍開放。
+
+前輪 [混合雙環來源 minor](c5_degree5_long_triangle_minors.md) 已補完
+一長環＋triangle 的四型來源；144 張／8,946 份刪邊著色及來源非平面
+minor 保留不變。本輪以其具名控制構造真正雙長環來源。
+
+前輪 [完整條件 root](c5_degree5_long_triangle_roots.md) 已證拒絕 D
+強迫共同 palette，並保存 67 個臂 profiles、60,300 次耦合查詢及
+三色 root／雙禁色控制；其圖層缺口由 R21 補完。
 
 前輪報告 [標記路徑 minor 與同點排除](c5_degree5_bridge_mark_minors.md)：
 858 個單標記外臂型、186 個雙標記閉序列型的全部 571,400 接線，
@@ -31,7 +44,7 @@ minor、degrees／逐邊刪除 coloring 及既有非平面 minor 合成，未列
 198 張長來源／432 次縮減保存逐步及合成 boundary 固定 minors，核對
 四種 z 色、degrees、逐邊刪除 coloring，並將非平面 minor 合成回來源。
 包含相鄰標記、同時刪兩標記及整條標記臂收進 z。
-**恰兩個 triangle blocks 已全部排除；兩環含長 odd-cycle 仍開放。**
+**恰兩個 triangle blocks 已全部排除；混合互斥雙環由 R21 接續排除。**
 
 前輪 [同點接入的標記二色介面](c5_degree5_bridge_marks.md)：36 組
 root 查詢核對相同私有 pair 給互補二色介面、不同 pairs 給完整四色。
@@ -122,31 +135,35 @@ triangle 分類，現在得到：**接受全部 T4 的 C5 disk minimal q-obstruc
 | 唯一 degree-5、三條 z-spokes、H−z 恰含一個任意 odd-cycle，其餘 bridges | 保留接點縮環、全部固定-q z 色及 minimality；任意長度排除，紙面＋有限 minor 控制，未 Lean 化 | [單長奇環](c5_degree5_odd_cycle_components.md) |
 | 唯一 degree-5、三條 z-spokes、H−z 恰含兩個共用點 triangles，其餘 bridges | 任意接點位置／外枝排除；888 模板、295,920 接線非 disk；紙面＋Python，未 Lean 化 | [共用點雙環](c5_degree5_shared_triangles.md) |
 | 唯一 degree-5、三條 z-spokes、H−z 恰含兩個互斥 triangles，其餘 bridges | 同側旁支、不同環點及同點接入全部排除；任意臂長／外枝；紙面＋Python，未 Lean 化 | [R16 bridge](c5_degree5_bridge_triangles.md)、[R17 外臂](c5_degree5_bridge_arms.md)、[R19 同點](c5_degree5_bridge_mark_minors.md) |
+| 唯一 degree-5、三條 z-spokes、H−z 恰含一長奇環與一 triangle，兩環互斥，其餘 bridges | 任意環長／臂長／外枝排除；144 張來源 minor 控制，紙面＋Python，未 Lean 化 | [混合雙環](c5_degree5_long_triangle_minors.md) |
+| 唯一 degree-5、三條 z-spokes、H−z 恰含兩個互斥 odd cycles，其餘 bridges | 任意兩環長／臂長／外枝排除；雙長環 144 張來源、576 個逐步 minor，紙面＋Python，未 Lean 化 | [雙長環](c5_degree5_two_long_cycles.md) |
 
-恰兩個 triangles 的全部位置已處理；不列作含任意長 odd-cycle 的全部雙環排除。
+恰兩個 triangles 的全部位置及任意長度互斥雙環已處理；共用點含長環尚未列作排除。
 
 以上各 block 結果都是紙面化約配合 Python 有限證書；不能統稱已 Lean 化。
 共同 forcing-list 基礎已有 [Math/ForcingLists.lean](../Math/ForcingLists.lean)：
 bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle 與 apex 規則。
 其具名定理對照仍見 [歷史交接的 Lean 化紀錄](HANDOFF_HISTORY.md) 與
 [Math/ForcingListsAudit.lean](../Math/ForcingListsAudit.lean)。
+新增 [Math/RootInterfaces.lean](../Math/RootInterfaces.lean) 補足共同接點禁色、
+中心接合、共用 root 交集、路徑單步與不可刪減覆蓋計數；詳見
+[定理對照與信任界線](lean_root_interfaces.md)。degree-4 刪邊解除與 R23
+奇環 root 剛性仍未 Lean 化。
 
 ## 2. 精確停止點與下一個窄問題
 
-**一個長奇環加一個 triangle：四列 root 介面已完成，下一步為真正來源 minor。**
-先讀 [R20 §1–4、6](c5_degree5_long_triangle_roots.md)，再對照
-[R14 縮環構造](c5_degree5_odd_cycle_components.md) 及
-[R19 目標 minor](c5_degree5_bridge_mark_minors.md)。R17／R19 大拓撲覆蓋不需重跑。
+**任意互斥雙 odd-cycle 已排除；共用點長環已有 list 判準，下一題是圖層來源 minor。**
+先讀 [R23](c5_degree5_shared_cycle_roots.md)，再讀
+[R15 共用點位置分類及介面](c5_degree5_shared_triangles.md)。R17／R19 大覆蓋不需重跑。
 
-1. 用 R20 的共同 palette 必要性與完整四列公式，分兩側各同點／不同點的
-   四種組合，建立保留長環接點及實際 attachments 的 boundary 固定 branch sets。
-2. 保存混合來源與目標，核對 degrees、全部 fixed-q z 色及逐邊刪除著色；
-   不把 list 模型等價或拒絕 D 本身冒充圖層 minimality 核對。
-3. 合成 R17／R19 既有非平面 minor 回來源，完成紙面無界構造後才記為
-   混合雙環排除。R20 已保存一般三色 root、二元 pinning 與雙禁色控制。
+1. 共用 root 的兩側色集各至少二色；交集為空 iff 私有 lists 分別
+   為互補共同 palettes。三個接點型的縮環保持四列可延拓布林值與 F。
+2. **完整 root 及交集不保持**，R23 已有來源控制；後續 checker
+   應核對四列可延拓判準。同點型還須排除 F 含第二禁色的退化情形。
+3. 保存保留共同點／接點的真正來源 minor、degrees／逐邊刪除著色及
+   R15 非平面 minor 合成，涵蓋一長環與雙長環及偶數 arc。
 
-兩長環、共用點長環、更多環的一般分拆 (2)、其他接點分拆仍開放；
-其餘追蹤見 [STATUS.md](STATUS.md)。
+更多環的一般分拆 (2)、其他接點分拆仍開放；其餘追蹤見 [STATUS.md](STATUS.md)。
 
 一般 degree≥5、單側出口、共同 pivotal edge、候選 A、
 一般 weak-deletion congruence 與 `K∞=K≤5` 仍需各自的證明。
@@ -184,9 +201,12 @@ bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle �
 
 ## 5. 重播入口與本次核對
 
-本輪入口為 [R20 §5](c5_degree5_long_triangle_roots.md)；既有入口保留（範圍見 [R19 §5](c5_degree5_bridge_mark_minors.md)；R18 見 [報告 §5](c5_degree5_bridge_marks.md)；R11–R17 完整入口亦保留）：
+本輪入口為 [R23 §4](c5_degree5_shared_cycle_roots.md)；前輪見 [R22 §4](c5_degree5_two_long_cycles.md)；既有入口保留（範圍見 [R19 §5](c5_degree5_bridge_mark_minors.md)；R18 見 [報告 §5](c5_degree5_bridge_marks.md)；R11–R17 完整入口亦保留）：
 
 ```bash
+uv run python scripts/c5_degree5_shared_cycle_roots.py --check
+uv run --with networkx==3.5 python scripts/c5_degree5_two_long_cycles.py --check
+uv run --with networkx==3.5 python scripts/c5_degree5_long_triangle_minors.py --check
 uv run python scripts/c5_degree5_long_triangle_roots.py --check
 uv run --with networkx==3.5 python scripts/c5_degree5_bridge_mark_minors.py --check
 uv run --with networkx==3.5 python scripts/c5_degree5_bridge_marks.py --check
@@ -199,6 +219,7 @@ uv run --with networkx==3.5 python scripts/c5_degree5_odd_cycle_components.py --
 uv run --with networkx==3.5 python scripts/c5_degree5_shared_triangles.py --check
 uv run --with networkx==3.5 python scripts/c5_degree5_interfaces.py --check
 lake build
+lake env lean Math/RootInterfacesAudit.lean
 git diff --check
 ```
 
