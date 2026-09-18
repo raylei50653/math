@@ -12,11 +12,31 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 各輪完整紀錄；其中「下一步／未提交」只描述當時 |
 
-2026-09-18 最新成果：[唯一 degree-5 的完整接點介面](docs/c5_degree5_interfaces.md)。
+2026-09-18 本次整合 R11–R15 五輪成果，研究三-spoke 型：唯一 degree-5
+內點 z 接三條 boundary 邊，H−z 為單一二接點分量，其餘內點完整 degree=4。
+在 C5 disk、minimal q-obstruction 及接受全部 T4 的前提下，結果如下。
+
+| 分量範圍 | 已完成結果與證書 | 報告 |
+| --- | --- | --- |
+| 任意連通二接點分量 | 十二種位置縮為兩個鏡像 pentagon；保存非 minimal 的 disk 雙缺失控制 | [區域化約](docs/c5_degree5_sectors.md) |
+| 任意樹 | 分枝消去及色序列縮為五型；648 個實際接線全部非 disk | [樹分量](docs/c5_degree5_tree_components.md) |
+| 恰一個 triangle，其餘 bridges | 任意接點位置／臂長／外枝排除；528 個必要模板、89,224 個接線全部非 disk | [單 triangle](docs/c5_degree5_triangle_components.md) |
+| 恰一個任意 odd-cycle，其餘 bridges | 保留接點縮成 triangle／樹後排除；147 張來源的固定-q 延拓、minimality 及真正 minors 核對通過 | [單長奇環](docs/c5_degree5_odd_cycle_components.md) |
+| 恰兩個共用點 triangles，其餘 bridges | 任意接點位置／外枝排除；888 個必要模板、295,920 個接線全部非 disk | [共用點雙 triangle](docs/c5_degree5_shared_triangles.md) |
+
+另以連通外框 K5 minor 排除 z 至少有一條 boundary spoke 時各 degree-4
+分量的 K4 block；此項只需 planarity，t=0 未涵蓋。
+
+**下一個窄問題：兩個頂點互斥 triangles 由任意 bridge 路徑相連。**
+上述成果是紙面化約＋Python 有限證書，未新增 Lean theorem；一般 degree-5、
+共同出口與 `K∞=K≤5` 仍未證。精確停止點與重播入口見
+[HANDOFF](docs/HANDOFF.md)，本次發布前驗證見 [STATUS §16](docs/STATUS.md)。
+
+前輪成果：[唯一 degree-5 的完整接點介面](docs/c5_degree5_interfaces.md)。
 保留 degree-4 分量的全部接點關係，得到 minimality 的不可刪減禁色覆蓋條件；
 刪去分量任一邊即解除該分量限制，固定來源圖的全部刪邊後代至多需四個二元開關。
 32 個既有 disk witnesses 的完整 boundary rows 已核對；一般 degree-5 的
-disk／T4 單缺失結論仍未證。下一題縮到 z 接三條 boundary 邊及單一二接點分量。
+disk／T4 單缺失結論仍未證；三-spoke 分支的最新停止點見上方報告。
 
 前輪成果：[K4 block 排除與全 degree-4 單缺失](docs/c5_k4_blocks.md)。
 K4 的四個外接方向必通往 boundary，產生 K5 minor，故全 degree-4 的 planar

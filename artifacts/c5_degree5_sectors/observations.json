@@ -1,0 +1,1402 @@
+{
+  "schema": 1,
+  "scope": "Paper sector reduction; finite algebra; nonminimal disk control. No general exclusion.",
+  "source_sha256": {
+    "scripts/c5_degree5_sectors.py": "2c7bb65988783f59bbde24ab3c7aae95296e10d5cd81769d1264f58b98c2f241",
+    "scripts/c5_degree5_interfaces.py": "8c31d7bbb8a14fa168beffa03d13f442749e6c59a898e991fc5de3c958f77b6e",
+    "scripts/c5_cell_enumerator.py": "456dc759f0038a9c4455fcd12df6d37e14edca0a2411e32af585efedb4de6e6e",
+    "scripts/c5_disk_deletions.py": "7982c1ccfa1e4e77d4805a74a388cea4a1a7905585c5b181c79ab7123e06e2fd",
+    "scripts/c5_k4_blocks.py": "63ec478a5911eee3d2e1000e2ac032cf56f75272b179f97990f04fb814a2148d",
+    "scripts/boundary_relations.py": "6f69347417fcc12775ecd0c5edf653b2ade43c664d0aac1da623b41eecc7ee25",
+    "scripts/local_closure.py": "22e63e6b41a25e9f886cca1b4a560a3495a9ff135103e1c85eadf3a7ac8db267"
+  },
+  "input_sha256": {
+    "artifacts/c5_cells/cells.json": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8"
+  },
+  "pattern_order": [
+    [
+      0,
+      1,
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      0,
+      2,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      2,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      2,
+      0,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      0,
+      3
+    ],
+    [
+      0,
+      1,
+      2,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      1,
+      3
+    ],
+    [
+      0,
+      1,
+      2,
+      3,
+      1
+    ],
+    [
+      0,
+      1,
+      2,
+      3,
+      2
+    ]
+  ],
+  "sectors": [
+    {
+      "spokes": [
+        0,
+        1,
+        4
+      ],
+      "arc": [
+        0,
+        1
+      ],
+      "reason": "unused-color swap contradicts F={D}",
+      "swap_colors": [
+        2,
+        3
+      ]
+    },
+    {
+      "spokes": [
+        0,
+        1,
+        4
+      ],
+      "arc": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reason": "remaining pentagon sector"
+    },
+    {
+      "spokes": [
+        0,
+        1,
+        4
+      ],
+      "arc": [
+        4,
+        0
+      ],
+      "reason": "unused-color swap contradicts F={D}",
+      "swap_colors": [
+        1,
+        3
+      ]
+    },
+    {
+      "spokes": [
+        0,
+        3,
+        4
+      ],
+      "arc": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reason": "unused-color swap contradicts F={D}",
+      "swap_colors": [
+        2,
+        3
+      ]
+    },
+    {
+      "spokes": [
+        0,
+        3,
+        4
+      ],
+      "arc": [
+        3,
+        4
+      ],
+      "reason": "unused-color swap contradicts F={D}",
+      "swap_colors": [
+        0,
+        3
+      ]
+    },
+    {
+      "spokes": [
+        0,
+        3,
+        4
+      ],
+      "arc": [
+        4,
+        0
+      ],
+      "reason": "unused-color swap contradicts F={D}",
+      "swap_colors": [
+        1,
+        3
+      ]
+    },
+    {
+      "spokes": [
+        1,
+        2,
+        4
+      ],
+      "arc": [
+        1,
+        2
+      ],
+      "reason": "unused-color swap contradicts F={D}",
+      "swap_colors": [
+        2,
+        3
+      ]
+    },
+    {
+      "spokes": [
+        1,
+        2,
+        4
+      ],
+      "arc": [
+        2,
+        3,
+        4
+      ],
+      "reason": "unchanged constraints reject a T4 row",
+      "changed_vertex": 0,
+      "rejected_T4": [
+        3,
+        1,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "spokes": [
+        1,
+        2,
+        4
+      ],
+      "arc": [
+        4,
+        0,
+        1
+      ],
+      "reason": "unchanged constraints reject a T4 row",
+      "changed_vertex": 3,
+      "rejected_T4": [
+        0,
+        1,
+        0,
+        3,
+        2
+      ]
+    },
+    {
+      "spokes": [
+        2,
+        3,
+        4
+      ],
+      "arc": [
+        2,
+        3
+      ],
+      "reason": "unused-color swap contradicts F={D}",
+      "swap_colors": [
+        2,
+        3
+      ]
+    },
+    {
+      "spokes": [
+        2,
+        3,
+        4
+      ],
+      "arc": [
+        3,
+        4
+      ],
+      "reason": "unused-color swap contradicts F={D}",
+      "swap_colors": [
+        0,
+        3
+      ]
+    },
+    {
+      "spokes": [
+        2,
+        3,
+        4
+      ],
+      "arc": [
+        4,
+        0,
+        1,
+        2
+      ],
+      "reason": "remaining pentagon sector"
+    }
+  ],
+  "transfer": {
+    "options": [
+      [
+        {
+          "z_color": 3,
+          "sector_pattern": 7
+        }
+      ],
+      [
+        {
+          "z_color": 2,
+          "sector_pattern": 3
+        },
+        {
+          "z_color": 3,
+          "sector_pattern": 8
+        }
+      ],
+      [
+        {
+          "z_color": 2,
+          "sector_pattern": 5
+        }
+      ],
+      [
+        {
+          "z_color": 2,
+          "sector_pattern": 1
+        },
+        {
+          "z_color": 3,
+          "sector_pattern": 8
+        }
+      ],
+      [
+        {
+          "z_color": 3,
+          "sector_pattern": 9
+        }
+      ],
+      [
+        {
+          "z_color": 2,
+          "sector_pattern": 2
+        }
+      ],
+      [
+        {
+          "z_color": 3,
+          "sector_pattern": 6
+        }
+      ],
+      [
+        {
+          "z_color": 2,
+          "sector_pattern": 0
+        }
+      ],
+      [
+        {
+          "z_color": 2,
+          "sector_pattern": 1
+        },
+        {
+          "z_color": 3,
+          "sector_pattern": 3
+        }
+      ],
+      [
+        {
+          "z_color": 3,
+          "sector_pattern": 4
+        }
+      ]
+    ],
+    "abstract_survivors": [
+      {
+        "sector_sigma": 55,
+        "outer_sigma": 940
+      },
+      {
+        "sector_sigma": 61,
+        "outer_sigma": 934
+      },
+      {
+        "sector_sigma": 63,
+        "outer_sigma": 942
+      },
+      {
+        "sector_sigma": 119,
+        "outer_sigma": 1004
+      },
+      {
+        "sector_sigma": 125,
+        "outer_sigma": 998
+      },
+      {
+        "sector_sigma": 127,
+        "outer_sigma": 1006
+      },
+      {
+        "sector_sigma": 311,
+        "outer_sigma": 942
+      },
+      {
+        "sector_sigma": 317,
+        "outer_sigma": 942
+      },
+      {
+        "sector_sigma": 319,
+        "outer_sigma": 942
+      },
+      {
+        "sector_sigma": 375,
+        "outer_sigma": 1006
+      },
+      {
+        "sector_sigma": 381,
+        "outer_sigma": 1006
+      },
+      {
+        "sector_sigma": 383,
+        "outer_sigma": 1006
+      },
+      {
+        "sector_sigma": 567,
+        "outer_sigma": 956
+      },
+      {
+        "sector_sigma": 573,
+        "outer_sigma": 950
+      },
+      {
+        "sector_sigma": 575,
+        "outer_sigma": 958
+      },
+      {
+        "sector_sigma": 631,
+        "outer_sigma": 1020
+      },
+      {
+        "sector_sigma": 637,
+        "outer_sigma": 1014
+      },
+      {
+        "sector_sigma": 639,
+        "outer_sigma": 1022
+      },
+      {
+        "sector_sigma": 823,
+        "outer_sigma": 958
+      },
+      {
+        "sector_sigma": 829,
+        "outer_sigma": 958
+      },
+      {
+        "sector_sigma": 831,
+        "outer_sigma": 958
+      },
+      {
+        "sector_sigma": 887,
+        "outer_sigma": 1022
+      },
+      {
+        "sector_sigma": 893,
+        "outer_sigma": 1022
+      },
+      {
+        "sector_sigma": 895,
+        "outer_sigma": 1022
+      }
+    ],
+    "candidate_relations": 1024,
+    "full_row_checks": 245760
+  },
+  "control": {
+    "source_sigma": 831,
+    "source_edges": [
+      [
+        0,
+        5
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "z": 7,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    "sigma": 958,
+    "missing_patterns": [
+      [
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        2,
+        1,
+        2
+      ]
+    ],
+    "patterns": [
+      {
+        "boundary": [
+          0,
+          1,
+          0,
+          1,
+          2
+        ],
+        "tuples": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "forbidden": [
+          2,
+          3
+        ],
+        "z_allowed": [],
+        "coloring": null
+      },
+      {
+        "boundary": [
+          0,
+          1,
+          0,
+          2,
+          1
+        ],
+        "tuples": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "forbidden": [],
+        "z_allowed": [
+          2,
+          3
+        ],
+        "coloring": [
+          0,
+          1,
+          0,
+          2,
+          1,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "boundary": [
+          0,
+          1,
+          0,
+          2,
+          3
+        ],
+        "tuples": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "forbidden": [],
+        "z_allowed": [
+          2
+        ],
+        "coloring": [
+          0,
+          1,
+          0,
+          2,
+          3,
+          1,
+          3,
+          2
+        ]
+      },
+      {
+        "boundary": [
+          0,
+          1,
+          2,
+          0,
+          1
+        ],
+        "tuples": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "forbidden": [],
+        "z_allowed": [
+          2,
+          3
+        ],
+        "coloring": [
+          0,
+          1,
+          2,
+          0,
+          1,
+          1,
+          0,
+          2
+        ]
+      },
+      {
+        "boundary": [
+          0,
+          1,
+          2,
+          0,
+          2
+        ],
+        "tuples": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "forbidden": [],
+        "z_allowed": [
+          3
+        ],
+        "coloring": [
+          0,
+          1,
+          2,
+          0,
+          2,
+          1,
+          0,
+          3
+        ]
+      },
+      {
+        "boundary": [
+          0,
+          1,
+          2,
+          0,
+          3
+        ],
+        "tuples": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "forbidden": [],
+        "z_allowed": [
+          2
+        ],
+        "coloring": [
+          0,
+          1,
+          2,
+          0,
+          3,
+          1,
+          0,
+          2
+        ]
+      },
+      {
+        "boundary": [
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        "tuples": [
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "forbidden": [
+          0,
+          3
+        ],
+        "z_allowed": [],
+        "coloring": null
+      },
+      {
+        "boundary": [
+          0,
+          1,
+          2,
+          1,
+          3
+        ],
+        "tuples": [
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "forbidden": [
+          0,
+          3
+        ],
+        "z_allowed": [
+          2
+        ],
+        "coloring": [
+          0,
+          1,
+          2,
+          1,
+          3,
+          0,
+          3,
+          2
+        ]
+      },
+      {
+        "boundary": [
+          0,
+          1,
+          2,
+          3,
+          1
+        ],
+        "tuples": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "forbidden": [],
+        "z_allowed": [
+          2,
+          3
+        ],
+        "coloring": [
+          0,
+          1,
+          2,
+          3,
+          1,
+          0,
+          3,
+          2
+        ]
+      },
+      {
+        "boundary": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ],
+        "tuples": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "forbidden": [],
+        "z_allowed": [
+          3
+        ],
+        "coloring": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0,
+          3
+        ]
+      }
+    ],
+    "full_relation": [
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false
+    ],
+    "q_deletions": [
+      {
+        "edge": [
+          0,
+          7
+        ],
+        "coloring": [
+          0,
+          1,
+          0,
+          1,
+          2,
+          2,
+          3,
+          0
+        ]
+      },
+      {
+        "edge": [
+          1,
+          6
+        ],
+        "coloring": [
+          0,
+          1,
+          0,
+          1,
+          2,
+          2,
+          1,
+          3
+        ]
+      },
+      {
+        "edge": [
+          1,
+          7
+        ],
+        "coloring": [
+          0,
+          1,
+          0,
+          1,
+          2,
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "edge": [
+          2,
+          5
+        ],
+        "coloring": [
+          0,
+          1,
+          0,
+          1,
+          2,
+          0,
+          2,
+          3
+        ]
+      },
+      {
+        "edge": [
+          2,
+          6
+        ],
+        "coloring": [
+          0,
+          1,
+          0,
+          1,
+          2,
+          2,
+          0,
+          3
+        ]
+      },
+      {
+        "edge": [
+          3,
+          5
+        ],
+        "coloring": [
+          0,
+          1,
+          0,
+          1,
+          2,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "edge": [
+          4,
+          7
+        ],
+        "coloring": null
+      },
+      {
+        "edge": [
+          5,
+          6
+        ],
+        "coloring": [
+          0,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "edge": [
+          5,
+          7
+        ],
+        "coloring": [
+          0,
+          1,
+          0,
+          1,
+          2,
+          3,
+          2,
+          3
+        ]
+      },
+      {
+        "edge": [
+          6,
+          7
+        ],
+        "coloring": [
+          0,
+          1,
+          0,
+          1,
+          2,
+          2,
+          3,
+          3
+        ]
+      }
+    ],
+    "redundant_edges": [
+      [
+        4,
+        7
+      ]
+    ],
+    "apex_rotation": [
+      [
+        1,
+        8,
+        4,
+        7
+      ],
+      [
+        0,
+        7,
+        6,
+        2,
+        8
+      ],
+      [
+        1,
+        6,
+        5,
+        3,
+        8
+      ],
+      [
+        2,
+        5,
+        4,
+        8
+      ],
+      [
+        3,
+        7,
+        0,
+        8
+      ],
+      [
+        7,
+        3,
+        2,
+        6
+      ],
+      [
+        5,
+        2,
+        1,
+        7
+      ],
+      [
+        4,
+        5,
+        6,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        1,
+        2,
+        3
+      ]
+    ]
+  },
+  "summary": {
+    "sector_cases": 12,
+    "swap_excluded": 8,
+    "T4_excluded": 2,
+    "remaining_mirror_sectors": 2,
+    "abstract_relations": 1024,
+    "transfer_full_rows": 245760,
+    "abstract_survivors": 24,
+    "abstract_output_relations": 12,
+    "nonminimal_disk_controls": 1,
+    "control_full_rows": 240
+  }
+}

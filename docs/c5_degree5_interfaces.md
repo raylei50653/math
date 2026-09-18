@@ -1,5 +1,12 @@
 # 唯一 degree-5 內點：完整接點介面與不可刪減禁色覆蓋
 
+後續（2026-09-18）：[三-spoke 區域報告](c5_degree5_sectors.md) 將分拆 (2)
+化約到兩個鏡像 pentagon，保存非 minimal 的 disk 雙缺失控制；最終排除仍未解。
+再後續：[任意樹分量排除](c5_degree5_tree_components.md) 已處理三-spoke 型的
+所有樹 C，並重新證明 t≥1 時各 degree-4 分量不含 K4。
+目前已進一步排除單一任意 odd-cycle 及共用點雙 triangles；下一題為互斥雙
+triangles 的 bridge 路徑，見 [目前交接](HANDOFF.md)。一般分拆 (2) 仍未解。
+
 2026-09-18。接續 [K4／全 degree-4 報告](c5_k4_blocks.md) 的 R10。
 本輪完成任意大小 degree-4 分量的**染色介面與 edge-minimality 充要條件**，
 未完成這些介面的 C5 disk／T4 幾何排除。成果是紙面證明及 Python 固定域證書，
