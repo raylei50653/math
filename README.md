@@ -12,13 +12,13 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 各輪完整紀錄；其中「下一步／未提交」只描述當時 |
 
-最新：[831 的拓撲等價與必要連接](docs/c5_sector_structural.md)。
-induced 框圈＋連通內部使平面與指定 disk 等價；取消兩者的分岔。
-831 已重寫為 proper 列上的條件相等，並導出單一染色中的 Kempe 必要連接。
-補入 Tutte (3.1)/(5.1)：交替互斥的兩條框圈路徑＋內部連通可構造 K3,3；
-第 41 號較小九路徑證書已保存。一般兩路徑存在性與 3903 排除仍未證。
-[既有非平面正控制](docs/c5_sector_positive_control.md) 的 22 份命中與
-[五目標有限實驗](docs/c5_sector_targets.md) 保留原範圍。
+最新：[3903 跨列交換](docs/c5_sector_cross_row.md)。
+保留交換色對及互補色對分割的跨列閉包，從 670 個 profiles 刪去 67 個後
+穩定在 603 個；十個接受列均仍存活，尚不能推出一般共同路徑見證。
+既有 22 張控制各有單一 Kempe 軌道，全部 19 列的 1,100 份正規化染色
+均在至多三次交換內到達某接受列的共同見證；此上界只適用於固定控制。
+下一缺口是混合色對的分量變化與共同交換歷史。不增加圖大小，
+一般 3903 非平面仍未證；前輪見 [強迫連通抽取](docs/c5_sector_forced_connectivity.md)。
 
 保留 R31：[同末端不同二接點正常形拓撲](docs/c5_degree5_same_terminal_triangles.md)
 完成 C3–C3–C3 簡單臂的 408 模板、327,968 種接線非 disk 覆蓋；

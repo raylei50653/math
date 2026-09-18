@@ -1195,3 +1195,64 @@ structural script／artifact schema 2 直接驗邊、端點、簡單性與內點
 不同染色，但必須證明互斥。3903 一般排除、其他四目標及 R31 缺口不變。
 本次發布包含先前已提交但未 push 的 sector 三輪提交 e1b18de；
 最終本地／tracking／remote SHA 與乾淨狀態於 push 後核對，以 Git 為準。
+
+## 43. 3903 強迫連通抽取
+
+2026-09-18，見 [報告](c5_sector_forced_connectivity.md)。依使用者指示，
+固定圖大小，完成十個接受列 × 六色對的 boundary 分量分割抽取；
+任意塊子集交换不能落入兩拒絕列，七個未指定開口列保留未知。
+排除 14 個分割案例；加入同色對／互補色對的不交錯條件後，每列仍有
+局部抽象存活者，不構成圖實現或一般排除。
+
+固定 22 份既有正控制，重驗十二位簽章與全部 650 份接受延拓；118 份
+出現互補色交錯，每張各從一份共同染色抽出 P、Q、最短內部 R 與
+K3,3 九路徑，直接驗邊及內點互斥，不使用 planarity oracle。
+第 9 列的全部 32 份延拓沒有互補色交錯，否定鎖定該列的更強抽取候選。
+下一步只研究跨列交換相容性與「某列存在」的強迫抽取，不增加圖大小。
+
+新 checker `c5_sector_forced_connectivity.py --check`、`lake build`、
+`git diff --check` 通過；旧 checker／minimality／R 系列大覆蓋未重跑。
+未新增 Lean theorem；一般 3903 非平面、其他目標與 R31 缺口保留。
+本輪未 commit／push。
+
+
+## 44. 3903 跨列分割閉包與實際交換軌道
+
+2026-09-18，見 [跨列交換報告](c5_sector_cross_row.md)。交換任意 s/t
+分量保持 s/t 與互補色對的誘導子圖；加入全域色交換的精確重標，對
+全部 19 列的 670 個局部 disk profiles 做後繼閉包，刪去 67 個後穩定
+在 603 個。十個接受列皆有存活者，這套規則尚不能推出共同路徑見證。
+保存所有刪除原因及最終每項交換要求的後繼；不是共同圖實現證書。
+
+固定 22 張控制的全部 19 列共有 1,100 份全域色置換正規化染色。
+逐一保存所有單分量交換（包含不碰框的分量），每張恰有一個軌道；
+每份染色至多三步到達指定接受列的共同見證，終點共 118 份。
+每個終點驗 P/Q/R 及九路徑，每個非終點保存距離遞減的交換步驟。
+這是固定控制結果，未證一般 Kempe 連通性、三步界或一般共同見證。
+
+下一缺口是混合色對分量的變化、共同內部圖與交換歷史的相容性。
+本輪不生成新圖；一般 3903 非平面、其他四目標與 R31 缺口保留。
+重播 `c5_sector_cross_row.py --check`、前輪
+`c5_sector_forced_connectivity.py --check`、`lake build` 及
+`git diff --check`；未重跑舊 standalone checker、minimality 或 R 系列
+大覆蓋。未新增 Lean theorem，未 commit／push。
+
+
+## 45. 3903 兩輪成果整合提交與發布
+
+2026-09-18，依使用者「整理一下 commit + push」指示，整合
+[強迫連通抽取](c5_sector_forced_connectivity.md) 與
+[跨列交換](c5_sector_cross_row.md) 的兩份報告、兩個 scripts、兩份
+artifacts，並同步 README／HANDOFF／STATUS。研究輪中的
+「未 commit／push」保留為歷史狀態，本節記錄本次提交發布範圍。
+
+程式與證書沿用研究輪版本。本對話已重播兩個 `--check`，
+`lake build` 成功（8,822 jobs，僅既有 lint）；發布整理只更動文件，
+沿用這些驗證結果，另核對文件連結與 staged diff whitespace。
+未重跑舊 standalone checker、原圖 minimality 或 R 系列大覆蓋。
+
+精確停止點不變：兩色分割保持的跨列閉包仍有 603 個 profiles；
+22 張控制的單軌道及至多三步到見證，只是固定圖結果。下一缺口是
+混合色對分量的實際變化與共同交換歷史；一般 3903 非平面仍未證。
+未增加圖大小、未新增 Lean theorem。提交後 push 至 origin/main，
+並核對本地／tracking／remote SHA 一致及乾淨狀態；最終結果以 Git 為準。
