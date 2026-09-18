@@ -1,5 +1,9 @@
 # 多個長 odd-cycle 的遞迴與連續縮減
 
+後續（2026-09-18）：[K4／degree-4 報告](c5_k4_blocks.md) 已完成本文 R9
+停止點，並合成接受 T4 的全 degree-4 disk minimal obstruction 只缺 q。
+本文 odd-cycle 定理、證書與當時停止點保留。
+
 2026-09-17。接續 [長環 root 報告](c5_odd_cycle_roots.md) 的 R8；接手
 HEAD `7fdc19e`，前輪長環研究仍在工作樹，未 commit／push。
 

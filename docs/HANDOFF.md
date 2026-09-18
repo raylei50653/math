@@ -1,9 +1,10 @@
 # 研究交接：目前狀態與接手入口
 
-更新：2026-09-17。工作目錄 `/home/ray/math`。
-本輪接手基準是本地 HEAD `7fdc19e`；接手時前輪長環成果尚未提交，已保留。
-新增多長 odd-cycle 遞迴／連續 minor 論證與 Python 控制；未新增 Lean theorem。
-兩輪研究與程式／證書隨本次提交一併發布；前輪紀錄見 STATUS §7，本輪見 §8。
+更新：2026-09-18。工作目錄 `/home/ray/math`。
+本輪從 HEAD `dad5940` 及未提交的 R9 成果接手，完成唯一 degree-5 的完整
+接點介面、minimality 充要條件及固定來源圖刪邊公式。
+新增紙面論證及 Python 證書，未新增 Lean theorem；兩輪成果隨本次提交一併發布。
+本輪驗證見 STATUS §10；前輪 K4／degree-4 紀錄見 §9。
 
 先讀本頁，再讀 [文件狀態與變化追蹤](STATUS.md) 及指定報告。
 逐輪數字、舊停止點與發布紀錄完整保存在 [歷史交接](HANDOFF_HISTORY.md)。
@@ -16,16 +17,24 @@
 候選 A 的 minimal obstruction 路線：先研究單側出口，再處理共同出口。
 這裡的「相鄰雙缺失」與舊 Kempe 路線的「相鄰可實現 singleton」是不同命題。
 
-最新報告是 [多長 odd-cycle 的遞迴與連續縮減](c5_multi_odd_cycles.md)：
-一般 rooted 奇環的十一種介面在任意有限環樹封閉；全 cluster 不可著色仍
-強迫互補二色 palettes。先處理兩長環的接合位置與兩種收縮次序，再以保留
-一條環樹邊、長環數嚴格下降的終止證明涵蓋任意多長環。
+最新報告是 [唯一 degree-5 完整接點介面](c5_degree5_interfaces.md)：
+分量所有接點的共同關係給出精確禁色；刪除任一碰到 degree-4 分量的邊，
+對所有 boundary rows 都解除該分量限制。minimality 等價於 z 可用色的
+不可刪減覆蓋，至少一個分量必有多接點。固定來源圖的全部刪邊後代至多需
+四個二元開關；這不是跨圖 state 或小型 disk 代表定理。
+32 個既有 witnesses 的 7,680 個完整 boundary rows 通過核對；一般 degree-5
+disk／T4 單缺失排除仍未證，尚未新增 Lean theorem。
 
-因此在 C5 disk、固定三色 q、所有有效內點完整 degree=4、內部連通、逐非
-boundary 邊 minimal q-obstruction 的前提下，**若 blocks 只有 odd cycles
-與 bridges，便沒有長度至少 5 的 cycle；triangles 必頂點互斥且至多二**。
-不需 T4，外掛樹與原始環數不限。縮圖 minimality 由 degree-list 貪婪引理
-獨立保證。**未聲稱完整 Σ 保持；含 K4 的 block tree 仍未處理。**
+前輪 [K4 block 排除與全 degree-4 單缺失](c5_k4_blocks.md)：
+K4 四個外接方向都必經 spoke 或 forcing bridge 到達 boundary，因此產生
+K5 minor；此排除只需一般 planarity，不需 T4，外側可含任意 blocks。
+
+結合 degree-choosability 的 Gallai-tree 化約、既有多長環排除及零／一／二
+triangle 分類，現在得到：**接受全部 T4 的 C5 disk minimal q-obstruction，
+若所有有效內點完整 degree=4，則 `Σ(G)=Ω\{q}`。** 不限內點數。
+這是紙面合成與有限證書，包含外部 degree-choosability 定理，尚未 Lean 化。
+故某個單側出口若失敗，對側每個 minimal obstruction 都必有 degree≥5 內點；
+一般共同出口仍需獨立證明。
 
 | 已處理範圍 | 結果與前提 | 報告 |
 | --- | --- | --- |
@@ -38,6 +47,9 @@ boundary 邊 minimal q-obstruction 的前提下，**若 blocks 只有 odd cycles
 | 任意 triangles／bridges block tree | 無非平凡共用點 cluster，triangles 必互斥且至多二；不需 T4 | [任意 triangle tree](c5_triangle_tree_palettes.md) |
 | 恰一個長 odd-cycle，其餘 triangles／bridges | 全部排除，不需 T4；一般 root 有十一種介面，obstruction 仍用互補 pairs | [長環 root](c5_odd_cycle_roots.md) |
 | 任意 odd cycles／bridges block tree | 沒有長環；triangles 互斥且至多二，不需 T4；任意深度遞迴與連續縮減 | [多長環](c5_multi_odd_cycles.md) |
+| K4 block 加任意 bridge 外側 | K5 minor 排除；全 degree-4、planar、minimal q，不需 T4 | [K4／bridge](c5_k4_blocks.md) |
+| 全 degree-4 的 minimal q-obstruction | disk 且接受全部 T4 時只缺 q；Gallai-tree 與全部 block 結果的紙面合成 | [degree-4 合成](c5_k4_blocks.md) |
+| 唯一 degree-5，其餘 degree-4 | 完整接點關係、禁色覆蓋的 minimality 充要條件、至多四開關的固定來源圖刪邊公式；disk／T4 排除未完成 | [degree-5 介面](c5_degree5_interfaces.md) |
 
 以上各 block 結果都是紙面化約配合 Python 有限證書；不能統稱已 Lean 化。
 共同 forcing-list 基礎已有 [Math/ForcingLists.lean](../Math/ForcingLists.lean)：
@@ -47,18 +59,20 @@ bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle �
 
 ## 2. 精確停止點與下一個窄問題
 
-**全 degree-4 情形中的 K4 block 與 bridge 介面。**
-先讀 [新報告 §1–4、§6](c5_multi_odd_cycles.md)。R8 完成，包括任意多長環。
+**唯一 degree-5 點 z 接三條 boundary 邊，H−z 為單一二接點 Gallai 分量 C。**
+先讀 [新報告 §1–6](c5_degree5_interfaces.md)。R10 的完整染色介面已完成，
+十三個必要接點分拆的共同 disk／T4 實現性仍未完成。
 
-1. 核對 K4 四個頂點扣除外枝後的三色 residual lists 與 bridge forcing。
-2. 在 degree=4 範圍，K4 無法與另一 cycle block 共用點；先處理 bridge 連接。
-3. 尋找 boundary 固定的必要 minor 或 disk 排除；不要假設完整 Σ 保持。
+1. 此分拆有 A_z(q)={D}，minimality 精確要求 F_C(q)={D}。
+2. 保留 C 的兩接點、實際 boundary spokes 及共同色框，研究 block／path 化約。
+3. 判定能否同時拒絕另一相鄰三色 p、接受全部 T4；優先紙面排除或明確反例。
 
-不直接增加五環 catalog、bridge 路徑長度或外掛樹深度。
-R1–R3、R7–R8 已處理；其他追蹤項目與新 R9 見 [STATUS.md](STATUS.md)。
+不能把端點 marginals 相乘；32 個舊 witnesses 全有這種投影失敗。既有控制
+只涵蓋接點分拆 (2,1)、(2,2)，不能當作新 (2) 分拆的分類。
+不直接增加 k、環數或外枝深度的 catalog；不直接沿用全 degree-4 的 disk 排除。
+R1–R3、R7–R9 已完成，其他追蹤項目見 [STATUS.md](STATUS.md)。
 
-含 K4 的一般 block tree、degree≥5 內點仍未處理。
-triangle-tree 分支完成後，一般單側出口、共同 pivotal edge、候選 A、
+一般 degree≥5、單側出口、共同 pivotal edge、候選 A、
 一般 weak-deletion congruence 與 `K∞=K≤5` 仍需各自的證明。
 
 ## 3. 其他路線的現況
@@ -94,16 +108,13 @@ triangle-tree 分支完成後，一般單側出口、共同 pivotal edge、候�
 
 ## 5. 重播入口與本次核對
 
-最新研究的最小入口（依賴與信任範圍見 [報告 §5](c5_multi_odd_cycles.md)）：
+最新研究重播入口（依賴與信任範圍見 [報告 §6](c5_degree5_interfaces.md)）：
 
 ```bash
-uv run --with networkx==3.5 python scripts/c5_multi_odd_cycles.py --check
-uv run --with networkx==3.5 python scripts/c5_odd_cycle_roots.py --check
-uv run --with networkx==3.5 python scripts/c5_triangle_tree_palettes.py --check
-uv run --with networkx==3.5 python scripts/c5_pentagon_branches.py --check
+uv run --with networkx==3.5 python scripts/c5_degree5_interfaces.py --check
 lake build
 git diff --check
 ```
 
-本輪研究的實際驗證範圍與結果見 [STATUS.md](STATUS.md) 末節。
+本輪研究的實際驗證範圍與結果見 [STATUS §10](STATUS.md)。
 查舊實驗時讀對應報告；歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。

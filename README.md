@@ -12,13 +12,18 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 各輪完整紀錄；其中「下一步／未提交」只描述當時 |
 
-2026-09-17 最新成果：[多長 odd-cycle 的遞迴與連續縮減](docs/c5_multi_odd_cycles.md)。
-十一種 root 介面在任意有限環樹封閉；不可著色仍強迫互補二色 palettes。
-保留接合位置的連續 minor 先處理兩長環，再由明確終止論證涵蓋任意多長環。
-因此，全 degree-4、內部連通的 C5 disk minimal q-obstruction 若 blocks
-只有 odd cycles／bridges，便沒有長環，triangles 必互斥且至多二；不需 T4。
-成果是紙面論證＋Python 證書，未新增 Lean theorem、未宣稱完整 Σ 保持。
-下一題是 K4 block 的三色 residual lists 與 bridge 介面。
+2026-09-18 最新成果：[唯一 degree-5 的完整接點介面](docs/c5_degree5_interfaces.md)。
+保留 degree-4 分量的全部接點關係，得到 minimality 的不可刪減禁色覆蓋條件；
+刪去分量任一邊即解除該分量限制，固定來源圖的全部刪邊後代至多需四個二元開關。
+32 個既有 disk witnesses 的完整 boundary rows 已核對；一般 degree-5 的
+disk／T4 單缺失結論仍未證。下一題縮到 z 接三條 boundary 邊及單一二接點分量。
+
+前輪成果：[K4 block 排除與全 degree-4 單缺失](docs/c5_k4_blocks.md)。
+K4 的四個外接方向必通往 boundary，產生 K5 minor，故全 degree-4 的 planar
+minimal q-obstruction 沒有 K4 block。結合 Gallai-tree 化約與既有 odd-cycle
+分類，**接受全部 T4 的 C5 disk minimal q-obstruction 若全 degree-4，便只缺 q**。
+不限內點數；依賴外部 degree-choosability 定理、紙面論證與 Python 證書，未新增
+Lean theorem；後續 degree-5 染色介面見上方新報告。
 
 | 其他閱讀方向 | 入口 |
 | --- | --- |
