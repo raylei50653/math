@@ -1,10 +1,11 @@
 # 研究交接：目前狀態與接手入口
 
 更新：2026-09-18。工作目錄 `/home/ray/math`。
-本次提交整合基準 `be97121` 之後的 R11–R15 五輪成果：三-spoke 區域化約，
-以及樹、單 triangle、單長奇環、共用點雙 triangles 的二接點分量排除。
-各排除涵蓋報告所列的任意接點位置及外枝；成果為紙面化約與 Python 證書，
-未新增 Lean theorem。發布前核對見 STATUS §16，各輪研究紀錄保留於 §11–15。
+本次提交整合基準 `b55abf4`（R11–R15）之後的 R16–R20。R19 已完成
+同點接入的長來源 minors 與全部 571,400 接線拓撲覆蓋；結合 R15–R17，
+三-spoke 的恰兩個 triangle blocks 分量已排除，含共用點與互斥兩型。
+成果為紙面分析及 Python 證書，未新增 Lean theorem。R20 完成混合長環的
+四列 root 介面；研究核對見 STATUS §21，本次提交核對見 §22，前次發布見 §16。
 
 先讀本頁，再讀 [文件狀態與變化追蹤](STATUS.md) 及指定報告。
 逐輪數字、舊停止點與發布紀錄完整保存在 [歷史交接](HANDOFF_HISTORY.md)。
@@ -17,17 +18,51 @@
 候選 A 的 minimal obstruction 路線：先研究單側出口，再處理共同出口。
 這裡的「相鄰雙缺失」與舊 Kempe 路線的「相鄰可實現 singleton」是不同命題。
 
-最新報告是 [共用點雙 triangle 二接點排除](c5_degree5_shared_triangles.md)：
+最新報告是 [長奇環加 triangle 的完整條件 root](c5_degree5_long_triangle_roots.md)：
+拒絕 D 強迫長環私有 lists 為共同二色 S。不同接點型的 D 列為 singleton，
+其他列為原三色 list；同點型為 (U\S) 減外臂 singleton 禁色。
+兩者與保留接點的 triangle 四列相同；67 個臂 transfer profiles、60,300 次
+耦合查詢及三色 root／雙禁色反向控制已保存。**混合雙環尚待實際來源
+minor、degrees／逐邊刪除 coloring 及既有非平面 minor 合成，未列為排除。**
+
+前輪報告 [標記路徑 minor 與同點排除](c5_degree5_bridge_mark_minors.md)：
+858 個單標記外臂型、186 個雙標記閉序列型的全部 571,400 接線，
+由 130 份 subdivisions、1,069 次子 cube 引用完整覆蓋，全部非 disk。
+198 張長來源／432 次縮減保存逐步及合成 boundary 固定 minors，核對
+四種 z 色、degrees、逐邊刪除 coloring，並將非平面 minor 合成回來源。
+包含相鄰標記、同時刪兩標記及整條標記臂收進 z。
+**恰兩個 triangle blocks 已全部排除；兩環含長 odd-cycle 仍開放。**
+
+前輪 [同點接入的標記二色介面](c5_degree5_bridge_marks.md)：36 組
+root 查詢核對相同私有 pair 給互補二色介面、不同 pairs 給完整四色。
+一側同點化為單標記外臂（858 型），兩側同點化為雙標記閉序列（186 型）。
+每型一組具體接線直接核對四種 z 色及逐邊刪除 coloring；12,711 次色序列
+縮減核對標記去留，保存雙禁色退化控制。長來源 minor 及拓撲覆蓋由 R19 補完。
+
+前輪 [互斥雙環的任意外臂](c5_degree5_bridge_arms.md)：
+兩條臂各接入不同於 bridge 端點的環點時，完整條件 root 訊息只在 D 為
+singleton，其餘 z 色恢復三色 list。兩臂與中間路徑可分別縮減；36,672
+必要模板的 246,645,568 種接線選擇由 709 份非平面 subdivisions 完整覆蓋。
+72 張長來源／216 次縮減的 degrees、四種 z 色、逐邊刪除 coloring 與真正
+minor 通過。至少一側在該環 bridge 端點接入由 R18–R19 補完。
+
+前輪 [互斥雙環 bridge 與直接私有接點](c5_degree5_bridge_triangles.md)：
+若某條兩環間 bridge 讓兩個接點留在同側，可消去無接點側，化回單環／樹。
+兩接點分別直接落在各環、且不同於 bridge 端點的子型，任意長路徑縮為
+至多四條 bridge：132 個模板、43,696 接線全非 disk，18 張長來源 minor 通過。
+不同環點外臂由 R17 處理；共同環點接入由 R18–R19 補完。
+
+前輪 [共用點雙 triangle 二接點排除](c5_degree5_shared_triangles.md)：
 互補 palettes 的共同 root 接合，將同環不同點、分處兩環及同點會合三型
 化為 888 個必要模板，295,920 個實際接線全部非 disk。保留全部 fixed-q
 z 色、degrees 及 minimality；58 張長來源共 116 次縮減，另有五張整個
-cluster 位於旁支的來源 minor。下一題是兩個互斥 triangles 的 bridge 路徑。
+cluster 位於旁支的來源 minor。互斥雙環後由 R16–R19 補完。
 
 前輪 [單長奇環二接點排除](c5_degree5_odd_cycle_components.md)：
 拒絕 D 強迫環上共同二色 palette，保留接點縮為 triangle 後，四種 z 色的
 延拓性、degrees 及 minimality 保持；共同接點另保留完整 root 色集。
 旁支型化回樹。147 張具名來源的 minor、逐邊刪除 coloring 與來源非平面
-證書通過。故 C 至少含兩個 odd-cycle blocks；共用點雙 triangles 由本輪處理。
+證書通過。故 C 至少含兩個 odd-cycle blocks；共用點雙 triangles 由 R15 處理。
 這不保持任意二元接點關係或完整 Σ；已保存具體的二元關係反向控制。
 
 前輪 [單 triangle 二接點排除](c5_degree5_triangle_components.md)：
@@ -86,6 +121,9 @@ triangle 分類，現在得到：**接受全部 T4 的 C5 disk minimal q-obstruc
 | 唯一 degree-5、三條 z-spokes、H−z 恰含一個 triangle，其餘 bridges | 任意接點位置及外枝均排除；528 個必要模板／89,224 接線非 disk，紙面＋證書 | [單 triangle](c5_degree5_triangle_components.md) |
 | 唯一 degree-5、三條 z-spokes、H−z 恰含一個任意 odd-cycle，其餘 bridges | 保留接點縮環、全部固定-q z 色及 minimality；任意長度排除，紙面＋有限 minor 控制，未 Lean 化 | [單長奇環](c5_degree5_odd_cycle_components.md) |
 | 唯一 degree-5、三條 z-spokes、H−z 恰含兩個共用點 triangles，其餘 bridges | 任意接點位置／外枝排除；888 模板、295,920 接線非 disk；紙面＋Python，未 Lean 化 | [共用點雙環](c5_degree5_shared_triangles.md) |
+| 唯一 degree-5、三條 z-spokes、H−z 恰含兩個互斥 triangles，其餘 bridges | 同側旁支、不同環點及同點接入全部排除；任意臂長／外枝；紙面＋Python，未 Lean 化 | [R16 bridge](c5_degree5_bridge_triangles.md)、[R17 外臂](c5_degree5_bridge_arms.md)、[R19 同點](c5_degree5_bridge_mark_minors.md) |
+
+恰兩個 triangles 的全部位置已處理；不列作含任意長 odd-cycle 的全部雙環排除。
 
 以上各 block 結果都是紙面化約配合 Python 有限證書；不能統稱已 Lean 化。
 共同 forcing-list 基礎已有 [Math/ForcingLists.lean](../Math/ForcingLists.lean)：
@@ -95,21 +133,20 @@ bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle �
 
 ## 2. 精確停止點與下一個窄問題
 
-**三-spoke 的單一二接點分量 C，恰含兩個頂點互斥 triangles，以 bridge 路徑
-相連，其餘為 bridges。** 共用 cut vertex 分支已排除。
-先讀 [共用點雙環報告 §1–6](c5_degree5_shared_triangles.md)，再查單 triangle、
-樹及完整介面。固定 N_B(z)={b0,b1,b4}，C 位於 arc b1,b2,b3,b4 一側。
+**一個長奇環加一個 triangle：四列 root 介面已完成，下一步為真正來源 minor。**
+先讀 [R20 §1–4、6](c5_degree5_long_triangle_roots.md)，再對照
+[R14 縮環構造](c5_degree5_odd_cycle_components.md) 及
+[R19 目標 minor](c5_degree5_bridge_mark_minors.md)。R17／R19 大拓撲覆蓋不需重跑。
 
-1. 按兩個 z 接點位於兩環、連接路徑或旁支分型；先辨識哪些 bridge
-   切出不含接點的分量，哪些切口兩側仍經同一 z 關聯。
-2. 保留兩個 z 接點在 block-cut tree 的實際位置與完整 F_C(q)={D}；
-   消去不含接點的單 bridge 外枝，再推共同色框下的正常形與真正 minor。
-3. 不把各環 root marginals 獨立拼接，不直接套全 degree-4 的連接路徑縮短；
-   每步須核對固定 q 的全部 z 色、degree、實際 spokes 與 minimality。
+1. 用 R20 的共同 palette 必要性與完整四列公式，分兩側各同點／不同點的
+   四種組合，建立保留長環接點及實際 attachments 的 boundary 固定 branch sets。
+2. 保存混合來源與目標，核對 degrees、全部 fixed-q z 色及逐邊刪除著色；
+   不把 list 模型等價或拒絕 D 本身冒充圖層 minimality 核對。
+3. 合成 R17／R19 既有非平面 minor 回來源，完成紙面無界構造後才記為
+   混合雙環排除。R20 已保存一般三色 root、二元 pinning 與雙禁色控制。
 
-R15 共用點雙環分支已完成，R11–R14 成果保留。兩環中含長環、更多環的一般
-分拆 (2)、其他接點分拆仍開放。不增加 k、環數或外枝深度的 catalog；
-其餘追蹤項目見 [STATUS.md](STATUS.md)。
+兩長環、共用點長環、更多環的一般分拆 (2)、其他接點分拆仍開放；
+其餘追蹤見 [STATUS.md](STATUS.md)。
 
 一般 degree≥5、單側出口、共同 pivotal edge、候選 A、
 一般 weak-deletion congruence 與 `K∞=K≤5` 仍需各自的證明。
@@ -147,9 +184,14 @@ R15 共用點雙環分支已完成，R11–R14 成果保留。兩環中含長環
 
 ## 5. 重播入口與本次核對
 
-最新研究重播入口（依賴與信任範圍見 [報告 §6](c5_degree5_shared_triangles.md)）：
+本輪入口為 [R20 §5](c5_degree5_long_triangle_roots.md)；既有入口保留（範圍見 [R19 §5](c5_degree5_bridge_mark_minors.md)；R18 見 [報告 §5](c5_degree5_bridge_marks.md)；R11–R17 完整入口亦保留）：
 
 ```bash
+uv run python scripts/c5_degree5_long_triangle_roots.py --check
+uv run --with networkx==3.5 python scripts/c5_degree5_bridge_mark_minors.py --check
+uv run --with networkx==3.5 python scripts/c5_degree5_bridge_marks.py --check
+uv run --with networkx==3.5 python scripts/c5_degree5_bridge_arms.py --check
+uv run --with networkx==3.5 python scripts/c5_degree5_bridge_triangles.py --check
 uv run --with networkx==3.5 python scripts/c5_degree5_sectors.py --check
 uv run --with networkx==3.5 python scripts/c5_degree5_tree_components.py --check
 uv run --with networkx==3.5 python scripts/c5_degree5_triangle_components.py --check

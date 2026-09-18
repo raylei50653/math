@@ -27,10 +27,25 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 另以連通外框 K5 minor 排除 z 至少有一條 boundary spoke 時各 degree-4
 分量的 K4 block；此項只需 planarity，t=0 未涵蓋。
 
-**下一個窄問題：兩個頂點互斥 triangles 由任意 bridge 路徑相連。**
+前輪 R17：[互斥雙環的任意外臂](docs/c5_degree5_bridge_arms.md) 已排除兩側
+外臂各在不同於 bridge 端點的環點接入：36,672 模板的 246,645,568 種接線
+由 709 份非平面 subdivisions 完整覆蓋；72 張長來源／216 次縮減通過。
+承接 [R16 直接私有接點](docs/c5_degree5_bridge_triangles.md) 的同側化約及短子型。
+前輪 R18：[同點接入的標記二色介面](docs/c5_degree5_bridge_marks.md) 已核對
+完整 root 公式，得到一側同點 858 型／兩側同點 186 型；每型代表的四種
+z 色及逐邊刪除 coloring 通過，另核對 12,711 次標記色序列縮減。
+前輪 R19：[標記路徑 minor 與同點排除](docs/c5_degree5_bridge_mark_minors.md)
+已補完 1,044 型全部 571,400 接線的非 disk 覆蓋，以及 198 張長來源／432 次
+真正 minor 縮減。結合 R15–R17，**三-spoke 分量恰含兩個 triangle blocks、
+其餘 bridges 的全部接點位置已排除**，不限路徑長度及外枝分叉。
+本輪 R20：[長奇環加 triangle 的完整條件 root](docs/c5_degree5_long_triangle_roots.md)
+已證同點／不同點的四列介面與保留接點的 triangle 一致；67 個外臂 profiles、
+60,300 次耦合查詢及三色 root／雙禁色控制已保存。
+下一步是混合來源的真正 boundary 固定 minor 與逐邊刪除著色，尚未記作排除。
 上述成果是紙面化約＋Python 有限證書，未新增 Lean theorem；一般 degree-5、
 共同出口與 `K∞=K≤5` 仍未證。精確停止點與重播入口見
-[HANDOFF](docs/HANDOFF.md)，本次發布前驗證見 [STATUS §16](docs/STATUS.md)。
+[HANDOFF](docs/HANDOFF.md)，本輪驗證見 [STATUS §21](docs/STATUS.md)；
+本次提交整合 R16–R20，提交核對見同頁 §22，前次發布見 §16。
 
 前輪成果：[唯一 degree-5 的完整接點介面](docs/c5_degree5_interfaces.md)。
 保留 degree-4 分量的全部接點關係，得到 minimality 的不可刪減禁色覆蓋條件；
