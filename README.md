@@ -12,10 +12,17 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 各輪完整紀錄；其中「下一步／未提交」只描述當時 |
 
-最新 R31：[同末端不同二接點正常形拓撲](docs/c5_degree5_same_terminal_triangles.md)
+最新：[831 的拓撲等價與必要連接](docs/c5_sector_structural.md)。
+induced 框圈＋連通內部使平面與指定 disk 等價；取消兩者的分岔。
+831 已重寫為 proper 列上的條件相等，並導出單一染色中的 Kempe 必要連接。
+跨列共同 witness 尚未建立，3903 必然非平面仍未證；不擴大搜尋。
+[既有非平面正控制](docs/c5_sector_positive_control.md) 的 22 份命中與
+[五目標有限實驗](docs/c5_sector_targets.md) 保留原範圍。
+
+保留 R31：[同末端不同二接點正常形拓撲](docs/c5_degree5_same_terminal_triangles.md)
 完成 C3–C3–C3 簡單臂的 408 模板、327,968 種接線非 disk 覆蓋；
 完整 F={D}、degrees 與 19,020 份刪邊著色通過。
-下一步為此型補任意長來源 boundary 固定 minors，再合成拓撲證書回來源。
+此型任意長來源 boundary 固定 minors 仍待補，暫不作優先入口。
 R27 末端各一臂與 R30 中間不同二接點鏈型已排除，**一般三環仍未排除**。
 紙面＋Python，未新增 Lean theorem。R24–R31 隨本次提交整合；
 發布核對範圍見 [STATUS §37](docs/STATUS.md#37-r24r31-整合提交與發布核對)。

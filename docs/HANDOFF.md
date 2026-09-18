@@ -1,14 +1,14 @@
 # 研究交接：目前狀態與接手入口
 
 更新：2026-09-18。工作目錄 `/home/ray/math`。
-最新研究從 HEAD `e14874d` 與未提交 R24–R30 接手，完成 R31 同末端
-不同二接點的 C3–C3–C3 簡單臂正常形拓撲。408 模板、327,968 種
-接線全部非 disk，完整 F={D}、degrees 與 19,020 份刪邊著色通過。
-下一步為此型建立任意長來源 boundary 固定 minors，再合成 R31 證書。
-R27 末端各一臂與 R30 中間不同二接點鏈型已排除；一般三環仍未完成。
-R24–R31 隨本次提交整合；發布核對見 STATUS §37，R31 研究驗證見 §35，
-文件盤點見 §36。既有 R21–R23 發布見 §27。
-仍為紙面＋Python，未新增 Lean theorem。
+最新：[831 拓撲與必要連接](c5_sector_structural.md)。induced 框圈＋非空
+連通內部使平面與指定 disk 等價，取消平面非 disk 控制分支。
+831 的 proper 語義是 `(x1≠x3) or (a=x2)`，且已排除全部五個 chords。
+四項單一染色的 Kempe 必要連接已作紙面推導與固定控制核對；尚未得到
+跨列共同 witness，不能拼成一般 K3,3。3903 必然非平面仍待證。
+既有 22 份 3903 正控制、原圖 minimality 與 subdivision 證書保留。
+本輪未生成新圖、未新增 Lean theorem；三輪產物隨本次提交整合，不 push。
+提交核對見 [STATUS §41](STATUS.md#41-sector-三輪研究整合提交)；R31 缺口保留。
 
 先讀本頁，再讀 [文件狀態與變化追蹤](STATUS.md) 及指定報告。
 逐輪數字、舊停止點與發布紀錄完整保存在 [歷史交接](HANDOFF_HISTORY.md)。
@@ -190,22 +190,19 @@ bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle �
 
 ## 2. 精確停止點與下一個窄問題
 
-**恰兩個 odd-cycle blocks 已排除；三環共用點鏈的末端各一臂、兩個不同
-中間接點亦已排除。** 同末端不同二接點僅完成 R31 正常形拓撲。
-先讀 [R31](c5_degree5_same_terminal_triangles.md)，來源 minor 構造參考
-[R30](c5_degree5_middle_cycle_minors.md)，list 介面讀
-[R28](c5_degree5_three_cycle_positions.md)。既有大覆蓋不需重跑。
+目前入口為 [831 拓撲與必要連接](c5_sector_structural.md)。平面與 disk 在
+既定子類等價，目標為證明 831＋雙開口接受迫使非平面，仍未解。
+在 proper 01232 的同一份延拓，已強迫 b1–b3 的 1/3 路徑；disk 下
+b2 的 0/2 分量不能碰 z 或 b4。但正控制也通過這個局部分離條件。
+下一問是如何把兩開口的延拓訊息轉到同一染色／交換歷史中；尚無轉移
+引理，也不預設這條路一定足夠。不能合併不同染色的獨立路徑。
+[正控制](c5_sector_positive_control.md) 與 [五目標](c5_sector_targets.md)
+保留原範圍；不預設額外禁 C，不擴及其他四目標，不擴大搜尋。
 
-1. 固定兩個不同接點都在同一末端環，建立任意長來源到 R31 的
-   C3–C3–C3 boundary 固定 minors。接點末端保留共用點與兩接點；
-   中間保留兩共用點與 S 錨點；無接點末端保留共用點與兩個 T 錨點。
-2. 再縮重複色外臂，保留實際 boundary 接線，允許 z 吸收臂點；
-   逐步核對 degrees、完整四列 F={D} 與逐邊刪除著色。
-3. 將 R31 已存 subdivision 合成回來源，核對 branch sets 及來源實際邊。
-   不以 R28 list 布林等價或正常形全覆蓋直接代替來源圖層證據。
-
-末端與中間／同點的新圖層排除、環間 bridge 三環型、其他分拆 (2)
-及一般三環仍開放；完整 Q(a) 與 Σ 不宣稱保持。
+保留的 R31 缺口：同末端不同二接點的任意長來源到 C3–C3–C3 的
+boundary 固定 minors 尚未補完；參考 [R31](c5_degree5_same_terminal_triangles.md)、
+[R30](c5_degree5_middle_cycle_minors.md) 與 [R28](c5_degree5_three_cycle_positions.md)。
+R27 末端各一臂及 R30 中間不同二接點鏈型已排除；其他三環型仍開放。
 
 一般 degree≥5、單側出口、共同 pivotal edge、候選 A、
 一般 weak-deletion congruence 與 `K∞=K≤5` 仍需各自的證明。

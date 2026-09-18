@@ -1108,3 +1108,64 @@ Lean axiom audit 本次未重跑；其既有紀錄與本次重播範圍分開。
 本次發布不擴大數學結論：R31 同末端型任意長來源 minors 仍待補，
 一般三環、degree-5、共同出口及 `K∞=K≤5` 仍未證。各專題報告與本頁
 歷史節中的「未提交」描述該研究輪當時狀態，並非此次整合後的發布狀態。
+
+
+## 38. 相鄰雙缺失的 12-bit 定向實驗
+
+2026-09-18，依使用者指定轉向五個 sector 目標的實現性，見
+[報告](c5_sector_targets.md)。獨立重現抽象篩選 3,072／640／5；
+14 份已存圖接線對照未命中。固定目標 3647，完整窮舉 |C|≤3 的
+1,548 份有標號 degree／接點候選，130 份 disk，零命中；
+相鄰雙缺失 disk 圖只重現既有 {C,D} 二內點控制，沒有新一般機制。
+不自動增加大小或環數；R31 來源 minor 缺口保留但暫不優先。
+
+本輪新 checker `c5_sector_targets.py --check`、`lake build` 及
+`git diff --check` 通過；舊控制在新 checker 直接驗完整列與刪邊，
+舊 standalone checker／R24–R31 大覆蓋未重跑。未新增 Lean theorem，
+未 commit／push；核心猜測、一般 degree-5 與主命題仍未證。
+
+
+## 39. 3903 的既有非 disk 正控制
+
+2026-09-18，見 [報告](c5_sector_positive_control.md)。只掃已保存樹分量
+648 個 templates 的實際 edges：22 份 proper=831、完整=3903，均為
+四內點 sector 且本身非平面。選第 41 號，獨立核對 K／G 各 240 列及
+16 條非 boundary 邊刪除；原圖相鄰雙缺失且 minimal。保存全部 22 份
+K3,3 subdivisions，checker 禁用 planarity oracle 直接重播。
+
+新 checker `c5_sector_positive_control.py --check`、`lake build` 及
+`git diff --check` 通過。沒有生成新圖族、未掃完其他既有候選，未重跑
+舊覆蓋或 |C|≤3 生成器。使用者分層稽核另標為外部結果，沒有冒充本輪重播。
+本輪證明 3903 的 degree／染色條件可以共存；尚未證任何一般 disk 排除，
+亦無平面非 disk 控制。保留 not(E_B and E_C) 的待證形式，不預設禁 C，
+不擴及其他四目標。未新增 Lean theorem，未 commit／push。
+
+
+## 40. 831 的平面／disk 等價與必要連接
+
+2026-09-18，見 [報告](c5_sector_structural.md)。採納使用者的前提修正：
+induced 框圈＋非空連通內部給出平面⇔指定 disk 的一般紙面引理，
+取消 §39 保留的平面非 disk 分支。831 的 proper 條件相等公式及
+五個 chord 排除已核對全部 240 列。
+
+以單次 Kempe swap 紙面推導四項必要連接；proper 01232 下的 b1–b3
+路徑給出同一染色的互補色分離。但既有正控制也通過此局部條件，
+跨列共同 witness 仍未建立，一般 3903 非平面仍未證。
+新 `c5_sector_structural.py --check`、`lake build`、`git diff --check`
+通過；只核對單張已存控制的 2／3／2／1 份延拓，未重播其餘正控制、
+未生成新圖、未新增 Lean theorem。未 commit／push。
+
+
+## 41. Sector 三輪研究整合提交
+
+2026-09-18，依使用者「紀錄 commit」指示，整合 §38–§40 的三份報告、
+三個 scripts、三份 artifacts，以及 README／HANDOFF／STATUS；只提交，不 push。
+研究輪中的「未 commit／push」保留為當時紀錄，後續狀態以本節及 Git 為準。
+
+本對話已完成三個新 checker 的 `--check`，以及最後一輪的 `lake build`
+（8,822 jobs，僅既有 lint）。本次整理沒有改動程式或證書，沿用這些通過
+結果；提交前另核對 staged diff whitespace 及文件連結。沒有重跑舊大覆蓋。
+
+停止點不變：平面／disk 等價及 831 的條件相等已作紙面推導，
+3903 必然非平面仍待證；不同染色的必要連接不可直接拼成共同 subdivision。
+未新增 Lean theorem，不自動擴大圖搜尋。
