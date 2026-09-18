@@ -63,6 +63,23 @@ K 內有 K3,3 subdivision，兩側 branch vertices 為
 屬上列 K 的實際邊。因此不需要外加 apex，就可驗證 K 非平面。
 這個具體連接衝突給出研究材料，但不表示所有 3903 實現必有同一 subdivision。
 
+## 2a. 保留框圈的較小證書
+
+同一張第 41 號控制另有 P=z–x–b2、Q=b1–v–b4，端點沿框圈交替，
+兩路徑頂點互斥；C 中的 R=x–w–v 連接其內點。九條分支為：
+
+| 左側 | 到 b1 | 到 b4 | 到 x |
+| --- | --- | --- | --- |
+| z | z–b1 | z–b4 | z–x |
+| b2 | b2–b1 | b2–b3–b4 | b2–x |
+| v | v–b1 | v–b4 | v–w–x |
+
+內點僅 b3、w，不使用 u。這是取非平面子圖的證書，不是保持 Σ 或
+minimality 的刪點化約。原證書與其餘 21 份控制不變。
+新證書存於 [structural artifact](../artifacts/c5_sector_structural/observations.json)
+的 `smaller_subdivision`，由 structural checker 直接核對，不用平面性 oracle。
+一般構造與尚待證的兩路徑存在性見 [拓撲報告 §1a](c5_sector_structural.md#1a-交替互斥路徑的構造式非平面證書)。
+
 ## 3. 有界的既有資料稽核
 
 本輪只讀該份既有證書的全部 648 個 templates 明列的 `edges`。

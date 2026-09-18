@@ -56,6 +56,20 @@ def build():
     assert set(g[0]) == {1,4,5}
     g.remove_node(0)
     g = nx.relabel_nodes(g, {5:0})
+    # Explicit smaller K3,3 certificate: z=0, v=7, w=8, x=9; u=6 unused.
+    left, right = [0, 2, 7], [1, 4, 9]
+    paths = [[0,1], [0,4], [0,9], [2,1], [2,3,4], [2,9],
+             [7,1], [7,4], [7,8,9]]
+    interiors = set()
+    for path, (a, b) in zip(paths, product(left, right), strict=True):
+        assert (path[0], path[-1]) == (a, b)
+        assert len(path) == len(set(path))
+        assert all(g.has_edge(u, v) for u, v in zip(path, path[1:]))
+        assert not set(path[1:-1]) & (set(left + right) | interiors)
+        interiors.update(path[1:-1])
+    assert interiors == {3, 8}
+    subdivision = dict(left=left, right=right, paths=paths,
+                       internal_vertices=sorted(interiors), unused_vertex=6)
     opened = g.copy()
     opened.remove_edges_from([(0,1),(0,4)])
     inner = sorted(set(g)-set(range(5)))
@@ -80,12 +94,14 @@ def build():
         controls.append(dict(name=claim['name'], extensions=len(witnesses), witnesses=witnesses))
     files = [SOURCE] + [ROOT/'scripts'/f'{n}.py' for n in
                          ('c5_sector_structural','c5_sector_targets','boundary_relations','c5_cell_enumerator')]
-    return dict(schema=1, scope='Finite boundary algebra and one saved graph; topology and general Kempe implications are paper arguments.',
+    return dict(schema=2, scope='Finite boundary algebra and one saved graph; topology and general Kempe implications are paper arguments.',
                 input_sha256={str(p.relative_to(ROOT)):sha256(p.read_bytes()).hexdigest() for p in files},
                 conditional_equality=formula, chord_exclusions=chords, necessary_connections=claims,
                 positive_control=controls,
+                smaller_subdivision=subdivision,
                 summary=dict(proper_rows=len(formula), chords_excluded=len(chords),
                              necessary_connection_claims=len(claims),
+                             subdivision_paths=len(paths),
                              control_extension_counts={r['name']:r['extensions'] for r in controls}))
 
 

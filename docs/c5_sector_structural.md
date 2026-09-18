@@ -22,10 +22,44 @@
 embedding。反向由定義立即成立。證畢。
 
 此引理不使用 degree、兩接點、染色或 minimality，也不要求 K 是
-2-connected。使用標準 Jordan 分離定理；使用者提供的
-[Nguyen–Cook 論文](https://arxiv.org/abs/1002.2954) 摘要陳述該定理，
-論文本身研究 grid graphs 中的離散形式化。本處直接採用上述一般平面
-論證，不宣稱已由該文或 Lean 形式化了本引理。
+2-connected。相對框圈的 Γ-bridge 是每個內部分量連同其附著邊，或
+一條框圈 chord；它不是內部 block，也不是刪除便斷開的橋邊。對目前
+連通簡單圖，bridge 數為
+
+```
+β_Γ(K) = components(K−V(Γ)) + chords_K(Γ) = 1。
+```
+
+這正是 Tutte 的 peripheral polygon 條件；《How to Draw a Graph》
+[原文](https://www.cs.jhu.edu/~misha/Fall09/Tutte63.pdf) 定理 (3.1)，
+頁 748，指出 peripheral polygon 在平面嵌入中圍成一個面。
+上面的 Jordan 論證獨立寫出本處所需特例，未 Lean 化。
+
+兩個前提不能任意省略。在框圈 `(z,b1,b2,b3,b4)` 上：
+
+- 加入互不連接的 `z–s–b2`、`b1–t–b4`：無 chord，但內部不連通。
+- 加入 `z–s–b2` 與 chord `b1–b4`：內部連通，但框圈非 induced。
+
+兩者均可把交替端點的連接分居兩側而平面，卻不能同放一個 disk。
+這是前提控制，不是 3903 候選；β≥2 也不表示必然非 disk。
+取消的是平面／disk 研究分岔，不是授權刪去內部分叉或子樹。
+開口圖刪去 zb1、zb4 後沒有完整 Γ，不能直接套本引理；後續刪邊若
+使 C 分裂，也須重新檢查前提。已知 disk 嵌入的刪邊繼承是另一論證。
+
+## 1a. 交替互斥路徑的構造式非平面證書
+
+在上述前提下，設 a,b,c,d 為 Γ 上循環依序的四個不同頂點，
+P:a→c、Q:b→d 為頂點互不相交的 Γ-paths：除兩端外不碰 Γ，
+且不是框圈邊。無 chord 保證兩條路徑都有內點。
+在連通 C 中取連接 P、Q 內點集合的最短路徑 R:x→y；最短性保證
+R 的內點不碰 P∪Q。於是 Γ 的四段、P 與 Q 各兩段、R 共九條分支，
+構成兩側 `{a,c,y}`、`{b,d,x}` 的 K3,3 subdivision。
+
+這是 Tutte 同文定理 (5.1)，頁 749 的本處構造。R 不需額外由染色
+強迫；真正待證的充分路線是：831＋E_B＋E_C＋既定圖結構前提，
+迫使存在上述 P、Q。沒有宣稱這是相對任意指定框圈的非平面充要判準。
+P、Q 不必來自同一染色，但必須有獨立的頂點互斥證明；同一染色的
+互補色對只是提供互斥的一種方法。不能直接拼接跨列 Kempe 路徑。
 
 ## 2. 831 的 proper 語義及 chord 排除
 
@@ -110,13 +144,16 @@ E_B、E_C 各自給出的路徑來自不同染色。proper 第 9 列的染色又
 另一列；不能把它們直接拼成同時存在、內部互斥的 K3,3 路徑。
 下一個窄缺口是：能否以完整保留染色與交換歷史的論證，把雙開口接受
 轉化成**同一份**第 9 列延拓中的額外連接，或找到另一個有共同 witness
-的矛盾？目前沒有這個轉移引理，也未證明這條第 9 列路線必能奏效。
+的矛盾（例如第 1a 節的兩條互斥路徑）？目前沒有這個轉移引理，也未證明這條第 9 列路線必能奏效。
 不預設所有 3903 實現都有既有控制的九條路徑，不擴大圖搜尋。
 
 ## 5. 證據與重播
 
 [checker](../scripts/c5_sector_structural.py)、
 [certificate](../artifacts/c5_sector_structural/observations.json)。
+新增第 41 號控制的較小九路徑證書，見
+[正控制 §2a](c5_sector_positive_control.md#2a-保留框圈的較小證書)；
+checker 逐邊核對端點、路徑簡單性及內點互斥，不呼叫 planarity oracle。
 計算內容是：240 列公式、五個 chord 排除、四項 hypothetical swap 的
 拒絕列，以及單張已存正控制所有指定列延拓的連通分量。
 四列控制延拓數依次為 2、3、2、1。控制檢查不是一般引理的證明；
@@ -131,3 +168,6 @@ git diff --check
 本輪新 checker、Lean build 及 whitespace 檢查通過。沒有重播其餘 21 份
 正控制或較早大覆蓋，沒有更改舊研究 scripts／artifacts。未新增 Lean theorem，
 未 commit／push。一般 3903 非平面、其他四目標與主命題仍未證。
+
+2026-09-18 後續整理：Tutte 出處、單一附著塊與構造式證書已補入；
+本次提交與發布核對見 [STATUS §42](STATUS.md#42-tutte-依賴鏈與較小證書)。

@@ -15,7 +15,8 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 最新：[831 的拓撲等價與必要連接](docs/c5_sector_structural.md)。
 induced 框圈＋連通內部使平面與指定 disk 等價；取消兩者的分岔。
 831 已重寫為 proper 列上的條件相等，並導出單一染色中的 Kempe 必要連接。
-跨列共同 witness 尚未建立，3903 必然非平面仍未證；不擴大搜尋。
+補入 Tutte (3.1)/(5.1)：交替互斥的兩條框圈路徑＋內部連通可構造 K3,3；
+第 41 號較小九路徑證書已保存。一般兩路徑存在性與 3903 排除仍未證。
 [既有非平面正控制](docs/c5_sector_positive_control.md) 的 22 份命中與
 [五目標有限實驗](docs/c5_sector_targets.md) 保留原範圍。
 

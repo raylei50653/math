@@ -1169,3 +1169,29 @@ induced 框圈＋非空連通內部給出平面⇔指定 disk 的一般紙面引
 停止點不變：平面／disk 等價及 831 的條件相等已作紙面推導，
 3903 必然非平面仍待證；不同染色的必要連接不可直接拼成共同 subdivision。
 未新增 Lean theorem，不自動擴大圖搜尋。
+
+## 42. Tutte 依賴鏈與較小證書
+
+2026-09-18，依使用者「整理 commit + push」指示，整理
+[拓撲報告](c5_sector_structural.md) 與 [正控制](c5_sector_positive_control.md)，
+同步 README／HANDOFF。補入 Tutte《How to Draw a Graph》(3.1)/(5.1)
+的原文出處、單一 Γ-bridge 前提、兩個前提控制，以及交替互斥路徑到
+K3,3 subdivision 的最短內部連接構造。開口圖與內部分裂的適用界線保留。
+
+第 41 號正控制新增不使用 u 的九路徑證書，內點僅 b3、w；
+structural script／artifact schema 2 直接驗邊、端點、簡單性與內點互斥。
+這不是保持染色介面的刪點化約，也不是一般兩路徑存在性的證明。
+
+本輪實際重播：
+
+- `uv run --with networkx==3.5 python scripts/c5_sector_structural.py --check`：
+  240 proper 列、五個 chord、四項必要連接與新增九路徑證書通過。
+- `uv run --with networkx==3.5 python scripts/c5_sector_positive_control.py --check`：
+  648 份既有模板、22 份正控制、7,776 次列交叉核對與選定原圖 16 次刪邊通過。
+- `lake build`：8,822 jobs 成功，只有既有 lint；`git diff --check` 通過。
+
+未生成新圖、未重播舊 R 系列大覆蓋、未新增 Lean theorem。
+停止點：831＋雙開口是否強迫兩條交替互斥 Γ-paths 尚待證；路徑可來自
+不同染色，但必須證明互斥。3903 一般排除、其他四目標及 R31 缺口不變。
+本次發布包含先前已提交但未 push 的 sector 三輪提交 e1b18de；
+最終本地／tracking／remote SHA 與乾淨狀態於 push 後核對，以 Git 為準。
