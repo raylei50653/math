@@ -1,25 +1,20 @@
 # 研究交接：目前狀態與接手入口
 
 更新：2026-09-19。工作目錄 `/home/ray/math`。
-本次依基準 `e097be6` 任務重驗：接手時 HEAD 已是 `2f4adfb`，工作樹乾淨，
-下述報告、checker 與確定性證書均已存在。重新審閱單步引理及碰撞，
-重跑 mixed-transition、cross-row、forced-connectivity 三個 checker 與
-`lake build`（8,822 jobs；僅既有 lint 警告），全部通過；文件本地連結與
-whitespace 檢查通過。程式、證書及研究停止點不變；本次僅更新交接。
-重驗完成後依使用者指示提交並推送；即時發布狀態以 Git 為準。
-舊 standalone checker、minimality 與 R 系列未重跑。
-
-最新：[3903 單步混合色對相容性](c5_sector_mixed_transition.md)。
-一般圖的 retained-component／star 單步引理已在既有 22 張控制、
-1,100 份染色的 12,580 條交換、50,320 個混合色對全部核對通過。
-同圖 41 的染色 19／24 具有相同來源 profile 397、相同完整交換分量，
-卻給出不同混合後繼。舊閉包所選 330 與兩個完整見證各有不相容項，
-但未排除其他實現，故不刪抽象後繼，603 個 profiles 沿用。
-下一步限於單步帶框標記的 retained-component／star incidence 介面；
-不擴建大型歷史狀態機，不增加圖大小，未新增 Lean theorem。
-一般 3903 非平面與 R31 缺口保留。
-本輪提交發布整理見 [STATUS §47](STATUS.md#47-3903-單步混合相容性提交與接手核對)。
-前兩輪發布紀錄見 [STATUS §45](STATUS.md#45-3903-兩輪成果整合提交與發布)。
+本次自 `3aaca0b` 整理四輪成果並 commit；不 push。
+最新：[degree-4 stars 的兩種分離集](c5_sector_saturated_cuts.md)。
+一般 disk 必要條件：在 S 去掉框點 1 後，鄰色恰為 0,0,2,2 與
+0,0,3,3 的兩種 stars 都必須分離 0、2。若刪 1 尚未分離它們，
+則 |C|≥6；「刪 1 已分離」仍是另一必要分支，不能省略。
+六份既有來源各保存一份直接核對的 K3,3 九路徑；38 張已存無共同
+鄰點 disk 圖的 40 份指定交換提供 14 項適用要求，全部通過，其中
+8 項使用非空 star 分離集。這些 disk 控制並非完整 397 或 3903。
+共同鄰點障礙仍有效；一般 397→330 未排除，603 profiles 沿用。
+本次重播四個新 checker 與直接前置 mixed-transition checker，全部通過；
+`lake build`（8,822 jobs；既有 lint）及文件連結／whitespace 通過。
+其餘 standalone、minimality 與 R 系列未重跑；未新增 Lean theorem。
+研究結果見 [STATUS §51](STATUS.md#51-3903-degree-4-stars-兩種分離集與條件式六內點下界)，
+本次整合提交範圍見 [STATUS §52](STATUS.md#52-3903-四輪成果整理與提交核對)。
 
 先讀本頁，再讀 [文件狀態與變化追蹤](STATUS.md) 及指定報告。
 逐輪數字、舊停止點與發布紀錄完整保存在 [歷史交接](HANDOFF_HISTORY.md)。
@@ -201,17 +196,21 @@ bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle �
 
 ## 2. 精確停止點與下一個窄問題
 
-目前入口為 [3903 單步混合色對相容性](c5_sector_mixed_transition.md)。
+目前入口為 [degree-4 stars 的兩種分離集](c5_sector_saturated_cuts.md)。
 平面與 disk 在既定子類等價；831＋雙開口接受是否迫使非平面仍未解。
-來源六分割及交換塊，甚至完整 S 頂點集，都不能唯一決定混合後繼：
-第 41 張圖的 c19／c24、state 397、action 2 已提供直接碰撞。
-精確單步引理需要刪點後 retained 分量及插入 stars 的共同 incidence。
-下一問是能否將此介面投影成可靠的必要條件，或作小型局部增補；
-不得從固定完整染色的不符直接刪掉可能有其他實現的抽象後繼。
-603 個 profiles 沿用；未建立新的閉包固定點或多步歷史狀態。
-固定控制的單軌道、至多三步到見證仍只適用於該固定域，不鎖定第 9 列。
-若使用不同染色的路徑，仍須獨立證明互斥；一般共同見證仍開放。
-不擴大圖大小、不預設額外禁 C、不擴及其他四目標。
+397→330 要求 N(0)∩N(4)=∅。來源舊 13 的 L3:1→4 與候選新原始
+02 的 L2:1→3，分別迫使 T3、T2 在 S−{1} 中分離 0、2；Td 為
+S 內舊色 1、全部鄰色恰為 0,0,d,d 的內點。兩種類型頂點不能相同。
+因此剩餘分支為：刪框點 1 已分離 0、2；或尚未分離，但兩種 star
+分離集均成立，且至少六個內點。下界不是搜尋擴大指令，不保證可達。
+下一問優先檢查「框點 1 切斷 S」分支，能否由新 12 的 0/4 分離、
+新 13 的 0、2、4 三分離及舊 13 retained 接入口得到矛盾；另一分支
+須保留兩種飽和 stars 的共同身份與位置。舊 13 最後 S 接入口不一定
+等於所選 0–2 路徑與 L3 的交點，不能合併其身份。
+既有控制的六份非平面證書不排除其他來源；38 張 disk 控制只是較弱
+前提的檢查，沒有完整 397 命中。603 profiles 沿用，零刪除，未建立
+新閉包固定點或多步歷史狀態。不擴大圖大小、不預設額外禁 C、不擴及
+其他四目標。固定域的至多三步到見證仍不升格為一般界。
 
 保留的 R31 缺口：同末端不同二接點的任意長來源到 C3–C3–C3 的
 boundary 固定 minors 尚未補完；參考 [R31](c5_degree5_same_terminal_triangles.md)、
@@ -254,20 +253,22 @@ R27 末端各一臂及 R30 中間不同二接點鏈型已排除；其他三環�
 
 ## 5. 重播入口與驗證範圍
 
-本輪重播入口（三個 checker、Lean build，另驗變更文件連結）：
+本次整合提交重播入口（四個新 checker 與直接前置 checker、Lean build，另驗文件連結）：
 
 ```bash
+uv run --with networkx==3.5 python scripts/c5_sector_marked_incidence.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_common_core.py --check
 uv run --with networkx==3.5 python scripts/c5_sector_mixed_transition.py --check
-uv run --with networkx==3.5 python scripts/c5_sector_forced_connectivity.py --check
-uv run --with networkx==3.5 python scripts/c5_sector_cross_row.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_saturated_cuts.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_joint_identity.py --check
 lake build
 git diff --check
 ```
 
-發布前核對範圍見 [STATUS §45](STATUS.md#45-3903-兩輪成果整合提交與發布)。
+本次提交核對範圍見 [STATUS §52](STATUS.md#52-3903-四輪成果整理與提交核對)；較早發布紀錄見 STATUS §45／47。
 
 前次文件盤點只核對索引、連結與 whitespace，未重跑研究驗證。
-本次提交的 R24–R31 checker 與 Lean build 核對結果另見 STATUS §37。
+先前提交的 R24–R31 checker 與 Lean build 核對結果另見 STATUS §37。
 以下為各研究輪的既有重播入口與驗證紀錄。
 
 R31 研究輪入口為 [R31 §3](c5_degree5_same_terminal_triangles.md)；該輪只重播新正常形 checker。

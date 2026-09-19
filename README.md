@@ -12,16 +12,18 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 各輪完整紀錄；其中「下一步／未提交」只描述當時 |
 
-最新：[3903 單步混合色對相容性](docs/c5_sector_mixed_transition.md)。
-不依賴平面性的 retained-component／star 引理，已在 22 張既有控制的
-12,580 條交換、50,320 項混合色對核對通過。同圖的兩份染色具有相同
-profile 397、相同完整交換分量，卻產生不同混合後繼；六個框分割不足以
-決定精確更新。未據此刪除抽象後繼，原閉包仍為 603 個 profiles。
-下一缺口是單步帶框標記的分量／star incidence 介面能否提供可靠篩選；
-不擴建歷史狀態機，一般 3903 非平面仍未證。
-本輪提交發布整理見 [STATUS §47](docs/STATUS.md#47-3903-單步混合相容性提交與接手核對)。
-前輪：[跨列閉包](docs/c5_sector_cross_row.md)、
-[強迫連通抽取](docs/c5_sector_forced_connectivity.md)。
+最新：[3903 degree-4 stars 的兩種分離集](docs/c5_sector_saturated_cuts.md)。
+若 disk 中的 397→330 可實現，S 去掉框點 1 後，鄰色恰為 0,0,2,2
+及 0,0,3,3 的兩種 stars 都必須分離 0、2。若刪 1 尚未分離它們，
+則至少需要六個內點；不是一般排除或擴大搜尋的指令。
+既有六份來源各驗出 K3,3 證書；38 張已存無共同鄰點 disk 圖的單列
+控制有 14 項適用分離要求，全部通過。603 profiles 沿用。
+下一問保留「框點 1 切斷 S」及「兩種分離集」兩分支，結合新 12／13
+完整分離條件。一般 3903 非平面仍未證。
+見 [STATUS §51](docs/STATUS.md#51-3903-degree-4-stars-兩種分離集與條件式六內點下界)。
+本次四輪整合提交與重播範圍見 [STATUS §52](docs/STATUS.md#52-3903-四輪成果整理與提交核對)。
+前輪：[跨色身份與共同鄰點](docs/c5_sector_joint_identity.md)、
+[單步共同核心](docs/c5_sector_common_core.md)。
 
 保留 R31：[同末端不同二接點正常形拓撲](docs/c5_degree5_same_terminal_triangles.md)
 完成 C3–C3–C3 簡單臂的 408 模板、327,968 種接線非 disk 覆蓋；

@@ -1,0 +1,932 @@
+{
+  "schema": 1,
+  "baseline": "3aaca0b",
+  "scope": "Common-core extension lemma and fixed-corpus audit; no realizability or new closure claim.",
+  "input_sha256": {
+    "Math/KempeSurgery.lean": "6deec3581f45b4ae94a74b4754f507c493e4bed919ac252683ba63cf74071640",
+    "artifacts/c5_sector_cross_row/observations.json": "39accd5789e29b76242622ebe5891eab27449fcb0dcfd22a420389074037c439",
+    "artifacts/c5_sector_marked_incidence/observations.json": "933cfe4205b83c76d91dd0f8bd15d88a03bdfd1ebacc0af288561e4eede9e681",
+    "artifacts/c5_sector_mixed_transition/observations.json": "737ebc65701005239d62aac2606e074433b8e066998003ba4b7cce1cefa468f7",
+    "artifacts/c5_sector_positive_control/observations.json": "c34558fa1570ccb717b01b0e917488bba559c42e095b8e548fbd61dad99c8337",
+    "scripts/boundary_relations.py": "6f69347417fcc12775ecd0c5edf653b2ade43c664d0aac1da623b41eecc7ee25",
+    "scripts/c5_cell_enumerator.py": "456dc759f0038a9c4455fcd12df6d37e14edca0a2411e32af585efedb4de6e6e",
+    "scripts/c5_k4_blocks.py": "63ec478a5911eee3d2e1000e2ac032cf56f75272b179f97990f04fb814a2148d",
+    "scripts/c5_sector_common_core.py": "a9f14f3394a94631ba184c8f62b5b62d61d160b59ae9d1499f1d3c39297fbb16",
+    "scripts/c5_sector_cross_row.py": "7f503deec127417c32c1614fa35e3caab3727b8ac698724471ebebde64b17830",
+    "scripts/c5_sector_forced_connectivity.py": "90c2c5f03878955738a03ffa3d6a619a1a9a64c7a7bf61403114c02715d37563",
+    "scripts/c5_sector_marked_incidence.py": "e3d353b16be5a77a148028932be6394216d70def017e1d24bfa26a91abc78b90",
+    "scripts/c5_sector_mixed_transition.py": "5441414cd1c86829607ea6203ee849132cd3c006aff50ffd77e73f7bcb0c6841",
+    "scripts/c5_sector_targets.py": "1db47a09d9ae765966310d0d17f3912e52bf9633b6cd7625ab088b2aeb690e56"
+  },
+  "summary": {
+    "controls": 22,
+    "common_cores": 50320,
+    "extension_projections": 100640,
+    "moves": 12580,
+    "old_outside_detours": 6478,
+    "new_outside_detours": 6478
+  },
+  "control_audits": [
+    {
+      "source_index": 41,
+      "common_cores": 2128,
+      "extension_projections": 4256,
+      "moves": 532,
+      "old_outside_detours": 315,
+      "new_outside_detours": 315,
+      "trace_sha256": "d4d9f98d679f23cd749389757de76ba2a558a3521386ab6ecde4b8db26c6dd4d"
+    },
+    {
+      "source_index": 42,
+      "common_cores": 3400,
+      "extension_projections": 6800,
+      "moves": 850,
+      "old_outside_detours": 466,
+      "new_outside_detours": 466,
+      "trace_sha256": "dfc86be6485de92cb8e670eb6440139305e8786755151fdcb748d3bb4369cec6"
+    },
+    {
+      "source_index": 44,
+      "common_cores": 2248,
+      "extension_projections": 4496,
+      "moves": 562,
+      "old_outside_detours": 289,
+      "new_outside_detours": 289,
+      "trace_sha256": "49c58d06c7518da6c0f4604fc83bf743aab5ca838b146eec8d3603f631ce455e"
+    },
+    {
+      "source_index": 45,
+      "common_cores": 3024,
+      "extension_projections": 6048,
+      "moves": 756,
+      "old_outside_detours": 392,
+      "new_outside_detours": 392,
+      "trace_sha256": "f5d34e90ba427abbc846fed317b2542aa318e89068991aa424e7da36643d2c70"
+    },
+    {
+      "source_index": 47,
+      "common_cores": 1584,
+      "extension_projections": 3168,
+      "moves": 396,
+      "old_outside_detours": 208,
+      "new_outside_detours": 208,
+      "trace_sha256": "92c18ae5f2523450f3f5f1f280bca06ec9b37de88a3e438853d996e8a487379a"
+    },
+    {
+      "source_index": 48,
+      "common_cores": 1496,
+      "extension_projections": 2992,
+      "moves": 374,
+      "old_outside_detours": 192,
+      "new_outside_detours": 192,
+      "trace_sha256": "f3fb8b7515b7dff009c9268117dafe717ff6dc0ab7ceb238b83c2ec1e052b0ae"
+    },
+    {
+      "source_index": 49,
+      "common_cores": 2104,
+      "extension_projections": 4208,
+      "moves": 526,
+      "old_outside_detours": 293,
+      "new_outside_detours": 293,
+      "trace_sha256": "4c5d4ea5ad16f3cc61480d6c65c3e443ad5f64affb3287ab5af944db47182939"
+    },
+    {
+      "source_index": 50,
+      "common_cores": 3192,
+      "extension_projections": 6384,
+      "moves": 798,
+      "old_outside_detours": 379,
+      "new_outside_detours": 379,
+      "trace_sha256": "0a446b308508d9952485f539bd1692e9dfb5ea33031b63a7b103961856de20f2"
+    },
+    {
+      "source_index": 51,
+      "common_cores": 2368,
+      "extension_projections": 4736,
+      "moves": 592,
+      "old_outside_detours": 280,
+      "new_outside_detours": 280,
+      "trace_sha256": "349e7067c706c9bd73f28fefec9a9b23aa887513115cdb25254547c25be4921b"
+    },
+    {
+      "source_index": 53,
+      "common_cores": 2120,
+      "extension_projections": 4240,
+      "moves": 530,
+      "old_outside_detours": 247,
+      "new_outside_detours": 247,
+      "trace_sha256": "4bccd96cadfeab3eb725bc484772868b34bb799968351c1fc5b32b8bec2b54ef"
+    },
+    {
+      "source_index": 54,
+      "common_cores": 1496,
+      "extension_projections": 2992,
+      "moves": 374,
+      "old_outside_detours": 178,
+      "new_outside_detours": 178,
+      "trace_sha256": "688a69fd9a4f8e99b767445b206d51f1bb5fa85f8cf363beddd6756711420570"
+    },
+    {
+      "source_index": 161,
+      "common_cores": 1496,
+      "extension_projections": 2992,
+      "moves": 374,
+      "old_outside_detours": 192,
+      "new_outside_detours": 192,
+      "trace_sha256": "f34cfdd497d78fa1924bcf1613390f9e5b1a9ca388a96f89dbe84d0989600280"
+    },
+    {
+      "source_index": 162,
+      "common_cores": 2248,
+      "extension_projections": 4496,
+      "moves": 562,
+      "old_outside_detours": 289,
+      "new_outside_detours": 289,
+      "trace_sha256": "bbf49eec24cf1197451eb3789b6abe7abf1559b0ed2e87969b892c39e21a625b"
+    },
+    {
+      "source_index": 164,
+      "common_cores": 3400,
+      "extension_projections": 6800,
+      "moves": 850,
+      "old_outside_detours": 466,
+      "new_outside_detours": 466,
+      "trace_sha256": "d7b7b00baad6c49ec23f3c44e2e4f9dbdab90199876edf350eb1fc1f6509deed"
+    },
+    {
+      "source_index": 165,
+      "common_cores": 3192,
+      "extension_projections": 6384,
+      "moves": 798,
+      "old_outside_detours": 379,
+      "new_outside_detours": 379,
+      "trace_sha256": "2ebfa68993de715306a33923bec8e59a1398f1e304640f03e608cae9122aeebb"
+    },
+    {
+      "source_index": 167,
+      "common_cores": 1496,
+      "extension_projections": 2992,
+      "moves": 374,
+      "old_outside_detours": 178,
+      "new_outside_detours": 178,
+      "trace_sha256": "dce548a2c304d50ce0b1c1d9893980c51a34c9d619ca4b4968f3fa6fc927f566"
+    },
+    {
+      "source_index": 168,
+      "common_cores": 2128,
+      "extension_projections": 4256,
+      "moves": 532,
+      "old_outside_detours": 315,
+      "new_outside_detours": 315,
+      "trace_sha256": "61e50c74316d73d6f891927e5303f0baa3e89985975a8a021269ae0e46f36e88"
+    },
+    {
+      "source_index": 169,
+      "common_cores": 2104,
+      "extension_projections": 4208,
+      "moves": 526,
+      "old_outside_detours": 293,
+      "new_outside_detours": 293,
+      "trace_sha256": "0e110f2ce915beaa11ed88bd0fc1692ca2ee443ca6c78f054a8f6415bba55745"
+    },
+    {
+      "source_index": 170,
+      "common_cores": 3024,
+      "extension_projections": 6048,
+      "moves": 756,
+      "old_outside_detours": 392,
+      "new_outside_detours": 392,
+      "trace_sha256": "5678723172840bf2946a17847daccf1af3728108fbf11f3d5d92d94e3e64aa34"
+    },
+    {
+      "source_index": 171,
+      "common_cores": 2120,
+      "extension_projections": 4240,
+      "moves": 530,
+      "old_outside_detours": 247,
+      "new_outside_detours": 247,
+      "trace_sha256": "d8a6967d7cf8e50000db0805170575ca46500275b4b9154b41ad1196a88dfaed"
+    },
+    {
+      "source_index": 173,
+      "common_cores": 2368,
+      "extension_projections": 4736,
+      "moves": 592,
+      "old_outside_detours": 280,
+      "new_outside_detours": 280,
+      "trace_sha256": "c3cd3abd282132a3cb61ee47e8c8714b9b30980d6d206da6f09f3b1738b489c2"
+    },
+    {
+      "source_index": 174,
+      "common_cores": 1584,
+      "extension_projections": 3168,
+      "moves": 396,
+      "old_outside_detours": 208,
+      "new_outside_detours": 208,
+      "trace_sha256": "9e4ed9c12efc3c387a056f88e2988b787a4900c80aac9db3041fd4cb23c1ee9a"
+    }
+  ],
+  "outside_detour_witnesses": {
+    "old": {
+      "source_index": 41,
+      "coloring_id": 0,
+      "move_id": 2,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "coloring": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        2,
+        3,
+        2,
+        3
+      ],
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "move": {
+        "pair": [
+          0,
+          2
+        ],
+        "component": [
+          0,
+          1,
+          6,
+          8
+        ],
+        "target": 8
+      },
+      "interface": {
+        "old_pair": [
+          0,
+          1
+        ],
+        "new_pair": [
+          2,
+          1
+        ],
+        "core": {
+          "nodes": [
+            {
+              "id": "r0",
+              "marks": [
+                0
+              ],
+              "stars": [
+                0
+              ],
+              "d_vertices": []
+            },
+            {
+              "id": "r1",
+              "marks": [
+                1,
+                2
+              ],
+              "stars": [
+                1
+              ],
+              "d_vertices": [
+                2
+              ]
+            },
+            {
+              "id": "r2",
+              "marks": [
+                4
+              ],
+              "stars": [],
+              "d_vertices": [
+                4
+              ]
+            }
+          ],
+          "edges": []
+        },
+        "core_partition": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        "extensions": [
+          {
+            "color": 0,
+            "outside_vertices": [
+              3
+            ],
+            "quotient": {
+              "nodes": [
+                {
+                  "id": "o3",
+                  "marks": [
+                    3
+                  ],
+                  "vertex": 3
+                },
+                {
+                  "id": "r0",
+                  "marks": [
+                    0
+                  ],
+                  "stars": [
+                    0
+                  ],
+                  "d_vertices": []
+                },
+                {
+                  "id": "r1",
+                  "marks": [
+                    1,
+                    2
+                  ],
+                  "stars": [
+                    1
+                  ],
+                  "d_vertices": [
+                    2
+                  ]
+                },
+                {
+                  "id": "r2",
+                  "marks": [
+                    4
+                  ],
+                  "stars": [],
+                  "d_vertices": [
+                    4
+                  ]
+                }
+              ],
+              "edges": [
+                [
+                  "o3",
+                  "r1"
+                ],
+                [
+                  "o3",
+                  "r2"
+                ]
+              ]
+            },
+            "partition": [
+              [
+                0
+              ],
+              [
+                1,
+                2,
+                3,
+                4
+              ]
+            ]
+          },
+          {
+            "color": 2,
+            "outside_vertices": [],
+            "quotient": {
+              "nodes": [
+                {
+                  "id": "r0",
+                  "marks": [
+                    0
+                  ],
+                  "stars": [
+                    0
+                  ],
+                  "d_vertices": []
+                },
+                {
+                  "id": "r1",
+                  "marks": [
+                    1,
+                    2
+                  ],
+                  "stars": [
+                    1
+                  ],
+                  "d_vertices": [
+                    2
+                  ]
+                },
+                {
+                  "id": "r2",
+                  "marks": [
+                    4
+                  ],
+                  "stars": [],
+                  "d_vertices": [
+                    4
+                  ]
+                }
+              ],
+              "edges": []
+            },
+            "partition": [
+              [
+                0
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                4
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "new": {
+      "source_index": 41,
+      "coloring_id": 0,
+      "move_id": 2,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "coloring": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        2,
+        3,
+        2,
+        3
+      ],
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "move": {
+        "pair": [
+          0,
+          2
+        ],
+        "component": [
+          0,
+          1,
+          6,
+          8
+        ],
+        "target": 8
+      },
+      "interface": {
+        "old_pair": [
+          2,
+          1
+        ],
+        "new_pair": [
+          0,
+          1
+        ],
+        "core": {
+          "nodes": [
+            {
+              "id": "r0",
+              "marks": [
+                2
+              ],
+              "stars": [
+                8
+              ],
+              "d_vertices": [
+                2
+              ]
+            },
+            {
+              "id": "r1",
+              "marks": [
+                4
+              ],
+              "stars": [
+                6
+              ],
+              "d_vertices": [
+                4
+              ]
+            }
+          ],
+          "edges": []
+        },
+        "core_partition": [
+          [
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        "extensions": [
+          {
+            "color": 2,
+            "outside_vertices": [],
+            "quotient": {
+              "nodes": [
+                {
+                  "id": "r0",
+                  "marks": [
+                    2
+                  ],
+                  "stars": [
+                    8
+                  ],
+                  "d_vertices": [
+                    2
+                  ]
+                },
+                {
+                  "id": "r1",
+                  "marks": [
+                    4
+                  ],
+                  "stars": [
+                    6
+                  ],
+                  "d_vertices": [
+                    4
+                  ]
+                }
+              ],
+              "edges": []
+            },
+            "partition": [
+              [
+                2
+              ],
+              [
+                4
+              ]
+            ]
+          },
+          {
+            "color": 0,
+            "outside_vertices": [
+              3
+            ],
+            "quotient": {
+              "nodes": [
+                {
+                  "id": "o3",
+                  "marks": [
+                    3
+                  ],
+                  "vertex": 3
+                },
+                {
+                  "id": "r0",
+                  "marks": [
+                    2
+                  ],
+                  "stars": [
+                    8
+                  ],
+                  "d_vertices": [
+                    2
+                  ]
+                },
+                {
+                  "id": "r1",
+                  "marks": [
+                    4
+                  ],
+                  "stars": [
+                    6
+                  ],
+                  "d_vertices": [
+                    4
+                  ]
+                }
+              ],
+              "edges": [
+                [
+                  "o3",
+                  "r0"
+                ],
+                [
+                  "o3",
+                  "r1"
+                ]
+              ]
+            },
+            "partition": [
+              [
+                2,
+                3,
+                4
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "candidate": {
+    "source": 397,
+    "action": 2,
+    "target": 330,
+    "rows": [
+      {
+        "old_pair": [
+          0,
+          2
+        ],
+        "new_raw_pair": [
+          1,
+          2
+        ],
+        "terminals": [
+          0,
+          2,
+          3
+        ],
+        "source_bound": [
+          [
+            0
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "target_bound": [
+          [
+            0
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "common_core_bound": [
+          [
+            0
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "old_pair": [
+          0,
+          3
+        ],
+        "new_raw_pair": [
+          1,
+          3
+        ],
+        "terminals": [
+          0,
+          2
+        ],
+        "source_bound": [
+          [
+            0
+          ],
+          [
+            2
+          ]
+        ],
+        "target_bound": [
+          [
+            0
+          ],
+          [
+            2
+          ]
+        ],
+        "common_core_bound": [
+          [
+            0
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      {
+        "old_pair": [
+          1,
+          2
+        ],
+        "new_raw_pair": [
+          0,
+          2
+        ],
+        "terminals": [
+          1,
+          3
+        ],
+        "source_bound": [
+          [
+            1,
+            3
+          ]
+        ],
+        "target_bound": [
+          [
+            1,
+            3
+          ]
+        ],
+        "common_core_bound": [
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      {
+        "old_pair": [
+          1,
+          3
+        ],
+        "new_raw_pair": [
+          0,
+          3
+        ],
+        "terminals": [
+          1
+        ],
+        "source_bound": [
+          [
+            1
+          ]
+        ],
+        "target_bound": [
+          [
+            1
+          ]
+        ],
+        "common_core_bound": [
+          [
+            1
+          ]
+        ]
+      }
+    ],
+    "source_bounds_unchanged": true,
+    "excludes_transition": false
+  },
+  "closure_effect": {
+    "profile_deletions": 0,
+    "inherited_profiles": 603,
+    "fixed_point_recomputed": false
+  }
+}

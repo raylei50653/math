@@ -1,0 +1,5048 @@
+{
+  "schema": 1,
+  "baseline": "3aaca0b",
+  "scope": "Same-pair joint retained bases, frame-4 cuts and old-13 ports. Only existing 397/action-2 controls; no universal exclusion or new graphs.",
+  "input_sha256": {
+    "Math/KempeSurgery.lean": "6deec3581f45b4ae94a74b4754f507c493e4bed919ac252683ba63cf74071640",
+    "artifacts/c5_sector_common_core/observations.json": "c7b5a73067d3448484cb00603f044796db763a80329cfbaf7ed8da1bc0809a21",
+    "artifacts/c5_sector_cross_row/observations.json": "39accd5789e29b76242622ebe5891eab27449fcb0dcfd22a420389074037c439",
+    "artifacts/c5_sector_marked_incidence/observations.json": "933cfe4205b83c76d91dd0f8bd15d88a03bdfd1ebacc0af288561e4eede9e681",
+    "artifacts/c5_sector_mixed_transition/observations.json": "737ebc65701005239d62aac2606e074433b8e066998003ba4b7cce1cefa468f7",
+    "artifacts/c5_sector_positive_control/observations.json": "c34558fa1570ccb717b01b0e917488bba559c42e095b8e548fbd61dad99c8337",
+    "scripts/boundary_relations.py": "6f69347417fcc12775ecd0c5edf653b2ade43c664d0aac1da623b41eecc7ee25",
+    "scripts/c5_cell_enumerator.py": "456dc759f0038a9c4455fcd12df6d37e14edca0a2411e32af585efedb4de6e6e",
+    "scripts/c5_k4_blocks.py": "63ec478a5911eee3d2e1000e2ac032cf56f75272b179f97990f04fb814a2148d",
+    "scripts/c5_sector_common_core.py": "a9f14f3394a94631ba184c8f62b5b62d61d160b59ae9d1499f1d3c39297fbb16",
+    "scripts/c5_sector_cross_row.py": "7f503deec127417c32c1614fa35e3caab3727b8ac698724471ebebde64b17830",
+    "scripts/c5_sector_forced_connectivity.py": "90c2c5f03878955738a03ffa3d6a619a1a9a64c7a7bf61403114c02715d37563",
+    "scripts/c5_sector_joint_identity.py": "cf56135a437197385e8bff22bf79ce5e6664af4456328ac4920e0626533e762a",
+    "scripts/c5_sector_marked_incidence.py": "e3d353b16be5a77a148028932be6394216d70def017e1d24bfa26a91abc78b90",
+    "scripts/c5_sector_mixed_transition.py": "5441414cd1c86829607ea6203ee849132cd3c006aff50ffd77e73f7bcb0c6841",
+    "scripts/c5_sector_targets.py": "1db47a09d9ae765966310d0d17f3912e52bf9633b6cd7625ab088b2aeb690e56"
+  },
+  "summary": {
+    "controls_scanned": 22,
+    "graphs_excluding_target330": 22,
+    "full_vertex_partition_checks": 24,
+    "source_moves": 6,
+    "old13_port_witnesses": 6,
+    "target_two_rows_match": 0,
+    "failed_new12_0_separate_4": 2,
+    "failed_new13_0_separate_4": 4,
+    "failed_new13_2_separate_4": 0,
+    "failed_new13_0_separate_2": 0
+  },
+  "witnesses": [
+    {
+      "source_index": 41,
+      "coloring_id": 19,
+      "move_id": 0,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        2,
+        3,
+        2,
+        1
+      ],
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "move": {
+        "pair": [
+          0,
+          1
+        ],
+        "component": [
+          0,
+          1,
+          2,
+          9
+        ],
+        "target": 13
+      },
+      "interface": {
+        "stars": {
+          "0": [
+            0,
+            2
+          ],
+          "1": [
+            1,
+            9
+          ]
+        },
+        "outside1": [
+          4
+        ],
+        "selected_edges": [
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            9
+          ]
+        ],
+        "identities": [
+          {
+            "vertex": 0,
+            "old_color": 0,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 1
+              }
+            ]
+          },
+          {
+            "vertex": 1,
+            "old_color": 1,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 2,
+            "old_color": 0,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 2
+              }
+            ]
+          },
+          {
+            "vertex": 3,
+            "old_color": 2,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 4,
+            "old_color": 1,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          },
+          {
+            "vertex": 6,
+            "old_color": 2,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 7,
+            "old_color": 3,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          },
+          {
+            "vertex": 8,
+            "old_color": 2,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 9,
+            "old_color": 1,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 1
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          }
+        ],
+        "layers": [
+          {
+            "d": 2,
+            "retained_blocks": [
+              [
+                3,
+                4,
+                6
+              ],
+              [
+                8
+              ]
+            ],
+            "retained_edges": [
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                6
+              ]
+            ],
+            "extensions": {
+              "old": {
+                "incidences": [
+                  [
+                    1,
+                    6
+                  ],
+                  [
+                    1,
+                    8
+                  ],
+                  [
+                    9,
+                    3
+                  ],
+                  [
+                    9,
+                    8
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        3,
+                        4,
+                        6
+                      ],
+                      "marks": [
+                        3,
+                        4
+                      ]
+                    },
+                    {
+                      "id": "r1",
+                      "members": [
+                        8
+                      ],
+                      "marks": []
+                    },
+                    {
+                      "id": "s1",
+                      "vertex": 1,
+                      "marks": [
+                        1
+                      ]
+                    },
+                    {
+                      "id": "s9",
+                      "vertex": 9,
+                      "marks": []
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s1"
+                    ],
+                    [
+                      "r0",
+                      "s9"
+                    ],
+                    [
+                      "r1",
+                      "s1"
+                    ],
+                    [
+                      "r1",
+                      "s9"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    1,
+                    3,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "r1",
+                    "s1",
+                    "s9"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "r1",
+                  "s1",
+                  "s9"
+                ],
+                "root4_vertices": [
+                  1,
+                  3,
+                  4,
+                  6,
+                  8,
+                  9
+                ]
+              },
+              "new": {
+                "incidences": [
+                  [
+                    0,
+                    6
+                  ],
+                  [
+                    2,
+                    3
+                  ],
+                  [
+                    2,
+                    8
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        3,
+                        4,
+                        6
+                      ],
+                      "marks": [
+                        3,
+                        4
+                      ]
+                    },
+                    {
+                      "id": "r1",
+                      "members": [
+                        8
+                      ],
+                      "marks": []
+                    },
+                    {
+                      "id": "s0",
+                      "vertex": 0,
+                      "marks": [
+                        0
+                      ]
+                    },
+                    {
+                      "id": "s2",
+                      "vertex": 2,
+                      "marks": [
+                        2
+                      ]
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s0"
+                    ],
+                    [
+                      "r0",
+                      "s2"
+                    ],
+                    [
+                      "r1",
+                      "s2"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    0,
+                    2,
+                    3,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "r1",
+                    "s0",
+                    "s2"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "r1",
+                  "s0",
+                  "s2"
+                ],
+                "root4_vertices": [
+                  0,
+                  2,
+                  3,
+                  4,
+                  6,
+                  8
+                ]
+              }
+            }
+          },
+          {
+            "d": 3,
+            "retained_blocks": [
+              [
+                4,
+                7
+              ]
+            ],
+            "retained_edges": [
+              [
+                4,
+                7
+              ]
+            ],
+            "extensions": {
+              "old": {
+                "incidences": [
+                  [
+                    1,
+                    7
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        4,
+                        7
+                      ],
+                      "marks": [
+                        4
+                      ]
+                    },
+                    {
+                      "id": "s1",
+                      "vertex": 1,
+                      "marks": [
+                        1
+                      ]
+                    },
+                    {
+                      "id": "s9",
+                      "vertex": 9,
+                      "marks": []
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s1"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    1,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "s1"
+                  ],
+                  [
+                    "s9"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "s1"
+                ],
+                "root4_vertices": [
+                  1,
+                  4,
+                  7
+                ]
+              },
+              "new": {
+                "incidences": [],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        4,
+                        7
+                      ],
+                      "marks": [
+                        4
+                      ]
+                    },
+                    {
+                      "id": "s0",
+                      "vertex": 0,
+                      "marks": [
+                        0
+                      ]
+                    },
+                    {
+                      "id": "s2",
+                      "vertex": 2,
+                      "marks": [
+                        2
+                      ]
+                    }
+                  ],
+                  "edges": []
+                },
+                "partition": [
+                  [
+                    0
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0"
+                  ],
+                  [
+                    "s0"
+                  ],
+                  [
+                    "s2"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0"
+                ],
+                "root4_vertices": [
+                  4,
+                  7
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "tests": {
+        "new12_0_separate_4": false,
+        "new13_0_separate_4": true,
+        "new13_2_separate_4": true,
+        "new13_0_separate_2": true
+      },
+      "target_two_rows_match": false,
+      "shared_neighbor_obstructions": [
+        {
+          "path": [
+            0,
+            6,
+            4
+          ],
+          "old_color": 2,
+          "new_raw_pair": [
+            1,
+            2
+          ]
+        }
+      ],
+      "old13_port": {
+        "path": [
+          1,
+          7,
+          4
+        ],
+        "star": 1,
+        "d_vertex": 7,
+        "retained_suffix": [
+          7,
+          4
+        ],
+        "selected_paths": [
+          [
+            0,
+            9,
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "source_index": 41,
+      "coloring_id": 24,
+      "move_id": 0,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        3,
+        2,
+        3,
+        1
+      ],
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "move": {
+        "pair": [
+          0,
+          1
+        ],
+        "component": [
+          0,
+          1,
+          2,
+          9
+        ],
+        "target": 15
+      },
+      "interface": {
+        "stars": {
+          "0": [
+            0,
+            2
+          ],
+          "1": [
+            1,
+            9
+          ]
+        },
+        "outside1": [
+          4
+        ],
+        "selected_edges": [
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            9
+          ]
+        ],
+        "identities": [
+          {
+            "vertex": 0,
+            "old_color": 0,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 1
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          },
+          {
+            "vertex": 1,
+            "old_color": 1,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 2,
+            "old_color": 0,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 1
+              }
+            ]
+          },
+          {
+            "vertex": 3,
+            "old_color": 2,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 4,
+            "old_color": 1,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          },
+          {
+            "vertex": 6,
+            "old_color": 3,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          },
+          {
+            "vertex": 7,
+            "old_color": 2,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 8,
+            "old_color": 3,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 1
+              }
+            ]
+          },
+          {
+            "vertex": 9,
+            "old_color": 1,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          }
+        ],
+        "layers": [
+          {
+            "d": 2,
+            "retained_blocks": [
+              [
+                3,
+                4,
+                7
+              ]
+            ],
+            "retained_edges": [
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                7
+              ]
+            ],
+            "extensions": {
+              "old": {
+                "incidences": [
+                  [
+                    1,
+                    7
+                  ],
+                  [
+                    9,
+                    3
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        3,
+                        4,
+                        7
+                      ],
+                      "marks": [
+                        3,
+                        4
+                      ]
+                    },
+                    {
+                      "id": "s1",
+                      "vertex": 1,
+                      "marks": [
+                        1
+                      ]
+                    },
+                    {
+                      "id": "s9",
+                      "vertex": 9,
+                      "marks": []
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s1"
+                    ],
+                    [
+                      "r0",
+                      "s9"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    1,
+                    3,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "s1",
+                    "s9"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "s1",
+                  "s9"
+                ],
+                "root4_vertices": [
+                  1,
+                  3,
+                  4,
+                  7,
+                  9
+                ]
+              },
+              "new": {
+                "incidences": [
+                  [
+                    2,
+                    3
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        3,
+                        4,
+                        7
+                      ],
+                      "marks": [
+                        3,
+                        4
+                      ]
+                    },
+                    {
+                      "id": "s0",
+                      "vertex": 0,
+                      "marks": [
+                        0
+                      ]
+                    },
+                    {
+                      "id": "s2",
+                      "vertex": 2,
+                      "marks": [
+                        2
+                      ]
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s2"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    0
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "s2"
+                  ],
+                  [
+                    "s0"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "s2"
+                ],
+                "root4_vertices": [
+                  2,
+                  3,
+                  4,
+                  7
+                ]
+              }
+            }
+          },
+          {
+            "d": 3,
+            "retained_blocks": [
+              [
+                4,
+                6
+              ],
+              [
+                8
+              ]
+            ],
+            "retained_edges": [
+              [
+                4,
+                6
+              ]
+            ],
+            "extensions": {
+              "old": {
+                "incidences": [
+                  [
+                    1,
+                    6
+                  ],
+                  [
+                    1,
+                    8
+                  ],
+                  [
+                    9,
+                    8
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        4,
+                        6
+                      ],
+                      "marks": [
+                        4
+                      ]
+                    },
+                    {
+                      "id": "r1",
+                      "members": [
+                        8
+                      ],
+                      "marks": []
+                    },
+                    {
+                      "id": "s1",
+                      "vertex": 1,
+                      "marks": [
+                        1
+                      ]
+                    },
+                    {
+                      "id": "s9",
+                      "vertex": 9,
+                      "marks": []
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s1"
+                    ],
+                    [
+                      "r1",
+                      "s1"
+                    ],
+                    [
+                      "r1",
+                      "s9"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    1,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "r1",
+                    "s1",
+                    "s9"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "r1",
+                  "s1",
+                  "s9"
+                ],
+                "root4_vertices": [
+                  1,
+                  4,
+                  6,
+                  8,
+                  9
+                ]
+              },
+              "new": {
+                "incidences": [
+                  [
+                    0,
+                    6
+                  ],
+                  [
+                    2,
+                    8
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        4,
+                        6
+                      ],
+                      "marks": [
+                        4
+                      ]
+                    },
+                    {
+                      "id": "r1",
+                      "members": [
+                        8
+                      ],
+                      "marks": []
+                    },
+                    {
+                      "id": "s0",
+                      "vertex": 0,
+                      "marks": [
+                        0
+                      ]
+                    },
+                    {
+                      "id": "s2",
+                      "vertex": 2,
+                      "marks": [
+                        2
+                      ]
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s0"
+                    ],
+                    [
+                      "r1",
+                      "s2"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    0,
+                    4
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "s0"
+                  ],
+                  [
+                    "r1",
+                    "s2"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "s0"
+                ],
+                "root4_vertices": [
+                  0,
+                  4,
+                  6
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "tests": {
+        "new12_0_separate_4": true,
+        "new13_0_separate_4": false,
+        "new13_2_separate_4": true,
+        "new13_0_separate_2": true
+      },
+      "target_two_rows_match": false,
+      "shared_neighbor_obstructions": [
+        {
+          "path": [
+            0,
+            6,
+            4
+          ],
+          "old_color": 3,
+          "new_raw_pair": [
+            1,
+            3
+          ]
+        }
+      ],
+      "old13_port": {
+        "path": [
+          1,
+          6,
+          4
+        ],
+        "star": 1,
+        "d_vertex": 6,
+        "retained_suffix": [
+          6,
+          4
+        ],
+        "selected_paths": [
+          [
+            0,
+            9,
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "source_index": 45,
+      "coloring_id": 30,
+      "move_id": 0,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        3,
+        0,
+        2,
+        1
+      ],
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "move": {
+        "pair": [
+          0,
+          1
+        ],
+        "component": [
+          0,
+          1,
+          2,
+          9
+        ],
+        "target": 22
+      },
+      "interface": {
+        "stars": {
+          "0": [
+            0,
+            2
+          ],
+          "1": [
+            1,
+            9
+          ]
+        },
+        "outside1": [
+          4
+        ],
+        "selected_edges": [
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            9
+          ]
+        ],
+        "identities": [
+          {
+            "vertex": 0,
+            "old_color": 0,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 1
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          },
+          {
+            "vertex": 1,
+            "old_color": 1,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 2,
+            "old_color": 0,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 1
+              }
+            ]
+          },
+          {
+            "vertex": 3,
+            "old_color": 2,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 4,
+            "old_color": 1,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          },
+          {
+            "vertex": 6,
+            "old_color": 3,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          },
+          {
+            "vertex": 8,
+            "old_color": 2,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 9,
+            "old_color": 1,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 1
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          }
+        ],
+        "layers": [
+          {
+            "d": 2,
+            "retained_blocks": [
+              [
+                3,
+                4
+              ],
+              [
+                8
+              ]
+            ],
+            "retained_edges": [
+              [
+                3,
+                4
+              ]
+            ],
+            "extensions": {
+              "old": {
+                "incidences": [
+                  [
+                    1,
+                    8
+                  ],
+                  [
+                    9,
+                    3
+                  ],
+                  [
+                    9,
+                    8
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        3,
+                        4
+                      ],
+                      "marks": [
+                        3,
+                        4
+                      ]
+                    },
+                    {
+                      "id": "r1",
+                      "members": [
+                        8
+                      ],
+                      "marks": []
+                    },
+                    {
+                      "id": "s1",
+                      "vertex": 1,
+                      "marks": [
+                        1
+                      ]
+                    },
+                    {
+                      "id": "s9",
+                      "vertex": 9,
+                      "marks": []
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s9"
+                    ],
+                    [
+                      "r1",
+                      "s1"
+                    ],
+                    [
+                      "r1",
+                      "s9"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    1,
+                    3,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "r1",
+                    "s1",
+                    "s9"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "r1",
+                  "s1",
+                  "s9"
+                ],
+                "root4_vertices": [
+                  1,
+                  3,
+                  4,
+                  8,
+                  9
+                ]
+              },
+              "new": {
+                "incidences": [
+                  [
+                    2,
+                    3
+                  ],
+                  [
+                    2,
+                    8
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        3,
+                        4
+                      ],
+                      "marks": [
+                        3,
+                        4
+                      ]
+                    },
+                    {
+                      "id": "r1",
+                      "members": [
+                        8
+                      ],
+                      "marks": []
+                    },
+                    {
+                      "id": "s0",
+                      "vertex": 0,
+                      "marks": [
+                        0
+                      ]
+                    },
+                    {
+                      "id": "s2",
+                      "vertex": 2,
+                      "marks": [
+                        2
+                      ]
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s2"
+                    ],
+                    [
+                      "r1",
+                      "s2"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    0
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "r1",
+                    "s2"
+                  ],
+                  [
+                    "s0"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "r1",
+                  "s2"
+                ],
+                "root4_vertices": [
+                  2,
+                  3,
+                  4,
+                  8
+                ]
+              }
+            }
+          },
+          {
+            "d": 3,
+            "retained_blocks": [
+              [
+                4,
+                6
+              ]
+            ],
+            "retained_edges": [
+              [
+                4,
+                6
+              ]
+            ],
+            "extensions": {
+              "old": {
+                "incidences": [
+                  [
+                    1,
+                    6
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        4,
+                        6
+                      ],
+                      "marks": [
+                        4
+                      ]
+                    },
+                    {
+                      "id": "s1",
+                      "vertex": 1,
+                      "marks": [
+                        1
+                      ]
+                    },
+                    {
+                      "id": "s9",
+                      "vertex": 9,
+                      "marks": []
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s1"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    1,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "s1"
+                  ],
+                  [
+                    "s9"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "s1"
+                ],
+                "root4_vertices": [
+                  1,
+                  4,
+                  6
+                ]
+              },
+              "new": {
+                "incidences": [
+                  [
+                    0,
+                    6
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        4,
+                        6
+                      ],
+                      "marks": [
+                        4
+                      ]
+                    },
+                    {
+                      "id": "s0",
+                      "vertex": 0,
+                      "marks": [
+                        0
+                      ]
+                    },
+                    {
+                      "id": "s2",
+                      "vertex": 2,
+                      "marks": [
+                        2
+                      ]
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s0"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    0,
+                    4
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "s0"
+                  ],
+                  [
+                    "s2"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "s0"
+                ],
+                "root4_vertices": [
+                  0,
+                  4,
+                  6
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "tests": {
+        "new12_0_separate_4": true,
+        "new13_0_separate_4": false,
+        "new13_2_separate_4": true,
+        "new13_0_separate_2": true
+      },
+      "target_two_rows_match": false,
+      "shared_neighbor_obstructions": [
+        {
+          "path": [
+            0,
+            6,
+            4
+          ],
+          "old_color": 3,
+          "new_raw_pair": [
+            1,
+            3
+          ]
+        }
+      ],
+      "old13_port": {
+        "path": [
+          1,
+          6,
+          4
+        ],
+        "star": 1,
+        "d_vertex": 6,
+        "retained_suffix": [
+          6,
+          4
+        ],
+        "selected_paths": [
+          [
+            0,
+            9,
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "source_index": 168,
+      "coloring_id": 18,
+      "move_id": 0,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        1,
+        2,
+        3,
+        2
+      ],
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "move": {
+        "pair": [
+          0,
+          1
+        ],
+        "component": [
+          0,
+          1,
+          2,
+          6
+        ],
+        "target": 13
+      },
+      "interface": {
+        "stars": {
+          "0": [
+            0,
+            2
+          ],
+          "1": [
+            1,
+            6
+          ]
+        },
+        "outside1": [
+          4
+        ],
+        "selected_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "identities": [
+          {
+            "vertex": 0,
+            "old_color": 0,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 1
+              }
+            ]
+          },
+          {
+            "vertex": 1,
+            "old_color": 1,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 2,
+            "old_color": 0,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 2
+              }
+            ]
+          },
+          {
+            "vertex": 3,
+            "old_color": 2,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 4,
+            "old_color": 1,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          },
+          {
+            "vertex": 6,
+            "old_color": 1,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 1
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 7,
+            "old_color": 2,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 8,
+            "old_color": 3,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          },
+          {
+            "vertex": 9,
+            "old_color": 2,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          }
+        ],
+        "layers": [
+          {
+            "d": 2,
+            "retained_blocks": [
+              [
+                3,
+                4,
+                9
+              ],
+              [
+                7
+              ]
+            ],
+            "retained_edges": [
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                9
+              ]
+            ],
+            "extensions": {
+              "old": {
+                "incidences": [
+                  [
+                    1,
+                    7
+                  ],
+                  [
+                    1,
+                    9
+                  ],
+                  [
+                    6,
+                    3
+                  ],
+                  [
+                    6,
+                    7
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        3,
+                        4,
+                        9
+                      ],
+                      "marks": [
+                        3,
+                        4
+                      ]
+                    },
+                    {
+                      "id": "r1",
+                      "members": [
+                        7
+                      ],
+                      "marks": []
+                    },
+                    {
+                      "id": "s1",
+                      "vertex": 1,
+                      "marks": [
+                        1
+                      ]
+                    },
+                    {
+                      "id": "s6",
+                      "vertex": 6,
+                      "marks": []
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s1"
+                    ],
+                    [
+                      "r0",
+                      "s6"
+                    ],
+                    [
+                      "r1",
+                      "s1"
+                    ],
+                    [
+                      "r1",
+                      "s6"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    1,
+                    3,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "r1",
+                    "s1",
+                    "s6"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "r1",
+                  "s1",
+                  "s6"
+                ],
+                "root4_vertices": [
+                  1,
+                  3,
+                  4,
+                  6,
+                  7,
+                  9
+                ]
+              },
+              "new": {
+                "incidences": [
+                  [
+                    0,
+                    9
+                  ],
+                  [
+                    2,
+                    3
+                  ],
+                  [
+                    2,
+                    7
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        3,
+                        4,
+                        9
+                      ],
+                      "marks": [
+                        3,
+                        4
+                      ]
+                    },
+                    {
+                      "id": "r1",
+                      "members": [
+                        7
+                      ],
+                      "marks": []
+                    },
+                    {
+                      "id": "s0",
+                      "vertex": 0,
+                      "marks": [
+                        0
+                      ]
+                    },
+                    {
+                      "id": "s2",
+                      "vertex": 2,
+                      "marks": [
+                        2
+                      ]
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s0"
+                    ],
+                    [
+                      "r0",
+                      "s2"
+                    ],
+                    [
+                      "r1",
+                      "s2"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    0,
+                    2,
+                    3,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "r1",
+                    "s0",
+                    "s2"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "r1",
+                  "s0",
+                  "s2"
+                ],
+                "root4_vertices": [
+                  0,
+                  2,
+                  3,
+                  4,
+                  7,
+                  9
+                ]
+              }
+            }
+          },
+          {
+            "d": 3,
+            "retained_blocks": [
+              [
+                4,
+                8
+              ]
+            ],
+            "retained_edges": [
+              [
+                4,
+                8
+              ]
+            ],
+            "extensions": {
+              "old": {
+                "incidences": [
+                  [
+                    1,
+                    8
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        4,
+                        8
+                      ],
+                      "marks": [
+                        4
+                      ]
+                    },
+                    {
+                      "id": "s1",
+                      "vertex": 1,
+                      "marks": [
+                        1
+                      ]
+                    },
+                    {
+                      "id": "s6",
+                      "vertex": 6,
+                      "marks": []
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s1"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    1,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "s1"
+                  ],
+                  [
+                    "s6"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "s1"
+                ],
+                "root4_vertices": [
+                  1,
+                  4,
+                  8
+                ]
+              },
+              "new": {
+                "incidences": [],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        4,
+                        8
+                      ],
+                      "marks": [
+                        4
+                      ]
+                    },
+                    {
+                      "id": "s0",
+                      "vertex": 0,
+                      "marks": [
+                        0
+                      ]
+                    },
+                    {
+                      "id": "s2",
+                      "vertex": 2,
+                      "marks": [
+                        2
+                      ]
+                    }
+                  ],
+                  "edges": []
+                },
+                "partition": [
+                  [
+                    0
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0"
+                  ],
+                  [
+                    "s0"
+                  ],
+                  [
+                    "s2"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0"
+                ],
+                "root4_vertices": [
+                  4,
+                  8
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "tests": {
+        "new12_0_separate_4": false,
+        "new13_0_separate_4": true,
+        "new13_2_separate_4": true,
+        "new13_0_separate_2": true
+      },
+      "target_two_rows_match": false,
+      "shared_neighbor_obstructions": [
+        {
+          "path": [
+            0,
+            9,
+            4
+          ],
+          "old_color": 2,
+          "new_raw_pair": [
+            1,
+            2
+          ]
+        }
+      ],
+      "old13_port": {
+        "path": [
+          1,
+          8,
+          4
+        ],
+        "star": 1,
+        "d_vertex": 8,
+        "retained_suffix": [
+          8,
+          4
+        ],
+        "selected_paths": [
+          [
+            0,
+            6,
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "source_index": 168,
+      "coloring_id": 21,
+      "move_id": 0,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        1,
+        3,
+        2,
+        3
+      ],
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "move": {
+        "pair": [
+          0,
+          1
+        ],
+        "component": [
+          0,
+          1,
+          2,
+          6
+        ],
+        "target": 14
+      },
+      "interface": {
+        "stars": {
+          "0": [
+            0,
+            2
+          ],
+          "1": [
+            1,
+            6
+          ]
+        },
+        "outside1": [
+          4
+        ],
+        "selected_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "identities": [
+          {
+            "vertex": 0,
+            "old_color": 0,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 1
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          },
+          {
+            "vertex": 1,
+            "old_color": 1,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 2,
+            "old_color": 0,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 1
+              }
+            ]
+          },
+          {
+            "vertex": 3,
+            "old_color": 2,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 4,
+            "old_color": 1,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          },
+          {
+            "vertex": 6,
+            "old_color": 1,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 7,
+            "old_color": 3,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 1
+              }
+            ]
+          },
+          {
+            "vertex": 8,
+            "old_color": 2,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 9,
+            "old_color": 3,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          }
+        ],
+        "layers": [
+          {
+            "d": 2,
+            "retained_blocks": [
+              [
+                3,
+                4,
+                8
+              ]
+            ],
+            "retained_edges": [
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                8
+              ]
+            ],
+            "extensions": {
+              "old": {
+                "incidences": [
+                  [
+                    1,
+                    8
+                  ],
+                  [
+                    6,
+                    3
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        3,
+                        4,
+                        8
+                      ],
+                      "marks": [
+                        3,
+                        4
+                      ]
+                    },
+                    {
+                      "id": "s1",
+                      "vertex": 1,
+                      "marks": [
+                        1
+                      ]
+                    },
+                    {
+                      "id": "s6",
+                      "vertex": 6,
+                      "marks": []
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s1"
+                    ],
+                    [
+                      "r0",
+                      "s6"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    1,
+                    3,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "s1",
+                    "s6"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "s1",
+                  "s6"
+                ],
+                "root4_vertices": [
+                  1,
+                  3,
+                  4,
+                  6,
+                  8
+                ]
+              },
+              "new": {
+                "incidences": [
+                  [
+                    2,
+                    3
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        3,
+                        4,
+                        8
+                      ],
+                      "marks": [
+                        3,
+                        4
+                      ]
+                    },
+                    {
+                      "id": "s0",
+                      "vertex": 0,
+                      "marks": [
+                        0
+                      ]
+                    },
+                    {
+                      "id": "s2",
+                      "vertex": 2,
+                      "marks": [
+                        2
+                      ]
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s2"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    0
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "s2"
+                  ],
+                  [
+                    "s0"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "s2"
+                ],
+                "root4_vertices": [
+                  2,
+                  3,
+                  4,
+                  8
+                ]
+              }
+            }
+          },
+          {
+            "d": 3,
+            "retained_blocks": [
+              [
+                4,
+                9
+              ],
+              [
+                7
+              ]
+            ],
+            "retained_edges": [
+              [
+                4,
+                9
+              ]
+            ],
+            "extensions": {
+              "old": {
+                "incidences": [
+                  [
+                    1,
+                    7
+                  ],
+                  [
+                    1,
+                    9
+                  ],
+                  [
+                    6,
+                    7
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        4,
+                        9
+                      ],
+                      "marks": [
+                        4
+                      ]
+                    },
+                    {
+                      "id": "r1",
+                      "members": [
+                        7
+                      ],
+                      "marks": []
+                    },
+                    {
+                      "id": "s1",
+                      "vertex": 1,
+                      "marks": [
+                        1
+                      ]
+                    },
+                    {
+                      "id": "s6",
+                      "vertex": 6,
+                      "marks": []
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s1"
+                    ],
+                    [
+                      "r1",
+                      "s1"
+                    ],
+                    [
+                      "r1",
+                      "s6"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    1,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "r1",
+                    "s1",
+                    "s6"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "r1",
+                  "s1",
+                  "s6"
+                ],
+                "root4_vertices": [
+                  1,
+                  4,
+                  6,
+                  7,
+                  9
+                ]
+              },
+              "new": {
+                "incidences": [
+                  [
+                    0,
+                    9
+                  ],
+                  [
+                    2,
+                    7
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        4,
+                        9
+                      ],
+                      "marks": [
+                        4
+                      ]
+                    },
+                    {
+                      "id": "r1",
+                      "members": [
+                        7
+                      ],
+                      "marks": []
+                    },
+                    {
+                      "id": "s0",
+                      "vertex": 0,
+                      "marks": [
+                        0
+                      ]
+                    },
+                    {
+                      "id": "s2",
+                      "vertex": 2,
+                      "marks": [
+                        2
+                      ]
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s0"
+                    ],
+                    [
+                      "r1",
+                      "s2"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    0,
+                    4
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "s0"
+                  ],
+                  [
+                    "r1",
+                    "s2"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "s0"
+                ],
+                "root4_vertices": [
+                  0,
+                  4,
+                  9
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "tests": {
+        "new12_0_separate_4": true,
+        "new13_0_separate_4": false,
+        "new13_2_separate_4": true,
+        "new13_0_separate_2": true
+      },
+      "target_two_rows_match": false,
+      "shared_neighbor_obstructions": [
+        {
+          "path": [
+            0,
+            9,
+            4
+          ],
+          "old_color": 3,
+          "new_raw_pair": [
+            1,
+            3
+          ]
+        }
+      ],
+      "old13_port": {
+        "path": [
+          1,
+          9,
+          4
+        ],
+        "star": 1,
+        "d_vertex": 9,
+        "retained_suffix": [
+          9,
+          4
+        ],
+        "selected_paths": [
+          [
+            0,
+            6,
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "source_index": 170,
+      "coloring_id": 26,
+      "move_id": 0,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        1,
+        2,
+        0,
+        3
+      ],
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "move": {
+        "pair": [
+          0,
+          1
+        ],
+        "component": [
+          0,
+          1,
+          2,
+          6
+        ],
+        "target": 18
+      },
+      "interface": {
+        "stars": {
+          "0": [
+            0,
+            2
+          ],
+          "1": [
+            1,
+            6
+          ]
+        },
+        "outside1": [
+          4
+        ],
+        "selected_edges": [
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "identities": [
+          {
+            "vertex": 0,
+            "old_color": 0,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 1
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          },
+          {
+            "vertex": 1,
+            "old_color": 1,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 2,
+            "old_color": 0,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 1
+              }
+            ]
+          },
+          {
+            "vertex": 3,
+            "old_color": 2,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 4,
+            "old_color": 1,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          },
+          {
+            "vertex": 6,
+            "old_color": 1,
+            "selected": true,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 1
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 7,
+            "old_color": 2,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": null
+              }
+            ]
+          },
+          {
+            "vertex": 9,
+            "old_color": 3,
+            "selected": false,
+            "memberships": [
+              {
+                "d": 2,
+                "side": "old",
+                "component": null
+              },
+              {
+                "d": 2,
+                "side": "new",
+                "component": null
+              },
+              {
+                "d": 3,
+                "side": "old",
+                "component": 0
+              },
+              {
+                "d": 3,
+                "side": "new",
+                "component": 0
+              }
+            ]
+          }
+        ],
+        "layers": [
+          {
+            "d": 2,
+            "retained_blocks": [
+              [
+                3,
+                4
+              ],
+              [
+                7
+              ]
+            ],
+            "retained_edges": [
+              [
+                3,
+                4
+              ]
+            ],
+            "extensions": {
+              "old": {
+                "incidences": [
+                  [
+                    1,
+                    7
+                  ],
+                  [
+                    6,
+                    3
+                  ],
+                  [
+                    6,
+                    7
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        3,
+                        4
+                      ],
+                      "marks": [
+                        3,
+                        4
+                      ]
+                    },
+                    {
+                      "id": "r1",
+                      "members": [
+                        7
+                      ],
+                      "marks": []
+                    },
+                    {
+                      "id": "s1",
+                      "vertex": 1,
+                      "marks": [
+                        1
+                      ]
+                    },
+                    {
+                      "id": "s6",
+                      "vertex": 6,
+                      "marks": []
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s6"
+                    ],
+                    [
+                      "r1",
+                      "s1"
+                    ],
+                    [
+                      "r1",
+                      "s6"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    1,
+                    3,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "r1",
+                    "s1",
+                    "s6"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "r1",
+                  "s1",
+                  "s6"
+                ],
+                "root4_vertices": [
+                  1,
+                  3,
+                  4,
+                  6,
+                  7
+                ]
+              },
+              "new": {
+                "incidences": [
+                  [
+                    2,
+                    3
+                  ],
+                  [
+                    2,
+                    7
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        3,
+                        4
+                      ],
+                      "marks": [
+                        3,
+                        4
+                      ]
+                    },
+                    {
+                      "id": "r1",
+                      "members": [
+                        7
+                      ],
+                      "marks": []
+                    },
+                    {
+                      "id": "s0",
+                      "vertex": 0,
+                      "marks": [
+                        0
+                      ]
+                    },
+                    {
+                      "id": "s2",
+                      "vertex": 2,
+                      "marks": [
+                        2
+                      ]
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s2"
+                    ],
+                    [
+                      "r1",
+                      "s2"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    0
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "r1",
+                    "s2"
+                  ],
+                  [
+                    "s0"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "r1",
+                  "s2"
+                ],
+                "root4_vertices": [
+                  2,
+                  3,
+                  4,
+                  7
+                ]
+              }
+            }
+          },
+          {
+            "d": 3,
+            "retained_blocks": [
+              [
+                4,
+                9
+              ]
+            ],
+            "retained_edges": [
+              [
+                4,
+                9
+              ]
+            ],
+            "extensions": {
+              "old": {
+                "incidences": [
+                  [
+                    1,
+                    9
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        4,
+                        9
+                      ],
+                      "marks": [
+                        4
+                      ]
+                    },
+                    {
+                      "id": "s1",
+                      "vertex": 1,
+                      "marks": [
+                        1
+                      ]
+                    },
+                    {
+                      "id": "s6",
+                      "vertex": 6,
+                      "marks": []
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s1"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    1,
+                    4
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "s1"
+                  ],
+                  [
+                    "s6"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "s1"
+                ],
+                "root4_vertices": [
+                  1,
+                  4,
+                  9
+                ]
+              },
+              "new": {
+                "incidences": [
+                  [
+                    0,
+                    9
+                  ]
+                ],
+                "quotient": {
+                  "nodes": [
+                    {
+                      "id": "r0",
+                      "members": [
+                        4,
+                        9
+                      ],
+                      "marks": [
+                        4
+                      ]
+                    },
+                    {
+                      "id": "s0",
+                      "vertex": 0,
+                      "marks": [
+                        0
+                      ]
+                    },
+                    {
+                      "id": "s2",
+                      "vertex": 2,
+                      "marks": [
+                        2
+                      ]
+                    }
+                  ],
+                  "edges": [
+                    [
+                      "r0",
+                      "s0"
+                    ]
+                  ]
+                },
+                "partition": [
+                  [
+                    0,
+                    4
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                "components": [
+                  [
+                    "r0",
+                    "s0"
+                  ],
+                  [
+                    "s2"
+                  ]
+                ],
+                "root4_nodes": [
+                  "r0",
+                  "s0"
+                ],
+                "root4_vertices": [
+                  0,
+                  4,
+                  9
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "tests": {
+        "new12_0_separate_4": true,
+        "new13_0_separate_4": false,
+        "new13_2_separate_4": true,
+        "new13_0_separate_2": true
+      },
+      "target_two_rows_match": false,
+      "shared_neighbor_obstructions": [
+        {
+          "path": [
+            0,
+            9,
+            4
+          ],
+          "old_color": 3,
+          "new_raw_pair": [
+            1,
+            3
+          ]
+        }
+      ],
+      "old13_port": {
+        "path": [
+          1,
+          9,
+          4
+        ],
+        "star": 1,
+        "d_vertex": 9,
+        "retained_suffix": [
+          9,
+          4
+        ],
+        "selected_paths": [
+          [
+            0,
+            6,
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      }
+    }
+  ],
+  "graph_obstructions": [
+    {
+      "source_index": 41,
+      "common_neighbors_0_4": [
+        6
+      ],
+      "paths": [
+        [
+          0,
+          6,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 42,
+      "common_neighbors_0_4": [
+        6
+      ],
+      "paths": [
+        [
+          0,
+          6,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 44,
+      "common_neighbors_0_4": [
+        6
+      ],
+      "paths": [
+        [
+          0,
+          6,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 45,
+      "common_neighbors_0_4": [
+        6
+      ],
+      "paths": [
+        [
+          0,
+          6,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 47,
+      "common_neighbors_0_4": [
+        6
+      ],
+      "paths": [
+        [
+          0,
+          6,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 48,
+      "common_neighbors_0_4": [
+        6
+      ],
+      "paths": [
+        [
+          0,
+          6,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 49,
+      "common_neighbors_0_4": [
+        6
+      ],
+      "paths": [
+        [
+          0,
+          6,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 50,
+      "common_neighbors_0_4": [
+        6
+      ],
+      "paths": [
+        [
+          0,
+          6,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 51,
+      "common_neighbors_0_4": [
+        6
+      ],
+      "paths": [
+        [
+          0,
+          6,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 53,
+      "common_neighbors_0_4": [
+        6
+      ],
+      "paths": [
+        [
+          0,
+          6,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 54,
+      "common_neighbors_0_4": [
+        6
+      ],
+      "paths": [
+        [
+          0,
+          6,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 161,
+      "common_neighbors_0_4": [
+        9
+      ],
+      "paths": [
+        [
+          0,
+          9,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 162,
+      "common_neighbors_0_4": [
+        9
+      ],
+      "paths": [
+        [
+          0,
+          9,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 164,
+      "common_neighbors_0_4": [
+        9
+      ],
+      "paths": [
+        [
+          0,
+          9,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 165,
+      "common_neighbors_0_4": [
+        9
+      ],
+      "paths": [
+        [
+          0,
+          9,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 167,
+      "common_neighbors_0_4": [
+        9
+      ],
+      "paths": [
+        [
+          0,
+          9,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 168,
+      "common_neighbors_0_4": [
+        9
+      ],
+      "paths": [
+        [
+          0,
+          9,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 169,
+      "common_neighbors_0_4": [
+        9
+      ],
+      "paths": [
+        [
+          0,
+          9,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 170,
+      "common_neighbors_0_4": [
+        9
+      ],
+      "paths": [
+        [
+          0,
+          9,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 171,
+      "common_neighbors_0_4": [
+        9
+      ],
+      "paths": [
+        [
+          0,
+          9,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 173,
+      "common_neighbors_0_4": [
+        9
+      ],
+      "paths": [
+        [
+          0,
+          9,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    },
+    {
+      "source_index": 174,
+      "common_neighbors_0_4": [
+        9
+      ],
+      "paths": [
+        [
+          0,
+          9,
+          4
+        ]
+      ],
+      "excludes_target330_on_this_graph": true
+    }
+  ],
+  "candidate": {
+    "source": 397,
+    "action": 2,
+    "target": 330,
+    "tested_new_raw_pairs": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "full_transition_decided": false
+  },
+  "closure_effect": {
+    "profile_deletions": 0,
+    "inherited_profiles": 603,
+    "fixed_point_recomputed": false
+  }
+}

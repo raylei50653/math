@@ -1,0 +1,1657 @@
+{
+  "schema": 1,
+  "baseline": "3aaca0b",
+  "scope": "One-step frame connectivity only; joint interfaces extracted from one proper coloring and one maximal component. No new graph, closure or Lean theorem.",
+  "input_sha256": {
+    "Math/KempeSurgery.lean": "6deec3581f45b4ae94a74b4754f507c493e4bed919ac252683ba63cf74071640",
+    "artifacts/c5_sector_cross_row/observations.json": "39accd5789e29b76242622ebe5891eab27449fcb0dcfd22a420389074037c439",
+    "artifacts/c5_sector_mixed_transition/observations.json": "737ebc65701005239d62aac2606e074433b8e066998003ba4b7cce1cefa468f7",
+    "artifacts/c5_sector_positive_control/observations.json": "c34558fa1570ccb717b01b0e917488bba559c42e095b8e548fbd61dad99c8337",
+    "scripts/boundary_relations.py": "6f69347417fcc12775ecd0c5edf653b2ade43c664d0aac1da623b41eecc7ee25",
+    "scripts/c5_cell_enumerator.py": "456dc759f0038a9c4455fcd12df6d37e14edca0a2411e32af585efedb4de6e6e",
+    "scripts/c5_k4_blocks.py": "63ec478a5911eee3d2e1000e2ac032cf56f75272b179f97990f04fb814a2148d",
+    "scripts/c5_sector_cross_row.py": "7f503deec127417c32c1614fa35e3caab3727b8ac698724471ebebde64b17830",
+    "scripts/c5_sector_forced_connectivity.py": "90c2c5f03878955738a03ffa3d6a619a1a9a64c7a7bf61403114c02715d37563",
+    "scripts/c5_sector_marked_incidence.py": "e3d353b16be5a77a148028932be6394216d70def017e1d24bfa26a91abc78b90",
+    "scripts/c5_sector_mixed_transition.py": "5441414cd1c86829607ea6203ee849132cd3c006aff50ffd77e73f7bcb0c6841",
+    "scripts/c5_sector_targets.py": "1db47a09d9ae765966310d0d17f3912e52bf9633b6cd7625ab088b2aeb690e56"
+  },
+  "summary": {
+    "controls": 22,
+    "colorings": 1100,
+    "mixed_interfaces": 50320,
+    "full_nodes": 160460,
+    "reduced_nodes": 115698,
+    "full_edges": 67444,
+    "reduced_edges": 36320,
+    "terminal_free_nodes_removed": 16662,
+    "leaf_nodes_removed": 28100,
+    "strict_reductions": 31070,
+    "moves": 12580,
+    "unsafe_unmarked_star_deletions": 5928,
+    "unsafe_unmarked_retained_deletions": 1936,
+    "maxima": {
+      "full_nodes": 7,
+      "reduced_nodes": 7
+    }
+  },
+  "control_audits": [
+    {
+      "source_index": 41,
+      "mixed_interfaces": 2128,
+      "full_nodes": 6912,
+      "reduced_nodes": 4967,
+      "full_edges": 3052,
+      "reduced_edges": 1686,
+      "terminal_free_nodes_removed": 723,
+      "leaf_nodes_removed": 1222,
+      "strict_reductions": 1340,
+      "moves": 532,
+      "unsafe_unmarked_star_deletions": 287,
+      "unsafe_unmarked_retained_deletions": 106,
+      "trace_sha256": "6100d94db61c8dadd794210a0cc957b1307299f945cbdf73deb5e7c4189fc9b9"
+    },
+    {
+      "source_index": 42,
+      "mixed_interfaces": 3400,
+      "full_nodes": 10644,
+      "reduced_nodes": 7588,
+      "full_edges": 4257,
+      "reduced_edges": 2489,
+      "terminal_free_nodes_removed": 1512,
+      "leaf_nodes_removed": 1544,
+      "strict_reductions": 2112,
+      "moves": 850,
+      "unsafe_unmarked_retained_deletions": 163,
+      "unsafe_unmarked_star_deletions": 374,
+      "trace_sha256": "882191c64a1926fa95b80e1aa2d51c765eecdeaefcc7936a3f6c262839f77412"
+    },
+    {
+      "source_index": 44,
+      "mixed_interfaces": 2248,
+      "full_nodes": 7088,
+      "reduced_nodes": 5114,
+      "full_edges": 2970,
+      "reduced_edges": 1549,
+      "terminal_free_nodes_removed": 729,
+      "leaf_nodes_removed": 1245,
+      "strict_reductions": 1337,
+      "moves": 562,
+      "unsafe_unmarked_retained_deletions": 76,
+      "unsafe_unmarked_star_deletions": 254,
+      "trace_sha256": "62043fa215f5acac22f15c19a300ec95637ff36d3a0f0ce789995304646e8fc7"
+    },
+    {
+      "source_index": 45,
+      "mixed_interfaces": 3024,
+      "full_nodes": 9616,
+      "reduced_nodes": 6995,
+      "full_edges": 3920,
+      "reduced_edges": 2204,
+      "terminal_free_nodes_removed": 985,
+      "leaf_nodes_removed": 1636,
+      "strict_reductions": 1874,
+      "moves": 756,
+      "unsafe_unmarked_star_deletions": 353,
+      "unsafe_unmarked_retained_deletions": 104,
+      "trace_sha256": "44359db2e12ef588be87ab2cdfb5ba59f228c51642900f90e839c541697129da"
+    },
+    {
+      "source_index": 47,
+      "mixed_interfaces": 1584,
+      "full_nodes": 5152,
+      "reduced_nodes": 3720,
+      "full_edges": 2304,
+      "reduced_edges": 1184,
+      "terminal_free_nodes_removed": 432,
+      "leaf_nodes_removed": 1000,
+      "strict_reductions": 988,
+      "moves": 396,
+      "unsafe_unmarked_star_deletions": 210,
+      "unsafe_unmarked_retained_deletions": 65,
+      "trace_sha256": "9780a05dedcb40ed4edab8e9f7eb69392cee9b94fe3bfd05c32b8d00b8f8846e"
+    },
+    {
+      "source_index": 48,
+      "mixed_interfaces": 1496,
+      "full_nodes": 4864,
+      "reduced_nodes": 3488,
+      "full_edges": 2176,
+      "reduced_edges": 1068,
+      "terminal_free_nodes_removed": 396,
+      "leaf_nodes_removed": 980,
+      "strict_reductions": 931,
+      "moves": 374,
+      "unsafe_unmarked_star_deletions": 178,
+      "unsafe_unmarked_retained_deletions": 36,
+      "trace_sha256": "c071f4e2e18484081d78ab7bedf40655159672918749d267510e01c865cdfd6c"
+    },
+    {
+      "source_index": 49,
+      "mixed_interfaces": 2104,
+      "full_nodes": 6758,
+      "reduced_nodes": 4858,
+      "full_edges": 2943,
+      "reduced_edges": 1537,
+      "terminal_free_nodes_removed": 614,
+      "leaf_nodes_removed": 1286,
+      "strict_reductions": 1329,
+      "moves": 526,
+      "unsafe_unmarked_retained_deletions": 80,
+      "unsafe_unmarked_star_deletions": 262,
+      "trace_sha256": "be5cd4b36334e0f2724dd1333a6c30159b05752428c687c33c597facb03f8bd0"
+    },
+    {
+      "source_index": 50,
+      "mixed_interfaces": 3192,
+      "full_nodes": 10112,
+      "reduced_nodes": 7317,
+      "full_edges": 4072,
+      "reduced_edges": 2295,
+      "terminal_free_nodes_removed": 1098,
+      "leaf_nodes_removed": 1697,
+      "strict_reductions": 1997,
+      "moves": 798,
+      "unsafe_unmarked_star_deletions": 365,
+      "unsafe_unmarked_retained_deletions": 111,
+      "trace_sha256": "faf0dcbb2e0c0e7916ddf6d628e0a8fac70ff871ce1b685a94c00613d49155eb"
+    },
+    {
+      "source_index": 51,
+      "mixed_interfaces": 2368,
+      "full_nodes": 7460,
+      "reduced_nodes": 5378,
+      "full_edges": 3060,
+      "reduced_edges": 1598,
+      "terminal_free_nodes_removed": 804,
+      "leaf_nodes_removed": 1278,
+      "strict_reductions": 1423,
+      "moves": 592,
+      "unsafe_unmarked_retained_deletions": 81,
+      "unsafe_unmarked_star_deletions": 252,
+      "trace_sha256": "a33a49b3e69f52dc4c79203d30eb381c3334e3aa96234e3d888a9ab31abf9351"
+    },
+    {
+      "source_index": 53,
+      "mixed_interfaces": 2120,
+      "full_nodes": 6760,
+      "reduced_nodes": 4896,
+      "full_edges": 2792,
+      "reduced_edges": 1442,
+      "terminal_free_nodes_removed": 666,
+      "leaf_nodes_removed": 1198,
+      "strict_reductions": 1285,
+      "moves": 530,
+      "unsafe_unmarked_retained_deletions": 78,
+      "unsafe_unmarked_star_deletions": 227,
+      "trace_sha256": "705a3d4015277b5164e71b1a161eba1e5a6870db16a26d5cbe625324e4f7cb8f"
+    },
+    {
+      "source_index": 54,
+      "mixed_interfaces": 1496,
+      "full_nodes": 4864,
+      "reduced_nodes": 3528,
+      "full_edges": 2176,
+      "reduced_edges": 1108,
+      "terminal_free_nodes_removed": 372,
+      "leaf_nodes_removed": 964,
+      "strict_reductions": 919,
+      "moves": 374,
+      "unsafe_unmarked_star_deletions": 202,
+      "unsafe_unmarked_retained_deletions": 68,
+      "trace_sha256": "42b790076d5d25b23dabaa33ffca688981c304e42067dc786736d455bafcc916"
+    },
+    {
+      "source_index": 161,
+      "mixed_interfaces": 1496,
+      "full_nodes": 4864,
+      "reduced_nodes": 3488,
+      "full_edges": 2176,
+      "reduced_edges": 1068,
+      "terminal_free_nodes_removed": 396,
+      "leaf_nodes_removed": 980,
+      "strict_reductions": 931,
+      "moves": 374,
+      "unsafe_unmarked_star_deletions": 178,
+      "unsafe_unmarked_retained_deletions": 36,
+      "trace_sha256": "3b6597b4966141a7ca851b56164d880e8e1299839fb3298134cd2a994d2cbe40"
+    },
+    {
+      "source_index": 162,
+      "mixed_interfaces": 2248,
+      "full_nodes": 7088,
+      "reduced_nodes": 5114,
+      "full_edges": 2970,
+      "reduced_edges": 1549,
+      "terminal_free_nodes_removed": 729,
+      "leaf_nodes_removed": 1245,
+      "strict_reductions": 1337,
+      "moves": 562,
+      "unsafe_unmarked_retained_deletions": 76,
+      "unsafe_unmarked_star_deletions": 254,
+      "trace_sha256": "abf4cf32fc2a668a0b93d22be38fb2c0ca54d92ddced58f038be92acf492d333"
+    },
+    {
+      "source_index": 164,
+      "mixed_interfaces": 3400,
+      "full_nodes": 10644,
+      "reduced_nodes": 7588,
+      "full_edges": 4257,
+      "reduced_edges": 2489,
+      "terminal_free_nodes_removed": 1512,
+      "leaf_nodes_removed": 1544,
+      "strict_reductions": 2112,
+      "moves": 850,
+      "unsafe_unmarked_retained_deletions": 163,
+      "unsafe_unmarked_star_deletions": 374,
+      "trace_sha256": "03bb52b5c99653930e30d9fe15a5ba7bca30d44f7d64b9eab866d06c702cb031"
+    },
+    {
+      "source_index": 165,
+      "mixed_interfaces": 3192,
+      "full_nodes": 10112,
+      "reduced_nodes": 7317,
+      "full_edges": 4072,
+      "reduced_edges": 2295,
+      "terminal_free_nodes_removed": 1098,
+      "leaf_nodes_removed": 1697,
+      "strict_reductions": 1997,
+      "moves": 798,
+      "unsafe_unmarked_star_deletions": 365,
+      "unsafe_unmarked_retained_deletions": 111,
+      "trace_sha256": "a4f607d26bbd38287553970553b16f373b3e9c82f28736cb819704e4263c8bd4"
+    },
+    {
+      "source_index": 167,
+      "mixed_interfaces": 1496,
+      "full_nodes": 4864,
+      "reduced_nodes": 3528,
+      "full_edges": 2176,
+      "reduced_edges": 1108,
+      "terminal_free_nodes_removed": 372,
+      "leaf_nodes_removed": 964,
+      "strict_reductions": 919,
+      "moves": 374,
+      "unsafe_unmarked_star_deletions": 202,
+      "unsafe_unmarked_retained_deletions": 68,
+      "trace_sha256": "f98f296b1843d64fb365eb19116a3617c557d18570b7478e258218e931b225fb"
+    },
+    {
+      "source_index": 168,
+      "mixed_interfaces": 2128,
+      "full_nodes": 6912,
+      "reduced_nodes": 4967,
+      "full_edges": 3052,
+      "reduced_edges": 1686,
+      "terminal_free_nodes_removed": 723,
+      "leaf_nodes_removed": 1222,
+      "strict_reductions": 1340,
+      "moves": 532,
+      "unsafe_unmarked_star_deletions": 287,
+      "unsafe_unmarked_retained_deletions": 106,
+      "trace_sha256": "79beaef1c9e1645df66bdc55c0a6559f45c7cd1e36a3f3a820742bc55177841e"
+    },
+    {
+      "source_index": 169,
+      "mixed_interfaces": 2104,
+      "full_nodes": 6758,
+      "reduced_nodes": 4858,
+      "full_edges": 2943,
+      "reduced_edges": 1537,
+      "terminal_free_nodes_removed": 614,
+      "leaf_nodes_removed": 1286,
+      "strict_reductions": 1329,
+      "moves": 526,
+      "unsafe_unmarked_retained_deletions": 80,
+      "unsafe_unmarked_star_deletions": 262,
+      "trace_sha256": "4283b8ff1e78f7ffbf5a5605e8e254eaf141dcf6904e90c758f76ab0c5928d8b"
+    },
+    {
+      "source_index": 170,
+      "mixed_interfaces": 3024,
+      "full_nodes": 9616,
+      "reduced_nodes": 6995,
+      "full_edges": 3920,
+      "reduced_edges": 2204,
+      "terminal_free_nodes_removed": 985,
+      "leaf_nodes_removed": 1636,
+      "strict_reductions": 1874,
+      "moves": 756,
+      "unsafe_unmarked_star_deletions": 353,
+      "unsafe_unmarked_retained_deletions": 104,
+      "trace_sha256": "9d57fa94067cb4e8c0cbbb1bfedd4eb0ea64d0ec6a8cb7021e928892c28ac486"
+    },
+    {
+      "source_index": 171,
+      "mixed_interfaces": 2120,
+      "full_nodes": 6760,
+      "reduced_nodes": 4896,
+      "full_edges": 2792,
+      "reduced_edges": 1442,
+      "terminal_free_nodes_removed": 666,
+      "leaf_nodes_removed": 1198,
+      "strict_reductions": 1285,
+      "moves": 530,
+      "unsafe_unmarked_retained_deletions": 78,
+      "unsafe_unmarked_star_deletions": 227,
+      "trace_sha256": "1770e755817bc7748d957c71bc1981c32208aa2952430845a5a57a6fe4143190"
+    },
+    {
+      "source_index": 173,
+      "mixed_interfaces": 2368,
+      "full_nodes": 7460,
+      "reduced_nodes": 5378,
+      "full_edges": 3060,
+      "reduced_edges": 1598,
+      "terminal_free_nodes_removed": 804,
+      "leaf_nodes_removed": 1278,
+      "strict_reductions": 1423,
+      "moves": 592,
+      "unsafe_unmarked_retained_deletions": 81,
+      "unsafe_unmarked_star_deletions": 252,
+      "trace_sha256": "1b12eca292a72bee1a06a50f475d72a80644c2bb0cdfc1f8b7628da04e156d4c"
+    },
+    {
+      "source_index": 174,
+      "mixed_interfaces": 1584,
+      "full_nodes": 5152,
+      "reduced_nodes": 3720,
+      "full_edges": 2304,
+      "reduced_edges": 1184,
+      "terminal_free_nodes_removed": 432,
+      "leaf_nodes_removed": 1000,
+      "strict_reductions": 988,
+      "moves": 396,
+      "unsafe_unmarked_star_deletions": 210,
+      "unsafe_unmarked_retained_deletions": 65,
+      "trace_sha256": "7a5af4d86391bc6eac57faacf6f2df9f33243e40da9bccd87334a02ca4ae82e9"
+    }
+  ],
+  "unsafe_projection_witnesses": {
+    "star": {
+      "source_index": 41,
+      "coloring_id": 0,
+      "move_id": 7,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "coloring": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        2,
+        3,
+        2,
+        3
+      ],
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "move": {
+        "pair": [
+          1,
+          2
+        ],
+        "component": [
+          4,
+          6
+        ],
+        "target": 1
+      },
+      "interface": {
+        "pair": [
+          1,
+          0
+        ],
+        "full": {
+          "nodes": [
+            {
+              "id": "r0",
+              "kind": "retained",
+              "marks": [
+                0
+              ]
+            },
+            {
+              "id": "r1",
+              "kind": "retained",
+              "marks": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "id": "s6",
+              "kind": "star",
+              "vertex": 6,
+              "marks": []
+            }
+          ],
+          "edges": [
+            [
+              "r0",
+              "s6"
+            ],
+            [
+              "r1",
+              "s6"
+            ]
+          ]
+        },
+        "reduced": {
+          "nodes": [
+            {
+              "id": "r0",
+              "kind": "retained",
+              "marks": [
+                0
+              ]
+            },
+            {
+              "id": "r1",
+              "kind": "retained",
+              "marks": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "id": "s6",
+              "kind": "star",
+              "vertex": 6,
+              "marks": []
+            }
+          ],
+          "edges": [
+            [
+              "r0",
+              "s6"
+            ],
+            [
+              "r1",
+              "s6"
+            ]
+          ]
+        },
+        "deletion": {
+          "terminal_free": [],
+          "leaf_rounds": []
+        },
+        "frame_partition": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ]
+      },
+      "removed": [
+        "s6"
+      ],
+      "wrong_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    "retained": {
+      "source_index": 41,
+      "coloring_id": 1,
+      "move_id": 0,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "coloring": [
+        0,
+        0,
+        1,
+        0,
+        2,
+        1,
+        3,
+        2,
+        3
+      ],
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "move": {
+        "pair": [
+          0,
+          1
+        ],
+        "component": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "target": 1
+      },
+      "interface": {
+        "pair": [
+          1,
+          3
+        ],
+        "full": {
+          "nodes": [
+            {
+              "id": "r0",
+              "kind": "retained",
+              "marks": []
+            },
+            {
+              "id": "r1",
+              "kind": "retained",
+              "marks": []
+            },
+            {
+              "id": "s0",
+              "kind": "star",
+              "vertex": 0,
+              "marks": [
+                0
+              ]
+            },
+            {
+              "id": "s1",
+              "kind": "star",
+              "vertex": 1,
+              "marks": [
+                1
+              ]
+            },
+            {
+              "id": "s3",
+              "kind": "star",
+              "vertex": 3,
+              "marks": [
+                3
+              ]
+            }
+          ],
+          "edges": [
+            [
+              "r0",
+              "s1"
+            ],
+            [
+              "r1",
+              "s0"
+            ],
+            [
+              "r1",
+              "s3"
+            ]
+          ]
+        },
+        "reduced": {
+          "nodes": [
+            {
+              "id": "r1",
+              "kind": "retained",
+              "marks": []
+            },
+            {
+              "id": "s0",
+              "kind": "star",
+              "vertex": 0,
+              "marks": [
+                0
+              ]
+            },
+            {
+              "id": "s1",
+              "kind": "star",
+              "vertex": 1,
+              "marks": [
+                1
+              ]
+            },
+            {
+              "id": "s3",
+              "kind": "star",
+              "vertex": 3,
+              "marks": [
+                3
+              ]
+            }
+          ],
+          "edges": [
+            [
+              "r1",
+              "s0"
+            ],
+            [
+              "r1",
+              "s3"
+            ]
+          ]
+        },
+        "deletion": {
+          "terminal_free": [],
+          "leaf_rounds": [
+            [
+              "r0"
+            ]
+          ]
+        },
+        "frame_partition": [
+          [
+            0,
+            3
+          ],
+          [
+            1
+          ]
+        ]
+      },
+      "removed": [
+        "r0",
+        "r1"
+      ],
+      "wrong_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ]
+      ]
+    }
+  },
+  "collision": [
+    {
+      "coloring_id": 19,
+      "interfaces": [
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "full": {
+            "nodes": [
+              {
+                "id": "r0",
+                "kind": "retained",
+                "marks": [
+                  3
+                ]
+              },
+              {
+                "id": "r1",
+                "kind": "retained",
+                "marks": []
+              },
+              {
+                "id": "r2",
+                "kind": "retained",
+                "marks": []
+              },
+              {
+                "id": "s1",
+                "kind": "star",
+                "vertex": 1,
+                "marks": [
+                  1
+                ]
+              },
+              {
+                "id": "s9",
+                "kind": "star",
+                "vertex": 9,
+                "marks": []
+              }
+            ],
+            "edges": [
+              [
+                "r0",
+                "s9"
+              ],
+              [
+                "r1",
+                "s1"
+              ],
+              [
+                "r2",
+                "s1"
+              ],
+              [
+                "r2",
+                "s9"
+              ]
+            ]
+          },
+          "reduced": {
+            "nodes": [
+              {
+                "id": "r0",
+                "kind": "retained",
+                "marks": [
+                  3
+                ]
+              },
+              {
+                "id": "r2",
+                "kind": "retained",
+                "marks": []
+              },
+              {
+                "id": "s1",
+                "kind": "star",
+                "vertex": 1,
+                "marks": [
+                  1
+                ]
+              },
+              {
+                "id": "s9",
+                "kind": "star",
+                "vertex": 9,
+                "marks": []
+              }
+            ],
+            "edges": [
+              [
+                "r0",
+                "s9"
+              ],
+              [
+                "r2",
+                "s1"
+              ],
+              [
+                "r2",
+                "s9"
+              ]
+            ]
+          },
+          "deletion": {
+            "terminal_free": [],
+            "leaf_rounds": [
+              [
+                "r1"
+              ]
+            ]
+          },
+          "frame_partition": [
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            3
+          ],
+          "full": {
+            "nodes": [
+              {
+                "id": "r0",
+                "kind": "retained",
+                "marks": []
+              },
+              {
+                "id": "s1",
+                "kind": "star",
+                "vertex": 1,
+                "marks": [
+                  1
+                ]
+              },
+              {
+                "id": "s9",
+                "kind": "star",
+                "vertex": 9,
+                "marks": []
+              }
+            ],
+            "edges": [
+              [
+                "r0",
+                "s1"
+              ]
+            ]
+          },
+          "reduced": {
+            "nodes": [
+              {
+                "id": "s1",
+                "kind": "star",
+                "vertex": 1,
+                "marks": [
+                  1
+                ]
+              }
+            ],
+            "edges": []
+          },
+          "deletion": {
+            "terminal_free": [
+              "s9"
+            ],
+            "leaf_rounds": [
+              [
+                "r0"
+              ]
+            ]
+          },
+          "frame_partition": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "full": {
+            "nodes": [
+              {
+                "id": "r0",
+                "kind": "retained",
+                "marks": [
+                  3,
+                  4
+                ]
+              },
+              {
+                "id": "r1",
+                "kind": "retained",
+                "marks": []
+              },
+              {
+                "id": "s0",
+                "kind": "star",
+                "vertex": 0,
+                "marks": [
+                  0
+                ]
+              },
+              {
+                "id": "s2",
+                "kind": "star",
+                "vertex": 2,
+                "marks": [
+                  2
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "r0",
+                "s0"
+              ],
+              [
+                "r0",
+                "s2"
+              ],
+              [
+                "r1",
+                "s2"
+              ]
+            ]
+          },
+          "reduced": {
+            "nodes": [
+              {
+                "id": "r0",
+                "kind": "retained",
+                "marks": [
+                  3,
+                  4
+                ]
+              },
+              {
+                "id": "s0",
+                "kind": "star",
+                "vertex": 0,
+                "marks": [
+                  0
+                ]
+              },
+              {
+                "id": "s2",
+                "kind": "star",
+                "vertex": 2,
+                "marks": [
+                  2
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "r0",
+                "s0"
+              ],
+              [
+                "r0",
+                "s2"
+              ]
+            ]
+          },
+          "deletion": {
+            "terminal_free": [],
+            "leaf_rounds": [
+              [
+                "r1"
+              ]
+            ]
+          },
+          "frame_partition": [
+            [
+              0,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "full": {
+            "nodes": [
+              {
+                "id": "r0",
+                "kind": "retained",
+                "marks": [
+                  4
+                ]
+              },
+              {
+                "id": "s0",
+                "kind": "star",
+                "vertex": 0,
+                "marks": [
+                  0
+                ]
+              },
+              {
+                "id": "s2",
+                "kind": "star",
+                "vertex": 2,
+                "marks": [
+                  2
+                ]
+              }
+            ],
+            "edges": []
+          },
+          "reduced": {
+            "nodes": [
+              {
+                "id": "r0",
+                "kind": "retained",
+                "marks": [
+                  4
+                ]
+              },
+              {
+                "id": "s0",
+                "kind": "star",
+                "vertex": 0,
+                "marks": [
+                  0
+                ]
+              },
+              {
+                "id": "s2",
+                "kind": "star",
+                "vertex": 2,
+                "marks": [
+                  2
+                ]
+              }
+            ],
+            "edges": []
+          },
+          "deletion": {
+            "terminal_free": [],
+            "leaf_rounds": []
+          },
+          "frame_partition": [
+            [
+              0
+            ],
+            [
+              2
+            ],
+            [
+              4
+            ]
+          ]
+        }
+      ],
+      "target_row": [
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      "target_profile": [
+        [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            2,
+            3,
+            4
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "coloring_id": 24,
+      "interfaces": [
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "full": {
+            "nodes": [
+              {
+                "id": "r0",
+                "kind": "retained",
+                "marks": [
+                  3
+                ]
+              },
+              {
+                "id": "r1",
+                "kind": "retained",
+                "marks": []
+              },
+              {
+                "id": "s1",
+                "kind": "star",
+                "vertex": 1,
+                "marks": [
+                  1
+                ]
+              },
+              {
+                "id": "s9",
+                "kind": "star",
+                "vertex": 9,
+                "marks": []
+              }
+            ],
+            "edges": [
+              [
+                "r0",
+                "s9"
+              ],
+              [
+                "r1",
+                "s1"
+              ]
+            ]
+          },
+          "reduced": {
+            "nodes": [
+              {
+                "id": "r0",
+                "kind": "retained",
+                "marks": [
+                  3
+                ]
+              },
+              {
+                "id": "s1",
+                "kind": "star",
+                "vertex": 1,
+                "marks": [
+                  1
+                ]
+              }
+            ],
+            "edges": []
+          },
+          "deletion": {
+            "terminal_free": [],
+            "leaf_rounds": [
+              [
+                "r1",
+                "s9"
+              ]
+            ]
+          },
+          "frame_partition": [
+            [
+              1
+            ],
+            [
+              3
+            ]
+          ]
+        },
+        {
+          "pair": [
+            0,
+            3
+          ],
+          "full": {
+            "nodes": [
+              {
+                "id": "r0",
+                "kind": "retained",
+                "marks": []
+              },
+              {
+                "id": "r1",
+                "kind": "retained",
+                "marks": []
+              },
+              {
+                "id": "s1",
+                "kind": "star",
+                "vertex": 1,
+                "marks": [
+                  1
+                ]
+              },
+              {
+                "id": "s9",
+                "kind": "star",
+                "vertex": 9,
+                "marks": []
+              }
+            ],
+            "edges": [
+              [
+                "r0",
+                "s1"
+              ],
+              [
+                "r1",
+                "s1"
+              ],
+              [
+                "r1",
+                "s9"
+              ]
+            ]
+          },
+          "reduced": {
+            "nodes": [
+              {
+                "id": "s1",
+                "kind": "star",
+                "vertex": 1,
+                "marks": [
+                  1
+                ]
+              }
+            ],
+            "edges": []
+          },
+          "deletion": {
+            "terminal_free": [],
+            "leaf_rounds": [
+              [
+                "r0",
+                "s9"
+              ],
+              [
+                "r1"
+              ]
+            ]
+          },
+          "frame_partition": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "full": {
+            "nodes": [
+              {
+                "id": "r0",
+                "kind": "retained",
+                "marks": [
+                  3,
+                  4
+                ]
+              },
+              {
+                "id": "s0",
+                "kind": "star",
+                "vertex": 0,
+                "marks": [
+                  0
+                ]
+              },
+              {
+                "id": "s2",
+                "kind": "star",
+                "vertex": 2,
+                "marks": [
+                  2
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "r0",
+                "s2"
+              ]
+            ]
+          },
+          "reduced": {
+            "nodes": [
+              {
+                "id": "r0",
+                "kind": "retained",
+                "marks": [
+                  3,
+                  4
+                ]
+              },
+              {
+                "id": "s0",
+                "kind": "star",
+                "vertex": 0,
+                "marks": [
+                  0
+                ]
+              },
+              {
+                "id": "s2",
+                "kind": "star",
+                "vertex": 2,
+                "marks": [
+                  2
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "r0",
+                "s2"
+              ]
+            ]
+          },
+          "deletion": {
+            "terminal_free": [],
+            "leaf_rounds": []
+          },
+          "frame_partition": [
+            [
+              0
+            ],
+            [
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "full": {
+            "nodes": [
+              {
+                "id": "r0",
+                "kind": "retained",
+                "marks": [
+                  4
+                ]
+              },
+              {
+                "id": "r1",
+                "kind": "retained",
+                "marks": []
+              },
+              {
+                "id": "s0",
+                "kind": "star",
+                "vertex": 0,
+                "marks": [
+                  0
+                ]
+              },
+              {
+                "id": "s2",
+                "kind": "star",
+                "vertex": 2,
+                "marks": [
+                  2
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "r0",
+                "s0"
+              ],
+              [
+                "r1",
+                "s2"
+              ]
+            ]
+          },
+          "reduced": {
+            "nodes": [
+              {
+                "id": "r0",
+                "kind": "retained",
+                "marks": [
+                  4
+                ]
+              },
+              {
+                "id": "s0",
+                "kind": "star",
+                "vertex": 0,
+                "marks": [
+                  0
+                ]
+              },
+              {
+                "id": "s2",
+                "kind": "star",
+                "vertex": 2,
+                "marks": [
+                  2
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "r0",
+                "s0"
+              ]
+            ]
+          },
+          "deletion": {
+            "terminal_free": [],
+            "leaf_rounds": [
+              [
+                "r1"
+              ]
+            ]
+          },
+          "frame_partition": [
+            [
+              0,
+              4
+            ],
+            [
+              2
+            ]
+          ]
+        }
+      ],
+      "target_row": [
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      "target_profile": [
+        [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            2,
+            3,
+            4
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            2
+          ]
+        ],
+        [
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ],
+        [
+          [
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ]
+        ]
+      ]
+    }
+  ],
+  "closure_effect": {
+    "profile_deletions": 0,
+    "inherited_profiles": 603,
+    "fixed_point_recomputed": false
+  }
+}

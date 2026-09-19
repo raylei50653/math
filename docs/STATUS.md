@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新日期：2026-09-18。最新研究為 [單步混合色對相容性](c5_sector_mixed_transition.md)，見 §46；本輪提交發布整理見 §47。
+更新日期：2026-09-19。最新研究為 [兩種 star 分離集](c5_sector_saturated_cuts.md)，見 §51；四輪整合提交核對見 §52。
 先前提交自 `e14874d` 整合 R24–R31 與文件盤點。
 R31 研究見 §35，文件盤點見 §36，該次發布核對見 §37；既有發布核對見 §27。
 各輪當時的未提交狀態保留於原節；即時提交與遠端 SHA 以 Git 為準。
@@ -1300,3 +1300,118 @@ artifacts，並同步 README／HANDOFF／STATUS。研究輪中的
 
 提交後 push 至 origin/main，核對本地／tracking／remote SHA 一致及
 乾淨工作目錄；最終發布結果以 Git 為準。
+
+
+## 48. 3903 單步帶框 incidence 安全刪減
+
+2026-09-19，基準 `3aaca0b`。見 [報告](c5_sector_marked_incidence.md)。
+接手工作樹乾淨，沿 3903 主線實作四份共同來源的帶框 retained/star
+介面。紙面證明：刪去無框分量，再反覆刪無標記度≤1 點，保持框分割。
+一般介面大小無上界保證；尚未解四份介面的共同可實現性。
+
+沿用 22 張圖／1,100 份染色／12,580 條交換，50,320 份介面全部核對；
+31,070 份確有刪減，節點總數 160,460→115,698。刪光無框 stars 與
+retained 節點分別在 5,928／1,936 份介面誤判，保存完整反向控制。
+來源 41 的 c19／c24 在刪減後仍有不同後繼。603 profiles 沿用，
+397→330 未一般排除。下一問是此單步的共同 incidence 必要條件。
+
+新 checker、直接前輪 mixed-transition checker、`lake build`（8,822
+jobs；既有 lint）、變更文件連結與 whitespace 通過。cross-row／
+forced-connectivity standalone、minimality、R 系列未重跑；所用舊
+證書及程式雜湊已核對。未新增 Lean theorem，未 commit／push。
+
+
+## 49. 3903 單步共同核心與框投影限制
+
+2026-09-19，接手 `3aaca0b` 及尚未提交的 §48 工作。見
+[報告](c5_sector_common_core.md)。一般圖紙面引理把舊 x/d、新 y/d
+混合圖表示為同一核心 C(x,d) 的兩種外點擴張，並保留 star／D 身份。
+核心框分割須細化來源與候選限制的交集；對 397、action 2→330，
+四份交集都沒有縮緊來源界，因此此投影不能排除該步。
+
+既有 22 張圖、1,100 份染色、12,580 次交換，重算 50,320 份共同
+核心與 100,640 次擴張投影全通過；兩側各 6,478 份介面在擴張後
+增加核心框連通，各保存完整控制。未新增圖、profile 刪除或固定點。
+下一問保留框點 4 的跨色 retained 分量、共同 star／D 身份及外點
+incidences，聯立既有連通與分離要求。一般可實現性仍未解。
+
+新 checker、marked-incidence checker、`lake build`（8,822 jobs；
+既有 lint）、文件連結及 whitespace 通過。其餘 standalone、minimality
+及 R 系列未重跑；所讀依賴 hashes 已核對。紙面＋Python 證據，未新增
+Lean theorem。397→330、一般 3903、R31 與主命題仍未證；未 commit／push。
+
+
+## 50. 3903 框點 4 跨色身份與共同鄰點障礙
+
+2026-09-19，接手 `3aaca0b`，保留 §48–49 尚未提交工作。見
+[報告](c5_sector_joint_identity.md)。用同一原頂點身份聯立 d=2、3 的
+retained bases、兩批 stars 及舊 13 必要接入口。框邊 2–3–4 已保證
+新 12 的正連通；需要新 12 的 0/4 分離、新 13 的 0、2、4 三分離。
+一般圖紙面證明：397→330 必須 N(0)∩N(4)=∅；共同鄰點不論選色
+2 或 3，都會在交換後違反一層分離。profile 330 自身也排除共同鄰點。
+
+既有 22 張圖全部保存二步路徑，因此全部不能實現 330，不依賴已列
+染色的完備性。恰六份保存染色符合來源及交換，24 次完整頂點分割
+核對、六份 old-13 接入口與 S 內路徑通過；2 份違反新 12 分離，
+4 份違反新 13 分離。沒有新圖、profile 刪除或固定點。
+下一問是無共同鄰點的剩餘實現與兩層 cuts／共同接入口的 disk 相容性。
+更正 §46／49 報告原始框列 10120→10121；舊程式計算不受文字誤植影響。
+
+新 checker、common-core checker、`lake build`（8,822 jobs；既有 lint）、
+文件連結及 whitespace 通過。其餘 standalone、minimality 及 R 系列
+未重跑；所讀依賴 hashes 已核對。紙面＋Python，未新增 Lean theorem。
+一般 397→330、3903 非平面、R31 與主命題仍未證；未 commit／push。
+
+
+## 51. 3903 degree-4 stars 兩種分離集與條件式六內點下界
+
+2026-09-19，接手 `3aaca0b`，保留 §48–50 未提交工作。見
+[報告](c5_sector_saturated_cuts.md)。一般紙面定理：舊 13 的 1–4 路徑
+及新原始 02 的 1–3 路徑，在 disk 中各迫使一種 star 集分離 S−{1}
+中的 0、2。交點的四個鄰色分別必為 0,0,3,3 或 0,0,2,2；兩種
+stars 不相交。若刪 1 本身尚未分離，則兩種 stars、其中間的色 0 點、
+兩個色 3 鄰點及一個內部色 2 鄰點互異，得到條件式 |C|≥6。
+框點 1 已切斷 S 的分支仍開放；未得到一般排除，未擴大搜尋大小。
+
+六份既有來源有十項適用路徑要求，六份皆因 T3 bypass 直接構造並
+核對 K3,3 九路徑。另只讀 130 張已存小型 disk 圖，篩出 38 張無
+共同鄰點者，重驗已存 rotation、degrees 及 C 連通。單列 01021
+有 96 份 proper 染色，40 份指定交換；14 項適用分離要求全通過，
+其中 8 項刪 1 尚連通、需非空 star 分離集。完整來源 397 零命中，
+兩條要求路徑未同時成立；不把這批弱前提控制當成 3903 見證。
+603 profiles 沿用，未刪 successor、未重算固定點。
+
+新 checker、joint-identity checker、`lake build`（8,822 jobs；既有 lint）、
+文件連結及 whitespace 通過。common-core、sector-targets、cross-row、
+minimality 與 R 系列 standalone 未重跑；所讀依賴 hashes 已核對。
+紙面＋Python，未新增 Lean theorem。一般 397→330、3903 非平面、
+R31 與主命題仍未證；未 commit／push。
+
+
+## 52. 3903 四輪成果整理與提交核對
+
+2026-09-19，自 `3aaca0b` 整合 §48–51 的四個 checker、四份確定性
+JSON 證書與報告，同步 README／HANDOFF／STATUS，並保留原始框列
+10120→10121 的文字更正。各研究節的「未 commit／push」是當輪紀錄；
+本節記錄整合提交的驗證範圍。本次只 commit，不 push。
+
+本次實際重播以下五個 standalone checker，全部通過：
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_sector_marked_incidence.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_common_core.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_joint_identity.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_saturated_cuts.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_mixed_transition.py --check
+lake build
+git diff --check
+```
+
+五份保存證書均由 checker 重算比對，所讀依賴 hashes 通過。
+`lake build` 成功（8,822 jobs；既有 lint 警告），變更文件本地連結與
+whitespace 通過。sector-targets、cross-row、forced-connectivity、
+minimality 及 R 系列 standalone 未重跑，沒有重新生成圖或閉包。
+
+停止點保留 §51 的兩分支：優先檢查框點 1 切斷 S 的情形；另一分支
+保留 T₂／T₃ 的共同身份與條件式六內點下界。603 profiles 沿用，
+一般 397→330、3903 非平面、R31 與主命題仍未證，未新增 Lean theorem。
