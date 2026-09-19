@@ -1,6 +1,14 @@
 # 研究交接：目前狀態與接手入口
 
-更新：2026-09-18。工作目錄 `/home/ray/math`。
+更新：2026-09-19。工作目錄 `/home/ray/math`。
+本次依基準 `e097be6` 任務重驗：接手時 HEAD 已是 `2f4adfb`，工作樹乾淨，
+下述報告、checker 與確定性證書均已存在。重新審閱單步引理及碰撞，
+重跑 mixed-transition、cross-row、forced-connectivity 三個 checker 與
+`lake build`（8,822 jobs；僅既有 lint 警告），全部通過；文件本地連結與
+whitespace 檢查通過。程式、證書及研究停止點不變；本次僅更新交接。
+重驗完成後依使用者指示提交並推送；即時發布狀態以 Git 為準。
+舊 standalone checker、minimality 與 R 系列未重跑。
+
 最新：[3903 單步混合色對相容性](c5_sector_mixed_transition.md)。
 一般圖的 retained-component／star 單步引理已在既有 22 張控制、
 1,100 份染色的 12,580 條交換、50,320 個混合色對全部核對通過。
