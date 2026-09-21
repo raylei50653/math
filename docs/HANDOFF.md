@@ -1,22 +1,21 @@
 # 研究交接：目前狀態與接手入口
 
 更新：2026-09-21。工作目錄 `/home/ray/math`。
-前次六輪整合見 [STATUS §59](STATUS.md#59-3903-六輪成果整理與提交核對)；
-本次三輪整合與發布重播範圍見 [STATUS §63](STATUS.md#63-3903-三輪成果整合與發布)。
-最新：[拒絕列的緊 list 與內部葉點排除](c5_sector_rejection_lists.md)。
-接手基準為 `ca0e44b`；飽和入口、偶圈正控制與拒絕列結果隨本次提交整合。
-各專題報告中的「未 commit／push」保留研究當輪紀錄；即時發布狀態以 Git 為準。
-3903 的拒絕列使每個內點完整 degree=4、list 大小恰等於內部度數；
-兩列的 18 個必要框鄰集形成 12 個共同 list 類，保留 2、4 的差異。
-非空分支中 corner 障礙禁止 b2，故 b 的框鄰集只剩 {0}、{0,3}；
-由 N(0)={b,w} 排除 C 的所有葉點，得到 δ(C)≥2。
-這不是排除 S 的葉點 w，也沒有排除中間 bridges。
-第一種 corner 已由偶圈排除，只剩 `1,4,r,p,q,b`；下一步研究末端
-奇圈／K4 blocks 的兩列 lists。保留刪框點 1 切斷 b、2 的情形。
-一般單步已有 disk 397→330 正控制（簽章 4095），不能漏掉 3903 拒絕列。
-非空 ≥8、總體 ≥6 下界不變；603 profiles 沿用、零刪除。
+最新：[末端 block 的兩列 root 接合與非空分支排除](c5_sector_terminal_blocks.md)，
+見 [STATUS §64](STATUS.md#64-3903-末端-block-介面與非空分支排除)。
+接手基準 `1c608a8`；本輪成果隨本次提交發布，核對範圍見 STATUS §65。
+專題報告與 §64 的「未提交」保留研究當輪紀錄；即時發布狀態以 Git 為準。
+
+**指定的非空 3903 分支已排除；空交集分支與一般 3903 仍開放。**
+末端奇圈／K4 的完整 root 接合加上拒絕列緊性，迫使各列共同 palette。
+同一實際 attachments 只留下共同框點 2 或 4 的奇圈族；長環、K4 及
+共同框點 4 的三角形都被 disk 障礙排除。單一 block 只剩三角形，
+私有框鄰接為 {1,2}、{2,3}；其兩列 root 禁色均為 {0,3}。
+C 必有兩個互斥末端 blocks，與 exterior apex 形成 K3,3 minor，完成矛盾。
+未刪除中間 bridges；包含 S′−{1} 已切斷 b、2 的情形。
+保留單一三角形局部 disk 控制、三色 root 與 bridge 奇偶控制。
+603 profiles 沿用、零刪除、未重算固定點；一般總體 ≥6 下界未提高。
 紙面＋Python；Gallai 結構依賴外部 degree-choosability，未新增 Lean theorem。
-重播與 build 範圍見 [STATUS §62](STATUS.md#62-3903-拒絕列緊-list-與內部葉點排除)。
 
 先讀本頁，再讀 [文件狀態與變化追蹤](STATUS.md) 及指定報告。
 逐輪數字、舊停止點與發布紀錄完整保存在 [歷史交接](HANDOFF_HISTORY.md)。
@@ -198,31 +197,22 @@ bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle �
 
 ## 2. 精確停止點與下一個窄問題
 
-目前入口為 [拒絕列緊 list 與內部葉點排除](c5_sector_rejection_lists.md) §1–4。
-前置為 [偶圈排除與單步正控制](c5_sector_corner_even_cycle.md)、
-[飽和入口分離集](c5_sector_corner_gates.md) 與
-[葉點刪除介面](c5_sector_leaf_reduction.md)。只處理 N(0)∩B₃ 非空分支；
-B₃ 必須在新 02 刪框點 1 後取包含 3 的分量。
+目前入口為 [末端 block 報告](c5_sector_terminal_blocks.md) §1–4。
+本輪已完成 `1c608a8` 的下一問：在兩拒絕列及既有非空分支條件下，
+末端 blocks 的完整介面與實際框鄰接導致 disk 矛盾。
+第一種 corner 的偶圈排除及第二種 corner 的本輪排除合起來，排除
+N(0)∩B₃ 非空的 3903 分支；B₃ 仍按新 02 刪框點 1 後含 3 的分量定義。
 
-**在 3903 拒絕列假設下，只剩第二種 `1,4,r,p,q,b`，且 δ(C)≥2。**
-拒絕列的緊性由生成樹貪婪染色證明；不需 minimality。b2 若存在會形成
-只有 b 一個內點的 S′−{1} 路徑，不能同時經過 T₂、T₃。
-b 的框鄰集因此只有 {0}、{0,3}，內部度數為 3 或 2；w 的內部度數為 3。
-所有可能的內部葉點都必鄰接 0，故被排除。兩拒絕列的共同 list 表
-只容許框點 1、3 的局部歧義；不能混同 2、4 或視為完整 root 介面。
+下一個窄問題是 **N(0)∩B₃=∅ 的分支**。須先重新核對該分支實際具名點
+與交換身份，不能直接搬用非空分支的 w,p,q,r、N(0)={b,w} 或 corner 次序。
+前置定義見 [leaf-exception](c5_sector_leaf_exception.md)、
+[leaf-reduction](c5_sector_leaf_reduction.md)，本輪未重啟其候選圖枚舉。
+單一 block 的局部存活型不代表完整 sector 可實現，亦不應再作非空分支缺口。
 
-下一問是第二種 corner 的末端奇圈／K4 blocks：聯立兩列 lists、
-b 的兩種框鄰集及 p,q,r 的位置。C 是沒有葉點的 Gallai tree，
-terminal bridges 已排除；中間 bridges 仍可存在，不能刪除。
-S′−{1} 已切斷 b、2 的分支仍須保留；不假定兩個 stars 必存在。
-保留 corners、b 的原邊 b–0、同一交換身份。J 整體連通，內部仍可
-有至多三個分量，每個都碰 p,q,r 之一。一般 397→330 排除已被
-4095 正控制否定，後續必保留跨列拒絕。
-
-空交集分支仍開放。非空分支原 sector 完整 degree=4 時 ≥8；
-degree≤4 切斷分支僅證 ≥7，總體 ≥6；沒有 3903 可達性或一般排除。
-前輪的 seed、度數補全及細分控制保留；本輪僅增加框鄰集算術核對，未擴大圖枚舉。
-603 profiles 沿用、零刪除、未重算固定點；未建立多步交換歷史。
+中間 bridges 不是排除對象；本輪證明直接在兩個末端 blocks 取 minor，
+沒有改動中間連接。S′−{1} 已切斷 b、2 的情形包括在定理內。
+非空 ≥8 是已排除分支的歷史必要條件；一般總體 ≥6 不變。
+603 profiles 沿用、零刪除、未重算固定點；沒有多步交換歷史或一般 3903 排除。
 
 保留的 R31 缺口：同末端不同二接點的任意長來源到 C3–C3–C3 的
 boundary 固定 minors 尚未補完；參考 [R31](c5_degree5_same_terminal_triangles.md)、
@@ -268,13 +258,16 @@ R27 末端各一臂及 R30 中間不同二接點鏈型已排除；其他三環�
 本輪重播入口：
 
 ```bash
+uv run python scripts/c5_sector_terminal_blocks.py --check
 uv run python scripts/c5_sector_rejection_lists.py --check
-uv run --with networkx==3.5 python scripts/c5_sector_transition_control.py --check
 uv run python scripts/c5_sector_corner_gates.py --check
 uv run python scripts/c5_sector_leaf_corners.py --check
 lake build
 git diff --check
 ```
+
+新 checker 可在禁用 NetworkX 的環境直接重播；本輪未重跑 transition-control
+與 R 系列等其他 standalone。完整驗證範圍見 STATUS §64。
 
 以下為前次六輪整合入口：
 

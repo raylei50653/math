@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新日期：2026-09-19。最新研究為 [五內點路徑分類](c5_sector_five_inner.md)，見 §54；四輪整合提交核對見 §52。
+更新日期：2026-09-21。最新研究為 [末端 block 介面與非空分支排除](c5_sector_terminal_blocks.md)，見 §64；本輪發布核對見 §65。
 先前提交自 `e14874d` 整合 R24–R31 與文件盤點。
 R31 研究見 §35，文件盤點見 §36，該次發布核對見 §37；既有發布核對見 §27。
 各輪當時的未提交狀態保留於原節；即時提交與遠端 SHA 以 Git 為準。
@@ -31,6 +31,7 @@ R31 研究見 §35，文件盤點見 §36，該次發布核對見 §37；既有�
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [3903 末端 block 介面](c5_sector_terminal_blocks.md) | 兩列完整 root 接合、實際 attachments 與末端 blocks 的 disk 障礙，排除指定非空分支；空交集與一般 3903 仍開放 |
 | [同末端不同二接點正常形](c5_degree5_same_terminal_triangles.md) | R31：408 模板／327,968 接線非 disk；任意長來源 minors 待補，是目前下一題 |
 | [中間二接點來源 minors](c5_degree5_middle_cycle_minors.md)、[中間 C5 正常形](c5_degree5_middle_pentagon.md) | R29–R30：正常形覆蓋與 boundary 固定來源 minors 合成，排除任意長中間不同二接點鏈型 |
 | [三環鏈全部接點位置](c5_degree5_three_cycle_positions.md) | R28 完整 list 接合；不同點 F={D}，同點保留完整 F；中間二接點圖層由 R29–R30 補完，同末端由 R31 完成正常形 |
@@ -1676,3 +1677,61 @@ transition-control（NetworkX 3.5）、corner-gates、leaf-corners；全部通�
 603 profiles 零刪除、固定點未重算，無新增 Lean theorem。主命題仍未證。
 發布完成時另以即時 Git 核對本地 HEAD、origin/main、遠端 main 一致
 及工作樹乾淨；提交 SHA 由包含本節的提交與 Git 紀錄定位。
+
+
+## 64. 3903 末端 block 介面與非空分支排除
+
+2026-09-21，從乾淨 `1c608a8` 接續 §62 的下一問。
+見 [報告](c5_sector_terminal_blocks.md)。完整 root 可用色集與剩餘圖的
+root 集取交，給單一 block 的精確接合；全圖拒絕及 degree-list 緊性
+迫使末端奇圈／K4 各列的私有 lists 是共同 palette，且全部禁色落在
+root 原 list 中。聯立同一實際 attachments，不合併框點 2、4。
+
+排除需碰 0 的 private 類後，b,w 都在末端 block 外，提供接回 0 的
+真實路徑。K4、長奇圈、同側 private attachments 的三角形、共同框點
+4 的混合三角形皆非 disk。單 block 只剩 {1,2}、{2,3} 的混合三角形，
+root attachments 是 ∅、{1} 或 {3}；兩列禁色均為 {0,3}。
+具名點只能在 root，唯一 bridge 接回時另有 p/q/r 位置限制。
+
+C 不可能只有一個 block；兩個末端三角形若共用 root，會迫使全 C
+沒有度數 3 的點，與 w 矛盾。因此存在兩個互斥末端三角形；與 exterior
+apex 及實際框點 1,2,3 構成 K3,3 minor，**完成非空 3903 分支排除**。
+證明不刪中間 bridges，不假設 S′−{1} 中 b–2 路徑或兩 stars 存在。
+
+新 checker 核對 47,988 組 cycle lists、64 組 K4 lists、177 份明示
+minors、一份 subdivision、三份局部 disk rotations、六個具名 bridge-root
+位置與五個 bridge 奇偶控制。兩份同圖雙列 C5 控制保留三色 root 與
+循環次序資訊；兩個拒絕列的共同接線要求不可省略。控制不是完整 sector。
+
+新 checker、rejection-lists、corner-gates、leaf-corners 的 --check 及
+所讀依賴 hashes 通過；新 checker 在禁用 NetworkX 的環境亦通過。
+lake build、變更文件本地連結及 git diff --check 通過。transition-control、
+minimality、R 系列等其他 standalone 本輪未重跑。
+Gallai 化約依賴外部 degree-choosability；任意長度與 disk 拓撲是紙面證明，
+有限 Python 控制不代替一般證明；未新增 Lean theorem。
+
+下一個窄入口是 N(0)∩B₃=∅ 分支，須重新核對具名點前提，不能直接搬用
+本輪非空分支的 w,p,q,r 或 N(0)={b,w}。一般 3903、R31、共同出口及
+主命題仍未證。603 profiles 零刪除、固定點未重算；一般總體 ≥6 不變。
+非空 ≥8 僅保留為已排除分支的歷史必要條件。本輪未 commit／push。
+
+
+## 65. 3903 非空分支排除成果發布
+
+2026-09-21，依使用者「commit + push」發布 `1c608a8` 之後的 §64 成果：
+末端 block 的兩列完整 root 接合、同一實際 attachments 的分類、非空
+3903 分支的 disk 排除，以及局部存活與反向控制。新 script、JSON 證書、
+專題報告、前置報告的後續入口及 README／HANDOFF／STATUS 一併提交。
+§64 與專題報告中的「未提交」保留當輪歷史；目前停止點仍為空交集分支。
+
+發布前重新執行 terminal-blocks、rejection-lists、corner-gates、
+leaf-corners 四份 --check；依賴 hashes 全部一致。lake build 通過
+（8,822 jobs，既有 lint 警告），本地文件連結與 git diff --check 通過。
+禁用 NetworkX 的重播沿用本對話研究輪成功結果；本次發布未另重做。
+transition-control、minimality、R 系列等其他 standalone 未重跑。
+
+非空分支排除的前提與信任層級不變：紙面＋Python，依賴外部
+degree-choosability，未新增 Lean theorem。一般 3903、空交集分支及
+主命題仍未證；603 profiles 零刪除，固定點未重算。
+發布完成以本地 HEAD、origin/main、遠端 main 的 SHA 一致及乾淨工作樹
+核對；提交 SHA 由包含本節的提交與 Git 紀錄定位。
