@@ -1577,3 +1577,102 @@ whitespace 核對通過。其餘 standalone、minimality、R 系列未重跑。
 連通及新 13 的 2/4 分離。非空葉點分支在完整 degree=4 時 ≥8，
 總體 ≥6；空交集分支仍開放，未證可達性或一般排除。603 profiles
 沿用、零刪除、未重算固定點，未新增圖搜尋或 Lean theorem。
+
+
+## 60. 3903 corner 次序的飽和入口分離集
+
+2026-09-21，接手 HEAD `ca0e44b`，工作樹乾淨。沿 §58 的兩種必要
+次序推進，見 [報告](c5_sector_corner_gates.md)。第一種次序的 T₂、T₃
+各自切斷 S′ 中 b 到 {1,2} 的路徑，即使刪 1 本身切斷 b、2 亦成立；
+第二種只對避開 1 的 b–2 路徑強迫兩星，保留切斷分支。
+b 作為交點時由原邊 b–0 補足第二個色 0 鄰點，避免端點度數誤用。
+舊 12 連通已納入交錯比較；新 13 的 2/4 分離尚未給出矛盾。
+
+新 corner-gates checker、直接前置 leaf-corners checker 的 `--check`、
+`lake build`、變更文件本地連結與 `git diff --check` 通過。
+依賴 hashes 核對；leaf-reduction、其餘 standalone、minimality 與 R 系列
+未重跑。有限控制僅為四項端點比較與四項鄰色算術，不是候選 sector。
+一般分離結論為紙面證明，未新增 Lean theorem。
+
+兩種次序未排除，空交集分支仍開放；非空 ≥8、總體 ≥6 下界不變。
+603 profiles 沿用、零刪除、未重算固定點，無新增圖或染色搜尋。
+下一問在第一種的兩個分離集上加入新 13 分離；第二種保留框點 1
+切斷分支。一般 397→330、3903、R31、主命題仍未證，未 commit／push。
+
+
+## 61. 3903 第一種 corner 次序的偶圈排除與單步正控制
+
+2026-09-21，延續 §60 未提交成果；HEAD 仍為 `ca0e44b`。
+見 [報告](c5_sector_corner_even_cycle.md)。第一種次序的 S′ 路徑與互斥
+R、P 相交；取相鄰不同型交點，聯立 wp、wr 得到至少六邊的內部簡單
+偶圈。Δ(C)≤4 故 C 非 Gallai tree；由 degree-choosability，全部 19
+開口列均延拓。這排除第一種作為 3903 sector，不需 minimality。
+在非空葉點分支與 3903 假設下，只剩第二種次序 `1,4,r,p,q,b`。
+
+同時保存 11 內點 seed、12 內點補點及八份單點八面體補全，得到
+60 內點、完整 degree=4、內部連通、deg_G(0)=2 的 disk 397→330。
+三階段精確核對六組框分割、maximal S、B₃、新 13 分離、指定 corners。
+其十二位簽章 4095，19 列皆有明示染色，並非 3903 或 minimal obstruction。
+故一般單步排除已被正控制否定；下一步必保留跨列拒絕要求。
+
+新 transition-control checker、直接前置 corner-gates／leaf-corners checker、
+`lake build`、文件連結與 whitespace 通過。三份保存 apex rotations 直接驗證；
+禁用 planarity 與 coloring 搜尋後重播亦通過。生成使用 NetworkX 3.5，
+無圖大小枚舉；八個指定細分只核對較弱偶圈前提，不保證保持 profile 397。
+19 份固定圖染色是在生成時取得，重播逐份直接核對，不重跑染色搜尋。
+
+一般偶圈論證為紙面證明；全列延拓另依賴已重新核對來源敘述的外部
+標準 degree-choosability 定理，未 Lean 化。其他 standalone、minimality、
+R 系列未重跑。非空 ≥8、總體 ≥6 下界不變；603 profiles 零刪除、
+未重算固定點。空交集分支、3903、R31、共同出口、主命題仍開放。
+下一問為第二種次序的非 Gallai／拒絕列限制，保留框點 1 切斷情形。
+本輪與 §60 均未 commit／push。
+
+
+## 62. 3903 拒絕列緊 list 與內部葉點排除
+
+2026-09-21，接手 HEAD `ca0e44b`，保留 §60–61 未提交成果。
+見 [報告](c5_sector_rejection_lists.md)。拒絕列若有任一內點 list
+嚴格大於內部 degree，便可由生成樹貪婪染色延拓。因此全體內點
+完整 degree=4，框鄰色各異；禁止共鄰 1/3 或 2/4。
+01212、01213 的 18 個必要框鄰集給出 12 種共同 list pair，只有
+選框點 1 或 3 的歧義。這不是完整 block/root 關係或充分 state。
+
+在非空分支，corner-gates 排除 b2；舊 proper 染色再使 b 的框鄰集
+只剩 {0}、{0,3}。任何 C 葉點都必鄰接 0，卻只能是內部度數至少 2
+的 b 或內部度數 3 的 w，矛盾。故 δ(C)≥2；不混同 C 與 S 的葉點。
+Gallai 結構仍依賴外部 degree-choosability，已重核來源敘述；新緊性
+與葉點論證為紙面證明，不需 minimality，未新增 Lean theorem。
+
+新 rejection-lists checker 核對 31 子集、18 緊子集、12 list 類、四種
+葉點接線與反向控制。新 checker、transition-control、corner-gates、
+leaf-corners 的 --check 通過，依賴 hashes 通過；lake build、變更文件
+本地連結及 git diff --check 通過。其餘 standalone、minimality、R 系列
+未重跑。沒有新增候選圖或染色搜尋，603 profiles 零刪除、未重算固定點。
+
+下一問為第二種 corner 的末端奇圈／K4 blocks 與兩拒絕列；terminal
+bridges 排除，中間 bridges 仍保留，亦保留刪 1 切斷 b、2 的情形。
+非空 ≥8、總體 ≥6 下界不變，空交集分支、3903、R31、共同出口及
+主命題仍開放。本輪與 §60–61 均未 commit／push。
+
+
+## 63. 3903 三輪成果整合與發布
+
+2026-09-21，依使用者「commit + push」整合 `ca0e44b` 之後的 §60–62：
+飽和入口分離集、第一種 corner 偶圈排除與 disk 單步正控制、拒絕列
+緊 list 與內部葉點排除。三份 scripts、三份 JSON 證書、三份專題報告，
+以及 README／HANDOFF／STATUS 和 leaf-corners 的後續入口一併提交。
+專題與 §60–62 的「未提交」僅保留當輪歷史，現行交接已更新。
+
+發布前重新執行四份 checker 的 --check：rejection-lists、
+transition-control（NetworkX 3.5）、corner-gates、leaf-corners；全部通過，
+所讀依賴 hashes 一致，沒有重建既有 artifacts。lake build 通過
+（8,822 jobs，既有 lint 警告）；變更文件本地連結與 git diff --check 通過。
+其餘 standalone、minimality、R 系列未重跑；本次未另重做禁用搜尋的
+重播，該項控制沿用 §61 紀錄。
+
+停止點保持 §62：非空 3903 分支只剩第二種 corner，δ(C)≥2；下一步為
+末端奇圈／K4 blocks 的兩列 lists，保留中間 bridges 與刪 1 切斷分支。
+603 profiles 零刪除、固定點未重算，無新增 Lean theorem。主命題仍未證。
+發布完成時另以即時 Git 核對本地 HEAD、origin/main、遠端 main 一致
+及工作樹乾淨；提交 SHA 由包含本節的提交與 Git 紀錄定位。
