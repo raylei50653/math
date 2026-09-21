@@ -1,0 +1,1726 @@
+{
+  "schema": 1,
+  "scope": "Necessary unbounded path and neighbor lemmas; no general transition exclusion.",
+  "input_sha256": {
+    "Math/KempeSurgery.lean": "6deec3581f45b4ae94a74b4754f507c493e4bed919ac252683ba63cf74071640",
+    "artifacts/c5_cells/cells.json": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+    "artifacts/c5_sector_common_core/observations.json": "c7b5a73067d3448484cb00603f044796db763a80329cfbaf7ed8da1bc0809a21",
+    "artifacts/c5_sector_cross_row/observations.json": "39accd5789e29b76242622ebe5891eab27449fcb0dcfd22a420389074037c439",
+    "artifacts/c5_sector_joint_identity/observations.json": "61329403126271f3e70b0a81806e4fa558e5071b1e286a78c2c9bc04ea7e95af",
+    "artifacts/c5_sector_marked_incidence/observations.json": "933cfe4205b83c76d91dd0f8bd15d88a03bdfd1ebacc0af288561e4eede9e681",
+    "artifacts/c5_sector_mixed_transition/observations.json": "737ebc65701005239d62aac2606e074433b8e066998003ba4b7cce1cefa468f7",
+    "artifacts/c5_sector_positive_control/observations.json": "c34558fa1570ccb717b01b0e917488bba559c42e095b8e548fbd61dad99c8337",
+    "artifacts/c5_sector_saturated_cuts/observations.json": "1847e7a9824c7da176af6ab5a481147619bb66d289ce0da3dd2bb1aab0f4afd2",
+    "artifacts/c5_sector_targets/observations.json": "99ee516b0fb841fe4404531ca8f238ac30222aa3f944bfb9b73998e352874721",
+    "scripts/boundary_relations.py": "6f69347417fcc12775ecd0c5edf653b2ade43c664d0aac1da623b41eecc7ee25",
+    "scripts/c5_cell_enumerator.py": "456dc759f0038a9c4455fcd12df6d37e14edca0a2411e32af585efedb4de6e6e",
+    "scripts/c5_k4_blocks.py": "63ec478a5911eee3d2e1000e2ac032cf56f75272b179f97990f04fb814a2148d",
+    "scripts/c5_sector_common_core.py": "a9f14f3394a94631ba184c8f62b5b62d61d160b59ae9d1499f1d3c39297fbb16",
+    "scripts/c5_sector_cross_row.py": "7f503deec127417c32c1614fa35e3caab3727b8ac698724471ebebde64b17830",
+    "scripts/c5_sector_forced_connectivity.py": "90c2c5f03878955738a03ffa3d6a619a1a9a64c7a7bf61403114c02715d37563",
+    "scripts/c5_sector_joint_identity.py": "cf56135a437197385e8bff22bf79ce5e6664af4456328ac4920e0626533e762a",
+    "scripts/c5_sector_marked_incidence.py": "e3d353b16be5a77a148028932be6394216d70def017e1d24bfa26a91abc78b90",
+    "scripts/c5_sector_mixed_transition.py": "5441414cd1c86829607ea6203ee849132cd3c006aff50ffd77e73f7bcb0c6841",
+    "scripts/c5_sector_neighbor_barrier.py": "f81bba2cc54c8725880319941cb49872cc17a0587403c98ee970f7fd9afd0846",
+    "scripts/c5_sector_saturated_cuts.py": "ae43bf57ecfb23cba4f40858e3915a02f3fc0d205f102e68346307580623a9e1",
+    "scripts/c5_sector_targets.py": "1db47a09d9ae765966310d0d17f3912e52bf9633b6cd7625ab088b2aeb690e56"
+  },
+  "summary": {
+    "source_controls": 6,
+    "source_path_pairs": 6,
+    "source_disjoint_neighbor_path_pairs": 6,
+    "disk_moves": 40,
+    "disk_path_pairs": 0,
+    "disk_old13_applicable": 6,
+    "disk_neighbor_comparisons": 0
+  },
+  "local_incidence": {
+    "interior_crossing": {
+      "neighbor_colors": [
+        0,
+        2,
+        2,
+        3,
+        3
+      ],
+      "minimum_degree": 5
+    },
+    "first_neighbor_crossing": {
+      "neighbor_colors": [
+        0,
+        2,
+        3,
+        3
+      ],
+      "degree": 4,
+      "S_neighbors": [
+        "frame0"
+      ]
+    }
+  },
+  "source_controls": [
+    {
+      "source_index": 41,
+      "coloring_id": 19,
+      "analysis": {
+        "old13_paths": [
+          [
+            1,
+            7,
+            4
+          ]
+        ],
+        "new02_paths": [
+          [
+            1,
+            8,
+            9,
+            3
+          ]
+        ],
+        "path_pairs": 1,
+        "B3": [
+          3,
+          8,
+          9
+        ],
+        "neighbors": [
+          {
+            "neighbor": 9,
+            "route": [
+              0,
+              9,
+              3
+            ],
+            "comparisons": [
+              {
+                "old13": [
+                  1,
+                  7,
+                  4
+                ],
+                "intersection": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 41,
+      "coloring_id": 24,
+      "analysis": {
+        "old13_paths": [
+          [
+            1,
+            6,
+            4
+          ]
+        ],
+        "new02_paths": [],
+        "path_pairs": 0,
+        "B3": [
+          3,
+          9
+        ],
+        "neighbors": [
+          {
+            "neighbor": 9,
+            "route": [
+              0,
+              9,
+              3
+            ],
+            "comparisons": [
+              {
+                "old13": [
+                  1,
+                  6,
+                  4
+                ],
+                "intersection": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 45,
+      "coloring_id": 30,
+      "analysis": {
+        "old13_paths": [
+          [
+            1,
+            6,
+            4
+          ]
+        ],
+        "new02_paths": [
+          [
+            1,
+            8,
+            7,
+            3
+          ],
+          [
+            1,
+            8,
+            9,
+            3
+          ]
+        ],
+        "path_pairs": 2,
+        "B3": [
+          3,
+          7,
+          8,
+          9
+        ],
+        "neighbors": [
+          {
+            "neighbor": 9,
+            "route": [
+              0,
+              9,
+              3
+            ],
+            "comparisons": [
+              {
+                "old13": [
+                  1,
+                  6,
+                  4
+                ],
+                "intersection": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 168,
+      "coloring_id": 18,
+      "analysis": {
+        "old13_paths": [
+          [
+            1,
+            8,
+            4
+          ]
+        ],
+        "new02_paths": [
+          [
+            1,
+            7,
+            6,
+            3
+          ]
+        ],
+        "path_pairs": 1,
+        "B3": [
+          3,
+          6,
+          7
+        ],
+        "neighbors": [
+          {
+            "neighbor": 6,
+            "route": [
+              0,
+              6,
+              3
+            ],
+            "comparisons": [
+              {
+                "old13": [
+                  1,
+                  8,
+                  4
+                ],
+                "intersection": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 168,
+      "coloring_id": 21,
+      "analysis": {
+        "old13_paths": [
+          [
+            1,
+            9,
+            4
+          ]
+        ],
+        "new02_paths": [],
+        "path_pairs": 0,
+        "B3": [
+          3,
+          6
+        ],
+        "neighbors": [
+          {
+            "neighbor": 6,
+            "route": [
+              0,
+              6,
+              3
+            ],
+            "comparisons": [
+              {
+                "old13": [
+                  1,
+                  9,
+                  4
+                ],
+                "intersection": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 170,
+      "coloring_id": 26,
+      "analysis": {
+        "old13_paths": [
+          [
+            1,
+            9,
+            4
+          ]
+        ],
+        "new02_paths": [
+          [
+            1,
+            7,
+            6,
+            3
+          ],
+          [
+            1,
+            7,
+            8,
+            3
+          ]
+        ],
+        "path_pairs": 2,
+        "B3": [
+          3,
+          6,
+          7,
+          8
+        ],
+        "neighbors": [
+          {
+            "neighbor": 6,
+            "route": [
+              0,
+              6,
+              3
+            ],
+            "comparisons": [
+              {
+                "old13": [
+                  1,
+                  9,
+                  4
+                ],
+                "intersection": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "disk_controls": [
+    {
+      "saved_index": 0,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            2,
+            1
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [
+              [
+                1,
+                5,
+                6,
+                3
+              ]
+            ],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              5,
+              6
+            ],
+            "neighbors": [
+              {
+                "neighbor": 5,
+                "route": [
+                  0,
+                  5,
+                  6,
+                  3
+                ],
+                "comparisons": []
+              },
+              {
+                "neighbor": 6,
+                "route": [
+                  0,
+                  6,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            3,
+            1
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              6
+            ],
+            "neighbors": [
+              {
+                "neighbor": 6,
+                "route": [
+                  0,
+                  6,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 4,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            2
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [
+              [
+                1,
+                6,
+                5,
+                3
+              ]
+            ],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              5,
+              6
+            ],
+            "neighbors": [
+              {
+                "neighbor": 5,
+                "route": [
+                  0,
+                  5,
+                  3
+                ],
+                "comparisons": []
+              },
+              {
+                "neighbor": 6,
+                "route": [
+                  0,
+                  6,
+                  5,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            3
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              5
+            ],
+            "neighbors": [
+              {
+                "neighbor": 5,
+                "route": [
+                  0,
+                  5,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 12,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            2,
+            3
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            3,
+            3
+          ],
+          "analysis": {
+            "old13_paths": [
+              [
+                1,
+                6,
+                5,
+                7,
+                4
+              ]
+            ],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 13,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            3,
+            2
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            3,
+            3
+          ],
+          "analysis": {
+            "old13_paths": [
+              [
+                1,
+                7,
+                5,
+                6,
+                4
+              ]
+            ],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 20,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            2,
+            1,
+            3
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            3,
+            1,
+            3
+          ],
+          "analysis": {
+            "old13_paths": [
+              [
+                1,
+                5,
+                6,
+                7,
+                4
+              ]
+            ],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 28,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            3,
+            1,
+            2
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            3,
+            1,
+            3
+          ],
+          "analysis": {
+            "old13_paths": [
+              [
+                1,
+                7,
+                6,
+                5,
+                4
+              ]
+            ],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 31,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            2,
+            3,
+            1
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            3,
+            3,
+            1
+          ],
+          "analysis": {
+            "old13_paths": [
+              [
+                1,
+                5,
+                7,
+                6,
+                4
+              ]
+            ],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 38,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            3,
+            2,
+            1
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            3,
+            3,
+            1
+          ],
+          "analysis": {
+            "old13_paths": [
+              [
+                1,
+                6,
+                7,
+                5,
+                4
+              ]
+            ],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 40,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            2,
+            1,
+            3
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            3,
+            1,
+            2
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 41,
+      "queries": []
+    },
+    {
+      "saved_index": 42,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            2,
+            1,
+            0
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [
+              [
+                1,
+                5,
+                6,
+                3
+              ]
+            ],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              5,
+              6
+            ],
+            "neighbors": [
+              {
+                "neighbor": 5,
+                "route": [
+                  0,
+                  5,
+                  6,
+                  3
+                ],
+                "comparisons": []
+              },
+              {
+                "neighbor": 6,
+                "route": [
+                  0,
+                  6,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            3,
+            1,
+            0
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              6
+            ],
+            "neighbors": [
+              {
+                "neighbor": 6,
+                "route": [
+                  0,
+                  6,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 43,
+      "queries": []
+    },
+    {
+      "saved_index": 50,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            2,
+            3,
+            1
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            3,
+            2,
+            1
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 51,
+      "queries": []
+    },
+    {
+      "saved_index": 53,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            2,
+            0,
+            1
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [
+              [
+                1,
+                5,
+                7,
+                3
+              ]
+            ],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              5,
+              7
+            ],
+            "neighbors": [
+              {
+                "neighbor": 5,
+                "route": [
+                  0,
+                  5,
+                  7,
+                  3
+                ],
+                "comparisons": []
+              },
+              {
+                "neighbor": 7,
+                "route": [
+                  0,
+                  7,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            3,
+            0,
+            1
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              7
+            ],
+            "neighbors": [
+              {
+                "neighbor": 7,
+                "route": [
+                  0,
+                  7,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 56,
+      "queries": []
+    },
+    {
+      "saved_index": 60,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            2,
+            3
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            3,
+            2
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 61,
+      "queries": []
+    },
+    {
+      "saved_index": 65,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            2,
+            3
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            3,
+            2
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 66,
+      "queries": []
+    },
+    {
+      "saved_index": 70,
+      "queries": []
+    },
+    {
+      "saved_index": 71,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            2,
+            0
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [
+              [
+                1,
+                6,
+                5,
+                3
+              ]
+            ],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              5,
+              6
+            ],
+            "neighbors": [
+              {
+                "neighbor": 5,
+                "route": [
+                  0,
+                  5,
+                  3
+                ],
+                "comparisons": []
+              },
+              {
+                "neighbor": 6,
+                "route": [
+                  0,
+                  6,
+                  5,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            3,
+            0
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              5
+            ],
+            "neighbors": [
+              {
+                "neighbor": 5,
+                "route": [
+                  0,
+                  5,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 72,
+      "queries": []
+    },
+    {
+      "saved_index": 73,
+      "queries": []
+    },
+    {
+      "saved_index": 75,
+      "queries": []
+    },
+    {
+      "saved_index": 76,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            0,
+            2
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [
+              [
+                1,
+                7,
+                5,
+                3
+              ]
+            ],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              5,
+              7
+            ],
+            "neighbors": [
+              {
+                "neighbor": 5,
+                "route": [
+                  0,
+                  5,
+                  3
+                ],
+                "comparisons": []
+              },
+              {
+                "neighbor": 7,
+                "route": [
+                  0,
+                  7,
+                  5,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            0,
+            3
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              5
+            ],
+            "neighbors": [
+              {
+                "neighbor": 5,
+                "route": [
+                  0,
+                  5,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 77,
+      "queries": []
+    },
+    {
+      "saved_index": 78,
+      "queries": []
+    },
+    {
+      "saved_index": 100,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            2,
+            3,
+            1
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            3,
+            2,
+            1
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 101,
+      "queries": []
+    },
+    {
+      "saved_index": 103,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            2,
+            1,
+            3
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            3,
+            1,
+            2
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3
+            ],
+            "neighbors": []
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 104,
+      "queries": []
+    },
+    {
+      "saved_index": 106,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            0,
+            2,
+            1
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [
+              [
+                1,
+                6,
+                7,
+                3
+              ]
+            ],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              6,
+              7
+            ],
+            "neighbors": [
+              {
+                "neighbor": 6,
+                "route": [
+                  0,
+                  6,
+                  7,
+                  3
+                ],
+                "comparisons": []
+              },
+              {
+                "neighbor": 7,
+                "route": [
+                  0,
+                  7,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            0,
+            3,
+            1
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              7
+            ],
+            "neighbors": [
+              {
+                "neighbor": 7,
+                "route": [
+                  0,
+                  7,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 108,
+      "queries": [
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            0,
+            1,
+            2
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [
+              [
+                1,
+                7,
+                6,
+                3
+              ]
+            ],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              6,
+              7
+            ],
+            "neighbors": [
+              {
+                "neighbor": 6,
+                "route": [
+                  0,
+                  6,
+                  3
+                ],
+                "comparisons": []
+              },
+              {
+                "neighbor": 7,
+                "route": [
+                  0,
+                  7,
+                  6,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        },
+        {
+          "coloring": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            0,
+            1,
+            3
+          ],
+          "analysis": {
+            "old13_paths": [],
+            "new02_paths": [],
+            "path_pairs": 0,
+            "B3": [
+              3,
+              6
+            ],
+            "neighbors": [
+              {
+                "neighbor": 6,
+                "route": [
+                  0,
+                  6,
+                  3
+                ],
+                "comparisons": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "saved_index": 112,
+      "queries": []
+    },
+    {
+      "saved_index": 114,
+      "queries": []
+    },
+    {
+      "saved_index": 116,
+      "queries": []
+    },
+    {
+      "saved_index": 117,
+      "queries": []
+    }
+  ],
+  "closure_effect": {
+    "profile_deletions": 0,
+    "inherited_profiles": 603,
+    "fixed_point_recomputed": false
+  }
+}

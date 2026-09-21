@@ -1,0 +1,1912 @@
+{
+  "schema": 1,
+  "baseline": "597890b",
+  "scope": "Paper frame-cut bound |C|>=5 for disk with both routes; saved weaker controls and forced subgraphs only.",
+  "input_sha256": {
+    "Math/KempeSurgery.lean": "6deec3581f45b4ae94a74b4754f507c493e4bed919ac252683ba63cf74071640",
+    "artifacts/c5_cells/cells.json": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+    "artifacts/c5_sector_common_core/observations.json": "c7b5a73067d3448484cb00603f044796db763a80329cfbaf7ed8da1bc0809a21",
+    "artifacts/c5_sector_cross_row/observations.json": "39accd5789e29b76242622ebe5891eab27449fcb0dcfd22a420389074037c439",
+    "artifacts/c5_sector_joint_identity/observations.json": "61329403126271f3e70b0a81806e4fa558e5071b1e286a78c2c9bc04ea7e95af",
+    "artifacts/c5_sector_marked_incidence/observations.json": "933cfe4205b83c76d91dd0f8bd15d88a03bdfd1ebacc0af288561e4eede9e681",
+    "artifacts/c5_sector_mixed_transition/observations.json": "737ebc65701005239d62aac2606e074433b8e066998003ba4b7cce1cefa468f7",
+    "artifacts/c5_sector_positive_control/observations.json": "c34558fa1570ccb717b01b0e917488bba559c42e095b8e548fbd61dad99c8337",
+    "artifacts/c5_sector_saturated_cuts/observations.json": "1847e7a9824c7da176af6ab5a481147619bb66d289ce0da3dd2bb1aab0f4afd2",
+    "artifacts/c5_sector_targets/observations.json": "99ee516b0fb841fe4404531ca8f238ac30222aa3f944bfb9b73998e352874721",
+    "scripts/boundary_relations.py": "6f69347417fcc12775ecd0c5edf653b2ade43c664d0aac1da623b41eecc7ee25",
+    "scripts/c5_cell_enumerator.py": "456dc759f0038a9c4455fcd12df6d37e14edca0a2411e32af585efedb4de6e6e",
+    "scripts/c5_k4_blocks.py": "63ec478a5911eee3d2e1000e2ac032cf56f75272b179f97990f04fb814a2148d",
+    "scripts/c5_sector_common_core.py": "a9f14f3394a94631ba184c8f62b5b62d61d160b59ae9d1499f1d3c39297fbb16",
+    "scripts/c5_sector_cross_row.py": "7f503deec127417c32c1614fa35e3caab3727b8ac698724471ebebde64b17830",
+    "scripts/c5_sector_forced_connectivity.py": "90c2c5f03878955738a03ffa3d6a619a1a9a64c7a7bf61403114c02715d37563",
+    "scripts/c5_sector_frame_cut.py": "18f085eedd8cc40132512c680b62e58a12784702efe2dd89440d7dbbf45b1c8c",
+    "scripts/c5_sector_joint_identity.py": "cf56135a437197385e8bff22bf79ce5e6664af4456328ac4920e0626533e762a",
+    "scripts/c5_sector_marked_incidence.py": "e3d353b16be5a77a148028932be6394216d70def017e1d24bfa26a91abc78b90",
+    "scripts/c5_sector_mixed_transition.py": "5441414cd1c86829607ea6203ee849132cd3c006aff50ffd77e73f7bcb0c6841",
+    "scripts/c5_sector_saturated_cuts.py": "ae43bf57ecfb23cba4f40858e3915a02f3fc0d205f102e68346307580623a9e1",
+    "scripts/c5_sector_targets.py": "1db47a09d9ae765966310d0d17f3912e52bf9633b6cd7625ab088b2aeb690e56"
+  },
+  "summary": {
+    "saved_moves": 40,
+    "frame_cut_moves": 12,
+    "frame_cut_with_1_routes": 6,
+    "frame_cut_all_new_separations": 6,
+    "frame_cut_with_0_routes": 6,
+    "forced_subgraph_subdivisions": 2
+  },
+  "disk_controls": [
+    {
+      "saved_index": 42,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        2,
+        1,
+        0
+      ],
+      "analysis": {
+        "blocks": [
+          {
+            "block": [
+              0,
+              6,
+              7
+            ],
+            "neighbors_of_1": [
+              7
+            ]
+          },
+          {
+            "block": [
+              2
+            ],
+            "neighbors_of_1": [
+              2
+            ]
+          }
+        ],
+        "path_0_1": [
+          0,
+          6,
+          7,
+          1
+        ],
+        "distinct_inner_vertices": [
+          7,
+          6,
+          5
+        ],
+        "distinct_neighbors_of_1": [
+          7,
+          2,
+          5
+        ],
+        "degree_G_1": 3,
+        "degree_K_1": 4,
+        "required_routes": [
+          {
+            "d": 2,
+            "saturated_stars": [
+              6
+            ],
+            "required_route": [
+              1,
+              5,
+              6,
+              3
+            ],
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          },
+          {
+            "d": 3,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          }
+        ],
+        "old13_last_entry": null,
+        "new_separations": [
+          {
+            "d": 2,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": false,
+            "component": [
+              0,
+              2,
+              3,
+              4,
+              5,
+              7
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              2
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              2,
+              4
+            ],
+            "separated": true,
+            "component": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "saved_index": 42,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        3,
+        1,
+        0
+      ],
+      "analysis": {
+        "blocks": [
+          {
+            "block": [
+              0,
+              6,
+              7
+            ],
+            "neighbors_of_1": [
+              7
+            ]
+          },
+          {
+            "block": [
+              2
+            ],
+            "neighbors_of_1": [
+              2
+            ]
+          }
+        ],
+        "path_0_1": [
+          0,
+          6,
+          7,
+          1
+        ],
+        "distinct_inner_vertices": [
+          7,
+          6
+        ],
+        "distinct_neighbors_of_1": [
+          7,
+          2
+        ],
+        "degree_G_1": 3,
+        "degree_K_1": 4,
+        "required_routes": [
+          {
+            "d": 2,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          },
+          {
+            "d": 3,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          }
+        ],
+        "old13_last_entry": null,
+        "new_separations": [
+          {
+            "d": 2,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              2
+            ],
+            "separated": true,
+            "component": [
+              0,
+              5,
+              7
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0,
+              5,
+              7
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              2,
+              4
+            ],
+            "separated": true,
+            "component": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "saved_index": 53,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        2,
+        0,
+        1
+      ],
+      "analysis": {
+        "blocks": [
+          {
+            "block": [
+              0,
+              6,
+              7
+            ],
+            "neighbors_of_1": [
+              6
+            ]
+          },
+          {
+            "block": [
+              2
+            ],
+            "neighbors_of_1": [
+              2
+            ]
+          }
+        ],
+        "path_0_1": [
+          0,
+          7,
+          6,
+          1
+        ],
+        "distinct_inner_vertices": [
+          6,
+          7,
+          5
+        ],
+        "distinct_neighbors_of_1": [
+          6,
+          2,
+          5
+        ],
+        "degree_G_1": 3,
+        "degree_K_1": 4,
+        "required_routes": [
+          {
+            "d": 2,
+            "saturated_stars": [
+              7
+            ],
+            "required_route": [
+              1,
+              5,
+              7,
+              3
+            ],
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          },
+          {
+            "d": 3,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          }
+        ],
+        "old13_last_entry": null,
+        "new_separations": [
+          {
+            "d": 2,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": false,
+            "component": [
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              2
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              2,
+              4
+            ],
+            "separated": true,
+            "component": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "saved_index": 53,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        3,
+        0,
+        1
+      ],
+      "analysis": {
+        "blocks": [
+          {
+            "block": [
+              0,
+              6,
+              7
+            ],
+            "neighbors_of_1": [
+              6
+            ]
+          },
+          {
+            "block": [
+              2
+            ],
+            "neighbors_of_1": [
+              2
+            ]
+          }
+        ],
+        "path_0_1": [
+          0,
+          7,
+          6,
+          1
+        ],
+        "distinct_inner_vertices": [
+          6,
+          7
+        ],
+        "distinct_neighbors_of_1": [
+          6,
+          2
+        ],
+        "degree_G_1": 3,
+        "degree_K_1": 4,
+        "required_routes": [
+          {
+            "d": 2,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          },
+          {
+            "d": 3,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          }
+        ],
+        "old13_last_entry": null,
+        "new_separations": [
+          {
+            "d": 2,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              2
+            ],
+            "separated": true,
+            "component": [
+              0,
+              5,
+              6
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0,
+              5,
+              6
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              2,
+              4
+            ],
+            "separated": true,
+            "component": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "saved_index": 71,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        1,
+        2,
+        0
+      ],
+      "analysis": {
+        "blocks": [
+          {
+            "block": [
+              0,
+              5,
+              7
+            ],
+            "neighbors_of_1": [
+              7
+            ]
+          },
+          {
+            "block": [
+              2
+            ],
+            "neighbors_of_1": [
+              2
+            ]
+          }
+        ],
+        "path_0_1": [
+          0,
+          5,
+          7,
+          1
+        ],
+        "distinct_inner_vertices": [
+          7,
+          5,
+          6
+        ],
+        "distinct_neighbors_of_1": [
+          7,
+          2,
+          6
+        ],
+        "degree_G_1": 3,
+        "degree_K_1": 4,
+        "required_routes": [
+          {
+            "d": 2,
+            "saturated_stars": [
+              5
+            ],
+            "required_route": [
+              1,
+              6,
+              5,
+              3
+            ],
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          },
+          {
+            "d": 3,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          }
+        ],
+        "old13_last_entry": null,
+        "new_separations": [
+          {
+            "d": 2,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": false,
+            "component": [
+              0,
+              2,
+              3,
+              4,
+              6,
+              7
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              2
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              2,
+              4
+            ],
+            "separated": true,
+            "component": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "saved_index": 71,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        1,
+        3,
+        0
+      ],
+      "analysis": {
+        "blocks": [
+          {
+            "block": [
+              0,
+              5,
+              7
+            ],
+            "neighbors_of_1": [
+              7
+            ]
+          },
+          {
+            "block": [
+              2
+            ],
+            "neighbors_of_1": [
+              2
+            ]
+          }
+        ],
+        "path_0_1": [
+          0,
+          5,
+          7,
+          1
+        ],
+        "distinct_inner_vertices": [
+          7,
+          5
+        ],
+        "distinct_neighbors_of_1": [
+          7,
+          2
+        ],
+        "degree_G_1": 3,
+        "degree_K_1": 4,
+        "required_routes": [
+          {
+            "d": 2,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          },
+          {
+            "d": 3,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          }
+        ],
+        "old13_last_entry": null,
+        "new_separations": [
+          {
+            "d": 2,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              2
+            ],
+            "separated": true,
+            "component": [
+              0,
+              6,
+              7
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0,
+              6,
+              7
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              2,
+              4
+            ],
+            "separated": true,
+            "component": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "saved_index": 76,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        1,
+        0,
+        2
+      ],
+      "analysis": {
+        "blocks": [
+          {
+            "block": [
+              0,
+              5,
+              6
+            ],
+            "neighbors_of_1": [
+              6
+            ]
+          },
+          {
+            "block": [
+              2
+            ],
+            "neighbors_of_1": [
+              2
+            ]
+          }
+        ],
+        "path_0_1": [
+          0,
+          5,
+          6,
+          1
+        ],
+        "distinct_inner_vertices": [
+          6,
+          5,
+          7
+        ],
+        "distinct_neighbors_of_1": [
+          6,
+          2,
+          7
+        ],
+        "degree_G_1": 3,
+        "degree_K_1": 4,
+        "required_routes": [
+          {
+            "d": 2,
+            "saturated_stars": [
+              5
+            ],
+            "required_route": [
+              1,
+              7,
+              5,
+              3
+            ],
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          },
+          {
+            "d": 3,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          }
+        ],
+        "old13_last_entry": null,
+        "new_separations": [
+          {
+            "d": 2,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": false,
+            "component": [
+              0,
+              2,
+              3,
+              4,
+              6,
+              7
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              2
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              2,
+              4
+            ],
+            "separated": true,
+            "component": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "saved_index": 76,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        1,
+        0,
+        3
+      ],
+      "analysis": {
+        "blocks": [
+          {
+            "block": [
+              0,
+              5,
+              6
+            ],
+            "neighbors_of_1": [
+              6
+            ]
+          },
+          {
+            "block": [
+              2
+            ],
+            "neighbors_of_1": [
+              2
+            ]
+          }
+        ],
+        "path_0_1": [
+          0,
+          5,
+          6,
+          1
+        ],
+        "distinct_inner_vertices": [
+          6,
+          5
+        ],
+        "distinct_neighbors_of_1": [
+          6,
+          2
+        ],
+        "degree_G_1": 3,
+        "degree_K_1": 4,
+        "required_routes": [
+          {
+            "d": 2,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          },
+          {
+            "d": 3,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          }
+        ],
+        "old13_last_entry": null,
+        "new_separations": [
+          {
+            "d": 2,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              2
+            ],
+            "separated": true,
+            "component": [
+              0,
+              6,
+              7
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0,
+              6,
+              7
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              2,
+              4
+            ],
+            "separated": true,
+            "component": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "saved_index": 106,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        0,
+        2,
+        1
+      ],
+      "analysis": {
+        "blocks": [
+          {
+            "block": [
+              0,
+              5,
+              7
+            ],
+            "neighbors_of_1": [
+              5
+            ]
+          },
+          {
+            "block": [
+              2
+            ],
+            "neighbors_of_1": [
+              2
+            ]
+          }
+        ],
+        "path_0_1": [
+          0,
+          7,
+          5,
+          1
+        ],
+        "distinct_inner_vertices": [
+          5,
+          7,
+          6
+        ],
+        "distinct_neighbors_of_1": [
+          5,
+          2,
+          6
+        ],
+        "degree_G_1": 3,
+        "degree_K_1": 4,
+        "required_routes": [
+          {
+            "d": 2,
+            "saturated_stars": [
+              7
+            ],
+            "required_route": [
+              1,
+              6,
+              7,
+              3
+            ],
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          },
+          {
+            "d": 3,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          }
+        ],
+        "old13_last_entry": null,
+        "new_separations": [
+          {
+            "d": 2,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": false,
+            "component": [
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              2
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              2,
+              4
+            ],
+            "separated": true,
+            "component": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "saved_index": 106,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        0,
+        3,
+        1
+      ],
+      "analysis": {
+        "blocks": [
+          {
+            "block": [
+              0,
+              5,
+              7
+            ],
+            "neighbors_of_1": [
+              5
+            ]
+          },
+          {
+            "block": [
+              2
+            ],
+            "neighbors_of_1": [
+              2
+            ]
+          }
+        ],
+        "path_0_1": [
+          0,
+          7,
+          5,
+          1
+        ],
+        "distinct_inner_vertices": [
+          5,
+          7
+        ],
+        "distinct_neighbors_of_1": [
+          5,
+          2
+        ],
+        "degree_G_1": 3,
+        "degree_K_1": 4,
+        "required_routes": [
+          {
+            "d": 2,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          },
+          {
+            "d": 3,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          }
+        ],
+        "old13_last_entry": null,
+        "new_separations": [
+          {
+            "d": 2,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              2
+            ],
+            "separated": true,
+            "component": [
+              0,
+              5,
+              6
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0,
+              5,
+              6
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              2,
+              4
+            ],
+            "separated": true,
+            "component": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "saved_index": 108,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        0,
+        1,
+        2
+      ],
+      "analysis": {
+        "blocks": [
+          {
+            "block": [
+              0,
+              5,
+              6
+            ],
+            "neighbors_of_1": [
+              5
+            ]
+          },
+          {
+            "block": [
+              2
+            ],
+            "neighbors_of_1": [
+              2
+            ]
+          }
+        ],
+        "path_0_1": [
+          0,
+          6,
+          5,
+          1
+        ],
+        "distinct_inner_vertices": [
+          5,
+          6,
+          7
+        ],
+        "distinct_neighbors_of_1": [
+          5,
+          2,
+          7
+        ],
+        "degree_G_1": 3,
+        "degree_K_1": 4,
+        "required_routes": [
+          {
+            "d": 2,
+            "saturated_stars": [
+              6
+            ],
+            "required_route": [
+              1,
+              7,
+              6,
+              3
+            ],
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          },
+          {
+            "d": 3,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          }
+        ],
+        "old13_last_entry": null,
+        "new_separations": [
+          {
+            "d": 2,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": false,
+            "component": [
+              0,
+              2,
+              3,
+              4,
+              5,
+              7
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              2
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              2,
+              4
+            ],
+            "separated": true,
+            "component": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "saved_index": 108,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        0,
+        1,
+        3
+      ],
+      "analysis": {
+        "blocks": [
+          {
+            "block": [
+              0,
+              5,
+              6
+            ],
+            "neighbors_of_1": [
+              5
+            ]
+          },
+          {
+            "block": [
+              2
+            ],
+            "neighbors_of_1": [
+              2
+            ]
+          }
+        ],
+        "path_0_1": [
+          0,
+          6,
+          5,
+          1
+        ],
+        "distinct_inner_vertices": [
+          5,
+          6
+        ],
+        "distinct_neighbors_of_1": [
+          5,
+          2
+        ],
+        "degree_G_1": 3,
+        "degree_K_1": 4,
+        "required_routes": [
+          {
+            "d": 2,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          },
+          {
+            "d": 3,
+            "saturated_stars": [],
+            "required_route": null,
+            "cut_separates": true,
+            "bypass": null,
+            "nonplanar_certificate": null
+          }
+        ],
+        "old13_last_entry": null,
+        "new_separations": [
+          {
+            "d": 2,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              2
+            ],
+            "separated": true,
+            "component": [
+              0,
+              5,
+              7
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              0,
+              4
+            ],
+            "separated": true,
+            "component": [
+              0,
+              5,
+              7
+            ]
+          },
+          {
+            "d": 3,
+            "pair": [
+              2,
+              4
+            ],
+            "separated": true,
+            "component": [
+              2
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "forced_four_inner_subgraphs": [
+    {
+      "connector": [
+        8,
+        5
+      ],
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "certificate": {
+        "P": [
+          0,
+          6,
+          3
+        ],
+        "Q": [
+          1,
+          8,
+          4
+        ],
+        "R": [
+          6,
+          5,
+          8
+        ],
+        "left": [
+          0,
+          3,
+          8
+        ],
+        "right": [
+          1,
+          4,
+          6
+        ],
+        "nine_paths": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            3,
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            8,
+            5,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "connector": [
+        8,
+        7
+      ],
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "certificate": {
+        "P": [
+          0,
+          6,
+          3
+        ],
+        "Q": [
+          1,
+          8,
+          4
+        ],
+        "R": [
+          6,
+          7,
+          8
+        ],
+        "left": [
+          0,
+          3,
+          8
+        ],
+        "right": [
+          1,
+          4,
+          6
+        ],
+        "nine_paths": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            3,
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            8,
+            7,
+            6
+          ]
+        ]
+      }
+    }
+  ],
+  "closure_effect": {
+    "profile_deletions": 0,
+    "inherited_profiles": 603,
+    "fixed_point_recomputed": false
+  }
+}

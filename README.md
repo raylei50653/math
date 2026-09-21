@@ -12,18 +12,16 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 各輪完整紀錄；其中「下一步／未提交」只描述當時 |
 
-最新：[3903 degree-4 stars 的兩種分離集](docs/c5_sector_saturated_cuts.md)。
-若 disk 中的 397→330 可實現，S 去掉框點 1 後，鄰色恰為 0,0,2,2
-及 0,0,3,3 的兩種 stars 都必須分離 0、2。若刪 1 尚未分離它們，
-則至少需要六個內點；不是一般排除或擴大搜尋的指令。
-既有六份來源各驗出 K3,3 證書；38 張已存無共同鄰點 disk 圖的單列
-控制有 14 項適用分離要求，全部通過。603 profiles 沿用。
-下一問保留「框點 1 切斷 S」及「兩種分離集」兩分支，結合新 12／13
-完整分離條件。一般 3903 非平面仍未證。
-見 [STATUS §51](docs/STATUS.md#51-3903-degree-4-stars-兩種分離集與條件式六內點下界)。
-本次四輪整合提交與重播範圍見 [STATUS §52](docs/STATUS.md#52-3903-四輪成果整理與提交核對)。
-前輪：[跨色身份與共同鄰點](docs/c5_sector_joint_identity.md)、
-[單步共同核心](docs/c5_sector_common_core.md)。
+最新：[葉點接回的兩種必要 corner 次序](docs/c5_sector_leaf_corners.md)。
+非空葉點分支刪 0、w 後，J 整體連通，內部仍可分為三個分量。
+固定繼承 embedding 與 corners，接回樹要求 p,q,r 的接入口連續；
+聯立舊 13 兩側與新 02 的 p–3 互斥路徑，24 種次序只剩
+`1,4,b,r,p,q` 與 `1,4,r,p,q,b`。這是必要條件，未證完整實現或排除。
+下一問聯立兩種次序中的 S′ 連通、舊 12 連通與新 13 分離。
+非空分支 ≥8、整體 ≥6 下界不變；603 profiles 沿用、零刪除。
+紙面＋Python，未新增 Lean theorem。六輪整合與重播範圍見
+[STATUS §59](docs/STATUS.md#59-3903-六輪成果整理與提交核對)。
+見 [STATUS §58](docs/STATUS.md#58-3903-葉點接回的兩種必要-corner-次序)。
 
 保留 R31：[同末端不同二接點正常形拓撲](docs/c5_degree5_same_terminal_triangles.md)
 完成 C3–C3–C3 簡單臂的 408 模板、327,968 種接線非 disk 覆蓋；

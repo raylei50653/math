@@ -1,0 +1,1037 @@
+{
+  "schema": 1,
+  "scope": "All-vertex two-color partition identities for deleting frame0 and the saturated leaf; no complete Sigma or disk equivalence.",
+  "input_sha256": {
+    "Math/KempeSurgery.lean": "6deec3581f45b4ae94a74b4754f507c493e4bed919ac252683ba63cf74071640",
+    "artifacts/c5_cells/cells.json": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+    "artifacts/c5_sector_common_core/observations.json": "c7b5a73067d3448484cb00603f044796db763a80329cfbaf7ed8da1bc0809a21",
+    "artifacts/c5_sector_cross_row/observations.json": "39accd5789e29b76242622ebe5891eab27449fcb0dcfd22a420389074037c439",
+    "artifacts/c5_sector_joint_identity/observations.json": "61329403126271f3e70b0a81806e4fa558e5071b1e286a78c2c9bc04ea7e95af",
+    "artifacts/c5_sector_leaf_exception/observations.json": "69117f578b6935c8daa5d0d9e3db58a22b1a1f8b15e6c0cd9e79c59571822c42",
+    "artifacts/c5_sector_marked_incidence/observations.json": "933cfe4205b83c76d91dd0f8bd15d88a03bdfd1ebacc0af288561e4eede9e681",
+    "artifacts/c5_sector_mixed_transition/observations.json": "737ebc65701005239d62aac2606e074433b8e066998003ba4b7cce1cefa468f7",
+    "artifacts/c5_sector_neighbor_barrier/observations.json": "806e4a90892aa5ed8f6ca7626de5d19764d83e7ca7c23696880361d3a75b7932",
+    "artifacts/c5_sector_positive_control/observations.json": "c34558fa1570ccb717b01b0e917488bba559c42e095b8e548fbd61dad99c8337",
+    "artifacts/c5_sector_saturated_cuts/observations.json": "1847e7a9824c7da176af6ab5a481147619bb66d289ce0da3dd2bb1aab0f4afd2",
+    "artifacts/c5_sector_targets/observations.json": "99ee516b0fb841fe4404531ca8f238ac30222aa3f944bfb9b73998e352874721",
+    "scripts/boundary_relations.py": "6f69347417fcc12775ecd0c5edf653b2ade43c664d0aac1da623b41eecc7ee25",
+    "scripts/c5_cell_enumerator.py": "456dc759f0038a9c4455fcd12df6d37e14edca0a2411e32af585efedb4de6e6e",
+    "scripts/c5_k4_blocks.py": "63ec478a5911eee3d2e1000e2ac032cf56f75272b179f97990f04fb814a2148d",
+    "scripts/c5_sector_common_core.py": "a9f14f3394a94631ba184c8f62b5b62d61d160b59ae9d1499f1d3c39297fbb16",
+    "scripts/c5_sector_cross_row.py": "7f503deec127417c32c1614fa35e3caab3727b8ac698724471ebebde64b17830",
+    "scripts/c5_sector_forced_connectivity.py": "90c2c5f03878955738a03ffa3d6a619a1a9a64c7a7bf61403114c02715d37563",
+    "scripts/c5_sector_joint_identity.py": "cf56135a437197385e8bff22bf79ce5e6664af4456328ac4920e0626533e762a",
+    "scripts/c5_sector_leaf_exception.py": "7a4e6cf9a31ceb063973381436fb61ea606f90549a223c43dd7fd5b3f8883e2b",
+    "scripts/c5_sector_leaf_reduction.py": "6c7603fef695e49152568da2d5b1b3b93a6085539096a06a75e837df009eb4d2",
+    "scripts/c5_sector_marked_incidence.py": "e3d353b16be5a77a148028932be6394216d70def017e1d24bfa26a91abc78b90",
+    "scripts/c5_sector_mixed_transition.py": "5441414cd1c86829607ea6203ee849132cd3c006aff50ffd77e73f7bcb0c6841",
+    "scripts/c5_sector_neighbor_barrier.py": "f81bba2cc54c8725880319941cb49872cc17a0587403c98ee970f7fd9afd0846",
+    "scripts/c5_sector_saturated_cuts.py": "ae43bf57ecfb23cba4f40858e3915a02f3fc0d205f102e68346307580623a9e1",
+    "scripts/c5_sector_targets.py": "1db47a09d9ae765966310d0d17f3912e52bf9633b6cd7625ab088b2aeb690e56"
+  },
+  "summary": {
+    "saved_symbolic_skeletons": 2,
+    "full_vertex_partition_identities": 24,
+    "automatic_isolation_checks": 8,
+    "marked_degree_losses": 8
+  },
+  "cases": [
+    {
+      "extra_color": 0,
+      "scope": "Saved necessary edge skeleton, not a full sector realization.",
+      "removed": [
+        0,
+        5
+      ],
+      "ports": {
+        "b": 6,
+        "p": 8,
+        "q": 9,
+        "r": 10
+      },
+      "reduced_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          11
+        ]
+      ],
+      "degree_losses": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 0
+      },
+      "pair_identities": [
+        {
+          "coloring": "old",
+          "pair": [
+            0,
+            1
+          ],
+          "reduced_partition": [
+            [
+              1,
+              2,
+              6,
+              7
+            ],
+            [
+              4
+            ],
+            [
+              11
+            ]
+          ],
+          "restored_partition": [
+            [
+              1,
+              2,
+              6,
+              7
+            ],
+            [
+              4
+            ],
+            [
+              11
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "old",
+          "pair": [
+            0,
+            2
+          ],
+          "reduced_partition": [
+            [
+              2,
+              3,
+              8,
+              11
+            ],
+            [
+              7
+            ]
+          ],
+          "restored_partition": [
+            [
+              2,
+              3,
+              8,
+              11
+            ],
+            [
+              7
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "old",
+          "pair": [
+            0,
+            3
+          ],
+          "reduced_partition": [
+            [
+              2
+            ],
+            [
+              7
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ],
+            [
+              11
+            ]
+          ],
+          "restored_partition": [
+            [
+              2
+            ],
+            [
+              7
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ],
+            [
+              11
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "old",
+          "pair": [
+            1,
+            2
+          ],
+          "reduced_partition": [
+            [
+              1,
+              8
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              6
+            ]
+          ],
+          "restored_partition": [
+            [
+              1,
+              8
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              6
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "old",
+          "pair": [
+            1,
+            3
+          ],
+          "reduced_partition": [
+            [
+              1,
+              9
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              6
+            ]
+          ],
+          "restored_partition": [
+            [
+              1,
+              4,
+              9,
+              10
+            ],
+            [
+              6
+            ]
+          ],
+          "join_ports": [
+            9,
+            10
+          ]
+        },
+        {
+          "coloring": "old",
+          "pair": [
+            2,
+            3
+          ],
+          "reduced_partition": [
+            [
+              3
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ]
+          ],
+          "restored_partition": [
+            [
+              3
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "new",
+          "pair": [
+            0,
+            1
+          ],
+          "reduced_partition": [
+            [
+              1,
+              2,
+              6,
+              7
+            ],
+            [
+              4
+            ],
+            [
+              11
+            ]
+          ],
+          "restored_partition": [
+            [
+              1,
+              2,
+              6,
+              7
+            ],
+            [
+              4
+            ],
+            [
+              11
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "new",
+          "pair": [
+            0,
+            2
+          ],
+          "reduced_partition": [
+            [
+              1,
+              3,
+              8,
+              11
+            ],
+            [
+              6
+            ]
+          ],
+          "restored_partition": [
+            [
+              1,
+              3,
+              8,
+              11
+            ],
+            [
+              6
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "new",
+          "pair": [
+            0,
+            3
+          ],
+          "reduced_partition": [
+            [
+              1,
+              9
+            ],
+            [
+              6
+            ],
+            [
+              10
+            ],
+            [
+              11
+            ]
+          ],
+          "restored_partition": [
+            [
+              1,
+              9,
+              10
+            ],
+            [
+              6
+            ],
+            [
+              11
+            ]
+          ],
+          "join_ports": [
+            9,
+            10
+          ]
+        },
+        {
+          "coloring": "new",
+          "pair": [
+            1,
+            2
+          ],
+          "reduced_partition": [
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              7
+            ],
+            [
+              8
+            ]
+          ],
+          "restored_partition": [
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              7
+            ],
+            [
+              8
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "new",
+          "pair": [
+            1,
+            3
+          ],
+          "reduced_partition": [
+            [
+              2
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              7
+            ],
+            [
+              9
+            ]
+          ],
+          "restored_partition": [
+            [
+              2
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              7
+            ],
+            [
+              9
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "new",
+          "pair": [
+            2,
+            3
+          ],
+          "reduced_partition": [
+            [
+              3
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ]
+          ],
+          "restored_partition": [
+            [
+              3
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ]
+          ],
+          "join_ports": null
+        }
+      ]
+    },
+    {
+      "extra_color": 1,
+      "scope": "Saved necessary edge skeleton, not a full sector realization.",
+      "removed": [
+        0,
+        5
+      ],
+      "ports": {
+        "b": 6,
+        "p": 8,
+        "q": 9,
+        "r": 10
+      },
+      "reduced_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          11
+        ]
+      ],
+      "degree_losses": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 0
+      },
+      "pair_identities": [
+        {
+          "coloring": "old",
+          "pair": [
+            0,
+            1
+          ],
+          "reduced_partition": [
+            [
+              1,
+              2,
+              6,
+              7
+            ],
+            [
+              4
+            ],
+            [
+              11
+            ]
+          ],
+          "restored_partition": [
+            [
+              1,
+              2,
+              6,
+              7
+            ],
+            [
+              4
+            ],
+            [
+              11
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "old",
+          "pair": [
+            0,
+            2
+          ],
+          "reduced_partition": [
+            [
+              2,
+              3
+            ],
+            [
+              7
+            ],
+            [
+              8
+            ]
+          ],
+          "restored_partition": [
+            [
+              2,
+              3
+            ],
+            [
+              7
+            ],
+            [
+              8
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "old",
+          "pair": [
+            0,
+            3
+          ],
+          "reduced_partition": [
+            [
+              2
+            ],
+            [
+              7
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ]
+          ],
+          "restored_partition": [
+            [
+              2
+            ],
+            [
+              7
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "old",
+          "pair": [
+            1,
+            2
+          ],
+          "reduced_partition": [
+            [
+              1,
+              3,
+              4,
+              8,
+              11
+            ],
+            [
+              6
+            ]
+          ],
+          "restored_partition": [
+            [
+              1,
+              3,
+              4,
+              8,
+              11
+            ],
+            [
+              6
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "old",
+          "pair": [
+            1,
+            3
+          ],
+          "reduced_partition": [
+            [
+              1,
+              9
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              6
+            ],
+            [
+              11
+            ]
+          ],
+          "restored_partition": [
+            [
+              1,
+              4,
+              9,
+              10
+            ],
+            [
+              6
+            ],
+            [
+              11
+            ]
+          ],
+          "join_ports": [
+            9,
+            10
+          ]
+        },
+        {
+          "coloring": "old",
+          "pair": [
+            2,
+            3
+          ],
+          "reduced_partition": [
+            [
+              3
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ]
+          ],
+          "restored_partition": [
+            [
+              3
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "new",
+          "pair": [
+            0,
+            1
+          ],
+          "reduced_partition": [
+            [
+              1,
+              2,
+              6,
+              7
+            ],
+            [
+              4
+            ],
+            [
+              11
+            ]
+          ],
+          "restored_partition": [
+            [
+              1,
+              2,
+              6,
+              7
+            ],
+            [
+              4
+            ],
+            [
+              11
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "new",
+          "pair": [
+            0,
+            2
+          ],
+          "reduced_partition": [
+            [
+              1,
+              3,
+              8,
+              11
+            ],
+            [
+              6
+            ]
+          ],
+          "restored_partition": [
+            [
+              1,
+              3,
+              8,
+              11
+            ],
+            [
+              6
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "new",
+          "pair": [
+            0,
+            3
+          ],
+          "reduced_partition": [
+            [
+              1,
+              9
+            ],
+            [
+              6
+            ],
+            [
+              10
+            ],
+            [
+              11
+            ]
+          ],
+          "restored_partition": [
+            [
+              1,
+              9,
+              10
+            ],
+            [
+              6
+            ],
+            [
+              11
+            ]
+          ],
+          "join_ports": [
+            9,
+            10
+          ]
+        },
+        {
+          "coloring": "new",
+          "pair": [
+            1,
+            2
+          ],
+          "reduced_partition": [
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              7
+            ],
+            [
+              8
+            ]
+          ],
+          "restored_partition": [
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              7
+            ],
+            [
+              8
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "new",
+          "pair": [
+            1,
+            3
+          ],
+          "reduced_partition": [
+            [
+              2
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              7
+            ],
+            [
+              9
+            ]
+          ],
+          "restored_partition": [
+            [
+              2
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              7
+            ],
+            [
+              9
+            ]
+          ],
+          "join_ports": null
+        },
+        {
+          "coloring": "new",
+          "pair": [
+            2,
+            3
+          ],
+          "reduced_partition": [
+            [
+              3
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ]
+          ],
+          "restored_partition": [
+            [
+              3
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ]
+          ],
+          "join_ports": null
+        }
+      ]
+    }
+  ],
+  "closure_effect": {
+    "profile_deletions": 0,
+    "inherited_profiles": 603,
+    "fixed_point_recomputed": false
+  }
+}

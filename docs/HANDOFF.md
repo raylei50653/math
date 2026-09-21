@@ -1,20 +1,18 @@
 # 研究交接：目前狀態與接手入口
 
-更新：2026-09-19。工作目錄 `/home/ray/math`。
-本次自 `3aaca0b` 整理四輪成果並 commit；不 push。
-最新：[degree-4 stars 的兩種分離集](c5_sector_saturated_cuts.md)。
-一般 disk 必要條件：在 S 去掉框點 1 後，鄰色恰為 0,0,2,2 與
-0,0,3,3 的兩種 stars 都必須分離 0、2。若刪 1 尚未分離它們，
-則 |C|≥6；「刪 1 已分離」仍是另一必要分支，不能省略。
-六份既有來源各保存一份直接核對的 K3,3 九路徑；38 張已存無共同
-鄰點 disk 圖的 40 份指定交換提供 14 項適用要求，全部通過，其中
-8 項使用非空 star 分離集。這些 disk 控制並非完整 397 或 3903。
-共同鄰點障礙仍有效；一般 397→330 未排除，603 profiles 沿用。
-本次重播四個新 checker 與直接前置 mixed-transition checker，全部通過；
-`lake build`（8,822 jobs；既有 lint）及文件連結／whitespace 通過。
-其餘 standalone、minimality 與 R 系列未重跑；未新增 Lean theorem。
-研究結果見 [STATUS §51](STATUS.md#51-3903-degree-4-stars-兩種分離集與條件式六內點下界)，
-本次整合提交範圍見 [STATUS §52](STATUS.md#52-3903-四輪成果整理與提交核對)。
+更新：2026-09-21。工作目錄 `/home/ray/math`。
+本次整合 `597890b` 之後的六輪成果；提交核對見
+[STATUS §59](STATUS.md#59-3903-六輪成果整理與提交核對)。
+最新：[葉點接回的兩種必要 corner 次序](c5_sector_leaf_corners.md)。
+非空葉點分支的 J 整體連通；內部誘導圖仍可有三個分量。
+固定繼承 embedding、框路徑及指定 corners，接回樹的局部充要判準是
+p,q,r 接入口連續。再聯立舊 13 兩側與新 02 的 p–3 互斥路徑，
+24 種次序依序縮為 12、6、2，只剩 `1,4,b,r,p,q`、`1,4,r,p,q,b`。
+尚未充分使用 S′、舊 12 連通與新 13 分離；不宣稱完整實現或一般排除。
+非空分支 ≥8、總體 ≥6 下界不變，空交集分支仍開放。
+六個新 checker、直接前置 saturated-cuts checker、`lake build`、文件檢查通過；
+其餘 standalone、minimality、R 系列未重跑。603 profiles 沿用、零刪除，
+未新增 Lean theorem。見 [STATUS §58](STATUS.md#58-3903-葉點接回的兩種必要-corner-次序)。
 
 先讀本頁，再讀 [文件狀態與變化追蹤](STATUS.md) 及指定報告。
 逐輪數字、舊停止點與發布紀錄完整保存在 [歷史交接](HANDOFF_HISTORY.md)。
@@ -196,21 +194,24 @@ bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle �
 
 ## 2. 精確停止點與下一個窄問題
 
-目前入口為 [degree-4 stars 的兩種分離集](c5_sector_saturated_cuts.md)。
-平面與 disk 在既定子類等價；831＋雙開口接受是否迫使非平面仍未解。
-397→330 要求 N(0)∩N(4)=∅。來源舊 13 的 L3:1→4 與候選新原始
-02 的 L2:1→3，分別迫使 T3、T2 在 S−{1} 中分離 0、2；Td 為
-S 內舊色 1、全部鄰色恰為 0,0,d,d 的內點。兩種類型頂點不能相同。
-因此剩餘分支為：刪框點 1 已分離 0、2；或尚未分離，但兩種 star
-分離集均成立，且至少六個內點。下界不是搜尋擴大指令，不保證可達。
-下一問優先檢查「框點 1 切斷 S」分支，能否由新 12 的 0/4 分離、
-新 13 的 0、2、4 三分離及舊 13 retained 接入口得到矛盾；另一分支
-須保留兩種飽和 stars 的共同身份與位置。舊 13 最後 S 接入口不一定
-等於所選 0–2 路徑與 L3 的交點，不能合併其身份。
-既有控制的六份非平面證書不排除其他來源；38 張 disk 控制只是較弱
-前提的檢查，沒有完整 397 命中。603 profiles 沿用，零刪除，未建立
-新閉包固定點或多步歷史狀態。不擴大圖大小、不預設額外禁 C、不擴及
-其他四目標。固定域的至多三步到見證仍不升格為一般界。
+目前入口為 [葉點 corner 次序](c5_sector_leaf_corners.md) §1–4。
+前置為 [葉點刪除介面](c5_sector_leaf_reduction.md)、
+[鄰點障礙](c5_sector_neighbor_barrier.md)。只處理 N(0)∩B₃ 非空分支；
+B₃ 必須在新 02 刪框點 1 後取包含 3 的分量。
+
+下一問固定兩種必要次序 `1,4,b,r,p,q`、`1,4,r,p,q,b`，聯立
+S′ 包含 b,1,2 的連通性、舊 12 的 1/3 連通及新 13 的 2/4 分離，
+尋找路徑相交時的飽和鄰色障礙。次序方向先走框路徑 1–2–3–4；
+不能遺失 corner 身份，也不能把兩種存活次序當成兩個 sector 實現。
+J 整體連通，但內部可有至多三個分量，每個都須碰 p,q,r 之一。
+涉及 0 的舊 02／03、新 12／13 分離已自動成立，不再作額外限制。
+
+N(0)∩B₃=∅ 分支仍開放、不適用此介面。非空分支原 sector 完整
+ degree=4 時至少八內點；degree≤4 的切斷分支僅證七點。總體下界
+保持六點，未證可達或一般排除。不沿下界擴大圖搜尋。
+本輪核對 36 種樹 rotations、24 種標記次序及交錯配對；無候選圖
+或染色搜尋。603 profiles 沿用、零刪除、未重算固定點，
+不擴及其他四目標或多步歷史。
 
 保留的 R31 缺口：同末端不同二接點的任意長來源到 C3–C3–C3 的
 boundary 固定 minors 尚未補完；參考 [R31](c5_degree5_same_terminal_triangles.md)、
@@ -253,7 +254,28 @@ R27 末端各一臂及 R30 中間不同二接點鏈型已排除；其他三環�
 
 ## 5. 重播入口與驗證範圍
 
-本次整合提交重播入口（四個新 checker 與直接前置 checker、Lean build，另驗文件連結）：
+本輪重播入口：
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_sector_frame_cut.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_five_inner.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_neighbor_barrier.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_leaf_exception.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_saturated_cuts.py --check
+uv run python scripts/c5_sector_leaf_corners.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_leaf_reduction.py --check
+lake build
+git diff --check
+```
+
+本次整合核對範圍見 [STATUS §59](STATUS.md#59-3903-六輪成果整理與提交核對)。
+corner 研究輪範圍見 [STATUS §58](STATUS.md#58-3903-葉點接回的兩種必要-corner-次序)。
+葉點刪除輪見 STATUS §57；
+前輪 leaf-exception／neighbor-barrier／saturated-cuts 核對見 STATUS §56；
+更早各輪範圍見 STATUS §53–55。
+以下為前次整合提交與更早各輪的驗證紀錄。
+
+前次整合提交重播入口（四個新 checker 與直接前置 checker、Lean build，另驗文件連結）：
 
 ```bash
 uv run --with networkx==3.5 python scripts/c5_sector_marked_incidence.py --check
@@ -265,7 +287,7 @@ lake build
 git diff --check
 ```
 
-本次提交核對範圍見 [STATUS §52](STATUS.md#52-3903-四輪成果整理與提交核對)；較早發布紀錄見 STATUS §45／47。
+前次提交核對範圍見 [STATUS §52](STATUS.md#52-3903-四輪成果整理與提交核對)；較早發布紀錄見 STATUS §45／47。
 
 前次文件盤點只核對索引、連結與 whitespace，未重跑研究驗證。
 先前提交的 R24–R31 checker 與 Lean build 核對結果另見 STATUS §37。

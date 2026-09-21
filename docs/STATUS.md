@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新日期：2026-09-19。最新研究為 [兩種 star 分離集](c5_sector_saturated_cuts.md)，見 §51；四輪整合提交核對見 §52。
+更新日期：2026-09-19。最新研究為 [五內點路徑分類](c5_sector_five_inner.md)，見 §54；四輪整合提交核對見 §52。
 先前提交自 `e14874d` 整合 R24–R31 與文件盤點。
 R31 研究見 §35，文件盤點見 §36，該次發布核對見 §37；既有發布核對見 §27。
 各輪當時的未提交狀態保留於原節；即時提交與遠端 SHA 以 Git 為準。
@@ -1415,3 +1415,165 @@ minimality 及 R 系列 standalone 未重跑，沒有重新生成圖或閉包。
 停止點保留 §51 的兩分支：優先檢查框點 1 切斷 S 的情形；另一分支
 保留 T₂／T₃ 的共同身份與條件式六內點下界。603 profiles 沿用，
 一般 397→330、3903 非平面、R31 與主命題仍未證，未新增 Lean theorem。
+
+
+## 53. 3903 框點切斷分支與五內點必要下界
+
+2026-09-19，自乾淨 HEAD `597890b` 接手。見
+[報告](c5_sector_frame_cut.md)。刪框點 1 切斷 S 中 0、2 時，S 內
+0–1 路徑及舊 13／新 02 路徑強迫四個不同色內點與 deg_K(1)≥5。
+框點不受內點度數界約束，不能以此宣稱矛盾。但四內點等號情形強迫
+0–b–3 與 1–q–4 兩條交錯互斥 Γ-paths，因此 disk 此分支 |C|≥5。
+另一分支沿用 |C|≥6，得到一般 disk 397→330 必有至少五內點。
+未證下界可達，未擴大圖搜尋；一般排除仍未解。
+
+重讀前輪 40 份保存交換，其中 12 份屬切斷分支，6 份有一條必要路徑、
+6 份兩條皆無；6 份通過四項新色分離，但沒有完整雙路徑前提控制。
+保存全分支、框點鄰接方向與原頂點身份；另直接驗四內點推導的兩種
+強迫子圖 K3,3 九路徑。一般下界由紙面證明承擔，非固定控制外推。
+下一問在多內點同色時，聯立最後 S 接入口與新 12／13 分離，尋找
+較長的交錯互斥路徑；不能套用四內點時才被迫的短路徑。
+
+新 frame-cut checker、直接前置 saturated-cuts checker、`lake build`
+（8,822 jobs；既有 lint）、文件連結與 whitespace 通過。其餘 standalone、
+minimality、R 系列未重跑；所讀依賴 hashes 核對通過。603 profiles 沿用，
+零刪除，未重算固定點。未新增 Lean theorem，未 commit／push。
+
+
+## 54. 3903 五內點路徑分類與六內點下界
+
+2026-09-19，接續 §53 尚未提交工作。見 [報告](c5_sector_five_inner.md)。
+原 sector 的內點 degree≤4 與 deg_G(0)=2 前提下，切斷分支的五內點
+不可能實現 disk 397→330。四個必有內點分別四色，按第五點的顏色及
+S 內外，分六種型別、九種必要路徑配置；六種有交錯互斥 Γ-paths，
+兩種由來源 02／新 13 分離及 disk 條件迫使框點 0 至多一個鄰點，
+一種迫使內點六鄰接。無須內點 degree=4 等號，但框點接點下界不可省。
+結合另一分支的雙 star 下界，得到原 sector 中總必要下界 |C|≥6。
+
+紙面證明加上確定性路徑證書；未枚舉五內點圖的接線補全，未擴大圖
+搜尋，未證六內點可達或一般排除。下一問是抽取不依賴內點數的框點 0
+鄰點排除準則；一般舊 13 不再被迫二步，不能沿用小重數的短路徑假設。
+
+新 five-inner checker、直接前置 frame-cut checker、`lake build`
+（8,822 jobs；既有 lint）、變更文件連結及 whitespace 通過。
+其餘 standalone、minimality、R 系列未重跑；依賴 hashes 已核對。
+603 profiles 沿用，零刪除，未重算固定點；未新增 Lean theorem。
+一般 397→330、3903 非平面、R31 與主命題仍未證，未 commit／push。
+
+
+## 55. 3903 任意長路徑互斥與鄰點障礙
+
+2026-09-21，接手 `597890b` 及 §53–54 未提交工作。見
+[報告](c5_sector_neighbor_barrier.md)。一般度數引理：舊 L₃ 與新 L₂
+僅交於框點 1；共同內點需兩個色 2、兩個色 3 及一個 S 內色 0
+鄰點，違反 degree≤4。disk 中，新 02 刪框點 1 後含 3 的分量 B₃
+若含框點 0 的鄰點，該鄰點必為鄰色 0,2,3,3 的 S 葉點，且在每條
+L₃ 上。原 sector 至多一個此類鄰點，另一個必為 S 內非葉點。
+
+六份既有來源的全部六對簡單 L₂／L₃ 路徑通過交集核對；40 份
+既有 disk 交換重驗度數、proper、maximal S 及保存 rotations。
+disk 控制沒有兩路徑同時成立，沒有非空鄰點例外；不宣稱一般排除
+或例外可達性。下一問联立飽和葉點、另一鄰點、最後 S 接入口與
+新分離，亦保留 N(0)∩B₃=∅ 分支。六內點下界不變。
+
+新 checker、five-inner 與 saturated-cuts checker、`lake build`、
+文件連結及 whitespace 通過。frame-cut standalone、其餘舊 standalone、
+minimality、R 系列未重跑；所讀依賴 hashes 通過。未新增圖或染色搜尋，
+603 profiles 沿用，零刪除，未重算固定點。紙面＋Python，未新增
+Lean theorem；一般 397→330、3903、R31、主命題未證，未 commit／push。
+
+
+## 56. 3903 飽和葉點例外的條件式八內點下界
+
+2026-09-21，接續 §55 未提交工作。見 [報告](c5_sector_leaf_exception.md)。
+只處理 N(0)∩B₃ 非空的葉點例外。在 S−{1} 切斷 0、2 分支，
+一般 degree≤4 下數出七個不同內點；七點等號的兩種 u 身份都迫使
+0 的另一鄰點 b 至多 degree=3。因此原 sector 完整 degree=4 下
+此分支至少八內點。未切斷分支因 L₃ 同時經 w 與 t₃，至少需三個
+舊色 3 點，加上雙 stars、w、色 0／2 見證，degree≤4 下已得八點。
+
+checker 核對兩種七點必要配置、14 項單鄰點排除及兩項成對鄰接的
+交錯路徑證書，並核對未切斷分支的兩種標記次序。不是候選圖枚舉，
+沒有補全接線搜尋或新實現控制。空交集分支仍開放，總下界保持 ≥6；
+不宣稱一般 ≥8、可達性或一般排除。下一問是任意大小的舊 13 割點
+兩側與新分離的共同身份，不能沿下界擴大圖搜尋。
+
+新 leaf-exception、直接前置 neighbor-barrier、saturated-cuts checker、
+`lake build`、文件連結與 whitespace 通過；其餘 standalone、minimality、
+R 系列未重跑，所讀依賴 hashes 通過。603 profiles 沿用、零刪除、
+未重算固定點。紙面＋Python，未新增 Lean theorem；一般 397→330、
+3903、R31 與主命題未證，未 commit／push。
+
+
+## 57. 3903 葉點刪除介面與自動分離
+
+2026-09-21，接續 §56 未提交工作。見 [報告](c5_sector_leaf_reduction.md)。
+非空葉點分支中 N(0)={b,w} 皆為 S 內舊色 1，四項涉及 0 的混合
+分離自動成立。刪 0、w 後，十二份完整二色頂點分割只有舊 13、新 03
+需合併 q/r 分量回復，其餘不變。給定 S′ 與舊 13 的兩側，來源／候選
+恰剩舊 12、新 02 的 1/3 連通及新 13 的 2/4 分離；非空分支另需
+p 在新 02 刪 1 後仍連到 3。這是固定染色公式，不是完整 Σ 壓縮。
+
+原 sector 的四接點 b,p,q,r 在 J 度數為 3；J 內部每個分量須碰
+p,q,r 之一。disk 來源給出 1,4,b,p,q,r 的繼承外面接入口，但共面
+並未證明可接回，須保留 corner 身份。下一問為此接回的交錯障礙。
+空交集分支仍開放；條件式八點與總六點下界不變，未證可達性。
+
+只對上輪兩種必要配置核對 24 份完整頂點分割、8 次自動孤立、
+8 個度數損失，無新圖或染色搜尋、無完整實現控制。新 checker、
+leaf-exception checker、`lake build`、文件連結與 whitespace 通過；
+其餘 standalone、minimality、R 系列未重跑，所讀依賴 hashes 通過。
+603 profiles 沿用、零刪除、未重算固定點；紙面＋Python，未新增
+Lean theorem。一般 397→330、3903、R31 與主命題未證，未 commit／push。
+
+
+## 58. 3903 葉點接回的兩種必要 corner 次序
+
+2026-09-21，接續 §57 未提交工作。見 [報告](c5_sector_leaf_corners.md)。
+接手確認 HEAD `597890b`，選擇六接入口的任意大小拓撲問題。
+非空葉點分支中 J 整體連通，內部仍可有三個分量；固定繼承 embedding、
+框路徑及指定 corners，接回雙中心樹恰要求 p,q,r 接入口連續。
+再以舊 13 的 1–q、4–r 路徑，及新 02 刪 1 後的 3–p 路徑互斥，
+把 24 種次序縮為 12、6、2：只剩 `1,4,b,r,p,q`、`1,4,r,p,q,b`。
+
+樹插入充分性僅對固定 embedding 與 corners；兩種次序不是完整
+sector 實現，亦未證一般排除。下一問聯立 S′ 連通、舊 12 連通及
+新 13 的 2/4 分離。空交集分支仍開放，條件式八點與總六點下界不變。
+
+新 checker 保存 36 種樹 rotations 導出的次序及 24 種標記次序的
+交錯證書，不調用 planarity oracle，無新圖或染色搜尋。
+corner checker、直接前置 leaf-reduction checker、`lake build`、
+變更文件連結及 whitespace 通過；其餘 standalone、minimality、
+R 系列未重跑，所讀依賴 hashes 核對通過。603 profiles 沿用、
+零刪除、未重算固定點。紙面＋Python，未新增 Lean theorem；
+一般 397→330、3903、R31、主命題未證，未 commit／push。
+
+
+## 59. 3903 六輪成果整理與提交核對
+
+2026-09-21，整理 §53–58 的六份報告、六個 checker 與六份保存證書，
+同步 README 與 HANDOFF 的目前入口。各研究輪「未 commit／push」
+保留為當時紀錄；本節記錄此次整合，並連同既有本地提交 `597890b` 發布。
+
+此次逐一重播以下七個 checker（均使用 `--check`）：
+
+```bash
+uv run --with networkx==3.5 python scripts/c5_sector_frame_cut.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_five_inner.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_neighbor_barrier.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_leaf_exception.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_leaf_reduction.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_leaf_corners.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_saturated_cuts.py --check
+lake build
+git diff --check
+```
+
+七份保存證書均重算比對通過，所讀依賴 hashes 通過；沒有重新生成證書。
+`lake build` 成功（8,822 jobs；既有 lint 警告），變更文件本地連結與
+whitespace 核對通過。其餘 standalone、minimality、R 系列未重跑。
+
+停止點為 §58 的兩種必要 corner 次序；下一問聯立 S′ 連通、舊 12
+連通及新 13 的 2/4 分離。非空葉點分支在完整 degree=4 時 ≥8，
+總體 ≥6；空交集分支仍開放，未證可達性或一般排除。603 profiles
+沿用、零刪除、未重算固定點，未新增圖搜尋或 Lean theorem。

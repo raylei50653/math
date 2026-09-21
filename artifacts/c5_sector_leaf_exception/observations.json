@@ -1,0 +1,598 @@
+{
+  "schema": 1,
+  "scope": "Conditional bounds for N(0) intersect B3 nonempty: cut >=7 under degree<=4, >=8 under degree=4; noncut >=8 under degree<=4.",
+  "input_sha256": {
+    "Math/KempeSurgery.lean": "6deec3581f45b4ae94a74b4754f507c493e4bed919ac252683ba63cf74071640",
+    "artifacts/c5_cells/cells.json": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+    "artifacts/c5_sector_common_core/observations.json": "c7b5a73067d3448484cb00603f044796db763a80329cfbaf7ed8da1bc0809a21",
+    "artifacts/c5_sector_cross_row/observations.json": "39accd5789e29b76242622ebe5891eab27449fcb0dcfd22a420389074037c439",
+    "artifacts/c5_sector_joint_identity/observations.json": "61329403126271f3e70b0a81806e4fa558e5071b1e286a78c2c9bc04ea7e95af",
+    "artifacts/c5_sector_marked_incidence/observations.json": "933cfe4205b83c76d91dd0f8bd15d88a03bdfd1ebacc0af288561e4eede9e681",
+    "artifacts/c5_sector_mixed_transition/observations.json": "737ebc65701005239d62aac2606e074433b8e066998003ba4b7cce1cefa468f7",
+    "artifacts/c5_sector_neighbor_barrier/observations.json": "806e4a90892aa5ed8f6ca7626de5d19764d83e7ca7c23696880361d3a75b7932",
+    "artifacts/c5_sector_positive_control/observations.json": "c34558fa1570ccb717b01b0e917488bba559c42e095b8e548fbd61dad99c8337",
+    "artifacts/c5_sector_saturated_cuts/observations.json": "1847e7a9824c7da176af6ab5a481147619bb66d289ce0da3dd2bb1aab0f4afd2",
+    "artifacts/c5_sector_targets/observations.json": "99ee516b0fb841fe4404531ca8f238ac30222aa3f944bfb9b73998e352874721",
+    "scripts/boundary_relations.py": "6f69347417fcc12775ecd0c5edf653b2ade43c664d0aac1da623b41eecc7ee25",
+    "scripts/c5_cell_enumerator.py": "456dc759f0038a9c4455fcd12df6d37e14edca0a2411e32af585efedb4de6e6e",
+    "scripts/c5_k4_blocks.py": "63ec478a5911eee3d2e1000e2ac032cf56f75272b179f97990f04fb814a2148d",
+    "scripts/c5_sector_common_core.py": "a9f14f3394a94631ba184c8f62b5b62d61d160b59ae9d1499f1d3c39297fbb16",
+    "scripts/c5_sector_cross_row.py": "7f503deec127417c32c1614fa35e3caab3727b8ac698724471ebebde64b17830",
+    "scripts/c5_sector_forced_connectivity.py": "90c2c5f03878955738a03ffa3d6a619a1a9a64c7a7bf61403114c02715d37563",
+    "scripts/c5_sector_joint_identity.py": "cf56135a437197385e8bff22bf79ce5e6664af4456328ac4920e0626533e762a",
+    "scripts/c5_sector_leaf_exception.py": "7a4e6cf9a31ceb063973381436fb61ea606f90549a223c43dd7fd5b3f8883e2b",
+    "scripts/c5_sector_marked_incidence.py": "e3d353b16be5a77a148028932be6394216d70def017e1d24bfa26a91abc78b90",
+    "scripts/c5_sector_mixed_transition.py": "5441414cd1c86829607ea6203ee849132cd3c006aff50ffd77e73f7bcb0c6841",
+    "scripts/c5_sector_neighbor_barrier.py": "f81bba2cc54c8725880319941cb49872cc17a0587403c98ee970f7fd9afd0846",
+    "scripts/c5_sector_saturated_cuts.py": "ae43bf57ecfb23cba4f40858e3915a02f3fc0d205f102e68346307580623a9e1",
+    "scripts/c5_sector_targets.py": "1db47a09d9ae765966310d0d17f3912e52bf9633b6cd7625ab088b2aeb690e56"
+  },
+  "summary": {
+    "cut_seven_inner_types": 2,
+    "individual_neighbor_exclusions": 14,
+    "incompatible_neighbor_pairs": 2,
+    "noncut_waypoint_orders": 2
+  },
+  "cut_equality": [
+    {
+      "extra_color": 0,
+      "extra_in_S": false,
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        1,
+        1,
+        0,
+        2,
+        3,
+        3,
+        0
+      ],
+      "selected": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7
+      ],
+      "forced_edges": [
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          11
+        ]
+      ],
+      "forced_paths": [
+        [
+          0,
+          6,
+          7,
+          1
+        ],
+        [
+          1,
+          9,
+          5,
+          10,
+          4
+        ],
+        [
+          1,
+          8,
+          11,
+          3
+        ],
+        [
+          0,
+          5,
+          8,
+          11,
+          3
+        ]
+      ],
+      "b_possible_neighbors": [
+        0,
+        7,
+        9,
+        10
+      ],
+      "excluded": [
+        {
+          "neighbor": 1,
+          "obstruction": {
+            "reason": "improper",
+            "edge": [
+              6,
+              1
+            ]
+          }
+        },
+        {
+          "neighbor": 2,
+          "obstruction": {
+            "reason": "frame_cut_violated",
+            "path": [
+              0,
+              6,
+              2
+            ]
+          }
+        },
+        {
+          "neighbor": 3,
+          "obstruction": {
+            "reason": "alternating_disjoint_gamma_paths",
+            "paths": [
+              [
+                0,
+                6,
+                3
+              ],
+              [
+                1,
+                9,
+                5,
+                10,
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "neighbor": 4,
+          "obstruction": {
+            "reason": "improper",
+            "edge": [
+              6,
+              4
+            ]
+          }
+        },
+        {
+          "neighbor": 5,
+          "obstruction": {
+            "reason": "improper",
+            "edge": [
+              6,
+              5
+            ]
+          }
+        },
+        {
+          "neighbor": 8,
+          "obstruction": {
+            "reason": "alternating_disjoint_gamma_paths",
+            "paths": [
+              [
+                0,
+                6,
+                8,
+                11,
+                3
+              ],
+              [
+                1,
+                9,
+                5,
+                10,
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "neighbor": 11,
+          "obstruction": {
+            "reason": "maximal_S_violated",
+            "edge": [
+              6,
+              11
+            ]
+          }
+        }
+      ],
+      "incompatible_neighbor_pair": [
+        9,
+        10
+      ],
+      "pair_obstruction": {
+        "reason": "alternating_disjoint_gamma_paths",
+        "paths": [
+          [
+            0,
+            5,
+            8,
+            11,
+            3
+          ],
+          [
+            1,
+            9,
+            6,
+            10,
+            4
+          ]
+        ]
+      },
+      "b_degree_upper_bound": 3
+    },
+    {
+      "extra_color": 1,
+      "extra_in_S": true,
+      "coloring": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        1,
+        1,
+        0,
+        2,
+        3,
+        3,
+        1
+      ],
+      "selected": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7,
+        11
+      ],
+      "forced_edges": [
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          11
+        ]
+      ],
+      "forced_paths": [
+        [
+          0,
+          6,
+          7,
+          1
+        ],
+        [
+          1,
+          9,
+          5,
+          10,
+          4
+        ],
+        [
+          1,
+          8,
+          11,
+          3
+        ],
+        [
+          0,
+          5,
+          8,
+          11,
+          3
+        ]
+      ],
+      "b_possible_neighbors": [
+        0,
+        7,
+        9,
+        10
+      ],
+      "excluded": [
+        {
+          "neighbor": 1,
+          "obstruction": {
+            "reason": "improper",
+            "edge": [
+              6,
+              1
+            ]
+          }
+        },
+        {
+          "neighbor": 2,
+          "obstruction": {
+            "reason": "frame_cut_violated",
+            "path": [
+              0,
+              6,
+              2
+            ]
+          }
+        },
+        {
+          "neighbor": 3,
+          "obstruction": {
+            "reason": "alternating_disjoint_gamma_paths",
+            "paths": [
+              [
+                0,
+                6,
+                3
+              ],
+              [
+                1,
+                9,
+                5,
+                10,
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "neighbor": 4,
+          "obstruction": {
+            "reason": "improper",
+            "edge": [
+              6,
+              4
+            ]
+          }
+        },
+        {
+          "neighbor": 5,
+          "obstruction": {
+            "reason": "improper",
+            "edge": [
+              6,
+              5
+            ]
+          }
+        },
+        {
+          "neighbor": 8,
+          "obstruction": {
+            "reason": "alternating_disjoint_gamma_paths",
+            "paths": [
+              [
+                0,
+                6,
+                8,
+                11,
+                3
+              ],
+              [
+                1,
+                9,
+                5,
+                10,
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "neighbor": 11,
+          "obstruction": {
+            "reason": "improper",
+            "edge": [
+              6,
+              11
+            ]
+          }
+        }
+      ],
+      "incompatible_neighbor_pair": [
+        9,
+        10
+      ],
+      "pair_obstruction": {
+        "reason": "alternating_disjoint_gamma_paths",
+        "paths": [
+          [
+            0,
+            5,
+            8,
+            11,
+            3
+          ],
+          [
+            1,
+            9,
+            6,
+            10,
+            4
+          ]
+        ]
+      },
+      "b_degree_upper_bound": 3
+    }
+  ],
+  "noncut_witnesses": [
+    {
+      "old13_waypoint_order": [
+        "frame1",
+        "w",
+        "t3",
+        "frame4"
+      ],
+      "disjoint_open_intervals": [
+        {
+          "start": "frame1",
+          "end": "w",
+          "internal_old3": "d3_0"
+        },
+        {
+          "start": "w",
+          "end": "t3",
+          "internal_old3": "d3_1"
+        },
+        {
+          "start": "t3",
+          "end": "frame4",
+          "internal_old3": "d3_2"
+        }
+      ],
+      "eight_internal_witness_colors": {
+        "w": 1,
+        "t2": 1,
+        "t3": 1,
+        "a": 0,
+        "p": 2,
+        "d3_0": 3,
+        "d3_1": 3,
+        "d3_2": 3
+      }
+    },
+    {
+      "old13_waypoint_order": [
+        "frame1",
+        "t3",
+        "w",
+        "frame4"
+      ],
+      "disjoint_open_intervals": [
+        {
+          "start": "frame1",
+          "end": "t3",
+          "internal_old3": "d3_0"
+        },
+        {
+          "start": "t3",
+          "end": "w",
+          "internal_old3": "d3_1"
+        },
+        {
+          "start": "w",
+          "end": "frame4",
+          "internal_old3": "d3_2"
+        }
+      ],
+      "eight_internal_witness_colors": {
+        "w": 1,
+        "t2": 1,
+        "t3": 1,
+        "a": 0,
+        "p": 2,
+        "d3_0": 3,
+        "d3_1": 3,
+        "d3_2": 3
+      }
+    }
+  ],
+  "closure_effect": {
+    "profile_deletions": 0,
+    "inherited_profiles": 603,
+    "fixed_point_recomputed": false
+  }
+}
