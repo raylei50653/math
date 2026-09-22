@@ -34,6 +34,7 @@ R31 研究見 §35，文件盤點見 §36，該次發布核對見 §37；既有�
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
 | [C5 雙拒絕分類](c5_two_rejection_proof_zh.md) | 指定 disk／degree≤4／兩接點圖類內，雙拒絕強迫二內點 1855；排除四個目標，3703 仍開放，紙面未 Lean 化 |
+| [3703 兩葉鏈化約](c5_sector_3703_structure.md) | 三拒絕迫使 bridges／互斥 triangles 的 block 鏈；兩葉只剩 012／234 或 024／234，b0 第二接點在鏈內；3703 仍未排除 |
 | [397/action 2 全部後繼](c5_sector_successor_audit.md) | 十個存活候選，禁 330 後可換 331；單條禁令下 603 最大閉合集合不變，下一問為 331 的同圖身份 |
 | [3903 空分支末端排除](c5_sector_empty_terminal.md) | 空／非空合成排除指定 397→330 轉移；需 sector 結構與兩拒絕列，一般 3903 仍開放 |
 | [3903 空交集分支](c5_sector_empty_branch.md) | δ(C)≥2；舊色 1 的 0 鄰點恰有框鄰集 {0}，內部度數 3；末端 block 拓撲合成由 §67 完成 |
@@ -1955,3 +1956,57 @@ README／HANDOFF 以本節作發布入口，§71–72 的「未提交」保留�
 以及乾淨工作樹核對；SHA 由包含本節的提交定位。
 研究停止點仍為 3703；完整分類的 Gallai／橋鏈／disk 拓撲形式化缺口
 見依賴表，R31、共同出口及 K∞=K≤5 仍未解。
+
+## 74. 3703 三拒絕的兩葉 triangle 鏈化約
+
+2026-09-22，依使用者「確認接手狀態並推進3703」，由乾淨 `f5b42d4`
+接手，先核對 HANDOFF／五目標／雙拒絕分類，再聯立索引 3、7、8。
+新增 [紙面報告](c5_sector_3703_structure.md)、
+[checker](../scripts/c5_sector_3703_structure.py) 與
+[JSON](../artifacts/c5_sector_3703_structure/observations.json)。
+
+三列緊 lists 的實際附件表使每個 odd-cycle block 的私有點附件相同。
+完整 degree=4 與 Gallai 外枝給出 K4 四路到框的 K5 minor，不另加
+minimality。末端 odd cycles 由共同附件、兩個 b0 接點與 K5／K3,3
+排除；末端 blocks 因此都是 bridges。葉附件只有 012／024／234，
+同型兩葉及三型同時存在皆有 K3,3，故恰兩葉、block-cut tree 為鏈。
+長 odd cycles 有至少三個私有點，仍由 K5 排除；triangles 的 ρ-palettes
+共同含 3，不能共用割點。最後收縮 triangle 私有點只作 disk 拓撲檢查，
+strip 次序排除葉對 012／024。
+
+任意大小必要結構只剩葉對 012／234 或 024／234 的 bridge/triangle 鏈；
+b0 恰有一個葉接點與一個鏈內非葉接點。α 自動接受，兩種葉對分別自動
+接受 10 或 11；另一開口列與全部接受列仍需在同圖聯立。尚未界定
+triangle 數或 bridge 長度，**3703 仍未排除**。
+
+新 checker 核對全部 32 個框子集，49／2,401 組 cycle root 與 125 組
+K4 root，保存 207 份逐邊、連通／互斥 branch-set 證書；另驗 K4 四出口
+625 種框端點。負控制 3831 接受第 7 列，表明緊附件不是拒絕的充分條件。
+不依賴 planarity oracle；無新 sector 生成器或 atlas 枚舉。
+新 --check、rejection-lists／terminal-blocks 兩份前置 --check、lake build
+與文件連結／git diff --check 通過。雙拒絕 atlas／strip、K4 舊 standalone
+及其他 sector／R 系列未重跑；strip 一般引理沿用已核對報告，degree-list
+定理原文 Lemmas 2.2／2.4 本輪重新核對。
+
+README／HANDOFF／五目標報告同步接到新入口。任意大小論證為紙面層，
+局部證書不等於完整分類的 Lean 形式化；未新增 Lean theorem。603
+profiles／固定點不變；R31、一般 degree-5、共同出口與 K∞=K≤5 仍未解。
+本輪未 commit／push。
+
+## 75. 3703 鏈化約整合發布
+
+2026-09-22，依使用者「整理並 commit + push」，將 §74 的紙面報告、
+獨立 checker、207 份 minor 證書與 README／HANDOFF／五目標入口一併
+提交發布。研究結論仍為兩種葉對的必要鏈結構；3703 尚未排除，另一
+開口列及鏈內 b0 接點是下一個入口，未新增 Lean theorem。
+
+沿用同一工作階段對最終未再修改程式的成功驗證：新 --check、
+rejection-lists／terminal-blocks 兩份前置 --check、lake build（8,823
+jobs，只有既有模組 lint 提醒）。發布整理只修改文件，另核對新證書
+source SHA256、本地文件連結及 staged whitespace；不重建舊 artifacts，
+不重跑已通過的枚舉。其餘 standalone 的未重播範圍沿用 §74。
+
+README／HANDOFF 改以本節作發布入口，§74 及研究報告的「未提交」
+保留為研究輪歷史。發布完成以本地 HEAD、origin/main 與遠端 main SHA
+一致及乾淨工作樹核對；提交可由包含本節的 Git 紀錄定位。
+603 profiles／固定點不變；R31、一般 degree-5、共同出口與 K∞=K≤5 仍未解。

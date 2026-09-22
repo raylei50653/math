@@ -6,6 +6,11 @@ R31 任意長來源 minors。這是 Python 有限實驗，沒有一般排除或�
 [sector 接合公式](c5_degree5_sectors.md#3-剩餘問題的精確五邊形重寫)
 獨立重建，不宣稱逐 byte 比對了附件。
 
+最新續作：[3703 兩葉鏈化約](c5_sector_3703_structure.md) 已將三列拒絕
+收窄到兩種葉附件的 triangle/bridge 鏈；3703 仍未排除。其餘四個目標
+已由 [雙拒絕分類](c5_two_rejection_proof_zh.md) 在指定 sector 圖類內排除。
+以下搜尋數字與停止點保留為 2026-09-18 歷史。
+
 後續：[3903 非 disk 正控制](c5_sector_positive_control.md) 已在既有樹分量
 明列接線找到正例：degree、兩接點與十二位可共存，選定 sector 本身
 非平面。以下保留前輪 |C|≤3 的結果；未自動擴大生成範圍。

@@ -12,7 +12,15 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 各輪完整紀錄；其中「下一步／未提交」只描述當時 |
 
-最新：[C5 雙拒絕分類](docs/c5_two_rejection_proof_zh.md)，見 [STATUS §71](docs/STATUS.md#71-c5-雙拒絕分類匯入與獨立核對)。
+最新：[3703 兩葉 triangle 鏈化約](docs/c5_sector_3703_structure.md)，見
+[STATUS §74](docs/STATUS.md#74-3703-三拒絕的兩葉-triangle-鏈化約)。三列拒絕
+迫使 C 為 bridges／互斥 triangles 的 block 鏈，兩葉附件只剩
+012／234 或 024／234；b0 第二接點必在鏈內。這是任意大小必要結構，
+**3703 仍未排除**；下一步聯立兩葉對、鏈內接點與全部十二列。紙面＋
+局部 minor 證書，未 Lean 化；整合發布與核對範圍見
+[STATUS §75](docs/STATUS.md#75-3703-鏈化約整合發布)。
+
+前輪：[C5 雙拒絕分類](docs/c5_two_rejection_proof_zh.md)，見 [STATUS §71](docs/STATUS.md#71-c5-雙拒絕分類匯入與獨立核對)。
 **在 induced C5 disk、C 非空連通、內點完整 degree≤4、b0 恰有兩個內鄰點下，
 拒絕 01212 與 01213 強迫唯一二內點接線，簽章 1855。**
 因此五個 sector 目標中的 3647、3895、3901、3903 均排除；3703 仍開放，

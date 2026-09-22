@@ -1,13 +1,33 @@
 # 研究交接：目前狀態與接手入口
 
 更新：2026-09-22。工作目錄 `/home/ray/math`。
-最新：[C5 雙拒絕分類](c5_two_rejection_proof_zh.md)，見 STATUS §71；[Lean 共用工具](lean_two_rejection_tools.md) 見 §72。
+最新：[3703 兩葉 triangle 鏈化約](c5_sector_3703_structure.md)，見 STATUS §74。
+由乾淨 `f5b42d4` 接手；報告／checker／證書與索引的整合發布見
+[STATUS §75](STATUS.md#75-3703-鏈化約整合發布)，提交可由包含該節的 Git 紀錄定位。
+同圖拒絕索引 3、7、8 迫使 C 的 block-cut tree 是路徑，所有 blocks 為
+bridges 或互不共點的 triangles，兩葉附件只剩 012／234 或 024／234。
+b0 恰有一個葉接點、一個鏈內非葉接點；α 自動接受，但另一開口列未解。
+**3703 尚未排除**，triangle 數與 bridge 長度未設限；先讀新報告 §1–6。
+信任層為任意大小紙面必要結構＋外部 degree-list＋207 份局部 minor 證書，
+未新增 Lean theorem。不擴大生成器、不改 603 profiles／固定點。
+
+本輪最小重播：
+
+```bash
+uv run python scripts/c5_sector_3703_structure.py --check
+uv run python scripts/c5_sector_rejection_lists.py --check
+uv run python scripts/c5_sector_terminal_blocks.py --check
+lake build
+git diff --check
+```
+
+前輪：[C5 雙拒絕分類](c5_two_rejection_proof_zh.md)，見 STATUS §71；[Lean 共用工具](lean_two_rejection_tools.md) 見 §72。
 **一般 3903 已在指定 sector 圖類內紙面排除。**
 精確前提是 induced C5 為 disk 外框、C 非空連通、內点完整 degree≤4，
 b0 恰有兩個不同內鄰點。拒絕 α=01212、δ=01213 強迫整圖 C 為唯一
 二內點接線，簽章 1855，故開口 ε=01210 亦拒絕。
-這也排除 3647、3895、3901；3703 未涵蓋，為下一個窄入口。
-先讀新報告 §0、§2、§5–7 及 §9–10，再讀五目標報告的 3703 條件。
+這也排除 3647、3895、3901；3703 未由該分類涵蓋，本輪推進見頁首。
+前置閱讀為雙拒絕報告 §0、§2、§5–7 及 §9–10，與五目標報告的 3703 條件。
 不必繼續原 331／A(b)={0,2} 分支；舊交接已存入歷史。
 
 信任層：任意大小紙面證明＋外部 degree-list 定理；本次逐節 review，
@@ -17,7 +37,7 @@ R31、一般 degree-5、共同出口與 K∞=K≤5 不由本文解決。
 本次整合發布見 [STATUS §73](STATUS.md#73-雙拒絕-lean-工具整合發布)；
 提交可由包含該節的 Git 紀錄定位。
 
-本輪最小重播：
+前輪最小重播（本輪未重跑其 atlas／strip 枚舉）：
 
 ```bash
 uv run --with networkx==3.6.1 python scripts/c5_two_rejection_audit.py --check
@@ -214,13 +234,16 @@ bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle �
 
 ## 2. 精確停止點與下一個窄問題
 
-目前入口為 [雙拒絕分類](c5_two_rejection_proof_zh.md) §0、§9–10 與
+目前入口為 [3703 鏈化約](c5_sector_3703_structure.md) §1–6 與
 [五目標](c5_sector_targets.md) §1。3903 及另三個雙拒絕目標已由任意大小
 紙面分類排除；原 397→331 的同圖分支無須再獨立處理。
 
-下一個窄問題是 **3703**：拒絕索引 3、7、8，接受 α（索引 6）及兩個
-額外開口列（索引 10、11）。須在同一張 induced-C5 disk、內點 degree≤4、
-b0 兩接點的實際圖上聯立這些條件，不能套用本輪雙拒絕橋鏈。
+下一個窄問題是 **3703 剩餘兩葉對的 triangle/bridge 鏈**：兩葉附件
+012／234 或 024／234，b0 第二接點在鏈內。拒絕索引 3、7、8 已迫使
+α（索引 6）接受；第一葉對自動接受 10，第二葉對自動接受 11。
+須在同一張 induced-C5 disk、內點 degree≤4、b0 兩接點的實際圖上聯立
+另一開口列與全部其餘接受列。triangle 數及 bridge 長度尚未界定；
+不能把單列 palette 縮減當成完整十二列或任意 pinning 的保持。
 本輪不擴大生成器、不改寫 603 profiles 或重算閉包；舊抽象後繼核對仍為
 其固定域的歷史結果，不能當作新 disk 實現。
 
@@ -265,7 +288,8 @@ R27 末端各一臂及 R30 中間不同二接點鏈型已排除；其他三環�
 
 ## 5. 重播入口與驗證範圍
 
-本輪重播入口見頁首與 STATUS §71。以下保留前次四輪整合發布入口（STATUS §70）：
+本輪重播入口見頁首與 STATUS §74；前輪雙拒絕分類見 §71–73。
+以下保留前次四輪整合發布入口（STATUS §70）：
 
 ```bash
 uv run python scripts/c5_sector_331_barriers.py --check
