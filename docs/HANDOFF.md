@@ -1,7 +1,7 @@
 # 研究交接：目前狀態與接手入口
 
 更新：2026-09-22。工作目錄 `/home/ray/math`。
-最新：[C5 雙拒絕分類](c5_two_rejection_proof_zh.md)，見 STATUS §71。
+最新：[C5 雙拒絕分類](c5_two_rejection_proof_zh.md)，見 STATUS §71；[Lean 共用工具](lean_two_rejection_tools.md) 見 §72。
 **一般 3903 已在指定 sector 圖類內紙面排除。**
 精確前提是 induced C5 為 disk 外框、C 非空連通、內点完整 degree≤4，
 b0 恰有兩個不同內鄰點。拒絕 α=01212、δ=01213 強迫整圖 C 為唯一
@@ -12,8 +12,10 @@ b0 恰有兩個不同內鄰點。拒絕 α=01212、δ=01213 強迫整圖 C 為�
 
 信任層：任意大小紙面證明＋外部 degree-list 定理；本次逐節 review，
 獨立 atlas 主表 29,584／2,640／2 重現，兩個 disk 結果均為 1855。
-未新增 Lean theorem，603 profiles 未刪除，固定點未重算；
-R31、一般 degree-5、共同出口與 K∞=K≤5 不由本文解決。未 commit／push。
+新增九個 Lean 共用引理，完整分類仍未形式化；603 profiles 未刪除，固定點未重算；
+R31、一般 degree-5、共同出口與 K∞=K≤5 不由本文解決。
+本次整合發布見 [STATUS §73](STATUS.md#73-雙拒絕-lean-工具整合發布)；
+提交可由包含該節的 Git 紀錄定位。
 
 本輪最小重播：
 
@@ -22,6 +24,7 @@ uv run --with networkx==3.6.1 python scripts/c5_two_rejection_audit.py --check
 uv run python scripts/c5_sector_terminal_blocks.py --check
 uv run python scripts/c5_sector_rejection_lists.py --check
 lake build
+lake env lean Math/TwoRejectionToolsAudit.lean
 git diff --check
 ```
 
@@ -202,6 +205,12 @@ bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle �
 中心接合、共用 root 交集、路徑單步與不可刪減覆蓋計數；詳見
 [定理對照與信任界線](lean_root_interfaces.md)。degree-4 刪邊解除與 R23
 奇環 root 剛性仍未 Lean 化。
+
+本輪新增 [Math/TwoRejectionTools.lean](../Math/TwoRejectionTools.lean)：
+連通圖 list 餘量的貪婪證明、拒絕迫緊、兩端口計數與區間寬度、
+同圖 singleton 葉矛盾及附件逐點相同的 list 等式。
+[依賴表](lean_two_rejection_tools.md) 明列尚缺 Gallai 分解、橋鏈抽取、
+末端拓撲、strip 次序及完整分類接合；不把共用工具視為 3903 的 Lean 證明。
 
 ## 2. 精確停止點與下一個窄問題
 

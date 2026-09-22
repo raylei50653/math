@@ -18,7 +18,9 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 因此五個 sector 目標中的 3647、3895、3901、3903 均排除；3703 仍開放，
 為下一個入口。原 331 分支由更一般的 3903 排除涵蓋，603 profiles 未刪除或重算。
 紙面證明已逐節核對；獨立 atlas 檢查重現 29,584／2,640／2 主表。
-依賴外部 degree-list 定理與紙面拓撲，未新增 Lean theorem；本輪未 commit／push。
+依賴外部 degree-list 定理與紙面拓撲，完整分類尚未 Lean 化。
+已補 [Lean 證明工具](docs/lean_two_rejection_tools.md)：貪婪餘量、拒絕迫緊、
+兩端口計數、區間寬度與同圖刪葉矛盾；見 STATUS §72；本次整合發布與核對範圍見 [STATUS §73](docs/STATUS.md#73-雙拒絕-lean-工具整合發布)。
 
 保留 R31：[同末端不同二接點正常形拓撲](docs/c5_degree5_same_terminal_triangles.md)
 完成 C3–C3–C3 簡單臂的 408 模板、327,968 種接線非 disk 覆蓋；
@@ -108,6 +110,7 @@ lake exe cache get
 | `Math/KempeSurgery.lean` | 一次 Kempe swap 的六色對精確更新（AC／BD 不動、混合色對＝retained graph＋stars）與「刪 cut、收縮 components、加邊」的連通分量一一對應；審計 `Math/KempeSurgeryAudit.lean` |
 | `Math/ForcingLists.lean` | block 報告反覆使用的 forcing-list 基礎引理：bridge 兩側同色 singleton 強迫、forcer 的 c/D swap 對稱（c-forcer 必碰 c 色 boundary）、incident palettes 互異且恰覆蓋 list、兩色 list 環不可著色 iff 奇環且 lists 全同（含 `C5`、triangle、`P=Q=四色\R` 介面、apex 36-case 規則）；審計 `Math/ForcingListsAudit.lean` |
 | `Math/RootInterfaces.lean` | 多接點共同關係／禁色、中心 `A \ ⋃ F` 接合、共用 root 交集、單步路徑訊息與 private 色計數；15 個普通 Lean 定理，見 [說明](docs/lean_root_interfaces.md) 及 `Math/RootInterfacesAudit.lean` |
+| `Math/TwoRejectionTools.lean` | 雙拒絕證明的九個一般引理；[依賴與重播](docs/lean_two_rejection_tools.md)，審計 `Math/TwoRejectionToolsAudit.lean`；完整 disk 分類仍未形式化 |
 | `Math.lean` | 函式庫根，`import` 子模組 |
 | `lakefile.toml` | 依賴（mathlib）與編譯選項 |
 | `lean-toolchain` | 這個專案用的 Lean 版本 |

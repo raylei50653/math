@@ -1,6 +1,6 @@
 # C5 雙拒絕分類：指定 disk sector 的一般 3903 排除
 
-日期：2026-09-22。狀態：**已逐節紙面核對並獨立重現有限主表；依賴外部 degree-list 定理，未 Lean 形式化。**
+日期：2026-09-22。狀態：**已逐節紙面核對並獨立重現有限主表；依賴外部 degree-list 定理，完整分類未 Lean 形式化；部分共用步驟已有 Lean 工具。**
 
 使用者原稿完整保存在 [v1 原件](sources/c5_two_rejection_proof_zh_v1.md)，
 SHA-256 `321dfa1204979c01eb5ee867aaa2afc53d8a5e8e56ef4e8bee4d060a7c3778e7`。
@@ -352,6 +352,14 @@ standalone 未重跑。atlas 完備性與 planarity 信任 NetworkX；外部定�
 它接受 α、拒絕 δ，不能使用兩拒絕前提。先研究其實際 disk 接線與額外
 開口列限制，不重開已完成的 3903 分支枚舉。
 R31、一般 degree-5、共同出口與 `K∞=K≤5` 未由本文解決；未新增 Lean theorem。
+
+## 11. 後續 Lean 證明工具
+
+[共用工具與依賴表](lean_two_rejection_tools.md) 已補九個普通 Lean 引理，
+涵蓋 §1 的連通圖貪婪餘量與拒絕迫緊、§2 的兩端口計數核心、
+§5 的區間寬度求和、§6 的同圖刪葉矛盾及 §7 的框列 list 等式。
+這不改變 §10 當輪的歷史核對紀錄；完整分類仍需外部 degree-list、
+block-cut 橋鏈與 disk 拓撲的形式化，具體缺口逐項列在新報告。
 
 ## 來源
 

@@ -1912,3 +1912,46 @@ README／HANDOFF 改以此為入口，原 331 交接移入歷史；不再追逐�
 A(b)={0,2} 分支。停止點為 3703 的單拒絕實際接線與額外開口列限制，
 不自動擴大搜尋。603 profiles 未刪除、閉包未重算；R31、共同出口與
 K∞=K≤5 仍未解。此次僅整理與驗證，未 commit／push。
+
+## 72. 雙拒絕分類的 Lean 共用引理與證明依賴表
+
+2026-09-22，依使用者「補 Lean 共用引理與證明依賴表」，新增
+[Math/TwoRejectionTools.lean](../Math/TwoRejectionTools.lean) 與
+[依賴表](lean_two_rejection_tools.md)，並接入 Math.lean。
+九個普通 Lean 定理涵蓋有限子集刪點貪婪法、連通圖嚴格 list 餘量可染、
+拒絕迫緊、度數／附件基數、兩端口計數、任意長有序區間寬度求和、
+兩種路徑大小推論、同一可染核心的雙 singleton 葉拒絕矛盾，以及實際
+附件上框色相同導致 lists 相同。沒有以公理宣告外部 degree-list 定理。
+
+完整 lake build 通過（8,823 jobs；只有既有模組 lint 提醒）；
+[逐一定理審計](../Math/TwoRejectionToolsAudit.lean) 通過，無 sorryAx 或
+Lean.ofReduceBool。雙拒絕 checker 重現 29,584／2,640／2、disk masks
+1855／1855；terminal-blocks 與 rejection-lists 兩份 --check 通過。
+文件本地連結與 git diff --check 通過。其餘 sector／R 系列未另重跑。
+
+完整分類仍未 Lean 化：缺口包括實際圖與 list 基數的接合、Gallai
+block palettes、D 森林與橋鏈構造、末端 block 拓撲、Jordan strip 次序
+與旁支收縮，以及最後二內點分類／簽章接合。依賴表逐一定界，沒有
+把算術前提當成已形式化的平面性。3703 仍為下一研究入口；R31、共同
+出口及主命題未解；603 profiles 與固定點不變。本輪未 commit／push。
+
+
+## 73. 雙拒絕 Lean 工具整合發布
+
+2026-09-22，依使用者「整理並 commit + push」，將 §72 的九個共用
+Lean 引理、公理審計、Math.lean import、證明依賴表及 README／交接／
+雙拒絕報告後續入口一併提交。§71 的紙面分類與獨立 checker 已在
+`4628c8b`；本次新增工具不將完整分類升格為 Lean theorem。
+
+驗證沿用同一工作階段對最終未再修改程式的成功結果：lake build
+（8,823 jobs，新增模組無 lint 提醒）、九個定理公理審計、雙拒絕與
+terminal-blocks／rejection-lists 三份 --check。公理只含 propext、
+Classical.choice、Quot.sound；無 sorryAx 或 Lean.ofReduceBool。
+發布整理只修改文件，再檢查本地連結及 staged whitespace，未重建
+舊 artifacts 或重算固定點。其餘 standalone 未另重跑。
+
+README／HANDOFF 以本節作發布入口，§71–72 的「未提交」保留為
+當輪歷史。發布完成以本地 HEAD、origin/main 與遠端 main SHA 一致，
+以及乾淨工作樹核對；SHA 由包含本節的提交定位。
+研究停止點仍為 3703；完整分類的 Gallai／橋鏈／disk 拓撲形式化缺口
+見依賴表，R31、共同出口及 K∞=K≤5 仍未解。
