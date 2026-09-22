@@ -1,5 +1,9 @@
 # 3903：末端 block 的兩列 root 接合與非空分支排除
 
+後續：[空分支末端 block 排除](c5_sector_empty_terminal.md) 已完成空交集分支；
+合併非空分支，只排除具指定 sector 前提與兩拒絕列的 397→330 交換。
+一般 3903 仍開放；以下保留本報告研究輪的狀態。
+
 2026-09-21，從乾淨 `1c608a8` 接續
 [拒絕列緊 list](c5_sector_rejection_lists.md)。
 **在既有非空分支、同一實際圖／attachments、第二種 corner 的前提下，

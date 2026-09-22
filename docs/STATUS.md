@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新日期：2026-09-21。最新研究為 [末端 block 介面與非空分支排除](c5_sector_terminal_blocks.md)，見 §64；本輪發布核對見 §65。
+更新日期：2026-09-22。最新研究為 [action 2 全部後繼與單條禁令閉包核對](c5_sector_successor_audit.md)，見 §68；空分支末端排除見 §67。
 先前提交自 `e14874d` 整合 R24–R31 與文件盤點。
 R31 研究見 §35，文件盤點見 §36，該次發布核對見 §37；既有發布核對見 §27。
 各輪當時的未提交狀態保留於原節；即時提交與遠端 SHA 以 Git 為準。
@@ -31,6 +31,9 @@ R31 研究見 §35，文件盤點見 §36，該次發布核對見 §37；既有�
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [397/action 2 全部後繼](c5_sector_successor_audit.md) | 十個存活候選，禁 330 後可換 331；單條禁令下 603 最大閉合集合不變，下一問為 331 的同圖身份 |
+| [3903 空分支末端排除](c5_sector_empty_terminal.md) | 空／非空合成排除指定 397→330 轉移；需 sector 結構與兩拒絕列，一般 3903 仍開放 |
+| [3903 空交集分支](c5_sector_empty_branch.md) | δ(C)≥2；舊色 1 的 0 鄰點恰有框鄰集 {0}，內部度數 3；末端 block 拓撲合成由 §67 完成 |
 | [3903 末端 block 介面](c5_sector_terminal_blocks.md) | 兩列完整 root 接合、實際 attachments 與末端 blocks 的 disk 障礙，排除指定非空分支；空交集與一般 3903 仍開放 |
 | [同末端不同二接點正常形](c5_degree5_same_terminal_triangles.md) | R31：408 模板／327,968 接線非 disk；任意長來源 minors 待補，是目前下一題 |
 | [中間二接點來源 minors](c5_degree5_middle_cycle_minors.md)、[中間 C5 正常形](c5_degree5_middle_pentagon.md) | R29–R30：正常形覆蓋與 boundary 固定來源 minors 合成，排除任意長中間不同二接點鏈型 |
@@ -1733,5 +1736,146 @@ transition-control、minimality、R 系列等其他 standalone 未重跑。
 非空分支排除的前提與信任層級不變：紙面＋Python，依賴外部
 degree-choosability，未新增 Lean theorem。一般 3903、空交集分支及
 主命題仍未證；603 profiles 零刪除，固定點未重算。
+發布完成以本地 HEAD、origin/main、遠端 main 的 SHA 一致及乾淨工作樹
+核對；提交 SHA 由包含本節的提交與 Git 紀錄定位。
+
+
+## 66. 3903 空交集分支的框鄰點與葉點排除
+
+2026-09-22，從乾淨 `56faeb4` 接手，見 [報告](c5_sector_empty_branch.md)。
+選擇 N(0)∩B₃=∅ 的下一個窄缺口，重新核對同一 c,S 與原始新框列
+10121，不沿用非空分支的 w,p,q,r。S 連通保證 0 有舊色 1 鄰點 b；
+b2 由雙 star 分離排除，b3 由空交集排除，故每個此類 b 均有
+A(b)={0}、deg_C(b)=3。未假設另一個 0 鄰點的顏色。
+
+拒絕列 α 的緊 list 給四種葉點 attachments，舊 properness 給七種
+色別。六種由來源／候選完整分割的兩步路徑排除，另一種迫使非空 B₃。
+連通單點情形亦違反 α 單射性，故 δ(C)≥2。一般證明不依赖有限圖搜尋。
+
+新 checker 核對七項葉點配置、四種 b 框鄰集、完整 profile 色正規化、
+兩個互斥 star 型與依賴 hashes。新 checker、rejection-lists、
+saturated-cuts 的 --check、lake build、變更文件連結與 git diff --check
+通過。terminal-blocks、transition-control、minimality 及 R 系列未重跑。
+
+下一步是末端 block 的含 0 private 類、b 到 root 的真實路徑及
+單 block／共用 root 例外；未完成此拓撲合成，空交集與一般 3903 仍開放。
+前輪非空排除保留；603 profiles 零刪除、固定點未重算、總體 ≥6 不變。
+紙面＋Python，未新增 Lean theorem，未 commit／push。
+
+
+## 67. 3903 空分支末端 block 排除與指定轉移禁令
+
+2026-09-22，接續尚未提交的 §66，見 [報告](c5_sector_empty_terminal.md)。
+保留同一圖、c,S、兩個拒絕列與 sector degree/disk 前提，空分支亦被排除。
+與 §64 的非空分支合成，指定 397→330 交換在這些前提下不可能；
+不是一般 3903 排除，也不排除接受全部開口列的既有 disk 交換控制。
+
+δ(C)≥2 排除 terminal bridge；單 block 的奇圈與 deg_C(b)=3 矛盾，
+單 K4 的 96 個接線均可染 α。末端奇圈的三個含 0 私有類至少耗掉兩個
+0 鄰居，而 b 不可能是私有圈點，與 deg_G(0)=2 矛盾。其他末端類使
+整個 block 避開 0 鄰點，故 b 在外部，提供實際 x–b–0 路徑。
+重新接上既有 minors，末端只剩 {1,2}/{2,3} 三角形；共用 root 會讓
+全 C 僅有 degree 2、4，與 b 矛盾。兩互斥三角形與 apex 給 K3,3 minor。
+中間 bridges 保留，未合併框點 2、4，沒有套用非空的具名 w 或 corner。
+
+新 checker 核對五個共同 attachment 類、96 份單 K4 著色與共用 root 控制，
+重驗 177 份既有 minors；另保存長度 1、2、5 接回路徑的 30 份 lifted
+minors、3 份 subdivisions，核對實際 b 度數及來源邊。這些是局部必要
+skeletons，其餘點未補全 degree，不是新候選图或完整 sector 實現。
+
+empty-terminal、empty-branch、terminal-blocks 三份 --check、依賴 hashes、
+lake build、本地文件連結與 whitespace 通過。前輪 rejection-lists、
+saturated-cuts standalone 沿用 §66；transition-control、minimality 與
+R 系列未重跑。外部 degree-choosability 定理重新核對；紙面＋Python，
+未新增 Lean theorem。603 profiles 零刪除、固定點未重算，未 commit／push。
+
+下一問是抽象 action 2 的全部可選後繼：330 是唯一可能還是選存 witness，
+以及新禁令如何與其他同圖後繼相容。未因此刪除 397 或聲稱一般 3903、
+R31、共同出口、K∞=K≤5 已證。
+
+
+## 68. 397/action 2 全部後繼與單條禁令閉包核對
+
+2026-09-22，接續 §67，見 [報告](c5_sector_successor_audit.md)。
+只讀既有 670-profile catalogue，獨立重建指定 action 的色重標及兩個
+保留分割。十四個相容候選為 329–342；原輪刪去 329、334、336、341，
+故十個存活後繼中 330 只是最小的選存 witness。
+
+加入具前輪結構前提的 (397, action 2, 330) 禁令後，該 witness 換成
+331 即可維持全部 11,362 項存在後繼要求與 3,618 項全域置換要求。
+原 67 個刪除理由逐項重播；單調性與完整閉合證書共同證明：固定
+670 catalogue 加這一條禁令的最大閉合集合仍恰為原 603。
+未執行新固定點迴圈、候選圖或染色搜尋，未修改原 cross-row artifacts。
+
+保存十四個候選的完整 raw／normalized 分割；十個存活者中，只有 330
+同時具前輪四項新色連通／分離條件。action 1 有同一抽象要求但交換
+另一個 maximal 分量，不能忽略無框分量就套用同一實際轉移禁令。
+
+新 checker 與 empty-terminal --check、依賴 hashes、lake build、文件
+連結與 whitespace 通過。獨立 action 實作另與原 helpers 對照，670
+profiles 的 12,794 actions 與 4,020 全域置換全部一致；沒有執行原
+abstract_closure 或圖層 orbit 搜尋。cross-row standalone 未重跑，
+empty-branch、terminal-blocks standalone 沿用 §67，其餘舊 standalone 未重跑。
+
+下一個窄問題選 331：新原始 02 的 1、3 分離，新 13 的 0、2 連通且與
+4 分離。需重新聯立新 0–2 與舊 1–4 路徑，不能沿用 L₂/T₂ 或 b2 排除。
+其餘八個後繼保留，331 非必經或全體代表。603 profiles 零刪除，一般
+3903 與主命題仍未證；固定域 Python＋紙面論證，未新增 Lean theorem。
+三輪相關成果仍未 commit／push。
+
+
+## 69. 331 交換外飽和分離集與無葉核心
+
+2026-09-22，接手 HEAD `56faeb4` 並保留 §66–68 未提交工作，見
+[報告](c5_sector_331_barriers.md)。選定交接指定的 397/action 2→331，
+不重啟既有 catalogue。舊 12 的 1→{3,4} 與新 13 的 0→2 路徑交錯，
+交點只能是交換外舊色 1，degree≤4 強迫鄰色 2,2,3,3。
+這些 V₂₃ 點分離新 13 的 0、2，A⊆{3}、deg_C≥3。
+
+舊 13 的 1→4 路徑必碰完整新分量 U；取最後接觸點，得到同一
+S 內 star t 與 U 內外的兩個實際色 3 鄰點。後綴保留，不假設直接
+進入框點 4 的 retained 分量，也不把 t 當成 T₃。
+α 緊性給七種葉點身份：六種由完整 profiles 的兩步分離排除，
+{0,2,3}／舊色 1 由單一 T₃ 強迫 degree≥5，故 δ(C)≥2。
+
+新 checker 核對六種共同頂點身份、七項葉點排除、V₂₃ 的兩種框鄰集、
+0 的舊色 1 鄰點之三種剩餘框鄰集及接出口的三種 degree-4 鄰色型。
+新 checker、successor-audit、empty-terminal 的 --check、依賴 hashes、
+lake build、變更文件連結及 git diff --check 通過。
+T₃／緊 list 沿用紙面證明；saturated-cuts、rejection-lists、cross-row、
+R 系列 standalone 未重跑。Python 局部表不替代任意 disk 的拓撲論證，
+未新增 Lean theorem 或已驗 disk 實現。
+
+下一問是同一兩拒絕列 block-tree 中仍允許的 A(b)={0,2}：b∈T₃，
+deg_C(b)=2，須保留兩個實際色 3 鄰點、V₂₃、U cut 與中間 bridges。
+331 與其餘八個後繼未排除，未新增禁令；603 profiles 零刪除，固定點未重算。
+一般 3903、R31、共同出口及主命題仍開放。四輪成果未 commit／push。
+
+
+## 70. 3903 空分支後繼與 331 四輪成果發布
+
+2026-09-22，依使用者「整理並 commit + push」，整合 `56faeb4` 後的
+§66–69：空分支葉點與末端 block 排除、指定 397/action 2→330 禁令、
+全部抽象後繼與 603 閉合集合核對，以及 331 的交換外分離集／無葉核心。
+四份 scripts、JSON 證書、專題報告、前置報告後續入口與
+README／HANDOFF／STATUS 一併提交。研究輪的「未提交」保留為歷史，
+README 與 HANDOFF 改以本節作為整合發布入口。
+
+發布前重跑 empty-branch、empty-terminal、successor-audit、331-barriers、
+terminal-blocks、rejection-lists、saturated-cuts 七份 --check，全部通過，
+所讀依賴 hashes 一致，沒有重建 artifacts。核對包含 177 份既有 minors、
+30 份 lifted minors、3 份 subdivisions、11,362 項存在後繼要求與
+3,618 項全域置換要求。lake build 通過（8,822 jobs，既有 lint 警告）；
+變更文件本地連結與 git diff --check 通過。
+本次未另重做禁用 NetworkX 控制或與原 action helpers 的逐項對照；
+後者沿用 §68。cross-row、transition-control、minimality、R 系列等
+其餘 standalone 未重跑，未執行新固定點迴圈。
+
+停止點保持 §69：331 的同一兩拒絕列 block-tree 中 A(b)={0,2} 分支，
+須聯立 V₂₃、T₃、完整 U cut 與舊接出口，保留中間 bridges 與具名框 2/4。
+指定 330 禁令有其 sector、degree/disk 與拒絕列前提；331 及其餘八個
+抽象選項尚未排除，603 profiles 零刪除。紙面＋Python／外部
+degree-choosability 的信任界線不變，未新增 Lean theorem；
+一般 3903、R31、共同出口與 K∞=K≤5 仍開放。
 發布完成以本地 HEAD、origin/main、遠端 main 的 SHA 一致及乾淨工作樹
 核對；提交 SHA 由包含本節的提交與 Git 紀錄定位。

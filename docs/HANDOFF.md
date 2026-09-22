@@ -1,21 +1,22 @@
 # 研究交接：目前狀態與接手入口
 
-更新：2026-09-21。工作目錄 `/home/ray/math`。
-最新：[末端 block 的兩列 root 接合與非空分支排除](c5_sector_terminal_blocks.md)，
-見 [STATUS §64](STATUS.md#64-3903-末端-block-介面與非空分支排除)。
-接手基準 `1c608a8`；本輪成果隨本次提交發布，核對範圍見 STATUS §65。
-專題報告與 §64 的「未提交」保留研究當輪紀錄；即時發布狀態以 Git 為準。
+更新：2026-09-22。工作目錄 `/home/ray/math`。
+最新：[331 的交換外分離集與無葉核心](c5_sector_331_barriers.md)，見 STATUS §69。
+本次將 `56faeb4` 之後的四輪成果合併發布；驗證範圍見 STATUS §70。
+各研究輪中的「未提交」保留當時狀態；目前發布狀態以即時 Git 為準。
 
-**指定的非空 3903 分支已排除；空交集分支與一般 3903 仍開放。**
-末端奇圈／K4 的完整 root 接合加上拒絕列緊性，迫使各列共同 palette。
-同一實際 attachments 只留下共同框點 2 或 4 的奇圈族；長環、K4 及
-共同框點 4 的三角形都被 disk 障礙排除。單一 block 只剩三角形，
-私有框鄰接為 {1,2}、{2,3}；其兩列 root 禁色均為 {0,3}。
-C 必有兩個互斥末端 blocks，與 exterior apex 形成 K3,3 minor，完成矛盾。
-未刪除中間 bridges；包含 S′−{1} 已切斷 b、2 的情形。
-保留單一三角形局部 disk 控制、三色 root 與 bridge 奇偶控制。
-603 profiles 沿用、零刪除、未重算固定點；一般總體 ≥6 下界未提高。
-紙面＋Python；Gallai 結構依賴外部 degree-choosability，未新增 Lean theorem。
+**397/action 2→331 新增必要條件，但尚未排除。**
+新 13 每條 0–2 路徑必碰交換外舊色 1 的飽和點 V₂₃，鄰色為 2,2,3,3，
+其 A⊆{3}、deg_C≥3。舊 13 路徑離開新 0/2 分量時，必有實際
+S 內 star 連接內外兩個色 3 鄰點。α 拒絕與單一 T₃ 分離已足以證 δ(C)≥2。
+0 的舊色 1 鄰點仍允許 A(b)={0,2}；不能沿用 330 的 b2 排除。
+
+397/action 2 的十個既有存活後繼中，指定 330 交換已在 sector 結構、
+degree/disk、兩拒絕列前提下排除；仍有九個抽象選項。
+改用 331 的全部 11,362 項存在要求與 3,618 項全域置換要求已重播通過，
+原 603 集合仍閉合；本輪沒有新禁令、profile 刪除或固定點重算。
+下一步聯立同一 block-tree 的 V₂₃、T₃ 與舊接出口，先處理 A(b)={0,2}。
+紙面任意大小引理＋Python 局部有限表，未新增 Lean theorem；一般 3903 仍開放。
 
 先讀本頁，再讀 [文件狀態與變化追蹤](STATUS.md) 及指定報告。
 逐輪數字、舊停止點與發布紀錄完整保存在 [歷史交接](HANDOFF_HISTORY.md)。
@@ -197,22 +198,20 @@ bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle �
 
 ## 2. 精確停止點與下一個窄問題
 
-目前入口為 [末端 block 報告](c5_sector_terminal_blocks.md) §1–4。
-本輪已完成 `1c608a8` 的下一問：在兩拒絕列及既有非空分支條件下，
-末端 blocks 的完整介面與實際框鄰接導致 disk 矛盾。
-第一種 corner 的偶圈排除及第二種 corner 的本輪排除合起來，排除
-N(0)∩B₃ 非空的 3903 分支；B₃ 仍按新 02 刪框點 1 後含 3 的分量定義。
+目前入口為 [331 分離集報告](c5_sector_331_barriers.md) §1–5。
+331 已有交換外 V₂₃ 分離新 13 的 0、2，V₂₃ 非空且 A⊆{3}、deg_C≥3；
+舊 13 必由 S 內 star t 離開完整新分量 U，但不保證 t∈T₃。
+α 拒絕給 δ(C)≥2。0 的舊色 1 鄰點 b 仍可有 {0}、{0,2}、{0,3} 三型。
 
-下一個窄問題是 **N(0)∩B₃=∅ 的分支**。須先重新核對該分支實際具名點
-與交換身份，不能直接搬用非空分支的 w,p,q,r、N(0)={b,w} 或 corner 次序。
-前置定義見 [leaf-exception](c5_sector_leaf_exception.md)、
-[leaf-reduction](c5_sector_leaf_reduction.md)，本輪未重啟其候選圖枚舉。
-單一 block 的局部存活型不代表完整 sector 可實現，亦不應再作非空分支缺口。
+下一個窄問題是 **同一兩拒絕列 block-tree 中的 A(b)={0,2} 分支**：
+此時 b∈T₃、deg_C(b)=2，有兩個實際色 3 鄰點；須聯立 V₂₃、完整 U cut
+及舊接出口 t，保留中間 bridges、具名框 2/4 與全部 root 色。
+未證此分支矛盾；沒有此類 b 的另外兩型亦保留。不能搬用 330 的末端正常形。
 
-中間 bridges 不是排除對象；本輪證明直接在兩個末端 blocks 取 minor，
-沒有改動中間連接。S′−{1} 已切斷 b、2 的情形包括在定理內。
-非空 ≥8 是已排除分支的歷史必要條件；一般總體 ≥6 不變。
-603 profiles 沿用、零刪除、未重算固定點；沒有多步交換歷史或一般 3903 排除。
+[後繼核對](c5_sector_successor_audit.md) 的原十個存活選項為
+330、331、332、333、335、337、338、339、340、342；只禁 330 後，
+完整 603 集合仍閉合。331 不是必經或其餘八項代表，action 1 的實際
+交換也不能直接搬用 action 2 禁令。
 
 保留的 R31 缺口：同末端不同二接點的任意長來源到 C3–C3–C3 的
 boundary 固定 minors 尚未補完；參考 [R31](c5_degree5_same_terminal_triangles.md)、
@@ -255,7 +254,28 @@ R27 末端各一臂及 R30 中間不同二接點鏈型已排除；其他三環�
 
 ## 5. 重播入口與驗證範圍
 
-本輪重播入口：
+本次四輪整合發布重播入口（STATUS §70）：
+
+```bash
+uv run python scripts/c5_sector_331_barriers.py --check
+uv run python scripts/c5_sector_successor_audit.py --check
+uv run python scripts/c5_sector_empty_terminal.py --check
+uv run python scripts/c5_sector_empty_branch.py --check
+uv run python scripts/c5_sector_terminal_blocks.py --check
+uv run python scripts/c5_sector_rejection_lists.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_saturated_cuts.py --check
+lake build
+git diff --check
+```
+
+本次發布重跑上述七份 checker；Lean build、文件連結與 whitespace 核對見 §70。
+以下保留研究輪的驗證界線。331 研究輪範圍見 STATUS §69：
+三份 checker、Lean build、文件連結與 whitespace 通過。
+T₃／緊 list 沿用紙面引理，saturated-cuts／rejection-lists standalone 未重跑。
+§68 另比對 670 profiles 的原 action helpers；cross-row standalone 未重跑。空分支末端輪範圍見 §67；empty-branch、
+terminal-blocks standalone 沿用該輪，rejection-lists／saturated-cuts 見 §66。
+
+以下保留前輪非空排除的重播入口：
 
 ```bash
 uv run python scripts/c5_sector_terminal_blocks.py --check

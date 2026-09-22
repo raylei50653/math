@@ -12,16 +12,15 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 各輪完整紀錄；其中「下一步／未提交」只描述當時 |
 
-最新：[末端 block 的兩列 root 接合與非空分支排除](docs/c5_sector_terminal_blocks.md)。
-**非空 3903 分支已排除；空交集分支與一般 3903 仍未解。**
-同一實際圖／attachments 的完整 root 接合迫使共同 palettes；末端 blocks
-只剩私有框鄰接 {1,2}、{2,3} 的三角形，而必有兩個互斥末端 blocks，
-與 exterior apex 給出 K3,3 minor。保留中間 bridges，涵蓋刪 1 切斷 b、2 的情形。
-單 block 的局部 disk 控制、三色 root 及 bridge 奇偶反向控制一併保存。
-603 profiles 零刪除、固定點未重算；一般總體 ≥6 下界未提高。
-紙面＋Python，Gallai 結構依賴外部 degree-choosability，未新增 Lean theorem。
-見 [STATUS §64](docs/STATUS.md#64-3903-末端-block-介面與非空分支排除)；
-接手 `1c608a8`；發布核對見 [STATUS §65](docs/STATUS.md#65-3903-非空分支排除成果發布)。
+最新：[331 的交換外分離集與無葉核心](docs/c5_sector_331_barriers.md)。
+**331 新增任意大小必要條件，尚未排除；一般 3903 未解。**
+新 13 的 0–2 路徑必經交換外鄰色 2,2,3,3 的飽和點；舊 13 有實際
+離開新分量的 star 接出口。α 拒絕配合單一 T₃ 分離，得到內部 δ(C)≥2。
+下一步處理仍允許的 A(b)={0,2}，聯立同一 block-tree 的兩種飽和點與 cut。
+前輪指定 330 禁令保留；改選 331 後原 603 profiles 仍閉合，零刪除。
+紙面引理＋Python 局部表，未新增 Lean theorem。接手 `56faeb4`；
+四輪成果合併發布，研究結果見 [STATUS §69](docs/STATUS.md#69-331-交換外飽和分離集與無葉核心)，
+發布驗證見 [STATUS §70](docs/STATUS.md#70-3903-空分支後繼與-331-四輪成果發布)。
 
 保留 R31：[同末端不同二接點正常形拓撲](docs/c5_degree5_same_terminal_triangles.md)
 完成 C3–C3–C3 簡單臂的 408 模板、327,968 種接線非 disk 覆蓋；
