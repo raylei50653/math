@@ -12,15 +12,13 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 各輪完整紀錄；其中「下一步／未提交」只描述當時 |
 
-最新：[331 的交換外分離集與無葉核心](docs/c5_sector_331_barriers.md)。
-**331 新增任意大小必要條件，尚未排除；一般 3903 未解。**
-新 13 的 0–2 路徑必經交換外鄰色 2,2,3,3 的飽和點；舊 13 有實際
-離開新分量的 star 接出口。α 拒絕配合單一 T₃ 分離，得到內部 δ(C)≥2。
-下一步處理仍允許的 A(b)={0,2}，聯立同一 block-tree 的兩種飽和點與 cut。
-前輪指定 330 禁令保留；改選 331 後原 603 profiles 仍閉合，零刪除。
-紙面引理＋Python 局部表，未新增 Lean theorem。接手 `56faeb4`；
-四輪成果合併發布，研究結果見 [STATUS §69](docs/STATUS.md#69-331-交換外飽和分離集與無葉核心)，
-發布驗證見 [STATUS §70](docs/STATUS.md#70-3903-空分支後繼與-331-四輪成果發布)。
+最新：[C5 雙拒絕分類](docs/c5_two_rejection_proof_zh.md)，見 [STATUS §71](docs/STATUS.md#71-c5-雙拒絕分類匯入與獨立核對)。
+**在 induced C5 disk、C 非空連通、內點完整 degree≤4、b0 恰有兩個內鄰點下，
+拒絕 01212 與 01213 強迫唯一二內點接線，簽章 1855。**
+因此五個 sector 目標中的 3647、3895、3901、3903 均排除；3703 仍開放，
+為下一個入口。原 331 分支由更一般的 3903 排除涵蓋，603 profiles 未刪除或重算。
+紙面證明已逐節核對；獨立 atlas 檢查重現 29,584／2,640／2 主表。
+依賴外部 degree-list 定理與紙面拓撲，未新增 Lean theorem；本輪未 commit／push。
 
 保留 R31：[同末端不同二接點正常形拓撲](docs/c5_degree5_same_terminal_triangles.md)
 完成 C3–C3–C3 簡單臂的 408 模板、327,968 種接線非 disk 覆蓋；

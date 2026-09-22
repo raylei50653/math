@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新日期：2026-09-22。最新研究為 [action 2 全部後繼與單條禁令閉包核對](c5_sector_successor_audit.md)，見 §68；空分支末端排除見 §67。
+更新日期：2026-09-22。最新為 [C5 雙拒絕分類](c5_two_rejection_proof_zh.md)，見 §71；此前 §66–70 保留歷史狀態。
 先前提交自 `e14874d` 整合 R24–R31 與文件盤點。
 R31 研究見 §35，文件盤點見 §36，該次發布核對見 §37；既有發布核對見 §27。
 各輪當時的未提交狀態保留於原節；即時提交與遠端 SHA 以 Git 為準。
@@ -29,8 +29,11 @@ R31 研究見 §35，文件盤點見 §36，該次發布核對見 §37；既有�
 
 ### 2.1 目前主線：weak deletion 與 minimal obstruction
 
+目前一般 3903 的後續結論以 §71 為準；下列舊報告的「仍開放」描述當輪狀態。
+
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [C5 雙拒絕分類](c5_two_rejection_proof_zh.md) | 指定 disk／degree≤4／兩接點圖類內，雙拒絕強迫二內點 1855；排除四個目標，3703 仍開放，紙面未 Lean 化 |
 | [397/action 2 全部後繼](c5_sector_successor_audit.md) | 十個存活候選，禁 330 後可換 331；單條禁令下 603 最大閉合集合不變，下一問為 331 的同圖身份 |
 | [3903 空分支末端排除](c5_sector_empty_terminal.md) | 空／非空合成排除指定 397→330 轉移；需 sector 結構與兩拒絕列，一般 3903 仍開放 |
 | [3903 空交集分支](c5_sector_empty_branch.md) | δ(C)≥2；舊色 1 的 0 鄰點恰有框鄰集 {0}，內部度數 3；末端 block 拓撲合成由 §67 完成 |
@@ -1216,7 +1219,7 @@ K3,3 九路徑，直接驗邊及內點互斥，不使用 planarity oracle。
 下一步只研究跨列交換相容性與「某列存在」的強迫抽取，不增加圖大小。
 
 新 checker `c5_sector_forced_connectivity.py --check`、`lake build`、
-`git diff --check` 通過；旧 checker／minimality／R 系列大覆蓋未重跑。
+`git diff --check` 通過；舊 checker／minimality／R 系列大覆蓋未重跑。
 未新增 Lean theorem；一般 3903 非平面、其他目標與 R31 缺口保留。
 本輪未 commit／push。
 
@@ -1879,3 +1882,33 @@ degree-choosability 的信任界線不變，未新增 Lean theorem；
 一般 3903、R31、共同出口與 K∞=K≤5 仍開放。
 發布完成以本地 HEAD、origin/main、遠端 main 的 SHA 一致及乾淨工作樹
 核對；提交 SHA 由包含本節的提交與 Git 紀錄定位。
+
+
+## 71. C5 雙拒絕分類匯入與獨立核對
+
+2026-09-22，依使用者「放進項目並驗證整理」，保存
+[v1 原件](sources/c5_two_rejection_proof_zh_v1.md)，建立
+[整理證明](c5_two_rejection_proof_zh.md)、
+[獨立 checker](../scripts/c5_two_rejection_audit.py) 與
+[JSON](../artifacts/c5_two_rejection_audit/observations.json)。
+
+逐節核對支持一般大小分類：induced C5 disk、連通非空 C、內點完整
+度數至多 4、b0 恰有兩個內鄰點時，α=01212、δ=01213 同拒絕強迫唯一
+二內點實際接線，完整十二位簽章 1855，並拒絕 ε=01210。
+兩缺口 palette 森林給出非空奇數橋鏈；末端拓撲與 strip 次序排除旁支。
+補明 palette 不交性的度數理由、單一 block 情形與 strip 方向。
+因此 3647、3895、3901、3903 排除；未涵蓋 3703。
+
+原稿未附腳本，本次獨立實作重現全部主表：29,584 組 α 拒絕、2,640 組
+雙拒絕、兩個 disk 結果，均 1855；保存四內點非平面 3903 控制。
+δ 的直接染色與完整 block-root peeling 逐份一致。另驗 1,360 個路徑與
+3,184 個旁支模板的 disk／strip 等價；原稿 1,548／1,968 聲稱未重播。
+新 --check、terminal-blocks／rejection-lists 前置 --check、lake build 與
+文件連結／git diff --check 通過。其他 sector／R 系列 standalone 未重跑。
+外部 degree-list 定理原文已核對；NetworkX 3.6.1 atlas／planarity 是有限
+檢查信任依賴。紙面 Jordan／minor 未形式化，未新增 Lean theorem。
+
+README／HANDOFF 改以此為入口，原 331 交接移入歷史；不再追逐其
+A(b)={0,2} 分支。停止點為 3703 的單拒絕實際接線與額外開口列限制，
+不自動擴大搜尋。603 profiles 未刪除、閉包未重算；R31、共同出口與
+K∞=K≤5 仍未解。此次僅整理與驗證，未 commit／push。

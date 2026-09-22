@@ -2703,3 +2703,41 @@ python3 scripts/export_certificates.py --split --namespace FiveBoundary.GadgetTa
 ## 歷史：較早的 C5 catalog 起始訊息（最新入口見文件頂端）
 
 > 請先讀 `/home/ray/math/docs/HANDOFF.md` 最上方最新停止點、`docs/boundary_relations.md` 與 `docs/fan_pentagon.md`。目前已完成內部五邊形加 13、14 的完整搜尋：87 個 exact Σ（原 K3 是 42），以及 generic full boundary relation 和同一有序 C5 上的條件 pair forcing 庫。完整 relation 是唯一主狀態，先套用共同條件、再投影；不得反過來用 pair constraints 代表完整狀態。750 條條件規則、211,410 個 pair 查詢與 3,828 個 aligned meet 已獨立重驗；Lean 已證泛型法則及 pair projections 相同但 conditional forcing 不同的具體反例。普通證明、native finite checks、外部計算／幾何證據分開標示。入口是 `Math/BoundaryRelations.lean`、`Math/C5PairForcing.lean`、`scripts/boundary_relations.py` 和 `scripts/c5_relation_library.py`。使用者要求先暫停並 commit + push，沒有待完成驗證或背景程序。先使用既有 catalog，不自動重跑枚舉；下一個研究問題尚未指定，不自動開雙 C5 串接、一般 transducer、更多頂點搜尋或重啟歷史 topology completeness 工作。
+
+
+## 2026-09-22 雙拒絕分類之前的 331 交接
+
+最新：[331 的交換外分離集與無葉核心](c5_sector_331_barriers.md)，見 STATUS §69。
+本次將 `56faeb4` 之後的四輪成果合併發布；驗證範圍見 STATUS §70。
+各研究輪中的「未提交」保留當時狀態；目前發布狀態以即時 Git 為準。
+
+**397/action 2→331 新增必要條件，但尚未排除。**
+新 13 每條 0–2 路徑必碰交換外舊色 1 的飽和點 V₂₃，鄰色為 2,2,3,3，
+其 A⊆{3}、deg_C≥3。舊 13 路徑離開新 0/2 分量時，必有實際
+S 內 star 連接內外兩個色 3 鄰點。α 拒絕與單一 T₃ 分離已足以證 δ(C)≥2。
+0 的舊色 1 鄰點仍允許 A(b)={0,2}；不能沿用 330 的 b2 排除。
+
+397/action 2 的十個既有存活後繼中，指定 330 交換已在 sector 結構、
+degree/disk、兩拒絕列前提下排除；仍有九個抽象選項。
+改用 331 的全部 11,362 項存在要求與 3,618 項全域置換要求已重播通過，
+原 603 集合仍閉合；本輪沒有新禁令、profile 刪除或固定點重算。
+下一步聯立同一 block-tree 的 V₂₃、T₃ 與舊接出口，先處理 A(b)={0,2}。
+紙面任意大小引理＋Python 局部有限表，未新增 Lean theorem；一般 3903 仍開放。
+
+
+### 當時的精確停止點
+
+目前入口為 [331 分離集報告](c5_sector_331_barriers.md) §1–5。
+331 已有交換外 V₂₃ 分離新 13 的 0、2，V₂₃ 非空且 A⊆{3}、deg_C≥3；
+舊 13 必由 S 內 star t 離開完整新分量 U，但不保證 t∈T₃。
+α 拒絕給 δ(C)≥2。0 的舊色 1 鄰點 b 仍可有 {0}、{0,2}、{0,3} 三型。
+
+下一個窄問題是 **同一兩拒絕列 block-tree 中的 A(b)={0,2} 分支**：
+此時 b∈T₃、deg_C(b)=2，有兩個實際色 3 鄰點；須聯立 V₂₃、完整 U cut
+及舊接出口 t，保留中間 bridges、具名框 2/4 與全部 root 色。
+未證此分支矛盾；沒有此類 b 的另外兩型亦保留。不能搬用 330 的末端正常形。
+
+[後繼核對](c5_sector_successor_audit.md) 的原十個存活選項為
+330、331、332、333、335、337、338、339、340、342；只禁 330 後，
+完整 603 集合仍閉合。331 不是必經或其餘八項代表，action 1 的實際
+交換也不能直接搬用 action 2 禁令。

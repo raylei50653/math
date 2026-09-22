@@ -1,22 +1,29 @@
 # 研究交接：目前狀態與接手入口
 
 更新：2026-09-22。工作目錄 `/home/ray/math`。
-最新：[331 的交換外分離集與無葉核心](c5_sector_331_barriers.md)，見 STATUS §69。
-本次將 `56faeb4` 之後的四輪成果合併發布；驗證範圍見 STATUS §70。
-各研究輪中的「未提交」保留當時狀態；目前發布狀態以即時 Git 為準。
+最新：[C5 雙拒絕分類](c5_two_rejection_proof_zh.md)，見 STATUS §71。
+**一般 3903 已在指定 sector 圖類內紙面排除。**
+精確前提是 induced C5 為 disk 外框、C 非空連通、內点完整 degree≤4，
+b0 恰有兩個不同內鄰點。拒絕 α=01212、δ=01213 強迫整圖 C 為唯一
+二內點接線，簽章 1855，故開口 ε=01210 亦拒絕。
+這也排除 3647、3895、3901；3703 未涵蓋，為下一個窄入口。
+先讀新報告 §0、§2、§5–7 及 §9–10，再讀五目標報告的 3703 條件。
+不必繼續原 331／A(b)={0,2} 分支；舊交接已存入歷史。
 
-**397/action 2→331 新增必要條件，但尚未排除。**
-新 13 每條 0–2 路徑必碰交換外舊色 1 的飽和點 V₂₃，鄰色為 2,2,3,3，
-其 A⊆{3}、deg_C≥3。舊 13 路徑離開新 0/2 分量時，必有實際
-S 內 star 連接內外兩個色 3 鄰點。α 拒絕與單一 T₃ 分離已足以證 δ(C)≥2。
-0 的舊色 1 鄰點仍允許 A(b)={0,2}；不能沿用 330 的 b2 排除。
+信任層：任意大小紙面證明＋外部 degree-list 定理；本次逐節 review，
+獨立 atlas 主表 29,584／2,640／2 重現，兩個 disk 結果均為 1855。
+未新增 Lean theorem，603 profiles 未刪除，固定點未重算；
+R31、一般 degree-5、共同出口與 K∞=K≤5 不由本文解決。未 commit／push。
 
-397/action 2 的十個既有存活後繼中，指定 330 交換已在 sector 結構、
-degree/disk、兩拒絕列前提下排除；仍有九個抽象選項。
-改用 331 的全部 11,362 項存在要求與 3,618 項全域置換要求已重播通過，
-原 603 集合仍閉合；本輪沒有新禁令、profile 刪除或固定點重算。
-下一步聯立同一 block-tree 的 V₂₃、T₃ 與舊接出口，先處理 A(b)={0,2}。
-紙面任意大小引理＋Python 局部有限表，未新增 Lean theorem；一般 3903 仍開放。
+本輪最小重播：
+
+```bash
+uv run --with networkx==3.6.1 python scripts/c5_two_rejection_audit.py --check
+uv run python scripts/c5_sector_terminal_blocks.py --check
+uv run python scripts/c5_sector_rejection_lists.py --check
+lake build
+git diff --check
+```
 
 先讀本頁，再讀 [文件狀態與變化追蹤](STATUS.md) 及指定報告。
 逐輪數字、舊停止點與發布紀錄完整保存在 [歷史交接](HANDOFF_HISTORY.md)。
@@ -198,20 +205,15 @@ bridge singleton、swap 對稱、palettes 覆蓋、二色 list 環、triangle �
 
 ## 2. 精確停止點與下一個窄問題
 
-目前入口為 [331 分離集報告](c5_sector_331_barriers.md) §1–5。
-331 已有交換外 V₂₃ 分離新 13 的 0、2，V₂₃ 非空且 A⊆{3}、deg_C≥3；
-舊 13 必由 S 內 star t 離開完整新分量 U，但不保證 t∈T₃。
-α 拒絕給 δ(C)≥2。0 的舊色 1 鄰點 b 仍可有 {0}、{0,2}、{0,3} 三型。
+目前入口為 [雙拒絕分類](c5_two_rejection_proof_zh.md) §0、§9–10 與
+[五目標](c5_sector_targets.md) §1。3903 及另三個雙拒絕目標已由任意大小
+紙面分類排除；原 397→331 的同圖分支無須再獨立處理。
 
-下一個窄問題是 **同一兩拒絕列 block-tree 中的 A(b)={0,2} 分支**：
-此時 b∈T₃、deg_C(b)=2，有兩個實際色 3 鄰點；須聯立 V₂₃、完整 U cut
-及舊接出口 t，保留中間 bridges、具名框 2/4 與全部 root 色。
-未證此分支矛盾；沒有此類 b 的另外兩型亦保留。不能搬用 330 的末端正常形。
-
-[後繼核對](c5_sector_successor_audit.md) 的原十個存活選項為
-330、331、332、333、335、337、338、339、340、342；只禁 330 後，
-完整 603 集合仍閉合。331 不是必經或其餘八項代表，action 1 的實際
-交換也不能直接搬用 action 2 禁令。
+下一個窄問題是 **3703**：拒絕索引 3、7、8，接受 α（索引 6）及兩個
+額外開口列（索引 10、11）。須在同一張 induced-C5 disk、內點 degree≤4、
+b0 兩接點的實際圖上聯立這些條件，不能套用本輪雙拒絕橋鏈。
+本輪不擴大生成器、不改寫 603 profiles 或重算閉包；舊抽象後繼核對仍為
+其固定域的歷史結果，不能當作新 disk 實現。
 
 保留的 R31 缺口：同末端不同二接點的任意長來源到 C3–C3–C3 的
 boundary 固定 minors 尚未補完；參考 [R31](c5_degree5_same_terminal_triangles.md)、
@@ -254,7 +256,7 @@ R27 末端各一臂及 R30 中間不同二接點鏈型已排除；其他三環�
 
 ## 5. 重播入口與驗證範圍
 
-本次四輪整合發布重播入口（STATUS §70）：
+本輪重播入口見頁首與 STATUS §71。以下保留前次四輪整合發布入口（STATUS §70）：
 
 ```bash
 uv run python scripts/c5_sector_331_barriers.py --check
@@ -268,7 +270,7 @@ lake build
 git diff --check
 ```
 
-本次發布重跑上述七份 checker；Lean build、文件連結與 whitespace 核對見 §70。
+前次發布重跑上述七份 checker；Lean build、文件連結與 whitespace 核對見 §70。
 以下保留研究輪的驗證界線。331 研究輪範圍見 STATUS §69：
 三份 checker、Lean build、文件連結與 whitespace 通過。
 T₃／緊 list 沿用紙面引理，saturated-cuts／rejection-lists standalone 未重跑。
