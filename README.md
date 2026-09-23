@@ -8,61 +8,13 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | 文件 | 用途 |
 | --- | --- |
 | [研究交接](docs/HANDOFF.md) | 當前成果、精確停止點、信任範圍及重播入口；新對話先讀 |
-| [文件狀態與變化追蹤](docs/STATUS.md) | 全部專題報告索引、已完成的舊問題，以及值得追蹤的新方向 |
+| [文件狀態與變化追蹤](docs/STATUS.md) | 專題報告索引、研究狀態與證據入口 |
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
-| [歷史交接](docs/HANDOFF_HISTORY.md) | 各輪完整紀錄；其中「下一步／未提交」只描述當時 |
+| [歷史交接](docs/HANDOFF_HISTORY.md) | 早期交接快照；近期紀錄由 STATUS 的歷史入口查閱 |
 
-最新：[3703 兩葉 triangle 鏈化約](docs/c5_sector_3703_structure.md)，見
-[STATUS §74](docs/STATUS.md#74-3703-三拒絕的兩葉-triangle-鏈化約)。三列拒絕
-迫使 C 為 bridges／互斥 triangles 的 block 鏈，兩葉附件只剩
-012／234 或 024／234；b0 第二接點必在鏈內。這是任意大小必要結構，
-**3703 仍未排除**；下一步聯立兩葉對、鏈內接點與全部十二列。紙面＋
-局部 minor 證書，未 Lean 化；整合發布與核對範圍見
-[STATUS §75](docs/STATUS.md#75-3703-鏈化約整合發布)。
-
-前輪：[C5 雙拒絕分類](docs/c5_two_rejection_proof_zh.md)，見 [STATUS §71](docs/STATUS.md#71-c5-雙拒絕分類匯入與獨立核對)。
-**在 induced C5 disk、C 非空連通、內點完整 degree≤4、b0 恰有兩個內鄰點下，
-拒絕 01212 與 01213 強迫唯一二內點接線，簽章 1855。**
-因此五個 sector 目標中的 3647、3895、3901、3903 均排除；3703 仍開放，
-為下一個入口。原 331 分支由更一般的 3903 排除涵蓋，603 profiles 未刪除或重算。
-紙面證明已逐節核對；獨立 atlas 檢查重現 29,584／2,640／2 主表。
-依賴外部 degree-list 定理與紙面拓撲，完整分類尚未 Lean 化。
-已補 [Lean 證明工具](docs/lean_two_rejection_tools.md)：貪婪餘量、拒絕迫緊、
-兩端口計數、區間寬度與同圖刪葉矛盾；見 STATUS §72；本次整合發布與核對範圍見 [STATUS §73](docs/STATUS.md#73-雙拒絕-lean-工具整合發布)。
-
-保留 R31：[同末端不同二接點正常形拓撲](docs/c5_degree5_same_terminal_triangles.md)
-完成 C3–C3–C3 簡單臂的 408 模板、327,968 種接線非 disk 覆蓋；
-完整 F={D}、degrees 與 19,020 份刪邊著色通過。
-此型任意長來源 boundary 固定 minors 仍待補，暫不作優先入口。
-R27 末端各一臂與 R30 中間不同二接點鏈型已排除，**一般三環仍未排除**。
-紙面＋Python，未新增 Lean theorem。R24–R31 隨本次提交整合；
-發布核對範圍見 [STATUS §37](docs/STATUS.md#37-r24r31-整合提交與發布核對)。
-
-目前主線研究三-spoke 型：唯一 degree-5 內點 z 接三條 boundary 邊，
-H−z 為單一二接點分量，其餘內點完整 degree=4；沿用 C5 disk、
-minimal q-obstruction、接受全部 T4 與各報告的 forcing-list 前提。
-
-| 範圍 | 目前狀態 | 入口 |
-| --- | --- | --- |
-| 全 degree-4 | T4 下只缺指定 q；紙面合成與有限證書，未整體 Lean 化 | [K4／degree-4 合成](docs/c5_k4_blocks.md) |
-| 三-spoke，零／一／二個 odd-cycle blocks | 任意樹、單環與雙環已排除，含任意環長與既定接點位置 | [單環](docs/c5_degree5_odd_cycle_components.md)、[雙環合成 R24](docs/c5_degree5_shared_cycle_minors.md) |
-| 三環共用點鏈，末端各一臂 | 正常形與任意長來源 minors 已完成 | [R25–R27](docs/c5_degree5_three_cycle_minors.md) |
-| 三環共用點鏈，兩個不同中間接點 | C3–C5–C3 正常形與任意長來源 minors 已完成 | [R29–R30](docs/c5_degree5_middle_cycle_minors.md) |
-| 三環共用點鏈，同末端不同二接點 | R31 正常形完成；任意長來源 minors 是下一個缺口 | [R31](docs/c5_degree5_same_terminal_triangles.md) |
-| 其他三環型與一般 degree-5 | 尚未完成；list 介面不等於圖層排除 | [全部接點位置 R28](docs/c5_degree5_three_cycle_positions.md)、[變化追蹤](docs/STATUS.md#4-可能出現新變化的地方) |
-| Lean 基礎 | forcing-list 與 15 個接合定理已形式化；不涵蓋整個 minor／disk 論證 | [定理與界線](docs/lean_root_interfaces.md) |
-
-完整報告索引、已被續作解決的舊問題與歷次驗證見 [STATUS](docs/STATUS.md)。
-一般 degree≥5、單側／共同出口與 `K∞=K≤5` 仍未證。
-
-| 其他閱讀方向 | 入口 |
-| --- | --- |
-| 基礎定義與 relation 語意 | [phase 1](docs/phase1.md)、[boundary relations](docs/boundary_relations.md)、[state language](docs/state_language.md) |
-| 固定 grammar 與幾何 | [automata](docs/automata.md)、[fan pentagon](docs/fan_pentagon.md)、[topology completeness](docs/topology_completeness.md) |
-| 有界 cell 枚舉 | [cell enumerator](docs/c5_cell_enumerator.md) |
-| Weak deletion 與目前核心分類路線 | [completion／bisimulation](docs/c5_completion_weak_bisimulation.md)、[候選 A](docs/c5_weak_candidates.md)、[完整進度索引](docs/STATUS.md) |
-| Kempe 及 state 充分性 | [behavior 提案](docs/c5_behavior_refinement.md)、[第一輪結果](docs/c5_behavior_refinement_results.md)、[repair 介面碰撞](docs/c5_repair_interface.md) |
-| 新增點／邊的影響 | [extension effects](docs/extension_effects.md) |
+研究優先順序與最小重播命令只在 [HANDOFF](docs/HANDOFF.md) 維護。
+各結論的適用範圍、證據層級及保留缺口見 [STATUS](docs/STATUS.md)。
+文件更新方式與檢查命令見 [文件維護規則](docs/DOCUMENTATION.md)。
 
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 
