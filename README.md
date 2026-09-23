@@ -9,6 +9,9 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | --- | --- |
 | [研究交接](docs/HANDOFF.md) | 當前成果、精確停止點、信任範圍及重播入口；新對話先讀 |
 | [文件狀態與變化追蹤](docs/STATUS.md) | 專題報告索引、研究狀態與證據入口 |
+| [全 degree-4／block 導讀](docs/c5_degree4_guide.md) | 小核心至 K4 的合成依賴、單缺失結論、介面限制與證書入口 |
+| [degree-5／R 系列導讀](docs/c5_degree5_guide.md) | R9–R31 依賴順序、排除範圍、R31 保留缺口與證書入口 |
+| [3903 系列導讀](docs/c5_sector_3903_guide.md) | 系列結論、推導順序、適用範圍與證書入口 |
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 早期交接快照；近期紀錄由 STATUS 的歷史入口查閱 |
 
@@ -50,7 +53,8 @@ lake exe cache get
 lake build
 ```
 
-更新 mathlib 與 Lean 版本：
+只有刻意升級依賴時才執行以下指令；一般接手沿用 `lean-toolchain` 與
+`lake-manifest.json` 的鎖定版本：
 
 ```bash
 lake update
@@ -61,7 +65,7 @@ lake exe cache get
 
 | 路徑 | 用途 |
 | --- | --- |
-| `Math/Basic.lean` | 起始例子，從這裡改 |
+| `Math/Basic.lean` | Lean 起始例子；研究入口見 HANDOFF |
 | `Math/ColorDFA.lean`, `Math/GeometryDFA.lean` | triangle grammar 的染色／幾何自動機與 Lean 證明 |
 | `scripts/triangle_automata.py`, `artifacts/automata/` | 自動機資料的產生器與決定性輸出 |
 | `Math/BoundaryRelations.lean`, `Math/C5PairForcing.lean` | 泛型完整 boundary relation 與同一 C5 的投影／條件強迫 |
@@ -93,15 +97,3 @@ lake exe cache get
   license = {Apache-2.0}
 }
 ```
-
-## GitHub configuration
-
-To set up your new GitHub repository, follow these steps:
-
-* Under your repository name, click **Settings**.
-* In the **Actions** section of the sidebar, click "General".
-* Check the box **Allow GitHub Actions to create and approve pull requests**.
-* Click the **Pages** section of the settings sidebar.
-* In the **Source** dropdown menu, select "GitHub Actions".
-
-After following the steps above, you can remove this section from the README file.

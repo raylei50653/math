@@ -1,5 +1,10 @@
 # 三環共用點鏈：同末端兩個不同接點的正常形拓撲
 
+文件整理（2026-09-23），R31：408 模板／327,968 接線的正常形非 disk 覆蓋完成；任意長來源 minors 仍是保留缺口，不能宣稱此型已任意長排除。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 2026-09-18，R31。承接 [R28](c5_degree5_three_cycle_positions.md) 的
 list 介面，完成 C3–C3–C3、兩個不同私有接點同在一個末端環、
 兩臂為簡單色序列的正常形實際接線與非 disk 覆蓋。
@@ -67,7 +72,7 @@ C5 外邊界 disk，augmentation 必 planar。
 本輪共驗 1,632 次 z 色查詢、19,020 份刪邊著色。來源與載入的本地
 程式依賴 hashes、覆蓋 fingerprint 均保存；重播唯讀逐 byte 比對
 1,592,286-byte JSON。生成及重播通過，`lake build` 通過（8,822 jobs，
-僅既有 lint），未新增 Lean theorem。詳見 [STATUS §35](STATUS.md#35-r31-同末端不同二接點正常形)。
+僅既有 lint），未新增 Lean theorem。詳見 [STATUS 歷史 §35](STATUS_HISTORY.md#35-r31-同末端不同二接點正常形)。
 
 ```bash
 uv run --with networkx==3.5 python scripts/c5_degree5_same_terminal_triangles.py --check

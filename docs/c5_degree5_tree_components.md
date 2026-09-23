@@ -1,12 +1,13 @@
 # 三-spoke 的任意樹分量排除與連通外框 K4 引理
 
+文件整理（2026-09-23），R12：任意樹排除完成；單環由 [R13–R14](c5_degree5_odd_cycle_components.md)、雙環由 [R15–R24](c5_degree5_shared_cycle_minors.md) 接續完成。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 發布整理（2026-09-18）：本報告隨 R11–R15 五輪成果一併提交。下文的
 「未提交／HEAD／下一題」保留各輪當時狀態；最新停止點見
-[HANDOFF](HANDOFF.md)，發布前核對見 [STATUS §16](STATUS.md)。
-
-後續（2026-09-18）：[單 triangle 報告](c5_degree5_triangle_components.md) 已排除
-一個 triangle 加任意 bridges 的二接點分量，涵蓋全部接點位置；下一題是
-恰一個長 odd-cycle。以下保留本輪原始證明與停止點。
+[HANDOFF](HANDOFF.md)，發布前核對見 [STATUS 歷史 §16](STATUS_HISTORY.md#16-r11r15-成果整理與發布前核對)。
 
 2026-09-18。接續 [區域化約](c5_degree5_sectors.md)；HEAD 仍為 `be97121`，
 前輪成果留在工作樹。本輪完成兩個不限制內點數的紙面結論：
@@ -203,7 +204,7 @@ lake build
 git diff --check
 ```
 
-本輪實際驗證見 [STATUS §12](STATUS.md#12-三-spoke-任意樹排除接續未提交區域成果)。
+本輪實際驗證見 [STATUS 歷史 §12](STATUS_HISTORY.md#12-三-spoke-任意樹排除接續未提交區域成果)。
 紙面 topology／minor、Python 有限證書與 Lean 狀態分開：未新增 Lean theorem，
 沒有重播舊全量 catalogue／deletion audit，也沒有修改前輪 scripts／artifacts。
 

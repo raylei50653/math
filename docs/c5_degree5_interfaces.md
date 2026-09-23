@@ -1,11 +1,9 @@
 # 唯一 degree-5 內點：完整接點介面與不可刪減禁色覆蓋
 
-後續（2026-09-18）：[三-spoke 區域報告](c5_degree5_sectors.md) 將分拆 (2)
-化約到兩個鏡像 pentagon，保存非 minimal 的 disk 雙缺失控制；最終排除仍未解。
-再後續：[任意樹分量排除](c5_degree5_tree_components.md) 已處理三-spoke 型的
-所有樹 C，並重新證明 t≥1 時各 degree-4 分量不含 K4。
-目前已進一步排除單一任意 odd-cycle 及共用點雙 triangles；下一題為互斥雙
-triangles 的 bridge 路徑，見 [目前交接](HANDOFF.md)。一般分拆 (2) 仍未解。
+文件整理（2026-09-23），R10：染色與 minimality 介面已完成；[R11](c5_degree5_sectors.md) 起處理三-spoke 分拆 (2)，一般 degree-5 幾何排除仍開放。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
 
 2026-09-18。接續 [K4／全 degree-4 報告](c5_k4_blocks.md) 的 R10。
 本輪完成任意大小 degree-4 分量的**染色介面與 edge-minimality 充要條件**，
@@ -180,7 +178,7 @@ lake build
 git diff --check
 ```
 
-實際驗證數字見 [STATUS §10](STATUS.md#10-唯一-degree-5-接點介面接續未提交-r9)。
+實際驗證數字見 [STATUS 歷史 §10](STATUS_HISTORY.md#10-唯一-degree-5-接點介面接續未提交-r9)。
 任意大小的介面、解除引理及 minimality 等價式是紙面論證；有限控制並不
 窮盡十三個接點分拆的 graphs，更不能推出一般 degree-5 單缺失定理。
 

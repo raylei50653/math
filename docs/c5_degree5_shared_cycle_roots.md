@@ -1,6 +1,11 @@
 # 共用點雙奇環：四列可延拓介面與縮環反向控制
 
-發布註記：本報告與 R21–R23、Lean 接合基礎一併發布，核對見 [STATUS §27](STATUS.md)。
+文件整理（2026-09-23），R23：四列布林縮環與完整 root 不保持的控制保留；[R24](c5_degree5_shared_cycle_minors.md) 已補圖層來源 minors 及排除。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
+發布註記：本報告與 R21–R23、Lean 接合基礎一併發布，核對見 [STATUS 歷史 §27](STATUS_HISTORY.md#27-r21r23-與-lean-接合基礎發布核對)。
 以下保留研究輪當時的提交狀態與驗證範圍。
 
 2026-09-18，R23。接手 HEAD `3d6a647` 及未提交 R21–R22。

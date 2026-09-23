@@ -1,5 +1,13 @@
 # 3903：第一種 corner 次序的偶圈排除與單步正控制
 
+後續狀態（2026-09-23）：[雙拒絕分類](c5_two_rejection_proof_zh.md) 已在
+induced-C5 disk、非空連通內部、內點完整 degree≤4、b0 恰兩個不同內鄰點
+的圖類內排除 3903。本文正文保留當輪結論與停止點；閱讀順序及證據界線見
+[3903 系列導讀](c5_sector_3903_guide.md)。
+非空交集的兩種 corner 次序已由 [偶圈報告](c5_sector_corner_even_cycle.md)
+與 [末端 block 報告](c5_sector_terminal_blocks.md) 完成排除；
+空交集另見 [空分支末端報告](c5_sector_empty_terminal.md)。
+
 本報告保留研究當輪狀態；三輪整合與發布重播範圍見
 [STATUS §63](STATUS.md#63-3903-三輪成果整合與發布)。
 

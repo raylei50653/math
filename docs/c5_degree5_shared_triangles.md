@@ -1,8 +1,13 @@
 # 三-spoke 的共用點雙 triangle 二接點分量
 
+文件整理（2026-09-23），R15：共用點型排除完成；互斥 triangles 由 [R16–R19](c5_degree5_bridge_mark_minors.md)、共用點長環由 [R23–R24](c5_degree5_shared_cycle_minors.md) 補完。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 發布整理（2026-09-18）：本報告隨 R11–R15 五輪成果一併提交。下文的
 「未提交／HEAD／下一題」保留各輪當時狀態；最新停止點見
-[HANDOFF](HANDOFF.md)，發布前核對見 [STATUS §16](STATUS.md)。
+[HANDOFF](HANDOFF.md)，發布前核對見 [STATUS 歷史 §16](STATUS_HISTORY.md#16-r11r15-成果整理與發布前核對)。
 
 2026-09-18。從 HEAD `be97121` 及前四輪未提交成果接手。
 本輪選交接的「恰兩個 triangle blocks」，完成其中的**共用 cut vertex** 分支：
@@ -152,7 +157,7 @@ T4 僅用於原圖的區域定位，中間 minors 不需保持完整 Σ 或 T4�
 [certificate](../artifacts/c5_degree5_shared_triangles/observations.json)。
 另保存長臂、保留／刪除標記及整個 cluster 位於旁支的具名來源，逐步
 核對 degrees、全部 F、criticality、boundary 固定 branch sets，並將最終
-非平面證書合成回原始來源。實際數字及執行結果見 [STATUS §15](STATUS.md#15-三-spoke-共用點雙-triangle-排除)。
+非平面證書合成回原始來源。實際數字及執行結果見 [STATUS 歷史 §15](STATUS_HISTORY.md#15-三-spoke-共用點雙-triangle-排除)。
 
 ```bash
 uv run --with networkx==3.5 python scripts/c5_degree5_shared_triangles.py --check

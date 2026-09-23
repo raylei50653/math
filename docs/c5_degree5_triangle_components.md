@@ -1,12 +1,13 @@
 # 三-spoke 的單 triangle 二接點分量排除
 
+文件整理（2026-09-23），R13：指定單 triangle 分量排除完成；[R14](c5_degree5_odd_cycle_components.md) 已補任意單奇環。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 發布整理（2026-09-18）：本報告隨 R11–R15 五輪成果一併提交。下文的
 「未提交／HEAD／下一題」保留各輪當時狀態；最新停止點見
-[HANDOFF](HANDOFF.md)，發布前核對見 [STATUS §16](STATUS.md)。
-
-後續（2026-09-18）：[單長奇環報告](c5_degree5_odd_cycle_components.md) 已完成
-保留接點的 cycle-to-triangle minor，排除任意單 odd-cycle 加 bridges。
-下一題為恰兩個 triangle blocks；以下保留本輪原始成果與停止點。
+[HANDOFF](HANDOFF.md)，發布前核對見 [STATUS 歷史 §16](STATUS_HISTORY.md#16-r11r15-成果整理與發布前核對)。
 
 2026-09-18。從 HEAD `be97121` 及前兩輪未提交成果接手。
 接續 [任意樹分量排除](c5_degree5_tree_components.md)，完成交接指定的窄問題：
@@ -194,7 +195,7 @@ lake build
 git diff --check
 ```
 
-實際驗證見 [STATUS §13](STATUS.md#13-三-spoke-單-triangle-二接點排除)。
+實際驗證見 [STATUS 歷史 §13](STATUS_HISTORY.md#13-三-spoke-單-triangle-二接點排除)。
 無界位置／分枝／長度的覆蓋是紙面證明，有限 topology 證書仍包含 Python
 checker 及 apex-disk 紙面等價的信任；沒有新增 Lean theorem，沒有重播舊
 全量 catalogue／deletion audit，也沒有改動前兩輪 scripts／artifacts。

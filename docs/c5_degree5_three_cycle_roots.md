@@ -1,5 +1,10 @@
 # 三環共用點鏈：完整二接點介面與四列縮環
 
+文件整理（2026-09-23），R25：完整有序接合保留；[R26](c5_degree5_three_triangles.md) 完成正常形，[R27](c5_degree5_three_cycle_minors.md) 完成此型任意長來源 minors。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 2026-09-18，R25。接手 HEAD `e14874d` 與未提交 R24；本輪未 commit／push。
 處理 J1–J2–J3 共用點鏈，r12≠r23，兩外臂分別落在末端環私有點。
 所有環為奇環；共用點原 list 為 U，各私有非接點為二色 list，

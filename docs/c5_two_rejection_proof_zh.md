@@ -1,5 +1,13 @@
 # C5 雙拒絕分類：指定 disk sector 的一般 3903 排除
 
+系列索引：[3903 導讀與推導順序](c5_sector_3903_guide.md)。
+
+文件導引（2026-09-23）：本報告為雙拒絕分類的證據入口；
+[Lean 共用引理](lean_two_rejection_tools.md) 僅形式化部分步驟，完整分類仍未形式化。
+整合發布與驗證範圍見 [發布紀錄](STATUS_HISTORY.md#73-雙拒絕-lean-工具整合發布)；
+下文「本次未 commit／push」保留匯入核對當時的語境。當前研究入口見
+[HANDOFF](HANDOFF.md)。
+
 日期：2026-09-22。狀態：**已逐節紙面核對並獨立重現有限主表；依賴外部 degree-list 定理，完整分類未 Lean 形式化；部分共用步驟已有 Lean 工具。**
 
 使用者原稿完整保存在 [v1 原件](sources/c5_two_rejection_proof_zh_v1.md)，

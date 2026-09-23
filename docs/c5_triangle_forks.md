@@ -1,5 +1,9 @@
 # Triangle 外掛樹：第一個分叉的 minor 排除
 
+文件整理（2026-09-23）：任意外掛樹的單 triangle 分支已完成；唯一長環由 [單環報告](c5_pentagon_branches.md) 排除，多 block 由 [合成報告](c5_k4_blocks.md) 補完。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 後續狀態（2026-09-17 文件整理）：本文的下一題 cycle-5 已由
 [單環排除](c5_pentagon_branches.md) 處理；後續多 block 進度見 [交接](HANDOFF.md)。
 

@@ -1,5 +1,9 @@
 # Bridge forcer 替換與四環混合連接型
 
+文件整理（2026-09-23）：一般 bridge singleton 替換保留；[triangle tree](c5_triangle_tree_palettes.md) 已完成任意共用點 cluster 的停止點。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 後續狀態（2026-09-17）：[任意 triangle tree](c5_triangle_tree_palettes.md)
 已完成本文的 cluster 停止點；一般 triangles／bridges 類別中，triangles
 必頂點互斥且至多二。本文四環證書與 singleton 替換仍作依賴保留。

@@ -1,5 +1,9 @@
 # 任意 triangle tree 的 palette 規則與共用點排除
 
+文件整理（2026-09-23）：任意 triangles／bridges 結構分類完成；[長環 root](c5_odd_cycle_roots.md) 與 [多長環](c5_multi_odd_cycles.md) 已補長奇環，完整合成見 [K4](c5_k4_blocks.md)。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 後續：[長 odd-cycle 的 root 介面](c5_odd_cycle_roots.md) 已處理本文的下一題：
 一般七種介面不封閉，但不可著色時仍有互補 palettes；恰一個長環與任意
 triangles／bridges 的情形已排除。本文證書保留為依賴，現況見 [交接](HANDOFF.md)。

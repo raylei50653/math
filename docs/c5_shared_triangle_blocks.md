@@ -1,5 +1,9 @@
 # 三個 triangle blocks 共用 cut vertex 的排除
 
+文件整理（2026-09-23）：恰三環排除完成；四環由 [鏈](c5_four_triangle_chain.md)、[star](c5_four_triangle_star.md) 與 [bridge 混合型](c5_shared_pair_bridge.md) 補齊，任意 cluster 見 [triangle tree](c5_triangle_tree_palettes.md)。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 後續狀態（2026-09-17 文件整理）：本文下一題的 [四環鏈](c5_four_triangle_chain.md)
 及其 [分叉](c5_four_triangle_star.md)、[bridge 混合型](c5_shared_pair_bridge.md) 已完成。現況見 [交接](HANDOFF.md)。
 

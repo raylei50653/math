@@ -1,8 +1,13 @@
 # 唯一 degree-5 的三-spoke 型：disk 區域化約
 
+文件整理（2026-09-23），R11：兩個鏡像 pentagon 化約保留；[R12](c5_degree5_tree_components.md) 至 [R24](c5_degree5_shared_cycle_minors.md) 已處理零／一／二環，分拆 (2) 整體仍開放。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 發布整理（2026-09-18）：本報告隨 R11–R15 五輪成果一併提交。下文的
 「未提交／HEAD／下一題」保留各輪當時狀態；最新停止點見
-[HANDOFF](HANDOFF.md)，發布前核對見 [STATUS §16](STATUS.md)。
+[HANDOFF](HANDOFF.md)，發布前核對見 [STATUS 歷史 §16](STATUS_HISTORY.md#16-r11r15-成果整理與發布前核對)。
 
 後續（2026-09-18）：[任意樹分量報告](c5_degree5_tree_components.md) 已排除
 本分拆中任意大小的樹 C，並排除連通外框下的 K4 block；下一題為含 triangle 的 C。
@@ -133,7 +138,7 @@ lake build
 git diff --check
 ```
 
-本輪實際核對見 [STATUS §11](STATUS.md#11-三-spoke-區域化約基準-be97121)。
+本輪實際核對見 [STATUS 歷史 §11](STATUS_HISTORY.md#11-三-spoke-區域化約基準-be97121)。
 任意大小的區域限制與缺色交換由紙面論證承擔；有限控制只核對 boundary
 位置、接合代數和具名非 minimal witness，沒有新增 Lean theorem。
 

@@ -1,5 +1,10 @@
 # 三環共用點鏈：全部接點位置與保留標記的奇環目標
 
+文件整理（2026-09-23），R28：完整 list 接合保留；[R29–R30](c5_degree5_middle_cycle_minors.md) 已完成中間不同二接點排除，[R31](c5_degree5_same_terminal_triangles.md) 僅完成同末端不同二接點正常形。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 2026-09-18，R28。接手 HEAD `e14874d` 與未提交 R24–R27。
 沿用三-spoke、唯一 degree-5 點 z、其餘 degree-4、fixed-q minimal
 obstruction 的設定。研究 J1–J2–J3 共用點鏈，兩共用點 r12≠r23，
@@ -116,7 +121,7 @@ palette，保留全部標記，且仍有末端 palette 錨點。因此 §2 的�
 profile 對在每組接點上有序，故不同臂分派皆涵蓋；同點交換也保留。
 逐組核對四種 z 色與八種縮環子集；triangle 條件化列另用圖回溯核對。
 同點型另精確求放寬 p 後的 root 集。一般任意長度結論由 §2–4 承擔，
-不是把有限長度控制當成枚舉證明。數字與本輪核對範圍見 [STATUS §32](STATUS.md#32-r28-三環鏈全部接點位置介面)。
+不是把有限長度控制當成枚舉證明。數字與本輪核對範圍見 [STATUS 歷史 §32](STATUS_HISTORY.md#32-r28-三環鏈全部接點位置介面)。
 
 ```bash
 uv run python scripts/c5_degree5_three_cycle_positions.py --check

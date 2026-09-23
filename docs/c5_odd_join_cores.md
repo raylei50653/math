@@ -1,5 +1,9 @@
 # 整個 odd-join 家族的單缺失分離
 
+文件整理（2026-09-23）：指定 quotient 家族的任意長結論仍保留；[樹核心](c5_tree_cores.md) 與 [全 degree-4 合成](c5_k4_blocks.md) 是後續不同範圍，不是一般 quotient 分類。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 2026-09-17。接續 [四內點與無界 odd-path 家族](c5_four_vertex_cores.md)。
 本輪處理交接提出的整個 `K2 ∨ C_(2m+1)` quotient 家族，得到任意長度的
 條件式分離結論；不只是上一輪可反覆伸長的某一個例子。

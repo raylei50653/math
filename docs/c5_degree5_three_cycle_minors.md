@@ -1,5 +1,10 @@
 # 三環共用點鏈：任意長環與重複色外臂的來源 minors
 
+文件整理（2026-09-23），R27：末端各一臂的共用點三環鏈排除完成；其他位置見 [R28](c5_degree5_three_cycle_positions.md)，一般三環仍開放。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 2026-09-18，R27。接手 HEAD `e14874d` 與未提交 R24–R26。
 本輪未 commit／push；成果為紙面構造＋Python 有限來源證書，未新增 Lean theorem。
 
@@ -99,7 +104,7 @@ augmentation 必 planar，矛盾。T4 只用於原先的區域定位；不要求
 subdivisions，直接核對所用路徑及 branch sets。保存所有載入的本地
 程式 hashes 與 R26 artifact hash；證書採緊湊 JSON 保留全部 witnesses，
 checker 唯讀逐 byte 比對。
-本輪統計與實際驗證結果見 [STATUS §31](STATUS.md#31-r27-三環共用點鏈來源-minors)。
+本輪統計與實際驗證結果見 [STATUS 歷史 §31](STATUS_HISTORY.md#31-r27-三環共用點鏈來源-minors)。
 
 ```bash
 uv run --with networkx==3.5 python scripts/c5_degree5_three_cycle_minors.py --check

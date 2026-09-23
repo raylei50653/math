@@ -1,5 +1,9 @@
 # 相鄰雙缺失：list-critical cores 與小阻礙分離
 
+文件整理（2026-09-23）：至多三內點的 list 化約與分類；[四內點](c5_four_vertex_cores.md) 及 [全 degree-4 合成](c5_k4_blocks.md) 已接續完成各自範圍。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 2026-09-17。接續 [flow-repair 停止點](c5_weak_flow_repairs.md)。
 本輪選出的方向是 **minimal obstruction 的 list-coloring 結構**。
 候選 A 一般三出口仍未證，但得到適用於任意大小來源圖的條件式結論：

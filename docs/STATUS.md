@@ -92,34 +92,39 @@
 
 各表只概括成果層級；具體 theorem 名稱、公理審計、證書及完整重播命令仍放原報告。
 
-### 2.4 其他專題與 sector 前置證據
+### 2.4 3903 系列與 sector 前置證據
 
-下列為既有報告入口，舊停止點按研究輪語境閱讀。3903 分支的後續結論見
-[雙拒絕分類](c5_two_rejection_proof_zh.md)；不得把舊「未解」視為目前待辦。
+完整推導順序、符號、適用範圍及證書入口見 [3903 系列導讀](c5_sector_3903_guide.md)。
+指定 sector 圖類的 3903 已由 [雙拒絕分類](c5_two_rejection_proof_zh.md) 排除；
+以下保留各階段的直接報告入口，舊停止點不是目前待辦。
 
-- [397→331：交換外飽和分離集、舊路徑接出口與無葉核心](c5_sector_331_barriers.md)
-- [3903 單步共同核心：雙側擴張與框投影的限制](c5_sector_common_core.md)
-- [3903：第一種 corner 次序的偶圈排除與單步正控制](c5_sector_corner_even_cycle.md)
-- [3903：兩種 corner 次序的飽和入口分離集](c5_sector_corner_gates.md)
-- [3903 跨列交換：分割閉包與實際軌道](c5_sector_cross_row.md)
-- [3903：四色重數分岔與六內點必要下界](c5_sector_five_inner.md)
-- [3903 的強迫連通抽取](c5_sector_forced_connectivity.md)
-- [3903：框點 1 切斷分支與五內點下界](c5_sector_frame_cut.md)
-- [3903 框點 4 的跨色分離與共同鄰點障礙](c5_sector_joint_identity.md)
-- [3903：葉點接回的兩種必要 corner 次序](c5_sector_leaf_corners.md)
-- [3903：飽和葉點例外的條件式八內點下界](c5_sector_leaf_exception.md)
-- [3903：葉點刪除的四接點介面與自動分離](c5_sector_leaf_reduction.md)
-- [3903 單步帶框 incidence：安全刪減與必要內部節點](c5_sector_marked_incidence.md)
-- [3903 單步混合色對相容性：精確介面與碰撞](c5_sector_mixed_transition.md)
-- [3903：任意長路徑互斥與框點鄰點障礙](c5_sector_neighbor_barrier.md)
-- [3903 的既有非 disk 正控制](c5_sector_positive_control.md)
-- [3903：拒絕列的緊 list 與內部葉點排除](c5_sector_rejection_lists.md)
-- [3903：degree-4 stars 的兩種分離集](c5_sector_saturated_cuts.md)
-- [831 的條件相等、平面／disk 等價與必要連接](c5_sector_structural.md)
-- [相鄰雙缺失的定向 sector 介面實驗](c5_sector_targets.md)
-- [雙拒絕證明的 Lean 共用工具](lean_two_rejection_tools.md)
+| 階段 | 報告（由左至右為閱讀順序） |
+| --- | --- |
+| 目標與拓撲起點 | [五目標與十二列位元定義](c5_sector_targets.md) → [非 disk 正控制](c5_sector_positive_control.md) → [831 與平面／disk 等價](c5_sector_structural.md) → [強迫連通](c5_sector_forced_connectivity.md) → [跨列閉包與交換軌道](c5_sector_cross_row.md) |
+| 單步介面與共同身份 | [混合色對與碰撞](c5_sector_mixed_transition.md) → [帶框 incidence](c5_sector_marked_incidence.md) → [共同核心](c5_sector_common_core.md) → [框點 4 的跨色身份](c5_sector_joint_identity.md) |
+| 指定轉移的分離與下界 | [兩種飽和 star 分離集](c5_sector_saturated_cuts.md) → [框點 1 切斷分支](c5_sector_frame_cut.md) → [五內點分類](c5_sector_five_inner.md) → [任意長路徑與鄰點障礙](c5_sector_neighbor_barrier.md) |
+| 非空交集分支 | [葉點例外下界](c5_sector_leaf_exception.md) → [葉點刪除介面](c5_sector_leaf_reduction.md) → [葉點接回 corners](c5_sector_leaf_corners.md) → [corner 入口分離集](c5_sector_corner_gates.md) → [第一種次序偶圈排除](c5_sector_corner_even_cycle.md) → [兩拒絕列緊 lists](c5_sector_rejection_lists.md) → [末端 block 接合](c5_sector_terminal_blocks.md) |
+| 空交集、抽象後繼與後續涵蓋 | [空交集身份](c5_sector_empty_branch.md) → [空分支末端排除](c5_sector_empty_terminal.md) → [全部後繼核對](c5_sector_successor_audit.md) → [331 同圖必要條件](c5_sector_331_barriers.md) |
+| 分類與形式化界線 | [雙拒絕分類](c5_two_rejection_proof_zh.md) → [Lean 共用工具](lean_two_rejection_tools.md) |
 
 來源原稿：[雙拒絕中文原稿 v1](sources/c5_two_rejection_proof_zh_v1.md)，作為匯入來源保存；目前結論以審閱後報告為準。
+
+### 2.5 degree-5／R 系列
+
+[degree-5／R 系列導讀](c5_degree5_guide.md) 統整 R9–R31 的輪次對照、
+共同前提、介面／正常形／來源 minor 依賴與重播入口；各原報告仍直接列於 §2.1。
+三-spoke／連通二接點分量的零／一／二環與兩個指定三環鏈型已排除；
+R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是保留缺口。
+一般 degree-5 與一般三環尚未排除，研究優先序只見 HANDOFF。
+
+### 2.6 全 degree-4／block 化約系列
+
+[全 degree-4／block 系列導讀](c5_degree4_guide.md) 統整小核心、樹、triangle、
+任意 block tree、長奇環與 K4 的依賴順序；原報告仍直接列於 §2.1。
+接受 T4 的 C5 disk minimal q-obstruction，若所有有效內點完整 degree=4，
+則只缺 q；此任意大小合成依賴紙面化約、外部 degree-list 與有限證書，未完整 Lean 化。
+兩 triangle 的直接 bridge 型可存活；固定 q 的 minor 不自動保持完整 Σ。
+一般 degree≥5 與共同出口仍開放，研究優先序只見 HANDOFF。
 
 ## 3. 已被後續成果處理的舊停止點
 

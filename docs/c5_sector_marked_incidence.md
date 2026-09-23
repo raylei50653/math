@@ -1,5 +1,12 @@
 # 3903 單步帶框 incidence：安全刪減與必要內部節點
 
+後續狀態（2026-09-23）：[雙拒絕分類](c5_two_rejection_proof_zh.md) 已在
+induced-C5 disk、非空連通內部、內點完整 degree≤4、b0 恰兩個不同內鄰點
+的圖類內排除 3903。本文正文保留當輪結論與停止點；閱讀順序及證據界線見
+[3903 系列導讀](c5_sector_3903_guide.md)。
+一般單步介面及局部必要條件仍按本文前提使用；不附加拒絕列的
+397→330 有 [disk 正控制](c5_sector_corner_even_cycle.md)，不能一般排除。
+
 2026-09-19，接手基準 `3aaca0b`，工作樹原為乾淨。
 接續 [單步混合相容性](c5_sector_mixed_transition.md)。本輪把先前提出的
 帶框 retained-component／star 介面實作為可重播資料，證明兩種安全

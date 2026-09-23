@@ -1,5 +1,10 @@
 # 中間二接點三環鏈：任意長來源 minors 與拓撲合成
 
+文件整理（2026-09-23），R30：中間不同二接點鏈型排除完成；[R31](c5_degree5_same_terminal_triangles.md) 已完成同末端不同二接點正常形，該型任意長來源 minors 仍待補。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 2026-09-18，R30。接手 HEAD `e14874d` 與未提交 R24–R29。
 **兩個不同私有接點都在中間環的共用點三奇環鏈，任意環長與外臂長度
 可縮到 R29 的 C3–C5–C3 正常形，因此在下述前提下排除。**
@@ -98,7 +103,7 @@ seed；隨位置與桶交替選最短／最長臂。每個 palette／終色桶�
 生成與 `--check` 都禁用 NetworkX planarity APIs；只使用 R29 已存路徑。
 記錄載入本地程式 hashes 及 R29 artifact hash，並驗 R29 的程式指紋。
 `--check` 唯讀重建全部本輪證書，逐 byte 比對 JSON。數字與實際驗證
-見 [STATUS §34](STATUS.md#34-r30-中間二接點三環鏈來源-minors)。
+見 [STATUS 歷史 §34](STATUS_HISTORY.md#34-r30-中間二接點三環鏈來源-minors)。
 
 ```bash
 uv run --with networkx==3.5 python scripts/c5_degree5_middle_cycle_minors.py --check

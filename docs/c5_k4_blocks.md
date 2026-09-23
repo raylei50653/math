@@ -1,5 +1,11 @@
 # K4 block 排除與全 degree-4 單缺失結論
 
+文件整理（2026-09-23），R9：K4 排除與既有 block 分類合成；唯一 degree-5 的完整介面由 [R10](c5_degree5_interfaces.md) 接續。
+前置依賴見 [全 degree-4／block 導讀](c5_degree4_guide.md)，後續見
+[degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 後續（2026-09-18）：[degree-5 完整接點介面](c5_degree5_interfaces.md) 已完成
 本文 R10 的染色介面與 minimality 條件；共同 disk／T4 排除仍開放。
 
@@ -147,7 +153,7 @@ lake build
 git diff --check
 ```
 
-本輪實際驗證結果記於 [STATUS §9](STATUS.md#9-k4-排除與-degree-4-合成基準-dad5940)。
+本輪實際驗證結果記於 [STATUS 歷史 §9](STATUS_HISTORY.md#9-k4-排除與-degree-4-合成基準-dad5940)。
 
 ## 6. 下一個窄問題
 

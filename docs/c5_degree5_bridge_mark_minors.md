@@ -1,8 +1,13 @@
 # 互斥雙 triangles：標記路徑 minor 與同點接入排除
 
+文件整理（2026-09-23），R19：結合 R15–R17 完成恰兩個 triangles；含長環的雙環由 [R20–R24](c5_degree5_shared_cycle_minors.md) 補完。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 發布整理（2026-09-18）：本報告隨 R16–R20 一併提交。下文的「未提交／HEAD／
 下一題」保留各輪當時狀態；最新停止點見 [HANDOFF](HANDOFF.md)，
-本次提交核對見 [STATUS §22](STATUS.md#22-r16r20-提交整理與核對)。
+本次提交核對見 [STATUS 歷史 §22](STATUS_HISTORY.md#22-r16r20-提交整理與核對)。
 
 
 後續（R20）：[長奇環加 triangle 的完整條件 root](c5_degree5_long_triangle_roots.md)

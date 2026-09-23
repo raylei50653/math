@@ -1,5 +1,9 @@
 # 較長 odd-cycle 與 triangles 共用點的 root 介面
 
+文件整理（2026-09-23）：R7 的單長環排除完成；[R8 多長環](c5_multi_odd_cycles.md) 已補任意有限長環數的歸納與終止論證。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 後續：[多長環遞迴與連續縮減](c5_multi_odd_cycles.md) 已完成本文的兩長環
 停止點，並用明確歸納及終止論證涵蓋任意多長環；本文原定理及證書範圍不變。
 

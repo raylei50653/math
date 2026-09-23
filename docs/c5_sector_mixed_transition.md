@@ -1,5 +1,12 @@
 # 3903 單步混合色對相容性：精確介面與碰撞
 
+後續狀態（2026-09-23）：[雙拒絕分類](c5_two_rejection_proof_zh.md) 已在
+induced-C5 disk、非空連通內部、內點完整 degree≤4、b0 恰兩個不同內鄰點
+的圖類內排除 3903。本文正文保留當輪結論與停止點；閱讀順序及證據界線見
+[3903 系列導讀](c5_sector_3903_guide.md)。
+一般單步介面及局部必要條件仍按本文前提使用；不附加拒絕列的
+397→330 有 [disk 正控制](c5_sector_corner_even_cycle.md)，不能一般排除。
+
 2026-09-18，基準 `e097be67487bd3d455733e4fab1a1ab2744e557c`。
 接續 [跨列閉包](c5_sector_cross_row.md) 及
 [強迫連通](c5_sector_forced_connectivity.md)。本輪得到不依賴平面性的

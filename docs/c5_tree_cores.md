@@ -1,5 +1,9 @@
 # Degree-4 樹核心：排除分叉與至多一次 palette 切換
 
+文件整理（2026-09-23）：任意 degree-4 樹分支已完成；含 cycle 的全 degree-4 缺口已由 [K4／block 合成](c5_k4_blocks.md) 補齊。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 2026-09-17。接續 [odd-join 家族](c5_odd_join_cores.md)。
 本輪把單缺失分離推進到另一個無界範圍：**內部圖是樹，且每個有效內點
 在完整圖中的 degree 都等於 4**。此範圍包含不是 odd-join 的新核心。

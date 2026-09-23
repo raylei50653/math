@@ -1,5 +1,9 @@
 # Cycle-5 接枝限制：整個單環核心被排除
 
+文件整理（2026-09-23）：唯一長環已排除；[兩環正常形](c5_two_triangle_blocks.md) 與 [多長環](c5_multi_odd_cycles.md) 已處理後續指定範圍。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 後續狀態（2026-09-17 文件整理）：本文的兩 triangle blocks 停止點已由
 [兩環正常形](c5_two_triangle_blocks.md) 處理；當前方向見 [交接](HANDOFF.md)。
 

@@ -1,5 +1,10 @@
 # 共用點雙奇環：來源 minor 與任意環長排除
 
+文件整理（2026-09-23），R24：結合 R22 完成恰兩個 odd-cycle blocks；指定三環鏈由 [R25–R27](c5_degree5_three_cycle_minors.md) 接續，一般三環仍開放。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 2026-09-18，R24。接手 HEAD `e14874d`，工作樹乾淨；沿 R23 停止點補完
 真正來源 minor、degrees、逐邊刪除著色及 R15 非平面證書合成。
 本輪未 commit／push。

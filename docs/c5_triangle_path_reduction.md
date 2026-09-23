@@ -1,5 +1,9 @@
 # Triangle 加任意長路徑枝：bridge 介面化約
 
+文件整理（2026-09-23）：本文外掛樹分叉停止點已由 [第一分叉排除](c5_triangle_forks.md) 補完；完整 bridge 介面保持仍限本文 context。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 後續狀態（2026-09-17 文件整理）：本文的外掛樹分叉停止點已由
 [第一分叉排除](c5_triangle_forks.md) 處理；下文「仍未解」指本輪當時狀態。現況見 [交接](HANDOFF.md)。
 

@@ -1,5 +1,9 @@
 # Triangle block 的 forcing branches：兩尾仍可同面
 
+文件整理（2026-09-23）：接枝位置限制與兩尾正控制保留；[路徑枝](c5_triangle_path_reduction.md) 及 [分叉排除](c5_triangle_forks.md) 已完成整個單 triangle 分支。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 後續狀態（2026-09-17 文件整理）：root 介面的限制見 [介面反例](c5_root_interfaces.md)；
 任意長路徑及外掛樹分叉已由 [路徑化約](c5_triangle_path_reduction.md) 與
 [分叉排除](c5_triangle_forks.md) 處理。以下保留本輪結果；現況見 [交接](HANDOFF.md)。

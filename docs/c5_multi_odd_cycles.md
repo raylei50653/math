@@ -1,5 +1,9 @@
 # 多個長 odd-cycle 的遞迴與連續縮減
 
+文件整理（2026-09-23）：R8 的 odd-cycles／bridges 類別完成；[R9 K4 與合成](c5_k4_blocks.md) 已補含 K4 的缺口及全 degree-4 單缺失結論。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 後續（2026-09-18）：[K4／degree-4 報告](c5_k4_blocks.md) 已完成本文 R9
 停止點，並合成接受 T4 的全 degree-4 disk minimal obstruction 只缺 q。
 本文 odd-cycle 定理、證書與當時停止點保留。

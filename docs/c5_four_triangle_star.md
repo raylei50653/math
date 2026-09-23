@@ -1,5 +1,9 @@
 # 四個 triangle blocks 的共用點分叉型
 
+文件整理（2026-09-23）：四環 star 排除完成；[bridge pruning](c5_shared_pair_bridge.md) 已補齊混合型，任意 cluster 由 [triangle tree](c5_triangle_tree_palettes.md) 接續。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 後續狀態（2026-09-17 文件整理）：[bridge pruning](c5_shared_pair_bridge.md)
 已補齊本文未涵蓋的四環混合型；本文成果已納入 `fb6216e`，
 下文未提交字樣是當時紀錄。現況見 [交接](HANDOFF.md)。

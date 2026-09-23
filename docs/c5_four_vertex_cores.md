@@ -1,5 +1,9 @@
 # 四內點最小阻礙：單缺失分類與無界 odd-path 家族
 
+文件整理（2026-09-23）：四內點分類與無界家族仍保留；[odd-join](c5_odd_join_cores.md) 已處理指定 quotient 家族，不能改猜所有 minimal cores 大小有界。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 2026-09-17。接續 [list-critical core 路線](c5_weak_list_cores.md)。
 本輪完整處理恰好四個有效內點的 minimal singleton obstructions；
 符合 disk 與全部 T4 條件者，仍全部只拒絕指定 singleton。

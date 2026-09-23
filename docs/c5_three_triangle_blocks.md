@@ -1,5 +1,9 @@
 # 三個互斥 triangle blocks 的排除
 
+文件整理（2026-09-23）：本文任意環數結論限頂點互斥；[triangle tree](c5_triangle_tree_palettes.md) 已另證共用點 cluster 排除。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 後續狀態（2026-09-17 文件整理）：本文下一題的共用 cut vertex 情形已由
 [共用點三環](c5_shared_triangle_blocks.md) 處理；本報告的任意環數結論仍限頂點互斥。現況見 [交接](HANDOFF.md)。
 

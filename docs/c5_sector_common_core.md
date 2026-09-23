@@ -1,5 +1,12 @@
 # 3903 單步共同核心：雙側擴張與框投影的限制
 
+後續狀態（2026-09-23）：[雙拒絕分類](c5_two_rejection_proof_zh.md) 已在
+induced-C5 disk、非空連通內部、內點完整 degree≤4、b0 恰兩個不同內鄰點
+的圖類內排除 3903。本文正文保留當輪結論與停止點；閱讀順序及證據界線見
+[3903 系列導讀](c5_sector_3903_guide.md)。
+一般單步介面及局部必要條件仍按本文前提使用；不附加拒絕列的
+397→330 有 [disk 正控制](c5_sector_corner_even_cycle.md)，不能一般排除。
+
 2026-09-19，接手 HEAD `3aaca0b`，保留前輪未提交的
 [帶框 incidence](c5_sector_marked_incidence.md) 工作。本輪限於
 397、action 2 與候選 330；沒有增加搜尋圖、交換歷史或其他目標。

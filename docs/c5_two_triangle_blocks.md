@@ -1,5 +1,9 @@
 # 兩個 triangle blocks：直接 bridge 的有限正常形
 
+文件整理（2026-09-23）：直接 bridge 六內點存活型保留；恰三環由 [互斥型](c5_three_triangle_blocks.md) 與 [共用點型](c5_shared_triangle_blocks.md) 排除，任意總數由 [triangle tree](c5_triangle_tree_palettes.md) 補完。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 後續狀態（2026-09-17 文件整理）：[互斥三環](c5_three_triangle_blocks.md) 與
 [共用點三環](c5_shared_triangle_blocks.md) 已補齊恰三環；最新四環成果見 [交接](HANDOFF.md)。
 

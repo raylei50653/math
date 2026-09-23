@@ -1,5 +1,10 @@
 # 三環共用點鏈：三個 triangle 正常形的實際接線與拓撲
 
+文件整理（2026-09-23），R26：正常形拓撲覆蓋完成；[R27](c5_degree5_three_cycle_minors.md) 已補此型任意長來源 minors 及拓撲合成。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 2026-09-18，R26。接手 HEAD `e14874d` 與未提交 R24–R25，沿
 [R25](c5_degree5_three_cycle_roots.md) 指定的下一題推進。本輪未 commit／push。
 本報告完成 **兩臂各在末端私有點、臂色序列為簡單序列的三個 triangle
@@ -75,7 +80,7 @@ git diff --check
 ```
 
 新 checker 已在停用 planarity APIs 後唯讀逐 byte 重播通過；
-`lake build` 通過（8,822 jobs，僅既有 lint）。本輪統計與驗證結果見 [STATUS §30](STATUS.md#30-r26-三個-triangle-鏈正常形拓撲)。
+`lake build` 通過（8,822 jobs，僅既有 lint）。本輪統計與驗證結果見 [STATUS 歷史 §30](STATUS_HISTORY.md#30-r26-三個-triangle-鏈正常形拓撲)。
 R15／R17／R19 大覆蓋未重跑，未使用其雙環覆蓋代替本輪三環覆蓋。
 R24、R20／R23 standalone checker 亦未重跑；R25 已直接重播。
 

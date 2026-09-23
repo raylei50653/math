@@ -1,5 +1,9 @@
 # Root 介面反例與 triangle context 的篩選
 
+文件整理（2026-09-23）：完整 root／bridge 介面反例仍有效；[路徑化約](c5_triangle_path_reduction.md) 的正結果需要 triangle context。
+系列依賴與證據界線見 [全 degree-4／block 導讀](c5_degree4_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文舊停止點與驗證紀錄保留當輪語境；本次未重跑研究 checker。
+
 後續狀態（2026-09-17 文件整理）：[triangle 路徑化約](c5_triangle_path_reduction.md)
 已處理本文提出的 triangle context 問題；完整 root 介面的反例仍有效。現況見 [交接](HANDOFF.md)。
 

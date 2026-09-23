@@ -1,5 +1,10 @@
 # C3–C5–C3：中間環兩個不同接點的實際接線與拓撲
 
+文件整理（2026-09-23），R29：正常形拓撲覆蓋完成；[R30](c5_degree5_middle_cycle_minors.md) 已補中間不同二接點的任意長來源 minors。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 2026-09-18，R29。沿 [R28](c5_degree5_three_cycle_positions.md) 的四標記
 list 目標，完成中間 C5 含兩個不同私有接點、兩末端為 C3、兩外臂
 色序列為簡單序列的正常形。本輪為**紙面構造＋Python 有限證書**；
@@ -75,7 +80,7 @@ Boolean cube 差集另用四變數全部 6,561 組 cube 對與真值表獨立核
 重播重新驗證代表的全部著色、來源及載入的本地依賴 hashes、覆蓋
 fingerprint，最後逐 byte 比對緊湊 JSON，且不寫檔。
 
-具體統計與本輪驗證見 [STATUS §33](STATUS.md#33-r29-c3c5c3-中間二接點正常形)。
+具體統計與本輪驗證見 [STATUS 歷史 §33](STATUS_HISTORY.md#33-r29-c3c5c3-中間二接點正常形)。
 
 ```bash
 uv run --with networkx==3.5 python scripts/c5_degree5_middle_pentagon.py --check

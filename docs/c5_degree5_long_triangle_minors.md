@@ -1,6 +1,11 @@
 # 一長奇環加 triangle：保留接點的來源 minor 與排除
 
-發布註記：本報告與 R21–R23、Lean 接合基礎一併發布，核對見 [STATUS §27](STATUS.md)。
+文件整理（2026-09-23），R21：互斥混合雙環排除完成；[R22](c5_degree5_two_long_cycles.md) 補雙長環，[R24](c5_degree5_shared_cycle_minors.md) 補共用點型。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
+發布註記：本報告與 R21–R23、Lean 接合基礎一併發布，核對見 [STATUS 歷史 §27](STATUS_HISTORY.md#27-r21r23-與-lean-接合基礎發布核對)。
 以下保留研究輪當時的提交狀態與驗證範圍。
 
 2026-09-18，R21。從乾淨 HEAD `3d6a647` 接手，完成 R20 指定的圖層缺口。

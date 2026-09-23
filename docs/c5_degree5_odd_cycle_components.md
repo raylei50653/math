@@ -1,8 +1,13 @@
 # 三-spoke 的單長奇環二接點分量排除
 
+文件整理（2026-09-23），R14：單奇環加 bridges 排除完成；雙環由 [R15–R24](c5_degree5_shared_cycle_minors.md) 接續完成。
+系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
+[HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
+歷次驗證與發布見 [研究歷史](STATUS_HISTORY.md)，不代表本次重新驗證。
+
 發布整理（2026-09-18）：本報告隨 R11–R15 五輪成果一併提交。下文的
 「未提交／HEAD／下一題」保留各輪當時狀態；最新停止點見
-[HANDOFF](HANDOFF.md)，發布前核對見 [STATUS §16](STATUS.md)。
+[HANDOFF](HANDOFF.md)，發布前核對見 [STATUS 歷史 §16](STATUS_HISTORY.md#16-r11r15-成果整理與發布前核對)。
 
 後續（2026-09-18）：[共用點雙 triangle 報告](c5_degree5_shared_triangles.md)
 已排除恰兩個 triangles 共用 cut vertex 的二接點分量，涵蓋任意臂長及外枝。
@@ -176,7 +181,7 @@ lake build
 git diff --check
 ```
 
-本輪實際驗證見 [STATUS §14](STATUS.md#14-三-spoke-單長奇環二接點排除)。
+本輪實際驗證見 [STATUS 歷史 §14](STATUS_HISTORY.md#14-三-spoke-單長奇環二接點排除)。
 沒有修改前三輪 scripts／artifacts，沒有新 planarity search、Lean theorem、
 舊全量 catalogue 或 deletion audit 重跑。Apex-disk 等價與 minor／無界化約
 仍是紙面信任，Python 證書不是一般拓撲形式化。

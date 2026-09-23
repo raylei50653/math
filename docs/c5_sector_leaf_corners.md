@@ -1,8 +1,12 @@
 # 3903：葉點接回的兩種必要 corner 次序
 
-後續：[偶圈排除與單步正控制](c5_sector_corner_even_cycle.md) 已證第一種
-次序接受全部開口列，故不能是 3903；亦保存 disk 397→330 正控制。
-以下保留當輪停止點，現在的接手入口見 HANDOFF。
+後續狀態（2026-09-23）：[雙拒絕分類](c5_two_rejection_proof_zh.md) 已在
+induced-C5 disk、非空連通內部、內點完整 degree≤4、b0 恰兩個不同內鄰點
+的圖類內排除 3903。本文正文保留當輪結論與停止點；閱讀順序及證據界線見
+[3903 系列導讀](c5_sector_3903_guide.md)。
+非空交集的兩種 corner 次序已由 [偶圈報告](c5_sector_corner_even_cycle.md)
+與 [末端 block 報告](c5_sector_terminal_blocks.md) 完成排除；
+空交集另見 [空分支末端報告](c5_sector_empty_terminal.md)。
 
 本報告保留研究輪當時的紀錄；後續整合提交與重播範圍見
 [STATUS §59](STATUS.md#59-3903-六輪成果整理與提交核對)。
