@@ -1,5 +1,10 @@
 # 唯一 degree-5 的兩-spoke 區域化約
 
+後續（2026-09-24）：[q-preserving 反射與下一相鄰 orbit](c5_two_spoke_reflection.md)
+已將 S={b0,b1} 排除搬到 S={b2,b3}；六個 (2,1) 表項累計排除，尚餘四相鄰、
+八非相鄰項。下一相鄰 orbit 有必要 split-support 定理及八個只缺 q 的既有
+disk 控制；一般單缺失分離未證。下文數字與停止點保留當輪語境。
+
 後續（2026-09-24）：[中間相鄰 (2,1) 排除](c5_two_spoke_middle_21.md) 已排除
 S={b1,b2} 的兩種次序；palette {3} bridge／leaf odd cycle 與三個連通外部
 branch sets 給同圖 K5 minor。原 18 個 (2,1) 表項累計四個排除，尚有 14 個

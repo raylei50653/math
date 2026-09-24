@@ -2,7 +2,7 @@
 
 文件更新與研究依據：2026-09-24。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪以三個連通外部 branch sets 與同圖 K5 minor 排除 S={b1,b2} 的兩種 (2,1) 型；一般單側出口仍有核心分離缺口。
+更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪形式化 q-preserving 反射搬運，排除 S={b2,b3} 兩項，並刻畫下一個相鄰 orbit 的實際 attachment 分離；一般單側出口仍有核心分離缺口。
 
 ## 1. 目前做到哪裡
 
@@ -50,9 +50,16 @@ tethers 給 K5 minor，未合併 C₂、C₁，亦未引用 (3) 排除。
 兩個 z–b4 arcs 都見三色，但另一分量的實際路徑把 z、b4 接成一個外部
 branch set，與該側的 0、1 點形成三角。palette {3} bridge 的兩側各碰三色，
 或 leaf odd cycle 加保留其餘分量，都給同圖 K5 minor；兩種次序皆排除。
-原 18 個 (2,1) 表項已有四個排除，**其餘 14 個未在本輪分類**；不是實現性清單。
-下一個窄問題是明列 S={b2,b3} 的反射搬運及其餘相鄰／非相鄰表項的關係。
-須保留 C₂ 兩接點、C₁ 單接點及共同色框；一般失敗側每個核心仍必碰五個 boundary 點。
+[反射與下一相鄰 orbit](c5_two_spoke_reflection.md) 以 ρ(i)=3−i、π=(0 1) 固定 q，
+將 S={b0,b1} 排除搬到 S={b2,b3}；ordered relation／禁色搬運已有 Lean 普通證明。
+原 18 項累計六項排除，**剩四項相鄰、八項非相鄰**。對 S={b3,b4}，
+禁 0 的 A 必恰接 {b1,b2,b3}，禁 3 的 D 必恰接 {b0,b1,b4}；S={b4,b0} 是其反射。
+此任意大小 support 定理沿用紙面 crosscut／two-hub minor 引理，未 Lean 化。
+既有八個 disk witnesses 均為 C₂=A、C₁=D，只缺 q；不能整個 orbit 排除。
+下一個窄問題是此 split-support pair 的兩種接點次序與完整列關係：
+能否證明所有 T4-accepting cores 只缺 q，或保留實際第二缺失 witness。
+C₂=D、C₁=A 的一般實現／排除亦未證。須保留原接點、bridges 及共同色框；
+已完成的三組相鄰 K5 排除毋須重開，一般失敗側每個核心仍必碰五個 boundary 點。
 一般失敗側的核心存在性化約仍未證；兩葉鏈、五目標與 (3) 毋須重開。
 603 profiles 與固定點未改寫；共同出口仍需獨立的共同 pivotal-edge 證明。
 
@@ -92,9 +99,10 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性均保�
 ## 5. 重播入口與驗證範圍
 
 接續目前研究的最小重播（本輪實際範圍見
-[中間相鄰 (2,1) 紀錄](history/2026-09-24-middle-two-one.md)）：
+[反射與相鄰 orbit 紀錄](history/2026-09-24-two-spoke-reflection.md)）：
 
 ```bash
+python3 scripts/c5_two_spoke_reflection.py --check
 python3 scripts/c5_two_spoke_middle_21.py --check
 python3 scripts/c5_two_spoke_adjacent_21.py --check
 python3 scripts/c5_two_spoke_three_contacts.py --check
@@ -105,6 +113,7 @@ uv run --with networkx==3.5 python scripts/c5_sector_targets.py --check
 uv run --with networkx==3.5 python scripts/c5_degree5_sectors.py --check
 uv run --with networkx==3.5 python scripts/c5_degree5_interfaces.py --check
 lake build
+lake env lean Math/TwoSpokeReflectionAudit.lean
 python3 scripts/check_docs.py
 git diff --check
 ```

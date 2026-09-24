@@ -1,5 +1,10 @@
 # Middle adjacent two-spoke (2,1): three exterior hubs and a K5 minor
 
+後續（2026-09-24）：[q-preserving 反射與下一相鄰 orbit](c5_two_spoke_reflection.md)
+已將 S={b0,b1} 排除搬到 S={b2,b3}；六個 (2,1) 表項累計排除，尚餘四相鄰、
+八非相鄰項。下一相鄰 orbit 有必要 split-support 定理及八個只缺 q 的既有
+disk 控制；一般單缺失分離未證。下文數字與停止點保留當輪語境。
+
 2026-09-24. **Both S={b1,b2} orders are impossible.** This extends the
 [adjacent (2,1) proof](c5_two_spoke_adjacent_21.md) while retaining the two
 separate components. The new case is a bridge with palette {3}: its two

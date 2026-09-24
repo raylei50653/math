@@ -2,7 +2,7 @@
 
 文件更新與研究依據：2026-09-24。
 本頁維護研究狀態與完整報告索引；**優先順序只以 [HANDOFF](HANDOFF.md) 為準**。
-兩-spoke 全部 (3) 型，以及 S={b0,b1}、S={b1,b2} 各兩種 (2,1) 次序已由同圖 K5 minor 排除；其餘 14 個 (2,1) 表項本輪未分類。一般單側出口與 R31 來源 minor 缺口保留。
+兩-spoke 全部 (3) 型，以及 S={b0,b1}、S={b1,b2}、S={b2,b3} 各兩種 (2,1) 次序已排除。剩四個相鄰、八個非相鄰表項；下一相鄰 orbit 有 split-support 必要定理及八個只缺 q 的既有 disk 控制。一般單側出口與 R31 來源 minor 缺口保留。
 逐輪數字、驗證與發布紀錄已移至 [歷史快照](STATUS_HISTORY.md)。
 
 ## 1. 閱讀順序與文件角色
@@ -26,6 +26,7 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [q-preserving 反射與下一相鄰 orbit](c5_two_spoke_reflection.md) | Lean ordered-relation／禁色搬運；S={b2,b3} 兩項由既有排除搬運；下一 orbit 的 split-support 紙面定理與八個 disk 控制，一般單缺失分離未證 |
 | [中間相鄰兩分量 (2,1) 排除](c5_two_spoke_middle_21.md) | S={b1,b2} 兩次序皆排除；三外部 branch sets 加 palette {3} bridge／leaf odd cycle 給同圖 K5，保留兩分量關係，未 Lean 化 |
 | [相鄰兩分量 (2,1) 排除](c5_two_spoke_adjacent_21.md) | S={b0,b1} 的兩種禁色次序皆不可能；兩個不同分量提供 odd cycle 與 z–b4 路徑，實際雙色 tethers 給 K5 minor；未 Lean 化 |
 | [三接點兩-spoke 排除](c5_two_spoke_three_contacts.md) | 同圖 palette 差強迫 triangle／三臂及實際 boundary tethers，K5 minor 排除全部 (3)；任意長度紙面證明＋局部證書，未 Lean 化 |
@@ -176,7 +177,7 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | --- | --- | --- |
 | 已完成 | 3703 兩葉鏈 | [排除報告](c5_sector_3703_exclusion.md) 完成任意長度三拒絕排除；限定 sector 圖類，未 Lean 化 |
 | 已完成 | 五目標到三-spoke 核心出口的接合 | [定理](c5_single_sided_exit.md) 核對來源假設、五目標窮盡及 first strict step；條件式結論無大小限制 |
-| 活躍 | 一般單側出口的核心分離 | 失敗側每個核心必有 degree≥6、多個 degree-5，或唯一 degree-5 且 t≤2；核心須碰全部五個 boundary 頂點；t=2 的 18 個 (2,1) 表項中，已有 [S={b0,b1}](c5_two_spoke_adjacent_21.md) 與 [S={b1,b2}](c5_two_spoke_middle_21.md) 共四項排除，其餘 14 項本輪未分類 |
+| 活躍 | 一般單側出口的核心分離 | 失敗側每個核心必有 degree≥6、多個 degree-5，或唯一 degree-5 且 t≤2；核心須碰全部五個 boundary 頂點；t=2 的 18 個 (2,1) 表項中，已有 [S={b0,b1}](c5_two_spoke_adjacent_21.md) 與 [S={b1,b2}](c5_two_spoke_middle_21.md)，加上 [反射搬運](c5_two_spoke_reflection.md) 的 S={b2,b3} 共六項排除；剩四相鄰、八非相鄰項，下一相鄰 split-support pair 的一般單缺失分離未證 |
 | 已完成 | 指定 sector 圖類的雙拒絕分類 | [紙面分類](c5_two_rejection_proof_zh.md) 排除四個目標；依賴外部 degree-list，完整分類未 Lean 化 |
 | 被後續涵蓋 | 3903 空／非空分支、331 同圖分支 | 既有局部證據保留；後續分類已涵蓋原排除問題，不代表抽象 603 profiles 已改寫 |
 | 保留 | R31 任意長來源 minors | 正常形已完成；仍需 boundary 固定 branch sets、四列、degrees、刪邊著色與拓撲合成，見 [R31](c5_degree5_same_terminal_triangles.md) |
@@ -185,6 +186,8 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | 保留 | 一般單側／共同出口與主命題 | 分別需要一般分離、共同 pivotal edge 等證明；兩個單側出口不推出共同出口 |
 
 ## 歷史紀錄與舊連結
+
+- [2026-09-24：q-preserving 反射、相鄰 support 分離與既有 disk 控制](history/2026-09-24-two-spoke-reflection.md)
 
 - [2026-09-24：中間相鄰兩分量 (2,1) 的三外部集合與 K5 排除](history/2026-09-24-middle-two-one.md)
 
