@@ -2,7 +2,7 @@
 
 文件更新與研究依據：2026-09-24。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪以同圖 K5 minor 排除全部兩-spoke (3) 型；一般單側出口仍有核心分離缺口。
+更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪以兩個不同分量的同圖 K5 minor 排除 S={b0,b1} 的兩種 (2,1) 型；一般單側出口仍有核心分離缺口。
 
 ## 1. 目前做到哪裡
 
@@ -43,12 +43,13 @@ degree-5／三-spoke 的 minimal q-obstruction，就存在只釋放 p 的出口�
 同圖 z=2／3 的 palette 差強迫一個 triangle 加三條同 parity bridge arms，
 保留三個原接點；三個 triangle 頂點的實際 boundary tethers 給 K5 minor。
 任意臂長由紙面證明，80 份局部 minor 是控制；未 Lean 化。
-兩-spoke 尚餘 **18 個 (2,1) 配置**，不是已實現的圖分類。
-一般失敗側的每個 minimal core 還必碰到全部五個 boundary 頂點，內點 degree 不限。
-下一題取 (2,1)、相鄰 S={b0,b1}，兩分量都在長 arc
-(b1,b2,b3,b4,b0)，q 禁色為 {2}／{3} 的兩種次序。
-須保留 C₂ 的兩個共同接點、C₁ 的單接點、實際 attachments 及跨列共同色框；
-本輪 (3) 的三葉 incidence tree 不能直接套到不同分量。
+[相鄰 (2,1) 排除](c5_two_spoke_adjacent_21.md) 再排除 S={b0,b1} 的兩種禁色次序：
+兩分量分別提供 odd cycle 與 z–b4 路徑；短側的 {1,3} palettes 及兩色實際
+tethers 給 K5 minor，未合併 C₂、C₁，亦未引用 (3) 排除。
+原 18 個 (2,1) 表項中本輪處理兩個，**其餘 16 個未在本輪分類**；不是實現性清單。
+下一個窄問題可取 S={b1,b2} 的兩種次序：兩個 z–b4 boundary arcs 都見三色，
+本輪短側僅見兩色的論證不能直接套用。S={b2,b3} 的反射搬運另待明列。
+須保留 C₂ 兩接點、C₁ 單接點及共同色框；一般失敗側每個核心仍必碰五個 boundary 點。
 一般失敗側的核心存在性化約仍未證；兩葉鏈、五目標與 (3) 毋須重開。
 603 profiles 與固定點未改寫；共同出口仍需獨立的共同 pivotal-edge 證明。
 
@@ -88,9 +89,10 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性均保�
 ## 5. 重播入口與驗證範圍
 
 接續目前研究的最小重播（本輪實際範圍見
-[三接點排除紀錄](history/2026-09-24-three-contact-exclusion.md)）：
+[相鄰 (2,1) 紀錄](history/2026-09-24-adjacent-two-one.md)）：
 
 ```bash
+python3 scripts/c5_two_spoke_adjacent_21.py --check
 python3 scripts/c5_two_spoke_three_contacts.py --check
 python3 scripts/c5_unattached_boundary.py --check
 python3 scripts/c5_degree5_two_spoke_sectors.py --check

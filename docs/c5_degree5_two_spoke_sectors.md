@@ -1,5 +1,9 @@
 # 唯一 degree-5 的兩-spoke 區域化約
 
+後續（2026-09-24）：[相鄰 (2,1) 排除](c5_two_spoke_adjacent_21.md) 已排除
+S={b0,b1} 的兩種 singleton 禁色次序，保留兩個不同分量並抽取同圖 K5 minor。
+下文 18 個未解表項為當輪狀態；其餘 16 個表項未在此次續作分類。
+
 後續（2026-09-24）：[三接點排除](c5_two_spoke_three_contacts.md) 已以同圖
 palette 差與實際 boundary tethers 的 K5 minor 排除全部兩-spoke (3) 型；
 尚餘 18 個 (2,1) 配置。下文 24／23 個配置及下一題保留當輪語境。

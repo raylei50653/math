@@ -13,7 +13,7 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [degree-5／R 系列導讀](docs/c5_degree5_guide.md) | R9–R31 依賴順序、排除範圍、R31 保留缺口與證書入口 |
 | [3903 系列導讀](docs/c5_sector_3903_guide.md) | 系列結論、推導順序、適用範圍與證書入口 |
 | [單側出口接合](docs/c5_single_sided_exit.md) | 五目標到條件式出口的完整橋接，以及一般版尚缺的核心分離 |
-| [兩-spoke 區域](docs/c5_degree5_two_spoke_sectors.md)、[三接點排除](docs/c5_two_spoke_three_contacts.md)、[未接內點引理](docs/c5_unattached_boundary.md) | degree-5 兩-spoke 必要配置與全部 (3) 型的同圖 K5 排除；紙面證明、外部 degree-list 定理與 Python 證書，未 Lean 化 |
+| [兩-spoke 區域](docs/c5_degree5_two_spoke_sectors.md)、[三接點排除](docs/c5_two_spoke_three_contacts.md)、[相鄰 (2,1) 排除](docs/c5_two_spoke_adjacent_21.md)、[未接內點引理](docs/c5_unattached_boundary.md) | degree-5 兩-spoke 必要配置、全部 (3) 型及 S={b0,b1} 兩種 (2,1) 次序的同圖 K5 排除；紙面證明、外部 degree-list 定理與 Python 證書，未 Lean 化 |
 | [3703 排除證明](docs/c5_sector_3703_exclusion.md) | 指定 sector 圖類的最後一個目標；紙面證明、局部證書與適用界線 |
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 早期交接快照；近期紀錄由 STATUS 的歷史入口查閱 |

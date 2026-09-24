@@ -1,5 +1,9 @@
 # Two spokes, three contacts: a same-source K5 obstruction
 
+後續（2026-09-24）：[相鄰 (2,1) 排除](c5_two_spoke_adjacent_21.md) 已排除
+S={b0,b1} 的兩種 singleton 禁色次序，保留兩個不同分量並抽取同圖 K5 minor。
+下文 18 個未解表項為當輪狀態；其餘 16 個表項未在此次續作分類。
+
 2026-09-24. This resolves the adjacent (3) case requested in
 [the handoff](HANDOFF.md), using the setup and list semantics of
 [R10](c5_degree5_interfaces.md). In fact the argument excludes every (3)
