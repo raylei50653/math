@@ -1,0 +1,6 @@
+import Math.TwoSpokeSplitSupport
+
+#print axioms FiveBoundary.TwoSpokeSplitSupport.all_rows
+#print axioms FiveBoundary.TwoSpokeSplitSupport.reflection_missing
+#print axioms FiveBoundary.TwoSpokeSplitSupport.reflection_proper
+#print axioms FiveBoundary.TwoSpokeSplitSupport.reflection_transport

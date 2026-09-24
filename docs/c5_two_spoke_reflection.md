@@ -1,5 +1,9 @@
 # Two-spoke (2,1): q-preserving reflection and the remaining adjacent orbit
 
+後續（2026-09-24）：[split-support 完整列分類](c5_two_spoke_split_support.md)
+已完成 §4–5 的任意大小單缺失問題：兩種接點次序均有精確全列 F／Z 公式；
+S={b4,b0} 僅由本頁形式化反射搬運。下文停止點保留當輪語境。
+
 2026-09-24. Dependencies: the [necessary sector table](c5_degree5_two_spoke_sectors.md),
 [R10 interfaces](c5_degree5_interfaces.md), the established
 [adjacent exclusion](c5_two_spoke_adjacent_21.md) and

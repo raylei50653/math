@@ -2,7 +2,7 @@
 
 文件更新與研究依據：2026-09-24。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪形式化 q-preserving 反射搬運，排除 S={b2,b3} 兩項，並刻畫下一個相鄰 orbit 的實際 attachment 分離；一般單側出口仍有核心分離缺口。
+更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪完成 split-support 相鄰 (2,1) 的完整列關係與單缺失分離；S={b4,b0} 僅由形式化反射搬運。一般單側出口仍有非相鄰／更高 degree 的核心分離缺口。
 
 ## 1. 目前做到哪裡
 
@@ -52,14 +52,19 @@ branch set，與該側的 0、1 點形成三角。palette {3} bridge 的兩側�
 或 leaf odd cycle 加保留其餘分量，都給同圖 K5 minor；兩種次序皆排除。
 [反射與下一相鄰 orbit](c5_two_spoke_reflection.md) 以 ρ(i)=3−i、π=(0 1) 固定 q，
 將 S={b0,b1} 排除搬到 S={b2,b3}；ordered relation／禁色搬運已有 Lean 普通證明。
-原 18 項累計六項排除，**剩四項相鄰、八項非相鄰**。對 S={b3,b4}，
-禁 0 的 A 必恰接 {b1,b2,b3}，禁 3 的 D 必恰接 {b0,b1,b4}；S={b4,b0} 是其反射。
-此任意大小 support 定理沿用紙面 crosscut／two-hub minor 引理，未 Lean 化。
-既有八個 disk witnesses 均為 C₂=A、C₁=D，只缺 q；不能整個 orbit 排除。
-下一個窄問題是此 split-support pair 的兩種接點次序與完整列關係：
-能否證明所有 T4-accepting cores 只缺 q，或保留實際第二缺失 witness。
-C₂=D、C₁=A 的一般實現／排除亦未證。須保留原接點、bridges 及共同色框；
-已完成的三組相鄰 K5 排除毋須重開，一般失敗側每個核心仍必碰五個 boundary 點。
+原 18 項累計六項不存在；[split-support 完整列分類](c5_two_spoke_split_support.md)
+再證剩四個相鄰表項的所有來源均只缺 q，故不可能作第二缺失核心。
+在 S={b3,b4}，A 禁 0 且支援 {b1,b2,b3}，D 禁 3 且支援 {b0,b1,b4}：
+任意列 b 的 F_A 是 b1=b3 時的 {b2}、否則空；F_D 是 b1≠b4 時的
+U\{b0,b1,b4}、否則空。兩接點／單接點次序皆成立，完整接點 tuples 保留。
+任意大小證明沿用 degree-4 結構定理：A padding 後只剩 64 個 disk forms；
+D 的例外 completion 在 252 個完整接線中無雙列解。S={b4,b0} 僅由既有
+Lean 反射搬運；新 Lean 證明有限列代數，完整 disk 分類仍為紙面＋外部定理。
+Order I 的既有 disk witnesses 保留；order II 的一般實現性未證，但已非
+第二缺失的缺口。**下一個窄問題是八個非相鄰 (2,1) 表項**：
+S={b1,b4}、{b2,b4} 的兩分量分居區域，保留同圖完整 R_C₂／R_C₁、
+原接點與共同色框，證單缺失或給實際第二缺失 disk witness。
+已完成的 (3) 與全部相鄰型毋須重開；一般失敗側每個核心仍必碰五個 boundary 點。
 一般失敗側的核心存在性化約仍未證；兩葉鏈、五目標與 (3) 毋須重開。
 603 profiles 與固定點未改寫；共同出口仍需獨立的共同 pivotal-edge 證明。
 
@@ -99,9 +104,10 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性均保�
 ## 5. 重播入口與驗證範圍
 
 接續目前研究的最小重播（本輪實際範圍見
-[反射與相鄰 orbit 紀錄](history/2026-09-24-two-spoke-reflection.md)）：
+[split-support 分類紀錄](history/2026-09-24-split-support.md)）：
 
 ```bash
+python3 scripts/c5_two_spoke_split_support.py --check
 python3 scripts/c5_two_spoke_reflection.py --check
 python3 scripts/c5_two_spoke_middle_21.py --check
 python3 scripts/c5_two_spoke_adjacent_21.py --check
@@ -114,6 +120,7 @@ uv run --with networkx==3.5 python scripts/c5_degree5_sectors.py --check
 uv run --with networkx==3.5 python scripts/c5_degree5_interfaces.py --check
 lake build
 lake env lean Math/TwoSpokeReflectionAudit.lean
+lake env lean Math/TwoSpokeSplitSupportAudit.lean
 python3 scripts/check_docs.py
 git diff --check
 ```
