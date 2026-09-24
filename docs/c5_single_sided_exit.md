@@ -1,5 +1,10 @@
 # 五目標排除到 single-sided exit：接合定理與一般化界線
 
+後續（2026-09-24）：[兩-spoke 區域化約](c5_degree5_two_spoke_sectors.md)
+將 t=2 的 (3)／(2,1) 收窄為 24 個必要配置；
+[未接內點引理](c5_unattached_boundary.md) 再完成 (3) 非相鄰型的分離，
+並將下述定理擴至有未接內點 boundary 頂點的核心，內點 degree 不受限。
+
 2026-09-24。接續 [五目標](c5_sector_targets.md)、
 [雙拒絕分類](c5_two_rejection_proof_zh.md) 與
 [3703 排除](c5_sector_3703_exclusion.md)。
@@ -19,7 +24,8 @@
 
 1. 全部有效內點完整 degree=4；
 2. 恰一個有效內點 z 完整 degree=5，其餘完整 degree=4，且 z 恰有
-   三個 boundary 鄰居。
+   三個 boundary 鄰居；
+3. 某個 boundary 頂點沒有有效內鄰點（內點 degree 不受限）。
 
 **定理（條件式 single-sided exit，來源圖大小與 degree 不受限）。**
 若 G 有一個上述可處理的 minimal q-obstruction，則存在非外圈邊刪除序列
@@ -44,7 +50,9 @@ G = G₀ → G₁ → ⋯ → Gⱼ → Gⱼ₊₁
 M 的有效內點誘導圖 H 非空連通、每點完整 degree≥4，且每點的
 boundary spokes 在 q 下顏色互異。第一種核心由
 [全 degree-4 定理](c5_k4_blocks.md#4-合成全-degree-4-的單缺失結論)
-已有 Σ(M)=Ω\{q}，故以下只處理第二種。
+已有 Σ(M)=Ω\{q}；第三種由
+[未接內點引理](c5_unattached_boundary.md#1-不依賴-degree-或-disk-的改色引理)
+同樣得到 Σ(M)=Ω\{q}。以下只處理第二種。
 
 將 q 對齊為 01012，稱其三色 A、B、C，第四色 D。
 z 有三條 spokes，顏色互異，故 A_z(q)={D}；它還有恰兩個內鄰點。
@@ -121,15 +129,19 @@ p 的中間圖。它的前一步仍恰拒絕 p、q，而該步只釋放 p。
 並不窮盡任意 minimal obstruction 的結構。
 
 **失敗側的必要條件。** 若 Ω\{q}∉W(G)，則 G 的每一個 minimal
-q-obstruction 都仍拒絕 p，且每一個都至少符合下列一項：
+q-obstruction 都仍拒絕 p，**都必碰到全部五個 boundary 頂點**，
+且每一個都至少符合下列一項：
 
 - 有完整 degree≥6 的有效內點；
 - 至少兩個完整 degree=5 的有效內點；
 - 恰一個完整 degree=5 的有效內點，其 boundary spokes 數 t≤2。
 
-證明：有效內點 degree≥4；其餘情形恰被 §1 的兩類覆蓋，與定理矛盾。
+證明：未接內點引理給出五點皆須被碰到；有效內點 degree≥4，
+上述 degree 條件以外的情形恰被 §1 前兩類覆蓋，與定理矛盾。
 最後一類的接點數分拆還有 R10 的十二型：t=2 的 (3)、(2,1)，
-t=1 的四型，以及 t=0 的六型。五目標排除只解決原十三型中的 t=3、(2)。
+t=1 的四型，以及 t=0 的六型。五目標排除解決 t=3、(2)；t=2 的 (3) 非相鄰支另由
+[未接內點引理](c5_unattached_boundary.md#2-完成兩-spoke-的非相鄰三接點支)
+完成分離，餘下 23 個兩-spoke 必要配置尚未分離。
 
 要完成使用者要求的**無條件一般 single-sided exit 定理**，仍須證明
 每個候選 A 來源 G、每個定向缺失對 (p,q)，至少存在一個接受 p 的

@@ -2,7 +2,7 @@
 
 文件更新與研究依據：2026-09-24。
 本頁維護研究狀態與完整報告索引；**優先順序只以 [HANDOFF](HANDOFF.md) 為準**。
-五目標已接成三-spoke 核心的條件式單側出口；一般版尚缺核心分離。R31 任意長來源 minor 保留。
+兩-spoke 的非相鄰 (3) 支已分離，尚餘 23 個配置；一般單側出口仍缺核心分離。R31 任意長來源 minor 保留。
 逐輪數字、驗證與發布紀錄已移至 [歷史快照](STATUS_HISTORY.md)。
 
 ## 1. 閱讀順序與文件角色
@@ -26,7 +26,9 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [單側出口接合](c5_single_sided_exit.md) | 五目標窮盡與來源假設已接通；有全 degree-4 或唯一 degree-5／三-spoke 核心即有單側出口，一般核心分離仍未證 |
+| [未接內點 boundary 引理](c5_unattached_boundary.md) | 完成兩-spoke 非相鄰 (3) 單缺失分離；一般失敗側每個核心必碰全部五個 boundary 頂點，內點 degree 不限 |
+| [兩-spoke 區域化約](c5_degree5_two_spoke_sectors.md) | t=2 的 (3)／(2,1) 任意大小必要位置分類；56 個排除、24 個保留；非相鄰 (3) 由後續分離，餘 23 個未解 |
+| [單側出口接合](c5_single_sided_exit.md) | 五目標窮盡與來源假設已接通；有全 degree-4、唯一 degree-5／三-spoke 或未接內點 boundary 核心即有單側出口，一般版未證 |
 | [3703 任意長度排除](c5_sector_3703_exclusion.md) | 葉點 minor 加三列 palettes 排除兩種剩餘鏈；完成指定圖類的五目標，紙面＋外部 degree-list＋局部證書，未 Lean 化 |
 | [C5 雙拒絕分類](c5_two_rejection_proof_zh.md) | 指定 disk／degree≤4／兩接點圖類內，雙拒絕強迫二內點 1855；排除四個目標；3703 由三拒絕續作排除，紙面未 Lean 化 |
 | [3703 兩葉鏈化約](c5_sector_3703_structure.md) | 三拒絕迫使 bridges／互斥 triangles 的 block 鏈；兩葉只剩 012／234 或 024／234，b0 第二接點在鏈內；剩餘兩型已由 [排除報告](c5_sector_3703_exclusion.md) 處理 |
@@ -171,7 +173,7 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | --- | --- | --- |
 | 已完成 | 3703 兩葉鏈 | [排除報告](c5_sector_3703_exclusion.md) 完成任意長度三拒絕排除；限定 sector 圖類，未 Lean 化 |
 | 已完成 | 五目標到三-spoke 核心出口的接合 | [定理](c5_single_sided_exit.md) 核對來源假設、五目標窮盡及 first strict step；條件式結論無大小限制 |
-| 活躍 | 一般單側出口的核心分離 | 失敗側每個核心必有 degree≥6、多個 degree-5，或唯一 degree-5 且 t≤2；尚缺存在性／分離證明 |
+| 活躍 | 一般單側出口的核心分離 | 失敗側每個核心必有 degree≥6、多個 degree-5，或唯一 degree-5 且 t≤2；核心須碰全部五個 boundary 頂點；t=2 尚餘 [23 個未分離配置](c5_unattached_boundary.md) |
 | 已完成 | 指定 sector 圖類的雙拒絕分類 | [紙面分類](c5_two_rejection_proof_zh.md) 排除四個目標；依賴外部 degree-list，完整分類未 Lean 化 |
 | 被後續涵蓋 | 3903 空／非空分支、331 同圖分支 | 既有局部證據保留；後續分類已涵蓋原排除問題，不代表抽象 603 profiles 已改寫 |
 | 保留 | R31 任意長來源 minors | 正常形已完成；仍需 boundary 固定 branch sets、四列、degrees、刪邊著色與拓撲合成，見 [R31](c5_degree5_same_terminal_triangles.md) |
@@ -181,6 +183,8 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 
 ## 歷史紀錄與舊連結
 
+- [2026-09-24：未接內點引理與非相鄰型分離](history/2026-09-24-unattached-boundary.md)
+- [2026-09-24：兩-spoke 區域化約](history/2026-09-24-two-spoke-sectors.md)
 - [2026-09-24：單側出口接合與界線](history/2026-09-24-single-sided-exit.md)
 - [2026-09-24：3703 排除與驗證](history/2026-09-24-3703-exclusion.md)
 - [早期交接快照](HANDOFF_HISTORY.md)

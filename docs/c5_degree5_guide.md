@@ -1,5 +1,11 @@
 # degree-5／R 系列導讀：介面、排除範圍與保留缺口
 
+後續（2026-09-24）：[未接內點引理](c5_unattached_boundary.md) 已證 (3) 非相鄰
+S={b0,b3} 型只缺 q；雙缺失目標尚餘 23 個兩-spoke 配置待分離。
+
+後續（2026-09-24）：[兩-spoke 區域化約](c5_degree5_two_spoke_sectors.md)
+將 t=2 的 (3)／(2,1) 收窄為 24 個必要配置；尚未完成這些核心的分離。
+
 文件整理：2026-09-23；研究依據截至 2026-09-22。本頁不新增研究結論。
 研究優先序只見 [HANDOFF](HANDOFF.md)，全專案索引見 [STATUS](STATUS.md)。
 前置的樹、triangle、長奇環與 K4 依賴見 [全 degree-4／block 導讀](c5_degree4_guide.md)。

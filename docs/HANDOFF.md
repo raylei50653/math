@@ -2,7 +2,7 @@
 
 文件更新與研究依據：2026-09-24。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪完成五目標到三-spoke 核心單側出口的接合，無條件一般版仍有核心分離缺口。
+更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪完成兩-spoke 非相鄰三接點支的分離；一般單側出口仍有核心分離缺口。
 
 ## 1. 目前做到哪裡
 
@@ -26,7 +26,7 @@ minimal obstruction 路線下的 sector 目標；先研究單側出口，再處�
 新證書有 89 個局部轉移、兩個可達狀態及兩份葉點 minor；沿用鏈化約的
 207 份局部 minor。雙拒絕的九個 [Lean 共用引理](lean_two_rejection_tools.md)
 不代表完整 disk 分類已形式化。3703 當輪驗證見
-[研究紀錄](history/2026-09-24-3703-exclusion.md)；本輪接合驗證見
+[研究紀錄](history/2026-09-24-3703-exclusion.md)；接合驗證見
 [出口紀錄](history/2026-09-24-single-sided-exit.md)。
 
 ## 2. 精確停止點與下一個窄問題
@@ -38,8 +38,13 @@ degree-5／三-spoke 的 minimal q-obstruction，就存在只釋放 p 的出口�
 
 **一般單側出口仍未證。** 下一個窄問題是失敗側 minimal cores 的分離：
 每一個都必有 degree≥6、至少兩個 degree-5，或唯一 degree-5 且 t≤2。
-可先接續唯一 degree-5 的 t=2、(3)／(2,1) 接點分拆，保留同圖跨列關係；
-不能把三-spoke 的五目標套到這些型。另一路是證明來源必存在已可處理的核心，
+[兩-spoke 區域化約](c5_degree5_two_spoke_sectors.md) 已將 t=2 的 80 個具名配置
+排除 56 個，留下 24 個；[未接內點引理](c5_unattached_boundary.md) 再證
+(3) 非相鄰 S={b0,b3} 只缺 q，尚未分離的兩-spoke 配置降為 23 個。
+一般失敗側的每個 minimal core 還必碰到全部五個 boundary 頂點，內點 degree 不限。
+下一題先取 (3)、相鄰 S={b0,b1}，C 在長 arc (b1,b2,b3,b4,b0)，
+F_C(q)={2,3}；區域是三接點六邊形。保留共同接點與同圖跨列，
+不能套用二接點雙拒絕分類或三-spoke 五目標。另一路是證明來源必存在已可處理的核心，
 但目前沒有此存在性化約。兩葉鏈與五目標毋須重開。
 603 profiles 與固定點未改寫；共同出口仍需獨立的共同 pivotal-edge 證明。
 
@@ -78,9 +83,12 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性均保�
 
 ## 5. 重播入口與驗證範圍
 
-接續目前研究的最小重播：
+接續目前研究的最小重播（本輪實際範圍見
+[未接內點紀錄](history/2026-09-24-unattached-boundary.md)）：
 
 ```bash
+python3 scripts/c5_unattached_boundary.py --check
+python3 scripts/c5_degree5_two_spoke_sectors.py --check
 uv run python scripts/c5_sector_3703_exclusion.py --check
 uv run --with networkx==3.5 python scripts/c5_sector_targets.py --check
 uv run --with networkx==3.5 python scripts/c5_degree5_sectors.py --check
@@ -92,7 +100,7 @@ git diff --check
 
 雙拒絕分類的 atlas 與 Lean axiom audit 另見
 [分類報告](c5_two_rejection_proof_zh.md) 與 [Lean 工具](lean_two_rejection_tools.md)。
-本輪重跑範圍見 [研究紀錄](history/2026-09-24-single-sided-exit.md)；
+接合輪重跑範圍見 [研究紀錄](history/2026-09-24-single-sided-exit.md)；
 雙拒絕 atlas、R 系列大覆蓋、抽象 profiles／閉包未重跑。
 歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。
 
