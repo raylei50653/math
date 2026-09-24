@@ -2,7 +2,7 @@
 
 文件更新與研究依據：2026-09-24。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪完成兩-spoke 非相鄰三接點支的分離；一般單側出口仍有核心分離缺口。
+更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪以同圖 K5 minor 排除全部兩-spoke (3) 型；一般單側出口仍有核心分離缺口。
 
 ## 1. 目前做到哪裡
 
@@ -38,14 +38,18 @@ degree-5／三-spoke 的 minimal q-obstruction，就存在只釋放 p 的出口�
 
 **一般單側出口仍未證。** 下一個窄問題是失敗側 minimal cores 的分離：
 每一個都必有 degree≥6、至少兩個 degree-5，或唯一 degree-5 且 t≤2。
-[兩-spoke 區域化約](c5_degree5_two_spoke_sectors.md) 已將 t=2 的 80 個具名配置
-排除 56 個，留下 24 個；[未接內點引理](c5_unattached_boundary.md) 再證
-(3) 非相鄰 S={b0,b3} 只缺 q，尚未分離的兩-spoke 配置降為 23 個。
+[兩-spoke 區域化約](c5_degree5_two_spoke_sectors.md) 的 24 個保留配置中，
+[三接點排除](c5_two_spoke_three_contacts.md) 已排除全部六個 (3) 型：
+同圖 z=2／3 的 palette 差強迫一個 triangle 加三條同 parity bridge arms，
+保留三個原接點；三個 triangle 頂點的實際 boundary tethers 給 K5 minor。
+任意臂長由紙面證明，80 份局部 minor 是控制；未 Lean 化。
+兩-spoke 尚餘 **18 個 (2,1) 配置**，不是已實現的圖分類。
 一般失敗側的每個 minimal core 還必碰到全部五個 boundary 頂點，內點 degree 不限。
-下一題先取 (3)、相鄰 S={b0,b1}，C 在長 arc (b1,b2,b3,b4,b0)，
-F_C(q)={2,3}；區域是三接點六邊形。保留共同接點與同圖跨列，
-不能套用二接點雙拒絕分類或三-spoke 五目標。另一路是證明來源必存在已可處理的核心，
-但目前沒有此存在性化約。兩葉鏈與五目標毋須重開。
+下一題取 (2,1)、相鄰 S={b0,b1}，兩分量都在長 arc
+(b1,b2,b3,b4,b0)，q 禁色為 {2}／{3} 的兩種次序。
+須保留 C₂ 的兩個共同接點、C₁ 的單接點、實際 attachments 及跨列共同色框；
+本輪 (3) 的三葉 incidence tree 不能直接套到不同分量。
+一般失敗側的核心存在性化約仍未證；兩葉鏈、五目標與 (3) 毋須重開。
 603 profiles 與固定點未改寫；共同出口仍需獨立的共同 pivotal-edge 證明。
 
 保留的 R31 缺口：同末端不同二接點的任意長來源到 C3–C3–C3 的
@@ -84,9 +88,10 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性均保�
 ## 5. 重播入口與驗證範圍
 
 接續目前研究的最小重播（本輪實際範圍見
-[未接內點紀錄](history/2026-09-24-unattached-boundary.md)）：
+[三接點排除紀錄](history/2026-09-24-three-contact-exclusion.md)）：
 
 ```bash
+python3 scripts/c5_two_spoke_three_contacts.py --check
 python3 scripts/c5_unattached_boundary.py --check
 python3 scripts/c5_degree5_two_spoke_sectors.py --check
 uv run python scripts/c5_sector_3703_exclusion.py --check

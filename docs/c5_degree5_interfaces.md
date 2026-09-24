@@ -1,5 +1,9 @@
 # 唯一 degree-5 內點：完整接點介面與不可刪減禁色覆蓋
 
+後續（2026-09-24）：[三接點排除](c5_two_spoke_three_contacts.md) 已以同圖
+palette 差與實際 boundary tethers 的 K5 minor 排除全部兩-spoke (3) 型；
+尚餘 18 個 (2,1) 配置。下文 24／23 個配置及下一題保留當輪語境。
+
 後續（2026-09-24）：[未接內點引理](c5_unattached_boundary.md) 已證 (3) 非相鄰
 S={b0,b3} 型只缺 q；雙缺失目標尚餘 23 個兩-spoke 配置待分離。
 
