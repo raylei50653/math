@@ -1,5 +1,10 @@
 # Adjacent two-spoke (2,1): separate components and a source-fixed K5 minor
 
+後續（2026-09-24）：[中間相鄰 (2,1) 排除](c5_two_spoke_middle_21.md) 已排除
+S={b1,b2} 的兩種次序；palette {3} bridge／leaf odd cycle 與三個連通外部
+branch sets 給同圖 K5 minor。原 18 個 (2,1) 表項累計四個排除，尚有 14 個
+未分類；下文數字及停止點保留當輪語境。
+
 2026-09-24. This treats exactly S={b0,b1}, q=01012, and both orders
 of the singleton forbidden sets in the [two-spoke table](c5_degree5_two_spoke_sectors.md).
 Dependencies are [R10](c5_degree5_interfaces.md), the connected-exterior

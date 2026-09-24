@@ -1,5 +1,10 @@
 # 唯一 degree-5 的兩-spoke 區域化約
 
+後續（2026-09-24）：[中間相鄰 (2,1) 排除](c5_two_spoke_middle_21.md) 已排除
+S={b1,b2} 的兩種次序；palette {3} bridge／leaf odd cycle 與三個連通外部
+branch sets 給同圖 K5 minor。原 18 個 (2,1) 表項累計四個排除，尚有 14 個
+未分類；下文數字及停止點保留當輪語境。
+
 後續（2026-09-24）：[相鄰 (2,1) 排除](c5_two_spoke_adjacent_21.md) 已排除
 S={b0,b1} 的兩種 singleton 禁色次序，保留兩個不同分量並抽取同圖 K5 minor。
 下文 18 個未解表項為當輪狀態；其餘 16 個表項未在此次續作分類。
