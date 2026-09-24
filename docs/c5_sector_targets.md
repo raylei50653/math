@@ -1,5 +1,9 @@
 # 相鄰雙缺失的定向 sector 介面實驗
 
+後續（2026-09-24）：[單側出口接合](c5_single_sided_exit.md) 已完成五目標到
+唯一 degree-5／三-spoke minimal core 的分離及條件式出口；一般核心分離仍未證。
+下文當輪停止點保留歷史語境。
+
 後續狀態（2026-09-24）：[3703 排除](c5_sector_3703_exclusion.md) 已用葉點
 minor 與三列 palettes 排除剩餘兩型，完成指定 sector 圖類的五目標。
 下文未解／下一步敘述保留當輪歷史；新結論尚未 Lean 化，603 profiles 未改寫。

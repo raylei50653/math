@@ -1,5 +1,9 @@
 # 相鄰雙缺失：最小阻礙與三種 critical-edge 出口
 
+後續（2026-09-24）：[單側出口接合](c5_single_sided_exit.md) 已完成五目標到
+唯一 degree-5／三-spoke minimal core 的分離及條件式出口；一般核心分離仍未證。
+下文當輪停止點保留歷史語境。
+
 2026-09-16。接續 [候選 A](c5_weak_candidates.md#1-首選候選相鄰雙-singleton-完全釋放)。
 **本輪得到一般的紙面充要條件，以及五個既有代表的共同兩阻礙機制；
 尚未由 disk 平面性證出候選 A。** 未新增 Lean theorem，未擴到 k=4，未重跑全量 audit。

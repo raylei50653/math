@@ -2,7 +2,7 @@
 
 文件更新與研究依據：2026-09-24。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪完成指定 sector 圖類的 3703 排除。
+更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪完成五目標到三-spoke 核心單側出口的接合，無條件一般版仍有核心分離缺口。
 
 ## 1. 目前做到哪裡
 
@@ -25,19 +25,23 @@ minimal obstruction 路線下的 sector 目標；先研究單側出口，再處�
 信任層：紙面證明＋外部 degree-list 定理＋Python 局部證書；新排除未 Lean 化。
 新證書有 89 個局部轉移、兩個可達狀態及兩份葉點 minor；沿用鏈化約的
 207 份局部 minor。雙拒絕的九個 [Lean 共用引理](lean_two_rejection_tools.md)
-不代表完整 disk 分類已形式化。本輪驗證見
-[研究紀錄](history/2026-09-24-3703-exclusion.md)。
+不代表完整 disk 分類已形式化。3703 當輪驗證見
+[研究紀錄](history/2026-09-24-3703-exclusion.md)；本輪接合驗證見
+[出口紀錄](history/2026-09-24-single-sided-exit.md)。
 
 ## 2. 精確停止點與下一個窄問題
 
-目前入口為 [3703 排除](c5_sector_3703_exclusion.md) §1–6 與
-[五目標](c5_sector_targets.md) §1。兩葉鏈問題已完成，無須擴大生成器；
-拒絕 3、7、8 本身已不可能，不必再聯立其餘接受列。
+目前入口為 [single-sided exit 接合定理](c5_single_sided_exit.md) §1–5。
+五目標的來源假設與窮盡性已核對：若來源有一個全 degree-4，或唯一
+degree-5／三-spoke 的 minimal q-obstruction，就存在只釋放 p 的出口；
+不限制來源圖大小。五目標的窮盡性另有直接 Boolean 紙面推導。
 
-下一個窄問題是核對 **五目標局部不可實現到一般單側出口的邏輯連接**：
-來源圖是否必滿足 induced-C5 disk、連通 C、內點 degree≤4、b0 恰兩接點，
-以及五目標在欲套用問題中是否窮盡。未完成此核對前，不提升為一般單側
-或共同出口定理。603 profiles 與固定點未改寫；舊抽象後繼核對仍為固定域歷史結果。
+**一般單側出口仍未證。** 下一個窄問題是失敗側 minimal cores 的分離：
+每一個都必有 degree≥6、至少兩個 degree-5，或唯一 degree-5 且 t≤2。
+可先接續唯一 degree-5 的 t=2、(3)／(2,1) 接點分拆，保留同圖跨列關係；
+不能把三-spoke 的五目標套到這些型。另一路是證明來源必存在已可處理的核心，
+但目前沒有此存在性化約。兩葉鏈與五目標毋須重開。
+603 profiles 與固定點未改寫；共同出口仍需獨立的共同 pivotal-edge 證明。
 
 保留的 R31 缺口：同末端不同二接點的任意長來源到 C3–C3–C3 的
 boundary 固定 minors 尚未補完；參考 [R31](c5_degree5_same_terminal_triangles.md)、
@@ -78,9 +82,9 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性均保�
 
 ```bash
 uv run python scripts/c5_sector_3703_exclusion.py --check
-uv run python scripts/c5_sector_3703_structure.py --check
-uv run python scripts/c5_sector_rejection_lists.py --check
-uv run python scripts/c5_sector_terminal_blocks.py --check
+uv run --with networkx==3.5 python scripts/c5_sector_targets.py --check
+uv run --with networkx==3.5 python scripts/c5_degree5_sectors.py --check
+uv run --with networkx==3.5 python scripts/c5_degree5_interfaces.py --check
 lake build
 python3 scripts/check_docs.py
 git diff --check
@@ -88,8 +92,8 @@ git diff --check
 
 雙拒絕分類的 atlas 與 Lean axiom audit 另見
 [分類報告](c5_two_rejection_proof_zh.md) 與 [Lean 工具](lean_two_rejection_tools.md)。
-本輪重跑範圍見 [研究紀錄](history/2026-09-24-3703-exclusion.md)；
-雙拒絕 atlas、R 系列、抽象 profiles／閉包未重跑。
+本輪重跑範圍見 [研究紀錄](history/2026-09-24-single-sided-exit.md)；
+雙拒絕 atlas、R 系列大覆蓋、抽象 profiles／閉包未重跑。
 歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。
 
 早期交接保存於 [HANDOFF_HISTORY](HANDOFF_HISTORY.md)，整理前的近期交接

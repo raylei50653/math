@@ -1,5 +1,9 @@
 # 唯一 degree-5 的三-spoke 型：disk 區域化約
 
+後續（2026-09-24）：[單側出口接合](c5_single_sided_exit.md) 已完成五目標到
+唯一 degree-5／三-spoke minimal core 的分離及條件式出口；一般核心分離仍未證。
+下文當輪停止點保留歷史語境。
+
 文件整理（2026-09-23），R11：兩個鏡像 pentagon 化約保留；[R12](c5_degree5_tree_components.md) 至 [R24](c5_degree5_shared_cycle_minors.md) 已處理零／一／二環，分拆 (2) 整體仍開放。
 系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
 [HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；

@@ -1,5 +1,9 @@
 # 唯一 degree-5 內點：完整接點介面與不可刪減禁色覆蓋
 
+後續（2026-09-24）：[單側出口接合](c5_single_sided_exit.md) 已完成五目標到
+唯一 degree-5／三-spoke minimal core 的分離及條件式出口；一般核心分離仍未證。
+下文當輪停止點保留歷史語境。
+
 文件整理（2026-09-23），R10：染色與 minimality 介面已完成；[R11](c5_degree5_sectors.md) 起處理三-spoke 分拆 (2)，一般 degree-5 幾何排除仍開放。
 系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
 [HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；
