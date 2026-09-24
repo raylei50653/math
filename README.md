@@ -12,6 +12,7 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [全 degree-4／block 導讀](docs/c5_degree4_guide.md) | 小核心至 K4 的合成依賴、單缺失結論、介面限制與證書入口 |
 | [degree-5／R 系列導讀](docs/c5_degree5_guide.md) | R9–R31 依賴順序、排除範圍、R31 保留缺口與證書入口 |
 | [3903 系列導讀](docs/c5_sector_3903_guide.md) | 系列結論、推導順序、適用範圍與證書入口 |
+| [3703 排除證明](docs/c5_sector_3703_exclusion.md) | 指定 sector 圖類的最後一個目標；紙面證明、局部證書與適用界線 |
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 早期交接快照；近期紀錄由 STATUS 的歷史入口查閱 |
 

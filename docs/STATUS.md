@@ -1,8 +1,8 @@
 # 文件狀態與可能變化追蹤
 
-文件更新：2026-09-23；研究依據截至 2026-09-22。
+文件更新與研究依據：2026-09-24。
 本頁維護研究狀態與完整報告索引；**優先順序只以 [HANDOFF](HANDOFF.md) 為準**。
-目前已有 3703 必要鏈結構，仍未排除；R31 任意長來源 minor 是保留缺口。
+3703 已在指定 sector 圖類內排除，五目標皆完成；R31 任意長來源 minor 是保留缺口。
 逐輪數字、驗證與發布紀錄已移至 [歷史快照](STATUS_HISTORY.md)。
 
 ## 1. 閱讀順序與文件角色
@@ -26,8 +26,9 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [C5 雙拒絕分類](c5_two_rejection_proof_zh.md) | 指定 disk／degree≤4／兩接點圖類內，雙拒絕強迫二內點 1855；排除四個目標，3703 仍開放，紙面未 Lean 化 |
-| [3703 兩葉鏈化約](c5_sector_3703_structure.md) | 三拒絕迫使 bridges／互斥 triangles 的 block 鏈；兩葉只剩 012／234 或 024／234，b0 第二接點在鏈內；3703 仍未排除 |
+| [3703 任意長度排除](c5_sector_3703_exclusion.md) | 葉點 minor 加三列 palettes 排除兩種剩餘鏈；完成指定圖類的五目標，紙面＋外部 degree-list＋局部證書，未 Lean 化 |
+| [C5 雙拒絕分類](c5_two_rejection_proof_zh.md) | 指定 disk／degree≤4／兩接點圖類內，雙拒絕強迫二內點 1855；排除四個目標；3703 由三拒絕續作排除，紙面未 Lean 化 |
+| [3703 兩葉鏈化約](c5_sector_3703_structure.md) | 三拒絕迫使 bridges／互斥 triangles 的 block 鏈；兩葉只剩 012／234 或 024／234，b0 第二接點在鏈內；剩餘兩型已由 [排除報告](c5_sector_3703_exclusion.md) 處理 |
 | [397/action 2 全部後繼](c5_sector_successor_audit.md) | 十個存活候選，禁 330 後可換 331；單條禁令下 603 最大閉合集合不變，331 同圖分支已由雙拒絕分類涵蓋；固定域計算仍保留 |
 | [3903 空分支末端排除](c5_sector_empty_terminal.md) | 空／非空合成排除指定 397→330 轉移；需 sector 結構與兩拒絕列，一般 3903 在指定 sector 圖類內已由雙拒絕分類排除 |
 | [3903 空交集分支](c5_sector_empty_branch.md) | δ(C)≥2；舊色 1 的 0 鄰點恰有框鄰集 {0}，內部度數 3；末端 block 拓撲合成由 [空分支末端報告](c5_sector_empty_terminal.md) 完成 |
@@ -167,7 +168,8 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 
 | 狀態 | 項目 | 證據與界線 |
 | --- | --- | --- |
-| 活躍 | 3703 兩葉鏈 | [必要結構](c5_sector_3703_structure.md) 已證；剩餘開口列與全部接受列須在同圖聯立，未排除 |
+| 已完成 | 3703 兩葉鏈 | [排除報告](c5_sector_3703_exclusion.md) 完成任意長度三拒絕排除；限定 sector 圖類，未 Lean 化 |
+| 活躍 | 五目標到一般單側出口的連接 | 尚須核對來源圖假設及候選窮盡性；不能直接由局部不可實現提升 |
 | 已完成 | 指定 sector 圖類的雙拒絕分類 | [紙面分類](c5_two_rejection_proof_zh.md) 排除四個目標；依賴外部 degree-list，完整分類未 Lean 化 |
 | 被後續涵蓋 | 3903 空／非空分支、331 同圖分支 | 既有局部證據保留；後續分類已涵蓋原排除問題，不代表抽象 603 profiles 已改寫 |
 | 保留 | R31 任意長來源 minors | 正常形已完成；仍需 boundary 固定 branch sets、四列、degrees、刪邊著色與拓撲合成，見 [R31](c5_degree5_same_terminal_triangles.md) |
@@ -177,6 +179,7 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 
 ## 歷史紀錄與舊連結
 
+- [2026-09-24：3703 排除與驗證](history/2026-09-24-3703-exclusion.md)
 - [早期交接快照](HANDOFF_HISTORY.md)
 - [2026-09-22 交接快照](HANDOFF_2026-09-22.md)
 - [研究與發布歷史，原 STATUS 全文](STATUS_HISTORY.md)

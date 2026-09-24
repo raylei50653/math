@@ -1,8 +1,8 @@
 # 研究交接：目前狀態與接手入口
 
-文件更新：2026-09-23；研究依據截至 2026-09-22。工作目錄 `/home/ray/math`。
+文件更新與研究依據：2026-09-24。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。本次文件整理未新增研究結論。
+更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪完成指定 sector 圖類的 3703 排除。
 
 ## 1. 目前做到哪裡
 
@@ -17,31 +17,27 @@ minimal obstruction 路線下的 sector 目標；先研究單側出口，再處�
 原 331／A(b)={0,2} 分支由此涵蓋，無須再獨立處理。
 603 profiles 未刪除，固定點未重算。
 
-最新 [3703 兩葉 triangle 鏈化約](c5_sector_3703_structure.md) 得到任意大小的
-必要結構：同圖拒絕索引 3、7、8 迫使 C 的 block-cut tree 為路徑，
-blocks 為 bridges 或互不共點的 triangles；b0 恰有一個葉接點及一個鏈內非葉接點。
-**3703 尚未排除**，triangle 數與 bridge 長度未設限。
+最新 [3703 排除](c5_sector_3703_exclusion.md) 接續
+[兩葉鏈化約](c5_sector_3703_structure.md)：葉點 K3,3 minor 排除 024／234，
+並迫使 012／234 的其餘內點避開 b1；三列 palettes 隨即使鏈無法延續。
+**3703 已在上述指定圖類內排除，五目標皆完成**，不限制 triangle 數或 bridge 長度。
 
-信任層：上述分類／結構是紙面證明＋外部 degree-list 定理；3703 另有
-207 份局部 minor 證書。雙拒絕有獨立 atlas 核對及九個
-[Lean 共用引理](lean_two_rejection_tools.md)，完整 disk 分類尚未形式化。
-詳細既有驗證見 [雙拒絕發布](STATUS_HISTORY.md#73-雙拒絕-lean-工具整合發布)
-與 [3703 發布](STATUS_HISTORY.md#75-3703-鏈化約整合發布)。
+信任層：紙面證明＋外部 degree-list 定理＋Python 局部證書；新排除未 Lean 化。
+新證書有 89 個局部轉移、兩個可達狀態及兩份葉點 minor；沿用鏈化約的
+207 份局部 minor。雙拒絕的九個 [Lean 共用引理](lean_two_rejection_tools.md)
+不代表完整 disk 分類已形式化。本輪驗證見
+[研究紀錄](history/2026-09-24-3703-exclusion.md)。
 
 ## 2. 精確停止點與下一個窄問題
 
-目前入口為 [3703 鏈化約](c5_sector_3703_structure.md) §1–6 與
-[五目標](c5_sector_targets.md) §1。3903 及另三個雙拒絕目標已由任意大小
-紙面分類排除；原 397→331 的同圖分支無須再獨立處理。
+目前入口為 [3703 排除](c5_sector_3703_exclusion.md) §1–6 與
+[五目標](c5_sector_targets.md) §1。兩葉鏈問題已完成，無須擴大生成器；
+拒絕 3、7、8 本身已不可能，不必再聯立其餘接受列。
 
-下一個窄問題是 **3703 剩餘兩葉對的 triangle/bridge 鏈**：兩葉附件
-012／234 或 024／234，b0 第二接點在鏈內。拒絕索引 3、7、8 已迫使
-α（索引 6）接受；第一葉對自動接受 10，第二葉對自動接受 11。
-須在同一張 induced-C5 disk、內點 degree≤4、b0 兩接點的實際圖上聯立
-另一開口列與全部其餘接受列。triangle 數及 bridge 長度尚未界定；
-不能把單列 palette 縮減當成完整十二列或任意 pinning 的保持。
-本輪不擴大生成器、不改寫 603 profiles 或重算閉包；舊抽象後繼核對仍為
-其固定域的歷史結果，不能當作新 disk 實現。
+下一個窄問題是核對 **五目標局部不可實現到一般單側出口的邏輯連接**：
+來源圖是否必滿足 induced-C5 disk、連通 C、內點 degree≤4、b0 恰兩接點，
+以及五目標在欲套用問題中是否窮盡。未完成此核對前，不提升為一般單側
+或共同出口定理。603 profiles 與固定點未改寫；舊抽象後繼核對仍為固定域歷史結果。
 
 保留的 R31 缺口：同末端不同二接點的任意長來源到 C3–C3–C3 的
 boundary 固定 minors 尚未補完；參考 [R31](c5_degree5_same_terminal_triangles.md)、
@@ -81,17 +77,19 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性均保�
 接續目前研究的最小重播：
 
 ```bash
+uv run python scripts/c5_sector_3703_exclusion.py --check
 uv run python scripts/c5_sector_3703_structure.py --check
 uv run python scripts/c5_sector_rejection_lists.py --check
 uv run python scripts/c5_sector_terminal_blocks.py --check
 lake build
+python3 scripts/check_docs.py
 git diff --check
 ```
 
 雙拒絕分類的 atlas 與 Lean axiom audit 另見
 [分類報告](c5_two_rejection_proof_zh.md) 與 [Lean 工具](lean_two_rejection_tools.md)。
-以上是重播入口，不表示本次文件整理已執行研究 checker 或 Lean build。
-本次只檢查文件；歷次實際重跑／沿用範圍見 [研究與發布歷史](STATUS_HISTORY.md)。
+本輪重跑範圍見 [研究紀錄](history/2026-09-24-3703-exclusion.md)；
+雙拒絕 atlas、R 系列、抽象 profiles／閉包未重跑。
 歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。
 
 早期交接保存於 [HANDOFF_HISTORY](HANDOFF_HISTORY.md)，整理前的近期交接

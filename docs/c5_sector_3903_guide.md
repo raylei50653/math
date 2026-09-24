@@ -107,7 +107,8 @@
 3647、3895、3901、3903。[Lean 共用工具](lean_two_rejection_tools.md)
 列出已形式化步驟及仍在紙面／外部定理層的部分。
 3703 不屬於這個雙拒絕情形；其[兩葉鏈化約](c5_sector_3703_structure.md)
-是另一後續報告，目前研究入口仍以 HANDOFF 為準。
+由 [葉點 minor 與三列 palette 排除](c5_sector_3703_exclusion.md) 完成，
+五目標皆在指定 sector 圖類內排除。研究入口仍以 HANDOFF 為準。
 
 ## 4. 證書、重播與歷史
 
