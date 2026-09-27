@@ -1,5 +1,9 @@
 # Single-spoke：單接點未用色守恆掃過 114 筆
 
+後續（2026-09-27）：[二接點上界分類](c5_single_spoke_two_contact_bounds.md)
+已關閉 root sweep 所剩 18 個含二接點上界的查詢；目前 98 筆兩列已證、
+16 個單接點查詢未決。下文保留原輪次結論；K5 的共同路徑版本見新報告 §4。
+
 2026-09-27。接續 [單接點未用色守恆](c5_single_spoke_root_conservation.md) §2，
 沿用 [外部雙路徑 completion](c5_single_spoke_completion.md) 的已知關係與上界、
 [旁支 K5 minor](c5_single_spoke_branch_minor.md) 的 p₁ 結論。
