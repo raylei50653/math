@@ -2,7 +2,7 @@
 
 文件更新與研究依據：2026-09-27。
 本頁維護研究狀態與完整報告索引；**優先順序只以 [HANDOFF](HANDOFF.md) 為準**。
-兩-spoke 全部 (3) 型，以及 S={b0,b1}、S={b1,b2}、S={b2,b3} 各兩種 (2,1) 次序已排除。剩四個相鄰表項已有 split-support 完整列分類，兩次序皆只缺 q；八個非相鄰表項已證指定 p=01021、01212 可延拓；唯一 degree-5 的 t=2 全支已接回單側出口。single-spoke 已有四型必要覆蓋與 (2,1,1) 的 19 種必要支援型；外部雙路徑 completion、旁支 K5 minor 與單接點未用色守恆將 114 筆中的兩列已證增至 66 筆，其餘 48 筆各剩一列未決；一般單側出口與 R31 來源 minor 缺口保留。
+兩-spoke 全部 (3) 型，以及 S={b0,b1}、S={b1,b2}、S={b2,b3} 各兩種 (2,1) 次序已排除。剩四個相鄰表項已有 split-support 完整列分類，兩次序皆只缺 q；八個非相鄰表項已證指定 p=01021、01212 可延拓；唯一 degree-5 的 t=2 全支已接回單側出口。single-spoke 已有四型必要覆蓋與 (2,1,1) 的 19 種必要支援型；外部雙路徑 completion、旁支 K5 minor 與單接點未用色守恆（含全表掃描）將 114 筆中的兩列已證增至 80 筆，其餘 34 筆各剩一列未決；一般單側出口與 R31 來源 minor 缺口保留。
 逐輪數字、驗證與發布紀錄已移至 [歷史快照](STATUS_HISTORY.md)。
 
 ## 1. 閱讀順序與文件角色
@@ -26,7 +26,8 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [Single-spoke 單接點未用色守恆](c5_single_spoke_root_conservation.md) | 指定 (012,04,234) 二接點分支已證 p₂ 延拓，取 z=3；任意大小 root palette 歸納，66 筆兩列已證、48 查詢未決，未 Lean 化 |
+| [Single-spoke root 守恆全表掃描](c5_single_spoke_root_sweep.md) | 通用單接點條件套用全部 228 查詢，新增 14 個接受；80 筆兩列已證、34 查詢未決；紙面引理＋有限上界計算，未 Lean 化 |
+| [Single-spoke 單接點未用色守恆](c5_single_spoke_root_conservation.md) | 指定 (012,04,234) 二接點分支已證 p₂ 延拓，取 z=3；任意大小 root palette 歸納，該輪 66 筆兩列已證，後由全表掃描增至 80 筆、34 查詢未決，未 Lean 化 |
 | [Single-spoke 旁支 K5 minor](c5_single_spoke_branch_minor.md) | 指定 (01,04,1234) 二接點分支已證 p₁ 延拓；任意大小同圖 K5 抽取、20 局部型與 360 份拓撲控制；該輪 64 筆兩列已證，後由單接點守恆增至 66 筆、48 查詢未決，未 Lean 化 |
 | [Single-spoke 旁支 palette 守恆](c5_single_spoke_branch_palettes.md) | 色 0、3 守恆給 q 路徑交替限制，以及五種旁支入口 palette 配對與必要實際接線；任意大小必要限制；後由旁支 K5 minor 證指定分支 p₁ 延拓，未 Lean 化 |
 | [Single-spoke 雙禁色 bridge 路徑](c5_single_spoke_bridge_path.md) | 指定未決分支的兩接點間必為奇數 bridge 路徑，b3 接線全在旁支；任意大小必要化約；後接旁支 K5 minor 完成指定 p₁，未 Lean 化 |
@@ -194,6 +195,8 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | 保留 | 一般單側／共同出口與主命題 | 分別需要一般分離、共同 pivotal edge 等證明；兩個單側出口不推出共同出口 |
 
 ## 歷史紀錄與舊連結
+
+- [2026-09-27：single-spoke root 守恆全表掃描](history/2026-09-27-single-spoke-root-sweep.md)
 
 - [2026-09-27：single-spoke 六輪成果整合驗證](history/2026-09-27-single-spoke-publication.md)
 

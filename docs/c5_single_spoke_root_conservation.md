@@ -1,5 +1,8 @@
 # Single-spoke：單接點未用色守恆與 p₂ 延拓
 
+後續（2026-09-27）：[root 守恆全表掃描](c5_single_spoke_root_sweep.md) 將通用
+單接點條件套用到 114 筆，新增 14 個接受查詢；目前 80 筆兩列已證、34 查詢未決。
+
 2026-09-27。接續 [旁支 minor 的停止點](c5_single_spoke_branch_minor.md)、
 [外部雙路徑 completion](c5_single_spoke_completion.md) 及
 [rooted palette 守恆](c5_single_spoke_branch_palettes.md#2-rooted-palette-唯一性與固定色守恆)。

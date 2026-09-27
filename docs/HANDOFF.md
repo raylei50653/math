@@ -2,7 +2,7 @@
 
 文件更新與研究依據：2026-09-27。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。目前 single-spoke 的 (012,04,234) 指定分支已由單接點未用色守恆證 p₂ 延拓；(2,1,1) 的 114 個具名配置中，66 個已證兩個指定 p，48 個各剩一列未決。唯一 degree-5 的 t=2 已完成；一般版仍有 t≤1／更高 degree 等缺口。
+更新約定見 [文件維護規則](DOCUMENTATION.md)。目前 single-spoke 的單接點未用色守恆已掃過全表；(2,1,1) 的 114 個具名配置中，80 個已證兩個指定 p，34 個各剩一列未決。唯一 degree-5 的 t=2 已完成；一般版仍有 t≤1／更高 degree 等缺口。
 
 ## 1. 目前做到哪裡
 
@@ -77,14 +77,14 @@ Order I 的既有 disk witnesses 保留；order II 的一般實現性未證，�
 [旁支 K5 minor](c5_single_spoke_branch_minor.md) 已證 (01,04,1234)、禁 3
 者二接點的 p₁ 延拓：任一奇數位置 bridge 的兩端連同旁支都碰同一對
 框點，與其餘路徑及 C₁／C₂ 實際路徑給 K5；任意大小，未 Lean 化。
-[單接點未用色守恆](c5_single_spoke_root_conservation.md) 再證 (012,04,234)、禁 3 者二接點的 p₂ 延拓（source_index 23、28）：
-C₁ 的兩份拒絕證書若在非 root 都保留色 3，root 也必一致，故不能在
-q 禁 1、p₂ 禁 3。配合原 completion 與 C₂ 關係，取 z=3 即可接合。
-114 筆現為 66 筆兩列已證、18 筆只證 p₁、30 筆只證 p₂，未決查詢 48 個。
-**下一個窄入口：將單接點未用色守恆套回原 114 筆的兩個指定 p。**
-逐筆保留實際支援與共同色框：兩列均未見 d、q 禁 a≠d 的單接點分量，
-在目標列不能禁 d；與既有完整關係／completion 上界合用，更新接受查詢。
-此輪只完成 23、28，其他套用尚未計數；不從必要上界推論可實現性。
+[單接點未用色守恆](c5_single_spoke_root_conservation.md) 以 root palette 歸納證 (012,04,234) 的 p₂；
+[全表掃描](c5_single_spoke_root_sweep.md) 再將其通用條件
+（單接點分量、d≠a、d 不在 q、p 的支援色中 ⇒ d∉F_C(p)）套用到全部查詢，
+新增 14 個接受查詢：現為 80 筆兩列已證、12 筆只證 p₁、22 筆只證 p₂，未決 34 個。
+**下一個窄入口：剩餘 34 查詢（17 個角色×目標，各兩份單接點次序）。**
+其中 18 個仍含二接點分量上界，需 completion／旁支 minor 類同圖化約；
+24 個含單接點上界但支援已見所有非 a 候選色，需用實際 root 接線或他分量路徑。
+清單見 sweep artifact 的 `open_queries`；不從必要上界推論可實現性。
 19 型不代表可實現或小圖正常形。其餘 t=1 分拆、t=0、degree≥6、多 degree-5
 及一般核心存在／分離仍保留；先證任意大小限制，再做有限證書，不重啟圖枚舉。
 一般失敗側的核心存在性化約仍未證；已完成的 t=2、兩葉鏈與五目標毋須重開。
@@ -124,9 +124,10 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性均保�
 
 ## 5. 重播入口與驗證範圍
 
-接續目前研究的最小重播（本輪實際範圍見 [root 守恆紀錄](history/2026-09-27-single-spoke-root-conservation.md)）：
+接續目前研究的最小重播（本輪實際範圍見 [全表掃描紀錄](history/2026-09-27-single-spoke-root-sweep.md)）：
 
 ```bash
+python3 scripts/c5_single_spoke_root_sweep.py --check
 python3 scripts/c5_single_spoke_root_conservation.py --check
 python3 scripts/c5_single_spoke_branch_minor.py --check
 python3 scripts/c5_single_spoke_branch_palettes.py --check
