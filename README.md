@@ -19,6 +19,7 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [3703 排除證明](docs/c5_sector_3703_exclusion.md) | 指定 sector 圖類的最後一個目標；紙面證明、局部證書與適用界線 |
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [邊位置對座標](docs/c5_edge_pair_coordinates.md)、[同染色有序重接](docs/c5_dual_path_surgery.md) | 十態與 Kempe 必要條件；三份邊界配對不足的同圖反例、一步精確重接及 record 110 的共同必要等式；紙面＋Python，來源排除仍未證 |
+| [循環流與計數限制](docs/c5_circulation.md) | 六維計數、153 個 Kempe 支撐與十二循環的統一表示；三套整數 orbit 分解不再收緊非負整數恆等式解，平面來源仍需額外證明 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 早期交接快照；近期紀錄由 STATUS 的歷史入口查閱 |
 
 研究優先順序與最小重播命令只在 [HANDOFF](docs/HANDOFF.md) 維護。

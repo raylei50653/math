@@ -109,6 +109,7 @@ R31 任意長來源 minor 缺口保留，暫不作優先入口。全 degree-4 �
 三-spoke 零／一／二環及指定三環鏈型的成果，見 [STATUS](STATUS.md)。
 Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性保留各自缺口。
 [邊位置對座標](c5_edge_pair_coordinates.md) 把 Kempe screen 等價化為 20 條蘊涵；1,024 masks 已核對，未新增排除或關閉一般 degree-5、共同出口與主命題。
+[循環流](c5_circulation.md) 統一六維計數／153 支撐／十二循環；36 份基底覆蓋證三套分開的整數 orbit 條件不再收緊恆等式解。紙面＋Python，未 Lean 化或排除平面來源；重播見報告與[當輪紀錄](history/2026-09-27-circulation.md)。
 
 ## 4. 信任範圍與工作約定
 
@@ -146,5 +147,4 @@ git diff --check
 接合輪重跑範圍見 [研究紀錄](history/2026-09-24-single-sided-exit.md)；
 雙拒絕 atlas、R 系列大覆蓋、抽象 profiles／閉包未重跑。
 歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。
-
 早期交接見 [HANDOFF_HISTORY](HANDOFF_HISTORY.md) 與 [2026-09-22 快照](HANDOFF_2026-09-22.md)；歷史待辦與 Git 狀態均非現況。

@@ -5,6 +5,10 @@
 [計數恆等式](c5_adjacent_singleton_counts.md) 與 [count-cone bridge](c5_count_cone_bridge.md)。
 研究優先序見 [HANDOFF](HANDOFF.md)。
 
+**2026-09-27 計數續作**：[循環流重述](c5_circulation.md) 將同一十態與 153 個
+screen 支撐接上六維計數及十二個整數生成元；三套分開的 orbit 計數條件亦不再
+收緊非負整數恆等式解，未新增平面來源排除。
+
 **2026-09-27 後續：** [同染色有序重接](c5_dual_path_surgery.md) 已證 §5 所提的一步更新公式，
 並以同一 induced-C5 圖證明三份 boundary matchings 不足以決定後繼；record 110 新增共同切口必要等式，仍未排除。
 

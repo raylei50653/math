@@ -2,6 +2,10 @@
 
 2026-09-15。接續 [主問題](c5_kempe_screen.md#4-c5-adjacent-singleton-problemunproved)。
 
+**2026-09-27 後續**：[循環流與整數 orbit 覆蓋](c5_circulation.md) 將恆等式重述
+為六維循環流，並由十二個整數生成元證明所有非負整數解皆通過三套分開的既有
+orbit 分解條件；超出下文十一個例子，但仍未給出圖來源或新增來源排除。
+
 **後續進展**：[near-triangulation／文獻 count-cone 歸約](c5_count_cone_bridge.md)
 已補上「保留一個關鍵染色的補完仍是反例」紙面引理，並把較強目標 m≤0 對應到
 Dvořák–Lidický Conjecture 9。主問題仍未證；最新交接以上述文件為準。
