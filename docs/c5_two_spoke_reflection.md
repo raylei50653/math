@@ -1,5 +1,9 @@
 # Two-spoke (2,1): q-preserving reflection and the remaining adjacent orbit
 
+後續（2026-09-27）：[非相鄰 two-spoke 分離](c5_two_spoke_nonadjacent.md)
+已證八個非相鄰表項的指定相鄰 p 可延拓，完成唯一 degree-5 的 t=2 出口接合。
+下文未解項與數字保留當輪語境；一般單側出口仍未證。
+
 後續（2026-09-24）：[split-support 完整列分類](c5_two_spoke_split_support.md)
 已完成 §4–5 的任意大小單缺失問題：兩種接點次序均有精確全列 F／Z 公式；
 S={b4,b0} 僅由本頁形式化反射搬運。下文停止點保留當輪語境。

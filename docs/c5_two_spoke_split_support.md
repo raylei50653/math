@@ -1,5 +1,9 @@
 # Split-support adjacent (2,1): the complete boundary-row relation
 
+後續（2026-09-27）：[非相鄰 two-spoke 分離](c5_two_spoke_nonadjacent.md)
+已證八個非相鄰表項的指定相鄰 p 可延拓，完成唯一 degree-5 的 t=2 出口接合。
+下文未解項與數字保留當輪語境；一般單側出口仍未證。
+
 2026-09-24. Dependencies: [support and reflection](c5_two_spoke_reflection.md),
 [R10 contact interfaces](c5_degree5_interfaces.md), and the existing
 [degree-four block classification](c5_k4_blocks.md). Priority: [HANDOFF](HANDOFF.md).

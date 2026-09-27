@@ -1,0 +1,7 @@
+import Math.TwoSpokeNonadjacent
+
+#print axioms FiveBoundary.TwoSpokeNonadjacent.query_rows
+#print axioms FiveBoundary.TwoSpokeNonadjacent.two_color_screen
+#print axioms FiveBoundary.TwoSpokeNonadjacent.nonadjacent_orbit
+#print axioms FiveBoundary.TwoSpokeNonadjacent.reflection_queries
+#print axioms FiveBoundary.TwoSpokeNonadjacent.reflection_separation

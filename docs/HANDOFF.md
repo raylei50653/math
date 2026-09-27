@@ -1,8 +1,8 @@
 # 研究交接：目前狀態與接手入口
 
-文件更新與研究依據：2026-09-24。工作目錄 `/home/ray/math`。
+文件更新與研究依據：2026-09-27。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪完成 split-support 相鄰 (2,1) 的完整列關係與單缺失分離；S={b4,b0} 僅由形式化反射搬運。一般單側出口仍有非相鄰／更高 degree 的核心分離缺口。
+更新約定見 [文件維護規則](DOCUMENTATION.md)。本輪完成非相鄰 (2,1) 的指定相鄰缺失列分離，反射側僅搬運；唯一 degree-5 的全部 t=2 核心已接回單側出口。一般版仍有 t≤1／更高 degree 等缺口。
 
 ## 1. 目前做到哪裡
 
@@ -33,11 +33,11 @@ minimal obstruction 路線下的 sector 目標；先研究單側出口，再處�
 
 目前入口為 [single-sided exit 接合定理](c5_single_sided_exit.md) §1–5。
 五目標的來源假設與窮盡性已核對：若來源有一個全 degree-4，或唯一
-degree-5／三-spoke 的 minimal q-obstruction，就存在只釋放 p 的出口；
+degree-5／二或三-spoke 的 minimal q-obstruction，就存在只釋放 p 的出口；
 不限制來源圖大小。五目標的窮盡性另有直接 Boolean 紙面推導。
 
 **一般單側出口仍未證。** 下一個窄問題是失敗側 minimal cores 的分離：
-每一個都必有 degree≥6、至少兩個 degree-5，或唯一 degree-5 且 t≤2。
+每一個都必有 degree≥6、至少兩個 degree-5，或唯一 degree-5 且 t≤1。
 [兩-spoke 區域化約](c5_degree5_two_spoke_sectors.md) 的 24 個保留配置中，
 [三接點排除](c5_two_spoke_three_contacts.md) 已排除全部六個 (3) 型：
 同圖 z=2／3 的 palette 差強迫一個 triangle 加三條同 parity bridge arms，
@@ -61,9 +61,17 @@ U\{b0,b1,b4}、否則空。兩接點／單接點次序皆成立，完整接點 t
 D 的例外 completion 在 252 個完整接線中無雙列解。S={b4,b0} 僅由既有
 Lean 反射搬運；新 Lean 證明有限列代數，完整 disk 分類仍為紙面＋外部定理。
 Order I 的既有 disk witnesses 保留；order II 的一般實現性未證，但已非
-第二缺失的缺口。**下一個窄問題是八個非相鄰 (2,1) 表項**：
-S={b1,b4}、{b2,b4} 的兩分量分居區域，保留同圖完整 R_C₂／R_C₁、
-原接點與共同色框，證單缺失或給實際第二缺失 disk witness。
+第二缺失的缺口。[非相鄰分離](c5_two_spoke_nonadjacent.md) 現已完成八項：
+四個 S={b1,b4} 代表均接受 p=01021、01212，S={b2,b4} 僅由既有反射搬運。
+01021 用刪除同色 spoke 後的 degree-4 結構及保留 z 色的 path transfer；
+74 個正常形增邊候選全部接受 q。01212 先用四邊形側完整關係不變與五邊形
+側換色對稱，迫使 C2 在五邊形側；實際 degree-4 completion 只剩兩種結構，
+3,492 個接線無相容雙列禁色。任意大小覆蓋為紙面證明；Lean 僅列代數與搬運。
+因此唯一 degree-5 的 **t=2 全部分支已完成出口相容分離**；不另宣稱所有
+非相鄰來源皆完整單缺失，也不宣稱四類皆可實現。
+**下一個窄入口為 t=1 的必要位置／接點分拆**，沿用 R10 的四型與完整關係；
+先做任意大小必要化約，不重啟一般圖枚舉。t=0、degree≥6、多個 degree-5
+以及一般核心存在／分離仍保留；指定相鄰 p 可延拓仍是出口的首要驗收。
 已完成的 (3) 與全部相鄰型毋須重開；一般失敗側每個核心仍必碰五個 boundary 點。
 一般失敗側的核心存在性化約仍未證；兩葉鏈、五目標與 (3) 毋須重開。
 603 profiles 與固定點未改寫；共同出口仍需獨立的共同 pivotal-edge 證明。
@@ -104,9 +112,10 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性均保�
 ## 5. 重播入口與驗證範圍
 
 接續目前研究的最小重播（本輪實際範圍見
-[split-support 分類紀錄](history/2026-09-24-split-support.md)）：
+[非相鄰分離紀錄](history/2026-09-27-nonadjacent-two-spoke.md)）：
 
 ```bash
+python3 scripts/c5_two_spoke_nonadjacent.py --check
 python3 scripts/c5_two_spoke_split_support.py --check
 python3 scripts/c5_two_spoke_reflection.py --check
 python3 scripts/c5_two_spoke_middle_21.py --check
@@ -121,6 +130,7 @@ uv run --with networkx==3.5 python scripts/c5_degree5_interfaces.py --check
 lake build
 lake env lean Math/TwoSpokeReflectionAudit.lean
 lake env lean Math/TwoSpokeSplitSupportAudit.lean
+lake env lean Math/TwoSpokeNonadjacentAudit.lean
 python3 scripts/check_docs.py
 git diff --check
 ```

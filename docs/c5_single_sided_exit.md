@@ -1,5 +1,8 @@
 # 五目標排除到 single-sided exit：接合定理與一般化界線
 
+後續（2026-09-27）：[非相鄰 two-spoke 分離](c5_two_spoke_nonadjacent.md)
+完成唯一 degree-5 的全部 t=2 分支；本頁定理及失敗側必要條件已相應更新。
+
 後續（2026-09-24）：[兩-spoke 區域化約](c5_degree5_two_spoke_sectors.md)
 將 t=2 的 (3)／(2,1) 收窄為 24 個必要配置；
 [未接內點引理](c5_unattached_boundary.md) 再完成 (3) 非相鄰型的分離，
@@ -8,7 +11,7 @@
 2026-09-24。接續 [五目標](c5_sector_targets.md)、
 [雙拒絕分類](c5_two_rejection_proof_zh.md) 與
 [3703 排除](c5_sector_3703_exclusion.md)。
-**已完成三-spoke 核心的單側出口接合；無結構假設的一般單側出口仍未證。**
+**已完成二及三-spoke 核心的單側出口接合；無結構假設的一般單側出口仍未證。**
 下文給出任意大小來源圖的條件式定理、五目標窮盡性的紙面推導，以及
 尚不能消去的核心存在性假設。研究優先序見 [HANDOFF](HANDOFF.md)。
 
@@ -25,7 +28,9 @@
 1. 全部有效內點完整 degree=4；
 2. 恰一個有效內點 z 完整 degree=5，其餘完整 degree=4，且 z 恰有
    三個 boundary 鄰居；
-3. 某個 boundary 頂點沒有有效內鄰點（內點 degree 不受限）。
+3. 某個 boundary 頂點沒有有效內鄰點（內點 degree 不受限）；
+4. 恰一個有效內點 z 完整 degree=5，其餘完整 degree=4，且 z 恰有
+   兩個 boundary 鄰居。
 
 **定理（條件式 single-sided exit，來源圖大小與 degree 不受限）。**
 若 G 有一個上述可處理的 minimal q-obstruction，則存在非外圈邊刪除序列
@@ -52,7 +57,7 @@ boundary spokes 在 q 下顏色互異。第一種核心由
 [全 degree-4 定理](c5_k4_blocks.md#4-合成全-degree-4-的單缺失結論)
 已有 Σ(M)=Ω\{q}；第三種由
 [未接內點引理](c5_unattached_boundary.md#1-不依賴-degree-或-disk-的改色引理)
-同樣得到 Σ(M)=Ω\{q}。以下只處理第二種。
+同樣得到 Σ(M)=Ω\{q}。第二種由下文 §2–3 處理，第四種見 §3a。
 
 將 q 對齊為 01012，稱其三色 A、B、C，第四色 D。
 z 有三條 spokes，顏色互異，故 A_z(q)={D}；它還有恰兩個內鄰點。
@@ -111,6 +116,24 @@ q 是第 0 列。其相鄰 singleton 缺失 p 只可能是第 1 或第 6 列。
 3703 拒絕 x3、x7、x8，由任意長度三拒絕排除得矛盾。
 所以 M 接受 p，從而 **Σ(M)=Ω\{q}**。這完成三-spoke 核心的分離。
 
+## 3a. 全部 two-spoke 核心接回同一出口
+
+對第四種核心，以 q=01012 對齊後，指定相鄰 singleton p 只有
+01021、01212。M 的 minimality 與 T4 acceptance 給出
+[兩-spoke 必要位置表](c5_degree5_two_spoke_sectors.md) 的 24 個配置。
+全部六個 (3) 型由 [三接點定理](c5_two_spoke_three_contacts.md) 排除。
+(2,1) 的六個相鄰表項由 [相鄰](c5_two_spoke_adjacent_21.md)、
+[中間相鄰](c5_two_spoke_middle_21.md) 及 [反射](c5_two_spoke_reflection.md)
+排除；另四個相鄰表項由 [split-support](c5_two_spoke_split_support.md)
+證只缺 q。剩八個非相鄰表項由
+[指定列分離](c5_two_spoke_nonadjacent.md) 證兩個 p 均可延拓。
+
+因此任一實際存在的第四種核心 M 都接受指定 p。再用
+Σ(G)⊆Σ(M) 與 M 拒絕 q，得到 **Σ(M)=Ω\{q}**，可直接進入 §4。
+這個完整 Σ 結論使用來源雙缺失前提；新非相鄰定理自身只斷言兩個指定 p
+延拓，未把所有 T4-accepting 非相鄰來源分類成單缺失。反射側僅搬運，
+且搬運同時交換兩個 p 的色置換等價類，不獨立枚舉。
+
 ## 4. 從核心分離到實際第一個 strict step
 
 按任意次序刪去 E\A。每個中間圖都包含 M，故始終拒絕 q；
@@ -125,7 +148,7 @@ p 的中間圖。它的前一步仍恰拒絕 p、q，而該步只釋放 p。
 ## 5. 為何尚不是無條件的一般定理
 
 一般 minimality 只給完整 degree≥4，沒有給 degree≤5、degree-5 點唯一，
-或該點恰三條 boundary spokes。五目標窮盡的是 §2 的 sector 接合，
+或該點至少兩條 boundary spokes。五目標窮盡的是 §2 的 sector 接合，
 並不窮盡任意 minimal obstruction 的結構。
 
 **失敗側的必要條件。** 若 Ω\{q}∉W(G)，則 G 的每一個 minimal
@@ -134,14 +157,12 @@ q-obstruction 都仍拒絕 p，**都必碰到全部五個 boundary 頂點**，
 
 - 有完整 degree≥6 的有效內點；
 - 至少兩個完整 degree=5 的有效內點；
-- 恰一個完整 degree=5 的有效內點，其 boundary spokes 數 t≤2。
+- 恰一個完整 degree=5 的有效內點，其 boundary spokes 數 t≤1。
 
 證明：未接內點引理給出五點皆須被碰到；有效內點 degree≥4，
-上述 degree 條件以外的情形恰被 §1 前兩類覆蓋，與定理矛盾。
-最後一類的接點數分拆還有 R10 的十二型：t=2 的 (3)、(2,1)，
-t=1 的四型，以及 t=0 的六型。五目標排除解決 t=3、(2)；t=2 的 (3) 非相鄰支另由
-[未接內點引理](c5_unattached_boundary.md#2-完成兩-spoke-的非相鄰三接點支)
-完成分離，餘下 23 個兩-spoke 必要配置尚未分離。
+上述 degree 條件以外的情形恰被 §1 第一、二、四類覆蓋，與定理矛盾。
+最後一類只剩 R10 的十型：t=1 的四型及 t=0 的六型。
+五目標排除解決 t=3、(2)；§3a 完成 t=2 的 (3)、(2,1)。
 
 要完成使用者要求的**無條件一般 single-sided exit 定理**，仍須證明
 每個候選 A 來源 G、每個定向缺失對 (p,q)，至少存在一個接受 p 的
@@ -155,7 +176,7 @@ minimal q-obstruction。證明存在一個 §1 可處理核心是充分途徑，
 
 ## 6. 證據層與重播
 
-本輪新增紙面接合、五目標 Boolean 窮盡推導與失敗側必要條件。
+原接合輪新增紙面接合、五目標 Boolean 窮盡推導與失敗側必要條件。
 sector 圖層排除沿用既有紙面證明、外部 degree-list 定理及 Python 局部
 證書；沒有新增 Lean theorem。既有 checker 另核對 4,096 個投影、
 五目標的全部 240 個有標號 boundary rows，與 §3 相符。
@@ -172,3 +193,7 @@ git diff --check
 
 實際驗證與沿用範圍見 [本輪紀錄](history/2026-09-24-single-sided-exit.md)。
 未改抽象 603 profiles 或固定點；提交與發布核對見同一紀錄。
+
+2026-09-27 的 t=2 擴充另有任意大小紙面化約、74／3,492 個局部候選證書，
+以及 Lean 有限列代數與反射證明；圖層定理未 Lean 化。
+實際重播見 [本輪紀錄](history/2026-09-27-nonadjacent-two-spoke.md)。

@@ -1,5 +1,9 @@
 # 唯一 degree-5 的兩-spoke 區域化約
 
+後續（2026-09-27）：[非相鄰 two-spoke 分離](c5_two_spoke_nonadjacent.md)
+已證八個非相鄰表項的指定相鄰 p 可延拓，完成唯一 degree-5 的 t=2 出口接合。
+下文未解項與數字保留當輪語境；一般單側出口仍未證。
+
 後續（2026-09-24）：[q-preserving 反射與下一相鄰 orbit](c5_two_spoke_reflection.md)
 已將 S={b0,b1} 排除搬到 S={b2,b3}；六個 (2,1) 表項累計排除，尚餘四相鄰、
 八非相鄰項。下一相鄰 orbit 有必要 split-support 定理及八個只缺 q 的既有
