@@ -1,5 +1,20 @@
 # 唯一 degree-5 內點：完整接點介面與不可刪減禁色覆蓋
 
+後續（2026-09-27）：[單接點未用色守恆](c5_single_spoke_root_conservation.md)
+已證 (012,04,234)、禁 3 者二接點的 p₂ 延拓；目前 66 筆兩列已證、
+48 查詢未決。下文數字與停止點保留各原輪次語境。
+
+後續（2026-09-27）：[single-spoke 外部雙路徑 completion](c5_single_spoke_completion.md)
+保留同圖二接點分量，沿用 degree-4 分類及既有有限完整關係證書；
+(2,1,1) 的 114 筆配置中現有 62 筆兩個指定 p 已證，52 筆各剩一列。
+
+
+後續（2026-09-27）：[single-spoke 必要化約](c5_single_spoke_cores.md) 完成 t=1
+四型不可刪減覆蓋、接點區塊與反射；(2,1,1) 只剩 19 種必要實際支援型，
+已完成部分指定 p 延拓，全部 t=1 仍未解。t=2 已由 [非相鄰分離](c5_two_spoke_nonadjacent.md)
+及既有結果完成出口接合；下文舊停止點保留歷史語境。
+
+
 後續（2026-09-24）：[三接點排除](c5_two_spoke_three_contacts.md) 已以同圖
 palette 差與實際 boundary tethers 的 K5 minor 排除全部兩-spoke (3) 型；
 尚餘 18 個 (2,1) 配置。下文 24／23 個配置及下一題保留當輪語境。
