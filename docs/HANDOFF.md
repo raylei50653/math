@@ -85,8 +85,12 @@ Order I 的既有 disk witnesses 保留；order II 的一般實現性未證，�
 [單接點上界分類](c5_single_spoke_single_contact_bounds.md) 再以未用色在 root 的
 禁色角色守恆，證剩餘 16 筆皆有 F_C(p)⊆{3}；12 個 p₁ 可取 z=2，
 4 個 p₂ 可取 z=0。現為 **114 筆兩列全證、0 個表內查詢未決**；未新增 Lean theorem。
-**下一個窄入口：t=1 的其餘接點分拆，先研究 (2,2) 的完整雙分量關係與實際支援。**
-沿用既有四型必要覆蓋；不重開 (2,1,1) 表，也不從必要上界推論可實現性。
+[single-spoke (2,2) 必要分類](c5_single_spoke_two_two.md) 已保存兩份完整 relation schemas、
+全部 slit lifts／接點方向與奇數 bridge 路徑必要結構；三代表 1,530 筆必要候選中
+T4 排除 1,150 筆，保留 380 筆／190 型，104 筆已證兩個 p 延拓。
+**下一個窄入口：(2,2) record 110，s=0、支援 (34,12)、禁色 ({1,2},{2,3})。**
+必要關係迫使兩個 p 都拒絕；須分析兩份原 bridge 路徑與旁支 tethers 的 disk
+可實現性／來源 minor。保留型不是實現；不重開 (2,1,1) 或圖枚舉。
 19 型不代表可實現或小圖正常形。其餘 t=1 分拆、t=0、degree≥6、多 degree-5
 及一般核心存在／分離仍保留；先證任意大小限制，再做有限證書，不重啟圖枚舉。
 一般失敗側的核心存在性化約仍未證；已完成的 t=2、兩葉鏈與五目標毋須重開。
@@ -126,13 +130,10 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性均保�
 
 ## 5. 重播入口與驗證範圍
 
-接續目前研究的最小重播（本輪實際範圍見 [單接點分類紀錄](history/2026-09-27-single-spoke-single-contact-bounds.md)）：
+接續目前研究的最小重播（本輪實際範圍見 [(2,2) 分類紀錄](history/2026-09-27-single-spoke-two-two.md)）：
 
 ```bash
-python3 scripts/c5_single_spoke_single_contact_bounds.py --check
-python3 scripts/c5_single_spoke_two_contact_bounds.py --check
-python3 scripts/c5_single_spoke_root_sweep.py --check
-python3 scripts/c5_single_spoke_root_conservation.py --check
+python3 scripts/c5_single_spoke_two_two.py --check
 lake build
 python3 scripts/check_docs.py
 git diff --check

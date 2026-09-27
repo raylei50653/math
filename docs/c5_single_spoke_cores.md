@@ -11,6 +11,10 @@ docgraph:
 ---
 # Single-spoke degree-five cores：不可刪減覆蓋與嵌入必要化約
 
+後續（2026-09-27）：[(2,2) 必要分類](c5_single_spoke_two_two.md) 已完成該分拆的
+完整 relation schemas、actual supports／接點次序及指定 p 必要上界；T4 保留
+380 筆／190 型，104 筆雙列已證。仍非 disk 可實現性分類，下文保留原輪範圍。
+
 後續（2026-09-27）：[外部雙路徑 completion](c5_single_spoke_completion.md) 已完成
 下文指定的 (01,04,234)、C₃ 二接點入口。原 114 筆中兩列已證由 40 增至
 62 筆，其餘 52 筆各剩一列；下文表格、數字與停止點保留本報告當輪範圍。
