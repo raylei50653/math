@@ -1,3 +1,14 @@
+---
+docgraph:
+  id: c5.single-spoke-branch-minor
+  family:
+    - c5
+    - c5.single-spoke
+  requires:
+    - c5.single-spoke-branch-palettes
+    - c5.single-spoke-bridge-path
+    - c5.single-spoke-completion
+---
 # Single-spoke：旁支實際支援給 K5 minor 與 p₁ 延拓
 
 後續（2026-09-27）：[二接點上界分類](c5_single_spoke_two_contact_bounds.md)

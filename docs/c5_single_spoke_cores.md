@@ -1,3 +1,14 @@
+---
+docgraph:
+  id: c5.single-spoke-cores
+  family:
+    - c5
+    - c5.single-spoke
+  requires:
+    - c5.degree5-interfaces
+    - c5.single-sided-exit
+    - c5.two-spoke-reflection
+---
 # Single-spoke degree-five cores：不可刪減覆蓋與嵌入必要化約
 
 後續（2026-09-27）：[外部雙路徑 completion](c5_single_spoke_completion.md) 已完成

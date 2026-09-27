@@ -1,3 +1,13 @@
+---
+docgraph:
+  id: c5.single-spoke-bridge-path
+  family:
+    - c5
+    - c5.single-spoke
+  requires:
+    - c5.single-spoke-completion
+    - c5.single-spoke-cores
+---
 # Single-spoke：雙禁色強迫奇數 bridge 路徑
 
 後續（2026-09-27）：[旁支 K5 minor](c5_single_spoke_branch_minor.md) 已證

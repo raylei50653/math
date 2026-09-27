@@ -1,3 +1,12 @@
+---
+docgraph:
+  id: c5.two-spoke-middle-21
+  family:
+    - c5
+    - c5.two-spoke
+  derives_from:
+    - c5.two-spoke-adjacent-21
+---
 # Middle adjacent two-spoke (2,1): three exterior hubs and a K5 minor
 
 後續（2026-09-24）：[q-preserving 反射與下一相鄰 orbit](c5_two_spoke_reflection.md)

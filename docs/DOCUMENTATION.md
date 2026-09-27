@@ -49,10 +49,19 @@ README 不逐輪複述研究成果。研究優先序只寫在 HANDOFF，其他�
 固定 q 不自動提升為完整 Σ；list 介面不自動提升為 disk 實現；
 有限模板不自動提升為任意大小定理；`lake build` 不表示紙面拓撲已形式化。
 
+## DocGraph metadata
+
+報告可在檔首加入 `docgraph:` front matter（stable `id`，選填 `family`、
+`requires`、`derives_from`、`related`），由 [DocGraph](../tools/docgraph/README.md)
+產生 family、反向關係與 D2 圖。只記錄有實際語義的關係，反向與後續關係不重複填寫；
+沒有 relation 的文件合法。第一階段只涵蓋 single-spoke／two-spoke 主線及其直接輸入，
+不要求補齊歷史報告。STATUS／HANDOFF 的後續關係與優先序仍以原頁為準。
+
 ## 檢查與搬移
 
 ```bash
 python3 scripts/check_docs.py
+python3 tools/docgraph check
 git diff --check
 ```
 

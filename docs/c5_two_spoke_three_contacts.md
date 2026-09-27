@@ -1,3 +1,12 @@
+---
+docgraph:
+  id: c5.two-spoke-three-contacts
+  family:
+    - c5
+    - c5.two-spoke
+  requires:
+    - c5.degree5-interfaces
+---
 # Two spokes, three contacts: a same-source K5 obstruction
 
 後續（2026-09-24）：[相鄰 (2,1) 排除](c5_two_spoke_adjacent_21.md) 已排除

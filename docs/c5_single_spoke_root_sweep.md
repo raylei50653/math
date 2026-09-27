@@ -1,3 +1,14 @@
+---
+docgraph:
+  id: c5.single-spoke-root-sweep
+  family:
+    - c5
+    - c5.single-spoke
+  requires:
+    - c5.single-spoke-root-conservation
+    - c5.single-spoke-completion
+    - c5.single-spoke-branch-minor
+---
 # Single-spoke：單接點未用色守恆掃過 114 筆
 
 後續（2026-09-27）：[二接點上界分類](c5_single_spoke_two_contact_bounds.md)

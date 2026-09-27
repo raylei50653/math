@@ -1,3 +1,13 @@
+---
+docgraph:
+  id: c5.two-spoke-split-support
+  family:
+    - c5
+    - c5.two-spoke
+  requires:
+    - c5.two-spoke-reflection
+    - c5.degree5-interfaces
+---
 # Split-support adjacent (2,1): the complete boundary-row relation
 
 後續（2026-09-27）：[非相鄰 two-spoke 分離](c5_two_spoke_nonadjacent.md)

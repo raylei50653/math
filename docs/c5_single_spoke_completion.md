@@ -1,3 +1,13 @@
+---
+docgraph:
+  id: c5.single-spoke-completion
+  family:
+    - c5
+    - c5.single-spoke
+  requires:
+    - c5.single-spoke-cores
+    - c5.two-spoke-nonadjacent
+---
 # Single-spoke：外部雙路徑 completion 與指定列分離
 
 後續（2026-09-27）：[旁支 K5 minor](c5_single_spoke_branch_minor.md) 已證

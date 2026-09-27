@@ -1,3 +1,16 @@
+---
+docgraph:
+  id: c5.two-spoke-nonadjacent
+  family:
+    - c5
+    - c5.two-spoke
+  requires:
+    - c5.degree5-two-spoke-sectors
+    - c5.two-spoke-reflection
+  related:
+    - c5.two-spoke-split-support
+    - c5.single-sided-exit
+---
 # Nonadjacent two-spoke (2,1): separation for the two exit queries
 
 2026-09-27. **All four representatives with S={b1,b4} extend both
