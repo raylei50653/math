@@ -72,6 +72,8 @@ def _scalar(value: str):
 
 def docgraph_block(lines: list[str]) -> dict | None:
     """Return the parsed `docgraph:` mapping, or None if the key is absent."""
+    if sum(1 for l in lines if re.match(r"^docgraph:", l)) > 1:
+        raise ParseError("front matter declares 'docgraph:' more than once")
     start = next((i for i, l in enumerate(lines) if re.match(r"^docgraph:\s*(#.*)?$", l)), None)
     if start is None:
         if any(re.match(r"^docgraph:", l) for l in lines):

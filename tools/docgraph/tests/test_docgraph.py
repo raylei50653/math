@@ -139,6 +139,8 @@ class Errors(unittest.TestCase):
                       "docgraph: a", "docgraph:\n  id: a\n  family: [c5, c5]"):
             self.assertEqual(self.codes({"a.md": doc(block)}), ["parse"], block)
         self.assertEqual(self.codes({"a.md": "---\ndocgraph:\n  id: a\n"}), ["parse"])
+        self.assertEqual(self.codes({"a.md": doc(
+            "docgraph:\n  id: a\ndocgraph:\n  requires: [missing]")}), ["parse"])
 
     def test_check_exit_code(self):
         repo = Repo({"a.md": doc("docgraph:\n  id: a\n  requires: [b]")})
@@ -183,6 +185,12 @@ class Derived(unittest.TestCase):
         data = json.loads((out / "graph.json").read_text())
         self.assertEqual([n["id"] for n in data["nodes"]], ["base", "mid", "top"])
         self.assertEqual(json.loads((out / "reverse.json").read_text())["mid"], {"derived_by": ["top"]})
+
+    def test_view_filenames_do_not_collide(self):
+        repo = Repo({"x.md": doc("docgraph:\n  id: a/b"), "y.md": doc("docgraph:\n  id: a_b")})
+        self.assertEqual(repo.run("build")[0], 0)
+        views = sorted(p.name for p in (repo.root / ".docgraph/views").glob("*.d2"))
+        self.assertEqual(views, ["a%2Fb.depth1.d2", "a_b.depth1.d2"])
 
     def test_d2_views(self):
         dep = render_d2.dependency_view(self.graph)

@@ -8,6 +8,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 from . import query, render_d2
 from .parser import parse_repo
@@ -52,7 +53,9 @@ def to_svg(d2_path: Path) -> bool:
 
 
 def view_path(out: Path, root: str, depth: int) -> Path:
-    return out / "views" / f"{root.replace('/', '_')}.depth{depth}.d2"
+    # Percent-encoding is injective (the '%' itself is escaped), so distinct ids
+    # such as a/b and a_b never share a view file.
+    return out / "views" / f"{quote(root, safe='-.')}.depth{depth}.d2"
 
 
 def cmd_check(args) -> int:
