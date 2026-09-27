@@ -1,3 +1,13 @@
+---
+docgraph:
+  id: c5.two-spoke-adjacent-21
+  family:
+    - c5
+    - c5.two-spoke
+  requires:
+    - c5.degree5-two-spoke-sectors
+    - c5.degree5-interfaces
+---
 # Adjacent two-spoke (2,1): separate components and a source-fixed K5 minor
 
 後續（2026-09-24）：[q-preserving 反射與下一相鄰 orbit](c5_two_spoke_reflection.md)

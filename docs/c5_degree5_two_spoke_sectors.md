@@ -1,3 +1,14 @@
+---
+docgraph:
+  id: c5.degree5-two-spoke-sectors
+  family:
+    - c5
+    - c5.degree5
+    - c5.two-spoke
+  requires:
+    - c5.degree5-interfaces
+    - c5.single-sided-exit
+---
 # 唯一 degree-5 的兩-spoke 區域化約
 
 後續（2026-09-27）：[非相鄰 two-spoke 分離](c5_two_spoke_nonadjacent.md)

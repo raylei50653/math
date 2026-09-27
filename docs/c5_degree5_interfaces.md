@@ -1,3 +1,10 @@
+---
+docgraph:
+  id: c5.degree5-interfaces
+  family:
+    - c5
+    - c5.degree5
+---
 # 唯一 degree-5 內點：完整接點介面與不可刪減禁色覆蓋
 
 後續（2026-09-27）：[root 守恆全表掃描](c5_single_spoke_root_sweep.md) 將通用

@@ -1,3 +1,14 @@
+---
+docgraph:
+  id: c5.single-spoke-root-conservation
+  family:
+    - c5
+    - c5.single-spoke
+  requires:
+    - c5.single-spoke-branch-minor
+    - c5.single-spoke-completion
+    - c5.single-spoke-branch-palettes
+---
 # Single-spoke：單接點未用色守恆與 p₂ 延拓
 
 後續（2026-09-27）：[root 守恆全表掃描](c5_single_spoke_root_sweep.md) 將通用

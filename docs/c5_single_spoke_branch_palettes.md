@@ -1,3 +1,12 @@
+---
+docgraph:
+  id: c5.single-spoke-branch-palettes
+  family:
+    - c5
+    - c5.single-spoke
+  requires:
+    - c5.single-spoke-bridge-path
+---
 # Single-spoke：旁支 palette 守恆與 q 路徑限制
 
 後續（2026-09-27）：[旁支 K5 minor](c5_single_spoke_branch_minor.md) 已證

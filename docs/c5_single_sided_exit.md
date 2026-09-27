@@ -1,3 +1,9 @@
+---
+docgraph:
+  id: c5.single-sided-exit
+  family:
+    - c5
+---
 # 五目標排除到 single-sided exit：接合定理與一般化界線
 
 後續（2026-09-27）：[非相鄰 two-spoke 分離](c5_two_spoke_nonadjacent.md)

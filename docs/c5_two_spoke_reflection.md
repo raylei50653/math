@@ -1,3 +1,15 @@
+---
+docgraph:
+  id: c5.two-spoke-reflection
+  family:
+    - c5
+    - c5.two-spoke
+  requires:
+    - c5.degree5-two-spoke-sectors
+    - c5.degree5-interfaces
+    - c5.two-spoke-adjacent-21
+    - c5.two-spoke-middle-21
+---
 # Two-spoke (2,1): q-preserving reflection and the remaining adjacent orbit
 
 後續（2026-09-27）：[非相鄰 two-spoke 分離](c5_two_spoke_nonadjacent.md)

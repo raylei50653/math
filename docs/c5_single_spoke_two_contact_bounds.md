@@ -1,3 +1,14 @@
+---
+docgraph:
+  id: c5.single-spoke-two-contact-bounds
+  family:
+    - c5
+    - c5.single-spoke
+  requires:
+    - c5.single-spoke-root-sweep
+    - c5.single-spoke-completion
+    - c5.single-spoke-branch-minor
+---
 # Single-spoke：剩餘二接點上界的共同分類
 
 後續（2026-09-27）：[單接點上界分類](c5_single_spoke_single_contact_bounds.md)
