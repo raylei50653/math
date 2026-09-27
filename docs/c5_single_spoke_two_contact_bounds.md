@@ -1,5 +1,8 @@
 # Single-spoke：剩餘二接點上界的共同分類
 
+後續（2026-09-27）：[單接點上界分類](c5_single_spoke_single_contact_bounds.md)
+已關閉剩餘 16 個查詢，114 筆全部接受兩個指定 p；下文保留本輪數字。
+
 2026-09-27。從 [root sweep](c5_single_spoke_root_sweep.md) 的 34 個
 `open_queries` **只抽取含 component 0 unknown bound 的 18 個**。
 研究優先序見 [HANDOFF](HANDOFF.md)。
