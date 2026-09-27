@@ -18,6 +18,7 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [兩-spoke 區域](docs/c5_degree5_two_spoke_sectors.md)、[三接點排除](docs/c5_two_spoke_three_contacts.md)、[相鄰 (2,1) 排除](docs/c5_two_spoke_adjacent_21.md)、[中間相鄰 (2,1) 排除](docs/c5_two_spoke_middle_21.md)、[反射與下一相鄰 orbit](docs/c5_two_spoke_reflection.md)、[split-support 全列分類](docs/c5_two_spoke_split_support.md)、[未接內點引理](docs/c5_unattached_boundary.md) | degree-5 兩-spoke 必要配置、全部 (3) 型及 S={b0,b1}、S={b1,b2}、S={b2,b3} 各兩種 (2,1) 次序的同圖 K5 排除；Lean 反射搬運；紙面 minor／split-support 全列單缺失定理、Python 完整接點證書與 Lean 列代數 |
 | [3703 排除證明](docs/c5_sector_3703_exclusion.md) | 指定 sector 圖類的最後一個目標；紙面證明、局部證書與適用界線 |
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
+| [邊位置對座標](docs/c5_edge_pair_coordinates.md)、[同染色有序重接](docs/c5_dual_path_surgery.md) | 十態與 Kempe 必要條件；三份邊界配對不足的同圖反例、一步精確重接及 record 110 的共同必要等式；紙面＋Python，來源排除仍未證 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 早期交接快照；近期紀錄由 STATUS 的歷史入口查閱 |
 
 研究優先順序與最小重播命令只在 [HANDOFF](docs/HANDOFF.md) 維護。

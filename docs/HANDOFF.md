@@ -89,8 +89,8 @@ Order I 的既有 disk witnesses 保留；order II 的一般實現性未證，�
 全部 slit lifts／接點方向與奇數 bridge 路徑必要結構；三代表 1,530 筆必要候選中
 T4 排除 1,150 筆，保留 380 筆／190 型，104 筆已證兩個 p 延拓。
 **下一個窄入口：(2,2) record 110，s=0、支援 (34,12)、禁色 ({1,2},{2,3})。**
-必要關係迫使兩個 p 都拒絕；須分析兩份原 bridge 路徑與旁支 tethers 的 disk
-可實現性／來源 minor。保留型不是實現；不重開 (2,1,1) 或圖枚舉。
+[同染色有序重接](c5_dual_path_surgery.md) 已證一步公式及同圖三配對反例，並固定 α 三配對與交換後兩式。
+下一步把兩份原 bridge 路徑／旁支 tethers 接到共同切口，判定是否必違反兩式；record 110 尚未排除。
 19 型不代表可實現或小圖正常形。其餘 t=1 分拆、t=0、degree≥6、多 degree-5
 及一般核心存在／分離仍保留；先證任意大小限制，再做有限證書，不重啟圖枚舉。
 一般失敗側的核心存在性化約仍未證；已完成的 t=2、兩葉鏈與五目標毋須重開。
@@ -107,8 +107,8 @@ R27 末端各一臂及 R30 中間不同二接點鏈型已排除；其他三環�
 
 R31 任意長來源 minor 缺口保留，暫不作優先入口。全 degree-4 合成、
 三-spoke 零／一／二環及指定三環鏈型的成果，見 [STATUS](STATUS.md)。
-Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性均保留各自
-證據及缺口；不因整理而重啟。一般 degree-5、共同出口與主命題仍未證。
+Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性保留各自缺口。
+[邊位置對座標](c5_edge_pair_coordinates.md) 把 Kempe screen 等價化為 20 條蘊涵；1,024 masks 已核對，未新增排除或關閉一般 degree-5、共同出口與主命題。
 
 ## 4. 信任範圍與工作約定
 
@@ -130,9 +130,11 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性均保�
 
 ## 5. 重播入口與驗證範圍
 
-接續目前研究的最小重播（本輪實際範圍見 [(2,2) 分類紀錄](history/2026-09-27-single-spoke-two-two.md)）：
+接續目前研究的最小重播（本輪實際範圍見 [有序重接紀錄](history/2026-09-27-dual-path-surgery.md)）：
 
 ```bash
+python3 scripts/c5_dual_path_surgery.py --check
+python3 scripts/c5_edge_pair_coordinates.py --check
 python3 scripts/c5_single_spoke_two_two.py --check
 lake build
 python3 scripts/check_docs.py
@@ -145,6 +147,4 @@ git diff --check
 雙拒絕 atlas、R 系列大覆蓋、抽象 profiles／閉包未重跑。
 歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。
 
-早期交接保存於 [HANDOFF_HISTORY](HANDOFF_HISTORY.md)，整理前的近期交接
-全文保存於 [2026-09-22 快照](HANDOFF_2026-09-22.md)。
-歷史中的「下一步／未提交」不是目前待辦；提交與遠端狀態須查即時 Git。
+早期交接見 [HANDOFF_HISTORY](HANDOFF_HISTORY.md) 與 [2026-09-22 快照](HANDOFF_2026-09-22.md)；歷史待辦與 Git 狀態均非現況。
