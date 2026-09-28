@@ -11,6 +11,11 @@ docgraph:
 ---
 # Single-spoke (2,2)：兩框弧 K5、record 17 雙列延拓與分開套表
 
+後續（2026-09-28）：[singleton-source 首橋相容性](c5_single_spoke_first_bridge.md)
+已證 record 87 的 p₂，套表共新增 16 個指定列延拓；來源排除仍 278 筆，保留
+102 筆／51 型、100 筆雙列已證，僅 record 90／282 的 p₂ 未決。下文與舊
+artifact 保留當輪語境；新層保留首橋共用 β，未放寬舊 pair 引理的 singleton 限制。
+
 2026-09-28，基準 `123a4bc`。本輪獨立審核使用者貼出的兩框弧推導，確認
 把整個另一原分量納入 Z 的構造成立，並重建 checker 後套全表。使用者連結的
 `/mnt/data/math_record17_two_arc_review/` 與 ZIP 在本環境不存在；本輪沒有重播

@@ -2,7 +2,7 @@
 
 文件更新與研究依據：2026-09-28。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。(2,1,1) 的 114 筆雙列全證；(2,2) 來源 K5 累計排除 278 筆，剩 102 筆／51 型，其中 84 筆雙列已證，含 record 15、16、17；仍有 18 筆各剩一個查詢。唯一 degree-5 的 t=2 已完成；一般版仍有 t≤1／更高 degree 等缺口。
+更新約定見 [文件維護規則](DOCUMENTATION.md)。(2,1,1) 的 114 筆雙列全證；(2,2) 來源 K5 累計排除 278 筆，剩 102 筆／51 型，其中 100 筆雙列已證，含 record 15、16、17、87；僅 record 90／282 各剩 p₂。唯一 degree-5 的 t=2 已完成；一般版仍有 t≤1／更高 degree 等缺口。
 
 ## 1. 目前做到哪裡
 
@@ -89,9 +89,9 @@ Order I 的既有 disk witnesses 保留；order II 的一般實現性未證，�
 全部 slit lifts／接點方向與奇數 bridge 路徑必要結構；三代表 1,530 筆必要候選中
 T4 原保留 380 筆／190 型；[路徑塊支援與來源 K5](c5_single_spoke_two_two_minor.md) 排除 26 筆，含 record 110、119。
 [外部路徑接合](c5_single_spoke_two_two_external.md) 完成 record 104：另一原分量把剩餘 J 接至補弧；逐塊相鄰支援對給 K5，再排除 210 筆。
-[frame-arc K5](c5_single_spoke_frame_arc.md) 再排除 36 筆來源、另證 18 個 target；[跨列 residual](c5_single_spoke_cross_row.md) 證 record 16 的 p₁，套表再增 16 個指定列延拓。[兩框弧 K5](c5_single_spoke_two_arc.md) 把另一原分量納入 Z，只要求每塊跨同一份兩弧分割，證 record 17 的雙列；另排除 6 筆來源、另證 20 個 target。現為 **102 筆／51 型，84 筆雙列已證、18 個查詢未決**；完整原關係與反射保留，紙面＋外部定理＋Python，未 Lean 化。
-**下一個窄入口：record 87 的 p₂，s=0、支援 (234,012)、q 禁色 ({1},{2,3})；p₁ 已證。**
-唯一剩餘拒絕候選是 F0(p₂)={1,2}、F1(p₂)={3}。C0 的 target 支援族為 {23,34,234}，每塊碰 b3 及 b2/b4 至少一者；同時切開 23、34 的連通兩弧必有一側 {b3}，但 O=012 不碰它。q 在 C0 為 singleton，不能套雙列 pair residual；需保留完整關係、全部旁支與實際附件，取得新的 singleton/pair 相容性或拓撲限制。
+[frame-arc K5](c5_single_spoke_frame_arc.md) 再排除 36 筆來源、另證 18 個 target；[跨列 residual](c5_single_spoke_cross_row.md) 證 record 16 的 p₁，套表再增 16 個指定列延拓。[兩框弧 K5](c5_single_spoke_two_arc.md) 把另一原分量納入 Z，只要求每塊跨同一份兩弧分割，證 record 17 的雙列；另排除 6 筆來源、另證 20 個 target。[singleton-source 首橋相容性](c5_single_spoke_first_bridge.md) 再證 record 87 的 p₂，10 個查詢由共用 β 的 K5、6 個由端點固定色矛盾關閉。現為 **102 筆／51 型，100 筆雙列已證、2 個查詢未決**；來源排除仍 278，完整原關係與反射保留，紙面＋外部定理＋Python，未 Lean 化。
+**下一個窄入口：record 90 的 p₂（282 為交換分量），s=0、支援 (0234,012)、q 禁色 ({1},{2,3})；p₁ 已證。**
+唯一剩餘拒絕候選是 F0(p₂)={1,2}、F1(p₂)={3}。首橋 β=2 已排除，β=0 仍未決：首兩塊支援族 {23,023,034,234,0234}，每塊必接 b3 並接 b2 或同時接 b0、b4；共同必接只有 b3。需保留同一首橋 β、全部旁支與實際附件，處理 q 色 0 可由 b0／b2 供應的選言；不能逐塊獨立選 β，也不能把局部 E 當作整分量 F。
 保留型不代表可實現或小圖正常形。其餘 t=1 分拆、t=0、degree≥6、多 degree-5
 及一般核心存在／分離仍保留；先證任意大小限制，再做有限證書，不重啟圖枚舉。
 一般失敗側的核心存在性化約仍未證；已完成的 t=2、兩葉鏈與五目標毋須重開。
@@ -130,11 +130,11 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性保留�
 
 ## 5. 重播入口與驗證範圍
 
-接續目前研究的最小重播（驗證與未重跑範圍見 [兩框弧紀錄](history/2026-09-28-two-arc.md)；完整八支 checker 命令見新報告）：
+接續目前研究的最小重播（驗證與未重跑範圍見 [首橋紀錄](history/2026-09-28-first-bridge.md)；完整九支 checker 命令見新報告）：
 
 ```bash
+python3 scripts/c5_single_spoke_first_bridge.py --check
 python3 scripts/c5_single_spoke_two_arc.py --check
-python3 scripts/c5_single_spoke_cross_row.py --check
 python3 scripts/c5_single_spoke_two_two.py --check
 lake build
 python3 scripts/check_docs.py

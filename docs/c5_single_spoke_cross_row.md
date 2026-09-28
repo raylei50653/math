@@ -11,6 +11,11 @@ docgraph:
 ---
 # Single-spoke (2,2)：跨列 residual 換色與 record 16 的 p₁ 延拓
 
+後續（2026-09-28）：[singleton-source 首橋相容性](c5_single_spoke_first_bridge.md)
+已證 record 87 的 p₂，套表共新增 16 個指定列延拓；來源排除仍 278 筆，保留
+102 筆／51 型、100 筆雙列已證，僅 record 90／282 的 p₂ 未決。下文與舊
+artifact 保留當輪語境；新層保留首橋共用 β，未放寬舊 pair 引理的 singleton 限制。
+
 後續（2026-09-28）：[兩框弧 K5](c5_single_spoke_two_arc.md) 已證 record 17 的
 p₁、p₂；新排除 6 筆來源、另證 20 個指定列延拓，現為累計排除 278 筆，
 保留 102 筆／51 型、84 筆雙列已證、18 個查詢未決。以下正文與既有 artifact
