@@ -6,6 +6,11 @@ docgraph:
 ---
 # 五目標排除到 single-sided exit：接合定理與一般化界線
 
+後續（2026-09-28）：[共鄰端點 K2 的 t_w=1、(2)](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md)
+完成局部 K5 搬運與指定雙列分離：356 筆必要支援排除 292，保留 64 的
+128 查詢全接受，不需 T4。第八類擴至此型；完整 Σ 仍另用來源雙缺失與
+刪邊繼承，其餘三種 w 分拆與一般出口保留。下列通知保留各輪語境。
+
 後續（2026-09-28）：[共鄰端點 K2 的 w 側兩條 spoke](c5_adjacent_degree5_mixed_edge_shared_t2.md)
 完成任意大小指定雙列分離，不需 T4；38 筆必要支援的 76 個查詢全接受。
 §1 新增第八類，§2 接合來源雙缺失與刪邊繼承；其餘 w 分拆與一般出口仍保留。
@@ -90,7 +95,8 @@ degree-5 只剩 t=0 六型，一般定理仍未證。
    H−{z,w} 的唯一 mixed 分量是共鄰 singleton {x}，不限制其 boundary 支援；
 8. 恰兩個有效內點 z、w 完整 degree=5 且相鄰，其餘完整 degree=4；
    H−{z,w} 的唯一 mixed 原分量為 K2={u,v}，root incidences 恰為
-   zu、zv、wu，且 w 恰有兩個 boundary 鄰居。
+   zu、zv、wu；w 恰有兩個 boundary 鄰居，或恰有一個 boundary 鄰居
+   且 w 側 unary 接點分拆為 (2)。
 
 minimality 使同一內點的 q-spokes 異色，q 只用三色，故唯一 degree-5
 的 t≤3。第二、四、五、六類因此涵蓋全部唯一 degree-5 核心。
@@ -133,7 +139,8 @@ boundary spokes 在 q 下顏色互異。第一種核心由
 
 第八種同樣共同對齊 q=01012，保持共鄰 u、原 chord zu 與全部附件。
 [兩條 spoke 分離](c5_adjacent_degree5_mixed_edge_shared_t2.md#5-反射出口接合與停止點)
-不需 T4 就接受 p₁、p₂，故接受對齊後的 p。來源雙缺失與刪邊繼承再給
+及 [單 spoke／二接點分離](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md#6-反射證書與出口接合)
+各自不需 T4 就接受 p₁、p₂，故接受對齊後的 p。來源雙缺失與刪邊繼承再給
 Σ(M)=Ω\{q}，可用同一 §4 序列；不要求必要支援表的每筆資料可實現。
 
 將 q 對齊為 01012，稱其三色 A、B、C，第四色 D。
@@ -316,8 +323,9 @@ singleton 子類，無論 x 的 boundary 支援；亦不能以原 uv 為唯一 m
 不須新增空的核心類別。[K2 共鄰端點型](c5_adjacent_degree5_mixed_edge_shared.md)
 P*ᶻ={u,v}、P*ʷ={u} 另已迫使 z 無 spoke、唯一二接點 unary、w 容量飽和；
 原 288 筆是必要關係資料；其中 [w 側 t=2、(1)](c5_adjacent_degree5_mixed_edge_shared_t2.md)
-已由支援／環序與跨列上界證雙列，故失敗側核心亦不能屬第八類。
-其餘四種 w 分拆的分離仍未證，必要表也未證可實現性。
+及 [t=1、(2)](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md) 已由支援／環序、
+來源 K5 與完整禁色上界證雙列，故失敗側核心亦不能屬第八類。
+其餘三種 w 分拆的分離仍未證，必要表也未證可實現性。
 其他 mixed 與更一般雙 root 接線仍保留。
 
 要完成使用者要求的**無條件一般 single-sided exit 定理**，仍須證明
@@ -387,3 +395,7 @@ completion 完成 (2,1,1,1) 指定分離。48 筆及實際驗證見
 同日第八類新增原 diamond 外側的支援化約與完整禁色集合上界接合；
 38 筆、76 個指定查詢及實際驗證見
 [兩條 spoke 紀錄](history/2026-09-28-adjacent-mixed-edge-shared-t2.md)。不需 T4，未 Lean 化。
+
+同日第八類再接入 t_w=1、(2)：兩段任意大小局部化、356→292＋64 的
+原 ID 綁定與全部 128 指定查詢，見 [單 spoke／二接點紀錄](history/2026-09-28-adjacent-mixed-edge-shared-t1-pair.md)。
+紙面＋外部 degree-list 定理＋Python，不需 T4，未新增 Lean theorem。

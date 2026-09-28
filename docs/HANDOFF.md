@@ -5,7 +5,7 @@
 更新約定見 [文件維護規則](DOCUMENTATION.md)。唯一 degree-5 的全部核心已接回出口。
 相鄰雙 degree-5 的完整關係接合與逐類 minimality 已建立；唯一 mixed 共鄰
 單點的全部支援已接回出口：01／12／23 雙列分離、34／40 來源排除，
-非相鄰支援亦已處理。mixed K2 各一接點型已排除，共鄰端點型的 w 側 t=2 已分離；一般出口仍未證。
+非相鄰支援亦已處理。mixed K2 各一接點型已排除，共鄰端點型的 w 側 t=2、(1) 與 t=1、(2) 已分離；一般出口仍未證。
 
 ## 1. 目前做到哪裡
 
@@ -67,7 +67,7 @@ t=1 與 t=0 新結果均為紙面＋外部定理＋Python，未新增 Lean theor
 root-spoke 刪除要求新色條帶中的共同見證，各 C 要有私有非對角色對。
 任意多步刪邊另有固定來源精確式。紙面＋Python 控制，未新增 Lean theorem。
 
-相鄰雙 root 的九組後續成果整理如下；均保留原分量、接點身份、實際支援與環序。
+相鄰雙 root 的後續成果整理如下；均保留原分量、接點身份、實際支援與環序。
 
 | 已完成的子類／化約 | 結果與證據入口 |
 | --- | --- |
@@ -78,12 +78,13 @@ root-spoke 刪除要求新色條帶中的共同見證，各 C 要有私有非對
 | 唯一 mixed K2 各一接點型 | [必要化約](c5_adjacent_degree5_mixed_edge.md) 的 576 筆由 [原四環次序](c5_adjacent_degree5_mixed_edge_order.md) 排除 552＋24，全部 disk 來源排除，不需 T4 |
 | K2 共鄰端點化約 | [完整關係與 minimality](c5_adjacent_degree5_mixed_edge_shared.md)：z 無 spoke、唯一二接點 unary，w 飽和；原 288 筆／9,312 schemas 保持 |
 | 共鄰端點 t_w=2、(1) | [原 diamond 外側支援](c5_adjacent_degree5_mixed_edge_shared_t2.md)：原 18 筆接合為 38 筆必要支援，76 查詢全接受、不需 T4；出口新增第八類 |
+| 共鄰端點 t_w=1、(2) | [局部 K5 與雙列](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md)：原 36 筆綁定 356 筆必要支援，原 diamond／spoke 路徑排除 292，保留 64 的 128 查詢全接受；不需 T4 或新 first-bridge 引理，出口第八類擴充 |
 
 任意大小化約為紙面＋外部定理，Python 重播有限證書；必要表未證 disk
 可實現性，未新增 Lean theorem。完整 Σ 的出口接合仍明用來源雙缺失與刪邊繼承。
 
-**下一窄入口：** t_w=1、(2) 的 36 筆；保留兩份二接點完整關係、原 diamond
-外側環序與 w-spoke，再用飽和雙禁色的原 bridge／逐塊支援處理同圖跨列。
+**下一窄入口：** t_w=1、(1,1) 的 72 筆；保留 C_z 二接點完整關係、w 側
+兩份不同單接點關係、原 diamond 外側環序與唯一 w-spoke，先證其同序 actual supports。
 無 mixed、其他較大／多 mixed、一般雙 root、degree≥6、非相鄰雙 root
 及更多高 degree 點保留；不重開唯一 degree-5 枚舉。
 
@@ -118,10 +119,12 @@ R27 末端各一臂及 [R30](c5_degree5_middle_cycle_minors.md) 中間不同二�
 
 ## 5. 重播入口與驗證範圍
 
-接手 t_w=1 前的最小重播如下；九組成果與十份 checker 的整體發布驗證見
+接手 t_w=1、(1,1) 前的最小重播如下；前輪整體發布驗證見
 [2026-09-28 發布紀錄](history/2026-09-28-adjacent-progress-publish.md)。
+本輪局部搬運、原 ID 綁定及實際驗證見 [t=1、(2) 紀錄](history/2026-09-28-adjacent-mixed-edge-shared-t1-pair.md)。
 
 ```bash
+python3 scripts/c5_adjacent_degree5_mixed_edge_shared_t1_pair.py --check
 python3 scripts/c5_adjacent_degree5_mixed_edge_shared_t2.py --check
 python3 scripts/c5_adjacent_degree5_mixed_edge_shared.py --check
 python3 scripts/c5_adjacent_degree5_singleton_long_arc.py --check
@@ -134,7 +137,7 @@ git diff --check
 ```
 
 雙拒絕 atlas 與 Lean axiom audit 另見 [分類報告](c5_two_rejection_proof_zh.md) 與 [Lean 工具](lean_two_rejection_tools.md)。
-本次已重播全部相鄰雙 root checker；唯一 degree-5 完成表、雙拒絕 atlas、
+本次重播新分離及直接依賴 checker；其餘相鄰雙 root、唯一 degree-5 完成表、雙拒絕 atlas、
 R 系列大覆蓋、抽象 profiles／閉包及 Lean axiom audit 未於本次重跑。
 發布狀態以即時 Git 為準；歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。
 早期交接見 [HANDOFF_HISTORY](HANDOFF_HISTORY.md) 與 [2026-09-22 快照](HANDOFF_2026-09-22.md)；歷史待辦與 Git 狀態均非現況。

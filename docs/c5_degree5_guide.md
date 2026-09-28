@@ -6,8 +6,9 @@
 不需 T4、大小不限。[共鄰端點型](c5_adjacent_degree5_mixed_edge_shared.md) 另已
 完成完整關係／逐邊 minimality，強迫 z 無 spoke、唯一二接點 unary；w 容量
 飽和，原 288 筆必要資料保持。[w 側兩條 spoke](c5_adjacent_degree5_mixed_edge_shared_t2.md)
-已完成 t=2、(1) 的支援／環序與雙列分離，加入出口第八類；其餘四種
-w 分拆仍保留。必要資料未證 disk 實現，未新增 Lean theorem。
+已完成 t=2、(1) 的支援／環序與雙列分離；[t=1、(2)](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md)
+再由局部 K5 搬運完成 292 排除＋64 保留／128 查詢全接受。兩型加入出口
+第八類，其餘三種 w 分拆保留。必要資料未證 disk 實現，未新增 Lean theorem。
 
 後續（2026-09-28）：[唯一共鄰單點 01／23 長弧](c5_adjacent_degree5_singleton_long_arc.md)
 以三角形外側次序及原 x 路徑 K5 完成指定雙列分離，加入條件式出口；

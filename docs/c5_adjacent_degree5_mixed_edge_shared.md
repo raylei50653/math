@@ -15,6 +15,12 @@ docgraph:
 ---
 # 相鄰雙 degree-5：唯一 mixed K2 的共鄰端點型
 
+後續（2026-09-28）：[w 側 t_w=1、(2)](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md)
+已由局部化的相鄰支援對／原 diamond 路徑 K5 及完整禁色集合上界完成。
+原 36 筆綁定 356 筆必要支援，排除 292、保留 64 的 128 查詢全接受，
+不需 T4 或新 first-bridge 引理；出口第八類已擴充。其餘三種 w 分拆保留，
+原 306／288 筆與 9,312 schemas 保持，下列通知與正文保留各輪語境。
+
 後續（2026-09-28）：[w 側兩條 spoke](c5_adjacent_degree5_mixed_edge_shared_t2.md)
 已完成 t_w=2、(1) 的原 18 筆：280 份幾何接合成 38 筆必要支援，全部
 76 個指定查詢接受，不需 T4，已加入條件式出口第八類。其餘四種 w 分拆

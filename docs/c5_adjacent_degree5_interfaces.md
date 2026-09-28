@@ -17,8 +17,9 @@ docgraph:
 [唯一 mixed K2 各一接點型](c5_adjacent_degree5_mixed_edge.md) 則由
 [原四環次序](c5_adjacent_degree5_mixed_edge_order.md) 全部作 disk 來源排除。
 [共鄰端點型](c5_adjacent_degree5_mixed_edge_shared.md) 的原 288 筆必要資料保持，
-其中 [w 側 t=2、(1)](c5_adjacent_degree5_mixed_edge_shared_t2.md) 已證雙列、
-加入出口第八類，不需 T4。其餘 w 分拆及一般雙 root 仍保留，必要表未證
+其中 [w 側 t=2、(1)](c5_adjacent_degree5_mixed_edge_shared_t2.md) 與
+[t=1、(2)](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md) 已證雙列、
+加入出口第八類，不需 T4。其餘三種 w 分拆及一般雙 root 仍保留，必要表未證
 實現性，未 Lean 化。下文保留第一輪語境；目前停止點見 [HANDOFF](HANDOFF.md)。
 
 2026-09-28。接續 [list-critical 基礎](c5_weak_list_cores.md) 與

@@ -14,6 +14,10 @@ docgraph:
 ---
 # 共鄰端點 mixed K2：w 側兩條 spoke 的實際支援與雙列分離
 
+後續（2026-09-28）：[t_w=1、(2) 的局部 K5 與雙列](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md)
+已將原 36 筆綁回必要支援，356 筆中排除 292、保留 64 的 128 查詢全接受，
+不需新增跨列 first-bridge 引理。下一入口見 HANDOFF；下文保留 t=2 當輪語境。
+
 2026-09-28。接續 [完整關係與逐邊 minimality](c5_adjacent_degree5_mixed_edge_shared.md)，
 完成其中 **t_w=2、(1) 的 18 筆原必要資料**。在 induced-C5 disk 的同一
 minimal q-core 前提下，這個接線型必接受 p₁=01021、p₂=01212，**不需 T4**，
