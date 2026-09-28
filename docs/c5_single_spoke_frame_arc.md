@@ -12,6 +12,11 @@ docgraph:
 ---
 # Single-spoke (2,2)：frame-arc K5 與 record 15 的 p₂ 延拓
 
+後續（2026-09-28）：[兩框弧 K5](c5_single_spoke_two_arc.md) 已證 record 17 的
+p₁、p₂；新排除 6 筆來源、另證 20 個指定列延拓，現為累計排除 278 筆，
+保留 102 筆／51 型、84 筆雙列已證、18 個查詢未決。以下正文與既有 artifact
+保留當輪數字及停止點；新證據另存兩框弧層。
+
 後續（2026-09-28）：[跨列 residual 相容性](c5_single_spoke_cross_row.md) 已證
 record 16 的 p₁ 並新增 16 個指定列延拓；來源仍為 108 筆／54 型，現為 74 筆
 雙列已證、34 筆含未決項、50 個查詢未決。下文與本頁 artifact 保留當輪數字。

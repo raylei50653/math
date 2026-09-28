@@ -2,8 +2,8 @@
 
 文件更新與研究依據：2026-09-28。
 本頁維護研究狀態與完整報告索引；**優先順序只以 [HANDOFF](HANDOFF.md) 為準**。
-兩-spoke 全部 (3) 型，以及 S={b0,b1}、S={b1,b2}、S={b2,b3} 各兩種 (2,1) 次序已排除。剩四個相鄰表項已有 split-support 完整列分類，兩次序皆只缺 q；八個非相鄰表項已證指定 p=01021、01212 可延拓；唯一 degree-5 的 t=2 全支已接回單側出口。single-spoke 已有四型必要覆蓋與 (2,1,1) 的 19 種必要支援型；外部雙路徑 completion、旁支 K5 minor 與單接點未用色守恆（含全表掃描）之後，二接點上界分類再關閉 18 個查詢；其後單接點 root 接線／禁色角色守恆關閉最後 16 筆，114 筆全部兩列已證；(2,2) 必要分類、框弧 K5 與跨列 residual 後剩 108 筆／54 型，其中 74 筆雙列已證，34 筆含未決項、50 個單列查詢，但可實現性與完整分離仍開放；一般單側出口與 R31 來源 minor 缺口保留。
-2026-09-28 的 [跨列 residual 相容性](c5_single_spoke_cross_row.md) 已證 record 16 的 p₁，掃過原 66 個未決查詢新增 16 個延拓（2 個只需合併兩列穩定子、14 個用到跨列置換）。來源仍累計排除 272 筆，未新增來源排除；保留表從 58 筆 A/A 增至 74 筆，還有 50 個查詢。singleton 不套本輪路徑 residual 引理；部分拒絕候選消去仍標未決。
+兩-spoke 全部 (3) 型，以及 S={b0,b1}、S={b1,b2}、S={b2,b3} 各兩種 (2,1) 次序已排除。剩四個相鄰表項已有 split-support 完整列分類，兩次序皆只缺 q；八個非相鄰表項已證指定 p=01021、01212 可延拓；唯一 degree-5 的 t=2 全支已接回單側出口。single-spoke 已有四型必要覆蓋與 (2,1,1) 的 19 種必要支援型；外部雙路徑 completion、旁支 K5 minor 與單接點未用色守恆（含全表掃描）之後，二接點上界分類再關閉 18 個查詢；其後單接點 root 接線／禁色角色守恆關閉最後 16 筆，114 筆全部兩列已證；(2,2) 必要分類、框弧 K5、跨列 residual 與兩框弧 K5 後剩 102 筆／51 型，其中 84 筆雙列已證，18 筆各剩一個查詢，但可實現性與完整分離仍開放；一般單側出口與 R31 來源 minor 缺口保留。
+2026-09-28 的 [兩框弧 K5](c5_single_spoke_two_arc.md) 已證 record 17 的 p₁、p₂；另一原分量納入 Z，先固定連通兩弧分割，再驗全部容許支援。新排除 6 筆來源，累計 278 筆；另證 20 個指定列延拓。原 50 個未決查詢中，12 個隨來源排除移出、20 個獨立證延拓，剩 18 個。q 為 singleton、target 為 pair 時只用 target 自己的支援族；部分拒絕候選消去仍標未決。
 逐輪數字、驗證與發布紀錄已移至 [歷史快照](STATUS_HISTORY.md)。
 
 ## 1. 閱讀順序與文件角色
@@ -27,12 +27,13 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [Single-spoke (2,2) 跨列 residual](c5_single_spoke_cross_row.md) | 同圖共用原 bridge 路徑的雙列 residual 換色相容性；record 16 的 p₁ 已證，新增 16 個 target；來源 108 筆／54 型，A/A 74、A/? 8、?/A 10、?/? 16，50 查詢未決；紙面＋外部定理＋Python，未 Lean 化 |
-| [Single-spoke (2,2) frame-arc K5](c5_single_spoke_frame_arc.md) | 三段具名框弧及任意兩路徑塊 minor；record 15 的 p₂ 已證，另排除 36 筆來源、另證 18 個 target；當輪剩 108 筆／54 型、58 筆 A/A、66 查詢，後由跨列層增至 74 筆 A/A、50 查詢；任意大小紙面＋外部定理，未 Lean 化 |
+| [Single-spoke (2,2) 兩框弧 K5](c5_single_spoke_two_arc.md) | 同一份兩弧分割與另一原分量納入 Z；record 17 雙列已證，新排除 6 筆來源、另證 20 個 target；來源 102 筆／51 型，A/A 84、A/? 8、?/A 10、?/? 0，18 查詢未決；紙面＋外部定理＋Python，未 Lean 化 |
+| [Single-spoke (2,2) 跨列 residual](c5_single_spoke_cross_row.md) | 同圖共用原 bridge 路徑的雙列 residual 換色相容性；record 16 的 p₁ 已證，新增 16 個 target；當輪 108 筆／54 型、74 筆 A/A、50 查詢，後由兩框弧層更新為 102 筆、84 筆 A/A、18 查詢；未 Lean 化 |
+| [Single-spoke (2,2) frame-arc K5](c5_single_spoke_frame_arc.md) | 三段具名框弧及任意兩路徑塊 minor；record 15 的 p₂ 已證，另排除 36 筆來源、另證 18 個 target；當輪剩 108 筆／54 型、58 筆 A/A、66 查詢，後由跨列／兩框弧層更新至 102 筆、84 筆 A/A、18 查詢；任意大小紙面＋外部定理，未 Lean 化 |
 | [Single-spoke (2,2) 外部路徑接合](c5_single_spoke_two_two_external.md) | record 104 的原分量路徑接至補弧，逐塊相鄰支援對 K5 再排除 210 筆；當輪剩 144 筆／72 型，後由框弧層降至 108；186 支援式、496 minor 控制，任意大小紙面證明，未 Lean 化 |
 | [Single-spoke (2,2) 路徑塊支援 K5](c5_single_spoke_two_two_minor.md) | 雙禁色 residual 的逐塊穩定子與實際 b3、b4 接線，來源 K5 排除 record 110、119 及 26 筆；當輪剩 354 筆，後由外部路徑接合降至 144；48 局部式、192 支援式、256 minor 控制，未 Lean 化 |
 | [同染色 dual 路徑有序重接](c5_dual_path_surgery.md) | 任意大小一步精確公式；同圖三配對同 state／不同後繼反例；record 110 的 α 配對及共同必要等式，來源已由後續 K5 排除；56 個既有圖、8,420 個混合更新重播，有限可迭代 state 未證 |
-| [Single-spoke (2,2) 必要分類](c5_single_spoke_two_two.md) | 完整二元 relation schemas、actual supports、全部接點方向及奇數 bridge 化約；1,530 必要候選、原 T4 保留 380 筆／190 型，框弧 K5 與跨列 residual 後剩 108 筆／54 型，其中 74 筆雙列已證、50 查詢未決；可實現性／完整分離未證 |
+| [Single-spoke (2,2) 必要分類](c5_single_spoke_two_two.md) | 完整二元 relation schemas、actual supports、全部接點方向及奇數 bridge 化約；1,530 必要候選、原 T4 保留 380 筆／190 型，框弧 K5、跨列 residual 與兩框弧後剩 102 筆／51 型，其中 84 筆雙列已證、18 查詢未決；可實現性／完整分離未證 |
 | [Single-spoke 剩餘單接點上界分類](c5_single_spoke_single_contact_bounds.md) | 16 筆皆有 F_C(p)⊆{3}；12 個 p₁ 取 z=2、4 個 p₂ 取 z=0；114 筆雙列全證，root 接線局部分類及任意大小守恆，未 Lean 化 |
 | [Single-spoke 剩餘二接點上界分類](c5_single_spoke_two_contact_bounds.md) | 18 查詢分為 9 組／6 幾何 orbits；容量 4、外部路徑 K5 6、未用色對 bridge 障礙 8 全部關閉；該輪 98 筆雙列已證，剩餘 16 筆由單接點分類關閉，未 Lean 化 |
 | [Single-spoke root 守恆全表掃描](c5_single_spoke_root_sweep.md) | 通用單接點條件套用全部 228 查詢，新增 14 個接受；該輪 80 筆兩列已證、34 查詢未決，後由二接點及單接點分類完成 114／0；紙面引理＋有限上界計算，未 Lean 化 |
@@ -162,6 +163,7 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | 舊問題或容易誤讀的字樣 | 目前讀法／後續入口 |
 | --- | --- |
 | (2,2) record 16 的「p₁ 未決」 | [跨列 residual](c5_single_spoke_cross_row.md) 迫使每塊實際接 b1、b2，原 spoke 完成 K5 反證；已證指定列延拓，未排除來源或求完整 Σ |
+| (2,2) record 17 的「缺第三外部落點／雙列未決」 | [兩框弧 K5](c5_single_spoke_two_arc.md) 把另一原分量納入 Z，每塊跨同一份兩弧分割即可；兩列均延拓，不需 bridge 長度上界，未排除 record 17 來源或求完整 Σ |
 | (2,2) record 15 的「p₂ 未決」 | [frame-arc K5](c5_single_spoke_frame_arc.md) 在 target 拒絕下重建 residual 穩定子，迫使每塊接 b0、b3，配 C0 的 z–b1 路徑證 p₂ 延拓；不是來源排除或完整 relation 分類 |
 | (2,2) record 104 的「補弧外部接合未證」 | [外部路徑接合](c5_single_spoke_two_two_external.md) 已由另一原分量的實際路徑完成；當輪再排除 210 筆、54 筆 A/A 保留；後續框弧層另有來源排除與 target 延拓，見新報告 |
 | (2,2)／dual surgery 的「record 110 尚未排除」 | [路徑塊支援 K5](c5_single_spoke_two_two_minor.md) 已在原來源圖排除；原必要表及 surgery 證書保留各自當輪語境 |
@@ -211,6 +213,8 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | 保留 | 一般單側／共同出口與主命題 | 分別需要一般分離、共同 pivotal edge 等證明；兩個單側出口不推出共同出口 |
 
 ## 歷史紀錄與舊連結
+
+- [2026-09-28：兩框弧 K5、record 17 雙列與分開套表](history/2026-09-28-two-arc.md)
 
 - [2026-09-28：跨列 residual、record 16 與 66 查詢掃描](history/2026-09-28-cross-row.md)
 
