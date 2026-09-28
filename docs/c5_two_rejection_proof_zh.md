@@ -2,6 +2,10 @@
 
 系列索引：[3903 導讀與推導順序](c5_sector_3903_guide.md)。
 
+Lean 後續（2026-09-28）：[BoundaryDegree](lean_boundary_degree.md) 已形式化
+§1 的實際接線、完整度數與拒絕迫緊／框色單射；Gallai palettes 及後續
+disk 分類仍是下述紙面／外部定理層。
+
 文件導引（2026-09-23）：本報告為雙拒絕分類的證據入口；
 [Lean 共用引理](lean_two_rejection_tools.md) 僅形式化部分步驟，完整分類仍未形式化。
 整合發布與驗證範圍見 [發布紀錄](STATUS_HISTORY.md#73-雙拒絕-lean-工具整合發布)；

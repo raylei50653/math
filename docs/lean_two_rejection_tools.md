@@ -1,5 +1,9 @@
 # 雙拒絕證明的 Lean 共用工具
 
+後續（2026-09-28）：[實際邊界與 degree-list 基礎](lean_boundary_degree.md)
+已補齊同一來源圖的鄰點／完整度數／list 補集基數，以及拒絕迫使實際框色
+單射的連接；Gallai 分解與完整 disk 分類仍未形式化。
+
 2026-09-22。對照 [雙拒絕分類](c5_two_rejection_proof_zh.md)。
 本輪補上 [TwoRejectionTools.lean](../Math/TwoRejectionTools.lean)，沿用
 `ForcingLists.ListColorable` 與 `RootInterfaces` 的同圖共同著色語義。
@@ -31,8 +35,9 @@
 
 ## 未完成的形式化依賴
 
-1. 實際 boundary attachments 到完整度數／補集基數的圖層連接，以及 image
-   等基數到框色單射的接線實例化。
+1. 實際 boundary attachments 到完整度數／補集基數及框色單射的圖層連接
+   已由 [BoundaryDegree](lean_boundary_degree.md) 在有限 `B ⊕ V` 圖上完成；
+   具名來源的重新標記及 disk 假設仍需各自接入。
 2. 外部 degree-list 不可染圖的 Gallai block 分解及共同 palettes 定理。
 3. 從實際 block-cut tree 建立 D、證 forest／port 恆等式，抽出唯一交替橋鏈
    並導出偶數路徑。

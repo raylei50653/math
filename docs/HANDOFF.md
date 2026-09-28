@@ -23,8 +23,8 @@ minimal obstruction 路線下的 sector 目標；先研究單側出口，再處�
 
 信任層：紙面證明＋外部 degree-list 定理＋Python 局部證書；新排除未 Lean 化。
 新證書有 89 個局部轉移、兩個可達狀態及兩份葉點 minor；沿用鏈化約的
-207 份局部 minor。雙拒絕的九個 [Lean 共用引理](lean_two_rejection_tools.md)
-不代表完整 disk 分類已形式化。3703 當輪驗證見
+207 份局部 minor。[Lean 共用引理](lean_two_rejection_tools.md) 已接上 [實際接線與 degree-list 緊性](lean_boundary_degree.md)；
+Gallai／完整 disk 分類仍未形式化。3703 當輪驗證見
 [研究紀錄](history/2026-09-24-3703-exclusion.md)；接合驗證見
 [出口紀錄](history/2026-09-24-single-sided-exit.md)。
 

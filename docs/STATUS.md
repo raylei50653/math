@@ -108,6 +108,7 @@
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
 | [Lean 接合基礎](lean_root_interfaces.md) | 15 個普通 Lean 定理與報告對照；各項形式化範圍見原報告；完整 minor／disk 層仍未形式化 |
+| [Lean 實際邊界與 degree-list 基礎](lean_boundary_degree.md) | 原圖延拓 iff 框列 proper 且內圖 list 可染；完整 degree 拆分、拒絕迫 degree=4／框色單射、低度數與重色延拓；13 個普通定理，Gallai／disk 分類仍未形式化 |
 | [研究目標](c5_boundary_relations.md) | 主命題未證；全域存在小代表、指定局部規則的完備性必須分開 |
 | [phase 1](phase1.md)、[BAD 構造](construction.md)、[gadgets](gadgets.md) | 基礎 exact relation／有限 Lean 證書與 gadget synthesis；一般 planar、separating C5 的 BAD 不構成 disk 反例 |
 | [automata](automata.md)、[attachment normal form](attachment_normal_form.md)、[topology completeness](topology_completeness.md) | 固定 triangle grammar 的染色語義、normal form、GeoReject 與 endpoint-order 編譯已形式化；embedding 抽取與 topology soundness 仍在紙面層 |
@@ -131,7 +132,7 @@
 | 指定轉移的分離與下界 | [兩種飽和 star 分離集](c5_sector_saturated_cuts.md) → [框點 1 切斷分支](c5_sector_frame_cut.md) → [五內點分類](c5_sector_five_inner.md) → [任意長路徑與鄰點障礙](c5_sector_neighbor_barrier.md) |
 | 非空交集分支 | [葉點例外下界](c5_sector_leaf_exception.md) → [葉點刪除介面](c5_sector_leaf_reduction.md) → [葉點接回 corners](c5_sector_leaf_corners.md) → [corner 入口分離集](c5_sector_corner_gates.md) → [第一種次序偶圈排除](c5_sector_corner_even_cycle.md) → [兩拒絕列緊 lists](c5_sector_rejection_lists.md) → [末端 block 接合](c5_sector_terminal_blocks.md) |
 | 空交集、抽象後繼與後續涵蓋 | [空交集身份](c5_sector_empty_branch.md) → [空分支末端排除](c5_sector_empty_terminal.md) → [全部後繼核對](c5_sector_successor_audit.md) → [331 同圖必要條件](c5_sector_331_barriers.md) |
-| 分類與形式化界線 | [雙拒絕分類](c5_two_rejection_proof_zh.md) → [Lean 共用工具](lean_two_rejection_tools.md) |
+| 分類與形式化界線 | [雙拒絕分類](c5_two_rejection_proof_zh.md) → [Lean 共用工具](lean_two_rejection_tools.md) → [實際接線與緊性](lean_boundary_degree.md) |
 
 來源原稿：[雙拒絕中文原稿 v1](sources/c5_two_rejection_proof_zh_v1.md)，作為匯入來源保存；目前結論以審閱後報告為準。
 
@@ -202,7 +203,7 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | 被後續涵蓋 | 3903 空／非空分支、331 同圖分支 | 既有局部證據保留；後續分類已涵蓋原排除問題，不代表抽象 603 profiles 已改寫 |
 | 保留 | R31 任意長來源 minors | 正常形已完成；仍需 boundary 固定 branch sets、四列、degrees、刪邊著色與拓撲合成，見 [R31](c5_degree5_same_terminal_triangles.md) |
 | 保留 | 其他三環位置與更多環 | [R28](c5_degree5_three_cycle_positions.md) 是 list 介面；不是一般三環 disk 排除 |
-| 保留 | 完整形式化 | [接合工具](lean_root_interfaces.md) 與 [雙拒絕工具](lean_two_rejection_tools.md) 已有具名定理；完整紙面分類／minor／disk 論證尚未形式化 |
+| 保留 | 完整形式化 | [接合工具](lean_root_interfaces.md)、[雙拒絕工具](lean_two_rejection_tools.md) 及 [實際接線／緊性](lean_boundary_degree.md) 已有具名定理；Gallai 與完整紙面分類／minor／disk 論證尚未形式化 |
 | 保留 | 一般單側／共同出口與主命題 | 分別需要一般分離、共同 pivotal edge 等證明；兩個單側出口不推出共同出口 |
 
 ## 歷史紀錄與舊連結

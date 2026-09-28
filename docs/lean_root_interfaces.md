@@ -1,5 +1,10 @@
 # 可重用 Lean 基礎：共同接點、中心接合與共用 root
 
+後續（2026-09-28）：連通 degree-list 的 slack 貪婪引理已由
+[TwoRejectionTools](lean_two_rejection_tools.md) 完成；
+[BoundaryDegree](lean_boundary_degree.md) 再接上實際附件、完整度數與拒絕迫緊。
+下文的全列刪邊解除及完整 minor／disk 形式化仍待補。
+
 2026-09-18。接續既有 `ForcingLists.lean`，將 R10、R17–R23 反覆使用且
 語義已定型的接合代數補為普通 Lean 證明。這是基礎形式化，不新增 disk
 排除，也不改變 R23 的來源 minor 停止點。
