@@ -2,8 +2,8 @@
 
 文件更新與研究依據：2026-09-28。
 本頁維護研究狀態與完整報告索引；**優先順序只以 [HANDOFF](HANDOFF.md) 為準**。
-兩-spoke 全部 (3) 型，以及 S={b0,b1}、S={b1,b2}、S={b2,b3} 各兩種 (2,1) 次序已排除。剩四個相鄰表項已有 split-support 完整列分類，兩次序皆只缺 q；八個非相鄰表項已證指定 p=01021、01212 可延拓；唯一 degree-5 的 t=2 全支已接回單側出口。single-spoke 已有四型必要覆蓋與 (2,1,1) 的 19 種必要支援型；外部雙路徑 completion、旁支 K5 minor 與單接點未用色守恆（含全表掃描）之後，二接點上界分類再關閉 18 個查詢；其後單接點 root 接線／禁色角色守恆關閉最後 16 筆，114 筆全部兩列已證；(2,2) 必要分類與兩輪來源 K5 後剩 144 筆／72 型，其中 54 筆雙列已證，但可實現性與完整分離仍開放；一般單側出口與 R31 來源 minor 缺口保留。
-2026-09-28 的 [路徑塊支援 K5](c5_single_spoke_two_two_minor.md) 排除含 record 110、119 的 26 筆；[外部路徑接合](c5_single_spoke_two_two_external.md) 再排除含 record 104 的 210 筆，(2,2) 現剩 144 筆／72 型。原 104 筆條件式雙列延拓中，50 筆來源已排除、54 筆仍保留；原必要分類的 380 筆保留為輸入。
+兩-spoke 全部 (3) 型，以及 S={b0,b1}、S={b1,b2}、S={b2,b3} 各兩種 (2,1) 次序已排除。剩四個相鄰表項已有 split-support 完整列分類，兩次序皆只缺 q；八個非相鄰表項已證指定 p=01021、01212 可延拓；唯一 degree-5 的 t=2 全支已接回單側出口。single-spoke 已有四型必要覆蓋與 (2,1,1) 的 19 種必要支援型；外部雙路徑 completion、旁支 K5 minor 與單接點未用色守恆（含全表掃描）之後，二接點上界分類再關閉 18 個查詢；其後單接點 root 接線／禁色角色守恆關閉最後 16 筆，114 筆全部兩列已證；(2,2) 必要分類與框弧 K5 後剩 108 筆／54 型，其中 58 筆雙列已證，50 筆含未決項、66 個單列查詢，但可實現性與完整分離仍開放；一般單側出口與 R31 來源 minor 缺口保留。
+2026-09-28 的 [frame-arc K5](c5_single_spoke_frame_arc.md) 接續兩輪來源排除，再排除 36 筆來源、另證 18 個 target（含 record 15 的 p₂）。累計來源排除 272 筆；原 104 筆 A/A 中 64 筆來源已排除、40 筆仍保留，加本輪 18 筆為 58。原必要分類的 380 筆保留為輸入，來源排除與指定列延拓分開計數。
 逐輪數字、驗證與發布紀錄已移至 [歷史快照](STATUS_HISTORY.md)。
 
 ## 1. 閱讀順序與文件角色
@@ -27,10 +27,11 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [Single-spoke (2,2) 外部路徑接合](c5_single_spoke_two_two_external.md) | record 104 的原分量路徑接至補弧，逐塊相鄰支援對 K5 再排除 210 筆；現剩 144 筆／72 型，其中 54 筆雙列已證；186 支援式、496 minor 控制，任意大小紙面證明，未 Lean 化 |
+| [Single-spoke (2,2) frame-arc K5](c5_single_spoke_frame_arc.md) | 三段具名框弧及任意兩路徑塊 minor；record 15 的 p₂ 已證，另排除 36 筆來源、另證 18 個 target；剩 108 筆／54 型，A/A 58、A/? 12、?/A 22、?/? 16；任意大小紙面＋外部定理，未 Lean 化 |
+| [Single-spoke (2,2) 外部路徑接合](c5_single_spoke_two_two_external.md) | record 104 的原分量路徑接至補弧，逐塊相鄰支援對 K5 再排除 210 筆；當輪剩 144 筆／72 型，後由框弧層降至 108；186 支援式、496 minor 控制，任意大小紙面證明，未 Lean 化 |
 | [Single-spoke (2,2) 路徑塊支援 K5](c5_single_spoke_two_two_minor.md) | 雙禁色 residual 的逐塊穩定子與實際 b3、b4 接線，來源 K5 排除 record 110、119 及 26 筆；當輪剩 354 筆，後由外部路徑接合降至 144；48 局部式、192 支援式、256 minor 控制，未 Lean 化 |
 | [同染色 dual 路徑有序重接](c5_dual_path_surgery.md) | 任意大小一步精確公式；同圖三配對同 state／不同後繼反例；record 110 的 α 配對及共同必要等式，來源已由後續 K5 排除；56 個既有圖、8,420 個混合更新重播，有限可迭代 state 未證 |
-| [Single-spoke (2,2) 必要分類](c5_single_spoke_two_two.md) | 完整二元 relation schemas、actual supports、全部接點方向及奇數 bridge 化約；1,530 必要候選、原 T4 保留 380 筆／190 型，兩輪 K5 後剩 144 筆／72 型，其中 54 筆雙列已證；可實現性／完整分離未證 |
+| [Single-spoke (2,2) 必要分類](c5_single_spoke_two_two.md) | 完整二元 relation schemas、actual supports、全部接點方向及奇數 bridge 化約；1,530 必要候選、原 T4 保留 380 筆／190 型，框弧 K5 後剩 108 筆／54 型，其中 58 筆雙列已證、66 查詢未決；可實現性／完整分離未證 |
 | [Single-spoke 剩餘單接點上界分類](c5_single_spoke_single_contact_bounds.md) | 16 筆皆有 F_C(p)⊆{3}；12 個 p₁ 取 z=2、4 個 p₂ 取 z=0；114 筆雙列全證，root 接線局部分類及任意大小守恆，未 Lean 化 |
 | [Single-spoke 剩餘二接點上界分類](c5_single_spoke_two_contact_bounds.md) | 18 查詢分為 9 組／6 幾何 orbits；容量 4、外部路徑 K5 6、未用色對 bridge 障礙 8 全部關閉；該輪 98 筆雙列已證，剩餘 16 筆由單接點分類關閉，未 Lean 化 |
 | [Single-spoke root 守恆全表掃描](c5_single_spoke_root_sweep.md) | 通用單接點條件套用全部 228 查詢，新增 14 個接受；該輪 80 筆兩列已證、34 查詢未決，後由二接點及單接點分類完成 114／0；紙面引理＋有限上界計算，未 Lean 化 |
@@ -159,7 +160,8 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 
 | 舊問題或容易誤讀的字樣 | 目前讀法／後續入口 |
 | --- | --- |
-| (2,2) record 104 的「補弧外部接合未證」 | [外部路徑接合](c5_single_spoke_two_two_external.md) 已由另一原分量的實際路徑完成；再排除 210 筆，54 筆雙列已證仍在保留表，另 50 筆既有延拓的來源已排除 |
+| (2,2) record 15 的「p₂ 未決」 | [frame-arc K5](c5_single_spoke_frame_arc.md) 在 target 拒絕下重建 residual 穩定子，迫使每塊接 b0、b3，配 C0 的 z–b1 路徑證 p₂ 延拓；不是來源排除或完整 relation 分類 |
+| (2,2) record 104 的「補弧外部接合未證」 | [外部路徑接合](c5_single_spoke_two_two_external.md) 已由另一原分量的實際路徑完成；當輪再排除 210 筆、54 筆 A/A 保留；後續框弧層另有來源排除與 target 延拓，見新報告 |
 | (2,2)／dual surgery 的「record 110 尚未排除」 | [路徑塊支援 K5](c5_single_spoke_two_two_minor.md) 已在原來源圖排除；原必要表及 surgery 證書保留各自當輪語境 |
 | triangle path 報告說「外掛樹分叉仍未解」 | [第一分叉報告](c5_triangle_forks.md) 已排除任意深度分叉 |
 | 第一分叉報告的「下一題 cycle-5」 | [單環報告](c5_pentagon_branches.md) 已排除長度至少 5 的唯一 cycle |
@@ -207,6 +209,8 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | 保留 | 一般單側／共同出口與主命題 | 分別需要一般分離、共同 pivotal edge 等證明；兩個單側出口不推出共同出口 |
 
 ## 歷史紀錄與舊連結
+
+- [2026-09-28：框弧 K5、record 15 延拓及分開套表](history/2026-09-28-frame-arc.md)
 
 - [2026-09-28：(2,2) 兩輪 K5 排除整合發布](history/2026-09-28-two-two-publication.md)
 

@@ -10,6 +10,11 @@ docgraph:
 ---
 # Single-spoke (2,2)：record 104 的外部路徑接合與相鄰支援對排除
 
+後續（2026-09-28）：[frame-arc K5](c5_single_spoke_frame_arc.md) 以三段具名框弧
+放寬相鄰限制，另排除 36 筆來源、另證 18 個指定列（含 record 15 的 p₂）。
+現剩 108 筆／54 型，其中 58 筆雙列已證、66 個查詢未決。下文與本頁 artifact
+保留本輪 144 筆與 record 15 待辦的歷史語境；新結果另存後續證書層。
+
 2026-09-28。接續 [路徑塊支援守恆](c5_single_spoke_two_two_minor.md)，
 研究優先序見 [HANDOFF](HANDOFF.md)。
 

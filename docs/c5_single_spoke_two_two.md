@@ -12,6 +12,11 @@ docgraph:
 ---
 # Single-spoke (2,2)：完整關係、actual supports 與接點次序的必要分類
 
+後續（2026-09-28）：[frame-arc K5](c5_single_spoke_frame_arc.md) 放寬支援點
+相鄰限制，累計排除 272 筆來源，剩 108 筆／54 型；另證 18 個 target（含
+record 15 的 p₂），保留表現為 58 筆雙列已證、50 筆含未決項、66 個單列查詢。
+原必要表、完整關係與先前證書維持原內容；下文數字保留各當輪語境。
+
 後續（2026-09-28）：[路徑塊支援與來源 K5](c5_single_spoke_two_two_minor.md)
 已排除 record 110、119 及 26 筆／13 型；[外部路徑接合](c5_single_spoke_two_two_external.md)
 再排除含 record 104 的 210 筆／105 型，原 380 筆現剩 144 筆／72 型。

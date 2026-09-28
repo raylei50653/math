@@ -12,6 +12,10 @@ docgraph:
 ---
 # Single-spoke (2,2)：路徑塊支援守恆與 record 110 的來源 K5 排除
 
+後續（2026-09-28）：[frame-arc K5](c5_single_spoke_frame_arc.md) §1–2 明確核對
+任意 target row 的拒絕證書存在性與本頁 residual 穩定子；三框弧構造另排除
+36 筆來源、另證 18 個 target，現剩 108 筆／54 型，58 筆雙列已證、66 查詢未決。
+
 後續（2026-09-28）：[外部路徑接合](c5_single_spoke_two_two_external.md) 已排除
 record 104；相鄰支援對的同一 K5 引理再排除 210 筆，現剩 144 筆／72 型，
 其中 54 筆雙列已證。下文與本頁 artifact 保留先前 26 排除、354 剩餘的當輪數字。
