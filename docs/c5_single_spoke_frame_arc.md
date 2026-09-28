@@ -12,6 +12,10 @@ docgraph:
 ---
 # Single-spoke (2,2)：frame-arc K5 與 record 15 的 p₂ 延拓
 
+後續（2026-09-28）：[跨列 residual 相容性](c5_single_spoke_cross_row.md) 已證
+record 16 的 p₁ 並新增 16 個指定列延拓；來源仍為 108 筆／54 型，現為 74 筆
+雙列已證、34 筆含未決項、50 個查詢未決。下文與本頁 artifact 保留當輪數字。
+
 2026-09-28，檢視基準 `9b13ef8`。本輪審核使用者提供的非相鄰框弧推導，
 並從 repo 既有結構重新核對 target-row 前提。研究優先序見 [HANDOFF](HANDOFF.md)。
 訊息所連 ZIP 在本工作環境不存在；本頁與 checker 是依訊息重建，沒有重播附件，

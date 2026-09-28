@@ -2,7 +2,7 @@
 
 文件更新與研究依據：2026-09-28。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。(2,1,1) 的 114 筆雙列全證；(2,2) 來源 K5 累計排除 272 筆，剩 108 筆／54 型，其中 58 筆雙列已證，含 record 15；仍有 50 筆含未決項、66 個單列查詢。唯一 degree-5 的 t=2 已完成；一般版仍有 t≤1／更高 degree 等缺口。
+更新約定見 [文件維護規則](DOCUMENTATION.md)。(2,1,1) 的 114 筆雙列全證；(2,2) 來源 K5 累計排除 272 筆，剩 108 筆／54 型，其中 74 筆雙列已證，含 record 15、16；仍有 34 筆含未決項、50 個單列查詢。唯一 degree-5 的 t=2 已完成；一般版仍有 t≤1／更高 degree 等缺口。
 
 ## 1. 目前做到哪裡
 
@@ -89,9 +89,9 @@ Order I 的既有 disk witnesses 保留；order II 的一般實現性未證，�
 全部 slit lifts／接點方向與奇數 bridge 路徑必要結構；三代表 1,530 筆必要候選中
 T4 原保留 380 筆／190 型；[路徑塊支援與來源 K5](c5_single_spoke_two_two_minor.md) 排除 26 筆，含 record 110、119。
 [外部路徑接合](c5_single_spoke_two_two_external.md) 完成 record 104：另一原分量把剩餘 J 接至補弧；逐塊相鄰支援對給 K5，再排除 210 筆。
-[frame-arc K5](c5_single_spoke_frame_arc.md) 放寬支援點相鄰限制，另排除 36 筆來源、另證 18 個 target（含 record 15 的 p₂）；現剩 **108 筆／54 型，58 筆雙列已證、66 個查詢未決**。完整原關係與反射保留；紙面＋外部定理＋Python，未 Lean 化。
-**下一個窄入口：record 16，s=0、支援 (01,1234)、禁色 ({1},{2,3})；p₂ 已證、p₁ 未決。**
-反設 p₁ 拒絕時，C1 每塊必見 b2 及 b1、b4 至少一者；保留兩個供應點的逐塊分配、原 bridge 次序與 z–b0 外部路徑，續用非相鄰兩塊的框弧引理。旁支可任意大，不是兩內點正常形。
+[frame-arc K5](c5_single_spoke_frame_arc.md) 再排除 36 筆來源、另證 18 個 target；[跨列 residual](c5_single_spoke_cross_row.md) 證 record 16 的 p₁，每塊必碰 b1、b2，原 spoke 完成 K5，套表再增 16 個指定列延拓（2 個僅需合併兩列穩定子）。現為 **108 筆／54 型，74 筆雙列已證、50 個查詢未決**；完整原關係與反射保留，紙面＋外部定理＋Python，未 Lean 化。
+**下一個窄入口：record 17，s=0、支援 (01,01234)、禁色 ({1},{2,3})；p₁、p₂ 均未決，先研究 p₁。**
+反設 p₁ 拒絕，C1 每塊碰 b1 及 b0/b2 至少一者；任意兩塊 frame-arc 引理使恰一塊碰 b2，其餘都碰 b0。重複的 {b0,b1} 配對沒有第三外部落點（spoke 在 b0、C0 只接 01）；保留全部旁支、原 bridge 次序與實際附件，處理此落點缺口。singleton 不套雙列 residual 引理；旁支仍可任意大。
 保留型不代表可實現或小圖正常形。其餘 t=1 分拆、t=0、degree≥6、多 degree-5
 及一般核心存在／分離仍保留；先證任意大小限制，再做有限證書，不重啟圖枚舉。
 一般失敗側的核心存在性化約仍未證；已完成的 t=2、兩葉鏈與五目標毋須重開。
@@ -130,11 +130,11 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性保留�
 
 ## 5. 重播入口與驗證範圍
 
-接續目前研究的最小重播（驗證與未重跑範圍見 [框弧紀錄](history/2026-09-28-frame-arc.md)；完整命令另見新報告）：
+接續目前研究的最小重播（驗證與未重跑範圍見 [跨列紀錄](history/2026-09-28-cross-row.md)；完整七支 checker 命令見新報告）：
 
 ```bash
+python3 scripts/c5_single_spoke_cross_row.py --check
 python3 scripts/c5_single_spoke_frame_arc.py --check
-python3 scripts/c5_single_spoke_two_two_external.py --check
 python3 scripts/c5_single_spoke_two_two.py --check
 lake build
 python3 scripts/check_docs.py

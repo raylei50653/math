@@ -19,6 +19,7 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [3703 排除證明](docs/c5_sector_3703_exclusion.md) | 指定 sector 圖類的最後一個目標；紙面證明、局部證書與適用界線 |
 | [研究目標與路線](docs/c5_boundary_relations.md) | 有界代表主命題、最小反例路線、局部壓縮的區別 |
 | [(2,2) frame-arc K5](docs/c5_single_spoke_frame_arc.md) | [路徑塊支援守恆](docs/c5_single_spoke_two_two_minor.md) 與[外部路徑接合](docs/c5_single_spoke_two_two_external.md) 推廣至非相鄰支援點；區分 q 下來源排除與 target 拒絕反證，含 record 15 的 p₂ 延拓；任意大小紙面證明與局部／minor 證書，未 Lean 化 |
+| [(2,2) 跨列 residual 相容性](docs/c5_single_spoke_cross_row.md) | 同一分量、同一原路徑塊的雙列 palettes 隨 boundary 色置換搬運；證 record 16 的 p₁ 並更新完整拒絕候選表；保留 singleton 與無對齊置換的適用界線，未 Lean 化 |
 | [邊位置對座標](docs/c5_edge_pair_coordinates.md)、[同染色有序重接](docs/c5_dual_path_surgery.md) | 十態與 Kempe 必要條件；三份邊界配對不足的同圖反例與一步精確重接；record 110 已由來源 K5 排除，有限可迭代 state 仍未證 |
 | [循環流與計數限制](docs/c5_circulation.md) | 六維計數、153 個 Kempe 支撐與十二循環的統一表示；三套整數 orbit 分解不再收緊非負整數恆等式解，平面來源仍需額外證明 |
 | [歷史交接](docs/HANDOFF_HISTORY.md) | 早期交接快照；近期紀錄由 STATUS 的歷史入口查閱 |

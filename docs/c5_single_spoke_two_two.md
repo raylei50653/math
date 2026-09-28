@@ -12,6 +12,10 @@ docgraph:
 ---
 # Single-spoke (2,2)：完整關係、actual supports 與接點次序的必要分類
 
+後續（2026-09-28）：[跨列 residual 相容性](c5_single_spoke_cross_row.md) 再證
+record 16 的 p₁ 等 16 個指定列；來源仍累計排除 272 筆、剩 108 筆／54 型，
+現為 74 筆雙列已證、34 筆含未決項、50 個查詢未決。以下數字保留各輪語境。
+
 後續（2026-09-28）：[frame-arc K5](c5_single_spoke_frame_arc.md) 放寬支援點
 相鄰限制，累計排除 272 筆來源，剩 108 筆／54 型；另證 18 個 target（含
 record 15 的 p₂），保留表現為 58 筆雙列已證、50 筆含未決項、66 個單列查詢。

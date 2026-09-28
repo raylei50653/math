@@ -12,6 +12,10 @@ docgraph:
 ---
 # Single-spoke (2,2)：路徑塊支援守恆與 record 110 的來源 K5 排除
 
+最新後續（2026-09-28）：[跨列 residual 相容性](c5_single_spoke_cross_row.md)
+新增 16 個指定列延拓，來源仍為 108 筆／54 型，現為 74 筆雙列已證、
+50 個查詢未決。以下前輪數字與 artifact 保留當輪語境。
+
 後續（2026-09-28）：[frame-arc K5](c5_single_spoke_frame_arc.md) §1–2 明確核對
 任意 target row 的拒絕證書存在性與本頁 residual 穩定子；三框弧構造另排除
 36 筆來源、另證 18 個 target，現剩 108 筆／54 型，58 筆雙列已證、66 查詢未決。
