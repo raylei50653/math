@@ -2,7 +2,8 @@
 
 文件更新與研究依據：2026-09-28。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。唯一 degree-5 的全部 t≥1 及 t=0 的 (2,1,1,1) 核心已接回出口。下一入口是 t=0、(2,2,1) 保留支援表的 record 84／p₁；一般出口仍未證。
+更新約定見 [文件維護規則](DOCUMENTATION.md)。唯一 degree-5 的全部核心已接回出口。
+下一入口是恰兩個 degree-5、兩 root 相鄰時的完整關係接合；一般出口仍未證。
 
 ## 1. 目前做到哪裡
 
@@ -30,8 +31,8 @@ Gallai／完整 disk 分類仍未形式化。3703 當輪驗證見
 ## 2. 精確停止點與下一個窄問題
 
 目前入口為 [single-sided exit 接合定理](c5_single_sided_exit.md) §1–5。
-全 degree-4、唯一 degree-5 且 t≥1、唯一 degree-5 且 t=0／(2,1,1,1)，
-或未接內點 boundary 核心都已接回出口，來源圖大小不受限。
+全 degree-4、唯一 degree-5（全部 t=0、1、2、3），或未接內點 boundary
+核心都已接回出口，來源圖大小不受限。
 完整 Σ(M)=Ω\{q} 另用來源雙缺失及刪邊繼承，不能只由 T4 或指定雙列推出。
 
 | 已完成的唯一 degree-5 分支 | 證據入口與界線 |
@@ -42,33 +43,32 @@ Gallai／完整 disk 分類仍未形式化。3703 當輪驗證見
 | t=1、(2,2) | [局部 residual 與前序結果](c5_single_spoke_residual_locality.md)；來源排除 278，保留 102 筆／51 型全部雙列已證、0 查詢未決 |
 | t=1、(3,1)／(4) | [三接點](c5_single_spoke_three_one.md)／[三拒絕共同結構](c5_single_spoke_four.md) 給來源 K5；任意大小、不需 T4 |
 | t=0、(2,1,1,1) | [環狀實際支援](c5_no_spoke_supports.md)；48 筆全部指定雙列延拓，保留原五接點與完整關係 |
+| t=0、(2,2,1) | [首橋與固定框弧](c5_no_spoke_first_bridge.md)；來源排除仍 500，保留 116 筆全接受雙列、0 查詢未決；完成唯一 degree-5 接合 |
 
 t=1 與 t=0 新結果均為紙面＋外部定理＋Python，未新增 Lean theorem。
 必要支援表、minor skeletons 不是來源可實現性證書，也未分類任意 T4 核心的完整 Σ。
 逐輪證明鏈、數字及驗證留在報告與 [STATUS](STATUS.md)，不重啟已完成表的圖枚舉。
 
 **一般單側出口仍未證。** 失敗側每個 minimal core 必碰全部五個 boundary
-頂點，且有 degree≥6、至少兩個 degree-5，或唯一 degree-5 且 t=0、(2,2,1)。
+頂點，且有 degree≥6 或至少兩個 degree-5。
 [No-spoke 外部連通](c5_no_spoke_exterior.md) 已排除其餘四種 t=0 分拆；
 多分量的另一原分量提供實際 z–B 路徑，各分量皆 K4-free；(5) 另用四列奇偶障礙。
 
 (2,2,1) 的 1,952 筆必要支援經 T4 篩選剩 616 筆，
 [原外部路徑 K5](c5_no_spoke_path_minor.md) 再於 q 下排除 500 筆，含 record 599。
-剩 116 筆新增 104 個延拓後，為 108 筆 A/A、2 筆 A/?、2 筆 ?/A、4 筆 ?/?，
-合計 **12 個未決查詢**；來源排除與 target 延拓分開計數。
-完整資料見 [保留表](../artifacts/c5_no_spoke_path_minor/support_table.md)。
+剩 116 筆原有 12 個未決查詢：本輪首橋共用 β 解決 record 84／1472 的
+p₁、408／1561 的 p₂；固定三框弧解決 127／419／1390／1564 的雙列。
+新增 12 個延拓、0 來源排除，**116 筆全 A/A、0 查詢未決**。
+完整資料見 [完成表](../artifacts/c5_no_spoke_first_bridge/support_table.md)。
 
-**下一窄入口：record 84／p₁。** 固定 q=01012、p₁=01021、p₂=01212，
-具名原分量 (C₀,C₁,C₂) 的接點數為 (2,2,1)，全部實際支援為 (014,123,34)。
-q 禁色為 ({0},{2,3},{1})；p₂ 可取 z=2。p₁ 的七組完整拒絕候選已消去六組，
-只剩 ({0,1},{3},{2})。C₀ 的 target 原路徑塊支援只能為 01、04、014。
-
-下一步比較**同一 C₀ 的 source singleton palette 與 target 首橋**；保留
-五個原接點、完整有序關係、全部旁支／附件及 C₁／C₂ 的實際外部路徑。
-q 在 C₀ 只有 singleton，不能套雙列 pair residual 引理，也不能改用 endpoint marginals。
-未決 ID 為 84／1472 的 p₁、408／1561 的 p₂，以及 127／419／1390／1564 的雙列。
-不得預設其他查詢由同一新引理解決，亦未證這些候選可實現。
-已完成的 t≥1、兩葉鏈與五目標不重開圖枚舉。
+**下一窄入口：恰兩個 degree-5 的相鄰雙 root 介面。** 固定同一 minimal
+q-core，令 z、w 相鄰且完整 degree=5，其餘有效內點完整 degree=4。
+先從 [list-critical 基礎](c5_weak_list_cores.md#4-degree-four-部分的結構限制)
+及 [完整介面](c5_degree5_interfaces.md#1-設定與完整介面) 建立 H−{z,w}
+每個原分量對有序色對 (a,b) 的完整允許關係，保留共鄰點及它與兩 root 的邊。
+第一步只求精確接合式與 minimality 的必要條件；尚無此類分離定理或有限覆蓋。
+不能把兩份單 root 禁色集合獨立相乘，也不能預設刪任一邊會使雙 root 關係全開。
+degree≥6、非相鄰雙 root 及更多高 degree 點保留；不重開唯一 degree-5 圖枚舉。
 
 ## 3. 其他路線的現況
 
@@ -101,12 +101,14 @@ R27 末端各一臂及 [R30](c5_degree5_middle_cycle_minors.md) 中間不同二�
 
 ## 5. 重播入口與驗證範圍
 
-目前入口的最小重播如下；本次六組成果與直接依賴的完整發布檢查見
+本輪成果的最小重播如下；先前六組成果的發布檢查見
 [整理紀錄](history/2026-09-28-progress-publish.md)，各研究輪的驗證保留在原歷史頁。
 
 ```bash
+python3 scripts/c5_no_spoke_first_bridge.py --check
 python3 scripts/c5_no_spoke_path_minor.py --check
 python3 scripts/c5_no_spoke_supports.py --check
+python3 scripts/c5_single_spoke_first_bridge.py --check
 python3 scripts/c5_single_spoke_cross_row.py --check
 python3 scripts/c5_single_spoke_frame_arc.py --check
 lake build
@@ -117,7 +119,8 @@ git diff --check
 
 雙拒絕 atlas 與 Lean axiom audit 另見 [分類報告](c5_two_rejection_proof_zh.md) 與 [Lean 工具](lean_two_rejection_tools.md)。
 接合輪重跑範圍見 [研究紀錄](history/2026-09-24-single-sided-exit.md)；
-雙拒絕 atlas、R 系列大覆蓋、two-spoke 全表、抽象 profiles／閉包及 Lean
-axiom audit 未於本次發布重跑；未重新查閱外部定理或擴大研究範圍。
+本輪驗證見 [首橋／框弧紀錄](history/2026-09-28-no-spoke-first-bridge.md)；
+已重新核對外部 degree-list 定理。雙拒絕 atlas、R 系列大覆蓋、two-spoke
+全表、抽象 profiles／閉包及 Lean axiom audit 未於本輪重跑；發布狀態以即時 Git 為準。
 歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。
 早期交接見 [HANDOFF_HISTORY](HANDOFF_HISTORY.md) 與 [2026-09-22 快照](HANDOFF_2026-09-22.md)；歷史待辦與 Git 狀態均非現況。
