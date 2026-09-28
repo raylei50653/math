@@ -1,5 +1,10 @@
 # 三-spoke 的任意樹分量排除與連通外框 K4 引理
 
+後續（2026-09-28）：[no-spoke 外部連通](c5_no_spoke_exterior.md) 已補上
+t=0 的適用範圍：多分量的另一原分量提供 z–B 路徑，故各分量 K4-free；
+單分量 (5) 另由四列 palettes 的偶數接點障礙排除。下文 §1 的 t=0
+未涵蓋保留原證明語境；新結果不形式化既有任意大小論證。
+
 文件整理（2026-09-23），R12：任意樹排除完成；單環由 [R13–R14](c5_degree5_odd_cycle_components.md)、雙環由 [R15–R24](c5_degree5_shared_cycle_minors.md) 接續完成。
 系列定位見 [degree-5／R 系列導讀](c5_degree5_guide.md)，研究優先序見
 [HANDOFF](HANDOFF.md)。下文「下一步／未解／未提交」保留當輪語境；

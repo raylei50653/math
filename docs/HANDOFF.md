@@ -2,12 +2,11 @@
 
 文件更新與研究依據：2026-09-28。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。(2,1,1) 的 114 筆雙列全證；(2,2) 來源 K5 累計排除 278 筆，剩 102 筆／51 型，其中 100 筆雙列已證，含 record 15、16、17、87；僅 record 90／282 各剩 p₂。唯一 degree-5 的 t=2 已完成；一般版仍有 t≤1／更高 degree 等缺口。
+更新約定見 [文件維護規則](DOCUMENTATION.md)。唯一 degree-5 的全部 t≥1 及 t=0 的 (2,1,1,1) 核心已接回出口。下一入口是 t=0、(2,2,1) 保留支援表的 record 84／p₁；一般出口仍未證。
 
 ## 1. 目前做到哪裡
 
-主命題 **`K∞=K≤5` 仍未證**。目前活躍的是 weak-deletion 候選 A
-minimal obstruction 路線下的 sector 目標；先研究單側出口，再處理共同出口。
+主命題 **`K∞=K≤5` 仍未證**。目前走 weak-deletion 候選 A 的 minimal obstruction 路線，先研究單側出口，再處理共同出口。
 定義與全域較小代表／局部壓縮的區別見 [研究目標](c5_boundary_relations.md)。
 
 已完成 [C5 雙拒絕分類](c5_two_rejection_proof_zh.md)：在 induced C5 為 disk
@@ -31,81 +30,53 @@ Gallai／完整 disk 分類仍未形式化。3703 當輪驗證見
 ## 2. 精確停止點與下一個窄問題
 
 目前入口為 [single-sided exit 接合定理](c5_single_sided_exit.md) §1–5。
-五目標的來源假設與窮盡性已核對：若來源有一個全 degree-4，或唯一
-degree-5／二或三-spoke 的 minimal q-obstruction，就存在只釋放 p 的出口；
-不限制來源圖大小。五目標的窮盡性另有直接 Boolean 紙面推導。
+全 degree-4、唯一 degree-5 且 t≥1、唯一 degree-5 且 t=0／(2,1,1,1)，
+或未接內點 boundary 核心都已接回出口，來源圖大小不受限。
+完整 Σ(M)=Ω\{q} 另用來源雙缺失及刪邊繼承，不能只由 T4 或指定雙列推出。
 
-**一般單側出口仍未證。** 下一個窄問題是失敗側 minimal cores 的分離：
-每一個都必有 degree≥6、至少兩個 degree-5，或唯一 degree-5 且 t≤1。
-[兩-spoke 區域化約](c5_degree5_two_spoke_sectors.md) 的 24 個保留配置中，
-[三接點排除](c5_two_spoke_three_contacts.md) 已排除全部六個 (3) 型：
-同圖 z=2／3 的 palette 差強迫一個 triangle 加三條同 parity bridge arms，
-保留三個原接點；三個 triangle 頂點的實際 boundary tethers 給 K5 minor。
-任意臂長由紙面證明，80 份局部 minor 是控制；未 Lean 化。
-[相鄰 (2,1) 排除](c5_two_spoke_adjacent_21.md) 再排除 S={b0,b1} 的兩種禁色次序：
-兩分量分別提供 odd cycle 與 z–b4 路徑；短側的 {1,3} palettes 及兩色實際
-tethers 給 K5 minor，未合併 C₂、C₁，亦未引用 (3) 排除。
-[中間相鄰 (2,1) 排除](c5_two_spoke_middle_21.md) 再處理 S={b1,b2} 的兩種次序：
-兩個 z–b4 arcs 都見三色，但另一分量的實際路徑把 z、b4 接成一個外部
-branch set，與該側的 0、1 點形成三角。palette {3} bridge 的兩側各碰三色，
-或 leaf odd cycle 加保留其餘分量，都給同圖 K5 minor；兩種次序皆排除。
-[反射與下一相鄰 orbit](c5_two_spoke_reflection.md) 以 ρ(i)=3−i、π=(0 1) 固定 q，
-將 S={b0,b1} 排除搬到 S={b2,b3}；ordered relation／禁色搬運已有 Lean 普通證明。
-原 18 項累計六項不存在；[split-support 完整列分類](c5_two_spoke_split_support.md)
-再證剩四個相鄰表項的所有來源均只缺 q，故不可能作第二缺失核心。
-在 S={b3,b4}，A 禁 0 且支援 {b1,b2,b3}，D 禁 3 且支援 {b0,b1,b4}：
-任意列 b 的 F_A 是 b1=b3 時的 {b2}、否則空；F_D 是 b1≠b4 時的
-U\{b0,b1,b4}、否則空。兩接點／單接點次序皆成立，完整接點 tuples 保留。
-任意大小證明沿用 degree-4 結構定理：A padding 後只剩 64 個 disk forms；
-D 的例外 completion 在 252 個完整接線中無雙列解。S={b4,b0} 僅由既有
-Lean 反射搬運；新 Lean 證明有限列代數，完整 disk 分類仍為紙面＋外部定理。
-Order I 的既有 disk witnesses 保留；order II 的一般實現性未證，但已非
-第二缺失的缺口。[非相鄰分離](c5_two_spoke_nonadjacent.md) 現已完成八項：
-四個 S={b1,b4} 代表均接受 p=01021、01212，S={b2,b4} 僅由既有反射搬運。
-01021 用刪除同色 spoke 後的 degree-4 結構及保留 z 色的 path transfer；
-74 個正常形增邊候選全部接受 q。01212 先用四邊形側完整關係不變與五邊形
-側換色對稱，迫使 C2 在五邊形側；實際 degree-4 completion 只剩兩種結構，
-3,492 個接線無相容雙列禁色。任意大小覆蓋為紙面證明；Lean 僅列代數與搬運。
-因此唯一 degree-5 的 **t=2 全部分支已完成出口相容分離**；不另宣稱所有
-非相鄰來源皆完整單缺失，也不宣稱四類皆可實現。
-[single-spoke 必要化約](c5_single_spoke_cores.md) 已完成四種不可刪減覆蓋、
-任意大小的接點區塊／實際支援次序及反射；(2,1,1) 三代表剩 19 支援型。
-[外部雙路徑 completion](c5_single_spoke_completion.md) 保留二接點分量全部
-接線，以其他分量的實際路徑取得 degree-4 disk minor，沿用既有 3,492 項
-完整關係證書；原 (01,04,234) 入口的兩個 p 已完成。
-[bridge 路徑化約](c5_single_spoke_bridge_path.md) 與 [旁支 palette 守恆](c5_single_spoke_branch_palettes.md) 後，
-[旁支 K5 minor](c5_single_spoke_branch_minor.md) 已證 (01,04,1234)、禁 3
-者二接點的 p₁ 延拓：任一奇數位置 bridge 的兩端連同旁支都碰同一對
-框點，與其餘路徑及 C₁／C₂ 實際路徑給 K5；任意大小，未 Lean 化。
-[單接點未用色守恆](c5_single_spoke_root_conservation.md) 以 root palette 歸納證 (012,04,234) 的 p₂；
-[全表掃描](c5_single_spoke_root_sweep.md) 新增 14 個接受查詢後剩 34 個。
-[二接點上界分類](c5_single_spoke_two_contact_bounds.md) 關閉其中 18 個：
-容量 4、外部路徑 K5 6、未用色對 bridge 障礙 8；無直接套原 completion 者。
-反射保存 raw target 色列，不僅比相等分割。
-[單接點上界分類](c5_single_spoke_single_contact_bounds.md) 再以未用色在 root 的
-禁色角色守恆，證剩餘 16 筆皆有 F_C(p)⊆{3}；12 個 p₁ 可取 z=2，
-4 個 p₂ 可取 z=0。現為 **114 筆兩列全證、0 個表內查詢未決**；未新增 Lean theorem。
-[single-spoke (2,2) 必要分類](c5_single_spoke_two_two.md) 已保存兩份完整 relation schemas、
-全部 slit lifts／接點方向與奇數 bridge 路徑必要結構；三代表 1,530 筆必要候選中
-T4 原保留 380 筆／190 型；[路徑塊支援與來源 K5](c5_single_spoke_two_two_minor.md) 排除 26 筆，含 record 110、119。
-[外部路徑接合](c5_single_spoke_two_two_external.md) 完成 record 104：另一原分量把剩餘 J 接至補弧；逐塊相鄰支援對給 K5，再排除 210 筆。
-[frame-arc K5](c5_single_spoke_frame_arc.md) 再排除 36 筆來源、另證 18 個 target；[跨列 residual](c5_single_spoke_cross_row.md) 證 record 16 的 p₁，套表再增 16 個指定列延拓。[兩框弧 K5](c5_single_spoke_two_arc.md) 把另一原分量納入 Z，只要求每塊跨同一份兩弧分割，證 record 17 的雙列；另排除 6 筆來源、另證 20 個 target。[singleton-source 首橋相容性](c5_single_spoke_first_bridge.md) 再證 record 87 的 p₂，10 個查詢由共用 β 的 K5、6 個由端點固定色矛盾關閉。現為 **102 筆／51 型，100 筆雙列已證、2 個查詢未決**；來源排除仍 278，完整原關係與反射保留，紙面＋外部定理＋Python，未 Lean 化。
-**下一個窄入口：record 90 的 p₂（282 為交換分量），s=0、支援 (0234,012)、q 禁色 ({1},{2,3})；p₁ 已證。**
-唯一剩餘拒絕候選是 F0(p₂)={1,2}、F1(p₂)={3}。首橋 β=2 已排除，β=0 仍未決：首兩塊支援族 {23,023,034,234,0234}，每塊必接 b3 並接 b2 或同時接 b0、b4；共同必接只有 b3。需保留同一首橋 β、全部旁支與實際附件，處理 q 色 0 可由 b0／b2 供應的選言；不能逐塊獨立選 β，也不能把局部 E 當作整分量 F。
-保留型不代表可實現或小圖正常形。其餘 t=1 分拆、t=0、degree≥6、多 degree-5
-及一般核心存在／分離仍保留；先證任意大小限制，再做有限證書，不重啟圖枚舉。
-一般失敗側的核心存在性化約仍未證；已完成的 t=2、兩葉鏈與五目標毋須重開。
+| 已完成的唯一 degree-5 分支 | 證據入口與界線 |
+| --- | --- |
+| t=3 | [五目標接合](c5_single_sided_exit.md)；指定圖類紙面＋外部定理＋Python |
+| t=2 | [非相鄰分離與前序結果](c5_two_spoke_nonadjacent.md)；全部分支完成，Lean 僅列代數與反射搬運 |
+| t=1、(2,1,1) | [單接點上界分類及前序結果](c5_single_spoke_single_contact_bounds.md)；114 筆指定雙列全證 |
+| t=1、(2,2) | [局部 residual 與前序結果](c5_single_spoke_residual_locality.md)；來源排除 278，保留 102 筆／51 型全部雙列已證、0 查詢未決 |
+| t=1、(3,1)／(4) | [三接點](c5_single_spoke_three_one.md)／[三拒絕共同結構](c5_single_spoke_four.md) 給來源 K5；任意大小、不需 T4 |
+| t=0、(2,1,1,1) | [環狀實際支援](c5_no_spoke_supports.md)；48 筆全部指定雙列延拓，保留原五接點與完整關係 |
 
-保留的 R31 缺口：同末端不同二接點的任意長來源到 C3–C3–C3 的 boundary 固定 minors 尚未補完；
-參考 [R31](c5_degree5_same_terminal_triangles.md)、[R30](c5_degree5_middle_cycle_minors.md) 與 [R28](c5_degree5_three_cycle_positions.md)。
-R27 末端各一臂及 R30 中間不同二接點鏈型已排除；其他三環型仍開放。
+t=1 與 t=0 新結果均為紙面＋外部定理＋Python，未新增 Lean theorem。
+必要支援表、minor skeletons 不是來源可實現性證書，也未分類任意 T4 核心的完整 Σ。
+逐輪證明鏈、數字及驗證留在報告與 [STATUS](STATUS.md)，不重啟已完成表的圖枚舉。
 
-一般 degree≥5、單側出口、共同 pivotal edge、候選 A、一般 weak-deletion congruence 與 `K∞=K≤5` 仍需各自的證明。
+**一般單側出口仍未證。** 失敗側每個 minimal core 必碰全部五個 boundary
+頂點，且有 degree≥6、至少兩個 degree-5，或唯一 degree-5 且 t=0、(2,2,1)。
+[No-spoke 外部連通](c5_no_spoke_exterior.md) 已排除其餘四種 t=0 分拆；
+多分量的另一原分量提供實際 z–B 路徑，各分量皆 K4-free；(5) 另用四列奇偶障礙。
+
+(2,2,1) 的 1,952 筆必要支援經 T4 篩選剩 616 筆，
+[原外部路徑 K5](c5_no_spoke_path_minor.md) 再於 q 下排除 500 筆，含 record 599。
+剩 116 筆新增 104 個延拓後，為 108 筆 A/A、2 筆 A/?、2 筆 ?/A、4 筆 ?/?，
+合計 **12 個未決查詢**；來源排除與 target 延拓分開計數。
+完整資料見 [保留表](../artifacts/c5_no_spoke_path_minor/support_table.md)。
+
+**下一窄入口：record 84／p₁。** 固定 q=01012、p₁=01021、p₂=01212，
+具名原分量 (C₀,C₁,C₂) 的接點數為 (2,2,1)，全部實際支援為 (014,123,34)。
+q 禁色為 ({0},{2,3},{1})；p₂ 可取 z=2。p₁ 的七組完整拒絕候選已消去六組，
+只剩 ({0,1},{3},{2})。C₀ 的 target 原路徑塊支援只能為 01、04、014。
+
+下一步比較**同一 C₀ 的 source singleton palette 與 target 首橋**；保留
+五個原接點、完整有序關係、全部旁支／附件及 C₁／C₂ 的實際外部路徑。
+q 在 C₀ 只有 singleton，不能套雙列 pair residual 引理，也不能改用 endpoint marginals。
+未決 ID 為 84／1472 的 p₁、408／1561 的 p₂，以及 127／419／1390／1564 的雙列。
+不得預設其他查詢由同一新引理解決，亦未證這些候選可實現。
+已完成的 t≥1、兩葉鏈與五目標不重開圖枚舉。
 
 ## 3. 其他路線的現況
 
-R31 任意長來源 minor 缺口保留；全 degree-4／三-spoke 成果見 [STATUS](STATUS.md)。
-Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性保留各自缺口。
+保留的 [R31](c5_degree5_same_terminal_triangles.md) 缺口：同末端不同二接點的
+任意長來源到 C3–C3–C3 的 boundary 固定 minors 尚未補完。
+R27 末端各一臂及 [R30](c5_degree5_middle_cycle_minors.md) 中間不同二接點鏈型
+已排除；[其他三環型](c5_degree5_three_cycle_positions.md) 仍開放。
+其他 R 系列、cell catalogue、Kempe、repair、grammar／topology 與 state 缺口見 [STATUS](STATUS.md)。
 [同染色有序重接](c5_dual_path_surgery.md) 的一步公式及同圖三配對反例保留；record 110 已另由原圖 K5 排除，有限可迭代 state 仍未證。
 [邊位置對座標](c5_edge_pair_coordinates.md) 把 Kempe screen 等價化為 20 條蘊涵；1,024 masks 已核對，未新增排除或關閉一般 degree-5、共同出口與主命題。
 [循環流](c5_circulation.md) 統一六維計數／153 支撐／十二循環；36 份基底覆蓋證三套分開的整數 orbit 條件不再收緊恆等式解。紙面＋Python，未 Lean 化或排除平面來源；重播見報告與[當輪紀錄](history/2026-09-27-circulation.md)。
@@ -130,21 +101,23 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性保留�
 
 ## 5. 重播入口與驗證範圍
 
-接續目前研究的最小重播（驗證與未重跑範圍見 [首橋紀錄](history/2026-09-28-first-bridge.md)；完整九支 checker 命令見新報告）：
+目前入口的最小重播如下；本次六組成果與直接依賴的完整發布檢查見
+[整理紀錄](history/2026-09-28-progress-publish.md)，各研究輪的驗證保留在原歷史頁。
 
 ```bash
-python3 scripts/c5_single_spoke_first_bridge.py --check
-python3 scripts/c5_single_spoke_two_arc.py --check
-python3 scripts/c5_single_spoke_two_two.py --check
+python3 scripts/c5_no_spoke_path_minor.py --check
+python3 scripts/c5_no_spoke_supports.py --check
+python3 scripts/c5_single_spoke_cross_row.py --check
+python3 scripts/c5_single_spoke_frame_arc.py --check
 lake build
 python3 scripts/check_docs.py
 python3 tools/docgraph check
 git diff --check
 ```
 
-雙拒絕分類的 atlas 與 Lean axiom audit 另見
-[分類報告](c5_two_rejection_proof_zh.md) 與 [Lean 工具](lean_two_rejection_tools.md)。
+雙拒絕 atlas 與 Lean axiom audit 另見 [分類報告](c5_two_rejection_proof_zh.md) 與 [Lean 工具](lean_two_rejection_tools.md)。
 接合輪重跑範圍見 [研究紀錄](history/2026-09-24-single-sided-exit.md)；
-雙拒絕 atlas、R 系列大覆蓋、抽象 profiles／閉包未重跑。
+雙拒絕 atlas、R 系列大覆蓋、two-spoke 全表、抽象 profiles／閉包及 Lean
+axiom audit 未於本次發布重跑；未重新查閱外部定理或擴大研究範圍。
 歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。
 早期交接見 [HANDOFF_HISTORY](HANDOFF_HISTORY.md) 與 [2026-09-22 快照](HANDOFF_2026-09-22.md)；歷史待辦與 Git 狀態均非現況。

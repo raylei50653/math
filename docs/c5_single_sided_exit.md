@@ -6,6 +6,32 @@ docgraph:
 ---
 # 五目標排除到 single-sided exit：接合定理與一般化界線
 
+後續（2026-09-28）：[(2,2,1) 原外部路徑 K5](c5_no_spoke_path_minor.md)
+排除含 record 599 的 500 筆來源；剩 116 筆中 108 筆雙列已證、12 查詢
+未決。尚未完成該分拆，故本頁條件式出口的六類範圍不擴大，未 Lean 化。
+
+後續（2026-09-28）：[no-spoke 環狀支援與指定分離](c5_no_spoke_supports.md)
+完成 (2,1,1,1) 的 48 筆必要配置雙列延拓；新增 §1 第六類與 §3e，
+失敗側唯一 degree-5 只剩 t=0 的 (2,2,1)。一般定理仍未證，未 Lean 化。
+
+後續（2026-09-28）：[t=0 外部連通與四型排除](c5_no_spoke_exterior.md)
+以另一原分量的 z–B 路徑恢復 K4／triangle 的外部 hub；(5) 另由四列
+palettes 的偶數接點障礙排除。失敗側唯一 degree-5 只剩 t=0 的
+(2,2,1)、(2,1,1,1)，各分量 K4-free；尚未新增這兩型的 p 分離。
+
+後續（2026-09-28）：[single-spoke (4) 排除](c5_single_spoke_four.md)
+由三份 palettes 的共同係數迫使兩 triangle 加單 bridge，再以原 tethers
+給 K5。t=1 四型全部接合，§1 第五類已刪去分拆限制；失敗側唯一
+degree-5 只剩 t=0 六型，一般定理仍未證。
+
+後續（2026-09-28）：[single-spoke (3,1) 排除](c5_single_spoke_three_one.md)
+以三接點 active triangle、實際 tethers 及唯一 spoke 得 K5，不需 T4。
+該輪留下 t=0 六型及 t=1 的 (4)，後者已由上述後續排除。
+
+後續（2026-09-28）：[局部 residual 與 (2,2) 完成](c5_single_spoke_residual_locality.md)
+關閉最後 record 90／282 的 p₂。連同既已完成的 (2,1,1)，新增 single-spoke
+兩類可處理核心；該輪保留 (3,1)、(4)，前者已由上述後續排除。
+
 後續（2026-09-27）：[非相鄰 two-spoke 分離](c5_two_spoke_nonadjacent.md)
 完成唯一 degree-5 的全部 t=2 分支；本頁定理及失敗側必要條件已相應更新。
 
@@ -17,7 +43,7 @@ docgraph:
 2026-09-24。接續 [五目標](c5_sector_targets.md)、
 [雙拒絕分類](c5_two_rejection_proof_zh.md) 與
 [3703 排除](c5_sector_3703_exclusion.md)。
-**已完成二及三-spoke 核心的單側出口接合；無結構假設的一般單側出口仍未證。**
+**已完成唯一 degree-5 的全部 t≥1 及 t=0、(2,1,1,1) 核心之單側出口接合；一般單側出口仍未證。**
 下文給出任意大小來源圖的條件式定理、五目標窮盡性的紙面推導，以及
 尚不能消去的核心存在性假設。研究優先序見 [HANDOFF](HANDOFF.md)。
 
@@ -36,7 +62,11 @@ docgraph:
    三個 boundary 鄰居；
 3. 某個 boundary 頂點沒有有效內鄰點（內點 degree 不受限）；
 4. 恰一個有效內點 z 完整 degree=5，其餘完整 degree=4，且 z 恰有
-   兩個 boundary 鄰居。
+   兩個 boundary 鄰居；
+5. 恰一個有效內點 z 完整 degree=5，其餘完整 degree=4，z 恰有一個
+   boundary 鄰居，不限制 H−z 的接點分拆；
+6. 恰一個有效內點 z 完整 degree=5，其餘完整 degree=4，z 沒有
+   boundary 鄰居，H−z 的接點分拆為 (2,1,1,1)。
 
 **定理（條件式 single-sided exit，來源圖大小與 degree 不受限）。**
 若 G 有一個上述可處理的 minimal q-obstruction，則存在非外圈邊刪除序列
@@ -140,6 +170,59 @@ q 是第 0 列。其相鄰 singleton 缺失 p 只可能是第 1 或第 6 列。
 延拓，未把所有 T4-accepting 非相鄰來源分類成單缺失。反射側僅搬運，
 且搬運同時交換兩個 p 的色置換等價類，不獨立枚舉。
 
+## 3b. Single-spoke (2,1,1) 與 (2,2) 核心
+
+對第五種核心，§2 同樣給 induced-C5 disk、有效 H 連通、T4 acceptance
+及 q 下異色 spokes，符合 [single-spoke 必要覆蓋](c5_single_spoke_cores.md)。
+將 q 對齊為 01012 後，相鄰 singleton 的指定 p 恰為 p₁=01021 或 p₂=01212。
+接點均為原不同內鄰點，degree 與全部 boundary 附件在核心 M 自己計算。
+
+(2,1,1) 的任意大小來源落入 114 筆必要表，兩列已由
+[單接點上界分類及前序結果](c5_single_spoke_single_contact_bounds.md) 全證。
+(2,2) 的任意大小來源落入原 T4 保留 380 筆，其中 278 筆已由來源 K5
+排除，剩 102 筆的兩列由 [residual 局部性及前序結果](c5_single_spoke_residual_locality.md)
+全證。反射同時搬運原關係、接點、boundary 與字面 target 色列；不更換來源。
+
+故第五種核心在這兩種分拆下接受指定 p；其餘分拆由 §3c–3d 排除。
+再用來源的 Σ(G)=Ω\{p,q}、刪邊繼承及 M 拒絕 q，
+才得到 **Σ(M)=Ω\{q}**，適用 §4。單獨的 T4-accepting 核心指定雙列定理
+不表示其完整 Σ 已分類，也不證必要表各型可以實現。
+
+## 3c. Single-spoke (3,1) 不存在
+
+[三接點定理](c5_single_spoke_three_one.md) 使用同一 minimal q-core 的
+F₃(q)=A\{c}、F₁(q)={c}。兩份拒絕 palettes 強迫一個 triangle 加三條
+同 parity bridge arms；triangle 三點各有原 boundary tether，連同唯一
+spoke 得 K5。另一原分量及四個原接點全保留；不需 T4 或 p 拒絕。
+
+因此 (3,1) 不可能出現在任一這類 minimal core。這是來源排除，沒有
+新增可實現核心、target 計數或完整 Σ 分類。
+
+## 3d. Single-spoke (4) 不存在與全部 t=1 接合
+
+[四接點三拒絕定理](c5_single_spoke_four.md) 使用 F_C(q)=U\{q_s}。
+同一 block incidence matrix 的欄獨立性使三組 palette 差共用 τ；
+正係數 block 不能是 bridge，四葉共同樹因而恰為兩 triangle 加單 bridge。
+把右 triangle 與 z 合為 Z，左 triangle 三點各有原 boundary tether，
+連同唯一 spoke 得 K5。此來源排除不需 T4 或第二列拒絕。
+
+由必要覆蓋，t=1 只有 (4)、(3,1)、(2,2)、(2,1,1) 四型；前兩型不存在，
+後兩型由 §3b 接受指定 p。因此 §1 第五類可不附接點分拆限制，任意大小
+實際核心皆有 Σ(M)=Ω\{q}。此處的完整 Σ 使用原出口來源的雙缺失前提，
+不是將任意 T4 核心的完整關係或可實現性全部分類。
+
+## 3e. No-spoke (2,1,1,1) 核心
+
+第六類核心繼承 §2 的 induced-C5 disk、連通有效 H、T4 acceptance
+及全部在 M 自己計算的 degrees。以 q=01012 對齊後，
+[環狀支援定理](c5_no_spoke_supports.md) 使其落入兩種必要支援型，
+四種二接點角色及三個具名單接點排列共 48 筆，全部接受兩個指定 p。
+最後 12 個查詢用不同原分量的實際外部路徑套既有 degree-4 completion，
+保留五個原接點及每份完整 relation，不在原圖任意添加 spoke。
+
+因此 M 接受指定 p；再以來源雙缺失及刪邊繼承得 Σ(M)=Ω\{q}，
+進入 §4。同樣不將只假設 T4 的指定雙列定理提升為任意來源的完整 Σ。
+
 ## 4. 從核心分離到實際第一個 strict step
 
 按任意次序刪去 E\A。每個中間圖都包含 M，故始終拒絕 q；
@@ -154,7 +237,7 @@ p 的中間圖。它的前一步仍恰拒絕 p、q，而該步只釋放 p。
 ## 5. 為何尚不是無條件的一般定理
 
 一般 minimality 只給完整 degree≥4，沒有給 degree≤5、degree-5 點唯一，
-或該點至少兩條 boundary spokes。五目標窮盡的是 §2 的 sector 接合，
+或該點至少一條 boundary spoke。五目標窮盡的是 §2 的 sector 接合，
 並不窮盡任意 minimal obstruction 的結構。
 
 **失敗側的必要條件。** 若 Ω\{q}∉W(G)，則 G 的每一個 minimal
@@ -163,12 +246,20 @@ q-obstruction 都仍拒絕 p，**都必碰到全部五個 boundary 頂點**，
 
 - 有完整 degree≥6 的有效內點；
 - 至少兩個完整 degree=5 的有效內點；
-- 恰一個完整 degree=5 的有效內點，其 boundary spokes 數 t≤1。
+- 恰一個完整 degree=5 的有效內點，且 t=0，H−z 接點分拆為
+  (2,2,1)，每個分量皆 K4-free。
 
 證明：未接內點引理給出五點皆須被碰到；有效內點 degree≥4，
-上述 degree 條件以外的情形恰被 §1 第一、二、四類覆蓋，與定理矛盾。
-最後一類只剩 R10 的十型：t=1 的四型及 t=0 的六型。
-五目標排除解決 t=3、(2)；§3a 完成 t=2 的 (3)、(2,1)。
+上述 degree 條件以外，(3,1)、(4) 由 §3c–3d 排除，其餘被 §1 第一、二、四、五、六類
+覆蓋，與定理矛盾。
+最後一類先落入 R10 的 t=0 六型，再由
+[no-spoke 排除](c5_no_spoke_exterior.md) 消去 (5)、(4,1)、(3,2)、(3,1,1)。
+多分量的非空真禁色集迫使每個分量碰 B，另一分量提供外部 z–B 路徑，
+故 K4 及三／四接點 active triangle 都給 K5；單分量 (5) 的四份
+palettes 則強迫接點數為偶數，這些來源排除不需 T4。§3e 再以 T4
+及原分量外部雙路徑完成 (2,1,1,1) 指定分離，剩 (2,2,1) 未證。
+五目標排除解決 t=3、(2)；§3a 完成 t=2 的 (3)、(2,1)；§3b 再完成
+t=1 的 (2,1,1)、(2,2)；§3c–3d 排除 (3,1)、(4)，完成全部 t=1。
 
 要完成使用者要求的**無條件一般 single-sided exit 定理**，仍須證明
 每個候選 A 來源 G、每個定向缺失對 (p,q)，至少存在一個接受 p 的
@@ -203,3 +294,18 @@ git diff --check
 2026-09-27 的 t=2 擴充另有任意大小紙面化約、74／3,492 個局部候選證書，
 以及 Lean 有限列代數與反射證明；圖層定理未 Lean 化。
 實際重播見 [本輪紀錄](history/2026-09-27-nonadjacent-two-spoke.md)。
+
+2026-09-28 的 §3b 是指定雙列分離到同一刪邊出口的紙面接合；未新增 Lean
+theorem。新 (2,2) 證書及沿用的 (2,1,1) 檢查範圍見
+[residual 局部性紀錄](history/2026-09-28-residual-locality.md)。
+
+2026-09-28 的 §3c 以任意大小紙面三接點排除縮小失敗側；外部 degree-list
+及 one-spoke K5 的有限控制見 [三接點紀錄](history/2026-09-28-three-one.md)，未 Lean 化。
+
+2026-09-28 的 §3d 是三拒絕共同結構、實際 tethers 與 K5 的任意大小紙面
+證明；960 份 minor 控制及實際重播見 [四接點紀錄](history/2026-09-28-four-contact.md)。
+未新增 Lean theorem，也未新增 t=0 結論。
+
+2026-09-28 的 §3e 以 no-spoke 環狀實際支援、原分量外部雙路徑及既有
+completion 完成 (2,1,1,1) 指定分離。48 筆及實際驗證見
+[no-spoke 支援紀錄](history/2026-09-28-no-spoke-supports.md)；未 Lean 化。

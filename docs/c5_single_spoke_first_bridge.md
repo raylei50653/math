@@ -11,6 +11,11 @@ docgraph:
 ---
 # Single-spoke (2,2)：singleton-source 首橋相容性與 record 87 延拓
 
+後續（2026-09-28）：[局部 residual 相同列引理](c5_single_spoke_residual_locality.md)
+已完成 record 90／282 的 p₂；來源排除仍 278，保留 102 筆／51 型全部雙列
+已證、0 查詢未決，指定 (2,2) 分離已接回條件式出口。下文及原 artifact
+保留當輪數字與停止點；新結果未證可實現性或完整 Σ。
+
 2026-09-28，審核基準 `b770d21`。本輪從使用者訊息獨立核對首橋推導，
 再建立 repo checker 並套剩餘表。所附 `/mnt/data/math_record87_first_bridge_review/`
 與 ZIP 在本環境不存在；沒有重播附件。下列控制均在 repo 重新生成與核對。

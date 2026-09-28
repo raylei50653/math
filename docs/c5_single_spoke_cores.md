@@ -11,6 +11,15 @@ docgraph:
 ---
 # Single-spoke degree-five cores：不可刪減覆蓋與嵌入必要化約
 
+後續（2026-09-28）：[(4) 三拒絕排除](c5_single_spoke_four.md) 由同一
+block tree 的共同差異係數強迫兩 triangle 加單 bridge，原 tethers 給 K5。
+連同 (3,1) 排除及 (2,1,1)／(2,2) 分離，t=1 全部接回條件式單側出口；
+下文四型仍是必要覆蓋，不是可實現性或完整 Σ 分類。
+
+後續（2026-09-28）：[(3,1) 三接點排除](c5_single_spoke_three_one.md) 由此處
+覆蓋 F₃=A\{c}、F₁={c}，證同圖 active triangle／三臂／tethers 給 K5；
+不需 T4。下文四型是當輪必要覆蓋，(3,1) 已證無平面來源。
+
 後續（2026-09-27）：[(2,2) 必要分類](c5_single_spoke_two_two.md) 已完成該分拆的
 完整 relation schemas、actual supports／接點次序及指定 p 必要上界；T4 保留
 380 筆／190 型，104 筆雙列已證。仍非 disk 可實現性分類，下文保留原輪範圍。

@@ -12,6 +12,11 @@ docgraph:
 ---
 # Single-spoke (2,2)：完整關係、actual supports 與接點次序的必要分類
 
+後續（2026-09-28）：[局部 residual 相同列引理](c5_single_spoke_residual_locality.md)
+已完成 record 90／282 的 p₂；來源排除仍 278，保留 102 筆／51 型全部雙列
+已證、0 查詢未決，指定 (2,2) 分離已接回條件式出口。下文及原 artifact
+保留當輪數字與停止點；新結果未證可實現性或完整 Σ。
+
 後續（2026-09-28）：[singleton-source 首橋相容性](c5_single_spoke_first_bridge.md)
 已證 record 87 的 p₂，套表共新增 16 個指定列延拓；來源排除仍 278 筆，保留
 102 筆／51 型、100 筆雙列已證，僅 record 90／282 的 p₂ 未決。下文與舊

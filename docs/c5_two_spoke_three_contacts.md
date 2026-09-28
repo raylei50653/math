@@ -9,6 +9,10 @@ docgraph:
 ---
 # Two spokes, three contacts: a same-source K5 obstruction
 
+後續（2026-09-28）：[single-spoke (3,1) 排除](c5_single_spoke_three_one.md)
+重新核對本證明只需三接點、兩個禁色及至少一條 spoke；已排除該型任意大小
+來源，不需 T4。原單接點分量保持獨立；下文 t≤1 未處理是原輪界線。
+
 後續（2026-09-24）：[相鄰 (2,1) 排除](c5_two_spoke_adjacent_21.md) 已排除
 S={b0,b1} 的兩種 singleton 禁色次序，保留兩個不同分量並抽取同圖 K5 minor。
 下文 18 個未解表項為當輪狀態；其餘 16 個表項未在此次續作分類。
