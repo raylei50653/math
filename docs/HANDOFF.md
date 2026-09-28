@@ -3,7 +3,8 @@
 文件更新與研究依據：2026-09-28。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
 更新約定見 [文件維護規則](DOCUMENTATION.md)。唯一 degree-5 的全部核心已接回出口。
-下一入口是恰兩個 degree-5、兩 root 相鄰時的完整關係接合；一般出口仍未證。
+相鄰雙 degree-5 的完整關係接合與逐類 minimality 已建立；下一入口是同一
+來源的跨列限制與指定分離，一般出口仍未證。
 
 ## 1. 目前做到哪裡
 
@@ -56,19 +57,22 @@ t=1 與 t=0 新結果均為紙面＋外部定理＋Python，未新增 Lean theor
 
 (2,2,1) 的 1,952 筆必要支援經 T4 篩選剩 616 筆，
 [原外部路徑 K5](c5_no_spoke_path_minor.md) 再於 q 下排除 500 筆，含 record 599。
-剩 116 筆原有 12 個未決查詢：本輪首橋共用 β 解決 record 84／1472 的
+剩 116 筆原有 12 個未決查詢：首橋共用 β 解決 record 84／1472 的
 p₁、408／1561 的 p₂；固定三框弧解決 127／419／1390／1564 的雙列。
 新增 12 個延拓、0 來源排除，**116 筆全 A/A、0 查詢未決**。
 完整資料見 [完成表](../artifacts/c5_no_spoke_first_bridge/support_table.md)。
 
-**下一窄入口：恰兩個 degree-5 的相鄰雙 root 介面。** 固定同一 minimal
-q-core，令 z、w 相鄰且完整 degree=5，其餘有效內點完整 degree=4。
-先從 [list-critical 基礎](c5_weak_list_cores.md#4-degree-four-部分的結構限制)
-及 [完整介面](c5_degree5_interfaces.md#1-設定與完整介面) 建立 H−{z,w}
-每個原分量對有序色對 (a,b) 的完整允許關係，保留共鄰點及它與兩 root 的邊。
-第一步只求精確接合式與 minimality 的必要條件；尚無此類分離定理或有限覆蓋。
-不能把兩份單 root 禁色集合獨立相乘，也不能預設刪任一邊會使雙 root 關係全開。
-degree≥6、非相鄰雙 root 及更多高 degree 點保留；不重開唯一 degree-5 圖枚舉。
+**相鄰雙 root 第一輪已完成。** [完整有序色對介面](c5_adjacent_degree5_interfaces.md)
+固定同一 minimal q-core，z、w 相鄰且完整 degree=5，其餘內點 degree=4；
+保留原 C、全部接點、共鄰點身份及共同色框。精確接合是
+`Z=(A_z×A_w)∩⋂R_C∖Δ`；刪 zw 的關係非空且包含於 Δ。
+已證刪任一 E_C 邊使該原分量 R_C 全開，其他分量與 root 條件仍保留；
+root-spoke 刪除要求新色條帶中的共同見證，各 C 要有私有非對角色對。
+任意多步刪邊另有固定來源精確式。紙面＋Python 控制，未新增 Lean theorem。
+**下一窄入口：** 用對角見證、私有色對與 root-spoke 條件，限制同一原接線
+在指定 p 下的完整關係；先研究共鄰點分量與單 root 分量的互動。
+尚無雙 root 分離或平面覆蓋，抽象關係不是可實現性證書；degree≥6、
+非相鄰雙 root 及更多高 degree 點保留，不重開唯一 degree-5 枚舉。
 
 ## 3. 其他路線的現況
 
@@ -101,16 +105,12 @@ R27 末端各一臂及 [R30](c5_degree5_middle_cycle_minors.md) 中間不同二�
 
 ## 5. 重播入口與驗證範圍
 
-本輪成果的最小重播如下；先前六組成果的發布檢查見
-[整理紀錄](history/2026-09-28-progress-publish.md)，各研究輪的驗證保留在原歷史頁。
+雙 root 第一輪的最小重播如下；唯一 degree-5 完成輪的驗證見
+[首橋／框弧紀錄](history/2026-09-28-no-spoke-first-bridge.md)，先前六組發布見
+[整理紀錄](history/2026-09-28-progress-publish.md)。
 
 ```bash
-python3 scripts/c5_no_spoke_first_bridge.py --check
-python3 scripts/c5_no_spoke_path_minor.py --check
-python3 scripts/c5_no_spoke_supports.py --check
-python3 scripts/c5_single_spoke_first_bridge.py --check
-python3 scripts/c5_single_spoke_cross_row.py --check
-python3 scripts/c5_single_spoke_frame_arc.py --check
+python3 scripts/c5_adjacent_degree5_interfaces.py --check
 lake build
 python3 scripts/check_docs.py
 python3 tools/docgraph check
@@ -119,8 +119,9 @@ git diff --check
 
 雙拒絕 atlas 與 Lean axiom audit 另見 [分類報告](c5_two_rejection_proof_zh.md) 與 [Lean 工具](lean_two_rejection_tools.md)。
 接合輪重跑範圍見 [研究紀錄](history/2026-09-24-single-sided-exit.md)；
-本輪驗證見 [首橋／框弧紀錄](history/2026-09-28-no-spoke-first-bridge.md)；
-已重新核對外部 degree-list 定理。雙拒絕 atlas、R 系列大覆蓋、two-spoke
-全表、抽象 profiles／閉包及 Lean axiom audit 未於本輪重跑；發布狀態以即時 Git 為準。
+本輪驗證見 [雙 root 介面紀錄](history/2026-09-28-adjacent-degree5-interfaces.md)；
+Gallai 結構推論另核對外部 degree-list 定理。唯一 degree-5 各表、雙拒絕
+atlas、R 系列大覆蓋、抽象 profiles／閉包及 Lean axiom audit 未於本輪重跑；
+發布狀態以即時 Git 為準。
 歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。
 早期交接見 [HANDOFF_HISTORY](HANDOFF_HISTORY.md) 與 [2026-09-22 快照](HANDOFF_2026-09-22.md)；歷史待辦與 Git 狀態均非現況。

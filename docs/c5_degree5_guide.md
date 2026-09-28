@@ -1,5 +1,9 @@
 # degree-5／R 系列導讀：介面、排除範圍與保留缺口
 
+後續（2026-09-28）：[相鄰雙 degree-5 介面](c5_adjacent_degree5_interfaces.md)
+完成完整有序色對接合、root-edge 對角強迫與逐類刪邊 minimality；
+雙 root 的來源跨列限制與指定分離仍待研究，未重跑唯一 degree-5 枚舉。
+
 後續（2026-09-28）：[no-spoke 首橋與固定框弧](c5_no_spoke_first_bridge.md)
 完成 (2,2,1) 的最後 12 查詢，116 筆全部雙列已證。唯一 degree-5 全部
 核心已接回 [條件式單側出口](c5_single_sided_exit.md)；這不補完 R31 的

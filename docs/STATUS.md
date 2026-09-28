@@ -12,7 +12,10 @@ t=0、(2,2,1) 的 616 筆 T4 保留必要配置經
 [首橋與固定框弧](c5_no_spoke_first_bridge.md) 再關閉最後 12 個查詢，
 **116 筆全部雙列已證、0 個未決查詢**。必要表未證可實現性或完整 Σ；
 新結果為任意大小紙面＋外部定理＋Python 控制，未 Lean 化。
-degree≥6、多 degree-5、一般核心分離及 R31 來源 minor 缺口保留；下一入口見 HANDOFF。
+[相鄰雙 degree-5 介面](c5_adjacent_degree5_interfaces.md) 已完成有序色對接合、
+root-edge 對角強迫、degree-4 分量解除及逐類 minimality 充要條件；
+保留共鄰點與同一接線，紙面＋有限控制，未 Lean 化或證雙 root 分離。
+degree≥6、多 degree-5 的一般分離及 R31 來源 minor 缺口保留；下一入口見 HANDOFF。
 逐輪數字、驗證與發布紀錄已移至 [歷史快照](STATUS_HISTORY.md)。
 
 ## 1. 閱讀順序與文件角色
@@ -36,6 +39,7 @@ degree≥6、多 degree-5、一般核心分離及 R31 來源 minor 缺口保留�
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [相鄰雙 degree-5 完整有序色對介面](c5_adjacent_degree5_interfaces.md) | 精確接合、非空對角強迫、分量全解除、root-spoke 新色條帶及私有色對；逐邊 minimality 充要條件與固定來源多步刪邊式，9 組分量／240 列控制；未 Lean 化，未證雙 root 分離或平面可實現性 |
 | [No-spoke (2,2,1) 首橋與固定框弧](c5_no_spoke_first_bridge.md) | record 84 延拓；新增 12 個 target、0 來源排除，116 筆全雙列、0 查詢；1,536 份五接點 minor 與反射，唯一 degree-5 全部接回條件式出口，未 Lean 化 |
 | [No-spoke (2,2,1) 原外部路徑 K5](c5_no_spoke_path_minor.md) | record 599 已在 q 下排除；616 筆排除 500 筆來源，另新增 104 個延拓，當輪剩 116 筆、108 筆雙列已證、12 查詢，後由首橋／固定框弧完成 116 筆全雙列；1,368 份五接點／零 spoke minor 及反射控制，未證可實現或 Lean 化 |
 | [No-spoke 環狀支援與 (2,1,1,1) 分離](c5_no_spoke_supports.md) | 兩種獨立環狀支援枚舉、原分量外部雙路徑；48 筆全部指定雙列延拓，(2,2,1) 原 616 筆／268 筆雙列已證，後由原外部路徑 K5 與首橋／框弧更新為 116 筆全雙列；原 artifact 保留當輪數字，未證可實現或 Lean 化 |
@@ -227,7 +231,7 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | --- | --- | --- |
 | 已完成 | 3703 兩葉鏈 | [排除報告](c5_sector_3703_exclusion.md) 完成任意長度三拒絕排除；限定 sector 圖類，未 Lean 化 |
 | 已完成 | 五目標到三-spoke 核心出口的接合 | [定理](c5_single_sided_exit.md) 核對來源假設、五目標窮盡及 first strict step；條件式結論無大小限制 |
-| 活躍 | 一般單側出口的核心分離 | 唯一 degree-5 全部已接回 [條件式出口](c5_single_sided_exit.md)；[no-spoke 首橋／框弧](c5_no_spoke_first_bridge.md) 完成最後 116 筆全雙列、0 查詢。每個失敗側核心必碰全部五點，且有 degree≥6 或至少兩個 degree-5；下一入口是相鄰雙 root 完整關係接合，一般存在／分離仍未證 |
+| 活躍 | 一般單側出口的核心分離 | 唯一 degree-5 全部已接回 [條件式出口](c5_single_sided_exit.md)。每個失敗側核心必碰全部五點，且有 degree≥6 或至少兩個 degree-5；[相鄰雙 root 介面](c5_adjacent_degree5_interfaces.md) 已證精確接合與逐類 minimality，下一步限制同一來源跨列關係，一般存在／分離仍未證 |
 | 已完成 | 指定 sector 圖類的雙拒絕分類 | [紙面分類](c5_two_rejection_proof_zh.md) 排除四個目標；依賴外部 degree-list，完整分類未 Lean 化 |
 | 被後續涵蓋 | 3903 空／非空分支、331 同圖分支 | 既有局部證據保留；後續分類已涵蓋原排除問題，不代表抽象 603 profiles 已改寫 |
 | 保留 | R31 任意長來源 minors | 正常形已完成；仍需 boundary 固定 branch sets、四列、degrees、刪邊著色與拓撲合成，見 [R31](c5_degree5_same_terminal_triangles.md) |
@@ -236,6 +240,8 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | 保留 | 一般單側／共同出口與主命題 | 分別需要一般分離、共同 pivotal edge 等證明；兩個單側出口不推出共同出口 |
 
 ## 歷史紀錄與舊連結
+
+- [2026-09-28：相鄰雙 degree-5 有序色對介面與刪邊必要條件](history/2026-09-28-adjacent-degree5-interfaces.md)
 
 - [2026-09-28：no-spoke 最後 12 查詢與唯一 degree-5 完成](history/2026-09-28-no-spoke-first-bridge.md)
 

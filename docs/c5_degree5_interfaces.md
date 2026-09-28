@@ -7,6 +7,10 @@ docgraph:
 ---
 # 唯一 degree-5 內點：完整接點介面與不可刪減禁色覆蓋
 
+後續（2026-09-28）：[相鄰雙 degree-5 介面](c5_adjacent_degree5_interfaces.md)
+已將原分量接合與 degree-4 刪邊解除推廣到有序 root 色對，另證 root-edge
+對角強迫與 root-spoke 條帶條件。保留共鄰點及共同色框；未證雙 root 分離。
+
 後續（2026-09-28）：[首橋與固定框弧](c5_no_spoke_first_bridge.md) 已關閉最後
 12 個指定查詢；來源排除仍 500 筆，保留 116 筆全部接受雙列、0 查詢未決。
 唯一 degree-5 全部分支已接回條件式出口；必要型可實現性、完整 Σ 與 Lean
