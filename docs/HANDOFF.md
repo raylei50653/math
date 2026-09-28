@@ -1,8 +1,8 @@
 # 研究交接：目前狀態與接手入口
 
-文件更新與研究依據：2026-09-27。工作目錄 `/home/ray/math`。
+文件更新與研究依據：2026-09-28。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。目前 single-spoke (2,1,1) 的剩餘單接點上界亦已分類；114 個具名配置全部已證兩個指定 p，無剩餘表內查詢。唯一 degree-5 的 t=2 已完成；一般版仍有 t≤1／更高 degree 等缺口。
+更新約定見 [文件維護規則](DOCUMENTATION.md)。(2,1,1) 的 114 筆雙列全證；(2,2) 來源 K5 累計排除 236 筆，含 record 110、119、104，剩 144 筆／72 型，其中 54 筆雙列已證。唯一 degree-5 的 t=2 已完成；一般版仍有 t≤1／更高 degree 等缺口。
 
 ## 1. 目前做到哪裡
 
@@ -87,27 +87,26 @@ Order I 的既有 disk witnesses 保留；order II 的一般實現性未證，�
 4 個 p₂ 可取 z=0。現為 **114 筆兩列全證、0 個表內查詢未決**；未新增 Lean theorem。
 [single-spoke (2,2) 必要分類](c5_single_spoke_two_two.md) 已保存兩份完整 relation schemas、
 全部 slit lifts／接點方向與奇數 bridge 路徑必要結構；三代表 1,530 筆必要候選中
-T4 排除 1,150 筆，保留 380 筆／190 型，104 筆已證兩個 p 延拓。
-**下一個窄入口：(2,2) record 110，s=0、支援 (34,12)、禁色 ({1,2},{2,3})。**
-[同染色有序重接](c5_dual_path_surgery.md) 已證一步公式及同圖三配對反例，並固定 α 三配對與交換後兩式。
-下一步把兩份原 bridge 路徑／旁支 tethers 接到共同切口，判定是否必違反兩式；record 110 尚未排除。
-19 型不代表可實現或小圖正常形。其餘 t=1 分拆、t=0、degree≥6、多 degree-5
+T4 原保留 380 筆／190 型；[路徑塊支援與來源 K5](c5_single_spoke_two_two_minor.md) 排除 26 筆，含 record 110、119。
+[外部路徑接合](c5_single_spoke_two_two_external.md) 完成 record 104：另一原分量把剩餘 J 接至補弧；逐塊相鄰支援對給 K5，再排除 210 筆。
+現剩 **144 筆／72 型，其中 54 筆雙列已證**；原 104 筆雙列延拓中另 50 筆來源已排除。完整原關係、接線及反射資料保留，未 Lean 化。
+**下一個窄入口：record 15，s=0、支援 (01,0234)、禁色 ({1},{2,3})；p₁ 已證、p₂ 未決。**
+第二分量每塊必見 b3 及 b0、b2 至少一者；下一步保留逐塊實際支援、bridge 次序及第一分量的 z–b1 外部路徑，限制兩個同色供應點的分配。
+保留型不代表可實現或小圖正常形。其餘 t=1 分拆、t=0、degree≥6、多 degree-5
 及一般核心存在／分離仍保留；先證任意大小限制，再做有限證書，不重啟圖枚舉。
 一般失敗側的核心存在性化約仍未證；已完成的 t=2、兩葉鏈與五目標毋須重開。
 
-保留的 R31 缺口：同末端不同二接點的任意長來源到 C3–C3–C3 的
-boundary 固定 minors 尚未補完；參考 [R31](c5_degree5_same_terminal_triangles.md)、
-[R30](c5_degree5_middle_cycle_minors.md) 與 [R28](c5_degree5_three_cycle_positions.md)。
+保留的 R31 缺口：同末端不同二接點的任意長來源到 C3–C3–C3 的 boundary 固定 minors 尚未補完；
+參考 [R31](c5_degree5_same_terminal_triangles.md)、[R30](c5_degree5_middle_cycle_minors.md) 與 [R28](c5_degree5_three_cycle_positions.md)。
 R27 末端各一臂及 R30 中間不同二接點鏈型已排除；其他三環型仍開放。
 
-一般 degree≥5、單側出口、共同 pivotal edge、候選 A、
-一般 weak-deletion congruence 與 `K∞=K≤5` 仍需各自的證明。
+一般 degree≥5、單側出口、共同 pivotal edge、候選 A、一般 weak-deletion congruence 與 `K∞=K≤5` 仍需各自的證明。
 
 ## 3. 其他路線的現況
 
-R31 任意長來源 minor 缺口保留，暫不作優先入口。全 degree-4 合成、
-三-spoke 零／一／二環及指定三環鏈型的成果，見 [STATUS](STATUS.md)。
+R31 任意長來源 minor 缺口保留；全 degree-4／三-spoke 成果見 [STATUS](STATUS.md)。
 Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性保留各自缺口。
+[同染色有序重接](c5_dual_path_surgery.md) 的一步公式及同圖三配對反例保留；record 110 已另由原圖 K5 排除，有限可迭代 state 仍未證。
 [邊位置對座標](c5_edge_pair_coordinates.md) 把 Kempe screen 等價化為 20 條蘊涵；1,024 masks 已核對，未新增排除或關閉一般 degree-5、共同出口與主命題。
 [循環流](c5_circulation.md) 統一六維計數／153 支撐／十二循環；36 份基底覆蓋證三套分開的整數 orbit 條件不再收緊恆等式解。紙面＋Python，未 Lean 化或排除平面來源；重播見報告與[當輪紀錄](history/2026-09-27-circulation.md)。
 
@@ -131,14 +130,15 @@ Cell catalogue、Kempe、repair、grammar／topology 與 state 充分性保留�
 
 ## 5. 重播入口與驗證範圍
 
-接續目前研究的最小重播（本輪實際範圍見 [有序重接紀錄](history/2026-09-27-dual-path-surgery.md)）：
+接續目前研究的最小重播（整合驗證與未重跑範圍見 [發布紀錄](history/2026-09-28-two-two-publication.md)）：
 
 ```bash
-python3 scripts/c5_dual_path_surgery.py --check
-python3 scripts/c5_edge_pair_coordinates.py --check
+python3 scripts/c5_single_spoke_two_two_external.py --check
+python3 scripts/c5_single_spoke_two_two_minor.py --check
 python3 scripts/c5_single_spoke_two_two.py --check
 lake build
 python3 scripts/check_docs.py
+python3 tools/docgraph check
 git diff --check
 ```
 

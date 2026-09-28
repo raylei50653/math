@@ -12,6 +12,12 @@ docgraph:
 ---
 # Single-spoke (2,2)：完整關係、actual supports 與接點次序的必要分類
 
+後續（2026-09-28）：[路徑塊支援與來源 K5](c5_single_spoke_two_two_minor.md)
+已排除 record 110、119 及 26 筆／13 型；[外部路徑接合](c5_single_spoke_two_two_external.md)
+再排除含 record 104 的 210 筆／105 型，原 380 筆現剩 144 筆／72 型。
+原 104 筆條件式雙列延拓中，50 筆來源已排除、54 筆仍保留。下文與原 artifact 保留必要分類
+當輪的 380 筆及未解語境，後續排除另有可追溯證書。
+
 2026-09-27。沿用 [四型必要覆蓋](c5_single_spoke_cores.md)，只處理 H−z
 有兩個二接點分量。研究優先序見 [HANDOFF](HANDOFF.md)。
 
