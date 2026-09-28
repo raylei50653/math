@@ -3,8 +3,9 @@
 文件更新與研究依據：2026-09-28。工作目錄 `/home/ray/math`。
 本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
 更新約定見 [文件維護規則](DOCUMENTATION.md)。唯一 degree-5 的全部核心已接回出口。
-相鄰雙 degree-5 的完整關係接合與逐類 minimality 已建立；下一入口是同一
-來源的跨列限制與指定分離，一般出口仍未證。
+相鄰雙 degree-5 的完整關係接合與逐類 minimality 已建立；唯一 mixed 共鄰
+單點的全部支援已接回出口：01／12／23 雙列分離、34／40 來源排除，
+非相鄰支援亦已處理。mixed K2 各一接點型已排除，共鄰端點型的 w 側 t=2 已分離；一般出口仍未證。
 
 ## 1. 目前做到哪裡
 
@@ -55,12 +56,8 @@ t=1 與 t=0 新結果均為紙面＋外部定理＋Python，未新增 Lean theor
 [No-spoke 外部連通](c5_no_spoke_exterior.md) 已排除其餘四種 t=0 分拆；
 多分量的另一原分量提供實際 z–B 路徑，各分量皆 K4-free；(5) 另用四列奇偶障礙。
 
-(2,2,1) 的 1,952 筆必要支援經 T4 篩選剩 616 筆，
-[原外部路徑 K5](c5_no_spoke_path_minor.md) 再於 q 下排除 500 筆，含 record 599。
-剩 116 筆原有 12 個未決查詢：首橋共用 β 解決 record 84／1472 的
-p₁、408／1561 的 p₂；固定三框弧解決 127／419／1390／1564 的雙列。
-新增 12 個延拓、0 來源排除，**116 筆全 A/A、0 查詢未決**。
-完整資料見 [完成表](../artifacts/c5_no_spoke_first_bridge/support_table.md)。
+(2,2,1) 經來源 K5 排除 500 筆、首橋／固定框弧補齊最後 12 查詢，
+**116 筆全 A/A、0 查詢未決**；見 [完成表](../artifacts/c5_no_spoke_first_bridge/support_table.md)。
 
 **相鄰雙 root 第一輪已完成。** [完整有序色對介面](c5_adjacent_degree5_interfaces.md)
 固定同一 minimal q-core，z、w 相鄰且完整 degree=5，其餘內點 degree=4；
@@ -69,10 +66,26 @@ p₁、408／1561 的 p₂；固定三框弧解決 127／419／1390／1564 的�
 已證刪任一 E_C 邊使該原分量 R_C 全開，其他分量與 root 條件仍保留；
 root-spoke 刪除要求新色條帶中的共同見證，各 C 要有私有非對角色對。
 任意多步刪邊另有固定來源精確式。紙面＋Python 控制，未新增 Lean theorem。
-**下一窄入口：** 用對角見證、私有色對與 root-spoke 條件，限制同一原接線
-在指定 p 下的完整關係；先研究共鄰點分量與單 root 分量的互動。
-尚無雙 root 分離或平面覆蓋，抽象關係不是可實現性證書；degree≥6、
-非相鄰雙 root 及更多高 degree 點保留，不重開唯一 degree-5 枚舉。
+
+相鄰雙 root 的九組後續成果整理如下；均保留原分量、接點身份、實際支援與環序。
+
+| 已完成的子類／化約 | 結果與證據入口 |
+| --- | --- |
+| 唯一 mixed singleton 必要化約 | [單 root 消去與容量](c5_adjacent_degree5_shared_singleton.md)：每側 t≤1，(3) 由原 x 路徑 K5 排除，只剩 (2)／(2,1)；375 筆關係保留 240 筆 |
+| 非相鄰 x 支援 | [同側限制](c5_adjacent_degree5_singleton_sectors.md)：20 位置排除 14，03 唯一保留側只缺 q；5 個相鄰長弧由下列完成 |
+| 01／23、12 長弧 | [01／23](c5_adjacent_degree5_singleton_long_arc.md) 的 692 筆排除 356＋40；[12](c5_adjacent_degree5_singleton_middle_arc.md) 的 728 筆排除 320＋112；各保留 296 筆、592 查詢全接受 |
+| 34／40 長弧 | [來源排除](c5_adjacent_degree5_singleton_end_arc.md)：每位置 152 筆，K5／T4 排除 120／32；出口第七類涵蓋 singleton 全部支援 |
+| 唯一 mixed K2 各一接點型 | [必要化約](c5_adjacent_degree5_mixed_edge.md) 的 576 筆由 [原四環次序](c5_adjacent_degree5_mixed_edge_order.md) 排除 552＋24，全部 disk 來源排除，不需 T4 |
+| K2 共鄰端點化約 | [完整關係與 minimality](c5_adjacent_degree5_mixed_edge_shared.md)：z 無 spoke、唯一二接點 unary，w 飽和；原 288 筆／9,312 schemas 保持 |
+| 共鄰端點 t_w=2、(1) | [原 diamond 外側支援](c5_adjacent_degree5_mixed_edge_shared_t2.md)：原 18 筆接合為 38 筆必要支援，76 查詢全接受、不需 T4；出口新增第八類 |
+
+任意大小化約為紙面＋外部定理，Python 重播有限證書；必要表未證 disk
+可實現性，未新增 Lean theorem。完整 Σ 的出口接合仍明用來源雙缺失與刪邊繼承。
+
+**下一窄入口：** t_w=1、(2) 的 36 筆；保留兩份二接點完整關係、原 diamond
+外側環序與 w-spoke，再用飽和雙禁色的原 bridge／逐塊支援處理同圖跨列。
+無 mixed、其他較大／多 mixed、一般雙 root、degree≥6、非相鄰雙 root
+及更多高 degree 點保留；不重開唯一 degree-5 枚舉。
 
 ## 3. 其他路線的現況
 
@@ -105,11 +118,14 @@ R27 末端各一臂及 [R30](c5_degree5_middle_cycle_minors.md) 中間不同二�
 
 ## 5. 重播入口與驗證範圍
 
-雙 root 第一輪的最小重播如下；唯一 degree-5 完成輪的驗證見
-[首橋／框弧紀錄](history/2026-09-28-no-spoke-first-bridge.md)，先前六組發布見
-[整理紀錄](history/2026-09-28-progress-publish.md)。
+接手 t_w=1 前的最小重播如下；九組成果與十份 checker 的整體發布驗證見
+[2026-09-28 發布紀錄](history/2026-09-28-adjacent-progress-publish.md)。
 
 ```bash
+python3 scripts/c5_adjacent_degree5_mixed_edge_shared_t2.py --check
+python3 scripts/c5_adjacent_degree5_mixed_edge_shared.py --check
+python3 scripts/c5_adjacent_degree5_singleton_long_arc.py --check
+python3 scripts/c5_adjacent_degree5_shared_singleton.py --check
 python3 scripts/c5_adjacent_degree5_interfaces.py --check
 lake build
 python3 scripts/check_docs.py
@@ -118,10 +134,7 @@ git diff --check
 ```
 
 雙拒絕 atlas 與 Lean axiom audit 另見 [分類報告](c5_two_rejection_proof_zh.md) 與 [Lean 工具](lean_two_rejection_tools.md)。
-接合輪重跑範圍見 [研究紀錄](history/2026-09-24-single-sided-exit.md)；
-本輪驗證見 [雙 root 介面紀錄](history/2026-09-28-adjacent-degree5-interfaces.md)；
-Gallai 結構推論另核對外部 degree-list 定理。唯一 degree-5 各表、雙拒絕
-atlas、R 系列大覆蓋、抽象 profiles／閉包及 Lean axiom audit 未於本輪重跑；
-發布狀態以即時 Git 為準。
-歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。
+本次已重播全部相鄰雙 root checker；唯一 degree-5 完成表、雙拒絕 atlas、
+R 系列大覆蓋、抽象 profiles／閉包及 Lean axiom audit 未於本次重跑。
+發布狀態以即時 Git 為準；歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。
 早期交接見 [HANDOFF_HISTORY](HANDOFF_HISTORY.md) 與 [2026-09-22 快照](HANDOFF_2026-09-22.md)；歷史待辦與 Git 狀態均非現況。

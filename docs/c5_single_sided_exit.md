@@ -6,6 +6,19 @@ docgraph:
 ---
 # 五目標排除到 single-sided exit：接合定理與一般化界線
 
+後續（2026-09-28）：[共鄰端點 K2 的 w 側兩條 spoke](c5_adjacent_degree5_mixed_edge_shared_t2.md)
+完成任意大小指定雙列分離，不需 T4；38 筆必要支援的 76 個查詢全接受。
+§1 新增第八類，§2 接合來源雙缺失與刪邊繼承；其餘 w 分拆與一般出口仍保留。
+
+後續（2026-09-28）：[唯一 mixed K2 的原四環次序](c5_adjacent_degree5_mixed_edge_order.md)
+已排除兩 root 各一接點的全部 disk minimal q-core，不需 T4。§5 的
+失敗核心限制已加入此結果；當輪七類條件式出口保持原範圍，現況以上段為準。
+
+後續（2026-09-28）：[34／40 長弧來源排除](c5_adjacent_degree5_singleton_end_arc.md)
+完成唯一 mixed 共鄰單點的全部支援；§1 第七類已移除 x 支援限制。
+01／12／23 指定雙列分離及非相鄰支援結果一併接合；較大／多 mixed
+分量及一般雙 root 仍保留，未新增 Lean theorem。
+
 後續（2026-09-28）：[no-spoke 首橋與固定框弧](c5_no_spoke_first_bridge.md)
 完成 (2,2,1) 剩餘 12 個指定列，116 筆保留配置全接受雙列，來源排除仍為
 500 筆。§1 第六類擴至全部 t=0，新增 §3f；唯一 degree-5 全部分支
@@ -72,7 +85,12 @@ degree-5 只剩 t=0 六型，一般定理仍未證。
 5. 恰一個有效內點 z 完整 degree=5，其餘完整 degree=4，z 恰有一個
    boundary 鄰居，不限制 H−z 的接點分拆；
 6. 恰一個有效內點 z 完整 degree=5，其餘完整 degree=4，z 沒有
-   boundary 鄰居，不限制 H−z 的接點分拆。
+   boundary 鄰居，不限制 H−z 的接點分拆；
+7. 恰兩個有效內點 z、w 完整 degree=5 且相鄰，其餘完整 degree=4；
+   H−{z,w} 的唯一 mixed 分量是共鄰 singleton {x}，不限制其 boundary 支援；
+8. 恰兩個有效內點 z、w 完整 degree=5 且相鄰，其餘完整 degree=4；
+   H−{z,w} 的唯一 mixed 原分量為 K2={u,v}，root incidences 恰為
+   zu、zv、wu，且 w 恰有兩個 boundary 鄰居。
 
 minimality 使同一內點的 q-spokes 異色，q 只用三色，故唯一 degree-5
 的 t≤3。第二、四、五、六類因此涵蓋全部唯一 degree-5 核心。
@@ -103,6 +121,20 @@ boundary spokes 在 q 下顏色互異。第一種核心由
 已有 Σ(M)=Ω\{q}；第三種由
 [未接內點引理](c5_unattached_boundary.md#1-不依賴-degree-或-disk-的改色引理)
 同樣得到 Σ(M)=Ω\{q}。第二種由下文 §2–3 處理，第四種見 §3a。
+
+第七種先將整張來源與 q 共同對齊為 q=01012。
+[同側限制](c5_adjacent_degree5_singleton_sectors.md) 排除不合 T4／minimality
+的位置，非相鄰 03 唯一保留側因 b4 未接而只缺 q；
+[34／40 排除](c5_adjacent_degree5_singleton_end_arc.md#4-整張來源反射與全部-singleton-出口)
+再排除最後兩個相鄰支援。其餘由 [01／23](c5_adjacent_degree5_singleton_long_arc.md#5-全來源反射與出口接合)
+及 [12 分離](c5_adjacent_degree5_singleton_middle_arc.md#4-自反射核對與條件式出口)
+接受 p₁=01021、p₂=01212；對齊後的缺失 p 必為其中一列。來源雙缺失與
+刪邊繼承遂給 Σ(M)=Ω\{q}，再用下文 §4 的刪邊序列；不由兩列接受單獨推完整 Σ。
+
+第八種同樣共同對齊 q=01012，保持共鄰 u、原 chord zu 與全部附件。
+[兩條 spoke 分離](c5_adjacent_degree5_mixed_edge_shared_t2.md#5-反射出口接合與停止點)
+不需 T4 就接受 p₁、p₂，故接受對齊後的 p。來源雙缺失與刪邊繼承再給
+Σ(M)=Ω\{q}，可用同一 §4 序列；不要求必要支援表的每筆資料可實現。
 
 將 q 對齊為 01012，稱其三色 A、B、C，第四色 D。
 z 有三條 spokes，顏色互異，故 A_z(q)={D}；它還有恰兩個內鄰點。
@@ -276,6 +308,17 @@ q-obstruction 都仍拒絕 p，**都必碰到全部五個 boundary 頂點**，
 五目標排除解決 t=3、(2)；§3a 完成 t=2 的 (3)、(2,1)；§3b 再完成
 t=1 的 (2,1,1)、(2,2)；§3c–3d 排除 (3,1)、(4)，完成全部 t=1；
 no-spoke 四型排除加 §3e–3f 完成全部 t=0。
+若恰有相鄰的兩個 degree-5 點，失敗側核心亦不能屬第七類唯一 mixed
+singleton 子類，無論 x 的 boundary 支援；亦不能以原 uv 為唯一 mixed
+分量且 root incidence 恰為 zu、wv。[原四環次序排除](c5_adjacent_degree5_mixed_edge_order.md)
+先用支援跨度排除 552／576 筆必要資料，再以飽和環序排除剩餘 24 筆，
+證明後一接線型的 disk minimal q-core 不存在，不需 T4。這是來源排除，
+不須新增空的核心類別。[K2 共鄰端點型](c5_adjacent_degree5_mixed_edge_shared.md)
+P*ᶻ={u,v}、P*ʷ={u} 另已迫使 z 無 spoke、唯一二接點 unary、w 容量飽和；
+原 288 筆是必要關係資料；其中 [w 側 t=2、(1)](c5_adjacent_degree5_mixed_edge_shared_t2.md)
+已由支援／環序與跨列上界證雙列，故失敗側核心亦不能屬第八類。
+其餘四種 w 分拆的分離仍未證，必要表也未證可實現性。
+其他 mixed 與更一般雙 root 接線仍保留。
 
 要完成使用者要求的**無條件一般 single-sided exit 定理**，仍須證明
 每個候選 A 來源 G、每個定向缺失對 (p,q)，至少存在一個接受 p 的
@@ -330,3 +373,17 @@ completion 完成 (2,1,1,1) 指定分離。48 筆及實際驗證見
 接回全部唯一 degree-5 核心；12 個新延拓、1,536 份 minor 與實際重播見
 [首橋／框弧紀錄](history/2026-09-28-no-spoke-first-bridge.md)。證據為任意
 大小紙面＋外部 degree-list＋Python，未新增 Lean theorem。
+
+2026-09-28 的第七類使用原三角形外側次序、原 x 路徑 K5 與完整禁色
+集合的接合上界；01／23、12 各自保留 296 筆必要配置、592 查詢全接受。
+實際驗證見 [01／23 紀錄](history/2026-09-28-adjacent-singleton-long-arc.md)
+與 [12 紀錄](history/2026-09-28-adjacent-singleton-middle-arc.md)；未 Lean 化。
+
+同日 [34／40 排除](c5_adjacent_degree5_singleton_end_arc.md) 將第七類擴至
+全部 x 支援：兩位置各 152 筆，K5／T4 各排除 120／32，無保留來源。
+任意大小化約與原圖 minor 仍為紙面＋外部定理，有限重播見
+[本輪紀錄](history/2026-09-28-adjacent-singleton-end-arc.md)；未 Lean 化。
+
+同日第八類新增原 diamond 外側的支援化約與完整禁色集合上界接合；
+38 筆、76 個指定查詢及實際驗證見
+[兩條 spoke 紀錄](history/2026-09-28-adjacent-mixed-edge-shared-t2.md)。不需 T4，未 Lean 化。

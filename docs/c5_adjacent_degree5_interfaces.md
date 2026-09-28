@@ -9,6 +9,18 @@ docgraph:
 ---
 # 相鄰雙 degree-5：完整有序色對介面與逐類刪邊
 
+後續整理（2026-09-28）：[唯一共鄰單點化約](c5_adjacent_degree5_shared_singleton.md)
+與 [同側限制](c5_adjacent_degree5_singleton_sectors.md) 已接上
+[01／23](c5_adjacent_degree5_singleton_long_arc.md)、[12](c5_adjacent_degree5_singleton_middle_arc.md)
+雙列分離及 [34／40 排除](c5_adjacent_degree5_singleton_end_arc.md)，
+唯一 mixed singleton 的全部支援已接回條件式出口。
+[唯一 mixed K2 各一接點型](c5_adjacent_degree5_mixed_edge.md) 則由
+[原四環次序](c5_adjacent_degree5_mixed_edge_order.md) 全部作 disk 來源排除。
+[共鄰端點型](c5_adjacent_degree5_mixed_edge_shared.md) 的原 288 筆必要資料保持，
+其中 [w 側 t=2、(1)](c5_adjacent_degree5_mixed_edge_shared_t2.md) 已證雙列、
+加入出口第八類，不需 T4。其餘 w 分拆及一般雙 root 仍保留，必要表未證
+實現性，未 Lean 化。下文保留第一輪語境；目前停止點見 [HANDOFF](HANDOFF.md)。
+
 2026-09-28。接續 [list-critical 基礎](c5_weak_list_cores.md) 與
 [單 root 完整介面](c5_degree5_interfaces.md)。本輪完成任意大小的精確接合、
 root-edge 對角強迫、degree-4 分量解除，以及逐類 edge-minimality 條件。

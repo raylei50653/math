@@ -1,13 +1,33 @@
 # degree-5／R 系列導讀：介面、排除範圍與保留缺口
 
-後續（2026-09-28）：[相鄰雙 degree-5 介面](c5_adjacent_degree5_interfaces.md)
-完成完整有序色對接合、root-edge 對角強迫與逐類刪邊 minimality；
-雙 root 的來源跨列限制與指定分離仍待研究，未重跑唯一 degree-5 枚舉。
+後續（2026-09-28）：[唯一 mixed 原 K2](c5_adjacent_degree5_mixed_edge.md) 的
+各一接點型已由 [原四環外側次序](c5_adjacent_degree5_mixed_edge_order.md)
+作 disk 來源排除：576 筆必要資料中 552 筆超周長，24 筆飽和次序矛盾，
+不需 T4、大小不限。[共鄰端點型](c5_adjacent_degree5_mixed_edge_shared.md) 另已
+完成完整關係／逐邊 minimality，強迫 z 無 spoke、唯一二接點 unary；w 容量
+飽和，原 288 筆必要資料保持。[w 側兩條 spoke](c5_adjacent_degree5_mixed_edge_shared_t2.md)
+已完成 t=2、(1) 的支援／環序與雙列分離，加入出口第八類；其餘四種
+w 分拆仍保留。必要資料未證 disk 實現，未新增 Lean theorem。
+
+後續（2026-09-28）：[唯一共鄰單點 01／23 長弧](c5_adjacent_degree5_singleton_long_arc.md)
+以三角形外側次序及原 x 路徑 K5 完成指定雙列分離，加入條件式出口；
+[12 長弧](c5_adjacent_degree5_singleton_middle_arc.md) 亦已完成並接回出口，
+[34／40 來源排除](c5_adjacent_degree5_singleton_end_arc.md) 再完成唯一 mixed
+共鄰單點的全部支援。紙面＋外部定理＋Python，未 Lean 化。
+
+上述成果依賴 [相鄰雙 degree-5 介面](c5_adjacent_degree5_interfaces.md)、
+[唯一共鄰單點化約](c5_adjacent_degree5_shared_singleton.md) 與
+[同側限制](c5_adjacent_degree5_singleton_sectors.md)；原同色 singleton 障礙
+及五個相鄰長弧位置均已由後續處理。一般雙 root 分離仍未證。
 
 後續（2026-09-28）：[no-spoke 首橋與固定框弧](c5_no_spoke_first_bridge.md)
 完成 (2,2,1) 的最後 12 查詢，116 筆全部雙列已證。唯一 degree-5 全部
 核心已接回 [條件式單側出口](c5_single_sided_exit.md)；這不補完 R31 的
 指定來源 minor 構造或任意來源的完整 Σ。下文 R 系列表格保留當輪範圍。
+
+本次整體驗證見 [九組成果發布紀錄](history/2026-09-28-adjacent-progress-publish.md)。
+目前研究優先序只見 [HANDOFF](HANDOFF.md)；以下較早摘要中的「目前／未決」
+均為當輪數字，唯一 degree-5 的現況以上述完成結果為準。
 
 後續（2026-09-27）：[root 守恆全表掃描](c5_single_spoke_root_sweep.md) 將通用
 單接點條件套用到 114 筆，新增 14 個接受查詢；目前 80 筆兩列已證、34 查詢未決。
