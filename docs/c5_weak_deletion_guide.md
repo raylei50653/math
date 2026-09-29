@@ -26,38 +26,44 @@ minimal obstruction 路線：先完成 single-sided exit 的可處理核心，�
 | 相鄰雙 root／唯一 mixed K2 | 全部九組接線完成；區分雙列分離與來源排除 | [四 incidence 收尾](c5_adjacent_degree5_mixed_edge_k4.md) |
 | No-mixed 全十五類 | 八類來源排除、七類雙列分離，原 3,548 接合全部覆蓋 | [十五類總覽與證據總表](c5_no_mixed_span_budget.md) |
 | No-mixed 通用 source 結構 | m+s+a≤5；至少一條 root-spoke、無 source 重疊、至多一份飽和二禁色分量 | [側跨度紙面推導](c5_no_mixed_span_budget.md#2-從原圖導出框弧成本) |
-| No-mixed 跨列分離 | 2,082 份保留必要支援的 4,164 target 全接受；尚無取代七類證書的共同機制證明 | [完整關係及通用化界線](c5_no_mixed_span_budget.md#4-通用結構的兩層及尚未統一的部分) |
-| No-mixed 搬運與精確介面 | 紙面證成每 root 至多一份不可搬運分量，雙不可搬運只可能 AA/AB/AC；全部候選介面無損，守恆不升 pair 仍依七類表，共同 repair 未證 | [逐 root 界及獨立重播](c5_no_mixed_hypothesis_audit.md#31-逐-root-不可搬運界) |
+| No-mixed 跨列分離 | 2,082 份必要支援的 4,164 target 全接受；既有局部篩選保留較強上界；後續已給免查表存在性證明 | [局部規則與覆蓋](c5_no_mixed_local_screen.md) |
+| No-mixed 搬運與精確介面 | 紙面證成每 root 至多一份不可搬運分量，雙不可搬運只可能 AA/AB/AC；全部候選介面無損，守恆不升 pair 由後續免表證成，逐染色 repair 未構造 | [逐 root 界及獨立重播](c5_no_mixed_hypothesis_audit.md#31-逐-root-不可搬運界) |
+| No-mixed 統一局部篩選 | 2,240 增長候選排除 2,208，32 份不影響 R；增長排除的免表完備性由後續三弧位置證成 | [增長、端點與全路徑交換](c5_no_mixed_local_screen.md) |
+| No-mixed 無增長共同分離 | 短側弧與未見兩色交換不變性，免查表地排除同 singleton；7,848 joins 回歸通過 | [無增長紙面證明](c5_no_mixed_no_growth.md) |
+| No-mixed 增長完備性／共同分離 | 三個側弧位置直接指定框弧，排除所有影響 R 的增長；指定 p₁、p₂ 存在性分離已免查表證成 | [增長完備性](c5_no_mixed_growth_completion.md) |
 | 更一般 roots／出口 | degree≥6、多 degree-5、非樹／非相鄰 roots 與共同出口仍開放 | [Root 預算](c5_root_degree_excess.md)、[一般出口界線](c5_single_sided_exit.md) |
 
 先讀候選與 minimal obstruction，再讀條件式出口的適用範圍，最後接到本線停止點。
 
 ## 3. 精確停止點與下一個窄問題
 
-**本線精確停止點：no-mixed 全分類完成，並已證成每 root 至多一份不可搬運
-原分量，取得以 D_p 為核心的精確共同介面。**
-[總覽](c5_no_mixed_span_budget.md)將十五類分成八類來源排除、七類雙列分離，
-並給 source 必要式 m+s+a≤5；A/B/C/D/E 側成本為 2/2/3/4/3。
-原 3,548 IDs 全覆蓋；5,842 份必要支援不是來源圖，4,164 次原 target
-接受不記成本輪新增。此條件不保證 disk 實現，也不取代跨列證書。
+**本線精確停止點：no-mixed 指定 p₁、p₂ 的共同存在性分離已免查
+必要支援表證成。新紙面證明未 Lean 化；逐染色建構式 repair、完整 Σ
+與一般出口仍未證。**
 
-[搬運與介面驗證](c5_no_mixed_hypothesis_audit.md) 沿用共同同序 lifts 與
-側跨度下界，用紙面證明不可搬運原分量跨度至少二、每 root 至多一份；
-雙不可搬運只可能 AA、AB、AC。把全部可搬運關係及原 spokes 吸收後，
-每側 E_r=R_r∖F_Cr(p)，沒有未知分量時 E_r=R_r。這不依 44 筆統計，
-也不證支援實現。A_h 含所有碰變動框點的分量，兩份仍可接同一 root。
-4,164 查詢／11,096 joins 的完整式、A_h 式、D_p 式逐筆相同；434 個舊
-失敗 joins 分雙空／只空 z／只空 w／同 singleton 為 0／184／192／58。
-守恆不升 pair 的 1,780 候選證書仍依七類表；沒有新增 target 接受。
+[Source 跨度](c5_no_mixed_span_budget.md) 給兩側長度各至少二、和至多五，
+及 source 禁色無重疊。[無增長定理](c5_no_mixed_no_growth.md)利用短側弧、
+單現點及未見兩色交換不變性，免表排除無增長時的同 singleton。
+[增長完備性](c5_no_mixed_growth_completion.md)再證：正規化至 p₂ 後，
+增長支援必含 b2 及 b0／b4，所在側只能是 A/B，側弧限為 234、1234、4012。
+由 source 幾何直接給原外路及固定框弧，守恆分支至多剩一個 β，再以
+整條路徑交換排除；非守恆有害 pair 由原端點聯集排除。其餘 pair
+皆不影響 R，直接有異色 root pair。
 
-若要繼續**整理通用證明**，窄問題是精確搬運全部可搬運原分量後，對
-D_p 每側至多一份未知完整關係，證明共同相容規則，同時處理守恆與非守恆禁色。
-AA54 的全路徑 palette 交換及 AB22 的非守恆端點仍是必要控制；幾何
-證據仍可需要外部原分量路徑。共同 repair 與一般機制完備性未證。
+新 checker 重播 2,240 增長候選及 11,096 joins；固定配方排除 2,010
+個局部 pair，保留 230 個無害 pair，8,078 個保留 joins 全有異色 pair。
+原 434 個失敗全部排除；AA54 全路徑交換、AB22 非守恆原端點仍保留。
+前層較強篩選的 2,208 排除／32 保留未改寫；新配方多保留的 198 份
+已證無害，並非新增 target 接受。必要支援仍不代表來源可實現性。
 
-若要**擴大圖類**，原下一入口仍是相鄰雙 degree-5 的較大 mixed 原分量：
-先由[完整有序色對介面](c5_adjacent_degree5_interfaces.md)核對超出
-singleton／K2 的必要接點與 minimality 條件，尚未建立其支援表。
+若沿同一主線繼續，下一窄題是**較大 mixed 原分量的容量與接點化約**：
+先在固定 q、[完整有序色對介面](c5_adjacent_degree5_interfaces.md)中，
+抽出超出 singleton／K2 的最小剩餘
+原分量形狀與必要 root incidences，不先建立新的全面支援枚舉。
+No-mixed 的有害增長完備性不再是未解項目。若要形式化，須另外拆分
+色集合／整列雙射與尚未 Lean 化的 disk／Gallai 前提。
+
+較大 mixed 原分量尚未建立支援表。
 多 mixed、非相鄰 roots、多 degree-5、degree≥6 與一般／共同出口仍保留。
 完整 Σ 的出口接合仍明用來源雙缺失與刪邊繼承。
 
@@ -69,6 +75,9 @@ singleton／K2 的必要接點與 minimality 條件，尚未建立其支援表�
 | Root 色相容搬運／局部 preimages | H⊆G⊆E；全部可搬運時 G=E，必保留同一 target 色框 | [搬運引理](c5_no_mixed_hypothesis_audit.md#2-完整搬運的充分條件以及較弱版本) |
 | 單框點精確化約 | 固定外部完整關係後至多兩份未知原分量；不刪外部幾何路徑 | [單框點介面](c5_no_mixed_hypothesis_audit.md#3-單框點化約與精確共同介面) |
 | 逐 root 不可搬運界與 D_p 介面 | 各 root 至多一份未知 target 關係，雙不可搬運只可能 AA/AB/AC；不是固定一份 source 染色後的單分量 repair | [紙面界與精確搬運](c5_no_mixed_hypothesis_audit.md#31-逐-root-不可搬運界) |
+| 禁色增長的共同局部篩選 | 守恆 palettes／非守恆原端點規則加 R 不相交條件；後續三弧位置補齊影響 R 的免表完備性 | [統一規則及界線](c5_no_mixed_local_screen.md#3-同一局部規則的兩個分支) |
+| 無增長共同分離 | 短側弧 singleton 限為中間色或第四色；對側兩個未見色的交換不變性排除同 singleton | [短側引理與定理](c5_no_mixed_no_growth.md#4-三色-c5-的唯一單現點與無增長定理) |
+| 增長完備性與共同分離 | 三弧位置固定配方排除有害增長，與無增長定理合成指定 p₁、p₂ 的存在性分離 | [位置引理及合成](c5_no_mixed_growth_completion.md#4-剩下的-pair-必不影響-r並完成共同分離) |
 | Root degree 超額預算 | source q 的 no-mixed minimal core 有 D+O+κ=degree−4；不是 target 等式 | [Root 預算](c5_root_degree_excess.md) §1–3 |
 | 雙 root source 側跨度 | m+s+a≤5，八類來源排除；不能將成本未超額視為來源存在 | [十五類總覽](c5_no_mixed_span_budget.md) §2 |
 | 樹上 edge-minimal list obstruction | root 樹有 κ=0，lists 由 incident 邊色完整描述；不能把 source 邊色直接傳到 p | [Root 預算](c5_root_degree_excess.md) §4–5 |
@@ -79,7 +88,7 @@ singleton／K2 的必要接點與 minimality 條件，尚未建立其支援表�
 
 目前已證的高階 source 結構是 [Root 預算](c5_root_degree_excess.md)：
 D+O+κ=degree−4，以及樹骨架 κ=0。**尚未證**的是：
-「交換或幾何阻斷」機制的一般完備性，以及任意 degree-5 root 樹的跨列分離。
+超出本文 no-mixed 圖類的「交換或幾何阻斷」完備性，以及任意 degree-5 root 樹的跨列分離。
 相鄰雙 degree-5 的 no-mixed 分拆已全部由雙列分離或來源排除涵蓋。
 
 已關閉的主線家族：唯一 degree-5 全部分支、唯一 mixed singleton 全支援、
@@ -93,23 +102,29 @@ Lean 普通證明與 Lean `native_decide` 不互相代替。必要支援／minor
 
 ## 4. 重播入口與驗證範圍
 
-最近逐 root 輪重跑新獨立 checker（一般及 `PYTHONHASHSEED=17`）、文件／
-DocGraph 檢查及既有 Lean build；確切命令與未重跑範圍見
-[逐 root 驗證紀錄](history/2026-09-29-no-mixed-root-transport.md)。最小重播入口：
+最近增長完備性輪重跑新 checker（一般及 `PYTHONHASHSEED=17`）、前層
+no-growth／local-screen／root-transport、文件／DocGraph 與既有 Lean build；
+確切命令及未重跑範圍見[增長紀錄](history/2026-09-29-no-mixed-growth-completion.md)。最小入口：
 
 ```bash
+python3 scripts/c5_no_mixed_growth_completion.py --check
+PYTHONHASHSEED=17 python3 scripts/c5_no_mixed_growth_completion.py --check
+python3 scripts/c5_no_mixed_no_growth.py --check
+python3 scripts/c5_no_mixed_local_screen.py --check
 python3 scripts/c5_no_mixed_root_transport.py --check
-PYTHONHASHSEED=17 python3 scripts/c5_no_mixed_root_transport.py --check
 python3 scripts/check_docs.py
 python3 tools/docgraph check
 git diff --check
 ```
 
-新 checker 只讀七類既有證書，獨立核對搬運、側弧配置、候選域及三介面
-逐候選相等，保留 434 個舊失敗 joins 的原排除入口；不代替原幾何排除
-checker，也不把 snapshot 狀態當成本輪新 target 定理。十五類完整
+增長 checker 重播紙面指定框弧及原外路，不搜尋舊框弧規則；
+無增長 checker 只用標準函式庫，獨立重建原共同側弧、候選域及短側
+論證步驟；不讀舊接受 flags。局部 checker 重算全部增長候選，重用
+既有支援穩定子、固定框弧及 minor 控制函式，不讀取舊 target 接受或
+排除 flags 作判定。Root-transport
+獨立核對搬運、側弧配置、候選域及三介面逐候選相等。十五類完整
 重播屬[前輪跨度整理](history/2026-09-29-no-mixed-span-budget.md)，不是
-最近逐 root 輪重跑。舊 (2,2) 文件 SHA 差異及內容重播見
+最近增長完備性輪重跑。舊 (2,2) 文件 SHA 差異及內容重播見
 [缺額型紀錄](history/2026-09-29-adjacent-no-mixed-t2-t0-pairs.md)。
 
 雙拒絕 atlas 與 Lean axiom audit 另見 [分類報告](c5_two_rejection_proof_zh.md) 與 [Lean 工具](lean_two_rejection_tools.md)。

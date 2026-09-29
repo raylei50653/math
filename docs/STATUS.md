@@ -38,7 +38,10 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [No-mixed 搬運與介面驗證](c5_no_mixed_hypothesis_audit.md) | 沿用共同 lifts 與側跨度，紙面證成每 root 至多一份不可搬運分量；4,164 查詢／11,096 joins 的完整、A_h、D_p 介面相同，434 舊失敗 joins 互斥分組；守恆不升 pair 仍依七類表，共同 repair 未證，未 Lean 化 |
+| [No-mixed 增長完備性與共同分離](c5_no_mixed_growth_completion.md) | 三個側弧位置直接排除影響 R 的增長；結合無增長定理免查支援表地完成指定 p₁、p₂ 分離，未 Lean 化，逐染色 repair 未構造 |
+| [No-mixed 無增長共同分離](c5_no_mixed_no_growth.md) | 短側弧與未見兩色交換不變性，免查支援表地證明無增長時必有異色 root pair；7,848 joins 回歸通過；增長缺口由後續共同分離涵蓋，未 Lean 化 |
+| [No-mixed 統一局部增長篩選](c5_no_mixed_local_screen.md) | 同一守恆／非守恆規則排除 2,208 個局部 pair，32 份不影響 R；重建原 434 失敗排除。後續無增長及增長位置引理已免表完成共同分離，原較強篩選數字保留 |
+| [No-mixed 搬運與介面驗證](c5_no_mixed_hypothesis_audit.md) | 沿用共同 lifts 與側跨度，紙面證成每 root 至多一份不可搬運分量；4,164 查詢／11,096 joins 的完整、A_h、D_p 介面相同，434 舊失敗 joins 互斥分組；守恆不升 pair 及指定雙列共同分離由後續免表證成，逐染色 repair 未構造，未 Lean 化 |
 | [No-mixed 十五類與側跨度預算](c5_no_mixed_span_budget.md) | 紙面必要式 m+s+a≤5 統一八類來源排除；七類沿用雙列分離。5,842 支援／4,164 target 的跨表稽核，未證實現或一般機制完備性，未 Lean 化 |
 | [D–E 五正跨度與雙飽和原路徑排除](c5_adjacent_degree5_no_mixed_de.md) | 48 必要支援全 source K5、120 空纖維，含交換型；十五類／3,548 原接合全覆蓋，0 target，不需 T4，未 Lean 化 |
 | [D–D 四飽和原分量與框邊排除](c5_adjacent_degree5_no_mixed_dd.md) | 352 必要支援全 source K5；80 空纖維，0 target，不需 T4，未 Lean 化 |
@@ -230,6 +233,7 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | (2,2) record 87 的「singleton/pair 相容性未證」 | [首橋相容性](c5_single_spoke_first_bridge.md) 以 q 證書同一首橋 palette 綁定兩端實際支援，β=0／2 均給 K5；p₂ 已證，未排除來源，舊 pair 介面不變 |
 | (2,2) record 16 的「p₁ 未決」 | [跨列 residual](c5_single_spoke_cross_row.md) 迫使每塊實際接 b1、b2，原 spoke 完成 K5 反證；已證指定列延拓，未排除來源或求完整 Σ |
 | (2,2) record 17 的「缺第三外部落點／雙列未決」 | [兩框弧 K5](c5_single_spoke_two_arc.md) 把另一原分量納入 Z，每塊跨同一份兩弧分割即可；兩列均延拓，不需 bridge 長度上界，未排除 record 17 來源或求完整 Σ |
+| No-mixed 的「影響 R 的增長完備性仍依表」 | [三個側弧位置與固定配方](c5_no_mixed_growth_completion.md) 已免查支援表證成，結合無增長定理完成指定雙列存在性分離；逐染色 repair、一般出口及完整 Σ 仍未證 |
 | (2,2) record 15 的「p₂ 未決」 | [frame-arc K5](c5_single_spoke_frame_arc.md) 在 target 拒絕下重建 residual 穩定子，迫使每塊接 b0、b3，配 C0 的 z–b1 路徑證 p₂ 延拓；不是來源排除或完整 relation 分類 |
 | (2,2) record 104 的「補弧外部接合未證」 | [外部路徑接合](c5_single_spoke_two_two_external.md) 已由另一原分量的實際路徑完成；當輪再排除 210 筆、54 筆 A/A 保留；後續框弧層另有來源排除與 target 延拓，見新報告 |
 | (2,2)／dual surgery 的「record 110 尚未排除」 | [路徑塊支援 K5](c5_single_spoke_two_two_minor.md) 已在原來源圖排除；原必要表及 surgery 證書保留各自當輪語境 |
@@ -272,6 +276,9 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-09-29：no-mixed 增長完備性與免表共同分離](history/2026-09-29-no-mixed-growth-completion.md)
+- [2026-09-29：no-mixed 無增長短側弧與共同 singleton 排除](history/2026-09-29-no-mixed-no-growth.md)
+- [2026-09-29：no-mixed 統一局部增長篩選與非守恆原端點](history/2026-09-29-no-mixed-local-screen.md)
 - [2026-09-29：逐 root 不可搬運紙面界與精確接合介面](history/2026-09-29-no-mixed-root-transport.md)
 - [2026-09-29：三 agent 驗證搬運、單框點與守恆 palettes](history/2026-09-29-no-mixed-hypothesis-audit.md)
 - [2026-09-29：no-mixed 十五類整理與共同側跨度](history/2026-09-29-no-mixed-span-budget.md)
