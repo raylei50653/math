@@ -31,40 +31,40 @@ minimal obstruction 路線：先完成 single-sided exit 的可處理核心，�
 | No-mixed 統一局部篩選 | 2,240 增長候選排除 2,208，32 份不影響 R；增長排除的免表完備性由後續三弧位置證成 | [增長、端點與全路徑交換](c5_no_mixed_local_screen.md) |
 | No-mixed 無增長共同分離 | 短側弧與未見兩色交換不變性，免查表地排除同 singleton；7,848 joins 回歸通過 | [無增長紙面證明](c5_no_mixed_no_growth.md) |
 | No-mixed 增長完備性／共同分離 | 三個側弧位置直接指定框弧，排除所有影響 R 的增長；指定 p₁、p₂ 存在性分離已免查表證成 | [增長完備性](c5_no_mixed_growth_completion.md) |
+| 較大 mixed 容量／最小接點型 | 任意大小逐欄容量、unary 無重疊及缺額至多一，收成十八側型；各一 incidence 至多兩禁對；唯一 mixed 三點形完成必要接線控制，其餘幾何未完成 | [容量與三點介面](c5_mixed_capacity_contacts.md) |
+| 唯一 mixed P₃ 對稱分支 | 兩端各一 incidence、兩側 E 同 pair 時，原五環空內側與五份實際支援排除全部 disk 來源；任意 unary 大小、不需 T4／Gallai | [原五環與完整側支援](c5_mixed_p3_symmetric.md) |
 | 更一般 roots／出口 | degree≥6、多 degree-5、非樹／非相鄰 roots 與共同出口仍開放 | [Root 預算](c5_root_degree_excess.md)、[一般出口界線](c5_single_sided_exit.md) |
 
 先讀候選與 minimal obstruction，再讀條件式出口的適用範圍，最後接到本線停止點。
 
 ## 3. 精確停止點與下一個窄問題
 
-**本線精確停止點：no-mixed 指定 p₁、p₂ 的共同存在性分離已免查
-必要支援表證成。新紙面證明未 Lean 化；逐染色建構式 repair、完整 Σ
-與一般出口仍未證。**
+**本線精確停止點：no-mixed 指定 p₁、p₂ 已有免表共同存在性分離；
+mixed 容量／三點接線化約之後，唯一 P₃ 兩端各一 incidence、兩側 E
+同 pair 的對稱分支已作任意 unary 大小的 disk 來源排除。未 Lean 化。**
 
-[Source 跨度](c5_no_mixed_span_budget.md) 給兩側長度各至少二、和至多五，
-及 source 禁色無重疊。[無增長定理](c5_no_mixed_no_growth.md)利用短側弧、
-單現點及未見兩色交換不變性，免表排除無增長時的同 singleton。
-[增長完備性](c5_no_mixed_growth_completion.md)再證：正規化至 p₂ 後，
-增長支援必含 b2 及 b0／b4，所在側只能是 A/B，側弧限為 234、1234、4012。
-由 source 幾何直接給原外路及固定框弧，守恆分支至多剩一個 β，再以
-整條路徑交換排除；非守恆有害 pair 由原端點聯集排除。其餘 pair
-皆不影響 R，直接有異色 root pair。
+[Mixed 容量](c5_mixed_capacity_contacts.md)從完整關係證明：固定另一 root
+顏色後，禁止本側顏色至多等於本側 incidences；source unary 禁色互不
+重疊且缺額至多一，共十八必要側型。此容量部分容許多 mixed。
+各一 incidence 的任意大 mixed 分量至多禁兩個有序色對；唯一 mixed 時，
+新出現兩側 E 同為一個 pair、mixed 恰禁兩個非對角的分支。
+固定 q 三點控制保留 P₃ 的 (1,1)／(1,2)／(2,1)，triangle 另留 (2,2)。
+這些必要色角色不自動帶有實際支援或 disk 實現。
+[P₃ 對稱分支](c5_mixed_p3_symmetric.md)現已證三個原 lists 相同、
+原五環內側為空。兩份完整 root 側支援與三份星狀附件各有正跨度，
+恰用完五條框邊；整側 E 的色置換不變性給矛盾。這是來源排除，
+不是 target 接受；未把 P₃ 換成 shared singleton，未限制 unary 大小。
 
-新 checker 重播 2,240 增長候選及 11,096 joins；固定配方排除 2,010
-個局部 pair，保留 230 個無害 pair，8,078 個保留 joins 全有異色 pair。
-原 434 個失敗全部排除；AA54 全路徑交換、AB22 非守恆原端點仍保留。
-前層較強篩選的 2,208 排除／32 保留未改寫；新配方多保留的 198 份
-已證無害，並非新增 target 接受。必要支援仍不代表來源可實現性。
+下一窄題是**唯一 mixed 原 P₃、兩端各接一 root 的非對稱 source
+residual (|E_z|,|E_w|)=(1,2)，以及整份 root 交換型**。
+保留原五環 z–x₀–x₁–x₂–w–z、實際 S₀/S₁/S₂、全部 unary 與原
+外部路徑，先從完整 P₃ 關係導出必要附件及一色側跨度，再研究 p₁、p₂。
+一色側沒有二元 residual 的正跨度引理，不能套用本輪五跨度等號。
 
-若沿同一主線繼續，下一窄題是**較大 mixed 原分量的容量與接點化約**：
-先在固定 q、[完整有序色對介面](c5_adjacent_degree5_interfaces.md)中，
-抽出超出 singleton／K2 的最小剩餘
-原分量形狀與必要 root incidences，不先建立新的全面支援枚舉。
-No-mixed 的有害增長完備性不再是未解項目。若要形式化，須另外拆分
-色集合／整列雙射與尚未 Lean 化的 disk／Gallai 前提。
-
-較大 mixed 原分量尚未建立支援表。
-多 mixed、非相鄰 roots、多 degree-5、degree≥6 與一般／共同出口仍保留。
+[無增長](c5_no_mixed_no_growth.md)與[增長完備性](c5_no_mixed_growth_completion.md)
+已關閉 no-mixed 有害增長缺口；不重啟十五類支援枚舉。
+更大 mixed、多 mixed 的跨列／幾何、逐染色 repair、非相鄰 roots、多
+degree-5、degree≥6 與一般／共同出口仍保留。
 完整 Σ 的出口接合仍明用來源雙缺失與刪邊繼承。
 
 ### 可重用證明工具與界線
@@ -79,6 +79,8 @@ No-mixed 的有害增長完備性不再是未解項目。若要形式化，須�
 | 無增長共同分離 | 短側弧 singleton 限為中間色或第四色；對側兩個未見色的交換不變性排除同 singleton | [短側引理與定理](c5_no_mixed_no_growth.md#4-三色-c5-的唯一單現點與無增長定理) |
 | 增長完備性與共同分離 | 三弧位置固定配方排除有害增長，與無增長定理合成指定 p₁、p₂ 的存在性分離 | [位置引理及合成](c5_no_mixed_growth_completion.md#4-剩下的-pair-必不影響-r並完成共同分離) |
 | Root degree 超額預算 | source q 的 no-mixed minimal core 有 D+O+κ=degree−4；不是 target 等式 | [Root 預算](c5_root_degree_excess.md) §1–3 |
+| Mixed 容量與接點化約 | source unary 無重疊、D≤1；各一 incidence 至多兩禁對；三點控制不外推任意大小接線 | [Mixed 容量](c5_mixed_capacity_contacts.md) §2–6 |
+| 完整 root 側支援不變性 | 原 E 為 pair 時，全部 unary／spokes 的實際支援聯集至少見兩色；P₃ 對稱分支五跨度排除，不替換原分量介面 | [P₃ 紙面排除](c5_mixed_p3_symmetric.md) §3–4 |
 | 雙 root source 側跨度 | m+s+a≤5，八類來源排除；不能將成本未超額視為來源存在 | [十五類總覽](c5_no_mixed_span_budget.md) §2 |
 | 樹上 edge-minimal list obstruction | root 樹有 κ=0，lists 由 incident 邊色完整描述；不能把 source 邊色直接傳到 p | [Root 預算](c5_root_degree_excess.md) §4–5 |
 | actual support／annulus 次序 | 保留原分量與具名接點後得到任意大小必要覆蓋；必要表不等於 disk 實現 | [t₂/t₁ 支援表](c5_adjacent_degree5_no_mixed_t2_t1.md) §2–3 |
@@ -102,7 +104,18 @@ Lean 普通證明與 Lean `native_decide` 不互相代替。必要支援／minor
 
 ## 4. 重播入口與驗證範圍
 
-最近增長完備性輪重跑新 checker（一般及 `PYTHONHASHSEED=17`）、前層
+最近 P₃ 對稱分支輪重跑新 checker（一般及 `PYTHONHASHSEED=17`）、
+mixed 容量、完整有序色對介面、既有 Lean build 及文件／DocGraph；
+確切命令與未重跑範圍見[P₃ 紀錄](history/2026-09-29-mixed-p3-symmetric.md)。最小入口：
+
+```bash
+python3 scripts/c5_mixed_p3_symmetric.py --check
+PYTHONHASHSEED=17 python3 scripts/c5_mixed_p3_symmetric.py --check
+python3 scripts/c5_mixed_capacity_contacts.py --check
+python3 scripts/c5_adjacent_degree5_interfaces.py --check
+```
+
+先前增長完備性輪重跑新 checker（一般及 `PYTHONHASHSEED=17`）、前層
 no-growth／local-screen／root-transport、文件／DocGraph 與既有 Lean build；
 確切命令及未重跑範圍見[增長紀錄](history/2026-09-29-no-mixed-growth-completion.md)。最小入口：
 

@@ -38,6 +38,8 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [Mixed P₃ 對稱兩色分支](c5_mixed_p3_symmetric.md) | 兩端各一 incidence、兩側同 pair 時，原五環空內側與完整側支援排除全部 disk 來源；任意 unary 大小、不需 T4／Gallai、0 target，未 Lean 化 |
+| [Mixed 容量與最小三點介面](c5_mixed_capacity_contacts.md) | 任意大小逐欄容量、unary 無重疊／缺額至多一與十八側型；各一 incidence 至多兩禁對；三點形必要接線完成，P₃ 指定對稱分支由後續來源排除，其餘幾何與 Lean 化保留 |
 | [No-mixed 增長完備性與共同分離](c5_no_mixed_growth_completion.md) | 三個側弧位置直接排除影響 R 的增長；結合無增長定理免查支援表地完成指定 p₁、p₂ 分離，未 Lean 化，逐染色 repair 未構造 |
 | [No-mixed 無增長共同分離](c5_no_mixed_no_growth.md) | 短側弧與未見兩色交換不變性，免查支援表地證明無增長時必有異色 root pair；7,848 joins 回歸通過；增長缺口由後續共同分離涵蓋，未 Lean 化 |
 | [No-mixed 統一局部增長篩選](c5_no_mixed_local_screen.md) | 同一守恆／非守恆規則排除 2,208 個局部 pair，32 份不影響 R；重建原 434 失敗排除。後續無增長及增長位置引理已免表完成共同分離，原較強篩選數字保留 |
@@ -226,6 +228,7 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 
 | 舊問題或容易誤讀的字樣 | 目前讀法／後續入口 |
 | --- | --- |
+| Mixed 容量的「P₃ 對稱分支內外側／實際附件未處理」 | [原五環與完整側支援](c5_mixed_p3_symmetric.md) 已排除兩端各一 incidence、兩側同 pair 的 disk 來源；非對稱及其他接線不在本結論內，未新增 target 接受 |
 | Single-spoke 的「下一題 (4) 三份拒絕 palettes」 | [共同結構與 K5](c5_single_spoke_four.md) 以共同 τ 排除正 bridge，四葉只剩兩 triangle 加單 bridge；t=1 全部接回出口，t=0 後由 no-spoke 報告收窄為兩型 |
 | Single-spoke 完成後的「t=0 外部連通與 K4」 | [No-spoke 排除](c5_no_spoke_exterior.md) 以另一原分量恢復外部 hub，(5) 另作四列奇偶排除；六型剩兩型；後續 [環狀支援](c5_no_spoke_supports.md) 已完成 (2,1,1,1) 指定分離，(2,2,1) 再由 [首橋／框弧](c5_no_spoke_first_bridge.md) 完成 |
 | Single-spoke 的「下一題 (3,1) 最小三接點 subtree」 | [三接點排除](c5_single_spoke_three_one.md) 已由 active triangle 加三臂及原 tethers／唯一 spoke 給 K5，不需 T4；後續 (4) 亦已排除 |
@@ -276,6 +279,8 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-09-29：mixed P₃ 對稱分支的原五環與側支援排除](history/2026-09-29-mixed-p3-symmetric.md)
+- [2026-09-29：mixed 容量、十八側型與最小三點接線](history/2026-09-29-mixed-capacity-contacts.md)
 - [2026-09-29：no-mixed 增長完備性與免表共同分離](history/2026-09-29-no-mixed-growth-completion.md)
 - [2026-09-29：no-mixed 無增長短側弧與共同 singleton 排除](history/2026-09-29-no-mixed-no-growth.md)
 - [2026-09-29：no-mixed 統一局部增長篩選與非守恆原端點](history/2026-09-29-no-mixed-local-screen.md)

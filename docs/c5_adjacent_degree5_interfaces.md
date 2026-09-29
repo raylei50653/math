@@ -9,6 +9,16 @@ docgraph:
 ---
 # 相鄰雙 degree-5：完整有序色對介面與逐類刪邊
 
+後續（2026-09-29）：[P₃ 對稱分支](c5_mixed_p3_symmetric.md)以原五環空
+內側、兩份完整側支援與三份星狀附件，排除唯一 mixed 原 P₃ 兩端各一
+incidence、兩側 E 同 pair 的 disk 來源。任意 unary 大小，不需 T4／Gallai；
+零 target 查詢、未 Lean 化，其他接線及非對稱 residual 仍保留。
+
+後續（2026-09-29）：[Mixed 容量與三點介面](c5_mixed_capacity_contacts.md)
+由完整 tuples 證成逐欄／逐列容量、source unary 無重疊及缺額至多一，
+容許多 mixed；各一 incidence 的任意大分量至多兩禁對。唯一 mixed
+P₃／triangle 已有固定 q 必要接線控制，未證新 disk 分離，未 Lean 化。
+
 後續（2026-09-29）：[無 mixed 化約](c5_adjacent_degree5_no_mixed.md) 已證
 E_z(q)=E_w(q)={c}、兩側完整逐邊 minimality，以及容量缺額加重疊恰一。
 經原 zw 的外部路徑排除三／四接點側型，平面來源每側只剩四型；

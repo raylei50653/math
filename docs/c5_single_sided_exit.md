@@ -502,6 +502,13 @@ t=1,(2,1)；[B–E 分離](c5_adjacent_degree5_no_mixed_be.md) 再完成
 t=1,(2,1) 與 t=0,(2,1,1) 的接合及 root 交換型；
 [E–E 六跨度](c5_adjacent_degree5_no_mixed_ee.md) 排除兩側 t=0,(2,1,1)。[B–C 分離](c5_adjacent_degree5_no_mixed_bc.md) 再完成一側 t=1,(2,1)、另一側 t=0,(2,2) 缺額型；[B–D 排除](c5_adjacent_degree5_no_mixed_bd.md) 完成同分拆重疊型。[C–C 排除](c5_adjacent_degree5_no_mixed_cc.md) 完成兩側 t=0,(2,2) 各缺額型。[C–D 排除](c5_adjacent_degree5_no_mixed_cd.md) 完成同分拆一缺額／一重疊及交換型。[C–E 排除](c5_adjacent_degree5_no_mixed_ce.md) 完成一側 (2,2) 缺額型、另一側 (2,1,1) 及交換型。[D–D 排除](c5_adjacent_degree5_no_mixed_dd.md) 完成兩側 (2,2) 各重疊型。[D–E 排除](c5_adjacent_degree5_no_mixed_de.md) 完成最後一類及交換型，no-mixed 全分拆均已涵蓋。較大／多 mixed 與一般雙 root 仍保留。
 
+後續（2026-09-29）：[唯一 mixed P₃ 對稱分支](c5_mixed_p3_symmetric.md)
+又排除原 x₀x₁x₂、root incidence 恰為 zx₀、wx₂，且 E_z(q)=E_w(q)
+為同一 pair 的 disk minimal q-core。原五環空內側及五份完整實際支援
+給紙面矛盾，不限制 unary 大小，不需 T4／Gallai。失敗側核心不能屬
+此子類；這是來源排除，零 target 查詢，不新增空的可處理核心類別。
+P₃ 非對稱 residual、其他接線與更大／多 mixed 仍未涵蓋。
+
 要完成使用者要求的**無條件一般 single-sided exit 定理**，仍須證明
 每個候選 A 來源 G、每個定向缺失對 (p,q)，至少存在一個接受 p 的
 minimal q-obstruction。證明存在一個 §1 可處理核心是充分途徑，但不是

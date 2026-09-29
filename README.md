@@ -14,6 +14,8 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [No-mixed 統一局部篩選](docs/c5_no_mixed_local_screen.md) | 禁色增長、守恆／非守恆規則與仍依必要表的共同接合 |
 | [No-mixed 無增長共同分離](docs/c5_no_mixed_no_growth.md) | 短側弧與色交換不變性的紙面證明、checker 及證據界線 |
 | [No-mixed 增長完備性與共同分離](docs/c5_no_mixed_growth_completion.md) | 三個側弧位置的固定框弧配方、免查支援表的存在性證明與重播 |
+| [Mixed 容量與三點介面](docs/c5_mixed_capacity_contacts.md) | 逐欄容量、十八側型、各一 incidence 的完整關係界與最小三點控制 |
+| [Mixed P₃ 對稱分支](docs/c5_mixed_p3_symmetric.md) | 原五環空內側、完整側支援與五跨度來源排除；不需 T4／Gallai |
 | [研究目標](docs/c5_boundary_relations.md) | 主命題、最小反例路線與局部壓縮的區別 |
 | [文件治理與工作約定](docs/DOCUMENTATION.md) | 文件分工、信任界線、更新及驗證流程 |
 
