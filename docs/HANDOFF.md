@@ -5,7 +5,7 @@
 更新約定見 [文件維護規則](DOCUMENTATION.md)。唯一 degree-5 的全部核心已接回出口。
 相鄰雙 degree-5 的完整關係接合與逐類 minimality 已建立；唯一 mixed 共鄰
 單點的全部支援已接回出口：01／12／23 雙列分離、34／40 來源排除，
-非相鄰支援亦已處理。唯一 mixed K2 全部接線已接回出口；無 mixed 平面每側剩四型，兩側 t=2 已補支援／環序及 512 個 target，剩 132 個查詢，一般出口仍未證。
+非相鄰支援亦已處理。唯一 mixed K2 全部接線已接回出口；無 mixed 平面每側剩四型，兩側 t=2 的 644 個 target 全證，已接回出口第九類；一般出口仍未證。
 
 ## 1. 目前做到哪裡
 
@@ -82,15 +82,15 @@ root-spoke 刪除要求新色條帶中的共同見證，各 C 要有私有非對
 | K2 同端點 P*ᶻ=P*ʷ={u} | [完整關係與原 v-star 排除](c5_adjacent_degree5_mixed_edge_same_endpoint.md)：240 筆正常形經原路徑 K5 排除 105；餘 135 筆以跨度排除 123、飽和扇區排除 12，全型來源不存在；不需 T4、0 target 查詢 |
 | K2 四 incidence P*ᶻ=P*ʷ={u,v} | [原 K4 與實際外部路徑](c5_adjacent_degree5_mixed_edge_k4.md)：完整分量改色迫使 unary 碰 B，原 K5 排除一般平面來源；不需 T4 或 degree-list 定理、0 target 查詢；九組接線覆蓋完成，出口第八類移除接線限制 |
 | 無 mixed 的同色 residual／容量 | [完整化約](c5_adjacent_degree5_no_mixed.md)：E_z=E_w={c}、逐邊 minimality、容量缺額加重疊恰一；原 zw 外部路徑使平面每側剩 t=2:(2)、t=1:(2,1)、t=0:(2,2)／(2,1,1)，118 份側資料／3,548 份同色接合，未證整型 target 分離 |
-| 無 mixed 兩側 t=2,(2) | [原 zw 鄰域支援與環序](c5_adjacent_degree5_no_mixed_t2.md)：原 88 份中 42 份有支援、46 份纖維空；322 份必要資料保留完整 schemas／rotations，206 份雙列已證、512／644 個 target 接受，132 個未決；不需 T4 |
+| 無 mixed 兩側 t=2,(2) | [支援與環序](c5_adjacent_degree5_no_mixed_t2.md) 接原 88 份為 322 份；[整條原路徑 palettes](c5_adjacent_degree5_no_mixed_t2_path_palettes.md) 關閉最後四項，644／644 查詢全證、322 份雙列皆證、0 未決／新來源排除；保留完整 schemas／rotations，不需 T4，接入出口第九類 |
 
 任意大小化約為紙面＋外部定理，Python 重播有限證書；必要表未證 disk
 可實現性，未新增 Lean theorem。完整 Σ 的出口接合仍明用來源雙缺失與刪邊繼承。
 
-**下一窄入口：** 無 mixed 兩側 t=2 的新 **record 4／p₁**（原 sides 137,147）。
-B_z=04、S_z=01、F_z(q)={1}；B_w=34、S_w=123、F_w(q)={0}。
-p₁ 唯一失敗上界 F_w={0,3} 使 E_w=∅；保留 wb3、wb4、zw 及原 C_z，
-用同一 C_w 的雙禁色 bridge／固定框弧研究此候選，再套 132 個未決查詢。
+**下一窄入口：** 無 mixed 的 **t_z=2,(2)，t_w=1,(2,1)** 實際支援／環序覆蓋。
+原 3,548 份同色 joins 中此有序型有 136 份，首項原 sides=(133,91)；交換 roots 覆蓋反向。
+保留 C_z、w 側二接點 C_w 與 singleton D_w、五個原接點、三 spokes、zw 及共同色框。
+先證任意大小支援次序，再接原完整 schemas；兩側 t=2 已完成，不重開其圖枚舉。
 其他較大／多 mixed、一般雙 root、degree≥6、非相鄰雙 root
 及更多高 degree 點保留；不重開唯一 degree-5 枚舉。
 
@@ -125,18 +125,19 @@ R27 末端各一臂及 [R30](c5_degree5_middle_cycle_minors.md) 中間不同二�
 
 ## 5. 重播入口與驗證範圍
 
-接手無 mixed 兩側 t=2 未決查詢前的最小重播如下；七輪整合發布驗證見
-[2026-09-29 發布紀錄](history/2026-09-29-adjacent-progress-publish.md)（20 個 checker）。
-本輪支援／環序與實際驗證見 [兩側 t=2 紀錄](history/2026-09-29-adjacent-no-mixed-t2.md)。
+接手最小重播如下；[本次三輪整合發布](history/2026-09-29-adjacent-no-mixed-t2-publish.md) 重播 15 個 checker。
+本輪 9 個 checker 與實際驗證見 [整條原路徑紀錄](history/2026-09-29-adjacent-no-mixed-t2-path-palettes.md)。
 
 ```bash
+python3 scripts/c5_adjacent_degree5_no_mixed_t2_path_palettes.py --check
+python3 scripts/c5_adjacent_degree5_no_mixed_t2_endpoints.py --check
+python3 scripts/c5_adjacent_degree5_no_mixed_t2_bridge.py --check
 python3 scripts/c5_adjacent_degree5_no_mixed_t2.py --check
 python3 scripts/c5_adjacent_degree5_no_mixed.py --check
 python3 scripts/c5_adjacent_degree5_interfaces.py --check
-python3 scripts/c5_adjacent_degree5_mixed_edge_shared.py --check
-python3 scripts/c5_adjacent_degree5_singleton_long_arc.py --check
-python3 scripts/c5_no_spoke_supports.py --check
-python3 scripts/c5_no_spoke_exterior.py --check
+python3 scripts/c5_single_spoke_branch_palettes.py --check
+python3 scripts/c5_single_spoke_first_bridge.py --check
+python3 scripts/c5_single_spoke_frame_arc.py --check
 lake build
 python3 scripts/check_docs.py
 python3 tools/docgraph check
@@ -144,6 +145,6 @@ git diff --check
 ```
 
 雙拒絕 atlas 與 Lean axiom audit 另見 [分類報告](c5_two_rejection_proof_zh.md) 與 [Lean 工具](lean_two_rejection_tools.md)。
-發布已重播七輪成果與直接依賴共 20 個 checker；其他 singleton／唯一 degree-5 完成表、雙拒絕 atlas、R 系列大覆蓋、profiles／閉包及 Lean axiom audit 未重跑。
+最近研究重播 9 個、本次發布重播 15 個相關 checker。其他 singleton／唯一 degree-5 完成表、雙拒絕 atlas、R 系列大覆蓋、profiles／閉包及 Lean axiom audit 未重跑。
 發布狀態以即時 Git 為準；歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。
 早期交接見 [HANDOFF_HISTORY](HANDOFF_HISTORY.md) 與 [2026-09-22 快照](HANDOFF_2026-09-22.md)；歷史待辦與 Git 狀態均非現況。

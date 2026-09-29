@@ -12,9 +12,9 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [全 degree-4／block 導讀](docs/c5_degree4_guide.md) | 小核心至 K4 的合成依賴、單缺失結論、介面限制與證書入口 |
 | [degree-5／R 系列導讀](docs/c5_degree5_guide.md) | R9–R31 依賴順序、排除範圍、R31 保留缺口與證書入口 |
 | [3903 系列導讀](docs/c5_sector_3903_guide.md) | 系列結論、推導順序、適用範圍與證書入口 |
-| [單側出口接合](docs/c5_single_sided_exit.md) | 涵蓋唯一 degree-5 全部核心、相鄰雙 root 唯一 mixed singleton 全支援及唯一 mixed K2 的全部接線／分拆；一般核心分離仍未證 |
+| [單側出口接合](docs/c5_single_sided_exit.md) | 涵蓋唯一 degree-5 全部核心、相鄰雙 root 唯一 mixed singleton 全支援、唯一 mixed K2 全接線／分拆，以及無 mixed 兩側 t=2；一般核心分離仍未證 |
 | [相鄰雙 degree-5 介面](docs/c5_adjacent_degree5_interfaces.md) | 保留共鄰點與共同色框的有序色對接合、root-edge 對角強迫、逐類 minimality 與固定來源刪邊公式；紙面＋有限控制，雙 root 分離仍保留 |
-| [相鄰雙 root 無 mixed](docs/c5_adjacent_degree5_no_mixed.md)、[兩側 t=2 的支援與環序](docs/c5_adjacent_degree5_no_mixed_t2.md) | 同色 residual、minimality 與容量化約使平面每側剩四型；t=2 的原 88 份接成 322 份必要支援，512／644 個 target 已證、132 個未決；未證整型分離或 disk 實現，未 Lean 化 |
+| [相鄰雙 root 無 mixed](docs/c5_adjacent_degree5_no_mixed.md)、[兩側 t=2 支援與環序](docs/c5_adjacent_degree5_no_mixed_t2.md)、[整條原路徑 palettes](docs/c5_adjacent_degree5_no_mixed_t2_path_palettes.md) | 同色 residual、minimality 與容量化約使平面每側剩四型；兩側 t=2 的 322 份必要支援全部雙列已證、644／644 個 target 接受，接入條件式出口第九類；不需 T4，未證 disk 實現或新增 Lean theorem |
 | [唯一 mixed K2 同端點型](docs/c5_adjacent_degree5_mixed_edge_same_endpoint.md) | P*ᶻ=P*ʷ={u} 的完整關係與原 v-star 來源排除；240 筆正常形經原 K5／跨度／飽和扇區全排除，不需 T4、0 target 查詢；紙面＋外部定理＋Python，未 Lean 化 |
 | [唯一 mixed K2 四 incidence 型](docs/c5_adjacent_degree5_mixed_edge_k4.md) | 原 K4 與實際外部路徑排除一般平面來源；初等改色＋原 K5、不需 T4 或 degree-list 定理、0 target 查詢；完成唯一 mixed K2 全部接線，未 Lean 化 |
 | [相鄰雙 root 的唯一 mixed K2](docs/c5_adjacent_degree5_mixed_edge.md)、[原四環次序排除](docs/c5_adjacent_degree5_mixed_edge_order.md)、[共鄰端點化約](docs/c5_adjacent_degree5_mixed_edge_shared.md)、[兩條 spoke](docs/c5_adjacent_degree5_mixed_edge_shared_t2.md)、[單 spoke／二接點](docs/c5_adjacent_degree5_mixed_edge_shared_t1_pair.md)、[單 spoke／兩個單接點](docs/c5_adjacent_degree5_mixed_edge_shared_t1_singles.md)、[無 spoke／(2,1)](docs/c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md) 與 [無 spoke／(1,1,1)](docs/c5_adjacent_degree5_mixed_edge_shared_t0_singles.md) | 各一接點型已作 disk 來源排除；共鄰端點型四種 w 分拆完成雙列分離，t_w=0、(1,1,1) 的 108 筆由六跨度全排除；連同同端點／四 incidence 排除，出口第八類涵蓋唯一 mixed K2 全部接線；未證必要表實現性，未 Lean 化 |

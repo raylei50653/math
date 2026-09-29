@@ -14,6 +14,10 @@ docgraph:
 ---
 # 相鄰雙 degree-5 無 mixed：同色 residual、容量與逐邊 minimality
 
+後續（2026-09-29）：[整條原路徑 palettes](c5_adjacent_degree5_no_mixed_t2_path_palettes.md)
+完成兩側 t=2,(2) 的指定雙列分離：原 322 份全保留、644／644 查詢全證，
+不需 T4，接入出口第九類。其他兩側分拆仍開放；下列通知保留當輪語境。
+
 後續（2026-09-29）：[兩側 t=2,(2) 實際支援與環序](c5_adjacent_degree5_no_mixed_t2.md)
 已將原 88 份資料接成 322 份必要支援（42 份原資料有支援，46 份纖維空）；
 512／644 個 target 查詢已證、132 個未決。原表保留，未證整型分離或 disk

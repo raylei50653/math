@@ -13,6 +13,13 @@ docgraph:
 ---
 # 無 mixed、兩側 t=2,(2)：原 zw 鄰域的實際支援與環序
 
+後續（2026-09-29）：[原 bridge 與固定框弧](c5_adjacent_degree5_no_mixed_t2_bridge.md)
+已證 record 4／p₁、新增 68 個延拓；[原雙端點](c5_adjacent_degree5_no_mixed_t2_endpoints.md)
+再證 record 5／p₂、新增 60 個延拓；[整條原路徑 palettes](c5_adjacent_degree5_no_mixed_t2_path_palettes.md)
+再關閉最後 4 項。原 322 份全保留、0 筆來源排除，全部雙列皆證，
+644／644 個 target 已證、0 個未決，接入出口第九類；原表保持不變。
+以下數字與 record 4 停止點保留原輪語境，現況見後續報告與 HANDOFF。
+
 2026-09-29。接續 [無 mixed 必要化約](c5_adjacent_degree5_no_mixed.md)，
 完成交接指定的 **88 份原資料之 actual-support／rotation 必要覆蓋**。
 兩套獨立幾何算法同得 2,550 份支援及 2,560 個 placements；與原資料

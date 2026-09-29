@@ -6,6 +6,10 @@ docgraph:
 ---
 # 五目標排除到 single-sided exit：接合定理與一般化界線
 
+後續（2026-09-29）：[整條原 bridge 路徑 palettes](c5_adjacent_degree5_no_mixed_t2_path_palettes.md)
+完成無 mixed 兩側 t=2,(2) 的指定雙列分離：322 份必要資料的 644 個查詢
+全證，不需 T4。新增第九類可處理核心；完整 Σ 仍明用來源雙缺失與刪邊繼承。
+
 後續（2026-09-29）：[原 K4 與實際外部路徑](c5_adjacent_degree5_mixed_edge_k4.md)
 完成唯一 mixed K2 的最後四 incidence 型，一般平面來源排除、不需 T4。
 九組具名接線均已處理，出口第八類移除 root incidence 限制；一般出口仍未證。
@@ -112,7 +116,9 @@ degree-5 只剩 t=0 六型，一般定理仍未證。
    H−{z,w} 的唯一 mixed 分量是共鄰 singleton {x}，不限制其 boundary 支援；
 8. 恰兩個有效內點 z、w 完整 degree=5 且相鄰，其餘完整 degree=4；
    H−{z,w} 的唯一 mixed 原分量為 K2={u,v}，不限制 root incidence
-   接線、boundary spoke 數或 unary 接點分拆。
+   接線、boundary spoke 數或 unary 接點分拆；
+9. 恰兩個有效內點 z、w 完整 degree=5 且相鄰，其餘完整 degree=4；
+   H−{z,w} 無 mixed，z、w 各有兩個 boundary 鄰居。
 
 minimality 使同一內點的 q-spokes 異色，q 只用三色，故唯一 degree-5
 的 t≤3。第二、四、五、六類因此涵蓋全部唯一 degree-5 核心。
@@ -167,6 +173,13 @@ boundary spokes 在 q 下顏色互異。第一種核心由
 及 [無 spoke／(2,1) 分離](c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md#6-出口接合重播與停止點)
 各自不需 T4 就接受 p₁、p₂，故接受對齊後的 p。來源雙缺失與刪邊繼承再給
 Σ(M)=Ω\{q}，可用同一 §4 序列；不要求必要支援表的每筆資料可實現。
+
+第九種由 [無 mixed 化約](c5_adjacent_degree5_no_mixed.md) 得每側恰有唯一
+二接點 unary，F_C(q) 是 singleton。共同對齊 q=01012 後，
+[支援／環序必要覆蓋](c5_adjacent_degree5_no_mixed_t2.md) 落在原 322 份之一；
+[整條原路徑 palettes](c5_adjacent_degree5_no_mixed_t2_path_palettes.md) 完成
+全部 p₁、p₂ 分離，故 M 接受對齊後的 p。再由來源雙缺失與刪邊繼承得
+Σ(M)=Ω\{q}，進入 §4；必要表可實現性與任意來源完整 Σ 均未另行假設。
 
 將 q 對齊為 01012，稱其三色 A、B、C，第四色 D。
 z 有三條 spokes，顏色互異，故 A_z(q)={D}；它還有恰兩個內鄰點。
@@ -366,8 +379,11 @@ mixed K2。[無 mixed 化約](c5_adjacent_degree5_no_mixed.md) 另已證兩側
 E_z(q)=E_w(q)={c}、容量缺額加重疊恰一及逐邊 minimality；原 zw
 外部路徑使平面來源每側只剩 t=2:(2)、t=1:(2,1)、t=0:(2,2)／(2,1,1)。
 [兩側 t=2 的支援與環序](c5_adjacent_degree5_no_mixed_t2.md) 再給 322 份
-必要資料，512／644 個 target 查詢已證、132 個未決；尚未完成整型分離，
-故不新增整型出口類別。無 mixed、較大／多 mixed 與更一般雙 root 仍保留。
+必要資料；[原 bridge 與框弧](c5_adjacent_degree5_no_mixed_t2_bridge.md) 新增
+68 個延拓後，[原雙端點](c5_adjacent_degree5_no_mixed_t2_endpoints.md) 再新增 60 個，
+[整條原路徑 palettes](c5_adjacent_degree5_no_mixed_t2_path_palettes.md) 關閉最後 4 項。
+原 322 份全保留、644／644 個 target 全證，新增第九類；失敗側核心不能
+是無 mixed 且兩側 t=2。其他無 mixed 分拆、較大／多 mixed 與一般雙 root 仍保留。
 
 要完成使用者要求的**無條件一般 single-sided exit 定理**，仍須證明
 每個候選 A 來源 G、每個定向缺失對 (p,q)，至少存在一個接受 p 的
