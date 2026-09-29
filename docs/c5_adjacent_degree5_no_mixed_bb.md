@@ -1,5 +1,9 @@
 # 無 mixed B–B：四分量支援、環序與完整 target 分離
 
+後續（2026-09-29）：[B–E 五分量支援及完整關係搬運](c5_adjacent_degree5_no_mixed_be.md)
+已完成下文所列下一入口：144 份必要支援、288 個 target 全接受。
+本頁及原 artifacts 保留 B–B 當輪資料；目前排程見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
 2026-09-29，Git 基準 `f2496f5`。完成兩側 **t=1,(2,1)**：原 236 份
 IDs／sides 接成 **888 份必要支援，1,776／1,776 個指定 target 全接受**。
 原資料 92 份有支援、144 份纖維空；888 份支援全保留，沒有額外 source

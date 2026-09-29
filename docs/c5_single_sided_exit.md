@@ -6,6 +6,59 @@ docgraph:
 ---
 # 五目標排除到 single-sided exit：接合定理與一般化界線
 
+後續（2026-09-29）：[D–E 五正跨度與雙飽和原路徑排除](c5_adjacent_degree5_no_mixed_de.md)
+完成最後一類及 root 交換型：48 份必要支援全 source K5，120 個正向原 IDs
+無相容支援；0 target，不需 T4。no-mixed 十五類／3,548 份原接合全部覆蓋，
+出口第九類涵蓋全部 no-mixed 分拆；一般／共同出口與 K∞=K≤5 仍未證。
+下文保留各輪語境，目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+後續（2026-09-29）：[D–D 四飽和原分量排除](c5_adjacent_degree5_no_mixed_dd.md)
+完成兩側 t=0,(2,2)、各 D=0、O=1；352 份必要支援全 source K5，
+80 個原 IDs 無相容支援，0 target，不需 T4。四正跨度保證至少三份
+框邊支援，飽和原路徑與補弧給統一 minor。累計十四類／3,260 份覆蓋，
+只剩 D–E 含交換型一類／288 份；目前入口見
+[weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+後續（2026-09-29）：[C–E 五正跨度與原路徑排除](c5_adjacent_degree5_no_mixed_ce.md)
+完成一側 t=0,(2,2)、D=1、O=0，另一側 t=0,(2,1,1) 及交換型。
+96 份必要支援全 source K5；108 個正向原 IDs 無相容支援，0 target，不需 T4。
+累計十三類／3,116 份覆蓋，兩類／432 份保留；下文保留當輪語境，
+目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+
+後續（2026-09-29）：[C–D 三飽和原分量排除](c5_adjacent_degree5_no_mixed_cd.md)
+完成兩側 t=0,(2,2)、一側缺額／另一側重疊及 root 交換型：640 份必要支援
+全 source K5，0 target，不需 T4。累計十二類／2,828 份覆蓋，三類／720
+份保留；下文保留當輪語境，目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+
+後續（2026-09-29）：[C–C 無 spoke 四分量排除](c5_adjacent_degree5_no_mixed_cc.md)
+完成兩側 t=0,(2,2)、各 D=1、O=0：1,176 份必要支援全部 source K5，
+0 target 查詢，不需 T4。累計十一類／2,540 份覆蓋，四類／1,008 份保留；
+下文保留當輪語境，目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+
+後續（2026-09-29）：[B–D 雙飽和來源排除](c5_adjacent_degree5_no_mixed_bd.md)
+完成 180 份原接合的 312 份必要支援，全以 source K5 排除，含 root 交換型；
+八份需原分量外部路徑，0 target 查詢，不需 T4。累計十類／2,396 份覆蓋，
+五類／1,152 份保留；下文保留當輪語境，目前停止點見研究線導覽。
+
+
+後續（2026-09-29）：[B–C 原路徑與雙列分離](c5_adjacent_degree5_no_mixed_bc.md)
+完成 t_z=1,(2,1)，t_w=0,(2,2)、D_w=1、O_w=0 及 root 交換型。
+608 份必要支援中 584 份 source K5 排除，保留 24 份的 48 個 target 全接受。
+累計九類／2,036 份覆蓋，六類／1,512 份保留；下文保留當輪語境，
+目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+
+後續（2026-09-29）：[E–E 六份正跨度](c5_adjacent_degree5_no_mixed_ee.md)
+排除兩側 t=0,(2,1,1) 的全部 disk 來源；144 份原必要接合全無支援，
+0 target 查詢，不需 T4。第九類加入此來源排除分支，不報成 target 接受。
+
+後續（2026-09-29）：[B–E 五分量支援與完整關係搬運](c5_adjacent_degree5_no_mixed_be.md)
+完成 t_z=1,(2,1)、t_w=0,(2,1,1) 及整圖 root 交換型：144 份必要支援、
+288 個 target 全證。第九類再涵蓋此型，無新增 minor 排除，不需 T4。
+
 後續（2026-09-29）：[B–B 支援／環序分類](c5_adjacent_degree5_no_mixed_bb.md)
 完成兩側 t=1,(2,1)：888 份必要支援、1,776 個 target 全接受；120 個失敗
 候選由原路徑／固定框弧及原雙端點排除。第九類再涵蓋此型，不需 T4。
@@ -138,10 +191,11 @@ degree-5 只剩 t=0 六型，一般定理仍未證。
    H−{z,w} 的唯一 mixed 原分量為 K2={u,v}，不限制 root incidence
    接線、boundary spoke 數或 unary 接點分拆；
 9. 恰兩個有效內點 z、w 完整 degree=5 且相鄰，其餘完整 degree=4；
-   H−{z,w} 無 mixed，並滿足以下任一情形：至少一個 root 有兩個 boundary
-   鄰居；或兩側均為 t=1,(2,1)（B–B）。前一情形不限制另一 root 的 unary 接點分拆；平面必要
-   化約使其只剩 t=2,(2)、t=1,(2,1)、t=0,(2,1,1) 或 t=0,(2,2)，
-   末型重疊預算由來源排除。
+   H−{z,w} 無 mixed，不限制 boundary spoke 數或 unary 接點分拆。
+   平面必要化約及 source 預算給 A–E 五種 side classes；十五種 unordered
+   cells（含全部 root 交換方向）現已由雙列分離或來源排除涵蓋。
+   各類的原分量、完整有序關係與 actual supports 仍使用各自報告，
+   不以抽象 side profiles 當作可獨立實現的圖。
 
 minimality 使同一內點的 q-spokes 異色，q 只用三色，故唯一 degree-5
 的 t≤3。第二、四、五、六類因此涵蓋全部唯一 degree-5 核心。
@@ -215,6 +269,24 @@ boundary spokes 在 q 下顏色互異。第一種核心由
 兩側 t=1,(2,1) 則由 [B–B 四分量支援及完整 target 接合](c5_adjacent_degree5_no_mixed_bb.md)
 落在 888 份必要支援之一；原路徑／固定框弧及雙端點排除全部失敗候選，
 也接受對齊後的 p，無需刪去原單接點分量。
+對 B–E 及交換型，[五正跨度與完整關係搬運](c5_adjacent_degree5_no_mixed_be.md)
+使實際核心落在 144 份必要支援之一；288 個指定 target 全接受，也得到對齊後 p。
+B–C 及交換型由 [原飽和路徑 K5 與完整接合](c5_adjacent_degree5_no_mixed_bc.md)
+排除 584 份必要支援，保留 24 份的指定雙列全部接受。
+B–D 及交換型由 [雙飽和原分量 K5](c5_adjacent_degree5_no_mixed_bd.md) 排除全部
+312 份必要支援，無 target 查詢。
+C–C 由 [無 spoke 四分量原路徑 K5](c5_adjacent_degree5_no_mixed_cc.md) 排除全部 disk
+來源；1,176 份必要支援全有見證，0 target 查詢，不需 T4。
+C–D 及交換型由 [三飽和原分量 K5](c5_adjacent_degree5_no_mixed_cd.md) 排除全部
+640 份必要支援；0 target，不需 T4，四原分量與原外部路徑保留。
+C–E 及交換型由 [五正跨度與原路徑 K5](c5_adjacent_degree5_no_mixed_ce.md) 排除全部
+96 份必要支援；兩框點與補弧給統一見證，0 target，不需 T4。
+D–D 由 [四飽和原分量與框邊 K5](c5_adjacent_degree5_no_mixed_dd.md) 排除全部
+352 份必要支援；至少三份框邊可選統一見證，0 target，不需 T4。
+D–E 及交換型由 [五正跨度與雙飽和原路徑](c5_adjacent_degree5_no_mixed_de.md)
+排除全部 48 份必要支援，120 個正向原 IDs 無相容支援；0 target，不需 T4。
+E–E 則由 [六份正跨度矛盾](c5_adjacent_degree5_no_mixed_ee.md) 排除全部 disk
+來源，實際核心不會落在此分支，沒有 target 查詢。其他分支
 再由來源雙缺失與刪邊繼承得 Σ(M)=Ω\{q}，
 進入 §4；必要表可實現性與任意來源完整 Σ 均未另行假設。
 
@@ -426,7 +498,9 @@ E_z(q)=E_w(q)={c}、容量缺額加重疊恰一及逐邊 minimality；原 zw
 排除 340 份來源後，保留 24 份的 48 查詢全證。[重疊型](c5_adjacent_degree5_no_mixed_t2_t0_overlap.md)
 再將 212 份支援全部 source K5 排除。失敗側核心不能是 no-mixed 至少一側
 t=2 的任何分拆；[B–B 分離](c5_adjacent_degree5_no_mixed_bb.md) 另完成兩側
-t=1,(2,1)。B–B 以外兩側 t≤1 的無 mixed 分拆、較大／多 mixed 與一般雙 root 仍保留。
+t=1,(2,1)；[B–E 分離](c5_adjacent_degree5_no_mixed_be.md) 再完成
+t=1,(2,1) 與 t=0,(2,1,1) 的接合及 root 交換型；
+[E–E 六跨度](c5_adjacent_degree5_no_mixed_ee.md) 排除兩側 t=0,(2,1,1)。[B–C 分離](c5_adjacent_degree5_no_mixed_bc.md) 再完成一側 t=1,(2,1)、另一側 t=0,(2,2) 缺額型；[B–D 排除](c5_adjacent_degree5_no_mixed_bd.md) 完成同分拆重疊型。[C–C 排除](c5_adjacent_degree5_no_mixed_cc.md) 完成兩側 t=0,(2,2) 各缺額型。[C–D 排除](c5_adjacent_degree5_no_mixed_cd.md) 完成同分拆一缺額／一重疊及交換型。[C–E 排除](c5_adjacent_degree5_no_mixed_ce.md) 完成一側 (2,2) 缺額型、另一側 (2,1,1) 及交換型。[D–D 排除](c5_adjacent_degree5_no_mixed_dd.md) 完成兩側 (2,2) 各重疊型。[D–E 排除](c5_adjacent_degree5_no_mixed_de.md) 完成最後一類及交換型，no-mixed 全分拆均已涵蓋。較大／多 mixed 與一般雙 root 仍保留。
 
 要完成使用者要求的**無條件一般 single-sided exit 定理**，仍須證明
 每個候選 A 來源 G、每個定向缺失對 (p,q)，至少存在一個接受 p 的

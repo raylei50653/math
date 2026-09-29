@@ -12,6 +12,66 @@ docgraph:
 ---
 # 「交換或幾何阻斷」假設：適用範圍遍歷
 
+整理（2026-09-29）：[十五類總表與側跨度預算](c5_no_mixed_span_budget.md)
+將全部後續結果接成同一入口；m+s+a≤5 統一八類 source 排除，七類保留
+既有完整關係／跨列證明。原輪 25 格矩陣、機制計數與停止點保持快照，
+一般交換或幾何阻斷的完備性仍未證。
+
+後續（2026-09-29）：[D–E 五正跨度與雙飽和原路徑排除](c5_adjacent_degree5_no_mixed_de.md)
+完成最後一類及 root 交換型：48 份必要支援全 source K5，120 個正向原 IDs
+無相容支援；0 target，不需 T4。no-mixed 十五類／3,548 份原接合全部覆蓋，
+出口第九類涵蓋全部 no-mixed 分拆；一般／共同出口與 K∞=K≤5 仍未證。
+下文保留各輪語境，目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+後續（2026-09-29）：[D–D 四飽和原分量排除](c5_adjacent_degree5_no_mixed_dd.md)
+完成兩側 t=0,(2,2)、各 D=0、O=1；352 份必要支援全 source K5，
+80 個原 IDs 無相容支援，0 target，不需 T4。四正跨度保證至少三份
+框邊支援，飽和原路徑與補弧給統一 minor。累計十四類／3,260 份覆蓋，
+只剩 D–E 含交換型一類／288 份；目前入口見
+[weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+後續（2026-09-29）：[C–E 五正跨度與原路徑排除](c5_adjacent_degree5_no_mixed_ce.md)
+完成一側 t=0,(2,2)、D=1、O=0，另一側 t=0,(2,1,1) 及交換型。
+96 份必要支援全 source K5；108 個正向原 IDs 無相容支援，0 target，不需 T4。
+累計十三類／3,116 份覆蓋，兩類／432 份保留；下文保留當輪語境，
+目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+
+後續（2026-09-29）：[C–D 三飽和原分量排除](c5_adjacent_degree5_no_mixed_cd.md)
+完成兩側 t=0,(2,2)、一側缺額／另一側重疊及 root 交換型：640 份必要支援
+全 source K5，0 target，不需 T4。累計十二類／2,828 份覆蓋，三類／720
+份保留；下文保留當輪語境，目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+
+後續（2026-09-29）：[C–C 無 spoke 四分量排除](c5_adjacent_degree5_no_mixed_cc.md)
+完成兩側 t=0,(2,2)、各 D=1、O=0：1,176 份必要支援全部 source K5，
+0 target 查詢，不需 T4。累計十一類／2,540 份覆蓋，四類／1,008 份保留；
+下文保留當輪語境，目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+
+後續（2026-09-29）：[B–D 雙飽和來源排除](c5_adjacent_degree5_no_mixed_bd.md)
+完成 180 份原接合的 312 份必要支援，全以 source K5 排除，含 root 交換型；
+八份需原分量外部路徑，0 target 查詢，不需 T4。累計十類／2,396 份覆蓋，
+五類／1,152 份保留；下文保留當輪語境，目前停止點見研究線導覽。
+
+
+後續（2026-09-29）：[B–C 原路徑與雙列分離](c5_adjacent_degree5_no_mixed_bc.md)
+完成 t_z=1,(2,1)，t_w=0,(2,2)、D_w=1、O_w=0 及 root 交換型。
+608 份必要支援中 584 份 source K5 排除，保留 24 份的 48 個 target 全接受。
+累計九類／2,036 份覆蓋，六類／1,512 份保留；下文保留當輪語境，
+目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+
+後續（2026-09-29）：[E–E 六份正跨度](c5_adjacent_degree5_no_mixed_ee.md)
+已排除兩側 t=0,(2,1,1) 的全部 disk 來源；144 份原接合全無必要支援，
+0 target 查詢。累計八類／1,676 份原接合覆蓋，七類／1,872 份保留；
+下文及既有 artifacts 保留當輪語境，目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+後續（2026-09-29）：[B–E 完整關係搬運](c5_adjacent_degree5_no_mixed_be.md)
+再完成 B–E 及 E–B：144 份必要支援、288 個 target 全接受，沒有新增 minor
+排除。累計七類／1,532 份原接合已覆蓋，八類／2,016 份保留；舊矩陣與
+artifacts 保持快照，目前排程見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
 後續（2026-09-29）：[B–B 支援／環序與雙列](c5_adjacent_degree5_no_mixed_bb.md)
 完成 236 份原接合的必要覆蓋，888 份支援的 1,776 個 target 全接受。
 累計六類／1,172 份原接合已覆蓋，九類／2,376 份仍開放；本輪未新增來源

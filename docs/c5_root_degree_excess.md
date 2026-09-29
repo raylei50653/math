@@ -13,6 +13,11 @@ docgraph:
 ---
 # No-mixed root 骨架：degree 超額預算與樹上拒絕證書
 
+後續（2026-09-29）：[十五類整理與側跨度預算](c5_no_mixed_span_budget.md)
+給雙 root source 的 m+s+a≤5，統一八類來源排除；其餘七類已有指定雙列
+分離。§6 的 B 層在本文指定圖類已由後續全部涵蓋，A 層一般機制與 C 層
+root 樹仍未證。下文保留當輪語境，現況見新總覽與研究線導覽。
+
 後續（2026-09-29）：[交換或幾何阻斷範圍遍歷](c5_exchange_geometry_scope.md)
 核對 §6 的 A／B／C 邊界；雙 root 已完成兩側 t=2、t_z=2 配 t_w=1
 或 t_w=0,(2,1,1)，以及 [t_w=0,(2,2) 缺額型](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)

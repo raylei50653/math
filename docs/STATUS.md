@@ -38,9 +38,19 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [No-mixed 十五類與側跨度預算](c5_no_mixed_span_budget.md) | 紙面必要式 m+s+a≤5 統一八類來源排除；七類沿用雙列分離。5,842 支援／4,164 target 的跨表稽核，未證實現或一般機制完備性，未 Lean 化 |
+| [D–E 五正跨度與雙飽和原路徑排除](c5_adjacent_degree5_no_mixed_de.md) | 48 必要支援全 source K5、120 空纖維，含交換型；十五類／3,548 原接合全覆蓋，0 target，不需 T4，未 Lean 化 |
+| [D–D 四飽和原分量與框邊排除](c5_adjacent_degree5_no_mixed_dd.md) | 352 必要支援全 source K5；80 空纖維，0 target，不需 T4，未 Lean 化 |
+| [C–E 五正跨度與原路徑排除](c5_adjacent_degree5_no_mixed_ce.md) | 96 必要支援全 source K5，108 原 IDs 無相容支援，含交換型；0 target，不需 T4，未 Lean 化 |
+| [C–D 三飽和原分量排除](c5_adjacent_degree5_no_mixed_cd.md) | 640 必要支援全 source K5，含 root 交換型；0 target，不需 T4，未 Lean 化 |
+| [C–C 無 spoke 四分量排除](c5_adjacent_degree5_no_mixed_cc.md) | 1,176 必要支援全 source K5；保留原分量外部路徑，0 target；不需 T4，未 Lean 化 |
+| [B–D 雙飽和來源排除](c5_adjacent_degree5_no_mixed_bd.md) | 312 必要支援全 source K5；八份須原分量外部路徑，0 target，含交換型；不需 T4，未 Lean 化 |
+| [B–C 飽和原路徑與雙列分離](c5_adjacent_degree5_no_mixed_bc.md) | 608 份必要支援中 584 source K5；保留 24 份／48 target 全證，含 root 交換型，不需 T4，未 Lean 化 |
+| [E–E 六份正跨度來源排除](c5_adjacent_degree5_no_mixed_ee.md) | 144 份原接合全無 disk 支援；六正跨度超出五框邊，0 target 查詢，不需 T4，未 Lean 化 |
+| [B–E 五分量正跨度及完整關係搬運](c5_adjacent_degree5_no_mixed_be.md) | 180 份原接合成 144 份必要支援；288 target 全證，含 root 交換型；無新增 minor 排除，不需 T4，未 Lean 化 |
 | [B–B 四分量支援／環序及分離](c5_adjacent_degree5_no_mixed_bb.md) | 236 份原接合成 888 份必要支援；1,776 個 target 全證，120 失敗候選由原路徑／雙端點排除；無新增支援刪除，不需 T4，未 Lean 化 |
 | [Root degree 超額預算](c5_root_degree_excess.md) | No-mixed source 的 D+O+κ=degree−4 與樹骨架 κ=0 已證；不是 target 等式，一般交換／幾何機制未證；紙面＋Python，未 Lean 化 |
-| [交換或幾何阻斷的範圍遍歷](c5_exchange_geometry_scope.md) | 原 25 格／15 種交換型分類保留；後續含 t=2 側及 B–B 共六類已覆蓋，其餘兩側 t≤1 仍開放；抽象控制不證一般機制完備性 |
+| [交換或幾何阻斷的範圍遍歷](c5_exchange_geometry_scope.md) | 原 25 格／15 種交換型分類保留；後續含 t=2 側及 B–B／B–C／B–D／B–E／C–C／C–D／C–E／D–D／D–E／E–E 共十五類全覆蓋；抽象控制不證一般機制完備性 |
 | [無 mixed t_w=0,(2,2) 重疊型](c5_adjacent_degree5_no_mixed_t2_t0_overlap.md) | D_w=0、O_w=1 重疊型全作 source K5 排除，0 target 查詢；完成含 t=2 側的全部分拆，不需 T4，未 Lean 化 |
 | [無 mixed t_w=0,(2,2) 缺額型](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md) | 缺額型以來源排除及保留支援雙列分離接回第九類；重疊型由後續報告全排除，不需 T4，未 Lean 化 |
 | [無 mixed t_z=2、t_w=0、(2,1,1)](c5_adjacent_degree5_no_mixed_t2_t0_singles.md) | 四原分量／六接點的支援覆蓋完成，全部查詢接受並接回出口第九類；不需 T4，未 Lean 化 |
@@ -51,7 +61,7 @@
 | [無 mixed 兩側 t=2 原雙端點](c5_adjacent_degree5_no_mixed_t2_endpoints.md) | 不守恆 q 禁色仍可用原完整 bridge 端點 tightness；舊停止點由後續整條路徑層涵蓋，原證書保留 |
 | [無 mixed 兩側 t=2 原 bridge 與框弧](c5_adjacent_degree5_no_mixed_t2_bridge.md) | 原 bridge／固定框弧新增延拓；舊未決由後續雙端點及整條路徑層涵蓋，原證書保留 |
 | [無 mixed 兩側 t=2,(2) 支援與環序](c5_adjacent_degree5_no_mixed_t2.md) | 同序支援、完整 q schemas 與具名 rotations 已建立；整型雙列由後續路徑 palettes 完成，未證 disk 實現或 Lean 化 |
-| [相鄰雙 root 無 mixed](c5_adjacent_degree5_no_mixed.md) | 同色 residual、minimality 與容量缺額／重疊化約完成；含 t=2 側分拆及 B–B 已由後續涵蓋，其餘兩側 t≤1 保留，未證 disk 實現或 Lean 化 |
+| [相鄰雙 root 無 mixed](c5_adjacent_degree5_no_mixed.md) | 同色 residual、minimality 與容量缺額／重疊化約完成；含 t=2 側分拆及 B–B／B–C／B–D／B–E／C–C／C–D／C–E／D–D／D–E／E–E 全由後續涵蓋，未證 disk 實現或 Lean 化 |
 | [唯一 mixed K2 四 incidence 型](c5_adjacent_degree5_mixed_edge_k4.md) | 四 incidence 原 K4 與實際外部路徑排除一般平面來源，完成唯一 mixed K2 全接線；不需 T4／degree-list，0 target 查詢，未 Lean 化 |
 | [唯一 mixed K2 同端點型](c5_adjacent_degree5_mixed_edge_same_endpoint.md) | 同端點型由原 K5、跨度與 v-star 排除全部 disk 來源；保留 v 扇區，不需 T4，0 target 查詢，未 Lean 化 |
 | [共鄰端點 K2 的 w 側兩條 spoke](c5_adjacent_degree5_mixed_edge_shared_t2.md) | 共鄰端點型 t_w=2,(1) 的必要支援與指定雙列分離完成，接回出口；不需 T4，未證實現或 Lean 化 |
@@ -260,6 +270,26 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 所有「已完成」均限於原報告前提；來源排除與指定列延拓不互換。
 
 ## 歷史紀錄與舊連結
+
+- [2026-09-29：no-mixed 十五類整理與共同側跨度](history/2026-09-29-no-mixed-span-budget.md)
+
+- [2026-09-29：D–E 排除與 no-mixed 全分類完成](history/2026-09-29-adjacent-no-mixed-de.md)
+
+- [2026-09-29：D–D 四飽和原分量與統一框邊 K5](history/2026-09-29-adjacent-no-mixed-dd.md)
+
+- [2026-09-29：C–E 五正跨度與原路徑來源排除](history/2026-09-29-adjacent-no-mixed-ce.md)
+
+- [2026-09-29：C–D 三飽和原分量來源排除](history/2026-09-29-adjacent-no-mixed-cd.md)
+
+- [2026-09-29：C–C 無 spoke 四分量來源排除](history/2026-09-29-adjacent-no-mixed-cc.md)
+
+- [2026-09-29：B–D 雙飽和來源排除](history/2026-09-29-adjacent-no-mixed-bd.md)
+
+- [2026-09-29：B–C 飽和原路徑與雙列分離](history/2026-09-29-adjacent-no-mixed-bc.md)
+
+- [2026-09-29：E–E 六份正跨度來源排除](history/2026-09-29-adjacent-no-mixed-ee.md)
+
+- [2026-09-29：B–E 五份正跨度與完整關係搬運](history/2026-09-29-adjacent-no-mixed-be.md)
 
 - [2026-09-29：B–B 四分量支援、完整關係與 target 分離](history/2026-09-29-adjacent-no-mixed-bb.md)
 
