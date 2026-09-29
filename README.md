@@ -61,6 +61,22 @@ lake update
 lake exe cache get
 ```
 
+## Python 產生器與大型 artifacts
+
+`scripts/` 的第三方依賴鎖在 `requirements.txt`（Python 3.14）。1 MB 以上的 JSON
+artifact 不進 git，只在 [`artifacts/MANIFEST.json`](artifacts/MANIFEST.json) 記錄
+sha256、大小與產生器；這些檔案列在 `.gitignore` 的自動產生區塊。新 clone 之後重建並逐位元組驗證：
+
+```bash
+uv run --with-requirements requirements.txt python tools/artifacts.py rebuild
+uv run --with-requirements requirements.txt python tools/artifacts.py status
+```
+
+`rebuild --all` 會重跑全部產生器並檢查輸出與紀錄相同；刻意改動產生器後，用
+`tools/artifacts.py record <path>` 接受新輸出，不帶路徑則重新掃描 `artifacts/`、登錄新的大檔。
+無法再由產生器逐位元組重現、但仍被下游重播的大檔列在工具的 `FROZEN`，留在 git
+（目前只有 `artifacts/c5_single_spoke_two_two/observations.json`）。
+
 ## 檔案
 
 | 路徑 | 用途 |

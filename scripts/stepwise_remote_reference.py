@@ -293,7 +293,7 @@ def main():
     for fans in SHAPES:
         t0 = time.time()
         r = analyse(fans)
-        r['seconds'] = round(time.time() - t0, 1)
+        seconds = round(time.time() - t0, 1)
         name = 'fans' + ''.join(map(str, fans))
         report[name] = r
         sys.stdout.flush()
@@ -301,7 +301,7 @@ def main():
               f"({r['sampling']}) classes {r['classes_seen']}  "
               f"window alone {[k for k, v in r['window_alone'].items() if v][:1] or 'never'}  "
               f"minimal w/ window3 {r['minimal_sufficient']['window3']}  "
-              f"w/ window0 {r['minimal_sufficient']['window0']}  [{r['seconds']}s]", flush=True)
+              f"w/ window0 {r['minimal_sufficient']['window0']}  [{seconds}s]", flush=True)
         if not r['window3_all_features']['sufficient']:
             print(f"   all features + window 3 insufficient, e.g. {r['window3_all_features']['counterexample']}")
         rc = r['run_channels']

@@ -269,11 +269,11 @@ def main():
                             reachable_states=len(order), live_classes_raw=live_raw,
                             live_classes_mod_perm=live_orbits, live_classes_len_ge2=live_len2,
                             live_classes_recurrent=live_rec, left_end_transient=transient, dead_state=has_dead,
-                            max_transient_plus_period=worst[0], pumping=pump,
-                            seconds=round(time.time() - t0, 2))
+                            max_transient_plus_period=worst[0], pumping=pump)
+        seconds = round(time.time() - t0, 2)
         print(f"{name}: cut {len(cut)} reachable {len(order)} live Nerode raw {live_raw} "
               f"mod perm {live_orbits} (len>=2: {live_len2}, recurrent: {live_rec}) dead {has_dead} "
-              f"pump(t+p) max {worst[0]} [{report[name]['seconds']}s]")
+              f"pump(t+p) max {worst[0]} [{seconds}s]")
     summary = {name: (r['cut_size'], r['reachable_states'], r['live_classes_raw'], r['live_classes_recurrent'])
                for name, r in report.items()}
     report['summary_cut_reachable_rawlive_recurrent'] = summary
