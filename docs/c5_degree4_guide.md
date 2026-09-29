@@ -1,7 +1,7 @@
 # 全 degree-4／block 化約系列導讀
 
 文件整理：2026-09-23；研究依據截至 2026-09-22。本頁不新增研究結論。
-研究優先序只見 [HANDOFF](HANDOFF.md)，全專案索引見 [STATUS](STATUS.md)。
+研究線標記見 [HANDOFF](HANDOFF.md)，全專案索引見 [STATUS](STATUS.md)。
 本系列從 minimal obstruction 的 list 翻譯，經樹、triangle、長奇環與 K4，
 合成全 degree-4 的單缺失結論；後續唯一 degree-5 見 [R 系列導讀](c5_degree5_guide.md)。
 

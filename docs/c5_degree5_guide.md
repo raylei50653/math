@@ -1,85 +1,15 @@
 # degree-5／R 系列導讀：介面、排除範圍與保留缺口
 
-後續（2026-09-29）：[無 mixed 化約](c5_adjacent_degree5_no_mixed.md) 完成
-兩側同色 singleton residual、逐邊 minimality 與容量缺額／重疊恰一。
-原 zw 加對側 unary 路徑使平面來源每側只剩 t=2 的 (2)、t=1 的
-(2,1)、t=0 的 (2,2)／(2,1,1)；118 份側資料及 3,548 份同色接合
-皆為必要資料。[兩側 t=2 支援與環序](c5_adjacent_degree5_no_mixed_t2.md) 再給
-322 份必要資料、512 個 target 已證及 132 個未決；整型分離、disk 實現
-及新 Lean theorem 仍保留。
+更新：2026-09-29。本頁維護 R9–R31 的來源結構與 minor 構造情況。
+研究線標記見 [HANDOFF](HANDOFF.md)，全索引見 [STATUS](STATUS.md)。
+前置依賴見 [全 degree-4 導覽](c5_degree4_guide.md)。
 
-後續整理（2026-09-29）：[唯一 mixed 原 K2](c5_adjacent_degree5_mixed_edge.md) 的
-各一接點型已由 [原四環外側次序](c5_adjacent_degree5_mixed_edge_order.md)
-作 disk 來源排除：576 筆必要資料中 552 筆超周長，24 筆飽和次序矛盾，
-不需 T4、大小不限。[共鄰端點型](c5_adjacent_degree5_mixed_edge_shared.md) 另已
-完成完整關係／逐邊 minimality，強迫 z 無 spoke、唯一二接點 unary；w 容量
-飽和，原 288 筆必要資料保持。[w 側兩條 spoke](c5_adjacent_degree5_mixed_edge_shared_t2.md)
-已完成 t=2、(1) 的支援／環序與雙列分離；[t=1、(2)](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md)
-再由局部 K5 搬運完成 292 排除＋64 保留／128 查詢全接受。
-[t=1、(1,1)](c5_adjacent_degree5_mixed_edge_shared_t1_singles.md) 再以飽和環序
-完成 32 筆／64 查詢。[t_w=0、(2,1)](c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md) 再完成 94 排除＋8 保留／16 查詢。
-[t_w=0、(1,1,1)](c5_adjacent_degree5_mixed_edge_shared_t0_singles.md) 再以 6>5
-的跨度矛盾排除原 108 筆，完成此接線全部五型；出口第八類移除 w 分拆限制。
-[同端點 K2](c5_adjacent_degree5_mixed_edge_same_endpoint.md) 再重推 P*ᶻ=P*ʷ={u}
-的完整關係，240 筆經原 K5 排除 105、跨度排除 123、原 v-star 排除 12，
-整型來源不存在，不需 T4、0 target 查詢。必要資料未證 disk 實現，未新增 Lean theorem。
-[四 incidence 原 K4](c5_adjacent_degree5_mixed_edge_k4.md) 再以原 unary 整體
-改色與實際外部路徑，排除 P*ᶻ=P*ʷ={u,v} 的一般平面來源；不需 T4
-或 degree-list 定理。唯一 mixed K2 全部九組接線完成，出口第八類移除
-接線限制；一般分離仍保留，未新增 Lean theorem。
-
-後續（2026-09-28）：[唯一共鄰單點 01／23 長弧](c5_adjacent_degree5_singleton_long_arc.md)
-以三角形外側次序及原 x 路徑 K5 完成指定雙列分離，加入條件式出口；
-[12 長弧](c5_adjacent_degree5_singleton_middle_arc.md) 亦已完成並接回出口，
-[34／40 來源排除](c5_adjacent_degree5_singleton_end_arc.md) 再完成唯一 mixed
-共鄰單點的全部支援。紙面＋外部定理＋Python，未 Lean 化。
-
-上述成果依賴 [相鄰雙 degree-5 介面](c5_adjacent_degree5_interfaces.md)、
-[唯一共鄰單點化約](c5_adjacent_degree5_shared_singleton.md) 與
-[同側限制](c5_adjacent_degree5_singleton_sectors.md)；原同色 singleton 障礙
-及五個相鄰長弧位置均已由後續處理。一般雙 root 分離仍未證。
-
-後續（2026-09-28）：[no-spoke 首橋與固定框弧](c5_no_spoke_first_bridge.md)
-完成 (2,2,1) 的最後 12 查詢，116 筆全部雙列已證。唯一 degree-5 全部
-核心已接回 [條件式單側出口](c5_single_sided_exit.md)；這不補完 R31 的
-指定來源 minor 構造或任意來源的完整 Σ。下文 R 系列表格保留當輪範圍。
-
-本次整體驗證見 [九組成果發布紀錄](history/2026-09-28-adjacent-progress-publish.md)。
-目前研究優先序只見 [HANDOFF](HANDOFF.md)；以下較早摘要中的「目前／未決」
-均為當輪數字，唯一 degree-5 的現況以上述完成結果為準。
-
-後續（2026-09-27）：[root 守恆全表掃描](c5_single_spoke_root_sweep.md) 將通用
-單接點條件套用到 114 筆，新增 14 個接受查詢；目前 80 筆兩列已證、34 查詢未決。
-
-後續（2026-09-27）：[單接點未用色守恆](c5_single_spoke_root_conservation.md)
-已證 (012,04,234)、禁 3 者二接點的 p₂ 延拓；目前 66 筆兩列已證、
-48 查詢未決。下文數字與停止點保留各原輪次語境。
-
-後續（2026-09-27）：[旁支 K5 minor](c5_single_spoke_branch_minor.md) 已證
-指定 (01,04,1234)、禁 3 者二接點分支的 p₁ 延拓；114 筆現為 64 筆
-兩列已證、50 個指定查詢未決。下文保留原輪次結論及數字。
-
-後續（2026-09-27）：[single-spoke 外部雙路徑 completion](c5_single_spoke_completion.md)
-保留同圖二接點分量，沿用 degree-4 分類及既有有限完整關係證書；
-(2,1,1) 的 114 筆配置中現有 62 筆兩個指定 p 已證，52 筆各剩一列。
-
-
-後續（2026-09-27）：[single-spoke 必要化約](c5_single_spoke_cores.md) 完成 t=1
-四型不可刪減覆蓋、接點區塊與反射；(2,1,1) 只剩 19 種必要實際支援型，
-已完成部分指定 p 延拓，全部 t=1 仍未解。t=2 已由 [非相鄰分離](c5_two_spoke_nonadjacent.md)
-及既有結果完成出口接合；下文舊停止點保留歷史語境。
-
-
-後續（2026-09-24）：[未接內點引理](c5_unattached_boundary.md) 已證 (3) 非相鄰
-S={b0,b3} 型只缺 q；雙缺失目標尚餘 23 個兩-spoke 配置待分離。
-
-後續（2026-09-24）：[兩-spoke 區域化約](c5_degree5_two_spoke_sectors.md)
-將 t=2 的 (3)／(2,1) 收窄為 24 個必要配置；尚未完成這些核心的分離。
-
-文件整理：2026-09-23；研究依據截至 2026-09-22。本頁不新增研究結論。
-研究優先序只見 [HANDOFF](HANDOFF.md)，全專案索引見 [STATUS](STATUS.md)。
-前置的樹、triangle、長奇環與 K4 依賴見 [全 degree-4／block 導讀](c5_degree4_guide.md)。
-此處 R9–R31 是研究輪次；不是其他報告參考文獻中的 [R1]、[R2] 編號。
+唯一 degree-5 全部核心的指定雙列分離已接回 [條件式單側出口](c5_single_sided_exit.md)。
+這不補完 R31 的任意長來源 minor 或任意來源的完整 Σ；相鄰雙 root 與出口後續
+統一見 [weak-deletion 導覽](c5_weak_deletion_guide.md)，不在本頁累積逐輪摘要。
+本線保留缺口是 R31 同末端不同二接點，以及其餘未覆蓋的三環位置／更多環。
+舊摘要數字與證書仍見原報告及 [九組成果發布紀錄](history/2026-09-28-adjacent-progress-publish.md)。
+R9–R31 為研究輪次，不是報告參考文獻編號。
 
 ## 1. 目前完成到哪裡
 
@@ -99,7 +29,7 @@ spokes、C=H−z 為連通二接點分量、其餘有效內點完整 degree=4，
 三環共用點鏈指 J1∩J2={r12}、J2∩J3={r23}、J1∩J3=∅、r12≠r23。
 表中是各篇紙面化約與有限證書的合成範圍；詳細前提以原報告為準。
 [R9](c5_k4_blocks.md) 的全 degree-4 **整圖**結論不能直接套到帶 z 的分量。
-R31 是保留缺口；目前研究優先序仍由 HANDOFF 管理。
+R31 是保留缺口；是否進行中見 HANDOFF；本線停止點見 §4。
 
 ## 2. 符號與證據界線
 

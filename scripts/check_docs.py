@@ -74,6 +74,39 @@ def links(text: str):
             yield number, match[1].strip("<>")
 
 
+def check_handoff(text: str) -> list[str]:
+    """Check the thin guide list; ordinary link checking validates its targets."""
+    errors = []
+    guides = 0
+    if len(text.splitlines()) > 30:
+        errors.append("HANDOFF exceeds 30 lines; move details to research guides")
+    for number, line in enumerate(prose(text).splitlines(), 1):
+        # Inline code is allowed to explain the tag without activating a line.
+        visible = re.sub(r"(`+).*?\1", "", line)
+        destinations = [destination for _, destination in links(line)]
+        if not (line.startswith("- ") or "#進行中" in visible
+                or any(urlsplit(dst).path.endswith("_guide.md") for dst in destinations)):
+            continue
+        match = re.fullmatch(r"- \[[^\]]+\]\(([^\s)]+)\)(?: #進行中)?", line)
+        if not match:
+            errors.append(f"HANDOFF:{number}: expected guide list item with optional trailing #進行中")
+            continue
+        url = urlsplit(match[1])
+        if (not url.scheme and not url.netloc and not url.fragment and not url.query
+                and url.path in ("STATUS.md", "DOCUMENTATION.md")
+                and not line.endswith(" #進行中")):
+            continue
+        if (url.scheme or url.netloc or url.fragment or url.query
+                or Path(unquote(url.path)).is_absolute()
+                or not unquote(url.path).endswith("_guide.md")):
+            errors.append(f"HANDOFF:{number}: research entry must point to a local *_guide.md file")
+            continue
+        guides += 1
+    if not guides:
+        errors.append("HANDOFF must list at least one research guide")
+    return errors
+
+
 def check(root: Path) -> tuple[list[str], int, int]:
     files = [root / "README.md"]
     for directory in ("docs", "paper", "artifacts"):
@@ -106,15 +139,7 @@ def check(root: Path) -> tuple[list[str], int, int]:
         if target.resolve() not in indexed:
             errors.append(f"not directly indexed by STATUS: {target.relative_to(root)}")
     handoff = (root / "docs/HANDOFF.md").read_text()
-    for heading in (
-        "## 1. 目前做到哪裡", "## 2. 精確停止點與下一個窄問題",
-        "## 3. 其他路線的現況", "## 4. 信任範圍與工作約定",
-        "## 5. 重播入口與驗證範圍",
-    ):
-        if heading not in handoff.splitlines():
-            errors.append(f"HANDOFF missing required heading: {heading}")
-    if len(handoff.splitlines()) > 150:
-        errors.append("HANDOFF exceeds 150 lines; move history/details to reports")
+    errors.extend(check_handoff(handoff))
     return errors, len(files), count
 
 
