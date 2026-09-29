@@ -12,7 +12,13 @@ docgraph:
 ---
 # 「交換或幾何阻斷」假設：適用範圍遍歷
 
-後續（2026-09-29）：[A–C 缺額型](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)
+後續（2026-09-29）：[A–D 重疊型](c5_adjacent_degree5_no_mixed_t2_t0_overlap.md)
+已將 212 份必要支援全部以原分量 source K5 排除，0 target 查詢；五類／936 份
+原接合已覆蓋，十類／2,612 份仍開放。所有含 A（t=2）側的格均完成；
+其中 A–D 是來源排除，其餘四類為雙列分離。新證書逐 ID 綁定新增的正反向
+192 份。原矩陣、checker／artifacts 保持快照；下一入口依 HANDOFF 為 B–B。
+
+前輪（2026-09-29）：[A–C 缺額型](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)
 已完成：364 份支援中 source K5 排除 340，保留 24 份的 48 查詢全證；
 最後八項亦只需飽和分量的 target K5。覆蓋擴為四種交換型／744 份原接合，
 餘 2,804 份。新 JSON 的 coverage_extension 綁定正反向新增 192 個 IDs；
@@ -163,11 +169,10 @@ B–B、B–E、E–E 雖沒有飽和二禁色，也尚缺各自的 actual-suppo
 - **一般平面、非 disk 外框：** 原 K5 witness 本身仍是非平面證書，
   但此處的環序必要覆蓋依賴指定 C5 是 disk 外框。
 
-依 [HANDOFF](HANDOFF.md)，下一步仍是 A–C：96 份有序資料，首項
-retained-join ID=3036、sides=(133,16)，B_z=01、F_z={2}，
-w 無 spoke、F=({0},{1,2})、共同 c=3。先建立三原分量、六接點、
-兩 spokes、zw 與共同色框的支援／rotation 覆蓋，尤其保存飽和 pair 的完整關係。
-A–D 另有 96 份，不能與 A–C 合併為同一缺額問題。
+原輪的 A–C 與 A–D 各 96 份入口，已由[缺額型](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)
+及[重疊型](c5_adjacent_degree5_no_mixed_t2_t0_overlap.md) 分別完成。兩者保留獨立
+支援表，分別以雙列分離及來源排除收束。依 [HANDOFF](HANDOFF.md)，
+目前下一入口為 B–B 的 236 份原接合；四原分量的支援／rotation 覆蓋尚未建立。
 
 ## 6. 證書與重播
 

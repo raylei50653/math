@@ -14,34 +14,32 @@ minimal obstruction 路線：先完成 single-sided exit 的可處理核心，�
 
 ## 2. 精確停止點與下一個窄問題
 
-**目前唯一優先入口：t_z=2,(2)，t_w=0,(2,2)，D_w=0、O_w=1。**
-[缺額型報告 §5](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md#5-證書控制與下一入口)
-已綁定原 3,548 份 joins 中的 96 份重疊型；首項 retained-join ID=3040、
-sides=(133,30)。目前只讀取入口資料，尚未建立此型的 actual-support／rotation
+**目前唯一優先入口：B–B，t_z=t_w=1,(2,1)。**
+[重疊型報告 §4](c5_adjacent_degree5_no_mixed_t2_t0_overlap.md#4-證書出口接合與精確下一入口)
+已綁定原 3,548 份 joins 中的 236 份 B–B；首項 retained-join ID=2142、
+sides=(91,91)。目前只讀取入口資料，尚未建立此型的 actual-support／rotation
 必要覆蓋，也未遍歷 targets。第一筆為：
 
 \[
-B_z=01,\quad B_w=\varnothing,\quad
-F_{C_z}(q)=\{2\},\quad c=3.
+B_z=B_w=\{0\},\qquad c=3.
 \]
 
 \[
-(F_{C_w},F_{D_w})(q)=(\{0,1\},\{0,2\}),\quad
-D_w=0,\quad O_w=1.
+(F_{C_z},F_{D_z})(q)=(F_{C_w},F_{D_w})(q)=(\{1\},\{2\}).
 \]
 
-保留三原分量 C_z、C_w、D_w、六個具名接點、兩條原 spokes、zw、
-actual supports、原 bridges、旁支及共同色框。兩個飽和 pair 分量均有
-自己的完整 relation 與原路徑，不能合併或只任選其中之一。
+保留四原分量 C_z、D_z、C_w、D_w，其中 C 各二接點、D 各單接點；
+六個具名接點、兩條原 spokes、zw、actual supports、原 bridges、旁支
+及共同色框均保留。首項兩 spoke 同落 b0，仍是不同 root 的兩條原邊。
 
 優先檢查順序：
 
-1. 從原 96 份 IDs／sides 重建同源支援與 cyclic-order 必要覆蓋；
-2. 對兩個飽和分量各自核對 source 原路徑與同一固定框弧的 K5；
-3. 對保留支援逐項接合完整 target 關係，再判定交換或幾何阻斷。
+1. 從原 236 份 IDs／sides 建立四分量的支援跨度與 cyclic-order 必要覆蓋；
+2. 保留二接點完整 schemas 與單接點關係，逐項接合完整 target 候選；
+3. 再對失敗候選核對原路徑／固定框弧及交換的適用條件。
 
-缺額型 D_w=1、O_w=0 已完成：364 份必要支援以 source K5 排除 340，
-保留 24 份的 48 查詢全證。這份支援表不能直接當作重疊型覆蓋。
+重疊型 D_w=0、O_w=1 已完成：910 份幾何重接原 96 份成 212 份支援，
+全部以 source K5 排除，0 target 查詢；不能把來源排除記成新增雙列延拓。
 不要重開已完成的大枚舉；source 的 D+O+κ 預算不是 target 等式；
 未決上界候選、必要支援與 minor skeletons 都不是 disk 反例或來源實現。
 
@@ -63,11 +61,11 @@ D+O+κ=degree−4，以及樹骨架 κ=0。**尚未證**的是：
 以及任意 degree-5 root 樹的跨列分離。
 
 已關閉的主線家族：唯一 degree-5 全部分支；唯一 mixed singleton 全支援；
-唯一 mixed K2 全接線；no-mixed 兩側 t=2,(2)，以及 t_z=2,(2) 配
-t_w=1,(2,1)、t_w=0,(2,1,1) 或 t_w=0,(2,2) 缺額型，含整圖 root 交換。
+唯一 mixed K2 全接線；no-mixed 至少一側 t=2 的全部分拆，含整圖 root 交換；
+t_w=0,(2,2) 缺額型已證雙列、重疊型由來源排除完成。
 [範圍遍歷](c5_exchange_geometry_scope.md) 原 25 格／15 種交換型分類保持，
-後續覆蓋為四類／744 份原接合，11 類／2,804 份仍開放；1,920 份抽象
-路徑控制不證一般機制完備性。重疊型以外的分拆、degree≥6、多 degree-5、
+後續覆蓋為五類／936 份原接合，十類／2,612 份仍開放；1,920 份抽象
+路徑控制不證一般機制完備性。兩側 t≤1 的分拆、degree≥6、多 degree-5、
 非樹／非相鄰 roots、一般／共同出口均保留；前提及數字查 [STATUS](STATUS.md)。
 完整 Σ 的出口接合仍明用來源雙缺失及刪邊繼承。
 
@@ -106,16 +104,15 @@ R27 末端各一臂及 [R30](c5_degree5_middle_cycle_minors.md) 中間不同二�
 
 ## 5. 重播入口與驗證範圍
 
-五組成果整合與十四個 checker 的本輪重播見 [發布核對](history/2026-09-29-no-mixed-progress-publish.md)。
-舊 (2,2) 文件 SHA 差異及內容重播見 [缺額型紀錄](history/2026-09-29-adjacent-no-mixed-t2-t0-pairs.md)；最小入口：
+本輪重疊型的證書、驗證及停止點見 [當輪紀錄](history/2026-09-29-adjacent-no-mixed-t2-t0-overlap.md)。
+舊 (2,2) 文件 SHA 差異及內容重播沿用 [缺額型紀錄](history/2026-09-29-adjacent-no-mixed-t2-t0-pairs.md)；最小入口：
 
 ```bash
+python3 scripts/c5_adjacent_degree5_no_mixed_t2_t0_overlap.py --check
 python3 scripts/c5_adjacent_degree5_no_mixed_t2_t0_pairs.py --check
 python3 scripts/c5_adjacent_degree5_no_mixed.py --check
-python3 scripts/c5_adjacent_degree5_no_mixed_t2_t0_singles.py --check
 python3 scripts/c5_adjacent_degree5_no_mixed_t2_t1_bridge.py --check
 python3 scripts/c5_single_spoke_frame_arc.py --check
-python3 scripts/c5_root_degree_excess.py --check
 python3 scripts/c5_exchange_geometry_scope.py --check
 lake build
 python3 scripts/check_docs.py

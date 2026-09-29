@@ -17,6 +17,10 @@ docgraph:
 ---
 # 無 mixed t_z=2、t_w=0,(2,2)：缺額型的飽和分量與雙列分離
 
+後續（2026-09-29）：[重疊型 D_w=0、O_w=1](c5_adjacent_degree5_no_mixed_t2_t0_overlap.md)
+已獨立重建 212 份必要支援並全部 source K5 排除，0 target 查詢。兩種 (2,2)
+預算均完成；覆蓋擴至五類／936 份，下一入口為 B–B。下文及原證書保留缺額型當輪結果。
+
 整理（2026-09-29）：本型與前序四組成果的提交範圍、十四個 checker 重播及
 遠端 HANDOFF 整合見 [發布核對](history/2026-09-29-no-mixed-progress-publish.md)。
 
