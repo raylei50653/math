@@ -30,9 +30,9 @@ B_z=04,\quad B_w=3,\quad
 
 p₁ 下 F_z={1}、F_D={1} 已可精確搬運；唯一失敗候選是
 
-[
-oxed{F_w(p_1)=\{0,3\}},
-]
+\[
+\boxed{F_w(p_1)=\{0,3\}}.
+\]
 
 使 E_w(p₁)=∅。下一步只比較**同一原 C_w** 的 source singleton
 F_w(q)={0} 與 target pair F_w(p₁)={0,3}：保留原 C_z、C_w、單接點 D_w、
