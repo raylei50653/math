@@ -6,6 +6,7 @@ Standard library only. Deliberately not a full CommonMark/HTML parser; see
 """
 from __future__ import annotations
 
+import json
 import re
 import sys
 import string
@@ -115,6 +116,10 @@ def check(root: Path) -> tuple[list[str], int, int]:
     cache = {}
     count = 0
     indexed = set()
+    manifest = root / "artifacts/MANIFEST.json"
+    # large JSON kept out of git and rebuilt by tools/artifacts.py count as present
+    reproducible = {(root / path).resolve() for path in json.loads(manifest.read_text())["files"]} \
+        if manifest.exists() else set()
     for source in files:
         for number, destination in links(source.read_text()):
             url = urlsplit(destination)
@@ -123,7 +128,7 @@ def check(root: Path) -> tuple[list[str], int, int]:
             count += 1
             target = (source.parent / unquote(url.path)).resolve() if url.path else source
             label = f"{source.relative_to(root)}:{number}: {destination}"
-            if not target.exists():
+            if not target.exists() and target not in reproducible:
                 errors.append(f"missing path: {label}")
                 continue
             if source == root / "docs/STATUS.md":

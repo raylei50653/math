@@ -63,8 +63,8 @@ lake exe cache get
 
 ## Python 產生器與大型 artifacts
 
-`scripts/` 的第三方依賴鎖在 `requirements.txt`（Python 3.14）。1 MB 以上的 JSON
-artifact 不進 git，只在 [`artifacts/MANIFEST.json`](artifacts/MANIFEST.json) 記錄
+`scripts/` 的第三方依賴鎖在 `requirements.txt`（Python 3.14）。1 MB 以上的產生檔
+（JSON、JSONL、bin）不進 git，只在 [`artifacts/MANIFEST.json`](artifacts/MANIFEST.json) 記錄
 sha256、大小與產生器；這些檔案列在 `.gitignore` 的自動產生區塊。新 clone 之後重建並逐位元組驗證：
 
 ```bash
