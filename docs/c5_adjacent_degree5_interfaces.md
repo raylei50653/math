@@ -9,7 +9,13 @@ docgraph:
 ---
 # 相鄰雙 degree-5：完整有序色對介面與逐類刪邊
 
-後續整理（2026-09-28）：[唯一共鄰單點化約](c5_adjacent_degree5_shared_singleton.md)
+後續（2026-09-29）：[無 mixed 化約](c5_adjacent_degree5_no_mixed.md) 已證
+E_z(q)=E_w(q)={c}、兩側完整逐邊 minimality，以及容量缺額加重疊恰一。
+經原 zw 的外部路徑排除三／四接點側型，平面來源每側只剩四型；
+[兩側 t=2 支援與環序](c5_adjacent_degree5_no_mixed_t2.md) 再給 322 份必要
+資料、512 個 target 已證、132 個未決；整型分離仍保留，未新增整型出口或 Lean theorem。
+
+後續整理（2026-09-29）：[唯一共鄰單點化約](c5_adjacent_degree5_shared_singleton.md)
 與 [同側限制](c5_adjacent_degree5_singleton_sectors.md) 已接上
 [01／23](c5_adjacent_degree5_singleton_long_arc.md)、[12](c5_adjacent_degree5_singleton_middle_arc.md)
 雙列分離及 [34／40 排除](c5_adjacent_degree5_singleton_end_arc.md)，
@@ -17,10 +23,17 @@ docgraph:
 [唯一 mixed K2 各一接點型](c5_adjacent_degree5_mixed_edge.md) 則由
 [原四環次序](c5_adjacent_degree5_mixed_edge_order.md) 全部作 disk 來源排除。
 [共鄰端點型](c5_adjacent_degree5_mixed_edge_shared.md) 的原 288 筆必要資料保持，
-其中 [w 側 t=2、(1)](c5_adjacent_degree5_mixed_edge_shared_t2.md) 與
-[t=1、(2)](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md) 已證雙列、
-加入出口第八類，不需 T4。其餘三種 w 分拆及一般雙 root 仍保留，必要表未證
-實現性，未 Lean 化。下文保留第一輪語境；目前停止點見 [HANDOFF](HANDOFF.md)。
+其中 [w 側 t=2、(1)](c5_adjacent_degree5_mixed_edge_shared_t2.md)、
+[t=1、(2)](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md)、
+[t=1、(1,1)](c5_adjacent_degree5_mixed_edge_shared_t1_singles.md) 及
+[t_w=0、(2,1)](c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md) 已證雙列、加入出口第八類，不需 T4。
+[t_w=0、(1,1,1)](c5_adjacent_degree5_mixed_edge_shared_t0_singles.md) 再以六跨度
+排除原 108 筆，完成此接線全部五型。[同端點 K2](c5_adjacent_degree5_mixed_edge_same_endpoint.md)
+再將 P*ᶻ=P*ʷ={u} 的 240 筆正常形以 K5／跨度／原 v-star 全作來源排除。
+[四 incidence 原 K4](c5_adjacent_degree5_mixed_edge_k4.md) 再由實際外部路徑
+排除 P*ᶻ=P*ʷ={u,v} 的一般平面來源，不需 T4 或 degree-list 定理；
+唯一 mixed K2 全部接線已處理，一般雙 root 仍保留；
+必要表未證實現性，未 Lean 化。下文保留第一輪語境；目前停止點見 [HANDOFF](HANDOFF.md)。
 
 2026-09-28。接續 [list-critical 基礎](c5_weak_list_cores.md) 與
 [單 root 完整介面](c5_degree5_interfaces.md)。本輪完成任意大小的精確接合、

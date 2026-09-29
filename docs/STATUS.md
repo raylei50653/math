@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-文件更新與研究依據：2026-09-28。
+文件更新與研究依據：2026-09-29。
 本頁維護研究狀態與完整報告索引；**優先順序只以 [HANDOFF](HANDOFF.md) 為準**。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 [條件式單側出口](c5_single_sided_exit.md) 已涵蓋唯一 degree-5 的全部核心。
@@ -36,11 +36,30 @@ minimality：z 無 spoke、唯一二接點 unary，w 容量飽和。306 筆必�
 原路徑 K5 留 288 筆，完整 q schemas 為 9,312；原資料保持。
 [w 側兩條 spoke](c5_adjacent_degree5_mixed_edge_shared_t2.md) 已完成 t_w=2、(1)：
 18 筆原關係接合 280 份幾何後得 38 筆必要支援，76 個指定查詢全接受，
-不需 T4，接入出口第八類；其餘 w 分拆與其他 K2 接線仍保留，未 Lean 化。
+不需 T4，接入出口第八類；其餘 w 分拆與 K2 接線後由下列結果完成，未 Lean 化。
 [w 側 t_w=1、(2)](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md) 再由局部
 annulus／雙禁色 bridge 搬運及原 diamond 外部路徑 K5 完成：原 36 筆綁定
 356 筆必要支援，排除 292、保留 64 的 128 查詢全接受，不需 T4 或新
-first-bridge 引理。出口第八類已擴充；其餘三種 w 分拆保留，未 Lean 化。
+first-bridge 引理。[w 側 t_w=1、(1,1)](c5_adjacent_degree5_mixed_edge_shared_t1_singles.md)
+再由原 72 筆與 780 份幾何接合成 32 筆必要支援，64 查詢全接受，不需 T4
+或新 K5 排除。[t_w=0、(2,1)](c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md) 再由原 54 筆與 240 份幾何接合為
+102 筆必要支援，204 查詢全接受；另以原 diamond 路徑 K5 排除 94、保留 8。
+[t_w=0、(1,1,1)](c5_adjacent_degree5_mixed_edge_shared_t0_singles.md) 再以六跨度
+排除原 108 筆；60 份同序幾何、6,480 次接合皆矛盾，0 target 查詢。
+不需 T4；出口第八類涵蓋此接線全部五型。[同端點 K2](c5_adjacent_degree5_mixed_edge_same_endpoint.md)
+再完成 P*ᶻ=P*ʷ={u}：240 筆正常形以原 K5 排除 105、跨度排除 123、
+飽和 v-star 排除 12，整型來源不存在；不需 T4、0 target 查詢，未 Lean 化。
+[四 incidence 原 K4](c5_adjacent_degree5_mixed_edge_k4.md) 再以完整分量改色
+保證實際外部路徑，排除 P*ᶻ=P*ʷ={u,v} 的一般平面來源；不需 T4 或
+degree-list 定理、0 target 查詢。唯一 mixed K2 全部九組接線已處理，
+出口第八類移除接線限制；紙面＋Python，未新增 Lean theorem。
+[無 mixed 化約](c5_adjacent_degree5_no_mixed.md) 已證 E_z(q)=E_w(q)={c}、
+逐邊 minimality 及容量缺額加重疊恰一。經原 zw 的實際外部路徑給 K5
+篩選，平面來源每側只剩四型；149 份側資料保留 118、同色接合保留
+3,548 份。[兩側 t=2 的支援與環序](c5_adjacent_degree5_no_mixed_t2.md) 再將
+原 88 份接成 322 份必要支援；42 份原資料有支援、46 份纖維空，
+512／644 個 target 已證、132 個未決，未證整型分離或 disk 實現。
+紙面＋外部 degree-list 定理＋Python，未新增整型出口類別或 Lean theorem。
 degree≥6、多 degree-5 的一般分離及 R31 來源 minor 缺口保留；下一入口見 HANDOFF。
 逐輪數字、驗證與發布紀錄已移至 [歷史快照](STATUS_HISTORY.md)。
 
@@ -65,11 +84,18 @@ degree≥6、多 degree-5 的一般分離及 R31 來源 minor 缺口保留；下
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [無 mixed 兩側 t=2,(2) 支援與環序](c5_adjacent_degree5_no_mixed_t2.md) | 原 zw 細鄰域的兩側區塊與六單位同序；兩算法同得 2,550 份幾何／2,560 placements，原 88 份中 42 份接成 322 份必要支援、46 份纖維空；206 份雙列已證、共 512／644 個 target 接受、132 個未決；完整 q schemas、具名 rotations、原 ID／SHA 保留，不需 T4、未證實現或 Lean 化 |
+| [相鄰雙 root 無 mixed](c5_adjacent_degree5_no_mixed.md) | 同色 singleton residual、完整逐邊 minimality、容量缺額／重疊恰一；平面來源每側只剩 t=2:(2)、t=1:(2,1)、t=0:(2,2)／(2,1,1)，118 份側資料／3,548 份同色接合；2 張非平面 minimal q-core、52 份刪邊染色、400 份原 zw 路徑 minor；未證 disk 實現或 target 分離，未 Lean 化 |
+| [唯一 mixed K2 四 incidence 型](c5_adjacent_degree5_mixed_edge_k4.md) | 原 K4 與實際外部路徑排除一般平面來源；初等完整改色、原 K5，不需 T4 或 degree-list 定理、0 target 查詢；270 份選取子圖、384 次改色接回、1 張非平面 minimal q-core／22 份刪邊染色；九組接線覆蓋完成，未 Lean 化 |
+| [唯一 mixed K2 同端點型](c5_adjacent_degree5_mixed_edge_same_endpoint.md) | P*ᶻ=P*ʷ={u} 的完整 uv-tuples／逐邊 minimality 及任意大小 disk 來源排除；240 筆經原 K5 留 135，再以跨度排除 123、原 v-star 排除 12；省略 v 扇區會留下 4 份假候選，不需 T4、0 target 查詢；紙面＋外部定理＋Python，未 Lean 化 |
 | [共鄰端點 K2 的 w 側兩條 spoke](c5_adjacent_degree5_mixed_edge_shared_t2.md) | t_w=2、(1) 的任意大小支援／環序與雙列分離；280 份幾何接合原 18 筆關係成 38 筆必要支援，76 查詢／202 組完整禁色候選皆接受，不需 T4；出口新增第八類，未證 disk 實現或 Lean 化 |
 | [共鄰端點 K2 的 t_w=1、(2)](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md) | 原 36 筆 ID／完整記錄與 SHA256 綁定；1,140 份幾何接合成 356 筆必要支援，原 diamond／spoke 路徑 K5 排除 292、保留 64 的 128 查詢全接受；局部任意大小搬運，不需新 first-bridge 或 T4，出口第八類擴充；未證實現性或 Lean 化 |
-| [唯一 mixed K2 共鄰端點型](c5_adjacent_degree5_mixed_edge_shared.md) | P*ᶻ={u,v}、P*ʷ={u} 的完整 tuples／逐邊等價式；z 無 spoke、唯一二接點 unary，w 飽和；306 筆經原路徑 K5 留 288，完整 q schemas 9,312、28 組局部支援，原資料保持；t_w=2、(1) 及 t_w=1、(2) 由前列完成，其餘三種 w 分拆保留；紙面＋外部定理＋Python，未 Lean 化 |
+| [共鄰端點 K2 的 t_w=1、(1,1)](c5_adjacent_degree5_mixed_edge_shared_t1_singles.md) | 原 72 筆與 780 份同序幾何接合為 32 筆必要支援，64 target／128 組完整禁色候選全接受；三份 unary 支援下界迫使五邊飽和，56 筆原正常形無支援；不需 T4 或新 K5，完成此接線 t_w≥1，未證實現性或 Lean 化 |
+| [共鄰端點 K2 的 t_w=0、(2,1)](c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md) | 原 54 筆與 240 份同序幾何接合為 102 筆必要支援，204 查詢全接受；另以原 diamond／u、v 附件路徑 K5 排除 94，保留 8；無 root-spoke，三份完整 relation 在兩列均可精確搬運；不需 T4，出口第八類擴充，未證實現性或 Lean 化 |
+| [共鄰端點 K2 的 t_w=0、(1,1,1)](c5_adjacent_degree5_mixed_edge_shared_t0_singles.md) | 原 108 筆皆需跨度至少 6>5，全部作 disk 來源排除；兩算法同得 60 份具名幾何、6,480 次接合全矛盾，0 target 查詢；不需 T4，完成 zu、zv、wu 接線，出口第八類移除 w 分拆限制；紙面＋外部定理＋Python，未 Lean 化 |
+| [唯一 mixed K2 共鄰端點型](c5_adjacent_degree5_mixed_edge_shared.md) | P*ᶻ={u,v}、P*ʷ={u} 的完整 tuples／逐邊等價式；z 無 spoke、唯一二接點 unary，w 飽和；306 筆經原路徑 K5 留 288，完整 q schemas 9,312、28 組局部支援，原資料保持；四種 w 分拆已證雙列，t_w=0、(1,1,1) 由六跨度排除，完成此接線全部五型；紙面＋外部定理＋Python，未 Lean 化 |
 | [相鄰雙 degree-5 唯一 mixed 原 K2](c5_adjacent_degree5_mixed_edge.md) | 各一接點的完整關係、逐邊 minimality 與一色／兩色 residual；816 筆必要資料經原路徑 K5 留 576，原資料保持；disk 來源已由下一列全部排除，紙面＋外部定理＋Python，未 Lean 化 |
-| [唯一 mixed K2 原四環次序排除](c5_adjacent_degree5_mixed_edge_order.md) | 各一接點型的任意大小 disk 來源排除，不需 T4：552 筆超周長，24 筆飽和次序矛盾；獨立 360 份四單位幾何、240 次原資料／幾何比對。其他 K2 接線及一般出口仍保留，未 Lean 化 |
+| [唯一 mixed K2 原四環次序排除](c5_adjacent_degree5_mixed_edge_order.md) | 各一接點型的任意大小 disk 來源排除，不需 T4：552 筆超周長，24 筆飽和次序矛盾；獨立 360 份四單位幾何、240 次原資料／幾何比對。其他唯一 mixed K2 接線由後續涵蓋，一般出口仍保留，未 Lean 化 |
 | [相鄰雙 degree-5 共鄰單點 34／40 排除](c5_adjacent_degree5_singleton_end_arc.md) | 34 的 152 筆必要配置以 K5 排除 120、共同 T4=01213 排除 32；40 全來源反射及獨立重算同數全排除，216 minor 控制；唯一 mixed singleton 全部支援接回出口，紙面＋外部定理＋Python，未 Lean 化 |
 | [相鄰雙 degree-5 共鄰單點 12 長弧](c5_adjacent_degree5_singleton_middle_arc.md) | 固定 q 與原三角形重算具名支援；728 筆排除 320 份 K5／112 份 T4，保留 296 筆的 592 target 全接受、0 未決；p₂ 使用 {0,3} x list，反射及 108 minor 控制；34／40 由後續排除，未 Lean 化或證實現性 |
 | [相鄰雙 degree-5 共鄰單點 01／23 長弧](c5_adjacent_degree5_singleton_long_arc.md) | 原三角形外側次序與原 r–x–B 路徑 K5；692 筆必要支援排除 356＋40，保留 296 筆的 592 target 全接受、0 未決；反射到 23，接入條件式出口第七類；12 分離及 34／40 排除由後續完成，紙面＋外部定理＋Python，未 Lean 化 |
@@ -108,7 +134,7 @@ degree≥6、多 degree-5 的一般分離及 R31 來源 minor 缺口保留；下
 | [三接點兩-spoke 排除](c5_two_spoke_three_contacts.md) | 同圖 palette 差強迫 triangle／三臂及實際 boundary tethers，K5 minor 排除全部 (3)；任意長度紙面證明＋局部證書，未 Lean 化 |
 | [未接內點 boundary 引理](c5_unattached_boundary.md) | 完成兩-spoke 非相鄰 (3) 單缺失分離；一般失敗側每個核心必碰全部五個 boundary 頂點，內點 degree 不限 |
 | [兩-spoke 區域化約](c5_degree5_two_spoke_sectors.md) | t=2 的 (3)／(2,1) 任意大小必要位置分類；56 個排除、24 個保留；全部 (3) 由後續 K5 minor 排除，其後 S={b0,b1}、S={b1,b2} 的四個 (2,1) 表項亦已排除 |
-| [單側出口接合](c5_single_sided_exit.md) | 全 degree-4、唯一 degree-5（全部 spoke 數）、未接內點 boundary，以及相鄰雙 root 的唯一 mixed singleton（全部 x 支援）或共鄰端點 K2（zu、zv、wu，w 側 t=2、(1) 或 t=1、(2)）核心皆給單側出口；失敗側必有 degree≥6 或至少兩個 degree-5 且避開已處理子類，一般版未證 |
+| [單側出口接合](c5_single_sided_exit.md) | 全 degree-4、唯一 degree-5（全部 spoke 數）、未接內點 boundary，以及相鄰雙 root 的唯一 mixed singleton（全部 x 支援）或唯一 mixed K2（全部接線／分拆）核心皆給單側出口；失敗側必有 degree≥6 或至少兩個 degree-5 且避開已處理子類，一般版未證 |
 | [3703 任意長度排除](c5_sector_3703_exclusion.md) | 葉點 minor 加三列 palettes 排除兩種剩餘鏈；完成指定圖類的五目標，紙面＋外部 degree-list＋局部證書，未 Lean 化 |
 | [C5 雙拒絕分類](c5_two_rejection_proof_zh.md) | 指定 disk／degree≤4／兩接點圖類內，雙拒絕強迫二內點 1855；排除四個目標；3703 由三拒絕續作排除，紙面未 Lean 化 |
 | [3703 兩葉鏈化約](c5_sector_3703_structure.md) | 三拒絕迫使 bridges／互斥 triangles 的 block 鏈；兩葉只剩 012／234 或 024／234，b0 第二接點在鏈內；剩餘兩型已由 [排除報告](c5_sector_3703_exclusion.md) 處理 |
@@ -267,7 +293,7 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | --- | --- | --- |
 | 已完成 | 3703 兩葉鏈 | [排除報告](c5_sector_3703_exclusion.md) 完成任意長度三拒絕排除；限定 sector 圖類，未 Lean 化 |
 | 已完成 | 五目標到三-spoke 核心出口的接合 | [定理](c5_single_sided_exit.md) 核對來源假設、五目標窮盡及 first strict step；條件式結論無大小限制 |
-| 活躍 | 一般單側出口的核心分離 | 唯一 degree-5 與唯一 mixed singleton 全部已接回 [條件式出口](c5_single_sided_exit.md)；[唯一 mixed K2 各一接點型](c5_adjacent_degree5_mixed_edge_order.md) 已作 disk 來源排除。[共鄰端點型](c5_adjacent_degree5_mixed_edge_shared.md) 原 288 筆必要資料保持，其中 [w 側 t=2、(1)](c5_adjacent_degree5_mixed_edge_shared_t2.md) 與 [t=1、(2)](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md) 已證雙列、接入第八類，其餘三種 w 分拆及一般分離保留；優先序見 HANDOFF |
+| 活躍 | 一般單側出口的核心分離 | 唯一 degree-5、唯一 mixed singleton 及唯一 mixed K2 全部已接回 [條件式出口](c5_single_sided_exit.md)；[無 mixed 化約](c5_adjacent_degree5_no_mixed.md) 使平面每側剩四型；[兩側 t=2 支援與環序](c5_adjacent_degree5_no_mixed_t2.md) 已給 322 份必要資料、512 個 target 已證，剩 132 個未決，首項 record 4／p₁ 的空 residual。較大／多 mixed 與一般分離保留，優先序見 HANDOFF |
 | 已完成 | 指定 sector 圖類的雙拒絕分類 | [紙面分類](c5_two_rejection_proof_zh.md) 排除四個目標；依賴外部 degree-list，完整分類未 Lean 化 |
 | 被後續涵蓋 | 3903 空／非空分支、331 同圖分支 | 既有局部證據保留；後續分類已涵蓋原排除問題，不代表抽象 603 profiles 已改寫 |
 | 保留 | R31 任意長來源 minors | 正常形已完成；仍需 boundary 固定 branch sets、四列、degrees、刪邊著色與拓撲合成，見 [R31](c5_degree5_same_terminal_triangles.md) |
@@ -277,6 +303,16 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 
 ## 歷史紀錄與舊連結
 
+- [2026-09-29：相鄰雙 degree-5 七輪成果整理與發布驗證](history/2026-09-29-adjacent-progress-publish.md)
+
+- [2026-09-29：無 mixed 兩側 t=2 的實際支援、環序與 target 上界](history/2026-09-29-adjacent-no-mixed-t2.md)
+
+- [2026-09-29：無 mixed 的同色 residual、容量與逐邊 minimality](history/2026-09-29-adjacent-no-mixed.md)
+- [2026-09-29：唯一 mixed K2 四 incidence 型，原 K4 與實際外部路徑](history/2026-09-29-adjacent-mixed-edge-k4.md)
+- [2026-09-29：唯一 mixed K2 同端點型，完整關係與原 v-star 來源排除](history/2026-09-29-adjacent-mixed-edge-same-endpoint.md)
+- [2026-09-29：共鄰端點 K2 的 t_w=0、(1,1,1)，六跨度來源排除](history/2026-09-29-adjacent-mixed-edge-shared-t0-singles.md)
+- [2026-09-29：共鄰端點 K2 的 t_w=0、(2,1)，原 diamond 路徑與雙列分離](history/2026-09-29-adjacent-mixed-edge-shared-t0-pair-single.md)
+- [2026-09-29：共鄰端點 K2 的 t_w=1、(1,1)，飽和環序與雙列分離](history/2026-09-29-adjacent-mixed-edge-shared-t1-singles.md)
 - [2026-09-28：相鄰雙 degree-5 九組成果整理與發布驗證](history/2026-09-28-adjacent-progress-publish.md)
 - [2026-09-28：共鄰端點 K2 的 t_w=1、(2)，局部 K5 搬運與雙列分離](history/2026-09-28-adjacent-mixed-edge-shared-t1-pair.md)
 - [2026-09-28：共鄰端點 K2 的 w 側兩條 spoke、實際支援與雙列分離](history/2026-09-28-adjacent-mixed-edge-shared-t2.md)

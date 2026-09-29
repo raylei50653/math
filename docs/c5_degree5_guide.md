@@ -1,14 +1,32 @@
 # degree-5／R 系列導讀：介面、排除範圍與保留缺口
 
-後續（2026-09-28）：[唯一 mixed 原 K2](c5_adjacent_degree5_mixed_edge.md) 的
+後續（2026-09-29）：[無 mixed 化約](c5_adjacent_degree5_no_mixed.md) 完成
+兩側同色 singleton residual、逐邊 minimality 與容量缺額／重疊恰一。
+原 zw 加對側 unary 路徑使平面來源每側只剩 t=2 的 (2)、t=1 的
+(2,1)、t=0 的 (2,2)／(2,1,1)；118 份側資料及 3,548 份同色接合
+皆為必要資料。[兩側 t=2 支援與環序](c5_adjacent_degree5_no_mixed_t2.md) 再給
+322 份必要資料、512 個 target 已證及 132 個未決；整型分離、disk 實現
+及新 Lean theorem 仍保留。
+
+後續整理（2026-09-29）：[唯一 mixed 原 K2](c5_adjacent_degree5_mixed_edge.md) 的
 各一接點型已由 [原四環外側次序](c5_adjacent_degree5_mixed_edge_order.md)
 作 disk 來源排除：576 筆必要資料中 552 筆超周長，24 筆飽和次序矛盾，
 不需 T4、大小不限。[共鄰端點型](c5_adjacent_degree5_mixed_edge_shared.md) 另已
 完成完整關係／逐邊 minimality，強迫 z 無 spoke、唯一二接點 unary；w 容量
 飽和，原 288 筆必要資料保持。[w 側兩條 spoke](c5_adjacent_degree5_mixed_edge_shared_t2.md)
 已完成 t=2、(1) 的支援／環序與雙列分離；[t=1、(2)](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md)
-再由局部 K5 搬運完成 292 排除＋64 保留／128 查詢全接受。兩型加入出口
-第八類，其餘三種 w 分拆保留。必要資料未證 disk 實現，未新增 Lean theorem。
+再由局部 K5 搬運完成 292 排除＋64 保留／128 查詢全接受。
+[t=1、(1,1)](c5_adjacent_degree5_mixed_edge_shared_t1_singles.md) 再以飽和環序
+完成 32 筆／64 查詢。[t_w=0、(2,1)](c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md) 再完成 94 排除＋8 保留／16 查詢。
+[t_w=0、(1,1,1)](c5_adjacent_degree5_mixed_edge_shared_t0_singles.md) 再以 6>5
+的跨度矛盾排除原 108 筆，完成此接線全部五型；出口第八類移除 w 分拆限制。
+[同端點 K2](c5_adjacent_degree5_mixed_edge_same_endpoint.md) 再重推 P*ᶻ=P*ʷ={u}
+的完整關係，240 筆經原 K5 排除 105、跨度排除 123、原 v-star 排除 12，
+整型來源不存在，不需 T4、0 target 查詢。必要資料未證 disk 實現，未新增 Lean theorem。
+[四 incidence 原 K4](c5_adjacent_degree5_mixed_edge_k4.md) 再以原 unary 整體
+改色與實際外部路徑，排除 P*ᶻ=P*ʷ={u,v} 的一般平面來源；不需 T4
+或 degree-list 定理。唯一 mixed K2 全部九組接線完成，出口第八類移除
+接線限制；一般分離仍保留，未新增 Lean theorem。
 
 後續（2026-09-28）：[唯一共鄰單點 01／23 長弧](c5_adjacent_degree5_singleton_long_arc.md)
 以三角形外側次序及原 x 路徑 K5 完成指定雙列分離，加入條件式出口；

@@ -15,6 +15,21 @@ docgraph:
 ---
 # 相鄰雙 degree-5：唯一 mixed K2 的共鄰端點型
 
+後續（2026-09-29）：[t_w=0、(1,1,1) 六跨度排除](c5_adjacent_degree5_mixed_edge_shared_t0_singles.md)
+已逐筆排除原 108 筆：四份 unary、v 的總跨度至少 6>5，不需 T4，0 target 查詢。
+zu、zv、wu 共鄰端點接線的全部五型已完成，出口第八類移除 w 分拆限制。
+原資料保持；下列通知與正文保留各輪語境，現行入口見 [HANDOFF](HANDOFF.md)。
+
+後續（2026-09-29）：[t_w=0、(2,1)](c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md) 已完成無 root-spoke 的支援／環序與原 diamond
+路徑 K5：原 54 筆接合為 102 筆必要支援，204 查詢全接受；另排除 94、
+保留 8，不需 T4。出口第八類已擴充；此接線只剩 t_w=0、(1,1,1) 的
+108 筆。原資料保持；下列後續通知與正文保留各輪語境。
+
+後續（2026-09-29）：[t_w=1、(1,1)](c5_adjacent_degree5_mixed_edge_shared_t1_singles.md)
+已由飽和環序及完整禁色上界完成：原 72 筆綁定 32 筆必要支援，64 查詢
+全接受、不需 T4。共鄰端點型的 t_w≥1 全部接回出口；只剩 t_w=0 的
+(2,1)／(1,1,1)。原 306／288 筆及 9,312 schemas 保持，下列為各輪語境。
+
 後續（2026-09-28）：[w 側 t_w=1、(2)](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md)
 已由局部化的相鄰支援對／原 diamond 路徑 K5 及完整禁色集合上界完成。
 原 36 筆綁定 356 筆必要支援，排除 292、保留 64 的 128 查詢全接受，
