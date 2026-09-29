@@ -6,9 +6,12 @@ artifacts/MANIFEST.json (tracked) records, for every generated file of at least
 dependency order between producers.  The files themselves are listed in a
 generated block of .gitignore.  Dependencies come from the paths named in each
 script and from missing-input failures seen during a rebuild, which are saved.
+Each producer's fingerprint (its code, the scripts/*.py it imports or names, and
+the recorded hashes of its inputs) is saved when its output is verified; a
+changed fingerprint marks it and everything downstream stale.
 
-python tools/artifacts.py status              # hash every recorded file: ok / missing / changed
-python tools/artifacts.py rebuild [-j N]      # rerun producers of missing or changed files, N at a time
+python tools/artifacts.py status              # ok / missing / changed / stale (producer code or inputs changed)
+python tools/artifacts.py rebuild [-j N]      # rerun producers of missing, changed or stale files, N at a time
 python tools/artifacts.py rebuild --all       # rerun every producer, verify byte-identical output
 python tools/artifacts.py record [PATH ...]   # accept current bytes (after an intended change);
                                               # with no PATH: rescan artifacts/ for large files
@@ -131,6 +134,46 @@ def state(path, entry):
     return 'ok'
 
 
+def code_closure(script):
+    """The producer plus every scripts/*.py it imports or names in a string, transitively."""
+    seen, todo = set(), [script]
+    while todo:
+        name = todo.pop()
+        if name in seen:
+            continue
+        seen.add(name)
+        text = script_text(name)
+        refs = re.findall(r'^\s*(?:from|import)\s+(\w+)', text, re.M)
+        refs += re.findall(r'''["'](?:scripts/)?(\w+)\.py["']''', text)
+        todo.extend(f'{ref}.py' for ref in refs if (ROOT / 'scripts' / f'{ref}.py').exists())
+    return sorted(seen)
+
+
+def fingerprint(script, manifest):
+    """What a producer's recorded output was built from: its code closure and the
+    recorded hashes of the files its needs produce."""
+    h = sha256()
+    for name in code_closure(script):
+        h.update(f'scripts/{name}\0'.encode() + (ROOT / 'scripts' / name).read_bytes() + b'\0')
+    needs = set(manifest['producers'].get(script, []))
+    for path, entry in sorted(manifest['files'].items()):
+        if entry['script'] in needs:
+            h.update(f'{path}\0{entry["sha256"]}\0'.encode())
+    return h.hexdigest()
+
+
+def stale_producers(manifest):
+    """Producers whose fingerprint changed since their output was verified, and everything
+    downstream of them (an upstream rerun may change what they read)."""
+    recorded = manifest.get('fingerprints', {})
+    stale = set()
+    for script in order(manifest):
+        if (recorded.get(script) != fingerprint(script, manifest)
+                or any(n in stale for n in manifest['producers'][script])):
+            stale.add(script)
+    return stale
+
+
 def check_environment():
     want = f"{sys.version_info.major}.{sys.version_info.minor}"
     notes = []
@@ -154,9 +197,12 @@ def check_environment():
 
 def cmd_status(args):
     manifest = load()
+    stale = stale_producers(manifest)
     counts = {}
     for path, entry in sorted(manifest['files'].items()):
         s = state(path, entry)
+        if s == 'ok' and entry['script'] in stale:
+            s = 'stale'
         counts[s] = counts.get(s, 0) + 1
         if s != 'ok' or args.verbose:
             print(f'{s:8s} {path}  <- scripts/{entry["script"]}')
@@ -218,8 +264,8 @@ def cmd_rebuild(args):
     if args.all:
         selected = set(outputs)
     else:
-        selected = {manifest['files'][p]['script'] for p in manifest['files']
-                    if state(p, manifest['files'][p]) != 'ok'}
+        selected = stale_producers(manifest) | {manifest['files'][p]['script'] for p in manifest['files']
+                                                if state(p, manifest['files'][p]) != 'ok'}
     status = {script: 'pending' for script in selected}
     passable = {'ok', 'mismatch'} if args.keep_going else {'ok'}
     rank = {script: i for i, script in enumerate(order(manifest))}
@@ -269,6 +315,8 @@ def cmd_rebuild(args):
                         report('MISMATCH', f'{path}  <- scripts/{script}')
                 else:
                     status[script] = 'ok'
+                    manifest.setdefault('fingerprints', {})[script] = fingerprint(script, manifest)
+                    save(manifest)
                     report('ok', f'scripts/{script} ({seconds:.0f}s, {len(outputs[script])} file(s))')
     stuck = [s for s, v in status.items() if v == 'pending']
     for script in stuck:
@@ -300,6 +348,12 @@ def cmd_record(args):
     manifest['python'] = f"{sys.version_info.major}.{sys.version_info.minor}"
     manifest['producers'] = infer_needs(manifest)
     order(manifest)  # reject cycles
+    fingerprints = manifest.setdefault('fingerprints', {})
+    for script in list(fingerprints):
+        if script not in manifest['producers']:
+            del fingerprints[script]
+    for script in sorted({manifest['files'][p]['script'] for p in paths}):
+        fingerprints[script] = fingerprint(script, manifest)
     save(manifest)
     write_gitignore(manifest)
     print(f'recorded {len(paths)} file(s); manifest holds {len(manifest["files"])} from '
