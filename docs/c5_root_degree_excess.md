@@ -13,6 +13,12 @@ docgraph:
 ---
 # No-mixed root 骨架：degree 超額預算與樹上拒絕證書
 
+後續（2026-09-29）：[交換或幾何阻斷範圍遍歷](c5_exchange_geometry_scope.md)
+核對 §6 的 A／B／C 邊界；雙 root 已完成兩側 t=2、t_z=2 配 t_w=1
+或 t_w=0,(2,1,1)，以及 [t_w=0,(2,2) 缺額型](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)
+四類及整圖 root 交換型。原 3,548 份分類與 1,920 份
+抽象路徑控制不構成一般 A 的證明；下文表格保留本報告當輪狀態。
+
 2026-09-29，基準 `30a2e59`。將使用者本輪提出的兩個推導補齊前提與
 證明，並以獨立有限控制重播。**已證的是 source 預算恆等式及樹上
 edge-minimal list obstruction 的完整描述；跨列分離仍是猜想。**

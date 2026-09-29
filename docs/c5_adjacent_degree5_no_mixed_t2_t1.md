@@ -15,6 +15,12 @@ docgraph:
 ---
 # 無 mixed：t_z=2,(2)，t_w=1,(2,1) 的預算、支援與拒絕原因
 
+後續（2026-09-29）：[原外部路徑與首橋](c5_adjacent_degree5_no_mixed_t2_t1_bridge.md)
+已證 record 14／p₁ 延拓，套回原表新增 52 個延拓；1,054／1,120 已證，
+66 個查詢未決；此停止點再由 [原雙端點](c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md)
+全部關閉，1,120／1,120 全證並接入出口第九類。原 560 份全保留、0 新來源排除；
+下文及本層 artifacts 保留原輪的 1,002／118 數字與 record 14 停止點。
+
 2026-09-29，基準 `30a2e59`。完成原 **136 份有序必要資料**的實際
 支援／環序覆蓋，並依 [degree 超額預算](c5_root_degree_excess.md)
 記錄 source 缺額與 target 拒絕原因。兩個獨立幾何算法同得 3,150 份

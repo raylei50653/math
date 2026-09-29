@@ -5,49 +5,47 @@
 文件角色與更新規則見 [DOCUMENTATION](DOCUMENTATION.md)。歷史輪次只保留在
 各專題報告與 `docs/history/`，不在此頁重述。
 
-## 1. 現在從這裡開始
+## 1. 目前做到哪裡
 
 主命題 **`K∞=K≤5` 仍未證**。目前仍走 weak-deletion 候選 A 的
 minimal obstruction 路線：先完成 single-sided exit 的可處理核心，再處理
 一般／共同出口。唯一 degree-5 全部核心、唯一 mixed singleton、唯一 mixed K2
-及 no-mixed 兩側 t=2,(2) 已接回條件式出口；一般出口仍未證。
+及 no-mixed 四類已接回條件式出口；一般出口仍未證。
 
-**目前唯一優先入口：**
-[t_z=2,(2)，t_w=1,(2,1)](c5_adjacent_degree5_no_mixed_t2_t1.md) 的
-**record 14／p₁=01021**。
+## 2. 精確停止點與下一個窄問題
 
-當前子表由原 136 份有序資料接成 560 份必要支援；1,002／1,120 個 target
-已證，剩 118 個查詢／146 組失敗候選。第一個停止點為：
+**目前唯一優先入口：t_z=2,(2)，t_w=0,(2,2)，D_w=0、O_w=1。**
+[缺額型報告 §5](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md#5-證書控制與下一入口)
+已綁定原 3,548 份 joins 中的 96 份重疊型；首項 retained-join ID=3040、
+sides=(133,30)。目前只讀取入口資料，尚未建立此型的 actual-support／rotation
+必要覆蓋，也未遍歷 targets。第一筆為：
 
 \[
-B_z=04,\quad B_w=3,\quad
-(S_z,S_w,S_D)=(01,123,34),
+B_z=01,\quad B_w=\varnothing,\quad
+F_{C_z}(q)=\{2\},\quad c=3.
 \]
 
 \[
-(F_z,F_w,F_D)(q)=(\{1\},\{0\},\{2\}),\quad c=3.
+(F_{C_w},F_{D_w})(q)=(\{0,1\},\{0,2\}),\quad
+D_w=0,\quad O_w=1.
 \]
 
-p₁ 下 F_z={1}、F_D={1} 已可精確搬運；唯一失敗候選是
-
-\[
-\boxed{F_w(p_1)=\{0,3\}}.
-\]
-
-使 E_w(p₁)=∅。下一步只比較**同一原 C_w** 的 source singleton
-F_w(q)={0} 與 target pair F_w(p₁)={0,3}：保留原 C_z、C_w、單接點 D_w、
-五個接點、三 spokes、zw、actual supports、bridges、旁支與共同色框。
+保留三原分量 C_z、C_w、D_w、六個具名接點、兩條原 spokes、zw、
+actual supports、原 bridges、旁支及共同色框。兩個飽和 pair 分量均有
+自己的完整 relation 與原路徑，不能合併或只任選其中之一。
 
 優先檢查順序：
-1. 完整關係／actual-support 色置換是否再收緊 F_w(p₁)；
-2. 端點 tightness、原 bridge palettes 或固定框弧是否排除 {0,3}；
-3. 若只剩單一 palette 模式，是否可重建第二個 source 禁色，與 F_w(q)={0} 矛盾；
-4. 若幾何要求本身不可能，才記為來源／候選的支援或 minor 阻斷。
 
-**不要**重開已完成的兩側 t=2 大枚舉；不要把飽和 D_w 當成 spoke 或刪掉；
-不要把 source 的 D+O+κ 預算直接套到 target；未決上界候選不是 disk 反例。
+1. 從原 96 份 IDs／sides 重建同源支援與 cyclic-order 必要覆蓋；
+2. 對兩個飽和分量各自核對 source 原路徑與同一固定框弧的 K5；
+3. 對保留支援逐項接合完整 target 關係，再判定交換或幾何阻斷。
 
-## 2. 可重用證明工具與界線
+缺額型 D_w=1、O_w=0 已完成：364 份必要支援以 source K5 排除 340，
+保留 24 份的 48 查詢全證。這份支援表不能直接當作重疊型覆蓋。
+不要重開已完成的大枚舉；source 的 D+O+κ 預算不是 target 等式；
+未決上界候選、必要支援與 minor skeletons 都不是 disk 反例或來源實現。
+
+### 可重用證明工具與界線
 
 | 工具／機制 | 可安全使用的結論 | 主要入口 |
 | --- | --- | --- |
@@ -55,8 +53,8 @@ F_w(q)={0} 與 target pair F_w(p₁)={0,3}：保留原 C_z、C_w、單接點 D_w
 | Root degree 超額預算 | source q 的 no-mixed minimal core 有 D+O+κ=degree−4；不是 target 等式 | [Root 預算](c5_root_degree_excess.md) §1–3 |
 | 樹上 edge-minimal list obstruction | root 樹有 κ=0，lists 由 incident 邊色完整描述；不能把 source 邊色直接傳到 p | [Root 預算](c5_root_degree_excess.md) §4–5 |
 | actual support／annulus 次序 | 保留原分量與具名接點後得到任意大小必要覆蓋；必要表不等於 disk 實現 | [t₂/t₁ 支援表](c5_adjacent_degree5_no_mixed_t2_t1.md) §2–3 |
-| 原外部路徑＋固定框弧 minor | 可排除來源或使用 target 拒絕假設排除某候選；兩者必分開記錄 | [t₂/t₂ bridge](c5_adjacent_degree5_no_mixed_t2_bridge.md) |
-| 端點／bridge palette 相容性 | source/target 不全域守恆時，仍可利用同一原路徑端點 tightness 與完整 relation | [t₂/t₂ endpoints](c5_adjacent_degree5_no_mixed_t2_endpoints.md) |
+| 原外部路徑＋固定框弧 minor | 可排除來源或使用 target 拒絕假設排除某候選；兩者必分開記錄 | [t₂/t₁ bridge](c5_adjacent_degree5_no_mixed_t2_t1_bridge.md) |
+| 端點／bridge palette 相容性 | source/target 不全域守恆時，仍可利用同一原路徑端點 tightness 與完整 relation | [t₂/t₁ endpoints](c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md) |
 | 整份拒絕證書 palette 交換 | 幾何排除其他選擇後，可在同一原 C 上重建額外 source 禁色 | [t₂/t₂ path palettes](c5_adjacent_degree5_no_mixed_t2_path_palettes.md) |
 
 目前已證的高階 source 結構是 [Root 預算](c5_root_degree_excess.md)：
@@ -65,10 +63,13 @@ D+O+κ=degree−4，以及樹骨架 κ=0。**尚未證**的是：
 以及任意 degree-5 root 樹的跨列分離。
 
 已關閉的主線家族：唯一 degree-5 全部分支；唯一 mixed singleton 全支援；
-唯一 mixed K2 全接線；no-mixed 兩側 t=2,(2) 的 644／644 target。
-目前活躍的是 no-mixed t₂/t₁；其餘 no-mixed 分拆（特別是 O=1 型）、
-degree≥6、多 degree-5、非樹／非相鄰 roots、一般／共同出口均保留。
-完整數字、前提與證據入口一律查 [STATUS](STATUS.md) 與各專題報告。
+唯一 mixed K2 全接線；no-mixed 兩側 t=2,(2)，以及 t_z=2,(2) 配
+t_w=1,(2,1)、t_w=0,(2,1,1) 或 t_w=0,(2,2) 缺額型，含整圖 root 交換。
+[範圍遍歷](c5_exchange_geometry_scope.md) 原 25 格／15 種交換型分類保持，
+後續覆蓋為四類／744 份原接合，11 類／2,804 份仍開放；1,920 份抽象
+路徑控制不證一般機制完備性。重疊型以外的分拆、degree≥6、多 degree-5、
+非樹／非相鄰 roots、一般／共同出口均保留；前提及數字查 [STATUS](STATUS.md)。
+完整 Σ 的出口接合仍明用來源雙缺失及刪邊繼承。
 
 證據層保持分開：紙面證明、外部 degree-list 定理、Python 固定域控制、
 Lean 普通證明與 Lean `native_decide` 不互相代替。必要支援／minor skeleton
@@ -105,15 +106,17 @@ R27 末端各一臂及 [R30](c5_degree5_middle_cycle_minors.md) 中間不同二�
 
 ## 5. 重播入口與驗證範圍
 
-本輪五個 checker 見 [預算及支援紀錄](history/2026-09-29-root-degree-excess.md)；提交整理見 [發布核對](history/2026-09-29-root-degree-excess-publish.md)。
-兩側 t=2 的三輪成果及發布驗證沿用 [既有紀錄](history/2026-09-29-adjacent-no-mixed-t2-publish.md)。
+五組成果整合與十四個 checker 的本輪重播見 [發布核對](history/2026-09-29-no-mixed-progress-publish.md)。
+舊 (2,2) 文件 SHA 差異及內容重播見 [缺額型紀錄](history/2026-09-29-adjacent-no-mixed-t2-t0-pairs.md)；最小入口：
 
 ```bash
-python3 scripts/c5_root_degree_excess.py --check
-python3 scripts/c5_adjacent_degree5_no_mixed_t2_t1.py --check
-python3 scripts/c5_adjacent_degree5_no_mixed_t2.py --check
+python3 scripts/c5_adjacent_degree5_no_mixed_t2_t0_pairs.py --check
 python3 scripts/c5_adjacent_degree5_no_mixed.py --check
-python3 scripts/c5_adjacent_degree5_interfaces.py --check
+python3 scripts/c5_adjacent_degree5_no_mixed_t2_t0_singles.py --check
+python3 scripts/c5_adjacent_degree5_no_mixed_t2_t1_bridge.py --check
+python3 scripts/c5_single_spoke_frame_arc.py --check
+python3 scripts/c5_root_degree_excess.py --check
+python3 scripts/c5_exchange_geometry_scope.py --check
 lake build
 python3 scripts/check_docs.py
 python3 tools/docgraph check
@@ -121,6 +124,6 @@ git diff --check
 ```
 
 雙拒絕 atlas 與 Lean axiom audit 另見 [分類報告](c5_two_rejection_proof_zh.md) 與 [Lean 工具](lean_two_rejection_tools.md)。
-本輪未重跑 t=2 bridge／endpoint／path-palettes、其他 singleton／唯一 degree-5 完成表、雙拒絕 atlas、R 系列大覆蓋、profiles／閉包及 Lean axiom audit。
+本輪未單獨重跑 t2 初層／interfaces、其餘 mixed／唯一 degree-5 完成表、雙拒絕 atlas、R 系列、profiles／閉包及 Lean axiom audit。
 發布狀態以即時 Git 為準；歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。
 早期交接見 [HANDOFF_HISTORY](HANDOFF_HISTORY.md) 與 [2026-09-22 快照](HANDOFF_2026-09-22.md)；歷史待辦與 Git 狀態均非現況。

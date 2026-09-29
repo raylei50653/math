@@ -6,6 +6,18 @@ docgraph:
 ---
 # 五目標排除到 single-sided exit：接合定理與一般化界線
 
+後續（2026-09-29）：[t_z=2、t_w=0,(2,2) 缺額型](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)
+將原 96 份接成 364 份必要支援，原飽和分量的 K5 排除 340，保留 24 份
+48／48 查詢全證。第九類再涵蓋 D_w=1、O_w=0 及整圖 root 交換型；不需 T4。
+
+後續（2026-09-29）：[t_z=2、t_w=0、(2,1,1) 四分量支援](c5_adjacent_degree5_no_mixed_t2_t0_singles.md)
+將原 96 份接成 120 份必要支援，240／240 個查詢全接受；不需 T4 或新
+target minor。第九類再涵蓋此型及整圖 root 交換型，完整 Σ 仍用來源雙缺失。
+
+後續（2026-09-29）：[t_z=2、t_w=1 原雙端點](c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md)
+關閉 record 22／p₂ 與其餘 65 個查詢；560 份必要支援的 1,120 個查詢全證，
+不需 T4。第九類擴至無 mixed t_z=2,(2)、t_w=1,(2,1) 及整圖 root 交換型。
+
 後續（2026-09-29）：[整條原 bridge 路徑 palettes](c5_adjacent_degree5_no_mixed_t2_path_palettes.md)
 完成無 mixed 兩側 t=2,(2) 的指定雙列分離：322 份必要資料的 644 個查詢
 全證，不需 T4。新增第九類可處理核心；完整 Σ 仍明用來源雙缺失與刪邊繼承。
@@ -118,7 +130,10 @@ degree-5 只剩 t=0 六型，一般定理仍未證。
    H−{z,w} 的唯一 mixed 原分量為 K2={u,v}，不限制 root incidence
    接線、boundary spoke 數或 unary 接點分拆；
 9. 恰兩個有效內點 z、w 完整 degree=5 且相鄰，其餘完整 degree=4；
-   H−{z,w} 無 mixed，z、w 各有兩個 boundary 鄰居。
+   H−{z,w} 無 mixed；必要時交換 roots 後，z 有兩個 boundary 鄰居及
+   唯一二接點 unary，w 的 spoke 數／unary 接點分拆為
+   t_w=2,(2)、t_w=1,(2,1)、t_w=0,(2,1,1)，或 t_w=0,(2,2) 且
+   D_w=1、O_w=0（兩原分量禁色大小為 (1,2)／(2,1)）。
 
 minimality 使同一內點的 q-spokes 異色，q 只用三色，故唯一 degree-5
 的 t≤3。第二、四、五、六類因此涵蓋全部唯一 degree-5 核心。
@@ -174,12 +189,20 @@ boundary spokes 在 q 下顏色互異。第一種核心由
 各自不需 T4 就接受 p₁、p₂，故接受對齊後的 p。來源雙缺失與刪邊繼承再給
 Σ(M)=Ω\{q}，可用同一 §4 序列；不要求必要支援表的每筆資料可實現。
 
-第九種由 [無 mixed 化約](c5_adjacent_degree5_no_mixed.md) 得每側恰有唯一
-二接點 unary，F_C(q) 是 singleton。共同對齊 q=01012 後，
-[支援／環序必要覆蓋](c5_adjacent_degree5_no_mixed_t2.md) 落在原 322 份之一；
-[整條原路徑 palettes](c5_adjacent_degree5_no_mixed_t2_path_palettes.md) 完成
-全部 p₁、p₂ 分離，故 M 接受對齊後的 p。再由來源雙缺失與刪邊繼承得
-Σ(M)=Ω\{q}，進入 §4；必要表可實現性與任意來源完整 Σ 均未另行假設。
+第九種先共同對齊 q=01012。[無 mixed 化約](c5_adjacent_degree5_no_mixed.md)
+給兩側 t=2 時各有唯一二接點 unary，F_C(q) 是 singleton；
+[支援／環序必要覆蓋](c5_adjacent_degree5_no_mixed_t2.md) 落在原 322 份之一，
+[整條原路徑 palettes](c5_adjacent_degree5_no_mixed_t2_path_palettes.md) 完成全部 p₁、p₂ 分離。
+對 t_z=2,(2)、t_w=1,(2,1)，[三分量支援覆蓋](c5_adjacent_degree5_no_mixed_t2_t1.md)
+落在原 560 份之一，[原雙端點](c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md)
+完成全部 p₁、p₂ 分離。對 t_z=2,(2)、t_w=0,(2,1,1)，
+[四分量支援與完整關係接合](c5_adjacent_degree5_no_mixed_t2_t0_singles.md#4-全部指定雙列與出口)
+給 120 份必要支援全部接受雙列；兩個單接點原分量保留，未替換為 spokes。
+對 t_w=0,(2,2) 的 D_w=1、O_w=0 型，[飽和分量原路徑](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)
+將 364 份必要支援以 source K5 排除 340；保留 24 份的 48 查詢全部接受。
+整圖 root 交換保持全部原分量、接點、spokes 與色框。
+故四型均接受對齊後的 p。再由來源雙缺失與刪邊繼承得 Σ(M)=Ω\{q}，
+進入 §4；必要表可實現性與任意來源完整 Σ 均未另行假設。
 
 將 q 對齊為 01012，稱其三色 A、B、C，第四色 D。
 z 有三條 spokes，顏色互異，故 A_z(q)={D}；它還有恰兩個內鄰點。
@@ -382,8 +405,14 @@ E_z(q)=E_w(q)={c}、容量缺額加重疊恰一及逐邊 minimality；原 zw
 必要資料；[原 bridge 與框弧](c5_adjacent_degree5_no_mixed_t2_bridge.md) 新增
 68 個延拓後，[原雙端點](c5_adjacent_degree5_no_mixed_t2_endpoints.md) 再新增 60 個，
 [整條原路徑 palettes](c5_adjacent_degree5_no_mixed_t2_path_palettes.md) 關閉最後 4 項。
-原 322 份全保留、644／644 個 target 全證，新增第九類；失敗側核心不能
-是無 mixed 且兩側 t=2。其他無 mixed 分拆、較大／多 mixed 與一般雙 root 仍保留。
+原 322 份全保留、644／644 個 target 全證，新增第九類。
+[t_z=2、t_w=1 原雙端點](c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md) 再完成
+560 份的 1,120 個查詢；[t_z=2、t_w=0、(2,1,1)](c5_adjacent_degree5_no_mixed_t2_t0_singles.md)
+再完成 120 份的 240 個查詢；[t_w=0,(2,2) 缺額型](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)
+排除 340 份來源後，保留 24 份的 48 查詢全證。失敗側核心不能是無 mixed
+兩側 t=2，或整圖交換後 t_z=2,(2) 配 t_w=1,(2,1)、t_w=0,(2,1,1)，
+或 t_w=0,(2,2) 且 D_w=1、O_w=0。其他無 mixed 分拆／重疊型、
+較大／多 mixed 與一般雙 root 仍保留。
 
 要完成使用者要求的**無條件一般 single-sided exit 定理**，仍須證明
 每個候選 A 來源 G、每個定向缺失對 (p,q)，至少存在一個接受 p 的
