@@ -6,6 +6,10 @@ docgraph:
 ---
 # 五目標排除到 single-sided exit：接合定理與一般化界線
 
+後續（2026-09-29）：[B–B 支援／環序分類](c5_adjacent_degree5_no_mixed_bb.md)
+完成兩側 t=1,(2,1)：888 份必要支援、1,776 個 target 全接受；120 個失敗
+候選由原路徑／固定框弧及原雙端點排除。第九類再涵蓋此型，不需 T4。
+
 後續（2026-09-29）：[t_z=2、t_w=0,(2,2) 重疊型](c5_adjacent_degree5_no_mixed_t2_t0_overlap.md)
 的 212 份必要支援全部以 source K5 排除，0 target 查詢，不需 T4。第九類
 因此涵蓋 no-mixed 至少一側 t=2 的全部分拆；重疊型以來源不可能性完成。
@@ -134,9 +138,10 @@ degree-5 只剩 t=0 六型，一般定理仍未證。
    H−{z,w} 的唯一 mixed 原分量為 K2={u,v}，不限制 root incidence
    接線、boundary spoke 數或 unary 接點分拆；
 9. 恰兩個有效內點 z、w 完整 degree=5 且相鄰，其餘完整 degree=4；
-   H−{z,w} 無 mixed，至少一個 root 有兩個 boundary 鄰居；
-   不限制另一 root 的 unary 接點分拆。無 mixed 的平面必要化約使其只剩
-   t=2,(2)、t=1,(2,1)、t=0,(2,1,1) 或 t=0,(2,2)；末型重疊預算由來源排除。
+   H−{z,w} 無 mixed，並滿足以下任一情形：至少一個 root 有兩個 boundary
+   鄰居；或兩側均為 t=1,(2,1)（B–B）。前一情形不限制另一 root 的 unary 接點分拆；平面必要
+   化約使其只剩 t=2,(2)、t=1,(2,1)、t=0,(2,1,1) 或 t=0,(2,2)，
+   末型重疊預算由來源排除。
 
 minimality 使同一內點的 q-spokes 異色，q 只用三色，故唯一 degree-5
 的 t≤3。第二、四、五、六類因此涵蓋全部唯一 degree-5 核心。
@@ -207,6 +212,9 @@ boundary spokes 在 q 下顏色互異。第一種核心由
 另建 212 份支援，全部 source K5 排除，所以實際核心不會落在此型。
 整圖 root 交換保持全部原分量、接點、spokes 與色框。
 故所有至少一側 t=2 的實際核心均落在四種已分離型，接受對齊後的 p。
+兩側 t=1,(2,1) 則由 [B–B 四分量支援及完整 target 接合](c5_adjacent_degree5_no_mixed_bb.md)
+落在 888 份必要支援之一；原路徑／固定框弧及雙端點排除全部失敗候選，
+也接受對齊後的 p，無需刪去原單接點分量。
 再由來源雙缺失與刪邊繼承得 Σ(M)=Ω\{q}，
 進入 §4；必要表可實現性與任意來源完整 Σ 均未另行假設。
 
@@ -417,7 +425,8 @@ E_z(q)=E_w(q)={c}、容量缺額加重疊恰一及逐邊 minimality；原 zw
 再完成 120 份的 240 個查詢；[t_w=0,(2,2) 缺額型](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)
 排除 340 份來源後，保留 24 份的 48 查詢全證。[重疊型](c5_adjacent_degree5_no_mixed_t2_t0_overlap.md)
 再將 212 份支援全部 source K5 排除。失敗側核心不能是 no-mixed 至少一側
-t=2 的任何分拆；兩側 t≤1 的無 mixed 分拆、較大／多 mixed 與一般雙 root 仍保留。
+t=2 的任何分拆；[B–B 分離](c5_adjacent_degree5_no_mixed_bb.md) 另完成兩側
+t=1,(2,1)。B–B 以外兩側 t≤1 的無 mixed 分拆、較大／多 mixed 與一般雙 root 仍保留。
 
 要完成使用者要求的**無條件一般 single-sided exit 定理**，仍須證明
 每個候選 A 來源 G、每個定向缺失對 (p,q)，至少存在一個接受 p 的

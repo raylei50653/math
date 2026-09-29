@@ -17,6 +17,10 @@ docgraph:
 ---
 # 無 mixed t_z=2、t_w=0,(2,2)：重疊型的雙飽和分量來源排除
 
+後續（2026-09-29）：[B–B 支援／環序分類](c5_adjacent_degree5_no_mixed_bb.md)
+已完成本文交接的 236 份 IDs：888 份必要支援的 1,776 個 target 全接受。
+累計六類／1,172 份原接合覆蓋；本文及 artifacts 保留原輪數字與交接快照。
+
 2026-09-29，Git 基準 `c1be8fb`。**D_w=0、O_w=1 的 disk 來源全部排除。**
 原 96 份有序資料重新接上 actual-support／rotation 必要覆蓋，得到 212 份
 必要配置；每份至少一個原飽和分量給出 source K5，無保留配置、無 target 查詢。

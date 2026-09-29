@@ -12,6 +12,12 @@ docgraph:
 ---
 # 「交換或幾何阻斷」假設：適用範圍遍歷
 
+後續（2026-09-29）：[B–B 支援／環序與雙列](c5_adjacent_degree5_no_mixed_bb.md)
+完成 236 份原接合的必要覆蓋，888 份支援的 1,776 個 target 全接受。
+累計六類／1,172 份原接合已覆蓋，九類／2,376 份仍開放；本輪未新增來源
+minor 排除。下文矩陣及舊 checker／artifacts 保持各輪快照；下一入口見
+[weak-deletion 導覽](c5_weak_deletion_guide.md)，不從有限覆蓋推出一般完備性。
+
 後續（2026-09-29）：[A–D 重疊型](c5_adjacent_degree5_no_mixed_t2_t0_overlap.md)
 已將 212 份必要支援全部以原分量 source K5 排除，0 target 查詢；五類／936 份
 原接合已覆蓋，十類／2,612 份仍開放。所有含 A（t=2）側的格均完成；
