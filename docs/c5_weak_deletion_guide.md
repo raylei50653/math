@@ -27,21 +27,28 @@ minimal obstruction 路線：先完成 single-sided exit 的可處理核心，�
 | No-mixed 全十五類 | 八類來源排除、七類雙列分離，原 3,548 接合全部覆蓋 | [十五類總覽與證據總表](c5_no_mixed_span_budget.md) |
 | No-mixed 通用 source 結構 | m+s+a≤5；至少一條 root-spoke、無 source 重疊、至多一份飽和二禁色分量 | [側跨度紙面推導](c5_no_mixed_span_budget.md#2-從原圖導出框弧成本) |
 | No-mixed 跨列分離 | 2,082 份保留必要支援的 4,164 target 全接受；尚無取代七類證書的共同機制證明 | [完整關係及通用化界線](c5_no_mixed_span_budget.md#4-通用結構的兩層及尚未統一的部分) |
+| No-mixed 三假設驗證 | H/G 搬運及單框點至多兩分量已證；守恆不升 pair 仍依七類表，共同 repair 未證 | [三 agent 驗證與重播](c5_no_mixed_hypothesis_audit.md) |
 | 更一般 roots／出口 | degree≥6、多 degree-5、非樹／非相鄰 roots 與共同出口仍開放 | [Root 預算](c5_root_degree_excess.md)、[一般出口界線](c5_single_sided_exit.md) |
 
 先讀候選與 minimal obstruction，再讀條件式出口的適用範圍，最後接到本線停止點。
 
 ## 3. 精確停止點與下一個窄問題
 
-**本線精確停止點：no-mixed 全分類及 source 側跨度整理完成。**
+**本線精確停止點：no-mixed 全分類完成，並已取得單框點的精確共同介面。**
 [總覽](c5_no_mixed_span_budget.md)將十五類分成八類來源排除、七類雙列分離，
 並給 source 必要式 m+s+a≤5；A/B/C/D/E 側成本為 2/2/3/4/3。
 原 3,548 IDs 全覆蓋；5,842 份必要支援不是來源圖，4,164 次原 target
 接受不記成本輪新增。此條件不保證 disk 實現，也不取代跨列證書。
 
-若要繼續**整理通用證明**，窄問題是將七類的 target 論證統一到「每側
-一缺額、至多一份 source 飽和分量」的完整關係介面；以 AA 的最後四項
-全路徑 palette 交換及 AB 的非守恆色端點作控制，未證一般機制完備性。
+[三假設驗證](c5_no_mixed_hypothesis_audit.md) 給 H/G 搬運充分條件，以及
+將 q 對齊 target 後只有一個框點 h 改色的化約：所有含 h 的原分量至多
+兩份，但可同接一個 root。守恆 singleton 不升 pair 的 1,780 候選全排除
+仍依七類必要表；4,164 個原接受沒有新增。
+
+若要繼續**整理通用證明**，窄問題是固定外部完整關係後，證明 h 附近
+一份或兩份原分量的共同跨列相容規則，同時處理守恆與非守恆禁色。
+AA54 的全路徑 palette 交換及 AB22 的非守恆端點仍是必要控制；幾何
+證據仍可需要外部原分量路徑。共同 repair 與一般機制完備性未證。
 
 若要**擴大圖類**，原下一入口仍是相鄰雙 degree-5 的較大 mixed 原分量：
 先由[完整有序色對介面](c5_adjacent_degree5_interfaces.md)核對超出
@@ -54,6 +61,8 @@ singleton／K2 的必要接點與 minimality 條件，尚未建立其支援表�
 | 工具／機制 | 可安全使用的結論 | 主要入口 |
 | --- | --- | --- |
 | 完整關係搬運＋容量上界 | actual support 上存在共同色置換時精確搬運；否則只保留包含真實 F 的完整上界 | [t₂/t₁ 支援表](c5_adjacent_degree5_no_mixed_t2_t1.md) §4 |
+| Root 色相容搬運／局部 preimages | H⊆G⊆E；全部可搬運時 G=E，必保留同一 target 色框 | [搬運引理](c5_no_mixed_hypothesis_audit.md#2-完整搬運的充分條件以及較弱版本) |
+| 單框點精確化約 | 固定外部完整關係後至多兩份未知原分量；不刪外部幾何路徑 | [單框點介面](c5_no_mixed_hypothesis_audit.md#3-單框點化約與精確共同介面) |
 | Root degree 超額預算 | source q 的 no-mixed minimal core 有 D+O+κ=degree−4；不是 target 等式 | [Root 預算](c5_root_degree_excess.md) §1–3 |
 | 雙 root source 側跨度 | m+s+a≤5，八類來源排除；不能將成本未超額視為來源存在 | [十五類總覽](c5_no_mixed_span_budget.md) §2 |
 | 樹上 edge-minimal list obstruction | root 樹有 κ=0，lists 由 incident 邊色完整描述；不能把 source 邊色直接傳到 p | [Root 預算](c5_root_degree_excess.md) §4–5 |
