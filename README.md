@@ -14,6 +14,7 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [3903 系列導讀](docs/c5_sector_3903_guide.md) | 系列結論、推導順序、適用範圍與證書入口 |
 | [單側出口接合](docs/c5_single_sided_exit.md) | 涵蓋唯一 degree-5 全部核心、相鄰雙 root 唯一 mixed singleton 全支援、唯一 mixed K2 全接線／分拆，以及無 mixed 兩側 t=2；一般核心分離仍未證 |
 | [相鄰雙 degree-5 介面](docs/c5_adjacent_degree5_interfaces.md) | 保留共鄰點與共同色框的有序色對接合、root-edge 對角強迫、逐類 minimality 與固定來源刪邊公式；紙面＋有限控制，雙 root 分離仍保留 |
+| [Root degree 超額預算](docs/c5_root_degree_excess.md)、[無 mixed t_z=2、t_w=1 支援表](docs/c5_adjacent_degree5_no_mixed_t2_t1.md) | 初等紙面恆等式 D+O+κ=degree−4；樹骨架 κ=0，跨列分離仍為猜想；原 136 份接成 560 份必要支援，1,002／1,120 target 已證，保留完整關係與拒絕原因，未 Lean 化 |
 | [相鄰雙 root 無 mixed](docs/c5_adjacent_degree5_no_mixed.md)、[兩側 t=2 支援與環序](docs/c5_adjacent_degree5_no_mixed_t2.md)、[整條原路徑 palettes](docs/c5_adjacent_degree5_no_mixed_t2_path_palettes.md) | 同色 residual、minimality 與容量化約使平面每側剩四型；兩側 t=2 的 322 份必要支援全部雙列已證、644／644 個 target 接受，接入條件式出口第九類；不需 T4，未證 disk 實現或新增 Lean theorem |
 | [唯一 mixed K2 同端點型](docs/c5_adjacent_degree5_mixed_edge_same_endpoint.md) | P*ᶻ=P*ʷ={u} 的完整關係與原 v-star 來源排除；240 筆正常形經原 K5／跨度／飽和扇區全排除，不需 T4、0 target 查詢；紙面＋外部定理＋Python，未 Lean 化 |
 | [唯一 mixed K2 四 incidence 型](docs/c5_adjacent_degree5_mixed_edge_k4.md) | 原 K4 與實際外部路徑排除一般平面來源；初等改色＋原 K5、不需 T4 或 degree-list 定理、0 target 查詢；完成唯一 mixed K2 全部接線，未 Lean 化 |

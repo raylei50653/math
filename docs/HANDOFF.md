@@ -87,12 +87,15 @@ root-spoke 刪除要求新色條帶中的共同見證，各 C 要有私有非對
 任意大小化約為紙面＋外部定理，Python 重播有限證書；必要表未證 disk
 可實現性，未新增 Lean theorem。完整 Σ 的出口接合仍明用來源雙缺失與刪邊繼承。
 
-**下一窄入口：** 無 mixed 的 **t_z=2,(2)，t_w=1,(2,1)** 實際支援／環序覆蓋。
-原 3,548 份同色 joins 中此有序型有 136 份，首項原 sides=(133,91)；交換 roots 覆蓋反向。
-保留 C_z、w 側二接點 C_w 與 singleton D_w、五個原接點、三 spokes、zw 及共同色框。
-先證任意大小支援次序，再接原完整 schemas；兩側 t=2 已完成，不重開其圖枚舉。
-其他較大／多 mixed、一般雙 root、degree≥6、非相鄰雙 root
-及更多高 degree 點保留；不重開唯一 degree-5 枚舉。
+[Root 預算](c5_root_degree_excess.md) 已證 no-mixed source 的 D+O+κ=degree−4，樹骨架 κ=0。
+樹 list 控制 233,744 份中 113 份 edge-minimal 拒絕皆符合邊色描述；跨列分離仍是猜想。
+**下一窄入口：** [t_z=2,(2)，t_w=1,(2,1)](c5_adjacent_degree5_no_mixed_t2_t1.md) 的 **record 14／p₁**。
+原 136 份接成 560 份必要支援，1,002／1,120 target 已證，118 個查詢未決；原 70 份纖維空。
+record 14 原 sides=(137,118)、B_z=04、B_w=3，實際支援 (S_z,S_w,S_D)=(01,123,34)。
+source (F_z,F_w,F_D)=({1},{0},{2})、c=3；p₁ 唯一失敗候選 F_w={0,3} 使 E_w 空。
+保留原 C_z、C_w、單接點 D_w、五接點、三 spokes、zw 與共同色框；不把飽和 D_w 當 spoke。
+比較 C_w 的 source singleton 與 target pair 證書，記錄幾何阻斷或額外 source 禁色的關閉原因。
+其他 no-mixed 分拆（含 O=1 型）、較大／多 mixed、degree≥6、非樹／非相鄰 roots 保留。
 
 ## 3. 其他路線的現況
 
@@ -125,19 +128,15 @@ R27 末端各一臂及 [R30](c5_degree5_middle_cycle_minors.md) 中間不同二�
 
 ## 5. 重播入口與驗證範圍
 
-接手最小重播如下；[本次三輪整合發布](history/2026-09-29-adjacent-no-mixed-t2-publish.md) 重播 15 個 checker。
-本輪 9 個 checker 與實際驗證見 [整條原路徑紀錄](history/2026-09-29-adjacent-no-mixed-t2-path-palettes.md)。
+本輪五個 checker 見 [預算及支援紀錄](history/2026-09-29-root-degree-excess.md)；提交整理見 [發布核對](history/2026-09-29-root-degree-excess-publish.md)。
+兩側 t=2 的三輪成果及發布驗證沿用 [既有紀錄](history/2026-09-29-adjacent-no-mixed-t2-publish.md)。
 
 ```bash
-python3 scripts/c5_adjacent_degree5_no_mixed_t2_path_palettes.py --check
-python3 scripts/c5_adjacent_degree5_no_mixed_t2_endpoints.py --check
-python3 scripts/c5_adjacent_degree5_no_mixed_t2_bridge.py --check
+python3 scripts/c5_root_degree_excess.py --check
+python3 scripts/c5_adjacent_degree5_no_mixed_t2_t1.py --check
 python3 scripts/c5_adjacent_degree5_no_mixed_t2.py --check
 python3 scripts/c5_adjacent_degree5_no_mixed.py --check
 python3 scripts/c5_adjacent_degree5_interfaces.py --check
-python3 scripts/c5_single_spoke_branch_palettes.py --check
-python3 scripts/c5_single_spoke_first_bridge.py --check
-python3 scripts/c5_single_spoke_frame_arc.py --check
 lake build
 python3 scripts/check_docs.py
 python3 tools/docgraph check
@@ -145,6 +144,6 @@ git diff --check
 ```
 
 雙拒絕 atlas 與 Lean axiom audit 另見 [分類報告](c5_two_rejection_proof_zh.md) 與 [Lean 工具](lean_two_rejection_tools.md)。
-最近研究重播 9 個、本次發布重播 15 個相關 checker。其他 singleton／唯一 degree-5 完成表、雙拒絕 atlas、R 系列大覆蓋、profiles／閉包及 Lean axiom audit 未重跑。
+本輪未重跑 t=2 bridge／endpoint／path-palettes、其他 singleton／唯一 degree-5 完成表、雙拒絕 atlas、R 系列大覆蓋、profiles／閉包及 Lean axiom audit。
 發布狀態以即時 Git 為準；歷史生成器可能覆寫 artifacts，勿把重建指令當只讀 checker。
 早期交接見 [HANDOFF_HISTORY](HANDOFF_HISTORY.md) 與 [2026-09-22 快照](HANDOFF_2026-09-22.md)；歷史待辦與 Git 狀態均非現況。

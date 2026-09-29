@@ -64,6 +64,12 @@ degree-list 定理、0 target 查詢。唯一 mixed K2 全部九組接線已處�
 關閉最後 4 項。原 322 份全保留、644／644 個 target 全證、0 個未決，
 接入出口第九類；新增來源排除為 0，不需 T4，未證 disk 實現。
 紙面＋外部 degree-list 定理＋Python，未新增 Lean theorem。
+[Root degree 超額預算](c5_root_degree_excess.md) 已補齊 D+O+κ=degree−4
+及樹骨架 κ=0 的初等紙面證明；233,744 份 list 控制中 113 份 edge-minimal
+拒絕均符合邊色描述。全分拆／樹狀跨列分離仍是猜想。
+[t_z=2、t_w=1 支援表](c5_adjacent_degree5_no_mixed_t2_t1.md) 將原 136 份
+接成 560 份必要支援，1,002／1,120 target 已證、118 個查詢未決；
+原 70 份參數型無支援，560 份支援未另做來源排除，未新增出口或 Lean theorem。
 degree≥6、多 degree-5 的一般分離及 R31 來源 minor 缺口保留；下一入口見 HANDOFF。
 逐輪數字、驗證與發布紀錄已移至 [歷史快照](STATUS_HISTORY.md)。
 
@@ -88,6 +94,8 @@ degree≥6、多 degree-5 的一般分離及 R31 來源 minor 缺口保留；下
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [Root degree 超額預算](c5_root_degree_excess.md) | No-mixed source 的 D+O+κ=degree−4；樹上 edge-minimal list 拒絕 iff incident 邊色互異且覆蓋 lists，故 κ=0；233,744 份控制／113 份拒絕及原 149 份側預算，初等紙面＋Python，未 Lean 化；交換或幾何阻斷、全分拆及 root 樹分離均保留為工作假設 |
+| [無 mixed t_z=2,(2)、t_w=1,(2,1)](c5_adjacent_degree5_no_mixed_t2_t1.md) | 原 136 份與 3,150 份同序支援接成 560 份；66 份原資料有支援、70 份纖維空，1,002／1,120 target 已證，118 個查詢的 146 組失敗候選分為 empty_z 60／empty_w 68／same_singleton 18；首筆 record 14／p₁，未完成整型出口或 Lean 化 |
 | [無 mixed 兩側 t=2 整條原路徑 palettes](c5_adjacent_degree5_no_mixed_t2_path_palettes.md) | 每條奇數 bridge 的共用 β 與固定框弧排除，迫使原 q 拒絕證書可換出第二禁色；關閉 54／p₁、68／p₂、173／p₂、256／p₁，新增 4 個延拓，原 322 份全保留、644／644 全證、0 未決／新來源排除；出口新增第九類，不需 T4、未 Lean 化 |
 | [無 mixed 兩側 t=2 原雙端點](c5_adjacent_degree5_no_mixed_t2_endpoints.md) | record 5／p₂ 延拓；不守恆 q 禁色仍有兩端 tightness，保留全部中間 bridges 得 K5；新增 60 個延拓，原 640／644 與 record 54 停止點由後續整條路徑層涵蓋，原證書保留 |
 | [無 mixed 兩側 t=2 原 bridge 與框弧](c5_adjacent_degree5_no_mixed_t2_bridge.md) | record 4／p₁ 延拓；固定三弧消去 72 組失敗候選、同一首橋再消去 24，新增 68 個延拓；原 580／644 結果及 record 5 停止點由後續雙端點層涵蓋，原證書保留 |
@@ -300,7 +308,7 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | --- | --- | --- |
 | 已完成 | 3703 兩葉鏈 | [排除報告](c5_sector_3703_exclusion.md) 完成任意長度三拒絕排除；限定 sector 圖類，未 Lean 化 |
 | 已完成 | 五目標到三-spoke 核心出口的接合 | [定理](c5_single_sided_exit.md) 核對來源假設、五目標窮盡及 first strict step；條件式結論無大小限制 |
-| 活躍 | 一般單側出口的核心分離 | 唯一 degree-5、唯一 mixed singleton 及唯一 mixed K2 全部已接回 [條件式出口](c5_single_sided_exit.md)；[無 mixed 化約](c5_adjacent_degree5_no_mixed.md) 使平面每側剩四型；[兩側 t=2 整條原路徑](c5_adjacent_degree5_no_mixed_t2_path_palettes.md) 完成 322 份／644 個 target，接入出口第九類；下一窄型 t_z=2,(2)、t_w=1,(2,1) 的有序支援覆蓋。其他無 mixed、較大／多 mixed 與一般分離保留，優先序見 HANDOFF |
+| 活躍 | 一般單側出口的核心分離 | 唯一 degree-5、唯一 mixed singleton、唯一 mixed K2 及無 mixed 兩側 t=2 已接回 [條件式出口](c5_single_sided_exit.md)；[root 預算](c5_root_degree_excess.md) 統一 source 層，[t_z=2、t_w=1](c5_adjacent_degree5_no_mixed_t2_t1.md) 的 560 份支援中 1,002／1,120 target 已證，仍有 118 個未決；其他無 mixed、較大／多 mixed 與一般分離保留，優先序見 HANDOFF |
 | 已完成 | 指定 sector 圖類的雙拒絕分類 | [紙面分類](c5_two_rejection_proof_zh.md) 排除四個目標；依賴外部 degree-list，完整分類未 Lean 化 |
 | 被後續涵蓋 | 3903 空／非空分支、331 同圖分支 | 既有局部證據保留；後續分類已涵蓋原排除問題，不代表抽象 603 profiles 已改寫 |
 | 保留 | R31 任意長來源 minors | 正常形已完成；仍需 boundary 固定 branch sets、四列、degrees、刪邊著色與拓撲合成，見 [R31](c5_degree5_same_terminal_triangles.md) |
@@ -310,6 +318,8 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 
 ## 歷史紀錄與舊連結
 
+- [2026-09-29：Root 預算與 no-mixed t_z=2、t_w=1 成果發布核對](history/2026-09-29-root-degree-excess-publish.md)
+- [2026-09-29：Root degree 超額預算、樹引理與 136 份入口的支援覆蓋](history/2026-09-29-root-degree-excess.md)
 - [2026-09-29：無 mixed 兩側 t=2 三輪成果整合發布](history/2026-09-29-adjacent-no-mixed-t2-publish.md)
 - [2026-09-29：無 mixed 兩側 t=2 整條原路徑與最後四項完成](history/2026-09-29-adjacent-no-mixed-t2-path-palettes.md)
 - [2026-09-29：無 mixed 兩側 t=2 原雙端點與 60 個新增延拓](history/2026-09-29-adjacent-no-mixed-t2-endpoints.md)
