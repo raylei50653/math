@@ -10,7 +10,7 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [研究線入口](docs/HANDOFF.md) | 新對話先讀；選擇研究線導覽，進行中以 tag 標記 |
 | [完整文件索引](docs/STATUS.md) | 查找專題報告、短狀態、後續關係與歷史 |
 | [No-mixed 實驗總覽](docs/c5_no_mixed_span_budget.md) | 十五類證據總表、共同跨度結構及推廣界線 |
-| [No-mixed 三假設驗證](docs/c5_no_mixed_hypothesis_audit.md) | 完整搬運、單框點精確化約與守恆禁色的證據界線 |
+| [No-mixed 搬運與介面驗證](docs/c5_no_mixed_hypothesis_audit.md) | 逐 root 不可搬運界、精確接合介面與守恆禁色的證據界線 |
 | [研究目標](docs/c5_boundary_relations.md) | 主命題、最小反例路線與局部壓縮的區別 |
 | [文件治理與工作約定](docs/DOCUMENTATION.md) | 文件分工、信任界線、更新及驗證流程 |
 

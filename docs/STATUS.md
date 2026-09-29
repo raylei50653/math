@@ -38,7 +38,7 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [No-mixed 三假設驗證](c5_no_mixed_hypothesis_audit.md) | H/G 搬運充分條件、單框點至多兩分量已證；2,932／2,936 搬運查詢與 1,780 守恆 pair 候選稽核，守恆不升 pair 仍依七類表，未證共同 repair，未 Lean 化 |
+| [No-mixed 搬運與介面驗證](c5_no_mixed_hypothesis_audit.md) | 沿用共同 lifts 與側跨度，紙面證成每 root 至多一份不可搬運分量；4,164 查詢／11,096 joins 的完整、A_h、D_p 介面相同，434 舊失敗 joins 互斥分組；守恆不升 pair 仍依七類表，共同 repair 未證，未 Lean 化 |
 | [No-mixed 十五類與側跨度預算](c5_no_mixed_span_budget.md) | 紙面必要式 m+s+a≤5 統一八類來源排除；七類沿用雙列分離。5,842 支援／4,164 target 的跨表稽核，未證實現或一般機制完備性，未 Lean 化 |
 | [D–E 五正跨度與雙飽和原路徑排除](c5_adjacent_degree5_no_mixed_de.md) | 48 必要支援全 source K5、120 空纖維，含交換型；十五類／3,548 原接合全覆蓋，0 target，不需 T4，未 Lean 化 |
 | [D–D 四飽和原分量與框邊排除](c5_adjacent_degree5_no_mixed_dd.md) | 352 必要支援全 source K5；80 空纖維，0 target，不需 T4，未 Lean 化 |
@@ -272,6 +272,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-09-29：逐 root 不可搬運紙面界與精確接合介面](history/2026-09-29-no-mixed-root-transport.md)
 - [2026-09-29：三 agent 驗證搬運、單框點與守恆 palettes](history/2026-09-29-no-mixed-hypothesis-audit.md)
 - [2026-09-29：no-mixed 十五類整理與共同側跨度](history/2026-09-29-no-mixed-span-budget.md)
 

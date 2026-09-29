@@ -3,6 +3,9 @@
 後續（2026-09-29）：[三假設驗證](c5_no_mixed_hypothesis_audit.md) 證成 H/G
 搬運充分條件及單框點至多兩原分量的精確化約；守恆 singleton 不升 pair
 有七類表依賴證書。§4 的共同免分類跨列證明仍未完成，原數字保留。
+同日後續的[逐 root 界](c5_no_mixed_hypothesis_audit.md#31-逐-root-不可搬運界)
+沿用本頁共同 lifts 及 ω 下界，紙面證成每側至多一份不可搬運原分量，
+並建立 D_p 精確介面；這未給共同 repair 或新增任何 target 接受。
 
 後續提交驗證見[同日發布核對](history/2026-09-29-no-mixed-span-budget.md#後續提交與發布核對)；
 下文的未提交敘述保留整理輪語境，即時發布狀態以 Git 為準。
