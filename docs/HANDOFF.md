@@ -1,101 +1,78 @@
 # 研究交接：目前狀態與接手入口
 
 文件更新與研究依據：2026-09-29。工作目錄 `/home/ray/developer/ai/math`。
-本頁是**唯一的研究優先順序入口**；報告索引見 [STATUS](STATUS.md)，
-更新約定見 [文件維護規則](DOCUMENTATION.md)。唯一 degree-5 的全部核心已接回出口。
-相鄰雙 degree-5 的完整關係接合與逐類 minimality 已建立；唯一 mixed 共鄰
-單點的全部支援已接回出口：01／12／23 雙列分離、34／40 來源排除，
-非相鄰支援亦已處理。唯一 mixed K2 全部接線已接回出口；無 mixed 平面每側剩四型，兩側 t=2 的 644 個 target 全證，已接回出口第九類；一般出口仍未證。
+本頁是**唯一的研究優先順序入口**；完整專題索引見 [STATUS](STATUS.md)，
+文件角色與更新規則見 [DOCUMENTATION](DOCUMENTATION.md)。歷史輪次只保留在
+各專題報告與 `docs/history/`，不在此頁重述。
 
-## 1. 目前做到哪裡
+## 1. 現在從這裡開始
 
-主命題 **`K∞=K≤5` 仍未證**。目前走 weak-deletion 候選 A 的 minimal obstruction 路線，先研究單側出口，再處理共同出口。
-定義與全域較小代表／局部壓縮的區別見 [研究目標](c5_boundary_relations.md)。
+主命題 **`K∞=K≤5` 仍未證**。目前仍走 weak-deletion 候選 A 的
+minimal obstruction 路線：先完成 single-sided exit 的可處理核心，再處理
+一般／共同出口。唯一 degree-5 全部核心、唯一 mixed singleton、唯一 mixed K2
+及 no-mixed 兩側 t=2,(2) 已接回條件式出口；一般出口仍未證。
 
-已完成 [C5 雙拒絕分類](c5_two_rejection_proof_zh.md)：在 induced C5 為 disk
-外框、C 非空連通、內點完整 degree≤4、b0 恰有兩個不同內鄰點的前提下，
-拒絕 α=01212、δ=01213 強迫唯一二內點接線，簽章 1855。
-因此 3647、3895、3901、3903 已在指定 sector 圖類內排除。
-原 331／A(b)={0,2} 分支由此涵蓋；603 profiles 與固定點未改寫。
+**目前唯一優先入口：**
+[t_z=2,(2)，t_w=1,(2,1)](c5_adjacent_degree5_no_mixed_t2_t1.md) 的
+**record 14／p₁=01021**。
 
-最新 [3703 排除](c5_sector_3703_exclusion.md) 接續
-[兩葉鏈化約](c5_sector_3703_structure.md)：葉點 K3,3 minor 排除 024／234，
-並迫使 012／234 的其餘內點避開 b1；三列 palettes 隨即使鏈無法延續。
-**3703 已在上述指定圖類內排除，五目標皆完成**，不限制 triangle 數或 bridge 長度。
+當前子表由原 136 份有序資料接成 560 份必要支援；1,002／1,120 個 target
+已證，剩 118 個查詢／146 組失敗候選。第一個停止點為：
 
-信任層：紙面證明＋外部 degree-list 定理＋Python 局部證書；新排除未 Lean 化。
-新證書有 89 個局部轉移、兩個可達狀態及兩份葉點 minor；沿用鏈化約的
-207 份局部 minor。[Lean 共用引理](lean_two_rejection_tools.md) 已接上 [實際接線與 degree-list 緊性](lean_boundary_degree.md)；
-Gallai／完整 disk 分類仍未形式化。3703 當輪驗證見
-[研究紀錄](history/2026-09-24-3703-exclusion.md)；接合驗證見
-[出口紀錄](history/2026-09-24-single-sided-exit.md)。
+[
+B_z=04,quad B_w=3,quad
+(S_z,S_w,S_D)=(01,123,34),
+]
 
-## 2. 精確停止點與下一個窄問題
+[
+(F_z,F_w,F_D)(q)=(\{1\},\{0\},\{2\}),quad c=3.
+]
 
-目前入口為 [single-sided exit 接合定理](c5_single_sided_exit.md) §1–5。
-全 degree-4、唯一 degree-5（全部 t=0、1、2、3），或未接內點 boundary
-核心都已接回出口，來源圖大小不受限。
-完整 Σ(M)=Ω\{q} 另用來源雙缺失及刪邊繼承，不能只由 T4 或指定雙列推出。
+p₁ 下 F_z={1}、F_D={1} 已可精確搬運；唯一失敗候選是
 
-| 已完成的唯一 degree-5 分支 | 證據入口與界線 |
-| --- | --- |
-| t=3 | [五目標接合](c5_single_sided_exit.md)；指定圖類紙面＋外部定理＋Python |
-| t=2 | [非相鄰分離與前序結果](c5_two_spoke_nonadjacent.md)；全部分支完成，Lean 僅列代數與反射搬運 |
-| t=1、(2,1,1) | [單接點上界分類及前序結果](c5_single_spoke_single_contact_bounds.md)；114 筆指定雙列全證 |
-| t=1、(2,2) | [局部 residual 與前序結果](c5_single_spoke_residual_locality.md)；來源排除 278，保留 102 筆／51 型全部雙列已證、0 查詢未決 |
-| t=1、(3,1)／(4) | [三接點](c5_single_spoke_three_one.md)／[三拒絕共同結構](c5_single_spoke_four.md) 給來源 K5；任意大小、不需 T4 |
-| t=0、(2,1,1,1) | [環狀實際支援](c5_no_spoke_supports.md)；48 筆全部指定雙列延拓，保留原五接點與完整關係 |
-| t=0、(2,2,1) | [首橋與固定框弧](c5_no_spoke_first_bridge.md)；來源排除仍 500，保留 116 筆全接受雙列、0 查詢未決；完成唯一 degree-5 接合 |
+[
+oxed{F_w(p_1)=\{0,3\}},
+]
 
-t=1 與 t=0 新結果均為紙面＋外部定理＋Python，未新增 Lean theorem。
-必要支援表、minor skeletons 不是來源可實現性證書，也未分類任意 T4 核心的完整 Σ。
-逐輪證明鏈、數字及驗證留在報告與 [STATUS](STATUS.md)，不重啟已完成表的圖枚舉。
+使 E_w(p₁)=∅。下一步只比較**同一原 C_w** 的 source singleton
+F_w(q)={0} 與 target pair F_w(p₁)={0,3}：保留原 C_z、C_w、單接點 D_w、
+五個接點、三 spokes、zw、actual supports、bridges、旁支與共同色框。
 
-**一般單側出口仍未證。** 失敗側每個 minimal core 必碰全部五個 boundary
-頂點，且有 degree≥6 或至少兩個 degree-5。
-[No-spoke 外部連通](c5_no_spoke_exterior.md) 已排除其餘四種 t=0 分拆；
-多分量的另一原分量提供實際 z–B 路徑，各分量皆 K4-free；(5) 另用四列奇偶障礙。
+優先檢查順序：
+1. 完整關係／actual-support 色置換是否再收緊 F_w(p₁)；
+2. 端點 tightness、原 bridge palettes 或固定框弧是否排除 {0,3}；
+3. 若只剩單一 palette 模式，是否可重建第二個 source 禁色，與 F_w(q)={0} 矛盾；
+4. 若幾何要求本身不可能，才記為來源／候選的支援或 minor 阻斷。
 
-**相鄰雙 root 第一輪已完成。** [完整有序色對介面](c5_adjacent_degree5_interfaces.md)
-固定同一 minimal q-core，z、w 相鄰且完整 degree=5，其餘內點 degree=4；
-保留原 C、全部接點、共鄰點身份及共同色框。精確接合是
-`Z=(A_z×A_w)∩⋂R_C∖Δ`；刪 zw 的關係非空且包含於 Δ。
-已證刪任一 E_C 邊使該原分量 R_C 全開，其他分量與 root 條件仍保留；
-root-spoke 刪除要求新色條帶中的共同見證，各 C 要有私有非對角色對。
-任意多步刪邊另有固定來源精確式。紙面＋Python 控制，未新增 Lean theorem。
+**不要**重開已完成的兩側 t=2 大枚舉；不要把飽和 D_w 當成 spoke 或刪掉；
+不要把 source 的 D+O+κ 預算直接套到 target；未決上界候選不是 disk 反例。
 
-相鄰雙 root 的後續成果整理如下；均保留原分量、接點身份、實際支援與環序。
+## 2. 可重用證明工具與界線
 
-| 已完成的子類／化約 | 結果與證據入口 |
-| --- | --- |
-| 唯一 mixed singleton 必要化約 | [單 root 消去與容量](c5_adjacent_degree5_shared_singleton.md)：每側 t≤1，(3) 由原 x 路徑 K5 排除，只剩 (2)／(2,1)；375 筆關係保留 240 筆 |
-| 非相鄰 x 支援 | [同側限制](c5_adjacent_degree5_singleton_sectors.md)：20 位置排除 14，03 唯一保留側只缺 q；5 個相鄰長弧由下列完成 |
-| 01／23、12 長弧 | [01／23](c5_adjacent_degree5_singleton_long_arc.md) 的 692 筆排除 356＋40；[12](c5_adjacent_degree5_singleton_middle_arc.md) 的 728 筆排除 320＋112；各保留 296 筆、592 查詢全接受 |
-| 34／40 長弧 | [來源排除](c5_adjacent_degree5_singleton_end_arc.md)：每位置 152 筆，K5／T4 排除 120／32；出口第七類涵蓋 singleton 全部支援 |
-| 唯一 mixed K2 各一接點型 | [必要化約](c5_adjacent_degree5_mixed_edge.md) 的 576 筆由 [原四環次序](c5_adjacent_degree5_mixed_edge_order.md) 排除 552＋24，全部 disk 來源排除，不需 T4 |
-| K2 共鄰端點化約 | [完整關係與 minimality](c5_adjacent_degree5_mixed_edge_shared.md)：z 無 spoke、唯一二接點 unary，w 飽和；原 288 筆／9,312 schemas 保持 |
-| 共鄰端點 t_w=2、(1) | [原 diamond 外側支援](c5_adjacent_degree5_mixed_edge_shared_t2.md)：原 18 筆接合為 38 筆必要支援，76 查詢全接受、不需 T4；出口新增第八類 |
-| 共鄰端點 t_w=1、(2) | [局部 K5 與雙列](c5_adjacent_degree5_mixed_edge_shared_t1_pair.md)：原 36 筆綁定 356 筆必要支援，原 diamond／spoke 路徑排除 292，保留 64 的 128 查詢全接受；不需 T4 或新 first-bridge 引理，出口第八類擴充 |
-| 共鄰端點 t_w=1、(1,1) | [飽和環序與雙列](c5_adjacent_degree5_mixed_edge_shared_t1_singles.md)：原 72 筆接合 780 份幾何成 32 筆必要支援，64 查詢全接受；56 筆原正常形無支援，不需 T4 或新 K5 排除，完成此接線的 t_w≥1 |
-| 共鄰端點 t_w=0、(2,1) | [原 diamond 路徑與雙列](c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md)：原 54 筆接合 240 份幾何成 102 筆必要支援，204 查詢全接受；另以原 K5 排除 94、保留 8，不需 T4 或 root-spoke |
-| 共鄰端點 t_w=0、(1,1,1) | [六跨度來源排除](c5_adjacent_degree5_mixed_edge_shared_t0_singles.md)：原 108 筆皆需跨度至少 6>5；兩算法同得 60 份幾何、6,480 次接合全矛盾，0 target 查詢；不需 T4，完成此接線全部五型 |
-| K2 同端點 P*ᶻ=P*ʷ={u} | [完整關係與原 v-star 排除](c5_adjacent_degree5_mixed_edge_same_endpoint.md)：240 筆正常形經原路徑 K5 排除 105；餘 135 筆以跨度排除 123、飽和扇區排除 12，全型來源不存在；不需 T4、0 target 查詢 |
-| K2 四 incidence P*ᶻ=P*ʷ={u,v} | [原 K4 與實際外部路徑](c5_adjacent_degree5_mixed_edge_k4.md)：完整分量改色迫使 unary 碰 B，原 K5 排除一般平面來源；不需 T4 或 degree-list 定理、0 target 查詢；九組接線覆蓋完成，出口第八類移除接線限制 |
-| 無 mixed 的同色 residual／容量 | [完整化約](c5_adjacent_degree5_no_mixed.md)：E_z=E_w={c}、逐邊 minimality、容量缺額加重疊恰一；原 zw 外部路徑使平面每側剩 t=2:(2)、t=1:(2,1)、t=0:(2,2)／(2,1,1)，118 份側資料／3,548 份同色接合，未證整型 target 分離 |
-| 無 mixed 兩側 t=2,(2) | [支援與環序](c5_adjacent_degree5_no_mixed_t2.md) 接原 88 份為 322 份；[整條原路徑 palettes](c5_adjacent_degree5_no_mixed_t2_path_palettes.md) 關閉最後四項，644／644 查詢全證、322 份雙列皆證、0 未決／新來源排除；保留完整 schemas／rotations，不需 T4，接入出口第九類 |
+| 工具／機制 | 可安全使用的結論 | 主要入口 |
+| --- | --- | --- |
+| 完整關係搬運＋容量上界 | actual support 上存在共同色置換時精確搬運；否則只保留包含真實 F 的完整上界 | [t₂/t₁ 支援表](c5_adjacent_degree5_no_mixed_t2_t1.md) §4 |
+| Root degree 超額預算 | source q 的 no-mixed minimal core 有 D+O+κ=degree−4；不是 target 等式 | [Root 預算](c5_root_degree_excess.md) §1–3 |
+| 樹上 edge-minimal list obstruction | root 樹有 κ=0，lists 由 incident 邊色完整描述；不能把 source 邊色直接傳到 p | [Root 預算](c5_root_degree_excess.md) §4–5 |
+| actual support／annulus 次序 | 保留原分量與具名接點後得到任意大小必要覆蓋；必要表不等於 disk 實現 | [t₂/t₁ 支援表](c5_adjacent_degree5_no_mixed_t2_t1.md) §2–3 |
+| 原外部路徑＋固定框弧 minor | 可排除來源或使用 target 拒絕假設排除某候選；兩者必分開記錄 | [t₂/t₂ bridge](c5_adjacent_degree5_no_mixed_t2_bridge.md) |
+| 端點／bridge palette 相容性 | source/target 不全域守恆時，仍可利用同一原路徑端點 tightness 與完整 relation | [t₂/t₂ endpoints](c5_adjacent_degree5_no_mixed_t2_endpoints.md) |
+| 整份拒絕證書 palette 交換 | 幾何排除其他選擇後，可在同一原 C 上重建額外 source 禁色 | [t₂/t₂ path palettes](c5_adjacent_degree5_no_mixed_t2_path_palettes.md) |
 
-任意大小化約為紙面＋外部定理，Python 重播有限證書；必要表未證 disk
-可實現性，未新增 Lean theorem。完整 Σ 的出口接合仍明用來源雙缺失與刪邊繼承。
+目前已證的高階 source 結構是 [Root 預算](c5_root_degree_excess.md)：
+D+O+κ=degree−4，以及樹骨架 κ=0。**尚未證**的是：
+「交換或幾何阻斷」機制的一般完備性、no-mixed 雙 root 全分拆分離、
+以及任意 degree-5 root 樹的跨列分離。
 
-[Root 預算](c5_root_degree_excess.md) 已證 no-mixed source 的 D+O+κ=degree−4，樹骨架 κ=0。
-樹 list 控制 233,744 份中 113 份 edge-minimal 拒絕皆符合邊色描述；跨列分離仍是猜想。
-**下一窄入口：** [t_z=2,(2)，t_w=1,(2,1)](c5_adjacent_degree5_no_mixed_t2_t1.md) 的 **record 14／p₁**。
-原 136 份接成 560 份必要支援，1,002／1,120 target 已證，118 個查詢未決；原 70 份纖維空。
-record 14 原 sides=(137,118)、B_z=04、B_w=3，實際支援 (S_z,S_w,S_D)=(01,123,34)。
-source (F_z,F_w,F_D)=({1},{0},{2})、c=3；p₁ 唯一失敗候選 F_w={0,3} 使 E_w 空。
-保留原 C_z、C_w、單接點 D_w、五接點、三 spokes、zw 與共同色框；不把飽和 D_w 當 spoke。
-比較 C_w 的 source singleton 與 target pair 證書，記錄幾何阻斷或額外 source 禁色的關閉原因。
-其他 no-mixed 分拆（含 O=1 型）、較大／多 mixed、degree≥6、非樹／非相鄰 roots 保留。
+已關閉的主線家族：唯一 degree-5 全部分支；唯一 mixed singleton 全支援；
+唯一 mixed K2 全接線；no-mixed 兩側 t=2,(2) 的 644／644 target。
+目前活躍的是 no-mixed t₂/t₁；其餘 no-mixed 分拆（特別是 O=1 型）、
+degree≥6、多 degree-5、非樹／非相鄰 roots、一般／共同出口均保留。
+完整數字、前提與證據入口一律查 [STATUS](STATUS.md) 與各專題報告。
+
+證據層保持分開：紙面證明、外部 degree-list 定理、Python 固定域控制、
+Lean 普通證明與 Lean `native_decide` 不互相代替。必要支援／minor skeleton
+不是來源實現證書；固定 q 結論也不自動提升成完整 Σ。
 
 ## 3. 其他路線的現況
 
