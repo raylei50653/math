@@ -18,6 +18,10 @@
 transition 政策仍保留。
 以下保留本輪語境。
 
+2026-09-30 後續：[六例 transport audit](c5_two_vertex_repair_transport.md)
+已逐條判定六圖原 U 上全部二十條五環的整圖 disk 外框可用性，
+並完成完整 J/P/Δ、arity ladder 與全部極小局部修復；原 artifact 保持原 bytes。
+
 ## 1. 前提與完整語義
 
 輸入兩個帶標號 class ID、A 的有序點對 `(i,j)` 及其在 B 的有序像

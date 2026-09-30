@@ -13,7 +13,7 @@
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
-| C₅ class 兩點重疊 | 132 類點對、六份完整接合及主例拓撲完成；正反向私有內點例原框皆被阻斷；原 U 無輔助變數局部合取修復所需最大 arity 恰為四；固定 P 的全部 inclusion-minimal 四點修復為一組二份、十四組三份；其餘代表、政策及多步充分性保留 | [兩點重疊導覽](c5_two_vertex_overlap_guide.md)、[全部極小修復](c5_two_vertex_minimal_repairs.md) |
+| C₅ class 兩點重疊 | 六份接合完整 relation 及全部 U 上五框可用性已核對；四例 frame-exact、r*=0，兩私有內點例 r*=4、各一組二份及十四組三份極小修復；共用 repair 公式但完整排除資料不由頂點雙射搬運，其他代表／政策及多步充分性保留 | [兩點重疊導覽](c5_two_vertex_overlap_guide.md)、[跨例修復](c5_two_vertex_repair_transport.md) |
 | 完整 relation／表示法 | Interface、State、Branch、Choice 及接合語意已有；pair projections 漏掉高階限制 | [state language](state_language.md)、[extension effects](extension_effects.md) |
 | 逐步充分性／closure | strip／fan 有界控制與 separator 引理可用；一般移動前緣、context／future 充分性及 C6／C7 轉接待證或未啟動 | [充分性](stepwise_state_sufficiency.md)、[closure](local_closure.md)、[介面提案](c5_interface_idea.md) |
 | Triangle grammar | 染色語義、attachment normal form、GeoReject 與 endpoint-order 編譯已有形式化；只限指定 grammar | [automata](automata.md)、[normal form](attachment_normal_form.md) |
