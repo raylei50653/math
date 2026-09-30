@@ -23,6 +23,7 @@
 | 導覽 | 負責範圍 |
 | --- | --- |
 | [Weak-deletion／出口](c5_weak_deletion_guide.md) | 候選、minimal obstruction、核心分離與一般出口缺口 |
+| [C₅ class／兩點重疊](c5_two_vertex_overlap_guide.md) | 兩個 class 各選兩點識別、完整染色後繼與拓撲界線 |
 | [Degree-4／block](c5_degree4_guide.md) | 全 degree-4 合成、前提及證書 |
 | [Degree-5／R 系列](c5_degree5_guide.md) | 來源結構、R31 minor 與其他環型缺口 |
 | [Sector／雙拒絕分類](c5_sector_3903_guide.md) | 3903、3703 與指定 sector 分類 |
@@ -177,6 +178,8 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [C₅ class 兩點重疊](c5_two_vertex_overlap.md) | 132 類／1,320 點對索引與兩點相容、單側投影語義已保存；695 強迫異色、625 自由；八點後繼表、拓撲與多步充分性未完成，未新增 Lean theorem |
+| [C₅ 具名八點接合與同圖核對](c5_two_vertex_join.md) | 一次 evaluator 與六份完整八點 relation／雙側回投影全經整圖核對；主例 140 軌道、A=R1016／B=R1023；完整後繼表、拓撲及多步充分性未完成，未新增 Lean theorem |
 | [Lean 接合基礎](lean_root_interfaces.md) | 15 個普通 Lean 定理與報告對照；各項形式化範圍見原報告；完整 minor／disk 層仍未形式化 |
 | [Lean 實際邊界與 degree-list 基礎](lean_boundary_degree.md) | 原圖延拓 iff 框列 proper 且內圖 list 可染；完整 degree 拆分、拒絕迫 degree=4／框色單射、低度數與重色延拓；13 個普通定理，Gallai／disk 分類仍未形式化 |
 | [研究目標](c5_boundary_relations.md) | 主命題未證；全域存在小代表、指定局部規則的完備性必須分開 |
@@ -282,6 +285,8 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-09-30：C₅ 具名八點接合與同代表整圖核對](history/2026-09-30-c5-two-vertex-join.md)
+- [2026-09-30：C₅ class 兩點重疊資料與接手整理](history/2026-09-30-c5-two-vertex-overlap-handoff.md)
 - [2026-09-30：mixed P₃ 中點／端點與保留原末端的六跨度排除](history/2026-09-30-mixed-p3-middle-endpoint.md)
 - [2026-09-30：mixed P₃ 非對稱六跨度與兩端接線完成](history/2026-09-30-mixed-p3-asymmetric.md)
 - [2026-09-29：mixed P₃ 對稱分支的原五環與側支援排除](history/2026-09-29-mixed-p3-symmetric.md)
