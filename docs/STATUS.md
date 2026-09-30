@@ -187,7 +187,8 @@
 | [C₅ 反向第二混合外框完整 relation](c5_two_vertex_second_mixed_frame.md) | 指定 `(a0,b4,b0,a2,a1)` 外框為完整 R1022／9 軌道／216 賦色，只拒絕 `01012`；原 J 纖維、十內點延拓及雙內點 disk 代表一致，與 R255 非 D₅ 等價，未 Lean 化 |
 | [C₅ 兩混合框共同拉回與精確修復](c5_two_vertex_mixed_pullback.md) | 兩完整框的拉回為 114 軌道，較原 J 多 54；補回 b2–b4 仍多 16，另加兩條四點條件恰還原 J，三條件各不可省略；完整差集、兩份分別延拓及原邊拒絕全保存，紙面＋Python，未 Lean 化 |
 | [C₅ 全部三點投影與四點 arity 下界](c5_two_vertex_ternary_projections.md) | 兩框加全部 56 份三點投影恰等於補回原邊，仍多 16 軌道／384 賦色；896 份三點延拓保存；原 U 無輔助變數的局部合取修復所需最大 arity 恰為四，投影個數最小性由後續完成，紙面＋Python，未 Lean 化 |
-| [C₅ 四點投影的最少個數與全部最小組合](c5_two_vertex_quaternary_repairs.md) | 全部 70 scopes／八種排除集合及 2,415 配對全核對；最少兩份且唯一為 `(a0,a1,a2,a3)` 與 `(a2,b0,b2,b4)`；三份唯一性見證／192 份延拓保存；較大不可省修復保留，紙面＋Python，未 Lean 化 |
+| [C₅ 四點投影的最少個數與全部最小組合](c5_two_vertex_quaternary_repairs.md) | 全部 70 scopes／八種排除集合及 2,415 配對全核對；最少兩份且唯一為 `(a0,a1,a2,a3)` 與 `(a2,b0,b2,b4)`；三份唯一性見證／192 份延拓保存；較大不可省修復由後續完成，紙面＋Python，未 Lean 化 |
+| [C₅ 全部 inclusion-minimal 四點修復](c5_two_vertex_minimal_repairs.md) | 固定反向圖、原 U 及 P，全部十五組恰為一組二份、十四組三份；完整排除集分類與具名展開、44 份不可省見證及逐組 relation 恰等於 J 均核對，紙面＋Python，未 Lean 化 |
 | [Lean 接合基礎](lean_root_interfaces.md) | 15 個普通 Lean 定理與報告對照；各項形式化範圍見原報告；完整 minor／disk 層仍未形式化 |
 | [Lean 實際邊界與 degree-list 基礎](lean_boundary_degree.md) | 原圖延拓 iff 框列 proper 且內圖 list 可染；完整 degree 拆分、拒絕迫 degree=4／框色單射、低度數與重色延拓；13 個普通定理，Gallai／disk 分類仍未形式化 |
 | [研究目標](c5_boundary_relations.md) | 主命題未證；全域存在小代表、指定局部規則的完備性必須分開 |
@@ -293,6 +294,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-09-30：C₅ 全部 inclusion-minimal 四點修復](history/2026-09-30-c5-two-vertex-minimal-repairs.md)
 - [2026-09-30：C₅ 兩點接合、混合框與最小修復發布整理](history/2026-09-30-c5-two-vertex-publish.md)
 - [2026-09-30：C₅ 四點投影的最少個數與唯一組合](history/2026-09-30-c5-two-vertex-quaternary-repairs.md)
 - [2026-09-30：C₅ 全部三點投影不足與四點 arity 下界](history/2026-09-30-c5-two-vertex-ternary-projections.md)

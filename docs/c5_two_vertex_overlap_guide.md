@@ -28,11 +28,12 @@
 | 兩混合框共同拉回 | 完整拉回為 114 軌道，較原 J 多 54；補回 b2–b4 仍多 16，加入兩條四點條件恰還原 J；完整差集、分別延拓及原邊拒絕全保存，未 Lean 化 | [拉回與修復](c5_two_vertex_mixed_pullback.md)、[artifact](../artifacts/c5_two_vertex_overlap/mixed_frame_pullback.json) |
 | 全部三點投影與四點下界 | 56 份三點投影各等於誘導原邊關係；加到兩框後仍多 16 軌道／384 賦色，保存 896 份三點延拓；原 U 無輔助變數的局部合取修復所需最大 arity 恰為四，未 Lean 化 | [三點投影報告](c5_two_vertex_ternary_projections.md)、[artifact](../artifacts/c5_two_vertex_overlap/ternary_projections.json) |
 | 四點投影最少個數與全部最小組合 | 70 scopes／八種排除集合及 2,415 配對全核對；最少兩份，唯一組合為 `(a0,a1,a2,a3)` 與 `(a2,b0,b2,b4)`；三份唯一性見證／192 份原圖延拓保存，未 Lean 化 | [最小修復報告](c5_two_vertex_quaternary_repairs.md)、[artifact](../artifacts/c5_two_vertex_overlap/quaternary_repairs.json) |
+| 全部 inclusion-minimal 四點修復 | 固定 P、原 U 的全部十五組分類完成：一組二份、十四組三份；三個完整排除類組合、44 份不可省見證與逐組完整 relation 相等核對保存，未 Lean 化 | [全部極小修復](c5_two_vertex_minimal_repairs.md)、[artifact](../artifacts/c5_two_vertex_overlap/minimal_repairs.json) |
 | 一般拓撲與多步 | 其餘代表、指定接合政策及未來接觸範圍須另查；尚無一般充分摘要 | [拓撲界線](c5_two_vertex_overlap.md) §5 |
 
 ## 3. 精確停止點與下一個窄問題
 
-目前最前沿是[四點投影最小修復](c5_two_vertex_quaternary_repairs.md)，
+目前最前沿是[全部 inclusion-minimal 四點修復](c5_two_vertex_minimal_repairs.md)，
 固定 R127 `(0,2)` 接 R167 `(3,1)` 的原十五點三十五邊圖，
 識別 a0=b3、a2=b1，保留全部原邊、七個私有內點及共同色框：
 
@@ -41,6 +42,7 @@ U   = (a0,a1,a2,a3,a4,b0,b2,b4)
 C₁  = (a0,a4,a3,a2,b2), relation R255
 C₂  = (a0,b4,b0,a2,a1), relation R1022
 S_A = (a0,a1,a2,a3)
+S_T = (a0,a2,b0,b2)
 S_B = (a2,b0,b2,b4)
 ```
 
@@ -61,10 +63,18 @@ S_A 在任何四點投影修復中都不可省，S_B 只在最少兩份時被迫
 三份唯一性見證、全部差集、具名投影及原圖延拓均在證書中保存。
 上述結論是固定圖的 Python 證書與紙面推論，未 Lean 化。
 
-**下一個窄問題：同一 P 上全部 inclusion-minimal 四點修復。**
-沿用八種排除集合及完整 54 軌道差集，分類個數較大、但刪掉任一份
-即失效的組合，尤其不含 S_B 的替代修復。仍保留具名 scopes 與
-共同色框，不遍歷新來源圖或環序；不改變最少兩份且組合唯一的結論。
+**同一 P 上全部 inclusion-minimal 四點修復已完成。**
+全部十五組恰為 `{S_A,S_B}`，以及 `{S_A,S_T,E}`，其中 E 遍歷
+含 `{b2,b4}` 的全部四點 scopes 並排除 S_B，共十四份。
+先依 x/y 見證固定 A 或 A、T，再按完整排除集合分類；八類的
+256 個子集合與化約後的 16 個子集合一致，全部具名展開、44 份
+不可省見證均保存。十五組各在全部 `4^8` 具名賦色上直接重建，
+完整 relation 都恰等於 J；沒有四份以上的 inclusion-minimal 組合。
+原 U、共同色框與基底 P 均未改動，未新增圖或環序，未 Lean 化。
+
+此固定模型的指定窄題已完成，下一個窄問題尚未指定。一般局部
+條件表、輔助變數及以下拓撲／多步缺口仍保留；完整投影的分類
+不自動給出這些模型的結論。
 
 拓撲證據的適用範圍仍須分開：主例已完成全部環序／外面分類；
 正反向私有內點例各保存平面及來源 disk 內部互斥見證，並排除
@@ -88,8 +98,10 @@ R255／R1022 不證一般接合後的五點 relation 都屬於 132 類。
 [第二混合框](c5_two_vertex_second_mixed_frame.md)、
 [兩框共同拉回](c5_two_vertex_mixed_pullback.md)與
 [全部三點投影](c5_two_vertex_ternary_projections.md)、
-[四點最小修復](c5_two_vertex_quaternary_repairs.md)；最新驗證見
-[發布整理與驗證紀錄](history/2026-09-30-c5-two-vertex-publish.md)。再視需要讀
+[四點最小修復](c5_two_vertex_quaternary_repairs.md)與
+[全部極小修復](c5_two_vertex_minimal_repairs.md)；最新驗證見
+[本輪核對紀錄](history/2026-09-30-c5-two-vertex-minimal-repairs.md)，
+前次發布見[發布整理與驗證紀錄](history/2026-09-30-c5-two-vertex-publish.md)。再視需要讀
 [state language](state_language.md)、[local closure](local_closure.md)、
 [cell enumerator](c5_cell_enumerator.md)及[既有 state 導覽](c5_state_guide.md)。
 
@@ -125,6 +137,8 @@ python3 scripts/c5_two_vertex_ternary_projections.py --check
 PYTHONHASHSEED=17 python3 scripts/c5_two_vertex_ternary_projections.py --check
 python3 scripts/c5_two_vertex_quaternary_repairs.py --check
 PYTHONHASHSEED=17 python3 scripts/c5_two_vertex_quaternary_repairs.py --check
+python3 scripts/c5_two_vertex_minimal_repairs.py --check
+PYTHONHASHSEED=17 python3 scripts/c5_two_vertex_minimal_repairs.py --check
 ```
 
 點對重播只依現有來源 JSON；八點重播另驗四份來源代表與六份接合圖的
@@ -138,6 +152,9 @@ PYTHONHASHSEED=17 python3 scripts/c5_two_vertex_quaternary_repairs.py --check
 896 份三點延拓及其 21,504 份具名換色、兩份四點修復與六項 verifier 擾動。
 四點 checker 重建同一 J，核對 70 份完整投影、全部 2,415 配對剩餘集合、
 三份唯一性見證的 192 份延拓／4,608 份具名換色及九項 verifier 擾動。
+極小修復 checker 沿用並重驗上述投影／三份見證，枚舉八類完整排除集、
+展開十五組具名修復、逐份核對 44 份刪除殘留及見證，並對每組掃描
+完整 `4^8` 賦色域；另有九項負控制。
 本輪實際重播範圍見紀錄。
 其餘三例的 embedding 與來源大枚舉未重驗。
 不得以 1,320 份點對表取代完整 Σ；不得把 `geometry=unknown` 當 disk transition。
