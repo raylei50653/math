@@ -507,7 +507,18 @@ t=1,(2,1) 與 t=0,(2,1,1) 的接合及 root 交換型；
 為同一 pair 的 disk minimal q-core。原五環空內側及五份完整實際支援
 給紙面矛盾，不限制 unary 大小，不需 T4／Gallai。失敗側核心不能屬
 此子類；這是來源排除，零 target 查詢，不新增空的可處理核心類別。
-P₃ 非對稱 residual、其他接線與更大／多 mixed 仍未涵蓋。
+後續（2026-09-30）：[P₃ 非對稱六跨度排除](c5_mixed_p3_asymmetric.md)
+補齊 (1,2)／(2,1)，明確容許一色側零跨度；完整側支援與原環序仍
+迫至少六條框邊。因此失敗側核心不能具有上述兩端各一 incidence
+接線，不再附 E_z=E_w 的限制。這仍是來源排除，零 target，不需
+T4／Gallai；其他 P₃ 接線與更大／多 mixed 保留。
+
+後續（2026-09-30）：[P₃ 中點／端點六跨度排除](c5_mixed_p3_middle_endpoint.md)
+再排除 contacts 恰為 zx₁、wx₂，及整份 root 交換／路徑反向型的全部
+residual。原 x₀ 及三條附件保留，四區塊環序迫至少六框邊；因此失敗
+側核心不能是唯一 mixed P₃ 的兩個不同接點、各一 root incidence。
+任意 unary 大小、零 target、不需 T4／Gallai；共鄰接點、更多 incidences
+與更大／多 mixed 仍保留。
 
 要完成使用者要求的**無條件一般 single-sided exit 定理**，仍須證明
 每個候選 A 來源 G、每個定向缺失對 (p,q)，至少存在一個接受 p 的

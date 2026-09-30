@@ -1,5 +1,9 @@
 # 唯一 mixed P₃：對稱兩色分支的原五環與實際側支援排除
 
+後續（2026-09-30）：[非對稱六跨度排除](c5_mixed_p3_asymmetric.md)已完成
+(1,2) 及整份 root 交換型，容許一色側零跨度；結合本頁，兩端各一
+incidence 接線的全部 residual 均無 disk 來源。下文當輪數字與證書保留。
+
 2026-09-29，驗證時 Git 基準 `11335c1`，接續工作區的
 [mixed 容量與接點化約](c5_mixed_capacity_contacts.md)。
 **唯一 mixed 原分量為 P₃=x₀x₁x₂、z 只接 x₀、w 只接 x₂，且

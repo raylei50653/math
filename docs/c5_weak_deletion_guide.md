@@ -1,6 +1,6 @@
 # Weak-deletion／單側與共同出口導覽
 
-更新：2026-09-29。本頁整理既有成果，不新增研究結論。
+更新：2026-09-30。本頁整理既有成果，不新增研究結論。
 研究線標記見 [HANDOFF](HANDOFF.md)，全文件索引見 [STATUS](STATUS.md)，
 共通信任界線與工作約定見 [DOCUMENTATION](DOCUMENTATION.md)。
 
@@ -33,6 +33,8 @@ minimal obstruction 路線：先完成 single-sided exit 的可處理核心，�
 | No-mixed 增長完備性／共同分離 | 三個側弧位置直接指定框弧，排除所有影響 R 的增長；指定 p₁、p₂ 存在性分離已免查表證成 | [增長完備性](c5_no_mixed_growth_completion.md) |
 | 較大 mixed 容量／最小接點型 | 任意大小逐欄容量、unary 無重疊及缺額至多一，收成十八側型；各一 incidence 至多兩禁對；唯一 mixed 三點形完成必要接線控制，其餘幾何未完成 | [容量與三點介面](c5_mixed_capacity_contacts.md) |
 | 唯一 mixed P₃ 對稱分支 | 兩端各一 incidence、兩側 E 同 pair 時，原五環空內側與五份實際支援排除全部 disk 來源；任意 unary 大小、不需 T4／Gallai | [原五環與完整側支援](c5_mixed_p3_symmetric.md) |
+| 唯一 mixed P₃ 非對稱／兩端接線完成 | (1,2) 及 root 交換型由六跨度排除，容許一色側零跨度；結合對稱分支完成兩端各一 incidence 全 residual；其他接線保留 | [原環序的六跨度](c5_mixed_p3_asymmetric.md) |
+| 唯一 mixed P₃ 中點／端點接線 | 原未接 root 末端的三色附件與四區塊環序排除全部 residual；連同兩端接線，兩個不同接點、各一 incidence 已全來源排除 | [保留末端的六跨度](c5_mixed_p3_middle_endpoint.md) |
 | 更一般 roots／出口 | degree≥6、多 degree-5、非樹／非相鄰 roots 與共同出口仍開放 | [Root 預算](c5_root_degree_excess.md)、[一般出口界線](c5_single_sided_exit.md) |
 
 先讀候選與 minimal obstruction，再讀條件式出口的適用範圍，最後接到本線停止點。
@@ -40,8 +42,8 @@ minimal obstruction 路線：先完成 single-sided exit 的可處理核心，�
 ## 3. 精確停止點與下一個窄問題
 
 **本線精確停止點：no-mixed 指定 p₁、p₂ 已有免表共同存在性分離；
-mixed 容量／三點接線化約之後，唯一 P₃ 兩端各一 incidence、兩側 E
-同 pair 的對稱分支已作任意 unary 大小的 disk 來源排除。未 Lean 化。**
+唯一 mixed 原 P₃ 的兩個不同接點、各一 root incidence 接線，全部
+residual 均已作任意 unary 大小的 disk 來源排除。未 Lean 化。**
 
 [Mixed 容量](c5_mixed_capacity_contacts.md)從完整關係證明：固定另一 root
 顏色後，禁止本側顏色至多等於本側 incidences；source unary 禁色互不
@@ -55,11 +57,24 @@ mixed 容量／三點接線化約之後，唯一 P₃ 兩端各一 incidence、�
 恰用完五條框邊；整側 E 的色置換不變性給矛盾。這是來源排除，
 不是 target 接受；未把 P₃ 換成 shared singleton，未限制 unary 大小。
 
-下一窄題是**唯一 mixed 原 P₃、兩端各接一 root 的非對稱 source
-residual (|E_z|,|E_w|)=(1,2)，以及整份 root 交換型**。
-保留原五環 z–x₀–x₁–x₂–w–z、實際 S₀/S₁/S₂、全部 unary 與原
-外部路徑，先從完整 P₃ 關係導出必要附件及一色側跨度，再研究 p₁、p₂。
-一色側沒有二元 residual 的正跨度引理，不能套用本輪五跨度等號。
+[非對稱分支](c5_mixed_p3_asymmetric.md)補齊 (1,2)／(2,1)：
+完整 P₃ 拒絕迫使被拒絕的 root 色對含第四色。若一色側剩第四色，
+其支援須見三色；若剩已用色 a，另一側的 {a,3} 迫支援見另外兩色，
+沿原環序共需至少六框邊。容許一色側零跨度，不套用五正跨度等號。
+26,400 組正規化必要側角色全排除，零 target，不是 disk 實現分類。
+
+[中點／端點接線](c5_mixed_p3_middle_endpoint.md)現已排除 masks=(0,1,2)
+及整份 root 交換／路徑反向型。完整 P₃ 只禁 (a,3)，原 x₀ 的三份
+附件迫見三色；保留 x₀ 的四個連通區塊環序給兩種 residual 各至少
+六框邊。22,400 組必要側角色全排除，零 target；未刪 x₀ 或換成 K2。
+
+下一窄題是**唯一 mixed 原 P₃=x₀x₁x₂，P*ᶻ=P*ʷ={x₂}，
+即 root masks=(0,0,3)，及路徑反向型 (3,0,0)**。
+前層固定 q 控制已有六份必要色配置，各點實際 boundary 鄰點數為
+(3,2,1)。保留同一共鄰點、原 x₂–x₁–x₀ 鏈、全部實際附件與 unary，
+先從完整三點關係分析原 triangle z–x₂–w–z 的外側次序。
+不能把兩個 root incidences 拆成兩點，也不能把整份原 P₃ 換成
+shared singleton。其餘更多 incidences 的 P₃ 接線仍保留。
 
 [無增長](c5_no_mixed_no_growth.md)與[增長完備性](c5_no_mixed_growth_completion.md)
 已關閉 no-mixed 有害增長缺口；不重啟十五類支援枚舉。
@@ -81,6 +96,8 @@ degree-5、degree≥6 與一般／共同出口仍保留。
 | Root degree 超額預算 | source q 的 no-mixed minimal core 有 D+O+κ=degree−4；不是 target 等式 | [Root 預算](c5_root_degree_excess.md) §1–3 |
 | Mixed 容量與接點化約 | source unary 無重疊、D≤1；各一 incidence 至多兩禁對；三點控制不外推任意大小接線 | [Mixed 容量](c5_mixed_capacity_contacts.md) §2–6 |
 | 完整 root 側支援不變性 | 原 E 為 pair 時，全部 unary／spokes 的實際支援聯集至少見兩色；P₃ 對稱分支五跨度排除，不替換原分量介面 | [P₃ 紙面排除](c5_mixed_p3_symmetric.md) §3–4 |
+| 一色／兩色側支援共同計費 | 一色側可零跨度；原環序中三個必要已見色與 P₃ 支援共需六框邊，排除兩端接線的非對稱 residual | [非對稱六跨度](c5_mixed_p3_asymmetric.md) §3–4 |
+| 原末端保留的四區塊與兩弧計費 | 中點／端點接線的未接 root 末端迫見三色；完整禁對與側支援給六框邊下界，不改換原 P₃ 介面 | [中點／端點排除](c5_mixed_p3_middle_endpoint.md) §2–4 |
 | 雙 root source 側跨度 | m+s+a≤5，八類來源排除；不能將成本未超額視為來源存在 | [十五類總覽](c5_no_mixed_span_budget.md) §2 |
 | 樹上 edge-minimal list obstruction | root 樹有 κ=0，lists 由 incident 邊色完整描述；不能把 source 邊色直接傳到 p | [Root 預算](c5_root_degree_excess.md) §4–5 |
 | actual support／annulus 次序 | 保留原分量與具名接點後得到任意大小必要覆蓋；必要表不等於 disk 實現 | [t₂/t₁ 支援表](c5_adjacent_degree5_no_mixed_t2_t1.md) §2–3 |
@@ -104,13 +121,26 @@ Lean 普通證明與 Lean `native_decide` 不互相代替。必要支援／minor
 
 ## 4. 重播入口與驗證範圍
 
-最近 P₃ 對稱分支輪重跑新 checker（一般及 `PYTHONHASHSEED=17`）、
-mixed 容量、完整有序色對介面、既有 Lean build 及文件／DocGraph；
-確切命令與未重跑範圍見[P₃ 紀錄](history/2026-09-29-mixed-p3-symmetric.md)。最小入口：
+最近中點／端點輪重跑新 checker（一般及 `PYTHONHASHSEED=17`）、
+mixed 容量、非對稱、完整有序色對介面、既有 Lean build 及文件／DocGraph；
+確切命令與未重跑範圍見[中點／端點紀錄](history/2026-09-30-mixed-p3-middle-endpoint.md)。最小入口：
 
 ```bash
+python3 scripts/c5_mixed_p3_middle_endpoint.py --check
+PYTHONHASHSEED=17 python3 scripts/c5_mixed_p3_middle_endpoint.py --check
+python3 scripts/c5_mixed_capacity_contacts.py --check
+python3 scripts/c5_mixed_p3_asymmetric.py --check
+python3 scripts/c5_adjacent_degree5_interfaces.py --check
+```
+
+先前 P₃ 非對稱分支輪重跑新 checker（一般及 `PYTHONHASHSEED=17`）、
+前層對稱、mixed 容量、完整有序色對介面、既有 Lean build 及文件／DocGraph；
+確切命令與未重跑範圍見[非對稱紀錄](history/2026-09-30-mixed-p3-asymmetric.md)。最小入口：
+
+```bash
+python3 scripts/c5_mixed_p3_asymmetric.py --check
+PYTHONHASHSEED=17 python3 scripts/c5_mixed_p3_asymmetric.py --check
 python3 scripts/c5_mixed_p3_symmetric.py --check
-PYTHONHASHSEED=17 python3 scripts/c5_mixed_p3_symmetric.py --check
 python3 scripts/c5_mixed_capacity_contacts.py --check
 python3 scripts/c5_adjacent_degree5_interfaces.py --check
 ```
