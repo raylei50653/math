@@ -8,7 +8,11 @@
 
 2026-09-30 後續：[具名八點接合](c5_two_vertex_join.md)已完成 evaluator、
 六份固定接合的完整 relation／A、B 回投影及同代表整圖核對。
-下文保留資料盤點輪的語境；完整後繼表、拓撲及多步充分性仍未完成。
+同日[主例拓撲](c5_two_vertex_join_topology.md)及
+[正向](c5_two_vertex_private_topology.md)／[反向私有內點拓撲](c5_two_vertex_private_reverse_topology.md)
+亦已完成指定控制；反向例的[兩混合框與四點最小修復](c5_two_vertex_quaternary_repairs.md)
+已有完整固定圖證書。下文保留資料盤點輪的語境；其餘代表拓撲、
+完整後繼表及一般多步充分性仍未完成。
 
 ## 1. 本輪確定的研究範圍
 

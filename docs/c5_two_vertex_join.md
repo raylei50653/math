@@ -6,6 +6,18 @@
 本輪沒有枚舉全部 class-pair 後繼或重新搜尋來源圖。
 目前停止點由[導覽](c5_two_vertex_overlap_guide.md)維護。
 
+2026-09-30 後續：[主例拓撲稽核](c5_two_vertex_join_topology.md)已對同一
+`reference` 圖完成 36 組環序、24 份外面配置及原 A／B 框判定。
+主例抽象平面，兩框各自可作整圖外界；兩份 disk 有四種區域關係。
+舊 artifact 仍保存本輪的 `unknown`；新證據由獨立 companion 綁定，
+另由[私有內點拓撲](c5_two_vertex_private_topology.md)完成 `private_interiors`：
+原十五點三十五邊圖平面，兩來源 disk 可內部互斥，但兩組原路徑
+分別阻斷 A、B 原框作整圖外界。
+[反向私有內點拓撲](c5_two_vertex_private_reverse_topology.md)也已完成
+同樣三項可行性核對，保留正反向完整 J 的差別。其餘三例及一般
+transition 政策仍保留。
+以下保留本輪語境。
+
 ## 1. 前提與完整語義
 
 輸入兩個帶標號 class ID、A 的有序點對 `(i,j)` 及其在 B 的有序像

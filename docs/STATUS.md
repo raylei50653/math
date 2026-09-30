@@ -178,8 +178,16 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [C₅ class 兩點重疊](c5_two_vertex_overlap.md) | 132 類／1,320 點對索引與兩點相容、單側投影語義已保存；695 強迫異色、625 自由；八點後繼表、拓撲與多步充分性未完成，未新增 Lean theorem |
-| [C₅ 具名八點接合與同圖核對](c5_two_vertex_join.md) | 一次 evaluator 與六份完整八點 relation／雙側回投影全經整圖核對；主例 140 軌道、A=R1016／B=R1023；完整後繼表、拓撲及多步充分性未完成，未新增 Lean theorem |
+| [C₅ class 兩點重疊](c5_two_vertex_overlap.md) | 132 類／1,320 點對索引與兩點相容、單側投影語義已保存；695 強迫異色、625 自由；六份接合與三份控制拓撲由後續完成，完整後繼表及多步充分性保留 |
+| [C₅ 具名八點接合與同圖核對](c5_two_vertex_join.md) | 一次 evaluator 與六份完整八點 relation／雙側回投影全經整圖核對；主例 140 軌道、A=R1016／B=R1023；主例及正反向私有內點原框由後續完成，其餘拓撲、完整後繼表與多步充分性保留 |
+| [C₅ 兩點接合主例拓撲](c5_two_vertex_join_topology.md) | 同一八點十邊圖的 36 組環序／24 份外面配置全核對；兩原框各自可作整圖外界，四種區域關係有見證，無八點 simple 外框；政策及其他代表保留，紙面＋Python，未 Lean 化 |
+| [C₅ 私有內點接合與兩原框阻斷](c5_two_vertex_private_topology.md) | 指定十五點三十五邊圖平面，兩來源 disk 可內部互斥；兩組交錯原路徑排除 A、B 作整圖外界，完整 J 仍 60 軌道；反向控制由後續完成，紙面＋Python，未 Lean 化 |
+| [C₅ 私有內點反向接合拓撲](c5_two_vertex_private_reverse_topology.md) | 反向原十五點三十五邊圖平面、來源 disk 可內部互斥、兩原框皆被阻斷；完整 J 與正向各有 16 個獨有 patterns；混合外面 relation 由後續完成，紙面＋Python，未 Lean 化 |
+| [C₅ 反向混合外框完整 relation](c5_two_vertex_mixed_frame.md) | 指定 `(a0,a4,a3,a2,b2)` 外框為完整 R255／8 軌道／192 賦色，原 J 纖維及十內點延拓全核對；等於既有單內點 disk 代表，替換須密封其餘點，未 Lean 化 |
+| [C₅ 反向第二混合外框完整 relation](c5_two_vertex_second_mixed_frame.md) | 指定 `(a0,b4,b0,a2,a1)` 外框為完整 R1022／9 軌道／216 賦色，只拒絕 `01012`；原 J 纖維、十內點延拓及雙內點 disk 代表一致，與 R255 非 D₅ 等價，未 Lean 化 |
+| [C₅ 兩混合框共同拉回與精確修復](c5_two_vertex_mixed_pullback.md) | 兩完整框的拉回為 114 軌道，較原 J 多 54；補回 b2–b4 仍多 16，另加兩條四點條件恰還原 J，三條件各不可省略；完整差集、兩份分別延拓及原邊拒絕全保存，紙面＋Python，未 Lean 化 |
+| [C₅ 全部三點投影與四點 arity 下界](c5_two_vertex_ternary_projections.md) | 兩框加全部 56 份三點投影恰等於補回原邊，仍多 16 軌道／384 賦色；896 份三點延拓保存；原 U 無輔助變數的局部合取修復所需最大 arity 恰為四，投影個數最小性由後續完成，紙面＋Python，未 Lean 化 |
+| [C₅ 四點投影的最少個數與全部最小組合](c5_two_vertex_quaternary_repairs.md) | 全部 70 scopes／八種排除集合及 2,415 配對全核對；最少兩份且唯一為 `(a0,a1,a2,a3)` 與 `(a2,b0,b2,b4)`；三份唯一性見證／192 份延拓保存；較大不可省修復保留，紙面＋Python，未 Lean 化 |
 | [Lean 接合基礎](lean_root_interfaces.md) | 15 個普通 Lean 定理與報告對照；各項形式化範圍見原報告；完整 minor／disk 層仍未形式化 |
 | [Lean 實際邊界與 degree-list 基礎](lean_boundary_degree.md) | 原圖延拓 iff 框列 proper 且內圖 list 可染；完整 degree 拆分、拒絕迫 degree=4／框色單射、低度數與重色延拓；13 個普通定理，Gallai／disk 分類仍未形式化 |
 | [研究目標](c5_boundary_relations.md) | 主命題未證；全域存在小代表、指定局部規則的完備性必須分開 |
@@ -285,6 +293,15 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-09-30：C₅ 兩點接合、混合框與最小修復發布整理](history/2026-09-30-c5-two-vertex-publish.md)
+- [2026-09-30：C₅ 四點投影的最少個數與唯一組合](history/2026-09-30-c5-two-vertex-quaternary-repairs.md)
+- [2026-09-30：C₅ 全部三點投影不足與四點 arity 下界](history/2026-09-30-c5-two-vertex-ternary-projections.md)
+- [2026-09-30：C₅ 兩混合框共同拉回與跨框條件修復](history/2026-09-30-c5-two-vertex-mixed-pullback.md)
+- [2026-09-30：C₅ 反向接合第二混合外框的完整 relation 核對](history/2026-09-30-c5-two-vertex-second-mixed-frame.md)
+- [2026-09-30：C₅ 反向接合混合外框的完整 relation 核對](history/2026-09-30-c5-two-vertex-mixed-frame.md)
+- [2026-09-30：C₅ 私有內點反向接合的具名拓撲核對](history/2026-09-30-c5-two-vertex-private-reverse-topology.md)
+- [2026-09-30：C₅ 私有內點接合的平面與兩原框阻斷](history/2026-09-30-c5-two-vertex-private-topology.md)
+- [2026-09-30：C₅ 兩點接合主例的原框與區域拓撲](history/2026-09-30-c5-two-vertex-topology.md)
 - [2026-09-30：C₅ 具名八點接合與同代表整圖核對](history/2026-09-30-c5-two-vertex-join.md)
 - [2026-09-30：C₅ class 兩點重疊資料與接手整理](history/2026-09-30-c5-two-vertex-overlap-handoff.md)
 - [2026-09-30：mixed P₃ 中點／端點與保留原末端的六跨度排除](history/2026-09-30-mixed-p3-middle-endpoint.md)
