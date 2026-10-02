@@ -1,5 +1,10 @@
 # C₅ 兩混合框的全部三點投影：16 個殘留軌道與四點下界
 
+**2026-10-02 形式化後續：** [NamedRepair](lean_named_repair.md) 已補兩個核心的
+具名原圖 J、指定兩框 P、完整 W／C 及 repair 分類。指定框 P 的 r*=4 已由 NamedRepair 形式化；完整三點投影表及殘留計數仍為 Python。
+下文保留原輪次的計算與證據界線；disk 框完備性仍未 Lean 化。
+
+
 **2026-09-30 後續：**[四點投影最小修復](c5_two_vertex_quaternary_repairs.md)
 已遍歷全部 70 個 scope 與 2,415 個配對，證成最少兩份且只有本報告
 給出的那一組。下文保留本輪 arity 下界與尚未分類投影個數的原語境。

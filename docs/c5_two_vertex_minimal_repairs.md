@@ -1,5 +1,10 @@
 # C₅ 固定反向接合的全部 inclusion-minimal 四點修復
 
+**2026-10-02 形式化後續：** [NamedRepair](lean_named_repair.md) 已補兩個核心的
+具名原圖 J、指定兩框 P、完整 W／C 及 repair 分類。指定框 P 的完整15組極小分類已由 NamedRepair 形式化；完整排除表與原拓撲證書仍為 Python／紙面。
+下文保留原輪次的計算與證據界線；disk 框完備性仍未 Lean 化。
+
+
 2026-09-30。接續[四點投影最少個數與唯一組合](c5_two_vertex_quaternary_repairs.md)，
 固定同一 `private_interiors_reverse` 原圖、原八點 U 與基底 P。
 **全部 inclusion-minimal 修復共 15 組：1 組二份、14 組三份，

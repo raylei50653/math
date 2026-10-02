@@ -185,20 +185,22 @@
 | [C₅ 私有內點反向接合拓撲](c5_two_vertex_private_reverse_topology.md) | 反向原十五點三十五邊圖平面、來源 disk 可內部互斥、兩原框皆被阻斷；完整 J 與正向各有 16 個獨有 patterns；混合外面 relation 由後續完成，紙面＋Python，未 Lean 化 |
 | [C₅ 反向混合外框完整 relation](c5_two_vertex_mixed_frame.md) | 指定 `(a0,a4,a3,a2,b2)` 外框為完整 R255／8 軌道／192 賦色，原 J 纖維及十內點延拓全核對；等於既有單內點 disk 代表，替換須密封其餘點，未 Lean 化 |
 | [C₅ 反向第二混合外框完整 relation](c5_two_vertex_second_mixed_frame.md) | 指定 `(a0,b4,b0,a2,a1)` 外框為完整 R1022／9 軌道／216 賦色，只拒絕 `01012`；原 J 纖維、十內點延拓及雙內點 disk 代表一致，與 R255 非 D₅ 等價，未 Lean 化 |
-| [C₅ 兩混合框共同拉回與精確修復](c5_two_vertex_mixed_pullback.md) | 兩完整框的拉回為 114 軌道，較原 J 多 54；補回 b2–b4 仍多 16，另加兩條四點條件恰還原 J，三條件各不可省略；完整差集、兩份分別延拓及原邊拒絕全保存，紙面＋Python，未 Lean 化 |
-| [C₅ 全部三點投影與四點 arity 下界](c5_two_vertex_ternary_projections.md) | 兩框加全部 56 份三點投影恰等於補回原邊，仍多 16 軌道／384 賦色；896 份三點延拓保存；原 U 無輔助變數的局部合取修復所需最大 arity 恰為四，投影個數最小性由後續完成，紙面＋Python，未 Lean 化 |
-| [C₅ 四點投影的最少個數與全部最小組合](c5_two_vertex_quaternary_repairs.md) | 全部 70 scopes／八種排除集合及 2,415 配對全核對；最少兩份且唯一為 `(a0,a1,a2,a3)` 與 `(a2,b0,b2,b4)`；三份唯一性見證／192 份延拓保存；較大不可省修復由後續完成，紙面＋Python，未 Lean 化 |
-| [C₅ 全部 inclusion-minimal 四點修復](c5_two_vertex_minimal_repairs.md) | 固定反向圖、原 U 及 P，全部十五組恰為一組二份、十四組三份；完整排除集分類與具名展開、44 份不可省見證及逐組 relation 恰等於 J 均核對，紙面＋Python，未 Lean 化 |
-| [C₅ 六例 local-repair transport audit](c5_two_vertex_repair_transport.md) | 六圖全部二十條 U 上五環中十四條可作整圖外界；四例 P=J、r*=0，兩私有內點例 r*=4、各十五組極小修復與唯一 forced A；八十八份不可省見證，repair 公式相同但完整排除資料不由頂點雙射搬運，紙面＋Python，未 Lean 化 |
-| [C₅ 共同 repair 充要 lemma](c5_two_vertex_common_repair.md) | 抽象 W／C 雙向判準及極小／極大失敗分類等已有普通 Lean 證明；六圖前提與前提獨立性控制仍為 Python，來源與拓撲未 Lean 化 |
-| [C₅ repair 來源充分條件](c5_two_vertex_repair_sources.md) | 原私有接線及每例十一份補全證成 W／C；保核心的度數三消去與外框證書給任意大小指定族、r*=4；兩原框可用另給 P=J；消去條件非必要及嚴格增大族由後續補片定理完成，紙面＋Python，未 Lean 化 |
+| [C₅ 兩混合框共同拉回與精確修復](c5_two_vertex_mixed_pullback.md) | 拉回114軌道、J為60；具名精確 repair 等式已由 NamedRepair 對指定兩框形式化；完整差集、原邊拒絕及拓撲仍為紙面＋Python |
+| [C₅ 全部三點投影與四點 arity 下界](c5_two_vertex_ternary_projections.md) | 指定兩框 P 的無輔助變數投影合取模型 r*=4 已由 NamedRepair 形式化；56份三點投影、16個殘留軌道／384賦色與896份延拓仍為 Python 證書 |
+| [C₅ 四點投影的最少個數與全部最小組合](c5_two_vertex_quaternary_repairs.md) | 指定兩框 P 的最少兩份、唯一組合 `(a0,a1,a2,a3)` 與 `(a2,b0,b2,b4)` 已由 NamedRepair 形式化；70 scopes 的完整排除表及2,415配對仍為 Python 證書 |
+| [C₅ 全部 inclusion-minimal 四點修復](c5_two_vertex_minimal_repairs.md) | 指定反向圖、原 U 與兩框 P 的完整15組極小分類已由 NamedRepair 形式化；一組二份、十四組三份；原排除表、44份刪除見證與拓撲證書保留 |
+| [C₅ 六例 local-repair transport audit](c5_two_vertex_repair_transport.md) | 兩核心指定框的各15組極小 repairs、唯一 forced A 及 r*=4 已 Lean 化；四例 P=J、全20條五環的14條可用性及 transport 差異仍為紙面＋Python |
+| [C₅ 共同 repair 充要 lemma](c5_two_vertex_common_repair.md) | 抽象 W／C 雙向判準及極小／極大失敗分類等已有普通 Lean 證明；兩核心指定框前提由 NamedRepair 形式化；四個退化圖及拓撲／獨立性控制仍為 Python |
+| [C₅ repair 來源充分條件](c5_two_vertex_repair_sources.md) | 原私有接線及每例十一份補全證成 W／C；保核心的度數三消去與外框證書給任意大小指定族、r*=4；兩原框可用另給 P=J；兩核心指定框 J/P、W／C 及 r*=4 已 Lean 化；任意大小及拓撲仍為紙面＋Python，增大族見後續補片 |
 | [C₅ 不能逐點消去的密封 clique 補片](c5_two_vertex_repair_patches.md) | 完整 clique 附件＋一份染色延拓全部核心染色；三角剖分核心自動給保核心 disk 擴張的附件，配合保框證書保留十五組 repairs／r*=4；不含舊核心的奇偶路徑族由後續完成，未完成全部代表分類，紙面＋Python，未 Lean 化 |
 | [C₅ 不含舊核心的私有路徑奇偶定理](c5_two_vertex_repair_strips.md) | 指定完整接線族內，A 兩臂偶長及 B 奇長充要保持 R127／R167；加長圖無保持框點及 ownership 的舊核心副本，仍保十五組 repairs／r*=4；十圖14,400份延拓及八奇偶控制；非路徑輪環骨架由後續推進，全部代表未分類，紙面＋Python，未 Lean 化 |
 | [C₅ 舊補片／路徑之外的完整四接點輪環替換](c5_two_vertex_repair_rings.md) | 四輪星與四環帶加中心的完整四接點關係相等；任意層數同 class disk 族無密封 clique 補片、私有圖含環且無舊核心副本，保十五組 repairs／r*=4；八圖11,520份延拓；輪環逆化約後的其他骨架由後續雙扇推進，必要分類仍未完成，紙面＋Python，未 Lean 化 |
 | [C₅ 輪環逆化約之外的完整四接點偶長雙扇替換](c5_two_vertex_repair_fans.md) | 偶長雙扇與四輪星完整四接點關係相等；任意大小同 class 族無密封 clique 補片、私有圖含環且無私有度數五點，三種舊縮減均無起點；保十五組 repairs／r*=4，八圖11,520份延拓；加入雙扇後的其他骨架由後續 D₁₃ 推進，必要分類保留，紙面＋Python，未 Lean 化 |
-| [C₅ 輪環與偶長雙扇之外的十三點非對稱 disk](c5_two_vertex_repair_caps.md) | D₁₃ 與四輪星完整四接點等價；反覆替換給任意大小同 class 族，私有四度點只成孤點及配對、每點至多鄰接一個私有五度點，輪環與雙扇均無縮減起點；保完整 J/P、十五組 repairs／r*=4，八圖11,520份延拓及十六項負控制，必要分類仍保留，紙面＋Python，未 Lean 化 |
+| [C₅ 輪環與偶長雙扇之外的十三點非對稱 disk](c5_two_vertex_repair_caps.md) | D₁₃／四輪星完整四接點等價及密封替換已由後續 Lean 證成；任意大小來源族、私有度數障礙、完整 J/P、十五組 repairs／r*=4 仍為紙面＋Python，全部代表必要分類保留 |
 | [Lean 接合基礎](lean_root_interfaces.md) | 15 個普通 Lean 定理與報告對照；各項形式化範圍見原報告；完整 minor／disk 層仍未形式化 |
-| [Lean 共同 repair 判準](lean_common_repair.md) | 27 個普通 theorem：W／C 充要判準、極小修復／極大失敗與完整殘留、唯一最少解、退化支及具名投影；公理審計通過，六圖前提尚未匯入 Lean |
+| [Lean 共同 repair 判準](lean_common_repair.md) | 27 個普通 theorem：W／C 充要判準、極小修復／極大失敗與完整殘留、唯一最少解、退化支及具名投影；公理審計通過，兩核心指定框前提由後續 NamedRepair 完成 |
+| [Lean D₁₃ 四接點及密封替換](lean_sealed_four_port.md) | 22 個普通 theorem：原32邊完整關係、三型延拓、任意外部共同關係保留、中心及缺邊控制；公理審計通過，無 native_decide；disk 與來源族未形式化；兩核心 W／C 由 NamedRepair 完成 |
+| [Lean 具名來源 J/P 與 W／C](lean_named_repair.md) | 34 個普通 theorem：兩核心原35邊延拓、指定框 P、完整70 scopes、各15組極小 repairs、唯一最少對及 r*=4；audit 通過，無 native_decide；disk 框完備性與替換來源族保留 |
 | [Lean 實際邊界與 degree-list 基礎](lean_boundary_degree.md) | 原圖延拓 iff 框列 proper 且內圖 list 可染；完整 degree 拆分、拒絕迫 degree=4／框色單射、低度數與重色延拓；13 個普通定理，Gallai／disk 分類仍未形式化 |
 | [研究目標](c5_boundary_relations.md) | 主命題未證；全域存在小代表、指定局部規則的完備性必須分開 |
 | [phase 1](phase1.md)、[BAD 構造](construction.md)、[gadgets](gadgets.md) | 基礎 exact relation／有限 Lean 證書與 gadget synthesis；一般 planar、separating C5 的 BAD 不構成 disk 反例 |
@@ -257,7 +259,7 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | 補片報告的「不含指定核心」 | [私有路徑奇偶定理](c5_two_vertex_repair_strips.md) 已給不含保持框點及 ownership 的舊核心副本的任意長度同 class 族；指定接線內必要及充分奇偶分類完成，密封補片及奇偶化約後的其他骨架仍未分類 |
 | 來源充分報告的「不能作私有度數三消去」 | [密封 clique 補片](c5_two_vertex_repair_patches.md) 已給任意大小、最低新增度數五而保 repairs 的來源族，證明舊消去條件非必要；後續奇偶路徑定理亦跨過含舊核心限制，全部代表仍未分類 |
 | 共同 repair lemma 的「下一步可檢查來源結構」 | [來源充分條件](c5_two_vertex_repair_sources.md) 已證指定核心、私有度數三消去與保框證書足夠；後續補片定理放寬逐點消去要求；兩原框可用給獨立退化支，未完成全部代表必要分類 |
-| 六例 transport audit 的「下一步抽象共同 repair lemma」 | [共同 lemma](c5_two_vertex_common_repair.md) 已證 witness／覆蓋充要條件並核對六圖；[抽象 Lean 判準](lean_common_repair.md) 已完成，六圖前提仍由 Python 核對；來源充分條件見後續報告，四個 P=J 仍為獨立退化支 |
+| 六例 transport audit 的「下一步抽象共同 repair lemma」 | [共同 lemma](c5_two_vertex_common_repair.md) 已證 witness／覆蓋充要條件並核對六圖；[抽象 Lean 判準](lean_common_repair.md) 已完成，兩核心指定框前提已由 [NamedRepair](lean_named_repair.md) 形式化；來源充分條件見後續報告，四個 P=J 仍為獨立退化支 |
 | P₃ 非對稱報告的「下一題 masks=(0,1,2)」 | [中點／端點接線](c5_mixed_p3_middle_endpoint.md) 已保留原末端三條附件並排除全部 residual；不同接點各一 incidence 已全涵蓋，共鄰接點仍保留 |
 | Mixed 容量的「P₃ 對稱分支內外側／實際附件未處理」 | [原五環與完整側支援](c5_mixed_p3_symmetric.md) 已排除兩端各一 incidence、兩側同 pair 的 disk 來源；非對稱及其他接線不在本結論內，未新增 target 接受 |
 | Single-spoke 的「下一題 (4) 三份拒絕 palettes」 | [共同結構與 K5](c5_single_spoke_four.md) 以共同 τ 排除正 bridge，四葉只剩兩 triangle 加單 bridge；t=1 全部接回出口，t=0 後由 no-spoke 報告收窄為兩型 |
@@ -310,6 +312,9 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-02：具名來源 J/P 與 W／C 的 Lean 實例](history/2026-10-02-lean-named-repair.md)
+
+- [2026-10-02：D₁₃ 四接點及密封替換的 Lean 證明](history/2026-10-02-lean-sealed-four-port.md)
 - [2026-10-02：共同 repair 判準的 Lean 形式化](history/2026-10-02-lean-common-repair.md)
 - [2026-10-02：C₅ 共同 repair 與來源替換族發布核對](history/2026-10-02-c5-two-vertex-repair-publish.md)
 - [2026-09-30：C₅ 輪環與偶長雙扇之外的十三點非對稱四接點 disk](history/2026-09-30-c5-two-vertex-repair-caps.md)

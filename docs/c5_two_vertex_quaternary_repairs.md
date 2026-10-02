@@ -1,5 +1,10 @@
 # C₅ 兩混合框的四點投影修復：最少兩份且組合唯一
 
+**2026-10-02 形式化後續：** [NamedRepair](lean_named_repair.md) 已補兩個核心的
+具名原圖 J、指定兩框 P、完整 W／C 及 repair 分類。指定框 P 的唯一最少對已由 NamedRepair 形式化；全部投影／排除表與原拓撲證書仍為 Python／紙面。
+下文保留原輪次的計算與證據界線；disk 框完備性仍未 Lean 化。
+
+
 2026-09-30。接續[全部三點投影與 arity 下界](c5_two_vertex_ternary_projections.md)，
 固定同一 `private_interiors_reverse` 十五點三十五邊原圖、完整八點 J
 及兩混合框拉回 P。**以原 U 上完整四點投影合取修復 P，最少恰為

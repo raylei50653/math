@@ -98,6 +98,8 @@ uv run --with-requirements requirements.txt python tools/artifacts.py status
 | `Math/TwoRejectionTools.lean` | 雙拒絕證明的九個一般引理；[依賴與重播](docs/lean_two_rejection_tools.md)，審計 `Math/TwoRejectionToolsAudit.lean`；完整 disk 分類仍未形式化 |
 | `Math/BoundaryDegree.lean` | 實際邊界接線到 degree-list 緊性、框色單射及延拓準則；[前提與重播](docs/lean_boundary_degree.md)，審計 `Math/BoundaryDegreeAudit.lean` |
 | `Math/CommonRepair.lean` | 完整 relation 的 W／C 充要判準、全部極小 repairs、唯一最少解及退化支；[前提與重播](docs/lean_common_repair.md)，審計 `Math/CommonRepairAudit.lean` |
+| `Math/SealedFourPort.lean` | D₁₃／四輪星完整具名四接點等價及密封上下文替換；[前提與重播](docs/lean_sealed_four_port.md)，審計 `Math/SealedFourPortAudit.lean`；不含 disk 嵌入 |
+| `Math/NamedRepairCore.lean`, `Math/NamedRepair.lean` | 兩個具名十五點核心的 J/P、W／C、完整極小 repairs 及 r*=4；[前提與重播](docs/lean_named_repair.md)，審計 `Math/NamedRepairAudit.lean`；指定框的 disk 完備性另證 |
 | `Math.lean` | 函式庫根，`import` 子模組 |
 | `lakefile.toml` | 依賴（mathlib）與編譯選項 |
 | `lean-toolchain` | 這個專案用的 Lean 版本 |

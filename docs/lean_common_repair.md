@@ -1,5 +1,15 @@
 # 共同 repair 判準的 Lean 形式化
 
+**2026-10-02 具名實例後續：** [NamedRepair](lean_named_repair.md) 已形式化
+兩個十五點核心的原圖 J、指定兩框 P、全部 W／C、各15組極小 repairs、
+唯一最少對與 r*=4。下文保留當輪界線；四個退化圖、disk 框完備性與
+D₁₃ 替換來源族仍未形式化。
+
+
+**2026-10-02 後續：** [SealedFourPort](lean_sealed_four_port.md) 已將
+D₁₃ 四接點等價及密封上下文替換補成普通 Lean 定理；本文的六圖
+J/P、W／C 前提與幾何停止點不變。
+
 2026-10-02。接續[共同 repair lemma](c5_two_vertex_common_repair.md)，將抽象
 W／C 充要判準及其分類推論補成普通 Lean 證明。實作為
 [CommonRepair.lean](../Math/CommonRepair.lean)，由 [Math.lean](../Math.lean)

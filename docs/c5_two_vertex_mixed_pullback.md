@@ -1,5 +1,10 @@
 # C₅ 兩混合框共同拉回：54 個假接受軌道與精確修復
 
+**2026-10-02 形式化後續：** [NamedRepair](lean_named_repair.md) 已補兩個核心的
+具名原圖 J、指定兩框 P、完整 W／C 及 repair 分類。指定框 P 內的精確 repair 等式已由 NamedRepair 形式化；軌道數、完整差集與拓撲證書仍為 Python／紙面。
+下文保留原輪次的計算與證據界線；disk 框完備性仍未 Lean 化。
+
+
 2026-09-30。接續[第一混合框 R255](c5_two_vertex_mixed_frame.md)與
 [第二混合框 R1022](c5_two_vertex_second_mixed_frame.md)，只處理原
 `private_interiors_reverse` 十五點三十五邊圖。**兩框的完整 relation

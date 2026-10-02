@@ -1,5 +1,11 @@
 # 共同 repair lemma：完整 witness 與覆蓋的充要條件
 
+**2026-10-02 具名實例後續：** [NamedRepair](lean_named_repair.md) 已形式化
+兩個十五點核心的原圖 J、指定兩框 P、全部 W／C、各15組極小 repairs、
+唯一最少對與 r*=4。下文保留當輪界線；四個退化圖、disk 框完備性與
+D₁₃ 替換來源族仍未形式化。
+
+
 **形式化後續（2026-10-02）：** [Lean 共同 repair 判準](lean_common_repair.md)
 已補 W／C 與全部 repair 模板的雙向等價、極小／極大失敗分類、完整殘留、
 唯一最少解及 P=J 退化支。六圖的前提實例化仍由 Python 證書負責；

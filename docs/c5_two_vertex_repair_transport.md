@@ -1,5 +1,10 @@
 # 六份 C₅ two-vertex joins 的 local-repair transport audit
 
+**2026-10-02 形式化後續：** [NamedRepair](lean_named_repair.md) 已補兩個核心的
+具名原圖 J、指定兩框 P、完整 W／C 及 repair 分類。兩核心指定框的分類與 r*=4 已由 NamedRepair 形式化；四個退化圖及拓撲／transport 差異仍為 Python／紙面。
+下文保留原輪次的計算與證據界線；disk 框完備性仍未 Lean 化。
+
+
 **後續（2026-09-30）：** [共同 repair lemma](c5_two_vertex_common_repair.md)
 已將本頁三種 witness／兩類覆蓋抽成充要定理，核對六圖實例與獨立 P=J
 退化支；[來源充分條件](c5_two_vertex_repair_sources.md)及後續替換族已給
