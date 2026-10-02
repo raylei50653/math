@@ -30,7 +30,7 @@
 | 四點投影最少個數與全部最小組合 | 70 scopes／八種排除集合及 2,415 配對全核對；最少兩份，唯一組合為 `(a0,a1,a2,a3)` 與 `(a2,b0,b2,b4)`；三份唯一性見證／192 份原圖延拓保存，未 Lean 化 | [最小修復報告](c5_two_vertex_quaternary_repairs.md)、[artifact](../artifacts/c5_two_vertex_overlap/quaternary_repairs.json) |
 | 全部 inclusion-minimal 四點修復 | 固定 P、原 U 的全部十五組分類完成：一組二份、十四組三份；三個完整排除類組合、44 份不可省見證與逐組完整 relation 相等核對保存，未 Lean 化 | [全部極小修復](c5_two_vertex_minimal_repairs.md)、[artifact](../artifacts/c5_two_vertex_overlap/minimal_repairs.json) |
 | 六例 local-repair transport | 全部二十條 U 上五環中十四條可作整圖外界；四例 P=J、r*=0，正反向私有內點例 r*=4、各十五組極小修復；八十八份不可省見證，repair 公式相同但完整具名排除資料不由頂點雙射搬運，未 Lean 化 | [跨例報告](c5_two_vertex_repair_transport.md)、[artifact](../artifacts/c5_two_vertex_overlap/repair_transport.json) |
-| 共同 repair lemma | 三種完整 rejector witness 與兩類覆蓋等式充要刻畫全部極小修復；三個極大失敗集合及五條前提獨立性已證，六圖前提重播通過，四例 P=J 保留為退化支；紙面＋Python，未 Lean 化 | [共同 lemma](c5_two_vertex_common_repair.md)、[artifact](../artifacts/c5_two_vertex_overlap/common_repair.json) |
+| 共同 repair lemma | W／C 雙向判準、極小修復／極大失敗、完整殘留、唯一最少解及 P=J 退化支已有普通 Lean 證明；六圖前提與獨立性控制仍為 Python 證書 | [共同 lemma](c5_two_vertex_common_repair.md)、[Lean 形式化](lean_common_repair.md)、[artifact](../artifacts/c5_two_vertex_overlap/common_repair.json) |
 | Repair 來源充分條件 | 具名私有核心的色數證明及每例十一份構造補全推出 W／C；保核心的度數三消去及外框證書推到任意大小指定族，r*=4；兩原框可用給獨立退化 lemma；後續已證消去條件非必要，全部代表未分類，未 Lean 化 | [來源定理](c5_two_vertex_repair_sources.md)、[artifact](../artifacts/c5_two_vertex_overlap/repair_sources.json) |
 | 不能逐點消去的密封補片 | 完整 clique 附件＋一份染色可延拓全部核心染色；原來源三角剖分使保核心 disk 擴張自動具此附件；任意大小度數五補片族與六個21／33／51點控制保持十五組 repairs、r*=4，證明舊消去條件非必要，未 Lean 化 | [補片定理](c5_two_vertex_repair_patches.md)、[artifact](../artifacts/c5_two_vertex_overlap/repair_patches.json) |
 | 不含舊核心的同 class 路徑族 | 完整接線族中 A 兩臂偶長、B 奇長充要保持 R127／R167；加長後無保持框點及 ownership 的舊核心副本，私有最低度數四，仍保十五組 repairs／r*=4；十圖14,400份延拓、八奇偶控制，紙面＋Python，未 Lean 化 | [奇偶定理](c5_two_vertex_repair_strips.md)、[artifact](../artifacts/c5_two_vertex_overlap/repair_strips.json) |
@@ -86,6 +86,10 @@ rejector witnesses `{A}`、`{B,T}`、`{B}∪𝓔`，加上 `F_A∪F_B=Δ` 與
 384份接受 scope 原圖延拓，另有五個前提獨立性控制。
 四例 P=J 使用獨立退化 lemma，唯一極小 repair 為空集合。
 
+**形式化已接入。** [CommonRepair](lean_common_repair.md) 補齊上述抽象
+充要判準及分類推論，共27個普通 theorem，另有保真具名投影介面與公理審計。
+六圖的 J/P、W／C 前提、來源族及可用框尚未匯入 Lean；圖論線的停止點不變。
+
 **來源充分條件已推進。** A 的五內點路徑及 B 的兩相鄰內點，保留完整附件，
 以可用色構造證明精確來源 relation；每例十一份補全給全部 scopes 的三種
 exact rejectors，色數論證給兩類覆蓋。指定 induced 核心、密封私有點的
@@ -139,7 +143,7 @@ clique，一份全圖染色可逐分量換色對齊同一份核心染色，保�
 化約、正常形唯一性，亦未比較容許先擴張再縮減的任意改寫序列。
 舊度數三條件及「含原核心＋補片」條件皆已確定不是必要條件。
 僅完整 J 相等仍須另查可用框；不由共同公式或原圖反向推論 transport。
-本輪未搜尋新 class pair，未新增 Lean theorem。
+來源族研究未搜尋新 class pair；後續新增的 Lean theorem 限於上述抽象 repair 層。
 
 六圖的 U 上五框可用性已窮盡，但未分類其所有嵌入、指定來源 disk
 重疊政策或允許未來接觸的範圍。一般 class-pair 後繼表、局部條件表／
@@ -148,7 +152,8 @@ clique，一份全圖染色可逐分量換色對齊同一份核心染色，保�
 
 ## 4. 閱讀與重播入口
 
-先讀[資料與規格](c5_two_vertex_overlap.md)、[八點接合報告](c5_two_vertex_join.md)、
+形式化從[共同 repair 的 Lean 報告](lean_common_repair.md)與 audit 命令進入。
+圖論研究先讀[資料與規格](c5_two_vertex_overlap.md)、[八點接合報告](c5_two_vertex_join.md)、
 [主例拓撲稽核](c5_two_vertex_join_topology.md)與
 [私有內點拓撲](c5_two_vertex_private_topology.md)，再讀
 [反向拓撲](c5_two_vertex_private_reverse_topology.md)與
