@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-09-30。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-02。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -190,6 +190,13 @@
 | [C₅ 四點投影的最少個數與全部最小組合](c5_two_vertex_quaternary_repairs.md) | 全部 70 scopes／八種排除集合及 2,415 配對全核對；最少兩份且唯一為 `(a0,a1,a2,a3)` 與 `(a2,b0,b2,b4)`；三份唯一性見證／192 份延拓保存；較大不可省修復由後續完成，紙面＋Python，未 Lean 化 |
 | [C₅ 全部 inclusion-minimal 四點修復](c5_two_vertex_minimal_repairs.md) | 固定反向圖、原 U 及 P，全部十五組恰為一組二份、十四組三份；完整排除集分類與具名展開、44 份不可省見證及逐組 relation 恰等於 J 均核對，紙面＋Python，未 Lean 化 |
 | [C₅ 六例 local-repair transport audit](c5_two_vertex_repair_transport.md) | 六圖全部二十條 U 上五環中十四條可作整圖外界；四例 P=J、r*=0，兩私有內點例 r*=4、各十五組極小修復與唯一 forced A；八十八份不可省見證，repair 公式相同但完整排除資料不由頂點雙射搬運，紙面＋Python，未 Lean 化 |
+| [C₅ 共同 repair 充要 lemma](c5_two_vertex_common_repair.md) | 三種 exact witness 與兩類覆蓋充要刻畫全部極小 repairs，三個極大失敗集合與前提獨立性已證；六圖實例通過，四例 P=J 保留退化支；指定來源族的充分條件由後續完成，紙面＋Python，未 Lean 化 |
+| [C₅ repair 來源充分條件](c5_two_vertex_repair_sources.md) | 原私有接線及每例十一份補全證成 W／C；保核心的度數三消去與外框證書給任意大小指定族、r*=4；兩原框可用另給 P=J；消去條件非必要及嚴格增大族由後續補片定理完成，紙面＋Python，未 Lean 化 |
+| [C₅ 不能逐點消去的密封 clique 補片](c5_two_vertex_repair_patches.md) | 完整 clique 附件＋一份染色延拓全部核心染色；三角剖分核心自動給保核心 disk 擴張的附件，配合保框證書保留十五組 repairs／r*=4；不含舊核心的奇偶路徑族由後續完成，未完成全部代表分類，紙面＋Python，未 Lean 化 |
+| [C₅ 不含舊核心的私有路徑奇偶定理](c5_two_vertex_repair_strips.md) | 指定完整接線族內，A 兩臂偶長及 B 奇長充要保持 R127／R167；加長圖無保持框點及 ownership 的舊核心副本，仍保十五組 repairs／r*=4；十圖14,400份延拓及八奇偶控制；非路徑輪環骨架由後續推進，全部代表未分類，紙面＋Python，未 Lean 化 |
+| [C₅ 舊補片／路徑之外的完整四接點輪環替換](c5_two_vertex_repair_rings.md) | 四輪星與四環帶加中心的完整四接點關係相等；任意層數同 class disk 族無密封 clique 補片、私有圖含環且無舊核心副本，保十五組 repairs／r*=4；八圖11,520份延拓；輪環逆化約後的其他骨架由後續雙扇推進，必要分類仍未完成，紙面＋Python，未 Lean 化 |
+| [C₅ 輪環逆化約之外的完整四接點偶長雙扇替換](c5_two_vertex_repair_fans.md) | 偶長雙扇與四輪星完整四接點關係相等；任意大小同 class 族無密封 clique 補片、私有圖含環且無私有度數五點，三種舊縮減均無起點；保十五組 repairs／r*=4，八圖11,520份延拓；加入雙扇後的其他骨架由後續 D₁₃ 推進，必要分類保留，紙面＋Python，未 Lean 化 |
+| [C₅ 輪環與偶長雙扇之外的十三點非對稱 disk](c5_two_vertex_repair_caps.md) | D₁₃ 與四輪星完整四接點等價；反覆替換給任意大小同 class 族，私有四度點只成孤點及配對、每點至多鄰接一個私有五度點，輪環與雙扇均無縮減起點；保完整 J/P、十五組 repairs／r*=4，八圖11,520份延拓及十六項負控制，必要分類仍保留，紙面＋Python，未 Lean 化 |
 | [Lean 接合基礎](lean_root_interfaces.md) | 15 個普通 Lean 定理與報告對照；各項形式化範圍見原報告；完整 minor／disk 層仍未形式化 |
 | [Lean 實際邊界與 degree-list 基礎](lean_boundary_degree.md) | 原圖延拓 iff 框列 proper 且內圖 list 可染；完整 degree 拆分、拒絕迫 degree=4／框色單射、低度數與重色延拓；13 個普通定理，Gallai／disk 分類仍未形式化 |
 | [研究目標](c5_boundary_relations.md) | 主命題未證；全域存在小代表、指定局部規則的完備性必須分開 |
@@ -243,6 +250,13 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 
 | 舊問題或容易誤讀的字樣 | 目前讀法／後續入口 |
 | --- | --- |
+| 雙扇報告的「輪環與偶長雙扇化約後的其他骨架」 | [十三點非對稱四接點 disk](c5_two_vertex_repair_caps.md) 給兩種局部逆化約均無起點的任意大小同 class 族及新充分規則；完整 J/P、全部外框及 repairs 保留，必要分類與改寫完備性仍未證 |
+| 輪環報告的「加入輪環化約後的其他骨架」 | [完整四接點偶長雙扇替換](c5_two_vertex_repair_fans.md) 給私有圖含環且無私有度數五點的任意大小同 class 族；三種舊縮減無起點，新雙扇規則可化約，全部代表必要分類與改寫完備性仍保留 |
+| 奇偶路徑報告的「補片及奇偶化約外的骨架」 | [完整四接點輪環替換](c5_two_vertex_repair_rings.md) 給無密封 clique 補片、私有圖含環的任意層數同 class disk 族；新局部化約保持完整關係及 repairs，加入輪環化約後其餘骨架與必要分類保留 |
+| 補片報告的「不含指定核心」 | [私有路徑奇偶定理](c5_two_vertex_repair_strips.md) 已給不含保持框點及 ownership 的舊核心副本的任意長度同 class 族；指定接線內必要及充分奇偶分類完成，密封補片及奇偶化約後的其他骨架仍未分類 |
+| 來源充分報告的「不能作私有度數三消去」 | [密封 clique 補片](c5_two_vertex_repair_patches.md) 已給任意大小、最低新增度數五而保 repairs 的來源族，證明舊消去條件非必要；後續奇偶路徑定理亦跨過含舊核心限制，全部代表仍未分類 |
+| 共同 repair lemma 的「下一步可檢查來源結構」 | [來源充分條件](c5_two_vertex_repair_sources.md) 已證指定核心、私有度數三消去與保框證書足夠；後續補片定理放寬逐點消去要求；兩原框可用給獨立退化支，未完成全部代表必要分類 |
+| 六例 transport audit 的「下一步抽象共同 repair lemma」 | [共同 lemma](c5_two_vertex_common_repair.md) 已證 witness／覆蓋充要條件並核對六圖；來源充分條件見後續報告，四個 P=J 仍為獨立退化支 |
 | P₃ 非對稱報告的「下一題 masks=(0,1,2)」 | [中點／端點接線](c5_mixed_p3_middle_endpoint.md) 已保留原末端三條附件並排除全部 residual；不同接點各一 incidence 已全涵蓋，共鄰接點仍保留 |
 | Mixed 容量的「P₃ 對稱分支內外側／實際附件未處理」 | [原五環與完整側支援](c5_mixed_p3_symmetric.md) 已排除兩端各一 incidence、兩側同 pair 的 disk 來源；非對稱及其他接線不在本結論內，未新增 target 接受 |
 | Single-spoke 的「下一題 (4) 三份拒絕 palettes」 | [共同結構與 K5](c5_single_spoke_four.md) 以共同 τ 排除正 bridge，四葉只剩兩 triangle 加單 bridge；t=1 全部接回出口，t=0 後由 no-spoke 報告收窄為兩型 |
@@ -295,6 +309,14 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-02：C₅ 共同 repair 與來源替換族發布核對](history/2026-10-02-c5-two-vertex-repair-publish.md)
+- [2026-09-30：C₅ 輪環與偶長雙扇之外的十三點非對稱四接點 disk](history/2026-09-30-c5-two-vertex-repair-caps.md)
+- [2026-09-30：C₅ 輪環逆化約之外的完整四接點偶長雙扇替換](history/2026-09-30-c5-two-vertex-repair-fans.md)
+- [2026-09-30：C₅ 舊化約之外的完整四接點輪環替換](history/2026-09-30-c5-two-vertex-repair-rings.md)
+- [2026-09-30：C₅ 不含舊核心的私有路徑奇偶定理](history/2026-09-30-c5-two-vertex-repair-strips.md)
+- [2026-09-30：C₅ 不能逐點消去的密封 clique 補片](history/2026-09-30-c5-two-vertex-repair-patches.md)
+- [2026-09-30：C₅ repair 來源充分條件](history/2026-09-30-c5-two-vertex-repair-sources.md)
+- [2026-09-30：C₅ 共同 repair 充要 lemma](history/2026-09-30-c5-two-vertex-common-repair.md)
 - [2026-09-30：C₅ 六例 local-repair transport audit](history/2026-09-30-c5-two-vertex-repair-transport.md)
 - [2026-09-30：C₅ 全部 inclusion-minimal 四點修復](history/2026-09-30-c5-two-vertex-minimal-repairs.md)
 - [2026-09-30：C₅ 兩點接合、混合框與最小修復發布整理](history/2026-09-30-c5-two-vertex-publish.md)

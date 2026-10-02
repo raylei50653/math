@@ -1,5 +1,10 @@
 # 六份 C₅ two-vertex joins 的 local-repair transport audit
 
+**後續（2026-09-30）：** [共同 repair lemma](c5_two_vertex_common_repair.md)
+已將本頁三種 witness／兩類覆蓋抽成充要定理，核對六圖實例與獨立 P=J
+退化支；[來源充分條件](c5_two_vertex_repair_sources.md)及後續替換族已給
+指定圖類的來源定理，全部代表必要分類仍保留。下文保留本輪 audit 的數字及當時下一步。
+
 2026-09-30。接續[反向案例全部極小修復](c5_two_vertex_minimal_repairs.md)，
 只使用[既有六份具名接合](c5_two_vertex_join.md)的原圖。
 使用者確認的 frame 定義為：**原八點 U 上、能作整張接合圖 disk 外界的全部 C₅**。
