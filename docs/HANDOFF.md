@@ -7,7 +7,7 @@
 - [全 degree-4／block 化約](c5_degree4_guide.md)
 - [Degree-5／R 系列來源結構](c5_degree5_guide.md)
 - [Sector／雙拒絕分類](c5_sector_3903_guide.md)
-- [Kempe／重接／計數與策略](c5_kempe_guide.md)
+- [Kempe／重接／計數與策略](c5_kempe_guide.md) #進行中
 - [State／grammar／topology 與枚舉](c5_state_guide.md)
 - [Lean 形式化](lean_guide.md)
 

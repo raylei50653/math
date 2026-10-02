@@ -2,7 +2,16 @@
 
 2026-09-14；2026-09-15 更新結構性問題表述。此次目標是任意大小 cell 的結構限制，沒有再枚舉大 k。
 
-**最新續作**：[反例歸約到 near-triangulation 與 count-cone 猜想](c5_count_cone_bridge.md)。
+**後續（2026-10-02）**：[四容量子覆蓋共享](c5_excess_one_subcovers.md) 已證
+933 的 ε≥2，並將 941 的 ε=1 收窄到單 binary 原分量及 t=1、2、3。
+兩候選的一般來源仍未排除，既有 screen artifact 未更改。
+
+前輪 [933／941 容量與跨度下界](c5_independent_support_capacity.md)
+對固定完整 Σ 的 edge-minimal disk sources 證 ε≥1、cores 兩兩共用高 degree
+root，並建立 mixed 條件容量及 unary 六跨度禁形。未證候選必含禁形，
+933／941 仍未排除；沒有新圖枚舉。目前停止點見 [Kempe 導覽](c5_kempe_guide.md)。
+
+**計數路線續作**：[反例歸約到 near-triangulation 與 count-cone 猜想](c5_count_cone_bridge.md)。
 一般反例可保留一個關鍵完整染色補完；T4 全收由計數恆等式重新推出。
 引用文獻可排除內點 ≤12 的 near-triangulation 反例，一般引理仍未證。
 

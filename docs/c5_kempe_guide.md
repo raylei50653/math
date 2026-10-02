@@ -1,6 +1,6 @@
 # Kempe／重接／計數與策略導覽
 
-更新：2026-09-29。本頁整理既有研究，不新增結論或宣稱本次已重播。
+更新：2026-10-02。本頁維護本線現況；證明及實際重播範圍見各報告。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
 
@@ -13,6 +13,7 @@
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
+| 933／941 的 excess／容量／跨度 | 933 已提高至 ε≥2；941 的 ε=1 只餘一份 binary 原分量、三份單容量因子及 t=1、2、3。省略身份跨列互斥，五單容量至多兩拒絕；一般來源仍未排除 | [四容量子覆蓋](c5_excess_one_subcovers.md)、[前輪下界](c5_independent_support_capacity.md) |
 | Kempe screen／邊位置對座標 | screen 等價於 20 條蘊涵，1,024 masks 已核對；未新增排除，一般 adjacent-singleton lemma 未證 | [screen](c5_kempe_screen.md)、[座標](c5_edge_pair_coordinates.md) |
 | 循環流與計數 | 六維／153 支撐／十二循環；36 份基底覆蓋證三套分開整數 orbit 條件不再收緊恆等式解；未排除平面來源 | [循環流](c5_circulation.md) |
 | Count cone／class 計數 | near-triangulation 化約、部分 Lean 代數與 class 級紙面計數已有；cone／connectivity 缺口仍在 | [count cone](c5_count_cone_bridge.md)、[B₅ face](c5_b5_face.md)、[class 計數](c5_kempe_class_counts.md) |
@@ -23,13 +24,32 @@
 
 ## 3. 停止點與保留缺口
 
-本線保留一般 connectivity 限制、可迭代充分 state 及共同安全 repair 的缺口；
+933 已證 ε≥2，941 仍為 ε≥1；沒有一般候選排除或普遍六跨度結論。
+941 的 ε=1 必恰有一份原二接點 C₂，另有三份單容量因子；t=1、2、3。
+q₀、q₁ 的真子核心省略身份不共用，C₂ 在兩列都禁包含 D 的二色集。
+q₃ 若以整圖為 minimal core，C₂ 恰禁 {D}；若有真子核心，仍禁包含 D 的二色集。
+下一步優先 t=1：(2,1,1) 中兩 unary 分別提供 q₀、q₁ 的省略見證，q₃
+必以整圖為核心。保留 C₂ 的原有序兩接點、附件及完整十列，檢查上述
+跨列容量轉換能否與 T4、q₂、q₄ 接受共存；不另開大圖枚舉。
+詳見 [新報告 §6](c5_excess_one_subcovers.md#6-新下界及-941-的精確殘餘)。
+
+本線另保留一般 connectivity 限制、可迭代充分 state 及共同安全 repair 的缺口；
 不再把邊際配對、獨立 orbit 分解或一次 cut 重建當作一般解法。
 完整有序關係須共同對齊色框，保留同一原圖的 components、接線與操作身份。
-固定圖成功歷程不提供跨圖常數上界。這些是保留問題，並非本次啟動的新搜尋。
+固定圖成功歷程不提供跨圖常數上界。這些其他問題未在本輪啟動新搜尋。
 單側與共同出口的當前接手點見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
 
 ## 4. 閱讀與重播入口
+
+933／941 先讀 [四容量子覆蓋](c5_excess_one_subcovers.md) 及
+[本輪紀錄](history/2026-10-02-excess-one-subcovers.md)，前提見
+[容量下界](c5_independent_support_capacity.md)。最小重播：
+
+```bash
+python3 scripts/c5_excess_one_subcovers.py --check
+python3 scripts/c5_independent_support_capacity.py --check
+python3 scripts/c5_single_spoke_root_conservation.py --check
+```
 
 先讀 screen／座標與循環流的必要條件，再讀有序重接的一步公式和反例；
 策略路線由 barriers 接到 repair interface。各報告列出 checker 與 artifact，
