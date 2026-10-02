@@ -164,9 +164,14 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [941 excess-one single-spoke 來源排除](c5_941_single_spoke.md) | 兩個原省略核心迫非平凡 C₂ 的三份原末端支援，六跨度矛盾；原邊 C₂ 的完整 ordered relation 不可能 singleton-D。任意大小排除 t=1、(2,1,1)，現只餘 t=2、3；紙面＋局部 Python，未 Lean 化 |
-| [ε=1 四容量子覆蓋與共享](c5_excess_one_subcovers.md) | 933 已證 ε≥2；941 的 ε=1 收窄至單 binary 及三種 spoke 型，後續再排除 t=1。省略身份跨列互斥、五單容量至多兩拒絕；同源 943 十列／16 因子子集控制，任意大小紙面合成沿用既有分類，未 Lean 化，兩候選仍未排除 |
-| [933／941 excess、容量與跨度下界](c5_independent_support_capacity.md) | 第一輪共同 ε≥1、mixed 條件容量與 unary 六跨度禁形保留；後續已提高 933 下界並收窄 941 的 ε=1。未證候選必含六跨度禁形；紙面＋三張固定圖控制，未 Lean 化 |
+| [ε=2 t=3 原 triangle 的 spoke＋unary 排除](c5_excess_two_three_spoke_unary.md) | 398 marked roots／1,194 接回的 11,940 比較全排除；兩色存活留 1,254 個，由同一 binary 省略圖單缺失排除 1,200 個、既有雙 spoke 省略排除 54 個。完整 (r,x,y,v) 及任意大小原 unary 保持，紙面＋Python、未 Lean 化；path／tail 位置及其餘 ε=2 保留 |
+| [ε=2 t=2 的 spoke＋原 unary 排除](c5_excess_two_spoke_unary.md) | 省略一條原 spoke 及一份原 unary 仍拒絕列的分支，以五接點精確接合與兩 root 色存活排除；148 marked cores／592 接回、5,920 次候選比較全排除。原 unary 任意大小及附件保持，紙面＋Python、未 Lean 化；後續完成 t=3 原 triangle 位置，共同下界仍 ε≥2 |
+| [ε=2 唯一 degree-6 root 雙 spoke 排除](c5_excess_two_double_spoke.md) | 省略兩條原 spokes 仍拒絕列的條件分支，由原四接點化約及 888 次接回排除 933／941；候選刪任意兩條原 spokes 必接受全部十列。432 個 T4 全收模型至多兩個相鄰 singleton 拒絕；後續另完成 t=2 spoke＋unary 分支。紙面＋Python、未 Lean 化，其餘 ε=2 未涵蓋 |
+| [941 three-spoke 排除與 ε≥2](c5_941_three_spoke.md) | 原 triangle degree-2 root 的 (r,x,y) 完整關係化約；118 必要核心／398 marked roots 的 1,194 次接回全無 941，完成 ε=1 最後 t=3、(2)，合成 ε≥2。後續排除 ε=2 的條件式雙 spoke 分支；紙面＋Python、沿用既有分類，未 Lean 化，一般來源仍未排除 |
+| [941 excess-one two-spoke 來源排除](c5_941_two_spoke.md) | 原首點／四接點完整關係化約及 592 次接回排除 t=2、(2,1)；後續完成 t=3 並得到 ε≥2。任意大小紙面＋Python、沿用既有分類，未 Lean 化 |
+| [941 excess-one single-spoke 來源排除](c5_941_single_spoke.md) | 三份原末端支援的六跨度與原邊完整 relation 排除 t=1、(2,1,1)；後續排除 t=2、3 並得到 ε≥2；紙面＋局部 Python，未 Lean 化 |
+| [ε=1 四容量子覆蓋與共享](c5_excess_one_subcovers.md) | 933 已證 ε≥2；941 的三種 spoke 殘餘由後續全排除。省略身份跨列互斥、五單容量至多兩拒絕；同源 943 十列／16 因子子集控制，任意大小紙面合成沿用既有分類，未 Lean 化，兩候選一般來源仍未排除 |
+| [933／941 excess、容量與跨度下界](c5_independent_support_capacity.md) | 第一輪共同 ε≥1、mixed 條件容量與 unary 六跨度禁形保留；後續兩候選均提高至 ε≥2。未證候選必含六跨度禁形；紙面＋三張固定圖控制，未 Lean 化 |
 | [C5 循環流與整數 orbit 分解](c5_circulation.md) | 六維／153 支撐／十二循環等價；36 份有限基底覆蓋推出任意非負整數恆等式解皆通過三套分開的 orbit 分解；獨立 singleton 支撐分解唯一，未新增平面來源排除或 Lean theorem |
 | [C5 代數—邊位置對座標](c5_edge_pair_coordinates.md) | 十態完整對照、S4／D5 搬運與 20 條蘊涵；1,024 masks 核對與既有 Kempe screen 等價，仍為 153／142／10，未增加排除力；紙面＋Python，未新增 Lean theorem |
 | [Kempe screen](c5_kempe_screen.md)、[adjacent-singleton 計數](c5_adjacent_singleton_counts.md) | 必要條件與剩餘候選已保存；一般 adjacent-singleton lemma 未證，與主線的相鄰雙「缺失」候選 A 不同 |
@@ -317,6 +322,13 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 所有「已完成」均限於原報告前提；來源排除與指定列延拓不互換。
 
 ## 歷史紀錄與舊連結
+
+- [2026-10-02：933／941 excess 進展整理與發布](history/2026-10-02-excess-progress-publish.md)
+- [2026-10-02：ε=2 t=3 原 triangle 的 spoke＋unary 省略核心排除](history/2026-10-02-excess-two-three-spoke-unary.md)
+- [2026-10-02：ε=2 t=2 的 spoke＋原 unary 省略核心排除](history/2026-10-02-excess-two-spoke-unary.md)
+- [2026-10-02：ε=2 唯一 degree-6 root 的雙 spoke 省略核心排除](history/2026-10-02-excess-two-double-spoke.md)
+- [2026-10-02：941 three-spoke 排除與共同 ε≥2 下界](history/2026-10-02-941-three-spoke.md)
+- [2026-10-02：941 two-spoke 的原接點保持與來源排除](history/2026-10-02-941-two-spoke.md)
 
 - [2026-10-02：C₅ 全線整合、可反駁假設與投影階數初驗](history/2026-10-02-c5-research-synthesis.md)
 

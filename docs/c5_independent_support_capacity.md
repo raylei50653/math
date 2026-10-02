@@ -1,10 +1,10 @@
 # 933／941：degree-excess、條件禁色容量與第一個六跨度障礙
 
 **後續（2026-10-02）**：[四容量子覆蓋共享](c5_excess_one_subcovers.md) 已把
-933 下界提高到 ε≥2；941 的 ε=1 只餘一份二接點原分量、三份單容量因子，
-root-spokes 起初為 t=1、2、3；[single-spoke 後續](c5_941_single_spoke.md)
-再排除 t=1，現只餘 t=2、3。兩候選的一般來源仍未排除。下文保留第一輪共同
-ε≥1 與六跨度禁形的推導；§5 的下一入口已由後續收窄。
+933 下界提高到 ε≥2；941 的 ε=1 三型經 [single-spoke](c5_941_single_spoke.md)、
+[two-spoke](c5_941_two_spoke.md)與 [three-spoke](c5_941_three_spoke.md)全部排除，
+現兩候選均有 ε≥2，一般來源仍未排除。下文保留第一輪共同 ε≥1 與六跨度
+禁形的推導；§5 的下一入口已由後續涵蓋。
 
 2026-10-02，基準 `1274894`。接續 [Kempe screen](c5_kempe_screen.md)
 的兩個 independent-singleton 候選，採**固定完整 Σ 的 edge-minimal source**。

@@ -25,6 +25,16 @@
    "script": "triangle_automata.py",
    "sha256": "b9574285d989a02c00db8b618ca136cca45e2a24d97277bfca2cacae233188be"
   },
+  "artifacts/c5_941_three_spoke/observations.json": {
+   "bytes": 13586886,
+   "script": "c5_941_three_spoke.py",
+   "sha256": "1a9ea43a7e1f7eefecb073ab1cb8d8d1e1b9621a4f0a2527093c1970f9e2942c"
+  },
+  "artifacts/c5_941_two_spoke/observations.json": {
+   "bytes": 7657820,
+   "script": "c5_941_two_spoke.py",
+   "sha256": "ba7870ad56b5d239b7d24c7b11eeb76ec968ac7fe9921473ab71bc30df2e5e31"
+  },
   "artifacts/c5_adjacent_degree5_mixed_edge/observations.json": {
    "bytes": 3137875,
    "script": "c5_adjacent_degree5_mixed_edge.py",
@@ -305,6 +315,21 @@
    "script": "c5_disk_deletions.py",
    "sha256": "6ec3fac27a53efebdc86d41680716edc86fe1d43a353b3cbe1faf8f3dde54cb3"
   },
+  "artifacts/c5_excess_two_double_spoke/observations.json": {
+   "bytes": 111144359,
+   "script": "c5_excess_two_double_spoke.py",
+   "sha256": "5a5053bd7edf42cc2e43251ceaad4511d27710ad915316304b347b72714a9171"
+  },
+  "artifacts/c5_excess_two_spoke_unary/observations.json": {
+   "bytes": 66817546,
+   "script": "c5_excess_two_spoke_unary.py",
+   "sha256": "fdbc5ffc20c477105c78862e7b90867ff164f3be670d193e058d143ce39e8a55"
+  },
+  "artifacts/c5_excess_two_three_spoke_unary/observations.json": {
+   "bytes": 207785595,
+   "script": "c5_excess_two_three_spoke_unary.py",
+   "sha256": "07ecd43e24fab4b68ba71a1867222c8aef66667a16c9e6ff60e200b5315bac2e"
+  },
   "artifacts/c5_exchange_geometry_scope/observations.json": {
    "bytes": 2672657,
    "script": "c5_exchange_geometry_scope.py",
@@ -517,6 +542,8 @@
   }
  },
  "fingerprints": {
+  "c5_941_three_spoke.py": "9f567d418e951928ebea0a4be2042ae44cf20f33f4c1be01526659b11d4f23ec",
+  "c5_941_two_spoke.py": "02859a8ae17a9a2015cfe1d2865500a3475c4c3fe019ce2e5aabc1abc77b571c",
   "c5_adjacent_degree5_mixed_edge.py": "590999cbc9d879da863357d18c94d8ac71796dc409e3b22defc8991713b8a26e",
   "c5_adjacent_degree5_mixed_edge_k4.py": "38427ab571641ef9954c7c7408e972784d6e171fc0f9d10654688809c2b0c3df",
   "c5_adjacent_degree5_mixed_edge_order.py": "133736b26f6f961a276b954fae40e2c803999ab2df5de01986ddd2b9a6579c47",
@@ -572,6 +599,9 @@
   "c5_edge_choices.py": "ebad6c555cb9de15a4f916665cfb4affd1ff0afbe8ae81627c77986d17212701",
   "c5_edge_incidence.py": "2815a560c9fbc8b0a38212a070ed3ae45e502c9f4972fc12deee9538a9f28cb8",
   "c5_edge_states.py": "85904a6149210a57f3ff4792e0edb6216fb0b3d67701a98f04ab8e38dd9e853a",
+  "c5_excess_two_double_spoke.py": "fd3a2777361903f037e445f7462e98e06cee99ce3bed8bb8b4308a9754591e42",
+  "c5_excess_two_spoke_unary.py": "a18778227ab88d1990f6b4f71fd35daa3c130794fe68cc9b04daf8b4e85fe934",
+  "c5_excess_two_three_spoke_unary.py": "ef3f1ab140b1b61ad5ee3e0dad3b57df72ed9f9c18c2072f2a8c91a2c7c032df",
   "c5_exchange_geometry_scope.py": "6d2782170c25d9b10a2fb2000e506a709c2b98cd9eaccf2eb4d177343797b508",
   "c5_four_triangle_star.py": "d5c5f6801ec04a04da5f311b950f372672c582c43ba7e01e4cdb6425630fe45c",
   "c5_k4_blocks.py": "41f06d310f02fb58501a2edb2f358af7bd99447c859008565fe73defd0f0f4c7",
@@ -617,6 +647,12 @@
   "triangle_automata.py": "12b495c4a00430a0bf3ad2403f4f9bf379f4a52511f9451f49fff0e4c1dce81b"
  },
  "producers": {
+  "c5_941_three_spoke.py": [
+   "c5_two_triangle_blocks.py"
+  ],
+  "c5_941_two_spoke.py": [
+   "c5_two_triangle_blocks.py"
+  ],
   "c5_adjacent_degree5_mixed_edge.py": [],
   "c5_adjacent_degree5_mixed_edge_k4.py": [],
   "c5_adjacent_degree5_mixed_edge_order.py": [
@@ -763,6 +799,16 @@
    "c5_edge_states.py"
   ],
   "c5_edge_states.py": [],
+  "c5_excess_two_double_spoke.py": [
+   "c5_941_two_spoke.py"
+  ],
+  "c5_excess_two_spoke_unary.py": [
+   "c5_941_two_spoke.py"
+  ],
+  "c5_excess_two_three_spoke_unary.py": [
+   "c5_941_three_spoke.py",
+   "c5_excess_two_double_spoke.py"
+  ],
   "c5_exchange_geometry_scope.py": [
    "c5_adjacent_degree5_no_mixed_t2.py",
    "c5_adjacent_degree5_no_mixed_t2_path_palettes.py"

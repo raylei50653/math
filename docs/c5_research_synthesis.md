@@ -1,5 +1,17 @@
 # C₅ 全線進展與高階假設整合
 
+**後續（2026-10-02）**：本頁首選實驗已由
+[941 two-spoke 來源排除](c5_941_two_spoke.md)完成：保留原四接點的任意長
+化約及 592 次具名接回排除 ε=1、t=2；[three-spoke 後續](c5_941_three_spoke.md)
+再以 1,194 次原三接點接回排除最後 t=3，H1 的 941 ε≥2 下界亦已完成。
+[ε=2 後續](c5_excess_two_double_spoke.md)再排除唯一 degree-6 root 的
+雙 spoke 省略核心條件分支；[spoke＋unary 後續](c5_excess_two_spoke_unary.md)
+再以五接點接合及兩 root 色存活排除 t=2 的條件分支；
+[t=3 triangle 後續](c5_excess_two_three_spoke_unary.md)以四接點接合及
+同源省略圖限制完成原 triangle 位置，path／tail 位置仍保留。
+仍未證 ε≥3 或一般候選排除。
+下文維持 `b97b107` 當輪快照；目前停止點見 [Kempe 導覽](c5_kempe_guide.md)。
+
 2026-10-02，基準 `4565735`。這是跨線研究快照與實驗提案，
 依當前 [HANDOFF](HANDOFF.md)、八份導覽及原報告整理。
 各線即時停止點仍由各自導覽維護；本頁不改變其研究排程。

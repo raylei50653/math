@@ -1,5 +1,9 @@
 # 941 excess-one：兩個原省略核心與 single-spoke 來源排除
 
+**後續（2026-10-02）**：[保留原接點的 two-spoke 排除](c5_941_two_spoke.md)
+已完成 t=2、(2,1)；[three-spoke 排除](c5_941_three_spoke.md)再完成
+t=3、(2)，941 現已證 ε≥2。下文保留本輪停止點。
+
 2026-10-02，基準 `f4aa8b5`。接續 [四容量子覆蓋 §6.2](c5_excess_one_subcovers.md#62-941恰一份共同二接點原分量)。
 目前停止點見 [Kempe 導覽](c5_kempe_guide.md)。
 

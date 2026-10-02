@@ -11,7 +11,7 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [完整文件索引](docs/STATUS.md) | 查找專題報告、短狀態、後續關係與歷史 |
 | [C₅ 全線進展與高階假設](docs/c5_research_synthesis.md) | 跨線成果、同源關係／臨界預算／幾何框架、三個可反駁假設及階數初驗 |
 | [C₅ class 兩點重疊](docs/c5_two_vertex_overlap_guide.md) | 具名八點接合、拓撲、混合外框與關係修復；現況、停止點及重播入口 |
-| [933／941 四容量子覆蓋](docs/c5_excess_one_subcovers.md) | 933 的 ε≥2；941 的 ε=1 收窄為單 binary 原分量及三份單容量因子，兩候選仍未排除 |
+| [933／941 excess 下界與接手入口](docs/c5_kempe_guide.md) | 兩候選均已證 ε≥2；唯一 degree-6 root 的雙 spoke、t=2 spoke＋unary 及 t=3 原 triangle 位置分支已排除，其餘 ε=2 與一般來源仍未排除 |
 | [No-mixed 實驗總覽](docs/c5_no_mixed_span_budget.md) | 十五類證據總表、共同跨度結構及推廣界線 |
 | [No-mixed 搬運與介面驗證](docs/c5_no_mixed_hypothesis_audit.md) | 逐 root 不可搬運界、精確接合介面與守恆禁色的證據界線 |
 | [No-mixed 統一局部篩選](docs/c5_no_mixed_local_screen.md) | 禁色增長、守恆／非守恆規則與仍依必要表的共同接合 |
