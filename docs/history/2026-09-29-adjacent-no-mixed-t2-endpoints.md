@@ -1,6 +1,6 @@
 # 2026-09-29：無 mixed 兩側 t=2 原雙端點與 60 個新增延拓
 
-接手 `/home/ray/developer/ai/math`，HEAD=`51ef494`，工作樹已含前輪未提交的
+接手 專案根目錄，HEAD=`51ef494`，工作樹已含前輪未提交的
 bridge checker／artifacts／報告與入口更新。先讀 HANDOFF、STATUS、Git 狀態，
 確認 580／644 已證及 record 5／p₂ 停止點。完整保留接手成果；未開 sub-agents、
 Graphify 或來源圖枚舉。使用者未要求 commit／push，本輪未執行。

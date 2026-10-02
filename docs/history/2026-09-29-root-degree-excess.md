@@ -2,7 +2,7 @@
 
 後續提交整理與驗證沿用範圍見 [發布核對](2026-09-29-root-degree-excess-publish.md)；下文保留研究當輪語境。
 
-接手 `/home/ray/developer/ai/math`，HEAD=`30a2e59`，初始工作樹乾淨。
+接手 專案根目錄，HEAD=`30a2e59`，初始工作樹乾淨。
 讀 HANDOFF、STATUS 及 Git 狀態後，核對使用者提出的上層結構，
 再推進指定 no-mixed t_z=2,(2)、t_w=1,(2,1) 的 136 份入口。
 未開 sub-agents、Graphify 或大圖枚舉；未 commit／push。

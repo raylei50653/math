@@ -1,6 +1,6 @@
 # 2026-09-29：共鄰端點 K2 的 t_w=1、(1,1)，飽和環序與雙列分離
 
-接手乾淨 main@c178cf1，工作目錄 `/home/ray/developer/ai/math`。按 HANDOFF
+接手乾淨 main@c178cf1，工作目錄為專案根目錄。按 HANDOFF
 選定原 72 筆 t_w=1、(1,1)；先重播 t=1、(2)、t=2、(1) 及共鄰端點
 化約，三份既有證書均 byte-identical。未重開完成的圖枚舉，未開 sub-agents，
 未 commit／push。

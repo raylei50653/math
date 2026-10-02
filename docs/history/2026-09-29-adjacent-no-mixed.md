@@ -1,6 +1,6 @@
 # 2026-09-29：無 mixed 的同色 residual、容量與逐邊 minimality
 
-接手 main@c178cf1，工作目錄 `/home/ray/developer/ai/math`。保留前序所有
+接手 main@c178cf1，工作目錄為專案根目錄。保留前序所有
 未提交研究成果，讀 HANDOFF、STATUS、Git 狀態及直接依賴後，推進使用者
 指定的無 mixed 型。未重開大圖枚舉、未使用 Graphify、未開 sub-agents，
 未 commit／push。

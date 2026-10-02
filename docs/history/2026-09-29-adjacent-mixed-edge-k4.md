@@ -1,6 +1,6 @@
 # 2026-09-29：唯一 mixed K2 四 incidence 型，原 K4 與實際外部路徑
 
-接手 main@c178cf1，工作目錄 `/home/ray/developer/ai/math`；保留全部既有
+接手 main@c178cf1，工作目錄為專案根目錄；保留全部既有
 未提交成果。先讀 HANDOFF、STATUS、文件規則，推進使用者指定的
 P*ᶻ=P*ʷ={u,v}。未重開大圖枚舉、未使用 Graphify、未開 sub-agents、
 未 commit／push。

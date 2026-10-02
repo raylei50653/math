@@ -1,6 +1,6 @@
 # 2026-09-29：共鄰端點 K2 的 t_w=0、(1,1,1)，六跨度來源排除
 
-接手 main@c178cf1，工作目錄 `/home/ray/developer/ai/math`；保留前兩輪
+接手 main@c178cf1，工作目錄為專案根目錄；保留前兩輪
 t_w=1、(1,1) 與 t_w=0、(2,1) 尚未提交的 checker、證書與文件變更。
 先讀 HANDOFF、STATUS、文件規則與前輪完整論證，沿原 108 筆正常形
 推進；未重開大圖枚舉、未使用 Graphify、未開 sub-agents、未 commit／push。

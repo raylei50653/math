@@ -1,6 +1,6 @@
 # 2026-09-29：共鄰端點 K2 的 t_w=0、(2,1)，原 diamond 路徑與雙列分離
 
-接手 main@c178cf1，工作目錄 `/home/ray/developer/ai/math`；工作樹保留上一輪
+接手 main@c178cf1，工作目錄為專案根目錄；工作樹保留上一輪
 尚未提交的 t_w=1、(1,1) checker、證書與文件變更。先將七個交接 checker
 重播為 byte-identical，再處理原 54 筆 t_w=0、(2,1)。保留上一輪變更，
 未重開完成的圖枚舉、未開 sub-agents、未 commit／push。

@@ -1,6 +1,6 @@
 # 2026-09-29：交換或幾何阻斷的適用範圍遍歷
 
-Git 基準 `f29b899`，工作目錄 `/home/ray/developer/ai/math`。
+Git 基準 `f29b899`，工作目錄為專案根目錄。
 使用者要求遍歷機制假設的適用範圍；本輪以現有必要資料作範圍稽核，
 保留進場已有的 t2-t1 bridge／endpoints、t2-t0 singles 未提交 bundle。
 新增 [checker](../../scripts/c5_exchange_geometry_scope.py)、

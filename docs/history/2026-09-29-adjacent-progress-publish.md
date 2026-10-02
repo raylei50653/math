@@ -1,6 +1,6 @@
 # 2026-09-29：相鄰雙 degree-5 七輪成果整理與發布驗證
 
-接手基準 `main@c178cf1`，工作目錄 `/home/ray/developer/ai/math`。
+接手基準 `main@c178cf1`，工作目錄為專案根目錄。
 本輪依使用者「整理目前結果 commit + push」，整理七輪相連研究成果、
 重播各報告列出的直接依賴，準備同一份 checker／證書／報告／交接 bundle。
 本輪不新增數學排除、不延伸枚舉、不修改 Lean；未開 sub-agents 或 Graphify。

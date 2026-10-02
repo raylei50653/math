@@ -1,6 +1,6 @@
 # 2026-09-29：無 mixed 兩側 t=2 的實際支援、環序與 target 上界
 
-接續未提交的無 mixed 第一輪化約；工作目錄 `/home/ray/developer/ai/math`。
+接續未提交的無 mixed 第一輪化約；工作目錄為專案根目錄。
 本輪只推進交接指定的 t_z=t_w=2、兩側 (2)，保留進場時其他研究變更。
 使用者未要求 commit／push，本輪未執行；未啟動 sub-agents 或 Graphify。
 

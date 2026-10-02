@@ -1,6 +1,6 @@
 # 2026-09-29：無 mixed 兩側 t=2 原 bridge、固定框弧與 68 個新增延拓
 
-接手 `/home/ray/developer/ai/math`，`main` 在 `51ef494`、工作樹乾淨，
+接手 專案根目錄，`main` 在 `51ef494`、工作樹乾淨，
 本地 tracking branch 無差距；本輪未重新查遠端 SHA。先讀 HANDOFF、STATUS
 及現行報告，沿交接 record 4／p₁ 推進。未啟動 sub-agents 或 Graphify；
 使用者未要求 commit／push，本輪未執行。

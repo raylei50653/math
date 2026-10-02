@@ -1,6 +1,6 @@
 # 2026-09-29：t_z=2、t_w=0、(2,1,1) 四分量覆蓋與雙列分離
 
-研究基準 `f29b899`，工作目錄 `/home/ray/developer/ai/math`。接續進場時已有的
+研究基準 `f29b899`，工作目錄為專案根目錄。接續進場時已有的
 t2-t1 bridge／endpoints 未提交 bundle；未改寫其 scripts／artifacts。
 本輪新增 checker、JSON／逐筆表、[報告](../c5_adjacent_degree5_no_mixed_t2_t0_singles.md)，
 更新出口第九類、README、STATUS、HANDOFF 及前輪報告的後續入口；未 commit／push。

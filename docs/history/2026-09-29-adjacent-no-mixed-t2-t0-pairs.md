@@ -1,6 +1,6 @@
 # 2026-09-29：t_w=0,(2,2) 缺額型的飽和分量與雙列分離
 
-Git 基準 `f29b899`，工作目錄 `/home/ray/developer/ai/math`。承接使用者「繼續推進」，
+Git 基準 `f29b899`，工作目錄為專案根目錄。承接使用者「繼續推進」，
 沿 HANDOFF 固定 t_z=2,(2)、t_w=0,(2,2)、D_w=1、O_w=0 的 96 份原資料。
 保留進場既有未提交成果及原 scripts／artifacts；未 commit／push。
 新增 [checker](../../scripts/c5_adjacent_degree5_no_mixed_t2_t0_pairs.py)、

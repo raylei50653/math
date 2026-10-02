@@ -1,6 +1,6 @@
 # 2026-09-29：record 22 原雙端點與 t_z=2、t_w=1 整型出口
 
-接手基準 `f29b899`，工作目錄 `/home/ray/developer/ai/math`。使用者要求
+接手基準 `f29b899`，工作目錄為專案根目錄。使用者要求
 繼續推進 record 22，未要求 commit／push；保留進場時 record 14 的 checker、
 artifacts 與文件變更。本輪新增獨立 endpoints 層，不覆寫前層證書。
 目前優先序見 [HANDOFF](../HANDOFF.md)，完整證明見

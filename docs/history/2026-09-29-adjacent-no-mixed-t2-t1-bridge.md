@@ -1,6 +1,6 @@
 # 2026-09-29：record 14 原外部路徑、首橋與 52 個新增延拓
 
-接手 `/home/ray/developer/ai/math`，HEAD=`f29b899`，工作樹初始乾淨。
+接手 專案根目錄，HEAD=`f29b899`，工作樹初始乾淨。
 使用者要求繼續推進 record 14。讀 HANDOFF、STATUS、原支援表及
 既有局部引理後，完成 record 14／p₁ 的幾何反證與同表套用。
 未開 sub-agents、Graphify 或新圖枚舉，未 commit／push。

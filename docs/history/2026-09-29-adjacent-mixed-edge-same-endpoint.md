@@ -1,6 +1,6 @@
 # 2026-09-29：唯一 mixed K2 同端點型，完整關係與原 v-star 來源排除
 
-接手 main@c178cf1，工作目錄 `/home/ray/developer/ai/math`；保留前輪未提交
+接手 main@c178cf1，工作目錄為專案根目錄；保留前輪未提交
 的三份 shared-endpoint 成果及其文件／證書。先讀 HANDOFF、STATUS、
 文件規則，沿 P*ᶻ=P*ʷ={u} 推進；未重開大圖枚舉、未使用 Graphify、
 未開 sub-agents、未 commit／push。

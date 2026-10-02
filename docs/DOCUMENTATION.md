@@ -60,7 +60,7 @@ STATUS 不再追加逐輪研究及 commit／push 紀錄。歷史可大，現況�
 
 ## 信任範圍與工作約定
 
-工作目錄 `/home/ray/developer/ai/math`。
+工作目錄為專案根目錄。
 
 - **Lean 普通證明**：以具名 theorem 及 `#print axioms` 為準；
   **Lean 有限 `native_decide` 證書**另含 native compiler 信任，不能混稱純 kernel reduction。

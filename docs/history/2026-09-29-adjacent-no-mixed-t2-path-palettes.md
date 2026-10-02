@@ -1,6 +1,6 @@
 # 2026-09-29：無 mixed 兩側 t=2 整條原路徑與最後四項完成
 
-接手 `/home/ray/developer/ai/math`，HEAD=`51ef494`，工作樹已有 bridge／
+接手 專案根目錄，HEAD=`51ef494`，工作樹已有 bridge／
 endpoint 的未提交 checker、artifacts、報告及入口更新。讀 HANDOFF、STATUS
 與 Git 狀態後，從 record 54／p₁ 的 β=2 停止點推進。保留既有成果與
 原證書 bytes；未開 sub-agents、Graphify、全圖枚舉，未 commit／push。
