@@ -163,7 +163,8 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [ε=1 四容量子覆蓋與共享](c5_excess_one_subcovers.md) | 933 已證 ε≥2；941 的 ε=1 只餘單 binary 原分量及 t=1、2、3。省略身份跨列互斥、五單容量至多兩拒絕；同源 943 十列／16 因子子集控制，任意大小紙面合成沿用既有分類，未 Lean 化，兩候選仍未排除 |
+| [941 excess-one single-spoke 來源排除](c5_941_single_spoke.md) | 兩個原省略核心迫非平凡 C₂ 的三份原末端支援，六跨度矛盾；原邊 C₂ 的完整 ordered relation 不可能 singleton-D。任意大小排除 t=1、(2,1,1)，現只餘 t=2、3；紙面＋局部 Python，未 Lean 化 |
+| [ε=1 四容量子覆蓋與共享](c5_excess_one_subcovers.md) | 933 已證 ε≥2；941 的 ε=1 收窄至單 binary 及三種 spoke 型，後續再排除 t=1。省略身份跨列互斥、五單容量至多兩拒絕；同源 943 十列／16 因子子集控制，任意大小紙面合成沿用既有分類，未 Lean 化，兩候選仍未排除 |
 | [933／941 excess、容量與跨度下界](c5_independent_support_capacity.md) | 第一輪共同 ε≥1、mixed 條件容量與 unary 六跨度禁形保留；後續已提高 933 下界並收窄 941 的 ε=1。未證候選必含六跨度禁形；紙面＋三張固定圖控制，未 Lean 化 |
 | [C5 循環流與整數 orbit 分解](c5_circulation.md) | 六維／153 支撐／十二循環等價；36 份有限基底覆蓋推出任意非負整數恆等式解皆通過三套分開的 orbit 分解；獨立 singleton 支撐分解唯一，未新增平面來源排除或 Lean theorem |
 | [C5 代數—邊位置對座標](c5_edge_pair_coordinates.md) | 十態完整對照、S4／D5 搬運與 20 條蘊涵；1,024 masks 核對與既有 Kempe screen 等價，仍為 153／142／10，未增加排除力；紙面＋Python，未新增 Lean theorem |
@@ -313,6 +314,8 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 所有「已完成」均限於原報告前提；來源排除與指定列延拓不互換。
 
 ## 歷史紀錄與舊連結
+
+- [2026-10-02：941 single-spoke 的共同支援與來源排除](history/2026-10-02-941-single-spoke.md)
 
 - [2026-10-02：四容量子覆蓋共享、933 的 ε≥2 與 941 殘餘](history/2026-10-02-excess-one-subcovers.md)
 - [2026-10-02：933／941 的第一個 excess／容量／跨度下界](history/2026-10-02-independent-support-capacity.md)

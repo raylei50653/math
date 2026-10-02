@@ -1,5 +1,9 @@
 # ε=1：四容量子覆蓋共享、933 的 ε≥2 與 941 的單 binary 殘餘
 
+**後續（2026-10-02）**：[941 single-spoke 來源排除](c5_941_single_spoke.md)
+已以兩個原省略核心的共同三葉支援及原邊完整 relation 排除 t=1、(2,1,1)。
+941 的 ε=1 現只餘 t=2、(2,1) 與 t=3、(2)；下文保留本輪三型殘餘及當時停止點。
+
 2026-10-02，基準 `1274894`，接續尚未提交的
 [容量與跨度下界](c5_independent_support_capacity.md)。沿用**固定完整 Σ 的
 edge-minimal disk source**；目前停止點見 [Kempe 導覽](c5_kempe_guide.md)。
