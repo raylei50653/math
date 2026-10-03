@@ -1,5 +1,9 @@
 # ε=2：t=3 原 triangle 位置的 spoke＋unary 省略核心排除
 
+**後續（2026-10-02）**：[三原 unary 共同扇區排除](c5_excess_two_three_unary.md)
+已關閉 t=3 path／tail 分支，連同 triangle 位置完成 t=3 spoke＋unary
+省略分支。下文保留當輪證據及停止點。
+
 2026-10-02，基準 `b97b107`，接續工作樹的
 [t=2 spoke＋unary 排除](c5_excess_two_spoke_unary.md)、
 [three-spoke 原接點保持](c5_941_three_spoke.md)及

@@ -1,5 +1,9 @@
 # ε=2：t=2 的 spoke＋原 unary 省略核心排除
 
+**後續（2026-10-02）**：[三原 unary 共同扇區排除](c5_excess_two_three_unary.md)
+已關閉 t=3 path／tail 分支，連同 triangle 位置完成 t=3 spoke＋unary
+省略分支。下文保留當輪證據及停止點。
+
 **後續（2026-10-02）**：[t=3 的原 triangle 位置](c5_excess_two_three_spoke_unary.md)
 已由完整四接點接合、同一 binary 省略圖至多拒絕一列及既有雙 spoke
 省略結論排除；t=3 的 path／tail 位置仍保留。下文維持當輪 t=2 結論。
