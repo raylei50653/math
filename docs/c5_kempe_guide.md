@@ -13,7 +13,7 @@
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
-| 933／941 的 excess／容量／跨度 | 兩候選均已證 ε≥2。唯一 degree-6 root 的 t=1 七種原接點分拆已全作整型來源排除；原分量短支援、共同 active 結構及同源十列證書完成最後 (4,1)／(3,2)。同一短支援引理亦排除 t=2、(2,1,1) 整型；其他 t 的既有結果保留；任意大小紙面＋Python、未 Lean 化，其餘 ε=2 與一般來源保留 | [t=1 全分拆總報告](c5_excess_two_single_spoke_complete.md)、[短支援引理](c5_short_support_singleton.md)、[t=2 binary＋兩 unary 型](c5_excess_two_binary_two_unary.md)、[t=2 雙 binary 省略](c5_excess_two_two_binary.md)、[t=3 binary 省略](c5_excess_two_binary_omission.md)、[941 ε≥2](c5_941_three_spoke.md) |
+| 933／941 的 excess／容量／跨度 | 兩候選均已證 ε≥2。唯一 degree-6 root 的 t=1 七分拆及 t=2 五分拆均已作整型來源排除；t=2 復用原短支援、共同 active forest、singleton profiles 與首橋局部 residual。同前提下 t∉{1,2}；任意大小紙面＋Python、未 Lean 化，其餘 ε=2 與一般來源保留 | [t=2 全分拆總報告](c5_excess_two_two_spoke_complete.md)、[t=1 全分拆總報告](c5_excess_two_single_spoke_complete.md)、[短支援引理](c5_short_support_singleton.md)、[t=3 binary 省略](c5_excess_two_binary_omission.md)、[941 ε≥2](c5_941_three_spoke.md) |
 | Kempe screen／邊位置對座標 | screen 等價於 20 條蘊涵，1,024 masks 已核對；未新增排除，一般 adjacent-singleton lemma 未證 | [screen](c5_kempe_screen.md)、[座標](c5_edge_pair_coordinates.md) |
 | 循環流與計數 | 六維／153 支撐／十二循環；36 份基底覆蓋證三套分開整數 orbit 條件不再收緊恆等式解；未排除平面來源 | [循環流](c5_circulation.md) |
 | Count cone／class 計數 | near-triangulation 化約、部分 Lean 代數與 class 級紙面計數已有；cone／connectivity 缺口仍在 | [count cone](c5_count_cone_bridge.md)、[B₅ face](c5_b5_face.md)、[class 計數](c5_kempe_class_counts.md) |
@@ -75,7 +75,8 @@ degree-6、t=3 候選省略任一原 unary 及任一原 spoke 都必全收 Ω。
 54 個，其餘 36 個迫第二份原 binary 省略核心。24 個沒有符合原 spokes
 的第二核心，最後 12 個的 2,376 次同框五接點接合全不符目標。
 詳見 [雙 binary 報告](c5_excess_two_two_binary.md)。兩份 binary 省略均全收，
-該型已無全 degree-4 真子核心；沒有排除整份 (2,2) 或提高 ε≥2。
+該型已無全 degree-4 真子核心；後續原首橋報告再排除整份 (2,2)，
+前序省略證書保留，未提高 ε≥2。
 
 **t=2、(2,1,1) 的兩份原 unary 省略分支亦已排除**：沿用 398 個
 原 triangle 位置的 3,980 比較；841 個比較有空必要列、1,945 個迫同一
@@ -111,13 +112,24 @@ D 分量，其固定支援恰為三個連續框點，所有拒絕 singleton 位�
 及 [本輪紀錄](history/2026-10-03-excess-two-single-spoke-complete.md)。
 既有原 binary／兩 unary 省略證書仍保留，現在整型已由後續排除。
 
-**下一個窄問題：ε=2、唯一 degree-6 root、t=2 的整型來源。**
-三分量 (2,1,1) 已由同一短支援引理六跨度排除。先固定兩原 binary
-的原接點、共同色框、實際支援及省略身份，推進 t=2、(2,2)。現有「無全 degree-4
-真子核心」仍不能代替整型排除；停止於可證整型排除或具名必要殘留，
-不重開來源圖枚舉。其餘 t、兩個 degree-5 roots（含 mixed）及一般
-來源仍保留；共同下界維持 ε≥2。研究停止於 t=1 全分拆整型排除；
-本批成果及實際重播見 [進展整理與發布紀錄](history/2026-10-03-excess-progress-publish.md)。
+**t=2 的全部五分拆亦已作整型來源排除。** (2,1,1)／四 unary 由
+原短支援跨度下界直接排除。(3,1) 復用 t=1 singleton profiles，16 份
+具名扇區位置、107,296 十列 profile 對全無目標。(4) 的 200 份查詢，
+一半違反四接點三禁色 K₅，另一半保留同一原四葉 active forest 的
+兩末端袋，其非空共同支援族不能在原 spoke 扇區並排。(2,2) 的
+40 份具名位置／400 查詢，用原 pair 路徑仍留下 20 份抽象資料；
+補入同一原首橋兩端的共用 β、singleton 列的局部 residual 及跨列
+完整搬運後全排。詳見 [t=2 合成報告](c5_excess_two_two_spoke_complete.md)
+及 [本輪紀錄](history/2026-10-03-excess-two-two-spoke-complete.md)；
+整理與發布重播見 [發布紀錄](history/2026-10-03-excess-two-two-spoke-publish.md)。
+
+**停止點：同一來源前提下 t∉{1,2}；下一窄問題為 t=3、(2,1)
+整型來源。** 原 binary 省略已全收，但不能以此代替整型反證。
+先保留兩原分量、原有序 contacts、三條 spokes 的共同扇區、真實
+支援端點及同一色框，檢查 t=2 的首橋／局部 residual 工具是否適用。
+停止於可證整型排除或具名必要殘留，不重開來源圖枚舉。其餘 t、
+兩個 degree-5 roots（含 mixed）及一般來源仍保留；共同下界維持
+ε≥2。先前 t=1 批成果見 [進展整理與發布紀錄](history/2026-10-03-excess-progress-publish.md)。
 
 本線另保留一般 connectivity 限制、可迭代充分 state 及共同安全 repair 的缺口；
 不再把邊際配對、獨立 orbit 分解或一次 cut 重建當作一般解法。
@@ -132,7 +144,12 @@ D 分量，其固定支援恰為三個連續框點，所有拒絕 singleton 位�
 共同下界及前三個省略分支的前輪發布見
 [2026-10-02 發布紀錄](history/2026-10-02-excess-progress-publish.md)。
 
-933／941 先讀 [t=1 全分拆總報告](c5_excess_two_single_spoke_complete.md)及
+933／941 先讀 [t=2 全分拆總報告](c5_excess_two_two_spoke_complete.md)及
+[本輪紀錄](history/2026-10-03-excess-two-two-spoke-complete.md)，再讀
+[兩 binary／首橋](c5_excess_two_two_spoke_binary.md)、
+[四接點／末端袋](c5_excess_two_two_spoke_four.md)及
+[ternary／unary profiles](c5_excess_two_two_spoke_ternary.md)。前序復用入口是
+[t=1 全分拆總報告](c5_excess_two_single_spoke_complete.md)及
 [本輪研究紀錄](history/2026-10-03-excess-two-single-spoke-complete.md)，再讀
 [短支援引理](c5_short_support_singleton.md)、[四接點＋unary](c5_excess_two_four_one.md)、
 [ternary／binary](c5_excess_two_ternary_binary.md)及 [五接點](c5_excess_two_five_contact.md)。
@@ -153,6 +170,11 @@ D 分量，其固定支援恰為三個連續框點，所有拒絕 singleton 位�
 [容量下界](c5_independent_support_capacity.md)。最小重播：
 
 ```bash
+python3 scripts/c5_excess_two_two_spoke_binary.py --check
+python3 scripts/c5_excess_two_two_spoke_four.py --check
+python3 scripts/c5_excess_two_two_spoke_ternary.py --check
+python3 scripts/c5_single_spoke_first_bridge.py --check
+python3 scripts/c5_single_spoke_residual_locality.py --check
 python3 scripts/c5_short_support_singleton.py --check
 python3 scripts/c5_excess_two_five_contact.py --check
 python3 scripts/c5_excess_two_four_one.py --check

@@ -1,5 +1,10 @@
 # ε=2：t=2、(2,2) 的原 binary 省略分支排除
 
+**整型後續（2026-10-03）**：[兩原 binary 的首橋報告](c5_excess_two_two_spoke_binary.md)
+保留本頁兩份省略全收，另用共同原路徑、首橋共用 β 及局部 residual
+跨列搬運排除整份 (2,2)；[t=2 合成報告](c5_excess_two_two_spoke_complete.md)
+完成全部五分拆。下文當輪「整型保留」及原省略證書保持其原語境。
+
 **後續（2026-10-03）**：[t=2、(2,1,1) 兩份原 unary 省略](c5_excess_two_two_unary.md)
 已完成本輪留下的下一窄題；該型後由
 [短支援引理的共同推論](c5_excess_two_single_spoke_complete.md#4-結論證據層與停止點)

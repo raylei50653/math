@@ -1,5 +1,9 @@
 # ε=2：唯一 degree-6 root 的 t=1 全部分拆排除
 
+**後續（2026-10-03）**：[t=2 全分拆排除](c5_excess_two_two_spoke_complete.md)
+復用本頁短支援、原 active 結構及同框 profiles，另以原首橋局部
+residual 完成 t=2；同一來源前提下現在 t∉{1,2}。下文保留本輪語境。
+
 **發布整理（2026-10-03）**：本報告與前序省略證書已納入
 [本批發布紀錄](history/2026-10-03-excess-progress-publish.md)。下文的未提交
 描述保留研究當輪語境；即時提交與遠端狀態以 Git 為準。

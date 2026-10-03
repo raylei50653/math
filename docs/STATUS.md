@@ -164,7 +164,11 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [ε=2 t=1 全部分拆排除](c5_excess_two_single_spoke_complete.md) | 唯一 degree-6 root 的七種原接點分拆均作整型來源排除；兩候選共同 ε≥2 不變，其餘 t／雙 degree-5 roots 及一般來源保留；任意大小紙面＋Python，未 Lean 化 |
+| [ε=2 t=2 全部分拆排除](c5_excess_two_two_spoke_complete.md) | 復用 t=1 的固定支援、共同 active forest 與原首橋；五種原接點分拆均整型排除，同前提下 t∉{1,2}。共同 ε≥2 不變，其餘 t／雙 degree-5 roots／一般來源保留；任意大小紙面＋Python，未 Lean 化 |
+| [ε=2 t=2 四接點整型排除](c5_excess_two_two_spoke_four.md) | 200 份 spoke／扇區／目標查詢全排；100 份三禁色 K₅、100 份非空支援族的固定兩末端袋無法並排；5,120 原 minor、526,336 完整五接點控制，未 Lean 化 |
+| [ε=2 t=2 ternary／unary 整型排除](c5_excess_two_two_spoke_ternary.md) | 直接復用 t=1 singleton profiles；16 具名扇區位置、107,296 同框十列 profile 對無目標，不需 D 守恆；499,200 完整七接點控制，未 Lean 化 |
+| [ε=2 t=2 兩 binary 整型排除](c5_excess_two_two_spoke_binary.md) | 40 具名扇區位置／400 查詢；原 pair 路徑留 20 份弱條件控制，補入同一首橋的共用 β 及局部 residual 跨列搬運後全排；保留完整原關係，未 Lean 化 |
+| [ε=2 t=1 全部分拆排除](c5_excess_two_single_spoke_complete.md) | 唯一 degree-6 root 的七種原接點分拆均作整型來源排除；後續復用原工具完成 t=2。兩候選共同 ε≥2 不變，其餘 t／雙 degree-5 roots 及一般來源保留；任意大小紙面＋Python，未 Lean 化 |
 | [兩／三外部 hubs 的短支援排除](c5_short_support_singleton.md) | 原 degree-4 分量支援包含於一條框邊，且有避開它的原外部路徑時，全部禁色皆不可能；不限接點數，迫本題每份原分量跨度至少二；紙面＋原 K₅ controls，未 Lean 化 |
 | [四接點短支援 pair 排除](c5_short_support_four_contact.md) | 四接點未見二色 pair 的原 Gallai leaf blocks／active 結構 K₅；保留獨立證明及固定控制，通用短支援引理另涵蓋此型 |
 | [ε=2 t=1 四接點與 unary](c5_excess_two_four_one.md) | 同一四接點 active forest、兩 triangle K₅及固定末端區塊的跨列 residual，100 個必要查詢全排；(4,1) 整型排除，未 Lean 化 |
@@ -178,7 +182,7 @@
 | [ε=2 t=2 四原 unary 排除](c5_excess_two_four_unary.md) | 固定支援五段預算迫唯一 D 分量及連續三點拒絕位置；933／941 整份 (1,1,1,1) 型排除。50 次目標／弧比較、810,000 完整五接點控制；任意大小紙面＋Python、未 Lean 化，共同 ε≥2 不變 |
 | [ε=2 t=2、(2,1,1) 原 binary 省略排除](c5_excess_two_binary_two_unary.md) | 560 代數殘留的 65,100 次共同支援弧比較全排除；46,800 完整五接點控制。所有容量二省略均全收；整型後由短支援引理三分量六跨度排除，原省略證書保留；未 Lean 化，共同 ε≥2 不變 |
 | [ε=2 t=2、(2,1,1) 兩份原 unary 省略排除](c5_excess_two_two_unary.md) | 3,980 比較全排除、24,975 次完整五接點接合控制；不需 D 守恆或新增支援幾何，當輪留下的 binary 身份由後續排除，整型再由短支援引理六跨度排除；原證書保留，未 Lean 化 |
-| [ε=2 t=2、(2,2) 原 binary 省略排除](c5_excess_two_two_binary.md) | 3,980 比較、原核心 apex K₃,₃ 及第二核心 2,376 次同框五接點接合全排除；兩份 binary 省略均全收，該型無全 degree-4 真子核心。任意大小紙面＋Python、未 Lean 化，整份 (2,2) 及其餘 ε=2 保留 |
+| [ε=2 t=2、(2,2) 原 binary 省略排除](c5_excess_two_two_binary.md) | 3,980 比較、原核心 apex K₃,₃ 及第二核心 2,376 次同框五接點接合全排除；兩份 binary 省略均全收，該型無全 degree-4 真子核心。後續原首橋報告排除整型，原省略證書保留；未 Lean 化 |
 | [ε=2 t=3、(2,1) 原 binary 省略排除](c5_excess_two_binary_omission.md) | 250 份共同支援包絡／2,030 比較全排除；983,025 四接點接合控制。刪除原 binary 必全收，該型已無全 degree-4 真子核心；任意大小紙面＋Python、未 Lean 化，整份 (2,1) 及其餘 ε=2 保留 |
 | [ε=2 三 spokes／三原 unary 共同扇區排除](c5_excess_two_three_unary.md) | 800 個必要比較、225 份抽象存活 cases 經原支援跨度與共同扇區全排除；33,750 份四接點接合控制。任意大小紙面＋Python，關閉 t=3 path／tail 及整份 spoke＋unary 省略分支，未 Lean 化；其餘 ε=2 保留 |
 | [ε=2 t=3 原 triangle 的 spoke＋unary 排除](c5_excess_two_three_spoke_unary.md) | 398 marked roots／1,194 接回的 11,940 比較全排除；兩色存活留 1,254 個，由同一 binary 省略圖單缺失排除 1,200 個、既有雙 spoke 省略排除 54 個。完整 (r,x,y,v) 及任意大小原 unary 保持，紙面＋Python、未 Lean 化；path／tail 由後續三 unary 排除，其餘 ε=2 保留 |
@@ -340,6 +344,8 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-03：ε=2 t=2 成果整理與發布](history/2026-10-03-excess-two-two-spoke-publish.md)
+- [2026-10-03：復用 t=1，完成 ε=2 t=2 全部分拆整型排除](history/2026-10-03-excess-two-two-spoke-complete.md)
 - [2026-10-03：ε=2 省略證書與 t=1 全分拆進展整理、發布](history/2026-10-03-excess-progress-publish.md)
 - [2026-10-03：ε=2 t=1 全部分拆整型排除](history/2026-10-03-excess-two-single-spoke-complete.md)
 - [2026-10-03：t=1 原 binary 省略與完整六接點接合](history/2026-10-03-excess-two-single-spoke-binary.md)

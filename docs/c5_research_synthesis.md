@@ -7,14 +7,16 @@ C₅ disk 來源均已證 ε≥2。最新 ε=2 成果限於唯一 degree-6 root�
 | 分支 | 後續完成範圍與保留界線 |
 | --- | --- |
 | t=1 全七分拆 | [整型來源全部排除](c5_excess_two_single_spoke_complete.md)；共同[短支援引理](c5_short_support_singleton.md)、五葉 active tree、原 binary 路徑及四接點固定末端區塊涵蓋任意大小來源 |
-| t=2、(2,1,1)／四 unary | 前者的原 binary／兩 unary 省略證書保留，後由同一短支援引理六跨度排除整型；[四 unary](c5_excess_two_four_unary.md)則由固定三點支援排除整型 |
-| t=2、(2,2) 與 t=3、(2,1) | [雙 binary](c5_excess_two_two_binary.md)與 [binary 省略](c5_excess_two_binary_omission.md)均已完成全部容量二省略全收，無全 degree-4 真子核心；兩份整型來源仍保留 |
+| t=2 全五分拆 | [整型來源全部排除](c5_excess_two_two_spoke_complete.md)：復用 t=1 的短支援、singleton profiles、共同 active forest 與原首橋；(2,2) 保留純 pair 層的 20 份抽象控制，加入同一首橋局部 residual 後全排 |
+| t=3、(2,1) | [binary 省略](c5_excess_two_binary_omission.md)已完成全部容量二省略全收，無全 degree-4 真子核心；整型來源仍保留，不能以省略全收代替整型反證 |
 | t=3 spoke＋unary 省略 | [三原 unary 共同扇區](c5_excess_two_three_unary.md)完成 path／tail，連同原 triangle 位置關閉整份條件分支 |
 
 上述為任意大小紙面論證＋Python 固定必要域證書，未新增 Lean theorem，
 未提高共同下界至 ε≥3。兩個 degree-5 roots、其他 ε=2 及一般來源、
 一般出口與 K∞=K≤5 仍保留。現況與下一窄題見 [Kempe 導覽](c5_kempe_guide.md)，
-本批重播與發布範圍見 [發布紀錄](history/2026-10-03-excess-progress-publish.md)。
+同前提下已得 t∉{1,2}；最新重播與發布範圍見
+[t=2 發布紀錄](history/2026-10-03-excess-two-two-spoke-publish.md)，
+前序 t=1 批見 [發布紀錄](history/2026-10-03-excess-progress-publish.md)。
 下文保留 `b97b107` 當輪的跨線快照及實驗提案，其「未解」依後續成果閱讀。
 
 2026-10-02，基準 `4565735`。這是跨線研究快照與實驗提案，
