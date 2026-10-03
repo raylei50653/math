@@ -164,6 +164,15 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [ε=2 唯一 mixed 原 leaf 色纖維與五-spoke 排除](c5_excess_two_mixed_core_leaf_fibers.md) | 八份具名附件共同化到998／1004；完整 (b,a,y,u) 接合迫同一原 unary 雙列只取0，palette 比較及原圖 K₅ 排除全部五-spoke來源。兩候選總 spokes 都≤4；450 全圖接合／7,200 pinned 色纖維、24 extracted K₅ 控制。接續四-spoke (3,1) 的 mixed (1,1) 加兩 unary 型；單省略尚未全排，紙面＋Python，ε≥3 未證，未 Lean 化 |
+| [ε=2 唯一 mixed 單 spoke 省略原附件化約](c5_excess_two_mixed_core_single_spoke.md) | 省略圖若拒絕便自己是唯一 degree-5 minimal core；8／6 child masks 與同色原 spoke 身份限制。666 骨架／58 subdivisions、五-spoke 原形給933≤4、941≤5；剩下四組941附件及 root交換已由後續原 leaf／unary 雙列比較全排。60 完整接合／960 pinned 查詢；單省略仍保留，紙面＋Python，ε≥3 未證，未 Lean 化 |
+| [ε=2 唯一 mixed 省略原 mixed 必全收](c5_excess_two_mixed_omission.md) | 344 保留原 bridge roots 的必要核心／3,440 目標比較；9,152 固定支援查詢經 8,508 跨列衝突與 188 明示收縮星 subdivisions 全排。Σ(G−C)=Ω，完成相鄰唯一 mixed 的全部 (4,4) 核心身份；後續單 spoke 原附件化約已推進，(5,4)/(4,5)/(5,5) 仍保留。紙面＋Python，共同 ε≥2 不變，未 Lean 化 |
+| [ε=2 唯一 mixed 兩側原 unary 省略全收](c5_excess_two_mixed_core_two_unary.md) | 5,700 目標比較／2,184,192 支援對必要比較全排，實際 386,048 互異查詢保存 UNSAT proofs／assignments；100,859 代數相容者由 3,180 明示雙收縮星 subdivisions 全排。完成 (4,4) 保留 mixed 全身份；只省略原 mixed 後續亦全排。1,282,500 完整雙接合、64 原雙 unary 圖，紙面＋Python，共同 ε≥2 不變，未 Lean 化 |
+| [ε=2 唯一 mixed 原 spoke＋unary 省略全收](c5_excess_two_mixed_core_spoke_unary.md) | 37,320 目標比較的 2,784 抽象殘留經同一原支援 89,088 次 S₄ transport 及 2,640 明示 K₅／K₃,₃ 收縮星 subdivisions 全排，含交換型；後續雙 unary 亦全排，(4,4) 不能保留 mixed。559,800 完整算子控制，任意大小紙面＋Python，共同 ε≥2 不變，未 Lean 化 |
+| [ε=2 唯一 mixed 原省略身份與雙 spoke 核心排除](c5_excess_two_mixed_core_spokes.md) | Proper core 原 incidence 省略表完整；(4,4) 保留 mixed 迫原共鄰 triangle。126 必要正常形／6,068 雙 spoke 接回全無 933／941 五像；後續 spoke＋unary 及雙 unary 全排，故 (4,4) 必省略 incidence-(1,1) 的原 mixed。26 長圖保存完整原關係，共同 ε≥2 不變，未 Lean 化 |
+| [ε=2 單 triangle 保留原兩點接回排除](c5_excess_two_triangle_edge.md) | 同枝原環 K₅；其餘保留 z,w 的區段縮減給 528 必要正常形，392 份 T4 全收者均保持原單缺失。528 長圖／3,040 獨立 pinned 查詢、280 原 K₅ 控制；完成刪 zw 仍拒絕的相鄰 mixed 全分支，因此刪 zw 必全收。共同 ε≥2 不變，未 Lean 化 |
+| [ε=2 原路徑接回 root 邊的 K₅](c5_excess_two_path_edge.md) | 同 singleton 框鄰點與原環直接給 apex K₅，任意長度樹／偶數路徑分支整型排除；八份 T4 基底、14 固定原路徑／226 具名接回／2,260 完整色對控制。單 triangle 停止點後由保留原兩點縮減完成；相鄰 mixed 刪 zw 必全收，共同 ε≥2 不變，未 Lean 化 |
+| [ε=2 雙 roots 的原刪除與接回](c5_excess_two_root_deletions.md) | 至少一個原刪 root 圖全收，另一個至多只缺一列；相鄰 mixed 兩者均全收。全 degree-4 雙 triangle 分支由 64 原核心／512 完整色對接回排除，樹與單 triangle 後續亦全排；相鄰 mixed 刪 zw 必全收。全收、非相鄰與 no-mixed 保留，共同 ε≥2 不變，未 Lean 化 |
 | [ε=2 t=0 全部分拆排除](c5_excess_two_no_spoke_complete.md) | 十一原分拆全排；多分量用真實外部路徑恢復跨度，(6) 飽和兩原 K₄ 給 K₅；(4,2) 的 200 查詢／7,200 弱 profiles 經 160 同源 binary 框弧證書全排。完成唯一 degree-6 的 ε=2 分支，只剩雙 degree-5 roots；共同 ε≥2 不變，未 Lean 化 |
 | [ε=2 t=3 全部分拆排除](c5_excess_two_three_spoke_complete.md) | (2,1) 的十份 span-two 配置／8,250 同源 S₄ profiles 全排；(3) 的 100 容量比較及 (1,1,1) 六跨度矛盾完成整型。後續亦完成 t=0，唯一 degree-6 全分支排除；共同 ε≥2 不變，雙 degree-5 roots／一般來源保留，未 Lean 化 |
 | [ε=2 t=2 全部分拆排除](c5_excess_two_two_spoke_complete.md) | 復用 t=1 的固定支援、共同 active forest 與原首橋；五種原接點分拆均整型排除，後續亦完成 t=3 及 t=0。共同 ε≥2 不變，雙 degree-5 roots／一般來源保留；任意大小紙面＋Python，未 Lean 化 |
@@ -346,6 +355,16 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-03：ε=2 雙 degree-5 root 九輪進展整理與提交](history/2026-10-03-excess-two-dual-root-progress-commit.md)
+- [2026-10-03：ε=2 唯一 mixed 的原 leaf 色纖維與五-spoke 排除](history/2026-10-03-excess-two-mixed-core-leaf-fibers.md)
+- [2026-10-03：ε=2 唯一 mixed 的單 spoke 原附件化約](history/2026-10-03-excess-two-mixed-core-single-spoke.md)
+- [2026-10-03：ε=2 唯一 mixed 的省略原 mixed 全收](history/2026-10-03-excess-two-mixed-omission.md)
+- [2026-10-03：ε=2 唯一 mixed 的兩側原 unary 省略全收](history/2026-10-03-excess-two-mixed-core-two-unary.md)
+- [2026-10-03：ε=2 唯一 mixed 的原 spoke＋unary 省略全收](history/2026-10-03-excess-two-mixed-core-spoke-unary.md)
+- [2026-10-03：ε=2 唯一 mixed 的原省略身份與雙 spoke 核心排除](history/2026-10-03-excess-two-mixed-core-spokes.md)
+- [2026-10-03：ε=2 單 triangle 保留原兩點接回排除](history/2026-10-03-excess-two-triangle-edge.md)
+- [2026-10-03：ε=2 原路徑接回 root 邊的 K₅ 排除](history/2026-10-03-excess-two-path-edge.md)
+- [2026-10-03：ε≥3 入口的雙 root 刪除與原邊接回](history/2026-10-03-excess-two-root-deletions.md)
 - [2026-10-03：ε=2 唯一 degree-6 分支成果整理與發布](history/2026-10-03-excess-two-degree-six-publish.md)
 - [2026-10-03：ε=2 t=0 全部分拆與唯一 degree-6 分支排除](history/2026-10-03-excess-two-no-spoke-complete.md)
 - [2026-10-03：ε=2 t=3 全部分拆整型排除](history/2026-10-03-excess-two-three-spoke-complete.md)

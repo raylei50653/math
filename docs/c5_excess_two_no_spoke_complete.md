@@ -1,5 +1,10 @@
 # ε=2：唯一 degree-6 root 的 t=0 全部分拆排除
 
+**後續（2026-10-03）**：[雙 root 的原刪除與邊接回](c5_excess_two_root_deletions.md)
+已核對完整 Σ 與 q-minimality 的差異，證至少一個原刪 root 圖全收、
+相鄰 mixed 時兩者均全收，並排除刪 zw 後的雙 triangle 核心分支。
+共同下界仍 ε≥2；下文保留唯一 degree-6 輪次的停止點。
+
 **發布整理（2026-10-03）**：本頁與 t=3 的 checker、證書及導覽更新
 一併提交推送；本次重播及範圍見 [發布紀錄](history/2026-10-03-excess-two-degree-six-publish.md)。
 下文的「本輪未 commit／push」保留研究輪次語境；即時發布狀態以 Git 為準。

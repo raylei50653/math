@@ -14,6 +14,7 @@
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
 | 933／941 的 excess／容量／跨度 | 兩候選均已證 ε≥2。唯一 degree-6 root 的 t=0、1、2、3 全部分拆均已作整型來源排除，T4 迫 t≤3，完成此 ε=2 分支。t=0 的 (6) 用飽和兩 K₄，(4,2) 用原 binary 路徑的同源框弧 K₅；若 ε=2，只剩兩個 degree-5 roots。任意大小紙面＋Python、未 Lean 化，一般來源保留 | [t=0 全分拆總報告](c5_excess_two_no_spoke_complete.md)、[t=3 全分拆總報告](c5_excess_two_three_spoke_complete.md)、[t=2 全分拆總報告](c5_excess_two_two_spoke_complete.md)、[t=1 全分拆總報告](c5_excess_two_single_spoke_complete.md)、[941 ε≥2](c5_941_three_spoke.md) |
+| 雙 root 的 ε=2 收窄 | 相鄰 mixed 刪 roots／zw 全收；相鄰唯一 mixed 的 ε=2 分支已全排 (4,4) 核心，原 leaf joint 色纖維與同一 unary 雙列 palette／K₅ 全排五-spoke 原來源，該分支的兩候選總 spokes 都≤4。原單 spoke 省略若拒絕，省略圖自己是唯一 degree-5 minimal q-core；單省略及 (5,5) 原核心仍保留。紙面＋Python，ε≥3 未證，未 Lean 化 | [原 leaf 色纖維與五-spoke 排除](c5_excess_two_mixed_core_leaf_fibers.md)、[單 spoke 原附件化約](c5_excess_two_mixed_core_single_spoke.md)、[省略原 mixed 全收](c5_excess_two_mixed_omission.md) |
 | Kempe screen／邊位置對座標 | screen 等價於 20 條蘊涵，1,024 masks 已核對；未新增排除，一般 adjacent-singleton lemma 未證 | [screen](c5_kempe_screen.md)、[座標](c5_edge_pair_coordinates.md) |
 | 循環流與計數 | 六維／153 支撐／十二循環；36 份基底覆蓋證三套分開整數 orbit 條件不再收緊恆等式解；未排除平面來源 | [循環流](c5_circulation.md) |
 | Count cone／class 計數 | near-triangulation 化約、部分 Lean 代數與 class 級紙面計數已有；cone／connectivity 缺口仍在 | [count cone](c5_count_cone_bridge.md)、[B₅ face](c5_b5_face.md)、[class 計數](c5_kempe_class_counts.md) |
@@ -24,221 +25,80 @@
 
 ## 3. 停止點與保留缺口
 
-933、941 的固定完整 Σ、edge-minimal C₅ disk 來源均已證 ε≥2；
-沒有一般候選排除、ε=2 實現或普遍六跨度結論。
-941 的 ε=1 各型已全排除：t=1 用共同三葉支援，t=2 用保留原四接點的
-spoke 接回，最後 t=3 用原 triangle degree-2 位置及 (r,x,y) 完整關係。
-前輪 118 個必要核心／398 個原 root 位置的 1,194 次接回皆無 941。
-無枝 triangle 的 36 份 T4 全收支援未篩 disk；其放寬域可有其他三拒絕型，
-所以不宣稱全部接回至多兩拒絕。詳見 [three-spoke 報告](c5_941_three_spoke.md)。
+本線候選來源前提是固定完整 Σ=933／941 或整圖 D₅ 像、每條非框邊
+Σ-critical、指定有序 induced-C₅ disk、所有有效內點完整 degree≥4。
+原分量、有序 contacts、實際 attachments／supports、ownership、嵌入
+環序及同一字面四色框始終保持。任意大小化約由紙面與明列外部依賴
+承擔；Python 檢查固定必要域、完整 tuples／fibres 及具名 minors。
 
-ε=2、唯一 degree-6 root 的**雙 spoke 省略核心條件分支已排除**：
-刪去兩條原 spokes 若仍拒絕 singleton 列，全 degree-4 分類迫原 t=3、
-內部 degree=3；原四接點化約後，148 個 marked cores 的 888 次雙接回
-全無 933／941。432 個 T4 全收模型至多拒絕兩個相鄰 singleton 列。
-因此候選來源刪去任意兩條不同原 spokes 必接受全部十列。
-詳見 [新報告](c5_excess_two_double_spoke.md)；沒有提高共同 ε≥2 下界。
+**共同 ε≥2；唯一 degree-6 的 ε=2 分支已全排。** 941 的 ε=1
+全部分支及唯一 degree-6 的 t=0、1、2、3 全分拆見 §2 原報告。
+因此 ε=2 只剩兩個完整 degree-5 roots。
 
-**t=2 的 spoke＋原 unary 省略核心分支亦已排除**：148 個原四接點
-核心的 592 次 spoke 接回，對 933／941 各五像的 5,920 次比較全部排除。
-原 unary 在全部十列均有非空 endpoint relation；凡核心接回後 root
-有至少兩色，就能保留完整 tuple 並接上同一原 unary。五接點公式保留
-原 v、附件與 ownership；不需枚舉 unary 或收緊其支援。
-詳見 [spoke＋unary 報告](c5_excess_two_spoke_unary.md)。因此在唯一
-degree-6、t=2 等候選前提下，省略任一原 unary 及任一原 spoke 必全收 Ω。
-必要區間仍含三拒絕 mask，沒有「所有接回至多兩拒絕」的推論。
+| 雙 root 分支 | 最新已完成範圍 | 精確報告 |
+| --- | --- | --- |
+| 原 root 刪除 | 至少一個刪 root 圖全收，另一個至多缺一列；相鄰且有 mixed 時兩者均全收 | [完整 Σ 與原刪除](c5_excess_two_root_deletions.md) |
+| 相鄰 mixed 的原 zw 省略 | 雙 triangle、原樹／偶數路徑與單 triangle 接回全排；Σ(G−zw)=Ω | [雙 triangle](c5_excess_two_root_deletions.md)、[原路徑](c5_excess_two_path_edge.md)、[單 triangle](c5_excess_two_triangle_edge.md) |
+| 相鄰唯一 mixed 的 (4,4) q-core | 保留 mixed 的雙 spoke、spoke＋unary、雙 unary 身份及只省略 incidence-(1,1) mixed 的身份均全排 | [原身份表](c5_excess_two_mixed_core_spokes.md)、[spoke＋unary](c5_excess_two_mixed_core_spoke_unary.md)、[雙 unary](c5_excess_two_mixed_core_two_unary.md)、[mixed 省略](c5_excess_two_mixed_omission.md) |
+| 相鄰唯一 mixed 的單 spoke 省略 | 省略圖若拒絕 q，自己就是唯一 degree-5 minimal q-core；同色原 spoke 身份限制三-spoke 附件 | [單 spoke 原附件化約](c5_excess_two_mixed_core_single_spoke.md) |
+| 相鄰唯一 mixed 的五-spoke 原來源 | 八份具名附件共同搬運至 998／1004；原 (b,a,y,u) joint leaf 纖維、同一 unary 雙列 palette 與原圖 K₅ 全排；兩候選總 spokes 都≤4 | [原 leaf 色纖維](c5_excess_two_mixed_core_leaf_fibers.md) |
 
-**t=3 的原 triangle 位置亦已排除**：118 bases／398 marked roots 的
-1,194 次接回，對兩候選五像的 11,940 個比較全排除。兩色存活仍留
-1,254 個；1,200 個迫同一 G−C₂ 拒絕兩列，違反全 degree-4 單缺失，
-其餘 54 個迫具名雙 spoke 省略仍拒絕，違反前述結論。
-原 (r,x,y,v) 完整接合、V 的任意大小及全部附件保持，詳見
-[t=3 triangle 報告](c5_excess_two_three_spoke_unary.md)。
+**下一窄入口：四-spoke 的 (3,1) 及 root 交換。** 先固定原 mixed
+incidence-(1,1) 與一-spoke 側兩份原單接點 unary；省略三-spoke
+側的同色原 spoke 後得到 t=1、(2,1,1) core。保留原 leaf、原 C
+及兩 unary 的完整 joint relations、全部實際附件與同一色框，
+分析接回那一條原 spoke。停止於可證窄排除或具名必要殘留。
 
-**t=3 的 path／tail 分支亦已排除，且得到較強的三原 unary 排除**：
-十種原 spokes、八種 D 身份、兩候選各五像共 800 個必要比較；省略身份
-共享與 D 守恆仍留 225 cases，同一原支援的正跨度／D 跨度及三 spokes
-共同扇區限制全數排除。核對 33,750 份完整四接點接合；沒有圖枚舉或
-路徑替換。詳見 [三 unary 報告](c5_excess_two_three_unary.md)。因此唯一
-degree-6、t=3 候選省略任一原 unary 及任一原 spoke 都必全收 Ω。
+這是選定的 (3,1) 子型；同型的一-spoke 側原 incidence 預算還容許
+mixed-(1,1) 加一 binary、mixed-(1,2) 加一 unary、mixed-(1,3) 且
+無 unary。這些僅是原 incidence 必要分拆，仍保留且未證 disk 實現。
 
-**t=3、(2,1) 的原 binary 省略分支亦已排除**：同一原 V 的 D 身份、
-原 C₂／V 在三 spokes 扇區內的共同支援弧，配合上述兩種具名省略全收，
-排除 250 份包絡配置下的 2,030 個候選比較。只看整個扇區仍留 30 份，
-共同支援弧的不重疊是必要新增資訊。983,025 次完整四接點接合控制通過。
-詳見 [binary 省略報告](c5_excess_two_binary_omission.md)。因此該型所有容量二
-省略均全收，若來源存在，每個 minimal rejected-row core 都須有 degree≥5。
-前序只排除省略分支；整份 (2,1) 已由下述 t=3 合成報告排除，
-共同 ε≥2 下界維持。
+其他四-spoke 型、較少 spokes、原 unary 單省略，以及原 G 自己是
+(5,5) q-core 的分支仍保留；不能套唯一 degree-5 分離定理。
+相鄰多 mixed 在刪 zw 全收後的原來源、no-mixed、非相鄰雙 roots
+與 unary 側例外亦保留。**單 spoke 省略尚未整型排除，ε≥3 未證。**
+指定列出口不提升為完整候選排除，不重開來源圖枚舉。
 
-**t=2、(2,2) 的原 binary 省略分支亦已排除**：398 個具名原 root
-位置的 3,980 個候選比較先剩 90 個；原核心的明確 apex K₃,₃ 排除
-54 個，其餘 36 個迫第二份原 binary 省略核心。24 個沒有符合原 spokes
-的第二核心，最後 12 個的 2,376 次同框五接點接合全不符目標。
-詳見 [雙 binary 報告](c5_excess_two_two_binary.md)。兩份 binary 省略均全收，
-該型已無全 degree-4 真子核心；後續原首橋報告再排除整份 (2,2)，
-前序省略證書保留，未提高 ε≥2。
-
-**t=2、(2,1,1) 的兩份原 unary 省略分支亦已排除**：沿用 398 個
-原 triangle 位置的 3,980 比較；841 個比較有空必要列、1,945 個迫同一
-binary 省略圖拒絕至少兩列，其餘 1,194 個在原核心拒絕列已不符目標。
-24,975 次完整五接點接合控制通過。不需 D 身份守恆或新增支援幾何，
-詳見 [兩 unary 報告](c5_excess_two_two_unary.md)。連同前序，該型全部
-unit-pair 省略全收；當輪留下的原 binary 身份已由下述後續涵蓋。
-
-**t=2、(2,1,1) 的原 binary 省略分支亦已排除**：省略核心迫兩份原
-unary 恰有一份 D carrier。全部 unit-pair 全收及 D 守恆仍留 560 個
-代數 cases；三份原分量的共同支援弧給 65,100 次比較，全有空必要列。
-46,800 次完整五接點接合控制通過，詳見
-[binary＋兩 unary 型報告](c5_excess_two_binary_two_unary.md)。因此該型
-所有容量二省略均全收，已無全 degree-4 真子核心；後續短支援引理
-再以三分量六跨度排除整型，詳見 [t=1 合成報告的共同推論](c5_excess_two_single_spoke_complete.md#4-結論證據層與停止點)。
-共同下界仍 ε≥2。
-
-**t=2、(1,1,1,1) 四原 unary 整型已排除**：完整 Σ edge-minimality
-使每份原支援至少跨一段；D 身份另需一段。同一嵌入五段預算迫唯一
-D 分量，其固定支援恰為三個連續框點，所有拒絕 singleton 位置都須
-落在其中。933 的四位置及 941 的非連續三位置均不可能。
-50 次目標／弧比較、810,000 次完整五接點控制通過，詳見
-[四原 unary 報告](c5_excess_two_four_unary.md)。共同下界仍 ε≥2。
-
-**t=1 的全部七分拆已作整型來源排除。** 原分量若支援包含於一條
-框邊，其任一禁色都由兩／三外部 hubs 的 Gallai K₅ 排除；同源
-Σ-minimality 及完整支援因此迫每份原分量至少兩段跨度。三份以上
-原分量均超出五段預算，完成 (3,1,1)、(2,2,1)、(2,1,1,1) 及五 unary。
-單分量 (5) 的共同五葉 active tree 只有兩形狀，原 tethers 均給 K₅。
-最後 (3,2) 保留原 binary 路徑塊及 ternary 的 D 身份，(4,1) 則保留
-四個原接點、共同 active forest 及兩份固定末端區塊，分別關閉全部
-100 個同源必要查詢。詳見 [全分拆總報告](c5_excess_two_single_spoke_complete.md)
-及 [本輪紀錄](history/2026-10-03-excess-two-single-spoke-complete.md)。
-既有原 binary／兩 unary 省略證書仍保留，現在整型已由後續排除。
-
-**t=2 的全部五分拆亦已作整型來源排除。** (2,1,1)／四 unary 由
-原短支援跨度下界直接排除。(3,1) 復用 t=1 singleton profiles，16 份
-具名扇區位置、107,296 十列 profile 對全無目標。(4) 的 200 份查詢，
-一半違反四接點三禁色 K₅，另一半保留同一原四葉 active forest 的
-兩末端袋，其非空共同支援族不能在原 spoke 扇區並排。(2,2) 的
-40 份具名位置／400 查詢，用原 pair 路徑仍留下 20 份抽象資料；
-補入同一原首橋兩端的共用 β、singleton 列的局部 residual 及跨列
-完整搬運後全排。詳見 [t=2 合成報告](c5_excess_two_two_spoke_complete.md)
-及 [本輪紀錄](history/2026-10-03-excess-two-two-spoke-complete.md)；
-整理與發布重播見 [發布紀錄](history/2026-10-03-excess-two-two-spoke-publish.md)。
-
-**t=3 的三種原分拆亦已作整型來源排除。** (1,1,1) 由三份固定
-支援的六跨度矛盾排除。(2,1) 的兩份支援各跨度至少二，三 spokes
-迫 (1,2,2) 扇區，各原分量占一個長度二區。十份具名配置的 8,250
-份同框十列 S₄ profiles 全無目標；甚至 1,800 份 T4 全收的 profiles
-至多缺一列。不需首橋、原省略全收或 D 身份 screen；逐列獨立選
-禁色的 100 份對照仍全有選項，保留原分量跨列身份是排除關鍵。
-(3) 的 ternary 至多禁一色，三 spokes 虹彩的必要位置直接排除
-100 份目標比較。詳見 [t=3 合成報告](c5_excess_two_three_spoke_complete.md)
-及 [本輪紀錄](history/2026-10-03-excess-two-three-spoke-complete.md)。
-
-**t=0 的十一原分拆也已作整型來源排除。** 多分量以另一原分量的
-真實 root–B 路徑恢復外部 hub，短支援與環狀次序迫至多兩分量；
-(5,1)、(3,3) 由容量排除。(6) 不假設外部連通，四 palettes 迫
-飽和兩個原 K₄ 及單 bridge，六條 contacts 直接給 K₅。(4,2) 的
-20 份具名環狀包絡／200 查詢先留 7,200 個同源 profiles；160 組
-原 binary 拒絕列 schemas 的共同袋支援均有兩框弧 K₅，全排。
-四接點 relation、另一原分量的實際端點及共同字面色框保留，
-不需四接點 active forest、首橋或 D 身份 screen。詳見
-[t=0 合成報告](c5_excess_two_no_spoke_complete.md)及
-[本輪紀錄](history/2026-10-03-excess-two-no-spoke-complete.md)。
-
-**停止點：t=0、1、2、3 全排且 T4 迫 t≤3，完成唯一 degree-6
-root 的 ε=2 分支；同一來源若 ε=2，只剩兩個 degree-5 roots。**
-下一窄入口是相鄰雙 degree-5 的完整 Σ 來源稽核：確認既有共同
-分離對 933／941 的適用範圍，保持 mixed／no-mixed、原具名接點、
-完整 relations、actual supports／ownership 與同一色框。指定列
-出口不自動提升為完整候選排除。非相鄰雙 roots 與一般來源仍保留，
-共同下界維持 ε≥2，未證 ε≥3。停止於可證窄排除或具名必要殘留，
-不重開來源圖枚舉。先前 t=1 批成果見
-[進展整理與發布紀錄](history/2026-10-03-excess-progress-publish.md)。
-
-本線另保留一般 connectivity 限制、可迭代充分 state 及共同安全 repair 的缺口；
-不再把邊際配對、獨立 orbit 分解或一次 cut 重建當作一般解法。
-完整有序關係須共同對齊色框，保留同一原圖的 components、接線與操作身份。
-固定圖成功歷程不提供跨圖常數上界。這些其他問題未在本輪啟動新搜尋。
-單側與共同出口的當前接手點見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+本線另保留一般 connectivity、可迭代充分 state 及共同安全 repair
+的缺口。固定圖成功歷程不提供跨圖常數上界；一般單側／共同出口
+與 K∞=K≤5 未證，接手點見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
 
 ## 4. 閱讀與重播入口
 
-本次 t=3／t=0 的整理與實際重播見
-[唯一 degree-6 分支發布紀錄](history/2026-10-03-excess-two-degree-six-publish.md)。
+本批九輪的完成範圍、整理發現、實際重播與貼用摘要見
+[雙 root 進展整理與提交紀錄](history/2026-10-03-excess-two-dual-root-progress-commit.md)。
+最新先讀 [原 leaf 色纖維](c5_excess_two_mixed_core_leaf_fibers.md)，
+再讀 [單 spoke 原附件化約](c5_excess_two_mixed_core_single_spoke.md)
+與 [省略原 mixed](c5_excess_two_mixed_omission.md)；前置核心身份及
+刪 root／zw 化約由 §3 報告表往回追。各輪詳細驗證保留在報告所連研究紀錄。
 
-前序成果的發布範圍與實際重播見
-[2026-10-03 發布紀錄](history/2026-10-03-excess-progress-publish.md)；
-共同下界及前三個省略分支的前輪發布見
-[2026-10-02 發布紀錄](history/2026-10-02-excess-progress-publish.md)。
-
-933／941 先讀 [t=0 全分拆總報告](c5_excess_two_no_spoke_complete.md)及
-[本輪紀錄](history/2026-10-03-excess-two-no-spoke-complete.md)，再讀
-[t=3 全分拆總報告](c5_excess_two_three_spoke_complete.md)及
-[本輪紀錄](history/2026-10-03-excess-two-three-spoke-complete.md)，再讀
-[t=2 全分拆總報告](c5_excess_two_two_spoke_complete.md)及
-[本輪紀錄](history/2026-10-03-excess-two-two-spoke-complete.md)，再讀
-[兩 binary／首橋](c5_excess_two_two_spoke_binary.md)、
-[四接點／末端袋](c5_excess_two_two_spoke_four.md)及
-[ternary／unary profiles](c5_excess_two_two_spoke_ternary.md)。前序復用入口是
-[t=1 全分拆總報告](c5_excess_two_single_spoke_complete.md)及
-[本輪研究紀錄](history/2026-10-03-excess-two-single-spoke-complete.md)，再讀
-[短支援引理](c5_short_support_singleton.md)、[四接點＋unary](c5_excess_two_four_one.md)、
-[ternary／binary](c5_excess_two_ternary_binary.md)及 [五接點](c5_excess_two_five_contact.md)。
-原省略證書及前序入口：[t=1 binary 省略](c5_excess_two_single_spoke_binary.md)及
-[本輪研究紀錄](history/2026-10-03-excess-two-single-spoke-binary.md)，再讀 [t=1 兩 unary 省略](c5_excess_two_single_spoke_two_unary.md)及
-[本輪研究紀錄](history/2026-10-03-excess-two-single-spoke-two-unary.md)，再讀 [四原 unary 排除](c5_excess_two_four_unary.md)及
-[本輪研究紀錄](history/2026-10-03-excess-two-four-unary.md)，再讀 [t=2 binary＋兩 unary 型](c5_excess_two_binary_two_unary.md)及
-[本輪研究紀錄](history/2026-10-03-excess-two-binary-two-unary.md)，再讀 [t=2 兩 unary 省略排除](c5_excess_two_two_unary.md)及
-[本輪研究紀錄](history/2026-10-03-excess-two-two-unary.md)，再讀 [t=2 雙 binary 省略排除](c5_excess_two_two_binary.md)及
-[本輪研究紀錄](history/2026-10-02-excess-two-two-binary.md)，再讀 [binary 省略排除](c5_excess_two_binary_omission.md)及
-[本輪研究紀錄](history/2026-10-02-excess-two-binary-omission.md)，再讀 [三原 unary 共同扇區排除](c5_excess_two_three_unary.md)及
-[三 unary 研究紀錄](history/2026-10-02-excess-two-three-unary.md)，再讀 [t=3 triangle spoke＋unary 排除](c5_excess_two_three_spoke_unary.md)
-及[triangle 研究紀錄](history/2026-10-02-excess-two-three-spoke-unary.md)，前序見
-[t=2 spoke＋unary 排除](c5_excess_two_spoke_unary.md)、
-[雙 spoke 排除](c5_excess_two_double_spoke.md)，共同下界見
-[941 three-spoke／ε≥2](c5_941_three_spoke.md)，省略 witnesses 見
-[四容量子覆蓋](c5_excess_one_subcovers.md)，前提見
-[容量下界](c5_independent_support_capacity.md)。各階段重播入口如下；
-本輪實際範圍見 t=0 報告及研究紀錄：
+本批九份 checker 的固定證書重播：
 
 ```bash
-python3 scripts/c5_excess_two_no_spoke_reduction.py --check
-python3 scripts/c5_excess_two_no_spoke_four_two.py --check
-python3 scripts/c5_excess_two_three_spoke_binary.py --check
-python3 scripts/c5_excess_two_three_spoke_ternary.py --check
-python3 scripts/c5_excess_two_two_spoke_binary.py --check
-python3 scripts/c5_excess_two_two_spoke_four.py --check
-python3 scripts/c5_excess_two_two_spoke_ternary.py --check
-python3 scripts/c5_single_spoke_first_bridge.py --check
-python3 scripts/c5_single_spoke_residual_locality.py --check
-python3 scripts/c5_short_support_singleton.py --check
-python3 scripts/c5_excess_two_five_contact.py --check
-python3 scripts/c5_excess_two_four_one.py --check
-python3 scripts/c5_excess_two_ternary_binary.py --check
-python3 scripts/c5_excess_two_ternary_two_unary.py --check
-python3 scripts/c5_excess_two_binary_three_unary.py --check
-python3 scripts/c5_excess_two_five_unary.py --check
-python3 scripts/c5_excess_two_single_spoke_binary.py --check
-python3 scripts/c5_excess_two_single_spoke_two_unary.py --check
-python3 scripts/c5_excess_two_four_unary.py --check
-python3 scripts/c5_excess_two_binary_two_unary.py --check
-python3 scripts/c5_excess_two_two_unary.py --check
-python3 scripts/c5_excess_two_two_binary.py --check
-python3 scripts/c5_excess_two_binary_omission.py --check
-python3 scripts/c5_excess_two_three_unary.py --check
-python3 scripts/c5_excess_two_three_spoke_unary.py --check
-python3 scripts/c5_excess_two_spoke_unary.py --check
-python3 scripts/c5_excess_two_double_spoke.py --check
-python3 scripts/c5_941_three_spoke.py --check
-python3 scripts/c5_941_two_spoke.py --check
-python3 scripts/c5_941_single_spoke.py --check
-python3 scripts/c5_excess_one_subcovers.py --check
-python3 scripts/c5_independent_support_capacity.py --check
-python3 scripts/c5_single_spoke_root_conservation.py --check
+PYTHONHASHSEED=17 python3 scripts/c5_excess_two_root_deletions.py --check
+PYTHONHASHSEED=17 python3 scripts/c5_excess_two_path_edge.py --check
+PYTHONHASHSEED=17 python3 scripts/c5_excess_two_triangle_edge.py --check
+PYTHONHASHSEED=17 python3 scripts/c5_excess_two_mixed_core_spokes.py --check
+PYTHONHASHSEED=17 uv run --with networkx==3.5 python scripts/c5_excess_two_mixed_core_spoke_unary.py --check
+PYTHONHASHSEED=17 uv run --with networkx==3.5 python scripts/c5_excess_two_mixed_core_two_unary.py --check
+PYTHONHASHSEED=17 uv run --with networkx==3.5 python scripts/c5_excess_two_mixed_omission.py --check
+PYTHONHASHSEED=17 uv run --with networkx==3.5 python scripts/c5_excess_two_mixed_core_single_spoke.py --check
+PYTHONHASHSEED=17 uv run --with networkx==3.5 python scripts/c5_excess_two_mixed_core_leaf_fibers.py --check
 ```
 
-先讀 screen／座標與循環流的必要條件，再讀有序重接的一步公式和反例；
-策略路線由 barriers 接到 repair interface。各報告列出 checker 與 artifact，
-重播時使用原報告指定範圍，不把生成器當成只讀檢查。
-循環流的當輪驗證見 [2026-09-27 紀錄](history/2026-09-27-circulation.md)。
+前序唯一 degree-6 分支依序讀 [t=0](c5_excess_two_no_spoke_complete.md)、
+[t=3](c5_excess_two_three_spoke_complete.md)、
+[t=2](c5_excess_two_two_spoke_complete.md)、
+[t=1](c5_excess_two_single_spoke_complete.md) 的全分拆總報告，
+再追各報告所連原省略證書、[短支援引理](c5_short_support_singleton.md)、
+原首橋及末端區塊。共同下界見 [941 ε≥2](c5_941_three_spoke.md)，
+minimality 前提見 [容量下界](c5_independent_support_capacity.md)。
+前序實際發布範圍見 [唯一 degree-6](history/2026-10-03-excess-two-degree-six-publish.md)、
+[t=2](history/2026-10-03-excess-two-two-spoke-publish.md)、
+[t=1](history/2026-10-03-excess-progress-publish.md) 的紀錄；沿用證據不等於本輪重跑。
+
+其他路線先讀 screen／座標與循環流的必要條件，再讀有序重接的一步
+公式和反例；策略由 barriers 接到 repair interface。各報告列出
+checker 與 artifact，使用原報告指定範圍，生成器會寫檔。
+循環流驗證見 [2026-09-27 紀錄](history/2026-09-27-circulation.md)。
 紙面推導、Python 固定域證書與個別 Lean 代數結果分開；未形式化平面來源排除。

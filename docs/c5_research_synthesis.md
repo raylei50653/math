@@ -1,8 +1,9 @@
 # C₅ 全線進展與高階假設整合
 
 **後續整理（2026-10-03）**：933／941 的固定完整 Σ、edge-minimal
-C₅ disk 來源均已證 ε≥2。最新 ε=2 成果限於唯一 degree-6 root，
-保留同一原分量、全部原附件、具名有序接點、實際支援及共同色框。
+induced-C₅ disk 來源均已證 ε≥2。唯一 degree-6 的 ε=2 分支已全排；
+後續九輪已推進雙 degree-5 roots，保持同一原分量、全部原附件、
+具名有序接點、實際支援、原嵌入及共同色框。
 
 | 分支 | 後續完成範圍與保留界線 |
 | --- | --- |
@@ -11,12 +12,18 @@ C₅ disk 來源均已證 ε≥2。最新 ε=2 成果限於唯一 degree-6 root�
 | t=3 全三分拆 | [整型來源全部排除](c5_excess_two_three_spoke_complete.md)：(2,1) 的十份具名配置／8,250 同源 profiles 全無目標，(3) 的 100 容量比較與三 unary 六跨度矛盾完成其餘分拆；原 binary 省略證書保留 |
 | t=0 全十一分拆 | [整型來源全部排除](c5_excess_two_no_spoke_complete.md)：真實外部路徑恢復多分量跨度，(6) 由飽和兩原 K₄ 給 K₅；(4,2) 的 7,200 弱 profiles 由 160 同源 binary 路徑框弧證書全排 |
 | t=3 spoke＋unary 省略 | [三原 unary 共同扇區](c5_excess_two_three_unary.md)完成 path／tail，連同原 triangle 位置關閉整份條件分支 |
+| 雙 roots 的原刪除與 zw 接回 | [原刪 root](c5_excess_two_root_deletions.md)至少一份全收，另一份至多缺一列；相鄰 mixed 兩份均全收。[原路徑](c5_excess_two_path_edge.md)與[單 triangle](c5_excess_two_triangle_edge.md)完成剩餘接回，因此相鄰 mixed 有 Σ(G−zw)=Ω |
+| 相鄰唯一 mixed 的 (4,4) q-core | [原身份／雙 spoke](c5_excess_two_mixed_core_spokes.md)、[spoke＋unary](c5_excess_two_mixed_core_spoke_unary.md)、[雙 unary](c5_excess_two_mixed_core_two_unary.md)及[省略原 mixed](c5_excess_two_mixed_omission.md)全部封閉；(5,4)/(4,5) 與原 (5,5) core 仍保留 |
+| 相鄰唯一 mixed 的原單 spoke 與五-spoke 型 | [單省略](c5_excess_two_mixed_core_single_spoke.md)若拒絕，省略圖自己是唯一 degree-5 minimal core；[原 leaf joint 纖維及同一 unary 雙列 palette](c5_excess_two_mixed_core_leaf_fibers.md)全排五-spoke 原來源，兩候選總 spokes 都≤4；單省略尚未整型排除 |
 
 上述為任意大小紙面論證＋Python 固定必要域證書，未新增 Lean theorem，
-未提高共同下界至 ε≥3。ε=2 只剩兩個 degree-5 roots；一般來源、
-一般出口與 K∞=K≤5 仍保留。現況與下一窄題見 [Kempe 導覽](c5_kempe_guide.md)，
-同前提下 t=0、1、2、3 全排且 T4 迫 t≤3，完成唯一 degree-6 分支。
-最新重播與發布範圍見 [t=3／t=0 發布紀錄](history/2026-10-03-excess-two-degree-six-publish.md)，
+未提高共同下界至 ε≥3。ε=2 只剩兩個 degree-5 roots；目前選定四-spoke
+(3,1) 及 root 交換中的 mixed incidence-(1,1) 加兩原 unary 子型。
+其餘四-spoke／較少 spokes、單省略、原 (5,5) q-core、多 mixed、
+no-mixed、非相鄰 roots 及一般來源均仍保留；一般出口與 K∞=K≤5 未證。
+現況與下一窄題見 [Kempe 導覽](c5_kempe_guide.md)。
+最新重播與提交範圍見 [雙 root 整理紀錄](history/2026-10-03-excess-two-dual-root-progress-commit.md)，
+前序唯一 degree-6 見 [t=3／t=0 發布紀錄](history/2026-10-03-excess-two-degree-six-publish.md)，
 前序 t=2 批見 [發布紀錄](history/2026-10-03-excess-two-two-spoke-publish.md)，
 前序 t=1 批見 [發布紀錄](history/2026-10-03-excess-progress-publish.md)。
 下文保留 `b97b107` 當輪的跨線快照及實驗提案，其「未解」依後續成果閱讀。
