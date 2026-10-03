@@ -13,7 +13,7 @@
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
-| 933／941 的 excess／容量／跨度 | 兩候選均已證 ε≥2。唯一 degree-6 root 的 t=1 七分拆及 t=2 五分拆均已作整型來源排除；t=2 復用原短支援、共同 active forest、singleton profiles 與首橋局部 residual。同前提下 t∉{1,2}；任意大小紙面＋Python、未 Lean 化，其餘 ε=2 與一般來源保留 | [t=2 全分拆總報告](c5_excess_two_two_spoke_complete.md)、[t=1 全分拆總報告](c5_excess_two_single_spoke_complete.md)、[短支援引理](c5_short_support_singleton.md)、[t=3 binary 省略](c5_excess_two_binary_omission.md)、[941 ε≥2](c5_941_three_spoke.md) |
+| 933／941 的 excess／容量／跨度 | 兩候選均已證 ε≥2。唯一 degree-6 root 的 t=0、1、2、3 全部分拆均已作整型來源排除，T4 迫 t≤3，完成此 ε=2 分支。t=0 的 (6) 用飽和兩 K₄，(4,2) 用原 binary 路徑的同源框弧 K₅；若 ε=2，只剩兩個 degree-5 roots。任意大小紙面＋Python、未 Lean 化，一般來源保留 | [t=0 全分拆總報告](c5_excess_two_no_spoke_complete.md)、[t=3 全分拆總報告](c5_excess_two_three_spoke_complete.md)、[t=2 全分拆總報告](c5_excess_two_two_spoke_complete.md)、[t=1 全分拆總報告](c5_excess_two_single_spoke_complete.md)、[941 ε≥2](c5_941_three_spoke.md) |
 | Kempe screen／邊位置對座標 | screen 等價於 20 條蘊涵，1,024 masks 已核對；未新增排除，一般 adjacent-singleton lemma 未證 | [screen](c5_kempe_screen.md)、[座標](c5_edge_pair_coordinates.md) |
 | 循環流與計數 | 六維／153 支撐／十二循環；36 份基底覆蓋證三套分開整數 orbit 條件不再收緊恆等式解；未排除平面來源 | [循環流](c5_circulation.md) |
 | Count cone／class 計數 | near-triangulation 化約、部分 Lean 代數與 class 級紙面計數已有；cone／connectivity 缺口仍在 | [count cone](c5_count_cone_bridge.md)、[B₅ face](c5_b5_face.md)、[class 計數](c5_kempe_class_counts.md) |
@@ -68,7 +68,8 @@ degree-6、t=3 候選省略任一原 unary 及任一原 spoke 都必全收 Ω。
 共同支援弧的不重疊是必要新增資訊。983,025 次完整四接點接合控制通過。
 詳見 [binary 省略報告](c5_excess_two_binary_omission.md)。因此該型所有容量二
 省略均全收，若來源存在，每個 minimal rejected-row core 都須有 degree≥5。
-這沒有排除整份 (2,1) 或提高共同 ε≥2 下界。
+前序只排除省略分支；整份 (2,1) 已由下述 t=3 合成報告排除，
+共同 ε≥2 下界維持。
 
 **t=2、(2,2) 的原 binary 省略分支亦已排除**：398 個具名原 root
 位置的 3,980 個候選比較先剩 90 個；原核心的明確 apex K₃,₃ 排除
@@ -123,13 +124,36 @@ D 分量，其固定支援恰為三個連續框點，所有拒絕 singleton 位�
 及 [本輪紀錄](history/2026-10-03-excess-two-two-spoke-complete.md)；
 整理與發布重播見 [發布紀錄](history/2026-10-03-excess-two-two-spoke-publish.md)。
 
-**停止點：同一來源前提下 t∉{1,2}；下一窄問題為 t=3、(2,1)
-整型來源。** 原 binary 省略已全收，但不能以此代替整型反證。
-先保留兩原分量、原有序 contacts、三條 spokes 的共同扇區、真實
-支援端點及同一色框，檢查 t=2 的首橋／局部 residual 工具是否適用。
-停止於可證整型排除或具名必要殘留，不重開來源圖枚舉。其餘 t、
-兩個 degree-5 roots（含 mixed）及一般來源仍保留；共同下界維持
-ε≥2。先前 t=1 批成果見 [進展整理與發布紀錄](history/2026-10-03-excess-progress-publish.md)。
+**t=3 的三種原分拆亦已作整型來源排除。** (1,1,1) 由三份固定
+支援的六跨度矛盾排除。(2,1) 的兩份支援各跨度至少二，三 spokes
+迫 (1,2,2) 扇區，各原分量占一個長度二區。十份具名配置的 8,250
+份同框十列 S₄ profiles 全無目標；甚至 1,800 份 T4 全收的 profiles
+至多缺一列。不需首橋、原省略全收或 D 身份 screen；逐列獨立選
+禁色的 100 份對照仍全有選項，保留原分量跨列身份是排除關鍵。
+(3) 的 ternary 至多禁一色，三 spokes 虹彩的必要位置直接排除
+100 份目標比較。詳見 [t=3 合成報告](c5_excess_two_three_spoke_complete.md)
+及 [本輪紀錄](history/2026-10-03-excess-two-three-spoke-complete.md)。
+
+**t=0 的十一原分拆也已作整型來源排除。** 多分量以另一原分量的
+真實 root–B 路徑恢復外部 hub，短支援與環狀次序迫至多兩分量；
+(5,1)、(3,3) 由容量排除。(6) 不假設外部連通，四 palettes 迫
+飽和兩個原 K₄ 及單 bridge，六條 contacts 直接給 K₅。(4,2) 的
+20 份具名環狀包絡／200 查詢先留 7,200 個同源 profiles；160 組
+原 binary 拒絕列 schemas 的共同袋支援均有兩框弧 K₅，全排。
+四接點 relation、另一原分量的實際端點及共同字面色框保留，
+不需四接點 active forest、首橋或 D 身份 screen。詳見
+[t=0 合成報告](c5_excess_two_no_spoke_complete.md)及
+[本輪紀錄](history/2026-10-03-excess-two-no-spoke-complete.md)。
+
+**停止點：t=0、1、2、3 全排且 T4 迫 t≤3，完成唯一 degree-6
+root 的 ε=2 分支；同一來源若 ε=2，只剩兩個 degree-5 roots。**
+下一窄入口是相鄰雙 degree-5 的完整 Σ 來源稽核：確認既有共同
+分離對 933／941 的適用範圍，保持 mixed／no-mixed、原具名接點、
+完整 relations、actual supports／ownership 與同一色框。指定列
+出口不自動提升為完整候選排除。非相鄰雙 roots 與一般來源仍保留，
+共同下界維持 ε≥2，未證 ε≥3。停止於可證窄排除或具名必要殘留，
+不重開來源圖枚舉。先前 t=1 批成果見
+[進展整理與發布紀錄](history/2026-10-03-excess-progress-publish.md)。
 
 本線另保留一般 connectivity 限制、可迭代充分 state 及共同安全 repair 的缺口；
 不再把邊際配對、獨立 orbit 分解或一次 cut 重建當作一般解法。
@@ -139,12 +163,19 @@ D 分量，其固定支援恰為三個連續框點，所有拒絕 singleton 位�
 
 ## 4. 閱讀與重播入口
 
-本批成果的發布範圍與實際重播見
+本次 t=3／t=0 的整理與實際重播見
+[唯一 degree-6 分支發布紀錄](history/2026-10-03-excess-two-degree-six-publish.md)。
+
+前序成果的發布範圍與實際重播見
 [2026-10-03 發布紀錄](history/2026-10-03-excess-progress-publish.md)；
 共同下界及前三個省略分支的前輪發布見
 [2026-10-02 發布紀錄](history/2026-10-02-excess-progress-publish.md)。
 
-933／941 先讀 [t=2 全分拆總報告](c5_excess_two_two_spoke_complete.md)及
+933／941 先讀 [t=0 全分拆總報告](c5_excess_two_no_spoke_complete.md)及
+[本輪紀錄](history/2026-10-03-excess-two-no-spoke-complete.md)，再讀
+[t=3 全分拆總報告](c5_excess_two_three_spoke_complete.md)及
+[本輪紀錄](history/2026-10-03-excess-two-three-spoke-complete.md)，再讀
+[t=2 全分拆總報告](c5_excess_two_two_spoke_complete.md)及
 [本輪紀錄](history/2026-10-03-excess-two-two-spoke-complete.md)，再讀
 [兩 binary／首橋](c5_excess_two_two_spoke_binary.md)、
 [四接點／末端袋](c5_excess_two_two_spoke_four.md)及
@@ -167,9 +198,14 @@ D 分量，其固定支援恰為三個連續框點，所有拒絕 singleton 位�
 [雙 spoke 排除](c5_excess_two_double_spoke.md)，共同下界見
 [941 three-spoke／ε≥2](c5_941_three_spoke.md)，省略 witnesses 見
 [四容量子覆蓋](c5_excess_one_subcovers.md)，前提見
-[容量下界](c5_independent_support_capacity.md)。最小重播：
+[容量下界](c5_independent_support_capacity.md)。各階段重播入口如下；
+本輪實際範圍見 t=0 報告及研究紀錄：
 
 ```bash
+python3 scripts/c5_excess_two_no_spoke_reduction.py --check
+python3 scripts/c5_excess_two_no_spoke_four_two.py --check
+python3 scripts/c5_excess_two_three_spoke_binary.py --check
+python3 scripts/c5_excess_two_three_spoke_ternary.py --check
 python3 scripts/c5_excess_two_two_spoke_binary.py --check
 python3 scripts/c5_excess_two_two_spoke_four.py --check
 python3 scripts/c5_excess_two_two_spoke_ternary.py --check

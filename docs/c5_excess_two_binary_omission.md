@@ -3,6 +3,10 @@
 **後續（2026-10-02）**：[t=2、(2,2) 原 binary 省略分支](c5_excess_two_two_binary.md)
 亦已排除；兩份 binary 省略均全收。下文保留本輪 t=3 的證據與範圍。
 
+**後續（2026-10-03）**：[t=3 全分拆排除](c5_excess_two_three_spoke_complete.md)
+復用原短支援、三 spoke 扇區及同源 S₄ profiles，完成整份 (2,1)
+來源排除，不需要本頁省略限制；原省略證書及其範圍保持。
+
 2026-10-02，基準 `bbd900a`，接續工作樹的
 [三原 unary 排除](c5_excess_two_three_unary.md)。現況及後續入口見
 [Kempe 導覽](c5_kempe_guide.md)，本輪重播見

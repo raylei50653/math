@@ -1,5 +1,10 @@
 # 短支援：兩／三個外部 hubs 的 Gallai K₅ 排除
 
+**後續（2026-10-03）**：[t=0 全分拆報告 §2](c5_excess_two_no_spoke_complete.md#2-無-spoke-的真實外部-hub-與共同跨度)
+核對無原 spoke 的適用範圍：同一原圖的外部路徑 L 亦恢復 K₄ 排除
+所需的連通 hub，因此本頁兩／三 hub 證明不再需要額外直接 spoke。
+下文保留原前提與控制；沒有改寫舊證書或宣稱所有無 spoke 圖皆有 L。
+
 2026-10-03，接續 [完整接點介面](c5_degree5_interfaces.md)、
 [同 root 支援跨度](c5_independent_support_capacity.md)及
 [原路徑 frame-arc K₅](c5_single_spoke_frame_arc.md)。目前停止點及

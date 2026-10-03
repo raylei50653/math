@@ -1,5 +1,11 @@
 # ε=2：唯一 degree-6 root 的 t=2 全部分拆排除
 
+**後續（2026-10-03）**：[t=3 全分拆排除](c5_excess_two_three_spoke_complete.md)
+已完成當輪留下的 (2,1) 整型及其餘 t=3 分拆。同前提下 t∉{1,2,3}，
+後續 [t=0 全分拆排除](c5_excess_two_no_spoke_complete.md)亦已完成，
+T4 迫 t≤3，唯一 degree-6 的 ε=2 分支全部排除，只剩雙 degree-5 roots；
+下文保留當輪證據與停止點。
+
 2026-10-03，接手基準 `1d32997`。接續
 [t=1 全分拆排除](c5_excess_two_single_spoke_complete.md)，復用其原支援、
 完整關係及 active 結構工具。研究入口見 [Kempe 導覽](c5_kempe_guide.md)，
