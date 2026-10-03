@@ -164,7 +164,14 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [ε=2 唯一 mixed 原 leaf 色纖維與五-spoke 排除](c5_excess_two_mixed_core_leaf_fibers.md) | 八份具名附件共同化到998／1004；完整 (b,a,y,u) 接合迫同一原 unary 雙列只取0，palette 比較及原圖 K₅ 排除全部五-spoke來源。兩候選總 spokes 都≤4；450 全圖接合／7,200 pinned 色纖維、24 extracted K₅ 控制。接續四-spoke (3,1) 的 mixed (1,1) 加兩 unary 型；單省略尚未全排，紙面＋Python，ε≥3 未證，未 Lean 化 |
+| [ε=2 四-spoke (2,2) 共用原 pair 的 sealed mixed](c5_excess_two_mixed_core_four_spoke_equal_pair.md) | mixed-(1,1) 加各側一原 unary，共用 spokes 的 diamond 封 C 在一個原三角；既有三-hub 延拓接 G−C 全收，排除 7／9 份，含 01／01 及 root 交換。unequal pairs 仍有 40／66 份，未完成整個子型。36 完整 degree 圖、2,520 joints／40,320 fibres；紙面＋Python，ε≥3 未證，未 Lean 化 |
+| [ε=2 四-spoke (3,1) 原 mixed-(1,3) 四接點 leaf-slack](c5_excess_two_mixed_core_four_spoke_quaternary.md) | 原 K=C+a 的四 contacts 要求三禁色，marked leaf 迫至多二；原 spanning-tree 貪婪構造 G／M 延拓，20／60 框架全排，含 root 交換。80 完整 degree 圖、2,400 joints／38,400 纖維、2,400 貪婪 witnesses；結合前三子型封閉全部 (3,1) incidence 分拆。(2,2) 保留，紙面＋Python，ε≥3 未證，未 Lean 化 |
+| [ε=2 四-spoke (3,1) 原 mixed-(1,2) 三接點身份排除](c5_excess_two_mixed_core_four_spoke_ternary.md) | 同色原 spoke 省略後 M 自己 minimal，M−b保留原K=C+a的(a,y₀,y₁)與U；既有active-triangle K₅／leaf slack全排20／60框架，含root交換。200 queries、2,000 D₅、320 marked minors、50完整degree圖、1,500 joints／24,000纖維。後續mixed-(1,3)亦全排，(3,1)全incidence完成；紙面＋Python，ε≥3未證，未Lean化 |
+| [ε=2 四-spoke binary 同列端點 hub 整型排除](c5_excess_two_mixed_core_four_spoke_hubs.md) | 原32／64具名域全部由保degree的同色端點hub及二／三hub Gallai K₅排除，含root交換，完成mixed-(1,1)加一原binary unary子型。192原queries、10,752完整U schemas、2,208 tightness、42完整degree圖／原K₅。不需新跨列palette定理，ε≥3未證，紙面＋Python，未Lean化 |
+| [ε=2 四-spoke binary 原 star 的同源扇區排除](c5_excess_two_mixed_core_four_spoke_star.md) | 原a-star／連通H−a將116／256縮至32／64，276 subdivisions與24原degree圖；後續同列端點hub已排除全部殘留及整個binary子型。原012／0作K₃,₃排除，原star證書保留；ε≥3及跨列palette定理未證，紙面＋Python，未Lean化 |
+| [ε=2 四-spoke (3,1) 一原 binary 的 marked-leaf 化約](c5_excess_two_mixed_core_four_spoke_binary.md) | 完整leaf反像與原C對角pair／偶數bridge給116／256域，star後32／64已由同列端點hub整型排除。720全圖joints、11,520 pinned纖維、原證書及單列代數資料保留；ε≥3未證，紙面＋Python，未Lean化 |
+| [ε=2 四-spoke (3,1) 兩原 unary 六跨度排除](c5_excess_two_mixed_core_four_spoke_singles.md) | mixed-(1,1) 加兩單接點 unary 及 root 交換全排；原 critical witnesses、短支援外路徑與共同 lifts 給6≤5。288 同源支援域、46,305 支援核對、360 全圖 joints／5,760 pinned 纖維。後續已完成 (3,1) 全分拆；舊 byte-check 有一文件 hash 漂移，完整數學 payload audit 相同，原證書保留。紙面＋Python，ε≥3 未證，未 Lean 化 |
+| [ε=2 唯一 mixed 原 leaf 色纖維與五-spoke 排除](c5_excess_two_mixed_core_leaf_fibers.md) | 八份具名附件共同化到998／1004；完整 (b,a,y,u) 接合迫同一原 unary 雙列只取0，palette 比較及原圖 K₅ 排除全部五-spoke來源。兩候選總 spokes 都≤4；450 全圖接合／7,200 pinned 色纖維、24 extracted K₅ 控制。選定的四-spoke 兩 unary 子型已由後續排除；單省略尚未全排，紙面＋Python，ε≥3 未證，未 Lean 化 |
 | [ε=2 唯一 mixed 單 spoke 省略原附件化約](c5_excess_two_mixed_core_single_spoke.md) | 省略圖若拒絕便自己是唯一 degree-5 minimal core；8／6 child masks 與同色原 spoke 身份限制。666 骨架／58 subdivisions、五-spoke 原形給933≤4、941≤5；剩下四組941附件及 root交換已由後續原 leaf／unary 雙列比較全排。60 完整接合／960 pinned 查詢；單省略仍保留，紙面＋Python，ε≥3 未證，未 Lean 化 |
 | [ε=2 唯一 mixed 省略原 mixed 必全收](c5_excess_two_mixed_omission.md) | 344 保留原 bridge roots 的必要核心／3,440 目標比較；9,152 固定支援查詢經 8,508 跨列衝突與 188 明示收縮星 subdivisions 全排。Σ(G−C)=Ω，完成相鄰唯一 mixed 的全部 (4,4) 核心身份；後續單 spoke 原附件化約已推進，(5,4)/(4,5)/(5,5) 仍保留。紙面＋Python，共同 ε≥2 不變，未 Lean 化 |
 | [ε=2 唯一 mixed 兩側原 unary 省略全收](c5_excess_two_mixed_core_two_unary.md) | 5,700 目標比較／2,184,192 支援對必要比較全排，實際 386,048 互異查詢保存 UNSAT proofs／assignments；100,859 代數相容者由 3,180 明示雙收縮星 subdivisions 全排。完成 (4,4) 保留 mixed 全身份；只省略原 mixed 後續亦全排。1,282,500 完整雙接合、64 原雙 unary 圖，紙面＋Python，共同 ε≥2 不變，未 Lean 化 |
@@ -355,7 +362,15 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-03：ε=2 四-spoke 七輪進展整理與發布](history/2026-10-03-excess-two-four-spoke-progress-publish.md)
+- [2026-10-03：ε=2 四-spoke (2,2) 共用原 pair 的 sealed mixed 窄排除](history/2026-10-03-excess-two-four-spoke-equal-pair.md)
+- [2026-10-03：ε=2 四-spoke 原 mixed-(1,3) 四接點 leaf-slack 排除](history/2026-10-03-excess-two-four-spoke-quaternary.md)
+- [2026-10-03：ε=2 四-spoke 原 mixed-(1,2) 三接點身份整型排除](history/2026-10-03-excess-two-four-spoke-ternary.md)
+- [2026-10-03：ε=2 四-spoke binary 同列端點 hub 整型排除](history/2026-10-03-excess-two-four-spoke-hubs.md)
+- [2026-10-03：ε=2 四-spoke binary 原 star 的同源扇區排除](history/2026-10-03-excess-two-four-spoke-star.md)
 - [2026-10-03：ε=2 雙 degree-5 root 九輪進展整理與提交](history/2026-10-03-excess-two-dual-root-progress-commit.md)
+- [2026-10-03：ε=2 四-spoke (3,1) 一原 binary 的 marked-leaf 必要化約](history/2026-10-03-excess-two-four-spoke-binary.md)
+- [2026-10-03：ε=2 四-spoke (3,1) 兩原 unary 六跨度排除](history/2026-10-03-excess-two-four-spoke-singles.md)
 - [2026-10-03：ε=2 唯一 mixed 的原 leaf 色纖維與五-spoke 排除](history/2026-10-03-excess-two-mixed-core-leaf-fibers.md)
 - [2026-10-03：ε=2 唯一 mixed 的單 spoke 原附件化約](history/2026-10-03-excess-two-mixed-core-single-spoke.md)
 - [2026-10-03：ε=2 唯一 mixed 的省略原 mixed 全收](history/2026-10-03-excess-two-mixed-omission.md)

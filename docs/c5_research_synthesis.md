@@ -2,7 +2,7 @@
 
 **後續整理（2026-10-03）**：933／941 的固定完整 Σ、edge-minimal
 induced-C₅ disk 來源均已證 ε≥2。唯一 degree-6 的 ε=2 分支已全排；
-後續九輪已推進雙 degree-5 roots，保持同一原分量、全部原附件、
+後續雙 root 九輪及四-spoke 七輪已推進雙 degree-5 roots，保持同一原分量、全部原附件、
 具名有序接點、實際支援、原嵌入及共同色框。
 
 | 分支 | 後續完成範圍與保留界線 |
@@ -15,14 +15,30 @@ induced-C₅ disk 來源均已證 ε≥2。唯一 degree-6 的 ε=2 分支已全
 | 雙 roots 的原刪除與 zw 接回 | [原刪 root](c5_excess_two_root_deletions.md)至少一份全收，另一份至多缺一列；相鄰 mixed 兩份均全收。[原路徑](c5_excess_two_path_edge.md)與[單 triangle](c5_excess_two_triangle_edge.md)完成剩餘接回，因此相鄰 mixed 有 Σ(G−zw)=Ω |
 | 相鄰唯一 mixed 的 (4,4) q-core | [原身份／雙 spoke](c5_excess_two_mixed_core_spokes.md)、[spoke＋unary](c5_excess_two_mixed_core_spoke_unary.md)、[雙 unary](c5_excess_two_mixed_core_two_unary.md)及[省略原 mixed](c5_excess_two_mixed_omission.md)全部封閉；(5,4)/(4,5) 與原 (5,5) core 仍保留 |
 | 相鄰唯一 mixed 的原單 spoke 與五-spoke 型 | [單省略](c5_excess_two_mixed_core_single_spoke.md)若拒絕，省略圖自己是唯一 degree-5 minimal core；[原 leaf joint 纖維及同一 unary 雙列 palette](c5_excess_two_mixed_core_leaf_fibers.md)全排五-spoke 原來源，兩候選總 spokes 都≤4；單省略尚未整型排除 |
+| 四-spoke (3,1) 的 mixed-(1,1) 加兩單接點 unary | [原三分量六跨度排除](c5_excess_two_mixed_core_four_spoke_singles.md)：原 critical witnesses 與短支援外路徑迫各跨度至少二，同一原圖共同 lifts 只有五段，含 root 交換；完整五點 joint 保留 |
+| 四-spoke (3,1) 的 mixed-(1,1) 加一原 binary unary | [原 leaf 完整反像](c5_excess_two_mixed_core_four_spoke_binary.md)與[原 star](c5_excess_two_mixed_core_four_spoke_star.md)保留的32／64份，由[同列端點 hub](c5_excess_two_mixed_core_four_spoke_hubs.md)全部作二／三hub Gallai K₅來源排除；含root交換，原完整relations保留，整個子型已排除 |
+| 四-spoke (3,1) 的 mixed-(1,2) 加一原單接點 unary | [原三接點身份排除](c5_excess_two_mixed_core_four_spoke_ternary.md)：同色省略後 M 自己是 minimal (3,1) q-core，整份原 C+a 的 (a,y₀,y₁) 接上既有 active-triangle K₅；20／60具名框架全部排除，含root交換，完整六點joint／原ternary保留 |
+| 四-spoke (3,1) 的 mixed-(1,3) 無 unary | [原四接點 leaf-slack](c5_excess_two_mixed_core_four_spoke_quaternary.md)：唯一原 K=C+a 的四 contacts 要求三禁色，marked leaf 迫至多二；原 spanning-tree 貪婪直接給 M／G 延拓，20／60 框架全排，含 root 交換；結合前三子型完成 (3,1) 全部四份 incidence 分拆 |
+| 四-spoke (2,2) 的 mixed-(1,1) 加各側一 unary：共用 pair | [原三角 sealed mixed](c5_excess_two_mixed_core_four_spoke_equal_pair.md)：原 diamond 封 C 在一個原三角區域，既有三-hub 延拓接 G−C 全收，排除共用 pair 的 7／9 份，含 root 交換；40／66 unequal-pair 必要框架仍保留，完整六點 joint 及空纖維保存 |
 
 上述為任意大小紙面論證＋Python 固定必要域證書，未新增 Lean theorem，
-未提高共同下界至 ε≥3。ε=2 只剩兩個 degree-5 roots；目前選定四-spoke
-(3,1) 及 root 交換中的 mixed incidence-(1,1) 加兩原 unary 子型。
-其餘四-spoke／較少 spokes、單省略、原 (5,5) q-core、多 mixed、
+未提高共同下界至 ε≥3。ε=2 只剩兩個 degree-5 roots；四-spoke (3,1)
+在相鄰唯一 mixed 前提下，全部四份原 incidence 分拆及 root 交換
+已封閉。上表分列共同跨度、同列端點 hub、三接點身份與四接點
+leaf-slack 的證明入口，沒有新增跨列 palette 定理。
+
+(2,2)、mixed-(1,1) 加各側一原單接點 unary 已排除共用 spoke-pair
+的 7／9 份；unequal pairs 尚有 40／66 份，其中共用一框點者
+26／48、不相交者 14／18。整個子型未完成，下一具名入口仍為
+01／02：保留原 R_C／R_U／R_V 及同框六點 joint，分析原 C 所在
+face 的實際支援包絡。分組與具名 provenance 由整理 audit 保存。
+其餘 (2,2) incidence／較少 spokes、單省略、原 (5,5) q-core、多 mixed、
 no-mixed、非相鄰 roots 及一般來源均仍保留；一般出口與 K∞=K≤5 未證。
 現況與下一窄題見 [Kempe 導覽](c5_kempe_guide.md)。
-最新重播與提交範圍見 [雙 root 整理紀錄](history/2026-10-03-excess-two-dual-root-progress-commit.md)，
+本批整理、具名殘留分組及文件漂移核對見
+[四-spoke 七輪整理與發布紀錄](history/2026-10-03-excess-two-four-spoke-progress-publish.md)；
+最新研究見 [四-spoke 共用 pair 窄排除紀錄](history/2026-10-03-excess-two-four-spoke-equal-pair.md)；
+前序提交範圍見 [雙 root 整理紀錄](history/2026-10-03-excess-two-dual-root-progress-commit.md)，
 前序唯一 degree-6 見 [t=3／t=0 發布紀錄](history/2026-10-03-excess-two-degree-six-publish.md)，
 前序 t=2 批見 [發布紀錄](history/2026-10-03-excess-two-two-spoke-publish.md)，
 前序 t=1 批見 [發布紀錄](history/2026-10-03-excess-progress-publish.md)。

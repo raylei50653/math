@@ -1,5 +1,13 @@
 # ε=2 唯一 mixed：原 leaf 色纖維與五-spoke 來源排除
 
+**後續（2026-10-03）**：[四-spoke 兩原 unary 的六跨度排除](c5_excess_two_mixed_core_four_spoke_singles.md)
+已完成本頁選定的 (3,1)、mixed-(1,1) 加兩份單接點 unary 子型及
+root 交換；[同列端點 hub 排除](c5_excess_two_mixed_core_four_spoke_hubs.md)
+亦完成同型的一原 binary unary；[原三接點身份排除](c5_excess_two_mixed_core_four_spoke_ternary.md)
+再完成 mixed-(1,2) 加一原單接點 unary；[原四接點 leaf-slack](c5_excess_two_mixed_core_four_spoke_quaternary.md)
+亦已排除 mixed-(1,3) 無 unary，含 root 交換。相鄰唯一 mixed 的 (3,1)
+全部四份原 incidence 分拆封閉；下文保留當輪停止點。
+
 **提交整理（2026-10-03）**：本頁、checker 與研究紀錄的本次提交範圍、
 實際重播及整理發現見 [九輪進展紀錄](history/2026-10-03-excess-two-dual-root-progress-commit.md)。
 下文的未提交字句保留當輪語境；即時提交狀態以 Git 為準。
