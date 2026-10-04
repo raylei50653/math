@@ -1,0 +1,35 @@
+{
+  "scope": "Actual validation execution; documentation index integration is assigned to dispatcher.",
+  "checks": [
+    {
+      "label": "default replay",
+      "command": ".venv/bin/python scripts/c5_kempe_transport_table.py --check",
+      "exit_code": 0,
+      "stdout": "{\"control\": {\"alternating_blockers\": 0, \"disk_graphs\": 2, \"exhausted_P_vertices\": 1, \"fixed_source_K_counterexample\": false, \"hubs\": 0, \"other\": 4, \"rejected_colorings\": 4, \"stop_witness\": \"P1-witness-001\", \"stop_witness_mask\": 1012}, \"tables\": {\"933\": {\"alternating_joint_pairs\": 0, \"joint_endpoint_pairs\": 8, \"partitions\": 28, \"q_edge_entries_with_joint_pair\": 8, \"transport_records\": 20}, \"941\": {\"alternating_joint_pairs\": 0, \"joint_endpoint_pairs\": 16, \"partitions\": 21, \"q_edge_entries_with_joint_pair\": 13, \"transport_records\": 20}}}\nCHECK OK\n"
+    },
+    {
+      "label": "hash seed replay",
+      "command": "PYTHONHASHSEED=17 .venv/bin/python scripts/c5_kempe_transport_table.py --check",
+      "exit_code": 0,
+      "stdout": "{\"control\": {\"alternating_blockers\": 0, \"disk_graphs\": 2, \"exhausted_P_vertices\": 1, \"fixed_source_K_counterexample\": false, \"hubs\": 0, \"other\": 4, \"rejected_colorings\": 4, \"stop_witness\": \"P1-witness-001\", \"stop_witness_mask\": 1012}, \"tables\": {\"933\": {\"alternating_joint_pairs\": 0, \"joint_endpoint_pairs\": 8, \"partitions\": 28, \"q_edge_entries_with_joint_pair\": 8, \"transport_records\": 20}, \"941\": {\"alternating_joint_pairs\": 0, \"joint_endpoint_pairs\": 16, \"partitions\": 21, \"q_edge_entries_with_joint_pair\": 13, \"transport_records\": 20}}}\nCHECK OK\n"
+    },
+    {
+      "label": "documentation",
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 1,
+      "stdout": "not directly indexed by STATUS: docs/c5_shield_calibration.md\nnot directly indexed by STATUS: docs/c5_excess_rejection_law.md\nnot directly indexed by STATUS: docs/c5_kempe_transport.md\nnot directly indexed by STATUS: docs/c5_qcore_shield_budget.md\nFAIL: 4 errors (544 Markdown files, 5714 local links)\n"
+    },
+    {
+      "label": "docgraph",
+      "command": "python3 tools/docgraph check",
+      "exit_code": 0,
+      "stdout": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n"
+    },
+    {
+      "label": "whitespace",
+      "command": "git diff --check",
+      "exit_code": 0,
+      "stdout": ""
+    }
+  ]
+}

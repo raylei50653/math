@@ -2,7 +2,9 @@
 """Publish frozen audit bytes as deduplicated gzip blobs without changing originals.
 
 pack archives snapshots, files >= 1 MB, and historical text with whitespace
-diagnostics. restore recreates their exact paths; verify checks every blob and
+diagnostics. append adds later audits to an existing archive without touching
+archived paths (and, with --artifacts, the bytes of MANIFEST artifacts not yet
+archived). restore recreates their exact paths; verify checks every blob and
 every original. Small audit reports and active tools remain ordinary Git files.
 """
 from __future__ import annotations
@@ -50,10 +52,7 @@ def historical_whitespace(path):
     return value.endswith('\n\n') or any(line.rstrip() != line for line in value.splitlines())
 
 
-def pack(root):
-    index = root / INDEX
-    if index.exists():
-        raise ValueError('Archive index already exists; preserve the published version')
+def scan(root):
     records, sources = {}, {}
     for directory, dirs, names in os.walk(root / 'audits'):
         dirs[:] = sorted(d for d in dirs if d not in {'.archive', '__pycache__'}
@@ -63,6 +62,8 @@ def pack(root):
             if path.is_symlink() or path.suffix == '.pyc':
                 continue
             relative = path.relative_to(root).as_posix()
+            if relative == INDEX:
+                continue
             stat = path.stat()
             reason = ('snapshot' if {'snapshot', '.snapshot'} & set(path.relative_to(root).parts)
                       else 'large' if stat.st_size >= 1_000_000
@@ -73,6 +74,10 @@ def pack(root):
             sources.setdefault(sha, path)
             records[relative] = dict(sha256=sha, bytes=stat.st_size,
                                      mode=stat.st_mode & 0o777, reason=reason)
+    return records, sources
+
+
+def compress_all(root, sources):
     folder = root / BLOBS
     folder.mkdir(parents=True, exist_ok=True)
 
@@ -89,20 +94,75 @@ def pack(root):
                          sha256=digest(target), bytes=target.stat().st_size)
 
     with ThreadPoolExecutor(max_workers=4) as pool:
-        blobs = dict(pool.map(compress, sorted(sources.items())))
-    data = dict(schema=1, description=__doc__, files=dict(sorted(records.items())),
-                blobs=dict(sorted(blobs.items())))
-    index.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+        return dict(pool.map(compress, sorted(sources.items())))
+
+
+def write_ignore_block(root, paths):
     ignore = root / '.gitignore'
     value = ignore.read_text()
     if BEGIN in value:
+        head, rest = value.split(BEGIN, 1)
+        tail = rest.split(END + '\n', 1)[1]
+        value = head.rstrip() + '\n\n' + BEGIN + '\n'
+        value += ''.join('/' + relative + '\n' for relative in sorted(paths))
+        ignore.write_text(value + END + '\n' + tail)
+    else:
+        value = value.rstrip() + '\n\n' + BEGIN + '\n'
+        value += ''.join('/' + relative + '\n' for relative in sorted(paths))
+        ignore.write_text(value + END + '\n')
+
+
+def pack(root):
+    index = root / INDEX
+    if index.exists():
+        raise ValueError('Archive index already exists; preserve the published version')
+    records, sources = scan(root)
+    blobs = compress_all(root, sources)
+    data = dict(schema=1, description=__doc__, files=dict(sorted(records.items())),
+                blobs=dict(sorted(blobs.items())))
+    index.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+    if BEGIN in (root / '.gitignore').read_text():
         raise ValueError('Audit ignore block already exists')
-    value = value.rstrip() + '\n\n' + BEGIN + '\n'
-    value += ''.join('/' + relative + '\n' for relative in sorted(records))
-    ignore.write_text(value + END + '\n')
+    write_ignore_block(root, records)
     print(json.dumps(dict(archived_paths=len(records), unique_blobs=len(blobs),
                           raw_bytes=sum(x['bytes'] for x in records.values()),
                           compressed_bytes=sum(x['bytes'] for x in blobs.values()))))
+
+
+def append(root, include_artifacts=False):
+    index = root / INDEX
+    data = json.loads(index.read_text())
+    scanned, sources = scan(root)
+    added = {}
+    for relative, record in scanned.items():
+        old = data['files'].get(relative)
+        if old is None:
+            added[relative] = record
+        elif old['sha256'] != record['sha256'] or old['bytes'] != record['bytes']:
+            raise ValueError(f'Archived path changed; refusing to re-archive: {relative}')
+    needed = {sha: sources[sha] for sha in {r['sha256'] for r in added.values()}
+              if sha not in data['blobs']}
+    manifest_blobs = 0
+    if include_artifacts:
+        manifest = json.loads((root / 'artifacts/MANIFEST.json').read_text())
+        for relative, record in manifest['files'].items():
+            sha = record['sha256']
+            if sha in data['blobs'] or sha in needed:
+                continue
+            path = safe_path(root, relative)
+            if not path.exists() or digest(path) != sha:
+                raise ValueError(f'Live artifact missing or differs from MANIFEST: {relative}')
+            needed[sha] = path
+            manifest_blobs += 1
+    blobs = compress_all(root, needed)
+    data['files'] = dict(sorted({**data['files'], **added}.items()))
+    data['blobs'] = dict(sorted({**data['blobs'], **blobs}.items()))
+    index.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+    write_ignore_block(root, data['files'])
+    print(json.dumps(dict(appended_paths=len(added), new_blobs=len(blobs),
+                          new_manifest_artifact_blobs=manifest_blobs,
+                          appended_raw_bytes=sum(x['bytes'] for x in added.values()),
+                          new_compressed_bytes=sum(x['bytes'] for x in blobs.values()))))
 
 
 def check_blob(root, sha, record):
@@ -162,16 +222,18 @@ def replay(root, action, destination, include_artifacts=False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=('pack', 'restore', 'verify'))
+    parser.add_argument('action', choices=('pack', 'append', 'restore', 'verify'))
     parser.add_argument('--repo', type=Path, default=ROOT)
     parser.add_argument('--destination', type=Path,
                         help='Restore/verify archived paths under a separate checkout')
     parser.add_argument('--artifacts', action='store_true',
-                        help='Also restore/verify live artifacts by their MANIFEST SHA256')
+                        help='Also restore/verify (or, for append, archive) live artifacts by their MANIFEST SHA256')
     args = parser.parse_args()
     root = args.repo.resolve()
     if args.action == 'pack':
         pack(root)
+    elif args.action == 'append':
+        append(root, args.artifacts)
     else:
         replay(root, args.action, (args.destination or root).resolve(), args.artifacts)
 

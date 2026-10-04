@@ -7,6 +7,13 @@
 本批成果及D至D₅稽核的發布驗證見[發布紀錄](history/2026-10-04-c5-parallel-progress-publish.md)；
 新checkout的凍結快照／完整輸出先依[封存還原說明](../audits/README.md)還原。
 
+主線首批[開放葉 ledger 與趨勢](c5_open_leaf_ledger.md)以共鄰 P₃ 的固定
+3500 個 case／geometry／join keys 計數：C₂→C₃→C₄ 各閉合一葉，
+目前 3497 葉未稽核／未關閉，36 cases／140 geometries 均仍開放。
+這是具名目錄的階段趨勢；全主線葉總數及每日下降率尚未知。
+**後續（2026-10-04，任務 W）：** [q-core 盾弧預算](c5_qcore_shield_budget.md)的紙面定理 C-W
+把其餘 3497 keys 全部作來源排除；[D₆ 稽核](../audits/2026-10-04-task-d6/REPORT.md)確認並補零-unary 側，故 C §1 整個共鄰端點 P₃ 分支排除完成；ledger 已合併為 [cw-v1](c5_open_leaf_ledger.md)（3497→0）；見 §3。
+
 ## 1. 目標與範圍
 
 主命題 **`K∞=K≤5` 仍未證**。目前仍走 weak-deletion 候選 A 的
@@ -116,6 +123,24 @@ CPP-134-1／geometry 34／side_join_id 20。禁色 z=0 的 strict degree list
 禁色分別{0,2,3}／{0,2}。contacts順序及未知完整relations見D₅ scope ledger；
 此處只定位原表entry，沒有分析或新增排除。
 同一 ternary 引理對其他 w 角色的逐份覆蓋也未展開。
+
+**後續（2026-10-04，任務 W；取代上述 geometry35 入口）：** [q-core 盾弧預算](c5_qcore_shield_budget.md)
+給不需 T4 的紙面定理 C-W：C* 的原支援 |S₀|=3 迫 |σ_C*|≥2；每份 unary 若支援落在一條框邊，
+原外路 r–x₂–x₁–x₀–b_h 接上短支援 hub 論證給 K₅，故 |σ_D|≥2；三份 one-sided 盾弧互斥，
+需 6>5 條框邊。固定目錄每葉兩側都至少一份 unary，**3497 keys 全部來源排除，目錄剩 0**；
+連同 C₂／C₃／C₄，固定目錄已無殘留。[D₆ 獨立稽核](../audits/2026-10-04-task-d6/REPORT.md)逐項重推確認，並補出零-unary 側排除（[W 報告 §8](c5_qcore_shield_budget.md#8-稽核後更正與補證2026-10-04d₆-之後)），所以 **C §1 前提下整個共鄰端點 P₃ 來源分支排除完成**。verdict 已改為修訂版（舊版保存為 v1），重播通過。
+整合者已重播 checker（一般與 seed17 bytes 相同），並逐步核對證明及首列的手算盾弧
+（C* 支援 {0,1,4} 佔 {40,01}，兩份 unary 只剩三邊）。任務 C 當輪刻意不用 Gallai，
+短支援引理與跨 root 盾弧互斥（`0b5e00a`）都在其後，所以舊殘留與此排除不衝突。
+原 [ledger](c5_open_leaf_ledger.md) 尚未以 `--write` 合併；36／140／900 表與 rotation 控制保留。
+
+**下一入口（2026-10-04 記錄，優先於逐 key 工作）：**
+1. ~~獨立稽核任務 W、合併 ledger~~（D₆ 稽核完成；ledger 已依合併計畫合併為 [cw-v1](c5_open_leaf_ledger.md)，原 C₄ ledger 不變）。
+2. 把定理 W-A（q-core 中 unary |σ|≥2、盾弧互斥、至多兩份 unary）統一套到本線其餘保留分支：
+   更多 incidences、更大／多 mixed。先判定哪些分支含**三個不同**原 one-sided pieces 各有盾弧≥2
+   （unary 需由 q-critical 接點邊取拒絕見證並有避開自身的外路），它們由同一六邊矛盾直接排除；其餘再逐型處理。
+   不帶 criticality／degree 前提的「長支援分量＋兩份 unary 不可能」是錯的（D₆ §2.7 反例）。停止條件：出現 roots 不連通的分隔型分量，
+   或 unary 找不到避開自身的外路，保存具名配置後停止推廣。
 全部具名殘留、側角色及 replay 見[報告 §5–6](c5_mixed_p3_common_endpoint.md#5-固定控制完整殘留清單與重播)。
 不能拆共鄰點或改成 shared singleton。其餘更多 incidences 的接線仍保留。
 先前 D₂ 對 C 的覆蓋限於當輪停止點與重播入口；A／B 新增身份／完整 joint／witness

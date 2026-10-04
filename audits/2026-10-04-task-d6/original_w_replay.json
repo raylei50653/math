@@ -1,0 +1,11 @@
+{
+  "command": [
+    "python3",
+    "scripts/c5_qcore_shield_screen.py",
+    "--check"
+  ],
+  "purpose": "operational byte replay only; paper and payload independently audited",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/scripts/c5_qcore_shield_screen.py\", line 306, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/scripts/c5_qcore_shield_screen.py\", line 296, in main\n    require(OUT.read_bytes() == raw, \"verdict artifact differs from replay\")\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/scripts/c5_qcore_shield_screen.py\", line 37, in require\n    raise ValueError(message)\nValueError: verdict artifact differs from replay\n"
+}

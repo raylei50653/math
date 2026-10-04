@@ -17,6 +17,7 @@
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
 | 933／941 的 excess／容量／跨度 | 兩候選均已證 ε≥2。唯一 degree-6 root 的 t=0、1、2、3 全部分拆均已作整型來源排除，T4 迫 t≤3，完成此 ε=2 分支。t=0 的 (6) 用飽和兩 K₄，(4,2) 用原 binary 路徑的同源框弧 K₅；若 ε=2，只剩兩個 degree-5 roots。任意大小紙面＋Python、未 Lean 化，一般來源保留 | [t=0 全分拆總報告](c5_excess_two_no_spoke_complete.md)、[t=3 全分拆總報告](c5_excess_two_three_spoke_complete.md)、[t=2 全分拆總報告](c5_excess_two_two_spoke_complete.md)、[t=1 全分拆總報告](c5_excess_two_single_spoke_complete.md)、[941 ε≥2](c5_941_three_spoke.md) |
+| 不依賴 ε 的盾弧預算與 hub 原則 | 任意 ε、任意 roots：one-sided 分量的支援是連續框弧、盾弧兩兩邊互斥；全圖至多兩份 unary，且 spokes／mixed 支援被限制在 2–3 個框點。短支援、K₄ 引理、二／三-hub K₅ 統一成 hub 原則，並推廣到 roots 同色的 mixed 分量。A₄ 殘留 U 支援紀錄 40／58→24／30，無整份 frame 排除。紙面＋Python，未 Lean 化 | [盾弧預算與 hub 原則](c5_unary_shield_budget.md) |
 | 雙 root 的 ε=2 收窄 | 相鄰 mixed 刪 roots／zw 全收；相鄰唯一 mixed 已全排 (4,4) 核心、五-spoke 原來源、四-spoke (3,1) 全部 incidence 分拆及 (2,2) 的 mixed-(1,1) 加各側一 unary 整個子型，含 root 交換。原47／75必要身份全部封閉；其他 (2,2) incidence、較少 spokes、單省略及原 (5,5) 核心保留。紙面＋Python，ε≥3 未證，未 Lean 化 | [mixed-(1,1) 子型完成](c5_excess_two_mixed_core_four_spoke_disjoint_pairs.md)、[短框弧原拒絕列延拓](c5_excess_two_mixed_core_four_spoke_short_arc.md)、[原 crosscut 與 mixed hubs](c5_excess_two_mixed_core_four_spoke_crosscut.md)、[同一長 face 次序排除](c5_excess_two_mixed_core_four_spoke_long_face.md)、[原四接點 leaf-slack](c5_excess_two_mixed_core_four_spoke_quaternary.md)、[原三接點身份](c5_excess_two_mixed_core_four_spoke_ternary.md)、[binary 端點 hub](c5_excess_two_mixed_core_four_spoke_hubs.md) |
 | Kempe screen／邊位置對座標 | screen 等價於 20 條蘊涵，1,024 masks 已核對；未新增排除，一般 adjacent-singleton lemma 未證 | [screen](c5_kempe_screen.md)、[座標](c5_edge_pair_coordinates.md) |
 | 循環流與計數 | 六維／153 支撐／十二循環；36 份基底覆蓋證三套分開整數 orbit 條件不再收緊恆等式解；未排除平面來源 | [循環流](c5_circulation.md) |
@@ -27,6 +28,54 @@
 | 固定圖策略與 repair | survivor-811 固定閉包、必要低谷／回升與 B₂ 準備已保存；一般 K=4 策略、共同安全 repair 機制未證 | [barriers](c5_strategy_barriers.md)、[repair](c5_repair_interface.md) |
 
 ## 3. 停止點與保留缺口
+
+**下一入口（2026-10-04 記錄，優先於新實驗與逐 pair 細拆）：雙色 roots 的 hub linkage。**
+依據是[盾弧預算與 hub 原則](c5_unary_shield_budget.md#6-對現有案例樹的影響與剩餘缺口)。
+在前提 (S) 下，設 one-sided mixed 分量 P 的支援包含於框邊 {a,b}，
+某份拒絕見證讓相鄰 roots 用兩色 c₁≠c₂（相鄰 z、w 正是此情形）。
+
+- **要回答的問題：** disk 中，哪些環序配置能讓 {a}、{b}、X_{c₁}、X_{c₂}
+  成為兩兩相鄰、互斥的連通 hubs。能組成者由定理 B 直接排除。
+- **預期結果：** 不能組成者只剩交錯環序 a–c₁–b–c₂ 一類的 Kempe 型阻擋，需要逐一分類。
+  **（2026-10-04 修正，任務 K）：** 此預期的幾何表述不對。|P|=1 時 PabP、PzwP 都是三角形，
+  接點環序必為 a,b 相鄰、z,w 相鄰，a–z–b–w 交錯不可能出現；實際阻擋是經典 degree-4 的
+  **對角 Kempe 鏈斷開**。[停止見證 P1-witness-001](c5_kempe_transport.md#41-p1-witness-001)
+  （Σ=1012，與任務 S 的 S935 同屬 935 軌道）環序 z–b–a–w，對角對 (a,z)、(b,w) 的 02／13 鏈都斷開；
+  四條可延拓 P 的交換全部碰框，且新列都在 Σ(1012) 內，所以阻擋得以存活。
+  這支持猜想 K 的「轉運」部分，否定的是「交錯環序」部分。
+- **完成條件：** 給出任意大小的紙面分類（可組成 ⇒ K₅；不可組成 ⇒ 明列阻擋型）。
+  之後再回頭檢查 B₂／B₃／crosscut／A 系列的 hub 論證，各是哪一型的實例。
+- **停止條件：** 若出現不屬於交錯型、又無法組成 hubs 的配置，
+  保存該具名配置與完整見證，停止推廣。
+
+**候選猜想（2026-10-04 提出，未證；先記錄，後實驗）。** 見
+[綜合報告 §8](c5_research_synthesis.md#8-2026-10-04-新猜想基準-0b5e00a未證)。
+猜想 K（交錯阻擋只能靠碰框 Kempe 轉運存活）是本入口的精確化，S（所有 one-sided 分量 |σ|≥2）是其推論，
+不另開工作。猜想 E（超額–拒絕定律 ε≥|Q|+c(Q)−2）預測 933／941 皆需 ε≥3，
+其第一步 T1 是在可實現的 Q 形狀上重播 ε=1 工具；排在本入口之後或並行，待使用者決定。
+任務 E1 的 [k≤5 完整窮舉](c5_excess_rejection_law.md)（310 類）無反例，且各可實現形狀的最小 ε 恰等於下界。
+任務 E2 的 [ε≤1 層報告](../artifacts/c5_excess_one_e2/REPORT.md)完成 T1：ε=0 ⇒ |Q|≤1，ε=1 ⇒ Q 為一點或相鄰兩點（[D₇ 稽核](../audits/2026-10-04-task-d7/REPORT.md)確認）。
+E 的 ε=2 層與本線 ε=2 雙 root 樹同一目標；本線新引理先以 Σ=935 的 (4,5,5) 代表作正控制，
+凡不用 933／941 特定拒絕列的論證都不得排除它。
+任務 S 的[校準](c5_shield_calibration.md)已在可實現的 Σ=935 上找到短支援 one-sided mixed 分量（S935／P0={5}），
+所以本入口的 hub linkage 分類**不能只靠局部機制**，「不可組成」一側必須用到 933／941 的拒絕列；S935 可作最小測試案例。
+任務 K 的[轉運有限表](c5_kempe_transport.md)完成 933／941 各 20 筆單 block 轉運；共同 partition 的 a／b 候選
+全部非交錯，故單靠框表推不出矛盾。
+
+**hub linkage 的精確化下一步（2026-10-04 記錄，優先於擴大 P 的普查）：猜想 K′（對角鏈轉運）。**
+設 N(P) 四色互異：a、b 框色 α、β，相鄰 roots 色 c_z、c_w，對角對為 (a,z)、(b,w)。
+兩條所需鏈的色對 {α,c_z}、{β,c_w} 互補，屬同一 split，所以它們碰框的 blocks 落在同一份 noncrossing partition。
+- **要回答的問題：** 對 933／941 的每個拒絕 q、每條框邊 ab、每組 (c_z,c_w)、每份該 split 的 partition，
+  是否存在一組 blocks 指派，使四個端點各自出發、能延拓 P 的交換全部送到 Σ 內。
+- **預期結果：** 933／941 無一致指派，從而短支援、四色鄰域的 one-sided 分量在固定來源下不存在；
+  在 1012 上必須有指派（由 P1-witness-001 實現），作為正控制。
+- **完成條件：** 完整有限表加上把「root 屬於哪條鏈」接回的紙面引理（任務 K 所稱 root-to-chain joint incidence）。
+- **停止條件：** 933 或 941 出現一致指派時，保存指派並嘗試實現成圖，不再推廣。
+|P|≥2 與鄰域少於四色的情形留在其後。
+
+這一題完成前，不新開以下工作：逐 spoke-pair 的殘留輪次（A 的 12／12 等）、
+k≥8 來源搜尋、案例樹 ledger。次要的不依賴 ε 的題目依序是：
+分隔型 mixed 分量（G[R] 不連通時），以及把 Σ|σ|≤5 與逐列 D+O 恆等式合成單一不等式。
 
 本線候選來源前提是固定完整 Σ=933／941 或整圖 D₅ 像、每條非框邊
 Σ-critical、指定有序 induced-C₅ disk、所有有效內點完整 degree≥4。
@@ -87,6 +136,7 @@ y₀≠y₁、x獨立或共享其中一原接點均保持。新incidence必要�
 經A至A₄保存16／20框架、40／58actual U支援與50／84完整schedules。
 24張固定完整degree圖／30,720fibres及2,912份整份C替換witnesses只是
 關係控制，不實現來源或ledger schedules。詳見[A₄報告與完整殘留](c5_excess_two_mixed_core_four_spoke_mixed12_04_04.md)。
+後續[盾弧預算](c5_unary_shield_budget.md)以支援連續性與 spoke 限制，將其餘actual U支援紀錄刪至24／30、schedules刪至30／50，16／20框架各仍有殘留。
 停止於此；其他共用pairs與unequal入口仍保留，可下一輪固定原12／12
 及root交換，再逐項核對自身四rotations、原support／schedules與完整ternary。
 未將04／04結果登記到其他pairs，mixed12整型與ε≥3仍未證。
