@@ -1,0 +1,119 @@
+{
+  "baseline": "d00aba4e10ea2d05ab216fedd94f5a166b2777ad",
+  "branch": "task-lc-lean-certs",
+  "soundness_only": true,
+  "lean_certificates_proven": 179,
+  "ordinary_positive_proofs": 179,
+  "native_rejection_proofs": 179,
+  "printed_axiom_entries": 558,
+  "commands": {
+    "check_docs": {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 1,
+      "seconds": 0.619,
+      "stdout": "missing path: docs/c5_open_leaf_ledger.md:78: ../audits/2026-10-04-task-d5/c4/scope_ledger.json\nmissing path: docs/history/2026-10-04-task-d2-integration-audit.md:39: ../../audits/2026-10-04-task-d2/integration_doc_changes.diff\nnot directly indexed by STATUS: docs/c5_excess_two_lean_certificates.md\nFAIL: 3 errors (558 Markdown files, 5977 local links)\n",
+      "stderr": ""
+    },
+    "docgraph": {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.311,
+      "stdout": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n",
+      "stderr": ""
+    },
+    "git_diff_check": {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.006,
+      "stdout": "",
+      "stderr": ""
+    },
+    "generation": {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/export_excess_two_certificates.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.146,
+      "stdout": "exclusive-created: Math/GeneratedExcessTwoCertificates.lean (722131 bytes)\nexclusive-created: Math/ExcessTwoCertificatesAudit.lean (24840 bytes)\nexclusive-created: artifacts/c5_excess_two_lean_certificates/source_inventory.json (60093 bytes)\n179 representatives audited; {'accepted_witnesses': 1597, 'deletion_witnesses': 4271, 'nonframe_edges': 4138, 'rejected_rows': 193}\n",
+      "stderr": ""
+    },
+    "replay": {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/export_excess_two_certificates.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.145,
+      "stdout": "byte-exact: Math/GeneratedExcessTwoCertificates.lean (722131 bytes)\nbyte-exact: Math/ExcessTwoCertificatesAudit.lean (24840 bytes)\nbyte-exact: artifacts/c5_excess_two_lean_certificates/source_inventory.json (60093 bytes)\n179 representatives audited; {'accepted_witnesses': 1597, 'deletion_witnesses': 4271, 'nonframe_edges': 4138, 'rejected_rows': 193}\n",
+      "stderr": ""
+    },
+    "replay_hashseed17": {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/export_excess_two_certificates.py",
+        "--check"
+      ],
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "seconds": 0.144,
+      "stdout": "byte-exact: Math/GeneratedExcessTwoCertificates.lean (722131 bytes)\nbyte-exact: Math/ExcessTwoCertificatesAudit.lean (24840 bytes)\nbyte-exact: artifacts/c5_excess_two_lean_certificates/source_inventory.json (60093 bytes)\n179 representatives audited; {'accepted_witnesses': 1597, 'deletion_witnesses': 4271, 'nonframe_edges': 4138, 'rejected_rows': 193}\n",
+      "stderr": ""
+    },
+    "lake_build": {
+      "argv": [
+        "taskset",
+        "-c",
+        "0,1,2,3,4,5,6,7",
+        "lake",
+        "--no-cache",
+        "build",
+        "Math",
+        "Math.GeneratedExcessTwoCertificates",
+        "Math.ExcessTwoCertificatesAudit"
+      ],
+      "exit_code": 0,
+      "seconds": 739.551,
+      "log": "artifacts/c5_excess_two_lean_certificates/lake_build.log"
+    },
+    "axioms": {
+      "argv": [
+        "taskset",
+        "-c",
+        "0,1,2,3,4,5,6,7",
+        "lake",
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "Math/ExcessTwoCertificatesAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 5.214,
+      "log": "artifacts/c5_excess_two_lean_certificates/axioms.log"
+    }
+  },
+  "existing_tracked_files_changed": [],
+  "new_source_whitespace_findings": [],
+  "committed": false,
+  "pushed": false,
+  "check_docs_expected_errors": [
+    "baseline missing D5 scope ledger",
+    "baseline missing D2 integration diff",
+    "new report cannot enter existing STATUS under additions-only scope"
+  ]
+}
