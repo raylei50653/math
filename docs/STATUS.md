@@ -400,6 +400,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-04：K′、E3–E6、ES／ER 與 LC 進展整理、證據界線及分支發布](history/2026-10-04-kprime-excess-two-progress-publish.md)
 - [2026-10-04：併行成果、D至D₅獨立稽核與完整封存發布](history/2026-10-04-c5-parallel-progress-publish.md)
 
 - [2026-10-04：D₂文件整合、A／B新增成果稽核與保存核對](history/2026-10-04-task-d2-integration-audit.md)

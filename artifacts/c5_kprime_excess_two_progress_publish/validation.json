@@ -1,0 +1,227 @@
+{
+  "date": "2026-10-04",
+  "scope": "Organize and publish existing Kprime E3 E4 E5 E6 E4C ES ER LC progress without new mathematical claims",
+  "baseline_head": "433dea31e8989ff77d665d14eb3bc470e2c7c50e",
+  "publication_branch": "integrate-kprime-e3",
+  "publication_target": "origin/integrate-kprime-e3",
+  "main_not_merged": true,
+  "checks": {
+    "artifact_status": {
+      "name": "artifact_status",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        ".venv/bin/python",
+        "tools/artifacts.py",
+        "status"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.977,
+      "log": "artifact_status.log"
+    },
+    "branch_diff": {
+      "name": "branch_diff",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "main...HEAD"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.085,
+      "log": "branch_diff.log"
+    },
+    "docgraph_final": {
+      "name": "docgraph_final",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.368,
+      "log": "docgraph_final.log"
+    },
+    "docs_final": {
+      "name": "docs_final",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.561,
+      "log": "docs_final.log"
+    },
+    "er_full": {
+      "name": "er_full",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        ".venv/bin/python",
+        "scripts/c5_excess_two_independent_search.py",
+        "--check",
+        "--jobs",
+        "8"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 248.247,
+      "log": "er_full.log"
+    },
+    "es_validation": {
+      "name": "es_validation",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        ".venv/bin/python",
+        "scripts/c5_excess_two_finite_search_validation.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 8.705,
+      "log": "es_validation.log"
+    },
+    "lc_axioms": {
+      "name": "lc_axioms",
+      "cwd": "/home/ray/developer/ai/math-task-lc-lean-certs",
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "lake",
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "Math/ExcessTwoCertificatesAudit.lean"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 26.808,
+      "log": "lc_axioms.log"
+    },
+    "lc_build": {
+      "name": "lc_build",
+      "cwd": "/home/ray/developer/ai/math-task-lc-lean-certs",
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "lake",
+        "--no-cache",
+        "build",
+        "Math",
+        "Math.GeneratedExcessTwoCertificates",
+        "Math.ExcessTwoCertificatesAudit"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 9.88,
+      "log": "lc_build.log"
+    },
+    "lc_export": {
+      "name": "lc_export",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        ".venv/bin/python",
+        "scripts/export_excess_two_certificates.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.295,
+      "log": "lc_export.log"
+    },
+    "lc_export_seed17": {
+      "name": "lc_export_seed17",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "env",
+        "PYTHONHASHSEED=17",
+        ".venv/bin/python",
+        "scripts/export_excess_two_certificates.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.144,
+      "log": "lc_export_seed17.log"
+    },
+    "math_build": {
+      "name": "math_build",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 9.332,
+      "log": "math_build.log"
+    },
+    "worktree_diff": {
+      "name": "worktree_diff",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.006,
+      "log": "worktree_diff.log"
+    },
+    "docs_complete": {
+      "name": "docs_complete",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.54,
+      "log": "docs_complete.log"
+    },
+    "staged_diff": {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "scope": "This organization and fresh verification archive; original historical branch diagnostics separate"
+    }
+  },
+  "controls_summary": "controls/publication-summary.json",
+  "latest_control_verdicts": {
+    "scripts": 15,
+    "runs": 30,
+    "exact_pass": 24,
+    "historical_provenance_byte_fail": 6,
+    "actual_checker_runs_including_attempts": 35,
+    "all_nonprovenance_payloads_equal": true
+  },
+  "lc_current_source_and_axiom_audit": "root/lc_current_source_axiom_audit.json",
+  "degree6_restore": "root/degree6_restore.json",
+  "source_equality": "root/source_equality.json",
+  "raw_file_inventory": "file_inventory.json",
+  "historical_branch_whitespace": {
+    "exit_code": 2,
+    "diagnostics": 86,
+    "scope": "Original ER vendored plantri and raw verification logs; preserved unchanged",
+    "log": "root/branch_diff.log.gz"
+  },
+  "intentionally_not_rerun": [
+    "ES full ordinary/hashseed17 search (sources/results unchanged since task-es-search)",
+    "E1 E2 D7",
+    "C-W D6",
+    "earlier A B C and R-series",
+    "other Lean independent axioms audits"
+  ],
+  "final_document_and_staged_checks": {
+    "docs_exit_code": 0,
+    "docgraph_exit_code": 0,
+    "artifact_status_exit_code": 0,
+    "artifact_ok": 155,
+    "worktree_diff_exit_code": 0,
+    "staged_diff_exit_code": 0,
+    "historical_full_branch_diff_exit_code": 2,
+    "historical_full_branch_diagnostics": 86,
+    "historical_byte_failures_preserved": 6
+  }
+}

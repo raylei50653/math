@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/tmp/math-progress-publish-20261004-control-replays/inspect_e4c_final_scope_readonly.py", line 17, in <module>
+    code=m.main()
+  File "/home/ray/developer/ai/math/scripts/c5_excess_two_e4c_controls.py", line 1084, in main
+    if path.read_bytes()!=raw: raise AssertionError(f'byte replay differs: {path}')
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: byte replay differs: /home/ray/developer/ai/math/artifacts/c5_excess_two_e4c/summary.json
+{"artifact": "artifacts/c5_excess_two_e4c/summary.json", "counterexample": null, "duration_seconds": 9.79, "excluded_provenance_key": "source_hashes", "exit_code": 1, "expected_controls": 54, "full_json_differences": [{"current": "b3f6a45327df869e4e0cf893f6a3ce2a113aec1b28c1a8bf371ebbe26003505c", "path": "/source_hashes/docs/c5_kempe_guide.md", "saved": "bd0502e091973b50a9ec02b8f0d39716cdc3bf5cb7144d4da62df741f57d34b4"}], "nonprovenance_equal": true, "processed": 54, "script": "/home/ray/developer/ai/math/scripts/c5_excess_two_e4c_controls.py", "semantic_differences": [], "total_rejected_row_cores": 60}
