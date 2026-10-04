@@ -1,0 +1,48 @@
+{
+  "baseline": "2ac279b",
+  "provenance": {
+    "artifacts/c5_excess_two_e3/REPORT.md": "6d385639c565e2dd08eb61d7835f5fbfec29cd7c467ce8e5abba1dfc2e39e659",
+    "artifacts/c5_excess_two_e3/degree6.json": "826818db6861ff45696b7a8d69708eb64f0577de54f92ffe9f3c44a30096bd8d",
+    "artifacts/c5_excess_two_e3/degree6_notes.md": "f8190898dc274b65112f1880b7f0ac18b2c7beb5204c79debc82e33da9012dfb",
+    "audits/2026-10-04-task-d8/degree6_fixed_shapes.py": "cb5f01a8d0ce66fb3b758b4eefc2f056cfdbb8a25de3966ac7e45487b08b56fc",
+    "audits/2026-10-04-task-d8/degree6_t1_spoke_coverage.py": "ad3ae346f8983bd597b3041d66baa187aa01eeb823e288a42f3c0f9eb1f8d753",
+    "scripts/c5_excess_two_e3_degree6.py": "1eabbc76a635889adf75d1262b0f8ef09b6cb71fbfab6b8c9f246a984e283236"
+  },
+  "records": [
+    {
+      "command": "/home/ray/developer/ai/math/.venv/bin/python audits/2026-10-04-task-d8/degree6_fixed_shapes.py",
+      "exit_code": 0,
+      "output_artifact": "audits/2026-10-04-task-d8/degree6_fixed_shapes.json",
+      "stdout": "{\"triangle\": {\"counts\": {\"attachment_assignments\": 36, \"exact_q1_pair_assignments\": 16, \"q1_local_tight_assignments\": 16, \"two_root1_rejecting_assignments\": 4}, \"q0_forbidden_distribution\": {\"\": 8, \"0,3\": 4, \"1,3\": 4}}, \"two_triangles_bridge_x\": {\"counts\": {\"attachment_assignments\": 3456, \"exact_q1_pair_assignments\": 512, \"q1_local_tight_assignments\": 1024, \"two_root1_rejecting_assignments\": 48}, \"q0_forbidden_distribution\": {\"\": 416, \"0,3\": 48, \"1,3\": 48}}, \"two_triangles_bridge_y\": {\"counts\": {\"attachment_assignments\": 3456, \"exact_q1_pair_assignments\": 512, \"q1_local_tight_assignments\": 1024, \"two_root1_rejecting_assignments\": 48}, \"q0_forbidden_distribution\": {\"\": 416, \"0,3\": 48, \"1,3\": 48}}}\n"
+    },
+    {
+      "command": "/home/ray/developer/ai/math/.venv/bin/python audits/2026-10-04-task-d8/degree6_fixed_shapes.py --check",
+      "exit_code": 0,
+      "stdout": "{\"triangle\": {\"counts\": {\"attachment_assignments\": 36, \"exact_q1_pair_assignments\": 16, \"q1_local_tight_assignments\": 16, \"two_root1_rejecting_assignments\": 4}, \"q0_forbidden_distribution\": {\"\": 8, \"0,3\": 4, \"1,3\": 4}}, \"two_triangles_bridge_x\": {\"counts\": {\"attachment_assignments\": 3456, \"exact_q1_pair_assignments\": 512, \"q1_local_tight_assignments\": 1024, \"two_root1_rejecting_assignments\": 48}, \"q0_forbidden_distribution\": {\"\": 416, \"0,3\": 48, \"1,3\": 48}}, \"two_triangles_bridge_y\": {\"counts\": {\"attachment_assignments\": 3456, \"exact_q1_pair_assignments\": 512, \"q1_local_tight_assignments\": 1024, \"two_root1_rejecting_assignments\": 48}, \"q0_forbidden_distribution\": {\"\": 416, \"0,3\": 48, \"1,3\": 48}}}\n"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 /home/ray/developer/ai/math/.venv/bin/python audits/2026-10-04-task-d8/degree6_fixed_shapes.py --check",
+      "exit_code": 0,
+      "stdout": "{\"triangle\": {\"counts\": {\"attachment_assignments\": 36, \"exact_q1_pair_assignments\": 16, \"q1_local_tight_assignments\": 16, \"two_root1_rejecting_assignments\": 4}, \"q0_forbidden_distribution\": {\"\": 8, \"0,3\": 4, \"1,3\": 4}}, \"two_triangles_bridge_x\": {\"counts\": {\"attachment_assignments\": 3456, \"exact_q1_pair_assignments\": 512, \"q1_local_tight_assignments\": 1024, \"two_root1_rejecting_assignments\": 48}, \"q0_forbidden_distribution\": {\"\": 416, \"0,3\": 48, \"1,3\": 48}}, \"two_triangles_bridge_y\": {\"counts\": {\"attachment_assignments\": 3456, \"exact_q1_pair_assignments\": 512, \"q1_local_tight_assignments\": 1024, \"two_root1_rejecting_assignments\": 48}, \"q0_forbidden_distribution\": {\"\": 416, \"0,3\": 48, \"1,3\": 48}}}\n"
+    },
+    {
+      "command": "/home/ray/developer/ai/math/.venv/bin/python - <<'PY'\nimport importlib.util,json\nfrom pathlib import Path\nspec=importlib.util.spec_from_file_location('d6audit','scripts/c5_excess_two_e3_degree6.py')\nm=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)\nslit=[(a,b) for a in range(6) for b in range(a+2,6)]\nordered=[(a,b) for a,b in m.product(slit,repeat=2) if a[1]<=b[0]]\nbase=[tuple(tuple(i%5 for i in range(iv[j][0],iv[j][1]+1)) for j in order) for iv in ordered for order in m.permutations(range(2))]\nrows=[]\nfor root_spoke in range(5):\n geometries=[tuple(tuple((i+root_spoke)%5 for i in e) for e in g) for g in base]\n for kind in ('t1_(4,1)','t1_(3,2)'):\n  result=[m.solve((root_spoke,),g,(2,1),fourbags=0,Drole=1,contact_arities=(4,1)) if kind=='t1_(4,1)' else m.solve((root_spoke,),g,(2,1),paths=(0,),Drole=1,contact_arities=(2,3)) for g in geometries]\n  survives=[x for x in result if x['surviving_necessary_profile'] is not None]\n  rec=dict(kind=kind,original_spoke=root_spoke,named_geometries=len(result),remaining=len(survives),search_nodes=sum(x['search_counts']['search_nodes'] for x in result),survivors=survives)\n  rows.append(rec)\n  print(kind,root_spoke,'geometries',len(result),'remaining',len(survives),'nodes',rec['search_nodes'])\nout=Path('audits/2026-10-04-task-d8/degree6_t1_spoke_coverage.json')\nwith out.open('x') as f:json.dump(dict(scope='Audit extension of existing helper domain to every original spoke; fixed q0 q1 q3 frame; no claim these abstract profiles are realizable',results=rows),f,indent=2,sort_keys=True);f.write('\\n')\nPY",
+      "exit_code": 0,
+      "output_artifact": "audits/2026-10-04-task-d8/degree6_t1_spoke_coverage.json",
+      "stdout": "t1_(4,1) 0 geometries 10 remaining 0 nodes 32\nt1_(3,2) 0 geometries 10 remaining 0 nodes 18\nt1_(4,1) 1 geometries 10 remaining 0 nodes 31\nt1_(3,2) 1 geometries 10 remaining 0 nodes 19\nt1_(4,1) 2 geometries 10 remaining 0 nodes 30\nt1_(3,2) 2 geometries 10 remaining 0 nodes 18\nt1_(4,1) 3 geometries 10 remaining 0 nodes 34\nt1_(3,2) 3 geometries 10 remaining 0 nodes 19\nt1_(4,1) 4 geometries 10 remaining 0 nodes 30\nt1_(3,2) 4 geometries 10 remaining 0 nodes 18\n"
+    },
+    {
+      "command": "/home/ray/developer/ai/math/.venv/bin/python audits/2026-10-04-task-d8/degree6_t1_spoke_coverage.py --check",
+      "exit_code": 0,
+      "stdout": "t1_(4,1) 0 geometries 10 remaining 0 nodes 32\nt1_(3,2) 0 geometries 10 remaining 0 nodes 18\nt1_(4,1) 1 geometries 10 remaining 0 nodes 31\nt1_(3,2) 1 geometries 10 remaining 0 nodes 19\nt1_(4,1) 2 geometries 10 remaining 0 nodes 30\nt1_(3,2) 2 geometries 10 remaining 0 nodes 18\nt1_(4,1) 3 geometries 10 remaining 0 nodes 34\nt1_(3,2) 3 geometries 10 remaining 0 nodes 19\nt1_(4,1) 4 geometries 10 remaining 0 nodes 30\nt1_(3,2) 4 geometries 10 remaining 0 nodes 18\n"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 /home/ray/developer/ai/math/.venv/bin/python audits/2026-10-04-task-d8/degree6_t1_spoke_coverage.py --check",
+      "exit_code": 0,
+      "stdout": "t1_(4,1) 0 geometries 10 remaining 0 nodes 32\nt1_(3,2) 0 geometries 10 remaining 0 nodes 18\nt1_(4,1) 1 geometries 10 remaining 0 nodes 31\nt1_(3,2) 1 geometries 10 remaining 0 nodes 19\nt1_(4,1) 2 geometries 10 remaining 0 nodes 30\nt1_(3,2) 2 geometries 10 remaining 0 nodes 18\nt1_(4,1) 3 geometries 10 remaining 0 nodes 34\nt1_(3,2) 3 geometries 10 remaining 0 nodes 19\nt1_(4,1) 4 geometries 10 remaining 0 nodes 30\nt1_(3,2) 4 geometries 10 remaining 0 nodes 18\n"
+    }
+  ],
+  "schema": 1,
+  "scope": "Degree6 subaudit independent fixed actual-shape probe and t1 finite-domain coverage extension",
+  "worktree": "/home/ray/developer/ai/math-task-d8"
+}
