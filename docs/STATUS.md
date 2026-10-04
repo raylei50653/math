@@ -205,6 +205,7 @@
 | [ε=2 t=2 兩 binary 整型排除](c5_excess_two_two_spoke_binary.md) | 40 具名扇區位置／400 查詢；原 pair 路徑留 20 份弱條件控制，補入同一首橋的共用 β 及局部 residual 跨列搬運後全排；保留完整原關係，未 Lean 化 |
 | [ε=2 t=1 全部分拆排除](c5_excess_two_single_spoke_complete.md) | 唯一 degree-6 root 的七種原接點分拆均作整型來源排除；後續復用原工具完成 t=0、2、3，唯一 degree-6 分支全完成。兩候選共同 ε≥2 不變，雙 degree-5 roots 及一般來源保留；任意大小紙面＋Python，未 Lean 化 |
 | [兩／三外部 hubs 的短支援排除](c5_short_support_singleton.md) | 原 degree-4 分量支援包含於一條框邊，且有避開它的原外部路徑時，全部禁色皆不可能；不限接點數，迫本題每份原分量跨度至少二；紙面＋原 K₅ controls，未 Lean 化 |
+| [不依賴 ε 的盾弧預算與 hub 原則](c5_unary_shield_budget.md) | 固定來源、任意 ε：one-sided 分量支援為連續框弧且盾弧邊互斥，全圖至多兩份 unary；hub 原則統一短支援／K₄／二三-hub K₅ 並推廣到同色 roots 的 mixed 分量；A₄ 殘留 U 支援 40／58→24／30，無 frame 排除；紙面＋Python 控制，未 Lean 化 |
 | [四接點短支援 pair 排除](c5_short_support_four_contact.md) | 四接點未見二色 pair 的原 Gallai leaf blocks／active 結構 K₅；保留獨立證明及固定控制，通用短支援引理另涵蓋此型 |
 | [ε=2 t=1 四接點與 unary](c5_excess_two_four_one.md) | 同一四接點 active forest、兩 triangle K₅及固定末端區塊的跨列 residual，100 個必要查詢全排；(4,1) 整型排除，未 Lean 化 |
 | [ε=2 t=1 ternary／binary](c5_excess_two_ternary_binary.md) | 新 ternary D 身份守恆與原 binary 路徑塊共同支援，100 查詢全排；去掉路徑條件仍有八份抽象殘留；(3,2) 整型排除，未 Lean 化 |
