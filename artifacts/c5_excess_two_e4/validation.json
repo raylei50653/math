@@ -1,0 +1,262 @@
+{
+  "Lean_build_run": false,
+  "baseline_commit": "2ac279b6144cdfcf4ececd7b72f5d287a6f4b4ac",
+  "baseline_source_checks": [
+    {
+      "path": "artifacts/c5_cells/cells.json",
+      "sha256": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "artifacts/c5_excess_two_e3/REPORT.md",
+      "sha256": "6d385639c565e2dd08eb61d7835f5fbfec29cd7c467ce8e5abba1dfc2e39e659",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "artifacts/c5_excess_two_e3/nonadjacent_notes.md",
+      "sha256": "5ef7008a28c58de5d0299eeecee64e139c3b99a3d82027c38d8f5a121510db4f",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "artifacts/c5_excess_two_e3/nonadjacent.json",
+      "sha256": "0e9b7dad2522ab653e4e98392d55dc79d0eb8da5bf86bbc4bd75d519be2f2e21",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "artifacts/c5_excess_one_e2/REPORT.md",
+      "sha256": "ec136bf8c774c170af76054dda2e33ffdfd2c9c951d0e91a7ab2d30749146a4e",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "docs/c5_unary_shield_budget.md",
+      "sha256": "c4039e805abcc94a6a8c824ba38e5858420535c5c5528e3bf43aec5721c8e082",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "docs/c5_qcore_shield_budget.md",
+      "sha256": "795cd7428ae60805d7b02fdf7d96a5bfe59f9ebb629cbe102bcac265971f8c02",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "scripts/c5_excess_two_e3_nonadjacent.py",
+      "sha256": "5178c34b94818a4348aa670ec225bbfea2fdbd9ad083d0de07a2da8064ba9454",
+      "unchanged_from_baseline": true
+    }
+  ],
+  "check_docs_failure_boundary": "Exactly two pre-existing missing audit artifacts; no new E4 link errors.",
+  "committed": false,
+  "created_at_utc": "2026-10-04T11:06:25.516079+00:00",
+  "final_checks": [
+    {
+      "argv": [
+        "python3",
+        "scripts/c5_excess_two_e4_reductions.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "CHECK OK: E4 fixed theta rotations, full shared-contact fibres, palette budgets, residual interfaces\nPAPER STATUS: N1 partly excluded; N2 partly excluded; N3 excluded by N-theta/N-empty\n"
+    },
+    {
+      "argv": [
+        "env",
+        "PYTHONHASHSEED=17",
+        "python3",
+        "scripts/c5_excess_two_e4_reductions.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "CHECK OK: E4 fixed theta rotations, full shared-contact fibres, palette budgets, residual interfaces\nPAPER STATUS: N1 partly excluded; N2 partly excluded; N3 excluded by N-theta/N-empty\n"
+    },
+    {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e4_control.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "CHECK OK: 202 stored representatives and nineteen fixed attempts; no requested nonadjacent control found.\n"
+    },
+    {
+      "argv": [
+        "env",
+        "PYTHONHASHSEED=17",
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e4_control.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "CHECK OK: 202 stored representatives and nineteen fixed attempts; no requested nonadjacent control found.\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 1,
+      "stderr": "",
+      "stdout": "missing path: docs/c5_open_leaf_ledger.md:78: ../audits/2026-10-04-task-d5/c4/scope_ledger.json\nmissing path: docs/history/2026-10-04-task-d2-integration-audit.md:39: ../../audits/2026-10-04-task-d2/integration_doc_changes.diff\nFAIL: 2 errors (552 Markdown files, 5878 local links)\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--exit-code",
+        "HEAD",
+        "--"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "2ac279b6144cdfcf4ececd7b72f5d287a6f4b4ac\n"
+    },
+    {
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "task-e4-nonadjacent\n"
+    }
+  ],
+  "four_color_theorem_oracle_used": false,
+  "generation_observations": [
+    {
+      "command": "git worktree add ../math-task-e4 -b task-e4-nonadjacent 2ac279b",
+      "exit_code": 255,
+      "result": "branch already exists; independently verified existing clean worktree at baseline"
+    },
+    {
+      "command": "python3 scripts/c5_excess_two_e4_reductions.py (initial task-owned draft)",
+      "exit_code": 1,
+      "result": "disjoint segment collinear extension assertion; no artifact written"
+    },
+    {
+      "bytes": 78466,
+      "command": "python3 scripts/c5_excess_two_e4_reductions.py",
+      "exit_code": 0,
+      "sha256": "5b9d97d2a19d36776cd0617531023756889813bc44c108ec67bf6dca1ec1fb40"
+    },
+    {
+      "bytes": 641248,
+      "command": "/home/ray/developer/ai/math/.venv/bin/python scripts/c5_excess_two_e4_control.py",
+      "execution_evidence": "control subagent generation and subsequent root byte-exact replay",
+      "exit_code": 0,
+      "sha256": "1f7eec5ae5c9a5b3335f99f57905af979aa8e7173afd7327d7c6f074e1c55538"
+    }
+  ],
+  "new_files_owned_by_this_run": {
+    "artifacts/c5_excess_two_e4/REPORT.md": {
+      "bytes": 23458,
+      "sha256": "a0053f874ca58322a57391abca877beb5cf26884014280fd0c328ac0d8601b74"
+    },
+    "artifacts/c5_excess_two_e4/control.json": {
+      "bytes": 641248,
+      "sha256": "1f7eec5ae5c9a5b3335f99f57905af979aa8e7173afd7327d7c6f074e1c55538"
+    },
+    "artifacts/c5_excess_two_e4/reductions.json": {
+      "bytes": 78466,
+      "sha256": "5b9d97d2a19d36776cd0617531023756889813bc44c108ec67bf6dca1ec1fb40"
+    },
+    "scripts/c5_excess_two_e4_control.py": {
+      "bytes": 12698,
+      "sha256": "a5e9f4b2b420c145e60109b0290e2c815c15eb54882dca13cfa07899ff19efce"
+    },
+    "scripts/c5_excess_two_e4_reductions.py": {
+      "bytes": 16904,
+      "sha256": "0606ef9dc090f6a2dddb1fecb6c986307645ccceed48a34192a40c459c48dd7d"
+    }
+  },
+  "new_text_whitespace_checks": [
+    {
+      "exit_code": 1,
+      "path": "artifacts/c5_excess_two_e4/REPORT.md",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 1,
+      "path": "artifacts/c5_excess_two_e4/control.json",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 1,
+      "path": "artifacts/c5_excess_two_e4/reductions.json",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 1,
+      "path": "scripts/c5_excess_two_e4_control.py",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "exit_code": 1,
+      "path": "scripts/c5_excess_two_e4_reductions.py",
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "other_file_scope": "Not created or modified by this run; not adopted into its mathematical claims.",
+  "other_untracked_files_observed_and_preserved": [
+    "artifacts/c5_excess_two_e4/control_probe/REPORT.md",
+    "artifacts/c5_excess_two_e4/control_probe/m2_binary_probe.json",
+    "artifacts/c5_excess_two_e4/control_probe/m2_binary_probe.py",
+    "artifacts/c5_excess_two_e4/control_probe/m2_probe.json",
+    "artifacts/c5_excess_two_e4/control_probe/m2_probe.py",
+    "artifacts/c5_excess_two_e4/control_probe/split_hub_probe.json",
+    "artifacts/c5_excess_two_e4/control_probe/split_hub_probe.py",
+    "artifacts/c5_excess_two_e4/control_probe/validation.json",
+    "artifacts/c5_excess_two_e4/core_constraints.json",
+    "scripts/c5_excess_two_e4_core_constraints.py"
+  ],
+  "per_key_source_enumeration_performed": false,
+  "pushed": false,
+  "q2_q4_exact_role_assumed": false,
+  "requested_nonadjacent_positive_control_found": false,
+  "status": {
+    "N1": "partly excluded: empty support; original tree H; mixed22 with a 44 core; complete residual relations in REPORT section6",
+    "N2": "partly excluded: both mixed short and no unary; three parameterized residual relation families",
+    "N3": "all excluded by arbitrary-size theta plus N-empty"
+  },
+  "task": "E4 nonadjacent double degree5 roots",
+  "tracked_diff_empty": true,
+  "validation_file_self_hash_omitted": true,
+  "worktree": "/home/ray/developer/ai/math-task-e4"
+}
