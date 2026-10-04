@@ -1,0 +1,154 @@
+{
+  "additional_checks": [
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    {
+      "command": "git status --short --branch",
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "output": "## integrate-kprime-e3\n"
+    }
+  ],
+  "base": "2ac279b6144cdfcf4ececd7b72f5d287a6f4b4ac",
+  "branch": "task-e5-exact-rows",
+  "committed": false,
+  "corrected_mechanical_issue": {
+    "cause": "Mistyped five-spoke document filename",
+    "check": "Initial new report local-link target audit",
+    "exit_code": 1,
+    "resolution": "New REPORT link changed to existing c5_excess_two_mixed_core_leaf_fibers.md; final target audit exit 0"
+  },
+  "creation_policy": "Scripts and artifacts use exclusive-create only. --check is read-only. REPORT was initially exclusive-created and then its one incorrect local link was repaired in the new untracked file; no baseline file was edited.",
+  "evidence_boundary": "New arbitrary-size arguments are paper proofs depending on the stated E2/E3/general graph results; these replays certify finite arithmetic and exact saved E1 controls only.",
+  "exclusive_create_artifact_hashes_unchanged": true,
+  "exclusive_create_negative_tests": [
+    {
+      "command": "python3 scripts/c5_excess_two_e5_controls.py",
+      "exit_code": 1,
+      "expected": "exclusive-create refused overwrite"
+    },
+    {
+      "command": "python3 scripts/c5_excess_two_e5_local.py",
+      "exit_code": 1,
+      "expected": "exclusive-create refused overwrite"
+    },
+    {
+      "command": "python3 scripts/c5_excess_two_e5_branches.py",
+      "exit_code": 1,
+      "expected": "exclusive-create refused overwrite"
+    }
+  ],
+  "file_inventory_excluding_validation_itself": [
+    {
+      "bytes": 27729,
+      "path": "artifacts/c5_excess_two_e5/REPORT.md",
+      "sha256": "19e89b8f5293064a9010d1cc632adb83787a061f01b78d36142f4332fefc6d3d"
+    },
+    {
+      "bytes": 54439,
+      "path": "artifacts/c5_excess_two_e5/branches.json",
+      "sha256": "3b463748476fa4db66bd85dc0075cb47a5ec879563303d7688d0e26e5682b227"
+    },
+    {
+      "bytes": 325747,
+      "path": "artifacts/c5_excess_two_e5/controls.json",
+      "sha256": "988b6d4b799594107c99ef6037d9bd4a7128a88d3f3810a9f04b7dcfc7d6dabf"
+    },
+    {
+      "bytes": 432613,
+      "path": "artifacts/c5_excess_two_e5/local.json",
+      "sha256": "318a83ac942a99092d7dec9afa3502be822858ee623b9e5b8a7c6fbbba0d1e01"
+    },
+    {
+      "bytes": 8613,
+      "path": "scripts/c5_excess_two_e5_branches.py",
+      "sha256": "0016f4ebe7397e3bc33b1e29fd4f4e618c2ae28fa458942107f26e80b798a716"
+    },
+    {
+      "bytes": 13264,
+      "path": "scripts/c5_excess_two_e5_controls.py",
+      "sha256": "0248392d9cd6dacf83035a01c8d63e56768a26d5a7892a2b89ec97423cf77dd7"
+    },
+    {
+      "bytes": 14333,
+      "path": "scripts/c5_excess_two_e5_local.py",
+      "sha256": "a09286f211fdd9a4ffdf9691b895ba75976ca20ce07fca043c71ef5bb859ac05"
+    }
+  ],
+  "final_mechanical_audit": {
+    "command": "python3 - <<'PY'\nfrom pathlib import Path\nimport hashlib,json,re,subprocess\nroot=Path.cwd()\nreport=root/'artifacts/c5_excess_two_e5/REPORT.md'\nnewfiles=subprocess.check_output(['git','ls-files','--others','--exclude-standard'],text=True).splitlines()\nassert len(newfiles)==7, newfiles\nassert set(newfiles)=={\n 'artifacts/c5_excess_two_e5/REPORT.md','artifacts/c5_excess_two_e5/controls.json',\n 'artifacts/c5_excess_two_e5/local.json','artifacts/c5_excess_two_e5/branches.json',\n 'scripts/c5_excess_two_e5_controls.py','scripts/c5_excess_two_e5_local.py',\n 'scripts/c5_excess_two_e5_branches.py'}\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='2ac279b6144cdfcf4ececd7b72f5d287a6f4b4ac'\nassert not subprocess.check_output(['git','diff','--name-only','HEAD'],text=True).strip()\nassert not subprocess.check_output(['git','diff','--cached','--name-only'],text=True).strip()\nfor rel in newfiles:\n text=(root/rel).read_text()\n assert text.endswith('\\n')\n assert all(line.rstrip()==line for line in text.splitlines()), rel\nfor target in re.findall(r'\\]\\(([^)]+)\\)',report.read_text()):\n path=target.split('#')[0]\n if path and path!='validation.json':assert (report.parent/path).exists(), target\nfor name,key in [('controls.json','source_sha256'),('branches.json','sources_sha256')]:\n data=json.loads((report.parent/name).read_text())\n for rel,digest in data[key].items():\n  assert hashlib.sha256((root/rel).read_bytes()).hexdigest()==digest, rel\nlocal=json.loads((report.parent/'local.json').read_text())\nfor item in local['inputs']:\n assert hashlib.sha256((root/item['path']).read_bytes()).hexdigest()==item['sha256']\nprint(json.dumps({'new_files_count':len(newfiles),'tracked_modifications':[], 'HEAD_unchanged':True,'whitespace_pass':True,'local_link_targets_pass':True,'all_certificate_source_hashes_match':True},sort_keys=True))\nPY",
+    "exit_code": 0,
+    "output": "{\"HEAD_unchanged\": true, \"all_certificate_source_hashes_match\": true, \"local_link_targets_pass\": true, \"new_files_count\": 7, \"tracked_modifications\": [], \"whitespace_pass\": true}\n"
+  },
+  "first_generation": [
+    {
+      "command": "PYTHONHASHSEED=17 python3 scripts/c5_excess_two_e5_controls.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/c5_excess_two_e5_local.py",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 scripts/c5_excess_two_e5_branches.py",
+      "exit_code": 0
+    }
+  ],
+  "four_colour_or_planarity_oracle": false,
+  "intentionally_not_run": [
+    "Historical exact-target/source-key enumeration",
+    "E1 k<=5 census",
+    "D8/E4 checkers",
+    "lake build: no Lean changes/theorems"
+  ],
+  "new_files": [
+    "artifacts/c5_excess_two_e5/REPORT.md",
+    "artifacts/c5_excess_two_e5/branches.json",
+    "artifacts/c5_excess_two_e5/controls.json",
+    "artifacts/c5_excess_two_e5/local.json",
+    "artifacts/c5_excess_two_e5/validation.json",
+    "scripts/c5_excess_two_e5_branches.py",
+    "scripts/c5_excess_two_e5_controls.py",
+    "scripts/c5_excess_two_e5_local.py"
+  ],
+  "pushed": false,
+  "replay": [
+    {
+      "command": "python3 scripts/c5_excess_two_e5_controls.py --check",
+      "exit_code": 0,
+      "output": "CHECK OK: exact 935 all 2048 subgraphs, complete leaf/pin/D5 controls; 951 omissions 959/1015\nsha256 988b6d4b799594107c99ef6037d9bd4a7128a88d3f3810a9f04b7dcfc7d6dabf bytes 325747\n"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 scripts/c5_excess_two_e5_controls.py --check",
+      "exit_code": 0,
+      "output": "CHECK OK: exact 935 all 2048 subgraphs, complete leaf/pin/D5 controls; 951 omissions 959/1015\nsha256 988b6d4b799594107c99ef6037d9bd4a7128a88d3f3810a9f04b7dcfc7d6dabf bytes 325747\n"
+    },
+    {
+      "command": "python3 scripts/c5_excess_two_e5_local.py --check",
+      "exit_code": 0,
+      "output": "{\"action\": \"checked\", \"actual_E1_935_root_path_controls\": 20, \"artifact\": \"artifacts/c5_excess_two_e5/local.json\", \"boundary_column_injectivity\": true, \"branch_necessary_support_counts\": {\"932\": 0, \"933\": 2, \"940\": 2, \"941\": 4}, \"frame_edge_signature_injectivity\": true, \"no_four_colour_or_planarity_oracle\": true, \"sha256\": \"318a83ac942a99092d7dec9afa3502be822858ee623b9e5b8a7c6fbbba0d1e01\", \"ternary_feasible_covers\": 132, \"ternary_literal_queries\": 180, \"ternary_palette_candidate_checks\": 3600, \"three_spoke_sets_with_selected_same_color_witness\": 10}\n"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 scripts/c5_excess_two_e5_local.py --check",
+      "exit_code": 0,
+      "output": "{\"action\": \"checked\", \"actual_E1_935_root_path_controls\": 20, \"artifact\": \"artifacts/c5_excess_two_e5/local.json\", \"boundary_column_injectivity\": true, \"branch_necessary_support_counts\": {\"932\": 0, \"933\": 2, \"940\": 2, \"941\": 4}, \"frame_edge_signature_injectivity\": true, \"no_four_colour_or_planarity_oracle\": true, \"sha256\": \"318a83ac942a99092d7dec9afa3502be822858ee623b9e5b8a7c6fbbba0d1e01\", \"ternary_feasible_covers\": 132, \"ternary_literal_queries\": 180, \"ternary_palette_candidate_checks\": 3600, \"three_spoke_sets_with_selected_same_color_witness\": 10}\n"
+    },
+    {
+      "command": "python3 scripts/c5_excess_two_e5_branches.py --check",
+      "exit_code": 0,
+      "output": "CHECK OK: four branches, literal common D5, 225 guards, nine actual 935 retained cores\nsha256 3b463748476fa4db66bd85dc0075cb47a5ec879563303d7688d0e26e5682b227 bytes 54439\n"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 scripts/c5_excess_two_e5_branches.py --check",
+      "exit_code": 0,
+      "output": "CHECK OK: four branches, literal common D5, 225 guards, nine actual 935 retained cores\nsha256 3b463748476fa4db66bd85dc0075cb47a5ec879563303d7688d0e26e5682b227 bytes 54439\n"
+    }
+  ],
+  "source_enumeration": false,
+  "stop_condition": "(c) E3 A portability item overstated the need for the general spoke+unary predecessor. Historical citation dependencies remain distinct from incidence-specific proof applicability.",
+  "task": "E5 exact-row dependency removal",
+  "tracked_changes": [],
+  "worktree": "/home/ray/developer/ai/math-task-e5"
+}
