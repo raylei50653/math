@@ -126,7 +126,7 @@ NA6-3 為 01,04,05,06,07,08,12,15,25,29,23,34,36,39,46,57,59,68,6a,78,7a,8a,9a�
 **（2026-10-04 結果，任務 ES：[報告](c5_excess_two_finite_search.md)。）** 三型完整搜到 k=9，179 個 crit orbits，**無 |Q|+c(Q)>4**；Q 只出現單點、相鄰二點、非相鄰二點、三點弧。整合者以獨立程式重驗全部 179 代表（型別、disk、無弦、連通、spokes≤3、T4、Σ、逐邊 criticality）並重播全量 `--check`（41 檔 byte 一致）。獨立重驗只證所列圖為真；完整性依 k≤6 暴力對照與演算法正確性。
 **提議（2026-10-04 記錄，未派）：有限搜尋的信任升級。** (1) L0：179 orbits 的 Lean `native_decide` 證書（只證 soundness）；(2) 第二套獨立枚舉器（直接枚舉 rotation system），k≤9 逐層 orbit 集合須一致，作為完整性的雙實作對照；(3) L1 試點：Lean 內以組合嵌入定義 disk、枚舉器正確性定理加 k≤5／6 的完整窮舉，僅在紙面證明需要有限基底時開。k=9 的 Lean 完整性因平面性形式化與對稱約化證明成本過高，不列入。
 **下一輪（2026-10-04 記錄，優先於新實驗）：四份並行任務。** (E6) 相鄰殘留：先證 N-theta 對相鄰 roots 的推論 m≤2（zw 為第四條路徑），再以 E5 L1、triple-critical 與框邊預算整型處理 G1–G4 與 J6，ES 的 AD 型 crit orbits 為正控制；(E4C) E4 不用三列之引理在 NA6-1–3 與 ES 全部 NA 型 crit orbits 上的實際核對；(ER) 第二套獨立枚舉器，k≤9 逐型逐層 crit orbit 集合須與 ES 一致；(LC) 179 orbits 的 Lean soundness 證書。K 型局部題、逐 spoke-pair 殘留輪次與 L1 Lean 完整性試點本輪不開。
-**本輪回報（2026-10-04）：E6。** [報告](../artifacts/c5_excess_two_e6/REPORT.md)證相鄰 m≤2，四分支關閉 J6 的 m≥3；G2 收窄為 U 盾弧恰二、G3 為四份支援約束（933 前兩份、940 後兩份，932 已排）、G4 排除二邊 unary、只剩盾弧恰三；no-mixed 為 941 的 013 三-spoke 或兩側≤2；G1 改以 actual core 分組轉交 J2／J3／J4／J6。E4C、ER、LC 仍在進行。
+**本輪回報（2026-10-04）：E6。** [報告](../artifacts/c5_excess_two_e6/REPORT.md)證相鄰 m≤2，四分支關閉 J6 的 m≥3；G2 收窄為 U 盾弧恰二、G3 為四份支援約束（933 前兩份、940 後兩份，932 已排）、G4 排除二邊 unary、只剩盾弧恰三；no-mixed 為 941 的 013 三-spoke 或兩側≤2；G1 改以 actual core 分組轉交 J2／J3／J4／J6。E4C：[54 NA orbits × 60 項](../artifacts/c5_excess_two_e4c/REPORT.md)，42 項有控制、18 項無控制、無反例；無控制者多為前提已證不可實現的排除型引理，真正的控制缺口是 C2b、D2／D14、D7／D7a、D16a、E5。ER、LC 仍在進行。
 
 這一輪期間不新開：逐 spoke-pair 殘留輪次（A 的 12／12 等）、k≥8 來源搜尋、案例樹 ledger、K 型局部題。
 另一個次要的不依賴 ε 題目：把 Σ|σ|≤5 與逐列 D+O 恆等式合成單一不等式。
