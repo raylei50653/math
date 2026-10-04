@@ -9,6 +9,7 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | --- | --- |
 | [研究線入口](docs/HANDOFF.md) | 新對話先讀；選擇研究線導覽，進行中以 tag 標記 |
 | [完整文件索引](docs/STATUS.md) | 查找專題報告、短狀態、後續關係與歷史 |
+| [Weak-deletion 開放葉 ledger](docs/c5_open_leaf_ledger.md) | 共鄰 P₃ 固定具名目錄的葉數、關閉事件、階段趨勢與每日觀測入口 |
 | [C₅ 全線進展與高階假設](docs/c5_research_synthesis.md) | 跨線成果、同源關係／臨界預算／幾何框架、三個可反駁假設及階數初驗 |
 | [C₅ class 兩點重疊](docs/c5_two_vertex_overlap_guide.md) | 具名八點接合、拓撲、混合外框與關係修復；現況、停止點及重播入口 |
 | [933／941 excess 下界與接手入口](docs/c5_kempe_guide.md) | 共同 ε≥2；唯一 degree-6 的 ε=2 分支全排。相鄰唯一 mixed 已排除 (4,4) 核心、五-spoke 原來源、四-spoke (3,1) 全部 incidence 分拆，以及 (2,2) 的 mixed-(1,1) 加各側一 unary 整個子型。任務 A／A₂／A₃／A₄ 的 mixed-(1,2)+a-unary 已排01／23、01／12、01／01、04／04及root交換，保存16／20具名殘留；A₄在原04／04逐項核對三hub前提，以完整C延拓使ax非critical，完整ternary／joint及singleton1／3均保持。其他身份、較少 spokes、單省略與 (5,5) 核心保留，ε≥3 未證。完整 joint、停止點與重播見導覽 |

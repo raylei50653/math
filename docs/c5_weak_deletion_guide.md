@@ -7,6 +7,11 @@
 本批成果及D至D₅稽核的發布驗證見[發布紀錄](history/2026-10-04-c5-parallel-progress-publish.md)；
 新checkout的凍結快照／完整輸出先依[封存還原說明](../audits/README.md)還原。
 
+主線首批[開放葉 ledger 與趨勢](c5_open_leaf_ledger.md)以共鄰 P₃ 的固定
+3500 個 case／geometry／join keys 計數：C₂→C₃→C₄ 各閉合一葉，
+目前 3497 葉未稽核／未關閉，36 cases／140 geometries 均仍開放。
+這是具名目錄的階段趨勢；全主線葉總數及每日下降率尚未知。
+
 ## 1. 目標與範圍
 
 主命題 **`K∞=K≤5` 仍未證**。目前仍走 weak-deletion 候選 A 的

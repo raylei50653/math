@@ -40,6 +40,7 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [Weak-deletion 開放葉 ledger](c5_open_leaf_ledger.md) | 共鄰 P₃ 固定3500具名keys，C₂／C₃／C₄各閉合一葉，階段3500→3499→3498→3497；36cases／140geometries均仍開放。完整來源SHA／JSON pointers與首個實際觀測保存；全主線葉總數及每日速度未知，第二個日期樣本待取得 |
 | [Mixed P₃ 中點／端點六跨度排除](c5_mixed_p3_middle_endpoint.md) | 保留原末端三色附件，原四環外側四區塊排除全部 residual 及整份對稱型；連同兩端接線完成不同接點各一 incidence；任意 unary 大小、0 target，未 Lean 化 |
 | [任務 C：Mixed 共鄰 P₃ 雙扇區與部分來源排除](c5_mixed_p3_common_endpoint.md) | 保留原鏈與 (3,2,1) 附件；任意 unary 大小的短子弧／tether 引理，x₁ 強制唯一框色 2 時全排除；36 具名必要 residual、140 rotation 正控制及 900 側接合保留，0 target；現行入口見 weak-deletion 導覽，未 Lean 化 |
 | [C₂：共鄰 P₃ 一色支援三接點 unary](c5_mixed_p3_one_color_ternary_unary.md) | CPP-134-1／geometry 30／side_join 20：任意 unary 大小的原 degree／葉數化約迫 triangle，原外路給 K₅ subdivision；保存完整 tuples／刪邊 witnesses，僅關閉這份側接合，0 target，外部 Gallai＋紙面＋Python，未 Lean 化 |
