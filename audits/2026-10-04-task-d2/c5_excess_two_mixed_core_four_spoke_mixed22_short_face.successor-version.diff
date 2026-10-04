@@ -1,0 +1,30 @@
+--- successor-v1/scripts/c5_excess_two_mixed_core_four_spoke_mixed22_short_face.py
++++ successor-v2/scripts/c5_excess_two_mixed_core_four_spoke_mixed22_short_face.py
+@@ -44,10 +44,10 @@
+         eligible = []
+         for ident in identities:
+             partition = ident['original_vertex_partition']
+-            owner_counts = [sum(tuple(j for j in (0, 1)
+-                                      if any(partition[i] == v for i in (2*j, 2*j+1))) == owners
+-                                for v in set(partition))]
+-            if not owners or owner_counts[0] >= 2:
++            owner_count = sum(tuple(j for j in (0, 1)
++                                    if any(partition[i] == v for i in (2*j, 2*j+1))) == owners
++                              for v in set(partition))
++            if not owners or owner_count >= 2:
+                 eligible.append(ident['identity'])
+         records.append(dict(original_leaf_owner=typ, original_root_owners=list(owners),
+             missing_color_membership_signature=membership,
+@@ -84,6 +84,12 @@
+             fresh += length-1
+             paths.append(path)
+             es |= {tuple(sorted(e)) for e in zip(path, path[1:])}
++        assert all(len(p) == len(set(p)) and
++                   all(tuple(sorted(e)) in es for e in zip(p, p[1:])) for p in paths)
++        interiors = [v for p in paths for v in p[1:-1]]
++        assert len(interiors) == len(set(interiors))
++        assert not set(interiors) & (B | {5, 6} | set(clique))
++        assert all(sum(v in e for e in es) == 4 for v in clique)
+         hub = sorted(B | {5, 6} | {v for p in paths for v in p[1:]})
+         groups = [[v] for v in clique] + [hub]
+         seen = {hub[0]}

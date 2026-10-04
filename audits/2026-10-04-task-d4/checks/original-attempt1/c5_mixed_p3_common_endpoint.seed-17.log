@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-04-task-d4/snapshot/scripts/c5_mixed_p3_common_endpoint.py", line 354, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-04-task-d4/snapshot/scripts/c5_mixed_p3_common_endpoint.py", line 337, in main
+    data = build()
+  File "/home/ray/developer/ai/math/audits/2026-10-04-task-d4/snapshot/scripts/c5_mixed_p3_common_endpoint.py", line 306, in build
+    local = local_audit()
+  File "/home/ray/developer/ai/math/audits/2026-10-04-task-d4/snapshot/scripts/c5_mixed_p3_common_endpoint.py", line 104, in local_audit
+    prior = json.loads(capacity.OUT.read_bytes())["three_vertices"]["color_cases"]
+                       ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 777, in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ray/developer/ai/math/audits/2026-10-04-task-d4/snapshot/artifacts/c5_mixed_capacity_contacts/observations.json'

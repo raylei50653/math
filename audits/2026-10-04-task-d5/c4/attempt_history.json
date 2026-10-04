@@ -1,0 +1,72 @@
+{
+ "all_attempts_retained": true,
+ "attempts": [
+  {
+   "attempt": "attempt1-default",
+   "checks": null,
+   "command": "python3 audits/2026-10-04-task-d5/c4/audit_c4.py --repo audits/2026-10-04-task-d5/snapshot --output audits/2026-10-04-task-d5/c4/attempt1-default",
+   "exit_code": 1,
+   "failure_summary": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-04-task-d5/c4/audit_c4.py\", line 417, in main\n    try:result=run(args.repo,args.output,versions)\n               ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-04-task-d5/c4/audit_c4.py\", line 367, in run\n    a.ck('scope/inherited_front_tables_kept',len(ledger)==3500 and len(parent['geometry']['retained_geometries'])==140 and parent['summary']['retained_cases']==36 if 'retained_cases' in parent['summary'] else len(ledger)==3500)\n                                                                                                                                                                                          ~~~~~~^^^^^^^^^^^\nKeyError: 'summary'\n",
+   "log": "audits/2026-10-04-task-d5/c4/attempt1-default.log",
+   "pythonhashseed": null,
+   "result_record": "audits/2026-10-04-task-d5/c4/attempt1-default/exception.json",
+   "source_versions": {
+    "audit_c4.py": "f67aa4d83218a9695940d2a123088ea0137d98634905f73e4178ca56d6ae3f82",
+    "independent_helpers.py": "bc5fd0226341e54fb899f2dc675cbbad15cb06e768f0ed982322c0a8c93ed7d5",
+    "predecessor_front.py": "5565f6a304ba02144f7474e2a95d41530f494caab409c0bf0892982f43da8260"
+   },
+   "status": "exception"
+  },
+  {
+   "attempt": "attempt2-default",
+   "checks": null,
+   "command": "python3 audits/2026-10-04-task-d5/c4/audit_c4.py --repo audits/2026-10-04-task-d5/snapshot --output audits/2026-10-04-task-d5/c4/attempt2-default",
+   "exit_code": 1,
+   "failure_summary": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-04-task-d5/c4/audit_c4.py\", line 426, in main\n    try:result=run(args.repo,args.output,versions)\n               ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-04-task-d5/c4/audit_c4.py\", line 390, in run\n    inherited_sources={name:sha256((repo/'audits/2026-10-04-task-d4/c3'/original).read_bytes()).hexdigest()\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 777, in read_bytes\n    with self.open(mode='rb', buffering=0) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'audits/2026-10-04-task-d5/snapshot/audits/2026-10-04-task-d4/c3/independent_helpers.py'\n",
+   "log": "audits/2026-10-04-task-d5/c4/attempt2-default.log",
+   "pythonhashseed": null,
+   "result_record": "audits/2026-10-04-task-d5/c4/attempt2-default/exception.json",
+   "source_versions": {
+    "audit_c4.py": "cf7d8f525faa37e854e37fb060d68bbf13a5141896c8d10d1571d983221dbfe8",
+    "independent_helpers.py": "bc5fd0226341e54fb899f2dc675cbbad15cb06e768f0ed982322c0a8c93ed7d5",
+    "predecessor_front.py": "5565f6a304ba02144f7474e2a95d41530f494caab409c0bf0892982f43da8260"
+   },
+   "status": "exception"
+  },
+  {
+   "attempt": "attempt3-default",
+   "checks": 2477,
+   "command": "python3 audits/2026-10-04-task-d5/c4/audit_c4.py --repo audits/2026-10-04-task-d5/snapshot --output audits/2026-10-04-task-d5/c4/attempt3-default",
+   "exit_code": 0,
+   "failure_summary": null,
+   "log": "audits/2026-10-04-task-d5/c4/attempt3-default.log",
+   "pythonhashseed": null,
+   "result_record": "audits/2026-10-04-task-d5/c4/attempt3-default/results.json",
+   "source_versions": {
+    "audit_c4.py": "497bc594144b97b62d072147006d812cfa5d1dc57e289e64f0b5b0720b67e2eb",
+    "independent_helpers.py": "bc5fd0226341e54fb899f2dc675cbbad15cb06e768f0ed982322c0a8c93ed7d5",
+    "independent_reuse_provenance.json": "db20cf7a7246d784da82a5ee9c3272d72d514b2c93f7e878f5b1bb9b8807559e",
+    "predecessor_front.py": "5565f6a304ba02144f7474e2a95d41530f494caab409c0bf0892982f43da8260"
+   },
+   "status": "pass"
+  },
+  {
+   "attempt": "attempt4-seed17",
+   "checks": 2477,
+   "command": "python3 audits/2026-10-04-task-d5/c4/audit_c4.py --repo audits/2026-10-04-task-d5/snapshot --output audits/2026-10-04-task-d5/c4/attempt4-seed17",
+   "exit_code": 0,
+   "failure_summary": null,
+   "log": "audits/2026-10-04-task-d5/c4/attempt4-seed17.log",
+   "pythonhashseed": "17",
+   "result_record": "audits/2026-10-04-task-d5/c4/attempt4-seed17/results.json",
+   "source_versions": {
+    "audit_c4.py": "497bc594144b97b62d072147006d812cfa5d1dc57e289e64f0b5b0720b67e2eb",
+    "independent_helpers.py": "bc5fd0226341e54fb899f2dc675cbbad15cb06e768f0ed982322c0a8c93ed7d5",
+    "independent_reuse_provenance.json": "db20cf7a7246d784da82a5ee9c3272d72d514b2c93f7e878f5b1bb9b8807559e",
+    "predecessor_front.py": "5565f6a304ba02144f7474e2a95d41530f494caab409c0bf0892982f43da8260"
+   },
+   "status": "pass"
+  }
+ ],
+ "rewritten_attempts": []
+}

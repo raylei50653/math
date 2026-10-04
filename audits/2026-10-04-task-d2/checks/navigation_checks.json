@@ -1,0 +1,72 @@
+[
+  {
+    "name": "check_docs",
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "hashseed": "default",
+    "exit_code": 0,
+    "elapsed_seconds": 0.46403174499982924,
+    "stdout": "OK: 523 Markdown files, 5414 local links; anchors, index, handoff checked\n",
+    "stderr": ""
+  },
+  {
+    "name": "audit_links",
+    "command": [
+      "python3",
+      "audits/2026-10-04-task-d2/check_audit_links.py",
+      "--repo",
+      "."
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "hashseed": "default",
+    "exit_code": 0,
+    "elapsed_seconds": 0.040821614999913436,
+    "stdout": "OK: 9 D2 Markdown files, 67 local links, 0 errors\n",
+    "stderr": ""
+  },
+  {
+    "name": "docgraph",
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "hashseed": "default",
+    "exit_code": 0,
+    "elapsed_seconds": 0.2898896869996861,
+    "stdout": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n",
+    "stderr": ""
+  },
+  {
+    "name": "artifact_status",
+    "command": [
+      "python3",
+      "tools/artifacts.py",
+      "status"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "hashseed": "default",
+    "exit_code": 0,
+    "elapsed_seconds": 1.6991624160000356,
+    "stdout": "ok=141\n",
+    "stderr": ""
+  },
+  {
+    "name": "diff_check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "hashseed": "default",
+    "exit_code": 0,
+    "elapsed_seconds": 0.005610808999790606,
+    "stdout": "",
+    "stderr": ""
+  }
+]

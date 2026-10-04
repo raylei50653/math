@@ -1,0 +1,78 @@
+{
+  "first_attempt": {
+    "strict_full_output_compare_passed": false,
+    "error": "AssertionError in hand-run root comparison at graph output comparison",
+    "differing_fields": {
+      "audited_source_root": {
+        "agent": "/home/ray/developer/ai/math/audits/2026-10-04-task-d3/snapshot",
+        "root_replay": "audits/2026-10-04-task-d3/snapshot"
+      },
+      "input_hashes": {
+        "agent": {
+          "artifacts/c5_mixed_p3_common_endpoint/observations.json": {
+            "C2_recorded_sha256": "0f8cd30f22eae684f8b1691596d7ee83576c1f7d13052f01d878cda97ec73d8f",
+            "sha256": "0f8cd30f22eae684f8b1691596d7ee83576c1f7d13052f01d878cda97ec73d8f"
+          },
+          "artifacts/c5_mixed_p3_one_color_ternary_unary/observations.json": {
+            "D2_sha256": "6e01211b2445219854b5fb361600e4e0a35bf0e4dd9707789d90036d1750435c",
+            "audited_sha256": "6e01211b2445219854b5fb361600e4e0a35bf0e4dd9707789d90036d1750435c",
+            "live_matches_D2": true,
+            "live_sha256_at_audit": "6e01211b2445219854b5fb361600e4e0a35bf0e4dd9707789d90036d1750435c"
+          },
+          "docs/c5_mixed_p3_one_color_ternary_unary.md": {
+            "D2_sha256": "1b128b7ed8ccf6d58d748678c15cd045661024649b8cca9fb3aa2522f604baaf",
+            "audited_sha256": "1b128b7ed8ccf6d58d748678c15cd045661024649b8cca9fb3aa2522f604baaf",
+            "live_matches_D2": true,
+            "live_sha256_at_audit": "1b128b7ed8ccf6d58d748678c15cd045661024649b8cca9fb3aa2522f604baaf"
+          },
+          "scripts/c5_mixed_p3_one_color_ternary_unary.py": {
+            "D2_sha256": "848147efd5c89299e09449c3e40c718b03906ac39b319d53fc3682dd369e896d",
+            "audited_sha256": "848147efd5c89299e09449c3e40c718b03906ac39b319d53fc3682dd369e896d",
+            "live_matches_D2": true,
+            "live_sha256_at_audit": "848147efd5c89299e09449c3e40c718b03906ac39b319d53fc3682dd369e896d"
+          }
+        },
+        "root_replay": {
+          "artifacts/c5_mixed_p3_common_endpoint/observations.json": {
+            "C2_recorded_sha256": "0f8cd30f22eae684f8b1691596d7ee83576c1f7d13052f01d878cda97ec73d8f",
+            "sha256": "0f8cd30f22eae684f8b1691596d7ee83576c1f7d13052f01d878cda97ec73d8f"
+          },
+          "artifacts/c5_mixed_p3_one_color_ternary_unary/observations.json": {
+            "D2_sha256": "6e01211b2445219854b5fb361600e4e0a35bf0e4dd9707789d90036d1750435c",
+            "audited_sha256": "6e01211b2445219854b5fb361600e4e0a35bf0e4dd9707789d90036d1750435c",
+            "live_matches_D2": true,
+            "live_sha256_at_audit": "6e01211b2445219854b5fb361600e4e0a35bf0e4dd9707789d90036d1750435c"
+          },
+          "docs/c5_mixed_p3_one_color_ternary_unary.md": {
+            "D2_sha256": "1b128b7ed8ccf6d58d748678c15cd045661024649b8cca9fb3aa2522f604baaf",
+            "audited_sha256": "1b128b7ed8ccf6d58d748678c15cd045661024649b8cca9fb3aa2522f604baaf",
+            "live_matches_D2": false,
+            "live_sha256_at_audit": "8b55e27cbe00ed481582ce59044ccab5b194cb77fe958b387a784453bb08b4e9"
+          },
+          "scripts/c5_mixed_p3_one_color_ternary_unary.py": {
+            "D2_sha256": "848147efd5c89299e09449c3e40c718b03906ac39b319d53fc3682dd369e896d",
+            "audited_sha256": "848147efd5c89299e09449c3e40c718b03906ac39b319d53fc3682dd369e896d",
+            "live_matches_D2": true,
+            "live_sha256_at_audit": "848147efd5c89299e09449c3e40c718b03906ac39b319d53fc3682dd369e896d"
+          }
+        }
+      },
+      "timestamp_utc": {
+        "agent": "2026-10-04T02:06:51.954423+00:00",
+        "root_replay": "2026-10-04T02:07:49.992557+00:00"
+      }
+    },
+    "explanation": "Run timestamp, relative/absolute source-root string, and live-document provenance differ. Frozen audited input hashes and all graph result fields are compared separately below."
+  },
+  "second_attempt": {
+    "relation_full_output_equal": true,
+    "graph_complete_core_equal": true,
+    "graph_frozen_audited_hashes_equal": true,
+    "removed_comparison_fields": [
+      "audited_source_root",
+      "input_hashes",
+      "timestamp_utc"
+    ],
+    "not_a_mathematical_or_frozen_artifact_failure": true
+  }
+}

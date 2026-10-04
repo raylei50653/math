@@ -1,8 +1,11 @@
 # Weak-deletion／單側與共同出口導覽
 
-更新：2026-09-30。本頁整理既有成果，不新增研究結論。
+更新：2026-10-04。本頁整理既有成果，不新增研究結論。
 研究線標記見 [HANDOFF](HANDOFF.md)，全文件索引見 [STATUS](STATUS.md)，
 共通信任界線與工作約定見 [DOCUMENTATION](DOCUMENTATION.md)。
+
+本批成果及D至D₅稽核的發布驗證見[發布紀錄](history/2026-10-04-c5-parallel-progress-publish.md)；
+新checkout的凍結快照／完整輸出先依[封存還原說明](../audits/README.md)還原。
 
 ## 1. 目標與範圍
 
@@ -35,6 +38,10 @@ minimal obstruction 路線：先完成 single-sided exit 的可處理核心，�
 | 唯一 mixed P₃ 對稱分支 | 兩端各一 incidence、兩側 E 同 pair 時，原五環空內側與五份實際支援排除全部 disk 來源；任意 unary 大小、不需 T4／Gallai | [原五環與完整側支援](c5_mixed_p3_symmetric.md) |
 | 唯一 mixed P₃ 非對稱／兩端接線完成 | (1,2) 及 root 交換型由六跨度排除，容許一色側零跨度；結合對稱分支完成兩端各一 incidence 全 residual；其他接線保留 | [原環序的六跨度](c5_mixed_p3_asymmetric.md) |
 | 唯一 mixed P₃ 中點／端點接線 | 原未接 root 末端的三色附件與四區塊環序排除全部 residual；連同兩端接線，兩個不同接點、各一 incidence 已全來源排除 | [保留末端的六跨度](c5_mixed_p3_middle_endpoint.md) |
+| 唯一 mixed 共鄰端點 P₃ | 任意 unary 大小的雙扇區與 triangle tether 引理；x₁ 強制唯一框色 2 時來源排除，x₂ 附件為色 2 時只留 used-singleton／pair；仍留 36 具名必要 residual，未證出口 | [短子弧與完整殘留](c5_mixed_p3_common_endpoint.md) |
+| 共鄰 P₃ 一色支援三接點 unary | CPP-134-1／geometry 30／side_join 20：任意大小化約迫原 triangle，原外路給 K₅ subdivision；只關閉這份側接合，未 Lean 化 | [C₂ 原身份與 minor](c5_mixed_p3_one_color_ternary_unary.md) |
+| 共鄰 P₃ 雙框點三接點 unary | CPP-134-1／geometry 34／side_join 20：原禁色 slack 排接點碰 b₂，palette 分 T／N 葉，原外路 K₅ 排 N 後重證葉數；任意 unary 大小，只關閉這份側接合，未 Lean 化 | [C₃ 原雙框點葉與 bridges](c5_mixed_p3_two_frame_ternary_unary.md) |
+| 共鄰 P₃ 雙框點兩份 unary | CPP-134-1／geometry 34／join60：逐份自身附件固定 0、1；兩份完整原 relations／bridges 對 2↔3 封閉，與指定禁色各自矛盾；任意大小來源排除，其他 joins 保留 | [C₄ 逐份完整關係](c5_mixed_p3_two_frame_two_unary.md) |
 | 更一般 roots／出口 | degree≥6、多 degree-5、非樹／非相鄰 roots 與共同出口仍開放 | [Root 預算](c5_root_degree_excess.md)、[一般出口界線](c5_single_sided_exit.md) |
 
 先讀候選與 minimal obstruction，再讀條件式出口的適用範圍，最後接到本線停止點。
@@ -43,7 +50,9 @@ minimal obstruction 路線：先完成 single-sided exit 的可處理核心，�
 
 **本線精確停止點：no-mixed 指定 p₁、p₂ 已有免表共同存在性分離；
 唯一 mixed 原 P₃ 的兩個不同接點、各一 root incidence 接線，全部
-residual 均已作任意 unary 大小的 disk 來源排除。未 Lean 化。**
+residual 均已作任意 unary 大小的 disk 來源排除；共鄰端點已有雙扇區
+引理及部分來源排除；前層保留 36 具名必要案例，後續已關閉其中
+CPP-134-1／geometry 30 及 34／side_join 20 的兩份原三接點身份。未 Lean 化。**
 
 [Mixed 容量](c5_mixed_capacity_contacts.md)從完整關係證明：固定另一 root
 顏色後，禁止本側顏色至多等於本側 incidences；source unary 禁色互不
@@ -68,13 +77,49 @@ residual 均已作任意 unary 大小的 disk 來源排除。未 Lean 化。**
 附件迫見三色；保留 x₀ 的四個連通區塊環序給兩種 residual 各至少
 六框邊。22,400 組必要側角色全排除，零 target；未刪 x₀ 或換成 K2。
 
-下一窄題是**唯一 mixed 原 P₃=x₀x₁x₂，P*ᶻ=P*ʷ={x₂}，
-即 root masks=(0,0,3)，及路徑反向型 (3,0,0)**。
-前層固定 q 控制已有六份必要色配置，各點實際 boundary 鄰點數為
-(3,2,1)。保留同一共鄰點、原 x₂–x₁–x₀ 鏈、全部實際附件與 unary，
-先從完整三點關係分析原 triangle z–x₂–w–z 的外側次序。
-不能把兩個 root incidences 拆成兩點，也不能把整份原 P₃ 換成
-shared singleton。其餘更多 incidences 的 P₃ 接線仍保留。
+**任務 C：[共鄰端點 P₃](c5_mixed_p3_common_endpoint.md)** 處理 masks=(0,0,3) 及
+反向型 (3,0,0)，保留原鏈、各點 (3,2,1) 份附件與任意 unary。
+完整 triples={(3,d,a),(3,d,3)}，{a,c,d}={0,1,2}，禁對為
+(a,3)/(3,a)。原 x₀ star、x₁ rooted Y 把兩完整側支援限制到同一
+長度≤3 的 J；原 x₁–x₂–S₂ tether 再迫兩側位於 S₂ 同側。
+d=2 的兩角色全部來源排除；c=2 只留 {a}/T 或 T/{a}；a=2 仍保留。
+固定控制存36具名local／residual、140必要幾何及rotation正控制，
+保留全部900側接合；骨架未證原unary、degree與逐邊minimality實現，0 target。
+
+[C₂ 一色支援](c5_mixed_p3_one_color_ternary_unary.md)已關閉固定
+CPP-134-1／geometry 30／side_join_id 20：自身支援恰 {b₁}、完整 degree 四
+給 unary 最小內度二；Gallai／連通外部 K₄ 排除後，兩個 leaf blocks
+至少耗四個原接點，故原 unary 恰為 triangle。原 z–x₂–b₄–b₃–b₂–b₁
+外路給 K₅ subdivision。局部 degree／九條刪邊解除可成立，矛盾在共同
+平面性；前層 36／140／900 表保持原資料，未作整份案例或 profile 刪除。
+
+[C₃ 雙框點支援](c5_mixed_p3_two_frame_ternary_unary.md)已關閉固定
+CPP-134-1／geometry 34／side_join_id 20。禁色 z=0 的 strict degree list
+先迫原接點不能碰 b₂；leaf odd cycle 的 private vertices 仍可為
+非接點雙框點型 N。原 z–x₂–b₄ 與框路把純 N 葉提成 K₅ minor，
+剩下純接點型 T 葉才可計費；兩葉耗四接點，單 block 迫回只碰 b₁
+的 triangle，與指定雙框點支援矛盾。原 N odd cycle＋bridge＋T triangle
+控制保有 degree 四、六完整 tuples 及逐邊刪除解除，顯示原幾何步驟必要。
+原 w relation／P₃／全部附件保持；前層表不刪，未算整份 case 完成。
+
+[C₄ 逐份完整關係](c5_mixed_p3_two_frame_two_unary.md)已關閉
+**CPP-134-1／geometry 34／side_join_id 60、side IDs=(27,1)**：
+保留原 P₃／共同色框／w 原三接點；z 的兩份 unary 接點數 (2,1)、
+禁色 ({0,3},{2})。逐份自身支援包含於 {b₁,b₂}，九份 necessary covers
+均使完整原 lifts 對 2↔3 封閉，兩份指定完整 relations 各自矛盾。
+任意大小原 bridges 同時保持；整側禁色不變不能取代原 ownership。
+停止於這個固定 key；其他 joins、geometry35、root 交換型或整份 case
+沒有逐份登記完成，原 36／140／900 表及稽核快照保持。若續作其他 keys，
+先選具名 geometry／join，再核對各分量自身附件與完整 relation，不能任意分配整側支援。
+下一具名未稽核入口為 **CPP-134-1／geometry35／join20、side IDs=(8,1)**：
+自身支援A_z={b₁,b₂}、A_w={b₂,b₃,b₄}，各側一份ternary unary且無spokes，
+禁色分別{0,2,3}／{0,2}。contacts順序及未知完整relations見D₅ scope ledger；
+此處只定位原表entry，沒有分析或新增排除。
+同一 ternary 引理對其他 w 角色的逐份覆蓋也未展開。
+全部具名殘留、側角色及 replay 見[報告 §5–6](c5_mixed_p3_common_endpoint.md#5-固定控制完整殘留清單與重播)。
+不能拆共鄰點或改成 shared singleton。其餘更多 incidences 的接線仍保留。
+先前 D₂ 對 C 的覆蓋限於當輪停止點與重播入口；A／B 新增身份／完整 joint／witness
+稽核的範圍另見[D₂整合稽核](../audits/2026-10-04-task-d2/REPORT.md)，不把其覆蓋算入C。
 
 [無增長](c5_no_mixed_no_growth.md)與[增長完備性](c5_no_mixed_growth_completion.md)
 已關閉 no-mixed 有害增長缺口；不重啟十五類支援枚舉。
@@ -98,6 +143,9 @@ degree-5、degree≥6 與一般／共同出口仍保留。
 | 完整 root 側支援不變性 | 原 E 為 pair 時，全部 unary／spokes 的實際支援聯集至少見兩色；P₃ 對稱分支五跨度排除，不替換原分量介面 | [P₃ 紙面排除](c5_mixed_p3_symmetric.md) §3–4 |
 | 一色／兩色側支援共同計費 | 一色側可零跨度；原環序中三個必要已見色與 P₃ 支援共需六框邊，排除兩端接線的非對稱 residual | [非對稱六跨度](c5_mixed_p3_asymmetric.md) §3–4 |
 | 原末端保留的四區塊與兩弧計費 | 中點／端點接線的未接 root 末端迫見三色；完整禁對與側支援給六框邊下界，不改換原 P₃ 介面 | [中點／端點排除](c5_mixed_p3_middle_endpoint.md) §2–4 |
+| 共鄰原 P₃ 的雙扇區／tether | 原鏈與 (3,2,1) 附件把全部側支援限制到長度≤3 子弧、兩 roots 在 S₂ 同側；部分 source 排除，36 案例保留 | [共鄰短子弧](c5_mixed_p3_common_endpoint.md) §3–6 |
+| 單框點三接點 unary／原外路 | 最小內度二、原接點葉數與 connected exterior K₄ 排除迫原 triangle，原 z–B 路給 K₅ subdivision；固定 C₂ 身份 | [一色支援](c5_mixed_p3_one_color_ternary_unary.md) §2–5 |
+| 雙框點三接點 unary／新非接點葉 | 禁色 slack 排接點碰同色框點，原 block palette 分接點／雙框點非接點葉；後者由原外路 K₅ 排除，才可用葉接點預算；固定 C₃ 身份 | [雙框點葉](c5_mixed_p3_two_frame_ternary_unary.md) §2–6 |
 | 雙 root source 側跨度 | m+s+a≤5，八類來源排除；不能將成本未超額視為來源存在 | [十五類總覽](c5_no_mixed_span_budget.md) §2 |
 | 樹上 edge-minimal list obstruction | root 樹有 κ=0，lists 由 incident 邊色完整描述；不能把 source 邊色直接傳到 p | [Root 預算](c5_root_degree_excess.md) §4–5 |
 | actual support／annulus 次序 | 保留原分量與具名接點後得到任意大小必要覆蓋；必要表不等於 disk 實現 | [t₂/t₁ 支援表](c5_adjacent_degree5_no_mixed_t2_t1.md) §2–3 |
@@ -120,6 +168,40 @@ Lean 普通證明與 Lean `native_decide` 不互相代替。必要支援／minor
 不是來源實現證書；固定 q 結論也不自動提升成完整 Σ。
 
 ## 4. 重播入口與驗證範圍
+
+C₄已由[D₅固定快照與獨立稽核](../audits/2026-10-04-task-d5/REPORT.md)驗收：
+九份逐分量自身支援、27完整relation組合及原bridges／lifts保持。
+只新增(CPP-134-1,34,60)，連同C₂／C₃恰三keys，另外3497keys未關閉；
+3500keys與原36／140／900表完整保留，w完整relation仍未知。
+
+正式返回C₃的獨立驗收與固定快照見[D₄整合稽核](../audits/2026-10-04-task-d4/REPORT.md)，
+前序C／C₂的完整relation／空fibres／原K₅覆蓋見[D₃稽核](../audits/2026-10-04-task-d3/REPORT.md)。
+合用C₂／C₃只登記(CPP-134-1,30,20)與(CPP-134-1,34,20)兩keys；
+3500份具名必要geometry×join索引全部保存，原36／140／900表不刪。
+該次 D₄ 沒有把 geometry34／join60、其他 w 角色或整個 case 視為已驗收；
+後續 [C₄](c5_mixed_p3_two_frame_two_unary.md)另只登記 (CPP-134-1,34,60) 排除。
+
+最近 C₄ 輪的實際驗證、命令、證據界線與未重跑範圍見
+[兩份原 unary 紀錄](history/2026-10-04-mixed-p3-two-frame-two-unary.md)。最小入口：
+
+```bash
+python3 scripts/c5_mixed_p3_two_frame_two_unary.py --check
+python3 scripts/c5_mixed_p3_two_frame_ternary_unary.py --check
+python3 scripts/c5_mixed_p3_one_color_ternary_unary.py --check
+python3 scripts/c5_mixed_p3_common_endpoint.py --check
+```
+
+C₂ 原驗證見[一色支援紀錄](history/2026-10-04-mixed-p3-one-color-ternary-unary.md)。
+
+前一共鄰端點輪重跑新 checker（一般與 `PYTHONHASHSEED=17`）、mixed
+容量、middle-endpoint、完整有序介面、既有 Lean build 及文件／DocGraph；
+命令及未重跑範圍見[共鄰紀錄](history/2026-10-04-mixed-p3-common-endpoint.md)。
+最小入口：
+
+```bash
+python3 scripts/c5_mixed_p3_common_endpoint.py --check
+PYTHONHASHSEED=17 python3 scripts/c5_mixed_p3_common_endpoint.py --check
+```
 
 最近中點／端點輪重跑新 checker（一般及 `PYTHONHASHSEED=17`）、
 mixed 容量、非對稱、完整有序色對介面、既有 Lean build 及文件／DocGraph；

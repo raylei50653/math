@@ -1,0 +1,40 @@
+{
+  "snapshot_directory": ".snapshot",
+  "stable_alias": "snapshot",
+  "file_bytes_unchanged": true,
+  "reason": "Hide duplicated frozen DocGraph metadata from the live document graph; stable symlink preserves replay paths.",
+  "failures": [
+    {
+      "action": "initial auxiliary rg command",
+      "exit_code": 1,
+      "error": "zsh no matches found: tools/docgraph*.py",
+      "resolution": "Read exact existing paths with rg."
+    },
+    {
+      "action": "first combined documentation apply_patch",
+      "error": "invalid patch: The last line of the patch must be End Patch",
+      "filesystem_writes": false,
+      "resolution": "Split patch into valid smaller patches; original tool failure retained here."
+    },
+    {
+      "action": "early read of all three notes",
+      "exit_code": 1,
+      "error": "c3/notes.md not yet written",
+      "filesystem_writes": false,
+      "resolution": "Wait for final child deliverables; A3 notes read succeeded."
+    },
+    {
+      "action": "final report link patch with redundant context",
+      "error": "apply_patch could not find expected source line",
+      "filesystem_writes": false,
+      "resolution": "Removed redundant no-op hunk; targeted two link updates and final validation details applied."
+    }
+  ],
+  "coverage_correction": {
+    "preliminary_lineage": "lineage_initial.json",
+    "certificates": 30,
+    "complete_lineage": "lineage_complete.json",
+    "certificates_complete": 31,
+    "reason": "C has only scripts_sha256, so D2 record-based list omitted that certificate; explicit producer list restores all three direct C script hashes."
+  }
+}

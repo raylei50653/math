@@ -1,5 +1,9 @@
 # 唯一 mixed P₃：中點／端點接線的原末端附件與六跨度排除
 
+後續（2026-10-04）：[共鄰端點的雙扇區引理](c5_mixed_p3_common_endpoint.md)
+已保留原鏈及 (3,2,1) 附件，給任意 unary 大小的短子弧與部分來源排除。
+共鄰端點仍留 36 具名必要 residual；本頁不同接點接線的完成結論不變。
+
 2026-09-30，Git 基準 `d72b6cb`，接續工作樹中既有的
 [兩端接線完成](c5_mixed_p3_asymmetric.md)及
 [mixed 容量](c5_mixed_capacity_contacts.md)。

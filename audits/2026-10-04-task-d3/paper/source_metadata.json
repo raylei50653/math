@@ -1,0 +1,125 @@
+{
+  "read_at_utc": "2026-10-04T02:02:24.554470+00:00",
+  "primary_source": {
+    "url": "https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf",
+    "title": "List coloring and Gallai trees",
+    "author": "Zdenek Dvorak",
+    "document_date": "2018-03-24",
+    "pages": 7,
+    "sha256": "50e998fcb016418698ef31b932c6c2e728007f5e3b3348b93744781196ac1aea",
+    "bytes": 164927,
+    "http_last_modified": "Sat, 24 Mar 2018 11:14:24 GMT",
+    "read_method": "web PDF text extraction and page-6 screenshot; bytes fetched separately for hash",
+    "used_results": [
+      {
+        "name": "Lemma 7",
+        "pdf_page": 5,
+        "scope": "uncolorable connected degree assignment has exact degree-size lists"
+      },
+      {
+        "name": "Theorem 10",
+        "pdf_page": 6,
+        "scope": "connected uncolorable degree assignment iff Gallai tree with blockwise-uniform lists"
+      }
+    ],
+    "not_used": "Corollary 11 critical-graph theorem"
+  },
+  "inputs": {
+    "docs/c5_mixed_p3_common_endpoint.md": {
+      "sha256": "ac8e1146b67c4399220c9bded72a0071e3c8dd787e743791a3cacf5ec8957c14",
+      "bytes": 15781
+    },
+    "docs/c5_mixed_p3_one_color_ternary_unary.md": {
+      "sha256": "1b128b7ed8ccf6d58d748678c15cd045661024649b8cca9fb3aa2522f604baaf",
+      "bytes": 10391
+    },
+    "docs/c5_degree5_tree_components.md": {
+      "sha256": "fa326592f94cca6e941346b0b1c90086e1d75042168102990f4ed7c64b190dc5",
+      "bytes": 13186
+    },
+    "docs/c5_weak_deletion_guide.md": {
+      "sha256": "97bf72c05ed50d403b6735dce8b7bcd8393587ac1e5f3429ccc92ae317b6616d",
+      "bytes": 19611
+    },
+    "docs/history/2026-10-04-mixed-p3-one-color-ternary-unary.md": {
+      "sha256": "e93fc00e1c1f9bd76e2584286ee35ea0fb073292899029e43f0d9a098bf860c2",
+      "bytes": 7388
+    },
+    "audits/2026-10-04-task-d2/REPORT.md": {
+      "sha256": "e5017093954977dd8b03a18db0aafdb6a89a6bc4cd833d3a10192e42d633f20d",
+      "bytes": 12304
+    },
+    "artifacts/c5_mixed_p3_common_endpoint/observations.json": {
+      "sha256": "0f8cd30f22eae684f8b1691596d7ee83576c1f7d13052f01d878cda97ec73d8f",
+      "bytes": 891129
+    },
+    "artifacts/c5_mixed_p3_one_color_ternary_unary/observations.json": {
+      "sha256": "6e01211b2445219854b5fb361600e4e0a35bf0e4dd9707789d90036d1750435c",
+      "bytes": 108522
+    }
+  },
+  "memory_context": [
+    "/home/ray/.codex/memories/skills/math-research-handoff-publish/SKILL.md",
+    "/home/ray/.codex/memories/MEMORY.md:391"
+  ],
+  "output_scope": "paper audit only; no production writes, no target, no Lean theorem",
+  "audit_document_validation": {
+    "first_attempt": {
+      "local_links_checked": 7,
+      "failures": [
+        {
+          "destination": "../../../docs/c5_mixed_p3_one_color_ternary_unary.md#3-原外路使-d-的-k4-block-不可能",
+          "reason": "ASCII 4 should retain source heading subscript ₄"
+        },
+        {
+          "destination": "../../../docs/c5_mixed_p3_one_color_ternary_unary.md#5-原外路補上第十條-k5-鄰接",
+          "reason": "ASCII 5 should retain source heading subscript ₅"
+        }
+      ]
+    },
+    "final_attempt": {
+      "local_links_checked": 7,
+      "failures": [],
+      "records": [
+        {
+          "destination": "source_metadata.json",
+          "passed": true
+        },
+        {
+          "destination": "../../../docs/c5_mixed_p3_one_color_ternary_unary.md#1-固定同一來源與原-unary-身份",
+          "passed": true
+        },
+        {
+          "destination": "../../../docs/c5_mixed_p3_one_color_ternary_unary.md#3-原外路使-d-的-k₄-block-不可能",
+          "passed": true
+        },
+        {
+          "destination": "../../../docs/c5_mixed_p3_one_color_ternary_unary.md#4-葉-block-計數迫原圖恰是三接點-triangle",
+          "passed": true
+        },
+        {
+          "destination": "../../../docs/c5_mixed_p3_one_color_ternary_unary.md#5-原外路補上第十條-k₅-鄰接",
+          "passed": true
+        },
+        {
+          "destination": "../../../docs/c5_mixed_p3_common_endpoint.md#1-原-source-前提與完整三點關係",
+          "passed": true
+        },
+        {
+          "destination": "../../../docs/c5_mixed_p3_common_endpoint.md#3-任意-unary-大小的雙扇區與-tether-引理",
+          "passed": true
+        }
+      ]
+    },
+    "repository_doc_check": {
+      "command": "python3 scripts/check_docs.py --help",
+      "note": "this checker has no --help parsing and actually ran full normal check",
+      "exit_code": 0,
+      "stdout": "OK: 523 Markdown files, 5414 local links; anchors, index, handoff checked"
+    },
+    "whitespace": {
+      "tracked_diff_check": "PASS",
+      "new_notes_diff_no_index_check": "empty diagnostics; exit 1 denotes added file differs from /dev/null"
+    }
+  }
+}

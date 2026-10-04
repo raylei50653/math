@@ -1,0 +1,3 @@
+# D₂初次historical重播的環境失敗
+
+single_spoke兩次已到原byte-check的certificate differs；singles兩次使用python3但缺NetworkX，未到byte-check。兩項環境失敗不是數學或文件hash失敗。原stdout／stderr與exit code保留；指定uv NetworkX 3.5環境的後續重播另存父目錄。

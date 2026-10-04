@@ -1,5 +1,10 @@
 # Mixed 原分量：逐欄容量、十八種側型與最小三點介面
 
+後續（2026-10-04）：[共鄰 P₃ 雙扇區](c5_mixed_p3_common_endpoint.md)保留
+原 (3,2,1) 附件與完整三點關係，證任意 unary 大小的短子弧／tether
+次序引理，排除 x₁ 強制唯一框色 2 的兩種色角色。共鄰端點仍留
+36 具名必要 residual，未證 source 實現或 target 出口；原容量數字不變。
+
 後續（2026-09-30）：[P₃ 中點／端點接線](c5_mixed_p3_middle_endpoint.md)以
 原未接 root 末端的三色附件、四區塊環序與六跨度排除其全部 residual。
 連同兩端接線，唯一 mixed P₃ 的兩個不同接點、各一 incidence 已全

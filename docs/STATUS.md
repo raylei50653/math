@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-03。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-04。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -41,9 +41,13 @@
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
 | [Mixed P₃ 中點／端點六跨度排除](c5_mixed_p3_middle_endpoint.md) | 保留原末端三色附件，原四環外側四區塊排除全部 residual 及整份對稱型；連同兩端接線完成不同接點各一 incidence；任意 unary 大小、0 target，未 Lean 化 |
+| [任務 C：Mixed 共鄰 P₃ 雙扇區與部分來源排除](c5_mixed_p3_common_endpoint.md) | 保留原鏈與 (3,2,1) 附件；任意 unary 大小的短子弧／tether 引理，x₁ 強制唯一框色 2 時全排除；36 具名必要 residual、140 rotation 正控制及 900 側接合保留，0 target；現行入口見 weak-deletion 導覽，未 Lean 化 |
+| [C₂：共鄰 P₃ 一色支援三接點 unary](c5_mixed_p3_one_color_ternary_unary.md) | CPP-134-1／geometry 30／side_join 20：任意 unary 大小的原 degree／葉數化約迫 triangle，原外路給 K₅ subdivision；保存完整 tuples／刪邊 witnesses，僅關閉這份側接合，0 target，外部 Gallai＋紙面＋Python，未 Lean 化 |
+| [C₃：共鄰 P₃ 雙框點三接點 unary](c5_mixed_p3_two_frame_ternary_unary.md) | CPP-134-1／geometry 34／side_join 20：禁色 0 排接點碰 b₂，原 palette 分 T／N 葉；N 葉由原外路 K₅ 排除後重證葉數，任意 unary 大小來源排除。原雙框點 degree 四／bridges／完整 tuples 控制保存，僅關閉這份側接合，0 target，未 Lean 化 |
+| [C₄：共鄰 P₃ 雙框點兩份 unary](c5_mixed_p3_two_frame_two_unary.md) | CPP-134-1／geometry 34／side_join 60、side IDs=(27,1)：九份自身支援必要配置、三份 binary 完整 relation 與唯一 unary relation 均違反原 lifts 的 2↔3 封閉性；任意大小來源排除。兩份 ownership／原 bridges、整側相同禁色負控制保存，其他 joins 及 36／140／900 不刪，0 target，未 Lean 化 |
 | [Mixed P₃ 非對稱六跨度排除](c5_mixed_p3_asymmetric.md) | (1,2) 及 root 交換型容許一色側零跨度，完整側支援迫至少六框邊；完成兩端各一 incidence 全 residual；中點／端點由後續排除，任意 unary 大小、0 target，未 Lean 化 |
 | [Mixed P₃ 對稱兩色分支](c5_mixed_p3_symmetric.md) | 兩端各一 incidence、兩側同 pair 時，原五環空內側與完整側支援排除全部 disk 來源；非對稱由後續完成；任意 unary 大小、不需 T4／Gallai、0 target，未 Lean 化 |
-| [Mixed 容量與最小三點介面](c5_mixed_capacity_contacts.md) | 任意大小逐欄容量、unary 無重疊／缺額至多一與十八側型；各一 incidence 至多兩禁對；三點形必要接線完成，P₃ 不同接點各一 incidence 由後續全來源排除，共鄰及其餘幾何與 Lean 化保留 |
+| [Mixed 容量與最小三點介面](c5_mixed_capacity_contacts.md) | 任意大小逐欄容量、unary 無重疊／缺額至多一與十八側型；各一 incidence 至多兩禁對；P₃ 不同接點各一 incidence 全來源排除，共鄰端點由後續作部分排除／36 具名殘留，其餘幾何與 Lean 化保留 |
 | [No-mixed 增長完備性與共同分離](c5_no_mixed_growth_completion.md) | 三個側弧位置直接排除影響 R 的增長；結合無增長定理免查支援表地完成指定 p₁、p₂ 分離，未 Lean 化，逐染色 repair 未構造 |
 | [No-mixed 無增長共同分離](c5_no_mixed_no_growth.md) | 短側弧與未見兩色交換不變性，免查支援表地證明無增長時必有異色 root pair；7,848 joins 回歸通過；增長缺口由後續共同分離涵蓋，未 Lean 化 |
 | [No-mixed 統一局部增長篩選](c5_no_mixed_local_screen.md) | 同一守恆／非守恆規則排除 2,208 個局部 pair，32 份不影響 R；重建原 434 失敗排除。後續無增長及增長位置引理已免表完成共同分離，原較強篩選數字保留 |
@@ -164,8 +168,21 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [ε=2 四-spoke (2,2) 共用原 pair 的 sealed mixed](c5_excess_two_mixed_core_four_spoke_equal_pair.md) | mixed-(1,1) 加各側一原 unary，共用 spokes 的 diamond 封 C 在一個原三角；既有三-hub 延拓接 G−C 全收，排除 7／9 份，含 01／01 及 root 交換。unequal pairs 仍有 40／66 份，未完成整個子型。36 完整 degree 圖、2,520 joints／40,320 fibres；紙面＋Python，ε≥3 未證，未 Lean 化 |
-| [ε=2 四-spoke (3,1) 原 mixed-(1,3) 四接點 leaf-slack](c5_excess_two_mixed_core_four_spoke_quaternary.md) | 原 K=C+a 的四 contacts 要求三禁色，marked leaf 迫至多二；原 spanning-tree 貪婪構造 G／M 延拓，20／60 框架全排，含 root 交換。80 完整 degree 圖、2,400 joints／38,400 纖維、2,400 貪婪 witnesses；結合前三子型封閉全部 (3,1) incidence 分拆。(2,2) 保留，紙面＋Python，ε≥3 未證，未 Lean 化 |
+| [任務 A：ε=2 四-spoke mixed-(1,2)+a-unary](c5_excess_two_mixed_core_four_spoke_mixed12.md) | 原01／23及root交換來源排除；a-spoke省略為原C+a+U單一ternary、整份G−U亦Ω，完整joint迫U三列singleton3／2／3違反未用色守恆。當輪22／26必要殘留由A₂再排01／12；原artifact、72完整degree控制與witnesses保留，未排整型、ε≥3未證，紙面＋Python、未Lean化 |
+| [A₂：mixed-(1,2) 原01／12共同長／短face](c5_excess_two_mixed_core_four_spoke_mixed12_01_12.md) | 原actual U接2的crosscut封長C至{2}，短C至{1}；01202完整R_U={2}，固定(a,b,u)=(3,0,2)的三hub引理给完整原joint，來源及root交換全排。其餘20／24框架、52／86支援、68／124relations保存；36完整degree控制、2,880joins／46,080fibres。未排mixed12整型、未證ε≥3，紙面＋Python、未Lean化 |
+| [A₃：mixed-(1,2) 共用01／01原三hub](c5_excess_two_mixed_core_four_spoke_mixed12_01_01.md) | 每份四disk rotations與完整ternary保持；C原face支援為{0}或{1}，原互異色三hub延拓使ax非critical，01202的U singleton2／3亦給完整joint矛盾。含root交換全排；其餘18／22框架、44／70支援、56／102relations保存。36完整degree控制、360投影等式與5,712整份C替換witnesses；mixed12整型與ε≥3未證，紙面＋Python、未Lean化 |
+| [A₄：mixed-(1,2) 共用04／04具名入口](c5_excess_two_mixed_core_four_spoke_mixed12_04_04.md) | 原四rotations迫C支援{0}／{4}、U實際含123；逐項核對原互異色三hub、exact degree-list與連通外部路徑，完整C替換使ax非critical。01202的U singleton1／3均接完整joint，含root交換全排；其餘16／20框架、40／58支援、50／84schedules保存。24完整degree控制、240投影等式與2,912整份C替換witnesses；未用D₅來源搬運，mixed12整型／ε≥3未證，紙面＋Python、未Lean化 |
+| [任務 B：ε=2 四-spoke mixed-(2,2) 無 unary](c5_excess_two_mixed_core_four_spoke_mixed22.md) | 七具名身份、原 R_C 四接點與完整 root-pair fibres；四原 spoke 省略各自 Ω，原拒絕 q-core 必是 G (5,5)。47／75 骨架各縮至25相鄰pairs，equal各排5，20／20必要face與tightness見證保留。28完整degree控制、1,680 joins／26,880 fibres、14條件式原K₅；與A分開，未排整型、未證來源實現或ε≥3，紙面＋Python、未Lean化 |
+| [B₂：mixed-(2,2) 原01／23短 face](c5_excess_two_mixed_core_four_spoke_mixed22_short_face.md) | W933-101／W941-139短face{1,2}的七contact身份全來源排除，零殘留；任意大小Gallai leaf的四owner用實際外部路徑提取原K₅。完整四接點／root-pair fibre保持；同骨架長face由B₃獨立涵蓋，整型、ε≥3保留，紙面＋Python、未Lean化 |
+| [B₃：mixed-(2,2) 同骨架原長 face](c5_excess_two_mixed_core_four_spoke_mixed22_long_face.md) | W933-101／W941-139長face{0,4,3}七身份獨立全排，零殘留；shared leaf bridge由跨拒絕列slack排除，五種leaf以原外路提取K₅，內部shared bridges與完整四接點fibre保持。只合用B₂／B₃封閉兩W全部faces；其他骨架、整型及ε≥3保留，紙面＋Python、未Lean化 |
+| [B₄：933 原04／12的shared附件{4}](c5_excess_two_mixed_core_four_spoke_mixed22_shared4.md) | W933-129長face{2,3,4}；原shared leaf全部11pairs tight，bridge鄰点13附件排5留8。原cut parity迫C−v有奇數框附件，五原bags給K₅，六shared身份／八指定選擇此支全排。完整relation／fibres保持；40degree圖、2,400joins／38,400fibres，其他附件與整份骨架保留，未證ε≥3、未Lean化 |
+| [ε=2 四-spoke (2,2) 不相交 pairs 與 mixed-(1,1) 子型完成](c5_excess_two_mixed_core_four_spoke_disjoint_pairs.md) | 最後14／18份由一側全短faces4／8及共同兩段長框弧10／10全排，原unary接線非critical；完成相鄰唯一mixed、四spoke(2,2)、mixed11+各側一unary的47／75原必要身份。2,048rotations／1,280支援對／60apex subdivisions；完整原relations保留，只替換固定短unary的整份witness，C與另一unary外部頂點逐點保持，五角色投影相等；其他incidence及ε≥3保留，任意大小紙面＋Python，未Lean化 |
+| [ε=2 四-spoke (2,2) 共用短框弧原拒絕列延拓](c5_excess_two_mixed_core_four_spoke_short_arc.md) | 原941 02／03及六份共用點殘留全排；C短支援Fempty與未見色交換給原01021完整joint，含整圖Σ949搬運身份。963C schemas／101,115六角色tuple witnesses，1,320整圖joins／21,120fibres；當輪14／18不相交殘留由後續全排。指定列出口，不宣稱C全rootpair延拓；紙面＋Python，ε≥3未證 |
+| [ε=2 四-spoke (2,2) 原 unary crosscut 與 mixed hubs](c5_excess_two_mixed_core_four_spoke_crosscut.md) | 原 941 01／03、933 01／13 與 root 交換：critical unary 的原 crosscut 封 C 支援至一框點，同色 tightness 保 degree 的二／三 hub K₅ 使原 ax 非 critical。同機制排8／16，當輪14／24後由短框弧及不相交pairs全排；48 apex subdivisions、720 joints／11,520 fibres、7,752 C 替換 witnesses。任意大小紙面＋Python，ε≥3未證，未Lean化 |
+| [ε=2 四-spoke (2,2) 同一長 face 的原 unary 次序](c5_excess_two_mixed_core_four_spoke_long_face.md) | 原 01／04 與 root 交換的兩 unary 若 critical 必在共同三段 face；原實際支援次序與短支援引理迫4≤3，固定原接線非 critical。同機制排10／10，當輪22／40後由crosscut收窄至14／24；子型由[不相交 pairs 完成報告](c5_excess_two_mixed_core_four_spoke_disjoint_pairs.md)封閉，其他 incidence 保留。5,120支援對、120 apex K₃,₃ subdivisions、1,620 joints／25,920 fibres。任意大小紙面＋Python，ε≥3未證，未Lean化 |
+| [ε=2 四-spoke (2,2) 原 unary 短 face](c5_excess_two_mixed_core_four_spoke_short_face.md) | 原 01／02 與 root 交換的 unary 全 incident faces 都短，原外部路徑與既有短支援迫 au 非 critical；同機制排 8／16 份，後續長 face 再排10／10，unequal剩22／40；子型由[不相交 pairs 完成報告](c5_excess_two_mixed_core_four_spoke_disjoint_pairs.md)封閉，其他 incidence 保留。74 原骨架／7,104 rotations，完整六角色 joints、空纖維及原 U witness 替換；任意大小紙面＋Python，ε≥3 未證，未 Lean 化 |
+| [ε=2 四-spoke (2,2) 共用原 pair 的 sealed mixed](c5_excess_two_mixed_core_four_spoke_equal_pair.md) | mixed-(1,1) 加各側一原 unary，共用 spokes 的 diamond 封 C 在一個原三角；既有三-hub 延拓接 G−C 全收，排除 7／9 份，含 01／01 及 root 交換。原40／66 unequal殘留經短／長face、crosscut、短框弧及[不相交pairs](c5_excess_two_mixed_core_four_spoke_disjoint_pairs.md)全部封閉；同一mixed11+各側unary子型完成，原證書保留。36 完整 degree 圖、2,520 joints／40,320 fibres；紙面＋Python，ε≥3 未證，未 Lean 化 |
+| [ε=2 四-spoke (3,1) 原 mixed-(1,3) 四接點 leaf-slack](c5_excess_two_mixed_core_four_spoke_quaternary.md) | 原 K=C+a 的四 contacts 要求三禁色，marked leaf 迫至多二；原 spanning-tree 貪婪構造 G／M 延拓，20／60 框架全排，含 root 交換。80 完整 degree 圖、2,400 joints／38,400 纖維、2,400 貪婪 witnesses；結合前三子型封閉全部 (3,1) incidence 分拆。(2,2) 的 mixed11+各側 unary 已由後續完成，其他 (2,2) incidence 保留，紙面＋Python，ε≥3 未證，未 Lean 化 |
 | [ε=2 四-spoke (3,1) 原 mixed-(1,2) 三接點身份排除](c5_excess_two_mixed_core_four_spoke_ternary.md) | 同色原 spoke 省略後 M 自己 minimal，M−b保留原K=C+a的(a,y₀,y₁)與U；既有active-triangle K₅／leaf slack全排20／60框架，含root交換。200 queries、2,000 D₅、320 marked minors、50完整degree圖、1,500 joints／24,000纖維。後續mixed-(1,3)亦全排，(3,1)全incidence完成；紙面＋Python，ε≥3未證，未Lean化 |
 | [ε=2 四-spoke binary 同列端點 hub 整型排除](c5_excess_two_mixed_core_four_spoke_hubs.md) | 原32／64具名域全部由保degree的同色端點hub及二／三hub Gallai K₅排除，含root交換，完成mixed-(1,1)加一原binary unary子型。192原queries、10,752完整U schemas、2,208 tightness、42完整degree圖／原K₅。不需新跨列palette定理，ε≥3未證，紙面＋Python，未Lean化 |
 | [ε=2 四-spoke binary 原 star 的同源扇區排除](c5_excess_two_mixed_core_four_spoke_star.md) | 原a-star／連通H−a將116／256縮至32／64，276 subdivisions與24原degree圖；後續同列端點hub已排除全部殘留及整個binary子型。原012／0作K₃,₃排除，原star證書保留；ε≥3及跨列palette定理未證，紙面＋Python，未Lean化 |
@@ -186,7 +203,7 @@
 | [ε=2 t=2 四接點整型排除](c5_excess_two_two_spoke_four.md) | 200 份 spoke／扇區／目標查詢全排；100 份三禁色 K₅、100 份非空支援族的固定兩末端袋無法並排；5,120 原 minor、526,336 完整五接點控制，未 Lean 化 |
 | [ε=2 t=2 ternary／unary 整型排除](c5_excess_two_two_spoke_ternary.md) | 直接復用 t=1 singleton profiles；16 具名扇區位置、107,296 同框十列 profile 對無目標，不需 D 守恆；499,200 完整七接點控制，未 Lean 化 |
 | [ε=2 t=2 兩 binary 整型排除](c5_excess_two_two_spoke_binary.md) | 40 具名扇區位置／400 查詢；原 pair 路徑留 20 份弱條件控制，補入同一首橋的共用 β 及局部 residual 跨列搬運後全排；保留完整原關係，未 Lean 化 |
-| [ε=2 t=1 全部分拆排除](c5_excess_two_single_spoke_complete.md) | 唯一 degree-6 root 的七種原接點分拆均作整型來源排除；後續復用原工具完成 t=2。兩候選共同 ε≥2 不變，其餘 t／雙 degree-5 roots 及一般來源保留；任意大小紙面＋Python，未 Lean 化 |
+| [ε=2 t=1 全部分拆排除](c5_excess_two_single_spoke_complete.md) | 唯一 degree-6 root 的七種原接點分拆均作整型來源排除；後續復用原工具完成 t=0、2、3，唯一 degree-6 分支全完成。兩候選共同 ε≥2 不變，雙 degree-5 roots 及一般來源保留；任意大小紙面＋Python，未 Lean 化 |
 | [兩／三外部 hubs 的短支援排除](c5_short_support_singleton.md) | 原 degree-4 分量支援包含於一條框邊，且有避開它的原外部路徑時，全部禁色皆不可能；不限接點數，迫本題每份原分量跨度至少二；紙面＋原 K₅ controls，未 Lean 化 |
 | [四接點短支援 pair 排除](c5_short_support_four_contact.md) | 四接點未見二色 pair 的原 Gallai leaf blocks／active 結構 K₅；保留獨立證明及固定控制，通用短支援引理另涵蓋此型 |
 | [ε=2 t=1 四接點與 unary](c5_excess_two_four_one.md) | 同一四接點 active forest、兩 triangle K₅及固定末端區塊的跨列 residual，100 個必要查詢全排；(4,1) 整型排除，未 Lean 化 |
@@ -226,7 +243,11 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [C₅ 全線進展與高階假設](c5_research_synthesis.md) | 八線成果與證據界線整合；提出 ε=1、root樹分離及weak-deletion同Σ出口三假設，均保留未證部分；不改變各線排程 |
+| [D₂文件整合與新增成果稽核](../audits/2026-10-04-task-d2/REPORT.md) | 套用原D的18項修訂，同步A₂／B₂／C₂停止點；新增A／A₂、B／B₂固定域身份、完整joint及witness獨立稽核。原D的40 PASS／4文件hash FAIL與兩份完整payload相同紀錄保留；新增版本及漂移另記，原artifacts不改 |
+| [D₃：C／C₂獨立稽核](../audits/2026-10-04-task-d3/REPORT.md) | 固定D₂截點的完整P₃／側角色／空fibres、原unary刪邊witnesses及原K₅全部獨立核對；只關閉geometry30／join20，保存3500具名keys。當時未接收A₃／B₃／C₃及未同步live文件；原strict漂移失敗保留 |
+| [D₄：正式返回A₃／B₃／C₃快照與整合稽核](../audits/2026-10-04-task-d4/REPORT.md) | 獨立核對三份新增成果與13份並行更新，A保存18／22；B₂＋B₃只登記W933-101／W941-139兩骨架封閉；C₃只關閉geometry34／join20。前輪交付hash／完整relations／空fibres／witnesses與失敗紀錄保持，未commit／push |
+| [D₅：A₄／B₄／C₄最終快照與獨立稽核](../audits/2026-10-04-task-d5/REPORT.md) | 逐身份A ledger降至16／20；B只關閉W933-129長face的shared-{4}支；C只新增geometry34／join60，3500keys及36／140／900表保持。三項最終重播、版本／實際依賴與歷史失敗分別封存；當輪未發布，本批發布及還原入口見下方歷史紀錄 |
+| [C₅ 全線進展與高階假設](c5_research_synthesis.md) | 八線成果與證據界線整合；H1 已在固定完整 Σ933／941 的 Σ-edge-minimal induced-C₅ disk source 等原前提下成立；H2／H3 及一般推廣仍未證；保存當輪快照，不替代導覽排程 |
 | [C₅ 關係階數與接合上界](c5_relation_arity.md) | 132類為11個二階、101個四階、20個五階；原邊重驗20反例及100份局部延拓；紙面證接合r*≤來源最大階數≤5、T4全收時≤4；六圖回歸，非一般五階接合實現或多步state定理，未Lean化 |
 | [C₅ class 兩點重疊](c5_two_vertex_overlap.md) | 132 類／1,320 點對索引與兩點相容、單側投影語義已保存；695 強迫異色、625 自由；六份接合與三份控制拓撲由後續完成，完整後繼表及多步充分性保留 |
 | [C₅ 具名八點接合與同圖核對](c5_two_vertex_join.md) | 一次 evaluator 與六份完整八點 relation／雙側回投影全經整圖核對；主例 140 軌道、A=R1016／B=R1023；主例及正反向私有內點原框由後續完成，六圖 U 上五框可用性由跨例 audit 完成，其餘拓撲、完整後繼表與多步充分性保留 |
@@ -311,6 +332,7 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 | 共同 repair lemma 的「下一步可檢查來源結構」 | [來源充分條件](c5_two_vertex_repair_sources.md) 已證指定核心、私有度數三消去與保框證書足夠；後續補片定理放寬逐點消去要求；兩原框可用給獨立退化支，未完成全部代表必要分類 |
 | 六例 transport audit 的「下一步抽象共同 repair lemma」 | [共同 lemma](c5_two_vertex_common_repair.md) 已證 witness／覆蓋充要條件並核對六圖；[抽象 Lean 判準](lean_common_repair.md) 已完成，兩核心指定框前提已由 [NamedRepair](lean_named_repair.md) 形式化；來源充分條件見後續報告，四個 P=J 仍為獨立退化支 |
 | P₃ 非對稱報告的「下一題 masks=(0,1,2)」 | [中點／端點接線](c5_mixed_p3_middle_endpoint.md) 已保留原末端三條附件並排除全部 residual；不同接點各一 incidence 已全涵蓋，共鄰接點仍保留 |
+| P₃ 中點／端點報告的「下一題 masks=(0,0,3)」 | [共鄰端點雙扇區](c5_mixed_p3_common_endpoint.md) 給任意 unary 短子弧與部分來源排除；保留原鏈，尚留 36 具名必要 residual，未證指定出口 |
 | Mixed 容量的「P₃ 對稱分支內外側／實際附件未處理」 | [原五環與完整側支援](c5_mixed_p3_symmetric.md) 已排除兩端各一 incidence、兩側同 pair 的 disk 來源；非對稱及其他接線不在本結論內，未新增 target 接受 |
 | Single-spoke 的「下一題 (4) 三份拒絕 palettes」 | [共同結構與 K5](c5_single_spoke_four.md) 以共同 τ 排除正 bridge，四葉只剩兩 triangle 加單 bridge；t=1 全部接回出口，t=0 後由 no-spoke 報告收窄為兩型 |
 | Single-spoke 完成後的「t=0 外部連通與 K4」 | [No-spoke 排除](c5_no_spoke_exterior.md) 以另一原分量恢復外部 hub，(5) 另作四列奇偶排除；六型剩兩型；後續 [環狀支援](c5_no_spoke_supports.md) 已完成 (2,1,1,1) 指定分離，(2,2,1) 再由 [首橋／框弧](c5_no_spoke_first_bridge.md) 完成 |
@@ -362,7 +384,26 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-04：併行成果、D至D₅獨立稽核與完整封存發布](history/2026-10-04-c5-parallel-progress-publish.md)
+
+- [2026-10-04：D₂文件整合、A／B新增成果稽核與保存核對](history/2026-10-04-task-d2-integration-audit.md)
+- [2026-10-04：正式返回A₃／B₃／C₃的固定快照與D₄獨立整合稽核](history/2026-10-04-task-d4-returned-integration-audit.md)
+- [2026-10-04：A₄／B₄／C₄最終快照與D₅獨立整合稽核](history/2026-10-04-task-d5-final-integration-audit.md)
+- [2026-10-04：任務 A，mixed-(1,2)+a-unary 的01／23來源排除與具名殘留](history/2026-10-04-excess-two-four-spoke-mixed12.md)
+- [2026-10-04：A₂，mixed-(1,2) 的01／12長／短face與完整joint排除](history/2026-10-04-excess-two-four-spoke-mixed12-01-12.md)
+- [2026-10-04：A₃，mixed-(1,2) 共用01／01四rotations與原ax非critical](history/2026-10-04-excess-two-four-spoke-mixed12-01-01.md)
+- [2026-10-04：A₄，mixed-(1,2) 原04／04具名三hub與完整joint來源排除](history/2026-10-04-excess-two-four-spoke-mixed12-04-04.md)
+- [2026-10-04：任務 B，四-spoke mixed-(2,2) 無 unary 的七身份與窄化約](history/2026-10-04-excess-two-four-spoke-mixed22.md)
+- [2026-10-04：B₂，mixed-(2,2) 原短 face 的 Gallai leaf／原 K₅ 排除](history/2026-10-04-excess-two-four-spoke-mixed22-short-face.md)
+- [2026-10-04：B₃，mixed-(2,2) 同骨架原長 face 的 leaf bridge／原 K₅](history/2026-10-04-excess-two-four-spoke-mixed22-long-face.md)
+- [2026-10-04：B₄，933 原04／12的shared附件{4}／原cut parity](history/2026-10-04-excess-two-four-spoke-mixed22-shared4.md)
+
 - [2026-10-03：ε=2 四-spoke 七輪進展整理與發布](history/2026-10-03-excess-two-four-spoke-progress-publish.md)
+- [2026-10-03：ε=2 四-spoke 同一長 face 的兩原 unary 次序排除](history/2026-10-03-excess-two-four-spoke-long-face.md)
+- [2026-10-03：ε=2 四-spoke 原 unary crosscut 與 mixed 二／三 hub 排除](history/2026-10-03-excess-two-four-spoke-crosscut.md)
+- [2026-10-03：ε=2 四-spoke 共用短框弧的原拒絕列延拓](history/2026-10-03-excess-two-four-spoke-short-arc.md)
+- [2026-10-03：ε=2 四-spoke mixed-(1,1) 加各側 unary 子型完成](history/2026-10-03-excess-two-four-spoke-disjoint-pairs.md)
+- [2026-10-03：ε=2 四-spoke 原 unary 短 face 與非 critical 接線](history/2026-10-03-excess-two-four-spoke-short-face.md)
 - [2026-10-03：ε=2 四-spoke (2,2) 共用原 pair 的 sealed mixed 窄排除](history/2026-10-03-excess-two-four-spoke-equal-pair.md)
 - [2026-10-03：ε=2 四-spoke 原 mixed-(1,3) 四接點 leaf-slack 排除](history/2026-10-03-excess-two-four-spoke-quaternary.md)
 - [2026-10-03：ε=2 四-spoke 原 mixed-(1,2) 三接點身份整型排除](history/2026-10-03-excess-two-four-spoke-ternary.md)
@@ -434,6 +475,10 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 - [2026-09-30：C₅ 具名八點接合與同代表整圖核對](history/2026-09-30-c5-two-vertex-join.md)
 - [2026-09-30：C₅ class 兩點重疊資料與接手整理](history/2026-09-30-c5-two-vertex-overlap-handoff.md)
 - [2026-09-30：mixed P₃ 中點／端點與保留原末端的六跨度排除](history/2026-09-30-mixed-p3-middle-endpoint.md)
+- [2026-10-04：mixed 共鄰 P₃ 雙扇區、部分來源排除與具名殘留](history/2026-10-04-mixed-p3-common-endpoint.md)
+- [2026-10-04：C₂ 一色支援三接點 unary、原 triangle 與 K₅ 外路](history/2026-10-04-mixed-p3-one-color-ternary-unary.md)
+- [2026-10-04：C₃ 雙框點三接點 unary、新非接點葉與原 K₅](history/2026-10-04-mixed-p3-two-frame-ternary-unary.md)
+- [2026-10-04：C₄ geometry34／join60、兩份原 unary 的完整 relation 排除](history/2026-10-04-mixed-p3-two-frame-two-unary.md)
 - [2026-09-30：mixed P₃ 非對稱六跨度與兩端接線完成](history/2026-09-30-mixed-p3-asymmetric.md)
 - [2026-09-29：mixed P₃ 對稱分支的原五環與側支援排除](history/2026-09-29-mixed-p3-symmetric.md)
 - [2026-09-29：mixed 容量、十八側型與最小三點接線](history/2026-09-29-mixed-capacity-contacts.md)

@@ -1,0 +1,66 @@
+[
+  {
+    "name": "c5_excess_two_mixed_core_single_spoke.seed-default",
+    "command": [
+      "uv",
+      "run",
+      "--with",
+      "networkx==3.5",
+      "python",
+      "scripts/c5_excess_two_mixed_core_single_spoke.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "hashseed": "default",
+    "exit_code": 1,
+    "elapsed_seconds": 0.6743871769999714,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/scripts/c5_excess_two_mixed_core_single_spoke.py\", line 450, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/scripts/c5_excess_two_mixed_core_single_spoke.py\", line 442, in main\n    assert OUT.read_bytes() == payload.encode(), f'certificate differs: {OUT}'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs: /home/ray/developer/ai/math/artifacts/c5_excess_two_mixed_core_single_spoke/observations.json\n"
+  },
+  {
+    "name": "c5_excess_two_mixed_core_single_spoke.seed-17",
+    "command": [
+      "uv",
+      "run",
+      "--with",
+      "networkx==3.5",
+      "python",
+      "scripts/c5_excess_two_mixed_core_single_spoke.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "hashseed": "17",
+    "exit_code": 1,
+    "elapsed_seconds": 0.6793349299996407,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/scripts/c5_excess_two_mixed_core_single_spoke.py\", line 450, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/scripts/c5_excess_two_mixed_core_single_spoke.py\", line 442, in main\n    assert OUT.read_bytes() == payload.encode(), f'certificate differs: {OUT}'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs: /home/ray/developer/ai/math/artifacts/c5_excess_two_mixed_core_single_spoke/observations.json\n"
+  },
+  {
+    "name": "c5_excess_two_mixed_core_four_spoke_singles.seed-default",
+    "command": [
+      "python3",
+      "scripts/c5_excess_two_mixed_core_four_spoke_singles.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "hashseed": "default",
+    "exit_code": 1,
+    "elapsed_seconds": 0.03963202199975058,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/scripts/c5_excess_two_mixed_core_four_spoke_singles.py\", line 21, in <module>\n    from c5_excess_two_mixed_core_single_spoke import repeated_rows, residual_masks\n  File \"/home/ray/developer/ai/math/scripts/c5_excess_two_mixed_core_single_spoke.py\", line 19, in <module>\n    import networkx as nx\nModuleNotFoundError: No module named 'networkx'\n"
+  },
+  {
+    "name": "c5_excess_two_mixed_core_four_spoke_singles.seed-17",
+    "command": [
+      "python3",
+      "scripts/c5_excess_two_mixed_core_four_spoke_singles.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "hashseed": "17",
+    "exit_code": 1,
+    "elapsed_seconds": 0.039033175999975356,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/scripts/c5_excess_two_mixed_core_four_spoke_singles.py\", line 21, in <module>\n    from c5_excess_two_mixed_core_single_spoke import repeated_rows, residual_masks\n  File \"/home/ray/developer/ai/math/scripts/c5_excess_two_mixed_core_single_spoke.py\", line 19, in <module>\n    import networkx as nx\nModuleNotFoundError: No module named 'networkx'\n"
+  }
+]

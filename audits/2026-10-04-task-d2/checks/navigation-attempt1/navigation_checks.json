@@ -1,0 +1,72 @@
+[
+  {
+    "name": "check_docs",
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "hashseed": "default",
+    "exit_code": 0,
+    "elapsed_seconds": 0.48583010100037427,
+    "stdout": "OK: 523 Markdown files, 5414 local links; anchors, index, handoff checked\n",
+    "stderr": ""
+  },
+  {
+    "name": "audit_links",
+    "command": [
+      "python3",
+      "audits/2026-10-04-task-d2/check_audit_links.py",
+      "--repo",
+      "."
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "hashseed": "default",
+    "exit_code": 1,
+    "elapsed_seconds": 0.04258814999957394,
+    "stdout": "audits/2026-10-04-task-d2/REPORT.md:151: missing checks/navigation_checks.json\nFAIL: 8 D2 Markdown files, 66 local links, 1 errors\n",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-04-task-d2/check_audit_links.py\", line 34, in <module>\n    if __name__=='__main__': main()\n                             ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-04-task-d2/check_audit_links.py\", line 31, in main\n    assert not errors\n           ^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "name": "docgraph",
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "hashseed": "default",
+    "exit_code": 0,
+    "elapsed_seconds": 0.30720465900003546,
+    "stdout": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n",
+    "stderr": ""
+  },
+  {
+    "name": "artifact_status",
+    "command": [
+      "python3",
+      "tools/artifacts.py",
+      "status"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "hashseed": "default",
+    "exit_code": 0,
+    "elapsed_seconds": 1.7723555259999557,
+    "stdout": "ok=141\n",
+    "stderr": ""
+  },
+  {
+    "name": "diff_check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "hashseed": "default",
+    "exit_code": 0,
+    "elapsed_seconds": 0.007082517000071675,
+    "stdout": "",
+    "stderr": ""
+  }
+]

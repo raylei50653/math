@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-04-task-d5/build_versions.py", line 87, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-04-task-d5/build_versions.py", line 31, in main
+    trace_records.append({'path': str(path.relative_to(root)), 'sha256': digest(path),
+                                      ~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 490, in relative_to
+    raise ValueError(f"{str(self)!r} is not in the subpath of {str(other)!r}")
+ValueError: 'audits/2026-10-04-task-d5/checks/original-attempt1/c5_excess_two_four_spoke_mixed12_04_04_joint_controls.seed-17.runtime.json' is not in the subpath of '/home/ray/developer/ai/math'

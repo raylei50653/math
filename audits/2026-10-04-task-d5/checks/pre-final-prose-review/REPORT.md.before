@@ -1,0 +1,240 @@
+# D₅：A₄／B₄／C₄ 最終成果的固定快照、獨立稽核與文件整合
+
+2026-10-04，工作根目錄 `/home/ray/developer/ai/math`，接續
+[D₄ 封存](../2026-10-04-task-d4/REPORT.md)。起始
+HEAD=`0e3812712b68f57927df86f30a07bb8074e090f9`；**不 commit／push**。
+三份最終報告、checkers、helpers、artifacts 與實際執行依賴均以起始
+bytes 固定。三項獨立稽核、default／seed17 與 root 最終重播均通過。
+
+## 1. 固定快照與版本
+
+[baseline.json](baseline.json)捕捉 **2,794** 份既有檔案的 SHA256／size，
+凍結 **1,383** 份輸入，捕捉期間零漂移。完整既有 artifacts 的複製只為
+封住未宣告 runtime input，不擴大數學枚舉或驗收範圍。實體 `.snapshot/`
+透過 [snapshot](snapshot/) symlink 重播；沒有把 frozen DocGraph 當 live
+文件再次登錄。既有 audits 逐檔 hash 保存於 baseline，原路徑不改寫。
+
+[成果版本表](versions-attempt2/VERSION_TABLE.md)及
+[完整版本／執行依賴表](versions-attempt2/VERSION_TABLE.json)共列 **69**
+份版本檔案；26 份實際執行 traces 捕捉 **60** 份 repository read inputs，
+全部符合 snapshot／起始 SHA256，沒有向 snapshot 寫入。
+每份新 producer 的 actual reads 分別是 A₄ 29、B₄ 17、C₄ 11；間接
+imports 不限於原 artifact 的直接 hash map。Python executable、外部
+imported module code 的 SHA256 亦記錄；不把外部 interpreter 說成 repo 檔案。
+
+[本機環境](environment_versions.json)與
+[requirements 執行環境](pinned_environment_versions.json)分開：Python 3.14.7，
+Lean 4.34.0-rc2／Lake 5.0.0，Git 2.55.0、uv 0.12.20。Producer 使用
+system Python；artifact status 使用 pinned networkx 3.5、numpy 2.4.3、
+rustworkx 0.17.1，不將 system numpy 2.5.3 視為該 pinned 執行環境。
+原始報告版本與新增整合前綴後的文件版本由
+[document_changes.json](document_changes.json)分列。
+
+## 2. 精確 scope ledger 與停止點
+
+[完整 scope ledger](final-integration-attempt2/SCOPE_LEDGER.json)嵌入三份
+完整子 ledger／驗收結果，並以實際檔案 SHA256 綁定；沒有用 counts、
+marginals、masks 或獨立正規化的分量代替原 relations。
+
+| 成果 | 本輪接受的精確範圍 | 保留與下一具名未稽核入口 |
+| --- | --- | --- |
+| A₄ | 原 mixed-(1,2)+a-unary，spokes 04／04及整對 root 交換；四 rotations、三-hub 前提、完整 C 替換及 singleton 1／3 | 18／22逐身份降至16／20；40／58 actual U supports、50／84完整 schedules原樣保持。下一入口原12／12及root交換，未分析 |
+| B₄ | W933-129，literal a=5,b=6、04／12、長 face [2,6,5,4,3]／{2,3,4}；指定 shared 原附件恰 {4} | 六 shared 身份／八指定選擇只關閉此附件支。整份骨架、整個長 face、原20／20表不刪。下一入口同W／face的指定shared空附件，未分析 |
+| C₄ | CPP-134-1／geometry34／join60，side IDs=(27,1)；兩個原 unary 各自完整 relation／自身附件／lifts | 只新增此 key；繼承C₂(g30,j20)、C₃(g34,j20)，3500 keys中3497未關閉，原36／140／900表不刪。下一入口CPP-134-1／geometry35／join20、side IDs=(8,1)，未分析 |
+
+紙面任意大小論證、外部定理、固定 Python 控制與 Lean 狀態分别記錄。
+ε≥3、mixed12／mixed22 整型、來源實現、一般出口、complete Σ 的一般轉移
+及 `K∞=K≤5` 均未證。本包的下一入口只定位原表，不新增研究或排除。
+
+### A₄：原四 rotations、完整 C 替換與 ledger
+
+[A₄ notes](a4/notes.md)與
+[最終 root results](checks/a4-style-final-root-replay/audit/results.json)獨立從原邊
+重建四個選定 frames 的 576 rotation assignments／16 disk rotations。
+C 的共同 faces 始終為 0ab／4ab；原完整 degree 握手式迫 actual C support
+為 {0}／{4}。完整來源支援迫 U 含123，且 U 只能位於同一 rotation
+的 a-incident 長 face；原 root swap rotation bijection `[1,0,3,2]` 保持。
+8 個原三-hub instances、160 legal ordered pairs、1280 個外鄰子集
+核對原三角／互異色、exact degree-list、連通外部 K₄ 排除及任意接點數
+三-hub 引理的所有前提。原 bridges／旁支及 x=yⱼ 的雙 owner guards保持。
+
+24 張固定完整 degree 圖獨立重建 1,920 完整 joins／30,720 fibres，
+包含 **25,632 空 fibres**。25,568 六角色、1,600 五角色 witnesses 與
+全部 **47,149 serialized coloring fields**逐份驗過原邊／附件／色框。
+240 份 (a,b,u) 投影等式、2,912 份完整 C 替換均逐點保持 C 外全部
+頂點；另枚舉全外部投影，240 份等式保存 **804** 份完整 exterior colorings。
+480 份 legal root-pair C extensions及2080 exact-list頂點核對完成。
+
+六角色 joints 不宣稱相等：control4／row01012 的省略圖獨有 tuple
+`(1,3,1,1,0,0)`，完整 C 替換得 `(1,3,0,0,1,0)`，外部逐點保持。
+原 01202 singleton 明確是 **1／3**，繼承 schedules 對應14／10份；
+24 張固定控制各有12張 singleton1／3。Singleton1控制的U support124缺3；
+singleton3控制支援123，但123無繼承必要schedules。全部控制Σ=1023，
+皆不是來源933／941、criticality、disk或ledger實現證书。
+
+每份原 named frame、support object及完整 schedule逐項核對，僅原04／04
+及root交換各候選新排2份，剩餘16／20、40／58、50／84完整保存。
+幾何 D₅ diagnostics把933送至934／948、941送至950；它們只作診斷，
+沒有搬運來源排除或固定mask捷徑。
+任意大小結論仍是紙面原幾何／Gallai／K₄／K₅論證。
+外部 Dvořák Lemma7／Theorem10 使用已保存原PDF；SHA256見A的
+[PROVENANCE](a4/PROVENANCE.json)，本文不使用 minimal q-core 的替代前提。
+
+### B₄：真正 shared leaf、原 cut 奇數式與五袋
+
+[B₄ notes](b4/notes.md)與
+[最終 root results](checks/b4-final-root-replay/audit/results.json)固定
+W933-129 原04／12與長face{2,3,4}，不代換B₃的W933-101。
+六shared身份／八指定選擇、全部11 legal root pairs 的singleton tightness、
+13 actual bridge-neighbor候選／143 lists／排5留8均重新推導。
+兩份原rotations、108份star插入及兩份指定長faceextensions另作幾何交叉核對。
+
+原 v 外鄰恰a,b,b₄，完整 degree四迫deg_C(v)=1；vt是原bridge。
+K=C−v非空且連通，所有其他原邊／bridges／旁支保留。完整cut包含
+ax*、by*、vt及所有K–B原邊，x*=y*時仍是兩條不同root邊，故
+`4|K|=2|E(K)|+3+n_B`，迫n_B正奇數。
+五袋 `{a},{b},{v},B,K`非空、互斥、連通且十對都有原邊；原K₅ minor
+排除此條件附件支，適用singleton K及任意blocks／bridges大小。
+主證明不依賴terminal-block分類；connected-slack只承擔 ancillary
+13→8必要表，外部Lemma7與直接生成樹貪婪證明分別保存。
+
+40張完整degree控制的400完整R_C、2,400 joints、38,400 fibres逐份核對，
+包括 **29,768 空 fibres**。5,336原R_C、25,416原joint及25,416 fibre
+witnesses均驗原邊；額外獨立產生完整witnesses另保存。
+40五袋minors／400原鄰接／768原路徑、完整C bridge sets及40次shared
+bridge刪除控制完成。1,600原spoke restores、1,200root swaps、9,600
+完整S₄搬運C relations、57,600整圖joins及609,984搬運witnesses保持
+同一原色框；root swaps不新增具名來源閉合。
+
+原20／20表逐列保存，只登記W933-129的shared-{4}支；D4身份、shared
+空附件、其他contact附件、短face、其他骨架及整份長face均不新增排除。
+有限控制已有K₅而非disk來源，不宣稱Σ=933或criticality。
+
+### C₄：逐原分量完整 lift 雙射
+
+[C₄ notes](c4/notes.md)與
+[最終 root results](checks/c4-final-root-replay/audit/results.json)為
+**2477 checks／0 failures**。固定geometry34／join60與sideIDs=(27,1)，
+兩原分量自己的support A₂,A₁⊆{b₁,b₂}、union恰{b₁,b₂}；contacts
+次序、ownership、完整relations及所有原bridges保留，不分配整側支援。
+重建含空support的九份ordered covers與27份完整relation組合，三份binary
+候選及唯一unary候選各自違反固定0、1的2↔3雙射封閉性。
+完整lift逐點施以同一置換，原內邊／bridges與自身附件逐條保持，任意
+分量大小的紙面involution無需外部Gallai／minor定理。
+
+固定負控制保存6份component lifts／8份owned joint lifts、2條原bridges、
+8份刪bridge ordered relations／34份full lifts，逐128 ordered endpoint
+pins及空fibres驗證。32份context root fibres保持；未知w的三接點完整
+relation／內點lifts／root fibres全部仍是同一來源的符號關係。
+整側禁色聯集穩定的負控制不替代逐分量檢查；7項malformed資料均被檢出。
+其K₅只核對非平面負控制，不参与主證明，也不是整份M minimality證書。
+
+從原全部500 local configurations／560 cases及完整幾何／joins重建
+3500 named keys；僅新增(CPP-134-1,34,60)，C₂／C₃两keys沿用前證據。
+另外3497keys未關閉，原36／140／900表、所有原完整資料不刪。
+下一原表entry(g35,j20)的sideIDs=(8,1)、A_z={1,2}、A_w={2,3,4}
+及ordered未知relations只作導航，本包未分析。
+
+## 3. 歷史保存、MANIFEST／ignore 與中途失敗
+
+[初次 lineage](lineage_initial.json)及[最終lineage](lineage_final.json)核對D₂ 97份、D₃ 94份、
+D₄ **1099份**交付hash全部吻合，原交付表不覆寫。
+34份相關證書的 **250條直接hash紀錄**只有原四份文件hash漂移；
+非文件漂移零，四份原記錄仍是FAIL，沒有更新舊artifact的hash maps。
+這是明列證書域稽核，不宣稱全倉所有歷史證書皆目前有效。
+
+[MANIFEST／ignore核對](control_file_review.json)確認原entries、fingerprints及producer依賴全保持。A₄ artifact54,015,850 bytes及B₄
+35,337,366 bytes均有正確SHA256／producer登錄與ignore；C₄49,886 bytes
+為直接保存的小artifact，未誤加大型登錄。與D₄相比只新增A₄／B₄兩條
+大型entries，沒有移除／改寫原entries。工具依賴fingerprint與raw source
+SHA256各有用途，完整raw source版本由版本表維護。
+
+所有中途失敗保持精確執行source／helper／結果與trace：
+
+- A的兩次adapter失敗：舊q[1]guard與猜錯negative row index；來源／logs
+  見[A FAILURES](a4/FAILURES.json)，早一版成功與最後兩seed亦保存。
+- B初次face列舉以字面排序比較失敗；修成directed cycles僅模掉起點，
+  原orientation／bytes不改。原失敗及前一版成功留[b4/default](b4/default/)。
+- C兩次失敗：parent不存在summary欄、snapshot不含D₄ audit路徑；後者
+  改用已核對verbatim獨立helper及provenance，不修改snapshot或D₄。
+  [C attempt history](c4/attempt_history.json)及metadata讀取失敗保持。
+- 版本表工具第一次把relative trace path與absolute root比較而失敗；
+  [原執行source／失敗](versions-attempt1/)保持，修路徑後新attempt通過。
+  其餘inspection-only查找結果見[packaging notes](packaging_notes.json)。
+- 首次package檢查links零錯誤，但active A稽核helper末尾多一空行而FAIL；
+  [原結果](checks/package-attempt1.json)／執行來源保持，只修目前helper的EOF。
+  A追加兩seed與新的root final replay，relations／ledger／counterexamples逐byte
+  不變，results只更新helper source hash與耗時。舊比較／來源不覆寫，見
+  [style provenance](a4/STYLE_PROVENANCE.json)。
+
+D₄及更早的成功／失敗、capacity runtime漏入快照、hash失敗、版本及
+EOF／diff-harness紀錄全部保持原文。沒有為取得PASS刷新舊證書。
+
+## 4. 文件整合、重播與交付驗證
+
+三项驗收後才同步README、STATUS、Kempe／weak-deletion guides、synthesis
+與12份相關報告的後續／驗收前綴，共 **17份既有文件＋1份新history**。
+12份報告歷史正文逐byte作suffix核對，原checkers、helpers、artifacts、
+history及舊audit包不改。HANDOFF的薄導覽／研究線tags保持原bytes。
+逐份文件before／after SHA256及完整diff見
+[document changes](document_changes.json)／[整合diff](integration_doc_changes.diff)。
+17份tracked／untracked文件delta皆另做no-index whitespace核對；
+exit1僅表示存在差異，須診斷為空才能通過，見
+[document diff結果](checks/document_diff.json)。
+
+十二份producer A至A₄、B至B₄、C至C₄在固定snapshot各做default／seed17
+byte-check，共24次，全部通過；A₄ standalone helper另兩seed重算通過。
+B₄ helper隨B₄ producer實際重算，沒有假設無CLI helper另有獨立命令。
+[26份命令／outputs／runtime traces](checks/original-attempt1/results.json)完整保存。
+[lake build](checks/lake-attempt1/lake_build.log)完成8831 jobs，既有linter
+warnings保持；沒有新增Lean theorem，不形式化任意大小紙面topology。
+
+[三份最終比較](final-integration-attempt2/replay_comparison.json)核對default、
+seed17及root final replay的完整results、relations、counterexamples、
+scope與source versions；只排除A結果的elapsed_seconds，連snapshot path
+也實際相同。B、C結果逐byte相等；沒有排除任何hash、count、relation、
+empty fibre、witness或scope欄。各root命令與來源穩定檢查在
+`checks/{a4,b4,c4}-final-root-replay/execution.json`；A的最後來源版本另見
+[style-final execution](checks/a4-style-final-root-replay/execution.json)。
+
+獨立重播需使用新output路徑：
+
+```bash
+python3 audits/2026-10-04-task-d5/a4/audit_a4.py --repo audits/2026-10-04-task-d5/snapshot --output /tmp/d5-a4-fresh
+python3 audits/2026-10-04-task-d5/b4/audit_b4.py --repo audits/2026-10-04-task-d5/snapshot --output /tmp/d5-b4-fresh
+python3 audits/2026-10-04-task-d5/c4/audit_c4.py --repo audits/2026-10-04-task-d5/snapshot --output /tmp/d5-c4-fresh
+python3 audits/2026-10-04-task-d5/run_validation.py --scope original --output /tmp/d5-producers-fresh
+python3 audits/2026-10-04-task-d5/run_validation.py --scope navigation --output /tmp/d5-navigation-fresh
+python3 audits/2026-10-04-task-d5/audit_lineage.py --output /tmp/d5-lineage-fresh.json
+python3 audits/2026-10-04-task-d5/audit_bundle.py verify --result /tmp/d5-preservation-fresh.json
+python3 audits/2026-10-04-task-d5/validate_package.py --output /tmp/d5-package-fresh.json
+python3 audits/2026-10-04-task-d5/seal_delivery.py verify
+```
+
+文件／DocGraph／artifact status／tracked diff實際結果見
+[navigation checks](checks/navigation-attempt1/results.json)；D₅自身links及
+active來源whitespace另由package validator核對。歷史attempt sources按
+原hash封存，不為格式檢查改寫舊版本。
+最終[保存結果](checks/preservation-final.json)核對全部起始bytes、snapshot
+及本地HEAD／origin/main refs；沒有remote fetch或commit／push。
+**2777份既有檔案bytes保持、17份允許文件變更、protected變更零；1383份
+固定輸入全部不變。** 實際檢查為537份Markdown／5587 local links；DocGraph
+62文件／213 relations／5 families，零errors／notes；artifact status `ok=145`。
+tracked diff與17份額外document deltas通過；[修正後package檢查](checks/package-attempt2.json)
+為5份Markdown／37 local links、零link／whitespace errors。最後交付前另做
+全package檢查，見`checks/package-final.json`，不重跑未改的Lean sources。
+外部runtime modules的87份實際source紀錄亦再核對，見
+[runtime版本最終檢查](checks/external_runtime_versions_final.json)。
+ `DELIVERY_SHA256.json`列所有D₅新檔、完整固定副本、
+`DELIVERY_SHA256.json`列所有D₅新檔、完整固定副本、
+成功／失敗attempts及來源版本，不列自身hash；`seal_delivery.py verify`
+嚴格核對missing／added／changed。衍生`__pycache__`／`.pyc`不屬交付來源。
+
+未重跑歷史全來源minimality／容量／省略／R系列、D₂所有150圖整包、
+D₃全部14000側joins整包或Lean axiom audit；前輪證據按已封存交付沿用，
+本輪只增加上述三項獨立驗收與相关producer重播，不宣稱全部一般機制完備。
+
+**D₅停止於固定快照、三項精確條件式驗收、版本保存與文件整合。**
+現行下一具名入口由[Kempe](../../docs/c5_kempe_guide.md#3-停止點與保留缺口)及
+[weak-deletion](../../docs/c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)維護；
+本包沒有分析下一入口，沒有擴張研究，沒有commit／push。

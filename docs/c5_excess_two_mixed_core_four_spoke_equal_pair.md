@@ -1,5 +1,13 @@
 # ε=2 四-spoke (2,2)：共用原 spoke-pair 的 sealed mixed 排除
 
+**後續（2026-10-03；2026-10-04 整理）**：本頁當輪排除共用 pair
+7／9 份，留下 unequal 40／66；後續[短 face](c5_excess_two_mixed_core_four_spoke_short_face.md)
+排8／16份至32／50、[同一長 face](c5_excess_two_mixed_core_four_spoke_long_face.md)
+再排10／10份至22／40，其後 crosscut、短框弧及[不相交pairs總報告](c5_excess_two_mixed_core_four_spoke_disjoint_pairs.md)
+完成四-spoke (2,2)、mixed-(1,1) 加各側一原 unary 子型，最後殘留0／0。
+以下保留原輪次數字、停止點與證書；其他 incidence 及 ε≥3 仍未證。
+現況與排程由 [Kempe 導覽](c5_kempe_guide.md)維護。
+
 2026-10-03，接手基準 `b63a096`，保留前序未提交工作樹。接續
 [原四接點 leaf-slack](c5_excess_two_mixed_core_four_spoke_quaternary.md)之後的
 (2,2)、mixed-(1,1) 加各側一原單接點 unary。研究現況由
@@ -141,7 +149,7 @@ C 非空連通、K₄-free Gallai、每點完整 degree 四，外鄰只在三個
 式 (5) 選到原 C 的一份完整 coloring，與該 tuple 在同一 B 色框
 接合，滿足原 ax、by，得到原 G 的完整 coloring。
 
-對每列其實得到完整 relation 等式
+對每列其實得到忘 C contacts 後的四角色完整 relation 等式
 
 \[
 \pi_{a,b,u,v}J_G(β)=J_{G-C}(β),\qquad

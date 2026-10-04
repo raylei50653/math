@@ -1,0 +1,14 @@
+{
+  "all_checks_passed": false,
+  "failure": "Root first comparison used C3 attempt1 while audit final source/fields were still being completed.",
+  "action": "AssertionError on complete result comparison",
+  "different_fields": [
+    "audited_artifact_sha256",
+    "checks",
+    "independent_audit_sources_sha256"
+  ],
+  "left": "c3/attempt1/results.json",
+  "right": "checks/c3-root-replay/results.json",
+  "resolution": "Wait for final audit version, preserve old code/runs, replay final source into fresh directory.",
+  "no_mathematical_fields_removed": true
+}
