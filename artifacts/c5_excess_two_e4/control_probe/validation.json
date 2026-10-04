@@ -1,0 +1,63 @@
+{
+  "schema": "e4-nonadjacent-control-probe-validation-v1",
+  "base_commit": "2ac279b",
+  "worktree": "/home/ray/developer/ai/math-task-e4",
+  "commands": [
+    {
+      "command": "/home/ray/developer/ai/math/.venv/bin/python artifacts/c5_excess_two_e4/control_probe/split_hub_probe.py",
+      "exit_code": 0,
+      "output": "{\"controls\": 0, \"counts\": {\"disk\": 7, \"disk_T4_all\": 7, \"disk_T4_noncritical\": 7, \"named_spoke_combinations\": 1000}}\nCREATED split_hub_probe.json\n"
+    },
+    {
+      "command": "/home/ray/developer/ai/math/.venv/bin/python artifacts/c5_excess_two_e4/control_probe/m2_probe.py",
+      "exit_code": 0,
+      "output": "{\"controls\": 0, \"templates\": {\"A_K22_four_privates\": {\"named_spoke_combinations\": 10000}, \"B_K22_plus_fixed_binary_at_each_root\": {\"named_spoke_combinations\": 2500}}}\nCREATED m2_probe.json\n"
+    },
+    {
+      "command": "/home/ray/developer/ai/math/.venv/bin/python artifacts/c5_excess_two_e4/control_probe/m2_binary_probe.py",
+      "exit_code": 0,
+      "output": "{\"controls\": 0, \"counts\": {\"named_spoke_combinations\": 25000}}\nCREATED m2_binary_probe.json\n"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /home/ray/developer/ai/math/.venv/bin/python artifacts/c5_excess_two_e4/control_probe/split_hub_probe.py --check",
+      "exit_code": 0,
+      "output": "{\"controls\": 0, \"counts\": {\"disk\": 7, \"disk_T4_all\": 7, \"disk_T4_noncritical\": 7, \"named_spoke_combinations\": 1000}}\nCHECK OK\n"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 PYTHONDONTWRITEBYTECODE=1 /home/ray/developer/ai/math/.venv/bin/python artifacts/c5_excess_two_e4/control_probe/split_hub_probe.py --check",
+      "exit_code": 0,
+      "output": "{\"controls\": 0, \"counts\": {\"disk\": 7, \"disk_T4_all\": 7, \"disk_T4_noncritical\": 7, \"named_spoke_combinations\": 1000}}\nCHECK OK\n"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /home/ray/developer/ai/math/.venv/bin/python artifacts/c5_excess_two_e4/control_probe/m2_probe.py --check",
+      "exit_code": 0,
+      "output": "{\"controls\": 0, \"templates\": {\"A_K22_four_privates\": {\"named_spoke_combinations\": 10000}, \"B_K22_plus_fixed_binary_at_each_root\": {\"named_spoke_combinations\": 2500}}}\nCHECK OK\n"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 PYTHONDONTWRITEBYTECODE=1 /home/ray/developer/ai/math/.venv/bin/python artifacts/c5_excess_two_e4/control_probe/m2_probe.py --check",
+      "exit_code": 0,
+      "output": "{\"controls\": 0, \"templates\": {\"A_K22_four_privates\": {\"named_spoke_combinations\": 10000}, \"B_K22_plus_fixed_binary_at_each_root\": {\"named_spoke_combinations\": 2500}}}\nCHECK OK\n"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /home/ray/developer/ai/math/.venv/bin/python artifacts/c5_excess_two_e4/control_probe/m2_binary_probe.py --check",
+      "exit_code": 0,
+      "output": "{\"controls\": 0, \"counts\": {\"named_spoke_combinations\": 25000}}\nCHECK OK\n"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 PYTHONDONTWRITEBYTECODE=1 /home/ray/developer/ai/math/.venv/bin/python artifacts/c5_excess_two_e4/control_probe/m2_binary_probe.py --check",
+      "exit_code": 0,
+      "output": "{\"controls\": 0, \"counts\": {\"named_spoke_combinations\": 25000}}\nCHECK OK\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "conclusion": "All finite probe generations and ordinary/seed17 replays succeeded; none found the requested nonadjacent Sigma-edge-minimal positive control.",
+  "source_sha256": {
+    "split_hub_probe.py": "e3df894f9041577c79a315268fed6e03e2e63d7df8f35d493efd3424b4a481c6",
+    "m2_probe.py": "589350ca6d9319aa1f3e5a452065b5748ec428edac7fb75acec856b9a904d457",
+    "m2_binary_probe.py": "5556550f0452815a4a0aae8fb2e5e8b784cdc9a888ab043d1924d130aeec8815"
+  }
+}
