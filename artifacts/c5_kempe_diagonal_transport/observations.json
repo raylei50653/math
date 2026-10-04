@@ -1,0 +1,1504 @@
+{
+  "assignments": {
+    "file": "assignments.jsonl",
+    "rows": 7872,
+    "sha256": "cfafe29e421989a909cf0cdd2ce6531477a3318290319ec27ed173426e0bb6ab"
+  },
+  "base_commit": "2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090",
+  "bounded_realization_summary": {
+    "counts": {
+      "T4_and_sigma_critical": 10,
+      "disk": 10,
+      "disk_sigma_1012": 2,
+      "disk_sigma_935": 2,
+      "disk_sigma_942": 2,
+      "disk_sigma_956": 2,
+      "disk_sigma_997": 2,
+      "full_frame_contact": 275,
+      "wirings": 500
+    },
+    "realized_target_count": 0
+  },
+  "conclusion": "STOP: L2 survivors remain for both targets. Neither fixed-source exclusion nor Kprime is proved.",
+  "controls": [
+    {
+      "L1": true,
+      "L2": true,
+      "assignment_id": "KD1012-0001",
+      "name": "P1-witness-001",
+      "useful_swaps": 4
+    },
+    {
+      "L1": true,
+      "L2": true,
+      "assignment_id": "KD935-0003",
+      "name": "S935-q3-psi0",
+      "useful_swaps": 4
+    },
+    {
+      "L1": true,
+      "L2": true,
+      "assignment_id": "KD935-0008",
+      "name": "S935-q6-psi0",
+      "useful_swaps": 4
+    }
+  ],
+  "domain": {
+    "D5_quotient": false,
+    "P_size": 1,
+    "S4_normalization_only_for_mask_lookup": true,
+    "S4_quotient": false,
+    "all_literal_rows": true,
+    "directed_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    "empty_root_blocks_enumerated_then_rejected": true,
+    "four_distinct_neighbor_colours": true,
+    "frame": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "neighbor_roles": [
+      "a",
+      "b",
+      "z",
+      "w"
+    ],
+    "roots_adjacent": true,
+    "roots_degree": 5
+  },
+  "inputs": {
+    "artifacts/c5_cells/cells.json": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+    "artifacts/c5_kempe_transport/P1-witness-001.json": "0acd1e9e68a56a57ec2c02b44681d555e12ba01a0a4ce379d7ceba80a7ac7f3d",
+    "artifacts/c5_shield_calibration/counterexample_S935.json": "b6c950b1c0ce1085b6c26c55fffeea910c803814584369421f582527f3c0a628",
+    "scripts/c5_kempe_diagonal_transport.py": "e7efd0e0c35d7db47ee70e1508a9ade87a0305b489b27f15f12ea9f8c709d48d",
+    "scripts/c5_kempe_screen.py": "033fd7d6d2ff673ca1f7b78b8958b729351942092d58e027ea7d6b8713560a70",
+    "scripts/c5_kempe_transport_table.py": "8071100157525afca5521d48483e53e98e6d6d7556fef19e8da83e159a8fab63"
+  },
+  "named_target_survivors": [
+    "KD933-0001",
+    "KD941-0001"
+  ],
+  "networkx_version": "3.5",
+  "schema": "c5-kempe-diagonal-transport-v1",
+  "tables": [
+    {
+      "counts": {
+        "L1": 2112,
+        "L1_az_connected": 960,
+        "L1_both_disconnected": 192,
+        "L1_bw_connected": 960,
+        "L2": 192,
+        "assignments_including_empty": 16896,
+        "excluded_both_connected": 2496,
+        "excluded_empty_root_block": 10560,
+        "excluded_required_swap_outside_sigma": 1728,
+        "literal_rejects": 96,
+        "nonempty_assignments": 6336,
+        "partition_contexts": 2496
+      },
+      "rejected_indices": [
+        1,
+        3,
+        4,
+        6
+      ],
+      "results_by_q_index_and_edge": [
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            0,
+            1
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 96,
+            "L2": 24
+          },
+          "edge": [
+            1,
+            2
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 120,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            2,
+            3
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_az_connected": 48
+          },
+          "edge": [
+            3,
+            4
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 96,
+            "L2": 24
+          },
+          "edge": [
+            4,
+            0
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 96,
+            "L1_az_connected": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            0,
+            1
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            1,
+            2
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_az_connected": 48
+          },
+          "edge": [
+            2,
+            3
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 96,
+            "L1_az_connected": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            3,
+            4
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 96,
+            "L1_az_connected": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            4,
+            0
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            0,
+            1
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_az_connected": 48
+          },
+          "edge": [
+            1,
+            2
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 96,
+            "L1_az_connected": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            2,
+            3
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 96,
+            "L1_az_connected": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            3,
+            4
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 96,
+            "L1_az_connected": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            4,
+            0
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 120,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            0,
+            1
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            1,
+            2
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 96,
+            "L2": 24
+          },
+          "edge": [
+            2,
+            3
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            3,
+            4
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            4,
+            0
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        }
+      ],
+      "sigma": 933
+    },
+    {
+      "counts": {
+        "L1": 2304,
+        "L1_az_connected": 960,
+        "L1_both_disconnected": 384,
+        "L1_bw_connected": 960,
+        "L2": 384,
+        "assignments_including_empty": 12672,
+        "excluded_both_connected": 1872,
+        "excluded_empty_root_block": 7920,
+        "excluded_required_swap_outside_sigma": 576,
+        "literal_rejects": 72,
+        "nonempty_assignments": 4752,
+        "partition_contexts": 1872
+      },
+      "rejected_indices": [
+        1,
+        4,
+        6
+      ],
+      "results_by_q_index_and_edge": [
+        {
+          "counts": {
+            "L1": 240,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 48,
+            "L1_bw_connected": 96,
+            "L2": 48
+          },
+          "edge": [
+            0,
+            1
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 240,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 48,
+            "L1_bw_connected": 96,
+            "L2": 48
+          },
+          "edge": [
+            1,
+            2
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 120,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            2,
+            3
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 120,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            3,
+            4
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 240,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 48,
+            "L1_bw_connected": 96,
+            "L2": 48
+          },
+          "edge": [
+            4,
+            0
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 120,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            0,
+            1
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_az_connected": 48
+          },
+          "edge": [
+            1,
+            2
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 96,
+            "L2": 24
+          },
+          "edge": [
+            2,
+            3
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            3,
+            4
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 96,
+            "L2": 24
+          },
+          "edge": [
+            4,
+            0
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 120,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            0,
+            1
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            1,
+            2
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 96,
+            "L2": 24
+          },
+          "edge": [
+            2,
+            3
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            3,
+            4
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            4,
+            0
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        }
+      ],
+      "sigma": 941
+    },
+    {
+      "counts": {
+        "L1": 1728,
+        "L1_az_connected": 768,
+        "L1_both_disconnected": 192,
+        "L1_bw_connected": 768,
+        "L2": 192,
+        "assignments_including_empty": 12672,
+        "excluded_both_connected": 1872,
+        "excluded_empty_root_block": 7920,
+        "excluded_required_swap_outside_sigma": 1152,
+        "literal_rejects": 72,
+        "nonempty_assignments": 4752,
+        "partition_contexts": 1872
+      },
+      "rejected_indices": [
+        0,
+        1,
+        3
+      ],
+      "results_by_q_index_and_edge": [
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 96,
+            "L2": 24
+          },
+          "edge": [
+            0,
+            1
+          ],
+          "q_index": 0,
+          "representative": [
+            0,
+            1,
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            1,
+            2
+          ],
+          "q_index": 0,
+          "representative": [
+            0,
+            1,
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 96,
+            "L2": 24
+          },
+          "edge": [
+            2,
+            3
+          ],
+          "q_index": 0,
+          "representative": [
+            0,
+            1,
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 120,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            3,
+            4
+          ],
+          "q_index": 0,
+          "representative": [
+            0,
+            1,
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_az_connected": 48
+          },
+          "edge": [
+            4,
+            0
+          ],
+          "q_index": 0,
+          "representative": [
+            0,
+            1,
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 96,
+            "L1_az_connected": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            0,
+            1
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 96,
+            "L1_az_connected": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            1,
+            2
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            2,
+            3
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_az_connected": 48
+          },
+          "edge": [
+            3,
+            4
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 96,
+            "L1_az_connected": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            4,
+            0
+          ],
+          "q_index": 1,
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            0,
+            1
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            1,
+            2
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 120,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            2,
+            3
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            3,
+            4
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 96,
+            "L2": 24
+          },
+          "edge": [
+            4,
+            0
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        }
+      ],
+      "sigma": 1012
+    },
+    {
+      "counts": {
+        "L1": 1728,
+        "L1_az_connected": 768,
+        "L1_both_disconnected": 192,
+        "L1_bw_connected": 768,
+        "L2": 192,
+        "assignments_including_empty": 12672,
+        "excluded_both_connected": 1872,
+        "excluded_empty_root_block": 7920,
+        "excluded_required_swap_outside_sigma": 1152,
+        "literal_rejects": 72,
+        "nonempty_assignments": 4752,
+        "partition_contexts": 1872
+      },
+      "rejected_indices": [
+        3,
+        4,
+        6
+      ],
+      "results_by_q_index_and_edge": [
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 96,
+            "L2": 24
+          },
+          "edge": [
+            0,
+            1
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 120,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            1,
+            2
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_az_connected": 48
+          },
+          "edge": [
+            2,
+            3
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 96,
+            "L2": 24
+          },
+          "edge": [
+            3,
+            4
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            4,
+            0
+          ],
+          "q_index": 3,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            0,
+            1
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_az_connected": 48
+          },
+          "edge": [
+            1,
+            2
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 96,
+            "L1_az_connected": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            2,
+            3
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 96,
+            "L1_az_connected": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            3,
+            4
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 96,
+            "L1_az_connected": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            4,
+            0
+          ],
+          "q_index": 4,
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 120,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            0,
+            1
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            1,
+            2
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 48,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 96,
+            "L2": 24
+          },
+          "edge": [
+            2,
+            3
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 168,
+            "L1_az_connected": 96,
+            "L1_both_disconnected": 24,
+            "L1_bw_connected": 48,
+            "L2": 24
+          },
+          "edge": [
+            3,
+            4
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "counts": {
+            "L1": 48,
+            "L1_bw_connected": 48
+          },
+          "edge": [
+            4,
+            0
+          ],
+          "q_index": 6,
+          "representative": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ]
+        }
+      ],
+      "sigma": 935
+    }
+  ],
+  "trust": {
+    "external": "Jordan curve theorem; no 4CT/Gallai/hub inference.",
+    "lean": "No new theorem; no lake build.",
+    "paper": "Necessary diagonal-swap incidence plus connected-diagonal Jordan side lemma.",
+    "python": "All 240 literal frame rows, exact endpoint-block choices and bounded eight-vertex attempts."
+  }
+}
