@@ -1,0 +1,40 @@
+{
+  "execution": [
+    {
+      "error": "ModuleNotFoundError: No module named networkx",
+      "exit_code": 1,
+      "interpreter": "python3",
+      "operation": "Read-only original input/rotation review importing foundation.py"
+    },
+    {
+      "exit_code": 0,
+      "interpreter": "/home/ray/developer/ai/math/.venv/bin/python",
+      "operation": "Same read-only original input/rotation/criticality identity review",
+      "result": "Exact E1 951/935 record, rotation, outerface, and critical edge identity checks PASS."
+    }
+  ],
+  "extra_assumptions_used": [],
+  "fixed_control_review": {
+    "critical_edge_records_equal_all_nonframe_edges": true,
+    "defensive_checker_gaps": "These equality/outer-face/coverage assertions are not currently explicit in foundation.py; independently verified current exact inputs pass.",
+    "extracted_records_equal_original_json_pointers": true,
+    "original_C5_outer_face_walk_present": true,
+    "original_source": "/home/ray/developer/ai/math/artifacts/c5_excess_rejection_law/observations.json",
+    "original_source_sha256": "23a92b56f325bd4bd496d7e8dfb14714d8481618253f88243df4cb7916ca999e",
+    "rotation_edges_equal_actual_edges": true,
+    "rotation_vertices_equal_actual_vertices": true,
+    "sigma935_face_count": 10,
+    "sigma951_face_count": 13
+  },
+  "paper_steps": [
+    "Inclusion-minimal subgraph preserving all selected rejections has each nonframe edge critical for some selected row, hence own Sigma-criticality.",
+    "Effective interior degree at least4 follows deletion witness and recoloring the removed vertex.",
+    "epsilon(M)<=epsilon(G)=2 because omitted original surplus and retained degree losses are nonnegative.",
+    "epsilon(M)=2 forces original surplus roots retained at full degree; original H connectivity and degree4 saturation force M=G.",
+    "Proper M has epsilon<=1, inherits induced frame/disk/T4, has own Sigma-criticality, and rejects a selected nonadjacent pair; E2 excludes it."
+  ],
+  "paper_verdict": "confirmed",
+  "remaining_evidence_boundary": "E2 is the existing paper/classification/finite-terminal theorem, not independently formalized by these checks.",
+  "reviewed_script": "scripts/c5_excess_two_e3_foundation.py",
+  "scope": "Read-only independent review requested by root; no source script or historical artifact changed."
+}
