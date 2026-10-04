@@ -96,7 +96,10 @@ J1–J6（相鄰）與待 K′ 入口。
 (i) 維持並須引用補表（E3 §10）。E4：[N3 全排](../artifacts/c5_excess_two_e4/REPORT.md)
 （N-theta＋N-empty ⇒ m≤2）；N1 排 mixed (2,2) 有 (4,4) core、N2 排兩短無 unary，其餘殘留；
 **未找到合格非相鄰正控制**。N-theta 對相鄰 roots 亦適用（zw 為第四條路徑），推論相鄰 m≤2，待寫成證明。
-E5 仍在進行。
+E5：[依賴項×四分支表](../artifacts/c5_excess_two_e5/REPORT.md)；新 L1（任一真子圖只拒絕空、單點或相鄰二點，
+不需三列）；四分支排 J2 mixed12、J3 ternary、A equal pairs、B mixed22 全 leaf，932 另排五-spoke 與 J3 binary；
+殘留 G1（J1）、G2（J2 mixed11+U，941／933／940）、G3（J3 binary coverage）、G4（A unequal frames）。
+停止 (c)：E3 對 A 前序的依賴判定過強，已於 E3 報告末記更正。
 
 **候選猜想 N∅（2026-10-04 記錄，未證；先記錄，後實驗）：** 指定 disk、T4 全收、每條非框邊 Σ-critical、
 Q≠∅、ε=2 時，兩個 degree-5 roots 必相鄰；即非相鄰雙 degree-5 來源不存在，與 Q 形狀無關。

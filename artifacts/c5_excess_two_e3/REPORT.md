@@ -445,3 +445,8 @@ Q={0,1,3} 的 D₅ 穩定子只有恆等與反射 i↦1−i，spoke orbits 為 {
 因此 (i) 的結論維持，引用時須連同此補表；原 producer 與 degree6.json 未改，
 其 t=1 兩格的數字仍是 spoke=b₀ 子域。D₈ 其餘項目（約化、triple-critical、§4.1 carrier、
 §6 共用 contact、§5 非相鄰限制、K′ 引理 1–6）全部成立。
+
+**E5 之後的更正（2026-10-04）。** [任務 E5](../c5_excess_two_e5/REPORT.md#51-l6n-與-a-spoke-omissions-全收恢復完整-singleton-u-身份)
+指出 §3 可移植性表與 adjacent_notes 對 A（mixed12＋a-unary）「需先補一般 spoke+unary (4,4) 前序」的判定過強：
+C12 的原長環已排除全 degree-4 retained core，故 N=G−U 全收、兩 a-spoke 省略全收與每個拒絕列的 singleton-U 身份
+可在四分支直接證得（E5 L6）。這是依賴範圍的誤判，不影響本報告任何已證排除。
