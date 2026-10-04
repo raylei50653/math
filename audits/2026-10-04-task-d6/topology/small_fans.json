@@ -1,0 +1,78 @@
+{
+  "family_size": 1024,
+  "networkx_version": "3.5",
+  "counts": {
+    "planar_augmented": 698,
+    "both_shields_empty": 1,
+    "cross_root_disjoint_shields_checked": 697,
+    "support_marking_checked": 1012,
+    "three_point_length_checked": 492,
+    "nonplanar_augmented": 326
+  },
+  "failures": 0,
+  "witnesses": {
+    "two_disjoint_length_two": {
+      "support_p": [
+        "b0",
+        "b2"
+      ],
+      "support_q": [
+        "b0",
+        "b3"
+      ],
+      "shield_p_edge_indices": [
+        0,
+        1
+      ],
+      "shield_q_edge_indices": [
+        3,
+        4
+      ],
+      "rotation": {
+        "b0": [
+          "b1",
+          "p",
+          "q",
+          "b4"
+        ],
+        "b1": [
+          "b0",
+          "b2"
+        ],
+        "b2": [
+          "b1",
+          "b3",
+          "p"
+        ],
+        "b3": [
+          "b2",
+          "b4",
+          "q"
+        ],
+        "b4": [
+          "b3",
+          "b0"
+        ],
+        "p": [
+          "r",
+          "b0",
+          "b2"
+        ],
+        "r": [
+          "s",
+          "p"
+        ],
+        "s": [
+          "q",
+          "r"
+        ],
+        "q": [
+          "b3",
+          "b0",
+          "s"
+        ]
+      }
+    }
+  },
+  "scope": "Finite sanity control only; arbitrary-size topology is paper evidence."
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "command": "python3 audits/2026-10-04-task-d6/audit_d6.py --output audits/2026-10-04-task-d6/independent_results.json",
+    "chunk_id": "34985d",
+    "wall_time_seconds": 0.89433599,
+    "exit_code": 0,
+    "original_token_count": 332,
+    "output": "{\n  \"scope_keys\": 3500,\n  \"open_keys\": 3497,\n  \"inherited_closed_keys\": [\n    [\n      \"CPP-134-1\",\n      30,\n      20\n    ],\n    [\n      \"CPP-134-1\",\n      34,\n      20\n    ],\n    [\n      \"CPP-134-1\",\n      34,\n      60\n    ]\n  ],\n  \"unary_count_distribution\": {\n    \"2\": 1258,\n    \"3\": 1679,\n    \"4\": 560\n  },\n  \"distinct_component_instances_across_open_keys\": 9793,\n  \"unknown_unary_own_support_instances\": 8398,\n  \"whole_source_support_census\": {\n    \"0,1,2,3,4\": 2300,\n    \"0,1,2,4\": 597,\n    \"1,2,3,4\": 600\n  },\n  \"hub_controls\": {\n    \"explicit_short_support_hub_instances\": 800,\n    \"tight_outside_neighbor_subsets\": 3300,\n    \"includes_empty_and_singleton_support\": true\n  },\n  \"verdict_payload_checks\": \"PASS\",\n  \"recorded_source_hash_drift\": [\n    {\n      \"file\": \"docs/c5_unary_shield_budget.md\",\n      \"recorded\": {\n        \"bytes\": 20625,\n        \"sha256\": \"e4a3515a7e5e38d5e8b10b34b18e33d1d890fb29a1613e1a202842e8388da110\"\n      },\n      \"current\": {\n        \"sha256\": \"11a0b9f9422396dad22927de003764bf5218e6f3e2967fd7c3984748294d6c2b\",\n        \"bytes\": 20896\n      }\n    }\n  ],\n  \"current_script_DOCS_missing_from_verdict_sources\": [],\n  \"strict_current_replay_source_bindings\": \"FAIL\",\n  \"finite_scope_limit\": \"Named necessary classes; unary internals remain unknown; no unbounded theorem proven by Python\"\n}\n"
+  },
+  {
+    "command": "python3 audits/2026-10-04-task-d6/scope_history/check_scope_history.py",
+    "chunk_id": "73ad22",
+    "wall_time_seconds": 0.433487004,
+    "exit_code": 0,
+    "original_token_count": 229,
+    "output": "{\n  \"evidence\": \"Independent finite necessary-profile control; paper topology and unbounded unary proofs remain separate.\",\n  \"counts\": {\n    \"local_supports\": 500,\n    \"nonempty_F_local_supports\": 112,\n    \"local_residual_cases\": 560,\n    \"bounded_sector_subset_products\": 19340,\n    \"no_necessary_geometry_cases\": 524,\n    \"retained_cases\": 36\n  },\n  \"retained_geometries\": 140,\n  \"scope_keys\": 3500,\n  \"roles_by_a\": {\n    \"0\": {\n      \"full_role_joins\": 125,\n      \"without_unary_at_a_root\": 0\n    },\n    \"1\": {\n      \"full_role_joins\": 125,\n      \"without_unary_at_a_root\": 0\n    },\n    \"2\": {\n      \"full_role_joins\": 125,\n      \"without_unary_at_a_root\": 0\n    }\n  },\n  \"saved_domain_comparisons\": \"exact sets equal, not counts only\",\n  \"old_short_support_example\": {\n    \"key\": [\n      \"CPP-131-0\",\n      0,\n      0\n    ],\n    \"component\": \"D_z_0\",\n    \"actual_own_support\": [\n      1,\n      2\n    ]\n  }\n}\n"
+  },
+  {
+    "command": ".venv/bin/python audits/2026-10-04-task-d6/topology/check_small_fans.py",
+    "chunk_id": "fd3d23",
+    "wall_time_seconds": 0.227658348,
+    "exit_code": 0,
+    "original_token_count": 88,
+    "output": "{\"family_size\": 1024, \"networkx_version\": \"3.5\", \"counts\": {\"planar_augmented\": 698, \"both_shields_empty\": 1, \"cross_root_disjoint_shields_checked\": 697, \"support_marking_checked\": 1012, \"three_point_length_checked\": 492, \"nonplanar_augmented\": 326}, \"failures\": 0, \"scope\": \"Finite sanity control only; arbitrary-size topology is paper evidence.\"}\n"
+  },
+  {
+    "command": "python3 audits/2026-10-04-task-d6/calibration/check_calibration.py",
+    "chunk_id": "58f538",
+    "wall_time_seconds": 0.030666636,
+    "exit_code": 0,
+    "original_token_count": 247,
+    "output": "{\n  \"saved_graph_occurrences\": {\n    \"S graphs\": 21,\n    \"E saved minima\": 50,\n    \"E scratch originals\": 20,\n    \"E saved outcomes\": 20,\n    \"E scratch witnesses\": 20\n  },\n  \"distinct_saved_labelled_graphs\": 71,\n  \"graphs_by_unary_count\": {\n    \"0\": 41,\n    \"1\": 15,\n    \"2\": 15\n  },\n  \"graphs_with_two_or_more_unary\": [\n    \"G46\",\n    \"G48\",\n    \"G52\",\n    \"G54\",\n    \"G55\",\n    \"G57\",\n    \"G58\",\n    \"G60\",\n    \"G61\",\n    \"G63\",\n    \"G64\",\n    \"G65\",\n    \"G66\",\n    \"G67\",\n    \"G69\"\n  ],\n  \"all_two_unary_graphs_have_exactly_two_pieces_and_one_root\": true,\n  \"candidate_long_piece_plus_two_distinct_unary\": [],\n  \"all_saved_rotations_verified\": true,\n  \"degree_minimum_failures\": [],\n  \"whole_sigma_minimality_failures\": [],\n  \"single_q_minimal_histogram\": {\n    \"0\": 46,\n    \"1\": 25\n  },\n  \"source_hash_drift\": [],\n  \"scope\": \"Only explicit saved labelled witnesses; no exhaustive producer re-run.\",\n  \"imports\": \"Python standard library only; no audited checker or graph library.\"\n}\n"
+  }
+]

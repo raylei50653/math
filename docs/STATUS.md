@@ -207,6 +207,11 @@
 | [ε=2 t=1 全部分拆排除](c5_excess_two_single_spoke_complete.md) | 唯一 degree-6 root 的七種原接點分拆均作整型來源排除；後續復用原工具完成 t=0、2、3，唯一 degree-6 分支全完成。兩候選共同 ε≥2 不變，雙 degree-5 roots 及一般來源保留；任意大小紙面＋Python，未 Lean 化 |
 | [兩／三外部 hubs 的短支援排除](c5_short_support_singleton.md) | 原 degree-4 分量支援包含於一條框邊，且有避開它的原外部路徑時，全部禁色皆不可能；不限接點數，迫本題每份原分量跨度至少二；紙面＋原 K₅ controls，未 Lean 化 |
 | [不依賴 ε 的盾弧預算與 hub 原則](c5_unary_shield_budget.md) | 固定來源、任意 ε：one-sided 分量支援為連續框弧且盾弧邊互斥，全圖至多兩份 unary；hub 原則統一短支援／K₄／二三-hub K₅ 並推廣到同色 roots 的 mixed 分量；A₄ 殘留 U 支援 40／58→24／30，無 frame 排除；紙面＋Python 控制，未 Lean 化 |
+| [猜想 S 的可實現圖校準](c5_shield_calibration.md) | 21 張 T4 全收 Σ-edge-minimal 圖找到 5 份短支援 one-sided mixed；具名反例 S935／P0={5}（Σ=935）否定可實現圖類上的推廣，限定 933／941 的原猜想 S 未決；unary 盾弧性質全無違反；有限 Python 證書，未 Lean 化 |
+| [q-core 盾弧預算與共鄰 P₃ 目錄排除](c5_qcore_shield_budget.md) | 改色引理（既有）＋盾弧引理移植到單列 q-core，保留 singleton 缺點；不需 T4 的定理 C-W（2+2+2>5）把共鄰 P₃ 目錄 3497 keys 全部來源排除；D₆ 稽核確認並補零-unary 側，C §1 整個共鄰端點 P₃ 分支排除完成；verdict 修訂版（v1 保存）；原 ledger 未合併；紙面＋外部 Gallai＋Python 證書，未 Lean 化 |
+| [Kempe 轉運有限表與 hub-linkage 停止見證](c5_kempe_transport.md) | 933／941 各 20 筆單 block 轉運，共同 partition 候選全部非交錯；單點 P 控制得 Σ=1012 停止見證（無 hubs、非交錯，對角鏈交換碰框入 Σ）；否定一般局部二分，固定來源 K 未決；有限 Python，未 Lean 化 |
+| [超額–拒絕定律 E 的有限證據](c5_excess_rejection_law.md) | 有效內點 k≤5 完整窮舉 310 個 T4 全收 Σ-edge-minimal disk 類，全部滿足 ε≥2\|Q\|−e(Q)−2；四種可實現形狀最小 ε=0／1／2／2 等於下界；933／941 形狀在 k≤5 無合格圖；任意大小與 k≥6 未決；Python 有限證書，未 Lean 化 |
+| [猜想 E 的 ε≤1 層（任務 E2）](../artifacts/c5_excess_one_e2/REPORT.md) | ε=0 ⇒ \|Q\|≤1；ε=1 ⇒ Q 為一點或相鄰兩點：935 以真子核心＋原 K₃,₃，951 以雙列 full-minimal／Gallai palette／盾弧全排；任意大小紙面＋外部 Gallai＋五個 checker；D₇ 稽核確認，舊 one-pendant 產物層已標為被取代；未 Lean 化 |
 | [四接點短支援 pair 排除](c5_short_support_four_contact.md) | 四接點未見二色 pair 的原 Gallai leaf blocks／active 結構 K₅；保留獨立證明及固定控制，通用短支援引理另涵蓋此型 |
 | [ε=2 t=1 四接點與 unary](c5_excess_two_four_one.md) | 同一四接點 active forest、兩 triangle K₅及固定末端區塊的跨列 residual，100 個必要查詢全排；(4,1) 整型排除，未 Lean 化 |
 | [ε=2 t=1 ternary／binary](c5_excess_two_ternary_binary.md) | 新 ternary D 身份守恆與原 binary 路徑塊共同支援，100 查詢全排；去掉路徑條件仍有八份抽象殘留；(3,2) 整型排除，未 Lean 化 |

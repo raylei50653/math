@@ -1,0 +1,41 @@
+[
+  {
+    "command": "python3 scripts/check_docs.py",
+    "result": {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "51e749",
+        "wall_time_seconds": 2.219804526,
+        "exit_code": 0,
+        "original_token_count": 19,
+        "output": "OK: 545 Markdown files, 5775 local links; anchors, index, handoff checked\n"
+      }
+    }
+  },
+  {
+    "command": "python3 tools/docgraph check",
+    "result": {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "2bf946",
+        "wall_time_seconds": 6.474866573,
+        "exit_code": 1,
+        "original_token_count": 67,
+        "output": "ERROR [duplicate-id] id 'c5.adjacent-degree5-interfaces' is declared by audits/2026-10-04-task-d6/scope_history/snapshot/docs/c5_adjacent_degree5_interfaces.md, docs/c5_adjacent_degree5_interfaces.md\nFAIL: 62 documents, 213 relations, 5 families; 1 errors, 0 notes\n"
+      }
+    }
+  },
+  {
+    "command": "git diff --check",
+    "result": {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "4a1f8d",
+        "wall_time_seconds": 0.000008897,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    }
+  }
+]
