@@ -5,7 +5,9 @@
 只新增 E3 scripts、artifacts 與本報告；不改導覽、STATUS、README、HANDOFF、
 綜合報告或歷史產物，不 commit／push。
 
-**部分完成：(i) 唯一 degree-6 的 t=0–3 全部分拆，在三列前提下排除；
+**獨立稽核（2026-10-04，D₈）**：[稽核報告](../../audits/2026-10-04-task-d8/REPORT.md)總 verdict 為「有缺口但可補」；唯一缺口 DG6-1 見 §10，已由稽核補表補足。
+
+**部分完成：(i) 唯一 degree-6 的 t=0–3 全部分拆，在三列前提下排除（t=1 的 (4,1)／(3,2) 依 §10 的 D₈ 補表）；
 (ii) 雙 degree-5 的非相鄰、相鄰分支都有精確殘留。**
 因此本輪沒有證成 E 的整個 ε=2 層，也不能寫成「只條件於 K′」。
 K′ 只承擔下述指定短 singleton mixed；非相鄰 separating mixed 等仍是 E3 自身缺口。
@@ -429,3 +431,17 @@ E3報告位於artifacts，現行check_docs只要求docs下Markdown直接列入ST
 新增文件完整列於validation；既有歷史checker沒有被重跑或覆寫。
 (i)完成；(ii)停在N1–N3、J1–J6及精確「待K′」輸入。
 後續需要保留同源完整relations補三列共同約束，不能用精確mask接受位代替。
+
+## 10. 稽核後更正（2026-10-04，D₈ 之後）
+
+[D₈](../../audits/2026-10-04-task-d8/REPORT.md) 的 DG6-1：degree6 checker 的兩個 t=1 分拆
+`(4,1)`、`(3,2)` 只以原 spoke=b₀ 求解，卻同時固定拒絕位置 {0,1,3}。
+Q={0,1,3} 的 D₅ 穩定子只有恆等與反射 i↦1−i，spoke orbits 為 {0,1}、{2,4}、{3}，
+所以 spoke 2、3 的相對位置未被涵蓋。§4 表與 degree6_notes 中這兩格各「10 份具名幾何」的涵蓋聲明不完整。
+
+[稽核補表](../../audits/2026-10-04-task-d8/degree6_t1_spoke_coverage.py)在同一固定三列下，
+以原 helper 對五個 spoke 位置各求解，同步旋轉整份原 slit 幾何與 ownership：
+兩分拆各 5×10=50 份具名幾何，全部 0 存活（`--check` 與 seed17 重播 exit 0，整合者重播確認）。
+因此 (i) 的結論維持，引用時須連同此補表；原 producer 與 degree6.json 未改，
+其 t=1 兩格的數字仍是 spoke=b₀ 子域。D₈ 其餘項目（約化、triple-critical、§4.1 carrier、
+§6 共用 contact、§5 非相鄰限制、K′ 引理 1–6）全部成立。

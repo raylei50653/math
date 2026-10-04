@@ -27,7 +27,7 @@ Split951 的七張 disk 全接受 T4，Σ 分別是 `1015`（兩張）、`959`�
 `1023`（三張）；每張至少有一條非框非critical 邊，尤其兩條 sole mixed
 連接 `5–11,10–11` 均非critical。這七张的完整原邊、degree、Σ、完整接受框
 relation、代表延拓、全部非框刪邊 Σ／新增列 witnesses 與 rotation 均保存在
-[split_hub_probe.json](split_hub_probe.json)。它們不能充作要求 Σ-edge-minimal
+`split_hub_probe.json`（5.3 MB，未入 git，由 `split_hub_probe.py` 重生）。它們不能充作要求 Σ-edge-minimal
 的正控制，也不能據其 T4 性質冒稱已驗該完整前提下的無列引理。
 
 其他三个模板的 disk 數為零，尚未到 Σ／criticality 篩選階段；完整固定
