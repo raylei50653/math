@@ -310,7 +310,7 @@ git diff --check
 
 **零-unary 側排除（完備性短證，D₆ §2.5）。** 原拒絕使 E_z、E_w 屬 C §1 的五型。
 若某 root 側沒有 unary，degree 五扣去 zw、rx₂ 後恰有三條 spokes；兩條同色時刪其一不改任何限制，
-違反 q-criticality，所以三色互異，該側 E={3}。此時另一側必為 T={a,3}；刪它的 a 色 spoke 只新增 root 色 a，
+違反 q-criticality，所以三色互異，該側 E={3}。此時另一側必為 T={a,3}；刪 **E={3} 這一側**（三條 spokes 色為 a、c、d）的 a 色 spoke，該側只新增 root 色 a，
 新增對 (a,a) 撞 zw、(a,3) 撞 F*，其餘配對本已拒絕，故仍拒絕 q，再違反 criticality。
 因此兩 roots 各至少一份 unary，定理 C-W 涵蓋 **C §1 的整個共鄰端點 P₃ 來源分支**，不只固定目錄。
 範圍仍限指定原 degree、唯一 mixed P₃ 與共鄰端點 masks；其他 P₃ 接線、多 mixed 與一般出口不由此推出。

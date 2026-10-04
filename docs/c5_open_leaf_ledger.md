@@ -63,7 +63,7 @@ C0 是把目前固定域重播到關閉前的基準，**不是已觀測到的前
 C₂→C₃→C₄ 是依賴次序；报告日期都為 10-04，Git 的
 `2026-10-04T12:17:13+08:00` 是發布時間，無法還原各項證明完成時間。
 因此目前只有階段淨變化，**尚不能估每日下降率、加速度或完工日期**。
-待明天取得第二個真實樣本，才比較實際觀測間隔；若未登記新排除，葉數仍為 3497。
+10-04 的 3497 是 W 之前、C₄ predecessor 的實測樣本；W 已於同日把 cw-v1 降至 0。`--snapshot` 現在讀取 cw-v1，所以下一個日期樣本若無重開或擴域應為 **0**；它與 10-04 樣本的比較會列出 W 的 3497 個閉合，速度仍只按實際觀測間隔計算。
 
 ## Ledger、來源與證據層
 
@@ -103,7 +103,7 @@ python3 scripts/c5_open_leaf_ledger.py --compare artifacts/c5_open_leaf_ledger/s
 10-05 的 snapshot 命令應在該日實際執行，不能預先寫成明天的觀測。
 Snapshot 只允許新檔，已有樣本不覆寫；時間來自實際執行時刻。
 新排除需先加入具名 producer／獨立 scope verdict，更新重算器的 `STAGES`、
-scope 來源及本輪固定數字檢查，再以 `--write` 更新衍生 ledger；舊 snapshot 保留。
+scope 來源及本輪固定數字檢查，再以 `--write` 更新衍生 ledger；舊 snapshot 保留。（2026-10-04 後續：W 起改為版本化輸出，C₄ predecessor 不再原地覆寫；新階段應另開版本目錄，見頁首。）
 比較器拒絕 domain、unit 或完整 leaf-ID 集合不一致的样本，
 列出 closed／reopened IDs，按實際觀測間隔計算速度，不外推收斂。
 
@@ -116,4 +116,4 @@ tuples 相同；整 case、整 geometry、同 join 跨 geometry 的過寬刪除�
 未重跑數學 checkers、研究枚舉、Lean build 或 axiom audit；沿用封存證據。
 
 停止於可重算目錄基準及已知階段趨勢；第二個實際日期樣本仍待取得。
-研究下一具名入口 `CPP-134-1／geometry35／join20` 保持開放，沒有分析或新增排除。
+`CPP-134-1／geometry35／join20` 只在 C₄ predecessor ledger 中保持開放；cw-v1 已由 W batch 關閉，**不再是現行研究入口**。現行入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)。
