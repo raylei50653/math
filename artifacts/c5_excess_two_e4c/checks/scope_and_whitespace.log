@@ -1,0 +1,16 @@
+/home/ray/developer/ai/math/.venv/bin/python - <<'PY'
+from pathlib import Path
+import subprocess,json
+paths=[Path('scripts/c5_excess_two_e4c_controls.py')]+sorted(Path('artifacts/c5_excess_two_e4c').rglob('*'))
+paths=[p for p in paths if p.is_file()]
+assert subprocess.check_output(['git','diff','--name-only','d00aba4']).strip()==b''
+assert subprocess.check_output(['git','rev-parse','HEAD']).strip().decode()=='d00aba4e10ea2d05ab216fedd94f5a166b2777ad'
+for p in paths:
+ raw=p.read_bytes()
+ assert len(raw)<1_000_000,(p,len(raw))
+ assert raw.endswith(b'\n'),p
+ assert all(line==line.rstrip(b' \t') for line in raw.splitlines()),p
+print('SCOPE/WHITESPACE OK:',len(paths),'new text files; max bytes',max(p.stat().st_size for p in paths))
+PY
+exit_code=0
+SCOPE/WHITESPACE OK: 57 new text files; max bytes 289149
