@@ -4,6 +4,18 @@
 先交付可重算基準，再累積有實際觀測時間的每日樣本。
 目前研究入口仍由 [weak-deletion 導覽](c5_weak_deletion_guide.md) 維護。
 
+**後續（2026-10-04，W 合併）：** 依 [D₆ 合併計畫](../audits/2026-10-04-task-d6/scope_history/MERGE_PLAN.md)
+新增版本化 ledger [cw-v1](../artifacts/c5_open_leaf_ledger/cw-v1/trend.csv)：在本頁的 C₄ ledger 上套用
+[任務 W 的 batch verdict](c5_qcore_shield_budget.md)，階段趨勢為 **3500→3499→3498→3497→0**，
+新關閉 0、1、1、1、3497；固定目錄全部 3500 葉閉合，36 cases／140 geometries 無開放。
+本頁下文的 C₄ ledger（`ledger.json`、`trend.csv`、10-04 樣本）逐 byte 不變，作為 W 的 predecessor；
+若原地覆寫，W 將讀到零開放而無法重播，所以兩版並存。
+重算器的 `STAGES` 改為具名規格（C₂–C₄ 為 single），W 為 batch：逐筆核對 leaf ID、verdict 字串、
+D₅ scope row 的完整 canonical hash、predecessor leaf pointer 與 certificate hash，並要求 key 集合
+**恰等於**當時開放集合；缺 key、重複 key、外來 key、把繼承閉合算成新增四個負控制都被拒絕。
+`--dry-run` 只建兩版並列出候選 hash。W 事件的發布 commit 為 `e959125`；
+數學依據是紙面定理 C-W＋外部 Gallai＋有限 Python，經 [D₆ 稽核](../audits/2026-10-04-task-d6/REPORT.md)，無 Lean。
+
 ## 範圍與計數單位
 
 首批追蹤域是任務 C 的[共鄰端點 P₃](c5_mixed_p3_common_endpoint.md)，

@@ -331,6 +331,7 @@ D₆ §2.2 補出四點各有互斥 tether 到連通外 hub 聯集的論證，�
 與原版逐欄比較唯一差異為 `/sources/docs/c5_unary_shield_budget.md` 的 `bytes`、`sha256`；
 keys、IDs、28 certificates、3,497 verdicts 全同。一般與 `PYTHONHASHSEED=17` 的 `--check` 均 exit 0。
 §6 記錄的原輪成功重播保留為歷史。
+之後 checker 改為以 `git show e959125:<path>` 讀取七份紙面依賴文件，使日後措辭更新不再破壞 byte replay；該 commit 的文件 bytes 正是修訂版 verdict 所記錄者，所以 artifact 未再變動。
 
-**ledger 尚未合併。** 依 [D₆ 合併計畫](../audits/2026-10-04-task-d6/scope_history/MERGE_PLAN.md)，
-需把重算器的 `STAGES` 改為具名規格、新增 batch 抽取與 `--dry-run`，並輸出到新版本目錄以免與 W 的 predecessor 輸入形成循環依賴。
+**ledger 已合併。** 依 [D₆ 合併計畫](../audits/2026-10-04-task-d6/scope_history/MERGE_PLAN.md)
+輸出版本化 [cw-v1 ledger](c5_open_leaf_ledger.md)（3497→0）；W 讀取的 C₄ predecessor 逐 byte 不變，本 verdict 仍可重播。

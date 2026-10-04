@@ -12,7 +12,7 @@
 目前 3497 葉未稽核／未關閉，36 cases／140 geometries 均仍開放。
 這是具名目錄的階段趨勢；全主線葉總數及每日下降率尚未知。
 **後續（2026-10-04，任務 W）：** [q-core 盾弧預算](c5_qcore_shield_budget.md)的紙面定理 C-W
-把其餘 3497 keys 全部作來源排除；[D₆ 稽核](../audits/2026-10-04-task-d6/REPORT.md)確認並補零-unary 側，故 C §1 整個共鄰端點 P₃ 分支排除完成（原 ledger 尚未合併）；見 §3。
+把其餘 3497 keys 全部作來源排除；[D₆ 稽核](../audits/2026-10-04-task-d6/REPORT.md)確認並補零-unary 側，故 C §1 整個共鄰端點 P₃ 分支排除完成；ledger 已合併為 [cw-v1](c5_open_leaf_ledger.md)（3497→0）；見 §3。
 
 ## 1. 目標與範圍
 
@@ -135,8 +135,7 @@ CPP-134-1／geometry 34／side_join_id 20。禁色 z=0 的 strict degree list
 原 [ledger](c5_open_leaf_ledger.md) 尚未以 `--write` 合併；36／140／900 表與 rotation 控制保留。
 
 **下一入口（2026-10-04 記錄，優先於逐 key 工作）：**
-1. ~~獨立稽核任務 W~~（D₆ 已完成）。剩下依 [D₆ 合併計畫](../audits/2026-10-04-task-d6/scope_history/MERGE_PLAN.md)
-   合併 ledger：重算器 `STAGES` 改具名規格、加 batch 抽取與 `--dry-run`，輸出到新版本目錄，原 C₄ ledger 不變。
+1. ~~獨立稽核任務 W、合併 ledger~~（D₆ 稽核完成；ledger 已依合併計畫合併為 [cw-v1](c5_open_leaf_ledger.md)，原 C₄ ledger 不變）。
 2. 把定理 W-A（q-core 中 unary |σ|≥2、盾弧互斥、至多兩份 unary）統一套到本線其餘保留分支：
    更多 incidences、更大／多 mixed。先判定哪些分支含**三個不同**原 one-sided pieces 各有盾弧≥2
    （unary 需由 q-critical 接點邊取拒絕見證並有避開自身的外路），它們由同一六邊矛盾直接排除；其餘再逐型處理。

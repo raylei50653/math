@@ -62,6 +62,8 @@ def scan(root):
             if path.is_symlink() or path.suffix == '.pyc':
                 continue
             relative = path.relative_to(root).as_posix()
+            if relative == INDEX:
+                continue
             stat = path.stat()
             reason = ('snapshot' if {'snapshot', '.snapshot'} & set(path.relative_to(root).parts)
                       else 'large' if stat.st_size >= 1_000_000

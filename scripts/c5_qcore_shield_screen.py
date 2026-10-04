@@ -14,11 +14,16 @@ from hashlib import sha256
 from itertools import product
 import json
 from pathlib import Path
+import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER = "artifacts/c5_open_leaf_ledger/ledger.json"
 CELLS = "artifacts/c5_cells/cells.json"
 OUT = ROOT / "artifacts/c5_qcore_shield_budget/verdicts.json"
+# Paper dependencies are bound at a fixed commit, so later wording edits to these
+# reports do not break the byte replay; the commit holds the bytes recorded in the
+# revised verdict (the D6-audited v1 bound the pre-correction shield report).
+DOCS_COMMIT = "e95912512f07cc3533ad4578076e4af65f82c277"
 DOCS = (
     "docs/c5_unattached_boundary.md",
     "docs/c5_independent_support_capacity.md",
@@ -198,7 +203,7 @@ def build():
         payloads[path] = read(path)
         require(sources[path] == recorded, f"ledger input hash drift: {path}")
     for path in DOCS:
-        raw = (ROOT / path).read_bytes()
+        raw = subprocess.check_output(["git", "show", f"{DOCS_COMMIT}:{path}"], cwd=ROOT)
         sources[path] = {"sha256": digest(raw), "bytes": len(raw)}
     scope, common = payloads[ledger["scope_source"]], payloads[ledger["common_source"]]
     require(len(ledger["leaves"]) == len(scope["ledger"]) == 3500, "domain size drift")

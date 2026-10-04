@@ -40,7 +40,7 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [Weak-deletion 開放葉 ledger](c5_open_leaf_ledger.md) | 共鄰 P₃ 固定3500具名keys，C₂／C₃／C₄各閉合一葉，階段3500→3499→3498→3497；36cases／140geometries均仍開放。完整來源SHA／JSON pointers與首個實際觀測保存；全主線葉總數及每日速度未知，第二個日期樣本待取得 |
+| [Weak-deletion 開放葉 ledger](c5_open_leaf_ledger.md) | 共鄰 P₃ 固定3500具名keys：C₂／C₃／C₄各閉合一葉，W batch（D₆稽核）閉合其餘3497，版本化cw-v1趨勢3500→3499→3498→3497→0；C₄ ledger逐byte保留為predecessor；全主線葉總數及每日速度未知 |
 | [Mixed P₃ 中點／端點六跨度排除](c5_mixed_p3_middle_endpoint.md) | 保留原末端三色附件，原四環外側四區塊排除全部 residual 及整份對稱型；連同兩端接線完成不同接點各一 incidence；任意 unary 大小、0 target，未 Lean 化 |
 | [任務 C：Mixed 共鄰 P₃ 雙扇區與部分來源排除](c5_mixed_p3_common_endpoint.md) | 保留原鏈與 (3,2,1) 附件；任意 unary 大小的短子弧／tether 引理，x₁ 強制唯一框色 2 時全排除；36 具名必要 residual、140 rotation 正控制及 900 側接合保留，0 target；現行入口見 weak-deletion 導覽，未 Lean 化 |
 | [C₂：共鄰 P₃ 一色支援三接點 unary](c5_mixed_p3_one_color_ternary_unary.md) | CPP-134-1／geometry 30／side_join 20：任意 unary 大小的原 degree／葉數化約迫 triangle，原外路給 K₅ subdivision；保存完整 tuples／刪邊 witnesses，僅關閉這份側接合，0 target，外部 Gallai＋紙面＋Python，未 Lean 化 |
@@ -208,7 +208,7 @@
 | [兩／三外部 hubs 的短支援排除](c5_short_support_singleton.md) | 原 degree-4 分量支援包含於一條框邊，且有避開它的原外部路徑時，全部禁色皆不可能；不限接點數，迫本題每份原分量跨度至少二；紙面＋原 K₅ controls，未 Lean 化 |
 | [不依賴 ε 的盾弧預算與 hub 原則](c5_unary_shield_budget.md) | 固定來源、任意 ε：one-sided 分量支援為連續框弧且盾弧邊互斥，全圖至多兩份 unary；hub 原則統一短支援／K₄／二三-hub K₅ 並推廣到同色 roots 的 mixed 分量；A₄ 殘留 U 支援 40／58→24／30，無 frame 排除；紙面＋Python 控制，未 Lean 化 |
 | [猜想 S 的可實現圖校準](c5_shield_calibration.md) | 21 張 T4 全收 Σ-edge-minimal 圖找到 5 份短支援 one-sided mixed；具名反例 S935／P0={5}（Σ=935）否定可實現圖類上的推廣，限定 933／941 的原猜想 S 未決；unary 盾弧性質全無違反；有限 Python 證書，未 Lean 化 |
-| [q-core 盾弧預算與共鄰 P₃ 目錄排除](c5_qcore_shield_budget.md) | 改色引理（既有）＋盾弧引理移植到單列 q-core，保留 singleton 缺點；不需 T4 的定理 C-W（2+2+2>5）把共鄰 P₃ 目錄 3497 keys 全部來源排除；D₆ 稽核確認並補零-unary 側，C §1 整個共鄰端點 P₃ 分支排除完成；verdict 修訂版（v1 保存）；原 ledger 未合併；紙面＋外部 Gallai＋Python 證書，未 Lean 化 |
+| [q-core 盾弧預算與共鄰 P₃ 目錄排除](c5_qcore_shield_budget.md) | 改色引理（既有）＋盾弧引理移植到單列 q-core，保留 singleton 缺點；不需 T4 的定理 C-W（2+2+2>5）把共鄰 P₃ 目錄 3497 keys 全部來源排除；D₆ 稽核確認並補零-unary 側，C §1 整個共鄰端點 P₃ 分支排除完成；verdict 修訂版（v1 保存）；ledger 已合併為 cw-v1；紙面＋外部 Gallai＋Python 證書，未 Lean 化 |
 | [Kempe 轉運有限表與 hub-linkage 停止見證](c5_kempe_transport.md) | 933／941 各 20 筆單 block 轉運，共同 partition 候選全部非交錯；單點 P 控制得 Σ=1012 停止見證（無 hubs、非交錯，對角鏈交換碰框入 Σ）；否定一般局部二分，固定來源 K 未決；有限 Python，未 Lean 化 |
 | [超額–拒絕定律 E 的有限證據](c5_excess_rejection_law.md) | 有效內點 k≤5 完整窮舉 310 個 T4 全收 Σ-edge-minimal disk 類，全部滿足 ε≥2\|Q\|−e(Q)−2；四種可實現形狀最小 ε=0／1／2／2 等於下界；933／941 形狀在 k≤5 無合格圖；任意大小與 k≥6 未決；Python 有限證書，未 Lean 化 |
 | [猜想 E 的 ε≤1 層（任務 E2）](../artifacts/c5_excess_one_e2/REPORT.md) | ε=0 ⇒ \|Q\|≤1；ε=1 ⇒ Q 為一點或相鄰兩點：935 以真子核心＋原 K₃,₃，951 以雙列 full-minimal／Gallai palette／盾弧全排；任意大小紙面＋外部 Gallai＋五個 checker；D₇ 稽核確認，舊 one-pendant 產物層已標為被取代；未 Lean 化 |
