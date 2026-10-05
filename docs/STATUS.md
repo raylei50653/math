@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-04。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-05。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -400,6 +400,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-05：整合分支review、ER執行檔ignore修正與fresh重播](history/2026-10-05-integrate-branch-review.md)
 - [2026-10-04：K′、E3–E6、ES／ER 與 LC 進展整理、證據界線及分支發布](history/2026-10-04-kprime-excess-two-progress-publish.md)
 - [2026-10-04：併行成果、D至D₅獨立稽核與完整封存發布](history/2026-10-04-c5-parallel-progress-publish.md)
 
