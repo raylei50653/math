@@ -43,7 +43,7 @@
 | ES／ER | [ES](c5_excess_two_finite_search.md)與[獨立ER](c5_excess_two_independent_search.md)三型k≤9的q／critical orbit集合、計數及Q分布逐層一致，179個critical orbits（NA54／AD9／D6 116），無\|Q\|+c(Q)>4。完整性為有限雙實作證據，ER另依賴plantri；k≥10未搜尋 |
 | LC | [179／179個Lean soundness證書](c5_excess_two_lean_certificates.md)，558項axioms audit無sorryAx。拒絕列用native_decide，組合嵌入不等於拓撲disk定理，也不證搜尋完整性。未接入Math.lean／預設CI；是否接入的提議保留 |
 
-**下一輪提議（未派）：D₉與C44。**
+**下一輪（2026-10-06 已派，平行執行）：D₉與C44。** 分支 `task-d9-audit`／`task-c44-cores`，結果整合前本節停止點不變。
 
 - **D₉：** 獨立稽核E4、E5、E6紙面引理：N-empty-separating、N-theta、
   N1-22-44、L1–L8、相鄰m≤2、G2–G4及no-mixed預算；E4C的54個NA
