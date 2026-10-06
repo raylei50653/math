@@ -29,7 +29,7 @@
 
 ## 3. 停止點與保留缺口
 
-**目前停止點（2026-10-04）：ε=2 的雙 degree-5 roots 仍有殘留，ε≥3 未證。**
+**目前停止點（2026-10-06）：ε=2 的雙 degree-5 roots 仍有殘留，ε≥3 未證。**
 本輪整理只發布既有成果；各報告保留當輪停止點與歷史計畫。
 原 A／B 的逐 pair 必要表仍供追溯，後續三列結論以 E3–E6 的完整前提為準。
 
@@ -42,16 +42,20 @@
 | E4C | [54個NA critical orbits ×60項](../artifacts/c5_excess_two_e4c/REPORT.md)不用三列的控制：42項有觸發前提的圖、18項無控制、0反例。真正控制缺口為singleton盾弧、root刪除例外、(4,4)core、根間bridge整側、單root重色core；不把未觸發前提當作引理已驗證 |
 | ES／ER | [ES](c5_excess_two_finite_search.md)與[獨立ER](c5_excess_two_independent_search.md)三型k≤9的q／critical orbit集合、計數及Q分布逐層一致，179個critical orbits（NA54／AD9／D6 116），無\|Q\|+c(Q)>4。完整性為有限雙實作證據，ER另依賴plantri；k≥10未搜尋 |
 | LC | [179／179個Lean soundness證書](c5_excess_two_lean_certificates.md)，558項axioms audit無sorryAx。拒絕列用native_decide，組合嵌入不等於拓撲disk定理，也不證搜尋完整性。未接入Math.lean／預設CI；是否接入的提議保留 |
+| D₉ | [E4／E5／E6紙面引理獨立稽核](../audits/2026-10-06-task-d9/REPORT.md)：N-empty-separating、N-theta、N1-22-44、L1–L8、相鄰m≤2、G2–G4及no-mixed預算全部成立，無新缺口；54 NA＋9 AD控制零反例。指定三列來源前提0／63觸發，三列下的來源排除無有限控制。歷史provenance FAIL與E3 degree6.json未入封存照實保存 |
+| C44 | [三型k≤9全部minimal cores](../artifacts/c5_excess_two_c44/REPORT.md)：9,644 q-orbits／179 critical，k≤6逐邊集與暴力一致。具名[C44-AD3-row0-44](../artifacts/c5_excess_two_c44/counterexample_C44-AD3-row0-44.json)（Σ956、Σ-critical；相鄰兩root各三spoke見框色0,1,2，皆迫色3）反駁一般「無兩-root (4,4) core」。加完整Σ=933／941前提的窄命題未證；有限域無此前提的來源，有限統計對它無控制，停止推廣 |
 
-**下一輪（2026-10-06 已派，平行執行）：D₉與C44。** 分支 `task-d9-audit`／`task-c44-cores`，結果整合前本節停止點不變。
+**下一輪提議（未派）：C44′ Σ相容篩。** D₉／C44已返回（上表）。
 
-- **D₉：** 獨立稽核E4、E5、E6紙面引理：N-empty-separating、N-theta、
-  N1-22-44、L1–L8、相鄰m≤2、G2–G4及no-mixed預算；E4C的54個NA
-  與ES的9個AD critical orbits作控制。發現缺口即保存並標明影響範圍。
-- **C44：** 先在三型全部q／critical orbits統計各拒絕列的minimal core；
-  E4C的54個NA critical圖皆無兩-root (4,4) core，但不據此宣稱一般缺席。
-  若全有限域仍無，再提出並嘗試證明「ε=2拒絕列無兩-root (4,4) core」；
-  發現具名反例即保存並停止推廣。
+- **C44′：** 同框子圖單調：M⊆G 則 Σ(G)⊆Σ(M)。兩-root (4,4) q-core M 要出現在
+  完整Σ=933／941（或整圖D₅像）來源中，必須Σ(M)包含該像。
+  (a) 對C44保存的全部兩-root (4,4) core occurrences（AD 2,360、NA 56）逐份判定
+  有無相容的933／941像，保存相容像或缺列witness；
+  (b) 窮舉兩private頂點 (4,4) core（相鄰兩root各三spoke加root邊）的全部spoke位置，
+  給完整相容性分類；全不相容即成為與來源大小無關的有限引理；
+  (c) 若(a)(b)全不相容，提出窄命題證明路徑並具名卡點；出現相容core即保存並停止推廣。
+  完成條件：(a)(b)全表與獨立重算一致。取代任何以k≤9來源圖控制(4,4)的實驗
+  （該域無933／941來源）。
 
 不新開逐spoke-pair輪次、擴大k搜尋、案例樹ledger、K型局部題或Lean
 枚舉completeness試點。雙degree-5的N1／N2、G1–G4、J6剩餘、no-mixed、
