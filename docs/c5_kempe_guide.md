@@ -46,7 +46,7 @@
 | C44 | [三型k≤9全部minimal cores](../artifacts/c5_excess_two_c44/REPORT.md)：9,644 q-orbits／179 critical，k≤6逐邊集與暴力一致。具名[C44-AD3-row0-44](../artifacts/c5_excess_two_c44/counterexample_C44-AD3-row0-44.json)（Σ956、Σ-critical；相鄰兩root各三spoke見框色0,1,2，皆迫色3）反駁一般「無兩-root (4,4) core」。加完整Σ=933／941前提的窄命題未證；有限域無此前提的來源，有限統計對它無控制，停止推廣 |
 | C44′ | [Σ相容篩](../artifacts/c5_excess_two_c44p/REPORT.md)：C44保存的2,416份兩-root (4,4) occurrences（213份literal core）全部相容；兩private頂點型125 placements中30份可嵌disk、10份相容（一個orbit，具名C44P-AD2-012-034，Σ959）。**篩本身近乎無效：** 933的D₅像恰為T4加任一個非T4列（五列皆可），941為T4加兩列；同框子圖繼承T4，故只拒一個非T4列的core必相容。Σ層必要條件不能排(4,4) core，排除須用來源的多列聯合、criticality或spoke預算；停止此方向 |
 
-**下一輪提議（未派）：C44″ (4,4) core 覆蓋表。** C44′已返回（上表），Σ層篩停止。
+**下一輪（2026-10-06 已派）：C44″ (4,4) core 覆蓋表。** C44′已返回（上表），Σ層篩停止。分支 `task-c44pp-coverage`，結果整合前本節停止點不變。
 
 - **C44″：** 純紙面整理，不新增計算。對完整Σ=933／941來源的每個雙root分支
   （相鄰m=0／1／2、非相鄰N1／N2各子型、root刪除例外），列出既有結果是否已排
