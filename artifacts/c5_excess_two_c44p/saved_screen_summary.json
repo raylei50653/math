@@ -1,0 +1,1731 @@
+{
+  "branch": "At least one compatible core; stop generalizing. Compatibility is necessary only, and does not exhibit any source with full Sigma933/941.",
+  "compatible_literal_cores": 213,
+  "compatible_occurrences": 2416,
+  "computational_scope": "Ten independent literal-row searches per distinct literal graph, memoized only across exactly equal input edge sets; all 2416 occurrence comparisons retained.",
+  "definitions": {
+    "D5_action": "Forward vertex map g(i)=(s*i+r)%5; transported colours placed at g(i), then one shared S4 normalization.",
+    "REPS": [
+      [
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        0,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        2,
+        0,
+        2
+      ],
+      [
+        0,
+        1,
+        2,
+        0,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        2,
+        1,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        1
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        2
+      ]
+    ],
+    "Sigma": "Literal row indices admitting an extension to one shared four-colour frame; S4 quotient by first-appearance normalization.",
+    "boundary": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "compatibility": "At least one of all 20 (base 933/941, D5 element) image row sets is a subset of the recomputed Sigma(M).",
+    "duplicate_equivalence": "Identical sorted literal full edge sets, including boundary labels and private labels; no isomorphism quotient.",
+    "frame_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "mixed": "Component of effective private vertices after removing named original roots 5,6 with retained contacts to both roots.",
+    "rejection_tree": "At each node all four colours are covered once. A branch either identifies an edge to an already coloured equal-colour neighbour, or recurses after assigning the node vertex. The root starts with the literal boundary row.",
+    "selection": "AD or NA, original roots 5 and 6 present, recomputed retained degrees exactly [4,4]; both critical and noncritical.",
+    "sources": [
+      "docs/c5_excess_two_finite_search.md#1",
+      "artifacts/c5_excess_two_c44/REPORT.md#1",
+      "artifacts/c5_excess_two_c44/PROOF_NOTES.md#1",
+      "docs/c5_kempe_guide.md#3"
+    ]
+  },
+  "distinct_literal_cores": 213,
+  "embedding_input_manifest": [
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k3/q_orbits/chunk_0001.json",
+      "sha256": "803aff129ea3e6921f90b5e73743f464c716101f870933061b9f0da61757b9c2"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k4/q_orbits/chunk_0001.json",
+      "sha256": "15e9dc103e69e3bf06c1c8bee34649493fa91efd5c799f93bfd08bcd353db12b"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k5/q_orbits/chunk_0001.json",
+      "sha256": "7709c33c90b32bc71201f4ccde9d03c411b6af041106f5b4070acddf768f7a2a"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k6/q_orbits/chunk_0001.json",
+      "sha256": "a07d2dfd3d0405de915e5c59685071e38aaa005b66045a800084e73c250119fa"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k7/q_orbits/chunk_0001.json",
+      "sha256": "6e3b5def8e4f9cf72bc7093cb57a727e9a9c5646df1a9d3c03663e1c6b729edf"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k8/q_orbits/chunk_0001.json",
+      "sha256": "62aa574f2483bc89aad0a7e7d79373574df6eb603d65bc3206fb69b9232c07c0"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k8/q_orbits/chunk_0002.json",
+      "sha256": "564412d6bc585bd40c2de8fa188403a4d7fc152b4244d28f9529c36e465d736f"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k8/q_orbits/chunk_0003.json",
+      "sha256": "2e19af051ffc737fc07f815c385cef7b9dd7ba8b9c47f312c0c3ea9d74acf178"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k9/q_orbits/chunk_0001.json",
+      "sha256": "8d605d3937673ffcb963fad218f1ed8281926e0eb5aacccf77c1f5c2c59049e7"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k9/q_orbits/chunk_0002.json",
+      "sha256": "12575f403ccea0819bbc401c76573313169310f98b1c3988553418a7b82fef97"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k9/q_orbits/chunk_0003.json",
+      "sha256": "cfe613af346892feb912669cb02dcbc511586131c21f1ac0a80a2b3129efcada"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k9/q_orbits/chunk_0004.json",
+      "sha256": "a123ac41b43f15872ba1174bbd26bb12cdbdb50a77db0e20af64d5e3675c3e40"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k9/q_orbits/chunk_0005.json",
+      "sha256": "8e396074d33398687f83fc155737c7367690aadbf692c2f70b5e5b580f5f1340"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k9/q_orbits/chunk_0006.json",
+      "sha256": "acb6e6c720fc26f49e7b578925c08d2125988c4cf09862bf1dc074adcc529bbe"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k9/q_orbits/chunk_0007.json",
+      "sha256": "10e9a0dc439b69dec06ab42992a7bb4ed225221c1f38b23d76cb761cc987b2b6"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k9/q_orbits/chunk_0008.json",
+      "sha256": "7fe0e6aead08973511947cdaff126495528f2b55bd5981de0bd0439ba5995897"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k9/q_orbits/chunk_0009.json",
+      "sha256": "bce649d6619cc3fb1f92df781942258b5982a40700ce708d59fd29cd28a7822f"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/AD_k9/q_orbits/chunk_0010.json",
+      "sha256": "601071965960cd9192a41fabca17afa109cb3c7ea0002ef15f8a2392ca4df638"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/NA_k6/q_orbits/chunk_0001.json",
+      "sha256": "c6487e2136d8c38049f8a928002d458ca62577de4b61c63f8aee4017477d3255"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/NA_k7/q_orbits/chunk_0001.json",
+      "sha256": "299dd1b2cdeb3bde136fb24454367da40ef3c26f12092cb7150f6f24d1a00cf8"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/NA_k8/q_orbits/chunk_0002.json",
+      "sha256": "0c4025f59339c36209563174b56d51eeb221b6a0b690cfb2e91c5d4b2c712029"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/NA_k9/q_orbits/chunk_0010.json",
+      "sha256": "149c5caa6660707c5b8a54c4be16c36eabd5bd2a4be9c2f3eb36a631531d44b2"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/NA_k9/q_orbits/chunk_0012.json",
+      "sha256": "28092645cab8b6e96bb6972a7ce03f06bb23b8549c143e1686f0f05dbf8c4b4b"
+    },
+    {
+      "path": "artifacts/c5_excess_two_independent_search/NA_k9/q_orbits/chunk_0014.json",
+      "sha256": "3509abcd8623f3dbda455c916a41ff485a62e1c1d90f9b011cc5d20a5a1a3a9d"
+    }
+  ],
+  "embedding_scope": "Each catalog graph has a directly inherited saved ER source rotation; retained dart coverage, symmetry, Euler2 and the C5 boundary face are checked.",
+  "incompatible_literal_cores": 0,
+  "incompatible_occurrences": 0,
+  "input_manifest": [
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0001.json",
+      "sha256": "37ceac919b81e025e3acb28fa244c0d912ee9d7c4b96c8a62f7cbf45cf81f03f"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0002.json",
+      "sha256": "6997a84888cac66e8435da17d05f06902ef7b33a2462ddac98162faa184b640b"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0003.json",
+      "sha256": "c58ae8efd9fffb099122ae7256efa243c52d0cc759579665ee239bb9e007f0ec"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0004.json",
+      "sha256": "d4840f37ac3231700c408383c025001d1549dbce360d91bcec3ff9eb4d935b38"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0005.json",
+      "sha256": "947034cd7c65d00f625f291817d5dc101370e771262fe396ad65c83505a3f952"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0006.json",
+      "sha256": "e48e04240b0e840524346b6ad68ec65a454b7f9ba61c9b8a34d7b01c1a2a7315"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0007.json",
+      "sha256": "565f57359af4ad67715bac433190851a2cc167e4db352b559e283bdb43e74626"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0008.json",
+      "sha256": "31ee403bfe1d42fc4b7657ea7cc116608f9fc1a34f27b808031b486c40c6cc8a"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0009.json",
+      "sha256": "e0e01d103ec27e90ec277f456ab19dd0a031d37f6a0fbe2f25e19678f6326b54"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0010.json",
+      "sha256": "1dcb30751e5fed1be803280ec8d62f77e87eb6e84cb403ad1b1d5710637d5f77"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0011.json",
+      "sha256": "440591f1286369363dbe3538afddb0910dd579551ba782f8961389fad4ea556e"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0012.json",
+      "sha256": "6aa08bb0f738f6614a784b6b95a59cf846d22a6f46a48720ac4c1a82fd70b3e8"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0013.json",
+      "sha256": "fdd8a57cb3b8c26171d1021fecd49672d32d3c3ea0a35f016ed305c40cde4afb"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0014.json",
+      "sha256": "bb34539a7b050883246399dbe6748ef29ea875e9edac85c0ce085b3dedd38135"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0015.json",
+      "sha256": "639ce5fb85452698fedfb07ea2130fcac6ef56c8a9ae78c69462bda1afdb1f7c"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0016.json",
+      "sha256": "9d4bc884a49e7ab57bd587dcc0063db21869d2c070c52b2cefc8638fdecc5aae"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0017.json",
+      "sha256": "68997286bf40fcc0105c6af61e372a9aba5e8b69cee36f21e88faa85aaaf7dec"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0018.json",
+      "sha256": "57881665537fd4abcf48883049fce5730bd6b87e0a3270d93685302abf4124a9"
+    },
+    {
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0019.json",
+      "sha256": "946c1c7997da65c41cea56ae91dd534bb5913cd07b0d14e3a2d01952520ae610"
+    }
+  ],
+  "joint_statistics": [
+    {
+      "compatible": 1,
+      "core_names": [
+        "C44P-S0009"
+      ],
+      "distinct_literal_cores_in_group": 1,
+      "incompatible": 0,
+      "mixed": false,
+      "occurrences": 1,
+      "population": "critical",
+      "private_size": 2,
+      "source_type": "AD",
+      "total_size": 7,
+      "weighted_occurrences": 10
+    },
+    {
+      "compatible": 9,
+      "core_names": [
+        "C44P-S0001",
+        "C44P-S0002",
+        "C44P-S0010",
+        "C44P-S0122",
+        "C44P-S0123",
+        "C44P-S0124",
+        "C44P-S0126"
+      ],
+      "distinct_literal_cores_in_group": 7,
+      "incompatible": 0,
+      "mixed": true,
+      "occurrences": 9,
+      "population": "critical",
+      "private_size": 3,
+      "source_type": "AD",
+      "total_size": 8,
+      "weighted_occurrences": 1970
+    },
+    {
+      "compatible": 16,
+      "core_names": [
+        "C44P-S0016",
+        "C44P-S0018",
+        "C44P-S0020",
+        "C44P-S0022",
+        "C44P-S0044",
+        "C44P-S0047",
+        "C44P-S0051",
+        "C44P-S0054",
+        "C44P-S0143",
+        "C44P-S0145",
+        "C44P-S0149",
+        "C44P-S0153",
+        "C44P-S0155",
+        "C44P-S0159"
+      ],
+      "distinct_literal_cores_in_group": 14,
+      "incompatible": 0,
+      "mixed": true,
+      "occurrences": 16,
+      "population": "critical",
+      "private_size": 6,
+      "source_type": "AD",
+      "total_size": 11,
+      "weighted_occurrences": 808320
+    },
+    {
+      "compatible": 211,
+      "core_names": [
+        "C44P-S0009"
+      ],
+      "distinct_literal_cores_in_group": 1,
+      "incompatible": 0,
+      "mixed": false,
+      "occurrences": 211,
+      "population": "noncritical",
+      "private_size": 2,
+      "source_type": "AD",
+      "total_size": 7,
+      "weighted_occurrences": 13618920
+    },
+    {
+      "compatible": 1989,
+      "core_names": [
+        "C44P-S0003",
+        "C44P-S0004",
+        "C44P-S0008",
+        "C44P-S0011",
+        "C44P-S0012",
+        "C44P-S0013",
+        "C44P-S0014",
+        "C44P-S0040",
+        "C44P-S0041",
+        "C44P-S0043",
+        "C44P-S0062",
+        "C44P-S0063",
+        "C44P-S0064",
+        "C44P-S0067",
+        "C44P-S0092",
+        "C44P-S0093",
+        "C44P-S0094",
+        "C44P-S0121",
+        "C44P-S0124",
+        "C44P-S0125",
+        "C44P-S0126",
+        "C44P-S0127",
+        "C44P-S0128",
+        "C44P-S0133",
+        "C44P-S0135",
+        "C44P-S0142",
+        "C44P-S0151",
+        "C44P-S0152",
+        "C44P-S0161",
+        "C44P-S0166",
+        "C44P-S0167",
+        "C44P-S0172",
+        "C44P-S0173",
+        "C44P-S0174",
+        "C44P-S0175",
+        "C44P-S0176",
+        "C44P-S0177",
+        "C44P-S0178",
+        "C44P-S0179",
+        "C44P-S0180",
+        "C44P-S0181",
+        "C44P-S0182",
+        "C44P-S0183",
+        "C44P-S0184",
+        "C44P-S0185",
+        "C44P-S0186",
+        "C44P-S0187",
+        "C44P-S0188",
+        "C44P-S0189",
+        "C44P-S0190",
+        "C44P-S0191",
+        "C44P-S0192",
+        "C44P-S0193",
+        "C44P-S0194",
+        "C44P-S0195",
+        "C44P-S0196",
+        "C44P-S0197",
+        "C44P-S0198",
+        "C44P-S0209",
+        "C44P-S0210",
+        "C44P-S0211",
+        "C44P-S0212",
+        "C44P-S0213"
+      ],
+      "distinct_literal_cores_in_group": 63,
+      "incompatible": 0,
+      "mixed": true,
+      "occurrences": 1989,
+      "population": "noncritical",
+      "private_size": 3,
+      "source_type": "AD",
+      "total_size": 8,
+      "weighted_occurrences": 144070380
+    },
+    {
+      "compatible": 31,
+      "core_names": [
+        "C44P-S0025",
+        "C44P-S0059",
+        "C44P-S0080",
+        "C44P-S0081",
+        "C44P-S0117",
+        "C44P-S0118",
+        "C44P-S0119",
+        "C44P-S0120"
+      ],
+      "distinct_literal_cores_in_group": 8,
+      "incompatible": 0,
+      "mixed": false,
+      "occurrences": 31,
+      "population": "noncritical",
+      "private_size": 4,
+      "source_type": "AD",
+      "total_size": 9,
+      "weighted_occurrences": 2764920
+    },
+    {
+      "compatible": 16,
+      "core_names": [
+        "C44P-S0060",
+        "C44P-S0061",
+        "C44P-S0082",
+        "C44P-S0083",
+        "C44P-S0084",
+        "C44P-S0085",
+        "C44P-S0087",
+        "C44P-S0088",
+        "C44P-S0089",
+        "C44P-S0090",
+        "C44P-S0091",
+        "C44P-S0114"
+      ],
+      "distinct_literal_cores_in_group": 12,
+      "incompatible": 0,
+      "mixed": false,
+      "occurrences": 16,
+      "population": "noncritical",
+      "private_size": 5,
+      "source_type": "AD",
+      "total_size": 10,
+      "weighted_occurrences": 1440000
+    },
+    {
+      "compatible": 39,
+      "core_names": [
+        "C44P-S0015",
+        "C44P-S0024",
+        "C44P-S0026",
+        "C44P-S0027",
+        "C44P-S0028",
+        "C44P-S0029",
+        "C44P-S0030",
+        "C44P-S0066",
+        "C44P-S0078",
+        "C44P-S0096",
+        "C44P-S0097",
+        "C44P-S0100",
+        "C44P-S0101",
+        "C44P-S0102",
+        "C44P-S0103",
+        "C44P-S0104",
+        "C44P-S0105",
+        "C44P-S0106",
+        "C44P-S0107",
+        "C44P-S0108",
+        "C44P-S0109",
+        "C44P-S0110",
+        "C44P-S0111",
+        "C44P-S0112",
+        "C44P-S0113",
+        "C44P-S0115",
+        "C44P-S0116"
+      ],
+      "distinct_literal_cores_in_group": 27,
+      "incompatible": 0,
+      "mixed": true,
+      "occurrences": 39,
+      "population": "noncritical",
+      "private_size": 5,
+      "source_type": "AD",
+      "total_size": 10,
+      "weighted_occurrences": 3140400
+    },
+    {
+      "compatible": 6,
+      "core_names": [
+        "C44P-S0032",
+        "C44P-S0039",
+        "C44P-S0201",
+        "C44P-S0203",
+        "C44P-S0205",
+        "C44P-S0208"
+      ],
+      "distinct_literal_cores_in_group": 6,
+      "incompatible": 0,
+      "mixed": false,
+      "occurrences": 6,
+      "population": "noncritical",
+      "private_size": 6,
+      "source_type": "AD",
+      "total_size": 11,
+      "weighted_occurrences": 5520
+    },
+    {
+      "compatible": 22,
+      "core_names": [
+        "C44P-S0129",
+        "C44P-S0131",
+        "C44P-S0134",
+        "C44P-S0136",
+        "C44P-S0137",
+        "C44P-S0138",
+        "C44P-S0139",
+        "C44P-S0140",
+        "C44P-S0143",
+        "C44P-S0147",
+        "C44P-S0153",
+        "C44P-S0157",
+        "C44P-S0162",
+        "C44P-S0164",
+        "C44P-S0168",
+        "C44P-S0170",
+        "C44P-S0199",
+        "C44P-S0200",
+        "C44P-S0202",
+        "C44P-S0204",
+        "C44P-S0206",
+        "C44P-S0207"
+      ],
+      "distinct_literal_cores_in_group": 22,
+      "incompatible": 0,
+      "mixed": true,
+      "occurrences": 22,
+      "population": "noncritical",
+      "private_size": 6,
+      "source_type": "AD",
+      "total_size": 11,
+      "weighted_occurrences": 475200
+    },
+    {
+      "compatible": 9,
+      "core_names": [
+        "C44P-S0031",
+        "C44P-S0033",
+        "C44P-S0034",
+        "C44P-S0035",
+        "C44P-S0036",
+        "C44P-S0037",
+        "C44P-S0038",
+        "C44P-S0042",
+        "C44P-S0065"
+      ],
+      "distinct_literal_cores_in_group": 9,
+      "incompatible": 0,
+      "mixed": true,
+      "occurrences": 9,
+      "population": "noncritical",
+      "private_size": 7,
+      "source_type": "AD",
+      "total_size": 12,
+      "weighted_occurrences": 32400
+    },
+    {
+      "compatible": 2,
+      "core_names": [
+        "C44P-S0069",
+        "C44P-S0079"
+      ],
+      "distinct_literal_cores_in_group": 2,
+      "incompatible": 0,
+      "mixed": false,
+      "occurrences": 2,
+      "population": "noncritical",
+      "private_size": 8,
+      "source_type": "AD",
+      "total_size": 13,
+      "weighted_occurrences": 201600
+    },
+    {
+      "compatible": 9,
+      "core_names": [
+        "C44P-S0068",
+        "C44P-S0070",
+        "C44P-S0071",
+        "C44P-S0072",
+        "C44P-S0073",
+        "C44P-S0074",
+        "C44P-S0075",
+        "C44P-S0076",
+        "C44P-S0095"
+      ],
+      "distinct_literal_cores_in_group": 9,
+      "incompatible": 0,
+      "mixed": true,
+      "occurrences": 9,
+      "population": "noncritical",
+      "private_size": 9,
+      "source_type": "AD",
+      "total_size": 14,
+      "weighted_occurrences": 907200
+    },
+    {
+      "compatible": 32,
+      "core_names": [
+        "C44P-S0005",
+        "C44P-S0006",
+        "C44P-S0007",
+        "C44P-S0046",
+        "C44P-S0049",
+        "C44P-S0050",
+        "C44P-S0053",
+        "C44P-S0056",
+        "C44P-S0057",
+        "C44P-S0058",
+        "C44P-S0077",
+        "C44P-S0086",
+        "C44P-S0098",
+        "C44P-S0099"
+      ],
+      "distinct_literal_cores_in_group": 14,
+      "incompatible": 0,
+      "mixed": true,
+      "occurrences": 32,
+      "population": "noncritical",
+      "private_size": 5,
+      "source_type": "NA",
+      "total_size": 10,
+      "weighted_occurrences": 3139200
+    },
+    {
+      "compatible": 24,
+      "core_names": [
+        "C44P-S0017",
+        "C44P-S0019",
+        "C44P-S0021",
+        "C44P-S0023",
+        "C44P-S0045",
+        "C44P-S0048",
+        "C44P-S0052",
+        "C44P-S0055",
+        "C44P-S0130",
+        "C44P-S0132",
+        "C44P-S0138",
+        "C44P-S0141",
+        "C44P-S0144",
+        "C44P-S0146",
+        "C44P-S0148",
+        "C44P-S0150",
+        "C44P-S0154",
+        "C44P-S0156",
+        "C44P-S0158",
+        "C44P-S0160",
+        "C44P-S0163",
+        "C44P-S0165",
+        "C44P-S0169",
+        "C44P-S0171"
+      ],
+      "distinct_literal_cores_in_group": 24,
+      "incompatible": 0,
+      "mixed": true,
+      "occurrences": 24,
+      "population": "noncritical",
+      "private_size": 6,
+      "source_type": "NA",
+      "total_size": 11,
+      "weighted_occurrences": 1278720
+    }
+  ],
+  "metadata_mismatches": [],
+  "named_mixed_certificate": {
+    "alias": "C44P-MIXED3-001",
+    "catalog_core_name": "C44P-S0001",
+    "path": "saved_screen/named_C44P-MIXED3-001.json"
+  },
+  "occurrences": 2416,
+  "output_manifest": [
+    {
+      "bytes": 238512,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0001.json",
+      "sha256": "6028db2ad1223b58389dbcf601576a9aed10cfc9a4ccb910f129df179b26a390"
+    },
+    {
+      "bytes": 326334,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0002.json",
+      "sha256": "4c911b54172a5323d49e910e7df40b9a16ee39d3c192536de9db9dd45907a9cc"
+    },
+    {
+      "bytes": 325407,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0003.json",
+      "sha256": "c4862bb282ea99c6e20ecd492e74ddb1a314eec256c6fb44101ffcb3b783ebe9"
+    },
+    {
+      "bytes": 350906,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0004.json",
+      "sha256": "30c6b0cb73ff80a49c5e6e0c6a7a7cbc4964a527566fb2b37ad5cb8d0344597a"
+    },
+    {
+      "bytes": 338508,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0005.json",
+      "sha256": "1ea674c0182343ffbf886bc8e7206750b42dc6c578ac5da87249e617d1c95c70"
+    },
+    {
+      "bytes": 339200,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0006.json",
+      "sha256": "059eef0ecd14ba645a47bc2ffe31defd2309a8a6e0d66744007bfb34bf652e71"
+    },
+    {
+      "bytes": 320799,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0007.json",
+      "sha256": "9f8e0fe37a29d45a9deb0d6aa29ba4f0545bc9adbf41f06ffcce0b81756b6d19"
+    },
+    {
+      "bytes": 410631,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0008.json",
+      "sha256": "1ed2050c16d404ea4fcf6af1eb385cb601dcc928d3560678a8e2dd663e2f7ce0"
+    },
+    {
+      "bytes": 288158,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0009.json",
+      "sha256": "0e3237a060b1a497edf635709048349fb3be0752dae5fedb6d93f521f1e1823c"
+    },
+    {
+      "bytes": 291180,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0010.json",
+      "sha256": "74bc5503fa7cf0179e3d6bbe8ed4b0346e6e4da5634de9ba544a93ab1661c4b1"
+    },
+    {
+      "bytes": 295107,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0011.json",
+      "sha256": "6db529d11979e0f5cea31b74dafd2a26724a1fee8fe00aff47cfcbd338315925"
+    },
+    {
+      "bytes": 272602,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0012.json",
+      "sha256": "8c237538f22048c50da10f595e8c171b8481300840af4b1672d4fc3d37f35f21"
+    },
+    {
+      "bytes": 259507,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0013.json",
+      "sha256": "cf7e19cce93ae239b791c9bfb3d0a7e89319bcbed05394bbccce2cd3a57e900f"
+    },
+    {
+      "bytes": 378020,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0014.json",
+      "sha256": "5109f22f3d47cd60b334706140f80a5709c9d7b06f01f08a3aa509ef5e0c2f53"
+    },
+    {
+      "bytes": 397936,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0015.json",
+      "sha256": "e901e9f88dac1dc86b771a20005a5698f467369dd3b413f70b820c08d2e8763b"
+    },
+    {
+      "bytes": 378254,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0016.json",
+      "sha256": "2870d49d2a74a28f9d574454ecfeb918c0937458c6fc381db99cf4ed445765f0"
+    },
+    {
+      "bytes": 358273,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0017.json",
+      "sha256": "83dba125e27665f74d6533c49974747d049353e629a7fe45949fe5a7e6534908"
+    },
+    {
+      "bytes": 240141,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0018.json",
+      "sha256": "0bd022e58b8c5059fe543c60ee8dbcf889d409cbcc4f307e1c0ab2dbcfac9d44"
+    },
+    {
+      "bytes": 220249,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0019.json",
+      "sha256": "92945fd56a8bd2eaa1306dde1bfeb31833cf0b161f092af78f43610a3596ee50"
+    },
+    {
+      "bytes": 259916,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0020.json",
+      "sha256": "e1239680b33f37ed92203ea91a59838164aad529a3ae19db4d59301bcf46c092"
+    },
+    {
+      "bytes": 377442,
+      "count": 10,
+      "path": "saved_screen/catalog/chunk_0021.json",
+      "sha256": "e162db5f95771989d9a5dfde20abf7f1cbf09d1aea9071864a0d97b7a19917c4"
+    },
+    {
+      "bytes": 66184,
+      "count": 3,
+      "path": "saved_screen/catalog/chunk_0022.json",
+      "sha256": "cf22d424534c852d3f949960f37d6d5dfd732c89150fd53f033d36d8b07bbf5e"
+    },
+    {
+      "bytes": 702297,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0001.json",
+      "sha256": "7e414f2246f4cefffe63c24d97a11dd213787bc7c225218e4303a1cce8a8d954"
+    },
+    {
+      "bytes": 699564,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0002.json",
+      "sha256": "fe3895245393e19c9bf97e9a02b20edd7eec937ffdce463e8c14a67dc95780f9"
+    },
+    {
+      "bytes": 699051,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0003.json",
+      "sha256": "5df27daa3ca1d1b54e2f9d96d67cd585f409ace4e8c03b93880dcaf61b1a0b12"
+    },
+    {
+      "bytes": 700963,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0004.json",
+      "sha256": "3b3cdd64503c57fc2b22e44b34acc9f00304a594e4b4f8ee6e7135346d337872"
+    },
+    {
+      "bytes": 700529,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0005.json",
+      "sha256": "6f7f77995ec6b7f12a8ce00092dc19fcbd23f9d1f7acd20c728ba953433c1857"
+    },
+    {
+      "bytes": 698699,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0006.json",
+      "sha256": "93482019bdb8f44b27143b61fbc1944bf51ab2c81708b19313af4e4f57469a16"
+    },
+    {
+      "bytes": 697235,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0007.json",
+      "sha256": "b3fa87241d58f2072d5691a57529c00366659a581ed55d754fddc5f4d7bac90f"
+    },
+    {
+      "bytes": 702288,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0008.json",
+      "sha256": "336f8255f8aaf839c2f95d904da6cdc7a82e151352acc833dc23594cfa42bfc9"
+    },
+    {
+      "bytes": 702205,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0009.json",
+      "sha256": "449bcb7e696215f56a49b8bb30b0b374ff05f7fb12e269e5386b38e3644388f6"
+    },
+    {
+      "bytes": 702197,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0010.json",
+      "sha256": "7c9b0234ecaabca9b1deee70f76bb4a0a09a9cfbed920461fa6dddaf82280a34"
+    },
+    {
+      "bytes": 702302,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0011.json",
+      "sha256": "609edd0e3ec2daa11261b8b344dbd17ee86a29d75714d88a7e6d6bf9b89b631b"
+    },
+    {
+      "bytes": 702076,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0012.json",
+      "sha256": "4d7a67af01e6d594db62d8af28e7153563c0e73a966c74e8df5f4b4d76eea4e1"
+    },
+    {
+      "bytes": 702555,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0013.json",
+      "sha256": "0ecf36dcee1555859fb86ad9e4d21e6b4989a2859b4a2e34a7e59b18c8b3a620"
+    },
+    {
+      "bytes": 701388,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0014.json",
+      "sha256": "2d1e6697dab5fbb4b571837b6e49d817c35aa90aeae08cbcebec7db0e29d4c26"
+    },
+    {
+      "bytes": 701653,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0015.json",
+      "sha256": "3d65c515be2e5d37fd0a589cf5dd3448b9a83186da6c3966e8ab7e239fc92227"
+    },
+    {
+      "bytes": 701121,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0016.json",
+      "sha256": "834e8fec013696119717be005eadfb7e6a7d9e72032fe90fa41ae86a003bb843"
+    },
+    {
+      "bytes": 702212,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0017.json",
+      "sha256": "a7245153c62d7c284477786d86dceb48facda2f9228fc5e60d0c55be2aea953b"
+    },
+    {
+      "bytes": 702654,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0018.json",
+      "sha256": "f90fd558e656c9c2d49af8cd7183a311dd84a12d1570f918294f2ad6635d649d"
+    },
+    {
+      "bytes": 702254,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0019.json",
+      "sha256": "57db22e278341ea72e2022804c61ca084fa8a16473c3b89f3164d466ff1a0e41"
+    },
+    {
+      "bytes": 702313,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0020.json",
+      "sha256": "54adc4f9f661c09f68e7b0c0dc6d9997e6387b9c0b712299794f4a2c1df85c7e"
+    },
+    {
+      "bytes": 702172,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0021.json",
+      "sha256": "5dab1c3524bb8cd2f6fed51c6358024e721c732d23e86a6d6fd039dc28d67142"
+    },
+    {
+      "bytes": 700824,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0022.json",
+      "sha256": "f08676f7569dd0155ed1a0491ae6cda925c014d9185ff982c452a16cd6635e90"
+    },
+    {
+      "bytes": 697397,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0023.json",
+      "sha256": "5833e9a9dcf57c06781b8c7125e62bdc17ed25b8b137d218f835d809e2813878"
+    },
+    {
+      "bytes": 688707,
+      "count": 100,
+      "path": "saved_screen/occurrences/chunk_0024.json",
+      "sha256": "febb7fcda3558eba320776daa6d0ece35dfe4966f4bda171562e2d6125e0f873"
+    },
+    {
+      "bytes": 110022,
+      "count": 16,
+      "path": "saved_screen/occurrences/chunk_0025.json",
+      "sha256": "7fb00e20bbec86e0e9ed9e0b31529aafda199c3cac14863236777f3ac3e62f55"
+    }
+  ],
+  "recomputed_sigma_mask_occurrences": {
+    "1007": 154,
+    "1015": 168,
+    "1021": 32,
+    "1022": 327,
+    "959": 1735
+  },
+  "saved_sigma_mask_occurrences": {
+    "1007": 154,
+    "1015": 168,
+    "1021": 32,
+    "1022": 327,
+    "959": 1735
+  },
+  "sigma_mismatches": [],
+  "target_images": [
+    {
+      "accepted_rows": [
+        0,
+        2,
+        5,
+        7,
+        8,
+        9
+      ],
+      "image_id": "933:s1:r0",
+      "image_sigma_mask": 933,
+      "r": 0,
+      "row_permutation": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "s": 1,
+      "target_sigma_mask": 933,
+      "vertex_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "accepted_rows": [
+        2,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "image_id": "933:s1:r1",
+      "image_sigma_mask": 996,
+      "r": 1,
+      "row_permutation": [
+        6,
+        0,
+        7,
+        1,
+        3,
+        8,
+        4,
+        9,
+        2,
+        5
+      ],
+      "s": 1,
+      "target_sigma_mask": 933,
+      "vertex_map": [
+        1,
+        2,
+        3,
+        4,
+        0
+      ]
+    },
+    {
+      "accepted_rows": [
+        2,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "image_id": "933:s1:r2",
+      "image_sigma_mask": 948,
+      "r": 2,
+      "row_permutation": [
+        4,
+        6,
+        9,
+        0,
+        1,
+        2,
+        3,
+        5,
+        7,
+        8
+      ],
+      "s": 1,
+      "target_sigma_mask": 933,
+      "vertex_map": [
+        2,
+        3,
+        4,
+        0,
+        1
+      ]
+    },
+    {
+      "accepted_rows": [
+        2,
+        3,
+        5,
+        7,
+        8,
+        9
+      ],
+      "image_id": "933:s1:r3",
+      "image_sigma_mask": 940,
+      "r": 3,
+      "row_permutation": [
+        3,
+        4,
+        5,
+        6,
+        0,
+        7,
+        1,
+        8,
+        9,
+        2
+      ],
+      "s": 1,
+      "target_sigma_mask": 933,
+      "vertex_map": [
+        3,
+        4,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "accepted_rows": [
+        1,
+        2,
+        5,
+        7,
+        8,
+        9
+      ],
+      "image_id": "933:s1:r4",
+      "image_sigma_mask": 934,
+      "r": 4,
+      "row_permutation": [
+        1,
+        3,
+        8,
+        4,
+        6,
+        9,
+        0,
+        2,
+        5,
+        7
+      ],
+      "s": 1,
+      "target_sigma_mask": 933,
+      "vertex_map": [
+        4,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "accepted_rows": [
+        2,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "image_id": "933:s-1:r0",
+      "image_sigma_mask": 948,
+      "r": 0,
+      "row_permutation": [
+        4,
+        3,
+        5,
+        1,
+        0,
+        2,
+        6,
+        9,
+        8,
+        7
+      ],
+      "s": -1,
+      "target_sigma_mask": 933,
+      "vertex_map": [
+        0,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "accepted_rows": [
+        2,
+        3,
+        5,
+        7,
+        8,
+        9
+      ],
+      "image_id": "933:s-1:r1",
+      "image_sigma_mask": 940,
+      "r": 1,
+      "row_permutation": [
+        3,
+        1,
+        8,
+        0,
+        6,
+        7,
+        4,
+        5,
+        2,
+        9
+      ],
+      "s": -1,
+      "target_sigma_mask": 933,
+      "vertex_map": [
+        1,
+        0,
+        4,
+        3,
+        2
+      ]
+    },
+    {
+      "accepted_rows": [
+        1,
+        2,
+        5,
+        7,
+        8,
+        9
+      ],
+      "image_id": "933:s-1:r2",
+      "image_sigma_mask": 934,
+      "r": 2,
+      "row_permutation": [
+        1,
+        0,
+        2,
+        6,
+        4,
+        9,
+        3,
+        8,
+        7,
+        5
+      ],
+      "s": -1,
+      "target_sigma_mask": 933,
+      "vertex_map": [
+        2,
+        1,
+        0,
+        4,
+        3
+      ]
+    },
+    {
+      "accepted_rows": [
+        0,
+        2,
+        5,
+        7,
+        8,
+        9
+      ],
+      "image_id": "933:s-1:r3",
+      "image_sigma_mask": 933,
+      "r": 3,
+      "row_permutation": [
+        0,
+        6,
+        7,
+        4,
+        3,
+        5,
+        1,
+        2,
+        9,
+        8
+      ],
+      "s": -1,
+      "target_sigma_mask": 933,
+      "vertex_map": [
+        3,
+        2,
+        1,
+        0,
+        4
+      ]
+    },
+    {
+      "accepted_rows": [
+        2,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "image_id": "933:s-1:r4",
+      "image_sigma_mask": 996,
+      "r": 4,
+      "row_permutation": [
+        6,
+        4,
+        9,
+        3,
+        1,
+        8,
+        0,
+        7,
+        5,
+        2
+      ],
+      "s": -1,
+      "target_sigma_mask": 933,
+      "vertex_map": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "accepted_rows": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9
+      ],
+      "image_id": "941:s1:r0",
+      "image_sigma_mask": 941,
+      "r": 0,
+      "row_permutation": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "s": 1,
+      "target_sigma_mask": 941,
+      "vertex_map": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "accepted_rows": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "image_id": "941:s1:r1",
+      "image_sigma_mask": 998,
+      "r": 1,
+      "row_permutation": [
+        6,
+        0,
+        7,
+        1,
+        3,
+        8,
+        4,
+        9,
+        2,
+        5
+      ],
+      "s": 1,
+      "target_sigma_mask": 941,
+      "vertex_map": [
+        1,
+        2,
+        3,
+        4,
+        0
+      ]
+    },
+    {
+      "accepted_rows": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "image_id": "941:s1:r2",
+      "image_sigma_mask": 949,
+      "r": 2,
+      "row_permutation": [
+        4,
+        6,
+        9,
+        0,
+        1,
+        2,
+        3,
+        5,
+        7,
+        8
+      ],
+      "s": 1,
+      "target_sigma_mask": 941,
+      "vertex_map": [
+        2,
+        3,
+        4,
+        0,
+        1
+      ]
+    },
+    {
+      "accepted_rows": [
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "image_id": "941:s1:r3",
+      "image_sigma_mask": 1004,
+      "r": 3,
+      "row_permutation": [
+        3,
+        4,
+        5,
+        6,
+        0,
+        7,
+        1,
+        8,
+        9,
+        2
+      ],
+      "s": 1,
+      "target_sigma_mask": 941,
+      "vertex_map": [
+        3,
+        4,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "accepted_rows": [
+        1,
+        2,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "image_id": "941:s1:r4",
+      "image_sigma_mask": 950,
+      "r": 4,
+      "row_permutation": [
+        1,
+        3,
+        8,
+        4,
+        6,
+        9,
+        0,
+        2,
+        5,
+        7
+      ],
+      "s": 1,
+      "target_sigma_mask": 941,
+      "vertex_map": [
+        4,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "accepted_rows": [
+        1,
+        2,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "image_id": "941:s-1:r0",
+      "image_sigma_mask": 950,
+      "r": 0,
+      "row_permutation": [
+        4,
+        3,
+        5,
+        1,
+        0,
+        2,
+        6,
+        9,
+        8,
+        7
+      ],
+      "s": -1,
+      "target_sigma_mask": 941,
+      "vertex_map": [
+        0,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "accepted_rows": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9
+      ],
+      "image_id": "941:s-1:r1",
+      "image_sigma_mask": 941,
+      "r": 1,
+      "row_permutation": [
+        3,
+        1,
+        8,
+        0,
+        6,
+        7,
+        4,
+        5,
+        2,
+        9
+      ],
+      "s": -1,
+      "target_sigma_mask": 941,
+      "vertex_map": [
+        1,
+        0,
+        4,
+        3,
+        2
+      ]
+    },
+    {
+      "accepted_rows": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "image_id": "941:s-1:r2",
+      "image_sigma_mask": 998,
+      "r": 2,
+      "row_permutation": [
+        1,
+        0,
+        2,
+        6,
+        4,
+        9,
+        3,
+        8,
+        7,
+        5
+      ],
+      "s": -1,
+      "target_sigma_mask": 941,
+      "vertex_map": [
+        2,
+        1,
+        0,
+        4,
+        3
+      ]
+    },
+    {
+      "accepted_rows": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "image_id": "941:s-1:r3",
+      "image_sigma_mask": 949,
+      "r": 3,
+      "row_permutation": [
+        0,
+        6,
+        7,
+        4,
+        3,
+        5,
+        1,
+        2,
+        9,
+        8
+      ],
+      "s": -1,
+      "target_sigma_mask": 941,
+      "vertex_map": [
+        3,
+        2,
+        1,
+        0,
+        4
+      ]
+    },
+    {
+      "accepted_rows": [
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "image_id": "941:s-1:r4",
+      "image_sigma_mask": 1004,
+      "r": 4,
+      "row_permutation": [
+        6,
+        4,
+        9,
+        3,
+        1,
+        8,
+        0,
+        7,
+        5,
+        2
+      ],
+      "s": -1,
+      "target_sigma_mask": 941,
+      "vertex_map": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    }
+  ]
+}
