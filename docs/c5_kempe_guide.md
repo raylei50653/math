@@ -1,6 +1,6 @@
 # Kempe／重接／計數與策略導覽
 
-更新：2026-10-04（E6／E4C／ER／LC 返回與發布整理）。本頁維護本線現況；證明及實際重播範圍見各報告。
+更新：2026-10-07（唯一 mixed 指定稽核與 U1 no-mixed44 排除）。本頁維護本線現況；證明及實際重播範圍見各報告。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
 
@@ -29,8 +29,9 @@
 
 ## 3. 停止點與保留缺口
 
-**目前停止點（2026-10-06）：ε=2 的雙 degree-5 roots 仍有殘留，ε≥3 未證。**
-本輪整理只發布既有成果；各報告保留當輪停止點與歷史計畫。
+**目前停止點（2026-10-07）：U1 的 no-mixed 兩-root44 身份全排；完整 Σ 的44殘留只剩U2–U4，ε≥3 未證。**
+本輪補成相鄰唯一 mixed 四份指定化約／固定域的獨立稽核，並新增U1來源身份排除；
+各報告保留當輪停止點與歷史計畫，其他core型照舊。
 原 A／B 的逐 pair 必要表仍供追溯，後續三列結論以 E3–E6 的完整前提為準。
 
 | 已返回任務 | 已完成範圍與證據界線 |
@@ -45,18 +46,29 @@
 | D₉ | [E4／E5／E6紙面引理獨立稽核](../audits/2026-10-06-task-d9/REPORT.md)：N-empty-separating、N-theta、N1-22-44、L1–L8、相鄰m≤2、G2–G4及no-mixed預算全部成立，無新缺口；54 NA＋9 AD控制零反例。指定三列來源前提0／63觸發，三列下的來源排除無有限控制。歷史provenance FAIL與E3 degree6.json未入封存照實保存 |
 | C44 | [三型k≤9全部minimal cores](../artifacts/c5_excess_two_c44/REPORT.md)：9,644 q-orbits／179 critical，k≤6逐邊集與暴力一致。具名[C44-AD3-row0-44](../artifacts/c5_excess_two_c44/counterexample_C44-AD3-row0-44.json)（Σ956、Σ-critical；相鄰兩root各三spoke見框色0,1,2，皆迫色3）反駁一般「無兩-root (4,4) core」。加完整Σ=933／941前提的窄命題未證；有限域無此前提的來源，有限統計對它無控制，停止推廣 |
 | C44′ | [Σ相容篩](../artifacts/c5_excess_two_c44p/REPORT.md)：C44保存的2,416份兩-root (4,4) occurrences（213份literal core）全部相容；兩private頂點型125 placements中30份可嵌disk、10份相容（一個orbit，具名C44P-AD2-012-034，Σ959）。**篩本身近乎無效：** 933的D₅像恰為T4加任一個非T4列（五列皆可），941為T4加兩列；同框子圖繼承T4，故只拒一個非T4列的core必相容。Σ層必要條件不能排(4,4) core，排除須用來源的多列聯合、criticality或spoke預算；停止此方向 |
+| C44″ | [雙-root (4,4) 覆蓋表](../artifacts/c5_excess_two_c44pp/REPORT.md)：完整Σ=933／941下，相鄰m=1已有舊系列全排且不需K′；兩份AD-012-034具名core不能來自此前提的兩-root44來源。當輪整理覆蓋與必要限制；後續指定稽核及U1排除見下兩項 |
+| 唯一 mixed 指定稽核 | [四份舊排除稽核](../audits/2026-10-07-c44pp-mixed-audit/REPORT.md)：任意大小化約與固定域核對通過，獨立重算root pairs／S₄支援／368,859份UNSAT proofs／6,008份subdivisions；344域的標記run覆蓋亦通過。沿用上游分類，未重稽核其全部枚舉，未補E5的新證明 |
+| U1 no-mixed44 | [U1排除](c5_excess_two_no_mixed_core44.md)：spoke＋unit-U由單點D-forcer與triangle palette衝突；雙spoke以全部344份bridge-marker核心的3,498次接回全排，涵蓋941三-spoke側並更正原收窄。兩-root44身份全排；其他no-mixed core型及root刪除例外保留，紙面＋Python，未Lean化 |
 
-**下一輪（2026-10-06 已派）：C44″ (4,4) core 覆蓋表。** C44′已返回（上表），Σ層篩停止。分支 `task-c44pp-coverage`，結果整合前本節停止點不變。
+**完整 Σ=933／941 的兩-root (4,4) 殘留。** 沿用 disk、Σ-critical、ε=2、
+完整 degrees、同源 contacts／attachments 與整圖 D₅ 搬運；逐格前提與出處見 C44″。
 
-- **C44″：** 純紙面整理，不新增計算。對完整Σ=933／941來源的每個雙root分支
-  （相鄰m=0／1／2、非相鄰N1／N2各子型、root刪除例外），列出既有結果是否已排
-  兩-root (4,4) 拒絕q-core，逐項給精確前提與出處：相鄰唯一mixed的(4,4)全排與
-  總spokes≤4、E3同一全degree4 core兩mixed互斥路、E4 N1-22-44、E6相鄰m≤2、
-  D₉稽核結論。具名core C44-AD3-row0-44與C44P-AD2-012-034（六spoke）作檢驗例：
-  逐分支說明被哪條既有結果排除或為何不適用。
-  完成條件：每分支標「已排（出處）」「部分（剩餘具名子型）」或「未覆蓋」，
-  得出最小未覆蓋子分支清單。停止條件：發現既有引理前提與引用不符，即保存並
-  標明影響範圍；不在本輪嘗試新證明。
+| 未覆蓋家族 | 精確省略身份與必要限制 |
+| --- | --- |
+| U2：相鄰 m=2 | 恰省略一份 mixed11，保留另一份 mixed11 並共用 x；不得再省略其他因子 |
+| U3：非相鄰 N1 | sole C incidence11／12／21，兩側各省略一個 unit；三-spoke set 不可為 024／124 |
+| U4：非相鄰 N2 | 恰省略一份 mixed11；(ℓ,u)=(2,0),(1,0),(1,1),(0,1),(0,2)。該44 core所拒絕列的兩側原 spokes 均不得重色 |
+
+U1 已由 [no-mixed44](c5_excess_two_no_mixed_core44.md) 排除。上方三項只列兩-root44 core；單-root 的 N1 刪 root 例外另保留，
+(5,4)/(4,5) 及原 G 的 (5,5) core 也未因此排除。
+E3 的三列推廣不能直接復用部分精確 Σ 證書；E5／E6 在精確 941／933／940
+也依其「新證明」要求保留 G1。C44″ 與本輪指定稽核不完成那項任務；
+上游degree-4／triangle分類的全部枚舉沒有重新稽核。
+**下一個窄提議（未啟動）：** U2相鄰m=2的mixed11省略身份。
+固定保留的原共鄰triangle，檢查被省略mixed11的完整二接點relation、同一實際支援
+與兩條mixed路圍成外界的限制；不把singleton收縮當染色替換，不預填省略圖Ω。
+本輪驗證見[紀錄](history/2026-10-07-no-mixed-core44.md)；前輪整合見
+[整合覆核紀錄](history/2026-10-07-c44pp-integration-review.md)。
 
 不新開逐spoke-pair輪次、擴大k搜尋、案例樹ledger、K型局部題或Lean
 枚舉completeness試點。雙degree-5的N1／N2、G1–G4、J6剩餘、no-mixed、
@@ -65,7 +77,7 @@
 本次重播、歷史文件hash漂移與分支發布見
 [發布紀錄](history/2026-10-04-kprime-excess-two-progress-publish.md)。
 
-以下保存固定完整Σ933／941的A／B原身份與停止點；其逐pair下一步不覆蓋上方未派提議。
+以下保存固定完整Σ933／941的A／B原身份與停止點；其逐pair下一步不覆蓋上方窄提議。
 
 本線候選來源前提是固定完整 Σ=933／941 或整圖 D₅ 像、每條非框邊
 Σ-critical、指定有序 induced-C₅ disk、所有有效內點完整 degree≥4。

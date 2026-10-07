@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-05。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-07。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -221,7 +221,8 @@
 | [E4 引理的非相鄰控制補驗（任務 E4C）](../artifacts/c5_excess_two_e4c/REPORT.md) | ES 全部 54 個 NA crit orbits × E4 中 60 項不用三列的引理／步驟：42 項有實際觸發前提的控制且結論成立，18 項無控制，無反例。缺控制者多為排除型引理（空支援、H-tree、m≥3、兩短無 unary、N1-22-44 各步），其前提本身已證不可實現；真正的控制缺口為 singleton 盾弧、root 刪除例外、(4,4) core、根間 bridge 整側、單 root 重色 core；有限 Python，未 Lean 化 |
 | [ε=2 拒絕列全部 minimal cores（任務 C44）](../artifacts/c5_excess_two_c44/REPORT.md) | 三型 k≤9 全9644 q-orbits／179 critical orbits、11169 core occurrences；k≤5及k6逐邊集暴力一致。NA critical無44，AD critical有26份；具名C44-AD3-row0-44（Σ956）反駁一般缺席說法，非完整Σ933／941反例；該窄前提有限域無來源，任意大小命題未證，停止推廣、guide停止點不變 |
 | [兩-root (4,4) core 的完整 Σ 相容篩（任務 C44′）](../artifacts/c5_excess_two_c44p/REPORT.md) | AD2360／NA56份、213字面cores全相容，saved Σ零差異；兩private頂點125 placements中30 disk、10相容（單一軌道），NA25均不可嵌入；具名C44P-AD2-012-034（Σ959）及mixed triangle（Σ1022）。獨立重算、default／seed17 byte replay一致；相容只為必要條件，未構造完整Σ933／941來源，停止推廣；Python＋紙面，未Lean化 |
-| [兩-root (4,4) core 的既有排除覆蓋表（任務 C44″）](../artifacts/c5_excess_two_c44pp/REPORT.md) | 純紙面、無新計算：完整Σ933／941下相鄰m=1的(4,4)由舊mixed-core系列全排（不經K′），相鄰m≥3、N3、N1-22-44、N2兩short無unary、唯一degree-6為整來源排除；C44-AD3-row0-44與C44P-AD2-012-034同屬AD-012-034軌道，任何完整Σ來源皆不能為其兩-root 44 core。最小未覆蓋：相鄰no-mixed、相鄰m=2、N1 incidence11／12／21、N2五個(ℓ,u)族；未發現前提與引用不符 |
+| [兩-root (4,4) core 的既有排除覆蓋表（任務 C44″）](../artifacts/c5_excess_two_c44pp/REPORT.md) | 完整Σ933／941下相鄰m=1沿用舊系列全排，不經K′；AD-012-034具名core無此前提的兩-root44來源。當輪U1–U4覆蓋表保留；後續U1已排、唯一mixed四份指定排除已稽核，上游分類全部枚舉未重稽核。E5的新證明要求、其餘core型及ε≥3保留 |
+| [ε=2 no-mixed 的兩-root44身份排除](c5_excess_two_no_mixed_core44.md) | C44″的U1全排：spoke＋unit-U由leaf強迫D與triangle palette衝突；雙spoke以344份bridge-marker核心的3,498接回／34,980逐列獨立回溯無目標Σ，更正941原身份收窄。(2,2)子型直接化約至64雙triangle。完整Σ933／941及D₅像前提；no-mixed其他core型保留，44只剩U2–U4，紙面＋Python，未Lean化 |
 | [ES 179 orbits 的 Lean soundness 證書（任務 LC）](c5_excess_two_lean_certificates.md) | 布林 checker 加普通 soundness 定理接到既有 Σ 語意：形狀與 degree 型、框無弦、T4／Q、十列完整 Σ、逐邊 criticality、genus 0 rotation system 且外面為框（僅組合嵌入，非拓撲平面性定理）；正列 `decide +kernel`，只有拒絕列用 `native_decide`；179／179 通過，558 項 `#print axioms` 無 `sorryAx`（整合者重跑）；只證所列圖為真，不證完整性；未接入 Math.lean，CI 不建置 |
 | [ε=2 有限搜尋的第二套獨立枚舉器（任務 ER）](c5_excess_two_independent_search.md) | plantri 5.8 生成連通平面圖的 rotation systems，再於外面枚舉非交叉 spokes；frontier DP 算 Σ；自寫 canonical form；未讀或 import ES 程式碼（主 agent 曾讀 ES 報告演算法段，已載明）。三型 k≤9 的 q orbit 與 crit orbit 集合、有標號計數、Q 分布與 ES 逐層全部一致，179 個 crit orbits，無 \|Q\|+c(Q)>4；整合者重播 `--check` exit 0；外部依賴 plantri（source SHA 核對）；有限證據，不升格為定理 |
 | [四接點短支援 pair 排除](c5_short_support_four_contact.md) | 四接點未見二色 pair 的原 Gallai leaf blocks／active 結構 K₅；保留獨立證明及固定控制，通用短支援引理另涵蓋此型 |
@@ -262,6 +263,7 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [C44″後續：唯一mixed四份(4,4)排除指定稽核](../audits/2026-10-07-c44pp-mixed-audit/REPORT.md) | 任意大小化約與固定域成立；獨立重算root pairs／S₄支援、368,859份UNSAT proofs、6,008份subdivisions及344域標記run覆蓋通過。未改舊證書；沿用上游分類，未重稽核其全部枚舉，未補E5新證明 |
 | [D₂文件整合與新增成果稽核](../audits/2026-10-04-task-d2/REPORT.md) | 套用原D的18項修訂，同步A₂／B₂／C₂停止點；新增A／A₂、B／B₂固定域身份、完整joint及witness獨立稽核。原D的40 PASS／4文件hash FAIL與兩份完整payload相同紀錄保留；新增版本及漂移另記，原artifacts不改 |
 | [D₃：C／C₂獨立稽核](../audits/2026-10-04-task-d3/REPORT.md) | 固定D₂截點的完整P₃／側角色／空fibres、原unary刪邊witnesses及原K₅全部獨立核對；只關閉geometry30／join20，保存3500具名keys。當時未接收A₃／B₃／C₃及未同步live文件；原strict漂移失敗保留 |
 | [D₄：正式返回A₃／B₃／C₃快照與整合稽核](../audits/2026-10-04-task-d4/REPORT.md) | 獨立核對三份新增成果與13份並行更新，A保存18／22；B₂＋B₃只登記W933-101／W941-139兩骨架封閉；C₃只關閉geometry34／join20。前輪交付hash／完整relations／空fibres／witnesses與失敗紀錄保持，未commit／push |
@@ -403,6 +405,9 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-07：整合分支合併任務、依賴與驗收台帳](history/2026-10-07-merge-readiness-tasks.md)
+- [2026-10-07：唯一mixed指定稽核與U1 no-mixed44身份排除](history/2026-10-07-no-mixed-core44.md)
+- [2026-10-07：C44″ 整合覆核、精確前提與四類殘留](history/2026-10-07-c44pp-integration-review.md)
 - [2026-10-05：整合分支review、ER執行檔ignore修正與fresh重播](history/2026-10-05-integrate-branch-review.md)
 - [2026-10-04：K′、E3–E6、ES／ER 與 LC 進展整理、證據界線及分支發布](history/2026-10-04-kprime-excess-two-progress-publish.md)
 - [2026-10-04：併行成果、D至D₅獨立稽核與完整封存發布](history/2026-10-04-c5-parallel-progress-publish.md)
