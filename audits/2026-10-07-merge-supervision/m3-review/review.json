@@ -1,0 +1,110 @@
+{
+  "candidate_sha": "ba0b447f09617591d9f2ba81c988f537af771791",
+  "main_base_sha": "2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090",
+  "parent_sha": "a1ca89db9c04c6e65ba0b1cb0928df9e8c163e42",
+  "m3_review": "computational and Lean evidence verified; two provenance supplements closed with explicit strict FAIL exceptions",
+  "required_checks_original": {
+    "total": 29,
+    "pass": 28,
+    "fail": 1
+  },
+  "m3_delivery_files_verified": 264,
+  "command_records_verified": 57,
+  "raw_logs_verified": 114,
+  "source_snapshot_entries": 7190,
+  "source_snapshot_zero_drift": true,
+  "tracked_candidate_snapshot_matches": 4650,
+  "new_exceptions": [
+    {
+      "id": "M3-C44-INPUT-AUDIT-001",
+      "strict_byte_status": "FAIL",
+      "differences": [
+        {
+          "path": "/layers/6/es_source_hash_matches",
+          "saved": null,
+          "current": true
+        },
+        {
+          "path": "/layers/6/es_source_present",
+          "saved": false,
+          "current": true
+        }
+      ],
+      "all_other_serialized_fields_equal": true,
+      "source_expected_hash_verified": true,
+      "disposition": "bounded presence metadata exception after exact archive restoration; retain original ledger and strict FAIL"
+    },
+    {
+      "id": "M3-PROV-E5-BRANCHES",
+      "name": "E5_branches",
+      "strict_byte_status": "FAIL",
+      "differences": [
+        {
+          "path": "/sources_sha256/docs/c5_excess_two_mixed_core_spokes.md",
+          "saved": "a829d98ebf84a952445e9aebb443cca1b8e0d7129ceaf1a5353b51379f059061",
+          "current": "2fe0780d75175f1ccee38a20939eb29f89048a67a82c07fb20afb59ac7680136"
+        }
+      ],
+      "all_other_serialized_fields_equal": true,
+      "disposition": "single named document hash exception; retain original branches artifact and strict FAIL; disclose separately from historical failures"
+    }
+  ],
+  "historical_provenance_comparisons": [
+    {
+      "name": "E4_reductions",
+      "strict_byte_status": "FAIL",
+      "differences": [
+        {
+          "path": "/sources/artifacts/c5_excess_two_e3/REPORT.md/bytes",
+          "saved": 30573,
+          "current": 32469
+        },
+        {
+          "path": "/sources/artifacts/c5_excess_two_e3/REPORT.md/sha256",
+          "saved": "6d385639c565e2dd08eb61d7835f5fbfec29cd7c467ce8e5abba1dfc2e39e659",
+          "current": "73ed652a55b159a44eb6da4608f11537efc0d43603128094101ef044a96b2cd3"
+        }
+      ],
+      "all_other_serialized_fields_equal": true
+    },
+    {
+      "name": "E5_controls",
+      "strict_byte_status": "FAIL",
+      "differences": [
+        {
+          "path": "/source_sha256/artifacts/c5_excess_two_e3/REPORT.md",
+          "saved": "6d385639c565e2dd08eb61d7835f5fbfec29cd7c467ce8e5abba1dfc2e39e659",
+          "current": "73ed652a55b159a44eb6da4608f11537efc0d43603128094101ef044a96b2cd3"
+        }
+      ],
+      "all_other_serialized_fields_equal": true
+    },
+    {
+      "name": "E4C",
+      "strict_byte_status": "FAIL",
+      "differences": [
+        {
+          "path": "/source_hashes/docs/c5_kempe_guide.md",
+          "saved": "bd0502e091973b50a9ec02b8f0d39716cdc3bf5cb7144d4da62df741f57d34b4",
+          "current": "7cbad5d926f8d92a3fa2d4c83256833713608adba15d6013d9b413dfbe8d2778"
+        }
+      ],
+      "all_other_serialized_fields_equal": true
+    }
+  ],
+  "axiom_declarations_verified": 558,
+  "positive_without_native": 179,
+  "project_build_rerun_by_supervisor": false,
+  "m3_candidate_and_original_delivery_changed": false,
+  "merge_ready": false,
+  "m4_local_pending": [
+    "formal bundle and disclosure integration",
+    "recover original M1/supervisor temporary evidence if available; otherwise record unavailable and use fresh evidence without replacing history",
+    "portable validation instructions with explicit repo/source/output arguments",
+    "final commit and affected documentation checks"
+  ],
+  "m4_remote_pending": [
+    "publish branch and PR",
+    "exact final SHA Lean CI and remote refs checks"
+  ]
+}

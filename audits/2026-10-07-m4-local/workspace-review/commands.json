@@ -1,0 +1,681 @@
+[
+  {
+    "argv": [
+      "python3",
+      "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/seal_bundle.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "expected_exit": 0,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 147,
+          "sha256": "f42c6ba1571ebc34275f300ee5df5c50fc70cdc9890e12b6b717c449839210c7"
+        },
+        "path": "logs/m3-seal.stdout.log.gz",
+        "raw": {
+          "bytes": 157,
+          "sha256": "bccafb08242dba513bc6c1acd76f8641ea5fa804a5fc2887fa1f7c454e479ec3"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/m3-seal.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "name": "m3-seal",
+    "seconds": 0.09822
+  },
+  {
+    "argv": [
+      "python3",
+      "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/check_bundle.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONPATH": "/home/ray/developer/ai/math/scripts"
+    },
+    "exit_code": 0,
+    "expected_exit": 0,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 132,
+          "sha256": "45a2bfcb7dc055ea37787d937905e6b641cd8daf04d901a152f2f5459a91239c"
+        },
+        "path": "logs/m3-authoring-portable.stdout.log.gz",
+        "raw": {
+          "bytes": 135,
+          "sha256": "f6e75df24e1be4b5ef04283036ce2e5e9a44cf95c063f0ff23c56b68ec1663ae"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/m3-authoring-portable.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "name": "m3-authoring-portable",
+    "seconds": 0.376795
+  },
+  {
+    "argv": [
+      "python3",
+      "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/check_lean_axioms.py",
+      "--source",
+      "/home/ray/developer/ai/math/Math/ExcessTwoCertificatesAudit.lean",
+      "--log",
+      "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/logs/lean-axioms.stdout.log",
+      "--output",
+      "/home/ray/developer/ai/math/audits/2026-10-07-m4-local/workspace-review/axioms-reparsed.json"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "expected_exit": 0,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 470,
+          "sha256": "d47bda702969cbf80081ab92b545a78974559c346074d5282a93053fe3d17dfe"
+        },
+        "path": "logs/lc-axioms-log-reparse.stdout.log.gz",
+        "raw": {
+          "bytes": 860,
+          "sha256": "40964d97f09358416c3a7409eaef50d20a33d39f8836fe114ce00aba393ec033"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/lc-axioms-log-reparse.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "name": "lc-axioms-log-reparse",
+    "seconds": 0.083316
+  },
+  {
+    "argv": [
+      "/home/ray/developer/ai/math/.venv/bin/python",
+      "/home/ray/developer/ai/math/scripts/c5_excess_two_c44_input_audit.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 1,
+    "expected_exit": 1,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/C44_input-strict.stdout.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 229,
+          "sha256": "dc62e206f289841630e06f2b2c7c0c258ae7553ebc1803d81b554c66be854391"
+        },
+        "path": "logs/C44_input-strict.stderr.log.gz",
+        "raw": {
+          "bytes": 404,
+          "sha256": "88405c2c4d98e6898d4a5e3936b2cc629877a0efc83bc03ebcb565ccca9c81b7"
+        }
+      }
+    ],
+    "name": "C44_input-strict",
+    "seconds": 5.404296
+  },
+  {
+    "argv": [
+      "/home/ray/developer/ai/math/.venv/bin/python",
+      "/home/ray/developer/ai/math/scripts/c5_excess_two_e4_reductions.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 1,
+    "expected_exit": 1,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/E4_reductions-strict.stdout.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 239,
+          "sha256": "dee05e410e83cfc842569a50ab2cc3a953a89672dc404ecd9ae13ca2823fa39a"
+        },
+        "path": "logs/E4_reductions-strict.stderr.log.gz",
+        "raw": {
+          "bytes": 422,
+          "sha256": "82005fba4eb08dd4719af31255d75e836924d62ec8a590cacc0a4ad56da83c96"
+        }
+      }
+    ],
+    "name": "E4_reductions-strict",
+    "seconds": 0.087083
+  },
+  {
+    "argv": [
+      "/home/ray/developer/ai/math/.venv/bin/python",
+      "/home/ray/developer/ai/math/scripts/c5_excess_two_e4_reductions.py",
+      "--output",
+      "/home/ray/developer/ai/math/audits/2026-10-07-m4-local/workspace-review/provenance/E4_reductions.json"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "expected_exit": 0,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 238,
+          "sha256": "50a31346ab8ab5e93a9bd9c0ed7f165b0ba7463b8cb5deb72eafb329746a6766"
+        },
+        "path": "logs/E4_reductions-fresh.stdout.log.gz",
+        "raw": {
+          "bytes": 282,
+          "sha256": "4ba67afa2027a20496bb942ff5c9dbde471cca4da0c154809943d142dd3b5188"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/E4_reductions-fresh.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "name": "E4_reductions-fresh",
+    "seconds": 0.082954
+  },
+  {
+    "argv": [
+      "/home/ray/developer/ai/math/.venv/bin/python",
+      "/home/ray/developer/ai/math/scripts/c5_excess_two_e5_controls.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 1,
+    "expected_exit": 1,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/E5_controls-strict.stdout.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 72,
+          "sha256": "4ccbe20ce7b2827b932e2d22eb5fab2d03e0e3fd96a68eed706f26bde3398128"
+        },
+        "path": "logs/E5_controls-strict.stderr.log.gz",
+        "raw": {
+          "bytes": 52,
+          "sha256": "81556e07d5f438be2e75dd22c06d66d77295942e30d083e0a6ab26c351280b79"
+        }
+      }
+    ],
+    "name": "E5_controls-strict",
+    "seconds": 0.188106
+  },
+  {
+    "argv": [
+      "/home/ray/developer/ai/math/.venv/bin/python",
+      "/home/ray/developer/ai/math/scripts/c5_excess_two_e5_controls.py",
+      "--output",
+      "/home/ray/developer/ai/math/audits/2026-10-07-m4-local/workspace-review/provenance/E5_controls.json"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "expected_exit": 0,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 180,
+          "sha256": "18f8979d3686db9cfa41ad45f648689ec18d270b1e8fd19c96ebfc73c6cbd85c"
+        },
+        "path": "logs/E5_controls-fresh.stdout.log.gz",
+        "raw": {
+          "bytes": 193,
+          "sha256": "eef96c009832ebfd34b0e7cf1a62ee97bd81410c8424e22a6b8a644f8e497864"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/E5_controls-fresh.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "name": "E5_controls-fresh",
+    "seconds": 0.185192
+  },
+  {
+    "argv": [
+      "/home/ray/developer/ai/math/.venv/bin/python",
+      "/home/ray/developer/ai/math/scripts/c5_excess_two_e4c_controls.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 1,
+    "expected_exit": 1,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/E4C-strict.stdout.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 270,
+          "sha256": "3b26b34fabfb41dc8b5e06753f0e2930f1340e5dbf027a6ed1a2538dfcb744ae"
+        },
+        "path": "logs/E4C-strict.stderr.log.gz",
+        "raw": {
+          "bytes": 560,
+          "sha256": "5f2ea99a0f23a43309b7bbb51d97157f89f648318c8bc520af3f44299c2025b1"
+        }
+      }
+    ],
+    "name": "E4C-strict",
+    "seconds": 21.813569
+  },
+  {
+    "argv": [
+      "/home/ray/developer/ai/math/.venv/bin/python",
+      "/home/ray/developer/ai/math/scripts/c5_excess_two_e4c_controls.py",
+      "--output",
+      "/home/ray/developer/ai/math/audits/2026-10-07-m4-local/workspace-review/provenance/e4c"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "expected_exit": 0,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 91,
+          "sha256": "df774ad9cea6e5a0bd1edb563cb4670702dfb74a33650a3e7feb9e2b357cac87"
+        },
+        "path": "logs/E4C-fresh.stdout.log.gz",
+        "raw": {
+          "bytes": 76,
+          "sha256": "90d2113381705a450ebbb7fa99ec2e7274c728aa05636061d81eda23ea566dc7"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/E4C-fresh.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "name": "E4C-fresh",
+    "seconds": 21.557725
+  },
+  {
+    "argv": [
+      "/home/ray/developer/ai/math/.venv/bin/python",
+      "/home/ray/developer/ai/math/scripts/c5_excess_two_e5_branches.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 1,
+    "expected_exit": 1,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/E5_branches-strict.stdout.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 232,
+          "sha256": "6e7ac16ae5cab5df47789fab907be721e0d48897840b7a89ba79d11813e6f35d"
+        },
+        "path": "logs/E5_branches-strict.stderr.log.gz",
+        "raw": {
+          "bytes": 410,
+          "sha256": "656223b2b38e171581977424de423bc2e02930552ad5fa280cd368b88f93b7b0"
+        }
+      }
+    ],
+    "name": "E5_branches-strict",
+    "seconds": 0.104034
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check",
+      "a1ca89db9c04c6e65ba0b1cb0928df9e8c163e42",
+      "ba0b447f09617591d9f2ba81c988f537af771791"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "expected_exit": 0,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/candidate-parent-whitespace.stdout.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/candidate-parent-whitespace.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "name": "candidate-parent-whitespace",
+    "seconds": 0.024095
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check",
+      "ba0b447f09617591d9f2ba81c988f537af771791"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 2,
+    "expected_exit": 2,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 1420,
+          "sha256": "23d192899975015ffc7d92b193e0d17ef2d9cec552b80a33daeb2cd74064c9e8"
+        },
+        "path": "logs/new-diff-whitespace.stdout.log.gz",
+        "raw": {
+          "bytes": 13090,
+          "sha256": "f0cfc5bfc242e431662539e7b8d0382681ebc730953ce5f07d1ebac00283961c"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/new-diff-whitespace.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "name": "new-diff-whitespace",
+    "seconds": 0.037062
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check",
+      "2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 2,
+    "expected_exit": 2,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 2171,
+          "sha256": "c13f5e7b2862a68dbff19b91f3b0fdc375cade6fbcff58c319402f6359f2c645"
+        },
+        "path": "logs/full-branch-whitespace.stdout.log.gz",
+        "raw": {
+          "bytes": 25470,
+          "sha256": "ac03cbaae93a69229bfbfd34978d31464275872c684bfb836182ef52574b5f15"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/full-branch-whitespace.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "name": "full-branch-whitespace",
+    "seconds": 0.354957
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--no-index",
+      "--check",
+      "/dev/null",
+      "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/logs/provenance_branch_whitespace.stdout.log"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 3,
+    "expected_exit": 3,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 1429,
+          "sha256": "e6da826a7a4b1e7722a499781dc72d5d4f014fdb919de663f77c58d6ff3a0dbc"
+        },
+        "path": "logs/imported-log-whitespace.stdout.log.gz",
+        "raw": {
+          "bytes": 15470,
+          "sha256": "2db4c3718847fcf2525f3cb0fc019ee225f3ab6631e6a0512878827c994c9c7d"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/imported-log-whitespace.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "name": "imported-log-whitespace",
+    "seconds": 0.004353
+  },
+  {
+    "argv": [
+      "python3",
+      "/home/ray/developer/ai/math/scripts/check_docs.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "expected_exit": 0,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 93,
+          "sha256": "ad85f4058ec54e5f26bc1c5e2d2315909e874e2cf077646740790f12cb224732"
+        },
+        "path": "logs/docs.stdout.log.gz",
+        "raw": {
+          "bytes": 74,
+          "sha256": "432224b7f44451040ca55f43b1ce7361c939b35a253a8e263fe15eed2deb9e2e"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "path": "logs/docs.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "name": "docs",
+    "seconds": 1.304704
+  },
+  {
+    "argv": [
+      "python3",
+      "/home/ray/developer/ai/math/tools/docgraph",
+      "check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 1,
+    "expected_exit": 1,
+    "logs": [
+      {
+        "gzip": {
+          "bytes": 81,
+          "sha256": "57c9645a2cb4097caf91bbef6ec8eb3ae667b04fe0c9a68fe7305b936942fa41"
+        },
+        "path": "logs/docgraph-default.stdout.log.gz",
+        "raw": {
+          "bytes": 66,
+          "sha256": "3b55401c56babce0efbd6b1c4c480eea52dc0ff51ae277d0c4c218d81b59afa2"
+        }
+      },
+      {
+        "gzip": {
+          "bytes": 1164,
+          "sha256": "ee25487b400d67621068af2baea661b321965b9a3fbe2173f63067ef96a9b617"
+        },
+        "path": "logs/docgraph-default.stderr.log.gz",
+        "raw": {
+          "bytes": 11929,
+          "sha256": "e066dfeafd0f822127f64b256a310ef43b1c3ee9915c2c906f3906a08c8cba7e"
+        }
+      }
+    ],
+    "name": "docgraph-default",
+    "seconds": 3.018864
+  }
+]

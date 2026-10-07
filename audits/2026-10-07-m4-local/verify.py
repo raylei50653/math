@@ -1,0 +1,316 @@
+#!/usr/bin/env python3
+"""Portable M4 verification; write only an exclusive fresh output directory.
+
+Historical manifests, producer outputs and failures are never rewritten.
+Requires restored archive inputs and the original Python dependencies.
+"""
+import argparse
+import ast
+import gzip
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import re
+import stat
+import subprocess
+import sys
+import time
+
+CANDIDATE = 'ba0b447f09617591d9f2ba81c988f537af771791'
+MAIN = '2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090'
+PARENT = 'a1ca89db9c04c6e65ba0b1cb0928df9e8c163e42'
+M2 = 'audits/2026-10-07-m2-u1-audit'
+M3 = 'audits/2026-10-07-m3-fresh-checkout'
+SUPERVISION = 'audits/2026-10-07-merge-supervision'
+M4 = 'audits/2026-10-07-m4-local'
+DOCUMENTS = {'docs/STATUS.md', 'docs/c5_kempe_guide.md'}
+RAW_WHITESPACE = M3 + '/logs/provenance_branch_whitespace.stdout.log'
+
+
+def metadata(raw):
+    return {'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}
+
+
+def file_metadata(path):
+    value = hashlib.sha256()
+    with path.open('rb') as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+            value.update(chunk)
+    return {'bytes': path.stat().st_size, 'sha256': value.hexdigest()}
+
+
+def differences(left, right, path=''):
+    if type(left) is not type(right):
+        return [{'path': path, 'saved': left, 'current': right}]
+    if isinstance(left, dict):
+        assert left.keys() == right.keys(), ('changed key set', path)
+        return [d for k in sorted(left) for d in differences(left[k], right[k], path + '/' + k)]
+    if isinstance(left, list):
+        assert len(left) == len(right), ('changed list length', path)
+        return [d for i, (a, b) in enumerate(zip(left, right))
+                for d in differences(a, b, path + '/' + str(i))]
+    return [] if left == right else [{'path': path, 'saved': left, 'current': right}]
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--repo', type=Path, required=True)
+    parser.add_argument('--source', type=Path, required=True, help='Original M3 bundle in this checkout')
+    parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--python', type=Path, required=True, help='Python with pinned research dependencies')
+    parser.add_argument('--phase', choices=['workspace', 'checkout'], required=True)
+    args = parser.parse_args()
+    sys.dont_write_bytecode = True
+    repo, source, output = args.repo.resolve(), args.source.resolve(), args.output.resolve()
+    assert source == repo / M3
+    output.mkdir(parents=True, exist_ok=False)
+    commands = []
+
+    def write(name, value):
+        target = output / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2) + '\n')
+
+    def read(path):
+        return json.loads((repo / path).read_bytes())
+
+    def git(*argv):
+        return subprocess.check_output(['git', '-C', str(repo), *argv])
+
+    def execute(name, argv, expected=0, overrides=None):
+        env = {'PYTHONDONTWRITEBYTECODE': '1', **(overrides or {})}
+        started = time.monotonic()
+        result = subprocess.run([str(x) for x in argv], cwd=repo,
+                                env={**os.environ, **env}, capture_output=True)
+        entry = {'name': name, 'argv': [str(x) for x in argv], 'cwd': str(repo),
+                 'environment_overrides': env, 'exit_code': result.returncode,
+                 'expected_exit': expected, 'seconds': round(time.monotonic() - started, 6), 'logs': []}
+        for stream in ('stdout', 'stderr'):
+            raw = getattr(result, stream)
+            compressed = gzip.compress(raw, mtime=0)
+            name_log = 'logs/' + name + '.' + stream + '.log.gz'
+            (output / 'logs').mkdir(exist_ok=True)
+            (output / name_log).write_bytes(compressed)
+            assert gzip.decompress(compressed) == raw
+            entry['logs'].append({'path': name_log, 'raw': metadata(raw), 'gzip': metadata(compressed)})
+        commands.append(entry)
+        write('commands.json', commands)
+        assert result.returncode == expected, entry
+        return result
+
+    # All original file sets and their manifests, pinned before integration.
+    original = read(M4 + '/original-bundles.json')
+    for entry in original['files']:
+        assert file_metadata(repo / entry['path']) == {k: entry[k] for k in ('bytes', 'sha256')}, entry['path']
+    originals, original_paths = [], set()
+    for folder, manifest_name, expected_count in (
+            (M2, 'DELIVERY.json', 40), (M3, 'BUNDLE_INVENTORY.json', 264),
+            (SUPERVISION, 'SUPERVISION_INVENTORY.json', 21)):
+        manifest = read(folder + '/' + manifest_name)
+        entries = manifest['files']
+        if isinstance(entries, dict):
+            entries = [{'path': p, **v} for p, v in entries.items()]
+        assert len(entries) == expected_count
+        for entry in entries:
+            assert file_metadata(repo / folder / entry['path']) == {k: entry[k] for k in ('bytes', 'sha256')}
+        actual = {p.relative_to(repo / folder).as_posix() for p in (repo / folder).rglob('*')
+                  if p.is_file() and '__pycache__' not in p.parts and p.suffix != '.pyc'}
+        assert actual == {e['path'] for e in entries} | {manifest_name}, (folder, 'file set drift')
+        original_paths.update(folder + '/' + p for p in actual)
+        originals.append({'path': folder, 'files_without_manifest': len(entries),
+                          'bytes_without_manifest': sum(e['bytes'] for e in entries),
+                          'manifest': file_metadata(repo / folder / manifest_name), 'zero_byte_drift': True})
+    assert len(original_paths) == len(original['files']) == 328
+    assert {e['path'] for e in original['files']} == original_paths
+    write('original-bundles-verified.json', originals)
+    execute('m3-seal', ['python3', source / 'seal_bundle.py', '--check'])
+    execute('m3-authoring-portable', ['python3', source / 'check_bundle.py'],
+            overrides={'PYTHONPATH': str(repo / 'scripts')})
+
+    # Compare every original source, corpus, archive blob, and generated product.
+    snapshot = json.loads(gzip.decompress((source / 'sources-before.json.gz').read_bytes()))['entries']
+    changes, modes, inventory = [], [], []
+    for path, expected in sorted(snapshot.items()):
+        full = repo / path
+        if expected['kind'] == 'symlink':
+            assert full.is_symlink() and os.readlink(full) == expected['target'], path
+            continue
+        current = file_metadata(full)
+        old = {k: expected[k] for k in ('bytes', 'sha256')}
+        entry = {'path': path, 'm3': old, 'tested': current, 'byte_equal': old == current}
+        inventory.append(entry)
+        if old != current:
+            changes.append(entry)
+        mode = oct(stat.S_IMODE(full.stat().st_mode))
+        if mode != expected['mode']:
+            modes.append({'path': path, 'm3': expected['mode'], 'tested': mode, 'byte_equal': old == current})
+    assert {e['path'] for e in changes} == DOCUMENTS, changes
+    lean = [e for e in inventory if e['path'].startswith('Math/') or e['path'] in
+            {'Math.lean', 'lakefile.toml', 'lake-manifest.json', 'lean-toolchain',
+             'scripts/export_excess_two_certificates.py'}]
+    assert len(lean) == 109
+    assert all(e['byte_equal'] for e in lean)
+    raw_inventory = (json.dumps(inventory, sort_keys=True, indent=2) + '\n').encode()
+    (output / 'tested-sources.json.gz').write_bytes(gzip.compress(raw_inventory, mtime=0))
+    write('source-comparison.json', {'original_entries': len(snapshot), 'file_entries': len(inventory),
+                                    'byte_changes': changes, 'mode_changes': modes,
+                                    'all_other_original_bytes_equal': True,
+                                    'lean_source_config_generated_products': lean,
+                                    'lean_build_rerun': False, 'olean_hash_comparison': 'unavailable: original cache not delivered'})
+    # Original command records and all their raw logs remain verifiable.
+    original_commands = list((source / 'commands').glob('*.json'))
+    original_logs = 0
+    for path in original_commands:
+        record = json.loads(path.read_bytes())
+        for log in record['logs']:
+            assert file_metadata(source / log['path']) == {k: log[k] for k in ('bytes', 'sha256')}
+            original_logs += 1
+    for name in ('lean-build', 'lean-axioms'):
+        assert read(M3 + '/commands/' + name + '.json')['exit_code'] == 0
+    execute('lc-axioms-log-reparse', ['python3', source / 'check_lean_axioms.py', '--source',
+            repo / 'Math/ExcessTwoCertificatesAudit.lean', '--log', source / 'logs/lean-axioms.stdout.log',
+            '--output', output / 'axioms-reparsed.json'])
+    assert json.loads((output / 'axioms-reparsed.json').read_bytes()) == read(M3 + '/lean-axioms-summary.json')
+
+    # Actual current strict exits, followed by separate bounded payload diagnostics.
+    specs = [
+        ('C44_input', 'c5_excess_two_c44_input_audit', 'artifacts/c5_excess_two_c44/input_audit.json',
+         {'/layers/6/es_source_hash_matches', '/layers/6/es_source_present'}),
+        ('E4_reductions', 'c5_excess_two_e4_reductions', 'artifacts/c5_excess_two_e4/reductions.json',
+         {'/sources/artifacts/c5_excess_two_e3/REPORT.md/bytes', '/sources/artifacts/c5_excess_two_e3/REPORT.md/sha256'}),
+        ('E5_controls', 'c5_excess_two_e5_controls', 'artifacts/c5_excess_two_e5/controls.json',
+         {'/source_sha256/artifacts/c5_excess_two_e3/REPORT.md'}),
+        ('E4C', 'c5_excess_two_e4c_controls', 'artifacts/c5_excess_two_e4c/summary.json',
+         {'/source_hashes/docs/c5_kempe_guide.md'}),
+        ('E5_branches', 'c5_excess_two_e5_branches', 'artifacts/c5_excess_two_e5/branches.json',
+         {'/sources_sha256/docs/c5_excess_two_mixed_core_spokes.md'}),
+    ]
+    sys.path.insert(0, str(repo / 'scripts'))
+    failures = []
+    for name, module_name, saved_path, allowed in specs:
+        script = repo / 'scripts' / (module_name + '.py')
+        execute(name + '-strict', [args.python, script, '--check'], expected=1)
+        fresh = output / 'provenance' / (name + '.json')
+        fresh.parent.mkdir(exist_ok=True)
+        if name in ('C44_input', 'E5_branches'):
+            spec = importlib.util.spec_from_file_location(module_name, script)
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            if name == 'C44_input':
+                raw = module.encoded(module.audit())
+            else:
+                raw = (json.dumps(module.build(), sort_keys=True, ensure_ascii=False, indent=2) + '\n').encode()
+            fresh.write_bytes(raw)
+        else:
+            destination = output / 'provenance/e4c' if name == 'E4C' else fresh
+            execute(name + '-fresh', [args.python, script, '--output', destination])
+            if name == 'E4C':
+                fresh = destination / 'summary.json'
+        saved_raw, fresh_raw = (repo / saved_path).read_bytes(), fresh.read_bytes()
+        delta = differences(json.loads(saved_raw), json.loads(fresh_raw))
+        assert {d['path'] for d in delta} == allowed, (name, delta)
+        reference = (source / 'provenance/e4c/summary.json' if name == 'E4C' else
+                     source / 'provenance' / (module_name.removeprefix('c5_excess_two_') + '.json'))
+        if name == 'C44_input':
+            reference = repo / SUPERVISION / 'm3-review/c44-recomputed.json'
+        previous_delta = differences(json.loads(reference.read_bytes()), json.loads(fresh_raw))
+        assert not previous_delta or (name == 'E4C' and {d['path'] for d in previous_delta} == allowed)
+        failures.append({'name': name, 'strict_exit_code': 1, 'strict_status': 'FAIL',
+                         'saved_path': saved_path, 'saved': metadata(saved_raw),
+                         'fresh_path': str(fresh.relative_to(output)), 'fresh': metadata(fresh_raw),
+                         'producer': {'path': str(script.relative_to(repo)), **file_metadata(script)},
+                         'allowed_leaf_paths': sorted(allowed), 'differences': delta,
+                         'all_other_serialized_fields_equal': True,
+                         'm3_fresh': file_metadata(reference), 'm3_to_current_differences': previous_delta,
+                         'disposition': 'preserve strict FAIL; accept only these named provenance/presence leaves'})
+    # Presence exception must reference the exact restored ES source bytes.
+    c44 = json.loads((output / 'provenance/C44_input.json').read_bytes())['layers'][6]
+    assert file_metadata(repo / c44['es_source'])['sha256'] == c44['es_source_expected_sha256']
+    controls = []
+    for fresh in sorted((output / 'provenance/e4c/controls').glob('*.json')):
+        saved = repo / 'artifacts/c5_excess_two_e4c/controls' / fresh.name
+        assert fresh.read_bytes() == saved.read_bytes()
+        controls.append({'name': fresh.name, 'saved': file_metadata(saved), 'fresh': file_metadata(fresh), 'byte_equal': True})
+    assert len(controls) == 54
+    write('strict-failures.json', {'original_required_checks': {'total': 29, 'pass': 28, 'fail': 1},
+                                 'failures': failures, 'e4c_controls': controls,
+                                 'c44_restored_source': {'path': c44['es_source'], **file_metadata(repo / c44['es_source'])}})
+
+    # Original 86 diagnostics and the imported raw log are distinct exceptions.
+    historic = gzip.decompress((repo / 'artifacts/c5_integrate_branch_review/logs/branch_whitespace.log.gz').read_bytes())
+    assert historic == (repo / RAW_WHITESPACE).read_bytes()
+
+    def diagnostics(raw):
+        return [{'path': m[1], 'line': int(m[2]), 'message': m[3]} for line in raw.decode().splitlines()
+                if (m := re.match(r'^(.+):(\d+): (.+)$', line))]
+
+    historical_diags = diagnostics(historic)
+    assert len(historical_diags) == 86
+    candidate = execute('candidate-parent-whitespace', ['git', 'diff', '--check', PARENT, CANDIDATE])
+    assert not candidate.stdout and not candidate.stderr
+    if args.phase == 'checkout':
+        execute('m4-seal', ['python3', repo / M4 / 'seal.py', '--repo', repo, '--check'])
+        delivery = read(M4 + '/DELIVERY.json')
+        for path in [e['path'] for e in delivery['files']] + [M4 + '/DELIVERY.json']:
+            assert git('show', 'HEAD:' + path) == (repo / path).read_bytes(), ('not committed', path)
+        assert not (repo / 'scratch').exists(), 'scratch in independent checkout'
+        assert not git('status', '--porcelain', '--untracked-files=no').strip(), 'dirty tracked checkout'
+        new = execute('new-diff-whitespace', ['git', 'diff', '--check', CANDIDATE, 'HEAD'], expected=2)
+        branch = execute('full-branch-whitespace', ['git', 'diff', '--check', MAIN, 'HEAD'], expected=2)
+    else:
+        new = execute('new-diff-whitespace', ['git', 'diff', '--cached', '--check', CANDIDATE], expected=2)
+        branch = execute('full-branch-whitespace', ['git', 'diff', '--cached', '--check', MAIN], expected=2)
+    new_diags, branch_diags = diagnostics(new.stdout), diagnostics(branch.stdout)
+    expected_import = execute('imported-log-whitespace', ['git', 'diff', '--no-index', '--check',
+                             '/dev/null', repo / RAW_WHITESPACE], expected=3)
+    expected_diags = diagnostics(expected_import.stdout)
+    for entry in expected_diags:
+        entry['path'] = RAW_WHITESPACE
+    assert new_diags == expected_diags, new_diags
+    assert sorted(branch_diags, key=lambda d: (d['path'], d['line'], d['message'])) == sorted(
+        historical_diags + expected_diags, key=lambda d: (d['path'], d['line'], d['message']))
+    write('whitespace.json', {'historical': {'raw': metadata(historic), 'diagnostics': historical_diags, 'count': 86},
+                             'new_imported_historical_log': {'path': RAW_WHITESPACE, 'file': file_metadata(repo / RAW_WHITESPACE),
+                                                              'diagnostics': expected_diags, 'count': len(expected_diags)},
+                             'new_authored_diagnostics': [], 'full_branch_count': len(branch_diags),
+                             'new_diff_exit': new.returncode, 'full_branch_exit': branch.returncode,
+                             'candidate_parent_exit': candidate.returncode})
+    # The workspace's scratch duplicate ids remain visible as a workspace limit.
+    execute('docs', ['python3', repo / 'scripts/check_docs.py'])
+    docgraph = execute('docgraph-default', ['python3', repo / 'tools/docgraph', 'check'],
+                       expected=1 if args.phase == 'workspace' else 0)
+    if args.phase == 'workspace':
+        lines = (docgraph.stdout + docgraph.stderr).decode().splitlines()
+        assert sum(line.startswith('ERROR [duplicate-id]') for line in lines) == 62
+        assert sum(line.startswith('ERROR ') for line in lines) == 62
+    for path in (repo / M4).rglob('*.py'):
+        ast.parse(path.read_bytes(), filename=str(path))
+    for entry in inventory:
+        assert file_metadata(repo / entry['path']) == entry['tested'], entry['path']
+    for entry in original['files']:
+        assert file_metadata(repo / entry['path']) == {k: entry[k] for k in ('bytes', 'sha256')}
+    changed = git('diff', '--name-only', CANDIDATE, 'HEAD').decode().splitlines()
+    assert all(p in DOCUMENTS or p == 'docs/history/2026-10-07-m4-local-delivery.md' or
+               p.startswith(tuple(folder + '/' for folder in (M2, M3, SUPERVISION, M4))) for p in changed), changed
+    if args.phase == 'checkout':
+        assert not git('status', '--porcelain', '--untracked-files=no').strip()
+    write('verification.json', {'task': 'M4-L', 'phase': args.phase, 'input_candidate_sha': CANDIDATE,
+                               'candidate_parent_sha': PARENT, 'main_base_sha': MAIN,
+                               'tested_checkout_sha': git('rev-parse', 'HEAD').decode().strip(),
+                               'tested_head_tree': git('rev-parse', 'HEAD^{tree}').decode().strip(),
+                               'staged_diff': metadata(git('diff', '--cached', '--binary')),
+                               'original_bundles': originals, 'original_commands': len(original_commands),
+                               'original_raw_logs': original_logs, 'strict_failures_preserved': 5,
+                               'new_authored_whitespace_diagnostics': 0, 'lean_build_rerun': False,
+                               'axiom_declarations': 558, 'positive_without_native': 179,
+                               'mathematical_conclusion_expanded': False, 'merge_ready': False,
+                               'status': 'PASS within explicit preserved exceptions'})
+    print(json.dumps({'task': 'M4-L', 'phase': args.phase, 'status': 'PASS within explicit preserved exceptions',
+                      'strict_failures_preserved': 5, 'original_source_entries': len(snapshot),
+                      'output': str(output)}, sort_keys=True))
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,223 @@
+[
+  {
+    "name": "stage-explicit-delivery",
+    "argv": [
+      "git",
+      "add",
+      "-f",
+      "--pathspec-from-file=/tmp/math-m4-stage.nul",
+      "--pathspec-file-nul"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "seconds": 0.092005,
+    "logs": [
+      {
+        "path": "stage-explicit-delivery.stdout.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        }
+      },
+      {
+        "path": "stage-explicit-delivery.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        }
+      }
+    ]
+  },
+  {
+    "name": "staged-tree",
+    "argv": [
+      "git",
+      "write-tree"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "seconds": 0.030481,
+    "logs": [
+      {
+        "path": "staged-tree.stdout.log.gz",
+        "raw": {
+          "bytes": 41,
+          "sha256": "f06faaaadfe2462b1b2aacc5b03c27400bf5bdaa5af9736528c61c829b749287"
+        },
+        "gzip": {
+          "bytes": 60,
+          "sha256": "2089743ab483f1d5fef9bb5900c77a2a3e33c09cd52bec91382808c4419848af"
+        }
+      },
+      {
+        "path": "staged-tree.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        }
+      }
+    ]
+  },
+  {
+    "name": "temporary-validation-object",
+    "argv": [
+      "git",
+      "commit-tree",
+      "92f5e356985d2db65a76521584978b100b726149",
+      "-p",
+      "ba0b447f09617591d9f2ba81c988f537af771791",
+      "-m",
+      "M4-L staged validation snapshot; no branch ref update"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "seconds": 0.003805,
+    "logs": [
+      {
+        "path": "temporary-validation-object.stdout.log.gz",
+        "raw": {
+          "bytes": 41,
+          "sha256": "7b48fc51b915cca3de08245c1be888ce939f159e4c36b699aa76022816d60a1a"
+        },
+        "gzip": {
+          "bytes": 59,
+          "sha256": "3e7cdd49a405ce26e1d65cf8ff50876bf41c73c73fa1a5a57faeaa67cc02ab1e"
+        }
+      },
+      {
+        "path": "temporary-validation-object.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        }
+      }
+    ]
+  },
+  {
+    "name": "clone-independent",
+    "argv": [
+      "git",
+      "clone",
+      "--no-local",
+      "--no-checkout",
+      "/home/ray/developer/ai/math",
+      "/tmp/math-m4-local-independent"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "seconds": 90.998606,
+    "logs": [
+      {
+        "path": "clone-independent.stdout.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        }
+      },
+      {
+        "path": "clone-independent.stderr.log.gz",
+        "raw": {
+          "bytes": 49,
+          "sha256": "ee3ed6cf9fd572f27f98f1d89489abc82ecd607e314c4d4081d0fe2935d6c501"
+        },
+        "gzip": {
+          "bytes": 67,
+          "sha256": "8fca07c320755832dd129882ede60e218aab0dbbfa384bea34f0ab463c377921"
+        }
+      }
+    ]
+  },
+  {
+    "name": "fetch-local-snapshot",
+    "argv": [
+      "git",
+      "fetch",
+      "--no-tags",
+      "/home/ray/developer/ai/math",
+      "da152db1494025f6e2c20e201102ba889868d29c"
+    ],
+    "cwd": "/tmp/math-m4-local-independent",
+    "exit_code": 0,
+    "seconds": 0.46057,
+    "logs": [
+      {
+        "path": "fetch-local-snapshot.stdout.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        }
+      },
+      {
+        "path": "fetch-local-snapshot.stderr.log.gz",
+        "raw": {
+          "bytes": 109,
+          "sha256": "ee88085805b8bed278361b97aa1da8fdd72949038d0d464ae5f61444a9de2b78"
+        },
+        "gzip": {
+          "bytes": 119,
+          "sha256": "e72de485d84811a60fa33d6be5b5eb33e6bff061bf34ebde266e15132a5516ac"
+        }
+      }
+    ]
+  },
+  {
+    "name": "checkout-staged-snapshot",
+    "argv": [
+      "git",
+      "checkout",
+      "--detach",
+      "da152db1494025f6e2c20e201102ba889868d29c"
+    ],
+    "cwd": "/tmp/math-m4-local-independent",
+    "exit_code": 0,
+    "seconds": 1.33917,
+    "logs": [
+      {
+        "path": "checkout-staged-snapshot.stdout.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        }
+      },
+      {
+        "path": "checkout-staged-snapshot.stderr.log.gz",
+        "raw": {
+          "bytes": 77,
+          "sha256": "1851f27f21918176ba2b246013ccbc5d018e4bce93f40386115f65cbfe0748d4"
+        },
+        "gzip": {
+          "bytes": 95,
+          "sha256": "027139ed272fda65c0ff0796a9bf0e843b4041e2cdbfa3cdbe44126a429e789b"
+        }
+      }
+    ]
+  }
+]

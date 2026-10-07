@@ -263,6 +263,10 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [M2：U1 no-mixed44獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md) | 指定前提的任意大小化約及344核心／3,498接回完整關係驗收；沿用上游分類／拓撲信任，完整Σ933／941來源正控制未觸發，未新增Lean定理 |
+| [M3：全新checkout還原與驗證](../audits/2026-10-07-m3-fresh-checkout/REPORT.md) | 原29項指定28 PASS／1 FAIL，另四份provenance strict FAIL及86項歷史whitespace保留；顯式LC build／558項公理證據完成，原「待補件」語境由下列監督報告補足 |
+| [M3監督補件與M4派工](../audits/2026-10-07-merge-supervision/REPORT.md) | 264檔原包及完整fresh payload核對；接受C44兩個presence leaves與E5 branches單份文件hash例外，歷史三份byte FAIL仍保留，不宣稱全strict PASS或可合併 |
+| [M4-L：正式本地交付](../audits/2026-10-07-m4-local/REPORT.md) | 整合M2／M3與監督補件，保存原bytes／hash、具名例外及最終文件版本驗證；本地提交與獨立checkout證據以報告及下列發布紀錄為準，遠端驗收另行處理 |
 | [C44″後續：唯一mixed四份(4,4)排除指定稽核](../audits/2026-10-07-c44pp-mixed-audit/REPORT.md) | 任意大小化約與固定域成立；獨立重算root pairs／S₄支援、368,859份UNSAT proofs、6,008份subdivisions及344域標記run覆蓋通過。未改舊證書；沿用上游分類，未重稽核其全部枚舉，未補E5新證明 |
 | [D₂文件整合與新增成果稽核](../audits/2026-10-04-task-d2/REPORT.md) | 套用原D的18項修訂，同步A₂／B₂／C₂停止點；新增A／A₂、B／B₂固定域身份、完整joint及witness獨立稽核。原D的40 PASS／4文件hash FAIL與兩份完整payload相同紀錄保留；新增版本及漂移另記，原artifacts不改 |
 | [D₃：C／C₂獨立稽核](../audits/2026-10-04-task-d3/REPORT.md) | 固定D₂截點的完整P₃／側角色／空fibres、原unary刪邊witnesses及原K₅全部獨立核對；只關閉geometry30／join20，保存3500具名keys。當時未接收A₃／B₃／C₃及未同步live文件；原strict漂移失敗保留 |
@@ -405,6 +409,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-07：M4-L正式交付整合與最終本地提交](history/2026-10-07-m4-local-delivery.md)
 - [2026-10-07：整合分支合併任務、依賴與驗收台帳](history/2026-10-07-merge-readiness-tasks.md)
 - [2026-10-07：唯一mixed指定稽核與U1 no-mixed44身份排除](history/2026-10-07-no-mixed-core44.md)
 - [2026-10-07：C44″ 整合覆核、精確前提與四類殘留](history/2026-10-07-c44pp-integration-review.md)

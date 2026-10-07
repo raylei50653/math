@@ -1,0 +1,1649 @@
+{
+  "task": "M3",
+  "execution_status": "complete",
+  "acceptance_status": "needs follow-up",
+  "candidate_sha": "ba0b447f09617591d9f2ba81c988f537af771791",
+  "base_sha": "2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090",
+  "candidate_parent_sha": "a1ca89db9c04c6e65ba0b1cb0928df9e8c163e42",
+  "checkout": "/tmp/math-m3-ba0b447",
+  "new_commit": null,
+  "required_checks": {
+    "count": 29,
+    "passed": 28,
+    "failed": [
+      "c44-input-audit"
+    ],
+    "names": [
+      "archive-restore",
+      "archive-verify",
+      "artifact-status",
+      "docs",
+      "docgraph-default",
+      "checkout-diff",
+      "u1-default",
+      "u1-seed17",
+      "mixed-verifier",
+      "d9-e4-default",
+      "d9-e4-seed17",
+      "d9-e5-default",
+      "d9-e5-seed17",
+      "d9-e6-default",
+      "d9-e6-seed17",
+      "c44-input-audit",
+      "c44-small",
+      "c44-full-default",
+      "c44-full-seed17",
+      "c44-algorithm-audit",
+      "c44p-screen-default",
+      "c44p-two-private-default",
+      "c44p-independent-default",
+      "c44p-screen-seed17",
+      "c44p-two-private-seed17",
+      "c44p-independent-seed17",
+      "lc-exporter",
+      "lean-build",
+      "lean-axioms"
+    ]
+  },
+  "commands": [
+    {
+      "name": "archive-restore",
+      "argv": [
+        "python3",
+        "tools/audit_archive.py",
+        "restore",
+        "--artifacts"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {},
+      "started_unix": 1791349952.3501437,
+      "exit_code": 0,
+      "seconds": 18.625,
+      "logs": [
+        {
+          "path": "logs/archive-restore.stdout.log",
+          "bytes": 139,
+          "sha256": "15bf96a18ee8926361b7a28a828718edad80f58db80a76d609547d12fb7a2e31"
+        },
+        {
+          "path": "logs/archive-restore.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "archive-verify",
+      "argv": [
+        "python3",
+        "tools/audit_archive.py",
+        "verify",
+        "--artifacts"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {},
+      "started_unix": 1791349998.1904829,
+      "exit_code": 0,
+      "seconds": 8.291,
+      "logs": [
+        {
+          "path": "logs/archive-verify.stdout.log",
+          "bytes": 138,
+          "sha256": "35ce6781c1950699746804a67785dfd51e8f1a70258e3fd9561f447ccc8f5b5e"
+        },
+        {
+          "path": "logs/archive-verify.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "artifact-status",
+      "argv": [
+        "python3",
+        "tools/artifacts.py",
+        "status"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350021.3998878,
+      "exit_code": 0,
+      "seconds": 1.933,
+      "logs": [
+        {
+          "path": "logs/artifact-status.stdout.log",
+          "bytes": 7,
+          "sha256": "63747808e6d89c0f1ebdb4dc8723a7e1840f029407c8715c3c0db3d13dee716d"
+        },
+        {
+          "path": "logs/artifact-status.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "axiom-parser-helper-controls-v2",
+      "argv": [
+        "python3",
+        "-c",
+        "\nimport gzip,hashlib,json,re,subprocess,tempfile\nfrom pathlib import Path\nhelper=Path('/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/check_lean_axioms.py')\nhistorical=Path('/tmp/math-m3-ba0b447/artifacts/c5_integrate_branch_review/logs/lean_axioms.log.gz')\nsource=Path('/tmp/math-m3-ba0b447/Math/ExcessTwoCertificatesAudit.lean')\ncontrol_root=Path(tempfile.mkdtemp(prefix='math-m3-axiom-helper-controls-'))\ntext=gzip.decompress(historical.read_bytes()).decode()\npattern=re.compile(r\"^'([^']+)' (?:depends on axioms:\\s*\\[([^\\]]*)\\]|does not depend on any axioms)\",re.MULTILINE)\nmatches=list(pattern.finditer(text))\nassert len(matches)==558\ncontrols={'historical_baseline':text,'missing_first_declaration':text[matches[0].end():].lstrip('\\n'),'duplicate_first_declaration':text+'\\n'+matches[0].group(0)+'\\n','sorry_axon_first_declaration':text.replace('Quot.sound','sorryAx',1),'extra_error_diagnostic':text+'\\nMath/ExcessTwoCertificatesAudit.lean:1:0: error: helper control diagnostic\\n'}\nfirst_positive=next(m for m in matches if m.group(1).endswith('_positive'))\nold=first_positive.group(0)\ncontrols['positive_native_injected']=text[:first_positive.start()]+old[:-1]+', foreign.native_decide.ax_1]'+text[first_positive.end():]\nfirst_rejected=next(m for m in matches if m.group(1).endswith('_rejected'))\nold=first_rejected.group(0)\nmutated=re.sub(r'\\b[^,\\s\\[\\]]*\\.native_decide\\.[^,\\s\\[\\]]*','foreign.native_decide.ax_1',old)\nassert mutated!=old\ncontrols['rejected_foreign_native_replaced']=text[:first_rejected.start()]+mutated+text[first_rejected.end():]\nrecords={}\nfor name,value in controls.items():\n    log=control_root/(name+'.log')\n    log.write_text(value)\n    output=control_root/(name+'.json')\n    run=subprocess.run(['python3',str(helper),'--log',str(log),'--source',str(source),'--output',str(output)],text=True,capture_output=True)\n    (control_root/(name+'.stdout')).write_text(run.stdout)\n    (control_root/(name+'.stderr')).write_text(run.stderr)\n    records[name]={'exit_code':run.returncode,'last_stderr_line':run.stderr.splitlines()[-1] if run.stderr else '', 'output_exists':output.exists()}\nassert records['historical_baseline']['exit_code']==0\nassert all(records[k]['exit_code']!=0 for k in ('missing_first_declaration','duplicate_first_declaration','sorry_axon_first_declaration','positive_native_injected'))\nbaseline=json.loads((control_root/'historical_baseline.json').read_text())\nprint(json.dumps({'scope':'HELPER CONTROLS ONLY: historical Oct05 log and synthetic corruptions; not current LC build or axioms evidence','control_root':str(control_root),'helper_sha256':hashlib.sha256(helper.read_bytes()).hexdigest(),'historical_gzip_sha256':hashlib.sha256(historical.read_bytes()).hexdigest(),'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'baseline_groups':baseline['groups'],'baseline_declaration_count':baseline['declaration_count'],'controls':records},sort_keys=True))\n"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350344.6252127,
+      "exit_code": 1,
+      "seconds": 0.307,
+      "logs": [
+        {
+          "path": "logs/axiom-parser-helper-controls-v2.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "logs/axiom-parser-helper-controls-v2.stderr.log",
+          "bytes": 206,
+          "sha256": "b035fe3381cf2734fbf6aee854e8a3944d0ebbeac2975ef0f87363a37ef8d13f"
+        }
+      ]
+    },
+    {
+      "name": "axiom-parser-helper-controls-v3",
+      "argv": [
+        "python3",
+        "-c",
+        "\nimport gzip,hashlib,json,re,subprocess,tempfile\nfrom pathlib import Path\naudit=Path('/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout')\nhelper=audit/'check_lean_axioms.py'\nhistorical=Path('/tmp/math-m3-ba0b447/artifacts/c5_integrate_branch_review/logs/lean_axioms.log.gz')\nsource=Path('/tmp/math-m3-ba0b447/Math/ExcessTwoCertificatesAudit.lean')\nhelper_sha=hashlib.sha256(helper.read_bytes()).hexdigest()\ncontrol_root=Path(tempfile.mkdtemp(prefix='math-m3-axiom-helper-controls-v3-'))\ntext=gzip.decompress(historical.read_bytes()).decode()\npattern=re.compile(r\"^'([^']+)' (?:depends on axioms:\\s*\\[([^\\]]*)\\]|does not depend on any axioms)\",re.MULTILINE)\nmatches=list(pattern.finditer(text))\nassert len(matches)==558\ncontrols={'historical_baseline':text,'missing_first_declaration':text[matches[0].end():].lstrip('\\n'),'duplicate_first_declaration':text+'\\n'+matches[0].group(0)+'\\n','sorry_axon_first_declaration':text.replace('Quot.sound','sorryAx',1),'extra_error_diagnostic':text+'\\nMath/ExcessTwoCertificatesAudit.lean:1:0: error: helper control diagnostic\\n'}\nfirst_positive=next(m for m in matches if m.group(1).endswith('_positive'))\nold=first_positive.group(0)\ncontrols['positive_native_injected']=text[:first_positive.start()]+old[:-1]+', foreign.native_decide.ax_1]'+text[first_positive.end():]\nfor suffix in ('rejected','valid'):\n    match=next(m for m in matches if m.group(1).startswith('FiveBoundary.ExcessTwo.Generated.cert_') and m.group(1).endswith('_'+suffix))\n    old=match.group(0)\n    mutated=re.sub(r'\\b[^,\\s\\[\\]]*\\.native_decide\\.[^,\\s\\[\\]]*','foreign.native_decide.ax_1',old)\n    assert mutated!=old\n    controls[suffix+'_foreign_native_replaced']=text[:match.start()]+mutated+text[match.end():]\nmatch=next(m for m in matches if m.group(1)=='FiveBoundary.color_orbits_cover')\nold=match.group(0)\nmutated=re.sub(r'\\b[^,\\s\\[\\]]*\\.native_decide\\.[^,\\s\\[\\]]*','foreign.native_decide.ax_1',old)\ncontrols['s4_foreign_native_replaced']=text[:match.start()]+mutated+text[match.end():]\ndef info(path):\n    raw=path.read_bytes()\n    return {'path':str(path),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}\nrecords={}\nfor name,value in controls.items():\n    log=control_root/(name+'.log');log.write_text(value)\n    output=control_root/(name+'.json')\n    argv=['python3',str(helper),'--log',str(log),'--source',str(source),'--output',str(output)]\n    run=subprocess.run(argv,text=True,capture_output=True)\n    stdout=control_root/(name+'.stdout');stderr=control_root/(name+'.stderr')\n    stdout.write_text(run.stdout);stderr.write_text(run.stderr)\n    expected=0 if name in ('historical_baseline','extra_error_diagnostic') else 1\n    records[name]={'argv':argv,'exit_code':run.returncode,'expected_exit_code':expected,'expectation_holds':run.returncode==expected,'input':info(log),'stdout':info(stdout),'stderr':info(stderr),'last_stderr_line':run.stderr.splitlines()[-1] if run.stderr else '', 'output':info(output) if output.exists() else None}\nassert all(record['expectation_holds'] for record in records.values()),records\nassert hashlib.sha256(helper.read_bytes()).hexdigest()==helper_sha,'helper changed during control runs'\nbaseline=json.loads((control_root/'historical_baseline.json').read_text())\nsummary={'schema':'m3-axiom-parser-helper-controls-v3','status':'PASS','scope':'HELPER CONTROLS ONLY: historical Oct05 log and synthetic corruptions; not current LC build or axioms evidence','control_root':str(control_root),'helper':info(helper),'historical_gzip':info(historical),'source':info(source),'baseline_groups':baseline['groups'],'baseline_aggregate_native_counts':baseline['aggregate_native_counts'],'baseline_declaration_count':baseline['declaration_count'],'controls':records,'limits':['Extra error diagnostic text is ignored by the helper; formal fresh Lean command must separately exit 0.','Historical Oct05 log is used only as parser input; this does not substitute for current candidate LC build or axioms evidence.','Candidate Lean source and helper were not changed by this review.'],'earlier_attempts':[{'name':'axiom-parser-helper-controls','exit_code':1,'reason':'Reviewer control harness regex escaping error before running helper.'},{'name':'axiom-parser-helper-controls-v2','exit_code':1,'reason':'Old helper incorrectly included all_certificates_valid in the 179 per-certificate valid group; fixed by root.'}]}\noutput=audit/'axiom-helper-controls-v3.json'\nwith output.open('x') as stream:json.dump(summary,stream,ensure_ascii=False,sort_keys=True,indent=2);stream.write('\\n')\nrows=['# M3 公理 parser helper：v3 控制','','**PASS；這是 helper 控制，並非本次 LC build／公理證據。** 原輸入為 Oct05 封存 lean_axioms.log.gz；本次 candidate 的正式 Lean 執行由 M3 root 另行處理。','', '新版 helper 正確解析原 558 項名稱及順序；positive／rejected／valid 各 179 項，native 數各為 0／1／1。所有個別 rejected／valid 的 native identity 與該 certificate 的 rejected axiom 相符；S4 cover identity 精確相符。Aggregate all_certificates_valid／all_certificates_sound 的 native 數另核對為 179／180。','', '| 控制 | exit | 結果 |','| --- | ---: | --- |']\nfor name,record in records.items():\n    rows.append('| '+name+' | '+str(record['exit_code'])+' | '+('accepted' if record['exit_code']==0 else 'rejected')+'，符合預期 |')\nrows+=['', 'Missing、duplicate、sorryAx、positive native、foreign rejected／valid native、foreign S4 native 均被拒絕。額外 error 診斷文字仍可被 helper 忽略；正式 fresh Lean 命令必須另外驗證 exit 0，不能以 parser PASS 取代。','', '完整 helper／來源／歷史輸入 hashes、控制命令、exit、stdout／stderr hashes 與暫存檔位置見 [axiom-helper-controls-v3.json](axiom-helper-controls-v3.json)。未修改 candidate Lean 或 helper。','', '早先兩次失敗全部保留：第一輪是 reviewer harness 的 regex 轉義錯誤，尚未執行 helper；第二輪發現舊 helper 把 aggregate valid 混入 per-certificate valid，root 已修正。本輪完整重核通過。','']\nreport=audit/'axiom-helper-controls-v3.md'\nwith report.open('x') as stream:stream.write('\\n'.join(rows))\nprint(json.dumps({'status':'PASS','scope':summary['scope'],'control_root':str(control_root),'helper_sha256':helper_sha,'declarations':baseline['declaration_count'],'groups':baseline['groups'],'aggregate_native_counts':baseline['aggregate_native_counts'],'control_exit_codes':{k:v['exit_code'] for k,v in records.items()},'summary':info(output),'report':info(report)},sort_keys=True))\n"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350494.8475642,
+      "exit_code": 0,
+      "seconds": 0.402,
+      "logs": [
+        {
+          "path": "logs/axiom-parser-helper-controls-v3.stdout.log",
+          "bytes": 1416,
+          "sha256": "db708d1651b8478578490b2a380b8e6c7033a4f727074a4ee20ed31581b81d61"
+        },
+        {
+          "path": "logs/axiom-parser-helper-controls-v3.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "axiom-parser-helper-controls",
+      "argv": [
+        "python3",
+        "-c",
+        "\nimport gzip,hashlib,json,re,subprocess,tempfile\nfrom pathlib import Path\nhelper=Path('/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/check_lean_axioms.py')\nhistorical=Path('/tmp/math-m3-ba0b447/artifacts/c5_integrate_branch_review/logs/lean_axioms.log.gz')\nsource=Path('/tmp/math-m3-ba0b447/Math/ExcessTwoCertificatesAudit.lean')\ncontrol_root=Path(tempfile.mkdtemp(prefix='math-m3-axiom-helper-controls-'))\ntext=gzip.decompress(historical.read_bytes()).decode()\npattern=re.compile(r\"^'([^']+)' (?:depends on axioms:\\\\s*\\\\[([^\\\\]]*)\\\\]|does not depend on any axioms)\",re.MULTILINE)\nmatches=list(pattern.finditer(text))\nassert len(matches)==558\ncontrols={'historical_baseline':text,'missing_first_declaration':text[matches[0].end():].lstrip('\\\\n'),'duplicate_first_declaration':text+'\\\\n'+matches[0].group(0)+'\\\\n','sorry_axon_first_declaration':text.replace('Quot.sound','sorryAx',1),'extra_error_diagnostic':text+'\\\\nMath/ExcessTwoCertificatesAudit.lean:1:0: error: helper control diagnostic\\\\n'}\nfirst_positive=next(m for m in matches if m.group(1).endswith('_positive'))\nold=first_positive.group(0)\ncontrols['positive_native_injected']=text[:first_positive.start()]+old[:-1]+', foreign.native_decide.ax_1]'+text[first_positive.end():]\nfirst_rejected=next(m for m in matches if m.group(1).endswith('_rejected'))\nold=first_rejected.group(0)\nmutated=re.sub(r'\\\\b[^,\\\\s\\\\[\\\\]]*\\\\.native_decide\\\\.[^,\\\\s\\\\[\\\\]]*','foreign.native_decide.ax_1',old)\nassert mutated!=old\ncontrols['rejected_foreign_native_replaced']=text[:first_rejected.start()]+mutated+text[first_rejected.end():]\nrecords={}\nfor name,value in controls.items():\n    log=control_root/(name+'.log')\n    log.write_text(value)\n    output=control_root/(name+'.json')\n    run=subprocess.run(['python3',str(helper),'--log',str(log),'--source',str(source),'--output',str(output)],text=True,capture_output=True)\n    (control_root/(name+'.stdout')).write_text(run.stdout)\n    (control_root/(name+'.stderr')).write_text(run.stderr)\n    records[name]={'exit_code':run.returncode,'last_stderr_line':run.stderr.splitlines()[-1] if run.stderr else '', 'output_exists':output.exists()}\nassert records['historical_baseline']['exit_code']==0\nassert all(records[k]['exit_code']!=0 for k in ('missing_first_declaration','duplicate_first_declaration','sorry_axon_first_declaration','positive_native_injected'))\nbaseline=json.loads((control_root/'historical_baseline.json').read_text())\nprint(json.dumps({'scope':'HELPER CONTROLS ONLY: historical Oct05 log and synthetic corruptions; not current LC build or axioms evidence','control_root':str(control_root),'helper_sha256':hashlib.sha256(helper.read_bytes()).hexdigest(),'historical_gzip_sha256':hashlib.sha256(historical.read_bytes()).hexdigest(),'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'baseline_groups':baseline['groups'],'baseline_declaration_count':baseline['declaration_count'],'controls':records},sort_keys=True))\n"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350317.0131874,
+      "exit_code": 1,
+      "seconds": 0.039,
+      "logs": [
+        {
+          "path": "logs/axiom-parser-helper-controls.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "logs/axiom-parser-helper-controls.stderr.log",
+          "bytes": 674,
+          "sha256": "8e2ceccf1e362e8ef59fbb2ead89ab3119b7293c2323c5a8e6c7b330f07a17be"
+        }
+      ]
+    },
+    {
+      "name": "bundle-output-check",
+      "argv": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/check_bundle.py"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350931.6329448,
+      "exit_code": 0,
+      "seconds": 0.163,
+      "logs": [
+        {
+          "path": "logs/bundle-output-check.stdout.log",
+          "bytes": 135,
+          "sha256": "28a8ad512201b1b72e95e525ce83ebe45628df6fd8a70591e731406d5e672047"
+        },
+        {
+          "path": "logs/bundle-output-check.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "c44-algorithm-audit",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_c44_algorithm_audit.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350099.8336027,
+      "exit_code": 0,
+      "seconds": 0.707,
+      "logs": [
+        {
+          "path": "logs/c44-algorithm-audit.stdout.log",
+          "bytes": 72,
+          "sha256": "6598ac8dacfcbcb1c3bada651ad16ab744b56679b5fbff10b06b8d5ece6dc386"
+        },
+        {
+          "path": "logs/c44-algorithm-audit.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "c44-full-default",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_c44.py",
+        "--stage",
+        "full",
+        "--check",
+        "--jobs",
+        "8"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350044.35911,
+      "exit_code": 0,
+      "seconds": 12.679,
+      "logs": [
+        {
+          "path": "logs/c44-full-default.stdout.log",
+          "bytes": 94,
+          "sha256": "d36c66797c0501f34028583bc2103a8192c9995a391f07a18330161288ddab2b"
+        },
+        {
+          "path": "logs/c44-full-default.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "c44-full-seed17",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_c44.py",
+        "--stage",
+        "full",
+        "--check",
+        "--jobs",
+        "8"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_unix": 1791350070.6708994,
+      "exit_code": 0,
+      "seconds": 11.487,
+      "logs": [
+        {
+          "path": "logs/c44-full-seed17.stdout.log",
+          "bytes": 94,
+          "sha256": "67ae1c40bc61b69907946e6c5f2fbc84cf7ea4cefd4e265b93477da2b04b4b1a"
+        },
+        {
+          "path": "logs/c44-full-seed17.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "c44-input-audit-diagnostic-normalized",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "-c",
+        "import hashlib, importlib, json, sys\nsys.path.insert(0, \"scripts\")\nm = importlib.import_module(\"c5_excess_two_c44_input_audit\")\nsaved_bytes = m.OUTPUT.read_bytes()\nsaved = json.loads(saved_bytes)\ncomputed_bytes = m.encoded(m.audit())\ncomputed = json.loads(computed_bytes)\ndifferences = []\ndef walk(a, b, path=\"$\"):\n    if type(a) is not type(b):\n        differences.append({\"path\":path, \"saved\":a, \"computed\":b})\n    elif isinstance(a, dict):\n        for key in sorted(set(a) | set(b)):\n            if key not in a or key not in b:\n                differences.append({\"path\":path+\".\"+str(key), \"saved\":a.get(key), \"computed\":b.get(key)})\n            else:\n                walk(a[key], b[key], path+\".\"+str(key))\n    elif isinstance(a, list):\n        if len(a) != len(b):\n            differences.append({\"path\":path+\".length\", \"saved\":len(a), \"computed\":len(b)})\n        for idx,(x,y) in enumerate(zip(a,b)):\n            walk(x,y,path+\"[\"+str(idx)+\"]\")\n    elif a != b:\n        differences.append({\"path\":path, \"saved\":a, \"computed\":b})\nwalk(saved, computed)\nlayer = computed[\"layers\"][6]\nprint(json.dumps({\"saved_sha256\":hashlib.sha256(saved_bytes).hexdigest(),\"computed_sha256\":hashlib.sha256(computed_bytes).hexdigest(),\"saved_bytes\":len(saved_bytes),\"computed_bytes\":len(computed_bytes),\"difference_count\":len(differences),\"differences\":differences,\"changed_layer\":layer}, indent=2, sort_keys=True))\n"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350091.7300382,
+      "exit_code": 0,
+      "seconds": 2.513,
+      "logs": [
+        {
+          "path": "logs/c44-input-audit-diagnostic-normalized.stdout.log",
+          "bytes": 14379,
+          "sha256": "d8681177a6fd4f3c4e6b7a229cc5fe58b0d40ba8d835699c0be6de1fbda1c28a"
+        },
+        {
+          "path": "logs/c44-input-audit-diagnostic-normalized.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "c44-input-audit-diagnostic",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "-c",
+        "import hashlib, importlib, json, sys\nsys.path.insert(0, \"scripts\")\nm = importlib.import_module(\"c5_excess_two_c44_input_audit\")\nsaved_bytes = m.OUTPUT.read_bytes()\nsaved = json.loads(saved_bytes)\ncomputed = m.audit()\ncomputed_bytes = m.encoded(computed)\ndifferences = []\ndef walk(a, b, path=\"$\"):\n    if type(a) is not type(b):\n        differences.append({\"path\":path, \"saved\":a, \"computed\":b})\n    elif isinstance(a, dict):\n        for key in sorted(set(a) | set(b)):\n            if key not in a or key not in b:\n                differences.append({\"path\":path+\".\"+str(key), \"saved\":a.get(key), \"computed\":b.get(key)})\n            else:\n                walk(a[key], b[key], path+\".\"+str(key))\n    elif isinstance(a, list):\n        if len(a) != len(b):\n            differences.append({\"path\":path+\".length\", \"saved\":len(a), \"computed\":len(b)})\n        for idx,(x,y) in enumerate(zip(a,b)):\n            walk(x,y,path+\"[\"+str(idx)+\"]\")\n    elif a != b:\n        differences.append({\"path\":path, \"saved\":a, \"computed\":b})\nwalk(saved, computed)\nprint(json.dumps({\"saved_sha256\":hashlib.sha256(saved_bytes).hexdigest(),\"computed_sha256\":hashlib.sha256(computed_bytes).hexdigest(),\"saved_bytes\":len(saved_bytes),\"computed_bytes\":len(computed_bytes),\"difference_count\":len(differences),\"differences\":differences}, indent=2, sort_keys=True))\n"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350059.9986086,
+      "exit_code": 0,
+      "seconds": 3.051,
+      "logs": [
+        {
+          "path": "logs/c44-input-audit-diagnostic.stdout.log",
+          "bytes": 3592,
+          "sha256": "4d5c8c6db0ec95dd965b5b8b05d0050bd9cb3d8d540a83c8a765964fbc9ec1e8"
+        },
+        {
+          "path": "logs/c44-input-audit-diagnostic.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "c44-input-audit",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_c44_input_audit.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350013.146504,
+      "exit_code": 1,
+      "seconds": 2.445,
+      "logs": [
+        {
+          "path": "logs/c44-input-audit.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "logs/c44-input-audit.stderr.log",
+          "bytes": 390,
+          "sha256": "413fe418726d706f7a8b5347b33d911ab86a5f71d525258969e75773b42c4ffe"
+        }
+      ]
+    },
+    {
+      "name": "c44-provenance-classification-review",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "-c",
+        "import gzip, hashlib, json, re, subprocess\nfrom pathlib import Path\naudit = Path(\"/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout\")\nclone = Path(\"/tmp/math-m3-ba0b447\")\nsummary = json.loads((audit/\"provenance-summary.json\").read_bytes())\nc44 = json.loads((audit/\"c44-summary.json\").read_bytes())\nassert c44[\"suite_status\"] == \"FAIL\" and c44[\"failed_checks\"] == 1\nassert c44[\"finding\"][\"id\"] == \"M3-C44-INPUT-AUDIT-001\"\nassert c44[\"finding\"][\"diagnostic\"][\"difference_count\"] == 2\nassert {d[\"path\"] for d in c44[\"finding\"][\"diagnostic\"][\"differences\"]} == {\"$.layers[6].es_source_present\", \"$.layers[6].es_source_hash_matches\"}\nassert c44[\"finding\"][\"candidate_source_or_saved_artifact_repaired\"] is False\nassert [d[\"source\"] for d in summary[\"historical_review_leaf_comparison\"]] == [\"artifacts/c5_excess_two_e4/reductions.json\", \"artifacts/c5_excess_two_e5/controls.json\", \"artifacts/c5_excess_two_e4c/summary.json\"]\nbranches = next(d for d in summary[\"comparisons\"] if d[\"name\"] == \"E5_branches\")\nassert branches[\"strict_byte_status\"] == \"FAIL\" and branches[\"exact_leaf_allowlist_match\"]\nassert branches[\"allowed_leaf_paths\"] == [\"/sources_sha256/docs/c5_excess_two_mixed_core_spokes.md\"]\nassert summary[\"new_finding\"][\"id\"] == \"M3-PROV-E5-BRANCHES\"\nassert all(entry[\"strict_byte_status\"] == \"FAIL\" for entry in summary[\"comparisons\"])\nassert summary[\"strict_commands\"][\"e5_branches\"][\"exit_code\"] == 1\nwhitespace = json.loads((audit/\"whitespace-comparison.json\").read_bytes())\nhistorical = gzip.decompress((clone/\"artifacts/c5_integrate_branch_review/logs/branch_whitespace.log.gz\").read_bytes())\ncurrent = (audit/\"logs/provenance_branch_whitespace.stdout.log\").read_bytes()\nassert historical == current\ndiagnostics = [line for line in current.decode().splitlines() if re.match(r\"^(.+):(\\d+): (.+)$\",line)]\nassert len(diagnostics) == whitespace[\"current_count\"] == whitespace[\"historical_count\"] == 86\nassert whitespace[\"new_diagnostics\"] == whitespace[\"resolved_diagnostics\"] == []\nfor entry in whitespace[\"unchanged_exception_source_bytes\"]:\n    prior = subprocess.check_output([\"git\",\"show\",summary[\"reference_review_sha\"]+\":\"+entry[\"path\"]],cwd=clone)\n    candidate = subprocess.check_output([\"git\",\"show\",summary[\"candidate_sha\"]+\":\"+entry[\"path\"]],cwd=clone)\n    assert prior == candidate and hashlib.sha256(candidate).hexdigest() == entry[\"candidate\"][\"sha256\"]\nassert whitespace[\"full_branch_exit_code\"] == 2 and whitespace[\"candidate_parent_diff_exit_code\"] == 0\nmd = (audit/\"c44-summary.md\").read_text()\nassert all(line == line.rstrip() for line in md.splitlines())\nprint(json.dumps({\"review_status\":\"PASS\",\"c44_presence_drift\":\"separate candidate finding; original strict FAIL retained\",\"e5_branches\":\"new document-hash finding; separate from three historical FAILs\",\"branch_whitespace\":{\"diagnostics\":86,\"raw_identical_to_historical\":True,\"exception_source_files\":len(whitespace[\"unchanged_exception_source_bytes\"]),\"full_branch_exit_code\":2,\"candidate_parent_diff_exit_code\":0},\"c44_summary_md\":{\"trailing_whitespace\":0,\"sha256\":hashlib.sha256(md.encode()).hexdigest()}}))\n"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350339.7640088,
+      "exit_code": 0,
+      "seconds": 0.053,
+      "logs": [
+        {
+          "path": "logs/c44-provenance-classification-review.stdout.log",
+          "bytes": 489,
+          "sha256": "f52e9a576dcf6954e94bbda19447b4bf1180f3ee527dd971648bfedbf24b508c"
+        },
+        {
+          "path": "logs/c44-provenance-classification-review.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "c44-small",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_c44.py",
+        "--stage",
+        "small",
+        "--check",
+        "--jobs",
+        "8"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350030.6394649,
+      "exit_code": 0,
+      "seconds": 9.468,
+      "logs": [
+        {
+          "path": "logs/c44-small.stdout.log",
+          "bytes": 150,
+          "sha256": "77ad35fab7eec6f5e383346badd9ffa89d18589fd62a6eda17d685d5c6baaaa2"
+        },
+        {
+          "path": "logs/c44-small.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "c44p-independent-default",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_c44p_independent.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350115.8453753,
+      "exit_code": 0,
+      "seconds": 2.713,
+      "logs": [
+        {
+          "path": "logs/c44p-independent-default.stdout.log",
+          "bytes": 344,
+          "sha256": "6ad61aac7430c5c6a7c3d9508cff3327a370695e5e10e5793ae4292f00a501df"
+        },
+        {
+          "path": "logs/c44p-independent-default.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "c44p-independent-seed17",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_c44p_independent.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_unix": 1791350148.0350072,
+      "exit_code": 0,
+      "seconds": 2.579,
+      "logs": [
+        {
+          "path": "logs/c44p-independent-seed17.stdout.log",
+          "bytes": 344,
+          "sha256": "6ad61aac7430c5c6a7c3d9508cff3327a370695e5e10e5793ae4292f00a501df"
+        },
+        {
+          "path": "logs/c44p-independent-seed17.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "c44p-screen-default",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_c44p_screen.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350105.6230025,
+      "exit_code": 0,
+      "seconds": 0.939,
+      "logs": [
+        {
+          "path": "logs/c44p-screen-default.stdout.log",
+          "bytes": 205,
+          "sha256": "e8465f09be75b89da49b03b862ed8331217577f98ab5b2de80311f923b2e3e91"
+        },
+        {
+          "path": "logs/c44p-screen-default.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "c44p-screen-seed17",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_c44p_screen.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_unix": 1791350137.5497136,
+      "exit_code": 0,
+      "seconds": 0.864,
+      "logs": [
+        {
+          "path": "logs/c44p-screen-seed17.stdout.log",
+          "bytes": 205,
+          "sha256": "e8465f09be75b89da49b03b862ed8331217577f98ab5b2de80311f923b2e3e91"
+        },
+        {
+          "path": "logs/c44p-screen-seed17.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "c44p-two-private-default",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_c44p_two_private.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350111.5457804,
+      "exit_code": 0,
+      "seconds": 0.728,
+      "logs": [
+        {
+          "path": "logs/c44p-two-private-default.stdout.log",
+          "bytes": 1195,
+          "sha256": "32b9ff5a9d1e955bbbc3fef03a7312abea9edb676b2eb365484927703544bb0c"
+        },
+        {
+          "path": "logs/c44p-two-private-default.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "c44p-two-private-seed17",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_c44p_two_private.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_unix": 1791350142.5152187,
+      "exit_code": 0,
+      "seconds": 0.695,
+      "logs": [
+        {
+          "path": "logs/c44p-two-private-seed17.stdout.log",
+          "bytes": 1195,
+          "sha256": "32b9ff5a9d1e955bbbc3fef03a7312abea9edb676b2eb365484927703544bb0c"
+        },
+        {
+          "path": "logs/c44p-two-private-seed17.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "checkout-diff",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350024.2469044,
+      "exit_code": 0,
+      "seconds": 0.531,
+      "logs": [
+        {
+          "path": "logs/checkout-diff.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "logs/checkout-diff.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "checkout-final-identity",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD",
+        "origin/main"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {},
+      "started_unix": 1791350819.5345292,
+      "exit_code": 0,
+      "seconds": 0.001,
+      "logs": [
+        {
+          "path": "logs/checkout-final-identity.stdout.log",
+          "bytes": 82,
+          "sha256": "e3bc7308c3e5026063a7890db20b86099954919eb0058652eb6c2ad7c02f8cba"
+        },
+        {
+          "path": "logs/checkout-final-identity.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "checkout-final-status",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {},
+      "started_unix": 1791350818.9206657,
+      "exit_code": 0,
+      "seconds": 0.578,
+      "logs": [
+        {
+          "path": "logs/checkout-final-status.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "logs/checkout-final-status.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "controls-summary-check",
+      "argv": [
+        "python3",
+        "-c",
+        "\nimport hashlib,json,subprocess\nfrom pathlib import Path\naudit=Path('/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout')\ncheckout=Path('/tmp/math-m3-ba0b447')\ncandidate='ba0b447f09617591d9f2ba81c988f537af771791'\nassert subprocess.check_output(['git','rev-parse','HEAD'],cwd=checkout,text=True).strip()==candidate\ndef digest(path):\n    raw=path.read_bytes()\n    return {'path':str(path.relative_to(checkout)) if path.is_relative_to(checkout) else str(path.relative_to(audit)),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}\ndef load(path):return json.loads(path.read_text())\ndef statuses(values):return {status:values.get(status,0) for status in ('triggered and holds','not triggered','counterexample')}\nnames=['u1-default','u1-seed17','mixed-verifier','d9-e4-default','d9-e4-seed17','d9-e5-default','d9-e5-seed17','d9-e6-default','d9-e6-seed17']\ncommands={name:load(audit/'commands'/f'{name}.json') for name in names}\nassert all(v['exit_code']==0 for v in commands.values())\npairs={}\nfor prefix in ('u1','d9-e4','d9-e5','d9-e6'):\n    pairs[prefix]={stream:(audit/'logs'/f'{prefix}-default.{stream}.log').read_bytes()==(audit/'logs'/f'{prefix}-seed17.{stream}.log').read_bytes() for stream in ('stdout','stderr')}\nassert all(all(v.values()) for v in pairs.values())\nu1=load(audit/'logs/u1-default.stdout.log')\nassert u1['cores']==344 and u1['restorations']==3498 and u1['independent_restored_row_checks']==34980 and u1['target_hits']==0\nassert sum(u1['family_core_counts'].values())==344 and sum(u1['family_restoration_counts'].values())==3498 and sum(u1['sigma_histogram'].values())==3498\nu1['inputs']=[digest(checkout/name) for name in ('scripts/c5_excess_two_no_mixed_core44.py','artifacts/c5_excess_two_mixed_omission/observations.json','artifacts/c5_excess_two_no_mixed_core44/observations.json')]\nsaved_mixed=checkout/'audits/2026-10-07-c44pp-mixed-audit/validation.json'\nnew_mixed=audit/'mixed-validation.json'\nold=load(saved_mixed);new=load(new_mixed)\nmixed={}\nfor name in ('mixed_core_spokes','mixed_core_spoke_unary','mixed_core_two_unary','mixed_omission'):\n    assert old[name]['input_sha256']==new[name]['input_sha256'],name+' input hashes differ'\n    assert old[name]['counts']==new[name]['counts'],name+' counts differ'\n    assert old[name]['status']==new[name]['status']=='PASS',name+' status differs'\n    for rel,expected in new[name]['input_sha256'].items():assert digest(checkout/rel)['sha256']==expected,rel+' content hash differs'\n    mixed[name]={'status':new[name]['status'],'counts':new[name]['counts'],'input_sha256':new[name]['input_sha256'],'input_sha256_equal':True,'counts_equal':True}\nassert old==new,'Other mixed validation data differs'\nmixed['comparison']={'saved':digest(saved_mixed),'fresh':digest(new_mixed),'all_parsed_fields_equal':old==new,'bytes_equal':saved_mixed.read_bytes()==new_mixed.read_bytes(),'verifier_sha256':new['verifier_sha256']}\nd9={}\nfor kind in ('e4','e5','e6'):\n    certificate=checkout/'audits/2026-10-06-task-d9'/f'{kind}_controls.json'\n    payload=load(certificate);stdout=load(audit/'logs'/f'd9-{kind}-default.stdout.log')\n    d9[kind]={'checker':digest(checkout/'audits/2026-10-06-task-d9'/f'audit_{kind}_controls.py'),'saved_certificate':digest(certificate),'saved_baseline':payload['baseline'],'stdout_summary':stdout}\ne4=load(checkout/'audits/2026-10-06-task-d9/e4_controls.json');e5=load(checkout/'audits/2026-10-06-task-d9/e5_controls.json');e6=load(checkout/'audits/2026-10-06-task-d9/e6_controls.json')\nassert len(e4['graphs'])==54 and len(e5['controls'])==63 and e6['source_orbits']==9 and e6['D5_cases']==90\nd9['e4']['normalized_control_totals']={name:statuses(v) for name,v in e4['totals'].items()}\nd9['e4']['selected_three_row_premise']=statuses(e4['totals']['selected-three-row-premise'])\nassert d9['e4']['selected_three_row_premise']=={'triggered and holds':0,'not triggered':54,'counterexample':0}\nassert all(v.get('counterexample',0)==0 for v in e4['totals'].values())\nfor collection in e5['statistics'].values():assert all(v['counterexample']==0 for topic in collection.values() for v in topic.values())\nexact=e5['statistics']['exact_E5_family']\nassert all(v['triggered and holds']==0 and v['not triggered']==(54 if family=='NA' else 9) for topic in exact.values() for family,v in topic.items())\nd9['e5']['exact_E5_family_zero_trigger_topics']=sorted(exact)\nd9['e5']['exact_family_source_premise']={'triggered and holds':0,'not triggered':63,'counterexample':0,'NA':54,'AD':9}\nd9['e6']['selected_three_row_premise']={'source_orbits':9,'D5_cases':90,'triggered_source_orbits':sum(orbit['triple_triggered_cases']>0 for orbit in e6['source_orbit_summary']),'triggered_D5_cases':sum(orbit['triple_triggered_cases'] for orbit in e6['source_orbit_summary'])}\nassert d9['e6']['selected_three_row_premise']['triggered_source_orbits']==0 and d9['e6']['selected_three_row_premise']['triggered_D5_cases']==0\nassert all(v['counterexample']==0 for v in e6['statistics'].values()) and sum(orbit['counterexamples'] for orbit in e6['source_orbit_summary'])==0\nd9['counterexamples']=0\nsummary={'schema':'m3-fresh-u1-mixed-d9-replay-v1','candidate_sha':candidate,'checkout':str(checkout),'status':'PASS','commands':commands,'seed17_log_byte_comparisons':pairs,'u1':u1,'mixed':mixed,'d9':d9,'scope_limits':['Fresh-checkout replay of frozen checkers and certificates; no M2 paper audit.','U1 finite necessary domain only: 344 cores, 3498 restorations, 34980 full-row checks.','Selected three-row source premises: E4 0/54, E5 0/63, E6 0/9 source orbits and 0/90 D5 transported cases.','Zero-trigger premises remain not triggered; zero counterexamples apply only to the fixed controls.','No new Lean theorem, source-realizability example, U2-U4 exclusion, E5 new proof, or general-theorem claim.','Candidate source and historical artifacts were not rewritten.']}\nout=audit/'controls-summary.json'\nwith out.open('x') as stream:json.dump(summary,stream,ensure_ascii=False,sort_keys=True,indent=2);stream.write('\\n')\nrows=['# M3：U1、指定 mixed、D9 全新 checkout 重播','','受驗候選：'+candidate+'；checkout：'+str(checkout)+'。','', '**本分項驗證 PASS：指定 9 次 checker／verifier 命令皆 exit 0。** 全部使用 PYTHONDONTWRITEBYTECODE=1；完整命令、exit、耗時、stdout／stderr 的 bytes 與 SHA256 見 [controls-summary.json](controls-summary.json) 與 commands/、logs/。','', '| 項目 | fresh 結果 |','| --- | --- |','| U1 default／seed17 --check | 344 核心、3,498 接回、34,980 逐列查詢；target hits = 0；兩份 stdout／stderr 逐 bytes 相同。 |','| 指定 mixed verifier | 新輸出 [mixed-validation.json](mixed-validation.json)；四家族 input SHA256、全部 counts、status 與原 validation 相同；完整 JSON bytes 亦相同。 |','| D9 E4 default／seed17 --check | 54 NA；兩份 stdout／stderr 逐 bytes 相同；N-diagonal／N2 的各自 11 觸發、43 未觸發。 |','| D9 E5 default／seed17 --check | 54 NA + 9 AD；兩份 stdout／stderr 逐 bytes 相同；exact E5 topics 各 0 觸發／63 未觸發。 |','| D9 E6 default／seed17 --check | 9 AD source orbits、90 同圖 D5 transports；兩份 stdout／stderr 逐 bytes 相同。 |','','Mixed 詳細域：雙 spoke 126 核心／570 marked cores／5,700 核心列／6,068 接回；spoke＋unary 3,732 接回／37,320 目標比較／89,088 支援查詢／2,640 subdivisions；雙 unary 368,859 UNSAT proofs／17,189 compatible assignments／3,180 subdivisions；mixed omission 344 核心／3,440 核心列／9,152 支援查詢／188 subdivisions，另 3,386 marked compressions 與 2,112 transfer queries。','', '指定三拒絕列的完整來源前提仍是 **not triggered**：E4 0/54，E5 0/63，E6 0/9 source orbits、0/90 搬運 cases。三份 D9 控制中 counterexample 均為 0；這不驗證未觸發前提，不構造完整 Σ933／941 來源。D9 certificate 中原 b2ca4520da50c9d2898ac6f8f966ac25df3f9609 字串是歷史 audit baseline；本次受驗 checkout 與 scripts 是上述候選 SHA。','', '本分項只重播既有 verifier／獨立 controls，沒有 M2 紙面稽核、Lean 驗證或新證明。U2–U4、其他 no-mixed core 與 single-root 例外、E5 新證明、source realizability 及一般定理界線維持保留。來源與歷史 artifact 未改寫；原 producer 的歷史 byte／provenance FAIL 不屬於這三份 D9 independent controls 的命令，須由 M3 其他分項另外報告。','']\nwith (audit/'controls-summary.md').open('x') as stream:stream.write('\\n'.join(rows))\nprint(json.dumps({'status':'PASS','candidate_sha':candidate,'commands':len(commands),'seed17_log_byte_comparisons':pairs,'mixed_validation_bytes_equal':mixed['comparison']['bytes_equal'],'summary':digest(out),'report':digest(audit/'controls-summary.md')},sort_keys=True))\n"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350199.791487,
+      "exit_code": 0,
+      "seconds": 0.93,
+      "logs": [
+        {
+          "path": "logs/controls-summary-check.stdout.log",
+          "bytes": 611,
+          "sha256": "970b718f2927707d379ce29a6a718e6302cad064479eb4ce524c63877f1dd752"
+        },
+        {
+          "path": "logs/controls-summary-check.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "d9-e4-default",
+      "argv": [
+        "python3",
+        "audits/2026-10-06-task-d9/audit_e4_controls.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350019.6498303,
+      "exit_code": 0,
+      "seconds": 0.711,
+      "logs": [
+        {
+          "path": "logs/d9-e4-default.stdout.log",
+          "bytes": 974,
+          "sha256": "ee6cbdaa57a384acac97982bf7c1e71385e7ad403fbd72cf2e1717a5139aaf0f"
+        },
+        {
+          "path": "logs/d9-e4-default.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "d9-e4-seed17",
+      "argv": [
+        "python3",
+        "audits/2026-10-06-task-d9/audit_e4_controls.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_unix": 1791350028.4449313,
+      "exit_code": 0,
+      "seconds": 0.698,
+      "logs": [
+        {
+          "path": "logs/d9-e4-seed17.stdout.log",
+          "bytes": 974,
+          "sha256": "ee6cbdaa57a384acac97982bf7c1e71385e7ad403fbd72cf2e1717a5139aaf0f"
+        },
+        {
+          "path": "logs/d9-e4-seed17.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "d9-e5-default",
+      "argv": [
+        "python3",
+        "audits/2026-10-06-task-d9/audit_e5_controls.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350028.4458888,
+      "exit_code": 0,
+      "seconds": 8.143,
+      "logs": [
+        {
+          "path": "logs/d9-e5-default.stdout.log",
+          "bytes": 3519,
+          "sha256": "a531c0e68ebaa5c0e7623cbe1e6a0aede28a4ba06c153bdf6e5f28325940d203"
+        },
+        {
+          "path": "logs/d9-e5-default.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "d9-e5-seed17",
+      "argv": [
+        "python3",
+        "audits/2026-10-06-task-d9/audit_e5_controls.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_unix": 1791350050.7292247,
+      "exit_code": 0,
+      "seconds": 11.394,
+      "logs": [
+        {
+          "path": "logs/d9-e5-seed17.stdout.log",
+          "bytes": 3519,
+          "sha256": "a531c0e68ebaa5c0e7623cbe1e6a0aede28a4ba06c153bdf6e5f28325940d203"
+        },
+        {
+          "path": "logs/d9-e5-seed17.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "d9-e6-default",
+      "argv": [
+        "python3",
+        "audits/2026-10-06-task-d9/audit_e6_controls.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350028.4476662,
+      "exit_code": 0,
+      "seconds": 7.441,
+      "logs": [
+        {
+          "path": "logs/d9-e6-default.stdout.log",
+          "bytes": 2779,
+          "sha256": "d92f1823fd2d91b90babfe62f6a0e46b50bcb049544895c89499d09a94fdfe78"
+        },
+        {
+          "path": "logs/d9-e6-default.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "d9-e6-seed17",
+      "argv": [
+        "python3",
+        "audits/2026-10-06-task-d9/audit_e6_controls.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_unix": 1791350050.7210777,
+      "exit_code": 0,
+      "seconds": 10.553,
+      "logs": [
+        {
+          "path": "logs/d9-e6-seed17.stdout.log",
+          "bytes": 2779,
+          "sha256": "d92f1823fd2d91b90babfe62f6a0e46b50bcb049544895c89499d09a94fdfe78"
+        },
+        {
+          "path": "logs/d9-e6-seed17.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "docgraph-default",
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350023.9188733,
+      "exit_code": 0,
+      "seconds": 0.287,
+      "logs": [
+        {
+          "path": "logs/docgraph-default.stdout.log",
+          "bytes": 63,
+          "sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb"
+        },
+        {
+          "path": "logs/docgraph-default.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "docs",
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350023.3708026,
+      "exit_code": 0,
+      "seconds": 0.51,
+      "logs": [
+        {
+          "path": "logs/docs.stdout.log",
+          "bytes": 74,
+          "sha256": "7459345e03a3a14dd6af5d86aa7f78172b4f9b88389fe8cb802f523bcd3aa2e2"
+        },
+        {
+          "path": "logs/docs.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "lc-exporter",
+      "argv": [
+        "python3",
+        "scripts/export_excess_two_certificates.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350024.8160841,
+      "exit_code": 0,
+      "seconds": 0.138,
+      "logs": [
+        {
+          "path": "logs/lc-exporter.stdout.log",
+          "bytes": 353,
+          "sha256": "5b1d3b5d1b3c37dae3e7aac3bdf0ef955465bfa215688dd2aa68819dcc397392"
+        },
+        {
+          "path": "logs/lc-exporter.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "lean-axioms-result-check",
+      "argv": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/check_lean_axioms.py",
+        "--log",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/logs/lean-axioms.stdout.log",
+        "--output",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/lean-axioms-summary.json"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {},
+      "started_unix": 1791350829.243103,
+      "exit_code": 0,
+      "seconds": 0.036,
+      "logs": [
+        {
+          "path": "logs/lean-axioms-result-check.stdout.log",
+          "bytes": 860,
+          "sha256": "40964d97f09358416c3a7409eaef50d20a33d39f8836fe114ce00aba393ec033"
+        },
+        {
+          "path": "logs/lean-axioms-result-check.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "lean-axioms",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "Math/ExcessTwoCertificatesAudit.lean"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {},
+      "started_unix": 1791350807.0832496,
+      "exit_code": 0,
+      "seconds": 4.47,
+      "logs": [
+        {
+          "path": "logs/lean-axioms.stdout.log",
+          "bytes": 112779,
+          "sha256": "dd976c7b6e533d2a88c6e8795711b7ab3a51d327e5c13aa55358ac8c86cb6c67"
+        },
+        {
+          "path": "logs/lean-axioms.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "lean-build",
+      "argv": [
+        "lake",
+        "build",
+        "Math",
+        "Math.GeneratedExcessTwoCertificates",
+        "Math.ExcessTwoCertificatesAudit"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {},
+      "started_unix": 1791350034.6891203,
+      "exit_code": 0,
+      "seconds": 757.303,
+      "logs": [
+        {
+          "path": "logs/lean-build.stdout.log",
+          "bytes": 396081,
+          "sha256": "0cd75c0cc3e67a5a9ea0231e99055270b81e29e166da4c7e1190262f7ce394b1"
+        },
+        {
+          "path": "logs/lean-build.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "mixed-verifier",
+      "argv": [
+        "python3",
+        "audits/2026-10-07-c44pp-mixed-audit/verify.py",
+        "--output",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/mixed-validation.json"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350019.6435049,
+      "exit_code": 0,
+      "seconds": 25.383,
+      "logs": [
+        {
+          "path": "logs/mixed-verifier.stdout.log",
+          "bytes": 727,
+          "sha256": "0312ab38f6fcf9297f417e280be44312cebf643ffb946152de68bf0bd63ccc65"
+        },
+        {
+          "path": "logs/mixed-verifier.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "original-final-status",
+      "argv": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_overrides": {},
+      "started_unix": 1791350819.5701928,
+      "exit_code": 0,
+      "seconds": 0.057,
+      "logs": [
+        {
+          "path": "logs/original-final-status.stdout.log",
+          "bytes": 149,
+          "sha256": "a7f318431a353659914e13c806e1d1ebfdb2a9e99ff68fc857e0b778c5020217"
+        },
+        {
+          "path": "logs/original-final-status.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "provenance_branch_whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090",
+        "ba0b447f09617591d9f2ba81c988f537af771791"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350090.0541763,
+      "exit_code": 2,
+      "seconds": 0.203,
+      "logs": [
+        {
+          "path": "logs/provenance_branch_whitespace.stdout.log",
+          "bytes": 12380,
+          "sha256": "2868ebd2cf8e43057913481873577faa91a9f85a2df61b408f3b8707a6bad4d3"
+        },
+        {
+          "path": "logs/provenance_branch_whitespace.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "provenance_candidate_parent_whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "ba0b447f09617591d9f2ba81c988f537af771791^",
+        "ba0b447f09617591d9f2ba81c988f537af771791"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350090.0543518,
+      "exit_code": 0,
+      "seconds": 0.005,
+      "logs": [
+        {
+          "path": "logs/provenance_candidate_parent_whitespace.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "logs/provenance_candidate_parent_whitespace.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "provenance_dependency_inventory",
+      "argv": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/provenance_inventory.py"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350081.8750482,
+      "exit_code": 0,
+      "seconds": 12.374,
+      "logs": [
+        {
+          "path": "logs/provenance_dependency_inventory.stdout.log",
+          "bytes": 3454,
+          "sha256": "1fd56f1e06f63519f3863e63f8b652560167af80fadffceb4cd594998aa2983b"
+        },
+        {
+          "path": "logs/provenance_dependency_inventory.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "provenance_dependency_inventory_v2",
+      "argv": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/provenance_inventory.py"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350118.5814843,
+      "exit_code": 0,
+      "seconds": 4.812,
+      "logs": [
+        {
+          "path": "logs/provenance_dependency_inventory_v2.stdout.log",
+          "bytes": 1148,
+          "sha256": "901874d0795e4e21b28ff8a922ea277968faf2db7bb51887a3983c297a7d1e3b"
+        },
+        {
+          "path": "logs/provenance_dependency_inventory_v2.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "provenance_e4_reductions_fresh",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e4_reductions.py",
+        "--output",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/provenance/e4_reductions.json"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350137.518166,
+      "exit_code": 0,
+      "seconds": 0.043,
+      "logs": [
+        {
+          "path": "logs/provenance_e4_reductions_fresh.stdout.log",
+          "bytes": 274,
+          "sha256": "8879daa32537d75704813c015ce88ddb8eda45799e91d3eba1f4e3ab00c87340"
+        },
+        {
+          "path": "logs/provenance_e4_reductions_fresh.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "provenance_e4_reductions_strict",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e4_reductions.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350026.9347212,
+      "exit_code": 1,
+      "seconds": 0.048,
+      "logs": [
+        {
+          "path": "logs/provenance_e4_reductions_strict.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "logs/provenance_e4_reductions_strict.stderr.log",
+          "bytes": 408,
+          "sha256": "2a0a3ad559057c03328699f3859b370b6682d409a3df9530f01312660e9aa173"
+        }
+      ]
+    },
+    {
+      "name": "provenance_e4c_controls_strict",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e4c_controls.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350026.9469204,
+      "exit_code": 1,
+      "seconds": 10.188,
+      "logs": [
+        {
+          "path": "logs/provenance_e4c_controls_strict.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "logs/provenance_e4c_controls_strict.stderr.log",
+          "bytes": 539,
+          "sha256": "f540e7fb36a8ae70f1d7c0dd5bb9ea910dc05bb8bda0b192ae4635011ef83704"
+        }
+      ]
+    },
+    {
+      "name": "provenance_e4c_fresh",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e4c_controls.py",
+        "--output",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/provenance/e4c"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350137.8827176,
+      "exit_code": 0,
+      "seconds": 10.305,
+      "logs": [
+        {
+          "path": "logs/provenance_e4c_fresh.stdout.log",
+          "bytes": 76,
+          "sha256": "90d2113381705a450ebbb7fa99ec2e7274c728aa05636061d81eda23ea566dc7"
+        },
+        {
+          "path": "logs/provenance_e4c_fresh.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "provenance_e5_branches_strict",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e5_branches.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350026.9418764,
+      "exit_code": 1,
+      "seconds": 0.052,
+      "logs": [
+        {
+          "path": "logs/provenance_e5_branches_strict.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "logs/provenance_e5_branches_strict.stderr.log",
+          "bytes": 396,
+          "sha256": "6b229e722db12f164d8e5ab861ef065e1c92f2de4b91fe197f30b3f83bcce5b1"
+        }
+      ]
+    },
+    {
+      "name": "provenance_e5_controls_fresh",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e5_controls.py",
+        "--output",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/provenance/e5_controls.json"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350137.6884565,
+      "exit_code": 0,
+      "seconds": 0.092,
+      "logs": [
+        {
+          "path": "logs/provenance_e5_controls_fresh.stdout.log",
+          "bytes": 185,
+          "sha256": "797f267cc9831bccdd79120ddb77d9c19218aab8a60b32a2cd32642f701e7a89"
+        },
+        {
+          "path": "logs/provenance_e5_controls_fresh.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "provenance_e5_controls_strict",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e5_controls.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350026.9382997,
+      "exit_code": 1,
+      "seconds": 0.092,
+      "logs": [
+        {
+          "path": "logs/provenance_e5_controls_strict.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "logs/provenance_e5_controls_strict.stderr.log",
+          "bytes": 52,
+          "sha256": "81556e07d5f438be2e75dd22c06d66d77295942e30d083e0a6ab26c351280b79"
+        }
+      ]
+    },
+    {
+      "name": "provenance_first_pass_seal",
+      "argv": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/provenance_finish.py"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350298.5057933,
+      "exit_code": 1,
+      "seconds": 0.083,
+      "logs": [
+        {
+          "path": "logs/provenance_first_pass_seal.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "logs/provenance_first_pass_seal.stderr.log",
+          "bytes": 677,
+          "sha256": "582c26468c81f4cbfa0ac7040299c6a8a81f37bb4d1c4d634bd203271ad2da52"
+        }
+      ]
+    },
+    {
+      "name": "provenance_first_pass_seal_after_cross_device_copy",
+      "argv": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/provenance_finish.py"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350310.8246403,
+      "exit_code": 0,
+      "seconds": 0.075,
+      "logs": [
+        {
+          "path": "logs/provenance_first_pass_seal_after_cross_device_copy.stdout.log",
+          "bytes": 670,
+          "sha256": "37317e6a8c81ca8165992abc9c5ee769d393e5d14a7a8a1afb78ff6b8e04c221"
+        },
+        {
+          "path": "logs/provenance_first_pass_seal_after_cross_device_copy.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "provenance_leaf_comparison",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/provenance_compare.py"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350210.785364,
+      "exit_code": 0,
+      "seconds": 0.102,
+      "logs": [
+        {
+          "path": "logs/provenance_leaf_comparison.stdout.log",
+          "bytes": 2019,
+          "sha256": "58435e6f28068ddc4b4994a622deac19bd6bdb4a5aacf7587b4f7fcdcc9d662d"
+        },
+        {
+          "path": "logs/provenance_leaf_comparison.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "sources-after",
+      "argv": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/snapshot_sources.py",
+        "--output",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/sources-after.json",
+        "--compare",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/sources-before.json"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {},
+      "started_unix": 1791350808.2431917,
+      "exit_code": 0,
+      "seconds": 4.668,
+      "logs": [
+        {
+          "path": "logs/sources-after.stdout.log",
+          "bytes": 219,
+          "sha256": "998e549813288b5b2f7433b82956331b1053f5514db043ca3e3098aeb7c52c7c"
+        },
+        {
+          "path": "logs/sources-after.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "sources-before",
+      "argv": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/snapshot_sources.py",
+        "--output",
+        "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/sources-before.json"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {},
+      "started_unix": 1791349997.023675,
+      "exit_code": 0,
+      "seconds": 4.627,
+      "logs": [
+        {
+          "path": "logs/sources-before.stdout.log",
+          "bytes": 156,
+          "sha256": "1ad596b0ae67152046e0214754b7d9f3d29cd1ee41ed3629e24058f956825440"
+        },
+        {
+          "path": "logs/sources-before.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "u1-default",
+      "argv": [
+        "python3",
+        "scripts/c5_excess_two_no_mixed_core44.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_unix": 1791350019.6432073,
+      "exit_code": 0,
+      "seconds": 3.265,
+      "logs": [
+        {
+          "path": "logs/u1-default.stdout.log",
+          "bytes": 1020,
+          "sha256": "b3bb3530dbe236c19e853bfdcf5cc2f0ccac5d74ecd3244fa078654d2774e4f6"
+        },
+        {
+          "path": "logs/u1-default.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "u1-seed17",
+      "argv": [
+        "python3",
+        "scripts/c5_excess_two_no_mixed_core44.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-m3-ba0b447",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_unix": 1791350050.731874,
+      "exit_code": 0,
+      "seconds": 5.459,
+      "logs": [
+        {
+          "path": "logs/u1-seed17.stdout.log",
+          "bytes": 1020,
+          "sha256": "b3bb3530dbe236c19e853bfdcf5cc2f0ccac5d74ecd3244fa078654d2774e4f6"
+        },
+        {
+          "path": "logs/u1-seed17.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ],
+  "setup": "setup.json",
+  "environment": "environment.json",
+  "lean_environment": "lean-environment.json",
+  "lean_axioms": "lean-axioms-summary.json",
+  "source_inventory_before": "sources-before.json.gz",
+  "source_inventory_after": "sources-after.json.gz",
+  "zero_source_drift": true,
+  "source_entries": 7190,
+  "source_bytes": 8442824780,
+  "summaries": [
+    "controls-summary.json",
+    "c44-summary.json",
+    "provenance-summary.json"
+  ],
+  "candidate_specific_findings": [
+    "M3-C44-INPUT-AUDIT-001",
+    "M3-PROV-E5-BRANCHES"
+  ],
+  "historical_byte_failures_preserved": [
+    "E4 reductions",
+    "E5 controls",
+    "E4C"
+  ],
+  "mathematical_payload_differences": [],
+  "whitespace_exceptions": "whitespace-comparison.json",
+  "not_rerun": [
+    "ES full search and seed17 corpus search",
+    "ES acceptance",
+    "ER full search and seed17",
+    "E3 four ordinary checkers",
+    "E4 control",
+    "E5 local",
+    "E6 three ordinary checkers",
+    "Kprime",
+    "D8"
+  ],
+  "limits": [
+    "M2 paper audit is separate",
+    "no new k search, arbitrary-size theorem or source realization",
+    "LC is an explicit local target outside default CI",
+    "no commit, push, PR, CI dispatch or merge"
+  ]
+}

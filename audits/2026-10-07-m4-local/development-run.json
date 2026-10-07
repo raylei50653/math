@@ -1,0 +1,32 @@
+{
+  "task": "M4-L",
+  "stage": "workspace verifier development",
+  "argv": [
+    "python3",
+    "/home/ray/developer/ai/math/audits/2026-10-07-m4-local/verify.py",
+    "--repo",
+    "/home/ray/developer/ai/math",
+    "--source",
+    "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout",
+    "--python",
+    "/home/ray/developer/ai/math/.venv/bin/python",
+    "--output",
+    "/home/ray/developer/ai/math/audits/2026-10-07-m4-local/workspace-review",
+    "--phase",
+    "workspace"
+  ],
+  "exit_code": 1,
+  "failing_internal_command": [
+    "git",
+    "-C",
+    "/home/ray/developer/ai/math",
+    "write-tree"
+  ],
+  "failing_internal_exit": 128,
+  "error": "fatal: Unable to create repo .git/index.lock: Read-only file system",
+  "preserved_executed_source": "development-verifier.py.txt",
+  "executed_source_bytes": 19059,
+  "executed_source_sha256": "e2ed6744920ed26dd786a0713e33603e7768e533b9758853556796e7df35a9ed",
+  "completed_checks": "workspace-review/commands.json",
+  "disposition": "All subprocess checks completed with their recorded expected exits; terminal metadata attempted a Git mutation. New verifier uses read-only rev-parse plus staged-diff hash. Independent checkout must validate corrected code; original process is not called PASS."
+}

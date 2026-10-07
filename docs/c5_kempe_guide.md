@@ -7,6 +7,15 @@
 本批成果及D至D₅稽核的發布驗證見[發布紀錄](history/2026-10-04-c5-parallel-progress-publish.md)；
 新checkout的凍結快照／完整輸出先依[封存還原說明](../audits/README.md)還原。
 
+U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定前提化約與完整必要域，
+上游分類／拓撲信任及來源正控制未觸發界線保留。
+[M3 fresh驗證](../audits/2026-10-07-m3-fresh-checkout/REPORT.md)經
+[監督補件](../audits/2026-10-07-merge-supervision/REPORT.md)驗收具名presence／文件hash例外；
+原strict FAIL及歷史whitespace保持原紀錄，不推升數學或Lean結論。
+最終文件版本的fresh provenance診斷及本地交付見
+[M4-L報告](../audits/2026-10-07-m4-local/REPORT.md)與
+[發布紀錄](history/2026-10-07-m4-local-delivery.md)；遠端驗收及可合併判定仍分開。
+
 ## 1. 目標與範圍
 
 研究固定來源圖上的換色、完整有序關係及計數限制，尋找可證的出口機制。
