@@ -1,0 +1,215 @@
+[
+  {
+    "name": "archive-restore",
+    "argv": [
+      "python3",
+      "tools/audit_archive.py",
+      "restore",
+      "--artifacts"
+    ],
+    "cwd": "/tmp/math-m4-local-independent",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "seconds": 41.803709,
+    "logs": [
+      {
+        "path": "archive-restore.stdout.log.gz",
+        "raw": {
+          "bytes": 139,
+          "sha256": "15bf96a18ee8926361b7a28a828718edad80f58db80a76d609547d12fb7a2e31"
+        },
+        "gzip": {
+          "bytes": 125,
+          "sha256": "c6ea215908cc59e33d14f1438f46dc43eb7dff7287ff85a3ba3cc1f9942fd273"
+        },
+        "byte_roundtrip": true
+      },
+      {
+        "path": "archive-restore.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "byte_roundtrip": true
+      }
+    ]
+  },
+  {
+    "name": "archive-verify",
+    "argv": [
+      "python3",
+      "tools/audit_archive.py",
+      "verify",
+      "--artifacts"
+    ],
+    "cwd": "/tmp/math-m4-local-independent",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "seconds": 18.600282,
+    "logs": [
+      {
+        "path": "archive-verify.stdout.log.gz",
+        "raw": {
+          "bytes": 138,
+          "sha256": "35ce6781c1950699746804a67785dfd51e8f1a70258e3fd9561f447ccc8f5b5e"
+        },
+        "gzip": {
+          "bytes": 127,
+          "sha256": "95a8aef44e2d676c86b912335bd8dae9bab6aa0cbdf43ce446ccd20b7758c04e"
+        },
+        "byte_roundtrip": true
+      },
+      {
+        "path": "archive-verify.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "byte_roundtrip": true
+      }
+    ]
+  },
+  {
+    "name": "artifact-status",
+    "argv": [
+      "python3",
+      "tools/artifacts.py",
+      "status"
+    ],
+    "cwd": "/tmp/math-m4-local-independent",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "seconds": 4.137884,
+    "logs": [
+      {
+        "path": "artifact-status.stdout.log.gz",
+        "raw": {
+          "bytes": 7,
+          "sha256": "63747808e6d89c0f1ebdb4dc8723a7e1840f029407c8715c3c0db3d13dee716d"
+        },
+        "gzip": {
+          "bytes": 27,
+          "sha256": "9b5550fddd5730ffa248ffc6991f139d06a0b40ba912659833f7f75c759a040a"
+        },
+        "byte_roundtrip": true
+      },
+      {
+        "path": "artifact-status.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "byte_roundtrip": true
+      }
+    ]
+  },
+  {
+    "name": "m4-seal",
+    "argv": [
+      "python3",
+      "audits/2026-10-07-m4-local/seal.py",
+      "--repo",
+      "/tmp/math-m4-local-independent",
+      "--check"
+    ],
+    "cwd": "/tmp/math-m4-local-independent",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "seconds": 0.138255,
+    "logs": [
+      {
+        "path": "m4-seal.stdout.log.gz",
+        "raw": {
+          "bytes": 180,
+          "sha256": "145bd3c50ede8765e31d2f38b1a569817350f1afe31624b80fae6f9b2e09ce57"
+        },
+        "gzip": {
+          "bytes": 155,
+          "sha256": "ed7e15db6c8d805e373cca03f5bbb436e8072515f0b6f739e1ec6846202522d0"
+        },
+        "byte_roundtrip": true
+      },
+      {
+        "path": "m4-seal.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "byte_roundtrip": true
+      }
+    ]
+  },
+  {
+    "name": "portable-m4-verification",
+    "argv": [
+      "python3",
+      "audits/2026-10-07-m4-local/verify.py",
+      "--repo",
+      "/tmp/math-m4-local-independent",
+      "--source",
+      "/tmp/math-m4-local-independent/audits/2026-10-07-m3-fresh-checkout",
+      "--python",
+      "/home/ray/developer/ai/math/.venv/bin/python",
+      "--output",
+      "/home/ray/developer/ai/math/audits/2026-10-07-m4-local/precommit-review",
+      "--phase",
+      "checkout"
+    ],
+    "cwd": "/tmp/math-m4-local-independent",
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "seconds": 78.145205,
+    "logs": [
+      {
+        "path": "portable-m4-verification.stdout.log.gz",
+        "raw": {
+          "bytes": 243,
+          "sha256": "0b2336158af101d3db66d3bc35bbc556930e30fa33eb4e65f29fb206a8f338f5"
+        },
+        "gzip": {
+          "bytes": 204,
+          "sha256": "4545f4a5210a53ad8fedc53e180f480e28401394bd48398e23ff5baf7a99aaf4"
+        },
+        "byte_roundtrip": true
+      },
+      {
+        "path": "portable-m4-verification.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "gzip": {
+          "bytes": 20,
+          "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+        },
+        "byte_roundtrip": true
+      }
+    ]
+  }
+]

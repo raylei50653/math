@@ -1,0 +1,2362 @@
+'FiveBoundary.ExcessTwo.check_from_parts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiveBoundary.ExcessTwo.check_finite_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiveBoundary.ExcessTwo.check_sound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ color_orbits_cover._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.extends_iff_sigma' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiveBoundary.ExcessTwo.accepted_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiveBoundary.ExcessTwo.row_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiveBoundary.ExcessTwo.boundaryRow_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiveBoundary.ExcessTwo.rows_exact_sigma' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ color_orbits_cover._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.deletion_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiveBoundary.ExcessTwo.reachInterior_sound' depends on axioms: [propext, Quot.sound]
+'FiveBoundary.ExcessTwo.connectedInterior_sound' depends on axioms: [propext, Quot.sound]
+'FiveBoundary.ExcessTwo.checkShape_sound' does not depend on any axioms
+'FiveBoundary.ExcessTwo.checkShape_interior_paths' depends on axioms: [propext, Quot.sound]
+'FiveBoundary.ExcessTwo.checkQ_sound' depends on axioms: [propext]
+'FiveBoundary.ExcessTwo.checkRotation_sound' depends on axioms: [propext, Quot.sound]
+'FiveBoundary.ExcessTwo.checkRotation_iff' depends on axioms: [propext, Quot.sound]
+'FiveBoundary.edgeCheck_exact' depends on axioms: [propext, Quot.sound]
+'FiveBoundary.color_orbits_cover' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ color_orbits_cover._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.certificate_count' depends on axioms: [propext]
+'FiveBoundary.ExcessTwo.Generated.all_certificates_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k3_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_ad_k6_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_ad_k6_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_ad_k7_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_ad_k9_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_ad_k9_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_ad_k9_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_ad_k9_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_ad_k9_orbit_0005_rejected._native.native_decide.ax_1,
+ cert_d6_k4_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_d6_k4_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0005_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0006_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0007_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0008_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0009_rejected._native.native_decide.ax_1,
+ cert_d6_k6_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_d6_k6_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_d6_k6_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_d6_k6_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0005_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0006_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0007_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0008_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0009_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0010_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0011_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0012_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0013_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0014_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0015_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0016_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0017_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0018_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0019_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0020_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0021_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0022_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0023_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0024_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0025_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0005_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0006_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0007_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0008_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0009_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0010_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0011_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0012_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0013_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0014_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0015_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0016_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0017_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0018_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0019_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0020_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0021_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0022_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0023_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0024_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0025_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0026_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0027_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0028_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0029_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0030_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0031_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0032_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0033_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0034_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0035_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0036_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0037_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0038_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0039_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0040_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0041_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0005_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0006_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0007_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0008_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0009_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0010_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0011_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0012_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0013_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0014_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0015_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0016_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0017_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0018_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0019_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0020_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0021_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0022_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0023_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0024_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0025_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0026_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0027_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0028_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0029_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0030_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0031_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0032_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0033_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0034_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0035_rejected._native.native_decide.ax_1,
+ cert_na_k6_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_na_k6_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_na_k6_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_na_k7_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_na_k7_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0005_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0006_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0007_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0008_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0009_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0010_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0011_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0012_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0013_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0014_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0015_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0016_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0017_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0018_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0019_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0020_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0021_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0022_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0005_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0006_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0007_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0008_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0009_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0010_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0011_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0012_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0013_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0014_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0015_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0016_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0017_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0018_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0019_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0020_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0021_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0022_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0023_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0024_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0025_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0026_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0027_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.all_certificates_sound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ color_orbits_cover._native.native_decide.ax_1,
+ cert_ad_k3_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_ad_k6_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_ad_k6_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_ad_k7_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_ad_k9_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_ad_k9_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_ad_k9_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_ad_k9_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_ad_k9_orbit_0005_rejected._native.native_decide.ax_1,
+ cert_d6_k4_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_d6_k4_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0005_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0006_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0007_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0008_rejected._native.native_decide.ax_1,
+ cert_d6_k5_orbit_0009_rejected._native.native_decide.ax_1,
+ cert_d6_k6_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_d6_k6_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_d6_k6_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_d6_k6_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0005_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0006_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0007_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0008_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0009_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0010_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0011_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0012_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0013_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0014_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0015_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0016_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0017_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0018_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0019_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0020_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0021_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0022_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0023_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0024_rejected._native.native_decide.ax_1,
+ cert_d6_k7_orbit_0025_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0005_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0006_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0007_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0008_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0009_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0010_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0011_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0012_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0013_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0014_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0015_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0016_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0017_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0018_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0019_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0020_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0021_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0022_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0023_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0024_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0025_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0026_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0027_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0028_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0029_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0030_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0031_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0032_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0033_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0034_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0035_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0036_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0037_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0038_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0039_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0040_rejected._native.native_decide.ax_1,
+ cert_d6_k8_orbit_0041_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0005_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0006_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0007_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0008_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0009_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0010_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0011_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0012_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0013_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0014_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0015_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0016_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0017_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0018_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0019_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0020_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0021_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0022_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0023_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0024_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0025_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0026_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0027_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0028_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0029_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0030_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0031_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0032_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0033_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0034_rejected._native.native_decide.ax_1,
+ cert_d6_k9_orbit_0035_rejected._native.native_decide.ax_1,
+ cert_na_k6_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_na_k6_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_na_k6_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_na_k7_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_na_k7_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0005_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0006_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0007_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0008_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0009_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0010_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0011_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0012_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0013_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0014_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0015_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0016_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0017_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0018_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0019_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0020_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0021_rejected._native.native_decide.ax_1,
+ cert_na_k8_orbit_0022_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0001_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0002_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0003_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0004_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0005_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0006_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0007_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0008_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0009_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0010_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0011_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0012_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0013_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0014_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0015_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0016_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0017_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0018_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0019_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0020_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0021_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0022_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0023_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0024_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0025_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0026_rejected._native.native_decide.ax_1,
+ cert_na_k9_orbit_0027_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k3_orbit_0001_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k3_orbit_0001_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k3_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k3_orbit_0001_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k3_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k6_orbit_0001_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k6_orbit_0001_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k6_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k6_orbit_0001_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k6_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k6_orbit_0002_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k6_orbit_0002_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k6_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k6_orbit_0002_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k6_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k7_orbit_0001_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k7_orbit_0001_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k7_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k7_orbit_0001_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k7_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0001_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0001_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k9_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0001_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k9_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0002_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0002_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k9_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0002_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k9_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0003_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0003_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k9_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0003_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k9_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0004_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0004_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k9_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0004_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k9_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0005_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0005_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k9_orbit_0005_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_ad_k9_orbit_0005_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_ad_k9_orbit_0005_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k4_orbit_0001_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k4_orbit_0001_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k4_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k4_orbit_0001_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k4_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k4_orbit_0002_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k4_orbit_0002_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k4_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k4_orbit_0002_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k4_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0001_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0001_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0001_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0002_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0002_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0002_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0003_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0003_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0003_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0004_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0004_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0004_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0005_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0005_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0005_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0005_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0005_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0006_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0006_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0006_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0006_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0006_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0007_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0007_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0007_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0007_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0007_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0008_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0008_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0008_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0008_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0008_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0009_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0009_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0009_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k5_orbit_0009_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k5_orbit_0009_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k6_orbit_0001_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k6_orbit_0001_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k6_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k6_orbit_0001_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k6_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k6_orbit_0002_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k6_orbit_0002_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k6_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k6_orbit_0002_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k6_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k6_orbit_0003_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k6_orbit_0003_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k6_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k6_orbit_0003_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k6_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k6_orbit_0004_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k6_orbit_0004_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k6_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k6_orbit_0004_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k6_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0001_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0001_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0001_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0002_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0002_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0002_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0003_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0003_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0003_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0004_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0004_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0004_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0005_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0005_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0005_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0005_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0005_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0006_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0006_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0006_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0006_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0006_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0007_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0007_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0007_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0007_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0007_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0008_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0008_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0008_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0008_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0008_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0009_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0009_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0009_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0009_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0009_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0010_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0010_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0010_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0010_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0010_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0011_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0011_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0011_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0011_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0011_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0012_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0012_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0012_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0012_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0012_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0013_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0013_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0013_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0013_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0013_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0014_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0014_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0014_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0014_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0014_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0015_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0015_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0015_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0015_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0015_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0016_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0016_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0016_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0016_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0016_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0017_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0017_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0017_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0017_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0017_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0018_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0018_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0018_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0018_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0018_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0019_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0019_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0019_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0019_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0019_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0020_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0020_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0020_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0020_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0020_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0021_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0021_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0021_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0021_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0021_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0022_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0022_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0022_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0022_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0022_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0023_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0023_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0023_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0023_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0023_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0024_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0024_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0024_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0024_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0024_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0025_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0025_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0025_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k7_orbit_0025_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k7_orbit_0025_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0001_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0001_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0001_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0002_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0002_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0002_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0003_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0003_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0003_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0004_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0004_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0004_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0005_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0005_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0005_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0005_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0005_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0006_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0006_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0006_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0006_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0006_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0007_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0007_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0007_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0007_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0007_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0008_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0008_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0008_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0008_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0008_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0009_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0009_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0009_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0009_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0009_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0010_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0010_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0010_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0010_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0010_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0011_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0011_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0011_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0011_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0011_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0012_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0012_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0012_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0012_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0012_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0013_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0013_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0013_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0013_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0013_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0014_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0014_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0014_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0014_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0014_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0015_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0015_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0015_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0015_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0015_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0016_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0016_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0016_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0016_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0016_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0017_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0017_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0017_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0017_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0017_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0018_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0018_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0018_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0018_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0018_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0019_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0019_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0019_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0019_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0019_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0020_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0020_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0020_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0020_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0020_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0021_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0021_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0021_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0021_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0021_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0022_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0022_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0022_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0022_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0022_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0023_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0023_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0023_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0023_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0023_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0024_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0024_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0024_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0024_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0024_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0025_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0025_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0025_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0025_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0025_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0026_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0026_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0026_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0026_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0026_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0027_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0027_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0027_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0027_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0027_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0028_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0028_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0028_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0028_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0028_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0029_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0029_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0029_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0029_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0029_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0030_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0030_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0030_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0030_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0030_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0031_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0031_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0031_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0031_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0031_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0032_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0032_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0032_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0032_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0032_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0033_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0033_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0033_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0033_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0033_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0034_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0034_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0034_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0034_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0034_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0035_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0035_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0035_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0035_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0035_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0036_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0036_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0036_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0036_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0036_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0037_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0037_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0037_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0037_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0037_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0038_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0038_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0038_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0038_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0038_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0039_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0039_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0039_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0039_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0039_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0040_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0040_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0040_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0040_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0040_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0041_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0041_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0041_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k8_orbit_0041_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k8_orbit_0041_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0001_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0001_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0001_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0002_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0002_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0002_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0003_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0003_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0003_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0004_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0004_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0004_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0005_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0005_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0005_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0005_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0005_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0006_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0006_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0006_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0006_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0006_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0007_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0007_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0007_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0007_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0007_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0008_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0008_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0008_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0008_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0008_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0009_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0009_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0009_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0009_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0009_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0010_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0010_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0010_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0010_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0010_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0011_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0011_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0011_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0011_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0011_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0012_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0012_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0012_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0012_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0012_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0013_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0013_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0013_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0013_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0013_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0014_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0014_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0014_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0014_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0014_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0015_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0015_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0015_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0015_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0015_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0016_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0016_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0016_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0016_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0016_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0017_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0017_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0017_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0017_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0017_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0018_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0018_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0018_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0018_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0018_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0019_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0019_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0019_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0019_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0019_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0020_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0020_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0020_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0020_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0020_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0021_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0021_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0021_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0021_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0021_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0022_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0022_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0022_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0022_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0022_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0023_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0023_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0023_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0023_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0023_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0024_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0024_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0024_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0024_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0024_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0025_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0025_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0025_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0025_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0025_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0026_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0026_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0026_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0026_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0026_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0027_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0027_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0027_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0027_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0027_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0028_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0028_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0028_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0028_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0028_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0029_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0029_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0029_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0029_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0029_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0030_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0030_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0030_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0030_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0030_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0031_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0031_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0031_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0031_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0031_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0032_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0032_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0032_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0032_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0032_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0033_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0033_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0033_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0033_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0033_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0034_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0034_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0034_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0034_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0034_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0035_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0035_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0035_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_d6_k9_orbit_0035_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_d6_k9_orbit_0035_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k6_orbit_0001_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k6_orbit_0001_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k6_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k6_orbit_0001_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k6_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k6_orbit_0002_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k6_orbit_0002_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k6_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k6_orbit_0002_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k6_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k6_orbit_0003_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k6_orbit_0003_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k6_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k6_orbit_0003_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k6_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k7_orbit_0001_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k7_orbit_0001_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k7_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k7_orbit_0001_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k7_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k7_orbit_0002_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k7_orbit_0002_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k7_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k7_orbit_0002_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k7_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0001_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0001_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0001_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0002_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0002_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0002_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0003_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0003_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0003_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0004_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0004_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0004_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0005_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0005_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0005_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0005_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0005_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0006_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0006_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0006_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0006_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0006_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0007_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0007_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0007_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0007_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0007_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0008_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0008_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0008_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0008_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0008_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0009_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0009_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0009_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0009_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0009_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0010_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0010_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0010_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0010_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0010_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0011_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0011_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0011_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0011_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0011_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0012_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0012_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0012_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0012_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0012_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0013_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0013_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0013_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0013_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0013_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0014_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0014_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0014_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0014_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0014_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0015_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0015_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0015_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0015_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0015_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0016_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0016_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0016_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0016_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0016_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0017_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0017_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0017_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0017_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0017_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0018_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0018_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0018_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0018_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0018_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0019_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0019_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0019_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0019_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0019_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0020_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0020_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0020_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0020_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0020_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0021_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0021_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0021_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0021_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0021_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0022_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0022_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0022_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k8_orbit_0022_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k8_orbit_0022_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0001_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0001_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0001_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0001_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0002_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0002_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0002_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0002_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0003_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0003_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0003_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0003_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0004_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0004_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0004_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0004_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0005_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0005_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0005_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0005_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0005_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0006_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0006_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0006_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0006_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0006_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0007_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0007_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0007_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0007_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0007_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0008_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0008_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0008_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0008_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0008_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0009_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0009_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0009_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0009_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0009_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0010_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0010_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0010_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0010_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0010_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0011_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0011_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0011_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0011_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0011_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0012_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0012_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0012_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0012_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0012_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0013_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0013_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0013_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0013_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0013_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0014_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0014_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0014_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0014_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0014_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0015_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0015_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0015_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0015_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0015_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0016_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0016_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0016_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0016_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0016_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0017_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0017_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0017_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0017_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0017_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0018_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0018_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0018_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0018_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0018_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0019_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0019_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0019_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0019_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0019_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0020_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0020_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0020_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0020_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0020_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0021_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0021_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0021_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0021_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0021_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0022_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0022_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0022_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0022_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0022_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0023_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0023_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0023_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0023_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0023_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0024_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0024_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0024_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0024_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0024_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0025_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0025_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0025_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0025_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0025_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0026_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0026_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0026_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0026_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0026_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0027_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0027_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0027_rejected._native.native_decide.ax_1]
+'FiveBoundary.ExcessTwo.Generated.cert_na_k9_orbit_0027_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ cert_na_k9_orbit_0027_rejected._native.native_decide.ax_1]

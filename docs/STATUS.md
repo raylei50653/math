@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-04。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-07。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -212,6 +212,19 @@
 | [Kempe 轉運有限表與 hub-linkage 停止見證](c5_kempe_transport.md) | 933／941 各 20 筆單 block 轉運，共同 partition 候選全部非交錯；單點 P 控制得 Σ=1012 停止見證（無 hubs、非交錯，對角鏈交換碰框入 Σ）；否定一般局部二分，固定來源 K 未決；有限 Python，未 Lean 化 |
 | [超額–拒絕定律 E 的有限證據](c5_excess_rejection_law.md) | 有效內點 k≤5 完整窮舉 310 個 T4 全收 Σ-edge-minimal disk 類，全部滿足 ε≥2\|Q\|−e(Q)−2；四種可實現形狀最小 ε=0／1／2／2 等於下界；933／941 形狀在 k≤5 無合格圖；任意大小與 k≥6 未決；Python 有限證書，未 Lean 化 |
 | [猜想 E 的 ε≤1 層（任務 E2）](../artifacts/c5_excess_one_e2/REPORT.md) | ε=0 ⇒ \|Q\|≤1；ε=1 ⇒ Q 為一點或相鄰兩點：935 以真子核心＋原 K₃,₃，951 以雙列 full-minimal／Gallai palette／盾弧全排；任意大小紙面＋外部 Gallai＋五個 checker；D₇ 稽核確認，舊 one-pendant 產物層已標為被取代；未 Lean 化 |
+| [單點對角 Kempe 轉運（任務 K′）](c5_kempe_diagonal_transport.md) | \|P\|=1、N(P) 四色、相鄰 degree-5 roots：紙面引理 1–6 含 Jordan 側別（只需 disk／四色／rotation）迫兩條對角鏈皆斷開；L2 仍有 933：192、941：384 筆一致指派，與可實現的 1012／935 控制同型，K′ 未決；具名 KD933-0001／KD941-0001；整合時另核對同 split 多鏈＋自由 block 交換亦無新排除；有限 Python，未 Lean 化 |
+| [猜想 E 的 ε=2 層（任務 E3，部分）](../artifacts/c5_excess_two_e3/REPORT.md) | 約化：\|Q\|+c(Q)>4 ⇔ Q 含 941 形三點，只需排除拒絕 q₀、q₁、q₃；triple-critical 引理（每條非框邊刪除新收三列之一）；唯一 degree-6 的 t=0–3 共 26 分拆在三列前提下全排；雙 degree-5 roots 留 N1–N3、J1–J6 及待 K′ 入口；精確 E1 951／935 控制保留；[D₈ 稽核](../audits/2026-10-04-task-d8/REPORT.md)：有缺口但可補，t=1 的 (4,1)／(3,2) 漏相對 spoke 位置（DG6-1），稽核補表 100 份幾何 0 存活（報告 §10）；紙面＋外部 Gallai＋四個 checker，未 Lean 化 |
+| [猜想 E 的 ε=2 層：非相鄰雙 roots（任務 E4，部分）](../artifacts/c5_excess_two_e4/REPORT.md) | N-theta（三份 mixed 的 z–w 路徑把一份困離框）＋N-empty 迫 m≤2，N3 全排；N-empty-separating、tree-H Euler（ε=2 ⇒ H 有環）為純拓撲；N1 排 mixed (2,2) 有 (4,4) core 整類（3+3>5），N2 排兩短無 unary；其餘 N1／N2 完整 relation 殘留；未找到合格非相鄰正控制；附並行 core-constraints 補充與兩份獨立複核；紙面＋Python，未 Lean 化；[D₉ 稽核](../audits/2026-10-06-task-d9/REPORT.md)：指定紙面引理成立，無新缺口 |
+| [猜想 E 的 ε=2 層：相鄰分支精確列依賴（任務 E5，部分）](../artifacts/c5_excess_two_e5/REPORT.md) | 依賴項×四分支（941／933／940／932）表；L1：任一真子圖只拒絕空、單點或相鄰二點（不需三列）；四分支排 J2 mixed12、J3 ternary、A equal pairs、B mixed22 全 leaf，932 另排五-spoke 與 J3 binary；A 的 N 全收與 singleton-U 身份補齊；殘留 G1–G4；停止 (c)：E3 對 A 前序的依賴判定過強（C12 長環已排除），數學 payload 無誤；紙面＋Python，未 Lean 化；[D₉ 稽核](../audits/2026-10-06-task-d9/REPORT.md)：指定紙面引理成立，無新缺口 |
+| [ε=2 特化有限搜尋（任務 ES）](c5_excess_two_finite_search.md) | 單調 T4 剪枝、一次 criticality、完整對稱 canonical orbits；k≤6 與獨立暴力版逐計數／逐 orbit 一致。非相鄰、相鄰、唯一 degree-6 三型完整搜到 k=9：179 個 crit orbits，Q 只有單點／相鄰二點／非相鄰二點／三點弧，無 \|Q\|+c(Q)>4；含 935、951 及 NA6-1–3 正控制；整合者獨立重驗 179 代表並重播全量 `--check`；有限證據，不升格為定理，未 Lean 化 |
+| [猜想 E 的 ε=2 層：相鄰殘留（任務 E6，部分）](../artifacts/c5_excess_two_e6/REPORT.md) | 相鄰 m≤2：zw 加三份 mixed 的 z–w 路徑成四條互斥路徑，含 B 的面只由兩條圍成，困住一份整個 mixed 離框，違 N-empty（zw 是否在外側邊界兩情形皆證）；四分支關閉 J6 的全部 m≥3。G2 迫 U 盾弧恰二、G3 得支援約束、G4 排二邊 unary；no-mixed 整側預算；其餘完整 relation 殘留逐項列明，J4／K′ 只列入口；9 個 AD 控制 orbits（90 份 D₅ 像）全保留；紙面＋Python，未 Lean 化；[D₉ 稽核](../audits/2026-10-06-task-d9/REPORT.md)：指定紙面引理成立，無新缺口 |
+| [E4 引理的非相鄰控制補驗（任務 E4C）](../artifacts/c5_excess_two_e4c/REPORT.md) | ES 全部 54 個 NA crit orbits × E4 中 60 項不用三列的引理／步驟：42 項有實際觸發前提的控制且結論成立，18 項無控制，無反例。缺控制者多為排除型引理（空支援、H-tree、m≥3、兩短無 unary、N1-22-44 各步），其前提本身已證不可實現；真正的控制缺口為 singleton 盾弧、root 刪除例外、(4,4) core、根間 bridge 整側、單 root 重色 core；有限 Python，未 Lean 化 |
+| [ε=2 拒絕列全部 minimal cores（任務 C44）](../artifacts/c5_excess_two_c44/REPORT.md) | 三型 k≤9 全9644 q-orbits／179 critical orbits、11169 core occurrences；k≤5及k6逐邊集暴力一致。NA critical無44，AD critical有26份；具名C44-AD3-row0-44（Σ956）反駁一般缺席說法，非完整Σ933／941反例；該窄前提有限域無來源，任意大小命題未證，停止推廣、guide停止點不變 |
+| [兩-root (4,4) core 的完整 Σ 相容篩（任務 C44′）](../artifacts/c5_excess_two_c44p/REPORT.md) | AD2360／NA56份、213字面cores全相容，saved Σ零差異；兩private頂點125 placements中30 disk、10相容（單一軌道），NA25均不可嵌入；具名C44P-AD2-012-034（Σ959）及mixed triangle（Σ1022）。獨立重算、default／seed17 byte replay一致；相容只為必要條件，未構造完整Σ933／941來源，停止推廣；Python＋紙面，未Lean化 |
+| [兩-root (4,4) core 的既有排除覆蓋表（任務 C44″）](../artifacts/c5_excess_two_c44pp/REPORT.md) | 完整Σ933／941下相鄰m=1沿用舊系列全排，不經K′；AD-012-034具名core無此前提的兩-root44來源。當輪U1–U4覆蓋表保留；後續U1已排、唯一mixed四份指定排除已稽核，上游分類全部枚舉未重稽核。E5的新證明要求、其餘core型及ε≥3保留 |
+| [ε=2 no-mixed 的兩-root44身份排除](c5_excess_two_no_mixed_core44.md) | C44″的U1全排：spoke＋unit-U由leaf強迫D與triangle palette衝突；雙spoke以344份bridge-marker核心的3,498接回／34,980逐列獨立回溯無目標Σ，更正941原身份收窄。(2,2)子型直接化約至64雙triangle。完整Σ933／941及D₅像前提；no-mixed其他core型保留，44只剩U2–U4，紙面＋Python，未Lean化 |
+| [ES 179 orbits 的 Lean soundness 證書（任務 LC）](c5_excess_two_lean_certificates.md) | 布林 checker 加普通 soundness 定理接到既有 Σ 語意：形狀與 degree 型、框無弦、T4／Q、十列完整 Σ、逐邊 criticality、genus 0 rotation system 且外面為框（僅組合嵌入，非拓撲平面性定理）；正列 `decide +kernel`，只有拒絕列用 `native_decide`；179／179 通過，558 項 `#print axioms` 無 `sorryAx`（整合者重跑）；只證所列圖為真，不證完整性；未接入 Math.lean，CI 不建置 |
+| [ε=2 有限搜尋的第二套獨立枚舉器（任務 ER）](c5_excess_two_independent_search.md) | plantri 5.8 生成連通平面圖的 rotation systems，再於外面枚舉非交叉 spokes；frontier DP 算 Σ；自寫 canonical form；未讀或 import ES 程式碼（主 agent 曾讀 ES 報告演算法段，已載明）。三型 k≤9 的 q orbit 與 crit orbit 集合、有標號計數、Q 分布與 ES 逐層全部一致，179 個 crit orbits，無 \|Q\|+c(Q)>4；整合者重播 `--check` exit 0；外部依賴 plantri（source SHA 核對）；有限證據，不升格為定理 |
 | [四接點短支援 pair 排除](c5_short_support_four_contact.md) | 四接點未見二色 pair 的原 Gallai leaf blocks／active 結構 K₅；保留獨立證明及固定控制，通用短支援引理另涵蓋此型 |
 | [ε=2 t=1 四接點與 unary](c5_excess_two_four_one.md) | 同一四接點 active forest、兩 triangle K₅及固定末端區塊的跨列 residual，100 個必要查詢全排；(4,1) 整型排除，未 Lean 化 |
 | [ε=2 t=1 ternary／binary](c5_excess_two_ternary_binary.md) | 新 ternary D 身份守恆與原 binary 路徑塊共同支援，100 查詢全排；去掉路徑條件仍有八份抽象殘留；(3,2) 整型排除，未 Lean 化 |
@@ -250,6 +263,11 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [M2：U1 no-mixed44獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md) | 指定前提的任意大小化約及344核心／3,498接回完整關係驗收；沿用上游分類／拓撲信任，完整Σ933／941來源正控制未觸發，未新增Lean定理 |
+| [M3：全新checkout還原與驗證](../audits/2026-10-07-m3-fresh-checkout/REPORT.md) | 原29項指定28 PASS／1 FAIL，另四份provenance strict FAIL及86項歷史whitespace保留；顯式LC build／558項公理證據完成，原「待補件」語境由下列監督報告補足 |
+| [M3監督補件與M4派工](../audits/2026-10-07-merge-supervision/REPORT.md) | 264檔原包及完整fresh payload核對；接受C44兩個presence leaves與E5 branches單份文件hash例外，歷史三份byte FAIL仍保留，不宣稱全strict PASS或可合併 |
+| [M4-L：正式本地交付](../audits/2026-10-07-m4-local/REPORT.md) | 整合M2／M3與監督補件，保存原bytes／hash、具名例外及最終文件版本驗證；本地提交與獨立checkout證據以報告及下列發布紀錄為準，遠端驗收另行處理 |
+| [C44″後續：唯一mixed四份(4,4)排除指定稽核](../audits/2026-10-07-c44pp-mixed-audit/REPORT.md) | 任意大小化約與固定域成立；獨立重算root pairs／S₄支援、368,859份UNSAT proofs、6,008份subdivisions及344域標記run覆蓋通過。未改舊證書；沿用上游分類，未重稽核其全部枚舉，未補E5新證明 |
 | [D₂文件整合與新增成果稽核](../audits/2026-10-04-task-d2/REPORT.md) | 套用原D的18項修訂，同步A₂／B₂／C₂停止點；新增A／A₂、B／B₂固定域身份、完整joint及witness獨立稽核。原D的40 PASS／4文件hash FAIL與兩份完整payload相同紀錄保留；新增版本及漂移另記，原artifacts不改 |
 | [D₃：C／C₂獨立稽核](../audits/2026-10-04-task-d3/REPORT.md) | 固定D₂截點的完整P₃／側角色／空fibres、原unary刪邊witnesses及原K₅全部獨立核對；只關閉geometry30／join20，保存3500具名keys。當時未接收A₃／B₃／C₃及未同步live文件；原strict漂移失敗保留 |
 | [D₄：正式返回A₃／B₃／C₃快照與整合稽核](../audits/2026-10-04-task-d4/REPORT.md) | 獨立核對三份新增成果與13份並行更新，A保存18／22；B₂＋B₃只登記W933-101／W941-139兩骨架封閉；C₃只關閉geometry34／join20。前輪交付hash／完整relations／空fibres／witnesses與失敗紀錄保持，未commit／push |
@@ -391,6 +409,12 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-07：M4-L正式交付整合與最終本地提交](history/2026-10-07-m4-local-delivery.md)
+- [2026-10-07：整合分支合併任務、依賴與驗收台帳](history/2026-10-07-merge-readiness-tasks.md)
+- [2026-10-07：唯一mixed指定稽核與U1 no-mixed44身份排除](history/2026-10-07-no-mixed-core44.md)
+- [2026-10-07：C44″ 整合覆核、精確前提與四類殘留](history/2026-10-07-c44pp-integration-review.md)
+- [2026-10-05：整合分支review、ER執行檔ignore修正與fresh重播](history/2026-10-05-integrate-branch-review.md)
+- [2026-10-04：K′、E3–E6、ES／ER 與 LC 進展整理、證據界線及分支發布](history/2026-10-04-kprime-excess-two-progress-publish.md)
 - [2026-10-04：併行成果、D至D₅獨立稽核與完整封存發布](history/2026-10-04-c5-parallel-progress-publish.md)
 
 - [2026-10-04：D₂文件整合、A／B新增成果稽核與保存核對](history/2026-10-04-task-d2-integration-audit.md)

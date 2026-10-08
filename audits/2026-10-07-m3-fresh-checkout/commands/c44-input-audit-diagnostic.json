@@ -1,0 +1,27 @@
+{
+  "name": "c44-input-audit-diagnostic",
+  "argv": [
+    "/home/ray/developer/ai/math/.venv/bin/python",
+    "-c",
+    "import hashlib, importlib, json, sys\nsys.path.insert(0, \"scripts\")\nm = importlib.import_module(\"c5_excess_two_c44_input_audit\")\nsaved_bytes = m.OUTPUT.read_bytes()\nsaved = json.loads(saved_bytes)\ncomputed = m.audit()\ncomputed_bytes = m.encoded(computed)\ndifferences = []\ndef walk(a, b, path=\"$\"):\n    if type(a) is not type(b):\n        differences.append({\"path\":path, \"saved\":a, \"computed\":b})\n    elif isinstance(a, dict):\n        for key in sorted(set(a) | set(b)):\n            if key not in a or key not in b:\n                differences.append({\"path\":path+\".\"+str(key), \"saved\":a.get(key), \"computed\":b.get(key)})\n            else:\n                walk(a[key], b[key], path+\".\"+str(key))\n    elif isinstance(a, list):\n        if len(a) != len(b):\n            differences.append({\"path\":path+\".length\", \"saved\":len(a), \"computed\":len(b)})\n        for idx,(x,y) in enumerate(zip(a,b)):\n            walk(x,y,path+\"[\"+str(idx)+\"]\")\n    elif a != b:\n        differences.append({\"path\":path, \"saved\":a, \"computed\":b})\nwalk(saved, computed)\nprint(json.dumps({\"saved_sha256\":hashlib.sha256(saved_bytes).hexdigest(),\"computed_sha256\":hashlib.sha256(computed_bytes).hexdigest(),\"saved_bytes\":len(saved_bytes),\"computed_bytes\":len(computed_bytes),\"difference_count\":len(differences),\"differences\":differences}, indent=2, sort_keys=True))\n"
+  ],
+  "cwd": "/tmp/math-m3-ba0b447",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "started_unix": 1791350059.9986086,
+  "exit_code": 0,
+  "seconds": 3.051,
+  "logs": [
+    {
+      "path": "logs/c44-input-audit-diagnostic.stdout.log",
+      "bytes": 3592,
+      "sha256": "4d5c8c6db0ec95dd965b5b8b05d0050bd9cb3d8d540a83c8a765964fbc9ec1e8"
+    },
+    {
+      "path": "logs/c44-input-audit-diagnostic.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

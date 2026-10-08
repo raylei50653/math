@@ -1,0 +1,103 @@
+C44' two-private-vertex classification: paper proof and scope
+
+Definitions and complete coverage.
+Fix the ordered induced boundary C5, labelled 0,1,2,3,4. The only private
+vertices are named roots r=5 and s=6, each of degree four. A finite simple
+graph on these seven vertices has no other possible private edge than rs.
+If rs is present, each root has exactly three distinct boundary spokes;
+there are binomial(5,3)^2=100 ordered spoke pairs. If rs is absent, each
+has four distinct boundary spokes, giving binomial(5,4)^2=25 pairs. Thus
+the 125 literal rows cover every graph of this shape, with no source-size
+or source-degree hypothesis. D5 acts simultaneously on all five boundary
+positions; root swap exchanges the two complete spoke sets. Their 20
+maps give all equivalences, and the edge-set minimum is only a quotient
+representative. Every literal placement remains in the saved table.
+
+Disk criterion and the nonadjacent impossibility proof.
+Draw the first root's star. Its contacts occur in the fixed cyclic order.
+The star divides the disk into sectors whose boundary arcs run between
+consecutive star contacts; this follows by applying the Jordan theorem
+to the boundary arc together with the two spokes. The second root lies
+in the interior of one sector. Every one of its spokes must end on that
+sector's closed boundary arc, since crossing a bounding spoke is forbidden.
+Thus its spoke set must be contained in one of those arcs. Conversely,
+if its contacts lie in one arc, place the second root in that sector and
+draw its spokes as a fan there. When present, rs is one more fan edge to
+the first root on the boundary of the same sector. This constructs the
+required disk embedding and proves the exact sector criterion.
+
+For four first-root contacts, only one boundary vertex is missing. Every
+closed sector arc has at most three boundary vertices. Four second-root
+contacts cannot fit in any sector. Hence all 25 nonadjacent placements
+are disk-impossible, on paper, independently of the planarity software.
+
+For three first-root contacts, the five possible consecutive triples
+have one sector of four boundary vertices and two sectors of two vertices.
+There are four choices of a three-set in the large sector, giving 20
+placements. The other five triples have two three-vertex sectors and one
+two-vertex sector. Each three-vertex sector supplies one choice, giving
+10 more. Thus exactly 30 adjacent literal placements are disks. All
+remaining 70 adjacent placements are excluded by the same Jordan sector
+argument. Explicit genus-zero rotations are saved for all 30 disks,
+and Kuratowski subgraph edges corroborate each impossibility decision.
+
+Full relation and minimal cores.
+For a literal boundary row q, let L_r be the four colours minus the
+colours at r's spoke contacts, and similarly define L_s. Without rs,
+extension is exactly nonemptiness of both lists. With rs, extension is
+exactly existence of unequal a in L_r and b in L_s. Both assertions are
+immediate since there are exactly two private vertices.
+
+In the adjacent case each list is nonempty. Rejection occurs exactly
+when both lists are the same singleton {c}. Each triple therefore sees
+the same three distinct boundary colours. Every retained spoke is
+essential: deleting it frees its distinct boundary colour for that root,
+while the other root keeps c. Deleting rs allows both roots to take c.
+Thus every rejected row of an adjacent placement has the whole graph as
+its unique inclusion-minimal core. The all-edge-subsets enumeration
+records this independently of the elementary minimality argument.
+
+In the nonadjacent case rejection means some root sees all four colours
+on its four spokes. That root's four-spoke star is inclusion-minimal:
+each deletion frees the formerly excluded colour. The other root can
+be discarded. If both roots see all four colours, there are exactly two
+such minimal stars; otherwise there is exactly one. No whole nonadjacent
+placement is a minimal rejected-row core. All such abstract graphs are
+already excluded by the disk proof.
+
+The two disk orbits and compatibility.
+The 30 disk placements reduce to two D5 times root-swap orbits. Their
+representatives have r contacts 012 and s contacts 023 (20 literals),
+or r contacts 012 and s contacts 034 (10 literals), with rs present.
+For 012/023 the full relation has mask 831; its rejected row indices
+are 6,7. Row 7 is a four-colour T4 row. Every D5 image of 933 and 941
+contains every T4 row, so this orbit is incompatible.
+For 012/034 the full relation has mask 959; its only rejected row is
+index 6, q=01212. Every D5 image of 933 rejects four of the five
+three-colour rows, and every D5 image of 941 rejects three. Rotations
+act transitively on the five singleton positions, so there are images
+of each target rejecting index 6. Each such image is contained in 959.
+Therefore all 10 placements in the second orbit are compatible.
+
+Named witness C44P-AD2-012-034.
+Its nonframe edges are 05,15,25,06,36,46,56. At rejected row 01212,
+the two roots each see boundary colours 0,1,2 and are forced to 3;
+the root edge rejects that assignment. This graph is a disk by the
+sector between first-root contacts 2 and 0 through 3 and 4. Its exact
+Sigma is 959, and matching full-frame D5 target images, every accepted
+colouring, seven deletion witnesses and a genus-zero rotation are saved
+in named_C44P-AD2-012-034.json.
+
+Trust and stop point.
+Completeness of the 125 placements, the disk criterion, nonadjacent
+impossibility, the list extension criterion, minimality arguments and
+the two orbit descriptions are elementary finite paper arguments.
+The full named tables, exact transported target images and rotations
+are Python certificates, cross-checked by a separate implementation.
+NetworkX planarity is corroborative, since disk decisions have the
+sector proof and embeddable cases have explicit rotations. No four-
+colour-theorem oracle, new source search, Lean formalization, or claim
+of realization inside a full-Sigma=933/941 source is made. Compatibility
+is a necessary inclusion condition, never a realizability certificate.
+The all-incompatible branch fails: no no-two-private-core lemma and no
+arbitrary-size no-two-root-(4,4)-core theorem follows. Stop generalizing.

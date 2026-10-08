@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/provenance_finish.py", line 78, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/provenance_finish.py", line 25, in main
+    original.rename(raw_copy)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 1076, in rename
+    os.rename(self, target)
+    ~~~~~~~~~^^^^^^^^^^^^^^
+OSError: [Errno 18] Invalid cross-device link: '/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/dependency-inventory.json' -> '/tmp/math-m3-provenance-first-pass-dependency-inventory.json'

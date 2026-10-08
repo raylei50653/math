@@ -1,0 +1,347 @@
+{
+  "all_baseline_tracked_files_unchanged": true,
+  "base": "d00aba4e10ea2d05ab216fedd94f5a166b2777ad",
+  "branch": "task-e6-adjacent",
+  "checks": [
+    {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e6_reductions.py"
+      ],
+      "exit_code": 0,
+      "stage": "initial_exclusive_generation",
+      "stderr": "",
+      "stdout": "CREATED artifacts/c5_excess_two_e6/reductions.json; bytes 77023; sha256 cb9aad10b5126cb578aa866995099deffd0d62176f8e0cf009617104f911ff5e"
+    },
+    {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e6_controls.py",
+        "--output",
+        "/tmp/e6-final-generation-oa__l5qk/controls.json"
+      ],
+      "exit_code": 0,
+      "stage": "exclusive_generation",
+      "stderr": "",
+      "stdout": "GENERATED: /tmp/e6-final-generation-oa__l5qk/controls.json; 982689 bytes; 9 AD orbits, 90 D5 images\n"
+    },
+    {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e6_local_controls.py",
+        "--output",
+        "/tmp/e6-final-generation-oa__l5qk/local_controls.json"
+      ],
+      "exit_code": 0,
+      "stage": "exclusive_generation",
+      "stderr": "",
+      "stdout": "GENERATED: /tmp/e6-final-generation-oa__l5qk/local_controls.json; 856916 bytes\n"
+    },
+    {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e6_reductions.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stage": "final",
+      "stderr": "",
+      "stdout": "CHECK OK: literal L1/L3 branch fields, long-U queries and both adjacent outer-edge cases\nbytes 77023 sha256 cb9aad10b5126cb578aa866995099deffd0d62176f8e0cf009617104f911ff5e\n"
+    },
+    {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e6_reductions.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stage": "PYTHONHASHSEED=17",
+      "stderr": "",
+      "stdout": "CHECK OK: literal L1/L3 branch fields, long-U queries and both adjacent outer-edge cases\nbytes 77023 sha256 cb9aad10b5126cb578aa866995099deffd0d62176f8e0cf009617104f911ff5e\n"
+    },
+    {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e6_controls.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stage": "final",
+      "stderr": "",
+      "stdout": "CHECK OK: artifacts/c5_excess_two_e6/controls.json; 982689 bytes; 9 AD orbits, 90 D5 images\n"
+    },
+    {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e6_controls.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stage": "PYTHONHASHSEED=17",
+      "stderr": "",
+      "stdout": "CHECK OK: artifacts/c5_excess_two_e6/controls.json; 982689 bytes; 9 AD orbits, 90 D5 images\n"
+    },
+    {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e6_local_controls.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stage": "final",
+      "stderr": "",
+      "stdout": "CHECK OK: /home/ray/developer/ai/math-task-e6-adjacent/artifacts/c5_excess_two_e6/local_controls.json; 856916 bytes\n"
+    },
+    {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e6_local_controls.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stage": "PYTHONHASHSEED=17",
+      "stderr": "",
+      "stdout": "CHECK OK: /home/ray/developer/ai/math-task-e6-adjacent/artifacts/c5_excess_two_e6/local_controls.json; 856916 bytes\n"
+    },
+    {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 1,
+      "stage": "final",
+      "stderr": "",
+      "stdout": "missing path: docs/c5_open_leaf_ledger.md:78: ../audits/2026-10-04-task-d5/c4/scope_ledger.json\nmissing path: docs/history/2026-10-04-task-d2-integration-audit.md:39: ../../audits/2026-10-04-task-d2/integration_doc_changes.diff\nFAIL: 2 errors (558 Markdown files, 5959 local links)\n"
+    },
+    {
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 0,
+      "stage": "final",
+      "stderr": "",
+      "stdout": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stage": "final",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--no-index",
+        "--check",
+        "/dev/null",
+        "artifacts/c5_excess_two_e6/REPORT.md"
+      ],
+      "exit_code": 1,
+      "raw_exit_one_means_new_file_diff": true,
+      "stage": "new_file_whitespace",
+      "stderr": "",
+      "stdout": "",
+      "whitespace_ok": true
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--no-index",
+        "--check",
+        "/dev/null",
+        "artifacts/c5_excess_two_e6/controls.json"
+      ],
+      "exit_code": 1,
+      "raw_exit_one_means_new_file_diff": true,
+      "stage": "new_file_whitespace",
+      "stderr": "",
+      "stdout": "",
+      "whitespace_ok": true
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--no-index",
+        "--check",
+        "/dev/null",
+        "artifacts/c5_excess_two_e6/local_controls.json"
+      ],
+      "exit_code": 1,
+      "raw_exit_one_means_new_file_diff": true,
+      "stage": "new_file_whitespace",
+      "stderr": "",
+      "stdout": "",
+      "whitespace_ok": true
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--no-index",
+        "--check",
+        "/dev/null",
+        "artifacts/c5_excess_two_e6/reductions.json"
+      ],
+      "exit_code": 1,
+      "raw_exit_one_means_new_file_diff": true,
+      "stage": "new_file_whitespace",
+      "stderr": "",
+      "stdout": "",
+      "whitespace_ok": true
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--no-index",
+        "--check",
+        "/dev/null",
+        "scripts/c5_excess_two_e6_controls.py"
+      ],
+      "exit_code": 1,
+      "raw_exit_one_means_new_file_diff": true,
+      "stage": "new_file_whitespace",
+      "stderr": "",
+      "stdout": "",
+      "whitespace_ok": true
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--no-index",
+        "--check",
+        "/dev/null",
+        "scripts/c5_excess_two_e6_local_controls.py"
+      ],
+      "exit_code": 1,
+      "raw_exit_one_means_new_file_diff": true,
+      "stage": "new_file_whitespace",
+      "stderr": "",
+      "stdout": "",
+      "whitespace_ok": true
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--no-index",
+        "--check",
+        "/dev/null",
+        "scripts/c5_excess_two_e6_reductions.py"
+      ],
+      "exit_code": 1,
+      "raw_exit_one_means_new_file_diff": true,
+      "stage": "new_file_whitespace",
+      "stderr": "",
+      "stdout": "",
+      "whitespace_ok": true
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stage": "final",
+      "stderr": "",
+      "stdout": "d00aba4e10ea2d05ab216fedd94f5a166b2777ad\n"
+    },
+    {
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exit_code": 0,
+      "stage": "final",
+      "stderr": "",
+      "stdout": "task-e6-adjacent\n"
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "exit_code": 0,
+      "stage": "final",
+      "stderr": "",
+      "stdout": "?? artifacts/c5_excess_two_e6/\n?? scripts/c5_excess_two_e6_controls.py\n?? scripts/c5_excess_two_e6_local_controls.py\n?? scripts/c5_excess_two_e6_reductions.py\n"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--name-only"
+      ],
+      "exit_code": 0,
+      "stage": "final",
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "commit_or_push": false,
+  "final_new_files": {
+    "artifacts/c5_excess_two_e6/REPORT.md": {
+      "bytes": 24146,
+      "sha256": "1746ec1cdcabf228115bf50405f94ae3636812d060100b51b7d9f65868177847"
+    },
+    "artifacts/c5_excess_two_e6/controls.json": {
+      "bytes": 982689,
+      "sha256": "3cba425ffbb3017b4100b6a0f2ecfe0e4d7126fde46985fbf51e755b5214af93"
+    },
+    "artifacts/c5_excess_two_e6/local_controls.json": {
+      "bytes": 856916,
+      "sha256": "e6bc590c73173701b66e97adf56a0ff8c6a2ae9e721eded038bd8ff2cc162005"
+    },
+    "artifacts/c5_excess_two_e6/reductions.json": {
+      "bytes": 77023,
+      "sha256": "cb9aad10b5126cb578aa866995099deffd0d62176f8e0cf009617104f911ff5e"
+    },
+    "scripts/c5_excess_two_e6_controls.py": {
+      "bytes": 33939,
+      "sha256": "f8bc13e0e74fef76423ed295a1082688c410360395a2e5f48d361f4b31434dbd"
+    },
+    "scripts/c5_excess_two_e6_local_controls.py": {
+      "bytes": 19952,
+      "sha256": "7e4d91ca5228dc04c058b21cbeb93de0d39eb6b766a821cad5e5c1704d03cceb"
+    },
+    "scripts/c5_excess_two_e6_reductions.py": {
+      "bytes": 11539,
+      "sha256": "e0b45f101457c9e422e170374ef8ccdec6123735bc93c87616fd90bc1d2f9037"
+    }
+  },
+  "known_initial_failures": [
+    {
+      "action": "controls initial draft generation",
+      "exit_code": 1,
+      "reason": "ES pretty-JSON record hash mistaken for compact hash; only own new draft replaced by exclusive-create"
+    },
+    {
+      "action": "tools/artifacts.py record temporary oversized controls artifact",
+      "exit_code": 1,
+      "reason": "producer not inferred; final lossless compact artifact below threshold; MANIFEST/.gitignore untouched"
+    },
+    {
+      "action": "initial validation recorder treated no-index normal new-file diff exit1 as failure",
+      "exit_code": 1,
+      "reason": "all preceding replays passed; recorder corrected to inspect whitespace diagnostics; no checker or baseline change"
+    }
+  ],
+  "large_final_artifacts": [],
+  "networkx": "3.5",
+  "python": "3.14.7 (main, Aug 10 2026, 07:46:56) [GCC 16.1.1 20260728]",
+  "schema": "e6-actual-validation-v1"
+}

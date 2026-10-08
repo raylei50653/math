@@ -1,5 +1,20 @@
 # C₅ 全線進展與高階假設整合
 
+**目前整合快照（2026-10-04，K′／E3–E6／ES／ER／LC）**：
+共同 ε≥2，任意大小的 ε≥3 與猜想 E 仍未證。E3 把 ε=2 反例約化為
+拒絕 q₀、q₁、q₃，並排除唯一 degree-6；D₈ 的100份相對 spoke 位置補表
+是此結論的必要依據。E4／E6 證非相鄰／相鄰 mixed 分量數 m≤2，
+E5／E6 收窄相鄰 G1–G4、J6 與 no-mixed；雙 degree-5 仍有殘留。
+ES／ER 三型 k≤9 的 q／critical orbit 集合及計數逐層一致，共179個 critical
+orbits，無 |Q|+c(Q)>4；LC 完成179／179個 Lean soundness 證書，不證搜尋
+完整性或拓撲 disk 定理。K′ 局部資料仍留933／941一致指派，局部題停止。
+共鄰 P₃ 則已由 C-W／D₆ 在 C §1 前提下整型來源排除，固定 ledger 為0；
+全主線總葉數與每日速度仍未知。精確殘留與未派提議由
+[Kempe](c5_kempe_guide.md#3-停止點與保留缺口)及
+[weak-deletion](c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)導覽維護；
+本次驗證與發布範圍見[紀錄](history/2026-10-04-kprime-excess-two-progress-publish.md)。
+以下 A／B／C、D₅ 及各輪數字保留當輪截點。
+
 **最終成果獨立驗收（2026-10-04，D₅）**：
 [固定快照、scope ledger與版本表](../audits/2026-10-04-task-d5/REPORT.md)驗收A₄／B₄／C₄。
 A₄直接核對原04／04與root交換，01202 singleton1／3、完整C替換／外部逐點

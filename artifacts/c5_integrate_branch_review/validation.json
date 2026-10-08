@@ -1,0 +1,586 @@
+{
+  "date": "2026-10-05",
+  "review_base": "2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090",
+  "review_head": "a484d4cdaeb069702de0c40acf83bc6a05dea3b3",
+  "branch": "integrate-kprime-e3",
+  "diff_commits": 32,
+  "new_findings": [
+    {
+      "priority": "P3",
+      "path": "scripts/c5_excess_two_independent_search.py",
+      "line": 218,
+      "issue": "ER --check compiles scratch/er/plantri, which was unignored and dirtied a clean checkout.",
+      "fix": "Add the exact /scratch/er/plantri ignore rule; keep the pinned vendored source tracked."
+    }
+  ],
+  "mathematical_blockers_found": [],
+  "review_scope": [
+    "ES/ER generation, monotone pruning, canonicalization and joint frame transport",
+    "LC structural/rotation/colouring checks, deletion witnesses and soundness boundaries",
+    "Kprime/E3/E4/E5/E6 premises, later corrections and published summary scope"
+  ],
+  "limitations": [
+    "This code and evidence review is not a new arbitrary-size theorem or a full independent paper audit.",
+    "ES full search and full hashseed17 replays were not rerun; full ER replay compares the stored ES q/critical corpus.",
+    "Historical E4/E5/E4C byte failures and vendored/raw-log whitespace remain unchanged.",
+    "LC remains an explicit target, outside default Math.lean/CI as documented.",
+    "No E1/E2/D7, C-W/D6, old A/B/C or R-series full replay."
+  ],
+  "static_checks": "static_checks.json",
+  "semantic_comparison": "semantic_comparison.json",
+  "lean_axioms": {
+    "declarations": 558,
+    "sorryAx": false,
+    "positive_count": 179,
+    "positive_native_axioms": false,
+    "rejected_count": 179,
+    "rejected_native_axioms_per_declaration": 1
+  },
+  "checks": [
+    {
+      "name": "docs",
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.761,
+      "log": "logs/docs.log.gz"
+    },
+    {
+      "name": "docgraph",
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 1.713,
+      "log": "logs/docgraph.log.gz"
+    },
+    {
+      "name": "artifact_status",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "tools/artifacts.py",
+        "status"
+      ],
+      "exit_code": 0,
+      "seconds": 4.051,
+      "log": "logs/artifact_status.log.gz"
+    },
+    {
+      "name": "branch_whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "origin/main...HEAD"
+      ],
+      "exit_code": 2,
+      "seconds": 0.079,
+      "log": "logs/branch_whitespace.log.gz"
+    },
+    {
+      "name": "degree6_t1_spoke_coverage",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "audits/2026-10-04-task-d8/degree6_t1_spoke_coverage.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.119,
+      "log": "logs/degree6_t1_spoke_coverage.log.gz"
+    },
+    {
+      "name": "c5_excess_two_e3_adjacent",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e3_adjacent.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "logs/c5_excess_two_e3_adjacent.log.gz"
+    },
+    {
+      "name": "c5_excess_two_e3_degree6",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e3_degree6.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.315,
+      "log": "logs/c5_excess_two_e3_degree6.log.gz"
+    },
+    {
+      "name": "c5_excess_two_e3_foundation",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e3_foundation.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.669,
+      "log": "logs/c5_excess_two_e3_foundation.log.gz"
+    },
+    {
+      "name": "c5_excess_two_e3_nonadjacent",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e3_nonadjacent.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.082,
+      "log": "logs/c5_excess_two_e3_nonadjacent.log.gz"
+    },
+    {
+      "name": "c5_excess_two_e4_control",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e4_control.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.211,
+      "log": "logs/c5_excess_two_e4_control.log.gz"
+    },
+    {
+      "name": "c5_excess_two_e4_reductions",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e4_reductions.py",
+        "--check"
+      ],
+      "exit_code": 1,
+      "seconds": 0.044,
+      "log": "logs/c5_excess_two_e4_reductions.log.gz"
+    },
+    {
+      "name": "c5_excess_two_e4c_controls",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e4c_controls.py",
+        "--check"
+      ],
+      "exit_code": 1,
+      "seconds": 9.457,
+      "log": "logs/c5_excess_two_e4c_controls.log.gz"
+    },
+    {
+      "name": "c5_excess_two_e5_branches",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e5_branches.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.042,
+      "log": "logs/c5_excess_two_e5_branches.log.gz"
+    },
+    {
+      "name": "c5_excess_two_e5_controls",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e5_controls.py",
+        "--check"
+      ],
+      "exit_code": 1,
+      "seconds": 0.08,
+      "log": "logs/c5_excess_two_e5_controls.log.gz"
+    },
+    {
+      "name": "c5_excess_two_e5_local",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e5_local.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.042,
+      "log": "logs/c5_excess_two_e5_local.log.gz"
+    },
+    {
+      "name": "c5_excess_two_e6_controls",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e6_controls.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 4.726,
+      "log": "logs/c5_excess_two_e6_controls.log.gz"
+    },
+    {
+      "name": "c5_excess_two_e6_local_controls",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e6_local_controls.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 1.827,
+      "log": "logs/c5_excess_two_e6_local_controls.log.gz"
+    },
+    {
+      "name": "c5_excess_two_e6_reductions",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_e6_reductions.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "logs/c5_excess_two_e6_reductions.log.gz"
+    },
+    {
+      "name": "c5_kempe_diagonal_transport",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_kempe_diagonal_transport.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.522,
+      "log": "logs/c5_kempe_diagonal_transport.log.gz"
+    },
+    {
+      "name": "es_acceptance",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_finite_search_validation.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 7.823,
+      "log": "logs/es_acceptance.log.gz"
+    },
+    {
+      "name": "lc_export",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/export_excess_two_certificates.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.18,
+      "log": "logs/lc_export.log.gz"
+    },
+    {
+      "name": "er_full",
+      "argv": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_excess_two_independent_search.py",
+        "--check",
+        "--jobs",
+        "8"
+      ],
+      "exit_code": 1,
+      "seconds": 6.909,
+      "log": "logs/er_full.log.gz"
+    },
+    {
+      "name": "er_full_after_local_socket_permission",
+      "argv": [
+        ".venv/bin/python",
+        "scripts/c5_excess_two_independent_search.py",
+        "--check",
+        "--jobs",
+        "8"
+      ],
+      "exit_code": 0,
+      "log": "logs/er_full_unsandboxed.log.gz",
+      "reason": "Sandbox attempt could not bind the local multiprocessing socket; rerun outside sandbox passed."
+    },
+    {
+      "name": "lean_build",
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "lake",
+        "--no-cache",
+        "build",
+        "Math",
+        "Math.GeneratedExcessTwoCertificates",
+        "Math.ExcessTwoCertificatesAudit"
+      ],
+      "exit_code": 0,
+      "seconds": 730.653,
+      "log": "logs/lean_build.log.gz"
+    },
+    {
+      "name": "lean_axioms",
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "lake",
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "Math/ExcessTwoCertificatesAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 4.156,
+      "log": "logs/lean_axioms.log.gz"
+    }
+  ],
+  "log_inventory": [
+    {
+      "path": "logs/artifact_status.log.gz",
+      "raw_bytes": 7,
+      "raw_sha256": "63747808e6d89c0f1ebdb4dc8723a7e1840f029407c8715c3c0db3d13dee716d",
+      "gzip_sha256": "9b5550fddd5730ffa248ffc6991f139d06a0b40ba912659833f7f75c759a040a"
+    },
+    {
+      "path": "logs/branch_whitespace.log.gz",
+      "raw_bytes": 12380,
+      "raw_sha256": "2868ebd2cf8e43057913481873577faa91a9f85a2df61b408f3b8707a6bad4d3",
+      "gzip_sha256": "4c98c4d2424ccbcf786e7d6ba78390a3b251173248111d2b260a481ac723f545"
+    },
+    {
+      "path": "logs/c5_excess_two_e3_adjacent.log.gz",
+      "raw_bytes": 278,
+      "raw_sha256": "481ee210419f4f8b7f0dd0aa61d32f424a2aa0de1a21d02f4b1ba4e2e16dbf7b",
+      "gzip_sha256": "5301a477df2068df55284a3b1f71359aee8998c8331a3a300835455ecba04027"
+    },
+    {
+      "path": "logs/c5_excess_two_e3_degree6.log.gz",
+      "raw_bytes": 602,
+      "raw_sha256": "b31acc2419db9d490976577cd078485f60f81308c94e142db1d7315e83858946",
+      "gzip_sha256": "279e15dbf46964c90db1a8203b32cb5002e26da3b05bccfe49f19ff9c12fafde"
+    },
+    {
+      "path": "logs/c5_excess_two_e3_foundation.log.gz",
+      "raw_bytes": 189,
+      "raw_sha256": "105de5698ba1cbad31ea186891a1ddb4cf5bf34dec50442ed7022332af77e5ea",
+      "gzip_sha256": "302fb41ce10b130b5a993d69a3dc6ea6e30cbeb9950259beb76de1123430b67a"
+    },
+    {
+      "path": "logs/c5_excess_two_e3_nonadjacent.log.gz",
+      "raw_bytes": 187,
+      "raw_sha256": "547d73055c6b5c69867768473e59bcacb57acafbf0797c6083fd168c2a88ee7f",
+      "gzip_sha256": "9bb699b9b6eddb28ca2b30758f3a3ff949553016fb1eef81944e8a7f85a300e7"
+    },
+    {
+      "path": "logs/c5_excess_two_e4_control.log.gz",
+      "raw_bytes": 106,
+      "raw_sha256": "b01b7bd5251254f2b31b73d2fabefe7ac9a6595ee81f0c5448e43ee905b14f48",
+      "gzip_sha256": "61ffdfb549c984e6c095b92ed1e0285e41a4a8f0e41d44fe0e584ce866ed00ac"
+    },
+    {
+      "path": "logs/c5_excess_two_e4_reductions.log.gz",
+      "raw_bytes": 422,
+      "raw_sha256": "82005fba4eb08dd4719af31255d75e836924d62ec8a590cacc0a4ad56da83c96",
+      "gzip_sha256": "dee05e410e83cfc842569a50ab2cc3a953a89672dc404ecd9ae13ca2823fa39a"
+    },
+    {
+      "path": "logs/c5_excess_two_e4c_controls.log.gz",
+      "raw_bytes": 560,
+      "raw_sha256": "5f2ea99a0f23a43309b7bbb51d97157f89f648318c8bc520af3f44299c2025b1",
+      "gzip_sha256": "3b26b34fabfb41dc8b5e06753f0e2930f1340e5dbf027a6ed1a2538dfcb744ae"
+    },
+    {
+      "path": "logs/c5_excess_two_e5_branches.log.gz",
+      "raw_bytes": 171,
+      "raw_sha256": "6c51d5a9b202fb205836d95ce62c0604e79358ce158ab91fd9a3fa17cebea057",
+      "gzip_sha256": "7936693ae4b657bcbf3dcc1fe1a00bab0ecf9cdf61bf45794f58b18a744b5ec4"
+    },
+    {
+      "path": "logs/c5_excess_two_e5_controls.log.gz",
+      "raw_bytes": 52,
+      "raw_sha256": "81556e07d5f438be2e75dd22c06d66d77295942e30d083e0a6ab26c351280b79",
+      "gzip_sha256": "4ccbe20ce7b2827b932e2d22eb5fab2d03e0e3fd96a68eed706f26bde3398128"
+    },
+    {
+      "path": "logs/c5_excess_two_e5_local.log.gz",
+      "raw_bytes": 556,
+      "raw_sha256": "4db233444902f867a8215f5bf78ef108003819f0dd7445f5d02faed59faf6e7b",
+      "gzip_sha256": "a1e420954a4a3c9901ae1e7ba298db0e94a096f501416c9f06c12b8e22e30f9f"
+    },
+    {
+      "path": "logs/c5_excess_two_e6_controls.log.gz",
+      "raw_bytes": 92,
+      "raw_sha256": "7cff27d0c0ba40ee03aa8ade7dddc8a38f0a3760f2afb3d2c8283ceff06d0454",
+      "gzip_sha256": "024bd3fcc4c42ddbe8cc9247e7364809d0c95c59388f51461e6d0399c8e43a46"
+    },
+    {
+      "path": "logs/c5_excess_two_e6_local_controls.log.gz",
+      "raw_bytes": 99,
+      "raw_sha256": "26dfc48d6bc762e5ba0e730b0a030d341c5c7ef6ffb9466c84cbb958710d64fa",
+      "gzip_sha256": "6653b5c1ead2dfbb6f292228acbacde8f95baa124ea71296385cb956a78a80f7"
+    },
+    {
+      "path": "logs/c5_excess_two_e6_reductions.log.gz",
+      "raw_bytes": 173,
+      "raw_sha256": "d42a38f4af59273e447145e0d1d034939ebc88b38c12b6c251effdcb3f19a178",
+      "gzip_sha256": "0b86f8e699d0490086b8280db9270238656b444d02d2ca0984dab5a518d7fcfa"
+    },
+    {
+      "path": "logs/c5_kempe_diagonal_transport.log.gz",
+      "raw_bytes": 723,
+      "raw_sha256": "8fd19322bb94601ed699822cdec98b8f34c96f2ab9594de2477ba09e470881d7",
+      "gzip_sha256": "350d7226fd7ce7efa5c8e36e7a9adbb5af7ff21d3edab6367b23ce01d8678042"
+    },
+    {
+      "path": "logs/degree6_t1_spoke_coverage.log.gz",
+      "raw_bytes": 460,
+      "raw_sha256": "1af0f9c9ec1f81a4dd0b0817d8f1063545a8ded1c48f9d1df5d357f07685d57a",
+      "gzip_sha256": "e7d6b4fd3648a67aebfd4f51141aac72de04bb4b72d354ad14f3712a0aa3a43a"
+    },
+    {
+      "path": "logs/docgraph.log.gz",
+      "raw_bytes": 63,
+      "raw_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+      "gzip_sha256": "2c3fa30fe3d095b24c9f6afe62afd01064868c3bdcdb1080de686362b3124877"
+    },
+    {
+      "path": "logs/docs.log.gz",
+      "raw_bytes": 74,
+      "raw_sha256": "31b228bd0b4ca4d2c098392e4da2b4fc84c979a38c6eb3931d5a0798249a3cc9",
+      "gzip_sha256": "672739c920c41f2f5ce51095535a84cf014175a0759eec654982b4b5949253af"
+    },
+    {
+      "path": "logs/er_full.log.gz",
+      "raw_bytes": 2731,
+      "raw_sha256": "86caffa6e3b3ad325657d97698808e419fcad3aedc7591cf1e4882470eac4060",
+      "gzip_sha256": "e1c8fed33e9190ca52bebe09d6991712775bb24d7458fca58e0eeaef27c84ad7"
+    },
+    {
+      "path": "logs/er_full_unsandboxed.log.gz",
+      "raw_bytes": 6535,
+      "raw_sha256": "5b5d644562c7de43f079240ba6c8881243ce729a08c37f9d979125052ec2e124",
+      "gzip_sha256": "30f5601784639fc57501fe1cbe2868b475db8f56811a7b5ea1b883e8ae00d6c9"
+    },
+    {
+      "path": "logs/es_acceptance.log.gz",
+      "raw_bytes": 184,
+      "raw_sha256": "0d8dcba96f84955a3fe26c6d9148801c0b0698160e32bc586ff125c6f4ee6490",
+      "gzip_sha256": "de00de7528c7a542f0f4ca57707eb1bd48ada94f0b80ef34ab6126edb3ef002c"
+    },
+    {
+      "path": "logs/ignore_check.log.gz",
+      "raw_bytes": 55,
+      "raw_sha256": "5e008140c06c4c1a744f0ba4d71c977d6455edbd8dd91e9594d4d733a7f8fe57",
+      "gzip_sha256": "9a6dd266f95843721889e865cd7a2b8747634e0c443a9fbc65375c024dca1267"
+    },
+    {
+      "path": "logs/lc_export.log.gz",
+      "raw_bytes": 353,
+      "raw_sha256": "5b1d3b5d1b3c37dae3e7aac3bdf0ef955465bfa215688dd2aa68819dcc397392",
+      "gzip_sha256": "82244da1189f28722af8c7a67d5ab44c1e0369bc976e059812a75c024d38cae1"
+    },
+    {
+      "path": "logs/lean_axioms.log.gz",
+      "raw_bytes": 112779,
+      "raw_sha256": "dd976c7b6e533d2a88c6e8795711b7ab3a51d327e5c13aa55358ac8c86cb6c67",
+      "gzip_sha256": "9cdfc32acffcbe4efaaf2260e047257ae39155b3ad457a173a2cb33dd26f5d9b"
+    },
+    {
+      "path": "logs/lean_build.log.gz",
+      "raw_bytes": 392851,
+      "raw_sha256": "d82bc79908ed54cbe72c1feb8bf77a4036873e1885ef38bd560251bca2d4f4d4",
+      "gzip_sha256": "bfda926006038659a25fd7e9eba8a187bd44c03d4a61025c7b6b28935ae4ecc6"
+    },
+    {
+      "path": "logs/final_docs.log.gz",
+      "raw_bytes": 74,
+      "raw_sha256": "55881597ae73acc1d0e24e02c99a99a542ed3f8063c45ee2912877bcdc508074",
+      "gzip_sha256": "84d39dd418ad6f55fb8041d5d4e3d0ab01ac3930b66f9989ea78b430af159af1"
+    },
+    {
+      "path": "logs/final_docgraph.log.gz",
+      "raw_bytes": 63,
+      "raw_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+      "gzip_sha256": "2c3fa30fe3d095b24c9f6afe62afd01064868c3bdcdb1080de686362b3124877"
+    },
+    {
+      "path": "logs/final_artifacts.log.gz",
+      "raw_bytes": 7,
+      "raw_sha256": "63747808e6d89c0f1ebdb4dc8723a7e1840f029407c8715c3c0db3d13dee716d",
+      "gzip_sha256": "9b5550fddd5730ffa248ffc6991f139d06a0b40ba912659833f7f75c759a040a"
+    },
+    {
+      "path": "logs/final_diff.log.gz",
+      "raw_bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    {
+      "path": "logs/final_ignore.log.gz",
+      "raw_bytes": 55,
+      "raw_sha256": "5e008140c06c4c1a744f0ba4d71c977d6455edbd8dd91e9594d4d733a7f8fe57",
+      "gzip_sha256": "9a6dd266f95843721889e865cd7a2b8747634e0c443a9fbc65375c024dca1267"
+    }
+  ],
+  "final_checks": [
+    {
+      "name": "docs",
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.514,
+      "log": "logs/final_docs.log.gz"
+    },
+    {
+      "name": "docgraph",
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.3,
+      "log": "logs/final_docgraph.log.gz"
+    },
+    {
+      "name": "artifacts",
+      "argv": [
+        ".venv/bin/python",
+        "tools/artifacts.py",
+        "status"
+      ],
+      "exit_code": 0,
+      "seconds": 1.756,
+      "log": "logs/final_artifacts.log.gz"
+    },
+    {
+      "name": "diff",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.006,
+      "log": "logs/final_diff.log.gz"
+    },
+    {
+      "name": "ignore",
+      "argv": [
+        "git",
+        "check-ignore",
+        "-v",
+        "scratch/er/plantri"
+      ],
+      "exit_code": 0,
+      "seconds": 0.003,
+      "log": "logs/final_ignore.log.gz"
+    }
+  ],
+  "staged_diff_check": {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit_code": 0
+  }
+}

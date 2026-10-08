@@ -1,0 +1,61 @@
+{
+  "schema": "c5-kempe-diagonal-transport-validation-v1",
+  "base_commit": "2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090",
+  "branch": "task-kprime-diagonal-transport",
+  "records": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/c5_kempe_diagonal_transport.py (initial, before control format fix)",
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/scripts/c5_kempe_diagonal_transport.py\", line 377, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/scripts/c5_kempe_diagonal_transport.py\", line 360, in main\n    observations, files = build()\n                          ~~~~~^^\n  File \"/home/ray/developer/ai/math/scripts/c5_kempe_diagonal_transport.py\", line 322, in build\n    control_rows = controls(all_records)\n  File \"/home/ray/developer/ai/math/scripts/c5_kempe_diagonal_transport.py\", line 239, in controls\n    others.append(extract_control(f'S935-q{rejected[\"pattern_index\"]}-psi{wi}',\n                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        s935['graph'], 5, 3, 4, 6, 7, psi, 935, all_records[935]))\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/scripts/c5_kempe_diagonal_transport.py\", line 176, in extract_control\n    rotation = graph_data['embedding']['rotation'][str(p)]\n               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^\nTypeError: list indices must be integers or slices, not str\n"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/c5_kempe_diagonal_transport.py (successful generation after format fix)",
+      "exit_code": 0,
+      "output": "{\"tables\":{\"933\":{\"L1\":2112,\"L2\":192},\"935\":{\"L1\":1728,\"L2\":192},\"941\":{\"L1\":2304,\"L2\":384},\"1012\":{\"L1\":1728,\"L2\":192}},\"controls\":[\"P1-witness-001\",\"S935-q3-psi0\",\"S935-q6-psi0\"],\"bounded_realization\":{\"wirings\":500,\"full_frame_contact\":275,\"disk\":10,\"realized_target_count\":0}}\nCREATED 6 files\n",
+      "output_kind": "summary of observed generation output"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/c5_kempe_diagonal_transport.py --check",
+      "exit_code": 0,
+      "output": "{\"bounded_realization\": {\"counts\": {\"T4_and_sigma_critical\": 10, \"disk\": 10, \"disk_sigma_1012\": 2, \"disk_sigma_935\": 2, \"disk_sigma_942\": 2, \"disk_sigma_956\": 2, \"disk_sigma_997\": 2, \"full_frame_contact\": 275, \"wirings\": 500}, \"realized_target_count\": 0}, \"controls\": [{\"L1\": true, \"L2\": true, \"assignment_id\": \"KD1012-0001\", \"name\": \"P1-witness-001\", \"useful_swaps\": 4}, {\"L1\": true, \"L2\": true, \"assignment_id\": \"KD935-0003\", \"name\": \"S935-q3-psi0\", \"useful_swaps\": 4}, {\"L1\": true, \"L2\": true, \"assignment_id\": \"KD935-0008\", \"name\": \"S935-q6-psi0\", \"useful_swaps\": 4}], \"tables\": {\"1012\": {\"L1\": 1728, \"L2\": 192}, \"933\": {\"L1\": 2112, \"L2\": 192}, \"935\": {\"L1\": 1728, \"L2\": 192}, \"941\": {\"L1\": 2304, \"L2\": 384}}}\nCHECK OK\n"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONHASHSEED=17 .venv/bin/python scripts/c5_kempe_diagonal_transport.py --check",
+      "exit_code": 0,
+      "output": "{\"bounded_realization\": {\"counts\": {\"T4_and_sigma_critical\": 10, \"disk\": 10, \"disk_sigma_1012\": 2, \"disk_sigma_935\": 2, \"disk_sigma_942\": 2, \"disk_sigma_956\": 2, \"disk_sigma_997\": 2, \"full_frame_contact\": 275, \"wirings\": 500}, \"realized_target_count\": 0}, \"controls\": [{\"L1\": true, \"L2\": true, \"assignment_id\": \"KD1012-0001\", \"name\": \"P1-witness-001\", \"useful_swaps\": 4}, {\"L1\": true, \"L2\": true, \"assignment_id\": \"KD935-0003\", \"name\": \"S935-q3-psi0\", \"useful_swaps\": 4}, {\"L1\": true, \"L2\": true, \"assignment_id\": \"KD935-0008\", \"name\": \"S935-q6-psi0\", \"useful_swaps\": 4}], \"tables\": {\"1012\": {\"L1\": 1728, \"L2\": 192}, \"933\": {\"L1\": 2112, \"L2\": 192}, \"935\": {\"L1\": 1728, \"L2\": 192}, \"941\": {\"L1\": 2304, \"L2\": 384}}}\nCHECK OK\n"
+    },
+    {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 1,
+      "output": "not directly indexed by STATUS: docs/c5_kempe_diagonal_transport.md\nFAIL: 1 errors (546 Markdown files, 5811 local links)\n"
+    },
+    {
+      "command": "python3 tools/docgraph check",
+      "exit_code": 0,
+      "output": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "git diff --no-index --check /dev/null scripts/c5_kempe_diagonal_transport.py",
+      "exit_code": 1,
+      "output": "",
+      "interpretation": "new-file difference; no whitespace diagnostic"
+    },
+    {
+      "command": "git diff --no-index --check /dev/null docs/c5_kempe_diagonal_transport.md",
+      "exit_code": 1,
+      "output": "",
+      "interpretation": "new-file difference; no whitespace diagnostic"
+    }
+  ],
+  "scope": "Actual command outcomes; six computed outputs are byte-replayed, this validation log is separate.",
+  "independent_review": {
+    "partition_and_swap_enumerator": "Independent RGS/normalization/noncrossing enumeration matched complete assignment sets for all four masks.",
+    "controls": "All three named controls reconstructed.",
+    "bounded_domain": "Full-frame-contact eight-vertex wiring superset; target incidence not realized."
+  }
+}

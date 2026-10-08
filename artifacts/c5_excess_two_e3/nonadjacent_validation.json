@@ -1,0 +1,28 @@
+{
+  "commands": [
+    {
+      "command": "python3 scripts/c5_excess_two_e3_nonadjacent.py",
+      "exit_code": 0,
+      "result": "GENERATED nonadjacent.json; 328844 bytes; SHA256 0e9b7dad2522ab653e4e98392d55dc79d0eb8da5bf86bbc4bd75d519be2f2e21"
+    },
+    {
+      "command": "python3 scripts/c5_excess_two_e3_nonadjacent.py --check",
+      "exit_code": 0,
+      "result": "CHECK OK: E3 nonadjacent arithmetic, literal tuples, two positive controls, and 64 hub path bags"
+    },
+    {
+      "command": "env PYTHONHASHSEED=17 python3 scripts/c5_excess_two_e3_nonadjacent.py --check",
+      "exit_code": 0,
+      "result": "CHECK OK: E3 nonadjacent arithmetic, literal tuples, two positive controls, and 64 hub path bags"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "result": "no output"
+    }
+  ],
+  "evidence_boundary": "Fixed positive controls and integer/hub-bag checks; nonadjacent branch source exclusions remain as the paper notes state.",
+  "global_checks": "Root owns check_docs.py, DocGraph and final whitespace validation; see REPORT.md.",
+  "task": "E3 nonadjacent subtask",
+  "worktree": "/home/ray/developer/ai/math-task-e3"
+}

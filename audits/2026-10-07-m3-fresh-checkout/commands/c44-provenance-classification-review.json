@@ -1,0 +1,27 @@
+{
+  "name": "c44-provenance-classification-review",
+  "argv": [
+    "/home/ray/developer/ai/math/.venv/bin/python",
+    "-c",
+    "import gzip, hashlib, json, re, subprocess\nfrom pathlib import Path\naudit = Path(\"/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout\")\nclone = Path(\"/tmp/math-m3-ba0b447\")\nsummary = json.loads((audit/\"provenance-summary.json\").read_bytes())\nc44 = json.loads((audit/\"c44-summary.json\").read_bytes())\nassert c44[\"suite_status\"] == \"FAIL\" and c44[\"failed_checks\"] == 1\nassert c44[\"finding\"][\"id\"] == \"M3-C44-INPUT-AUDIT-001\"\nassert c44[\"finding\"][\"diagnostic\"][\"difference_count\"] == 2\nassert {d[\"path\"] for d in c44[\"finding\"][\"diagnostic\"][\"differences\"]} == {\"$.layers[6].es_source_present\", \"$.layers[6].es_source_hash_matches\"}\nassert c44[\"finding\"][\"candidate_source_or_saved_artifact_repaired\"] is False\nassert [d[\"source\"] for d in summary[\"historical_review_leaf_comparison\"]] == [\"artifacts/c5_excess_two_e4/reductions.json\", \"artifacts/c5_excess_two_e5/controls.json\", \"artifacts/c5_excess_two_e4c/summary.json\"]\nbranches = next(d for d in summary[\"comparisons\"] if d[\"name\"] == \"E5_branches\")\nassert branches[\"strict_byte_status\"] == \"FAIL\" and branches[\"exact_leaf_allowlist_match\"]\nassert branches[\"allowed_leaf_paths\"] == [\"/sources_sha256/docs/c5_excess_two_mixed_core_spokes.md\"]\nassert summary[\"new_finding\"][\"id\"] == \"M3-PROV-E5-BRANCHES\"\nassert all(entry[\"strict_byte_status\"] == \"FAIL\" for entry in summary[\"comparisons\"])\nassert summary[\"strict_commands\"][\"e5_branches\"][\"exit_code\"] == 1\nwhitespace = json.loads((audit/\"whitespace-comparison.json\").read_bytes())\nhistorical = gzip.decompress((clone/\"artifacts/c5_integrate_branch_review/logs/branch_whitespace.log.gz\").read_bytes())\ncurrent = (audit/\"logs/provenance_branch_whitespace.stdout.log\").read_bytes()\nassert historical == current\ndiagnostics = [line for line in current.decode().splitlines() if re.match(r\"^(.+):(\\d+): (.+)$\",line)]\nassert len(diagnostics) == whitespace[\"current_count\"] == whitespace[\"historical_count\"] == 86\nassert whitespace[\"new_diagnostics\"] == whitespace[\"resolved_diagnostics\"] == []\nfor entry in whitespace[\"unchanged_exception_source_bytes\"]:\n    prior = subprocess.check_output([\"git\",\"show\",summary[\"reference_review_sha\"]+\":\"+entry[\"path\"]],cwd=clone)\n    candidate = subprocess.check_output([\"git\",\"show\",summary[\"candidate_sha\"]+\":\"+entry[\"path\"]],cwd=clone)\n    assert prior == candidate and hashlib.sha256(candidate).hexdigest() == entry[\"candidate\"][\"sha256\"]\nassert whitespace[\"full_branch_exit_code\"] == 2 and whitespace[\"candidate_parent_diff_exit_code\"] == 0\nmd = (audit/\"c44-summary.md\").read_text()\nassert all(line == line.rstrip() for line in md.splitlines())\nprint(json.dumps({\"review_status\":\"PASS\",\"c44_presence_drift\":\"separate candidate finding; original strict FAIL retained\",\"e5_branches\":\"new document-hash finding; separate from three historical FAILs\",\"branch_whitespace\":{\"diagnostics\":86,\"raw_identical_to_historical\":True,\"exception_source_files\":len(whitespace[\"unchanged_exception_source_bytes\"]),\"full_branch_exit_code\":2,\"candidate_parent_diff_exit_code\":0},\"c44_summary_md\":{\"trailing_whitespace\":0,\"sha256\":hashlib.sha256(md.encode()).hexdigest()}}))\n"
+  ],
+  "cwd": "/tmp/math-m3-ba0b447",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "started_unix": 1791350339.7640088,
+  "exit_code": 0,
+  "seconds": 0.053,
+  "logs": [
+    {
+      "path": "logs/c44-provenance-classification-review.stdout.log",
+      "bytes": 489,
+      "sha256": "f52e9a576dcf6954e94bbda19447b4bf1180f3ee527dd971648bfedbf24b508c"
+    },
+    {
+      "path": "logs/c44-provenance-classification-review.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

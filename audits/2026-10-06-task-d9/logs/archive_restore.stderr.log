@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math-task-d9/tools/audit_archive.py", line 242, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math-task-d9/tools/audit_archive.py", line 238, in main
+    replay(root, args.action, (args.destination or root).resolve(), args.artifacts)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math-task-d9/tools/audit_archive.py", line 191, in replay
+    raise ValueError(f'No archived bytes for manifest artifact: {relative}')
+ValueError: No archived bytes for manifest artifact: artifacts/c5_excess_two_e3/degree6.json

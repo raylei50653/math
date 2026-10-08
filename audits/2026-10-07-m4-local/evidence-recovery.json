@@ -1,0 +1,511 @@
+{
+  "task": "M4-L",
+  "recorded_utc": "2026-10-07T07:45:44.472523+00:00",
+  "candidate_sha": "ba0b447f09617591d9f2ba81c988f537af771791",
+  "direct_parent_sha": "a1ca89db9c04c6e65ba0b1cb0928df9e8c163e42",
+  "main_base_sha": "2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090",
+  "final_delivery_sha": null,
+  "scope": "Recover available original M1/prior supervisor evidence using bounded path/hash search; independently recheck immutable 17-blob reconstruction and selected existing M3 records. No historical bundle, producer, Git index or commit changed by this recovery task.",
+  "original_path_status": [
+    {
+      "path": "/tmp/math-m1-2026-10-07-t05hjm31",
+      "exists": false,
+      "error": "FileNotFoundError",
+      "errno": 2
+    },
+    {
+      "path": "/tmp/math-merge-supervision-2026-10-07-cai23oac",
+      "exists": false,
+      "error": "FileNotFoundError",
+      "errno": 2
+    },
+    {
+      "path": "/tmp/math-m3-ba0b447",
+      "exists": false,
+      "error": "FileNotFoundError",
+      "errno": 2
+    }
+  ],
+  "searches": [
+    {
+      "kind": "bounded filename/path search",
+      "argv": [
+        "rg",
+        "--files",
+        "--hidden",
+        "/tmp",
+        "/home/ray/developer",
+        "/home/ray/.codex",
+        "/home/ray/.agents",
+        "/home/ray/tmp",
+        "/home/ray/Documents",
+        "/home/ray/documents",
+        "/home/ray/actions-runner-math",
+        "-g",
+        "!**/.git/**",
+        "-g",
+        "!**/.lake/**",
+        "-g",
+        "!**/node_modules/**",
+        "-g",
+        "!**/.venv/**",
+        "-g",
+        "!**/site-packages/**"
+      ],
+      "exit_code": 2,
+      "stdout": {
+        "bytes": 13573341,
+        "sha256": "0bf74680920b882d97e7c51739569c318f53290e6832b27eb53790ef7cb23519"
+      },
+      "matched_paths": [
+        "/home/ray/developer/ai/math/audits/2026-10-07-merge-supervision/SUPERVISION_INVENTORY.json",
+        "/home/ray/developer/ai/math/audits/2026-10-07-merge-supervision/m3-review/m1-package-reconstructed.json"
+      ],
+      "stderr": "rg: /tmp/systemd-private-26f42c11d87b4d6da6c994be794be80e-systemd-logind.service-HXQuiv: Permission denied (os error 13)\nrg: /tmp/systemd-private-26f42c11d87b4d6da6c994be794be80e-vnstat.service-WLLc2z: Permission denied (os error 13)\nrg: /tmp/codex-daemon-1000: Permission denied (os error 13)\n",
+      "interpretation": "No original M1 or prior supervisor directory/copy was found by path name. Current supervision manifest and fresh reconstruction are not original M1 evidence."
+    },
+    {
+      "kind": "bounded exact historical path/hash reference search",
+      "argv": [
+        "rg",
+        "-l",
+        "-F",
+        "-e",
+        "math-m1-2026-10-07-t05hjm31",
+        "-e",
+        "math-merge-supervision-2026-10-07-cai23oac",
+        "-e",
+        "88525e181ed89e1e3e28122c9bb6c3f5bc538091bf6e1fb222cdb2121c80a31a",
+        "-e",
+        "46b4fed4672217e4e0c31f5dc0c6a0230ad52626d71b05298a98d9e0be842e2f",
+        "/home/ray/developer/ai/math/docs",
+        "/home/ray/developer/ai/math/audits",
+        "/home/ray/developer/ai/math/scratch",
+        "/tmp/codex-remote-attachments",
+        "/home/ray/.codex/sessions",
+        "/home/ray/tmp",
+        "/home/ray/Documents",
+        "/home/ray/documents",
+        "/home/ray/actions-runner-math",
+        "-g",
+        "!**/.git/**",
+        "-g",
+        "!**/.lake/**",
+        "-g",
+        "!**/node_modules/**",
+        "-g",
+        "!**/.venv/**",
+        "-g",
+        "!**/site-packages/**",
+        "-g",
+        "*.md",
+        "-g",
+        "*.json",
+        "-g",
+        "*.jsonl",
+        "-g",
+        "*.py",
+        "-g",
+        "*.log"
+      ],
+      "exit_code": 0,
+      "matched_files": [
+        "/home/ray/developer/ai/math/audits/2026-10-07-merge-supervision/REPORT.md",
+        "/home/ray/.codex/sessions/2026/10/07/rollout-2026-10-07T11-55-02-01a11480-1c5d-75e2-9a38-f2eaab53b18d.jsonl",
+        "/home/ray/.codex/sessions/2026/10/07/rollout-2026-10-07T15-40-59-01a1154e-faa5-7820-af52-fb294a6f2dff.jsonl",
+        "/home/ray/.codex/sessions/2026/10/07/rollout-2026-10-07T15-41-46-01a1154f-afd0-7060-a619-e492d356a4b9.jsonl",
+        "/home/ray/.codex/sessions/2026/10/07/rollout-2026-10-07T15-41-53-01a1154f-ca4a-7260-956c-51f6e641fcbd.jsonl",
+        "/home/ray/.codex/sessions/2026/10/07/rollout-2026-10-07T15-41-37-01a1154f-8e35-7141-b74b-ab073d793f0f.jsonl",
+        "/home/ray/.codex/sessions/2026/10/07/rollout-2026-10-07T12-06-47-01a1148a-df63-70d2-9d49-247e23ac2cec.jsonl",
+        "/home/ray/.codex/sessions/2026/10/07/rollout-2026-10-07T12-03-57-01a11488-458b-7362-9a9a-efc5a4dec1a4.jsonl"
+      ],
+      "stdout": {
+        "bytes": 830,
+        "sha256": "46920334d4a5c9577052b2e13d2d392f6a43070afaa6dab91c7046f1f8695428"
+      },
+      "stderr": "",
+      "interpretation": "Historical session captures provide exact original report and TSV bytes; current-turn/session references are derivative and are not recovery authority."
+    }
+  ],
+  "search_limits": [
+    "Not an exhaustive search of the filesystem or external backup services.",
+    "Excluded .git objects, .lake caches, node_modules, .venv and site-packages from filename/content traversal.",
+    "Three system-owned /tmp directories denied access and were not searched.",
+    "Current-turn session files and newly created fresh outputs are derivative references, not historical recovery authority.",
+    "No whole historical supervisor REPORT/ledger or M1 51-file package was available at its original path."
+  ],
+  "capture_provenance": {
+    "session_file": "/home/ray/.codex/sessions/2026/10/07/rollout-2026-10-07T11-55-02-01a11480-1c5d-75e2-9a38-f2eaab53b18d.jsonl",
+    "bytes": 3932840,
+    "sha256": "2d448528b876ba1868be507a6751932cc6c2c381c327879f8ca4e54f01cb1835",
+    "rollout_id": "01a11480-1c5d-75e2-9a38-f2eaab53b18d",
+    "report_and_tsv_command_capture": {
+      "line": 127,
+      "line_sha256": "7b4b46658052002166ad1f77e771c6858b37f0609af29fe037a68062f50dc82d",
+      "exit_code": 0,
+      "stdout": {
+        "bytes": 17352,
+        "sha256": "849baf3f65ce622b3be4ed5b80ed988cab5305fccf1b65f96295a45dcf4c2c4d"
+      }
+    },
+    "original_checksum_prefix_capture": {
+      "line": 137,
+      "line_sha256": "cd46f62a0fcaf90b6d13ec6b1115d971a853ebcaf8c6697e9701168013515cdb",
+      "exit_code": 0,
+      "prefix": "path\tbytes\tsha256\nREPORT.md\t15412\t88525e181ed89e1e3e28122c9bb6c3f5bc538091bf6e1fb222cdb2121c80a31a\nallowed-paths.txt\t678\t027d21d3a44778f30567a8cd1a6f7bc9e1d85297380aa1a7f66c3bc3473686d5\nartifacts_status.result.json\t554\ta0a517d6821c6ffad370969ad438be2c9c3aa0b040d5afea4dc1d135b1ebfc32\nartifacts_status.stderr.log\t0\te3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\nartifacts_status.stdout.log\t7\t63747808e6d89c0f1ebdb4dc8723a7e1840f029407c8715c3c0db3d13dee716d\ncandidate-commit.txt\t296\t235db94d02b17b404a33ae166e1104b5d90b234ad7bd7d3c5136506dcf8bab2b\ncandidate-diffstat.txt\t1335\t6a9ce807655d4a6427ac7afb5fc7686a57c0e410641c3a756e35b7b77837256d\ncandidate-files.json\t4038\t9d5969d5648546df3c3aa23d8b55376bb71a16bec0980682d2e362ff8960ad2c\ncandidate-files.tsv\t1940\t46b4fed4672217e4e0c31f5dc0c6a0230ad52626d71b05298a98d9e0be842e2f\ncandidate-name-status.tsv\t712\tf1a17fc987f914db2c49ede85c328d0de94de21764ef999e7c9fc3739f763a9a\ncandidate-verification.json\t662\tefdb36b187964efa13c7a305f7ab96092be74f3744e68cf275a79477e88ed538\ncandidate_diff_check.result.json\t578\tbb23ce5f319ab8890d51cc20f45bb10a1ef5d37d83d5305a40ecbbd29acc63ba\ncandidate_diff_check.stderr.log\t0\te3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\ncandidate_diff_check.stdout.log\t0\te3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\ncheck_docs.result.json\t526\tf17c68e5e43411b66b69cc519fc3cbfe4ceae5f69aba4b4987f02ee85c25d7ae\ncheck_docs.stderr.log\t0\te3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\ncheck_docs.stdout.log\t74\t7459345e03a3a14dd6af5d86aa7f78172b4f9b88389fe8cb802f523bcd3aa2e2\nchecks.json\t4824\t5b1050343a2d79d95699fe1169e51bdab71cef973cba8a9a5ab72a01d8950d6b\ndiff-before.patch\t29055\t15065208e60e6efac5f29af0733706e888e94fa0d0b8021f0b9467929cf27964\ndocgraph_default.result.json\n",
+      "complete_manifest": false,
+      "complete_entries_captured": 19,
+      "partial_last_line": "docgraph_default.result.json"
+    }
+  },
+  "recovered_original_files": [
+    {
+      "original_path": "/tmp/math-m1-2026-10-07-t05hjm31/REPORT.md",
+      "preserved_path": "audits/2026-10-07-m4-local/recovered-original/m1/REPORT.md",
+      "bytes": 15412,
+      "sha256": "88525e181ed89e1e3e28122c9bb6c3f5bc538091bf6e1fb222cdb2121c80a31a",
+      "classification": "original bytes recovered from recorded historical command stdout; verified against original historical manifest hash",
+      "capture_line": 127,
+      "original_checksum_reference_line": 137,
+      "checksum_reference_is_partial": true
+    },
+    {
+      "original_path": "/tmp/math-m1-2026-10-07-t05hjm31/candidate-files.tsv",
+      "preserved_path": "audits/2026-10-07-m4-local/recovered-original/m1/candidate-files.tsv",
+      "bytes": 1940,
+      "sha256": "46b4fed4672217e4e0c31f5dc0c6a0230ad52626d71b05298a98d9e0be842e2f",
+      "classification": "original bytes recovered from recorded historical command stdout; verified against original historical manifest hash",
+      "capture_line": 127,
+      "original_checksum_reference_line": 137,
+      "checksum_reference_is_partial": true
+    }
+  ],
+  "original_evidence_availability": {
+    "M1_report": "recovered original bytes and original checksum verified",
+    "M1_candidate_files_tsv": "recovered original bytes and original checksum verified",
+    "M1_full_51_file_package": "unavailable; only the two named original files recovered; no claim of full original package retention",
+    "M1_original_full_evidence_manifest": "unavailable; captured historical prefix retained as partial checksum authority",
+    "M1_other_logs_and_check_records": "unavailable as original files; historical session diagnostics were inspected but not serialized or regenerated as original evidence",
+    "prior_supervisor_directory": "unavailable; no original file copies with original checksum authority were found",
+    "M3_original_checkout_and_Lean_caches": "unavailable at historical /tmp path; original workspace bundle remains preserved"
+  },
+  "fresh_17_blob_recheck": {
+    "classification": "new reconstruction/check from immutable Git; not original execution logs",
+    "source_reconstruction": "audits/2026-10-07-merge-supervision/m3-review/m1-package-reconstructed.json",
+    "source_reconstruction_hash": {
+      "bytes": 3615,
+      "sha256": "b7ce964130c8cc0c153921cb1cda9e41402be17d91c15ff1e3c0b75808382dfb"
+    },
+    "matches_existing_supervision_fresh_reconstruction": true,
+    "matches_recovered_original_candidate_tsv": true,
+    "file_count": 17,
+    "bytes": 1322915,
+    "changes": {
+      "M": 8,
+      "A": 9
+    },
+    "files": [
+      {
+        "change": "M",
+        "path": "README.md",
+        "bytes": 10411,
+        "sha256": "55acccaf6a80d6d0f1710d1316cd836f4372ffb583421beb4b3ec3bf8dd31d1c"
+      },
+      {
+        "change": "M",
+        "path": "artifacts/c5_excess_two_c44pp/REPORT.md",
+        "bytes": 21727,
+        "sha256": "6baa1dff6f1a280b5e05c272b9f16a46b38a16f026ab969288281e8e5d891179"
+      },
+      {
+        "change": "A",
+        "path": "artifacts/c5_excess_two_no_mixed_core44/observations.json",
+        "bytes": 992965,
+        "sha256": "e2b74cc9516d2131b1ad53e98558d4a0131172a5d98e3fd828814ede9a795097"
+      },
+      {
+        "change": "A",
+        "path": "audits/2026-10-07-c44pp-mixed-audit/REPORT.md",
+        "bytes": 7433,
+        "sha256": "81b83315dde45b8add60f4c70caec5eef84a206f20351cbc4969b8899ef55636"
+      },
+      {
+        "change": "A",
+        "path": "audits/2026-10-07-c44pp-mixed-audit/validation.json",
+        "bytes": 6858,
+        "sha256": "08b7ec78ca8d2a3527b6adfb55312c2a48614410aedbc9a39d0b7c341376a50b"
+      },
+      {
+        "change": "A",
+        "path": "audits/2026-10-07-c44pp-mixed-audit/verify.py",
+        "bytes": 26691,
+        "sha256": "7a1329bd3f5c6ee79735a5954fd15dc30434d7e3ca07ec30fed7cad65d82824e"
+      },
+      {
+        "change": "M",
+        "path": "docs/STATUS.md",
+        "bytes": 131682,
+        "sha256": "2f1fa35c5df2d62695b307dc2e4494b92f6508b4465b783a7910753f3ddadb6f"
+      },
+      {
+        "change": "M",
+        "path": "docs/c5_excess_two_mixed_core_spoke_unary.md",
+        "bytes": 11957,
+        "sha256": "2ec389e9f58669d84dbd7308018c3770956af588a42954b3b1844f804da4ed7a"
+      },
+      {
+        "change": "M",
+        "path": "docs/c5_excess_two_mixed_core_spokes.md",
+        "bytes": 13065,
+        "sha256": "2fe0780d75175f1ccee38a20939eb29f89048a67a82c07fb20afb59ac7680136"
+      },
+      {
+        "change": "M",
+        "path": "docs/c5_excess_two_mixed_core_two_unary.md",
+        "bytes": 13056,
+        "sha256": "f7378979203061ac5743af1d962d12fbe61a8ffbcd37aaa1a3b206ee6bc95c3c"
+      },
+      {
+        "change": "M",
+        "path": "docs/c5_excess_two_mixed_omission.md",
+        "bytes": 13620,
+        "sha256": "27a974285e24ef8fe300b42a76cd35c6b835bb97a46a6cc5218a4d01008598d3"
+      },
+      {
+        "change": "A",
+        "path": "docs/c5_excess_two_no_mixed_core44.md",
+        "bytes": 8880,
+        "sha256": "ab3dcd2ff66ec3a2508f91d74991d8f04fa7f9446c2addf5430d5e1b5f798dab"
+      },
+      {
+        "change": "M",
+        "path": "docs/c5_kempe_guide.md",
+        "bytes": 38140,
+        "sha256": "7cbad5d926f8d92a3fa2d4c83256833713608adba15d6013d9b413dfbe8d2778"
+      },
+      {
+        "change": "A",
+        "path": "docs/history/2026-10-07-c44pp-integration-review.md",
+        "bytes": 4753,
+        "sha256": "660592e2d2d2b80ce5cea74fcfb833bb61378ba1232cb16c24ac59d0b8039b0e"
+      },
+      {
+        "change": "A",
+        "path": "docs/history/2026-10-07-merge-readiness-tasks.md",
+        "bytes": 10543,
+        "sha256": "d2c1d612fb9549faa409b2dc89728f71c86ed66428900b6cf532057fbbbcf290"
+      },
+      {
+        "change": "A",
+        "path": "docs/history/2026-10-07-no-mixed-core44.md",
+        "bytes": 3912,
+        "sha256": "4e7f611b356e03eafe79358336dc4146e4f19f90a3d0e9bf153bf854555c6602"
+      },
+      {
+        "change": "A",
+        "path": "scripts/c5_excess_two_no_mixed_core44.py",
+        "bytes": 7222,
+        "sha256": "f5534863c0fa6779cd00f9cb304d8a3565cbaed239e7f1eb7276b356b0ceadc1"
+      }
+    ],
+    "current_workspace_equality_not_claimed": "M4 documentation integration may change current documentation after the candidate; immutable candidate blobs are the tested source for this check."
+  },
+  "same_candidate_M3_fresh_evidence_references": [
+    {
+      "name": "u1-default",
+      "record": "audits/2026-10-07-m3-fresh-checkout/commands/u1-default.json",
+      "bytes": 634,
+      "sha256": "01ae4dbe032df37266d55d1dde7f7eac5aa6fb00dae7fdf4feab807200291dbc",
+      "exit_code": 0,
+      "logs": [
+        {
+          "path": "logs/u1-default.stdout.log",
+          "bytes": 1020,
+          "sha256": "b3bb3530dbe236c19e853bfdcf5cc2f0ccac5d74ecd3244fa078654d2774e4f6"
+        },
+        {
+          "path": "logs/u1-default.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "classification": "preserved M3 execution on the same immutable candidate; hashes rechecked now; not original M1 output and not a new execution of the command"
+    },
+    {
+      "name": "u1-seed17",
+      "record": "audits/2026-10-07-m3-fresh-checkout/commands/u1-seed17.json",
+      "bytes": 658,
+      "sha256": "70f6554129108500b9dcd9d7bc07f8ca6fc4071b72c8d00afde3aebdaf4f299c",
+      "exit_code": 0,
+      "logs": [
+        {
+          "path": "logs/u1-seed17.stdout.log",
+          "bytes": 1020,
+          "sha256": "b3bb3530dbe236c19e853bfdcf5cc2f0ccac5d74ecd3244fa078654d2774e4f6"
+        },
+        {
+          "path": "logs/u1-seed17.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "classification": "preserved M3 execution on the same immutable candidate; hashes rechecked now; not original M1 output and not a new execution of the command"
+    },
+    {
+      "name": "mixed-verifier",
+      "record": "audits/2026-10-07-m3-fresh-checkout/commands/mixed-verifier.json",
+      "bytes": 745,
+      "sha256": "34fb7c7491d699856832b64e72913991a95717d508701ce654f36e950555fae0",
+      "exit_code": 0,
+      "logs": [
+        {
+          "path": "logs/mixed-verifier.stdout.log",
+          "bytes": 727,
+          "sha256": "0312ab38f6fcf9297f417e280be44312cebf643ffb946152de68bf0bd63ccc65"
+        },
+        {
+          "path": "logs/mixed-verifier.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "classification": "preserved M3 execution on the same immutable candidate; hashes rechecked now; not original M1 output and not a new execution of the command"
+    },
+    {
+      "name": "artifact-status",
+      "record": "audits/2026-10-07-m3-fresh-checkout/commands/artifact-status.json",
+      "bytes": 623,
+      "sha256": "2e2d2909b2ba7aeeb80f6b26316417982c0167fe757348855186b4c4564695ba",
+      "exit_code": 0,
+      "logs": [
+        {
+          "path": "logs/artifact-status.stdout.log",
+          "bytes": 7,
+          "sha256": "63747808e6d89c0f1ebdb4dc8723a7e1840f029407c8715c3c0db3d13dee716d"
+        },
+        {
+          "path": "logs/artifact-status.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "classification": "preserved M3 execution on the same immutable candidate; hashes rechecked now; not original M1 output and not a new execution of the command"
+    },
+    {
+      "name": "archive-verify",
+      "record": "audits/2026-10-07-m3-fresh-checkout/commands/archive-verify.json",
+      "bytes": 607,
+      "sha256": "fb78a3916b3c8427f8d593afd35f12d74a886b1fc430ae6fff20fc042be111ef",
+      "exit_code": 0,
+      "logs": [
+        {
+          "path": "logs/archive-verify.stdout.log",
+          "bytes": 138,
+          "sha256": "35ce6781c1950699746804a67785dfd51e8f1a70258e3fd9561f447ccc8f5b5e"
+        },
+        {
+          "path": "logs/archive-verify.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "classification": "preserved M3 execution on the same immutable candidate; hashes rechecked now; not original M1 output and not a new execution of the command"
+    },
+    {
+      "name": "docs",
+      "record": "audits/2026-10-07-m3-fresh-checkout/commands/docs.json",
+      "bytes": 579,
+      "sha256": "d5fed69b926fc6b3c5da293fbe310070128fcd1d14d449dd6bd91538a02e3bf2",
+      "exit_code": 0,
+      "logs": [
+        {
+          "path": "logs/docs.stdout.log",
+          "bytes": 74,
+          "sha256": "7459345e03a3a14dd6af5d86aa7f78172b4f9b88389fe8cb802f523bcd3aa2e2"
+        },
+        {
+          "path": "logs/docs.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "classification": "preserved M3 execution on the same immutable candidate; hashes rechecked now; not original M1 output and not a new execution of the command"
+    },
+    {
+      "name": "docgraph-default",
+      "record": "audits/2026-10-07-m3-fresh-checkout/commands/docgraph-default.json",
+      "bytes": 622,
+      "sha256": "f412a84ae8089935d0d8bde8efb925a27cce917ed1339fce6ed80dba20bd1233",
+      "exit_code": 0,
+      "logs": [
+        {
+          "path": "logs/docgraph-default.stdout.log",
+          "bytes": 63,
+          "sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb"
+        },
+        {
+          "path": "logs/docgraph-default.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "classification": "preserved M3 execution on the same immutable candidate; hashes rechecked now; not original M1 output and not a new execution of the command"
+    },
+    {
+      "name": "lean-build",
+      "record": "audits/2026-10-07-m3-fresh-checkout/commands/lean-build.json",
+      "bytes": 641,
+      "sha256": "dd7d037cf6714c036940a12ca349e46e968caeebc333622abd2bf71bdbb1235e",
+      "exit_code": 0,
+      "logs": [
+        {
+          "path": "logs/lean-build.stdout.log",
+          "bytes": 396081,
+          "sha256": "0cd75c0cc3e67a5a9ea0231e99055270b81e29e166da4c7e1190262f7ce394b1"
+        },
+        {
+          "path": "logs/lean-build.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "classification": "preserved M3 execution on the same immutable candidate; hashes rechecked now; not original M1 output and not a new execution of the command"
+    },
+    {
+      "name": "lean-axioms",
+      "record": "audits/2026-10-07-m3-fresh-checkout/commands/lean-axioms.json",
+      "bytes": 620,
+      "sha256": "55b36ca234ff7e1ec368559c64521b2e63311cdd4bb02e14fabc1be79bb323fc",
+      "exit_code": 0,
+      "logs": [
+        {
+          "path": "logs/lean-axioms.stdout.log",
+          "bytes": 112779,
+          "sha256": "dd976c7b6e533d2a88c6e8795711b7ab3a51d327e5c13aa55358ac8c86cb6c67"
+        },
+        {
+          "path": "logs/lean-axioms.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "classification": "preserved M3 execution on the same immutable candidate; hashes rechecked now; not original M1 output and not a new execution of the command"
+    }
+  ],
+  "actual_checks_this_task": [
+    "Current lstat of three historical /tmp paths",
+    "Bounded filename/path and exact historical path/hash search",
+    "Two captured original files preserved only after exact original size/SHA256 validation",
+    "Candidate parent and merge-base immutable Git checks",
+    "All 17 candidate blobs rehashed and complete list compared to supervision reconstruction and recovered original candidate TSV",
+    "Nine selected M3 command records and their 18 raw logs rehashed against original manifest/command records; preserved exit0 evidence only"
+  ],
+  "mathematical_or_Lean_commands_rerun_this_task": [],
+  "never_claimed": [
+    "Recovery of the complete original M1 51-file evidence package",
+    "Recovery of the prior supervisor temporary directory",
+    "Original historical logs regenerated from current checks",
+    "New computational proof, topology/source realization or Lean build"
+  ],
+  "new_findings": []
+}

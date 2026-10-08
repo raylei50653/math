@@ -1,0 +1,44 @@
+{
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "/tmp/math-task-d9-staging/audit_e4_controls.py",
+        "--root",
+        "/home/ray/developer/ai/math-task-d9",
+        "--output",
+        "/tmp/math-task-d9-staging/e4_controls.json",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math-task-d9",
+      "environment": {},
+      "exit_code": 0,
+      "stdout_log": "logs/independent_e4_default.stdout.log",
+      "stdout_sha256": "ee6cbdaa57a384acac97982bf7c1e71385e7ad403fbd72cf2e1717a5139aaf0f",
+      "stderr_log": "logs/independent_e4_default.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "python3",
+        "/tmp/math-task-d9-staging/audit_e4_controls.py",
+        "--root",
+        "/home/ray/developer/ai/math-task-d9",
+        "--output",
+        "/tmp/math-task-d9-staging/e4_controls.json",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math-task-d9",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "stdout_log": "logs/independent_e4_seed17.stdout.log",
+      "stdout_sha256": "ee6cbdaa57a384acac97982bf7c1e71385e7ad403fbd72cf2e1717a5139aaf0f",
+      "stderr_log": "logs/independent_e4_seed17.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "stdout_matches": true,
+  "stderr_matches": true
+}

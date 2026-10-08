@@ -1,0 +1,342 @@
+{
+  "baseline": "d00aba4e10ea2d05ab216fedd94f5a166b2777ad",
+  "branch": "task-e4c-controls",
+  "checks": [
+    {
+      "chunk_id": "319565",
+      "command": "/home/ray/developer/ai/math/.venv/bin/python scripts/c5_excess_two_e4c_controls.py",
+      "exit_code": 0,
+      "log": "artifacts/c5_excess_two_e4c/checks/generation.log",
+      "name": "generation",
+      "original_token_count": 19,
+      "output": "GENERATED 54/54 controls; 60 row cores; 55 byte files; counterexample=False\n",
+      "wall_time_seconds": 1.2103e-05
+    },
+    {
+      "chunk_id": "e04fd5",
+      "command": "/home/ray/developer/ai/math/.venv/bin/python scripts/c5_excess_two_e4c_controls.py --check",
+      "exit_code": 0,
+      "log": "artifacts/c5_excess_two_e4c/checks/replay.log",
+      "name": "replay",
+      "original_token_count": 19,
+      "output": "CHECKED 54/54 controls; 60 row cores; 55 byte files; counterexample=False\n",
+      "wall_time_seconds": 11.242030695
+    },
+    {
+      "chunk_id": "c410e8",
+      "command": "PYTHONHASHSEED=17 /home/ray/developer/ai/math/.venv/bin/python scripts/c5_excess_two_e4c_controls.py --check",
+      "exit_code": 0,
+      "log": "artifacts/c5_excess_two_e4c/checks/seed17.log",
+      "name": "seed17",
+      "original_token_count": 19,
+      "output": "CHECKED 54/54 controls; 60 row cores; 55 byte files; counterexample=False\n",
+      "wall_time_seconds": 11.18886773
+    },
+    {
+      "chunk_id": "323f15",
+      "command": "/home/ray/developer/ai/math/.venv/bin/python scripts/check_docs.py",
+      "exit_code": 1,
+      "log": "artifacts/c5_excess_two_e4c/checks/check_docs.log",
+      "name": "check_docs",
+      "original_token_count": 71,
+      "output": "missing path: docs/c5_open_leaf_ledger.md:78: ../audits/2026-10-04-task-d5/c4/scope_ledger.json\nmissing path: docs/history/2026-10-04-task-d2-integration-audit.md:39: ../../audits/2026-10-04-task-d2/integration_doc_changes.diff\nFAIL: 2 errors (558 Markdown files, 6442 local links)\n",
+      "wall_time_seconds": 0.373202514
+    },
+    {
+      "chunk_id": "5d6a29",
+      "command": "/home/ray/developer/ai/math/.venv/bin/python tools/docgraph check",
+      "exit_code": 0,
+      "log": "artifacts/c5_excess_two_e4c/checks/docgraph.log",
+      "name": "docgraph",
+      "original_token_count": 16,
+      "output": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n",
+      "wall_time_seconds": 1.2062e-05
+    },
+    {
+      "chunk_id": "96f61b",
+      "command": "git diff --check",
+      "exit_code": 0,
+      "log": "artifacts/c5_excess_two_e4c/checks/git_diff_check.log",
+      "name": "git_diff_check",
+      "original_token_count": 0,
+      "output": "",
+      "wall_time_seconds": 1.1291e-05
+    },
+    {
+      "chunk_id": "abdf5f",
+      "command": "/home/ray/developer/ai/math/.venv/bin/python - <<'PY'\nfrom pathlib import Path\nimport subprocess,json\npaths=[Path('scripts/c5_excess_two_e4c_controls.py')]+sorted(Path('artifacts/c5_excess_two_e4c').rglob('*'))\npaths=[p for p in paths if p.is_file()]\nassert subprocess.check_output(['git','diff','--name-only','d00aba4']).strip()==b''\nassert subprocess.check_output(['git','rev-parse','HEAD']).strip().decode()=='d00aba4e10ea2d05ab216fedd94f5a166b2777ad'\nfor p in paths:\n raw=p.read_bytes()\n assert len(raw)<1_000_000,(p,len(raw))\n assert raw.endswith(b'\\n'),p\n assert all(line==line.rstrip(b' \\t') for line in raw.splitlines()),p\nprint('SCOPE/WHITESPACE OK:',len(paths),'new text files; max bytes',max(p.stat().st_size for p in paths))\nPY",
+      "exit_code": 0,
+      "log": "artifacts/c5_excess_two_e4c/checks/scope_and_whitespace.log",
+      "name": "scope_and_whitespace",
+      "original_token_count": 15,
+      "output": "SCOPE/WHITESPACE OK: 57 new text files; max bytes 289149\n",
+      "wall_time_seconds": 1.1562e-05
+    }
+  ],
+  "file_hashes": {
+    "artifacts/c5_excess_two_e4c/REPORT.md": {
+      "bytes": 66996,
+      "sha256": "85a79d1a67ca5fbea4b2236053c7bb0176068deadd2bbc445f9b26f0d9f7b5f5"
+    },
+    "artifacts/c5_excess_two_e4c/checks/check_docs.log": {
+      "bytes": 361,
+      "sha256": "f2ff6e824b531d3dda2a293ca6830e19cb4fc70485ecb2f5a52fa38762abafa1"
+    },
+    "artifacts/c5_excess_two_e4c/checks/docgraph.log": {
+      "bytes": 141,
+      "sha256": "7ebced252e8f561a8b1aa8195b47fb346cbc88d418dbb86d9390a207029a5da3"
+    },
+    "artifacts/c5_excess_two_e4c/checks/generation.log": {
+      "bytes": 171,
+      "sha256": "fd875a62b8b5bada2d250416825ac118dc75cf02a0c145d5e95b1ce7173bf1da"
+    },
+    "artifacts/c5_excess_two_e4c/checks/git_diff_check.log": {
+      "bytes": 29,
+      "sha256": "fb9729ad7431bf465b831d76b55923f3dfe3ec56c1c69fae09e533ed2c0cab32"
+    },
+    "artifacts/c5_excess_two_e4c/checks/replay.log": {
+      "bytes": 177,
+      "sha256": "caba2c9a1acc089df9eef0b71df6ff0bc56f327f3d059fef4c50f132b7e6c3d7"
+    },
+    "artifacts/c5_excess_two_e4c/checks/scope_and_whitespace.log": {
+      "bytes": 809,
+      "sha256": "b3500ebed92492fa5aaa7291f567c8d830ae42c21250a2f58f5e8afdbb8a19cd"
+    },
+    "artifacts/c5_excess_two_e4c/checks/seed17.log": {
+      "bytes": 195,
+      "sha256": "367c0ab1e8420b33677c3d5b5feca2f4aeb56f1ef4484953762bd6a1f36c6233"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA6-0001.json": {
+      "bytes": 78037,
+      "sha256": "1ed7f06f36d1dcf8ee61c8121b3586aa79d8f0b61a619043dfaf73c445ac6cbc"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA6-0002.json": {
+      "bytes": 97533,
+      "sha256": "d4971d6f4585f4699e6d324976cebccd2d76732213a2ea1bde324d6a361de9e1"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA6-0003.json": {
+      "bytes": 97533,
+      "sha256": "22a037db5d85e22ad3fe51b18744160bf895d9630afaee51a69edc739bd439ad"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA7-0001.json": {
+      "bytes": 115136,
+      "sha256": "fcc7c98390de120c01c08b0b19103e84f26f196a559d211ba6ccc6bdb5a8331a"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA7-0002.json": {
+      "bytes": 112049,
+      "sha256": "0a3d5e72a95dbbcc1b07a4c6d15e570c46988c8dd31bc4349ac3029c825a2682"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0001.json": {
+      "bytes": 104176,
+      "sha256": "0cb8365c59f3755d25e04d98938dd3f190dc245e34a6d1cb4aa8cc66f924792a"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0002.json": {
+      "bytes": 104166,
+      "sha256": "d7f6419be8c54ef047e2e5d4bdcd08d1107d21ae5ce4b069c6c6bf6a920beece"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0003.json": {
+      "bytes": 128023,
+      "sha256": "eb714bf0e19b5a7ecee766637beb84144ec98c478097b7ebf6e1d8465f41ea16"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0004.json": {
+      "bytes": 110440,
+      "sha256": "3e4a58333df173d93571819f9c467cced0a3e24c0cfdb5ab0c2394824ab39fc8"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0005.json": {
+      "bytes": 109553,
+      "sha256": "68a4a4a561236cd5a826d0707a951fc39ca72e216fb9d01f31d2d120088b68aa"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0006.json": {
+      "bytes": 110436,
+      "sha256": "276bc64d31f29b52eb34e7c97fd16d85b45a12daaad82837dfe9cb9f7665b07b"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0007.json": {
+      "bytes": 126987,
+      "sha256": "e00842edc855a5d9f47a3d0f6129cefb3be7602c77f2435e7028a6529a200d27"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0008.json": {
+      "bytes": 109560,
+      "sha256": "43fc26ff8776a5e4bb05994aea30b6c4b24df65ef89c1bea78a9481d565933db"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0009.json": {
+      "bytes": 128023,
+      "sha256": "76bafbc1f805a4a63b07b56766333270275a33fc2422869c98c626a518e0e116"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0010.json": {
+      "bytes": 127019,
+      "sha256": "9536381c313247a02b05809190cf2fab8ea3de538a82ecda743d86643f95c6cb"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0011.json": {
+      "bytes": 110440,
+      "sha256": "051797fe6789be656e9e145b3226f119f8225fcd4c16cb2fbb1d2da2f3dda14c"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0012.json": {
+      "bytes": 109564,
+      "sha256": "1a914802bee8948cad70f9ed1adc73a65b7de9002d3df4143266d465c7febb68"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0013.json": {
+      "bytes": 109553,
+      "sha256": "f99aad78a68d2bdce40f45f9807a2d5510153a2969e0ae496c65d80c26950382"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0014.json": {
+      "bytes": 113432,
+      "sha256": "69e9adec9d41f460ada8851bffd82075fefadcd87d1e78138b2d31ed0ee9fed9"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0015.json": {
+      "bytes": 112553,
+      "sha256": "91bffe5287c69e779eca0aa6b6e5780bd01a27d79802aa3ac2c3082adbe389c6"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0016.json": {
+      "bytes": 113732,
+      "sha256": "157622ffca051967dafe92c23821028c65e2bd3e6289281050a5f5aeff285fde"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0017.json": {
+      "bytes": 113427,
+      "sha256": "0bb09b92e4570931e3306ae0e044a726bd57681ec8d907b681367c1c24ea8eeb"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0018.json": {
+      "bytes": 112553,
+      "sha256": "ff98dfc4a201bdad95147e7208c690e9fb8a16ce4d21e7b524eae72ca94f18a7"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0019.json": {
+      "bytes": 110429,
+      "sha256": "04db119207b1309c101c2415ed75caf04eafc55902994d2227347652fdc1d9e3"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0020.json": {
+      "bytes": 111354,
+      "sha256": "a345e40562d0f93da53250b84251ae689217e97f8ec6d064807b29bef89dfa68"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0021.json": {
+      "bytes": 111420,
+      "sha256": "a9cdc709f1f1c961286297863696aca52b7110e5ba980f83bfb2bb94c595014f"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA8-0022.json": {
+      "bytes": 114943,
+      "sha256": "dd8fe080f64231140715953bb3a7b88a94fe676636c5b7974262177ce096bac2"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0001.json": {
+      "bytes": 115476,
+      "sha256": "3128233a63becf745f1cbaea8fe14e7c45af6c9bc975471824e440823b596f3d"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0002.json": {
+      "bytes": 112872,
+      "sha256": "c770364ed40fc2d162704bd658814d46f89e46b7a2dd49d14e27619daf748cb2"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0003.json": {
+      "bytes": 114246,
+      "sha256": "e9081a9aa146c43f540395dde0d77353cf45d138c088dbe7becadef492a25db8"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0004.json": {
+      "bytes": 123296,
+      "sha256": "1740ee6f4708bc665cbc25008dacc64afbf050c4b27523120d116bb0bbd5842a"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0005.json": {
+      "bytes": 114246,
+      "sha256": "da2ea5bc40cca6ee2d900916a2d9dd5871b856c0960ce6e80dbe168a09c2d3de"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0006.json": {
+      "bytes": 112868,
+      "sha256": "85fa36b9d1baa4ae5888a0a14792c98486a263b775cb9ff4a812ef0fa21bf124"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0007.json": {
+      "bytes": 115472,
+      "sha256": "ef81749926852e58921951a7fb572d0bd4975d297f67ff82085ca83e2fda29ce"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0008.json": {
+      "bytes": 114242,
+      "sha256": "2352bec8d10309226ef091dab10862d60bc8ace9e51fe97342e634b15502f182"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0009.json": {
+      "bytes": 114242,
+      "sha256": "398c0ef8ef0e6efc7824b8afd2c31a86aeaef72bccbaf88dc9106c13b689de8d"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0010.json": {
+      "bytes": 123781,
+      "sha256": "223c66016be7542e70909c01429b05953f3d69b5fc659015b23e8f16af2c3502"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0011.json": {
+      "bytes": 120141,
+      "sha256": "bb450e51a77b7c1e37396fb190f587fe66f0e257421f2d9755b970c7997074af"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0012.json": {
+      "bytes": 115476,
+      "sha256": "6ad5eac5b5f7929017f65194349db382d2f935ec771c277a536e1c4626283fc3"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0013.json": {
+      "bytes": 115476,
+      "sha256": "0ae42bb9c98843793606f06e500b1dc7daec2a456fed5d1149bd34fcd5e7317e"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0014.json": {
+      "bytes": 112872,
+      "sha256": "aee1adda0cc85023a5e033ad6a4df0e3ffa8a2c44f938ed3d5b5bcb7b0b1e669"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0015.json": {
+      "bytes": 112872,
+      "sha256": "58e8d770d1b94617f1c9491e632ac50ba476d59ffbd10f1df685deb7ce39f846"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0016.json": {
+      "bytes": 114246,
+      "sha256": "55448f51840f0b2b62eab3bdfb1996868694609a720035d27141cddcd8153468"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0017.json": {
+      "bytes": 114246,
+      "sha256": "0aa74bd8bc1c61757d2e70a959663cf46dc9dc23a73023f25d457fb75dd0869f"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0018.json": {
+      "bytes": 114246,
+      "sha256": "7c6353cca096f135b7af337de5ebfccb443f68e3e04580b1befc3b8c46b672df"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0019.json": {
+      "bytes": 114246,
+      "sha256": "4c53488911efbdbc57d48c1d22050e08bf1bcf0589721c9c3ed99266493dc4af"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0020.json": {
+      "bytes": 114612,
+      "sha256": "a59ba82c1387c65ac9a625fb07bbcedcbc75ea06fdcaa382ccb59c49e3575473"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0021.json": {
+      "bytes": 112824,
+      "sha256": "ff7816340808b263bbc4945d98da889b5496a5d10051dbf85a94342a7bf1c231"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0022.json": {
+      "bytes": 112830,
+      "sha256": "808ed886aabe4fed366c986b1ec8bf9b597a78b88ee9caf0213b13406e3b2ecb"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0023.json": {
+      "bytes": 113577,
+      "sha256": "d2e31a967d203ed9f4dab07c92de9700499312848dea73bb5013e46ce10b1c80"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0024.json": {
+      "bytes": 112830,
+      "sha256": "fc223b9770f1920c9f3ca3b507587e695daece5407c4078289b2edbf65880a4f"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0025.json": {
+      "bytes": 112830,
+      "sha256": "02b2f09e699f1c90fbc4029d8c4d77c6d424859bbc37af0665ecd76002633b8b"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0026.json": {
+      "bytes": 115476,
+      "sha256": "420584623ff501ac098feec827130fa68607e84b706271afc7405a12b206710b"
+    },
+    "artifacts/c5_excess_two_e4c/controls/NA9-0027.json": {
+      "bytes": 113967,
+      "sha256": "b77bbd52aefe1db63c8b6016171d5270a8756172c8fbf1898c357f052f2d2e97"
+    },
+    "artifacts/c5_excess_two_e4c/summary.json": {
+      "bytes": 289149,
+      "sha256": "56127650d8722114a61a57122412f5345f00c9feb69d34ebb532ca46c185778e"
+    },
+    "scripts/c5_excess_two_e4c_controls.py": {
+      "bytes": 65952,
+      "sha256": "15731d03a77680d24a73b0867b1724fdf058888de92b450b86409bee02ce55b2"
+    }
+  },
+  "head": "d00aba4e10ea2d05ab216fedd94f5a166b2777ad",
+  "max_control_bytes": 128023,
+  "memory_used": "Math handoff workflow only; fixed graph facts verified live.",
+  "no_commit_push": true,
+  "report_sha256": "85a79d1a67ca5fbea4b2236053c7bb0176068deadd2bbc445f9b26f0d9f7b5f5",
+  "status": "?? artifacts/c5_excess_two_e4c/\n?? scripts/c5_excess_two_e4c_controls.py\n",
+  "tracked_diff": "",
+  "worktree": "/home/ray/developer/ai/math-task-e4c-controls"
+}

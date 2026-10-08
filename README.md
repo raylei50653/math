@@ -12,7 +12,8 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [Weak-deletion 開放葉 ledger](docs/c5_open_leaf_ledger.md) | 共鄰 P₃ 固定具名目錄的葉數、關閉事件、階段趨勢與每日觀測入口 |
 | [C₅ 全線進展與高階假設](docs/c5_research_synthesis.md) | 跨線成果、同源關係／臨界預算／幾何框架、三個可反駁假設及階數初驗 |
 | [C₅ class 兩點重疊](docs/c5_two_vertex_overlap_guide.md) | 具名八點接合、拓撲、混合外框與關係修復；現況、停止點及重播入口 |
-| [933／941 excess 下界與接手入口](docs/c5_kempe_guide.md) | 共同 ε≥2；唯一 degree-6 的 ε=2 分支全排。相鄰唯一 mixed 已排除 (4,4) 核心、五-spoke 原來源、四-spoke (3,1) 全部 incidence 分拆，以及 (2,2) 的 mixed-(1,1) 加各側一 unary 整個子型。任務 A／A₂／A₃／A₄ 的 mixed-(1,2)+a-unary 已排01／23、01／12、01／01、04／04及root交換，保存16／20具名殘留；A₄在原04／04逐項核對三hub前提，以完整C延拓使ax非critical，完整ternary／joint及singleton1／3均保持。其他身份、較少 spokes、單省略與 (5,5) 核心保留，ε≥3 未證。完整 joint、停止點與重播見導覽 |
+| [933／941 excess 與接手入口](docs/c5_kempe_guide.md) | 共同 ε≥2；E3 在三列拒絕前提下排除唯一 degree-6，須連同 D₈ 補表引用。E4／E6 證非相鄰／相鄰 mixed 分量數 m≤2，雙 degree-5 的其餘殘留保留；ε≥3 未證 |
+| [ε=2 有限搜尋與雙實作對照](docs/c5_excess_two_independent_search.md) | ES／ER 三種 root 型 k≤9 的 q／critical orbit 集合逐層一致，共179個 critical orbits，無猜想 E 反例；[LC](docs/c5_excess_two_lean_certificates.md) 提供179／179個 Lean soundness 證書，有限完整性與任意大小定理分開 |
 | [No-mixed 實驗總覽](docs/c5_no_mixed_span_budget.md) | 十五類證據總表、共同跨度結構及推廣界線 |
 | [No-mixed 搬運與介面驗證](docs/c5_no_mixed_hypothesis_audit.md) | 逐 root 不可搬運界、精確接合介面與守恆禁色的證據界線 |
 | [No-mixed 統一局部篩選](docs/c5_no_mixed_local_screen.md) | 禁色增長、守恆／非守恆規則與仍依必要表的共同接合 |
@@ -22,7 +23,7 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [Mixed P₃ 對稱分支](docs/c5_mixed_p3_symmetric.md) | 原五環空內側、完整側支援與五跨度來源排除；不需 T4／Gallai |
 | [Mixed P₃ 非對稱分支](docs/c5_mixed_p3_asymmetric.md) | 容許一色側零跨度的六跨度排除，完成兩端各一 root 接線；紙面證明與固定域重播 |
 | [Mixed P₃ 中點／端點接線](docs/c5_mixed_p3_middle_endpoint.md) | 保留原末端附件的四區塊證明、完整關係與固定域重播 |
-| [Mixed 共鄰 P₃ 的雙扇區](docs/c5_mixed_p3_common_endpoint.md) | 任意 unary 大小的短子弧引理、部分來源排除、36 具名殘留與原鏈 rotation 控制 |
+| [Mixed 共鄰 P₃ 的雙扇區](docs/c5_mixed_p3_common_endpoint.md) | 原必要表及 rotation 控制保存；後續 C-W／D₆ 完成 C §1 前提下整個分支的來源排除，固定3500-key ledger 已為0；現況見 weak-deletion 導覽 |
 | [共鄰 P₃ 單框點三接點 unary](docs/c5_mixed_p3_one_color_ternary_unary.md) | 固定 C₂ 身份的原 triangle 化約、外路 K₅ 來源排除及完整 witnesses |
 | [共鄰 P₃ 雙框點三接點 unary](docs/c5_mixed_p3_two_frame_ternary_unary.md) | 固定 C₃ 身份的新非接點葉 K₅、原 bridges／完整 tuples 控制與葉數證明 |
 | [共鄰 P₃ 雙框點兩份 unary](docs/c5_mixed_p3_two_frame_two_unary.md) | 固定 C₄ join60 的逐份完整 relation 排除、九份自身支援配置及原 bridges 控制 |
@@ -30,20 +31,14 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [文件治理與工作約定](docs/DOCUMENTATION.md) | 文件分工、信任界線、更新及驗證流程 |
 
 項目現況、精確停止點與重播入口由各研究線導覽維護；完整論證與證書見原報告。
-A／B 的最新停止點與入口由 [Kempe 導覽](docs/c5_kempe_guide.md#3-停止點與保留缺口)維護；
-C 的共鄰 P₃ 入口由 [weak-deletion 導覽](docs/c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)維護。
-B 的固定 01／23 短／長 face 分別見 [B₂](docs/c5_excess_two_mixed_core_four_spoke_mixed22_short_face.md)與 [B₃ 的 leaf bridge／原 K₅](docs/c5_excess_two_mixed_core_four_spoke_mixed22_long_face.md)。
-933 原04／12的 shared 框附件{4}另見 [B₄ 的原 cut parity／K₅](docs/c5_excess_two_mixed_core_four_spoke_mixed22_shared4.md)；只關閉此附件支，整份骨架保留。
-正式返回 A₄／B₄／C₄ 的固定快照、獨立驗收、精確scope ledger與最新停止點見
-[D₅整合稽核](audits/2026-10-04-task-d5/REPORT.md)。
-[D₄的A₃／B₃／C₃封存](audits/2026-10-04-task-d4/REPORT.md)及前序
-[D₂的A／A₂、B／B₂覆蓋](audits/2026-10-04-task-d2/REPORT.md)與
-[D₃的C／C₂覆蓋](audits/2026-10-04-task-d3/REPORT.md)保留各自截點；
-歷史artifacts、完整relations／空fibres／witnesses及所有hash失敗不覆寫。
+ε=2 的E3–E6與C44″覆蓋表、精確前提及保留缺口由[Kempe導覽](docs/c5_kempe_guide.md#3-停止點與保留缺口)維護；
+共鄰P₃的C-W／D₆結論及後續接線由[weak-deletion導覽](docs/c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)維護。
+本次進展摘要、實際重播與分支發布範圍見[紀錄](docs/history/2026-10-04-kprime-excess-two-progress-publish.md)。
 
-本批成果與稽核封存的發布範圍見[發布紀錄](docs/history/2026-10-04-c5-parallel-progress-publish.md)。
-新 checkout 先執行 `python3 tools/audit_archive.py restore --artifacts`，還原凍結快照及完整
-稽核輸出；原 SHA256、歷史失敗與 replay 命令見[封存還原說明](audits/README.md)。
+前序A₄／B₄／C₄的固定快照、獨立驗收與scope ledger見[D₅](audits/2026-10-04-task-d5/REPORT.md)；
+歷史artifacts、完整relations／空fibres／witnesses及所有hash失敗保留。
+新checkout先執行 `python3 tools/audit_archive.py restore --artifacts`，還原凍結快照及完整
+稽核輸出；原SHA256、歷史失敗與replay命令見[封存還原說明](audits/README.md)。
 
 Lean 4 + mathlib 專案。工具鏈版本由 `lean-toolchain` 鎖定，目前對齊 mathlib `v4.34.0-rc2`。
 

@@ -1,0 +1,821 @@
+{
+  "actual_checkout": "/home/ray/developer/ai/math/scratch/task-c44-delivery/repository",
+  "base_commit": "b2ca4520da50c9d2898ac6f8f966ac25df3f9609",
+  "brute_stages": {
+    "k_6": {
+      "all_equal": true,
+      "orbits": 81,
+      "rows": 85
+    },
+    "k_le_5": {
+      "all_equal": true,
+      "orbits": 32,
+      "rows": 36
+    }
+  },
+  "bundle_destination": "/home/ray/developer/ai/math/scratch/task-c44-delivery/task-c44-cores.bundle",
+  "commands": [
+    {
+      "command": "/home/ray/developer/ai/math/.venv/bin/python scripts/c5_excess_two_c44.py --stage full --check --jobs 8",
+      "exit_code": 0,
+      "name": "full_replay",
+      "stdout": "FULL PASS 9644 orbits; branch=counterexample; cores=104507 deletion witnesses; seconds=10.787\n"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 /home/ray/developer/ai/math/.venv/bin/python scripts/c5_excess_two_c44.py --stage full --check --jobs 8",
+      "exit_code": 0,
+      "name": "full_replay_seed17",
+      "stdout": "FULL PASS 9644 orbits; branch=counterexample; cores=104507 deletion witnesses; seconds=11.300\n"
+    },
+    {
+      "command": "/home/ray/developer/ai/math/.venv/bin/python scripts/c5_excess_two_c44.py --stage small --check --jobs 8",
+      "exit_code": 0,
+      "name": "small_replay",
+      "stdout": "SMALL PASS 113 orbits; {'k_le_5': {'orbits': 32, 'rows': 36, 'all_equal': True}, 'k_6': {'orbits': 81, 'rows': 85, 'all_equal': True}}; seconds=8.889\n"
+    },
+    {
+      "command": "/home/ray/developer/ai/math/.venv/bin/python scripts/c5_excess_two_c44_input_audit.py --check",
+      "exit_code": 0,
+      "name": "input_replay",
+      "stdout": "{\"check\": true, \"output\": \"artifacts/c5_excess_two_c44/input_audit.json\", \"target_sigma_D5_orbits\": {\"933\": [933, 934, 940, 948, 996], \"941\": [941, 949, 950, 998, 1004]}, \"totals\": {\"AD_critical_orbits\": 9, \"AD_critical_rejection_rows\": 16, \"AD_labelled_critical\": 406570, \"AD_labelled_q\": 232952430, \"AD_q_orbits\": 3278, \"AD_rejection_rows\": 3450, \"D6_critical_orbits\": 116, \"D6_critical_rejection_rows\": 117, \"D6_labelled_critical\": 16311360, \"D6_labelled_q\": 758469240, \"D6_q_orbits\": 2660, \"D6_rejection_rows\": 2813, \"NA_critical_orbits\": 54, \"NA_critical_rejection_rows\": 60, \"NA_labelled_critical\": 3043440, \"NA_labelled_q\": 311547960, \"NA_q_orbits\": 3706, \"NA_rejection_rows\": 3720, \"accepted_witnesses\": 86457, \"augmented_rotations\": 9644, \"disk_boundary_faces\": 9644, \"edge_deletion_profiles\": 234477, \"new_row_witnesses\": 91160, \"source_graphs\": 9644}}\n"
+    },
+    {
+      "command": "/home/ray/developer/ai/math/.venv/bin/python scripts/c5_excess_two_c44_algorithm_audit.py --check",
+      "exit_code": 0,
+      "name": "algorithm_replay",
+      "stdout": "ALGORITHM AUDIT PASS: 60 graphs, 600 Cartesian peel rows; seconds=1.021\n"
+    },
+    {
+      "command": "/home/ray/developer/ai/math/.venv/bin/python scripts/check_docs.py",
+      "exit_code": 1,
+      "name": "docs_check",
+      "stdout": "missing path: docs/c5_open_leaf_ledger.md:78: ../audits/2026-10-04-task-d5/c4/scope_ledger.json\nmissing path: docs/history/2026-10-04-task-d2-integration-audit.md:39: ../../audits/2026-10-04-task-d2/integration_doc_changes.diff\nFAIL: 2 errors (565 Markdown files, 6563 local links)\n"
+    },
+    {
+      "command": "/home/ray/developer/ai/math/.venv/bin/python tools/docgraph check",
+      "exit_code": 0,
+      "name": "docgraph_check",
+      "stdout": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "name": "diff_check",
+      "stdout": ""
+    }
+  ],
+  "date": "2026-10-06",
+  "delivery_limitation": "Permissions switched mid-task: sibling worktree and original .git read-only; commit is created in writable standalone clone. Bundle supports later installation. No push or merge.",
+  "documentation_baseline_errors": [
+    "missing path: docs/c5_open_leaf_ledger.md:78: ../audits/2026-10-04-task-d5/c4/scope_ledger.json",
+    "missing path: docs/history/2026-10-04-task-d2-integration-audit.md:39: ../../audits/2026-10-04-task-d2/integration_doc_changes.diff"
+  ],
+  "documentation_new_errors": 0,
+  "execution_checkout": "/tmp/math-task-c44",
+  "file_inventory": [
+    {
+      "bytes": 10062,
+      "path": "artifacts/c5_excess_two_c44/PROOF_NOTES.md",
+      "sha256": "50d341dde8319b8c14df64f1c5d5b951bc3a4d564d33623364b5e63ff84d6737"
+    },
+    {
+      "bytes": 19971,
+      "path": "artifacts/c5_excess_two_c44/REPORT.md",
+      "sha256": "4e601a9a87e52a801d10e373b84f1fce765011ffb8a9377e905faa264783b6f6"
+    },
+    {
+      "bytes": 35153,
+      "path": "artifacts/c5_excess_two_c44/algorithm_audit.json",
+      "sha256": "e902554f6e42fd34d98d44bd80605b5e69196ee6a0f3d45e6c00adf0daca633f"
+    },
+    {
+      "bytes": 84467,
+      "path": "artifacts/c5_excess_two_c44/brute_comparison.json",
+      "sha256": "01f9c8fd4494f474702203619f2b175f80dbac8075006b50744d43a3e74de3bb"
+    },
+    {
+      "bytes": 5943,
+      "path": "artifacts/c5_excess_two_c44/counterexample_C44-AD3-row0-44.json",
+      "sha256": "59c0eebfedea7bf095c97e6c3d94f78c19b9d3eedc7102adb6d4dfbc4fd92435"
+    },
+    {
+      "bytes": 106167,
+      "path": "artifacts/c5_excess_two_c44/input_audit.json",
+      "sha256": "7d4a8de877e0d3618661cbf3ffe28b4dd1b778cfcaae03d393e278a765287adb"
+    },
+    {
+      "bytes": 699099,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0001.json",
+      "sha256": "37ceac919b81e025e3acb28fa244c0d912ee9d7c4b96c8a62f7cbf45cf81f03f"
+    },
+    {
+      "bytes": 699976,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0002.json",
+      "sha256": "6997a84888cac66e8435da17d05f06902ef7b33a2462ddac98162faa184b640b"
+    },
+    {
+      "bytes": 698853,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0003.json",
+      "sha256": "c58ae8efd9fffb099122ae7256efa243c52d0cc759579665ee239bb9e007f0ec"
+    },
+    {
+      "bytes": 699705,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0004.json",
+      "sha256": "d4840f37ac3231700c408383c025001d1549dbce360d91bcec3ff9eb4d935b38"
+    },
+    {
+      "bytes": 699629,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0005.json",
+      "sha256": "947034cd7c65d00f625f291817d5dc101370e771262fe396ad65c83505a3f952"
+    },
+    {
+      "bytes": 699698,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0006.json",
+      "sha256": "e48e04240b0e840524346b6ad68ec65a454b7f9ba61c9b8a34d7b01c1a2a7315"
+    },
+    {
+      "bytes": 699035,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0007.json",
+      "sha256": "565f57359af4ad67715bac433190851a2cc167e4db352b559e283bdb43e74626"
+    },
+    {
+      "bytes": 698748,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0008.json",
+      "sha256": "31ee403bfe1d42fc4b7657ea7cc116608f9fc1a34f27b808031b486c40c6cc8a"
+    },
+    {
+      "bytes": 698396,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0009.json",
+      "sha256": "e0e01d103ec27e90ec277f456ab19dd0a031d37f6a0fbe2f25e19678f6326b54"
+    },
+    {
+      "bytes": 699833,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0010.json",
+      "sha256": "1dcb30751e5fed1be803280ec8d62f77e87eb6e84cb403ad1b1d5710637d5f77"
+    },
+    {
+      "bytes": 699113,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0011.json",
+      "sha256": "440591f1286369363dbe3538afddb0910dd579551ba782f8961389fad4ea556e"
+    },
+    {
+      "bytes": 699871,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0012.json",
+      "sha256": "6aa08bb0f738f6614a784b6b95a59cf846d22a6f46a48720ac4c1a82fd70b3e8"
+    },
+    {
+      "bytes": 699315,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0013.json",
+      "sha256": "fdd8a57cb3b8c26171d1021fecd49672d32d3c3ea0a35f016ed305c40cde4afb"
+    },
+    {
+      "bytes": 698888,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0014.json",
+      "sha256": "bb34539a7b050883246399dbe6748ef29ea875e9edac85c0ce085b3dedd38135"
+    },
+    {
+      "bytes": 698914,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0015.json",
+      "sha256": "639ce5fb85452698fedfb07ea2130fcac6ef56c8a9ae78c69462bda1afdb1f7c"
+    },
+    {
+      "bytes": 699618,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0016.json",
+      "sha256": "9d4bc884a49e7ab57bd587dcc0063db21869d2c070c52b2cefc8638fdecc5aae"
+    },
+    {
+      "bytes": 698936,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0017.json",
+      "sha256": "68997286bf40fcc0105c6af61e372a9aba5e8b69cee36f21e88faa85aaaf7dec"
+    },
+    {
+      "bytes": 698803,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0018.json",
+      "sha256": "57881665537fd4abcf48883049fce5730bd6b87e0a3270d93685302abf4124a9"
+    },
+    {
+      "bytes": 38185,
+      "path": "artifacts/c5_excess_two_c44/orbits/chunk_0019.json",
+      "sha256": "946c1c7997da65c41cea56ae91dd534bb5913cd07b0d14e3a2d01952520ae610"
+    },
+    {
+      "bytes": 412,
+      "path": "artifacts/c5_excess_two_c44/performance.json",
+      "sha256": "a4c73c48501940c6529cb1b93164853c132fc08a15b123b724eae654e6dd021f"
+    },
+    {
+      "bytes": 3408,
+      "path": "artifacts/c5_excess_two_c44/small_summary.json",
+      "sha256": "8d2b70dd6d93405c93305aa67061d617134fc2ad2eecf35b30db9848f427c397"
+    },
+    {
+      "bytes": 9320,
+      "path": "artifacts/c5_excess_two_c44/summary.json",
+      "sha256": "62bcec0b52c18b1f7e574ad5f548f25993fa161e29558690efd62d3d20533f65"
+    },
+    {
+      "bytes": 129356,
+      "path": "docs/STATUS.md",
+      "sha256": "be74d5a0a6fcd8df1e7cc52546a1a2d2900ed59520c3ec37fe80f5d1dac73817"
+    },
+    {
+      "bytes": 19663,
+      "path": "scripts/c5_excess_two_c44.py",
+      "sha256": "136f24b8548f71f338e18571de0483ae5dca23432b726a9a2c733e966065e6d0"
+    },
+    {
+      "bytes": 9393,
+      "path": "scripts/c5_excess_two_c44_algorithm_audit.py",
+      "sha256": "0112bdd7ff78c96ff62f5b7c109e75c1c2dded983e6dc4b72dc1564858b7738f"
+    },
+    {
+      "bytes": 7764,
+      "path": "scripts/c5_excess_two_c44_brute.py",
+      "sha256": "b4c8ded4808ae401a3b5fefbaa664117d5503c2f341b5c4c7e9c065fb78e205a"
+    },
+    {
+      "bytes": 14487,
+      "path": "scripts/c5_excess_two_c44_input_audit.py",
+      "sha256": "b61312beb2d6543da6443ac2ecb43548e2f42261cfe8984b38fe82bbd8cb4199"
+    }
+  ],
+  "generation": {
+    "full_exit_code": 0,
+    "full_seconds": 10.07,
+    "jobs": 8,
+    "small_final_exit_code": 0,
+    "small_final_seconds": 8.803
+  },
+  "mathematical_checks_passed": true,
+  "named_counterexample": "C44-AD3-row0-44",
+  "not_rerun": [
+    "ES/ER full graph generators",
+    "lake build (no Lean edits or new Lean claim)"
+  ],
+  "proof_status": "Broad no44 assertion refuted; full933/941 statement remains unproved and has zero finite antecedent sources. Stop generalization.",
+  "requested_linked_worktree": "/home/ray/developer/ai/math-task-c44",
+  "statistics": {
+    "AD": {
+      "all_q": {
+        "core_occurrences": 4040,
+        "cores_per_row": {
+          "1": 2862,
+          "2": 587,
+          "4": 1
+        },
+        "joint_degree_size_mixed": [
+          {
+            "count": 212,
+            "degree_type": "4/4",
+            "mixed": false,
+            "private_size": 2
+          },
+          {
+            "count": 1998,
+            "degree_type": "4/4",
+            "mixed": true,
+            "private_size": 3
+          },
+          {
+            "count": 31,
+            "degree_type": "4/4",
+            "mixed": false,
+            "private_size": 4
+          },
+          {
+            "count": 16,
+            "degree_type": "4/4",
+            "mixed": false,
+            "private_size": 5
+          },
+          {
+            "count": 39,
+            "degree_type": "4/4",
+            "mixed": true,
+            "private_size": 5
+          },
+          {
+            "count": 6,
+            "degree_type": "4/4",
+            "mixed": false,
+            "private_size": 6
+          },
+          {
+            "count": 38,
+            "degree_type": "4/4",
+            "mixed": true,
+            "private_size": 6
+          },
+          {
+            "count": 9,
+            "degree_type": "4/4",
+            "mixed": true,
+            "private_size": 7
+          },
+          {
+            "count": 2,
+            "degree_type": "4/4",
+            "mixed": false,
+            "private_size": 8
+          },
+          {
+            "count": 9,
+            "degree_type": "4/4",
+            "mixed": true,
+            "private_size": 9
+          },
+          {
+            "count": 16,
+            "degree_type": "4/5",
+            "mixed": false,
+            "private_size": 5
+          },
+          {
+            "count": 18,
+            "degree_type": "4/5",
+            "mixed": true,
+            "private_size": 5
+          },
+          {
+            "count": 44,
+            "degree_type": "4/5",
+            "mixed": true,
+            "private_size": 6
+          },
+          {
+            "count": 8,
+            "degree_type": "4/5",
+            "mixed": true,
+            "private_size": 7
+          },
+          {
+            "count": 7,
+            "degree_type": "4/5",
+            "mixed": true,
+            "private_size": 8
+          },
+          {
+            "count": 20,
+            "degree_type": "4/5",
+            "mixed": true,
+            "private_size": 9
+          },
+          {
+            "count": 1,
+            "degree_type": "5/5",
+            "mixed": true,
+            "private_size": 7
+          },
+          {
+            "count": 2,
+            "degree_type": "5/5",
+            "mixed": true,
+            "private_size": 9
+          },
+          {
+            "count": 423,
+            "degree_type": "absent/4",
+            "mixed": false,
+            "private_size": 2
+          },
+          {
+            "count": 1048,
+            "degree_type": "absent/4",
+            "mixed": false,
+            "private_size": 3
+          },
+          {
+            "count": 66,
+            "degree_type": "absent/4",
+            "mixed": false,
+            "private_size": 4
+          },
+          {
+            "count": 23,
+            "degree_type": "absent/4",
+            "mixed": false,
+            "private_size": 5
+          },
+          {
+            "count": 4,
+            "degree_type": "absent/4",
+            "mixed": false,
+            "private_size": 6
+          }
+        ],
+        "labelled_graphs": 232952430,
+        "labelled_root_degree_types": {
+          "4/4": 167466840,
+          "4/5": 6881040,
+          "5/5": 204000,
+          "absent/4": 111729240
+        },
+        "orbits": 3278,
+        "rejection_rows": 3450,
+        "root_degree_types": {
+          "4/4": 2360,
+          "4/5": 113,
+          "5/5": 3,
+          "absent/4": 1564
+        }
+      },
+      "critical": {
+        "core_occurrences": 29,
+        "cores_per_row": {
+          "1": 3,
+          "2": 13
+        },
+        "joint_degree_size_mixed": [
+          {
+            "count": 1,
+            "degree_type": "4/4",
+            "mixed": false,
+            "private_size": 2
+          },
+          {
+            "count": 9,
+            "degree_type": "4/4",
+            "mixed": true,
+            "private_size": 3
+          },
+          {
+            "count": 16,
+            "degree_type": "4/4",
+            "mixed": true,
+            "private_size": 6
+          },
+          {
+            "count": 1,
+            "degree_type": "5/5",
+            "mixed": true,
+            "private_size": 7
+          },
+          {
+            "count": 2,
+            "degree_type": "5/5",
+            "mixed": true,
+            "private_size": 9
+          }
+        ],
+        "labelled_graphs": 406570,
+        "labelled_root_degree_types": {
+          "4/4": 810300,
+          "5/5": 204000
+        },
+        "orbits": 9,
+        "rejection_rows": 16,
+        "root_degree_types": {
+          "4/4": 26,
+          "5/5": 3
+        }
+      }
+    },
+    "D6": {
+      "all_q": {
+        "core_occurrences": 3351,
+        "cores_per_row": {
+          "1": 2275,
+          "2": 538
+        },
+        "joint_degree_size_mixed": [
+          {
+            "count": 498,
+            "degree_type": "4",
+            "mixed": false,
+            "private_size": 2
+          },
+          {
+            "count": 2482,
+            "degree_type": "4",
+            "mixed": false,
+            "private_size": 3
+          },
+          {
+            "count": 84,
+            "degree_type": "4",
+            "mixed": false,
+            "private_size": 4
+          },
+          {
+            "count": 81,
+            "degree_type": "4",
+            "mixed": false,
+            "private_size": 5
+          },
+          {
+            "count": 45,
+            "degree_type": "4",
+            "mixed": false,
+            "private_size": 6
+          },
+          {
+            "count": 8,
+            "degree_type": "5",
+            "mixed": false,
+            "private_size": 5
+          },
+          {
+            "count": 8,
+            "degree_type": "5",
+            "mixed": false,
+            "private_size": 6
+          },
+          {
+            "count": 10,
+            "degree_type": "5",
+            "mixed": false,
+            "private_size": 8
+          },
+          {
+            "count": 20,
+            "degree_type": "5",
+            "mixed": false,
+            "private_size": 9
+          },
+          {
+            "count": 2,
+            "degree_type": "6",
+            "mixed": false,
+            "private_size": 4
+          },
+          {
+            "count": 8,
+            "degree_type": "6",
+            "mixed": false,
+            "private_size": 5
+          },
+          {
+            "count": 4,
+            "degree_type": "6",
+            "mixed": false,
+            "private_size": 6
+          },
+          {
+            "count": 25,
+            "degree_type": "6",
+            "mixed": false,
+            "private_size": 7
+          },
+          {
+            "count": 41,
+            "degree_type": "6",
+            "mixed": false,
+            "private_size": 8
+          },
+          {
+            "count": 35,
+            "degree_type": "6",
+            "mixed": false,
+            "private_size": 9
+          }
+        ],
+        "labelled_graphs": 758469240,
+        "labelled_root_degree_types": {
+          "4": 931173720,
+          "5": 11803200,
+          "6": 16311240
+        },
+        "orbits": 2660,
+        "rejection_rows": 2813,
+        "root_degree_types": {
+          "4": 3190,
+          "5": 46,
+          "6": 115
+        }
+      },
+      "critical": {
+        "core_occurrences": 117,
+        "cores_per_row": {
+          "1": 117
+        },
+        "joint_degree_size_mixed": [
+          {
+            "count": 2,
+            "degree_type": "4",
+            "mixed": false,
+            "private_size": 3
+          },
+          {
+            "count": 2,
+            "degree_type": "6",
+            "mixed": false,
+            "private_size": 4
+          },
+          {
+            "count": 8,
+            "degree_type": "6",
+            "mixed": false,
+            "private_size": 5
+          },
+          {
+            "count": 4,
+            "degree_type": "6",
+            "mixed": false,
+            "private_size": 6
+          },
+          {
+            "count": 25,
+            "degree_type": "6",
+            "mixed": false,
+            "private_size": 7
+          },
+          {
+            "count": 41,
+            "degree_type": "6",
+            "mixed": false,
+            "private_size": 8
+          },
+          {
+            "count": 35,
+            "degree_type": "6",
+            "mixed": false,
+            "private_size": 9
+          }
+        ],
+        "labelled_graphs": 16311360,
+        "labelled_root_degree_types": {
+          "4": 240,
+          "6": 16311240
+        },
+        "orbits": 116,
+        "rejection_rows": 117,
+        "root_degree_types": {
+          "4": 2,
+          "6": 115
+        }
+      }
+    },
+    "NA": {
+      "all_q": {
+        "core_occurrences": 3778,
+        "cores_per_row": {
+          "1": 3662,
+          "2": 58
+        },
+        "joint_degree_size_mixed": [
+          {
+            "count": 32,
+            "degree_type": "4/4",
+            "mixed": true,
+            "private_size": 5
+          },
+          {
+            "count": 24,
+            "degree_type": "4/4",
+            "mixed": true,
+            "private_size": 6
+          },
+          {
+            "count": 20,
+            "degree_type": "4/5",
+            "mixed": true,
+            "private_size": 5
+          },
+          {
+            "count": 24,
+            "degree_type": "4/5",
+            "mixed": true,
+            "private_size": 6
+          },
+          {
+            "count": 4,
+            "degree_type": "4/5",
+            "mixed": true,
+            "private_size": 7
+          },
+          {
+            "count": 28,
+            "degree_type": "4/5",
+            "mixed": true,
+            "private_size": 8
+          },
+          {
+            "count": 46,
+            "degree_type": "4/5",
+            "mixed": true,
+            "private_size": 9
+          },
+          {
+            "count": 1,
+            "degree_type": "5/5",
+            "mixed": true,
+            "private_size": 6
+          },
+          {
+            "count": 2,
+            "degree_type": "5/5",
+            "mixed": true,
+            "private_size": 7
+          },
+          {
+            "count": 18,
+            "degree_type": "5/5",
+            "mixed": true,
+            "private_size": 8
+          },
+          {
+            "count": 27,
+            "degree_type": "5/5",
+            "mixed": true,
+            "private_size": 9
+          },
+          {
+            "count": 1297,
+            "degree_type": "absent/4",
+            "mixed": false,
+            "private_size": 2
+          },
+          {
+            "count": 2207,
+            "degree_type": "absent/4",
+            "mixed": false,
+            "private_size": 3
+          },
+          {
+            "count": 48,
+            "degree_type": "absent/4",
+            "mixed": false,
+            "private_size": 4
+          }
+        ],
+        "labelled_graphs": 311547960,
+        "labelled_root_degree_types": {
+          "4/4": 4417920,
+          "4/5": 7532640,
+          "5/5": 2984880,
+          "absent/4": 300917400
+        },
+        "orbits": 3706,
+        "rejection_rows": 3720,
+        "root_degree_types": {
+          "4/4": 56,
+          "4/5": 122,
+          "5/5": 48,
+          "absent/4": 3552
+        }
+      },
+      "critical": {
+        "core_occurrences": 60,
+        "cores_per_row": {
+          "1": 60
+        },
+        "joint_degree_size_mixed": [
+          {
+            "count": 8,
+            "degree_type": "4/5",
+            "mixed": true,
+            "private_size": 6
+          },
+          {
+            "count": 4,
+            "degree_type": "4/5",
+            "mixed": true,
+            "private_size": 8
+          },
+          {
+            "count": 1,
+            "degree_type": "5/5",
+            "mixed": true,
+            "private_size": 6
+          },
+          {
+            "count": 2,
+            "degree_type": "5/5",
+            "mixed": true,
+            "private_size": 7
+          },
+          {
+            "count": 18,
+            "degree_type": "5/5",
+            "mixed": true,
+            "private_size": 8
+          },
+          {
+            "count": 27,
+            "degree_type": "5/5",
+            "mixed": true,
+            "private_size": 9
+          }
+        ],
+        "labelled_graphs": 3043440,
+        "labelled_root_degree_types": {
+          "4/5": 117120,
+          "5/5": 2984880
+        },
+        "orbits": 54,
+        "rejection_rows": 60,
+        "root_degree_types": {
+          "4/5": 12,
+          "5/5": 48
+        }
+      }
+    }
+  },
+  "task_branch": "task-c44-cores",
+  "unchanged_document_sha256": {
+    "README.md": "f1573561660b819b392b8dd7bbb3d6a2fc35406b11139ec71ce281e6cdefa2ef",
+    "docs/HANDOFF.md": "b344f6827aab31e2e5f019078772c2b68bcd3bd48b8529c0cbe8324fb04291bd",
+    "docs/c5_kempe_guide.md": "f0313e568bd334a5b3a4a0251d3fb11b312db2cfaf050afc38da898ec9001df2"
+  },
+  "validation_self_hash_excluded": true
+}

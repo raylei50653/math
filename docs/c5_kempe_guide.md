@@ -1,11 +1,20 @@
 # Kempe／重接／計數與策略導覽
 
-更新：2026-10-04。本頁維護本線現況；證明及實際重播範圍見各報告。
+更新：2026-10-07（唯一 mixed 指定稽核與 U1 no-mixed44 排除）。本頁維護本線現況；證明及實際重播範圍見各報告。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
 
 本批成果及D至D₅稽核的發布驗證見[發布紀錄](history/2026-10-04-c5-parallel-progress-publish.md)；
 新checkout的凍結快照／完整輸出先依[封存還原說明](../audits/README.md)還原。
+
+U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定前提化約與完整必要域，
+上游分類／拓撲信任及來源正控制未觸發界線保留。
+[M3 fresh驗證](../audits/2026-10-07-m3-fresh-checkout/REPORT.md)經
+[監督補件](../audits/2026-10-07-merge-supervision/REPORT.md)驗收具名presence／文件hash例外；
+原strict FAIL及歷史whitespace保持原紀錄，不推升數學或Lean結論。
+最終文件版本的fresh provenance診斷及本地交付見
+[M4-L報告](../audits/2026-10-07-m4-local/REPORT.md)與
+[發布紀錄](history/2026-10-07-m4-local-delivery.md)；遠端驗收及可合併判定仍分開。
 
 ## 1. 目標與範圍
 
@@ -29,53 +38,55 @@
 
 ## 3. 停止點與保留缺口
 
-**下一入口（2026-10-04 記錄，優先於新實驗與逐 pair 細拆）：雙色 roots 的 hub linkage。**
-依據是[盾弧預算與 hub 原則](c5_unary_shield_budget.md#6-對現有案例樹的影響與剩餘缺口)。
-在前提 (S) 下，設 one-sided mixed 分量 P 的支援包含於框邊 {a,b}，
-某份拒絕見證讓相鄰 roots 用兩色 c₁≠c₂（相鄰 z、w 正是此情形）。
+**目前停止點（2026-10-07）：U1 的 no-mixed 兩-root44 身份全排；完整 Σ 的44殘留只剩U2–U4，ε≥3 未證。**
+本輪補成相鄰唯一 mixed 四份指定化約／固定域的獨立稽核，並新增U1來源身份排除；
+各報告保留當輪停止點與歷史計畫，其他core型照舊。
+原 A／B 的逐 pair 必要表仍供追溯，後續三列結論以 E3–E6 的完整前提為準。
 
-- **要回答的問題：** disk 中，哪些環序配置能讓 {a}、{b}、X_{c₁}、X_{c₂}
-  成為兩兩相鄰、互斥的連通 hubs。能組成者由定理 B 直接排除。
-- **預期結果：** 不能組成者只剩交錯環序 a–c₁–b–c₂ 一類的 Kempe 型阻擋，需要逐一分類。
-  **（2026-10-04 修正，任務 K）：** 此預期的幾何表述不對。|P|=1 時 PabP、PzwP 都是三角形，
-  接點環序必為 a,b 相鄰、z,w 相鄰，a–z–b–w 交錯不可能出現；實際阻擋是經典 degree-4 的
-  **對角 Kempe 鏈斷開**。[停止見證 P1-witness-001](c5_kempe_transport.md#41-p1-witness-001)
-  （Σ=1012，與任務 S 的 S935 同屬 935 軌道）環序 z–b–a–w，對角對 (a,z)、(b,w) 的 02／13 鏈都斷開；
-  四條可延拓 P 的交換全部碰框，且新列都在 Σ(1012) 內，所以阻擋得以存活。
-  這支持猜想 K 的「轉運」部分，否定的是「交錯環序」部分。
-- **完成條件：** 給出任意大小的紙面分類（可組成 ⇒ K₅；不可組成 ⇒ 明列阻擋型）。
-  之後再回頭檢查 B₂／B₃／crosscut／A 系列的 hub 論證，各是哪一型的實例。
-- **停止條件：** 若出現不屬於交錯型、又無法組成 hubs 的配置，
-  保存該具名配置與完整見證，停止推廣。
+| 已返回任務 | 已完成範圍與證據界線 |
+| --- | --- |
+| K′ | 在同一G−p的拒絕見證ψ（q∉Σ(G)）下，[引理1–6及Jordan側別](c5_kempe_diagonal_transport.md)迫單點四色鄰域的兩條對角鏈皆斷開；933／941仍有192／384筆一致指派，可實現1012／935控制各192。同 ψ 多鏈交換無新排除，局部資料不能分辨來源；K′未決，K型局部題停止 |
+| E3／D₈ | [三列約化與triple-critical](../artifacts/c5_excess_two_e3/REPORT.md)；唯一degree-6全分支排除須引用[D₈](../audits/2026-10-04-task-d8/REPORT.md)的DG6-1補表：t=1的(4,1)／(3,2)相對spoke位置100份幾何零存活。E3對A前序的依賴過強更正已保存 |
+| E4 | [非相鄰m≤2與N3全排](../artifacts/c5_excess_two_e4/REPORT.md)；N1排mixed22有(4,4)core，N2排兩短無unary，其餘N1／N2保留。當輪缺少的非相鄰正控制後由ES／E4C提供；N∅／L-spoke已由NA6-1–3否定 |
+| E5／E6 | [四分支依賴表](../artifacts/c5_excess_two_e5/REPORT.md)與[相鄰m≤2](../artifacts/c5_excess_two_e6/REPORT.md)關閉J6的m≥3。G2的U盾弧恰二；G3剩具名支援約束；G4只剩盾弧恰三；no-mixed為941的013三-spoke或兩側≤2。G1依actual core轉交，G1–G4、J6的m≤2及J4其餘殘留未全排；紙面＋Python，未Lean化 |
+| E4C | [54個NA critical orbits ×60項](../artifacts/c5_excess_two_e4c/REPORT.md)不用三列的控制：42項有觸發前提的圖、18項無控制、0反例。真正控制缺口為singleton盾弧、root刪除例外、(4,4)core、根間bridge整側、單root重色core；不把未觸發前提當作引理已驗證 |
+| ES／ER | [ES](c5_excess_two_finite_search.md)與[獨立ER](c5_excess_two_independent_search.md)三型k≤9的q／critical orbit集合、計數及Q分布逐層一致，179個critical orbits（NA54／AD9／D6 116），無\|Q\|+c(Q)>4。完整性為有限雙實作證據，ER另依賴plantri；k≥10未搜尋 |
+| LC | [179／179個Lean soundness證書](c5_excess_two_lean_certificates.md)，558項axioms audit無sorryAx。拒絕列用native_decide，組合嵌入不等於拓撲disk定理，也不證搜尋完整性。未接入Math.lean／預設CI；是否接入的提議保留 |
+| D₉ | [E4／E5／E6紙面引理獨立稽核](../audits/2026-10-06-task-d9/REPORT.md)：N-empty-separating、N-theta、N1-22-44、L1–L8、相鄰m≤2、G2–G4及no-mixed預算全部成立，無新缺口；54 NA＋9 AD控制零反例。指定三列來源前提0／63觸發，三列下的來源排除無有限控制。歷史provenance FAIL與E3 degree6.json未入封存照實保存 |
+| C44 | [三型k≤9全部minimal cores](../artifacts/c5_excess_two_c44/REPORT.md)：9,644 q-orbits／179 critical，k≤6逐邊集與暴力一致。具名[C44-AD3-row0-44](../artifacts/c5_excess_two_c44/counterexample_C44-AD3-row0-44.json)（Σ956、Σ-critical；相鄰兩root各三spoke見框色0,1,2，皆迫色3）反駁一般「無兩-root (4,4) core」。加完整Σ=933／941前提的窄命題未證；有限域無此前提的來源，有限統計對它無控制，停止推廣 |
+| C44′ | [Σ相容篩](../artifacts/c5_excess_two_c44p/REPORT.md)：C44保存的2,416份兩-root (4,4) occurrences（213份literal core）全部相容；兩private頂點型125 placements中30份可嵌disk、10份相容（一個orbit，具名C44P-AD2-012-034，Σ959）。**篩本身近乎無效：** 933的D₅像恰為T4加任一個非T4列（五列皆可），941為T4加兩列；同框子圖繼承T4，故只拒一個非T4列的core必相容。Σ層必要條件不能排(4,4) core，排除須用來源的多列聯合、criticality或spoke預算；停止此方向 |
+| C44″ | [雙-root (4,4) 覆蓋表](../artifacts/c5_excess_two_c44pp/REPORT.md)：完整Σ=933／941下，相鄰m=1已有舊系列全排且不需K′；兩份AD-012-034具名core不能來自此前提的兩-root44來源。當輪整理覆蓋與必要限制；後續指定稽核及U1排除見下兩項 |
+| 唯一 mixed 指定稽核 | [四份舊排除稽核](../audits/2026-10-07-c44pp-mixed-audit/REPORT.md)：任意大小化約與固定域核對通過，獨立重算root pairs／S₄支援／368,859份UNSAT proofs／6,008份subdivisions；344域的標記run覆蓋亦通過。沿用上游分類，未重稽核其全部枚舉，未補E5的新證明 |
+| U1 no-mixed44 | [U1排除](c5_excess_two_no_mixed_core44.md)：spoke＋unit-U由單點D-forcer與triangle palette衝突；雙spoke以全部344份bridge-marker核心的3,498次接回全排，涵蓋941三-spoke側並更正原收窄。兩-root44身份全排；其他no-mixed core型及root刪除例外保留，紙面＋Python，未Lean化 |
 
-**候選猜想（2026-10-04 提出，未證；先記錄，後實驗）。** 見
-[綜合報告 §8](c5_research_synthesis.md#8-2026-10-04-新猜想基準-0b5e00a未證)。
-猜想 K（交錯阻擋只能靠碰框 Kempe 轉運存活）是本入口的精確化，S（所有 one-sided 分量 |σ|≥2）是其推論，
-不另開工作。猜想 E（超額–拒絕定律 ε≥|Q|+c(Q)−2）預測 933／941 皆需 ε≥3，
-其第一步 T1 是在可實現的 Q 形狀上重播 ε=1 工具；排在本入口之後或並行，待使用者決定。
-任務 E1 的 [k≤5 完整窮舉](c5_excess_rejection_law.md)（310 類）無反例，且各可實現形狀的最小 ε 恰等於下界。
-任務 E2 的 [ε≤1 層報告](../artifacts/c5_excess_one_e2/REPORT.md)完成 T1：ε=0 ⇒ |Q|≤1，ε=1 ⇒ Q 為一點或相鄰兩點（[D₇ 稽核](../audits/2026-10-04-task-d7/REPORT.md)確認）。
-E 的 ε=2 層與本線 ε=2 雙 root 樹同一目標；本線新引理先以 Σ=935 的 (4,5,5) 代表作正控制，
-凡不用 933／941 特定拒絕列的論證都不得排除它。
-任務 S 的[校準](c5_shield_calibration.md)已在可實現的 Σ=935 上找到短支援 one-sided mixed 分量（S935／P0={5}），
-所以本入口的 hub linkage 分類**不能只靠局部機制**，「不可組成」一側必須用到 933／941 的拒絕列；S935 可作最小測試案例。
-任務 K 的[轉運有限表](c5_kempe_transport.md)完成 933／941 各 20 筆單 block 轉運；共同 partition 的 a／b 候選
-全部非交錯，故單靠框表推不出矛盾。
+**完整 Σ=933／941 的兩-root (4,4) 殘留。** 沿用 disk、Σ-critical、ε=2、
+完整 degrees、同源 contacts／attachments 與整圖 D₅ 搬運；逐格前提與出處見 C44″。
 
-**hub linkage 的精確化下一步（2026-10-04 記錄，優先於擴大 P 的普查）：猜想 K′（對角鏈轉運）。**
-設 N(P) 四色互異：a、b 框色 α、β，相鄰 roots 色 c_z、c_w，對角對為 (a,z)、(b,w)。
-兩條所需鏈的色對 {α,c_z}、{β,c_w} 互補，屬同一 split，所以它們碰框的 blocks 落在同一份 noncrossing partition。
-- **要回答的問題：** 對 933／941 的每個拒絕 q、每條框邊 ab、每組 (c_z,c_w)、每份該 split 的 partition，
-  是否存在一組 blocks 指派，使四個端點各自出發、能延拓 P 的交換全部送到 Σ 內。
-- **預期結果：** 933／941 無一致指派，從而短支援、四色鄰域的 one-sided 分量在固定來源下不存在；
-  在 1012 上必須有指派（由 P1-witness-001 實現），作為正控制。
-- **完成條件：** 完整有限表加上把「root 屬於哪條鏈」接回的紙面引理（任務 K 所稱 root-to-chain joint incidence）。
-- **停止條件：** 933 或 941 出現一致指派時，保存指派並嘗試實現成圖，不再推廣。
-|P|≥2 與鄰域少於四色的情形留在其後。
+| 未覆蓋家族 | 精確省略身份與必要限制 |
+| --- | --- |
+| U2：相鄰 m=2 | 恰省略一份 mixed11，保留另一份 mixed11 並共用 x；不得再省略其他因子 |
+| U3：非相鄰 N1 | sole C incidence11／12／21，兩側各省略一個 unit；三-spoke set 不可為 024／124 |
+| U4：非相鄰 N2 | 恰省略一份 mixed11；(ℓ,u)=(2,0),(1,0),(1,1),(0,1),(0,2)。該44 core所拒絕列的兩側原 spokes 均不得重色 |
 
-這一題完成前，不新開以下工作：逐 spoke-pair 的殘留輪次（A 的 12／12 等）、
-k≥8 來源搜尋、案例樹 ledger。次要的不依賴 ε 的題目依序是：
-分隔型 mixed 分量（G[R] 不連通時），以及把 Σ|σ|≤5 與逐列 D+O 恆等式合成單一不等式。
+U1 已由 [no-mixed44](c5_excess_two_no_mixed_core44.md) 排除。上方三項只列兩-root44 core；單-root 的 N1 刪 root 例外另保留，
+(5,4)/(4,5) 及原 G 的 (5,5) core 也未因此排除。
+E3 的三列推廣不能直接復用部分精確 Σ 證書；E5／E6 在精確 941／933／940
+也依其「新證明」要求保留 G1。C44″ 與本輪指定稽核不完成那項任務；
+上游degree-4／triangle分類的全部枚舉沒有重新稽核。
+**下一個窄提議（未啟動）：** U2相鄰m=2的mixed11省略身份。
+固定保留的原共鄰triangle，檢查被省略mixed11的完整二接點relation、同一實際支援
+與兩條mixed路圍成外界的限制；不把singleton收縮當染色替換，不預填省略圖Ω。
+本輪驗證見[紀錄](history/2026-10-07-no-mixed-core44.md)；前輪整合見
+[整合覆核紀錄](history/2026-10-07-c44pp-integration-review.md)。
+
+不新開逐spoke-pair輪次、擴大k搜尋、案例樹ledger、K型局部題或Lean
+枚舉completeness試點。雙degree-5的N1／N2、G1–G4、J6剩餘、no-mixed、
+較少spokes、原(5,5)core及一般來源未全排；猜想E任意大小、一般出口與K∞=K≤5未證。
+另一個保留題目是把Σ|σ|≤5與逐列D+O恆等式合成單一不等式。
+本次重播、歷史文件hash漂移與分支發布見
+[發布紀錄](history/2026-10-04-kprime-excess-two-progress-publish.md)。
+
+以下保存固定完整Σ933／941的A／B原身份與停止點；其逐pair下一步不覆蓋上方窄提議。
 
 本線候選來源前提是固定完整 Σ=933／941 或整圖 D₅ 像、每條非框邊
 Σ-critical、指定有序 induced-C₅ disk、所有有效內點完整 degree≥4。
@@ -137,7 +148,7 @@ y₀≠y₁、x獨立或共享其中一原接點均保持。新incidence必要�
 24張固定完整degree圖／30,720fibres及2,912份整份C替換witnesses只是
 關係控制，不實現來源或ledger schedules。詳見[A₄報告與完整殘留](c5_excess_two_mixed_core_four_spoke_mixed12_04_04.md)。
 後續[盾弧預算](c5_unary_shield_budget.md)以支援連續性與 spoke 限制，將其餘actual U支援紀錄刪至24／30、schedules刪至30／50，16／20框架各仍有殘留。
-停止於此；其他共用pairs與unequal入口仍保留，可下一輪固定原12／12
+原pair層停止於此；其他共用pairs與unequal入口保留。歷史提議是固定原12／12
 及root交換，再逐項核對自身四rotations、原support／schedules與完整ternary。
 未將04／04結果登記到其他pairs，mixed12整型與ε≥3仍未證。
 A₄直接證明原入口，未用D₅來源搬運；01→04兩份幾何moves將933送至934／948、

@@ -1,0 +1,27 @@
+{
+  "name": "axiom-parser-helper-controls-v2",
+  "argv": [
+    "python3",
+    "-c",
+    "\nimport gzip,hashlib,json,re,subprocess,tempfile\nfrom pathlib import Path\nhelper=Path('/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/check_lean_axioms.py')\nhistorical=Path('/tmp/math-m3-ba0b447/artifacts/c5_integrate_branch_review/logs/lean_axioms.log.gz')\nsource=Path('/tmp/math-m3-ba0b447/Math/ExcessTwoCertificatesAudit.lean')\ncontrol_root=Path(tempfile.mkdtemp(prefix='math-m3-axiom-helper-controls-'))\ntext=gzip.decompress(historical.read_bytes()).decode()\npattern=re.compile(r\"^'([^']+)' (?:depends on axioms:\\s*\\[([^\\]]*)\\]|does not depend on any axioms)\",re.MULTILINE)\nmatches=list(pattern.finditer(text))\nassert len(matches)==558\ncontrols={'historical_baseline':text,'missing_first_declaration':text[matches[0].end():].lstrip('\\n'),'duplicate_first_declaration':text+'\\n'+matches[0].group(0)+'\\n','sorry_axon_first_declaration':text.replace('Quot.sound','sorryAx',1),'extra_error_diagnostic':text+'\\nMath/ExcessTwoCertificatesAudit.lean:1:0: error: helper control diagnostic\\n'}\nfirst_positive=next(m for m in matches if m.group(1).endswith('_positive'))\nold=first_positive.group(0)\ncontrols['positive_native_injected']=text[:first_positive.start()]+old[:-1]+', foreign.native_decide.ax_1]'+text[first_positive.end():]\nfirst_rejected=next(m for m in matches if m.group(1).endswith('_rejected'))\nold=first_rejected.group(0)\nmutated=re.sub(r'\\b[^,\\s\\[\\]]*\\.native_decide\\.[^,\\s\\[\\]]*','foreign.native_decide.ax_1',old)\nassert mutated!=old\ncontrols['rejected_foreign_native_replaced']=text[:first_rejected.start()]+mutated+text[first_rejected.end():]\nrecords={}\nfor name,value in controls.items():\n    log=control_root/(name+'.log')\n    log.write_text(value)\n    output=control_root/(name+'.json')\n    run=subprocess.run(['python3',str(helper),'--log',str(log),'--source',str(source),'--output',str(output)],text=True,capture_output=True)\n    (control_root/(name+'.stdout')).write_text(run.stdout)\n    (control_root/(name+'.stderr')).write_text(run.stderr)\n    records[name]={'exit_code':run.returncode,'last_stderr_line':run.stderr.splitlines()[-1] if run.stderr else '', 'output_exists':output.exists()}\nassert records['historical_baseline']['exit_code']==0\nassert all(records[k]['exit_code']!=0 for k in ('missing_first_declaration','duplicate_first_declaration','sorry_axon_first_declaration','positive_native_injected'))\nbaseline=json.loads((control_root/'historical_baseline.json').read_text())\nprint(json.dumps({'scope':'HELPER CONTROLS ONLY: historical Oct05 log and synthetic corruptions; not current LC build or axioms evidence','control_root':str(control_root),'helper_sha256':hashlib.sha256(helper.read_bytes()).hexdigest(),'historical_gzip_sha256':hashlib.sha256(historical.read_bytes()).hexdigest(),'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'baseline_groups':baseline['groups'],'baseline_declaration_count':baseline['declaration_count'],'controls':records},sort_keys=True))\n"
+  ],
+  "cwd": "/tmp/math-m3-ba0b447",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "started_unix": 1791350344.6252127,
+  "exit_code": 1,
+  "seconds": 0.307,
+  "logs": [
+    {
+      "path": "logs/axiom-parser-helper-controls-v2.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "logs/axiom-parser-helper-controls-v2.stderr.log",
+      "bytes": 206,
+      "sha256": "b035fe3381cf2734fbf6aee854e8a3944d0ebbeac2975ef0f87363a37ef8d13f"
+    }
+  ]
+}

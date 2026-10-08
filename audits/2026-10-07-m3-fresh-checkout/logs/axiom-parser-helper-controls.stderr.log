@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<string>", line 9, in <module>
+    pattern=re.compile(r"^'([^']+)' (?:depends on axioms:\\s*\\[([^\\]]*)\\]|does not depend on any axioms)",re.MULTILINE)
+  File "/usr/lib/python3.14/re/__init__.py", line 289, in compile
+    return _compile(pattern, flags)
+  File "/usr/lib/python3.14/re/__init__.py", line 350, in _compile
+    p = _compiler.compile(pattern, flags)
+  File "/usr/lib/python3.14/re/_compiler.py", line 762, in compile
+    p = _parser.parse(p, flags)
+  File "/usr/lib/python3.14/re/_parser.py", line 978, in parse
+    raise source.error("unbalanced parenthesis")
+re.PatternError: unbalanced parenthesis at position 81
