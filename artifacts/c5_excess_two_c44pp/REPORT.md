@@ -1,5 +1,25 @@
 # 任務 C44″：兩-root (4,4) 拒絕 q-core 的既有排除覆蓋表
 
+**後續（2026-10-08，U4完成）。** [非相鄰兩mixed的U4](../../docs/c5_excess_two_nonadjacent_two_mixed_core44.md)
+由原盾弧／star、保留marker的任意長run化約及828份完整joint接回全排。
+U1–U4現已完成固定完整Σ933／941下兩-root44身份；下文當輪覆蓋表保留，
+45／54／55、單-root例外、E5新證明要求與ε≥3仍保留。
+
+**後續（2026-10-08，U3完成）。** [非相鄰sole mixed12／21](../../docs/c5_excess_two_nonadjacent_mixed12_core44.md)
+由原star面與重色列slack排容量一、六內點完整接回排容量二。
+連同前輪mixed11及E4的mixed22，U3兩-root44身份完成；完整Σ下44殘留只剩U4。
+下文保留各輪原覆蓋表；其他core型、單-root例外與ε≥3保留。
+
+**後續（2026-10-08，U3）。** [非相鄰 sole mixed11](../../docs/c5_excess_two_nonadjacent_one_mixed_core44.md)
+的兩側 unit 省略44身份已全排：容量11給原apex K₃,₃、22違反原直接bridge，
+12／21容量由原star face及重色列的完整slack延拓排除。
+完整Σ下44殘留為U3 incidence12／21及U4；下文當輪incidence11未覆蓋狀態保留。
+
+**後續（2026-10-08）。** [相鄰兩mixed44](../../docs/c5_excess_two_adjacent_two_mixed_core44.md)
+已排U2：原mixed11省略圖全收Ω；126份triangle正常形／570標記的完整關係、固定支援
+與同源收縮星全排，獨立支援計算一致。因此完整Σ下兩-root44目前只剩非相鄰U3／U4。
+下文保留當輪覆蓋表及U1更正；其他core型與E5新證明要求保留。
+
 **後續（2026-10-07）。** [no-mixed44](../../docs/c5_excess_two_no_mixed_core44.md)
 以 triangle palette 衝突排 U1 的spoke＋unary，並以344份bridge-marker核心的
 3,498次完整接回排雙spoke，因此本頁當輪四類44殘留現只剩U2–U4。

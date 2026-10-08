@@ -1,0 +1,27 @@
+{
+  "label": "post-merge-final-refs",
+  "argv": [
+    "gh",
+    "api",
+    "repos/raylei50653/math/git/matching-refs/heads",
+    "--jq",
+    "[.[] | select(.ref == \"refs/heads/main\" or .ref == \"refs/heads/integrate-kprime-e3\") | {ref,sha:.object.sha}]"
+  ],
+  "cwd": "/home/ray/developer/ai/math",
+  "started_utc": "2026-10-08T09:47:58.501775+00:00",
+  "finished_utc": "2026-10-08T09:47:59.023068+00:00",
+  "seconds": 0.521296068999618,
+  "exit_code": 0,
+  "logs": {
+    "stdout": {
+      "path": "stdout.log",
+      "bytes": 167,
+      "sha256": "246c31ba885982ce550c9140a1e5752dda956ee2186b69449843efab8912c744"
+    },
+    "stderr": {
+      "path": "stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

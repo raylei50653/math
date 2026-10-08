@@ -1,0 +1,10 @@
+check	Run actions/checkout@v5	2026-10-07T08:18:05.1846981Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf:refs/remotes/origin/integrate-kprime-e3
+check	Run actions/checkout@v5	2026-10-07T08:18:10.2135356Z  * [new ref]         1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf -> origin/integrate-kprime-e3
+check	Run actions/checkout@v5	2026-10-07T08:18:11.2139041Z [command]/usr/bin/git log -1 --format=%H
+check	Run actions/checkout@v5	2026-10-07T08:18:11.2167550Z 1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf
+check	Check local documentation	﻿2026-10-07T08:18:11.2431063Z ##[group]Run python3 scripts/check_docs.py
+check	Check local documentation	2026-10-07T08:18:12.6020027Z missing path: docs/c5_open_leaf_ledger.md:78: ../audits/2026-10-04-task-d5/c4/scope_ledger.json
+check	Check local documentation	2026-10-07T08:18:12.6024275Z missing path: docs/history/2026-10-04-task-d2-integration-audit.md:39: ../../audits/2026-10-04-task-d2/integration_doc_changes.diff
+check	Check local documentation	2026-10-07T08:18:12.6025803Z FAIL: 2 errors (573 Markdown files, 6714 local links)
+check	Check local documentation	2026-10-07T08:18:12.6085186Z ##[error]Process completed with exit code 1.
+OK: 573 Markdown files, 6714 local links; anchors, index, handoff checked

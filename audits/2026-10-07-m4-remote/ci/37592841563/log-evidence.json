@@ -1,0 +1,114 @@
+{
+  "run_id": 37592841563,
+  "argv": [
+    "gh",
+    "api",
+    "repos/raylei50653/math/actions/runs/37592841563/logs"
+  ],
+  "exit_code": 0,
+  "original_zip": {
+    "path": "original-logs.zip",
+    "bytes": 7697,
+    "sha256": "6a97c33ec848046d2068519b40bf51d9895a2f60ca0dfb48fa35e1736178e463"
+  },
+  "entries": [
+    {
+      "path": "0_check.txt",
+      "bytes": 10110,
+      "sha256": "9f1b1c63b54535046d73b9540923ada2bd61c2755850a29d24a7cf39d159faac"
+    },
+    {
+      "path": "check/system.txt",
+      "bytes": 582,
+      "sha256": "fcc4b1bd924ace177d2ed16213008332594938f69be47caca935f838ea76476a"
+    },
+    {
+      "path": "check/1_Set up job.txt",
+      "bytes": 1863,
+      "sha256": "5f7a5099ccff2ff77fbe1505d4a372d67161cf7c2d1e4ddc9917129fece072f7"
+    },
+    {
+      "path": "check/2_Run actions_checkout@v5.txt",
+      "bytes": 5808,
+      "sha256": "43dfc6754b661bbde4462dd29a0b947eb48d0cef2de35b885e5a4b0f20b24e8e"
+    },
+    {
+      "path": "check/3_Check local documentation.txt",
+      "bytes": 687,
+      "sha256": "a3e7d9a73b985942a45ec1b72f893f2a12b419ee19352c45c3b06aff68f00150"
+    },
+    {
+      "path": "check/6_Post Run actions_checkout@v5.txt",
+      "bytes": 1703,
+      "sha256": "9b67af387bd6208d8cb87d1ba0f46f5eb4360266cf230e74c64f38067c7bc804"
+    },
+    {
+      "path": "check/7_Complete job.txt",
+      "bytes": 61,
+      "sha256": "93b66cbafe520cfcf65cc564e20a1faaef3d84fcde32523ae106771904580fa9"
+    }
+  ],
+  "actual_checkout_evidence": [
+    {
+      "path": "0_check.txt",
+      "command_line": 103,
+      "sha_line": 104,
+      "sha": "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "command": "2026-10-07T08:18:11.2139077Z [command]/usr/bin/git log -1 --format=%H",
+      "checkout_output": "2026-10-07T08:18:11.2167623Z 1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf"
+    },
+    {
+      "path": "check/2_Run actions_checkout@v5.txt",
+      "command_line": 72,
+      "sha_line": 73,
+      "sha": "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "command": "2026-10-07T08:18:11.2139041Z [command]/usr/bin/git log -1 --format=%H",
+      "checkout_output": "2026-10-07T08:18:11.2167550Z 1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf"
+    }
+  ],
+  "checkout_shas": [
+    "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf"
+  ],
+  "build_and_failure_lines": [
+    {
+      "path": "0_check.txt",
+      "line": 109,
+      "text": "2026-10-07T08:18:12.6020125Z missing path: docs/c5_open_leaf_ledger.md:78: ../audits/2026-10-04-task-d5/c4/scope_ledger.json"
+    },
+    {
+      "path": "0_check.txt",
+      "line": 110,
+      "text": "2026-10-07T08:18:12.6024294Z missing path: docs/history/2026-10-04-task-d2-integration-audit.md:39: ../../audits/2026-10-04-task-d2/integration_doc_changes.diff"
+    },
+    {
+      "path": "0_check.txt",
+      "line": 111,
+      "text": "2026-10-07T08:18:12.6025815Z FAIL: 2 errors (573 Markdown files, 6714 local links)"
+    },
+    {
+      "path": "0_check.txt",
+      "line": 112,
+      "text": "2026-10-07T08:18:12.6085206Z ##[error]Process completed with exit code 1."
+    },
+    {
+      "path": "check/3_Check local documentation.txt",
+      "line": 5,
+      "text": "2026-10-07T08:18:12.6020027Z missing path: docs/c5_open_leaf_ledger.md:78: ../audits/2026-10-04-task-d5/c4/scope_ledger.json"
+    },
+    {
+      "path": "check/3_Check local documentation.txt",
+      "line": 6,
+      "text": "2026-10-07T08:18:12.6024275Z missing path: docs/history/2026-10-04-task-d2-integration-audit.md:39: ../../audits/2026-10-04-task-d2/integration_doc_changes.diff"
+    },
+    {
+      "path": "check/3_Check local documentation.txt",
+      "line": 7,
+      "text": "2026-10-07T08:18:12.6025803Z FAIL: 2 errors (573 Markdown files, 6714 local links)"
+    },
+    {
+      "path": "check/3_Check local documentation.txt",
+      "line": 8,
+      "text": "2026-10-07T08:18:12.6085186Z ##[error]Process completed with exit code 1."
+    }
+  ]
+}

@@ -1,5 +1,16 @@
 # ε=2 no-mixed：兩-root (4,4) core 的 U1 身份排除
 
+**後續（2026-10-08，U4完成）。** [非相鄰兩mixed的U4](c5_excess_two_nonadjacent_two_mixed_core44.md)
+現亦全排，固定完整Σ933／941下兩-root44身份全部完成。
+下文保留本頁當輪停止點及後續紀錄；單-root例外、45／54／55與ε≥3仍保留。
+
+**後續（2026-10-08，U3完成）。** [U3 mixed12／21](c5_excess_two_nonadjacent_mixed12_core44.md)
+連同mixed11／22關閉U3兩-root44身份；目前完整Σ下的44殘留只剩U4。
+下文保留各輪停止點，其他core型不受此更新排除。
+
+**後續（2026-10-08）。** [U2相鄰兩mixed44](c5_excess_two_adjacent_two_mixed_core44.md)
+已排除，完整Σ下44殘留現只剩非相鄰U3／U4。本頁保留U1當輪停止點及驗證。
+
 2026-10-07。接續 [C44″ §5](../artifacts/c5_excess_two_c44pp/REPORT.md#5-最小未覆蓋子分支清單)
 的 U1；同輪 [唯一 mixed 稽核](../audits/2026-10-07-c44pp-mixed-audit/REPORT.md)
 另行交付。研究線與目前停止點見 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)。

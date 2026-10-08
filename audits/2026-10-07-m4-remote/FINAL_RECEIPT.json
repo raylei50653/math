@@ -1,0 +1,333 @@
+{
+  "task": "M4-R",
+  "recorded_utc": "2026-10-07T09:16:14.811030+00:00",
+  "status": "Published; CI outcomes preserved; awaiting supervisor acceptance",
+  "pr": {
+    "autoMergeRequest": null,
+    "baseRefName": "main",
+    "baseRefOid": "2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090",
+    "body": "此整合分支納入 C5／完整 Sigma 固定來源研究的部分排除成果、有限證書、文件及獨立稽核。\nU1 在明列 full Sigma933/941、epsilon=2、critical disk 與同來源前提下排除 no-mixed adjacent\ntwo-root (4,4) 情形；M2 獨立核對 344 核心、3,498 接回、34,980 接回列查詢，target hit 為 0。\nU2–U4、其他殘留 core／例外、E5 新證明、三列推廣、epsilon>=3 及一般出口仍保留。\n有限兼容／未觸發控制不提升為來源構造、搜尋完備性或一般定理；紙面論證保留上游分類及\nNetworkX／拓撲信任，未新增 U1 Lean 定理。\n\n最終受驗 head：`1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf`。\n本地驗收基準：`2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090`；實際 PR base 以即時 PR 為準。\nM4-L 納入 573 檔／26,469,605 bytes，原 M2／M3／監督 328 檔及 manifests 零漂移。\n相對本地 main 基準，整分支差異 1,618 檔、+1,985,529／−70；不是只有末次 commit。\n完整依賴、來源及驗證資料由 docs/STATUS.md、docs/c5_kempe_guide.md 與\naudits/2026-10-07-m4-local/REPORT.md 導覽。\n\n驗證與界線：\n\n- M3 原 29 指定命令為 28 PASS／1 FAIL；另外四項 strict provenance FAIL，共五項保留。\n  差異限 C44 兩個來源 presence/metadata leaves、E3 REPORT metadata、E4C guide hash、\n  E5 branches 文件 hash；完整其餘 JSON payload 相同，不宣稱全 strict PASS。\n- 最終 SHA 的獨立 checkout：文件／anchors/index、manifest、17 份 Python syntax、\n  archive verify、155 產物狀態及預設 DocGraph 通過。\n  原工作區保留 scratch，預設 DocGraph 的 62 duplicate-id 仍是 FAIL。\n- Whitespace 原 86 項與匯入 immutable raw log 新增 85 項分列；新 authored 診斷 0。\n  整分支 git diff --check 仍 exit2，原 vendor／logs bytes 未修改。\n- 同 hash 的 109 份 Lean 來源／設定／生成證書沿用 M3 顯式 LC build；\n  558 項公理 log 在 M4 與監督端重新解析相同，179 positive 無 native。\n  本輪未重跑 build／Lean 公理程序；rejected/valid 與 raw Sigma cover 仍有 native 信任。\n  預設 Lean CI 不代替顯式 LC 證據，未交付舊 .olean inventory。\n- 原 M1 REPORT／candidate TSV 兩份追回；其餘原 M1 包及部分歷史暫存證據不可用。\n  fresh Git blob 核對與 M3 同候選證據不冒稱缺失的原執行 logs。\n\n遠端 CI 以本 PR 最新 final head 的實際 checks／run 為準；舊 SHA、空 checks 與本地驗證\n不作遠端成功證據。合併待監督核對即時 head/base、CI、review 狀態並另行授權。\n\n\n整分支範圍補充：\n\n- K′ 對角 Kempe 轉運、E3–E6 的 ε=2 紙面化約與部分排除、E4C／D₈／D₉ 控制及稽核。\n  K′ 仍保留 933／941 的 192／384 筆一致指派，未證來源排除；E3 唯一 degree-6\n  全分支排除引用 D₈ 的 DG6-1 補表，雙 degree-5 與指定三列來源缺口仍保留。\n- ES 與獨立 ER 的三型 k≤9 集合、計數及 Q 分布一致，共 179 個 critical orbits；\n  k≥10 未搜尋，ER 依賴 plantri。LC 證明這 179 個具名 literal graphs 的 Lean soundness，\n  未證搜尋 completeness 或拓撲 disk 定理。\n- C44 保留 C44-AD3-row0-44 反例（完整 Σ=956）；它不反駁加完整 Σ=933／941 前提的窄命題。\n  C44′ 保存 2,416 occurrences／213 literal cores 的相容篩結果，未構造目標來源或得到排除定理；\n  C44″ 整理既有排除覆蓋，唯一 mixed 四份指定稽核與 U1 排除後，兩-root44 殘留仍為 U2–U4。\n\n五份 strict FAIL 分別為 C44 input audit 的兩個來源 presence／metadata leaves、\nE4 reductions 的 E3 REPORT bytes／hash、E5 controls 的同一 REPORT hash、\nE4C 的 Kempe guide hash，以及 E5 branches 的 mixed_core_spokes 文件 hash。\n各份完整 JSON 的其他 payload 全等，strict exit1 仍保留。\n\n精確來源與停止點見 docs/c5_kempe_diagonal_transport.md、各 E3–E6 artifacts REPORT、\ndocs/c5_excess_two_finite_search.md、docs/c5_excess_two_independent_search.md、\ndocs/c5_excess_two_lean_certificates.md、C44／C44′／C44″ artifacts REPORT，\n以及 audits/2026-10-07-c44pp-mixed-audit/REPORT.md。\n\n發布時即時 remote main 與實際 PR base 均為 `2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090`，\n未相對本地驗收基準前進。固定 final head 已正常 fast-forward push；本次不新增 commit。\n\n遠端交付結果（2026-10-07，固定 head 未變）：\n\n- Lean push run https://github.com/raylei50653/math/actions/runs/37592725527：SUCCESS，build job SUCCESS；\n  原 logs 的實際 checkout=`1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf`。\n- Lean pull_request run https://github.com/raylei50653/math/actions/runs/37592797376：SUCCESS，build job SUCCESS；\n  關聯 PR head 同上，實際 checkout 為 synthetic merge ref `ca65f8796c6d83296fee2b22a77467d46b37ebec`。\n  兩份 logs 都是預設 `lake build --no-ansi`、8,831 jobs；不代替原 M3 顯式 LC build／558 項公理證據。\n- Documentation workflow_dispatch run https://github.com/raylei50653/math/actions/runs/37592841563：FAIL，\n  實際 checkout 是固定 final head，check job 因兩份 archived targets 沒有先還原而 exit1：\n  `audits/2026-10-04-task-d5/c4/scope_ledger.json`、\n  `audits/2026-10-04-task-d2/integration_doc_changes.diff`。\n  已提交 archive catalog／gzip blobs、原／解壓 bytes 與本地還原副本 hashes 均相符；docs.yml 沒有 archive restore。\n  保留原 run／ZIP logs，不把 scratch-free 本地 restore 後 docs PASS 稱為本次文件 CI PASS。\n\n即時 base 與 remote main 仍為 `2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090`，沒有前進。\n本次僅正常 push／建立與更新 PR／dispatch 既有文件 workflow／保存驗收證據；\n未新增 commit、未改 final head、未 merge、未啟用 auto-merge、未 force push。\n文件 CI FAIL 與原五項 strict FAIL 保留，停止於待監督核對，不宣告可合併。\n",
+    "headRefName": "integrate-kprime-e3",
+    "headRefOid": "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+    "isDraft": false,
+    "mergeStateStatus": "CLEAN",
+    "mergeable": "MERGEABLE",
+    "number": 3,
+    "reviewDecision": "",
+    "state": "OPEN",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-07T08:58:56Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/raylei50653/math/actions/runs/37592797376/job/112698077387",
+        "name": "build",
+        "startedAt": "2026-10-07T08:37:05Z",
+        "status": "COMPLETED",
+        "workflowName": "Lean CI"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-07T08:37:01Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/raylei50653/math/actions/runs/37592725527/job/112697835513",
+        "name": "build",
+        "startedAt": "2026-10-07T08:17:09Z",
+        "status": "COMPLETED",
+        "workflowName": "Lean CI"
+      }
+    ],
+    "url": "https://github.com/raylei50653/math/pull/3"
+  },
+  "review_threads_total": 0,
+  "unresolved_threads": [],
+  "reviews": {
+    "totalCount": 0,
+    "pageInfo": {
+      "hasNextPage": false,
+      "endCursor": null
+    },
+    "nodes": []
+  },
+  "required_checks_policy": {
+    "branch_protection_rule": null,
+    "effective_rules": []
+  },
+  "refs": {
+    "local": "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+    "tracking": "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+    "remote_branch": "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+    "remote_main": "2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090",
+    "baseline_main": "2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090",
+    "main_advanced": false,
+    "main_diff": "none"
+  },
+  "ci_runs": [
+    {
+      "conclusion": "success",
+      "databaseId": 37592725527,
+      "event": "push",
+      "headBranch": "integrate-kprime-e3",
+      "headSha": "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "jobs": [
+        {
+          "completedAt": "2026-10-07T08:37:01Z",
+          "conclusion": "success",
+          "databaseId": 112697835513,
+          "name": "build",
+          "startedAt": "2026-10-07T08:17:09Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-07T08:16:59Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-07T08:16:57Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:17:11Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v5",
+              "number": 2,
+              "startedAt": "2026-10-07T08:16:59Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:17:12Z",
+              "conclusion": "success",
+              "name": "Use elan toolchain",
+              "number": 3,
+              "startedAt": "2026-10-07T08:17:11Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:20:10Z",
+              "conclusion": "success",
+              "name": "Fetch Mathlib cache",
+              "number": 4,
+              "startedAt": "2026-10-07T08:17:12Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:36:29Z",
+              "conclusion": "success",
+              "name": "Build",
+              "number": 5,
+              "startedAt": "2026-10-07T08:20:10Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:36:30Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v5",
+              "number": 10,
+              "startedAt": "2026-10-07T08:36:29Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:36:30Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 11,
+              "startedAt": "2026-10-07T08:36:30Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/raylei50653/math/actions/runs/37592725527/job/112697835513"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/raylei50653/math/actions/runs/37592725527",
+      "actual_checkout_sha": "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "log_evidence": "ci/37592725527/log-evidence.json",
+      "original_logs_zip": "ci/37592725527/original-logs.zip"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37592797376,
+      "event": "pull_request",
+      "headBranch": "integrate-kprime-e3",
+      "headSha": "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "jobs": [
+        {
+          "completedAt": "2026-10-07T08:58:56Z",
+          "conclusion": "success",
+          "databaseId": 112698077387,
+          "name": "build",
+          "startedAt": "2026-10-07T08:37:05Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-07T08:36:54Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-07T08:36:52Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:37:03Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v5",
+              "number": 2,
+              "startedAt": "2026-10-07T08:36:54Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:37:04Z",
+              "conclusion": "success",
+              "name": "Use elan toolchain",
+              "number": 3,
+              "startedAt": "2026-10-07T08:37:03Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:41:10Z",
+              "conclusion": "success",
+              "name": "Fetch Mathlib cache",
+              "number": 4,
+              "startedAt": "2026-10-07T08:37:04Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:58:13Z",
+              "conclusion": "success",
+              "name": "Build",
+              "number": 5,
+              "startedAt": "2026-10-07T08:41:10Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:58:13Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v5",
+              "number": 10,
+              "startedAt": "2026-10-07T08:58:13Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:58:13Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 11,
+              "startedAt": "2026-10-07T08:58:13Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/raylei50653/math/actions/runs/37592797376/job/112698077387"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/raylei50653/math/actions/runs/37592797376",
+      "actual_checkout_sha": "ca65f8796c6d83296fee2b22a77467d46b37ebec",
+      "log_evidence": "ci/37592797376/log-evidence.json",
+      "original_logs_zip": "ci/37592797376/original-logs.zip"
+    },
+    {
+      "conclusion": "failure",
+      "databaseId": 37592841563,
+      "event": "workflow_dispatch",
+      "headBranch": "integrate-kprime-e3",
+      "headSha": "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "jobs": [
+        {
+          "completedAt": "2026-10-07T08:18:14Z",
+          "conclusion": "failure",
+          "databaseId": 112698225769,
+          "name": "check",
+          "startedAt": "2026-10-07T08:18:03Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-07T08:18:04Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-07T08:18:04Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:18:11Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v5",
+              "number": 2,
+              "startedAt": "2026-10-07T08:18:04Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:18:12Z",
+              "conclusion": "failure",
+              "name": "Check local documentation",
+              "number": 3,
+              "startedAt": "2026-10-07T08:18:11Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:18:12Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v5",
+              "number": 6,
+              "startedAt": "2026-10-07T08:18:12Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-07T08:18:12Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 7,
+              "startedAt": "2026-10-07T08:18:12Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/raylei50653/math/actions/runs/37592841563/job/112698225769"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/raylei50653/math/actions/runs/37592841563",
+      "actual_checkout_sha": "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "log_evidence": "ci/37592841563/log-evidence.json",
+      "original_logs_zip": "ci/37592841563/original-logs.zip"
+    }
+  ],
+  "docs_failure_classification": "Archive targets retained but not restored by docs.yml before link validation",
+  "delivery_manifest": "audits/2026-10-07-m4-local/DELIVERY.json",
+  "accepted_final_receipt": "audits/2026-10-07-m4-supervisor/acceptance/final-receipt/FINAL_RECEIPT.json",
+  "source_and_seal_integrity": {
+    "status": "PASS",
+    "head": "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+    "tree": "d614893520c70b4c1ce6034e17fd1901146c10ce",
+    "delivery_entries_without_seal": 572,
+    "seal": {
+      "bytes": 118904,
+      "sha256": "0ee59a603a366808cc8fdfb52b32586403028fd72395a80785991584408d49fa"
+    },
+    "original_bundle_files_unchanged": 328,
+    "lean_source_config_products_unchanged": 109,
+    "supervisor_sidecar_files_unchanged": 141,
+    "scratch_retained": true,
+    "tracked_and_staging_clean": true,
+    "new_commit": false,
+    "full_source_preflight": "integrity/source-integrity.json"
+  },
+  "worktree_status": "?? audits/2026-10-07-m4-remote/\n?? audits/2026-10-07-m4-supervisor/\n?? scratch/\n",
+  "new_commit": false,
+  "force_push": false,
+  "rebase": false,
+  "merge": false,
+  "auto_merge_enabled": false,
+  "local_lean_build_rerun": false,
+  "lean_axiom_process_rerun": false,
+  "explicit_lc_evidence": "Same-hash M3 local explicit build",
+  "failed_or_non_success_ci": [
+    "workflow_dispatch 37592841563: failure"
+  ],
+  "remaining": [
+    "workflow_dispatch 37592841563: failure",
+    "Documentation workflow FAIL (two archived targets absent from plain checkout)",
+    "Supervisor acceptance pending; review state captured separately",
+    "Five strict provenance FAILs and historical evidence gaps preserved",
+    "U2-U4, E5 new proof, three-row generalization, epsilon>=3 and general theorem gaps preserved"
+  ]
+}

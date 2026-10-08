@@ -1,5 +1,18 @@
 # 任務 E4：猜想 E 的 ε=2 層，非相鄰雙 degree-5 roots
 
+**後續（2026-10-08，U4完成）。** [N2原mixed11省略的兩-root44](../../docs/c5_excess_two_nonadjacent_two_mixed_core44.md)
+在固定完整Σ933／941及整圖D₅像下全排；與U3一起完成本頁N1／N2的兩-root44身份。
+本頁原三列前提與當輪停止點保留，45／54／55及單-root例外仍未覆蓋。
+
+**後續（2026-10-08，mixed12／21）。** [U3 mixed12／21兩-root44](../../docs/c5_excess_two_nonadjacent_mixed12_core44.md)
+在完整Σ933／941及D₅像下全排，連同mixed11與本頁mixed22完成U3的44身份。
+N1無44 core的來源與單-root例外仍保留，沒有完成三列一般推廣。
+
+**後續（2026-10-08）。** [U3 sole mixed11 兩-root44](../../docs/c5_excess_two_nonadjacent_one_mixed_core44.md)
+已在完整Σ933／941及D₅像前提下排除全部兩側unit省略身份。
+本頁三列前提的原停止點保留；新結果不自動提升為三列的一般推廣。
+N1 mixed12／21及其他core型、N2殘留仍見[Kempe導覽](../../docs/c5_kempe_guide.md#3-停止點與保留缺口)。
+
 2026-10-04；基準 `integrate-kprime-e3 @ 2ac279b6144cdfcf4ececd7b72f5d287a6f4b4ac`。
 隔離 worktree `/home/ray/developer/ai/math-task-e4`，分支 `task-e4-nonadjacent`。
 指定 worktree／branch 已存在且 HEAD、乾淨狀態吻合，故直接使用；首次

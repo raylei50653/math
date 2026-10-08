@@ -1,0 +1,78 @@
+[
+  {
+    "name": "m4-seal",
+    "argv": [
+      "python3",
+      "audits/2026-10-07-m4-local/seal.py",
+      "--repo",
+      "/home/ray/developer/ai/math",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "seconds": 0.1666917590000594,
+    "logs": [
+      {
+        "path": "m4-seal.stdout.log",
+        "bytes": 180,
+        "sha256": "ce4b8b738a1730780e645c18ab815bc7a4d5d54b78cea8576ea528ec76af6ae8"
+      },
+      {
+        "path": "m4-seal.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  },
+  {
+    "name": "m3-seal",
+    "argv": [
+      "python3",
+      "audits/2026-10-07-m3-fresh-checkout/seal_bundle.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "seconds": 0.10962794900024164,
+    "logs": [
+      {
+        "path": "m3-seal.stdout.log",
+        "bytes": 157,
+        "sha256": "bccafb08242dba513bc6c1acd76f8641ea5fa804a5fc2887fa1f7c454e479ec3"
+      },
+      {
+        "path": "m3-seal.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  },
+  {
+    "name": "m3-axioms-reparse",
+    "argv": [
+      "python3",
+      "audits/2026-10-07-m3-fresh-checkout/check_lean_axioms.py",
+      "--source",
+      "/home/ray/developer/ai/math/Math/ExcessTwoCertificatesAudit.lean",
+      "--log",
+      "/home/ray/developer/ai/math/audits/2026-10-07-m3-fresh-checkout/logs/lean-axioms.stdout.log",
+      "--output",
+      "/tmp/math-m4-remote-integrity/axioms-reparsed.json"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "seconds": 0.08609197300029336,
+    "logs": [
+      {
+        "path": "m3-axioms-reparse.stdout.log",
+        "bytes": 860,
+        "sha256": "40964d97f09358416c3a7409eaef50d20a33d39f8836fe114ce00aba393ec033"
+      },
+      {
+        "path": "m3-axioms-reparse.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  }
+]

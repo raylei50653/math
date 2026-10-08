@@ -33,7 +33,8 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 項目現況、精確停止點與重播入口由各研究線導覽維護；完整論證與證書見原報告。
 ε=2 的E3–E6與C44″覆蓋表、精確前提及保留缺口由[Kempe導覽](docs/c5_kempe_guide.md#3-停止點與保留缺口)維護；
 共鄰P₃的C-W／D₆結論及後續接線由[weak-deletion導覽](docs/c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)維護。
-本次進展摘要、實際重播與分支發布範圍見[紀錄](docs/history/2026-10-04-kprime-excess-two-progress-publish.md)。
+U2–U4及M4／M5證據的整批重播與發布範圍見[2026-10-08紀錄](docs/history/2026-10-08-core44-batch-publish.md)。
+前序K′／E3–E6整合見[2026-10-04紀錄](docs/history/2026-10-04-kprime-excess-two-progress-publish.md)。
 
 前序A₄／B₄／C₄的固定快照、獨立驗收與scope ledger見[D₅](audits/2026-10-04-task-d5/REPORT.md)；
 歷史artifacts、完整relations／空fibres／witnesses及所有hash失敗保留。

@@ -1,0 +1,25 @@
+{
+  "label": "supervisor-snapshot",
+  "argv": [
+    "python3",
+    "-c",
+    "import hashlib,json,pathlib; root=pathlib.Path(\"audits/2026-10-07-m4-supervisor\"); rows=[{\"path\":str(p),\"bytes\":p.stat().st_size,\"sha256\":hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(root.rglob(\"*\")) if p.is_file() and \"__pycache__\" not in p.parts]; print(json.dumps(rows))"
+  ],
+  "cwd": "/home/ray/developer/ai/math",
+  "started_utc": "2026-10-07T08:16:03.681427+00:00",
+  "finished_utc": "2026-10-07T08:16:03.740750+00:00",
+  "seconds": 0.059325550999801635,
+  "exit_code": 0,
+  "logs": {
+    "stdout": {
+      "path": "stdout.log",
+      "bytes": 28202,
+      "sha256": "49f41be66ae65ad585bee0d0de90c7b029e86d2afe1582eaa673d2d253f25ade"
+    },
+    "stderr": {
+      "path": "stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

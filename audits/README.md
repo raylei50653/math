@@ -38,13 +38,23 @@ python3 audits/2026-10-04-task-d5/run_validation.py --scope original --output /t
 output 路徑；歷史 absolute 路徑與執行時間是原紀錄，不替換成新執行資料。
 大型 live `artifacts/` 仍沿用 [MANIFEST](../artifacts/MANIFEST.json) 的生成／
 hash 政策；本封存另保存稽核當時的完整 bytes，不以目前 producer 重生成舊快照。
-`--artifacts` 另按現行 MANIFEST 的原 SHA256／大小，從同一封存恢復145份
+`--artifacts` 另按現行 MANIFEST 的原 SHA256／大小，從同一封存恢復160份
 live大型產物；不修改MANIFEST，也不以重生成修正歷史文件hash漂移。
 
-## 本批發布
+## 2026-10-04 發布快照
 
 2345 個原路徑共 5,328,242,164 bytes，去重為 1437 個 blobs、
 103,526,298 compressed bytes；每個 blob 小於 6 MB。
 發布前以獨立的 Git index 匯出重建原路徑，核對原 D₄／D₅ DELIVERY 表，
 並重播固定副本的相關 checkers。驗證範圍與下一入口見
 [發布紀錄](../docs/history/2026-10-04-c5-parallel-progress-publish.md)。
+
+## 2026-10-08 U2–U4 與交付稽核整批發布
+
+[本批紀錄](../docs/history/2026-10-08-core44-batch-publish.md)保存U2–U4來源、
+完整relation證書與四包M4／M5的595檔原交付證據。
+ARCHIVE現有2388個原路徑、1,466個blobs、107,359,489 compressed bytes；
+本次只追加三個原路徑與六個blobs，原2385項／1460個blob records全部保持。
+新增五份MANIFEST大型證書亦可由上述`restore --artifacts`逐byte還原。
+M4文件CI FAIL與M5當輪pending、原strict FAIL及whitespace保持歷史結果；
+本批新的本地驗證見[publication report](2026-10-08-core44-batch-publication/REPORT.md)。

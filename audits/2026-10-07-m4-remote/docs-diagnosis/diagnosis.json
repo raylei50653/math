@@ -1,0 +1,347 @@
+{
+  "task": "M4-R read-only documentation CI failure classification",
+  "accepted_final_sha": "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+  "current_local_sha": "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+  "remote_run_id": 37592841563,
+  "remote_run_url": "https://github.com/raylei50653/math/actions/runs/37592841563",
+  "classification": "Archive materialization missing in remote documentation workflow; both reported link targets remain available as exact archived bytes. Separate from unavailable historical M1 evidence.",
+  "remote_log": {
+    "path": "/tmp/math-m4-remote-20261007T081509Z/commands/docs-logs-original/stdout.log",
+    "descriptor": {
+      "bytes": 13606,
+      "sha256": "6b4828bf8ba31cefbf88a3be7fd0dec378b13ba94f8debbd459d518c645355eb"
+    },
+    "selected_lines": [
+      "check\tRun actions/checkout@v5\t2026-10-07T08:18:05.1846981Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf:refs/remotes/origin/integrate-kprime-e3",
+      "check\tRun actions/checkout@v5\t2026-10-07T08:18:10.2135356Z  * [new ref]         1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf -> origin/integrate-kprime-e3",
+      "check\tRun actions/checkout@v5\t2026-10-07T08:18:11.2139041Z [command]/usr/bin/git log -1 --format=%H",
+      "check\tRun actions/checkout@v5\t2026-10-07T08:18:11.2167550Z 1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "check\tCheck local documentation\t﻿2026-10-07T08:18:11.2431063Z ##[group]Run python3 scripts/check_docs.py",
+      "check\tCheck local documentation\t2026-10-07T08:18:12.6020027Z missing path: docs/c5_open_leaf_ledger.md:78: ../audits/2026-10-04-task-d5/c4/scope_ledger.json",
+      "check\tCheck local documentation\t2026-10-07T08:18:12.6024275Z missing path: docs/history/2026-10-04-task-d2-integration-audit.md:39: ../../audits/2026-10-04-task-d2/integration_doc_changes.diff",
+      "check\tCheck local documentation\t2026-10-07T08:18:12.6025803Z FAIL: 2 errors (573 Markdown files, 6714 local links)",
+      "check\tCheck local documentation\t2026-10-07T08:18:12.6085186Z ##[error]Process completed with exit code 1."
+    ]
+  },
+  "final_workflow": {
+    "path": ".github/workflows/docs.yml",
+    "text": "name: Documentation\n\non:\n  workflow_dispatch:\n\npermissions:\n  contents: read\n\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v5\n      - name: Check local documentation\n        run: python3 scripts/check_docs.py\n",
+    "descriptor": {
+      "bytes": 248,
+      "sha256": "3032f76ba0f8a2b0a6c4124d740af519a47dc9378da60a617a4a1e5b2b526349"
+    },
+    "archive_restore_step_present": false
+  },
+  "final_archive_index": {
+    "path": "audits/ARCHIVE.json",
+    "descriptor": {
+      "bytes": 1012696,
+      "sha256": "ae8e5d4c86a8dd1406442d5eaf6e7f3de4dc0ee43aab8548c41e70c4e0fcc245"
+    }
+  },
+  "paths": [
+    {
+      "path": "audits/2026-10-04-task-d5/c4/scope_ledger.json",
+      "catalog": {
+        "sha256": "b6abcbb638c0e25b0fc041ea37b02cc08eb3e9b10fc51a345de4f0d7e5a08254",
+        "bytes": 33566611,
+        "mode": 420,
+        "reason": "large"
+      },
+      "blob": {
+        "path": "audits/.archive/blobs/b6abcbb638c0e25b0fc041ea37b02cc08eb3e9b10fc51a345de4f0d7e5a08254.gz",
+        "sha256": "d1f4dff53a7c685098c5d12723d577cd3ff576fe73b75d83b8292d022a48e5ec",
+        "bytes": 501666
+      },
+      "ordinary_path_present_in_final_tree": false,
+      "compressed_git_blob_observed": {
+        "bytes": 501666,
+        "sha256": "d1f4dff53a7c685098c5d12723d577cd3ff576fe73b75d83b8292d022a48e5ec"
+      },
+      "compressed_git_blob_matches_catalog": true,
+      "decompressed_git_blob_observed": {
+        "bytes": 33566611,
+        "sha256": "b6abcbb638c0e25b0fc041ea37b02cc08eb3e9b10fc51a345de4f0d7e5a08254"
+      },
+      "decompressed_git_blob_matches_catalog": true,
+      "workspace_raw_observed": {
+        "exists": true,
+        "bytes": 33566611,
+        "sha256": "b6abcbb638c0e25b0fc041ea37b02cc08eb3e9b10fc51a345de4f0d7e5a08254"
+      },
+      "workspace_raw_matches_catalog": true,
+      "independent_checkout_raw_observed": {
+        "exists": true,
+        "bytes": 33566611,
+        "sha256": "b6abcbb638c0e25b0fc041ea37b02cc08eb3e9b10fc51a345de4f0d7e5a08254"
+      },
+      "independent_checkout_raw_matches_catalog": true,
+      "ignore_rule": ".gitignore:2499:/audits/2026-10-04-task-d5/c4/scope_ledger.json\taudits/2026-10-04-task-d5/c4/scope_ledger.json"
+    },
+    {
+      "path": "audits/2026-10-04-task-d2/integration_doc_changes.diff",
+      "catalog": {
+        "sha256": "59835d773d37f38dc64e7cd6db320549b73e0f5650c4dac1e280d43fe0e54c64",
+        "bytes": 63672,
+        "mode": 420,
+        "reason": "historical-whitespace"
+      },
+      "blob": {
+        "path": "audits/.archive/blobs/59835d773d37f38dc64e7cd6db320549b73e0f5650c4dac1e280d43fe0e54c64.gz",
+        "sha256": "da5d5ecfa12447b2c672dd4f0acf952d3b12e4ce624f7b40830b96f50b96bc9d",
+        "bytes": 19418
+      },
+      "ordinary_path_present_in_final_tree": false,
+      "compressed_git_blob_observed": {
+        "bytes": 19418,
+        "sha256": "da5d5ecfa12447b2c672dd4f0acf952d3b12e4ce624f7b40830b96f50b96bc9d"
+      },
+      "compressed_git_blob_matches_catalog": true,
+      "decompressed_git_blob_observed": {
+        "bytes": 63672,
+        "sha256": "59835d773d37f38dc64e7cd6db320549b73e0f5650c4dac1e280d43fe0e54c64"
+      },
+      "decompressed_git_blob_matches_catalog": true,
+      "workspace_raw_observed": {
+        "exists": true,
+        "bytes": 63672,
+        "sha256": "59835d773d37f38dc64e7cd6db320549b73e0f5650c4dac1e280d43fe0e54c64"
+      },
+      "workspace_raw_matches_catalog": true,
+      "independent_checkout_raw_observed": {
+        "exists": true,
+        "bytes": 63672,
+        "sha256": "59835d773d37f38dc64e7cd6db320549b73e0f5650c4dac1e280d43fe0e54c64"
+      },
+      "independent_checkout_raw_matches_catalog": true,
+      "ignore_rule": ".gitignore:169:/audits/2026-10-04-task-d2/integration_doc_changes.diff\taudits/2026-10-04-task-d2/integration_doc_changes.diff"
+    }
+  ],
+  "local_receipt_evidence": [
+    {
+      "source": "audits/2026-10-07-m4-local/precommit-execution/commands.json",
+      "command": {
+        "name": "archive-restore",
+        "argv": [
+          "python3",
+          "tools/audit_archive.py",
+          "restore",
+          "--artifacts"
+        ],
+        "cwd": "/tmp/math-m4-local-independent",
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 0,
+        "seconds": 41.803709,
+        "logs": [
+          {
+            "path": "archive-restore.stdout.log.gz",
+            "raw": {
+              "bytes": 139,
+              "sha256": "15bf96a18ee8926361b7a28a828718edad80f58db80a76d609547d12fb7a2e31"
+            },
+            "gzip": {
+              "bytes": 125,
+              "sha256": "c6ea215908cc59e33d14f1438f46dc43eb7dff7287ff85a3ba3cc1f9942fd273"
+            },
+            "byte_roundtrip": true
+          },
+          {
+            "path": "archive-restore.stderr.log.gz",
+            "raw": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "gzip": {
+              "bytes": 20,
+              "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+            },
+            "byte_roundtrip": true
+          }
+        ]
+      }
+    },
+    {
+      "source": "audits/2026-10-07-m4-local/precommit-execution/commands.json",
+      "command": {
+        "name": "archive-verify",
+        "argv": [
+          "python3",
+          "tools/audit_archive.py",
+          "verify",
+          "--artifacts"
+        ],
+        "cwd": "/tmp/math-m4-local-independent",
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 0,
+        "seconds": 18.600282,
+        "logs": [
+          {
+            "path": "archive-verify.stdout.log.gz",
+            "raw": {
+              "bytes": 138,
+              "sha256": "35ce6781c1950699746804a67785dfd51e8f1a70258e3fd9561f447ccc8f5b5e"
+            },
+            "gzip": {
+              "bytes": 127,
+              "sha256": "95a8aef44e2d676c86b912335bd8dae9bab6aa0cbdf43ce446ccd20b7758c04e"
+            },
+            "byte_roundtrip": true
+          },
+          {
+            "path": "archive-verify.stderr.log.gz",
+            "raw": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "gzip": {
+              "bytes": 20,
+              "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+            },
+            "byte_roundtrip": true
+          }
+        ]
+      }
+    },
+    {
+      "source": "audits/2026-10-07-m4-supervisor/acceptance/final-receipt/commands.json",
+      "command": {
+        "name": "checked-head",
+        "argv": [
+          "git",
+          "rev-parse",
+          "HEAD"
+        ],
+        "cwd": "/tmp/math-m4-local-independent",
+        "exit_code": 0,
+        "seconds": 0.002925,
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "logs": [
+          {
+            "path": "checked-head.stdout.log.gz",
+            "raw": {
+              "bytes": 41,
+              "sha256": "8262c193f898a41b072d9d8ffc9052e92cd72dec35394adc163a9ed1cfb90333"
+            },
+            "gzip": {
+              "bytes": 60,
+              "sha256": "63ff5863798c5bd9565d5d2c72f02e15805cda87b8ca4c40479a191f8a48f41f"
+            },
+            "byte_roundtrip": true
+          },
+          {
+            "path": "checked-head.stderr.log.gz",
+            "raw": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "gzip": {
+              "bytes": 20,
+              "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+            },
+            "byte_roundtrip": true
+          }
+        ]
+      }
+    },
+    {
+      "source": "audits/2026-10-07-m4-supervisor/acceptance/final-receipt/commands.json",
+      "command": {
+        "name": "archive-final-verify",
+        "argv": [
+          "python3",
+          "tools/audit_archive.py",
+          "verify",
+          "--artifacts"
+        ],
+        "cwd": "/tmp/math-m4-local-independent",
+        "exit_code": 0,
+        "seconds": 18.716485,
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "logs": [
+          {
+            "path": "archive-final-verify.stdout.log.gz",
+            "raw": {
+              "bytes": 138,
+              "sha256": "35ce6781c1950699746804a67785dfd51e8f1a70258e3fd9561f447ccc8f5b5e"
+            },
+            "gzip": {
+              "bytes": 127,
+              "sha256": "95a8aef44e2d676c86b912335bd8dae9bab6aa0cbdf43ce446ccd20b7758c04e"
+            },
+            "byte_roundtrip": true
+          },
+          {
+            "path": "archive-final-verify.stderr.log.gz",
+            "raw": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "gzip": {
+              "bytes": 20,
+              "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+            },
+            "byte_roundtrip": true
+          }
+        ]
+      }
+    },
+    {
+      "source": "audits/2026-10-07-m4-supervisor/acceptance/final-receipt/review/commands.json",
+      "command": {
+        "argv": [
+          "python3",
+          "/tmp/math-m4-local-independent/scripts/check_docs.py"
+        ],
+        "cwd": "/tmp/math-m4-local-independent",
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 0,
+        "expected_exit": 0,
+        "logs": [
+          {
+            "gzip": {
+              "bytes": 93,
+              "sha256": "7775987b2954b7780070beeb830c35d19289b1e551d3ffb88175e315914feb20"
+            },
+            "path": "logs/docs.stdout.log.gz",
+            "raw": {
+              "bytes": 74,
+              "sha256": "efadf75667550af2c8ce3d41ce975d2fb23b11cacc87128bd093a57161bf4ac6"
+            }
+          },
+          {
+            "gzip": {
+              "bytes": 20,
+              "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+            },
+            "path": "logs/docs.stderr.log.gz",
+            "raw": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        ],
+        "name": "docs",
+        "seconds": 1.154153
+      }
+    }
+  ],
+  "local_docs_stdout": "OK: 573 Markdown files, 6714 local links; anchors, index, handoff checked\n",
+  "local_docs_stderr": "",
+  "scope_limits": [
+    "No candidate source or historical evidence edited.",
+    "No remote action, dispatch, workflow fix, or archive restore performed in this diagnosis.",
+    "Only the two reported archive blobs were freshly decompressed and hashed here; full archive verification remains the saved M4-L receipt evidence.",
+    "Remote run remains FAIL; local restored-checkout PASS is not remote success.",
+    "Unavailable historical M1 evidence and all prior named exceptions remain unchanged."
+  ]
+}

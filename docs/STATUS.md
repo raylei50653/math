@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-07。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-08。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -219,10 +219,14 @@
 | [ε=2 特化有限搜尋（任務 ES）](c5_excess_two_finite_search.md) | 單調 T4 剪枝、一次 criticality、完整對稱 canonical orbits；k≤6 與獨立暴力版逐計數／逐 orbit 一致。非相鄰、相鄰、唯一 degree-6 三型完整搜到 k=9：179 個 crit orbits，Q 只有單點／相鄰二點／非相鄰二點／三點弧，無 \|Q\|+c(Q)>4；含 935、951 及 NA6-1–3 正控制；整合者獨立重驗 179 代表並重播全量 `--check`；有限證據，不升格為定理，未 Lean 化 |
 | [猜想 E 的 ε=2 層：相鄰殘留（任務 E6，部分）](../artifacts/c5_excess_two_e6/REPORT.md) | 相鄰 m≤2：zw 加三份 mixed 的 z–w 路徑成四條互斥路徑，含 B 的面只由兩條圍成，困住一份整個 mixed 離框，違 N-empty（zw 是否在外側邊界兩情形皆證）；四分支關閉 J6 的全部 m≥3。G2 迫 U 盾弧恰二、G3 得支援約束、G4 排二邊 unary；no-mixed 整側預算；其餘完整 relation 殘留逐項列明，J4／K′ 只列入口；9 個 AD 控制 orbits（90 份 D₅ 像）全保留；紙面＋Python，未 Lean 化；[D₉ 稽核](../audits/2026-10-06-task-d9/REPORT.md)：指定紙面引理成立，無新缺口 |
 | [E4 引理的非相鄰控制補驗（任務 E4C）](../artifacts/c5_excess_two_e4c/REPORT.md) | ES 全部 54 個 NA crit orbits × E4 中 60 項不用三列的引理／步驟：42 項有實際觸發前提的控制且結論成立，18 項無控制，無反例。缺控制者多為排除型引理（空支援、H-tree、m≥3、兩短無 unary、N1-22-44 各步），其前提本身已證不可實現；真正的控制缺口為 singleton 盾弧、root 刪除例外、(4,4) core、根間 bridge 整側、單 root 重色 core；有限 Python，未 Lean 化 |
-| [ε=2 拒絕列全部 minimal cores（任務 C44）](../artifacts/c5_excess_two_c44/REPORT.md) | 三型 k≤9 全9644 q-orbits／179 critical orbits、11169 core occurrences；k≤5及k6逐邊集暴力一致。NA critical無44，AD critical有26份；具名C44-AD3-row0-44（Σ956）反駁一般缺席說法，非完整Σ933／941反例；該窄前提有限域無來源，任意大小命題未證，停止推廣、guide停止點不變 |
+| [ε=2 拒絕列全部 minimal cores（任務 C44）](../artifacts/c5_excess_two_c44/REPORT.md) | 三型 k≤9 全9644 q-orbits／179 critical orbits、11169 core occurrences；k≤5及k6逐邊集暴力一致。NA critical無44，AD critical有26份；具名C44-AD3-row0-44（Σ956）反駁一般缺席說法，非完整Σ933／941反例；該窄前提有限域無來源、當輪任意大小命題未證；後續U1–U4完成固定完整Σ下兩-root44身份，有限搜尋本身的控制界線保留 |
 | [兩-root (4,4) core 的完整 Σ 相容篩（任務 C44′）](../artifacts/c5_excess_two_c44p/REPORT.md) | AD2360／NA56份、213字面cores全相容，saved Σ零差異；兩private頂點125 placements中30 disk、10相容（單一軌道），NA25均不可嵌入；具名C44P-AD2-012-034（Σ959）及mixed triangle（Σ1022）。獨立重算、default／seed17 byte replay一致；相容只為必要條件，未構造完整Σ933／941來源，停止推廣；Python＋紙面，未Lean化 |
-| [兩-root (4,4) core 的既有排除覆蓋表（任務 C44″）](../artifacts/c5_excess_two_c44pp/REPORT.md) | 完整Σ933／941下相鄰m=1沿用舊系列全排，不經K′；AD-012-034具名core無此前提的兩-root44來源。當輪U1–U4覆蓋表保留；後續U1已排、唯一mixed四份指定排除已稽核，上游分類全部枚舉未重稽核。E5的新證明要求、其餘core型及ε≥3保留 |
-| [ε=2 no-mixed 的兩-root44身份排除](c5_excess_two_no_mixed_core44.md) | C44″的U1全排：spoke＋unit-U由leaf強迫D與triangle palette衝突；雙spoke以344份bridge-marker核心的3,498接回／34,980逐列獨立回溯無目標Σ，更正941原身份收窄。(2,2)子型直接化約至64雙triangle。完整Σ933／941及D₅像前提；no-mixed其他core型保留，44只剩U2–U4，紙面＋Python，未Lean化 |
+| [兩-root (4,4) core 的既有排除覆蓋表（任務 C44″）](../artifacts/c5_excess_two_c44pp/REPORT.md) | 完整Σ933／941下相鄰m=1沿用舊系列全排，不經K′；AD-012-034具名core無此前提的兩-root44來源。當輪U1–U4覆蓋表保留；後續U1／U2／U3／U4完成，固定完整Σ下兩-root44全排。唯一mixed指定排除已稽核，上游全部枚舉未重稽核；E5新證明、其餘core型及ε≥3保留 |
+| [ε=2 no-mixed 的兩-root44身份排除](c5_excess_two_no_mixed_core44.md) | C44″的U1全排：spoke＋unit-U由leaf強迫D與triangle palette衝突；雙spoke以344份bridge-marker核心的3,498接回／34,980逐列獨立回溯無目標Σ，更正941原身份收窄。(2,2)子型直接化約至64雙triangle。完整Σ933／941及D₅像前提；後續U2／U3／U4完成，兩-root44全排，no-mixed其他core型保留，紙面＋Python，未Lean化 |
+| [ε=2 相鄰兩mixed的兩-root44身份排除](c5_excess_two_adjacent_two_mixed_core44.md) | U2全排：原mixed11 D的Σ(G−D)=Ω。126份triangle正常形／570標記、5,700完整Σ比較、2,016固定支援查詢；99份相容者由27份明示subdivisions排除。獨立支援重算一致，20原D接回／26長core控制；完整Σ933／941及D₅像、紙面＋Python，未Lean化。相鄰m=2其餘core型保留 |
+| [ε=2 非相鄰唯一mixed的incidence11兩-root44身份排除](c5_excess_two_nonadjacent_one_mixed_core44.md) | U3 mixed11全排：兩份原unary容量11給apex K₃,₃、22違反原直接bridge；容量12／21由原star face迫C的兩框附件重色，完整原side及C均slack延拓。24原degree圖／240十列joins／3840含空root fibres、10原K₃,₃、84slack及50拒絕pair-mask控制；有限控制不證來源實現。mixed12／21由下列後續涵蓋，完整Σ933／941及D₅像，紙面＋Python，未Lean化 |
+| [U3非相鄰sole mixed12／21的44身份排除](c5_excess_two_nonadjacent_mixed12_core44.md) | 容量一由原star面與盾弧迫C支援為同一非相鄰pair，完整原側與C均slack；容量二的64六內點core／256標記、3072雙spoke及10240 unit-unary必要比較全排，另336單triangle標記控制零殘留。連同11／22完成U3兩-root44身份；後續U4亦全排，單-root及45／54／55保留，完整Σ933／941及D₅像，紙面＋Python，未Lean化 |
+| [U4非相鄰兩mixed的44身份排除](c5_excess_two_nonadjacent_two_mixed_core44.md) | 原O11盾弧成本及三-spoke star收窄；316單triangle必要上界／512雙triangle標記的3,312三色列同座標碰撞與8,280目標比較全排。132,480含空fibres、15,460刪邊witnesses、316長圖／3,160 triangle＋root joints及獨立回溯通過；連同U1–U3完成固定完整Σ下兩-root44身份。45／54／55、單-root、E5新證明及ε≥3保留，紙面＋Python，未Lean化 |
 | [ES 179 orbits 的 Lean soundness 證書（任務 LC）](c5_excess_two_lean_certificates.md) | 布林 checker 加普通 soundness 定理接到既有 Σ 語意：形狀與 degree 型、框無弦、T4／Q、十列完整 Σ、逐邊 criticality、genus 0 rotation system 且外面為框（僅組合嵌入，非拓撲平面性定理）；正列 `decide +kernel`，只有拒絕列用 `native_decide`；179／179 通過，558 項 `#print axioms` 無 `sorryAx`（整合者重跑）；只證所列圖為真，不證完整性；未接入 Math.lean，CI 不建置 |
 | [ε=2 有限搜尋的第二套獨立枚舉器（任務 ER）](c5_excess_two_independent_search.md) | plantri 5.8 生成連通平面圖的 rotation systems，再於外面枚舉非交叉 spokes；frontier DP 算 Σ；自寫 canonical form；未讀或 import ES 程式碼（主 agent 曾讀 ES 報告演算法段，已載明）。三型 k≤9 的 q orbit 與 crit orbit 集合、有標號計數、Q 分布與 ES 逐層全部一致，179 個 crit orbits，無 \|Q\|+c(Q)>4；整合者重播 `--check` exit 0；外部依賴 plantri（source SHA 核對）；有限證據，不升格為定理 |
 | [四接點短支援 pair 排除](c5_short_support_four_contact.md) | 四接點未見二色 pair 的原 Gallai leaf blocks／active 結構 K₅；保留獨立證明及固定控制，通用短支援引理另涵蓋此型 |
@@ -408,6 +412,12 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 所有「已完成」均限於原報告前提；來源排除與指定列延拓不互換。
 
 ## 歷史紀錄與舊連結
+
+- [2026-10-08：U2–U4與M4／M5證據整批整理發布](history/2026-10-08-core44-batch-publish.md)
+- [2026-10-08：U4完成與固定完整Σ下兩-root44身份全排](history/2026-10-08-u4-two-mixed-core44.md)
+- [2026-10-08：U3 sole mixed12／21與兩-root44身份完成](history/2026-10-08-u3-mixed12-core44.md)
+- [2026-10-08：U3非相鄰sole mixed11的44身份排除與完整slack控制](history/2026-10-08-u3-one-mixed-core44.md)
+- [2026-10-08：U2相鄰兩mixed的44身份排除與獨立支援重播](history/2026-10-08-u2-two-mixed-core44.md)
 
 - [2026-10-07：M4-L正式交付整合與最終本地提交](history/2026-10-07-m4-local-delivery.md)
 - [2026-10-07：整合分支合併任務、依賴與驗收台帳](history/2026-10-07-merge-readiness-tasks.md)

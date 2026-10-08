@@ -1,0 +1,1555 @@
+[
+  {
+    "label": "branch-summary",
+    "argv": [
+      "git",
+      "diff",
+      "--shortstat",
+      "2ddc6b4a4e412ab2cb7917fe4fb6fdeef2e86090",
+      "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:15:38.863554+00:00",
+    "finished_utc": "2026-10-07T08:15:39.350656+00:00",
+    "seconds": 0.48710581600016667,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 60,
+        "sha256": "28bc5a2f4bb04e63681bde506a5866abfdfa18b8b4f5bd9626266d6286941230"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "create-pr",
+    "argv": [
+      "gh",
+      "pr",
+      "create",
+      "--base",
+      "main",
+      "--head",
+      "integrate-kprime-e3",
+      "--title",
+      "Integrate C5 excess-two reductions, certificates, core audits, and U1 exclusion",
+      "--body-file",
+      "/tmp/math-m4-remote-20261007T081509Z/PR_BODY.md"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:17:14.795253+00:00",
+    "finished_utc": "2026-10-07T08:17:19.404924+00:00",
+    "seconds": 4.609676487999877,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 43,
+        "sha256": "569c610ce41acd470b9344f06c4509ad1bbe8cd0d09f62faaae481323a8ea218"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "docs-dispatch",
+    "argv": [
+      "gh",
+      "workflow",
+      "run",
+      "docs.yml",
+      "--ref",
+      "integrate-kprime-e3"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:17:43.826456+00:00",
+    "finished_utc": "2026-10-07T08:17:46.617260+00:00",
+    "seconds": 2.7908088049998696,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 61,
+        "sha256": "4d48300a7585d814aaead4d431a4d0e645b15d711e4bfe0782a4526167c2b601"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "docs-job-final",
+    "argv": [
+      "gh",
+      "run",
+      "view",
+      "37592841563",
+      "--json",
+      "databaseId,url,event,headSha,headBranch,status,conclusion,jobs"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:14:34.469157+00:00",
+    "finished_utc": "2026-10-07T09:14:36.301242+00:00",
+    "seconds": 1.8320937239996056,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 1313,
+        "sha256": "2446c3af9fbacfaf214a76cd288ca56d6d98989c89e7cb35181c2921ce1fbbd1"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "docs-job-initial",
+    "argv": [
+      "gh",
+      "run",
+      "view",
+      "37592841563",
+      "--json",
+      "databaseId,url,event,headSha,headBranch,status,conclusion,jobs"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:18:22.933306+00:00",
+    "finished_utc": "2026-10-07T08:18:24.232265+00:00",
+    "seconds": 1.2989660000002914,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 1313,
+        "sha256": "2446c3af9fbacfaf214a76cd288ca56d6d98989c89e7cb35181c2921ce1fbbd1"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "docs-logs-original",
+    "argv": [
+      "gh",
+      "run",
+      "view",
+      "37592841563",
+      "--log"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:18:43.919484+00:00",
+    "finished_utc": "2026-10-07T08:18:47.436882+00:00",
+    "seconds": 3.5174026089998733,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 13606,
+        "sha256": "6b4828bf8ba31cefbf88a3be7fd0dec378b13ba94f8debbd459d518c645355eb"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "docs-original-zip",
+    "argv": [
+      "python3",
+      "/tmp/math-m4-remote-20261007T081509Z/download_logs.py",
+      "37592841563"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:20:27.434341+00:00",
+    "finished_utc": "2026-10-07T08:20:34.148820+00:00",
+    "seconds": 6.714484430000084,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 1630,
+        "sha256": "039ad16e5e9b46598b39e893955f5aeac572d626b7f0c4006ddb674634c7df44"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "docs-run-original",
+    "argv": [
+      "gh",
+      "api",
+      "repos/raylei50653/math/actions/runs/37592841563"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:18:43.230172+00:00",
+    "finished_utc": "2026-10-07T08:18:43.867972+00:00",
+    "seconds": 0.637806690999696,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 12501,
+        "sha256": "da492a65385bf81d9f4d0fe99247ed3374fa3ed98539242e1c34bbca57a6a561"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "fast-forward-check",
+    "argv": [
+      "git",
+      "merge-base",
+      "--is-ancestor",
+      "1d026ee949d07a5b20bd60ec2f1e6d4329341cdf",
+      "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:15:38.802160+00:00",
+    "finished_utc": "2026-10-07T08:15:38.806790+00:00",
+    "seconds": 0.004627349999736907,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "final-integrity-check",
+    "argv": [
+      "python3",
+      "/tmp/math-m4-remote-20261007T081509Z/final_integrity.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:16:03.706781+00:00",
+    "finished_utc": "2026-10-07T09:16:03.912426+00:00",
+    "seconds": 0.20565407000049163,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 537,
+        "sha256": "ce6f690f51553db373353272a4c867f15713d3ce60ac17c1f2fcea2446671ac0"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "final-local-refs",
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD",
+      "origin/integrate-kprime-e3",
+      "origin/main"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:16:03.597991+00:00",
+    "finished_utc": "2026-10-07T09:16:03.599721+00:00",
+    "seconds": 0.001727771000332723,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 123,
+        "sha256": "64a01b9fe25e926e21923738fc9e3516998534a387adc304728a15702b9f7cd7"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "final-seal-check",
+    "argv": [
+      "python3",
+      "audits/2026-10-07-m4-local/seal.py",
+      "--repo",
+      "/home/ray/developer/ai/math",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:16:03.937326+00:00",
+    "finished_utc": "2026-10-07T09:16:04.014194+00:00",
+    "seconds": 0.07687341600012587,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 180,
+        "sha256": "ce4b8b738a1730780e645c18ab815bc7a4d5d54b78cea8576ea528ec76af6ae8"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "final-status",
+    "argv": [
+      "git",
+      "status",
+      "--porcelain=v1"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:16:03.622393+00:00",
+    "finished_utc": "2026-10-07T09:16:03.683215+00:00",
+    "seconds": 0.06082728299952578,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 80,
+        "sha256": "2f7abf1268c1fe58f2ce38fdb8bacf04c706ec88015d43200b14dcadcf6738b8"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "initial-head",
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD",
+      "HEAD^",
+      "origin/integrate-kprime-e3",
+      "origin/main"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:15:38.625441+00:00",
+    "finished_utc": "2026-10-07T08:15:38.629314+00:00",
+    "seconds": 0.0038701170001331775,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 164,
+        "sha256": "030d808b104e11b4c8f5fb132dc4e7138ccd666fe293d27fa8697cdb13d125c3"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "initial-staged",
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--exit-code"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:15:38.744315+00:00",
+    "finished_utc": "2026-10-07T08:15:38.750055+00:00",
+    "seconds": 0.005737280999710492,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "initial-status",
+    "argv": [
+      "git",
+      "status",
+      "--porcelain=v1"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:15:38.438896+00:00",
+    "finished_utc": "2026-10-07T08:15:38.574365+00:00",
+    "seconds": 0.1354732189997776,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 48,
+        "sha256": "a46e93e84d43b56eba1e756d6baef8286f0d329c621741bb9811b7368f2c9a87"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "initial-tracked",
+    "argv": [
+      "git",
+      "diff",
+      "--exit-code"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:15:38.681405+00:00",
+    "finished_utc": "2026-10-07T08:15:38.689572+00:00",
+    "seconds": 0.00816977600015889,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "merge-commit-evidence",
+    "argv": [
+      "gh",
+      "api",
+      "repos/raylei50653/math/git/commits/ca65f8796c6d83296fee2b22a77467d46b37ebec"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:15:30.485144+00:00",
+    "finished_utc": "2026-10-07T09:15:30.978494+00:00",
+    "seconds": 0.49335470400001213,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 2603,
+        "sha256": "22064f6d0a5bb41058f5871f9630362762f68bf2c5f41f6fc8bccddc65c80286"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "merge-ref-initial",
+    "argv": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/pull/3/head",
+      "refs/pull/3/merge"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:21:01.959579+00:00",
+    "finished_utc": "2026-10-07T08:21:05.255919+00:00",
+    "seconds": 3.2963485570003286,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 117,
+        "sha256": "214c1e11603660b5c6b41402f7bcf629ddd2c0ab7f695cd7ea72614c2216b8f7"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "pr-final",
+    "argv": [
+      "gh",
+      "pr",
+      "view",
+      "3",
+      "--json",
+      "number,url,state,isDraft,headRefName,headRefOid,baseRefName,baseRefOid,mergeable,mergeStateStatus,reviewDecision,statusCheckRollup,autoMergeRequest,body"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:16:10.391833+00:00",
+    "finished_utc": "2026-10-07T09:16:11.186165+00:00",
+    "seconds": 0.7943396099999518,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 7003,
+        "sha256": "6b16c2550b1ffe4ec71f2480fc3a5bbf8704fa1b74add3bf37e9dafee8f2b57f"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "pr-initial",
+    "argv": [
+      "gh",
+      "pr",
+      "view",
+      "3",
+      "--json",
+      "number,url,state,isDraft,headRefName,headRefOid,baseRefName,baseRefOid,mergeable,mergeStateStatus,reviewDecision,statusCheckRollup,autoMergeRequest"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:17:44.269167+00:00",
+    "finished_utc": "2026-10-07T08:17:45.237544+00:00",
+    "seconds": 0.9683853929996076,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 919,
+        "sha256": "4e60029b6e7f148a1fac3d107f7cc1026d4bf52879513ac79128d38ec98940a2"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "pr-job-final",
+    "argv": [
+      "gh",
+      "run",
+      "view",
+      "37592797376",
+      "--json",
+      "databaseId,url,event,headSha,headBranch,status,conclusion,jobs"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:14:09.204189+00:00",
+    "finished_utc": "2026-10-07T09:14:10.484447+00:00",
+    "seconds": 1.2802655770001365,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 1605,
+        "sha256": "dbb5c68330720dc6755ad7ed6722d408ab842a447fe5fd0fad6556a24024c34b"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "pr-original-zip",
+    "argv": [
+      "python3",
+      "/tmp/math-m4-remote-20261007T081509Z/download_logs.py",
+      "37592797376"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:14:36.311355+00:00",
+    "finished_utc": "2026-10-07T09:14:38.044616+00:00",
+    "seconds": 1.7332691060000798,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 978,
+        "sha256": "8d89db9ff9fb8457beca5bc689215cf8887fe1e64807f9e41f14ea2072b00f66"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "pr-rest-initial",
+    "argv": [
+      "gh",
+      "api",
+      "repos/raylei50653/math/pulls/3"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:21:00.624176+00:00",
+    "finished_utc": "2026-10-07T08:21:01.899642+00:00",
+    "seconds": 1.2754779299998518,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 19964,
+        "sha256": "e1637850cc9a822354ed92e0759a6e2ca0be5a4f0f732c18fbb5b65c988c86b3"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "pr-run-original",
+    "argv": [
+      "gh",
+      "api",
+      "repos/raylei50653/math/actions/runs/37592797376"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:14:35.750593+00:00",
+    "finished_utc": "2026-10-07T09:14:36.284647+00:00",
+    "seconds": 0.5340664479999759,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 12567,
+        "sha256": "34d04ea5ca9d63c64e21e70128c1ef9435233cf1327d7c5e43a44b1d89bac086"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "prs-before",
+    "argv": [
+      "gh",
+      "pr",
+      "list",
+      "--head",
+      "integrate-kprime-e3",
+      "--state",
+      "all",
+      "--json",
+      "number,url,state,isDraft,headRefOid,baseRefName,title"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:15:49.231822+00:00",
+    "finished_utc": "2026-10-07T08:15:50.000954+00:00",
+    "seconds": 0.7691382839998369,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 3,
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "push-final",
+    "argv": [
+      "git",
+      "push",
+      "origin",
+      "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf:refs/heads/integrate-kprime-e3"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:16:31.414431+00:00",
+    "finished_utc": "2026-10-07T08:16:39.189730+00:00",
+    "seconds": 7.775301381999725,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 120,
+        "sha256": "7d2a8a07ca8e8acbf27fc4c05db48584caa0502d946e72d5b3b91b5500802b61"
+      }
+    }
+  },
+  {
+    "label": "push-job-final",
+    "argv": [
+      "gh",
+      "run",
+      "view",
+      "37592725527",
+      "--json",
+      "databaseId,url,event,headSha,headBranch,status,conclusion,jobs"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:14:07.894077+00:00",
+    "finished_utc": "2026-10-07T09:14:09.179391+00:00",
+    "seconds": 1.2853221449995544,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 1597,
+        "sha256": "9cab6e41753cfc4493791165b8b75e9b37e6df8f91cb4b47df899089d3c4c523"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "push-job-initial",
+    "argv": [
+      "gh",
+      "run",
+      "view",
+      "37592725527",
+      "--json",
+      "databaseId,url,event,headSha,headBranch,status,conclusion,jobs"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:18:21.573631+00:00",
+    "finished_utc": "2026-10-07T08:18:22.883662+00:00",
+    "seconds": 1.3100376359998336,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 1412,
+        "sha256": "bb03260e09b2cf2aea0b172918df2b1be84ae1b481cfb5b466594ccb946793e6"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "push-jobs-poll-02",
+    "argv": [
+      "gh",
+      "run",
+      "view",
+      "37592725527",
+      "--json",
+      "databaseId,url,event,headSha,headBranch,status,conclusion,jobs"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:18:43.311037+00:00",
+    "finished_utc": "2026-10-07T08:18:44.661195+00:00",
+    "seconds": 1.350163719000193,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 1412,
+        "sha256": "bb03260e09b2cf2aea0b172918df2b1be84ae1b481cfb5b466594ccb946793e6"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "push-jobs-poll-03",
+    "argv": [
+      "gh",
+      "run",
+      "view",
+      "37592725527",
+      "--json",
+      "databaseId,url,event,headSha,headBranch,status,conclusion,jobs"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:19:34.334142+00:00",
+    "finished_utc": "2026-10-07T08:19:36.177082+00:00",
+    "seconds": 1.842945946999862,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 1412,
+        "sha256": "bb03260e09b2cf2aea0b172918df2b1be84ae1b481cfb5b466594ccb946793e6"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "push-jobs-poll-05",
+    "argv": [
+      "gh",
+      "run",
+      "view",
+      "37592725527",
+      "--json",
+      "databaseId,url,event,headSha,headBranch,status,conclusion,jobs"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:21:54.042748+00:00",
+    "finished_utc": "2026-10-07T08:21:55.392658+00:00",
+    "seconds": 1.3499161730001106,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 1421,
+        "sha256": "bd7fe50c83d40391f4a88cc49b5a9d1bef21af1db53ddb56c2206f254e334301"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "push-jobs-poll-06",
+    "argv": [
+      "gh",
+      "run",
+      "view",
+      "37592725527",
+      "--json",
+      "databaseId,url,event,headSha,headBranch,status,conclusion,jobs"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:23:55.834782+00:00",
+    "finished_utc": "2026-10-07T08:23:57.713914+00:00",
+    "seconds": 1.8791356940000696,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 1421,
+        "sha256": "bd7fe50c83d40391f4a88cc49b5a9d1bef21af1db53ddb56c2206f254e334301"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "push-original-zip",
+    "argv": [
+      "python3",
+      "/tmp/math-m4-remote-20261007T081509Z/download_logs.py",
+      "37592725527"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:14:37.478281+00:00",
+    "finished_utc": "2026-10-07T09:14:38.951923+00:00",
+    "seconds": 1.4736496989999068,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 978,
+        "sha256": "b1c2d6e39739ed0ede6a7c46b7f78aac7c0f7c2a6d9239c25fda29669d6b5913"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "push-run-original",
+    "argv": [
+      "gh",
+      "api",
+      "repos/raylei50653/math/actions/runs/37592725527"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:14:36.889118+00:00",
+    "finished_utc": "2026-10-07T09:14:37.454495+00:00",
+    "seconds": 0.5653905199997098,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 12537,
+        "sha256": "47d89625e85b995b5abc968a7762f7c1f24e77364a0fce2adaa984d42b6ac45c"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "remote-before",
+    "argv": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/main",
+      "refs/heads/integrate-kprime-e3"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:15:46.701678+00:00",
+    "finished_utc": "2026-10-07T08:15:49.180438+00:00",
+    "seconds": 2.478765620000104,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 129,
+        "sha256": "92a2192b0009c507627b2281975d54d72205147aaefe5cfaef83b039e472aeaf"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "remote-final",
+    "argv": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/main",
+      "refs/heads/integrate-kprime-e3"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:16:12.368411+00:00",
+    "finished_utc": "2026-10-07T09:16:14.735815+00:00",
+    "seconds": 2.3674131160005345,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 129,
+        "sha256": "e5f42259b7644e15cccd3218e903090b73ee300bb7e50ae9f532f1d17fbcf3b1"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "remote-post-ci",
+    "argv": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/main",
+      "refs/heads/integrate-kprime-e3",
+      "refs/pull/3/head",
+      "refs/pull/3/merge"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:14:36.326912+00:00",
+    "finished_utc": "2026-10-07T09:14:38.894019+00:00",
+    "seconds": 2.567114453000613,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 246,
+        "sha256": "09c2bef9cad6204f8cbcf2cc2e57a82434a90b67991bb20698d746b7e67ef7f2"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "review-policy-final",
+    "argv": [
+      "gh",
+      "api",
+      "graphql",
+      "--input",
+      "/tmp/math-m4-remote-20261007T081509Z/pr-state-query.json"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:16:11.209968+00:00",
+    "finished_utc": "2026-10-07T09:16:11.899111+00:00",
+    "seconds": 0.6891507150003235,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 678,
+        "sha256": "8af88332df676a24cfe61ccb962fa005b513c9796928c41fbc3df7f256c409b9"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "review-policy-initial",
+    "argv": [
+      "gh",
+      "api",
+      "graphql",
+      "--input",
+      "/tmp/math-m4-remote-20261007T081509Z/pr-state-query.json"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:18:20.495082+00:00",
+    "finished_utc": "2026-10-07T08:18:21.362712+00:00",
+    "seconds": 0.8676359299997785,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 681,
+        "sha256": "57e7d617e045a7ddb363516134d1cce6ade4366e3eabf6dae7254eee7a76666e"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "rules-main-final",
+    "argv": [
+      "gh",
+      "api",
+      "repos/raylei50653/math/rules/branches/main"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:16:11.922667+00:00",
+    "finished_utc": "2026-10-07T09:16:12.344684+00:00",
+    "seconds": 0.4220302029998493,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "rules-main-initial",
+    "argv": [
+      "gh",
+      "api",
+      "repos/raylei50653/math/rules/branches/main"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:18:21.414912+00:00",
+    "finished_utc": "2026-10-07T08:18:21.919692+00:00",
+    "seconds": 0.5047839939998084,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "runs-after-user-green",
+    "argv": [
+      "gh",
+      "run",
+      "list",
+      "--branch",
+      "integrate-kprime-e3",
+      "--commit",
+      "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "--limit",
+      "20",
+      "--json",
+      "databaseId,headSha,event,status,conclusion,workflowName,url,createdAt"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:14:06.931481+00:00",
+    "finished_utc": "2026-10-07T09:14:07.869722+00:00",
+    "seconds": 0.9382511990006606,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 833,
+        "sha256": "61cd774f8410c5a6a6f7d0c79c0aee466f6ae6547ef94bf1bc5d2139a0228526"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "runs-before",
+    "argv": [
+      "gh",
+      "api",
+      "repos/raylei50653/math/actions/runs?branch=integrate-kprime-e3&per_page=10"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:15:50.051592+00:00",
+    "finished_utc": "2026-10-07T08:15:50.705307+00:00",
+    "seconds": 0.6537271869997312,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 23821,
+        "sha256": "90be5593574007aca9d26bdd4fab40250f5ed07e0c5073186d63983dc0c2b887"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "runs-poll-01",
+    "argv": [
+      "gh",
+      "run",
+      "list",
+      "--branch",
+      "integrate-kprime-e3",
+      "--commit",
+      "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "--limit",
+      "20",
+      "--json",
+      "databaseId,headSha,event,status,conclusion,workflowName,url,createdAt"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:17:45.288196+00:00",
+    "finished_utc": "2026-10-07T08:17:46.201245+00:00",
+    "seconds": 0.9130548550001549,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 531,
+        "sha256": "7be5e279bf0eb1ee9a9589e0b8d9656af9f8ba64503da4efad4d57593d46709e"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "runs-poll-03",
+    "argv": [
+      "gh",
+      "run",
+      "list",
+      "--branch",
+      "integrate-kprime-e3",
+      "--commit",
+      "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "--limit",
+      "20",
+      "--json",
+      "databaseId,headSha,event,status,conclusion,workflowName,url,createdAt"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:19:33.310554+00:00",
+    "finished_utc": "2026-10-07T08:19:34.271803+00:00",
+    "seconds": 0.9612551969999004,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 818,
+        "sha256": "57aa768a3b7d65207c67022ff75aa00446072db7b8b6f33f17edfc7385a99f0d"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "runs-poll-04",
+    "argv": [
+      "gh",
+      "run",
+      "list",
+      "--branch",
+      "integrate-kprime-e3",
+      "--commit",
+      "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "--limit",
+      "20",
+      "--json",
+      "databaseId,headSha,event,status,conclusion,workflowName,url,createdAt"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:21:05.312077+00:00",
+    "finished_utc": "2026-10-07T08:21:06.652474+00:00",
+    "seconds": 1.340377306999926,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 818,
+        "sha256": "57aa768a3b7d65207c67022ff75aa00446072db7b8b6f33f17edfc7385a99f0d"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "runs-poll-06",
+    "argv": [
+      "gh",
+      "run",
+      "list",
+      "--branch",
+      "integrate-kprime-e3",
+      "--commit",
+      "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "--limit",
+      "20",
+      "--json",
+      "databaseId,headSha,event,status,conclusion,workflowName,url,createdAt"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:23:54.734105+00:00",
+    "finished_utc": "2026-10-07T08:23:55.781060+00:00",
+    "seconds": 1.0469599570001265,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 818,
+        "sha256": "57aa768a3b7d65207c67022ff75aa00446072db7b8b6f33f17edfc7385a99f0d"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "runs-poll-07",
+    "argv": [
+      "gh",
+      "run",
+      "list",
+      "--branch",
+      "integrate-kprime-e3",
+      "--commit",
+      "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "--limit",
+      "20",
+      "--json",
+      "databaseId,headSha,event,status,conclusion,workflowName,url,createdAt"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:28:03.058286+00:00",
+    "finished_utc": "2026-10-07T08:28:04.360719+00:00",
+    "seconds": 1.3024417390001872,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 818,
+        "sha256": "57aa768a3b7d65207c67022ff75aa00446072db7b8b6f33f17edfc7385a99f0d"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "runs-poll-08",
+    "argv": [
+      "gh",
+      "run",
+      "list",
+      "--branch",
+      "integrate-kprime-e3",
+      "--commit",
+      "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "--limit",
+      "20",
+      "--json",
+      "databaseId,headSha,event,status,conclusion,workflowName,url,createdAt"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:30:15.320150+00:00",
+    "finished_utc": "2026-10-07T08:30:16.278677+00:00",
+    "seconds": 0.9585359540001264,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 818,
+        "sha256": "57aa768a3b7d65207c67022ff75aa00446072db7b8b6f33f17edfc7385a99f0d"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "runs-poll-09",
+    "argv": [
+      "gh",
+      "run",
+      "list",
+      "--branch",
+      "integrate-kprime-e3",
+      "--commit",
+      "1f21c8f09dfcb5110ea1a3d66399e9c0a54ceeaf",
+      "--limit",
+      "20",
+      "--json",
+      "databaseId,headSha,event,status,conclusion,workflowName,url,createdAt"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:32:31.826013+00:00",
+    "finished_utc": "2026-10-07T08:32:33.276415+00:00",
+    "seconds": 1.4504067630000463,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 818,
+        "sha256": "57aa768a3b7d65207c67022ff75aa00446072db7b8b6f33f17edfc7385a99f0d"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "source-tree-before",
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD^{tree}"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:16:03.791178+00:00",
+    "finished_utc": "2026-10-07T08:16:03.795008+00:00",
+    "seconds": 0.003828537999652326,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 41,
+        "sha256": "f3b7e737c13049a57cc3f825ede9fb224d90f79bc199a2adb984057554881e5b"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "supervisor-snapshot",
+    "argv": [
+      "python3",
+      "-c",
+      "import hashlib,json,pathlib; root=pathlib.Path(\"audits/2026-10-07-m4-supervisor\"); rows=[{\"path\":str(p),\"bytes\":p.stat().st_size,\"sha256\":hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(root.rglob(\"*\")) if p.is_file() and \"__pycache__\" not in p.parts]; print(json.dumps(rows))"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:16:03.681427+00:00",
+    "finished_utc": "2026-10-07T08:16:03.740750+00:00",
+    "seconds": 0.059325550999801635,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 28202,
+        "sha256": "49f41be66ae65ad585bee0d0de90c7b029e86d2afe1582eaa673d2d253f25ade"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "update-pr-final",
+    "argv": [
+      "gh",
+      "pr",
+      "edit",
+      "3",
+      "--body-file",
+      "/tmp/math-m4-remote-20261007T081509Z/PR_BODY_FINAL.md"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T09:15:28.672757+00:00",
+    "finished_utc": "2026-10-07T09:15:30.458928+00:00",
+    "seconds": 1.7861777969992545,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 43,
+        "sha256": "569c610ce41acd470b9344f06c4509ad1bbe8cd0d09f62faaae481323a8ea218"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "watch-pr",
+    "argv": [
+      "gh",
+      "run",
+      "watch",
+      "37592797376",
+      "--exit-status",
+      "--interval",
+      "30"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:33:18.416375+00:00",
+    "finished_utc": "2026-10-07T08:58:55.743150+00:00",
+    "seconds": 1537.3268167640003,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 16021,
+        "sha256": "2d4c64020cd17f6f5ace5523e9ff36511121ece676a0d2a2094489259d71c535"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  {
+    "label": "watch-push",
+    "argv": [
+      "gh",
+      "run",
+      "watch",
+      "37592725527",
+      "--exit-status",
+      "--interval",
+      "30"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "started_utc": "2026-10-07T08:24:22.091567+00:00",
+    "finished_utc": "2026-10-07T08:37:16.546374+00:00",
+    "seconds": 774.4548173010003,
+    "exit_code": 0,
+    "logs": {
+      "stdout": {
+        "path": "stdout.log",
+        "bytes": 8471,
+        "sha256": "e3922e0146292ea0521f590e1fa368ddd4db6c81799e06db8f5fc3d585c921b7"
+      },
+      "stderr": {
+        "path": "stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  }
+]

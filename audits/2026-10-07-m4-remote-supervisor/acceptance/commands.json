@@ -1,0 +1,110 @@
+[
+  {
+    "name": "docs-before-restore",
+    "argv": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "cwd": "/tmp/math-m4r-docs-supervisor-t0ojyng7",
+    "exit_code": 1,
+    "expected_exit": 1,
+    "logs": [
+      {
+        "path": "docs-before-restore.stdout.log.gz",
+        "raw": {
+          "bytes": 282,
+          "sha256": "fc1f67604fdd54b1edd2f1cddac2afa6a6fef03fe2618a860fe5fa7cce7cc173"
+        }
+      },
+      {
+        "path": "docs-before-restore.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ]
+  },
+  {
+    "name": "docs-after-two-target-restore",
+    "argv": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "cwd": "/tmp/math-m4r-docs-supervisor-t0ojyng7",
+    "exit_code": 0,
+    "expected_exit": 0,
+    "logs": [
+      {
+        "path": "docs-after-two-target-restore.stdout.log.gz",
+        "raw": {
+          "bytes": 74,
+          "sha256": "efadf75667550af2c8ce3d41ce975d2fb23b11cacc87128bd093a57161bf4ac6"
+        }
+      },
+      {
+        "path": "docs-after-two-target-restore.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ]
+  },
+  {
+    "name": "docgraph-after-restore",
+    "argv": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "cwd": "/tmp/math-m4r-docs-supervisor-t0ojyng7",
+    "exit_code": 0,
+    "expected_exit": 0,
+    "logs": [
+      {
+        "path": "docgraph-after-restore.stdout.log.gz",
+        "raw": {
+          "bytes": 63,
+          "sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb"
+        }
+      },
+      {
+        "path": "docgraph-after-restore.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ]
+  },
+  {
+    "name": "seal",
+    "argv": [
+      "python3",
+      "audits/2026-10-07-m4-local/seal.py",
+      "--repo",
+      "/home/ray/developer/ai/math",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "expected_exit": 0,
+    "logs": [
+      {
+        "path": "seal.stdout.log.gz",
+        "raw": {
+          "bytes": 180,
+          "sha256": "ce4b8b738a1730780e645c18ab815bc7a4d5d54b78cea8576ea528ec76af6ae8"
+        }
+      },
+      {
+        "path": "seal.stderr.log.gz",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ]
+  }
+]
