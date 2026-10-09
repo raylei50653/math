@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-08。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-09（文件治理與試點索引）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -13,6 +13,7 @@
 | 查證結論及證據 | 本頁 §2 專題索引；詳細前提、證書與 theorem 以報告為準 |
 | 看全線整合與實驗提案 | [C₅ 全線進展與高階假設](c5_research_synthesis.md)；研究快照，不取代各線停止點 |
 | 比較跨線結果與共用引理 | [結果對照與共通語言](c5_common_language.md)；精確前提、結論類型及證據分層 |
+| 檢驗共通引理候選／推廣 | [Phase B 分析](c5_phase_b_common_lemmas.md)；三組候選、最弱已知前提、反例、證明義務與可消除分支 |
 | 看後續成果與保留缺口 | 本頁 §3–4 |
 | 更新文件 | [文件維護規則](DOCUMENTATION.md) |
 | 查當時的研究／發布狀態 | [研究歷史](STATUS_HISTORY.md)；即時提交狀態查 Git |
@@ -41,9 +42,9 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [Weak-deletion 開放葉 ledger](c5_open_leaf_ledger.md) | 共鄰 P₃ 固定3500具名keys：C₂／C₃／C₄各閉合一葉，W batch（D₆稽核）閉合其餘3497，版本化cw-v1趨勢3500→3499→3498→3497→0；C₄ ledger逐byte保留為predecessor；全主線葉總數及每日速度未知 |
+| [Weak-deletion 開放葉 ledger](c5_open_leaf_ledger.md) | 共鄰 P₃ 固定目錄 cw-v1 已閉合，predecessor 保留；計數／版本以帳目報告為準，全主線葉數仍未知 |
 | [Mixed P₃ 中點／端點六跨度排除](c5_mixed_p3_middle_endpoint.md) | 保留原末端三色附件，原四環外側四區塊排除全部 residual 及整份對稱型；連同兩端接線完成不同接點各一 incidence；任意 unary 大小、0 target，未 Lean 化 |
-| [任務 C：Mixed 共鄰 P₃ 雙扇區與部分來源排除](c5_mixed_p3_common_endpoint.md) | 保留原鏈與 (3,2,1) 附件；任意 unary 大小的短子弧／tether 引理，x₁ 強制唯一框色 2 時全排除；36 具名必要 residual、140 rotation 正控制及 900 側接合保留，0 target；現行入口見 weak-deletion 導覽，未 Lean 化 |
+| [任務 C：Mixed 共鄰 P₃ 雙扇區與部分來源排除](c5_mixed_p3_common_endpoint.md) | 當輪部分排除及原必要表保留；C §1 完整分支由 [C-W／D₆](c5_qcore_shield_budget.md) 後續涵蓋，現況見 weak-deletion 導覽，未 Lean 化 |
 | [C₂：共鄰 P₃ 一色支援三接點 unary](c5_mixed_p3_one_color_ternary_unary.md) | CPP-134-1／geometry 30／side_join 20：任意 unary 大小的原 degree／葉數化約迫 triangle，原外路給 K₅ subdivision；保存完整 tuples／刪邊 witnesses，僅關閉這份側接合，0 target，外部 Gallai＋紙面＋Python，未 Lean 化 |
 | [C₃：共鄰 P₃ 雙框點三接點 unary](c5_mixed_p3_two_frame_ternary_unary.md) | CPP-134-1／geometry 34／side_join 20：禁色 0 排接點碰 b₂，原 palette 分 T／N 葉；N 葉由原外路 K₅ 排除後重證葉數，任意 unary 大小來源排除。原雙框點 degree 四／bridges／完整 tuples 控制保存，僅關閉這份側接合，0 target，未 Lean 化 |
 | [C₄：共鄰 P₃ 雙框點兩份 unary](c5_mixed_p3_two_frame_two_unary.md) | CPP-134-1／geometry 34／side_join 60、side IDs=(27,1)：九份自身支援必要配置、三份 binary 完整 relation 與唯一 unary relation 均違反原 lifts 的 2↔3 封閉性；任意大小來源排除。兩份 ownership／原 bridges、整側相同禁色負控制保存，其他 joins 及 36／140／900 不刪，0 target，未 Lean 化 |
@@ -279,6 +280,7 @@
 | [D₅：A₄／B₄／C₄最終快照與獨立稽核](../audits/2026-10-04-task-d5/REPORT.md) | 逐身份A ledger降至16／20；B只關閉W933-129長face的shared-{4}支；C只新增geometry34／join60，3500keys及36／140／900表保持。三項最終重播、版本／實際依賴與歷史失敗分別封存；當輪未發布，本批發布及還原入口見下方歷史紀錄 |
 | [C₅ 全線進展與高階假設](c5_research_synthesis.md) | 八線成果與證據界線整合；H1 在固定完整 Σ 來源前提下成立，後續兩-root44身份由U1–U4及前序全排；H2／H3及ε≥3仍未證；各輪快照保留，不替代導覽排程 |
 | [C₅ 跨線結果對照與共通語言](c5_common_language.md) | 五欄代表成果對照；統一完整介面、兩種臨界性、結論類型與共用引理叫法；保留原來源、框族及操作義務；文件整理，無新定理或數學重播 |
+| [Phase B 共通引理候選分析](c5_phase_b_common_lemmas.md) | 三組候選與前提／反例／義務／效益；抽出原圖盾弧收費、推得任意两自由roots的條件容量恆等式、區分密封與動態充分性；兩非平面q-critical容量負控制及小型重播，未新增45／54／55排除或ε≥3下界 |
 | [C₅ 關係階數與接合上界](c5_relation_arity.md) | 132類為11個二階、101個四階、20個五階；原邊重驗20反例及100份局部延拓；紙面證接合r*≤來源最大階數≤5、T4全收時≤4；六圖回歸，非一般五階接合實現或多步state定理，未Lean化 |
 | [C₅ class 兩點重疊](c5_two_vertex_overlap.md) | 132 類／1,320 點對索引與兩點相容、單側投影語義已保存；695 強迫異色、625 自由；六份接合與三份控制拓撲由後續完成，完整後繼表及多步充分性保留 |
 | [C₅ 具名八點接合與同圖核對](c5_two_vertex_join.md) | 一次 evaluator 與六份完整八點 relation／雙側回投影全經整圖核對；主例 140 軌道、A=R1016／B=R1023；主例及正反向私有內點原框由後續完成，六圖 U 上五框可用性由跨例 audit 完成，其餘拓撲、完整後繼表與多步充分性保留 |
@@ -415,6 +417,8 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-09：Issue #4 與 Phase B 相連變更發布](history/2026-10-09-issue4-phase-b-publish.md)
+- [2026-10-09：Issue #4 文件分工、分層更新與收尾核對試點](history/2026-10-09-issue4-documentation-pilot.md)
 - [2026-10-08：U2–U4與M4／M5證據整批整理發布](history/2026-10-08-core44-batch-publish.md)
 - [2026-10-08：U4完成與固定完整Σ下兩-root44身份全排](history/2026-10-08-u4-two-mixed-core44.md)
 - [2026-10-08：U3 sole mixed12／21與兩-root44身份完成](history/2026-10-08-u3-mixed12-core44.md)

@@ -11,6 +11,7 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [完整文件索引](docs/STATUS.md) | 查找專題報告、短狀態、後續關係與歷史 |
 | [Weak-deletion 開放葉 ledger](docs/c5_open_leaf_ledger.md) | 共鄰 P₃ 固定具名目錄的葉數、關閉事件、階段趨勢與每日觀測入口 |
 | [C₅ 全線進展與高階假設](docs/c5_research_synthesis.md) | 跨線成果、同源關係／臨界預算／幾何框架、三個可反駁假設及階數初驗 |
+| [Phase B 共通引理候選分析](docs/c5_phase_b_common_lemmas.md) | U1–U4／Weak-deletion、Excess／Mixed／No-mixed、Relation／Repair／State 的精確候選、前提、反例、證明義務與分支效益；條件容量推廣與小型重播 |
 | [C₅ class 兩點重疊](docs/c5_two_vertex_overlap_guide.md) | 具名八點接合、拓撲、混合外框與關係修復；現況、停止點及重播入口 |
 | [933／941 excess 與接手入口](docs/c5_kempe_guide.md) | 共同 ε≥2；E3 在三列拒絕前提下排除唯一 degree-6，須連同 D₈ 補表引用。E4／E6 證非相鄰／相鄰 mixed 分量數 m≤2，雙 degree-5 的其餘殘留保留；ε≥3 未證 |
 | [ε=2 有限搜尋與雙實作對照](docs/c5_excess_two_independent_search.md) | ES／ER 三種 root 型 k≤9 的 q／critical orbit 集合逐層一致，共179個 critical orbits，無猜想 E 反例；[LC](docs/c5_excess_two_lean_certificates.md) 提供179／179個 Lean soundness 證書，有限完整性與任意大小定理分開 |

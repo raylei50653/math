@@ -13,4 +13,4 @@
 
 `#進行中` 標記正在推進的研究線；無標記不代表完成，列表順序不代表優先級。
 項目現況、停止點與重播入口見各線導覽。
-[完整文件索引](STATUS.md) · [文件治理與工作約定](DOCUMENTATION.md)
+[完整文件索引](STATUS.md) · [Phase B 共通引理分析](c5_phase_b_common_lemmas.md) · [文件治理與工作約定](DOCUMENTATION.md)

@@ -26,6 +26,11 @@
 
 ## 3. 停止點與保留缺口
 
+跨線接續（2026-10-08）：[Phase B 分析](c5_phase_b_common_lemmas.md)區分
+可反覆使用的密封外部接合、保action的後繼充分性與刪邊weak bisimulation。
+窄義務是固定允許grammar、exact幾何residual及同一中間染色fibre的匹配；
+一般context／future、內邊刪除與Kempe充分性仍未證。
+
 兩個 class 各取兩點識別的新線，由[兩點重疊導覽](c5_two_vertex_overlap_guide.md)
 維護一步接合的窄問題；它不啟動 C₆／C₇ 轉接。
 

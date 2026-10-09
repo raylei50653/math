@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "purpose": "Issue #4 isolated documentation review inputs; frozen rehearsal, not current research state or a theorem checker",
+    "baseline_head": "3f2731b7225d35e12872177eb00d3a5b24aa6468",
+    "input_hashes": {
+      "docs/c5_excess_two_nonadjacent_two_mixed_core44.md": "f3d9ff53bddcb391ef9a85eb2108fbe152e0a249e1ef1dde2b3882634916fca0",
+      "docs/c5_kempe_guide.md": "d9f3584be4e97ba6d5ce3f4c0efabbf483ec351b5ebe9403cfb44a94e6d90092",
+      "docs/c5_phase_b_common_lemmas.md": "6798d5b2a9cb137bfb82a9873d1786ed782a8eea3c1163b443bc52d722c1bc8a",
+      "docs/c5_shield_calibration.md": "a1d7b33e8979baabd03cbe128bace2e1c7139094e09e7596bf9310658b7ff80b",
+      "artifacts/c5_excess_two_c44pp/REPORT.md": "0dc632cb3f835df738bd1b143d4d47dd528ce24ad8219f2394afa66cc0966ed6"
+    }
+  },
+  "cases": [
+    {
+      "id": "F1",
+      "event": "local research update rehearsal of existing Phase B B-C2",
+      "source_path": "docs/c5_phase_b_common_lemmas.md",
+      "source_excerpt": "### 3.2 B-C2：任意两自由roots的條件逐欄容量定理\n\n**陳述（本輪從既有容量證明推得的紙面一般式，未Lean化）。**\n任選兩個自由roots r,s，固定同一proper框列β及其他roots的共同pinsη。\n所有原C內點完整degree4，保全部原接點、附件與完整tuples。\n只按對r／s的接線把C分成relative-unary／mixed；C仍可接其他已固定roots。\n不接兩自由roots的分量及外部限制須已有合法填入。\n\n令 `χ=1[rs∈E(G)]`。每條r至B或已固定root的原邊提供一個singleton\n禁色factor；relative-unary各提供完整禁色F_D。令\n\n\\[\nD_r^u=\\sum_{D\\ {\nm unary}}(n_D-|F_D|),\\quad\nO_r^u=\\sum_{F\\ {\nm external/unary}}|F|-|\\bigcup F|,\\quad\nE_r=\\mathrm{Col}\\setminus\\bigcup F,\\quad\nm_r=\\sum_{C\\ {\nm mixed}}k_C^r.\n\\]\n\n假設這份固定外部pins下的**完整兩root接合拒絕**且E_s非空。\n對每個 `b∈E_s`，令G_C(b)為原mixed C禁止的r色欄，\n`V=⋃G_C(b)`，`A=E_r∖{b}`（χ=1）或A=E_r（χ=0），並定義\n\n\\[\n\\delta=\\sum_C(k_C^r-|G_C(b)|),\\qquad\no=\\sum_C|G_C(b)|-|V|,\\qquad \\lambda=|V\\setminus A|.\n\\]\n\n則各項非負，且\n\n\\[\n\\boxed{D_r^u+O_r^u+\\delta+o+\\lambda\n=\\deg_G(r)-4-\\chi+\\chi\\,1[b\\in E_r].}\n\\]\n\n**證明。** 固定所有其餘root pins及s=b，暫不固定r；逐點有\n`|L_C(v)|≥deg_C(v)+1[v∈P_C^r]`，每個r-contact保一份strict slack，\n故整份連通C可染，`|G_C(b)|≤k_C^r`。\n完整接合拒絕给A⊆V，於是 `δ+o+λ=m_r−|A|`。\n保每條外部邊的重數，degree計數給\n`|E_r|=4+χ−deg_G(r)+m_r+D_r^u+O_r^u`。代入\n`|A|=|E_r|−χ·1[b∈E_r]` 即得等式。這不是把端點marginals相乘。\n\n**最弱已知充分前提。** 同一β、η的完整fibre、其他限制可填入、\n拒絕及E_s非空、degree4的slack与原incidence計數；不需disk、T4、\nq-minimal、ε=2、兩roots總數或特定root度數。Σ-critical可選一條\nr-incident邊的新列見證，捨去r再令s自由，提供某份符合前提的fibre。\n\n相鄰且deg(r)=5時右側至多1。原[Mixed容量報告](c5_mixed_capacity_contacts.md)\n另用q-minimal給unary各有私有色，最多三個unary incidences迫O=0，\n才得D≤1與十八側型。**一般root度數不能沿用這兩個特殊結論。**\n\n**具體反例（本輪新增並獨立驗證）。**\n[輸入](../artifacts/c5_phase_b/capacity_inputs.json)及\n[完整證書](../artifacts/c5_phase_b/controls.json)保存兩圖：\n\n| 具名圖 | 原degree／ε | r=5的兩份原unary | D／O | 被反駁的過強版本 |\n| --- | --- | --- | --- | --- |\n| B-CAP-OVERLAP-D6 | roots5／6為6／5，其餘4；ε=3 | K₂(8,9)、K₂(10,11)，禁色{0,3}／{1,3} | 0／1 | mixed存在便一定unary無重疊，與root度數無關 |\n| B-CAP-DEFICIT-D6 | roots5／6為6／5，其餘4；ε=3 | triangles(8,9,10)、(11,12,13)，各兩contacts，禁色{0}／{1} | 2／0 | mixed存在便一定D≤1，與root度數無關 |\n\n兩圖都有原zw邊、共鄰mixed singleton7，q=01012拒絕，全部29／33条\n非框邊刪除均接受同一q。完整Σ分别266／0，不收T4，且原邊路徑證書\n分别給K₅／K₃,₃ subdivision；**不是disk、猜想E或933／941反例**。\n它們觸發B-C2並滿足修正式，否定只保留原非平面容量前提的過強推廣。\n\n**欠缺與效益。** B-C2统一相鄰／非相鄰、mixed／relative-unary容量的\n證明模板，可對45／54／55或更多roots的具名pins核容量。\n它本身不迫任何target延拓，也没有跨β、η的費用不重用定理；因此没有\n新增整分支排除。單份shared-contact mixed每行／每欄至多一格的機制\n可沿用，但U4的整型碰撞需要那份core之外的具體延拓見證。",
+      "evidence_paths": [
+        "scripts/c5_phase_b_controls.py",
+        "artifacts/c5_phase_b/controls.json"
+      ],
+      "topic_before": "## 3. 停止點與保留缺口",
+      "topic_after": "## 3. 停止點與保留缺口\n\n跨線接續（2026-10-08）：[Phase B 共通引理候選分析](c5_phase_b_common_lemmas.md)\n將原piece盾弧收費、任意兩自由roots的條件容量及跨列猜想E分開。\n45／54入口須先核原unit省略身份與mixed支援下界，再核同一pins的完整joint；\nU4的44專用下界不能直接搬用。一般化候選未證成新的來源排除，以下分支狀態保持。",
+      "index_before_has_phase_b": false,
+      "index_after": "| [Phase B 共通引理候選分析](c5_phase_b_common_lemmas.md) | 三組候選與前提／反例／義務／效益；抽出原圖盾弧收費、推得任意两自由roots的條件容量恆等式、區分密封與動態充分性；兩非平面q-critical容量負控制及小型重播，未新增45／54／55排除或ε≥3下界 |",
+      "remaining_obligations": [
+        "45/54/55 source exclusion",
+        "cross-row resource reuse",
+        "specified-colouring repair"
+      ],
+      "routing_paths": [
+        "README.md",
+        "docs/HANDOFF.md",
+        "docs/c5_research_synthesis.md",
+        "docs/c5_common_language.md"
+      ]
+    },
+    {
+      "id": "F2",
+      "event": "real bounded closure rehearsal",
+      "scope": "有限簡單、有序 induced-C5 disk、完整 Σ=933/941 或整圖 D5 像、逐非框邊 Σ-critical、ε=2；有效內部連通碰齊框，原 G 恰兩 degree-5 roots、其餘有效內點完整 degree4；拒絕列的 inclusion-minimal core 保留兩原 roots 且 core degree=(4,4)，逐格保留原 contacts/attachments/bridges/共同色框及 C44″ 前提。",
+      "source_path": "docs/c5_excess_two_nonadjacent_two_mixed_core44.md",
+      "source_excerpt": "**結論：完整 Σ=933／941 或其整圖 D₅ 像、Σ-critical、ε=2 的 induced-C₅ disk\n來源，若兩個 degree-5 roots 非相鄰且恰有兩份 mixed，則不存在兩-root\ndegree-(4,4) minimal rejected-row core。U4 的全部省略身份排除。**\n\n結合 U1／U2／U3 與前序唯一 mixed 排除，完成上述固定完整 Σ 前提下的\n兩-root44身份。這不排除沒有44 core的 ε=2 來源；單-root刪除例外、45／54／55\ncores、E5新證明要求、ε≥3、一般出口及 `K∞=K≤5` 仍保留。\n證據為任意大小紙面化約、既有全四分類及新 Python 固定必要域／獨立重播，未新增 Lean theorem。",
+      "parent_path": "docs/c5_kempe_guide.md",
+      "parent_excerpt": "**目前停止點（2026-10-08）：U1／U2／U3／U4完成，固定完整Σ933／941下兩-root44身份全排；ε≥3未證。**\nU4的原mixed11省略身份由原盾弧／star收窄、保留root的任意長run化約與\n828份標記核心完整接回全排；3,312份三色列同座標容量碰撞均經獨立重算。\n無44 core的來源、單-root例外與45／54／55 cores保留。\nU3 mixed12／21的容量一由原star面、完整原側及C的重色列slack排除；\n容量二固定為六內點，3,072雙spoke接回及10,240 unit-unary必要比較全排。\nmixed11前輪以兩份原unary盾弧、原star面與完整slack排除；\nU2 的126份triangle正常形／570標記、完整二接點接回及固定原支援排除保留；\n前序唯一 mixed 四份指定稽核及U1來源身份排除保留。\n各報告保留當輪停止點與歷史計畫，其他core型照舊。\n原 A／B 的逐 pair 必要表仍供追溯，後續三列結論以 E3–E6 的完整前提為準。"
+    },
+    {
+      "id": "F3",
+      "event": "same-scope parent summary injection",
+      "scope": "有限簡單、有序 induced-C5 disk、完整 Σ=933/941 或整圖 D5 像、逐非框邊 Σ-critical、ε=2；有效內部連通碰齊框，原 G 恰兩 degree-5 roots、其餘有效內點完整 degree4；拒絕列的 inclusion-minimal core 保留兩原 roots 且 core degree=(4,4)，逐格保留原 contacts/attachments/bridges/共同色框及 C44″ 前提。",
+      "source_path": "docs/c5_excess_two_nonadjacent_two_mixed_core44.md",
+      "source_excerpt": "**結論：完整 Σ=933／941 或其整圖 D₅ 像、Σ-critical、ε=2 的 induced-C₅ disk\n來源，若兩個 degree-5 roots 非相鄰且恰有兩份 mixed，則不存在兩-root\ndegree-(4,4) minimal rejected-row core。U4 的全部省略身份排除。**\n\n結合 U1／U2／U3 與前序唯一 mixed 排除，完成上述固定完整 Σ 前提下的\n兩-root44身份。這不排除沒有44 core的 ε=2 來源；單-root刪除例外、45／54／55\ncores、E5新證明要求、ε≥3、一般出口及 `K∞=K≤5` 仍保留。\n證據為任意大小紙面化約、既有全四分類及新 Python 固定必要域／獨立重播，未新增 Lean theorem。",
+      "parent_path": "isolated/parent-summary.md",
+      "parent_excerpt": "在上述固定完整 Σ、disk、Σ-critical、ε=2 與完整 degree 前提下，兩-root (4,4) 身份仍 OPEN：U2、U3、U4 尚未排除。"
+    },
+    {
+      "id": "F4",
+      "event": "broader-scope parent summary injection",
+      "source_scope": "有限簡單、有序 induced-C5 disk、完整 Σ=933/941 或整圖 D5 像、逐非框邊 Σ-critical、ε=2；有效內部連通碰齊框，原 G 恰兩 degree-5 roots、其餘有效內點完整 degree4；拒絕列的 inclusion-minimal core 保留兩原 roots 且 core degree=(4,4)，逐格保留原 contacts/attachments/bridges/共同色框及 C44″ 前提。",
+      "source_path": "docs/c5_excess_two_nonadjacent_two_mixed_core44.md",
+      "source_excerpt": "**結論：完整 Σ=933／941 或其整圖 D₅ 像、Σ-critical、ε=2 的 induced-C₅ disk\n來源，若兩個 degree-5 roots 非相鄰且恰有兩份 mixed，則不存在兩-root\ndegree-(4,4) minimal rejected-row core。U4 的全部省略身份排除。**\n\n結合 U1／U2／U3 與前序唯一 mixed 排除，完成上述固定完整 Σ 前提下的\n兩-root44身份。這不排除沒有44 core的 ε=2 來源；單-root刪除例外、45／54／55\ncores、E5新證明要求、ε≥3、一般出口及 `K∞=K≤5` 仍保留。\n證據為任意大小紙面化約、既有全四分類及新 Python 固定必要域／獨立重播，未新增 Lean theorem。",
+      "parent_path": "isolated/parent-summary.md",
+      "parent_excerpt": "已證所有 induced-C5 disk 來源 ε≥3；一般共同出口與 K∞=K≤5 已完成。"
+    },
+    {
+      "id": "F5",
+      "event": "incomplete branch progress",
+      "source_path": "docs/c5_phase_b_common_lemmas.md",
+      "source_excerpt": "### 3.2 B-C2：任意两自由roots的條件逐欄容量定理\n\n**陳述（本輪從既有容量證明推得的紙面一般式，未Lean化）。**\n任選兩個自由roots r,s，固定同一proper框列β及其他roots的共同pinsη。\n所有原C內點完整degree4，保全部原接點、附件與完整tuples。\n只按對r／s的接線把C分成relative-unary／mixed；C仍可接其他已固定roots。\n不接兩自由roots的分量及外部限制須已有合法填入。\n\n令 `χ=1[rs∈E(G)]`。每條r至B或已固定root的原邊提供一個singleton\n禁色factor；relative-unary各提供完整禁色F_D。令\n\n\\[\nD_r^u=\\sum_{D\\ {\nm unary}}(n_D-|F_D|),\\quad\nO_r^u=\\sum_{F\\ {\nm external/unary}}|F|-|\\bigcup F|,\\quad\nE_r=\\mathrm{Col}\\setminus\\bigcup F,\\quad\nm_r=\\sum_{C\\ {\nm mixed}}k_C^r.\n\\]\n\n假設這份固定外部pins下的**完整兩root接合拒絕**且E_s非空。\n對每個 `b∈E_s`，令G_C(b)為原mixed C禁止的r色欄，\n`V=⋃G_C(b)`，`A=E_r∖{b}`（χ=1）或A=E_r（χ=0），並定義\n\n\\[\n\\delta=\\sum_C(k_C^r-|G_C(b)|),\\qquad\no=\\sum_C|G_C(b)|-|V|,\\qquad \\lambda=|V\\setminus A|.\n\\]\n\n則各項非負，且\n\n\\[\n\\boxed{D_r^u+O_r^u+\\delta+o+\\lambda\n=\\deg_G(r)-4-\\chi+\\chi\\,1[b\\in E_r].}\n\\]\n\n**證明。** 固定所有其餘root pins及s=b，暫不固定r；逐點有\n`|L_C(v)|≥deg_C(v)+1[v∈P_C^r]`，每個r-contact保一份strict slack，\n故整份連通C可染，`|G_C(b)|≤k_C^r`。\n完整接合拒絕给A⊆V，於是 `δ+o+λ=m_r−|A|`。\n保每條外部邊的重數，degree計數給\n`|E_r|=4+χ−deg_G(r)+m_r+D_r^u+O_r^u`。代入\n`|A|=|E_r|−χ·1[b∈E_r]` 即得等式。這不是把端點marginals相乘。\n\n**最弱已知充分前提。** 同一β、η的完整fibre、其他限制可填入、\n拒絕及E_s非空、degree4的slack与原incidence計數；不需disk、T4、\nq-minimal、ε=2、兩roots總數或特定root度數。Σ-critical可選一條\nr-incident邊的新列見證，捨去r再令s自由，提供某份符合前提的fibre。\n\n相鄰且deg(r)=5時右側至多1。原[Mixed容量報告](c5_mixed_capacity_contacts.md)\n另用q-minimal給unary各有私有色，最多三個unary incidences迫O=0，\n才得D≤1與十八側型。**一般root度數不能沿用這兩個特殊結論。**\n\n**具體反例（本輪新增並獨立驗證）。**\n[輸入](../artifacts/c5_phase_b/capacity_inputs.json)及\n[完整證書](../artifacts/c5_phase_b/controls.json)保存兩圖：\n\n| 具名圖 | 原degree／ε | r=5的兩份原unary | D／O | 被反駁的過強版本 |\n| --- | --- | --- | --- | --- |\n| B-CAP-OVERLAP-D6 | roots5／6為6／5，其餘4；ε=3 | K₂(8,9)、K₂(10,11)，禁色{0,3}／{1,3} | 0／1 | mixed存在便一定unary無重疊，與root度數無關 |\n| B-CAP-DEFICIT-D6 | roots5／6為6／5，其餘4；ε=3 | triangles(8,9,10)、(11,12,13)，各兩contacts，禁色{0}／{1} | 2／0 | mixed存在便一定D≤1，與root度數無關 |\n\n兩圖都有原zw邊、共鄰mixed singleton7，q=01012拒絕，全部29／33条\n非框邊刪除均接受同一q。完整Σ分别266／0，不收T4，且原邊路徑證書\n分别給K₅／K₃,₃ subdivision；**不是disk、猜想E或933／941反例**。\n它們觸發B-C2並滿足修正式，否定只保留原非平面容量前提的過強推廣。\n\n**欠缺與效益。** B-C2统一相鄰／非相鄰、mixed／relative-unary容量的\n證明模板，可對45／54／55或更多roots的具名pins核容量。\n它本身不迫任何target延拓，也没有跨β、η的費用不重用定理；因此没有\n新增整分支排除。單份shared-contact mixed每行／每欄至多一格的機制\n可沿用，但U4的整型碰撞需要那份core之外的具體延拓見證。",
+      "parent_excerpt": "45/54/55 來源排除與跨拒絕列費用不重用仍 OPEN。",
+      "check_observation": "條件容量 controls PASS；未提供新的跨列/source 排除證明。"
+    },
+    {
+      "id": "F6",
+      "event": "adopted consumer invalidation injection",
+      "source_path": "docs/c5_shield_calibration.md",
+      "source_excerpt": "**結論：校準版否定，原文 S 未決。** 可實現的 T4 全收、Σ-edge-minimal induced-C₅\ndisk 圖中，確實有支援包含於一條框邊的 one-sided mixed 分量。\n具名反例 **S935 / P0={5}** 的實際支援為 `{3,4}`，盾弧為單邊 `34`。\n完整 Σ 是 mask **935**，不是 933／941。因此它否定「對所有可實現 T4 全收圖皆成立」\n的推廣，**不反駁**限定完整 Σ=933／941 的原猜想 S。\n原文 S 的證明不能只用這個較廣圖類共有的局部 hub linkage；必須使用\n933／941 特有的拒絕列，或從它們推出的額外結構。\n\n## 1. 圖類、輸入與證據層",
+      "parent_path": "isolated/adopted-consumer.md",
+      "parent_excerpt": "已採納：對所有 T4 全收、Σ-critical induced-C5 disk 圖，每個 one-sided mixed 的盾弧至少兩邊；因此可直接使用六邊排除。",
+      "unaffected_scope": "限定完整 Σ=933/941 的原猜想 S 仍未決。"
+    },
+    {
+      "id": "F7",
+      "event": "pure replay / PR merge observation",
+      "source_excerpt": "**結論：完整 Σ=933／941 或其整圖 D₅ 像、Σ-critical、ε=2 的 induced-C₅ disk\n來源，若兩個 degree-5 roots 非相鄰且恰有兩份 mixed，則不存在兩-root\ndegree-(4,4) minimal rejected-row core。U4 的全部省略身份排除。**\n\n結合 U1／U2／U3 與前序唯一 mixed 排除，完成上述固定完整 Σ 前提下的\n兩-root44身份。這不排除沒有44 core的 ε=2 來源；單-root刪除例外、45／54／55\ncores、E5新證明要求、ε≥3、一般出口及 `K∞=K≤5` 仍保留。\n證據為任意大小紙面化約、既有全四分類及新 Python 固定必要域／獨立重播，未新增 Lean theorem。",
+      "new_research_facts": false,
+      "check_observation": "既有 checker 重播 PASS，或同一內容的 PR merge。"
+    },
+    {
+      "id": "F8",
+      "event": "dated historical OPEN with later closure notice",
+      "source_path": "artifacts/c5_excess_two_c44pp/REPORT.md",
+      "current_notice": "**後續（2026-10-08，U4完成）。** [非相鄰兩mixed的U4](../../docs/c5_excess_two_nonadjacent_two_mixed_core44.md)\n由原盾弧／star、保留marker的任意長run化約及828份完整joint接回全排。\nU1–U4現已完成固定完整Σ933／941下兩-root44身份；下文當輪覆蓋表保留，\n45／54／55、單-root例外、E5新證明要求與ε≥3仍保留。",
+      "historical_excerpt": "4. **最小未覆蓋子分支（§5）有四項：** 相鄰 no-mixed、相鄰 m=2、\n   非相鄰 N1 的 C incidence 11／12／21，以及非相鄰 N2 的五個 (ℓ,u) 族。\n   另記一項非 (4,4) 的旁註：具名字面圖若讀成單-root core，會落入 N1 的 root 刪除例外。",
+      "historical_date": "2026-10-06"
+    }
+  ]
+}

@@ -42,6 +42,10 @@
 
 ## 3. 精確停止點與下一個窄問題
 
+跨線接續（2026-10-08）：[Phase B 分析](c5_phase_b_common_lemmas.md)抽出
+「完整具名relation＋sealed ownership＋同可用框族」的J/P與repair傳遞接口；
+多步刪邊／換色另需合法性、後繼及fibres匹配，未完成全部來源必要分類。
+
 目前最前沿是[十三點非對稱四接點 disk D₁₃](c5_two_vertex_repair_caps.md)：
 它與四輪星的具名四接點 relation 相等，可接回任意外部上下文。
 反覆替換得到任意大小的 R127／R167 disk 來源，無密封 clique 補片、
