@@ -1,0 +1,66 @@
+{
+  "findings": [
+    {
+      "ID": "N45-J-F01",
+      "kind": "projection replacement counterexample control; not a target-source or B-C2 counterexample",
+      "status": "counterexample",
+      "claim_refuted": "independent side tuple existence suffices for a common full tuple",
+      "source": "NA7-0002",
+      "Sigma": 959,
+      "index": 0,
+      "beta": [
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      "piece": "P0",
+      "pins": [
+        1,
+        2
+      ],
+      "shared_contacts": [
+        9
+      ],
+      "complete_relation": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "side_lifts": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "full_fibre_empty": true,
+      "whole_graph_fibre_empty": true,
+      "full_933_941_source": "not triggered",
+      "missing": [
+        "specified_triple_rejected",
+        "complete_933_941_or_whole_D5_image"
+      ],
+      "impact": "downstream join correctness if shared coordinate is lost",
+      "required_action": "retain original shared vertex, one complete tuple and its full lift; no correction to original saved checker claimed"
+    }
+  ],
+  "capacity_counterexamples": []
+}

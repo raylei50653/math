@@ -1,0 +1,180 @@
+{
+  "BASE_check_docs": "FAIL: two historical missing paths",
+  "commands": {
+    "baseline-docs": {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-u-ss/base-source/scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1
+    },
+    "current-docs-after": {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0
+    },
+    "diff-after": {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0
+    },
+    "formal-before": {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0
+    },
+    "formal-docs-after": {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0
+    },
+    "ingest": {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-ss-supervision/ingest.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0
+    },
+    "ssa-final": {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-ssa/seal.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0
+    },
+    "ssc-normal": {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-ssc/checker.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0
+    },
+    "ssc-seed17": {
+      "PYTHONHASHSEED": "17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-ssc/checker.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0
+    },
+    "ssg-normal": {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-ssg/controls.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0
+    },
+    "ssg-seed17": {
+      "PYTHONHASHSEED": "17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-ssg/controls.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0
+    },
+    "whole-docgraph-after": {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1
+    },
+    "worker-normal": {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-u-ss/verify.py"
+      ],
+      "before_new_audit_directories": true,
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "log_stream": "exec combined output"
+    },
+    "worker-seed17": {
+      "PYTHONHASHSEED": "17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-u-ss/verify.py"
+      ],
+      "before_new_audit_directories": true,
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "log_stream": "exec combined output"
+    }
+  },
+  "current_check_docs": "PASS",
+  "formal_docs_DocGraph": "PASS",
+  "general_N2_E": "OPEN",
+  "new_files_confined_to_audits_and_history": true,
+  "next_task_started": false,
+  "not_run": [
+    "Lean build/axioms",
+    "PC LP checker as SS control",
+    "source search",
+    "all upstream source enumerations",
+    "remote CI"
+  ],
+  "propagation_stop": "L2",
+  "shared_modified": [
+    "artifacts/c5_excess_two_e4/REPORT.md",
+    "docs/STATUS.md",
+    "docs/c5_excess_two_nonadjacent_unit_core45.md",
+    "docs/c5_kempe_guide.md",
+    "docs/c5_phase_b_common_lemmas.md",
+    "docs/history/2026-10-10-n45-lp-adoption.md"
+  ],
+  "whole_worktree_DocGraph": "FAIL: retained duplicate IDs",
+  "worker_and_independent_audits_unchanged": true
+}

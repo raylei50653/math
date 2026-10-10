@@ -1,0 +1,60 @@
+{
+  "runs": [
+    {
+      "id": "replay",
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-s/checker.py",
+        "--source-root",
+        "/tmp/math-n45-s-20261009",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "exit": 0,
+      "log": "logs/replay.log",
+      "expected_exit": 0
+    },
+    {
+      "id": "seed17",
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-s/checker.py",
+        "--source-root",
+        "/tmp/math-n45-s-20261009",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "log": "logs/seed17.log",
+      "expected_exit": 0
+    },
+    {
+      "id": "exclusive_create_guard",
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-s/checker.py",
+        "--source-root",
+        "/tmp/math-n45-s-20261009"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "exit": 1,
+      "log": "logs/exclusive_create_guard.log",
+      "expected_exit": 1
+    }
+  ],
+  "immutable_before": {
+    "certificate.json": "9acb2a6b40de32aeca60ecf9a5b33065c9cba60ad47f5243c1eccadf31f59a02",
+    "inputs.json": "09aeaaa919c299c5a8c3ed44ef250e6e90a96ab1040e3fd8bea6fbc57b1e63de",
+    "checker.py": "94b3fb13e8268080e80a441f595fd3fcab449ea2c2937b2bf92c1725e5977dae"
+  },
+  "immutable_after": {
+    "certificate.json": "9acb2a6b40de32aeca60ecf9a5b33065c9cba60ad47f5243c1eccadf31f59a02",
+    "inputs.json": "09aeaaa919c299c5a8c3ed44ef250e6e90a96ab1040e3fd8bea6fbc57b1e63de",
+    "checker.py": "94b3fb13e8268080e80a441f595fd3fcab449ea2c2937b2bf92c1725e5977dae"
+  }
+}

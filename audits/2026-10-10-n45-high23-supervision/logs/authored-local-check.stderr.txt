@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-10-n45-high23-supervision/check_documentation.py", line 84, in <module>
+    local_check() if '--local-only' in sys.argv else main()
+    ~~~~~~~~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-10-n45-high23-supervision/check_documentation.py", line 34, in local_check
+    assert (p.parent/target).exists(), (path, target, 'missing target')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^
+AssertionError: ('audits/2026-10-10-n45-high23-supervision/history-draft.md', '../c5_excess_two_nonadjacent_unit_core45.md', 'missing target')

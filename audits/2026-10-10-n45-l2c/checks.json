@@ -1,0 +1,181 @@
+{
+  "bad_receipt_boundary": "Independent checker uses actual frozen final delivery and persisted invalid receipt, without a read_json override.",
+  "commands": [
+    {
+      "PYTHONHASHSEED": null,
+      "actual_exit_code": 0,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/checker.py"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control; not a LOW2 source control",
+      "expected_exit_code": 0,
+      "name": "normal",
+      "stderr": "checks/normal.stderr.log",
+      "stdout": "checks/normal.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "actual_exit_code": 0,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/checker.py"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control; not a LOW2 source control",
+      "expected_exit_code": 0,
+      "name": "seed17",
+      "stderr": "checks/seed17.stderr.log",
+      "stdout": "checks/seed17.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "actual_exit_code": 2,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/checker.py",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/frozen/worker/negative/bad-digest.sha256"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control; not a LOW2 source control",
+      "expected_exit_code": 2,
+      "expected_rejection_stage": "manifest digest differs",
+      "name": "bad-digest",
+      "stage_matches": true,
+      "stderr": "checks/bad-digest.stderr.log",
+      "stdout": "checks/bad-digest.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "actual_exit_code": 2,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/checker.py",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/frozen/worker/negative/missing-nested-delivery.sha256"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control; not a LOW2 source control",
+      "expected_exit_code": 2,
+      "expected_rejection_stage": "manifest payload inventory differs",
+      "name": "missing-nested-delivery",
+      "stage_matches": true,
+      "stderr": "checks/missing-nested-delivery.stderr.log",
+      "stdout": "checks/missing-nested-delivery.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "actual_exit_code": 2,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/checker.py",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/frozen/worker/negative/duplicate-path.sha256"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control; not a LOW2 source control",
+      "expected_exit_code": 2,
+      "expected_rejection_stage": "manifest duplicate path",
+      "name": "duplicate-path",
+      "stage_matches": true,
+      "stderr": "checks/duplicate-path.stderr.log",
+      "stdout": "checks/duplicate-path.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "actual_exit_code": 2,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/checker.py",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/frozen/worker/negative/unsafe-path.sha256"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control; not a LOW2 source control",
+      "expected_exit_code": 2,
+      "expected_rejection_stage": "manifest unsafe path",
+      "name": "unsafe-path",
+      "stage_matches": true,
+      "stderr": "checks/unsafe-path.stderr.log",
+      "stdout": "checks/unsafe-path.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "actual_exit_code": 2,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/checker.py",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/frozen/worker/negative/missing-payload.sha256"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control; not a LOW2 source control",
+      "expected_exit_code": 2,
+      "expected_rejection_stage": "manifest payload inventory differs",
+      "name": "missing-payload",
+      "stage_matches": true,
+      "stderr": "checks/missing-payload.stderr.log",
+      "stdout": "checks/missing-payload.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "actual_exit_code": 2,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/checker.py",
+        "--receipt",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/frozen/worker/negative/bad-receipt.json"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control; not a LOW2 source control",
+      "expected_exit_code": 2,
+      "expected_rejection_stage": "delivery receipt binding differs",
+      "name": "bad-receipt",
+      "stage_matches": true,
+      "stderr": "checks/bad-receipt.stderr.log",
+      "stdout": "checks/bad-receipt.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "actual_exit_code": 2,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/checker.py",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l2c/negative/missing-nested-receipt.sha256"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control; not a LOW2 source control",
+      "expected_exit_code": 2,
+      "expected_rejection_stage": "manifest payload inventory differs",
+      "name": "missing-nested-receipt",
+      "stage_matches": true,
+      "stderr": "checks/missing-nested-receipt.stderr.log",
+      "stdout": "checks/missing-nested-receipt.stdout.log"
+    }
+  ],
+  "mathematical_verdict": "not evaluated by this tool",
+  "normal_seed17_stdout_byte_equal": true,
+  "source_controls": "not established; not executed; no trigger count",
+  "task": "N45-L2C"
+}

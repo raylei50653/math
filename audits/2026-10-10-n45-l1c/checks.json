@@ -1,0 +1,207 @@
+{
+  "all_exits_and_rejection_stages_match": true,
+  "checked_worker_scope": "frozen artifact, BASE blobs, frozen current pins, sealed receipts and historical logs; current whole-worktree recursive hash not asserted",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/checker.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {},
+      "exit_code": 0,
+      "expected_exit": 0,
+      "expected_rejection": "",
+      "id": "normal",
+      "rejection_reason_matches": true,
+      "stderr": "logs/normal.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/normal.stdout.log",
+      "stdout_sha256": "ed82638b8aabb7825b38417c75f821e6450c454f395714d94321f85797d9313e"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/checker.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "expected_rejection": "",
+      "id": "seed17",
+      "rejection_reason_matches": true,
+      "stderr": "logs/seed17.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/seed17.stdout.log",
+      "stdout_sha256": "ed82638b8aabb7825b38417c75f821e6450c454f395714d94321f85797d9313e"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/checker.py",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/controls/corrupt-digest.sha256"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {},
+      "exit_code": 2,
+      "expected_exit": 2,
+      "expected_rejection": "[payload-digests]: manifest digest differs:",
+      "id": "corrupt-digest",
+      "rejection_reason_matches": true,
+      "stderr": "logs/corrupt-digest.stderr.log",
+      "stderr_sha256": "c96419266b1add81caa00df69ba4da3c51175980d7caee7a770d7db104020691",
+      "stdout": "logs/corrupt-digest.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/checker.py",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/controls/omit-payload-path.sha256"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {},
+      "exit_code": 2,
+      "expected_exit": 2,
+      "expected_rejection": "[payload-inventory]: manifest payload inventory differs",
+      "id": "omit-payload-path",
+      "rejection_reason_matches": true,
+      "stderr": "logs/omit-payload-path.stderr.log",
+      "stderr_sha256": "2faf4230bfef6c0884b9625c585d0ba6072281db55f29161bcceb83acab7675f",
+      "stdout": "logs/omit-payload-path.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/checker.py",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/controls/duplicate-payload-path.sha256"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {},
+      "exit_code": 2,
+      "expected_exit": 2,
+      "expected_rejection": "[payload-inventory]: duplicate manifest path:",
+      "id": "duplicate-payload-path",
+      "rejection_reason_matches": true,
+      "stderr": "logs/duplicate-payload-path.stderr.log",
+      "stderr_sha256": "d6961a77a7acb6d956dfcb38fb1438faed20588a6bad6ec0ec0435b50c0da930",
+      "stdout": "logs/duplicate-payload-path.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/checker.py",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/controls/unsafe-payload-path.sha256"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {},
+      "exit_code": 2,
+      "expected_exit": 2,
+      "expected_rejection": "[payload-inventory]: unsafe path:",
+      "id": "unsafe-payload-path",
+      "rejection_reason_matches": true,
+      "stderr": "logs/unsafe-payload-path.stderr.log",
+      "stderr_sha256": "407e3e2efaf59ff6d3bfde2f4236c0ac0e93b1b12a5d2b48e0ef41bb10d0f2a1",
+      "stdout": "logs/unsafe-payload-path.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/checker.py",
+        "--symlinks",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/controls/wrong-symlink-target.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {},
+      "exit_code": 2,
+      "expected_exit": 2,
+      "expected_rejection": "[symlink-identities]: payload symlink identities differ",
+      "id": "wrong-symlink-target",
+      "rejection_reason_matches": true,
+      "stderr": "logs/wrong-symlink-target.stderr.log",
+      "stderr_sha256": "052fab892173e259eb651c131aae67110a94a8556669c276dd286cbe358e47ed",
+      "stdout": "logs/wrong-symlink-target.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/checker.py",
+        "--receipt",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/controls/unbound-receipt-file.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {},
+      "exit_code": 2,
+      "expected_exit": 2,
+      "expected_rejection": "[receipt-inventory]: receipt exact metadata inventory differs",
+      "id": "unbound-receipt-file",
+      "rejection_reason_matches": true,
+      "stderr": "logs/unbound-receipt-file.stderr.log",
+      "stderr_sha256": "dbd50509661ff0f4b671a3507f5a95b3ea11c7f915fac4f35acaf1c171d80ff9",
+      "stdout": "logs/unbound-receipt-file.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/checker.py",
+        "--receipt",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/controls/wrong-receipt-digest.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {},
+      "exit_code": 2,
+      "expected_exit": 2,
+      "expected_rejection": "[receipt-digests]: receipt digest differs:",
+      "id": "wrong-receipt-digest",
+      "rejection_reason_matches": true,
+      "stderr": "logs/wrong-receipt-digest.stderr.log",
+      "stderr_sha256": "d3bd89ce68dc489ae1a269c32e6712bbbbfbc334a51a9b0cd27adc352eefc2cc",
+      "stdout": "logs/wrong-receipt-digest.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low1/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {},
+      "exit_code": 2,
+      "expected_exit": 2,
+      "expected_rejection": "pre-existing workspace inventory differs",
+      "id": "worker-live-after-new-directories",
+      "rejection_reason_matches": true,
+      "stderr": "logs/worker-live-after-new-directories.stderr.log",
+      "stderr_sha256": "5ab8fc39bfca985dd985c70a8cbc58470d1b5b06700e23886bb57320292b31da",
+      "stdout": "logs/worker-live-after-new-directories.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "normal_seed17_stdout_byte_equal": true,
+  "own_negative_controls": 7,
+  "own_negative_scope": "artifact integrity only; no finite source control",
+  "task": "N45-L1C",
+  "worker_strict_live_failure_expected_because": "fresh supervisory and reviewer directories change the exact Git inventory"
+}

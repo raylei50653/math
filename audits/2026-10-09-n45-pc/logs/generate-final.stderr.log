@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/checker.py", line 226, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/checker.py", line 214, in main
+    result = audit()
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/checker.py", line 129, in audit
+    g = v.compute_graph(raw)
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/validator.py", line 348, in compute_graph
+    need(saved["available"] == available, "declared available root colors differ from full fibres")
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/validator.py", line 28, in need
+    raise DataError(message)
+validator.DataError: declared available root colors differ from full fibres

@@ -1,0 +1,54 @@
+{
+  "commands": [
+    {
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l1r/checker.py",
+        "--check",
+        "--manifest",
+        "audits/2026-10-10-n45-l1r/MANIFEST.final-v2.sha256"
+      ],
+      "expected_exit": 0,
+      "name": "normal",
+      "seed17": false,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4fccc28cf0253eb46570e78ae1f7fd0c9b89206669e8c8eb86b50857e592cb8a"
+    },
+    {
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l1r/checker.py",
+        "--check",
+        "--manifest",
+        "audits/2026-10-10-n45-l1r/MANIFEST.final-v2.sha256"
+      ],
+      "expected_exit": 0,
+      "name": "seed17",
+      "seed17": true,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4fccc28cf0253eb46570e78ae1f7fd0c9b89206669e8c8eb86b50857e592cb8a"
+    },
+    {
+      "actual_exit": 2,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l1r/checker.py",
+        "--check",
+        "--manifest",
+        "audits/2026-10-10-n45-l1r/seal-final-v2/corrupted-manifest.sha256"
+      ],
+      "expected_exit": 2,
+      "name": "corrupted-manifest",
+      "seed17": false,
+      "stderr_sha256": "86b223f8dfe449c3d3c5edf651eaa1950f08c38f9ddf2595bb1b3006b6074202",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "normal_seed17_stdout_identical": true,
+  "payload_drift": 0
+}

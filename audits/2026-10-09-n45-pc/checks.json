@@ -1,0 +1,1519 @@
+{
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "commands": [
+    {
+      "classification": "Completed within stated finite/integrity scope",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/verify_delivery.py",
+        "--preseal"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 0,
+      "record_file": "logs/authored-preseal.command.json",
+      "seconds": 0.16992,
+      "stderr": "logs/authored-preseal.stderr.log",
+      "stdout": "logs/authored-preseal.stdout.log"
+    },
+    {
+      "classification": "Completed within stated finite/integrity scope",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/build_controls.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 0,
+      "record_file": "logs/build-controls-v2.command.json",
+      "seconds": 0.335858,
+      "stderr": "logs/build-controls-v2.stderr.log",
+      "stdout": "logs/build-controls-v2.stdout.log"
+    },
+    {
+      "classification": "Development integration FAIL retained; superseded by named fresh successful version",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/build_controls.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 1,
+      "record_file": "logs/build-controls.command.json",
+      "seconds": 0.048462,
+      "stderr": "logs/build-controls.stderr.log",
+      "stdout": "logs/build-controls.stdout.log"
+    },
+    {
+      "classification": "Expected fail-closed source contract rejection; exit2 verified",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--source",
+        "audits/2026-10-09-n45-pc/controls-v2/NA7-0002-P1.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 2,
+      "record_file": "logs/cli-fixed-missing-LP.command.json",
+      "seconds": 0.062658,
+      "stderr": "logs/cli-fixed-missing-LP.stderr.log",
+      "stdout": "logs/cli-fixed-missing-LP.stdout.log"
+    },
+    {
+      "classification": "Expected fail-closed source contract rejection; exit2 verified",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--source",
+        "audits/2026-10-09-n45-pc/negative-inputs-v2/missing-complete-tuple.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 2,
+      "record_file": "logs/cli-missing-complete-tuple.command.json",
+      "seconds": 0.057286,
+      "stderr": "logs/cli-missing-complete-tuple.stderr.log",
+      "stdout": "logs/cli-missing-complete-tuple.stdout.log"
+    },
+    {
+      "classification": "Expected fail-closed source contract rejection; exit2 verified",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--source",
+        "audits/2026-10-09-n45-pc/negative-inputs-v2/stale-source-hash.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 2,
+      "record_file": "logs/cli-stale-source-hash.command.json",
+      "seconds": 0.047467,
+      "stderr": "logs/cli-stale-source-hash.stderr.log",
+      "stdout": "logs/cli-stale-source-hash.stdout.log"
+    },
+    {
+      "classification": "Expected fail-closed source contract rejection; exit2 verified",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--source",
+        "audits/2026-10-09-n45-pc/negative-inputs-v2/wrong-declared-unit.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 2,
+      "record_file": "logs/cli-wrong-declared-unit.command.json",
+      "seconds": 0.05585,
+      "stderr": "logs/cli-wrong-declared-unit.stderr.log",
+      "stdout": "logs/cli-wrong-declared-unit.stdout.log"
+    },
+    {
+      "classification": "Expected fail-closed source contract rejection; exit2 verified",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--source",
+        "audits/2026-10-09-n45-pc/negative-inputs-v2/wrong-shared-ownership.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 2,
+      "record_file": "logs/cli-wrong-shared-ownership.command.json",
+      "seconds": 0.06054,
+      "stderr": "logs/cli-wrong-shared-ownership.stderr.log",
+      "stdout": "logs/cli-wrong-shared-ownership.stdout.log"
+    },
+    {
+      "classification": "Expected fail-closed source contract rejection; exit2 verified",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--source",
+        "audits/2026-10-09-n45-pc/negative-inputs-v2/wrong-whole-unit-X.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 2,
+      "record_file": "logs/cli-wrong-whole-unit-X.command.json",
+      "seconds": 0.060663,
+      "stderr": "logs/cli-wrong-whole-unit-X.stderr.log",
+      "stdout": "logs/cli-wrong-whole-unit-X.stdout.log"
+    },
+    {
+      "classification": "Completed within stated finite/integrity scope",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 0,
+      "record_file": "logs/diff-check.command.json",
+      "seconds": 0.006984,
+      "stderr": "logs/diff-check.stderr.log",
+      "stdout": "logs/diff-check.stdout.log"
+    },
+    {
+      "classification": "Completed within stated finite/integrity scope",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 0,
+      "record_file": "logs/docgraph-fresh-formal.command.json",
+      "seconds": 0.090389,
+      "stderr": "logs/docgraph-fresh-formal.stderr.log",
+      "stdout": "logs/docgraph-fresh-formal.stdout.log"
+    },
+    {
+      "classification": "FAIL retained: historical document paths / whole-worktree duplicate IDs",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 1,
+      "record_file": "logs/docgraph-whole-shared.command.json",
+      "seconds": 1.191957,
+      "stderr": "logs/docgraph-whole-shared.stderr.log",
+      "stdout": "logs/docgraph-whole-shared.stdout.log"
+    },
+    {
+      "classification": "FAIL retained: historical document paths / whole-worktree duplicate IDs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 1,
+      "record_file": "logs/docs-fresh-base.command.json",
+      "seconds": 1.037899,
+      "stderr": "logs/docs-fresh-base.stderr.log",
+      "stdout": "logs/docs-fresh-base.stdout.log"
+    },
+    {
+      "classification": "Expected exclusive-create FileExistsError; no overwrite",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--generate"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 1,
+      "record_file": "logs/exclusive-certificate-guard.command.json",
+      "seconds": 0.047699,
+      "stderr": "logs/exclusive-certificate-guard.stderr.log",
+      "stdout": "logs/exclusive-certificate-guard.stdout.log"
+    },
+    {
+      "classification": "Expected exclusive-create FileExistsError; no overwrite",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/build_controls.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 1,
+      "record_file": "logs/exclusive-fixture-dir-guard.command.json",
+      "seconds": 0.040853,
+      "stderr": "logs/exclusive-fixture-dir-guard.stderr.log",
+      "stdout": "logs/exclusive-fixture-dir-guard.stdout.log"
+    },
+    {
+      "classification": "Completed within stated finite/integrity scope",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--generate"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 0,
+      "record_file": "logs/generate-1.command.json",
+      "seconds": 1.740344,
+      "stderr": "logs/generate-1.stderr.log",
+      "stdout": "logs/generate-1.stdout.log"
+    },
+    {
+      "classification": "Completed within stated finite/integrity scope",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--generate"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 0,
+      "record_file": "logs/generate-final-v2.command.json",
+      "seconds": 1.588412,
+      "stderr": "logs/generate-final-v2.stderr.log",
+      "stdout": "logs/generate-final-v2.stdout.log"
+    },
+    {
+      "classification": "Development integration FAIL retained; superseded by named fresh successful version",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--generate"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 1,
+      "record_file": "logs/generate-final.command.json",
+      "seconds": 0.441983,
+      "stderr": "logs/generate-final.stderr.log",
+      "stdout": "logs/generate-final.stdout.log"
+    },
+    {
+      "classification": "Completed within stated finite/integrity scope",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "exit": 0,
+      "record_file": "logs/replay-normal.command.json",
+      "seconds": 1.675467,
+      "stderr": "logs/replay-normal.stderr.log",
+      "stdout": "logs/replay-normal.stdout.log"
+    },
+    {
+      "classification": "Completed within stated finite/integrity scope",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "record_file": "logs/replay-seed17.command.json",
+      "seconds": 1.67162,
+      "stderr": "logs/replay-seed17.stderr.log",
+      "stdout": "logs/replay-seed17.stdout.log"
+    }
+  ],
+  "final_certificate": {
+    "path": "certificate-final-v2.json",
+    "sha256": "538e22dcacaab1bf6f170671ab42f8c7e1af26684e7fa3dfaad5c5b9635501c2"
+  },
+  "historical_E4_provenance": {
+    "evidence": "historical-inputs.json",
+    "status": "Four historical replay exit1 FAILs retained; not rerun"
+  },
+  "not_run": {
+    "PG_PR_paper_or_external_theorem_review": "Independent task; no unreturned judgments imported",
+    "lake_build_axioms": "No new Lean or dependency change; no formalization claim",
+    "new_graph_piece_k_search": "Explicitly forbidden by task",
+    "source_realization_or_general_exclusion": "No finite positive LP source; no arbitrary-size proof obligation attempted",
+    "upstream_E3_E4_E4C_U1_U4_enumeration": "Outside the fixed PC contract task"
+  },
+  "read_only_verification": {
+    "checked": 183,
+    "drift": [],
+    "files": [
+      {
+        "bytes": 33479,
+        "mtime_ns": 1791552059614458079,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-j/checker.py",
+        "sha256": "30fea32907167ef37a30b75b82e7550ee14b73ff4303710c60d519d2453f6425"
+      },
+      {
+        "bytes": 24483,
+        "mtime_ns": 1791551743096286658,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-j/inputs.json",
+        "sha256": "53dbdabf39e67d073d5d3cc4b93ecce5b2078244a4d84dd02bcbda5f269a8856"
+      },
+      {
+        "bytes": 15572083,
+        "mtime_ns": 1791552074845290039,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-j/results/certificate.json",
+        "sha256": "ecdef656ec2eff887c6725cda21a6d205fce41e5387ce14b2270468f20a861d4"
+      },
+      {
+        "bytes": 382428,
+        "mtime_ns": 1791552074855373532,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-j/results/inventory.json",
+        "sha256": "c0599a22b0ae0b4f4002761be6d27e5d081e4e7609ef329f7a671c01b65667cf"
+      },
+      {
+        "bytes": 12850494,
+        "mtime_ns": 1791559445253667665,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/certificate-final-v2.json",
+        "sha256": "538e22dcacaab1bf6f170671ab42f8c7e1af26684e7fa3dfaad5c5b9635501c2"
+      },
+      {
+        "bytes": 15625,
+        "mtime_ns": 1791559443633667869,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/checker.py",
+        "sha256": "9d7c22b5e41f67013b6325e9f59e8404fc3750d1c149a68ee64b407cc780056c"
+      },
+      {
+        "bytes": 123318,
+        "mtime_ns": 1791559276028936199,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/controls-v2/NA7-0002-P1.json",
+        "sha256": "3aa7de633dcac2a915fe9f2d757f2001a9182d9415027d1ac2fc8f48f14677b9"
+      },
+      {
+        "bytes": 126151,
+        "mtime_ns": 1791559276271254983,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/controls-v2/NA8-0003-P1.json",
+        "sha256": "1c1833a9f7065e043f0272068ffe1907fa426211c7df555a085884af001411e8"
+      },
+      {
+        "bytes": 126144,
+        "mtime_ns": 1791559276283554746,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/controls-v2/NA8-0007-P2.json",
+        "sha256": "8ca3421c2cbb269d7a9076afc97cd66cd912a895f341e83a9af5b67e24fe5b37"
+      },
+      {
+        "bytes": 126151,
+        "mtime_ns": 1791559276295564838,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/controls-v2/NA8-0009-P1.json",
+        "sha256": "55a95fdb4f5c69e76b3235e280d66b3a0d931d4be7ad743f26ae5465dfaed806"
+      },
+      {
+        "bytes": 126151,
+        "mtime_ns": 1791559276307441537,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/controls-v2/NA8-0010-P1.json",
+        "sha256": "a08c44d9defb61e994f117bfc541ad9ca0bc5d8b61a8db6ecb98687c3db48e29"
+      },
+      {
+        "bytes": 136508,
+        "mtime_ns": 1791559276042460307,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/controls-v2/NA8-0014-P1.json",
+        "sha256": "31a76d216fc191b81614b840650b4f9147fe3c203d0b63eb013c457bfa75c498"
+      },
+      {
+        "bytes": 136519,
+        "mtime_ns": 1791559276053148899,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/controls-v2/NA8-0015-P2.json",
+        "sha256": "e0fe15f5f9c1c6731691c8f21b29d2eea586c0476b8c1c9d2d9a56efdb89b93d"
+      },
+      {
+        "bytes": 136506,
+        "mtime_ns": 1791559276075118238,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/controls-v2/NA8-0017-P2.json",
+        "sha256": "9c550067dca4bb8848461dbb99b6e2a0e7f5f80992aadfc8c2f15dec65177094"
+      },
+      {
+        "bytes": 136519,
+        "mtime_ns": 1791559276086265752,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/controls-v2/NA8-0018-P2.json",
+        "sha256": "38fe6df69c1d87af384f83d3864815e9b3587582a7d9955116003e642395e83b"
+      },
+      {
+        "bytes": 129352,
+        "mtime_ns": 1791559276128027124,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/controls-v2/NA9-0010-P1.json",
+        "sha256": "3b581ababb7f9fa2eb627304cb1264ab4e6ba349bc9f34679b7bdda3f64112a1"
+      },
+      {
+        "bytes": 127608,
+        "mtime_ns": 1791559276137689643,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/controls-v2/NA9-0011-P1.json",
+        "sha256": "ecd54a772877bee11c9a18476cbf11442c8499195c421cbddd32d56c75c8998a"
+      },
+      {
+        "bytes": 1338,
+        "mtime_ns": 1791559276307638371,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/controls-v2/index.json",
+        "sha256": "1d43b5e603effa363c55a5151c1d95ed3aa440120c20522ddbc9bfc7c8c609cb"
+      },
+      {
+        "bytes": 33479,
+        "mtime_ns": 1791558736404482041,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-j/checker.py",
+        "sha256": "30fea32907167ef37a30b75b82e7550ee14b73ff4303710c60d519d2453f6425"
+      },
+      {
+        "bytes": 24483,
+        "mtime_ns": 1791558736403064569,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-j/inputs.json",
+        "sha256": "53dbdabf39e67d073d5d3cc4b93ecce5b2078244a4d84dd02bcbda5f269a8856"
+      },
+      {
+        "bytes": 15572083,
+        "mtime_ns": 1791558736391943715,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-j/results/certificate.json",
+        "sha256": "ecdef656ec2eff887c6725cda21a6d205fce41e5387ce14b2270468f20a861d4"
+      },
+      {
+        "bytes": 382428,
+        "mtime_ns": 1791558736403640773,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-j/results/inventory.json",
+        "sha256": "c0599a22b0ae0b4f4002761be6d27e5d081e4e7609ef329f7a671c01b65667cf"
+      },
+      {
+        "bytes": 18456,
+        "mtime_ns": 1791558736351221223,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-s/REPORT.md",
+        "sha256": "51ea0e8406998e0a2f8dda8edf785e3a67cbeee412cc8a5d3272430bd0138fa1"
+      },
+      {
+        "bytes": 18708,
+        "mtime_ns": 1791558736402819503,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-s/inputs.json",
+        "sha256": "09aeaaa919c299c5a8c3ed44ef250e6e90a96ab1040e3fd8bea6fbc57b1e63de"
+      },
+      {
+        "bytes": 32738,
+        "mtime_ns": 1791558736364447716,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-su-a/REPORT.md",
+        "sha256": "6a2fbd8d1c2225265dd053070ed59e3e4dd129d9ba825090d197ce0c088820ca"
+      },
+      {
+        "bytes": 23598,
+        "mtime_ns": 1791558736364592000,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-su-a/independent-judgment.json",
+        "sha256": "97ba9e80fedeb1fef95c767f525b17ffde6e676cd4b06131a8b295741ac95872"
+      },
+      {
+        "bytes": 14564,
+        "mtime_ns": 1791558736365015635,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-su-j/REPORT.md",
+        "sha256": "b09822e90beff372b54653b42674035c0568dee886b6389c14e3b98ff0ebad24"
+      },
+      {
+        "bytes": 8023145,
+        "mtime_ns": 1791558736371966959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-su-j/certificate.json",
+        "sha256": "a4b5b4c148f823f8df22a2672700eb40516bae0fd673edf8210a477af3b508ee"
+      },
+      {
+        "bytes": 35667,
+        "mtime_ns": 1791558736404300406,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-su-j/checker.py",
+        "sha256": "032cbf899961fdb71253ff8f380711bc91a97d9dd3db245e63376bc9ef728f6c"
+      },
+      {
+        "bytes": 22867,
+        "mtime_ns": 1791558736403213912,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-su-j/inputs.json",
+        "sha256": "90d2a5493307a510ea6dd274d741219c42616e646ad6e7054c020bbe85505592"
+      },
+      {
+        "bytes": 7310,
+        "mtime_ns": 1791558736404162524,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-su-supervision/REPORT.md",
+        "sha256": "ee87a1529b3ba223833c1a60f3f24ad8115fde8210a74525209cfbfd3d07c843"
+      },
+      {
+        "bytes": 22852,
+        "mtime_ns": 1791558736351756359,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-u/REPORT.md",
+        "sha256": "0c3d117f1c804bc0695fc97fd570f2ede6451d5a21ca036f337f4d11c5de72a7"
+      },
+      {
+        "bytes": 7682242,
+        "mtime_ns": 1791558736358986192,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-u/certificate-final.json",
+        "sha256": "1f7dc2f13fa372150f2d915fd10494986c2f0a3aa08fa965c8b2f013315980d0"
+      },
+      {
+        "bytes": 16794,
+        "mtime_ns": 1791558736402911057,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/audits/2026-10-09-n45-u/inputs.json",
+        "sha256": "ed32a320d7924af82f87fbbe78c12a667fb34222299414ac4fb4839b6895355d"
+      },
+      {
+        "bytes": 8524,
+        "mtime_ns": 1791558736350483582,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/docs/c5_excess_two_nonadjacent_unit_core45.md",
+        "sha256": "d27e84297a20a14e793bd74d4d223983e67e9b4378eb22f3c6b17bfe4a895462"
+      },
+      {
+        "bytes": 10012,
+        "mtime_ns": 1791558736402692191,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/frozen/docs/history/2026-10-09-n45-u-long-short-pair-tasks.md",
+        "sha256": "ffba1d53452fa915df4dea7a4803786b34a56191d261dfe817b0319ed95aafde"
+      },
+      {
+        "bytes": 31054,
+        "mtime_ns": 1791558737126685198,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/inputs.json",
+        "sha256": "e711b26e00f450f9b8865e97457199e1e85f0e5db14539eb724b0c419e825500"
+      },
+      {
+        "bytes": 3382,
+        "mtime_ns": 1791559276319275604,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/negative-inputs-v2/index.json",
+        "sha256": "497977a0554e7d3c61ad7d354c2529f64cc7bebc8bb80347a5aa3142cc1678a6"
+      },
+      {
+        "bytes": 123092,
+        "mtime_ns": 1791559276317185725,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/negative-inputs-v2/missing-complete-tuple.json",
+        "sha256": "b4e3d8c177b4c9e304b021901716d996923b277c2818da0d6be846d3499b711b"
+      },
+      {
+        "bytes": 123318,
+        "mtime_ns": 1791559276318177549,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/negative-inputs-v2/stale-source-hash.json",
+        "sha256": "2ba7f69bec7a651e8148c4b0910f01ea71b2e90e8455079ffc9f6cc63d612c73"
+      },
+      {
+        "bytes": 123318,
+        "mtime_ns": 1791559276319147331,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/negative-inputs-v2/wrong-declared-unit.json",
+        "sha256": "87ea1fb2e57feeb6f53f672a2e8ece23cb85a9705862ea718db6b79b129c8c47"
+      },
+      {
+        "bytes": 123305,
+        "mtime_ns": 1791559276317678000,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/negative-inputs-v2/wrong-shared-ownership.json",
+        "sha256": "887f296b61416d87f2d7e8355d52ea4fb614b5871279fbd09d4fb0a91f4ae86c"
+      },
+      {
+        "bytes": 123280,
+        "mtime_ns": 1791559276318655506,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/negative-inputs-v2/wrong-whole-unit-X.json",
+        "sha256": "175eeb76d8f2a99e9829fffd1ca5448cfe38106c323990440e75ade54dfda3d3"
+      },
+      {
+        "bytes": 103215,
+        "mtime_ns": 1791558734840286310,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_cells/cells.json",
+        "sha256": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8"
+      },
+      {
+        "bytes": 40577,
+        "mtime_ns": 1791558734851017865,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_one_e2/REPORT.md",
+        "sha256": "ec136bf8c774c170af76054dda2e33ffdfd2c9c951d0e91a7ab2d30749146a4e"
+      },
+      {
+        "bytes": 32469,
+        "mtime_ns": 1791558734901745010,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e3/REPORT.md",
+        "sha256": "73ed652a55b159a44eb6da4608f11537efc0d43603128094101ef044a96b2cd3"
+      },
+      {
+        "bytes": 13152,
+        "mtime_ns": 1791558734905959635,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e3/nonadjacent_notes.md",
+        "sha256": "5ef7008a28c58de5d0299eeecee64e139c3b99a3d82027c38d8f5a121510db4f"
+      },
+      {
+        "bytes": 14495,
+        "mtime_ns": 1791558734905959635,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4/CORE_CONSTRAINTS.md",
+        "sha256": "a76d4ef7fa2451b34c68aea72ad18a400203ee50295a4eacaa6a2f645daa15eb"
+      },
+      {
+        "bytes": 24514,
+        "mtime_ns": 1791558734907582498,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4/REPORT.md",
+        "sha256": "bb0f4be0ef300e1ecb3ff0e417996f744bccbb65dc32b8f8aaaa843ff054a0fc"
+      },
+      {
+        "bytes": 66996,
+        "mtime_ns": 1791558734908647351,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/REPORT.md",
+        "sha256": "85a79d1a67ca5fbea4b2236053c7bb0176068deadd2bbc445f9b26f0d9f7b5f5"
+      },
+      {
+        "bytes": 78037,
+        "mtime_ns": 1791558734910938443,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA6-0001.json",
+        "sha256": "1ed7f06f36d1dcf8ee61c8121b3586aa79d8f0b61a619043dfaf73c445ac6cbc"
+      },
+      {
+        "bytes": 97533,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA6-0002.json",
+        "sha256": "d4971d6f4585f4699e6d324976cebccd2d76732213a2ea1bde324d6a361de9e1"
+      },
+      {
+        "bytes": 97533,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA6-0003.json",
+        "sha256": "22a037db5d85e22ad3fe51b18744160bf895d9630afaee51a69edc739bd439ad"
+      },
+      {
+        "bytes": 115136,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA7-0001.json",
+        "sha256": "fcc7c98390de120c01c08b0b19103e84f26f196a559d211ba6ccc6bdb5a8331a"
+      },
+      {
+        "bytes": 112049,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA7-0002.json",
+        "sha256": "0a3d5e72a95dbbcc1b07a4c6d15e570c46988c8dd31bc4349ac3029c825a2682"
+      },
+      {
+        "bytes": 104176,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0001.json",
+        "sha256": "0cb8365c59f3755d25e04d98938dd3f190dc245e34a6d1cb4aa8cc66f924792a"
+      },
+      {
+        "bytes": 104166,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0002.json",
+        "sha256": "d7f6419be8c54ef047e2e5d4bdcd08d1107d21ae5ce4b069c6c6bf6a920beece"
+      },
+      {
+        "bytes": 128023,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0003.json",
+        "sha256": "eb714bf0e19b5a7ecee766637beb84144ec98c478097b7ebf6e1d8465f41ea16"
+      },
+      {
+        "bytes": 110440,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0004.json",
+        "sha256": "3e4a58333df173d93571819f9c467cced0a3e24c0cfdb5ab0c2394824ab39fc8"
+      },
+      {
+        "bytes": 109553,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0005.json",
+        "sha256": "68a4a4a561236cd5a826d0707a951fc39ca72e216fb9d01f31d2d120088b68aa"
+      },
+      {
+        "bytes": 110436,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0006.json",
+        "sha256": "276bc64d31f29b52eb34e7c97fd16d85b45a12daaad82837dfe9cb9f7665b07b"
+      },
+      {
+        "bytes": 126987,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0007.json",
+        "sha256": "e00842edc855a5d9f47a3d0f6129cefb3be7602c77f2435e7028a6529a200d27"
+      },
+      {
+        "bytes": 109560,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0008.json",
+        "sha256": "43fc26ff8776a5e4bb05994aea30b6c4b24df65ef89c1bea78a9481d565933db"
+      },
+      {
+        "bytes": 128023,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0009.json",
+        "sha256": "76bafbc1f805a4a63b07b56766333270275a33fc2422869c98c626a518e0e116"
+      },
+      {
+        "bytes": 127019,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0010.json",
+        "sha256": "9536381c313247a02b05809190cf2fab8ea3de538a82ecda743d86643f95c6cb"
+      },
+      {
+        "bytes": 110440,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0011.json",
+        "sha256": "051797fe6789be656e9e145b3226f119f8225fcd4c16cb2fbb1d2da2f3dda14c"
+      },
+      {
+        "bytes": 109564,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0012.json",
+        "sha256": "1a914802bee8948cad70f9ed1adc73a65b7de9002d3df4143266d465c7febb68"
+      },
+      {
+        "bytes": 109553,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0013.json",
+        "sha256": "f99aad78a68d2bdce40f45f9807a2d5510153a2969e0ae496c65d80c26950382"
+      },
+      {
+        "bytes": 113432,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0014.json",
+        "sha256": "69e9adec9d41f460ada8851bffd82075fefadcd87d1e78138b2d31ed0ee9fed9"
+      },
+      {
+        "bytes": 112553,
+        "mtime_ns": 1791558734911654864,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0015.json",
+        "sha256": "91bffe5287c69e779eca0aa6b6e5780bd01a27d79802aa3ac2c3082adbe389c6"
+      },
+      {
+        "bytes": 113732,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0016.json",
+        "sha256": "157622ffca051967dafe92c23821028c65e2bd3e6289281050a5f5aeff285fde"
+      },
+      {
+        "bytes": 113427,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0017.json",
+        "sha256": "0bb09b92e4570931e3306ae0e044a726bd57681ec8d907b681367c1c24ea8eeb"
+      },
+      {
+        "bytes": 112553,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0018.json",
+        "sha256": "ff98dfc4a201bdad95147e7208c690e9fb8a16ce4d21e7b524eae72ca94f18a7"
+      },
+      {
+        "bytes": 110429,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0019.json",
+        "sha256": "04db119207b1309c101c2415ed75caf04eafc55902994d2227347652fdc1d9e3"
+      },
+      {
+        "bytes": 111354,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0020.json",
+        "sha256": "a345e40562d0f93da53250b84251ae689217e97f8ec6d064807b29bef89dfa68"
+      },
+      {
+        "bytes": 111420,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0021.json",
+        "sha256": "a9cdc709f1f1c961286297863696aca52b7110e5ba980f83bfb2bb94c595014f"
+      },
+      {
+        "bytes": 114943,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA8-0022.json",
+        "sha256": "dd8fe080f64231140715953bb3a7b88a94fe676636c5b7974262177ce096bac2"
+      },
+      {
+        "bytes": 115476,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0001.json",
+        "sha256": "3128233a63becf745f1cbaea8fe14e7c45af6c9bc975471824e440823b596f3d"
+      },
+      {
+        "bytes": 112872,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0002.json",
+        "sha256": "c770364ed40fc2d162704bd658814d46f89e46b7a2dd49d14e27619daf748cb2"
+      },
+      {
+        "bytes": 114246,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0003.json",
+        "sha256": "e9081a9aa146c43f540395dde0d77353cf45d138c088dbe7becadef492a25db8"
+      },
+      {
+        "bytes": 123296,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0004.json",
+        "sha256": "1740ee6f4708bc665cbc25008dacc64afbf050c4b27523120d116bb0bbd5842a"
+      },
+      {
+        "bytes": 114246,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0005.json",
+        "sha256": "da2ea5bc40cca6ee2d900916a2d9dd5871b856c0960ce6e80dbe168a09c2d3de"
+      },
+      {
+        "bytes": 112868,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0006.json",
+        "sha256": "85fa36b9d1baa4ae5888a0a14792c98486a263b775cb9ff4a812ef0fa21bf124"
+      },
+      {
+        "bytes": 115472,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0007.json",
+        "sha256": "ef81749926852e58921951a7fb572d0bd4975d297f67ff82085ca83e2fda29ce"
+      },
+      {
+        "bytes": 114242,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0008.json",
+        "sha256": "2352bec8d10309226ef091dab10862d60bc8ace9e51fe97342e634b15502f182"
+      },
+      {
+        "bytes": 114242,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0009.json",
+        "sha256": "398c0ef8ef0e6efc7824b8afd2c31a86aeaef72bccbaf88dc9106c13b689de8d"
+      },
+      {
+        "bytes": 123781,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0010.json",
+        "sha256": "223c66016be7542e70909c01429b05953f3d69b5fc659015b23e8f16af2c3502"
+      },
+      {
+        "bytes": 120141,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0011.json",
+        "sha256": "bb450e51a77b7c1e37396fb190f587fe66f0e257421f2d9755b970c7997074af"
+      },
+      {
+        "bytes": 115476,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0012.json",
+        "sha256": "6ad5eac5b5f7929017f65194349db382d2f935ec771c277a536e1c4626283fc3"
+      },
+      {
+        "bytes": 115476,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0013.json",
+        "sha256": "0ae42bb9c98843793606f06e500b1dc7daec2a456fed5d1149bd34fcd5e7317e"
+      },
+      {
+        "bytes": 112872,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0014.json",
+        "sha256": "aee1adda0cc85023a5e033ad6a4df0e3ffa8a2c44f938ed3d5b5bcb7b0b1e669"
+      },
+      {
+        "bytes": 112872,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0015.json",
+        "sha256": "58e8d770d1b94617f1c9491e632ac50ba476d59ffbd10f1df685deb7ce39f846"
+      },
+      {
+        "bytes": 114246,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0016.json",
+        "sha256": "55448f51840f0b2b62eab3bdfb1996868694609a720035d27141cddcd8153468"
+      },
+      {
+        "bytes": 114246,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0017.json",
+        "sha256": "0aa74bd8bc1c61757d2e70a959663cf46dc9dc23a73023f25d457fb75dd0869f"
+      },
+      {
+        "bytes": 114246,
+        "mtime_ns": 1791558734913745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0018.json",
+        "sha256": "7c6353cca096f135b7af337de5ebfccb443f68e3e04580b1befc3b8c46b672df"
+      },
+      {
+        "bytes": 114246,
+        "mtime_ns": 1791558734917745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0019.json",
+        "sha256": "4c53488911efbdbc57d48c1d22050e08bf1bcf0589721c9c3ed99266493dc4af"
+      },
+      {
+        "bytes": 114612,
+        "mtime_ns": 1791558734917745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0020.json",
+        "sha256": "a59ba82c1387c65ac9a625fb07bbcedcbc75ea06fdcaa382ccb59c49e3575473"
+      },
+      {
+        "bytes": 112824,
+        "mtime_ns": 1791558734917745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0021.json",
+        "sha256": "ff7816340808b263bbc4945d98da889b5496a5d10051dbf85a94342a7bf1c231"
+      },
+      {
+        "bytes": 112830,
+        "mtime_ns": 1791558734917745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0022.json",
+        "sha256": "808ed886aabe4fed366c986b1ec8bf9b597a78b88ee9caf0213b13406e3b2ecb"
+      },
+      {
+        "bytes": 113577,
+        "mtime_ns": 1791558734917745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0023.json",
+        "sha256": "d2e31a967d203ed9f4dab07c92de9700499312848dea73bb5013e46ce10b1c80"
+      },
+      {
+        "bytes": 112830,
+        "mtime_ns": 1791558734917745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0024.json",
+        "sha256": "fc223b9770f1920c9f3ca3b507587e695daece5407c4078289b2edbf65880a4f"
+      },
+      {
+        "bytes": 112830,
+        "mtime_ns": 1791558734917745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0025.json",
+        "sha256": "02b2f09e699f1c90fbc4029d8c4d77c6d424859bbc37af0665ecd76002633b8b"
+      },
+      {
+        "bytes": 115476,
+        "mtime_ns": 1791558734917745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0026.json",
+        "sha256": "420584623ff501ac098feec827130fa68607e84b706271afc7405a12b206710b"
+      },
+      {
+        "bytes": 113967,
+        "mtime_ns": 1791558734917745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/controls/NA9-0027.json",
+        "sha256": "b77bbd52aefe1db63c8b6016171d5270a8756172c8fbf1898c357f052f2d2e97"
+      },
+      {
+        "bytes": 289149,
+        "mtime_ns": 1791558734917745009,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_e4c/summary.json",
+        "sha256": "56127650d8722114a61a57122412f5345f00c9feb69d34ebb532ca46c185778e"
+      },
+      {
+        "bytes": 3484,
+        "mtime_ns": 1791558734948798167,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k6_validate/crit_orbits/orbit_0001.json",
+        "sha256": "7e74ac22a73919e576256cc9b9fba9b09e4f92f88929ae7c69a6419a80c24c12"
+      },
+      {
+        "bytes": 4480,
+        "mtime_ns": 1791558734948865605,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k6_validate/crit_orbits/orbit_0002.json",
+        "sha256": "eb533c8582ed92cb6e38e0a60174723b4e9eb54598dd6c5be7a37b61dd3bcc44"
+      },
+      {
+        "bytes": 4480,
+        "mtime_ns": 1791558734948865605,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k6_validate/crit_orbits/orbit_0003.json",
+        "sha256": "9fd76571ac7f6f4ea382efb92536406cd26a2afb241b3bf41b7fbe5f0d3b624f"
+      },
+      {
+        "bytes": 4203,
+        "mtime_ns": 1791558734949539104,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k7_validate/crit_orbits/orbit_0001.json",
+        "sha256": "193e4c55d60d9011e0ddd46b9a923f081ecf33772115656d8acf3a5d70275774"
+      },
+      {
+        "bytes": 4198,
+        "mtime_ns": 1791558734949677267,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k7_validate/crit_orbits/orbit_0002.json",
+        "sha256": "7a960fcdcde1aecd6b64847aeda1c2bf76f1641e7546b07826cc3d555b6bec60"
+      },
+      {
+        "bytes": 4639,
+        "mtime_ns": 1791558734950558471,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0001.json",
+        "sha256": "809e98e6ab2f715ce6abf3d727d17a2f0019efab238e44ffd74ad7719e013e25"
+      },
+      {
+        "bytes": 4639,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0002.json",
+        "sha256": "3e18a62adda1dbeec7b75aa598dd143e59779c3ce7d284e28aae98e796c2f3fe"
+      },
+      {
+        "bytes": 5695,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0003.json",
+        "sha256": "186edf12bd4f609c703b8f37e82e5fdfc9004fe2b808ccba9434f0bc4c003163"
+      },
+      {
+        "bytes": 4590,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0004.json",
+        "sha256": "19bb52750cc5c7d790b5afe8db9b27efaf733f5f56a727d794628c4af760d2d0"
+      },
+      {
+        "bytes": 4590,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0005.json",
+        "sha256": "87aa55a2a46dd807d62bf11e88a1d280c7121cdaa219ed054315422184a3daa3"
+      },
+      {
+        "bytes": 4591,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0006.json",
+        "sha256": "1bc604bf5fdb3981d6eecdcc3a6902011c2875f71625734f3623d05b4af1ceb8"
+      },
+      {
+        "bytes": 5695,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0007.json",
+        "sha256": "36886a49c739dfe2a70de9088e1890fee41fdd501445964724f7b24d2425d525"
+      },
+      {
+        "bytes": 4591,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0008.json",
+        "sha256": "cdf65d26c15b81283f899915203045eb0221fca3191e6004fcade2d60af3e94c"
+      },
+      {
+        "bytes": 5695,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0009.json",
+        "sha256": "d443dab417f8723e811138ffe404be42c9a5247c250d8dd1afb7bafb4dfec1ef"
+      },
+      {
+        "bytes": 5695,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0010.json",
+        "sha256": "0f49b3da3830fd739fe2dc06807dd69d7e37361e41c4d56f9d79eafdbadb8916"
+      },
+      {
+        "bytes": 4590,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0011.json",
+        "sha256": "e1c2c751944350eeb3f6b0135c12ea8ace52705593fcc434d0f2705578bb87b0"
+      },
+      {
+        "bytes": 4590,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0012.json",
+        "sha256": "9482c6dd1fb5e576a2223179e9a2bfacfd888b35cef60b6b9ca76f03ce1717bd"
+      },
+      {
+        "bytes": 4590,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0013.json",
+        "sha256": "6f65cc1125fb24e0af4896dfb3367f914b8ba313312c70048f51e6622813f57e"
+      },
+      {
+        "bytes": 4589,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0014.json",
+        "sha256": "a4bbb123f4b7504aa258fcf06b5427e4eb2556b68e0f9ef4a0c736f3af067d2e"
+      },
+      {
+        "bytes": 4587,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0015.json",
+        "sha256": "6316b84b586d953cefe8f95d818f0ab267c0bd73552b7cfb93fe5447ddc620fd"
+      },
+      {
+        "bytes": 4585,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0016.json",
+        "sha256": "b8783e3061cf1a84fe9ec6ead0bc8b2dabc67229ede9257615feac528ad1461e"
+      },
+      {
+        "bytes": 4587,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0017.json",
+        "sha256": "bdcd68f355c3ab7f37930eae7961321c0bae64f05ec925003c6e617f3fccd871"
+      },
+      {
+        "bytes": 4587,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0018.json",
+        "sha256": "cb4c8ab914ec5219a72cd10835d9f422b33f3d476d27c69ba29209a0b72c2c5d"
+      },
+      {
+        "bytes": 4590,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0019.json",
+        "sha256": "8ed9ef28b35a471c89de13ec641bef3803adf68bac85f7376ce9705028bae378"
+      },
+      {
+        "bytes": 4588,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0020.json",
+        "sha256": "8581f3168dc6c6f7e0a43781a28fdf26b37a9b0099e6aa376054c9c3d5c65d37"
+      },
+      {
+        "bytes": 4588,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0021.json",
+        "sha256": "1e3ff275bb9d6d9aa56a2dc5591aa92ea50822829391a8be3bf86470f043cc36"
+      },
+      {
+        "bytes": 4584,
+        "mtime_ns": 1791558734950673058,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k8_validate/crit_orbits/orbit_0022.json",
+        "sha256": "42591402beafce0c96a56ae5fcc20b265fde949fa4857501d0f4d1ce59914a91"
+      },
+      {
+        "bytes": 4984,
+        "mtime_ns": 1791558734952689088,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0001.json",
+        "sha256": "3d7a3c957a331fa6023a81e77194ee71151ef1b34cf6dfe3e323b0ceec8eb1a7"
+      },
+      {
+        "bytes": 4984,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0002.json",
+        "sha256": "a2d07292286651178ad59a6c6910d6ab923eba8626dadc533b19984cd5002ac3"
+      },
+      {
+        "bytes": 4984,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0003.json",
+        "sha256": "c9364dff1114c1c938f03896f68d450239612014353d4ed85e2f88ec286f0907"
+      },
+      {
+        "bytes": 5282,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0004.json",
+        "sha256": "04693f31ba65d63b414f58041ba8448a6e9d114ee247083882792b66fb1ee6a5"
+      },
+      {
+        "bytes": 4984,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0005.json",
+        "sha256": "e5944bbbf3c148ddc75a837f623f3d074636f173b2bb06b784dc39ac579bb4a5"
+      },
+      {
+        "bytes": 4985,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0006.json",
+        "sha256": "9d5fd775c0915014cd690a33dbb9e493afd74113271ef8ff1595e5bf01d063ca"
+      },
+      {
+        "bytes": 4985,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0007.json",
+        "sha256": "440c646c8322c78f7aa1f1e11a93ce0c93f55356c6aaa5e6fc9928208a29ff80"
+      },
+      {
+        "bytes": 4985,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0008.json",
+        "sha256": "c5b5c6c7fd025584a1b50fab2a4174211e73bdb0faecd40acda733a00e41b350"
+      },
+      {
+        "bytes": 4985,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0009.json",
+        "sha256": "ec1bcc51463090e64a904175a9770e808f434cf89c67c4f24a31f78997c0335b"
+      },
+      {
+        "bytes": 5279,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0010.json",
+        "sha256": "b5e240083436ebec79adacfdfba8f2c1b5b4948415c22e17718398947a6a44b3"
+      },
+      {
+        "bytes": 5277,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0011.json",
+        "sha256": "387161610a959e8b8cb595ba39a9ff830c2d850390680efb82368a00b19a5050"
+      },
+      {
+        "bytes": 4984,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0012.json",
+        "sha256": "f64aa1032fdeb497095b0daa097de0b7eb5abe19cd781991707a21a5a3120fd2"
+      },
+      {
+        "bytes": 4984,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0013.json",
+        "sha256": "63b0a3ebc9c8602889a34ab25a90810f8fde1a81586cd9af6e01101c5003dab8"
+      },
+      {
+        "bytes": 4984,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0014.json",
+        "sha256": "b7744d224e9e707ef3da03159bd6cc4a5611963a176170a0ab507f0a276e7f66"
+      },
+      {
+        "bytes": 4984,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0015.json",
+        "sha256": "159e323a08b3da9d328111615b6ed1023eb3adb3f01f39d17da9960e917f6bc7"
+      },
+      {
+        "bytes": 4984,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0016.json",
+        "sha256": "92af0e0208eba8afc36090dc51061ebb3ff73f099ed20c929e4e88de1a2944c6"
+      },
+      {
+        "bytes": 4984,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0017.json",
+        "sha256": "e4a14d4bc9df5956328dfdb5258e7fa0e4f7f77b4c433cd09c3664121fa660c6"
+      },
+      {
+        "bytes": 4984,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0018.json",
+        "sha256": "99543c2e5959dc97dc720d0d94230f3b73f58cc44005833486e5a343edae3736"
+      },
+      {
+        "bytes": 4984,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0019.json",
+        "sha256": "9087b8f4d44488552e9133dc13d5aae150a584f815dbf0b833842a7da6824f40"
+      },
+      {
+        "bytes": 4981,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0020.json",
+        "sha256": "0c844c661aa3db4846771c1b4ea1ccef370281ab4b0ed4ed3000f8a8be7bcfcd"
+      },
+      {
+        "bytes": 4983,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0021.json",
+        "sha256": "3a3ecbf2442c47733d395cfe90936c89294bd698409482e44b81f6b8a9a86230"
+      },
+      {
+        "bytes": 4981,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0022.json",
+        "sha256": "ce7a9a29ffb646077072ad409cbfa0612cc27af5136307e0f55969b8031d5528"
+      },
+      {
+        "bytes": 4981,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0023.json",
+        "sha256": "d642b19b810bb70e738a1ac8019393fc0dc6e80bcab4652546a6c191ef1117a1"
+      },
+      {
+        "bytes": 4981,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0024.json",
+        "sha256": "03ed689ef0b0948de9a039045894e4c7f1ee99a50c5e3188bb2f571b501f5109"
+      },
+      {
+        "bytes": 4981,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0025.json",
+        "sha256": "21ef2647981b6263a8955ff52f109cf4ea201392d9b34dad44c9cb802c0dda28"
+      },
+      {
+        "bytes": 4981,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0026.json",
+        "sha256": "fec42a2505a43c50aad17cbab8bd121b8e2db63d1664d2bce549c6c93fff8a2f"
+      },
+      {
+        "bytes": 4983,
+        "mtime_ns": 1791558734952752959,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/artifacts/c5_excess_two_finite_search/NA_k9_validate/crit_orbits/orbit_0027.json",
+        "sha256": "16b45b8eb6bcaae3356d35d7d105947764dd3cafb37736a7520220ed91861bc3"
+      },
+      {
+        "bytes": 13100,
+        "mtime_ns": 1791558735778801699,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/docs/DOCUMENTATION.md",
+        "sha256": "40214801431719f88f6a808bc9c2f74ed0ec3044a5c555cac0a99678af105ac3"
+      },
+      {
+        "bytes": 869,
+        "mtime_ns": 1791558735782405474,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/docs/HANDOFF.md",
+        "sha256": "3a5f57439de95350fc322ab6a9a7062782a7fcb7b293e4563e1cae2f65d9299f"
+      },
+      {
+        "bytes": 136397,
+        "mtime_ns": 1791558735782405474,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/docs/STATUS.md",
+        "sha256": "e984b3f7b29d006d73a65ee7456337f4eb0d6f58ccae71e247182eb2acf6a0c1"
+      },
+      {
+        "bytes": 13186,
+        "mtime_ns": 1791558735785744926,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/docs/c5_degree5_tree_components.md",
+        "sha256": "fa326592f94cca6e941346b0b1c90086e1d75042168102990f4ed7c64b190dc5"
+      },
+      {
+        "bytes": 13038,
+        "mtime_ns": 1791558735793744926,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/docs/c5_excess_two_nonadjacent_two_mixed_core44.md",
+        "sha256": "f3d9ff53bddcb391ef9a85eb2108fbe152e0a249e1ef1dde2b3882634916fca0"
+      },
+      {
+        "bytes": 42084,
+        "mtime_ns": 1791558735793744926,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/docs/c5_kempe_guide.md",
+        "sha256": "d9f3584be4e97ba6d5ce3f4c0efabbf483ec351b5ebe9403cfb44a94e6d90092"
+      },
+      {
+        "bytes": 26508,
+        "mtime_ns": 1791558735797744925,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/docs/c5_phase_b_common_lemmas.md",
+        "sha256": "6798d5b2a9cb137bfb82a9873d1786ed782a8eea3c1163b443bc52d722c1bc8a"
+      },
+      {
+        "bytes": 21090,
+        "mtime_ns": 1791558735805744924,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/docs/c5_unary_shield_budget.md",
+        "sha256": "c4039e805abcc94a6a8c824ba38e5858420535c5c5528e3bf43aec5721c8e082"
+      },
+      {
+        "bytes": 15876,
+        "mtime_ns": 1791558735845744920,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source/scripts/c5_phase_b_controls.py",
+        "sha256": "405f905f874b11be08f8d552b2dd404dc8a5d4b5d693e684993ad41754c3a8f7"
+      },
+      {
+        "bytes": 34717,
+        "mtime_ns": 1791559443633667869,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/validator.py",
+        "sha256": "8e2c04155ccf71b90ef1e16eca94764332d2ff5658558d40c1e0fca4fbb26a8b"
+      },
+      {
+        "bytes": 18456,
+        "mtime_ns": 1791552719042390103,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-s/REPORT.md",
+        "sha256": "51ea0e8406998e0a2f8dda8edf785e3a67cbeee412cc8a5d3272430bd0138fa1"
+      },
+      {
+        "bytes": 18708,
+        "mtime_ns": 1791552185753324529,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-s/inputs.json",
+        "sha256": "09aeaaa919c299c5a8c3ed44ef250e6e90a96ab1040e3fd8bea6fbc57b1e63de"
+      },
+      {
+        "bytes": 32738,
+        "mtime_ns": 1791556594488088987,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-su-a/REPORT.md",
+        "sha256": "6a2fbd8d1c2225265dd053070ed59e3e4dd129d9ba825090d197ce0c088820ca"
+      },
+      {
+        "bytes": 23598,
+        "mtime_ns": 1791556131749810270,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-su-a/independent-judgment.json",
+        "sha256": "97ba9e80fedeb1fef95c767f525b17ffde6e676cd4b06131a8b295741ac95872"
+      },
+      {
+        "bytes": 14564,
+        "mtime_ns": 1791556991681930720,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-su-j/REPORT.md",
+        "sha256": "b09822e90beff372b54653b42674035c0568dee886b6389c14e3b98ff0ebad24"
+      },
+      {
+        "bytes": 8023145,
+        "mtime_ns": 1791556486648002314,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-su-j/certificate.json",
+        "sha256": "a4b5b4c148f823f8df22a2672700eb40516bae0fd673edf8210a477af3b508ee"
+      },
+      {
+        "bytes": 35667,
+        "mtime_ns": 1791556483729986648,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-su-j/checker.py",
+        "sha256": "032cbf899961fdb71253ff8f380711bc91a97d9dd3db245e63376bc9ef728f6c"
+      },
+      {
+        "bytes": 22867,
+        "mtime_ns": 1791555730099125281,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-su-j/inputs.json",
+        "sha256": "90d2a5493307a510ea6dd274d741219c42616e646ad6e7054c020bbe85505592"
+      },
+      {
+        "bytes": 7310,
+        "mtime_ns": 1791557726069853425,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-su-supervision/REPORT.md",
+        "sha256": "ee87a1529b3ba223833c1a60f3f24ad8115fde8210a74525209cfbfd3d07c843"
+      },
+      {
+        "bytes": 22852,
+        "mtime_ns": 1791553635010290134,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/REPORT.md",
+        "sha256": "0c3d117f1c804bc0695fc97fd570f2ede6451d5a21ca036f337f4d11c5de72a7"
+      },
+      {
+        "bytes": 7682242,
+        "mtime_ns": 1791552618099212272,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/certificate-final.json",
+        "sha256": "1f7dc2f13fa372150f2d915fd10494986c2f0a3aa08fa965c8b2f013315980d0"
+      },
+      {
+        "bytes": 16794,
+        "mtime_ns": 1791552354035400152,
+        "path": "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/inputs.json",
+        "sha256": "ed32a320d7924af82f87fbbe78c12a667fb34222299414ac4fb4839b6895355d"
+      },
+      {
+        "bytes": 8524,
+        "mtime_ns": 1791557726069853425,
+        "path": "/home/ray/developer/ai/math/docs/c5_excess_two_nonadjacent_unit_core45.md",
+        "sha256": "d27e84297a20a14e793bd74d4d223983e67e9b4378eb22f3c6b17bfe4a895462"
+      },
+      {
+        "bytes": 10012,
+        "mtime_ns": 1791558124613809818,
+        "path": "/home/ray/developer/ai/math/docs/history/2026-10-09-n45-u-long-short-pair-tasks.md",
+        "sha256": "ffba1d53452fa915df4dea7a4803786b34a56191d261dfe817b0319ed95aafde"
+      }
+    ]
+  },
+  "seal_command": [
+    "python3",
+    "-B",
+    "audits/2026-10-09-n45-pc/seal.py"
+  ],
+  "seal_log": "delivery.json records completed seal and read-only verification",
+  "setup": {
+    "BASE_authority_files": 125,
+    "all_hashes_match": true,
+    "commands": [
+      {
+        "command": [
+          "git",
+          "worktree",
+          "add",
+          "--detach",
+          "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/source",
+          "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        ],
+        "exit": 0
+      }
+    ],
+    "frozen_deliveries": 18,
+    "manifest_counts": {
+      "audits/2026-10-09-n45-j/inputs.json": 66,
+      "audits/2026-10-09-n45-s/inputs.json": 69,
+      "audits/2026-10-09-n45-su-j/inputs.json": 71,
+      "audits/2026-10-09-n45-u/inputs.json": 70
+    }
+  },
+  "source_contract_coverage": "not triggered; never a source-exclusion PASS",
+  "task": "N45-PC"
+}

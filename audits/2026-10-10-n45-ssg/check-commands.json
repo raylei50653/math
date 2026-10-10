@@ -1,0 +1,70 @@
+[
+  {
+    "name": "controls-normal",
+    "argv": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssg/controls.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "env": {},
+    "exit_code": 0,
+    "stdout": "logs/controls-normal.stdout.log",
+    "stderr": "logs/controls-normal.stderr.log"
+  },
+  {
+    "name": "controls-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssg/controls.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "stdout": "logs/controls-seed17.stdout.log",
+    "stderr": "logs/controls-seed17.stderr.log"
+  },
+  {
+    "name": "tracked-diff-check",
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "env": {},
+    "exit_code": 0,
+    "stdout": "logs/tracked-diff-check.stdout.log",
+    "stderr": "logs/tracked-diff-check.stderr.log"
+  },
+  {
+    "name": "cached-diff-check",
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "env": {},
+    "exit_code": 0,
+    "stdout": "logs/cached-diff-check.stdout.log",
+    "stderr": "logs/cached-diff-check.stderr.log"
+  },
+  {
+    "name": "final-head",
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "env": {},
+    "exit_code": 0,
+    "stdout": "logs/final-head.stdout.log",
+    "stderr": "logs/final-head.stderr.log"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "exit": 0,
+    "id": "docs",
+    "log": "logs/docs.log",
+    "seconds": 0.5635,
+    "summary": [
+      "OK: 587 Markdown files, 7003 local links; anchors, index, handoff checked"
+    ]
+  },
+  {
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit": 0,
+    "id": "docgraph-formal",
+    "log": "logs/docgraph-formal.log",
+    "seconds": 0.0757,
+    "summary": [
+      "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes"
+    ]
+  },
+  {
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "exit": 1,
+    "id": "docgraph-worktree",
+    "log": "logs/docgraph-worktree.log",
+    "seconds": 0.5005,
+    "summary": [
+      "FAIL: 62 documents, 213 relations, 5 families; 62 errors, 0 notes"
+    ]
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit": 0,
+    "id": "diff-check",
+    "log": "logs/diff-check.log",
+    "seconds": 0.0064,
+    "summary": []
+  }
+]

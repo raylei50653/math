@@ -1,0 +1,168 @@
+{
+  "status": "actual checks recorded",
+  "executions": [
+    {
+      "name": "check-docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "start_UTC": "2026-10-10T08:11:03.756951+00:00",
+      "elapsed_seconds": 0.731,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/check-docs.stdout.txt",
+      "stdout_sha256": "be8b952d81473fdce2ece209c806445e3c0f611eea690bf9d4a13adc924891d8",
+      "stderr": "logs/check-docs.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docgraph-docs",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "start_UTC": "2026-10-10T08:11:03.757430+00:00",
+      "elapsed_seconds": 0.267,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/docgraph-docs.stdout.txt",
+      "stdout_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+      "stderr": "logs/docgraph-docs.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docgraph-whole",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "start_UTC": "2026-10-10T08:11:03.757871+00:00",
+      "elapsed_seconds": 5.505,
+      "exit_code": 1,
+      "expected_exit": 1,
+      "stdout": "logs/docgraph-whole.stdout.txt",
+      "stdout_sha256": "3b55401c56babce0efbd6b1c4c480eea52dc0ff51ae277d0c4c218d81b59afa2",
+      "stderr": "logs/docgraph-whole.stderr.txt",
+      "stderr_sha256": "3f3f8f9b1fac8456ceeabc516726d5b4552323f3273f637ea1966622644b7885"
+    },
+    {
+      "name": "git-diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "start_UTC": "2026-10-10T08:11:03.758400+00:00",
+      "elapsed_seconds": 0.013,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/git-diff-check.stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "logs/git-diff-check.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "authored-final-check",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-high23-supervision/check_documentation.py",
+        "--local-only"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "start_UTC": "2026-10-10T08:13:25.407172+00:00",
+      "elapsed_seconds": 0.05,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/authored-final-check.stdout.txt",
+      "stdout_sha256": "febcdff89c0d1a3a9b7bebf2927b73dc98fc33cc8eadd55e3bac067417cd5e28",
+      "stderr": "logs/authored-final-check.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "whole_docgraph_duplicate_ids": 62,
+  "new_Lean": false,
+  "lake_build": "not run; documentation-only propagation",
+  "finite_source": "not established/not executed",
+  "custody": "immutable named workers/reviewers plus six adopted documents only; outside worktree PASS not claimed",
+  "historical_executions": [
+    {
+      "name": "authored-local-check",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-high23-supervision/check_documentation.py",
+        "--local-only"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "start_UTC": "2026-10-10T08:11:03.759327+00:00",
+      "elapsed_seconds": 0.055,
+      "exit_code": 1,
+      "expected_exit": 0,
+      "stdout": "logs/authored-local-check.stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "logs/authored-local-check.stderr.txt",
+      "stderr_sha256": "db78ed88f2e5c7cf1ac370bc5209edd1fab6cb33e7be881b1a7a70a3da56bca4"
+    },
+    {
+      "name": "authored-local-check-v2",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-high23-supervision/check_documentation.py",
+        "--local-only"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "start_UTC": "2026-10-10T08:11:45.867108+00:00",
+      "elapsed_seconds": 0.058,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/authored-local-check-v2.stdout.txt",
+      "stdout_sha256": "febcdff89c0d1a3a9b7bebf2927b73dc98fc33cc8eadd55e3bac067417cd5e28",
+      "stderr": "logs/authored-local-check-v2.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "corrected_local_check": "history-draft links resolve from its checked, byte-identical actual docs/history destination; initial failure and verifier bytes retained",
+  "final_check_reason": "new parent verifier/seal script and report test details; shared documentation unchanged since successful required checks"
+}

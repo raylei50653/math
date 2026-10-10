@@ -1,0 +1,17 @@
+{
+  "actual_exit": 2,
+  "command": [
+    "python3",
+    "-B",
+    "-c",
+    "import importlib.util,json,pathlib,subprocess; p=pathlib.Path('audits/2026-10-10-n45-s-high1/seal.py'); spec=importlib.util.spec_from_file_location('high1_seal',p); m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m); inv=m.inventory(); d={'task':'N45-S-HIGH1','excluded_exact_top_level':sorted(m.EXCLUDED),'payload':[x for x in inv if x['path']!='negative/nested/receipt.json']}; r=subprocess.run(['python3','-B',str(p),'--check-payload','--manifest-stdin'],input=json.dumps(d),text=True,capture_output=True); print(r.stdout,end=''); import sys; print(r.stderr,end='',file=sys.stderr); sys.exit(r.returncode)"
+  ],
+  "cwd": "/home/ray/developer/ai/math",
+  "environment": {},
+  "expected_exit": 2,
+  "id": "bad-manifest-nested-omission",
+  "stderr_file": "logs/bad-manifest-nested-omission.stderr.txt",
+  "stderr_sha256": "c68c3fc43d2b426e25eac1201e424d111b5517995e64ba6352b7b805f388ecab",
+  "stdout_file": "logs/bad-manifest-nested-omission.stdout.txt",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

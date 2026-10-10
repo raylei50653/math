@@ -1,0 +1,371 @@
+{
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "authored_scope": "only audits/2026-10-09-n45-u/; no other task output writes",
+  "commands_and_logs": [
+    {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/source",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 1,
+      "log": "logs/base-docs.log",
+      "log_sha256": "54e736e3e632f34a8e8ae56b5d6aa4af7bf1d2a0356b287c6c20682df9fed262",
+      "record_path": "logs/base-docs.json",
+      "seconds": 0.7603883743286133
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/source",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "log": "logs/base-formal-docgraph.log",
+      "log_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+      "record_path": "logs/base-formal-docgraph.json",
+      "seconds": 0.21258234977722168
+    },
+    {
+      "FileExistsError": true,
+      "certificate_zero_byte_drift": true,
+      "command": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/checker.py",
+        "--generate"
+      ],
+      "exit": 1,
+      "expected_exit": 1,
+      "log": "logs/exclusive-refusal.log",
+      "log_sha256": "6c55918c24f4d0e0af758117695afa30500d29cb875e7d29770c047b054c3404",
+      "record_path": "logs/exclusive-refusal.json",
+      "seconds": 0.5170531272888184,
+      "verdict": "exclusive-create refusal holds"
+    },
+    {
+      "command": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/checker.py",
+        "--generate"
+      ],
+      "exit": 1,
+      "log": "logs/generate-1.log",
+      "log_sha256": "84a404fa9b945fdc88c3691ca32f1f99550f966315879d3fc6deba83c651a3ef",
+      "record_path": "logs/generate-1.json",
+      "seconds": 0.05867576599121094
+    },
+    {
+      "command": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/checker.py",
+        "--generate"
+      ],
+      "exit": 0,
+      "log": "logs/generate-2.log",
+      "log_sha256": "efe48b0a22132b46bbbec330ca83e99d3fec1087d40f7adc4826d2d4887e7e4c",
+      "record_path": "logs/generate-2.json",
+      "seconds": 0.4667701721191406
+    },
+    {
+      "command": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/checker.py",
+        "--generate"
+      ],
+      "exit": 0,
+      "log": "logs/generate-final.log",
+      "log_sha256": "0c02c880216fd81fed0917af1e9e81351a27a1cc317ecde12e0f53f5ee2fa1fc",
+      "record_path": "logs/generate-final.json",
+      "seconds": 0.4695274829864502
+    },
+    {
+      "command": "initial input-integrity wrapper; same SHA256 rereads plus unconditional unchanged-controller assertion",
+      "exit": 1,
+      "log": "logs/input-integrity-attempt-1.log",
+      "log_sha256": "09a9ac24342a137675366d237b6265645d6c9012d2f965b08d63f9fa8cdbb6ae",
+      "reason": "three concurrent routing files drifted; BASE mathematical inputs unchanged",
+      "record_path": "logs/input-integrity-attempt-1.json"
+    },
+    {
+      "base_input_zero_byte_drift": true,
+      "command": "SHA256 reread of 70 BASE inputs, external PDF, 3 concurrent routing files; git rev-parse HEAD; git status --porcelain=v1",
+      "exit": 0,
+      "log": "logs/input-integrity.log",
+      "log_sha256": "9f2e28a427eeb72d1f1fe2e4def0cd9b8071c5fd1fdf38a05d8f8543c9a0b30a",
+      "record_path": "logs/input-integrity.json",
+      "routing_files_drifted": 3,
+      "source_clean": true
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 1,
+      "log": "logs/main-whole-docgraph.log",
+      "log_sha256": "83da50ed515b77d08b1541ab7862d2d4eee94519841a826127d758893ead1790",
+      "record_path": "logs/main-whole-docgraph.json",
+      "seconds": 2.665137529373169
+    },
+    {
+      "command": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/checker.py",
+        "--check"
+      ],
+      "env_override": {},
+      "exit": 0,
+      "log": "logs/replay.log",
+      "log_sha256": "9dc10a3bf55b3498a8ed8863a32ae82a1c9e95fb8dc852406d349f0024521c91",
+      "read_only_watch_files": 73,
+      "record_path": "logs/replay.json",
+      "seconds": 0.5040912628173828,
+      "zero_byte_drift": true
+    },
+    {
+      "command": [
+        "local REPORT target/heading validation"
+      ],
+      "deferred_until_seal": [
+        "checks.json"
+      ],
+      "exit": 0,
+      "log": "logs/report-links-preseal.log",
+      "log_sha256": "adb71bbe59ff461b61716d7a5228aaa75799b037f907f7e06b2c68e3ad0863c4",
+      "record_path": "logs/report-links-preseal.json"
+    },
+    {
+      "command": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/checker.py",
+        "--check"
+      ],
+      "env_override": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "log": "logs/seed17.log",
+      "log_sha256": "9dc10a3bf55b3498a8ed8863a32ae82a1c9e95fb8dc852406d349f0024521c91",
+      "read_only_watch_files": 73,
+      "record_path": "logs/seed17.json",
+      "seconds": 0.4942455291748047,
+      "zero_byte_drift": true
+    },
+    {
+      "command": "new text payload LF/final-newline/trailing-whitespace validation",
+      "exit": 0,
+      "file_count": 6,
+      "log": "logs/text-whitespace.log",
+      "log_sha256": "a9eb00a1c97c817fdd6d29f9ff051ee6c79a8b1db1463b838c2a23b02580d126",
+      "record_path": "logs/text-whitespace.json"
+    },
+    {
+      "command": "initial six-file no-index whitespace wrapper with unconditional zero-exit assertion",
+      "exit": 1,
+      "log": "logs/whitespace-harness-attempt-1.log",
+      "log_sha256": "d2e6e2dd29e809acc39b77d20efb1e1b4f3b590be35df912fc51cd32174cb5da",
+      "reason": "no-index difference exits1 without whitespace diagnostics",
+      "record_path": "logs/whitespace-harness-attempt-1.json"
+    },
+    {
+      "command": "tracked diff + no-index checks for all current new text payloads",
+      "count": 7,
+      "exit": 1,
+      "log": "logs/whitespace.log",
+      "log_sha256": "ba8066bc5fb5c2168151488fae5dba20ea22e2518a5b9f8e0eb08365fd263a40",
+      "record_path": "logs/whitespace.json"
+    }
+  ],
+  "counts": {
+    "N1_unary_omission_graphs": 4,
+    "N2_graphs": 19,
+    "N2_minimal_unary_omission_rows": 0,
+    "capacity_G_not triggered": 203,
+    "capacity_G_triggered and holds": 90,
+    "capacity_X_not triggered": 106,
+    "capacity_X_triggered and holds": 12,
+    "capacity_placement_instances": 4,
+    "contact_edge_deleted_root_pair_queries": 1760,
+    "critical_edge_deletions": 555,
+    "derivative_root_pair_queries": 1760,
+    "full_piece_lifts": 2986,
+    "graphs": 23,
+    "local_root_pin_fibres": 11040,
+    "low_incidence_support_instances": 22,
+    "minimal_unary_omission_rows": 4,
+    "original_root_pair_queries": 3680,
+    "piece_relations": 690,
+    "placement_lambda": 4,
+    "unit_F_empty_rows": 38,
+    "unit_F_singleton_rows": 72,
+    "unit_derivatives": 11
+  },
+  "coverage": {
+    "N2_full_target": {
+      "count": 0,
+      "missing": [
+        "complete Sigma=933/941"
+      ],
+      "status": "not triggered"
+    },
+    "N2_unary_omission_45_54": {
+      "count": 0,
+      "missing": [
+        "rejecting unit derivative (all N2 unit derivatives accept all ten rows)"
+      ],
+      "status": "not triggered"
+    },
+    "N45-U-CAP_unit_budget": {
+      "count": 4,
+      "scope": "N1 low-degree-side columns, all lambda; N2 rejected derivative absent",
+      "status": "triggered and holds"
+    },
+    "N45-U-REL_unit_F_capacity": {
+      "count": 110,
+      "status": "triggered and holds"
+    },
+    "N45-U-S3_low_incidence_support": {
+      "count": 22,
+      "missing_for_contradiction_branch": [
+        "no singleton-support instance"
+      ],
+      "status": "triggered and holds"
+    },
+    "always_singleton_F_overclaim": {
+      "count": 38,
+      "scope": "capacity-one unary has F empty on these rows; no target source counterexample",
+      "status": "counterexample"
+    },
+    "two_original_unaries_exclusion": {
+      "count": 0,
+      "missing": [
+        "two original unaries and N2 unit-omission rejected row"
+      ],
+      "status": "not triggered"
+    }
+  },
+  "handoff": "REPORT.md sections1-9 and residual.json; no target-source realization or general N2 closure claim",
+  "input_boundary": {
+    "concurrent_routing_files_drifted": 3,
+    "external_PDF_zero_byte_drift": true,
+    "frozen_BASE_files": 70,
+    "frozen_BASE_zero_byte_drift": true,
+    "old_and_new_hashes_preserved_in": "logs/input-integrity.log",
+    "routing_not_used_for_mathematical_claims": true,
+    "source_worktree_clean": true
+  },
+  "not_run": [
+    {
+      "item": "Lean / native_decide / axioms audit",
+      "reason": "no new Lean source or theorem; evidence remains paper/external theorem/Python"
+    },
+    {
+      "item": "E3/E4/E4C whole producers and minimal-core enumeration",
+      "reason": "only fixed BASE controls recalculated; no broad source search"
+    },
+    {
+      "item": "U1-U4, ES/ER large enumerations",
+      "reason": "outside N45-U authorized scope"
+    },
+    {
+      "item": "remote refs/CI/network publication",
+      "reason": "no commit, push, PR or external messaging requested"
+    }
+  ],
+  "official_certificate": {
+    "bytes": 7682242,
+    "exclusive_create_refusal_exit": 1,
+    "ordinary_replay_exit": 0,
+    "path": "certificate-final.json",
+    "read_only_zero_byte_drift": true,
+    "seed17_replay_exit": 0,
+    "sha256": "1f7dc2f13fa372150f2d915fd10494986c2f0a3aa08fa965c8b2f013315980d0"
+  },
+  "payload_hashes": [
+    {
+      "bytes": 22852,
+      "path": "REPORT.md",
+      "sha256": "0c3d117f1c804bc0695fc97fd570f2ede6451d5a21ca036f337f4d11c5de72a7"
+    },
+    {
+      "bytes": 7682242,
+      "path": "certificate-final.json",
+      "sha256": "1f7dc2f13fa372150f2d915fd10494986c2f0a3aa08fa965c8b2f013315980d0"
+    },
+    {
+      "bytes": 7672880,
+      "path": "certificate.json",
+      "sha256": "3069c06cc707c414ba39b8c9fe79ed7cec5d6cdf3c2323ae3a806a4b6e04d2ab"
+    },
+    {
+      "bytes": 27095,
+      "path": "checker.py",
+      "sha256": "37da93a6fe6109f82287eac67db518515b6718c30013f020acfd21e6364162e3"
+    },
+    {
+      "bytes": 164927,
+      "path": "gallai.pdf",
+      "sha256": "50e998fcb016418698ef31b932c6c2e728007f5e3b3348b93744781196ac1aea"
+    },
+    {
+      "bytes": 16794,
+      "path": "inputs.json",
+      "sha256": "ed32a320d7924af82f87fbbe78c12a667fb34222299414ac4fb4839b6895355d"
+    },
+    {
+      "bytes": 113832,
+      "path": "residual.json",
+      "sha256": "e9f247ce0a1bea7e87a9bb0d5ab6adcb4a21046f1649cdbd8aae5b0e78953ff3"
+    }
+  ],
+  "preserved_failures": [
+    {
+      "cause": "draft schema comparison mismatch; no certificate created; corrected before official generation",
+      "record": "logs/generate-1.json"
+    },
+    {
+      "cause": "two old untracked audit artifacts absent from independent BASE checkout",
+      "record": "logs/base-docs.json"
+    },
+    {
+      "cause": "62 duplicate IDs, existing scratch and retained independent source/docs copies",
+      "record": "logs/main-whole-docgraph.json"
+    },
+    {
+      "cause": "six no-index differences exit1 without whitespace diagnostics; byte-level whitespace check exit0",
+      "record": "logs/whitespace.json"
+    },
+    {
+      "cause": "initial wrapper mixed concurrent routing provenance with immutable mathematical inputs; BASE hashes stayed unchanged",
+      "record": "logs/input-integrity-attempt-1.json"
+    }
+  ],
+  "proof_claims": {
+    "N45-U-CAP": "same-beta chi0 low-degree-side zero remainder and original-U budget placement",
+    "N45-U-CROSS": "E4-U with same-Sigma minimalization, exact933/941 Q_X table",
+    "N45-U-REL": "unit contact relation; complete deletion equivalence and newly gained-row forcing",
+    "N45-U-RES": "one original U, one long mixed, one short mixed remain; full same-source cross-row obligation OPEN",
+    "N45-U-S3": "total mixed root incidence<=3 implies actual support>=2 under original source/witness premises",
+    "N45-U-SHORT": "excludes two short mixed in N45-U identity",
+    "N45-U-U2": "excludes two original unaries in N45-U identity",
+    "N45-U-WIT": "original piece witness and original shield fee"
+  },
+  "source_HEAD": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "source_materialization": "detached BASE worktree; retained read-only tracked inputs, no content edits",
+  "status": "completed scoped first-batch delivery; paper claims pending independent A audit and J incremental control acceptance",
+  "task": "N45-U"
+}

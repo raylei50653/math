@@ -1,0 +1,115 @@
+{
+  "base": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "coverage": {
+    "LOW_incidence2_HIGH_long": "OPEN",
+    "general_N2_E": "OPEN",
+    "initial_hashed_regular_files": 25869,
+    "initial_nested_repository_coverage": "directory presence only; no retrospective full-tree zero-drift claim",
+    "initial_nested_repository_directory_entries": 4,
+    "initial_nested_repository_recursive_hash": false,
+    "initial_preexisting_Git_inventory_entries": 25895,
+    "initial_symlink_identities": 22,
+    "new_Lean": false,
+    "new_finite_source_controls": "not established or executed; no trigger count",
+    "new_source_realization": false
+  },
+  "decision": "ACCEPT_TOOL_ENVELOPE_WITH_NONBLOCKING_INDEX_FINDING",
+  "findings": [
+    {
+      "actual_value": "seal-checks/commands.json",
+      "authoritative_final_evidence": "seal-final-v4/commands.json via delivery.json seal_files",
+      "disposition": "preserve immutable worker and explicitly document this field as stale; no change to final artifact-integrity acceptance or mathematical scope",
+      "field": "postseal_actual_results",
+      "id": "L1C-INDEX-01",
+      "path": "checks.json",
+      "problem": "Points to preserved failed v1 sealing commands, not final v4 successful commands. The REPORT and delivery.json already identify and bind final v4 correctly.",
+      "severity": "nonblocking metadata navigation defect"
+    }
+  ],
+  "input_identity": {
+    "BASE_git_blob_and_sha256_checked": 12,
+    "current_live_pins_at_audit_start_checked": 6,
+    "frozen_current_pins_checked": 6,
+    "live_HEAD_at_audit_start": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+  },
+  "paper_decision": "not adjudicated by this task; worker remains arbitrary-size paper candidate pending independent mathematical adjudication",
+  "preserved_documentation_failures": {
+    "fresh_BASE_check_docs_exit": 1,
+    "fresh_BASE_historical_missing_paths": 2,
+    "historical_E4_provenance_byte_replay": "retained, not rerun",
+    "whole_worktree_DocGraph_exit": 1,
+    "whole_worktree_duplicate_id_lines": 62
+  },
+  "preserved_failed_generations": {
+    "v1": {
+      "math_sections_1_to_6_unchanged": true,
+      "negative_stage": "inventory ordering, not digest",
+      "normal_exit": 2
+    },
+    "v2": {
+      "math_sections_1_to_6_unchanged": true,
+      "negative_stage": "digest",
+      "normal_exit": 2,
+      "normal_failure_stage": "nested repository directory mistaken for missing file"
+    },
+    "v3": {
+      "math_sections_1_to_6_unchanged": true,
+      "negative_stage": "digest",
+      "normal_exit": 2,
+      "normal_failure_stage": "inline mathematical code mistaken for local Markdown link"
+    }
+  },
+  "read_only_constraints": {
+    "PR": false,
+    "commit": false,
+    "delegation": false,
+    "only_new_exclusive_audit_written": true,
+    "push": false,
+    "worker_mutator_executed": false,
+    "worker_or_shared_edits": false
+  },
+  "replay": {
+    "independent_frozen_normal_exit": 0,
+    "independent_frozen_seed17_exit": 0,
+    "independent_frozen_stdout_byte_equal": true,
+    "independent_synthetic_negative_controls": 7,
+    "independent_synthetic_negative_exit": 2,
+    "parent_pre_new_directory_negative_digest_stage": true,
+    "parent_pre_new_directory_negative_exit": 2,
+    "parent_pre_new_directory_strict_normal_exit": 0,
+    "parent_pre_new_directory_strict_receipt_checked": true,
+    "parent_pre_new_directory_strict_seed17_exit": 0,
+    "parent_pre_new_directory_strict_stdout_byte_equal": true,
+    "worker_live_strict_after_additions_reason": "pre-existing workspace inventory differs; expected new-directory inventory drift, not worker payload corruption",
+    "worker_live_strict_after_audit_additions_exit": 2,
+    "worker_sealing_normal_exit": 0,
+    "worker_sealing_receipt_checked": false,
+    "worker_sealing_seed17_exit": 0,
+    "worker_sealing_stdout_byte_equal": true
+  },
+  "replay_entrypoints": [
+    "python3 -B audits/2026-10-10-n45-l1c/checker.py",
+    "python3 -B audits/2026-10-10-n45-l1c/verify.py"
+  ],
+  "scope": "independent tool/artifact/coverage audit only",
+  "task": "N45-L1C",
+  "worker_manifest": {
+    "all_nested_seal_directories_blanket_excluded": false,
+    "excluded_top_level_directory_prefix": "seal-final-v4/",
+    "excluded_top_level_regular_files": [
+      "MANIFEST.final-v4.sha256",
+      "delivery.json"
+    ],
+    "file": "MANIFEST.final-v4.sha256",
+    "nested_manifest_regular_files_included": 2,
+    "old_seal_metadata_regular_files_in_main_manifest": {
+      "seal-checks/": 10,
+      "seal-final-v2/": 10,
+      "seal-final-v3/": 10
+    },
+    "payload_symlinks": 5,
+    "receipt_bound_metadata_files": 10,
+    "regular_payload_files": 6049,
+    "sha256": "7dba2b7df58370838b12c5184e590de4e46e00628db84a204d38db3e139e6292"
+  }
+}

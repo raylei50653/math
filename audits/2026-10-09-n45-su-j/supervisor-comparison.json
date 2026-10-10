@@ -1,0 +1,159 @@
+{
+  "comparisons": [
+    {
+      "equal": true,
+      "field": "singleton_rows",
+      "independent": 288,
+      "section": "S",
+      "supervisor": 288
+    },
+    {
+      "equal": true,
+      "field": "singleton_contact_bound_triggered",
+      "independent": 92,
+      "section": "S",
+      "supervisor": 92
+    },
+    {
+      "equal": true,
+      "field": "singleton_low_incidence_valid",
+      "independent": 12,
+      "section": "S",
+      "supervisor": 12
+    },
+    {
+      "equal": true,
+      "field": "abstract_capacity_columns",
+      "independent": 4,
+      "section": "S",
+      "supervisor": 4
+    },
+    {
+      "equal": true,
+      "field": "scalar_incidence_rows",
+      "independent": 12,
+      "section": "S",
+      "supervisor": 12
+    },
+    {
+      "equal": true,
+      "field": "cross_row_mask_cases",
+      "independent": 2,
+      "section": "S",
+      "supervisor": 2
+    },
+    {
+      "equal": true,
+      "field": "full_graph_rows",
+      "independent": 190,
+      "section": "S",
+      "supervisor": 190
+    },
+    {
+      "equal": true,
+      "field": "spoke_rejected_row_queries",
+      "independent": 47,
+      "section": "S",
+      "supervisor": 47
+    },
+    {
+      "equal": true,
+      "field": "complete_root_pair_cells",
+      "independent": 3792,
+      "section": "S",
+      "supervisor": 3792
+    },
+    {
+      "equal": true,
+      "field": "validated_S_full_lifts",
+      "independent": 218,
+      "section": "S",
+      "supervisor": 218
+    },
+    {
+      "equal": true,
+      "field": "S_source_triggered",
+      "independent": 0,
+      "section": "S",
+      "supervisor": 0
+    },
+    {
+      "equal": true,
+      "field": "U_graphs",
+      "independent": 23,
+      "section": "U",
+      "supervisor": 23
+    },
+    {
+      "equal": true,
+      "field": "U_original_pair_cells",
+      "independent": 3680,
+      "section": "U",
+      "supervisor": 3680
+    },
+    {
+      "equal": true,
+      "field": "U_derivative_pair_cells",
+      "independent": 1760,
+      "section": "U",
+      "supervisor": 1760
+    },
+    {
+      "equal": true,
+      "field": "U_contact_deleted_pair_cells",
+      "independent": 1760,
+      "section": "U",
+      "supervisor": 1760
+    },
+    {
+      "equal": true,
+      "field": "U_local_relation_rows_vs_J",
+      "independent": 690,
+      "section": "U",
+      "supervisor": 690
+    },
+    {
+      "equal": true,
+      "field": "U_full_piece_lifts_vs_J",
+      "independent": 2986,
+      "section": "U",
+      "supervisor": 2986
+    },
+    {
+      "equal": true,
+      "field": "U_BC2_columns_vs_J",
+      "independent": 102,
+      "section": "U",
+      "supervisor": 102
+    }
+  ],
+  "independent_certificate_sha256": "a4b5b4c148f823f8df22a2672700eb40516bae0fd673edf8210a477af3b508ee",
+  "read_order": "independent exclusive certificate and normal/seed17 replays completed before supervisor review.py/results were read",
+  "scope_differences": [
+    "This checker independently reconstructs 690 local relations and all 2986 lifts; S supervision only compared source metadata to J.",
+    "This checker reconstructs capacity terms from empty local fibres; batch U supervision compared worker terms to J.",
+    "Independent solver uses bit-domain propagation; supervisor uses fixed vertex order forward checking.",
+    "This checker additionally enumerates fixed critical edgecuts and new-gamma root projections; no new graph search.",
+    "A payload/paper judgments are outside this comparison.",
+    "U counts accepted rows as one not-triggered record; J counts each direction. Counts are not interchangeable."
+  ],
+  "semantic_differences": [],
+  "supervisor_inputs": [
+    {
+      "path": "audits/2026-10-09-n45-s-supervision/review.py",
+      "sha256": "e58d10b5a83a1bd080dff7e44575698359458f24f70f0c5b054e5857a6f906b7"
+    },
+    {
+      "path": "audits/2026-10-09-n45-s-supervision/independent_review.json",
+      "sha256": "38c497e6b1169a7cba42d1a77dbe292070320ecb2d2d708599c1e5fbef2d4fd9"
+    },
+    {
+      "path": "audits/2026-10-09-n45-batch-supervision/review.py",
+      "sha256": "771b76f64dc99dbed2816a627e8759caad6601adbd39c9681aa9049c1b11ecc0"
+    },
+    {
+      "path": "audits/2026-10-09-n45-batch-supervision/independent_review.json",
+      "sha256": "afb58b9a19bf4a8b614e57ec072b079f98f0c0c3253b734f268c4fa26c7c0547"
+    }
+  ]
+}

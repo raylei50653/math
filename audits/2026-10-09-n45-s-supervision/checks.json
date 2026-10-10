@@ -1,0 +1,180 @@
+{
+  "J_before_after_byte_and_mtime_drift": [],
+  "S_before_after_byte_and_mtime_drift": [],
+  "base": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "finite_review": {
+    "normal": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-s-supervision/review.py",
+        "--output",
+        "audits/2026-10-09-n45-s-supervision/independent_review.json"
+      ],
+      "exit": 0
+    },
+    "outputs_byte_equal": true,
+    "queries": 237,
+    "root_pair_cells": 3792,
+    "seed17": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-s-supervision/review.py",
+        "--output",
+        "audits/2026-10-09-n45-s-supervision/independent_review_seed17.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0
+    },
+    "source_premises_triggered": 0,
+    "validated_S_full_lifts": 218
+  },
+  "not_run": [
+    "new Lean proof or lake build",
+    "all upstream enumerations/classifications",
+    "N45-A/U worker deliverables",
+    "external publishing, commit, push",
+    "second research batch"
+  ],
+  "original_doc_failures_preserved": [
+    "fresh BASE absent historical audit targets",
+    "whole worktree DocGraph duplicate IDs"
+  ],
+  "paper": {
+    "N45_S_A_report_received": false,
+    "claims": [
+      "N45-S-01",
+      "N45-S-02",
+      "N45-S-03",
+      "N45-S-04",
+      "N45-S-05",
+      "N45-S-06"
+    ],
+    "pre_review": "passed within stated premises and inherited dependencies",
+    "program_proves_paper": false
+  },
+  "propagation_stop": "L1 pending formal incremental cross-audit",
+  "replays": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-s/checker.py",
+        "--source-root",
+        "/tmp/math-n45-s-20261009",
+        "--check"
+      ],
+      "environment": {},
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "replay",
+      "log": "replay.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-s/checker.py",
+        "--source-root",
+        "/tmp/math-n45-s-20261009",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "seed17",
+      "log": "seed17.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-s/checker.py",
+        "--source-root",
+        "/tmp/math-n45-s-20261009"
+      ],
+      "environment": {},
+      "exit": 1,
+      "expected_exit": 1,
+      "id": "exclusive_create_guard",
+      "log": "exclusive_create_guard.log"
+    }
+  ],
+  "reviewed_unchanged": [
+    "BASE E4 canonical source and Phase B: new paper still awaits independent adoption",
+    "parent N2 and conjecture E remain OPEN; README/HANDOFF routing unchanged"
+  ],
+  "scope": "new supervisor directory and three management/navigation files",
+  "status": "supervisor pre-review complete; independent incremental cross-audits pending",
+  "validation_runs": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "docs_shared",
+      "log": "docs_shared.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "docgraph_docs_shared",
+      "log": "docgraph_docs_shared.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/tmp/math-n45-s-20261009",
+      "exit": 1,
+      "expected_exit": 1,
+      "id": "docs_fresh_BASE",
+      "log": "docs_fresh_BASE.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit": 1,
+      "expected_exit": 1,
+      "id": "docgraph_whole_shared",
+      "log": "docgraph_whole_shared.log"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "diff_tracked",
+      "log": "diff_tracked.log"
+    }
+  ]
+}

@@ -1,0 +1,410 @@
+{
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "commands_and_logs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-j/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "J-replay",
+      "log": "logs/J-replay.log",
+      "log_sha256": "e9619d3a0671b182234b66271a89aaa13e881b33ba7b497a22440af19a61a247",
+      "seconds": 1.05003
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-j/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "J-seed17",
+      "log": "logs/J-seed17.log",
+      "log_sha256": "e9619d3a0671b182234b66271a89aaa13e881b33ba7b497a22440af19a61a247",
+      "seconds": 1.044615
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-s/checker.py",
+        "--source-root",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-su-j/base-source",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "S-replay",
+      "log": "logs/S-replay.log",
+      "log_sha256": "17bb2efd3faeb1a5fa952a114ab15a644de8a9af48cdeb4148b393dfd770c092",
+      "seconds": 0.17886
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-s/checker.py",
+        "--source-root",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-su-j/base-source",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "S-seed17",
+      "log": "logs/S-seed17.log",
+      "log_sha256": "17bb2efd3faeb1a5fa952a114ab15a644de8a9af48cdeb4148b393dfd770c092",
+      "seconds": 0.18252
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-u/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "U-replay",
+      "log": "logs/U-replay.log",
+      "log_sha256": "9dc10a3bf55b3498a8ed8863a32ae82a1c9e95fb8dc852406d349f0024521c91",
+      "seconds": 0.519056
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-u/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "U-seed17",
+      "log": "logs/U-seed17.log",
+      "log_sha256": "9dc10a3bf55b3498a8ed8863a32ae82a1c9e95fb8dc852406d349f0024521c91",
+      "seconds": 0.517397
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "docs-shared",
+      "log": "logs/docs-shared.log",
+      "log_sha256": "bd7ec38443b4a948aa3929709e237c49c3dd57f498b68bda6de1c7867985d507",
+      "seconds": 0.754833
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-su-j/checker.py",
+        "--generate"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 1,
+      "expected_exit": 1,
+      "id": "exclusive-create-guard",
+      "log": "logs/exclusive-create-guard.log",
+      "log_sha256": "e9d1c2ae958cc2fcb696a13ad55d9f8d4ed9e071b48f5cbf4d6c1d8e1bf53f4d",
+      "seconds": 3.068724
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-su-j/base-source/tools/docgraph",
+        "--repo",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-su-j/base-source",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "formal-docgraph-BASE",
+      "log": "logs/formal-docgraph-BASE.log",
+      "log_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+      "seconds": 0.186489
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "formal-docgraph-shared",
+      "log": "logs/formal-docgraph-shared.log",
+      "log_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+      "seconds": 0.262308
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-su-j/base-source/scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 1,
+      "expected_exit": 1,
+      "id": "fresh-BASE-docs",
+      "log": "logs/fresh-BASE-docs.log",
+      "log_sha256": "54e736e3e632f34a8e8ae56b5d6aa4af7bf1d2a0356b287c6c20682df9fed262",
+      "seconds": 0.761413
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-su-j/checker.py",
+        "--generate"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "independent-generate",
+      "log": "logs/independent-generate.log",
+      "log_sha256": "b31d64dfc24c32a87f5b7d514af62aa94c1be8a5398b9aea8db262ecb5502864",
+      "seconds": 2.926986
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-su-j/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "independent-replay",
+      "log": "logs/independent-replay.log",
+      "log_sha256": "5edcc177bcbfab616d498336ff6fb74d5598f70d3a8259f1efd9769ca359b10a",
+      "seconds": 3.137457
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-su-j/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "independent-seed17",
+      "log": "logs/independent-seed17.log",
+      "log_sha256": "5edcc177bcbfab616d498336ff6fb74d5598f70d3a8259f1efd9769ca359b10a",
+      "seconds": 3.061282
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-su-j/compare.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "supervisor-comparison",
+      "log": "logs/supervisor-comparison.log",
+      "log_sha256": "a4f7759ba65f31b49bdf4cc609c16f8489ee780868721d7556c8be5bda5fe55c",
+      "seconds": 0.23371
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "tracked-whitespace",
+      "log": "logs/tracked-whitespace.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.021667
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 1,
+      "expected_exit": 1,
+      "id": "whole-docgraph-shared",
+      "log": "logs/whole-docgraph-shared.log",
+      "log_sha256": "47ba5bce492facf3049aeed6bce001927d5d0b75c15bdd14565cc0eabf664802",
+      "seconds": 2.805157
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-su-j/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "zero-drift-and-output-validation",
+      "log": "logs/zero-drift-and-output-validation.log",
+      "log_sha256": "74a67ce44da6a22bf49077af850fcc9b14b44a0461ff022ca11d5cda1ba8dc98",
+      "seconds": 0.888012
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-su-j/finalize.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "finalize",
+      "log": "logs/finalize.log",
+      "log_sha256": "de0dde84751f2429475eaeae872947c2ebccb22a9defcf02e05dbf0535c242d7",
+      "scope": "Assertions above completed; exclusive seal and read-back verification below.",
+      "seconds": 0.011046
+    }
+  ],
+  "expected_failures_are_preserved": {
+    "exclusive-create-guard": 1,
+    "fresh-BASE-docs": 1,
+    "whole-docgraph-shared": 1
+  },
+  "finite_discrepancies": [],
+  "formal_docs_PASS_is_not_whole_worktree_PASS": true,
+  "historical_failures_not_rerun": [
+    {
+      "evidence": "../2026-10-09-n45-batch-supervision/e4_core_constraints.log and e4_reductions.log",
+      "exit": 1,
+      "reason": "Historical source provenance mismatch; outside this incremental finite task. Original FAIL retained.",
+      "scope": "E4 core constraints and reductions, normal and seed17"
+    }
+  ],
+  "input_drift": [],
+  "not_run": [
+    {
+      "reason": "SU-A owns these obligations.",
+      "scope": "S-01–06 and U arbitrary-size paper / Gallai primary-source applicability"
+    },
+    {
+      "reason": "Fixed incremental inputs only; no broader search authorized.",
+      "scope": "E3/E4/E4C whole enumeration, ES/ER, U1–U4, new graph generation"
+    },
+    {
+      "reason": "Supplied core edges/degrees and retained-edge lifts checked; no new core claim.",
+      "scope": "All minimal cores re-enumeration"
+    },
+    {
+      "reason": "No new Lean and no formalization claim.",
+      "scope": "lake build / axioms audit / native_decide"
+    },
+    {
+      "reason": "Read-only --check used; preserve original logs and artifacts.",
+      "scope": "Original worker generation and full verify drivers"
+    },
+    {
+      "reason": "Read only after independent computation for comparison; never imported or executed.",
+      "scope": "Supervisor review scripts replay"
+    }
+  ],
+  "preparation": {
+    "commands": [
+      "git rev-parse HEAD",
+      "git status --short --branch",
+      "git show BASE:path for 71 unique authority paths and each S/U/J manifest entry",
+      "git archive BASE (extract exclusively into fresh base-source directory)"
+    ],
+    "exit": 0,
+    "record": "logs/setup.json",
+    "record_correction": "setup.json literal 71? is an explanatory placeholder; actual BASE_unique_inputs is 71."
+  },
+  "task": "N45-SU-J"
+}

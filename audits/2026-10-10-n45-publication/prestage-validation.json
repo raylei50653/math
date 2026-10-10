@@ -1,0 +1,192 @@
+{
+  "executions": [
+    {
+      "name": "publication-normal",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-publication/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:26:34.497130+00:00",
+      "elapsed_seconds": 24.7,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/publication-normal.stdout.txt",
+      "stdout_sha256": "962a0b3f5425cbad2c9afa2897c909c2965029d042188aac0a0694ab3f6b5722",
+      "stderr": "logs/publication-normal.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "publication-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-publication/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "17"
+      },
+      "start_UTC": "2026-10-10T08:26:34.497701+00:00",
+      "elapsed_seconds": 24.7,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/publication-seed17.stdout.txt",
+      "stdout_sha256": "962a0b3f5425cbad2c9afa2897c909c2965029d042188aac0a0694ab3f6b5722",
+      "stderr": "logs/publication-seed17.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "archive-verify",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-publication/archive.py",
+        "verify"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:26:34.498291+00:00",
+      "elapsed_seconds": 18.356,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/archive-verify.stdout.txt",
+      "stdout_sha256": "52813e97432be887ea6a22c0f3c20ddc647298b23147c99929036a6fb9281ee6",
+      "stderr": "logs/archive-verify.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:26:34.498766+00:00",
+      "elapsed_seconds": 0.751,
+      "exit_code": 1,
+      "expected_exit": 0,
+      "stdout": "logs/docs.stdout.txt",
+      "stdout_sha256": "bc4124a0743230e5d998d8999ff36b912d1b00633e838093ae240e7772cf0b7d",
+      "stderr": "logs/docs.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docgraph-docs",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:26:34.499157+00:00",
+      "elapsed_seconds": 0.469,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/docgraph-docs.stdout.txt",
+      "stdout_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+      "stderr": "logs/docgraph-docs.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docgraph-whole",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:26:34.501360+00:00",
+      "elapsed_seconds": 5.013,
+      "exit_code": 1,
+      "expected_exit": 1,
+      "stdout": "logs/docgraph-whole.stdout.txt",
+      "stdout_sha256": "3b55401c56babce0efbd6b1c4c480eea52dc0ff51ae277d0c4c218d81b59afa2",
+      "stderr": "logs/docgraph-whole.stderr.txt",
+      "stderr_sha256": "3f3f8f9b1fac8456ceeabc516726d5b4552323f3273f637ea1966622644b7885"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:26:34.501651+00:00",
+      "elapsed_seconds": 0.032,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/diff-check.stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "logs/diff-check.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "negative-nested-omission",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-publication/verify.py",
+        "--inputs-stdin"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:26:59.311502+00:00",
+      "elapsed_seconds": 4.62,
+      "exit_code": 2,
+      "expected_exit": 2,
+      "stdout": "logs/negative-nested-omission.stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "logs/negative-nested-omission.stderr.txt",
+      "stderr_sha256": "5fa3245339245213ad421b696c9a14623f620940e84a384b066642d88d10d538",
+      "stdin_sha256": "696dc2f4bf6d13c9547fff1f56f63f9620279fff68797f9ba6d8b53cfac06e9b"
+    }
+  ],
+  "normal_seed17_stdout_identical": true,
+  "negative_omitted": "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-s-high2/receipt.json",
+  "historical_FAIL_preserved": true,
+  "new_Lean": false,
+  "finite_source": "not established/not executed"
+}

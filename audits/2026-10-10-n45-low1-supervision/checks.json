@@ -1,0 +1,326 @@
+{
+  "commands": [
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "adoption-docs-final",
+      "stderr": "logs/adoption-docs-final.stderr.log",
+      "stdout": "logs/adoption-docs-final.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "label": "adoption-docs",
+      "stderr": "logs/adoption-docs.stderr.log",
+      "stdout": "logs/adoption-docs.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-s-low1/base-source/scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "label": "base-historical-doc-fail",
+      "stderr": "logs/base-historical-doc-fail.stderr.log",
+      "stdout": "logs/base-historical-doc-fail.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "cached-whitespace",
+      "stderr": "logs/cached-whitespace.stderr.log",
+      "stdout": "logs/cached-whitespace.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "current-before-docs",
+      "stderr": "logs/current-before-docs.stderr.log",
+      "stdout": "logs/current-before-docs.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "final-git-state",
+      "stderr": "logs/final-git-state.stderr.log",
+      "stdout": "logs/final-git-state.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "formal-docgraph-final",
+      "stderr": "logs/formal-docgraph-final.stderr.log",
+      "stdout": "logs/formal-docgraph-final.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "formal-docgraph",
+      "stderr": "logs/formal-docgraph.stderr.log",
+      "stdout": "logs/formal-docgraph.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l1a/checker.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "l1a-normal",
+      "stderr": "logs/l1a-normal.stderr.log",
+      "stdout": "logs/l1a-normal.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l1a/checker.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "l1a-seed17",
+      "stderr": "logs/l1a-seed17.stderr.log",
+      "stdout": "logs/l1a-seed17.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l1c/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "l1c-normal",
+      "stderr": "logs/l1c-normal.stderr.log",
+      "stdout": "logs/l1c-normal.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l1c/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "l1c-seed17",
+      "stderr": "logs/l1c-seed17.stderr.log",
+      "stdout": "logs/l1c-seed17.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l1r/checker.py",
+        "--check",
+        "--manifest",
+        "audits/2026-10-10-n45-l1r/MANIFEST.final-v2.sha256"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "l1r-normal",
+      "stderr": "logs/l1r-normal.stderr.log",
+      "stdout": "logs/l1r-normal.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l1r/checker.py",
+        "--check",
+        "--manifest",
+        "audits/2026-10-10-n45-l1r/MANIFEST.final-v2.sha256"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "l1r-seed17",
+      "stderr": "logs/l1r-seed17.stderr.log",
+      "stdout": "logs/l1r-seed17.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "-c",
+        "from pathlib import Path; p=Path(\"audits/2026-10-10-n45-low1-supervision/logs\"); a=(p/\"worker-independent-normal.stdout.log\").read_bytes(); b=(p/\"worker-independent-seed17.stdout.log\").read_bytes(); assert a==b; print(\"independent frozen-payload normal/seed17 byte equal\")"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "replay-output-equality",
+      "stderr": "logs/replay-output-equality.stderr.log",
+      "stdout": "logs/replay-output-equality.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-low1-supervision/intake.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "reviewer-intake",
+      "stderr": "logs/reviewer-intake.stderr.log",
+      "stdout": "logs/reviewer-intake.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "tracked-whitespace-final",
+      "stderr": "logs/tracked-whitespace-final.stderr.log",
+      "stdout": "logs/tracked-whitespace-final.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "tracked-whitespace",
+      "stderr": "logs/tracked-whitespace.stderr.log",
+      "stdout": "logs/tracked-whitespace.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "label": "whole-docgraph",
+      "stderr": "logs/whole-docgraph.stderr.log",
+      "stdout": "logs/whole-docgraph.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-low1-supervision/review.py",
+        "worker"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "worker-independent-normal",
+      "stderr": "logs/worker-independent-normal.stderr.log",
+      "stdout": "logs/worker-independent-normal.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-low1-supervision/review.py",
+        "worker"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "worker-independent-seed17",
+      "stderr": "logs/worker-independent-seed17.stderr.log",
+      "stdout": "logs/worker-independent-seed17.stdout.log"
+    }
+  ],
+  "general_N2_E": "OPEN",
+  "initial_strict_replays": "initial-strict-replays.json",
+  "lake_build": "not run: no Lean change; paper mapping not formalized",
+  "paper_proved_by_tools": false,
+  "replay_byte_equal_groups": [
+    "worker-independent",
+    "l1a",
+    "l1r",
+    "l1c"
+  ]
+}

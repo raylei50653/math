@@ -1,0 +1,255 @@
+List coloring and Gallai trees
+Zdeněk Dvořák
+March 24, 2018
+
+1
+
+List coloring and choosability
+
+A list assignment for a graph G is a function L that to each vertex v ∈ V (G)
+assigns a list L(v) of colors. An L-coloring of G is a proper coloring ϕ such
+that ϕ(v) ∈ L(v) for all v ∈ V (G). The choosability χl (G) of G is the
+minimum integer k such that G can be L-colored for every assignment L of
+lists of size at least k.
+Observation 1. Every graph G satisfies
+χ(G) ≤ χl (G).
+If G is d-degenerate, then
+χl (G) ≤ d + 1.
+Choosability matches the chromatic number for many graphs (cycles,
+cliques, . . . ). However, the choosability can be arbitrarily large compared
+to the chromatic number, as the following result shows.
+Lemma 2. For every positive integer a,
+χl (Ka,aa ) = a + 1.
+Proof. For every n, the bipartite graph Ka,n is a-degenerate, implying that
+χl (Ka,n ) ≤ a + 1. Hence, it suffices to show that there exists an assignment
+of lists of size a to Ka,aa from that the graph cannot be colored.
+Let A and B be the parts of Ka,aa , where |A| = a and |B| = aa .
+Let A = {v1 , . . . , va }. Since |B| is equal to the number of sequences of
+numbers {1, . . . , a} of length a, we can label vertices of B as ui1 ,...,ia for
+1 ≤ i1 , . . . , ia ≤ a. Let us give vertices of A pairwise disjoint lists, say
+L(vi ) = {(i, 1), (i, 2), . . . , (i, a)} for 1 ≤ i ≤ a. We give vertices of B different
+lists, each of them intersecting the list of each vertex of A in exactly one
+1
+
+color; say L(ui1 ,...,ia ) = {(1, i1 ), (2, i2 ), . . . , (a, ia )} for 1 ≤ i1 , . . . , ia ≤ a. We
+claim that Ka,aa is not L-colorable; indeed, if we give vertices of A colors
+(1, c1 ), (2, c2 ), . . . , (a, ca ), then all colors in the list of the vertex uc1 ,c2 ,...,ca
+are used on its neighbors, and thus this vertex cannot be colored.
+On the other hand, we have the following positive result on choosability
+of bipartite graphs.
+Lemma 3. For every positive integer n,
+χl (Kn,n ) ≤ blog2 nc + 2.
+Proof. Let c = blog2 nc + 2 and let L be any assignment of lists of size at
+least c to vertices of Kn,n . Let A and B be the parts of Kn,n . For each color,
+we flip a fair coin and according to the result we delete it either from the lists
+of all vertices of A or from the lists of all vertices of B. Afterwards, the lists
+of vertices of A are disjoint from the lists of vertices of B, and thus if these
+lists are non-empty, we can properly color Kn,n . The probability that a list
+of a vertex v ∈ V (Kn,n ) becomes empty is at most 2−c . Hence, the expected
+number of empty lists is at most
+2−c |V (Kn,n |) =
+
+2n
+2blog2 nc+2
+
+< 1.
+
+Hence, with non-zero probability, all the lists are non-empty, and thus Kn,n
+can be L-colored. Since the choice of L was arbitrary, it follows that χl (Kn,n ) ≤
+c as required.
+Note that
+χl (Kn,n ) ≥
+
+log2 n
+log2 log2 n
+
+by Lemma 2; a more involved argument shows that actually χl (Kn,n ) =
+Ω(log n).
+
+2
+
+Planar graphs
+
+By Observation 1, all planar graphs are 6-choosable. Thomassen proved that
+they are actually 5-choosable, strengthening the 5-color theorem. In fact, he
+proved the following stronger claim.
+Theorem 4. Let G be a plane graph, let p1 p2 be an edge contained in the
+boundary of its outer face, and let L be a list assignment for G satisfying the
+following.
+2
+
+• |L(v)| ≥ 5 for every vertex v ∈ V (G) not incident with the outer face.
+• |L(v)| ≥ 3 for every vertex v ∈ V (G) incident with the outer face and
+distinct from p1 and p2 .
+• |L(p1 )|, |L(p2 )| ≥ 1, and if |L(p1 )| = |L(p2 )| = 1, then L(p1 ) 6= L(p2 ).
+Then G is L-colorable.
+Proof. We proceed by induction on the number of vertices of G. The case
+|V (G)| = 2 is trivial, hence assume |V (G)| ≥ 3.
+We can assume G is connected, otherwise we apply induction to each
+component of G. Furthermore, we can assume G is 2-connected. Otherwise,
+G = G1 ∪ G2 for proper induced subgraphs G1 and G2 of G intersecting in
+exactly one vertex v. We can assume that p1 p2 ∈ E(G1 ). By the induction
+hypothesis, there exists an L-coloring ϕ1 of G1 . Let L0 (v) = {ϕ1 (v)} and
+L0 (x) = L(x) for all x ∈ V (G2 ) \ {v}. Then G2 with the list assignment
+L0 satisfies the assumptions of the theorem (with v and one of its neighbors
+playing the role of p1 p2 ), and thus G2 has an L0 -coloring ϕ2 . The colorings
+ϕ1 and ϕ2 together give an L-coloring of G.
+Since G is 2-connected, its outer face is bounded by a cycle C. We
+can assume that the cycle C is induced. Otherwise, if C has a chord v1 v2 ,
+then G = G1 ∪ G2 for proper induced subgraphs G1 and G2 of G intersecting exactly in v1 v2 . We can assume that p1 p2 ∈ E(G1 ). By the induction
+hypothesis, there exists an L-coloring ϕ1 of G1 . Let L0 (v1 ) = {ϕ1 (v1 )},
+L0 (v2 ) = {ϕ1 (v2 )} and L0 (x) = L(x) for all x ∈ V (G2 ) \ {v1 , v2 }. Then G2
+with the list assignment L0 satisfies the assumptions of the theorem (with v1 v2
+playing the role of p1 p2 ), and thus G2 has an L0 -coloring ϕ2 . The colorings
+ϕ1 and ϕ2 together give an L-coloring of G.
+We can also assume that |L(p1 )| = |L(p2 )| = 1, as otherwise we can throw
+away extra colors from their lists. Let C = p1 p2 p3 . . . pk . By the assumptions,
+|L(p3 )| ≥ 3, and thus there exist two distinct colors c1 , c2 ∈ L(p3 ) \ L(p2 ).
+Let t ≥ 3 be the maximum integer such that {c1 , c2 } ⊆ L(pi ) for 3 ≤ i ≤ t.
+Let v = pt+1 if t < k and v = p1 if t = k. By the choice of t and since
+|L(p1 )| = 1, we can assume that c2 6∈ L(v). Let G0 = G − {p3 , . . . , pt } and
+let L0 be the list assignment for G0 such that L0 (p2 ) = L(p2 ), L0 (v) = L(v),
+L0 (x) = L(x) if x ∈ V (G0 ) \ {v, p2 } has no neighbor in {p3 , . . . , pt }, and
+L0 (x) = L(x) \ {c1 , c2 } otherwise. Since the outer face of G is bounded by
+an induced cycle C, if x ∈ V (G0 ) \ {v, p2 } has a neighbor in {p3 , . . . , pt },
+then x 6∈ V (C), and thus |L(x)| ≥ 5 and |L0 (x)| ≥ 3; furthermore, such a
+vertex x is contained in the boundary of the outer face of G0 . We conclude
+that G0 with the list assignment L0 satisfies the assumptions of the theorem,
+3
+
+and thus G0 has an L0 -coloring ϕ0 by the induction hypothesis. By the choice
+of L0 , none of the neighbors of {p3 , . . . , pt } in G0 except for v can be given
+color c1 or c2 . Recall also that c2 6∈ L(v), and thus ϕ0 (v) 6= c2 . Hence, we
+can extend ϕ0 to an L-coloring of G by giving pt , pt−2 , . . . the color c2 and
+pt−1 , pt−3 , . . . the color c1 .
+However, in contrast to the Four Color Theorem, not all planar graphs
+are 4-choosable.
+Lemma 5. There exists a planar graph G that is not 4-choosable.
+Proof. Let Guwv be the following graph.
+z3
+
+z1
+
+u
+
+z2
+
+w
+
+v
+
+Let La,m,b (with distinct a, m, b 6∈ {11, 12}) be the list assignment such
+that La,m,b (z1 ) = {a, m, 11, 12}, La,m,b (z2 ) = {m, b, 11, 12}, and La,m,b (z3 ) =
+{a, b, 11, 12}. Then a precoloring of (u, w, v) by colors (a, m, b) cannot be
+extended to an La,m,b -coloring of Guwv .
+Let Guv be the graph formed by two copies of Guwv sharing the path uwv.
+Let La,b (with distinct a, b 6∈ {9, 10, 11, 12}) be the list assigment matching
+La,9,b in one of the copies, La,10,b in the other copy, and with La,b (w) =
+{a, b, 9, 10}. Then a precoloring of (u, v) by colors {a, b} cannot be extended
+to an La,b -coloring of Guv .
+Let G be the graph formed by 16 copies of Guv sharing the vertices u
+and v. Let L(u) = {1, 2, 3, 4}, L(v) = {5, 6, 7, 8}, and let L match La,b for
+a ∈ {1, 2, 3, 4} and b ∈ {5, 6, 7, 8} on the 16 copies of Guv . Then G is not
+L-colorable.
+
+3
+
+Degree choosability
+
+We want to obtain a list version of Brooks’ theorem.
+
+4
+
+Theorem 6 (Brooks). Let G be a connected graph of maximum degree at
+most ∆. If G is not ∆-colorable, then either G = K∆+1 , or ∆ = 2 and G is
+an odd cycle.
+A degree assignment to a graph G is a list assignment such that |L(v)| ≥
+deg(v) for all v ∈ V (G).
+Lemma 7. Let G be a connected graph and let L be a degree assignment for
+G. If G is not L-colorable, then |L(v)| = deg(v) for all v ∈ V (G).
+Proof. If |L(v)| > deg(v), then let v1 , . . . , vn be a listing of vertices of G in
+non-increasing order according to their distance from v; hence, vn = v and
+for 1 ≤ i ≤ n − 1, the vertex vi has a neighbor vj with j > i (the neighbor
+of vi on a shortest path from vi to v). Let us greedily L-color v1 , . . . , vn in
+order. For 1 ≤ i ≤ n − 1, at least one neighbor of vi has not been colored yet,
+and thus at most deg(vi ) − 1 < |L(vi )| colors need to be avoided. At vn , at
+most deg(vn ) < |L(vn )| colors need to be avoided. Hence, in both cases, we
+can give vi a color from its list different from the colors of its neighbors.
+Corollary 8. Let G be a connected graph and let L be a degree assignment
+for G. If G is not L-colorable, uv ∈ E(G) and u is not a cutvertex in G,
+then L(u) ⊆ L(v).
+Proof. Otherwise, there exists a color c ∈ L(u) \ L(v). Let G0 = G − u;
+since u is not a cutvertex, G0 is connected. Let L0 (x) = L(x) \ {c} for all
+neighbors x of u and L0 (x) = L(x) for all non-neighbors x. Note that the list
+size decreases only for neighbors x of u for which degG0 (x) = degG (x) − 1,
+and thus L0 is a degree assignment for G0 . Furthermore, |L0 (v)| = |L(v)| ≥
+degG (v) > degG0 (v), and thus G0 is L0 -colorable by Lemma 7. We can extend
+this coloring to an L-coloring of G by giving v color c.
+Note that if neither u nor v is a cutvertex, then Corollary 8 implies
+L(u) ⊆ L(v) and L(v) ⊆ L(u), and thus L(u) = L(v).
+Corollary 9. Let G be a 2-connected graph and let L be a degree assignment
+for G. Then G is not L-colorable if and only if G is a clique or an odd cycle
+and all vertices of G have the same list of length equal to the degree of vertices
+of G.
+Proof. The “if” part is trivial. For the “only if” part, suppose that G is
+not L-colorable. Since G is 2-connected, Corollary 8 implies that any two
+adjacent vertices of G have the same list, and consequently all the vertices
+of G have the same list, say {1, . . . , d}, where d ≤ ∆(G). It follows that G
+is not d-colorable, and thus either G = Kd+1 or d = 2 and G is an odd cycle
+by Theorem 6.
+5
+
+A Gallai tree is a connected graph T such that every 2-connected block
+of T is either a clique or an odd cycle. Suppose B1 , . . . , Bk are the blocks of
+a Gallai tree T , and let S1 , . . . , Sk be sets of colors satisfying the following
+conditions:
+• For 1 ≤ i ≤ k, if Bi is a clique, then |Si | = |V (Bi )| − 1, and if Bi is an
+odd cycle, then |Si | = 2.
+• For 1 ≤ i < j ≤ k, if Bi ∩ Bj 6= ∅, then Si ∩ Sj = ∅.
+S
+For v ∈ V (T ), let L(v) = v∈Bi Si . If a list assignment L can be expressed
+in this way, we say that L is a blockwise uniform assignment for T .
+Theorem 10 (Gallai). Let G be a connected graph and let L be a degree
+assignment for G. Then G is not L-colorable if and only if G is a Gallai tree
+and L is blockwise uniform.
+Proof. It is easy to see that a Gallai tree cannot be colored from a blockwise
+uniform assignment, and thus it suffices to prove the “only if” part. We do
+the proof by induction on the number of vertices of G.
+By Corollary 9, the claim holds when G is 2-connected. Hence, suppose
+that G is not 2-connected. First, we prove that G is a Gallai tree. Let B be
+a block of G. Since G is not 2-connected, there exists a leaf block B 0 of G
+distinct from B. Let v be a vertex of B 0 which is not a cutvertex, and let
+G0 = G − v. Let c be any color in L(v) and let L0 (x) = L(x) \ {c} for all
+neighbors x of v and L0 (x) = L(x) for all other vertices x of G0 . Note that
+L0 is a degree assignment for G0 and that G0 is not L0 -colorable, as otherwise
+we can extend the coloring to an L-coloring of G by giving v the color c. By
+the induction hypothesis, G0 is a Gallai tree. Note that B is also a block of
+G0 , and thus B is a clique or an odd cycle. As the choice of B was arbitrary,
+all blocks of G are cliques or odd cycles, and thus G is a Gallai tree.
+Let B1 , . . . , Bk be the blocks of G, where without loss of generality Bk
+is a leaf block. Let z be the cutvertex of Bk and let v be any other vertex of
+Bk , and let Sk = L(v); by Corollary 8, we conclude that all non-cut vertices
+of Bk have list Sk , and Sk ⊆ L(z). By Lemma 7, if Bk is a clique then |Sk | =
+|Bk | − 1, and if Bk is an odd cycle, then |Sk | = 2. Let G0 = B1 ∪ . . . ∪ Bk−1 ,
+let L0 (x) = L(x) for x ∈ V (G0 ) \ {z} and L0 (z) = L(z) \ Sk . Note that L0
+is a degree assignment for G0 and that G0 is not L0 -colorable, as otherwise
+the coloring would extend to an L-coloring of G by using the colors in Sk to
+color Bk − z. By the induction hypothesis, L0 is blockwise uniform as shown
+by sets S1 , . . . , Sk−1 . But then the sets S1 , . . . , Sk−1 , Sk show that L is
+blockwise uniform.
+6
+
+Corollary 11. Let G be a (c+1)-critical graph and let S be the set of vertices
+of G of degree c. Then each component of G[S] is a Gallai tree.
+Proof. Consider any component C of G[S]. Since G is (c + 1)-critical, G − C
+has a c-coloring ϕ. Let L be the list assignment to G[C] in which for each
+v ∈ C, the list L(v) consists of those of colors {1, . . . , c} that are not used
+by ϕ on the neighhbors of v. If v has k neighbors in V (G) \ V (C), then
+degG[C] (v) = degG (v) − k = c − k and |L(v)| ≥ c − k, and thus L is a degree
+assignment for G[C]. An L-coloring of G[C] together with ϕ would give
+a c-coloring of G; since G is (c + 1)-critical, we conclude that G[C] is not
+L-colorable, and by Theorem 10, G[C] is a Gallai tree.
+
+7
+
+

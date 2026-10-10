@@ -1,0 +1,300 @@
+{
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "changed_shared_files": [
+    "artifacts/c5_excess_two_e4/REPORT.md",
+    "docs/STATUS.md",
+    "docs/c5_excess_two_nonadjacent_unit_core45.md",
+    "docs/c5_kempe_guide.md",
+    "docs/c5_phase_b_common_lemmas.md",
+    "docs/history/2026-10-09-n45-u-long-short-pair-tasks.md"
+  ],
+  "commands": {
+    "baseline-docs": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 1,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pr/base-source/scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.625
+    },
+    "formal-docs": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.24
+    },
+    "integration-check-docs": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.651
+    },
+    "integration-diff": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 0,
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.007
+    },
+    "integration-formal-docs": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.255
+    },
+    "integration-whole-docgraph": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 1,
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 3.737
+    },
+    "pc-negative-missing-complete-tuple": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 2,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--source",
+        "audits/2026-10-09-n45-pc/negative-inputs-v2/missing-complete-tuple.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.062
+    },
+    "pc-negative-stale-source-hash": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 2,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--source",
+        "audits/2026-10-09-n45-pc/negative-inputs-v2/stale-source-hash.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.057
+    },
+    "pc-negative-wrong-declared-unit": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 2,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--source",
+        "audits/2026-10-09-n45-pc/negative-inputs-v2/wrong-declared-unit.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.067
+    },
+    "pc-negative-wrong-shared-ownership": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 2,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--source",
+        "audits/2026-10-09-n45-pc/negative-inputs-v2/wrong-shared-ownership.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.061
+    },
+    "pc-negative-wrong-whole-unit-X": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 2,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--source",
+        "audits/2026-10-09-n45-pc/negative-inputs-v2/wrong-whole-unit-X.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.067
+    },
+    "pc-normal": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 1.651
+    },
+    "pc-seed17": {
+      "PYTHONHASHSEED": "17",
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 1.644
+    },
+    "pc-valid-missing-LP": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 2,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pc/checker.py",
+        "--source",
+        "audits/2026-10-09-n45-pc/controls-v2/NA7-0002-P1.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.075
+    },
+    "pca-independent-normal": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-pca/independent_checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.499
+    },
+    "pca-independent-seed17": {
+      "PYTHONHASHSEED": "17",
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-pca/independent_checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.509
+    },
+    "pg-normal": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pg/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.043
+    },
+    "pg-seed17": {
+      "PYTHONHASHSEED": "17",
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pg/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.042
+    },
+    "pga-independent": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-pga/independent_check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.053
+    },
+    "pr-normal": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pr/checker-final.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 1.699
+    },
+    "pr-seed17": {
+      "PYTHONHASHSEED": "17",
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-pr/checker-final.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 1.69
+    },
+    "tracked-diff": {
+      "PYTHONHASHSEED": null,
+      "actual_exit": 0,
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.007
+    }
+  },
+  "docs_status": {
+    "current_check_docs": "PASS",
+    "formal_docs_DocGraph": "PASS",
+    "fresh_BASE_check_docs": "FAIL: two historical missing files",
+    "whole_worktree_DocGraph": "FAIL: 62 duplicate IDs"
+  },
+  "incoming_audit_payloads_and_mtimes_unchanged": true,
+  "new_authority_sha256": "3dd0a492915b5e21d31d862ba8f2c0660250c5d2ded2f075daf54aca8043c942",
+  "new_task_history_sha256": "cdf0037040fd23ab91591628b7426cd2d19c2a3dc6c1a7c11b5b192fc06cf58e",
+  "next_task": "N45-U-SS prepared; not started",
+  "not_run": [
+    "lake build/axioms: no Lean change or new formalization claim",
+    "upstream large enumeration/classification",
+    "U1-U4 replay",
+    "remote CI"
+  ],
+  "publication": "no commit/push/PR/external messages",
+  "worker_payloads_and_original_input_mtimes_unchanged": true
+}

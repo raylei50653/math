@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; import urllib.request,hashlib,json,datetime; out=Path('audits/2026-10-09-n45-su-a'); url='https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf'; raw=urllib.request.urlopen(url,timeout=30).read(); h=hashlib.sha256(raw).hexdigest(); assert h=='50e998fcb016418698ef31b932c6c2e728007f5e3b3348b93744781196ac1aea'; f=(out/'gallai.pdf').open('xb'); f.write(raw); f.close(); data={'url':url,'title':'List coloring and Gallai trees','author':'Zdenek Dvorak','version':'March 24, 2018','consulted':'Lemma 7, PDF p5; Theorem 10, PDF p6','sha256':h,'bytes':len(raw),'retrieved_UTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'matches_S_U_frozen_PDF':True,'web_read':'Primary PDF opened and text read before independent verdict seal; this fetch preserves exact bytes'}; f=(out/'primary-source.json').open('x'); json.dump(data,f,indent=2); f.write('\\n'); f.close(); print(json.dumps(data))"
+  ],
+  "cwd": "/home/ray/developer/ai/math",
+  "env_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "started_UTC": "2026-10-09T14:31:56.673985+00:00",
+  "finished_UTC": "2026-10-09T14:31:59.227077+00:00",
+  "stdout": "logs/primary-source-fetch.stdout.log",
+  "stderr": "logs/primary-source-fetch.stderr.log"
+}

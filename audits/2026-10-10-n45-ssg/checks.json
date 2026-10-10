@@ -1,0 +1,108 @@
+{
+  "task": "N45-SSG",
+  "freeze_commands": "freeze-commands.json",
+  "own_commands": [
+    {
+      "name": "controls-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssg/controls.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "stdout": "logs/controls-normal.stdout.log",
+      "stderr": "logs/controls-normal.stderr.log"
+    },
+    {
+      "name": "controls-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssg/controls.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "stdout": "logs/controls-seed17.stdout.log",
+      "stderr": "logs/controls-seed17.stderr.log"
+    },
+    {
+      "name": "tracked-diff-check",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "stdout": "logs/tracked-diff-check.stdout.log",
+      "stderr": "logs/tracked-diff-check.stderr.log"
+    },
+    {
+      "name": "cached-diff-check",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "stdout": "logs/cached-diff-check.stdout.log",
+      "stderr": "logs/cached-diff-check.stderr.log"
+    },
+    {
+      "name": "final-head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "stdout": "logs/final-head.stdout.log",
+      "stderr": "logs/final-head.stderr.log"
+    }
+  ],
+  "primary_extract_command": "gallai-extract-command.json",
+  "own_controls_normal_seed17_exit": [
+    0,
+    0
+  ],
+  "own_controls_normal_seed17_byte_equal": true,
+  "candidate_frozen_normal_seed17_byte_equal": true,
+  "candidate_frozen_historical_receipt_exit_codes": [
+    0,
+    0
+  ],
+  "worker_verifier_executed_after_fresh_audit_created": false,
+  "worker_inventory_receipt_current_validity": "historical only; no current worktree PASS inferred",
+  "input_integrity": "input-integrity.json",
+  "historical_FAILURES_retained": {
+    "worker_verify_initial": 1,
+    "worker_verify_formfeed_check": 1,
+    "worker_BASE_docs_missing_paths": 1,
+    "worker_whole_docgraph_duplicates": 1,
+    "historical_E4_byte_replays": "FAIL retained by frozen authority and worker checks; not rerun"
+  },
+  "documentation_checks": "No new shared formal documents; only this isolated audit report local links checked. Worker historical doc failures frozen without rerun.",
+  "not_run": [
+    "Lean",
+    "PC/PCA LP checker",
+    "new original SS source search or graph/k enumeration",
+    "worker wholeworktree inventory verifier after fresh audit creation",
+    "all upstream mathematical/source classifiers",
+    "full current/BASE docs or DocGraph checks",
+    "remote CI"
+  ],
+  "write_scope": "Only audits/2026-10-10-n45-ssg/; no shared or worker file written; selected inputs frozen and compared.",
+  "own_preseal_integrity_exit": 0,
+  "own_preseal_integrity_command": "preseal-command.json"
+}

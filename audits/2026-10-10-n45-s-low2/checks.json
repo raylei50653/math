@@ -1,0 +1,109 @@
+{
+  "BASE_check_boundary": "Read-only retained LOW1 BASE checkout, not a new full checkout; four named mathematical BASE blobs independently frozen and verified.",
+  "E4_provenance_replay": "historical FAIL retained; not rerun",
+  "commands": [
+    {
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "name": "current-doc-links",
+      "stderr": "logs/current-doc-links.stderr.log",
+      "stdout": "logs/current-doc-links.stdout.log"
+    },
+    {
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "name": "current-formal-docgraph",
+      "stderr": "logs/current-formal-docgraph.stderr.log",
+      "stdout": "logs/current-formal-docgraph.stdout.log"
+    },
+    {
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low1/base-source",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "name": "retained-BASE-doc-links",
+      "stderr": "logs/retained-BASE-doc-links.stderr.log",
+      "stdout": "logs/retained-BASE-doc-links.stdout.log"
+    },
+    {
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low1/base-source",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "name": "retained-BASE-formal-docgraph",
+      "stderr": "logs/retained-BASE-formal-docgraph.stderr.log",
+      "stdout": "logs/retained-BASE-formal-docgraph.stdout.log"
+    },
+    {
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "name": "current-whole-docgraph",
+      "stderr": "logs/current-whole-docgraph.stderr.log",
+      "stdout": "logs/current-whole-docgraph.stdout.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "name": "tracked-diff-check",
+      "stderr": "logs/tracked-diff-check.stderr.log",
+      "stdout": "logs/tracked-diff-check.stdout.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "name": "cached-diff-check",
+      "stderr": "logs/cached-diff-check.stderr.log",
+      "stdout": "logs/cached-diff-check.stdout.log"
+    }
+  ],
+  "finite_source_controls": "not established; not executed; no trigger count",
+  "lake_build": "not run: no new Lean and exclusive audit boundary",
+  "sealed_results": "receipt.json bound by delivery.json; no historical receipt pointer",
+  "task": "N45-S-LOW2"
+}

@@ -1,0 +1,34 @@
+{
+  "scope": "dispatch only; no mathematical adoption",
+  "checks": [
+    {
+      "label": "normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-progress-management/verify_inputs.py"
+      ],
+      "seed": null,
+      "exit": 0,
+      "stdout_sha256": "11e99799fffdccf9c96cf9af3d44fc8eba73630bbf721439d01864cc2b946f89",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-progress-management/verify_inputs.py"
+      ],
+      "seed": "17",
+      "exit": 0,
+      "stdout_sha256": "11e99799fffdccf9c96cf9af3d44fc8eba73630bbf721439d01864cc2b946f89",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "normal_seed17_stdout_equal": true,
+  "task_local_links_whitespace": [],
+  "lake_build": "not run; no Lean changes",
+  "global_docgraph": "not run; existing historical failures not changed",
+  "finite_source": "not established or executed; no trigger count"
+}

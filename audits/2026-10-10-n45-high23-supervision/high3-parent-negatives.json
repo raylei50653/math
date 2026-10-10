@@ -1,0 +1,27 @@
+[
+  {
+    "id": "h3r",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-10-n45-h3r/verify.py",
+      "--negative"
+    ],
+    "exit": 2,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "467be8c0b50b4208c37caa3c0475cb5feb81f644bc66770b2e5bea42b8bb0675"
+  },
+  {
+    "id": "h3g",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-10-n45-h3g/verifier.py",
+      "--check",
+      "--negative-control"
+    ],
+    "exit": 2,
+    "stdout_sha256": "7601a667b07606a8115a01eab6e1cc199b6e76eafd4bcdb70e1a14ce115a8dcc",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

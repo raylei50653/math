@@ -1,0 +1,45 @@
+{
+  "findings": [
+    {
+      "id": "H2R-EXCLUSION-FOUR-COLOR-UNUSED",
+      "affected_claim_ids": [
+        "H2-EXCLUSION"
+      ],
+      "worker_locations": [
+        "REPORT.md:238-243",
+        "claims.json:H2-EXCLUSION"
+      ],
+      "raw_verdict": "gap",
+      "witness": {
+        "gamma": [
+          0,
+          1,
+          2,
+          3,
+          1
+        ],
+        "T_in_order": [
+          0,
+          1,
+          2
+        ],
+        "proper_C5": true,
+        "T_color_count": 3,
+        "full_boundary_color_count": 4,
+        "unused_full_boundary_colors": [],
+        "classification": "counterexample",
+        "scope": "Scalar counterexample to the overbroad unused-color construction, not a HIGH2 source."
+      },
+      "missing_query_premise": "gamma uses exactly three colors on the complete boundary B",
+      "qualified_query_quantifier": "For every proper three-color gamma, if gamma is three-colored on T, choose its unique unused full-boundary color D_gamma.",
+      "new_source_hypotheses": [],
+      "source_conclusion_after_qualification": "holds with explicit qualification",
+      "unchanged_all_proper_claim_ids": [
+        "H2-JOIN",
+        "H2-RESTORE",
+        "H2-PALETTE"
+      ],
+      "custody": "Worker report, claims, certificates and failure logs retained without edits."
+    }
+  ]
+}

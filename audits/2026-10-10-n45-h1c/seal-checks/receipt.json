@@ -1,0 +1,65 @@
+{
+  "manifest_sha256": "f0f996faeda12416497fc169f19919e37a6f2b2694e40ae371e691d6a6ab07ea",
+  "payload_before_after_identical": true,
+  "payload_files": 70,
+  "runs": [
+    {
+      "actual_exit": 0,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-h1c/verify.py",
+        "--payload-only"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "expected_exit": 0,
+      "id": "normal",
+      "stderr_file": "seal-checks/normal.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_file": "seal-checks/normal.stdout.txt",
+      "stdout_sha256": "9633eed538f59cedc6899287f41d1d59ca600067fc1df429864a2903c0e3c765"
+    },
+    {
+      "actual_exit": 0,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-h1c/verify.py",
+        "--payload-only"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_exit": 0,
+      "id": "seed17",
+      "stderr_file": "seal-checks/seed17.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_file": "seal-checks/seed17.stdout.txt",
+      "stdout_sha256": "9633eed538f59cedc6899287f41d1d59ca600067fc1df429864a2903c0e3c765"
+    },
+    {
+      "actual_exit": 2,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-h1c/verify.py",
+        "--payload-only",
+        "--manifest-stdin"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "expected_exit": 2,
+      "id": "bad-digest",
+      "stderr_file": "seal-checks/bad-digest.stderr.txt",
+      "stderr_sha256": "1addcea7801dfb1bc35c1349fdb5903ac55a6c7020a4121286c1eff4621de3e3",
+      "stdin_sha256": "2467b304fcb4c31d62ea5f037b9514eddc93936a0642454d7094ff6f0b7a53b9",
+      "stdin_text": "0000000000000000000000000000000000000000000000000000000000000000  REPORT.md\nfbb9aafa3bedb7451f76d605c588b724dfc68300c556fe8b1a0e9b06a164f4e4  checker.py\n5dbd88524117ab9797eaafa3e2f76f9a64f67d8cf0048a7bb306a7b5fe76ba2b  checks.json\n3dcc591c16001ca85ecb0a0be0dc80dbcd6fae3a53bbb16fab65b49bda4084dc  custody-start.json\n3e8158f4665ebdb8cd76acdd4053a5d167a3c7c7dff4f3116315960ddf6e80f3  custody.py\n5a1e070591786ab11b92da732075ab4b9ae845e24ef0d33588f3cd1a4e19938e  independent-judgment.json\nb741dc8dfa0050601e65313faa090a020f8e9111b11d7e622e640673bcefda9e  inputs.json\n753cc5f774dee7b158eb4518b51a8d38407222641a3c28577a0cbf55d4549567  local.py\ne7d16ccb7d99d5ef937a092a318d163fb050f8962264c1c711aa0aaa2ef48668  logs/authored-local.json\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/authored-local.stderr.txt\n123af4f01cd5fffc010e9293175ab8f88b16e24ecb0bf9350b4342f9ae99b5c5  logs/authored-local.stdout.txt\n43d316e3e96df782e3dc5e2e87dbfdf63336f327357c09f8f511791a6eb88c0f  logs/bad-certificate.json\nf180fbcc38da3047192fc57e76411645bdb0af4b3a25fcd78b567a71edfdc85c  logs/bad-certificate.stderr.txt\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/bad-certificate.stdout.txt\n82cd06d2acc9d36ad66423a872d8995678b7c3098d025046062006b2697a8d18  logs/bad-digest.json\nec68aef5ebbb59129f2646389f237f2d13e2f3e5cc65bc56c7ff01e914daeb10  logs/bad-digest.stderr.txt\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/bad-digest.stdout.txt\n8f9360ca100ba53e96329c0d37ee9596ef7fa513d3d5dd858688db21130ae1f8  logs/bad-input-index.json\n41991452d563c80cdf9d690e279c8021c8a6e884a410dd4023c48563605f7e6d  logs/bad-input-index.stderr.txt\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/bad-input-index.stdout.txt\n45d5c3c9ddf9a12999ce326510dbe1f8150cba38bb1371fbcfc6abab216e4825  logs/bad-receipt.json\nd326836f6f1a8dc2947c1dffc320923253541b4953b343ffc167e0470e9f2cdf  logs/bad-receipt.stderr.txt\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/bad-receipt.stdout.txt\nb73f520ee7fa7ede3ebc79effb8031270c0262afedc3c547b567f13213e7ec27  logs/custody-end.json\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/custody-end.stderr.txt\n4b930b727cc18c07d13713caf3fe3e9c3c272738d87cb4e197eff3370485091e  logs/custody-end.stdout.txt\nd186021aea5383eb261dc2b7f24d183750316b8747f8f2ff8b33ae1d0290e43d  logs/duplicate-path.json\nc85ec610cfecefa9c9db4edd6146d0d9a9e40d690d4b001bfff87780c31ab48c  logs/duplicate-path.stderr.txt\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/duplicate-path.stdout.txt\n97e868d2382c054e2e3d65ef9ad7a3917ff257bc541cefbf2436f9ab3867e2c3  logs/exclusive-create.json\n864137e85a1483bb31859a6f988b93b332b5382f36f528f6c498d47b21d31c8a  logs/exclusive-create.stderr.txt\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/exclusive-create.stdout.txt\n43448b6a5e52ed8599c68c7b62918e1b83f83f642c875bd9d93d4a9695656429  logs/git-diff-check.json\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/git-diff-check.stderr.txt\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/git-diff-check.stdout.txt\n0c52f101c75ac8c66728b95346c84f66a210f8d8b8ba9c12853afa23a24a45e6  logs/missing-nested-receipt.json\nc68c3fc43d2b426e25eac1201e424d111b5517995e64ba6352b7b805f388ecab  logs/missing-nested-receipt.stderr.txt\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/missing-nested-receipt.stdout.txt\n0769d3ed6dc8832e68b90000848c507c46e0dc102e5cfb2c0399d0a58e95ff1e  logs/normal.json\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/normal.stderr.txt\n9633eed538f59cedc6899287f41d1d59ca600067fc1df429864a2903c0e3c765  logs/normal.stdout.txt\n34374db6aa7926b8f207d95306f4f1134d9a99936631c0b6d02b02d6ea9e73d3  logs/seed17.json\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/seed17.stderr.txt\n9633eed538f59cedc6899287f41d1d59ca600067fc1df429864a2903c0e3c765  logs/seed17.stdout.txt\n70c277c90f1d4c2c8955806407f989b8a2afcab8c037cfb8ac2cea9b65b4b2c9  logs/unsafe-path.json\n542704f181bf24ec9abab7d4f6acefee12d7a71da0e097e15a7237dfc7b80fe6  logs/unsafe-path.stderr.txt\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/unsafe-path.stdout.txt\n2e1556336fa0e10b1bfe5544ba1f1b9a20b93ee64fa2e2583874dece718f41ae  logs/worker-delivery-normal.json\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/worker-delivery-normal.stderr.txt\n5cb6bf5ad78ec95d3d6cd0fbfb590887df62e17918810e8ee1b84c6040d63169  logs/worker-delivery-normal.stdout.txt\n217f0510ced40deb73a13dff532ce9b9d99ca45fb381b8296c175c32febf6b55  logs/worker-delivery-seed17.json\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/worker-delivery-seed17.stderr.txt\n5cb6bf5ad78ec95d3d6cd0fbfb590887df62e17918810e8ee1b84c6040d63169  logs/worker-delivery-seed17.stdout.txt\n9ea7e239af643aa6f0765284b84c9c1d43fddf8a8033672dd1c756018cf5f021  logs/worker-native-bad-receipt.json\nd326836f6f1a8dc2947c1dffc320923253541b4953b343ffc167e0470e9f2cdf  logs/worker-native-bad-receipt.stderr.txt\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/worker-native-bad-receipt.stdout.txt\n07c47709f13719cc584e26efa4c3d4076740f14aea7b36b48f2c1ecd6decf33c  logs/worker-native-nested-omission.json\nc68c3fc43d2b426e25eac1201e424d111b5517995e64ba6352b7b805f388ecab  logs/worker-native-nested-omission.stderr.txt\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  logs/worker-native-nested-omission.stdout.txt\n09f4dd80b0df2a4131789a5ae56e9102dade007679275f314e1905609ba528cb  negative/bad-certificate.json\nd99baf929313c77c8ba835becf2dc81a1885588b68818546fa32033946a6fee2  negative/bad-digest.json\n080df4a7df2ca7f6c7a29594058f4d4e0d4a0845a023ca31c277ce18c1dd8470  negative/bad-input-index.json\nf7ea4ffceb45644d1fc1c5fbc8dd5b121b2abdbbb448fff32dbd75a7d421b178  negative/bad-receipt.json\nce8b9071f058b58254667527c65407e37708a76dd5303cb87c7d5327440231e2  negative/duplicate-path.json\n0aa93b73a4a46b204004752d8c32fce899f689d875d4e3368c4808b1e8e0f1bf  negative/existing-certificate.json\n2b1cc5e073cbf68208554136c97713970b3acb70c1029aac55c18d98ce932141  negative/missing-nested-receipt.json\n98fe040af2230599d7c62b2d3b2247d274b3364b26409e98caf3f786bbd12a3c  negative/unsafe-path.json\n6f7c8a0bd2b2a88d4b5355d5c618d6c3983bd90b0d4a78097f475426011ddea6  run.py\na44cc10ee43028e9dad4819762e20efae5ae4d98334878e4260095fbedfa9dc4  seal.py\nffb32e4a647532435fe83ebef2b0096a4d75f04248ed11ef4806dff48765049a  verify.py\n",
+      "stdout_file": "seal-checks/bad-digest.stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "artifact integrity and fixed-domain calibration only; paper not adjudicated",
+  "task": "N45-H1C"
+}

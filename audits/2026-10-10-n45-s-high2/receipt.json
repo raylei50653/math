@@ -1,0 +1,49 @@
+{
+  "delivery.json_sha256": "10c5f6cf15a15e3733a6ed6e6cab1e82d4982b15bb9f04ef325f0ba5e822fc3d",
+  "historical_failures_retained": [
+    "BASE missing-doc paths",
+    "whole-tree DocGraph duplicate IDs",
+    "historical E4 provenance replay FAIL"
+  ],
+  "manifest.json_sha256": "3adc2bda3f313ae6bd2d5ea25ebd553058ef65a4fc9ce4b3eded6be45cc76b9a",
+  "read_only_payload_checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-high2/seal.py",
+        "--check-payload"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\"payload_files\": 115, \"status\": \"artifact integrity only; paper not adjudicated\", \"task\": \"N45-S-HIGH2\"}\n",
+      "stdout_sha256": "ed0f4beffd4f65f17572d49a71c19d578aed0a60f5643b7fdcc6f7dc9dc04da5"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-high2/seal.py",
+        "--check-payload"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\"payload_files\": 115, \"status\": \"artifact integrity only; paper not adjudicated\", \"task\": \"N45-S-HIGH2\"}\n",
+      "stdout_sha256": "ed0f4beffd4f65f17572d49a71c19d578aed0a60f5643b7fdcc6f7dc9dc04da5"
+    }
+  ],
+  "task": "N45-S-HIGH2"
+}

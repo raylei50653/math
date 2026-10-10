@@ -1,0 +1,66 @@
+{
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "BASE_objects_verified": 4,
+  "blocking_findings": [],
+  "candidate": "N45-S-LOW2",
+  "commit_push_PR_external_message_delegation": false,
+  "coverage_findings": [
+    {
+      "finding": "Original sealing-time bad-receipt used read_json override for absent delivery; synthetic binding probe only. Independent replay uses actual frozen final delivery without override.",
+      "id": "L2C-F01",
+      "severity": "non-blocking scope boundary"
+    },
+    {
+      "finding": "32177 files and modes,27 symlinks and4 directory existence records independently checked at capture; four nested repositories have no recursive content hashes.",
+      "id": "L2C-F02",
+      "severity": "non-blocking scope boundary"
+    },
+    {
+      "finding": "Worker exact live inventory is bound to initial snapshot; new isolated supervisor and reviewer directories are later additions. Independent replay checks complete frozen evidence, not current whole workspace.",
+      "id": "L2C-F03",
+      "severity": "expected replay boundary"
+    },
+    {
+      "finding": "Paper arbitrary-size claims not adjudicated by artifact tool; no finite source control was established or executed and no trigger count exists.",
+      "id": "L2C-F04",
+      "severity": "evidence boundary"
+    }
+  ],
+  "evidence": [
+    "inputs.json",
+    "checks.json",
+    "frozen/root-initial-strict-replays.json",
+    "checker.py",
+    "REPORT.md"
+  ],
+  "excluded_exact_files": 19,
+  "frozen_current_inputs_verified": 20,
+  "general_N2_E_status": "OPEN; not evaluated",
+  "history_preserved": {
+    "historical_E4_provenance_FAIL": "retained; not rerun",
+    "retained_BASE_doc_links_exit": 1,
+    "retained_BASE_missing_paths": 2,
+    "whole_worktree_DocGraph_exit": 1,
+    "whole_worktree_duplicate_ID_errors": 62
+  },
+  "independent_extra_negative": "missing nested LOW1 receipt commands.json rejected at exact inventory stage",
+  "mathematical_verdict": "not evaluated by this audit",
+  "new_Lean": false,
+  "normal_seed17_actual_exits": [
+    0,
+    0
+  ],
+  "normal_seed17_stdout_byte_equal": true,
+  "original_negative_types_independently_replayed": 6,
+  "receipt_logs": 16,
+  "receipt_metadata_including_json": 17,
+  "source_controls": "not established; not executed; no trigger count",
+  "source_realization": false,
+  "task": "N45-L2C",
+  "task_pins_verified": 8,
+  "tool_verdict": "ACCEPT_SCOPED_ARTIFACT_INTEGRITY",
+  "worker_full_regular_files": 85,
+  "worker_payload_regular_files": 66,
+  "worker_payload_symlinks": 0,
+  "write_scope": "exclusive audits/2026-10-10-n45-l2c only; no shared or old-audit changes"
+}

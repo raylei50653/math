@@ -1,0 +1,181 @@
+[
+  {
+    "id": "base-archive",
+    "argv": [
+      "git",
+      "archive",
+      "--format=tar",
+      "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "expected_exit": 0,
+    "exit_matches_expectation": true,
+    "stdout": "logs/base-archive.stdout.log",
+    "stderr": "logs/base-archive.stderr.log"
+  },
+  {
+    "id": "base-docs",
+    "argv": [
+      "python3",
+      "-B",
+      "scripts/check_docs.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-u-ss/base-source",
+    "exit_code": 1,
+    "expected_exit": 1,
+    "exit_matches_expectation": true,
+    "stdout": "logs/base-docs.stdout.log",
+    "stderr": "logs/base-docs.stderr.log"
+  },
+  {
+    "id": "base-formal-docgraph",
+    "argv": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-u-ss/base-source",
+    "exit_code": 0,
+    "expected_exit": 0,
+    "exit_matches_expectation": true,
+    "stdout": "logs/base-formal-docgraph.stdout.log",
+    "stderr": "logs/base-formal-docgraph.stderr.log"
+  },
+  {
+    "id": "current-docs",
+    "argv": [
+      "python3",
+      "-B",
+      "scripts/check_docs.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "expected_exit": 0,
+    "exit_matches_expectation": true,
+    "stdout": "logs/current-docs.stdout.log",
+    "stderr": "logs/current-docs.stderr.log"
+  },
+  {
+    "id": "current-formal-docgraph",
+    "argv": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "expected_exit": 0,
+    "exit_matches_expectation": true,
+    "stdout": "logs/current-formal-docgraph.stdout.log",
+    "stderr": "logs/current-formal-docgraph.stderr.log"
+  },
+  {
+    "id": "current-whole-docgraph",
+    "argv": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 1,
+    "expected_exit": 1,
+    "exit_matches_expectation": true,
+    "stdout": "logs/current-whole-docgraph.stdout.log",
+    "stderr": "logs/current-whole-docgraph.stderr.log"
+  },
+  {
+    "id": "tracked-diff-check",
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "expected_exit": 0,
+    "exit_matches_expectation": true,
+    "stdout": "logs/tracked-diff-check.stdout.log",
+    "stderr": "logs/tracked-diff-check.stderr.log"
+  },
+  {
+    "id": "cached-diff-check",
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "expected_exit": 0,
+    "exit_matches_expectation": true,
+    "stdout": "logs/cached-diff-check.stdout.log",
+    "stderr": "logs/cached-diff-check.stderr.log"
+  },
+  {
+    "id": "final-head",
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "expected_exit": 0,
+    "exit_matches_expectation": true,
+    "stdout": "logs/final-head.stdout.log",
+    "stderr": "logs/final-head.stderr.log"
+  },
+  {
+    "id": "final-status",
+    "argv": [
+      "git",
+      "status",
+      "--short",
+      "--branch"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "expected_exit": 0,
+    "exit_matches_expectation": true,
+    "stdout": "logs/final-status.stdout.log",
+    "stderr": "logs/final-status.stderr.log"
+  },
+  {
+    "id": "final-shared-diff",
+    "argv": [
+      "git",
+      "diff",
+      "--binary"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "expected_exit": 0,
+    "exit_matches_expectation": true,
+    "stdout": "logs/final-shared-diff.stdout.log",
+    "stderr": "logs/final-shared-diff.stderr.log"
+  },
+  {
+    "id": "final-shared-cached-diff",
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--binary"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "expected_exit": 0,
+    "exit_matches_expectation": true,
+    "stdout": "logs/final-shared-cached-diff.stdout.log",
+    "stderr": "logs/final-shared-cached-diff.stderr.log"
+  }
+]

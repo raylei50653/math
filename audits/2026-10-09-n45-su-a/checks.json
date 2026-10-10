@@ -1,0 +1,294 @@
+{
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "actual_HEAD": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "authorization": "No sub-agents, commit, push, PR or external messages",
+  "checks_are_complete_for_authorized_scope": true,
+  "layers": {
+    "BASE_bytes": "PASS: S69/U70 against Git objects and actual detached inputs",
+    "BASE_formal_docs_DocGraph": "PASS: 62 documents/213 relations/5 families,0 errors",
+    "fresh_BASE_documentation": "FAIL: 2 preexisting missing targets",
+    "frozen_delivery": "PASS: S21+delivery/U39/J specified anchor and initial inventory",
+    "historical_E4_byte_replays": "FAIL inherited; not rerun. Historical/current E3 source mismatch freshly verified; non-sources payload equality inherited from frozen A.",
+    "original_finite_payload_replays": "PASS S/U normal+seed17; not a new independent finite audit",
+    "shared_whole_DocGraph": "FAIL: 62 duplicate-ID errors; copies retained"
+  },
+  "not_run": [
+    {
+      "reason": "named incremental paper audit; no enlarged finite domain or new source controls authorized",
+      "scope": "E2/E3/E4/E4C full enumerations, U1-U4, ES/ER, new graph search, full minimal-core enumeration"
+    },
+    {
+      "reason": "separate task; original read-only payload replays are not its replacement",
+      "scope": "Independent SU-J finite recomputation"
+    },
+    {
+      "reason": "no new Lean code or theorem",
+      "scope": "Lean build and axioms audit"
+    },
+    {
+      "reason": "retain frozen A/batch failures and check unchanged historical/current provenance; no need to repeat upstream calculations",
+      "scope": "Two historical E4 original byte replays"
+    }
+  ],
+  "paper": {
+    "Lean": "not run; no new Lean",
+    "S_claims": 6,
+    "U_claims": 8,
+    "independent_claims": 14,
+    "new_proof_findings": 0,
+    "source_counterexamples_established": 0,
+    "supervision_agrees": 14,
+    "verdict": "成立且可搬用於明列前提內"
+  },
+  "remaining_OPEN": [
+    "S-SHORT-U-LOW",
+    "S-SHORT-U-HIGH",
+    "S long configurations",
+    "U unique original U+long L+short S complete same-source cross-row join",
+    "singleton mixed total incidence>=4",
+    "original55/other cores/no45-54 source/general N2/E/epsilon>=3"
+  ],
+  "retained_findings": [
+    "N45A-F01",
+    "N45A-F02",
+    "N45A-F03",
+    "N45A-F04",
+    "N45-S-COVERAGE-01",
+    "N45-S-DOC-01",
+    "N45-U-F1",
+    "N45-U-F2",
+    "N45-U-F3",
+    "N45-U-PROV",
+    "N45-SU-A-COV-01"
+  ],
+  "source_realizability": "not proved",
+  "task": "N45-SU-A",
+  "validation_commands": [
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-u/source/scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "finished_UTC": "2026-10-09T14:25:29.913528+00:00",
+      "started_UTC": "2026-10-09T14:25:29.241125+00:00",
+      "stderr": "logs/base-docs.stderr.log",
+      "stdout": "logs/base-docs.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-u/source/tools/docgraph",
+        "--repo",
+        "audits/2026-10-09-n45-u/source",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "finished_UTC": "2026-10-09T14:25:29.346621+00:00",
+      "started_UTC": "2026-10-09T14:25:29.240952+00:00",
+      "stderr": "logs/base-formal-docgraph.stderr.log",
+      "stdout": "logs/base-formal-docgraph.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-su-a/check_delivery_text.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "stderr": "logs/delivery-text.stderr.log",
+      "stdout": "logs/delivery-text.stdout.log",
+      "timestamp_UTC": "2026-10-09T14:38:56.205940+00:00"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-su-a/verify_inputs.py",
+        "--result",
+        "audits/2026-10-09-n45-su-a/input-verification-seed17.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "finished_UTC": "2026-10-09T14:37:10.694383+00:00",
+      "started_UTC": "2026-10-09T14:37:09.902343+00:00",
+      "stderr": "logs/input-final-seed17.stderr.log",
+      "stdout": "logs/input-final-seed17.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-su-a/verify_inputs.py",
+        "--result",
+        "audits/2026-10-09-n45-su-a/input-verification.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "finished_UTC": "2026-10-09T14:37:10.694012+00:00",
+      "started_UTC": "2026-10-09T14:37:09.902218+00:00",
+      "stderr": "logs/input-final.stderr.log",
+      "stdout": "logs/input-final.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-su-a/verify_inputs.py",
+        "--freeze",
+        "--result",
+        "audits/2026-10-09-n45-su-a/inputs.json",
+        "--initial-status",
+        "audits/2026-10-09-n45-su-a/logs/initial-git-status.log"
+      ],
+      "exit_code": 0,
+      "timestamp": "2026-10-09T14:21:52.767947+00:00"
+    },
+    {
+      "argv": [
+        "python3",
+        "-c",
+        "from pathlib import Path; import urllib.request,hashlib,json,datetime; out=Path('audits/2026-10-09-n45-su-a'); url='https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf'; raw=urllib.request.urlopen(url,timeout=30).read(); h=hashlib.sha256(raw).hexdigest(); assert h=='50e998fcb016418698ef31b932c6c2e728007f5e3b3348b93744781196ac1aea'; f=(out/'gallai.pdf').open('xb'); f.write(raw); f.close(); data={'url':url,'title':'List coloring and Gallai trees','author':'Zdenek Dvorak','version':'March 24, 2018','consulted':'Lemma 7, PDF p5; Theorem 10, PDF p6','sha256':h,'bytes':len(raw),'retrieved_UTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'matches_S_U_frozen_PDF':True,'web_read':'Primary PDF opened and text read before independent verdict seal; this fetch preserves exact bytes'}; f=(out/'primary-source.json').open('x'); json.dump(data,f,indent=2); f.write('\\n'); f.close(); print(json.dumps(data))"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "finished_UTC": "2026-10-09T14:31:59.227077+00:00",
+      "started_UTC": "2026-10-09T14:31:56.673985+00:00",
+      "stderr": "logs/primary-source-fetch.stderr.log",
+      "stdout": "logs/primary-source-fetch.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-s/checker.py",
+        "--source-root",
+        "/tmp/math-n45-s-20261009",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "finished_UTC": "2026-10-09T14:25:29.409027+00:00",
+      "started_UTC": "2026-10-09T14:25:29.232461+00:00",
+      "stderr": "logs/s-replay.stderr.log",
+      "stdout": "logs/s-replay.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-s/checker.py",
+        "--source-root",
+        "/tmp/math-n45-s-20261009",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "finished_UTC": "2026-10-09T14:25:29.409028+00:00",
+      "started_UTC": "2026-10-09T14:25:29.233980+00:00",
+      "stderr": "logs/s-seed17.stderr.log",
+      "stdout": "logs/s-seed17.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "finished_UTC": "2026-10-09T14:25:29.843575+00:00",
+      "started_UTC": "2026-10-09T14:25:29.242890+00:00",
+      "stderr": "logs/shared-whole-docgraph.stderr.log",
+      "stdout": "logs/shared-whole-docgraph.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "finished_UTC": "2026-10-09T14:25:29.252110+00:00",
+      "started_UTC": "2026-10-09T14:25:29.245497+00:00",
+      "stderr": "logs/tracked-diff-check.stderr.log",
+      "stdout": "logs/tracked-diff-check.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-u/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "finished_UTC": "2026-10-09T14:25:29.741915+00:00",
+      "started_UTC": "2026-10-09T14:25:29.234501+00:00",
+      "stderr": "logs/u-replay.stderr.log",
+      "stdout": "logs/u-replay.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-u/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "finished_UTC": "2026-10-09T14:25:29.743766+00:00",
+      "started_UTC": "2026-10-09T14:25:29.236754+00:00",
+      "stderr": "logs/u-seed17.stderr.log",
+      "stdout": "logs/u-seed17.stdout.log"
+    }
+  ],
+  "written_scope": "audits/2026-10-09-n45-su-a only",
+  "zero_drift": {
+    "BASE_rows_S_U": 139,
+    "S_U_BASE_bytes_mtime_drift": [],
+    "S_U_J_and_supervision_bytes_mtime_drift": [],
+    "extra_BASE_rows": 17,
+    "frozen_authored_control_navigation_supervision_files": 213,
+    "independent_judgment_unchanged": true,
+    "normal_seed17_provenance_outputs_byte_equal": true,
+    "supplementary_bytes_mtime_drift": 0
+  }
+}

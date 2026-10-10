@@ -1,0 +1,43 @@
+{
+  "commands": [
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-low1-supervision/verify.py",
+        "--payload-only"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "normal"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "argv": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-low1-supervision/verify.py",
+        "--payload-only"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "seed17"
+    },
+    {
+      "argv": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-low1-supervision/verify.py",
+        "--payload-only",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-low1-supervision/seal-checks/corrupted-manifest.sha256"
+      ],
+      "exit_code": 2,
+      "expected_exit": 2,
+      "label": "corrupted"
+    }
+  ],
+  "negative_digest_rejected": true,
+  "normal_seed17_stdout_byte_equal": true
+}

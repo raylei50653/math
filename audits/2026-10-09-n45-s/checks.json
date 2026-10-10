@@ -1,0 +1,240 @@
+{
+  "base": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "claims": [
+    "N45-S-01",
+    "N45-S-02",
+    "N45-S-03",
+    "N45-S-04",
+    "N45-S-05",
+    "N45-S-06"
+  ],
+  "coverage": {
+    "N45_S_source_triggered": 0,
+    "fixed_N2_graphs": 19,
+    "full_sigma_queries": 190,
+    "paper_proof_checked_by_this_program": false,
+    "singleton_candidates": 288,
+    "source_counterexamples": 0,
+    "spoke_deletion_queries": 47,
+    "valid_singleton_candidates": 92
+  },
+  "evidence_layers": {
+    "external": "Gallai/slack inherited and live primary source consulted",
+    "finite_python": "singleton orbits, full abstract compatibility and fixed nineteen original graphs only",
+    "lean": "not run; no new Lean",
+    "paper": "conditional arbitrary-size arguments in REPORT.md; not independently accepted"
+  },
+  "executor_status": "complete; awaiting cross-audit",
+  "findings": [
+    "N45-S-COVERAGE-01",
+    "N45-S-DOC-01"
+  ],
+  "input_byte_drift": [],
+  "input_count": 69,
+  "legacy_link_inventory": [
+    {
+      "exists_fresh_BASE": false,
+      "exists_shared": true,
+      "in_BASE_git": false,
+      "path": "audits/2026-10-04-task-d5/c4/scope_ledger.json"
+    },
+    {
+      "exists_fresh_BASE": false,
+      "exists_shared": true,
+      "in_BASE_git": false,
+      "path": "audits/2026-10-04-task-d2/integration_doc_changes.diff"
+    }
+  ],
+  "not_run": [
+    {
+      "item": "lake build / axioms audit",
+      "reason": "No new Lean proof; task forbids pretending paper/Python has Lean validation."
+    },
+    {
+      "item": "E3/E4/E4C full suites; U1-U4; ES/ER; core enumeration",
+      "reason": "Inherited BASE dependencies and fixed controls only; no broad enumeration."
+    },
+    {
+      "item": "N45-A/J independent acceptance of new claims",
+      "reason": "Deferred to supervisor after frozen delivery."
+    }
+  ],
+  "publication": {
+    "PR": false,
+    "commit": false,
+    "external_messages": false,
+    "push": false,
+    "subagents": false
+  },
+  "read_only_and_exclusive_guard": {
+    "after": {
+      "certificate.json": "9acb2a6b40de32aeca60ecf9a5b33065c9cba60ad47f5243c1eccadf31f59a02",
+      "checker.py": "94b3fb13e8268080e80a441f595fd3fcab449ea2c2937b2bf92c1725e5977dae",
+      "inputs.json": "09aeaaa919c299c5a8c3ed44ef250e6e90a96ab1040e3fd8bea6fbc57b1e63de"
+    },
+    "before": {
+      "certificate.json": "9acb2a6b40de32aeca60ecf9a5b33065c9cba60ad47f5243c1eccadf31f59a02",
+      "checker.py": "94b3fb13e8268080e80a441f595fd3fcab449ea2c2937b2bf92c1725e5977dae",
+      "inputs.json": "09aeaaa919c299c5a8c3ed44ef250e6e90a96ab1040e3fd8bea6fbc57b1e63de"
+    }
+  },
+  "runs": [
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-s/checker.py",
+        "--source-root",
+        "/tmp/math-n45-s-20261009"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit": 0,
+      "id": "generation",
+      "output": "exclusive-created certificate; SHA256 9acb2a6b40de32aeca60ecf9a5b33065c9cba60ad47f5243c1eccadf31f59a02",
+      "tool_output_reference": "4c3a72"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-s/checker.py",
+        "--source-root",
+        "/tmp/math-n45-s-20261009",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "replay",
+      "log": "logs/replay.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-s/checker.py",
+        "--source-root",
+        "/tmp/math-n45-s-20261009",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "seed17",
+      "log": "logs/seed17.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-09-n45-s/checker.py",
+        "--source-root",
+        "/tmp/math-n45-s-20261009"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "exit": 1,
+      "expected_exit": 1,
+      "id": "exclusive_create_guard",
+      "log": "logs/exclusive_create_guard.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/tmp/math-n45-s-20261009",
+      "exit": 1,
+      "id": "docs_base",
+      "log": "logs/docs_base.log",
+      "reason": "Two BASE documentation links target untracked legacy audits absent in a fresh worktree."
+    },
+    {
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/tmp/math-n45-s-20261009",
+      "exit": 0,
+      "id": "docgraph_docs_base",
+      "log": "logs/docgraph_docs_base.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit": 0,
+      "id": "docs_shared",
+      "log": "logs/docs_shared.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit": 1,
+      "id": "docgraph_whole_shared",
+      "log": "logs/docgraph_whole_shared.log"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-s-20261009",
+      "exit": 0,
+      "id": "diff_base",
+      "log": "logs/diff_base.log"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit": 0,
+      "id": "diff_shared",
+      "log": "logs/diff_shared.log"
+    },
+    {
+      "command": "stdlib Python local Markdown link/anchor validation of REPORT.md",
+      "exit": 0,
+      "id": "report_links",
+      "local_links": 16,
+      "log": "logs/report_links.log"
+    },
+    {
+      "argv_template": [
+        "git",
+        "diff",
+        "--no-index",
+        "--check",
+        "--",
+        "/dev/null",
+        "<each .py/.md/.json delivery file>"
+      ],
+      "exit_per_file": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "id": "new_output_whitespace",
+      "log": "logs/output_whitespace.json",
+      "status": "PASS; expected no-index difference status1, zero diagnostics, direct whitespace validation"
+    }
+  ],
+  "task": "N45-S"
+}

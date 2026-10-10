@@ -1,0 +1,906 @@
+{
+  "audit_id": "N45-H2A",
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "candidate_only": true,
+  "verdict": "holds under stated hypotheses with explicit EXCLUSION query-domain refinement",
+  "mathematical_source_proof_gap_count": 0,
+  "source_hypotheses": [
+    {
+      "id": "H1",
+      "statement": "有限簡單 disk G，有序 induced 外框 C5 B=(b0,…,b4)"
+    },
+    {
+      "id": "H2",
+      "statement": "完整有序 Σ(G)=933／941 或一次共同整圖 D5 像；每條非框邊 Σ-critical；ε(G)=2"
+    },
+    {
+      "id": "H3",
+      "statement": "有效 H 忽略原孤立內點 I，連通、full B-touch；I 保留全部四色自由 assignments"
+    },
+    {
+      "id": "H4",
+      "statement": "恰兩原非相鄰 degree5 roots r,s；其餘有效原內點完整 degree4"
+    },
+    {
+      "id": "H5",
+      "statement": "H−{r,s} 原分量恰 U,P,Q；三份 connected、one-sided、actual support 非空"
+    },
+    {
+      "id": "H6",
+      "statement": "P/Q 的 actual support 各恰一條真原框邊兩端；各有正 r/s incidence；actual attachments／ownership 全留"
+    },
+    {
+      "id": "H7",
+      "statement": "U 只接 s，恰原邊 sx1、sx2，x1≠x2，無 U–r；U 整份保留"
+    },
+    {
+      "id": "H8",
+      "statement": "mixed incidence=(3,2)，s 對 P/Q 各一，r 分配1與2；原具名 identity 不換"
+    },
+    {
+      "id": "H9",
+      "statement": "原 r 兩 spokes，只省略 e=rb_i，X 保 rb_j；原 s 唯一 spoke sb_k 全留"
+    },
+    {
+      "id": "H10",
+      "statement": "固定原拒絕三色 literal β，X=G−e=M 自己是 β inclusion-minimal45／54 core；不用 G criticality 遺傳"
+    },
+    {
+      "id": "H11",
+      "statement": "只刪 e；U/P/Q 所有原頂點、內邊、contacts、框附件及其他 spokes 全留，無新增／替換／縮 piece／部分 U 刪除"
+    },
+    {
+      "id": "H12",
+      "statement": "named／ordered／shared contacts 單一原變量；actual supports／ownership、bridges／rotation、共同 literal 四色框、十列完整 relations、全部 pins、ambient 空／非空 fibres 與 full lifts 全留"
+    },
+    {
+      "id": "H13",
+      "statement": "D5／S4／root swap 只共同搬整圖及所有資料；933 q2 全留，不假定 β 是 U 盾中點；G／X／刪 contact 圖分清原邊及 lifts"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "H2-CORE",
+      "full_quantifier": "For every arbitrarily large finite simple disk G satisfying all worker H1-H13, every specified original rejecting beta and X=G-e=M, Delete only original rb_i; effective H, original isolated I and all Col^I assignments unchanged. Own H10 minimality supplies complete beta witness for each X-f; r full degree4, s full degree5, other effective vertices full4.",
+      "all_source_hypotheses": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "H1_H13_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "original_worker_conclusion": "對每契約G，X自己的完整degree為r=4,s=5,其他有效點=4，且每非框邊有自身β刪邊full witness。",
+      "audited_proof": "Delete only original rb_i; effective H, original isolated I and all Col^I assignments unchanged. Own H10 minimality supplies complete beta witness for each X-f; r full degree4, s full degree5, other effective vertices full4.",
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_degree5_interfaces.md",
+          "section": "1",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        },
+        {
+          "path": "docs/c5_weak_list_cores.md",
+          "section": "1",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        }
+      ],
+      "external_trust": [],
+      "verdict": "holds under stated hypotheses",
+      "new_source_sufficient_hypotheses": [],
+      "query_domain_refinements": [],
+      "precise_residual": "candidate only; supervisor adoption pending; no general S/N2/E, long/other-core or core-existence closure"
+    },
+    {
+      "claim_id": "H2-COMP",
+      "full_quantifier": "For every arbitrarily large finite simple disk G satisfying all worker H1-H13, every specified original rejecting beta and X=G-e=M, Original H-r-s has exactly U/P/Q. Positive r incidence connects P,Q through r. U has no r edge. s-contact ordered counts are actual (2,2); all original U cycle, sublists and shared variables remain.",
+      "all_source_hypotheses": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "H1_H13_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "original_worker_conclusion": "對每契約G，H_X−s完整分量恰C={r}∪P∪Q及完整U，原s contacts(2,2)；所有原邊及ordered/shared identity保留。",
+      "audited_proof": "Original H-r-s has exactly U/P/Q. Positive r incidence connects P,Q through r. U has no r edge. s-contact ordered counts are actual (2,2); all original U cycle, sublists and shared variables remain.",
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_degree5_interfaces.md",
+          "section": "1",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        }
+      ],
+      "external_trust": [],
+      "verdict": "holds under stated hypotheses",
+      "new_source_sufficient_hypotheses": [],
+      "query_domain_refinements": [],
+      "precise_residual": "candidate only; supervisor adoption pending; no general S/N2/E, long/other-core or core-existence closure"
+    },
+    {
+      "claim_id": "H2-JOIN",
+      "full_quantifier": "For every arbitrarily large finite simple disk G satisfying all worker H1-H13, every specified original rejecting beta and X=G-e=M, for every proper literal gamma:B->Col (three or four colors), every ambient tuple and every r/s pin, including empty fibres and all isolated free-factor assignments: Every full assignment restricts to exactly one common s color, C tuple/r color fibre, U ordered tuple fibre and Col^I assignment. Union reconstructs all original constraints; include empty ambient fibres and all proper literals.",
+      "all_source_hypotheses": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "H1_H13_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "original_worker_conclusion": "每proper literalγ及全部ambient tuple/r/s pins，包括空fibres，X全lifts與同一s色的C/U full assignments和I自由因子restriction/union雙射。",
+      "audited_proof": "Every full assignment restricts to exactly one common s color, C tuple/r color fibre, U ordered tuple fibre and Col^I assignment. Union reconstructs all original constraints; include empty ambient fibres and all proper literals.",
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_degree5_interfaces.md",
+          "section": "1",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        }
+      ],
+      "external_trust": [],
+      "verdict": "holds under stated hypotheses",
+      "new_source_sufficient_hypotheses": [],
+      "query_domain_refinements": [],
+      "precise_residual": "candidate only; supervisor adoption pending; no general S/N2/E, long/other-core or core-existence closure"
+    },
+    {
+      "claim_id": "H2-RESTORE",
+      "full_quantifier": "For every arbitrarily large finite simple disk G satisfying all worker H1-H13, every specified original rejecting beta and X=G-e=M, for every proper literal gamma:B->Col (three or four colors), every ambient tuple and every r/s pin, including empty fibres and all isolated free-factor assignments: Exactly original edge rb_i is restored, so full G lifts are the full X lifts with the additional literal r!=gamma(b_i) constraint. This holds at every r/s pin and empty/nonempty tuple query.",
+      "all_source_hypotheses": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "H1_H13_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "original_worker_conclusion": "每γ及全部pins，G full lifts恰X資料另加f_C(r)≠γ(b_i)；延拓G必需相應非空r fibre。",
+      "audited_proof": "Exactly original edge rb_i is restored, so full G lifts are the full X lifts with the additional literal r!=gamma(b_i) constraint. This holds at every r/s pin and empty/nonempty tuple query.",
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_degree5_interfaces.md",
+          "section": "1",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        }
+      ],
+      "external_trust": [],
+      "verdict": "holds under stated hypotheses",
+      "new_source_sufficient_hypotheses": [],
+      "query_domain_refinements": [],
+      "precise_residual": "candidate only; supervisor adoption pending; no general S/N2/E, long/other-core or core-existence closure"
+    },
+    {
+      "claim_id": "H2-F",
+      "full_quantifier": "For every arbitrarily large finite simple disk G satisfying all worker H1-H13, every specified original rejecting beta and X=G-e=M, for every proper literal gamma, and at the specified rejecting beta: R10 strict slack gives nonempty full R and incident-edge release. Own X witnesses give private cover and exclude beta(b_k) from both F sets. Original local E4 N-diagonal applies to all same-root-color pins without existing outside coloring, so FC(gamma) subset {gamma(b_j)}. At beta the cover forces singleton FC and complementary pair FU; two contact deletion witnesses give both ordered swap tuples.",
+      "all_source_hypotheses": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "H1_H13_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "original_worker_conclusion": "每γ F_C(γ)⊆{γ(b_j)}；固定β private-cover給FC={β(b_j)},FU=另外兩色={D,h}，原U完整R為兩ordered交換pair。",
+      "audited_proof": "R10 strict slack gives nonempty full R and incident-edge release. Own X witnesses give private cover and exclude beta(b_k) from both F sets. Original local E4 N-diagonal applies to all same-root-color pins without existing outside coloring, so FC(gamma) subset {gamma(b_j)}. At beta the cover forces singleton FC and complementary pair FU; two contact deletion witnesses give both ordered swap tuples.",
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_degree5_interfaces.md",
+          "section": "1-4",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        },
+        {
+          "path": "artifacts/c5_excess_two_e4/REPORT.md",
+          "section": "4.1",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        },
+        {
+          "path": "docs/c5_single_spoke_two_two.md",
+          "section": "1-2",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        }
+      ],
+      "external_trust": [
+        {
+          "source": "Official Dvorak List coloring and Gallai trees, 2018-03-24",
+          "url": "https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf",
+          "references": [
+            "Lemma 7, PDF page5",
+            "Theorem 10, PDF page6"
+          ],
+          "scope": "inherited external degree-list/Gallai trust; source refusal hypotheses checked first; not Python/Lean proof"
+        }
+      ],
+      "verdict": "holds under stated hypotheses",
+      "new_source_sufficient_hypotheses": [],
+      "query_domain_refinements": [],
+      "precise_residual": "candidate only; supervisor adoption pending; no general S/N2/E, long/other-core or core-existence closure"
+    },
+    {
+      "claim_id": "H2-K33",
+      "full_quantifier": "For every arbitrarily large finite simple disk G satisfying all worker H1-H13, every specified original rejecting beta and X=G-e=M, Original critical sx gives rejected outside coloring on G-U including original e. Shield Theorem A gives U support at least3 before P/Q disjointness. In common-end v=sole-spoke endpoint case, connected Oprime=(B-v) union U uses a real U-to-B-v edge and original sx1. Six disjoint original G bags have all nine original adjacencies.",
+      "all_source_hypotheses": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "H1_H13_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "original_worker_conclusion": "每契約G，原P/Q支援邊若共端v，原六bags九鄰接成立；唯一s-spoke端點=v時用(B−v)∪U及原s-U邊。",
+      "audited_proof": "Original critical sx gives rejected outside coloring on G-U including original e. Shield Theorem A gives U support at least3 before P/Q disjointness. In common-end v=sole-spoke endpoint case, connected Oprime=(B-v) union U uses a real U-to-B-v edge and original sx1. Six disjoint original G bags have all nine original adjacencies.",
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_unary_shield_budget.md",
+          "section": "2: Lemma 1/2; 3: Theorem A",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        },
+        {
+          "path": "docs/c5_short_support_singleton.md",
+          "section": "4",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        }
+      ],
+      "external_trust": [
+        {
+          "source": "Official Dvorak List coloring and Gallai trees, 2018-03-24",
+          "url": "https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf",
+          "references": [
+            "Lemma 7, PDF page5",
+            "Theorem 10, PDF page6"
+          ],
+          "scope": "inherited external degree-list/Gallai trust; source refusal hypotheses checked first; not Python/Lean proof"
+        },
+        {
+          "source": "standard nonplanarity of K5 and K33 minors",
+          "scope": "only original same-source bags; no coloring replacement"
+        }
+      ],
+      "verdict": "holds under stated hypotheses",
+      "new_source_sufficient_hypotheses": [],
+      "query_domain_refinements": [],
+      "precise_residual": "candidate only; supervisor adoption pending; no general S/N2/E, long/other-core or core-existence closure"
+    },
+    {
+      "claim_id": "H2-ARC",
+      "full_quantifier": "For every arbitrarily large finite simple disk G satisfying all worker H1-H13, every specified original rejecting beta and X=G-e=M, P/Q shields equal their actual true boundary edges. K33 excludes a common endpoint. Remaining boundary edges form length2/length1 gaps; connected U shield>=2 must be the length2 gap. Full B-touch gives actual T three consecutive vertices; other pieces and root spokes avoid middle; C support is exactly B minus middle.",
+      "all_source_hypotheses": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "H1_H13_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "original_worker_conclusion": "每契約G，U original shield長2，actual support為連續T三點，C support恰B−{T中點}，原roots spokes避中點。",
+      "audited_proof": "P/Q shields equal their actual true boundary edges. K33 excludes a common endpoint. Remaining boundary edges form length2/length1 gaps; connected U shield>=2 must be the length2 gap. Full B-touch gives actual T three consecutive vertices; other pieces and root spokes avoid middle; C support is exactly B minus middle.",
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_unary_shield_budget.md",
+          "section": "2: Lemma 1/2; 3: Theorem A",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        }
+      ],
+      "external_trust": [
+        {
+          "source": "Official Dvorak List coloring and Gallai trees, 2018-03-24",
+          "url": "https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf",
+          "references": [
+            "Lemma 7, PDF page5",
+            "Theorem 10, PDF page6"
+          ],
+          "scope": "inherited external degree-list/Gallai trust; source refusal hypotheses checked first; not Python/Lean proof"
+        },
+        {
+          "source": "standard nonplanarity of K5 and K33 minors",
+          "scope": "only original same-source bags; no coloring replacement"
+        }
+      ],
+      "verdict": "holds under stated hypotheses",
+      "new_source_sufficient_hypotheses": [],
+      "query_domain_refinements": [],
+      "precise_residual": "candidate only; supervisor adoption pending; no general S/N2/E, long/other-core or core-existence closure"
+    },
+    {
+      "claim_id": "H2-MAP",
+      "full_quantifier": "For every arbitrarily large finite simple disk G satisfying all worker H1-H13, every specified original rejecting beta and X=G-e=M, One common D5/S4 sends beta to q. X satisfies every source premise of single-spoke(2,2) with actual C/U role(1,2). Eight exhaustive canonical positions yield four actual lifted-support source exclusions and four matches to frozen necessary records90/511, not realizability. Target p extensions concern X and do not carry the omitted-spoke r projection.",
+      "all_source_hypotheses": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "H1_H13_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "original_worker_conclusion": "X在同一whole-sourceβ normalization後逐前提屬single-spoke(2,2)，C/U角色(1,2)；無slit placement是原crosscut排除，有必要表項僅保identity，p1/p2為X。",
+      "audited_proof": "One common D5/S4 sends beta to q. X satisfies every source premise of single-spoke(2,2) with actual C/U role(1,2). Eight exhaustive canonical positions yield four actual lifted-support source exclusions and four matches to frozen necessary records90/511, not realizability. Target p extensions concern X and do not carry the omitted-spoke r projection.",
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_single_spoke_cores.md",
+          "section": "2",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        },
+        {
+          "path": "docs/c5_single_spoke_two_two.md",
+          "section": "1-3",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        },
+        {
+          "path": "artifacts/c5_single_spoke_two_two/observations.json",
+          "section": "records 90/511; all actual placements/contact words",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        }
+      ],
+      "external_trust": [
+        {
+          "source": "Official Dvorak List coloring and Gallai trees, 2018-03-24",
+          "url": "https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf",
+          "references": [
+            "Lemma 7, PDF page5",
+            "Theorem 10, PDF page6"
+          ],
+          "scope": "inherited external degree-list/Gallai trust; source refusal hypotheses checked first; not Python/Lean proof"
+        }
+      ],
+      "verdict": "holds under stated hypotheses",
+      "new_source_sufficient_hypotheses": [],
+      "query_domain_refinements": [],
+      "precise_residual": "candidate only; supervisor adoption pending; no general S/N2/E, long/other-core or core-existence closure"
+    },
+    {
+      "claim_id": "H2-BRIDGE",
+      "full_quantifier": "For every arbitrarily large finite simple disk G satisfying all worker H1-H13, every specified original rejecting beta and X=G-e=M, Two actual rejecting degree-list certificates on the same U precede Gallai palettes. Connected exterior via sole spoke makes U K4-free. Two-forbidden difference gives an odd original bridge path. Complete rooted branches have equal off-path palettes; residual stable under actual-support stabilizer forces beta(Tnu) to contain both a0,c0. All full branches retained; residual not called rooted-color palette.",
+      "all_source_hypotheses": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "H1_H13_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "original_worker_conclusion": "固定原β，完整U pair拒絕pins給唯一原x1–x2奇數bridge路徑，每W含全部旁支，且每W实际支援見a0,c0。",
+      "audited_proof": "Two actual rejecting degree-list certificates on the same U precede Gallai palettes. Connected exterior via sole spoke makes U K4-free. Two-forbidden difference gives an odd original bridge path. Complete rooted branches have equal off-path palettes; residual stable under actual-support stabilizer forces beta(Tnu) to contain both a0,c0. All full branches retained; residual not called rooted-color palette.",
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_single_spoke_two_two.md",
+          "section": "3: double-forbidden odd bridge path",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        },
+        {
+          "path": "docs/c5_single_spoke_bridge_path.md",
+          "section": "2",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        },
+        {
+          "path": "docs/c5_single_spoke_two_two_minor.md",
+          "section": "2",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        },
+        {
+          "path": "docs/c5_single_spoke_branch_palettes.md",
+          "section": "2",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        },
+        {
+          "path": "docs/c5_degree5_tree_components.md",
+          "section": "1",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        }
+      ],
+      "external_trust": [
+        {
+          "source": "Official Dvorak List coloring and Gallai trees, 2018-03-24",
+          "url": "https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf",
+          "references": [
+            "Lemma 7, PDF page5",
+            "Theorem 10, PDF page6"
+          ],
+          "scope": "inherited external degree-list/Gallai trust; source refusal hypotheses checked first; not Python/Lean proof"
+        },
+        {
+          "source": "standard nonplanarity of K5 and K33 minors",
+          "scope": "only original same-source bags; no coloring replacement"
+        }
+      ],
+      "verdict": "holds under stated hypotheses",
+      "new_source_sufficient_hypotheses": [],
+      "query_domain_refinements": [],
+      "precise_residual": "candidate only; supervisor adoption pending; no general S/N2/E, long/other-core or core-existence closure"
+    },
+    {
+      "claim_id": "H2-SPLIT",
+      "full_quantifier": "For every arbitrarily large finite simple disk G satisfying all worker H1-H13, every specified original rejecting beta and X=G-e=M, Actual C provides one original s-B path at a point outside T. Three connected original frame arcs and any two W groups give five disjoint connected K5 bags with all ten original adjacencies. Three-color beta(T) impossible; in two-color case each W sees middle plus an endpoint. Pigeonhole makes exactly two complete W and one original bridge, supports exactly left/right boundary-edge pairs, with arbitrary W size.",
+      "all_source_hypotheses": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "H1_H13_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "original_worker_conclusion": "每契約G，frame-arc原K5迫β(T)二色、U路一條原bridge，兩完整W支援分別為T左右兩真邊；大小無上限。",
+      "audited_proof": "Actual C provides one original s-B path at a point outside T. Three connected original frame arcs and any two W groups give five disjoint connected K5 bags with all ten original adjacencies. Three-color beta(T) impossible; in two-color case each W sees middle plus an endpoint. Pigeonhole makes exactly two complete W and one original bridge, supports exactly left/right boundary-edge pairs, with arbitrary W size.",
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_single_spoke_frame_arc.md",
+          "section": "1-3",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        },
+        {
+          "path": "docs/c5_single_spoke_two_two_external.md",
+          "section": "1-2",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        }
+      ],
+      "external_trust": [
+        {
+          "source": "Official Dvorak List coloring and Gallai trees, 2018-03-24",
+          "url": "https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf",
+          "references": [
+            "Lemma 7, PDF page5",
+            "Theorem 10, PDF page6"
+          ],
+          "scope": "inherited external degree-list/Gallai trust; source refusal hypotheses checked first; not Python/Lean proof"
+        },
+        {
+          "source": "standard nonplanarity of K5 and K33 minors",
+          "scope": "only original same-source bags; no coloring replacement"
+        }
+      ],
+      "verdict": "holds under stated hypotheses",
+      "new_source_sufficient_hypotheses": [],
+      "query_domain_refinements": [],
+      "precise_residual": "candidate only; supervisor adoption pending; no general S/N2/E, long/other-core or core-existence closure"
+    },
+    {
+      "claim_id": "H2-PALETTE",
+      "full_quantifier": "For every arbitrarily large finite simple disk G satisfying all worker H1-H13, every specified original rejecting beta and X=G-e=M, for every proper literal gamma:B->Col (three or four colors), every ambient tuple and every r/s pin, including empty fibres and all isolated free-factor assignments: Complete U assignments factor only across the actual bridge. Both swap tuples give D/h roots in each W; any extra root color joins the other existing D root and contradicts FU. Hence actual rooted available colors at beta, not residuals, are {D,h}. For every proper gamma, whole-data color equivariance restricted to the actual support pair yields exact complements and all ordered bridge-compatible tuples with full assignments retained.",
+      "all_source_hypotheses": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "H1_H13_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "original_worker_conclusion": "每properγ，完整W rooted assignments非空色恰支援pair的二色補集；U全assignments沿唯一原bridgerestriction/union雙射，完整ordered R含所有二tuple。",
+      "audited_proof": "Complete U assignments factor only across the actual bridge. Both swap tuples give D/h roots in each W; any extra root color joins the other existing D root and contradicts FU. Hence actual rooted available colors at beta, not residuals, are {D,h}. For every proper gamma, whole-data color equivariance restricted to the actual support pair yields exact complements and all ordered bridge-compatible tuples with full assignments retained.",
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_single_spoke_two_two.md",
+          "section": "2-3",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        },
+        {
+          "path": "docs/c5_single_spoke_two_two_minor.md",
+          "section": "2: residual is not rooted assignment palette",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        }
+      ],
+      "external_trust": [
+        {
+          "source": "Official Dvorak List coloring and Gallai trees, 2018-03-24",
+          "url": "https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf",
+          "references": [
+            "Lemma 7, PDF page5",
+            "Theorem 10, PDF page6"
+          ],
+          "scope": "inherited external degree-list/Gallai trust; source refusal hypotheses checked first; not Python/Lean proof"
+        }
+      ],
+      "verdict": "holds under stated hypotheses",
+      "new_source_sufficient_hypotheses": [],
+      "query_domain_refinements": [],
+      "precise_residual": "candidate only; supervisor adoption pending; no general S/N2/E, long/other-core or core-existence closure"
+    },
+    {
+      "claim_id": "H2-EXCLUSION",
+      "full_quantifier": "For every arbitrarily large finite simple disk G satisfying all worker H1-H13, every specified original rejecting beta and X=G-e=M, for every proper three-color gamma seeing three colors on T, the explicit r=s=D_gamma construction yields original G full lifts; all proper four-color gamma are accepted separately by H2/T4; hence no such G exists. For every proper three-color gamma with three colors on T, choose complete W roots gamma(R),gamma(L), then original r=s=unused Dgamma. Local N-diagonal gives P/Q full lifts; all original spokes including e are legal, and Col^I persists. Thus Q(G) subset B-T of size2 contradicts all 933/941 D5 images. Proper four-color gamma has no unused Dgamma and G acceptance follows separately from existing H2/T4.",
+      "all_source_hypotheses": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "H1_H13_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "original_worker_conclusion": "每γ在T見三色時置原r=s=Dγ並接全部原assignments得G full lift，Dγ≠γ(b_i)；全部933/941共同D5/S4/root orbits不可能存在。",
+      "audited_proof": "For every proper three-color gamma with three colors on T, choose complete W roots gamma(R),gamma(L), then original r=s=unused Dgamma. Local N-diagonal gives P/Q full lifts; all original spokes including e are legal, and Col^I persists. Thus Q(G) subset B-T of size2 contradicts all 933/941 D5 images. Proper four-color gamma has no unused Dgamma and G acceptance follows separately from existing H2/T4.",
+      "BASE_exact_sections": [
+        {
+          "path": "artifacts/c5_excess_two_e4/REPORT.md",
+          "section": "4.1",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        },
+        {
+          "path": "docs/c5_single_spoke_two_two.md",
+          "section": "2-3",
+          "commit": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+        }
+      ],
+      "external_trust": [
+        {
+          "source": "Official Dvorak List coloring and Gallai trees, 2018-03-24",
+          "url": "https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf",
+          "references": [
+            "Lemma 7, PDF page5",
+            "Theorem 10, PDF page6"
+          ],
+          "scope": "inherited external degree-list/Gallai trust; source refusal hypotheses checked first; not Python/Lean proof"
+        }
+      ],
+      "verdict": "holds under stated hypotheses",
+      "new_source_sufficient_hypotheses": [],
+      "query_domain_refinements": [
+        "H2A-QDOMAIN-01"
+      ],
+      "precise_residual": "candidate only; supervisor adoption pending; no general S/N2/E, long/other-core or core-existence closure"
+    }
+  ],
+  "findings": [
+    {
+      "id": "H2A-QDOMAIN-01",
+      "kind": "query-domain clarification",
+      "locations": [
+        "worker REPORT.md section8 lines238-244",
+        "worker claims.json H2-EXCLUSION"
+      ],
+      "original_formulation": "Every gamma seeing three colors on T uses a gamma-unused D_gamma to set r=s=D_gamma.",
+      "scalar_counterexample": {
+        "gamma": [
+          0,
+          1,
+          2,
+          3,
+          1
+        ],
+        "T": [
+          0,
+          1,
+          2
+        ],
+        "proper": true,
+        "gamma_color_count": 4,
+        "T_color_count": 3,
+        "unused_color_set": []
+      },
+      "required_refinement": "Restrict the r=s=D_gamma construction to proper three-color gamma. Keep JOIN/RESTORE/PALETTE over every proper gamma; for proper four-color gamma use G acceptance inherited directly from H2/T4.",
+      "source_sufficient_hypothesis_added": false,
+      "source_exclusion_affected": false,
+      "source_counterexample": false,
+      "verdict": "counterexample to unqualified construction domain; source exclusion holds with explicit existing-domain split"
+    }
+  ],
+  "new_source_sufficient_hypotheses": [],
+  "conditional_scoped_composition": {
+    "claim_id": "H2A-HIGH-COMPOSITION",
+    "full_quantifier": "For every arbitrary finite source satisfying the full common precise original-spoke-omission S-SHORT-U-HIGH contract, with unique original U only at s, original mixed incidence(3,2), P/Q each actual true boundary-edge support, original nonadjacent degree5 roots, only original rb_i omitted and X=G-e=M itself beta-minimal45/54, all other complete same-source H/K1-H/K13 data retained: if complete HIGH2 and HIGH3 candidates are independently adopted, existing adopted HIGH1 plus these exclude that precise HIGH identity.",
+    "degree_equation": "2+u+t_s=5, u>=1, t_s>=0; r mixed3 and no U force original r-spokes=2",
+    "mutually_exclusive_exhaustive_cases": [
+      {
+        "u": 1,
+        "t_s": 2,
+        "mapping": "frozen HIGH1 H1-H13",
+        "adoption_status": "already adopted in frozen acceptance"
+      },
+      {
+        "u": 2,
+        "t_s": 1,
+        "mapping": "worker HIGH2 H1-H13",
+        "adoption_status": "candidate only; query-domain refinement recorded"
+      },
+      {
+        "u": 3,
+        "t_s": 0,
+        "mapping": "frozen H3A/H3R/H3G common K1-K13",
+        "adoption_status": "candidate only"
+      }
+    ],
+    "contract_matching": "All common clauses1-6,8,10-13 identical; clause7 fixes actual U contacts and clause9 s-spokes by each case. Finite simplicity gives distinct contacts. No other source assumption introduced. Root swap jointly names lowering r.",
+    "HIGH3_authorized_sources": [
+      "frozen/audits/2026-10-10-n45-h3a/independent-judgment.json",
+      "frozen/audits/2026-10-10-n45-h3r/independent-judgment.json",
+      "frozen/audits/2026-10-10-n45-h3g/independent-judgment.json",
+      "frozen/audits/2026-10-10-n45-h3a/frozen/authority/common-contract.md"
+    ],
+    "verdict": "holds under stated hypotheses",
+    "conditional": true,
+    "adopted": false,
+    "new_source_sufficient_hypotheses": [],
+    "excluded_broad_claims": [
+      "all S",
+      "long",
+      "original55",
+      "other cores or non-M derivatives",
+      "general N2/E",
+      "epsilon>=3",
+      "general core existence"
+    ]
+  },
+  "evidence_layers": {
+    "arbitrary_size_paper": "manual independent audit holds for complete H1-H13; candidate only",
+    "external_Gallai": "primary theorem reread; frozen PDF; inherited external trust, not locally proved",
+    "abstract_row_set_controls": "8 mapping positions / 600 singleton checks / 100 D5 rejected-set checks; triggered and holds",
+    "scalar_overbroad_domain": "counterexample; not a source counterexample",
+    "finite_HIGH2_source": {
+      "established": false,
+      "executed": false,
+      "status": "not triggered",
+      "trigger_count": null
+    },
+    "source_realizability": "not established",
+    "Lean": "no new theorem; lake build not run"
+  },
+  "custody_scope": "four named immutable worker trees bytes/modes and five named shared hashes only; outside new directories not source drift; original outside-custody FAIL preserved",
+  "historical_failures_preserved": [
+    "original generation mapping FAIL",
+    "original outside custody FAIL",
+    "initial local links FAIL",
+    "DocGraph62duplicates",
+    "BASE historical missing docs",
+    "E4 provenance replay FAIL"
+  ],
+  "stop": "deliver candidate paper and conditional scope coverage; domain refinement and adoption/publication remain parent responsibility"
+}

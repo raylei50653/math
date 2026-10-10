@@ -1,0 +1,254 @@
+{
+  "base": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "claims": [
+    {
+      "additional_premises": [],
+      "dependencies": [],
+      "evidence_layer": "arbitrary-size conditional paper",
+      "finite_source_status": "not evaluated; no finite LOW1 source, trigger count, or source counterexample computed",
+      "id": "LOW1-CORE",
+      "new_Lean": false,
+      "paper_steps": [
+        "Only rb_i is removed; complete degrees in X are r=4, s=5 and every U/P/Q vertex=4.",
+        "H_X=H_G; X has its own beta-minimality by X=M, which gives beta-criticality and therefore its own Sigma-criticality. No inheritance from G."
+      ],
+      "quantifier": "For every (G,e,beta,X) satisfying every full source-contract premise; JOIN additionally quantifies all proper literal gamma, all pins and all full assignments.",
+      "report_section": "2",
+      "source_contract": [
+        "All arbitrary-size finite simple disk graphs G with ordered induced C5 B=(b0,...,b4) as outer face.",
+        "Complete Sigma(G)=933/941 or a single simultaneous whole-graph D5 image; every original nonboundary edge is Sigma-critical; epsilon(G)=2.",
+        "Effective original interior H is connected and full B-touch; original isolated interior vertices are ignored only in effective H and remain freely liftable.",
+        "Exactly two original nonadjacent roots r,s have complete degree5; all other effective original interior vertices have complete degree4, including actual boundary attachments.",
+        "H minus {r,s} has exactly three complete original connected components: unique unary U at r and mixed P,Q.",
+        "Original U has exactly one original root-contact rx, x in U, no s contact, and remains entirely in X.",
+        "All three original pieces are one-sided with nonempty actual support. P and Q each have actual support exactly the endpoints of a genuine original B edge, with positive incidence to both roots.",
+        "Original mixed incidence (m_r,m_s)=(2,3): r has one contact to each mixed, s has one and two; both roots have exactly two original boundary spokes.",
+        "For an original spoke e=rb_i and an original rejecting literal row beta, X=G-e=M is beta inclusion-minimal with root degrees(4,5). The original root-swap image(5,4) is transported as a whole.",
+        "Only e is omitted: all other original vertices, U/P/Q internal edges, root contacts, attachments and spokes are retained, with no replacement or contraction.",
+        "One original graph with named ordered contacts, single coordinates for shared vertices, actual attachments/supports/ownership, original bridges and rotation, a shared literal color frame, complete ten-row relations including empty/nonempty fibres and all full lifts.",
+        "D5/S4/root swap operate simultaneously on the entire graph and all data. Canonical 933 q2 is retained along with q0,q1,q3; no requirement that beta be a U-shield middle row."
+      ],
+      "status": "paper_candidate_pending_independent_adjudication",
+      "trust": [
+        "Definition of the full source contract",
+        "BASE weak-list-cores section1"
+      ]
+    },
+    {
+      "additional_premises": [],
+      "dependencies": [
+        "LOW1-CORE"
+      ],
+      "evidence_layer": "arbitrary-size conditional paper",
+      "finite_source_status": "not evaluated; no finite LOW1 source, trigger count, or source counterexample computed",
+      "id": "LOW1-COMP",
+      "new_Lean": false,
+      "paper_steps": [
+        "C=H_X-s contains exactly {r} union U union P union Q, with all original internal edges and retained r contacts.",
+        "Every original piece is connected and touches r, so C is the sole component. Its full X-degrees are4; deg_C is computed separately.",
+        "The three original s contacts inherit original ordered rotation, are pairwise distinct and lie in P/Q. Shared r/s contacts retain a single coordinate."
+      ],
+      "quantifier": "For every (G,e,beta,X) satisfying every full source-contract premise; JOIN additionally quantifies all proper literal gamma, all pins and all full assignments.",
+      "report_section": "3",
+      "source_contract": [
+        "All arbitrary-size finite simple disk graphs G with ordered induced C5 B=(b0,...,b4) as outer face.",
+        "Complete Sigma(G)=933/941 or a single simultaneous whole-graph D5 image; every original nonboundary edge is Sigma-critical; epsilon(G)=2.",
+        "Effective original interior H is connected and full B-touch; original isolated interior vertices are ignored only in effective H and remain freely liftable.",
+        "Exactly two original nonadjacent roots r,s have complete degree5; all other effective original interior vertices have complete degree4, including actual boundary attachments.",
+        "H minus {r,s} has exactly three complete original connected components: unique unary U at r and mixed P,Q.",
+        "Original U has exactly one original root-contact rx, x in U, no s contact, and remains entirely in X.",
+        "All three original pieces are one-sided with nonempty actual support. P and Q each have actual support exactly the endpoints of a genuine original B edge, with positive incidence to both roots.",
+        "Original mixed incidence (m_r,m_s)=(2,3): r has one contact to each mixed, s has one and two; both roots have exactly two original boundary spokes.",
+        "For an original spoke e=rb_i and an original rejecting literal row beta, X=G-e=M is beta inclusion-minimal with root degrees(4,5). The original root-swap image(5,4) is transported as a whole.",
+        "Only e is omitted: all other original vertices, U/P/Q internal edges, root contacts, attachments and spokes are retained, with no replacement or contraction.",
+        "One original graph with named ordered contacts, single coordinates for shared vertices, actual attachments/supports/ownership, original bridges and rotation, a shared literal color frame, complete ten-row relations including empty/nonempty fibres and all full lifts.",
+        "D5/S4/root swap operate simultaneously on the entire graph and all data. Canonical 933 q2 is retained along with q0,q1,q3; no requirement that beta be a U-shield middle row."
+      ],
+      "status": "paper_candidate_pending_independent_adjudication",
+      "trust": [
+        "Original edge/component decomposition"
+      ]
+    },
+    {
+      "additional_premises": [],
+      "dependencies": [
+        "LOW1-COMP"
+      ],
+      "evidence_layer": "arbitrary-size conditional paper",
+      "finite_source_status": "not evaluated; no finite LOW1 source, trigger count, or source counterexample computed",
+      "id": "LOW1-JOIN",
+      "new_Lean": false,
+      "paper_steps": [
+        "For every proper literal gamma, retain all original full assignments Lambda_U/P/Q and join them at one r coordinate c satisfying the retained r spoke and all original r-contact inequalities.",
+        "Project to the inherited ordered three s contacts while retaining all lift fibres. Pinning s=a simultaneously imposes all three original inequalities.",
+        "Every X full lift is exactly a in A_s(gamma) plus a full joined C assignment; every G lift adds only f(r)!=gamma(b_i).",
+        "Connected L_gamma degree assignment has strict slack at each original s contact, so complete R_C(gamma) is nonempty."
+      ],
+      "quantifier": "For every (G,e,beta,X) satisfying every full source-contract premise; JOIN additionally quantifies all proper literal gamma, all pins and all full assignments.",
+      "report_section": "3",
+      "source_contract": [
+        "All arbitrary-size finite simple disk graphs G with ordered induced C5 B=(b0,...,b4) as outer face.",
+        "Complete Sigma(G)=933/941 or a single simultaneous whole-graph D5 image; every original nonboundary edge is Sigma-critical; epsilon(G)=2.",
+        "Effective original interior H is connected and full B-touch; original isolated interior vertices are ignored only in effective H and remain freely liftable.",
+        "Exactly two original nonadjacent roots r,s have complete degree5; all other effective original interior vertices have complete degree4, including actual boundary attachments.",
+        "H minus {r,s} has exactly three complete original connected components: unique unary U at r and mixed P,Q.",
+        "Original U has exactly one original root-contact rx, x in U, no s contact, and remains entirely in X.",
+        "All three original pieces are one-sided with nonempty actual support. P and Q each have actual support exactly the endpoints of a genuine original B edge, with positive incidence to both roots.",
+        "Original mixed incidence (m_r,m_s)=(2,3): r has one contact to each mixed, s has one and two; both roots have exactly two original boundary spokes.",
+        "For an original spoke e=rb_i and an original rejecting literal row beta, X=G-e=M is beta inclusion-minimal with root degrees(4,5). The original root-swap image(5,4) is transported as a whole.",
+        "Only e is omitted: all other original vertices, U/P/Q internal edges, root contacts, attachments and spokes are retained, with no replacement or contraction.",
+        "One original graph with named ordered contacts, single coordinates for shared vertices, actual attachments/supports/ownership, original bridges and rotation, a shared literal color frame, complete ten-row relations including empty/nonempty fibres and all full lifts.",
+        "D5/S4/root swap operate simultaneously on the entire graph and all data. Canonical 933 q2 is retained along with q0,q1,q3; no requirement that beta be a U-shield middle row."
+      ],
+      "status": "paper_candidate_pending_independent_adjudication",
+      "trust": [
+        "BASE R10 section1 complete joins",
+        "External Dvorak Lemma7"
+      ]
+    },
+    {
+      "additional_premises": [],
+      "dependencies": [
+        "LOW1-CORE",
+        "LOW1-JOIN"
+      ],
+      "evidence_layer": "arbitrary-size conditional paper",
+      "finite_source_status": "not evaluated; no finite LOW1 source, trigger count, or source counterexample computed",
+      "id": "LOW1-F",
+      "new_Lean": false,
+      "paper_steps": [
+        "If the two retained original s spokes had equal beta colors, deleting one would not change its list and would contradict X beta-minimality.",
+        "Rejection gives A_s(beta) subset F_C(beta). Each original s-spoke deletion has a full beta lift pinning s to precisely the released spoke color, excluding that color from F_C.",
+        "Thus F_C(beta)=Col minus the two distinct literal original s-spoke colors, and R_C(beta) is nonempty."
+      ],
+      "quantifier": "For every (G,e,beta,X) satisfying every full source-contract premise; JOIN additionally quantifies all proper literal gamma, all pins and all full assignments.",
+      "report_section": "4",
+      "source_contract": [
+        "All arbitrary-size finite simple disk graphs G with ordered induced C5 B=(b0,...,b4) as outer face.",
+        "Complete Sigma(G)=933/941 or a single simultaneous whole-graph D5 image; every original nonboundary edge is Sigma-critical; epsilon(G)=2.",
+        "Effective original interior H is connected and full B-touch; original isolated interior vertices are ignored only in effective H and remain freely liftable.",
+        "Exactly two original nonadjacent roots r,s have complete degree5; all other effective original interior vertices have complete degree4, including actual boundary attachments.",
+        "H minus {r,s} has exactly three complete original connected components: unique unary U at r and mixed P,Q.",
+        "Original U has exactly one original root-contact rx, x in U, no s contact, and remains entirely in X.",
+        "All three original pieces are one-sided with nonempty actual support. P and Q each have actual support exactly the endpoints of a genuine original B edge, with positive incidence to both roots.",
+        "Original mixed incidence (m_r,m_s)=(2,3): r has one contact to each mixed, s has one and two; both roots have exactly two original boundary spokes.",
+        "For an original spoke e=rb_i and an original rejecting literal row beta, X=G-e=M is beta inclusion-minimal with root degrees(4,5). The original root-swap image(5,4) is transported as a whole.",
+        "Only e is omitted: all other original vertices, U/P/Q internal edges, root contacts, attachments and spokes are retained, with no replacement or contraction.",
+        "One original graph with named ordered contacts, single coordinates for shared vertices, actual attachments/supports/ownership, original bridges and rotation, a shared literal color frame, complete ten-row relations including empty/nonempty fibres and all full lifts.",
+        "D5/S4/root swap operate simultaneously on the entire graph and all data. Canonical 933 q2 is retained along with q0,q1,q3; no requirement that beta be a U-shield middle row."
+      ],
+      "status": "paper_candidate_pending_independent_adjudication",
+      "trust": [
+        "X beta-minimality",
+        "BASE R10 sections1,4"
+      ]
+    },
+    {
+      "additional_premises": [],
+      "dependencies": [
+        "LOW1-CORE",
+        "LOW1-COMP",
+        "LOW1-JOIN",
+        "LOW1-F"
+      ],
+      "evidence_layer": "arbitrary-size conditional paper",
+      "finite_source_status": "not evaluated; no finite LOW1 source, trigger count, or source counterexample computed",
+      "id": "LOW1-MAP",
+      "new_Lean": false,
+      "paper_steps": [
+        "All BASE sections1-5 prerequisites are mapped to X itself; section5 permits arbitrary distinct-color spoke positions and simultaneous whole-graph color transport.",
+        "Two uncolorable tight degree assignments on the same C differ only at the original three contacts; Gallai block palettes and column independence give one active triangle and three arbitrary-length, possibly zero-length, arms.",
+        "Full degree4 in X and strict slack exclude boundary-free inactive branches, yielding actual retained-edge boundary tethers with disjoint interiors.",
+        "The original s, three triangle-arm bags, and original B plus tether interiors give five connected disjoint bags and all ten pairwise original-edge adjacencies in X; a retained s spoke supplies s to B."
+      ],
+      "quantifier": "For every (G,e,beta,X) satisfying every full source-contract premise; JOIN additionally quantifies all proper literal gamma, all pins and all full assignments.",
+      "report_section": "5",
+      "source_contract": [
+        "All arbitrary-size finite simple disk graphs G with ordered induced C5 B=(b0,...,b4) as outer face.",
+        "Complete Sigma(G)=933/941 or a single simultaneous whole-graph D5 image; every original nonboundary edge is Sigma-critical; epsilon(G)=2.",
+        "Effective original interior H is connected and full B-touch; original isolated interior vertices are ignored only in effective H and remain freely liftable.",
+        "Exactly two original nonadjacent roots r,s have complete degree5; all other effective original interior vertices have complete degree4, including actual boundary attachments.",
+        "H minus {r,s} has exactly three complete original connected components: unique unary U at r and mixed P,Q.",
+        "Original U has exactly one original root-contact rx, x in U, no s contact, and remains entirely in X.",
+        "All three original pieces are one-sided with nonempty actual support. P and Q each have actual support exactly the endpoints of a genuine original B edge, with positive incidence to both roots.",
+        "Original mixed incidence (m_r,m_s)=(2,3): r has one contact to each mixed, s has one and two; both roots have exactly two original boundary spokes.",
+        "For an original spoke e=rb_i and an original rejecting literal row beta, X=G-e=M is beta inclusion-minimal with root degrees(4,5). The original root-swap image(5,4) is transported as a whole.",
+        "Only e is omitted: all other original vertices, U/P/Q internal edges, root contacts, attachments and spokes are retained, with no replacement or contraction.",
+        "One original graph with named ordered contacts, single coordinates for shared vertices, actual attachments/supports/ownership, original bridges and rotation, a shared literal color frame, complete ten-row relations including empty/nonempty fibres and all full lifts.",
+        "D5/S4/root swap operate simultaneously on the entire graph and all data. Canonical 933 q2 is retained along with q0,q1,q3; no requirement that beta be a U-shield middle row."
+      ],
+      "status": "paper_candidate_pending_independent_adjudication",
+      "trust": [
+        "BASE two-spoke-three-contacts sections1-5",
+        "External Dvorak Lemma7/Theorem10",
+        "K5-minor nonplanarity"
+      ]
+    },
+    {
+      "additional_premises": [],
+      "dependencies": [
+        "LOW1-MAP"
+      ],
+      "evidence_layer": "arbitrary-size conditional paper",
+      "finite_source_status": "not evaluated; no finite LOW1 source, trigger count, or source counterexample computed",
+      "id": "LOW1-EXCLUSION",
+      "new_Lean": false,
+      "paper_steps": [
+        "Every finite arbitrary-size original source meeting every complete LOW1-contract premise contradicts planarity of its X=G-rb_i subgraph.",
+        "This is only a new LOW1 paper candidate pending independent incremental adjudication; no larger source quantifier or official adoption is made."
+      ],
+      "quantifier": "For every (G,e,beta,X) satisfying every full source-contract premise; JOIN additionally quantifies all proper literal gamma, all pins and all full assignments.",
+      "report_section": "6",
+      "source_contract": [
+        "All arbitrary-size finite simple disk graphs G with ordered induced C5 B=(b0,...,b4) as outer face.",
+        "Complete Sigma(G)=933/941 or a single simultaneous whole-graph D5 image; every original nonboundary edge is Sigma-critical; epsilon(G)=2.",
+        "Effective original interior H is connected and full B-touch; original isolated interior vertices are ignored only in effective H and remain freely liftable.",
+        "Exactly two original nonadjacent roots r,s have complete degree5; all other effective original interior vertices have complete degree4, including actual boundary attachments.",
+        "H minus {r,s} has exactly three complete original connected components: unique unary U at r and mixed P,Q.",
+        "Original U has exactly one original root-contact rx, x in U, no s contact, and remains entirely in X.",
+        "All three original pieces are one-sided with nonempty actual support. P and Q each have actual support exactly the endpoints of a genuine original B edge, with positive incidence to both roots.",
+        "Original mixed incidence (m_r,m_s)=(2,3): r has one contact to each mixed, s has one and two; both roots have exactly two original boundary spokes.",
+        "For an original spoke e=rb_i and an original rejecting literal row beta, X=G-e=M is beta inclusion-minimal with root degrees(4,5). The original root-swap image(5,4) is transported as a whole.",
+        "Only e is omitted: all other original vertices, U/P/Q internal edges, root contacts, attachments and spokes are retained, with no replacement or contraction.",
+        "One original graph with named ordered contacts, single coordinates for shared vertices, actual attachments/supports/ownership, original bridges and rotation, a shared literal color frame, complete ten-row relations including empty/nonempty fibres and all full lifts.",
+        "D5/S4/root swap operate simultaneously on the entire graph and all data. Canonical 933 q2 is retained along with q0,q1,q3; no requirement that beta be a U-shield middle row."
+      ],
+      "status": "paper_candidate_pending_independent_adjudication",
+      "trust": [
+        "LOW1-MAP"
+      ]
+    }
+  ],
+  "delivery_status": "candidate_only_not_adopted",
+  "full_source_contract": [
+    "All arbitrary-size finite simple disk graphs G with ordered induced C5 B=(b0,...,b4) as outer face.",
+    "Complete Sigma(G)=933/941 or a single simultaneous whole-graph D5 image; every original nonboundary edge is Sigma-critical; epsilon(G)=2.",
+    "Effective original interior H is connected and full B-touch; original isolated interior vertices are ignored only in effective H and remain freely liftable.",
+    "Exactly two original nonadjacent roots r,s have complete degree5; all other effective original interior vertices have complete degree4, including actual boundary attachments.",
+    "H minus {r,s} has exactly three complete original connected components: unique unary U at r and mixed P,Q.",
+    "Original U has exactly one original root-contact rx, x in U, no s contact, and remains entirely in X.",
+    "All three original pieces are one-sided with nonempty actual support. P and Q each have actual support exactly the endpoints of a genuine original B edge, with positive incidence to both roots.",
+    "Original mixed incidence (m_r,m_s)=(2,3): r has one contact to each mixed, s has one and two; both roots have exactly two original boundary spokes.",
+    "For an original spoke e=rb_i and an original rejecting literal row beta, X=G-e=M is beta inclusion-minimal with root degrees(4,5). The original root-swap image(5,4) is transported as a whole.",
+    "Only e is omitted: all other original vertices, U/P/Q internal edges, root contacts, attachments and spokes are retained, with no replacement or contraction.",
+    "One original graph with named ordered contacts, single coordinates for shared vertices, actual attachments/supports/ownership, original bridges and rotation, a shared literal color frame, complete ten-row relations including empty/nonempty fibres and all full lifts.",
+    "D5/S4/root swap operate simultaneously on the entire graph and all data. Canonical 933 q2 is retained along with q0,q1,q3; no requirement that beta be a U-shield middle row."
+  ],
+  "independent_adoption": "not performed by this author",
+  "no_new_mathematical_gap_found_by_author": true,
+  "remaining_OPEN": [
+    "LOW incidence2",
+    "HIGH",
+    "long",
+    "original55",
+    "other cores",
+    "nonunit/nonminimal omission identities",
+    "general N2/E",
+    "epsilon>=3"
+  ],
+  "source_control_evaluation": "not performed, not a zero-trigger count",
+  "source_controls": [],
+  "source_realization": "none newly established",
+  "task": "N45-S-LOW1",
+  "trust_boundary": "BASE conditional papers and external Gallai degree-list theorem; tool integrity PASS is not a mathematical theorem."
+}

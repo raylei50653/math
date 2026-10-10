@@ -1,0 +1,14 @@
+{
+  "actual_commands": "seal-final-v3/commands.json",
+  "failure": "Report-link regex did not remove inline code and misclassified mathematical [v contact](1_[color=3]...) as a Markdown link. The real local link targets were not missing.",
+  "failure_stage": "Authored local-link check, after successful full live inventory/authority input checks.",
+  "fix": "Remove inline-code spans before parsing links, consistently with the existing BASE documentation checker.",
+  "manifest": "MANIFEST.final-v3.sha256",
+  "negative_control_v3": "Correctly rejects corrupted digest.",
+  "normal_exit": 2,
+  "old_manifest_and_logs_overwritten": false,
+  "outer_seal_exit": 1,
+  "paper_change": false,
+  "seed17_exit": 2,
+  "superseding_manifest": "MANIFEST.final-v4.sha256"
+}

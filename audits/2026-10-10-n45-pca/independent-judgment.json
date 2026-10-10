@@ -1,0 +1,99 @@
+{
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "Lean": "no new claim",
+  "N1": "Four whole-U interface calibrations kept separate from N2 coverage.",
+  "N2_zero_trigger_interpretation": "Controls lack full premises; never a source exclusion or positive-branch validation.",
+  "PC_certificate_sha256": "538e22dcacaab1bf6f170671ab42f8c7e1af26684e7fa3dfaad5c5b9635501c2",
+  "PC_report_sha256": "55daa44d0c67ac081a9a6fc161cf5d3d28e3532801e8912160db5fdefd5ce1e1",
+  "blocking_findings": [],
+  "claims": [
+    {
+      "id": "PCA-01",
+      "scope": "Frozen hashes, BASE Git blob authority and fresh read-only integrity only.",
+      "status": "triggered and holds",
+      "worker_claims": [
+        "PC-01",
+        "PC-07"
+      ]
+    },
+    {
+      "id": "PCA-02",
+      "scope": "Inspected implementation and observed contract paths; generic soundness/complete exit0 branch not certified.",
+      "status": "triggered and holds",
+      "worker_claims": [
+        "PC-02"
+      ]
+    },
+    {
+      "id": "PCA-03",
+      "scope": "23 frozen finite sources, independently recomputed complete interfaces/lifts/witnesses; no general theorem.",
+      "status": "triggered and holds",
+      "worker_claims": [
+        "PC-03",
+        "PC-04",
+        "PC-05"
+      ]
+    },
+    {
+      "id": "PCA-04",
+      "scope": "Five existing negatives, six fresh wrong/missing declarations and one legal missing-LP control, all exit2.",
+      "status": "triggered and holds",
+      "worker_claims": [
+        "PC-06"
+      ]
+    },
+    {
+      "id": "PCA-05",
+      "scope": "Normal/seed17 byte replay, exclusive-create guard and input hash/recorded-mtime integrity.",
+      "status": "triggered and holds",
+      "worker_claims": [
+        "PC-07"
+      ]
+    }
+  ],
+  "commit_push_external_messages_subagents": false,
+  "contract_reviews": "checks/static-contract-review.json",
+  "counts": {
+    "N1_Delta_gamma_instances": 4,
+    "N1_X_16pin_fibres": 640,
+    "N1_graphs": 4,
+    "N1_original_16pin_fibres": 640,
+    "N1_rejecting_beta_minimal_occurrences": 4,
+    "N1_whole_U_omissions": 4,
+    "N2_Delta_gamma_instances": 7,
+    "N2_LP_geometry_triggered": 0,
+    "N2_X_16pin_fibres": 1120,
+    "N2_full_B_touch": 11,
+    "N2_graphs": 19,
+    "N2_original_16pin_fibres": 3040,
+    "N2_rejecting_beta_minimal_occurrences": 0,
+    "N2_target_sigma_triggered": 0,
+    "N2_whole_U_omissions": 7,
+    "nonframe_critical_edges": 555,
+    "piece_full_lifts": 2986,
+    "piece_rows": 690
+  },
+  "decision": "adopt scoped PC implementation, fixed finite delivery and observed fail-closed controls",
+  "finite_evidence": "independent-certificate.json",
+  "finite_evidence_sha256": "2b4740038d376ffc79d05ced2d9981202e3ada51cf4ea0c2edcf9eb3deca9c82",
+  "forbidden_judgments_consumed": false,
+  "full_LP_positive_source_control": "missing",
+  "general_validator_soundness": "not established",
+  "graph_k_expansion": false,
+  "new_paper_claim": "none",
+  "preserved_failures": "Worker historical development/provenance/docs failures retained; presentation/path preview errors separately recorded.",
+  "probe_evidence": "checks/probe-results.json",
+  "shared_worker_mutation": false,
+  "source_exclusion": "not established",
+  "source_search_performed": false,
+  "task": "N45-PCA",
+  "uncovered": [
+    "Full LP geometry/target/rejecting N2 core positive source",
+    "Derived LP common-D/spokes and cross-row Q/Delta positive branches",
+    "Arbitrary-size pieces and string/mixed names",
+    "Additional isolated vertices and noncanonical literal beta/root swap generic positive controls",
+    "Valid supplied optional critical/beta witness positive controls",
+    "Higher-genus/disconnected malformed rotations and resource exhaustion"
+  ],
+  "write_scope": "audits/2026-10-10-n45-pca"
+}

@@ -1,0 +1,88 @@
+{
+  "runs": [
+    {
+      "id": "docs_base",
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/tmp/math-n45-s-20261009",
+      "exit": 1,
+      "log": "logs/docs_base.log",
+      "reason": "Two BASE documentation links target untracked legacy audits absent in a fresh worktree."
+    },
+    {
+      "id": "docgraph_docs_base",
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/tmp/math-n45-s-20261009",
+      "exit": 0,
+      "log": "logs/docgraph_docs_base.log"
+    },
+    {
+      "id": "docs_shared",
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit": 0,
+      "log": "logs/docs_shared.log"
+    },
+    {
+      "id": "docgraph_whole_shared",
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit": 1,
+      "log": "logs/docgraph_whole_shared.log"
+    },
+    {
+      "id": "diff_base",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-s-20261009",
+      "exit": 0,
+      "log": "logs/diff_base.log"
+    },
+    {
+      "id": "diff_shared",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit": 0,
+      "log": "logs/diff_shared.log"
+    }
+  ],
+  "input_file_count": 69,
+  "input_byte_drift": [],
+  "source_status": "## HEAD (no branch)\n",
+  "legacy_link_inventory": [
+    {
+      "path": "audits/2026-10-04-task-d5/c4/scope_ledger.json",
+      "in_BASE_git": false,
+      "exists_shared": true,
+      "exists_fresh_BASE": false
+    },
+    {
+      "path": "audits/2026-10-04-task-d2/integration_doc_changes.diff",
+      "in_BASE_git": false,
+      "exists_shared": true,
+      "exists_fresh_BASE": false
+    }
+  ]
+}

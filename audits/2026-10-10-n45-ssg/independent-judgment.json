@@ -1,0 +1,197 @@
+{
+  "task": "N45-SSG",
+  "base": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "head": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "sealed_independent_judgment_utc": "2026-10-10T03:24:36.847910+00:00",
+  "scope": "independent SS geometry/T4 delta; four claims only",
+  "source_contract": [
+    "Finite simple original disk G with ordered induced-C5 outer boundary B.",
+    "Complete Sigma(G)=933/941 or one common whole-graph D5 image; every original nonboundary edge Sigma-critical; epsilon(G)=2.",
+    "Effective original H connected and G full B-touch; exactly two nonadjacent complete degree5 roots r,s, all other effective original vertices complete degree4.",
+    "H minus {r,s} has exactly three complete original components: unique unary U and mixed L,S; each one-sided with nonempty actual support; both mixed have positive incidence to each root.",
+    "Original U has exactly one root-contact edge rx and no s edge; X=G minus all vertices of U equals the inclusion-minimal rejecting literal-beta 45/54 core M; common root swap names the lowered-degree side r.",
+    "All original vertices and edges outside U are retained; original root incidence equations t_r+k_L^r+k_S^r+1=5 and t_s+k_L^s+k_S^s=5.",
+    "Actual support of L is long, not contained in endpoints of any boundary edge; actual support of S is exactly one named original boundary vertex; k_S^r+k_S^s>=4.",
+    "One original graph with named ordered contacts, one coordinate per shared vertex, all original attachments/supports/ownership, bridges/rotation, one literal color frame, complete relations and all empty/nonempty fibres and full lifts; D5/S4/root swap act on the whole graph and data only."
+  ],
+  "candidate_report_sha256": "e6057c8a474d1dd639aed8f6533ffceab4a8d64f42f729c49f56f37117c56f6a",
+  "candidate_claims_sha256": "9a233bdb99e67d2347cdf6993263f3ee32f270817e9eb5174f54a9c1dc8a822b",
+  "current_inputs_are_not_BASE": true,
+  "SSA_SSC_root_current_judgments_read_before_seal": false,
+  "claims": [
+    {
+      "id": "N45-SS-COST",
+      "quantifier": "For every source under the complete SS contract, its ordered original U/L shield lengths are exactly one of (2,2),(2,3),(3,2).",
+      "original_source_premises": "every premise in source_contract, simultaneously on one original graph",
+      "branch_premises": [],
+      "derived_prerequisites": "Derived by the independent reasoning chain below and cited preceding claims; not extra source realizability assumptions.",
+      "dependencies_and_trust": [
+        "accepted original U-WIT with SS premises independently remapped",
+        "BASE unary-shield Lemma1(b),(d), Theorem A",
+        "BASE short-support paper and original outside-path/no-spoke supplement",
+        "declared external Dvorak Lemma7/Theorem10 trust"
+      ],
+      "independent_reasoning_steps": [
+        "rx Sigma-critical provides gamma and a full G-rx lift; restricting to G-U is legal and nonextendable to all of original U. gamma need not be beta.",
+        "If U were supported inside endpoints h,k of a boundary edge, original full B-touch supplies a real t attachment with t outside h,k. Positive mixed incidences connect r,s,L,S in H-U; a simple original r-to-t path avoids U and has no other boundary vertex.",
+        "Original U is unary and a full component of H-r; degree4, the witness, and the real outside path meet BASE short-support/hub prerequisites including the no-direct-spoke supplement. Long support then gives original sigma_U>=2.",
+        "Long L gives original sigma_L>=2. All three one-sided original shields have mutually disjoint edge sets, hence total<=5. Only sigma_S>=0 is used; no singleton pair fee or prefilled U/L support cardinality.",
+        "The ordered lengths are exactly among (2,2),(2,3),(3,2). BASE support interval lemma, if invoked, gives 3 vertices for length2 and 4 vertices for length3."
+      ],
+      "verdict": "holds_under_entire_stated_contract_and_declared_paper_trust",
+      "minimum_block_gap": null,
+      "new_proof_gap_identified": false,
+      "evidence_layer": "arbitrary-size paper increment with explicit inherited BASE and external theorem trust; independent fixed arithmetic only corroborates C5 facts",
+      "finite_source_status": "not computed; no SS original source generated or triggered",
+      "source_counterexample_established": false,
+      "controls_prove_original_face": false
+    },
+    {
+      "id": "N45-SS-UNTOP",
+      "quantifier": "For every source under the complete SS contract, every original U-shield interior point has no X interior neighbor.",
+      "original_source_premises": "every premise in source_contract, simultaneously on one original graph",
+      "branch_premises": [],
+      "derived_prerequisites": "Derived by the independent reasoning chain below and cited preceding claims; not extra source realizability assumptions.",
+      "dependencies_and_trust": [
+        "N45-SS-COST",
+        "BASE unary-shield Lemma1(c)",
+        "actual positive incidence/connected H-U and whole-U omission"
+      ],
+      "independent_reasoning_steps": [
+        "H-U is the actual connected graph r,s,L,S via positive original mixed incidences. Its nonboundary vertices lie in one open face of K_U.",
+        "Every retained spoke and L/S attachment has its open edge in this same original face, with only boundary endpoints on K_U. The face-defined sigma_U is not an arbitrary chosen gap.",
+        "COST yields sigma_U<=3<5, meeting Lemma1(c) sigma_U!=B. N_B(H-U), including both roots and L/S, avoids every shield interior point.",
+        "Whole-U omission X removes all remaining original nonboundary neighbors at these points; no U fragment remains. X full B-touch is neither assumed nor needed. Length3 has two distinct interior points, both covered."
+      ],
+      "verdict": "holds_under_entire_stated_contract_and_declared_paper_trust",
+      "minimum_block_gap": null,
+      "new_proof_gap_identified": false,
+      "evidence_layer": "arbitrary-size paper increment with explicit inherited BASE and external theorem trust; independent fixed arithmetic only corroborates C5 facts",
+      "finite_source_status": "not computed; no SS original source generated or triggered",
+      "source_counterexample_established": false,
+      "controls_prove_original_face": false
+    },
+    {
+      "id": "N45-SS-U3",
+      "quantifier": "For every complete-contract source with ordered shield lengths (3,2), X accepts every proper boundary row, contradicting beta rejection.",
+      "original_source_premises": "every premise in source_contract, simultaneously on one original graph",
+      "branch_premises": [
+        "|sigma_U|=3 and |sigma_L|=2."
+      ],
+      "derived_prerequisites": "Derived by the independent reasoning chain below and cited preceding claims; not extra source realizability assumptions.",
+      "dependencies_and_trust": [
+        "N45-SS-UNTOP",
+        "BASE unattached-boundary section1",
+        "original full T4 and X subset G"
+      ],
+      "independent_reasoning_steps": [
+        "X is a subgraph of the original T4-accepting G; its boundary remains induced C5. UNTOP supplies two distinct boundary points with no X interior neighbor.",
+        "Every proper three-color literal has color-class sizes 2,2,1, so at least one of the two absent points is not its singleton.",
+        "Change only that point to the unused fourth color. Lift the resulting T4 literal in X. In that one complete coloring restore only the selected point; its two boundary neighbors remain differently colored and it has no interior neighbor.",
+        "All three-color literals and T4 extend, giving Sigma(X)=Omega and contradicting the same beta rejection. No two-point simultaneous recolor or marginal assembly is used."
+      ],
+      "verdict": "holds_under_entire_stated_contract_and_declared_paper_trust",
+      "minimum_block_gap": null,
+      "new_proof_gap_identified": false,
+      "evidence_layer": "arbitrary-size paper increment with explicit inherited BASE and external theorem trust; independent fixed arithmetic only corroborates C5 facts",
+      "finite_source_status": "not computed; no SS original source generated or triggered",
+      "source_counterexample_established": false,
+      "controls_prove_original_face": false
+    },
+    {
+      "id": "N45-SS-U2",
+      "quantifier": "For every complete-contract source with ordered shield lengths (2,2) or (2,3), beta=q_m and Q(X)={m}, with the unique original U-shield interior point m.",
+      "original_source_premises": "every premise in source_contract, simultaneously on one original graph",
+      "branch_premises": [
+        "|sigma_U|=2 and |sigma_L| in {2,3}."
+      ],
+      "derived_prerequisites": "Derived by the independent reasoning chain below and cited preceding claims; not extra source realizability assumptions.",
+      "dependencies_and_trust": [
+        "N45-SS-UNTOP",
+        "BASE unattached-boundary section1",
+        "original full T4, X subset G, actual beta rejection"
+      ],
+      "independent_reasoning_steps": [
+        "UNTOP gives the unique original length2 shield interior point m with no X interior neighbor. X inherits all T4 and induced C5.",
+        "For every three-color literal whose singleton is not m, the one-point complete-lift recolor proves acceptance. Thus Omega minus the singleton-at-m pattern q_m is contained in Sigma(X).",
+        "Actual beta rejection forces its singleton to be m and its S4 pattern to be q_m; equality Sigma(X)=Omega minus {q_m} and Q(X)={m} follows. A pattern already accepted by G cannot be rejected by X subset G.",
+        "933 q2/index3/singleton b2 is included. All D5/S4/root swaps act jointly on original boundary, beta, masks, positions, contacts, ownership, and fibres, without piecewise frame normalization."
+      ],
+      "verdict": "holds_under_entire_stated_contract_and_declared_paper_trust",
+      "minimum_block_gap": null,
+      "new_proof_gap_identified": false,
+      "evidence_layer": "arbitrary-size paper increment with explicit inherited BASE and external theorem trust; independent fixed arithmetic only corroborates C5 facts",
+      "finite_source_status": "not computed; no SS original source generated or triggered",
+      "source_counterexample_established": false,
+      "controls_prove_original_face": false
+    },
+    {
+      "id": "N45-SS-X-CORE",
+      "verdict": "not_adjudicated_outside_geometry_T4_remit",
+      "minimum_block_gap": "Assessment deferred to SSA and root; SSG has no conclusion for this claim.",
+      "evidence_layer": "none from this scoped adjudication"
+    },
+    {
+      "id": "N45-SS-COMPONENT",
+      "verdict": "not_adjudicated_outside_geometry_T4_remit",
+      "minimum_block_gap": "Assessment deferred to SSA and root; SSG has no conclusion for this claim.",
+      "evidence_layer": "none from this scoped adjudication"
+    },
+    {
+      "id": "N45-SS-SPOKES",
+      "verdict": "not_adjudicated_outside_geometry_T4_remit",
+      "minimum_block_gap": "Assessment deferred to SSA and root; SSG has no conclusion for this claim.",
+      "evidence_layer": "none from this scoped adjudication"
+    },
+    {
+      "id": "N45-SS-T0",
+      "verdict": "not_adjudicated_outside_geometry_T4_remit",
+      "minimum_block_gap": "Assessment deferred to SSA and root; SSG has no conclusion for this claim.",
+      "evidence_layer": "none from this scoped adjudication"
+    },
+    {
+      "id": "N45-SS-T1",
+      "verdict": "not_adjudicated_outside_geometry_T4_remit",
+      "minimum_block_gap": "Assessment deferred to SSA and root; SSG has no conclusion for this claim.",
+      "evidence_layer": "none from this scoped adjudication"
+    },
+    {
+      "id": "N45-SS-T2",
+      "verdict": "not_adjudicated_outside_geometry_T4_remit",
+      "minimum_block_gap": "Assessment deferred to SSA and root; SSG has no conclusion for this claim.",
+      "evidence_layer": "none from this scoped adjudication"
+    },
+    {
+      "id": "N45-SS-EXCLUSION",
+      "verdict": "not_adjudicated_outside_geometry_T4_remit",
+      "minimum_block_gap": "Assessment deferred to SSA and root; SSG has no conclusion for this claim.",
+      "evidence_layer": "none from this scoped adjudication"
+    }
+  ],
+  "counts": {
+    "adjudicated": 4,
+    "holds_under_listed_premises": 4,
+    "new_proof_gaps": 0,
+    "out_of_scope": 7,
+    "source_controls_created": 0,
+    "source_counterexamples_established": 0
+  },
+  "minimum_geometry_T4_block_gap": null,
+  "main_SS_exclusion_adoption": "reserved for SSA plus root; not adopted here",
+  "trust_boundary": [
+    "accepted original U-WIT and named BASE papers assumed within their stated hypotheses",
+    "external Dvorak Lemma7/Theorem10 required by inherited short-support/Gallai chain",
+    "no new Lean",
+    "fixed arithmetic is not original-face proof or source realization"
+  ],
+  "uncovered": [
+    "Any missing SS contract premise",
+    "source realization",
+    "specified-coloring repair",
+    "general N2/E",
+    "epsilon>=3",
+    "other cores and original55",
+    "S LOW/HIGH/long"
+  ],
+  "memory_used": "MEMORY.md lines53-63 for scoped isolation and evidence boundary only; mathematical facts rechecked against frozen current/BASE sources"
+}

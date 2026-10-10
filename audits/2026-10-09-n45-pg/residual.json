@@ -1,0 +1,71 @@
+{
+  "task": "N45-PG",
+  "status": "OPEN",
+  "residual_id": "N45-PG-OPEN-PORT",
+  "evidence": "necessary arbitrary-size paper topology plus symbolic finite templates",
+  "canonical_same_frame": {
+    "U_support": [
+      0,
+      1,
+      2
+    ],
+    "L_support": [
+      2,
+      3,
+      4
+    ],
+    "S_support": [
+      4,
+      0
+    ],
+    "U_owner": "r",
+    "r_spokes_allowed": [
+      0,
+      2
+    ],
+    "s_spokes_allowed": [
+      4
+    ]
+  },
+  "necessary_positive_incidence": {
+    "r": "k_L^r+k_S^r=4-t_r",
+    "s": "k_L^s+k_S^s=5-t_s",
+    "k_min": 1,
+    "profile_count_before_literal_and_source_filters": 56
+  },
+  "new_excluded_subtype": "LP with edge-pair-supported S having exactly one vertex",
+  "contact_attachment_conditions": {
+    "S_s_contact_b0": "forbidden",
+    "L_s_contact_b3": "forbidden",
+    "s_has_no_spoke": "all s contacts in both mixed pieces have no B attachments",
+    "s_has_b4_spoke": "all s-contact B attachments have colour beta(b4)"
+  },
+  "required_original_graph_fields": [
+    "all original vertices and edges",
+    "ordered B and disk rotation",
+    "original full degrees",
+    "whole U/L/S components",
+    "ordered contacts and shared single coordinates",
+    "attachments/support/ownership",
+    "original bridges and all cyclic port orders",
+    "complete 10 literal rows with all tuples, empty fibres and full lifts",
+    "every nonframe critical full witness",
+    "X exactly G-V(U) and beta-minimal witnesses",
+    "core beta zero slack/full partition",
+    "every Delta gamma singleton forcing",
+    "whole D5 and root exchange together"
+  ],
+  "original_graph": null,
+  "source_existence_established": false,
+  "whole_LP_exclusion_established": false,
+  "normal_form_obligation": "N45-PG-NF: arbitrary-size source-to-finite-template map preserving original full interface, geometry, ten-row relations, and critical/minimal witnesses; presently unproved",
+  "forbidden_shortcuts": [
+    "source inference from contracted embeddings",
+    "independent piece colour normalization",
+    "marginal join",
+    "fixed templates as arbitrary-size completeness",
+    "colouring replacement by minor",
+    "assuming X full B-touch"
+  ],
+  "stop": "No new graph/piece search or k bound; return new necessary lemmas and source obligation."
+}

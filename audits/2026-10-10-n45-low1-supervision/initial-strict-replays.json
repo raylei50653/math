@@ -1,0 +1,34 @@
+{
+  "timing": "Completed before any supervisory or reviewer directory was added; tool output is a combined stream.",
+  "records": {
+    "normal": {
+      "label": "normal",
+      "cmd": "python3 -B audits/2026-10-10-n45-s-low1/verify.py",
+      "chunk_id": "650a05",
+      "wall_time_seconds": 0.000009217,
+      "session_id": 77242,
+      "original_token_count": 106,
+      "output": "{\"finite_source_controls\": \"not evaluated\", \"live_hashed_regular_files\": 25869, \"live_nested_repository_directory_entries\": 4, \"live_preexisting_inventory_entries\": 25895, \"live_symlink_identities\": 22, \"nested_repository_initial_recursive_hash\": false, \"paper_proved_by_this_tool\": false, \"payload_symlinks\": 5, \"receipt_checked\": true, \"regular_payload_files\": 6049, \"status\": \"artifact_integrity_holds\", \"task_pins\": 6}\n",
+      "exit_code": 0
+    },
+    "seed17": {
+      "label": "seed17",
+      "cmd": "PYTHONHASHSEED=17 python3 -B audits/2026-10-10-n45-s-low1/verify.py",
+      "chunk_id": "14963c",
+      "wall_time_seconds": 0.00000519,
+      "session_id": 65037,
+      "original_token_count": 106,
+      "output": "{\"finite_source_controls\": \"not evaluated\", \"live_hashed_regular_files\": 25869, \"live_nested_repository_directory_entries\": 4, \"live_preexisting_inventory_entries\": 25895, \"live_symlink_identities\": 22, \"nested_repository_initial_recursive_hash\": false, \"paper_proved_by_this_tool\": false, \"payload_symlinks\": 5, \"receipt_checked\": true, \"regular_payload_files\": 6049, \"status\": \"artifact_integrity_holds\", \"task_pins\": 6}\n",
+      "exit_code": 0
+    },
+    "corrupted": {
+      "label": "corrupted",
+      "cmd": "python3 -B audits/2026-10-10-n45-s-low1/verify.py --manifest audits/2026-10-10-n45-s-low1/seal-final-v4/corrupted-manifest.sha256",
+      "chunk_id": "0b5f7b",
+      "wall_time_seconds": 0.082856095,
+      "exit_code": 2,
+      "original_token_count": 18,
+      "output": "integrity rejection: manifest digest differs: MANIFEST.final-v2.sha256\n"
+    }
+  }
+}

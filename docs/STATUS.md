@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-09（文件治理與試點索引）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-10（HIGH2／HIGH3與限定兩short S覆蓋採納）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -269,6 +269,34 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [N45：N2原unit省略45／54權威入口](c5_excess_two_nonadjacent_unit_core45.md) | 指定整U省略X=M身份已全排；LOW兩支／HIGH三支窮盡，全排§1精確S的兩原mixed都short身份；HIGH2三色γ量詞精化保finding；含long、其他cores／原55及一般N2／E仍OPEN |
+| [N45-S-HIGH1交付](../audits/2026-10-10-n45-s-high1/REPORT.md)、[H1A紙面](../audits/2026-10-10-n45-h1a/REPORT.md)、[H1R原圖／完整關係](../audits/2026-10-10-n45-h1r/REPORT.md) | 十claims在全部H1–H13內的任意大小排除已採納；原G K₃,₃／原U盾support／同列未用D完整G lifts成立；BASE／Gallai明列，無新有限來源或Lean |
+| [H1C封存](../audits/2026-10-10-n45-h1c/REPORT.md)、[HIGH1監督採納](../audits/2026-10-10-n45-high1-supervision/REPORT.md) | worker91payload／3exact metadata、34frozen inputs／九pins／十二commands核回；三完整稽核父端normal／seed17各同bytes；wrong-artifact negatives命中，歷史及62duplicate-ID FAIL保留，H1C不裁paper |
+| [HIGH1採納與HIGH2任務](history/2026-10-10-n45-high1-adoption.md) | 保當轮HIGH1採納／HIGH2八pins及完整派工；HIGH2／HIGH3後續已限定採納並核兩short覆蓋，見最新紀錄；歷史正文不改 |
+| [HIGH2交付](../audits/2026-10-10-n45-s-high2/REPORT.md)、[H2A紙面／覆蓋](../audits/2026-10-10-n45-h2a/REPORT.md)、[H2R原圖／lifts](../audits/2026-10-10-n45-h2r/REPORT.md) | 完整H1–H13排除採納；原O′／W支援與全assignments恢復e；未用色構造限定proper三色γ，原過寬量詞保finding，JOIN／RESTORE／PALETTE仍全properγ |
+| [H2C封存／有限](../audits/2026-10-10-n45-h2c/REPORT.md)、[HIGH2／HIGH3監督](../audits/2026-10-10-n45-high23-supervision/REPORT.md) | 115payload／3exact metadata、41inputs／8pins及完整receipts核回；toy不裁paper；同期outside custody FAIL／62duplicates與historical FAIL保留，無完整worktree零漂移宣稱 |
+| [H3A前提](../audits/2026-10-10-n45-h3a/REPORT.md)、[H3R完整關係](../audits/2026-10-10-n45-h3r/REPORT.md)、[H3G原K₅](../audits/2026-10-10-n45-h3g/REPORT.md) | 完整K1–K13的HIGH3任意大小排除採納；X自己minimal、原s無spoke、實際C/U=(2,3)接BASE no-spoke (3,2)，外路及十原鄰接不用e；無新來源或Lean |
+| [HIGH2／HIGH3採納與覆蓋](history/2026-10-10-n45-high23-adoption.md) | HIGH三支互斥窮盡，加LOW兩支只關§1精確兩short S身份；目前long／其他cores／一般N2／E仍OPEN，尚未派新long worker；五shared同步、停止L2 |
+| [N45-S-LOW2交付](../audits/2026-10-10-n45-s-low2/REPORT.md)、[L2A紙面／覆蓋](../audits/2026-10-10-n45-l2a/REPORT.md)、[L2R原圖／完整關係](../audits/2026-10-10-n45-l2r/REPORT.md) | 六claim完整LOW2契約內的任意大小排除已採納；U兩contacts與cycle全留、r無框邊tethers及原K₅成立；L2A另核限定LOW窮盡，BASE／Gallai明列；沒有新來源或Lean |
+| [N45-L2C封存](../audits/2026-10-10-n45-l2c/REPORT.md)、[LOW2監督採納](../audits/2026-10-10-n45-low2-supervision/REPORT.md) | worker66payload／0symlinks／19exact排除、4BASE／8pins／20frozen inputs與receipt16logs核回；父端三完整receipt normal／seed17一致，六原工具負控制及nested receipt省略拒絕；synthetic bad-receipt原界線與既存FAIL保留 |
+| [LOW2採納與HIGH1任務](history/2026-10-10-n45-low2-adoption.md) | LOW2及§1限定LOW覆蓋採納；原HIGH1任務／pins保留該輪發布語境，後續限定HIGH1採納與HIGH2任務見上列最新紀錄，歷史正文不改 |
+| [N45-S-LOW1交付](../audits/2026-10-10-n45-s-low1/REPORT.md)、[L1A紙面](../audits/2026-10-10-n45-l1a/REPORT.md)、[L1R原圖／完整關係](../audits/2026-10-10-n45-l1r/REPORT.md) | 六claim限定任意大小排除已採納；U全留、實際sole C／完整join／精確F接回BASE三接點原K₅；依賴Gallai，沒有新LOW1來源或Lean；relation toy只校準 |
+| [N45-L1C封存](../audits/2026-10-10-n45-l1c/REPORT.md)、[LOW1監督採納](../audits/2026-10-10-n45-low1-supervision/REPORT.md) | 6049 regular／5 symlinks／10 final-v4 metadata、12BASE／6pins核回；父端normal／seed17一致，七工具負控制拒絕；舊索引及所有封存重試FAIL保留，四nested repos只核初始目錄存在 |
+| [LOW1採納與LOW2任務](history/2026-10-10-n45-low1-adoption.md) | 原LOW1採納／LOW2任務及八pins保留當輪日期語境；LOW2與限定LOW覆蓋後續見上列最新採納，歷史正文不改 |
+| [N45-J：非相鄰兩mixed完整joint／容量工具](../audits/2026-10-09-n45-j/REPORT.md)、[監督驗收](../audits/2026-10-09-n45-j-supervision/REPORT.md) | 工具與固定控制已驗收：N2的3040原圖／8640省略queries及74容量欄重算一致，N1校準另列；精確933／941的N2 45／54與降度側拒絕控制仍缺，未新增來源排除或驗收S／U命題 |
+| [N45-S：原spoke省略窄排除／必要化約](../audits/2026-10-09-n45-s/REPORT.md)、[首輪預審](../audits/2026-10-09-n45-s-supervision/REPORT.md) | 六項claim已經下列SU增量正式採納；原輪給兩unary排除及零slack／2／3、LOW／HIGH必要身份；後續LOW／HIGH五支合成全排§1精確兩short S身份；含long仍OPEN；原來源控制0觸發，文件FAIL保留 |
+| [N45-A：BASE共同依賴首輪稽核](../audits/2026-10-09-n45-a/REPORT.md)、[批次監督驗收](../audits/2026-10-09-n45-batch-supervision/REPORT.md) | 首輪9CLAIM已驗收；720份來源、54圖／172units／74欄核對，4 findings保留；兩個E4歷史provenance replay FAIL的數學payload相同，未涵蓋S／U新paper |
+| [N45-U：整unit unary省略窄排除](../audits/2026-10-09-n45-u/REPORT.md)、[首輪預審](../audits/2026-10-09-n45-batch-supervision/REPORT.md) | 八項claim已經SU增量正式採納；兩原unary及兩short子型已排，餘唯一U＋一long／一short完整同源跨列；初版／路由漂移／文件FAIL保留 |
+| [N45-SU-A：十四claim紙面增量稽核](../audits/2026-10-09-n45-su-a/REPORT.md) | 獨立逐claim裁決已驗收；明列前提內成立，未見新推理缺口；低incidence下界不推一般mixed下界，未代SU-J核finite |
+| [N45-SU-J：完整關係有限增量](../audits/2026-10-09-n45-su-j/REPORT.md) | 固定7952整圖pins、690relations／2986lifts、102欄已驗收；來源前提0觸發、F空過強版本負控制另列，不裁決任意大小paper |
+| [N45-SU監督採納與下一批](../audits/2026-10-09-n45-su-supervision/REPORT.md) | 第一批及兩增量均完成限定scope验收；worker/BASE零漂移，直接父題與Phase B窄效益更新，停止L2；下一批U＋long／short pair可發布 |
+| [N45-PG幾何](../audits/2026-10-09-n45-pg/REPORT.md)、[PGA独立稽核](../audits/2026-10-10-n45-pga/REPORT.md) | 六項窄claim已採納；r spokes限U兩端、s限L/S共端，原K₃,₃ bags與s-contact限制成立；單頂點edge-pair S已排，56 profiles只必要身份 |
+| [N45-PR紙面](../audits/2026-10-09-n45-pr/REPORT.md)、[PA独立裁決](../audits/2026-10-10-n45-pa/REPORT.md) | 任意大小N45-U-LP排除已採納；原未接框點與實際sole C接回BASE三分／外部Gallai；五relation lemmas各按前提採納，ENDPOINT限完整owner-neighbor／degree4 |
+| [N45-PC契約工具](../audits/2026-10-09-n45-pc/REPORT.md)、[PCA独立有限驗收](../audits/2026-10-10-n45-pca/REPORT.md) | 23原圖／11整U完整relations、lifts與555邊獨立一致；19N2三項0觸發、4N1另列；五負控制與六fresh probes拒絕，未認證generic soundness／完整LP正分支 |
+| [N45第二批監督採納](../audits/2026-10-10-n45-p-supervision/REPORT.md) | 三交付與三獨立稽核均限定驗收；只關N45-U-LP，worker bytes不改，文件FAIL保留；直接父題與consumer同步，停止L2 |
+| [N45-U-SS交付](../audits/2026-10-10-n45-u-ss/REPORT.md)、[SSA獨立紙面／覆蓋](../audits/2026-10-10-n45-ssa/REPORT.md) | 十一claims在完整SS契約成立；三原盾費身份全排，與既有U化約／LP的限定父身份覆蓋已驗收；明列BASE／外部trust，無新Lean／來源控制 |
+| [N45-SSG幾何／改色](../audits/2026-10-10-n45-ssg/REPORT.md)、[SSC封存](../audits/2026-10-10-n45-ssc/REPORT.md) | 四幾何claim與獨立C5算術分層；SSC核6096payload／完整archive／5links及六錯資料拒絕；SSG五項metadata排除差異由監督另綁，原FAIL保留 |
+| [N45-SS監督採納](../audits/2026-10-10-n45-ss-supervision/REPORT.md) | SS與§1精確整U省略45／54身份合成採納；原封存零漂移，直接父題／consumer更新，停止L2；下一LOW1已備未啟動，一般N2／E仍OPEN |
 | [M2：U1 no-mixed44獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md) | 指定前提的任意大小化約及344核心／3,498接回完整關係驗收；沿用上游分類／拓撲信任，完整Σ933／941來源正控制未觸發，未新增Lean定理 |
 | [M3：全新checkout還原與驗證](../audits/2026-10-07-m3-fresh-checkout/REPORT.md) | 原29項指定28 PASS／1 FAIL，另四份provenance strict FAIL及86項歷史whitespace保留；顯式LC build／558項公理證據完成，原「待補件」語境由下列監督報告補足 |
 | [M3監督補件與M4派工](../audits/2026-10-07-merge-supervision/REPORT.md) | 264檔原包及完整fresh payload核對；接受C44兩個presence leaves與E5 branches單份文件hash例外，歷史三份byte FAIL仍保留，不宣稱全strict PASS或可合併 |
@@ -417,6 +445,14 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-09：N2的45／54原unit省略第一批及增量驗收](history/2026-10-09-n2-45-54-parallel-tasks.md)；四份與兩增量均在限定scope已驗收，窄排除已採納
+- [2026-10-09：N45第二批，唯一U＋long／short pair三份並行任務](history/2026-10-09-n45-u-long-short-pair-tasks.md)；三份已返回並由2026-10-10增量限定驗收，原任務頭與當輪語境保留
+- [2026-10-10：N45-U-LP採納與N45-U-SS發布文本](history/2026-10-10-n45-lp-adoption.md)；原SS任務／pins保留發布時語境，後續已獨立採納
+- [2026-10-10：N45完整證據整理發布](history/2026-10-10-n45-progress-publish.md)；完整原bytes封存、commit後ancestry重播，研究scope及原FAIL保留
+- [2026-10-10：HIGH2／HIGH3採納、量詞finding與限定兩short覆蓋](history/2026-10-10-n45-high23-adoption.md)；六獨立稽核與父端驗收，停止L2
+- [2026-10-10：HIGH1限定採納與HIGH2任務](history/2026-10-10-n45-high1-adoption.md)；原派工／pins保當輪語境，後續採納見上列最新紀錄
+- [2026-10-10：LOW2、限定LOW採納與HIGH1任務](history/2026-10-10-n45-low2-adoption.md)；三份獨立稽核及覆蓋已驗收；原HIGH1任務保留當輪日期語境，後續HIGH1已限定採納
+- [2026-10-10：SS與限定N45-U採納、LOW1任務](history/2026-10-10-n45-ss-adoption.md)；三獨立稽核／scope覆蓋完成，LOW1已備尚未啟動
 - [2026-10-09：Issue #4 與 Phase B 相連變更發布](history/2026-10-09-issue4-phase-b-publish.md)
 - [2026-10-09：Issue #4 文件分工、分層更新與收尾核對試點](history/2026-10-09-issue4-documentation-pilot.md)
 - [2026-10-08：U2–U4與M4／M5證據整批整理發布](history/2026-10-08-core44-batch-publish.md)

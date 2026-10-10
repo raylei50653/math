@@ -1,0 +1,210 @@
+{
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "LP_status": "OPEN",
+  "claims": [
+    {
+      "CLAIM": "N45-PG-01",
+      "coverage_missing": [
+        "無完整 LP source control"
+      ],
+      "dependencies": [
+        "BASE unary shield §2",
+        "BASE E3 nonadjacent §3",
+        "BASE Phase B B-S0",
+        "adopted U-WIT/U-RES"
+      ],
+      "excluded_scope": [
+        "singleton-support branch",
+        "X full B-touch",
+        "獨立piece/root/frame色名正規化"
+      ],
+      "finding": null,
+      "finite_controls": "10 named partitions；是算術控制，不是任意大小完備性proof。",
+      "independent_reasoning_steps": [
+        "選 S 的一條邊後，其餘四邊是一條路；兩份具名連續二邊弧只能以兩種 U/L 次序分割，故5×2=10，恰whole D5 orbit。",
+        "兩 mixed 分別在刪另一份後給原 r–s 路，U 僅接 r，故 H−P 原連通；所有 roots 都在 K_P 的同一 open face F_P。",
+        "框邊在 F_P 的身份是 E(B)−σ_G(P)，但不聲稱其他原face邊界已有限化。原盾弧引理1(c)排 b1/b3 的其他內部附件。",
+        "任一所用原 contact e 的 G−e full lift 限制到 G−P 是合法 outside；若整份 P 可接回，則原 G 接受 γ_e，矛盾。不同 γ_e 不作跨列禁色相加。",
+        "若原 U 短，原 full B-touch 的補弧點 h 由 H−U 的原附件碰到，原 H−U 連通給 r 到 h 的避 U/B 內路；不借 X full B-touch。"
+      ],
+      "quantifiers": "所有滿足共同原 LP 前提及已採納2+2+1者；每條原 contact 各有自己的 γ_e/witness。",
+      "statement": "十份 whole-frame named partition；canonical U012/L234/S40；原 outside 面框邊、盾內點禁止其他附件；逐 contact outside witness。",
+      "verdict": "成立且可搬用，在明列前提內",
+      "weakest_sufficient_premises": "partition 部分需同一 C5 上標號 U/L/S 的連續互斥盾弧長2/2/1；outside 限制需原 one-sided 及原盾弧定義；witness 另需每條所用原 contact Σ-critical，unary 外路需原 full B-touch。"
+    },
+    {
+      "CLAIM": "N45-PG-02",
+      "coverage_missing": [
+        "無完整 LP source control"
+      ],
+      "dependencies": [
+        "PG-01 canonical labels/盾內點限制（最終 spokes 結論）",
+        "原actual attachment/contact edges",
+        "K3,3 minor nonplanarity"
+      ],
+      "excluded_scope": [
+        "不將 quotient edge 當新原 edge",
+        "不補 rs",
+        "不以 contraction 替代完整 coloring relations"
+      ],
+      "finding": null,
+      "finite_controls": "3原九邊symbolic模型及60份whole D5/root-swap控制；普遍性另由原 connected bags 論證。",
+      "independent_reasoning_steps": [
+        "rb4：A=(U,b4,L∪s)，B=(S∪b0,b2∪b3,r)，三個 joined bags 的原連通邊為 sl_s,b0v0,b2b3。",
+        "sb0：A=(U∪b0,L,S)，B=(r,s,b4)，U∪b0 由原 b0u0 連通。",
+        "sb2：A=(U∪b2,L,S)，B=(r,s,b3∪b4)，由原 b2u2,b3b4 連通。",
+        "每行九條原邊逐項位於對應 A/B 袋間；REPORT 表列27條。六袋互斥，因每份原 piece 整體只屬一袋且 B/r/s 原互異。",
+        "同一 piece 的 ports 可為同一原頂點；不會跨袋，原連通性仍在，所以 shared contacts 不破壞 proof。bag contraction 只證非平面，不作 coloring replacement。"
+      ],
+      "quantifiers": "所有有限簡單平面 G，互斥 connected 原 U/L/S，互異 B,r,s，actual supports U012/L234/S40，U–r及L/S兩側原contacts存在。",
+      "statement": "三組六袋/九原邊 K3,3 minor 排 rb4,sb0,sb2；加盾內點限制得 N_B(r)⊆{b0,b2},N_B(s)⊆{b4}。",
+      "verdict": "成立且可搬用，在明列前提內",
+      "weakest_sufficient_premises": "上述 connected bags、完整所用 actual attachments/contacts/五框邊及平面性；不需 degree4/Σ/β/criticality/core 身份。"
+    },
+    {
+      "CLAIM": "N45-PG-03",
+      "coverage_missing": [
+        "沒有完整原LP graph/rotation可對照",
+        "原內部faces/bridges/所有port循序未被abstract控制覆蓋"
+      ],
+      "dependencies": [
+        "BASE E3 nonadjacent §3",
+        "原connected components/contacts",
+        "PG-02 allowed spokes"
+      ],
+      "excluded_scope": [
+        "不宣稱原圖僅有列出的10faces",
+        "不宣稱canonical face list唯一",
+        "不由八張圖推出LP來源或全部LP排除"
+      ],
+      "finding": null,
+      "finite_controls": "8 abstract embedding dart/Euler/rotation 控制；無來源實現或finite normal form。",
+      "independent_reasoning_steps": [
+        "任取一條 mixed root-contact，以該端點至另一root的任一contact端點在原piece中取simple path；shared端點容許長0，仍得長至少2的r–s路。",
+        "與另一原mixed的r–s路內部互斥，兩路只交r,s，故合為原simple cycle，長至少4，在原plane graph中是Jordan curve。",
+        "每條mixed root-contact均可納入上述cycle，故不是H bridge；唯一rx刪去恰隔完整U，故是H bridge，不由此主張G bridge。",
+        "原pieces取spanning trees收縮、刪多餘/平行邊可得指定abstract skeleton minor；其八張embedding只示該skeleton可平面嵌入並以B為外面，不保持原全部port/bridge/內部face/relations。"
+      ],
+      "quantifiers": "所有原 LP 的 L/S root-contact 邊及唯一原 U-contact；抽象embedding控制另列。",
+      "statement": "原 L/S 內部互斥的 r–s simple paths 成長≥4 Jordan cycle；每條 mixed root-contact 非 H bridge；rx 是 H bridge。",
+      "verdict": "原 path/Jordan/bridge identity 成立；八張 embedding 僅接受為抽象必要 minor 控制",
+      "weakest_sufficient_premises": "原 L/S connected、每側 contact 正、L/S頂點互斥且避 B；U 唯一原 H-contact及 H−U connected；plane embedding用Jordan。"
+    },
+    {
+      "CLAIM": "N45-PG-04",
+      "coverage_missing": [
+        "無完整 LP source control"
+      ],
+      "dependencies": [
+        "adopted U-CAP raw |G_P(b)|=k_P^r≥1",
+        "BASE Phase B B-C2 degree-list slack原理",
+        "PG-02",
+        "X保留除U外原因子、無unary"
+      ],
+      "excluded_scope": [
+        "非connected P",
+        "只一個非空column或marginals",
+        "外鄰/degree未保",
+        "不把differentβ禁色相加"
+      ],
+      "finding": null,
+      "finite_controls": "沒有完整LP觸發；strict-slack proof直接對任意P，不由有限回溯推出。",
+      "independent_reasoning_steps": [
+        "假設v接s與h且β(h)=b∈E_s。固定任意r=a,s=b，原lists移除實際外鄰的色；其他點|L(w)|≥deg_P(w)。",
+        "v的兩個不同外鄰s,h同色，所以不同禁色數≤4−deg_P(v)−1，故|L(v)|≥deg_P(v)+1。",
+        "以v為根取原spanning tree，先後序染其餘點，未染parent保留一個鄰點；最後染v使用strict slack。得到每個a的完整原P lift，非端點marginals。",
+        "因此raw G_P(b)=∅，違反每欄非空；不宣稱全部a皆有X/全G lift。",
+        "LP X無unary；由PG-02，s無spoke或僅sb4，所以E_s=Col或Col−{β(b4)}。proper frame β(b0)≠β(b4)、β(b3)≠β(b4)，故S的s-contact不接b0，L不接b3；b2僅在sb4且β(b2)=β(b4)時未被此條件排。"
+      ],
+      "quantifiers": "所有 connected 原degree4 mixed P；每個 b∈E_s 的raw forbidden column非空；每個原s-contact v與其B附件h。",
+      "statement": "s-contact同時附B點h必有β(h)∉E_s；LP中無sb4則s-contacts無B附件，有sb4則B附件色皆β(b4)。",
+      "verdict": "成立且可搬用，在明列前提內",
+      "weakest_sufficient_premises": "原P connected、每點完整degree4、所有外鄰在具名B/r/s、proper literal frame β、E_s非空、對每個b∈E_s原完整raw G_P(b)非空；每個a指local piece pin，不要求整個outside接受a。"
+    },
+    {
+      "CLAIM": "N45-PG-05",
+      "coverage_missing": [
+        "無完整 LP source control"
+      ],
+      "dependencies": [
+        "PG-02",
+        "PG-04",
+        "adopted U-CAP positive raw columns"
+      ],
+      "excluded_scope": [
+        "singleton actual support 是另分支",
+        "|S|≥2",
+        "一般U/N2/E"
+      ],
+      "finding": null,
+      "finite_controls": "12 ordered support-colour assignments/16 local pins各保完整local lifts；独立另核48個r-pin配對，沒有full source。",
+      "independent_reasoning_steps": [
+        "原mixed/support迫rv,sv,b0v,b4v四條不同原邊，已用盡degree4。",
+        "因此原s-contact v附b0，但β(b0)在兩種可能E_s中皆可用，違反PG-04。",
+        "直接local oracle：b0,b4色相異留兩色；當s=β(b0)，任一r=a最多再禁一色，故每a均有原v full lift，raw forbidden column為空。"
+      ],
+      "quantifiers": "所有共同LP原圖，另整份edge-pair-supported S恰一頂點。",
+      "statement": "排除|V(S)|=1的edge-pair LP子型。",
+      "verdict": "成立且可搬用，在明列前提內",
+      "weakest_sufficient_premises": "S為完整原mixed singleton vertex、support恰b4/b0、degree4、PG-02/PG-04逐欄條件。"
+    },
+    {
+      "CLAIM": "N45-PG-RES",
+      "coverage_missing": [
+        "完整LP source 0",
+        "任意大小normal form未證",
+        "所有原十列full interfaces未由integer profiles供給"
+      ],
+      "dependencies": [
+        "adopted U-RES incidence/same-source界線",
+        "PG-02",
+        "PG-05"
+      ],
+      "excluded_scope": [
+        "不稱56survivors",
+        "不從zero-trigger宣稱排除",
+        "不採納一般LP/N2/E closure"
+      ],
+      "finding": null,
+      "finite_controls": "56 profiles及8abstract embeddings皆必要整數/拓撲控制。",
+      "independent_reasoning_steps": [
+        "原degree身份給k_L^r+k_S^r=4−t_r、k_L^s+k_S^s=5−t_s。",
+        "r的spoke sets∅/0/2/02之positive split數為3/2/2/1；s的∅/4為4/3，故(3+2+2+1)(4+3)=56。",
+        "若coreβ(b0)=β(b2)，Xβ-minimality已排同時r02；56先於此literal篩选，不能叫survivors。",
+        "L單點需三B加兩roots至少5原邊，違degree4，所以|L|≥2；|S|≥2来自PG-05，仍不能推原attachments或完整十列relations存在。",
+        "原U omitted身份、β最小性/各非框critical full witnesses、完整relations/fibres/lifts及Δsingletons均須同一來源兼具；沒有arbitrary-size source-to-finite completeness map或source realization theorem。"
+      ],
+      "quantifiers": "所有尚未被PG窄必要引理排掉的共同LP來源；只計尚未加literal/source filters的正整數data。",
+      "statement": "8種allowed-spoke sets及56正incidence integer profiles，原same-source obligation仍OPEN。",
+      "verdict": "成立且可搬用，限必要身份；56不是survivors/source",
+      "weakest_sufficient_premises": "原roots degree5、U唯一incidence1、rs無邊、L/S每側正、PG-02allowed spokes。"
+    }
+  ],
+  "common_original_graph_premises": "任意大小有限簡單 induced-C5 disk 原圖 G；完整 Σ=933/941 或整圖共同 D5 像；非框 Σ-critical；有效 H 連通、full B-touch、ε=2；非相鄰原 degree5 roots r,s，其餘有效內點原 degree4；H−{r,s} 完整分量恰唯一 unary U 及 mixed L,S；U 唯一原 contact rx，owner r；X=G−V(U)=M 是原拒絕 literal β 的 inclusion-minimal45/54 core，r 是降度側；S actual support 為真框邊 pair，L long；保全部原 contacts/shared identity/attachments/support/ownership/rotation/bridges、完整 tuples/fibres/空fibres/full lifts。",
+  "counts": {
+    "claim_count": 6,
+    "claims_valid_with_stated_boundaries": 6,
+    "complete_target_sources": 0,
+    "new_paper_gaps_found": 0
+  },
+  "evidence_layers": {
+    "Lean": "沒有新增Lean theorem/native_decide；未聲稱新PG已Lean化",
+    "Python": "只核固定symbolic templates、local pins、integer profiles及immutable input bytes",
+    "external_theorem": "上游已採納依賴仍為信任界；新PG步驟不需新Gallai分類或外部source重驗",
+    "paper": "逐claim原頂點/邊、Jordan及strict-slack獨立推導"
+  },
+  "explicit_adopted_trust_boundary": [
+    "已採納 U-WIT：逐原 critical contact 的拒絕接回 outside witness、原一側連通/避自身外路。",
+    "已採納 U-RES：唯一 U，U/L/S 盾弧2+2+1、分割五框邊，U/L actual support 各連續三點；core β 同側 retained spokes 色互異。",
+    "已採納 U-CAP：E_s 非空，對每個 b∈E_s，兩 mixed raw forbidden r-columns 各滿額 |G_P(b)|=k_P^r≥1、互斥、聯集 E_r^X，五項零 slack。",
+    "已採納 U-REL/CROSS：同一原圖 Δ 非空、新列 singleton forcing、七格 Q(X) 必要表保933 q2；本次不重新证明。"
+  ],
+  "new_excluded_scope": "僅edge-pair LP中整份S恰一頂點；|S|≥2保持OPEN。",
+  "new_supervisor_PR_PC_outputs_read_before_seal": false,
+  "no_new_research": true,
+  "paper_source_coverage_status": "not triggered on any supplied complete LP source; universal proof judgment is independent of this absence",
+  "reviewed_REPORT_sha256": "f67da4360ca729bf14a6d04b8a9e62041c5824d3b9734bacaf145a445008584f",
+  "reviewed_certificate_sha256": "75544f2ba3aec74e8c4ccb2f51a42f5fb022009f4a864d76d2d73a2064efd30d",
+  "sealed_utc": "2026-10-10T02:29:54.989853+00:00",
+  "task": "N45-PGA"
+}

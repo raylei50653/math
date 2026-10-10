@@ -1,0 +1,14 @@
+{
+  "id": "verify-preseal-normal-failure",
+  "argv": [
+    "python3",
+    "-B",
+    "/home/ray/developer/ai/math/audits/2026-10-10-n45-u-ss/verify.py",
+    "--preseal"
+  ],
+  "cwd": "/home/ray/developer/ai/math",
+  "exit_code": 1,
+  "stdout": "logs/verify-preseal-normal.stdout.log",
+  "stderr": "logs/verify-preseal-normal.stderr.log",
+  "finding": "pdftotext stdout ends with a form-feed, not a newline. It is an immutable extraction output, not authored text. Final verifier exempts this unchanged extraction from authored-text newline validation; draft code and failure retained."
+}

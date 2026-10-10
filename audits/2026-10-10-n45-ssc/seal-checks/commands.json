@@ -1,0 +1,35 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/verify-seal.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "id": "verify-sealed-normal",
+      "stderr": "seal-checks/verify-sealed-normal.stderr.log",
+      "stdout": "seal-checks/verify-sealed-normal.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/verify-seal.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "id": "verify-sealed-seed17",
+      "stderr": "seal-checks/verify-sealed-seed17.stderr.log",
+      "stdout": "seal-checks/verify-sealed-seed17.stdout.log"
+    }
+  ],
+  "normal_seed17_byte_equal": true,
+  "scope": "Own immutable seal integrity only. checker.py is a pre-adoption fixed-input audit of original shared-before bytes and initial diffs. Authorized later shared-document/history updates invalidate those live-worktree equality prerequisites; do not call its old worktree constraints PASS after such updates. Use the recorded pre-adoption replays plus fresh worker-drift/shared-after verification for later integration.",
+  "task": "N45-SSC"
+}

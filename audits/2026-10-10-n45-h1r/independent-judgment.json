@@ -1,0 +1,769 @@
+{
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "blocking_findings": [],
+  "broader_scope": {
+    "HIGH2": "OPEN",
+    "HIGH3": "OPEN",
+    "general_N2_E": "OPEN",
+    "long": "OPEN",
+    "source_realization": "OPEN"
+  },
+  "calibration_only": true,
+  "claims": [
+    {
+      "Python_proves_arbitrary_size_claim": false,
+      "conclusion": "X has its own complete degrees (4,5), beta-criticality, induced disk and inherited T4",
+      "dependencies": [
+        "H10 own minimality",
+        "BASE weak-list duplicate-spoke observation"
+      ],
+      "evidence_layer": "arbitrary-size paper with explicit BASE/external trust",
+      "full_source_contract": [
+        {
+          "id": "H1",
+          "statement": "finite simple disk；有序 induced C5 B=(b0,…,b4) 圍外面"
+        },
+        {
+          "id": "H2",
+          "statement": "完整有序 Σ(G)=933／941 或一次共同整圖 D5 像；每條原非框邊 Σ-critical；ε(G)=2"
+        },
+        {
+          "id": "H3",
+          "statement": "有效 H 連通、full B-touch；原孤立內點 I 保留為每份 full lift 的自由因子"
+        },
+        {
+          "id": "H4",
+          "statement": "原 nonadjacent r,s 完整 degree5；其餘有效原內點完整 degree4"
+        },
+        {
+          "id": "H5",
+          "statement": "H−{r,s} 恰完整 connected、one-sided、非空 actual support 的 U,P,Q"
+        },
+        {
+          "id": "H6",
+          "statement": "mixed P/Q 各支援恰一條真原框邊兩端；各接兩 roots；actual attachments／ownership 全留"
+        },
+        {
+          "id": "H7",
+          "statement": "原 U 只接 s，唯一原 contact sx，無 U–r；完整 U 保留"
+        },
+        {
+          "id": "H8",
+          "statement": "mixed totals=(3,2)；s 對 P/Q 各一，r 的原分配1及2保具名身份"
+        },
+        {
+          "id": "H9",
+          "statement": "原 r/s 各兩個不同 spokes；只省略 e=rb_i，X 留 rb_j，s 兩 spokes全留"
+        },
+        {
+          "id": "H10",
+          "statement": "固定原拒絕 literal β；X=G−e=M 自己是 β inclusion-minimal45／54 core"
+        },
+        {
+          "id": "H11",
+          "statement": "只删 e；所有原 pieces 頂點／內邊／contacts／框附件／其他 spokes全留，無替换"
+        },
+        {
+          "id": "H12",
+          "statement": "原 ordered contacts、shared 頂點單一變量、support／ownership、bridges／rotation、共同 literal 四色框、十列 relations、全部 ambient 空／非空 fibres、r/s pins與 full lifts"
+        },
+        {
+          "id": "H13",
+          "statement": "D5／S4／root swap共同搬整圖及全部資料；保933 q2；β不必是 U 盾中點，G/X/刪contact圖各有自身原邊與 lifts"
+        }
+      ],
+      "gap": null,
+      "id": "HIGH1-CORE",
+      "independent_argument": "Direct original edge deletion; only r loses one spoke; no inherited G-criticality",
+      "machine_proved": false,
+      "new_Lean": false,
+      "new_sufficient_premises": [],
+      "quantifier": "every full-contract source G and its specified rejecting beta",
+      "report_locator": "REPORT section 2",
+      "verdict": "accepted within full H1-H13 paper scope"
+    },
+    {
+      "Python_proves_arbitrary_size_claim": false,
+      "conclusion": "H_X-s has exactly original connected C={r}+P+Q and complete U with ordered contacts (2,1)",
+      "dependencies": [
+        "Original H5-H11 component and edge identities"
+      ],
+      "evidence_layer": "arbitrary-size paper with explicit BASE/external trust",
+      "full_source_contract": [
+        {
+          "id": "H1",
+          "statement": "finite simple disk；有序 induced C5 B=(b0,…,b4) 圍外面"
+        },
+        {
+          "id": "H2",
+          "statement": "完整有序 Σ(G)=933／941 或一次共同整圖 D5 像；每條原非框邊 Σ-critical；ε(G)=2"
+        },
+        {
+          "id": "H3",
+          "statement": "有效 H 連通、full B-touch；原孤立內點 I 保留為每份 full lift 的自由因子"
+        },
+        {
+          "id": "H4",
+          "statement": "原 nonadjacent r,s 完整 degree5；其餘有效原內點完整 degree4"
+        },
+        {
+          "id": "H5",
+          "statement": "H−{r,s} 恰完整 connected、one-sided、非空 actual support 的 U,P,Q"
+        },
+        {
+          "id": "H6",
+          "statement": "mixed P/Q 各支援恰一條真原框邊兩端；各接兩 roots；actual attachments／ownership 全留"
+        },
+        {
+          "id": "H7",
+          "statement": "原 U 只接 s，唯一原 contact sx，無 U–r；完整 U 保留"
+        },
+        {
+          "id": "H8",
+          "statement": "mixed totals=(3,2)；s 對 P/Q 各一，r 的原分配1及2保具名身份"
+        },
+        {
+          "id": "H9",
+          "statement": "原 r/s 各兩個不同 spokes；只省略 e=rb_i，X 留 rb_j，s 兩 spokes全留"
+        },
+        {
+          "id": "H10",
+          "statement": "固定原拒絕 literal β；X=G−e=M 自己是 β inclusion-minimal45／54 core"
+        },
+        {
+          "id": "H11",
+          "statement": "只删 e；所有原 pieces 頂點／內邊／contacts／框附件／其他 spokes全留，無替换"
+        },
+        {
+          "id": "H12",
+          "statement": "原 ordered contacts、shared 頂點單一變量、support／ownership、bridges／rotation、共同 literal 四色框、十列 relations、全部 ambient 空／非空 fibres、r/s pins與 full lifts"
+        },
+        {
+          "id": "H13",
+          "statement": "D5／S4／root swap共同搬整圖及全部資料；保933 q2；β不必是 U 盾中點，G/X/刪contact圖各有自身原邊與 lifts"
+        }
+      ],
+      "gap": null,
+      "id": "HIGH1-COMP",
+      "independent_argument": "No r-s edge or U-r edge; C retains all three r-mixed contacts and rb_j; contacts follow actual s rotation",
+      "machine_proved": false,
+      "new_Lean": false,
+      "new_sufficient_premises": [],
+      "quantifier": "every full-contract source G",
+      "report_locator": "REPORT section 2",
+      "verdict": "accepted within full H1-H13 paper scope"
+    },
+    {
+      "Python_proves_arbitrary_size_claim": false,
+      "conclusion": "Restriction/union is a full bijection for X and for its nested same-r P/Q decomposition",
+      "dependencies": [
+        "Direct full-assignment factorization",
+        "BASE R10 semantics"
+      ],
+      "evidence_layer": "arbitrary-size paper with explicit BASE/external trust",
+      "full_source_contract": [
+        {
+          "id": "H1",
+          "statement": "finite simple disk；有序 induced C5 B=(b0,…,b4) 圍外面"
+        },
+        {
+          "id": "H2",
+          "statement": "完整有序 Σ(G)=933／941 或一次共同整圖 D5 像；每條原非框邊 Σ-critical；ε(G)=2"
+        },
+        {
+          "id": "H3",
+          "statement": "有效 H 連通、full B-touch；原孤立內點 I 保留為每份 full lift 的自由因子"
+        },
+        {
+          "id": "H4",
+          "statement": "原 nonadjacent r,s 完整 degree5；其餘有效原內點完整 degree4"
+        },
+        {
+          "id": "H5",
+          "statement": "H−{r,s} 恰完整 connected、one-sided、非空 actual support 的 U,P,Q"
+        },
+        {
+          "id": "H6",
+          "statement": "mixed P/Q 各支援恰一條真原框邊兩端；各接兩 roots；actual attachments／ownership 全留"
+        },
+        {
+          "id": "H7",
+          "statement": "原 U 只接 s，唯一原 contact sx，無 U–r；完整 U 保留"
+        },
+        {
+          "id": "H8",
+          "statement": "mixed totals=(3,2)；s 對 P/Q 各一，r 的原分配1及2保具名身份"
+        },
+        {
+          "id": "H9",
+          "statement": "原 r/s 各兩個不同 spokes；只省略 e=rb_i，X 留 rb_j，s 兩 spokes全留"
+        },
+        {
+          "id": "H10",
+          "statement": "固定原拒絕 literal β；X=G−e=M 自己是 β inclusion-minimal45／54 core"
+        },
+        {
+          "id": "H11",
+          "statement": "只删 e；所有原 pieces 頂點／內邊／contacts／框附件／其他 spokes全留，無替换"
+        },
+        {
+          "id": "H12",
+          "statement": "原 ordered contacts、shared 頂點單一變量、support／ownership、bridges／rotation、共同 literal 四色框、十列 relations、全部 ambient 空／非空 fibres、r/s pins與 full lifts"
+        },
+        {
+          "id": "H13",
+          "statement": "D5／S4／root swap共同搬整圖及全部資料；保933 q2；β不必是 U 盾中點，G/X/刪contact圖各有自身原邊與 lifts"
+        }
+      ],
+      "gap": null,
+      "id": "HIGH1-JOIN",
+      "independent_argument": "C tuple/r fibre has all 64 ambient entries; U has four including empty; shared vertex uses one value; no marginal products",
+      "machine_proved": false,
+      "new_Lean": false,
+      "new_sufficient_premises": [],
+      "quantifier": "every proper literal gamma; all ambient C tuples/r pins, U pins, s pins, isolated factors and complete assignments",
+      "report_locator": "REPORT section 2",
+      "verdict": "accepted within full H1-H13 paper scope"
+    },
+    {
+      "Python_proves_arbitrary_size_claim": false,
+      "conclusion": "G lifts are exactly the X lifts whose original r pin avoids gamma(b_i)",
+      "dependencies": [
+        "HIGH1-JOIN",
+        "Only original edge rb_i restored"
+      ],
+      "evidence_layer": "arbitrary-size paper with explicit BASE/external trust",
+      "full_source_contract": [
+        {
+          "id": "H1",
+          "statement": "finite simple disk；有序 induced C5 B=(b0,…,b4) 圍外面"
+        },
+        {
+          "id": "H2",
+          "statement": "完整有序 Σ(G)=933／941 或一次共同整圖 D5 像；每條原非框邊 Σ-critical；ε(G)=2"
+        },
+        {
+          "id": "H3",
+          "statement": "有效 H 連通、full B-touch；原孤立內點 I 保留為每份 full lift 的自由因子"
+        },
+        {
+          "id": "H4",
+          "statement": "原 nonadjacent r,s 完整 degree5；其餘有效原內點完整 degree4"
+        },
+        {
+          "id": "H5",
+          "statement": "H−{r,s} 恰完整 connected、one-sided、非空 actual support 的 U,P,Q"
+        },
+        {
+          "id": "H6",
+          "statement": "mixed P/Q 各支援恰一條真原框邊兩端；各接兩 roots；actual attachments／ownership 全留"
+        },
+        {
+          "id": "H7",
+          "statement": "原 U 只接 s，唯一原 contact sx，無 U–r；完整 U 保留"
+        },
+        {
+          "id": "H8",
+          "statement": "mixed totals=(3,2)；s 對 P/Q 各一，r 的原分配1及2保具名身份"
+        },
+        {
+          "id": "H9",
+          "statement": "原 r/s 各兩個不同 spokes；只省略 e=rb_i，X 留 rb_j，s 兩 spokes全留"
+        },
+        {
+          "id": "H10",
+          "statement": "固定原拒絕 literal β；X=G−e=M 自己是 β inclusion-minimal45／54 core"
+        },
+        {
+          "id": "H11",
+          "statement": "只删 e；所有原 pieces 頂點／內邊／contacts／框附件／其他 spokes全留，無替换"
+        },
+        {
+          "id": "H12",
+          "statement": "原 ordered contacts、shared 頂點單一變量、support／ownership、bridges／rotation、共同 literal 四色框、十列 relations、全部 ambient 空／非空 fibres、r/s pins與 full lifts"
+        },
+        {
+          "id": "H13",
+          "statement": "D5／S4／root swap共同搬整圖及全部資料；保933 q2；β不必是 U 盾中點，G/X/刪contact圖各有自身原邊與 lifts"
+        }
+      ],
+      "gap": null,
+      "id": "HIGH1-RESTORE",
+      "independent_argument": "No existential r projection is dropped and no X extension is promoted to G extension",
+      "machine_proved": false,
+      "new_Lean": false,
+      "new_sufficient_premises": [],
+      "quantifier": "every proper literal gamma and every X full assignment",
+      "report_locator": "REPORT section 2",
+      "verdict": "accepted within full H1-H13 paper scope"
+    },
+    {
+      "Python_proves_arbitrary_size_claim": false,
+      "conclusion": "Exact private cover gives distinct singleton F_C={beta(b_j)} and F_U={unused D}",
+      "dependencies": [
+        "H10 X own beta-critical witnesses",
+        "BASE R10 sections 2-4 degree-list release",
+        "BASE E4 section 4.1 local N-diagonal",
+        "External connected slack Lemma 7"
+      ],
+      "evidence_layer": "arbitrary-size paper with explicit BASE/external trust",
+      "full_source_contract": [
+        {
+          "id": "H1",
+          "statement": "finite simple disk；有序 induced C5 B=(b0,…,b4) 圍外面"
+        },
+        {
+          "id": "H2",
+          "statement": "完整有序 Σ(G)=933／941 或一次共同整圖 D5 像；每條原非框邊 Σ-critical；ε(G)=2"
+        },
+        {
+          "id": "H3",
+          "statement": "有效 H 連通、full B-touch；原孤立內點 I 保留為每份 full lift 的自由因子"
+        },
+        {
+          "id": "H4",
+          "statement": "原 nonadjacent r,s 完整 degree5；其餘有效原內點完整 degree4"
+        },
+        {
+          "id": "H5",
+          "statement": "H−{r,s} 恰完整 connected、one-sided、非空 actual support 的 U,P,Q"
+        },
+        {
+          "id": "H6",
+          "statement": "mixed P/Q 各支援恰一條真原框邊兩端；各接兩 roots；actual attachments／ownership 全留"
+        },
+        {
+          "id": "H7",
+          "statement": "原 U 只接 s，唯一原 contact sx，無 U–r；完整 U 保留"
+        },
+        {
+          "id": "H8",
+          "statement": "mixed totals=(3,2)；s 對 P/Q 各一，r 的原分配1及2保具名身份"
+        },
+        {
+          "id": "H9",
+          "statement": "原 r/s 各兩個不同 spokes；只省略 e=rb_i，X 留 rb_j，s 兩 spokes全留"
+        },
+        {
+          "id": "H10",
+          "statement": "固定原拒絕 literal β；X=G−e=M 自己是 β inclusion-minimal45／54 core"
+        },
+        {
+          "id": "H11",
+          "statement": "只删 e；所有原 pieces 頂點／內邊／contacts／框附件／其他 spokes全留，無替换"
+        },
+        {
+          "id": "H12",
+          "statement": "原 ordered contacts、shared 頂點單一變量、support／ownership、bridges／rotation、共同 literal 四色框、十列 relations、全部 ambient 空／非空 fibres、r/s pins與 full lifts"
+        },
+        {
+          "id": "H13",
+          "statement": "D5／S4／root swap共同搬整圖及全部資料；保933 q2；β不必是 U 盾中點，G/X/刪contact圖各有自身原邊與 lifts"
+        }
+      ],
+      "gap": null,
+      "id": "HIGH1-F",
+      "independent_argument": "Cover and both private colors are derived; same-color mixed lifts explicitly pin original r=a",
+      "machine_proved": false,
+      "new_Lean": false,
+      "new_sufficient_premises": [],
+      "quantifier": "fixed original rejecting beta; unpinned relations nonempty for every proper literal gamma",
+      "report_locator": "REPORT section 3",
+      "verdict": "accepted within full H1-H13 paper scope"
+    },
+    {
+      "Python_proves_arbitrary_size_claim": false,
+      "conclusion": "The actual X double-component identity satisfies named BASE (2,1) hypotheses with exact exclusion/extension boundaries",
+      "dependencies": [
+        "BASE sectors sections 1-3",
+        "BASE adjacent_21 sections 1-5",
+        "BASE middle_21 sections 1-4",
+        "BASE reflection sections 1-2",
+        "BASE split_support sections 1-6 inherited structural/finite trust",
+        "BASE nonadjacent sections 1-6 inherited structural/finite trust"
+      ],
+      "evidence_layer": "arbitrary-size paper with explicit BASE/external trust",
+      "full_source_contract": [
+        {
+          "id": "H1",
+          "statement": "finite simple disk；有序 induced C5 B=(b0,…,b4) 圍外面"
+        },
+        {
+          "id": "H2",
+          "statement": "完整有序 Σ(G)=933／941 或一次共同整圖 D5 像；每條原非框邊 Σ-critical；ε(G)=2"
+        },
+        {
+          "id": "H3",
+          "statement": "有效 H 連通、full B-touch；原孤立內點 I 保留為每份 full lift 的自由因子"
+        },
+        {
+          "id": "H4",
+          "statement": "原 nonadjacent r,s 完整 degree5；其餘有效原內點完整 degree4"
+        },
+        {
+          "id": "H5",
+          "statement": "H−{r,s} 恰完整 connected、one-sided、非空 actual support 的 U,P,Q"
+        },
+        {
+          "id": "H6",
+          "statement": "mixed P/Q 各支援恰一條真原框邊兩端；各接兩 roots；actual attachments／ownership 全留"
+        },
+        {
+          "id": "H7",
+          "statement": "原 U 只接 s，唯一原 contact sx，無 U–r；完整 U 保留"
+        },
+        {
+          "id": "H8",
+          "statement": "mixed totals=(3,2)；s 對 P/Q 各一，r 的原分配1及2保具名身份"
+        },
+        {
+          "id": "H9",
+          "statement": "原 r/s 各兩個不同 spokes；只省略 e=rb_i，X 留 rb_j，s 兩 spokes全留"
+        },
+        {
+          "id": "H10",
+          "statement": "固定原拒絕 literal β；X=G−e=M 自己是 β inclusion-minimal45／54 core"
+        },
+        {
+          "id": "H11",
+          "statement": "只删 e；所有原 pieces 頂點／內邊／contacts／框附件／其他 spokes全留，無替换"
+        },
+        {
+          "id": "H12",
+          "statement": "原 ordered contacts、shared 頂點單一變量、support／ownership、bridges／rotation、共同 literal 四色框、十列 relations、全部 ambient 空／非空 fibres、r/s pins與 full lifts"
+        },
+        {
+          "id": "H13",
+          "statement": "D5／S4／root swap共同搬整圖及全部資料；保933 q2；β不必是 U 盾中點，G/X/刪contact圖各有自身原邊與 lifts"
+        }
+      ],
+      "gap": null,
+      "id": "HIGH1-MAP",
+      "independent_argument": "Adjacency K5 excludes X; split and nonadjacent remain conclusions about X; root pin of G remains separate; both C region identities and q2 retained",
+      "machine_proved": false,
+      "new_Lean": false,
+      "new_sufficient_premises": [],
+      "quantifier": "each original rejecting beta; every whole-source D5/S4 normalization and all original s-spoke positions",
+      "report_locator": "REPORT section 3",
+      "verdict": "accepted within full H1-H13 paper scope"
+    },
+    {
+      "Python_proves_arbitrary_size_claim": false,
+      "conclusion": "Original G contains six disjoint connected bags with all nine original K33 adjacencies",
+      "dependencies": [
+        "Direct original graph branch sets",
+        "Standard K33 nonplanarity"
+      ],
+      "evidence_layer": "arbitrary-size paper with explicit BASE/external trust",
+      "full_source_contract": [
+        {
+          "id": "H1",
+          "statement": "finite simple disk；有序 induced C5 B=(b0,…,b4) 圍外面"
+        },
+        {
+          "id": "H2",
+          "statement": "完整有序 Σ(G)=933／941 或一次共同整圖 D5 像；每條原非框邊 Σ-critical；ε(G)=2"
+        },
+        {
+          "id": "H3",
+          "statement": "有效 H 連通、full B-touch；原孤立內點 I 保留為每份 full lift 的自由因子"
+        },
+        {
+          "id": "H4",
+          "statement": "原 nonadjacent r,s 完整 degree5；其餘有效原內點完整 degree4"
+        },
+        {
+          "id": "H5",
+          "statement": "H−{r,s} 恰完整 connected、one-sided、非空 actual support 的 U,P,Q"
+        },
+        {
+          "id": "H6",
+          "statement": "mixed P/Q 各支援恰一條真原框邊兩端；各接兩 roots；actual attachments／ownership 全留"
+        },
+        {
+          "id": "H7",
+          "statement": "原 U 只接 s，唯一原 contact sx，無 U–r；完整 U 保留"
+        },
+        {
+          "id": "H8",
+          "statement": "mixed totals=(3,2)；s 對 P/Q 各一，r 的原分配1及2保具名身份"
+        },
+        {
+          "id": "H9",
+          "statement": "原 r/s 各兩個不同 spokes；只省略 e=rb_i，X 留 rb_j，s 兩 spokes全留"
+        },
+        {
+          "id": "H10",
+          "statement": "固定原拒絕 literal β；X=G−e=M 自己是 β inclusion-minimal45／54 core"
+        },
+        {
+          "id": "H11",
+          "statement": "只删 e；所有原 pieces 頂點／內邊／contacts／框附件／其他 spokes全留，無替换"
+        },
+        {
+          "id": "H12",
+          "statement": "原 ordered contacts、shared 頂點單一變量、support／ownership、bridges／rotation、共同 literal 四色框、十列 relations、全部 ambient 空／非空 fibres、r/s pins與 full lifts"
+        },
+        {
+          "id": "H13",
+          "statement": "D5／S4／root swap共同搬整圖及全部資料；保933 q2；β不必是 U 盾中點，G/X/刪contact圖各有自身原邊與 lifts"
+        }
+      ],
+      "gap": null,
+      "id": "HIGH1-K33",
+      "independent_argument": "P,Q,O=B-v versus r,s,v; original r/s each two distinct spokes; O-r may use e only in original G",
+      "machine_proved": false,
+      "new_Lean": false,
+      "new_sufficient_premises": [],
+      "quantifier": "every full-contract source, conditionally when P/Q original support edges share b_v",
+      "report_locator": "REPORT section 4",
+      "verdict": "accepted within full H1-H13 paper scope"
+    },
+    {
+      "Python_proves_arbitrary_size_claim": false,
+      "conclusion": "P/Q support edges are vertex-disjoint; original U shield is the unique remaining length-two arc and its actual support is exactly three consecutive B vertices",
+      "dependencies": [
+        "HIGH1-K33",
+        "Original sx Sigma-critical witness",
+        "BASE shield sections 2-3 continuity/disjointness/support",
+        "BASE short-support and existing t=0 exterior-path supplement"
+      ],
+      "evidence_layer": "arbitrary-size paper with explicit BASE/external trust",
+      "full_source_contract": [
+        {
+          "id": "H1",
+          "statement": "finite simple disk；有序 induced C5 B=(b0,…,b4) 圍外面"
+        },
+        {
+          "id": "H2",
+          "statement": "完整有序 Σ(G)=933／941 或一次共同整圖 D5 像；每條原非框邊 Σ-critical；ε(G)=2"
+        },
+        {
+          "id": "H3",
+          "statement": "有效 H 連通、full B-touch；原孤立內點 I 保留為每份 full lift 的自由因子"
+        },
+        {
+          "id": "H4",
+          "statement": "原 nonadjacent r,s 完整 degree5；其餘有效原內點完整 degree4"
+        },
+        {
+          "id": "H5",
+          "statement": "H−{r,s} 恰完整 connected、one-sided、非空 actual support 的 U,P,Q"
+        },
+        {
+          "id": "H6",
+          "statement": "mixed P/Q 各支援恰一條真原框邊兩端；各接兩 roots；actual attachments／ownership 全留"
+        },
+        {
+          "id": "H7",
+          "statement": "原 U 只接 s，唯一原 contact sx，無 U–r；完整 U 保留"
+        },
+        {
+          "id": "H8",
+          "statement": "mixed totals=(3,2)；s 對 P/Q 各一，r 的原分配1及2保具名身份"
+        },
+        {
+          "id": "H9",
+          "statement": "原 r/s 各兩個不同 spokes；只省略 e=rb_i，X 留 rb_j，s 兩 spokes全留"
+        },
+        {
+          "id": "H10",
+          "statement": "固定原拒絕 literal β；X=G−e=M 自己是 β inclusion-minimal45／54 core"
+        },
+        {
+          "id": "H11",
+          "statement": "只删 e；所有原 pieces 頂點／內邊／contacts／框附件／其他 spokes全留，無替换"
+        },
+        {
+          "id": "H12",
+          "statement": "原 ordered contacts、shared 頂點單一變量、support／ownership、bridges／rotation、共同 literal 四色框、十列 relations、全部 ambient 空／非空 fibres、r/s pins與 full lifts"
+        },
+        {
+          "id": "H13",
+          "statement": "D5／S4／root swap共同搬整圖及全部資料；保933 q2；β不必是 U 盾中點，G/X/刪contact圖各有自身原邊與 lifts"
+        }
+      ],
+      "gap": null,
+      "id": "HIGH1-ARC",
+      "independent_argument": "H-U connected and full B-touch supply the same-source exterior path; critical witness supplies nonempty U query; no beta shield midpoint assumption",
+      "machine_proved": false,
+      "new_Lean": false,
+      "new_sufficient_premises": [],
+      "quantifier": "every full-contract source G",
+      "report_locator": "REPORT section 4",
+      "verdict": "accepted within full H1-H13 paper scope"
+    },
+    {
+      "Python_proves_arbitrary_size_claim": false,
+      "conclusion": "gamma has an original G full lift with r=s=unused D including restored edge rb_i",
+      "dependencies": [
+        "Complete U contact palette slack",
+        "Whole U assignment support-stabilizer bijection",
+        "BASE E4 section 4.1 local N-diagonal",
+        "HIGH1-RESTORE"
+      ],
+      "evidence_layer": "arbitrary-size paper with explicit BASE/external trust",
+      "full_source_contract": [
+        {
+          "id": "H1",
+          "statement": "finite simple disk；有序 induced C5 B=(b0,…,b4) 圍外面"
+        },
+        {
+          "id": "H2",
+          "statement": "完整有序 Σ(G)=933／941 或一次共同整圖 D5 像；每條原非框邊 Σ-critical；ε(G)=2"
+        },
+        {
+          "id": "H3",
+          "statement": "有效 H 連通、full B-touch；原孤立內點 I 保留為每份 full lift 的自由因子"
+        },
+        {
+          "id": "H4",
+          "statement": "原 nonadjacent r,s 完整 degree5；其餘有效原內點完整 degree4"
+        },
+        {
+          "id": "H5",
+          "statement": "H−{r,s} 恰完整 connected、one-sided、非空 actual support 的 U,P,Q"
+        },
+        {
+          "id": "H6",
+          "statement": "mixed P/Q 各支援恰一條真原框邊兩端；各接兩 roots；actual attachments／ownership 全留"
+        },
+        {
+          "id": "H7",
+          "statement": "原 U 只接 s，唯一原 contact sx，無 U–r；完整 U 保留"
+        },
+        {
+          "id": "H8",
+          "statement": "mixed totals=(3,2)；s 對 P/Q 各一，r 的原分配1及2保具名身份"
+        },
+        {
+          "id": "H9",
+          "statement": "原 r/s 各兩個不同 spokes；只省略 e=rb_i，X 留 rb_j，s 兩 spokes全留"
+        },
+        {
+          "id": "H10",
+          "statement": "固定原拒絕 literal β；X=G−e=M 自己是 β inclusion-minimal45／54 core"
+        },
+        {
+          "id": "H11",
+          "statement": "只删 e；所有原 pieces 頂點／內邊／contacts／框附件／其他 spokes全留，無替换"
+        },
+        {
+          "id": "H12",
+          "statement": "原 ordered contacts、shared 頂點單一變量、support／ownership、bridges／rotation、共同 literal 四色框、十列 relations、全部 ambient 空／非空 fibres、r/s pins與 full lifts"
+        },
+        {
+          "id": "H13",
+          "statement": "D5／S4／root swap共同搬整圖及全部資料；保933 q2；β不必是 U 盾中點，G/X/刪contact圖各有自身原邊與 lifts"
+        }
+      ],
+      "gap": null,
+      "id": "HIGH1-REJECT",
+      "independent_argument": "Single contact bounds F capacity to one; D/h transposition preserves all original U constraints; P/Q same literal gamma/D full assignments join and both original root spoke pairs are valid",
+      "machine_proved": false,
+      "new_Lean": false,
+      "new_sufficient_premises": [],
+      "quantifier": "every three-color proper literal gamma whose U support misses one of its used colors",
+      "report_locator": "REPORT section 4",
+      "verdict": "accepted within full H1-H13 paper scope"
+    },
+    {
+      "Python_proves_arbitrary_size_claim": false,
+      "conclusion": "No such original source G exists",
+      "dependencies": [
+        "HIGH1-ARC",
+        "HIGH1-REJECT",
+        "Full canonical masks 933/941",
+        "Common whole D5/S4/root renaming"
+      ],
+      "evidence_layer": "arbitrary-size paper with explicit BASE/external trust",
+      "full_source_contract": [
+        {
+          "id": "H1",
+          "statement": "finite simple disk；有序 induced C5 B=(b0,…,b4) 圍外面"
+        },
+        {
+          "id": "H2",
+          "statement": "完整有序 Σ(G)=933／941 或一次共同整圖 D5 像；每條原非框邊 Σ-critical；ε(G)=2"
+        },
+        {
+          "id": "H3",
+          "statement": "有效 H 連通、full B-touch；原孤立內點 I 保留為每份 full lift 的自由因子"
+        },
+        {
+          "id": "H4",
+          "statement": "原 nonadjacent r,s 完整 degree5；其餘有效原內點完整 degree4"
+        },
+        {
+          "id": "H5",
+          "statement": "H−{r,s} 恰完整 connected、one-sided、非空 actual support 的 U,P,Q"
+        },
+        {
+          "id": "H6",
+          "statement": "mixed P/Q 各支援恰一條真原框邊兩端；各接兩 roots；actual attachments／ownership 全留"
+        },
+        {
+          "id": "H7",
+          "statement": "原 U 只接 s，唯一原 contact sx，無 U–r；完整 U 保留"
+        },
+        {
+          "id": "H8",
+          "statement": "mixed totals=(3,2)；s 對 P/Q 各一，r 的原分配1及2保具名身份"
+        },
+        {
+          "id": "H9",
+          "statement": "原 r/s 各兩個不同 spokes；只省略 e=rb_i，X 留 rb_j，s 兩 spokes全留"
+        },
+        {
+          "id": "H10",
+          "statement": "固定原拒絕 literal β；X=G−e=M 自己是 β inclusion-minimal45／54 core"
+        },
+        {
+          "id": "H11",
+          "statement": "只删 e；所有原 pieces 頂點／內邊／contacts／框附件／其他 spokes全留，無替换"
+        },
+        {
+          "id": "H12",
+          "statement": "原 ordered contacts、shared 頂點單一變量、support／ownership、bridges／rotation、共同 literal 四色框、十列 relations、全部 ambient 空／非空 fibres、r/s pins與 full lifts"
+        },
+        {
+          "id": "H13",
+          "statement": "D5／S4／root swap共同搬整圖及全部資料；保933 q2；β不必是 U 盾中點，G/X/刪contact圖各有自身原邊與 lifts"
+        }
+      ],
+      "gap": null,
+      "id": "HIGH1-EXCLUSION",
+      "independent_argument": "Q(G) must lie in a consecutive triple T; 933 has four rejected positions and 941 has nonconsecutive three; q2 kept",
+      "machine_proved": false,
+      "new_Lean": false,
+      "new_sufficient_premises": [],
+      "quantifier": "every arbitrary finite source satisfying all H1-H13",
+      "report_locator": "REPORT section 4",
+      "verdict": "accepted within full H1-H13 paper scope"
+    }
+  ],
+  "commit_push_PR": false,
+  "decision": "accept_HIGH1_full_contract_paper_with_BASE_and_external_trust",
+  "finite_source": {
+    "established": false,
+    "executed": false,
+    "status": "not triggered",
+    "trigger_count": null
+  },
+  "machine_proves_arbitrary_size": false,
+  "new_Lean": false,
+  "new_delegation": false,
+  "nonblocking_findings": [],
+  "paper_verdict": "ten claims accepted within complete H1-H13; no added sufficient premise; no gap found",
+  "peer_H1_judgments_read": false,
+  "shared_files_modified": false,
+  "task": "N45-H1R",
+  "trust": {
+    "BASE": "specific paper and inherited structural/finite reductions in named BASE blobs; no replay of inherited full catalog",
+    "external": "Dvorak official List coloring and Gallai trees, Lemma 7 and Theorem 10, plus standard K33/K5 nonplanarity",
+    "frozen_PDF_sha256": "50e998fcb016418698ef31b932c6c2e728007f5e3b3348b93744781196ac1aea",
+    "primary_url": "https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf"
+  },
+  "worker_REPORT_sha256": "500b722eb995c3daf4d3b4ab0ce87900efd2712d0ebfeab647d2defeac5045be",
+  "worker_claims_sha256": "82e8f96c3fee103026de2825bc52149564d03da7acb80d226f2db9957cf6d92b"
+}

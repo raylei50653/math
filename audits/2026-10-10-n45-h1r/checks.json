@@ -1,0 +1,75 @@
+{
+  "commands": [
+    {
+      "actual_exit": 0,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-h1r/checker.py",
+        "--create"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "expected_exit": 0,
+      "label": "create",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ae3cc3de3cea1dcbb6ec58fd515817f1aafcd5fc7389a7f4e80f46b94fef1afb"
+    },
+    {
+      "actual_exit": 0,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-h1r/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "expected_exit": 0,
+      "label": "normal",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ae3cc3de3cea1dcbb6ec58fd515817f1aafcd5fc7389a7f4e80f46b94fef1afb"
+    },
+    {
+      "actual_exit": 0,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-h1r/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_exit": 0,
+      "label": "seed17",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ae3cc3de3cea1dcbb6ec58fd515817f1aafcd5fc7389a7f4e80f46b94fef1afb"
+    },
+    {
+      "actual_exit": 2,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-h1r/checker.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-h1r/negative/bad-calibration.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "expected_exit": 2,
+      "label": "bad-certificate",
+      "stderr_sha256": "d2d21811ba47a814a62fa95ccd082a045c3452dbc8eaff8e005e9f70fa7f1bdc",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "negative_stage": "independent calibration byte comparison",
+  "no_new_Lean": true,
+  "normal_seed17_stdout_bytes_equal": true,
+  "source_control": "not established; not executed; no trigger count"
+}

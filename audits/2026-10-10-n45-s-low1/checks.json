@@ -1,0 +1,130 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low1/base-source",
+      "exit_code": 1,
+      "exit_matches_expectation": true,
+      "expected_exit": 1,
+      "id": "fresh-base-docs",
+      "stderr": "logs/fresh-base-docs.stderr.log",
+      "stdout": "logs/fresh-base-docs.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low1/base-source",
+      "exit_code": 0,
+      "exit_matches_expectation": true,
+      "expected_exit": 0,
+      "id": "fresh-base-formal-docgraph",
+      "stderr": "logs/fresh-base-formal-docgraph.stderr.log",
+      "stdout": "logs/fresh-base-formal-docgraph.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "exit_matches_expectation": true,
+      "expected_exit": 0,
+      "id": "current-docs",
+      "stderr": "logs/current-docs.stderr.log",
+      "stdout": "logs/current-docs.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "exit_matches_expectation": true,
+      "expected_exit": 0,
+      "id": "current-formal-docgraph",
+      "stderr": "logs/current-formal-docgraph.stderr.log",
+      "stdout": "logs/current-formal-docgraph.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "exit_matches_expectation": true,
+      "expected_exit": 1,
+      "id": "current-whole-docgraph",
+      "stderr": "logs/current-whole-docgraph.stderr.log",
+      "stdout": "logs/current-whole-docgraph.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "exit_matches_expectation": true,
+      "expected_exit": 0,
+      "id": "tracked-diff-check",
+      "stderr": "logs/tracked-diff-check.stderr.log",
+      "stdout": "logs/tracked-diff-check.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "exit_matches_expectation": true,
+      "expected_exit": 0,
+      "id": "cached-diff-check",
+      "stderr": "logs/cached-diff-check.stderr.log",
+      "stdout": "logs/cached-diff-check.stdout.log"
+    }
+  ],
+  "doc_failures_preserved": true,
+  "fresh_base_missing_paths": [
+    "missing path: docs/c5_open_leaf_ledger.md:78: ../audits/2026-10-04-task-d5/c4/scope_ledger.json",
+    "missing path: docs/history/2026-10-04-task-d2-integration-audit.md:39: ../../audits/2026-10-04-task-d2/integration_doc_changes.diff"
+  ],
+  "historical_E4_provenance": "Prior byte-replay FAIL retained, not rerun in this task",
+  "no_mathematical_checker_replay": true,
+  "not_run": [
+    "new graph/k enumeration",
+    "upstream source/control checkers",
+    "PC LP schema",
+    "U1-U4",
+    "LP/SS reproof",
+    "Lean build/axiom audit",
+    "remote CI"
+  ],
+  "postseal_actual_results": "seal-checks/commands.json",
+  "source_controls": "not performed; no trigger count",
+  "task": "N45-S-LOW1",
+  "whole_worktree_duplicate_id_lines": 62
+}

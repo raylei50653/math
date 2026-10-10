@@ -1,0 +1,24 @@
+{
+  "attempts": [
+    {
+      "argv_option_position": "--seed17 after name",
+      "error": "FileNotFoundError: [Errno 2] No such file or directory: '--seed17'",
+      "exit": 1,
+      "name": "final-seed17"
+    },
+    {
+      "argv_option_position": "--cwd after name",
+      "error": "FileNotFoundError: [Errno 2] No such file or directory: '--cwd'",
+      "exit": 1,
+      "name": "base-docs"
+    },
+    {
+      "argv_option_position": "--cwd after name",
+      "error": "FileNotFoundError: [Errno 2] No such file or directory: '--cwd'",
+      "exit": 1,
+      "name": "base-formal-docgraph"
+    }
+  ],
+  "cause": "argparse REMAINDER consumed wrapper options; target checkers were not started",
+  "correction": "pass wrapper options before the log name; retain failures"
+}

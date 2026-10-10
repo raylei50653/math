@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/build_controls.py", line 78, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/build_controls.py", line 28, in main
+    g = v.compute_graph(raw)
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/validator.py", line 328, in compute_graph
+    g = normalize(raw, frame, roots, declarations)
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/validator.py", line 256, in normalize
+    need(old["shield"] == p.get("shield"), "declared original shield differs from rotation")
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/validator.py", line 28, in need
+    raise DataError(message)
+validator.DataError: declared original shield differs from rotation

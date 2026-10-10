@@ -1,0 +1,23 @@
+{
+  "actual_commands": "seal-final-v2/commands.json",
+  "directory_entries": [
+    "audits/2026-10-09-n45-pc/source/",
+    "audits/2026-10-09-n45-pg/base-source/",
+    "audits/2026-10-09-n45-pr/base-source/",
+    "audits/2026-10-09-n45-u/source/"
+  ],
+  "failure": "Initial git ls-files lists four nested Git repositories as directory entries ending with slash. The prepare digest helper recorded these non-regular-file entries as kind=missing. Verifier incorrectly treated them as absent files. They were already present in the initial raw Git inventory.",
+  "initial_directory_entries": 4,
+  "initial_hashed_regular_files": 25869,
+  "initial_inventory_evidence": "logs/preexisting-inventory.stdout.log",
+  "initial_recursive_hash_of_nested_repository_contents": "not captured; no retrospective fulltree-unchanged claim",
+  "initial_symlinks": 22,
+  "manifest": "MANIFEST.final-v2.sha256",
+  "negative_control_v2": "Correctly rejects corrupted digest; normal checks still failed on directory classification.",
+  "normal_exit": 2,
+  "old_manifest_and_logs_overwritten": false,
+  "outer_seal_exit": 1,
+  "paper_change": false,
+  "seed17_exit": 2,
+  "superseding_manifest": "MANIFEST.final-v3.sha256"
+}

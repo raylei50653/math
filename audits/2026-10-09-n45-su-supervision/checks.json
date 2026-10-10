@@ -1,0 +1,353 @@
+{
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "actual_HEAD": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "adoption": "Fourteen S/U paper claims within their stated hypotheses; narrow subtypes only.",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "finished_UTC": "2026-10-09T15:04:45.065443+00:00",
+      "started_UTC": "2026-10-09T15:04:45.057238+00:00",
+      "stderr": "logs/diff-check.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/diff-check.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "finished_UTC": "2026-10-09T15:06:40.187721+00:00",
+      "started_UTC": "2026-10-09T15:06:40.180941+00:00",
+      "stderr": "logs/diff-final.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/diff-final.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "finished_UTC": "2026-10-09T15:06:40.769946+00:00",
+      "started_UTC": "2026-10-09T15:06:40.180162+00:00",
+      "stderr": "logs/docs-final.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/docs-final.stdout.log",
+      "stdout_sha256": "8e6fa6cc95c708eb5f2105fc838934d1a9807a2bf0c289daa80c4385f7961ea1"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "finished_UTC": "2026-10-09T15:04:45.705104+00:00",
+      "started_UTC": "2026-10-09T15:04:45.057045+00:00",
+      "stderr": "logs/docs.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/docs.stdout.log",
+      "stdout_sha256": "8e6fa6cc95c708eb5f2105fc838934d1a9807a2bf0c289daa80c4385f7961ea1"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "finished_UTC": "2026-10-09T15:04:45.333791+00:00",
+      "started_UTC": "2026-10-09T15:04:45.056973+00:00",
+      "stderr": "logs/formal-docgraph.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/formal-docgraph.stdout.log",
+      "stdout_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-su-supervision/review.py",
+        "--freeze",
+        "--result",
+        "independent-review.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "finished_UTC": "2026-10-09T14:51:23.083325+00:00",
+      "started_UTC": "2026-10-09T14:51:21.627428+00:00",
+      "stderr": "logs/input-freeze.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/input-freeze.stdout.log",
+      "stdout_sha256": "56a661fee602a3c676cc97ed40da453a7758c3f3d9ddadc629d3c11cd83306c8"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-su-supervision/review.py",
+        "--result",
+        "independent-review-seed17.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "finished_UTC": "2026-10-09T14:51:46.253673+00:00",
+      "started_UTC": "2026-10-09T14:51:44.728344+00:00",
+      "stderr": "logs/input-seed17.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/input-seed17.stdout.log",
+      "stdout_sha256": "56a661fee602a3c676cc97ed40da453a7758c3f3d9ddadc629d3c11cd83306c8"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-su-supervision/check_integration.py",
+        "--result",
+        "post-integration-final.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "finished_UTC": "2026-10-09T15:06:40.771175+00:00",
+      "started_UTC": "2026-10-09T15:06:40.180208+00:00",
+      "stderr": "logs/integration-final.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/integration-final.stdout.log",
+      "stdout_sha256": "1759a40d789d9e04eec0fcfdadfc2e395da2de1ae6bc740c1044624374c28d95"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-su-supervision/check_integration.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "finished_UTC": "2026-10-09T15:04:47.784164+00:00",
+      "started_UTC": "2026-10-09T15:04:45.057480+00:00",
+      "stderr": "logs/integration.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/integration.stdout.log",
+      "stdout_sha256": "1759a40d789d9e04eec0fcfdadfc2e395da2de1ae6bc740c1044624374c28d95"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-su-a/verify_inputs.py",
+        "--result",
+        "audits/2026-10-09-n45-su-supervision/sua-input-replay.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "finished_UTC": "2026-10-09T14:51:45.462075+00:00",
+      "started_UTC": "2026-10-09T14:51:44.732157+00:00",
+      "stderr": "logs/sua-input-replay.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/sua-input-replay.stdout.log",
+      "stdout_sha256": "f6d091beadf42f6420516ac6f26d3741ebd446caeaae67cdbb3dc5ba8cfeab45"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-su-a/verify_inputs.py",
+        "--result",
+        "audits/2026-10-09-n45-su-supervision/sua-input-replay-seed17.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "finished_UTC": "2026-10-09T14:51:45.464453+00:00",
+      "started_UTC": "2026-10-09T14:51:44.731701+00:00",
+      "stderr": "logs/sua-input-seed17.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/sua-input-seed17.stdout.log",
+      "stdout_sha256": "6926b965058f130a49a6192588e34df0598e2b3385585d7d584599ef99f2b149"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-su-j/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "finished_UTC": "2026-10-09T14:51:47.904518+00:00",
+      "started_UTC": "2026-10-09T14:51:44.732721+00:00",
+      "stderr": "logs/suj-replay.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/suj-replay.stdout.log",
+      "stdout_sha256": "5edcc177bcbfab616d498336ff6fb74d5598f70d3a8259f1efd9769ca359b10a"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-su-j/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "finished_UTC": "2026-10-09T14:51:47.862584+00:00",
+      "started_UTC": "2026-10-09T14:51:44.737317+00:00",
+      "stderr": "logs/suj-seed17.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/suj-seed17.stdout.log",
+      "stdout_sha256": "5edcc177bcbfab616d498336ff6fb74d5598f70d3a8259f1efd9769ca359b10a"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit": 1,
+      "finished_UTC": "2026-10-09T15:04:47.946499+00:00",
+      "started_UTC": "2026-10-09T15:04:45.057102+00:00",
+      "stderr": "logs/whole-docgraph.stderr.log",
+      "stderr_sha256": "d76c7c7b50514751b43c094feb485cefde250e3c045afcd9a5832094951d6896",
+      "stdout": "logs/whole-docgraph.stdout.log",
+      "stdout_sha256": "3b55401c56babce0efbd6b1c4c480eea52dc0ff51ae277d0c4c218d81b59afa2"
+    }
+  ],
+  "final_immutable_verification": "post-integration-final.json",
+  "finite": {
+    "capacity_columns": 102,
+    "distinct_graph_pin_cases": 7952,
+    "piece_lifts": 2986,
+    "piece_relations": 690,
+    "target_source_triggered": 0
+  },
+  "formal_docs": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes",
+  "next_batch": {
+    "geometry_control_triggered": 0,
+    "residual": "N45-U-LP",
+    "status": "ready for user publication; not started",
+    "tasks": [
+      "N45-PG",
+      "N45-PR",
+      "N45-PC"
+    ]
+  },
+  "not_run": [
+    "whole upstream enumerations",
+    "broad graph/k search",
+    "Lean build or axioms audit",
+    "historical E4 replays (retained)",
+    "fresh BASE docs again (frozen worker evidence retained)"
+  ],
+  "paper": {
+    "Lean": "no new proof or build",
+    "S": 6,
+    "U": 8,
+    "new_proof_gap": 0
+  },
+  "propagation": {
+    "reviewed_unchanged": [
+      "E4 historical three-row body and original stop",
+      "CORE_CONSTRAINTS identity classification",
+      "E3 N2 reduction",
+      "U1-U4 44 domain"
+    ],
+    "stop": "L2; parent N2/E OPEN, common language and HANDOFF/README unchanged",
+    "updated": [
+      "N45 canonical",
+      "E4 dated follow-up",
+      "Phase B direct consumer",
+      "Kempe relevant paragraph",
+      "STATUS relevant index",
+      "N45 first-batch history"
+    ]
+  },
+  "publication": "no commit/push/PR/external messages/sub-agents",
+  "retained_history": {
+    "E4_byte_replays": "Four BASE frozen historical exit1 logs retained; source field drift is not a mathematical counterexample.",
+    "fresh_BASE_docs": "FAIL; two missing historical targets; SU-A and SU-J logs retained, not rerun here."
+  },
+  "shared_docs": "OK: 589 Markdown files, 7052 local links; anchors, index, handoff checked",
+  "whole_worktree_DocGraph": {
+    "copies_retained": true,
+    "duplicates": 62,
+    "exit": 1
+  }
+}

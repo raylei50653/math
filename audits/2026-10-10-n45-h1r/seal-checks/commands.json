@@ -1,0 +1,58 @@
+{
+  "commands": [
+    {
+      "actual_exit": 0,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-h1r/verify.py",
+        "--payload-only"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "expected_exit": 0,
+      "label": "normal",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "dcbbcd07cb888bcd13fd79d71db5aea90e5161cf1e73e1c910112bf406360204"
+    },
+    {
+      "actual_exit": 0,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-h1r/verify.py",
+        "--payload-only"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_exit": 0,
+      "label": "seed17",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "dcbbcd07cb888bcd13fd79d71db5aea90e5161cf1e73e1c910112bf406360204"
+    },
+    {
+      "actual_exit": 2,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-h1r/verify.py",
+        "--payload-only",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-h1r/seal-checks/corrupt.sha256"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": null
+      },
+      "expected_exit": 2,
+      "label": "corrupt",
+      "stderr_sha256": "0927e03f170353e7950075e5bffb8a1053ef2cdefc1e7197330ff7f38ad82931",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "normal_seed17_bytes_equal": true
+}

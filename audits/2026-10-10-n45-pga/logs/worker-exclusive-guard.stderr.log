@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-10-n45-pga/frozen/pg/checker.py", line 103, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-10-n45-pga/frozen/pg/checker.py", line 101, in main
+    with target.open('xb') as f:f.write(b)
+         ~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-10-n45-pga/frozen/pg/certificate.json'

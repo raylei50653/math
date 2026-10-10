@@ -1,0 +1,219 @@
+{
+  "candidate": "/tmp/n45-publication-candidate-1nexr8ar",
+  "executions": [
+    {
+      "name": "fresh-clone",
+      "command": [
+        "git",
+        "clone",
+        "--shared",
+        "--no-checkout",
+        "--quiet",
+        "/home/ray/developer/ai/math",
+        "/tmp/n45-publication-candidate-1nexr8ar"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:30:50.767588+00:00",
+      "elapsed_seconds": 0.016,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/fresh-clone.stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "logs/fresh-clone.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fresh-export-index",
+      "command": [
+        "git",
+        "checkout-index",
+        "--all",
+        "--prefix=/tmp/n45-publication-candidate-1nexr8ar/"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:30:50.783901+00:00",
+      "elapsed_seconds": 3.994,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/fresh-export-index.stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "logs/fresh-export-index.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fresh-legacy-restore",
+      "command": [
+        "python3",
+        "-B",
+        "tools/audit_archive.py",
+        "restore",
+        "--artifacts"
+      ],
+      "cwd": "/tmp/n45-publication-candidate-1nexr8ar",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:30:54.777909+00:00",
+      "elapsed_seconds": 18.859,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/fresh-legacy-restore.stdout.txt",
+      "stdout_sha256": "3d7077ef3bd6e45dc851484a2602643ec1a6118489b5c1d6cccf9143505f065e",
+      "stderr": "logs/fresh-legacy-restore.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fresh-n45-restore",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-publication/archive.py",
+        "restore"
+      ],
+      "cwd": "/tmp/n45-publication-candidate-1nexr8ar",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:31:13.637665+00:00",
+      "elapsed_seconds": 29.161,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/fresh-n45-restore.stdout.txt",
+      "stdout_sha256": "e05a103ec308d4235ef1dfe412a3b38ce2d64945f31c7e68bdd9c0028a3ae6ea",
+      "stderr": "logs/fresh-n45-restore.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fresh-publication-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-publication/verify.py"
+      ],
+      "cwd": "/tmp/n45-publication-candidate-1nexr8ar",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:31:42.799834+00:00",
+      "elapsed_seconds": 10.569,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/fresh-publication-normal.stdout.txt",
+      "stdout_sha256": "962a0b3f5425cbad2c9afa2897c909c2965029d042188aac0a0694ab3f6b5722",
+      "stderr": "logs/fresh-publication-normal.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fresh-publication-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-publication/verify.py"
+      ],
+      "cwd": "/tmp/n45-publication-candidate-1nexr8ar",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "17"
+      },
+      "start_UTC": "2026-10-10T08:31:42.800143+00:00",
+      "elapsed_seconds": 10.643,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/fresh-publication-seed17.stdout.txt",
+      "stdout_sha256": "962a0b3f5425cbad2c9afa2897c909c2965029d042188aac0a0694ab3f6b5722",
+      "stderr": "logs/fresh-publication-seed17.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fresh-docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/tmp/n45-publication-candidate-1nexr8ar",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:31:42.800473+00:00",
+      "elapsed_seconds": 0.54,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/fresh-docs.stdout.txt",
+      "stdout_sha256": "444fe83bffc5ead58d7d9ce1e7d002c636acfa45e73ed8736d40f8cddb26585e",
+      "stderr": "logs/fresh-docs.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fresh-docgraph-docs",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/tmp/n45-publication-candidate-1nexr8ar",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:31:42.801024+00:00",
+      "elapsed_seconds": 0.086,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/fresh-docgraph-docs.stdout.txt",
+      "stdout_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+      "stderr": "logs/fresh-docgraph-docs.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "staged-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONHASHSEED": "unset"
+      },
+      "start_UTC": "2026-10-10T08:31:53.443756+00:00",
+      "elapsed_seconds": 0.303,
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/staged-whitespace.stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "logs/staged-whitespace.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "normal_seed17_stdout_identical": true,
+  "original_worktree_inputs_modified": false,
+  "new_Lean": false,
+  "candidate_HEAD": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+}

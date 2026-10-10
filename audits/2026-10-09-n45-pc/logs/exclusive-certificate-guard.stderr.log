@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/checker.py", line 226, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/checker.py", line 213, in main
+    with path.open("xb") as stream:
+         ~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-09-n45-pc/certificate-final-v2.json'

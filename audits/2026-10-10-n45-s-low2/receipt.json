@@ -1,0 +1,182 @@
+{
+  "bad_receipt_probe_boundary": "Actual verify.check_receipt with read_json override solely for absent final delivery; persisted bad receipt bytes and exact command included. This is a synthetic tool probe.",
+  "changed_preexisting_files": [],
+  "commands": [
+    {
+      "PYTHONHASHSEED": null,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low2/verify.py",
+        "--payload-only"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control only; not a LOW2 source evaluation",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "name": "normal",
+      "stderr": "receipt/normal.stderr.log",
+      "stdout": "receipt/normal.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low2/verify.py",
+        "--payload-only"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control only; not a LOW2 source evaluation",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "name": "seed17",
+      "stderr": "receipt/seed17.stderr.log",
+      "stdout": "receipt/seed17.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low2/verify.py",
+        "--payload-only",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low2/negative/bad-digest.sha256"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control only; not a LOW2 source evaluation",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "name": "bad-digest",
+      "rejection_stage": "manifest digest differs",
+      "stderr": "receipt/bad-digest.stderr.log",
+      "stdout": "receipt/bad-digest.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low2/verify.py",
+        "--payload-only",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low2/negative/missing-nested-delivery.sha256"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control only; not a LOW2 source evaluation",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "name": "missing-nested-delivery",
+      "rejection_stage": "manifest payload inventory differs",
+      "stderr": "receipt/missing-nested-delivery.stderr.log",
+      "stdout": "receipt/missing-nested-delivery.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low2/verify.py",
+        "--payload-only",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low2/negative/duplicate-path.sha256"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control only; not a LOW2 source evaluation",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "name": "duplicate-path",
+      "rejection_stage": "manifest duplicate path",
+      "stderr": "receipt/duplicate-path.stderr.log",
+      "stdout": "receipt/duplicate-path.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low2/verify.py",
+        "--payload-only",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low2/negative/unsafe-path.sha256"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control only; not a LOW2 source evaluation",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "name": "unsafe-path",
+      "rejection_stage": "manifest unsafe path",
+      "stderr": "receipt/unsafe-path.stderr.log",
+      "stdout": "receipt/unsafe-path.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low2/verify.py",
+        "--payload-only",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low2/negative/missing-payload.sha256"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control only; not a LOW2 source evaluation",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "name": "missing-payload",
+      "rejection_stage": "manifest payload inventory differs",
+      "stderr": "receipt/missing-payload.stderr.log",
+      "stdout": "receipt/missing-payload.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "-c",
+        "import sys; from pathlib import Path; sys.path.insert(0, sys.argv[1]); import verify; actual=verify.read_json; verify.read_json=lambda p: {'manifest_sha256': 'eb80de720c9089b7e8e61671949be1c84a2312995379a18c84a1206f83d8f752', 'receipt_sha256': '0000000000000000000000000000000000000000000000000000000000000000', 'paper_status': 'candidate_pending_independent_adoption'} if p == verify.HERE / \"delivery.json\" else actual(p); sys.argv=[\"verify.py\", \"--receipt\", sys.argv[2]]; sys.exit(verify.main())",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low2",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low2/negative/bad-receipt.json"
+      ],
+      "control_classification": "triggered and holds",
+      "cwd": "/home/ray/developer/ai/math",
+      "evidence_layer": "synthetic artifact control only; not a LOW2 source evaluation",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "name": "bad-receipt",
+      "rejection_stage": "delivery receipt binding differs",
+      "stderr": "receipt/bad-receipt.stderr.log",
+      "stdout": "receipt/bad-receipt.stdout.log"
+    }
+  ],
+  "metadata": {
+    "receipt/bad-digest.stderr.log": "125a1b1d4f929dc852d511e18f342f6fe96c604e97f302e2adfc0bde4edce357",
+    "receipt/bad-digest.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "receipt/bad-receipt.stderr.log": "76376e8f5f8aa7a5df314e338a32f3bd27806791495d25c2d710d066ae147231",
+    "receipt/bad-receipt.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "receipt/duplicate-path.stderr.log": "f9235d3ef65fecd7bbcfbb43452ec2eb180358a7933a1067815d09742a6ea0d0",
+    "receipt/duplicate-path.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "receipt/missing-nested-delivery.stderr.log": "6621e3d5f42685fde8b1a59323dff7a184586e522422eed4ba3712fc7d481e9b",
+    "receipt/missing-nested-delivery.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "receipt/missing-payload.stderr.log": "6621e3d5f42685fde8b1a59323dff7a184586e522422eed4ba3712fc7d481e9b",
+    "receipt/missing-payload.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "receipt/normal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "receipt/normal.stdout.log": "393d0b154b301fa01301064d40569fe0472029a28bfdfb9aa41e3f012a6c942f",
+    "receipt/seed17.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "receipt/seed17.stdout.log": "393d0b154b301fa01301064d40569fe0472029a28bfdfb9aa41e3f012a6c942f",
+    "receipt/unsafe-path.stderr.log": "6052c62bd3c6f506ca0af04e8b47ea0209f223b7a8510698075e071c1077f4d4",
+    "receipt/unsafe-path.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "new_files_outside_audit": [],
+  "payload_after": "eb80de720c9089b7e8e61671949be1c84a2312995379a18c84a1206f83d8f752",
+  "payload_before": "eb80de720c9089b7e8e61671949be1c84a2312995379a18c84a1206f83d8f752",
+  "workspace_scope_basis": "Normal/seed17 verify complete preexisting Git-listed inventory and diffs; four nested directory entries only, without recursive hash."
+}

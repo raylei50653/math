@@ -1,0 +1,63 @@
+[
+  {
+    "actual_exit": 0,
+    "command": [
+      "/usr/sbin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-10-n45-h1a/checker.py",
+      "--check",
+      "--payload-only"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment": {},
+    "expected_exit": 0,
+    "id": "normal",
+    "stderr_file": "seal-checks/normal.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdin_sha256": null,
+    "stdout_file": "seal-checks/normal.stdout.txt",
+    "stdout_sha256": "b5a4ba872c46537f8caf2bbfe21d510c7d07e34028f7a5ce25f5300156689092"
+  },
+  {
+    "actual_exit": 0,
+    "command": [
+      "/usr/sbin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-10-n45-h1a/checker.py",
+      "--check",
+      "--payload-only"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment": {
+      "PYTHONHASHSEED": "17"
+    },
+    "expected_exit": 0,
+    "id": "seed17",
+    "stderr_file": "seal-checks/seed17.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdin_sha256": null,
+    "stdout_file": "seal-checks/seed17.stdout.txt",
+    "stdout_sha256": "b5a4ba872c46537f8caf2bbfe21d510c7d07e34028f7a5ce25f5300156689092"
+  },
+  {
+    "actual_exit": 2,
+    "command": [
+      "/usr/sbin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-10-n45-h1a/checker.py",
+      "--check",
+      "--payload-only",
+      "--manifest",
+      "/dev/stdin"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment": {},
+    "expected_exit": 2,
+    "id": "bad-digest",
+    "stderr_file": "seal-checks/bad-digest.stderr.txt",
+    "stderr_sha256": "c52d9b75b8256834bac902b3b97010de2936b68779ef0028fefe866f62902a88",
+    "stdin_sha256": "56417c7476fd11a0457eea77362f609411020c9c68e3cfd17f9ef683fdf5e0bd",
+    "stdout_file": "seal-checks/bad-digest.stdout.txt",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

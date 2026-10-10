@@ -1,0 +1,674 @@
+{
+  "checks": [
+    {
+      "command": {
+        "argv": [
+          "/usr/sbin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/checker.py",
+          "--source",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/controls-v2/NA7-0002-P1.json"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 0.08430941899996469,
+        "env": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 2,
+        "stderr": "logs/legal-fixed-missing-LP.stderr.log",
+        "stdout": "logs/legal-fixed-missing-LP.stdout.log"
+      },
+      "id": "legal-fixed-missing-LP",
+      "layers": {
+        "LP_common_D_and_spokes": {
+          "missing_sufficient_premises": [
+            "full_ten_row_target_whole_D5",
+            "LP_original_geometry",
+            "rejecting_beta_minimal_45_54_core"
+          ],
+          "status": "not triggered"
+        },
+        "LP_cross_row_Q_Delta": {
+          "missing_sufficient_premises": [
+            "full_ten_row_target_whole_D5",
+            "LP_original_geometry",
+            "rejecting_beta_minimal_45_54_core"
+          ],
+          "status": "not triggered"
+        },
+        "LP_original_geometry": {
+          "detail": [
+            {
+              "L": "P0",
+              "S": "P2",
+              "U": "P1",
+              "check": {
+                "missing_sufficient_premises": [
+                  "original L actual support long",
+                  "original shield lengths 2+2+1 partition all five frame edges",
+                  "original P0 support three consecutive frame points"
+                ],
+                "status": "not triggered"
+              }
+            },
+            {
+              "L": "P2",
+              "S": "P0",
+              "U": "P1",
+              "check": {
+                "missing_sufficient_premises": [
+                  "original L actual support long",
+                  "original shield lengths 2+2+1 partition all five frame edges",
+                  "original P2 support three consecutive frame points"
+                ],
+                "status": "not triggered"
+              }
+            }
+          ],
+          "missing_sufficient_premises": [
+            "complete unique-unit-U + long-L + short-edge-pair-S geometry"
+          ],
+          "status": "not triggered"
+        },
+        "all_Delta_gamma_singleton_forcing": {
+          "missing_sufficient_premises": [],
+          "status": "triggered and holds"
+        },
+        "complete_components_one_sided": {
+          "missing_sufficient_premises": [],
+          "status": "triggered and holds"
+        },
+        "complete_relations_fibres_full_lifts": {
+          "detail": {
+            "pieces": 3,
+            "rows": 10
+          },
+          "missing_sufficient_premises": [],
+          "status": "triggered and holds"
+        },
+        "core_zero_slack_full_partition": {
+          "detail": [],
+          "missing_sufficient_premises": [
+            "X rejects this literal beta",
+            "every retained nonframe edge deletion accepts the same beta"
+          ],
+          "status": "not triggered"
+        },
+        "declared_U_L_S": {
+          "missing_sufficient_premises": [
+            "distinct named U,L,S roles"
+          ],
+          "status": "not triggered"
+        },
+        "declared_X_identity": {
+          "missing_sufficient_premises": [],
+          "status": "triggered and holds"
+        },
+        "declared_complete_original_pieces": {
+          "missing_sufficient_premises": [],
+          "status": "triggered and holds"
+        },
+        "each_nonframe_edge_Sigma_critical": {
+          "missing_sufficient_premises": [],
+          "status": "triggered and holds"
+        },
+        "exact_whole_U_omission": {
+          "missing_sufficient_premises": [],
+          "status": "triggered and holds"
+        },
+        "full_B_touch_H_connected": {
+          "missing_sufficient_premises": [],
+          "status": "triggered and holds"
+        },
+        "full_ten_row_target_whole_D5": {
+          "detail": {
+            "actual_sigma": 959
+          },
+          "missing_sufficient_premises": [
+            "complete Sigma 933/941 or one whole-frame D5 image"
+          ],
+          "status": "not triggered"
+        },
+        "ordered_induced_C5_disk": {
+          "detail": {
+            "faces": [
+              [
+                0,
+                1,
+                7
+              ],
+              [
+                0,
+                4,
+                3,
+                2,
+                1
+              ],
+              [
+                0,
+                5,
+                8
+              ],
+              [
+                0,
+                7,
+                9
+              ],
+              [
+                0,
+                8,
+                4
+              ],
+              [
+                0,
+                9,
+                5
+              ],
+              [
+                1,
+                2,
+                10
+              ],
+              [
+                1,
+                6,
+                7
+              ],
+              [
+                1,
+                10,
+                6
+              ],
+              [
+                2,
+                3,
+                8,
+                5
+              ],
+              [
+                2,
+                5,
+                11
+              ],
+              [
+                2,
+                11,
+                10
+              ],
+              [
+                3,
+                4,
+                8
+              ],
+              [
+                5,
+                9,
+                6,
+                11
+              ],
+              [
+                6,
+                9,
+                7
+              ],
+              [
+                6,
+                10,
+                11
+              ]
+            ],
+            "ignored_isolated": [],
+            "outer": [
+              [
+                0,
+                4,
+                3,
+                2,
+                1
+              ]
+            ]
+          },
+          "missing_sufficient_premises": [],
+          "status": "triggered and holds"
+        },
+        "original_degrees_rs_epsilon2": {
+          "missing_sufficient_premises": [],
+          "status": "triggered and holds"
+        },
+        "rejecting_beta_minimal_45_54_core": {
+          "missing_sufficient_premises": [
+            "X rejects this literal beta",
+            "every retained nonframe edge deletion accepts the same beta"
+          ],
+          "status": "not triggered"
+        },
+        "source_hash_binding": {
+          "missing_sufficient_premises": [],
+          "status": "triggered and holds"
+        }
+      },
+      "source_contract": {
+        "meaning": "Finite contract validation for this named source only; no source exclusion or arbitrary-size theorem.",
+        "missing_sufficient_premises": [
+          "full_ten_row_target_whole_D5",
+          "LP_original_geometry",
+          "declared_U_L_S",
+          "rejecting_beta_minimal_45_54_core",
+          "core_zero_slack_full_partition",
+          "LP_common_D_and_spokes",
+          "LP_cross_row_Q_Delta"
+        ],
+        "status": "not triggered"
+      }
+    },
+    {
+      "command": {
+        "argv": [
+          "/usr/sbin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/checker.py",
+          "--source",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/negative-inputs-v2/missing-complete-tuple.json"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 0.05782831999977134,
+        "env": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 2,
+        "stderr": "logs/existing-missing-complete-tuple.stderr.log",
+        "stdout": "logs/existing-missing-complete-tuple.stdout.log"
+      },
+      "finding": "complete relation/full lifts differ: P0 row 0",
+      "id": "missing-complete-tuple",
+      "kind": "existing malformed-declaration control",
+      "original_oracle": {
+        "index": 0,
+        "literal_beta": [
+          0,
+          1,
+          0,
+          1,
+          2
+        ],
+        "original_contact_tuple": [
+          2,
+          1
+        ],
+        "original_legal_piece_lift": [
+          2,
+          1
+        ],
+        "original_root_contact_edges": [
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            9
+          ]
+        ],
+        "piece": "P0",
+        "shared_original_vertex": 9
+      },
+      "status": "counterexample"
+    },
+    {
+      "command": {
+        "argv": [
+          "/usr/sbin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/checker.py",
+          "--source",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/negative-inputs-v2/wrong-shared-ownership.json"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 0.05679901100029383,
+        "env": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 2,
+        "stderr": "logs/existing-wrong-shared-ownership.stderr.log",
+        "stdout": "logs/existing-wrong-shared-ownership.stdout.log"
+      },
+      "finding": "declared original piece P0 has wrong contacts",
+      "id": "wrong-shared-ownership",
+      "kind": "existing malformed-declaration control",
+      "original_oracle": {
+        "index": 0,
+        "literal_beta": [
+          0,
+          1,
+          0,
+          1,
+          2
+        ],
+        "original_contact_tuple": [
+          2,
+          1
+        ],
+        "original_legal_piece_lift": [
+          2,
+          1
+        ],
+        "original_root_contact_edges": [
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            9
+          ]
+        ],
+        "piece": "P0",
+        "shared_original_vertex": 9
+      },
+      "status": "counterexample"
+    },
+    {
+      "command": {
+        "argv": [
+          "/usr/sbin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/checker.py",
+          "--source",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/negative-inputs-v2/stale-source-hash.json"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 0.05413743200006138,
+        "env": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 2,
+        "stderr": "logs/existing-stale-source-hash.stderr.log",
+        "stdout": "logs/existing-stale-source-hash.stdout.log"
+      },
+      "finding": "stale source_sha256 for the same original graph file",
+      "id": "stale-source-hash",
+      "kind": "existing malformed-declaration control",
+      "original_oracle": {
+        "legal_whole_lift": [
+          0,
+          1,
+          0,
+          1,
+          2,
+          1,
+          0,
+          2,
+          3,
+          3,
+          2,
+          3
+        ],
+        "literal_beta": [
+          0,
+          1,
+          0,
+          1,
+          2
+        ],
+        "original_edge": [
+          0,
+          5
+        ]
+      },
+      "status": "counterexample"
+    },
+    {
+      "command": {
+        "argv": [
+          "/usr/sbin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/checker.py",
+          "--source",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/negative-inputs-v2/wrong-whole-unit-X.json"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 0.05782999299981384,
+        "env": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 2,
+        "stderr": "logs/existing-wrong-whole-unit-X.stderr.log",
+        "stdout": "logs/existing-wrong-whole-unit-X.stdout.log"
+      },
+      "finding": "declared X is not exactly G minus the whole original U (retained edge mismatch)",
+      "id": "wrong-whole-unit-X",
+      "kind": "existing malformed-declaration control",
+      "original_oracle": {
+        "legal_whole_lift": [
+          0,
+          1,
+          0,
+          1,
+          2,
+          1,
+          0,
+          2,
+          3,
+          3,
+          2,
+          3
+        ],
+        "literal_beta": [
+          0,
+          1,
+          0,
+          1,
+          2
+        ],
+        "original_edge": [
+          0,
+          5
+        ]
+      },
+      "status": "counterexample"
+    },
+    {
+      "command": {
+        "argv": [
+          "/usr/sbin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/checker.py",
+          "--source",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/negative-inputs-v2/wrong-declared-unit.json"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 0.0640160860002652,
+        "env": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 2,
+        "stderr": "logs/existing-wrong-declared-unit.stderr.log",
+        "stdout": "logs/existing-wrong-declared-unit.stdout.log"
+      },
+      "finding": "declared omitted unit is not a complete original incidence-one unary",
+      "id": "wrong-declared-unit",
+      "kind": "existing malformed-declaration control",
+      "original_oracle": {
+        "index": 0,
+        "literal_beta": [
+          0,
+          1,
+          0,
+          1,
+          2
+        ],
+        "original_contact_tuple": [
+          2,
+          1
+        ],
+        "original_legal_piece_lift": [
+          2,
+          1
+        ],
+        "original_root_contact_edges": [
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            9
+          ]
+        ],
+        "piece": "P0",
+        "shared_original_vertex": 9
+      },
+      "status": "counterexample"
+    },
+    {
+      "command": {
+        "argv": [
+          "/usr/sbin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/checker.py",
+          "--source",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/probes/missing-original-rotation.json"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 0.062485278000167455,
+        "env": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 2,
+        "stderr": "logs/probe-missing-original-rotation.stderr.log",
+        "stdout": "logs/probe-missing-original-rotation.stdout.log"
+      },
+      "finding": {
+        "missing_sufficient_premises": [
+          "original named rotation"
+        ],
+        "status": "not triggered"
+      },
+      "id": "missing-original-rotation",
+      "kind": "fresh wrong-declaration control on unchanged original edges/vertices",
+      "oracle": "probes/original-oracle.json",
+      "status": "not triggered"
+    },
+    {
+      "command": {
+        "argv": [
+          "/usr/sbin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/checker.py",
+          "--source",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/probes/wrong-rotation-neighbor-set.json"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 0.04758615699984148,
+        "env": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 2,
+        "stderr": "logs/probe-wrong-rotation-neighbor-set.stderr.log",
+        "stdout": "logs/probe-wrong-rotation-neighbor-set.stdout.log"
+      },
+      "finding": "rotation neighborhood differs from original edges",
+      "id": "wrong-rotation-neighbor-set",
+      "kind": "fresh wrong-declaration control on unchanged original edges/vertices",
+      "oracle": "probes/original-oracle.json",
+      "status": "counterexample"
+    },
+    {
+      "command": {
+        "argv": [
+          "/usr/sbin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/checker.py",
+          "--source",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/probes/omitted-empty-fibre.json"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 0.048287506999713514,
+        "env": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 2,
+        "stderr": "logs/probe-omitted-empty-fibre.stderr.log",
+        "stdout": "logs/probe-omitted-empty-fibre.stdout.log"
+      },
+      "finding": "complete empty/nonempty fibres differ: P0 row 0",
+      "id": "omitted-empty-fibre",
+      "kind": "fresh wrong-declaration control on unchanged original edges/vertices",
+      "oracle": "probes/original-oracle.json",
+      "status": "counterexample"
+    },
+    {
+      "command": {
+        "argv": [
+          "/usr/sbin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/checker.py",
+          "--source",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/probes/omitted-complete-component.json"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 0.04682792199992036,
+        "env": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 2,
+        "stderr": "logs/probe-omitted-complete-component.stderr.log",
+        "stdout": "logs/probe-omitted-complete-component.stdout.log"
+      },
+      "finding": "declared pieces are not all complete original H-root components",
+      "id": "omitted-complete-component",
+      "kind": "fresh wrong-declaration control on unchanged original edges/vertices",
+      "oracle": "probes/original-oracle.json",
+      "status": "counterexample"
+    },
+    {
+      "command": {
+        "argv": [
+          "/usr/sbin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/checker.py",
+          "--source",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/probes/wrong-partial-L-role.json"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 0.0590568960001292,
+        "env": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 2,
+        "stderr": "logs/probe-wrong-partial-L-role.stderr.log",
+        "stdout": "logs/probe-wrong-partial-L-role.stdout.log"
+      },
+      "finding": "declared L has wrong original actual support",
+      "id": "wrong-partial-L-role",
+      "kind": "fresh wrong-declaration control on unchanged original edges/vertices",
+      "oracle": "probes/original-oracle.json",
+      "status": "counterexample"
+    },
+    {
+      "command": {
+        "argv": [
+          "/usr/sbin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/inputs/pc/checker.py",
+          "--source",
+          "/home/ray/developer/ai/math/audits/2026-10-10-n45-pca/probes/missing-critical-edge-witness.json"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 0.058860605000063515,
+        "env": {
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "exit_code": 2,
+        "stderr": "logs/probe-missing-critical-edge-witness.stderr.log",
+        "stdout": "logs/probe-missing-critical-edge-witness.stdout.log"
+      },
+      "finding": "declared critical witnesses do not cover every original nonframe edge exactly once",
+      "id": "missing-critical-edge-witness",
+      "kind": "fresh wrong-declaration control on unchanged original edges/vertices",
+      "oracle": "probes/original-oracle.json",
+      "status": "counterexample"
+    }
+  ],
+  "scope": "Six fresh declaration probes, five existing negatives, one legal missing-LP control. No mathematical source counterexamples."
+}

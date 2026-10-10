@@ -1,0 +1,366 @@
+{
+  "anchors_verified": 9,
+  "base_reads": 15,
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.002243561997602228,
+      "stderr": "logs/setup-v2/initial-head.stderr.log",
+      "stdout": "logs/setup-v2/initial-head.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.06573375999869313,
+      "stderr": "logs/setup-v2/initial-status.stderr.log",
+      "stdout": "logs/setup-v2/initial-status.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "-e",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744^{commit}"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0017778969995561056,
+      "stderr": "logs/setup-v2/base-object.stderr.log",
+      "stdout": "logs/setup-v2/base-object.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "clone",
+        "--shared",
+        "--no-checkout",
+        "--no-hardlinks",
+        "/home/ray/developer/ai/math",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-pr/base-source"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.024207642003602814,
+      "stderr": "logs/setup-v2/clone.stderr.log",
+      "stdout": "logs/setup-v2/clone.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "checkout",
+        "--detach",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pr/base-source",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 1.0785182140025427,
+      "stderr": "logs/setup-v2/checkout.stderr.log",
+      "stdout": "logs/setup-v2/checkout.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pr/base-source",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0019328289999975823,
+      "stderr": "logs/setup-v2/checkout-head.stderr.log",
+      "stdout": "logs/setup-v2/checkout-head.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-09-n45-pr/base-source",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.17453268799727084,
+      "stderr": "logs/setup-v2/checkout-status.stderr.log",
+      "stdout": "logs/setup-v2/checkout-status.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/HANDOFF.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.002356890996452421,
+      "stderr": "logs/setup-v2/blob-0.stderr.log",
+      "stdout": "logs/setup-v2/blob-0.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/STATUS.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0024832269991748035,
+      "stderr": "logs/setup-v2/blob-1.stderr.log",
+      "stdout": "logs/setup-v2/blob-1.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/DOCUMENTATION.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0020272659967304207,
+      "stderr": "logs/setup-v2/blob-2.stderr.log",
+      "stdout": "logs/setup-v2/blob-2.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_kempe_guide.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0021246000032988377,
+      "stderr": "logs/setup-v2/blob-3.stderr.log",
+      "stdout": "logs/setup-v2/blob-3.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_phase_b_common_lemmas.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0022795690019847825,
+      "stderr": "logs/setup-v2/blob-4.stderr.log",
+      "stdout": "logs/setup-v2/blob-4.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_unary_shield_budget.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.001991123004700057,
+      "stderr": "logs/setup-v2/blob-5.stderr.log",
+      "stdout": "logs/setup-v2/blob-5.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_cells/cells.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0022594719994231127,
+      "stderr": "logs/setup-v2/blob-6.stderr.log",
+      "stdout": "logs/setup-v2/blob-6.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_one_e2/REPORT.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0022230629983823746,
+      "stderr": "logs/setup-v2/blob-7.stderr.log",
+      "stdout": "logs/setup-v2/blob-7.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e3/REPORT.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0020808330009458587,
+      "stderr": "logs/setup-v2/blob-8.stderr.log",
+      "stdout": "logs/setup-v2/blob-8.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e3/nonadjacent_notes.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0021537110005738214,
+      "stderr": "logs/setup-v2/blob-9.stderr.log",
+      "stdout": "logs/setup-v2/blob-9.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e4/REPORT.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0020576989991241135,
+      "stderr": "logs/setup-v2/blob-10.stderr.log",
+      "stdout": "logs/setup-v2/blob-10.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e4/CORE_CONSTRAINTS.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0018821049961843528,
+      "stderr": "logs/setup-v2/blob-11.stderr.log",
+      "stdout": "logs/setup-v2/blob-11.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e4/core_constraints.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0023105789950932376,
+      "stderr": "logs/setup-v2/blob-12.stderr.log",
+      "stdout": "logs/setup-v2/blob-12.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e4/reductions.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0020747310045408085,
+      "stderr": "logs/setup-v2/blob-13.stderr.log",
+      "stdout": "logs/setup-v2/blob-13.stdout.log"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit": 0,
+      "seconds": 0.0020094769934075885,
+      "stderr": "logs/setup-v2/blob-14.stderr.log",
+      "stdout": "logs/setup-v2/blob-14.stdout.log"
+    }
+  ],
+  "exact_manifests": [
+    {
+      "entries": 56,
+      "exact_inventory": true,
+      "group": "su-a",
+      "manifest": {
+        "bytes": 5269,
+        "mtime_ns": 1791556871933092241,
+        "sha256": "4f98bba64fb77bd8fdeaae9dc474b428fcabc52d9d9f0818ba6847ff257250f1"
+      }
+    },
+    {
+      "entries": 5952,
+      "exact_inventory": true,
+      "group": "su-j",
+      "manifest": {
+        "bytes": 876995,
+        "mtime_ns": 1791557173337910509,
+        "sha256": "dcd470a696ea13127d24705d7b87678d7b7df00d5fd030d71bda8ba2427fb50c"
+      }
+    }
+  ],
+  "source_initial_clean": true,
+  "worker_files": 6163
+}

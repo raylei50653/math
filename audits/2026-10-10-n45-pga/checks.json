@@ -1,0 +1,197 @@
+{
+  "LP_status": "OPEN",
+  "commands": [
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audit_integrity.py"
+      ],
+      "classification": "preserved packaging-order failure: checks.json not yet created; final retry indexed separately",
+      "command_log": "logs/audit-integrity.command.json",
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-pga",
+      "exit_code": 1,
+      "finished_utc": "2026-10-10T02:30:50.815765+00:00",
+      "name": "audit-integrity",
+      "started_utc": "2026-10-10T02:30:50.779259+00:00",
+      "stderr_log": "logs/audit-integrity.stderr.log",
+      "stdout_log": "logs/audit-integrity.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "git",
+        "-C",
+        "/home/ray/developer/ai/math",
+        "status",
+        "--short"
+      ],
+      "classification": "executed actual result",
+      "command_log": "logs/final-git-state.command.json",
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-pga",
+      "exit_code": 0,
+      "finished_utc": "2026-10-10T02:30:50.847762+00:00",
+      "name": "final-git-state",
+      "started_utc": "2026-10-10T02:30:50.780425+00:00",
+      "stderr_log": "logs/final-git-state.stderr.log",
+      "stdout_log": "logs/final-git-state.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "independent_check.py"
+      ],
+      "classification": "executed actual result",
+      "command_log": "logs/final-input-verification.command.json",
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-pga",
+      "exit_code": 0,
+      "finished_utc": "2026-10-10T02:30:50.833505+00:00",
+      "name": "final-input-verification",
+      "started_utc": "2026-10-10T02:30:50.778807+00:00",
+      "stderr_log": "logs/final-input-verification.stderr.log",
+      "stdout_log": "logs/final-input-verification.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "independent_check.py"
+      ],
+      "classification": "executed actual result",
+      "command_log": "logs/independent-normal.command.json",
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-pga",
+      "exit_code": 0,
+      "finished_utc": "2026-10-10T02:25:16.277539+00:00",
+      "name": "independent-normal",
+      "started_utc": "2026-10-10T02:25:16.220991+00:00",
+      "stderr_log": "logs/independent-normal.stderr.log",
+      "stdout_log": "logs/independent-normal.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "argv": [
+        "python3",
+        "-B",
+        "independent_check.py"
+      ],
+      "classification": "executed actual result",
+      "command_log": "logs/independent-seed17.command.json",
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-pga",
+      "exit_code": 0,
+      "finished_utc": "2026-10-10T02:25:40.712304+00:00",
+      "name": "independent-seed17",
+      "started_utc": "2026-10-10T02:25:40.658025+00:00",
+      "stderr_log": "logs/independent-seed17.stderr.log",
+      "stdout_log": "logs/independent-seed17.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-c",
+        "from pathlib import Path; Path(\"inputs.json\").open(\"xb\")"
+      ],
+      "classification": "expected exclusive-create refusal; immutable bytes verified afterwards",
+      "command_log": "logs/input-exclusive-guard.command.json",
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-pga",
+      "exit_code": 1,
+      "finished_utc": "2026-10-10T02:25:40.701266+00:00",
+      "name": "input-exclusive-guard",
+      "started_utc": "2026-10-10T02:25:40.660511+00:00",
+      "stderr_log": "logs/input-exclusive-guard.stderr.log",
+      "stdout_log": "logs/input-exclusive-guard.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "frozen/pg/checker.py",
+        "--check"
+      ],
+      "classification": "executed actual result",
+      "command_log": "logs/pg-normal.command.json",
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-pga",
+      "exit_code": 0,
+      "finished_utc": "2026-10-10T02:25:16.260367+00:00",
+      "name": "pg-normal",
+      "started_utc": "2026-10-10T02:25:16.221303+00:00",
+      "stderr_log": "logs/pg-normal.stderr.log",
+      "stdout_log": "logs/pg-normal.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "argv": [
+        "python3",
+        "-B",
+        "frozen/pg/checker.py",
+        "--check"
+      ],
+      "classification": "executed actual result",
+      "command_log": "logs/pg-seed17.command.json",
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-pga",
+      "exit_code": 0,
+      "finished_utc": "2026-10-10T02:25:16.260374+00:00",
+      "name": "pg-seed17",
+      "started_utc": "2026-10-10T02:25:16.220842+00:00",
+      "stderr_log": "logs/pg-seed17.stderr.log",
+      "stdout_log": "logs/pg-seed17.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "git",
+        "-C",
+        "/home/ray/developer/ai/math",
+        "diff",
+        "--check"
+      ],
+      "classification": "executed actual result",
+      "command_log": "logs/tracked-diff-check.command.json",
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-pga",
+      "exit_code": 0,
+      "finished_utc": "2026-10-10T02:25:40.669393+00:00",
+      "name": "tracked-diff-check",
+      "started_utc": "2026-10-10T02:25:40.662427+00:00",
+      "stderr_log": "logs/tracked-diff-check.stderr.log",
+      "stdout_log": "logs/tracked-diff-check.stdout.log"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "frozen/pg/checker.py"
+      ],
+      "classification": "expected exclusive-create refusal; immutable bytes verified afterwards",
+      "command_log": "logs/worker-exclusive-guard.command.json",
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-pga",
+      "exit_code": 1,
+      "finished_utc": "2026-10-10T02:25:40.699731+00:00",
+      "name": "worker-exclusive-guard",
+      "started_utc": "2026-10-10T02:25:40.658154+00:00",
+      "stderr_log": "logs/worker-exclusive-guard.stderr.log",
+      "stdout_log": "logs/worker-exclusive-guard.stdout.log"
+    }
+  ],
+  "complete_LP_sources": 0,
+  "final_retry_command_log": "logs/audit-integrity-v2.command.json",
+  "final_retry_stderr_log": "logs/audit-integrity-v2.stderr.log",
+  "final_retry_stdout_log": "logs/audit-integrity-v2.stdout.log",
+  "manifest_generation_and_full_verification_result": "delivery.json:seal_verification (created after this payload file)",
+  "not_rerun": [
+    "lake build: no Lean changes or formalization claim",
+    "BASE E3/E4 big enumeration",
+    "S/U/SU-J finite controls",
+    "whole-worktree DocGraph and formal docs checks",
+    "external Gallai publication revalidation"
+  ],
+  "paper_acceptance_basis": "Independent arbitrary-size derivations in REPORT.md and sealed per-claim judgment; finite no-source control is not the basis.",
+  "recorded_utc": "2026-10-10T02:31:32.015847+00:00",
+  "scope": "Only fresh N45-PGA outputs; old workers/certificates/navigation untouched",
+  "task": "N45-PGA"
+}

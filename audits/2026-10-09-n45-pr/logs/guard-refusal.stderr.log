@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pr/checker-final.py", line 258, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pr/checker-final.py", line 251, in main
+    if args.generate:need(not path.exists(),'exclusive-create refused existing certificate')
+                     ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-pr/checker-final.py", line 18, in need
+    if not x:raise ValueError(s)
+             ^^^^^^^^^^^^^^^^^^^
+ValueError: exclusive-create refused existing certificate

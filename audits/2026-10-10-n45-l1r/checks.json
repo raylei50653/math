@@ -1,0 +1,69 @@
+{
+  "checks": [
+    {
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l1r/checker.py",
+        "--emit"
+      ],
+      "expected_exit": 0,
+      "name": "generate-exclusive",
+      "seed17": false,
+      "started_utc": "2026-10-10T04:15:26.568147+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "18b1a2b90380d48f6f9331ca0eccd0448c539f20a43c8cdbbfd52acf03aee5c7"
+    },
+    {
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l1r/checker.py",
+        "--check"
+      ],
+      "expected_exit": 0,
+      "name": "normal",
+      "seed17": false,
+      "started_utc": "2026-10-10T04:15:26.914056+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "18b1a2b90380d48f6f9331ca0eccd0448c539f20a43c8cdbbfd52acf03aee5c7"
+    },
+    {
+      "actual_exit": 0,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l1r/checker.py",
+        "--check"
+      ],
+      "expected_exit": 0,
+      "name": "seed17",
+      "seed17": true,
+      "started_utc": "2026-10-10T04:15:27.231442+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "18b1a2b90380d48f6f9331ca0eccd0448c539f20a43c8cdbbfd52acf03aee5c7"
+    },
+    {
+      "actual_exit": 2,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l1r/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-10-n45-l1r/corrupted-certificate.json"
+      ],
+      "expected_exit": 2,
+      "name": "corrupted-certificate",
+      "seed17": false,
+      "started_utc": "2026-10-10T04:15:27.592851+00:00",
+      "stderr_sha256": "a6859888e13359ed5755e10c83bd23fe54821ea0ddd507de054171ab466080ed",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "negative_reason": "certificate bytes mismatch after dropping a complete contact fibre",
+  "normal_seed17_stdout_identical": true,
+  "notes": "Finite controls are abstract calibration; no LOW1 source search or trigger count. No lake build: no new Lean."
+}

@@ -1,0 +1,61 @@
+{
+  "task": "N45-H3R",
+  "manifest_sha256": "3c934aa46605a1ec777cafcda0552fbc4413756177206907bd2c8fe18daac1ee",
+  "input_index_sha256": "a01dace74fed3efe9a1204065e14c29ce82bf86e519988a8d3e0653a020d8ce6",
+  "certificate_sha256": "31b1a441af0fd1d8999f1b132c635220057a944c492838233cfaa4aff4fbda41",
+  "executions": [
+    {
+      "id": "normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-h3r/verify.py"
+      ],
+      "PYTHONHASHSEED": null,
+      "start_UTC": "2026-10-10T07:33:43.805058+00:00",
+      "elapsed_seconds": 2.672,
+      "exit": 0,
+      "stdout": "{\"arbitrary_size_paper_proved_by_python\": false, \"authority_inputs\": 14, \"certificate_sha256\": \"31b1a441af0fd1d8999f1b132c635220057a944c492838233cfaa4aff4fbda41\", \"finite_H3_source_status\": \"not triggered\", \"scope\": \"custody, abstract arithmetic and one algebra toy only\", \"status\": \"triggered and holds\", \"task\": \"N45-H3R\"}\n",
+      "stderr": "",
+      "stdout_sha256": "9c360ffa281d97264d534284a5745c4ca737c07690e7abbb42da3cd3eee6d1c9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-h3r/verify.py"
+      ],
+      "PYTHONHASHSEED": 17,
+      "start_UTC": "2026-10-10T07:33:43.805381+00:00",
+      "elapsed_seconds": 2.693,
+      "exit": 0,
+      "stdout": "{\"arbitrary_size_paper_proved_by_python\": false, \"authority_inputs\": 14, \"certificate_sha256\": \"31b1a441af0fd1d8999f1b132c635220057a944c492838233cfaa4aff4fbda41\", \"finite_H3_source_status\": \"not triggered\", \"scope\": \"custody, abstract arithmetic and one algebra toy only\", \"status\": \"triggered and holds\", \"task\": \"N45-H3R\"}\n",
+      "stderr": "",
+      "stdout_sha256": "9c360ffa281d97264d534284a5745c4ca737c07690e7abbb42da3cd3eee6d1c9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "corrupted-certificate-negative",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-h3r/verify.py",
+        "--negative"
+      ],
+      "PYTHONHASHSEED": null,
+      "start_UTC": "2026-10-10T07:33:43.805644+00:00",
+      "elapsed_seconds": 2.698,
+      "exit": 2,
+      "stdout": "",
+      "stderr": "FAIL: abstract/toy certificate mismatch\n",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "467be8c0b50b4208c37caa3c0475cb5feb81f644bc66770b2e5bea42b8bb0675"
+    }
+  ],
+  "normal_seed17_same_bytes": true,
+  "normal_seed17_zero_exit": true,
+  "negative_expected_exit2": true,
+  "frozen_input_drift": 0
+}

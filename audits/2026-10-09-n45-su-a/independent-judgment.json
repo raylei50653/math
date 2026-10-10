@@ -1,0 +1,350 @@
+{
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "claims": [
+    {
+      "CLAIM": "N45-S-01",
+      "dependencies": [
+        "BASE E2 REPORT §1-3,§5.4",
+        "BASE CORE_CONSTRAINTS §2"
+      ],
+      "evidence_layer": "任意大小paper；具名BASE依賴；外部degree-list/Gallai依賴另列；本輪無Lean",
+      "excluded_scope": [
+        "不給necessary Q的disk實現",
+        "不重驗E2全部有限末端分類",
+        "不將所有derivatives預填critical"
+      ],
+      "independent_reasoning_steps": [
+        "X全體有效內點≥4且ε=1；保B/完整Σ(X) inclusion-minimalize為Y，surplus差式兩項非負，Y自身Σ-critical。",
+        "X=M的β-critical⇒每條非框刪邊新增β⇒X自身Σ-critical；這步不從原G遺傳。",
+        "Q(X)⊆Q(G)，E2只允許空/單點/相鄰pair；933的q2含{2},{1,2},{2,3}；941只容許q0/q1/q3；coreβ須在Q(X)。",
+        "新接受γ的每份X lift若r≠γ(b_i)便接回G，故所有lifts都同色；只是原邊不等式解除。"
+      ],
+      "new_proof_finding": null,
+      "original_graph_premises": "所有有限簡單 induced-C5 disk G；完整Σ=933/941或整圖共同D5像；非框Σ-critical；有效H恰兩非相鄰原degree5 roots r,s，其餘原degree4；恰兩完整mixed，原contacts/shared identity/support/ownership/bridges/rotation/字面框與full relations不變；不限制pieces大小。 原spoke e=rb_i；X=G-e=M為原拒絕β的inclusion-minimal core，root degrees45/54；省略spoke而不省略piece。",
+      "quantifiers": "任意原spoke e、任意X拒絕β；跨列式也適用尚未minimalize的X",
+      "verdict": "成立且可搬用，在明列前提內"
+    },
+    {
+      "CLAIM": "N45-S-02",
+      "dependencies": [
+        "BASE Phase B §3.2",
+        "Dvořák Lemma7"
+      ],
+      "evidence_layer": "任意大小paper；具名BASE依賴；外部degree-list/Gallai依賴另列；本輪無Lean",
+      "excluded_scope": [
+        "不能由marginals推joint",
+        "其他β的F可空",
+        "不把degree5的一單位放入X"
+      ],
+      "independent_reasoning_steps": [
+        "不固定r，固定共同β與s=b；所有r-contact含strict slack，包括shared contact；完整連通R非空，欄禁色≤k_r；反向同理。unary非空但F可空。",
+        "原s side incidence=5-m_s，E_s大小≥m_s-1≥1；X r度數4，χ=0；全部其他外部限制只有同一兩roots與B。",
+        "B-C2逐欄D^u+O^u+δ+o+λ=0，每項非負，五項各零。",
+        "故E_r^X大小=m_r；每份r-unary F滿額，retained side factors兩兩不交；每份mixed欄滿額、互斥，raw union恰E，無外溢；全部tuple/lifts仍保存。"
+      ],
+      "new_proof_finding": null,
+      "original_graph_premises": "所有有限簡單 induced-C5 disk G；完整Σ=933/941或整圖共同D5像；非框Σ-critical；有效H恰兩非相鄰原degree5 roots r,s，其餘原degree4；恰兩完整mixed，原contacts/shared identity/support/ownership/bridges/rotation/字面框與full relations不變；不限制pieces大小。 原spoke e=rb_i；X=G-e=M為原拒絕β的inclusion-minimal core，root degrees45/54；省略spoke而不省略piece。",
+      "quantifiers": "每個X拒絕β及每個b∈E_s，非只選一欄",
+      "verdict": "成立且可搬用，在明列前提內"
+    },
+    {
+      "CLAIM": "N45-S-03",
+      "dependencies": [
+        "N45-S-02",
+        "BASE CORE_CONSTRAINTS §4 E4-D"
+      ],
+      "evidence_layer": "任意大小paper；具名BASE依賴；外部degree-list/Gallai依賴另列；本輪無Lean",
+      "excluded_scope": [
+        "不給固定mixed跨全部欄owner",
+        "不把coreβ與e的其他列critical witness合併"
+      ],
+      "independent_reasoning_steps": [
+        "c不在E：X全部side factors互斥，故唯一retained side factor擋c；加spoke只增O至1。",
+        "c在E：每欄E由P/Q互斥分割，c每欄唯一mixed owner；加spoke從E刪c，只增λ至1；owner可隨b變。",
+        "只有retained blocker也是spoke時才是重色spokes並可用E4-D；unary blocker不滿該前提。"
+      ],
+      "new_proof_finding": null,
+      "original_graph_premises": "所有有限簡單 induced-C5 disk G；完整Σ=933/941或整圖共同D5像；非框Σ-critical；有效H恰兩非相鄰原degree5 roots r,s，其餘原degree4；恰兩完整mixed，原contacts/shared identity/support/ownership/bridges/rotation/字面框與full relations不變；不限制pieces大小。 原spoke e=rb_i；X=G-e=M為原拒絕β的inclusion-minimal core，root degrees45/54；省略spoke而不省略piece。",
+      "quantifiers": "每個S-02列與其全部b∈E_s；c=β(b_i)",
+      "verdict": "成立且可搬用，在明列前提內"
+    },
+    {
+      "CLAIM": "N45-S-04",
+      "dependencies": [
+        "BASE E4 REPORT §4.1 N-diagonal",
+        "BASE Phase B §3.2的兩方向contact界"
+      ],
+      "evidence_layer": "任意大小paper；具名BASE依賴；外部degree-list/Gallai依賴另列；本輪無Lean",
+      "excluded_scope": [
+        "singleton incidence≥4仍OPEN",
+        "不推一般mixed至少pair",
+        "局部色雙射不作各piece独立正規化拼圖"
+      ],
+      "independent_reasoning_steps": [
+        "固定c=β(h)；C的局部限制只見c/兩pins，固定c的共同S3置換保完整compatibility。",
+        "原fullB/one-sided/short適用N-diagonal，全部diagonal已接受。",
+        "其餘forbidden軌道：(c,b≠c)需要k_s≥3；(a≠c,c)需要k_r≥3；a,b≠c且a≠b需要兩側各≥2。",
+        "正incidence總≤3三軌道均不可能，A_C=Col²；套S-02時違反正值欄飽和。"
+      ],
+      "new_proof_finding": null,
+      "original_graph_premises": "局部前提：原C完整degree4；同一disk原G full B-touch；H-C連通；actual support恰{h}；原兩root contacts及shared identity保留。",
+      "quantifiers": "任意properβ、全部16有序pins；任意大小原one-sided mixed C且0<k_r,k_s、k_r+k_s≤3",
+      "verdict": "成立且可搬用，在明列前提內"
+    },
+    {
+      "CLAIM": "N45-S-05",
+      "dependencies": [
+        "N45-S-02",
+        "N45-S-04",
+        "BASE E4 §4.1",
+        "BASE Phase B §2.1",
+        "BASE unary shield §2-4",
+        "BASE E3 nonadjacent §3"
+      ],
+      "evidence_layer": "任意大小paper；具名BASE依賴；外部degree-list/Gallai依賴另列；本輪無Lean",
+      "excluded_scope": [
+        "只關spoke省略原u2子族",
+        "整U省略另外由U claims處理",
+        "不推原55/一般N2"
+      ],
+      "independent_reasoning_steps": [
+        "原G N-diagonal給兩short全部同色pins；X拒絕⇒E∩E_s空。|E|=m_r, |E_s|≥m_s-1⇒m_r+m_s≤5。",
+        "每份mixed至少兩原contacts，故各總incidence≤3；原support非空。singleton依S-04變通用且違反S-02，故兩short均原pair，各收1。",
+        "逐原unary選自身Σ-critical contact新接受full lift，限制到G-U得不能接回的outside witness；H-U原連通/fullB給避自身的root到B補弧路。",
+        "有long且u=2用原三pieces2+2+2；兩short且u=2用四原pieces1+1+2+2。幾何收費同一G，β_e可不同；spoke不收piece費。"
+      ],
+      "new_proof_finding": null,
+      "original_graph_premises": "所有有限簡單 induced-C5 disk G；完整Σ=933/941或整圖共同D5像；非框Σ-critical；有效H恰兩非相鄰原degree5 roots r,s，其餘原degree4；恰兩完整mixed，原contacts/shared identity/support/ownership/bridges/rotation/字面框與full relations不變；不限制pieces大小。 原spoke e=rb_i；X=G-e=M為原拒絕β的inclusion-minimal core，root degrees45/54；省略spoke而不省略piece。",
+      "quantifiers": "所有spoke省略身份；short部分另量化P,Q都短",
+      "verdict": "成立且可搬用，在明列前提內"
+    },
+    {
+      "CLAIM": "N45-S-06",
+      "dependencies": [
+        "N45-S-05",
+        "BASE E4 §4.2",
+        "BASE unary shield §2"
+      ],
+      "evidence_layer": "任意大小paper；具名BASE依賴；外部degree-list/Gallai依賴另列；本輪無Lean",
+      "excluded_scope": [
+        "LOW/HIGH都是必要身份而非排除/實現",
+        "long配置及原55/一般N2仍OPEN",
+        "未使用U4 retained44/O11下界"
+      ],
+      "independent_reasoning_steps": [
+        "u0原兩short未用色diagonal接回排；S-05排u2，故u1。無unary側t若m_t2，原t三spokes；H-t由另一root/P/Q/U原連通。",
+        "H-t全體非B點落B+t-star同一開面；fullB迫兩個非spoke框點皆在此面弧，三gap只能1,1,3。",
+        "對P/Q/U逐份，t及兩小star面在含H-piece的F_piece；長3弧外兩框邊均仍在∂F_piece，因此三原盾弧均包含於長3弧。",
+        "三原盾弧互斥卻需1+1+2=4>3，故m_t≥3；总≤5与m_a≥2迫(m_a,m_t)=(2,3)。",
+        "LOW：U/e在r，m=(2,3)，n_U+t_r=3且t_r≥1得(1,2)/(2,1)，E/E_s互補2。HIGH：U在s,e在r，m=(3,2)，r原2spokes/X留1，E大小3，E_s為該保留spoke色；n_U+t_s=3。"
+      ],
+      "new_proof_finding": null,
+      "original_graph_premises": "所有有限簡單 induced-C5 disk G；完整Σ=933/941或整圖共同D5像；非框Σ-critical；有效H恰兩非相鄰原degree5 roots r,s，其餘原degree4；恰兩完整mixed，原contacts/shared identity/support/ownership/bridges/rotation/字面框與full relations不變；不限制pieces大小。 原spoke e=rb_i；X=G-e=M為原拒絕β的inclusion-minimal core，root degrees45/54；省略spoke而不省略piece。",
+      "quantifiers": "任意S原身份且兩mixed都short",
+      "verdict": "成立且可搬用，在明列前提內"
+    },
+    {
+      "CLAIM": "N45-U-REL",
+      "dependencies": [
+        "Dvořák Lemma7",
+        "原單contact精確relation查詢"
+      ],
+      "evidence_layer": "任意大小paper；具名BASE依賴；外部degree-list/Gallai依賴另列；本輪無Lean",
+      "excluded_scope": [
+        "不把U替成染色star",
+        "不推unit每列F singleton",
+        "38個F空列為較強版本負控制，非目標來源反例"
+      ],
+      "independent_reasoning_steps": [
+        "放開r時U degree-lists≥deg_U且x strict slack，T_U非空；F_U為全部contact色集合共同禁色，T單點才F單點，T≥2則F空。",
+        "原G root-pairs為K_X中可用完整U lift避a的pairs；刪唯一contact後U總能獨立接回，所以K_(G-rx)=K_X，圖vertices與lifts各自保留。",
+        "每個γ∈Δ，K_X非空、K_G空；每个投影a均要求T_U⊆{a}，T非空迫π_rK_X=T_U=F_U={a_γ}；量化全部X lifts。",
+        "coreβ時K_X空不約束F；不推F_U(β)非空。"
+      ],
+      "new_proof_finding": null,
+      "original_graph_premises": "局部：原連通完整degree4 unary U唯一contact rx；保持原U全頂點/內邊/框附件/共享β。singleton forcing另需eΣ-critical；coreβ另採所有有限簡單 induced-C5 disk G；完整Σ=933/941或整圖共同D5像；非框Σ-critical；有效H恰兩非相鄰原degree5 roots r,s，其餘原degree4；恰兩完整mixed，原contacts/shared identity/support/ownership/bridges/rotation/字面框與full relations不變；不限制pieces大小。 原完整unary U唯一root-contact rx；X=G-V(U)=M為原拒絕β的inclusion-minimal core，root degrees45/54；其他原pieces及spokes完整保留。",
+      "quantifiers": "任意properβ，全部16pins與其全部X lifts；Δ上每個新接受γ",
+      "verdict": "成立且可搬用，在明列前提內"
+    },
+    {
+      "CLAIM": "N45-U-WIT",
+      "dependencies": [
+        "BASE E3 nonadjacent §3",
+        "BASE Phase B §2.1",
+        "BASE unary shield §2-4"
+      ],
+      "evidence_layer": "任意大小paper；具名BASE依賴；外部degree-list/Gallai依賴另列；本輪無Lean",
+      "excluded_scope": [
+        "不收σ_X(U)",
+        "不把spoke當piece",
+        "分隔piece無one-sided時不得搬用"
+      ],
+      "independent_reasoning_steps": [
+        "G-e新接受literal全圖lift限制到G-piece，outside合法而整piece不可填，否則原G接受原拒絕γ_e。",
+        "原degree4給degree assignment，不可填迫tight；N2其他mixed使H-piece原連通。",
+        "若原unary短，fullB補弧點由H-unary碰到，owner root在H-unary原路避自身抵達該B點；逐unary補足B-S0外路。",
+        "所有原unary≥2盾邊且互斥，省略U仍付σ_G(U)；不同γ_e的幾何費可同圖相加，染色容量不可跨列相加。"
+      ],
+      "new_proof_finding": null,
+      "original_graph_premises": "所有有限簡單 induced-C5 disk G；完整Σ=933/941或整圖共同D5像；非框Σ-critical；有效H恰兩非相鄰原degree5 roots r,s，其餘原degree4；恰兩完整mixed，原contacts/shared identity/support/ownership/bridges/rotation/字面框與full relations不變；不限制pieces大小。 原完整unary U唯一root-contact rx；X=G-V(U)=M為原拒絕β的inclusion-minimal core，root degrees45/54；其他原pieces及spokes完整保留。",
+      "quantifiers": "每份原piece選一條原critical contact與自身新接受列",
+      "verdict": "成立且可搬用，在明列前提內"
+    },
+    {
+      "CLAIM": "N45-U-CROSS",
+      "dependencies": [
+        "BASE CORE_CONSTRAINTS §2",
+        "BASE E2 §1-3,§5.4",
+        "N45-U-REL"
+      ],
+      "evidence_layer": "任意大小paper；具名BASE依賴；外部degree-list/Gallai依賴另列；本輪無Lean",
+      "excluded_scope": [
+        "necessary masks不作disk實現",
+        "其他core/ε≥2不套E2",
+        "不跨列加費"
+      ],
+      "independent_reasoning_steps": [
+        "刪原U的degree4點surplus為0，只降r一度，ε(X)=1。保完整Σ minimalize Y而非先宣稱Xcritical；exact surplus差式非負。",
+        "E2適用Y，Q(X)=Q(Y)⊆Q(G)僅空/單點/相鄰pair；加β∈Q(X)得七格完整表，933 q2不能省。",
+        "941 Δ至少1列、933至少2列；每份γ均另滿足U-REL forcing；同一X不能同拒q3及q0/q1。",
+        "X=Mβminimal另推出XΣcritical，但不作上一步必需前提。"
+      ],
+      "new_proof_finding": null,
+      "original_graph_premises": "所有有限簡單 induced-C5 disk G；完整Σ=933/941或整圖共同D5像；非框Σ-critical；有效H恰兩非相鄰原degree5 roots r,s，其餘原degree4；恰兩完整mixed，原contacts/shared identity/support/ownership/bridges/rotation/字面框與full relations不變；不限制pieces大小。 原完整unary U唯一root-contact rx；X=G-V(U)=M為原拒絕β的inclusion-minimal core，root degrees45/54；其他原pieces及spokes完整保留。",
+      "quantifiers": "任意整unit derivative；core必要表再要求β被X拒絕",
+      "verdict": "成立且可搬用，在明列前提內"
+    },
+    {
+      "CLAIM": "N45-U-CAP",
+      "dependencies": [
+        "BASE Phase B §3.2",
+        "Dvořák Lemma7",
+        "N45-U-REL"
+      ],
+      "evidence_layer": "任意大小paper；具名BASE依賴；外部degree-list/Gallai依賴另列；本輪無Lean",
+      "excluded_scope": [
+        "D/O及N2拒絕X缺精確有限控制",
+        "不把N1 λ控制當N2排除",
+        "不乘端點marginals"
+      ],
+      "independent_reasoning_steps": [
+        "unary完整R非空且F大小≤原contacts；r degree4給|E_r^X|≥m_r，s degree5給|E_s|≥m_s-1≥1。",
+        "χ0拒絕join令逐欄D+O+δ+o+λ=0；兩mixed raw columns滿額、互斥，union=E_r^X。",
+        "恢复唯一原unit U：F空時D增加1；F={a}在E外時O增加1；F={a}在E內時λ增加1；δ/o與原mixed欄不變。",
+        "所有結論按原共同β及b核，不以別列witness補容量。"
+      ],
+      "new_proof_finding": null,
+      "original_graph_premises": "所有有限簡單 induced-C5 disk G；完整Σ=933/941或整圖共同D5像；非框Σ-critical；有效H恰兩非相鄰原degree5 roots r,s，其餘原degree4；恰兩完整mixed，原contacts/shared identity/support/ownership/bridges/rotation/字面框與full relations不變；不限制pieces大小。 原完整unary U唯一root-contact rx；X=G-V(U)=M為原拒絕β的inclusion-minimal core，root degrees45/54；其他原pieces及spokes完整保留。",
+      "quantifiers": "每個core拒絕β及每個b∈E_s",
+      "verdict": "成立且可搬用，在明列前提內"
+    },
+    {
+      "CLAIM": "N45-U-S3",
+      "dependencies": [
+        "Dvořák Lemma7/Theorem10",
+        "BASE degree5 tree components §1的四tethers機制",
+        "BASE E4 §4.1",
+        "BASE E3 N-empty（交叉證明用）"
+      ],
+      "evidence_layer": "任意大小paper；具名BASE依賴；外部degree-list/Gallai依賴另列；本輪無Lean",
+      "excluded_scope": [
+        "總incidence≥4仍OPEN",
+        "S04單獨得通用relation，尚需critical witness才能支援排除",
+        "不搬U4/O11/44下界"
+      ],
+      "independent_reasoning_steps": [
+        "反設support至多一點，原contact witness產生不可染degree assignment，P為Gallai tree。",
+        "K4 block每點3 clique邊剩1外接方向；非direct方向只能bridge，四branch互斥且不回另一clique點。branch若不碰G-P，4|T|=2|E(T)|+1矛盾；四tethers與連通G-P形成K5 minor。更大cliques本身非平面。",
+        "餘blocks為bridge/odd cycle；每点至多一B邊，root incidence≥3-deg_P(v)。多block至少兩末端private集合，每個≥2 root edges，總≥4。singleton度數≤3；单bridge总≥4；单oddcycle只有triangle可总≤3。",
+        "triangle三點各exact一root邊及一h附件；Y=(H-P)∪(B-h)由原fullB連通，與h相鄰，各triangle點到Y有原root邊；三點/h/Y為原K5 bags。",
+        "獨立alternate：empty support用BASE N-empty排；singleton用原N-diagonal+fixed-c S3軌道+兩方向contact界得通用A；critical contact witness又給至少一forbidden原pin pair，矛盾。不先使用U-S3自身。"
+      ],
+      "new_proof_finding": null,
+      "original_graph_premises": "原G fullB-touch的disk；P全部原degree4、H-P原連通/one-sided；有P的原Σ-critical contact與完整outside拒絕見證；原contacts實際互異/shared identity保留。",
+      "quantifiers": "任意大小原mixed P、0<k_r,k_s且總≤3；不需目標mask或指定coreβ",
+      "verdict": "成立且可搬用，在明列前提內"
+    },
+    {
+      "CLAIM": "N45-U-U2",
+      "dependencies": [
+        "N45-U-WIT",
+        "N45-U-CAP",
+        "N45-U-S3",
+        "BASE N-diagonal/B-S0"
+      ],
+      "evidence_layer": "任意大小paper；具名BASE依賴；外部degree-list/Gallai依賴另列；本輪無Lean",
+      "excluded_scope": [
+        "只關整U省略原u2子族",
+        "有限無N2 u2 exact-positive control",
+        "不推一般N2"
+      ],
+      "independent_reasoning_steps": [
+        "兩原unary各費2；若mixed有long再費2即矛盾，故两mixed short（先不假設pair）。",
+        "X拒絕及原兩short N-diagonal⇒E_r^X∩E_s空；|E_r^X|≥m_r, |E_s|≥m_s-1⇒m_r+m_s≤5。",
+        "兩mixed各總≥2故各≤3；U-S3的fullB/one-sided/原critical contact均具備，故兩mixed原support≥2；short故各pair費1。",
+        "同一原G四pieces1+1+2+2>5；省略U仍付原費；不依retained44下界。"
+      ],
+      "new_proof_finding": null,
+      "original_graph_premises": "所有有限簡單 induced-C5 disk G；完整Σ=933/941或整圖共同D5像；非框Σ-critical；有效H恰兩非相鄰原degree5 roots r,s，其餘原degree4；恰兩完整mixed，原contacts/shared identity/support/ownership/bridges/rotation/字面框與full relations不變；不限制pieces大小。 原完整unary U唯一root-contact rx；X=G-V(U)=M為原拒絕β的inclusion-minimal core，root degrees45/54；其他原pieces及spokes完整保留。",
+      "quantifiers": "所有U原身份且恰兩份不同原unary U,V",
+      "verdict": "成立且可搬用，在明列前提內"
+    },
+    {
+      "CLAIM": "N45-U-SHORT",
+      "dependencies": [
+        "N45-U-U2",
+        "N45-U-WIT",
+        "BASE E4 §4.1"
+      ],
+      "evidence_layer": "任意大小paper；具名BASE依賴；外部degree-list/Gallai依賴另列；本輪無Lean",
+      "excluded_scope": [
+        "只關整U省略兩short子族",
+        "不排spoke省略LOW/HIGH",
+        "不排一般long/short"
+      ],
+      "independent_reasoning_steps": [
+        "U存在，原unary≤2與U2排除⇒唯一U；X沒有unary。",
+        "原拒絕β用三色，共同未用D避所有原spokes；兩原mixed N-diagonal給完整(D,D) lifts，同一β拼回X矛盾。",
+        "原U費2再排两long费2+2，剩long+short；不使用X fullB-touch。"
+      ],
+      "new_proof_finding": null,
+      "original_graph_premises": "所有有限簡單 induced-C5 disk G；完整Σ=933/941或整圖共同D5像；非框Σ-critical；有效H恰兩非相鄰原degree5 roots r,s，其餘原degree4；恰兩完整mixed，原contacts/shared identity/support/ownership/bridges/rotation/字面框與full relations不變；不限制pieces大小。 原完整unary U唯一root-contact rx；X=G-V(U)=M為原拒絕β的inclusion-minimal core，root degrees45/54；其他原pieces及spokes完整保留。",
+      "quantifiers": "所有U原身份，兩mixed都short",
+      "verdict": "成立且可搬用，在明列前提內"
+    },
+    {
+      "CLAIM": "N45-U-RES",
+      "dependencies": [
+        "N45-U-REL/CAP/S3/U2/SHORT",
+        "BASE unary shield §2-3",
+        "X β-minimality"
+      ],
+      "evidence_layer": "任意大小paper；具名BASE依賴；外部degree-list/Gallai依賴另列；本輪無Lean",
+      "excluded_scope": [
+        "唯一U+long/short完整同源跨列仍OPEN",
+        "singleton S incidence≥4未排",
+        "necessary identities不宣稱實現/一般排除"
+      ],
+      "independent_reasoning_steps": [
+        "唯一省略U，long L/short S；原incidence式t_r+k_L^r+k_S^r+1=5，t_s+k_L^s+k_S^s=5，各mixed側正。",
+        "原U/L盾≥2，S盾≤1；pair S費1迫(U,L,S)=(2,2,1)，U/L各連續3點、原五盾邊分割；singleton S費0，S3只給總incidence≥4，U/L盾只能(2,2)/(2,3)/(3,2)。",
+        "原度數給k_S^r≤3,k_S^s≤4；Xβminimal保所有spokes所以各root在β的spokes色互異。",
+        "X無unary共同D可用；short S接受(D,D)，X拒絕迫long L禁止(D,D)。β逐欄原L/S滿額互斥分割E_r^X；每個新接受γ又有U palette與X r-projection同singleton。"
+      ],
+      "new_proof_finding": null,
+      "original_graph_premises": "所有有限簡單 induced-C5 disk G；完整Σ=933/941或整圖共同D5像；非框Σ-critical；有效H恰兩非相鄰原degree5 roots r,s，其餘原degree4；恰兩完整mixed，原contacts/shared identity/support/ownership/bridges/rotation/字面框與full relations不變；不限制pieces大小。 原完整unary U唯一root-contact rx；X=G-V(U)=M為原拒絕β的inclusion-minimal core，root degrees45/54；其他原pieces及spokes完整保留。",
+      "quantifiers": "所有U原身份通過上述窄排除後的每個β及每個γ∈Δ",
+      "verdict": "成立且可搬用，在明列前提內"
+    }
+  ],
+  "counts": {
+    "S": 6,
+    "U": 8,
+    "new_proof_gaps": 0,
+    "source_counterexamples_established": 0
+  },
+  "coverage_boundary": "Original S/U payload replays are integrity checks. No new independent finite mathematical checker; SU-J retains that remit. Exact-target source controls absent. No Lean.",
+  "sealed_UTC": "2026-10-09T14:28:51.749473+00:00",
+  "supervision_decisions_read_before_seal": false,
+  "task": "N45-SU-A"
+}

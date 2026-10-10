@@ -1,0 +1,34 @@
+{
+  "task": "N45-SSG",
+  "normal_seed17_byte_equal": true,
+  "commands": [
+    {
+      "name": "verify-sealed-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssg/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "stdout": "seal-checks/verify-sealed-normal.stdout.log",
+      "stderr": "seal-checks/verify-sealed-normal.stderr.log"
+    },
+    {
+      "name": "verify-sealed-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssg/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "stdout": "seal-checks/verify-sealed-seed17.stdout.log",
+      "stderr": "seal-checks/verify-sealed-seed17.stderr.log"
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "claims": [
+    {
+      "CLAIM-ID": "N45A-01",
+      "additional_or_local_premises": [],
+      "applies_933_941_and_simultaneous_root_swap": true,
+      "common_assumptions_applicable": true,
+      "coverage": [
+        "target triple-critical antecedent not triggered in all 54 controls",
+        "108 root deletions triggered and holds"
+      ],
+      "dependencies": [
+        "E3 REPORT 2.1",
+        "E2 REPORT 2",
+        "E3 nonadjacent_notes 2",
+        "c5_excess_two_root_deletions 2-3"
+      ],
+      "evidence_layers": [
+        "paper with inherited E2 dependencies",
+        "finite Python root-deletion controls"
+      ],
+      "not_covered": [
+        "does not make G q-minimal in each rejected row"
+      ],
+      "quantifier": "all G under common assumptions; every nonframe edge; every rejected-row minimal core",
+      "report_section": "3 / N45A-01",
+      "statement": "Every such G is triple-critical, touches all five boundary vertices, and both root deletions accept all ten rows.",
+      "verdict": "成立且可搬用"
+    },
+    {
+      "CLAIM-ID": "N45A-02",
+      "additional_or_local_premises": [
+        "M retains B and has its own minimum effective degree4",
+        "for the 45/54 conclusion M root degrees are (4,5) or (5,4)"
+      ],
+      "applies_933_941_and_simultaneous_root_swap": true,
+      "common_assumptions_applicable": true,
+      "coverage": [
+        "60 saved core occurrences validated",
+        "12 unit cores are N1; N2 45/54 not triggered"
+      ],
+      "dependencies": [
+        "E3 nonadjacent_notes 5",
+        "E4 REPORT 6",
+        "CORE_CONSTRAINTS 6",
+        "U4 1 with inherited U1-U3 for the separate 44 exclusion"
+      ],
+      "evidence_layers": [
+        "paper",
+        "finite Python saved core occurrence validation"
+      ],
+      "not_covered": [
+        "no exhaustive all-core re-enumeration",
+        "44 exclusion does not close 45/54/55"
+      ],
+      "quantifier": "all rejected beta and every inclusion-minimal beta-core M",
+      "report_section": "3 / N45A-02",
+      "statement": "Every original degree4 piece is fully retained or fully omitted in a minimal rejected-row core; 45/54 omits precisely one corresponding original spoke or incidence-one unary and retains both mixed; 55 equals G.",
+      "verdict": "成立且可搬用"
+    },
+    {
+      "CLAIM-ID": "N45A-03",
+      "additional_or_local_premises": [
+        "X=G-spoke or G-V(U)",
+        "Y is inclusion-minimal among B-preserving subgraphs with Sigma(Y)=Sigma(X)"
+      ],
+      "applies_933_941_and_simultaneous_root_swap": true,
+      "common_assumptions_applicable": true,
+      "coverage": [
+        "172 unit derivatives triggered and holds",
+        "160 counterexamples to the stronger X-always-critical claim, outside precise target"
+      ],
+      "dependencies": [
+        "CORE_CONSTRAINTS 2 E4-U",
+        "E2 REPORT 1-3.3",
+        "E4 REPORT 4.3"
+      ],
+      "evidence_layers": [
+        "paper with inherited E2 dependencies",
+        "independent finite Python"
+      ],
+      "not_covered": [
+        "does not prohibit q0 and q1 together",
+        "does not exclude every unit identity"
+      ],
+      "quantifier": "every original spoke or whole incidence-one unary, both root directions",
+      "report_section": "3 / N45A-03",
+      "statement": "Original unit derivative X has epsilon1; same-Sigma minimal Y is critical and epsilon-monotone, so Q(X) is empty, singleton, or an adjacent pair. One fixed X cannot reject q3 together with q0 or q1.",
+      "verdict": "成立且可搬用；X criticality需另證"
+    },
+    {
+      "CLAIM-ID": "N45A-04",
+      "additional_or_local_premises": [
+        "original spokes on exactly one root repeat a literal beta color",
+        "original incidence saturation and nonadjacent44 retained-mixed classification"
+      ],
+      "applies_933_941_and_simultaneous_root_swap": true,
+      "common_assumptions_applicable": true,
+      "coverage": [
+        "26 supports verified; only 024/124 have never-private spokes across selected rows",
+        "E4C exact repeated-spoke core antecedent not triggered (saved evidence only)"
+      ],
+      "dependencies": [
+        "CORE_CONSTRAINTS 4 E4-S/E4-D"
+      ],
+      "evidence_layers": [
+        "paper",
+        "independent finite 26-support arithmetic"
+      ],
+      "not_covered": [
+        "no converse asserting every spoke omission repeats a color"
+      ],
+      "quantifier": "every actual rejected beta and every minimal beta-core",
+      "report_section": "3 / N45A-04",
+      "statement": "With m=2 and a rejected beta with exactly one root repeated-spoke color, every minimal beta-core is G minus one spoke in that repeated pair.",
+      "verdict": "重色前提下成立；其他情形需額外前提"
+    },
+    {
+      "CLAIM-ID": "N45A-05",
+      "additional_or_local_premises": [
+        "C connected, all original complete degrees4, one-sided",
+        "support C contained in actual boundary edge {h,k}",
+        "H-C actually touches B-{h,k}"
+      ],
+      "applies_933_941_and_simultaneous_root_swap": true,
+      "common_assumptions_applicable": false,
+      "coverage": [
+        "no new diagonal control replay in this audit"
+      ],
+      "dependencies": [
+        "E4 REPORT 4.1-4.2",
+        "Phase B 2.2"
+      ],
+      "evidence_layers": [
+        "paper with inherited external hub/Gallai dependency"
+      ],
+      "not_covered": [
+        "no guaranteed E_z intersection E_w",
+        "no off-diagonal exclusion",
+        "do not prefill derivative full B-touch"
+      ],
+      "quantifier": "every proper beta, every color a, every original mixed C meeting local conditions",
+      "report_section": "3 / N45A-05",
+      "statement": "N-diagonal gives all four local equal-root pins; whole-graph acceptance needs the same pin in both side availabilities and all other full relations.",
+      "verdict": "局部成立；整圖接受需額外前提"
+    },
+    {
+      "CLAIM-ID": "N45A-06",
+      "additional_or_local_premises": [
+        "same original disk; each P connected and H-P nonempty connected",
+        "unary complete degree4 and a genuine nonextendable full outside coloring",
+        "short-unary case has original root-to-boundary path avoiding U",
+        "classify each support separately; do not double-charge unary in long family"
+      ],
+      "applies_933_941_and_simultaneous_root_swap": true,
+      "common_assumptions_applicable": false,
+      "coverage": [
+        "paper premise audit; full shield computation not rerun"
+      ],
+      "dependencies": [
+        "Phase B 2.1",
+        "c5_unary_shield_budget 2-4",
+        "E3 nonadjacent_notes 3"
+      ],
+      "evidence_layers": [
+        "paper with external Gallai/hub dependencies"
+      ],
+      "not_covered": [
+        "different witness beta_e are not one common coloring capacity",
+        "no automatic positive charge for singleton-support mixed"
+      ],
+      "quantifier": "every original piece family under B-S0 local premises",
+      "report_section": "3 / N45A-06",
+      "statement": "B-S0 charges disjoint original one-sided pieces using their own rejection witnesses and exterior paths; omitted unary retains original charge and a spoke is not a piece.",
+      "verdict": "成立且可搬用"
+    },
+    {
+      "CLAIM-ID": "N45A-07",
+      "additional_or_local_premises": [
+        "O lower-bound proof requires original incidence(1,1), critical outside witness, complete degree4 and connected exterior/K4/Gallai dependencies",
+        "P lower-bound proof requires retained44 full-four classification"
+      ],
+      "applies_933_941_and_simultaneous_root_swap": true,
+      "common_assumptions_applicable": true,
+      "coverage": [
+        "not triggered: no precise target N2 45/54 source control"
+      ],
+      "dependencies": [
+        "U4 1-2",
+        "Phase B 2.1",
+        "E4 REPORT 6"
+      ],
+      "evidence_layers": [
+        "paper dependency-boundary audit"
+      ],
+      "not_covered": [
+        "general support>=2 unresolved",
+        "no new source exclusion"
+      ],
+      "quantifier": "attempted transfer to every N2 45/54 core",
+      "report_section": "3 / N45A-07",
+      "statement": "U4 support bounds depend separately on original O11 and retained44 structure; cannot fill both mixed bounds from arbitrary 45/54 identity.",
+      "verdict": "需額外前提；一般N2下界仍缺口"
+    },
+    {
+      "CLAIM-ID": "N45A-08",
+      "additional_or_local_premises": [
+        "all original interior piece degrees4; complete tuples and original incidence multiplicity",
+        "irrelevant outside restrictions already fillable",
+        "complete join rejected and E_s nonempty",
+        "chi=0 and A=E_r; count degrees/factors in actual graph used"
+      ],
+      "applies_933_941_and_simultaneous_root_swap": true,
+      "common_assumptions_applicable": false,
+      "coverage": [
+        "19 rejected rows; 38 root directions; 74 triggered and holds columns",
+        "171 accepted rows not triggered",
+        "304 whole-graph pins independently reject"
+      ],
+      "dependencies": [
+        "Phase B 3.2"
+      ],
+      "evidence_layers": [
+        "paper",
+        "independent finite Python on fixed N2 rejected rows"
+      ],
+      "not_covered": [
+        "derivative B-C2 not checked",
+        "full 190-row local reconstruction and 3040 pins left to J",
+        "no cross-row cost non-reuse or target extension theorem"
+      ],
+      "quantifier": "every common beta/pins and both root directions; each b in E_s",
+      "report_section": "3 / N45A-08",
+      "statement": "For chi0, each b in E_s satisfies Du+Ou+delta+o+lambda=deg(r)-4 with all terms nonnegative.",
+      "verdict": "局部完整前提下成立且可搬用"
+    },
+    {
+      "CLAIM-ID": "N45A-09",
+      "additional_or_local_premises": [
+        "original edges and rotations independently verified; stored conclusions only comparisons",
+        "no new graphs, k expansion, or imported upstream decision code"
+      ],
+      "applies_933_941_and_simultaneous_root_swap": true,
+      "common_assumptions_applicable": false,
+      "coverage": [
+        "54 graphs/1289 critical cuts/108 root deletions/172 derivatives checked",
+        "0 precise target sources; 0 N2 45/54"
+      ],
+      "dependencies": [
+        "E4C REPORT 1-2",
+        "Phase B 3.2",
+        "scripts/c5_phase_b_controls.py 153-247"
+      ],
+      "evidence_layers": [
+        "finite Python",
+        "static scope inspection"
+      ],
+      "not_covered": [
+        "no arbitrary-size classification",
+        "no source search completeness",
+        "no new Lean"
+      ],
+      "quantifier": "fixed BASE 54 E4C graph inputs only",
+      "report_section": "3 / N45A-09",
+      "statement": "54 saved controls calibrate local constraints but supply no 933/941 target or N2 45/54 occurrence; old Phase B capacity checker does not cover chi0 two mixed.",
+      "verdict": "局部控制成立；精確目標缺控制"
+    }
+  ],
+  "common_G_assumptions": [
+    "finite simple induced ordered C5 disk exterior B",
+    "complete ordered Sigma is 933/941 or a simultaneous whole-graph D5 image; common literal S4 frame",
+    "every nonframe edge strict Sigma-critical in original G; effective interiors ignore isolated vertices; epsilon(G)=2",
+    "exactly two original degree5 nonadjacent roots z,w; all other effective interiors original complete degree4",
+    "exactly two original mixed components of H-{z,w}; remaining components unary",
+    "canonical q0/index6,q1/index4,q3/index1 rejected; all T4 accepted; precise q2/q4 roles preserved",
+    "all original named vertices, edges, contacts, ownership, attachments, support, cyclic order, bridges and complete relations/full lifts preserved"
+  ],
+  "evidence_boundary": "paper, inherited external theorem/classification and finite Python kept separate; no Lean build/theorem or source-search completeness",
+  "findings": [
+    {
+      "ID": "N45A-F01",
+      "affected_claims": [
+        "historical byte replay/provenance; no numerical payload change"
+      ],
+      "exits": [
+        1,
+        1
+      ],
+      "kind": "historical provenance FAIL",
+      "reproduction": [
+        "python3 scripts/c5_excess_two_e4_core_constraints.py --check",
+        "python3 scripts/c5_excess_two_e4_reductions.py --check"
+      ],
+      "required_correction": "retain original FAIL and hashes; cite separate fresh certificates and actual BASE wrapper; do not overwrite history"
+    },
+    {
+      "ID": "N45A-F02",
+      "affected_claims": [
+        "precise target validation",
+        "N2 45/54 source coverage",
+        "future S/U acceptance"
+      ],
+      "kind": "existing target coverage gap",
+      "reproduction": [
+        "checker.py --check"
+      ],
+      "required_correction": "keep not triggered and named missing premises; increment only frozen returned source artifacts"
+    },
+    {
+      "ID": "N45A-F03",
+      "affected_claims": [
+        "general mixed support>=2 in N2 45/54"
+      ],
+      "kind": "existing paper residual",
+      "reproduction": [
+        "U4 2 lines43-65 vs E4 6 lines282-289"
+      ],
+      "required_correction": "supply independent original-unit support proof or retain exact residual"
+    },
+    {
+      "ID": "N45A-F04",
+      "affected_claims": [
+        "whole BASE documentation PASS; no direct mathematical impact"
+      ],
+      "exits": [
+        1
+      ],
+      "kind": "historical documentation missing inputs",
+      "missing": [
+        "audits/2026-10-04-task-d5/c4/scope_ledger.json",
+        "audits/2026-10-04-task-d2/integration_doc_changes.diff"
+      ],
+      "reproduction": [
+        "python3 scripts/check_docs.py"
+      ],
+      "required_correction": "preserve finding and route to supervisor; no edits to other tasks"
+    }
+  ],
+  "independent_summary": {
+    "BC2_rejected_N2_rows": 19,
+    "BC2_triggered and holds": 74,
+    "N2_core_45_54": 0,
+    "N2_graphs": 19,
+    "X_noncritical": 160,
+    "core_45": 10,
+    "core_54": 2,
+    "core_55": 48,
+    "core_unit_spoke": 8,
+    "core_unit_unary": 4,
+    "derivative_all_rows": 160,
+    "derivative_single_rejection": 12,
+    "graphs": 54,
+    "precise_target_graphs": 0,
+    "root_deletions": 108,
+    "saved_core_occurrences": 60,
+    "source_critical_edges": 1289,
+    "triple_critical_source_antecedent": 0,
+    "unit_derivatives": 172
+  },
+  "remaining_OPEN": [
+    "general N2-45/54 mixed support lower bound",
+    "spoke omission without repeated-spoke antecedent",
+    "full same-source joint across selected rows",
+    "N2 original55 and no45/54 sources"
+  ],
+  "scope": "BASE-only first-round source audit; no S/U/J candidate acceptance or new exclusion",
+  "task": "N45-A"
+}

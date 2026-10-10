@@ -1,0 +1,37 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/checker.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {},
+      "exit_code": 0,
+      "expected_exit": 0,
+      "id": "normal",
+      "stderr": "seal-checks/normal.stderr.log",
+      "stdout": "seal-checks/normal.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-l1c/checker.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "id": "seed17",
+      "stderr": "seal-checks/seed17.stderr.log",
+      "stdout": "seal-checks/seed17.stdout.log"
+    }
+  ],
+  "mathematical_proof": false,
+  "normal_seed17_stdout_byte_equal": true,
+  "payload_byte_drift": false
+}

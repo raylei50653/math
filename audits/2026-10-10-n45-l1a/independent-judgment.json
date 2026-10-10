@@ -1,0 +1,143 @@
+{
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "OPEN": [
+    "LOW incidence2",
+    "HIGH",
+    "long",
+    "original55",
+    "other cores",
+    "general U omission",
+    "nonunit/nonminimal omission identities",
+    "general N2/E",
+    "epsilon>=3"
+  ],
+  "adoption_authority": "root supervision; this reviewer does not edit shared status",
+  "claims": [
+    {
+      "additional_premises": [],
+      "counterexample": "none found under the stated full contract",
+      "dependencies": [],
+      "id": "LOW1-CORE",
+      "independently_derived_reason": "Only the original r-to-B edge is omitted; X itself has complete degrees4/5/4 and owns beta inclusion-minimality.",
+      "layer": "arbitrary-size conditional paper",
+      "report_sections": [
+        "2"
+      ],
+      "verdict": "holds_under_full_LOW1_contract"
+    },
+    {
+      "additional_premises": [],
+      "counterexample": "none found under the stated full contract",
+      "dependencies": [
+        "LOW1-CORE"
+      ],
+      "id": "LOW1-COMP",
+      "independently_derived_reason": "Original r contacts connect all of retained U/P/Q into exactly H_X-s; original s has three distinct contacts in P/Q.",
+      "layer": "arbitrary-size conditional paper",
+      "report_sections": [
+        "3"
+      ],
+      "verdict": "holds_under_full_LOW1_contract"
+    },
+    {
+      "additional_premises": [],
+      "counterexample": "none found under the stated full contract",
+      "dependencies": [
+        "LOW1-CORE",
+        "LOW1-COMP"
+      ],
+      "id": "LOW1-JOIN",
+      "independently_derived_reason": "Restriction/union is a bijection on every full coloring through the unique shared r coordinate, preserving all pins and ambient-tuple fibres. Connected degree lists have strict slack at the contacts.",
+      "layer": "arbitrary-size conditional paper",
+      "report_sections": [
+        "4"
+      ],
+      "verdict": "holds_under_full_LOW1_contract"
+    },
+    {
+      "additional_premises": [],
+      "counterexample": "none found under the stated full contract",
+      "dependencies": [
+        "LOW1-CORE",
+        "LOW1-JOIN"
+      ],
+      "id": "LOW1-F",
+      "independently_derived_reason": "Two same-beta-color s spokes contradict X minimality. Each original s-spoke deletion full lift forces precisely its released color, giving exact complementary forbidden set.",
+      "layer": "arbitrary-size conditional paper",
+      "report_sections": [
+        "5"
+      ],
+      "verdict": "holds_under_full_LOW1_contract"
+    },
+    {
+      "additional_premises": [],
+      "counterexample": "none found under the stated full contract",
+      "dependencies": [
+        "LOW1-CORE",
+        "LOW1-COMP",
+        "LOW1-JOIN",
+        "LOW1-F"
+      ],
+      "id": "LOW1-MAP",
+      "independently_derived_reason": "Independently derived two tight assignments on one C; block-incidence column independence; one three-leaf active tree; active triangle, arbitrary/zero arms; actual boundary tethers; all ten K5 original-edge adjacencies in X.",
+      "layer": "arbitrary-size conditional paper",
+      "report_sections": [
+        "5"
+      ],
+      "verdict": "holds_under_full_LOW1_contract"
+    },
+    {
+      "additional_premises": [],
+      "counterexample": "none found under the stated full contract",
+      "dependencies": [
+        "LOW1-MAP"
+      ],
+      "id": "LOW1-EXCLUSION",
+      "independently_derived_reason": "The full LOW1 source would contain its planar disk subgraph X with an original-edge K5 minor.",
+      "layer": "arbitrary-size conditional paper",
+      "report_sections": [
+        "6"
+      ],
+      "verdict": "holds_under_full_LOW1_contract"
+    }
+  ],
+  "editorial_refinements": [
+    {
+      "blocking": false,
+      "finding": "Empty fibres are defined for every t in Col^3; R_C is the support of nonempty fibres. The complete lift join remains unchanged.",
+      "id": "AMBIENT-FIBRE-DOMAIN",
+      "proof_impact": "none"
+    }
+  ],
+  "external_pdf_sha256": "50e998fcb016418698ef31b932c6c2e728007f5e3b3348b93744781196ac1aea",
+  "finite_source_status": "not evaluated; no new LOW1 source, no trigger count, no source counterexample",
+  "full_source_contract": [
+    "All arbitrary-size finite simple disk graphs G with ordered induced C5 B=(b0,...,b4) as outer face.",
+    "Complete Sigma(G)=933/941 or a single simultaneous whole-graph D5 image; every original nonboundary edge is Sigma-critical; epsilon(G)=2.",
+    "Effective original interior H is connected and full B-touch; original isolated interior vertices are ignored only in effective H and remain freely liftable.",
+    "Exactly two original nonadjacent roots r,s have complete degree5; all other effective original interior vertices have complete degree4, including actual boundary attachments.",
+    "H minus {r,s} has exactly three complete original connected components: unique unary U at r and mixed P,Q.",
+    "Original U has exactly one original root-contact rx, x in U, no s contact, and remains entirely in X.",
+    "All three original pieces are one-sided with nonempty actual support. P and Q each have actual support exactly the endpoints of a genuine original B edge, with positive incidence to both roots.",
+    "Original mixed incidence (m_r,m_s)=(2,3): r has one contact to each mixed, s has one and two; both roots have exactly two original boundary spokes.",
+    "For an original spoke e=rb_i and an original rejecting literal row beta, X=G-e=M is beta inclusion-minimal with root degrees(4,5). The original root-swap image(5,4) is transported as a whole.",
+    "Only e is omitted: all other original vertices, U/P/Q internal edges, root contacts, attachments and spokes are retained, with no replacement or contraction.",
+    "One original graph with named ordered contacts, single coordinates for shared vertices, actual attachments/supports/ownership, original bridges and rotation, a shared literal color frame, complete ten-row relations including empty/nonempty fibres and all full lifts.",
+    "D5/S4/root swap operate simultaneously on the entire graph and all data. Canonical 933 q2 is retained along with q0,q1,q3; no requirement that beta be a U-shield middle row."
+  ],
+  "mathematical_gap_findings": [],
+  "new_Lean": false,
+  "no_peer_judgments_read": true,
+  "scope": "N45-S-LOW1 only; original U incidence1 retained entirely",
+  "sealed_replay_role": "Input, output, exact inventory and receipt binding only; not a mathematical proof checker.",
+  "source_controls": [],
+  "source_realization": "none newly established",
+  "task": "N45-L1A",
+  "trust_dependencies": [
+    "BASE c5_two_spoke_three_contacts.md sections1-5 paper",
+    "BASE c5_degree5_interfaces.md paper",
+    "BASE c5_weak_list_cores.md list-critical semantics",
+    "External Dvorak Lemma7/Theorem10, independently read official primary source",
+    "Planarity excludes K5 minors"
+  ]
+}

@@ -1,0 +1,651 @@
+{
+  "task": "N45-SSA",
+  "commands": [
+    {
+      "id": "head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/head.stdout.log",
+      "stderr": "logs/head.stderr.log"
+    },
+    {
+      "id": "status",
+      "argv": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/status.stdout.log",
+      "stderr": "logs/status.stderr.log"
+    },
+    {
+      "id": "tracked-diff",
+      "argv": [
+        "git",
+        "diff",
+        "--binary"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/tracked-diff.stdout.log",
+      "stderr": "logs/tracked-diff.stderr.log"
+    },
+    {
+      "id": "index-diff",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--binary"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/index-diff.stdout.log",
+      "stderr": "logs/index-diff.stderr.log"
+    },
+    {
+      "id": "base-11",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/HANDOFF.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-11.stdout.log",
+      "stderr": "logs/base-11.stderr.log"
+    },
+    {
+      "id": "oid-11",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/HANDOFF.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-11.stdout.log",
+      "stderr": "logs/oid-11.stderr.log"
+    },
+    {
+      "id": "base-12",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/STATUS.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-12.stdout.log",
+      "stderr": "logs/base-12.stderr.log"
+    },
+    {
+      "id": "oid-12",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/STATUS.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-12.stdout.log",
+      "stderr": "logs/oid-12.stderr.log"
+    },
+    {
+      "id": "base-13",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/DOCUMENTATION.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-13.stdout.log",
+      "stderr": "logs/base-13.stderr.log"
+    },
+    {
+      "id": "oid-13",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/DOCUMENTATION.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-13.stdout.log",
+      "stderr": "logs/oid-13.stderr.log"
+    },
+    {
+      "id": "base-14",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_qcore_shield_budget.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-14.stdout.log",
+      "stderr": "logs/base-14.stderr.log"
+    },
+    {
+      "id": "oid-14",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_qcore_shield_budget.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-14.stdout.log",
+      "stderr": "logs/oid-14.stderr.log"
+    },
+    {
+      "id": "base-15",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_unary_shield_budget.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-15.stdout.log",
+      "stderr": "logs/base-15.stderr.log"
+    },
+    {
+      "id": "oid-15",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_unary_shield_budget.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-15.stdout.log",
+      "stderr": "logs/oid-15.stderr.log"
+    },
+    {
+      "id": "base-16",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_unattached_boundary.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-16.stdout.log",
+      "stderr": "logs/base-16.stderr.log"
+    },
+    {
+      "id": "oid-16",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_unattached_boundary.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-16.stdout.log",
+      "stderr": "logs/oid-16.stderr.log"
+    },
+    {
+      "id": "base-17",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_no_spoke_exterior.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-17.stdout.log",
+      "stderr": "logs/base-17.stderr.log"
+    },
+    {
+      "id": "oid-17",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_no_spoke_exterior.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-17.stdout.log",
+      "stderr": "logs/oid-17.stderr.log"
+    },
+    {
+      "id": "base-18",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_single_spoke_four.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-18.stdout.log",
+      "stderr": "logs/base-18.stderr.log"
+    },
+    {
+      "id": "oid-18",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_single_spoke_four.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-18.stdout.log",
+      "stderr": "logs/oid-18.stderr.log"
+    },
+    {
+      "id": "base-19",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_two_spoke_three_contacts.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-19.stdout.log",
+      "stderr": "logs/base-19.stderr.log"
+    },
+    {
+      "id": "oid-19",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_two_spoke_three_contacts.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-19.stdout.log",
+      "stderr": "logs/oid-19.stderr.log"
+    },
+    {
+      "id": "base-20",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_degree5_tree_components.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-20.stdout.log",
+      "stderr": "logs/base-20.stderr.log"
+    },
+    {
+      "id": "oid-20",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_degree5_tree_components.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-20.stdout.log",
+      "stderr": "logs/oid-20.stderr.log"
+    },
+    {
+      "id": "base-21",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_weak_list_cores.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-21.stdout.log",
+      "stderr": "logs/base-21.stderr.log"
+    },
+    {
+      "id": "oid-21",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_weak_list_cores.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-21.stdout.log",
+      "stderr": "logs/oid-21.stderr.log"
+    },
+    {
+      "id": "base-22",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_degree5_interfaces.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-22.stdout.log",
+      "stderr": "logs/base-22.stderr.log"
+    },
+    {
+      "id": "oid-22",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_degree5_interfaces.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-22.stdout.log",
+      "stderr": "logs/oid-22.stderr.log"
+    },
+    {
+      "id": "base-missing",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_weak_deletion_minimal_obstruction.md"
+      ],
+      "exit_code": 128,
+      "stdout": "logs/base-missing.stdout.log",
+      "stderr": "logs/base-missing.stderr.log"
+    },
+    {
+      "id": "base-24",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_excess_two_root_deletions.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-24.stdout.log",
+      "stderr": "logs/base-24.stderr.log"
+    },
+    {
+      "id": "oid-24",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_excess_two_root_deletions.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-24.stdout.log",
+      "stderr": "logs/oid-24.stderr.log"
+    },
+    {
+      "id": "base-25",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_excess_two_mixed_omission.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-25.stdout.log",
+      "stderr": "logs/base-25.stderr.log"
+    },
+    {
+      "id": "oid-25",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_excess_two_mixed_omission.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-25.stdout.log",
+      "stderr": "logs/oid-25.stderr.log"
+    },
+    {
+      "id": "base-26",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_phase_b_common_lemmas.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-26.stdout.log",
+      "stderr": "logs/base-26.stderr.log"
+    },
+    {
+      "id": "oid-26",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_phase_b_common_lemmas.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-26.stdout.log",
+      "stderr": "logs/oid-26.stderr.log"
+    },
+    {
+      "id": "base-27",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_cells/cells.json"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-27.stdout.log",
+      "stderr": "logs/base-27.stderr.log"
+    },
+    {
+      "id": "oid-27",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_cells/cells.json"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-27.stdout.log",
+      "stderr": "logs/oid-27.stderr.log"
+    },
+    {
+      "id": "base-28",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e4/REPORT.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-28.stdout.log",
+      "stderr": "logs/base-28.stderr.log"
+    },
+    {
+      "id": "oid-28",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e4/REPORT.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-28.stdout.log",
+      "stderr": "logs/oid-28.stderr.log"
+    },
+    {
+      "id": "base-29",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:audits/2026-10-04-task-d4/a3/gallai-primary-source.pdf"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-29.stdout.log",
+      "stderr": "logs/base-29.stderr.log"
+    },
+    {
+      "id": "oid-29",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:audits/2026-10-04-task-d4/a3/gallai-primary-source.pdf"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-29.stdout.log",
+      "stderr": "logs/oid-29.stderr.log"
+    },
+    {
+      "id": "base-30",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_one_e2/REPORT.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-30.stdout.log",
+      "stderr": "logs/base-30.stderr.log"
+    },
+    {
+      "id": "oid-30",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_one_e2/REPORT.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-30.stdout.log",
+      "stderr": "logs/oid-30.stderr.log"
+    },
+    {
+      "id": "base-31",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e3/nonadjacent_notes.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-31.stdout.log",
+      "stderr": "logs/base-31.stderr.log"
+    },
+    {
+      "id": "oid-31",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e3/nonadjacent_notes.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-31.stdout.log",
+      "stderr": "logs/oid-31.stderr.log"
+    },
+    {
+      "id": "base-32",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e4/CORE_CONSTRAINTS.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-32.stdout.log",
+      "stderr": "logs/base-32.stderr.log"
+    },
+    {
+      "id": "oid-32",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e4/CORE_CONSTRAINTS.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-32.stdout.log",
+      "stderr": "logs/oid-32.stderr.log"
+    },
+    {
+      "id": "base-33",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_independent_support_capacity.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-33.stdout.log",
+      "stderr": "logs/base-33.stderr.log"
+    },
+    {
+      "id": "oid-33",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_independent_support_capacity.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-33.stdout.log",
+      "stderr": "logs/oid-33.stderr.log"
+    },
+    {
+      "id": "base-34",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_single_spoke_three_one.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-34.stdout.log",
+      "stderr": "logs/base-34.stderr.log"
+    },
+    {
+      "id": "oid-34",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_single_spoke_three_one.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-34.stdout.log",
+      "stderr": "logs/oid-34.stderr.log"
+    },
+    {
+      "id": "base-35",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_short_support_singleton.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/base-35.stdout.log",
+      "stderr": "logs/base-35.stderr.log"
+    },
+    {
+      "id": "oid-35",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_short_support_singleton.md"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/oid-35.stdout.log",
+      "stderr": "logs/oid-35.stderr.log"
+    },
+    {
+      "id": "pdf-extract",
+      "argv": [
+        "pdftotext",
+        "audits/2026-10-10-n45-ssa/frozen/base/audits/2026-10-04-task-d4/a3/gallai-primary-source.pdf",
+        "audits/2026-10-10-n45-ssa/gallai-primary.txt"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/pdf-extract.stdout.log",
+      "stderr": "logs/pdf-extract.stderr.log"
+    },
+    {
+      "id": "independent-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-ssa/review.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "stdout": "logs/independent-normal.stdout.log",
+      "stderr": "logs/independent-normal.stderr.log"
+    },
+    {
+      "id": "independent-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-ssa/review.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "stdout": "logs/independent-seed17.stdout.log",
+      "stderr": "logs/independent-seed17.stderr.log"
+    },
+    {
+      "id": "final-readonly-review",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-ssa/review.py"
+      ],
+      "exit_code": 0,
+      "stdout": "logs/final-readonly-review.stdout.log",
+      "stderr": "logs/final-readonly-review.stderr.log"
+    }
+  ],
+  "mathematical_proof": false,
+  "summary": {
+    "base_git_object_reads": 24,
+    "current_work_inputs_verified": 23,
+    "normal_exit": 0,
+    "seed17_exit": 0,
+    "normal_seed17_stdout_bytes_equal": true,
+    "final_review_exit": 0,
+    "finite_SS_sources": "not computed",
+    "new_Lean": "not run",
+    "original_worker_verifier": "not run after new audit creation",
+    "historical_FAIL": "preserved; not rerun"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low1/verify.py",
+        "--payload-only"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {},
+      "exit_code": 2,
+      "expected_exit": 0,
+      "id": "normal",
+      "stderr": "seal-final-v3/normal.stderr.log",
+      "stdout": "seal-final-v3/normal.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low1/verify.py",
+        "--payload-only"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 2,
+      "expected_exit": 0,
+      "id": "seed17",
+      "stderr": "seal-final-v3/seed17.stderr.log",
+      "stdout": "seal-final-v3/seed17.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low1/verify.py",
+        "--payload-only",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-low1/seal-final-v3/corrupted-manifest.sha256"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {},
+      "exit_code": 2,
+      "expected_exit": 2,
+      "id": "corrupted-manifest",
+      "stderr": "seal-final-v3/corrupted-manifest.stderr.log",
+      "stdout": "seal-final-v3/corrupted-manifest.stdout.log"
+    }
+  ],
+  "negative_control_scope": "Artifact integrity only; not a graph/source counterexample",
+  "negative_detected_digest_mismatch": true,
+  "normal_seed17_stdout_byte_equal": true,
+  "payload_byte_drift": false
+}

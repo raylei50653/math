@@ -1,0 +1,498 @@
+{
+  "audit_id": "N45-H2R",
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "full_contract": [
+    {
+      "id": "H1",
+      "statement": "有限簡單 disk G，有序 induced 外框 C5 B=(b0,…,b4)"
+    },
+    {
+      "id": "H2",
+      "statement": "完整有序 Σ(G)=933／941 或一次共同整圖 D5 像；每條非框邊 Σ-critical；ε(G)=2"
+    },
+    {
+      "id": "H3",
+      "statement": "有效 H 忽略原孤立內點 I，連通、full B-touch；I 保留全部四色自由 assignments"
+    },
+    {
+      "id": "H4",
+      "statement": "恰兩原非相鄰 degree5 roots r,s；其餘有效原內點完整 degree4"
+    },
+    {
+      "id": "H5",
+      "statement": "H−{r,s} 原分量恰 U,P,Q；三份 connected、one-sided、actual support 非空"
+    },
+    {
+      "id": "H6",
+      "statement": "P/Q 的 actual support 各恰一條真原框邊兩端；各有正 r/s incidence；actual attachments／ownership 全留"
+    },
+    {
+      "id": "H7",
+      "statement": "U 只接 s，恰原邊 sx1、sx2，x1≠x2，無 U–r；U 整份保留"
+    },
+    {
+      "id": "H8",
+      "statement": "mixed incidence=(3,2)，s 對 P/Q 各一，r 分配1與2；原具名 identity 不換"
+    },
+    {
+      "id": "H9",
+      "statement": "原 r 兩 spokes，只省略 e=rb_i，X 保 rb_j；原 s 唯一 spoke sb_k 全留"
+    },
+    {
+      "id": "H10",
+      "statement": "固定原拒絕三色 literal β，X=G−e=M 自己是 β inclusion-minimal45／54 core；不用 G criticality 遺傳"
+    },
+    {
+      "id": "H11",
+      "statement": "只刪 e；U/P/Q 所有原頂點、內邊、contacts、框附件及其他 spokes 全留，無新增／替換／縮 piece／部分 U 刪除"
+    },
+    {
+      "id": "H12",
+      "statement": "named／ordered／shared contacts 單一原變量；actual supports／ownership、bridges／rotation、共同 literal 四色框、十列完整 relations、全部 pins、ambient 空／非空 fibres 與 full lifts 全留"
+    },
+    {
+      "id": "H13",
+      "statement": "D5／S4／root swap 只共同搬整圖及所有資料；933 q2 全留，不假定 β 是 U 盾中點；G／X／刪 contact 圖分清原邊及 lifts"
+    }
+  ],
+  "claims": [
+    {
+      "id": "H2-CORE",
+      "quantifier": "For every finite G of arbitrary size satisfying every original H1-H13 in frozen/worker/REPORT.md §1, with every named original edge/contact, all proper literal queries and ambient empty/nonempty fibers retained; the construction in H2-EXCLUSION is separately qualified below.",
+      "original_worker_claim": "對每契約G，X自己的完整degree為r=4,s=5,其他有效點=4，且每非框邊有自身β刪邊full witness。",
+      "hypotheses_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "BASE_sections": [
+        "c5_degree5_interfaces.md §1",
+        "c5_weak_list_cores.md §1"
+      ],
+      "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+      "external_trust": [],
+      "raw_verdict": "holds under stated hypotheses",
+      "verdict": "holds under stated hypotheses",
+      "qualified_verdict": "holds under stated hypotheses",
+      "new_source_hypotheses": [],
+      "new_query_hypotheses": [],
+      "finding_ids": [],
+      "precise_residual": "Supervisor adoption pending; no finite source, source realization or new Lean proof."
+    },
+    {
+      "id": "H2-COMP",
+      "quantifier": "For every finite G of arbitrary size satisfying every original H1-H13 in frozen/worker/REPORT.md §1, with every named original edge/contact, all proper literal queries and ambient empty/nonempty fibers retained; the construction in H2-EXCLUSION is separately qualified below.",
+      "original_worker_claim": "對每契約G，H_X−s完整分量恰C={r}∪P∪Q及完整U，原s contacts(2,2)；所有原邊及ordered/shared identity保留。",
+      "hypotheses_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "BASE_sections": [
+        "c5_single_spoke_two_two.md §1"
+      ],
+      "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+      "external_trust": [],
+      "raw_verdict": "holds under stated hypotheses",
+      "verdict": "holds under stated hypotheses",
+      "qualified_verdict": "holds under stated hypotheses",
+      "new_source_hypotheses": [],
+      "new_query_hypotheses": [],
+      "finding_ids": [],
+      "precise_residual": "Supervisor adoption pending; no finite source, source realization or new Lean proof."
+    },
+    {
+      "id": "H2-JOIN",
+      "quantifier": "For every finite G of arbitrary size satisfying every original H1-H13 in frozen/worker/REPORT.md §1, with every named original edge/contact, all proper literal queries and ambient empty/nonempty fibers retained; the construction in H2-EXCLUSION is separately qualified below.",
+      "original_worker_claim": "每proper literalγ及全部ambient tuple/r/s pins，包括空fibres，X全lifts與同一s色的C/U full assignments和I自由因子restriction/union雙射。",
+      "hypotheses_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "BASE_sections": [
+        "c5_degree5_interfaces.md §1"
+      ],
+      "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+      "external_trust": [],
+      "raw_verdict": "holds under stated hypotheses",
+      "verdict": "holds under stated hypotheses",
+      "qualified_verdict": "holds under stated hypotheses",
+      "new_source_hypotheses": [],
+      "new_query_hypotheses": [],
+      "finding_ids": [],
+      "precise_residual": "Supervisor adoption pending; no finite source, source realization or new Lean proof."
+    },
+    {
+      "id": "H2-RESTORE",
+      "quantifier": "For every finite G of arbitrary size satisfying every original H1-H13 in frozen/worker/REPORT.md §1, with every named original edge/contact, all proper literal queries and ambient empty/nonempty fibers retained; the construction in H2-EXCLUSION is separately qualified below.",
+      "original_worker_claim": "每γ及全部pins，G full lifts恰X資料另加f_C(r)≠γ(b_i)；延拓G必需相應非空r fibre。",
+      "hypotheses_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "BASE_sections": [
+        "c5_degree5_interfaces.md §1; original X/G edge sets"
+      ],
+      "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+      "external_trust": [],
+      "raw_verdict": "holds under stated hypotheses",
+      "verdict": "holds under stated hypotheses",
+      "qualified_verdict": "holds under stated hypotheses",
+      "new_source_hypotheses": [],
+      "new_query_hypotheses": [],
+      "finding_ids": [],
+      "precise_residual": "Supervisor adoption pending; no finite source, source realization or new Lean proof."
+    },
+    {
+      "id": "H2-F",
+      "quantifier": "For every finite G of arbitrary size satisfying every original H1-H13 in frozen/worker/REPORT.md §1, with every named original edge/contact, all proper literal queries and ambient empty/nonempty fibers retained; the construction in H2-EXCLUSION is separately qualified below.",
+      "original_worker_claim": "每γ F_C(γ)⊆{γ(b_j)}；固定β private-cover給FC={β(b_j)},FU=另外兩色={D,h}，原U完整R為兩ordered交換pair。",
+      "hypotheses_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "BASE_sections": [
+        "c5_degree5_interfaces.md §§2-4",
+        "c5_single_spoke_cores.md §2",
+        "artifacts/c5_excess_two_e4/REPORT.md §4.1"
+      ],
+      "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+      "external_trust": [
+        "Dvorak Lemma7/Theorem10, frozen/worker/frozen/gallai.pdf"
+      ],
+      "raw_verdict": "holds under stated hypotheses",
+      "verdict": "holds under stated hypotheses",
+      "qualified_verdict": "holds under stated hypotheses",
+      "new_source_hypotheses": [],
+      "new_query_hypotheses": [],
+      "finding_ids": [],
+      "precise_residual": "Supervisor adoption pending; no finite source, source realization or new Lean proof."
+    },
+    {
+      "id": "H2-K33",
+      "quantifier": "For every finite G of arbitrary size satisfying every original H1-H13 in frozen/worker/REPORT.md §1, with every named original edge/contact, all proper literal queries and ambient empty/nonempty fibers retained; the construction in H2-EXCLUSION is separately qualified below.",
+      "original_worker_claim": "每契約G，原P/Q支援邊若共端v，原六bags九鄰接成立；唯一s-spoke端點=v時用(B−v)∪U及原s-U邊。",
+      "hypotheses_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "BASE_sections": [
+        "c5_unary_shield_budget.md §§2-3 Theorem A"
+      ],
+      "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+      "external_trust": [
+        "Dvorak Lemma7/Theorem10, frozen/worker/frozen/gallai.pdf"
+      ],
+      "raw_verdict": "holds under stated hypotheses",
+      "verdict": "holds under stated hypotheses",
+      "qualified_verdict": "holds under stated hypotheses",
+      "new_source_hypotheses": [],
+      "new_query_hypotheses": [],
+      "finding_ids": [],
+      "precise_residual": "Supervisor adoption pending; no finite source, source realization or new Lean proof."
+    },
+    {
+      "id": "H2-ARC",
+      "quantifier": "For every finite G of arbitrary size satisfying every original H1-H13 in frozen/worker/REPORT.md §1, with every named original edge/contact, all proper literal queries and ambient empty/nonempty fibers retained; the construction in H2-EXCLUSION is separately qualified below.",
+      "original_worker_claim": "每契約G，U original shield長2，actual support為連續T三點，C support恰B−{T中點}，原roots spokes避中點。",
+      "hypotheses_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "BASE_sections": [
+        "c5_unary_shield_budget.md §2 Lemmas 1-2; §3"
+      ],
+      "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+      "external_trust": [
+        "Dvorak Lemma7/Theorem10, frozen/worker/frozen/gallai.pdf"
+      ],
+      "raw_verdict": "holds under stated hypotheses",
+      "verdict": "holds under stated hypotheses",
+      "qualified_verdict": "holds under stated hypotheses",
+      "new_source_hypotheses": [],
+      "new_query_hypotheses": [],
+      "finding_ids": [],
+      "precise_residual": "Supervisor adoption pending; no finite source, source realization or new Lean proof."
+    },
+    {
+      "id": "H2-MAP",
+      "quantifier": "For every finite G of arbitrary size satisfying every original H1-H13 in frozen/worker/REPORT.md §1, with every named original edge/contact, all proper literal queries and ambient empty/nonempty fibers retained; the construction in H2-EXCLUSION is separately qualified below.",
+      "original_worker_claim": "X在同一whole-sourceβ normalization後逐前提屬single-spoke(2,2)，C/U角色(1,2)；無slit placement是原crosscut排除，有必要表項僅保identity，p1/p2為X。",
+      "hypotheses_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "BASE_sections": [
+        "c5_single_spoke_two_two.md §§1-3",
+        "c5_single_spoke_cores.md §3",
+        "artifacts/c5_single_spoke_two_two/observations.json records90,511"
+      ],
+      "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+      "external_trust": [],
+      "raw_verdict": "holds under stated hypotheses",
+      "verdict": "holds under stated hypotheses",
+      "qualified_verdict": "holds under stated hypotheses",
+      "new_source_hypotheses": [],
+      "new_query_hypotheses": [],
+      "finding_ids": [],
+      "precise_residual": "Supervisor adoption pending; no finite source, source realization or new Lean proof."
+    },
+    {
+      "id": "H2-BRIDGE",
+      "quantifier": "For every finite G of arbitrary size satisfying every original H1-H13 in frozen/worker/REPORT.md §1, with every named original edge/contact, all proper literal queries and ambient empty/nonempty fibers retained; the construction in H2-EXCLUSION is separately qualified below.",
+      "original_worker_claim": "固定原β，完整U pair拒絕pins給唯一原x1–x2奇數bridge路徑，每W含全部旁支，且每W实际支援見a0,c0。",
+      "hypotheses_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "BASE_sections": [
+        "c5_single_spoke_two_two.md §3",
+        "c5_single_spoke_two_two_minor.md §2",
+        "c5_single_spoke_branch_palettes.md §2",
+        "c5_degree5_tree_components.md §1"
+      ],
+      "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+      "external_trust": [
+        "Dvorak Lemma7/Theorem10, frozen/worker/frozen/gallai.pdf"
+      ],
+      "raw_verdict": "holds under stated hypotheses",
+      "verdict": "holds under stated hypotheses",
+      "qualified_verdict": "holds under stated hypotheses",
+      "new_source_hypotheses": [],
+      "new_query_hypotheses": [],
+      "finding_ids": [],
+      "precise_residual": "Supervisor adoption pending; no finite source, source realization or new Lean proof."
+    },
+    {
+      "id": "H2-SPLIT",
+      "quantifier": "For every finite G of arbitrary size satisfying every original H1-H13 in frozen/worker/REPORT.md §1, with every named original edge/contact, all proper literal queries and ambient empty/nonempty fibers retained; the construction in H2-EXCLUSION is separately qualified below.",
+      "original_worker_claim": "每契約G，frame-arc原K5迫β(T)二色、U路一條原bridge，兩完整W支援分別為T左右兩真邊；大小無上限。",
+      "hypotheses_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "BASE_sections": [
+        "c5_single_spoke_frame_arc.md §§2-3",
+        "c5_single_spoke_two_two_external.md §2"
+      ],
+      "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+      "external_trust": [
+        "Dvorak Lemma7/Theorem10, frozen/worker/frozen/gallai.pdf"
+      ],
+      "raw_verdict": "holds under stated hypotheses",
+      "verdict": "holds under stated hypotheses",
+      "qualified_verdict": "holds under stated hypotheses",
+      "new_source_hypotheses": [],
+      "new_query_hypotheses": [],
+      "finding_ids": [],
+      "precise_residual": "Supervisor adoption pending; no finite source, source realization or new Lean proof."
+    },
+    {
+      "id": "H2-PALETTE",
+      "quantifier": "For every finite G of arbitrary size satisfying every original H1-H13 in frozen/worker/REPORT.md §1, with every named original edge/contact, all proper literal queries and ambient empty/nonempty fibers retained; the construction in H2-EXCLUSION is separately qualified below.",
+      "original_worker_claim": "每properγ，完整W rooted assignments非空色恰支援pair的二色補集；U全assignments沿唯一原bridgerestriction/union雙射，完整ordered R含所有二tuple。",
+      "hypotheses_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "BASE_sections": [
+        "c5_degree5_interfaces.md §1; complete original assignment equivariance"
+      ],
+      "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+      "external_trust": [],
+      "raw_verdict": "holds under stated hypotheses",
+      "verdict": "holds under stated hypotheses",
+      "qualified_verdict": "holds under stated hypotheses",
+      "new_source_hypotheses": [],
+      "new_query_hypotheses": [],
+      "finding_ids": [],
+      "precise_residual": "Supervisor adoption pending; no finite source, source realization or new Lean proof."
+    },
+    {
+      "id": "H2-EXCLUSION",
+      "quantifier": "For every finite G of arbitrary size satisfying every original H1-H13 in frozen/worker/REPORT.md §1, with every named original edge/contact, all proper literal queries and ambient empty/nonempty fibers retained; the construction in H2-EXCLUSION is separately qualified below.",
+      "original_worker_claim": "每γ在T見三色時置原r=s=Dγ並接全部原assignments得G full lift，Dγ≠γ(b_i)；全部933/941共同D5/S4/root orbits不可能存在。",
+      "hypotheses_used": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13"
+      ],
+      "BASE_sections": [
+        "artifacts/c5_excess_two_e4/REPORT.md §4.1; singleton position definition"
+      ],
+      "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+      "external_trust": [],
+      "raw_verdict": "gap",
+      "verdict": "gap",
+      "qualified_verdict": "holds with explicit qualification",
+      "new_source_hypotheses": [],
+      "new_query_hypotheses": [
+        "gamma uses exactly three colors on all of B"
+      ],
+      "finding_ids": [
+        "H2R-EXCLUSION-FOUR-COLOR-UNUSED"
+      ],
+      "precise_residual": "Supervisor adoption pending; no finite source, source realization or new Lean proof.",
+      "qualified_conclusion": "For every proper three-color gamma using three colors on T, original G has a full lift with r=s=the unique unused color D_gamma, including e. This suffices to force Q(G) subset B-T and excludes the entire original H1-H13 source class. Four-color queries do not use this construction."
+    }
+  ],
+  "raw_overall_verdict": "gap in H2-EXCLUSION query construction; other 11 claims hold",
+  "qualified_HIGH2_conclusion": "holds with explicit qualification",
+  "candidate_only": true,
+  "adopted": false,
+  "findings": [
+    "H2R-EXCLUSION-FOUR-COLOR-UNUSED"
+  ],
+  "finite_HIGH2_source": {
+    "established": false,
+    "executed": false,
+    "trigger_count": null
+  },
+  "evidence_layers": {
+    "arbitrary_size_paper": "Eleven unchanged claims and the explicitly three-color construction/source exclusion are independently judged here.",
+    "external_Gallai": "Named primary results trusted; frozen bytes checked; no local formalization",
+    "abstract_controls": "Fixed original-edge role skeletons and one finite toy only; not sources",
+    "source_realizability": "No positive source construction",
+    "Lean": "No new theorem; lake not run",
+    "general_claims": "No conclusion beyond the designated HIGH2 H1-H13 domain"
+  },
+  "custody_boundaries": {
+    "worker_fulltree_files": 118,
+    "inputs": 41,
+    "pins": 8,
+    "source_input_drift": 0,
+    "historical_outside_custody_exit": 1,
+    "historical_outside_custody_FAIL_preserved": true,
+    "whole_worktree_inventory_performed": false
+  },
+  "precise_stop": "Deliver raw finding and qualified paper conclusion to supervisor; no worker/shared edits, adoption or propagation."
+}

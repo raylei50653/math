@@ -1,0 +1,303 @@
+{
+  "boundary": "Actual recorded commands/exits, distinct from arbitrary-size paper judgment. Initial strict combined-stream returns and final self-seal receipt are separately bound.",
+  "commands": [
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-low2-supervision/authored.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "authored-text",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "2960439fdfca248048c977de1300c07c2dc2bfd508a128180cb8221134f287c3"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-s-low1/base-source/scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "label": "base-historical-doc-fail",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "54e736e3e632f34a8e8ae56b5d6aa4af7bf1d2a0356b287c6c20682df9fed262"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "current-before-docs",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "77687cbbe97fd7d2adbcbe2625f3a2094341d8ab2e9260080fdd7f3b119c511b"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "final-cached-whitespace",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-low2-supervision/custody.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "final-custody",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d77e145d2fc9b3cfe331cf87ccd99b8526819d9b6c3073713e7befea39680a00"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "final-doc-links",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d5fee177518034b30b422494c3cacfbb1ffaa305fdc367824ed03781cbf49ba9"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "final-formal-docgraph",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "final-tracked-whitespace",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "label": "final-whole-docgraph",
+      "stderr_sha256": "22add2aea9771717445b43c2d315bf6cf41f61cfa881fa1f13621b7fe72f96b2",
+      "stdout_sha256": "3b55401c56babce0efbd6b1c4c480eea52dc0ff51ae277d0c4c218d81b59afa2"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l2a/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "l2a-normal",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d2fa9ec641f7c0260461aeeee8acbbe3b151e17acaf5b6cd23ded9a42b61de8b"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l2a/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "l2a-seed17",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d2fa9ec641f7c0260461aeeee8acbbe3b151e17acaf5b6cd23ded9a42b61de8b"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l2c/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "l2c-normal",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "dc8f7971b733680a4538518a45c9b9d9c8929c0056a663fd7a84981c25c05bdf"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l2c/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "l2c-seed17",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "dc8f7971b733680a4538518a45c9b9d9c8929c0056a663fd7a84981c25c05bdf"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l2r/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "l2r-normal",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "fac795a6b65bbf3cf0acc802159cb12171b8a46c12765c1d27aff067e7ec273b"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-l2r/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "l2r-seed17",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "fac795a6b65bbf3cf0acc802159cb12171b8a46c12765c1d27aff067e7ec273b"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-low2-supervision/judgment_gate.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "pre-adoption-judgment-gate",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "05ffdbf84955b0283571adbed52a028c4d8a205cab844d93a4d5f924269c5389"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "-c",
+        "from pathlib import Path; p=Path(\"audits/2026-10-10-n45-low2-supervision/logs\"); assert (p/\"worker-independent-normal.stdout.log\").read_bytes()==(p/\"worker-independent-seed17.stdout.log\").read_bytes(); print(\"independent frozen-payload outputs byte equal\")"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "replay-output-equality",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "8e972c50a91274a03b724b9275d7d541fae7b219a4de2ef197e5a9713e9540a6"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-low2-supervision/intake.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "reviewer-intake",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "bef1501878727f85ec39525e8243e264b1dae97f1f8fc7815a64ed7eb0896d5e"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-low2-supervision/review.py",
+        "worker"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "worker-independent-normal",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "5852d73afc15388fc7818126d54ae29cd8453d33e834ad0040639f00052df60b"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-low2-supervision/review.py",
+        "worker"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "label": "worker-independent-seed17",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "5852d73afc15388fc7818126d54ae29cd8453d33e834ad0040639f00052df60b"
+    }
+  ],
+  "summary": {
+    "actual_logged_commands": 20,
+    "commit_push": false,
+    "expected_historical_FAILs": 2,
+    "finite_LOW2_source": "not established; not executed; no trigger count",
+    "formal_docs": "PASS",
+    "lake_build": "not rerun: no Lean change; outside this paper adoption scope",
+    "new_Lean": false,
+    "whole_worktree_DocGraph": "FAIL:62 duplicate IDs retained"
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "A_acceptance": "first-round dependencies and fixed controls accepted; four findings retained",
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "S_U_status": "paper pre-review passed; independent SU-A/SU-J incremental audits pending",
+  "closure": "new S/U subtype closures proposed, pending independent adoption; parent N2 remains OPEN",
+  "documentation_runs": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "docs_shared",
+      "log": "docs_shared.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "docgraph_docs",
+      "log": "docgraph_docs.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit": 1,
+      "expected_exit": 1,
+      "id": "docgraph_whole",
+      "log": "docgraph_whole.log"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "diff_tracked",
+      "log": "diff_tracked.log"
+    }
+  ],
+  "historical_failures_retained": [
+    "E4 core/reductions byte replay provenance failures",
+    "fresh BASE docs absent two historical audits",
+    "whole-worktree DocGraph duplicate IDs",
+    "U draft generation/schema failures and routing hash drift"
+  ],
+  "independent_finite_review": {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-09-n45-batch-supervision/review.py",
+      "--output",
+      "audits/2026-10-09-n45-batch-supervision/independent_review.json"
+    ],
+    "counts": {
+      "A_BC2_columns_vs_J": 74,
+      "A_critical_edge_witnesses": 1289,
+      "A_full_sigma_rows": 540,
+      "A_graphs": 54,
+      "A_unit_derivative_rows": 1720,
+      "U_BC2_columns_vs_J": 102,
+      "U_contact_deleted_pair_cells": 1760,
+      "U_derivative_pair_cells": 1760,
+      "U_full_piece_lifts_vs_J": 2986,
+      "U_graphs": 23,
+      "U_local_relation_rows_vs_J": 690,
+      "U_original_pair_cells": 3680
+    },
+    "exit": 0,
+    "result": "independent_review.json"
+  },
+  "local_report_and_task_links": {
+    "count": 23,
+    "status": "PASS"
+  },
+  "new_markdown_whitespace": [
+    {
+      "diagnostics": "",
+      "exit": 1,
+      "file": "audits/2026-10-09-n45-batch-supervision/REPORT.md"
+    },
+    {
+      "diagnostics": "",
+      "exit": 1,
+      "file": "audits/2026-10-09-n45-s-supervision/cross-audit-tasks.md"
+    },
+    {
+      "diagnostics": "",
+      "exit": 1,
+      "file": "audits/2026-10-09-n45-s-supervision/REPORT.md"
+    }
+  ],
+  "not_run": [
+    "all upstream classifications or graph-family searches",
+    "new Lean/lake build",
+    "second research batch",
+    "sub-agents or external publication",
+    "commit/push"
+  ],
+  "propagation_stop": "L1",
+  "replay_runs": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-a/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "a_replay",
+      "log": "a_replay.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-a/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "a_seed17",
+      "log": "a_seed17.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-a/verify_delivery.py",
+        "--sealed"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "a_sealed",
+      "log": "a_sealed.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-u/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "u_replay",
+      "log": "u_replay.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-09-n45-u/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "id": "u_seed17",
+      "log": "u_seed17.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/c5_excess_two_e4_core_constraints.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "environment": {},
+      "exit": 1,
+      "expected_exit": 1,
+      "id": "e4_core_constraints",
+      "log": "e4_core_constraints.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/c5_excess_two_e4_core_constraints.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 1,
+      "expected_exit": 1,
+      "id": "e4_core_constraints_seed17",
+      "log": "e4_core_constraints_seed17.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/c5_excess_two_e4_reductions.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "environment": {},
+      "exit": 1,
+      "expected_exit": 1,
+      "id": "e4_reductions",
+      "log": "e4_reductions.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/c5_excess_two_e4_reductions.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 1,
+      "expected_exit": 1,
+      "id": "e4_reductions_seed17",
+      "log": "e4_reductions_seed17.log"
+    }
+  ]
+}

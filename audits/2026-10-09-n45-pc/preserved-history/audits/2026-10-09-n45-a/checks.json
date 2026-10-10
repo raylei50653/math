@@ -1,0 +1,440 @@
+{
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "Python": "Python 3.14.7",
+  "commands": [
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "FAIL retained: historical E3 REPORT provenance drift",
+      "command": [
+        "python3",
+        "scripts/c5_excess_two_e4_core_constraints.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.055,
+      "exit": 1,
+      "log": "logs/baseline-core.log",
+      "log_sha256": "63f66b0c9982c7554ee3171193886b60042bf1bcc05d6e8afe9490cf33093101",
+      "started_utc": "2026-10-09T13:16:37.849705+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "scripts/c5_phase_b_controls.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.249,
+      "exit": 0,
+      "log": "logs/baseline-phase-b.log",
+      "log_sha256": "caa96d23ebbf3bbc214ac8aca103d9c2f70bbbb5018c141674ad529a780f6e70",
+      "started_utc": "2026-10-09T13:16:37.849813+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "FAIL retained: historical E3 REPORT provenance drift",
+      "command": [
+        "python3",
+        "scripts/c5_excess_two_e4_reductions.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.054,
+      "exit": 1,
+      "log": "logs/baseline-reductions.log",
+      "log_sha256": "f829d2ae1d737776972fd898c940a646fa1dc6b4a87258dbeefa6632fa4de1d4",
+      "started_utc": "2026-10-09T13:16:37.850895+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "scripts/c5_excess_two_e4_core_constraints.py",
+        "--output",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-a/fresh-core-constraints.json"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.04,
+      "exit": 0,
+      "log": "logs/fresh-core-generate.log",
+      "log_sha256": "3b33f31355551d5a010bb16b33379f5b330c9fba6396e5f5590046081c0f3596",
+      "started_utc": "2026-10-09T13:16:50.159307+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "scripts/c5_excess_two_e4_reductions.py",
+        "--output",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-a/fresh-reductions.json"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.04,
+      "exit": 0,
+      "log": "logs/fresh-reductions-generate.log",
+      "log_sha256": "ee0d5056c204f546a9776e45af9e7bf919c64bcbfaf60cb3e7d9be1b535d46f7",
+      "started_utc": "2026-10-09T13:16:50.159309+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-a/checker.py"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 1.381,
+      "exit": 0,
+      "log": "logs/independent-generate.log",
+      "log_sha256": "03e2aac203e9f2b3a0ea2cecf49cdd313d4644f49e888be2a55a2d7f9004dba9",
+      "started_utc": "2026-10-09T13:20:13.698540+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "17",
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-a/checker.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 1.44,
+      "exit": 0,
+      "log": "logs/independent-seed17.log",
+      "log_sha256": "db076c6a2f51c01b4d662c293d3444935180cfd9d3e2d8d9074a69c97b8ae6f7",
+      "started_utc": "2026-10-09T13:21:00.153156+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "17",
+      "classification": "FAIL retained: historical E3 REPORT provenance drift",
+      "command": [
+        "python3",
+        "scripts/c5_excess_two_e4_core_constraints.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.046,
+      "exit": 1,
+      "log": "logs/baseline-core-seed17.log",
+      "log_sha256": "63f66b0c9982c7554ee3171193886b60042bf1bcc05d6e8afe9490cf33093101",
+      "started_utc": "2026-10-09T13:21:00.153640+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-a/checker.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 1.426,
+      "exit": 0,
+      "log": "logs/independent-check.log",
+      "log_sha256": "db076c6a2f51c01b4d662c293d3444935180cfd9d3e2d8d9074a69c97b8ae6f7",
+      "started_utc": "2026-10-09T13:21:00.153698+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "17",
+      "classification": "FAIL retained: historical E3 REPORT provenance drift",
+      "command": [
+        "python3",
+        "scripts/c5_excess_two_e4_reductions.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.045,
+      "exit": 1,
+      "log": "logs/baseline-reductions-seed17.log",
+      "log_sha256": "f829d2ae1d737776972fd898c940a646fa1dc6b4a87258dbeefa6632fa4de1d4",
+      "started_utc": "2026-10-09T13:21:00.156406+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "17",
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "scripts/c5_phase_b_controls.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.258,
+      "exit": 0,
+      "log": "logs/baseline-phase-b-seed17.log",
+      "log_sha256": "caa96d23ebbf3bbc214ac8aca103d9c2f70bbbb5018c141674ad529a780f6e70",
+      "started_utc": "2026-10-09T13:21:00.157425+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "scripts/c5_excess_two_e4_core_constraints.py",
+        "--output",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-a/fresh-core-constraints.json",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.042,
+      "exit": 0,
+      "log": "logs/fresh-core-check.log",
+      "log_sha256": "e76e7b6e039d39df2566991f33f9fcdb62ee56b03dfa667584ea3ec905aefa9d",
+      "started_utc": "2026-10-09T13:21:00.161105+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "17",
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "scripts/c5_excess_two_e4_core_constraints.py",
+        "--output",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-a/fresh-core-constraints.json",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.041,
+      "exit": 0,
+      "log": "logs/fresh-core-seed17.log",
+      "log_sha256": "e76e7b6e039d39df2566991f33f9fcdb62ee56b03dfa667584ea3ec905aefa9d",
+      "started_utc": "2026-10-09T13:21:00.164365+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "scripts/c5_excess_two_e4_reductions.py",
+        "--output",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-a/fresh-reductions.json",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.045,
+      "exit": 0,
+      "log": "logs/fresh-reductions-check.log",
+      "log_sha256": "49242ab969a679a2a294e9806a3296413d7fc91b832fa3a881c66a61f6654a70",
+      "started_utc": "2026-10-09T13:21:00.165620+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "17",
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "scripts/c5_excess_two_e4_reductions.py",
+        "--output",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-a/fresh-reductions.json",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.043,
+      "exit": 0,
+      "log": "logs/fresh-reductions-seed17.log",
+      "log_sha256": "49242ab969a679a2a294e9806a3296413d7fc91b832fa3a881c66a61f6654a70",
+      "started_utc": "2026-10-09T13:21:00.166117+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "FAIL retained: two existing BASE missing paths",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.512,
+      "exit": 1,
+      "log": "logs/source-docs.log",
+      "log_sha256": "54e736e3e632f34a8e8ae56b5d6aa4af7bf1d2a0356b287c6c20682df9fed262",
+      "started_utc": "2026-10-09T13:27:55.350381+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.083,
+      "exit": 0,
+      "log": "logs/source-docgraph-formal.log",
+      "log_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+      "started_utc": "2026-10-09T13:27:55.350415+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.106,
+      "exit": 0,
+      "log": "logs/source-docgraph-full.log",
+      "log_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+      "started_utc": "2026-10-09T13:27:55.350766+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "PASS within command scope",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.005,
+      "exit": 0,
+      "log": "logs/source-diff.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "started_utc": "2026-10-09T13:27:55.353217+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-a/verify_delivery.py"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.139,
+      "exit": 0,
+      "log": "logs/delivery-initial.log",
+      "log_sha256": "5db814af8b12affe6bc2c2a57938565f28451f4a95678587ee70b3f0b5a1904c",
+      "started_utc": "2026-10-09T13:31:45.867162+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "expected exclusive-create refusal; certificate retained",
+      "command": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-a/checker.py"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 1.426,
+      "exit": 1,
+      "log": "logs/exclusive-collision.log",
+      "log_sha256": "39738cef39c176a22794cb14597ef8dce8a8c26a149786d48a45f73fe6e598ad",
+      "started_utc": "2026-10-09T13:32:48.385725+00:00"
+    },
+    {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": null,
+      "classification": "PASS within command scope",
+      "command": [
+        "python3",
+        "/home/ray/developer/ai/math/audits/2026-10-09-n45-a/verify_delivery.py"
+      ],
+      "cwd": "/tmp/math-n45-a-20261009",
+      "elapsed_seconds": 0.142,
+      "exit": 0,
+      "log": "logs/delivery-final.log",
+      "log_sha256": "d184c194b99ef8fe13155cea44f33181837f0f87810781d05842fa439428fa1f",
+      "started_utc": "2026-10-09T13:32:48.385791+00:00"
+    }
+  ],
+  "completed_utc": "2026-10-09T13:34:12.500699+00:00",
+  "final_read_only_seal_command": [
+    "python3",
+    "/home/ray/developer/ai/math/audits/2026-10-09-n45-a/verify_delivery.py",
+    "--sealed"
+  ],
+  "independent_certificate_summary": {
+    "BC2_rejected_N2_rows": 19,
+    "BC2_triggered and holds": 74,
+    "N2_core_45_54": 0,
+    "N2_graphs": 19,
+    "X_noncritical": 160,
+    "core_45": 10,
+    "core_54": 2,
+    "core_55": 48,
+    "core_unit_spoke": 8,
+    "core_unit_unary": 4,
+    "derivative_all_rows": 160,
+    "derivative_single_rejection": 12,
+    "graphs": 54,
+    "precise_target_graphs": 0,
+    "root_deletions": 108,
+    "saved_core_occurrences": 60,
+    "source_critical_edges": 1289,
+    "triple_critical_source_antecedent": 0,
+    "unit_derivatives": 172
+  },
+  "integrity": {
+    "checker_and_certificate_hash_binding": true,
+    "main_preexisting_file_drift": [],
+    "main_status_after": "## main...origin/main\n M docs/STATUS.md\n M docs/c5_kempe_guide.md\n?? audits/2026-10-09-n45-a/\n?? audits/2026-10-09-n45-j/\n?? audits/2026-10-09-n45-s/\n?? audits/2026-10-09-n45-u/\n?? docs/history/2026-10-09-n2-45-54-parallel-tasks.md\n",
+    "modified_tracked_files_by_this_task": [],
+    "other_task_outputs_read": [],
+    "own_output_scope": "/home/ray/developer/ai/math/audits/2026-10-09-n45-a",
+    "source_byte_drift": [],
+    "source_worktree_clean": true,
+    "unique_source_files_checked": 720
+  },
+  "manifest_excludes_only_itself": true,
+  "not_run": [
+    {
+      "item": "E3/E4-control/E4C full upstream replay",
+      "reason": "bounded common-source audit; direct fixed controls independently recomputed instead"
+    },
+    {
+      "item": "ES/ER/plantri and enlarged k searches",
+      "reason": "explicitly excluded by task"
+    },
+    {
+      "item": "U1-U4 and E2 upstream exhaustive terminal classifications",
+      "reason": "existing dependencies retained; not reopening closed 44 identities"
+    },
+    {
+      "item": "full all-core exhaustive enumeration",
+      "reason": "only saved occurrences independently validated"
+    },
+    {
+      "item": "N45-J all190-row local fibres/3040 queries and derivative B-C2",
+      "reason": "this audit limited to 19 rejected N2 rows/304 pinned queries; J scope remains"
+    },
+    {
+      "item": "Lean build and axioms audit",
+      "reason": "no new Lean source or theorem"
+    },
+    {
+      "item": "S/U/J returned claims audit",
+      "reason": "no returned frozen versions included in this first round"
+    }
+  ],
+  "overall": "completed with retained findings; no new source exclusion; supervisor acceptance pending",
+  "provenance_non_sources_payload_equal": true,
+  "schema": "n45-a-checks-v1",
+  "source_HEAD": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "source_worktree": "/tmp/math-n45-a-20261009",
+  "task": "N45-A"
+}

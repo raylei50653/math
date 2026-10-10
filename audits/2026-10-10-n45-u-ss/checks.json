@@ -1,0 +1,924 @@
+{
+  "task": "N45-U-SS",
+  "base": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "scope": "Input/artifact/documentation verification; no finite source calculation or new Lean",
+  "commands": [
+    {
+      "id": "initial-head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/initial-head.stdout.log",
+      "stderr": "logs/initial-head.stderr.log"
+    },
+    {
+      "id": "initial-status",
+      "argv": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/initial-status.stdout.log",
+      "stderr": "logs/initial-status.stderr.log"
+    },
+    {
+      "id": "initial-diff",
+      "argv": [
+        "git",
+        "diff",
+        "--binary"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/initial-diff.stdout.log",
+      "stderr": "logs/initial-diff.stderr.log"
+    },
+    {
+      "id": "initial-cached-diff",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--binary"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/initial-cached-diff.stdout.log",
+      "stderr": "logs/initial-cached-diff.stderr.log"
+    },
+    {
+      "id": "base-blob-00",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/HANDOFF.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-00.stdout.log",
+      "stderr": "logs/base-blob-00.stderr.log"
+    },
+    {
+      "id": "base-oid-00",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/HANDOFF.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-00.stdout.log",
+      "stderr": "logs/base-oid-00.stderr.log"
+    },
+    {
+      "id": "base-blob-01",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/STATUS.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-01.stdout.log",
+      "stderr": "logs/base-blob-01.stderr.log"
+    },
+    {
+      "id": "base-oid-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/STATUS.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-01.stdout.log",
+      "stderr": "logs/base-oid-01.stderr.log"
+    },
+    {
+      "id": "base-blob-02",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/DOCUMENTATION.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-02.stdout.log",
+      "stderr": "logs/base-blob-02.stderr.log"
+    },
+    {
+      "id": "base-oid-02",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/DOCUMENTATION.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-02.stdout.log",
+      "stderr": "logs/base-oid-02.stderr.log"
+    },
+    {
+      "id": "base-blob-03",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_qcore_shield_budget.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-03.stdout.log",
+      "stderr": "logs/base-blob-03.stderr.log"
+    },
+    {
+      "id": "base-oid-03",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_qcore_shield_budget.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-03.stdout.log",
+      "stderr": "logs/base-oid-03.stderr.log"
+    },
+    {
+      "id": "base-blob-04",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_unary_shield_budget.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-04.stdout.log",
+      "stderr": "logs/base-blob-04.stderr.log"
+    },
+    {
+      "id": "base-oid-04",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_unary_shield_budget.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-04.stdout.log",
+      "stderr": "logs/base-oid-04.stderr.log"
+    },
+    {
+      "id": "base-blob-05",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_unattached_boundary.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-05.stdout.log",
+      "stderr": "logs/base-blob-05.stderr.log"
+    },
+    {
+      "id": "base-oid-05",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_unattached_boundary.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-05.stdout.log",
+      "stderr": "logs/base-oid-05.stderr.log"
+    },
+    {
+      "id": "base-blob-06",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_no_spoke_exterior.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-06.stdout.log",
+      "stderr": "logs/base-blob-06.stderr.log"
+    },
+    {
+      "id": "base-oid-06",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_no_spoke_exterior.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-06.stdout.log",
+      "stderr": "logs/base-oid-06.stderr.log"
+    },
+    {
+      "id": "base-blob-07",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_single_spoke_four.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-07.stdout.log",
+      "stderr": "logs/base-blob-07.stderr.log"
+    },
+    {
+      "id": "base-oid-07",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_single_spoke_four.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-07.stdout.log",
+      "stderr": "logs/base-oid-07.stderr.log"
+    },
+    {
+      "id": "base-blob-08",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_two_spoke_three_contacts.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-08.stdout.log",
+      "stderr": "logs/base-blob-08.stderr.log"
+    },
+    {
+      "id": "base-oid-08",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_two_spoke_three_contacts.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-08.stdout.log",
+      "stderr": "logs/base-oid-08.stderr.log"
+    },
+    {
+      "id": "base-blob-09",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_degree5_tree_components.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-09.stdout.log",
+      "stderr": "logs/base-blob-09.stderr.log"
+    },
+    {
+      "id": "base-oid-09",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_degree5_tree_components.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-09.stdout.log",
+      "stderr": "logs/base-oid-09.stderr.log"
+    },
+    {
+      "id": "base-blob-10",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_weak_list_cores.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-10.stdout.log",
+      "stderr": "logs/base-blob-10.stderr.log"
+    },
+    {
+      "id": "base-oid-10",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_weak_list_cores.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-10.stdout.log",
+      "stderr": "logs/base-oid-10.stderr.log"
+    },
+    {
+      "id": "base-blob-11",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_degree5_interfaces.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-11.stdout.log",
+      "stderr": "logs/base-blob-11.stderr.log"
+    },
+    {
+      "id": "base-oid-11",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_degree5_interfaces.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-11.stdout.log",
+      "stderr": "logs/base-oid-11.stderr.log"
+    },
+    {
+      "id": "base-blob-12",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_weak_deletion_minimal_obstruction.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 128,
+      "stdout": "logs/base-blob-12.stdout.log",
+      "stderr": "logs/base-blob-12.stderr.log"
+    },
+    {
+      "id": "base-blob-13",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_excess_two_root_deletions.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-13.stdout.log",
+      "stderr": "logs/base-blob-13.stderr.log"
+    },
+    {
+      "id": "base-oid-13",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_excess_two_root_deletions.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-13.stdout.log",
+      "stderr": "logs/base-oid-13.stderr.log"
+    },
+    {
+      "id": "base-blob-14",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_excess_two_mixed_omission.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-14.stdout.log",
+      "stderr": "logs/base-blob-14.stderr.log"
+    },
+    {
+      "id": "base-oid-14",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_excess_two_mixed_omission.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-14.stdout.log",
+      "stderr": "logs/base-oid-14.stderr.log"
+    },
+    {
+      "id": "base-blob-15",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_phase_b_common_lemmas.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-15.stdout.log",
+      "stderr": "logs/base-blob-15.stderr.log"
+    },
+    {
+      "id": "base-oid-15",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_phase_b_common_lemmas.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-15.stdout.log",
+      "stderr": "logs/base-oid-15.stderr.log"
+    },
+    {
+      "id": "base-blob-16",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_cells/cells.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-16.stdout.log",
+      "stderr": "logs/base-blob-16.stderr.log"
+    },
+    {
+      "id": "base-oid-16",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_cells/cells.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-16.stdout.log",
+      "stderr": "logs/base-oid-16.stderr.log"
+    },
+    {
+      "id": "base-blob-17",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e4/REPORT.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-17.stdout.log",
+      "stderr": "logs/base-blob-17.stderr.log"
+    },
+    {
+      "id": "base-oid-17",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e4/REPORT.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-17.stdout.log",
+      "stderr": "logs/base-oid-17.stderr.log"
+    },
+    {
+      "id": "base-blob-18",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:audits/2026-10-04-task-d4/a3/gallai-primary-source.pdf"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-blob-18.stdout.log",
+      "stderr": "logs/base-blob-18.stderr.log"
+    },
+    {
+      "id": "base-oid-18",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:audits/2026-10-04-task-d4/a3/gallai-primary-source.pdf"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/base-oid-18.stdout.log",
+      "stderr": "logs/base-oid-18.stderr.log"
+    },
+    {
+      "id": "initial-all-files",
+      "argv": [
+        "git",
+        "ls-files",
+        "--cached",
+        "--others",
+        "--exclude-standard",
+        "-z"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/initial-all-files.stdout.log",
+      "stderr": "logs/initial-all-files.stderr.log"
+    },
+    {
+      "id": "supplement-blob-0",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_one_e2/REPORT.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/supplement-blob-0.stdout.log",
+      "stderr": "logs/supplement-blob-0.stderr.log"
+    },
+    {
+      "id": "supplement-oid-0",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_one_e2/REPORT.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/supplement-oid-0.stdout.log",
+      "stderr": "logs/supplement-oid-0.stderr.log"
+    },
+    {
+      "id": "supplement-blob-1",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e3/nonadjacent_notes.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/supplement-blob-1.stdout.log",
+      "stderr": "logs/supplement-blob-1.stderr.log"
+    },
+    {
+      "id": "supplement-oid-1",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e3/nonadjacent_notes.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/supplement-oid-1.stdout.log",
+      "stderr": "logs/supplement-oid-1.stderr.log"
+    },
+    {
+      "id": "supplement-blob-2",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e4/CORE_CONSTRAINTS.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/supplement-blob-2.stdout.log",
+      "stderr": "logs/supplement-blob-2.stderr.log"
+    },
+    {
+      "id": "supplement-oid-2",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:artifacts/c5_excess_two_e4/CORE_CONSTRAINTS.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/supplement-oid-2.stdout.log",
+      "stderr": "logs/supplement-oid-2.stderr.log"
+    },
+    {
+      "id": "supplement-blob-3",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_independent_support_capacity.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/supplement-blob-3.stdout.log",
+      "stderr": "logs/supplement-blob-3.stderr.log"
+    },
+    {
+      "id": "supplement-oid-3",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_independent_support_capacity.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/supplement-oid-3.stdout.log",
+      "stderr": "logs/supplement-oid-3.stderr.log"
+    },
+    {
+      "id": "supplement-blob-4",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_single_spoke_three_one.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/supplement-blob-4.stdout.log",
+      "stderr": "logs/supplement-blob-4.stderr.log"
+    },
+    {
+      "id": "supplement-oid-4",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_single_spoke_three_one.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/supplement-oid-4.stdout.log",
+      "stderr": "logs/supplement-oid-4.stderr.log"
+    },
+    {
+      "id": "supplement-blob-5",
+      "argv": [
+        "git",
+        "show",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_short_support_singleton.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/supplement-blob-5.stdout.log",
+      "stderr": "logs/supplement-blob-5.stderr.log"
+    },
+    {
+      "id": "supplement-oid-5",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744:docs/c5_short_support_singleton.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/supplement-oid-5.stdout.log",
+      "stderr": "logs/supplement-oid-5.stderr.log"
+    },
+    {
+      "id": "base-archive",
+      "argv": [
+        "git",
+        "archive",
+        "--format=tar",
+        "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches_expectation": true,
+      "stdout": "logs/base-archive.stdout.log",
+      "stderr": "logs/base-archive.stderr.log"
+    },
+    {
+      "id": "base-docs",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-u-ss/base-source",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "exit_matches_expectation": true,
+      "stdout": "logs/base-docs.stdout.log",
+      "stderr": "logs/base-docs.stderr.log"
+    },
+    {
+      "id": "base-formal-docgraph",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-10-n45-u-ss/base-source",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches_expectation": true,
+      "stdout": "logs/base-formal-docgraph.stdout.log",
+      "stderr": "logs/base-formal-docgraph.stderr.log"
+    },
+    {
+      "id": "current-docs",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches_expectation": true,
+      "stdout": "logs/current-docs.stdout.log",
+      "stderr": "logs/current-docs.stderr.log"
+    },
+    {
+      "id": "current-formal-docgraph",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches_expectation": true,
+      "stdout": "logs/current-formal-docgraph.stdout.log",
+      "stderr": "logs/current-formal-docgraph.stderr.log"
+    },
+    {
+      "id": "current-whole-docgraph",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "exit_matches_expectation": true,
+      "stdout": "logs/current-whole-docgraph.stdout.log",
+      "stderr": "logs/current-whole-docgraph.stderr.log"
+    },
+    {
+      "id": "tracked-diff-check",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches_expectation": true,
+      "stdout": "logs/tracked-diff-check.stdout.log",
+      "stderr": "logs/tracked-diff-check.stderr.log"
+    },
+    {
+      "id": "cached-diff-check",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches_expectation": true,
+      "stdout": "logs/cached-diff-check.stdout.log",
+      "stderr": "logs/cached-diff-check.stderr.log"
+    },
+    {
+      "id": "final-head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches_expectation": true,
+      "stdout": "logs/final-head.stdout.log",
+      "stderr": "logs/final-head.stderr.log"
+    },
+    {
+      "id": "final-status",
+      "argv": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches_expectation": true,
+      "stdout": "logs/final-status.stdout.log",
+      "stderr": "logs/final-status.stderr.log"
+    },
+    {
+      "id": "final-shared-diff",
+      "argv": [
+        "git",
+        "diff",
+        "--binary"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches_expectation": true,
+      "stdout": "logs/final-shared-diff.stdout.log",
+      "stderr": "logs/final-shared-diff.stderr.log"
+    },
+    {
+      "id": "final-shared-cached-diff",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--binary"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches_expectation": true,
+      "stdout": "logs/final-shared-cached-diff.stdout.log",
+      "stderr": "logs/final-shared-cached-diff.stderr.log"
+    },
+    {
+      "id": "gallai-extract",
+      "argv": [
+        "pdftotext",
+        "-layout",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-u-ss/frozen/base/audits/2026-10-04-task-d4/a3/gallai-primary-source.pdf",
+        "-"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "gallai-primary.txt",
+      "stderr": "logs/gallai-extract.stderr.log"
+    },
+    {
+      "id": "verify-initial",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-10-n45-u-ss/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "stdout": "logs/verify-initial.stdout.log",
+      "stderr": "logs/verify-initial.stderr.log",
+      "finding": "Pre-seal check was invoked before its linked checks/manifest/delivery files existed. Initial code and failure retained. Final verifier distinguishes --preseal from strict sealed verification; no mathematical premise or shared file changed."
+    },
+    {
+      "id": "verify-preseal-normal-failure",
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-u-ss/verify.py",
+        "--preseal"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "stdout": "logs/verify-preseal-normal.stdout.log",
+      "stderr": "logs/verify-preseal-normal.stderr.log",
+      "finding": "pdftotext stdout ends with a form-feed, not a newline. It is an immutable extraction output, not authored text. Final verifier exempts this unchanged extraction from authored-text newline validation; draft code and failure retained."
+    },
+    {
+      "id": "verify-preseal-final-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-u-ss/verify.py",
+        "--preseal"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/verify-preseal-final-normal.stdout.log",
+      "stderr": "logs/verify-preseal-final-normal.stderr.log",
+      "env": {}
+    },
+    {
+      "id": "verify-preseal-final-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-u-ss/verify.py",
+        "--preseal"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "stdout": "logs/verify-preseal-final-seed17.stdout.log",
+      "stderr": "logs/verify-preseal-final-seed17.stderr.log",
+      "env": {
+        "PYTHONHASHSEED": "17"
+      }
+    }
+  ],
+  "preseal_normal_seed17_byte_equal": true,
+  "postseal_commands": "seal-checks/commands.json",
+  "historical_failures": {
+    "E4_byte_replays": "Retained prior FAIL; not rerun",
+    "BASE_check_docs": "Freshly reproduced two missing paths; exit1",
+    "whole_worktree_DocGraph": "Freshly reproduced 62 duplicate-ID errors; exit1"
+  },
+  "not_run": [
+    "All upstream mathematical/source checkers",
+    "PC/PCA LP checker as SS control",
+    "New graph/k search",
+    "Lean build/axioms",
+    "Remote CI"
+  ],
+  "write_scope": "Only this fresh audit; all pre-existing shared tracked/untracked file hashes and inventory checked unchanged."
+}

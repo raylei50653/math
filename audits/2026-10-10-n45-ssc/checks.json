@@ -1,0 +1,219 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/checker.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONHASHSEED": null
+      },
+      "exit_code": 0,
+      "expectation_matched": true,
+      "expected_error": null,
+      "expected_exit_code": 0,
+      "id": "independent-normal",
+      "stderr": "logs/independent-normal.stderr.log",
+      "stdout": "logs/independent-normal.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/checker.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expectation_matched": true,
+      "expected_error": null,
+      "expected_exit_code": 0,
+      "id": "independent-seed17",
+      "stderr": "logs/independent-seed17.stderr.log",
+      "stdout": "logs/independent-seed17.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/checker.py",
+        "--component",
+        "claims",
+        "--fixture",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/negative-controls/claims-positive.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONHASHSEED": null
+      },
+      "exit_code": 0,
+      "expectation_matched": true,
+      "expected_error": null,
+      "expected_exit_code": 0,
+      "id": "claims-positive",
+      "stderr": "logs/claims-positive.stderr.log",
+      "stdout": "logs/claims-positive.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/checker.py",
+        "--component",
+        "claims",
+        "--fixture",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/negative-controls/claims-missing-premise.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONHASHSEED": null
+      },
+      "exit_code": 1,
+      "expectation_matched": true,
+      "expected_error": "claim source premise missing: N45-SS-COST",
+      "expected_exit_code": 1,
+      "id": "claims-missing-premise",
+      "stderr": "logs/claims-missing-premise.stderr.log",
+      "stdout": "logs/claims-missing-premise.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/checker.py",
+        "--component",
+        "claims",
+        "--fixture",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/negative-controls/claims-cycle.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONHASHSEED": null
+      },
+      "exit_code": 1,
+      "expectation_matched": true,
+      "expected_error": "claim dependency cycle: N45-SS-COST",
+      "expected_exit_code": 1,
+      "id": "claims-cycle",
+      "stderr": "logs/claims-cycle.stderr.log",
+      "stdout": "logs/claims-cycle.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/checker.py",
+        "--component",
+        "claims",
+        "--fixture",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/negative-controls/claims-promoted-finite.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONHASHSEED": null
+      },
+      "exit_code": 1,
+      "expectation_matched": true,
+      "expected_error": "finite SS evidence has been promoted: N45-SS-COST",
+      "expected_exit_code": 1,
+      "id": "claims-promoted-finite",
+      "stderr": "logs/claims-promoted-finite.stderr.log",
+      "stdout": "logs/claims-promoted-finite.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/checker.py",
+        "--component",
+        "manifest-fixture",
+        "--fixture",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/negative-controls/manifest-positive.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONHASHSEED": null
+      },
+      "exit_code": 0,
+      "expectation_matched": true,
+      "expected_error": null,
+      "expected_exit_code": 0,
+      "id": "manifest-positive",
+      "stderr": "logs/manifest-positive.stderr.log",
+      "stdout": "logs/manifest-positive.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/checker.py",
+        "--component",
+        "manifest-fixture",
+        "--fixture",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/negative-controls/manifest-byte-drift.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONHASHSEED": null
+      },
+      "exit_code": 1,
+      "expectation_matched": true,
+      "expected_error": "manifest digest mismatch: payload.txt",
+      "expected_exit_code": 1,
+      "id": "manifest-byte-drift",
+      "stderr": "logs/manifest-byte-drift.stderr.log",
+      "stdout": "logs/manifest-byte-drift.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/checker.py",
+        "--component",
+        "manifest-fixture",
+        "--fixture",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/negative-controls/manifest-extra-file.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONHASHSEED": null
+      },
+      "exit_code": 1,
+      "expectation_matched": true,
+      "expected_error": "manifest exact inventory mismatch",
+      "expected_exit_code": 1,
+      "id": "manifest-extra-file",
+      "stderr": "logs/manifest-extra-file.stderr.log",
+      "stdout": "logs/manifest-extra-file.stdout.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/checker.py",
+        "--component",
+        "manifest-fixture",
+        "--fixture",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-ssc/negative-controls/manifest-duplicate-path.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_override": {
+        "PYTHONHASHSEED": null
+      },
+      "exit_code": 1,
+      "expectation_matched": true,
+      "expected_error": "duplicate manifest path: payload.txt",
+      "expected_exit_code": 1,
+      "id": "manifest-duplicate-path",
+      "stderr": "logs/manifest-duplicate-path.stderr.log",
+      "stdout": "logs/manifest-duplicate-path.stdout.log"
+    }
+  ],
+  "normal_seed17_byte_equal": true,
+  "scope": "Read-only artifact audit; six small corrupt-copy failures do not establish general validator soundness.",
+  "task": "N45-SSC"
+}

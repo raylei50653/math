@@ -1,0 +1,176 @@
+[
+  {
+    "expected_error": "complete relation/full lifts differ",
+    "id": "missing-complete-tuple",
+    "oracle": {
+      "index": 0,
+      "literal_beta": [
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      "original_contact_tuple": [
+        2,
+        1
+      ],
+      "original_legal_piece_lift": [
+        2,
+        1
+      ],
+      "original_root_contact_edges": [
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ]
+      ],
+      "piece": "P0",
+      "shared_original_vertex": 9
+    },
+    "proposal": "negative-inputs-v2/missing-complete-tuple.json",
+    "scope": "Deliberately incorrect declaration of an unchanged original graph; not a source counterexample."
+  },
+  {
+    "expected_error": "has wrong contacts",
+    "id": "wrong-shared-ownership",
+    "oracle": {
+      "index": 0,
+      "literal_beta": [
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      "original_contact_tuple": [
+        2,
+        1
+      ],
+      "original_legal_piece_lift": [
+        2,
+        1
+      ],
+      "original_root_contact_edges": [
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ]
+      ],
+      "piece": "P0",
+      "shared_original_vertex": 9
+    },
+    "proposal": "negative-inputs-v2/wrong-shared-ownership.json",
+    "scope": "Deliberately incorrect declaration of an unchanged original graph; not a source counterexample."
+  },
+  {
+    "expected_error": "stale source_sha256",
+    "id": "stale-source-hash",
+    "oracle": {
+      "legal_whole_lift": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        3,
+        3,
+        2,
+        3
+      ],
+      "literal_beta": [
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      "original_edge": [
+        0,
+        5
+      ]
+    },
+    "proposal": "negative-inputs-v2/stale-source-hash.json",
+    "scope": "Deliberately incorrect declaration of an unchanged original graph; not a source counterexample."
+  },
+  {
+    "expected_error": "declared X is not exactly",
+    "id": "wrong-whole-unit-X",
+    "oracle": {
+      "legal_whole_lift": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        3,
+        3,
+        2,
+        3
+      ],
+      "literal_beta": [
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      "original_edge": [
+        0,
+        5
+      ]
+    },
+    "proposal": "negative-inputs-v2/wrong-whole-unit-X.json",
+    "scope": "Deliberately incorrect declaration of an unchanged original graph; not a source counterexample."
+  },
+  {
+    "expected_error": "not a complete original incidence-one unary",
+    "id": "wrong-declared-unit",
+    "oracle": {
+      "index": 0,
+      "literal_beta": [
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      "original_contact_tuple": [
+        2,
+        1
+      ],
+      "original_legal_piece_lift": [
+        2,
+        1
+      ],
+      "original_root_contact_edges": [
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ]
+      ],
+      "piece": "P0",
+      "shared_original_vertex": 9
+    },
+    "proposal": "negative-inputs-v2/wrong-declared-unit.json",
+    "scope": "Deliberately incorrect declaration of an unchanged original graph; not a source counterexample."
+  }
+]

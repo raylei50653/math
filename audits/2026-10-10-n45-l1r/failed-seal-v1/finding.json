@@ -1,0 +1,14 @@
+{
+  "actual_checker_exit": 2,
+  "actual_orchestration_exit": 1,
+  "correct_condition": "Exclude only exact relative top-level active final manifest and delivery paths; failed-v1 manifest and logs stay in v2 payload.",
+  "failed_generator_condition": "p.name not in {'MANIFEST.sha256','delivery.json'}",
+  "finding": "L1R seal generator used p.name to exclude top-level receipt names, incorrectly excluding frozen nested delivery.json. Read-only checker correctly rejected its incomplete inventory.",
+  "missing_paths": [
+    "frozen/worker/audits/2026-10-10-n45-s-low1/delivery.json"
+  ],
+  "normal_stderr": "REJECT: manifest inventory mismatch",
+  "paper_input_drift": 0,
+  "preserved_logs": "seal-checks/normal.stdout.log and normal.stderr.log",
+  "preserved_manifest": "MANIFEST.sha256"
+}

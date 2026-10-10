@@ -1,0 +1,369 @@
+{
+  "audit_id": "N45-H3A",
+  "BASE": "dc8e9aa7d6fccb51f63d30aa3f9c132296d44744",
+  "candidate_only": true,
+  "verdict": "holds under stated hypotheses",
+  "hypotheses": {
+    "K1": "G 是任意大小有限簡單 disk 圖；B=(b0,...,b4) 為有序 induced C5 外面。",
+    "K2": "完整有序 Σ(G)=933/941，或一次共同整圖 D5 像；每條非框邊 Σ-critical；ε(G)=2。",
+    "K3": "有效 H 忽略原孤立內點，連通、full B-touch；忽略點的四色 free factors 保留於全部 lifts。",
+    "K4": "恰兩原非相鄰 degree5 roots r,s；其他有效原內點完整 degree4。",
+    "K5": "H−{r,s} 的完整原分量恰唯一 unary U 及 mixed P,Q；三份 connected、one-sided，actual support 非空。",
+    "K6": "P/Q 各 actual support 恰真原框邊兩端；兩 root incidence 皆正，actual attachments／ownership 完整保留。",
+    "K7": "原 U 只接 s，contacts 恰 sx1,sx2,sx3，三點相異，無 U–r；U 整份保留。",
+    "K8": "mixed incidence (m_r,m_s)=(3,2)：s 對 P/Q 各一，r 分配 1 和 2；原 identity／shared 頂點不合併。",
+    "K9": "原 r 恰兩 spokes rb_i,rb_j，i≠j；s 無 spoke。只省略 e=rb_i，X 保 rb_j。",
+    "K10": "固定原拒絕 literal β；X=G−e=M 自己是 β inclusion-minimal 45/54 core；root swap 只共同命名降度 r。",
+    "K11": "除 e 外全部原頂點、內邊、contacts、框附件與 spokes 完整保留；不縮 piece、刪 U 部分或新增邊。",
+    "K12": "原 named/ordered/shared contacts 單坐標、supports/ownership、bridges/rotation、共同 literal 四色框、\n     十列完整 relations、全部 pins、ambient 空／非空 fibres 與 full lifts 保留。",
+    "K13": "D5/S4/root swap 共同作用整圖與全部資料，保 933 q2；不假定 β 是 U 盾中點。\n      原 G、X、刪 contact 圖各自的 vertices/edges/lifts 分明；minor 只反證平面性。"
+  },
+  "claims": [
+    {
+      "claim_id": "H3A-CORE",
+      "full_quantifier": "For every finite simple disk graph G with ordered induced B=(b0,...,b4), every fixed original rejecting literal beta, and every complete original context satisfying all K1-K13, with X=G-e=M: X itself is a beta edge-minimal obstruction, has the same effective connected H and isolated free factors, unique degree5 s, degree4 r and all other effective inner vertices.",
+      "required_scope_hypotheses": [
+        "K1",
+        "K2",
+        "K3",
+        "K4",
+        "K5",
+        "K6",
+        "K7",
+        "K8",
+        "K9",
+        "K10",
+        "K11",
+        "K12",
+        "K13"
+      ],
+      "K1_K13_used": [
+        "K1",
+        "K3",
+        "K4",
+        "K9",
+        "K10",
+        "K11",
+        "K12"
+      ],
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_no_spoke_exterior.md",
+          "section": "1",
+          "lines": [
+            44,
+            49
+          ]
+        },
+        {
+          "path": "docs/c5_weak_list_cores.md",
+          "section": "1",
+          "lines": [
+            18,
+            35
+          ]
+        }
+      ],
+      "external_trust": [],
+      "verdict": "holds under stated hypotheses",
+      "proof": "Only rb_i is deleted; H and isolated I unchanged. K10 separately gives complete beta lifts for every X-f, f nonboundary; do not inherit G criticality. Col^I kept on every full lift.",
+      "new_sufficient_hypotheses": [],
+      "findings": [],
+      "precise_residual": "Candidate only; complete HIGH awaits HIGH2 independent acceptance and scoped coverage. No general S/N2/E or core-existence closure."
+    },
+    {
+      "claim_id": "H3A-COMPONENT",
+      "full_quantifier": "For every finite simple disk graph G with ordered induced B=(b0,...,b4), every fixed original rejecting literal beta, and every complete original context satisfying all K1-K13, with X=G-e=M: H_X-s has exactly the actual original components C={r} union P union Q and U, with ordered distinct s-contact counts (2,3), all original attachments preserved and N_B^X(s) empty.",
+      "required_scope_hypotheses": [
+        "K1",
+        "K2",
+        "K3",
+        "K4",
+        "K5",
+        "K6",
+        "K7",
+        "K8",
+        "K9",
+        "K10",
+        "K11",
+        "K12",
+        "K13"
+      ],
+      "K1_K13_used": [
+        "K3",
+        "K4",
+        "K5",
+        "K6",
+        "K7",
+        "K8",
+        "K9",
+        "K11",
+        "K12"
+      ],
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_no_spoke_exterior.md",
+          "section": "1",
+          "lines": [
+            44,
+            70
+          ]
+        }
+      ],
+      "external_trust": [],
+      "verdict": "holds under stated hypotheses",
+      "proof": "P,Q connect through r with positive original incidence; U connects only to s. Original H-r-s has exactly these pieces. s has one contact in each P,Q and three in U; rs absent. Internal edge set is unchanged.",
+      "new_sufficient_hypotheses": [],
+      "findings": [],
+      "precise_residual": "Candidate only; complete HIGH awaits HIGH2 independent acceptance and scoped coverage. No general S/N2/E or core-existence closure."
+    },
+    {
+      "claim_id": "H3A-TRANSPORT",
+      "full_quantifier": "For every finite simple disk graph G with ordered induced B=(b0,...,b4), every fixed original rejecting literal beta, and every complete original context satisfying all K1-K13, with X=G-e=M: one common D5 boundary relabeling and S4 global color permutation maps beta to q=01012, simultaneously maps G/X/deletions and their full ordered data and all lifts, and preserves the transported 933 q2 rejection.",
+      "required_scope_hypotheses": [
+        "K1",
+        "K2",
+        "K3",
+        "K4",
+        "K5",
+        "K6",
+        "K7",
+        "K8",
+        "K9",
+        "K10",
+        "K11",
+        "K12",
+        "K13"
+      ],
+      "K1_K13_used": [
+        "K1",
+        "K2",
+        "K10",
+        "K11",
+        "K12",
+        "K13"
+      ],
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_degree5_interfaces.md",
+          "section": "1",
+          "lines": [
+            79,
+            106
+          ]
+        },
+        {
+          "path": "docs/c5_no_spoke_exterior.md",
+          "section": "1",
+          "lines": [
+            44,
+            70
+          ]
+        }
+      ],
+      "external_trust": [],
+      "verdict": "holds under stated hypotheses",
+      "proof": "933/941 reject only three-color cells; D5 preserves number of colors. C5 independent sets have size at most2, so a proper three-color row has counts2,2,1. Rotate singleton to4 and apply one global permutation to alternating colors, singleton and unused color. This gives a bijection on all full lifts and empty/nonempty fibers. No per-piece permutation or U-middle assumption.",
+      "new_sufficient_hypotheses": [],
+      "findings": [],
+      "precise_residual": "Candidate only; complete HIGH awaits HIGH2 independent acceptance and scoped coverage. No general S/N2/E or core-existence closure."
+    },
+    {
+      "claim_id": "H3A-BASE-MAP",
+      "full_quantifier": "For every finite simple disk graph G with ordered induced B=(b0,...,b4), every fixed original rejecting literal beta, and every complete original context satisfying all K1-K13, with X=G-e=M: the transported X satisfies every actual-graph premise of BASE no-spoke exterior section1 and its section5 (3,2) source exclusion; no T4 acceptance or second rejection is needed.",
+      "required_scope_hypotheses": [
+        "K1",
+        "K2",
+        "K3",
+        "K4",
+        "K5",
+        "K6",
+        "K7",
+        "K8",
+        "K9",
+        "K10",
+        "K11",
+        "K12",
+        "K13"
+      ],
+      "K1_K13_used": [
+        "K1",
+        "K2",
+        "K3",
+        "K4",
+        "K5",
+        "K6",
+        "K7",
+        "K8",
+        "K9",
+        "K10",
+        "K11",
+        "K12",
+        "K13"
+      ],
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_no_spoke_exterior.md",
+          "section": "1",
+          "lines": [
+            44,
+            77
+          ]
+        },
+        {
+          "path": "docs/c5_no_spoke_exterior.md",
+          "section": "2-3",
+          "lines": [
+            79,
+            126
+          ]
+        },
+        {
+          "path": "docs/c5_no_spoke_exterior.md",
+          "section": "5",
+          "lines": [
+            180,
+            230
+          ]
+        },
+        {
+          "path": "docs/c5_degree5_interfaces.md",
+          "section": "2-4",
+          "lines": [
+            108,
+            191
+          ]
+        },
+        {
+          "path": "docs/c5_single_spoke_three_one.md",
+          "section": "2-3",
+          "lines": [
+            68,
+            123
+          ]
+        }
+      ],
+      "external_trust": [
+        {
+          "title": "List coloring and Gallai trees",
+          "author": "Zdenek Dvorak",
+          "date": "2018-03-24",
+          "url": "https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf",
+          "references": [
+            "Lemma 7, PDF page 5",
+            "Theorem 10, PDF page 6"
+          ],
+          "trust": "external mathematical theorem; reread and frozen; not Python or Lean certified"
+        }
+      ],
+      "verdict": "holds under stated hypotheses",
+      "proof": "Complete relations nonempty by contact slack. Rejection gives F_C union F_U=Col; own minimality gives private colors. Two-contact capacity <=2 forces three-contact U to forbid >=2 colors. Another actual component supplies external s-B path, K4-free follows, then active triangle/tethers yield original X K5. This is source exclusion, not necessary-record realizability or specified p extension.",
+      "new_sufficient_hypotheses": [],
+      "findings": [],
+      "precise_residual": "Candidate only; complete HIGH awaits HIGH2 independent acceptance and scoped coverage. No general S/N2/E or core-existence closure."
+    },
+    {
+      "claim_id": "H3A-EXCLUSION",
+      "full_quantifier": "For every finite simple disk graph G with ordered induced B=(b0,...,b4), every fixed original rejecting literal beta, and every complete original context satisfying all K1-K13, with X=G-e=M: no G realizes the entire stated HIGH3 source contract, for any finite source size; the conclusion is a paper candidate pending supervisor adoption.",
+      "required_scope_hypotheses": [
+        "K1",
+        "K2",
+        "K3",
+        "K4",
+        "K5",
+        "K6",
+        "K7",
+        "K8",
+        "K9",
+        "K10",
+        "K11",
+        "K12",
+        "K13"
+      ],
+      "K1_K13_used": [
+        "K1",
+        "K2",
+        "K3",
+        "K4",
+        "K5",
+        "K6",
+        "K7",
+        "K8",
+        "K9",
+        "K10",
+        "K11",
+        "K12",
+        "K13"
+      ],
+      "BASE_exact_sections": [
+        {
+          "path": "docs/c5_no_spoke_exterior.md",
+          "section": "5",
+          "lines": [
+            220,
+            230
+          ]
+        }
+      ],
+      "external_trust": [
+        {
+          "title": "List coloring and Gallai trees",
+          "author": "Zdenek Dvorak",
+          "date": "2018-03-24",
+          "url": "https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf",
+          "references": [
+            "Lemma 7, PDF page 5",
+            "Theorem 10, PDF page 6"
+          ],
+          "trust": "external mathematical theorem; reread and frozen; not Python or Lean certified"
+        }
+      ],
+      "verdict": "holds under stated hypotheses",
+      "proof": "CORE+COMPONENT+TRANSPORT instantiate BASE-MAP and contradict disk planarity of X. No G recovery coloring, T4 acceptance, second row, or finite bound used.",
+      "new_sufficient_hypotheses": [],
+      "findings": [],
+      "precise_residual": "Candidate only; complete HIGH awaits HIGH2 independent acceptance and scoped coverage. No general S/N2/E or core-existence closure."
+    }
+  ],
+  "findings": [],
+  "new_sufficient_hypotheses": [],
+  "parent_necessary_premises": [
+    "finite simple induced-C5 disk X",
+    "effective connected nonempty H_X",
+    "X itself q edge-minimal obstruction",
+    "unique full degree5 s, all other effective vertices full degree4",
+    "no s boundary spoke",
+    "actual complete connected H_X-s components and ordered nonempty contacts",
+    "full same-source attachments and relations"
+  ],
+  "scope_only_strengthenings": [
+    "original epsilon=2",
+    "original every nonboundary edge Sigma-critical",
+    "exact 933/941 beyond rejection being three-color",
+    "full B-touch beyond parent-derived actual touch",
+    "one-sided original pieces",
+    "P/Q support exactly actual boundary-edge endpoints"
+  ],
+  "evidence_layers": {
+    "arbitrary_size_paper": "holds under all K1-K13; candidate, not adopted",
+    "external_gallai": "reread inherited theorem trust; frozen PDF, not proved here",
+    "abstract_arithmetic": "triggered and holds; 120 proper three-color row transport and complete (2,3) capacity records",
+    "finite_source": "not established and not executed; no source trigger count",
+    "source_realizability": "not established",
+    "Lean": "no new Lean theorem, lake build not run"
+  },
+  "unexecuted": [
+    "HIGH2 content/replays",
+    "H3R/H3G conclusions",
+    "broad graph enumeration",
+    "whole-worktree inventory",
+    "whole-worktree DocGraph",
+    "lake build"
+  ],
+  "historical_failures_preserved": [
+    "historical missing files",
+    "E4 provenance failures",
+    "whole-worktree DocGraph 62 duplicate IDs"
+  ],
+  "stop": "Deliver candidate; await supervisor and HIGH2 acceptance/coverage. Do not adopt HIGH3/HIGH/all S/N2/E or general core existence."
+}

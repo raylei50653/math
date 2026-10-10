@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/checker.py", line 487, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/checker.py", line 474, in main
+    result = make_certificate()
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/checker.py", line 406, in make_certificate
+    selected.append(analyze(path, data))
+                    ~~~~~~~^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-09-n45-u/checker.py", line 279, in analyze
+    assert [x["tuple"] for x in row["tuples"]] == old["tuples"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

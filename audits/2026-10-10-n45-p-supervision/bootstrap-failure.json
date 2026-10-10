@@ -1,0 +1,6 @@
+{
+  "command": "python3 -B audits/2026-10-10-n45-p-supervision/review.py freeze",
+  "actual_exit": 1,
+  "finding": "The first supervision inventory rejected a pre-existing dangling BASE symlink, base-source/audits/2026-10-04-task-d6/snapshot -> .snapshot. It is not a regular payload and is not declared by the worker regular-file manifest.",
+  "correction": "Match the declared regular-file inventory and separately snapshot all symlink targets and lstat mtimes. No worker or BASE file was changed; no input snapshot had been written."
+}
