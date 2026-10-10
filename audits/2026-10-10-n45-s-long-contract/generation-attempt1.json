@@ -1,0 +1,6 @@
+{
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-contract/checker.py\", line 284, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-contract/checker.py\", line 269, in main\n    payload = audit()\n  File \"/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-contract/checker.py\", line 252, in audit\n    need(counts['graphs'] == 19 and counts['long_mixed'] == 0, 'fixed inventory differs')\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-contract/checker.py\", line 25, in need\n    raise ValueError(message)\nValueError: fixed inventory differs\n",
+  "finding": "The preserved first attempt had an incorrect fixed-inventory assertion long_mixed=0; actual original-edge reconstruction is4. No certificate was written."
+}

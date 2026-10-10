@@ -1,0 +1,102 @@
+{
+  "authorization_actions": {
+    "PR": false,
+    "commit": false,
+    "push": false
+  },
+  "base": "0d76c4c887033e565eaa0ca4d2a515619d7c97f3",
+  "canonical_certificate": "certificate-v2.json",
+  "canonical_certificate_sha256": "41c3b82ab4afdade42f70b722a2624a9d1a726a4af22f783a09ab32a099b4ed6",
+  "changed_shared_files": [
+    "docs/c5_excess_two_nonadjacent_unit_core45.md",
+    "docs/c5_kempe_guide.md",
+    "docs/STATUS.md"
+  ],
+  "documentation": {
+    "formal_docgraph": {
+      "chunk_id": "1644ea",
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "original_token_count": 16,
+      "output": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n",
+      "wall_time_seconds": 0.321282084
+    },
+    "navigation_and_new_report": "final-checks.json"
+  },
+  "git_diff_check": {
+    "command": "git diff --check",
+    "exit_code": 0
+  },
+  "independent_reviews": [
+    {
+      "scope": "original fee, source support, star, owner incidence and PG weak premise transfer",
+      "status": "necessary reductions checked; no new BASE exclusion adopted",
+      "task": "shield_reduction"
+    },
+    {
+      "scope": "all-row/pin/full-lift semantics and implementation; independent v2 replay",
+      "status": "no remaining implementation discrepancy; graph-specific topology/criticality outside checker scope",
+      "task": "joint_contract"
+    },
+    {
+      "scope": "K1-K12, SL-TOUCH/STAR, all-row slack, raw profiles, final report",
+      "status": "checked; scope refined to no-U two-long residual",
+      "task": "independent_premises"
+    }
+  ],
+  "lean_build": {
+    "chunk_id": "80ec06",
+    "command": "lake build",
+    "exit_code": 0,
+    "new_Lean_theorem": false,
+    "note": "Successful build with existing linter warnings; tool output was truncated and is not a complete log.",
+    "original_token_count": 1874,
+    "output": "Warning: truncated output (original token count: 1874)\nTotal output lines: 126\n\n⚠ [8796/8831] Replayed Math.AttachmentOrder\nwarning: Math/AttachmentOrder.lean:53:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/AttachmentOrder.lean:57:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/AttachmentOrder.lean:66:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/AttachmentOrder.lean:71:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/AttachmentOrder.lean:102:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/AttachmentOrder.lean:145:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/AttachmentOrder.lean:177:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/AttachmentOrder.lean:190:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/AttachmentOrder.lean:206:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/AttachmentOrder.lean:239:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/AttachmentOrder.lean:269:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/AttachmentOrder.lean:297:8: This simp argument is unused:\n  Fin.reduceAdd\n\nHint: Omit it from the simp argument list.\n  [apply] simp +decide only [List.count_cons, List.count_nil, List.count_append, List.count_replicate, Fin.reduceEq,\n    beq_iff_eq, ite_true, ite_false, Nat.add_zero, N…674 tokens truncated…ease shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/SymRelabel.lean:16:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/SymRelabel.lean:22:100: This line exceeds the 100 character limit, please shorten it!\nYou can use \"string gaps\" to format long strings: within a string quotation, using a '\\' at the end of a line allows you to continue the string on the following line, removing all intervening whitespace.\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/SymRelabel.lean:28:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/SymRelabel.lean:30:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/SymRelabel.lean:48:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/SymRelabel.lean:79:6: The `show` tactic should only be used to indicate intermediate goal states for readability.\nHowever, this tactic invocation changed the goal. Please use `change` instead for these purposes.\n\nNote: This linter can be disabled with `set_option linter.style.show false`\nwarning: Math/SymRelabel.lean:92:2: The `show` tactic should only be used to indicate intermediate goal states for readability.\nHowever, this tactic invocation changed the goal. Please use `change` instead for these purposes.\n\nNote: This linter can be disabled with `set_option linter.style.show false`\nwarning: Math/SymRelabel.lean:99:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/SymRelabel.lean:135:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nwarning: Math/SymRelabel.lean:170:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nBuild completed successfully (8831 jobs).\n",
+    "wall_time_seconds": 1.1422e-05
+  },
+  "mathematical_status": {
+    "Lean": "no new theorem",
+    "finite": "interface and cardinality calibration only",
+    "paper": "contract and necessary reductions; no branch closure",
+    "selected_source": "not triggered",
+    "source_exclusion": "not established",
+    "source_realizability": "not established"
+  },
+  "negative_and_drift": "negative-and-drift.json",
+  "propagation_stop": "L1; no closure, supersession, or invalidation of an adopted claim; HANDOFF/README unchanged",
+  "replays": [
+    {
+      "chunk_id": "df570b",
+      "command": "python3 -B audits/2026-10-10-n45-s-long-contract/checker.py --check",
+      "exit_code": 0,
+      "original_token_count": 177,
+      "output": "{\"certificate_sha256\": \"41c3b82ab4afdade42f70b722a2624a9d1a726a4af22f783a09ab32a099b4ed6\", \"finite_interface\": {\"counts\": {\"G_pin_fibres\": 3040, \"X_pin_fibres\": 7520, \"graphs\": 19, \"long_mixed\": 4, \"new_accepted_rows\": 47, \"original_rejected_spoke_queries\": 47, \"piece_pin_fibres\": 9120, \"piece_rows\": 570, \"shared_contacts\": 38}, \"status\": \"triggered and holds\"}, \"mode\": \"check\", \"selected_source\": {\"missing_sufficient_premises\": [\"all four long/short controls miss original boundary vertex b4 (full B-touch)\", \"no full target Sigma933/941 source in this fixed inventory\", \"no rejecting original-spoke 45/54 beta-minimal derivative\"], \"status\": \"not triggered\"}, \"source_exclusion\": \"not established\"}\n",
+      "wall_time_seconds": 0.567784583
+    },
+    {
+      "chunk_id": "63aed2",
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-10-n45-s-long-contract/checker.py --check",
+      "exit_code": 0,
+      "original_token_count": 177,
+      "output": "{\"certificate_sha256\": \"41c3b82ab4afdade42f70b722a2624a9d1a726a4af22f783a09ab32a099b4ed6\", \"finite_interface\": {\"counts\": {\"G_pin_fibres\": 3040, \"X_pin_fibres\": 7520, \"graphs\": 19, \"long_mixed\": 4, \"new_accepted_rows\": 47, \"original_rejected_spoke_queries\": 47, \"piece_pin_fibres\": 9120, \"piece_rows\": 570, \"shared_contacts\": 38}, \"status\": \"triggered and holds\"}, \"mode\": \"check\", \"selected_source\": {\"missing_sufficient_premises\": [\"all four long/short controls miss original boundary vertex b4 (full B-touch)\", \"no full target Sigma933/941 source in this fixed inventory\", \"no rejecting original-spoke 45/54 beta-minimal derivative\"], \"status\": \"not triggered\"}, \"source_exclusion\": \"not established\"}\n",
+      "wall_time_seconds": 0.56840136
+    }
+  ],
+  "version_history": [
+    {
+      "path": "generation-attempt1.json",
+      "reason": "incorrect inventory assumption long_mixed=0; actual fixed domain4",
+      "status": "failed generation preserved"
+    },
+    {
+      "path": "certificate.json",
+      "reason": "incorrect missing-premise metadata called U short; four long controls actually have three-point U support but miss b4",
+      "status": "superseded; do not use coverage metadata"
+    },
+    {
+      "path": "certificate-v2.json",
+      "reason": "original-edge full Sigma/touch reconstruction and corrected coverage metadata",
+      "status": "canonical"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "canonical_certificate_after": "41c3b82ab4afdade42f70b722a2624a9d1a726a4af22f783a09ab32a099b4ed6",
+  "canonical_certificate_before": "41c3b82ab4afdade42f70b722a2624a9d1a726a4af22f783a09ab32a099b4ed6",
+  "exclusive_create": {
+    "expected": "exclusive-create refuses existing v2",
+    "returncode": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-contract/checker.py\", line 296, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-contract/checker.py\", line 286, in main\n    with args.certificate.open('xb') as f:\n         ~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-contract/certificate-v2.json'\n",
+    "stdout": ""
+  },
+  "frozen_input_count": 51,
+  "frozen_input_drift": [],
+  "negative": {
+    "corrupted_lift": [
+      0,
+      1,
+      0,
+      1,
+      2,
+      2,
+      0,
+      2,
+      3,
+      3,
+      2,
+      3
+    ],
+    "expected": "certificate byte mismatch; fail closed",
+    "original_lift": [
+      0,
+      1,
+      0,
+      1,
+      2,
+      1,
+      0,
+      2,
+      3,
+      3,
+      2,
+      3
+    ],
+    "returncode": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-contract/checker.py\", line 296, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-contract/checker.py\", line 284, in main\n    need(args.certificate.read_bytes() == data, 'certificate byte mismatch')\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-contract/checker.py\", line 25, in need\n    raise ValueError(message)\nValueError: certificate byte mismatch\n",
+    "stdout": "",
+    "tamper": "change descending-root colour in a saved legal full G lift"
+  }
+}

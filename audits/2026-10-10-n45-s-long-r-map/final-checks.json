@@ -1,0 +1,40 @@
+{
+  "commands": [
+    {
+      "command": "python3 scripts/check_docs.py",
+      "chunk_id": "e4878d",
+      "wall_time_seconds": 0.450478286,
+      "exit_code": 0,
+      "original_token_count": 19,
+      "output": "OK: 596 Markdown files, 7251 local links; anchors, index, handoff checked\n"
+    },
+    {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "chunk_id": "c452a9",
+      "wall_time_seconds": 0.000013045,
+      "exit_code": 0,
+      "original_token_count": 16,
+      "output": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n"
+    },
+    {
+      "command": "git diff --check",
+      "chunk_id": "6094c1",
+      "wall_time_seconds": 0.000020599,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    },
+    {
+      "command": "new REPORT local links and previous manifest payloads",
+      "chunk_id": "85fd4a",
+      "wall_time_seconds": 0.000012303,
+      "exit_code": 0,
+      "original_token_count": 103,
+      "output": "{\"local_links_in_new_report\": 13, \"all_resolve\": true, \"prior_contract_payloads\": 60, \"all_prior_manifest_payload_bytes_hashes_match\": true, \"prior_extra_files\": [\"__pycache__/checker.cpython-314.pyc\"], \"scope\": \"Manifest payload preservation; no exact directory equality claim\", \"prior_shared_hashes\": \"historical contract-delivery snapshot; superseded by continuation routing changes, not asserted current\"}\n"
+    }
+  ],
+  "prior_failure": "custody-attempt1.json; extra runtime cache, no manifest payload changes",
+  "lean": "Successful lake build earlier this turn, recorded in prior contract checks.json; no Lean files changed after build; not rerun for this Markdown/Python continuation.",
+  "global_docgraph": "Not rerun; historical whole-worktree duplicate IDs are not declared resolved.",
+  "publication": "No commit/push/PR"
+}

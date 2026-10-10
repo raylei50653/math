@@ -1,0 +1,91 @@
+{
+  "scope": "SL-MAP-R: original U owner r, full U/long L/short S retained; only original r-spoke removed; X=M own beta-minimal",
+  "base": "0d76c4c887033e565eaa0ca4d2a515619d7c97f3",
+  "certificate": {
+    "path": "certificate.json",
+    "sha256": "6027ac2b7310ecfb2568d53198369be2e257afc1677d60abea921a95a422921e"
+  },
+  "commands": [
+    {
+      "command": "python3 -B audits/2026-10-10-n45-s-long-r-map/checker.py --check",
+      "chunk_id": "be463a",
+      "wall_time_seconds": 0.000009518,
+      "exit_code": 0,
+      "original_token_count": 81,
+      "output": "{\"certificate_sha256\": \"6027ac2b7310ecfb2568d53198369be2e257afc1677d60abea921a95a422921e\", \"counts\": {\"ambient_r_tuple_fibres\": 250880, \"owner_r_spoke_omissions\": 26, \"root_pin_fibres\": 4160, \"rows\": 260}, \"finite_interface\": \"triggered and holds\", \"source_status\": \"not triggered\", \"t_s_profile_counts\": {\"1\": 24, \"2\": 2}}\n"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-10-n45-s-long-r-map/checker.py --check",
+      "chunk_id": "f6f676",
+      "wall_time_seconds": 0.000009679,
+      "exit_code": 0,
+      "original_token_count": 81,
+      "output": "{\"certificate_sha256\": \"6027ac2b7310ecfb2568d53198369be2e257afc1677d60abea921a95a422921e\", \"counts\": {\"ambient_r_tuple_fibres\": 250880, \"owner_r_spoke_omissions\": 26, \"root_pin_fibres\": 4160, \"rows\": 260}, \"finite_interface\": \"triggered and holds\", \"source_status\": \"not triggered\", \"t_s_profile_counts\": {\"1\": 24, \"2\": 2}}\n"
+    },
+    {
+      "command": "python3 -B scripts/c5_no_spoke_exterior.py --check",
+      "chunk_id": "2ce453",
+      "wall_time_seconds": 0.120461298,
+      "exit_code": 0,
+      "original_token_count": 102,
+      "output": "{\"K5_counts\": {\"K4\": 160, \"four_contact\": 240, \"three_contact\": 160}, \"compatible_palette_quadruples\": 16, \"cover_counts\": {\"(2, 1, 1, 1)\": 24, \"(2, 2, 1)\": 48, \"(3, 1, 1)\": 12, \"(3, 2)\": 22, \"(4, 1)\": 4, \"(5,)\": 1}, \"even_leaf_controls\": 35, \"full_relations\": 2, \"local_incidence_states\": 52, \"negative_minor_controls\": 9, \"open_cover_rows\": 72, \"palette_quadruples_tested\": 1808, \"reflected_minors\": 560}\n"
+    },
+    {
+      "command": "python3 -B scripts/c5_single_spoke_four.py --check",
+      "chunk_id": "a61e92",
+      "wall_time_seconds": 0.101439593,
+      "exit_code": 0,
+      "original_token_count": 75,
+      "output": "{\"block_palette_triples_tested\": 1120, \"compatible_block_triples\": 52, \"connected_forest_controls\": 1280, \"full_relations\": 4, \"local_incidence_states\": 188, \"negative_controls\": 8, \"one_spoke_K5_certificates\": 960, \"reflected_minors\": 960, \"split_forest_controls\": 49, \"tight_attachment_rows\": 104}\n"
+    },
+    {
+      "command": "python3 -B scripts/c5_two_spoke_three_contacts.py --check",
+      "exit_code": 0,
+      "output": "{\"K5_certificates\": 80, \"local_states\": 63, \"parity_tests\": 512, \"second_rows\": 4}\n",
+      "observation": "Actual root command completed exit0 this turn before compaction; independently replayed by premise reviewer."
+    },
+    {
+      "command": "negative and drift probes in isolated TemporaryDirectory",
+      "chunk_id": "67c649",
+      "wall_time_seconds": 0.00000517,
+      "exit_code": 0,
+      "original_token_count": 69,
+      "output": "{\"frozen_count\": 29, \"frozen_drift\": [], \"canonical_certificate_sha256_before_after\": \"6027ac2b7310ecfb2568d53198369be2e257afc1677d60abea921a95a422921e\", \"prior_certificate_unchanged\": true}\nThree intended rejection checks passed; canonical and prior certificate unchanged.\n",
+      "details": "negative-and-drift.json"
+    }
+  ],
+  "classification": {
+    "finite_interface": "triggered and holds",
+    "selected_source": "not triggered",
+    "rejection_and_own_beta_minimality": "not triggered; all 260 X rows accepted",
+    "t_s_0_control": "not triggered; none supplied",
+    "t_s_2_long_control": "not triggered; two supplied t_s=2 cases have both mixed short",
+    "paper": "owner-r scoped source exclusion via actual sole C, own witnesses and BASE t=0/1/2 mapping",
+    "new_Lean_theorem": false,
+    "remaining": "owner-s C/U two-component branch and other long identities OPEN"
+  },
+  "verification_notes": [
+    "Complete C assignments and all ambient r/contact-tuple fibres retained, including empty fibres; 16 root cell counts reconstruct full lifts.",
+    "Every reconstructed X lift set equals direct X and bound prior full-lift certificate; restored G sets equal direct original G.",
+    "Natural join of three unpinned-s piece assignment sets is paper restriction/union, not separately finite-calibrated.",
+    "Checker is stdlib-only and imports no research checker.",
+    "29 frozen inputs checked against hashes; BASE authority inputs compared to git show; delivery-byte authority explicitly separate.",
+    "Original contract delivery, old failed metadata/certificates and worker outputs retained.",
+    "This continuation modifies Markdown/Python only. The successful lake build earlier this turn is retained as build evidence, not a new formal proof.",
+    "Formal-doc graph and Markdown links are recorded separately in final-checks.json after routing changes."
+  ],
+  "propagation": {
+    "updated": [
+      "docs/c5_excess_two_nonadjacent_unit_core45.md §2.9/§3",
+      "docs/c5_kempe_guide.md N45 stop point",
+      "docs/STATUS.md narrow direct index",
+      "docs/c5_phase_b_common_lemmas.md §2.1 direct consequence"
+    ],
+    "reviewed_unchanged": [
+      "artifacts/c5_excess_two_e4/REPORT.md dated preface/§4.3: broad original relation families remain OPEN; direct N45 link routes current state",
+      "docs/c5_phase_b_common_lemmas.md §3.2: capacity contract and source control gap unchanged",
+      "README/HANDOFF: no routing or research-line status change"
+    ],
+    "stop": "L2; no higher-layer semantic change"
+  }
+}

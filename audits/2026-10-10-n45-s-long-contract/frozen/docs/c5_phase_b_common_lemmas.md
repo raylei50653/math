@@ -99,10 +99,6 @@ U4原省略O仍收費的原理可共用。[N45](c5_excess_two_nonadjacent_unit_c
 原過寬量詞保finding，全部properγ的JOIN／RESTORE／PALETTE不縮窄。HIGH3原s無spoke、
 實際(2,3)接回BASE no-spoke原K₅排除。LOW兩支及HIGH三支逐契約窮盡，
 只關§1精確S的兩原mixed都short身份；含long、其他cores／一般N2／E仍OPEN，無新finite來源或Lean。
-後續[SL-MAP-R](../audits/2026-10-10-n45-s-long-r-map/REPORT.md)另排完整U在降度r、
-long L／short S全留、只刪原r-spoke且X=M自身minimal的窄身份；actual sole C、完整r fibres
-與X自己的同β witnesses逐項接回BASE(5)/(4)/(3)。pair／singleton都覆蓋，
-U在s的兩分量及無U的long身份仍OPEN；不提升B-S0或一般N2，finite來源仍0觸發。
 這只搬用原B-S0及各自新充分前提；一般N2仍只知mixed非空支援，
 singleton總incidence≥4未排，不能把U4專用 `2+ℓ+2u≤5` 直接搬過去。
 原省略unit若是spoke，保其原邊限制；spoke不能被冒算成piece盾弧。

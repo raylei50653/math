@@ -136,12 +136,7 @@ HIGH2保雙U-contact／cycle、全部r fibres與恢復e，原兩W完整assignmen
 HIGH3原s無spoke、實際C/U=(2,3)逐項接回BASE no-spoke原K₅排除。
 在上述限定HIGH身份中，原U incidence／s-spokes只有(1,2)/(2,1)/(3,0)，由HIGH1–HIGH3窮盡；加LOW兩支，
 [§1精確S身份的兩原mixed都short分支](c5_excess_two_nonadjacent_unit_core45.md)已全排。
-目前窄殘留為S含至少一份原long；先有[保留U/L/S的同源契約與必要化約](../audits/2026-10-10-n45-s-long-contract/REPORT.md)，
-分pair／singleton原盾費，核全pins／空fibres與恢復e。
-後續[U在r的sole C完整映射](../audits/2026-10-10-n45-s-long-r-map/REPORT.md)已接回
-BASE(5)/(4)/(3)，排除完整U owner=r、long／short全留、只刪原r-spoke且X=M自身minimal身份。
-下一步只核U在s的actual C/U private-color covering及各t_s映射，保跨列joint／r fibres／恢復e。
-finite來源仍未觸發；無U的long／兩long及其他身份未關，不擴枚舉。
+目前窄殘留為S含至少一份原long；尚未發布新long worker，不擴枚舉。
 原[HIGH2派工](history/2026-10-10-n45-high1-adoption.md)保留當輪語境；
 兩支的採納／finding／完整tree與custody界線見[本輪紀錄](history/2026-10-10-n45-high23-adoption.md)。
 來源paper依BASE／外部Gallai，無新finite來源或Lean，其他cores／一般N2／E仍OPEN，傳播停止L2。

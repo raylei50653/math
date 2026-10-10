@@ -57,9 +57,7 @@ LOW1／LOW2 窮盡 **§1 精確 S 身份的 S-SHORT-U-LOW**，該限定身份已
 **N45-S-HIGH2／HIGH3 已排除：** 原 U 在 s 的 incidence／s-spokes 為(2,1)／(3,0)，
 各自完整契約與 X=M 保留；HIGH2 未用色構造限定三色列，HIGH3 接回 BASE no-spoke (3,2)。
 HIGH1–HIGH3 窮盡限定 HIGH；與 LOW 合成，**§1 精確 S 身份的兩 short 分支已全排**。
-**N45-S-LONG-R 已排除：** 完整U在降度側r、long L／short S全留、只刪原r-spoke，
-且X=M自身minimal的選定身份；pair／singleton都涵蓋，完整映射見§2.9。
-含long的其餘身份、其他45／54身份、原55、無45／54來源、一般 N2／E及ε≥3均仍 OPEN。
+含 long、其他45／54身份、原55、無45／54來源、一般 N2／E及ε≥3均仍 OPEN。
 
 ## 1. 全部共同前提與原身份
 
@@ -327,36 +325,15 @@ u≥1、t_s≥0，故(u,t_s)恰(1,2)、(2,1)、(3,0)。原r三mixed+兩spokes中
 故只關 **§1精確S身份的兩原mixed都short分支**；含long、其他省略／core身份、原55、
 無45／54來源、一般N2／E及ε≥3仍OPEN，沒有新增有限來源或Lean。
 
-### 2.9 N45-S-LONG-R：保留完整 U／long／short 的 sole C 排除
-
-在[含long同源契約K1–K12](../audits/2026-10-10-n45-s-long-contract/REPORT.md)全部前提內，
-另有原U owner=r。[SL-MAP-R完整報告](../audits/2026-10-10-n45-s-long-r-map/REPORT.md)
-核 actual C=X−s={r}∪U∪L∪S，全部有效C點完整degree4、s唯一degree5；
-原盾弧／star必要式給t_s≤2。完整unpinned-s C assignments保全部r色／空fibres，
-X自己同β minimal witnesses給精確F_C=Col−β(N_B(s))，不要求Σ(X)=933／941。
-整圖一次D5／S4搬運所有邊／contacts／rotation／full lifts，t_s=0/1/2各接回
-BASE sole-C五／四／三接點排除：t0用active forest奇偶，不借外hub；
-t1/t2用retained s-spoke及原boundary tethers給X的K₅。反證在X內，毋須先恢復e。
-三份只讀分工及父端核全部前提，涵蓋pair／singleton S與U incidence1/2。
-這只關 **完整U owner=r、一long L、一short S、只刪原r-spoke、X=M自身minimal**。
-紙面依既有BASE／外部Gallai；26省略的260列／4160根pins及250880 ambient r fibres
-只校準完整介面，拒絕來源not triggered；無新Lean或來源實現。
-U owner=s、無U的long／兩long及其他core／一般N2／E仍OPEN。
-
 ## 3. 精確 OPEN 與下一個窄分支
 
 §1指定整U省略身份已由§2.2全排；精確S身份的兩short分支已由§2.8全排。
 目前S殘留至少有一份原long mixed；既有S05只給原unary至多一份，不給long來源排除。
-已選取保留完整原U／long／short及spoke省略身份，核同源原支援／完整跨列joint；
+下一個窄入口先選取保留完整原U／long／short及spoke省略身份的同源原支援／完整跨列joint核對；
 此選定分支並非所有含long殘留的完整分類。
-2026-10-10已先交付[含long同源契約與必要化約](../audits/2026-10-10-n45-s-long-contract/REPORT.md)：
-保X=M自己minimal、完整U/L/S與原contacts／attachments／rotation，分開pair／singleton盾費，
-核十literal列／全16pins／空fibres及恢復e；原U/L支援另證X full B-touch、無U側至多兩spokes。
-19固定圖的完整joint／lifts只校準介面，選定來源仍not triggered。
-後續[U在r的實際sole C映射](../audits/2026-10-10-n45-s-long-r-map/REPORT.md)已逐前提接回
-BASE(5)/(4)/(3)，排除§2.9窄身份；選定分支剩U在s的actual C/U兩分量。
-下一步保完整C/U跨列joint及r fibres，核private-color covering與各t_s的來源映射／恢復e。
-不沿用整U刪除的未接框點／singleton forcing／圖類映射，不擴graph/k或重開已採分支。
+先從已有原盾弧費與zero-slack義務立契約，不擴graph/k或重開已採分支。
+這個殘留尚未派新worker；具體任務須保X=M自己minimal、原contacts／attachments／rotation、
+同一literal框、r/s全pins、完整relations／空fibres及恢復e條件，不能沿用整U刪除的圖類映射。
 其他45／54身份、原55、無45／54來源、一般N2／E及ε≥3均仍OPEN。
 
 ## 4. 證據、重播與保留失敗

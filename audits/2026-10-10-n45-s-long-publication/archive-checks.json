@@ -1,0 +1,54 @@
+{
+  "base": "0d76c4c887033e565eaa0ca4d2a515619d7c97f3",
+  "authorization": "user: commit + push",
+  "archive_command": "python3 -B tools/audit_archive.py append --repo <isolated selected-input repo>",
+  "archive_exit_code": 0,
+  "archive_stdout": "{\"appended_paths\": 3, \"new_blobs\": 3, \"new_manifest_artifact_blobs\": 0, \"appended_raw_bytes\": 100441362, \"new_compressed_bytes\": 1999113}\n",
+  "archive_stderr": "",
+  "scanned_scope": [
+    "2026-10-10-n45-s-long-contract",
+    "2026-10-10-n45-s-long-r-map"
+  ],
+  "old_archive_entries_unchanged": true,
+  "added_files": [
+    {
+      "path": "audits/2026-10-10-n45-s-long-contract/certificate-v2.json",
+      "sha256": "41c3b82ab4afdade42f70b722a2624a9d1a726a4af22f783a09ab32a099b4ed6",
+      "bytes": 20315838,
+      "blob": {
+        "path": "audits/.archive/blobs/41c3b82ab4afdade42f70b722a2624a9d1a726a4af22f783a09ab32a099b4ed6.gz",
+        "sha256": "c4426210780ceb37e53bed5d18f4e74bf4b4242e7818a7ff90bce968ea054221",
+        "bytes": 441943
+      },
+      "round_trip_exact": true
+    },
+    {
+      "path": "audits/2026-10-10-n45-s-long-contract/certificate.json",
+      "sha256": "80e800cdb9be02bedc82f2ebb6103f1db837bfce5b55ecd433d609814ce042d1",
+      "bytes": 20313695,
+      "blob": {
+        "path": "audits/.archive/blobs/80e800cdb9be02bedc82f2ebb6103f1db837bfce5b55ecd433d609814ce042d1.gz",
+        "sha256": "d9f23e19314436eadc338692e4e04a981410032e52b773136ee75a988d85e755",
+        "bytes": 441209
+      },
+      "round_trip_exact": true
+    },
+    {
+      "path": "audits/2026-10-10-n45-s-long-r-map/certificate.json",
+      "sha256": "6027ac2b7310ecfb2568d53198369be2e257afc1677d60abea921a95a422921e",
+      "bytes": 59811829,
+      "blob": {
+        "path": "audits/.archive/blobs/6027ac2b7310ecfb2568d53198369be2e257afc1677d60abea921a95a422921e.gz",
+        "sha256": "7d7e4a51a5090e1778813dcb0f75cbf309b93fe1e49b112149a1be7318d2650c",
+        "bytes": 1115961
+      },
+      "round_trip_exact": true
+    }
+  ],
+  "original_delivery_payloads_verified": {
+    "long-contract": 60,
+    "long-r-map": 40
+  },
+  "cache": "excluded from publication; retained locally as recorded by prior custody audit",
+  "note": "Original files retained byte-for-byte. No source exclusion or Lean result inferred from publication."
+}

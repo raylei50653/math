@@ -1,0 +1,41 @@
+{
+  "negative_checks": [
+    {
+      "name": "wrong C full assignment",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-r-map/checker.py",
+        "--check",
+        "--certificate",
+        "/tmp/n45-r-map-negative-hxkm33om/bad-c-lift.json"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-r-map/checker.py\", line 205, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-r-map/checker.py\", line 195, in main\n    need(args.certificate.read_bytes() == payload, 'certificate byte mismatch')\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-r-map/checker.py\", line 25, in need\n    raise ValueError(message)\nValueError: certificate byte mismatch\n",
+      "expected_rejection": "certificate byte mismatch"
+    },
+    {
+      "name": "exclusive-create existing canonical certificate",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-r-map/checker.py"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-r-map/checker.py\", line 205, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-r-map/checker.py\", line 197, in main\n    with args.certificate.open('xb') as f:\n         ~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-10-n45-s-long-r-map/certificate.json'\n",
+      "expected_rejection": "FileExistsError"
+    },
+    {
+      "name": "unlisted control JSON in isolated inventory",
+      "execution": "same audit() with isolated HERE, original ROOT; all frozen files symlinked read-only",
+      "result": "rejected",
+      "message": "fixed control inventory differs from manifest"
+    }
+  ],
+  "frozen_count": 29,
+  "frozen_drift": [],
+  "canonical_certificate_sha256_before_after": "6027ac2b7310ecfb2568d53198369be2e257afc1677d60abea921a95a422921e",
+  "prior_certificate_unchanged": true
+}

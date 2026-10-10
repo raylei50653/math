@@ -1,0 +1,47 @@
+{
+  "scope": "Commit/push packaging only; mathematical evidence is in two unchanged delivery receipts.",
+  "checks": [
+    {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 0,
+      "output": "OK: 597 Markdown files, 7258 local links; anchors, index, handoff checked\n"
+    },
+    {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "output": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "Independent compressed/raw archive and delivery-manifest verification",
+      "exit_code": 0,
+      "output": "PASS:3 archive additions; all previous records unchanged;3 compressed/raw matches;100 delivery payloads unchanged.\n"
+    },
+    {
+      "command": "git diff --cached --check",
+      "chunk_id": "b733de",
+      "wall_time_seconds": 1.8746e-05,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    },
+    {
+      "command": "Connected staging whitelist and exact delivery-payload verification",
+      "chunk_id": "aa8e81",
+      "wall_time_seconds": 0.21365507,
+      "exit_code": 0,
+      "original_token_count": 58,
+      "output": "{\"staged_files\": 111, \"exact_connected_whitelist\": true, \"all_100_payloads_staged_or_archived_exactly\": true, \"no_raw_large_certificates_or_cache_staged\": true, \"delivery_document_pins_match_except_exact_STATUS_history_line\": true}\n"
+    }
+  ],
+  "archive": "archive-checks.json",
+  "prior_publication_head": "0d76c4c887033e565eaa0ca4d2a515619d7c97f3",
+  "research_replays": "Both delivery checkers already passed normal/seed17 and negative tests; original code/payloads unchanged.",
+  "lean": "Previous successful lake build retained; no Lean files changed; build not rerun.",
+  "external_actions": "User authorized commit + push; final Git refs read back after push.",
+  "global_docgraph": "Not rerun; historical duplicate IDs not declared resolved."
+}
