@@ -1,0 +1,9 @@
+[
+  {
+    "artifact_created": false,
+    "attempt": 1,
+    "cause": "The source SHA serializer uses compact separators plus a trailing newline; checker initially used its pretty-print artifact serializer.",
+    "correction": "Global SHA comparisons now use the source compact JSON encoding. Local arrays, exterior arrays and independent joins already matched; no source data or artifact was overwritten.",
+    "error": "AssertionError while comparing independently recomputed global full lifts to frozen global SHA256"
+  }
+]

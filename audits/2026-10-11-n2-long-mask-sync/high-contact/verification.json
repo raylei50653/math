@@ -1,0 +1,35 @@
+{
+  "artifact": {
+    "bytes": 228606,
+    "sha256": "f91d8a12bdf4b4c07c2ff64b6c345f292942668ad00af224ab4b71cdaa7326b7"
+  },
+  "commands": [
+    {
+      "command": "python3 -B high-contact/checker.py --check",
+      "expected_exit_code": 0,
+      "chunk_id": "887a4e",
+      "wall_time_seconds": 0.012509166,
+      "exit_code": 0,
+      "original_token_count": 55,
+      "output": "{\"bytes\": 228606, \"counts\": {\"ambient_cells\": 320, \"empty_cells\": 40, \"local_controls\": 2, \"rows\": 20, \"target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"f91d8a12bdf4b4c07c2ff64b6c345f292942668ad00af224ab4b71cdaa7326b7\"}\n"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B high-contact/checker.py --check",
+      "expected_exit_code": 0,
+      "chunk_id": "de23c4",
+      "wall_time_seconds": 0.019203994,
+      "exit_code": 0,
+      "original_token_count": 55,
+      "output": "{\"bytes\": 228606, \"counts\": {\"ambient_cells\": 320, \"empty_cells\": 40, \"local_controls\": 2, \"rows\": 20, \"target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"f91d8a12bdf4b4c07c2ff64b6c345f292942668ad00af224ab4b71cdaa7326b7\"}\n"
+    },
+    {
+      "command": "python3 -B high-contact/checker.py --check --artifact high-contact/observations_corrupted_negative.json",
+      "expected_exit_code": 1,
+      "chunk_id": "f82e92",
+      "wall_time_seconds": 0.016865529,
+      "exit_code": 1,
+      "original_token_count": 110,
+      "output": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-11-n2-long-mask-sync/high-contact/checker.py\", line 186, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-11-n2-long-mask-sync/high-contact/checker.py\", line 179, in main\n    assert args.artifact.read_bytes() == data, 'artifact mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: artifact mismatch\n"
+    }
+  ]
+}

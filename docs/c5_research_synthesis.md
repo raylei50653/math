@@ -502,7 +502,17 @@ Q=∅ 則平凡包含於任意三點弧。
 spoke45／54，每條非框邊刪除全收；所有拒絕列只能以有效原G自己作55 core。
 Roots亦至多接兩個相鄰框點。[原55大小界](c5_excess_two_arc_size_bound.md)進一步證H為中央block
 加至多兩個root葉blocks，內度二點至多五個，cactus計數給有效`|H|≤35−6u−3t`。
-原55界內共同矛盾、N2或E-ARC2仍未完成；目標來源有限控制未觸發，未搜尋10–35內點。
+後續[N2九格統一](c5_excess_two_n2_residual_unification.md)抽出原55逐欄容量為1，
+以共同三-hub排有U或spoke時的singleton mixed，進而排两unary原55、得u≤1。
+再續[三列diagonal獨立採納](c5_excess_two_n2_diagonal_three_row.md)：原unary三列出口及
+同列兩short完整lifts已排(0,1)原55，九格七格已有覆蓋。共享接點及低接點long
+另排限定子域。再續[long同步與tree化約](c5_excess_two_n2_long_synchrony.md)排兩long
+都k≤3、一long無U的全葉接點tree（任意k）、含U低接點Eq／Diff異類同步；
+同類剩七個必要弧模板，k4 path局部全拒反控制保留。九格仍七格；其餘含long
+父情形的同列joint及父N2／E-ARC2仍OPEN，未Lean化。
+大小上界保留鬆弛為H點數=35−6u−3t−Δ；既有有限下界10無直接衝突，
+仍須證足夠Δ或同列完整joint。原55、N2及E-ARC2仍OPEN，
+不能借未證三點弧取得本子域缺條件；目標來源有限控制未觸發，未搜尋10–35內點。
 既有三列集合化約及這兩張原圖控制可重播：
 `uv run --with networkx==3.5 python -B scripts/c5_excess_two_e3_foundation.py --check`。
 本輪一般及 `PYTHONHASHSEED=17` 重播均通過，輸出 hash 相同；另獨立核對全部 32 個 Q，

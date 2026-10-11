@@ -1,6 +1,6 @@
 # Kempe／重接／計數與策略導覽
 
-更新：2026-10-11（E-ARC2 完整N2的45／54全排，原55有效內點≤35；保留 BR-SD-1g scoped 採納）。本頁維護本線現況；證明及實際重播範圍見各報告。
+更新：2026-10-11（N2原55新增兩低接點long／葉接點tree排除及Eq-Diff同步化約；九格仍七格、父情形及E-ARC2 OPEN）。本頁維護本線現況；證明及實際重播範圍見各報告。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
 
@@ -49,6 +49,9 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 | Cut／behavior | retained-component 重建有 Lean 支援；粗 cut 摘要有反例，有界 behavior 控制不證多步充分性 | [cut](c5_cut_interfaces.md)、[behavior](c5_behavior_refinement_results.md)、[state 導覽](c5_state_guide.md) |
 | 固定圖策略與 repair | survivor-811 固定閉包、必要低谷／回升與 B₂ 準備已保存；一般 K=4 策略、共同安全 repair 機制未證 | [barriers](c5_strategy_barriers.md)、[repair](c5_repair_interface.md) |
 | 閉環一致／零邊修復猜想 | 固定可延拓 C₅ 邊界，猜想任意 flat 標記可經內部 cut XOR、零邊數不增而修復；容許持平步，未初驗，不推出邊界可延拓或其他來源排除。驗證需完整不增轉移圖，不能只找一步下降 | [猜想 Z 與驗證計畫](c5_forcing_transport_conjectures.md)、[State 導覽](c5_state_guide.md) |
+| N2原55共同引理與下界衝突檢查 | 原55每欄Dᵘ+δ+o+λ=1，singleton mixed迫u=t=0，兩unary子族已排；後續一U兩short採納使九格七格有覆蓋。精確式H點數=35−6u−3t−Δ，有限下界10不與原上界直接衝突；含long三情形的joint／Δ門檻未證，原55及E-ARC2 OPEN | [九格、共同證明及缺条件](c5_excess_two_n2_residual_unification.md) |
+| N2三列diagonal採納及long限定縮減 | unary接線2／3的無界block-tree證明及同列完整lifts經另人採納，排(0,1)，第三relation族原55全排。shared contact迫所有同色pins全接回；long接點總數≤3有一指定列(D,D)出口，排一long無U的該子域。含long三情形仍OPEN；97U及63整圖完整joins獨立重算，target not triggered，無新Lean | [採納、完整證明及殘餘](c5_excess_two_n2_diagonal_three_row.md) |
+| N2 long同步與葉接點tree | 兩long都k≤3全排；一long無U的全葉接點tree任意k排除；含U低接點mask精確Eq／Diff，異類同列接回，同類縮七個必要弧模板。k4 path局部全拒diagonal反控制保留，父情形／E-ARC2仍OPEN，無新Lean | [新證明、獨立採納及完整fibres](c5_excess_two_n2_long_synchrony.md) |
 
 ## 3. 停止點與保留缺口
 
@@ -70,7 +73,17 @@ E3＋D₈ 已排唯一 degree-6，故證明工作集中於雙 degree-5；下列 
 後續[原55大小界](c5_excess_two_arc_size_bound.md)已證H是中央block加至多兩個root葉blocks，
 全H內度二點至多五個，所有原C為bridges／奇環cactus，且`|H|≤35−6u−3t`。
 u=0／1／2時至多35／29／23內點；這是原圖必要界，尚未排除界內來源。
-下一窄義務用中央block及原mixed完整relations取得共同矛盾或進一步收窄；未搜尋10–35內點。
+後續[N2殘餘統一](c5_excess_two_n2_residual_unification.md)以共同三-hub排兩unary，故u≤1；
+singleton mixed只能在u=t=0。原55每欄仍有一單位容量；精確大小式保留Δ，
+已知有限下界10沒有直接衝突。下一窄義務只處理含long的三個參數情形，
+取得同列完整joint或證Δ≥26−6u−3t；未搜尋10–35內點。
+其中(0,1)已由[三列diagonal獨立採納](c5_excess_two_n2_diagonal_three_row.md)排除，
+現剩(2,0)、(1,0)、(1,1)。[long同步新化約](c5_excess_two_n2_long_synchrony.md)
+另排兩long都k≤3，以及一long無U的全葉接點tree（任意k）。含U的低接點long
+與U非空mask若分屬Eq／Diff亦排除；同類剩七個字面弧模板。下一窄義務以原
+ownership／root度數／實際spokes排這七個模板，或處理含cutpoint接點／cycle的
+k≥4 long完整joint。四接點path局部三列全拒反控制已保留，不能直接外推escape。
+其餘仍須同一列接回全部pieces，不能把不同列的lifts拼接。
 SD-A只有單缺額，不能直接用於這份双degree5原G。N1、相鄰及單-root例外仍各保留。
 目前仍缺同一來源的完整跨列 joint 矛盾，未取得整個 E-ARC2 的來源排除；
 N2外45／54、原55及單-root例外不因此改為 CLOSED。

@@ -1,0 +1,193 @@
+{
+  "candidate_scope": "u=1 unary k=2 or 3 has a D escape among q0,q1,q3; (ell,u)=(0,1) exclusion if adopted",
+  "checks": [
+    {
+      "cmd": "python3 -B audits/2026-10-11-n2-unary-three-row-escape/checker.py --check > audits/2026-10-11-n2-unary-three-row-escape/replay-normal.log 2>&1",
+      "expected_exit": 0,
+      "name": "normal",
+      "result": {
+        "chunk_id": "455b57",
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": "",
+        "wall_time_seconds": 0.164246779
+      }
+    },
+    {
+      "cmd": "PYTHONHASHSEED=17 python3 -B audits/2026-10-11-n2-unary-three-row-escape/checker.py --check > audits/2026-10-11-n2-unary-three-row-escape/replay-seed17.log 2>&1",
+      "expected_exit": 0,
+      "name": "seed17",
+      "result": {
+        "chunk_id": "d08abf",
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": "",
+        "wall_time_seconds": 0.144284827
+      }
+    },
+    {
+      "cmd": "python3 -B audits/2026-10-11-n2-unary-three-row-escape/checker.py --check --output audits/2026-10-11-n2-unary-three-row-escape/observations_corrupt_negative.json > audits/2026-10-11-n2-unary-three-row-escape/replay-corrupt-negative.log 2>&1",
+      "expected_exit": 1,
+      "name": "corrupt_negative",
+      "result": {
+        "chunk_id": "a84824",
+        "exit_code": 1,
+        "original_token_count": 0,
+        "output": "",
+        "wall_time_seconds": 0.145261387
+      }
+    },
+    {
+      "cmd": "lake build > audits/2026-10-11-n2-unary-three-row-escape/lake-build.log 2>&1",
+      "expected_exit": 0,
+      "name": "lake_build",
+      "result": {
+        "chunk_id": "6112bb",
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": "",
+        "wall_time_seconds": 1.0931e-05
+      }
+    },
+    {
+      "cmd": "git diff --check > audits/2026-10-11-n2-unary-three-row-escape/git-diff-check-final.log 2>&1",
+      "expected_exit": 0,
+      "name": "git_diff_check",
+      "result": {
+        "chunk_id": "416f75",
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": "",
+        "wall_time_seconds": 1.0811e-05
+      }
+    },
+    {
+      "cmd": "python3 -B scripts/check_docs.py > audits/2026-10-11-n2-unary-three-row-escape/check-docs-final.log 2>&1",
+      "expected_exit": 0,
+      "name": "check_docs",
+      "result": {
+        "chunk_id": "7c69d2",
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": "",
+        "wall_time_seconds": 0.474968468
+      }
+    },
+    {
+      "cmd": "python3 -B tools/docgraph --include 'docs/**/*.md' check > audits/2026-10-11-n2-unary-three-row-escape/docgraph-formal-docs-final.log 2>&1",
+      "expected_exit": 0,
+      "name": "docgraph_formal_docs",
+      "result": {
+        "chunk_id": "f7f3e5",
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": "",
+        "wall_time_seconds": 2.1752e-05
+      }
+    }
+  ],
+  "commit_push": "not performed",
+  "counts": {
+    "ambient_pin_cells": 15520,
+    "central_triangle_feasible_triples": 0,
+    "distinct_edge_triples": 10,
+    "empty_cells": 2048,
+    "fixed_original_unaries": 97,
+    "full_fibre_rows": 970,
+    "local_lemma_not_triggered": 55,
+    "local_lemma_triggered_and_holds": 42,
+    "named_local_controls": 3,
+    "ordered_edge_pairs": 25,
+    "rowwise_distinct_edge_pairs": 4,
+    "target_source_triggered": 0
+  },
+  "current_head": "5f0979793c19e452dbb5fc7e9fe7e43cb8a991cc",
+  "document_patch_first_failure": "Invalid hunk prefix; no file written; corrected add-file patch succeeded",
+  "generation_first_failure": "Retained generation.log; upstream block records needed their vertices field; no artifact written",
+  "input_hashes_unchanged": {
+    "artifacts/c5_excess_two_arc_component_slack/observations.json": "e57dd4e28b1029fb53fd740da3aa79378c67fe4a336ee146dd9fda2a49105d20",
+    "artifacts/c5_excess_two_arc_leaf_blocks/observations.json": "b048d567e287807c8eaafa5aeb17a229457ed9cac1a93c5bcdb802b17c7b206b",
+    "artifacts/c5_excess_two_arc_size_bound/observations.json": "a63e2bd7ef6c32c6f983b54064371cba3d46e20c32e78e222d3a335d59c46291",
+    "audits/2026-10-11-n2-residual-unification/arc-gap/capacity_controls.json": "a2e379f7f3676310a56ebcbfecf50fca7314dac17343a8c72ebf65bace0e651f",
+    "audits/2026-10-11-n2-residual-unification/bounds/observations.json": "156117b8a3178fc9972311d7d84c7e990bc7d8a91c510b309f5bbff703ca7e00"
+  },
+  "logs": {
+    "check-docs-final.log": {
+      "bytes": 74,
+      "sha256": "08781312e4a5109adb53df13237261c9392f6fa26c734b2f0331819c685055b4"
+    },
+    "check-docs.log": {
+      "bytes": 74,
+      "sha256": "08781312e4a5109adb53df13237261c9392f6fa26c734b2f0331819c685055b4"
+    },
+    "docgraph-formal-docs-final.log": {
+      "bytes": 63,
+      "sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb"
+    },
+    "docgraph-formal-docs.log": {
+      "bytes": 63,
+      "sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb"
+    },
+    "generation-v2.log": {
+      "bytes": 474,
+      "sha256": "d71860d6b6bfb228ee80ca9d4f85944d262baced002fbf66ce713aab6909203f"
+    },
+    "generation.log": {
+      "bytes": 515,
+      "sha256": "ad46d806236e51db923e891be2e1debbdf4a2583c01e997bf4e556cf61f0db2a"
+    },
+    "git-diff-check-final.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "git-diff-check.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "lake-build.log": {
+      "bytes": 7494,
+      "sha256": "2103291d39ceb734f800128950d507eded343e0e0678cc7e96414c1cc372b250"
+    },
+    "replay-corrupt-negative.log": {
+      "bytes": 424,
+      "sha256": "29412eb223a889223063af140814a97cc7e41f2e45e195c09c24c97fab51ecd2"
+    },
+    "replay-normal.log": {
+      "bytes": 473,
+      "sha256": "b9537b8c72dcf26e91c66c38b43a309df21fdb9fbde6ed9f1fa3bea96523cb75"
+    },
+    "replay-seed17.log": {
+      "bytes": 473,
+      "sha256": "b9537b8c72dcf26e91c66c38b43a309df21fdb9fbde6ed9f1fa3bea96523cb75"
+    }
+  },
+  "main_artifact": {
+    "bytes": 3502598,
+    "path": "audits/2026-10-11-n2-unary-three-row-escape/observations.json",
+    "sha256": "e3ff41e50a5c35de2f2ae021caab93d187f2a349a504dd096f507869e1c9f836"
+  },
+  "not_replayed": [
+    "original source graph search",
+    "ES/ER generation",
+    "original disk rotations",
+    "upstream 44/N45/SD-A classifications",
+    "whole-worktree DocGraph"
+  ],
+  "open_remaining_after_adoption": [
+    "(2,0)",
+    "(1,0)",
+    "(1,1)",
+    "original 55",
+    "N2",
+    "E-ARC2"
+  ],
+  "paper_adoption": "not independently reviewed; author case and quantifier review only",
+  "review_files": {
+    "audits/2026-10-11-n2-unary-three-row-escape/AUTHOR_REVIEW.md": "19752ee5ede49811f73ce2a0b99a8f6a0c9277b4a5b527376fb92b6d3a75ef22",
+    "audits/2026-10-11-n2-unary-three-row-escape/REPORT.md": "2c3f6301b23d0cd5b49938cdf7d3357dbb3bb5412b6b6fbbf49620b5dc6cf25c",
+    "audits/2026-10-11-n2-unary-three-row-escape/checker.py": "562aeea156e87d7f43de1eef59292b16b0b2fccfc0ca7387cf281477a3d1dd52",
+    "docs/c5_excess_two_n2_unary_three_row_escape.md": "22de118dc9b9cc3b602a4ebfc0a2af0d3ae2236627e7c15fd354d0d300937f5d"
+  },
+  "target_source_status": "not triggered",
+  "worktree_status": " M docs/STATUS.md\n M docs/c5_excess_two_arc_size_bound.md\n M docs/c5_excess_two_nonadjacent_unit_core45.md\n M docs/c5_kempe_guide.md\n M docs/c5_research_synthesis.md\n?? audits/2026-10-11-n2-residual-unification/\n?? audits/2026-10-11-n2-unary-three-row-escape/\n?? docs/c5_excess_two_n2_residual_unification.md\n?? docs/c5_excess_two_n2_unary_three_row_escape.md\n"
+}

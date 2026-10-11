@@ -1,6 +1,6 @@
 # N45：非相鄰 N2 原 unit 省略的 45／54 身份
 
-更新：2026-10-11（§2.14 完整N2契約的45／54全排，§2.15原55至多35有效內點；保留歷次限定採納與證據）；
+更新：2026-10-11（完整N2的45／54全排；§2.17一U兩short原55已採納，後續long同步／tree限定排除；含long父情形及E-ARC2 OPEN）；
 原研究 BASE `dc8e9aa7d6fccb51f63d30aa3f9c132296d44744`，既有 N45 驗收 BASE
 `f2692089ad4259808e27d9b7e882ac09505b180a`；BR-SD-1b 採納基準為
 `fc3d3d8b4c5b8e6378268edb5cd3f04b50940b5a`；BR-SD-1d 採納基準為
@@ -769,6 +769,39 @@ S與U兩個原省略身份均全排；§2.13又已證每個N2真core必為S，�
 新紙面必要條件尚未另作封存採納或Lean化；63固定圖及570份具名minors不含目標來源。
 沒有把至多35點寫成來源排除，亦未擴大ES／ER來源搜尋。
 
+### 2.16 原55共同容量、singleton hub排除與上下界
+
+[N2九格統一報告](c5_excess_two_n2_residual_unification.md)對回三族乘三core層：
+原輪六格真core已有覆蓋；後續§2.17排第三族原55，現七格已有覆蓋。
+另兩族原55及其三個含long參數情形仍OPEN。每列每欄的原55容量統一為
+`Dᵘ+δ+o+λ=1`，Oᵘ=0；不能沿用45降度側的零容量。
+共同三-hub引理排有unary或root-spoke時的singleton mixed，故singleton迫u=t=0。
+两unary時兩short都須為pair，盾弧6>5，獨立核對後排此原55子族，得u≤1。
+一U／一long／一short的實際盾弧恰2+2+1，仍只為必要模板。
+
+原大小界保全部cactus鬆弛為`|H|=35−6u−3t−Δ`；既有ES／ER有限覆蓋給反例
+有效內點至少10，原u/t域的上界仍不低於20，故無直接大小矛盾。
+条件Δ≥26−6u−3t才与有限下界衝突；仍缺一般來源必達該門檻或三列joint不能皆空。
+新結果是紙面推導與獨立核對，局部算術控制非來源排除，沒有新Lean或10–35點搜尋。
+
+### 2.17 一U兩short的三列D escape採納與限定long化約
+
+[新候選](c5_excess_two_n2_unary_three_row_escape.md)由完整原degree5及兩mixed正incidence
+先得原U恰2或3條owner接線；用原Gallai palettes、leaf-block私有contacts、
+H內度二附件單射及三列字面signatures，完整覆蓋任意大小的單block／兩leaf／三leaf，
+推出同一U至少在q₀/q₁/q₃之一允許owner=D。
+後續[獨立採納與diagonal報告](c5_excess_two_n2_diagonal_three_row.md)已核對無界case split，
+以兩short該同一列的完整(D,D) lifts排(ℓ,u)=(0,1)，與u=2合成第三族原55全排。
+另證原mixed共享接點使全部同色pins可接回；原long接點總數≤3有一指定列完整出口。
+因此一long無U的共享／低接點子域已排，含U的共享long亦排；其餘同列同步仍缺。
+97原U全fibres及63原整圖joins經獨立重算一致，42局部前提triggered and holds；
+target not triggered，沒有新來源或Lean。原55全族／N2／E-ARC2仍OPEN。
+
+**後續 long 推進**：[同列同步與葉接點 tree](c5_excess_two_n2_long_synchrony.md)
+另排兩 long 都 k≤3、無 U 的全葉接點 tree long（任意k），以及含 U 低接點
+Eq／Diff 異類 masks。非空同類只剩七個必要字面弧模板。完整 fibres／joins
+重播與紙面獨立採納分層；四接點 path 三列全拒的局部反控制保留，父族仍 OPEN。
+
 ## 3. 精確 OPEN 與下一個窄分支
 
 **完整§1的45／54真core身份已全排；N2本身仍OPEN。**
@@ -776,20 +809,23 @@ S與U兩個原省略身份均全排；§2.13又已證每個N2真core必為S，�
 所有拒絕列只能以原G自己作55 minimal core（忽略自由孤立因子），
 每條原非框邊刪除全收，連roots在內每點至多接兩個相鄰框點。
 H為中央block加至多兩個root葉blocks；無U時二連通，含U時不宣稱整H二連通。
-每份U原incidence至少2；全H內度二點至多五個，且`|H|≤35−6u−3t`。
+每份U原incidence至少2；§2.16進一步給u≤1，singleton mixed必有u=t=0。
+全H內度二點至多五個，且`|H|=35−6u−3t−Δ`，Δ≥0。
 
 | 來源身份／義務 | 目前狀態 |
 | --- | --- |
 | §1 exact-U及exact-S；完整N2目標契約的全部45／54真cores | 紙面排除完成；既有採納＋§2.14新共同證明，未Lean化 |
 | N45-S-NOU-LS-PAIR、無U兩long及其原split／旁支子型 | 作為§1 exact-S均由§2.14涵蓋；不再以一般非二連通形狀列為此域存活理由 |
 | BR-SD-1a／1c／1e／1g、雙色唯一缺口 | 原限定採納／任意大小共同引理保留；封存bytes及當時OPEN語境不改 |
-| 原55，沒有45／54的N2來源 | OPEN；有效內點≤35（更精確35−6u−3t），每個拒絕列同以G作minimal core；界內完整跨列共同矛盾未證 |
+| 原55，沒有45／54的N2來源 | OPEN；u≤1、有效內點≤35，(0,1)及限定long子域由§2.17排；剩(2,0)/(1,0)/(1,1)的同列joint或Δ門檻未證 |
 | N1、相鄰、單-root例外及N2契約外其他45／54 | 本輪未涵蓋 |
 | 一般degree5／R31任意長來源minor | OPEN；本輪N2排除不補該一般minor路線 |
 | 一般N2／E-ARC2、一般單側／共同出口、主命題及K∞=K≤5 | OPEN |
 
-下一個窄義務是在中央block／至多五個內度二點與完整mixed relations下推原55共同矛盾，
-或把大小界進一步收窄；未搜尋10–35內點，不能把SD-A直接套到雙degree5的G。
+下一個窄義務見[long同步報告§5](c5_excess_two_n2_long_synchrony.md#5-新反控制與父情形停止點)
+的三個含long父情形：兩long至少一份k≥4；一long無U須有cycle或cutpoint接root；
+含U低接點剩七個同類弧模板，更高接點保留。仍須同列完整joint或足夠Δ門檻。
+未搜尋10–35內點，不能把SD-A直接套到雙degree5的G，亦不能先假設三點弧取得缺條件。
 §2.11的歷史block-chain缺口及B適用性表不再是本頁完整N2 exact-S的存活清單；
 它們在一般degree5／其他來源合同中的方法義務仍由
 [degree-5導覽](c5_degree5_guide.md#4-r31-保留缺口與重播入口)維護。

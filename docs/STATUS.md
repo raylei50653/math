@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-11（E-ARC2 完整N2的45／54全排，原55已證至多35有效內點但仍OPEN；保留 BR-SD-1g 精確採納）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-11（N2原55新增兩低接點long／葉接點tree排除及含U的Eq-Diff同步化約；九格仍七格、含long父情形及E-ARC2 OPEN）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -328,6 +328,10 @@
 | [E-ARC2 原分量共同重色限制與N2必留分量](c5_excess_two_arc_component_slack.md) | 同一原分量重色至多涉及一個拒絕列；完整N2前提接已採納N45-U後，所有分量邊刪除全收、非root框附件至多相鄰兩點、真core只省一條root-spoke。63固定圖、179分量、13,010完整外部投影與208,160 ambient pins核對；目標0觸發。後續spoke報告排完整N2的45／54，原55及E-ARC2仍OPEN，紙面＋Python，未Lean化 |
 | [E-ARC2 末端block與N2全部真核心排除](c5_excess_two_arc_spoke_closure.md) | 原leaf block必有私有root接點；無U則H二連通，同H兩次SD-A排全部spoke45／54，含U由完整既有契約覆蓋。完整N2每條非框邊刪除全收、roots亦至多接相鄰兩框點，只剩原55。63圖／28,640完整pins cells校準，目標0觸發；外部定理＋紙面，未Lean化，N2／E-ARC2 OPEN |
 | [E-ARC2 原55的block骨架與35內點上界](c5_excess_two_arc_size_bound.md) | 完整N2的H為中央block加至多兩個root葉blocks；K₅／K₃,₃迫全H內度二點≤5，原C為奇環／bridge cactus，紙面得有效內點≤35−6u−3t。480／90 minors、58具名cacti及63原圖結構控制，目標0觸發；未搜尋10–35點、未Lean化，原55／N2／E-ARC2仍OPEN |
+| [N2九格殘餘統一與原55下界衝突](c5_excess_two_n2_residual_unification.md) | 原55每欄容量為1，singleton mixed只能u=t=0，兩unary已排，u≤1。後續一U兩short採納使九格七格覆蓋；含long三情形及joint／Δ門檻仍缺。精確式H點數=35−6u−3t−Δ與有限下界10無直接衝突，原55／N2／E-ARC2 OPEN，未Lean化 |
+| [N2原55：unary三列未用色出口與兩short排除候選](c5_excess_two_n2_unary_three_row_escape.md) | 原無界block-tree候選現由下列獨立審查採納，完整(ℓ,u)=(0,1)原55子族已排；本頁保留作者當輪候選語境。97原U／15,520 cells與42局部觸發另經獨立重算，target not triggered；含long三情形及父N2／E-ARC2 OPEN |
+| [N2原55：unary三列出口採納與低接點long化約](c5_excess_two_n2_diagonal_three_row.md) | 另人紙面採納(0,1)來源排除；shared contact接受所有同色pins，long接線總數≤3有一指定列完整(D,D)出口，排一long無U低接點子域及指定shared子域。九格七格覆蓋，含long三情形同步仍OPEN；97U完整fibres及63圖完整joins獨立一致，target not triggered，無新Lean |
+| [N2原55：long同列同步與葉接點tree化約](c5_excess_two_n2_long_synchrony.md) | 兩long都k≤3由原相同spoke邊K₅排除；無U的long tree若所有root contacts為C葉則任意k排除；含U低接點非空mask恰Eq／Diff，異類同列排除，同類剩七個必要弧模板。九格仍七格；28,640原local cells及10,080同圖joins重算相符，k4 path反控制保留，target not triggered，無新Lean，父N2／E-ARC2 OPEN |
 | [C₅ 全線進展與高階假設](c5_research_synthesis.md) | §8.1 完整 E 與 E-ARC2 等價；新增真子圖單拒絕必要條件，ε=2 三點弧仍 OPEN；Q=B／932 另屬較強版本。八線證據及歷史快照保留；兩-root44已限定排除，不推升 E／H2／H3，不替代導覽排程 |
 | [C₅ 跨線結果對照與共通語言](c5_common_language.md) | 五欄代表成果對照；統一完整介面、兩種臨界性、結論類型與共用引理叫法；保留原來源、框族及操作義務；文件整理，無新定理或數學重播 |
 | [Phase B 共通引理候選分析](c5_phase_b_common_lemmas.md) | 三組候選與前提／反例／義務／效益；抽出原圖盾弧收費、推得任意两自由roots的條件容量恆等式、區分密封與動態充分性；兩非平面q-critical容量負控制及小型重播，未新增45／54／55排除或ε≥3下界 |
@@ -472,6 +476,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-11：N2原55殘餘、unary採納與long同步整理發布](history/2026-10-11-n2-55-progress-publish.md)；九格七格覆蓋、三項限定long排除及七個必要弧模板，四輪audit／完整fibres／負控制相連提交；target not triggered，原55父情形及E-ARC2 OPEN、未Lean化
 - [2026-10-11：三點弧研究與完整N2的原55大小界整理發布](history/2026-10-11-three-point-arc-publish.md)；四份紙面報告／checkers／固定控制相連提交，完整N2的45／54全排、原55有效內點≤35；目標來源not triggered，E-ARC2仍OPEN
 - [2026-10-11：雙色唯一缺口的 bridge 路徑證明與 BR 共同接入](history/2026-10-11-two-color-single-gap.md)；一般計數式、出口葉修正、四份原合同映射及真正 residual；紙面＋外部 Gallai，無新來源／Lean，父 OPEN，傳播停 L2，本地 commit
 - [2026-10-11：BR-SD-1g 雙原旁支／J2屏障精確採納與 publication custody](history/2026-10-11-br-sd-1g-adoption.md)；完整八項來源合同、獨立最終bytes審查與封存，父OPEN、actual source not triggered、無新Lean、完整OPEN新增無條件關閉0；HANDOFF與上游consumer reviewed-unchanged，傳播停L2

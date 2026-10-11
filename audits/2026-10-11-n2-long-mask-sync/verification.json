@@ -1,0 +1,364 @@
+{
+  "status": "passed",
+  "head": "5f0979793c19e452dbb5fc7e9fe7e43cb8a991cc",
+  "checks": {
+    "controls-normal": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n2-long-mask-sync/controls/checker.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "elapsed_seconds": 1.172,
+      "stdout_log": "logs/controls-normal.stdout.log",
+      "stderr_log": "logs/controls-normal.stderr.log",
+      "replay_summary": {
+        "bytes": 23818946,
+        "counts": {
+          "all_160_cell_motif_exemplars": 45,
+          "bounded_disjoint_arc_signature_pairs": 810,
+          "bounded_exact_arc_attachment_controls": 800,
+          "bounded_pairs_without_common_diagonal_row": 56,
+          "complete_local_ordered_pin_cells": 28640,
+          "complete_local_rows": 1790,
+          "complete_outside_checks": 1790,
+          "complete_target_sources": 0,
+          "empty_local_cells": 3372,
+          "frozen_components": 179,
+          "frozen_graphs": 63,
+          "long_mixed_pieces": 37,
+          "long_support_at_least_three_k_at_most_three": 0,
+          "named_fixed_motifs": 7,
+          "same_graph_join_cells": 10080,
+          "shared_contact_long_mixed": 34,
+          "two_long_mixed_same_graph_controls": 0
+        },
+        "mode": "check",
+        "sha256": "da41436e3441d705dd41d0363be996d9834124cf71c3f5792f635119d4f23468"
+      }
+    },
+    "controls-seed17": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n2-long-mask-sync/controls/checker.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": "17",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "elapsed_seconds": 1.177,
+      "stdout_log": "logs/controls-seed17.stdout.log",
+      "stderr_log": "logs/controls-seed17.stderr.log",
+      "replay_summary": {
+        "bytes": 23818946,
+        "counts": {
+          "all_160_cell_motif_exemplars": 45,
+          "bounded_disjoint_arc_signature_pairs": 810,
+          "bounded_exact_arc_attachment_controls": 800,
+          "bounded_pairs_without_common_diagonal_row": 56,
+          "complete_local_ordered_pin_cells": 28640,
+          "complete_local_rows": 1790,
+          "complete_outside_checks": 1790,
+          "complete_target_sources": 0,
+          "empty_local_cells": 3372,
+          "frozen_components": 179,
+          "frozen_graphs": 63,
+          "long_mixed_pieces": 37,
+          "long_support_at_least_three_k_at_most_three": 0,
+          "named_fixed_motifs": 7,
+          "same_graph_join_cells": 10080,
+          "shared_contact_long_mixed": 34,
+          "two_long_mixed_same_graph_controls": 0
+        },
+        "mode": "check",
+        "sha256": "da41436e3441d705dd41d0363be996d9834124cf71c3f5792f635119d4f23468"
+      }
+    },
+    "controls-negative": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n2-long-mask-sync/controls/checker.py",
+        "--check",
+        "--artifact",
+        "audits/2026-10-11-n2-long-mask-sync/controls/observations.corrupt.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "elapsed_seconds": 1.101,
+      "stdout_log": "logs/controls-negative.stdout.log",
+      "stderr_log": "logs/controls-negative.stderr.log"
+    },
+    "high-contact-normal": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n2-long-mask-sync/high-contact/checker.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "elapsed_seconds": 0.156,
+      "stdout_log": "logs/high-contact-normal.stdout.log",
+      "stderr_log": "logs/high-contact-normal.stderr.log",
+      "replay_summary": {
+        "bytes": 228606,
+        "counts": {
+          "ambient_cells": 320,
+          "empty_cells": 40,
+          "local_controls": 2,
+          "rows": 20,
+          "target_sources": 0
+        },
+        "mode": "check",
+        "sha256": "f91d8a12bdf4b4c07c2ff64b6c345f292942668ad00af224ab4b71cdaa7326b7"
+      }
+    },
+    "high-contact-seed17": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n2-long-mask-sync/high-contact/checker.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": "17",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "elapsed_seconds": 0.125,
+      "stdout_log": "logs/high-contact-seed17.stdout.log",
+      "stderr_log": "logs/high-contact-seed17.stderr.log",
+      "replay_summary": {
+        "bytes": 228606,
+        "counts": {
+          "ambient_cells": 320,
+          "empty_cells": 40,
+          "local_controls": 2,
+          "rows": 20,
+          "target_sources": 0
+        },
+        "mode": "check",
+        "sha256": "f91d8a12bdf4b4c07c2ff64b6c345f292942668ad00af224ab4b71cdaa7326b7"
+      }
+    },
+    "high-contact-negative": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n2-long-mask-sync/high-contact/checker.py",
+        "--check",
+        "--artifact",
+        "audits/2026-10-11-n2-long-mask-sync/high-contact/observations_corrupted_negative.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "elapsed_seconds": 0.183,
+      "stdout_log": "logs/high-contact-negative.stdout.log",
+      "stderr_log": "logs/high-contact-negative.stderr.log"
+    },
+    "synchrony-normal": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n2-long-mask-sync/synchrony/signatures.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "elapsed_seconds": 0.042,
+      "stdout_log": "logs/synchrony-normal.stdout.log",
+      "stderr_log": "logs/synchrony-normal.stderr.log",
+      "replay_summary": {
+        "check": true,
+        "bytes": 9026,
+        "sha256": "a41e0bc9afb5c20c70336321917065cbc1e37dd8998244d1f937f6562e5b03c5"
+      }
+    },
+    "synchrony-seed17": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n2-long-mask-sync/synchrony/signatures.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": "17",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "elapsed_seconds": 0.045,
+      "stdout_log": "logs/synchrony-seed17.stdout.log",
+      "stderr_log": "logs/synchrony-seed17.stderr.log",
+      "replay_summary": {
+        "check": true,
+        "bytes": 9026,
+        "sha256": "a41e0bc9afb5c20c70336321917065cbc1e37dd8998244d1f937f6562e5b03c5"
+      }
+    },
+    "synchrony-negative": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n2-long-mask-sync/synchrony/signatures.py",
+        "--check",
+        "--artifact",
+        "audits/2026-10-11-n2-long-mask-sync/synchrony/negative_corrupted.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "elapsed_seconds": 0.047,
+      "stdout_log": "logs/synchrony-negative.stdout.log",
+      "stderr_log": "logs/synchrony-negative.stderr.log"
+    },
+    "check-docs": {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "elapsed_seconds": 0.64,
+      "stdout_log": "logs/check-docs.stdout.log",
+      "stderr_log": "logs/check-docs.stderr.log"
+    },
+    "docgraph-formal": {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "elapsed_seconds": 0.091,
+      "stdout_log": "logs/docgraph-formal.stdout.log",
+      "stderr_log": "logs/docgraph-formal.stderr.log"
+    },
+    "lake-build": {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "elapsed_seconds": 9.489,
+      "stdout_log": "logs/lake-build.stdout.log",
+      "stderr_log": "logs/lake-build.stderr.log"
+    },
+    "diff-check": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "elapsed_seconds": 0.011,
+      "stdout_log": "logs/diff-check.stdout.log",
+      "stderr_log": "logs/diff-check.stderr.log"
+    }
+  },
+  "frozen_inputs": [
+    {
+      "path": "docs/c5_excess_two_n2_diagonal_three_row.md",
+      "frozen_matches_BASE": true,
+      "current_matches_BASE": false
+    },
+    {
+      "path": "docs/c5_excess_two_n2_unary_three_row_escape.md",
+      "frozen_matches_BASE": true,
+      "current_matches_BASE": true
+    },
+    {
+      "path": "docs/c5_excess_two_n2_residual_unification.md",
+      "frozen_matches_BASE": true,
+      "current_matches_BASE": false
+    },
+    {
+      "path": "docs/c5_excess_two_arc_spoke_closure.md",
+      "frozen_matches_BASE": true,
+      "current_matches_BASE": true
+    },
+    {
+      "path": "docs/c5_excess_two_arc_size_bound.md",
+      "frozen_matches_BASE": true,
+      "current_matches_BASE": true
+    },
+    {
+      "path": "docs/c5_unary_shield_budget.md",
+      "frozen_matches_BASE": true,
+      "current_matches_BASE": true
+    },
+    {
+      "path": "docs/c5_short_support_singleton.md",
+      "frozen_matches_BASE": true,
+      "current_matches_BASE": true
+    },
+    {
+      "path": "artifacts/c5_excess_two_e4/REPORT.md",
+      "frozen_matches_BASE": true,
+      "current_matches_BASE": true
+    },
+    {
+      "path": "artifacts/c5_excess_two_arc_component_slack/observations.json",
+      "frozen_matches_BASE": true,
+      "current_matches_BASE": true
+    },
+    {
+      "path": "audits/2026-10-11-n2-unary-adoption-long-joint/long/REPORT.md",
+      "frozen_matches_BASE": true,
+      "current_matches_BASE": true
+    },
+    {
+      "path": "audits/2026-10-11-n2-unary-adoption-long-joint/long/checker.py",
+      "frozen_matches_BASE": true,
+      "current_matches_BASE": true
+    },
+    {
+      "path": "audits/2026-10-11-n2-unary-adoption-long-joint/paper/independent_review.md",
+      "frozen_matches_BASE": true,
+      "current_matches_BASE": true
+    },
+    {
+      "path": "audits/2026-10-11-n2-unary-three-row-escape/checker.py",
+      "frozen_matches_BASE": true,
+      "current_matches_BASE": true
+    }
+  ],
+  "input_drift_note": "Frozen mathematical authority has zero drift. Current diagonal and residual docs intentionally carry dated follow-up links; original upstream evidence and old checker bytes are retained.",
+  "new_paper_Lean_status": "not formalized; lake build verifies existing project",
+  "complete_target_sources": "not triggered",
+  "skipped": [
+    "upstream N45/SD-A/44 complete replays",
+    "ES/ER source generation",
+    "source rotation revalidation",
+    "whole-worktree DocGraph"
+  ],
+  "publication": "no commit or push requested or performed"
+}

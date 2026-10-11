@@ -1,0 +1,38 @@
+{
+  "E_ARC2": "OPEN",
+  "N2": "OPEN",
+  "corrupt_negative": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "audits/2026-10-11-n2-residual-unification/bounds/checker.py",
+      "--check",
+      "--output",
+      "audits/2026-10-11-n2-residual-unification/bounds/observations_corrupt_negative.json"
+    ],
+    "exit_code": 1,
+    "expected": "artifact mismatch",
+    "status": "triggered and holds",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-11-n2-residual-unification/bounds/checker.py\", line 239, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-11-n2-residual-unification/bounds/checker.py\", line 229, in main\n    assert args.output.read_bytes() == raw, \"artifact mismatch\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: artifact mismatch\n",
+    "stdout": ""
+  },
+  "first_generation_failed": {
+    "artifact_written": false,
+    "cause": "ROOT parent index was 4 rather than 3",
+    "error": "FileNotFoundError: /home/ray/developer/ai/artifacts/c5_excess_two_arc_size_bound/observations.json",
+    "exit_code": 1
+  },
+  "original_55": "OPEN",
+  "replays": [
+    {
+      "command": "python3 -B audits/2026-10-11-n2-residual-unification/bounds/checker.py --check",
+      "exit_code": 0,
+      "sha256": "156117b8a3178fc9972311d7d84c7e990bc7d8a91c510b309f5bbff703ca7e00"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-11-n2-residual-unification/bounds/checker.py --check",
+      "exit_code": 0,
+      "sha256": "156117b8a3178fc9972311d7d84c7e990bc7d8a91c510b309f5bbff703ca7e00"
+    }
+  ]
+}

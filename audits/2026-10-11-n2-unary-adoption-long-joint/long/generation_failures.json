@@ -1,0 +1,21 @@
+{
+  "scope": "Pre-artifact generation failures, retained after correction; no output artifact was emitted by either failed run.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "command": "python3 -B long/checker.py --write",
+      "exit_code": 1,
+      "error": "KeyError: beta",
+      "cause": "canonical_pair_table contains boundary pairs, not boundary coloring rows",
+      "correction": "read literal beta table from frozen component rows"
+    },
+    {
+      "attempt": 2,
+      "command": "python3 -B long/checker.py --write",
+      "exit_code": 1,
+      "error": "AssertionError: table[0] == [0,1,2,1,2]",
+      "cause": "frozen numeric row order differs from named q labels",
+      "correction": "select q0/q1/q3 by exact literal beta; retain frozen numeric row order separately"
+    }
+  ]
+}

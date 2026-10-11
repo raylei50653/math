@@ -1,0 +1,45 @@
+{
+  "artifact": {
+    "bytes": 7411936,
+    "path": "audits/2026-10-11-n2-unary-adoption-long-joint/controls/observations.json",
+    "sha256": "1c84f695ad436fb3e49916a7df421175ebf58df06be556e18c850458bd06e76c"
+  },
+  "corrupted_copy": {
+    "exit": 1,
+    "expected": "artifact mismatch",
+    "log": "replay-corrupt.log",
+    "mutation": "delete one complete original unary lift"
+  },
+  "exclusive_create_existing": {
+    "exit": 1,
+    "expected": "FileExistsError",
+    "log": "replay-exclusive-create.log",
+    "original_artifact_hash_preserved": true
+  },
+  "generation_failure": {
+    "artifact_written": false,
+    "log": "generation.log",
+    "reason": "row traversal listed named q in canonical row order; old summary sorted by q"
+  },
+  "generation_success": {
+    "exit": 0,
+    "log": "generation-v2.log"
+  },
+  "normal": {
+    "exit": 0,
+    "log": "replay-normal.log"
+  },
+  "palette_comparison": {
+    "abstract_cycle_palette_triples": 2,
+    "complete_actual_attachment_triples": 0,
+    "old_actual_edge_signatures_equal": true,
+    "old_actual_point_signatures_equal": true,
+    "old_all_25_ordered_pair_classifications_equal": true,
+    "rowwise_distinct_pairs": 4
+  },
+  "seed17": {
+    "bytes_identical_to_normal": true,
+    "exit": 0,
+    "log": "replay-seed17.log"
+  }
+}
