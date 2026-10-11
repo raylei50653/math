@@ -1,6 +1,6 @@
 # Kempe／重接／計數與策略導覽
 
-更新：2026-10-11（N45完整U／long／short契約的U在s分支限定採納）。本頁維護本線現況；證明及實際重播範圍見各報告。
+更新：2026-10-11（U在s限定採納與二連通單缺額適用性）。本頁維護本線現況；證明及實際重播範圍見各報告。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
 
@@ -31,6 +31,7 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 | 雙 root 的 ε=2 收窄 | 相鄰 mixed 刪 roots／zw 全收；相鄰唯一 mixed 已全排 (4,4) 核心、五-spoke 原來源、四-spoke (3,1) 全部 incidence 分拆及 (2,2) 的 mixed-(1,1) 加各側一 unary 整個子型，含 root 交換。原47／75必要身份全部封閉；其他 (2,2) incidence、較少 spokes、單省略及原 (5,5) 核心保留。紙面＋Python，ε≥3 未證，未 Lean 化 | [mixed-(1,1) 子型完成](c5_excess_two_mixed_core_four_spoke_disjoint_pairs.md)、[短框弧原拒絕列延拓](c5_excess_two_mixed_core_four_spoke_short_arc.md)、[原 crosscut 與 mixed hubs](c5_excess_two_mixed_core_four_spoke_crosscut.md)、[同一長 face 次序排除](c5_excess_two_mixed_core_four_spoke_long_face.md)、[原四接點 leaf-slack](c5_excess_two_mixed_core_four_spoke_quaternary.md)、[原三接點身份](c5_excess_two_mixed_core_four_spoke_ternary.md)、[binary 端點 hub](c5_excess_two_mixed_core_four_spoke_hubs.md) |
 | Kempe screen／邊位置對座標 | screen 等價於 20 條蘊涵，1,024 masks 已核對；未新增排除，一般 adjacent-singleton lemma 未證 | [screen](c5_kempe_screen.md)、[座標](c5_edge_pair_coordinates.md) |
 | 非相鄰N2的指定45／54省略身份 | 指定整U省略及兩short S身份已排除；完整K1–K12的U／long／short、只刪spoke且X=M自身同β minimal身份，U在r/s均限定排除。保SF-QX／BASE／Gallai信任界；無U的long／兩long、其他cores與一般N2／E仍OPEN，無新Lean | [N45權威入口](c5_excess_two_nonadjacent_unit_core45.md)、[U在s限定覆蓋](c5_excess_two_nonadjacent_unit_core45.md#210-n45-s-long-s完整-cu-與原-r-fibre-恢復的限定覆蓋) |
+| 二連通單缺額工具與45／54適用性 | SD-A指定前提紙面查證通過；actual X=M、完整degrees及H_M二連通時排無U兩long、long／singleton與相鄰兩mixed subsets。真edge-pair short縮為p–q block鏈；完整OPEN身份新增無條件關閉0，exact source controls未觸發，無新Lean | [精確定理](c5_degree5_interfaces.md#7-二連通單缺額查證與-4554-接入)、[N45接入](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域) |
 | 循環流與計數 | 六維／153 支撐／十二循環；36 份基底覆蓋證三套分開整數 orbit 條件不再收緊恆等式解；未排除平面來源 | [循環流](c5_circulation.md) |
 | Count cone／class 計數 | near-triangulation 化約、部分 Lean 代數與 class 級紙面計數已有；cone／connectivity 缺口仍在 | [count cone](c5_count_cone_bridge.md)、[B₅ face](c5_b5_face.md)、[class 計數](c5_kempe_class_counts.md) |
 | 同染色有序重接 | 一步精確公式及同圖三配對同 state／不同後繼反例；record 110 已另由原圖 K5 排除，有限可迭代 state 未證 | [有序重接](c5_dual_path_surgery.md)、[來源排除](c5_single_spoke_two_two_minor.md) |
@@ -156,10 +157,14 @@ q2補112 X空cells、T1補352 X及780 G空欄位，採納副本與原bytes分開
 另採納恆等式與1,344原邊assignments校準，新增來源排除0，未證一般Δ非空引理。
 JOINT固定21省略／210列／3,360pins只校準；target來源not triggered，兩份缺BASE blob finding保留。
 
-**下一個窄問題：** 原unary=0、一long／一short、只刪原spoke且X=M自身同β minimal。
-先建立完整實際分量、原spokes／incidence與逐邊witness的必要身份，再核全16pins／空fibres／
-同源r-fibre及恢復原邊；不搬有U時的盾弧、full B-touch或private covering。
-兩long、其他省略／core、原55及一般N2／E另保留。未發布新任務或執行來源搜尋，不擴枚舉。
+**單缺額接續：** [A查證](../audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/REPORT.md)已通過，
+[B適用性](../audits/2026-10-11-single-deficit-applicability-804e3b0b1b/REPORT.md)的歷史conditional保留；
+各實際core仍須核X=M／degrees／二連通。[N45§2.11](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)
+記三項subset排除與Gallai鏈縮減，完整OPEN身份新增關閉0。
+**下一個窄問題：** [BR-SD-1a](../audits/2026-10-11-single-deficit-publication/NEXT-TASK.md)
+獨立封存long／真pair short精確三環單bridge、J1/J2共用r、無旁支的D-palette直接矛盾。
+紙面screening已通過，未在覆蓋表標adopted；舊B的R27 minor任務保持封存語境。
+非二連通、其他省略／core、原55及一般N2／E另保留；未執行新來源搜尋，不擴枚舉。
 原[HIGH2派工](history/2026-10-10-n45-high1-adoption.md)保留當輪語境；
 兩支的採納／finding／完整tree與custody界線見[本輪紀錄](history/2026-10-10-n45-high23-adoption.md)。
 來源paper依BASE／外部Gallai，無新finite來源或Lean，其他cores／一般N2／E仍OPEN，傳播停止L2。

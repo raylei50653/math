@@ -58,3 +58,14 @@ ARCHIVE現有2388個原路徑、1,466個blobs、107,359,489 compressed bytes；
 新增五份MANIFEST大型證書亦可由上述`restore --artifacts`逐byte還原。
 M4文件CI FAIL與M5當輪pending、原strict FAIL及whitespace保持歷史結果；
 本批新的本地驗證見[publication report](2026-10-08-core44-batch-publication/REPORT.md)。
+
+## 2026-10-11 單缺額查證與適用性
+
+[A定理查證](2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/REPORT.md)與
+[B適用性](2026-10-11-single-deficit-applicability-804e3b0b1b/REPORT.md)共630檔原bytes保留。
+本批依既有封存格式只追加兩audit的7個大型路徑／6個blobs；舊ARCHIVE records不改。
+fresh checkout仍先用上述restore指令。A的舊live HEAD／docs checker保留當輪语境，
+出版後使用[新入口](2026-10-11-single-deficit-publication/verify.py)的frozen-BASE overlay重播，
+原checker與證書不改。B的原frozen-input verifier可直接在新HEAD執行。
+本輪來源範圍、BR-SD-1a待獨立封存的任務與實際驗證見
+[整理紀錄](../docs/history/2026-10-11-single-deficit-progress.md)。

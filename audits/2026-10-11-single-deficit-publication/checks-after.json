@@ -1,0 +1,143 @@
+{
+  "status": "completed",
+  "checks": [
+    {
+      "name": "frozen-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-single-deficit-publication/verify.py",
+        "--check",
+        "--replay"
+      ],
+      "exit": 0,
+      "stdout": "logs/frozen-normal.stdout.log",
+      "stderr": "logs/frozen-normal.stderr.log"
+    },
+    {
+      "name": "frozen-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-single-deficit-publication/verify.py",
+        "--check",
+        "--replay",
+        "--seed17"
+      ],
+      "exit": 0,
+      "stdout": "logs/frozen-seed17.stdout.log",
+      "stderr": "logs/frozen-seed17.stderr.log"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit": 0,
+      "stdout": "logs/docs.stdout.log",
+      "stderr": "logs/docs.stderr.log"
+    },
+    {
+      "name": "formal-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit": 0,
+      "stdout": "logs/formal-docgraph.stdout.log",
+      "stderr": "logs/formal-docgraph.stderr.log"
+    },
+    {
+      "name": "whole-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit": 1,
+      "stdout": "logs/whole-docgraph.stdout.log",
+      "stderr": "logs/whole-docgraph.stderr.log"
+    },
+    {
+      "name": "lake-build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit": 0,
+      "stdout": "logs/lake-build.stdout.log",
+      "stderr": "logs/lake-build.stderr.log"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit": 0,
+      "stdout": "logs/diff-check.stdout.log",
+      "stderr": "logs/diff-check.stderr.log"
+    },
+    {
+      "name": "docs-final",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit": 0,
+      "stdout": "logs/docs-final.stdout.log",
+      "stderr": "logs/docs-final.stderr.log"
+    },
+    {
+      "name": "frozen-final",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-single-deficit-publication/verify.py",
+        "--check"
+      ],
+      "exit": 0,
+      "stdout": "logs/frozen-final.stdout.log",
+      "stderr": "logs/frozen-final.stderr.log"
+    },
+    {
+      "name": "cached-diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit": 0,
+      "stdout": "logs/cached-diff-check.stdout.log",
+      "stderr": "logs/cached-diff-check.stderr.log"
+    },
+    {
+      "name": "docs-publication-final",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit": 0,
+      "stdout": "logs/docs-publication-final.stdout.log",
+      "stderr": "logs/docs-publication-final.stderr.log"
+    },
+    {
+      "name": "cached-publication-final",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit": 0,
+      "stdout": "logs/cached-publication-final.stdout.log",
+      "stderr": "logs/cached-publication-final.stderr.log"
+    }
+  ]
+}

@@ -1,0 +1,817 @@
+{
+  "base": "4dd11f422c6fa49265a412085116b088786d0344",
+  "report": "inventory.md",
+  "status": "completed read-only inventory; all SD-derived results conditional until A",
+  "no_actual_source_supplied": true,
+  "new_unconditional_source_exclusions": 0,
+  "new_conditional_biconnected_subset_exclusions": [
+    "N45-S-NOU-LL",
+    "N45-S-NOU-LS-SINGLETON",
+    "AD2-45-UNIT"
+  ],
+  "priority_residual": "N45-S-NOU-LS-PAIR: if A+biconnected, C Gallai K4-free contact-to-contact block-path; actual 3 oddcycles separated by bridge path or >=4 oddcycles remain uncovered by the precise cited R coverage",
+  "rows": [
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "N45-S-NOU-LS-PAIR",
+      "scope": "priority",
+      "G": "ordered induced-C5 disk; complete Sigma933/941 or whole-graph D5 image; Sigma-critical; epsilon2; nonadjacent original roots r,s degree5; all other effective originals degree4; no unary; exactly two mixed L long, S short actual edge-pair",
+      "X": "G-rb_i",
+      "M": "X=M, same literal beta inclusion-minimal",
+      "connected": "proved under beta-minimal contract",
+      "biconnected": "unknown actual source; roots r/s are not cutpoints; internal cutpoints unknown",
+      "named_cutpoints": [],
+      "interior_degree": {
+        "s": "5-t_s >=2; A+biconnected gives 2",
+        "r": "5-t_r; A+biconnected gives 2/3/4"
+      },
+      "conditional_gain": "A+biconnected gives s original spokes3 and one original contact in each L/S; C=H_M-s is K4-free Gallai block-path, r a cutpoint of C, r splits11/12/21/22. Existing R12/R14/R22/R24 cover 0/1/2 oddblocks; R27 covers 3 directly shared-cutpoint cycles with terminal contacts.",
+      "missing_bridge": "actual biconnectivity or handling internal cutpoints; same-source proof for 3 bridge-separated oddcycles / at least4 cycles; full assignment fibres and original rb_i restoration",
+      "evidence": [
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:71-90",
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:410-422",
+        "artifacts/c5_excess_two_e4/REPORT.md:274-290",
+        "docs/c5_degree5_tree_components.md:20-53",
+        "docs/c5_degree5_three_cycle_minors.md:11-17"
+      ],
+      "existing_coverage": "OPEN",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "N45-S-NOU-LS-SINGLETON",
+      "scope": "priority",
+      "G": "ordered induced-C5 disk; complete Sigma933/941 or whole-graph D5 image; Sigma-critical; epsilon2; nonadjacent original roots r,s degree5; all other effective originals degree4; no unary; exactly two mixed L long, S actual singleton support",
+      "X": "G-rb_i",
+      "M": "X=M beta-minimal",
+      "connected": "proved under beta-minimal contract",
+      "biconnected": "unknown actual source",
+      "named_cutpoints": [],
+      "interior_degree": {
+        "s": "5-t_s >=2; conditional 2"
+      },
+      "conditional_gain": "A+biconnected: original S has one s contact; block-path and K4-free gives at most2 r contacts, total incidence<=3. Adopted S04 implies complete compatibility Col^2, so deleting whole S still refuses beta, contrary to minimality. Conditional exclusion of entire biconnected subset.",
+      "missing_bridge": "A and actual H_M biconnectivity; no entire source-family exclusion",
+      "evidence": [
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:71-90",
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:410-422",
+        "artifacts/c5_excess_two_e4/REPORT.md:274-290",
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:102-107"
+      ],
+      "existing_coverage": "OPEN",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "N45-S-NOU-LL",
+      "scope": "priority",
+      "G": "ordered induced-C5 disk; complete Sigma933/941 or whole-graph D5 image; Sigma-critical; epsilon2; nonadjacent original roots r,s degree5; all other effective originals degree4; no unary; exactly two mixed P,Q both long",
+      "X": "G-rb_i",
+      "M": "X=M beta-minimal",
+      "connected": "proved under beta-minimal contract",
+      "biconnected": "unknown actual source; roots not cutpoints",
+      "named_cutpoints": [],
+      "interior_degree": {
+        "s": "unconditional original-star/shield argument gives 5-t_s>=3"
+      },
+      "conditional_gain": "Original H_G-s connected and full B-touch implies if t_s3 then star gaps113; each original P/Q shield lies in long3 face arc and has >=2 edges, disjoint, 4<=3 contradiction. Thus d_H(s)>=3 before A. A+biconnected excludes entire subset.",
+      "missing_bridge": "non-biconnected subset remains; A and actual biconnectivity",
+      "evidence": [
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:71-90",
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:410-422",
+        "artifacts/c5_excess_two_e4/REPORT.md:274-290",
+        "docs/c5_unary_shield_budget.md:54-70",
+        "audits/2026-10-09-n45-s/REPORT.md:183-191",
+        "audits/2026-10-10-n45-s-long-contract/REPORT.md:94-103"
+      ],
+      "existing_coverage": "OPEN",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "N45-OTHER-DERIVATIVE-CORE",
+      "scope": "boundary",
+      "G": "original N2 source",
+      "X": "unspecified derivative; possibly X!=M",
+      "M": "actual beta-minimal M inside X; edges must be supplied",
+      "connected": "only beta-minimal M gives connected",
+      "biconnected": "unknown",
+      "named_cutpoints": [],
+      "interior_degree": {
+        "s": "unknown until actual M profile"
+      },
+      "conditional_gain": "unknown applicability; never infer profile from original root labels",
+      "missing_bridge": "supply actual M vertices/edges, original omissions and own beta witnesses",
+      "evidence": [
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:71-90",
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:410-422",
+        "artifacts/c5_excess_two_e4/REPORT.md:274-290"
+      ],
+      "existing_coverage": "OPEN",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "N1-45-S",
+      "scope": "other named",
+      "G": "nonadjacent roots; sole original mixed C; original Sigma-critical 5/5,others4",
+      "X": "G-rb_i",
+      "M": "X=M beta-minimal identity must be checked at actual source",
+      "connected": "proved under beta-minimal contract",
+      "biconnected": "retained unary blocks biconnectivity; otherwise internal C cuts unknown",
+      "named_cutpoints": [
+        "owner root of every retained unary"
+      ],
+      "interior_degree": {
+        "s": "5-t_s=m_s+retained unary incidences"
+      },
+      "conditional_gain": "A+biconnected forces no retained unary; t_s3,m_s2, two actual C contacts",
+      "missing_bridge": "actual source, M=X, biconnectivity, complete C fibres / original attachments",
+      "evidence": [
+        "artifacts/c5_excess_two_e4/REPORT.md:224-230",
+        "artifacts/c5_excess_two_e4/REPORT.md:338-351"
+      ],
+      "existing_coverage": "OPEN",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "N1-45-U",
+      "scope": "other named",
+      "G": "nonadjacent roots; sole original mixed C; original Sigma-critical 5/5,others4",
+      "X": "G-V(U), original unit unary unique rx",
+      "M": "X=M beta-minimal identity must be checked at actual source",
+      "connected": "proved under beta-minimal contract",
+      "biconnected": "retained unary blocks biconnectivity; otherwise internal C cuts unknown",
+      "named_cutpoints": [
+        "owner root of every retained unary"
+      ],
+      "interior_degree": {
+        "s": "5-t_s=m_s+retained unary incidences"
+      },
+      "conditional_gain": "A+biconnected forces no retained unary; t_s3,m_s2, two actual C contacts",
+      "missing_bridge": "actual source, M=X, biconnectivity, complete C fibres / original attachments",
+      "evidence": [
+        "artifacts/c5_excess_two_e4/REPORT.md:224-230",
+        "artifacts/c5_excess_two_e4/REPORT.md:338-351"
+      ],
+      "existing_coverage": "OPEN",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "AD1-45-S",
+      "scope": "other named",
+      "G": "adjacent roots, sole mixed C; complete Sigma933/941; original totalspokes<=4",
+      "X": "G-rb_i",
+      "M": "if X refuses beta, docs prove actual minimal K=X=M",
+      "connected": "proved under own minimality",
+      "biconnected": "retained unary gives owner cut; no unary internal C cuts unknown",
+      "named_cutpoints": [
+        "owner root of retained unary"
+      ],
+      "interior_degree": {
+        "s": "1+m_s+u_s=5-t_s"
+      },
+      "conditional_gain": "A+biconnected gives no unary,t_s3,m_s1; original t_r>=1 and totalspokes<=4 force t_r1, original split13 and mixed31; entirely already in completed four-spoke(3,1) root-swapped exclusion",
+      "missing_bridge": "no new coverage from SD",
+      "evidence": [
+        "docs/c5_excess_two_mixed_core_spokes.md:35-86",
+        "docs/c5_excess_two_mixed_core_single_spoke.md:31-62",
+        "docs/c5_kempe_guide.md:200-205"
+      ],
+      "existing_coverage": "general identity OPEN; biconnected reduction reaches existing exclusion",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "AD1-45-U",
+      "scope": "other named",
+      "G": "adjacent roots, sole mixed C; original unit unary U only at r; totalspokes<=4",
+      "X": "G-V(U)",
+      "M": "X=M beta-minimal; original rs,C remain",
+      "connected": "proved under beta-minimal contract",
+      "biconnected": "retained unary gives owner cut; otherwise unknown",
+      "named_cutpoints": [
+        "owner root of retained unary"
+      ],
+      "interior_degree": {
+        "s": "1+m_s=5-t_s if no retained unary"
+      },
+      "conditional_gain": "A+biconnected t_s3,m_s1; original r has rs plus unitU, so m_r=3-t_r and t_r0/1. t_r1 is already completed four-spoke(3,1) mixed12+unitU; t_r0 three-spoke mixed31+unitU remains only conditionally narrowed.",
+      "missing_bridge": "actual source and biconnectivity; retained-edge and fibres bridge",
+      "evidence": [
+        "docs/c5_excess_two_mixed_core_spokes.md:67-86",
+        "docs/c5_kempe_guide.md:200-205"
+      ],
+      "existing_coverage": "OPEN",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "AD1-M12-B-SPOKE",
+      "scope": "other precise named",
+      "G": "adjacent a,b; original spokes22; mixed incidence(a,b)=12; unitU only a",
+      "X": "G-bb_i",
+      "M": "X=M beta-minimal, unique degree5 s=a; r=b degree4",
+      "connected": "proved under own minimality",
+      "biconnected": "false under exact contract",
+      "named_cutpoints": [
+        "a=s, since H_M-a=(C+b) disjoint union U"
+      ],
+      "interior_degree": {
+        "s": "3 from ab, a-C, a-U"
+      },
+      "conditional_gain": "not triggered: named s cutpoint blocks biconnected SD",
+      "missing_bridge": "any theorem for cutpoint one-deficit would be a new bridge",
+      "evidence": [
+        "docs/c5_excess_two_mixed_core_four_spoke_mixed12.md:60-95"
+      ],
+      "existing_coverage": "OPEN",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "AD2-45-UNIT",
+      "scope": "other named",
+      "G": "adjacent r,s; exactly two original mixed; roots5/5 other4",
+      "X": "single-side original unit omission spoke or unary",
+      "M": "actual X=M beta-minimal45/54; retain rs and both mixed",
+      "connected": "proved under beta-minimal contract",
+      "biconnected": "unknown; retained unary gives owner cut",
+      "named_cutpoints": [
+        "owner root of retained unary"
+      ],
+      "interior_degree": {
+        "s": ">=3 from rs plus one contact in each of two original mixed"
+      },
+      "conditional_gain": "A+actual biconnectivity excludes entire subset directly: d_H(s)>=3 versus SD2",
+      "missing_bridge": "biconnectivity / complete cutpoint alternative; general family remains OPEN",
+      "evidence": [
+        "docs/c5_excess_two_adjacent_two_mixed_core44.md:18-38"
+      ],
+      "existing_coverage": "OPEN",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "AD0-45-UNIT",
+      "scope": "other named",
+      "G": "adjacent r,s; no original mixed",
+      "X": "single-side unit omission",
+      "M": "actual beta-minimal45/54 core retaining both roots; retain rs or independent sides violate minimality",
+      "connected": "proved under beta-minimal contract",
+      "biconnected": "false",
+      "named_cutpoints": [
+        "s: d_H(s)>=2 forces retained s-unary; deleting s separates it from r; rs bridge"
+      ],
+      "interior_degree": {
+        "s": "5-t_s>=2; t_s<=3 from own beta-minimality"
+      },
+      "conditional_gain": "not triggered: rs original internal bridge and named cutpoint s",
+      "missing_bridge": "preserve bridge and whole-side full lifts; outside current SD applicability",
+      "evidence": [
+        "docs/c5_excess_two_no_mixed_core44.md:18-33"
+      ],
+      "existing_coverage": "OPEN",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "N45-U-LP-SS",
+      "scope": "adopted comparison only",
+      "G": "exact full published contract",
+      "X": "whole U omitted",
+      "M": "X=M same beta minimal; retained-edge profile r4/s5/others4",
+      "connected": "proved in contract",
+      "biconnected": "unknown",
+      "named_cutpoints": [],
+      "interior_degree": {
+        "s": "5-t_s>=3 under accepted t_s<=2"
+      },
+      "conditional_gain": "no new coverage; keep accepted scoped exclusion",
+      "missing_bridge": "no reopening of adopted branch",
+      "evidence": [
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:135-175"
+      ],
+      "existing_coverage": "already excluded only under exact published contract",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "N45-S-SHORT-LOW",
+      "scope": "adopted comparison only",
+      "G": "exact full published contract",
+      "X": "single original r-spoke omitted",
+      "M": "X=M same beta minimal; retained-edge profile r4/s5/others4",
+      "connected": "proved in contract",
+      "biconnected": "false under retained unary contract",
+      "named_cutpoints": [
+        "r, owner of retained U"
+      ],
+      "interior_degree": {
+        "s": "3"
+      },
+      "conditional_gain": "no new coverage; keep accepted scoped exclusion",
+      "missing_bridge": "no reopening of adopted branch",
+      "evidence": [
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:179-221"
+      ],
+      "existing_coverage": "already excluded only under exact published contract",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "N45-S-SHORT-HIGH",
+      "scope": "adopted comparison only",
+      "G": "exact full published contract",
+      "X": "single original r-spoke omitted",
+      "M": "X=M same beta minimal; retained-edge profile r4/s5/others4",
+      "connected": "proved in contract",
+      "biconnected": "false under retained unary contract",
+      "named_cutpoints": [
+        "s, owner of retained U"
+      ],
+      "interior_degree": {
+        "s": "3/4/5"
+      },
+      "conditional_gain": "no new coverage; keep accepted scoped exclusion",
+      "missing_bridge": "no reopening of adopted branch",
+      "evidence": [
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:238-277",
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:304-311"
+      ],
+      "existing_coverage": "already excluded only under exact published contract",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "N45-S-LONG-R",
+      "scope": "adopted comparison only",
+      "G": "exact full published contract",
+      "X": "single original r-spoke omitted",
+      "M": "X=M same beta minimal; retained-edge profile r4/s5/others4",
+      "connected": "proved in contract",
+      "biconnected": "false under retained unary contract",
+      "named_cutpoints": [
+        "r, owner of retained U"
+      ],
+      "interior_degree": {
+        "s": ">=3"
+      },
+      "conditional_gain": "no new coverage; keep accepted scoped exclusion",
+      "missing_bridge": "no reopening of adopted branch",
+      "evidence": [
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:337-349"
+      ],
+      "existing_coverage": "already excluded only under exact published contract",
+      "finite_evaluation_executed": false
+    },
+    {
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "A_status": "conditional until independently passed",
+      "same_source_required": [
+        "ordered contacts",
+        "shared single vertex coordinate",
+        "actual attachments and supports",
+        "ownership",
+        "bridges",
+        "rotation",
+        "literal beta",
+        "complete relations",
+        "all fibres including empty",
+        "full lifts"
+      ],
+      "degree_method": "count retained original incident edges of M, separately from G/X",
+      "profile_if_actual_45_core": {
+        "r": 4,
+        "s": 5,
+        "other_effective_interior_vertices": 4
+      },
+      "list_profile_if_beta_minimal": {
+        "v!=s": "|L_beta(v)|=d_H(v)",
+        "s": "|L_beta(s)|=d_H(s)-1",
+        "common_unused_color": "D"
+      },
+      "id": "N45-S-LONG-S",
+      "scope": "adopted comparison only",
+      "G": "exact full published contract",
+      "X": "single original r-spoke omitted",
+      "M": "X=M same beta minimal; retained-edge profile r4/s5/others4",
+      "connected": "proved in contract",
+      "biconnected": "false under retained unary contract",
+      "named_cutpoints": [
+        "s, owner of retained U"
+      ],
+      "interior_degree": {
+        "s": "5/4/3"
+      },
+      "conditional_gain": "no new coverage; keep accepted scoped exclusion",
+      "missing_bridge": "no reopening of adopted branch",
+      "evidence": [
+        "docs/c5_excess_two_nonadjacent_unit_core45.md:351-406"
+      ],
+      "existing_coverage": "already excluded only under exact published contract",
+      "finite_evaluation_executed": false
+    },
+    {
+      "id": "ORIGINAL-55",
+      "scope": "barrier only",
+      "M": "degree4 saturation forces M=G if both root degrees stay5; beta-minimality separate",
+      "list_deficits": [
+        "r",
+        "s"
+      ],
+      "applicability": "not applicable to a single-deficit theorem",
+      "actual_source": "unknown",
+      "finite_control": "not triggered",
+      "evidence": [
+        "docs/c5_excess_two_root_deletions.md:68-78"
+      ],
+      "finite_evaluation_executed": false
+    }
+  ],
+  "non_docs_inputs_read": [
+    "artifacts/c5_excess_two_e4/REPORT.md",
+    "audits/2026-10-09-n45-s/REPORT.md",
+    "audits/2026-10-10-n45-s-long-contract/REPORT.md"
+  ],
+  "finite_evaluation_executed": false,
+  "finite_control_explanation": "not triggered is source-premise status because no actual target source was supplied; no new literal control was executed and no zero-trigger evidence is used as exclusion"
+}

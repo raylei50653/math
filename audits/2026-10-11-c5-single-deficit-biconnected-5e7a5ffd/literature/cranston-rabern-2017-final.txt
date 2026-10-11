@@ -1,0 +1,672 @@
+                         Beyond Degree Choosability
+
+                      Daniel W. Cranston∗                      Landon Rabern†
+
+            Submitted: Jun 1, 2016; Accepted: Jul 31, 2017; Published: Aug 11, 2017
+                         Mathematics Subject Classifications: 05C15
+
+
+
+
+                                               Abstract
+            Let G be a connected graph with maximum degree ∆. Brooks’ theorem states
+        that G has a ∆-coloring unless G is a complete graph or an odd cycle. A graph G
+        is degree-choosable if G can be properly colored from its lists whenever each vertex
+        v gets a list of d(v) colors. In the context of list coloring, Brooks’ theorem can be
+        strengthened to the following. Every connected graph G is degree-choosable unless
+        each block of G is a complete graph or an odd cycle; such a graph G is a Gallai tree.
+            This degree-choosability result was further strengthened to Alon–Tarsi orienta-
+        tions; these are orientations of G in which the number of spanning Eulerian sub-
+        graphs with an even number of edges differs from the number with an odd number
+        of edges. A graph G is degree-AT if G has an Alon–Tarsi orientation in which each
+        vertex has indegree at least 1. Alon and Tarsi showed that if G is degree-AT, then G
+        is also degree-choosable. Hladký, Král,’ and Schauz showed that a connected graph
+        is degree-AT if and only if it is not a Gallai tree. In this paper, we consider pairs
+        (G, x) where G is a connected graph and x is some specified vertex in V (G). We
+        characterize pairs such that G has no Alon–Tarsi orientation in which each vertex
+        has indegree at least 1 and x has indegree at least 2. When G is 2-connected, the
+        characterization is simple to state.
+
+        Keywords: list-coloring, choosability, degree-choosable, Alon–Tarsi orientation,
+        Gallai tree
+
+
+1       Introduction
+Brooks’ theorem is one of the fundamental results in graph coloring. For every connected
+graph G, it says that G has a ∆-coloring unless G is a complete graph K∆+1 or an odd
+cycle. When we seek to prove coloring results by induction, we often want to color a
+    ∗
+     Department of Mathematics and Applied Mathematics, Virginia Commonwealth University, Rich-
+mond, VA; dcranston@vcu.edu; Research of the first author is partially supported by NSA Grant 98230-
+15-1-0013.
+   †
+     LBD Data Solutions, Lancaster, PA; landon.rabern@gmail.com
+
+
+the electronic journal of combinatorics 24(3) (2017), #P3.29                                      1
+subgraph H where different vertices have different lists of allowable colors (those not
+already used on their neighbors in the coloring of G − H). This gives rise to list coloring.
+Vizing [13] and, independently, Erdős, Rubin, and Taylor [5] extended Brooks’ theorem
+to list coloring. They proved an analogue of Brooks’ theorem when each vertex v has ∆
+allowable colors (possibly different colors for different vertices). Borodin [3] and Erdős,
+Rubin, and Taylor [5] strengthened this Brooks’ analogue to the following result, where a
+Gallai tree is a connected graph in which each block is a complete graph or an odd cycle.      Gallai tree
+
+Theorem A. If G is connected and not a Gallai tree, then for any list assignment L with
+|L(v)| = d(v) for all v ∈ V (G), graph G has a proper coloring ϕ with ϕ(v) ∈ L(v) for all v.
+    The graphs in Theorem A are degree-choosable . It is easy to check that every Gallai       degree-
+                                                                                               choosable
+tree is not degree-choosable. So the set of all connected graphs that are not degree-
+choosable are precisely the Gallai trees. Hladký, Král,’ and Schauz [7] extended this
+characterization to the setting of Alon–Tarsi orientations.
+    For any digraph D, a spanning Eulerian subgraph is one in which each vertex has
+indegree equal to outdegree. The parity of a spanning Eulerian subgraph is the parity of
+its number of edges. For an orientation of a graph G, let EE (resp. EO) denote the number      Alon–Tarsi
+of even (resp. odd) spanning Eulerian subgraphs. An orientation is Alon–Tarsi (or AT)          orientation
+if EE and EO differ. A graph G is f -AT if it has an Alon–Tarsi orientation D such that        f -AT, k-AT
+d+ (v) ⩽ f (v) − 1 for each vertex v. In particular, G is degree-AT (resp. k-AT ) if it is     degree-AT
+f -AT, where f (v) = d(v) (resp. f (v) = k) for all v. Similarly, a graph G is f -choosable    f -choosable
+if G has a proper coloring ϕ from any list assignment L such that |L(v)| = f (v) for all
+v ∈ V (G). Alon and Tarsi [1] used algebraic methods to prove the following theorem for
+choosability. Later, Schauz [11] strengthened the result to paintability, which we discuss
+briefly in Section 4.
+Theorem B. For a graph G and f : V (G) → N, if G is f -AT, then G is also f -choosable.
+    In this paper we characterize those graphs G with a specified vertex x that are not
+f -AT, where f (x) = d(x) − 1 and f (v) = d(v) for all other v ∈ V (G). All such graphs are
+formed from a few 2-connected building blocks, by repeatedly applying a small number
+of operations. Most of the work in the proof is spent on the case when G is 2-connected.
+This result is easy to state, so we include it a bit later in the introduction, as our Main
+Lemma. Near the end of Section 3, with a little more work we extend our Main Lemma,
+by removing the hypothesis of 2-connectedness, to characterize all pairs (G, hx ) that are
+not AT. This result is Theorem 3.6.
+    This line of research began in the fifties with Dirac, who studied the minimum number
+of edges in an n-vertex k-critical graph G. Since G has minimum degree at least k −
+1, clearly |E(G)| ⩾ k−1 2
+                          n. Gallai [6] improved this bound by classifying all connected
+subgraphs that can be induced by vertices of degree k − 1 in a k-critical graph. By
+Theorem A, all such graphs are Gallai trees. Here we consider graphs G that are critical
+with respect to Alon–Tarsi orientation. Specifically, G is not (k − 1)-AT, but every proper
+subgraph is; such graphs are k-AT-critical. The characterization of degree-AT graphs
+shows that, much like k-critical graphs, in a k-AT-critical graph G, every connected
+
+the electronic journal of combinatorics 24(3) (2017), #P3.29                              2
+subgraph induced by vertices of degree k − 1 must be a Gallai tree. Our main result
+characterizes the subgraphs that can be induced by vertices of degree k − 1, together
+with a single vertex of degree k. Thus, it is natural to expect that this result will lead to
+improved lower bounds on the number of edges in n-vertex k-AT-critical graphs.
+    Similar to that for degree-AT, our characterization remains unchanged in the contexts
+of list-coloring and paintability, as we show in Section 4. We see a sharp contrast when
+we consider graphs G with two specified vertices x1 and x2 that are not f -AT, where
+f (xi ) = d(xi ) − 1 for each i ∈ {1, 2} and f (v) = d(v) for all other v ∈ V (G). For
+Alon–Tarsi orientations, we have more than 50 exceptional graphs on seven vertices or
+fewer. Furthermore, the characterizations for list-coloring, paintability, and Alon–Tarsi
+orientations all differ.
+
+    We consider graphs with vertices labeled by natural numbers; that is, pairs (G, h)
+where G is a graph and h : V (G) → N. We focus on the case when h(x) = 1 for some x             hx
+and h(v) = 0 for all other v; we denote this labeling as hx . We say that (G, h) is AT if G     (G, h)
+is (dG − h)-AT. When H is an induced subgraph of G, we simplify notation by referring          is AT
+
+to the pair (H, h) when we really mean H, hV (H) .
+    Given a pair (G, h) and a specified edge e ∈ E(G), when we stretch e, we form (G0 , h0 )    stretch e
+from (G, h) by subdividing e twice and setting h0 (vi ) = 0 for each of the two new vertices,
+v1 and v2 (and h0 (v) = h(v) for all other vertices v). In Section 2, we prove a Stretching
+Lemma, which shows that if (G, h) is not AT and e ∈ E(G), then stretching e often yields
+another pair (G0 , h0 ) that is also not AT. Thus, stretching plays a key role in our main
+result.
+    It is easy to check that the three pairs (G, h) shown in Figure 1 are not AT (and we
+do this below, in Proposition 1.1). Let D be the collection of all pairs formed from the        D
+graphs in Figure 1 by stretching each bold edge 0 or more times. The Stretching Lemma
+implies that each pair in D is not AT. Our Main Lemma is that these are the only pairs
+(G, hx ), where G is 2-connected and neither complete nor an odd cycle, such that (G, hx )
+is not AT, for some vertex x ∈ V (G).
+
+Main Lemma. Let G be 2-connected and x ∈ V (G). Now (G, hx ) is AT if and only if
+
+ (1) d(x) = 2 and G − x is not a Gallai tree; or
+
+ (2) d(x) ⩾ 3, G is not complete, and (G, hx ) 6∈ D.
+
+    The characterization of degree-choosable graphs has been applied to prove a variety
+of graph coloring results [2, 4, 8, 9, 12]. Likewise, we think our main results in this paper
+may be helpful in proving other results for Alon–Tarsi orientations, such as giving better
+lower bounds on the number of edges in k-AT-critical graphs.
+
+    To conclude this section, we show that each pair in D is not AT.
+
+Proposition 1.1. If (G, hx ) ∈ D, then (G, hx ) is not AT.
+
+
+
+the electronic journal of combinatorics 24(3) (2017), #P3.29                               3
+                                                1
+               1
+                                                                           1
+
+                                                0
+                                         0             0
+               0                                0                  0   0          0         0
+
+
+
+ 0                           0   0                             0       0          0
+
+      Figure 1: Three pairs (G, hx ) that are in D. In each case x is labeled 1 and
+      all other vertices are labeled 0. Each other pair in D can be formed from one
+      of these pairs by repeatedly stretching one or more bold edges. Note that the
+      rightmost graph is the Moser spindle.
+
+
+Proof. For each pair (G, hx ) ∈ D, we construct a list assignment L such that |L(x)| =
+d(x) − 1 and |L(v)| = d(v) for all other v ∈ V (G), but G has no proper coloring from L.
+Now (G, hx ) is not AT, by the contrapositive of Theorem B.
+    Let (G, hx ) be some stretching of the leftmost pair in Figure 1. Assign the list {1, 2, 3}
+to each of the vertices on the unbolded triangle and assign the list {1, 2} to each other
+vertex. If G has some coloring from these lists, then vertex x, labeled 1 in the figure, must
+get color 1 or 2; by symmetry, assume it is 1. Along each path from x to the triangle,
+colors must alternate 2, 1, . . .. Each of the paths from x to the triangle has odd length;
+thus, color 1 is forbidden from appearing on the triangle. So G has no coloring from L.
+Now let (G, hx ) be some stretching of the center pair in Figure 1. The proof is identical
+to the first case, except that each path has even length, so if x gets color 1, then color 2
+is forbidden on the triangle.
+    Finally, consider the rightmost pair in Figure 1. Here d(x) = 4 and d(v) = 3 for all
+other v ∈ V (G). Thus, it suffices to show that G is not 3-colorable. Assume that G has a
+3-coloring and, by symmetry, assume that x is colored 1. Now colors 2 and 3 must each
+appear on two neighbors of x. Thus, the two remaining vertices must be colored 1. Since
+they are adjacent, this is a contradiction, which proves that G is not 3-colorable.
+
+
+2    Subgraphs, subdivisions, and cuts
+When Hladký, Král,’ and Schauz characterized degree-AT graphs, their proof relied heavily
+on the observation that a connected graph G is degree-AT if and only if G has some
+induced subgraph H such that H is degree-AT. Below, we reprove this easy lemma, and
+also extend it to our setting of pairs (G, hx ).
+
+Subgraph Lemma. Let G be a connected graph and let H be an induced subgraph of G.
+If H is degree-AT, then also G is degree-AT. Similarly, if x ∈ V (H) and (H, hx ) is AT,
+
+
+the electronic journal of combinatorics 24(3) (2017), #P3.29                                    4
+then also (G, hx ) is AT. Further, if x ∈
+                                        / V (H), dG (x) ⩾ 2, and (H, hx ) is AT, then (G, hx )
+is AT.
+
+Proof. Suppose that H is degree-AT, and let D0 be an orientation of H showing this.
+Let σ be an order of V (G) such that if v <σ w, then dist(v, H) ⩽ dist(w, H). Extend
+D0 to an orientation D of G by orienting each edge vw ∈ E(G) \ E(H) as −        → precisely
+                                                                               vw
+when v <σ w. For every subgraph J of D with V (J) 6⊆ V (H), the vertex w ∈ V (J) that
+appears latest in σ is a sink in J. Thus, every directed cycle in D is also a directed cycle
+in D0 (and vice versa), so G is degree-AT. The proof of the second statement is identical.
+The proof of the third statement is similar, but now for each edge wx with endpoints
+equidistant from H, we require that w <σ x, so wx is oriented into x.
+    Recall that, given a pair (G, h) and a specified edge e ∈ E(G), when we stretch e, we
+form (G0 , h0 ) from (G, h) by subdividing e twice and setting h0 (vi ) = 0 for each of the
+two new vertices, v1 and v2 (and h0 (v) = h(v) for all other vertices v). By repeatedly
+stretching edges, starting from the three pairs in Figure 1, we form all pairs (G, hx ), where
+G is 2-connected and (G, hx ) is not AT. The following lemma will be useful for proving
+this.
+
+Stretching Lemma. Form (G0 , h0 ) from (G, h) by stretching some edge e ∈ E(G). Now
+
+ (1) if (G, h) is AT, then (G0 , h0 ) is AT; and
+
+ (2) if (G0 , h0 ) is AT, then either (G, h) is AT or (G − e, h) is AT.
+
+Proof. Suppose e = u1 u2 and call the new vertices v1 and v2 so that G0 contains the
+induced path u1 v1 v2 u2 . For (1), let D be an orientation of G showing that (G, h) is AT.
+By symmetry we may assume u1 u2 ∈ E(D). Form an orientation D0 of G0 from D by
+replacing u1 u2 with the directed path u1 v1 v2 u2 . We have a natural parity preserving
+bijection between the spanning Eulerian subgraphs of D and D0 , so we conclude that
+(G0 , h0 ) is AT.
+    For (2), let D0 be an orientation of G0 showing that (G0 , h0 ) is AT. Suppose G0 contains
+the directed path u1 v1 v2 u2 or the directed path u2 v2 v1 u1 . By symmetry, we can assume
+it is u1 v1 v2 u2 . Now form an orientation D of G by replacing u1 v1 v2 u2 with the directed
+edge u1 u2 . As above, we have a parity preserving bijection between the spanning Eulerian
+subgraphs of D and D0 , so we conclude that (G, h) is AT. So suppose instead that G0
+contains neither of the directed paths u1 v1 v2 u2 and u2 v2 v1 u1 . Now no spanning Eulerian
+subgraph of D0 contains a cycle passing through v1 and v2 . So, the spanning Eulerian
+subgraph counts of D0 are the same as those of D0 − v1 − v2 . However, this gives an
+orientation of G − e showing that (G − e, h) is AT.
+    Given a pair (G, h) that is not AT, the Stretching Lemma suggests a way to construct
+a larger graph G0 such that (G0 , h0 ) is not AT. In some cases, we can also use the Stretching
+Lemma to construct a smaller graph G       b such that (G,
+                                                        b h) is not AT. Specifically, we have
+the following.
+
+
+the electronic journal of combinatorics 24(3) (2017), #P3.29                                 5
+Corollary 2.1. If e is an edge in G such that (G, h) is not AT and (G − e, h) is not
+AT, then stretching e gives a pair (G0 , h0 ) that is not AT. Further, let G be a graph
+with an induced path u1 v1 v2 u2 such that dG (v1 ) = dG (v2 ) = 2. If (G, h) is AT, where
+h(v1 ) = h(v2 ) = 0, and (G − v1 − v2 , h) is not AT, then
+                                                                   
+                         (G − v1 − v2 ) + u1 u2 , hV (G)\{v1 ,v2 } is AT.
+
+Proof. The first statement follows directly from part (2) of the Stretching Lemma. Now
+we prove the second. Suppose that (G, h) satisfies the hypotheses. Now            part (2) of
+the Stretching Lemma also shows that either G − v1 − v2 , hV (G)\{v1 ,v2 } is AT or else
+                                           
+ (G − v1 − v2 ) + u1 u2 , hV (G)\{v1 ,v2 } is AT. By hypothesis, the former is false. Thus, the
+latter is true.
+    With standard vertex coloring, we can easily reduce to the case where G is 2-connected.
+If G is a connected graph with two blocks, B1 and B2 , meeting at a cutvertex x, then we
+can color each of B1 and B2 independently, and afterward we can permute colorings to
+match at x. For Alon–Tarsi orientations, the situation is not quite as simple. However,
+the following lemma plays a similar role for us.
+Lemma 2.2. Let A1 , A2 ⊆ V (G), and x ∈ V (G) be such that A1 ∪ A2 = V (G) and
+A1 ∩ A2 = {x}. If G[Ai ] is fi -AT for each i ∈ {1, 2}, then G is f -AT, where f (v) = fi (v)
+for each v ∈ V (Ai − x) and f (x) = f1 (x) + f2 (x) − 1. Going the other direction, if G is
+f -AT, then G[Ai ] is fi -AT for each i ∈ {1, 2}, where fi (v) = f (v) for each v ∈ V (Ai − x)
+and f1 (x) + f2 (x) ⩽ f (x) + 1.
+Proof. We begin with the first statement. For each i ∈ {1, 2}, choose an orientation Di
+of Ai showing that Ai is fi -AT. Together these Di give an orientation D of G. Since no
+cycle has vertices in both A1 − x and A2 − x, we have
+
+              EE(D) − EO(D) = EE(D1 )EE(D2 ) + EO(D1 )EO(D2 )
+                                  − EE(D1 )EO(D2 ) − EO(D1 )EE(D2 )
+                            = (EE(D1 ) − EO(D1 ))(EE(D2 ) − EO(D2 ))
+                            6= 0.
+
+Hence G is f -AT.
+   Now we prove the second statement. Suppose that G is f -AT and choose an orientation
+D of G showing this. Let Di = D[Ai ] for each i ∈ {1, 2}. As above, we have 0 6= EE(D)−
+EO(D) = (EE(D1 ) − EO(D1 ))(EE(D2 ) − EO(D2 )). Hence, EE(D1 ) − EO(D1 ) 6= 0 and
+EE(D2 ) − EO(D2 ) 6= 0. Since the indegree of x in D is the sum of the indegree of x in
+D1 and the indegree of x in D2 , the lemma follows.
+
+3    When h is 1 for one vertex
+In this section, we prove our Main Lemma. For a graph G and x ∈ V (G) recall that
+hx : V (G) → N is defined as hx (x) = 1 and hx (v) = 0 for all v ∈ V (G − x). We classify
+
+the electronic journal of combinatorics 24(3) (2017), #P3.29                                  6
+the connected graphs G such that (G, hx ) is AT for some x ∈ V (G). We begin with the
+case when G is 2-connected, which takes most of the work. At the end of the section, we
+extend our characterization to all connected graphs.
+    We will show that for most 2-connected graphs G and vertices x ∈ V (G), the pair
+(G, hx ) is AT. Specifically, this is true for all pairs except those in D, defined in the
+introduction. In view of the Subgraph Lemma, for a 2-connected graph G and x ∈ V (G),
+to show that (G, hx ) is AT it suffices to find some induced subgraph H such that (H, hx ) is
+AT. The subgraphs H that we consider all have dH (x) = 0 or dH (x) ⩾ 3. This motivates
+the next lemma, which allows us to reduce to the case dG (x) ⩾ 3.
+Lemma 3.1. If G is a connected graph and x ∈ V (G) with dG (x) = 2, then (G, hx ) is
+AT if and only if G − x is degree-AT.
+Proof. Let D be an orientation of G showing that (G, hx ) is AT. Now d−
+                                                                      D (x) = 2, so no
+spanning Eulerian subgraph contains a cycle passing through x. Therefore, the Eulerian
+subgraph counts in G − x are different and G − x is degree-AT. The other direction is
+immediate from the Subgraph Lemma.
+   Recall that our Main Lemma relies on a characterization of degree-AT graphs. As we
+mentioned in the introduction, a description of degree-choosable graphs was first given by
+Borodin [3] and Erdős, Rubin, and Taylor [5]. Hladký, Král,’ and Schauz [7] later extended
+the proof from [5] to Alon–Tarsi orientations. For reference, we record their result next.
+Lemma 3.2. A connected graph G is degree-AT if and only if it is not a Gallai tree.
+    Lemmas 3.1 and 3.2 combine to prove Case (1) of our Main Lemma. Before we can
+prove Case (2), we need a few more definitions and lemmas. A θ-graph consists of two             θ-graph
+vertices joined by three internally disjoint paths, P1 , P2 , and P3 . When we write hx for
+a θ-graph, we always assume that d(x) = 3. We will see shortly that if H is a θ-graph
+with dH (x) = 3, then (H, hx ) is AT. Thus, the Subgraph Lemma implies that if (G, hx )
+is not AT, then G has no induced θ-graph H with dH (x) = 3. A T -graph is formed from            T -graph
+vertices x, z1 , z2 , z3 , by making the zi pairwise adjacent, and joining each vertex zi to x
+by a path Pi (where the Pi are disjoint). Equivalently, a T -graph is formed from K4 by
+subdividing each of the edges incident to x zero or more times.
+    Similar to the proof characterizing degree-AT graphs in [7], our approach in proving
+our Main Lemma is to find an induced subgraph H such that (H, hx ) is AT, and apply
+the Subgraph Lemma. So we need the following lemma about pairs (H, hx ) that are AT.
+Lemma 3.3. The pair (G, hx ) is AT whenever (i) G is a θ-graph, (ii) G is a T -graph
+and two paths Pi have lengths of opposite parities, as in Figure 2, or (iii) G is formed
+from a T -graph by adding an extra vertex with neighborhood {z1 , z2 , z3 }, as in Figure 3.
+Proof. In each case, we give an AT orientation D of G such that d−   D (v) ⩾ hx (v) + 1 for
+each v ∈ V (G).
+   Case (i). Orient the edges of each path Pi consistently, with P1 and P2 into x and P3
+out of x; this orientation satisfies the degree requirements. Further, it has exactly three
+
+the electronic journal of combinatorics 24(3) (2017), #P3.29                                7
+                                      1                            1
+
+
+
+                                0                              0       0
+                                      0                            0
+
+
+                           0                    0       0                  0
+
+      Figure 2: The pair (G, hx ) is AT, when G is formed from K4 by subdividing
+      one or two edges incident to x.
+
+                                     1                             1
+
+
+                                                                   0
+                                                               0       0
+                                     0                             0
+
+                                     0                             0
+                           0                    0       0                  0
+
+      Figure 3: (a) The pair (G, hx ) is AT, where G = K5 − xy. (b) The pair (G, hx )
+      is AT, where G is formed from K5 − e by subdividing each edge incident to x.
+
+
+spanning Eulerian subgraphs, including the empty subgraph. Thus, EE + EO is odd, so
+EE 6= EO.
+    Case (ii). Let P1 and P2 be two paths with opposite parities. As before, orient the
+edges of each path consistently, with P1 and P2 into x and P3 out of x. Orient the
+three additional edges as −    z−→ −−→             −−→
+                                1 z2 , z2 z3 , and z3 z1 . The resulting digraph D has four spanning
+Eulerian subgraphs, 3 of one parity and 1 of the other. Note that the empty subgraph
+and the subgraph {−   z−→ −−→ −−→
+                       1 z2 , z2 z3 , z3 z1 } have opposite parities. Further, the parities are the
+same for the two subgraphs consisting of the directed cycles xP3 z3 z1 P1 and xP3 z3 z1 z2 P2 .
+So, EE 6= EO.
+    Case (iii). The simplest instance of this case is when G = K5 − e, as on the left in
+Figure 3. Denote its vertices by {t, u, v, w, x}, where w 6↔ x. Begin with the transitive
+orientation given by t → w → u → v → x, and reverse −                   → and −
+                                                                        ux
+                                                                                →
+                                                                                tv to get −→ and −
+                                                                                           xu
+                                                                                                 →
+                                                                                                 vt.
+Call this orientation D. We use D to show that (G, hx ) is AT. Note that D satisfies the
+degree constraints. Consider the Eulerian subgraph counts. Since K4 is not 3-colorable,
+(G − x, hx ) is not AT. Thus, the even and odd Eulerian subgraph counts of D − x are
+equal; in particular, the sum of these is even (in fact there are 2 even and 2 odd, but this is
+unimportant). These Eulerian subgraphs are precisely the Eulerian subgraphs of D with
+d+ (x) = d− (x) = 0. Now consider an Eulerian subgraph H of D with d+ (x) = d− (x) = 1.
+   →
+   −                                    → → −
+                                        −         → − →        →
+                                                               −
+If tx ∈ E(H), then E(H) = { tx, −             xu, uv, vt}. If tx ∈ / E(H), then − → −
+                                                                                  vx, → −
+                                                                                      xu, → ∈ E(H).
+                                                                                          uv
+                                                   → −
+                                                   −   → −  → (and no other edges). Thus, D has 3
+Further, E(H) contains all or none of vt, tw, wv
+Eulerian subgraphs with d+ (x) = d− (x) = 1. In total, EE + EO is odd, so EE 6= EO.
+
+the electronic journal of combinatorics 24(3) (2017), #P3.29                                      8
+    To handle larger instances of this case, we repeatedly subdivide edges incident to x and
+orient each of the resulting paths consistently, and in the direction of the corresponding
+edge in D. The resulting orientation satisfies the degree requirements. Further, the sum
+EE + EO remains unchanged, and thus odd. Hence, still EE 6= EO.
+
+Lemma 3.4. Let G be a T -graph. Let P be a path of G where all internal vertices of P
+have degree 2 in G and one endvertex of P has degree 2 in G. Form G0 from G by adding
+a path P 0 (of length at least 2) joining the endvertices of P . Now (G0 , hx ) is AT.
+
+Proof. We can assume that G is not AT; otherwise, we are done by the Subgraph Lemma.
+By symmetry, assume P is a subpath of P3 . First, we get an orientation of G with indegree
+at least 1 for all vertices and d− (x) = 2. Orient P1 from z1 to x, P2 from z2 to x, P3
+from x to z3 , and the triangle as − z−→ −−→             −−→                               0
+                                      1 z2 , z2 z3 , and z3 z1 . To get an orientation of G , orient
+                 0
+the new path P consistently, and opposite of P . Now the only directed cycle containing
+edges of P 0 is P 0 P . Since the Eulerian subgraph counts are equal for G, they differ by 1
+for G0 .
+    Now we can prove Case (2) of our Main Lemma. For reference, we restate it.
+
+Lemma 3.5. Let G be 2-connected, and choose x ∈ V (G) with d(x) ⩾ 3. Now (G, hx ) is
+AT if and only if G is not complete and (G, hx ) 6∈ D.
+
+Proof. If G is complete, then G is not degree-AT, by Lemma 3.2, so clearly (G, hx ) is not
+AT. When (G, hx ) ∈ D the lemma holds by Proposition 1.1.
+     Now let G be 2-connected, choose x ∈ V (G) with d(x) ⩾ 3, and suppose that (G, hx ) ∈     /
+                                     0
+D. Since G−x is connected, let H be an induced subgraph of G−x with as few vertices as
+possible such that H 0 is connected and contains three neighbors of x; call these neighbors
+w1 , w2 , and w3 . Consider a spanning tree T of H 0 . Since H 0 is minimum, each leaf of T
+is among {w1 , w2 , w3 }. So T is either (i) a path or (ii) a subdivision of K1,3 ; if possible,
+choose T to be in case (ii). Suppose we are in case (i). If there exists e ∈ E(H 0 ) − E(T ),
+then either H 0 is not minimal, or we could be in case (ii), or H 0 = K3 . So either H 0 = K3 ,
+H 0 is a path, or we are in case (ii). Assume we are in case (ii) and let s be the vertex with
+dT (s) = 3. If E(H 0 ) − E(T ) has any edge with at least one endpoint outside of N (s), then
+we can delete some vertex in N (s) and remain connected, contradicting the minimality
+of H 0 . Similarly, if N (s) contains at least two edges, then H 0 − s still connects, w1 , w2 ,
+and w3 . Now let H be the subgraph of G induced by V (H 0 ) ∪ {x}. Note that H is either
+a θ-graph (if H 0 is a tree) or a T -graph (if H 0 has one extra edge in N (s), or H 0 = K3 ).
+     If H is a θ-graph, then (G, hx ) is AT, by Lemma 3.3.i and the Subgraph Lemma. So
+assume H is a T -graph. Let z1 , z2 , z3 be the vertices of degree 3 (other than x), and let
+P1 , P2 , and P3 denote the paths from x to z1 , z2 , and z3 ; when we write V (Pi ), we exclude
+x and zi , so possibly V (Pi ) is empty for one or more i ∈ {1, 2, 3}. If any two of P1 , P2 ,
+and P3 have lengths with opposite parities, then we are done by Lemma 3.3.ii; so assume
+not.
+     Now (H, hx ) ∈ D, so we can assume that V (G − H) 6= ∅. Choose u ∈ V (G − H),
+and let Hu be a minimal 2-connected induced subgraph of G that contains V (H) ∪ {u}.
+
+the electronic journal of combinatorics 24(3) (2017), #P3.29                                      9
+By the Subgraph Lemma and Lemma 3.2, G − x is a Gallai tree. Thus, so is Hu − x; in
+particular, the block Bu of Hu − x containing u is complete or an odd cycle. Therefore,
+we either have (i) V (Bu ) ∩ V (H) = {z1 , z2 , z3 } or (ii) V (Bu ) ∩ V (H) ⊆ Pi ∪ {zi } for some
+i ∈ {1, 2, 3}.
+    Suppose (i) happens. Now NG (u) ∩ V (Hu − x) = {z1 , z2 , z3 }. If x 6↔ u, then (G, hx ) is
+AT by the Subgraph Lemma and Lemma 3.3.iii. If x ↔ u, then x must have odd length
+paths to each zi , by Lemma 3.3.ii, with u in the role of some zi . Further, x ↔ zi for all
+i ∈ {1, 2, 3}, since otherwise (G, hx ) is AT by the Subgraph Lemma, Lemma 3.3.iii, and
+the Stretching Lemma. So, H = K4 and Hu = K5 . This implies that (ii) cannot happen
+for any vertex in V (G − H), since if V (Bu ) ∩ V (H) = {zi } for some i, then (G, hx ) is AT
+by Lemma 3.3.i and the Subgraph Lemma. So (i) happens for every vertex in V (G − H);
+in particular, V (G − H) is joined to {x, z1 , z2 , z3 }. Since G is not complete, G − x must
+contain an induced copy of Figure 3(a); hence, (G, hx ) is AT by Lemma 3.3.iii and the
+Subgraph Lemma.
+    So instead (ii) happens for every vertex in V (G − H), including u. By symmetry,
+assume V (Bu ) ∩ V (H) ⊆ P1 ∪ {z1 }. Let z1 P1 = v1 v2 · · · v` , where v` ↔ x. First, suppose
+Bu is an odd cycle of length at least 5. If there is u0 ∈ V (Bu ) \ V (H) with u0 ↔ x, then
+G contains a θ-graph and (G, hx ) is AT, by Lemma 3.3.i and the Subgraph Lemma. So,
+we assume u0 6↔ x for all u0 ∈ V (Bu ) \ V (H). Now we are done by Lemma 3.4 and the
+Subgraph Lemma.
+    So instead we assume that Bu is complete. If V (Bu ) ∩ V (H) = {v` }, then G has
+an induced θ-graph J, where dJ (x) = dJ (v` ) = 3, so we are done by Lemma 3.3.i and
+the Subgraph Lemma. Thus, we must have V (Bu ) ∩ V (H) = {vj , vj+1 } for some j ∈
+{1, . . . , ` − 1}. In particular, Bu is a triangle. If u 6↔ x, then (G, hx ) is AT by the
+Subgraph Lemma and Lemma 3.4. So we conclude that u ↔ x, which requires j = ` − 1,
+by the minimality of H. Hence, Hu is formed from a T -graph by adding a vertex u that
+is adjacent to x and also to the vertices of a K2 endblock Du of H − x. Suppose there are
+distinct vertices u1 , u2 ∈ V (G − H) adjacent to vertices of the same K2 endblock. Now
+G contains an induced copy of Figure 3(a), so (G, hx ) is AT by Lemma 3.3.iii and the
+Subgraph Lemma. Thus, each K2 endblock has at most one such u.
+    Let t = |V (G − H)|, and note that 0 ⩽ t ⩽ 3. Suppose t ⩾ 2. By symmetry, assume
+that for each i ∈ {1, 2} there exists ui such that V (Bui ) ∩ V (H) ⊆ Pi ∪ {zi }. Let G0 denote
+the subgraph of G induced by V (H − P1 ) ∪ {u2 }. Now (G0 , hx ) is AT by Lemma 3.4, so
+(G, hx ) is AT by the Subgraph Lemma. If t = 0, then (since (G, hx ) ∈            / D) graph G
+is a T -graph with two paths with lengths of opposite parities. Thus, we are done by
+Lemma 3.3.ii and the Subgraph Lemma.
+    Now assume t = 1, and let {u} = V (G − H). By symmetry, assume V (Bu ) ∩ V (H) ⊆
+P1 ∪ {z1 }. If each of P2 and P3 is a single edge and P1 has length 3, then G is the Moser
+spindle (shown in Figure 1 on the right), contradicting that (G, hx ) ∈        / D. Thus, some
+Pi is longer than this; suppose it is P1 . Let G0 = G − (V (P1 ) − N (u)); note that G0 is
+an induced subgraph, and is formed from two θ-graphs by identifying a vertex of degree
+2 in each. Further, this identified vertex is x. Since θ-graphs are not Gallai trees, they
+are degree-AT by Lemma 3.2. Thus, Lemma 2.2 shows that (G0 , hx ) is AT. So we are
+
+
+the electronic journal of combinatorics 24(3) (2017), #P3.29                                   10
+done by the Subgraph Lemma. So instead assume either P2 or P3 is longer than a single
+edge; by symmetry, assume it is P2 . Let G0 = G − V (P2 ), and note that G0 is an induced
+subgraph of G. Further, (G0 , hx ) is AT by Lemma 3.4. Thus, we are done by the Subgraph
+Lemma.
+    Finally, Lemmas 3.1, 3.2, and 3.5 combine to prove our Main Lemma. However, this
+characterization requires that G be 2-connected. Now we extend our result to the more
+general case, when G need only be connected. We use the following two definitions. Let
+G be a graph, x a vertex of G, and B a block of G. An x-lobe of G is a maximal subgraph        x-lobe
+A such that A − x is connected. A B-lobe of G is a maximal subgraph A such that A − B          B-lobe
+is connected, and A includes a single vertex of B.
+
+Theorem 3.6. If G is connected and x ∈ V (G), then (G, hx ) is not AT if and only if
+
+ (1) G is a Gallai tree; or
+
+ (2) d(x) = 1; or
+
+ (3) d(x) = 2 and G − x has a component that is a Gallai tree; or
+
+ (4) x is not a cutvertex, for the block B of G containing x, we have (B, hx ) ∈ D, and
+     every other block of G is complete or an odd cycle; or
+
+ (5) x is a cutvertex, all but at most one x-lobe of G, say A, is a Gallai tree, and either:
+     (i) dA (x) = 1; or (ii) dA (x) = 2 and A − x is a Gallai tree; or (iii) for the block B
+     of A containing x, we have (B, hx ) ∈ D and all B-lobes of A are Gallai trees.
+
+Proof. First, we check that if any of Cases (1)–(5) hold, then (G, hx ) is not AT. Cases
+(1) and (2) are immediate. Case (3) follows from Lemma 3.1. Consider Case (4). By
+Proposition 1.1, we know (B, hx ) is not AT. Now (G, hx ) is not AT by repeated application
+of Lemma 2.2. Finally, Case (5) follows from Cases (2), (3), and (4), by Lemma 2.2.
+    Now, for the other direction, suppose (G, hx ) is not AT and none of Cases (1)–(5)
+hold. By Lemma 3.1, and not (2) and not (3), we must have d(x) ⩾ 3. Suppose x is a
+cutvertex. Now, by not (5), either (a) at least two x-lobes of G are not Gallai trees or (b)
+(H, hx ) is AT for some x-lobe H of G. In each case, (G, hx ) is AT by Lemma 2.2, which
+is a contradiction.
+    So assume instead that x is not a cutvertex. Suppose the block B of G containing x is
+complete or (B, hx ) ∈ D. By not (1) and not (4), some B-lobe H of G is not a Gallai tree.
+Since H is a subgraph of G − x, and G − x is connected, Lemma 3.2 and the Subgraph
+Lemma imply that G − x is degree-AT; hence, (G, hx ) is also AT. So, we conclude that B
+is not complete and (B, hx ) ∈
+                             / D. First suppose that d(x) = 2. By not (3), we know that
+G − x is not a Gallai tree. Lemma 3.2 implies that G − x is degree-AT. So, again, the
+Subgraph Lemma shows that (G, hx ) is AT. Now assume instead that d(x) ⩾ 3. Since B
+is not complete and (B, hx ) ∈
+                             / D, Lemma 3.5 now implies that (B, hx ) is AT; once more,
+the Subgraph Lemma implies that (G, hx ) is AT.
+
+
+the electronic journal of combinatorics 24(3) (2017), #P3.29                             11
+4    Choosability and Paintability
+As we mentioned in the introduction, Alon and Tarsi showed that if a graph G is f -AT,
+then G is also f -choosable. Online list coloring, also called painting is similar to list
+coloring, but now the list for each vertex is progressively revealed, as the graph is colored.
+Schauz [11] extended the Alon–Tarsi theorem, to show that if G is f -AT, then G is also
+f -paintable (which we define formally below). In this section, we use our characterization
+of pairs (G, hx ) that are not AT to prove characterizations of pairs (G, hx ) that are not
+paintable and that are not choosable. More precisely, a pair (G, hx ) is choosable if G          choosable
+has a proper coloring from its lists L whenever L is such that |L(x)| = d(x) − 1 and             pair
+
+|L(v)| = d(v) for all other v; otherwise (G, hx ) is not choosable. A pair being paintable is    paintable
+defined analogously. We characterize all pairs (G, hx ), where G is connected and (G, hx )       pair
+
+is not choosable (resp. not paintable). In fact, we will see that these characterizations,
+for both choosability and paintability, are identical to that for pairs that are not AT.
+      For completeness, we include the following definition of f -paintable. Schauz [10] gave
+a more intuitive (yet equivalent) definition, in terms of a two player game. We say that
+G is f -paintable if either (i) G is empty or (ii) f (v) ⩾ 1 for all v ∈ V (G) and for every     f -paintable
+S ⊆ V (G) there is an independent set I ⊆ S such that G − I is f 0 -paintable where
+f 0 (v) := f (v) for all v ∈ V (G) − S and f 0 (v) := f (v) − 1 for all v ∈ S − I.
+      Since all pairs (G, hx ) that are AT are also both paintable and choosable, it suffices
+to show that every pair (G, hx ) that is not AT is also not choosable (here we use that if
+a pair is paintable, then it is also choosable).
+
+Theorem 4.1. For every connected graph G, the pair (G, hx ) is not choosable if and
+only if (G, hx ) is not AT. Thus, the same characterization holds for pairs that are not
+paintable.
+
+Proof. As noted above, every pair that is AT is also choosable and paintable. Thus, it
+suffices to show that each pair (G, hx ) in Theorem 3.6 is not choosable.
+    To show that Gallai trees are not degree-choosable, assign to each block B a list of
+colors LB such that |LB | = dB (x) for each x ∈ V (B); further, for all distinct blocks B1 and
+B2 , we require that LB1 and LB2 are disjoint. For each v ∈ V (G), let L(v) = ∪Bi 3v LBi .
+To show that G is not colorable from these lists, we use induction on the number of
+blocks. Let B be an endblock and x a cutvertex in B. Let G0 = G \ (V (G) − x). Since
+B is complete or an odd cycle, B has no coloring from LB . Thus any coloring ϕ of G
+from L does not use LB on x. Hence, ϕ gives a coloring ϕ0 of G0 from its lists L0 , where
+L0 (x) = L(x) \ LB and L0 (v) = L(v) for all v ∈ V (G) \ V (B). This coloring ϕ0 of G0
+contradicts the induction hypothesis. Thus, G has no coloring from L.
+    Here we use a similar approach. Consider a pair (G, hx ) that satisfies one of Cases
+(1)–(5) in Theorem 3.6. We show that (G, hx ) is not choosable. Case (1) is immediate
+by the previous paragraph. Case (2) is immediate, since |L(x)| = 0. For Case (3), give
+lists to the Gallai tree of G − x as above; now let L(x) = {c} for some new color c, and
+add c to the list of each neighbor of x. Again G cannot be colored from L. For Case (4),
+assign lists to V (B) as in Proposition 1.1 and to the other blocks as above. Again, G has
+
+the electronic journal of combinatorics 24(3) (2017), #P3.29                               12
+no coloring from these lists. Finally, consider Case (5). Assign lists for all blocks outside
+of A as above, and assign lists for A as above in Case (2), (3), or (4).
+    To conclude this section, we consider labelings hx,y , where hx,y (x) = hx,y (y) = 1 and
+hx,y (v) = 0 for all other v ∈ V (G). We show that the set of pairs (G, hx,y ) that are not
+AT differs from the set of pairs that are not paintable. Further, both sets differ from the
+set of pairs that are not choosable. It suffices to give a pair (G1 , hx,y ) that is choosable
+but not paintable and a second pair (G2 , hx,y ) that is paintable but not AT.
+
+                                          0                        0
+
+                                  1               1     1                  1
+
+
+
+                                      0       0                0       0
+
+      Figure 4: The pair on the left is choosable, but not paintable. The pair on the
+      right is paintable, but not AT.
+
+
+Proposition 4.2. The pair (G1 , hx,y ) on the left in Figure 4 is choosable, but it is not
+paintable. The pair (G2 , hx,y ) on the right in Figure 4 is paintable, but it is not AT.
+
+Proof. Let (G1 , hx,y ) denote the pair on the left, where x and y are the vertices labeled 1.
+Let (G2 , hx,y ) denote the pair on the right, where x and y are the vertices labeled 1.
+    We first show that (G1 , hx,y ) is choosable. Let L denote the list assignment. If there
+exists c ∈ L(x) ∩ L(y), then use c to color x and y, and color the remaining vertices
+greedily. So suppose there does not exist such a color c. Let z be a vertex in both
+triangles and note that there exist c ∈ (L(x) ∪ L(y)) \ L(z). By symmetry, assume that
+c ∈ L(x). Color x with c, and color G1 − x greedily, starting with the vertex of degree 2
+and ending with z.
+    We now show that (G1 , hx,y ) is not paintable. Let S be the vertices of one triangle.
+By definition, there must be I ⊆ S such that G1 − I is f 0 -paintable, where f 0 (v) := f (v)
+for v ∈ V (G1 ) − S and f 0 (v) := f (v) − 1 for v ∈ S − I. I must have one vertex, w. There
+are two choices for w; either w is in two triangles or not. If w is not in two triangles, then
+G1 − w is a triangle with a pendant edge, where the vertices on the triangle all have list
+size 2, so G1 − w is not paintable. If w is one of the vertices in two triangles, then G1 − w
+is a 4-cycle with list sizes 1, 2, 2, 2. Again G1 − I is not paintable (nor choosable).
+    To see that (G2 , hx,y ) is not AT, note that any good orientation would need indegrees
+summing to at least 7, but G2 has only 6 edges. Now we show that (G2 , hx,y ) is paintable.
+Note that G2 is isomorphic to K2,3 , the complete bipartite graph. Call the parts X and
+Y , with |X| = 2 and |Y | = 3. We color (take I to be) all vertices in whichever is larger of
+X ∩ S and Y ∩ S, picking X ∩ S if their sizes are equal. If we colored at least two vertices,
+then it is easy to check that G − I is paintable, since it induces either an independent set,
+
+
+the electronic journal of combinatorics 24(3) (2017), #P3.29                               13
+or a path where each vertex has at least as many colors as neighbors and one endvertex has
+more colors than neighbors. So assume that we colored only a single vertex. If we colored
+a vertex of X, then the resulting graph is paintable, since it is a claw, K1,3 , with at most
+one leaf having a single color and all other vertices having two colors. Finally, suppose we
+colored a single vertex of Y . The remaining graph is C4 , which is degree-paintable (since
+it is degree-AT).
+   A graph is unstretched if it has no induced path u1 v1 v2 u2 where d(v1 ) = d(v2 ) = 2 (as      unstretched
+in Corollary 2.1). We finish with the following question.
+Question. Are there only finitely many unstretched, 2-connected graphs G such that
+(G, hx,y ) is not choosable (resp. paintable, AT)? More generally, let hx1 ,...,xk be a label-
+ing that assigns 1 to vertices x1 , . . . , xk and 0 to all others. Are there only finitely many
+unstretched, 2-connected graphs G such that (G, hx1 ,...,xk ) is not choosable (resp. paintable,
+AT)?
+
+References
+ [1] N. Alon and M. Tarsi. Colorings and orientations of graphs. Combinatorica,
+     12(2):125–134, 1992.
+ [2] T. Böhme, B. Mohar, and M. Stiebitz. Dirac’s map-color theorem for choosability.
+     J. Graph Theory, 32(4):327–339, 1999.
+ [3] O. Borodin. Criterion of chromaticity of a degree prescription. In Abstracts of IV
+     All-Union Conf. on Th. Cybernetics, pages 127–128, 1977.
+ [4] D. W. Cranston, A. Pruchnewski, Z. Tuza, and M. Voigt. List colorings of K5 -minor-
+     free graphs with special list assignments. J. Graph Theory, 71(1):18–30, 2012.
+ [5] P. Erdős, A. Rubin, and H. Taylor. Choosability in graphs. In Proc. West Coast
+     Conf. on Combinatorics, Graph Theory and Computing, Congressus Numerantium,
+     volume 26, pages 125–157, 1979.
+ [6] T. Gallai. Kritische Graphen I. Math. Inst. Hungar. Acad. Sci, 8:165–192, 1963.
+ [7] J. Hladký, D. Král, and U. Schauz. Brooks’ theorem via the Alon-Tarsi theorem.
+     Discrete Math., 310(23):3426–3428, 2010.
+ [8] A. V. Kostochka and M. Stiebitz. A list version of Dirac’s theorem on the number
+     of edges in colour-critical graphs. J. Graph Theory, 39(3):165–177, 2002.
+ [9] D. Král’ and R. S̆krekovski. The last excluded case of Dirac’s map-color theorem for
+     choosability. J. Graph Theory, 51(4):319–354, 2006.
+[10] U. Schauz. Mr. Paint and Mrs. Correct. Electron. J. Combin., 16(1):#R77, 2009.
+[11] U. Schauz. Flexible color lists in Alon and Tarsi’s theorem, and time scheduling with
+     unreliable participants. Electron. J. Combin., 17(1):#R13, 2010.
+[12] C. Thomassen. Color-critical graphs on a fixed surface. J. Combin. Theory Ser. B,
+     70(1):67–100, 1997.
+[13] V. Vizing. Vextex coloring with given colors. Metody Diskretn. Anal., 29:3–10 (in
+     Russian), 1976.
+
+the electronic journal of combinatorics 24(3) (2017), #P3.29                                 14
+

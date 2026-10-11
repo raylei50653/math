@@ -1,0 +1,16 @@
+{
+  "certificate_sha256": "e61751ee127df0caff1bf95c81a0f20a52c6d0281d4266f21c8e7080226414e5",
+  "claim": "check mode rejects a corrupted saved interior degree",
+  "command": [
+    "/home/ray/developer/ai/math/.venv/bin/python",
+    "-B",
+    "/home/ray/developer/ai/math/audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/agents/premise_controls/replay.py",
+    "--check",
+    "--output",
+    "/home/ray/developer/ai/math/audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/agents/premise_controls/corrupted-degree-certificate-v1.json"
+  ],
+  "returncode": 1,
+  "status": "triggered and holds",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/agents/premise_controls/replay.py\", line 242, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/agents/premise_controls/replay.py\", line 233, in main\n    assert output.read_text() == encoded, \"saved full certificate differs from replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: saved full certificate differs from replay\n",
+  "stdout": ""
+}

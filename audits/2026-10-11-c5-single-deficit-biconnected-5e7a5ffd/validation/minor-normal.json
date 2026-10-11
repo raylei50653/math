@@ -1,0 +1,19 @@
+{
+  "PYTHONHASHSEED": null,
+  "argv": [
+    "/home/ray/developer/ai/math/.venv/bin/python",
+    "-B",
+    "/home/ray/developer/ai/math/audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/agents/existing_results_overlap/minor_controls.py",
+    "--check",
+    "--seed",
+    "0"
+  ],
+  "claim": "named replay or stated corruption rejection",
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "name": "minor-normal",
+  "seconds": 0.363,
+  "status": "triggered and holds",
+  "stderr": "",
+  "stdout": "{\n  \"certificate_sha256\": \"6d2286f6f83c753163aba22add705e09c1cb1e3a9b3b72551d4b6f48209e5c69\",\n  \"control_count\": 758,\n  \"counts\": {\n    \"D-left\": 27,\n    \"D-middle\": 729,\n    \"D-spindle\": 1,\n    \"complete-K4\": 1\n  },\n  \"minor_claim\": \"triggered and holds\",\n  \"mode\": \"read-only-check\",\n  \"original_disk_domain\": \"not triggered\",\n  \"python_version\": \"3.14.7 (main, Aug 10 2026, 07:46:56) [GCC 16.1.1 20260728]\",\n  \"script_sha256\": \"e9b80e6333bf8fca99712320b4a21da3d6fa52b1e1e5c47637f164301aaad300\",\n  \"tamper_negative_controls\": [\n    {\n      \"claim\": \"corrupted certificate rejected\",\n      \"name\": \"non-original-cross-edge\",\n      \"rejection\": \"cross witness is not an original edge\",\n      \"status\": \"triggered and holds\"\n    },\n    {\n      \"claim\": \"corrupted certificate rejected\",\n      \"name\": \"overlapping-branch-sets\",\n      \"rejection\": \"branch sets overlap\",\n      \"status\": \"triggered and holds\"\n    },\n    {\n      \"claim\": \"corrupted certificate rejected\",\n      \"name\": \"wrong-complete-degree\",\n      \"rejection\": \"\",\n      \"status\": \"triggered and holds\"\n    }\n  ],\n  \"validation_seed\": 0\n}\n"
+}

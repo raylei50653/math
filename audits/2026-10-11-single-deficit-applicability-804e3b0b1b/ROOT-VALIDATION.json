@@ -1,0 +1,61 @@
+{
+  "created_utc": "2026-10-11T03:59:47.530745+00:00",
+  "base": "4dd11f422c6fa49265a412085116b088786d0344",
+  "literal_command_evidence": "Raw result fields transcribed from parent tool replay in this turn; no legacy worker receipt substituted.",
+  "commands": [
+    {
+      "command": "python3 -B audits/2026-10-11-single-deficit-applicability-804e3b0b1b/literal_controls/check_literal_controls.py --check",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"graphs\": 5, \"proper_rows_per_graph\": 240, \"full_lifts\": 3648, \"projection_failure_rows\": 72, \"root_relation_difference_rows\": 0, \"exact_N45_source\": \"not triggered\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-11-single-deficit-applicability-804e3b0b1b/literal_controls/check_literal_controls.py --check --seed 17",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"graphs\": 5, \"proper_rows_per_graph\": 240, \"full_lifts\": 3648, \"projection_failure_rows\": 72, \"root_relation_difference_rows\": 0, \"exact_N45_source\": \"not triggered\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python3 -B audits/2026-10-11-single-deficit-applicability-804e3b0b1b/literal_controls/check_literal_controls.py --check --certificate audits/2026-10-11-single-deficit-applicability-804e3b0b1b/literal_controls/bad-certificate-empty-fibre-dropped.json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "FAIL: recomputed complete graph/lift/claim record differs\n",
+      "expected_exit": 1
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--stat"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "4dd11f422c6fa49265a412085116b088786d0344\n",
+      "stderr": ""
+    }
+  ],
+  "frozen_input_count": 540,
+  "frozen_and_live_drift": [],
+  "unconditional_complete_open_identity_exclusions": 0,
+  "A_status": "conditional",
+  "actual_target_source_count": 0
+}

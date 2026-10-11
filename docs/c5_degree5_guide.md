@@ -1,6 +1,6 @@
 # degree-5／R 系列導讀：介面、排除範圍與保留缺口
 
-更新：2026-09-29。本頁維護 R9–R31 的來源結構與 minor 構造情況。
+更新：2026-10-11。本頁維護 R9–R31 的來源結構、minor 與二連通單缺額查證情況。
 研究線標記見 [HANDOFF](HANDOFF.md)，全索引見 [STATUS](STATUS.md)。
 前置依賴見 [全 degree-4 導覽](c5_degree4_guide.md)。
 
@@ -12,6 +12,12 @@
 R9–R31 為研究輪次，不是報告參考文獻編號。
 
 ## 1. 目前完成到哪裡
+
+**二連通單缺額結構已查證。** 有限簡單 induced-C5 disk M 中，H=M−B 二連通，
+唯一內點 s 完整 M-degree5、其餘4；任意 proper β 拒絕即得 d_H(s)=2、H−s Gallai tree。
+不需 minimality、T4 或 lists 全緊；[精確定理與外部依賴](c5_degree5_interfaces.md#7-二連通單缺額查證與-4554-接入)
+保留紙面／有限控制／Lean 界線。對45／54的應用見[N45§2.11](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)，
+須另核實際 X=M、完整 degrees 與二連通，未關整個 OPEN 身份。
 
 **一般 degree-5 排除仍未完成。** 在唯一 degree-5 內點 z 有三條 boundary
 spokes、C=H−z 為連通二接點分量、其餘有效內點完整 degree=4，且來源是
@@ -39,7 +45,8 @@ R31 是保留缺口；是否進行中見 HANDOFF；本線停止點見 §4。
 - R11 起聚焦三-spoke 分拆 (2)：z 剩餘兩條內邊進入同一分量 C。
   原框 q=(A,B,A,B,C)，D 為第四色；區域框 (z,b1,b2,b3,b4) 的 D 列為
   (D,B,A,B,C)。這個區域重寫不自動接受全部 T4。
-- 固定 q 的「四列」是逐一查詢四個 z 色，須保留完整 F_C(q)，不能只驗拒絕 D。
+- 固定 q 的「四列」是逐一查詢 C 配合四個 z 色，暫不施加 z–B spokes；
+  須保留完整 F_C(q)，不能只驗拒絕 D。
   它不等於全部 boundary rows 的完整 Σ，亦不保證完整 root 關係或任意 pinning。
 - 介面等價、有限正常形非 disk 覆蓋、任意長來源的 boundary 固定 minor
   是不同證據步驟。須保留實際 attachments、共同色框、degree、逐邊刪除著色，
@@ -81,6 +88,10 @@ R31 是保留缺口；是否進行中見 HANDOFF；本線停止點見 §4。
 
 ## 4. R31 保留缺口與重播入口
 
+N45 的窄接續是 [BR-SD-1a](../audits/2026-10-11-single-deficit-publication/NEXT-TASK.md)：
+獨立封存指定無旁支、共用 r 雙環的 D-palette 矛盾；本輪只記紙面 screening 通過。
+這與下列 R31 任意長來源 minor 義務分開，也不排一般 bridge-separated 三環或更多環。
+
 R31 已有同末端不同二接點的 C3–C3–C3 簡單臂正常形非 disk 證書。
 仍須把任意長奇環及重複色外臂化到該目標：接點末端保留共用點與兩接點，
 中間保留兩共用點與 S 錨點，另一末端保留共用點與兩個 T 錨點；
@@ -99,6 +110,5 @@ Lean 支援的精確 theorem 與 axiom audit 見 [接合基礎](lean_root_interf
 §23–27 記錄 R21–R23 與 Lean 接合基礎，§28–37 記錄 R24–R31 與發布核對。
 R 編號不等於 STATUS 歷史節號。提交狀態以即時 Git 為準。
 
-本次僅整理文件，未重跑研究 checker、大型枚舉或 Lean build。
-文件檢查：`python3 scripts/check_docs.py`、`git diff --check`。
+2026-10-11實際重播範圍、文件／Lean檢查及省略項目見[整理紀錄](history/2026-10-11-single-deficit-progress.md)。
 一般單側／共同出口、候選 A 與 `K∞=K≤5` 仍未證。

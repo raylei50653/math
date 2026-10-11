@@ -1,6 +1,6 @@
 # N45：非相鄰 N2 原 unit 省略的 45／54 身份
 
-更新：2026-10-11（完整 U／long／short 契約的 U 在 s 分支採納）；
+更新：2026-10-11（U 在 s 限定採納及二連通單缺額適用性接入）；
 原研究 BASE `dc8e9aa7d6fccb51f63d30aa3f9c132296d44744`，本輪驗收 BASE
 `f2692089ad4259808e27d9b7e882ac09505b180a`。
 本頁是已採納 N45 結論與目前 residual 的權威入口；完整新論證分別見
@@ -65,6 +65,7 @@ HIGH1–HIGH3 窮盡限定 HIGH；與 LOW 合成，**§1 精確 S 身份的兩 s
 只刪原r-spoke且X=M自身同β minimal的選定身份；六profiles、pair／singleton全覆蓋，見§2.10。
 採納保留原SF-QX／BASE紙面與finite-terminal信任鏈；有限零觸發不承擔排除。
 無U的long／兩long、其他45／54身份、原55、無45／54來源、一般 N2／E及ε≥3均仍 OPEN。
+其二連通 subsets 的新排除與未涵蓋部分見§2.11；不將 subset 結果計作完整身份關閉。
 
 ## 1. 全部共同前提與原身份
 
@@ -407,6 +408,31 @@ target source為not triggered，未執行target來源，沒有來源實現或新
 其凍結24／38舊ledger與失敗case保留。完整採納／重播及文件傳播界線見
 [本輪收尾紀錄](history/2026-10-11-n45-s-long-s-adoption.md)。
 
+### 2.11 單缺額查證與無 U 二連通子域
+
+查證 BASE `4dd11f422c6fa49265a412085116b088786d0344`。
+[SD-A](c5_degree5_interfaces.md#7-二連通單缺額查證與-4554-接入) 已完成指定前提的紙面查證；
+[B 適用性與身份表](../audits/2026-10-11-single-deficit-applicability-804e3b0b1b/APPLICABILITY.md)
+原樣保留其封存時 A 待驗的 conditional 語境。應用須明列本頁原 G 合同、
+原具名省略、X=M 自身同 β minimal、M 的完整 degree4/5及 H_M 二連通，
+不從 Σ-critical G 自動推 X 對 β minimal，也不從 β-minimality 推二連通。
+
+在上述實際前提下，無 U exact-S 的兩 long 被原 s-star 盾弧預算與 SD-A 排除；
+long／singleton-support short 被 contact 預算與既有 S04／S3 排除。
+long／真 edge-pair short 剩餘映到兩原 s-contacts p/q 間的無旁支 Gallai block 鏈，
+r 為 C=H_M−s 的割點；每側 r-contact 數是1或2。P/Q內的 H_M 割點仍須逐來源核實。
+完整保留 unary 的 owner root 是 H_M 割點，不屬此二連通域；已採納 LOW／HIGH／LONG 不重開。
+相鄰兩 mixed45／54的二連通子域亦由 rs＋兩 mixed 原contacts迫 s內度≥3而排除，
+其原合同與其他具名障礙見[B報告](../audits/2026-10-11-single-deficit-applicability-804e3b0b1b/REPORT.md)。
+
+零／一／二 odd-cycle blocks及既有 R27共用點鏈按精確前提接回原結果；
+一般環間 bridges、三環其他位置與更多環仍 OPEN。
+指定三環單bridge、J1/J2共用 r、無旁支、末端各一臂的子域已有較短
+D-palette紙面 screening；[BR-SD-1a](../audits/2026-10-11-single-deficit-publication/NEXT-TASK.md)
+先獨立封存直接矛盾，尚未在覆蓋表標 adopted／closed。
+本輪 exact source controls 全為 not triggered，完整 OPEN 身份無條件新增關閉0，
+沒有新來源實現或 Lean；封存／更正任務／重播見[整理紀錄](history/2026-10-11-single-deficit-progress.md)。
+
 ## 3. 精確 OPEN 與下一個窄分支
 
 §1指定整U省略身份已由§2.2全排；精確S身份的兩short分支已由§2.8全排。
@@ -415,10 +441,12 @@ target source為not triggered，未執行target來源，沒有來源實現或新
 既有S05只給原unary至多一份。沒有U的一long／一short與兩long仍OPEN；
 不能把原U/L的盾弧、full B-touch或C/U private covering搬到沒有U的圖。
 
-下一個窄入口是**原unary=0、一long／一short、只刪原spoke且X=M自身同β minimal**：
-先重新核實際分量、原spoke／incidence完整必要身份、全部原Σ witnesses與X同β witnesses，
-再對同一原圖、字面色框的全16pins及完整r fibres建立來源映射／原邊恢復義務。
-兩long另保留；未發布新任務、未執行新來源搜尋。不擴graph/k或重開已採分支。
+下一個窄入口是[BR-SD-1a](../audits/2026-10-11-single-deficit-publication/NEXT-TASK.md)：
+原unary=0、long／真edge-pair short、只刪原spoke且X=M自身同β minimal，
+實際 C 的三奇環恰一條環間bridge、J1/J2共用r、無旁支與末端各一臂。
+先獨立封存共用r雙環的D-palette直接矛盾；若任一原前提失效，保具名證據停於該步。
+其他無U來源仍須核實際分量、spokes／incidence、G的Σ witnesses與M的同β witnesses；
+非二連通、其他三環連接型及兩long完整身份保留。不擴枚舉或重開已採分支。
 其他45／54身份、原55、無45／54來源、一般N2／E及ε≥3均仍OPEN。
 
 ## 4. 證據、重播與保留失敗

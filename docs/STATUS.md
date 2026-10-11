@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-11（完整U／long／short契約的U在s分支限定採納）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-11（U在s限定採納及二連通單缺額查證／適用性接入）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -161,6 +161,8 @@
 | [多長 odd-cycle](c5_multi_odd_cycles.md) | 十一種介面在任意有限環樹封閉；連續 minor 排除 odd-cycles／bridges 類別中的所有長環，剩餘 triangles 互斥且至多二；不需 T4，紙面＋有限證書，未 Lean 化 |
 | [K4 block／全 degree-4 合成](c5_k4_blocks.md) | K4 經 boundary 接路給 K5 minor；結合 Gallai-tree 與既有分類，接受 T4 的全 degree-4 disk minimal obstruction 只缺 q；紙面＋證書，未 Lean 化 |
 | [唯一 degree-5 完整接點介面](c5_degree5_interfaces.md) | 共同端點關係、禁色覆蓋的 minimality 充要條件、分量刪邊解除及固定來源圖至多四開關；唯一 degree-5 的指定雙列分離後由單側出口主線完成；完整圖分類／可實現性仍開放，紙面＋證書，未 Lean 化 |
+| [二連通單缺額獨立查證 A](../audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/REPORT.md) | 指定完整M-degrees與properβ拒絕下，內度2、H−s Gallai tree；不需minimality／T4／lists全緊，960 assignments與758 minor controls，紙面＋正式外部定理，未Lean化 |
+| [45／54適用性 B](../audits/2026-10-11-single-deficit-applicability-804e3b0b1b/APPLICABILITY.md) | actual X=M／degrees／二連通前提下三項subset排除、無旁支p–q Gallai鏈；540凍結輸入，exact source controls未觸發，完整OPEN身份新增無條件關閉0；目前接入見N45§2.11 |
 | [三-spoke 區域化約](c5_degree5_sectors.md) | 單一二接點分量縮到兩個鏡像 pentagon；完整接合代數與非 minimal disk 控制，最終排除仍未解；紙面＋證書，未 Lean 化 |
 | [三-spoke 任意樹分量／連通外框](c5_degree5_tree_components.md) | 任意樹的固定-q 化約與五種閉色序列、648 個必要 lifts 排除；t≥1 的 degree-4 分量不含 K4，後續 no-spoke 結果補上 t=0；原 cycle 缺口已有 t≥1 出口接合，完整圖分類／形式化仍有界線 |
 | [三-spoke 單 triangle 二接點](c5_degree5_triangle_components.md) | 旁支／共同／不同接點三型全部排除；528 模板、89,224 接線非 disk，不限 bridges 長度或分叉；單長環由下一列處理，未 Lean 化 |
@@ -377,6 +379,8 @@
 R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是保留缺口。
 唯一 degree-5 的指定核心分離已由後續主線完成；R31 任意長來源 minor
 與一般三環構造問題仍保留，研究線標記見 HANDOFF。
+後續二連通單缺額定理已紙面查證；[精確前提與45／54接入](c5_degree5_interfaces.md#7-二連通單缺額查證與-4554-接入)
+不取代上述一般分類。BR-SD-1a為待獨立封存的窄D-palette路線。
 
 ### 2.6 全 degree-4／block 化約系列
 
@@ -453,6 +457,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-11：單缺額查證、45／54適用性與相連證據整理](history/2026-10-11-single-deficit-progress.md)；兩audit原bytes保留，A已查證、B仍核實際core前提，BR-SD-1a待獨立封存
 - [2026-10-09：N2的45／54原unit省略第一批及增量驗收](history/2026-10-09-n2-45-54-parallel-tasks.md)；四份與兩增量均在限定scope已驗收，窄排除已採納
 - [2026-10-09：N45第二批，唯一U＋long／short pair三份並行任務](history/2026-10-09-n45-u-long-short-pair-tasks.md)；三份已返回並由2026-10-10增量限定驗收，原任務頭與當輪語境保留
 - [2026-10-10：N45-U-LP採納與N45-U-SS發布文本](history/2026-10-10-n45-lp-adoption.md)；原SS任務／pins保留發布時語境，後續已獨立採納

@@ -7,6 +7,10 @@ docgraph:
 ---
 # 唯一 degree-5 內點：完整接點介面與不可刪減禁色覆蓋
 
+後續（2026-10-11）：[二連通單缺額獨立查證](../audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/REPORT.md)
+已證 proper β 拒絕時內度為二、刪 root 後為 Gallai tree，不需 minimality、T4 或原 lists 全緊。
+完整前提、45／54 接入及證據邊界見本頁 §7；原 R10 正文與歷史停止點保持原語境。
+
 後續（2026-09-28）：[相鄰雙 degree-5 介面](c5_adjacent_degree5_interfaces.md)
 已將原分量接合與 degree-4 刪邊解除推廣到有序 root 色對，另證 root-edge
 對角強迫與 root-spoke 條帶條件。保留共鄰點及共同色框；未證雙 root 分離。
@@ -248,3 +252,39 @@ spokes 的環序，能否同時拒絕另一相鄰三色 p、接受全部 T4。�
 
 R10 的完整染色介面已完成，disk／T4 排除仍開放。一般 degree≥5、單側／共同
 出口、候選 A、weak-deletion congruence 與 `K∞=K≤5` 仍未證。成果與前輪 R9 一併提交發布。
+
+## 7. 二連通單缺額查證與 45／54 接入
+
+2026-10-11，查證 BASE `4dd11f422c6fa49265a412085116b088786d0344`。
+**已查證的紙面定理 SD-A：** M 是有限簡單 ordered induced-C5 disk，
+H=M−B 二連通（至少三點）；恰一內點 s 的完整 M-degree 為5，其餘內點為4。
+對任意 proper 四色 boundary row β，若 β 不能延拓到 M，則
+
+\[
+d_H(s)=2,\qquad H-s\text{ 是 Gallai tree}.
+\]
+
+完整 degree 包含原 B 附件。β 不必使用全部四色；定理不要求 β-minimality、
+T4、Σ933／941 或列表全緊。任意大小證明依正式版 Cranston–Rabern
+Main Lemma／Theorem B 與原圖 K4＋B 的 K5 branch sets；正式頁碼、
+D 的三 seeds／允許 stretches、撤前提反例與參數化構造見
+[A 查證報告](../audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/REPORT.md)。
+960 色指派與758 minor controls是有限校準；後者的原 disk 域逐筆 not triggered。
+本結果未新增 Lean theorem，也未完成一般 degree-5 分類或主命題。
+
+[B 適用性報告](../audits/2026-10-11-single-deficit-applicability-804e3b0b1b/REPORT.md)
+封存時 A 尚待驗；目前 A 已查證，B 在原來源合同之外仍須逐一核 X=M、
+M 自身完整 degree 與 H_M 二連通。其三項子域排除、具名割點障礙與
+無旁支 p–q Gallai block 鏈映射由 [N45§2.11](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域) 接入。
+完整 OPEN 身份新增無條件關閉數為0；非二連通、雙缺額55與一般 ε≥3 不由 SD-A 解決。
+
+四個 s 色查詢指同一 C、固定 β 的 C–B 附件與 s–C 邊，暫不施加 s–B spokes，
+即本頁 §1 的 F_C(β)。完整 M 已拒絕 β，其全圖四種 s 色延拓皆空；
+不能把 component queries 誤寫成完整 M 的四種延拓。在 B 的 proper 三色 β、
+三條 s-spokes 分別承擔三種 β 色，且 M 自身同 β minimal 的合同下，
+刪各 s-spoke 的同 β 全圖 witnesses 可限制到 C，取得另外三色的 component witnesses。
+
+目前精確接續為 [BR-SD-1a 任務](../audits/2026-10-11-single-deficit-publication/NEXT-TASK.md)：
+先独立封存無旁支、J1/J2共用 r 的 D-palette 直接矛盾，紙面 screening 已通過，
+尚未標為來源覆蓋採納。舊 B 的 uv→R27 任務保留封存語境；本輪重播、
+發布後 frozen-BASE 入口與傳播範圍見 [整理紀錄](history/2026-10-11-single-deficit-progress.md)。

@@ -1,0 +1,42 @@
+{
+  "base": "4dd11f422c6fa49265a412085116b088786d0344",
+  "certificate_sha256": "6d2286f6f83c753163aba22add705e09c1cb1e3a9b3b72551d4b6f48209e5c69",
+  "formal_pdf_path": "/home/ray/developer/ai/math/audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/literature/cranston-rabern-2017-final.pdf",
+  "formal_pdf_sha256": "8b6b26981671cb839f96667653913e63b690d917a891483d32a44e1d1adc2271",
+  "replay_argv": [
+    "python3",
+    "/home/ray/developer/ai/math/audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/agents/existing_results_overlap/minor_controls.py",
+    "--check",
+    "--seed",
+    "17"
+  ],
+  "schema": "fixed-minor-controls-manifest-v1",
+  "script_path": "/home/ray/developer/ai/math/audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/agents/existing_results_overlap/minor_controls.py",
+  "script_sha256": "e9b80e6333bf8fca99712320b4a21da3d6fa52b1e1e5c47637f164301aaad300",
+  "tamper_negative_controls": [
+    {
+      "claim": "corrupted certificate rejected",
+      "name": "non-original-cross-edge",
+      "rejection": "cross witness is not an original edge",
+      "status": "triggered and holds"
+    },
+    {
+      "claim": "corrupted certificate rejected",
+      "name": "overlapping-branch-sets",
+      "rejection": "branch sets overlap",
+      "status": "triggered and holds"
+    },
+    {
+      "claim": "corrupted certificate rejected",
+      "name": "wrong-complete-degree",
+      "rejection": "",
+      "status": "triggered and holds"
+    }
+  ],
+  "write_argv": [
+    "/home/ray/developer/ai/math/audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/agents/existing_results_overlap/minor_controls.py",
+    "--write",
+    "--seed",
+    "17"
+  ]
+}
