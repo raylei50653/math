@@ -1,0 +1,32 @@
+[
+  {
+    "name": "independent.normal",
+    "command": [
+      "python3",
+      "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/independent_edges.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/certificate.normal.json"
+    ],
+    "environment": {
+      "PYTHONHASHSEED": null
+    },
+    "exit_code": 0,
+    "stdout": "{\"actual_target_source_status\": \"not triggered\", \"fixtures\": [{\"S_actual_support\": [\"B0\", \"B1\"], \"S_true_edge_pair\": true, \"fixture\": \"two-private-witnesses-J1-branch-at-a\", \"full_M_lifts\": 54, \"query_fibre_counts\": [56, 80, 40, 54], \"status\": \"triggered and holds\"}, {\"S_actual_support\": [\"B0\", \"B1\"], \"S_true_edge_pair\": true, \"fixture\": \"support-preserved-J1-triangle-branch-at-x\", \"full_M_lifts\": 12, \"query_fibre_counts\": [52, 52, 32, 12], \"status\": \"triggered and holds\"}, {\"S_actual_support\": [\"B0\", \"B1\", \"B4\"], \"S_true_edge_pair\": false, \"fixture\": \"J2-triangle-private-witness-consumed\", \"full_M_lifts\": 48, \"query_fibre_counts\": [72, 68, 59, 48], \"status\": \"triggered and holds\"}, {\"S_actual_support\": [\"B0\", \"B1\", \"B4\"], \"S_true_edge_pair\": false, \"fixture\": \"negative-J1-D-routed-into-pendant-bridge\", \"full_M_lifts\": 0, \"query_fibre_counts\": [22, 30, 34, 0], \"status\": \"triggered and holds\"}], \"independent_original_M_edge_reconstruction_status\": \"triggered and holds\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "independent.seed17",
+    "command": [
+      "python3",
+      "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/independent_edges.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/certificate.seed17.json"
+    ],
+    "environment": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "stdout": "{\"actual_target_source_status\": \"not triggered\", \"fixtures\": [{\"S_actual_support\": [\"B0\", \"B1\"], \"S_true_edge_pair\": true, \"fixture\": \"two-private-witnesses-J1-branch-at-a\", \"full_M_lifts\": 54, \"query_fibre_counts\": [56, 80, 40, 54], \"status\": \"triggered and holds\"}, {\"S_actual_support\": [\"B0\", \"B1\"], \"S_true_edge_pair\": true, \"fixture\": \"support-preserved-J1-triangle-branch-at-x\", \"full_M_lifts\": 12, \"query_fibre_counts\": [52, 52, 32, 12], \"status\": \"triggered and holds\"}, {\"S_actual_support\": [\"B0\", \"B1\", \"B4\"], \"S_true_edge_pair\": false, \"fixture\": \"J2-triangle-private-witness-consumed\", \"full_M_lifts\": 48, \"query_fibre_counts\": [72, 68, 59, 48], \"status\": \"triggered and holds\"}, {\"S_actual_support\": [\"B0\", \"B1\", \"B4\"], \"S_true_edge_pair\": false, \"fixture\": \"negative-J1-D-routed-into-pendant-bridge\", \"full_M_lifts\": 0, \"query_fibre_counts\": [22, 30, 34, 0], \"status\": \"triggered and holds\"}], \"independent_original_M_edge_reconstruction_status\": \"triggered and holds\"}\n",
+    "stderr": ""
+  }
+]

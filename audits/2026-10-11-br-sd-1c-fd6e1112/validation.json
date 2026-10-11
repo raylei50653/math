@@ -1,0 +1,66 @@
+{
+  "checks": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/verify.py",
+        "--check",
+        "--live"
+      ],
+      "PYTHONHASHSEED": null,
+      "expected_exit": 0,
+      "exit_code": 0,
+      "stdout": "{\"authority_inputs\": 17, \"base\": \"fd6e1112e6f5e9fd23c50d2f3b5d2ef874954d69\", \"live\": true, \"payloads\": 81, \"prior_custody_files\": 89}\n",
+      "stderr": ""
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/verify.py",
+        "--check",
+        "--live"
+      ],
+      "PYTHONHASHSEED": "17",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "stdout": "{\"authority_inputs\": 17, \"base\": \"fd6e1112e6f5e9fd23c50d2f3b5d2ef874954d69\", \"live\": true, \"payloads\": 81, \"prior_custody_files\": 89}\n",
+      "stderr": ""
+    },
+    {
+      "name": "corrupted",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/verify.py",
+        "--check",
+        "--live",
+        "--manifest",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/logs/seal.corrupted.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "expected_exit": 1,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "FAIL: payload drift: MAPPING.md\n"
+    }
+  ],
+  "seal_normal_seed17_stdout_byte_equal": true,
+  "authored_markdown_files": 13,
+  "authored_local_links_checked": 32,
+  "frozen_authority_inputs": 17,
+  "unchanged_prior_br_sd_1a_files": 89,
+  "tracked_working_tree_diff": "",
+  "index_diff": "",
+  "actual_head": "fd6e1112e6f5e9fd23c50d2f3b5d2ef874954d69",
+  "git_status": "## main...origin/main\n?? audits/2026-10-11-br-sd-1c-fd6e1112/\n",
+  "proof_sha256": "abbdfcd48eadb2e2ca56ad74802c4ca21a98394d54b8b114aec27ebc58a5c4f0",
+  "report_sha256": "937262167c4011abec6f2297ec26468a07e028b7bb4d058fd16bcae7917e86ec",
+  "seal_sha256": "3f4220eb253e7b6657570ecf94d4a89724d37c7f0222297baefc36cc63d43b6c",
+  "payload_count": 81,
+  "new_output_scope": "audits/2026-10-11-br-sd-1c-fd6e1112",
+  "limitations": "Navigation checker checks local file existence for authored audit Markdown, not full CommonMark/anchor semantics or frozen dependency copy links. Whole-worktree DocGraph not run."
+}

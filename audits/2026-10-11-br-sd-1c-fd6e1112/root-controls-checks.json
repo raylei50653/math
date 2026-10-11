@@ -1,0 +1,99 @@
+{
+  "checks": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/certificate.normal.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "expected_exit": 0,
+      "exit_code": 0,
+      "stdout_log": "logs/root-normal.stdout.log",
+      "stderr_log": "logs/root-normal.stderr.log"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/certificate.normal.json"
+      ],
+      "PYTHONHASHSEED": "17",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "stdout_log": "logs/root-seed17.stdout.log",
+      "stderr_log": "logs/root-seed17.stderr.log"
+    },
+    {
+      "name": "independent-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/independent_edges.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/certificate.normal.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "expected_exit": 0,
+      "exit_code": 0,
+      "stdout_log": "logs/root-independent-normal.stdout.log",
+      "stderr_log": "logs/root-independent-normal.stderr.log"
+    },
+    {
+      "name": "independent-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/independent_edges.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/certificate.normal.json"
+      ],
+      "PYTHONHASHSEED": "17",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "stdout_log": "logs/root-independent-seed17.stdout.log",
+      "stderr_log": "logs/root-independent-seed17.stderr.log"
+    },
+    {
+      "name": "corrupted",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/certificate.corrupted.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "expected_exit": 1,
+      "exit_code": 1,
+      "stdout_log": "logs/root-corrupted.stdout.log",
+      "stderr_log": "logs/root-corrupted.stderr.log"
+    },
+    {
+      "name": "independent-corrupted",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/independent_edges.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1c-fd6e1112/agents/controls/certificate.corrupted.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "expected_exit": 1,
+      "exit_code": 1,
+      "stdout_log": "logs/root-independent-corrupted.stdout.log",
+      "stderr_log": "logs/root-independent-corrupted.stderr.log"
+    }
+  ],
+  "normal_seed17_stdout_byte_equal": true,
+  "independent_normal_seed17_stdout_byte_equal": true
+}
