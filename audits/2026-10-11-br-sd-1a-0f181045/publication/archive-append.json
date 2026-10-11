@@ -1,0 +1,59 @@
+{
+  "method": "existing audit_archive.py append in isolated mirror containing only this audit; copy back validated additive metadata and blobs",
+  "command": [
+    "python3",
+    "tools/audit_archive.py",
+    "append",
+    "--repo",
+    "<isolated mirror>"
+  ],
+  "exit": 0,
+  "stdout": "{\"appended_paths\": 4, \"new_blobs\": 3, \"new_manifest_artifact_blobs\": 0, \"appended_raw_bytes\": 5555926, \"new_compressed_bytes\": 357899}\n",
+  "stderr": "",
+  "old_archive_sha256": "e0981c849fd149fa4019f09de11ff4d93383d6d0943974cd3818eb4751db6f10",
+  "old_file_records_preserved": 2421,
+  "old_blob_records_preserved": 1491,
+  "added_files": {
+    "audits/2026-10-11-br-sd-1a-0f181045/agents/controls/certificate.corrupted.json": {
+      "sha256": "5b599bbcb30fe2a72e43420a853196a887cd29b1b499a0dc86083111abccac81",
+      "bytes": 1388989,
+      "mode": 420,
+      "reason": "large"
+    },
+    "audits/2026-10-11-br-sd-1a-0f181045/agents/controls/certificate.normal.json": {
+      "sha256": "7379e65f205108360fa5afb910dc85f78f257bc99837a09eb71ba724b77888e8",
+      "bytes": 1388989,
+      "mode": 420,
+      "reason": "large"
+    },
+    "audits/2026-10-11-br-sd-1a-0f181045/agents/controls/certificate.seed17.json": {
+      "sha256": "7379e65f205108360fa5afb910dc85f78f257bc99837a09eb71ba724b77888e8",
+      "bytes": 1388989,
+      "mode": 420,
+      "reason": "large"
+    },
+    "audits/2026-10-11-br-sd-1a-0f181045/negative-controls/missing-full-fibre-tuple.json": {
+      "sha256": "fb11b64c54596b1bfb273bbdef7647571fa895676b846d4f3c9e3f34994f40cf",
+      "bytes": 1388959,
+      "mode": 420,
+      "reason": "large"
+    }
+  },
+  "added_blobs": {
+    "5b599bbcb30fe2a72e43420a853196a887cd29b1b499a0dc86083111abccac81": {
+      "path": "audits/.archive/blobs/5b599bbcb30fe2a72e43420a853196a887cd29b1b499a0dc86083111abccac81.gz",
+      "sha256": "462f095b778d203db472dfe59326fb49c220d210709e64a831901d235ea5c6f9",
+      "bytes": 119306
+    },
+    "7379e65f205108360fa5afb910dc85f78f257bc99837a09eb71ba724b77888e8": {
+      "path": "audits/.archive/blobs/7379e65f205108360fa5afb910dc85f78f257bc99837a09eb71ba724b77888e8.gz",
+      "sha256": "399c218def1a1d96092ecf25b501f6ba69798948bb0db581dd737d1cb5a8a134",
+      "bytes": 119299
+    },
+    "fb11b64c54596b1bfb273bbdef7647571fa895676b846d4f3c9e3f34994f40cf": {
+      "path": "audits/.archive/blobs/fb11b64c54596b1bfb273bbdef7647571fa895676b846d4f3c9e3f34994f40cf.gz",
+      "sha256": "da98897476da3671054e0371b1443389d75a2aaca80b23e18e682df26bcf768e",
+      "bytes": 119294
+    }
+  }
+}

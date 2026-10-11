@@ -1,0 +1,114 @@
+[
+  {
+    "name": "root-controls-normal",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1a-0f181045/agents/controls/checker.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1a-0f181045/agents/controls/certificate.normal.json"
+    ],
+    "env_overrides": {},
+    "exit": 0,
+    "expected_exit": 0,
+    "holds": true,
+    "elapsed_seconds": 0.959,
+    "stdout_sha256": "c974599e38fbe61bb8fe92dd0387ce48aaae6b8452d800ba75e73b65bc7c7dc6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "root-controls-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1a-0f181045/agents/controls/checker.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1a-0f181045/agents/controls/certificate.normal.json"
+    ],
+    "env_overrides": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit": 0,
+    "expected_exit": 0,
+    "holds": true,
+    "elapsed_seconds": 1.022,
+    "stdout_sha256": "c974599e38fbe61bb8fe92dd0387ce48aaae6b8452d800ba75e73b65bc7c7dc6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "root-direct-fibres-normal",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1a-0f181045/independent_fibres.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1a-0f181045/agents/controls/certificate.normal.json"
+    ],
+    "env_overrides": {},
+    "exit": 0,
+    "expected_exit": 0,
+    "holds": true,
+    "elapsed_seconds": 0.079,
+    "stdout_sha256": "454c5c5a1689545388aa2f90099f20a79611afc29ef5dd1176254b2760854f09",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "root-direct-fibres-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1a-0f181045/independent_fibres.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1a-0f181045/agents/controls/certificate.normal.json"
+    ],
+    "env_overrides": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit": 0,
+    "expected_exit": 0,
+    "holds": true,
+    "elapsed_seconds": 0.067,
+    "stdout_sha256": "454c5c5a1689545388aa2f90099f20a79611afc29ef5dd1176254b2760854f09",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "root-controls-corrupted",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1a-0f181045/agents/controls/checker.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1a-0f181045/agents/controls/certificate.corrupted.json"
+    ],
+    "env_overrides": {},
+    "exit": 1,
+    "expected_exit": 1,
+    "holds": true,
+    "elapsed_seconds": 0.071,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "3ed3c63952cbb59424d55d1158e74be15ecd072da3b9d7aa43480b10ba4ff1cf"
+  },
+  {
+    "name": "root-direct-fibres-missing-tuple",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1a-0f181045/independent_fibres.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1a-0f181045/negative-controls/missing-full-fibre-tuple.json"
+    ],
+    "env_overrides": {},
+    "exit": 1,
+    "expected_exit": 1,
+    "holds": true,
+    "elapsed_seconds": 0.066,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "a78267b729f718ca3840969071bef3a0be69a81ba0b9a67fc9d3e9391ff9e31d"
+  }
+]

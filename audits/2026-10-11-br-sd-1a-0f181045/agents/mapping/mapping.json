@@ -1,0 +1,425 @@
+{
+  "schema": "BR-SD-1a-source-mapping-v1",
+  "task": "BR-SD-1a",
+  "role": "independent premise/identity mapping",
+  "source_base": "4dd11f422c6fa49265a412085116b088786d0344",
+  "actual_head_from_parent_authority": "0f18104528dcf0b744cdba9e408a5a2bfa466e21",
+  "input_root": "audits/2026-10-11-br-sd-1a-0f181045/authority/current",
+  "inputs": [
+    {
+      "id": "latest_task",
+      "path": "audits/2026-10-11-br-sd-1a-0f181045/authority/current/audits/2026-10-11-single-deficit-publication/NEXT-TASK.md",
+      "sha256": "0b5cd72b067c72dfec8c96d527ef315a8ef7d36d2d487202f68c995574f07343",
+      "size": 3460
+    },
+    {
+      "id": "old_task",
+      "path": "audits/2026-10-11-br-sd-1a-0f181045/authority/current/audits/2026-10-11-single-deficit-applicability-804e3b0b1b/NEXT-TASK.md",
+      "sha256": "db65e1dbd397d9af8e77ebbdcdebfdf0b5ce40d4403e02701f51e773d2aa093b",
+      "size": 5562
+    },
+    {
+      "id": "n45",
+      "path": "audits/2026-10-11-br-sd-1a-0f181045/authority/current/docs/c5_excess_two_nonadjacent_unit_core45.md",
+      "sha256": "602194e7c259621ca9df0fa44a14ff1cf6982bb0580e6b562d819b35202b3ce1",
+      "size": 46948
+    },
+    {
+      "id": "degree5_interfaces",
+      "path": "audits/2026-10-11-br-sd-1a-0f181045/authority/current/docs/c5_degree5_interfaces.md",
+      "sha256": "818fb3973bf005ef22e3ca3c77b9b551524a577277662f7b65d1a07a0504614a",
+      "size": 17666
+    },
+    {
+      "id": "b_inventory",
+      "path": "audits/2026-10-11-br-sd-1a-0f181045/authority/current/audits/2026-10-11-single-deficit-applicability-804e3b0b1b/identity_inventory/inventory.json",
+      "sha256": "1b43c2be38110a73cc425c1d9c1815275cb0e6b0d660ad33273e7ce0421e7194",
+      "size": 31348
+    },
+    {
+      "id": "b_applicability",
+      "path": "audits/2026-10-11-br-sd-1a-0f181045/authority/current/audits/2026-10-11-single-deficit-applicability-804e3b0b1b/APPLICABILITY.md",
+      "sha256": "8ff88cac9dbbafb91da85dc4d78f25549811c8ff059a648fde83c8564a233b85",
+      "size": 6100
+    },
+    {
+      "id": "b_bridges",
+      "path": "audits/2026-10-11-br-sd-1a-0f181045/authority/current/audits/2026-10-11-single-deficit-applicability-804e3b0b1b/BRIDGES.md",
+      "sha256": "76e50f5806c32fd612a5623e198064aa79978f2fb5aae9e705af63a136696051",
+      "size": 4438
+    },
+    {
+      "id": "screening",
+      "path": "audits/2026-10-11-br-sd-1a-0f181045/authority/current/audits/2026-10-11-single-deficit-publication/REPORT.md",
+      "sha256": "37e5af5a4d9fa820055c11669460cb8b33ee324722a60187dd0d7368fabb5989",
+      "size": 5424
+    },
+    {
+      "id": "handoff",
+      "path": "audits/2026-10-11-br-sd-1a-0f181045/authority/current/docs/HANDOFF.md",
+      "sha256": "3a5f57439de95350fc322ab6a9a7062782a7fcb7b293e4563e1cae2f65d9299f",
+      "size": 869
+    }
+  ],
+  "identity": {
+    "inventory_id": "N45-S-NOU-LS-PAIR",
+    "parent_identity": "N2; no U; L long; S actual true-edge-pair short; exact-S; X=M=G-rb_i; 45/54 after one common root-role swap",
+    "selected_subdomain": "r L/S contact split22; r has four C neighbors, two in each original J1/J2; s has two internal contacts p/q and three original retained spokes; actual sole C has exactly three odd cycles, J1/J2 shared r, J2/J3 joined by unique original uv with u!=r, terminal arms and no side branches",
+    "root_swap_rule": "For a 54 naming, simultaneously exchange the original root labels/roles and transport all named contacts, ownership, edge omission, rotation, literal frame, relations/fibres/full lifts. This is one global graph-role relabeling, not independent block/color normalization.",
+    "original_component_mapping": {
+      "L": "J1-{r} together with the p-arm",
+      "S": "J2-{r}, original uv, all J3, and the q-arm"
+    },
+    "source_supplied": false,
+    "finite_control_status": "not triggered (in inherited B records); not a source exclusion argument",
+    "full_open_identity_closed": false,
+    "full_open_identity_new_unconditional_closures": 0,
+    "mapping_verdict": "Exact stated subdomain maps to N45-S-NOU-LS-PAIR, with a direct degree-assignment contradiction proof obligation; no general identity adoption is inferred."
+  },
+  "premises": [
+    {
+      "id": "P01",
+      "claim": "G finite simple ordered induced-C5 disk; same ordered B and original graph",
+      "classification": "inherited source contract",
+      "proof_use": "Retained for source identity; proper boundary coloring is used for gluing. Disk planarity and C5 length are not used in D contradiction.",
+      "references": [
+        "old_task:13",
+        "n45:72-76"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P02",
+      "claim": "Complete Sigma933/941 or one common whole-graph D5 image; Sigma-critical; epsilon2; original r/s degree5, nonadjacent",
+      "classification": "inherited source contract",
+      "proof_use": "Retained; full Sigma, epsilon, planarity and criticality are redundant proof assumptions. No independent recoloring/normalizing of blocks.",
+      "references": [
+        "old_task:13-14",
+        "n45:73-79"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P03",
+      "claim": "H_G-{r,s} has exactly original L/S mixed components, no unary; L long; S actual support is the endpoints of one true frame edge",
+      "classification": "inherited source contract",
+      "proof_use": "Identity selection only; the D contradiction does not use long/support size or shield budgets.",
+      "references": [
+        "old_task:13",
+        "n45:75-76",
+        "latest_task:15-16",
+        "b_inventory:41-45"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P04",
+      "claim": "e=rb_i is r unique original boundary spoke; V(X)=V(G), E(X)=E(G)-{e}, X=M",
+      "classification": "inherited source contract",
+      "proof_use": "Exact-S identity; r original spoke is absent in M, and all L/S edges and boundary attachments are retained. Degree4 of C, once asserted, suffices for proof.",
+      "references": [
+        "old_task:14",
+        "n45:78-90",
+        "latest_task:15-16"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P05",
+      "claim": "M itself is inclusion-minimal for the same rejected literal proper three-color beta",
+      "classification": "inherited source contract",
+      "proof_use": "Rejection and proper three-color beta are used; inclusion-minimality is redundant in the direct D proof. It cannot be inherited automatically from Sigma-critical G.",
+      "references": [
+        "old_task:14",
+        "latest_task:15-16",
+        "n45:417-418"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P06",
+      "claim": "Complete degrees in M: r=4, s=5, all other effective interior vertices=4",
+      "classification": "inherited source contract and direct explicit shape",
+      "proof_use": "d_M(v)=4 for every v in C is used for |L^D(v)|>=d_C(v). s=5 is retained for 45/54 identity, not needed after s=D is valid and the shape is given.",
+      "references": [
+        "old_task:14",
+        "latest_task:17",
+        "b_inventory:30-35"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P07",
+      "claim": "G has its own complete Sigma witnesses; M has same-beta full retained-edge witnesses",
+      "classification": "inherited source contract",
+      "proof_use": "Retained but redundant proof assumptions; needed only for optional all-four component-query reconstruction, not D rejection. No witnesses are independently supplied for an actual source.",
+      "references": [
+        "old_task:14",
+        "latest_task:15-16"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P08",
+      "claim": "Original vertices, ordered/shared contacts, actual attachments/supports, ownership, bridges, rotation, literal frame, complete relations/fibres/full lifts retained",
+      "classification": "inherited source contract",
+      "proof_use": "Actual M edges define lists and contacts. No coloring replacement or marginal/product substitution occurs. Abstract controls do not establish these source facts.",
+      "references": [
+        "latest_task:15-21",
+        "n45:88-91",
+        "b_inventory:18-28"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P09",
+      "claim": "s has exactly two distinct original internal contacts p/q, one in L and one in S, and three retained original boundary spokes",
+      "classification": "direct explicit shape",
+      "proof_use": "P={p,q} determines where D is removed. Since D is unused by beta, D is legal at s regardless of the spoke colors. s=5 and three spokes are also original-domain data.",
+      "references": [
+        "old_task:15",
+        "latest_task:17",
+        "degree5_interfaces:281-285"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P10",
+      "claim": "C=H_M-s={r} union L union S is the actual unique connected component; covers every effective interior vertex except s",
+      "classification": "direct explicit shape",
+      "proof_use": "Connected degree-assignment theorem applies to C. A coloring of C glues with s=D and beta to a full M coloring. No missing component may be silently ignored.",
+      "references": [
+        "old_task:15",
+        "latest_task:18",
+        "latest_task:26-27"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P11",
+      "claim": "C nontrivial blocks are exactly J1/J2/J3 original odd cycles and original bridges; J1 intersection J2={r}; J3 is disjoint from them",
+      "classification": "direct explicit shape",
+      "proof_use": "Exact blocks are assumed directly, not deduced from A/minimality. Each J_i has at least three vertices, enabling private witness selection; J1/J2 palettes must be disjoint at r.",
+      "references": [
+        "old_task:16",
+        "latest_task:18-20",
+        "latest_task:28-32"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P12",
+      "claim": "Unique inter-cycle bridge is original uv, u in J2-{r}, v in J3; u!=r",
+      "classification": "direct explicit shape",
+      "proof_use": "At J2 only r/u can be C cutpoints; choosing w2 outside {r,u} gives a sole-block noncontact. The source bridge is retained; no uv contraction or R27 target is constructed.",
+      "references": [
+        "old_task:16",
+        "latest_task:19",
+        "latest_task:29",
+        "latest_task:35"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P13",
+      "claim": "p/q run by original terminal arms to J1/J3 private anchors a1/a3; arms may have length zero; no other blocks or side branches",
+      "classification": "direct explicit shape",
+      "proof_use": "At J1 only r and a1 can be cut/contact obstructions. The no-extra-branches clause is essential for this exact witness count. No general side-branch theorem is claimed.",
+      "references": [
+        "old_task:16",
+        "latest_task:20",
+        "latest_task:28-30"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P14",
+      "claim": "Col has four colors and D is the unique color unused by proper three-color beta",
+      "classification": "inherited source contract and direct explicit shape",
+      "proof_use": "D is allowed at s; D remains in every non-s-contact C list, regardless of repeated boundary colors.",
+      "references": [
+        "old_task:14",
+        "latest_task:21",
+        "latest_task:26-31"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P15",
+      "claim": "w1 in J1-{r,a1} and w2 in J2-{r,u} exist, are noncutpoints of C and not s-contacts",
+      "classification": "derived from exact shape",
+      "proof_use": "At most two excluded vertices per odd cycle, which has >=3 vertices. d_C(w_i)=2 and every other original M neighbor is in B.",
+      "references": [
+        "latest_task:28-31",
+        "screening:37-40"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P16",
+      "claim": "L^D(v)=Col-beta(N_B^M(v))-({D} if sv is an original edge else empty), and |L^D(v)|>=d_C(v)",
+      "classification": "derived proof premise",
+      "proof_use": "d_M(v)=4=d_C(v)+|N_B^M(v)|+1_{sv}; subtracting colors cannot remove more than this outside-neighbor count. No all-tight-list assumption is needed initially.",
+      "references": [
+        "latest_task:25-27",
+        "degree5_interfaces:118-129"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P17",
+      "claim": "C is not L^D-colorable",
+      "classification": "derived proof premise",
+      "proof_use": "Otherwise glue its full original-vertex assignment with s=D and proper beta, contradicting rejection by M. No minimality or four-query preservation is used.",
+      "references": [
+        "latest_task:27",
+        "screening:31-32"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P18",
+      "claim": "Uncolorable connected degree assignment has blockwise-uniform palettes with disjoint palettes at each shared vertex",
+      "classification": "external theorem dependency",
+      "proof_use": "External Dvorak Theorem10/Lemma7; must be frozen and checked by the parent audit. This mapping is not a Lean or Python theorem certificate.",
+      "references": [
+        "latest_task:10",
+        "degree5_interfaces:131-137"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P19",
+      "claim": "L^D(w_i)=S_{J_i} contains D but S_{J1} intersection S_{J2}=empty at r",
+      "classification": "derived proof conclusion",
+      "proof_use": "w_i each lies in exactly its one odd-cycle block and is not an s-contact; beta never removes D. Contradiction is in one actual M and one literal frame.",
+      "references": [
+        "latest_task:30-33",
+        "screening:37-40"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P20",
+      "claim": "H_M biconnectivity / SD-A applicability",
+      "classification": "not independently established actual source",
+      "proof_use": "Not needed for D contradiction: latest task directly assumes s degree and exact blocks. Do not infer actual biconnectivity from beta-minimality, or close the full B inventory identity.",
+      "references": [
+        "n45:417-418",
+        "b_inventory:47-54",
+        "latest_task:11"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P21",
+      "claim": "T4 localization; uv->R27 source minor; target four-query preservation and target beta-minimality",
+      "classification": "redundant proof assumptions / old-route obligations",
+      "proof_use": "Old BR-SD-1 work 1-4 obligations are not required by latest BR-SD-1a. Original full Sigma contract stays retained. No target is constructed and no contraction/coloring equivalence is asserted.",
+      "references": [
+        "old_task:20-26",
+        "latest_task:35-37",
+        "screening:41-48"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    },
+    {
+      "id": "P22",
+      "claim": "F_C(beta)={D} versus full-M four s-color extensions",
+      "classification": "optional derived interface fact; not a proof prerequisite",
+      "proof_use": "Component queries omit s-B restrictions; full-M beta extensions are all empty. Under retained beta-minimality and s-spoke deletion witnesses, the three beta colors have component witnesses, but no actual-source fibre evaluation is supplied by this mapping.",
+      "references": [
+        "old_task:17",
+        "latest_task:35-37",
+        "degree5_interfaces:281-285"
+      ],
+      "actual_source_status": "not independently established; no actual source supplied"
+    }
+  ],
+  "arm_cases": [
+    {
+      "arm": "p to J1",
+      "length": "zero",
+      "p": "p=a1 in J1-{r}",
+      "cutpoints_contacts_on_J1": "r plus a1 (a1 is s-contact; need not be C-cutpoint)",
+      "selected_witness": "any w1 in J1-{r,a1}"
+    },
+    {
+      "arm": "p to J1",
+      "length": "positive",
+      "p": "p lies outside J1; arm meets J1 exactly at a1",
+      "cutpoints_contacts_on_J1": "r plus a1 (a1 is C-cutpoint; p is outside J1)",
+      "selected_witness": "any w1 in J1-{r,a1}"
+    },
+    {
+      "arm": "q to J3",
+      "length": "zero",
+      "q": "q=a3 in J3",
+      "effect_on_J2": "q not in J2; only r/u can be J2 C-cutpoints",
+      "selected_witness": "any w2 in J2-{r,u}"
+    },
+    {
+      "arm": "q to J3",
+      "length": "positive",
+      "q": "q lies outside J3; arm meets J3 exactly at a3",
+      "effect_on_J2": "q not in J2; only r/u can be J2 C-cutpoints",
+      "selected_witness": "any w2 in J2-{r,u}"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F01",
+      "type": "historical status difference, not mathematical conflict",
+      "finding": "B original APPLICABILITY/inventory marks A conditional/unpassed. Current publication and degree5 section7 mark A paper-verified. Freeze and retain both contexts. The direct proof does not cite A."
+    },
+    {
+      "id": "F02",
+      "type": "corrected query semantics",
+      "finding": "Old contract5 four queries must mean same-C C-B plus s-C queries with s-B omitted, not full-M queries. Latest task and degree5 section7 explicitly correct this. Old files remain read-only."
+    },
+    {
+      "id": "F03",
+      "type": "block terminology clarification",
+      "finding": "Latest task says all blocks are three cycles and bridges; old contract4 says all nontrivial blocks. K2 bridges are nontrivial blocks, so these agree when interpreting cycles and K2 bridge blocks. Zero-length arms contribute no bridge block; no singleton block is added to the three-cycle connected C."
+    },
+    {
+      "id": "F04",
+      "type": "private-anchor wording / applicability boundary",
+      "finding": "A cycle-private u becomes a C cutpoint after uv is attached. Do not use the word private to imply noncutpoint of C. Also terminal anchor a3 is not explicitly stated unequal to v in task text: if a3=v, H_M has a cutpoint at v. The D proof selects only J1/J2 witnesses, so does not use H_M biconnectivity or a3!=v. No bic identity is inferred; generic nonbic identities remain OPEN."
+    },
+    {
+      "id": "F05",
+      "type": "scope boundary",
+      "finding": "Direct contradiction does not depend on actual L/S support geometry, planarity, Sigma, criticality, minimality, T4, A or R27; these remain full source-contract restrictions for the mapped exclusion. Weak proof dependencies do not authorize expanding the reported domain to side branches, different contact placements, more cycles, 55, or general N45/E."
+    },
+    {
+      "id": "F06",
+      "type": "evidence limit",
+      "finding": "No actual full-contract source graph, original attachment/rotation listing, edge-deletion witnesses or complete source fibres are supplied in the authority. The proof quantifies over a hypothetical source satisfying all assumptions; finite controls being not triggered cannot establish source exclusion."
+    }
+  ],
+  "proof_dependencies": {
+    "used": [
+      "finite simple actual M; same ordered boundary B and proper three-color beta",
+      "every C vertex has complete M degree4",
+      "s=D is allowed because D is unused by beta",
+      "M rejects beta",
+      "C is the actual unique connected component H_M-s",
+      "exact no-side-branch shape yields one noncut/noncontact witness in each J1/J2",
+      "external uncolorable degree-assignment blockwise-uniform characterization"
+    ],
+    "not_used": [
+      "SD-A/Cranston-Rabern single-deficit reduction",
+      "disk planarity, boundary C5 length, full Sigma or epsilon2",
+      "beta-inclusion-minimality or retained-edge witnesses",
+      "T4 localization",
+      "R27 minor or uv contraction",
+      "target four-query preservation or target beta-minimality"
+    ]
+  },
+  "permission_boundary": {
+    "writes_only": "audits/2026-10-11-br-sd-1a-0f181045/agents/mapping",
+    "shared_or_old_files_modified": false,
+    "commit_push_publish": false
+  }
+}

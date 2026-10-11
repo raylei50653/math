@@ -1,0 +1,98 @@
+{
+  "task": "BR-SD-1a",
+  "seal_sha256": "d24b8825a1f230d7116c24e0c40391266966e541a968dc1faa022e5ab36f2b51",
+  "sealed_payload_count": 65,
+  "sealed_payload_bytes": 6849178,
+  "normal_seed17_stdout_byte_equal": true,
+  "checks": [
+    {
+      "name": "seal-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1a-0f181045/verify.py",
+        "--check",
+        "--live"
+      ],
+      "env_overrides": {},
+      "exit": 0,
+      "expected_exit": 0,
+      "holds": true,
+      "elapsed_seconds": 0.411,
+      "logs": {
+        "stdout": {
+          "path": "logs/seal-normal.stdout.log",
+          "size": 382,
+          "sha256": "73f2d0b48ade68e009ef406247a8da0e836b60eae59dba98849bb49d714aa23d"
+        },
+        "stderr": {
+          "path": "logs/seal-normal.stderr.log",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "name": "seal-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1a-0f181045/verify.py",
+        "--check",
+        "--live"
+      ],
+      "env_overrides": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "holds": true,
+      "elapsed_seconds": 0.417,
+      "logs": {
+        "stdout": {
+          "path": "logs/seal-seed17.stdout.log",
+          "size": 382,
+          "sha256": "73f2d0b48ade68e009ef406247a8da0e836b60eae59dba98849bb49d714aa23d"
+        },
+        "stderr": {
+          "path": "logs/seal-seed17.stderr.log",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "name": "seal-corrupted",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1a-0f181045/verify.py",
+        "--check",
+        "--manifest",
+        "audits/2026-10-11-br-sd-1a-0f181045/negative-controls/seal-corrupted-manifest.json"
+      ],
+      "env_overrides": {},
+      "exit": 1,
+      "expected_exit": 1,
+      "holds": true,
+      "elapsed_seconds": 0.095,
+      "logs": {
+        "stdout": {
+          "path": "logs/seal-corrupted.stdout.log",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "logs/seal-corrupted.stderr.log",
+          "size": 30,
+          "sha256": "47b31641d23268393e3ae17683a9bfdcd3d69eb405697597e3d4b0aa12f0e29b"
+        }
+      }
+    }
+  ],
+  "postseal_outputs_excluded_from_original_seal": [
+    "seal-validation.json",
+    "logs/seal-*.log",
+    "negative-controls/seal-corrupted-manifest.json"
+  ]
+}
