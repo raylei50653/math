@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-11（U在s限定採納及二連通單缺額查證／適用性接入）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-11（BR-SD-1c 單一原旁支 scoped 採納與 residual 對帳）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -28,7 +28,7 @@
 | [Weak-deletion／出口](c5_weak_deletion_guide.md) | 候選、minimal obstruction、核心分離與一般出口缺口 |
 | [C₅ class／兩點重疊](c5_two_vertex_overlap_guide.md) | 兩個 class 各選兩點識別、完整染色後繼與拓撲界線 |
 | [Degree-4／block](c5_degree4_guide.md) | 全 degree-4 合成、前提及證書 |
-| [Degree-5／R 系列](c5_degree5_guide.md) | 來源結構、R31 minor 與其他環型缺口 |
+| [Degree-5／R 系列](c5_degree5_guide.md) | 來源結構、BR-SD-1a／1c 精確子域採納、1e 窄候選與 R31 minor 缺口 |
 | [Sector／雙拒絕分類](c5_sector_3903_guide.md) | 3903、3703 與指定 sector 分類 |
 | [Kempe／計數與策略](c5_kempe_guide.md) | 同圖換色、有序重接、計數限制與 repair |
 | [State／grammar／topology](c5_state_guide.md) | 充分性、固定 grammar、embedding 及枚舉 |
@@ -164,6 +164,7 @@
 | [二連通單缺額獨立查證 A](../audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/REPORT.md) | 指定完整M-degrees與properβ拒絕下，內度2、H−s Gallai tree；不需minimality／T4／lists全緊，960 assignments與758 minor controls，紙面＋正式外部定理，未Lean化 |
 | [45／54適用性 B](../audits/2026-10-11-single-deficit-applicability-804e3b0b1b/APPLICABILITY.md) | actual X=M／degrees／二連通前提下三項subset排除、無旁支p–q Gallai鏈；540凍結輸入，exact source controls未觸發，完整OPEN身份新增無條件關閉0；目前接入見N45§2.11 |
 | [BR-SD-1a 獨立 D-palette 驗證](../audits/2026-10-11-br-sd-1a-0f181045/REPORT.md) | 任意奇環／外臂長的 split22／共用 r／三環單 bridge 無旁支子域已採納於 N45§2.11；不依二連通，父身份 OPEN，actual target not triggered，完整 OPEN 身份新增無條件關閉0，無新 Lean |
+| [BR-SD-1c 單一原旁支排除](../audits/2026-10-11-br-sd-1c-fd6e1112/REPORT.md) | 同骨架一份有限非空原 W 只接 J1/J2，保 actual S pair support 及未改動 J3／q 外臂，任意奇環／外臂長／W 大小及允許接點已精確採納於 N45§2.11；terminal lemma 保完整局部前提，父身份 OPEN，actual target not triggered，無新 Lean |
 | [三-spoke 區域化約](c5_degree5_sectors.md) | 單一二接點分量縮到兩個鏡像 pentagon；完整接合代數與非 minimal disk 控制，最終排除仍未解；紙面＋證書，未 Lean 化 |
 | [三-spoke 任意樹分量／連通外框](c5_degree5_tree_components.md) | 任意樹的固定-q 化約與五種閉色序列、648 個必要 lifts 排除；t≥1 的 degree-4 分量不含 K4，後續 no-spoke 結果補上 t=0；原 cycle 缺口已有 t≥1 出口接合，完整圖分類／形式化仍有界線 |
 | [三-spoke 單 triangle 二接點](c5_degree5_triangle_components.md) | 旁支／共同／不同接點三型全部排除；528 模板、89,224 接線非 disk，不限 bridges 長度或分叉；單長環由下一列處理，未 Lean 化 |
@@ -272,7 +273,7 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [N45：N2原unit省略45／54權威入口](c5_excess_two_nonadjacent_unit_core45.md) | 指定整U省略及兩short S已全排；完整K1–K12 U／long／short、只刪spoke且X=M自身同β minimal身份由§2.9／2.10限定排除；§2.11採納BR-SD-1a精確split22三環單bridge無旁支子域；無U的long／兩long父身份、其他cores／原55／一般N2／E仍OPEN，QX信任鏈與HIGH2 finding保留 |
+| [N45：N2原unit省略45／54權威入口](c5_excess_two_nonadjacent_unit_core45.md) | 指定整U省略及兩short S已全排；完整K1–K12 U／long／short、只刪spoke且X=M自身同β minimal身份由§2.9／2.10限定排除；§2.11分列採納BR-SD-1a無旁支及1c單一原 W 只接J1/J2的精確split22三環單bridge子域，1c保actual S pair及未改動J3／q臂；完整父身份、其他cores／原55／一般N2／E仍OPEN，QX信任鏈與HIGH2 finding保留 |
 | [N45-S含long契約／必要化約](../audits/2026-10-10-n45-s-long-contract/REPORT.md) | 精確保留U/L/S、只刪spoke且X=M自己minimal；pair／singleton盾費、X full B-touch／無U側≤2spokes、十列全pins及恢復e；19圖full-lift校準，目標not triggered，未作來源全排或新Lean |
 | [N45-S-LONG-R：完整U在r的sole C映射](../audits/2026-10-10-n45-s-long-r-map/REPORT.md) | 精確X=M契約內pair／singleton皆排除；X自己的witnesses給F，t_s=0/1/2接BASE(5)/(4)/(3)；26省略／260列完整r fibres只校準，來源not triggered；U在s後續限定採納見下，無U等其他long身份OPEN |
 | [N45-S-LONG-S：DIRECT／FIBRE採納及更正](../audits/2026-10-11-n45-s-long-s-review/REPORT.md) | 四direct profiles任意大小排除、餘兩profile singleton／pair13／31排除；FIBRE分類12+4+10+4及恢復依賴更正；當輪24 schedules後由q0／q2／T1全排，原bytes保留 |
@@ -458,6 +459,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-11：BR-SD-1d 單一原旁支 canonical 採納與 residual 對帳](history/2026-10-11-br-sd-1d-adoption.md)；分列1a／1c精確子域、完整 OPEN 身份新增無條件關閉0，1e僅記義務，傳播停 L2
 - [2026-10-11：BR-SD-1b canonical 採納與 residual 對帳](history/2026-10-11-br-sd-1b-adoption.md)；精確子域 scoped exclusion，完整 OPEN 身份新增無條件關閉0，傳播停 L2
 - [2026-10-11：單缺額查證、45／54適用性與相連證據整理](history/2026-10-11-single-deficit-progress.md)；兩audit原bytes保留，A已查證、B仍核實際core前提，BR-SD-1a待獨立封存
 - [2026-10-09：N2的45／54原unit省略第一批及增量驗收](history/2026-10-09-n2-45-54-parallel-tasks.md)；四份與兩增量均在限定scope已驗收，窄排除已採納

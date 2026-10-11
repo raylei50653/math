@@ -291,3 +291,12 @@ D-palette 矛盾已封存、發布並由 [N45§2.11](c5_excess_two_nonadjacent_u
 完整父身份仍 OPEN，完整 OPEN 身份新增無條件關閉數仍為0，無新來源／Lean。
 舊 B 的 uv→R27 任務及四-query 語義保留；本次採納／重播與傳播範圍見
 [BR-SD-1b 紀錄](history/2026-10-11-br-sd-1b-adoption.md)，後續候選義務見[degree-5 導覽§4](c5_degree5_guide.md#4-r31-保留缺口與重播入口)。
+
+後續 [BR-SD-1c 最終紙面排除](../audits/2026-10-11-br-sd-1c-fd6e1112/PROOF.md) 已封存、發布並由
+[N45§2.11](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域) 精確採納：
+在同一 split22 原骨架中，一份原有限非空 W 只接 J1/J2、保 actual S 真框邊 pair support
+及未改動 J3／q 外臂的合同不可能成立；1a 的無旁支域分列，不依 SD-A／二連通。
+可重用 terminal lemma 須保其全部局部前提，尤其正長臂 q 為 C 末端、a3 以外全部臂點無額外 C 邊；
+cutpoint list 含 D 不迫每個 incident palette 含 D，原負控制保留。
+完整父身份、W 接 J3／q 臂、多旁支及一般 Gallai block tree 仍 OPEN，完整 OPEN 身份新增關閉0。
+採納／證據分層見[BR-SD-1d 紀錄](history/2026-10-11-br-sd-1d-adoption.md)，1e 義務由 degree-5 導覽§4 維護。

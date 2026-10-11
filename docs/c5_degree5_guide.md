@@ -88,14 +88,24 @@ R31 是保留缺口；是否進行中見 HANDOFF；本線停止點見 §4。
 
 ## 4. R31 保留缺口與重播入口
 
-BR-SD-1a 的任意大小 D-palette 矛盾已獨立驗證、封存、發布並
+BR-SD-1a／1c 的任意大小 scoped exclusions 已獨立驗證、封存、發布並
 [正式接入 N45§2.11](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)：
-僅排無 U／long／真 pair-short 的 split22、共用 r 雙環、三環單 bridge 無旁支精確子域，
-不依 H_M 二連通。完整父身份仍 OPEN，完整 OPEN 身份新增無條件關閉數仍為0。
-BR-SD-1c 候選義務是將同一 D 的 palette 矛盾推廣至含具名旁支或其他 Gallai block 接線：
-須另核非割點／非 s-contact witnesses，或證相交 blocks 的 D 傳遞；失敗時保具名障礙。
-本輪只記此研究義務；[採納與 residual 紀錄](history/2026-10-11-br-sd-1b-adoption.md)
-與下列 R31 任意長來源 minor 義務分開，一般 bridge-separated 三環或更多環仍 OPEN。
+同為無 U／long／actual 真框邊 pair-short、split22、共用 r 雙環及原三環單 bridge 骨架；
+**1a 僅排無旁支合同；1c 僅排一份原有限非空 W 只接 J1/J2，保 actual S pair support
+及未改動 J3／q 外臂的合同**。任意奇環／p、q 外臂長、有限 W 大小及所有允許接點均涵蓋，
+不依 H_M 二連通；pair-supported terminal lemma 只在其完整局部前提下成立。
+完整父身份、多旁支、一般 Gallai block tree 仍 OPEN，完整 OPEN 身份新增無條件關閉數仍為0。
+[1b 採納紀錄](history/2026-10-11-br-sd-1b-adoption.md) 與
+[1d 採納／residual 紀錄](history/2026-10-11-br-sd-1d-adoption.md) 保存各輪核對，與 R31 minor 義務分開。
+
+**BR-SD-1e 窄候選：** 只限定一份新增原 W 接入 J3 或 q 外臂的具名子域。
+沿 [1c PROOF§6](../audits/2026-10-11-br-sd-1c-fd6e1112/PROOF.md#6-路線-b2保-actual-pair-support-的局部末端引理)
+與 [MAPPING](../audits/2026-10-11-br-sd-1c-fd6e1112/MAPPING.md) 核同一原 degree／附件／contacts，
+先指出私有環點、bridge 臂、q 末端無額外 C 邊等哪一必要前提首先失效，
+再問其他 private witness 或合法 palette routing 能否恢復矛盾。
+保留 [cutpoint D 傳遞反例](../audits/2026-10-11-br-sd-1c-fd6e1112/PROOF.md#7-無-pair-support-時第一個失敗推論)；
+不得由 cutpoint list 含 D 推每個 incident palette 都含 D。本輪只記義務，不開始新數學證明。
+J3／q 臂被改動、actual pair support 或引理必要前提失效、其他三環位置／更多環仍 OPEN。
 
 R31 已有同末端不同二接點的 C3–C3–C3 簡單臂正常形非 disk 證書。
 仍須把任意長奇環及重複色外臂化到該目標：接點末端保留共用點與兩接點，
