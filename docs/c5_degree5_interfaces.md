@@ -328,3 +328,11 @@ W1 可失去 J1 witness、W2 可破壞舊 terminal 前提，證明不使用 `D�
 1a／1c／1e 原合同與歷史語境不改；完整 `N45-S-NOU-LS-PAIR`、未涵蓋兩／多旁支、其他 splits／三環形狀、
 R31、ε≥3、一般 N45／N2／E 與 `K∞=K≤5` 仍 OPEN，完整 OPEN 身份新增無條件關閉0。
 採納／傳播與新 publication custody 的實際狀態見[BR-SD-1g 紀錄](history/2026-10-11-br-sd-1g-adoption.md)。
+
+**後續共同推論（2026-10-11）：** [雙色唯一缺口定理](c5_two_color_single_gap_bridge.md)
+以完整 exclusive-block incidence 森林計數證明唯一 r-contact 與 r–q 全 bridge 路徑。
+保上述同一原 M 的 degree lists／拒絕／full lifts，若完整 S 的 actual support 在異色 pair、
+s 對 S 唯一 contact q、r 對 S 至少兩個 contacts，則任意有限形狀都排除。
+四份 BR 共同接入見 [N45§2.12](c5_excess_two_nonadjacent_unit_core45.md#212-雙色唯一缺口的共同排除)；
+舊多旁支／三環 OPEN 必須扣除該完整域。單 contact、多個 s-contacts、未證雙色 lists
+或其他出口仍不由此排除，完整父身份與 R31 保留。新結果為紙面＋外部 Gallai，無新來源或 Lean。

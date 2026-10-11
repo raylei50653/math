@@ -1,13 +1,13 @@
 # degree-5／R 系列導讀：介面、排除範圍與保留缺口
 
-更新：2026-10-11（BR-SD-1g 雙原旁支／J2 屏障精確子域採納）。本頁維護 R9–R31 的來源結構、minor 與二連通單缺額查證情況。
+更新：2026-10-11（雙色唯一缺口的 bridge 路徑證明與 BR 四支共同接入）。本頁維護 R9–R31 的來源結構、minor 與單缺額查證情況。
 研究線標記見 [HANDOFF](HANDOFF.md)，全索引見 [STATUS](STATUS.md)。
 前置依賴見 [全 degree-4 導覽](c5_degree4_guide.md)。
 
 唯一 degree-5 全部核心的指定雙列分離已接回 [條件式單側出口](c5_single_sided_exit.md)。
 這不補完 R31 的任意長來源 minor 或任意來源的完整 Σ；相鄰雙 root 與出口後續
 統一見 [weak-deletion 導覽](c5_weak_deletion_guide.md)，不在本頁累積逐輪摘要。
-本線保留缺口是 R31 同末端不同二接點，以及其餘未覆蓋的三環位置／更多環。
+本線保留缺口是 R31 同末端不同二接點及未覆蓋來源；N45 的旁支／三環形狀須先扣除§4的唯一缺口共同排除。
 舊摘要數字與證書仍見原報告及 [九組成果發布紀錄](history/2026-09-28-adjacent-progress-publish.md)。
 R9–R31 為研究輪次，不是報告參考文獻編號。
 
@@ -87,6 +87,20 @@ R31 是保留缺口；是否進行中見 HANDOFF；本線停止點見 §4。
 | [R31：同末端不同二接點正常形](c5_degree5_same_terminal_triangles.md) | 408 模板／327,968 接線的正常形非 disk 覆蓋完成；任意長來源 minors 仍是保留缺口，不能宣稱此型已任意長排除。 |
 
 ## 4. R31 保留缺口與重播入口
+
+**雙色唯一缺口的共同推論（2026-10-11）：**
+[一般定理與完整證明](c5_two_color_single_gap_bridge.md)不依 N45 名稱或四色限制。
+不可著色 degree lists 下，完整 S 僅 q 含 T 缺 D、其餘 lists 含 T/D，
+迫唯一 r-contact 與 r–q 全 bridge 路徑。對同一原 M 的 degree／拒絕／完整延拓，
+actual 異色 pair、唯一 s-contact q 加至少兩個 r-contacts 即矛盾，
+[N45§2.12](c5_excess_two_nonadjacent_unit_core45.md#212-雙色唯一缺口的共同排除)逐份接回1a／1c／1e／1g。
+任意有限旁支數、位置、三環形狀及 private witness 不再是這份推論的必要前提。
+本輪為外部 Gallai＋紙面證明，未另經獨立採納審查，無新有限來源或 Lean。
+未覆蓋的是單一 r-contact、多個 s-contacts、未證雙色 lists 的非 pair support、
+不完整 S／其他內部出口及更廣父身份；R31 minor 另保留。
+下列四份既採成果保留其原合同與歷史證據；其中多旁支／其他形狀 OPEN 的敘述，
+現在均須扣除上述共同前提完整成立的域。驗證及本地提交範圍見
+[整理紀錄](history/2026-10-11-two-color-single-gap.md)。
 
 BR-SD-1a／1c／1e 的任意大小 scoped exclusions 已獨立驗證、封存、發布並
 [正式接入 N45§2.11](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)：
