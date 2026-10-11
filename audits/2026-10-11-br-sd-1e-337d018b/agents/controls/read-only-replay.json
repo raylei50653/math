@@ -1,0 +1,102 @@
+[
+  {
+    "PYTHONHASHSEED": null,
+    "command": [
+      "python3",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/checker.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.normal.json"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "{\"C_LD_tuple_counts\": [112, 256, 112, 16], \"M_beta_lift_counts\": [112, 256, 112, 16], \"actual_target_source_status\": \"not triggered\", \"fixture_count\": 6, \"private_witness_statuses\": [\"triggered and holds\", \"triggered and holds\", \"triggered and holds\", \"counterexample\"], \"status\": \"triggered and holds\"}\n"
+  },
+  {
+    "PYTHONHASHSEED": "17",
+    "command": [
+      "python3",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/checker.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.seed17.json"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "{\"C_LD_tuple_counts\": [112, 256, 112, 16], \"M_beta_lift_counts\": [112, 256, 112, 16], \"actual_target_source_status\": \"not triggered\", \"fixture_count\": 6, \"private_witness_statuses\": [\"triggered and holds\", \"triggered and holds\", \"triggered and holds\", \"counterexample\"], \"status\": \"triggered and holds\"}\n"
+  },
+  {
+    "PYTHONHASHSEED": null,
+    "command": [
+      "python3",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/checker.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.corrupted.json"
+    ],
+    "exit_code": 1,
+    "stderr": "FAIL: AssertionError('illegal complete coloring tuple')\n",
+    "stdout": ""
+  },
+  {
+    "PYTHONHASHSEED": null,
+    "command": [
+      "python3",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/checker.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.malformed.json"
+    ],
+    "exit_code": 1,
+    "stderr": "FAIL: JSONDecodeError('Expecting value: line 2 column 1 (char 27)')\n",
+    "stdout": ""
+  },
+  {
+    "PYTHONHASHSEED": null,
+    "command": [
+      "python3",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/independent_edges.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.normal.json"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "{\"actual_target_source_status\": \"not triggered\", \"fixtures\": [{\"C_LD_tuples\": 112, \"G_lifts\": 56, \"M_lifts\": 112, \"name\": \"W-triangle-at-J3-ordinary-w3\", \"private_witness_status\": \"triggered and holds\", \"status\": \"triggered and holds\"}, {\"C_LD_tuples\": 256, \"G_lifts\": 128, \"M_lifts\": 256, \"name\": \"W-triangle-at-q-endpoint\", \"private_witness_status\": \"triggered and holds\", \"status\": \"triggered and holds\"}, {\"C_LD_tuples\": 112, \"G_lifts\": 56, \"M_lifts\": 112, \"name\": \"W-triangle-at-q-arm-interior-t\", \"private_witness_status\": \"triggered and holds\", \"status\": \"triggered and holds\"}, {\"C_LD_tuples\": 16, \"G_lifts\": 16, \"M_lifts\": 16, \"name\": \"forbidden-W-at-J1-unique-triangle-witness-w1\", \"private_witness_status\": \"counterexample\", \"status\": \"triggered and holds\"}], \"independent_original_edge_status\": \"triggered and holds\"}\n"
+  },
+  {
+    "PYTHONHASHSEED": "17",
+    "command": [
+      "python3",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/independent_edges.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.seed17.json"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "{\"actual_target_source_status\": \"not triggered\", \"fixtures\": [{\"C_LD_tuples\": 112, \"G_lifts\": 56, \"M_lifts\": 112, \"name\": \"W-triangle-at-J3-ordinary-w3\", \"private_witness_status\": \"triggered and holds\", \"status\": \"triggered and holds\"}, {\"C_LD_tuples\": 256, \"G_lifts\": 128, \"M_lifts\": 256, \"name\": \"W-triangle-at-q-endpoint\", \"private_witness_status\": \"triggered and holds\", \"status\": \"triggered and holds\"}, {\"C_LD_tuples\": 112, \"G_lifts\": 56, \"M_lifts\": 112, \"name\": \"W-triangle-at-q-arm-interior-t\", \"private_witness_status\": \"triggered and holds\", \"status\": \"triggered and holds\"}, {\"C_LD_tuples\": 16, \"G_lifts\": 16, \"M_lifts\": 16, \"name\": \"forbidden-W-at-J1-unique-triangle-witness-w1\", \"private_witness_status\": \"counterexample\", \"status\": \"triggered and holds\"}], \"independent_original_edge_status\": \"triggered and holds\"}\n"
+  },
+  {
+    "PYTHONHASHSEED": null,
+    "command": [
+      "python3",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/independent_edges.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.corrupted.json"
+    ],
+    "exit_code": 1,
+    "stderr": "FAIL: AssertionError()\n",
+    "stdout": ""
+  },
+  {
+    "PYTHONHASHSEED": null,
+    "command": [
+      "python3",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/independent_edges.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.malformed.json"
+    ],
+    "exit_code": 1,
+    "stderr": "FAIL: JSONDecodeError('Expecting value: line 2 column 1 (char 27)')\n",
+    "stdout": ""
+  }
+]

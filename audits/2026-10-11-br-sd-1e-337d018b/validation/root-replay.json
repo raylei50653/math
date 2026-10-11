@@ -1,0 +1,171 @@
+[
+  {
+    "name": "primary.normal",
+    "cmd": "python3 -B audits/2026-10-11-br-sd-1e-337d018b/agents/controls/checker.py --check --certificate audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.normal.json",
+    "expected": 0,
+    "result": {
+      "chunk_id": "dbbe5f",
+      "wall_time_seconds": 0.000009608,
+      "exit_code": 0,
+      "original_token_count": 76,
+      "output": "{\"C_LD_tuple_counts\": [112, 256, 112, 16], \"M_beta_lift_counts\": [112, 256, 112, 16], \"actual_target_source_status\": \"not triggered\", \"fixture_count\": 6, \"private_witness_statuses\": [\"triggered and holds\", \"triggered and holds\", \"triggered and holds\", \"counterexample\"], \"status\": \"triggered and holds\"}\n"
+    },
+    "matched": true
+  },
+  {
+    "name": "primary.seed17",
+    "cmd": "PYTHONHASHSEED=17 python3 -B audits/2026-10-11-br-sd-1e-337d018b/agents/controls/checker.py --check --certificate audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.seed17.json",
+    "expected": 0,
+    "result": {
+      "chunk_id": "484edc",
+      "wall_time_seconds": 0.000009228,
+      "exit_code": 0,
+      "original_token_count": 76,
+      "output": "{\"C_LD_tuple_counts\": [112, 256, 112, 16], \"M_beta_lift_counts\": [112, 256, 112, 16], \"actual_target_source_status\": \"not triggered\", \"fixture_count\": 6, \"private_witness_statuses\": [\"triggered and holds\", \"triggered and holds\", \"triggered and holds\", \"counterexample\"], \"status\": \"triggered and holds\"}\n"
+    },
+    "matched": true
+  },
+  {
+    "name": "independent.normal",
+    "cmd": "python3 -B audits/2026-10-11-br-sd-1e-337d018b/agents/controls/independent_edges.py --certificate audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.normal.json",
+    "expected": 0,
+    "result": {
+      "chunk_id": "740d2d",
+      "wall_time_seconds": 0.000010269,
+      "exit_code": 0,
+      "original_token_count": 208,
+      "output": "{\"actual_target_source_status\": \"not triggered\", \"fixtures\": [{\"C_LD_tuples\": 112, \"G_lifts\": 56, \"M_lifts\": 112, \"name\": \"W-triangle-at-J3-ordinary-w3\", \"private_witness_status\": \"triggered and holds\", \"status\": \"triggered and holds\"}, {\"C_LD_tuples\": 256, \"G_lifts\": 128, \"M_lifts\": 256, \"name\": \"W-triangle-at-q-endpoint\", \"private_witness_status\": \"triggered and holds\", \"status\": \"triggered and holds\"}, {\"C_LD_tuples\": 112, \"G_lifts\": 56, \"M_lifts\": 112, \"name\": \"W-triangle-at-q-arm-interior-t\", \"private_witness_status\": \"triggered and holds\", \"status\": \"triggered and holds\"}, {\"C_LD_tuples\": 16, \"G_lifts\": 16, \"M_lifts\": 16, \"name\": \"forbidden-W-at-J1-unique-triangle-witness-w1\", \"private_witness_status\": \"counterexample\", \"status\": \"triggered and holds\"}], \"independent_original_edge_status\": \"triggered and holds\"}\n"
+    },
+    "matched": true
+  },
+  {
+    "name": "independent.seed17",
+    "cmd": "PYTHONHASHSEED=17 python3 -B audits/2026-10-11-br-sd-1e-337d018b/agents/controls/independent_edges.py --certificate audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.seed17.json",
+    "expected": 0,
+    "result": {
+      "chunk_id": "f13e0a",
+      "wall_time_seconds": 0.000007414,
+      "exit_code": 0,
+      "original_token_count": 208,
+      "output": "{\"actual_target_source_status\": \"not triggered\", \"fixtures\": [{\"C_LD_tuples\": 112, \"G_lifts\": 56, \"M_lifts\": 112, \"name\": \"W-triangle-at-J3-ordinary-w3\", \"private_witness_status\": \"triggered and holds\", \"status\": \"triggered and holds\"}, {\"C_LD_tuples\": 256, \"G_lifts\": 128, \"M_lifts\": 256, \"name\": \"W-triangle-at-q-endpoint\", \"private_witness_status\": \"triggered and holds\", \"status\": \"triggered and holds\"}, {\"C_LD_tuples\": 112, \"G_lifts\": 56, \"M_lifts\": 112, \"name\": \"W-triangle-at-q-arm-interior-t\", \"private_witness_status\": \"triggered and holds\", \"status\": \"triggered and holds\"}, {\"C_LD_tuples\": 16, \"G_lifts\": 16, \"M_lifts\": 16, \"name\": \"forbidden-W-at-J1-unique-triangle-witness-w1\", \"private_witness_status\": \"counterexample\", \"status\": \"triggered and holds\"}], \"independent_original_edge_status\": \"triggered and holds\"}\n"
+    },
+    "matched": true
+  },
+  {
+    "name": "primary.corrupted",
+    "cmd": "python3 -B audits/2026-10-11-br-sd-1e-337d018b/agents/controls/checker.py --check --certificate audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.corrupted.json",
+    "expected": 1,
+    "result": {
+      "chunk_id": "bdbb04",
+      "wall_time_seconds": 0.000009198,
+      "exit_code": 1,
+      "original_token_count": 14,
+      "output": "FAIL: AssertionError('illegal complete coloring tuple')\n"
+    },
+    "matched": true
+  },
+  {
+    "name": "primary.malformed",
+    "cmd": "python3 -B audits/2026-10-11-br-sd-1e-337d018b/agents/controls/checker.py --check --certificate audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.malformed.json",
+    "expected": 1,
+    "result": {
+      "chunk_id": "db1050",
+      "wall_time_seconds": 0.000011712,
+      "exit_code": 1,
+      "original_token_count": 17,
+      "output": "FAIL: JSONDecodeError('Expecting value: line 2 column 1 (char 27)')\n"
+    },
+    "matched": true
+  },
+  {
+    "name": "independent.corrupted",
+    "cmd": "python3 -B audits/2026-10-11-br-sd-1e-337d018b/agents/controls/independent_edges.py --certificate audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.corrupted.json",
+    "expected": 1,
+    "result": {
+      "chunk_id": "d713b1",
+      "wall_time_seconds": 0.000017443,
+      "exit_code": 1,
+      "original_token_count": 6,
+      "output": "FAIL: AssertionError()\n"
+    },
+    "matched": true
+  },
+  {
+    "name": "independent.malformed",
+    "cmd": "python3 -B audits/2026-10-11-br-sd-1e-337d018b/agents/controls/independent_edges.py --certificate audits/2026-10-11-br-sd-1e-337d018b/agents/controls/certificate.malformed.json",
+    "expected": 1,
+    "result": {
+      "chunk_id": "7f5424",
+      "wall_time_seconds": 0.000020879,
+      "exit_code": 1,
+      "original_token_count": 17,
+      "output": "FAIL: JSONDecodeError('Expecting value: line 2 column 1 (char 27)')\n"
+    },
+    "matched": true
+  },
+  {
+    "name": "old.1a.frozen",
+    "cmd": "python3 -B audits/2026-10-11-br-sd-1a-0f181045/verify.py --check",
+    "expected": 0,
+    "result": {
+      "chunk_id": "2b5d13",
+      "wall_time_seconds": 0.000016741,
+      "exit_code": 0,
+      "original_token_count": 77,
+      "output": "{\"actual_head\": \"0f18104528dcf0b744cdba9e408a5a2bfa466e21\", \"authority_inputs_verified\": 14, \"payloads_verified\": 65, \"scope\": \"byte custody only; paper theorem is separately reviewed\", \"source_base\": \"4dd11f422c6fa49265a412085116b088786d0344\", \"target_source_status\": \"not triggered\", \"task\": \"BR-SD-1a\"}\n"
+    },
+    "matched": true
+  },
+  {
+    "name": "old.1c.frozen",
+    "cmd": "python3 -B audits/2026-10-11-br-sd-1c-fd6e1112/verify.py --check",
+    "expected": 0,
+    "result": {
+      "chunk_id": "630836",
+      "wall_time_seconds": 0.000020439,
+      "exit_code": 0,
+      "original_token_count": 35,
+      "output": "{\"authority_inputs\": 17, \"base\": \"fd6e1112e6f5e9fd23c50d2f3b5d2ef874954d69\", \"live\": false, \"payloads\": 81, \"prior_custody_files\": null}\n"
+    },
+    "matched": true
+  },
+  {
+    "name": "docs",
+    "cmd": "python3 -B scripts/check_docs.py",
+    "expected": 0,
+    "result": {
+      "chunk_id": "3a1008",
+      "wall_time_seconds": 0.48295973,
+      "exit_code": 0,
+      "original_token_count": 19,
+      "output": "OK: 601 Markdown files, 7384 local links; anchors, index, handoff checked\n"
+    },
+    "matched": true
+  },
+  {
+    "name": "docgraph.formal",
+    "cmd": "python3 -B tools/docgraph --include 'docs/**/*.md' check",
+    "expected": 0,
+    "result": {
+      "chunk_id": "47550d",
+      "wall_time_seconds": 0.00000559,
+      "exit_code": 0,
+      "original_token_count": 16,
+      "output": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n"
+    },
+    "matched": true
+  },
+  {
+    "name": "tracked.whitespace",
+    "cmd": "git diff --check",
+    "expected": 0,
+    "result": {
+      "chunk_id": "239865",
+      "wall_time_seconds": 0.000007775,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "matched": true
+  }
+]

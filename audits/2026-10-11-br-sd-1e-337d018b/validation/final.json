@@ -1,0 +1,127 @@
+{
+  "task": "BR-SD-1e",
+  "status": "completed candidate scoped exclusion; canonical adoption pending owner",
+  "seal_checks": [
+    {
+      "name": "frozen.normal",
+      "cmd": "python3 -B audits/2026-10-11-br-sd-1e-337d018b/verify.py --check",
+      "expected": 0,
+      "result": {
+        "chunk_id": "a3c6da",
+        "wall_time_seconds": 0.050134549,
+        "exit_code": 0,
+        "original_token_count": 106,
+        "output": "{\"actual_target_source_status\": \"not triggered\", \"authority_inputs_verified\": 15, \"base\": \"337d018bfaddfe6b39f7cdc3f3c8ec8bc7c4075f\", \"final_paper_review_bindings\": \"matched\", \"live\": false, \"local_link_targets_checked\": 61, \"old_custody_files_verified\": 206, \"payloads_verified\": 106, \"recorded_checks_verified\": 13, \"scope\": \"byte custody and recorded checks only; paper theorem separately reviewed\", \"task\": \"BR-SD-1e\"}\n"
+      },
+      "matched": true
+    },
+    {
+      "name": "frozen.seed17",
+      "cmd": "PYTHONHASHSEED=17 python3 -B audits/2026-10-11-br-sd-1e-337d018b/verify.py --check",
+      "expected": 0,
+      "result": {
+        "chunk_id": "055dd5",
+        "wall_time_seconds": 0.048197748,
+        "exit_code": 0,
+        "original_token_count": 106,
+        "output": "{\"actual_target_source_status\": \"not triggered\", \"authority_inputs_verified\": 15, \"base\": \"337d018bfaddfe6b39f7cdc3f3c8ec8bc7c4075f\", \"final_paper_review_bindings\": \"matched\", \"live\": false, \"local_link_targets_checked\": 61, \"old_custody_files_verified\": 206, \"payloads_verified\": 106, \"recorded_checks_verified\": 13, \"scope\": \"byte custody and recorded checks only; paper theorem separately reviewed\", \"task\": \"BR-SD-1e\"}\n"
+      },
+      "matched": true
+    },
+    {
+      "name": "live",
+      "cmd": "python3 -B audits/2026-10-11-br-sd-1e-337d018b/verify.py --check --live",
+      "expected": 0,
+      "result": {
+        "chunk_id": "5375ef",
+        "wall_time_seconds": 2.589761249,
+        "exit_code": 0,
+        "original_token_count": 106,
+        "output": "{\"actual_target_source_status\": \"not triggered\", \"authority_inputs_verified\": 15, \"base\": \"337d018bfaddfe6b39f7cdc3f3c8ec8bc7c4075f\", \"final_paper_review_bindings\": \"matched\", \"live\": true, \"local_link_targets_checked\": 61, \"old_custody_files_verified\": 206, \"payloads_verified\": 106, \"recorded_checks_verified\": 13, \"scope\": \"byte custody and recorded checks only; paper theorem separately reviewed\", \"task\": \"BR-SD-1e\"}\n"
+      },
+      "matched": true
+    },
+    {
+      "name": "corrupted.seal",
+      "cmd": "python3 -B audits/2026-10-11-br-sd-1e-337d018b/verify.py --check --manifest audits/2026-10-11-br-sd-1e-337d018b/validation/seal.corrupted.json",
+      "expected": 1,
+      "result": {
+        "chunk_id": "105c96",
+        "wall_time_seconds": 0.000010429,
+        "exit_code": 1,
+        "original_token_count": 8,
+        "output": "FAIL: payload drift: MAPPING.md\n"
+      },
+      "matched": true
+    }
+  ],
+  "all_seal_checks_matched": true,
+  "normal_seed17_stdout_equal": true,
+  "final_git_reads": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "10943e",
+        "wall_time_seconds": 0.091999944,
+        "exit_code": 0,
+        "original_token_count": 16,
+        "output": "## main...origin/main\n?? audits/2026-10-11-br-sd-1e-337d018b/\n"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "14aa9e",
+        "wall_time_seconds": 0.00001068,
+        "exit_code": 0,
+        "original_token_count": 21,
+        "output": "337d018bfaddfe6b39f7cdc3f3c8ec8bc7c4075f\n337d018bfaddfe6b39f7cdc3f3c8ec8bc7c4075f\n"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "9e3b2e",
+        "wall_time_seconds": 2.296341054,
+        "exit_code": 0,
+        "original_token_count": 15,
+        "output": "337d018bfaddfe6b39f7cdc3f3c8ec8bc7c4075f\trefs/heads/main\n"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "2a9551",
+        "wall_time_seconds": 0.000008787,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    }
+  ],
+  "old_custody_files_unchanged": 206,
+  "authority_inputs_verified": 15,
+  "immutable_payloads_verified": 106,
+  "local_link_targets_checked": 61,
+  "seal_sha256": "c16c4e9691d7a308da8502e22abc2f2359cfaa63ac308d3e1fd025736a35a7f9",
+  "final_proof_sha256": "f184188fc6a18fe84a593b30514ff930783a2d268be9b209775f5c7e223dfd40",
+  "final_mapping_sha256": "e1b6abc4dd2a27474fc93c40207551e92acd0d8f9b275403788b3b269e0392fc",
+  "final_report_sha256": "e6386fabd931c4482186331ab22d839987ec1e2fd59f733ace4adf3ecee054c7",
+  "final_review_sha256": "60607d424fcb95a10dad1e55314a8197af97f04126760d12e7ed824d1d598929",
+  "source_layer": "not triggered; no actual target disk source submitted",
+  "recorded_control_and_document_checks": "validation/root-replay.v2.json; eight corrected controls rerun plus five unchanged old archive/doc records",
+  "retained_precision_findings": [
+    "next OPEN proposal narrowed beyond untouched J3 terminal lemma",
+    "B-only isolated internal vertices use original beta residual lists",
+    "controls J1/J2 wording preserves adopted 1c",
+    "controls epsilon=2 metadata corrected with all fixed graph/list/fibre/lift data unchanged"
+  ],
+  "retained_failed_root_validation": "validation/epsilon-compare.attempt1.json: wrong key in root comparison; corrected comparison passes in epsilon-compare.final.json",
+  "writes": "only exclusive audit; tracked files and index unchanged; no commit/push/publication",
+  "not_run": [
+    "whole-worktree DocGraph",
+    "Lean build",
+    "broad finite enumeration",
+    "actual source search"
+  ]
+}
