@@ -88,9 +88,14 @@ R31 是保留缺口；是否進行中見 HANDOFF；本線停止點見 §4。
 
 ## 4. R31 保留缺口與重播入口
 
-N45 的窄接續是 [BR-SD-1a](../audits/2026-10-11-single-deficit-publication/NEXT-TASK.md)：
-獨立封存指定無旁支、共用 r 雙環的 D-palette 矛盾；本輪只記紙面 screening 通過。
-這與下列 R31 任意長來源 minor 義務分開，也不排一般 bridge-separated 三環或更多環。
+BR-SD-1a 的任意大小 D-palette 矛盾已獨立驗證、封存、發布並
+[正式接入 N45§2.11](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)：
+僅排無 U／long／真 pair-short 的 split22、共用 r 雙環、三環單 bridge 無旁支精確子域，
+不依 H_M 二連通。完整父身份仍 OPEN，完整 OPEN 身份新增無條件關閉數仍為0。
+BR-SD-1c 候選義務是將同一 D 的 palette 矛盾推廣至含具名旁支或其他 Gallai block 接線：
+須另核非割點／非 s-contact witnesses，或證相交 blocks 的 D 傳遞；失敗時保具名障礙。
+本輪只記此研究義務；[採納與 residual 紀錄](history/2026-10-11-br-sd-1b-adoption.md)
+與下列 R31 任意長來源 minor 義務分開，一般 bridge-separated 三環或更多環仍 OPEN。
 
 R31 已有同末端不同二接點的 C3–C3–C3 簡單臂正常形非 disk 證書。
 仍須把任意長奇環及重複色外臂化到該目標：接點末端保留共用點與兩接點，

@@ -284,7 +284,10 @@ M 自身完整 degree 與 H_M 二連通。其三項子域排除、具名割點�
 三條 s-spokes 分別承擔三種 β 色，且 M 自身同 β minimal 的合同下，
 刪各 s-spoke 的同 β 全圖 witnesses 可限制到 C，取得另外三色的 component witnesses。
 
-目前精確接續為 [BR-SD-1a 任務](../audits/2026-10-11-single-deficit-publication/NEXT-TASK.md)：
-先独立封存無旁支、J1/J2共用 r 的 D-palette 直接矛盾，紙面 screening 已通過，
-尚未標為來源覆蓋採納。舊 B 的 uv→R27 任務保留封存語境；本輪重播、
-發布後 frozen-BASE 入口與傳播範圍見 [整理紀錄](history/2026-10-11-single-deficit-progress.md)。
+後續 [BR-SD-1a 獨立驗證](../audits/2026-10-11-br-sd-1a-0f181045/REPORT.md) 的任意大小
+D-palette 矛盾已封存、發布並由 [N45§2.11](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)
+採納：僅排原無 U／long／真 pair-short、split22、J1/J2 共用 r 的三環單 bridge 無旁支合同。
+此直接矛盾不依 SD-A 或 H_M 二連通；a3≠v 未假定，不能由私有錨點推二連通。
+完整父身份仍 OPEN，完整 OPEN 身份新增無條件關閉數仍為0，無新來源／Lean。
+舊 B 的 uv→R27 任務及四-query 語義保留；本次採納／重播與傳播範圍見
+[BR-SD-1b 紀錄](history/2026-10-11-br-sd-1b-adoption.md)，後續候選義務見[degree-5 導覽§4](c5_degree5_guide.md#4-r31-保留缺口與重播入口)。

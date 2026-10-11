@@ -163,6 +163,7 @@
 | [唯一 degree-5 完整接點介面](c5_degree5_interfaces.md) | 共同端點關係、禁色覆蓋的 minimality 充要條件、分量刪邊解除及固定來源圖至多四開關；唯一 degree-5 的指定雙列分離後由單側出口主線完成；完整圖分類／可實現性仍開放，紙面＋證書，未 Lean 化 |
 | [二連通單缺額獨立查證 A](../audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/REPORT.md) | 指定完整M-degrees與properβ拒絕下，內度2、H−s Gallai tree；不需minimality／T4／lists全緊，960 assignments與758 minor controls，紙面＋正式外部定理，未Lean化 |
 | [45／54適用性 B](../audits/2026-10-11-single-deficit-applicability-804e3b0b1b/APPLICABILITY.md) | actual X=M／degrees／二連通前提下三項subset排除、無旁支p–q Gallai鏈；540凍結輸入，exact source controls未觸發，完整OPEN身份新增無條件關閉0；目前接入見N45§2.11 |
+| [BR-SD-1a 獨立 D-palette 驗證](../audits/2026-10-11-br-sd-1a-0f181045/REPORT.md) | 任意奇環／外臂長的 split22／共用 r／三環單 bridge 無旁支子域已採納於 N45§2.11；不依二連通，父身份 OPEN，actual target not triggered，完整 OPEN 身份新增無條件關閉0，無新 Lean |
 | [三-spoke 區域化約](c5_degree5_sectors.md) | 單一二接點分量縮到兩個鏡像 pentagon；完整接合代數與非 minimal disk 控制，最終排除仍未解；紙面＋證書，未 Lean 化 |
 | [三-spoke 任意樹分量／連通外框](c5_degree5_tree_components.md) | 任意樹的固定-q 化約與五種閉色序列、648 個必要 lifts 排除；t≥1 的 degree-4 分量不含 K4，後續 no-spoke 結果補上 t=0；原 cycle 缺口已有 t≥1 出口接合，完整圖分類／形式化仍有界線 |
 | [三-spoke 單 triangle 二接點](c5_degree5_triangle_components.md) | 旁支／共同／不同接點三型全部排除；528 模板、89,224 接線非 disk，不限 bridges 長度或分叉；單長環由下一列處理，未 Lean 化 |
@@ -271,7 +272,7 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [N45：N2原unit省略45／54權威入口](c5_excess_two_nonadjacent_unit_core45.md) | 指定整U省略及兩short S已全排；完整K1–K12 U／long／short、只刪spoke且X=M自身同β minimal身份由§2.9／2.10限定排除；無U的long／兩long、其他cores／原55／一般N2／E仍OPEN，QX信任鏈與HIGH2 finding保留 |
+| [N45：N2原unit省略45／54權威入口](c5_excess_two_nonadjacent_unit_core45.md) | 指定整U省略及兩short S已全排；完整K1–K12 U／long／short、只刪spoke且X=M自身同β minimal身份由§2.9／2.10限定排除；§2.11採納BR-SD-1a精確split22三環單bridge無旁支子域；無U的long／兩long父身份、其他cores／原55／一般N2／E仍OPEN，QX信任鏈與HIGH2 finding保留 |
 | [N45-S含long契約／必要化約](../audits/2026-10-10-n45-s-long-contract/REPORT.md) | 精確保留U/L/S、只刪spoke且X=M自己minimal；pair／singleton盾費、X full B-touch／無U側≤2spokes、十列全pins及恢復e；19圖full-lift校準，目標not triggered，未作來源全排或新Lean |
 | [N45-S-LONG-R：完整U在r的sole C映射](../audits/2026-10-10-n45-s-long-r-map/REPORT.md) | 精確X=M契約內pair／singleton皆排除；X自己的witnesses給F，t_s=0/1/2接BASE(5)/(4)/(3)；26省略／260列完整r fibres只校準，來源not triggered；U在s後續限定採納見下，無U等其他long身份OPEN |
 | [N45-S-LONG-S：DIRECT／FIBRE採納及更正](../audits/2026-10-11-n45-s-long-s-review/REPORT.md) | 四direct profiles任意大小排除、餘兩profile singleton／pair13／31排除；FIBRE分類12+4+10+4及恢復依賴更正；當輪24 schedules後由q0／q2／T1全排，原bytes保留 |
@@ -380,7 +381,7 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 唯一 degree-5 的指定核心分離已由後續主線完成；R31 任意長來源 minor
 與一般三環構造問題仍保留，研究線標記見 HANDOFF。
 後續二連通單缺額定理已紙面查證；[精確前提與45／54接入](c5_degree5_interfaces.md#7-二連通單缺額查證與-4554-接入)
-不取代上述一般分類。BR-SD-1a為待獨立封存的窄D-palette路線。
+不取代上述一般分類。BR-SD-1a精確子域已採納，父身份及R31仍OPEN；見[N45§2.11–3](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)。
 
 ### 2.6 全 degree-4／block 化約系列
 
@@ -457,6 +458,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-11：BR-SD-1b canonical 採納與 residual 對帳](history/2026-10-11-br-sd-1b-adoption.md)；精確子域 scoped exclusion，完整 OPEN 身份新增無條件關閉0，傳播停 L2
 - [2026-10-11：單缺額查證、45／54適用性與相連證據整理](history/2026-10-11-single-deficit-progress.md)；兩audit原bytes保留，A已查證、B仍核實際core前提，BR-SD-1a待獨立封存
 - [2026-10-09：N2的45／54原unit省略第一批及增量驗收](history/2026-10-09-n2-45-54-parallel-tasks.md)；四份與兩增量均在限定scope已驗收，窄排除已採納
 - [2026-10-09：N45第二批，唯一U＋long／short pair三份並行任務](history/2026-10-09-n45-u-long-short-pair-tasks.md)；三份已返回並由2026-10-10增量限定驗收，原任務頭與當輪語境保留

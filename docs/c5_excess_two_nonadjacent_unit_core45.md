@@ -1,8 +1,9 @@
 # N45：非相鄰 N2 原 unit 省略的 45／54 身份
 
-更新：2026-10-11（U 在 s 限定採納及二連通單缺額適用性接入）；
-原研究 BASE `dc8e9aa7d6fccb51f63d30aa3f9c132296d44744`，本輪驗收 BASE
-`f2692089ad4259808e27d9b7e882ac09505b180a`。
+更新：2026-10-11（BR-SD-1b：BR-SD-1a 精確子域採納與 residual 對帳）；
+原研究 BASE `dc8e9aa7d6fccb51f63d30aa3f9c132296d44744`，既有 N45 驗收 BASE
+`f2692089ad4259808e27d9b7e882ac09505b180a`；BR-SD-1b 採納基準為
+`fc3d3d8b4c5b8e6378268edb5cd3f04b50940b5a`。
 本頁是已採納 N45 結論與目前 residual 的權威入口；完整新論證分別見
 [S 原交付](../audits/2026-10-09-n45-s/REPORT.md)與
 [U 原交付](../audits/2026-10-09-n45-u/REPORT.md)。
@@ -65,7 +66,8 @@ HIGH1–HIGH3 窮盡限定 HIGH；與 LOW 合成，**§1 精確 S 身份的兩 s
 只刪原r-spoke且X=M自身同β minimal的選定身份；六profiles、pair／singleton全覆蓋，見§2.10。
 採納保留原SF-QX／BASE紙面與finite-terminal信任鏈；有限零觸發不承擔排除。
 無U的long／兩long、其他45／54身份、原55、無45／54來源、一般 N2／E及ε≥3均仍 OPEN。
-其二連通 subsets 的新排除與未涵蓋部分見§2.11；不將 subset 結果計作完整身份關閉。
+其二連通 subsets 與 **BR-SD-1a split22／共用 r／三環單 bridge 無旁支子域的已採納排除**
+見§2.11；後者不依二連通，兩者均不計作完整父身份關閉。
 
 ## 1. 全部共同前提與原身份
 
@@ -126,6 +128,7 @@ T4={2,5,7,8,9}。941 拒絕 q0,q1,q3；933 另拒絕 q2。
 | HIGH2-EXCLUSION（精化） | 每 proper 三色 γ 在原 U 三點 T 見三色時，原 r=s=Dγ 的完整 G lifts 含恢復 e；Q(G)⊆B−T，故至多兩拒點 | 只縮窄接回構造的 γ 量詞；JOIN／RESTORE／PALETTE 仍保全部 proper γ；不改原 worker |
 | HIGH3 scoped exclusion | X自己 minimal、s無spoke、實際 C/U contacts=(2,3)，完整覆蓋迫三接點 U 至少兩禁色；原 X K₅ 排除 | 完整 K1–K13；H3A／H3R／H3G 獨立核 BASE no-spoke §§1–3、5，無新充分前提 |
 | S-SHORT scoped composition | §1精確 S 的 LOW兩支與 HIGH三支互斥窮盡，各自完整契約排除，故兩原 mixed 都 short 的身份不存在 | H2A及父端核覆蓋；含long、其他core身份、一般N2／E均未關 |
+| BR-SD-1a scoped exclusion | N45-S-NOU-LS-PAIR 的 split22／共用 r 雙環／三環單 bridge 無旁支精確合同不可能成立；任意奇環長與原外臂長 | 完整前提見§2.11；獨立紙面驗證、封存與發布已完成，不依 SD-A／二連通；父身份仍 OPEN |
 
 
 U-CAP 恢復原 U 的一單位：F_U=∅ 時是 D；singleton 在 E_r^X 外時是 O；
@@ -427,11 +430,51 @@ r 為 C=H_M−s 的割點；每側 r-contact 數是1或2。P/Q內的 H_M 割點�
 
 零／一／二 odd-cycle blocks及既有 R27共用點鏈按精確前提接回原結果；
 一般環間 bridges、三環其他位置與更多環仍 OPEN。
-指定三環單bridge、J1/J2共用 r、無旁支、末端各一臂的子域已有較短
-D-palette紙面 screening；[BR-SD-1a](../audits/2026-10-11-single-deficit-publication/NEXT-TASK.md)
-先獨立封存直接矛盾，尚未在覆蓋表標 adopted／closed。
-本輪 exact source controls 全為 not triggered，完整 OPEN 身份無條件新增關閉0，
-沒有新來源實現或 Lean；封存／更正任務／重播見[整理紀錄](history/2026-10-11-single-deficit-progress.md)。
+上述 SD-A／B 的查證與歷史 conditional 語境仍見[整理紀錄](history/2026-10-11-single-deficit-progress.md)。
+
+**BR-SD-1a canonical 採納（2026-10-11，BR-SD-1b）：**
+[獨立 REPORT](../audits/2026-10-11-br-sd-1a-0f181045/REPORT.md) 與
+[原點／原邊 PROOF](../audits/2026-10-11-br-sd-1a-0f181045/PROOF.md) 已驗證、封存並由
+[publication commit fc3d3d8b4c5b8e6378268edb5cd3f04b50940b5a](https://github.com/raylei50653/math/commit/fc3d3d8b4c5b8e6378268edb5cd3f04b50940b5a)
+發布；[PUBLICATION](../audits/2026-10-11-br-sd-1a-0f181045/PUBLICATION.md) 區分原 audit 的未發布歷史欄位。
+本次正式採納以下完整合同的 **Scoped exclusion**；不承接前段 SD-A 的二連通必要前提。
+
+1. 保留§1全部原 G 合同：任意大小有限簡單 ordered induced-C₅ disk，完整有序
+   Σ933／941 或共同搬運整圖的 D₅ 像、ε=2、各非框邊 Σ-critical 與自己的完整 witnesses，
+   原非相鄰 degree5 roots r/s。`H_G−{r,s}` 恰原 L/S 兩份完整 mixed，原 unary U=0；
+   L long，S short 且 actual support 恰一條真框邊的兩端。
+2. exact-S 只省略 r 的唯一原 boundary spoke `e=rb_i`；`X=M=G−e` 保留其他全部原點／邊。
+   M 自己是同一原拒絕 literal proper 三色 β 的 inclusion-minimal core，各 retained 非框邊
+   保同 β 的完整刪邊 witness。M 的唯一 degree5 內點為 s，其餘有效內點完整 degree4；
+   45／54 只共同交換原 roots roles 與全部資料，使 r 為降度側，不各自正規化 components。
+3. s 恰有不同的原有序內鄰 p/q，分屬 L/S，三條原 B-spokes 全留。
+   `C=H_M−s={r}∪L∪S` 是同一實際 sole connected component；r 對 L/S 各有兩個原 contacts
+   （split22），在 C 度4且在 M 無 boundary spoke。
+4. C 的全部 blocks 恰三個原 odd-cycle blocks J1/J2/J3 與指定原 bridges；
+   `J1∩J2={r}`，J3 與兩者不交。J2 私有 u≠r 與 J3 私有 v 由唯一環間原 bridge uv 相連。
+   p/q 經原外臂分別到 J1/J3 的私有錨點 a1/a3，臂可零長；無其他 blocks／旁支。
+   三環長為任意奇數≥3，兩外臂長為任意非負整數；不另假定 a3≠v。
+5. 所有 ordered/shared contacts、actual attachments/supports、ownership、rotation、bridge 端點、
+   boundary assignments、完整 relations／fibres（含空 fibres）／full lifts 與同一 literal 四色框均保留。
+   D 是此同一 β 未使用的第四色；不以抽象 lists 或獨立色正規化替换原來源。
+
+在此完整合同下，原 M 邊定義的 `L^D` 逐點至少 C-degree；若 C 可染，與原 β、s=D
+接成 M 的完整染色，違反拒絕。任意環長均可選
+`w1∈J1−{r,a1}`、`w2∈J2−{r,u}`；無旁支形狀保它們非 C 割點、非 s-contact。
+兩點各只屬本環一個 block，兩個原 B 附件均未使用 D，故兩份 lists 都含同一 D。
+外部 Gallai 刻畫給各 list 等於本環 palette，J1/J2 在 r 相交卻要求 palettes 互斥，矛盾。
+四步任意大小推論與逐前提映射由原 PROOF／REPORT 及
+[MAPPING](../audits/2026-10-11-br-sd-1a-0f181045/agents/mapping/MAPPING.md) 承擔。
+
+外部依賴是 [Dvořák 作者講義 Theorem10／blockwise-uniform 定義，p.6](https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf)，
+凍結來源與 hash 見[外部來源紀錄](../audits/2026-10-11-br-sd-1a-0f181045/external/SOURCE.md)；
+不是新增 Lean theorem。31,296 列與 synthetic M 的有限 controls 是 `triggered and holds` 校準，
+撤去 witness 的 D-presence 負控制不滿足原來源合同；actual target source 未提交、`not triggered`。
+有限 controls 與 seal PASS 不承擔任意大小量詞，也沒有新增來源實現。
+保留具名精度 finding：a3 可等於 v，不能由私有錨點推 H_M 二連通；此證明不依
+SD-A、二連通、T4 定位、uv→R27 minor 或 target 四-query／minimality，沒有宣稱補完舊 minor 路線。
+完整 `N45-S-NOU-LS-PAIR` 仍 OPEN；既有 LOW／HIGH／LONG 與 U 排除不重開。
+採納／重播／傳播核對見[BR-SD-1b 紀錄](history/2026-10-11-br-sd-1b-adoption.md)。
 
 ## 3. 精確 OPEN 與下一個窄分支
 
@@ -441,12 +484,24 @@ D-palette紙面 screening；[BR-SD-1a](../audits/2026-10-11-single-deficit-publi
 既有S05只給原unary至多一份。沒有U的一long／一short與兩long仍OPEN；
 不能把原U/L的盾弧、full B-touch或C/U private covering搬到沒有U的圖。
 
-下一個窄入口是[BR-SD-1a](../audits/2026-10-11-single-deficit-publication/NEXT-TASK.md)：
-原unary=0、long／真edge-pair short、只刪原spoke且X=M自身同β minimal，
-實際 C 的三奇環恰一條環間bridge、J1/J2共用r、無旁支與末端各一臂。
-先獨立封存共用r雙環的D-palette直接矛盾；若任一原前提失效，保具名證據停於該步。
+BR-SD-1a 的子域與父身份逐項對帳如下；不把 subset 排除當父身份 closure。
+
+| 來源身份／義務 | 目前狀態 |
+| --- | --- |
+| BR-SD-1a 精確 split22／共用 r／三環單 bridge 無旁支子域，含任意奇環與外臂長 | Scoped exclusion，完整合同見§2.11 |
+| 完整 N45-S-NOU-LS-PAIR 及無 U、long／pair-short 的其他分支 | OPEN，包括其他 splits 與 split22 的其他形狀 |
+| 其他 bridge-separated 三環、旁支、接點位置、更多環及一般非二連通來源 | OPEN |
+| R31 同末端不同二接點的任意長來源 minor | OPEN，正常形不替代來源 minor |
+| 其他 45／54、原 55、無 45／54 來源 | OPEN |
+| 一般 N2／E、ε≥3、一般單側／共同出口、主命題及 K∞=K≤5 | OPEN |
+
+**完整 OPEN 身份新增無條件關閉數仍為 0。**
+BR-SD-1c 的候選研究義務見[degree-5 導覽§4](c5_degree5_guide.md#4-r31-保留缺口與重播入口)：
+在同一原來源合同中先限定含具名旁支或另一種 Gallai block 接線的子域，核兩個非割點、
+非 s-contact witnesses 是否仍存在，或能否迫同一 D 進入相交 blocks 的兩個 palettes。
+若旁支破壞選點，須保具名障礙並另證 palette 傳遞；本輪只記候選義務，不實作此推廣。
 其他無U來源仍須核實際分量、spokes／incidence、G的Σ witnesses與M的同β witnesses；
-非二連通、其他三環連接型及兩long完整身份保留。不擴枚舉或重開已採分支。
+一般非二連通來源、其他三環連接型及兩long完整身份保留。不擴枚舉或重開已採分支。
 其他45／54身份、原55、無45／54來源、一般N2／E及ε≥3均仍OPEN。
 
 ## 4. 證據、重播與保留失敗
