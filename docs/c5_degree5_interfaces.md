@@ -298,5 +298,12 @@ D-palette 矛盾已封存、發布並由 [N45§2.11](c5_excess_two_nonadjacent_u
 及未改動 J3／q 外臂的合同不可能成立；1a 的無旁支域分列，不依 SD-A／二連通。
 可重用 terminal lemma 須保其全部局部前提，尤其正長臂 q 為 C 末端、a3 以外全部臂點無額外 C 邊；
 cutpoint list 含 D 不迫每個 incident palette 含 D，原負控制保留。
-完整父身份、W 接 J3／q 臂、多旁支及一般 Gallai block tree 仍 OPEN，完整 OPEN 身份新增關閉0。
-採納／證據分層見[BR-SD-1d 紀錄](history/2026-10-11-br-sd-1d-adoption.md)，1e 義務由 degree-5 導覽§4 維護。
+1c 採納／證據分層見[BR-SD-1d 紀錄](history/2026-10-11-br-sd-1d-adoption.md)。
+
+後續 [BR-SD-1e 最終紙面排除](../audits/2026-10-11-br-sd-1e-337d018b/PROOF.md) 已獨立審查、封存、發布並由
+[N45§2.11](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域) 精確採納：
+同骨架恰一份原有限非空 W 唯一接 J3／q 外臂，保 actual S pair、完整 degree及全部原資料的合同不可能成立。
+J1/J2 的原 private witnesses 始終保持（含 triangle），由同一 D 的相交 block palettes 互斥得矛盾；
+不依1c terminal lemma，其末端／無額外臂邊前提可能已失效。可重用 preservation lemma 仍須完整結構前提。
+1a／1c／1e 各自原範圍分列，完整父身份、多旁支及一般 Gallai block tree 仍 OPEN，完整 OPEN 身份新增關閉0。
+採納／逐項映射見[BR-SD-1f 紀錄](history/2026-10-11-br-sd-1f-adoption.md)，1g義務由 degree-5 導覽§4 維護。

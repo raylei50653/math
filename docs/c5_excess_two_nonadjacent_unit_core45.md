@@ -1,10 +1,11 @@
 # N45：非相鄰 N2 原 unit 省略的 45／54 身份
 
-更新：2026-10-11（BR-SD-1d：BR-SD-1c 單一原旁支精確子域採納與 residual 對帳）；
+更新：2026-10-11（BR-SD-1f：BR-SD-1e 的 J3／q 外臂單一原旁支採納與 residual 對帳）；
 原研究 BASE `dc8e9aa7d6fccb51f63d30aa3f9c132296d44744`，既有 N45 驗收 BASE
 `f2692089ad4259808e27d9b7e882ac09505b180a`；BR-SD-1b 採納基準為
 `fc3d3d8b4c5b8e6378268edb5cd3f04b50940b5a`；BR-SD-1d 採納基準為
-`46cd053b2b320d380eb0ee9326bf126551dd8a41`。
+`46cd053b2b320d380eb0ee9326bf126551dd8a41`；BR-SD-1f 採納基準為
+`0edb05b42d7b096103cdf241df7fb81e08dc16c7`。
 本頁是已採納 N45 結論與目前 residual 的權威入口；完整新論證分別見
 [S 原交付](../audits/2026-10-09-n45-s/REPORT.md)與
 [U 原交付](../audits/2026-10-09-n45-u/REPORT.md)。
@@ -67,9 +68,10 @@ HIGH1–HIGH3 窮盡限定 HIGH；與 LOW 合成，**§1 精確 S 身份的兩 s
 只刪原r-spoke且X=M自身同β minimal的選定身份；六profiles、pair／singleton全覆蓋，見§2.10。
 採納保留原SF-QX／BASE紙面與finite-terminal信任鏈；有限零觸發不承擔排除。
 無U的long／兩long、其他45／54身份、原55、無45／54來源、一般 N2／E及ε≥3均仍 OPEN。
-其二連通 subsets、**BR-SD-1a 三環單 bridge 無旁支子域**與
-**BR-SD-1c 同骨架單一原 W 只接 J1/J2 子域**的精確排除見§2.11；
-後兩者不依二連通，均不計作完整父身份關閉。
+其二連通 subsets、**BR-SD-1a 三環單 bridge 無旁支子域**、
+**BR-SD-1c 同骨架單一原 W 只接 J1/J2 子域**與
+**BR-SD-1e 單一原 W 只接 J3／q 外臂子域**的精確排除見§2.11；
+三個 BR-SD 結果不依二連通，均不計作完整父身份關閉。
 
 ## 1. 全部共同前提與原身份
 
@@ -132,6 +134,7 @@ T4={2,5,7,8,9}。941 拒絕 q0,q1,q3；933 另拒絕 q2。
 | S-SHORT scoped composition | §1精確 S 的 LOW兩支與 HIGH三支互斥窮盡，各自完整契約排除，故兩原 mixed 都 short 的身份不存在 | H2A及父端核覆蓋；含long、其他core身份、一般N2／E均未關 |
 | BR-SD-1a scoped exclusion | N45-S-NOU-LS-PAIR 的 split22／共用 r 雙環／三環單 bridge 無旁支精確合同不可能成立；任意奇環長與原外臂長 | 完整前提見§2.11；獨立紙面驗證、封存與發布已完成，不依 SD-A／二連通；父身份仍 OPEN |
 | BR-SD-1c scoped exclusion | 同一 N45-S-NOU-LS-PAIR／split22 原三環單 bridge 骨架，新增一份有限非空原 pendant W 只接 J1/J2，保 actual S pair support 及未改動 J3／q 外臂的精確合同不可能成立 | 任意奇環／p、q 外臂長／有限 W 大小及所有允許接點；完整前提與局部引理界線見§2.11，父身份仍 OPEN，無新來源或 Lean |
+| BR-SD-1e scoped exclusion | 同一 N45-S-NOU-LS-PAIR／split22 原三環單 bridge 骨架，恰一份有限非空原 W 唯一接 J3／q 外臂、保 actual S pair support 及完整原 degree／資料的精確合同不可能成立 | 全部允許接點、任意奇環／p、q 外臂長／有限 W 大小及具名重合；完整前提與 private-witness preservation lemma 界線見§2.11，不依1c terminal lemma，父身份仍 OPEN |
 
 
 U-CAP 恢復原 U 的一單位：F_U=∅ 時是 D；singleton 在 E_r^X 外時是 O；
@@ -534,7 +537,61 @@ q 臂長0時 q 禁 D；長1時末端 q list={T}；長≥2時首個 off-cycle 臂
 任意大小排除由封存 PROOF 與獨立審查承擔，沒有新來源實現或 Lean theorem。
 外部依賴仍是 Dvořák Theorem10／blockwise-uniform characterization，
 版本與 hash 見[1c SOURCE](../audits/2026-10-11-br-sd-1c-fd6e1112/external/SOURCE.md)。
-1a 無旁支排除與1c 單一 W 排除分列；完整父身份及以下未涵蓋來源保持 OPEN。
+1a 無旁支排除與1c 單一 W 排除分列；兩者原範圍保持，後續1e採納如下。
+
+**BR-SD-1e canonical 採納（2026-10-11，BR-SD-1f）：**
+[最終 PROOF](../audits/2026-10-11-br-sd-1e-337d018b/PROOF.md)、
+[MAPPING](../audits/2026-10-11-br-sd-1e-337d018b/MAPPING.md) 與
+[REPORT](../audits/2026-10-11-br-sd-1e-337d018b/REPORT.md) 已由
+[獨立紙面審查](../audits/2026-10-11-br-sd-1e-337d018b/agents/paper/REVIEW.final.md)／
+[ACCEPTANCE](../audits/2026-10-11-br-sd-1e-337d018b/agents/paper/ACCEPTANCE.json)
+接受精確最終 bytes，封存並由
+[publication commit 0edb05b](https://github.com/raylei50653/math/commit/0edb05b42d7b096103cdf241df7fb81e08dc16c7)
+發布。本輪正式接入以下 **Scoped exclusion**；原 audit 的 candidate／未發布措辭保留當輪語境。
+
+- 完整沿用上列 BR-SD-1a 合同1–3、5：同一有限簡單 ordered induced-C₅ disk 原 G、
+  完整 Σ933／941 或共同整圖 D₅ 像、ε=2、逐非框邊 Σ-critical 與原 full witnesses；
+  原非相鄰 degree5 roots r/s、其餘有效內點完整4；原 U=0、L long、S actual support
+  恰同一真框邊兩端。exact-S 僅省略 r 唯一原 spoke，`X=M=G−e` 自身對同一
+  proper 三色 β inclusion-minimal 且拒絕，保 retained-edge witnesses；不由 G 遺傳 minimality。
+  M 僅 s 完整5，其餘有效內點完整4，s 的原有序 p/q contacts 與三原 spokes 全留。
+- 同一實際 sole C、r split22，保三原 odd-cycle blocks J1/J2/J3、`J1∩J2={r}`、
+  不交 J3、J2 私有 u≠r 與 J3 私有 v 間唯一原環間 bridge uv，以及原 p/q simple bridge
+  外臂與私有錨點 a1/a3；環長任意奇數≥3、兩臂長任意≥0，允許 a3=v。
+  僅放寬合同4：恰一份有限非空原 off-skeleton W，`C[W]` 連通，
+  `V(C)=V(C0)⊔W`、`N_C(W)={x}`，具名 `x∈J3∪q-arm`；可有多條 x–W 邊。
+  無其他旁支、cross edge、W–s 邊或 J1/J2 新接線。
+- W 屬來源自己的完整原 S，全部 W 附件在同一 pair，整份原 S 支援聯集仍恰為
+  `N_B^M(S)=N_B^G(S)={b_i,b_{i+1}}`。所有原點／邊、contacts、attachments、ownership、
+  rotation、bridges、共同 literal 色框、完整 relations／fibres（含空 fibres）及 full lifts 全保。
+  C0 是候選原 C 的骨架，不向已完整 degree4 的舊圖任意加邊，也不刪原附件容納 W。
+
+**正式結果僅限上述精確來源合同不可能成立；全部允許接點、任意三環奇長、
+p/q 外臂長、有限非空 W 大小及允許具名重合均涵蓋。**
+在 `x=a3=v`，零長臂的骨架度3＋s-contact1、正長臂的骨架度4均已飽和，
+非空 W 結構超度。其餘接點由同一原 M 的 `4=d_C0(x)+m+k+t` 核容量；
+k 是原實際附件數，不准刪附件。W 各點無 s-contact且 k≤2，仍須完整 degree4。
+
+**可重用 private-witness preservation lemma 僅在完整結構前提下採納：**
+同一具名骨架、原 cycle／bridge 邊全保，有限非空連通 W 的唯一骨架鄰點在 J3／q 臂，
+無第二接點、cross edge、額外 s-contact 或 J1/J2 新接線。則原
+`w1∈J1−{r,a1}`、`w2∈J2−{r,u}` 永遠存在（含 triangle），
+各只屬本環 block、非 C 割點、非 s-contact、完整 C-degree2。
+本輪完整 M-degree4及同一 β 未用 D 給兩原 lists 均含 D。
+原邊給 `|L^D(y)|≥d_C(y)`，完整 C list-coloring 與同一 M 的 β 延拓且 s=D 等價；
+含全部 W 邊／附件及被 effective-H 忽略點的原 full-lift 因子。M 拒絕 β 迫 C 不可著色，
+Dvořák 的 blockwise-uniform 刻畫給 `L^D(w_i)=P_Ji`，兩 palette 均含 D，
+卻因 J1/J2 在 r 相交而須互斥，矛盾。完整論證只引用原 PROOF§2–5，不新增證明。
+
+**1e 不依賴 BR-SD-1c terminal lemma：** W 接 q／臂內點可破壞末端／無額外 C 邊前提，
+接 J3 可佔用其 private witness；J1/J2 的雙 witness 路線仍全保。
+不使用 SD-A、H_M 二連通、R27 minor 或一般 cutpoint D 傳遞。
+外部版本見[1e SOURCE](../audits/2026-10-11-br-sd-1e-337d018b/external/SOURCE.md)。
+[controls v3](../audits/2026-10-11-br-sd-1e-337d018b/agents/controls/REPORT.v3.md)
+僅是固定域機制校準／負控制；actual target source 為 `not triggered`，無新來源實現或 Lean。
+紙面任意大小結論、有限 controls 與 byte seal 分層，audit PASS 不擴大來源合同。
+逐項映射、驗證與傳播停止見[BR-SD-1f 紀錄](history/2026-10-11-br-sd-1f-adoption.md)。
+1a／1c／1e 分列排除；一般多旁支、其他三環形狀與完整父身份仍 OPEN。
 
 ## 3. 精確 OPEN 與下一個窄分支
 
@@ -544,24 +601,24 @@ q 臂長0時 q 禁 D；長1時末端 q list={T}；長≥2時首個 off-cycle 臂
 既有S05只給原unary至多一份。沒有U的一long／一short與兩long仍OPEN；
 不能把原U/L的盾弧、full B-touch或C/U private covering搬到沒有U的圖。
 
-BR-SD-1a／1c 的子域與父身份逐項對帳如下；不把 subset 排除當父身份 closure。
+BR-SD-1a／1c／1e 的子域與父身份逐項對帳如下；不把 subset 排除當父身份 closure。
 
 | 來源身份／義務 | 目前狀態 |
 | --- | --- |
 | BR-SD-1a 精確 split22／共用 r／三環單 bridge 無旁支子域，含任意奇環與外臂長 | Scoped exclusion，完整合同見§2.11 |
 | BR-SD-1c 同骨架的一份原 W 只接 J1/J2，保 actual S pair support 及未改動 J3／q 外臂 | Scoped exclusion，任意奇環／外臂長／有限 W 大小及所有允許接點，完整合同見§2.11 |
+| BR-SD-1e 同骨架的一份原 W 唯一接 J3／q 外臂，保 actual S pair support、完整 degree及全部原資料 | 本輪採納 Scoped exclusion，全部允許接點、任意奇環／外臂長／有限 W 大小及具名重合，完整合同見§2.11 |
 | 完整 N45-S-NOU-LS-PAIR 及無 U、long／pair-short 的其他分支 | OPEN，包括其他 splits 與 split22 的其他形狀 |
-| 一份原 W 接 J3／q 外臂、或多份旁支 | OPEN，不由1c 的精確來源域涵蓋 |
-| actual pair support 不成立、或 terminal lemma 任一必要前提失效的來源 | OPEN，抽象反例不給 actual source |
+| 兩份或更多原旁支、其他 Gallai block 接線 | OPEN，須逐形核是否已被既有局部引理覆蓋；不是所有多旁支都存活 |
+| 未被上述精確合同涵蓋的來源，actual pair support 不成立或局部引理必要前提失效 | OPEN；1e 的精確域已由獨立雙 witness 路線排除，抽象反例不給 actual source |
 | 其他 bridge-separated 三環、不同接點位置、更多奇環、一般 Gallai block tree 及一般非二連通來源 | OPEN |
 | R31 同末端不同二接點的任意長來源 minor | OPEN，正常形不替代來源 minor |
 | 其他 45／54、原 55、無 45／54 來源 | OPEN |
 | 一般 N45／N2／E、ε≥3、一般單側／共同出口、主命題及 K∞=K≤5 | OPEN |
 
 **完整 OPEN 身份新增無條件關閉數仍為 0。**
-BR-SD-1e 的窄候選義務見[degree-5 導覽§4](c5_degree5_guide.md#4-r31-保留缺口與重播入口)：
-只考慮一份原 W 改接 J3 或 q 外臂的具名子域，先核 terminal lemma 哪一必要前提首先失效，
-再問其他 private witness 或合法 palette routing 能否恢復矛盾；本輪只記義務，不開始新證明。
+BR-SD-1g 的兩份原旁支窄候選義務見[degree-5 導覽§4](c5_degree5_guide.md#4-r31-保留缺口與重播入口)；
+本輪只保存研究義務，不開始新證明。不能以1a／1c／1e宣稱整個 split22 或父身份已關閉。
 其他無U來源仍須核實際分量、spokes／incidence、G的Σ witnesses與M的同β witnesses；
 一般非二連通來源、其他三環連接型及兩long完整身份保留。不擴枚舉或重開已採分支。
 其他45／54身份、原55、無45／54來源、一般N2／E及ε≥3均仍OPEN。
