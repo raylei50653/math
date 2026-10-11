@@ -255,6 +255,11 @@ R10 的完整染色介面已完成，disk／T4 排除仍開放。一般 degree�
 
 ## 7. 二連通單缺額查證與 45／54 接入
 
+**後續（2026-10-11）**：[N2末端block與兩次SD-A](c5_excess_two_arc_spoke_closure.md)
+已證完整N2目標前提下無U的原H二連通，對兩個相反方向spoke derivatives各用本節定理，
+排除無U全部45／54；再接含U契約，完整N2真cores全排，只剩原55。
+下文原適用性查證及BR各輪的OPEN保留當時語境；一般R31與雙缺額55仍未解。
+
 2026-10-11，查證 BASE `4dd11f422c6fa49265a412085116b088786d0344`。
 **已查證的紙面定理 SD-A：** M 是有限簡單 ordered induced-C5 disk，
 H=M−B 二連通（至少三點）；恰一內點 s 的完整 M-degree 為5，其餘內點為4。

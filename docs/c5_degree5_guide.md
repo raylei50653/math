@@ -1,13 +1,14 @@
 # degree-5／R 系列導讀：介面、排除範圍與保留缺口
 
-更新：2026-10-11（雙色唯一缺口的 bridge 路徑證明與 BR 四支共同接入）。本頁維護 R9–R31 的來源結構、minor 與單缺額查證情況。
+更新：2026-10-11（SD-A接入完整N2真核心排除；保留雙色唯一缺口及一般R31義務）。本頁維護 R9–R31 的來源結構、minor 與單缺額查證情況。
 研究線標記見 [HANDOFF](HANDOFF.md)，全索引見 [STATUS](STATUS.md)。
 前置依賴見 [全 degree-4 導覽](c5_degree4_guide.md)。
 
 唯一 degree-5 全部核心的指定雙列分離已接回 [條件式單側出口](c5_single_sided_exit.md)。
 這不補完 R31 的任意長來源 minor 或任意來源的完整 Σ；相鄰雙 root 與出口後續
 統一見 [weak-deletion 導覽](c5_weak_deletion_guide.md)，不在本頁累積逐輪摘要。
-本線保留缺口是 R31 同末端不同二接點及未覆蓋來源；N45 的旁支／三環形狀須先扣除§4的唯一缺口共同排除。
+本線保留缺口是 R31 同末端不同二接點及未覆蓋來源；完整N2目標契約的N45真cores
+已由後續共同排除涵蓋，不再按旁支／三環形狀列為該域存活來源。
 舊摘要數字與證書仍見原報告及 [九組成果發布紀錄](history/2026-09-28-adjacent-progress-publish.md)。
 R9–R31 為研究輪次，不是報告參考文獻編號。
 
@@ -17,7 +18,10 @@ R9–R31 為研究輪次，不是報告參考文獻編號。
 唯一內點 s 完整 M-degree5、其餘4；任意 proper β 拒絕即得 d_H(s)=2、H−s Gallai tree。
 不需 minimality、T4 或 lists 全緊；[精確定理與外部依賴](c5_degree5_interfaces.md#7-二連通單缺額查證與-4554-接入)
 保留紙面／有限控制／Lean 界線。對45／54的應用見[N45§2.11](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)，
-須另核實際 X=M、完整 degrees 與二連通，未關整個 OPEN 身份。
+原適用性查證須另核實際 X=M、完整 degrees 與二連通。
+後續[末端block與兩次SD-A](c5_excess_two_arc_spoke_closure.md)已在完整N2目標前提
+證無U的H二連通，排全部spoke45／54；含U接既有契約後，N2只剩原55。
+這是新紙面接入，不完成一般degree5／R31，也不能把單缺額SD-A套到原55。
 
 **一般 degree-5 排除仍未完成。** 在唯一 degree-5 內點 z 有三條 boundary
 spokes、C=H−z 為連通二接點分量、其餘有效內點完整 degree=4，且來源是
@@ -96,8 +100,9 @@ actual 異色 pair、唯一 s-contact q 加至少兩個 r-contacts 即矛盾，
 [N45§2.12](c5_excess_two_nonadjacent_unit_core45.md#212-雙色唯一缺口的共同排除)逐份接回1a／1c／1e／1g。
 任意有限旁支數、位置、三環形狀及 private witness 不再是這份推論的必要前提。
 本輪為外部 Gallai＋紙面證明，未另經獨立採納審查，無新有限來源或 Lean。
-未覆蓋的是單一 r-contact、多個 s-contacts、未證雙色 lists 的非 pair support、
-不完整 S／其他內部出口及更廣父身份；R31 minor 另保留。
+此共用引理本身未覆蓋單一r-contact、多個s-contacts、未證雙色lists的非pair support
+或其他出口；但完整N2 exact-S已由後續[N45§2.14](c5_excess_two_nonadjacent_unit_core45.md#214-e-arc2-接入全部-spoke4554-排除與原55化約)
+整體排除。一般degree5／R31 minor及N2原55另保留。
 下列四份既採成果保留其原合同與歷史證據；其中多旁支／其他形狀 OPEN 的敘述，
 現在均須扣除上述共同前提完整成立的域。驗證及本地提交範圍見
 [整理紀錄](history/2026-10-11-two-color-single-gap.md)。
@@ -132,8 +137,10 @@ q 起始的 T/D 交替追色在原 S 內形成有限 block–all-vertex incidenc
 完整 lists 與 M／同 β／s=D 的全延拓等價，含 effective-H 忽略原點的允許色因子；
 不使用 `D∈L(x1)⇒D∈P_J1`，不依 H_M 二連通、SD-A 或 R31 minor。
 任意大小结論由獨立審查的紙面證明承擔，六個 synthetic fixtures 僅是具名有限 controls；
-actual source `not triggered`，無新 Lean theorem。完整 `N45-S-NOU-LS-PAIR`、未涵蓋兩／多旁支、
-其他三環形狀與一般 N45／N2／E、ε≥3、`K∞=K≤5` 仍 OPEN，完整 OPEN 身份新增無條件關閉數為0。
+actual source `not triggered`，無新 Lean theorem。BR採納當輪完整父身份新增關閉數為0；
+後續完整`N45-S-NOU-LS-PAIR`及其他N2 exact-S已由
+[N45§2.14](c5_excess_two_nonadjacent_unit_core45.md#214-e-arc2-接入全部-spoke4554-排除與原55化約)涵蓋，原封存證據不改。
+原55、一般N2／E、原Σ933／941來源的ε≥3下界與`K∞=K≤5`仍OPEN。
 其他兩旁支只佔 J1/J2 triangle witnesses且 J3／q 末端完整時，仍須先核既採 terminal lemma，
 不能重列為新待證子域。採納與 publication custody 的實際紀錄見
 [本輪紀錄](history/2026-10-11-br-sd-1g-adoption.md)；新 custody 入口為

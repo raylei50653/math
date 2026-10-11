@@ -1,0 +1,20 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--with",
+    "networkx==3.5",
+    "python",
+    "-B",
+    "scripts/c5_excess_two_arc_size_bound.py",
+    "--check",
+    "--output",
+    "artifacts/c5_excess_two_arc_size_bound/observations_corrupt_negative.json"
+  ],
+  "corrupt_sha256": "3bbb6d71d52b63e47a97c7b6d46b02d1f8425235e794e07d5e17a42574f46caa",
+  "expected": "nonzero exit and artifact mismatch",
+  "original_sha256": "a63e2bd7ef6c32c6f983b54064371cba3d46e20c32e78e222d3a335d59c46291",
+  "returncode": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/scripts/c5_excess_two_arc_size_bound.py\", line 283, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/scripts/c5_excess_two_arc_size_bound.py\", line 273, in main\n    assert args.output.read_bytes() == raw, \"artifact mismatch\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: artifact mismatch\n",
+  "stdout": ""
+}

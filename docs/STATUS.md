@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-11（BR-SD-1g 雙原旁支／J2 屏障精確採納與 residual 對帳）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-11（E-ARC2 完整N2的45／54全排，原55已證至多35有效內點但仍OPEN；保留 BR-SD-1g 精確採納）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -31,7 +31,7 @@
 | [Degree-4／block](c5_degree4_guide.md) | 全 degree-4 合成、前提及證書 |
 | [Degree-5／R 系列](c5_degree5_guide.md) | 來源結構、BR 四支既有採納與唯一雙色缺口的共同排除、完整父身份與 R31 minor 缺口 |
 | [Sector／雙拒絕分類](c5_sector_3903_guide.md) | 3903、3703 與指定 sector 分類 |
-| [Kempe／計數與策略](c5_kempe_guide.md) | 同圖換色、有序重接、計數限制與 repair |
+| [猜想 E／Kempe／計數與策略](c5_kempe_guide.md) | 主攻 E-ARC2 三點弧命題；同圖換色、有序重接、計數限制與 repair |
 | [State／grammar／topology](c5_state_guide.md) | 充分性、固定 grammar、embedding 及枚舉 |
 | [Lean 形式化](lean_guide.md) | 具名定理、形式化依賴與公理審計 |
 
@@ -169,7 +169,7 @@
 | [BR-SD-1e J3／q 外臂單一原旁支排除](../audits/2026-10-11-br-sd-1e-337d018b/REPORT.md) | 同骨架恰一份原 W 唯一接 J3／q 臂，保 actual S pair、完整 degree及原資料，任意奇環／外臂長／有限 W 大小及允許接點已採納於 N45§2.11；雙 private witnesses 保持，不依1c terminal lemma，父身份 OPEN、actual target not triggered，無新 Lean |
 | [BR-SD-1g 雙原旁支／J2 屏障獨立採納審查](../audits/2026-10-11-br-sd-1g-adopt-6eae3597/REPORT.md) | 同一 N45-S-NOU-LS-PAIR／split22 三環單 bridge、J1 指定 triangle，恰兩原 W1/W2 唯一接 x1 witness／J3或q臂且 ownership L/S；S short／actual pair、M自己同β minimal拒絕及完整原資料全保的八項合同已採納於 N45§2.11。任意 J2/J3 奇長、可零長 p/q 臂、有限 Wi、合法接點／mi及 a3=v均涵蓋；J2屏障的紙面任意大小證明獨立審查通過，finite只校準具名synthetic。父OPEN，actual source not triggered，無新Lean，完整OPEN新增無條件關閉0 |
 | [BR-SD-1g 採納／publication custody](history/2026-10-11-br-sd-1g-adoption.md) | owner批准的精確採納、最小文件同步與原seal不變核對；本輪實際重播／tracked與commit、push狀態依該紀錄，不改歷史candidate／publication紀錄 |
-| [雙色唯一缺口的 bridge 路徑定理](c5_two_color_single_gap_bridge.md) | 任意有限連通簡單圖／色集的不可著色 degree lists；完整 S 唯一 q 含 T 缺 D，其餘含 T/D，迫唯一 r-contact 與 r–q 全 bridge。原圖 pair／唯一 q／至少兩 r-contacts 的共同推論統一 BR 四支，任意有限旁支形狀；紙面＋外部 Gallai，無新來源／Lean，父 OPEN |
+| [雙色唯一缺口的 bridge 路徑定理](c5_two_color_single_gap_bridge.md) | 任意有限連通簡單圖／色集的不可著色 degree lists；完整 S 唯一 q 含 T 缺 D，其餘含 T/D，迫唯一 r-contact 與 r–q 全 bridge。原圖 pair／唯一 q／至少兩 r-contacts 的共同推論統一 BR 四支，任意有限旁支形狀；紙面＋外部 Gallai，無新來源／Lean；N2 exact-S父身份後由spoke報告涵蓋，一般R31保留 |
 | [三-spoke 區域化約](c5_degree5_sectors.md) | 單一二接點分量縮到兩個鏡像 pentagon；完整接合代數與非 minimal disk 控制，最終排除仍未解；紙面＋證書，未 Lean 化 |
 | [三-spoke 任意樹分量／連通外框](c5_degree5_tree_components.md) | 任意樹的固定-q 化約與五種閉色序列、648 個必要 lifts 排除；t≥1 的 degree-4 分量不含 K4，後續 no-spoke 結果補上 t=0；原 cycle 缺口已有 t≥1 出口接合，完整圖分類／形式化仍有界線 |
 | [三-spoke 單 triangle 二接點](c5_degree5_triangle_components.md) | 旁支／共同／不同接點三型全部排除；528 模板、89,224 接線非 disk，不限 bridges 長度或分叉；單長環由下一列處理，未 Lean 化 |
@@ -279,9 +279,9 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [N45：N2原unit省略45／54權威入口](c5_excess_two_nonadjacent_unit_core45.md) | 指定整U省略及兩short S已全排；完整K1–K12 U／long／short、只刪spoke且X=M自身同β minimal身份由§2.9／2.10限定排除；§2.11保四份BR原精確採納；§2.12新紙面推論以完整S／degree lists／拒絕／actual異色pair／唯一q／至少兩r-contacts統一任意有限旁支與block形狀。完整父身份、單contact／多s-contacts／未證雙色lists／其他出口、其他cores／原55／一般N2／E仍OPEN，QX信任鏈與HIGH2 finding保留，actual source not triggered、無新Lean、完整OPEN新增關閉0 |
+| [N45：N2原unit省略45／54權威入口](c5_excess_two_nonadjacent_unit_core45.md) | 完整§1的exact-U／exact-S及N2全部45／54真cores已全排；§2.14以原leaf block、無U二連通、同H兩次SD-A及含U完整契約合成，只剩每列同以原G作55 core。歷次BR採納、QX信任鏈與HIGH2 finding保留；目標來源not triggered，無新Lean，原55／一般N2／E仍OPEN |
 | [N45-S含long契約／必要化約](../audits/2026-10-10-n45-s-long-contract/REPORT.md) | 精確保留U/L/S、只刪spoke且X=M自己minimal；pair／singleton盾費、X full B-touch／無U側≤2spokes、十列全pins及恢復e；19圖full-lift校準，目標not triggered，未作來源全排或新Lean |
-| [N45-S-LONG-R：完整U在r的sole C映射](../audits/2026-10-10-n45-s-long-r-map/REPORT.md) | 精確X=M契約內pair／singleton皆排除；X自己的witnesses給F，t_s=0/1/2接BASE(5)/(4)/(3)；26省略／260列完整r fibres只校準，來源not triggered；U在s後續限定採納見下，無U等其他long身份OPEN |
+| [N45-S-LONG-R：完整U在r的sole C映射](../audits/2026-10-10-n45-s-long-r-map/REPORT.md) | 精確X=M契約內pair／singleton皆排除；X自己的witnesses給F，t_s=0/1/2接BASE(5)/(4)/(3)；26省略／260列完整r fibres只校準，來源not triggered；U在s後續限定採納見下，無U的exact-S再由§2.14涵蓋，原55保留 |
 | [N45-S-LONG-S：DIRECT／FIBRE採納及更正](../audits/2026-10-11-n45-s-long-s-review/REPORT.md) | 四direct profiles任意大小排除、餘兩profile singleton／pair13／31排除；FIBRE分類12+4+10+4及恢復依賴更正；當輪24 schedules後由q0／q2／T1全排，原bytes保留 |
 | [N45-S-LONG-S-JOINT獨立有限驗收](../audits/2026-10-11-n45-s-long-s-joint-review/REPORT.md) | 固定19圖／21原省略／210列／3,360pins完整lift鏈逐項相等；target source／private covering均not triggered，不供給來源排除 |
 | [N45-S-LONG-S-T1獨立驗收及整合](../audits/2026-10-11-n45-s-long-s-t1-rfibre-review/REPORT.md) | 全14 schedules／28 spoke queries限定任意大小排除，含T1-P22；βq3原r≠2完整恢復、βq4 retained K₅；採納overlay補352 X／780 G空欄位，raw28整合剩0，無新來源／Lean或一般closure |
@@ -324,7 +324,11 @@
 | [D₃：C／C₂獨立稽核](../audits/2026-10-04-task-d3/REPORT.md) | 固定D₂截點的完整P₃／側角色／空fibres、原unary刪邊witnesses及原K₅全部獨立核對；只關閉geometry30／join20，保存3500具名keys。當時未接收A₃／B₃／C₃及未同步live文件；原strict漂移失敗保留 |
 | [D₄：正式返回A₃／B₃／C₃快照與整合稽核](../audits/2026-10-04-task-d4/REPORT.md) | 獨立核對三份新增成果與13份並行更新，A保存18／22；B₂＋B₃只登記W933-101／W941-139兩骨架封閉；C₃只關閉geometry34／join20。前輪交付hash／完整relations／空fibres／witnesses與失敗紀錄保持，未commit／push |
 | [D₅：A₄／B₄／C₄最終快照與獨立稽核](../audits/2026-10-04-task-d5/REPORT.md) | 逐身份A ledger降至16／20；B只關閉W933-129長face的shared-{4}支；C只新增geometry34／join60，3500keys及36／140／900表保持。三項最終重播、版本／實際依賴與歷史失敗分別封存；當輪未發布，本批發布及還原入口見下方歷史紀錄 |
-| [C₅ 全線進展與高階假設](c5_research_synthesis.md) | 八線成果與證據界線整合；H1 在固定完整 Σ 來源前提下成立，後續兩-root44身份由U1–U4及前序全排；H2／H3及ε≥3仍未證；各輪快照保留，不替代導覽排程 |
+| [E-ARC2 真子圖單拒絕與共同核心覆蓋](c5_excess_two_arc_pair_critical.md) | 沿用低ε／相鄰列分離與兩-root44排除，目標反例每個真子圖至多單拒絕、任意兩列minimal cores聯集為G，所有內點不可同接24。179固定圖／4138刪邊／206cores重算；172觸發一般Z引理並成立、7未觸發，Σ956保存兩個去前提反例刪邊，目標來源0觸發。後續完整N2的45／54已排；原55、其他域與E-ARC2 OPEN，未Lean化 |
+| [E-ARC2 原分量共同重色限制與N2必留分量](c5_excess_two_arc_component_slack.md) | 同一原分量重色至多涉及一個拒絕列；完整N2前提接已採納N45-U後，所有分量邊刪除全收、非root框附件至多相鄰兩點、真core只省一條root-spoke。63固定圖、179分量、13,010完整外部投影與208,160 ambient pins核對；目標0觸發。後續spoke報告排完整N2的45／54，原55及E-ARC2仍OPEN，紙面＋Python，未Lean化 |
+| [E-ARC2 末端block與N2全部真核心排除](c5_excess_two_arc_spoke_closure.md) | 原leaf block必有私有root接點；無U則H二連通，同H兩次SD-A排全部spoke45／54，含U由完整既有契約覆蓋。完整N2每條非框邊刪除全收、roots亦至多接相鄰兩框點，只剩原55。63圖／28,640完整pins cells校準，目標0觸發；外部定理＋紙面，未Lean化，N2／E-ARC2 OPEN |
+| [E-ARC2 原55的block骨架與35內點上界](c5_excess_two_arc_size_bound.md) | 完整N2的H為中央block加至多兩個root葉blocks；K₅／K₃,₃迫全H內度二點≤5，原C為奇環／bridge cactus，紙面得有效內點≤35−6u−3t。480／90 minors、58具名cacti及63原圖結構控制，目標0觸發；未搜尋10–35點、未Lean化，原55／N2／E-ARC2仍OPEN |
+| [C₅ 全線進展與高階假設](c5_research_synthesis.md) | §8.1 完整 E 與 E-ARC2 等價；新增真子圖單拒絕必要條件，ε=2 三點弧仍 OPEN；Q=B／932 另屬較強版本。八線證據及歷史快照保留；兩-root44已限定排除，不推升 E／H2／H3，不替代導覽排程 |
 | [C₅ 跨線結果對照與共通語言](c5_common_language.md) | 五欄代表成果對照；統一完整介面、兩種臨界性、結論類型與共用引理叫法；保留原來源、框族及操作義務；文件整理，無新定理或數學重播 |
 | [Phase B 共通引理候選分析](c5_phase_b_common_lemmas.md) | 三組候選與前提／反例／義務／效益；抽出原圖盾弧收費、推得任意两自由roots的條件容量恆等式、區分密封與動態充分性；兩非平面q-critical容量負控制及小型重播，未新增45／54／55排除或ε≥3下界 |
 | [C₅ 關係階數與接合上界](c5_relation_arity.md) | 132類為11個二階、101個四階、20個五階；原邊重驗20反例及100份局部延拓；紙面證接合r*≤來源最大階數≤5、T4全收時≤4；六圖回歸，非一般五階接合實現或多步state定理，未Lean化 |
@@ -391,7 +395,7 @@ R31 同末端不同二接點僅完成正常形，任意長來源 minors 仍是�
 不取代上述一般分類。BR-SD-1a／1c／1e／1g精確子域的歷史採納保留；後續
 [唯一雙色缺口](c5_two_color_single_gap_bridge.md)以完整 S／degree lists／拒絕／異色 pair／唯一 q
 加至少兩 r-contacts 統一排除，任意有限旁支／block 形狀。單 r-contact、多 s-contacts、
-未證雙色 lists／其他出口、父身份及R31仍保留；見[N45§2.12–3](c5_excess_two_nonadjacent_unit_core45.md#212-雙色唯一缺口的共同排除)。
+未證雙色 lists／其他出口不在該共用引理內；完整N2 exact-S後由[N45§2.14](c5_excess_two_nonadjacent_unit_core45.md#214-e-arc2-接入全部-spoke4554-排除與原55化約)全排，原55及R31仍保留；見[N45§2.12–3](c5_excess_two_nonadjacent_unit_core45.md#212-雙色唯一缺口的共同排除)。
 
 ### 2.6 全 degree-4／block 化約系列
 
@@ -468,6 +472,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-11：三點弧研究與完整N2的原55大小界整理發布](history/2026-10-11-three-point-arc-publish.md)；四份紙面報告／checkers／固定控制相連提交，完整N2的45／54全排、原55有效內點≤35；目標來源not triggered，E-ARC2仍OPEN
 - [2026-10-11：雙色唯一缺口的 bridge 路徑證明與 BR 共同接入](history/2026-10-11-two-color-single-gap.md)；一般計數式、出口葉修正、四份原合同映射及真正 residual；紙面＋外部 Gallai，無新來源／Lean，父 OPEN，傳播停 L2，本地 commit
 - [2026-10-11：BR-SD-1g 雙原旁支／J2屏障精確採納與 publication custody](history/2026-10-11-br-sd-1g-adoption.md)；完整八項來源合同、獨立最終bytes審查與封存，父OPEN、actual source not triggered、無新Lean、完整OPEN新增無條件關閉0；HANDOFF與上游consumer reviewed-unchanged，傳播停L2
 - [2026-10-11：BR-SD-1f J3／q 外臂單一原旁支 canonical 採納與 residual 對帳](history/2026-10-11-br-sd-1f-adoption.md)；分列1a／1c／1e精確子域、完整 OPEN 身份新增無條件關閉0，1g僅記義務，傳播停 L2

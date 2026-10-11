@@ -1,6 +1,6 @@
 # N45：非相鄰 N2 原 unit 省略的 45／54 身份
 
-更新：2026-10-11（§2.12 雙色唯一缺口的 bridge 路徑證明與 BR 四支共同接入）；
+更新：2026-10-11（§2.14 完整N2契約的45／54全排，§2.15原55至多35有效內點；保留歷次限定採納與證據）；
 原研究 BASE `dc8e9aa7d6fccb51f63d30aa3f9c132296d44744`，既有 N45 驗收 BASE
 `f2692089ad4259808e27d9b7e882ac09505b180a`；BR-SD-1b 採納基準為
 `fc3d3d8b4c5b8e6378268edb5cd3f04b50940b5a`；BR-SD-1d 採納基準為
@@ -13,6 +13,13 @@
 [SU-A](../audits/2026-10-09-n45-su-a/REPORT.md)獨立核十四項 paper claim，
 [SU-J](../audits/2026-10-09-n45-su-j/REPORT.md)核指定有限介面；
 [監督採納](../audits/2026-10-09-n45-su-supervision/REPORT.md)對回封存版本及依賴。
+
+**目前完整覆蓋：** [新紙面合成](c5_excess_two_arc_spoke_closure.md)已排除本頁§1的全部
+exact-S root-spoke身份，連同既有exact-U，完整N2目標前提的45／54真cores已全排。
+每條非框邊刪除全收，所有拒絕列只剩原G自身55（忽略自由孤立因子）。
+後續[原55大小界](c5_excess_two_arc_size_bound.md)證`|H|≤35−6u−3t`，見§2.15。
+原55、一般N2來源排除及E-ARC2仍OPEN；新論證未Lean化，有限目標來源仍未觸發。
+以下歷次採納及其當時限定範圍保留，目前缺口以§3為準。
 第二批 [PG](../audits/2026-10-09-n45-pg/REPORT.md)、
 [PR](../audits/2026-10-09-n45-pr/REPORT.md)、[PC](../audits/2026-10-09-n45-pc/REPORT.md)
 經 [PGA 幾何稽核](../audits/2026-10-10-n45-pga/REPORT.md)、
@@ -68,7 +75,8 @@ HIGH1–HIGH3 窮盡限定 HIGH；與 LOW 合成，**§1 精確 S 身份的兩 s
 **N45-S-LONG-S 已限定排除：** 完整K1–K12內，原U在s、long L／short S全留、
 只刪原r-spoke且X=M自身同β minimal的選定身份；六profiles、pair／singleton全覆蓋，見§2.10。
 採納保留原SF-QX／BASE紙面與finite-terminal信任鏈；有限零觸發不承擔排除。
-無U的long／兩long、其他45／54身份、原55、無45／54來源、一般 N2／E及ε≥3均仍 OPEN。
+無U的long／兩long之exact-S身份由後續§2.14涵蓋；原55、N2外其他45／54、
+一般 N2／E及原Σ933／941來源的ε≥3下界仍 OPEN。
 其二連通 subsets、**BR-SD-1a 三環單 bridge 無旁支子域**、
 **BR-SD-1c 同骨架單一原 W 只接 J1/J2 子域**與
 **BR-SD-1e 單一原 W 只接 J3／q 外臂子域**與
@@ -426,6 +434,9 @@ target source為not triggered，未執行target來源，沒有來源實現或新
 
 ### 2.11 單缺額查證與無 U 二連通子域
 
+後續§2.14已在完整N2目標前提證無U的原H二連通，並完成該域全部spoke45／54排除。
+下列鏈形缺口保留原查證時語境；一般degree5／R31方法義務不因此完成。
+
 本節保留各輪獨立採納的精確合同與證據。後續[§2.12](#212-雙色唯一缺口的共同排除)
 給出共同紙面推論；下文各輪「其他形狀／多旁支 OPEN」須扣除該新推論的完整適用域，
 目前 residual 以§3為準，原歷史證明及 audit bytes 保留。
@@ -711,38 +722,78 @@ terminal lemma 或 private witness。這不把失去完整 S／唯一 q／雙色
 四份既有 scoped 合同及其採納證據保留。完整父身份未關閉，驗證與傳播見
 [整理紀錄](history/2026-10-11-two-color-single-gap.md)。
 
+### 2.13 E-ARC2 接入：N2 的全部原分量必留
+
+[原分量共同限制定理3](c5_excess_two_arc_component_slack.md#5-n2-的全分量必留推論)
+在本頁§1完整原來源前提下，先由兩mixed及兩-root44排除得Z=∅。
+若省略unit unary U後仍拒絕β，minimal core必保兩roots，degrees只能45／54；
+原degree-4飽和迫M=G−U，逐項滿足§2.2已採納的U身份，故矛盾。
+Mixed與非unit unary省略則由兩-root44／單-root排除直接全收。
+
+因此每份原C及其每條incident邊e都有Σ(G−C)=Σ(G−e)=Ω，
+每個非root內點的原框附件至多兩個、兩個時必相鄰。每個拒絕列的所有minimal cores
+皆保留全部原分量；真core只能省一條原root-spoke，否則就是原G的55 core。
+這是新紙面合成，沿用已採納U排除；63固定來源的完整fibres控制不含目標來源。
+沒有完成剩餘S／55或一般N2／E，亦未新增Lean theorem。
+
+### 2.14 E-ARC2 接入：全部 spoke45／54 排除與原55化約
+
+[新報告](c5_excess_two_arc_spoke_closure.md)從§2.13的每列分量必留取得同一原C的
+三列不可染degree lists。Block palette與字面框欄位單射迫普通私有點的原附件相同；
+原K₅ minor排除沒有私有root接點的leaf block，亦排除原incidence-one unary。
+無U時兩roots在H同一block，其餘leaf blocks皆無root接點，故原H必二連通。
+
+對拒絕的G−rbᵢ用已查證SD-A，迫s三spokes；其中某pair在原拒絕三列之一重色，
+故另一側G−sbⱼ仍拒絕。其內圖仍是同一H，再用SD-A迫r亦三spokes。
+原雙star長面的交集容不下long支援，兩mixed都short後以未用色D的完整diagonal lifts
+接回G，矛盾。這完成無U全部exact-S，沒有借44分類或假定跨列pins相同。
+
+含U的exact-S逐項窮盡：至少兩U用S05；一U兩long用原盾弧6>5；一U兩short用§2.8；
+一U一long一short逐項符合完整K1–K12，按owner接§2.9／§2.10。因此本頁§1的
+S與U兩個原省略身份均全排；§2.13又已證每個N2真core必為S，故只剩原55。
+
+精確結論為每條非框邊e都有Σ(G−e)=Ω。每個拒絕列的唯一minimal core是有效原G；
+連roots在內每個內點至多接兩個相鄰框點。新結果為紙面證明／既有採納合成，
+兩路只讀檢查核對論證並補明自由孤立因子慣例，未另作封存採納流程。
+63圖控制只核完整local fibres，目標0觸發；外部Gallai、SD-A及N45上游信任链明列於報告，
+沒有新Lean theorem、原55矛盾或N2來源排除。
+
+### 2.15 原55的block骨架與有效內點上界
+
+[新報告](c5_excess_two_arc_size_bound.md)在§2.14的完整N2前提下，進一步證H只有
+含兩roots的中央block，以及各root至多一個unary葉block；H無bridge。
+內度二點同接一條原框邊時，同block以共同cycle給K₅，異block以連通H−{u,v}給K₃,₃，
+故全H至多五個內度二點。每份原C的連通外部hub排K₄，剩bridges／奇環cactus。
+以完整root incidence與原block計數，得`|H|≤35−6u−3t`，u為unary數、t為原root-spoke總數。
+這是原圖上界，不替換完整relations或縮圖；自由孤立座標仍保留完整染色因子。
+新紙面必要條件尚未另作封存採納或Lean化；63固定圖及570份具名minors不含目標來源。
+沒有把至多35點寫成來源排除，亦未擴大ES／ER來源搜尋。
+
 ## 3. 精確 OPEN 與下一個窄分支
 
-§1指定整U省略身份已由§2.2全排；精確S身份的兩short分支已由§2.8全排。
-完整U／long／short且X=G−原spoke=M自身同β minimal的K1–K12選定契約，
-已由§2.9的U在r與§2.10的U在s限定排除；不是所有含long殘留的完整分類。
-既有S05只給原unary至多一份。沒有U的一long／一short與兩long仍OPEN；
-不能把原U/L的盾弧、full B-touch或C/U private covering搬到沒有U的圖。
-
-BR-SD-1a／1c／1e／1g 及§2.12共同推論與父身份逐項對帳如下；不把 subset 排除當父身份 closure。
+**完整§1的45／54真core身份已全排；N2本身仍OPEN。**
+§2.2排整U，§2.14排全部原root-spoke；§2.13已使兩種身份窮盡完整N2的真cores。
+所有拒絕列只能以原G自己作55 minimal core（忽略自由孤立因子），
+每條原非框邊刪除全收，連roots在內每點至多接兩個相鄰框點。
+H為中央block加至多兩個root葉blocks；無U時二連通，含U時不宣稱整H二連通。
+每份U原incidence至少2；全H內度二點至多五個，且`|H|≤35−6u−3t`。
 
 | 來源身份／義務 | 目前狀態 |
 | --- | --- |
-| BR-SD-1a 精確 split22／共用 r／三環單 bridge 無旁支子域，含任意奇環與外臂長 | Scoped exclusion，完整合同見§2.11 |
-| BR-SD-1c 同骨架的一份原 W 只接 J1/J2，保 actual S pair support 及未改動 J3／q 外臂 | Scoped exclusion，任意奇環／外臂長／有限 W 大小及所有允許接點，完整合同見§2.11 |
-| BR-SD-1e 同骨架的一份原 W 唯一接 J3／q 外臂，保 actual S pair support、完整 degree及全部原資料 | 本輪採納 Scoped exclusion，全部允許接點、任意奇環／外臂長／有限 W 大小及具名重合，完整合同見§2.11 |
-| BR-SD-1g J1 triangle、W1/W2 分別唯一接 x1 與 J3／q 臂 x2，保完整八項原合同 | ACCEPTED scoped exclusion，任意 J2/J3 奇長／可零長 p/q 臂／有限非空 Wi／全部合法接點與重合，完整合同見§2.11 |
-| §2.12同一原圖前提：完整 S、degree lists／拒絕、actual 異色 pair、唯一 q、至少兩個 r-contacts | 新紙面共同排除；任意有限旁支／block 形狀，四份 BR 為特例 |
-| 完整 N45-S-NOU-LS-PAIR 及無 U、long／pair-short 的其他分支 | OPEN；須扣除§2.12完整域，不能再只憑不同 split22 形狀列為存活 |
-| r 對 S 只有一個 contact，或 S 有多個 s-contacts | 本共同排除未涵蓋；單 contact 在雙色前提下仍須滿足 r–q 全 bridge 的必要條件 |
-| actual pair support 失效、雙色 lists 尚未另證，或 S 不是完整分量／有其他內部出口 | OPEN；須另證 list 形狀或出口控制，不能冒用§2.12 |
-| 多旁支、其他 bridge-separated 三環、更多奇環、一般 Gallai block 接線及非二連通來源 | §2.12完整域全排；未滿足該域者仍 OPEN，形狀本身不再是共同推論的必要分類參數 |
-| R31 同末端不同二接點的任意長來源 minor | OPEN，正常形不替代來源 minor |
-| 其他 45／54、原 55、無 45／54 來源 | OPEN |
-| 一般 N45／N2／E、ε≥3、一般單側／共同出口、主命題及 K∞=K≤5 | OPEN |
+| §1 exact-U及exact-S；完整N2目標契約的全部45／54真cores | 紙面排除完成；既有採納＋§2.14新共同證明，未Lean化 |
+| N45-S-NOU-LS-PAIR、無U兩long及其原split／旁支子型 | 作為§1 exact-S均由§2.14涵蓋；不再以一般非二連通形狀列為此域存活理由 |
+| BR-SD-1a／1c／1e／1g、雙色唯一缺口 | 原限定採納／任意大小共同引理保留；封存bytes及當時OPEN語境不改 |
+| 原55，沒有45／54的N2來源 | OPEN；有效內點≤35（更精確35−6u−3t），每個拒絕列同以G作minimal core；界內完整跨列共同矛盾未證 |
+| N1、相鄰、單-root例外及N2契約外其他45／54 | 本輪未涵蓋 |
+| 一般degree5／R31任意長來源minor | OPEN；本輪N2排除不補該一般minor路線 |
+| 一般N2／E-ARC2、一般單側／共同出口、主命題及K∞=K≤5 | OPEN |
 
-**完整 OPEN 身份新增無條件關閉數仍為 0。**
-BR 四支的既有採納、§2.12新共同推論與未覆蓋 residual 入口見
-[degree-5 導覽§4](c5_degree5_guide.md#4-r31-保留缺口與重播入口)；
-不能以四支或共同推論宣稱整個 split22／父身份已關閉；只有共同前提全部成立的來源被排除。
-其他無U來源仍須核實際分量、spokes／incidence、G的Σ witnesses與M的同β witnesses。
-未覆蓋的一般非二連通來源及兩long完整身份保留；本輪不擴枚舉或重開已採分支。
-其他45／54身份、原55、無45／54來源、一般N2／E及ε≥3均仍OPEN。
+下一個窄義務是在中央block／至多五個內度二點與完整mixed relations下推原55共同矛盾，
+或把大小界進一步收窄；未搜尋10–35內點，不能把SD-A直接套到雙degree5的G。
+§2.11的歷史block-chain缺口及B適用性表不再是本頁完整N2 exact-S的存活清單；
+它們在一般degree5／其他來源合同中的方法義務仍由
+[degree-5導覽](c5_degree5_guide.md#4-r31-保留缺口與重播入口)維護。
+有限目標來源仍not triggered，沒有由控制圖數量推得來源排除。
 
 ## 4. 證據、重播與保留失敗
 
