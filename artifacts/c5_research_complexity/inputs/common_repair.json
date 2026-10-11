@@ -1,0 +1,1617 @@
+{
+  "schema_version": 1,
+  "family": "common_repair",
+  "contracts": [
+    {
+      "id": "CR.CONTRACT.system",
+      "label": "Faithful complete-relation set system",
+      "assumptions": [
+        "Arbitrary row type Ω and candidate-index type Λ; neither type is required to be finite.",
+        "System stores target J, base P, and complete acceptance sets K_i in the same Ω.",
+        "J ⊆ P and J ⊆ K_i for every i ∈ Λ.",
+        "result H = P ∩ ⋂_{i∈H} K_i; delta = P \\ J; rejectors x = {i | x∈delta and x∉K_i}."
+      ],
+      "scope": {
+        "source_generality": "All faithful set systems, including infinite Ω and Λ.",
+        "observation": "Complete row membership and all candidate indices in one row space.",
+        "behavior": "Exact equality result H = J, complete rejector coverage, residuals, monotonicity, and repair minimality."
+      },
+      "limitations": [
+        "No graph realization, disk topology, frame legality, or finite certificate is supplied by this abstract contract.",
+        "Cardinality theorems quantify over a finite chosen H, rather than requiring the candidate-index type to be finite.",
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 11,
+          "end_line": 13,
+          "quote": "/-! Complete-relation repair criteria. Rows and candidate indices need not be finite.\nThe hypotheses concern actual sets of rows, not cardinalities or marginal projections.\nNo graph realization, topology, or finite certificate is assumed or certified here. -/"
+        },
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 19,
+          "end_line": 47,
+          "quote": "/-- All conditions preserve the same target relation in the same row space. -/\nstructure System (Ω : Type u) (Λ : Type v) where\n  target : Set Ω\n  base : Set Ω\n  accept : Λ → Set Ω\n  target_base : target ⊆ base\n  faithful : ∀ i, target ⊆ accept i\n\nnamespace System\n\nvariable (s : System Ω Λ)\n\ndef delta : Set Ω := s.base \\ s.target\n\ndef result (H : Set Λ) : Set Ω := {x | x ∈ s.base ∧ ∀ i ∈ H, x ∈ s.accept i}\n\ndef Repairs (H : Set Λ) : Prop := s.result H = s.target\n\ndef rejectors (x : Ω) : Set Λ := {i | x ∈ s.delta ∧ x ∉ s.accept i}\n\ndef Covers (H : Set Λ) : Prop := ∀ x ∈ s.delta, ∃ i ∈ H, i ∈ s.rejectors x\n\ndef ExactWitness (Q : Set Λ) : Prop := ∃ x ∈ s.delta, s.rejectors x = Q\n\ndef MinimalRepair (H : Set Λ) : Prop :=\n  s.Repairs H ∧ ∀ L ⊆ H, s.Repairs L → L = H\n\ndef MaximalFailure (H : Set Λ) : Prop :=\n  ¬ s.Repairs H ∧ ∀ L, H ⊆ L → ¬ s.Repairs L → L = H"
+        },
+        {
+          "path": "docs/lean_common_repair.md",
+          "line": 22,
+          "end_line": 46,
+          "quote": "`System Ω Λ` 保存同一 row 空間中的 `target=J`、`base=P`、每個索引的\n完整接受集合 `accept i=Kᵢ`，以及 `J⊆P` 和 **每個** `J⊆Kᵢ` 的證明。\n定義與原報告一致：\n\n```text\ndelta       = P \\ J\nresult H    = {x ∈ P | ∀ i ∈ H, x ∈ Kᵢ}\nRepairs H   ↔ result H = J\nrejectors x = {i | x ∈ delta ∧ x ∉ Kᵢ}\nCovers H    ↔ ∀ x ∈ delta, ∃ i ∈ H, i ∈ rejectors x\nExactWitness Q ↔ ∃ x ∈ delta, rejectors x = Q\n```\n\n`Covers` 是原完整排除集合覆蓋等式的逐元素形式；不是覆蓋數量。\n`ExactWitness` 的等式相對於全部 `Λ`，包含角色以外的任意候選條件。\n保真性是 `System` 的必要欄位，不以「覆蓋全部錯誤 rows」代替保留 J。\n\n`Roles Λ` 保存互異的 A、B、T，非空集合 𝓔，以及 A、B、T 均不在 𝓔 的\n證明。`WitnessCoverage` 恰為五條前提：\n\n- `ExactWitness {A}`、`ExactWitness {B,T}`、`ExactWitness ({B}∪𝓔)`；\n- `Covers {A,B}`，以及每個 `e∈𝓔` 的 `Covers {A,T,e}`。\n\nΩ 與 Λ 都可無限。主充要判準、極小分類及極大失敗分類不需要有限性；\n份數定理另外以有限的 `H : Finset Λ` 表示選用條件。"
+        }
+      ]
+    },
+    {
+      "id": "CR.CONTRACT.degenerate",
+      "label": "Faithful system with P = J",
+      "assumptions": [
+        "All CR.CONTRACT.system obligations.",
+        "base = target (P = J)."
+      ],
+      "scope": {
+        "source_generality": "Any faithful set system with P = J.",
+        "observation": "Complete relations, without roles or nonempty witnesses.",
+        "behavior": "Every H repairs; the unique inclusion-minimal repair is the empty set."
+      },
+      "limitations": [
+        "Concrete P = J obligations for the four named degenerate graphs are outside this inventory and are not proved by an abstract specialization.",
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 155,
+          "end_line": 168,
+          "quote": "/-- The independent degenerate branch uses no roles or nonempty witnesses. -/\ntheorem repairs_of_base_eq_target (h : s.base = s.target) (H : Set Λ) :\n    s.Repairs H := by\n  apply Set.Subset.antisymm _ (s.target_subset_result H)\n  exact fun _ hx => h ▸ hx.1\n\ntheorem minimalRepair_of_base_eq_target (h : s.base = s.target) (H : Set Λ) :\n    s.MinimalRepair H ↔ H = ∅ := by\n  constructor\n  · intro hm\n    exact (hm.2 ∅ (Set.empty_subset H) (s.repairs_of_base_eq_target h ∅)).symm\n  · rintro rfl\n    exact ⟨s.repairs_of_base_eq_target h ∅,\n      fun L hL _ => Set.Subset.antisymm hL (Set.empty_subset L)⟩"
+        },
+        {
+          "path": "docs/c5_two_vertex_common_repair.md",
+          "line": 146,
+          "end_line": 149,
+          "quote": "**獨立退化 lemma。** 若 `P=J` 且全部條件保真，則每個 `H⊆Λ` 都修復，\n唯一 inclusion-minimal repair 為 `∅`，無 forced scope；空集合已修復。\n此時 `Δ=∅`，三個 W 前提不成立，不套用非退化 lemma 或虛設 A/B/T。\n對 arity ladder 而言直接有 `r*=0`。"
+        }
+      ]
+    },
+    {
+      "id": "CR.CONTRACT.projection",
+      "label": "Literal named projections of one complete target relation",
+      "assumptions": [
+        "U is a named point type and C is the common color/value type.",
+        "J and P are sets of full functions U → C, with J ⊆ P.",
+        "Each scope_i is a set of original named points.",
+        "K_i accepts x iff some y ∈ J agrees with x on every u ∈ scope_i."
+      ],
+      "scope": {
+        "source_generality": "Any complete named relation and named scope family.",
+        "observation": "Literal pointwise agreement in one common value frame.",
+        "behavior": "Interpret the abstract result as a conjunction of per-scope existential extensions."
+      },
+      "limitations": [
+        "Different scopes may have different extending rows y; no joint extension is inferred.",
+        "No independent color normalization or marginal cardinality replacement.",
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 172,
+          "end_line": 185,
+          "quote": "/-- Named projections of one complete relation automatically give faithful\nconditions. Each scope may have its own extension; no joint extension is inferred. -/\ndef projectionSystem {U C : Type*} (J P : Set (U → C)) (hJP : J ⊆ P)\n    (scope : Λ → Set U) : System (U → C) Λ where\n  target := J\n  base := P\n  accept i := {x | ∃ y ∈ J, ∀ u ∈ scope i, y u = x u}\n  target_base := hJP\n  faithful := fun _ x hx => ⟨x, hx, fun _ _ => rfl⟩\n\ntheorem mem_projection_result {U C : Type*} (J P : Set (U → C)) (hJP : J ⊆ P)\n    (scope : Λ → Set U) (H : Set Λ) (x : U → C) :\n    x ∈ (projectionSystem J P hJP scope).result H ↔\n      x ∈ P ∧ ∀ i ∈ H, ∃ y ∈ J, ∀ u ∈ scope i, y u = x u := Iff.rfl"
+        },
+        {
+          "path": "docs/lean_common_repair.md",
+          "line": 48,
+          "end_line": 51,
+          "quote": "`projectionSystem J P hJP scope` 將具名完整配置 `U→C` 接到此模型：\n條件 i 接受 x，恰指存在 `y∈J` 在 `scope i` 的每個具名點上與 x 相等。\n保真性直接以 y=x 證明。各 scope 的延拓仍各自存在，沒有將它們拼成同一份\n全域延拓，也沒有獨立正規化各 scope 的顏色。"
+        }
+      ]
+    },
+    {
+      "id": "CR.CONTRACT.roles",
+      "label": "Distinct roles and a nonempty disjoint E family",
+      "assumptions": [
+        "A, B, T ∈ Λ are pairwise distinct.",
+        "E ⊆ Λ is nonempty.",
+        "A, B, and T do not belong to E.",
+        "Λ may contain arbitrary extra candidate indices outside these roles.",
+        "Template H means {A,B} ⊆ H or some e ∈ E has {A,T,e} ⊆ H."
+      ],
+      "scope": {
+        "source_generality": "Any candidate-index type satisfying the role obligations; E need not be finite.",
+        "observation": "Named indices and exact subset relationships.",
+        "behavior": "Role-template monotonicity, inclusion-minimal templates, and three complement obstructions."
+      },
+      "limitations": [
+        "Role combinatorics alone do not imply relation repair.",
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 187,
+          "end_line": 211,
+          "quote": "/-- Distinct named roles; the candidate type may contain arbitrary extra indices. -/\nstructure Roles (Λ : Type v) where\n  A : Λ\n  B : Λ\n  T : Λ\n  E : Set Λ\n  AB : A ≠ B\n  AT : A ≠ T\n  BT : B ≠ T\n  E_nonempty : E.Nonempty\n  A_not_E : A ∉ E\n  B_not_E : B ∉ E\n  T_not_E : T ∉ E\n\nnamespace Roles\n\nvariable (r : Roles Λ)\n\ndef Template (H : Set Λ) : Prop :=\n  (r.A ∈ H ∧ r.B ∈ H) ∨ ∃ e ∈ r.E, r.A ∈ H ∧ r.T ∈ H ∧ e ∈ H\n\ndef WitnessCoverage (s : System Ω Λ) : Prop :=\n  s.ExactWitness {r.A} ∧ s.ExactWitness {r.B, r.T} ∧\n  s.ExactWitness (insert r.B r.E) ∧ s.Covers {r.A, r.B} ∧\n  ∀ e ∈ r.E, s.Covers {r.A, r.T, e}"
+        },
+        {
+          "path": "docs/c5_two_vertex_common_repair.md",
+          "line": 59,
+          "end_line": 72,
+          "quote": "非退化支另選互異的 `A,B,T∈Λ`，以及非空\n`𝓔⊆Λ\\{A,B,T}`。索引集 Λ 可以含任意其他條件，不預設它們的排除集合大小\n或彼此包含關係。要求以下五條前提：\n\n| 前提 | 完整敘述 |\n| --- | --- |\n| W_A | 存在 `x_A∈Δ`，`ρ(x_A)={A}` |\n| W_BT | 存在 `x_BT∈Δ`，`ρ(x_BT)={B,T}` |\n| W_BE | 存在 `x_BE∈Δ`，`ρ(x_BE)={B}∪𝓔` |\n| C_AB | `F_A∪F_B=Δ` |\n| C_ATE | 對**每個** `E∈𝓔`，`F_A∪F_T∪F_E=Δ` |\n\nWitness 的 rejector 集合相對於**全部 Λ** 精確相等。只驗其在指定 repair\n中被誰拒絕，或只說某個 scope 拒絕它，不足以排除其他 repair。"
+        }
+      ]
+    },
+    {
+      "id": "CR.CONTRACT.roles_system",
+      "label": "Faithful set system together with named roles",
+      "assumptions": [
+        "All CR.CONTRACT.system and CR.CONTRACT.roles obligations.",
+        "The theorem statement specifies which direction of WitnessCoverage/classification is assumed."
+      ],
+      "scope": {
+        "source_generality": "All faithful set systems with the role schema, including infinite row/index types.",
+        "observation": "Exact witnesses over all Λ and exact repair classification over every H ⊆ Λ.",
+        "behavior": "Relate source obligations to the complete template classification."
+      },
+      "limitations": [
+        "The equivalence states a contract; it does not certify that a particular graph satisfies either side.",
+        "No arity lower bound follows from the repair classification alone.",
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 208,
+          "end_line": 211,
+          "quote": "def WitnessCoverage (s : System Ω Λ) : Prop :=\n  s.ExactWitness {r.A} ∧ s.ExactWitness {r.B, r.T} ∧\n  s.ExactWitness (insert r.B r.E) ∧ s.Covers {r.A, r.B} ∧\n  ∀ e ∈ r.E, s.Covers {r.A, r.T, e}"
+        },
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 271,
+          "end_line": 288,
+          "quote": "theorem witnessCoverage_of_classification (s : System Ω Λ)\n    (h : ∀ H, s.Repairs H ↔ r.Template H) : r.WitnessCoverage s := by\n  have witness : ∀ Q, (Q = {r.A} ∨ Q = {r.B, r.T} ∨ Q = insert r.B r.E) →\n      s.ExactWitness Q := by\n    intro Q hQ\n    obtain ⟨hfail, hadd⟩ := r.template_compl_obstructions Q hQ\n    exact s.exactWitness_of_compl Q (fun hR => hfail ((h _).mp hR))\n      (fun i hi => (h _).mpr (hadd i hi))\n  refine ⟨witness _ (Or.inl rfl), witness _ (Or.inr (Or.inl rfl)),\n    witness _ (Or.inr (Or.inr rfl)), ?_, ?_⟩\n  · exact (s.repairs_iff_covers _).mp ((h _).mpr r.template_pair)\n  · intro e he\n    exact (s.repairs_iff_covers _).mp ((h _).mpr (r.template_triple he))\n\n/-- The full W/C equivalence, including the necessity of exact witnesses over ALL indices. -/\ntheorem witnessCoverage_iff_classification (s : System Ω Λ) :\n    r.WitnessCoverage s ↔ ∀ H, s.Repairs H ↔ r.Template H :=\n  ⟨fun h H => r.repairs_iff_template s h H, r.witnessCoverage_of_classification s⟩"
+        },
+        {
+          "path": "docs/c5_two_vertex_common_repair.md",
+          "line": 202,
+          "end_line": 203,
+          "quote": "非平凡兩例的 `r*=4` 仍依前輪獨立的三點下界與四點充分性證書。\n**共同 lemma 本身不推出四點 arity 下界**，也不預設 Λ 必為投影條件。"
+        }
+      ]
+    },
+    {
+      "id": "CR.CONTRACT.wc",
+      "label": "Five W/C predicate-schema premises",
+      "assumptions": [
+        "All CR.CONTRACT.system and CR.CONTRACT.roles obligations.",
+        "W_A: ∃ x_A ∈ delta, rejectors x_A = {A}.",
+        "W_BT: ∃ x_BT ∈ delta, rejectors x_BT = {B,T}.",
+        "W_BE: ∃ x_BE ∈ delta, rejectors x_BE = insert B E.",
+        "C_AB: Covers {A,B}, equivalently F_A ∪ F_B = delta.",
+        "C_ATE: ∀ e ∈ E, Covers {A,T,e}, equivalently F_A ∪ F_T ∪ F_e = delta.",
+        "Exact rejector equalities are relative to all Λ, including any extra candidate indices.",
+        "When |E| = 14: the universally quantified C_ATE predicate expands to 14 concrete covers; together with C_AB there are 15 covers, plus three witnesses = 18 W/C obligations per core."
+      ],
+      "scope": {
+        "source_generality": "All faithful systems satisfying the exact W/C contract; no graph-size restriction.",
+        "observation": "Complete delta rows and complete all-index rejector sets.",
+        "behavior": "All repairs, all inclusion-minimal repairs, unique minimum pair, forced index, maximal failures, and complete obstruction residuals."
+      },
+      "limitations": [
+        "Five predicate-schema premises are not five concrete checks when E contains fourteen indices.",
+        "Relation fidelity, role distinctness, source/scopes, and arity/topology prerequisites are additional obligations outside the 18 W/C instances per core.",
+        "Classification does not establish r* = 4.",
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 208,
+          "end_line": 211,
+          "quote": "def WitnessCoverage (s : System Ω Λ) : Prop :=\n  s.ExactWitness {r.A} ∧ s.ExactWitness {r.B, r.T} ∧\n  s.ExactWitness (insert r.B r.E) ∧ s.Covers {r.A, r.B} ∧\n  ∀ e ∈ r.E, s.Covers {r.A, r.T, e}"
+        },
+        {
+          "path": "docs/lean_common_repair.md",
+          "line": 39,
+          "end_line": 46,
+          "quote": "`Roles Λ` 保存互異的 A、B、T，非空集合 𝓔，以及 A、B、T 均不在 𝓔 的\n證明。`WitnessCoverage` 恰為五條前提：\n\n- `ExactWitness {A}`、`ExactWitness {B,T}`、`ExactWitness ({B}∪𝓔)`；\n- `Covers {A,B}`，以及每個 `e∈𝓔` 的 `Covers {A,T,e}`。\n\nΩ 與 Λ 都可無限。主充要判準、極小分類及極大失敗分類不需要有限性；\n份數定理另外以有限的 `H : Finset Λ` 表示選用條件。"
+        },
+        {
+          "path": "docs/c5_two_vertex_common_repair.md",
+          "line": 63,
+          "end_line": 72,
+          "quote": "| 前提 | 完整敘述 |\n| --- | --- |\n| W_A | 存在 `x_A∈Δ`，`ρ(x_A)={A}` |\n| W_BT | 存在 `x_BT∈Δ`，`ρ(x_BT)={B,T}` |\n| W_BE | 存在 `x_BE∈Δ`，`ρ(x_BE)={B}∪𝓔` |\n| C_AB | `F_A∪F_B=Δ` |\n| C_ATE | 對**每個** `E∈𝓔`，`F_A∪F_T∪F_E=Δ` |\n\nWitness 的 rejector 集合相對於**全部 Λ** 精確相等。只驗其在指定 repair\n中被誰拒絕，或只說某個 scope 拒絕它，不足以排除其他 repair。"
+        },
+        {
+          "path": "docs/c5_two_vertex_common_repair.md",
+          "line": 192,
+          "end_line": 203,
+          "quote": "每例另驗十五份完整覆蓋等式與修復後 relation 恰等於 J；前提通過後才\n比對前輪全部十五組答案。每例三個固定 witnesses 統一驗證44次逐項刪除，\n兩例共 **88 次**。三個極大失敗集合的完整殘留亦無損保存，並逐項驗證\n任添一個缺項即完成覆蓋。共同 lemma 不要求兩例的排除集相同；上表的\n4／2 差異仍保留，也不推論原圖、J、P 或排除資料可由頂點雙射搬運。\n\n四個退化案例為 `reference`、`reference_reverse`、`free_pairs`、\n`shared_chord_frame_edge`。新 checker 分別重建 J/P 並驗完整集合相等，\n記錄各自唯一空 repair、無 forced scope、`r*=0`。不加非空 witness 前提。\n\n非平凡兩例的 `r*=4` 仍依前輪獨立的三點下界與四點充分性證書。\n**共同 lemma 本身不推出四點 arity 下界**，也不預設 Λ 必為投影條件。"
+        }
+      ]
+    },
+    {
+      "id": "CR.CONTRACT.classification",
+      "label": "Complete repair classification supplied as a premise",
+      "assumptions": [
+        "All CR.CONTRACT.system and CR.CONTRACT.roles obligations.",
+        "For every H ⊆ Λ, Repairs H iff Template H."
+      ],
+      "scope": {
+        "source_generality": "Any faithful named-role system, including infinite candidate-index types.",
+        "observation": "All repairs, rather than only a list of some minimal solutions.",
+        "behavior": "Recover every exact witness and every coverage premise from the complete classification."
+      },
+      "limitations": [
+        "No finite minimal-element extraction theorem is separately encoded; the supplied premise is classification of all repairs.",
+        "Enumerating a few repair templates is insufficient.",
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 271,
+          "end_line": 283,
+          "quote": "theorem witnessCoverage_of_classification (s : System Ω Λ)\n    (h : ∀ H, s.Repairs H ↔ r.Template H) : r.WitnessCoverage s := by\n  have witness : ∀ Q, (Q = {r.A} ∨ Q = {r.B, r.T} ∨ Q = insert r.B r.E) →\n      s.ExactWitness Q := by\n    intro Q hQ\n    obtain ⟨hfail, hadd⟩ := r.template_compl_obstructions Q hQ\n    exact s.exactWitness_of_compl Q (fun hR => hfail ((h _).mp hR))\n      (fun i hi => (h _).mpr (hadd i hi))\n  refine ⟨witness _ (Or.inl rfl), witness _ (Or.inr (Or.inl rfl)),\n    witness _ (Or.inr (Or.inr rfl)), ?_, ?_⟩\n  · exact (s.repairs_iff_covers _).mp ((h _).mpr r.template_pair)\n  · intro e he\n    exact (s.repairs_iff_covers _).mp ((h _).mpr (r.template_triple he))"
+        },
+        {
+          "path": "docs/lean_common_repair.md",
+          "line": 95,
+          "end_line": 99,
+          "quote": "來源 relation、來源替換、D₁₃ 四接點等價、disk rotations／可用框、\n四點 arity 下界 `r*=4` 均未由本模組形式化。也未補一般後繼表、\n多步摘要充分性、完整 Σ、一般共同出口或 `K∞=K≤5`。\n原報告「僅由全部極小解分類反推全部 repairs」所用的有限極小元抽取，\n本模組未另列 theorem；主 W／C 與**全部 repairs** 的 iff 已完整證成。"
+        }
+      ]
+    },
+    {
+      "id": "CR.CONTRACT.named_core",
+      "label": "Two original 15-vertex cores with two specified mixed frames",
+      "assumptions": [
+        "U = (a0,a1,a2,a3,a4,b0,b2,b4) = (x,l,y,m,n,p,q,r), in this fixed order and one literal color frame.",
+        "rev=false fixes (s,t)=(x,y); rev=true fixes (s,t)=(y,x). These are two parameter values of shared theorems.",
+        "The original graph has the explicit 35-edge list on 15 vertices; private vertices 8..12 belong to A and 13,14 belong to B.",
+        "J rev is the set of complete eight-point rows extending to a proper coloring of that same original 15-vertex graph.",
+        "P rev is the conjunction of the specified frame projections C1={x,n,m,y,q} and C2={s,l,t,r,p}; each may use its own full-J lift.",
+        "Λ consists of all 70 four-element named scopes. A={x,l,y,m}, B={s,p,q,r}, T={x,y,p,q}, E={S∈Λ | {q,r}⊆S and S≠B}; |E|=14.",
+        "Three explicit witnesses per orientation are certified against all 70 scopes; 11 complete-U lift rows per orientation support the accepting scopes and frame membership.",
+        "The source-specific named proofs establish the three exact witness premises and all 15 cover instances before applying the abstract role theorems."
+      ],
+      "scope": {
+        "source_generality": "Exactly the forward and reverse private-interior cores with the two specified frames.",
+        "observation": "All eight original named colors, actual original edges, all four-element scopes, and complete original-graph lifts.",
+        "behavior": "End-to-end named-core repair classification under the specified-frame base P."
+      },
+      "limitations": [
+        "No Lean theorem establishes disk availability or completeness of these frame families.",
+        "No arbitrary-size source family or D13 replacement-source topology follows from the named-core results.",
+        "The 30 minimal-repair values across two cores are not 30 source instances or 30 theorem declarations.",
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun",
+        "source_specific_finite_kernel_certificates_documented"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/NamedRepairCore.lean",
+          "line": 17,
+          "end_line": 20,
+          "quote": "/-- U=(a0,a1,a2,a3,a4,b0,b2,b4); private vertices 8..12 are A_inner5..9,\nand 13,14 are B_inner5,6. -/\nabbrev Row := Fin 8 → Color\nabbrev Scope := {s : Finset (Fin 8) // s.card = 4}"
+        },
+        {
+          "path": "Math/NamedRepairCore.lean",
+          "line": 65,
+          "end_line": 89,
+          "quote": "/-- false is forward, true is reverse; the shared named vertices are 0 and 2. -/\ndef source (rev : Bool) : Fin 8 := if rev then 2 else 0\ndef other (rev : Bool) : Fin 8 := if rev then 0 else 2\n\ndef JRule (rev : Bool) (b : Row) : Prop :=\n  ARule (b 0) (b 1) (b 2) (b 3) (b 4) ∧\n  BRule (b 5) (b (source rev)) (b 6) (b (other rev)) (b 7)\ninstance (rev : Bool) (b : Row) : Decidable (JRule rev b) :=\n  inferInstanceAs (Decidable (_ ∧ _))\n\ndef coreEdges (rev : Bool) : List (Fin 15 × Fin 15) :=\n  let s : Fin 15 := if rev then 2 else 0\n  let t : Fin 15 := if rev then 0 else 2\n  [(0,1), (1,2), (2,3), (3,4), (0,4),\n   (0,8), (0,9), (0,10), (0,11), (0,12),\n   (2,8), (2,10), (2,12), (3,9), (3,10), (3,11),\n   (1,12), (4,11), (8,12), (8,10), (9,10), (9,11),\n   (5,s), (s,6), (6,t), (t,7), (5,7), (6,7),\n   (5,13), (6,13), (7,13), (5,14), (6,14), (s,14), (13,14)]\n\ndef ports : Fin 8 → Fin 15 := Fin.castLE (by decide)\n\ndef J (rev : Bool) : Set Row :=\n  {b | ∃ c : Fin 15 → Color, Proper (graphOfEdges (coreEdges rev)) c ∧\n    ∀ i, c (ports i) = b i}"
+        },
+        {
+          "path": "Math/NamedRepair.lean",
+          "line": 17,
+          "end_line": 53,
+          "quote": "/-- Full literal projections; every lift is to the same original graph. -/\ndef Accept (rev : Bool) (scope : Finset (Fin 8)) (b : Row) : Prop :=\n  ∃ c ∈ J rev, ∀ u ∈ scope, c u = b u\n\ndef frame₁ : Finset (Fin 8) := {0,4,3,2,6}\ndef frame₂ (rev : Bool) : Finset (Fin 8) := {source rev,1,other rev,7,5}\n\ndef P (rev : Bool) : Set Row := {b | Accept rev frame₁ b ∧ Accept rev (frame₂ rev) b}\n\ntheorem j_subset_p (rev : Bool) : J rev ⊆ P rev :=\n  fun b hb => ⟨⟨b, hb, fun _ _ => rfl⟩, ⟨b, hb, fun _ _ => rfl⟩⟩\n\ndef system (rev : Bool) : System Row Scope :=\n  projectionSystem (J rev) (P rev) (j_subset_p rev) (fun s => (s.val : Set (Fin 8)))\n\ntheorem scope_count : Fintype.card Scope = 70 := by decide +kernel\n\ndef scopeA : Scope := ⟨{0,1,2,3}, by decide⟩\ndef scopeB (rev : Bool) : Scope := ⟨{source rev,5,6,7}, by cases rev <;> decide⟩\ndef scopeT : Scope := ⟨{0,2,5,6}, by decide⟩\ndef scopesE (rev : Bool) : Set Scope := {s | 6 ∈ s.val ∧ 7 ∈ s.val ∧ s ≠ scopeB rev}\n\ninstance (rev : Bool) (s : Scope) : Decidable (s ∈ scopesE rev) :=\n  inferInstanceAs (Decidable (_ ∧ _ ∧ _))\n\ndef roles (rev : Bool) : Roles Scope where\n  A := scopeA\n  B := scopeB rev\n  T := scopeT\n  E := scopesE rev\n  AB := by cases rev <;> decide\n  AT := by decide\n  BT := by cases rev <;> decide\n  E_nonempty := ⟨⟨{0,1,6,7}, by decide⟩, by cases rev <;> decide⟩\n  A_not_E := by cases rev <;> decide\n  B_not_E := by cases rev <;> simp [scopesE]\n  T_not_E := by cases rev <;> decide"
+        },
+        {
+          "path": "docs/lean_named_repair.md",
+          "line": 16,
+          "end_line": 41,
+          "quote": "固定具名次序，不取 S₄ 軌道商，也不獨立正規化來源或 scopes：\n\n```text\nU=(x,l,y,m,n,p,q,r)=(a0,a1,a2,a3,a4,b0,b2,b4)\nrev=false: (s,t)=(x,y)；rev=true: (s,t)=(y,x)\n內點 8,…,12 = A_inner5,…,A_inner9；13,14 = B_inner5,B_inner6\n```\n\n`coreEdges rev` 明列全部35條原邊，包含兩個原 C₅、原弦 q–r、\nA 的完整五內點附件及 B 的完整兩內點附件。\n`J rev` 定義為存在**同一份十五點原圖 proper coloring**，在八個具名點\n逐一等於給定 row。`core_proper_iff` 把原邊表接到 `graphOfEdges`／`Proper`。\n\n令 N 表示四個顏色至少一對相等。`a_rule` 將 A 私有路徑在 h7 分成\n兩條短尾，對五個具名框色作有限 kernel 檢查，證完整私有延拓 iff\n原 C₅ proper 且 N(x,l,y,m)、N(x,n,m,y)。`b_rule` 同樣檢查兩個\n完整可用色 lists，證 B 延拓 iff 原框 proper、q≠r 且 (s≠r 或 p=q)。\n\n`j_iff_rule` 明確構造／限制十五點染色，將兩個來源在同一 U 下合併：\n\n```text\nb ∈ J rev ↔ ARule(x,l,y,m,n) ∧ BRule(p,s,q,t,r)\n```\n\n此 iff 的充分方向實際填入全部七個私有內點；不是匯入 Python 的 J 表，\n也不是只證必要條件。兩方向以同一個 `rev : Bool` theorem 涵蓋。"
+        },
+        {
+          "path": "docs/lean_named_repair.md",
+          "line": 58,
+          "end_line": 69,
+          "quote": "`Scope` 是所有四元素的 `Finset (Fin 8)`，`scope_count` 證其恰有70個；\n沒有刪掉小排除類或空排除類。角色為\n\n```text\nA={x,l,y,m}，B={s,p,q,r}，T={x,y,p,q}\n𝓔={S : Scope | {q,r}⊆S 且 S≠B}\n```\n\n`p_guard` 從兩個框各自的原圖延拓取回具名邊與色數限制；\n`j_inside_p` 證 J=P∩N(x,l,y,m)∩(q≠r)∩(s≠r 或 p=q)。\n`cover_ab`、`cover_ate` 再由投影保留的局部限制證兩類完整覆蓋。\n對任意 E∈𝓔 的同一個證明只需 E 保留實際邊 q–r，不枚舉排除表。"
+        },
+        {
+          "path": "docs/lean_named_repair.md",
+          "line": 73,
+          "end_line": 101,
+          "quote": "| 方向 | W_A | W_BT | W_BE |\n| --- | --- | --- | --- |\n| 正向 | `01232113` | `01201130` | `01012122` |\n| 反向 | `01232112` | `01212132` | `01012122` |\n\n每方向保留原來源證明的十一份八點補全。`lift_check` 遍歷明列清單，\n核對每份補全滿足 JRule、每個應接受的四點 scope 有保持原色的補全，\n以及兩個框各有補全；`j_iff_rule` 將它們全部接到原圖延拓。\n被拒絕的 scopes 則由 `accept_a/b/t` 與原邊 q–r 直接反證。\n`witness_rejectors` 因而證三個完整 rejector 集合恰為\n`{A}`、`{B,T}`、`{B}∪𝓔`，相對於全部70個 scopes。\n\n`witness_coverage` 將這些事實組成既有 `Roles.WitnessCoverage`，\n後續分類使用 CommonRepair 的普通集合論定理：\n\n| 定理 | 已證結論 |\n| --- | --- |\n| `repairs_iff` | 全部 repairs 恰為含 `{A,B}` 或某個 `{A,T,E}` 的集合 |\n| `minimal_repairs_iff`、`minimal_repairs_mem` | 全部 inclusion-minimal repairs 恰為這些模板 |\n| `fifteen_minimal_repairs` | 每個方向的完整極小 repair 清單恰有15份 |\n| `unique_minimum_pair` | 條件份數至多二的 repair 唯一為 `{A,B}`；最少份數為二 |\n| `forced_scope_iff` | A 是唯一出現在每份 repair 的 scope |\n| `no_small_projection_repair` | 任意一族至多三點的具名投影，其任何合取都不能修復 P |\n| `four_point_repair` | 兩份四點投影 `{A,B}` 確實修復 P |\n\n最後兩條給此**無輔助變數、僅合取原 J 投影**模型的 `r*=4`。\n下界保持 W_A：每個至多三點 scope 都包含於某個異於 A 的四點 scope，\n因此仍接受 W_A，而 W_A∈P\\J。下界容許任意索引族，不只已枚舉的四點集合。\n最少份數二、十五份 inclusion-minimal repairs 與最小 arity 四是不同結論。"
+        },
+        {
+          "path": "docs/lean_named_repair.md",
+          "line": 105,
+          "end_line": 123,
+          "quote": "34 條 theorem 無 `sorry`、新增 `axiom` 或 `native_decide`。\n有限 source lists、固定補全及小型 scope/cardinality 檢查使用\n`decide`／`decide +kernel`，均由 Lean kernel reduction 驗證。\n公理審計至多使用 `propext`、`Classical.choice`、`Quot.sound`，\n不含 `sorryAx` 或 `Lean.ofReduceBool`。實際命令與結果見\n[研究紀錄](history/2026-10-02-lean-named-repair.md)。\n\n[只讀來源核對](../scripts/c5_lean_named_repair.py)將 Lean 邊表、六個\nwitness 字串、22份補全、具名點序及角色編號對照原 Python source／artifact；\n它驗資料來源一致性，與 Lean kernel 證明分開。原 artifacts 不變。\n\n本輪形式化只涵蓋兩個十五點核心及**上述明定兩框**的 P。\n兩框可作 disk 外界、其餘候選框不可用、全部可用框恰為這兩框，\n仍沿用紙面及 Python 拓撲證書，沒有 Lean topology theorem。\n四個 P=J 圖的具體前提、任意大小的來源族、D₁₃ 替換在這些來源中的\n具名附件與逐層圖結構，亦未由本模組形式化。\n因此可稱為「兩核心指定框 repair 的端到端 Lean 證明」，\n不能稱為「全部 disk 來源族的端到端 Lean 證明」。\n一般出口、多步充分性及 `K∞=K≤5` 仍未證，未使用四色定理。"
+        },
+        {
+          "path": "docs/c5_two_vertex_common_repair.md",
+          "line": 173,
+          "end_line": 176,
+          "quote": "𝓔 = {S⊆U : |S|=4, {b2,b4}⊆S} ∖ {B}\n```\n\n每例 `|𝓔|=14`，`|J|=1,440`、`|P|=2,736`、`|Δ|=1,296`，即"
+        }
+      ]
+    },
+    {
+      "id": "CR.CONTRACT.named_arity",
+      "label": "Literal-projection conjunction model without auxiliary variables",
+      "assumptions": [
+        "All CR.CONTRACT.named_core source obligations.",
+        "Allowed summaries are conjunctions of literal projections of the original J, with no auxiliary variables.",
+        "For the lower bound: W_A ∈ P \\ J is accepted by every scope of size at most three, for arbitrary index families.",
+        "For the upper bound: the four-point projections {A,B} repair P."
+      ],
+      "scope": {
+        "source_generality": "The same two fixed original cores and specified P, with arbitrary families of scopes of size at most three in the lower bound.",
+        "observation": "The original named points and the fixed witness row W_A.",
+        "behavior": "Minimum sufficient projection arity r* = 4."
+      },
+      "limitations": [
+        "The abstract W/C classification by itself supplies no arity lower bound.",
+        "No claim about models with auxiliary variables, nonprojection conditions, or other frames.",
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun",
+        "source_specific_finite_kernel_certificates_documented"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/NamedRepair.lean",
+          "line": 316,
+          "end_line": 343,
+          "quote": "/-- Every scope of arity at most three lies in a four-scope other than A. -/\ntheorem small_scope_extension : ∀ s : Finset (Fin 8), s.card ≤ 3 →\n    ∃ t : Scope, s ⊆ t.val ∧ t ≠ scopeA := by decide +kernel\n\ntheorem witness_accepts_small (rev : Bool) (s : Finset (Fin 8)) (hs : s.card ≤ 3) :\n    Accept rev s (witness rev 0) := by\n  obtain ⟨t, hst, ht⟩ := small_scope_extension s hs\n  have ha := (witness_accept_iff rev 0 t).mpr ht\n  obtain ⟨c, hc, eq⟩ := ha\n  exact ⟨c, hc, fun u hu => eq u (hst hu)⟩\n\n/-- No conjunction of literal projections of arity at most three repairs P. -/\ntheorem no_small_projection_repair (rev : Bool) {Λ : Type*}\n    (scope : Λ → Finset (Fin 8)) (hs : ∀ i, (scope i).card ≤ 3) (H : Set Λ) :\n    ¬ (projectionSystem (J rev) (P rev) (j_subset_p rev)\n      (fun i => (scope i : Set (Fin 8)))).Repairs H := by\n  intro h\n  have hw : witness rev 0 ∈\n      (projectionSystem (J rev) (P rev) (j_subset_p rev)\n        (fun i => (scope i : Set (Fin 8)))).result H :=\n    ⟨witness_in_p rev 0, fun i _ => witness_accepts_small rev (scope i) (hs i)⟩\n  change _ = J rev at h\n  have hj : witness rev 0 ∈ J rev := h ▸ hw\n  exact witness_not_j rev 0 ((j_iff_rule rev _).mp hj)\n\n/-- A pair of four-point projections does repair P, complementing the lower bound. -/\ntheorem four_point_repair (rev : Bool) : (system rev).Repairs {scopeA, scopeB rev} :=\n  ((system rev).repairs_iff_covers _).mpr (cover_ab rev)"
+        },
+        {
+          "path": "docs/lean_named_repair.md",
+          "line": 95,
+          "end_line": 101,
+          "quote": "| `no_small_projection_repair` | 任意一族至多三點的具名投影，其任何合取都不能修復 P |\n| `four_point_repair` | 兩份四點投影 `{A,B}` 確實修復 P |\n\n最後兩條給此**無輔助變數、僅合取原 J 投影**模型的 `r*=4`。\n下界保持 W_A：每個至多三點 scope 都包含於某個異於 A 的四點 scope，\n因此仍接受 W_A，而 W_A∈P\\J。下界容許任意索引族，不只已枚舉的四點集合。\n最少份數二、十五份 inclusion-minimal repairs 與最小 arity 四是不同結論。"
+        },
+        {
+          "path": "docs/c5_two_vertex_common_repair.md",
+          "line": 202,
+          "end_line": 203,
+          "quote": "非平凡兩例的 `r*=4` 仍依前輪獨立的三點下界與四點充分性證書。\n**共同 lemma 本身不推出四點 arity 下界**，也不預設 Λ 必為投影條件。"
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "CR.System.target_subset_result",
+      "label": "Target survives every faithful conjunction",
+      "role": "shared_lemma",
+      "contract_id": "CR.CONTRACT.system",
+      "peer_group": null,
+      "proof_skeleton": "faithfulness_preserves_target",
+      "status": "established",
+      "dependencies": [],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 49,
+          "end_line": 50,
+          "quote": "theorem target_subset_result (H : Set Λ) : s.target ⊆ s.result H :=\n  fun _ hx => ⟨s.target_base hx, fun i _ => s.faithful i hx⟩"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.System.repairs_iff_covers",
+      "label": "Exact repair iff full delta coverage",
+      "role": "shared_lemma",
+      "contract_id": "CR.CONTRACT.system",
+      "peer_group": null,
+      "proof_skeleton": "repair_to_coverage",
+      "status": "established",
+      "dependencies": [
+        "CR.System.target_subset_result"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 52,
+          "end_line": 67,
+          "quote": "theorem repairs_iff_covers (H : Set Λ) : s.Repairs H ↔ s.Covers H := by\n  classical\n  constructor\n  · intro h x hx\n    by_contra hn\n    have hresult : x ∈ s.result H := by\n      refine ⟨hx.1, fun i hi => ?_⟩\n      by_contra hni\n      exact hn ⟨i, hi, hx, hni⟩\n    exact hx.2 (h ▸ hresult)\n  · intro h\n    apply Set.Subset.antisymm _ (s.target_subset_result H)\n    intro x hx\n    by_contra hn\n    obtain ⟨i, hi, _, hni⟩ := h x ⟨hx.1, hn⟩\n    exact hni (hx.2 i hi)"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.System.repairs_mono",
+      "label": "Adding faithful conditions preserves repair",
+      "role": "shared_lemma",
+      "contract_id": "CR.CONTRACT.system",
+      "peer_group": null,
+      "proof_skeleton": "coverage_monotonicity",
+      "status": "established",
+      "dependencies": [
+        "CR.System.repairs_iff_covers"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 69,
+          "end_line": 74,
+          "quote": "theorem repairs_mono {H L : Set Λ} (h : s.Repairs H) (hHL : H ⊆ L) :\n    s.Repairs L := by\n  rw [s.repairs_iff_covers] at h ⊢\n  intro x hx\n  obtain ⟨i, hi, hxi⟩ := h x hx\n  exact ⟨i, hHL hi, hxi⟩"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.System.not_repairs_iff_residual",
+      "label": "Repair failure iff a complete residual row exists",
+      "role": "shared_lemma",
+      "contract_id": "CR.CONTRACT.system",
+      "peer_group": null,
+      "proof_skeleton": "failure_to_residual",
+      "status": "established",
+      "dependencies": [
+        "CR.System.target_subset_result"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 76,
+          "end_line": 88,
+          "quote": "theorem not_repairs_iff_residual (H : Set Λ) :\n    ¬ s.Repairs H ↔ (s.result H \\ s.target).Nonempty := by\n  classical\n  constructor\n  · intro h\n    by_contra hn\n    apply h\n    apply Set.Subset.antisymm _ (s.target_subset_result H)\n    intro x hx\n    by_contra hnx\n    exact hn ⟨x, hx, hnx⟩\n  · rintro ⟨x, hx, hnx⟩ h\n    exact hnx (h ▸ hx)"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.System.witness_hits",
+      "label": "Every repair hits each exact rejector witness",
+      "role": "shared_lemma",
+      "contract_id": "CR.CONTRACT.system",
+      "peer_group": null,
+      "proof_skeleton": "exact_witness_hitting",
+      "status": "established",
+      "dependencies": [
+        "CR.System.repairs_iff_covers"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 90,
+          "end_line": 94,
+          "quote": "theorem witness_hits {Q H : Set Λ} (hw : s.ExactWitness Q) (h : s.Repairs H) :\n    ∃ i ∈ H, i ∈ Q := by\n  obtain ⟨x, hx, heq⟩ := hw\n  obtain ⟨i, hi, hxi⟩ := (s.repairs_iff_covers H).mp h x hx\n  exact ⟨i, hi, heq ▸ hxi⟩"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": [
+        "Statement premises: ExactWitness Q and Repairs H."
+      ]
+    },
+    {
+      "id": "CR.System.residual_compl_eq",
+      "label": "Complement residual equals its exact rejector class",
+      "role": "shared_lemma",
+      "contract_id": "CR.CONTRACT.system",
+      "peer_group": null,
+      "proof_skeleton": "complement_residual_identification",
+      "status": "established",
+      "dependencies": [
+        "CR.System.repairs_iff_covers"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 98,
+          "end_line": 118,
+          "quote": "theorem residual_compl_eq (Q : Set Λ)\n    (hadd : ∀ i ∈ Q, s.Repairs (insert i Qᶜ)) :\n    s.result Qᶜ \\ s.target = {x | x ∈ s.delta ∧ s.rejectors x = Q} := by\n  classical\n  ext x\n  constructor\n  · rintro ⟨hx, hnx⟩\n    have hd : x ∈ s.delta := ⟨hx.1, hnx⟩\n    refine ⟨hd, Set.Subset.antisymm ?_ ?_⟩\n    · intro i hi\n      by_contra hn\n      exact hi.2 (hx.2 i hn)\n    · intro i hi\n      obtain ⟨j, hj, hjx⟩ := (s.repairs_iff_covers _).mp (hadd i hi) x hd\n      rcases hj with rfl | hj\n      · exact hjx\n      · exact (hjx.2 (hx.2 j hj)).elim\n  · rintro ⟨hd, heq⟩\n    refine ⟨⟨hd.1, fun i hi => ?_⟩, hd.2⟩\n    by_contra hn\n    exact hi (heq ▸ (show i ∈ s.rejectors x from ⟨hd, hn⟩))"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": [
+        "Statement premise: adding each missing i ∈ Q to Q-complement repairs; exactWitness_of_compl and maximalFailure_of_compl additionally assume the complement fails."
+      ]
+    },
+    {
+      "id": "CR.System.exactWitness_of_compl",
+      "label": "Failed complement with repairing additions yields an exact witness",
+      "role": "shared_lemma",
+      "contract_id": "CR.CONTRACT.system",
+      "peer_group": null,
+      "proof_skeleton": "complement_failure_to_exact_witness",
+      "status": "established",
+      "dependencies": [
+        "CR.System.not_repairs_iff_residual",
+        "CR.System.residual_compl_eq"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 120,
+          "end_line": 124,
+          "quote": "theorem exactWitness_of_compl (Q : Set Λ) (hfail : ¬ s.Repairs Qᶜ)\n    (hadd : ∀ i ∈ Q, s.Repairs (insert i Qᶜ)) : s.ExactWitness Q := by\n  obtain ⟨x, hx⟩ := (s.not_repairs_iff_residual _).mp hfail\n  rw [s.residual_compl_eq Q hadd] at hx\n  exact ⟨x, hx⟩"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": [
+        "Statement premise: adding each missing i ∈ Q to Q-complement repairs; exactWitness_of_compl and maximalFailure_of_compl additionally assume the complement fails."
+      ]
+    },
+    {
+      "id": "CR.System.maximalFailure_of_compl",
+      "label": "Failed complement with repairing additions is maximal failure",
+      "role": "shared_lemma",
+      "contract_id": "CR.CONTRACT.system",
+      "peer_group": null,
+      "proof_skeleton": "complement_failure_to_maximality",
+      "status": "established",
+      "dependencies": [
+        "CR.System.repairs_mono"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 126,
+          "end_line": 133,
+          "quote": "theorem maximalFailure_of_compl (Q : Set Λ) (hfail : ¬ s.Repairs Qᶜ)\n    (hadd : ∀ i ∈ Q, s.Repairs (insert i Qᶜ)) : s.MaximalFailure Qᶜ := by\n  classical\n  refine ⟨hfail, fun L hL hn => Set.Subset.antisymm ?_ hL⟩\n  intro i hi\n  change i ∉ Q\n  intro hiQ\n  exact hn (s.repairs_mono (hadd i hiQ) (Set.insert_subset hi hL))"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": [
+        "Statement premise: adding each missing i ∈ Q to Q-complement repairs; exactWitness_of_compl and maximalFailure_of_compl additionally assume the complement fails."
+      ]
+    },
+    {
+      "id": "CR.System.minimalRepair_iff_deletions",
+      "label": "Inclusion-minimal repair iff every single deletion fails",
+      "role": "aggregate_result",
+      "contract_id": "CR.CONTRACT.system",
+      "peer_group": null,
+      "proof_skeleton": "monotonicity_to_deletion_minimality",
+      "status": "established",
+      "dependencies": [
+        "CR.System.repairs_mono"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 137,
+          "end_line": 153,
+          "quote": "theorem minimalRepair_iff_deletions (H : Set Λ) :\n    s.MinimalRepair H ↔ s.Repairs H ∧ ∀ i ∈ H, ¬ s.Repairs (H \\ {i}) := by\n  classical\n  constructor\n  · rintro ⟨hH, hmin⟩\n    refine ⟨hH, fun i hi hd => ?_⟩\n    have heq := hmin (H \\ {i}) Set.sdiff_subset hd\n    have : i ∈ H \\ {i} := heq.symm ▸ hi\n    exact this.2 rfl\n  · rintro ⟨hH, hdel⟩\n    refine ⟨hH, fun L hL hrep => Set.Subset.antisymm hL ?_⟩\n    intro i hi\n    by_contra hn\n    apply hdel i hi\n    apply s.repairs_mono hrep\n    intro j hj\n    exact ⟨hL hj, fun hji => hn (hji ▸ hj)⟩"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.System.repairs_of_base_eq_target",
+      "label": "P = J makes every condition set a repair",
+      "role": "branch_result",
+      "contract_id": "CR.CONTRACT.degenerate",
+      "peer_group": null,
+      "proof_skeleton": "degenerate_relation_equality",
+      "status": "established",
+      "dependencies": [
+        "CR.System.target_subset_result"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 156,
+          "end_line": 159,
+          "quote": "theorem repairs_of_base_eq_target (h : s.base = s.target) (H : Set Λ) :\n    s.Repairs H := by\n  apply Set.Subset.antisymm _ (s.target_subset_result H)\n  exact fun _ hx => h ▸ hx.1"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.System.minimalRepair_of_base_eq_target",
+      "label": "P = J has only the empty minimal repair",
+      "role": "branch_result",
+      "contract_id": "CR.CONTRACT.degenerate",
+      "peer_group": null,
+      "proof_skeleton": "degenerate_empty_minimality",
+      "status": "established",
+      "dependencies": [
+        "CR.System.repairs_of_base_eq_target"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 161,
+          "end_line": 168,
+          "quote": "theorem minimalRepair_of_base_eq_target (h : s.base = s.target) (H : Set Λ) :\n    s.MinimalRepair H ↔ H = ∅ := by\n  constructor\n  · intro hm\n    exact (hm.2 ∅ (Set.empty_subset H) (s.repairs_of_base_eq_target h ∅)).symm\n  · rintro rfl\n    exact ⟨s.repairs_of_base_eq_target h ∅,\n      fun L hL _ => Set.Subset.antisymm hL (Set.empty_subset L)⟩"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.mem_projection_result",
+      "label": "Complete named projection result retains separate existential lifts",
+      "role": "shared_lemma",
+      "contract_id": "CR.CONTRACT.projection",
+      "peer_group": null,
+      "proof_skeleton": "definitional_projection_semantics",
+      "status": "established",
+      "dependencies": [],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 182,
+          "end_line": 185,
+          "quote": "theorem mem_projection_result {U C : Type*} (J P : Set (U → C)) (hJP : J ⊆ P)\n    (scope : Λ → Set U) (H : Set Λ) (x : U → C) :\n    x ∈ (projectionSystem J P hJP scope).result H ↔\n      x ∈ P ∧ ∀ i ∈ H, ∃ y ∈ J, ∀ u ∈ scope i, y u = x u := Iff.rfl"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": [
+        "projectionSystem and Iff.rfl (definitional semantics)."
+      ]
+    },
+    {
+      "id": "CR.Roles.template_mono",
+      "label": "Role template is monotone under index addition",
+      "role": "shared_lemma",
+      "contract_id": "CR.CONTRACT.roles",
+      "peer_group": null,
+      "proof_skeleton": "template_subset_monotonicity",
+      "status": "established",
+      "dependencies": [],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 213,
+          "end_line": 217,
+          "quote": "theorem template_mono {H L : Set Λ} (h : r.Template H) (hHL : H ⊆ L) :\n    r.Template L := by\n  rcases h with ⟨ha, hb⟩ | ⟨e, he, ha, ht, hE⟩\n  · exact Or.inl ⟨hHL ha, hHL hb⟩\n  · exact Or.inr ⟨e, he, hHL ha, hHL ht, hHL hE⟩"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.Roles.template_pair",
+      "label": "The named pair is a template",
+      "role": "shared_lemma",
+      "contract_id": "CR.CONTRACT.roles",
+      "peer_group": null,
+      "proof_skeleton": "template_constructor_pair",
+      "status": "established",
+      "dependencies": [],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 219,
+          "end_line": 220,
+          "quote": "theorem template_pair : r.Template {r.A, r.B} := by\n  exact Or.inl ⟨by simp, by simp⟩"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.Roles.template_triple",
+      "label": "Each named A/T/e triple is a template",
+      "role": "shared_lemma",
+      "contract_id": "CR.CONTRACT.roles",
+      "peer_group": null,
+      "proof_skeleton": "template_constructor_triple",
+      "status": "established",
+      "dependencies": [],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 222,
+          "end_line": 223,
+          "quote": "theorem template_triple {e : Λ} (he : e ∈ r.E) : r.Template {r.A, r.T, e} := by\n  exact Or.inr ⟨e, he, by simp, by simp, by simp⟩"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory.",
+        "One universally parameterized theorem over e ∈ E; not one theorem declaration per E value."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.Roles.repairs_iff_template",
+      "label": "Five W/C predicates classify all repairs",
+      "role": "aggregate_result",
+      "contract_id": "CR.CONTRACT.wc",
+      "peer_group": null,
+      "proof_skeleton": "exact_witness_necessity_and_cover_sufficiency",
+      "status": "established",
+      "dependencies": [
+        "CR.System.witness_hits",
+        "CR.System.repairs_mono",
+        "CR.System.repairs_iff_covers"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 225,
+          "end_line": 252,
+          "quote": "theorem repairs_iff_template (s : System Ω Λ) (h : r.WitnessCoverage s) (H : Set Λ) :\n    s.Repairs H ↔ r.Template H := by\n  classical\n  obtain ⟨hA, hBT, hBE, hAB, hATE⟩ := h\n  constructor\n  · intro hH\n    obtain ⟨a, ha, hqa⟩ := s.witness_hits hA hH\n    have haH : r.A ∈ H := by simpa only [Set.mem_singleton_iff.mp hqa] using ha\n    by_cases hb : r.B ∈ H\n    · exact Or.inl ⟨haH, hb⟩\n    · obtain ⟨t, ht, hqt⟩ := s.witness_hits hBT hH\n      obtain ⟨e, he, hqe⟩ := s.witness_hits hBE hH\n      have htH : r.T ∈ H := by\n        simp only [Set.mem_insert_iff, Set.mem_singleton_iff] at hqt\n        rcases hqt with rfl | rfl\n        · exact (hb ht).elim\n        · exact ht\n      have heE : e ∈ r.E := by\n        rcases hqe with rfl | heE\n        · exact (hb he).elim\n        · exact heE\n      exact Or.inr ⟨e, heE, haH, htH, he⟩\n  · intro hH\n    rcases hH with ⟨ha, hb⟩ | ⟨e, he, ha, ht, heH⟩\n    · apply s.repairs_mono ((s.repairs_iff_covers _).mpr hAB)\n      simpa only [Set.insert_subset_iff, Set.singleton_subset_iff] using And.intro ha hb\n    · apply s.repairs_mono ((s.repairs_iff_covers _).mpr (hATE e he))\n      simpa only [Set.insert_subset_iff, Set.singleton_subset_iff] using And.intro ha ⟨ht, heH⟩"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory.",
+        "Conditional on the exact complete W/C premises; no source-instance obligations are discharged by this abstract theorem."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.Roles.template_compl_obstructions",
+      "label": "Three missing-index sets are minimal template blockers",
+      "role": "shared_lemma",
+      "contract_id": "CR.CONTRACT.roles",
+      "peer_group": null,
+      "proof_skeleton": "role_complement_obstructions",
+      "status": "established",
+      "dependencies": [],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 255,
+          "end_line": 269,
+          "quote": "theorem template_compl_obstructions (Q : Set Λ)\n    (hQ : Q = {r.A} ∨ Q = {r.B, r.T} ∨ Q = insert r.B r.E) :\n    ¬ r.Template Qᶜ ∧ ∀ i ∈ Q, r.Template (insert i Qᶜ) := by\n  classical\n  have hab := r.AB\n  have hat := r.AT\n  have hbt := r.BT\n  have haE := r.A_not_E\n  have hbE := r.B_not_E\n  have htE := r.T_not_E\n  obtain ⟨e, he⟩ := r.E_nonempty\n  rcases hQ with rfl | rfl | rfl\n  all_goals\n    simp only [Template, Set.mem_compl_iff, Set.mem_insert_iff, Set.mem_singleton_iff]\n    aesop"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.Roles.witnessCoverage_of_classification",
+      "label": "Classification of all repairs recovers all W/C predicates",
+      "role": "aggregate_result",
+      "contract_id": "CR.CONTRACT.classification",
+      "peer_group": null,
+      "proof_skeleton": "classification_complements_recover_wc",
+      "status": "established",
+      "dependencies": [
+        "CR.Roles.template_compl_obstructions",
+        "CR.System.exactWitness_of_compl",
+        "CR.System.repairs_iff_covers",
+        "CR.Roles.template_pair",
+        "CR.Roles.template_triple"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 271,
+          "end_line": 283,
+          "quote": "theorem witnessCoverage_of_classification (s : System Ω Λ)\n    (h : ∀ H, s.Repairs H ↔ r.Template H) : r.WitnessCoverage s := by\n  have witness : ∀ Q, (Q = {r.A} ∨ Q = {r.B, r.T} ∨ Q = insert r.B r.E) →\n      s.ExactWitness Q := by\n    intro Q hQ\n    obtain ⟨hfail, hadd⟩ := r.template_compl_obstructions Q hQ\n    exact s.exactWitness_of_compl Q (fun hR => hfail ((h _).mp hR))\n      (fun i hi => (h _).mpr (hadd i hi))\n  refine ⟨witness _ (Or.inl rfl), witness _ (Or.inr (Or.inl rfl)),\n    witness _ (Or.inr (Or.inr rfl)), ?_, ?_⟩\n  · exact (s.repairs_iff_covers _).mp ((h _).mpr r.template_pair)\n  · intro e he\n    exact (s.repairs_iff_covers _).mp ((h _).mpr (r.template_triple he))"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.Roles.witnessCoverage_iff_classification",
+      "label": "Exact W/C contract iff complete repair classification",
+      "role": "aggregate_result",
+      "contract_id": "CR.CONTRACT.roles_system",
+      "peer_group": null,
+      "proof_skeleton": "assemble_both_directions",
+      "status": "established",
+      "dependencies": [
+        "CR.Roles.repairs_iff_template",
+        "CR.Roles.witnessCoverage_of_classification"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 286,
+          "end_line": 288,
+          "quote": "theorem witnessCoverage_iff_classification (s : System Ω Λ) :\n    r.WitnessCoverage s ↔ ∀ H, s.Repairs H ↔ r.Template H :=\n  ⟨fun h H => r.repairs_iff_template s h H, r.witnessCoverage_of_classification s⟩"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory.",
+        "The equivalence is quantified over all repairs; it does not itself supply a concrete source or r* = 4."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.Roles.minimal_template_pair",
+      "label": "The pair template is inclusion-minimal",
+      "role": "branch_result",
+      "contract_id": "CR.CONTRACT.roles",
+      "peer_group": "CR.GROUP.minimal_role_templates",
+      "proof_skeleton": "role_distinctness_minimality",
+      "status": "established",
+      "dependencies": [],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 290,
+          "end_line": 296,
+          "quote": "theorem minimal_template_pair {H : Set Λ} (hH : r.Template H)\n    (hsub : H ⊆ {r.A, r.B}) : H = {r.A, r.B} := by\n  apply Set.Subset.antisymm hsub\n  rcases hH with ⟨ha, hb⟩ | ⟨e, _, _, ht, _⟩\n  · simpa only [Set.insert_subset_iff, Set.singleton_subset_iff] using And.intro ha hb\n  · have : r.T = r.A ∨ r.T = r.B := hsub ht\n    exact (this.elim r.AT.symm r.BT.symm).elim"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.Roles.minimal_template_triple",
+      "label": "Every A/T/e template is inclusion-minimal",
+      "role": "branch_result",
+      "contract_id": "CR.CONTRACT.roles",
+      "peer_group": "CR.GROUP.minimal_role_templates",
+      "proof_skeleton": "role_distinctness_minimality",
+      "status": "established",
+      "dependencies": [],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 298,
+          "end_line": 314,
+          "quote": "theorem minimal_template_triple {H : Set Λ} {e : Λ} (he : e ∈ r.E)\n    (hH : r.Template H) (hsub : H ⊆ {r.A, r.T, e}) : H = {r.A, r.T, e} := by\n  apply Set.Subset.antisymm hsub\n  rcases hH with ⟨_, hb⟩ | ⟨f, hf, ha, ht, hfH⟩\n  · have : r.B = r.A ∨ r.B = r.T ∨ r.B = e := hsub hb\n    rcases this with h | h | h\n    · exact (r.AB h.symm).elim\n    · exact (r.BT h).elim\n    · exact (r.B_not_E (h.symm ▸ he)).elim\n  · have : f = r.A ∨ f = r.T ∨ f = e := hsub hfH\n    have hfe : f = e := by\n      rcases this with h | h | h\n      · exact (r.A_not_E (h ▸ hf)).elim\n      · exact (r.T_not_E (h ▸ hf)).elim\n      · exact h\n    subst f\n    simpa only [Set.insert_subset_iff, Set.singleton_subset_iff] using And.intro ha ⟨ht, hfH⟩"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory.",
+        "One universally parameterized theorem over e ∈ E; not one theorem declaration per E value."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.Roles.minimalRepair_iff",
+      "label": "All inclusion-minimal repairs are exactly the pair and E-triples",
+      "role": "aggregate_result",
+      "contract_id": "CR.CONTRACT.wc",
+      "peer_group": null,
+      "proof_skeleton": "classification_and_template_antichain",
+      "status": "established",
+      "dependencies": [
+        "CR.Roles.repairs_iff_template",
+        "CR.Roles.template_pair",
+        "CR.Roles.template_triple",
+        "CR.Roles.minimal_template_pair",
+        "CR.Roles.minimal_template_triple"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 317,
+          "end_line": 335,
+          "quote": "theorem minimalRepair_iff (s : System Ω Λ) (h : r.WitnessCoverage s) (H : Set Λ) :\n    s.MinimalRepair H ↔ H = {r.A, r.B} ∨ ∃ e ∈ r.E, H = {r.A, r.T, e} := by\n  have hc := r.repairs_iff_template s h\n  constructor\n  · rintro ⟨hH, hmin⟩\n    rcases (hc H).mp hH with ⟨ha, hb⟩ | ⟨e, he, ha, ht, heH⟩\n    · exact Or.inl (hmin {r.A, r.B}\n        (Set.insert_subset_iff.mpr ⟨ha, Set.singleton_subset_iff.mpr hb⟩)\n        ((hc _).mpr r.template_pair)).symm\n    · exact Or.inr ⟨e, he,\n        (hmin {r.A, r.T, e}\n          (Set.insert_subset_iff.mpr ⟨ha,\n            Set.insert_subset_iff.mpr ⟨ht, Set.singleton_subset_iff.mpr heH⟩⟩)\n          ((hc _).mpr (r.template_triple he))).symm⟩\n  · rintro (rfl | ⟨e, he, rfl⟩)\n    · exact ⟨(hc _).mpr r.template_pair,\n        fun L hL hrep => r.minimal_template_pair ((hc L).mp hrep) hL⟩\n    · exact ⟨(hc _).mpr (r.template_triple he),\n        fun L hL hrep => r.minimal_template_triple he ((hc L).mp hrep) hL⟩"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory.",
+        "Conditional on the exact complete W/C premises; no source-instance obligations are discharged by this abstract theorem."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.Roles.forced_iff",
+      "label": "A is the sole index forced in every repair",
+      "role": "aggregate_result",
+      "contract_id": "CR.CONTRACT.wc",
+      "peer_group": null,
+      "proof_skeleton": "intersect_two_template_branches",
+      "status": "established",
+      "dependencies": [
+        "CR.Roles.repairs_iff_template",
+        "CR.Roles.template_pair",
+        "CR.Roles.template_triple"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 338,
+          "end_line": 354,
+          "quote": "theorem forced_iff (s : System Ω Λ) (h : r.WitnessCoverage s) (i : Λ) :\n    (∀ H, s.Repairs H → i ∈ H) ↔ i = r.A := by\n  have hc := r.repairs_iff_template s h\n  constructor\n  · intro hf\n    have hi : i = r.A ∨ i = r.B := hf _ ((hc _).mpr r.template_pair)\n    rcases hi with hi | rfl\n    · exact hi\n    · obtain ⟨e, he⟩ := r.E_nonempty\n      have hb : r.B = r.A ∨ r.B = r.T ∨ r.B = e :=\n        hf _ ((hc _).mpr (r.template_triple he))\n      rcases hb with hb | hb | hb\n      · exact hb\n      · exact (r.BT hb).elim\n      · exact (r.B_not_E (hb.symm ▸ he)).elim\n  · rintro rfl H hH\n    rcases (hc H).mp hH with ⟨ha, _⟩ | ⟨_, _, ha, _, _⟩ <;> exact ha"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory.",
+        "Conditional on the exact complete W/C premises; no source-instance obligations are discharged by this abstract theorem."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.Roles.maximalFailure_iff",
+      "label": "All maximal failures are the three obstruction complements",
+      "role": "aggregate_result",
+      "contract_id": "CR.CONTRACT.wc",
+      "peer_group": null,
+      "proof_skeleton": "classification_and_complement_maximality",
+      "status": "established",
+      "dependencies": [
+        "CR.Roles.repairs_iff_template",
+        "CR.Roles.template_compl_obstructions",
+        "CR.System.maximalFailure_of_compl"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 356,
+          "end_line": 392,
+          "quote": "theorem maximalFailure_iff (s : System Ω Λ) (h : r.WitnessCoverage s) (H : Set Λ) :\n    s.MaximalFailure H ↔\n      H = ({r.A} : Set Λ)ᶜ ∨ H = ({r.B, r.T} : Set Λ)ᶜ ∨ H = (insert r.B r.E)ᶜ := by\n  classical\n  have hc := r.repairs_iff_template s h\n  have hm : ∀ Q, (Q = {r.A} ∨ Q = {r.B, r.T} ∨ Q = insert r.B r.E) →\n      s.MaximalFailure Qᶜ := by\n    intro Q hQ\n    obtain ⟨hfail, hadd⟩ := r.template_compl_obstructions Q hQ\n    exact s.maximalFailure_of_compl Q (fun hR => hfail ((hc _).mp hR))\n      (fun i hi => (hc _).mpr (hadd i hi))\n  constructor\n  · rintro ⟨hfail, hmax⟩\n    have hn : ¬ r.Template H := fun ht => hfail ((hc H).mpr ht)\n    by_cases ha : r.A ∈ H\n    · have hb : r.B ∉ H := fun hb => hn (Or.inl ⟨ha, hb⟩)\n      by_cases ht : r.T ∈ H\n      · right; right\n        apply (hmax _ ?_ (hm _ (Or.inr (Or.inr rfl))).1).symm\n        intro i hi hQi\n        rcases hQi with rfl | he\n        · exact hb hi\n        · exact hn (Or.inr ⟨i, he, ha, ht, hi⟩)\n      · right; left\n        apply (hmax _ ?_ (hm _ (Or.inr (Or.inl rfl))).1).symm\n        intro i hi hQi\n        rcases hQi with rfl | rfl\n        · exact hb hi\n        · exact ht hi\n    · left\n      apply (hmax _ ?_ (hm _ (Or.inl rfl)).1).symm\n      intro i hi hQi\n      exact ha (Set.mem_singleton_iff.mp hQi ▸ hi)\n  · rintro (rfl | rfl | rfl)\n    · exact hm _ (Or.inl rfl)\n    · exact hm _ (Or.inr (Or.inl rfl))\n    · exact hm _ (Or.inr (Or.inr rfl))"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory.",
+        "Conditional on the exact complete W/C premises; no source-instance obligations are discharged by this abstract theorem."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.Roles.obstruction_residual_eq",
+      "label": "Complete obstruction residuals are exact rejector classes",
+      "role": "aggregate_result",
+      "contract_id": "CR.CONTRACT.wc",
+      "peer_group": null,
+      "proof_skeleton": "specialize_complement_residual_identity",
+      "status": "established",
+      "dependencies": [
+        "CR.System.residual_compl_eq",
+        "CR.Roles.repairs_iff_template",
+        "CR.Roles.template_compl_obstructions"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 396,
+          "end_line": 401,
+          "quote": "theorem obstruction_residual_eq (s : System Ω Λ) (h : r.WitnessCoverage s) (Q : Set Λ)\n    (hQ : Q = {r.A} ∨ Q = {r.B, r.T} ∨ Q = insert r.B r.E) :\n    s.result Qᶜ \\ s.target = {x | x ∈ s.delta ∧ s.rejectors x = Q} := by\n  apply s.residual_compl_eq\n  intro i hi\n  exact (r.repairs_iff_template s h _).mpr ((r.template_compl_obstructions Q hQ).2 i hi)"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory.",
+        "Conditional on the exact complete W/C premises; no source-instance obligations are discharged by this abstract theorem."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": []
+    },
+    {
+      "id": "CR.Roles.repair_card_ge_two",
+      "label": "Every finite repair has at least two conditions",
+      "role": "aggregate_result",
+      "contract_id": "CR.CONTRACT.wc",
+      "peer_group": null,
+      "proof_skeleton": "classification_to_finite_cardinality",
+      "status": "established",
+      "dependencies": [
+        "CR.Roles.repairs_iff_template"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 403,
+          "end_line": 412,
+          "quote": "theorem repair_card_ge_two (s : System Ω Λ) (h : r.WitnessCoverage s)\n    (H : Finset Λ) (hH : s.Repairs (H : Set Λ)) : 2 ≤ H.card := by\n  classical\n  rcases (r.repairs_iff_template s h _).mp hH with ⟨ha, hb⟩ | ⟨_, _, ha, ht, _⟩\n  · have hs : ({r.A, r.B} : Finset Λ) ⊆ H :=\n      Finset.insert_subset_iff.mpr ⟨ha, Finset.singleton_subset_iff.mpr hb⟩\n    simpa [r.AB] using Finset.card_le_card hs\n  · have hs : ({r.A, r.T} : Finset Λ) ⊆ H :=\n      Finset.insert_subset_iff.mpr ⟨ha, Finset.singleton_subset_iff.mpr ht⟩\n    simpa [r.AT] using Finset.card_le_card hs"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory.",
+        "Conditional on the exact complete W/C premises; no source-instance obligations are discharged by this abstract theorem.",
+        "Counts chosen condition indices in Finset H; this is not projection arity or graph size."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": [
+        "Imported Finset cardinality/subset results; finite H; the unique-pair theorem additionally requires DecidableEq Λ."
+      ]
+    },
+    {
+      "id": "CR.Roles.repair_card_le_two_iff",
+      "label": "The named pair is the unique repair with at most two conditions",
+      "role": "aggregate_result",
+      "contract_id": "CR.CONTRACT.wc",
+      "peer_group": null,
+      "proof_skeleton": "classification_to_finite_cardinality",
+      "status": "established",
+      "dependencies": [
+        "CR.Roles.repairs_iff_template"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/CommonRepair.lean",
+          "line": 415,
+          "end_line": 436,
+          "quote": "theorem repair_card_le_two_iff [DecidableEq Λ] (s : System Ω Λ)\n    (h : r.WitnessCoverage s) (H : Finset Λ) :\n    s.Repairs (H : Set Λ) ∧ H.card ≤ 2 ↔ H = {r.A, r.B} := by\n  constructor\n  · rintro ⟨hH, hcard⟩\n    rcases (r.repairs_iff_template s h _).mp hH with ⟨ha, hb⟩ | ⟨e, he, ha, ht, heH⟩\n    · have hs : ({r.A, r.B} : Finset Λ) ⊆ H :=\n        Finset.insert_subset_iff.mpr ⟨ha, Finset.singleton_subset_iff.mpr hb⟩\n      apply (Finset.eq_of_subset_of_card_le hs ?_).symm\n      simpa [r.AB] using hcard\n    · have hs : ({r.A, r.T, e} : Finset Λ) ⊆ H :=\n        Finset.insert_subset_iff.mpr ⟨ha,\n          Finset.insert_subset_iff.mpr ⟨ht, Finset.singleton_subset_iff.mpr heH⟩⟩\n      have hae : r.A ≠ e := fun heq => r.A_not_E (heq.symm ▸ he)\n      have hte : r.T ≠ e := fun heq => r.T_not_E (heq.symm ▸ he)\n      have hthree : 3 ≤ H.card := by\n        simpa [r.AT, hae, hte] using Finset.card_le_card hs\n      omega\n  · rintro rfl\n    refine ⟨(r.repairs_iff_template s h _).mpr ?_, ?_⟩\n    · exact Or.inl ⟨by simp, by simp⟩\n    · simp [r.AB]"
+        }
+      ],
+      "limitations": [
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory.",
+        "Conditional on the exact complete W/C premises; no source-instance obligations are discharged by this abstract theorem.",
+        "Counts chosen condition indices in Finset H; this is not projection arity or graph size."
+      ],
+      "dependency_notes": "Within-module dependencies are the exact direct public-theorem references read in this declaration; ordinary definitions, role fields, imported library lemmas, and tactics are outside this curated graph.",
+      "boundary_dependencies": [
+        "Imported Finset cardinality/subset results; finite H; the unique-pair theorem additionally requires DecidableEq Λ."
+      ]
+    },
+    {
+      "id": "CR.INSTANCE.forward_repairs",
+      "label": "Forward original core: all repairs, 15 minimal repairs, unique minimum pair, and forced A",
+      "role": "instance_result",
+      "contract_id": "CR.CONTRACT.named_core",
+      "peer_group": "CR.GROUP.named_repair_cores",
+      "proof_skeleton": "same_named_wc_then_shared_role_classification",
+      "status": "established",
+      "dependencies": [
+        "CR.Roles.repairs_iff_template",
+        "CR.Roles.minimalRepair_iff",
+        "CR.Roles.repair_card_le_two_iff",
+        "CR.Roles.forced_iff"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun",
+        "source_specific_finite_kernel_certificates_documented"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/NamedRepairCore.lean",
+          "line": 65,
+          "end_line": 89,
+          "quote": "/-- false is forward, true is reverse; the shared named vertices are 0 and 2. -/\ndef source (rev : Bool) : Fin 8 := if rev then 2 else 0\ndef other (rev : Bool) : Fin 8 := if rev then 0 else 2\n\ndef JRule (rev : Bool) (b : Row) : Prop :=\n  ARule (b 0) (b 1) (b 2) (b 3) (b 4) ∧\n  BRule (b 5) (b (source rev)) (b 6) (b (other rev)) (b 7)\ninstance (rev : Bool) (b : Row) : Decidable (JRule rev b) :=\n  inferInstanceAs (Decidable (_ ∧ _))\n\ndef coreEdges (rev : Bool) : List (Fin 15 × Fin 15) :=\n  let s : Fin 15 := if rev then 2 else 0\n  let t : Fin 15 := if rev then 0 else 2\n  [(0,1), (1,2), (2,3), (3,4), (0,4),\n   (0,8), (0,9), (0,10), (0,11), (0,12),\n   (2,8), (2,10), (2,12), (3,9), (3,10), (3,11),\n   (1,12), (4,11), (8,12), (8,10), (9,10), (9,11),\n   (5,s), (s,6), (6,t), (t,7), (5,7), (6,7),\n   (5,13), (6,13), (7,13), (5,14), (6,14), (s,14), (13,14)]\n\ndef ports : Fin 8 → Fin 15 := Fin.castLE (by decide)\n\ndef J (rev : Bool) : Set Row :=\n  {b | ∃ c : Fin 15 → Color, Proper (graphOfEdges (coreEdges rev)) c ∧\n    ∀ i, c (ports i) = b i}"
+        },
+        {
+          "path": "Math/NamedRepair.lean",
+          "line": 257,
+          "end_line": 290,
+          "quote": "theorem witness_coverage (rev : Bool) : (roles rev).WitnessCoverage (system rev) := by\n  have hw (k : Fin 3) : (system rev).ExactWitness {s | Bad rev k s} :=\n    ⟨witness rev k,\n      ⟨witness_in_p rev k, fun h => witness_not_j rev k ((j_iff_rule rev _).mp h)⟩,\n      witness_rejectors rev k⟩\n  refine ⟨?_, ?_, ?_, cover_ab rev, fun e he => cover_ate rev e he⟩\n  · simpa [Bad, roles] using hw 0\n  · have eq : {s | Bad rev 1 s} = {scopeB rev, scopeT} := by\n      ext s\n      simp [Bad]\n    simpa only [roles, eq] using hw 1\n  · have eq : {s | Bad rev 2 s} = insert (scopeB rev) (scopesE rev) := by\n      ext s\n      simp only [Bad, show (2 : Fin 3) ≠ 0 from by decide,\n        show (2 : Fin 3) ≠ 1 from by decide, ↓reduceIte, Set.mem_ofPred_eq,\n        Set.mem_insert_iff, scopesE]\n      have hb : 6 ∈ (scopeB rev).val ∧ 7 ∈ (scopeB rev).val := by simp [scopeB]\n      by_cases hs : s = scopeB rev <;> simp_all\n    simpa only [roles, eq] using hw 2\n\ntheorem repairs_iff (rev : Bool) (H : Set Scope) :\n    (system rev).Repairs H ↔\n      (scopeA ∈ H ∧ scopeB rev ∈ H) ∨\n      ∃ e ∈ scopesE rev, scopeA ∈ H ∧ scopeT ∈ H ∧ e ∈ H :=\n  (roles rev).repairs_iff_template (system rev) (witness_coverage rev) H\n\ntheorem minimal_repairs_iff (rev : Bool) (H : Set Scope) :\n    (system rev).MinimalRepair H ↔ H = {scopeA, scopeB rev} ∨\n      ∃ e ∈ scopesE rev, H = {scopeA, scopeT, e} :=\n  (roles rev).minimalRepair_iff (system rev) (witness_coverage rev) H\n\ntheorem unique_minimum_pair (rev : Bool) (H : Finset Scope) :\n    (system rev).Repairs (H : Set Scope) ∧ H.card ≤ 2 ↔ H = {scopeA, scopeB rev} :=\n  (roles rev).repair_card_le_two_iff (system rev) (witness_coverage rev) H"
+        },
+        {
+          "path": "Math/NamedRepair.lean",
+          "line": 292,
+          "end_line": 313,
+          "quote": "theorem forced_scope_iff (rev : Bool) (s : Scope) :\n    (∀ H, (system rev).Repairs H → s ∈ H) ↔ s = scopeA :=\n  (roles rev).forced_iff (system rev) (witness_coverage rev) s\n\ndef minimalRepairs (rev : Bool) : Finset (Finset Scope) :=\n  insert {scopeA, scopeB rev}\n    ((Finset.univ.filter (fun e => e ∈ scopesE rev)).image (fun e => {scopeA, scopeT, e}))\n\ntheorem minimal_repairs_mem (rev : Bool) (H : Finset Scope) :\n    (system rev).MinimalRepair (H : Set Scope) ↔ H ∈ minimalRepairs rev := by\n  rw [minimal_repairs_iff]\n  have hp : ((H : Set Scope) = {scopeA, scopeB rev}) ↔ H = {scopeA, scopeB rev} := by\n    exact_mod_cast (Iff.rfl : H = {scopeA, scopeB rev} ↔ H = {scopeA, scopeB rev})\n  have ht (e : Scope) : ((H : Set Scope) = {scopeA, scopeT, e}) ↔\n      H = {scopeA, scopeT, e} := by\n    rw [← Finset.coe_inj]\n    simp only [Finset.coe_insert, Finset.coe_singleton]\n  simp only [hp, ht, minimalRepairs, Finset.mem_insert, Finset.mem_image,\n    Finset.mem_filter, Finset.mem_univ, true_and]\n  simp only [eq_comm]\n\ntheorem fifteen_minimal_repairs : ∀ rev, (minimalRepairs rev).card = 15 := by decide"
+        },
+        {
+          "path": "docs/lean_named_repair.md",
+          "line": 73,
+          "end_line": 101,
+          "quote": "| 方向 | W_A | W_BT | W_BE |\n| --- | --- | --- | --- |\n| 正向 | `01232113` | `01201130` | `01012122` |\n| 反向 | `01232112` | `01212132` | `01012122` |\n\n每方向保留原來源證明的十一份八點補全。`lift_check` 遍歷明列清單，\n核對每份補全滿足 JRule、每個應接受的四點 scope 有保持原色的補全，\n以及兩個框各有補全；`j_iff_rule` 將它們全部接到原圖延拓。\n被拒絕的 scopes 則由 `accept_a/b/t` 與原邊 q–r 直接反證。\n`witness_rejectors` 因而證三個完整 rejector 集合恰為\n`{A}`、`{B,T}`、`{B}∪𝓔`，相對於全部70個 scopes。\n\n`witness_coverage` 將這些事實組成既有 `Roles.WitnessCoverage`，\n後續分類使用 CommonRepair 的普通集合論定理：\n\n| 定理 | 已證結論 |\n| --- | --- |\n| `repairs_iff` | 全部 repairs 恰為含 `{A,B}` 或某個 `{A,T,E}` 的集合 |\n| `minimal_repairs_iff`、`minimal_repairs_mem` | 全部 inclusion-minimal repairs 恰為這些模板 |\n| `fifteen_minimal_repairs` | 每個方向的完整極小 repair 清單恰有15份 |\n| `unique_minimum_pair` | 條件份數至多二的 repair 唯一為 `{A,B}`；最少份數為二 |\n| `forced_scope_iff` | A 是唯一出現在每份 repair 的 scope |\n| `no_small_projection_repair` | 任意一族至多三點的具名投影，其任何合取都不能修復 P |\n| `four_point_repair` | 兩份四點投影 `{A,B}` 確實修復 P |\n\n最後兩條給此**無輔助變數、僅合取原 J 投影**模型的 `r*=4`。\n下界保持 W_A：每個至多三點 scope 都包含於某個異於 A 的四點 scope，\n因此仍接受 W_A，而 W_A∈P\\J。下界容許任意索引族，不只已枚舉的四點集合。\n最少份數二、十五份 inclusion-minimal repairs 與最小 arity 四是不同結論。"
+        },
+        {
+          "path": "docs/c5_two_vertex_common_repair.md",
+          "line": 173,
+          "end_line": 176,
+          "quote": "𝓔 = {S⊆U : |S|=4, {b2,b4}⊆S} ∖ {B}\n```\n\n每例 `|𝓔|=14`，`|J|=1,440`、`|P|=2,736`、`|Δ|=1,296`，即"
+        }
+      ],
+      "limitations": [
+        "Exactly rev=false under the specified two-frame P; the paired orientation is a distinct fixed source parameter value.",
+        "This grouped semantic outcome summarizes several named theorem declarations; it is counted as one source-instance observation.",
+        "One pair plus fourteen triples equals 15 inclusion-minimal repair values; unique minimum size two and forced A are separate properties.",
+        "Source-specific W/C obligations: three exact witnesses and fifteen complete covers = 18; role, relation, scope, arity, and topology obligations are outside this count.",
+        "Disk availability and frame completeness are not formalized.",
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Analytical grouping of NamedRepair.repairs_iff, minimal_repairs_iff, unique_minimum_pair, forced_scope_iff, minimal_repairs_mem, and fifteen_minimal_repairs at one Bool value. Local abstract dependencies record the direct CommonRepair theorem calls in the four principal named classification endpoints; source construction is retained separately.",
+      "boundary_dependencies": [
+        "Math.NamedRepairCore.j_iff_rule: exact full original-graph relation.",
+        "Math.NamedRepair.witness_coverage: exact all-70-scope witnesses, cover_ab, and cover_ate.",
+        "Math.NamedRepair.minimal_repairs_mem and fifteen_minimal_repairs: complete finite-list membership and count."
+      ]
+    },
+    {
+      "id": "CR.INSTANCE.forward_arity_four",
+      "label": "Forward original core: minimum literal-projection arity r* = 4",
+      "role": "instance_result",
+      "contract_id": "CR.CONTRACT.named_arity",
+      "peer_group": "CR.GROUP.named_arity_cores",
+      "proof_skeleton": "one_fixed_WA_survives_all_small_scopes_then_four_point_cover",
+      "status": "established",
+      "dependencies": [
+        "CR.System.repairs_iff_covers"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun",
+        "source_specific_finite_kernel_certificates_documented"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/NamedRepair.lean",
+          "line": 316,
+          "end_line": 343,
+          "quote": "/-- Every scope of arity at most three lies in a four-scope other than A. -/\ntheorem small_scope_extension : ∀ s : Finset (Fin 8), s.card ≤ 3 →\n    ∃ t : Scope, s ⊆ t.val ∧ t ≠ scopeA := by decide +kernel\n\ntheorem witness_accepts_small (rev : Bool) (s : Finset (Fin 8)) (hs : s.card ≤ 3) :\n    Accept rev s (witness rev 0) := by\n  obtain ⟨t, hst, ht⟩ := small_scope_extension s hs\n  have ha := (witness_accept_iff rev 0 t).mpr ht\n  obtain ⟨c, hc, eq⟩ := ha\n  exact ⟨c, hc, fun u hu => eq u (hst hu)⟩\n\n/-- No conjunction of literal projections of arity at most three repairs P. -/\ntheorem no_small_projection_repair (rev : Bool) {Λ : Type*}\n    (scope : Λ → Finset (Fin 8)) (hs : ∀ i, (scope i).card ≤ 3) (H : Set Λ) :\n    ¬ (projectionSystem (J rev) (P rev) (j_subset_p rev)\n      (fun i => (scope i : Set (Fin 8)))).Repairs H := by\n  intro h\n  have hw : witness rev 0 ∈\n      (projectionSystem (J rev) (P rev) (j_subset_p rev)\n        (fun i => (scope i : Set (Fin 8)))).result H :=\n    ⟨witness_in_p rev 0, fun i _ => witness_accepts_small rev (scope i) (hs i)⟩\n  change _ = J rev at h\n  have hj : witness rev 0 ∈ J rev := h ▸ hw\n  exact witness_not_j rev 0 ((j_iff_rule rev _).mp hj)\n\n/-- A pair of four-point projections does repair P, complementing the lower bound. -/\ntheorem four_point_repair (rev : Bool) : (system rev).Repairs {scopeA, scopeB rev} :=\n  ((system rev).repairs_iff_covers _).mpr (cover_ab rev)"
+        },
+        {
+          "path": "docs/lean_named_repair.md",
+          "line": 95,
+          "end_line": 101,
+          "quote": "| `no_small_projection_repair` | 任意一族至多三點的具名投影，其任何合取都不能修復 P |\n| `four_point_repair` | 兩份四點投影 `{A,B}` 確實修復 P |\n\n最後兩條給此**無輔助變數、僅合取原 J 投影**模型的 `r*=4`。\n下界保持 W_A：每個至多三點 scope 都包含於某個異於 A 的四點 scope，\n因此仍接受 W_A，而 W_A∈P\\J。下界容許任意索引族，不只已枚舉的四點集合。\n最少份數二、十五份 inclusion-minimal repairs 與最小 arity 四是不同結論。"
+        }
+      ],
+      "limitations": [
+        "Exactly rev=false; same source instance as CR.INSTANCE.forward_repairs, observed for a different conclusion.",
+        "Only conjunctions of literal J-projections without auxiliary variables are covered.",
+        "The lower bound is additional source-specific reasoning, not a consequence of abstract W/C classification.",
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Analytical grouping of no_small_projection_repair and four_point_repair at one Bool value. The upper bound directly invokes System.repairs_iff_covers; the lower bound uses source-specific W_A and small-scope acceptance, outside the represented CommonRepair declaration graph.",
+      "boundary_dependencies": [
+        "Math.NamedRepair.small_scope_extension and witness_accepts_small.",
+        "Math.NamedRepair.witness_in_p, witness_not_j, witness_accept_iff, and Math.NamedRepairCore.j_iff_rule.",
+        "Math.NamedRepair.cover_ab and four-element scope definitions."
+      ]
+    },
+    {
+      "id": "CR.INSTANCE.reverse_repairs",
+      "label": "Reverse original core: all repairs, 15 minimal repairs, unique minimum pair, and forced A",
+      "role": "instance_result",
+      "contract_id": "CR.CONTRACT.named_core",
+      "peer_group": "CR.GROUP.named_repair_cores",
+      "proof_skeleton": "same_named_wc_then_shared_role_classification",
+      "status": "established",
+      "dependencies": [
+        "CR.Roles.repairs_iff_template",
+        "CR.Roles.minimalRepair_iff",
+        "CR.Roles.repair_card_le_two_iff",
+        "CR.Roles.forced_iff"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun",
+        "source_specific_finite_kernel_certificates_documented"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/NamedRepairCore.lean",
+          "line": 65,
+          "end_line": 89,
+          "quote": "/-- false is forward, true is reverse; the shared named vertices are 0 and 2. -/\ndef source (rev : Bool) : Fin 8 := if rev then 2 else 0\ndef other (rev : Bool) : Fin 8 := if rev then 0 else 2\n\ndef JRule (rev : Bool) (b : Row) : Prop :=\n  ARule (b 0) (b 1) (b 2) (b 3) (b 4) ∧\n  BRule (b 5) (b (source rev)) (b 6) (b (other rev)) (b 7)\ninstance (rev : Bool) (b : Row) : Decidable (JRule rev b) :=\n  inferInstanceAs (Decidable (_ ∧ _))\n\ndef coreEdges (rev : Bool) : List (Fin 15 × Fin 15) :=\n  let s : Fin 15 := if rev then 2 else 0\n  let t : Fin 15 := if rev then 0 else 2\n  [(0,1), (1,2), (2,3), (3,4), (0,4),\n   (0,8), (0,9), (0,10), (0,11), (0,12),\n   (2,8), (2,10), (2,12), (3,9), (3,10), (3,11),\n   (1,12), (4,11), (8,12), (8,10), (9,10), (9,11),\n   (5,s), (s,6), (6,t), (t,7), (5,7), (6,7),\n   (5,13), (6,13), (7,13), (5,14), (6,14), (s,14), (13,14)]\n\ndef ports : Fin 8 → Fin 15 := Fin.castLE (by decide)\n\ndef J (rev : Bool) : Set Row :=\n  {b | ∃ c : Fin 15 → Color, Proper (graphOfEdges (coreEdges rev)) c ∧\n    ∀ i, c (ports i) = b i}"
+        },
+        {
+          "path": "Math/NamedRepair.lean",
+          "line": 257,
+          "end_line": 290,
+          "quote": "theorem witness_coverage (rev : Bool) : (roles rev).WitnessCoverage (system rev) := by\n  have hw (k : Fin 3) : (system rev).ExactWitness {s | Bad rev k s} :=\n    ⟨witness rev k,\n      ⟨witness_in_p rev k, fun h => witness_not_j rev k ((j_iff_rule rev _).mp h)⟩,\n      witness_rejectors rev k⟩\n  refine ⟨?_, ?_, ?_, cover_ab rev, fun e he => cover_ate rev e he⟩\n  · simpa [Bad, roles] using hw 0\n  · have eq : {s | Bad rev 1 s} = {scopeB rev, scopeT} := by\n      ext s\n      simp [Bad]\n    simpa only [roles, eq] using hw 1\n  · have eq : {s | Bad rev 2 s} = insert (scopeB rev) (scopesE rev) := by\n      ext s\n      simp only [Bad, show (2 : Fin 3) ≠ 0 from by decide,\n        show (2 : Fin 3) ≠ 1 from by decide, ↓reduceIte, Set.mem_ofPred_eq,\n        Set.mem_insert_iff, scopesE]\n      have hb : 6 ∈ (scopeB rev).val ∧ 7 ∈ (scopeB rev).val := by simp [scopeB]\n      by_cases hs : s = scopeB rev <;> simp_all\n    simpa only [roles, eq] using hw 2\n\ntheorem repairs_iff (rev : Bool) (H : Set Scope) :\n    (system rev).Repairs H ↔\n      (scopeA ∈ H ∧ scopeB rev ∈ H) ∨\n      ∃ e ∈ scopesE rev, scopeA ∈ H ∧ scopeT ∈ H ∧ e ∈ H :=\n  (roles rev).repairs_iff_template (system rev) (witness_coverage rev) H\n\ntheorem minimal_repairs_iff (rev : Bool) (H : Set Scope) :\n    (system rev).MinimalRepair H ↔ H = {scopeA, scopeB rev} ∨\n      ∃ e ∈ scopesE rev, H = {scopeA, scopeT, e} :=\n  (roles rev).minimalRepair_iff (system rev) (witness_coverage rev) H\n\ntheorem unique_minimum_pair (rev : Bool) (H : Finset Scope) :\n    (system rev).Repairs (H : Set Scope) ∧ H.card ≤ 2 ↔ H = {scopeA, scopeB rev} :=\n  (roles rev).repair_card_le_two_iff (system rev) (witness_coverage rev) H"
+        },
+        {
+          "path": "Math/NamedRepair.lean",
+          "line": 292,
+          "end_line": 313,
+          "quote": "theorem forced_scope_iff (rev : Bool) (s : Scope) :\n    (∀ H, (system rev).Repairs H → s ∈ H) ↔ s = scopeA :=\n  (roles rev).forced_iff (system rev) (witness_coverage rev) s\n\ndef minimalRepairs (rev : Bool) : Finset (Finset Scope) :=\n  insert {scopeA, scopeB rev}\n    ((Finset.univ.filter (fun e => e ∈ scopesE rev)).image (fun e => {scopeA, scopeT, e}))\n\ntheorem minimal_repairs_mem (rev : Bool) (H : Finset Scope) :\n    (system rev).MinimalRepair (H : Set Scope) ↔ H ∈ minimalRepairs rev := by\n  rw [minimal_repairs_iff]\n  have hp : ((H : Set Scope) = {scopeA, scopeB rev}) ↔ H = {scopeA, scopeB rev} := by\n    exact_mod_cast (Iff.rfl : H = {scopeA, scopeB rev} ↔ H = {scopeA, scopeB rev})\n  have ht (e : Scope) : ((H : Set Scope) = {scopeA, scopeT, e}) ↔\n      H = {scopeA, scopeT, e} := by\n    rw [← Finset.coe_inj]\n    simp only [Finset.coe_insert, Finset.coe_singleton]\n  simp only [hp, ht, minimalRepairs, Finset.mem_insert, Finset.mem_image,\n    Finset.mem_filter, Finset.mem_univ, true_and]\n  simp only [eq_comm]\n\ntheorem fifteen_minimal_repairs : ∀ rev, (minimalRepairs rev).card = 15 := by decide"
+        },
+        {
+          "path": "docs/lean_named_repair.md",
+          "line": 73,
+          "end_line": 101,
+          "quote": "| 方向 | W_A | W_BT | W_BE |\n| --- | --- | --- | --- |\n| 正向 | `01232113` | `01201130` | `01012122` |\n| 反向 | `01232112` | `01212132` | `01012122` |\n\n每方向保留原來源證明的十一份八點補全。`lift_check` 遍歷明列清單，\n核對每份補全滿足 JRule、每個應接受的四點 scope 有保持原色的補全，\n以及兩個框各有補全；`j_iff_rule` 將它們全部接到原圖延拓。\n被拒絕的 scopes 則由 `accept_a/b/t` 與原邊 q–r 直接反證。\n`witness_rejectors` 因而證三個完整 rejector 集合恰為\n`{A}`、`{B,T}`、`{B}∪𝓔`，相對於全部70個 scopes。\n\n`witness_coverage` 將這些事實組成既有 `Roles.WitnessCoverage`，\n後續分類使用 CommonRepair 的普通集合論定理：\n\n| 定理 | 已證結論 |\n| --- | --- |\n| `repairs_iff` | 全部 repairs 恰為含 `{A,B}` 或某個 `{A,T,E}` 的集合 |\n| `minimal_repairs_iff`、`minimal_repairs_mem` | 全部 inclusion-minimal repairs 恰為這些模板 |\n| `fifteen_minimal_repairs` | 每個方向的完整極小 repair 清單恰有15份 |\n| `unique_minimum_pair` | 條件份數至多二的 repair 唯一為 `{A,B}`；最少份數為二 |\n| `forced_scope_iff` | A 是唯一出現在每份 repair 的 scope |\n| `no_small_projection_repair` | 任意一族至多三點的具名投影，其任何合取都不能修復 P |\n| `four_point_repair` | 兩份四點投影 `{A,B}` 確實修復 P |\n\n最後兩條給此**無輔助變數、僅合取原 J 投影**模型的 `r*=4`。\n下界保持 W_A：每個至多三點 scope 都包含於某個異於 A 的四點 scope，\n因此仍接受 W_A，而 W_A∈P\\J。下界容許任意索引族，不只已枚舉的四點集合。\n最少份數二、十五份 inclusion-minimal repairs 與最小 arity 四是不同結論。"
+        },
+        {
+          "path": "docs/c5_two_vertex_common_repair.md",
+          "line": 173,
+          "end_line": 176,
+          "quote": "𝓔 = {S⊆U : |S|=4, {b2,b4}⊆S} ∖ {B}\n```\n\n每例 `|𝓔|=14`，`|J|=1,440`、`|P|=2,736`、`|Δ|=1,296`，即"
+        }
+      ],
+      "limitations": [
+        "Exactly rev=true under the specified two-frame P; the paired orientation is a distinct fixed source parameter value.",
+        "This grouped semantic outcome summarizes several named theorem declarations; it is counted as one source-instance observation.",
+        "One pair plus fourteen triples equals 15 inclusion-minimal repair values; unique minimum size two and forced A are separate properties.",
+        "Source-specific W/C obligations: three exact witnesses and fifteen complete covers = 18; role, relation, scope, arity, and topology obligations are outside this count.",
+        "Disk availability and frame completeness are not formalized.",
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Analytical grouping of NamedRepair.repairs_iff, minimal_repairs_iff, unique_minimum_pair, forced_scope_iff, minimal_repairs_mem, and fifteen_minimal_repairs at one Bool value. Local abstract dependencies record the direct CommonRepair theorem calls in the four principal named classification endpoints; source construction is retained separately.",
+      "boundary_dependencies": [
+        "Math.NamedRepairCore.j_iff_rule: exact full original-graph relation.",
+        "Math.NamedRepair.witness_coverage: exact all-70-scope witnesses, cover_ab, and cover_ate.",
+        "Math.NamedRepair.minimal_repairs_mem and fifteen_minimal_repairs: complete finite-list membership and count."
+      ]
+    },
+    {
+      "id": "CR.INSTANCE.reverse_arity_four",
+      "label": "Reverse original core: minimum literal-projection arity r* = 4",
+      "role": "instance_result",
+      "contract_id": "CR.CONTRACT.named_arity",
+      "peer_group": "CR.GROUP.named_arity_cores",
+      "proof_skeleton": "one_fixed_WA_survives_all_small_scopes_then_four_point_cover",
+      "status": "established",
+      "dependencies": [
+        "CR.System.repairs_iff_covers"
+      ],
+      "evidence": [
+        "ordinary_lean_source",
+        "inherited_documented_axiom_audit_not_rerun",
+        "source_specific_finite_kernel_certificates_documented"
+      ],
+      "source_refs": [
+        {
+          "path": "Math/NamedRepair.lean",
+          "line": 316,
+          "end_line": 343,
+          "quote": "/-- Every scope of arity at most three lies in a four-scope other than A. -/\ntheorem small_scope_extension : ∀ s : Finset (Fin 8), s.card ≤ 3 →\n    ∃ t : Scope, s ⊆ t.val ∧ t ≠ scopeA := by decide +kernel\n\ntheorem witness_accepts_small (rev : Bool) (s : Finset (Fin 8)) (hs : s.card ≤ 3) :\n    Accept rev s (witness rev 0) := by\n  obtain ⟨t, hst, ht⟩ := small_scope_extension s hs\n  have ha := (witness_accept_iff rev 0 t).mpr ht\n  obtain ⟨c, hc, eq⟩ := ha\n  exact ⟨c, hc, fun u hu => eq u (hst hu)⟩\n\n/-- No conjunction of literal projections of arity at most three repairs P. -/\ntheorem no_small_projection_repair (rev : Bool) {Λ : Type*}\n    (scope : Λ → Finset (Fin 8)) (hs : ∀ i, (scope i).card ≤ 3) (H : Set Λ) :\n    ¬ (projectionSystem (J rev) (P rev) (j_subset_p rev)\n      (fun i => (scope i : Set (Fin 8)))).Repairs H := by\n  intro h\n  have hw : witness rev 0 ∈\n      (projectionSystem (J rev) (P rev) (j_subset_p rev)\n        (fun i => (scope i : Set (Fin 8)))).result H :=\n    ⟨witness_in_p rev 0, fun i _ => witness_accepts_small rev (scope i) (hs i)⟩\n  change _ = J rev at h\n  have hj : witness rev 0 ∈ J rev := h ▸ hw\n  exact witness_not_j rev 0 ((j_iff_rule rev _).mp hj)\n\n/-- A pair of four-point projections does repair P, complementing the lower bound. -/\ntheorem four_point_repair (rev : Bool) : (system rev).Repairs {scopeA, scopeB rev} :=\n  ((system rev).repairs_iff_covers _).mpr (cover_ab rev)"
+        },
+        {
+          "path": "docs/lean_named_repair.md",
+          "line": 95,
+          "end_line": 101,
+          "quote": "| `no_small_projection_repair` | 任意一族至多三點的具名投影，其任何合取都不能修復 P |\n| `four_point_repair` | 兩份四點投影 `{A,B}` 確實修復 P |\n\n最後兩條給此**無輔助變數、僅合取原 J 投影**模型的 `r*=4`。\n下界保持 W_A：每個至多三點 scope 都包含於某個異於 A 的四點 scope，\n因此仍接受 W_A，而 W_A∈P\\J。下界容許任意索引族，不只已枚舉的四點集合。\n最少份數二、十五份 inclusion-minimal repairs 與最小 arity 四是不同結論。"
+        }
+      ],
+      "limitations": [
+        "Exactly rev=true; same source instance as CR.INSTANCE.reverse_repairs, observed for a different conclusion.",
+        "Only conjunctions of literal J-projections without auxiliary variables are covered.",
+        "The lower bound is additional source-specific reasoning, not a consequence of abstract W/C classification.",
+        "No fresh Lean build, axiom audit, source checker, or finite replay was run for this inventory."
+      ],
+      "dependency_notes": "Analytical grouping of no_small_projection_repair and four_point_repair at one Bool value. The upper bound directly invokes System.repairs_iff_covers; the lower bound uses source-specific W_A and small-scope acceptance, outside the represented CommonRepair declaration graph.",
+      "boundary_dependencies": [
+        "Math.NamedRepair.small_scope_extension and witness_accepts_small.",
+        "Math.NamedRepair.witness_in_p, witness_not_j, witness_accept_iff, and Math.NamedRepairCore.j_iff_rule.",
+        "Math.NamedRepair.cover_ab and four-element scope definitions."
+      ]
+    }
+  ],
+  "branch_groups": [
+    {
+      "id": "CR.GROUP.abstract_public_declarations",
+      "label": "27 public CommonRepair theorem statements",
+      "unit": "semantic_claim",
+      "members": [
+        "CR.System.target_subset_result",
+        "CR.System.repairs_iff_covers",
+        "CR.System.repairs_mono",
+        "CR.System.not_repairs_iff_residual",
+        "CR.System.witness_hits",
+        "CR.System.residual_compl_eq",
+        "CR.System.exactWitness_of_compl",
+        "CR.System.maximalFailure_of_compl",
+        "CR.System.minimalRepair_iff_deletions",
+        "CR.System.repairs_of_base_eq_target",
+        "CR.System.minimalRepair_of_base_eq_target",
+        "CR.mem_projection_result",
+        "CR.Roles.template_mono",
+        "CR.Roles.template_pair",
+        "CR.Roles.template_triple",
+        "CR.Roles.repairs_iff_template",
+        "CR.Roles.template_compl_obstructions",
+        "CR.Roles.witnessCoverage_of_classification",
+        "CR.Roles.witnessCoverage_iff_classification",
+        "CR.Roles.minimal_template_pair",
+        "CR.Roles.minimal_template_triple",
+        "CR.Roles.minimalRepair_iff",
+        "CR.Roles.forced_iff",
+        "CR.Roles.maximalFailure_iff",
+        "CR.Roles.obstruction_residual_eq",
+        "CR.Roles.repair_card_ge_two",
+        "CR.Roles.repair_card_le_two_iff"
+      ],
+      "normalization": "One source-anchored public theorem statement per declaration. This count contains helper, branch, and aggregate roles; it is not a same-level peer count. Parameterized e values and concrete repairs are not expanded into declarations.",
+      "group_kind": "inventory_bucket"
+    },
+    {
+      "id": "CR.GROUP.minimal_role_templates",
+      "label": "Pair/triple role-template inclusion-minimality branches",
+      "unit": "semantic_claim",
+      "members": [
+        "CR.Roles.minimal_template_pair",
+        "CR.Roles.minimal_template_triple"
+      ],
+      "normalization": "Comparable inclusion-minimal-template statements under the same role contract; retain pair versus universally parameterized triple, without expanding each e value.",
+      "group_kind": "peer_comparison"
+    },
+    {
+      "id": "CR.GROUP.named_repair_cores",
+      "label": "Two named original-core repair instances",
+      "unit": "named_source_instance",
+      "members": [
+        "CR.INSTANCE.forward_repairs",
+        "CR.INSTANCE.reverse_repairs"
+      ],
+      "normalization": "Distinct rev=false and rev=true source parameter values, sharing the same theorem schema and proof skeleton. Each core has 15 minimal repair values; these are not 30 independent sources.",
+      "group_kind": "peer_comparison"
+    },
+    {
+      "id": "CR.GROUP.named_arity_cores",
+      "label": "The same two named cores observed for projection arity",
+      "unit": "named_source_instance",
+      "members": [
+        "CR.INSTANCE.forward_arity_four",
+        "CR.INSTANCE.reverse_arity_four"
+      ],
+      "normalization": "The same two original cores as the repair group; do not add these observations to obtain four source instances. Each observation groups lower and upper arity bounds.",
+      "group_kind": "peer_comparison"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "CR.COMP.shared_contract_reuse",
+      "label": "Reusable classification versus concrete adoption cost",
+      "members": [
+        "CR.Roles.witnessCoverage_iff_classification",
+        "CR.INSTANCE.forward_repairs",
+        "CR.INSTANCE.reverse_repairs"
+      ],
+      "interpretation": "The exact five-predicate W/C schema is a reusable abstraction for all repairs. At |E|=14, each source still discharges three witness instances and fifteen cover instances (18 concrete W/C obligations). Two original-core adoptions discharge 36 W/C obligations and obtain 15 minimal repairs per core through a shared classification proof. The generic contract also supports other faithful systems, but those systems need separate premise proofs.",
+      "limitations": [
+        "36 counts W/C only: fidelity, role distinctions, complete source relation, named scopes, arity, and topology prerequisites are excluded.",
+        "Neither 5 schema predicates nor 30 minimal-repair values is a same-level theorem count.",
+        "No fresh proof or checker validation was run."
+      ]
+    },
+    {
+      "id": "CR.COMP.arity_boundary",
+      "label": "Repair compression and arity lower bounds remain separate",
+      "members": [
+        "CR.Roles.repairs_iff_template",
+        "CR.INSTANCE.forward_arity_four",
+        "CR.INSTANCE.reverse_arity_four"
+      ],
+      "interpretation": "Abstract all-repair classification compresses repeated repair/minimality proofs. r* = 4 requires the additional fixed W_A to survive every ≤3-point scope, plus an explicit four-point repair. This boundary identifies which abstraction already reuses a proof and which source-specific obligation is still necessary.",
+      "limitations": [
+        "No claim about auxiliary-variable or nonprojection summary models.",
+        "These are two conclusion families for the same two source instances, not four independent cores."
+      ]
+    },
+    {
+      "id": "CR.COMP.degenerate_branch",
+      "label": "Independent P = J branch",
+      "members": [
+        "CR.System.repairs_of_base_eq_target",
+        "CR.System.minimalRepair_of_base_eq_target",
+        "CR.Roles.witnessCoverage_iff_classification"
+      ],
+      "interpretation": "P = J is an independent faithful-system branch with empty minimal repair. The nonempty exact-witness premises cannot be adopted there; the abstract five-predicate contract must not be forced onto it.",
+      "limitations": [
+        "The four concrete degenerate graphs and their P = J premise certificates are not counted as named-core Lean instances in this inventory."
+      ]
+    }
+  ],
+  "obligation_summary": {
+    "schema_predicates": 5,
+    "exact_witness_instances_per_core": 3,
+    "cover_instances_per_core": 15,
+    "concrete_wc_obligations_per_core": 18,
+    "named_core_instances": 2,
+    "concrete_wc_obligations_total": 36,
+    "minimal_repairs_per_core": 15,
+    "source_refs": [
+      {
+        "path": "Math/CommonRepair.lean",
+        "line": 208,
+        "end_line": 211,
+        "quote": "def WitnessCoverage (s : System Ω Λ) : Prop :=\n  s.ExactWitness {r.A} ∧ s.ExactWitness {r.B, r.T} ∧\n  s.ExactWitness (insert r.B r.E) ∧ s.Covers {r.A, r.B} ∧\n  ∀ e ∈ r.E, s.Covers {r.A, r.T, e}"
+      },
+      {
+        "path": "docs/c5_two_vertex_common_repair.md",
+        "line": 63,
+        "end_line": 72,
+        "quote": "| 前提 | 完整敘述 |\n| --- | --- |\n| W_A | 存在 `x_A∈Δ`，`ρ(x_A)={A}` |\n| W_BT | 存在 `x_BT∈Δ`，`ρ(x_BT)={B,T}` |\n| W_BE | 存在 `x_BE∈Δ`，`ρ(x_BE)={B}∪𝓔` |\n| C_AB | `F_A∪F_B=Δ` |\n| C_ATE | 對**每個** `E∈𝓔`，`F_A∪F_T∪F_E=Δ` |\n\nWitness 的 rejector 集合相對於**全部 Λ** 精確相等。只驗其在指定 repair\n中被誰拒絕，或只說某個 scope 拒絕它，不足以排除其他 repair。"
+      },
+      {
+        "path": "docs/c5_two_vertex_common_repair.md",
+        "line": 173,
+        "end_line": 176,
+        "quote": "𝓔 = {S⊆U : |S|=4, {b2,b4}⊆S} ∖ {B}\n```\n\n每例 `|𝓔|=14`，`|J|=1,440`、`|P|=2,736`、`|Δ|=1,296`，即"
+      },
+      {
+        "path": "docs/c5_two_vertex_common_repair.md",
+        "line": 192,
+        "end_line": 203,
+        "quote": "每例另驗十五份完整覆蓋等式與修復後 relation 恰等於 J；前提通過後才\n比對前輪全部十五組答案。每例三個固定 witnesses 統一驗證44次逐項刪除，\n兩例共 **88 次**。三個極大失敗集合的完整殘留亦無損保存，並逐項驗證\n任添一個缺項即完成覆蓋。共同 lemma 不要求兩例的排除集相同；上表的\n4／2 差異仍保留，也不推論原圖、J、P 或排除資料可由頂點雙射搬運。\n\n四個退化案例為 `reference`、`reference_reverse`、`free_pairs`、\n`shared_chord_frame_edge`。新 checker 分別重建 J/P 並驗完整集合相等，\n記錄各自唯一空 repair、無 forced scope、`r*=0`。不加非空 witness 前提。\n\n非平凡兩例的 `r*=4` 仍依前輪獨立的三點下界與四點充分性證書。\n**共同 lemma 本身不推出四點 arity 下界**，也不預設 Λ 必為投影條件。"
+      },
+      {
+        "path": "Math/NamedRepair.lean",
+        "line": 257,
+        "end_line": 275,
+        "quote": "theorem witness_coverage (rev : Bool) : (roles rev).WitnessCoverage (system rev) := by\n  have hw (k : Fin 3) : (system rev).ExactWitness {s | Bad rev k s} :=\n    ⟨witness rev k,\n      ⟨witness_in_p rev k, fun h => witness_not_j rev k ((j_iff_rule rev _).mp h)⟩,\n      witness_rejectors rev k⟩\n  refine ⟨?_, ?_, ?_, cover_ab rev, fun e he => cover_ate rev e he⟩\n  · simpa [Bad, roles] using hw 0\n  · have eq : {s | Bad rev 1 s} = {scopeB rev, scopeT} := by\n      ext s\n      simp [Bad]\n    simpa only [roles, eq] using hw 1\n  · have eq : {s | Bad rev 2 s} = insert (scopeB rev) (scopesE rev) := by\n      ext s\n      simp only [Bad, show (2 : Fin 3) ≠ 0 from by decide,\n        show (2 : Fin 3) ≠ 1 from by decide, ↓reduceIte, Set.mem_ofPred_eq,\n        Set.mem_insert_iff, scopesE]\n      have hb : 6 ∈ (scopeB rev).val ∧ 7 ∈ (scopeB rev).val := by simp [scopeB]\n      by_cases hs : s = scopeB rev <;> simp_all\n    simpa only [roles, eq] using hw 2"
+      },
+      {
+        "path": "Math/NamedRepair.lean",
+        "line": 313,
+        "end_line": 313,
+        "quote": "theorem fifteen_minimal_repairs : ∀ rev, (minimalRepairs rev).card = 15 := by decide"
+      }
+    ],
+    "limitations": [
+      "These 36 concrete obligations count only source-specific W/C witness and cover instances. Relation fidelity, role/scopes prerequisites, arity lower/upper bound obligations, frame availability, and topology are not included.",
+      "The 27 abstract theorem declarations, 2 named-core parameter values, 2 × 15 minimal-repair values, and 5 W/C predicate-schema premises use different units.",
+      "Ordinary Lean status is inherited from documented audits, with no build/audit/source replay performed for this inventory."
+    ]
+  }
+}

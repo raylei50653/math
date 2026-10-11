@@ -1,0 +1,1768 @@
+{
+  "schema_version": 1,
+  "family": "no_mixed",
+  "contracts": [
+    {
+      "id": "NM.contract.source",
+      "label": "Same original no-mixed, adjacent degree-5, edge-minimal q-core contract",
+      "assumptions": [
+        "M is a finite simple graph embedded in a disk, with named induced C5 frame B=(b0,b1,b2,b3,b4); H=M-B is nonempty and connected.",
+        "M rejects the literal source row q=01012 and accepts q after deletion of every non-frame edge; frame edges are excluded from minimality.",
+        "Exactly the adjacent original roots z,w have complete degree 5; every other interior vertex has complete degree 4.",
+        "Each original component of H-{z,w} attaches to exactly one root (no mixed original component).",
+        "U={0,1,2,3}; the specified literal target rows are p1=01021 and p2=01212.",
+        "Retain the same original components, named ordered contacts, all original bridges and side branches, actual boundary attachments/supports, root ownership, original zw and spokes, common cyclic order and literal frame.",
+        "For each original C and row beta, use the nonempty complete ordered relation T_C(beta) and F_C(beta)=intersection over tau in T_C(beta) of set(tau), never endpoint marginals.",
+        "Use the exact root residual E_r(beta)=U minus (beta(N_B(r)) union union of F_C(beta) for C incident to r); extension is equivalent to (E_z(beta) x E_w(beta)) minus the diagonal being nonempty."
+      ],
+      "scope": {
+        "source_generality": "All finite original components of arbitrary size satisfying this exact disk/source contract; adjacent roots only and no mixed components.",
+        "observation": "Named ordered complete contact relations and their set intersection F, actual attachments, bridges, ownership, common order/lifts and the original literal frame.",
+        "behavior": "Source necessary geometry and conditional exclusion; existence of extension to exactly p1 and p2 under the retained original source contract."
+      },
+      "limitations": [
+        "No bound on original component or side-branch size; T4 and acceptance of other source rows are not additional assumptions.",
+        "Source minimality, deficit/overlap equalities and singleton root residuals belong to q only; do not impose them on p1 or p2.",
+        "Necessary side types/supports and finite control records do not establish disk source realization.",
+        "The current paper proof establishes existence of extension; it does not give repair from a specified coloring preserving a specified exterior coloring.",
+        "No new Lean formalization, complete Sigma, general/common exit, mixed-component generalization or K_infinity=K_at_most_5 claim."
+      ],
+      "evidence": [
+        "existing paper proof; finite controls are reported separately in their source documents"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 40,
+          "end_line": 49,
+          "quote": "固定有限簡單圖 M，B=(b0,…,b4) 為 induced C5 disk 外框，H=M−B 非空連通。M 拒絕 q=01012，刪任一非框邊後接受 q。恰有相鄰 z,w 完整 degree=5，其餘內點完整 degree=4；H−{z,w} 每個原分量 C 恰接 一個 root。固定 U={0,1,2,3}；targets 為 p₁=01021、p₂=01212。 不需 T4，不另假定來源接受其他列，不限制原分量大小。 保留原分量、具名 contacts、全部 bridges／旁支、實際 boundary 附件、 原 zw、spokes、環序及共同字面色框。T_C(β) 是原 C 的完整有序接點 關係；F_C(β)=⋂_{τ∈T_C(β)}set(τ)，而非端點 marginals 的交集。 接點 slack 保證 T_C(β) 非空。對每列 β，精確接合是"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 52,
+          "end_line": 70,
+          "quote": "E_r(\\beta)=U\\setminus\\left(\\beta(N_B(r))\\cup\\bigcup_{C\\sim r}F_C(\\beta)\\right), \\qquad Z_M(\\beta)=(E_z(\\beta)\\times E_w(\\beta))\\setminus\\Delta. \\] [Root 預算](c5_root_degree_excess.md)給 source q 的 D_r+O_r+κ_r=1，κ_r=0，E_z(q)=E_w(q)={c}；spokes 異色且各 F_C(q) 避開同側 spoke 顏色。[原平面化約](c5_adjacent_degree5_no_mixed.md)之後 恰剩下列五種側型。以 m_r 計原分量數，s_r 計禁色為二元集的原分量數： | 側型 | spokes t_r | 接點分拆 | (D_r,O_r) | 禁色大小 | m_r | s_r | 側跨度下界 ω_r | | --- | ---: | --- | --- | --- | ---: | ---: | ---: | | A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 | source 缺額／重疊預算不施加到 p₁、p₂。下文「飽和分量」專指二接點且 |F_C(q)|=2；單接點 singleton 分量仍須佔正跨度，不能改作 spoke。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 23,
+          "end_line": 41,
+          "quote": "沿用[跨度報告 §1–2](c5_no_mixed_span_budget.md#1-適用前提與精確語義)： M 有限簡單，B=(b0,…,b4) 為 induced C5 disk 外框，H=M−B 非空連通； q=01012 拒絕，刪任一非框邊後接受 q。恰有相鄰 z,w 完整 degree=5， 其餘內點完整 degree=4；H−{z,w} 的每份原分量恰接一個 root。 U={0,1,2,3}，p₁=01021、p₂=01212。不需 T4，不限制分量大小。 保留原 C、具名 contacts、全部 bridges／旁支、actual support S_C、 spokes、zw、共同環序及兩列完整有序接點關係。定義不變： \\[ F_C(\\beta)=\\bigcap_{\\tau\\in T_C(\\beta)}\\operatorname{set}(\\tau),\\qquad E_r(\\beta)=U\\setminus\\left(\\beta(N_B(r))\\cup\\bigcup_{C\\sim r}F_C(\\beta)\\right). \\] T_C(β) 非空；延拓恰當 (E_z×E_w)∖Δ 非空。Source 各側禁色沒有重疊， t_r+Σ|F_C(q)|=3，E_z(q)=E_w(q) singleton；兩個共同側弧的跨度各至少二、 和至多五。A/B/C/E 側分別有二／一／零／零 spokes，原分量禁色大小為 (1)、(1,1)、(1,2)、(1,1,1)。D 側已由 source 跨度排除。 本輪不把任何 source 等號施加到 target。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 298,
+          "end_line": 303,
+          "quote": "本輪完成的是紙面存在性分離及其有限控制。未新增 Lean theorem 或 `native_decide`；`lake build` 不表示新幾何已形式化。外部 degree-list／ Gallai 及前層 annulus、原路徑引理沿用既有證明，未重讀外部文獻。 未給從指定 source 染色出發且保留指定外部染色的建構式 repair；必要 支援實現性、完整 Σ、較大 mixed 原分量、一般出口及 `K∞=K≤5` 仍開放。 目前下一窄題由研究線導覽維護，不再把本輪已證的增長完備性列為未解。"
+        }
+      ]
+    },
+    {
+      "id": "NM.contract.no_growth",
+      "label": "Specified target with no forbidden-color cardinality growth",
+      "assumptions": [
+        "M is a finite simple graph embedded in a disk, with named induced C5 frame B=(b0,b1,b2,b3,b4); H=M-B is nonempty and connected.",
+        "M rejects the literal source row q=01012 and accepts q after deletion of every non-frame edge; frame edges are excluded from minimality.",
+        "Exactly the adjacent original roots z,w have complete degree 5; every other interior vertex has complete degree 4.",
+        "Each original component of H-{z,w} attaches to exactly one root (no mixed original component).",
+        "U={0,1,2,3}; the specified literal target rows are p1=01021 and p2=01212.",
+        "Retain the same original components, named ordered contacts, all original bridges and side branches, actual boundary attachments/supports, root ownership, original zw and spokes, common cyclic order and literal frame.",
+        "For each original C and row beta, use the nonempty complete ordered relation T_C(beta) and F_C(beta)=intersection over tau in T_C(beta) of set(tau), never endpoint marginals.",
+        "Use the exact root residual E_r(beta)=U minus (beta(N_B(r)) union union of F_C(beta) for C incident to r); extension is equivalent to (E_z(beta) x E_w(beta)) minus the diagonal being nonempty.",
+        "Fix p in {p1,p2} and assume |F_C(p)| <= |F_C(q)| for every original component C."
+      ],
+      "scope": {
+        "source_generality": "The entire same original no-mixed source family, arbitrary component size, with a target-specific conditional nonincrease premise.",
+        "observation": "Both row-specific complete relations and F sets on the same original attachments/order; exact E sets.",
+        "behavior": "A nonempty off-diagonal root pair exists for the specified p under the cardinality nonincrease premise."
+      },
+      "limitations": [
+        "No bound on original component or side-branch size; T4 and acceptance of other source rows are not additional assumptions.",
+        "Source minimality, deficit/overlap equalities and singleton root residuals belong to q only; do not impose them on p1 or p2.",
+        "Necessary side types/supports and finite control records do not establish disk source realization.",
+        "The current paper proof establishes existence of extension; it does not give repair from a specified coloring preserving a specified exterior coloring.",
+        "No new Lean formalization, complete Sigma, general/common exit, mixed-component generalization or K_infinity=K_at_most_5 claim.",
+        "Do not replace adjacent distinct single-occurrence target/source frame points by arbitrary targets; q itself is a negative control."
+      ],
+      "evidence": [
+        "existing paper theorem; fixed-domain 7,848 joins are a control and not the universal proof"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_no_growth.md",
+          "line": 23,
+          "end_line": 35,
+          "quote": "完整沿用[跨度報告 §1–2](c5_no_mixed_span_budget.md#1-適用前提與精確語義)： M 有限簡單，B=(b0,…,b4) 為 induced C5 disk 外框，H=M−B 非空連通； q=01012 拒絕，刪任一非框邊後接受 q。恰有相鄰 z,w 完整 degree=5， 其餘內點完整 degree=4；H−{z,w} 每份原分量 C 恰接一個 root。 U={0,1,2,3}，p₁=01021、p₂=01212。不需 T4，不限制原分量大小。 保留同一原 C、具名 contacts、bridges、旁支、actual support S_C、 spokes、zw、共同環序及字面色框。T_C(β) 為非空的完整有序接點關係， F_C(β)=⋂_{τ∈T_C(β)}set(τ)，且 \\[ E_r(\\beta)=U\\setminus\\left(\\beta(N_B(r))\\cup\\bigcup_{C\\sim r}F_C(\\beta)\\right). \\]"
+        },
+        {
+          "path": "docs/c5_no_mixed_no_growth.md",
+          "line": 137,
+          "end_line": 150,
+          "quote": "這就證明 \\[ \\boxed{\\bigl(\\forall C,\\ |F_C(p)|\\le|F_C(q)|\\bigr) \\Longrightarrow (E_z(p)\\times E_w(p))\\setminus\\Delta\\ne\\varnothing.}\\tag{2} \\] 證明不用目標分量的完整搬運是否可行，也不固定一份 source 染色來 repair；只用原完整關係的置換不變性與共同幾何。換色在此用來證明 集合不變性，並非直接對整張圖執行 Kempe 交換。 只要另一 proper 三色 target 的單現點與 s(q) 相鄰，同一論證成立； 不能刪去「相鄰、互異」前提，例如 p=q 本來就拒絕且完全沒有增長。 本報告仍只將 (2) 接回指定 p₁、p₂。"
+        },
+        {
+          "path": "docs/c5_no_mixed_no_growth.md",
+          "line": 194,
+          "end_line": 197,
+          "quote": "(2) 是沿用任意大小 source 結構引理的紙面證明；Python 只是固定域 控制及必要表回歸。未新增 Lean theorem／`native_decide`，`lake build` 不表示紙面幾何已形式化。未證必要支援可實現、完整 Σ、一般共同出口 或 K∞=K≤5；外部 Gallai 文獻本輪未重讀。"
+        }
+      ]
+    },
+    {
+      "id": "NM.contract.growth",
+      "label": "Same original singleton-to-pair growth, using a whole-row target normalization",
+      "assumptions": [
+        "M is a finite simple graph embedded in a disk, with named induced C5 frame B=(b0,b1,b2,b3,b4); H=M-B is nonempty and connected.",
+        "M rejects the literal source row q=01012 and accepts q after deletion of every non-frame edge; frame edges are excluded from minimality.",
+        "Exactly the adjacent original roots z,w have complete degree 5; every other interior vertex has complete degree 4.",
+        "Each original component of H-{z,w} attaches to exactly one root (no mixed original component).",
+        "U={0,1,2,3}; the specified literal target rows are p1=01021 and p2=01212.",
+        "Retain the same original components, named ordered contacts, all original bridges and side branches, actual boundary attachments/supports, root ownership, original zw and spokes, common cyclic order and literal frame.",
+        "For each original C and row beta, use the nonempty complete ordered relation T_C(beta) and F_C(beta)=intersection over tau in T_C(beta) of set(tau), never endpoint marginals.",
+        "Use the exact root residual E_r(beta)=U minus (beta(N_B(r)) union union of F_C(beta) for C incident to r); extension is equivalent to (E_z(beta) x E_w(beta)) minus the diagonal being nonempty.",
+        "Fix an original binary component C with F_C(q)={d} and target F_C(p)=D a pair.",
+        "Analyze p=p2 by changing only b2 from source color 0 to target color 2; recover p1 by the stated whole-frame reflection and whole-row color bijections.",
+        "Transport all named complete relations, forbidden colors and root colors together; recompute fixed-color conditions in the normalized common literal frame and invert the target bijection."
+      ],
+      "scope": {
+        "source_generality": "An original growing binary component inside the same arbitrary-size no-mixed source family; no independent synthetic component realization is assumed.",
+        "observation": "Actual common oriented side arcs, original odd bridge and side branches, row-specific complete F, full possible endpoint-support unions, original external paths.",
+        "behavior": "Exclude every growth affecting R by common fixed-frame/path rules; the remaining specified pair is disjoint from R and yields an off-diagonal pair."
+      },
+      "limitations": [
+        "No bound on original component or side-branch size; T4 and acceptance of other source rows are not additional assumptions.",
+        "Source minimality, deficit/overlap equalities and singleton root residuals belong to q only; do not impose them on p1 or p2.",
+        "Necessary side types/supports and finite control records do not establish disk source realization.",
+        "The current paper proof establishes existence of extension; it does not give repair from a specified coloring preserving a specified exterior coloring.",
+        "No new Lean formalization, complete Sigma, general/common exit, mixed-component generalization or K_infinity=K_at_most_5 claim.",
+        "Growth is not prohibited universally: surviving harmless pair candidates need no realization claim.",
+        "The p1/p2 reflection is a proof transport of the entire row; the inventory only identifies unordered side pairs by whole-source root exchange."
+      ],
+      "evidence": [
+        "existing paper position/exclusion/harmless-growth argument; its finite 2,240 candidate controls are not source graph counts"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 23,
+          "end_line": 49,
+          "quote": "沿用[跨度報告 §1–2](c5_no_mixed_span_budget.md#1-適用前提與精確語義)： M 有限簡單，B=(b0,…,b4) 為 induced C5 disk 外框，H=M−B 非空連通； q=01012 拒絕，刪任一非框邊後接受 q。恰有相鄰 z,w 完整 degree=5， 其餘內點完整 degree=4；H−{z,w} 的每份原分量恰接一個 root。 U={0,1,2,3}，p₁=01021、p₂=01212。不需 T4，不限制分量大小。 保留原 C、具名 contacts、全部 bridges／旁支、actual support S_C、 spokes、zw、共同環序及兩列完整有序接點關係。定義不變： \\[ F_C(\\beta)=\\bigcap_{\\tau\\in T_C(\\beta)}\\operatorname{set}(\\tau),\\qquad E_r(\\beta)=U\\setminus\\left(\\beta(N_B(r))\\cup\\bigcup_{C\\sim r}F_C(\\beta)\\right). \\] T_C(β) 非空；延拓恰當 (E_z×E_w)∖Δ 非空。Source 各側禁色沒有重疊， t_r+Σ|F_C(q)|=3，E_z(q)=E_w(q) singleton；兩個共同側弧的跨度各至少二、 和至多五。A/B/C/E 側分別有二／一／零／零 spokes，原分量禁色大小為 (1)、(1,1)、(1,2)、(1,1,1)。D 側已由 source 跨度排除。 本輪不把任何 source 等號施加到 target。 以下先證 p=p₂，只在 b2 把色 0 改成 2。p₁ 由明示的整列雙射還原： 框點反射 ρ=(3,2,1,0,4)，source 色置換 σ_q=(1,0,2,3)，target 色置換 σ_p=(1,2,0,3)。逐點有 σ_q(q(ρ(i)))=q(i)、σ_p(p₁(ρ(i)))=p₂(i)。 每列的**所有**原分量完整關係、禁色、root 色一起搬運；不為不同分量 選不同置換。這是對整列重新命名，不把 source 禁色硬傳到 target。 Source／target 的兩個置換與逆像 root pair 均記入證書。固定色條件在 正規化後的共同字面色框重新計算，最後由 σ_p⁻¹ 還原原 p₁。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 53,
+          "end_line": 60,
+          "quote": "**位置引理。** 若 |F_C(p)|>|F_C(q)|，則 C 是二接點、F_C(q)={d}、 F_C(p)=D 為 pair，C 所在側只能是 A 或 B，且共同側弧只能是 \\[ I_r=(2,3,4),\\qquad(1,2,3,4),\\qquad(4,0,1,2).\\tag{1} \\] 數字表示具名框點，保留弧方向；例如 4012 的長度是三，不能改選 234。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 241,
+          "end_line": 244,
+          "quote": "(5) 在 §1 任意大小圖類及所沿用的 source／原路徑引理下成立。 **共同局部規則對影響 R 的增長之完備性、及指定雙列分離，均已免查 必要支援表證成。** 這不是「所有 singleton 永不增長」，也沒有把 必要支援存在等同來源圖存在。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 298,
+          "end_line": 302,
+          "quote": "本輪完成的是紙面存在性分離及其有限控制。未新增 Lean theorem 或 `native_decide`；`lake build` 不表示新幾何已形式化。外部 degree-list／ Gallai 及前層 annulus、原路徑引理沿用既有證明，未重讀外部文獻。 未給從指定 source 染色出發且保留指定外部染色的建構式 repair；必要 支援實現性、完整 Σ、較大 mixed 原分量、一般出口及 `K∞=K≤5` 仍開放。"
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "NM.source_budget",
+      "label": "Source root budget, equal singleton residuals and five A..E side types",
+      "role": "shared_lemma",
+      "contract_id": "NM.contract.source",
+      "peer_group": null,
+      "proof_skeleton": "NM.skeleton.source_capacity_to_side_types",
+      "status": "established",
+      "dependencies": [],
+      "evidence": [
+        "existing paper proof under the stated contract"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 56,
+          "end_line": 70,
+          "quote": "[Root 預算](c5_root_degree_excess.md)給 source q 的 D_r+O_r+κ_r=1，κ_r=0，E_z(q)=E_w(q)={c}；spokes 異色且各 F_C(q) 避開同側 spoke 顏色。[原平面化約](c5_adjacent_degree5_no_mixed.md)之後 恰剩下列五種側型。以 m_r 計原分量數，s_r 計禁色為二元集的原分量數： | 側型 | spokes t_r | 接點分拆 | (D_r,O_r) | 禁色大小 | m_r | s_r | 側跨度下界 ω_r | | --- | ---: | --- | --- | --- | ---: | ---: | ---: | | A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 | source 缺額／重疊預算不施加到 p₁、p₂。下文「飽和分量」專指二接點且 |F_C(q)|=2；單接點 singleton 分量仍須佔正跨度，不能改作 spoke。"
+        }
+      ],
+      "limitations": [
+        "Five source side types and their q-only budget are necessary structural types; they are not realizability witnesses or target equalities."
+      ],
+      "boundary_dependencies": [
+        "docs/c5_root_degree_excess.md: source root budget D_r+O_r+kappa_r=1, kappa_r=0 and equal singleton E; not inventoried here.",
+        "docs/c5_adjacent_degree5_no_mixed.md: original planar no-mixed reduction to the five side types; not inventoried here."
+      ]
+    },
+    {
+      "id": "NM.ordered_spans",
+      "label": "Positive component support spans and common noninterleaving two-side lifts with total span <=5",
+      "role": "shared_lemma",
+      "contract_id": "NM.contract.source",
+      "peer_group": null,
+      "proof_skeleton": "NM.skeleton.original_paths_gallai_support_common_lift",
+      "status": "established",
+      "dependencies": [
+        "NM.source_budget"
+      ],
+      "evidence": [
+        "existing paper proof under the stated contract"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 76,
+          "end_line": 104,
+          "quote": "每個原 F_C(q) 非空真子集，故 C 有非空 actual support S_C⊆B。 對任一 C，經原 spoke、同側另一原分量或原 zw 加另一側原分量，存在 避開 C 的 root–B 原路徑。沿用[外部 hub](c5_no_spoke_exterior.md)與 [三分量支援引理](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md#2-三分量五單位的任意大小支援覆蓋)， 每個拒絕分量是 K4-free tight Gallai tree。 此處使用外部 [Dvořák 講義 Lemma 7、Theorem 10，第 5–6 頁](https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf)： 連通圖的 degree-list 拒絕迫 tightness 及 blockwise-uniform Gallai 結構。 本輪重新讀取核對前提；它仍是外部定理，非本專案新 Lean 證明。 若 S_C 只見一個 q 色 d，固定 d 的 S3 穩定子不能保持二元禁色； singleton 禁色則只能是 {d}。將 root 設 d，全部外鄰皆同色，tightness 迫每點內度至少三，與 K4-free Gallai leaf block 的私有點內度至多二 矛盾。因此每個原分量至少見兩個 q 色，支援的整數跨度至少一。 取 zw 的細正則鄰域。其兩側 incidences 各成一段，同一 binary 分量的 兩 contacts 連續；原內部路徑的 Jordan 分離及其他 incidences 的外部 原路徑證明這一點。沿用既有 annulus crosscut 引理，各 actual supports 及 spoke 按單位次序有互不交錯的 lifts；相鄰可共框端點，總跨度連同 間隙至多五。支援本身保持稀疏，沒有先填成整弧。 對 r=z,w，取包含該側全部分量支援與 spoke 的最短區段 I_r，沿這一份 同序 lift 定義長度 ℓ_r。側內間隙計入 ℓ_r；兩側框邊內部不交，所以 \\[ \\ell_z+\\ell_w\\le5.\\tag{1} \\] 這是保留同一環序後的兩個側弧，不是分別選兩個互相不相容的最短 hull。"
+        }
+      ],
+      "limitations": [
+        "The two side arcs belong to one common order/lift; independently minimized incompatible hulls cannot be substituted.",
+        "Actual supports remain sparse; positive spans do not fill attachments into arcs or establish realization."
+      ],
+      "boundary_dependencies": [
+        "External Dvorak degree-list Lemma 7 and Theorem 10: tightness and blockwise-uniform Gallai structure; an external paper theorem, not new local Lean.",
+        "docs/c5_no_spoke_exterior.md: original external-hub K4-free argument; not inventoried here.",
+        "docs/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md section 2: arbitrary-size support and annulus crosscut/order arguments; not inventoried here.",
+        "Basic color equivariance of the same complete relation and planar Jordan separation are retained proof premises."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.source_budget",
+          "kind": "reconstructed",
+          "note": "The nonempty proper q forbidden sets and original side incidences used by the span proof are selected from the source budget/side reduction. This is a curated semantic edge, not a Markdown-link edge."
+        }
+      ]
+    },
+    {
+      "id": "NM.saturated_span",
+      "label": "A saturated binary component has span >=2; hence side span >=m_r+s_r",
+      "role": "shared_lemma",
+      "contract_id": "NM.contract.source",
+      "peer_group": null,
+      "proof_skeleton": "NM.skeleton.original_bridge_fixed_frame_K5",
+      "status": "established",
+      "dependencies": [
+        "NM.source_budget",
+        "NM.ordered_spans"
+      ],
+      "evidence": [
+        "existing paper proof under the stated contract"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 108,
+          "end_line": 139,
+          "quote": "設 C 飽和，反設其 lift 跨度一，S_C={a,b} 為相鄰框點。 [飽和原路徑引理](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md#3-飽和二禁色分量的原路徑-k5) 給兩原 contacts u,v 間的奇數長 bridge 路徑 P=x₀…xℓ；刪去 P 邊後 各原路徑塊 W_j 保留全部旁支，其 rooted residual palette 恰為 K=F_C(q)。 每塊的支援 T⊆{a,b} 必使逐色固定 q(T) 的置換保持 K。 空集及單點的穩定子均不能保持二元集，故每個 W_j 都碰 a,b。 此時 C 所在側必為 C 或 D 型，總原分量數至少三。其他任一分量的 正跨度至多三，故其支援不能也包含於 {a,b}：使用同一框邊會相交， 使用反向補弧則需跨度四。於是另一原分量 C′ 有附件 b_h∉{a,b}。 從 C 所屬 root r 經 C′，必要時先經 zw，取得避開 C、只在終點碰 B 的原路徑 L。沒有新增 root–B 邊。 取 X={b_a}、Y={b_b}、D_B=B−{b_a,b_b}，令 J=P∪{ru,rv}。以下五組 為原圖的 K5 branch sets： \\[ W_0,\\quad W_1,\\quad (V(J)\\setminus\\{x_0,x_1\\})\\cup V(L)\\cup D_B,\\quad X,\\quad Y.\\tag{2} \\] 第三組經 r 連通，P 長度一時仍含 r；五組不交。原 bridge、J 兩個 朝外邊、W₀/W₁ 各至 X/Y 的附件與三框弧切口給全部十對鄰接。 因此平面性迫每個飽和 C 的跨度至少二，且 \\[ \\ell_r\\ge m_r+s_r.\\tag{3} \\] 這抽出了 [D–D](c5_adjacent_degree5_no_mixed_dd.md)及 [C–E](c5_adjacent_degree5_no_mixed_ce.md)的共同局部引理。 它不保證跨度二的飽和分量可實現；較長支援仍可能被固定框弧 K5 排除。"
+        }
+      ],
+      "limitations": [
+        "Span >=2 is necessary and does not show a saturated component with span exactly 2 is realizable.",
+        "Keep the original external path through another component; do not replace it by a new root-to-frame edge."
+      ],
+      "boundary_dependencies": [
+        "docs/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md section 3: same-original odd bridge and full side-branch residual palettes for a saturated binary component; not inventoried here.",
+        "Planarity excludes the explicitly connected/disjoint ten-adjacency original K5 branch sets."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.source_budget",
+          "kind": "reconstructed",
+          "note": "C/D side structure supplies at least three original components and the source saturated pair."
+        },
+        {
+          "dependency_id": "NM.ordered_spans",
+          "kind": "explicit",
+          "note": "The proof uses positive spans and the same noninterleaving frame-edge order to obtain the original external path and total side cost."
+        }
+      ]
+    },
+    {
+      "id": "NM.a_side_span",
+      "label": "A side needs span >=2 from two spokes and singleton source compatibility",
+      "role": "shared_lemma",
+      "contract_id": "NM.contract.source",
+      "peer_group": null,
+      "proof_skeleton": "NM.skeleton.spoke_support_stabilizer_conflict",
+      "status": "established",
+      "dependencies": [
+        "NM.source_budget",
+        "NM.ordered_spans"
+      ],
+      "evidence": [
+        "existing paper proof under the stated contract"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 143,
+          "end_line": 150,
+          "quote": "A 側只有一個 singleton 禁色的 binary 原分量 C，但有兩條不同 spokes。 若 ℓ_r≤1，兩個不同 spoke 落點只能是同一框邊的兩端；C 的正跨度又 迫 S_C 恰為該兩端。因 q proper，兩端異色。singleton F_C(q) 受支援 色穩定子保持，只能是這兩個已見色之一；然而 source minimality 要求 F_C(q) 避開兩條 spoke 的顏色，矛盾。故 A 側 ℓ_r≥2。 這一單位可以由 C 自己較長的跨度或側內間隙供應，不能強稱 C 的跨度 必為二。只計 m+s 而忽略兩 spoke 與原關係的相容性，會漏掉 A–D。"
+        }
+      ],
+      "limitations": [
+        "The extra unit may be a gap in the side or longer component span; this does not assert that the component itself has span >=2."
+      ],
+      "boundary_dependencies": [
+        "Same-complete-relation support-color stabilizer invariance; used here before the later target capacity package and not claimed as a separate full theorem census entry."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.source_budget",
+          "kind": "explicit",
+          "note": "A has two distinct spoke colors and its singleton q F avoids them."
+        },
+        {
+          "dependency_id": "NM.ordered_spans",
+          "kind": "explicit",
+          "note": "The argument uses the positive span of the original binary component in the same side arc."
+        }
+      ]
+    },
+    {
+      "id": "NM.span_budget",
+      "label": "Unified arbitrary-size source inequality m+s+a<=5 and eight side-pair exclusions",
+      "role": "shared_lemma",
+      "contract_id": "NM.contract.source",
+      "peer_group": null,
+      "proof_skeleton": "NM.skeleton.side_lower_bounds_against_total_5",
+      "status": "established",
+      "dependencies": [
+        "NM.ordered_spans",
+        "NM.saturated_span",
+        "NM.a_side_span"
+      ],
+      "evidence": [
+        "existing paper proof under the stated contract"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 154,
+          "end_line": 180,
+          "quote": "令 a_r=1 若 r 為 A 側，否則為零。由 (1)–(3) 及 A 側論證，得到 \\[ \\boxed{\\omega_r=m_r+s_r+a_r,\\qquad \\omega_z+\\omega_w\\le5.}\\tag{4} \\] 等價地，以 m 計全部原分量、s 計全部飽和二禁色分量、a 計兩-spoke roots，**m+s+a≤5**。這是指定圖類的任意大小 source 必要條件。 沒有加入 target 拒絕假設，也沒有由有限表的全稱替代上面的拓撲證明。 | z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。 另得到三個易於重用的 source 結論： - **至少一條 root-spoke：** t_z+t_w≥1，因無 spoke 側的成本至少三。 - **沒有 source 重疊：** D 側不可存在，故兩側 O_r=0、D_r=1。 每側恰一份二接點 singleton 禁色分量承擔唯一容量缺額。 - **至多一個飽和二禁色分量：** 它若存在，只能在 C 側，另一側為 A 或 B。"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 206,
+          "end_line": 211,
+          "quote": "其餘 **136 份 source 排除仍需較一般的固定框弧論證**"
+        }
+      ],
+      "limitations": [
+        "Necessary condition only: the seven side pairs with cost <=5 are not a realizability classification.",
+        "The arithmetic excludes the eight branch identities; it does not make historical within-branch support certificates redundant or quantify their proof replacement cost.",
+        "This source inequality alone does not prove either target extends.",
+        "The original support-level certificate retains 136 exclusions requiring general fixed-frame-arc arguments; this is a different counting unit from the eight side-pair exclusions."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.ordered_spans",
+          "kind": "explicit",
+          "note": "The text derives equation (4) from the common side total bound, saturated component cost and A-side argument."
+        },
+        {
+          "dependency_id": "NM.saturated_span",
+          "kind": "explicit",
+          "note": "The text derives equation (4) from the common side total bound, saturated component cost and A-side argument."
+        },
+        {
+          "dependency_id": "NM.a_side_span",
+          "kind": "explicit",
+          "note": "The text derives equation (4) from the common side total bound, saturated component cost and A-side argument."
+        }
+      ]
+    },
+    {
+      "id": "NM.capacity_stabilizers",
+      "label": "Target capacity/nonempty residuals under nonincrease, and complete-relation support equivariance",
+      "role": "shared_lemma",
+      "contract_id": "NM.contract.source",
+      "peer_group": null,
+      "proof_skeleton": "NM.skeleton_complete_relation_equivariance_and_union_capacity",
+      "status": "established",
+      "dependencies": [
+        "NM.source_budget",
+        "NM.span_budget"
+      ],
+      "evidence": [
+        "existing paper proof under the stated contract"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_no_growth.md",
+          "line": 55,
+          "end_line": 72,
+          "quote": "假設對每份 C 都有 |F_C(p)|≤|F_C(q)|。則每側禁色聯集的大小至多 t_r+Σ|F_C(p)|≤3，所以 E_z(p)、E_w(p) 均非空。 若某側 |E_r(p)|=1，上述兩個不等式都必取等號。於是該側所有 F 都 保持 source 大小，spokes 顏色互異，且各 F 與每個 spoke 的單色禁色 兩兩不交。這是**以 target singleton 為條件推得**的等號。 任何逐色固定 β(S_C) 的置換 π 都將同一原 C 的完整染色雙射到自身， 故 πT_C(β)=T_C(β)，從而 πF_C(β)=F_C(β)。同理，若 π 固定 r 側 全部實際 boundary 附件的顏色及 spokes，則 πE_r(β)=E_r(β)。 這使用完整關係，不使用接點邊際，也沒有改動另一份原分量或外框。 兩個直接推論： - 若支援只見至多兩色，singleton F 的唯一顏色必在已見色中：未見 色至少兩個，交換它與另一未見色會破壞 singleton 不變性。 - 若 r 側完全看不到兩色 a,b，則 E_r 在 (a b) 下不變，故不能恰為 {a} 或 {b}。這不要求 E_r 非空，也不要求 F 為 singleton。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 62,
+          "end_line": 70,
+          "quote": "**證明。** 一接點禁色至多一；source 已為 pair 的二接點分量也不能 增長。有整份支援色置換的 C 精確搬運，故增長 C 必不可搬運。 q 與 p 只在 b2 不同；限制到 S 的色相等關係發生變化，恰當 \\[ 2\\in S,\\qquad S\\cap\\{0,4\\}\\ne\\varnothing.\\tag{2} \\] 否則兩列在 S 上有共同色置換。b2 與 b0、b4 均不相鄰，因此 C 的"
+        }
+      ],
+      "limitations": [
+        "The nonempty target E conclusion requires every component on the relevant side to satisfy cardinality nonincrease.",
+        "Capacity alone permits equal singleton residuals on both roots, so it is not a target extension proof.",
+        "Target singleton conditions yield target equality only conditionally; do not transfer source minimality.",
+        "The equivariance statement uses full original relations and actual support; endpoint marginals cannot replace it."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.source_budget",
+          "kind": "explicit",
+          "note": "The proof starts with q singleton residuals and the sum of source forbidden sizes plus spokes equal to three."
+        },
+        {
+          "dependency_id": "NM.span_budget",
+          "kind": "explicit",
+          "note": "D is excluded, hence q overlap is zero; the target capacity argument uses this consequence."
+        }
+      ]
+    },
+    {
+      "id": "NM.short_side",
+      "label": "Length-2 side singleton options and the source unique-color point must be an endpoint",
+      "role": "shared_lemma",
+      "contract_id": "NM.contract.source",
+      "peer_group": null,
+      "proof_skeleton": "NM.skeleton.short_arc_stabilizer_and_opposite_side_symmetry",
+      "status": "established",
+      "dependencies": [
+        "NM.ordered_spans",
+        "NM.span_budget",
+        "NM.capacity_stabilizers"
+      ],
+      "evidence": [
+        "existing paper proof under the stated contract"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_no_growth.md",
+          "line": 76,
+          "end_line": 107,
+          "quote": "固定上述共同 lift 中長度二的側 r，其三個連續框點記為 x,y,z，y 在中間。取任一使用恰三色的 proper boundary coloring β，第四個 未用色記作 δ。假設該側各 F_C(β) 的大小至多一，且 |E_r(β)|=1。 則 \\[ \\boxed{\\beta(x),\\beta(y),\\beta(z)\\text{ 兩兩不同},\\qquad E_r(\\beta)\\in\\{\\{\\delta\\},\\{\\beta(y)\\}\\}.}\\tag{1} \\] **證明。** 若三個框點只見兩色，每份支援也只見至多兩色；依 §2， 每個非空 singleton F 只能禁已見色。Spokes 同樣只禁這兩色，故聯集 至多兩色，E_r 至少二色，矛盾。因此短弧呈三色。 若沒有分量禁 δ，全部禁色皆在這三個框色中；E_r singleton 迫三色 全被禁，所以 E_r={δ}。 若某 C 禁 δ，支援穩定子迫 S_C 見到另外三色，故 S_C={x,y,z}， 它的 hull 占滿短弧。每份其它原分量需正跨度，因而不可能存在； 該側只能為 A，有兩條不同 spokes。**共同單位次序禁止任何 spoke 落在 C 的 hull 內部 y**，所以這兩條 spokes 只能落在 x,z。它們禁 β(x)、β(z)，C 禁 δ，恰剩 β(y)。證畢。 不能把結論強化成 E_r={δ}：A 側可由完整支援的 C 禁 δ、兩端 spokes 禁端點色，留下中間色。AC80 的 z 側就是必要資料中的控制：短弧 (b4,b0,b1)，q 色為 (2,0,1)，Cz 禁 3，spokes 在 b4,b1，剩 0。 這仍不是 AC80 的來源實現證書。 共同次序也不可省：抽象地令短弧色為 012、C 支援三點且禁 3，將 spokes 放在位置 0、1，會剩端點色 2，違反 (1)。此配置讓 spoke 穿入原分量 hull，沒有符合前提的共同同序 lift；新 checker 保留此 負控制，不將它當 disk 反例。"
+        },
+        {
+          "path": "docs/c5_no_mixed_no_growth.md",
+          "line": 111,
+          "end_line": 123,
+          "quote": "任一 proper 三色 C5 的色類大小為 2,2,1，記唯一單現色所在框點為 s(β)。一段長度二的框弧呈三色，**恰當它包含 s(β)**：移除單現點後 的四點路徑以另外兩色交替；包含單現點時，其餘兩點異色。 取任一短側 r（由 2≤ℓ_z,ℓ_w、ℓ_z+ℓ_w≤5 保證存在），中間框點為 y。 它的 source 禁色都為 singleton，因此 (1) 適用於 E_r(q)。短弧必呈 三色，且 E_r(q) 是 {3} 或 {q(y)}。 **Source 單現點不能在短弧中間。** 若 y=s(q)，另一側的全部 actual supports 與 spokes 都不含 y：在同一 lift 中 y 是短側區段的內點， 另一側的正長度區段若含 y，必與短側共用框邊。於是另一側看不到 q(y) 與 3，其 E 在交換這兩色下不變；不可能等於 E_r(q) 的任何一個 選項。這與 source E_z(q)=E_w(q) 矛盾。"
+        }
+      ],
+      "limitations": [
+        "For a proper three-color row beta, assuming all side F sizes <=1 and singleton E, E may be either the unused color or the arc middle color.",
+        "Do not strengthen E to the unused color only; AC80 and the spoke-inside-hull negative control delimit this lemma.",
+        "This source endpoint conclusion does not require the target nonincrease hypothesis."
+      ],
+      "boundary_dependencies": [
+        "Elementary proper three-color C5 color-class structure 2,2,1 and frame-arc incidence, stated in docs/c5_no_mixed_no_growth.md section 4."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.ordered_spans",
+          "kind": "explicit",
+          "note": "Common unit order forbids a spoke entering a component hull and keeps the other side away from the interior frame point."
+        },
+        {
+          "dependency_id": "NM.span_budget",
+          "kind": "explicit",
+          "note": "A length-2 side is A or B; both sides have length >=2 and their sum <=5."
+        },
+        {
+          "dependency_id": "NM.capacity_stabilizers",
+          "kind": "explicit",
+          "note": "Support stabilizers determine singleton colors and opposite-side invariance under a swap of unseen colors."
+        }
+      ]
+    },
+    {
+      "id": "NM.no_growth",
+      "label": "No-growth target theorem: the specified target has an off-diagonal root pair",
+      "role": "shared_lemma",
+      "contract_id": "NM.contract.no_growth",
+      "peer_group": null,
+      "proof_skeleton": "NM.skeleton.capacity_short_arc_unique_point_swap",
+      "status": "established",
+      "dependencies": [
+        "NM.capacity_stabilizers",
+        "NM.short_side"
+      ],
+      "evidence": [
+        "existing paper proof under the stated contract"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_no_growth.md",
+          "line": 125,
+          "end_line": 150,
+          "quote": "故 s(q) 是短弧的一個端點。現在固定 p∈{p₁,p₂}，並假設所有 F 都 不增長。q 的單現點為 b4；p₁ 的為 b3、p₂ 的為 b0，皆與 b4 相鄰。 兩側 E(p) 已由容量保證非空。 - 若短弧在 p 下不是三色，(1) 的逆否命題給 |E_r(p)|≥2；與另一側 任一可用色即可挑出異色 pair。 - 若短弧在 p 下呈三色，它同時包含 s(q)、s(p)。這兩點相鄰、互異， 而三點弧的兩端在 C5 中不相鄰，所以其中一點必為中點。s(q) 已 排除在中間，故 **s(p)=y**。若 |E_r(p)|≥2 仍直接延拓；否則 (1) 給 E_r(p)={3} 或 {p(y)}。另一側看不到 p(y)、3，E_{r′}(p) 對交換 兩色不變，不能是相同 singleton。非空的兩個 E 因此仍有異色 pair。 這就證明 \\[ \\boxed{\\bigl(\\forall C,\\ |F_C(p)|\\le|F_C(q)|\\bigr) \\Longrightarrow (E_z(p)\\times E_w(p))\\setminus\\Delta\\ne\\varnothing.}\\tag{2} \\] 證明不用目標分量的完整搬運是否可行，也不固定一份 source 染色來 repair；只用原完整關係的置換不變性與共同幾何。換色在此用來證明 集合不變性，並非直接對整張圖執行 Kempe 交換。 只要另一 proper 三色 target 的單現點與 s(q) 相鄰，同一論證成立； 不能刪去「相鄰、互異」前提，例如 p=q 本來就拒絕且完全沒有增長。 本報告仍只將 (2) 接回指定 p₁、p₂。"
+        }
+      ],
+      "limitations": [
+        "A conditional target theorem; growth cases require the separate completion proof.",
+        "Adjacent distinct source/target single-occurrence points are essential: p=q rejects while showing no growth.",
+        "Existence proof uses relation invariance and common geometry, not a prescribed-coloring repair algorithm."
+      ],
+      "boundary_dependencies": [
+        "For the named rows, s(q)=b4, s(p1)=b3 and s(p2)=b0: adjacent distinct single-occurrence points on the same C5 frame."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.capacity_stabilizers",
+          "kind": "explicit",
+          "note": "The first step makes each target E nonempty under the nonincrease assumption."
+        },
+        {
+          "dependency_id": "NM.short_side",
+          "kind": "explicit",
+          "note": "A short side has q unique point at an endpoint; the target either has at least two residual colors or its unique point in the middle, forcing opposite-side swap invariance."
+        }
+      ]
+    },
+    {
+      "id": "NM.growth_positions",
+      "label": "Every growing binary singleton has an A/B side in oriented arc 234, 1234 or 4012 with specified external paths",
+      "role": "shared_lemma",
+      "contract_id": "NM.contract.growth",
+      "peer_group": null,
+      "proof_skeleton": "NM.skeleton_support_nontransportability_common_arc_locations",
+      "status": "established",
+      "dependencies": [
+        "NM.ordered_spans",
+        "NM.span_budget",
+        "NM.capacity_stabilizers",
+        "NM.short_side"
+      ],
+      "evidence": [
+        "existing paper proof under the stated contract"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 53,
+          "end_line": 79,
+          "quote": "**位置引理。** 若 |F_C(p)|>|F_C(q)|，則 C 是二接點、F_C(q)={d}、 F_C(p)=D 為 pair，C 所在側只能是 A 或 B，且共同側弧只能是 \\[ I_r=(2,3,4),\\qquad(1,2,3,4),\\qquad(4,0,1,2).\\tag{1} \\] 數字表示具名框點，保留弧方向；例如 4012 的長度是三，不能改選 234。 **證明。** 一接點禁色至多一；source 已為 pair 的二接點分量也不能 增長。有整份支援色置換的 C 精確搬運，故增長 C 必不可搬運。 q 與 p 只在 b2 不同；限制到 S 的色相等關係發生變化，恰當 \\[ 2\\in S,\\qquad S\\cap\\{0,4\\}\\ne\\varnothing.\\tag{2} \\] 否則兩列在 S 上有共同色置換。b2 與 b0、b4 均不相鄰，因此 C 的 同序 hull 至少長二。若它在 C 側，另一飽和分量至少長二；若在 E 側， 另外兩原分量各至少長一，皆迫側跨度至少四，與另一側至少二矛盾。 所以只剩 A/B。 [無增長報告 §3–4](c5_no_mixed_no_growth.md#4-三色-c5-的唯一單現點與無增長定理) 對 source 的短側結論不需 target 無增長假設：每個長度二的 source 側弧都以單現點 b4 為端點。因此短側只可能 234 或 401。 若增長側短，(2) 排除 401；若增長側長三，另一側必短且共同框邊 內部不交，故它恰是另一短側的補弧，即 1234 或 4012。證畢。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 83,
+          "end_line": 108,
+          "quote": "**(a) 長度二的 source 側實際碰到弧上三點。** 該側為 A/B，各分量 source 禁色皆 singleton。若全部 actual supports 加 spokes 只見兩色， 支援穩定子迫每個 singleton 禁色在這兩色中，不能留下 singleton E。 短弧三點三色，故三點均有實際附件或 spoke。從另一 root 經 zw 可到達 每一點；取路徑首次碰 B 處，取得避開增長 C 的原外部路徑。 所以 1234 情形有外路落 b0，4012 情形有外路落 b3。 **(b) 在短側 234，必 S=234、d∈{1,3}，並有外路落 {b0,b1}。** 跨度至少二的 C 占滿短側，故該側是 A、spokes 在 b2,b4；d 避開 q 色 0,2。singleton 穩定子迫 S 還包含 b3，所以 S=234。 若所有外部附件都只落 b2,b4，另一側若有兩個以上原分量，它們每份 都須見至少兩個 q 色，只能同用補弧 4012，違反同序 hull 邊內部不交。 若另一側是 A，兩 spokes 必在 b2,b4，而唯一 C 的 singleton 禁色只能 是支援所見的 0 或 2，違反 source 無重疊。因此必有外路落 b0 或 b1。 這個外路可經另一原分量，不能將它替換成新 root–B 邊。 **(c) 在長側 4012，必 d∈{1,3}；在 1234，若 1∈S，則是 A、 spokes 在 b1,b4、d∈{0,3}。** 對 4012，若 C hull 長三，只能 A， spokes 在 b4,b2，直接迫 d∈{1,3}。若 hull 長二，(2) 迫 S⊆012； source 至少見兩色再迫 S=012。A 的其餘 spokes 只可落 4/0/2； B 的另一原分量支援為 40，spoke 也只可落 4/0/2。這些禁色皆在 {0,2}，而 d∈{0,1}；source 三個禁色互異迫 d=1。 對 1234，(2) 迫 2,4∈S；再有 1∈S 就占滿三邊，只能 A，spokes 在兩端 1,4，其 q 色 1,2 迫 d∈{0,3}。 這些推論只從共同單位次序、正跨度及 source 容量推出；沒有枚舉支援表。"
+        }
+      ],
+      "limitations": [
+        "Frame-point sequences retain direction: 4012 is length three and cannot be independently replaced by 234.",
+        "Position/source-color consequences are under the normalized whole-row p2 proof; original p1 is recovered with the inverse global bijection.",
+        "These are necessary growth positions and original-path consequences, not source-realization witnesses."
+      ],
+      "boundary_dependencies": [
+        "The binary/unary contact cardinality bound |F_C(beta)| <= number of named contacts comes from the retained nonempty complete relation.",
+        "The p1 whole-row reflection/color transport and inverse recovery are recorded in docs/c5_no_mixed_growth_completion.md lines 43-49."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.ordered_spans",
+          "kind": "explicit",
+          "note": "Actual support, positive component spans and one common oriented lift restrict the side arc and provide original external routes."
+        },
+        {
+          "dependency_id": "NM.span_budget",
+          "kind": "explicit",
+          "note": "Side total <=5 excludes a growing singleton on C/E and forces the complementary short side."
+        },
+        {
+          "dependency_id": "NM.capacity_stabilizers",
+          "kind": "explicit",
+          "note": "Exact support transport prevents growth; nontransportability requires b2 and a support point b0/b4."
+        },
+        {
+          "dependency_id": "NM.short_side",
+          "kind": "explicit",
+          "note": "Every length-2 source side has b4 as an endpoint, restricting short arcs to 234/401."
+        }
+      ]
+    },
+    {
+      "id": "NM.harmful_growth_exclusion",
+      "label": "Common fixed-frame rules exclude every conserving growth and the nonconserving harmful pair {0,3}",
+      "role": "shared_lemma",
+      "contract_id": "NM.contract.growth",
+      "peer_group": null,
+      "proof_skeleton": "NM.skeleton.growth_arc_partition_K5_or_full_path_swap",
+      "status": "established",
+      "dependencies": [
+        "NM.growth_positions",
+        "NM.capacity_stabilizers"
+      ],
+      "evidence": [
+        "existing paper proof under the stated contract"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 112,
+          "end_line": 139,
+          "quote": "固定增長 C 與原奇數 bridge 路徑 P=x₀…xℓ。刪去 P 邊後的 W_j 保留全部旁支，實際支援 T_j⊆S。沿用[共同局部規則 §3](c5_no_mixed_local_screen.md#3-同一局部規則的兩個分支)： 守恆 d 適用每條奇數 bridge 的同一 source residual {d,β}；非守恆 d 只對兩個**原端點**使用 {d,β₀}、{d,βℓ}，不假設兩 β 相同。 Target 在這些原路徑位置的 rooted residual 為 D；它不是完整 F 的邊際。 由 (2)，兩個移動色 0,2 都不守恆，固定色集恰為 K={1,3}。 任何相容 β 都滿足 \\[ \\{d,\\beta\\}\\cap K=D\\cap K.\\tag{3} \\] 對使用色 0,1,2 的一列 s，二元 residual A 被 s(T) 的逐色穩定子保持， 恰當 s(T) 包含 A（3∉A），或包含 U∖A（3∈A）。因未見色可任意置換， 若未見色同時跨 A 及其補集就不保持 A；反之全部未見色落同一側即可。 以下「T 必碰 X、Y」都由這個兩色條件直接推出。 若每個可能 T 都碰同一 X、Y，B=X⊔Y⊔D_B 為三段非空連通框弧， 且已取得落在 D_B 的同一原外路 L，則沿用固定框弧 K5：守恆分支用 相鄰原 W_j、W_{j+1} 與剩餘路徑；非守恆分支用 \\[ \\bigcup_{j<\\ell}W_j,\\quad W_\\ell,\\quad V(L)\\cup D_B,\\quad X,\\quad Y. \\] 原 bridges、兩條 contact 邊、實際附件與框弧切口給十鄰接，branch sets 不交且連通。任意長度及旁支由前層紙面引理承擔，非有限 skeleton 外推。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 178,
+          "end_line": 201,
+          "quote": "**剩唯一 β 的收尾。** 上述配方在每條奇數原 bridge 上使用同一可行 β 集。若全空，原路徑不存在；若只剩 b，全部奇數 bridge 用 {d,b}、 偶數 bridge 用 {d}。沿用[整條路徑 palette 交換](c5_adjacent_degree5_no_mixed_t2_path_palettes.md#3-唯一剩餘-β-迫使第二個-source-禁色)， 保留所有旁支 palettes，交換原 P 邊的 d/b，得到同一原 C 在 root=b 時的完整拒絕證書，推出 b∈F_C(q)，矛盾於 F_C(q)={d}。 這一步使用 Gallai 充分方向；不是從某個端點 residual 猜完整 F。 故**所有守恆 singleton→pair 增長均被共同規則排除**。 ### 3.2 非守恆 d：有害 pair 的原端點聯集被同一框弧排除 由 §2，d∉{1,3} 只能在 I_r=1234，d∈{0,2}。支援不含 b0，target 只見 1,2，故 D∈{{1,2},{0,3}}。先取 D={0,3}。 (3) 迫兩個原端點各自的 β 都等於 3；這是由固定色條件推得，沒有 先假設非守恆路徑的內點 palette 交替。 - d=0 時，source residual {0,3} 迫每個可能 T 碰 b4 與 {b1,b3}。 取 X={4}、Y={1,2,3}、D_B={0}。 - d=2 時，§2(c) 排除 1∈S，故 S⊆234。Source residual {2,3} 迫 T 碰 b2,b3。取 X={2}、Y={3}、D_B={4,0,1}。 兩者都使用 §2(a) 的落 b0 原外路；固定分割涵蓋**整個原端點支援聯集**。 原端點 K5 排除 D={0,3}，包括 ℓ=1，不依賴整張圖是否拒絕 target。"
+        }
+      ],
+      "limitations": [
+        "Conserving colors use each odd original bridge and may finish by a whole-path palette swap; nonconserving colors use only original endpoints and their full support union.",
+        "Do not assume equal endpoint beta colors or alternating palettes at nonconserving interior vertices.",
+        "One frame partition and the same original outer path must cover the entire relevant support family; do not independently choose partitions per candidate.",
+        "Arbitrary path length/side branches are handled by cited paper lemmas, not extrapolated from finite skeleton lengths."
+      ],
+      "boundary_dependencies": [
+        "docs/c5_no_mixed_local_screen.md section 3: conserving odd-bridge rule versus nonconserving original-endpoint support-union rule; not independently inventoried here.",
+        "docs/c5_single_spoke_branch_palettes.md section 2: rooted palette uniqueness and fixed-color induction; not inventoried here.",
+        "docs/c5_adjacent_degree5_no_mixed_t2_path_palettes.md section 3: preserving all side branches, whole-original-path palette swap implies a second q forbidden color; not independently inventoried here.",
+        "docs/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md section 1: original endpoint tightness; not independently inventoried here.",
+        "External Gallai sufficient direction and the original K5 branch-set/planarity arguments remain proof boundaries."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.growth_positions",
+          "kind": "explicit",
+          "note": "The three named common arcs, source color restrictions and original outer paths determine the same frame partitions for the whole relevant support family."
+        },
+        {
+          "dependency_id": "NM.capacity_stabilizers",
+          "kind": "reconstructed",
+          "note": "The pair-support stabilizer test is the same full-relation color-equivariance ingredient packaged in this curated claim; growth_completion restates the pair criterion explicitly at lines 125-128."
+        }
+      ]
+    },
+    {
+      "id": "NM.harmless_growth",
+      "label": "The remaining normalized growth D={1,2} misses R={0,3} and yields root colors 0 and 3",
+      "role": "shared_lemma",
+      "contract_id": "NM.contract.growth",
+      "peer_group": null,
+      "proof_skeleton": "NM.skeleton.exact_other_relation_transport_pair_disjoint_R",
+      "status": "established",
+      "dependencies": [
+        "NM.growth_positions",
+        "NM.capacity_stabilizers",
+        "NM.harmful_growth_exclusion"
+      ],
+      "evidence": [
+        "existing paper proof under the stated contract"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 205,
+          "end_line": 230,
+          "quote": "只剩 I_r=1234、d∈{0,2}、D={1,2}。另一側是短弧 401，p=q 在 這三點完全相同，所以該側所有完整關係精確不變。 若增長側為 A，當 C 占滿 1234 時，spokes 在 1,4，直接禁 target 色 1,2，source d 只能是 0；若 C hull 為 234，spokes 可落 1/2/4。 由 source 無重疊，d=0 時兩 spokes 禁 1,2；d=2 時兩 spokes 禁 0,1。 改 b2 的 0 為 2 後，兩種情形皆禁 target 1,2。 若增長側為 B，C 必占 234，另一單接點原分量 C′ 支援恰為 12， spoke 可落 1/2/4。另一側短弧 401 的 source E 只能是 {3} 或 {0}。 本側 C 禁 d∈{0,2}，C′ 的 singleton 只能在 q(12)={0,1} 中，spoke 也不能禁 3，所以共同 source E 必為 {3}。另外兩個禁色恰是 {0,1,2}∖{d}。若 d=0，它們是 1,2；若 d=2，它們是 0,1。 C′ 在支援 12 上精確搬運 0↦2、1↦1，spoke 同樣按 p 取色，故在 target 兩者恰禁 1,2。 在這些 A/B 情形，除 C 外每份原分量都精確搬運；另一側 source E={3} （A 側亦由三個 source 禁色為 0,1,2 得到），target 仍為 {3}。因此 \\[ R_r(p)=\\{0,3\\},\\qquad E_{r'}(p)=\\{3\\},\\qquad D\\cap R_r(p)=\\varnothing.\\tag{4} \\] 於是 E_r={0,3}，可取 r=0、r′=3。這證明剩下的增長全都無害； 不聲稱這些局部 pair 可實現，也無須再判定它們是否被較強規則排除。"
+        }
+      ],
+      "limitations": [
+        "The remaining growth is not a universal prohibition of singleton-to-pair growth.",
+        "D misses R, so stronger local exclusion or realizability of the surviving candidate is unnecessary for target extension.",
+        "R is the root residual after all other original components/spokes; it is not the full original component F or an endpoint marginal."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.growth_positions",
+          "kind": "explicit",
+          "note": "For the remaining arc 1234 the opposite short arc is 401 and its relations are unchanged; A/B source constraints determine the other forbidden colors."
+        },
+        {
+          "dependency_id": "NM.capacity_stabilizers",
+          "kind": "explicit",
+          "note": "Exact whole-support color transport of every other original relation gives target residual colors."
+        },
+        {
+          "dependency_id": "NM.harmful_growth_exclusion",
+          "kind": "explicit",
+          "note": "Section 4 begins with the singleton-to-pair cases remaining after all conserving and harmful nonconserving exclusions."
+        }
+      ]
+    },
+    {
+      "id": "NM.separation",
+      "label": "Consolidated no-mixed theorem: the same original arbitrary-size q-core accepts both specified rows p1 and p2",
+      "role": "aggregate_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": null,
+      "proof_skeleton": "NM.skeleton.no_growth_or_exclude_harmful_or_harmless_extension",
+      "status": "established",
+      "dependencies": [
+        "NM.no_growth",
+        "NM.harmful_growth_exclusion",
+        "NM.harmless_growth"
+      ],
+      "evidence": [
+        "existing paper proof under the stated contract"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 232,
+          "end_line": 244,
+          "quote": "現在對真實 F tuple：若沒有增長，直接用[無增長定理](c5_no_mixed_no_growth.md) 取得異色 root pair；若有增長，§3 排除所有守恆及非守恆的 {0,3}， 剩下者由 (4) 直接延拓，且其餘分量皆已精確搬運。因此 \\[ \\boxed{(E_z(p_i)\\times E_w(p_i))\\setminus\\Delta\\ne\\varnothing \\quad(i=1,2).}\\tag{5} \\] (5) 在 §1 任意大小圖類及所沿用的 source／原路徑引理下成立。 **共同局部規則對影響 R 的增長之完備性、及指定雙列分離，均已免查 必要支援表證成。** 這不是「所有 singleton 永不增長」，也沒有把 必要支援存在等同來源圖存在。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 43,
+          "end_line": 49,
+          "quote": "以下先證 p=p₂，只在 b2 把色 0 改成 2。p₁ 由明示的整列雙射還原： 框點反射 ρ=(3,2,1,0,4)，source 色置換 σ_q=(1,0,2,3)，target 色置換 σ_p=(1,2,0,3)。逐點有 σ_q(q(ρ(i)))=q(i)、σ_p(p₁(ρ(i)))=p₂(i)。 每列的**所有**原分量完整關係、禁色、root 色一起搬運；不為不同分量 選不同置換。這是對整列重新命名，不把 source 禁色硬傳到 target。 Source／target 的兩個置換與逆像 root pair 均記入證書。固定色條件在 正規化後的共同字面色框重新計算，最後由 σ_p⁻¹ 還原原 p₁。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 298,
+          "end_line": 302,
+          "quote": "本輪完成的是紙面存在性分離及其有限控制。未新增 Lean theorem 或 `native_decide`；`lake build` 不表示新幾何已形式化。外部 degree-list／ Gallai 及前層 annulus、原路徑引理沿用既有證明，未重讀外部文獻。 未給從指定 source 染色出發且保留指定外部染色的建構式 repair；必要 支援實現性、完整 Σ、較大 mixed 原分量、一般出口及 `K∞=K≤5` 仍開放。"
+        }
+      ],
+      "limitations": [
+        "This is a paper existence theorem with finite controls under exactly the retained source/geometry and external theorem premises.",
+        "It does not give a prescribed-coloring repair algorithm, necessary support realization, full Sigma, general exit or new Lean proof.",
+        "Specializing this common theorem to seven side-pair identities measures branch coverage, not proof cost or seven independent new theorem proofs."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.no_growth",
+          "kind": "explicit",
+          "note": "The concluding proof splits the real complete F tuple into no growth, excluded harmful growth, or harmless remaining growth, then restores p1 by the whole-row inverse bijection."
+        },
+        {
+          "dependency_id": "NM.harmful_growth_exclusion",
+          "kind": "explicit",
+          "note": "The concluding proof splits the real complete F tuple into no growth, excluded harmful growth, or harmless remaining growth, then restores p1 by the whole-row inverse bijection."
+        },
+        {
+          "dependency_id": "NM.harmless_growth",
+          "kind": "explicit",
+          "note": "The concluding proof splits the real complete F tuple into no growth, excluded harmful growth, or harmless remaining growth, then restores p1 by the whole-row inverse bijection."
+        }
+      ]
+    },
+    {
+      "id": "NM.branch.AA",
+      "label": "AA: every source satisfying this side pair extends to both p1 and p2 (span lower sum 4<=5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.no_growth_or_exclude_harmful_or_harmless_extension",
+      "status": "established",
+      "dependencies": [
+        "NM.separation"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 232,
+          "end_line": 244,
+          "quote": "現在對真實 F tuple：若沒有增長，直接用[無增長定理](c5_no_mixed_no_growth.md) 取得異色 root pair；若有增長，§3 排除所有守恆及非守恆的 {0,3}， 剩下者由 (4) 直接延拓，且其餘分量皆已精確搬運。因此 \\[ \\boxed{(E_z(p_i)\\times E_w(p_i))\\setminus\\Delta\\ne\\varnothing \\quad(i=1,2).}\\tag{5} \\] (5) 在 §1 任意大小圖類及所沿用的 source／原路徑引理下成立。 **共同局部規則對影響 R 的增長之完備性、及指定雙列分離，均已免查 必要支援表證成。** 這不是「所有 singleton 永不增長」，也沒有把 必要支援存在等同來源圖存在。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.separation",
+          "kind": "reconstructed",
+          "note": "Specialize the current consolidated same-original theorem to the AA raw side identity; cost <=5 retains a necessary entry but does not itself prove extension or existence."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "A",
+          "A"
+        ],
+        "side_lower_bounds": [
+          2,
+          2
+        ],
+        "lower_bound_sum": 4,
+        "total_budget": 5,
+        "classification": "specified_two_row_separation"
+      }
+    },
+    {
+      "id": "NM.branch.AB",
+      "label": "AB: every source satisfying this side pair extends to both p1 and p2 (span lower sum 4<=5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.no_growth_or_exclude_harmful_or_harmless_extension",
+      "status": "established",
+      "dependencies": [
+        "NM.separation"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 232,
+          "end_line": 244,
+          "quote": "現在對真實 F tuple：若沒有增長，直接用[無增長定理](c5_no_mixed_no_growth.md) 取得異色 root pair；若有增長，§3 排除所有守恆及非守恆的 {0,3}， 剩下者由 (4) 直接延拓，且其餘分量皆已精確搬運。因此 \\[ \\boxed{(E_z(p_i)\\times E_w(p_i))\\setminus\\Delta\\ne\\varnothing \\quad(i=1,2).}\\tag{5} \\] (5) 在 §1 任意大小圖類及所沿用的 source／原路徑引理下成立。 **共同局部規則對影響 R 的增長之完備性、及指定雙列分離，均已免查 必要支援表證成。** 這不是「所有 singleton 永不增長」，也沒有把 必要支援存在等同來源圖存在。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.separation",
+          "kind": "reconstructed",
+          "note": "Specialize the current consolidated same-original theorem to the AB raw side identity; cost <=5 retains a necessary entry but does not itself prove extension or existence."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "A",
+          "B"
+        ],
+        "side_lower_bounds": [
+          2,
+          2
+        ],
+        "lower_bound_sum": 4,
+        "total_budget": 5,
+        "classification": "specified_two_row_separation"
+      }
+    },
+    {
+      "id": "NM.branch.AC",
+      "label": "AC: every source satisfying this side pair extends to both p1 and p2 (span lower sum 5<=5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.no_growth_or_exclude_harmful_or_harmless_extension",
+      "status": "established",
+      "dependencies": [
+        "NM.separation"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 232,
+          "end_line": 244,
+          "quote": "現在對真實 F tuple：若沒有增長，直接用[無增長定理](c5_no_mixed_no_growth.md) 取得異色 root pair；若有增長，§3 排除所有守恆及非守恆的 {0,3}， 剩下者由 (4) 直接延拓，且其餘分量皆已精確搬運。因此 \\[ \\boxed{(E_z(p_i)\\times E_w(p_i))\\setminus\\Delta\\ne\\varnothing \\quad(i=1,2).}\\tag{5} \\] (5) 在 §1 任意大小圖類及所沿用的 source／原路徑引理下成立。 **共同局部規則對影響 R 的增長之完備性、及指定雙列分離，均已免查 必要支援表證成。** 這不是「所有 singleton 永不增長」，也沒有把 必要支援存在等同來源圖存在。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.separation",
+          "kind": "reconstructed",
+          "note": "Specialize the current consolidated same-original theorem to the AC raw side identity; cost <=5 retains a necessary entry but does not itself prove extension or existence."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "A",
+          "C"
+        ],
+        "side_lower_bounds": [
+          2,
+          3
+        ],
+        "lower_bound_sum": 5,
+        "total_budget": 5,
+        "classification": "specified_two_row_separation"
+      }
+    },
+    {
+      "id": "NM.branch.AD",
+      "label": "AD: no source with this side pair (span lower sum 6>5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.side_lower_bounds_against_total_5",
+      "status": "established",
+      "dependencies": [
+        "NM.span_budget"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.span_budget",
+          "kind": "explicit",
+          "note": "Use only the table side lower costs for AD and the total budget <=5. The branch conclusion is source exclusion."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "A",
+          "D"
+        ],
+        "side_lower_bounds": [
+          2,
+          4
+        ],
+        "lower_bound_sum": 6,
+        "total_budget": 5,
+        "classification": "source_excluded"
+      }
+    },
+    {
+      "id": "NM.branch.AE",
+      "label": "AE: every source satisfying this side pair extends to both p1 and p2 (span lower sum 5<=5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.no_growth_or_exclude_harmful_or_harmless_extension",
+      "status": "established",
+      "dependencies": [
+        "NM.separation"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 232,
+          "end_line": 244,
+          "quote": "現在對真實 F tuple：若沒有增長，直接用[無增長定理](c5_no_mixed_no_growth.md) 取得異色 root pair；若有增長，§3 排除所有守恆及非守恆的 {0,3}， 剩下者由 (4) 直接延拓，且其餘分量皆已精確搬運。因此 \\[ \\boxed{(E_z(p_i)\\times E_w(p_i))\\setminus\\Delta\\ne\\varnothing \\quad(i=1,2).}\\tag{5} \\] (5) 在 §1 任意大小圖類及所沿用的 source／原路徑引理下成立。 **共同局部規則對影響 R 的增長之完備性、及指定雙列分離，均已免查 必要支援表證成。** 這不是「所有 singleton 永不增長」，也沒有把 必要支援存在等同來源圖存在。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.separation",
+          "kind": "reconstructed",
+          "note": "Specialize the current consolidated same-original theorem to the AE raw side identity; cost <=5 retains a necessary entry but does not itself prove extension or existence."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "A",
+          "E"
+        ],
+        "side_lower_bounds": [
+          2,
+          3
+        ],
+        "lower_bound_sum": 5,
+        "total_budget": 5,
+        "classification": "specified_two_row_separation"
+      }
+    },
+    {
+      "id": "NM.branch.BB",
+      "label": "BB: every source satisfying this side pair extends to both p1 and p2 (span lower sum 4<=5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.no_growth_or_exclude_harmful_or_harmless_extension",
+      "status": "established",
+      "dependencies": [
+        "NM.separation"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 232,
+          "end_line": 244,
+          "quote": "現在對真實 F tuple：若沒有增長，直接用[無增長定理](c5_no_mixed_no_growth.md) 取得異色 root pair；若有增長，§3 排除所有守恆及非守恆的 {0,3}， 剩下者由 (4) 直接延拓，且其餘分量皆已精確搬運。因此 \\[ \\boxed{(E_z(p_i)\\times E_w(p_i))\\setminus\\Delta\\ne\\varnothing \\quad(i=1,2).}\\tag{5} \\] (5) 在 §1 任意大小圖類及所沿用的 source／原路徑引理下成立。 **共同局部規則對影響 R 的增長之完備性、及指定雙列分離，均已免查 必要支援表證成。** 這不是「所有 singleton 永不增長」，也沒有把 必要支援存在等同來源圖存在。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.separation",
+          "kind": "reconstructed",
+          "note": "Specialize the current consolidated same-original theorem to the BB raw side identity; cost <=5 retains a necessary entry but does not itself prove extension or existence."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "B",
+          "B"
+        ],
+        "side_lower_bounds": [
+          2,
+          2
+        ],
+        "lower_bound_sum": 4,
+        "total_budget": 5,
+        "classification": "specified_two_row_separation"
+      }
+    },
+    {
+      "id": "NM.branch.BC",
+      "label": "BC: every source satisfying this side pair extends to both p1 and p2 (span lower sum 5<=5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.no_growth_or_exclude_harmful_or_harmless_extension",
+      "status": "established",
+      "dependencies": [
+        "NM.separation"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 232,
+          "end_line": 244,
+          "quote": "現在對真實 F tuple：若沒有增長，直接用[無增長定理](c5_no_mixed_no_growth.md) 取得異色 root pair；若有增長，§3 排除所有守恆及非守恆的 {0,3}， 剩下者由 (4) 直接延拓，且其餘分量皆已精確搬運。因此 \\[ \\boxed{(E_z(p_i)\\times E_w(p_i))\\setminus\\Delta\\ne\\varnothing \\quad(i=1,2).}\\tag{5} \\] (5) 在 §1 任意大小圖類及所沿用的 source／原路徑引理下成立。 **共同局部規則對影響 R 的增長之完備性、及指定雙列分離，均已免查 必要支援表證成。** 這不是「所有 singleton 永不增長」，也沒有把 必要支援存在等同來源圖存在。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.separation",
+          "kind": "reconstructed",
+          "note": "Specialize the current consolidated same-original theorem to the BC raw side identity; cost <=5 retains a necessary entry but does not itself prove extension or existence."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "B",
+          "C"
+        ],
+        "side_lower_bounds": [
+          2,
+          3
+        ],
+        "lower_bound_sum": 5,
+        "total_budget": 5,
+        "classification": "specified_two_row_separation"
+      }
+    },
+    {
+      "id": "NM.branch.BD",
+      "label": "BD: no source with this side pair (span lower sum 6>5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.side_lower_bounds_against_total_5",
+      "status": "established",
+      "dependencies": [
+        "NM.span_budget"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.span_budget",
+          "kind": "explicit",
+          "note": "Use only the table side lower costs for BD and the total budget <=5. The branch conclusion is source exclusion."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "B",
+          "D"
+        ],
+        "side_lower_bounds": [
+          2,
+          4
+        ],
+        "lower_bound_sum": 6,
+        "total_budget": 5,
+        "classification": "source_excluded"
+      }
+    },
+    {
+      "id": "NM.branch.BE",
+      "label": "BE: every source satisfying this side pair extends to both p1 and p2 (span lower sum 5<=5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.no_growth_or_exclude_harmful_or_harmless_extension",
+      "status": "established",
+      "dependencies": [
+        "NM.separation"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        },
+        {
+          "path": "docs/c5_no_mixed_growth_completion.md",
+          "line": 232,
+          "end_line": 244,
+          "quote": "現在對真實 F tuple：若沒有增長，直接用[無增長定理](c5_no_mixed_no_growth.md) 取得異色 root pair；若有增長，§3 排除所有守恆及非守恆的 {0,3}， 剩下者由 (4) 直接延拓，且其餘分量皆已精確搬運。因此 \\[ \\boxed{(E_z(p_i)\\times E_w(p_i))\\setminus\\Delta\\ne\\varnothing \\quad(i=1,2).}\\tag{5} \\] (5) 在 §1 任意大小圖類及所沿用的 source／原路徑引理下成立。 **共同局部規則對影響 R 的增長之完備性、及指定雙列分離，均已免查 必要支援表證成。** 這不是「所有 singleton 永不增長」，也沒有把 必要支援存在等同來源圖存在。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.separation",
+          "kind": "reconstructed",
+          "note": "Specialize the current consolidated same-original theorem to the BE raw side identity; cost <=5 retains a necessary entry but does not itself prove extension or existence."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "B",
+          "E"
+        ],
+        "side_lower_bounds": [
+          2,
+          3
+        ],
+        "lower_bound_sum": 5,
+        "total_budget": 5,
+        "classification": "specified_two_row_separation"
+      }
+    },
+    {
+      "id": "NM.branch.CC",
+      "label": "CC: no source with this side pair (span lower sum 6>5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.side_lower_bounds_against_total_5",
+      "status": "established",
+      "dependencies": [
+        "NM.span_budget"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.span_budget",
+          "kind": "explicit",
+          "note": "Use only the table side lower costs for CC and the total budget <=5. The branch conclusion is source exclusion."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "C",
+          "C"
+        ],
+        "side_lower_bounds": [
+          3,
+          3
+        ],
+        "lower_bound_sum": 6,
+        "total_budget": 5,
+        "classification": "source_excluded"
+      }
+    },
+    {
+      "id": "NM.branch.CD",
+      "label": "CD: no source with this side pair (span lower sum 7>5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.side_lower_bounds_against_total_5",
+      "status": "established",
+      "dependencies": [
+        "NM.span_budget"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.span_budget",
+          "kind": "explicit",
+          "note": "Use only the table side lower costs for CD and the total budget <=5. The branch conclusion is source exclusion."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "C",
+          "D"
+        ],
+        "side_lower_bounds": [
+          3,
+          4
+        ],
+        "lower_bound_sum": 7,
+        "total_budget": 5,
+        "classification": "source_excluded"
+      }
+    },
+    {
+      "id": "NM.branch.CE",
+      "label": "CE: no source with this side pair (span lower sum 6>5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.side_lower_bounds_against_total_5",
+      "status": "established",
+      "dependencies": [
+        "NM.span_budget"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.span_budget",
+          "kind": "explicit",
+          "note": "Use only the table side lower costs for CE and the total budget <=5. The branch conclusion is source exclusion."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "C",
+          "E"
+        ],
+        "side_lower_bounds": [
+          3,
+          3
+        ],
+        "lower_bound_sum": 6,
+        "total_budget": 5,
+        "classification": "source_excluded"
+      }
+    },
+    {
+      "id": "NM.branch.DD",
+      "label": "DD: no source with this side pair (span lower sum 8>5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.side_lower_bounds_against_total_5",
+      "status": "established",
+      "dependencies": [
+        "NM.span_budget"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.span_budget",
+          "kind": "explicit",
+          "note": "Use only the table side lower costs for DD and the total budget <=5. The branch conclusion is source exclusion."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "D",
+          "D"
+        ],
+        "side_lower_bounds": [
+          4,
+          4
+        ],
+        "lower_bound_sum": 8,
+        "total_budget": 5,
+        "classification": "source_excluded"
+      }
+    },
+    {
+      "id": "NM.branch.DE",
+      "label": "DE: no source with this side pair (span lower sum 7>5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.side_lower_bounds_against_total_5",
+      "status": "established",
+      "dependencies": [
+        "NM.span_budget"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.span_budget",
+          "kind": "explicit",
+          "note": "Use only the table side lower costs for DE and the total budget <=5. The branch conclusion is source exclusion."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "D",
+          "E"
+        ],
+        "side_lower_bounds": [
+          4,
+          3
+        ],
+        "lower_bound_sum": 7,
+        "total_budget": 5,
+        "classification": "source_excluded"
+      }
+    },
+    {
+      "id": "NM.branch.EE",
+      "label": "EE: no source with this side pair (span lower sum 6>5)",
+      "role": "branch_result",
+      "contract_id": "NM.contract.source",
+      "peer_group": "NM.peer.side_pairs",
+      "proof_skeleton": "NM.skeleton.side_lower_bounds_against_total_5",
+      "status": "established",
+      "dependencies": [
+        "NM.span_budget"
+      ],
+      "evidence": [
+        "existing arbitrary-size paper consequence; branch arithmetic re-derived from side costs 2,2,3,4,3 and total budget 5"
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 63,
+          "end_line": 67,
+          "quote": "| A | 2 | (2) | (1,0) | (1) | 1 | 0 | 2 | | B | 1 | (2,1) | (1,0) | (1,1) | 2 | 0 | 2 | | C | 0 | (2,2) | (1,0) | (1,2)，或反序 | 2 | 1 | 3 | | D | 0 | (2,2) | (0,1) | (2,2)，重疊一色 | 2 | 2 | 4 | | E | 0 | (2,1,1) | (1,0) | (1,1,1) | 3 | 0 | 3 |"
+        },
+        {
+          "path": "docs/c5_no_mixed_span_budget.md",
+          "line": 165,
+          "end_line": 174,
+          "quote": "| z \\ w | A：2 | B：2 | C：3 | D：4 | E：3 | | --- | --- | --- | --- | --- | --- | | A：2 | 4 | 4 | 5 | 6，排除 | 5 | | B：2 | 4 | 4 | 5 | 6，排除 | 5 | | C：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | | D：4 | 6，排除 | 6，排除 | 7，排除 | 8，排除 | 7，排除 | | E：3 | 5 | 5 | 6，排除 | 7，排除 | 6，排除 | 八個無序排除類恰為 AD、BD、CC、CD、CE、DD、DE、EE，涵蓋 1,848 個原有序接合 IDs。其餘七類涵蓋 1,700 IDs；這不是可實現性分類。"
+        }
+      ],
+      "limitations": [
+        "Unit is one unordered raw A..E side-pair identity, not one theorem declaration, support record, query, join or source graph.",
+        "Only whole-source z/w exchange identifies the unordered pair; original ordered components/contacts, actual support and frame remain retained.",
+        "This grouped current-proof deduction does not declare historical within-branch support/minor proofs redundant or quantify the bridge cost of their replacement.",
+        "Cost <=5 does not show a source is realizable; excluded branches are source impossibility rather than target acceptance."
+      ],
+      "dependency_notes": [
+        {
+          "dependency_id": "NM.span_budget",
+          "kind": "explicit",
+          "note": "Use only the table side lower costs for EE and the total budget <=5. The branch conclusion is source exclusion."
+        }
+      ],
+      "branch": {
+        "sides": [
+          "E",
+          "E"
+        ],
+        "side_lower_bounds": [
+          3,
+          3
+        ],
+        "lower_bound_sum": 6,
+        "total_budget": 5,
+        "classification": "source_excluded"
+      }
+    }
+  ],
+  "branch_groups": [
+    {
+      "id": "NM.peer.side_pairs",
+      "label": "All 15 raw unordered A..E side-pair identities (mixed conclusion outcomes)",
+      "unit": "branch_identity",
+      "members": [
+        "NM.branch.AA",
+        "NM.branch.AB",
+        "NM.branch.AC",
+        "NM.branch.AD",
+        "NM.branch.AE",
+        "NM.branch.BB",
+        "NM.branch.BC",
+        "NM.branch.BD",
+        "NM.branch.BE",
+        "NM.branch.CC",
+        "NM.branch.CD",
+        "NM.branch.CE",
+        "NM.branch.DD",
+        "NM.branch.DE",
+        "NM.branch.EE"
+      ],
+      "normalization": "whole-source root exchange only; original ordered data retained",
+      "group_kind": "branch_partition"
+    },
+    {
+      "id": "NM.group.source_excluded",
+      "label": "Eight source-excluded side pairs with lower bound sum >5",
+      "unit": "branch_identity",
+      "members": [
+        "NM.branch.AD",
+        "NM.branch.BD",
+        "NM.branch.CC",
+        "NM.branch.CD",
+        "NM.branch.CE",
+        "NM.branch.DD",
+        "NM.branch.DE",
+        "NM.branch.EE"
+      ],
+      "normalization": "whole-source root exchange only; original ordered data retained",
+      "group_kind": "peer_comparison"
+    },
+    {
+      "id": "NM.group.two_row_separation",
+      "label": "Seven remaining necessary side pairs, each with specified two-row separation",
+      "unit": "branch_identity",
+      "members": [
+        "NM.branch.AA",
+        "NM.branch.AB",
+        "NM.branch.AC",
+        "NM.branch.AE",
+        "NM.branch.BB",
+        "NM.branch.BC",
+        "NM.branch.BE"
+      ],
+      "normalization": "whole-source root exchange only; original ordered data retained",
+      "group_kind": "peer_comparison"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "NM.comparison.side_pair_width",
+      "label": "Raw same-level branch width =15; outcome split =8 excluded +7 separated",
+      "members": [
+        "NM.branch.AA",
+        "NM.branch.AB",
+        "NM.branch.AC",
+        "NM.branch.AD",
+        "NM.branch.AE",
+        "NM.branch.BB",
+        "NM.branch.BC",
+        "NM.branch.BD",
+        "NM.branch.BE",
+        "NM.branch.CC",
+        "NM.branch.CD",
+        "NM.branch.CE",
+        "NM.branch.DD",
+        "NM.branch.DE",
+        "NM.branch.EE"
+      ],
+      "interpretation": "The unordered branch identities are peers as A..E side-pair cases under one source contract. Their outcomes differ: eight source impossibility statements and seven conditional specified-target extension statements. Count width only after keeping that outcome split visible.",
+      "limitations": [
+        "15 is a curated identity width, not a theorem count or graph-realization count.",
+        "The inventory is deliberately finite; it does not normalize histories, old certificates or other research lines into extra peers.",
+        "Source impossibility and target extension have distinct conclusions and must not be pooled as 15 equivalent proofs."
+      ]
+    },
+    {
+      "id": "NM.comparison.exclusion_reuse",
+      "label": "One common source-span argument covers eight infeasible side identities",
+      "members": [
+        "NM.span_budget",
+        "NM.branch.AD",
+        "NM.branch.BD",
+        "NM.branch.CC",
+        "NM.branch.CD",
+        "NM.branch.CE",
+        "NM.branch.DD",
+        "NM.branch.DE",
+        "NM.branch.EE"
+      ],
+      "interpretation": "The shared inequality takes side lower costs 2,2,3,4,3 into the same total budget 5, covering exactly AD,BD,CC,CD,CE,DD,DE,EE as branch-level source exclusions.",
+      "limitations": [
+        "Necessary side arithmetic is not a complete support-exclusion mechanism inside AC/BC or a source realization test.",
+        "Historical support certificates and original minor witnesses are retained evidence; no total replacement effort has been measured."
+      ]
+    },
+    {
+      "id": "NM.comparison.separation_reuse",
+      "label": "The current common proof covers the seven feasible-cost branch identities",
+      "members": [
+        "NM.separation",
+        "NM.branch.AA",
+        "NM.branch.AB",
+        "NM.branch.AC",
+        "NM.branch.AE",
+        "NM.branch.BB",
+        "NM.branch.BC",
+        "NM.branch.BE"
+      ],
+      "interpretation": "The consolidated no-growth/growth proof specializes to AA,AB,AC,AE,BB,BC,BE under the same original geometry and complete-relation contract. This records current semantic reuse across identities, independently of older family-by-family finite reports.",
+      "limitations": [
+        "Each source attachment/contact/degree/minimality contract must still be supplied.",
+        "The cost of proving these premises for a new source family is unknown, so this does not claim a reduction of 15 proofs to two or any quantified labor saving.",
+        "The common theorem has external and pre-layer proof boundaries; curated dependency reach is not a complete proof dependency census."
+      ]
+    },
+    {
+      "id": "NM.comparison.shared_skeletons",
+      "label": "Curated common source/target proof packages and their explicit scope boundaries",
+      "members": [
+        "NM.span_budget",
+        "NM.short_side",
+        "NM.no_growth",
+        "NM.growth_positions",
+        "NM.harmful_growth_exclusion",
+        "NM.harmless_growth",
+        "NM.separation"
+      ],
+      "interpretation": "Existing abstraction is visible in shared source capacity/geometry, short-side color symmetry and a three-position growth completion. Further abstraction should be assessed by whether a new same-original source can discharge their contracts and external proof inputs, rather than by counts of Markdown links or finite queries.",
+      "limitations": [
+        "This pilot includes 12 curated shared/aggregate claims and 15 branch results only.",
+        "Proof-skeleton names are analyst labels, not additional theorem claims.",
+        "Whole-row target normalization is distinct from the branch grouping rule of whole-source root exchange."
+      ]
+    }
+  ]
+}

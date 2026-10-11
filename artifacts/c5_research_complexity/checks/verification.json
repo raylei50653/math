@@ -1,0 +1,162 @@
+{
+  "status": "passed",
+  "scope": "Source-anchored inventory, deterministic statistics replay, local documentation validation, and standalone dashboard browser checks. Not a mathematical proof or source-realizability certificate.",
+  "source_baseline_head": "4c6587b43c39a3767fc101fa87d9a7bbe9cde7e3",
+  "checks": [
+    {
+      "command": "python3 scripts/c5_research_complexity.py --check",
+      "exit_code": 0,
+      "output": "CHECK: 75 selected claim records; 9 comparison/inventory groups; source anchors and selected DAG valid"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 scripts/c5_research_complexity.py --check",
+      "exit_code": 0,
+      "output": "CHECK: 75 selected claim records; 9 comparison/inventory groups; source anchors and selected DAG valid"
+    },
+    {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 0,
+      "output": "OK: 610 Markdown files, 7504 local links; anchors, index, handoff checked"
+    },
+    {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "output": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "git diff --cached --check",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "independent_review": {
+    "status": "completed",
+    "scope": "Source-contract fidelity, counting units, graph interpretation, candidate prerequisites, and report routing; no remaining requested corrections. Frozen-baseline commit stability reviewed; post-regeneration dashboard smoke check passed."
+  },
+  "negative_controls": {
+    "results": [
+      {
+        "name": "duplicate_group_id",
+        "reason": "duplicate group ID: CR.GROUP.abstract_public_declarations",
+        "status": "rejected"
+      },
+      {
+        "name": "missing_dependency",
+        "reason": "dependency refers to a missing node",
+        "status": "rejected"
+      },
+      {
+        "name": "invalid_peer_membership",
+        "reason": "invalid peer group membership for CR.System.target_subset_result: missing.group",
+        "status": "rejected"
+      },
+      {
+        "name": "missing_comparison_member",
+        "reason": "comparison contains nonlocal claim: CR.COMP.shared_contract_reuse",
+        "status": "rejected"
+      },
+      {
+        "name": "missing_candidate_member",
+        "reason": "candidate contains missing/nonlocal claim: N45.abstract.JOIN_RESTORE",
+        "status": "rejected"
+      },
+      {
+        "name": "source_quote_changed",
+        "reason": "source quote mismatch: Math/CommonRepair.lean:49-50: THIS PHRASE IS NOT IN THE ORIGINAL SOURCE",
+        "status": "rejected"
+      },
+      {
+        "name": "side_budget_changed",
+        "reason": "No-mixed side arithmetic mismatch: NM.branch.AA",
+        "status": "rejected"
+      },
+      {
+        "name": "wc_count_changed",
+        "reason": "W/C concrete obligation arithmetic does not reconcile",
+        "status": "rejected"
+      },
+      {
+        "name": "selected_dependency_cycle",
+        "reason": "dependency cycle at CR.System.target_subset_result",
+        "status": "rejected"
+      },
+      {
+        "name": "diamond_dependency_union",
+        "rank": 2,
+        "status": "holds",
+        "unique_ancestors": 3
+      }
+    ],
+    "scope": "In-memory malformed copies only; original input files unchanged. No mathematical controls rerun."
+  },
+  "browser": {
+    "status": "passed",
+    "browser": "cached Chromium 1217 via Playwright 1.57.0",
+    "selected_claims_checked": 75,
+    "initial": {
+      "total": 75,
+      "initialRows": 27,
+      "cards": 3,
+      "groups": 9
+    },
+    "n45_branch_filter": 7,
+    "search": "one match and zero matches verified",
+    "family_row_clicks": 3,
+    "graph_keyboard_selection": "NM.a_side_span",
+    "mobile": {
+      "viewport": 390,
+      "document": 390
+    },
+    "console_errors": []
+  },
+  "retained_failed_attempts": [
+    "artifacts/c5_research_complexity/checks/browser-mobile-failure.json"
+  ],
+  "not_run": [
+    "Research enumerations",
+    "Mathematical source checkers",
+    "Lean build",
+    "Lean axiom audits",
+    "Whole-worktree DocGraph including retained scratch copies"
+  ],
+  "artifact_sha256": {
+    "scripts/c5_research_complexity.py": "77d4642247c35db1b72992884fe5d4b1982a4fdfd7f982a55edc0138e0aba308",
+    "docs/c5_research_complexity.md": "d6000ba3ea05745d673549d292d21e834a2e5f6c9f5bcca1a47b84a2a08c7d0b",
+    "docs/STATUS.md": "84e12423634313b27257f8cf85c7e8c1beec6d0499cc7b7562f4fca0eb9f480a",
+    "artifacts/c5_research_complexity/baseline.json": "fed55120ef44da4f22449e110c14c6158cd5499f099cec0cf8b8d503270a018e",
+    "artifacts/c5_research_complexity/dashboard.template.html": "fd906602d040fb205d0cccba9b985139f45ba1799cac3e7a795531cbee29c46f",
+    "artifacts/c5_research_complexity/inputs/common_repair.json": "3d6475d85bc6b2b37b1a38803f58feff53da224d53b0c6cb5d6095eefe41866f",
+    "artifacts/c5_research_complexity/inputs/n45.json": "eaaff592a6de22d2259213380edf77ebaceb240bbce38b1198337e255c71512d",
+    "artifacts/c5_research_complexity/inputs/no_mixed.json": "6ddf57ae5825030a91bc7eeb10f8f18a3ceaf04ec1d1ef4c92539c9c2a6506f8",
+    "artifacts/c5_research_complexity/metrics.json": "0314ed3bf70ecd82592b8c6e100edee1c84d64e06a9fe781a4aed6b115ad27f2",
+    "artifacts/c5_research_complexity/claims.csv": "89b935f7ec0d166296c4e3c63c944a7c0481b41e92c387d8d4d187ed609d2531",
+    "artifacts/c5_research_complexity/peer_groups.csv": "a8ac0fe9d10f4cff2cca15e11b4ac492c03a12f56afb491f594791631cf5ca04",
+    "artifacts/c5_research_complexity/dashboard.html": "72f54e68f731ec4690d262e2d5b0fdce2cce62797dcebc6461ae85248ae9a529"
+  },
+  "receipt_phase": "pre_commit",
+  "publication_at_receipt_time": {
+    "committed": false,
+    "pushed": false
+  },
+  "publication_preflight": {
+    "staged_bundle_files": 18,
+    "staged_top_level_docs": 327,
+    "baseline_top_level_docs": 326,
+    "normal_and_seeded_replay_after_staging": "passed",
+    "baseline_strategy": "Fixed commit in baseline.json; document denominator from that commit tree; live source files remain hashed and replayed.",
+    "baseline_changes": "collector provenance and document denominator made stable across staging and commit",
+    "regenerated_dashboard_smoke": {
+      "status": "passed",
+      "records": 75,
+      "n45_branch_filter": 7,
+      "mobile_viewport": 390,
+      "mobile_document": 390,
+      "console_errors": []
+    }
+  }
+}

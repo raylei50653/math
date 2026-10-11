@@ -1,0 +1,1586 @@
+{
+  "schema_version": 1,
+  "family": "n45",
+  "contracts": [
+    {
+      "id": "N45.contract.LOW1",
+      "label": "LOW1 complete original prose contract",
+      "assumptions": [
+        "任取任意大小的有限簡單 disk 圖 G。有序 induced C₅ 外框 B=(b0,…,b4) 為外面。 完整 Σ(G)=933／941 或其一次共同整圖 D₅ 像；每條非框邊對完整 Σ critical；ε(G)=2。 有效 H 忽略原孤立內點，連通且 full B-touch。恰兩個非相鄰原完整 degree5 roots r,s； 其他有效原內點完整 degree4。",
+        "`H−{r,s}` 的完整原分量恰為 unary U 和 mixed P,Q；三者 one-sided、actual support 非空。 U 唯一原 contact 為 rx，歸屬 r；沒有 U–s 邊。P,Q 每側 incidence 皆正， 各自 actual support 恰一條原真框邊的兩端；`(m_r,m_s)=(2,3)`。 因而 r 對 P,Q 各一原 contact，s 的原 contact 數分配為 1 與 2；兩 roots 原各兩 spokes。 不任意交換 P,Q 的具名身份；以下以它們原 contact 清單作證。",
+        "固定原 spoke e=rb_i、原拒絕 literal β；`X=G−e=M` 是 β 的 inclusion-minimal 45／54 core。 以一次共同 root swap 命名降度側 r。除 e 外，全部原頂點、U/P/Q 內邊、root contacts、 框附件與其他 spokes 完整保留。原已忽略的孤立內點可逐點自由 lift，沒有新有效孤立點。",
+        "原圖的具名 ordered contacts、shared vertex 單一坐標、actual attachments/support、ownership、 bridges、rotation、共同 literal 色框及全部十列 relations、空／非空 fibres與全部 full lifts 一併保留。D₅／S₄／root swap 都只共同作用整圖和全部資料，不獨立正規化 pieces。 canonical 941 拒絕 q0,q1,q3；933 另拒絕 q2；本證明逐任意 β 成立，沒有略去 q2。"
+      ],
+      "scope": {
+        "source_generality": "Arbitrary finite size within LOW1.",
+        "observation": "Complete same-source contacts, attachments, relations, fibres and full lifts.",
+        "behavior": "Source nonexistence under all LOW1 assumptions."
+      },
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "audits/2026-10-10-n45-s-low1/REPORT.md",
+          "line": 18,
+          "end_line": 36,
+          "quote": "任取任意大小的有限簡單 disk 圖 G。有序 induced C₅ 外框 B=(b0,…,b4) 為外面。"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 211,
+          "end_line": 214,
+          "quote": "完整六項契約與論證見 [LOW1](../audits/2026-10-10-n45-s-low1/REPORT.md)，"
+        }
+      ],
+      "explicit_hypothesis_count": null,
+      "hypothesis_count_basis": "Current authority calls it six items, but original contract is prose rather than explicitly numbered hypotheses; no numerical count is inferred."
+    },
+    {
+      "id": "N45.contract.LOW2",
+      "label": "LOW2 exact twelve numbered items",
+      "assumptions": [
+        "1. B 是 G 的外面；原 rotation、每條實際原邊和全部原附件固定。",
+        "2. 完整有序 Σ(G)=933／941，或其一次共同整圖 D₅ 像；每條非框邊 Σ-critical，ε(G)=2。",
+        "3. 有效原 H 忽略原孤立內點，連通且 full B-touch；被忽略的孤立點只提供自由 lift 因子。",
+        "4. 恰兩個非相鄰原完整 degree5 roots r,s；其他有效原內點完整 degree4。",
+        "5. `H−{r,s}` 的完整原分量恰唯一 unary U及 mixed P,Q；三份 connected、one-sided、actual support 非空。",
+        "6. LOW2 的 U只接 r，全部原 contact恰 `rx1,rx2`，x1≠x2，沒有 U–s 邊；U整份保留。",
+        "7. P/Q各支援恰一條真原框邊的兩端，每側 incidence皆正；保其具名身份及所有 actual attachments。",
+        "8. mixed總原 incidence `(m_r,m_s)=(2,3)`：r對P/Q各一，s的分配為1與2。r唯一原spoke是e，s原有兩spokes。",
+        "9. β是原拒絕 literal row；X=M自己為β inclusion-minimal45／54 core。一次共同 root swap只命名降度側r。",
+        "10. 唯一省略e；全部U/P/Q頂點、內邊、rootcontacts、框附件、其餘spokes均保留；無新邊、替換或收縮。",
+        "11. 原named／ordered／shared contacts單一坐標，actual support／ownership、bridges／rotation、共同literal四色框、全十列relations、空與非空fibres及全部full lifts保留。",
+        "12. D₅／S₄／root swap只共同作用整圖和全部資料；canonical933的q2照留；不假設β是U盾中點列。"
+      ],
+      "scope": {
+        "source_generality": "Arbitrary finite size within LOW2.",
+        "observation": "All proper literal rows, pins, ambient contact tuples and full lifts.",
+        "behavior": "Source nonexistence under all twelve LOW2 items."
+      },
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "audits/2026-10-10-n45-s-low2/REPORT.md",
+          "line": 20,
+          "end_line": 31,
+          "quote": "1. B 是 G 的外面；原 rotation、每條實際原邊和全部原附件固定。"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 236,
+          "end_line": 238,
+          "quote": "完整十二項契約及六 claims見[LOW2](../audits/2026-10-10-n45-s-low2/REPORT.md)，"
+        }
+      ],
+      "explicit_hypothesis_count": 12,
+      "hypothesis_count_basis": "Original REPORT.md explicitly numbers items 1–12 at lines 20–31."
+    },
+    {
+      "id": "N45.contract.HIGH1",
+      "label": "HIGH1 complete H1–H13",
+      "assumptions": [
+        "H1: 有限簡單 disk G，有序 induced C5 B=(b0,…,b4) 圍外面",
+        "H2: 完整有序 Σ(G)=933／941 或一次共同整圖 D5 像；每條非框邊 Σ-critical；ε(G)=2",
+        "H3: 有效 H 連通、full B-touch；忽略的原孤立內點 I 在所有 full lifts 中仍為自由因子",
+        "H4: 非相鄰原 roots r,s 完整 degree5，其他有效原內點完整 degree4",
+        "H5: H−{r,s} 原分量恰 U,P,Q，三者 connected、one-sided、actual support 非空",
+        "H6: P/Q 各支援恰一條真原框邊的兩端，各接兩 roots；ownership／附件全留",
+        "H7: 原 U 只接 s，恰唯一原 contact sx，無 U–r 邊；U 整份保留",
+        "H8: mixed incidence=(3,2)：s 對 P/Q 各一，r 分配1與2，具名身份全留",
+        "H9: 原 r 兩 spokes，僅省略 e=rb_i，X 保另一條 rb_j；原 s 兩 spokes全部保留",
+        "H10: 固定原拒絕 literal β，X=G−e=M 自己是 β inclusion-minimal45／54 core；不從 G criticality 遺傳",
+        "H11: U/P/Q 全部原頂點、內邊、rootcontacts、框附件及其他 spokes 保留；无新增／替換／部分 piece 刪除",
+        "H12: 原 ordered contacts、單一 shared 頂點變量、actual supports／ownership、bridges／rotation、共同 literal 四色框、十列完整 relations、ambient 空／非空 fibres、全部 pins 與 full lifts 保留",
+        "H13: D5、S4、root swap 僅共同搬整圖及全部資料；933 q2 保留；不假定 β 是 U 盾中點列，G／X／刪 contact 圖各有自身邊與 lifts"
+      ],
+      "scope": {
+        "source_generality": "Arbitrary finite size within exact HIGH1 source contract.",
+        "observation": "Complete C/U join, retained r coordinate, all root pins and empty/full fibres.",
+        "behavior": "Scoped source exclusion; G restoration checked separately from X extension."
+      },
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "audits/2026-10-10-n45-s-high1/REPORT.md",
+          "line": 25,
+          "end_line": 37,
+          "quote": "| H1 | 有限簡單 disk G，有序 induced C5 B=(b0,…,b4) 圍外面 |"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 275,
+          "end_line": 279,
+          "quote": "[H1A](../audits/2026-10-10-n45-h1a/REPORT.md)與[H1R](../audits/2026-10-10-n45-h1r/REPORT.md"
+        }
+      ],
+      "explicit_hypothesis_count": 13,
+      "hypothesis_count_basis": "Original report explicitly lists H1–H13 at lines 25–37."
+    },
+    {
+      "id": "N45.contract.HIGH2",
+      "label": "HIGH2 complete H1–H13",
+      "assumptions": [
+        "H1: 有限簡單 disk G，有序 induced 外框 C5 B=(b0,…,b4)",
+        "H2: 完整有序 Σ(G)=933／941 或一次共同整圖 D5 像；每條非框邊 Σ-critical；ε(G)=2",
+        "H3: 有效 H 忽略原孤立內點 I，連通、full B-touch；I 保留全部四色自由 assignments",
+        "H4: 恰兩原非相鄰 degree5 roots r,s；其餘有效原內點完整 degree4",
+        "H5: H−{r,s} 原分量恰 U,P,Q；三份 connected、one-sided、actual support 非空",
+        "H6: P/Q 的 actual support 各恰一條真原框邊兩端；各有正 r/s incidence；actual attachments／ownership 全留",
+        "H7: U 只接 s，恰原邊 sx1、sx2，x1≠x2，無 U–r；U 整份保留",
+        "H8: mixed incidence=(3,2)，s 對 P/Q 各一，r 分配1與2；原具名 identity 不換",
+        "H9: 原 r 兩 spokes，只省略 e=rb_i，X 保 rb_j；原 s 唯一 spoke sb_k 全留",
+        "H10: 固定原拒絕三色 literal β，X=G−e=M 自己是 β inclusion-minimal45／54 core；不用 G criticality 遺傳",
+        "H11: 只刪 e；U/P/Q 所有原頂點、內邊、contacts、框附件及其他 spokes 全留，無新增／替換／縮 piece／部分 U 刪除",
+        "H12: named／ordered／shared contacts 單一原變量；actual supports／ownership、bridges／rotation、共同 literal 四色框、十列完整 relations、全部 pins、ambient 空／非空 fibres 與 full lifts 全留",
+        "H13: D5／S4／root swap 只共同搬整圖及所有資料；933 q2 全留，不假定 β 是 U 盾中點；G／X／刪 contact 圖分清原邊及 lifts"
+      ],
+      "scope": {
+        "source_generality": "Arbitrary finite size within exact HIGH2 source contract.",
+        "observation": "Complete C/U join, retained r coordinate, all root pins and empty/full fibres.",
+        "behavior": "Scoped source exclusion; G restoration checked separately from X extension."
+      },
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed.",
+        "JOIN/RESTORE/PALETTE cover all proper rows; unused-colour restoration construction is adopted only for proper three-colour rows. Original overbroad quantifier remains a finding."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "audits/2026-10-10-n45-s-high2/REPORT.md",
+          "line": 25,
+          "end_line": 37,
+          "quote": "| H1 | 有限簡單 disk G，有序 induced 外框 C5 B=(b0,…,b4) |"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 303,
+          "end_line": 309,
+          "quote": "**採納的量詞精化。** JOIN／RESTORE／PALETTE仍對全部 proper γ成立；"
+        }
+      ],
+      "explicit_hypothesis_count": 13,
+      "hypothesis_count_basis": "Original report explicitly lists H1–H13 at lines 25–37."
+    },
+    {
+      "id": "N45.contract.HIGH3",
+      "label": "HIGH3 complete K1–K13",
+      "assumptions": [
+        "K1. G 是任意大小有限簡單 disk 圖；B=(b0,...,b4) 為有序 induced C5 外面。",
+        "K2. 完整有序 Σ(G)=933/941，或一次共同整圖 D5 像；每條非框邊 Σ-critical；ε(G)=2。",
+        "K3. 有效 H 忽略原孤立內點，連通、full B-touch；忽略點的四色 free factors 保留於全部 lifts。",
+        "K4. 恰兩原非相鄰 degree5 roots r,s；其他有效原內點完整 degree4。",
+        "K5. H−{r,s} 的完整原分量恰唯一 unary U 及 mixed P,Q；三份 connected、one-sided，actual support 非空。",
+        "K6. P/Q 各 actual support 恰真原框邊兩端；兩 root incidence 皆正，actual attachments／ownership 完整保留。",
+        "K7. 原 U 只接 s，contacts 恰 sx1,sx2,sx3，三點相異，無 U–r；U 整份保留。",
+        "K8. mixed incidence (m_r,m_s)=(3,2)：s 對 P/Q 各一，r 分配 1 和 2；原 identity／shared 頂點不合併。",
+        "K9. 原 r 恰兩 spokes rb_i,rb_j，i≠j；s 無 spoke。只省略 e=rb_i，X 保 rb_j。",
+        "K10. 固定原拒絕 literal β；X=G−e=M 自己是 β inclusion-minimal 45/54 core；root swap 只共同命名降度 r。",
+        "K11. 除 e 外全部原頂點、內邊、contacts、框附件與 spokes 完整保留；不縮 piece、刪 U 部分或新增邊。",
+        "K12. 原 named/ordered/shared contacts 單坐標、supports/ownership、bridges/rotation、共同 literal 四色框、 十列完整 relations、全部 pins、ambient 空／非空 fibres 與 full lifts 保留。",
+        "K13. D5/S4/root swap 共同作用整圖與全部資料，保 933 q2；不假定 β 是 U 盾中點。 原 G、X、刪 contact 圖各自的 vertices/edges/lifts 分明；minor 只反證平面性。"
+      ],
+      "scope": {
+        "source_generality": "Arbitrary finite size within exact HIGH3 no-spoke source contract.",
+        "observation": "Actual C/U contacts (2,3); all rows/pins/fibres and free factors.",
+        "behavior": "Source exclusion in original X by BASE no-spoke (3,2)."
+      },
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "audits/2026-10-10-n45-h3a/frozen/authority/common-contract.md",
+          "line": 18,
+          "end_line": 32,
+          "quote": "K1. G 是任意大小有限簡單 disk 圖；B=(b0,...,b4) 為有序 induced C5 外面。"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 319,
+          "end_line": 332,
+          "quote": "全部原件與具名ordered/shared資料、十列完整 relations、空fibres及孤立自由因子保留；"
+        }
+      ],
+      "explicit_hypothesis_count": 13,
+      "hypothesis_count_basis": "Frozen common-contract.md explicitly lists K1–K13; current authority records adoption of that exact contract."
+    },
+    {
+      "id": "N45.contract.LONG_R",
+      "label": "LONG U-owner=r, K1–K12 plus owner selector",
+      "assumptions": [
+        "K1: G 任意大小有限簡單 disk 圖，外面為具名 ordered induced C5，B=(b0,…,b4)；供給全部原 vertices、edges、rotation。",
+        "K2: 完整有序 Σ(G)=933／941 或整圖共同 D5 像；所有非框邊 Σ-critical。",
+        "K3: 有效 H 連通，ε(G)=2；恰兩個原 degree5 roots r,s，rs 不存在，其餘有效原內點完整 degree4；原 full B-touch。自由孤立內點另留完整染色因子。",
+        "K4: H−{r,s} 的完整分量**恰**為 U,L,S。U 只接一個 root；L/S 各接兩 roots，原支援非空。所有原件 one-sided。",
+        "K5: L 的 actual support 不包含於任何真框邊兩端；S 的 actual support 包含於某真框邊兩端，所以為真 pair 或 singleton。不能預設 S 是單頂點。",
+        "K6: e=rb_i 是具名原 spoke。V(X)=V(G)，E(X)=E(G)−{e}；U/L/S、全部原 contacts／附件／bridges 都保留。",
+        "K7: 對固定原拒絕 literal β，**X=G−e=M 自己**是 inclusion-minimal β-core，root degrees=(4,5)。不是先取另一份小 core 後稱它 X。",
+        "K8: U 的 owner 是 r 或 s；其原 contact 數 n_U≥1，不預設 unit。每個原 shared r/s contact 只有一個 actual vertex／tuple 座標。",
+        "K9: ordered contacts、ownership、原 edges、actual attachments／support、bridges、rotation 與框順序跨列不變；D5／root 交換搬整份資料。",
+        "K10: 十個 literal 代表，各保全部16 ordered root pins、diagonal／空 fibres；每個完整 contact tuple 保全部 local preimages，接合保全部整圖 lifts。",
+        "K11: 原 G 每條非框邊 f 的 Σ-critical witness：某 γ_f∉Σ(G) 及 G−f 完整 lift。各邊／piece 的 γ_f 可不同。",
+        "K12: X 每條 retained 非框邊 f 的 **同一 β** 刪邊完整 witness。G−f 與 X−f 的圖、列、assignments 分開；恢復 e 另核 r 色。"
+      ],
+      "scope": {
+        "source_generality": "Arbitrary finite size; complete U, one long L and one short S with pair/singleton support.",
+        "observation": "All original vertices/edges, contacts, ten rows, sixteen pins, diagonal/empty fibres, preimages and full lifts.",
+        "behavior": "Only original spoke e=rb_i omitted; X=G−e=M own same-β minimal; scoped source nonexistence."
+      },
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "audits/2026-10-10-n45-s-long-contract/REPORT.md",
+          "line": 20,
+          "end_line": 31,
+          "quote": "| K1 | G 任意大小有限簡單 disk 圖，外面為具名 ordered induced C5，B=(b0,…,b4)；供給全部原 vertices、edges、rotatio"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 350,
+          "end_line": 361,
+          "quote": "在[含long同源契約K1–K12](../audits/2026-10-10-n45-s-long-contract/REPORT.md)全部前提內，"
+        }
+      ],
+      "explicit_hypothesis_count": 12,
+      "hypothesis_count_basis": "Original common long report explicitly lists K1–K12. Owner selector specializes K8, not a newly numbered thirteenth premise.",
+      "branch_selector": "U owner=r (K8 specialization)."
+    },
+    {
+      "id": "N45.contract.LONG_S",
+      "label": "LONG U-owner=s, K1–K12 plus owner selector",
+      "assumptions": [
+        "K1: G 任意大小有限簡單 disk 圖，外面為具名 ordered induced C5，B=(b0,…,b4)；供給全部原 vertices、edges、rotation。",
+        "K2: 完整有序 Σ(G)=933／941 或整圖共同 D5 像；所有非框邊 Σ-critical。",
+        "K3: 有效 H 連通，ε(G)=2；恰兩個原 degree5 roots r,s，rs 不存在，其餘有效原內點完整 degree4；原 full B-touch。自由孤立內點另留完整染色因子。",
+        "K4: H−{r,s} 的完整分量**恰**為 U,L,S。U 只接一個 root；L/S 各接兩 roots，原支援非空。所有原件 one-sided。",
+        "K5: L 的 actual support 不包含於任何真框邊兩端；S 的 actual support 包含於某真框邊兩端，所以為真 pair 或 singleton。不能預設 S 是單頂點。",
+        "K6: e=rb_i 是具名原 spoke。V(X)=V(G)，E(X)=E(G)−{e}；U/L/S、全部原 contacts／附件／bridges 都保留。",
+        "K7: 對固定原拒絕 literal β，**X=G−e=M 自己**是 inclusion-minimal β-core，root degrees=(4,5)。不是先取另一份小 core 後稱它 X。",
+        "K8: U 的 owner 是 r 或 s；其原 contact 數 n_U≥1，不預設 unit。每個原 shared r/s contact 只有一個 actual vertex／tuple 座標。",
+        "K9: ordered contacts、ownership、原 edges、actual attachments／support、bridges、rotation 與框順序跨列不變；D5／root 交換搬整份資料。",
+        "K10: 十個 literal 代表，各保全部16 ordered root pins、diagonal／空 fibres；每個完整 contact tuple 保全部 local preimages，接合保全部整圖 lifts。",
+        "K11: 原 G 每條非框邊 f 的 Σ-critical witness：某 γ_f∉Σ(G) 及 G−f 完整 lift。各邊／piece 的 γ_f 可不同。",
+        "K12: X 每條 retained 非框邊 f 的 **同一 β** 刪邊完整 witness。G−f 與 X−f 的圖、列、assignments 分開；恢復 e 另核 r 色。"
+      ],
+      "scope": {
+        "source_generality": "Arbitrary finite size; complete U, one long L and one short S with pair/singleton support.",
+        "observation": "All original vertices/edges, contacts, ten rows, sixteen pins, diagonal/empty fibres, preimages and full lifts.",
+        "behavior": "Only original spoke e=rb_i omitted; X=G−e=M own same-β minimal; scoped source nonexistence."
+      },
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed.",
+        "q0 nonemptiness retains SF-QX/BASE E2 paper and historical finite-terminal trust; T1/q2 have separate source-specific paper constructions."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "audits/2026-10-10-n45-s-long-contract/REPORT.md",
+          "line": 20,
+          "end_line": 31,
+          "quote": "| K1 | G 任意大小有限簡單 disk 圖，外面為具名 ordered induced C5，B=(b0,…,b4)；供給全部原 vertices、edges、rotatio"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 366,
+          "end_line": 374,
+          "quote": "只取[含long同源契約K1–K12](../audits/2026-10-10-n45-s-long-contract/REPORT.md)"
+        }
+      ],
+      "explicit_hypothesis_count": 12,
+      "hypothesis_count_basis": "Original common long report explicitly lists K1–K12. Owner selector specializes K8, not a newly numbered thirteenth premise.",
+      "branch_selector": "U owner=s (K8 specialization)."
+    },
+    {
+      "id": "N45.contract.B_S0",
+      "label": "B-S0 original witnessed shield interface",
+      "assumptions": [
+        "Same finite simple induced-C5 disk G; effective H nonempty and connected; original pieces pairwise disjoint, nonempty, connected and one-sided.",
+        "Unary pieces have complete degree_G4 and legal outside colouring that cannot restore the entire unary; if support is short there is the specified external root-to-boundary path avoiding that unary and boundary internally.",
+        "Long paid pieces have actual support not contained in a true boundary edge; short paid pieces have actual support exactly the two ends of a true boundary edge.",
+        "Costs are original σ_G(P); omitted pieces still pay original costs. Singleton support is not charged as edge-pair support."
+      ],
+      "scope": {
+        "source_generality": "Any source satisfying the sufficient interface; no fixed epsilon/root count/target mask.",
+        "observation": "Original same-G shield arcs and source witnesses.",
+        "behavior": "2|U|+2|L|+|S|≤sum|σ_G(P)|≤5."
+      },
+      "limitations": [
+        "Different pieces may use different witness rows because geometric cost is on one original G; forbidden-colour capacities cannot be added across rows.",
+        "General N2 singleton incidence≥4 support lower bound is not supplied.",
+        "External Gallai trust retained; no new Lean proof."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_phase_b_common_lemmas.md",
+          "line": 34,
+          "end_line": 56,
+          "quote": "**陳述（既有紙面證明可抽出的充分接口）。** G為有限簡單disk圖，"
+        },
+        {
+          "path": "docs/c5_phase_b_common_lemmas.md",
+          "line": 66,
+          "end_line": 82,
+          "quote": "見證供給有兩種：q-critical接點邊刪除給同一q的外部染色；Σ-critical"
+        }
+      ],
+      "explicit_hypothesis_count": null,
+      "hypothesis_count_basis": "Unnumbered sufficient interface; number of inventory strings is not a hypothesis count."
+    },
+    {
+      "id": "N45.contract.B_C2",
+      "label": "B-C2 complete conditioned two-root capacity",
+      "assumptions": [
+        "One proper literal row β and common pins η for other roots; all original component vertices complete degree4 with full contacts/attachments/tuples.",
+        "All components/external restrictions not touching the two free roots are already legally filled.",
+        "Complete two-root join rejects at β,η and E_s nonempty; relative-unary/mixed factors and original edge multiplicities preserved."
+      ],
+      "scope": {
+        "source_generality": "Any two free roots, adjacent/nonadjacent; other roots may be fixed. No disk/T4/minimality/fixed epsilon required.",
+        "observation": "Full conditioned fibres and per-column forbidden sets.",
+        "behavior": "Each b∈E_s satisfies the degree/χ capacity equality with nonnegative slack terms."
+      },
+      "limitations": [
+        "Complete same-row/pins rejection and E_s nonempty are premises, not consequences of marginals.",
+        "No target-lift existence or cross-row nonreuse theorem; generic degrees cannot import special D/O bounds."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_phase_b_common_lemmas.md",
+          "line": 198,
+          "end_line": 202,
+          "quote": "**陳述（本輪從既有容量證明推得的紙面一般式，未Lean化）。**"
+        },
+        {
+          "path": "docs/c5_phase_b_common_lemmas.md",
+          "line": 217,
+          "end_line": 230,
+          "quote": "假設這份固定外部pins下的**完整兩root接合拒絕**且E_s非空。"
+        },
+        {
+          "path": "docs/c5_phase_b_common_lemmas.md",
+          "line": 241,
+          "end_line": 267,
+          "quote": "**最弱已知充分前提。** 同一β、η的完整fibre、其他限制可填入、"
+        }
+      ],
+      "explicit_hypothesis_count": null,
+      "hypothesis_count_basis": "Unnumbered sufficient interface; number of inventory strings is not a hypothesis count."
+    },
+    {
+      "id": "N45.contract.N_DIAGONAL",
+      "label": "B-SD / E4 N-diagonal short-piece interface",
+      "assumptions": [
+        "P connected, one-sided, every vertex complete degree_G4 in finite simple induced-C5 disk.",
+        "All internal external neighbors are named roots; actual support contained in true boundary-edge ends {a,b}; H−P actually touches every B vertex outside {a,b}.",
+        "All adjacent roots pinned to the same specified colour; complete original vertices, edges and attachments retained."
+      ],
+      "scope": {
+        "source_generality": "Any source satisfying the local sufficient interface; epsilon/root degrees/criticality not used in this step.",
+        "observation": "All proper literal rows and complete local assignments with common same-colour pins.",
+        "behavior": "A full local legal P lift exists at those pins."
+      },
+      "limitations": [
+        "Whole-graph use also needs legal root-skeleton pins and all other relations. Original root edge prevents same-colour pins.",
+        "No general off-diagonal or specified-target-pin existence theorem."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_phase_b_common_lemmas.md",
+          "line": 117,
+          "end_line": 126,
+          "quote": "**陳述（由既有證明推出的接口）。** 在§2.1的有限簡單disk G與外框B內，"
+        },
+        {
+          "path": "docs/c5_phase_b_common_lemmas.md",
+          "line": 128,
+          "end_line": 131,
+          "quote": "**反例壓力與缺口。** 相鄰roots的同色pins違反原root邊，故此接口可能"
+        }
+      ],
+      "explicit_hypothesis_count": null,
+      "hypothesis_count_basis": "Unnumbered sufficient interface; number of inventory strings is not a hypothesis count."
+    },
+    {
+      "id": "N45.contract.JOIN_RESTORE",
+      "label": "Complete original assignment join and omitted-spoke filter",
+      "assumptions": [
+        "Each piece assignment satisfies all original internal edges and actual boundary attachments; shared contacts remain one actual coordinate and every tuple keeps all preimages.",
+        "All pieces use the same literal frame and pins; all original constraints, retained spokes and free isolated factors are included.",
+        "G/X have the same vertices and differ by exactly e=rb_i; the retained r coordinate is preserved."
+      ],
+      "scope": {
+        "source_generality": "Original-edge algebraic interface; all inventory applications retain their full branch source contracts.",
+        "observation": "All proper rows, sixteen ordered pins, diagonal/empty fibres and complete assignments.",
+        "behavior": "Restriction/union gives complete X lifts; G lifts are X lifts filtered by r≠γ(b_i)."
+      },
+      "limitations": [
+        "Equality of complete sets does not supply nonempty target fibres or source minimality.",
+        "No independent piece normalization, marginal product, omitted shared identity or unrecorded original edge."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "audits/2026-10-10-n45-s-long-contract/REPORT.md",
+          "line": 132,
+          "end_line": 159,
+          "quote": "对 T=U/L/S，Λ_T(γ) 是滿足全部原 internal edges／actual B attachments 的"
+        },
+        {
+          "path": "audits/2026-10-10-n45-s-long-contract/REPORT.md",
+          "line": 206,
+          "end_line": 218,
+          "quote": "对每份 proper literal γ、每個 root pin (a,b)，c_γ=γ(b_i)，有**整個 lift 集合**等式"
+        }
+      ],
+      "explicit_hypothesis_count": null,
+      "hypothesis_count_basis": "Unnumbered sufficient interface; number of inventory strings is not a hypothesis count."
+    },
+    {
+      "id": "N45.contract.SOLE_C",
+      "label": "BASE sole-C (5)/(4)/(3) source interface",
+      "assumptions": [
+        "Actual finite simple induced-C5 disk X has connected effective interior and own edge-minimal rejected q, transported once with all original data.",
+        "s is X unique complete degree5 effective vertex; every other effective vertex complete degree_X4; H_X−s is actual sole connected C with 5−t_s distinct ordered original contacts.",
+        "t_s∈{0,1,2}; unpinned-s full C relation retains all r/tuple preimages; exact F_C=Col−β(N_B(s)) derives from X own same-β witnesses, while C nonemptiness derives separately from actual contact strict slack.",
+        "At t1/t2 retained s-spoke and actual boundary tethers supply the exterior/minor; t2 β-spoke colours distinct at arbitrary positions. At t0 use active-forest parity without an outside s–B path."
+      ],
+      "scope": {
+        "source_generality": "Exact BASE own-minimal one-root sole-component routes; no second rejection/T4/Σ(X)=933/941 required.",
+        "observation": "Full same-source C assignments, unpinned-s relation, ordered contacts and retained r fibres.",
+        "behavior": "t0 parity exclusion; t1/t2 original X K5 exclusions."
+      },
+      "limitations": [
+        "Source-minimality and strict-slack nonemptiness are separate adapters; neither inherited from G nor supplied by join/filter algebra.",
+        "Owner=s leaves separate U, so HIGH1/2/3 and LONG-s require two-component routes.",
+        "BASE paper and external Dvořák Lemma7/Theorem10 trust; no new Lean."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "audits/2026-10-10-n45-s-long-r-map/REPORT.md",
+          "line": 99,
+          "end_line": 111,
+          "quote": "| BASE需要 | 實際X提供 |"
+        },
+        {
+          "path": "audits/2026-10-10-n45-s-long-r-map/REPORT.md",
+          "line": 115,
+          "end_line": 138,
+          "quote": "**t_s=0，P有5點，F_C=Col。** 映回 [no-spoke §4](../../docs/c5_no_spoke_exterior.md)。"
+        },
+        {
+          "path": "audits/2026-10-10-n45-s-long-r-map/REPORT.md",
+          "line": 78,
+          "end_line": 91,
+          "quote": "未pin s時，L_γ(v)=Col−γ(N_B^X(v))滿足（r用刪e後的retained neighbors）"
+        }
+      ],
+      "explicit_hypothesis_count": null,
+      "hypothesis_count_basis": "Unnumbered sufficient interface; number of inventory strings is not a hypothesis count."
+    },
+    {
+      "id": "N45.contract.ORIGINAL_K5",
+      "label": "Original K5 bags in selected degree-list routes",
+      "assumptions": [
+        "All named BASE/N45 route hypotheses supplied: degree lists, rejection/minimality, actual support, and the route-specific exterior.",
+        "Five actual branch sets in the named graph are nonempty, connected, disjoint and have all ten original pair adjacencies.",
+        "Tethers/bridges/contacts/hub have actual original provenance; omitted e is unavailable in an X witness."
+      ],
+      "scope": {
+        "source_generality": "Repeated selected named BASE/N45 proof mechanism; no universal new triangle theorem.",
+        "observation": "Original bags and all ten adjacencies in explicitly named G or X.",
+        "behavior": "Original K5 witness contradicts planarity."
+      },
+      "limitations": [
+        "Deriving triangles/arms and true tethers remains source-contract-specific.",
+        "Minor is no colouring replacement; no universal K4-free assumption is imported into sole-C no-spoke t0."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 203,
+          "end_line": 207,
+          "quote": "X 自己的 β-minimality 迫兩條 s-spokes 異色 u,v；逐刪 spoke 的完整 witnesses 給"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 325,
+          "end_line": 328,
+          "quote": "原拒絕三色β以一次共同整圖D5／S4搬到q，逐前提接回BASE no-spoke §§1–3、5的(3,2)來源排除。"
+        },
+        {
+          "path": "audits/2026-10-10-n45-s-long-r-map/REPORT.md",
+          "line": 122,
+          "end_line": 135,
+          "quote": "**t_s=1，P有4點，F_C為3色。** 映回 [single-spoke (4) §§1–5](../../docs/c5_single_spoke_four.md)。"
+        }
+      ],
+      "explicit_hypothesis_count": null,
+      "hypothesis_count_basis": "Unnumbered sufficient interface; number of inventory strings is not a hypothesis count."
+    },
+    {
+      "id": "N45.contract.ORIGINAL_K33",
+      "label": "Original K3,3 support-separation witnesses",
+      "assumptions": [
+        "All HIGH1 H1–H13 or HIGH2 H1–H13 assumptions supplied, including actual true-edge P/Q supports, original root contacts and spokes.",
+        "In forbidden shared-support configuration provide six actual connected disjoint bags and nine original cross adjacencies.",
+        "HIGH1 uses O=B−{v}; HIGH2 at the only-s-spoke endpoint uses O′=(B−v)∪U with all original attachments."
+      ],
+      "scope": {
+        "source_generality": "Exact HIGH1/HIGH2 source contracts in this inventory.",
+        "observation": "Six original G bags and nine adjacencies; G may use e even when X omits it.",
+        "behavior": "Planarity contradiction excludes the specified shared endpoint."
+      },
+      "limitations": [
+        "HIGH1/HIGH2 outside bags differ; actual bag/edge adapter required for each source.",
+        "Do not move G witness edges into X or infer colouring replacement."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 263,
+          "end_line": 267,
+          "quote": "若P/Q兩個不同支援邊共端v，在**原G**取左bags P,Q,O=B−{v}，右bags {r},{s},{v}。"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 293,
+          "end_line": 295,
+          "quote": "原 U-critical-contact witness先證盾長≥2；P/Q共端且等於唯一s-spoke端點時，"
+        }
+      ],
+      "explicit_hypothesis_count": null,
+      "hypothesis_count_basis": "Unnumbered sufficient interface; number of inventory strings is not a hypothesis count."
+    },
+    {
+      "id": "N45.contract.LONG_PROFILE",
+      "label": "LONG-s direct profiles and triangle/fibre reductions",
+      "assumptions": [
+        "K1: G 任意大小有限簡單 disk 圖，外面為具名 ordered induced C5，B=(b0,…,b4)；供給全部原 vertices、edges、rotation。",
+        "K2: 完整有序 Σ(G)=933／941 或整圖共同 D5 像；所有非框邊 Σ-critical。",
+        "K3: 有效 H 連通，ε(G)=2；恰兩個原 degree5 roots r,s，rs 不存在，其餘有效原內點完整 degree4；原 full B-touch。自由孤立內點另留完整染色因子。",
+        "K4: H−{r,s} 的完整分量**恰**為 U,L,S。U 只接一個 root；L/S 各接兩 roots，原支援非空。所有原件 one-sided。",
+        "K5: L 的 actual support 不包含於任何真框邊兩端；S 的 actual support 包含於某真框邊兩端，所以為真 pair 或 singleton。不能預設 S 是單頂點。",
+        "K6: e=rb_i 是具名原 spoke。V(X)=V(G)，E(X)=E(G)−{e}；U/L/S、全部原 contacts／附件／bridges 都保留。",
+        "K7: 對固定原拒絕 literal β，**X=G−e=M 自己**是 inclusion-minimal β-core，root degrees=(4,5)。不是先取另一份小 core 後稱它 X。",
+        "K8: U 的 owner 是 r 或 s；其原 contact 數 n_U≥1，不預設 unit。每個原 shared r/s contact 只有一個 actual vertex／tuple 座標。",
+        "K9: ordered contacts、ownership、原 edges、actual attachments／support、bridges、rotation 與框順序跨列不變；D5／root 交換搬整份資料。",
+        "K10: 十個 literal 代表，各保全部16 ordered root pins、diagonal／空 fibres；每個完整 contact tuple 保全部 local preimages，接合保全部整圖 lifts。",
+        "K11: 原 G 每條非框邊 f 的 Σ-critical witness：某 γ_f∉Σ(G) 及 G−f 完整 lift。各邊／piece 的 γ_f 可不同。",
+        "K12: X 每條 retained 非框邊 f 的 **同一 β** 刪邊完整 witness。G−f 與 X−f 的圖、列、assignments 分開；恢復 e 另核 r 色。"
+      ],
+      "scope": {
+        "source_generality": "Arbitrary finite size under K1–K12, U owner=s, without piece-size bound.",
+        "observation": "Six original degree profiles; pair/singleton and actual 13/31/22 splits; full r fibres visible.",
+        "behavior": "Four direct profiles excluded; remaining two lose singleton/pair13/pair31, while pair22 uses later source-specific T1/q0/q2."
+      },
+      "limitations": [
+        "Grouping of adopted mechanisms, not one universal new theorem.",
+        "Generic nonemptiness absent; q0/T1/q2 preserve separate source/trust adapters."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "audits/2026-10-10-n45-s-long-contract/REPORT.md",
+          "line": 20,
+          "end_line": 31,
+          "quote": "| K1 | G 任意大小有限簡單 disk 圖，外面為具名 ordered induced C5，B=(b0,…,b4)；供給全部原 vertices、edges、rotatio"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 376,
+          "end_line": 384,
+          "quote": "由原degree5身份m_s+n_U+t_s=5、m_s≥2、n_U≥1，恰有六profiles。"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 389,
+          "end_line": 400,
+          "quote": "- [T1獨立驗收](../audits/2026-10-11-n45-s-long-s-t1-rfibre-review/REPORT.md)："
+        }
+      ],
+      "explicit_hypothesis_count": 12,
+      "hypothesis_count_basis": "Same explicitly numbered K1–K12 as selected LONG branches.",
+      "branch_selector": "U owner=s (K8 specialization)."
+    },
+    {
+      "id": "N45.contract.SHORT_COMPOSITION",
+      "label": "Exact §1 S two-short composition",
+      "assumptions": [
+        "All exact common §1 source hypotheses: finite simple ordered induced-C5 disk, complete Σ933/941 or whole-G D5 image, nonboundary Σ-criticality, ε2, effective connected H, two nonadjacent original degree5 roots, others complete degree4, full B-touch and one-sided nonempty-support pieces.",
+        "Exact S identity: only original e=rb_i omitted; X=G−e=M own same-β minimal45/54 core; both original mixed pieces short; all original complete pieces/data/lifts and free isolated factors retained.",
+        "Adopted N45-S-05/S-06 necessary reductions supply unique U, true-edge mixed support and incidence roles 2/3; each resulting LOW/HIGH branch supplies its complete contract."
+      ],
+      "scope": {
+        "source_generality": "Only canonical §1 S identity with both original mixed pieces short.",
+        "observation": "Same source/literal frame across exact LOW/HIGH branch adapters.",
+        "behavior": "Five identities mutually exclusive and exhaustive within this selected domain."
+      },
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 335,
+          "end_line": 346,
+          "quote": "在§1精確S身份的两原mixed都short時，已採納S05／S06迫唯一原U、兩mixed真框邊支援，"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 240,
+          "end_line": 244,
+          "quote": "**限定合成覆蓋。** 只取§1精確 S身份及已採納 S06 的 S-SHORT-U-LOW：唯一原 U在 r，"
+        }
+      ],
+      "explicit_hypothesis_count": null,
+      "hypothesis_count_basis": "Unnumbered sufficient interface; number of inventory strings is not a hypothesis count."
+    },
+    {
+      "id": "N45.contract.LONG_COMPOSITION",
+      "label": "Selected complete U/long/short S composition",
+      "assumptions": [
+        "K1: G 任意大小有限簡單 disk 圖，外面為具名 ordered induced C5，B=(b0,…,b4)；供給全部原 vertices、edges、rotation。",
+        "K2: 完整有序 Σ(G)=933／941 或整圖共同 D5 像；所有非框邊 Σ-critical。",
+        "K3: 有效 H 連通，ε(G)=2；恰兩個原 degree5 roots r,s，rs 不存在，其餘有效原內點完整 degree4；原 full B-touch。自由孤立內點另留完整染色因子。",
+        "K4: H−{r,s} 的完整分量**恰**為 U,L,S。U 只接一個 root；L/S 各接兩 roots，原支援非空。所有原件 one-sided。",
+        "K5: L 的 actual support 不包含於任何真框邊兩端；S 的 actual support 包含於某真框邊兩端，所以為真 pair 或 singleton。不能預設 S 是單頂點。",
+        "K6: e=rb_i 是具名原 spoke。V(X)=V(G)，E(X)=E(G)−{e}；U/L/S、全部原 contacts／附件／bridges 都保留。",
+        "K7: 對固定原拒絕 literal β，**X=G−e=M 自己**是 inclusion-minimal β-core，root degrees=(4,5)。不是先取另一份小 core 後稱它 X。",
+        "K8: U 的 owner 是 r 或 s；其原 contact 數 n_U≥1，不預設 unit。每個原 shared r/s contact 只有一個 actual vertex／tuple 座標。",
+        "K9: ordered contacts、ownership、原 edges、actual attachments／support、bridges、rotation 與框順序跨列不變；D5／root 交換搬整份資料。",
+        "K10: 十個 literal 代表，各保全部16 ordered root pins、diagonal／空 fibres；每個完整 contact tuple 保全部 local preimages，接合保全部整圖 lifts。",
+        "K11: 原 G 每條非框邊 f 的 Σ-critical witness：某 γ_f∉Σ(G) 及 G−f 完整 lift。各邊／piece 的 γ_f 可不同。",
+        "K12: X 每條 retained 非框邊 f 的 **同一 β** 刪邊完整 witness。G−f 與 X−f 的圖、列、assignments 分開；恢復 e 另核 r 色。"
+      ],
+      "scope": {
+        "source_generality": "Only complete K1–K12 U/long/short S contract with owner r or s.",
+        "observation": "Whole-G root/colour transport preserving complete contacts/fibres/lifts.",
+        "behavior": "Combines two exact owner branches; no other identity covered."
+      },
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed."
+      ],
+      "evidence": [
+        "Current local paper statements and exact listed contracts; no source enumeration or proof replay performed for this inventory."
+      ],
+      "source_refs": [
+        {
+          "path": "audits/2026-10-10-n45-s-long-contract/REPORT.md",
+          "line": 20,
+          "end_line": 31,
+          "quote": "| K1 | G 任意大小有限簡單 disk 圖，外面為具名 ordered induced C5，B=(b0,…,b4)；供給全部原 vertices、edges、rotatio"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 402,
+          "end_line": 406,
+          "quote": "28個raw必要schedules恰分為既有4＋本輪q0的3＋q2的7＋T1的14，逐份來源矛盾，"
+        }
+      ],
+      "explicit_hypothesis_count": 12,
+      "hypothesis_count_basis": "Explicit K1–K12 list; composition covers both K8 owner values."
+    }
+  ],
+  "claims": [
+    {
+      "id": "N45.B_S0",
+      "label": "Witnessed original shield cost B-S0",
+      "role": "shared_lemma",
+      "contract_id": "N45.contract.B_S0",
+      "peer_group": null,
+      "proof_skeleton": "original witness → one-sided original shield cost → five-edge budget",
+      "status": "established",
+      "dependencies": [],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_phase_b_common_lemmas.md",
+          "line": 49,
+          "end_line": 50,
+          "quote": "  2|\\mathcal U|+2|\\mathcal L|+|\\mathcal S|\n  \\le \\sum_{P\\in\\mathcal P}|\\sigma_G(P)|\\le5."
+        }
+      ],
+      "limitations": [],
+      "boundary_dependencies": [
+        "External Gallai/hub principle; original unary-shield and q-core-shield results."
+      ]
+    },
+    {
+      "id": "N45.B_C2",
+      "label": "Complete conditioned per-column B-C2 capacity",
+      "role": "shared_lemma",
+      "contract_id": "N45.contract.B_C2",
+      "peer_group": null,
+      "proof_skeleton": "conditioned degree4 slack → full forbidden columns → capacity equality",
+      "status": "established",
+      "dependencies": [],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_phase_b_common_lemmas.md",
+          "line": 229,
+          "end_line": 230,
+          "quote": "\\boxed{D_r^u+O_r^u+\\delta+o+\\lambda\n=\\deg_G(r)-4-\\chi+\\chi\\,1[b\\in E_r].}"
+        }
+      ],
+      "limitations": [],
+      "boundary_dependencies": [
+        "Connected strict-slack list colouring and original incidence accounting."
+      ]
+    },
+    {
+      "id": "N45.N_DIAGONAL",
+      "label": "Short-piece same-colour complete local lifts",
+      "role": "shared_lemma",
+      "contract_id": "N45.contract.N_DIAGONAL",
+      "peer_group": null,
+      "proof_skeleton": "one-sided short support → exterior hubs → degree-list extension",
+      "status": "established",
+      "dependencies": [],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_phase_b_common_lemmas.md",
+          "line": 117,
+          "end_line": 126,
+          "quote": "**陳述（由既有證明推出的接口）。** 在§2.1的有限簡單disk G與外框B內，"
+        }
+      ],
+      "limitations": [],
+      "boundary_dependencies": [
+        "E4 §4.1 N-diagonal hub/tight-list proof."
+      ]
+    },
+    {
+      "id": "N45.JOIN_RESTORE",
+      "label": "Complete original join and literal spoke restoration",
+      "role": "shared_lemma",
+      "contract_id": "N45.contract.JOIN_RESTORE",
+      "peer_group": null,
+      "proof_skeleton": "all piece assignments → restriction/union → retained r filter",
+      "status": "established",
+      "dependencies": [],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "audits/2026-10-10-n45-s-long-contract/REPORT.md",
+          "line": 152,
+          "end_line": 159,
+          "quote": "每個非空 joint fibre 的**全部**整圖 lifts 是同框 pinned piece lifts 的 restriction／union，"
+        },
+        {
+          "path": "audits/2026-10-10-n45-s-long-contract/REPORT.md",
+          "line": 206,
+          "end_line": 218,
+          "quote": "对每份 proper literal γ、每個 root pin (a,b)，c_γ=γ(b_i)，有**整個 lift 集合**等式"
+        }
+      ],
+      "limitations": [
+        "No target-lift existence inferred from interface algebra."
+      ]
+    },
+    {
+      "id": "N45.ORIGINAL_K5",
+      "label": "Original degree-list triangle/tether K5 witnesses",
+      "role": "shared_lemma",
+      "contract_id": "N45.contract.ORIGINAL_K5",
+      "peer_group": null,
+      "proof_skeleton": "tight palettes → actual active structure → original tethers → five bags",
+      "status": "established",
+      "dependencies": [],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 203,
+          "end_line": 207,
+          "quote": "X 自己的 β-minimality 迫兩條 s-spokes 異色 u,v；逐刪 spoke 的完整 witnesses 給"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 325,
+          "end_line": 328,
+          "quote": "原拒絕三色β以一次共同整圖D5／S4搬到q，逐前提接回BASE no-spoke §§1–3、5的(3,2)來源排除。"
+        }
+      ],
+      "limitations": [],
+      "boundary_dependencies": [
+        "Named BASE degree-list/tether proofs and external Dvořák Lemma7/Theorem10."
+      ]
+    },
+    {
+      "id": "N45.ORIGINAL_K33",
+      "label": "Original K3,3 support-separation witnesses",
+      "role": "shared_lemma",
+      "contract_id": "N45.contract.ORIGINAL_K33",
+      "peer_group": null,
+      "proof_skeleton": "shared endpoint → six original bags/nine edges → separation",
+      "status": "established",
+      "dependencies": [],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 263,
+          "end_line": 267,
+          "quote": "若P/Q兩個不同支援邊共端v，在**原G**取左bags P,Q,O=B−{v}，右bags {r},{s},{v}。"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 293,
+          "end_line": 295,
+          "quote": "原 U-critical-contact witness先證盾長≥2；P/Q共端且等於唯一s-spoke端點時，"
+        }
+      ],
+      "limitations": [
+        "Grouping of repeated mechanism with different HIGH1/HIGH2 adapters."
+      ]
+    },
+    {
+      "id": "N45.SOLE_C_MAP",
+      "label": "Own-minimal sole-C BASE (5)/(4)/(3) mapping",
+      "role": "shared_lemma",
+      "contract_id": "N45.contract.SOLE_C",
+      "peer_group": null,
+      "proof_skeleton": "own-minimal actual sole C → strict-slack/private F → t0 parity or t1/t2 minor",
+      "status": "established",
+      "dependencies": [
+        "N45.JOIN_RESTORE",
+        "N45.ORIGINAL_K5"
+      ],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "audits/2026-10-10-n45-s-long-r-map/REPORT.md",
+          "line": 99,
+          "end_line": 111,
+          "quote": "| BASE需要 | 實際X提供 |"
+        },
+        {
+          "path": "audits/2026-10-10-n45-s-long-r-map/REPORT.md",
+          "line": 115,
+          "end_line": 138,
+          "quote": "**t_s=0，P有5點，F_C=Col。** 映回 [no-spoke §4](../../docs/c5_no_spoke_exterior.md)。"
+        }
+      ],
+      "limitations": [],
+      "boundary_dependencies": [
+        "BASE no-spoke §4, single-spoke (4), two-spoke (3) §§1–5; external Dvořák Lemma7/Theorem10."
+      ]
+    },
+    {
+      "id": "N45.LONG_PROFILE_REDUCTION",
+      "label": "LONG-s direct profiles and triangle/fibre reductions",
+      "role": "shared_lemma",
+      "contract_id": "N45.contract.LONG_PROFILE",
+      "peer_group": null,
+      "proof_skeleton": "degree profiles → direct-source contradictions → full r-fibre split reductions",
+      "status": "established",
+      "dependencies": [
+        "N45.B_S0",
+        "N45.B_C2",
+        "N45.JOIN_RESTORE",
+        "N45.N_DIAGONAL",
+        "N45.ORIGINAL_K5"
+      ],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 376,
+          "end_line": 384,
+          "quote": "由原degree5身份m_s+n_U+t_s=5、m_s≥2、n_U≥1，恰有六profiles。"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 389,
+          "end_line": 392,
+          "quote": "- [T1獨立驗收](../audits/2026-10-11-n45-s-long-s-t1-rfibre-review/REPORT.md)："
+        }
+      ],
+      "limitations": [
+        "Selected mechanism grouping within K1–K12/owner=s; no generic target-lift nonemptiness."
+      ],
+      "boundary_dependencies": [
+        "Adopted DIRECT/FIBRE proofs; beta U-role; source-specific Gallai path-stabilizer and target-row strict slack."
+      ]
+    },
+    {
+      "id": "N45.LOW1",
+      "label": "U owner=r, incidence1, r-spokes2",
+      "role": "branch_result",
+      "contract_id": "N45.contract.LOW1",
+      "peer_group": "N45.SHORT_IDENTITIES",
+      "proof_skeleton": "actual sole C → own-minimal F → three-contact BASE K5",
+      "status": "established",
+      "dependencies": [
+        "N45.SOLE_C_MAP"
+      ],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 211,
+          "end_line": 214,
+          "quote": "完整六項契約與論證見 [LOW1](../audits/2026-10-10-n45-s-low1/REPORT.md)，"
+        }
+      ],
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed."
+      ],
+      "boundary_dependencies": [
+        "Entire LOW1 source contract, including X own same-β minimality and complete original graph data; abstract mechanism adoption does not establish source premises."
+      ]
+    },
+    {
+      "id": "N45.LOW2",
+      "label": "U owner=r, incidence2, r-spokes1",
+      "role": "branch_result",
+      "contract_id": "N45.contract.LOW2",
+      "peer_group": "N45.SHORT_IDENTITIES",
+      "proof_skeleton": "complete two-contact U/cycle → sole C → own-minimal F → BASE K5",
+      "status": "established",
+      "dependencies": [
+        "N45.SOLE_C_MAP"
+      ],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 236,
+          "end_line": 238,
+          "quote": "完整十二項契約及六 claims見[LOW2](../audits/2026-10-10-n45-s-low2/REPORT.md)，"
+        }
+      ],
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed."
+      ],
+      "boundary_dependencies": [
+        "Entire LOW2 source contract, including X own same-β minimality and complete original graph data; abstract mechanism adoption does not establish source premises."
+      ]
+    },
+    {
+      "id": "N45.HIGH1",
+      "label": "U owner=s, incidence1, s-spokes2",
+      "role": "branch_result",
+      "contract_id": "N45.contract.HIGH1",
+      "peer_group": "N45.SHORT_IDENTITIES",
+      "proof_skeleton": "complete (2,1) C/U join → original K3,3/arc → same-row G lifts",
+      "status": "established",
+      "dependencies": [
+        "N45.B_S0",
+        "N45.JOIN_RESTORE",
+        "N45.N_DIAGONAL",
+        "N45.ORIGINAL_K33"
+      ],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 275,
+          "end_line": 279,
+          "quote": "[H1A](../audits/2026-10-10-n45-h1a/REPORT.md)與[H1R](../audits/2026-10-10-n45-h1r/REPORT.md"
+        }
+      ],
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed."
+      ],
+      "boundary_dependencies": [
+        "Entire HIGH1 source contract, including X own same-β minimality and complete original graph data; abstract mechanism adoption does not establish source premises."
+      ]
+    },
+    {
+      "id": "N45.HIGH2",
+      "label": "U owner=s, incidence2, s-spokes1",
+      "role": "branch_result",
+      "contract_id": "N45.contract.HIGH2",
+      "peer_group": "N45.SHORT_IDENTITIES",
+      "proof_skeleton": "complete (2,2) C/U join → original support/bridge W → three-colour G lifts",
+      "status": "established",
+      "dependencies": [
+        "N45.B_S0",
+        "N45.JOIN_RESTORE",
+        "N45.N_DIAGONAL",
+        "N45.ORIGINAL_K33",
+        "N45.ORIGINAL_K5"
+      ],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 303,
+          "end_line": 313,
+          "quote": "**採納的量詞精化。** JOIN／RESTORE／PALETTE仍對全部 proper γ成立；"
+        }
+      ],
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed.",
+        "Unused-colour restoration only for proper-three-colour rows; JOIN/RESTORE/PALETTE retain all proper rows."
+      ],
+      "boundary_dependencies": [
+        "Entire HIGH2 source contract, including X own same-β minimality and complete original graph data; abstract mechanism adoption does not establish source premises."
+      ]
+    },
+    {
+      "id": "N45.HIGH3",
+      "label": "U owner=s, incidence3, s-spokes0",
+      "role": "branch_result",
+      "contract_id": "N45.contract.HIGH3",
+      "peer_group": "N45.SHORT_IDENTITIES",
+      "proof_skeleton": "actual (2,3) C/U cover → two forbidden U colours → X no-spoke K5",
+      "status": "established",
+      "dependencies": [
+        "N45.JOIN_RESTORE",
+        "N45.ORIGINAL_K5"
+      ],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 329,
+          "end_line": 332,
+          "quote": "[H3A](../audits/2026-10-10-n45-h3a/REPORT.md)、[H3R](../audits/2026-10-10-n45-h3r/REPORT.md"
+        }
+      ],
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed."
+      ],
+      "boundary_dependencies": [
+        "Entire HIGH3 source contract, including X own same-β minimality and complete original graph data; abstract mechanism adoption does not establish source premises."
+      ]
+    },
+    {
+      "id": "N45.LONG_R",
+      "label": "U owner=r, long L and pair/singleton short S",
+      "role": "branch_result",
+      "contract_id": "N45.contract.LONG_R",
+      "peer_group": "N45.LONG_OWNER_IDENTITIES",
+      "proof_skeleton": "original shield/star → own-minimal sole C → t0/t1/t2 BASE contradiction",
+      "status": "established",
+      "dependencies": [
+        "N45.B_S0",
+        "N45.SOLE_C_MAP"
+      ],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 350,
+          "end_line": 361,
+          "quote": "在[含long同源契約K1–K12](../audits/2026-10-10-n45-s-long-contract/REPORT.md)全部前提內，"
+        }
+      ],
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed."
+      ],
+      "boundary_dependencies": [
+        "Entire LONG_R source contract, including X own same-β minimality and complete original graph data; abstract mechanism adoption does not establish source premises."
+      ]
+    },
+    {
+      "id": "N45.LONG_S",
+      "label": "U owner=s, long L and pair/singleton short S",
+      "role": "branch_result",
+      "contract_id": "N45.contract.LONG_S",
+      "peer_group": "N45.LONG_OWNER_IDENTITIES",
+      "proof_skeleton": "six direct/fibre profiles → nonempty restored r fibres or original X K5",
+      "status": "established",
+      "dependencies": [
+        "N45.LONG_PROFILE_REDUCTION"
+      ],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 402,
+          "end_line": 415,
+          "quote": "28個raw必要schedules恰分為既有4＋本輪q0的3＋q2的7＋T1的14，逐份來源矛盾，"
+        }
+      ],
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed.",
+        "Nonempty root-pair union is not nonemptiness of every fixed pin; target source not triggered and source preimages remain null."
+      ],
+      "boundary_dependencies": [
+        "Entire LONG_S source contract, including X own same-β minimality and complete original graph data; abstract mechanism adoption does not establish source premises.",
+        "q0 uses adopted SF-QX/BASE E2 paper and historical finite-terminal trust; T1/q2 nonemptiness uses separate independent source-specific constructions."
+      ]
+    },
+    {
+      "id": "N45.SHORT_COMPOSITION",
+      "label": "Exact §1 S two-short domain excluded",
+      "role": "aggregate_result",
+      "contract_id": "N45.contract.SHORT_COMPOSITION",
+      "peer_group": null,
+      "proof_skeleton": "adopted S05/S06 → mutually exclusive LOW/HIGH complete contracts",
+      "status": "established",
+      "dependencies": [
+        "N45.LOW1",
+        "N45.LOW2",
+        "N45.HIGH1",
+        "N45.HIGH2",
+        "N45.HIGH3"
+      ],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 335,
+          "end_line": 346,
+          "quote": "在§1精確S身份的两原mixed都short時，已採納S05／S06迫唯一原U、兩mixed真框邊支援，"
+        },
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 240,
+          "end_line": 244,
+          "quote": "**限定合成覆蓋。** 只取§1精確 S身份及已採納 S06 的 S-SHORT-U-LOW：唯一原 U在 r，"
+        }
+      ],
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed."
+      ],
+      "boundary_dependencies": [
+        "N45-S-05/S-06 necessary reductions unrepresented as local claim nodes; all branch contracts checked separately."
+      ]
+    },
+    {
+      "id": "N45.LONG_COMPOSITION",
+      "label": "Selected complete U/long/short S domain excluded",
+      "role": "aggregate_result",
+      "contract_id": "N45.contract.LONG_COMPOSITION",
+      "peer_group": null,
+      "proof_skeleton": "complete K1–K12 → U owner r or s → exact scoped contradictions",
+      "status": "established",
+      "dependencies": [
+        "N45.LONG_R",
+        "N45.LONG_S"
+      ],
+      "dependency_notes": "Selected dependencies reconstruct repeated paper proof mechanisms; they are not extracted Lean theorem dependencies. External and unrepresented inputs are listed separately.",
+      "evidence": [
+        "Established current local paper statement/adoption under the exact referenced contract."
+      ],
+      "source_refs": [
+        {
+          "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+          "line": 402,
+          "end_line": 406,
+          "quote": "28個raw必要schedules恰分為既有4＋本輪q0的3＋q2的7＋T1的14，逐份來源矛盾，"
+        }
+      ],
+      "limitations": [
+        "Only the complete stated source contract is excluded; no general N45/N2/E closure.",
+        "Paper adoption, external trust, finite calibration and source realizability are distinct; no new Lean theorem or realized target source is claimed."
+      ]
+    }
+  ],
+  "branch_groups": [
+    {
+      "id": "N45.SHORT_IDENTITIES",
+      "label": "Exact §1 two-short S identities",
+      "unit": "branch_identity",
+      "members": [
+        "N45.LOW1",
+        "N45.LOW2",
+        "N45.HIGH1",
+        "N45.HIGH2",
+        "N45.HIGH3"
+      ],
+      "normalization": "whole-source swaps only; named attachments/frames preserved",
+      "group_kind": "branch_partition"
+    },
+    {
+      "id": "N45.LONG_OWNER_IDENTITIES",
+      "label": "Selected K1–K12 complete U/long/short owner identities",
+      "unit": "branch_identity",
+      "members": [
+        "N45.LONG_R",
+        "N45.LONG_S"
+      ],
+      "normalization": "whole-source swaps only; named attachments/frames preserved",
+      "group_kind": "branch_partition"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "N45.compare.SOLE_C",
+      "label": "Repeated source-minimal sole-C adapters",
+      "members": [
+        "N45.LOW1",
+        "N45.LOW2",
+        "N45.LONG_R"
+      ],
+      "interpretation": "Compare actual component recognition, X own-minimal F/nonemptiness and original retained-edge exterior witnesses; all three reuse the established sole-C route.",
+      "limitations": [
+        "LOW2 preserves original two-contact U cycle; LONG-r allows pair/singleton S and t0/t1/t2, so adapter obligations differ."
+      ]
+    },
+    {
+      "id": "N45.compare.OWNER_S",
+      "label": "Complete C/U join with distinct geometric endings",
+      "members": [
+        "N45.HIGH1",
+        "N45.HIGH2",
+        "N45.HIGH3",
+        "N45.LONG_S"
+      ],
+      "interpretation": "Complete same-source C/U join and retained r coordinate repeat across four identities; exact geometry and target nonemptiness decide the ending.",
+      "limitations": [
+        "Common algebra supplies no private cover, target existence, source minimality or uniform geometric theorem."
+      ]
+    },
+    {
+      "id": "N45.compare.G_RESTORE",
+      "label": "Same spoke filter with separate existence adapters",
+      "members": [
+        "N45.HIGH1",
+        "N45.HIGH2",
+        "N45.LONG_S"
+      ],
+      "interpretation": "The filter r≠γ(b_i) repeats; each source-specific proof supplies a complete lift satisfying it.",
+      "limitations": [
+        "HIGH2 proper-three-colour restriction and LONG-s q0/T1/q2 trust/existence distinctions are retained."
+      ]
+    }
+  ],
+  "abstraction_candidates": [
+    {
+      "id": "N45.abstract.JOIN_RESTORE",
+      "label": "Adopt complete join/restoration as shared explicit interface",
+      "claim_ids": [
+        "N45.JOIN_RESTORE",
+        "N45.LOW1",
+        "N45.LOW2",
+        "N45.HIGH1",
+        "N45.HIGH2",
+        "N45.HIGH3",
+        "N45.LONG_R",
+        "N45.LONG_S"
+      ],
+      "kind": "existing_interface_adoption",
+      "adapter_obligations": [
+        {
+          "label": "Complete assignment restriction/union and original-spoke filter already established.",
+          "status": "established",
+          "source_refs": [
+            {
+              "path": "audits/2026-10-10-n45-s-long-contract/REPORT.md",
+              "line": 152,
+              "end_line": 159,
+              "quote": "每個非空 joint fibre 的**全部**整圖 lifts 是同框 pinned piece lifts 的 restriction／union，"
+            },
+            {
+              "path": "audits/2026-10-10-n45-s-long-contract/REPORT.md",
+              "line": 206,
+              "end_line": 218,
+              "quote": "对每份 proper literal γ、每個 root pin (a,b)，c_γ=γ(b_i)，有**整個 lift 集合**等式"
+            }
+          ]
+        },
+        {
+          "label": "Every source supplies actual components/edges/contact identities, common literal frame, all pins and all tuple preimages.",
+          "status": "contract_specific",
+          "source_refs": [
+            {
+              "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+              "line": 373,
+              "end_line": 374,
+              "quote": "每份原ordered/shared contact、actual attachment、ownership、rotation、bridge、旁支、"
+            }
+          ]
+        },
+        {
+          "label": "Applications needing restored target lift supply a separate nonempty r-fibre/union witness.",
+          "status": "contract_specific",
+          "source_refs": [
+            {
+              "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+              "line": 393,
+              "end_line": 400,
+              "quote": "- [T2／q0獨立驗收](../audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/REPORT.md)："
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Interface equality alone creates neither target lift nor derivative minimality; full preservation cannot become marginal projection."
+      ]
+    },
+    {
+      "id": "N45.abstract.SOLE_C",
+      "label": "Reuse source-minimal sole-C adapter for LOW1/LOW2/LONG-r",
+      "claim_ids": [
+        "N45.SOLE_C_MAP",
+        "N45.LOW1",
+        "N45.LOW2",
+        "N45.LONG_R"
+      ],
+      "kind": "existing_interface_adoption",
+      "adapter_obligations": [
+        {
+          "label": "Established BASE t0/t1/t2 exclusions consume exact own-minimal sole-C prerequisites.",
+          "status": "established",
+          "source_refs": [
+            {
+              "path": "audits/2026-10-10-n45-s-long-r-map/REPORT.md",
+              "line": 99,
+              "end_line": 111,
+              "quote": "| BASE需要 | 實際X提供 |"
+            },
+            {
+              "path": "audits/2026-10-10-n45-s-long-r-map/REPORT.md",
+              "line": 115,
+              "end_line": 138,
+              "quote": "**t_s=0，P有5點，F_C=Col。** 映回 [no-spoke §4](../../docs/c5_no_spoke_exterior.md)。"
+            }
+          ]
+        },
+        {
+          "label": "Recognize actual sole C in X, measure complete degrees in X and preserve original U cycle/attachments.",
+          "status": "contract_specific",
+          "source_refs": [
+            {
+              "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+              "line": 223,
+              "end_line": 234,
+              "quote": "r 在 X／C 完整 degree4且無框或 s 鄰；其他 piece 點完整 degree4，s degree5。"
+            },
+            {
+              "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+              "line": 352,
+              "end_line": 357,
+              "quote": "核 actual C=X−s={r}∪U∪L∪S，全部有效C點完整degree4、s唯一degree5；"
+            }
+          ]
+        },
+        {
+          "label": "Supply X own same-β witnesses for exact F_C and distinct spoke colours; do not inherit minimality from G.",
+          "status": "contract_specific",
+          "source_refs": [
+            {
+              "path": "audits/2026-10-10-n45-s-long-r-map/REPORT.md",
+              "line": 82,
+              "end_line": 91,
+              "quote": "X own β-minimality使所有retained s-spokes的β色互異：若重色，刪一條不改constraints，仍拒絕。"
+            }
+          ]
+        },
+        {
+          "label": "Prove unpinned-s relation nonempty using actual contact strict slack, separately from minimality/private-cover.",
+          "status": "contract_specific",
+          "source_refs": [
+            {
+              "path": "audits/2026-10-10-n45-s-long-r-map/REPORT.md",
+              "line": 78,
+              "end_line": 80,
+              "quote": "未pin s時，L_γ(v)=Col−γ(N_B^X(v))滿足（r用刪e後的retained neighbors）"
+            }
+          ]
+        },
+        {
+          "label": "At t1/t2 provide retained original spoke/exterior/tethers; at t0 use parity without outside-hub assumption.",
+          "status": "contract_specific",
+          "source_refs": [
+            {
+              "path": "audits/2026-10-10-n45-s-long-r-map/REPORT.md",
+              "line": 106,
+              "end_line": 111,
+              "quote": "| t=1/2的真實外hub連通與minor鄰接 | retained s-spoke在X中連B與s；不使用已省略e、不补造新outside路。 |"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Owner=s two-component identities require different adapters; source premises remain proved case by case."
+      ]
+    },
+    {
+      "id": "N45.abstract.TARGET_NONEMPTY",
+      "label": "Investigate sufficient target r-fibre nonemptiness theorem",
+      "claim_ids": [
+        "N45.JOIN_RESTORE",
+        "N45.N_DIAGONAL",
+        "N45.HIGH1",
+        "N45.HIGH2",
+        "N45.LONG_S"
+      ],
+      "kind": "new_theorem_required",
+      "adapter_obligations": [
+        {
+          "label": "Specific HIGH1/HIGH2/T1/q2 constructions establish their stated complete-lift unions/pins under exact contracts.",
+          "status": "established",
+          "source_refs": [
+            {
+              "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+              "line": 269,
+              "end_line": 273,
+              "quote": "對任一proper三色literal γ，若T沒有看到全部三個已用色，取已用而未在U support出現的h，"
+            },
+            {
+              "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+              "line": 398,
+              "end_line": 400,
+              "quote": "從β的局部L/S完整assignments及target列U strict-slack，直接構造同一原圖"
+            }
+          ]
+        },
+        {
+          "label": "State and prove common sufficient source conditions for nonempty target r-fibre surviving the spoke filter.",
+          "status": "open",
+          "source_refs": [
+            {
+              "path": "docs/c5_phase_b_common_lemmas.md",
+              "line": 129,
+              "end_line": 131,
+              "quote": "完全沒有合法整圖用途。兩非相鄰roots則提供對角接受，但不能保證"
+            },
+            {
+              "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+              "line": 417,
+              "end_line": 419,
+              "quote": "[D獨立驗收](../audits/2026-10-11-n45-s-long-s-block-transfer-review/REPORT.md)"
+            }
+          ]
+        },
+        {
+          "label": "Distinguish whole-root-pair union from specified-pin existence and retain q0 SF-QX trust when using that route.",
+          "status": "contract_specific",
+          "source_refs": [
+            {
+              "path": "docs/c5_excess_two_nonadjacent_unit_core45.md",
+              "line": 411,
+              "end_line": 413,
+              "quote": "各固定pin的source preimages仍null，T1的恢復是存在完整lift聯集，不聲稱指定pin非空。"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Abstraction research opportunity, not established theorem; no assumption that every target or fixed pin fibre is nonempty.",
+        "No general N2/E/source-realizability conclusion."
+      ]
+    }
+  ],
+  "inventory_notes": [
+    "Document-first selected current semantic inventory; no Graphify, enumeration, source replay or build.",
+    "Current authority supersedes dated candidate/OPEN wording in original reports; original contracts/bytes untouched.",
+    "explicit_hypothesis_count records only explicit numbered lists; LOW1 prose uncounted, LONG twelve plus K8 owner selector.",
+    "Shared_lemma entries include clearly labeled mechanism groupings, not a count of universal independently packaged theorems.",
+    "Dependencies are selected paper mechanism reconstructions with external/unrepresented boundary inputs retained."
+  ]
+}

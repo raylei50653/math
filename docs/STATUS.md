@@ -13,6 +13,7 @@
 | 查證結論及證據 | 本頁 §2 專題索引；詳細前提、證書與 theorem 以報告為準 |
 | 看全線整合與實驗提案 | [C₅ 全線進展與高階假設](c5_research_synthesis.md)；研究快照，不取代各線停止點 |
 | 比較跨線結果與共用引理 | [結果對照與共通語言](c5_common_language.md)；精確前提、結論類型及證據分層 |
+| 量化研究線與抽象潛力 | [複雜度試點](c5_research_complexity.md)；No-mixed／CommonRepair 校準與 N45 限定身份比較，分開命題、分支、接入義務及文件／模組統計 |
 | 檢驗共通引理候選／推廣 | [Phase B 分析](c5_phase_b_common_lemmas.md)；三組候選、最弱已知前提、反例、證明義務與可消除分支 |
 | 看後續成果與保留缺口 | 本頁 §3–4 |
 | 更新文件 | [文件維護規則](DOCUMENTATION.md) |

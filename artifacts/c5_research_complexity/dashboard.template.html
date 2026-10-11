@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-Hant">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>研究線複雜度試點</title>
+<style>
+:root{--ink:#172a3a;--muted:#526477;--line:#d9e1e7;--paper:#fff;--bg:#f1f5f7;--accent:#1b6370}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font:15px/1.65 system-ui,-apple-system,sans-serif}
+main{max-width:1440px;margin:auto;padding:30px 26px 50px}h1{font-size:30px;margin:0 0 10px;letter-spacing:.02em}h2{font-size:20px;margin:0 0 14px}h3{font-size:16px;margin:20px 0 8px}
+p{margin:8px 0 14px}.muted{color:var(--muted)}.card{border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:20px;margin:18px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.grid .card{margin:0}.number{font-size:28px;font-weight:700;color:var(--accent)}.small{font-size:13px}.toolbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:16px 0}
+label{font-size:14px}select,input{font:inherit;border:1px solid #aabcc8;border-radius:6px;background:white;padding:7px 10px}input{min-width:240px}button{font:inherit;color:var(--accent);cursor:pointer}a{color:var(--accent)}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:12px;white-space:nowrap;color:var(--muted);background:#f7f9fa}tbody tr[data-id]{cursor:pointer}tbody tr[data-id]:hover,tbody tr.selected{background:#eaf4f5}.scroll{overflow:auto}
+.workspace{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(320px,1fr);gap:18px}.workspace .card{margin:0;min-width:0}.workspace .scroll,#detail{max-height:680px;overflow:auto}ul{padding-left:22px;margin:8px 0 14px}.pill{display:inline-block;padding:1px 8px;border-radius:20px;background:#edf1f7;font-size:12px;margin:3px 4px 3px 0}.scope{background:#edf5f3}.warning{border-left:4px solid #b99b45;padding:8px 14px;background:#fffaf0}
+#graph{overflow:auto;min-height:180px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd}svg{display:block}.node{cursor:pointer}.node text{pointer-events:none}code{font-size:12px;overflow-wrap:anywhere}footer{margin-top:26px;color:var(--muted);font-size:13px}
+@media(max-width:900px){.workspace{grid-template-columns:minmax(0,1fr)}.grid{grid-template-columns:minmax(0,1fr)}main{padding:20px 14px}}
+</style>
+<main>
+<header><h1>研究線複雜度試點</h1>
+<p>比較 No-mixed、CommonRepair 與 N45 的平行分支、共用命題和個案接入義務，找出值得重用或推廣的證明接口。</p>
+<p class="muted small" id="baseline"></p></header>
+<div class="grid" id="cards"></div>
+<section class="card"><h2>計數單位與覆蓋範圍</h2>
+<p>同級分組按命題的用途與契約判定；圖上的深度只計本次選入的依賴。分支身份、前提模式、實例義務、極小修復和 Lean 宣告各有獨立單位。</p>
+<div class="scroll"><table><thead><tr><th>研究族</th><th>選入命題</th><th>選入依賴</th><th>最長鏈</th><th>用途</th></tr></thead><tbody id="family-summary"></tbody></table></div>
+<div class="warning small">選入命題圖是經來源核對的局部分析；外部定理與未選入的前層依賴保留在命題詳情。它不代表完整證明 DAG，深度與使用者數也不代表整條研究線。</div></section>
+<section class="card"><h2>同級比較與盤點分組</h2><p class="muted small">盤點桶保存不同用途的宣告；分支分拆保存父題的身份列表；同級比較才比較相近用途的命題。分組可以重疊，數量不相加。</p><div class="scroll"><table><thead><tr><th>分組</th><th>種類</th><th>單位</th><th>數量</th><th>正規化規則</th></tr></thead><tbody id="peer-groups"></tbody></table></div></section>
+<section class="card"><h2>命題與依賴</h2>
+<div class="toolbar"><label>研究族 <select id="family"><option value="all">全部</option></select></label><label>用途 <select id="role"><option value="all">全部</option><option value="shared_lemma">共同引理</option><option value="branch_result">分支結果</option><option value="aggregate_result">合併結論</option><option value="instance_result">來源實例</option></select></label><label>查找 <input id="search" placeholder="命題、身份或證明骨架"></label><span id="shown" class="small muted"></span></div>
+<div class="workspace"><div class="card"><div class="scroll"><table><thead><tr><th>命題</th><th>用途</th><th>深度</th><th>前提</th><th>使用者</th></tr></thead><tbody id="claim-table"></tbody></table></div></div><aside class="card" id="detail" aria-live="polite"></aside></div>
+<h3>所選命題的前提圖</h3><p class="muted small">箭頭從前提指向結果。圖外依賴見右側詳情；點選節點可查看來源與契約。</p><div id="graph"></div></section>
+<section class="card"><h2>抽象候選與接入義務</h2><div id="candidates"></div></section>
+<section class="card"><h2>文件與 Lean 模組的獨立盤點</h2><p>這兩張圖提供來源組織的量化；其節點和深度不與上面的命題圖合併計算。</p><div id="repo-summary"></div></section>
+<footer>可重跑統計：<code>python3 scripts/c5_research_complexity.py --check</code>。
+<a href="metrics.json">完整 JSON</a> · <a href="claims.csv">命題 CSV</a> · <a href="peer_groups.csv">分組 CSV</a> · <a href="../../docs/c5_research_complexity.md">分析報告</a>。
+來源核對與算術驗證不代替數學證明、公理稽核或来源實現。</footer>
+</main>
+<script>
+const DATA = __PAYLOAD__;
+const claims=new Map(DATA.claims.map(c=>[c.id,c]));
+const contracts=new Map(DATA.contracts.map(c=>[c.id,c]));
+const names={no_mixed:'No-mixed',common_repair:'CommonRepair',n45:'N45'};
+const roles={shared_lemma:'共同引理',branch_result:'分支結果',aggregate_result:'合併結論',instance_result:'來源實例'};
+const statuses={established:'在契約內已成立',open:'未證',counterexample:'反例',contract_specific:'須保留個案契約'};
+const units={branch_identity:'分支身份',semantic_claim:'命題陳述',named_source_instance:'具名來源實例'};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const refs=rs=>(rs||[]).map(r=>`<a href="../../${r.path.split('/').map(encodeURIComponent).join('/')}" title="${esc(r.quote)}">${esc(r.path)}:${r.line}</a>`).join('<br>');
+const list=value=>{const xs=value==null?[]:Array.isArray(value)?value:[value];return xs.length?'<ul>'+xs.map(x=>'<li>'+esc(typeof x==='string'?x:x.note?`${x.kind==='explicit'?'原文引用':'語義重建'} ${x.dependency_id}：${x.note}`:JSON.stringify(x))+'</li>').join('')+'</ul>':'<p class="muted small">此欄沒有列入項目。</p>'};
+let focus=DATA.claims.filter(c=>c.family==='no_mixed'&&c.role==='aggregate_result').sort((a,b)=>b.metrics.selected_rank-a.metrics.selected_rank)[0]?.id||DATA.claims[0].id;
+$('baseline').textContent=`來源基準 ${DATA.baseline_head.slice(0,12)} · ${DATA.source_files.length} 份引用來源 · 選入 ${DATA.claims.length} 個命題／分支記錄`;
+const wc=DATA.calibrations.common_repair_obligations;
+const n45=DATA.claims.filter(c=>c.family==='n45'&&c.role==='branch_result').length;
+$('cards').innerHTML=[['15','No-mixed 分支身份','8 類来源排除，7 類指定雙列分離'],[wc?.concrete_wc_obligations_per_core??'—','每個 repair 核心的 W／C 義務','五種前提模式，展開為 3 witness ＋ 15 cover'],[n45,'選入的 N45 身份','五個 SHORT 與兩個選定 LONG 身份']].map(([n,t,s])=>`<div class="card"><div class="number">${esc(n)}</div><strong>${esc(t)}</strong><p class="muted small">${esc(s)}</p></div>`).join('');
+$('family-summary').innerHTML=DATA.families.map(f=>`<tr><td>${names[f.family]}</td><td>${f.claims}</td><td>${f.dependency_edges}</td><td>${f.max_selected_rank}</td><td>${f.family==='no_mixed'?'已抽象的紙面校準組':f.family==='common_repair'?'集合判準與具名實例':'完整契約下的重用比較'}</td></tr>`).join('');
+$('peer-groups').innerHTML=DATA.peer_groups.map(g=>`<tr><td>${esc(g.label)}</td><td>${esc({inventory_bucket:'盤點桶',branch_partition:'分支分拆',peer_comparison:'同級比較'}[g.group_kind])}</td><td>${esc(units[g.unit]||g.unit)}</td><td>${g.width}</td><td>${esc(g.normalization)}</td></tr>`).join('');
+for(const f of DATA.families){const option=document.createElement('option');option.value=f.family;option.textContent=names[f.family];$('family').append(option)}
+$('family').value='no_mixed';
+function rows(){const family=$('family').value,role=$('role').value,q=$('search').value.trim().toLowerCase();return DATA.claims.filter(c=>(family==='all'||c.family===family)&&(role==='all'||c.role===role)&&`${c.id} ${c.label} ${c.proof_skeleton||''}`.toLowerCase().includes(q))}
+function renderTable(){const cs=rows();$('shown').textContent=`${cs.length} 個記錄`;$('claim-table').innerHTML=cs.map(c=>`<tr data-id="${esc(c.id)}" class="${focus===c.id?'selected':''}"><td><strong>${esc(c.label)}</strong><br><code>${esc(c.id)}</code><br><span class="pill">${names[c.family]}</span></td><td>${roles[c.role]}</td><td>${c.metrics.selected_rank}</td><td>${c.metrics.direct_prerequisites} / ${c.metrics.transitive_prerequisites}<br><span class="muted small">直接 / 間接聯集</span></td><td>${c.metrics.direct_consumers} / ${c.metrics.transitive_consumers}<br><span class="muted small">直接 / 可達聯集</span></td></tr>`).join('');for(const tr of $('claim-table').querySelectorAll('tr[data-id]'))tr.addEventListener('click',()=>choose(tr.dataset.id))}
+function renderDetail(){const c=claims.get(focus),k=contracts.get(c.contract_id);$('detail').innerHTML=`<h2>${esc(c.label)}</h2><span class="pill">${esc(statuses[c.status])}</span><span class="pill">${esc(roles[c.role])}</span><h3>抽象範圍</h3><p>${esc(k.scope.source_generality)}<br>${esc(k.scope.observation)}<br>${esc(k.scope.behavior)}</p><h3>契約 ${esc(k.label)}</h3>${list(k.assumptions)}<h3>來源</h3><p class="small">${refs(c.source_refs)}</p><h3>證據</h3>${list(c.evidence)}<h3>選入的直接前提</h3>${list(c.dependencies.map(id=>claims.get(id).label+' ['+id+']'))}<h3>图外依賴</h3>${list(c.boundary_dependencies)}<h3>依賴判定</h3>${list(c.dependency_notes)}<h3>適用界線</h3>${list([...(k.limitations||[]),...(c.limitations||[])])}`}
+function renderGraph(){const gm=DATA.selected_claim_graph.per_node;const ids=[...gm[focus].ancestor_ids,focus];const levels=new Map();for(const id of ids){const rank=gm[id].rank;if(!levels.has(rank))levels.set(rank,[]);levels.get(rank).push(id)}for(const xs of levels.values())xs.sort();const min=Math.min(...levels.keys()),max=Math.max(...levels.keys());const width=(max-min+1)*230+36,height=Math.max(1,...[...levels.values()].map(xs=>xs.length))*92+55;const pos=new Map();for(const [r,xs] of levels)xs.forEach((id,i)=>pos.set(id,{x:20+(r-min)*230,y:30+i*92}));let svg=`<svg role="img" aria-label="所選命題與選入前提圖" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9aacb9"/></marker></defs>`;for(const id of ids){const t=pos.get(id);for(const p of gm[id].prerequisites){if(!pos.has(p))continue;const s=pos.get(p);svg+=`<path d="M${s.x+190},${s.y+30} C${s.x+212},${s.y+30} ${t.x-20},${t.y+30} ${t.x},${t.y+30}" fill="none" stroke="#9aacb9" stroke-width="1.4" marker-end="url(#arrow)"/>`}}for(const id of ids){const p=pos.get(id),c=claims.get(id),color={shared_lemma:'#eef0fa',branch_result:'#e9f4ee',instance_result:'#eaf1fa',aggregate_result:'#fcf1df'}[c.role];svg+=`<g class="node" data-id="${esc(id)}" tabindex="0" role="button" aria-label="${esc(c.label)}"><title>${esc(c.label)}</title><rect x="${p.x}" y="${p.y}" width="190" height="62" rx="7" fill="${color}" stroke="${id===focus?'#1b6370':'#c6d3dc'}" stroke-width="${id===focus?2:1}"/><text x="${p.x+10}" y="${p.y+22}" font-size="11" fill="#526477">${esc(id.length>27?id.slice(0,25)+'…':id)}</text><text x="${p.x+10}" y="${p.y+44}" font-size="12" fill="#172a3a">${esc(c.label.length>20?c.label.slice(0,19)+'…':c.label)}</text></g>`}svg+='</svg>';$('graph').innerHTML=svg;for(const node of $('graph').querySelectorAll('[data-id]')){node.addEventListener('click',()=>choose(node.dataset.id));node.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose(node.dataset.id)}})}}
+function choose(id){focus=id;renderTable();renderDetail();renderGraph()}
+for(const id of ['family','role'])$(id).addEventListener('input',()=>{const cs=rows();if(cs.length&&!cs.some(c=>c.id===focus))choose([...cs].sort((a,b)=>b.metrics.selected_rank-a.metrics.selected_rank)[0].id);else renderTable()});
+$('search').addEventListener('input',renderTable);
+const candidates=DATA.abstraction_candidates;
+$('candidates').innerHTML=candidates.length?candidates.map(c=>`<h3>${esc(c.label)}</h3><span class="pill">${c.kind==='existing_interface_adoption'?'既有接口的採用':'需要新定理'}</span><p>${esc(names[c.family])} · ${c.claim_ids?.length??0} 個選入命題</p><ul>${(c.adapter_obligations||[]).map(o=>`<li><span class="pill">${esc(statuses[o.status]||o.status)}</span>${esc(o.label)}<div class="small">${refs(o.source_refs)}</div></li>`).join('')}</ul>${list(c.limitations)}`).join(''):'<p>候選見分析報告。</p>';
+const dg=DATA.repository.document_graph,lg=DATA.repository.lean_import_graph;
+const topHubs=g=>Object.entries(g.per_node).sort((a,b)=>b[1].consumers.length-a[1].consumers.length||a[0].localeCompare(b[0])).slice(0,4).map(([id,n])=>`${id}（直接 ${n.consumers.length}，可達 ${n.descendant_ids.length}）`).join('；');
+$('repo-summary').innerHTML=`<table><thead><tr><th>圖與單位</th><th>節點</th><th>依賴邊</th><th>最長鏈</th><th>覆蓋</th></tr></thead><tbody><tr><td>文件 metadata</td><td>${dg.nodes}</td><td>${dg.edges}</td><td>${dg.max_rank}</td><td>來源基準的頂層 docs ${dg.metadata_top_level_docs}/${dg.tracked_top_level_docs}</td></tr><tr><td>Lean 模組 imports</td><td>${lg.nodes}</td><td>${lg.edges}</td><td>${lg.max_rank}</td><td>非 Audit／Generated 模組；普通來源 theorem ${lg.buckets.ordinary_source.declarations.theorem||0}</td></tr></tbody></table><h3>文件直接使用者較多的節點</h3><p class="small">${esc(topHubs(dg))}</p><h3>Lean 直接使用者較多的模組</h3><p class="small">${esc(topHubs(lg))}</p><p class="muted small">來源掃描的 theorem 宣告含 helpers 與有限證明；本次沒有執行公理稽核。未選入或未宣告的 consumers 不由零數量排除。</p>`;
+choose(focus);
+</script>
+</html>
