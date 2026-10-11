@@ -1,0 +1,58 @@
+{
+  "base": "dbdc4c35f785519c8e3cb0260807f0d2feb82469",
+  "initial_status_before_creation": "clean (verified before creating audit)",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "dbdc4c35f785519c8e3cb0260807f0d2feb82469\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "origin/main"
+      ],
+      "exit_code": 0,
+      "stdout": "dbdc4c35f785519c8e3cb0260807f0d2feb82469\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "origin",
+        "refs/heads/main"
+      ],
+      "exit_code": 0,
+      "stdout": "dbdc4c35f785519c8e3cb0260807f0d2feb82469\trefs/heads/main\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "exit_code": 0,
+      "stdout": "?? audits/2026-10-11-br-sd-1g-dbdc4c35/\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+[
+  {
+    "argv": [
+      "python3",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json",
+      "--check"
+    ],
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout_log": "checker.normal.stdout.log",
+    "stderr_log": "checker.normal.stderr.log"
+  },
+  {
+    "argv": [
+      "python3",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+    ],
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout_log": "independent.normal.stdout.log",
+    "stderr_log": "independent.normal.stderr.log"
+  },
+  {
+    "argv": [
+      "python3",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.seed17.json",
+      "--check",
+      "--seed",
+      "17"
+    ],
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout_log": "checker.seed17.stdout.log",
+    "stderr_log": "checker.seed17.stderr.log"
+  },
+  {
+    "argv": [
+      "python3",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.seed17.json"
+    ],
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout_log": "independent.seed17.stdout.log",
+    "stderr_log": "independent.seed17.stderr.log"
+  },
+  {
+    "argv": [
+      "python3",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.corrupted.json",
+      "--check"
+    ],
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout_log": "checker.corrupted.stdout.log",
+    "stderr_log": "checker.corrupted.stderr.log"
+  },
+  {
+    "argv": [
+      "python3",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.corrupted.json"
+    ],
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout_log": "independent.corrupted.stdout.log",
+    "stderr_log": "independent.corrupted.stderr.log"
+  },
+  {
+    "argv": [
+      "python3",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.malformed.json",
+      "--check"
+    ],
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout_log": "checker.malformed.stdout.log",
+    "stderr_log": "checker.malformed.stderr.log"
+  },
+  {
+    "argv": [
+      "python3",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.malformed.json"
+    ],
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout_log": "independent.malformed.stdout.log",
+    "stderr_log": "independent.malformed.stderr.log"
+  },
+  {
+    "argv": [
+      "python3",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.marginal-corrupted.json",
+      "--check"
+    ],
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout_log": "checker.marginal-corrupted.stdout.log",
+    "stderr_log": "checker.marginal-corrupted.stderr.log"
+  },
+  {
+    "argv": [
+      "python3",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.marginal-corrupted.json"
+    ],
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout_log": "independent.marginal-corrupted.stdout.log",
+    "stderr_log": "independent.marginal-corrupted.stderr.log"
+  }
+]

@@ -1,0 +1,344 @@
+[
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1a-0f181045/verify.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/preliminary-0.stdout.txt",
+    "stdout_sha256": "791e2f8b0cd37e3ab0c055a8d622573aae8ca0353e1ea2e2f2c79150ccf66e98",
+    "stderr_path": "logs/preliminary-0.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1c-fd6e1112/verify.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/preliminary-1.stdout.txt",
+    "stdout_sha256": "ccd707e4cb4fc5ad6796a4274177a170c50499a01b254a0d3c88f69ac7d598be",
+    "stderr_path": "logs/preliminary-1.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1e-337d018b/verify.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/preliminary-2.stdout.txt",
+    "stdout_sha256": "4c79ec4d051629b8e6b0d68714c084aee29fef926c54dd823f60f1365d248220",
+    "stderr_path": "logs/preliminary-2.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/preliminary-3.stdout.txt",
+    "stdout_sha256": "6c74974112f414a1721d4c2cd7e0f0afdeaaaf493683232afc96ea238fe45c31",
+    "stderr_path": "logs/preliminary-3.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/preliminary-4.stdout.txt",
+    "stdout_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+    "stderr_path": "logs/preliminary-4.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/preliminary-5.stdout.txt",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_path": "logs/preliminary-5.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+    ],
+    "env_overrides": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/root-0.stdout.txt",
+    "stdout_sha256": "c43983ea0cc0f095e4f55fcb548ff40e2d14cad840ac795a8c32c36200e88ce6",
+    "stderr_path": "logs/root-0.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+    ],
+    "env_overrides": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/root-1.stdout.txt",
+    "stdout_sha256": "c43983ea0cc0f095e4f55fcb548ff40e2d14cad840ac795a8c32c36200e88ce6",
+    "stderr_path": "logs/root-1.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+      "--check",
+      "--seed",
+      "17",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.seed17.json"
+    ],
+    "env_overrides": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/root-2.stdout.txt",
+    "stdout_sha256": "1138b1b1890989b53315d2366886a8e4570715a6abb0195ceb3f2cb1357e892c",
+    "stderr_path": "logs/root-2.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+    ],
+    "env_overrides": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/root-3.stdout.txt",
+    "stdout_sha256": "ac9a6b15f08b99f7b6f29173c25859f1b6a04e1c5d32922e4a9f51a9c47ba940",
+    "stderr_path": "logs/root-3.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.seed17.json"
+    ],
+    "env_overrides": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/root-4.stdout.txt",
+    "stdout_sha256": "ac9a6b15f08b99f7b6f29173c25859f1b6a04e1c5d32922e4a9f51a9c47ba940",
+    "stderr_path": "logs/root-4.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.corrupted.json"
+    ],
+    "env_overrides": {},
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "stdout_path": "logs/root-5.stdout.txt",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_path": "logs/root-5.stderr.txt",
+    "stderr_sha256": "4bbf2c9cdf0e954d59da05d1509a3035ff03a53e152805c1d9be8b01b87e1ae3"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.corrupted.json"
+    ],
+    "env_overrides": {},
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "stdout_path": "logs/root-6.stdout.txt",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_path": "logs/root-6.stderr.txt",
+    "stderr_sha256": "2e8fd5f2141b4597e7b4f290a082f56b78a827b080eaea562f7ee59723e977de"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.malformed.json"
+    ],
+    "env_overrides": {},
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "stdout_path": "logs/root-7.stdout.txt",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_path": "logs/root-7.stderr.txt",
+    "stderr_sha256": "eb27c5fb0fc7f5ad5c327bf7b94f0074c8029b892a52dd6458c09200781a3ff0"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.malformed.json"
+    ],
+    "env_overrides": {},
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "stdout_path": "logs/root-8.stdout.txt",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_path": "logs/root-8.stderr.txt",
+    "stderr_sha256": "eb27c5fb0fc7f5ad5c327bf7b94f0074c8029b892a52dd6458c09200781a3ff0"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.marginal-corrupted.json"
+    ],
+    "env_overrides": {},
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "stdout_path": "logs/root-9.stdout.txt",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_path": "logs/root-9.stderr.txt",
+    "stderr_sha256": "4bbf2c9cdf0e954d59da05d1509a3035ff03a53e152805c1d9be8b01b87e1ae3"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+      "--certificate",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.marginal-corrupted.json"
+    ],
+    "env_overrides": {},
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "stdout_path": "logs/root-10.stdout.txt",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_path": "logs/root-10.stderr.txt",
+    "stderr_sha256": "3ed3c63952cbb59424d55d1158e74be15ecd072da3b9d7aa43480b10ba4ff1cf"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "env_overrides": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/root-11.stdout.txt",
+    "stdout_sha256": "c4b269c81fb78cd1c655c3f7084cd667a523ac4e68918b9692baaea9bb3b7feb",
+    "stderr_path": "logs/root-11.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "origin/main"
+    ],
+    "env_overrides": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/root-12.stdout.txt",
+    "stdout_sha256": "c4b269c81fb78cd1c655c3f7084cd667a523ac4e68918b9692baaea9bb3b7feb",
+    "stderr_path": "logs/root-12.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/main"
+    ],
+    "env_overrides": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/root-13.stdout.txt",
+    "stdout_sha256": "cb356ade488beeebc5de8dc4064d939b74781fbb9d3099b3f4f4513b71f78e50",
+    "stderr_path": "logs/root-13.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "env_overrides": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/root-14.stdout.txt",
+    "stdout_sha256": "912ec623e33a2765665bbd1c7f16aaacd74b908d5aeb3c714dfbbd297c729925",
+    "stderr_path": "logs/root-14.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--name-only"
+    ],
+    "env_overrides": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_path": "logs/root-15.stdout.txt",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_path": "logs/root-15.stderr.txt",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

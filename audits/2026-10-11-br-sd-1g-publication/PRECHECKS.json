@@ -1,0 +1,132 @@
+{
+  "base": "dbdc4c35f785519c8e3cb0260807f0d2feb82469",
+  "checks": [
+    {
+      "i": 0,
+      "id": "original-custody",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/verify.py",
+        "--check"
+      ],
+      "chunk_id": "5ad7c8",
+      "wall_time_seconds": 0.245724135,
+      "exit_code": 0,
+      "original_token_count": 103,
+      "output": "{\"authority_inputs\": 31, \"base\": \"dbdc4c35f785519c8e3cb0260807f0d2feb82469\", \"local_links_checked\": 62, \"mode\": \"check\", \"new_unconditional_closures\": 0, \"old_custody_files\": 313, \"parent_status\": \"OPEN\", \"payload_manifest_sha256\": \"b5242f32df51fa644d047ed655c0ae4ab4fe9aa44b775e590c2d37ae2e285cdf\", \"payloads\": 159, \"recorded_checks\": 22, \"source_finite_status\": \"not triggered\", \"status\": \"custody verified\"}\n"
+    },
+    {
+      "i": 1,
+      "id": "control-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "chunk_id": "c13f95",
+      "wall_time_seconds": 0.000009067,
+      "exit_code": 0,
+      "original_token_count": 75,
+      "output": "{\"C_tuple_counts\": [64, 224, 32, 144, 32, 96], \"M_beta_minimality\": [false, false, false, false, false, false], \"actual_target_source_status\": \"not triggered\", \"fixed_fixture_count\": 6, \"sha256\": \"3d44eb24c360a22e2757bca8e29c695560420fe6f6c9766f6449ec6a7034a1a6\", \"status\": \"triggered and holds\"}\n"
+    },
+    {
+      "i": 2,
+      "id": "control-hashseed17",
+      "argv": [
+        "env",
+        "PYTHONHASHSEED=17",
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "chunk_id": "3eafe1",
+      "wall_time_seconds": 0.000006923,
+      "exit_code": 0,
+      "original_token_count": 75,
+      "output": "{\"C_tuple_counts\": [64, 224, 32, 144, 32, 96], \"M_beta_minimality\": [false, false, false, false, false, false], \"actual_target_source_status\": \"not triggered\", \"fixed_fixture_count\": 6, \"sha256\": \"3d44eb24c360a22e2757bca8e29c695560420fe6f6c9766f6449ec6a7034a1a6\", \"status\": \"triggered and holds\"}\n"
+    },
+    {
+      "i": 3,
+      "id": "control-independent",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "chunk_id": "80e04f",
+      "wall_time_seconds": 0.000010139,
+      "exit_code": 0,
+      "original_token_count": 34,
+      "output": "{\"actual_target_source_status\": \"not triggered\", \"complete_M_lift_counts\": [64, 224, 32, 144, 32, 96], \"status\": \"triggered and holds\"}\n"
+    },
+    {
+      "i": 4,
+      "id": "old-1e",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1e-337d018b/verify.py",
+        "--check"
+      ],
+      "chunk_id": "e7eba2",
+      "wall_time_seconds": 0.000012574,
+      "exit_code": 0,
+      "original_token_count": 106,
+      "output": "{\"actual_target_source_status\": \"not triggered\", \"authority_inputs_verified\": 15, \"base\": \"337d018bfaddfe6b39f7cdc3f3c8ec8bc7c4075f\", \"final_paper_review_bindings\": \"matched\", \"live\": false, \"local_link_targets_checked\": 61, \"old_custody_files_verified\": 206, \"payloads_verified\": 106, \"recorded_checks_verified\": 13, \"scope\": \"byte custody and recorded checks only; paper theorem separately reviewed\", \"task\": \"BR-SD-1e\"}\n"
+    },
+    {
+      "i": 5,
+      "id": "docs",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "chunk_id": "c258e7",
+      "wall_time_seconds": 0.514085984,
+      "exit_code": 0,
+      "original_token_count": 19,
+      "output": "OK: 602 Markdown files, 7412 local links; anchors, index, handoff checked\n"
+    },
+    {
+      "i": 6,
+      "id": "docgraph",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "chunk_id": "9ffa0c",
+      "wall_time_seconds": 0.135193288,
+      "exit_code": 0,
+      "original_token_count": 16,
+      "output": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n"
+    },
+    {
+      "i": 7,
+      "id": "whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "chunk_id": "347c1e",
+      "wall_time_seconds": 0.000013486,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    }
+  ]
+}

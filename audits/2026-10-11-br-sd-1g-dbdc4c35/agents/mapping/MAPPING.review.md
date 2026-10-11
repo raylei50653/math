@@ -1,0 +1,316 @@
+# BR-SD-1g：獨立原來源、degree／attachment／ownership 對照
+
+2026-10-11。研究基準及本 worker 回讀的 HEAD／origin/main 均為
+`dbdc4c35f785519c8e3cb0260807f0d2feb82469`。工作樹只有本轮專屬 audit 未追蹤。
+遠端 main 與初始工作樹核對由 root 起始紀錄負責；本 worker 沒有另取遠端。
+只新增 `agents/mapping/` 產物，沒有改 canonical、舊 audit／seal 或其他 worker 檔案，
+沒有 commit、push、merge 或來源修改。
+
+**裁決：degree／attachment 合法不能證明 actual source 存在。**
+W1 確實耗掉 J1 triangle 的唯一 private witness；W2 可破壞原 terminal lemma。
+仍有未受影響的原 J2 private witness，其完整 pair-supported list 是 `{T,D}`。
+root 提出的「同一 S 內 T／D 交替 incidence walk」與本檔完整來源映射相容；
+它另給此雙旁支精確合同的紙面矛盾，無須把 D 从 W1 割點硬傳回 J1。
+這是 candidate scoped exclusion 的 mapping 支持，非 canonical 採納或來源有限觸發。
+
+## 1. 凍結來源、原身份與證據邊界
+
+本檔依據 [INPUTS](../../authority/INPUTS.json) 的 BASE 凍結 bytes，讀取：
+
+| 凍結入口 | 本 worker 核對內容 |
+| --- | --- |
+| [N45 canonical](../../authority/docs/c5_excess_two_nonadjacent_unit_core45.md) §1／§2.11／§3 | 原 G／M 完整合同；已採 1a、1c、1e 精確範圍與父身份 OPEN |
+| [degree-5 guide](../../authority/docs/c5_degree5_guide.md) §4 | 1g：W1 原 L ownership、W2 actual S pair、不得增邊／刪附件的具名義務 |
+| [unary/support 定義](../../authority/docs/c5_unary_shield_budget.md) §1 | actual support 是整份原 piece 的全部 `N_B(P)`，不是顏色 marginal |
+| [common language](../../authority/docs/c5_common_language.md) | 原圖、字面四色、完整 relations／fibres／full lifts 同源保留 |
+| [1c PROOF](../../authority/audits/2026-10-11-br-sd-1c-fd6e1112/PROOF.md) §1–7、[MAPPING](../../authority/audits/2026-10-11-br-sd-1c-fd6e1112/MAPPING.md) | 完整 degree、原 L/S ownership、triangle witness 例外、terminal lemma 全部局部前提 |
+| [1e PROOF](../../authority/audits/2026-10-11-br-sd-1e-337d018b/PROOF.md) §1–5、[MAPPING](../../authority/audits/2026-10-11-br-sd-1e-337d018b/MAPPING.md) | q-side 全接點／重合 degree 表；雙 private-witness preservation 的必要前提 |
+| [1a PROOF](../../authority/audits/2026-10-11-br-sd-1a-0f181045/PROOF.md)、[1e external SOURCE](../../authority/audits/2026-10-11-br-sd-1e-337d018b/external/SOURCE.md) | 同源 complete lists／full join；凍結 Dvořák degree-assignment／blockwise characterization |
+
+逐項保留如下，沒有因後續反證只用部分條件而撤掉來源合同：
+
+1. 同一有限簡單 disk 原 G，外框是 ordered induced C5 `B=(b0,…,b4)`；完整
+   `Σ(G)=933／941` 或共同搬運整張具名圖的 D5 像，`ε(G)=2`。
+   每條非框原邊 Σ-critical，其原刪邊 full witnesses 全保留。
+2. 原不相鄰 r/s 完整 degree5，其餘有效原內點完整 degree4；有效原 H 連通。
+   `H_G−{r,s}=L⊔S` 恰兩份完整原 mixed，U=0，L long；沿用原 full B-touch、
+   one-sided 與 support 非空合同。S 的 actual support 恰同一真框邊 pair。
+3. 只刪 r 唯一原 boundary spoke `e=rb_i`，`V(M)=V(G)`、
+   `E(M)=E(G)−{e}`、X=M；不得换成另一个 minimal core。
+   M 自己拒絕同一 literal proper 三色 β，並自己對 β inclusion-minimal；
+   自己全部 retained-edge 同 β full witnesses 全保留。原 G 的 Σ-critical 不代替此條件。
+4. M 中 s 仍完整 degree5，其餘有效原內點完整 degree4；原 s 恰有不同有序內鄰
+   `p∈L`／`q∈S`，三原 boundary spokes 全保。
+   `C=H_M−s={r}∪L∪S` 是同一實際 sole connected component，r split22。
+5. 原 rotation／disk embedding、全部原點／邊及 boundary attachments、全部
+   named／ordered／shared contacts、ownership、原 bridge 身份、共同 literal 色框、
+   G／M 各自完整 relations／fibres（含空 fibres）及 full lifts 全保留。
+   45／54 只共同交換 roots roles 及整圖資料，不對 blocks 各自改色。
+
+沒有候選原來源提交；本檔不聲稱原 rotation、完整 Σ 或 witnesses 已在某張新圖上觸發。
+
+## 2. 原點集合、接線與 ownership 的完整符號映射
+
+`C0` 是同一候選原 C 裡的骨架邊子圖，不是已完整 degree4 舊圖加旁支。
+J1 是指定 triangle `(r,a1,x1)`；其唯一原 private witness 是 `x1≠r,a1`。
+J2／J3 任意奇長≥3，`J1∩J2={r}`，J3 與兩者不交。
+J2 私有 `u≠r`、J3 私有 v 間唯一原環間 bridge 是 uv。
+原 p 臂 `a1=t0,t1,…,th=p`，原 q 臂 `a3=z0,z1,…,zℓ=q`；h／ℓ≥0。
+正長時所有 off-cycle 臂點與三環、另一臂及非本臂的具名端點互斥。
+零長時只作原同點身份 `p=a1`／`q=a3`；允許 `a3=v`。
+
+兩份有限非空原 off-skeleton 集合 W1／W2 满足：
+
+`V(C)=V(C0)⊔W1⊔W2`，`C[Wi]` 連通，`N_C(W1)={x1}`，
+`N_C(W2)={x2}`，`x2∈V(J3)∪V(q-arm)`。
+
+除 C0、Wi 的全部原內邊及其原 xi–Wi 邊外，沒有其他 C 邊。
+可有多條 xi–Wi 邊，但沒有 W1–W2 邊、第二骨架接點、其他旁支或額外 s-contact。
+
+| 原點／原原件 | 完整原 ownership |
+| --- | --- |
+| J1−r、正長 p 臂 off-cycle 點、W1 | 原 L；W1 不受 S pair 的兩框點限制 |
+| J2−r、uv 的兩端 u/v、J3、正長 q 臂 off-cycle 點、W2 | 原 S；全部原附件在同一 actual pair |
+| r／s | 原 roots；不是 L/S 內點，r 是 M 降度側 |
+| B | 同一 ordered induced C5 框，不是新 boundary hubs |
+
+刪 r／s 後，W1 仍經 x1 留在原 L，W2 仍經 x2 留在原 S；不產生第三份 piece 或 U。
+完整 L／S vertex identities、所有附件聯集與原 long／short 定義仍須由候選 G 核對。
+本檔沒有把 W1 的支援改成 S pair，也沒有用 Wi 的支援替代整份 owner 的支援。
+
+對每个原 y 固定 `A(y)=N_B^M(y)`；它是來源供給的原集合，不是本表自由選擇的集合。
+因只刪 r-spoke，
+
+`N_B^M(S)=N_B^G(S)=T_B={b_j,b_(j+1)}`，且對全部 `y∈S` 有 `A(y)⊆T_B`。
+
+整份 S 附件聯集須恰为兩端，不可只查逐點 subset。
+原 L 的附件也全保留；没有把 L long 偷換为一個 pair-support 条件。
+
+## 3. 每個原點的完整 degree／attachment 表
+
+對 y∈C，令 `t(y)=1[sy∈E(M)]`、`k(y)=|A(y)|`。
+同一原來源必逐點滿足
+
+`4=d_M(y)=d_C(y)+k(y)+t(y)`。
+
+只有 p／q 有 t=1。令 `mi=|N_C(xi)∩Wi|≥1`；
+接點的實際 C-degree 是骨架 degree 加 mi，附件不许被刪以容納 mi。
+
+### 3.1 W1 的唯一接點
+
+| 原點 | d0=d_C0 | t | d_C | 必須已有的 k | 原 ownership／附件 |
+| --- | ---: | ---: | ---: | ---: | --- |
+| x1，J1 triangle 唯一 private witness | 2 | 0 | 2+m1 | 2−m1 | L；m1=1/k=1，或m1=2/k=0 |
+| a1，h=0 即 p=a1 | 2 | 1 | 2 | 1 | L 原附件，不受 S pair 限制 |
+| a1，h>0 | 3 | 0 | 3 | 1 | L 原附件，全保留 |
+| r | 4 | 0 | 4 | 0 | M 無 B-spoke；G 恰多原 e |
+
+**第一個 degree 矛盾：** 若 m1≥3 或來源實際 `k(x1)≠2−m1`，完整 degree4 失敗。
+若來源已有 `d0+k+t=4`，則 m1≥1 立即超度；不可刪原附件偽造新合法數值。
+x1 不可能與 a1／r／p／q 重合：前兩者由唯一 private-witness 身份排除，
+p=a1 或 off-cycle、q 在原 S，皆由原 contact／臂身份排除。
+
+### 3.2 W2 所有接點與原合法重合
+
+下表窮盡允許 x2；ℓ=0 沒有 off-cycle 臂點，ℓ>0 的 q／臂內點不與 a3/v 重合。
+
+| 原 q 臂／x2 | d0 | t | 完整 degree4 所需 m2／k |
+| --- | ---: | ---: | --- |
+| ℓ=0，x2=q=a3=v | 3 | 1 | k=−m2；任何非空 W2 都超度，先排除 |
+| ℓ=0，x2=q=a3≠v | 2 | 1 | m2=1、k=0 |
+| ℓ=0，x2=v≠a3 | 3 | 0 | m2=1、k=0 |
+| ℓ=0，x2∈J3−{v,a3} | 2 | 0 | m2=1/k=1，或m2=2/k=0 |
+| ℓ>0，x2=a3=v | 4 | 0 | k=−m2；任何非空 W2 都超度，先排除 |
+| ℓ>0，x2=a3≠v | 3 | 0 | m2=1、k=0 |
+| ℓ>0，x2=v≠a3 | 3 | 0 | m2=1、k=0 |
+| ℓ>0，x2∈J3−{v,a3} | 2 | 0 | m2=1/k=1，或m2=2/k=0 |
+| ℓ>0，x2=z_i，1≤i<ℓ | 2 | 0 | m2=1/k=1，或m2=2/k=0；ℓ=1 此列空 |
+| ℓ>0，x2=q=zℓ | 1 | 1 | m2=1/k=1，或m2=2/k=0 |
+
+统一公式是 `k(x2)=4−d0(x2)−m2−t(x2)`，
+在 J3 上 `d0=2+1[x2=v]+1[x2=a3且ℓ>0]`。
+三環／simple 臂的原身份排除 x2 與 r／u／a1／x1／p 重合，沒有其他具名重合。
+任何供給來源須核實際 k 和此等式；表內非負容量仍只必要，不給 disk 來源實現。
+
+### 3.3 除 x1／x2 外全部有效原內點
+
+下表各列若恰是 x2，改用上表，避免把同一原點算成兩個座標。
+
+| 原點類型 | d_C | t | k=4−d_C−t | ownership／附件 |
+| --- | ---: | ---: | ---: | --- |
+| J2 的 u | 3 | 0 | 1 | S，subset T_B |
+| J2−{r,u} | 2 | 0 | 2 | S，附件恰 T_B |
+| J3 的 a3=v，ℓ=0／ℓ>0 | 3／4 | 1／0 | 0 | S，原附集合空 |
+| J3 的 a3≠v，ℓ=0／ℓ>0 | 2／3 | 1／0 | 1 | S，subset T_B |
+| J3 的 v≠a3 | 3 | 0 | 1 | S，subset T_B |
+| J3−{v,a3} | 2 | 0 | 2 | S，附件恰 T_B |
+| 正長 p 臂內點 t_i，1≤i<h | 2 | 0 | 2 | L，全部原附件保留 |
+| 正長 p 臂末端 p=t_h | 1 | 1 | 2 | L，全部原附件保留 |
+| 正長 q 臂內點 z_i，1≤i<ℓ | 2 | 0 | 2 | S，附件恰 T_B |
+| 正長 q 臂末端 q=zℓ | 1 | 1 | 2 | S，附件恰 T_B |
+| 每個 w∈W1 | 原內邊數加原 w−x1 邊數 | 0 | 4−d_C(w) | L；1≤d_C≤4、0≤k≤3 |
+| 每個 w∈W2 | 原內邊數加原 w−x2 邊數 | 0 | 4−d_C(w) | S；2≤d_C≤4、0≤k≤2 |
+
+W1 可以在必要容量層有 C-degree1／三 B 附件的原葉；W2 不行：
+其 degree1 葉第一矛盾是需三個不同原 B 鄰點，超過 actual pair 的兩點。
+逐點 degree 表不替代附件具名身份、rotation、Σ、拒絕或自身 minimality。
+
+原 s 在 G/M 都為 `2+3=5`，原內鄰恰 p/q，三個原 B 鄰點全留。
+原 r 在 M degree4／k=0，在 G degree5／k=1，差恰 e。
+每個原框點 b 的 M-degree 可完整寫為
+
+`d_M(b)=2+Σ_(y∈C)1[b∈A(y)]+1[b∈N_B(s)]`
+
+（如 effective-H 另忽略原內圖孤立點，亦加它們的原附件 incidence）；
+G 在 e 的框端恰再多1。B 的框邊仍為同一 induced C5，不任添框 chord。
+被 effective-H 忽略的原點及其附件／自由因子也保留，不能用它們替換 C、Wi 或原 roots。
+
+## 4. 原 blocks／bridges 保存與必要的 branch blocks
+
+Wi 只有一個骨架鄰點 xi；任何跨 Wi 與 C0 的 simple cycle 必須重訪 xi，故不存在。
+因此原 J1/J2/J3 仍為原 maximal blocks，uv／兩外臂全部原邊仍是 C bridges。
+新增 C-blocks 只在原 `C[Wi∪{xi}]` 裡，沒有把原三環合成新 block 或增加環間 bridge。
+xi 是 C 及 H_M 割點，因 Wi 非空、沒有 s-contact、只經 xi 出口。
+不把這當成來源矛盾；原 U=0／M 同 β minimal 都不自動保證 H_M 二連通。
+
+`C[Wi]` 連通，所以 xi 在 `C[Wi∪{xi}]` 自身不是割點、只 incident 一個首 branch block Ri。
+若原完整 lists 不可著色，Gallai 刻畫才迫 Ri 是合法 Gallai block。
+m_i=1 只能首 bridge，m_i=2 只能首 odd cycle（含 triangle），首 K4 需3條邊，超預算。
+不能把 m_i=2 畫成两份首 bridge 共用 xi，因刪 xi 會讓 Wi 斷成兩份。
+其他 branch blocks 不需在本檔分類；每個原點仍核§3完整 degree／attachments。
+
+## 5. BR-SD-1e private-witness preservation 的完整前提比對
+
+| 1e 原必要前提 | 本雙旁支域 |
+| --- | --- |
+| 只有 W 在 J3／q 臂、沒有 J1/J2 新接線 | **失敗**：原 W1 接 x1∈J1 |
+| J1−{r,a1} 的點無額外 C 邊、非割點、只屬 J1 | **失敗**：此集合恰 {x1}，其多 m1 原邊且是割點 |
+| J1 可另選 private 非割點替代 | **不存在**：J1 triangle 的另外兩點是 r 與 a1；r 多 block，a1 是零臂 s-contact 或正臂割點 |
+| J2−{r,u} 有原 private 非割點、非 s-contact、d_C=2 | **保持**：W1 在 L、W2 在 J3／q 臂；任意奇長 J2 包括 triangle 都至少有一點 |
+| J1/J2 的每個合格 witness list 等於本環 palette | 只對 J2 witness 保持；x1 的 list 是 J1 與首 branch block 的互斥聯集 |
+
+第一個錯誤推論是 `D∈L^D(x1) ⇒ D∈P_J1`，更不能推出所有 incident palettes 含 D。
+本域確實失去 1e 的雙 witness 保證；這不產生 actual source 或排除結論的反例。
+
+令原 pair 的兩 literal β 色為 A／B，第三已用色为 T，未用色為 D。
+J2 原 witness `w2∈J2−{r,u}` 的完整原 degree 迫 `A(w2)=T_B`，所以
+
+`L^D(w2)={T,D}=P_J2`。
+
+在壞 degree assignment 下，r 的原 list 為全部 Col，原 r 只 incident J1/J2；
+因此 `P_J1={A,B}`。x1 沒有 s-contact，其 D 必在首 R1：
+
+| W1 接入原預算 | 合法 palette routing 的必要值 |
+| --- | --- |
+| m1=1／k=1 | R1 是 bridge，`P_R1={D}`；原 x1 附件的 β 色必為 T |
+| m1=2／k=0 | R1 是 odd cycle，`P_R1={T,D}` |
+
+這是 D 正確進入 W1，不是對 J1 的 D 矛盾。
+例如只看局部 abstract 原形狀 x1−y，給 x1 list `{A,B,D}`、J1 palette `{A,B}`、
+bridge palette `{D}`，y 的 C-degree1／三個 β 色不同的附件使 list `{D}`，就沒有局部矛盾。
+它只校準 L-side leaf／割點推論；沒有 disk、完整 Σ／witnesses 或 actual source 的聲稱。
+若正長 p 臂還使用壞 palettes，a1 的首 bridge 為 D，臂內 singleton palettes 必交替
+D／非 D，而 p 禁 D，故正奇數長 h 已有 palette 矛盾；零長和正偶數長未由此排除。
+本輪主 S 證明不需要這個額外必要條件。
+
+## 6. BR-SD-1c terminal lemma：逐前提與仍已涵蓋的配置
+
+| 1c terminal 原前提 | 本域核對 |
+| --- | --- |
+| 同一 M／β／s=D、連通 C、完整 degree4、原拒絕及 degree lists | 保持；見§1／§7 |
+| J3／q 臂所有原 B 附件在同一真框邊 pair | 保持；含 W2 的完整原 S ownership |
+| q 是该側唯一 s-contact | 保持；W2 無 s-contact |
+| J3 其他 blocks 只接 v／a3、存在未佔用 private 環點 | x2=v／a3 時保持；普通 J3 點新增第三接點，完整原 lemma 此前提失效；若 J3 triangle 且 v≠a3、x2 為第三點，唯一 witness 確實被佔用 |
+| 每条原 q 臂邊為 C bridge | 保持；單接點 W2 不使原臂成環 |
+| a3 以外所有原臂點只有原 path 鄰居，包括 q | x2 位於正長臂 off-cycle 點時失敗；其 d_C 增 m2 |
+
+**直接滿足完整既有局部 lemma：** `x2∈{v,a3}` 且 `a3≠v`，任意 ℓ≥0；
+兩接點均只容 m2=1／k=0，J3 private 點與 q 臂原路徑鄰居均保持。
+它們由既有 terminal lemma 已排除，不重列為新 OPEN。
+`x2=a3=v` 的所有非空 W2 已由 degree 第一矛盾排除。
+
+其他配置不可声称直接滿足完整舊 lemma。仍可逐項重用原 terminal 證明的更短實際依賴：
+令 `E3=J3−{v,a3,x2}`（x2 不在 J3 時只扣 v/a3），若 E3 非空，其點仍只屬 J3，
+所以 `P_J3={T,D}`。
+
+| 原 q 臂長 | 原 terminal 同一逐點矛盾仍保持的必要檢查 |
+| --- | --- |
+| ℓ=0 | E3 非空即 q∈J3 卻禁 D；x2 可為其他未佔用位置 |
+| ℓ=1 | E3 非空且 x2≠q，原 q 仍 d_C1／k2／list `{T}`，首 bridge 与 J3 在 T 相交 |
+| ℓ≥2 | E3 非空且 x2≠z1，原首 off-cycle 點 z1 仍 d_C2／k2／list `{T,D}`；首 bridge 與 J3 相交 |
+
+這些是明示已保存逐點證明依賴的 scoped corollaries，不偽稱較強完整 lemma 前提保持。
+奇長 J3≥5 時 E3 必非空；J3 triangle 的唯一失去 witness 配置是
+`v≠a3` 且 x2 為第三點。若 a3=v，兩個原 private 點仍至少留一個。
+遠離 z1 的 q 臂接入可以改動原 q 卻保留首邊 proof；不能把它也包裝成新 OPEN。
+剩餘仍由本輪§7的新同一 S 證明覆蓋，無須縮臂或另正規化顏色。
+
+## 7. 新 S-side incidence 矛盾的獨立映射檢查
+
+原完整 lists 為
+
+`L^D(y)=Col−(β(A(y))∪({D} if sy∈E(M) else ∅))`。
+
+原完整 degree 等式給 `|L^D(y)|≥d_C(y)`，不先假定全部附件 β 色互異。
+C 的完整 list-coloring 與同一 M／同一 β 且 s=D 的完整延拓等價：逐類核
+B–B、B–C、s–B、s–C、C–C 全部原邊，包含 Wi 內邊／接線／attachments。
+若有效 H 忽略原內圖孤立點，沿原 `Col−β(A(z))`（含 D）填其原座標；
+真正沒有任何原鄰居的自由點才任填 Col。所有 full-lift 因子仍保留。
+M 自己拒絕 β 迫 C 不可著色；外部 Gallai characterization 才給各原 block palettes，
+逐點 list 是所有 incident palettes 的互斥聯集。
+
+本域的精確分離是
+
+`C−r = (J1−r ∪ p-arm_off ∪ W1) ⊔ (J2−r ∪ J3 ∪ q-arm_off ∪ W2)`，
+
+前者是同一原 L，後者是同一原 S，原 uv 留在後者。
+**J2 是唯一既含 S 點又含 r 的 C-block；J1 只有 L／r。**
+所有 W2 branch blocks 均在 S，所有 W1 branch blocks 均在 L；它們不能越過原 ownership。
+
+同一真 pair 使對每個 `y∈S−{q}` 有 `{T,D}⊆L^D(y)`；
+q 的完整 list 含 T 而不含 D。
+J2 原 witness 保證其 palette 恰 `{T,D}`，包括三環全為 triangle 的最小具名形狀。
+
+從 q 選 incident 含 T 的 block，它不含 D。到該 block 除進入口以外的另一原點，
+若在 S，該點有 D，因此必须有另一个 incident 含 D 的 block；palette 互斥使新 block 不含 T。
+下步改選 T，如此交替。
+這不是在普通 cutpoint 把 D 分給所有 blocks，而是用同一點缺少的 universal 色
+選**另一個**真 incident palette。
+
+本 mapping 核對其所有 corner cases：
+
+- J2 含兩色，不能被交替的 exclusive T-only／D-only block 走入；兩者若相同 block 立即矛盾。
+- 到 r 必先走 J2，因为它是 S 的唯一 block 出口；所以不能逃到 L／W1。
+- q 不能回訪；每次換 block 都非上一個 block，每次換 vertex 都非進入口。
+  使用包含全部原 vertex nodes 的 bipartite block–vertex incidence tree，這是有限樹內
+  nonbacktracking walk；不能用只把 blocks 互相連邊的可能 clique 圖替代。
+- 每個 block 至少兩個不同原點；即使 bridge、triangle、長奇環或分支後續 K4，
+  也能選另一原點，沒有把 bridge palette 改為空。
+- 在 ℓ=0 的 q∈J3、在 x2=q、在臂首點／中間點、在 v／a3 重合以及 m2=1／2，
+  q 仍只有同一原 s-contact，S−q 仍普遍含 T/D，region／J2 出口不變。
+- W1 的任意有限大小、m1=1／2、L 原附件>2、p 零／正臂都不会破壞原 J2／S 映射。
+
+有限樹不能有此無限 nonbacktracking walk，給新紙面矛盾。
+本 worker 確認 root 主證明所需同源映射，不用 R31 minor、不分類一般多旁支來源，
+不獨立換色、不丟 full lifts，也不把有限 synthetic palette 現象當全稱證明。
+
+## 8. 第一矛盾、負控制與停止點
+
+| 來源／推論缺陷 | 必須記錄的第一個失敗，不得修補來源 |
+| --- | --- |
+| x1 已完整度4卻加 W1；x2 已完整度4卻加 W2 | 原 `4=d0+m+k+t` 失敗，m≥1 超度 |
+| x2=a3=v（零／正 q 臂） | 原 d0+t=4；k=−m2，degree 第一矛盾 |
+| 為旁支刪原附件 | 原 G／M edge identity／attachments 不再相同；不能以新 degree table 冒充原來源 |
+| W2 degree1 葉 | 需 k=3，原 S pair 只允許 k≤2 |
+| W2 附件含 pair 外框點，或整 S 只用 pair 一端 | actual 原 S pair identity 失敗；subset 不等於聯集恰 pair |
+| W1 被當成 pair-supported | 原 L ownership 被錯換；L 原附件可>2，不能套 W2 leaf 限制 |
+| 不保 p/q、添 W−s 邊／跨接線 | 原 ordered contacts／t(y)／ownership／骨架域失敗 |
+| cutpoint list 含 D ⇒ 每個 incident palette 含 D | 局部推論 counterexample；§5 合法 routing 使 D 僅落 W1 首 block |
+| 只保 G Σ-critical，跳過 M 自己同 β minimality | 原 M 身份未核，不能稱完整來源觸發；新短矛盾只用 M 拒絕，沒有補證 minimality |
+| 只保局部 marginal，漏 complete assignments／empty fibres／full lifts | §7 完整 list–M 延拓等價未獲資料支持，不能稱同源驗證 |
+
+本 worker 交付符號來源必要條件、既有引理逐前提比對及新證明的獨立 mapping 核對；
+沒有建立或枚舉 actual target disk source，來源實現／完整 source control 均 `not triggered`。
+Finite controls、paper review、外部依賴頁核查與 custody／seal 由不同 worker/root 交付；
+本表不把必要容量標成 `triggered and holds`。
+完整 N45-S-NOU-LS-PAIR 父身份仍 **OPEN**，完整 OPEN 身份新增無條件關閉數為 **0**。

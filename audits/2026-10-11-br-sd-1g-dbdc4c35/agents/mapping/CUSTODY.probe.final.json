@@ -1,0 +1,61 @@
+{
+  "scope": "isolated custody I/O only; prerequisites mocked; no actual audit seal verification",
+  "verify_sha256": "b371bd7769f52a2cb7301872685a7d9af607aeca679679a6b18d2dc34d350595",
+  "results": [
+    {
+      "control": "exclusive first seal",
+      "passed": true
+    },
+    {
+      "control": "second seal cannot overwrite",
+      "caught": "FileExistsError",
+      "message": "[Errno 17] File exists: '/tmp/br-sd-1g-custody-review-00gzur69/SEAL.json'"
+    },
+    {
+      "control": "unchanged exact inventory",
+      "passed": true
+    },
+    {
+      "control": "payload byte change",
+      "caught": "ValueError",
+      "message": "seal corruption or payload inventory/hash/mode drift"
+    },
+    {
+      "control": "unlisted added payload",
+      "caught": "ValueError",
+      "message": "seal corruption or payload inventory/hash/mode drift"
+    },
+    {
+      "control": "payload mode change",
+      "caught": "ValueError",
+      "message": "seal corruption or payload inventory/hash/mode drift"
+    },
+    {
+      "control": "symlink payload",
+      "caught": "ValueError",
+      "message": "unexpected symlink: /tmp/br-sd-1g-custody-review-00gzur69/symbolic.txt"
+    },
+    {
+      "control": "restored exact inventory",
+      "passed": true
+    },
+    {
+      "control": "mapping copy body and relative-link-only transform",
+      "passed": true
+    },
+    {
+      "control": "claim drift rejected",
+      "caught": "ValueError",
+      "message": "seal corruption or payload inventory/hash/mode drift"
+    },
+    {
+      "control": "extra seal metadata rejected",
+      "caught": "ValueError",
+      "message": "seal corruption or payload inventory/hash/mode drift"
+    },
+    {
+      "control": "restored fixed claim and exact keys",
+      "passed": true
+    }
+  ]
+}

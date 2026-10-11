@@ -1,0 +1,47 @@
+{
+  "scope": "isolated custody I/O only; prerequisites mocked; no actual seal verification",
+  "verify_sha256": "a8349fa75290063382a29ac8d6c98b2c37949a012e940cad3fedc0670077d44d",
+  "results": [
+    {
+      "control": "exclusive first seal",
+      "passed": true
+    },
+    {
+      "control": "second seal cannot overwrite",
+      "caught": "FileExistsError",
+      "message": "[Errno 17] File exists: '/tmp/br-sd-1g-custody-review-hnkfub2h/SEAL.json'"
+    },
+    {
+      "control": "unchanged exact inventory",
+      "passed": true
+    },
+    {
+      "control": "payload byte change",
+      "caught": "ValueError",
+      "message": "seal corruption or payload inventory/hash/mode drift"
+    },
+    {
+      "control": "unlisted added payload",
+      "caught": "ValueError",
+      "message": "seal corruption or payload inventory/hash/mode drift"
+    },
+    {
+      "control": "payload mode change",
+      "caught": "ValueError",
+      "message": "seal corruption or payload inventory/hash/mode drift"
+    },
+    {
+      "control": "symlink payload",
+      "caught": "ValueError",
+      "message": "unexpected symlink: /tmp/br-sd-1g-custody-review-hnkfub2h/symbolic.txt"
+    },
+    {
+      "control": "restored exact inventory",
+      "passed": true
+    },
+    {
+      "control": "mapping copy body and relative-link-only transform",
+      "passed": true
+    }
+  ]
+}
