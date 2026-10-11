@@ -1,0 +1,448 @@
+#!/usr/bin/env python3
+"""This audit's custody checker. Does not verify the arbitrary-size theorem."""
+import argparse
+import hashlib
+import json
+import os
+from pathlib import Path
+import runpy
+import subprocess
+import sys
+from urllib.parse import unquote, urlsplit
+
+AUDIT = Path(__file__).resolve().parent
+ROOT = AUDIT.parents[1]
+BASE = 'c15a635e17d4be814e19aeeeeb765f3d6024099a'
+BEFORE_SHA = 'd10225c0cbbefc8ba9b7cd3ae99515d73ebf1e2bdecc8d873e40b7f7ab21ed46'
+PREFIX = AUDIT.relative_to(ROOT).as_posix() + '/'
+CLAIM = 'ACCEPTABLE precise scoped paper exclusion; owner adoption pending'
+POST_LABELS = {'seal', 'seal-check', 'seal-hashseed17', 'seal-negative', 'boundary-readback'}
+POST_NAMES = {label + suffix for label in POST_LABELS for suffix in ('.json', '.stdout.log', '.stderr.log')} | {'REVIEWER_READBACK.json'}
+ENVELOPES = {'SEAL.json', 'DELIVERY.json'}
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+def canonical(value):
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()
+
+def require(value, message):
+    if not value:
+        raise ValueError(message)
+
+def run(argv):
+    r = subprocess.run(argv, cwd=ROOT, capture_output=True, env=os.environ | {'PYTHONDONTWRITEBYTECODE': '1'})
+    require(r.returncode == 0, f'command failed {argv!r}: exit={r.returncode}, stderr={r.stderr.decode()!r}')
+    return r.stdout
+
+def inventory(directory=AUDIT, excludes=()):
+    out = []
+    for path in sorted(directory.rglob('*')):
+        require(not path.is_symlink(), f'unexpected audit symlink: {path}')
+        if not path.is_file():
+            continue
+        name = path.relative_to(directory).as_posix()
+        if name in excludes or (directory == AUDIT and name.startswith('postseal/')):
+            continue
+        data = path.read_bytes()
+        out.append({'path': name, 'sha256': sha(data), 'size': len(data), 'mode': path.stat().st_mode & 0o777})
+    return out
+
+def workspace():
+    before_bytes = (AUDIT / 'inputs/WORKSPACE_BEFORE.json').read_bytes()
+    require(sha(before_bytes) == BEFORE_SHA, 'initial workspace manifest drift')
+    before = json.loads(before_bytes)
+    require(before['base'] == BASE and before['head'] == BASE and before['initial_status_excluding_new_audit'] == '', 'baseline identity')
+    require(run(['git', 'rev-parse', 'HEAD']).decode().strip() == BASE, 'HEAD drift')
+    require(run(['git', 'rev-parse', 'main']).decode().strip() == BASE, 'main drift')
+    current = {}
+    for item in run(['git', 'ls-files', '--stage', '-z']).decode().split('\0'):
+        if not item:
+            continue
+        metadata, path = item.split('\t', 1)
+        mode, oid, stage = metadata.split()
+        require(stage == '0', 'unmerged index')
+        current[path] = {'mode': mode, 'index_oid': oid}
+    expected = before['tracked_files'] | before['gitlinks']
+    require(current == {p: {'mode': r['mode'], 'index_oid': r['index_oid']} for p, r in expected.items()}, 'tracked/index inventory changed')
+    for p, row in before['tracked_files'].items():
+        path = ROOT / p
+        require(path.is_symlink() == row['symlink'], f'file kind drift {p}')
+        data = os.readlink(path).encode() if path.is_symlink() else path.read_bytes()
+        require(sha(data) == row['sha256'] and len(data) == row['size'] and path.lstat().st_mode & 0o777 == row['filesystem_mode'], f'tracked bytes/mode drift {p}')
+    for item in run(['git', 'status', '--porcelain=v1', '-z', '--untracked-files=all']).split(b'\0'):
+        if item:
+            require(item[:2] == b'??' and item[3:].decode().startswith(PREFIX), f'outside authorized additions or staged change: {item!r}')
+    require(not run(['git', 'diff', '--name-only']).strip(), 'tracked working diff')
+    require(not run(['git', 'diff', '--cached', '--name-only']).strip(), 'staged diff')
+    return len(before['tracked_files'])
+
+def receipt(row):
+    require(row['exit_code'] == row['expected_exit_code'], f'check expectation mismatch {row["argv"]!r}')
+    require(row['cwd'] == str(ROOT), 'receipt working directory drift')
+    for field in ('stdout', 'stderr'):
+        path = (AUDIT / row[field + '_path']).resolve()
+        require(path.is_relative_to(AUDIT), 'receipt path escapes audit')
+        require(sha(path.read_bytes()) == row[field + '_sha256'], 'receipt output digest mismatch')
+
+def local_links(precheck=False, allow_pending_seal=False, require_delivery=False):
+    helper = runpy.run_path(str(ROOT / 'scripts/check_docs.py'), run_name='adopt_link_helper')
+    count = 0
+    pending = set()
+    if precheck or allow_pending_seal:
+        pending.add(AUDIT / 'SEAL.json')
+    if precheck or not require_delivery:
+        pending.add(AUDIT / 'DELIVERY.json')
+    if precheck:
+        pending.add(AUDIT / 'final_review/ACCEPTANCE.json')
+    for path in sorted(AUDIT.rglob('*.md')):
+        for line, destination in helper['links'](path.read_text()):
+            url = urlsplit(destination)
+            if url.scheme or url.netloc:
+                continue
+            target = (path.parent / unquote(url.path)).resolve() if url.path else path
+            if not target.exists() and target in pending and not url.fragment:
+                continue
+            require(target.exists(), f'missing local link {path}:{line}: {destination}')
+            if url.fragment and target.suffix == '.md':
+                require(unquote(url.fragment) in helper['anchors'](target.read_text()), f'missing local anchor {path}:{line}')
+            count += 1
+    for path in AUDIT.rglob('*'):
+        if path.is_file() and path.suffix in {'.md', '.py'}:
+            require(all(line == line.rstrip() for line in path.read_text().splitlines()), f'trailing whitespace {path}')
+    return count
+
+def prerequisites(precheck=False, allow_pending_seal=False, require_delivery=False):
+    tracked = workspace()
+    historical = json.loads(run([sys.executable, '-B', str(AUDIT / 'agents/custody/independent_immutable_check.py')]))
+    require(historical['original_files'] == 160 and historical['publication_files'] == 6 and historical['authority_inputs'] == 31 and historical['old_custody_files'] == 313, 'historical coverage')
+    checks = json.loads((AUDIT / 'CHECKS.json').read_text())
+    require(checks['base'] == BASE and checks['all_recorded_expectations_met'] is True, 'CHECKS metadata')
+    require(checks['commands'], 'no command evidence')
+    for row in checks['commands']:
+        receipt(row)
+        require(sha((AUDIT / row['receipt_path']).read_bytes()) == row['receipt_sha256'], 'root receipt digest drift')
+    for row in checks.get('retained_failed_commands', []):
+        require(row['exit_code'] != row['expected_exit_code'], 'retained failure was relabeled')
+        for field in ('stdout', 'stderr'):
+            require(sha((AUDIT / row[field + '_path']).read_bytes()) == row[field + '_sha256'], 'retained failure output drift')
+        require(sha((AUDIT / row['receipt_path']).read_bytes()) == row['receipt_sha256'], 'retained failure receipt drift')
+    if checks.get('retained_failed_commands'):
+        require(any(row['receipt_path'] == 'logs/audit-precheck-v2.json' and row['exit_code'] == 0 for row in checks['commands']) or precheck, 'preliminary precheck failure has no successful superseding receipt')
+    decision = (AUDIT / 'ADOPTION_DECISION.md').read_text()
+    require('ACCEPTABLE' in decision and 'OPEN' in decision, 'decision missing exact verdict/boundary')
+    count = local_links(precheck, allow_pending_seal, require_delivery)
+    if not precheck:
+        acceptance = json.loads((AUDIT / 'final_review/ACCEPTANCE.json').read_text())
+        reviewed = inventory(excludes=ENVELOPES | {'final_review/ACCEPTANCE.json'})
+        require(set(acceptance) == {'schema', 'base', 'reviewer', 'verdict', 'blocking_findings', 'decision', 'parent_status', 'new_unconditional_closures', 'accepted_payload_manifest_sha256', 'accepted_payloads'}, 'final acceptance schema')
+        require(acceptance['schema'] == 'br-sd-1g-adopt-final-review-v1' and acceptance['base'] == BASE and acceptance['verdict'] == 'accepted final audit bytes' and acceptance['blocking_findings'] == 0 and acceptance['decision'] == 'ACCEPTABLE' and acceptance['parent_status'] == 'OPEN' and acceptance['new_unconditional_closures'] == 0, 'final reviewer scope')
+        require(acceptance['accepted_payloads'] == reviewed and acceptance['accepted_payload_manifest_sha256'] == sha(canonical(reviewed)), 'final reviewer byte drift')
+    return {'tracked_entries_unchanged': tracked, 'old_custody_files': 313, 'original_files': 160,
+            'publication_files': 6, 'authority_inputs': 31, 'recorded_root_checks': len(checks['commands']), 'local_links_checked': count}
+
+def seal_value(payloads):
+    return {'schema': 'br-sd-1g-adopt-seal-v1', 'base': BASE, 'claim': CLAIM, 'decision': 'ACCEPTABLE',
+            'parent_status': 'OPEN', 'new_unconditional_closures': 0, 'formal_adoption_executed': False,
+            'source_status': 'not triggered', 'new_Lean_theorem': False,
+            'seal_filesystem_mode': 0o644, 'delivery_filesystem_mode': 0o644,
+            'payload_manifest_sha256': sha(canonical(payloads)), 'payloads': payloads}
+
+def validate_seal(path):
+    payloads = inventory(excludes=ENVELOPES)
+    if path == AUDIT / 'SEAL.json':
+        require(path.stat().st_mode & 0o777 == 0o644, 'seal envelope mode drift')
+    require(json.loads(path.read_text()) == seal_value(payloads), 'seal corruption or payload inventory/hash/mode drift')
+    return payloads
+
+def postseal_inventory():
+    post = AUDIT / 'postseal'
+    rows = inventory(post) if post.exists() else []
+    require({r['path'] for r in rows} <= POST_NAMES, 'unrecognized postseal file')
+    return rows
+
+def validate_delivery(required=False):
+    path = AUDIT / 'DELIVERY.json'
+    rows = postseal_inventory()
+    if not path.exists():
+        require(not required, 'delivery seal not yet created')
+        return False
+    require(path.stat().st_mode & 0o777 == 0o644, 'delivery envelope mode drift')
+    expected = delivery_value(rows)
+    require(json.loads(path.read_text()) == expected, 'delivery receipt inventory/hash/mode drift')
+    return True
+
+def delivery_value(rows):
+    require((AUDIT / 'SEAL.json').stat().st_mode & 0o777 == 0o644, 'seal envelope mode drift')
+    require({r['path'] for r in rows} == POST_NAMES, 'incomplete final receipt set')
+    for label in POST_LABELS:
+        row = json.loads((AUDIT / 'postseal' / (label + '.json')).read_text())
+        receipt(row)
+        relative = AUDIT.relative_to(ROOT).as_posix()
+        commands = {
+            'seal': ['python3', '-B', relative + '/verify.py', '--seal'],
+            'seal-check': ['python3', '-B', relative + '/verify.py', '--check'],
+            'seal-hashseed17': ['python3', '-B', relative + '/verify.py', '--check'],
+            'seal-negative': ['python3', '-B', relative + '/seal_negative.py'],
+            'boundary-readback': ['python3', '-B', relative + '/boundary_readback.py'],
+        }
+        env = {'PYTHONDONTWRITEBYTECODE': '1'} | ({'PYTHONHASHSEED': '17'} if label == 'seal-hashseed17' else {})
+        require(row['argv'] == commands[label] and row['env_overrides'] == env and row['exit_code'] == 0 and row['expected_exit_code'] == 0, 'final receipt command/env/status mismatch: ' + label)
+        require(row['stdout_path'] == 'postseal/' + label + '.stdout.log' and row['stderr_path'] == 'postseal/' + label + '.stderr.log', 'final receipt output path mismatch: ' + label)
+        require(not (AUDIT / row['stderr_path']).read_bytes(), 'unexpected final command stderr: ' + label)
+        output = json.loads((AUDIT / row['stdout_path']).read_text())
+        if label in {'seal', 'seal-check', 'seal-hashseed17'}:
+            require(output['status'] == 'custody verified' and output['mode'] == ('seal' if label == 'seal' else 'check') and output['base'] == BASE, 'final custody output mismatch')
+        elif label == 'seal-negative':
+            require(output['status'] == 'triggered and holds' and output['seal_unchanged'] is True and len(output['cases']) == 7 and all(r['exit_code'] == r['expected_exit_code'] == 1 for r in output['cases']), 'seal negative output mismatch')
+        else:
+            require(output['base'] == output['head'] == output['main'] == BASE and output['tracked_diff'] == '' and output['staged_diff'] == '' and output['only_new_audit_untracked'] is True, 'final boundary readback output mismatch')
+    reviewer = json.loads((AUDIT / 'postseal/REVIEWER_READBACK.json').read_text())
+    require(reviewer['base'] == BASE and reviewer['decision'] == 'ACCEPTABLE' and reviewer['verdict'] == 'accepted sealed bytes' and reviewer['blocking_findings'] == 0 and reviewer['seal_sha256'] == sha((AUDIT / 'SEAL.json').read_bytes()) and reviewer['reviewed_final_payload_manifest_sha256'] == json.loads((AUDIT / 'SEAL.json').read_text())['payload_manifest_sha256'], 'reviewer seal readback')
+    return {'schema': 'br-sd-1g-adopt-delivery-v1', 'base': BASE, 'seal_sha256': sha((AUDIT / 'SEAL.json').read_bytes()),
+            'seal_filesystem_mode': 0o644, 'delivery_filesystem_mode': 0o644,
+            'decision': 'ACCEPTABLE', 'parent_status': 'OPEN', 'new_unconditional_closures': 0,
+            'postseal_manifest_sha256': sha(canonical(rows)), 'postseal_payloads': rows}
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__)
+    g = p.add_mutually_exclusive_group(required=True)
+    for mode in ('precheck', 'seal', 'check', 'seal-delivery'):
+        g.add_argument('--' + mode, action='store_true')
+    p.add_argument('--seal-path', type=Path)
+    p.add_argument('--require-delivery', action='store_true')
+    a = p.parse_args()
+    require(not a.seal_path or a.check, 'alternate seal only for check')
+    require(not a.require_delivery or a.check, 'require-delivery only for check')
+    counts = prerequisites(a.precheck, a.seal, a.require_delivery)
+    if a.precheck:
+        mode = 'precheck'
+    elif a.seal:
+        require(not (AUDIT / 'DELIVERY.json').exists(), 'delivery exists before seal')
+        value = seal_value(inventory(excludes=ENVELOPES))
+        with (AUDIT / 'SEAL.json').open('x') as stream:
+            os.fchmod(stream.fileno(), 0o644)
+            json.dump(value, stream, ensure_ascii=False, indent=2, sort_keys=True)
+            stream.write('\n')
+        mode = 'seal'
+    else:
+        validate_seal(a.seal_path or AUDIT / 'SEAL.json')
+        if a.seal_delivery:
+            value = delivery_value(postseal_inventory())
+            with (AUDIT / 'DELIVERY.json').open('x') as stream:
+                os.fchmod(stream.fileno(), 0o644)
+                json.dump(value, stream, ensure_ascii=False, indent=2, sort_keys=True)
+                stream.write('\n')
+            mode = 'seal-delivery'
+        else:
+            validate_delivery(a.require_delivery)
+            mode = 'check'
+    print(json.dumps({'status': 'custody verified', 'mode': mode, 'base': BASE, 'decision': 'ACCEPTABLE',
+                      'formal_adoption_executed': False, 'parent_status': 'OPEN', 'new_unconditional_closures': 0,
+                      'source_status': 'not triggered', 'new_Lean_theorem': False, **counts}, sort_keys=True))
+
+if __name__ == '__main__':
+    try:
+        main()
+    except (ValueError, OSError, KeyError, TypeError) as exc:
+        print('FAIL: ' + str(exc), file=sys.stderr)
+        raise SystemExit(1)
+#!/usr/bin/env python3
+"""Exclusive command receipts within this audit; no shell interpolation."""
+import argparse
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import subprocess
+import sys
+
+AUDIT = Path(__file__).resolve().parent
+ROOT = AUDIT.parents[1]
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--seed17', action='store_true')
+    p.add_argument('--expected', type=int, default=0)
+    p.add_argument('--postseal', action='store_true')
+    p.add_argument('label')
+    p.add_argument('argv', nargs=argparse.REMAINDER)
+    a = p.parse_args()
+    if not re.fullmatch(r'[a-z0-9-]+', a.label) or not a.argv:
+        p.error('label must be simple and argv nonempty')
+    directory = AUDIT / ('postseal' if a.postseal else 'logs')
+    if directory.is_symlink() or not directory.resolve().is_relative_to(AUDIT):
+        p.error('receipt directory is a symlink or escapes audit; command was not run')
+    directory.mkdir(exist_ok=True)
+    receipt = directory / (a.label + '.json')
+    planned = [receipt] + [directory / (a.label + '.' + field + '.log') for field in ('stdout', 'stderr')]
+    if any(path.exists() or path.is_symlink() for path in planned):
+        p.error('receipt or log already exists; command was not run')
+    environment = dict(os.environ)
+    environment['PYTHONDONTWRITEBYTECODE'] = '1'
+    if a.seed17:
+        environment['PYTHONHASHSEED'] = '17'
+    start = datetime.datetime.now(datetime.timezone.utc)
+    result = subprocess.run(a.argv, cwd=ROOT, env=environment, capture_output=True)
+    record = {'argv': a.argv, 'cwd': str(ROOT),
+              'env_overrides': {'PYTHONDONTWRITEBYTECODE': '1'} | ({'PYTHONHASHSEED': '17'} if a.seed17 else {}),
+              'started_utc': start.isoformat(),
+              'finished_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              'exit_code': result.returncode, 'expected_exit_code': a.expected}
+    for field in ('stdout', 'stderr'):
+        data = getattr(result, field)
+        path = directory / (a.label + '.' + field + '.log')
+        with path.open('xb') as stream:
+            stream.write(data)
+        record[field + '_path'] = path.relative_to(AUDIT).as_posix()
+        record[field + '_sha256'] = hashlib.sha256(data).hexdigest()
+    with receipt.open('x') as stream:
+        json.dump(record, stream, indent=2, sort_keys=True)
+        stream.write('\n')
+    print(json.dumps({'receipt': receipt.relative_to(AUDIT).as_posix(),
+                      'actual_exit': result.returncode, 'expected_exit': a.expected,
+                      'expectation_met': result.returncode == a.expected}, sort_keys=True))
+    if result.stdout:
+        sys.stdout.buffer.write(result.stdout)
+    if result.stderr:
+        sys.stderr.buffer.write(result.stderr)
+    return 0 if result.returncode == a.expected else 1
+
+if __name__ == '__main__':
+    raise SystemExit(main())
+#!/usr/bin/env python3
+"""Read-only final repository identity and write-boundary receipt."""
+import json
+from pathlib import Path
+import subprocess
+
+AUDIT = Path(__file__).resolve().parent
+ROOT = AUDIT.parents[1]
+PREFIX = AUDIT.relative_to(ROOT).as_posix() + '/'
+BASE = 'c15a635e17d4be814e19aeeeeb765f3d6024099a'
+
+def git(*args):
+    return subprocess.check_output(['git', *args], cwd=ROOT).decode()
+
+head, main = git('rev-parse', 'HEAD').strip(), git('rev-parse', 'main').strip()
+tracked = git('diff', '--name-status')
+staged = git('diff', '--cached', '--name-status')
+status = git('status', '--porcelain=v1', '--untracked-files=all')
+valid = all(line.startswith('?? ' + PREFIX) for line in status.splitlines())
+if head != BASE or main != BASE or tracked or staged or not valid:
+    raise SystemExit('write boundary or fixed base drift')
+print(json.dumps({'base': BASE, 'head': head, 'main': main, 'origin_main': git('rev-parse', 'origin/main').strip(),
+                  'tracked_diff': tracked, 'staged_diff': staged, 'only_new_audit_untracked': valid,
+                  'new_untracked_file_count': len(status.splitlines()), 'status': status,
+                  'formal_adoption_executed': False}, sort_keys=True))
+#!/usr/bin/env python3
+"""Memory-only seal corruption controls; never mutate sealed payloads."""
+import copy
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+
+AUDIT = Path(__file__).resolve().parent
+ROOT = AUDIT.parents[1]
+
+def canonical(value):
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()
+
+def main():
+    original = (AUDIT / 'SEAL.json').read_bytes()
+    seal = json.loads(original)
+    cases = []
+    for name in ('decision-escalation', 'parent-closure', 'source-escalation', 'extra-metadata', 'missing-payload-rehashed', 'payload-hash-rehashed'):
+        altered = copy.deepcopy(seal)
+        if name == 'decision-escalation':
+            altered['formal_adoption_executed'] = True
+        elif name == 'parent-closure':
+            altered['parent_status'] = 'CLOSED'
+        elif name == 'source-escalation':
+            altered['source_status'] = 'triggered and holds'
+        elif name == 'extra-metadata':
+            altered['unreviewed_general_theorem'] = True
+        elif name == 'missing-payload-rehashed':
+            altered['payloads'].pop()
+            altered['payload_manifest_sha256'] = hashlib.sha256(canonical(altered['payloads'])).hexdigest()
+        else:
+            altered['payloads'][0]['sha256'] = '0' * 64
+            altered['payload_manifest_sha256'] = hashlib.sha256(canonical(altered['payloads'])).hexdigest()
+        fd = os.memfd_create('br-sd-1g-adopt-negative', 0)
+        try:
+            os.write(fd, json.dumps(altered).encode())
+            argv = [sys.executable, '-B', str(AUDIT / 'verify.py'), '--check', '--seal-path', f'/proc/self/fd/{fd}']
+            result = subprocess.run(argv, cwd=ROOT, capture_output=True, pass_fds=(fd,))
+            cases.append({'name': name, 'argv': argv, 'exit_code': result.returncode, 'expected_exit_code': 1,
+                          'stdout': result.stdout.decode(), 'stderr': result.stderr.decode()})
+            if result.returncode != 1 or 'seal corruption' not in result.stderr.decode():
+                raise ValueError('negative rejected for unexpected reason: ' + name)
+        finally:
+            os.close(fd)
+    argv = [sys.executable, '-B', str(AUDIT / 'verify.py'), '--seal']
+    result = subprocess.run(argv, cwd=ROOT, capture_output=True)
+    cases.append({'name': 'exclusive-reseal', 'argv': argv, 'exit_code': result.returncode, 'expected_exit_code': 1,
+                  'stdout': result.stdout.decode(), 'stderr': result.stderr.decode()})
+    if result.returncode != 1 or 'File exists' not in result.stderr.decode():
+        raise ValueError('reseal rejection missing')
+    if (AUDIT / 'SEAL.json').read_bytes() != original:
+        raise ValueError('seal bytes changed during negative controls')
+    print(json.dumps({'status': 'triggered and holds', 'scope': 'seven memory-only custody controls',
+                      'seal_unchanged': True, 'cases': cases}, sort_keys=True))
+
+if __name__ == '__main__':
+    try:
+        main()
+    except (ValueError, OSError, KeyError) as exc:
+        print('FAIL: ' + str(exc), file=sys.stderr)
+        raise SystemExit(1)
+#!/usr/bin/env python3
+"""Aggregate only this round's root receipts; preserve prior failures separately."""
+import hashlib
+import json
+from pathlib import Path
+
+AUDIT = Path(__file__).resolve().parent
+commands = []
+retained_failed = []
+superseded = {'audit-precheck-v1': 'Exit1: planned ROOT_TOOL_REVIEW.md had not yet been delivered; superseded only after actual v2 precheck passes.'}
+for path in sorted((AUDIT / 'logs').glob('*.json')):
+    record = json.loads(path.read_text())
+    if isinstance(record, dict) and {'argv', 'exit_code', 'expected_exit_code', 'stdout_path', 'stderr_path'} <= set(record):
+        enriched = record | {'receipt_path': path.relative_to(AUDIT).as_posix(),
+                             'receipt_sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
+        if record['exit_code'] != record['expected_exit_code'] and path.stem in superseded:
+            retained_failed.append(enriched | {'superseded_reason': superseded[path.stem]})
+        else:
+            commands.append(enriched)
+value = {
+    'schema': 'br-sd-1g-adopt-checks-v1',
+    'base': 'c15a635e17d4be814e19aeeeeb765f3d6024099a',
+    'scope': 'enumerated current root validation commands; preliminary failures and worker receipts are separate',
+    'all_recorded_expectations_met': all(r['exit_code'] == r['expected_exit_code'] for r in commands),
+    'commands': commands,
+    'retained_failed_commands': retained_failed,
+    'worker_receipt_manifests': ['agents/proof/READS.json', 'agents/proof/FETCH_REPLAY.json',
+                                 'agents/mapping/READS.json', 'agents/mapping/CHECKS.json',
+                                 'agents/custody/final-v2-COMMAND_RECEIPTS.json',
+                                 'agents/custody/METADATA_RECEIPTS.json'],
+    'retained_failure_evidence': ['logs/bootstrap-failures.txt',
+                                  'agents/custody/COMMAND_RECEIPTS.json',
+                                  'agents/proof/READS.json'],
+    'historical_checker_exceptions': {
+        'publication_normal_hashseed17': {'actual_exit_code': 1, 'classification': 'authorized new audit outside historical write whitelist',
+                                          'receipt_manifest': 'agents/custody/final-v2-COMMAND_RECEIPTS.json'},
+        'original_fresh': {'actual_exit_code': 1, 'classification': 'historical fresh BASE differs from fixed task HEAD',
+                            'receipt_manifest': 'agents/custody/final-v2-COMMAND_RECEIPTS.json'}},
+    'postseal_receipts': 'DELIVERY.json binds five exact command/env/exit0 receipts and independent reviewer readback',
+    'actual_source_status': 'not triggered', 'new_Lean_theorem': False,
+    'decision': 'ACCEPTABLE', 'formal_adoption_executed': False,
+    'parent_status': 'OPEN', 'new_unconditional_closures': 0,
+}
+(AUDIT / 'CHECKS.json').write_text(json.dumps(value, indent=2, sort_keys=True) + '\n')
+print(json.dumps({'root_checks': len(commands), 'expectations_met': value['all_recorded_expectations_met']}, sort_keys=True))

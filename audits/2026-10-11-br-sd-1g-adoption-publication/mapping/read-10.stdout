@@ -1,0 +1,120 @@
+# Phase B：共通引理候選的反例與可推廣性
+
+**後續（2026-10-09）：** [N45原unit省略45／54](c5_excess_two_nonadjacent_unit_core45.md)
+已採納指定省略身份的窄排除與低incidence支援下界；§2.1效益與§3.2控制入口隨之更新。
+以下2026-10-08當輪證據及一般候選界線保留，未排全部45／54／55或一般N2。
+
+2026-10-08；輸入基準 `3f2731b7225d35e12872177eb00d3a5b24aa6468`。
+接續 [Phase A 結果對照與共通語言](c5_common_language.md)，比較三組機制，
+交付候選陳述、最弱已知充分前提、反例、證明義務與可能消除的分支。
+「最弱已知」指現有證明實際需要的充分條件，不宣稱邏輯上的最弱條件。
+
+**目前 U1–U4 已在固定完整 Σ933／941 下完成兩-root `(4,4)` 身份排除。**
+仍保留 45／54、原55、單-root例外、無44來源、E5的新證明義務、ε≥3、
+一般出口及操作充分性；詳見 [Kempe 導覽](c5_kempe_guide.md)。
+本輪沒有新增這些分支的來源排除。新增成果是共通接口、§3.2的紙面容量
+恆等式推廣，以及兩張反駁過強容量結論的**非平面** q-critical 圖。
+
+## 1. 三組候選的取捨
+
+| 組別 | 可用的共同定理接口 | 真正未證的升級 | 反例壓力 | 若升級成立可消除的範圍 |
+| --- | --- | --- | --- | --- |
+| U1–U4／Weak-deletion | B-S0：同一原圖上的有見證盾弧收費；省略 piece 仍付原費用 | B-S1：固定Σ933／941的每份 one-sided mixed 都有長盾弧 | S935短mixed；C44-AD3的44 core；q-core singleton缺點 | 至少三份 one-sided pieces 的來源，不限ε／root數；分隔型另處理 |
+| Excess／Mixed／No-mixed | B-C1：條件完整介面的 `D+O(+κ)`；B-C2：任意兩自由roots的逐欄容量等式 | B-E：跨拒絕列的 `ε≥|Q|+c(Q)−2` | degree6有unary重疊或D=2；加孤立點破壞錯誤ε約定 | 933／941整個ε=2來源樹，包含45／54／55、單-root與無44型 |
+| Relation／Repair／State | B-RS：密封外部上下文可反覆使用；B-RW：同weak exits推出weak bisimulation | B-RD：合法性、後繼及染色fibres均由同一摘要決定 | 第五port、刪內邊、同Σ不同單步、同R不同幾何續接 | 指定grammar內的多步state合併與操作式repair；不自動給完整grammar／來源分類 |
+
+三組均固定原圖對應、有序contacts、actual attachments、ownership、bridges、
+cyclic order與共同字面色框。關係先取完整joint再投影，保留空fibres。
+靜態可延拓、從指定染色可達、source排除、有限域無反例分開記錄。
+
+## 2. U1–U4 與 Weak-deletion：原圖收費與臨界見證
+
+### 2.1 B-S0：有原見證的共同盾弧排除準則
+
+**陳述（既有紙面證明可抽出的充分接口）。** G為有限簡單disk圖，
+有序induced-C₅外框B；有效H非空連通。取同一G中的互斥、非空連通
+原piece族𝒫，每份滿足 `H−P` 非空連通，即one-sided。
+令 `K_P=B∪G[P]∪E(P,B)`，F_P是包含H−P的面，
+`σ_G(P)=E(B)∖E(∂F_P)`。取三個互斥子族：
+
+- 𝒰：unary U，`N_H(U)={r_U}`，每點完整 `deg_G=4`；有合法
+  `ψ_U:G−U→Col`不能接回整份U。若其支援包含於某條框邊兩端，
+  可選這樣一條ab及同一G的 `r_U→h` 外路，h在B∖{a,b}，內點避開U與B。
+- 𝒧：非𝒰的pieces，已核實際支援不包含於任一框邊兩端。
+- 𝒮：非前兩族的pieces，已核實際支援恰為某條框邊兩端。
+
+則
+
+\[
+  2|\mathcal U|+2|\mathcal L|+|\mathcal S|
+  \le \sum_{P\in\mathcal P}|\sigma_G(P)|\le5.
+\]
+
+因此左側超過5即排除這份來源。沒有支援下界的mixed不先付一單位；
+singleton支援可能只有零長盾弧。同一unary不能再在𝒧重複收費。
+任意 `M⊆G` 抽取或省略原piece O，仍以原 `σ_G(O)` 收費，
+沒有聲稱 `σ_G(O)=σ_M(O)`；O可能根本不在M中。
+
+**證明及最弱已知充分前提。** one-sided與同一disk給盾弧邊互斥；
+原支援的面標記給𝒧費用≥2、𝒮費用≥1。unary若短，原外路与
+拒絕見證構造二／三個互斥連通、兩兩相鄰且在N(U)上常色的hubs。
+完整degree4與拒絕迫lists tight，沿用外部Gallai／hub原則得K₅ minor。
+故每份unary也付≥2。依據 [原盾弧定理A／B](c5_unary_shield_budget.md)、
+[W-A／C-W](c5_qcore_shield_budget.md)。一般q-minimal、Σ-critical或T4
+均可被上述**逐piece的見證與外路**代替；外部Gallai依賴仍在。
+
+見證供給有兩種：q-critical接點邊刪除給同一q的外部染色；Σ-critical
+接點邊則先指定其新接受列β_e，再限制到G−P。各piece可用不同β_e：
+幾何收費在同一G，並未把跨列禁色需求相加。這不把Σ-critical變成
+「原G對某個共同q已minimal」。§5的小控制重新確認S935甚至沒有任何
+一列使原G成為q-minimal。
+
+**不可省的例外。** 對 `|S_P|≥2` 的one-sided P，固定Σ來源碰齊B時
+可用 `S_P=V(σ_P)`；同樣在 `|S_P|≥2` 下，q-core＋T4只保證
+`S_P⊆V(σ_P)⊆S_P∪{s(q)}`，盾弧內可能有
+未接內點的singleton位置。這不破壞邊互斥，但禁止直接搬「實際支援連續」。
+若不保拒絕見證／原接點criticality，三份看似應付兩單位的pieces也可能
+實現；[D₆校準](../audits/2026-10-04-task-d6/calibration/REPORT.md)
+保存接受q的控制與拒絕q但18條unary相關邊非critical的控制。
+
+**剩餘證明義務。** 將每個core factor映回原piece；核它是整份省略或
+片段省略、完整degree、one-sided、actual support、拒絕見證與避開自身的
+外路。root-disconnected的分隔piece須有另一份預算，不能冒用本式。
+
+**分支效益。** C-W的 `2+2+2>5` 已關閉共鄰P₃的3497個後續keys；
+U4原省略O仍收費的原理可共用。[N45](c5_excess_two_nonadjacent_unit_core45.md#2-已採納結論與必要化約)
+已在完整Σ933／941、指定45／54原unit省略身份內補出兩short分支的低incidence支援下界，
+用 `1+1+2+2>5` 排兩原unary；含long時用 `2+2+2>5`。整U省略另排兩short，
+後續[LP紙面排除](c5_excess_two_nonadjacent_unit_core45.md#21-n45-u-lp-的任意大小排除與信任界)
+已在原2+2+1及整U省略45／54身份內採納；後續[SS及限定U覆蓋](c5_excess_two_nonadjacent_unit_core45.md#22-n45-u-ss-與指定整-u-身份的完整覆蓋)
+排掉singleton-support支，與既有化約合成排除指定整U省略身份。
+後續[LOW1完整U映射](c5_excess_two_nonadjacent_unit_core45.md)在原U incidence1、僅刪原r-spoke且X=M的完整契約內
+接回BASE三接點任意大小排除；[LOW2及限定LOW覆蓋](c5_excess_two_nonadjacent_unit_core45.md#24-n45-s-low2-與指定-low-身份的完整覆蓋)
+另保原U雙contacts與cycle，r無框邊的原tethers逐項成立。LOW1／LOW2只合成排除§1精確S-SHORT-U-LOW，
+後續[HIGH1完整契約](c5_excess_two_nonadjacent_unit_core45.md#25-n45-s-high1原-k₃₃-與同列完整-g-lifts)
+另排原U incidence1在s、s兩spokes全留且X=M的spoke身份：原K₃,₃九鄰接、原U三點support
+與同列未用D的完整G lifts給矛盾；BASE／外部Gallai明列。
+後續[HIGH2／HIGH3與限定兩short覆蓋](c5_excess_two_nonadjacent_unit_core45.md)
+另核原雙U-contact、完整W assignments／r fibres恢復e，未用Dγ構造只限proper三色γ；
+原過寬量詞保finding，全部properγ的JOIN／RESTORE／PALETTE不縮窄。HIGH3原s無spoke、
+實際(2,3)接回BASE no-spoke原K₅排除。LOW兩支及HIGH三支逐契約窮盡，
+只關§1精確S的兩原mixed都short身份；含long的後續限定成果如下，其他cores／一般N2／E仍OPEN。
+後續[SL-MAP-R](../audits/2026-10-10-n45-s-long-r-map/REPORT.md)另排完整U在降度r、
+long L／short S全留、只刪原r-spoke且X=M自身minimal的窄身份；actual sole C、完整r fibres
+與X自己的同β witnesses逐項接回BASE(5)/(4)/(3)。pair／singleton都覆蓋，
+後續[N45-S-LONG-S限定覆蓋](c5_excess_two_nonadjacent_unit_core45.md#210-n45-s-long-s完整-cu-與原-r-fibre-恢復的限定覆蓋)
+在完整K1–K12內排除U在s的actual C/U身份：四direct profiles、singleton／pair splits化約，
+以及完整r-fibre恢復／原K₅覆蓋全部28必要schedules。U在r/s合成只關完整原U／long／short、
+只刪spoke且X=M自身同β minimal的選定契約；q0沿用SF-QX/E2紙面及歷史finite-terminal，
+q2/T1新非空由同源紙面構造承擔。無U的long／兩long、其他cores及一般N2／E仍OPEN；
+不提升B-S0的量詞或支援下界，沒有新finite來源或Lean。D的完整transfer恆等式不供給一般非空性。
+這只搬用原B-S0及各自新充分前提；一般N2仍只知mixed非空支援，
+singleton總incidence≥4未排，不能把U4專用 `2+ℓ+2u≤5` 直接搬過去。
+原省略unit若是spoke，保其原邊限制；spoke不能被冒算成piece盾弧。
+
+### 2.2 B-SD：短mixed的同色pins局部延拓
+
+**陳述（由既有證明推出的接口）。** 在§2.1的有限簡單disk G與外框B內，
+P連通、每點在原G中完整degree4；
+所有內部外鄰均為具名roots。P是one-sided，`S_P⊆{a,b}`且ab是框邊，
+H−P實際碰齊B∖{a,b}。則對每個proper框列β、每個c∈Col，

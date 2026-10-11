@@ -1,0 +1,21 @@
+{
+  "name": "independent-evidence",
+  "argv": [
+    "python3",
+    "-B",
+    "-c",
+    "from pathlib import Path\nimport json, hashlib\nroot=Path('/home/ray/developer/ai/math')\naudit=root/'audits/2026-10-11-br-sd-1g-adoption-publication'\nc=json.loads((audit/'CHECKS.json').read_text())\nassert len(c['commands'])==35 and len(c['retained_failed_commands'])==2\nfor row in c['commands']+c['retained_failed_commands']:\n    assert row['cwd']==str(root)\n    for field in ('stdout','stderr'):\n        path=root/row[field+'_path']; assert path.resolve().is_relative_to(audit.resolve())\n        assert hashlib.sha256(path.read_bytes()).hexdigest()==row[field+'_sha256']\n    path=root/row['receipt_path']; raw=path.read_bytes()\n    assert hashlib.sha256(raw).hexdigest()==row['receipt_sha256']\n    assert all(row[key]==value for key,value in json.loads(raw).items())\nassert all(row['exit_code']==row['expected_exit_code'] for row in c['commands'])\nfor row in c['retained_failed_commands']:\n    assert row['exit_code']==1 and row['expected_exit_code']==0\n    assert any(good['name']==row['superseded_by'] and good['argv']==row['argv'] and good['exit_code']==good['expected_exit_code']==0 for good in c['commands'])\nfor prefix in ('fresh-finite','old-primary','old-independent','mapping-degrees','adoption-adapter'):\n    pair=[row for row in c['commands'] if row['name'] in (prefix+'-normal',prefix+'-seed17')]\n    assert len(pair)==2 and pair[0]['stdout_sha256']==pair[1]['stdout_sha256']\nnegative=json.loads((audit/'logs/adoption-manifest-negative/stdout.txt').read_text())\nassert negative['negative_count']==9 and negative['protected_bytes_unchanged'] is True\nassert len(negative['cases'])==10 and negative['cases'][0]['exit_code']==0\nassert all(row['exit_code']==row['expected_exit_code']==1 for row in negative['cases'][1:])\nlogger=json.loads((audit/'logs/logger-controls-final/stdout.txt').read_text())\nmanifest=json.loads((audit/'ADOPTION_MANIFEST.json').read_text())\nassert len(manifest['documents'])==6\nfor row in manifest['documents']:\n    path=root/row['path']; data=path.read_bytes()\n    assert not path.is_symlink() and len(data)==row['size'] and hashlib.sha256(data).hexdigest()==row['sha256'] and path.stat().st_mode&511==row['mode']==420\nprint(json.dumps({'status':'final evidence independently cross-checked','root_commands':35,'expected_exit0':sum(row['exit_code']==0 for row in c['commands']),'expected_exit1':sum(row['exit_code']==1 for row in c['commands']),'retained_actual_exit1_expected0':2,'identical_normal_seed_pairs':5,'manifest_positive_exit0':1,'manifest_negative_expected_exit1':9,'approved_documents':6,'tool_hashes':{name:hashlib.sha256((audit/name).read_bytes()).hexdigest() for name in ('verify.py','record_check.py','aggregate_checks.py','negative_controls.py','logger_controls.py','normative_readback.py')},'parent_status':'OPEN','actual_source_status':'not triggered','new_Lean_theorem':False,'new_unconditional_closures':0},sort_keys=True))\n"
+  ],
+  "cwd": "/home/ray/developer/ai/math",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "started_utc": "2026-10-11T10:13:12.647263+00:00",
+  "finished_utc": "2026-10-11T10:13:12.692696+00:00",
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "stdout_path": "proof/final-checks/independent-evidence.stdout",
+  "stderr_path": "proof/final-checks/independent-evidence.stderr",
+  "stdout_sha256": "5e3685580a03cbaa6e3a78916fd932aa07ab2a96d84ccef64ac034897fe3ba74",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

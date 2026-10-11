@@ -1,0 +1,218 @@
+#!/usr/bin/env python3
+"""Independent read-only custody adapter for this authorized adoption audit.
+
+Does not import, modify, or mock either historical verifier. Immutable evidence
+remains pinned to its research BASE; this task fixes HEAD and permits only its
+new untracked audit directory. This program checks bytes, not mathematics.
+"""
+from pathlib import Path
+import hashlib
+import json
+import runpy
+import subprocess
+import sys
+from urllib.parse import unquote, urlsplit
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[3]
+NEW = HERE.parents[1]
+RESEARCH_BASE = "dbdc4c35f785519c8e3cb0260807f0d2feb82469"
+TASK_BASE = "c15a635e17d4be814e19aeeeeb765f3d6024099a"
+AUDIT = ROOT / "audits/2026-10-11-br-sd-1g-dbdc4c35"
+PUB = ROOT / "audits/2026-10-11-br-sd-1g-publication"
+SEAL_SHA = "d3952f60eaba362762d3555b800ba9a03eeaf5171c0404fbea70cfc330ec8edc"
+INPUTS_SHA = "76298c8402372e8664409849c595ef4e6939d21515c62db9f2e7034723be62bd"
+OLD_SHA = "1ff905853232726d72fb3a0c4551cefe894e0f56cf9a4cb89f949362da0c1d8b"
+OLD_DIRS = {"audits/2026-10-11-br-sd-1a-0f181045", "audits/2026-10-11-br-sd-1c-fd6e1112", "audits/2026-10-11-br-sd-1e-337d018b"}
+
+def need(condition, reason):
+    if not condition:
+        raise ValueError(reason)
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+def canonical(value):
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()
+
+def git(*args):
+    result = subprocess.run(["git", *args], cwd=ROOT, capture_output=True)
+    need(result.returncode == 0, f"git {args!r} failed: {result.stderr.decode()}")
+    return result.stdout
+
+def inventory(directory, excluded=()):
+    rows = []
+    for path in sorted(directory.rglob("*")):
+        need(not path.is_symlink(), f"symlink: {path}")
+        if path.is_file():
+            rel = path.relative_to(directory).as_posix()
+            if rel not in excluded:
+                data = path.read_bytes()
+                rows.append({"path": rel, "sha256": sha(data), "size": len(data),
+                             "mode": path.stat().st_mode & 0o777, "symlink": False})
+    return rows
+
+def listing(reference, prefix):
+    data = git("ls-files", "--stage", "-z", "--", prefix) if reference == "index" else git("ls-tree", "-r", "-z", reference, "--", prefix)
+    rows = {}
+    for entry in data.split(b"\0"):
+        if entry:
+            metadata, path = entry.split(b"\t", 1)
+            fields = metadata.decode().split()
+            if reference == "index":
+                need(fields[2] == "0", "unmerged index entry")
+            rows[path.decode()] = fields[0]
+    return rows
+
+def tracked(rows, prefix, baseline_subset=False):
+    expected = {prefix + "/" + row["path"] for row in rows}
+    if baseline_subset:
+        # Four old 1a certificates were already ignored/local-only at BASE.
+        # Preserve all filesystem bytes without claiming they were committed.
+        baseline = listing(TASK_BASE, prefix)
+        need(set(baseline) <= expected, f"baseline tracked old file absent: {prefix}")
+        expected = set(baseline)
+    for reference in ("HEAD", "index"):
+        modes = listing(reference, prefix)
+        need(set(modes) == expected, f"{reference} exact file coverage: {prefix}")
+        for row in rows:
+            name = prefix + "/" + row["path"]
+            if name not in expected:
+                continue
+            blob = git("show", (":" if reference == "index" else "HEAD:") + name)
+            mode = "100755" if row["mode"] & 0o111 else "100644"
+            need(sha(blob) == row["sha256"] and len(blob) == row["size"] and modes[name] == mode,
+                 f"{reference} hash/size/mode: {name}")
+    return sorted(prefix + "/" + row["path"] for row in rows if prefix + "/" + row["path"] not in expected)
+
+def check_scope():
+    need(git("rev-parse", "HEAD").decode().strip() == TASK_BASE, "task fixed HEAD drift")
+    git("merge-base", "--is-ancestor", RESEARCH_BASE, "HEAD")
+    need(not git("diff", "--name-status", TASK_BASE, "HEAD"), "committed task-base drift")
+    need(not git("diff", "--name-status", "--cached"), "staged task change")
+    need(not git("diff", "--name-status"), "tracked worktree change")
+    for row in git("diff", "--name-status", "--no-renames", RESEARCH_BASE, "HEAD").decode().splitlines():
+        status, name = row.split("\t", 1)
+        need(status == "A" and any(name.startswith(path.relative_to(ROOT).as_posix() + "/") for path in (AUDIT, PUB)), "historical publication committed boundary drift")
+    prefix = NEW.relative_to(ROOT).as_posix() + "/"
+    for entry in git("status", "--porcelain=v1", "-z", "--untracked-files=all").split(b"\0"):
+        if entry:
+            need(entry[:2] == b"??" and entry[3:].decode().startswith(prefix), f"outside authorized untracked task directory: {entry!r}")
+    need(not listing("HEAD", prefix) and not listing("index", prefix), "new adoption audit must remain untracked")
+
+def acceptance(path, review_path, expected_verdict, accepted_paths):
+    value = json.loads(path.read_text())
+    need(value["base"] == RESEARCH_BASE and value["verdict"] == expected_verdict,
+         "historical acceptance identity drift")
+    need(value["parent_status"] == "OPEN" and value["new_unconditional_closures"] == 0,
+         "historical acceptance closure scope drift")
+    need(value["review_sha256"] == sha(review_path.read_bytes()), "historical review hash drift")
+    need(set(value["accepted_hashes"]) == set(accepted_paths), "historical exact-byte acceptance coverage drift")
+    for name, digest in value["accepted_hashes"].items():
+        need(sha(accepted_paths[name].read_bytes()) == digest, f"historical accepted bytes: {name}")
+    return value
+
+def main():
+    check_scope()
+    seal_bytes = (AUDIT / "SEAL.json").read_bytes()
+    need(sha(seal_bytes) == SEAL_SHA, "original seal pin")
+    seal = json.loads(seal_bytes)
+    need(set(seal) == {"schema", "base", "claim", "new_unconditional_closures", "parent_status", "payload_manifest_sha256", "payloads"}, "original seal exact keys")
+    need(seal["schema"] == "br-sd-1g-custody-v1" and seal["base"] == RESEARCH_BASE
+         and seal["claim"] == "candidate scoped exclusion; no canonical adoption"
+         and seal["parent_status"] == "OPEN" and seal["new_unconditional_closures"] == 0,
+         "original seal scoped metadata")
+    need(len(seal["payloads"]) == 159 and sha(canonical(seal["payloads"])) == seal["payload_manifest_sha256"], "original payload digest/coverage")
+    need(inventory(AUDIT, {"SEAL.json"}) == seal["payloads"], "original all payload bytes/sizes/modes/paths")
+    original = inventory(AUDIT)
+    need(len(original) == 160, "original all 160 files")
+    tracked(original, AUDIT.relative_to(ROOT).as_posix())
+    input_bytes = (AUDIT / "authority/INPUTS.json").read_bytes()
+    need(sha(input_bytes) == INPUTS_SHA, "original authority manifest pin")
+    inputs = json.loads(input_bytes)
+    need(inputs["base"] == RESEARCH_BASE and len(inputs["inputs"]) == 31, "all 31 authority inputs")
+    for row in inputs["inputs"]:
+        blob = git("show", RESEARCH_BASE + ":" + row["path"])
+        need(sha(blob) == row["sha256"] and len(blob) == row["size"], "authority BASE blob")
+        need((AUDIT / row["frozen"]).read_bytes() == blob and (ROOT / row["path"]).read_bytes() == blob,
+             "authority frozen/live bytes")
+        for ref in ("HEAD:", ":"):
+            need(git("show", ref + row["path"]) == blob, "authority HEAD/index bytes")
+        base_modes = listing(RESEARCH_BASE, row["path"])
+        need(listing("HEAD", row["path"]) == base_modes and listing("index", row["path"]) == base_modes, "authority BASE/HEAD/index modes")
+    old_bytes = (AUDIT / "authority/OLD-CUSTODY.json").read_bytes()
+    need(sha(old_bytes) == OLD_SHA, "old custody manifest pin")
+    old = json.loads(old_bytes)
+    need(len(old) == 313 and {"/".join(row["path"].split("/")[:2]) for row in old} == OLD_DIRS, "all 313 original old files / exact old dirs")
+    observed = []
+    old_counts = {}
+    old_local_only = []
+    for prefix in sorted(OLD_DIRS):
+        rows = inventory(ROOT / prefix)
+        old_counts[prefix] = len(rows)
+        old_local_only.extend(tracked(rows, prefix, baseline_subset=True))
+        observed.extend({**row, "path": prefix + "/" + row["path"]} for row in rows)
+    need(sorted(observed, key=lambda r: r["path"]) == sorted(old, key=lambda r: r["path"]), "old all paths/bytes/sizes/modes")
+    paper = acceptance(AUDIT / "agents/paper/ACCEPTANCE.json", AUDIT / "agents/paper/REVIEW.md", "accepted scoped paper exclusion",
+                       {name: AUDIT / name for name in ("PROOF.md", "MAPPING.md", "REPORT.md")})
+    need(paper["actual_target_source_status"] == "not triggered" and paper["actual_target_source_count"] == 0
+         and paper["canonical_adoption_authorized"] is False and paper["new_Lean_theorem"] is False,
+         "original paper source/adoption/Lean scope")
+    recorded = json.loads((AUDIT / "logs/CHECKS.json").read_text())
+    need(len(recorded) == 22 and all(row["exit_code"] == row["expected_exit_code"] for row in recorded), "22 recorded research checks")
+    for row in recorded:
+        for field in ("stdout", "stderr"):
+            need(sha((AUDIT / row[field + "_path"]).read_bytes()) == row[field + "_sha256"], "research output digest")
+    manifest_bytes = (PUB / "MANIFEST.json").read_bytes()
+    need(sha(manifest_bytes) == sha(git("show", TASK_BASE + ":" + (PUB / "MANIFEST.json").relative_to(ROOT).as_posix())), "task-base publication manifest pin")
+    manifest = json.loads(manifest_bytes)
+    need(set(manifest) == {"schema", "base", "original_seal_sha256", "parent_status", "new_unconditional_closures", "payload_manifest_sha256", "payloads"}, "publication manifest keys")
+    need(manifest["schema"] == "br-sd-1g-publication-v1" and manifest["base"] == RESEARCH_BASE
+         and manifest["original_seal_sha256"] == SEAL_SHA and manifest["parent_status"] == "OPEN"
+         and manifest["new_unconditional_closures"] == 0, "publication scoped metadata")
+    need(len(manifest["payloads"]) == 5 and sha(canonical(manifest["payloads"])) == manifest["payload_manifest_sha256"], "publication digest/coverage")
+    need(inventory(PUB, {"MANIFEST.json"}) == manifest["payloads"], "publication full payload inventory")
+    publication = inventory(PUB)
+    need(len(publication) == 6, "publication all six files")
+    tracked(publication, PUB.relative_to(ROOT).as_posix())
+    accepted = acceptance(PUB / "agents/ACCEPTANCE.json", PUB / "agents/REVIEW.md", "accepted publication custody",
+                          {name: PUB / name for name in ("verify.py", "PUBLICATION.md")})
+    need(accepted["blocking_findings"] == 0 and accepted["source_status"] == "not triggered"
+         and accepted["canonical_adoption"] is False and accepted["new_Lean_theorem"] is False,
+         "publication historical acceptance scope")
+    prechecks = json.loads((PUB / "PRECHECKS.json").read_text())
+    need(prechecks["base"] == RESEARCH_BASE and len(prechecks["checks"]) == 8
+         and all(row["exit_code"] == 0 for row in prechecks["checks"]), "eight historical publication prechecks")
+    helper = runpy.run_path(str(ROOT / "scripts/check_docs.py"), run_name="independent_custody_link_helper")
+    links = 0
+    for directory in (AUDIT, PUB):
+        for path in sorted(directory.rglob("*.md")):
+            if "authority" in path.relative_to(directory).parts:
+                continue
+            for line, destination in helper["links"](path.read_text()):
+                url = urlsplit(destination)
+                if url.scheme or url.netloc:
+                    continue
+                target = (path.parent / unquote(url.path)).resolve() if url.path else path
+                need(target.exists(), f"original/publication missing link {path}:{line}")
+                if url.fragment and target.suffix == ".md":
+                    need(unquote(url.fragment) in helper["anchors"](target.read_text()), "original/publication missing anchor")
+                links += 1
+    check_scope()
+    print(json.dumps({"status": "immutable custody verified", "task_base": TASK_BASE, "actual_head": TASK_BASE,
+                      "research_base": RESEARCH_BASE, "original_files": 160, "original_payloads": 159,
+                      "publication_files": 6, "authority_inputs": 31, "old_custody_files": 313,
+                      "old_directory_counts": old_counts, "recorded_research_checks": 22,
+                      "old_tracked_files": 313 - len(old_local_only), "old_local_only_files": old_local_only,
+                      "historical_publication_prechecks": 8, "local_links_checked": links,
+                      "HEAD_and_index_bytes_and_modes": "matched", "new_task_state": "untracked authorized directory only",
+                      "original_seal_sha256": SEAL_SHA, "publication_manifest_sha256": sha(manifest_bytes),
+                      "new_unconditional_closures": 0, "parent_status": "OPEN", "actual_source_status": "not triggered",
+                      "scope": "immutable custody only; no mathematical proof or canonical adoption"}, sort_keys=True))
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (ValueError, OSError, KeyError, TypeError, json.JSONDecodeError) as error:
+        print(f"FAIL: {error}", file=sys.stderr)
+        sys.exit(1)

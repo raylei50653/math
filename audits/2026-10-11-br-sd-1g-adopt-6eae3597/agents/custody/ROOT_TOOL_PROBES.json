@@ -1,0 +1,74 @@
+{
+  "actual_replay_receipt": {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/logger-probe-sandbox/audit/record_check.py",
+      "stale",
+      "/usr/bin/python3",
+      "-B",
+      "-c",
+      "from pathlib import Path; Path('/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/logger-probe-sandbox/audit/command-executed.txt').write_text('executed despite stale output\\n')"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 2,
+    "expected_exit_code": 1,
+    "scope": "isolated verbatim logger copy; all effects in custody directory",
+    "started_unix": 1791710243.322655,
+    "stderr_path": "agents/custody/logger-stale-probe.stderr.log",
+    "stderr_sha256": "84fa1bcdcfda883740bfbe8c534df1f087244d70446478ea7cac78cd37b0d1bc",
+    "stdout_path": "agents/custody/logger-stale-probe.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_seconds": 0.053017616271972656
+  },
+  "results": [
+    {
+      "case": "wrong-command",
+      "result": "accepted by receipt helper",
+      "scope": "local helper test; does not claim whole-audit acceptance",
+      "synthetic_receipt": {
+        "argv": [
+          "/usr/bin/true"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "env_overrides": {},
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "stderr_path": "agents/custody/crafted-receipt.stderr.log",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_path": "agents/custody/crafted-receipt.stdout.log",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "case": "self-declared-failure-success",
+      "result": "accepted by receipt helper",
+      "scope": "local helper test; does not claim whole-audit acceptance",
+      "synthetic_receipt": {
+        "argv": [
+          "/usr/bin/false"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "env_overrides": {},
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "stderr_path": "agents/custody/crafted-receipt.stderr.log",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_path": "agents/custody/crafted-receipt.stdout.log",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "case": "stale-log-preflight",
+      "command_marker_exists": false,
+      "completed_receipt_exists": false,
+      "logger_exit_code": 2,
+      "partial_stdout_exists": false,
+      "scope": "isolated verbatim logger copy"
+    }
+  ],
+  "root_tool_input_hashes": {
+    "record_check.py": "581f86365fbac498a54c97b6b1a360364537c36ab3c933a10fd5b3fdb93be9eb",
+    "verify.py": "4b1a3a5cfa6e3df1135732f569eeb667830aca08a1cc5a88af1a29fcf89439c1"
+  }
+}

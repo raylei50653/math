@@ -1,0 +1,145 @@
+#!/usr/bin/env python3
+"""Capture one actual command without altering any historical evidence."""
+import argparse
+from datetime import datetime, timezone
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+import time
+
+AUDIT = Path(__file__).resolve().parent
+ROOT = AUDIT.parents[1]
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--name', required=True)
+    parser.add_argument('--expected', type=int, default=0)
+    parser.add_argument('--seed17', action='store_true')
+    parser.add_argument('command', nargs=argparse.REMAINDER)
+    args = parser.parse_args()
+    argv = args.command[1:] if args.command[:1] == ['--'] else args.command
+    if not argv or '/' in args.name or args.name in ('.', '..'):
+        parser.error('need command and simple unique name')
+    if (AUDIT / 'SEAL.json').exists() or (AUDIT / 'proof/ACCEPTANCE.json').exists():
+        parser.error('final review/seal exists; receipts must be external now')
+    folder = AUDIT / 'logs' / args.name
+    if AUDIT.is_symlink() or (AUDIT / 'logs').is_symlink() or folder.resolve().parent != (AUDIT / 'logs').resolve():
+        parser.error('receipt path escapes the new audit or uses a symlink')
+    folder.mkdir(exist_ok=False)
+    changes = {'PYTHONDONTWRITEBYTECODE': '1'}
+    if args.seed17:
+        changes['PYTHONHASHSEED'] = '17'
+    began = datetime.now(timezone.utc).isoformat()
+    timer = time.monotonic()
+    result = subprocess.run(argv, cwd=ROOT, env={**os.environ, **changes}, capture_output=True)
+    row = dict(name=args.name, argv=argv, cwd=str(ROOT), environment=changes,
+               started_utc=began, elapsed_seconds=time.monotonic()-timer,
+               exit_code=result.returncode, expected_exit_code=args.expected)
+    for kind, data in [('stdout', result.stdout), ('stderr', result.stderr)]:
+        target = folder / (kind + '.txt')
+        target.write_bytes(data)
+        row[kind + '_path'] = str(target.relative_to(ROOT))
+        row[kind + '_sha256'] = hashlib.sha256(data).hexdigest()
+    (folder / 'receipt.json').write_text(json.dumps(row, ensure_ascii=False, indent=2) + '\n')
+    print(json.dumps(row, ensure_ascii=False, sort_keys=True))
+    if result.returncode != args.expected:
+        raise SystemExit(1)
+
+if __name__ == '__main__':
+    main()
+#!/usr/bin/env python3
+"""Collect captured receipts without changing original execution results."""
+import hashlib
+import json
+from pathlib import Path
+
+AUDIT = Path(__file__).resolve().parent
+ROOT = AUDIT.parents[1]
+BASE = 'c15a635e17d4be814e19aeeeeb765f3d6024099a'
+
+def main():
+    if (AUDIT / 'SEAL.json').exists() or (AUDIT / 'proof/ACCEPTANCE.json').exists():
+        raise SystemExit('final review/seal exists; aggregate is immutable')
+    successful, failures = [], []
+    for path in sorted((AUDIT / 'logs').glob('*/receipt.json')):
+        row = json.loads(path.read_text())
+        for kind in ('stdout', 'stderr'):
+            actual = hashlib.sha256((ROOT / row[kind + '_path']).read_bytes()).hexdigest()
+            if actual != row[kind + '_sha256']:
+                raise SystemExit('receipt drift: ' + str(path))
+        row['receipt_path'] = str(path.relative_to(ROOT))
+        row['receipt_sha256'] = hashlib.sha256(path.read_bytes()).hexdigest()
+        (successful if row['exit_code'] == row['expected_exit_code'] else failures).append(row)
+    permitted_failures = {'docs', 'logger-controls'}
+    if {r['name'] for r in failures} - permitted_failures:
+        raise SystemExit('unresolved command failure')
+    if failures and not any(r['name'] == 'docs-final' and r['exit_code'] == 0 for r in successful):
+        raise SystemExit('documentation retry has not passed')
+    for row in failures:
+        row['superseded_by'] = row['name'] + '-final'
+        row['superseded_reason'] = ('First check ran before mapping/REVIEW.md was delivered; identical command passed after delivery.'
+                                    if row['name'] == 'docs' else
+                                    'Disposable positive fixture omitted its required logs parent; original harness retained as logs/logger-controls/harness.v1.py; corrected harness passed.')
+        if not any(r['name'] == row['superseded_by'] and r['argv'] == row['argv'] and r['exit_code'] == 0 for r in successful):
+            raise SystemExit('retained failure has no successful identical-command retry: ' + row['name'])
+    for prefix in ('fresh-finite', 'old-independent', 'old-primary', 'mapping-degrees'):
+        rows = [r for r in successful if r['name'].startswith(prefix + '-')]
+        if len(rows) != 2 or rows[0]['stdout_sha256'] != rows[1]['stdout_sha256']:
+            raise SystemExit('normal/seed17 drift or missing pair: ' + prefix)
+    result = dict(schema='br-sd-1g-adoption-checks-v1', base=BASE,
+                  commands=successful, retained_failed_commands=failures,
+                  all_final_expectations_met=True, parent_status='OPEN',
+                  actual_source_status='not triggered', new_Lean_theorem=False,
+                  new_unconditional_closures=0,
+                  scope='Exact scoped adoption, named synthetic controls, docs and immutable custody; no source realization',
+                  historical_publication_exception='exit1 immutable two-directory whitelist; preserved, not PASS',
+                  postseal_receipt_location='External /tmp session receipts; sealed bytes unchanged')
+    (AUDIT / 'CHECKS.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
+    print(json.dumps({'successful_or_expected': len(successful), 'retained_failures': len(failures)}, sort_keys=True))
+
+if __name__ == '__main__':
+    main()
+#!/usr/bin/env python3
+"""Ensure the adoption preserves earlier canonical normative sections literally."""
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+
+ROOT = Path(__file__).resolve().parents[2]
+BASE = 'c15a635e17d4be814e19aeeeeb765f3d6024099a'
+NAME = 'docs/c5_excess_two_nonadjacent_unit_core45.md'
+
+def between(text, start, end):
+    return text[text.index(start):text.index(end, text.index(start))]
+
+def main():
+    before = subprocess.check_output(['git', 'show', BASE + ':' + NAME], cwd=ROOT).decode()
+    after = (ROOT / NAME).read_text()
+    pieces = [
+        ('canonical-common-contract', '## 1. 全部共同前提與原身份', '## 2. 已採納結論與必要化約'),
+        ('existing-2.1-through-2.10', '### 2.1 N45-U-LP', '### 2.11 單缺額查證'),
+    ]
+    rows = []
+    for label, start, end in pieces:
+        old, new = between(before, start, end), between(after, start, end)
+        if old != new:
+            raise SystemExit('unapproved normative change: ' + label)
+        rows.append(dict(name=label, sha256=hashlib.sha256(old.encode()).hexdigest(), unchanged=True))
+    start = '### 2.11 單缺額查證與無 U 二連通子域'
+    old = between(before, start, '## 3. 精確 OPEN 與下一個窄分支')
+    new = between(after, start, '**BR-SD-1g canonical 採納')
+    if old != new:
+        raise SystemExit('unapproved changes to SD-A or existing1a/1c/1e contracts')
+    rows.append(dict(name='existing-2.11-through-1e', sha256=hashlib.sha256(old.encode()).hexdigest(), unchanged=True))
+    for name in ('docs/HANDOFF.md', 'docs/STATUS_HISTORY.md', 'README.md'):
+        old = subprocess.check_output(['git', 'show', BASE + ':' + name], cwd=ROOT)
+        if old != (ROOT / name).read_bytes():
+            raise SystemExit('unexpected routing/snapshot change: ' + name)
+        rows.append(dict(name=name, sha256=hashlib.sha256(old).hexdigest(), unchanged=True))
+    print(json.dumps(dict(base=BASE, status='triggered and holds', rows=rows), sort_keys=True))
+
+if __name__ == '__main__':
+    main()

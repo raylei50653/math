@@ -1,0 +1,49 @@
+{
+  "schema": "br-sd-1g-proof-last-readonly-prechecks-v1",
+  "commands": [
+    {
+      "name": "normal",
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/verify.py",
+        "--precheck"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:15:39.869296+00:00",
+      "finished_utc": "2026-10-11T10:15:46.398280+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "proof/final-prechecks/normal.stdout",
+      "stderr_path": "proof/final-prechecks/normal.stderr",
+      "stdout_sha256": "2f95c1865eee4e7e1cde86b6f96e0865f8239258483da2d41ae3d3048448b729",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/verify.py",
+        "--precheck"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_utc": "2026-10-11T10:15:39.869765+00:00",
+      "finished_utc": "2026-10-11T10:15:46.398867+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "proof/final-prechecks/seed17.stdout",
+      "stderr_path": "proof/final-prechecks/seed17.stderr",
+      "stdout_sha256": "2f95c1865eee4e7e1cde86b6f96e0865f8239258483da2d41ae3d3048448b729",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "stdout_equal": true
+}

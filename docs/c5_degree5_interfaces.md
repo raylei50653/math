@@ -306,4 +306,25 @@ cutpoint list 含 D 不迫每個 incident palette 含 D，原負控制保留。
 J1/J2 的原 private witnesses 始終保持（含 triangle），由同一 D 的相交 block palettes 互斥得矛盾；
 不依1c terminal lemma，其末端／無額外臂邊前提可能已失效。可重用 preservation lemma 仍須完整結構前提。
 1a／1c／1e 各自原範圍分列，完整父身份、多旁支及一般 Gallai block tree 仍 OPEN，完整 OPEN 身份新增關閉0。
-採納／逐項映射見[BR-SD-1f 紀錄](history/2026-10-11-br-sd-1f-adoption.md)，1g義務由 degree-5 導覽§4 維護。
+採納／逐項映射見[BR-SD-1f 紀錄](history/2026-10-11-br-sd-1f-adoption.md)。
+
+後續 **BR-SD-1g scoped exclusion（雙原旁支／J2 屏障）** 已經
+[獨立採納審查](../audits/2026-10-11-br-sd-1g-adopt-6eae3597/REPORT.md) 通過並封存，
+owner 批准由 [N45§2.11 的完整八項合同](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域) 採納。
+同一原 G／M／literal β、無 U／L long／S short 且 actual 真框邊 pair、r split22 的三環單 bridge 骨架，
+J1 指定 triangle，恰兩份 finite nonempty connected 原 W1/W2，分別只接 J1 唯一原 witness x1
+與原 x2∈J3∪q-arm，原 ownership 為 L/S；無第二接口、相互邊、額外 s-contact 或其他旁支／cross edge。
+保原完整 degrees、全部 attachments、G 的 Σ／ε／witnesses、M 自身同 β minimal 且拒絕與其 witnesses，
+所有 named／ordered／shared contacts、rotation、原 bridges、完整 relations／空 fibres／full lifts。
+任意 J2/J3 奇長≥3、任意可零長 p/q 原臂、有限 Wi 大小、全部合法接點／mi 與 a3=v 重合均涵蓋。
+
+[原 PROOF§3–5](../audits/2026-10-11-br-sd-1g-dbdc4c35/PROOF.md#3-原全部鄰居的-degree-lists-與完整延拓)
+保完整 lists 與同一 M／β／s=D 延拓等價，包括 effective-H 忽略原坐標的允許色因子。
+外部 Gallai 刻畫給完整 incident palettes；J2 原 private witness 迫 `P_J2={T,D}`，
+唯一原 S–L 接口使 q 起始的 T/D 交替追色留在 S，與有限 all-vertex block incidence tree 矛盾。
+W1 可失去 J1 witness、W2 可破壞舊 terminal 前提，證明不使用 `D∈L(x1)⇒D∈P_J1`，
+不要求 H_M 二連通，不依 SD-A 或 R31 minor。任意大小量詞由独立審查的紙面證明承擔，
+六個 synthetic fixtures 只校準具名有限例；actual source `not triggered`，無新 Lean theorem。
+1a／1c／1e 原合同與歷史語境不改；完整 `N45-S-NOU-LS-PAIR`、未涵蓋兩／多旁支、其他 splits／三環形狀、
+R31、ε≥3、一般 N45／N2／E 與 `K∞=K≤5` 仍 OPEN，完整 OPEN 身份新增無條件關閉0。
+採納／傳播與新 publication custody 的實際狀態見[BR-SD-1g 紀錄](history/2026-10-11-br-sd-1g-adoption.md)。

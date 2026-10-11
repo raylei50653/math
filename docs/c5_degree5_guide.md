@@ -1,6 +1,6 @@
 # degree-5／R 系列導讀：介面、排除範圍與保留缺口
 
-更新：2026-10-11。本頁維護 R9–R31 的來源結構、minor 與二連通單缺額查證情況。
+更新：2026-10-11（BR-SD-1g 雙原旁支／J2 屏障精確子域採納）。本頁維護 R9–R31 的來源結構、minor 與二連通單缺額查證情況。
 研究線標記見 [HANDOFF](HANDOFF.md)，全索引見 [STATUS](STATUS.md)。
 前置依賴見 [全 degree-4 導覽](c5_degree4_guide.md)。
 
@@ -101,15 +101,29 @@ BR-SD-1a／1c／1e 的任意大小 scoped exclusions 已獨立驗證、封存、
 [1d 採納／residual 紀錄](history/2026-10-11-br-sd-1d-adoption.md) 及
 [1f 採納／custody 紀錄](history/2026-10-11-br-sd-1f-adoption.md) 保存各輪核對，與 R31 minor 義務分開。
 
-**BR-SD-1g 窄候選：** 同一三環單 bridge 骨架恰有兩份來源自己的原旁支，
-W1 接 J1 triangle 的唯一 private witness，W2 接 J3 或 q 外臂。
-這可能同時破壞 [1e 的雙 witness 保證](../audits/2026-10-11-br-sd-1e-337d018b/PROOF.md#3-可重用-private-witness-preservation-lemma)
-與 [1c 的未改動 terminal lemma 前提](../audits/2026-10-11-br-sd-1c-fd6e1112/PROOF.md#6-路線-b2保-actual-pair-support-的局部末端引理)。
-先核完整原 degree、actual S pair support（含 W2）、W1 的原 L ownership／附件、原 p/q 接線、
-G 的完整 Σ／witnesses及 M 自身同 β minimal拒絕；容量合法不代表來源存在。
-不得向已完整 degree4 的舊圖加邊或刪附件。兩旁支只佔 J1/J2 triangle witnesses且 J3／q
-末端完整時，須先核既採 terminal lemma，不能重列為新待證子域。
-本輪只保存義務，不開始新數學證明；一般多旁支、其他三環形狀與父身份仍 OPEN。
+**BR-SD-1g 已採納：** [原 PROOF](../audits/2026-10-11-br-sd-1g-dbdc4c35/PROOF.md) 經
+[獨立採納審查](../audits/2026-10-11-br-sd-1g-adopt-6eae3597/REPORT.md) 通過並封存，
+由 owner 批准接入 [N45§2.11 的完整八項合同](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)。
+僅排同一無 U／L long／S short 且 actual 真框邊 pair、r split22 的原三環單 bridge 子域：
+J1 指定 triangle，恰兩份有限非空 connected 原 W1/W2，W1 唯一接 J1 的原 x1 witness、
+屬完整 L；W2 唯一接原 x2∈J3∪q-arm、屬完整 S。保原 G／M／β、完整 Σ933／941 或整圖 D5 像、ε=2、
+完整 degree／attachments／witnesses、M 自身同 β minimal 且拒絕，以及全部原 relations／空 fibres／full lifts。
+J2/J3 奇長任意≥3、p/q 原臂長任意≥0，含 p=a1、q=a3、a3=v 與所有合法接點／mi；
+任意有限 Wi 大小均包含，不為容納旁支刪原附件，也不把必要容量認作來源實現。
+
+W1 確實破壞 [1e 的雙 witness 保證](../audits/2026-10-11-br-sd-1e-337d018b/PROOF.md#3-可重用-private-witness-preservation-lemma)，
+W2 可破壞 [1c 的完整 terminal 前提](../audits/2026-10-11-br-sd-1c-fd6e1112/PROOF.md#6-路線-b2保-actual-pair-support-的局部末端引理)。
+本證明改由保留的 J2 原 witness 迫同一 `P_J2={T,D}`，以唯一原 S–L 接口作屏障；
+q 起始的 T/D 交替追色在原 S 內形成有限 block–all-vertex incidence tree 的不回頭路徑，矛盾。
+完整 lists 與 M／同 β／s=D 的全延拓等價，含 effective-H 忽略原點的允許色因子；
+不使用 `D∈L(x1)⇒D∈P_J1`，不依 H_M 二連通、SD-A 或 R31 minor。
+任意大小结論由獨立審查的紙面證明承擔，六個 synthetic fixtures 僅是具名有限 controls；
+actual source `not triggered`，無新 Lean theorem。完整 `N45-S-NOU-LS-PAIR`、未涵蓋兩／多旁支、
+其他三環形狀與一般 N45／N2／E、ε≥3、`K∞=K≤5` 仍 OPEN，完整 OPEN 身份新增無條件關閉數為0。
+其他兩旁支只佔 J1/J2 triangle witnesses且 J3／q 末端完整時，仍須先核既採 terminal lemma，
+不能重列為新待證子域。採納與 publication custody 的實際紀錄見
+[本輪紀錄](history/2026-10-11-br-sd-1g-adoption.md)；新 custody 入口為
+`python3 audits/2026-10-11-br-sd-1g-adoption-publication/verify.py --check`，提交後加 `--require-tracked`。
 
 R31 已有同末端不同二接點的 C3–C3–C3 簡單臂正常形非 disk 證書。
 仍須把任意長奇環及重複色外臂化到該目標：接點末端保留共用點與兩接點，

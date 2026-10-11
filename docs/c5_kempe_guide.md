@@ -1,6 +1,6 @@
 # Kempe／重接／計數與策略導覽
 
-更新：2026-10-11（BR-SD-1e 的 J3／q 外臂單一原旁支 scoped 採納）。本頁維護本線現況；證明及實際重播範圍見各報告。
+更新：2026-10-11（BR-SD-1g 雙原旁支／J2 屏障 scoped 採納）。本頁維護本線現況；證明及實際重播範圍見各報告。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
 
@@ -30,7 +30,7 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 | 不依賴 ε 的盾弧預算與 hub 原則 | 任意 ε、任意 roots：one-sided 分量的支援是連續框弧、盾弧兩兩邊互斥；全圖至多兩份 unary，且 spokes／mixed 支援被限制在 2–3 個框點。短支援、K₄ 引理、二／三-hub K₅ 統一成 hub 原則，並推廣到 roots 同色的 mixed 分量。A₄ 殘留 U 支援紀錄 40／58→24／30，無整份 frame 排除。紙面＋Python，未 Lean 化 | [盾弧預算與 hub 原則](c5_unary_shield_budget.md) |
 | 雙 root 的 ε=2 收窄 | 相鄰 mixed 刪 roots／zw 全收；相鄰唯一 mixed 已全排 (4,4) 核心、五-spoke 原來源、四-spoke (3,1) 全部 incidence 分拆及 (2,2) 的 mixed-(1,1) 加各側一 unary 整個子型，含 root 交換。原47／75必要身份全部封閉；其他 (2,2) incidence、較少 spokes、單省略及原 (5,5) 核心保留。紙面＋Python，ε≥3 未證，未 Lean 化 | [mixed-(1,1) 子型完成](c5_excess_two_mixed_core_four_spoke_disjoint_pairs.md)、[短框弧原拒絕列延拓](c5_excess_two_mixed_core_four_spoke_short_arc.md)、[原 crosscut 與 mixed hubs](c5_excess_two_mixed_core_four_spoke_crosscut.md)、[同一長 face 次序排除](c5_excess_two_mixed_core_four_spoke_long_face.md)、[原四接點 leaf-slack](c5_excess_two_mixed_core_four_spoke_quaternary.md)、[原三接點身份](c5_excess_two_mixed_core_four_spoke_ternary.md)、[binary 端點 hub](c5_excess_two_mixed_core_four_spoke_hubs.md) |
 | Kempe screen／邊位置對座標 | screen 等價於 20 條蘊涵，1,024 masks 已核對；未新增排除，一般 adjacent-singleton lemma 未證 | [screen](c5_kempe_screen.md)、[座標](c5_edge_pair_coordinates.md) |
-| 非相鄰N2的指定45／54省略身份 | 指定整U省略及兩short S身份已排除；完整K1–K12的U／long／short、只刪spoke且X=M自身同β minimal身份，U在r/s均限定排除。BR-SD-1a 無旁支、1c 單 W 只接 J1/J2、1e 單 W 唯一接 J3／q 臂的精確 split22 三環單 bridge 子域分列排除，各保 actual S pair及全部原資料；1c保未動末端，1e用雙private witnesses，見§3。保SF-QX／BASE／Gallai信任界，完整父身份、其他cores與一般N2／E仍OPEN，無新Lean | [N45權威入口](c5_excess_two_nonadjacent_unit_core45.md)、[U在s限定覆蓋](c5_excess_two_nonadjacent_unit_core45.md#210-n45-s-long-s完整-cu-與原-r-fibre-恢復的限定覆蓋) |
+| 非相鄰N2的指定45／54省略身份 | 指定整U省略及兩short S身份已排除；完整K1–K12的U／long／short、只刪spoke且X=M自身同β minimal身份，U在r/s均限定排除。BR-SD-1a 無旁支、1c 單 W 只接 J1/J2、1e 單 W 唯一接 J3／q 臂、1g 恰兩原 W1/W2 唯一接 J1 triangle witness／J3或q臂的精確 split22 三環單 bridge 子域分列排除，各保 S short／actual pair、M自己同β minimal拒絕及全部原資料；1c保未動末端，1e用雙private witnesses，1g用J2屏障，見§3。保SF-QX／BASE／Gallai信任界，完整父身份、未涵蓋多旁支、其他cores與一般N2／E仍OPEN，actual source not triggered，無新Lean、完整OPEN新增關閉0 | [N45權威入口](c5_excess_two_nonadjacent_unit_core45.md)、[U在s限定覆蓋](c5_excess_two_nonadjacent_unit_core45.md#210-n45-s-long-s完整-cu-與原-r-fibre-恢復的限定覆蓋) |
 | 二連通單缺額工具與45／54適用性 | SD-A指定前提紙面查證通過；actual X=M、完整degrees及H_M二連通時排無U兩long、long／singleton與相鄰兩mixed subsets。真edge-pair short縮為p–q block鏈；完整OPEN身份新增無條件關閉0，exact source controls未觸發，無新Lean | [精確定理](c5_degree5_interfaces.md#7-二連通單缺額查證與-4554-接入)、[N45接入](c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域) |
 | 循環流與計數 | 六維／153 支撐／十二循環；36 份基底覆蓋證三套分開整數 orbit 條件不再收緊恆等式解；未排除平面來源 | [循環流](c5_circulation.md) |
 | Count cone／class 計數 | near-triangulation 化約、部分 Lean 代數與 class 級紙面計數已有；cone／connectivity 缺口仍在 | [count cone](c5_count_cone_bridge.md)、[B₅ face](c5_b5_face.md)、[class 計數](c5_kempe_class_counts.md) |
@@ -170,11 +170,22 @@ JOINT固定21省略／210列／3,360pins只校準；target來源not triggered，
 完整 degree與原資料的任意大小精確合同排除；J1/J2 private witnesses 對全部允許接點保持。
 此證明不依1c terminal lemma；W 可破壞其末端／無額外 C 邊前提，preservation lemma 另有完整結構界線。
 完整父身份、多旁支及一般 Gallai block tree 仍 OPEN，完整 OPEN 身份新增無條件關閉仍為0。
-**後續候選 BR-SD-1g：** W1 佔 J1 triangle 唯一 private witness、W2 接 J3／q 外臂的
-兩份原旁支義務由[degree-5 導覽§4](c5_degree5_guide.md#4-r31-保留缺口與重播入口) 維護；本輪未開始新證明。
+**BR-SD-1g 已採納：** [原 PROOF](../audits/2026-10-11-br-sd-1g-dbdc4c35/PROOF.md) 經
+[獨立採納審查](../audits/2026-10-11-br-sd-1g-adopt-6eae3597/REPORT.md) 通過並封存，owner 批准採納
+W1 唯一接 J1 triangle 原 witness x1、W2 唯一接原 x2∈J3∪q-arm 的雙原旁支精確合同。
+保同一原 G／M／β、無 U／L long／S short／actual pair、r split22、完整degree／原附件／witnesses與
+M 自身同 β minimal 拒絕；W1/W2 原 ownership 為 L/S，無第二接口、額外 s-contact／相互邊／其他旁支或cross edge。
+任意 J2/J3 奇長≥3、原 p/q 臂長≥0（含零長及 a3=v）、有限 Wi 大小、全部合法接點／mi
+與具名重合，原完整 relations／空 fibres／full lifts及被忽略原坐標因子均保留；完整八項前提見 N45§2.11。
+保留的 J2 witness 與唯一 S–L 接口給同一 `P_J2={T,D}` 屏障，q 起始T/D追色在有限原S incidence tree矛盾；
+不使用失效的 cutpoint 推論，不依二連通或 R31 minor。任意大小是独立審查的紙面結果，六個 synthetic fixtures不作外推。
+actual source `not triggered`，無新 Lean；完整 `N45-S-NOU-LS-PAIR`、未涵蓋兩／多旁支與一般N45／N2／E、ε≥3、
+`K∞=K≤5` 仍 OPEN，完整 OPEN 身份新增無條件關閉0；詳見[degree-5 導覽§4](c5_degree5_guide.md#4-r31-保留缺口與重播入口)。
 舊 B 的 R27 minor 任務保持封存語境，1a／1c／1e 採納與 residual 對帳分別見
 [BR-SD-1b](history/2026-10-11-br-sd-1b-adoption.md)／[BR-SD-1d](history/2026-10-11-br-sd-1d-adoption.md)／
 [BR-SD-1f](history/2026-10-11-br-sd-1f-adoption.md)。
+1g 的精確採納、reviewed-unchanged consumers 與實際 publication custody 另見
+[BR-SD-1g 紀錄](history/2026-10-11-br-sd-1g-adoption.md)；原 1g candidate audit與既有 seals保原bytes。
 一般非二連通來源、其他省略／core、原55及一般N2／E另保留；未執行新來源搜尋，不擴枚舉。
 原[HIGH2派工](history/2026-10-10-n45-high1-adoption.md)保留當輪語境；
 兩支的採納／finding／完整tree與custody界線見[本輪紀錄](history/2026-10-10-n45-high23-adoption.md)。

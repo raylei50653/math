@@ -1,0 +1,1083 @@
+{
+  "schema": "br-sd-1g-adoption-checks-v1",
+  "base": "c15a635e17d4be814e19aeeeeb765f3d6024099a",
+  "commands": [
+    {
+      "name": "adoption-adapter-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adoption-publication/verify.py",
+        "--precheck"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:07:49.624674+00:00",
+      "elapsed_seconds": 2.2208305040003324,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-adapter-normal/stdout.txt",
+      "stdout_sha256": "3f744fde21ebb9240828c4020a93acef62f61e746fa0647be2f0cb402e0599fb",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-adapter-normal/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-adapter-normal/receipt.json",
+      "receipt_sha256": "bdff4b6ebf114b490a39f1d97368096e364ec9ab766efe236f98ca1c53206ccb"
+    },
+    {
+      "name": "adoption-adapter-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adoption-publication/verify.py",
+        "--precheck"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_utc": "2026-10-11T10:07:49.624944+00:00",
+      "elapsed_seconds": 2.2235650360016734,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-adapter-seed17/stdout.txt",
+      "stdout_sha256": "3f744fde21ebb9240828c4020a93acef62f61e746fa0647be2f0cb402e0599fb",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-adapter-seed17/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-adapter-seed17/receipt.json",
+      "receipt_sha256": "5fca428201b81183aa76ec96377f4cab8037d62d351dc521d4aaa3c0c1d367cb"
+    },
+    {
+      "name": "adoption-manifest-negative",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adoption-publication/negative_controls.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:07:59.295247+00:00",
+      "elapsed_seconds": 17.516736202000175,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-manifest-negative/stdout.txt",
+      "stdout_sha256": "001dbc4f3191b770e6867ef3d58b93c42d165206a647384ba78569f6cfe14c1a",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-manifest-negative/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-manifest-negative/receipt.json",
+      "receipt_sha256": "d113f876de5726d5a7f61d3d2d0116eed05485c9b8b1a391533e8a23530e1de5"
+    },
+    {
+      "name": "diff",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:01:52.755641+00:00",
+      "elapsed_seconds": 0.008987965997221181,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/diff/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/diff/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/diff/receipt.json",
+      "receipt_sha256": "bd923c28b1cc2eaa4c4b8fbb4e6c065e0c1b0593d8fafa65eb439cf569d8c3fa"
+    },
+    {
+      "name": "docgraph",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:17.543463+00:00",
+      "elapsed_seconds": 0.45663785700162407,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docgraph/stdout.txt",
+      "stdout_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docgraph/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docgraph/receipt.json",
+      "receipt_sha256": "b074a9038a4b6c8c467930c4de87ddd6eea07dcae7239042181c75d6f26a34bc"
+    },
+    {
+      "name": "docs-final",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:02:42.921149+00:00",
+      "elapsed_seconds": 0.6445595260011032,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docs-final/stdout.txt",
+      "stdout_sha256": "fb2c995435f3af48e280690ccfdd9cda8ea8f6fa6c778548b29dec8e393a946a",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docs-final/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docs-final/receipt.json",
+      "receipt_sha256": "c107ea32825d486e04db9384d8382e76740ec5c3ab82a7160d84d0a47c23a3be"
+    },
+    {
+      "name": "fresh-finite-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--check",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/CERTIFICATE.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:17.543185+00:00",
+      "elapsed_seconds": 0.0974067550014297,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-finite-normal/stdout.txt",
+      "stdout_sha256": "5171788237d4110bb9f1136d6622adfdacd0c0928fced71e9239449c2e8a28ea",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-finite-normal/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-finite-normal/receipt.json",
+      "receipt_sha256": "66a11fccdd29760f3842b8d91f18a270309003e3ac16c758011ed7e566235707"
+    },
+    {
+      "name": "fresh-finite-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--check",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/CERTIFICATE.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_utc": "2026-10-11T10:00:18.001690+00:00",
+      "elapsed_seconds": 0.07457847499972559,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-finite-seed17/stdout.txt",
+      "stdout_sha256": "5171788237d4110bb9f1136d6622adfdacd0c0928fced71e9239449c2e8a28ea",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-finite-seed17/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-finite-seed17/receipt.json",
+      "receipt_sha256": "b57d3b9f47c7c2fbb00bd3c3049cef50648b4a29ecf0a39dc0193c3e3532cc4c"
+    },
+    {
+      "name": "fresh-negative-corrupted",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:18.421904+00:00",
+      "elapsed_seconds": 0.04502817799948389,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-corrupted/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-corrupted/stderr.txt",
+      "stderr_sha256": "376851a42769d29d04b8719b9bc528a26cfc3ce2f507f304cea2154018e30613",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-corrupted/receipt.json",
+      "receipt_sha256": "088c3b41016a452a66a5e2f42fb7eceb0cd4b2bbc6e20cf61b4daca431820b77"
+    },
+    {
+      "name": "fresh-negative-malformed",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.malformed.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:18.505158+00:00",
+      "elapsed_seconds": 0.037135992002731655,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-malformed/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-malformed/stderr.txt",
+      "stderr_sha256": "eb27c5fb0fc7f5ad5c327bf7b94f0074c8029b892a52dd6458c09200781a3ff0",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-malformed/receipt.json",
+      "receipt_sha256": "378483952ca256fcd816896523d9d7de3d380786aa53aae7659534aae457ec09"
+    },
+    {
+      "name": "fresh-negative-marginal-corrupted",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.marginal-corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:18.581809+00:00",
+      "elapsed_seconds": 0.04505025599792134,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-marginal-corrupted/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-marginal-corrupted/stderr.txt",
+      "stderr_sha256": "3123fe839e875d00e3df021e2b4deec814f6403213bf640f37d571dea2829bc7",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-marginal-corrupted/receipt.json",
+      "receipt_sha256": "db5165bac1bda8f48e245f01a9fab245f3df9b4c67d2ed02d59567eb8222cae7"
+    },
+    {
+      "name": "historical-publication-after-docs-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-publication/verify.py",
+        "--check",
+        "--require-tracked"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:01:10.585867+00:00",
+      "elapsed_seconds": 0.8095626290014479,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/historical-publication-after-docs-normal/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/historical-publication-after-docs-normal/stderr.txt",
+      "stderr_sha256": "c36f6b34cfe246f18408996fa17202d4abaa7b5fe62c30983ae1667b3d649644",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/historical-publication-after-docs-normal/receipt.json",
+      "receipt_sha256": "d6caf31fd6056009b8f38ffd3380b75b6ed2c1a9f9765cc10a9193f6021c417c"
+    },
+    {
+      "name": "historical-publication-after-docs-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-publication/verify.py",
+        "--check",
+        "--require-tracked"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_utc": "2026-10-11T10:01:11.466978+00:00",
+      "elapsed_seconds": 0.2981527960000676,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/historical-publication-after-docs-seed17/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/historical-publication-after-docs-seed17/stderr.txt",
+      "stderr_sha256": "c36f6b34cfe246f18408996fa17202d4abaa7b5fe62c30983ae1667b3d649644",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/historical-publication-after-docs-seed17/receipt.json",
+      "receipt_sha256": "285c9eb74969495aec2e87bc695e9a47fcf1609498c735476b3dd9e39f8074b8"
+    },
+    {
+      "name": "independent-negative-corrupted",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:18.664768+00:00",
+      "elapsed_seconds": 0.03788744000121369,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-corrupted/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-corrupted/stderr.txt",
+      "stderr_sha256": "2e8fd5f2141b4597e7b4f290a082f56b78a827b080eaea562f7ee59723e977de",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-corrupted/receipt.json",
+      "receipt_sha256": "2d9a489a024f5d83cafb47b25e4d5c7013769abaaf22a4d767fee548c30bd4ac"
+    },
+    {
+      "name": "independent-negative-malformed",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.malformed.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:18.741361+00:00",
+      "elapsed_seconds": 0.028860017999249976,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-malformed/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-malformed/stderr.txt",
+      "stderr_sha256": "eb27c5fb0fc7f5ad5c327bf7b94f0074c8029b892a52dd6458c09200781a3ff0",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-malformed/receipt.json",
+      "receipt_sha256": "e0b41ddce18be5300c39d9c917aa4af494c7f3bfab13925a13229a1b766e2d2e"
+    },
+    {
+      "name": "independent-negative-marginal-corrupted",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.marginal-corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:18.808421+00:00",
+      "elapsed_seconds": 0.03850187300122343,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-marginal-corrupted/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-marginal-corrupted/stderr.txt",
+      "stderr_sha256": "3ed3c63952cbb59424d55d1158e74be15ecd072da3b9d7aa43480b10ba4ff1cf",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-marginal-corrupted/receipt.json",
+      "receipt_sha256": "c91fb0da164e6abc011389acbfbcc41913720f264b677b4527a1d766812c0a9a"
+    },
+    {
+      "name": "lean-build",
+      "argv": [
+        "lake",
+        "build"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:17.543736+00:00",
+      "elapsed_seconds": 9.067783538997901,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/lean-build/stdout.txt",
+      "stdout_sha256": "2103291d39ceb734f800128950d507eded343e0e0678cc7e96414c1cc372b250",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/lean-build/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/lean-build/receipt.json",
+      "receipt_sha256": "c2dcaea2c4c9d05ceecd713e39227e21fed8d405562ba9854b541ea0f0dc74fd"
+    },
+    {
+      "name": "logger-controls-final",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adoption-publication/logger_controls.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:04:48.370753+00:00",
+      "elapsed_seconds": 0.17658155200115289,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/logger-controls-final/stdout.txt",
+      "stdout_sha256": "b134ab64b333de2821f5bc0a5aafd53652c723f3ec9af0e3f00546bb8f6e2f16",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/logger-controls-final/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/logger-controls-final/receipt.json",
+      "receipt_sha256": "966c34f3ba13f590f9acf6d91840ffb57ddc373bbd7d99d8ca631cb4305aba3b"
+    },
+    {
+      "name": "mapping-degrees-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/mapping/degree_table_control.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:17.942108+00:00",
+      "elapsed_seconds": 0.020756341000378598,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/mapping-degrees-normal/stdout.txt",
+      "stdout_sha256": "879326fd40386003224bc9d43667f97a90fd3bc6a7ddf2c5d620d7395367beba",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/mapping-degrees-normal/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/mapping-degrees-normal/receipt.json",
+      "receipt_sha256": "07a3716a91531772ad0348475cf50655f08bfd5a3899d09c4ed3a649d0f8ec1d"
+    },
+    {
+      "name": "mapping-degrees-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/mapping/degree_table_control.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_utc": "2026-10-11T10:00:18.362985+00:00",
+      "elapsed_seconds": 0.020042973999807145,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/mapping-degrees-seed17/stdout.txt",
+      "stdout_sha256": "879326fd40386003224bc9d43667f97a90fd3bc6a7ddf2c5d620d7395367beba",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/mapping-degrees-seed17/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/mapping-degrees-seed17/receipt.json",
+      "receipt_sha256": "9c463a7409e3bcbd788d32a9c650c8dcbb49b1333bf304c86d70da630618b64d"
+    },
+    {
+      "name": "normative-unchanged",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adoption-publication/normative_readback.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:01:52.623370+00:00",
+      "elapsed_seconds": 0.04439963400000124,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/normative-unchanged/stdout.txt",
+      "stdout_sha256": "dd600d3fb9c22e90efc2867c7ed52aa16aabcd8bba63b12167bc7a4a3995b9df",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/normative-unchanged/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/normative-unchanged/receipt.json",
+      "receipt_sha256": "891705dc41dae57416da52a31b9a198e70adc8d5b09866a4f1ac062c26cff742"
+    },
+    {
+      "name": "old-independent-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:17.679046+00:00",
+      "elapsed_seconds": 0.08718750999832992,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-independent-normal/stdout.txt",
+      "stdout_sha256": "ac9a6b15f08b99f7b6f29173c25859f1b6a04e1c5d32922e4a9f51a9c47ba940",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-independent-normal/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-independent-normal/receipt.json",
+      "receipt_sha256": "6aad5734fda1e6752ab63da6c32b332c9a7bcb0292f8614de0594a473415218f"
+    },
+    {
+      "name": "old-independent-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_utc": "2026-10-11T10:00:18.114419+00:00",
+      "elapsed_seconds": 0.08268273800058523,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-independent-seed17/stdout.txt",
+      "stdout_sha256": "ac9a6b15f08b99f7b6f29173c25859f1b6a04e1c5d32922e4a9f51a9c47ba940",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-independent-seed17/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-independent-seed17/receipt.json",
+      "receipt_sha256": "0e90a9ab6b9d439e6999d1d436ba9fdc723d072d72bcc5bd5df85e227b93c6bf"
+    },
+    {
+      "name": "old-primary-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:17.804914+00:00",
+      "elapsed_seconds": 0.09764739899765118,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-primary-normal/stdout.txt",
+      "stdout_sha256": "c43983ea0cc0f095e4f55fcb548ff40e2d14cad840ac795a8c32c36200e88ce6",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-primary-normal/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-primary-normal/receipt.json",
+      "receipt_sha256": "854f6372979c5f2fd660730dbcc6efe7aff58e04e544b7e8bf674fe306b52dd6"
+    },
+    {
+      "name": "old-primary-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_utc": "2026-10-11T10:00:18.236999+00:00",
+      "elapsed_seconds": 0.08806981599991559,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-primary-seed17/stdout.txt",
+      "stdout_sha256": "c43983ea0cc0f095e4f55fcb548ff40e2d14cad840ac795a8c32c36200e88ce6",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-primary-seed17/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-primary-seed17/receipt.json",
+      "receipt_sha256": "661982157e5564556e520c392b8e1185c87a6073ea9e2521815ab5c32417aba8"
+    },
+    {
+      "name": "historical-publication-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-publication/verify.py",
+        "--check",
+        "--require-tracked"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 0.29534053802490234,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-historical-publication-normal/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-historical-publication-normal/stderr.txt",
+      "stderr_sha256": "8500e988f6656f73e6a663c5f13ee323600dea40a398d7b45919d013d3964d1b",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-historical-publication-normal/receipt.json",
+      "receipt_sha256": "5a2579e7d9c119bc3cc5935b65f6f743731fe45ea51549972bf8ba7ab1175dc9"
+    },
+    {
+      "name": "historical-publication-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-publication/verify.py",
+        "--check",
+        "--require-tracked"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 0.29191088676452637,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-historical-publication-seed17/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-historical-publication-seed17/stderr.txt",
+      "stderr_sha256": "8500e988f6656f73e6a663c5f13ee323600dea40a398d7b45919d013d3964d1b",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-historical-publication-seed17/receipt.json",
+      "receipt_sha256": "46b51ed0b10be51ba23c86e517a7d36ee4c5d1656eaaa630df40d85b67d7d14f"
+    },
+    {
+      "name": "immutable-adapter-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/independent_immutable_check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 3.456598997116089,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-immutable-adapter-normal/stdout.txt",
+      "stdout_sha256": "f260a098298e9f83bf19df6b3c4d80329d2e4e5f3e06e6ec306dda69d23d5508",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-immutable-adapter-normal/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-immutable-adapter-normal/receipt.json",
+      "receipt_sha256": "6dcd1af539bd8c981ff2b1e9249bfbda31b68aa8861be0641a54e2aa20e50120"
+    },
+    {
+      "name": "immutable-adapter-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/independent_immutable_check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 3.5114002227783203,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-immutable-adapter-seed17/stdout.txt",
+      "stdout_sha256": "f260a098298e9f83bf19df6b3c4d80329d2e4e5f3e06e6ec306dda69d23d5508",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-immutable-adapter-seed17/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-immutable-adapter-seed17/receipt.json",
+      "receipt_sha256": "cefffb9520e9b95431c36e4f8344bc6fac9c7545718bf3c4ac9d9dcd0196a261"
+    },
+    {
+      "name": "review-seal-negative",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/seal_negative.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 31.456984281539917,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-seal-negative/stdout.txt",
+      "stdout_sha256": "5d4488d2d639291f17b67d462d75332114d7233fb534929f637e335bc8ab149a",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-seal-negative/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-seal-negative/receipt.json",
+      "receipt_sha256": "0b777e7ce3ca14259da90f4c1bee272322ed5c5b0702cfe9a2fea8cfd8bbf58e"
+    },
+    {
+      "name": "review-sealed-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py",
+        "--check",
+        "--require-delivery"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 8.58317518234253,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-sealed-normal/stdout.txt",
+      "stdout_sha256": "85dcceb806206e3e61a6f410741003e2958dc3f3a08234869c9b9a6ed56520a5",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-sealed-normal/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-sealed-normal/receipt.json",
+      "receipt_sha256": "8c0935d6d00e65e8a7eb63ae74739ac83ba3744adfdc1b2a1c00bc51a7a39e03"
+    },
+    {
+      "name": "review-sealed-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py",
+        "--check",
+        "--require-delivery"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 4.5100696086883545,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-sealed-seed17/stdout.txt",
+      "stdout_sha256": "85dcceb806206e3e61a6f410741003e2958dc3f3a08234869c9b9a6ed56520a5",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-sealed-seed17/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-sealed-seed17/receipt.json",
+      "receipt_sha256": "518b1fbb86806c2e336fa6b277772a8b8f800e8d7bec6904e78b33aaef82e425"
+    },
+    {
+      "name": "primary-negative-corrupted",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:18.886677+00:00",
+      "elapsed_seconds": 0.08767258800071431,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-corrupted/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-corrupted/stderr.txt",
+      "stderr_sha256": "4bbf2c9cdf0e954d59da05d1509a3035ff03a53e152805c1d9be8b01b87e1ae3",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-corrupted/receipt.json",
+      "receipt_sha256": "18bd118428171b04e38c066484e4b0910a9686ee4cab27c765d36b156d72f831"
+    },
+    {
+      "name": "primary-negative-malformed",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.malformed.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:19.013472+00:00",
+      "elapsed_seconds": 0.07660572399981902,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-malformed/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-malformed/stderr.txt",
+      "stderr_sha256": "eb27c5fb0fc7f5ad5c327bf7b94f0074c8029b892a52dd6458c09200781a3ff0",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-malformed/receipt.json",
+      "receipt_sha256": "64c69a82059226d9ee108f4ea4e793fb91c568d13679fabd4e6f30112ad150bc"
+    },
+    {
+      "name": "primary-negative-marginal-corrupted",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.marginal-corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:19.129544+00:00",
+      "elapsed_seconds": 0.08589495200067176,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-marginal-corrupted/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-marginal-corrupted/stderr.txt",
+      "stderr_sha256": "4bbf2c9cdf0e954d59da05d1509a3035ff03a53e152805c1d9be8b01b87e1ae3",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-marginal-corrupted/receipt.json",
+      "receipt_sha256": "d2748b86c84907e4eb64af07d51d0727100ad3a2a8f1e46dc5c13c1fb9754119"
+    }
+  ],
+  "retained_failed_commands": [
+    {
+      "name": "docs",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:17.544198+00:00",
+      "elapsed_seconds": 0.9268023769982392,
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docs/stdout.txt",
+      "stdout_sha256": "b1355913f3122aaa970bdff1d23f3db84161834b652a465802ef6ed620d443d1",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docs/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docs/receipt.json",
+      "receipt_sha256": "db80c627e05b7f672200f05cc58352927ec5b9ccf7b605ea2fae0282c5ec5e62",
+      "superseded_by": "docs-final",
+      "superseded_reason": "First check ran before mapping/REVIEW.md was delivered; identical command passed after delivery."
+    },
+    {
+      "name": "logger-controls",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adoption-publication/logger_controls.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:04:21.977634+00:00",
+      "elapsed_seconds": 0.06833361300232355,
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/logger-controls/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/logger-controls/stderr.txt",
+      "stderr_sha256": "a6fef365b9a93436ee123482335fe4a56ca313112b3d7651d4075c91eee6b46f",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/logger-controls/receipt.json",
+      "receipt_sha256": "e8a3d497b4ed35c6a09b3cff891ebea572330151cd06bfb953d51b2378e569cd",
+      "superseded_by": "logger-controls-final",
+      "superseded_reason": "Disposable positive fixture omitted its required logs parent; original harness retained as logs/logger-controls/harness.v1.py; corrected harness passed."
+    }
+  ],
+  "all_final_expectations_met": true,
+  "parent_status": "OPEN",
+  "actual_source_status": "not triggered",
+  "new_Lean_theorem": false,
+  "new_unconditional_closures": 0,
+  "scope": "Exact scoped adoption, named synthetic controls, docs and immutable custody; no source realization",
+  "historical_publication_exception": "exit1 immutable two-directory whitelist; preserved, not PASS",
+  "postseal_receipt_location": "External /tmp session receipts; sealed bytes unchanged"
+}
+# BR-SD-1g：授權採納的精確量詞與直接 consumer 同步
+
+2026-10-11；固定採納 BASE `c15a635e17d4be814e19aeeeeb765f3d6024099a`。
+Owner 後續明確批准精確 BR-SD-1g 採納、文件同步及 root 完成檢查後 commit＋push main。
+本 worker 只改四份指定 consumer 文件及本新 publication audit 的 `mapping/`，沒有 git stage／commit／push。
+原 1g、原 publication、獨立採納審查、全部歷史 audit／seals 均未修改。
+
+## 1. 固定依據與本輪操作
+
+依據已封存的 [CANONICAL_DELTA_PROPOSAL](../../2026-10-11-br-sd-1g-adopt-6eae3597/CANONICAL_DELTA_PROPOSAL.md)，
+其完整八項合同由 root 同步到 [canonical N45§2.11](../../../docs/c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)。
+[原 PROOF](../../2026-10-11-br-sd-1g-dbdc4c35/PROOF.md)、
+[獨立 REVIEW](../../2026-10-11-br-sd-1g-adopt-6eae3597/REVIEW.md)、
+[獨立 MAPPING_REVIEW](../../2026-10-11-br-sd-1g-adopt-6eae3597/MAPPING_REVIEW.md) 保持原 bytes，
+本轮不重證或擴大數學結論。
+
+寫入在 root 的 **CREATION READY** 通知及新 TASK／PREFLIGHT 建立後開始。
+[READS.json](READS.json) 保存13個重新執行的讀取命令、stdout／stderr、exit0及其hash；
+[FAILED_INITIAL_READ.json](FAILED_INITIAL_READ.json) 保留初讀 zsh glob 展開失敗的實際exit1 receipt，
+其後 exact-path 查閱已成功，沒有用此讀取失敗掩蓋任何未讀來源。
+[BEFORE.json](BEFORE.json)／[AFTER.json](AFTER.json) 保存四份修改文件及五份 reviewed-unchanged 文件hash。
+[CHECKS.json](CHECKS.json) 保存四份 consumer diff、`git diff --check` 與限定詞查閱的實際命令／原始輸出／exit0。
+
+## 2. 四份直接 consumer 的精確同步
+
+| 本 worker 修改檔案 | 修改與停止點 |
+| --- | --- |
+| [degree-5 guide](../../../docs/c5_degree5_guide.md) §4 | 現有1g candidate改成已授權採納的完整精確子域；明列J1 triangle、兩原Wi唯一接點／L/S ownership、S short／actual pair、同原G/M/β、M自己同β minimal拒絕、degree／attachments／witnesses與full lifts。含任意奇長、零臂與a3=v；摘要说明J2屏障与incidence tree，不用失效cutpoint推論，並連原proof／独立review／canonical／新history及新custody入口。R31與一般多旁支OPEN保留。 |
+| [degree-5 interfaces](../../../docs/c5_degree5_interfaces.md) §7 | 保SD-A及歷史conditional語境、1a／1c／1e原合同；追加1g精確同來源合同、完整lists／M s=D全延拓、ignored原坐標因子及J2屏障。明列無二連通要求、finite仅校準、source not triggered／Lean0／closure0。 |
+| [Kempe guide](../../../docs/c5_kempe_guide.md) 狀態表／§3 | 當前非相鄰45／54摘要與1g candidate入口同步為独立的精確scoped排除；保父OPEN與上游SF-QX／BASE／Gallai信任界，不把一般兩旁支／N2升級。原1a／1c／1e採納說明及歷史引用保留。 |
+| [STATUS](../../../docs/STATUS.md) | 更新degree5入口、N45摘要及當前日期說明；新增独立採納審查與新history索引，保原1f當輪「1g僅記義務」等歷史列。短狀態不取代八項完整合同，也不把publication檢查概括成數學／來源認證。 |
+
+新 history 由 root 建立：[BR-SD-1g 採納紀錄](../../../docs/history/2026-10-11-br-sd-1g-adoption.md)。
+本 worker 沒有改 canonical 或 history。新 publication custody 入口為
+`python3 audits/2026-10-11-br-sd-1g-adoption-publication/verify.py --check`，提交後加 `--require-tracked`；
+本 worker 未把尚未實際發生的commit／push結果寫成已驗證事实。
+
+## 3. 八項合同的量詞覆蓋審查
+
+Consumer 使用完整 canonical 合同的明確 reference，只摘要其窄適用身份；
+沒有用短摘要取代或減少完整八項前提。以下對照 sealed proposal 的每項：
+
+| 合同項 | 必保量詞／原來源資料 | Consumer同步判定 |
+| --- | --- | --- |
+| 1 | 任意有限簡單ordered induced-C5 disk原G、完整Σ933／941或整圖D5像、ε2、原Σ-critical全witnesses、連通有效H、不相鄰原5-roots及其他完整4、full B-touch／one-sided／nonempty support | guide明寫G／Σ／ε／witnesses，全部四檔固定canonical入口；沒有新source realization。 |
+| 2 | 完整原L/S mixed、U0、L long、**S short**、actual support恰同一真框邊兩端，Wi附件计入owner完整support | 四檔均明确S short／actual pair；guide／interfaces明确W1/W2归L/S，沒有将W1也限制到S pair或將兩点subset代替整份聯集恰pair。 |
+| 3 | exact-S僅删r唯一原spoke、同一V(M)=V(G)、E(M)=E(G)−e、X=M；M自己同literal proper三色β minimal且拒絕，保M自己retained-edge全witnesses | 四檔均明写M自己同β minimal拒絕，source合同用canonical固定；沒有由G critical性推M minimal。 |
+| 4 | M仅s完整5、其餘有效完整4，原s三spokes／相異有序p∈L,q∈S；sole C、r split22／C度4／M無框spoke；45／54共同roles交換 | 每份摘要限定同原G/M/β及r split22、完整degree；其他細節由明確canonical完整合同固定，不重新normalise components。 |
+| 5 | J1指定triangle `(r,a1,x1)`；J2/J3任意奇長≥3，J1∩J2={r}且J3不交；原uv唯一環間bridge、任意原simple bridge臂h/ℓ≥0，含p=a1、q=a3與a3=v，正臂off-cycle互斥 | guide与interfaces明确任意奇長／零臂／a3=v；Kempe及STATUS保相同量詞，沒有偷偷假設h／ℓ>0或a3≠v。 |
+| 6 | 原C恰骨架⊔W1⊔W2，Wi任意有限非空連通、唯一接x1和x2∈J3∪q-arm，可多條xi–Wi原邊；無相互邊／第二接點／額外s-contact／第三旁支／cross edge | guide／interfaces／Kempe明确兩份原Wi及其唯一接點、ownership與禁止額外接線；STATUS摘要固定八項合同。全部合法mi及有限Wi大小保留，沒有只登記六個fixtures。 |
+| 7 | 完整L/S ownership與原实际A(y)，逐點原完整4=dC+k+t；actual S聯集恰pair，L不受pair兩點限制；所有合法位置／mi／重合，先超degree者結構排除，禁止刪附件容納旁支 | guide明确原degree／附件與必要容量≠來源，interfaces保原實際degree与attachments。沒有引入free attachment選擇、改源或Wi大小上界。 |
+| 8 | 每原點／邊、named／ordered／shared单一坐標、actual附件／support、ownership、bridge身份、rotation、同literalCol/β、G/M各自witnesses／完整relations／空fibres／full lifts及effective-H忽略原點允许色因子 | guide／interfaces／Kempe都写full lifts与ignored原坐標因子；interfaces另明named／ordered／shared、rotation／bridges；STATUS引用完整原資料及八項合同。所有因子均保，不把C assignment直接冒稱M全坐標bijection。 |
+
+任意大小結論只來自原紙面證明及已封存的獨立審查。
+六個 synthetic fixtures 是具名有限機制控制；没有來源／Σ／disk／minimality全稱觸發，也没有大小正常形結論。
+固定同一T/D及J2原private witness、唯一S–L接口是已審查的推論，未重用
+`D∈L(x1)⇒D∈P_J1`。非割點、leaf block、triangle、K4與任意有限Wi的處理仍由原proof／review承担。
+
+## 4. Reviewed-unchanged 文件與傳播止點
+
+| 只讀檢查的檔案 | 無需改bytes的同步理由 |
+| --- | --- |
+| [HANDOFF](../../../docs/HANDOFF.md) | 實際17行thin入口，無1g候選文字；已有degree5与Kempe guide連結承接本次精确採納／接续。依封存proposal明确裁决guide同步、HANDOFF不增長。 |
+| [STATUS_HISTORY](../../../docs/STATUS_HISTORY.md) | 歷史快照，當輪未知／candidate語境須保留；新history與STATUS已提供當前採納及publication入口，無需回寫舊快照。 |
+| [Phase B](../../../docs/c5_phase_b_common_lemmas.md) | 既有B-S0／B-C2及B-S1／B-E量詞不变，当前一般N2／無U残留OPEN合理；精確後續与排程已明確路由canonical／Kempe。原當輪stop保留，無新增共通引理推廣。 |
+| [unary shield](../../../docs/c5_unary_shield_budget.md) | 原不依ε的support／hub定理不被本精確source exclusion改寫；停止點由Kempe維護，無1g候選文字需改。沒有把S局部palette屏障提升為通用盾弧結果。 |
+| [README](../../../README.md) | 高階研究路由及主命題未證、degree5／R31／完整來源分類缺口仍真；delegate細節到更新後guide／STATUS已足夠，无1g特定candidate需改。 |
+
+上述五檔AFTER与BEFORE的SHA256全部相同。傳播停 **L2**。
+根層正式採納與publicationcheck／commit＋push的權限及執行由root負責，
+本worker不修改舊publication whitelist；舊pubexit1與新immutable-adapterexit0需在root記錄保持兩層。
+
+## 5. 保留邊界與裁決
+
+Consumer同步裁決：**ACCEPTABLE，無阻斷的量詞／同來源／上游傳播finding。**
+完整 `N45-S-NOU-LS-PAIR` 父身份仍 **OPEN**；未涵蓋split22／非split22、兩／多旁支、
+其他三環形狀／更多環／一般Gallai接線、R31、其他45／54／55／無45／54、ε≥3、
+一般N45／N2／E、一般出口、主命題及 `K∞=K≤5` 都不升級。
+Actual source **not triggered**，新Lean theorem **0**，完整OPEN身份新增無條件關閉 **0**。
+完整數學／custody／final-byte採納裁決及實際publication結果依root新history與本audit最終證據。
+
+## 6. Canonical／新history最終bytes核對
+
+Root通知canonical與新history ready後，本worker直接逐項重讀實際canonical八項合同及紙面摘要，
+再讀實際newhistory；[FINAL_READS.json](FINAL_READS.json)保存完整命令與原始stdout／stderr、exit0。
+八項量詞與sealed proposal逐項相符：明保S short、h/ℓ≥0與原零長身份、a3=v、
+所有mi／x2合法位置、任意有限非空Wi、M自己同β minimal拒絕、全部relations／空fibres／full lifts
+及effective-H忽略原坐標的允許色乘積。未把必要capacity改為actual source realization。
+紙面摘要沒有使用失效cutpoint推論；父OPEN、source NOT TRIGGERED、Lean0與完整closure0均明列。
+新history將歷史pubexit1與immutable adapterexit0分開，未回寫歷史white list或原候選bytes。
+
+[FINAL_DOCS.json](FINAL_DOCS.json)固定本輪六份live文件的最終hash如下；
+本mapping裁決對這些exact bytes為ACCEPTABLE，沒有阻斷finding。後續若改文件bytes須重核。
+
+| 文件 | SHA256 |
+| --- | --- |
+| `docs/c5_excess_two_nonadjacent_unit_core45.md` | `ec80d3f0b053d6c7776b9b7fc0fdfa8432e0e4aef69feb052d3b69e53aa76be8` |
+| `docs/c5_degree5_guide.md` | `370f220db159466b27d6e305235e9c69abbe26dbc107243fe750e8a357529ce7` |
+| `docs/c5_degree5_interfaces.md` | `6fbca9d1d82a50dbe29105091a60f41b8e11d161c4f347fa01d710840b0c9260` |
+| `docs/c5_kempe_guide.md` | `626b85aa256a45fa92420125523ff64cd7d7d51f21d3f319c7d4faa6a1a7db25` |
+| `docs/STATUS.md` | `abd6dad64bc18840770ee61b3c17e392f90f2a2673dfd47e87a2a51e4b5d5654` |
+| `docs/history/2026-10-11-br-sd-1g-adoption.md` | `e29e568062e449462e642fa7db791578a0c68a905476b4b29fb384831259e14b` |
+# BR-SD-1g 正式採納 publication：獨立 custody 審查
+
+2026-10-11；reviewer `/root/custody`。本輪owner已批准正式採納完整精確子域、
+必要文件回寫，以及通過獨立檢查後commit／push main。
+授權不修改任何舊audit／sealed evidence；本reviewer只寫本新publication audit的
+`verify.py`、`negative_controls.py`與`custody/`，沒有stage／commit／push。
+
+**Custody／工具審查：原資料零漂移，未處理阻斷finding＝0。**
+最終數學／source合同與完整新bundle bytes另由proof reviewer獨立接受。
+本文件在root最終negative execution／final acceptance／seal之前交付，
+不將尚未執行的命令寫成成功；實際結果須由CHECKS及最終external receipts確認。
+
+## 1. Owner boundary與舊證據
+
+正式文件改動只准5個existing paths：N45 canonical、degree5 guide、interfaces、Kempe guide、STATUS；
+新增history固定`docs/history/2026-10-11-br-sd-1g-adoption.md`。
+HANDOFF／STATUS_HISTORY／README與其餘原BASE tracked entries皆維持原bytes／modes。
+新六份文件的完整path／SHA／size／mode固定於[ADOPTION_MANIFEST](../ADOPTION_MANIFEST.json)，
+authoritative owner instruction另記[AUTHORIZATION](../AUTHORIZATION.json)。
+文件量詞及原採納1a／1c／1e文字保全由mapping／proof review另核。
+
+新checker不import、修改或mock任何historical verifier；獨立重建下列custody義務：
+
+| 不變證據 | 實際完整覆蓋 |
+| --- | --- |
+| BASE工作區 | 原sealed WORKSPACE_BEFORE的固定SHA；15743 BASE tree／index entries和filesystem bytes／mode／symlink target，只有明確授權5docs可改 |
+| 原BR-SD-1g | 固定原SEAL SHA，159 payload＋seal＝160檔完整inventory；原HEAD／index／work bytes與modes必須相符 |
+| 原publication | 固定MANIFEST SHA，全6檔及payload digest；HEAD／index／work完全相符 |
+| 三舊audits | filesystem全部313檔paths／hash／size／mode／symlink；原tracked子集合309及4既有ignored local-only分開，禁止額外把4份提升為tracked |
+| 原authority | 原31 frozen bytes和research BASE blobs逐項核對；非授權live authority維持舊bytes，授權5docs的live bytes只可等於新approved manifest |
+| 已封採納審查 | 原review audit完整281檔paths／hash／size／modes由初始固定inventory SHA核對；原SEAL固定263 payload，DELIVERY固定16 postseal檔；兩個envelope bytes均另固定SHA |
+| 舊preflight | 固定本輪建立新目錄前的7項實際原命令record SHA；historical whitelist拒絕與相容性成功保持分層 |
+
+新reviewaudit281之前未tracked，不以原REPORT中的未commit歴史措辭否定本輪owner後續publication授權。
+封存原文、原commands、negative controls、failed generations及全部sealed accepts不改；
+新的history／TASK記錄當前正式採納，不回寫歷史候選身份。
+
+## 2. 實際precheck與Git階段
+
+本reviewer已實際執行新checker的`--precheck`，exit0：
+approved6docs、original160、oldpublication6、review281、old313、authority31、immutable15738
+均相符；當時HEAD仍BASE，oldreview／newpublication皆未tracked。
+CHECKS存在後另次precheck亦實際exit0，核當時31份root actual receipts及已由同argv成功重播取代的doc初次failure。
+這不是postcommit驗證；root必須另行取得normal／hashseed17及完整negative controls的實際紀錄。
+
+Checker要求BASE ancestry與main branch，逐項分開核HEAD、index及working tree。
+BASE..HEAD／index／working diff只准5個existing M、history A、oldreview／本publication A；
+不能用本機undo掩蓋已commit或stage的越界修改。未授權原entries的HEAD／index OIDs與modes
+固定於BASE；working bytes另核原trusted manifest。
+新history若在HEAD／index已存在，precheck階段也必須對回approved manifest的完整bytes／mode，
+沒有等到最後require-tracked才發現已stage或commit的不一致。
+
+`--check --require-tracked`強制完整281 oldreview及本newaudit（包含新SEAL）在HEAD／index精確齊備，
+所有six approved docs的HEAD／index／work bytes／Git mode等於已接受manifest。
+因此commit後不要求HEAD仍等於舊BASE，而要求真正descendant加精確新增／修改白名單。
+partial tracking、extra paths、改舊audit或額外canonical檔均不能通過。
+
+## 3. Final bytes與封存接口
+
+本新audit只排除自己的`SEAL.json`；沒有postseal／receipt白名單可在封存後繼續寫。
+最終proof acceptance只另外排除它自己，必須固定所有其他newpayload及六份approved docs的完整inventory。
+其schema固定BASE、0 finding、OPEN／0、source not triggered／no new Lean；
+accepted_bundle SHA對回documents＋payloads，不能靠刪清單或只核marginal hashes通過。
+
+`--seal`須取得完整final byte接受，再exclusive-create自己的SEAL，固定filesystem mode644。
+Seal核完整exact object、全部payload bytes／modes及六文件；不能overwrite或省略evidence。
+`--check`和`--precheck`唯讀，only `--seal`有本newenvelope的寫入分支。
+所有postseal／postcommit／postpush實際輸出由root記在repo外`/tmp`及session，
+不改final accepted payload或新seal；commit／push完成後還須normal／hashseed17 require-tracked回讀。
+
+CHECKS對actual argv／cwd／actual與expected exits／stdout／stderr digests逐项回讀。
+若有root receipt JSON，其原bytes digest與全部原欄位另對回；root-relative及audit-relative
+paths都須resolve在本newaudit內，不允許receipt path逃出。
+原unexpected failures不改exit或expected；保留說明及原raw logs，
+非pending final mode要求commands有同argv、actual0／expected0的實際success，才允許進入seal。
+
+## 4. Memory negative controls與適用界線
+
+[negative_controls.py](../negative_controls.py)使用兩個memfds提供prospective seal及document manifest。
+先以valid positive control要求完整唯讀manifest入口exit0，再測9份具名corruptions：
+parent CLOSED、source／Lean／closure升級、extra metadata、刪payload再重hash、
+改document hash再重hash、document manifest parent drift及coverage不足。
+每個拒絕必須符合預期具體錯誤理由，不能把missing acceptance等無關failure當成功negative。
+這個`--validate-manifests`入口明確是preseal local manifest／inventory校準，
+不代替真實final acceptance或commit後require-tracked檢查。
+
+Root在執行前code review定位兩個harness reason字符串不匹配：
+manifest parent drift走scope guard，coverage走approved inventory guard。
+本reviewer已按實際guard分開reason map；沒有舊bytes改動，也沒有將尚未跑的控制列為PASS。
+
+memfd控制不產生或修改磁碟seal／文件／原artifact，保存每份actual argv／stdout／stderr／exit。
+工具在結束前核六份adopted docs、原manifest、自己的tools和既有seal（若存在）bytes不變。
+root將其完整stdout／stderr／exit保存於CHECKS後，proof reviewer才接受整體新bundle。
+
+## 5. 尚待root履行
+
+本reviewer交付此檔後停止寫入，讓root串行完成normal／seed17 precheck、正負控制、
+實際CHECKS整合和REPORT，然後由另一reviewer接受完整final bytes。
+之後才能exclusive seal、stage／commit／push，以及remote/main／HEAD／index／clean-tree讀回。
+tool code或approved docs若再改動，需新的exact-byte review，不能沿用本接受。
+
+**完整N45-S-NOU-LS-PAIR父身份保持OPEN；actual source `not triggered`；
+新Lean theorem 0；完整OPEN身份新增無條件關閉0。**
+Custody成功不建立actual source，也不擴大到一般兩／多旁支、其他splits／骨架、R31、ε≥3、
+一般N45／N2／E或`K∞=K≤5`。

@@ -1,0 +1,28 @@
+{
+  "cwd": "/home/ray/developer/ai/math",
+  "provenance": "transcribed from actual tool receipts; these bootstrap failures preceded the receipt helper",
+  "records": [
+    {
+      "argv": [
+        "python3",
+        "-"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "stderr": "Traceback (most recent call last):\n  File \"<stdin>\", line 5, in <module>\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 777, in read_bytes\n    with self.open(mode='rb', buffering=0) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIsADirectoryError: [Errno 21] Is a directory: '/home/ray/developer/ai/math/audits/2026-10-04-task-d4/snapshot'\n",
+      "stdin": "import pathlib,json,uuid,subprocess,hashlib,datetime\nroot=pathlib.Path.cwd(); tag=uuid.uuid4().hex[:8]; a=root/'audits'/('2026-10-11-br-sd-1g-adopt-'+tag); a.mkdir()\nfor d in ['logs','agents/proof','agents/mapping','agents/custody','controls','inputs','final_review']:(a/d).mkdir(parents=True)\ntracked=subprocess.check_output(['git','ls-files','-z']).decode().split('\\0'); tracked=[p for p in tracked if p]\nmanifest={p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in tracked}\nobj={'task':'BR-SD-1g-ADOPT','base':'c15a635e17d4be814e19aeeeeb765f3d6024099a','head':subprocess.check_output(['git','rev-parse','HEAD']).decode().strip(),'created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'tracked_file_count':len(manifest),'tracked_sha256':manifest,'initial_status':subprocess.check_output(['git','status','--porcelain=v1']).decode()}\n(a/'inputs'/'WORKSPACE_BEFORE.json').write_text(json.dumps(obj,indent=2,sort_keys=True)+'\\n')\nprint(a)\nprint('tracked files',len(manifest))\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "stderr": "Traceback (most recent call last):\n  File \"<stdin>\", line 8, in <module>\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 777, in read_bytes\n    with self.open(mode='rb', buffering=0) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIsADirectoryError: [Errno 21] Is a directory: '/home/ray/developer/ai/math/audits/2026-10-04-task-d4/snapshot'\n",
+      "stdin": "import pathlib,json,subprocess,hashlib,datetime\nroot=pathlib.Path.cwd(); a=next(p for p in (root/'audits').glob('2026-10-11-br-sd-1g-adopt-*'))\nentries=subprocess.check_output(['git','ls-files','--stage','-z']).decode().split('\\0'); files={}; gitlinks={}\nfor entry in entries:\n if not entry:continue\n meta,p=entry.split('\\t',1); mode,oid,stage=meta.split()\n if mode=='160000':gitlinks[p]={'mode':mode,'index_oid':oid};continue\n path=root/p; files[p]={'mode':mode,'index_oid':oid,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}\nobj={'task':'BR-SD-1g-ADOPT','base':'c15a635e17d4be814e19aeeeeb765f3d6024099a','head':subprocess.check_output(['git','rev-parse','HEAD']).decode().strip(),'created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'tracked_file_count':len(files),'tracked_files':files,'gitlinks':gitlinks,'initial_status_excluding_new_audit':subprocess.check_output(['git','status','--porcelain=v1','--untracked-files=no']).decode()}\n(a/'inputs'/'WORKSPACE_BEFORE.json').write_text(json.dumps(obj,indent=2,sort_keys=True)+'\\n')\n(a/'logs'/'bootstrap-failure.txt').write_text('Initial workspace snapshot attempt exit=1: pathlib.read_bytes encountered tracked gitlink audits/2026-10-04-task-d4/snapshot (IsADirectoryError). No pre-existing file mutation. Retried with git index mode 160000 recorded separately. Exact command and original traceback are in this session tool receipt.\\n')\nprint(a);print('tracked files',len(files),'gitlinks',len(gitlinks))\n",
+      "stdout": ""
+    }
+  ]
+}

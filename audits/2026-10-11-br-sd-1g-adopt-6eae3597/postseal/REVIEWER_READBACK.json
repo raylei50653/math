@@ -1,0 +1,136 @@
+{
+  "actual_readonly_check": {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "env_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "finished_utc": "2026-10-11T09:35:46.668314+00:00",
+    "started_utc": "2026-10-11T09:35:37.825412+00:00",
+    "stderr": "",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "{\"authority_inputs\": 31, \"base\": \"c15a635e17d4be814e19aeeeeb765f3d6024099a\", \"decision\": \"ACCEPTABLE\", \"formal_adoption_executed\": false, \"local_links_checked\": 112, \"mode\": \"check\", \"new_Lean_theorem\": false, \"new_unconditional_closures\": 0, \"old_custody_files\": 313, \"original_files\": 160, \"parent_status\": \"OPEN\", \"publication_files\": 6, \"recorded_root_checks\": 21, \"source_status\": \"not triggered\", \"status\": \"custody verified\", \"tracked_entries_unchanged\": 15743}\n",
+    "stdout_sha256": "7b6867770e90319de1e97763b5803382c6ec9ce976a7ddd997837b93fbaa56e5"
+  },
+  "actual_source_status": "not triggered",
+  "base": "c15a635e17d4be814e19aeeeeb765f3d6024099a",
+  "blocking_findings": 0,
+  "decision": "ACCEPTABLE",
+  "head_main_origin_main": "c15a635e17d4be814e19aeeeeb765f3d6024099a",
+  "new_Lean_theorem": false,
+  "new_unconditional_closures": 0,
+  "normal_hashseed17_stdout_equal": true,
+  "only_new_audit_untracked": true,
+  "original_final_acceptance_sha256": "3a58e07a25ebf6075093dfde9d44790df8a121e7a77c45dcfecfb29485065cfb",
+  "parent_status": "OPEN",
+  "payload_bytes_and_modes_match": true,
+  "postseal_receipts_read": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/boundary_readback.py"
+      ],
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "label": "boundary-readback",
+      "receipt_mode": 420,
+      "receipt_sha256": "ed3f491e7918014c570a358d8bc9b19bb692484d410b5d8cf31478c3a917b1fb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "101836bd12cda784e874c0be6684a16e7e7f237e36453acc72ef1f17573da378"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py",
+        "--seal"
+      ],
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "label": "seal",
+      "receipt_mode": 420,
+      "receipt_sha256": "c08bc2d774a6706ad28448ae81a16c240a63f6aaf03cc0376e42f9e4e80632dc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "5f01f4e0e467dffabb0a0fb5979632716b4b76f86c218b51fc81457f05a063db"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py",
+        "--check"
+      ],
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "label": "seal-check",
+      "receipt_mode": 420,
+      "receipt_sha256": "75efe3442160c500e4f36d0d6f7f2e20bfcf3334e233c19ebcc0da7373dd5d8d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "7b6867770e90319de1e97763b5803382c6ec9ce976a7ddd997837b93fbaa56e5"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py",
+        "--check"
+      ],
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "label": "seal-hashseed17",
+      "receipt_mode": 420,
+      "receipt_sha256": "1d526060045d2a71ed70a29bb18fa61e2aad4e9ff2056fee43c2132348b8cde6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "7b6867770e90319de1e97763b5803382c6ec9ce976a7ddd997837b93fbaa56e5"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/seal_negative.py"
+      ],
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "label": "seal-negative",
+      "receipt_mode": 420,
+      "receipt_sha256": "52245f76dae0f2b70cf713bdac54bdbcdda0005f54f2785272f776addab56037",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "b62a1e57ff2c4b7ee771cdf90db66e7e29b91ab42836a0ef219bcd097e6f5606"
+    }
+  ],
+  "prior_reviewed_payload_count": 262,
+  "reviewed_final_payload_manifest_sha256": "37d9d80576e9456a672749d0d700f6809187879a26e64ef536831617d450c31d",
+  "reviewer": "/root/proof",
+  "schema": "br-sd-1g-adopt-sealed-readback-v1",
+  "seal_filesystem_mode": 420,
+  "seal_negative_expected_rejections": 7,
+  "seal_sha256": "f61fb4d1a16d72744615d4c2be4bd698d5272ba8b2c4756cecfb80af0d9fdc3d",
+  "sealed_payload_count": 263,
+  "stage": "before DELIVERY",
+  "tracked_and_staged_diff_empty": true,
+  "verdict": "accepted sealed bytes"
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py",
+      "--precheck"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "env_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "finished_utc": "2026-10-11T09:28:03.743968+00:00",
+    "label": "precheck",
+    "started_utc": "2026-10-11T09:27:55.311738+00:00",
+    "stderr_path": "precheck.stderr.log",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_path": "precheck.stdout.log",
+    "stdout_sha256": "ec1fbd3c064c0187774936d9500b8461a480fca52a6d092fcec8693d6223878d"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+      "--check",
+      "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/CERTIFICATE.json"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "env_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "finished_utc": "2026-10-11T09:27:55.407257+00:00",
+    "label": "finite",
+    "started_utc": "2026-10-11T09:27:55.312259+00:00",
+    "stderr_path": "finite.stderr.log",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_path": "finite.stdout.log",
+    "stdout_sha256": "5171788237d4110bb9f1136d6622adfdacd0c0928fced71e9239449c2e8a28ea"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+      "--check",
+      "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/CERTIFICATE.json"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "env_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "finished_utc": "2026-10-11T09:27:55.407058+00:00",
+    "label": "finite-hashseed17",
+    "started_utc": "2026-10-11T09:27:55.312884+00:00",
+    "stderr_path": "finite-hashseed17.stderr.log",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_path": "finite-hashseed17.stdout.log",
+    "stdout_sha256": "5171788237d4110bb9f1136d6622adfdacd0c0928fced71e9239449c2e8a28ea"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/independent_immutable_check.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "env_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "finished_utc": "2026-10-11T09:27:59.195686+00:00",
+    "label": "immutable",
+    "started_utc": "2026-10-11T09:27:55.313646+00:00",
+    "stderr_path": "immutable.stderr.log",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_path": "immutable.stdout.log",
+    "stdout_sha256": "f260a098298e9f83bf19df6b3c4d80329d2e4e5f3e06e6ec306dda69d23d5508"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "env_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "finished_utc": "2026-10-11T09:27:55.322141+00:00",
+    "label": "diff-check",
+    "started_utc": "2026-10-11T09:27:55.314014+00:00",
+    "stderr_path": "diff-check.stderr.log",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_path": "diff-check.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-adopt-6eae3597/boundary_readback.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "env_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "finished_utc": "2026-10-11T09:27:55.602646+00:00",
+    "label": "boundary",
+    "started_utc": "2026-10-11T09:27:55.314562+00:00",
+    "stderr_path": "boundary.stderr.log",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_path": "boundary.stdout.log",
+    "stdout_sha256": "952e38dd296811dd87e1d76c7451e6918d27735a1d2e37df7300967d98a69f35"
+  }
+]

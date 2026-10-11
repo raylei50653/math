@@ -1,0 +1,876 @@
+{
+  "schema": "br-sd-1g-adoption-checks-v1",
+  "base": "c15a635e17d4be814e19aeeeeb765f3d6024099a",
+  "commands": [
+    {
+      "name": "adoption-adapter-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adoption-publication/verify.py",
+        "--precheck"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:07:49.624674+00:00",
+      "elapsed_seconds": 2.2208305040003324,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-adapter-normal/stdout.txt",
+      "stdout_sha256": "3f744fde21ebb9240828c4020a93acef62f61e746fa0647be2f0cb402e0599fb",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-adapter-normal/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-adapter-normal/receipt.json",
+      "receipt_sha256": "bdff4b6ebf114b490a39f1d97368096e364ec9ab766efe236f98ca1c53206ccb"
+    },
+    {
+      "name": "adoption-adapter-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adoption-publication/verify.py",
+        "--precheck"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_utc": "2026-10-11T10:07:49.624944+00:00",
+      "elapsed_seconds": 2.2235650360016734,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-adapter-seed17/stdout.txt",
+      "stdout_sha256": "3f744fde21ebb9240828c4020a93acef62f61e746fa0647be2f0cb402e0599fb",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-adapter-seed17/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-adapter-seed17/receipt.json",
+      "receipt_sha256": "5fca428201b81183aa76ec96377f4cab8037d62d351dc521d4aaa3c0c1d367cb"
+    },
+    {
+      "name": "adoption-manifest-negative",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adoption-publication/negative_controls.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:07:59.295247+00:00",
+      "elapsed_seconds": 17.516736202000175,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-manifest-negative/stdout.txt",
+      "stdout_sha256": "001dbc4f3191b770e6867ef3d58b93c42d165206a647384ba78569f6cfe14c1a",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-manifest-negative/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-manifest-negative/receipt.json",
+      "receipt_sha256": "d113f876de5726d5a7f61d3d2d0116eed05485c9b8b1a391533e8a23530e1de5"
+    },
+    {
+      "name": "diff",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:01:52.755641+00:00",
+      "elapsed_seconds": 0.008987965997221181,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/diff/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/diff/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/diff/receipt.json",
+      "receipt_sha256": "bd923c28b1cc2eaa4c4b8fbb4e6c065e0c1b0593d8fafa65eb439cf569d8c3fa"
+    },
+    {
+      "name": "docgraph",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:17.543463+00:00",
+      "elapsed_seconds": 0.45663785700162407,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docgraph/stdout.txt",
+      "stdout_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docgraph/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docgraph/receipt.json",
+      "receipt_sha256": "b074a9038a4b6c8c467930c4de87ddd6eea07dcae7239042181c75d6f26a34bc"
+    },
+    {
+      "name": "docs-final",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:02:42.921149+00:00",
+      "elapsed_seconds": 0.6445595260011032,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docs-final/stdout.txt",
+      "stdout_sha256": "fb2c995435f3af48e280690ccfdd9cda8ea8f6fa6c778548b29dec8e393a946a",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docs-final/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docs-final/receipt.json",
+      "receipt_sha256": "c107ea32825d486e04db9384d8382e76740ec5c3ab82a7160d84d0a47c23a3be"
+    },
+    {
+      "name": "fresh-finite-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--check",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/CERTIFICATE.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:17.543185+00:00",
+      "elapsed_seconds": 0.0974067550014297,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-finite-normal/stdout.txt",
+      "stdout_sha256": "5171788237d4110bb9f1136d6622adfdacd0c0928fced71e9239449c2e8a28ea",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-finite-normal/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-finite-normal/receipt.json",
+      "receipt_sha256": "66a11fccdd29760f3842b8d91f18a270309003e3ac16c758011ed7e566235707"
+    },
+    {
+      "name": "fresh-finite-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--check",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/CERTIFICATE.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_utc": "2026-10-11T10:00:18.001690+00:00",
+      "elapsed_seconds": 0.07457847499972559,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-finite-seed17/stdout.txt",
+      "stdout_sha256": "5171788237d4110bb9f1136d6622adfdacd0c0928fced71e9239449c2e8a28ea",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-finite-seed17/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-finite-seed17/receipt.json",
+      "receipt_sha256": "b57d3b9f47c7c2fbb00bd3c3049cef50648b4a29ecf0a39dc0193c3e3532cc4c"
+    },
+    {
+      "name": "fresh-negative-corrupted",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:18.421904+00:00",
+      "elapsed_seconds": 0.04502817799948389,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-corrupted/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-corrupted/stderr.txt",
+      "stderr_sha256": "376851a42769d29d04b8719b9bc528a26cfc3ce2f507f304cea2154018e30613",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-corrupted/receipt.json",
+      "receipt_sha256": "088c3b41016a452a66a5e2f42fb7eceb0cd4b2bbc6e20cf61b4daca431820b77"
+    },
+    {
+      "name": "fresh-negative-malformed",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.malformed.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:18.505158+00:00",
+      "elapsed_seconds": 0.037135992002731655,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-malformed/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-malformed/stderr.txt",
+      "stderr_sha256": "eb27c5fb0fc7f5ad5c327bf7b94f0074c8029b892a52dd6458c09200781a3ff0",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-malformed/receipt.json",
+      "receipt_sha256": "378483952ca256fcd816896523d9d7de3d380786aa53aae7659534aae457ec09"
+    },
+    {
+      "name": "fresh-negative-marginal-corrupted",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.marginal-corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:18.581809+00:00",
+      "elapsed_seconds": 0.04505025599792134,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-marginal-corrupted/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-marginal-corrupted/stderr.txt",
+      "stderr_sha256": "3123fe839e875d00e3df021e2b4deec814f6403213bf640f37d571dea2829bc7",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/fresh-negative-marginal-corrupted/receipt.json",
+      "receipt_sha256": "db5165bac1bda8f48e245f01a9fab245f3df9b4c67d2ed02d59567eb8222cae7"
+    },
+    {
+      "name": "historical-publication-after-docs-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-publication/verify.py",
+        "--check",
+        "--require-tracked"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:01:10.585867+00:00",
+      "elapsed_seconds": 0.8095626290014479,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/historical-publication-after-docs-normal/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/historical-publication-after-docs-normal/stderr.txt",
+      "stderr_sha256": "c36f6b34cfe246f18408996fa17202d4abaa7b5fe62c30983ae1667b3d649644",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/historical-publication-after-docs-normal/receipt.json",
+      "receipt_sha256": "d6caf31fd6056009b8f38ffd3380b75b6ed2c1a9f9765cc10a9193f6021c417c"
+    },
+    {
+      "name": "historical-publication-after-docs-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-publication/verify.py",
+        "--check",
+        "--require-tracked"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_utc": "2026-10-11T10:01:11.466978+00:00",
+      "elapsed_seconds": 0.2981527960000676,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/historical-publication-after-docs-seed17/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/historical-publication-after-docs-seed17/stderr.txt",
+      "stderr_sha256": "c36f6b34cfe246f18408996fa17202d4abaa7b5fe62c30983ae1667b3d649644",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/historical-publication-after-docs-seed17/receipt.json",
+      "receipt_sha256": "285c9eb74969495aec2e87bc695e9a47fcf1609498c735476b3dd9e39f8074b8"
+    },
+    {
+      "name": "independent-negative-corrupted",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:18.664768+00:00",
+      "elapsed_seconds": 0.03788744000121369,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-corrupted/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-corrupted/stderr.txt",
+      "stderr_sha256": "2e8fd5f2141b4597e7b4f290a082f56b78a827b080eaea562f7ee59723e977de",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-corrupted/receipt.json",
+      "receipt_sha256": "2d9a489a024f5d83cafb47b25e4d5c7013769abaaf22a4d767fee548c30bd4ac"
+    },
+    {
+      "name": "independent-negative-malformed",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.malformed.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:18.741361+00:00",
+      "elapsed_seconds": 0.028860017999249976,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-malformed/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-malformed/stderr.txt",
+      "stderr_sha256": "eb27c5fb0fc7f5ad5c327bf7b94f0074c8029b892a52dd6458c09200781a3ff0",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-malformed/receipt.json",
+      "receipt_sha256": "e0b41ddce18be5300c39d9c917aa4af494c7f3bfab13925a13229a1b766e2d2e"
+    },
+    {
+      "name": "independent-negative-marginal-corrupted",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.marginal-corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:18.808421+00:00",
+      "elapsed_seconds": 0.03850187300122343,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-marginal-corrupted/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-marginal-corrupted/stderr.txt",
+      "stderr_sha256": "3ed3c63952cbb59424d55d1158e74be15ecd072da3b9d7aa43480b10ba4ff1cf",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/independent-negative-marginal-corrupted/receipt.json",
+      "receipt_sha256": "c91fb0da164e6abc011389acbfbcc41913720f264b677b4527a1d766812c0a9a"
+    },
+    {
+      "name": "lean-build",
+      "argv": [
+        "lake",
+        "build"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:17.543736+00:00",
+      "elapsed_seconds": 9.067783538997901,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/lean-build/stdout.txt",
+      "stdout_sha256": "2103291d39ceb734f800128950d507eded343e0e0678cc7e96414c1cc372b250",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/lean-build/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/lean-build/receipt.json",
+      "receipt_sha256": "c2dcaea2c4c9d05ceecd713e39227e21fed8d405562ba9854b541ea0f0dc74fd"
+    },
+    {
+      "name": "logger-controls-final",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adoption-publication/logger_controls.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:04:48.370753+00:00",
+      "elapsed_seconds": 0.17658155200115289,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/logger-controls-final/stdout.txt",
+      "stdout_sha256": "b134ab64b333de2821f5bc0a5aafd53652c723f3ec9af0e3f00546bb8f6e2f16",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/logger-controls-final/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/logger-controls-final/receipt.json",
+      "receipt_sha256": "966c34f3ba13f590f9acf6d91840ffb57ddc373bbd7d99d8ca631cb4305aba3b"
+    },
+    {
+      "name": "mapping-degrees-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/mapping/degree_table_control.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:17.942108+00:00",
+      "elapsed_seconds": 0.020756341000378598,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/mapping-degrees-normal/stdout.txt",
+      "stdout_sha256": "879326fd40386003224bc9d43667f97a90fd3bc6a7ddf2c5d620d7395367beba",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/mapping-degrees-normal/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/mapping-degrees-normal/receipt.json",
+      "receipt_sha256": "07a3716a91531772ad0348475cf50655f08bfd5a3899d09c4ed3a649d0f8ec1d"
+    },
+    {
+      "name": "mapping-degrees-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/mapping/degree_table_control.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_utc": "2026-10-11T10:00:18.362985+00:00",
+      "elapsed_seconds": 0.020042973999807145,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/mapping-degrees-seed17/stdout.txt",
+      "stdout_sha256": "879326fd40386003224bc9d43667f97a90fd3bc6a7ddf2c5d620d7395367beba",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/mapping-degrees-seed17/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/mapping-degrees-seed17/receipt.json",
+      "receipt_sha256": "9c463a7409e3bcbd788d32a9c650c8dcbb49b1333bf304c86d70da630618b64d"
+    },
+    {
+      "name": "normative-unchanged",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adoption-publication/normative_readback.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:01:52.623370+00:00",
+      "elapsed_seconds": 0.04439963400000124,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/normative-unchanged/stdout.txt",
+      "stdout_sha256": "dd600d3fb9c22e90efc2867c7ed52aa16aabcd8bba63b12167bc7a4a3995b9df",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/normative-unchanged/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/normative-unchanged/receipt.json",
+      "receipt_sha256": "891705dc41dae57416da52a31b9a198e70adc8d5b09866a4f1ac062c26cff742"
+    },
+    {
+      "name": "old-independent-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:17.679046+00:00",
+      "elapsed_seconds": 0.08718750999832992,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-independent-normal/stdout.txt",
+      "stdout_sha256": "ac9a6b15f08b99f7b6f29173c25859f1b6a04e1c5d32922e4a9f51a9c47ba940",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-independent-normal/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-independent-normal/receipt.json",
+      "receipt_sha256": "6aad5734fda1e6752ab63da6c32b332c9a7bcb0292f8614de0594a473415218f"
+    },
+    {
+      "name": "old-independent-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_utc": "2026-10-11T10:00:18.114419+00:00",
+      "elapsed_seconds": 0.08268273800058523,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-independent-seed17/stdout.txt",
+      "stdout_sha256": "ac9a6b15f08b99f7b6f29173c25859f1b6a04e1c5d32922e4a9f51a9c47ba940",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-independent-seed17/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-independent-seed17/receipt.json",
+      "receipt_sha256": "0e90a9ab6b9d439e6999d1d436ba9fdc723d072d72bcc5bd5df85e227b93c6bf"
+    },
+    {
+      "name": "old-primary-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:17.804914+00:00",
+      "elapsed_seconds": 0.09764739899765118,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-primary-normal/stdout.txt",
+      "stdout_sha256": "c43983ea0cc0f095e4f55fcb548ff40e2d14cad840ac795a8c32c36200e88ce6",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-primary-normal/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-primary-normal/receipt.json",
+      "receipt_sha256": "854f6372979c5f2fd660730dbcc6efe7aff58e04e544b7e8bf674fe306b52dd6"
+    },
+    {
+      "name": "old-primary-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "started_utc": "2026-10-11T10:00:18.236999+00:00",
+      "elapsed_seconds": 0.08806981599991559,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-primary-seed17/stdout.txt",
+      "stdout_sha256": "c43983ea0cc0f095e4f55fcb548ff40e2d14cad840ac795a8c32c36200e88ce6",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-primary-seed17/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/old-primary-seed17/receipt.json",
+      "receipt_sha256": "661982157e5564556e520c392b8e1185c87a6073ea9e2521815ab5c32417aba8"
+    },
+    {
+      "name": "historical-publication-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-publication/verify.py",
+        "--check",
+        "--require-tracked"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 0.29534053802490234,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-historical-publication-normal/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-historical-publication-normal/stderr.txt",
+      "stderr_sha256": "8500e988f6656f73e6a663c5f13ee323600dea40a398d7b45919d013d3964d1b",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-historical-publication-normal/receipt.json",
+      "receipt_sha256": "5a2579e7d9c119bc3cc5935b65f6f743731fe45ea51549972bf8ba7ab1175dc9"
+    },
+    {
+      "name": "historical-publication-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-publication/verify.py",
+        "--check",
+        "--require-tracked"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 0.29191088676452637,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-historical-publication-seed17/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-historical-publication-seed17/stderr.txt",
+      "stderr_sha256": "8500e988f6656f73e6a663c5f13ee323600dea40a398d7b45919d013d3964d1b",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-historical-publication-seed17/receipt.json",
+      "receipt_sha256": "46b51ed0b10be51ba23c86e517a7d36ee4c5d1656eaaa630df40d85b67d7d14f"
+    },
+    {
+      "name": "immutable-adapter-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/independent_immutable_check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 3.456598997116089,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-immutable-adapter-normal/stdout.txt",
+      "stdout_sha256": "f260a098298e9f83bf19df6b3c4d80329d2e4e5f3e06e6ec306dda69d23d5508",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-immutable-adapter-normal/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-immutable-adapter-normal/receipt.json",
+      "receipt_sha256": "6dcd1af539bd8c981ff2b1e9249bfbda31b68aa8861be0641a54e2aa20e50120"
+    },
+    {
+      "name": "immutable-adapter-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/independent_immutable_check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 3.5114002227783203,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-immutable-adapter-seed17/stdout.txt",
+      "stdout_sha256": "f260a098298e9f83bf19df6b3c4d80329d2e4e5f3e06e6ec306dda69d23d5508",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-immutable-adapter-seed17/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-immutable-adapter-seed17/receipt.json",
+      "receipt_sha256": "cefffb9520e9b95431c36e4f8344bc6fac9c7545718bf3c4ac9d9dcd0196a261"
+    },
+    {
+      "name": "review-seal-negative",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/seal_negative.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 31.456984281539917,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-seal-negative/stdout.txt",
+      "stdout_sha256": "5d4488d2d639291f17b67d462d75332114d7233fb534929f637e335bc8ab149a",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-seal-negative/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-seal-negative/receipt.json",
+      "receipt_sha256": "0b777e7ce3ca14259da90f4c1bee272322ed5c5b0702cfe9a2fea8cfd8bbf58e"
+    },
+    {
+      "name": "review-sealed-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py",
+        "--check",
+        "--require-delivery"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 8.58317518234253,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-sealed-normal/stdout.txt",
+      "stdout_sha256": "85dcceb806206e3e61a6f410741003e2958dc3f3a08234869c9b9a6ed56520a5",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-sealed-normal/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-sealed-normal/receipt.json",
+      "receipt_sha256": "8c0935d6d00e65e8a7eb63ae74739ac83ba3744adfdc1b2a1c00bc51a7a39e03"
+    },
+    {
+      "name": "review-sealed-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py",
+        "--check",
+        "--require-delivery"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 4.5100696086883545,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-sealed-seed17/stdout.txt",
+      "stdout_sha256": "85dcceb806206e3e61a6f410741003e2958dc3f3a08234869c9b9a6ed56520a5",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-sealed-seed17/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/preflight-review-sealed-seed17/receipt.json",
+      "receipt_sha256": "518b1fbb86806c2e336fa6b277772a8b8f800e8d7bec6904e78b33aaef82e425"
+    },
+    {
+      "name": "primary-negative-corrupted",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:18.886677+00:00",
+      "elapsed_seconds": 0.08767258800071431,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-corrupted/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-corrupted/stderr.txt",
+      "stderr_sha256": "4bbf2c9cdf0e954d59da05d1509a3035ff03a53e152805c1d9be8b01b87e1ae3",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-corrupted/receipt.json",
+      "receipt_sha256": "18bd118428171b04e38c066484e4b0910a9686ee4cab27c765d36b156d72f831"
+    },
+    {
+      "name": "primary-negative-malformed",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.malformed.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:19.013472+00:00",
+      "elapsed_seconds": 0.07660572399981902,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-malformed/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-malformed/stderr.txt",
+      "stderr_sha256": "eb27c5fb0fc7f5ad5c327bf7b94f0074c8029b892a52dd6458c09200781a3ff0",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-malformed/receipt.json",
+      "receipt_sha256": "64c69a82059226d9ee108f4ea4e793fb91c568d13679fabd4e6f30112ad150bc"
+    },
+    {
+      "name": "primary-negative-marginal-corrupted",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.marginal-corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:19.129544+00:00",
+      "elapsed_seconds": 0.08589495200067176,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-marginal-corrupted/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-marginal-corrupted/stderr.txt",
+      "stderr_sha256": "4bbf2c9cdf0e954d59da05d1509a3035ff03a53e152805c1d9be8b01b87e1ae3",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/primary-negative-marginal-corrupted/receipt.json",
+      "receipt_sha256": "d2748b86c84907e4eb64af07d51d0727100ad3a2a8f1e46dc5c13c1fb9754119"
+    }
+  ],
+  "retained_failed_commands": [
+    {
+      "name": "docs",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:00:17.544198+00:00",
+      "elapsed_seconds": 0.9268023769982392,
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docs/stdout.txt",
+      "stdout_sha256": "b1355913f3122aaa970bdff1d23f3db84161834b652a465802ef6ed620d443d1",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docs/stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/docs/receipt.json",
+      "receipt_sha256": "db80c627e05b7f672200f05cc58352927ec5b9ccf7b605ea2fae0282c5ec5e62",
+      "superseded_by": "docs-final",
+      "superseded_reason": "First check ran before mapping/REVIEW.md was delivered; identical command passed after delivery."
+    },
+    {
+      "name": "logger-controls",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adoption-publication/logger_controls.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:04:21.977634+00:00",
+      "elapsed_seconds": 0.06833361300232355,
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "stdout_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/logger-controls/stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/logger-controls/stderr.txt",
+      "stderr_sha256": "a6fef365b9a93436ee123482335fe4a56ca313112b3d7651d4075c91eee6b46f",
+      "receipt_path": "audits/2026-10-11-br-sd-1g-adoption-publication/logs/logger-controls/receipt.json",
+      "receipt_sha256": "e8a3d497b4ed35c6a09b3cff891ebea572330151cd06bfb953d51b2378e569cd",
+      "superseded_by": "logger-controls-final",
+      "superseded_reason": "Disposable positive fixture omitted its required logs parent; original harness retained as logs/logger-controls/harness.v1.py; corrected harness passed."
+    }
+  ],
+  "all_final_expectations_met": true,
+  "parent_status": "OPEN",
+  "actual_source_status": "not triggered",
+  "new_Lean_theorem": false,
+  "new_unconditional_closures": 0,
+  "scope": "Exact scoped adoption, named synthetic controls, docs and immutable custody; no source realization",
+  "historical_publication_exception": "exit1 immutable two-directory whitelist; preserved, not PASS",
+  "postseal_receipt_location": "External /tmp session receipts; sealed bytes unchanged"
+}

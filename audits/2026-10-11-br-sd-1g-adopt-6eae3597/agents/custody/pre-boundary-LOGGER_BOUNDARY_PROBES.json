@@ -1,0 +1,101 @@
+{
+  "all_expected_blocks": false,
+  "cases": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/pre-boundary-stale-log/audit/record_check.py",
+        "demo",
+        "/usr/bin/python3",
+        "-B",
+        "-c",
+        "from pathlib import Path; Path('/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/pre-boundary-stale-log/audit/command-executed.txt').write_text('executed\\n')"
+      ],
+      "case": "stale-log",
+      "command_marker_exists": false,
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 2,
+      "expectation_met": true,
+      "expected_condition": "nonzero exit before command execution",
+      "fixture": {
+        "case": "stale-log"
+      },
+      "runtime_symlink_removed_after_probe": false,
+      "scope": "verbatim isolated logger copy; all effects within custody",
+      "started_unix": 1791710363.4243712,
+      "stderr_path": "agents/custody/pre-boundary-stale-log.stderr.log",
+      "stderr_sha256": "84fa1bcdcfda883740bfbe8c534df1f087244d70446478ea7cac78cd37b0d1bc",
+      "stdout_path": "agents/custody/pre-boundary-stale-log.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "wall_seconds": 0.0350956916809082
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/pre-boundary-dangling-log-symlink/audit/record_check.py",
+        "demo",
+        "/usr/bin/python3",
+        "-B",
+        "-c",
+        "from pathlib import Path; Path('/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/pre-boundary-dangling-log-symlink/audit/command-executed.txt').write_text('executed\\n')"
+      ],
+      "case": "dangling-log-symlink",
+      "command_marker_exists": true,
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expectation_met": false,
+      "expected_condition": "nonzero exit before command execution",
+      "fixture": {
+        "case": "dangling-log-symlink",
+        "symlink": {
+          "path": "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/pre-boundary-dangling-log-symlink/audit/logs/demo.stderr.log",
+          "target": "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/pre-boundary-dangling-log-symlink/audit/missing-output-target"
+        }
+      },
+      "runtime_symlink_removed_after_probe": true,
+      "scope": "verbatim isolated logger copy; all effects within custody",
+      "started_unix": 1791710363.4698846,
+      "stderr_path": "agents/custody/pre-boundary-dangling-log-symlink.stderr.log",
+      "stderr_sha256": "b071c318bf70dd7e4c6a3cf2b419aa8f91f02baa97698f3ff699ca908d2da6f2",
+      "stdout_path": "agents/custody/pre-boundary-dangling-log-symlink.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "wall_seconds": 0.05724763870239258
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/pre-boundary-directory-symlink/audit/record_check.py",
+        "demo",
+        "/usr/bin/python3",
+        "-B",
+        "-c",
+        "from pathlib import Path; Path('/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/pre-boundary-directory-symlink/audit/command-executed.txt').write_text('executed\\n')"
+      ],
+      "case": "directory-symlink",
+      "command_marker_exists": true,
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expectation_met": false,
+      "expected_condition": "nonzero exit before command execution",
+      "fixture": {
+        "case": "directory-symlink",
+        "symlink": {
+          "path": "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/pre-boundary-directory-symlink/audit/logs",
+          "target": "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/pre-boundary-directory-symlink/redirected-output"
+        }
+      },
+      "runtime_symlink_removed_after_probe": true,
+      "scope": "verbatim isolated logger copy; all effects within custody",
+      "started_unix": 1791710363.5287037,
+      "stderr_path": "agents/custody/pre-boundary-directory-symlink.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_path": "agents/custody/pre-boundary-directory-symlink.stdout.log",
+      "stdout_sha256": "4b98683d1641cc81adc9a89c6649cf41745d0a50195e64345dcf7c0d5e0001dc",
+      "wall_seconds": 0.05319809913635254
+    }
+  ],
+  "input_sha256": "581f86365fbac498a54c97b6b1a360364537c36ab3c933a10fd5b3fdb93be9eb"
+}

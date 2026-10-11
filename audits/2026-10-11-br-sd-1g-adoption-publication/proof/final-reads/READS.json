@@ -1,0 +1,203 @@
+{
+  "schema": "br-sd-1g-adoption-final-byte-reads-v1",
+  "reads": [
+    {
+      "name": "root-documents",
+      "argv": [
+        "cat",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/TASK.md",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/REPORT.md",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/AUTHORIZATION.json",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/ADOPTION_MANIFEST.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:11:05.813970+00:00",
+      "finished_utc": "2026-10-11T10:11:05.823770+00:00",
+      "exit_code": 0,
+      "stdout": "proof/final-reads/root-documents.stdout",
+      "stderr": "proof/final-reads/root-documents.stderr",
+      "stdout_sha256": "162b3d2e27b8d5cfb364f6cd463b9590cf36190286419294dc6d95e1020d9987",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "checks-workers",
+      "argv": [
+        "cat",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/CHECKS.json",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/mapping/REVIEW.md",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/custody/REVIEW.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:11:05.814231+00:00",
+      "finished_utc": "2026-10-11T10:11:05.822856+00:00",
+      "exit_code": 0,
+      "stdout": "proof/final-reads/checks-workers.stdout",
+      "stderr": "proof/final-reads/checks-workers.stderr",
+      "stdout_sha256": "171607fcfb2d55d1b87eece54b70d134466d40ee1a60c1c6566711a512875f53",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "new-verifier",
+      "argv": [
+        "cat",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:11:05.814985+00:00",
+      "finished_utc": "2026-10-11T10:11:05.824222+00:00",
+      "exit_code": 0,
+      "stdout": "proof/final-reads/new-verifier.stdout",
+      "stderr": "proof/final-reads/new-verifier.stderr",
+      "stdout_sha256": "a070b3401c6680392deef65a091c07a17566251dcbf604d09ac3367d7d044af7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "recording-tools",
+      "argv": [
+        "cat",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/record_check.py",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/aggregate_checks.py",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/normative_readback.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:11:05.815528+00:00",
+      "finished_utc": "2026-10-11T10:11:05.824602+00:00",
+      "exit_code": 0,
+      "stdout": "proof/final-reads/recording-tools.stdout",
+      "stderr": "proof/final-reads/recording-tools.stderr",
+      "stdout_sha256": "bda05787919b313134ccf4e278be1a77211518e83bb0aebfb3f960d6433437db",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "negative-tools",
+      "argv": [
+        "cat",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/negative_controls.py",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/logger_controls.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:11:05.816508+00:00",
+      "finished_utc": "2026-10-11T10:11:05.823330+00:00",
+      "exit_code": 0,
+      "stdout": "proof/final-reads/negative-tools.stdout",
+      "stderr": "proof/final-reads/negative-tools.stderr",
+      "stdout_sha256": "ff19e451f1fa59016a072da689326b6f0a07a4065bbe87f8124d41b6dedbd1b4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "document-diff",
+      "argv": [
+        "git",
+        "diff",
+        "--",
+        "docs/c5_excess_two_nonadjacent_unit_core45.md",
+        "docs/c5_degree5_guide.md",
+        "docs/c5_degree5_interfaces.md",
+        "docs/c5_kempe_guide.md",
+        "docs/STATUS.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:11:05.817359+00:00",
+      "finished_utc": "2026-10-11T10:11:05.830023+00:00",
+      "exit_code": 0,
+      "stdout": "proof/final-reads/document-diff.stdout",
+      "stderr": "proof/final-reads/document-diff.stderr",
+      "stdout_sha256": "22e938a5f7c38141284822afe3129525b4c9e1b3eb67517c12a6b0ae85be34d6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "new-history",
+      "argv": [
+        "cat",
+        "/home/ray/developer/ai/math/docs/history/2026-10-11-br-sd-1g-adoption.md"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:11:05.817817+00:00",
+      "finished_utc": "2026-10-11T10:11:05.827903+00:00",
+      "exit_code": 0,
+      "stdout": "proof/final-reads/new-history.stdout",
+      "stderr": "proof/final-reads/new-history.stderr",
+      "stdout_sha256": "e29e568062e449462e642fa7db791578a0c68a905476b4b29fb384831259e14b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "git-state",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:11:05.818690+00:00",
+      "finished_utc": "2026-10-11T10:11:06.073842+00:00",
+      "exit_code": 0,
+      "stdout": "proof/final-reads/git-state.stdout",
+      "stderr": "proof/final-reads/git-state.stderr",
+      "stdout_sha256": "913bdb63f1c1215f19e8649e0c60ecbaa2b206a0fa298dc10b86adb2d60ce77c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "own-prior-reads",
+      "argv": [
+        "cat",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/proof/READS.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:11:05.819373+00:00",
+      "finished_utc": "2026-10-11T10:11:05.828529+00:00",
+      "exit_code": 0,
+      "stdout": "proof/final-reads/own-prior-reads.stdout",
+      "stderr": "proof/final-reads/own-prior-reads.stderr",
+      "stdout_sha256": "de1f1aebdf2c1862318f59f3a362ed5b19f88a250dabf1b0c4a1ab8ac96fa288",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "negative-receipt",
+      "argv": [
+        "cat",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-manifest-negative/receipt.json",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-manifest-negative/stdout.txt",
+        "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adoption-publication/logs/adoption-manifest-negative/stderr.txt"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_utc": "2026-10-11T10:11:05.820534+00:00",
+      "finished_utc": "2026-10-11T10:11:05.827021+00:00",
+      "exit_code": 0,
+      "stdout": "proof/final-reads/negative-receipt.stdout",
+      "stderr": "proof/final-reads/negative-receipt.stderr",
+      "stdout_sha256": "c77adff5666dbed0caec6d040c68119b71965b2fabfc31d8e4dd0ac91c0a9474",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

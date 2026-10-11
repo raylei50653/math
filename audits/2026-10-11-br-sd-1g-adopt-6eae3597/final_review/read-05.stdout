@@ -1,0 +1,550 @@
+{
+  "actual_source_status": "not triggered",
+  "all_recorded_expectations_met": true,
+  "base": "c15a635e17d4be814e19aeeeeb765f3d6024099a",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py",
+        "--precheck"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "finished_utc": "2026-10-11T09:23:27.296460+00:00",
+      "receipt_path": "logs/audit-precheck-v2.json",
+      "receipt_sha256": "ac8d5b71a95bd827394a2ac881d938cdd72ca9ae93a9516a32157d1a840c72c5",
+      "started_utc": "2026-10-11T09:23:18.631413+00:00",
+      "stderr_path": "logs/audit-precheck-v2.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_path": "logs/audit-precheck-v2.stdout.log",
+      "stdout_sha256": "df8c5f0e72b7c4a8f33e1296a343454c536605b4061b567326dc23a65b70abb5"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/boundary_readback.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "finished_utc": "2026-10-11T09:19:48.226076+00:00",
+      "receipt_path": "logs/boundary-before.json",
+      "receipt_sha256": "c7dd08971f1d5118b187a277e8e0dcd9cd2012c871a8a814108ae8e5066b870e",
+      "started_utc": "2026-10-11T09:19:47.947945+00:00",
+      "stderr_path": "logs/boundary-before.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_path": "logs/boundary-before.stdout.log",
+      "stdout_sha256": "1814c4def4e4bcb72ec30c208ee80f332fe6aa5a34ddc780645cbafa810a22b6"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "finished_utc": "2026-10-11T09:19:48.612345+00:00",
+      "receipt_path": "logs/check-docs.json",
+      "receipt_sha256": "ed9a943763524145dff9c0c85bd7d482b3df80b2be4de1d4cc34503cafc343f5",
+      "started_utc": "2026-10-11T09:19:47.943523+00:00",
+      "stderr_path": "logs/check-docs.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_path": "logs/check-docs.stdout.log",
+      "stdout_sha256": "6c74974112f414a1721d4c2cd7e0f0afdeaaaf493683232afc96ea238fe45c31"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "finished_utc": "2026-10-11T09:19:47.953916+00:00",
+      "receipt_path": "logs/diff-check.json",
+      "receipt_sha256": "a4dd7bb481bacbd349ddd430084970cca46568102b2694d27d9a72419fa58839",
+      "started_utc": "2026-10-11T09:19:47.946342+00:00",
+      "stderr_path": "logs/diff-check.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_path": "logs/diff-check.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "finished_utc": "2026-10-11T09:19:48.198659+00:00",
+      "receipt_path": "logs/docgraph.json",
+      "receipt_sha256": "4e52d30bf2d65c8d3da1f500fdebdd25875e70ce0b1c2b41e488841b680799d5",
+      "started_utc": "2026-10-11T09:19:47.943833+00:00",
+      "stderr_path": "logs/docgraph.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_path": "logs/docgraph.stdout.log",
+      "stdout_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--write",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/CERTIFICATE.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "finished_utc": "2026-10-11T09:10:40.708855+00:00",
+      "receipt_path": "logs/fresh-independent-generation.json",
+      "receipt_sha256": "b91664429e2654700af6ea2b59c42e2f5ead1942d8214022299e70901995e2ff",
+      "started_utc": "2026-10-11T09:10:40.635506+00:00",
+      "stderr_path": "logs/fresh-independent-generation.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_path": "logs/fresh-independent-generation.stdout.log",
+      "stdout_sha256": "5171788237d4110bb9f1136d6622adfdacd0c0928fced71e9239449c2e8a28ea"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--check",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/CERTIFICATE.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "finished_utc": "2026-10-11T09:10:55.204966+00:00",
+      "receipt_path": "logs/fresh-independent-hashseed17.json",
+      "receipt_sha256": "0c46d1edcc92cf042fc7a2f04d415745c8bba9cbf1f4ef8481e16446867a45de",
+      "started_utc": "2026-10-11T09:10:55.122456+00:00",
+      "stderr_path": "logs/fresh-independent-hashseed17.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_path": "logs/fresh-independent-hashseed17.stdout.log",
+      "stdout_sha256": "5171788237d4110bb9f1136d6622adfdacd0c0928fced71e9239449c2e8a28ea"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "finished_utc": "2026-10-11T09:10:55.173484+00:00",
+      "receipt_path": "logs/fresh-independent-negative-corrupted.json",
+      "receipt_sha256": "72d2f5286564e49bd8213555f1bd6d879c500a19330f65b90d4dce800753a71d",
+      "started_utc": "2026-10-11T09:10:55.129990+00:00",
+      "stderr_path": "logs/fresh-independent-negative-corrupted.stderr.log",
+      "stderr_sha256": "376851a42769d29d04b8719b9bc528a26cfc3ce2f507f304cea2154018e30613",
+      "stdout_path": "logs/fresh-independent-negative-corrupted.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.malformed.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "finished_utc": "2026-10-11T09:10:55.178099+00:00",
+      "receipt_path": "logs/fresh-independent-negative-malformed.json",
+      "receipt_sha256": "3dbac14841a3bcfc580ce5445744d6d0d81984bd95b4a2fd3343bc34caae6445",
+      "started_utc": "2026-10-11T09:10:55.139734+00:00",
+      "stderr_path": "logs/fresh-independent-negative-malformed.stderr.log",
+      "stderr_sha256": "eb27c5fb0fc7f5ad5c327bf7b94f0074c8029b892a52dd6458c09200781a3ff0",
+      "stdout_path": "logs/fresh-independent-negative-malformed.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.marginal-corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "finished_utc": "2026-10-11T09:10:55.194462+00:00",
+      "receipt_path": "logs/fresh-independent-negative-marginal-corrupted.json",
+      "receipt_sha256": "ab5e1c307ba0072952b4fb0736a9a7c50bb829536c30dff9536748d802af079a",
+      "started_utc": "2026-10-11T09:10:55.146817+00:00",
+      "stderr_path": "logs/fresh-independent-negative-marginal-corrupted.stderr.log",
+      "stderr_sha256": "3123fe839e875d00e3df021e2b4deec814f6403213bf640f37d571dea2829bc7",
+      "stdout_path": "logs/fresh-independent-negative-marginal-corrupted.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/independent_finite.py",
+        "--check",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/controls/CERTIFICATE.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "finished_utc": "2026-10-11T09:10:55.199194+00:00",
+      "receipt_path": "logs/fresh-independent-normal.json",
+      "receipt_sha256": "5298db15c7d32eda933961a1979a1d65f8cfc46909c8ef1d3aaec5737388d6ba",
+      "started_utc": "2026-10-11T09:10:55.123321+00:00",
+      "stderr_path": "logs/fresh-independent-normal.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_path": "logs/fresh-independent-normal.stdout.log",
+      "stdout_sha256": "5171788237d4110bb9f1136d6622adfdacd0c0928fced71e9239449c2e8a28ea"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "finished_utc": "2026-10-11T09:08:37.964986+00:00",
+      "receipt_path": "logs/old-independent-hashseed17.json",
+      "receipt_sha256": "9490174854f27ebea4012c87073971c8f3d7747726dcdf764d4e3492c3704e97",
+      "started_utc": "2026-10-11T09:08:37.881503+00:00",
+      "stderr_path": "logs/old-independent-hashseed17.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_path": "logs/old-independent-hashseed17.stdout.log",
+      "stdout_sha256": "ac9a6b15f08b99f7b6f29173c25859f1b6a04e1c5d32922e4a9f51a9c47ba940"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "finished_utc": "2026-10-11T09:10:55.168101+00:00",
+      "receipt_path": "logs/old-independent-negative-corrupted.json",
+      "receipt_sha256": "240bb95cf9f7140ad760cee16d6ec8e24411e2709d4467942c15397a453579d4",
+      "started_utc": "2026-10-11T09:10:55.128004+00:00",
+      "stderr_path": "logs/old-independent-negative-corrupted.stderr.log",
+      "stderr_sha256": "2e8fd5f2141b4597e7b4f290a082f56b78a827b080eaea562f7ee59723e977de",
+      "stdout_path": "logs/old-independent-negative-corrupted.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.malformed.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "finished_utc": "2026-10-11T09:10:55.172774+00:00",
+      "receipt_path": "logs/old-independent-negative-malformed.json",
+      "receipt_sha256": "82df3197b49a2fd2ad677194fc7f0fa11d53b98d1e08cecdfd59a21c49930e5b",
+      "started_utc": "2026-10-11T09:10:55.142448+00:00",
+      "stderr_path": "logs/old-independent-negative-malformed.stderr.log",
+      "stderr_sha256": "eb27c5fb0fc7f5ad5c327bf7b94f0074c8029b892a52dd6458c09200781a3ff0",
+      "stdout_path": "logs/old-independent-negative-malformed.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.marginal-corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "finished_utc": "2026-10-11T09:10:55.184285+00:00",
+      "receipt_path": "logs/old-independent-negative-marginal-corrupted.json",
+      "receipt_sha256": "f980826d46c85a251b707f8436d6f9e898a7f3290afd3156a482ef9a0419fc3f",
+      "started_utc": "2026-10-11T09:10:55.143454+00:00",
+      "stderr_path": "logs/old-independent-negative-marginal-corrupted.stderr.log",
+      "stderr_sha256": "3ed3c63952cbb59424d55d1158e74be15ecd072da3b9d7aa43480b10ba4ff1cf",
+      "stdout_path": "logs/old-independent-negative-marginal-corrupted.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/independent.py",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "finished_utc": "2026-10-11T09:08:37.965422+00:00",
+      "receipt_path": "logs/old-independent-normal.json",
+      "receipt_sha256": "7c2c48b6d59375b3da96fa67a4e5b2c7a8dca956d918b2575a6b28635c793366",
+      "started_utc": "2026-10-11T09:08:37.882673+00:00",
+      "stderr_path": "logs/old-independent-normal.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_path": "logs/old-independent-normal.stdout.log",
+      "stdout_sha256": "ac9a6b15f08b99f7b6f29173c25859f1b6a04e1c5d32922e4a9f51a9c47ba940"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "finished_utc": "2026-10-11T09:08:37.981028+00:00",
+      "receipt_path": "logs/primary-hashseed17.json",
+      "receipt_sha256": "144fce2dac3c87dbcffb5e631ae07b75e3334b05d4b14491d39f4dc91f675595",
+      "started_utc": "2026-10-11T09:08:37.881769+00:00",
+      "stderr_path": "logs/primary-hashseed17.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_path": "logs/primary-hashseed17.stdout.log",
+      "stdout_sha256": "c43983ea0cc0f095e4f55fcb548ff40e2d14cad840ac795a8c32c36200e88ce6"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "finished_utc": "2026-10-11T09:10:55.215017+00:00",
+      "receipt_path": "logs/primary-negative-corrupted.json",
+      "receipt_sha256": "f0527b77213d252e835c5ad4dd468ef8dc7a834248d6527f7ef8d44bf44befee",
+      "started_utc": "2026-10-11T09:10:55.124914+00:00",
+      "stderr_path": "logs/primary-negative-corrupted.stderr.log",
+      "stderr_sha256": "4bbf2c9cdf0e954d59da05d1509a3035ff03a53e152805c1d9be8b01b87e1ae3",
+      "stdout_path": "logs/primary-negative-corrupted.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.malformed.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "finished_utc": "2026-10-11T09:10:55.212309+00:00",
+      "receipt_path": "logs/primary-negative-malformed.json",
+      "receipt_sha256": "d472be625e5375bdb8a464810aab8f94ae920e5725e2cfdff98b7e97a6e85325",
+      "started_utc": "2026-10-11T09:10:55.135181+00:00",
+      "stderr_path": "logs/primary-negative-malformed.stderr.log",
+      "stderr_sha256": "eb27c5fb0fc7f5ad5c327bf7b94f0074c8029b892a52dd6458c09200781a3ff0",
+      "stdout_path": "logs/primary-negative-malformed.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.marginal-corrupted.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "finished_utc": "2026-10-11T09:10:55.233345+00:00",
+      "receipt_path": "logs/primary-negative-marginal-corrupted.json",
+      "receipt_sha256": "291541cc21ffed2b6ab8e56d4ad885291cd835f6bf7d6b502cfcc8e415ae6465",
+      "started_utc": "2026-10-11T09:10:55.141531+00:00",
+      "stderr_path": "logs/primary-negative-marginal-corrupted.stderr.log",
+      "stderr_sha256": "4bbf2c9cdf0e954d59da05d1509a3035ff03a53e152805c1d9be8b01b87e1ae3",
+      "stdout_path": "logs/primary-negative-marginal-corrupted.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/checker.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-11-br-sd-1g-dbdc4c35/agents/controls/certificate.normal.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "finished_utc": "2026-10-11T09:08:37.981028+00:00",
+      "receipt_path": "logs/primary-normal.json",
+      "receipt_sha256": "2cfe79c081e8a099816913bc41000293f647431caa8a64f3e0b2264429e84d18",
+      "started_utc": "2026-10-11T09:08:37.881383+00:00",
+      "stderr_path": "logs/primary-normal.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_path": "logs/primary-normal.stdout.log",
+      "stdout_sha256": "c43983ea0cc0f095e4f55fcb548ff40e2d14cad840ac795a8c32c36200e88ce6"
+    }
+  ],
+  "decision": "ACCEPTABLE",
+  "formal_adoption_executed": false,
+  "historical_checker_exceptions": {
+    "original_fresh": {
+      "actual_exit_code": 1,
+      "classification": "historical fresh BASE differs from fixed task HEAD",
+      "receipt_manifest": "agents/custody/final-v2-COMMAND_RECEIPTS.json"
+    },
+    "publication_normal_hashseed17": {
+      "actual_exit_code": 1,
+      "classification": "authorized new audit outside historical write whitelist",
+      "receipt_manifest": "agents/custody/final-v2-COMMAND_RECEIPTS.json"
+    }
+  },
+  "new_Lean_theorem": false,
+  "new_unconditional_closures": 0,
+  "parent_status": "OPEN",
+  "postseal_receipts": "DELIVERY.json binds five exact command/env/exit0 receipts and independent reviewer readback",
+  "retained_failed_commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py",
+        "--precheck"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "finished_utc": "2026-10-11T09:22:13.824679+00:00",
+      "receipt_path": "logs/audit-precheck-v1.json",
+      "receipt_sha256": "92947223aa6a070752058552a682e5431f656743a3f4188fcc47bf4c860439e1",
+      "started_utc": "2026-10-11T09:22:05.516213+00:00",
+      "stderr_path": "logs/audit-precheck-v1.stderr.log",
+      "stderr_sha256": "02948cf12ec7f7df03b67c579dfbc09986c6b4f50954e7ade7745a6b7eee5fe4",
+      "stdout_path": "logs/audit-precheck-v1.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "superseded_reason": "Exit1: planned ROOT_TOOL_REVIEW.md had not yet been delivered; superseded only after actual v2 precheck passes."
+    }
+  ],
+  "retained_failure_evidence": [
+    "logs/bootstrap-failures.txt",
+    "agents/custody/COMMAND_RECEIPTS.json",
+    "agents/proof/READS.json"
+  ],
+  "schema": "br-sd-1g-adopt-checks-v1",
+  "scope": "enumerated current root validation commands; preliminary failures and worker receipts are separate",
+  "worker_receipt_manifests": [
+    "agents/proof/READS.json",
+    "agents/proof/FETCH_REPLAY.json",
+    "agents/mapping/READS.json",
+    "agents/mapping/CHECKS.json",
+    "agents/custody/final-v2-COMMAND_RECEIPTS.json",
+    "agents/custody/METADATA_RECEIPTS.json"
+  ]
+}

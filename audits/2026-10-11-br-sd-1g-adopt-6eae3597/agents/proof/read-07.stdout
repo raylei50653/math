@@ -1,0 +1,38 @@
+docs/c5_unary_shield_budget.md:25:證據層：§2–§4 是任意大小紙面證明。定理 B 沿用外部 degree-list／Gallai 刻畫
+docs/c5_unary_shield_budget.md:34:- 有效內部 H=G−B 連通；
+docs/c5_unary_shield_budget.md:35:- 每個內點完整 degree≥4；
+docs/c5_unary_shield_budget.md:39:**分量（piece）。** G[H∖R] 的連通分量，所有頂點完整 degree 恰 4。
+docs/c5_unary_shield_budget.md:144:**推論。** 只有一個 root（任意 degree 4+ε）時，所有分量都是 unary，
+docs/c5_unary_shield_budget.md:147:既有結果與定理 A 的關係：唯一 degree-6 的 t=0／1／2／3 各分拆、
+docs/c5_unary_shield_budget.md:155:**定理 B。** 設 G 為平面圖，P⊆V(G) 連通，P 的每點在 G 中 degree 恰 4。
+docs/c5_unary_shield_budget.md:167:把各 X_i 收縮成 x_i 並刪除其他頂點，得到 G 的 minor J。在 J 中，P 的每點 degree 仍為 4，
+docs/c5_unary_shield_budget.md:173:  兩者所需的 K₄-free 由 [連通外框 K₄ 引理](c5_degree5_tree_components.md#1-連通外框排除-degree-4-分量的-k4)
+docs/c5_unary_shield_budget.md:188:| [同列端點 hub](c5_excess_two_mixed_core_four_spoke_hubs.md)、[原 crosscut](c5_excess_two_mixed_core_four_spoke_crosscut.md) | 二／三 hubs，以同色 tightness 保持 degree |
+docs/c5_unary_shield_budget.md:215:| Φ1 預算／省略身份 | D+O(+κ)=deg−4；全 degree-4 省略圖恰缺一列，所以省略身份跨列不重用；unary 的 D 身份守恆與奇偶矛盾 | 恆等式是；跨列身份只在 ε 小時有力 | [四容量子覆蓋](c5_excess_one_subcovers.md)、[root 預算](c5_root_degree_excess.md) |
+docs/c5_unary_shield_budget.md:220:| Φ6 parity | 完整 degree 握手式迫奇數附件 | 否 | [B₄](c5_excess_two_mixed_core_four_spoke_mixed22_shared4.md) |
+docs/c5_unary_shield_budget.md:277:**B：hub 原則。** 窮舉所有至多 7 點、最大 degree≤4 的連通圖 P，以及所有接法：
+docs/c5_unary_shield_budget.md:278:k=1..4 個兩兩相鄰、顏色互異的 hubs，使每點 degree 恰 4 且每個 hub 至多一條邊。
+docs/c5_common_language.md:24:| 臨界性 | **原見證**：所用拒絕列、原邊刪除染色、core 與原圖的嵌入、省略因子身份、完整 degree | 哪個原限制不可省略？預算是在哪張圖、哪一列成立？ |
+docs/c5_common_language.md:32:| `B=(b₀,…,b₄)`、`H`、`Col` | 有序 induced C₅ 外框、忽略孤立內點後的有效內部、色集 `{0,1,2,3}`。disk 要求 B 是外邊界。 |
+docs/c5_common_language.md:34:| **disk q-core** | 有指定有序 induced-C₅ 外框的有限簡單 disk 圖拒絕指定三色 proper 列 q，刪任一非框邊後接受 q；有效內部非空連通。這是邊集 inclusion-minimal，並非內點數最少。T4、degree 及 root 型另列。 |
+docs/c5_common_language.md:35:| **固定 Σ 來源** | 完整 Σ 是 933／941 或其整圖 D₅ 像；指定有序 induced-C₅ disk；有效內部連通；所有有效內點完整 degree≥4；逐非框邊 **Σ-critical**。`ε=∑_{v∈H}(deg_G(v)−4)`。 |
+docs/c5_common_language.md:36:| **Σ-critical** | 刪任一非框邊都改變完整 Σ。不同邊可以解除不同拒絕列；不保證原 G 對某一 q 已經 q-minimal。抽出的 q-core 須另核 degree、原因子及刪邊見證。 |
+docs/c5_common_language.md:37:| **完整 degree** | 在該結論指定的整張 G 或 core M 中計算，含框附件／spokes；原 G 的 degree 與抽出 core 的 degree 分別記錄。 |
+docs/c5_common_language.md:59:| **必要預算** | 真實來源必滿足的容量／degree／跨度限制；通過限制不代表來源可實現。 |
+docs/c5_common_language.md:74:| **Degree-4／完整單缺失**：`Σ(M)=Ω_B∖{q}` | disk q-core；接受 T4；每個有效內點在 M 中完整 degree=4 | 緊 list／Gallai 化約；完整關係接合；原附件 minor | 任意大小分類整套未 Lean 化；不直接推出一般共同出口 | 任意大小紙面＋外部 degree-choosability＋有限正常形 Python；[degree-4 導覽](c5_degree4_guide.md) |
+docs/c5_common_language.md:75:| **Degree-5／指定來源排除**：二 odd-cycle blocks 分量，環長與外臂不限 | disk q-core 接受 T4；唯一 degree-5 root z 有三 spokes；兩內邊進入同一連通 `C=H−z`；其餘完整 degree=4；C 恰二 odd-cycle blocks、其餘 bridges | 完整接點接合及四個 z 色查詢；緊 list／Gallai 化約；保原附件的 branch sets | R31 同末端不同二接點三環鏈只有正常形；任意長來源 minor 及其他分拆／更多環仍保留 | 紙面＋外部 degree-list＋Python minor／正常形證書；Lean 僅支援接合代數，[degree-5 導覽](c5_degree5_guide.md) |
+docs/c5_common_language.md:76:| **No-mixed／必要超額預算**：`D_r+O_r+κ_r=deg_M(r)−4`；root 骨架是樹時 κ=0 | 固定 q 的逐非框邊 minimal 圖；有序 induced B、H 非空連通；非空 root 集恰為完整 degree≥5 的內點，其餘 degree4；每份原 C 只鄰接一 root。不需 disk／T4 | 完整關係消去；原邊刪除見證；來源超額預算；樹上拒絕證書 | target p 不自動滿足同一等式；一般 root 樹的跨列分離仍未證 | 主恆等式為初等紙面，骨架推論另用外部 Gallai；Python 有限控制，未 Lean 化，[Root 預算 §1–5](c5_root_degree_excess.md) |
+docs/c5_common_language.md:77:| **Weak-deletion／存在性分離**：`p₁=01021`、`p₂=01212` 均有異色 root pair | disk q-core，q=01012；恰兩相鄰 degree-5 roots，其餘 degree4；每份原 C 恰接一 root；保全部附件／bridges／完整關係。不需 T4，不限分量大小 | 完整關係搬運；短側弧無增長；三弧位置引理；原路徑／端點 palette 交換 | 從指定 source 染色出發的逐步 repair 未構造；mixed 與一般出口未涵蓋 | 任意大小紙面＋外部 Gallai／原路徑引理＋Python 回歸，未 Lean 化，[共同分離 §1、§4](c5_no_mixed_growth_completion.md) |
+docs/c5_common_language.md:78:| **q-core／必要盾弧預算**：unary 弧長≥2；one-sided 弧互斥、總長≤5；至多兩份 unary | disk q-core 接受 T4；roots 為 degree≥5 內點，pieces 內點完整 degree4；unary 為 one-sided；其他計費 pieces 也須驗證 one-sided；原 q-critical 接點邊及避開自身的外路 | 盾弧共同預算；短支援 hub 原則；原邊刪除見證 | root-disconnected 分隔型不可直接套用；singleton 未接內點例外須保留；缺 criticality／degree 時廣義六邊說法有反例 | 任意大小紙面＋外部 Gallai／K₅＋Python 控制，未 Lean 化，[盾弧定理 W-A](c5_qcore_shield_budget.md#33-定理-w-aunary-長盾弧及共同五邊預算) |
+docs/c5_common_language.md:79:| **Mixed 共鄰 P₃／來源排除**：C §1 的整個分支閉合 | disk q-core，q=01012；相鄰 degree-5 roots z,w；唯一 mixed 原 P₃=`x₀x₁x₂`，僅 x₂ 同接兩 roots，原附件數 `(3,2,1)`；其餘 degree4 unary。不需 T4／固定 Σ，unary 大小不限 | 原 P₃ 支援迫弧長≥2；原外路＋hub；C-W 的 `2+2+2>5`；D₆ 零-unary 側補證 | 更多 incidences、更大／多 mixed、一般出口未由此完成；不同接點各一 incidence 的 P₃ 已有另份排除 | 任意大小紙面＋外部 Gallai／K₅＋literal-key Python＋D₆ 稽核，未 Lean 化，[C-W 及 §8 補證](c5_qcore_shield_budget.md) |
+docs/c5_common_language.md:80:| **完整 Σ／必要下界**：933、941 均有 ε≥2 | 固定 Σ 來源；各拒絕列的 q-core 回到同一 G，保留原單容量省略身份、完整十列與全部接線 | Degree-4 單缺失；原因子省略身份不跨拒絕列重用；共同容量及原支援預算 | ε≥3、任意 ε 來源排除及來源實現仍未證 | 任意大小紙面合成，沿用外部定理及有限證書；未新增 Lean theorem，[四容量子覆蓋](c5_excess_one_subcovers.md)、[941 收尾](c5_941_three_spoke.md) |
+docs/c5_common_language.md:81:| **ε=2／兩-root44 身份排除**：U1–U4 及前序完成所有兩-root `(4,4)` q-core 格 | 固定 Σ 來源且 ε=2；原 G 的 Σ-critical 與 core 的 q-minimal 分開；保完整 degrees、原 contacts、全部 attachments／空 fibres；逐格採用 C44″ 前提 | 原邊省略身份；盾弧／star-face；slack 延拓；原 minor；保 roots 化約及完整 joint 接回 | `(4,5)/(5,4)`、原 `(5,5)`、單-root 例外與無44來源仍保留；E5／E6 的 G1 新證明義務仍在 | 任意大小紙面化約＋Python 固定必要域及指定獨立稽核，未 Lean 化；[C44″ 覆蓋表](../artifacts/c5_excess_two_c44pp/REPORT.md)、[最新導覽 §3](c5_kempe_guide.md#3-停止點與保留缺口) |
+docs/c5_common_language.md:82:| **Sector／整圖分類**：雙拒絕迫二內點原接線、十二位簽章1855，排除3903 | 有限簡單 induced-C₅ disk；全部內部 `C=K−V(B)` 非空連通；內點完整 degree≤4；b₀ 恰有兩不同內鄰點；α=01212、δ=01213 均拒絕。無須 minimality、T4 或 Kempe 歷史 | 各列拒絕迫緊 list；同圖 block palettes 與原附件的跨列相容性 | 完整分類未 Lean 化；603 profiles 未重算；十二位 sector 簽章不等於完整 Σ | 任意大小紙面＋外部 degree-list＋獨立有限主表；BoundaryDegree／TwoRejectionTools 為部分普通 Lean，[分類命題](c5_two_rejection_proof_zh.md#0-精確命題與適用範圍) |
+docs/c5_common_language.md:87:| **LC／固定證書 soundness**：提供的179個 ES 代表均有具名證書 | ES 的179份 literal labelled JSON，NA／AD／D6、k≤9；固定邊、degree profile、完整染色列、刪邊 witnesses 及來源 hashes | 原圖與原刪邊 witness 逐邊核對；完整關係的 S₄ cover | 枚舉 completeness、軌道互異、拓撲 disk 實現及任意大小分類未 Lean 化 | 接受列／刪邊 witness 的 kernel 證明；拒絕列用 **native_decide**；raw Σ equality 另繼承 S₄ cover 的 native 公理，[LC 報告](c5_excess_two_lean_certificates.md) |
+docs/c5_common_language.md:96:| **完整關係接合** | 保共同變數與色框，先 joint／intersection，再投影。原分量完整 tuples 在同一 root 賦色下選 witness；兩來源須無額外共用私有點／跨邊。 | [Root 消去 §1](c5_root_degree_excess.md#1-同一來源上的完整消去)、[兩來源公式 §2](c5_relation_arity.md#2-接合的紙面上界與代表無關性) |
+docs/c5_common_language.md:97:| **原邊刪除見證／省略身份** | q-critical 邊的刪邊染色給同圖拒絕見證；Σ-critical 須先指定它解除哪列。比較不同列時保同一原 factor；因子省略與單邊刪除的等價要另證。 | [Root minimality §2](c5_root_degree_excess.md#2-minimality-提供的三個前提)、[四容量子覆蓋 §1](c5_excess_one_subcovers.md#1-同源因子真子核心與省略區域) |
+docs/c5_common_language.md:98:| **緊 list／Gallai 化約** | 實際全部外鄰定義剩餘 lists，待處理分量每點完整 degree≤4 提供 list 大小≥內度；連通／拒絕迫緊及 Gallai blocks。Degree-5 應用先將 root 放外部並固定顏色；degree-choosability 為外部依賴。 | [Degree-4 合成](c5_degree4_guide.md)、[Sector lists](c5_two_rejection_proof_zh.md#1-拒絕列使所有-lists-緊並得到-block-palettes)、[Lean BoundaryDegree](lean_boundary_degree.md) |
+docs/c5_common_language.md:99:| **來源超額預算** | `D` 是原接點容量缺額，`O` 是同 root 禁色重疊量，`κ` 是骨架 list 缺額；`D+O+κ=degree−4` 是 source q 的恆等式，κ 不是環數。 | [定義及恆等式](c5_root_degree_excess.md#3-degree-超額的精確-source-預算) |
+docs/c5_common_language.md:101:| **原外路＋hub minor** | 對平面圖中完整 degree4 的連通 P，先有不能接回 P 的外部染色；原外路構造至多四個連通、互斥、兩兩相鄰 hubs，覆蓋 N(P)；各 hub 在 N(P) 上常色且常色互異。同列 tightness 保收縮後 degree。Minor 反證不自動提供 Σ 保持，關係保持另依密封替換。 | [短支援 hub](c5_short_support_singleton.md)、[hub 原則定理 B](c5_unary_shield_budget.md#4-定理-bhub-原則) |
+docs/c5_common_language.md:115:> 在【具名圖類、臨界性、完整 degree、原分量身份及允許上下文】下，保留
+docs/c5_common_language.md:121:- **跨線搬引理：**先核原分量身份、critical 刪邊 witness、degree、one-sided

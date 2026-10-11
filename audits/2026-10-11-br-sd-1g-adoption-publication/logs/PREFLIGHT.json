@@ -1,0 +1,121 @@
+[
+  {
+    "name": "review-sealed-normal",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py",
+      "--check",
+      "--require-delivery"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment": {},
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout": "{\"authority_inputs\": 31, \"base\": \"c15a635e17d4be814e19aeeeeb765f3d6024099a\", \"decision\": \"ACCEPTABLE\", \"formal_adoption_executed\": false, \"local_links_checked\": 116, \"mode\": \"check\", \"new_Lean_theorem\": false, \"new_unconditional_closures\": 0, \"old_custody_files\": 313, \"original_files\": 160, \"parent_status\": \"OPEN\", \"publication_files\": 6, \"recorded_root_checks\": 21, \"source_status\": \"not triggered\", \"status\": \"custody verified\", \"tracked_entries_unchanged\": 15743}\n",
+    "stderr": "",
+    "elapsed_seconds": 8.58317518234253
+  },
+  {
+    "name": "review-sealed-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py",
+      "--check",
+      "--require-delivery"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment": {
+      "PYTHONHASHSEED": "17"
+    },
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout": "{\"authority_inputs\": 31, \"base\": \"c15a635e17d4be814e19aeeeeb765f3d6024099a\", \"decision\": \"ACCEPTABLE\", \"formal_adoption_executed\": false, \"local_links_checked\": 116, \"mode\": \"check\", \"new_Lean_theorem\": false, \"new_unconditional_closures\": 0, \"old_custody_files\": 313, \"original_files\": 160, \"parent_status\": \"OPEN\", \"publication_files\": 6, \"recorded_root_checks\": 21, \"source_status\": \"not triggered\", \"status\": \"custody verified\", \"tracked_entries_unchanged\": 15743}\n",
+    "stderr": "",
+    "elapsed_seconds": 4.5100696086883545
+  },
+  {
+    "name": "review-seal-negative",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-adopt-6eae3597/seal_negative.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment": {},
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout": "{\"cases\": [{\"argv\": [\"/usr/bin/python3\", \"-B\", \"/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py\", \"--check\", \"--seal-path\", \"/proc/self/fd/3\"], \"exit_code\": 1, \"expected_exit_code\": 1, \"name\": \"decision-escalation\", \"stderr\": \"FAIL: seal corruption or payload inventory/hash/mode drift\\n\", \"stdout\": \"\"}, {\"argv\": [\"/usr/bin/python3\", \"-B\", \"/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py\", \"--check\", \"--seal-path\", \"/proc/self/fd/3\"], \"exit_code\": 1, \"expected_exit_code\": 1, \"name\": \"parent-closure\", \"stderr\": \"FAIL: seal corruption or payload inventory/hash/mode drift\\n\", \"stdout\": \"\"}, {\"argv\": [\"/usr/bin/python3\", \"-B\", \"/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py\", \"--check\", \"--seal-path\", \"/proc/self/fd/3\"], \"exit_code\": 1, \"expected_exit_code\": 1, \"name\": \"source-escalation\", \"stderr\": \"FAIL: seal corruption or payload inventory/hash/mode drift\\n\", \"stdout\": \"\"}, {\"argv\": [\"/usr/bin/python3\", \"-B\", \"/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py\", \"--check\", \"--seal-path\", \"/proc/self/fd/3\"], \"exit_code\": 1, \"expected_exit_code\": 1, \"name\": \"extra-metadata\", \"stderr\": \"FAIL: seal corruption or payload inventory/hash/mode drift\\n\", \"stdout\": \"\"}, {\"argv\": [\"/usr/bin/python3\", \"-B\", \"/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py\", \"--check\", \"--seal-path\", \"/proc/self/fd/3\"], \"exit_code\": 1, \"expected_exit_code\": 1, \"name\": \"missing-payload-rehashed\", \"stderr\": \"FAIL: seal corruption or payload inventory/hash/mode drift\\n\", \"stdout\": \"\"}, {\"argv\": [\"/usr/bin/python3\", \"-B\", \"/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py\", \"--check\", \"--seal-path\", \"/proc/self/fd/3\"], \"exit_code\": 1, \"expected_exit_code\": 1, \"name\": \"payload-hash-rehashed\", \"stderr\": \"FAIL: seal corruption or payload inventory/hash/mode drift\\n\", \"stdout\": \"\"}, {\"argv\": [\"/usr/bin/python3\", \"-B\", \"/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py\", \"--seal\"], \"exit_code\": 1, \"expected_exit_code\": 1, \"name\": \"exclusive-reseal\", \"stderr\": \"FAIL: delivery exists before seal\\n\", \"stdout\": \"\"}], \"scope\": \"seven memory-only custody controls\", \"seal_unchanged\": true, \"status\": \"triggered and holds\"}\n",
+    "stderr": "",
+    "elapsed_seconds": 31.456984281539917
+  },
+  {
+    "name": "historical-publication-normal",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-publication/verify.py",
+      "--check",
+      "--require-tracked"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment": {},
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "FAIL: unexpected working/index state: b'?? audits/2026-10-11-br-sd-1g-adopt-6eae3597/ADOPTION_DECISION.md'\n",
+    "elapsed_seconds": 0.29534053802490234
+  },
+  {
+    "name": "historical-publication-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-publication/verify.py",
+      "--check",
+      "--require-tracked"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment": {
+      "PYTHONHASHSEED": "17"
+    },
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "FAIL: unexpected working/index state: b'?? audits/2026-10-11-br-sd-1g-adopt-6eae3597/ADOPTION_DECISION.md'\n",
+    "elapsed_seconds": 0.29191088676452637
+  },
+  {
+    "name": "immutable-adapter-normal",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/independent_immutable_check.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment": {},
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout": "{\"HEAD_and_index_bytes_and_modes\": \"matched\", \"actual_head\": \"c15a635e17d4be814e19aeeeeb765f3d6024099a\", \"actual_source_status\": \"not triggered\", \"authority_inputs\": 31, \"historical_publication_prechecks\": 8, \"local_links_checked\": 68, \"new_task_state\": \"untracked authorized directory only\", \"new_unconditional_closures\": 0, \"old_custody_files\": 313, \"old_directory_counts\": {\"audits/2026-10-11-br-sd-1a-0f181045\": 89, \"audits/2026-10-11-br-sd-1c-fd6e1112\": 115, \"audits/2026-10-11-br-sd-1e-337d018b\": 109}, \"old_local_only_files\": [\"audits/2026-10-11-br-sd-1a-0f181045/agents/controls/certificate.corrupted.json\", \"audits/2026-10-11-br-sd-1a-0f181045/agents/controls/certificate.normal.json\", \"audits/2026-10-11-br-sd-1a-0f181045/agents/controls/certificate.seed17.json\", \"audits/2026-10-11-br-sd-1a-0f181045/negative-controls/missing-full-fibre-tuple.json\"], \"old_tracked_files\": 309, \"original_files\": 160, \"original_payloads\": 159, \"original_seal_sha256\": \"d3952f60eaba362762d3555b800ba9a03eeaf5171c0404fbea70cfc330ec8edc\", \"parent_status\": \"OPEN\", \"publication_files\": 6, \"publication_manifest_sha256\": \"520ab466a528b962584169d4a75649cbfcfca30587bceb6f50defa9a0c455027\", \"recorded_research_checks\": 22, \"research_base\": \"dbdc4c35f785519c8e3cb0260807f0d2feb82469\", \"scope\": \"immutable custody only; no mathematical proof or canonical adoption\", \"status\": \"immutable custody verified\", \"task_base\": \"c15a635e17d4be814e19aeeeeb765f3d6024099a\"}\n",
+    "stderr": "",
+    "elapsed_seconds": 3.456598997116089
+  },
+  {
+    "name": "immutable-adapter-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/independent_immutable_check.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "environment": {
+      "PYTHONHASHSEED": "17"
+    },
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout": "{\"HEAD_and_index_bytes_and_modes\": \"matched\", \"actual_head\": \"c15a635e17d4be814e19aeeeeb765f3d6024099a\", \"actual_source_status\": \"not triggered\", \"authority_inputs\": 31, \"historical_publication_prechecks\": 8, \"local_links_checked\": 68, \"new_task_state\": \"untracked authorized directory only\", \"new_unconditional_closures\": 0, \"old_custody_files\": 313, \"old_directory_counts\": {\"audits/2026-10-11-br-sd-1a-0f181045\": 89, \"audits/2026-10-11-br-sd-1c-fd6e1112\": 115, \"audits/2026-10-11-br-sd-1e-337d018b\": 109}, \"old_local_only_files\": [\"audits/2026-10-11-br-sd-1a-0f181045/agents/controls/certificate.corrupted.json\", \"audits/2026-10-11-br-sd-1a-0f181045/agents/controls/certificate.normal.json\", \"audits/2026-10-11-br-sd-1a-0f181045/agents/controls/certificate.seed17.json\", \"audits/2026-10-11-br-sd-1a-0f181045/negative-controls/missing-full-fibre-tuple.json\"], \"old_tracked_files\": 309, \"original_files\": 160, \"original_payloads\": 159, \"original_seal_sha256\": \"d3952f60eaba362762d3555b800ba9a03eeaf5171c0404fbea70cfc330ec8edc\", \"parent_status\": \"OPEN\", \"publication_files\": 6, \"publication_manifest_sha256\": \"520ab466a528b962584169d4a75649cbfcfca30587bceb6f50defa9a0c455027\", \"recorded_research_checks\": 22, \"research_base\": \"dbdc4c35f785519c8e3cb0260807f0d2feb82469\", \"scope\": \"immutable custody only; no mathematical proof or canonical adoption\", \"status\": \"immutable custody verified\", \"task_base\": \"c15a635e17d4be814e19aeeeeb765f3d6024099a\"}\n",
+    "stderr": "",
+    "elapsed_seconds": 3.5114002227783203
+  }
+]

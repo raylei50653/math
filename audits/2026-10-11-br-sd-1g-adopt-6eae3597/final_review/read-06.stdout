@@ -1,0 +1,344 @@
+# BR-SD-1g-ADOPT：root 工具最終 delta 審查
+
+2026-10-11；reviewer `/root/custody`。保留[上一份工具審查](ROOT_TOOL_REVIEW.md)原bytes，
+本更新只審查其後的新receipt digest／retained-failure block及`aggregate_checks.py`。
+沒有修改root code或CHECKS，也沒有執行會寫CHECKS的aggregation工具。
+
+**裁決：接受以下最終code bytes；未處理阻斷finding＝0。**
+
+| 工具 | 最終SHA256 |
+| --- | --- |
+| verify.py | `be7f8e24ee350c3fdece9cdce2ca5ee9367ad5ad7712cfdc99c8a0c611efcac8` |
+| record_check.py | `1e90e58f0d27b93d79dc73d8b0f81b7382224758ac5b5600ba256ba74fddfe9b` |
+| aggregate_checks.py | `1cf053f33bc15fa094eb8ea1a1348bc996dada1699849bd1c1ee9d58c71ed4a6` |
+
+獨立從current verify刪除這次新增的block後，逐byte重建上一份已接受verify SHA
+`4e2de6c8e27874175241d869f9f6246b8a114c12bb009c9f5a4ce8ba64d98b9d`。
+因此這次不是未經重審的其他工具改動；logger bytes保持不變。
+重建與實際receipt回讀由[唯讀readback工具](root_tool_final_readback.py)完成，
+[实际命令receipt](ROOT_TOOL_FINAL_READBACK.json)保存argv／cwd／stdout／stderr／exit0。
+
+## 1. 新 block 與 aggregation 的一致性
+
+Aggregation只枚舉本輪root `logs/*.json`的receipt，原样保留其欄位及每份原JSON bytes的SHA／path。
+Final verify重驗recorded output hashes及原receipt digest；完整payload acceptance／seal
+又固定CHECKS本身，因此封存後不能單獨修改aggregate欄位而保持byte接受。
+本次readback亦逐項核對v1／v2 enriched欄位與原receipt的一致性。
+新block不引入寫入分支，原workspace、完整payload、final acceptance、
+seal／delivery、mode、link及negative-control义務保持上一份review已接受的行为。
+
+只有具名`audit-precheck-v1`的actual／expected不符可移入`retained_failed_commands`。
+其他unexpected failures仍留在commands，令all_recorded_expectations_met為false，
+不能取得final seal。retained資料須保持actual≠expected，原stdout／stderr及原receipt SHA
+另核對，沒有將actual1改成expected1以變成通過。
+
+若retained failure存在，非precheck模式必須在commands有具名`audit-precheck-v2.json`
+actual0成功紀錄；正常receipt檢查另要求其expected也為0。
+`--precheck`暫時容許v2尚未生成，避免「執行v2前先要求v2已有成功receipt」的循環。
+這個暫時例外不適用seal／sealed check／delivery建立或final require-delivery檢查。
+
+`aggregate_checks.py`會寫本新audit的CHECKS，正確用途是final acceptance／seal前彙整。
+封存後再运行它會改主payload，之後完整byte接受／seal檢查將拒絕；
+不能把它當成唯讀postseal入口。
+
+## 2. 實際 v1 failure 與 v2 success 回讀
+
+| 原紀錄 | Actual／Expected | 當前group與核對 |
+| --- | --- | --- |
+| audit-precheck-v1 | **1／0** | retained_failed_commands；原receipt、原stdout／stderr digest相符，未出現在正常commands |
+| audit-precheck-v2 | **0／0** | 正常commands；原receipt、原stdout／stderr digest相符，所有enriched欄位與原receipt逐項相符 |
+
+v1是當時planned `ROOT_TOOL_REVIEW.md`尚未交付而造成的實際exit1，保留原stderr及空stdout；
+本更新不將它列作PASS，也不將此文件交付時間問題誤稱數學漏洞。
+v2成功是已實際執行的結果，不是「預計修復後應通過」。
+
+兩份原receipt SHA分別為：
+
+- v1：`92947223aa6a070752058552a682e5431f656743a3f4188fcc47bf4c860439e1`
+- v2：`ac8d5b71a95bd827394a2ac881d938cdd72ca9ae93a9516a32157d1a840c72c5`
+
+回讀工具实际exit0，stderr空；[stdout](root-tool-final-readback.stdout.log)提供完整code hashes、
+prior-byte reconstruction及兩份receipt／output核對結果。
+這些是工具與實際紀錄一致性證據，不重新證明Gallai／J2／任意大小排除。
+
+## 3. 停止點
+
+本reviewer此後停止寫入。Root需再安排完整最終payload的另一reviewer對最終bytes接受，
+完成exclusive seals、postseal實際commands、sealed readback、DELIVERY及final唯讀驗證。
+本code接受不冒充那些尚未完成的義務；若最終code再改動，須另行review。
+
+父身份OPEN、完整OPEN身份新增無條件關閉數0、actual source `not triggered`、未新增Lean；
+沒有formal adoption／commit／push／merge授權。
+# BR-SD-1g-ADOPT：獨立採納審查交付
+
+**裁決：ACCEPTABLE。** 原BR-SD-1g完整精確子域的紙面排除通過獨立數學與原來源量詞審查；沒有未解的數學／mapping阻斷finding。
+僅準備[canonical採納提案](CANONICAL_DELTA_PROPOSAL.md)，**正式採納未執行**。
+完整`N45-S-NOU-LS-PAIR`父身份仍 **OPEN**；**新增完整OPEN身份無條件關閉數＝0**。
+
+Repository：`raylei50653/math`。Task base／HEAD／main固定`c15a635e17d4be814e19aeeeeb765f3d6024099a`；
+原研究base`dbdc4c35f785519c8e3cb0260807f0d2feb82469`另列，不能混用。
+Tracked working diff及index diff為空；本輪只新增`audits/2026-10-11-br-sd-1g-adopt-6eae3597/`，保持untracked。
+未commit、push、merge，未改canonical／STATUS／HANDOFF或任何原seal。
+
+## 審查結果與精確接受範圍
+
+| 獨立審查 | 結果及證據 |
+| --- | --- |
+| 数學proof | [獨立REVIEW](agents/proof/REVIEW.md)重新推導原lists／完整延拓／Gallai／J2屏障／有限incidence-tree矛盾，未先讀原paper review。所有適用前提、非割點／leaf／triangle／K4、零臂／a3=v和任意有限W2皆處理，blocking0 |
+| 原來源mapping／量詞 | [獨立MAPPING_REVIEW](agents/mapping/MAPPING_REVIEW.md)重建全部degree／attachments／ownership／contact／臂與重合，固定原G/M/β及full lifts；完整量詞通過，blocking0 |
+| Custody／publication | [獨立CUSTODY_REVIEW](agents/custody/CUSTODY_REVIEW.md)核完整immutable資料，零drift；舊verifier實際exit1與獨立adapter成功分列，不把custody當数学證明 |
+| Root整合 | [REVIEW](REVIEW.md)、[MAPPING_REVIEW](MAPPING_REVIEW.md)、[ADOPTION_DECISION](ADOPTION_DECISION.md)逐項對回使用者義務及證據；不縮量詞、不擴父身份 |
+| 最終工具及bytes審查 | [custody工具review](agents/custody/ROOT_TOOL_REVIEW.md)、[最後delta接受](agents/custody/ROOT_TOOL_FINAL_UPDATE.md)、[final acceptance](final_review/ACCEPTANCE.json)。封存前完整payload的實際accepted hashes固定；postseal reviewer readback另由DELIVERY綁定 |
+
+接受定理只在完整原來源合同內：同一ordered induced-C5 disk原G／完整Σ933或941／ε2／critical完整witnesses，
+非相鄰degree5 r/s、其他有效原點4，原U=0、L long、**S short／actual同一真框邊pair**，
+M=X=G−r唯一原spoke且M自己同literal proper三色β minimal、拒絕及自身全witnesses，sole C、split22，
+J1指定triangle／任意奇長J2/J3／唯一原uv／任意可零長p/q臂，恰兩有限非空connected原W1/W2，
+分別唯一接J1唯一private witness x1與J3／q臂的x2；保原ownership、全部原degree／attachments及所有合法重合，
+無其他接線／s-contact／第三旁支。全部原rotation／contacts／relations／空fibres／full lifts／ignored原因子保留。
+完整量詞在[提案八項](CANONICAL_DELTA_PROPOSAL.md)逐項列明。
+
+新證明的關鍵是同一原S−q的lists含T/D、q含T禁D、J2原witness迫`P_J2={T,D}`。
+恰含T/D一色的incident block不能與J2共點，因此追缺色形成始終在原S的不回頭walk，
+有限block–all-vertex incidence tree的最長路徑卻可以再延長，矛盾。
+已失效`D∈L(x1)⇒D∈P_J1`保counterexample，新證明沒有重用；沒有任意大小有限枚舉假設。
+
+## 本輪實際驗證與例外
+
+[CHECKS.json](CHECKS.json)綁定root每項actual argv／cwd／環境／stdout／stderr／exit及digests；
+worker原始receipts在同檔指向的獨立manifest。下表的exit是本輪實際重播，不沿用publication PRECHECKS。
+
+| 實際command／控制 | Exit及意義 |
+| --- | --- |
+| publication `verify.py --check --require-tracked` normal／PYTHONHASHSEED17 | **各1**，歷史白名單拒絕本輪授權新audit；不列PASS |
+| 原fresh `verify.py --check` | **1**，歷史BASE≠固定task HEAD；原入口沒有require-tracked option |
+| 新independent immutable adapter normal／PYTHONHASHSEED17 | **各0**，stdout逐byte相同；原160＋publication6／31authority／313舊檔及HEAD/index的獨立重核 |
+| 原primary與原independent finite checker normal／PYTHONHASHSEED17 | **全0**；C/M完整lifts數64／224／32／144／32／96，完整G lifts與16 ordered p/q fibres含空也重算 |
+| 新fresh independent checker normal／PYTHONHASHSEED17 | **全0**；不import原checker，另用MRV完整染色及BFS fundamental-cycle合併重建maximal blocks、full palettes與全部fibres |
+| 完整M tuple損壞／malformedJSON／fibre少一份完整lift | primary／原independent／新independent各三項 **全1**，預期拒絕；原證書及錯誤輸出全保 |
+| 新ignored-coordinate factor控制 | **0**；具名B-only孤點及free孤點給12倍full-lift因子，保存完整768 tuples，投影非雙射 |
+| 新local bridge／triangle／oddcycle5／K4 walk控制 | **0**；僅固定局部palette／incidence機制。缺J2 barrier／新增s-contact保具名counterexample，不是原source |
+| mapping degree-table control normal／PYTHONHASHSEED17 | **各0**，288骨架／1872接點位置／5616預算列／864J2 witness列，stdout相同；只是必要容量校準 |
+| `python3 -B scripts/check_docs.py` | **0**，602 Markdown／7412 links |
+| `python3 -B tools/docgraph --include 'docs/**/*.md' check` | **0**，62 documents／213 relations，0 errors／0 notes |
+| `git diff --check` | **0**，tracked diff空；新untracked文本另由新checker逐檔local links／trailing whitespace核對 |
+| 新audit precheck | 原始結果見root具名receipt；核所有tracked bytes/index及本audit links／whitespace，final review／seal另為交付門檻 |
+| 新seal／normal check／hashseed17 check／7項seal負控制／final boundary | [DELIVERY](DELIVERY.json)綁定postseal五項實際receipt；其checker要求每個具名command／env精確且exit0，不能以自報expected1掩蓋check失敗 |
+
+本輪root兩次初始全workspace snapshot因既有tracked目錄symlink讀法而失敗，保[原始紀錄](logs/bootstrap-failures.txt)，
+修正為hash symlink target後完整記錄15743 tracked entries；未修改原symlink。
+Root precheck-v1在tool reviewer尚未交付ROOT_TOOL_REVIEW.md時因missing link而exit1；原expected0、actual1及完整輸出保留在CHECKS的retained_failed_commands，新v2必須實際通過才算完成。
+Custody初版把313 filesystem全誤當tracked的失敗、proof初次錯path查詢、工具review各初版與隔離negative probes亦保留，
+不為取得ACCEPTABLE刪除失敗紀錄。新seal checker曾需修正postseal command binding、planned link stages及logger fail-closed邊界；
+最終工具review核修正後bytes，歷史工具沒有改動。
+
+## Custody、封存與唯讀入口
+
+原BR-SD-1g完整160檔、publication完整6檔各自與HEAD/index精確paths／bytes／modes相符；
+31authority每項frozen／research BASE／live／HEAD／index相符。三舊audit filesystem89＋115＋109＝313檔全相符；
+其中309 tracked、4既有ignored local-only分列，沒有把local-only證書聲稱published。
+[WORKSPACE_BEFORE](inputs/WORKSPACE_BEFORE.json)另固定全工作區15743 tracked file bytes／symlink target／mode／index blobs。
+新checker逐項重核，所有tracked及staged diff為空，只容本新audit未追蹤。
+
+新audit使用兩層exclusive-create封存以保存實際postseal執行紀錄：
+
+1. [SEAL](SEAL.json)固定全部payload，含本輪最終independent acceptance；只有SEAL／DELIVERY兩封存envelopes及精確白名單postseal紀錄另處理。SEAL與DELIVERY自身filesystem modes也固定。
+2. Final reviewer以[ACCEPTANCE](final_review/ACCEPTANCE.json)接受全部最終payload bytes，另讀回實際seal digest／manifest，blocking0。
+3. [DELIVERY](DELIVERY.json)固定SEAL bytes及postseal完整16檔：五项command的receipt／stdout／stderr，與reviewer seal readback。最終`--require-delivery`重核全部，不將尚未產生的exit寫成成功。
+
+從repo根的唯讀重播：
+
+```sh
+python3 -B audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py --check --require-delivery
+PYTHONHASHSEED=17 python3 -B audits/2026-10-11-br-sd-1g-adopt-6eae3597/verify.py --check --require-delivery
+```
+
+`--check`無寫入；custody checker不證任意大小数学theorem。
+SEAL／DELIVERY存在且上述final check通過才是本報告交付門檻；postseal原始紀錄提供實際final結果。
+最終readback命令輸出也保於本session工具receipt，不回寫已封存payload。
+
+## 回寫裁決與remaining OPEN
+
+Only ACCEPTABLE後已準備完整定理名稱／八項量詞、N45§2.11插入段、§2新列、§3精確subset及逐檔同步裁決。
+Owner批准後canonical／degree5 guide／interfaces／Kempe guide／STATUS需要最小同步；HANDOFF目前thin guide已有入口，**無需改bytes**。
+原1a／1c／1e及原1g／publication／authority／frozen／seals皆不改。
+
+**Finite controls只證具名synthetic測例。** 六圖均接受β，完整actual source仍 **not triggered**；
+沒有新target source realization，沒有新增Lean theorem或Lean build驗收，沒有一般closure。
+任意大小精確紙面結果由原完整合同、獨立重建及外部[Dvořák作者定理](https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf)承擔。
+
+完整父身份、其他split22／非split22、多旁支／其他三環／更多環／一般Gallai接線、R31、
+其他45／54／原55／無45／54、ε≥3、一般N45／N2／E、一般單側／共同出口、主命題及`K∞=K≤5`均OPEN。
+完整OPEN身份新增無條件關閉數 **0**。
+本精確紙面域無剩餘proof義務；**正式採納及canonical／STATUS等文件回寫仍待owner另行批准**。
+交付保留唯一本新audit的untracked工作樹，未commit／push／merge。
+#!/usr/bin/env python3
+"""Memory-only seal corruption controls; never mutate sealed payloads."""
+import copy
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+
+AUDIT = Path(__file__).resolve().parent
+ROOT = AUDIT.parents[1]
+
+def canonical(value):
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()
+
+def main():
+    original = (AUDIT / 'SEAL.json').read_bytes()
+    seal = json.loads(original)
+    cases = []
+    for name in ('decision-escalation', 'parent-closure', 'source-escalation', 'extra-metadata', 'missing-payload-rehashed', 'payload-hash-rehashed'):
+        altered = copy.deepcopy(seal)
+        if name == 'decision-escalation':
+            altered['formal_adoption_executed'] = True
+        elif name == 'parent-closure':
+            altered['parent_status'] = 'CLOSED'
+        elif name == 'source-escalation':
+            altered['source_status'] = 'triggered and holds'
+        elif name == 'extra-metadata':
+            altered['unreviewed_general_theorem'] = True
+        elif name == 'missing-payload-rehashed':
+            altered['payloads'].pop()
+            altered['payload_manifest_sha256'] = hashlib.sha256(canonical(altered['payloads'])).hexdigest()
+        else:
+            altered['payloads'][0]['sha256'] = '0' * 64
+            altered['payload_manifest_sha256'] = hashlib.sha256(canonical(altered['payloads'])).hexdigest()
+        fd = os.memfd_create('br-sd-1g-adopt-negative', 0)
+        try:
+            os.write(fd, json.dumps(altered).encode())
+            argv = [sys.executable, '-B', str(AUDIT / 'verify.py'), '--check', '--seal-path', f'/proc/self/fd/{fd}']
+            result = subprocess.run(argv, cwd=ROOT, capture_output=True, pass_fds=(fd,))
+            cases.append({'name': name, 'argv': argv, 'exit_code': result.returncode, 'expected_exit_code': 1,
+                          'stdout': result.stdout.decode(), 'stderr': result.stderr.decode()})
+            if result.returncode != 1 or 'seal corruption' not in result.stderr.decode():
+                raise ValueError('negative rejected for unexpected reason: ' + name)
+        finally:
+            os.close(fd)
+    argv = [sys.executable, '-B', str(AUDIT / 'verify.py'), '--seal']
+    result = subprocess.run(argv, cwd=ROOT, capture_output=True)
+    cases.append({'name': 'exclusive-reseal', 'argv': argv, 'exit_code': result.returncode, 'expected_exit_code': 1,
+                  'stdout': result.stdout.decode(), 'stderr': result.stderr.decode()})
+    if result.returncode != 1 or not any(message in result.stderr.decode() for message in ('File exists', 'delivery exists before seal')):
+        raise ValueError('reseal rejection missing')
+    if (AUDIT / 'SEAL.json').read_bytes() != original:
+        raise ValueError('seal bytes changed during negative controls')
+    print(json.dumps({'status': 'triggered and holds', 'scope': 'seven memory-only custody controls',
+                      'seal_unchanged': True, 'cases': cases}, sort_keys=True))
+
+if __name__ == '__main__':
+    try:
+        main()
+    except (ValueError, OSError, KeyError) as exc:
+        print('FAIL: ' + str(exc), file=sys.stderr)
+        raise SystemExit(1)
+[
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-publication/verify.py",
+      "--check",
+      "--require-tracked"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "id": "publication-normal",
+    "started_unix": 1791709856.3895643,
+    "stderr_bytes": 94,
+    "stderr_path": "final-v2-publication-normal.stderr.log",
+    "stderr_sha256": "94cbce9b1577b4611c5146d6d2cea83993b2f7311bd0d9decc7ae9b987d701c7",
+    "stdout_bytes": 0,
+    "stdout_path": "final-v2-publication-normal.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_seconds": 0.28313589096069336
+  },
+  {
+    "argv": [
+      "env",
+      "PYTHONHASHSEED=17",
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-publication/verify.py",
+      "--check",
+      "--require-tracked"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "id": "publication-hashseed17",
+    "started_unix": 1791709856.673092,
+    "stderr_bytes": 94,
+    "stderr_path": "final-v2-publication-hashseed17.stderr.log",
+    "stderr_sha256": "94cbce9b1577b4611c5146d6d2cea83993b2f7311bd0d9decc7ae9b987d701c7",
+    "stdout_bytes": 0,
+    "stdout_path": "final-v2-publication-hashseed17.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_seconds": 0.2853505611419678
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-11-br-sd-1g-dbdc4c35/verify.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "id": "original-fresh-check",
+    "started_unix": 1791709856.9587333,
+    "stderr_bytes": 47,
+    "stderr_path": "final-v2-original-fresh-check.stderr.log",
+    "stderr_sha256": "cc8b2f409627c634c09420333c7f26376533b2071fac95afd4ae58d101943e3f",
+    "stdout_bytes": 0,
+    "stdout_path": "final-v2-original-fresh-check.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_seconds": 0.04073643684387207
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/independent_immutable_check.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "id": "independent-immutable-check",
+    "started_unix": 1791709856.9996572,
+    "stderr_bytes": 0,
+    "stderr_path": "final-v2-independent-immutable-check.stderr.log",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_bytes": 1447,
+    "stdout_path": "final-v2-independent-immutable-check.stdout.log",
+    "stdout_sha256": "f260a098298e9f83bf19df6b3c4d80329d2e4e5f3e06e6ec306dda69d23d5508",
+    "wall_seconds": 4.172715187072754
+  },
+  {
+    "argv": [
+      "env",
+      "PYTHONHASHSEED=17",
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/custody/independent_immutable_check.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "id": "independent-immutable-hashseed17",
+    "started_unix": 1791709861.1725698,
+    "stderr_bytes": 0,
+    "stderr_path": "final-v2-independent-immutable-hashseed17.stderr.log",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_bytes": 1447,
+    "stdout_path": "final-v2-independent-immutable-hashseed17.stdout.log",
+    "stdout_sha256": "f260a098298e9f83bf19df6b3c4d80329d2e4e5f3e06e6ec306dda69d23d5508",
+    "wall_seconds": 3.8611223697662354
+  }
+]

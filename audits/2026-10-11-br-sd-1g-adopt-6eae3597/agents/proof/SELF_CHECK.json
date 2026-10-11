@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-c",
+    "from pathlib import Path\nimport ast,hashlib,json,re\np=Path(\"audits/2026-10-11-br-sd-1g-adopt-6eae3597/agents/proof\")\nreview=p/\"REVIEW.md\"\nlinks=[]\nfor target in re.findall(r\"\\[[^\\]]+\\]\\(([^)]+)\\)\",review.read_text()):\n if target.startswith(\"http\"): continue\n rel=target.split(\"#\",1)[0]\n if rel: links.append({\"target\":target,\"exists\":(p/rel).exists()})\nassert all(x[\"exists\"] for x in links), links\nast.parse((p/\"fetch_primary.py\").read_text())\ninputs=json.loads((p/\"INPUT_HASHES.json\").read_text())\nassert all(x[\"equal_to_fixed_base_blob\"] for x in inputs[\"inputs\"])\nfor x in inputs[\"inputs\"]:\n assert hashlib.sha256(Path(x[\"path\"]).read_bytes()).hexdigest()==x[\"sha256\"]\nfetch=json.loads((p/\"FETCH.json\").read_text())\nassert fetch[\"equals_original_frozen\"]\nassert hashlib.sha256((p/\"gallai.live.pdf\").read_bytes()).hexdigest()==fetch[\"sha256\"]\nprint(json.dumps({\"review_sha256\":hashlib.sha256(review.read_bytes()).hexdigest(),\"local_links\":links,\"input_hashes_hold\":True,\"fetch_hash_holds\":True,\"syntax_valid\":True,\"blocking_findings\":0},indent=2))\n"
+  ],
+  "cwd": "/home/ray/developer/ai/math",
+  "exit_code": 0,
+  "stdout": "self-check.stdout",
+  "stderr": "self-check.stderr"
+}

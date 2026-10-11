@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "-c",
+    "from pathlib import Path\nimport hashlib,json,runpy\np=Path(\"audits/2026-10-11-br-sd-1g-adopt-6eae3597\")\nexpected={\"verify.py\":\"be7f8e24ee350c3fdece9cdce2ca5ee9367ad5ad7712cfdc99c8a0c611efcac8\",\"record_check.py\":\"1e90e58f0d27b93d79dc73d8b0f81b7382224758ac5b5600ba256ba74fddfe9b\",\"aggregate_checks.py\":\"1cf053f33bc15fa094eb8ea1a1348bc996dada1699849bd1c1ee9d58c71ed4a6\",\"seal_negative.py\":\"96eac77c46d1d3a09e088216601fccf5567778745f20f54d5d8f39bb99e7d0ab\",\"agents/custody/ROOT_TOOL_FINAL_UPDATE.md\":\"9873a6b7efde8403ebb5842039b53ca5ccf221f2addb446d488a69c08a01aef6\",\"REPORT.md\":\"068dfd2c78c234c75332dac547abff3b5f61a9b73024c7cdf19f7c8dc5aadfc5\",\"CHECKS.json\":\"b96563bb44bb145d5d9b7aaf71ad9c4baec461fb426b1b8a730f3cf6b4cb73cb\"}\nfor name,sha in expected.items():\n assert hashlib.sha256((p/name).read_bytes()).hexdigest()==sha, name\nchecks=json.loads((p/\"CHECKS.json\").read_text())\nassert len(checks[\"commands\"])==21\nassert sum(r[\"exit_code\"]==0 for r in checks[\"commands\"])==12\nassert sum(r[\"exit_code\"]==1 for r in checks[\"commands\"])==9\nassert len(checks[\"retained_failed_commands\"])==1\nassert checks[\"retained_failed_commands\"][0][\"exit_code\"]==1 and checks[\"retained_failed_commands\"][0][\"expected_exit_code\"]==0\nruns=json.loads((p/\"final_review/RUNS.json\").read_text())\nfor r in runs:\n assert r[\"exit_code\"]==0\n for field in (\"stdout\",\"stderr\"):\n  data=(p/\"final_review\"/r[field+\"_path\"]).read_bytes()\n  assert hashlib.sha256(data).hexdigest()==r[field+\"_sha256\"]\n  if field==\"stderr\": assert not data\nassert (p/\"final_review/finite.stdout.log\").read_bytes()==(p/\"final_review/finite-hashseed17.stdout.log\").read_bytes()\nv=runpy.run_path(str(p/\"verify.py\"),run_name=\"final_review_exact_payload_helper\")\ncounts=v[\"prerequisites\"](precheck=True)\nreview_sha=hashlib.sha256((p/\"final_review/REVIEW.md\").read_bytes()).hexdigest()\nprint(json.dumps({\"status\":\"final peer precheck passed\",\"frozen_hashes\":expected,\"root_receipts\":21,\"root_exit0\":12,\"root_expected_negative_exit1\":9,\"retained_actual1_expected0\":1,\"reviewer_replays\":len(runs),\"review_sha256\":review_sha,\"blocking_findings\":0,**counts},sort_keys=True))\n"
+  ],
+  "cwd": "/home/ray/developer/ai/math",
+  "env_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "stdout_path": "final-check.stdout.log",
+  "stderr_path": "final-check.stderr.log",
+  "stdout_sha256": "2f8fa6c440d1714b9d4d2bd8268f3b6260bceecbb4325f31ffabd933e2eab84e",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
