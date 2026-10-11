@@ -1,6 +1,6 @@
 # State／grammar／topology 與枚舉導覽
 
-更新：2026-10-02。新增來源投影階數與精確接合上界；跨線整理見
+更新：2026-10-11。新增強迫同色／閉環一致的猜想與待驗方向；來源投影階數與精確接合上界及跨線整理見
 [全線進展與高階假設](c5_research_synthesis.md)，實際重播範圍見專題報告。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
@@ -17,6 +17,7 @@
 | 來源階數／接合上界 | 132類有11個二階、101個四階、20個五階；精確接合r*≤來源最大階數≤5，T4全收來源≤4；六圖回歸，不證忘掉接點後或多步的同一上界，未Lean化 | [階數報告](c5_relation_arity.md) |
 | C₅ class 兩點重疊 | 新十三點 D₁₃ 完整四接點替換給任意大小同 class 族，私有四度點只成孤點及配對，輪環與偶長雙扇都無縮減起點；保持完整 J/P、全部外框、十五組 repairs／r*=4；加入 D₁₃ 後其餘骨架、必要分類／政策與多步充分性未證 | [兩點重疊導覽](c5_two_vertex_overlap_guide.md)、[D₁₃ 定理](c5_two_vertex_repair_caps.md) |
 | 完整 relation／表示法 | Interface、State、Branch、Choice 及接合語意已有；pair projections 漏掉高階限制 | [state language](state_language.md)、[extension effects](extension_effects.md) |
+| 單點強迫／閉環一致猜想 | F 問低超額刪邊強迫對的統一介面寬度；Z 問固定可延拓邊界的零邊數不增修復，均未初驗。半徑與寬度分開；邊差可積分沿用已有等價，不新增閉包或來源排除 | [完整猜想與驗證計畫](c5_forcing_transport_conjectures.md) |
 | 逐步充分性／closure | strip／fan 有界控制與 separator 引理可用；一般移動前緣、context／future 充分性及 C6／C7 轉接待證或未啟動 | [充分性](stepwise_state_sufficiency.md)、[closure](local_closure.md)、[介面提案](c5_interface_idea.md) |
 | Triangle grammar | 染色語義、attachment normal form、GeoReject 與 endpoint-order 編譯已有形式化；只限指定 grammar | [automata](automata.md)、[normal form](attachment_normal_form.md) |
 | Embedding 到 grammar | 固定 C5＋K3 接線的紙面 topology 論證依賴 Jordan–Schoenflies 等事實；embedding 抽取與 topology soundness 未 Lean 化 | [topology](topology_completeness.md) |
@@ -25,6 +26,10 @@
 | 基礎構造與 gadgets | exact relations、有限 Lean 證書與 gadget synthesis 已保存；一般 planar／separating C5 的 BAD 不是 disk 反例 | [phase 1](phase1.md)、[構造](construction.md)、[gadgets](gadgets.md) |
 
 ## 3. 停止點與保留缺口
+
+新增提案見[強迫同色與閉環一致](c5_forcing_transport_conjectures.md)：先在具名前提觸發的
+實際來源量測局部半徑及完整關係證書寬度；零邊修復另檢查完整不增轉移圖的終端平台。
+目前只整理猜想與驗證規格，未執行這兩項初驗，亦不據此退役既有窄定理。
 
 跨線接續（2026-10-08）：[Phase B 分析](c5_phase_b_common_lemmas.md)區分
 可反覆使用的密封外部接合、保action的後繼充分性與刪邊weak bisimulation。

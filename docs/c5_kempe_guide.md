@@ -38,6 +38,7 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 | Connectivity／候選 state | 同圖更新與有限控制可重播；AB-only／固定 AB\|CD 猜測有反例，多候選不能任意拼成可實現 state | [connectivity](c5_kempe_connectivity.md)、[AB cube](c5_ab_swap_cube.md)、[choices](c5_edge_choices.md) |
 | Cut／behavior | retained-component 重建有 Lean 支援；粗 cut 摘要有反例，有界 behavior 控制不證多步充分性 | [cut](c5_cut_interfaces.md)、[behavior](c5_behavior_refinement_results.md)、[state 導覽](c5_state_guide.md) |
 | 固定圖策略與 repair | survivor-811 固定閉包、必要低谷／回升與 B₂ 準備已保存；一般 K=4 策略、共同安全 repair 機制未證 | [barriers](c5_strategy_barriers.md)、[repair](c5_repair_interface.md) |
+| 閉環一致／零邊修復猜想 | 固定可延拓 C₅ 邊界，猜想任意 flat 標記可經內部 cut XOR、零邊數不增而修復；容許持平步，未初驗，不推出邊界可延拓或其他來源排除。驗證需完整不增轉移圖，不能只找一步下降 | [猜想 Z 與驗證計畫](c5_forcing_transport_conjectures.md)、[State 導覽](c5_state_guide.md) |
 
 ## 3. 停止點與保留缺口
 
