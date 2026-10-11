@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "-c",
+    "import json,pathlib; r=pathlib.Path.cwd(); d=r/\"negative-controls\"; d.mkdir(exist_ok=False); a=json.loads((r/\"inputs.json\").read_text()); a[\"inputs\"][0][\"sha256\"]=\"0\"*64; (d/\"bad-inputs.json\").write_text(json.dumps(a,indent=2)+\"\\n\"); b={\"base\":a[\"base\"],\"metadata_exclusions\":[{\"path\":\"delivery.json\"},{\"path\":\"seal-receipt.json\"}],\"files\":[{\"path\":\"REPORT.md\",\"sha256\":\"0\"*64,\"bytes\":(r/\"REPORT.md\").stat().st_size}]}; (d/\"bad-delivery.json\").write_text(json.dumps(b,indent=2)+\"\\n\"); print(\"Created two deliberately corrupted metadata controls; no source graphs.\")"
+  ],
+  "cwd": "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-direct",
+  "started_utc": "2026-10-11T01:50:03.189986+00:00",
+  "completed_utc": "2026-10-11T01:50:03.207976+00:00",
+  "stdout": "Created two deliberately corrupted metadata controls; no source graphs.\n",
+  "stderr": "",
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "expected_exit_matched": true
+}

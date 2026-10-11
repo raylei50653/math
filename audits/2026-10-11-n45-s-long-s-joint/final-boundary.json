@@ -1,0 +1,51 @@
+{
+  "base_unchanged": true,
+  "claims_schema_verified": 8,
+  "frozen_and_live_input_drift": [],
+  "independent_acceptance": "pending",
+  "no_new_Lean_build_executed": true,
+  "other_tasks_untracked_paths_ignored": true,
+  "own_mutations_exclusive_by_action_log": true,
+  "own_untracked_inventory_verified": true,
+  "report_local_links_verified": 20,
+  "runs": [
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "--stat"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit": 0,
+      "stderr": "logs/tracked-diff-final.stderr.log",
+      "stdout": "logs/tracked-diff-final.stdout.log"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--untracked-files=all",
+        "--",
+        "audits/2026-10-11-n45-s-long-s-joint"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit": 0,
+      "stderr": "logs/own-final-git-status.stderr.log",
+      "stdout": "logs/own-final-git-status.stdout.log"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit": 0,
+      "stderr": "logs/final-head.stderr.log",
+      "stdout": "logs/final-head.stdout.log"
+    }
+  ],
+  "tracked_shared_diff_exit": 0
+}

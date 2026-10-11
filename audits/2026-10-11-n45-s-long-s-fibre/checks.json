@@ -1,0 +1,56 @@
+{
+  "BASE_final_JSON_replay": {
+    "reason": "No blob at supplied BASE; source finding retained.",
+    "status": "not triggered"
+  },
+  "Lean": {
+    "executed": false,
+    "new_theorem": false
+  },
+  "checks": [
+    {
+      "exit": 0,
+      "name": "replay",
+      "status": "triggered and holds"
+    },
+    {
+      "exit": 0,
+      "name": "replay-seed17",
+      "status": "triggered and holds"
+    },
+    {
+      "exit": 1,
+      "expected_failure": true,
+      "name": "corrupt complete C assignment rejected",
+      "status": "triggered and holds"
+    },
+    {
+      "exit": 1,
+      "expected_failure": true,
+      "name": "existing canonical certificate preserved",
+      "status": "triggered and holds"
+    },
+    {
+      "exit": 0,
+      "name": "git diff --check",
+      "status": "triggered and holds"
+    }
+  ],
+  "counts": {
+    "ambient_C_r_fibres": 13440,
+    "empty_C_r_fibres": 10240,
+    "graphs": 19,
+    "joint_Q_schedules": 28,
+    "literal_rows": 210,
+    "omissions": 21,
+    "pair_t1_necessary_queries": 30,
+    "root_pin_fibres": 3360
+  },
+  "external_fetch": "logs/external-fetch.json",
+  "finite_source": {
+    "established": false,
+    "executed": false,
+    "status": "not triggered",
+    "trigger_count": null
+  }
+}

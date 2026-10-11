@@ -1,0 +1,212 @@
+{
+  "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+  "claims": [
+    {
+      "conclusion": "V-REC/K-REC restriction and union are mutually inverse on every complete proper original-C assignment",
+      "conclusion_type": "arbitrary-size paper identity",
+      "dependencies": [
+        "local original edge inequalities",
+        "induction on actual block incidence tree"
+      ],
+      "evidence": [
+        "transfer-proof.md sections2-4",
+        "transfer.py"
+      ],
+      "id": "TF-BLOCK",
+      "new_source_exclusion": false,
+      "normalization": "one common source/frame normalization U012/L234/S40",
+      "original_e": [
+        "r",
+        "b4"
+      ],
+      "original_r_coordinate": "r",
+      "premises": [
+        "all original edges occur exactly once in actual blocks",
+        "actual all-vertex/block incidence is a tree",
+        "all literal B attachments retained"
+      ],
+      "quantifier": "every finite actual connected C with actual bridge/odd-cycle block-tree, every literal attachment assignment gamma",
+      "status": "待獨立驗收"
+    },
+    {
+      "conclusion": "bijection restricts to all full tuple inverse images; all empty cells, r colours, diagonal pins and original branch coordinates retained",
+      "conclusion_type": "arbitrary-size exact interface identity",
+      "dependencies": [
+        "TF-BLOCK"
+      ],
+      "evidence": [
+        "transfer-proof.md section5",
+        "certificate.json"
+      ],
+      "id": "TF-FIBRES",
+      "new_source_exclusion": false,
+      "normalization": "one common source/frame normalization U012/L234/S40",
+      "original_e": [
+        "r",
+        "b4"
+      ],
+      "original_r_coordinate": "r",
+      "premises": [
+        "TF-BLOCK",
+        "fixed actual contact order and named vertex coordinates"
+      ],
+      "quantifier": "every original ordered contact list including repeated shared vertices, every ambient tuple and r colour, every ordered(a,b)",
+      "status": "待獨立驗收"
+    },
+    {
+      "conclusion": "all full X lifts biject to spoke-factor times Lambda_C(gamma;a,b) times actual Lambda_U(gamma;b) times Col^I",
+      "conclusion_type": "conditional exact graph factorization; U/G absent in microcases",
+      "dependencies": [
+        "TF-FIBRES",
+        "restriction/union on disjoint actual components"
+      ],
+      "evidence": [
+        "transfer-proof.md section6"
+      ],
+      "id": "TF-X",
+      "new_source_exclusion": false,
+      "normalization": "one common source/frame normalization U012/L234/S40",
+      "original_e": [
+        "r",
+        "b4"
+      ],
+      "original_r_coordinate": "r",
+      "premises": [
+        "actual full C and U original edges/attachments supplied",
+        "all actual s contacts and literal spokes supplied",
+        "no rs or retained r spoke",
+        "isolated original vertices retained"
+      ],
+      "quantifier": "every actual X with same original C/U components, every proper gamma and all16 pins",
+      "status": "待獨立驗收"
+    },
+    {
+      "conclusion": "full G lift set equals full X lift set for a!=literal gamma(b4), otherwise empty; no unused-colour substitution",
+      "conclusion_type": "arbitrary-size restored-edge identity",
+      "dependencies": [
+        "original edge inequality"
+      ],
+      "evidence": [
+        "transfer-proof.md section7"
+      ],
+      "id": "TF-RESTORE",
+      "new_source_exclusion": false,
+      "normalization": "one common source/frame normalization U012/L234/S40",
+      "original_e": [
+        "r",
+        "b4"
+      ],
+      "original_r_coordinate": "r",
+      "premises": [
+        "same original vertices and all retained edges",
+        "original removed e=rb4"
+      ],
+      "quantifier": "every same original pair G=X+rb4, every literal gamma and ordered(a,b)",
+      "status": "待獨立驗收"
+    },
+    {
+      "conclusion": "full assignments and every tuple inverse image transport bijectively; return to common literal frame before component join",
+      "conclusion_type": "conditional paper colour-transport identity",
+      "dependencies": [
+        "bijection of four colours",
+        "TF-FIBRES",
+        "TF-X"
+      ],
+      "evidence": [
+        "transfer-proof.md section8"
+      ],
+      "id": "TF-COLOR",
+      "new_source_exclusion": false,
+      "normalization": "one common source/frame normalization U012/L234/S40",
+      "original_e": [
+        "r",
+        "b4"
+      ],
+      "original_r_coordinate": "r",
+      "premises": [
+        "same actual piece vertices/edges/contacts",
+        "pi sends each gamma attachment colour to gamma-prime attachment colour",
+        "shared vertices and target root pins coherent"
+      ],
+      "quantifier": "every fixed actual piece and colour permutation pi satisfying each literal attachment and root-pin constraint",
+      "status": "待獨立驗收"
+    },
+    {
+      "conclusion": "all1344 full assignments and complete interface preimages match independent original-edge enumeration; three corrupt certificates rejected",
+      "conclusion_type": "finite interface calibration only",
+      "dependencies": [
+        "TF-BLOCK implementation",
+        "independent stdlib direct enumerator"
+      ],
+      "evidence": [
+        "certificate.json",
+        "degree-audit.json",
+        "logs/check-normal.stdout",
+        "negative-plan.json"
+      ],
+      "id": "TF-FINITE",
+      "new_source_exclusion": false,
+      "normalization": "one common source/frame normalization U012/L234/S40",
+      "original_e": [
+        "r",
+        "b4"
+      ],
+      "original_r_coordinate": "r",
+      "premises": [
+        "cases.json fixed before enumeration",
+        "BRIDGE_BAD6 invalid case preserved",
+        "original full degree4 verified for valid cases",
+        "disk topology unverified",
+        "no actual U/G or K11/K12 witnesses"
+      ],
+      "quantifier": "exactly four valid named C microcases,ten literal rows,all64 ambient cells,all16 pins and three spoke factors per row",
+      "status": "待獨立驗收"
+    },
+    {
+      "conclusion": "full Delta and ten rows/all16 pins preserved as symbolic source obligations; no target relation or preimage count fabricated",
+      "conclusion_type": "inherited necessary domain; same-source restoration OPEN",
+      "dependencies": [
+        "SF-QX",
+        "SF-RESTORE",
+        "SF-T2-Q0-Q1-RESTORED",
+        "query partition12+4+10+4",
+        "sealed remaining-schedules.json"
+      ],
+      "evidence": [
+        "coverage.json",
+        "transfer-proof.md section9"
+      ],
+      "id": "TF-DOMAIN",
+      "new_source_exclusion": false,
+      "normalization": "one common source/frame normalization U012/L234/S40",
+      "original_e": [
+        "r",
+        "b4"
+      ],
+      "original_r_coordinate": "r",
+      "premises": [
+        "sealed adopted acceptance/corrections",
+        "K1-K12 for any asserted target source"
+      ],
+      "quantifier": "24 inherited necessary schedules and every original s-spoke variant (38 variant records)",
+      "status": "待獨立驗收"
+    }
+  ],
+  "evidence_layers": {
+    "Lean": "not executed",
+    "finite": "triggered and holds",
+    "general_N45_N2_E": "OPEN",
+    "paper": "proved scoped identities pending independent review",
+    "source": "not triggered",
+    "source_realizability": "OPEN"
+  },
+  "promotion_to_target_source_requires_K1_K12": true,
+  "recurrence_requires_K11_K12": false,
+  "status": "待獨立驗收",
+  "target_source": {
+    "executed": false,
+    "status": "not triggered",
+    "trigger_count": null
+  },
+  "task_id": "N45-S-LONG-S-BLOCK-TRANSFER"
+}

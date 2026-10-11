@@ -1,0 +1,11 @@
+{
+  "original_native_command": [
+    "/bin/zsh",
+    "-lc",
+    "python3 -B - <<'PY'\nimport json\nfrom pathlib import Path\np=Path('audits/2026-10-11-n45-s-long-s-rfibre-dispatch/authority/sealed/audits/2026-10-11-n45-s-long-s-fibre/obligations.json')\nd=json.loads(p.read_text())\nfor s in d['schedules']:\n print(json.dumps({k:v for k,v in s.items() if k!='all_ten_literal_obligations'},sort_keys=True))\n for row in s['all_ten_literal_obligations']:\n  assert len(row['pins'])==16\n  assert {(x['r'],x['s']) for x in row['pins']}=={(a,b) for a in range(4) for b in range(4)}\nprint('Read and checked all raw schedule obligation row/pin structures; no source relation supplied.')\nPY"
+  ],
+  "cwd": "file:///home/ray/developer/ai/math",
+  "recorded_command_event_id": "exec-7e0136f3-36b0-4b18-9ed9-4f41d4faa398",
+  "executed_before_log_preservation": true,
+  "reexecuted_for_preservation": false
+}

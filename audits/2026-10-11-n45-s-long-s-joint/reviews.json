@@ -1,0 +1,42 @@
+{
+  "findings": [
+    {
+      "evidence": "Child inspected checker.py after implementation; checked natural join completeness, assignment/preimage/empty-fibre indices, root-pair transport, private branch guard and source-coverage scope.",
+      "id": "JR-01",
+      "result": "No blocking fixed-interface finding"
+    },
+    {
+      "counts": {
+        "C_ambient": 13440,
+        "C_assignments": 5505,
+        "C_empty": 10240,
+        "U_ambient": 2520,
+        "U_assignments": 512,
+        "U_empty": 2028,
+        "X_empty_pin_cells": 1964,
+        "cases": 21,
+        "new_accepting_row_times_omission": 21,
+        "pins": 3360,
+        "rejecting_X_rows": 0,
+        "rows": 210
+      },
+      "evidence_limit": "Child commands did not persist a separate transcript; this is a reviewer message record. Authoritative actual command/stdout/stderr evidence is root checks.json and logs, not this reviewer assertion.",
+      "id": "JR-02",
+      "result": "Independent fixed-order DFS of all 21 omissions, ten rows and 16 pins agreed with mixed/C/CU/X/G chain, covering and forcing. Counts agree with root checker."
+    },
+    {
+      "id": "JR-03",
+      "result": "All 19 original direct Sigma masks independently recomputed, each accepts nine rows."
+    },
+    {
+      "id": "JR-04",
+      "resolution": "Recorded explicitly in REPORT sections 4/6 and claims JS-PRIVATE/JS-PREIMAGES/JS-X.",
+      "result": "Private positive branch unexecuted and nonzero isolated factor untriggered; REPORT and claims must preserve these limits."
+    }
+  ],
+  "independent_acceptance": "pending",
+  "review_scope": "Same-task read-only child review; not another dispatch task; not external adoption",
+  "reviewer": "/root/joint_review",
+  "task_id": "N45-S-LONG-S-JOINT",
+  "writes": false
+}

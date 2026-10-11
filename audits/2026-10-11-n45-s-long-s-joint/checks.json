@@ -1,0 +1,164 @@
+{
+  "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+  "canonical_certificate_unchanged": true,
+  "exclusive_create_rejected": true,
+  "finite_interface": {
+    "counts": {
+      "C_assignments": 5505,
+      "U_assignments": 512,
+      "actual_rejected_X_rows": 0,
+      "ambient_C_fibres": 13440,
+      "ambient_U_fibres": 2520,
+      "cases_t_s_0": 0,
+      "cases_t_s_1": 14,
+      "cases_t_s_2": 7,
+      "covering_equivalence_checks": 210,
+      "eligible_cases": 21,
+      "empty_X_root_pin_cells": 1964,
+      "empty_ambient_C_fibres": 10240,
+      "empty_ambient_U_fibres": 2028,
+      "graphs": 19,
+      "graphs_with_one_long_mixed": 4,
+      "graphs_with_two_short_mixed": 15,
+      "literal_rows": 210,
+      "mixed_to_C_full_assignment_checks": 210,
+      "new_accepted_rows": 21,
+      "original_shared_contact_vertices": 38,
+      "prior_X_G_full_lift_comparisons": 6720,
+      "private_cover_triggers": 0,
+      "r_first_in_prior": 14,
+      "r_second_in_prior": 7,
+      "restoration_pin_checks": 3360,
+      "root_pin_cells": 3360,
+      "target_source_triggers": 0
+    },
+    "status": "triggered and holds"
+  },
+  "fixed_calibration_checks_pass": true,
+  "frozen_and_old_inputs_drift": {},
+  "independent_acceptance": "pending",
+  "negative_controls": [
+    {
+      "certificate": "bad-C-r-colour.json",
+      "certificate_sha256": "eab6b436cb7d706f67dcb6b36e2bca22267aee60d92537dc3c0c9e59c6037aff",
+      "name": "bad-C-r-colour",
+      "rejected": true,
+      "status": "triggered and holds"
+    },
+    {
+      "certificate": "missing-empty-ambient.json",
+      "certificate_sha256": "7e2557847fbb74d3c4388daa4b7e51dc8b89a6528d51bb4256364f48ad2a925c",
+      "name": "missing-empty-ambient",
+      "rejected": true,
+      "status": "triggered and holds"
+    }
+  ],
+  "normal_seed17_stdout_byte_equal": true,
+  "private_cover": {
+    "status": "not triggered",
+    "triggers": 0
+  },
+  "removed_empty_ambient_cell": {
+    "C_assignment_indices": [],
+    "C_contact_tuple": [
+      0,
+      0
+    ],
+    "r_colour": 0
+  },
+  "replay_checks_read_only": true,
+  "runs": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-joint/checker.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 0,
+      "stderr": "logs/generation-attempt1.stderr.log",
+      "stdout": "logs/generation-attempt1.stdout.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-joint/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 0,
+      "read_only_full_audit_tree": true,
+      "stderr": "logs/normal.stderr.log",
+      "stdout": "logs/normal.stdout.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-joint/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "read_only_full_audit_tree": true,
+      "stderr": "logs/seed17.stderr.log",
+      "stdout": "logs/seed17.stdout.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-joint/checker.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-joint/bad-C-r-colour.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 1,
+      "stderr": "logs/bad-C-r-colour.stderr.log",
+      "stdout": "logs/bad-C-r-colour.stdout.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-joint/checker.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-joint/missing-empty-ambient.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 1,
+      "stderr": "logs/missing-empty-ambient.stderr.log",
+      "stdout": "logs/missing-empty-ambient.stdout.log"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-joint/checker.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 1,
+      "stderr": "logs/exclusive-create-existing.stderr.log",
+      "stdout": "logs/exclusive-create-existing.stdout.log"
+    }
+  ],
+  "target_source": {
+    "finite_target_source_triggers": 0,
+    "scope": "Only these 19 controls; no satisfying target source established or executed",
+    "source_exclusion": "not established",
+    "source_realizability": "not established",
+    "status": "not triggered"
+  },
+  "task_id": "N45-S-LONG-S-JOINT"
+}

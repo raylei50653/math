@@ -1,0 +1,97 @@
+{
+  "C_checks": "../2026-10-11-n45-s-long-s-joint-review/checks.json",
+  "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+  "checks_pass": true,
+  "custody_drift": {
+    "authority_artifacts": false,
+    "head": false,
+    "live_inputs": false,
+    "original_trees": false,
+    "tracked_diff": false
+  },
+  "live_input_union_count": 112,
+  "negative_certificate_mismatch_observed": true,
+  "normal_seed17_stdout_byte_equal": true,
+  "runs": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-direct/validate.py",
+        "--contents",
+        "--manifest",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-direct/delivery.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 0,
+      "expected_exit": 0,
+      "expected_exit_observed": true,
+      "name": "A-contents-manifest",
+      "stderr": "logs/A-contents-manifest.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/A-contents-manifest.stdout.log",
+      "stdout_sha256": "bf4879899843c32ac31131252ada41391186b6450911e0a36614e604749626be"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-fibre/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 0,
+      "expected_exit": 0,
+      "expected_exit_observed": true,
+      "name": "B-normal",
+      "stderr": "logs/B-normal.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/B-normal.stdout.log",
+      "stdout_sha256": "0e1c235b7d642f88e12f904e962f35fb7353207c6901258cef7647c4320c5aa5"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-fibre/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "expected_exit_observed": true,
+      "name": "B-seed17",
+      "stderr": "logs/B-seed17.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/B-seed17.stdout.log",
+      "stdout_sha256": "0e1c235b7d642f88e12f904e962f35fb7353207c6901258cef7647c4320c5aa5"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-fibre/checker.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-fibre/negative-corrupt-certificate.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 1,
+      "expected_exit": 1,
+      "expected_exit_observed": true,
+      "name": "B-bad-C-assignment",
+      "stderr": "logs/B-bad-C-assignment.stderr.log",
+      "stderr_sha256": "f553cce51d311d7c6248b3231291d3dd560a8aa9e25a7cb1a4947b4eaab70389",
+      "stdout": "logs/B-bad-C-assignment.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "custody and fixed finite calibration; no finite target-source acceptance",
+  "task_id": "N45-S-LONG-S-REVIEW"
+}

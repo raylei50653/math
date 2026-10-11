@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q0-restore/audit.py", line 383, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q0-restore/audit.py", line 377, in main
+    elif args.mode=='check': check(args.certificate,args.coverage)
+                             ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q0-restore/audit.py", line 253, in check
+    assert cert==expected, 'calibration certificate mismatch'
+           ^^^^^^^^^^^^^^
+AssertionError: calibration certificate mismatch

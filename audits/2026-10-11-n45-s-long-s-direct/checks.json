@@ -1,0 +1,47 @@
+{
+  "task_id": "N45-S-LONG-S-DIRECT",
+  "layer": "delivery integrity checks, not graph-source/paper/Lean validation",
+  "normal_seed17_stdout_stderr_byte_equal": true,
+  "checks": [
+    {
+      "id": "contents-normal",
+      "status": "triggered and holds",
+      "exit_code": 0,
+      "log": "logs/contents-normal.json"
+    },
+    {
+      "id": "contents-seed17",
+      "status": "triggered and holds",
+      "exit_code": 0,
+      "log": "logs/contents-seed17.json"
+    },
+    {
+      "id": "corrupted-input-hash-negative",
+      "status": "triggered and holds",
+      "actual_exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/negative-inputs.json"
+    },
+    {
+      "id": "corrupted-payload-hash-negative",
+      "status": "triggered and holds",
+      "actual_exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/negative-manifest.json"
+    }
+  ],
+  "retained_setup_failure": {
+    "finding": "SOURCE-ARTIFACT-NOT-IN-BASE",
+    "git_exit_code": 128,
+    "log": "logs/freeze-additional.json"
+  },
+  "finite_source": {
+    "status": "not triggered",
+    "established": false,
+    "executed": false,
+    "trigger_count": null
+  },
+  "source_exclusion_proved_by_tool": false,
+  "lean_executed": false,
+  "adoption_status": "pending independent acceptance"
+}

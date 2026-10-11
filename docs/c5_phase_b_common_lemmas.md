@@ -98,11 +98,16 @@ U4原省略O仍收費的原理可共用。[N45](c5_excess_two_nonadjacent_unit_c
 另核原雙U-contact、完整W assignments／r fibres恢復e，未用Dγ構造只限proper三色γ；
 原過寬量詞保finding，全部properγ的JOIN／RESTORE／PALETTE不縮窄。HIGH3原s無spoke、
 實際(2,3)接回BASE no-spoke原K₅排除。LOW兩支及HIGH三支逐契約窮盡，
-只關§1精確S的兩原mixed都short身份；含long、其他cores／一般N2／E仍OPEN，無新finite來源或Lean。
+只關§1精確S的兩原mixed都short身份；含long的後續限定成果如下，其他cores／一般N2／E仍OPEN。
 後續[SL-MAP-R](../audits/2026-10-10-n45-s-long-r-map/REPORT.md)另排完整U在降度r、
 long L／short S全留、只刪原r-spoke且X=M自身minimal的窄身份；actual sole C、完整r fibres
 與X自己的同β witnesses逐項接回BASE(5)/(4)/(3)。pair／singleton都覆蓋，
-U在s的兩分量及無U的long身份仍OPEN；不提升B-S0或一般N2，finite來源仍0觸發。
+後續[N45-S-LONG-S限定覆蓋](c5_excess_two_nonadjacent_unit_core45.md#210-n45-s-long-s完整-cu-與原-r-fibre-恢復的限定覆蓋)
+在完整K1–K12內排除U在s的actual C/U身份：四direct profiles、singleton／pair splits化約，
+以及完整r-fibre恢復／原K₅覆蓋全部28必要schedules。U在r/s合成只關完整原U／long／short、
+只刪spoke且X=M自身同β minimal的選定契約；q0沿用SF-QX/E2紙面及歷史finite-terminal，
+q2/T1新非空由同源紙面構造承擔。無U的long／兩long、其他cores及一般N2／E仍OPEN；
+不提升B-S0的量詞或支援下界，沒有新finite來源或Lean。D的完整transfer恆等式不供給一般非空性。
 這只搬用原B-S0及各自新充分前提；一般N2仍只知mixed非空支援，
 singleton總incidence≥4未排，不能把U4專用 `2+ℓ+2u≤5` 直接搬過去。
 原省略unit若是spoke，保其原邊限制；spoke不能被冒算成piece盾弧。

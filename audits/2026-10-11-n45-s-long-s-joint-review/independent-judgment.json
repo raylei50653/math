@@ -1,0 +1,118 @@
+{
+  "acceptance_scope": [
+    "fixed 19 original N2 controls",
+    "all 21 eligible owner-s original r-spoke omissions",
+    "all ten literal rows and 16 ordered pins including diagonal and empty cells",
+    "complete assignments/preimages and original mixed-to-C-to-C/U-to-X/G lift equality",
+    "read-only replay and exact delivery/input custody"
+  ],
+  "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+  "batch_integration": "pending independent A/B paper audit",
+  "blocking_findings": [],
+  "commit_push_PR": false,
+  "independent_validation": {
+    "independent-custody": {
+      "command_metadata": "logs/independent-custody.command.json",
+      "result": {
+        "actual_directories": 18,
+        "actual_regular_files": 110,
+        "authority_counts": {
+          "BASE Git blob": 50,
+          "BASE archive payload": 1
+        },
+        "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+        "certificate_sha256": "e6c48df13be670932f07c4cc9c4a79bb9e5cf58c1121e70cf57c64240d28f9de",
+        "delivery_sha256": "5d73f75f6154863aaf43cf9746757135d3e538c0ec2950e12b3d0de2e213b9ed",
+        "exact_metadata_exclusions": [
+          "delivery-verification.json",
+          "delivery.json",
+          "logs/delivery-create.command.json",
+          "logs/delivery-create.stderr.log",
+          "logs/delivery-create.stdout.log",
+          "logs/delivery-verify.command.json",
+          "logs/delivery-verify.stderr.log",
+          "logs/delivery-verify.stdout.log"
+        ],
+        "extra_files": 0,
+        "frozen_inputs": 51,
+        "live_inputs_match": 51,
+        "missing_files": 0,
+        "payload_bytes": 63167560,
+        "payload_files": 102,
+        "prior_certificate_sha256": "41c3b82ab4afdade42f70b722a2624a9d1a726a4af22f783a09ab32a099b4ed6",
+        "special_files": 0,
+        "status": "passes",
+        "symlinks": 0,
+        "target_tree_changed": false
+      },
+      "stderr": "logs/independent-custody.stderr.log",
+      "stdout": "logs/independent-custody.stdout.log"
+    },
+    "independent-direct": {
+      "command_metadata": "logs/independent-direct.command.json",
+      "result": {
+        "counts": {
+          "G_lifts": 8007,
+          "X_lifts": 11280,
+          "ambient_cells": 15960,
+          "cases": 21,
+          "empty_ambient_cells": 12268,
+          "graphs": 19,
+          "pins": 3360,
+          "rows": 210,
+          "source_sigma_1007": 2,
+          "source_sigma_1015": 4,
+          "source_sigma_1021": 4,
+          "source_sigma_1022": 6,
+          "source_sigma_959": 3
+        },
+        "elapsed_seconds": 0.44,
+        "independent_algorithm": "fixed descending-degree vertex order, reversed colour order; no checker/prior imports",
+        "result": "PASS"
+      },
+      "stderr": "logs/independent-direct.stderr.log",
+      "stdout": "logs/independent-direct.stdout.log"
+    },
+    "independent-mixed": {
+      "command_metadata": "logs/independent-mixed.command.json",
+      "result": {
+        "counts": {
+          "mixed_join_provenance": 5505,
+          "mixed_pin_cells": 6720,
+          "mixed_records": 420,
+          "root_transports": 3360
+        },
+        "elapsed_seconds": 0.107,
+        "result": "PASS"
+      },
+      "stderr": "logs/independent-mixed.stderr.log",
+      "stdout": "logs/independent-mixed.stdout.log"
+    }
+  },
+  "not_adopted": [
+    "unbounded source exclusion",
+    "source realization",
+    "Lean formalization",
+    "general N2/E closure"
+  ],
+  "not_triggered": [
+    "target K1-K12 source",
+    "private-cover positive rejection/minimality branch",
+    "t_s=0",
+    "singleton S",
+    "nonzero isolated factor"
+  ],
+  "original_outputs_modified": false,
+  "replay_checks": "checks.json",
+  "reviewed_artifacts": {
+    "REPORT.md": "147984d7b1b4dbb92ab4d30d45070297f3af886d40488ad5ead65a191c8cf4ec",
+    "certificate.json": "e6c48df13be670932f07c4cc9c4a79bb9e5cf58c1121e70cf57c64240d28f9de",
+    "checker.py": "d70bdc49d32a80ed42ac05d1275d1bfe581d3e5ae42ae1e426e78f27f8f1f8cf",
+    "claims.json": "d779182a99db3ebab28ac05508f7807bf4865d6831b5db79d6a4128af483ed16",
+    "delivery.json": "5d73f75f6154863aaf43cf9746757135d3e538c0ec2950e12b3d0de2e213b9ed",
+    "inputs.json": "659d26ed46ce8bdad71c263431df4e677abdfe5e62ceedfab524aa4da7d6295d"
+  },
+  "shared_document_updates": false,
+  "task_id": "N45-S-LONG-S-JOINT-REVIEW",
+  "verdict": "accepted_fixed_finite_calibration"
+}

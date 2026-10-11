@@ -1,0 +1,61 @@
+{
+  "task_id": "N45-S-LONG-S-DIRECT",
+  "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+  "generation_command": [
+    "python3",
+    "-B",
+    "seal.py",
+    "--seal"
+  ],
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "validate.py",
+        "--contents",
+        "--manifest",
+        "delivery.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-direct",
+      "environment_override": {},
+      "started_utc": "2026-10-11T01:52:14.251897+00:00",
+      "completed_utc": "2026-10-11T01:52:14.361207+00:00",
+      "stdout": "{\"contents\": {\"base_inputs\": 18, \"claims\": 12, \"finite_source_executed\": false, \"layer\": \"custody/schema/symbolic-domain integrity only\", \"no_paper_proof_verified_by_tool\": true, \"profiles\": 4}, \"delivery\": {\"finite_source_executed\": false, \"layer\": \"delivery bytes only\", \"metadata_exclusions\": [\"delivery.json\", \"seal-receipt.json\"], \"payload_files\": 51}}\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "validate.py",
+        "--contents",
+        "--manifest",
+        "delivery.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-direct",
+      "environment_override": {
+        "PYTHONHASHSEED": "17"
+      },
+      "started_utc": "2026-10-11T01:52:14.361271+00:00",
+      "completed_utc": "2026-10-11T01:52:14.471649+00:00",
+      "stdout": "{\"contents\": {\"base_inputs\": 18, \"claims\": 12, \"finite_source_executed\": false, \"layer\": \"custody/schema/symbolic-domain integrity only\", \"no_paper_proof_verified_by_tool\": true, \"profiles\": 4}, \"delivery\": {\"finite_source_executed\": false, \"layer\": \"delivery bytes only\", \"metadata_exclusions\": [\"delivery.json\", \"seal-receipt.json\"], \"payload_files\": 51}}\n",
+      "stderr": "",
+      "exit_code": 0
+    }
+  ],
+  "summary": {
+    "payload_files": 51,
+    "all_final_checks_hold": true,
+    "normal_seed17_streams_byte_equal": true,
+    "finite_source_executed": false,
+    "delivery_sha256": "13532f13ff6ca1ef1954d840365aef1de69dbef250707bb1c4efa6fd0c16a15f"
+  },
+  "excluded_metadata_exact_paths": [
+    "delivery.json",
+    "seal-receipt.json"
+  ],
+  "independent_acceptance": false,
+  "no_paper_source_or_lean_proof_by_this_receipt": true
+}

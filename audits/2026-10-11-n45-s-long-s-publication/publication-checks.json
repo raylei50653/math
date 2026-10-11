@@ -1,0 +1,239 @@
+{
+  "archive": "archive-checks.json",
+  "authorization": "user: commit + push",
+  "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+  "commands": {
+    "archive-command": {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/audit_archive.py",
+        "append",
+        "--repo",
+        "/tmp/math-n45-s-long-s-publication-0nn90cwn"
+      ],
+      "cwd": null,
+      "elapsed_seconds": null,
+      "exit_code": 0,
+      "path": "archive-command.json",
+      "sha256": "d20325f9f4bcb9d54bfefce897e17a1cf56a32ce0e0374a427e80fc89a2a4d1e"
+    },
+    "fresh-docs": {
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/tmp/math-n45-s-long-s-fresh-z_49d_8f/checkout",
+      "elapsed_seconds": 0.56,
+      "exit_code": 0,
+      "path": "fresh-docs.json",
+      "sha256": "76ffd74121f360870defd87669bc9ccb6a93318a3c3b25a3b2437fc35e4dfb02"
+    },
+    "fresh-formal-docgraph": {
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/tmp/math-n45-s-long-s-fresh-z_49d_8f/checkout",
+      "elapsed_seconds": 0.087,
+      "exit_code": 0,
+      "path": "fresh-formal-docgraph.json",
+      "sha256": "5107d359216fe1d1f2c98345043eec66e5f57fde7594401f044979afb9d1ac63"
+    },
+    "fresh-generic-restore": {
+      "argv": [
+        "python3",
+        "tools/audit_archive.py",
+        "restore",
+        "--artifacts"
+      ],
+      "cwd": "/tmp/math-n45-s-long-s-fresh-z_49d_8f/checkout",
+      "elapsed_seconds": 19.928,
+      "exit_code": 0,
+      "path": "fresh-generic-restore.json",
+      "sha256": "8b04e72da9685bcf0f2b8c77d15bc9c2ee343527426001dae75efcb77e8b8278"
+    },
+    "fresh-guard": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n45-s-long-s-closeout/verify.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-s-long-s-fresh-z_49d_8f/checkout",
+      "elapsed_seconds": 0.215,
+      "exit_code": 0,
+      "path": "fresh-guard.json",
+      "sha256": "bad44a531cae472997a9e47ef95def78c70aaaad231bb4b12c8559dedca06769"
+    },
+    "fresh-n45-legacy-restore": {
+      "argv": [
+        "python3",
+        "audits/2026-10-10-n45-publication/archive.py",
+        "restore"
+      ],
+      "cwd": "/tmp/math-n45-s-long-s-fresh-z_49d_8f/checkout",
+      "elapsed_seconds": 30.405,
+      "exit_code": 0,
+      "path": "fresh-n45-legacy-restore.json",
+      "sha256": "f2a010a95b7f6fdb8f79ce657a0c8d09e1fd92e4cc874e076d714038af05b507"
+    },
+    "fresh-original-payload": {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-publication/verify_payload.py",
+        "--checkout",
+        "/tmp/math-n45-s-long-s-fresh-z_49d_8f/checkout",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-s-long-s-fresh-z_49d_8f/checkout",
+      "elapsed_seconds": 0.197,
+      "exit_code": 0,
+      "path": "fresh-original-payload.json",
+      "sha256": "0ef25872139d132bc8ad1d9dd08739507c5a92b50bd17788363a8cfd4807cb88"
+    },
+    "fresh-seal-0": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/seal_review.py",
+        "--directory",
+        "audits/2026-10-11-n45-s-long-s-t1-rfibre-review",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-s-long-s-fresh-z_49d_8f/checkout",
+      "elapsed_seconds": 0.045,
+      "exit_code": 0,
+      "path": "fresh-seal-0.json",
+      "sha256": "0d697ad6aa2f1e3eb642747f189cb420a62127a9621b2925d13e2248841e0b87"
+    },
+    "fresh-seal-1": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/seal_review.py",
+        "--directory",
+        "audits/2026-10-11-n45-s-long-s-t2-q0-restore-review",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-s-long-s-fresh-z_49d_8f/checkout",
+      "elapsed_seconds": 0.042,
+      "exit_code": 0,
+      "path": "fresh-seal-1.json",
+      "sha256": "ca7caf9b2a15177296c932e0187916ee63a47cbb84e1515752bc160df0a72782"
+    },
+    "fresh-seal-2": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/seal_review.py",
+        "--directory",
+        "audits/2026-10-11-n45-s-long-s-t2-q2-restore-review",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-s-long-s-fresh-z_49d_8f/checkout",
+      "elapsed_seconds": 0.046,
+      "exit_code": 0,
+      "path": "fresh-seal-2.json",
+      "sha256": "1eee7d5d42f655fca1df953492498dfdd47d5f3574eb9f11c3f2dc600718157c"
+    },
+    "fresh-seal-3": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/seal_review.py",
+        "--directory",
+        "audits/2026-10-11-n45-s-long-s-block-transfer-review",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-s-long-s-fresh-z_49d_8f/checkout",
+      "elapsed_seconds": 0.041,
+      "exit_code": 0,
+      "path": "fresh-seal-3.json",
+      "sha256": "1c172fe230ed6697f4cb01cd9f415d6b9d3cf0b6afd093f2731fd05b13ccbad1"
+    },
+    "fresh-seal-4": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/seal_review.py",
+        "--directory",
+        "audits/2026-10-11-n45-s-long-s-closeout",
+        "--check"
+      ],
+      "cwd": "/tmp/math-n45-s-long-s-fresh-z_49d_8f/checkout",
+      "elapsed_seconds": 0.043,
+      "exit_code": 0,
+      "path": "fresh-seal-4.json",
+      "sha256": "03615f6b57db6410f81c1e727de937817369a50213496486b627709bd55d6f65"
+    },
+    "local-docs": {
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.588,
+      "exit_code": 0,
+      "path": "local-docs.json",
+      "sha256": "db390dddc4348565d25b41d2fd4d36f4c47f645485d077a1011f7410361db5c6"
+    },
+    "local-formal-docgraph": {
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.082,
+      "exit_code": 0,
+      "path": "local-formal-docgraph.json",
+      "sha256": "84c3f9fe5a2af7d36513d6ddd699c8c3eeaac8264637342519738a493973de87"
+    },
+    "local-guard": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n45-s-long-s-closeout/verify.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.219,
+      "exit_code": 0,
+      "path": "local-guard.json",
+      "sha256": "16e262fd7ec08809ceda6af00bfa103cdb313d38c6e58857a13940cdcc99d87e"
+    },
+    "staged-diff-check": {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.056,
+      "exit_code": 0,
+      "path": "staged-diff-check.json",
+      "sha256": "a881d6e86dc17028e4d882e540da9fd4153e52a6396a39a5f54715c69281929c"
+    }
+  },
+  "fresh_export": "fresh-export.json",
+  "lake_build": "inherited successful closeout lake build; no Lean files changed thereafter",
+  "original_payload": {
+    "all_exact": true,
+    "bytes": 166489899,
+    "files": 1727,
+    "roots": 15
+  },
+  "paper_source_Lean_scope_changed_by_publication": false,
+  "stage_coverage": "index-coverage.json",
+  "status": "all scoped publication and fresh-export checks pass",
+  "whole_worktree_docgraph": "not rerun; closeout retained 62 historical duplicate-ID errors",
+  "worker_live_shared_pins_or_old_19_controls_or_missing_BASE_replays": "not rerun"
+}

@@ -1,0 +1,17 @@
+{
+  "command": "python3 - <<'PY'\nimport pathlib,json,hashlib,subprocess,urllib.request,datetime\nroot=pathlib.Path.cwd(); out=root/'audits/2026-10-11-n45-s-long-s-direct'; base='f2692089ad4259808e27d9b7e882ac09505b180a'\ninputs=[]\nfor dst in sorted((out/'frozen').rglob('*')):\n    if not dst.is_file(): continue\n    p=dst.relative_to(out/'frozen').as_posix(); raw=dst.read_bytes()\n    blob=subprocess.check_output(['git','rev-parse',base+':'+p],text=True).strip()\n    assert subprocess.check_output(['git','show',base+':'+p])==raw==(root/p).read_bytes()\n    inputs.append({'path':p,'git_blob':blob,'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),'frozen_path':dst.relative_to(out).as_posix(),'worktree_matches_base':True})\np='artifacts/c5_no_spoke_exterior/observations.json'; raw=(root/p).read_bytes(); dst=out/'quarantine'/p; dst.parent.mkdir(parents=True,exist_ok=True)\nwith dst.open('xb') as f: f.write(raw)\nfinding=json.loads((out/'SOURCE-MISMATCH-additional.json').read_text())\nfinding.update({'id':'SOURCE-ARTIFACT-NOT-IN-BASE','sha256_observed':hashlib.sha256(raw).hexdigest(),'bytes_observed':len(raw),'git_blob':None,'snapshot_path':dst.relative_to(out).as_posix(),'used_as_authority':False,'resolution':'No BASE artifact replay; no baseline update; independent acceptance must resolve provenance if replay is desired.'})\nwith (out/'findings.json').open('x') as f: json.dump([finding],f,indent=2); f.write('\\n')\nurl='https://iuuk.mff.cuni.cz/~rakdver/barevnost/gallai.pdf'; raw=urllib.request.urlopen(url,timeout=40).read(); dst=out/'frozen/external/gallai.pdf'; dst.parent.mkdir(parents=True,exist_ok=True)\nwith dst.open('xb') as f: f.write(raw)\nexternal=[{'path':dst.relative_to(out).as_posix(),'source_url':url,'git_blob':None,'authority_kind':'External theorem lecture notes, separate from BASE','sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),'retrieved_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'used_sections':'Lemma 7 and Theorem 10; PDF pages 5 and 6'}]\nwith (out/'inputs.json').open('x') as f: json.dump({'task_id':'N45-S-LONG-S-DIRECT','base':base,'head_at_freeze':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'inputs':inputs,'external_inputs':external,'rejected_input_findings':['SOURCE-ARTIFACT-NOT-IN-BASE'],'baseline_updated':False},f,indent=2); f.write('\\n')\nprint(json.dumps({'base_inputs':len(inputs),'external_inputs':len(external),'rejected_nonbase_artifacts':1,'baseline_updated':False}))\nPY",
+  "initial": {
+    "chunk_id": "2323b5",
+    "wall_time_seconds": 1.001159627,
+    "session_id": 8979,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "completion": {
+    "chunk_id": "b190d4",
+    "wall_time_seconds": 0.000008385,
+    "exit_code": 0,
+    "original_token_count": 26,
+    "output": "{\"base_inputs\": 18, \"external_inputs\": 1, \"rejected_nonbase_artifacts\": 1, \"baseline_updated\": false}\n"
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "capture_limitations": [
+    "initial direct-agent help/smoke tool calls retained exact merged output; separate native stdout/stderr were unavailable"
+  ],
+  "collector_native_log": "logs/build-checks.*",
+  "commands": [
+    {
+      "actual_exit": 0,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/bootstrap.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "bootstrap",
+      "result": "logs/bootstrap.result.json",
+      "stderr": "logs/bootstrap.stderr",
+      "stdout": "logs/bootstrap.stdout"
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/check-no-B.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "check-no-B",
+      "result": "logs/check-no-B.result.json",
+      "stderr": "logs/check-no-B.stderr",
+      "stdout": "logs/check-no-B.stdout"
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/check-normal.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "check-normal",
+      "result": "logs/check-normal.result.json",
+      "stderr": "logs/check-normal.stderr",
+      "stdout": "logs/check-normal.stdout"
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/check-seed17.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "check-seed17",
+      "result": "logs/check-seed17.result.json",
+      "stderr": "logs/check-seed17.stderr",
+      "stdout": "logs/check-seed17.stdout"
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/custody-after.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "custody-after",
+      "result": "logs/custody-after.result.json",
+      "stderr": "logs/custody-after.stderr",
+      "stdout": "logs/custody-after.stdout"
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/custody-before.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "custody-before",
+      "result": "logs/custody-before.result.json",
+      "stderr": "logs/custody-before.stderr",
+      "stdout": "logs/custody-before.stdout"
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/custody-certificate-after.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "custody-certificate-after",
+      "result": "logs/custody-certificate-after.result.json",
+      "stderr": "logs/custody-certificate-after.stderr",
+      "stdout": "logs/custody-certificate-after.stdout"
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/custody-certificate-before.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "custody-certificate-before",
+      "result": "logs/custody-certificate-before.result.json",
+      "stderr": "logs/custody-certificate-before.stderr",
+      "stdout": "logs/custody-certificate-before.stdout"
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "tool_call",
+      "command": "logs/direct-agent-help.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": "logs/direct-agent-help.merged-output",
+      "name": "direct-agent-help",
+      "result": "logs/direct-agent-help.result.json",
+      "stderr": null,
+      "stdout": null
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "tool_call",
+      "command": "logs/direct-agent-smoke.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": "logs/direct-agent-smoke.merged-output",
+      "name": "direct-agent-smoke",
+      "result": "logs/direct-agent-smoke.result.json",
+      "stderr": null,
+      "stdout": null
+    },
+    {
+      "actual_exit": 1,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/direct-negative-branch.command.json",
+      "expected_exit": 1,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "direct-negative-branch",
+      "result": "logs/direct-negative-branch.result.json",
+      "stderr": "logs/direct-negative-branch.stderr",
+      "stdout": "logs/direct-negative-branch.stdout"
+    },
+    {
+      "actual_exit": 1,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/direct-negative-empty.command.json",
+      "expected_exit": 1,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "direct-negative-empty",
+      "result": "logs/direct-negative-empty.result.json",
+      "stderr": "logs/direct-negative-empty.stderr",
+      "stdout": "logs/direct-negative-empty.stdout"
+    },
+    {
+      "actual_exit": 1,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/direct-negative-r.command.json",
+      "expected_exit": 1,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "direct-negative-r",
+      "result": "logs/direct-negative-r.result.json",
+      "stderr": "logs/direct-negative-r.stderr",
+      "stdout": "logs/direct-negative-r.stdout"
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/direct-normal.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "direct-normal",
+      "result": "logs/direct-normal.result.json",
+      "stderr": "logs/direct-normal.stderr",
+      "stdout": "logs/direct-normal.stdout"
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/direct-seed17.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "direct-seed17",
+      "result": "logs/direct-seed17.result.json",
+      "stderr": "logs/direct-seed17.stderr",
+      "stdout": "logs/direct-seed17.stdout"
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/dispatch-replay.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "dispatch-replay",
+      "result": "logs/dispatch-replay.result.json",
+      "stderr": "logs/dispatch-replay.stderr",
+      "stdout": "logs/dispatch-replay.stdout"
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/generate-negatives.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "generate-negatives",
+      "result": "logs/generate-negatives.result.json",
+      "stderr": "logs/generate-negatives.stderr",
+      "stdout": "logs/generate-negatives.stdout"
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/generate.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "generate",
+      "result": "logs/generate.result.json",
+      "stderr": "logs/generate.stderr",
+      "stdout": "logs/generate.stdout"
+    },
+    {
+      "actual_exit": 0,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/metadata.command.json",
+      "expected_exit": 0,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "metadata",
+      "result": "logs/metadata.result.json",
+      "stderr": "logs/metadata.stderr",
+      "stdout": "logs/metadata.stdout"
+    },
+    {
+      "actual_exit": 128,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/missing-0.command.json",
+      "expected_exit": 128,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "missing-0",
+      "result": "logs/missing-0.result.json",
+      "stderr": "logs/missing-0.stderr",
+      "stdout": "logs/missing-0.stdout"
+    },
+    {
+      "actual_exit": 128,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/missing-1.command.json",
+      "expected_exit": 128,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "missing-1",
+      "result": "logs/missing-1.result.json",
+      "stderr": "logs/missing-1.stderr",
+      "stdout": "logs/missing-1.stdout"
+    },
+    {
+      "actual_exit": 1,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/negative-branch.command.json",
+      "expected_exit": 1,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "negative-branch",
+      "result": "logs/negative-branch.result.json",
+      "stderr": "logs/negative-branch.stderr",
+      "stdout": "logs/negative-branch.stdout"
+    },
+    {
+      "actual_exit": 1,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/negative-empty.command.json",
+      "expected_exit": 1,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "negative-empty",
+      "result": "logs/negative-empty.result.json",
+      "stderr": "logs/negative-empty.stderr",
+      "stdout": "logs/negative-empty.stdout"
+    },
+    {
+      "actual_exit": 1,
+      "capture_method": "native subprocess split streams",
+      "command": "logs/negative-r.command.json",
+      "expected_exit": 1,
+      "expected_result_observed": true,
+      "merged_output": null,
+      "name": "negative-r",
+      "result": "logs/negative-r.result.json",
+      "stderr": "logs/negative-r.stderr",
+      "stdout": "logs/negative-r.stdout"
+    }
+  ],
+  "final_native_log": "logs/seal-final.* (captured after collector; included in delivery manifest)",
+  "negative_certificates_preserved": true,
+  "normal_seed17": [
+    {
+      "normal": "check-normal",
+      "seed17": "check-seed17",
+      "streams": {
+        "stderr": {
+          "byte_equal": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "byte_equal": true,
+          "sha256": "b814fcb29d8673614aab2aa22640a75edc070b20d3f06745d8f326a378f2883f"
+        }
+      }
+    },
+    {
+      "normal": "direct-normal",
+      "seed17": "direct-seed17",
+      "streams": {
+        "stderr": {
+          "byte_equal": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "byte_equal": true,
+          "sha256": "76ce9c01d57aa682198e08d5ce6a2474a383519d73a0c35bf138844d12111e32"
+        }
+      }
+    }
+  ],
+  "old_controls_reexecuted": false,
+  "status": "待獨立驗收",
+  "target_source": {
+    "executed": false,
+    "status": "not triggered",
+    "trigger_count": null
+  },
+  "task_id": "N45-S-LONG-S-BLOCK-TRANSFER"
+}

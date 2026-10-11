@@ -1,0 +1,95 @@
+{
+  "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+  "checks_pass": true,
+  "corrupt_certificate_expected_stage": true,
+  "guarded_distinct_original_files": 891,
+  "immutable_inputs": 49,
+  "normal_seed17_stdout_stderr_byte_equal": true,
+  "old_B_payload": 846,
+  "original_tree_and_guarded_inputs_zero_drift": true,
+  "reviewed_delivery": {
+    "bytes": 10976,
+    "sha256": "2af82d9afdeaa5509dd211a8c6a64b84520dc379efce9fdd48f84832619d2898"
+  },
+  "runs": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t1-rfibre/calibrate.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 0,
+      "expected_exit": 0,
+      "expected_exit_observed": true,
+      "name": "normal",
+      "stderr": "logs/normal.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/normal.stdout.log",
+      "stdout_sha256": "d415874c18f8677ffee4140eb9caffc81edee9635285d016b66e52537450ed01"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t1-rfibre/calibrate.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "expected_exit_observed": true,
+      "name": "seed17",
+      "stderr": "logs/seed17.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/seed17.stdout.log",
+      "stdout_sha256": "d415874c18f8677ffee4140eb9caffc81edee9635285d016b66e52537450ed01"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t1-rfibre/calibrate.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t1-rfibre/negative-corrupt-certificate.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 1,
+      "expected_exit": 1,
+      "expected_exit_observed": true,
+      "name": "corrupt-certificate",
+      "stderr": "logs/corrupt-certificate.stderr.log",
+      "stderr_sha256": "efb156e4107715001e569d020a86293396f79bb0eed2f84cc7bac5cdb0c85dbe",
+      "stdout": "logs/corrupt-certificate.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t1-rfibre/validate.py",
+        "--contents",
+        "--manifest"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 0,
+      "expected_exit": 0,
+      "expected_exit_observed": true,
+      "name": "contents-manifest",
+      "stderr": "logs/contents-manifest.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/contents-manifest.stdout.log",
+      "stdout_sha256": "78cb1213c5811b6f75bde9f59e7b0b30bb2b8296f9c9d6c36b9f4140dfec34d4"
+    }
+  ],
+  "scope": "bounded palettes and named minor skeletons, no target source",
+  "utility_use": "root native capture helper only; no same-wave mathematical result used"
+}

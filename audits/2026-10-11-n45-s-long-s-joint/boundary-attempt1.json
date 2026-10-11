@@ -1,0 +1,11 @@
+{
+  "cause": "other dispatch tasks have concurrent untracked directories; their contents/results not read",
+  "commands": [
+    "logs/tracked-diff.command.json",
+    "logs/final-git-status.command.json"
+  ],
+  "exit": 1,
+  "failed_condition": "all workspace untracked paths belong to this task",
+  "outside_untracked_path_count": 486,
+  "resolution": "preserve original logs; scope boundary checks to own writes and existing tracked inputs; no external directory mutation"
+}

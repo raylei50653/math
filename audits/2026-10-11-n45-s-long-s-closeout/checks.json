@@ -1,0 +1,330 @@
+{
+  "commands": {
+    "D-seal": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/seal_review.py",
+        "--directory",
+        "audits/2026-10-11-n45-s-long-s-block-transfer-review",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.039,
+      "exit_code": 0,
+      "streams": {
+        "stderr.log": {
+          "bytes": 0,
+          "path": "logs/D-seal.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 150,
+          "path": "logs/D-seal.stdout.log",
+          "sha256": "9da3fc165e49d65f388e04da3b1514eb464c3d8ca57332302329170e59608e96"
+        }
+      }
+    },
+    "diff-check": {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.016,
+      "exit_code": 0,
+      "streams": {
+        "stderr.log": {
+          "bytes": 0,
+          "path": "logs/diff-check.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 0,
+          "path": "logs/diff-check.stdout.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    "diff-complete": {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.009,
+      "exit_code": 0,
+      "streams": {
+        "stderr.log": {
+          "bytes": 0,
+          "path": "logs/diff-complete.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 0,
+          "path": "logs/diff-complete.stdout.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    "docs": {
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.786,
+      "exit_code": 1,
+      "streams": {
+        "stderr.log": {
+          "bytes": 0,
+          "path": "logs/docs.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 179,
+          "path": "logs/docs.stdout.log",
+          "sha256": "1fb6ea47a2b218382e4d4712830591ef3175063009782b3a42aced3a61c9f056"
+        }
+      }
+    },
+    "docs-complete": {
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.59,
+      "exit_code": 0,
+      "streams": {
+        "stderr.log": {
+          "bytes": 0,
+          "path": "logs/docs-complete.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 74,
+          "path": "logs/docs-complete.stdout.log",
+          "sha256": "61e4400e89f7a53c3a6008ff29eae675b63e8dbfcf8b1a16b3d20ae62c5f437d"
+        }
+      }
+    },
+    "docs-final": {
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.573,
+      "exit_code": 0,
+      "streams": {
+        "stderr.log": {
+          "bytes": 0,
+          "path": "logs/docs-final.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 74,
+          "path": "logs/docs-final.stdout.log",
+          "sha256": "61e4400e89f7a53c3a6008ff29eae675b63e8dbfcf8b1a16b3d20ae62c5f437d"
+        }
+      }
+    },
+    "formal-docgraph": {
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.107,
+      "exit_code": 0,
+      "streams": {
+        "stderr.log": {
+          "bytes": 0,
+          "path": "logs/formal-docgraph.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 63,
+          "path": "logs/formal-docgraph.stdout.log",
+          "sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb"
+        }
+      }
+    },
+    "guard": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n45-s-long-s-closeout/verify.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.233,
+      "exit_code": 0,
+      "streams": {
+        "stderr.log": {
+          "bytes": 0,
+          "path": "logs/guard.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 293,
+          "path": "logs/guard.stdout.log",
+          "sha256": "26e54f62c4bc9afbb9371db140e8dd34f9a993de4816dc2c698a22c107a04134"
+        }
+      }
+    },
+    "lake-build": {
+      "argv": [
+        "lake",
+        "build"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 9.654,
+      "exit_code": 0,
+      "streams": {
+        "stderr.log": {
+          "bytes": 0,
+          "path": "logs/lake-build.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 7494,
+          "path": "logs/lake-build.stdout.log",
+          "sha256": "2103291d39ceb734f800128950d507eded343e0e0678cc7e96414c1cc372b250"
+        }
+      }
+    },
+    "q0-seal": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/seal_review.py",
+        "--directory",
+        "audits/2026-10-11-n45-s-long-s-t2-q0-restore-review",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.039,
+      "exit_code": 0,
+      "streams": {
+        "stderr.log": {
+          "bytes": 0,
+          "path": "logs/q0-seal.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 150,
+          "path": "logs/q0-seal.stdout.log",
+          "sha256": "c14e51128162328ce01d39d629f7424d278e5d7862799fe27de6f45e45cfcb2a"
+        }
+      }
+    },
+    "q2-seal": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/seal_review.py",
+        "--directory",
+        "audits/2026-10-11-n45-s-long-s-t2-q2-restore-review",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.039,
+      "exit_code": 0,
+      "streams": {
+        "stderr.log": {
+          "bytes": 0,
+          "path": "logs/q2-seal.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 150,
+          "path": "logs/q2-seal.stdout.log",
+          "sha256": "139203f1fb773085b1bfd30885e5a597b928f413bb723713b8665663148af9b8"
+        }
+      }
+    },
+    "t1-seal": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/seal_review.py",
+        "--directory",
+        "audits/2026-10-11-n45-s-long-s-t1-rfibre-review",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 0.043,
+      "exit_code": 0,
+      "streams": {
+        "stderr.log": {
+          "bytes": 0,
+          "path": "logs/t1-seal.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 150,
+          "path": "logs/t1-seal.stdout.log",
+          "sha256": "64b702737cfc0e6e03282e7494701e9c66cb6a00330390d661a1f3e104e30df4"
+        }
+      }
+    },
+    "whole-docgraph": {
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "elapsed_seconds": 6.399,
+      "exit_code": 1,
+      "streams": {
+        "stderr.log": {
+          "bytes": 78653,
+          "path": "logs/whole-docgraph.stderr.log",
+          "sha256": "147c33ba20cae12ee39c2152697b2203b6d36cb4ac2d0e904755149b84b1e211"
+        },
+        "stdout.log": {
+          "bytes": 66,
+          "path": "logs/whole-docgraph.stdout.log",
+          "sha256": "3b55401c56babce0efbd6b1c4c480eea52dc0ff51ae277d0c4c218d81b59afa2"
+        }
+      }
+    }
+  },
+  "new_Lean_theorem_established": false,
+  "omitted": [
+    "historical live-shared-pins worker checks",
+    "old 19 controls",
+    "dependent finite replay with missing BASE blobs"
+  ],
+  "retained_failures": {
+    "docs": "checks.json link target did not yet exist; later docs-final passed",
+    "whole-docgraph": {
+      "errors": 62,
+      "exit": 1,
+      "kind": "duplicate-id",
+      "origin": "preserved audits and scratch snapshots"
+    }
+  },
+  "status": "required scoped closeout checks pass; historical whole-worktree duplicate IDs retained",
+  "successes": [
+    "t1-seal",
+    "q0-seal",
+    "q2-seal",
+    "D-seal",
+    "guard",
+    "formal-docgraph",
+    "lake-build",
+    "diff-check",
+    "docs-final",
+    "docs-complete",
+    "diff-complete"
+  ]
+}

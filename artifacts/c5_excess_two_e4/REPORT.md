@@ -1,5 +1,14 @@
 # 任務 E4：猜想 E 的 ε=2 層，非相鄰雙 degree-5 roots
 
+**後續（2026-10-11，N45-S-LONG-S限定採納）。**
+[N45§2.10](../../docs/c5_excess_two_nonadjacent_unit_core45.md#210-n45-s-long-s完整-cu-與原-r-fibre-恢復的限定覆蓋)
+在完整K1–K12、保原U／long／short、只刪原spoke且X=M自身同β minimal內排除U在s身份。
+四direct profiles及餘兩profiles的singleton／pair splits化約，加原4及本輪3／7／14個schedules
+的完整原r-fibre恢復或retained K₅，給全部28必要schedules的限定覆蓋；與已採U在r分支合成。
+採納保SF-QX/E2紙面／歷史finite-terminal與各自Gallai等信任界，coverage更正以新副本保存。
+無U的long／兩long、其他省略／core、原55、無45／54來源及一般N2／E仍OPEN。
+沒有新target來源或Lean；本頁原三列量詞、有日期正文、證書與歷史FAIL保留。
+
 **後續（2026-10-10，HIGH2／HIGH3及限定兩short S覆蓋採納）。**
 [本輪監督驗收](../../audits/2026-10-10-n45-high23-supervision/REPORT.md)
 在[N45各自完整契約](../../docs/c5_excess_two_nonadjacent_unit_core45.md)內排除HIGH2／HIGH3。

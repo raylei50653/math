@@ -1,0 +1,7 @@
+{
+  "capture_method": "tool_call",
+  "tool": "exec_command",
+  "cmd": "python3 -B - <<'PY'\nimport importlib.util\nfrom pathlib import Path\np=Path('audits/2026-10-11-n45-s-long-s-block-transfer/direct_enumerator.py')\nspec=importlib.util.spec_from_file_location('direct_only',p)\nm=importlib.util.module_from_spec(spec)\nspec.loader.exec_module(m)\ncert=m.enumerate_certificate(p.with_name('cases.json').read_bytes())\nprint({'valid_cases':[c['case_id'] for c in cert['cases']], 'failed_cases':cert['failed_cases'], 'row_assignment_counts':{c['case_id']:[len(r['assignments']) for r in c['rows']] for c in cert['cases']}})\nPY",
+  "workdir": "/home/ray/developer/ai/math",
+  "max_output_tokens": 2000
+}

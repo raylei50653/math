@@ -1,0 +1,11 @@
+{
+  "original_native_command": [
+    "/bin/zsh",
+    "-lc",
+    "python3 -B - <<'PY'\nfrom pathlib import Path\np=Path('audits/2026-10-11-n45-s-long-s-block-transfer/transfer-proof.md')\ns=p.read_text()\nassert '待獨立驗收' in s\nassert s.count('$$')==0\nassert s.count('\\\\[')==s.count('\\\\]')\nassert '12+4+10+4' in s\nassert 'SF-T2-Q0-Q1-RESTORED' in s\nprint({'bytes':p.stat().st_size,'lines':len(s.splitlines()),'math_blocks':s.count('\\\\['),'status':'proof text checks passed'})\nPY"
+  ],
+  "cwd": "file:///home/ray/developer/ai/math",
+  "recorded_command_event_id": "exec-5e169b47-1ee0-4bc7-b1dd-137aa98d6b88",
+  "executed_before_log_preservation": true,
+  "reexecuted_for_preservation": false
+}

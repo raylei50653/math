@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-10（HIGH2／HIGH3與限定兩short S覆蓋採納）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-11（完整U／long／short契約的U在s分支限定採納）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -269,9 +269,15 @@
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
-| [N45：N2原unit省略45／54權威入口](c5_excess_two_nonadjacent_unit_core45.md) | 指定整U省略X=M及精確兩short S身份已全排；含long選定U在r身份由§2.9排除；U在s及其餘long／其他cores／原55／一般N2／E仍OPEN，HIGH2三色γ量詞finding保留 |
+| [N45：N2原unit省略45／54權威入口](c5_excess_two_nonadjacent_unit_core45.md) | 指定整U省略及兩short S已全排；完整K1–K12 U／long／short、只刪spoke且X=M自身同β minimal身份由§2.9／2.10限定排除；無U的long／兩long、其他cores／原55／一般N2／E仍OPEN，QX信任鏈與HIGH2 finding保留 |
 | [N45-S含long契約／必要化約](../audits/2026-10-10-n45-s-long-contract/REPORT.md) | 精確保留U/L/S、只刪spoke且X=M自己minimal；pair／singleton盾費、X full B-touch／無U側≤2spokes、十列全pins及恢復e；19圖full-lift校準，目標not triggered，未作來源全排或新Lean |
-| [N45-S-LONG-R：完整U在r的sole C映射](../audits/2026-10-10-n45-s-long-r-map/REPORT.md) | 精確X=M契約內pair／singleton皆排除；X自己的witnesses給F，t_s=0/1/2接BASE(5)/(4)/(3)；26省略／260列完整r fibres只校準，來源not triggered；U在s及其他long身份OPEN，無新Lean |
+| [N45-S-LONG-R：完整U在r的sole C映射](../audits/2026-10-10-n45-s-long-r-map/REPORT.md) | 精確X=M契約內pair／singleton皆排除；X自己的witnesses給F，t_s=0/1/2接BASE(5)/(4)/(3)；26省略／260列完整r fibres只校準，來源not triggered；U在s後續限定採納見下，無U等其他long身份OPEN |
+| [N45-S-LONG-S：DIRECT／FIBRE採納及更正](../audits/2026-10-11-n45-s-long-s-review/REPORT.md) | 四direct profiles任意大小排除、餘兩profile singleton／pair13／31排除；FIBRE分類12+4+10+4及恢復依賴更正；當輪24 schedules後由q0／q2／T1全排，原bytes保留 |
+| [N45-S-LONG-S-JOINT獨立有限驗收](../audits/2026-10-11-n45-s-long-s-joint-review/REPORT.md) | 固定19圖／21原省略／210列／3,360pins完整lift鏈逐項相等；target source／private covering均not triggered，不供給來源排除 |
+| [N45-S-LONG-S-T1獨立驗收及整合](../audits/2026-10-11-n45-s-long-s-t1-rfibre-review/REPORT.md) | 全14 schedules／28 spoke queries限定任意大小排除，含T1-P22；βq3原r≠2完整恢復、βq4 retained K₅；採納overlay補352 X／780 G空欄位，raw28整合剩0，無新來源／Lean或一般closure |
+| [N45-S-LONG-S-T2-q0獨立驗收](../audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/REPORT.md) | 933/0234、941/023、941/024三份限定排除；q2完整lift聯集非空且每份恢復rb4；保SF-QX/E2 paper及未重播finite-terminal信任鏈，缺BASE blob finding保留 |
+| [N45-S-LONG-S-T2-q2獨立驗收](../audits/2026-10-11-n45-s-long-s-t2-q2-restore-review/REPORT.md) | 七份schedules由同源完整L_X(q3;0,3)／L_X(q4;0,3)非空恢復排除；新存在性為直接紙面構造，採納overlay補112 X空cells，原coverage不動 |
+| [N45-S-LONG-S-D完整transfer獨立驗收](../audits/2026-10-11-n45-s-long-s-block-transfer-review/REPORT.md) | 任意大小assignment recurrence／preimages／空fibres及rb4 filter採納；四microcases 1,344原邊assignments獨立相等；D新來源排除0，歷史24／38 ledger及失敗case保留，一般Δ非空引理OPEN |
 | [N45-S-HIGH1交付](../audits/2026-10-10-n45-s-high1/REPORT.md)、[H1A紙面](../audits/2026-10-10-n45-h1a/REPORT.md)、[H1R原圖／完整關係](../audits/2026-10-10-n45-h1r/REPORT.md) | 十claims在全部H1–H13內的任意大小排除已採納；原G K₃,₃／原U盾support／同列未用D完整G lifts成立；BASE／Gallai明列，無新有限來源或Lean |
 | [H1C封存](../audits/2026-10-10-n45-h1c/REPORT.md)、[HIGH1監督採納](../audits/2026-10-10-n45-high1-supervision/REPORT.md) | worker91payload／3exact metadata、34frozen inputs／九pins／十二commands核回；三完整稽核父端normal／seed17各同bytes；wrong-artifact negatives命中，歷史及62duplicate-ID FAIL保留，H1C不裁paper |
 | [HIGH1採納與HIGH2任務](history/2026-10-10-n45-high1-adoption.md) | 保當轮HIGH1採納／HIGH2八pins及完整派工；HIGH2／HIGH3後續已限定採納並核兩short覆蓋，見最新紀錄；歷史正文不改 |
@@ -452,6 +458,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 - [2026-10-10：N45-U-LP採納與N45-U-SS發布文本](history/2026-10-10-n45-lp-adoption.md)；原SS任務／pins保留發布時語境，後續已獨立採納
 - [2026-10-10：N45完整證據整理發布](history/2026-10-10-n45-progress-publish.md)；完整原bytes封存、commit後ancestry重播，研究scope及原FAIL保留
 - [2026-10-10：N45-S含long契約與U在r限定排除發布](history/2026-10-10-n45-s-long-publish.md)；兩交付原payload保留、三證書封存，U在s及其餘long身份OPEN
+- [2026-10-11：N45-S-LONG-S限定採納與收尾](history/2026-10-11-n45-s-long-s-adoption.md)；本輪24 schedules／38 spoke queries全驗收、raw28剩0；更正overlay及信任邊界保留，無U等父題缺口仍OPEN；使用者後續授權commit＋push，封存重播見發布紀錄
 - [2026-10-10：HIGH2／HIGH3採納、量詞finding與限定兩short覆蓋](history/2026-10-10-n45-high23-adoption.md)；六獨立稽核與父端驗收，停止L2
 - [2026-10-10：HIGH1限定採納與HIGH2任務](history/2026-10-10-n45-high1-adoption.md)；原派工／pins保當輪語境，後續採納見上列最新紀錄
 - [2026-10-10：LOW2、限定LOW採納與HIGH1任務](history/2026-10-10-n45-low2-adoption.md)；三份獨立稽核及覆蓋已驗收；原HIGH1任務保留當輪日期語境，後續HIGH1已限定採納

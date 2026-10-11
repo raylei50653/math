@@ -1,0 +1,493 @@
+{
+  "adoption_layer": "fresh audit review only",
+  "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+  "blocking_findings": [],
+  "checks": {
+    "independent_algebra": {
+      "S4_permutations_checked_per_transport": 24,
+      "column_cases": 3,
+      "coverage_pins": 480,
+      "coverage_rows": 30,
+      "coverage_schedules": 3,
+      "diagonal_positions": 120,
+      "pin_maps": 32,
+      "q2_collectively_nonempty_pool_positions": 9,
+      "q2_necessarily_empty_positions": 39,
+      "support_transports": 2,
+      "survivors": 2
+    },
+    "independent_custody": {
+      "dispatch_metadata_pins": 3,
+      "input_authorities": {
+        "BASE_blobs": 12,
+        "sealed_physical_audits": 11
+      },
+      "payload_bytes": 1665969,
+      "payload_files": 76,
+      "recorded_custody_files": 60,
+      "root_guarded_authority_union": 63,
+      "target_files": 77
+    },
+    "independent_native_records": [
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/independent-algebra.py"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "environment_override": {},
+        "exit": 0,
+        "expected_exit": 0,
+        "expected_exit_observed": true,
+        "name": "independent-algebra",
+        "stderr": "logs/independent-algebra.stderr.log",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "logs/independent-algebra.stdout.log",
+        "stdout_sha256": "ebae5e602b9b1b1dce3915cd84713a3053657aefebbfab50e88c8fbab278617a"
+      },
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/independent-custody.py"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "environment_override": {},
+        "exit": 0,
+        "expected_exit": 0,
+        "expected_exit_observed": true,
+        "name": "independent-custody",
+        "stderr": "logs/independent-custody.stderr.log",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "logs/independent-custody.stdout.log",
+        "stdout_sha256": "53d3c4403dcc582b4de3edb47088023440e2317c20059668af686979451a0532"
+      }
+    ],
+    "worker_readonly_native": {
+      "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+      "checks_pass": true,
+      "custody_drift": {
+        "authority_and_old_certificate_files": false,
+        "head": false,
+        "target_tree": false,
+        "tracked_diff": false
+      },
+      "guarded_authority_union": 63,
+      "negative_rejection_stages": {
+        "bad-q2-column": true,
+        "missing-diagonal": true
+      },
+      "normal_seed17_stdout_stderr_byte_equal": true,
+      "recorded_target_custody_files": 60,
+      "reviewed_delivery_sha256": "920a7161ac5c758dea78c45b9360eb00f81bc6f91ea0c39b45e09723e026b349",
+      "runs": [
+        {
+          "argv": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q0-restore/audit.py",
+            "check"
+          ],
+          "cwd": "/home/ray/developer/ai/math",
+          "environment_override": {},
+          "exit": 0,
+          "expected_exit": 0,
+          "expected_exit_observed": true,
+          "name": "normal",
+          "stderr": "logs/normal.stderr.log",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout": "logs/normal.stdout.log",
+          "stdout_sha256": "f3d77fb17c5aa4fedbd88d16a48543a3a9116c695cee654204726d55e066b292"
+        },
+        {
+          "argv": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q0-restore/audit.py",
+            "check"
+          ],
+          "cwd": "/home/ray/developer/ai/math",
+          "environment_override": {
+            "PYTHONHASHSEED": "17"
+          },
+          "exit": 0,
+          "expected_exit": 0,
+          "expected_exit_observed": true,
+          "name": "seed17",
+          "stderr": "logs/seed17.stderr.log",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout": "logs/seed17.stdout.log",
+          "stdout_sha256": "f3d77fb17c5aa4fedbd88d16a48543a3a9116c695cee654204726d55e066b292"
+        },
+        {
+          "argv": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q0-restore/audit.py",
+            "check",
+            "--certificate",
+            "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q0-restore/negative-controls/bad-q2-column.json"
+          ],
+          "cwd": "/home/ray/developer/ai/math",
+          "environment_override": {},
+          "exit": 1,
+          "expected_exit": 1,
+          "expected_exit_observed": true,
+          "name": "bad-q2-column",
+          "stderr": "logs/bad-q2-column.stderr.log",
+          "stderr_sha256": "63f55d03ce46fe64ef4dabccba63ff1d7e2132c4668e58199160a3bee3daa41a",
+          "stdout": "logs/bad-q2-column.stdout.log",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q0-restore/audit.py",
+            "check",
+            "--coverage",
+            "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q0-restore/negative-controls/missing-diagonal.json"
+          ],
+          "cwd": "/home/ray/developer/ai/math",
+          "environment_override": {},
+          "exit": 1,
+          "expected_exit": 1,
+          "expected_exit_observed": true,
+          "name": "missing-diagonal",
+          "stderr": "logs/missing-diagonal.stderr.log",
+          "stderr_sha256": "afa3520f8e1dc0b7efa8f2a8f0170a2c0342dfb5afd41cc9bf614806e0c4e417",
+          "stdout": "logs/missing-diagonal.stdout.log",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q0-restore/audit.py",
+            "verify-delivery"
+          ],
+          "cwd": "/home/ray/developer/ai/math",
+          "environment_override": {},
+          "exit": 0,
+          "expected_exit": 0,
+          "expected_exit_observed": true,
+          "name": "delivery",
+          "stderr": "logs/delivery.stderr.log",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout": "logs/delivery.stdout.log",
+          "stdout_sha256": "235df13dd9fb6d3b7afdc655914fd075f1f685103dd6093462f343d306219306"
+        }
+      ],
+      "scope": "bounded metadata/algebra calibration only; no target source validation"
+    }
+  },
+  "claims": [
+    {
+      "conclusion": "s=3; complete U preimage avoiding 3 is nonempty; U fibres coincide across these rows",
+      "evidence": [
+        "paper-review.md",
+        "algebra-review.md",
+        "checks.json"
+      ],
+      "id": "T2Q0-S3",
+      "new_source_execution": false,
+      "quantifier": "For every assigned-contract source and eta in {beta,q1,q2}, every full X(eta) lift",
+      "verdict": "accepted under complete assigned K1-K12 contract"
+    },
+    {
+      "conclusion": "D_L(beta;3) disjoint-union D_S(beta;3)=Col, both size 2, and 3 not in D_S(beta;3)",
+      "evidence": [
+        "paper-review.md",
+        "algebra-review.md",
+        "checks.json"
+      ],
+      "id": "T2Q0-BETA-PARTITION",
+      "new_source_execution": false,
+      "quantifier": "For every assigned-contract source, at the original beta / s=3 pin",
+      "verdict": "accepted under complete assigned K1-K12 contract"
+    },
+    {
+      "conclusion": "pi01 maps Lambda_L(beta;a,b) bijectively to Lambda_L(q1;pi01(a),pi01(b)); at b=3 the forbidden r column maps by pi01",
+      "evidence": [
+        "paper-review.md",
+        "algebra-review.md",
+        "checks.json"
+      ],
+      "id": "T2Q0-L-Q1-TRANSPORT",
+      "new_source_execution": false,
+      "quantifier": "For every original full L assignment and every ordered (a,b) pin",
+      "verdict": "accepted under complete assigned K1-K12 contract"
+    },
+    {
+      "conclusion": "2 is in D_S(beta;3), so Lambda_S(beta;2,3) is empty",
+      "evidence": [
+        "paper-review.md",
+        "algebra-review.md",
+        "checks.json"
+      ],
+      "id": "T2Q0-S2-FORCED",
+      "new_source_execution": false,
+      "quantifier": "For every source satisfying all assigned premises",
+      "verdict": "accepted under complete assigned K1-K12 contract"
+    },
+    {
+      "conclusion": "pi12 maps Lambda_S(beta;a,b) bijectively to Lambda_S(q2;pi12(a),pi12(b)); beta(2,3) maps to q2(1,3)",
+      "evidence": [
+        "paper-review.md",
+        "algebra-review.md",
+        "checks.json"
+      ],
+      "id": "T2Q0-S-Q2-TRANSPORT",
+      "new_source_execution": false,
+      "quantifier": "For every original full S assignment and every ordered (a,b) pin",
+      "verdict": "accepted under complete assigned K1-K12 contract"
+    },
+    {
+      "conclusion": "L_X(q2;1,b) is empty; all q2 lifts have s=3",
+      "evidence": [
+        "paper-review.md",
+        "algebra-review.md",
+        "checks.json"
+      ],
+      "id": "T2Q0-Q2-EMPTY1",
+      "new_source_execution": false,
+      "quantifier": "For every assigned-contract source and every b in Col",
+      "verdict": "accepted under complete assigned K1-K12 contract"
+    },
+    {
+      "conclusion": "has r != 1 and is a complete G(q2) lift; the full q2 X and G lift sets coincide",
+      "evidence": [
+        "paper-review.md",
+        "algebra-review.md",
+        "checks.json"
+      ],
+      "id": "T2Q0-Q2-RESTORE",
+      "new_source_execution": false,
+      "quantifier": "For every assigned-contract source, there exists a complete q2 X lift; every such lift",
+      "verdict": "accepted under complete assigned K1-K12 contract; q2 existence relative to inherited SF-QX/SF-T2-EXTEND/E2 trust chain"
+    },
+    {
+      "conclusion": "there is a complete restored q2 lift, contradicting original G rejection; no source in the three schedules",
+      "evidence": [
+        "paper-review.md",
+        "algebra-review.md",
+        "checks.json"
+      ],
+      "id": "T2Q0-COVER3",
+      "new_source_execution": false,
+      "quantifier": "For each of the three assigned schedules and every source satisfying all K1-K12 premises",
+      "verdict": "accepted under complete assigned K1-K12 contract"
+    },
+    {
+      "conclusion": "column arithmetic and all sixteen pin maps match proof-calibration.json; assigned coverage has ten rows x sixteen pins per schedule",
+      "evidence": [
+        "paper-review.md",
+        "algebra-review.md",
+        "checks.json"
+      ],
+      "id": "T2Q0-CALIBRATION",
+      "new_source_execution": false,
+      "quantifier": "For every one of the fixed three abstract column cases and two literal support transports",
+      "verdict": "accepted only as bounded abstract interface arithmetic and metadata calibration"
+    }
+  ],
+  "commit_push_PR": false,
+  "contract": {
+    "K": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "L_support": [
+      2,
+      3,
+      4
+    ],
+    "S_may_have_arbitrary_size": true,
+    "S_support": [
+      4,
+      0
+    ],
+    "U_support": [
+      0,
+      1,
+      2
+    ],
+    "X_is_own_beta_minimal_core": true,
+    "beta_q": 0,
+    "original_r_split": [
+      2,
+      2
+    ],
+    "original_s_split": [
+      1,
+      1
+    ],
+    "original_s_spokes": [
+      0,
+      2
+    ],
+    "owner": "s",
+    "retained_r_spokes": [],
+    "t_r": 1,
+    "t_s": 2
+  },
+  "dependent_finite_replay_executed": false,
+  "evidence_layers": {
+    "Lean": "not established",
+    "finite_calibration": "three abstract column cases, two transports, 480 metadata pins; no actual graph assignments",
+    "general_N45_N2_E": "not established",
+    "paper": "three arbitrary-size necessary schedules excluded under assigned contract and inherited dependencies",
+    "source_realizability": "not established",
+    "target_source": {
+      "executed": false,
+      "status": "not triggered",
+      "trigger_count": null
+    }
+  },
+  "extra_BASE_authority": [
+    {
+      "authority": "BASE Git blob",
+      "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+      "bytes": 29448,
+      "frozen_path": "authority/artifacts/c5_excess_two_e4/REPORT.md",
+      "git_blob": "a840a706f91790aa067986b99dc6daa5d5c6c882",
+      "path": "artifacts/c5_excess_two_e4/REPORT.md",
+      "sha256": "5344fffb2c203b10c229b0c317338c484d7486e39917e176da527bd3eeb72471"
+    },
+    {
+      "authority": "BASE Git blob",
+      "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+      "bytes": 29585,
+      "frozen_path": "authority/docs/c5_phase_b_common_lemmas.md",
+      "git_blob": "ae7a63ed2ce766b9ac37c437500ce6548b82ded5",
+      "path": "docs/c5_phase_b_common_lemmas.md",
+      "sha256": "b3622e5078e3fe9e51dcc96ed778b16fbd3b2d30af574adf774c1e4bf4ce5217"
+    },
+    {
+      "authority": "BASE Git blob",
+      "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+      "bytes": 12517,
+      "frozen_path": "authority/docs/c5_short_support_singleton.md",
+      "git_blob": "3719d59ef0514898c16a8c500af046b37dfd661d",
+      "path": "docs/c5_short_support_singleton.md",
+      "sha256": "03f1e76abfae31f08c26b39e6a0fef957520fe073c934d69fe9527f9b0f3f22b"
+    }
+  ],
+  "inherited_trust_boundary": "Accepted review SF-QX retains SF-T2-EXTEND/BASE E2 paper and inherited finite-terminal dependencies; not replayed here",
+  "missing_BASE_findings": [
+    {
+      "exit": 128,
+      "path": "artifacts/c5_no_spoke_exterior/observations.json",
+      "stderr": "fatal: path 'artifacts/c5_no_spoke_exterior/observations.json' exists on disk, but not in 'f2692089ad4259808e27d9b7e882ac09505b180a'",
+      "stdout_bytes": 0
+    },
+    {
+      "exit": 128,
+      "path": "artifacts/c5_single_spoke_residual_locality/observations.json",
+      "stderr": "fatal: path 'artifacts/c5_single_spoke_residual_locality/observations.json' exists on disk, but not in 'f2692089ad4259808e27d9b7e882ac09505b180a'",
+      "stdout_bytes": 0
+    }
+  ],
+  "old_deliveries_modified": false,
+  "required_corrections": [],
+  "restored_row": {
+    "all_full_X_lifts_restore": true,
+    "collective_nonempty_pool": [
+      [
+        0,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "individual_pool_fibre_nonempty_claimed": false,
+    "literal": "01201",
+    "literal_b4_colour": 1,
+    "original_edge": [
+      "r",
+      "b4"
+    ],
+    "q": 2
+  },
+  "reviewed_worker_files": [
+    {
+      "bytes": 13113,
+      "path": "audits/2026-10-11-n45-s-long-s-t2-q0-restore/delivery.json",
+      "sha256": "920a7161ac5c758dea78c45b9360eb00f81bc6f91ea0c39b45e09723e026b349"
+    },
+    {
+      "bytes": 12639,
+      "path": "audits/2026-10-11-n45-s-long-s-t2-q0-restore/REPORT.md",
+      "sha256": "849aeaeffdd71a374599c5cc83c925a26e6460624de3f24d61074bb6a1333ea2"
+    },
+    {
+      "bytes": 13822,
+      "path": "audits/2026-10-11-n45-s-long-s-t2-q0-restore/claims.json",
+      "sha256": "feb0d7305c2f47b033a9aba7d483fa1451226ca52aeec496f6d52b2050c191fa"
+    },
+    {
+      "bytes": 383197,
+      "path": "audits/2026-10-11-n45-s-long-s-t2-q0-restore/coverage.json",
+      "sha256": "e9c10a3e66683f8065dea07b972dfd16ed6e5dcf493e1aac749934e4e088c2be"
+    },
+    {
+      "bytes": 7440,
+      "path": "audits/2026-10-11-n45-s-long-s-t2-q0-restore/proof-calibration.json",
+      "sha256": "5ff3863b078ac3dbd2381c2949cf1755fc2910eada088b5726a2f05c7715016f"
+    }
+  ],
+  "schedules_excluded": [
+    {
+      "QG": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "SigmaG_orbit": 933
+    },
+    {
+      "QG": [
+        0,
+        2,
+        3
+      ],
+      "SigmaG_orbit": 941
+    },
+    {
+      "QG": [
+        0,
+        2,
+        4
+      ],
+      "SigmaG_orbit": 941
+    }
+  ],
+  "scope_exclusions": [
+    "t_s=1",
+    "beta=q2",
+    "other cores",
+    "general U-owner-s exclusion",
+    "individual q3/q4 restoration"
+  ],
+  "shared_documents_updated": false,
+  "status": "accepted within assigned contract",
+  "task_id": "N45-S-LONG-S-T2-Q0-RESTORE-INDEPENDENT-REVIEW"
+}

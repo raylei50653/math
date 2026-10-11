@@ -1,6 +1,8 @@
 # N45：非相鄰 N2 原 unit 省略的 45／54 身份
 
-更新：2026-10-10；研究 BASE `dc8e9aa7d6fccb51f63d30aa3f9c132296d44744`。
+更新：2026-10-11（完整 U／long／short 契約的 U 在 s 分支採納）；
+原研究 BASE `dc8e9aa7d6fccb51f63d30aa3f9c132296d44744`，本輪驗收 BASE
+`f2692089ad4259808e27d9b7e882ac09505b180a`。
 本頁是已採納 N45 結論與目前 residual 的權威入口；完整新論證分別見
 [S 原交付](../audits/2026-10-09-n45-s/REPORT.md)與
 [U 原交付](../audits/2026-10-09-n45-u/REPORT.md)。
@@ -59,7 +61,10 @@ LOW1／LOW2 窮盡 **§1 精確 S 身份的 S-SHORT-U-LOW**，該限定身份已
 HIGH1–HIGH3 窮盡限定 HIGH；與 LOW 合成，**§1 精確 S 身份的兩 short 分支已全排**。
 **N45-S-LONG-R 已排除：** 完整U在降度側r、long L／short S全留、只刪原r-spoke，
 且X=M自身minimal的選定身份；pair／singleton都涵蓋，完整映射見§2.9。
-含long的其餘身份、其他45／54身份、原55、無45／54來源、一般 N2／E及ε≥3均仍 OPEN。
+**N45-S-LONG-S 已限定排除：** 完整K1–K12內，原U在s、long L／short S全留、
+只刪原r-spoke且X=M自身同β minimal的選定身份；六profiles、pair／singleton全覆蓋，見§2.10。
+採納保留原SF-QX／BASE紙面與finite-terminal信任鏈；有限零觸發不承擔排除。
+無U的long／兩long、其他45／54身份、原55、無45／54來源、一般 N2／E及ε≥3均仍 OPEN。
 
 ## 1. 全部共同前提與原身份
 
@@ -341,25 +346,95 @@ t1/t2用retained s-spoke及原boundary tethers給X的K₅。反證在X內，毋�
 這只關 **完整U owner=r、一long L、一short S、只刪原r-spoke、X=M自身minimal**。
 紙面依既有BASE／外部Gallai；26省略的260列／4160根pins及250880 ambient r fibres
 只校準完整介面，拒絕來源not triggered；無新Lean或來源實現。
-U owner=s、無U的long／兩long及其他core／一般N2／E仍OPEN。
+U owner=s的後續限定排除見§2.10；無U的long／兩long及其他core／一般N2／E仍OPEN。
+
+### 2.10 N45-S-LONG-S：完整 C/U 與原 r-fibre 恢復的限定覆蓋
+
+只取[含long同源契約K1–K12](../audits/2026-10-10-n45-s-long-contract/REPORT.md)
+的全部前提，另有原U owner=s。G任意有限大小、ordered induced-C5 disk，完整Σ=933／941
+或整圖共同D5像，非框邊Σ-critical；有效H連通、ε=2、非相鄰原degree5 r/s，
+其餘有效原內點完整degree4。H−{r,s}的實際分量恰為完整原U／long L／short S；
+原one-sided、full B-touch、S真框邊pair或singleton、自由孤立內點的完整因子均保留。
+只刪原e=rb_i，X=G−e=M自己是同一原拒絕literal β的inclusion-minimal(4,5) core。
+保G各非框邊的Σ witnesses與X各retained非框邊的同β witnesses，不能從G遺傳X minimality。
+每份原ordered/shared contact、actual attachment、ownership、rotation、bridge、旁支、
+十literal列／全16pins／diagonal／空fibres／全部tuples、preimages及full lifts均保留。
+
+由原degree5身份m_s+n_U+t_s=5、m_s≥2、n_U≥1，恰有六profiles。
+[DIRECT／FIBRE獨立採納及更正](../audits/2026-10-11-n45-s-long-s-review/REPORT.md)
+先排四profiles及餘兩profiles的singleton／pair(1,3)/(3,1)，不設pieces大小上界：
+
+| 原 (t_s,m_s,n_U) | 採納的任意大小來源矛盾 |
+| --- | --- |
+| (0,4,1)、(0,3,2)、(0,2,3)、(1,3,1) | DIRECT四profile排除，全部允許splits；(2,3)角色交換保持原C身份及完整r fibres |
+| (1,2,2) | FIBRE先排singleton／pair13／pair31；pair22由T1全部14 schedules／28 spoke queries排除 |
+| (2,2,1) | FIBRE先排singleton／pair13／pair31；pair22先由q0→q1排4，再由q0三份與q2七份排除 |
+
+餘pair22在同一整圖色框為U012／L234／S40、e=rb4、r-split(2,2)、s-split(1,1)。
+以下每個target query都作用於全部原vertices與完整preimages，沒有以marginals代替接合。
+
+- [T1獨立驗收](../audits/2026-10-11-n45-s-long-s-t1-rfibre-review/REPORT.md)：
+  β=q4的七份schedules、兩spoke位置各由retained原邊K₅排除；β=q3的七份、兩位置
+  由完整degree-list／Gallai path-stabilizer與原K₅推得原S恰兩點，再在q0／q1構造
+  完整同源r≠2 lift，恢復原rb4。包含T1-P22，未預設小S或忽略旁支。
+- [T2／q0獨立驗收](../audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/REPORT.md)：
+  原G接受q1與完整S雙射迫β下S禁r=2，故q2的r=1 fibre空。沿用已採納Q(X)={β}，
+  q2完整X lifts的聯集非空，每份均恢復rb4，排933/0234、941/023、941/024三份。
+  非空是root-pair聯集，沒有聲稱每個固定pin非空。
+- [T2／q2獨立驗收](../audits/2026-10-11-n45-s-long-s-t2-q2-restore-review/REPORT.md)：
+  從β的局部L/S完整assignments及target列U strict-slack，直接構造同一原圖
+  L_X(q3;0,3)、L_X(q4;0,3)均非空，全部恢復rb4；兩列覆蓋七份Δ。
+  新非空性不以Q(X)或歷史finite-terminal代替。
+
+28個raw必要schedules恰分為既有4＋本輪q0的3＋q2的7＋T1的14，逐份來源矛盾，
+並非僅有限搜尋零survivor。[整合ledger](../audits/2026-10-11-n45-s-long-s-t1-rfibre-review/remaining-schedules.json)
+保原身份、Δ及全部spoke位置，raw28剩0；本輪24 schedules／38 spoke queries全覆蓋。
+與§2.9合成，只排完整K1–K12下的U／long／short選定契約，U owner=r或s皆涵蓋。
+不排沒有U、兩long、其他derivative／core身份或一般N45／N2／E。
+
+**採納更正與信任界。** 原FIBRE的30 queries分類以12+4+10+4採納，SF-RESIDUAL補列
+SF-T2-Q0-Q1-RESTORED依賴；原worker不改。T1採納副本補352個X空欄位及780個G空欄位；
+q2採納副本補112個X空欄位，均有去重field pointers及原SHA pins，不改原coverage／證書。
+各固定pin的source preimages仍null，T1的恢復是存在完整lift聯集，不聲稱指定pin非空。
+Q(X)={β}的繼承採納仍相對SF-T2-EXTEND／BASE E2紙面及歷史finite-terminal；q0使用此鏈，
+T1／q2的新恢復存在性由新紙面構造承擔，亦保留其β-role／N-diagonal／Gallai等上游依賴。
+兩份observations缺BASE blob finding保留，dependent finite replay未執行，不以physical檔補作BASE。
+target source為not triggered，未執行target來源，沒有來源實現或新Lean。
+
+[D獨立驗收](../audits/2026-10-11-n45-s-long-s-block-transfer-review/REPORT.md)
+另採納任意大小完整assignment recurrence、preimage／空fibre保真與字面rb4 filter；
+1,344 assignments只作四有效microcases的原邊校準。D不供給上述來源排除或一般非空引理；
+其凍結24／38舊ledger與失敗case保留。完整採納／重播及文件傳播界線見
+[本輪收尾紀錄](history/2026-10-11-n45-s-long-s-adoption.md)。
 
 ## 3. 精確 OPEN 與下一個窄分支
 
 §1指定整U省略身份已由§2.2全排；精確S身份的兩short分支已由§2.8全排。
-目前S殘留至少有一份原long mixed；既有S05只給原unary至多一份，不給long來源排除。
-已選取保留完整原U／long／short及spoke省略身份，核同源原支援／完整跨列joint；
-此選定分支並非所有含long殘留的完整分類。
-2026-10-10已先交付[含long同源契約與必要化約](../audits/2026-10-10-n45-s-long-contract/REPORT.md)：
-保X=M自己minimal、完整U/L/S與原contacts／attachments／rotation，分開pair／singleton盾費，
-核十literal列／全16pins／空fibres及恢復e；原U/L支援另證X full B-touch、無U側至多兩spokes。
-19固定圖的完整joint／lifts只校準介面，選定來源仍not triggered。
-後續[U在r的實際sole C映射](../audits/2026-10-10-n45-s-long-r-map/REPORT.md)已逐前提接回
-BASE(5)/(4)/(3)，排除§2.9窄身份；選定分支剩U在s的actual C/U兩分量。
-下一步保完整C/U跨列joint及r fibres，核private-color covering與各t_s的來源映射／恢復e。
-不沿用整U刪除的未接框點／singleton forcing／圖類映射，不擴graph/k或重開已採分支。
+完整U／long／short且X=G−原spoke=M自身同β minimal的K1–K12選定契約，
+已由§2.9的U在r與§2.10的U在s限定排除；不是所有含long殘留的完整分類。
+既有S05只給原unary至多一份。沒有U的一long／一short與兩long仍OPEN；
+不能把原U/L的盾弧、full B-touch或C/U private covering搬到沒有U的圖。
+
+下一個窄入口是**原unary=0、一long／一short、只刪原spoke且X=M自身同β minimal**：
+先重新核實際分量、原spoke／incidence完整必要身份、全部原Σ witnesses與X同β witnesses，
+再對同一原圖、字面色框的全16pins及完整r fibres建立來源映射／原邊恢復義務。
+兩long另保留；未發布新任務、未執行新來源搜尋。不擴graph/k或重開已採分支。
 其他45／54身份、原55、無45／54來源、一般N2／E及ε≥3均仍OPEN。
 
 ## 4. 證據、重播與保留失敗
+
+2026-10-11的四份獨立review及DIRECT／FIBRE／JOINT封存保持原bytes；
+本輪文件採納是其後的研究狀態更新，舊review的shared_documents_updated=false保當時語境。
+採納後不重跑要求live shared pins／tracked diff不變的歷史worker checker。
+以下read-only入口核新review完整payload，不以封存PASS裁定紙面；完整命令、
+本輪文件／Lean檢查與刻意未重跑項目見[收尾紀錄](history/2026-10-11-n45-s-long-s-adoption.md)。
+
+```sh
+python3 -B audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/seal_review.py --directory audits/2026-10-11-n45-s-long-s-t1-rfibre-review --check
+python3 -B audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/seal_review.py --directory audits/2026-10-11-n45-s-long-s-t2-q0-restore-review --check
+python3 -B audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/seal_review.py --directory audits/2026-10-11-n45-s-long-s-t2-q2-restore-review --check
+python3 -B audits/2026-10-11-n45-s-long-s-t2-q0-restore-review/seal_review.py --directory audits/2026-10-11-n45-s-long-s-block-transfer-review --check
+```
 
 本輪HIGH2完整118 regular=115payload＋3 exact top-level metadata、41inputs／8pins於採納前核回；
 HIGH3三份完整tree、receipts及父端normal／seed17重播亦核回。H2C獨立有限重算只校準toy／工具，

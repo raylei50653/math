@@ -1,0 +1,25 @@
+{
+  "task_id": "N45-S-LONG-S-DIRECT",
+  "setup_capture": {
+    "files": ["logs/bootstrap.json", "logs/freeze-additional.json", "logs/freeze-recovery.json"],
+    "command_preserved": true,
+    "tool_returned_stream": "merged output; the initial execution tool did not expose separate stdout/stderr",
+    "separate_streams_reconstructed": false,
+    "source_failure_stderr": "SOURCE-MISMATCH-additional.json preserves the actual captured git show stderr and exit128"
+  },
+  "verification_capture": {
+    "mechanism": "run_logged.py and seal.py subprocess capture",
+    "command_stdout_stderr_exit_preserved_separately": true,
+    "layer": "custody/schema/symbolic-domain integrity only"
+  },
+  "finite_source": {
+    "established": false,
+    "executed": false,
+    "trigger_count": null
+  },
+  "base_artifact_replay": {
+    "executed": false,
+    "blocked_by": "SOURCE-ARTIFACT-NOT-IN-BASE",
+    "baseline_updated": false
+  }
+}

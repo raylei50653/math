@@ -1,0 +1,112 @@
+{
+  "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+  "checks_pass": true,
+  "guarded_distinct_original_files": 1036,
+  "normal_seed17_byte_equality": {
+    "normal/seed17": true
+  },
+  "original_custody_and_tree_zero_drift": true,
+  "reviewed_delivery": {
+    "bytes": 17980,
+    "sha256": "79dc6912fbd13f863986d1d85e6f4b9490920711e023d8c2ab33feb8cd454605"
+  },
+  "runs": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q2-restore/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 0,
+      "expected_exit": 0,
+      "expected_exit_observed": true,
+      "name": "normal",
+      "stderr": "logs/normal.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/normal.stdout.log",
+      "stdout_sha256": "45e62f97f36c360b53745c5ddae1f6308cabfc15c4f6bf14c4ad5ffcc5002590"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q2-restore/checker.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "expected_exit": 0,
+      "expected_exit_observed": true,
+      "name": "seed17",
+      "stderr": "logs/seed17.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/seed17.stdout.log",
+      "stdout_sha256": "45e62f97f36c360b53745c5ddae1f6308cabfc15c4f6bf14c4ad5ffcc5002590"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q2-restore/checker.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q2-restore/negative-controls/wrong-L-map.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 1,
+      "expected_exit": 1,
+      "expected_exit_observed": true,
+      "name": "wrong-L-map",
+      "stderr": "logs/wrong-L-map.stderr.log",
+      "stderr_sha256": "09e085fee7cd97110cc63e297067319379c3c311f134c91767b78374c629bfd4",
+      "stdout": "logs/wrong-L-map.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q2-restore/checker.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q2-restore/negative-controls/missing-diagonal.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 1,
+      "expected_exit": 1,
+      "expected_exit_observed": true,
+      "name": "missing-diagonal",
+      "stderr": "logs/missing-diagonal.stderr.log",
+      "stderr_sha256": "09e085fee7cd97110cc63e297067319379c3c311f134c91767b78374c629bfd4",
+      "stdout": "logs/missing-diagonal.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-11-n45-s-long-s-t2-q2-restore/validate_delivery.py",
+        "--manifest"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_override": {},
+      "exit": 0,
+      "expected_exit": 0,
+      "expected_exit_observed": true,
+      "name": "manifest",
+      "stderr": "logs/manifest.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "logs/manifest.stdout.log",
+      "stdout_sha256": "e80b96af980d288a28492e120f13217f6980788603708a11273d972a41744e8c"
+    }
+  ],
+  "scope": "bounded literal/pin calibration"
+}

@@ -1,0 +1,228 @@
+{
+  "adoption": "pending independent acceptance",
+  "base": "f2692089ad4259808e27d9b7e882ac09505b180a",
+  "claims": [
+    {
+      "conclusion": "The unpinned-s complete C assignments equal the disjoint same-r-colour join of both original mixed assignments using retained X r-spokes.",
+      "conclusion_type": "conditional paper lift bijection",
+      "evidence": [
+        "REPORT.md section 2 restriction/union argument",
+        "certificate.json graphs[].cases[].rows[].C_assignments and C_from_mixed_indices",
+        "checker.py direct fixed-order C versus MRV piece enumeration"
+      ],
+      "finite_domain": {
+        "cases": 21,
+        "rows": 210
+      },
+      "finite_status": "triggered and holds",
+      "id": "JS-C",
+      "premises": [
+        "U owner=s; r and s nonadjacent",
+        "C={r}+two complete original mixed pieces; no inter-piece edges",
+        "X=G-e with all original contacts and attachments retained; e is an r-spoke"
+      ],
+      "quantifier": "For every proper literal gamma and labelled colour a on any graph with the stated exact edge decomposition.",
+      "unresolved_obligations": [
+        "independent acceptance",
+        "does not establish source K1-K12 or any exclusion theorem"
+      ]
+    },
+    {
+      "conclusion": "Complete R_C/R_U tuple preimages and all ambient fibres, including empty cells, are retained without loss of r colour.",
+      "conclusion_type": "finite complete assignment/preimage/fibre calibration",
+      "evidence": [
+        "certificate.json R_C/R_U and assignment_indices",
+        "certificate.json all_ambient_C_r_tuple_fibres and all_ambient_U_tuple_fibres",
+        "checks.json counts and missing-empty-ambient negative control"
+      ],
+      "finite_domain": {
+        "C_ambient": 13440,
+        "C_assignments": 5505,
+        "C_empty": 10240,
+        "U_ambient": 2520,
+        "U_assignments": 512,
+        "U_empty": 2028
+      },
+      "finite_status": "triggered and holds",
+      "id": "JS-PREIMAGES",
+      "premises": [
+        "exact fixed BASE graph inventory",
+        "original ordered contacts and shared identity"
+      ],
+      "quantifier": "Every row of every eligible omission of the 19 frozen controls; every ambient (a,tau) in Col x Col^P_C, and every ambient U tuple.",
+      "unresolved_obligations": [
+        "nonzero isolated-factor positive calibration not triggered",
+        "source rotation and source premises not implied"
+      ]
+    },
+    {
+      "conclusion": "C/U joining with retained s-spokes equals direct X full lifts; stored [C,U,isolated] indices reconstruct every full lift. Whole root-pair transport equals prior v2 X/G full lifts.",
+      "conclusion_type": "conditional paper lift bijection plus fixed finite equality",
+      "evidence": [
+        "REPORT.md section 3",
+        "certificate.json all_16_root_pin_cells and lift_reconstruction",
+        "checks.json 3360 cells and 6720 prior comparisons"
+      ],
+      "finite_domain": {
+        "ordered_pins": 16,
+        "pin_cells": 3360,
+        "r_first": 14,
+        "r_second": 7,
+        "rows": 210
+      },
+      "finite_status": "triggered and holds",
+      "id": "JS-X",
+      "premises": [
+        "exact actual C/U components",
+        "retained s-spokes",
+        "all local assignments and independent isolated factor"
+      ],
+      "quantifier": "Every ordered pair (a,b) in Col^2, including diagonal, for all ten literal rows and every eligible omission.",
+      "unresolved_obligations": [
+        "arbitrary-source existence not established",
+        "all fixed controls have zero isolated vertices; nonzero free-factor calibration not triggered"
+      ]
+    },
+    {
+      "conclusion": "L_G=L_X if a differs from gamma(b_i), and empty otherwise. Any new accepted row forces r=gamma(b_i) in all X lifts.",
+      "conclusion_type": "conditional paper full-lift identity plus finite calibration",
+      "evidence": [
+        "REPORT.md section 3",
+        "checker.py per-pin restoration and complete new-row forcing",
+        "checks.json counts"
+      ],
+      "finite_domain": {
+        "new_accepted_row_times_omission": 21,
+        "restoration_pin_checks": 3360
+      },
+      "finite_status": "triggered and holds",
+      "id": "JS-RESTORE",
+      "premises": [
+        "V(X)=V(G)",
+        "E(X)=E(G)-{rb_i}"
+      ],
+      "quantifier": "Every literal gamma and every ordered pin (a,b), on each exact X=G-rb_i.",
+      "unresolved_obligations": [
+        "does not promote an arbitrary selected X lift to a G lift without the r-colour condition"
+      ]
+    },
+    {
+      "conclusion": "X rejects gamma iff F_C union F_U union gamma(N_B(s)) covers all four colours.",
+      "conclusion_type": "conditional paper rejection equivalence plus finite calibration",
+      "evidence": [
+        "REPORT.md section 4",
+        "certificate.json actual F_C/F_U, cover_all_four and all complete lift indices",
+        "checker.py direct rejection comparison"
+      ],
+      "finite_domain": {
+        "actual_rejected_rows": 0,
+        "rows": 210
+      },
+      "finite_status": "triggered and holds",
+      "id": "JS-COVER",
+      "premises": [
+        "actual C and U have no edges between them",
+        "C includes every retained r constraint",
+        "F_C/F_U defined by intersection over all actual tuples"
+      ],
+      "quantifier": "Every row gamma with both complete unpinned R_C(gamma) and R_U(gamma) nonempty.",
+      "unresolved_obligations": [
+        "covering alone does not establish own minimality",
+        "arbitrary-source local nonemptiness must be established or explicit empty-relation semantics supplied"
+      ]
+    },
+    {
+      "conclusion": "Each retained s-contact deletion gives a corresponding factor private colour and full witness; s-spoke deletion gives a spoke colour outside F_C/F_U; retained spoke colours are distinct.",
+      "conclusion_type": "conditional paper private-incidence witness consequence; finite positive branch unexecuted",
+      "evidence": [
+        "REPORT.md section 4 conditional argument",
+        "checker.py private_witnesses exists but its positive branch was not executed"
+      ],
+      "finite_domain": {
+        "minimal_witness_positive_branch_executed": false,
+        "private_cover_triggers": 0,
+        "rejected_X_rows": 0
+      },
+      "finite_status": "not triggered",
+      "id": "JS-PRIVATE",
+      "premises": [
+        "actual rejection",
+        "complete own X retained-edge same-beta witnesses",
+        "no use of G-f witnesses or other literal rows"
+      ],
+      "quantifier": "For any same literal beta at which X actually rejects and each retained nonboundary edge has its own X-f complete beta witness.",
+      "unresolved_obligations": [
+        "satisfying finite target source not established or executed",
+        "complete own beta-minimal witness family absent",
+        "unbounded source exclusion not established"
+      ]
+    },
+    {
+      "conclusion": "All direct original Sigmas accept nine rows and hence none is 933/941 or a whole-D5 image; all X accept all ten rows. Four long+pair-short controls lack b4 full B-touch; the other fifteen have two short mixed components. No target K1-K12 source triggers.",
+      "conclusion_type": "finite source-premise coverage finding",
+      "evidence": [
+        "REPORT.md section 5 per-graph/per-case table",
+        "certificate.json source_coverage and X_sigma",
+        "checks.json target_source"
+      ],
+      "finite_domain": {
+        "long_graphs": 4,
+        "singleton_S": 0,
+        "t_s_cases": {
+          "0": 0,
+          "1": 14,
+          "2": 7
+        },
+        "target_source_triggers": 0,
+        "two_short_graphs": 15
+      },
+      "finite_status": "not triggered",
+      "id": "JS-SOURCE-COVERAGE",
+      "premises": [
+        "original canonical_edges cross-checked with control edges",
+        "fixed BASE authority and hashes"
+      ],
+      "quantifier": "Each of the 19 frozen existing N2 graphs and all 21 eligible non-U-owner original r-spoke omissions.",
+      "unresolved_obligations": [
+        "disk topology/one-sided rotation not independently verified",
+        "original Sigma-criticality/K11 witnesses not independently verified",
+        "K7/K12 beta-minimality absent and unexecuted",
+        "zero triggers do not exclude any general source",
+        "source realizability and Lean not established"
+      ]
+    },
+    {
+      "conclusion": "Ordinary and seed17 read-only replay stdout agree; both required corrupt certificates and canonical overwrite are rejected; frozen/old inputs and canonical certificate have zero drift.",
+      "conclusion_type": "finite operational evidence",
+      "evidence": [
+        "inputs.json",
+        "setup-attempt1.json",
+        "checks.json",
+        "logs/*.command.json and stdout/stderr logs",
+        "custody-before.json and custody-after.json"
+      ],
+      "finite_status": "triggered and holds",
+      "id": "JS-CUSTODY",
+      "premises": [
+        "task BASE f2692089ad4259808e27d9b7e882ac09505b180a",
+        "direct Git blobs or exact BASE archived payload",
+        "exclusive-create output directory and certificates"
+      ],
+      "quantifier": "All 51 frozen inputs, all live old-input paths used, and the prior complete certificate throughout the executed replay/probes.",
+      "unresolved_obligations": [
+        "metadata exclusions documented in delivery.json",
+        "pending independent delivery acceptance",
+        "does not prove the paper argument or source exclusion"
+      ]
+    }
+  ],
+  "evidence_layers": {
+    "Lean": "no new theorem; build not executed",
+    "external_theorems": "none newly invoked or verified",
+    "finite_controls": "fixed 19 existing controls only",
+    "general_source_exclusion": "not established",
+    "paper": "conditional identities and witness consequences only; pending acceptance",
+    "source_realizability": "not established; satisfying target finite source not established or executed"
+  },
+  "task_id": "N45-S-LONG-S-JOINT"
+}
