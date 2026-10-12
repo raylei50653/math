@@ -3,6 +3,8 @@
 2026-10-12。本文為本題的權威入口；完整證明與固定證據保存在
 [隔離研究報告](../audits/2026-10-12-cofacial-uniform-separation-eb6b2303/REPORT.md)。
 目前停止點由 [Kempe 導覽](c5_kempe_guide.md) 維護。
+同日後續[最小來源度數界](c5_saturation_degree_bound.md) 沿用本文前提，排全部四度內點，
+證邊界度數至少四、內部至少五及至少六個五度內點；一般主命題與十三內點以上仍 OPEN。
 
 ## 1. 結論與適用範圍
 

@@ -30,6 +30,7 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [共鄰 P₃ 雙框點三接點 unary](docs/c5_mixed_p3_two_frame_ternary_unary.md) | 固定 C₃ 身份的新非接點葉 K₅、原 bridges／完整 tuples 控制與葉數證明 |
 | [共鄰 P₃ 雙框點兩份 unary](docs/c5_mixed_p3_two_frame_two_unary.md) | 固定 C₄ join60 的逐份完整 relation 排除、九份自身支援配置及原 bridges 控制 |
 | [研究目標](docs/c5_boundary_relations.md) | 主命題、最小反例路線與局部壓縮的區別 |
+| [最小來源度數界與五度鄰環](docs/c5_saturation_degree_bound.md) | 全域最小目錄外來源的邊界／內部度數界、至少六個五度內點及三份衍生任務；十三內點以上仍 OPEN |
 | [文件治理與工作約定](docs/DOCUMENTATION.md) | 文件分工、信任界線、更新及驗證流程 |
 
 項目現況、精確停止點與重播入口由各研究線導覽維護；完整論證與證書見原報告。

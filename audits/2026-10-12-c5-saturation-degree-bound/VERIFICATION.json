@@ -1,0 +1,199 @@
+{
+  "base_commit": "5d70a39940182ea37c9ca5d36d9ebb7f612160ad",
+  "certificate_sha256": "b8ebeeb6fc06bf3a5036e17789c14cb839cec57dd0a8dda18f6f7f162447e965",
+  "certificate_bytes": 328802,
+  "frozen_inputs": "all recorded hashes checked and unchanged",
+  "checks": [
+    {
+      "name": "replay-normal",
+      "command": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "/home/ray/developer/ai/math/audits/2026-10-12-c5-saturation-degree-bound/controls/check.py",
+        "--check",
+        "/home/ray/developer/ai/math/audits/2026-10-12-c5-saturation-degree-bound/controls/certificate.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/replay-normal.log",
+      "observed_as_expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "replay-seed17",
+      "command": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "/home/ray/developer/ai/math/audits/2026-10-12-c5-saturation-degree-bound/controls/check.py",
+        "--check",
+        "/home/ray/developer/ai/math/audits/2026-10-12-c5-saturation-degree-bound/controls/certificate.json",
+        "--seed",
+        "17"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/replay-seed17.log",
+      "observed_as_expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "replay-other-cwd",
+      "command": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "/home/ray/developer/ai/math/audits/2026-10-12-c5-saturation-degree-bound/controls/check.py",
+        "--check",
+        "/home/ray/developer/ai/math/audits/2026-10-12-c5-saturation-degree-bound/controls/certificate.json"
+      ],
+      "cwd": "/tmp",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/replay-other-cwd.log",
+      "observed_as_expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "negative-empty-fibre",
+      "command": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "/home/ray/developer/ai/math/audits/2026-10-12-c5-saturation-degree-bound/controls/check.py",
+        "--check",
+        "/tmp/math-degree-bound-publication-01a12fdf/certificate.bad-empty.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/negative-empty-fibre.log",
+      "observed_as_expected": true,
+      "status": "PASS (expected rejection)"
+    },
+    {
+      "name": "negative-exclusive-write",
+      "command": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "/home/ray/developer/ai/math/audits/2026-10-12-c5-saturation-degree-bound/controls/check.py",
+        "--write",
+        "/home/ray/developer/ai/math/audits/2026-10-12-c5-saturation-degree-bound/controls/certificate.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/negative-exclusive-write.log",
+      "observed_as_expected": true,
+      "status": "PASS (expected rejection)"
+    },
+    {
+      "name": "negative-missing-input",
+      "command": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "/tmp/math-degree-bound-publication-01a12fdf/missing-input/controls/check.py",
+        "--check",
+        "/home/ray/developer/ai/math/audits/2026-10-12-c5-saturation-degree-bound/controls/certificate.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/negative-missing-input.log",
+      "observed_as_expected": true,
+      "status": "PASS (expected rejection)"
+    },
+    {
+      "name": "inherited-cofacial-v2",
+      "command": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/checker.py",
+        "--check",
+        "/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/inherited-cofacial-v2.log",
+      "observed_as_expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "check-docs",
+      "command": [
+        "/usr/bin/python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/check-docs.log",
+      "observed_as_expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "docgraph-formal",
+      "command": [
+        "/usr/bin/python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/docgraph-formal.log",
+      "observed_as_expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "docgraph-whole-tree",
+      "command": [
+        "/usr/bin/python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/docgraph-whole-tree.log",
+      "observed_as_expected": true,
+      "status": "FAIL (existing duplicate IDs)"
+    },
+    {
+      "name": "working-diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/working-diff-check.log",
+      "observed_as_expected": true,
+      "status": "PASS"
+    },
+    {
+      "name": "lake-build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/lake-build.log",
+      "scope": "existing regression only; no new Lean theorem",
+      "observed_as_expected": true,
+      "status": "PASS"
+    }
+  ],
+  "whole_tree_docgraph_scope": "expected existing duplicate declarations from audits/scratch; detailed log retained; formal docs checked separately",
+  "not_run": [
+    "external Dvorak-Lidicky computation",
+    "general k>=13 source search",
+    "new Lean formalization",
+    "derived tasks A/B/C"
+  ],
+  "authority": "local commit only; no push or external posting",
+  "whole_tree_docgraph": {
+    "status": "FAIL",
+    "duplicate_id_errors": 62,
+    "new_package_paths_in_errors": 0,
+    "scope": "existing audits/scratch duplicated metadata; formal docs PASS recorded separately"
+  }
+}

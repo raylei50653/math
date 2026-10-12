@@ -3,6 +3,8 @@
 更新：2026-10-12（兩接線U的全色Diff出口及原K₅已排完整原55(1,1)；目標只剩u=0、H二連通的(1,0)/(2,0)。九格仍七格、N2／E-ARC2 OPEN）。本頁維護本線現況；證明及實際重播範圍見各報告。
 同日新增[共面識別正規形](c5_cofacial_normal_form.md)：最小目錄外來源可選成不增內點的
 簡單近三角化圖，接外部定理得到 `K≤12=K≤5`；一般主命題仍 OPEN。
+其後[最小來源度數界](c5_saturation_degree_bound.md) 證邊界度數至少四、內部至少五、
+至少六個五度內點；五度可縮減性仍 OPEN，已有[三份有界任務](tasks/c5_degree5_link_tasks.md)。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
 
@@ -35,6 +37,7 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
 | 共面識別／聯集封閉正規形 | global 最小內點、最大邊數來源的共面完備及簡單三角面正規形；接文獻 Cor20 得一般 disk 的 K≤12=K≤5。132 witnesses／8778 unions／十候選及完整 fibres 重播；至少十三內點的一般來源、完整關係重接仍 OPEN，未 Lean 化 | [權威入口、證明及重播](c5_cofacial_normal_form.md) |
+| 最小來源度數／五度鄰環 | 沿用前列全域最小性，C4 關係≤3內點、邊界度數≥4、內部≥5、n5≥6。完整 fibres 及兩反控制；沒有推出全內部五環或縮減，無新 Lean | [條件性證明與證據](c5_saturation_degree_bound.md)、[衍生任務](tasks/c5_degree5_link_tasks.md) |
 | 猜想 E／E-ARC2 共同目標 | ε≤1 已證；ε≥3 在原域自動滿足。ε=2 的三點弧命題仍 OPEN，等價排除 941 形三點及四點弧來源；Q=B 的 932 是較強版本的另項義務 | [母猜想與等價證明](c5_research_synthesis.md#81-猜想-e超額拒絕定律)、[E2 低 ε 證明](../artifacts/c5_excess_one_e2/REPORT.md)、[E3 三列化約](../artifacts/c5_excess_two_e3/REPORT.md) |
 | E-ARC2 真子圖與共同核心 | 沿用 E2／唯一 degree-5 相鄰列分離及兩-root44排除，目標反例的任意真子圖至多單拒絕；任意兩個不同拒絕列的 minimal cores 聯集必為 G，所有內點皆不可同接24。179固定圖中172觸發一般 Z 引理並成立，目標來源0觸發；後續完整N2的45／54已排；原55、其他域與主目標仍 OPEN，未Lean化 | [完整紙面證明與負控制](c5_excess_two_arc_pair_critical.md) |
 | E-ARC2 原分量共同限制 | 同一degree-4原分量的boundary重色至多涉及一個拒絕列；完整N2前提再接已採納N45-U，所有原分量刪除均全收，每個非root點至多接兩個相鄰框點，真core只能省一條root-spoke。63固定圖／13,010完整外部投影核對，目標0觸發；spoke45／54由後續報告涵蓋，原55仍OPEN，未Lean化 | [證明、完整fibres與控制](c5_excess_two_arc_component_slack.md) |
@@ -67,6 +70,14 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 單獨保留 `01232` 的 flip／識別有 567→854／774 反控制。
 此路線採 global 最小內點／最大邊數來源，不能挪用下列 edge-critical／ε／N2
 前提，亦未更動那些分支的證書或覆蓋。詳見[權威報告](c5_cofacial_normal_form.md)。
+
+**最小來源五度鄰環（2026-10-12）。** [度數界](c5_saturation_degree_bound.md) 已排
+這個 global 最小來源的全部四度內點，留下至少六個五度內點、k≥13。
+下一步可獨立發布[三份任務](tasks/c5_degree5_link_tasks.md)：具名 link 位置與 pinned
+替換契約、實際固定圖十列重接校準、兩外框接點的 C5＋C5 cap 完整 132² joins。
+最後一支的代表有至多十四內點，必須直接核對目錄 membership，不能套十二內點界。
+尚未證六個候選迫出某個可縮減位置；全內部 link、C4＋C6 cap 與一般主命題保留。
+任意 Σ-飽和族無全內部 C5、四度單分支識別丟列的反控制均保存。
 
 **主攻的共同義務（2026-10-11）：證 E-ARC2。**
 把反例的拒絕三點整圖搬到 {0,1,3}，在同一來源、完整 relations／fibres／full lifts
