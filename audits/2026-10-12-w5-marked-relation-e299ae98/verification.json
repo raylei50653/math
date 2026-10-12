@@ -1,0 +1,263 @@
+{
+  "all_expected_results": true,
+  "base": "e299ae987fcc4cdeb55dd41bede0a3a7c9d9db86",
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/controls/check_w5.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/verification/normal.log",
+      "matched_expected": true,
+      "name": "normal",
+      "seed": null
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/controls/check_w5.py",
+        "--check",
+        "--seed",
+        "17"
+      ],
+      "cwd": "/tmp",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/verification/seed17-other-cwd.log",
+      "matched_expected": true,
+      "name": "seed17-other-cwd",
+      "seed": 17
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/review/independent_check.py",
+        "--check",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/review/independent_results.json",
+        "--primary",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/controls/certificate.json.gz"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/verification/independent.log",
+      "matched_expected": true,
+      "name": "independent",
+      "seed": null
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/controls/check_w5.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/logs/verification/missing-empty-cell.json.gz"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/verification/missing-empty-cell.log",
+      "matched_expected": true,
+      "name": "missing-empty-cell",
+      "seed": null
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/controls/check_w5.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/logs/verification/missing-row.json.gz"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/verification/missing-row.log",
+      "matched_expected": true,
+      "name": "missing-row",
+      "seed": null
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/controls/check_w5.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/logs/verification/wrong-full-lift.json.gz"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/verification/wrong-full-lift.log",
+      "matched_expected": true,
+      "name": "wrong-full-lift",
+      "seed": null
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/controls/check_w5.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/logs/verification/wrong-named-pins.json.gz"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/verification/wrong-named-pins.log",
+      "matched_expected": true,
+      "name": "wrong-named-pins",
+      "seed": null
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/controls/check_w5.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/logs/verification/wrong-pullback-map.json.gz"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/verification/wrong-pullback-map.log",
+      "matched_expected": true,
+      "name": "wrong-pullback-map",
+      "seed": null
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/controls/check_w5.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/logs/verification/wrong-center-lift.json.gz"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/verification/wrong-center-lift.log",
+      "matched_expected": true,
+      "name": "wrong-center-lift",
+      "seed": null
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-12-w5-marked-relation-e299ae98/controls/check_w5.py",
+        "--write"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/verification/exclusive-create.log",
+      "matched_expected": true,
+      "name": "exclusive-create",
+      "seed": null
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/verification/docs.log",
+      "matched_expected": true,
+      "name": "docs",
+      "seed": null
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/verification/formal-docgraph.log",
+      "matched_expected": true,
+      "name": "formal-docgraph",
+      "seed": null
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/verification/whole-tree-docgraph.log",
+      "matched_expected": true,
+      "name": "whole-tree-docgraph",
+      "seed": null
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/verification/git-diff-check.log",
+      "matched_expected": true,
+      "name": "git-diff-check",
+      "seed": null
+    }
+  ],
+  "evidence_sha256_before": {
+    "INPUTS.json": "fd54fd56ed47a232e0c468ed9183cdcd631b92c9287896cb38f4f28f4bcc8ef3",
+    "REPORT.md": "1afd825d9fdc544bb7ae537deb71f49036dc0557707fc5fab33e2916f588a661",
+    "controls/certificate.json.gz": "3f5c943c72c206e89b6efcef688f107a9b1c8459d0a5c1b4a61a02f759123a8d",
+    "controls/check_w5.py": "f8eff1cf21947ea76f173258ec39a816f667458293e280050b3b01e17d07b6ff",
+    "controls/summary.json": "6874e9732c83f96288c4486c5d9fd1544c9243c91473b52ba6157933e6a8983b",
+    "frozen/audits/2026-10-12-c5-deep-five-wheel-01a12ffa/REPORT.md": "2333a55667de196d6615c461feea8c25259a97cd1e395aed0ffa450d11228f3c",
+    "frozen/audits/2026-10-12-degree5-link-a-e293fc11/REPORT.md": "8e80f5c50cac05b79b9fbf11ad75c0d88c559e1dd2a6db16da1f1e391eb9fda2",
+    "frozen/audits/2026-10-12-degree5-star-b-6ef2c06c/paper/CONTRACT.md": "31c1ebb1ba5d3f99d6e4fcfaf5c3d80df776f10cedc03ca917d661243af95a28",
+    "frozen/docs/DOCUMENTATION.md": "40214801431719f88f6a808bc9c2f74ed0ec3044a5c555cac0a99678af105ac3",
+    "frozen/docs/HANDOFF.md": "41db71af42d1e86568c00d8063226e7ca513c2a1756448e74b7cb6ab4dad90fa",
+    "frozen/docs/STATUS.md": "a57e3334d3ef90c48d7ed6113f9c6aa5ce42bea0addf24afd40a084dd01f1a5c",
+    "frozen/docs/c5_degree5_link_reductions.md": "83c96d61778364ff1733d93384e1fcf56f19c6883f03c967b4fa8062e440813b",
+    "frozen/docs/c5_kempe_guide.md": "19e41d0b8d27667e1f558929ce29981cd4a35a86db9ed8a962fd403677d779f7",
+    "frozen/docs/c5_saturation_degree_bound.md": "64d1f4b44292a6c56a0ae4be50701d94109fbac28d8a43d7547fda66f83f292a",
+    "review/THEORY.md": "8540e257e33141f30eabbaf3b3c92f1a38a0161c361d1f15ebba15676a3b1121",
+    "review/independent_check.py": "43473bd712c1017aed24c8013c78ee10b84bf6ad78ae0150566cc0ad2122a2d6",
+    "review/independent_results.json": "1903e30be8a2e5426bedbd497fae5ce18e20dc54c322926c6e96a8dc25ad3740",
+    "verify.py": "c7bef39b624d32e14261f03ff149776a667da25c537dd6f2d020fbca331f3276"
+  },
+  "frozen_input_drift": [],
+  "live_input_drift": [],
+  "negative_recipes": {
+    "missing-empty-cell": "delete graph0 row0 empty cell 0",
+    "missing-row": "delete graph0 final outer row",
+    "wrong-center-lift": "set first prism G center color to 0",
+    "wrong-full-lift": "change B0 color in first nonempty full H lift",
+    "wrong-named-pins": "swap original U0 and U1 labels",
+    "wrong-pullback-map": "map original B0 to B1 in quotient0"
+  },
+  "read_only_evidence_drift": [],
+  "scope": "This is a bounded named-relation audit, not a general reducibility proof.",
+  "whole_tree_docgraph_status": "FAIL: retained historical duplicate IDs; inspect log"
+}

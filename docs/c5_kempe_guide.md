@@ -7,6 +7,8 @@
 至少六個五度內點；五度可縮減性仍 OPEN，已有[三份有界任務](tasks/c5_degree5_link_tasks.md)。
 同日 [全內部五輪與任務交付](c5_degree5_link_reductions.md) 已保證 induced W5
 全部位於原內部；A／B／C 分別完成位置契約、固定域重接與 132² cap 閉合。
+後續 [W5 完整關係縮減](c5_w5_marked_relation.md) 已由五個合法商圖的完整拉回
+重建 H／G 全部 fibres；普通正聯集縮減及 annulus 小代表仍 OPEN。
 [完整外圈限制](c5_neartri_boundary_collar.md) 再排二邊 crosscut，將 933／941 的
 五度內點下界提高為九／八；941 最小邊界超額只剩具名 C7 必要上界，仍 OPEN。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
@@ -43,6 +45,7 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 | 共面識別／聯集封閉正規形 | global 最小內點、最大邊數來源的共面完備及簡單三角面正規形；接文獻 Cor20 得一般 disk 的 K≤12=K≤5。132 witnesses／8778 unions／十候選及完整 fibres 重播；至少十三內點的一般來源、完整關係重接仍 OPEN，未 Lean 化 | [權威入口、證明及重播](c5_cofacial_normal_form.md) |
 | 近三角化完整外圈 | 二邊 crosscut 全排；933 必 h≥3、n5≥9，941 必 h≥2、n5≥8。h≤2 的42項完整限制排41，941只剩邊界度數(4,4,5,4,5)的C7 55列必要上界；任意大小仍OPEN，未Lean化 | [完整接合、閉包與殘留](c5_neartri_boundary_collar.md) |
 | 最小來源度數／五度鄰環 | 沿用全域最小性，C4 關係≤3內點、邊界度數≥4、內部≥5；後續已保證全內部 induced W5。A九種位置契約、B固定域1020項操作及C全部17424組cap閉合已交付，一般縮減仍OPEN，無新Lean | [度數界](c5_saturation_degree_bound.md)、[全內部五輪與交付界線](c5_degree5_link_reductions.md) |
+| 全內部 W5 具名完整關係縮減 | 五個合法 k−2 商圖的完整拉回無損重建十 pin H／G fibres；重數二恰唯一接回中心。34圖完整控制；普通正聯集及 r≤6 annulus 代表仍OPEN，無新Lean | [精確公式、反控制及重播](c5_w5_marked_relation.md) |
 | 猜想 E／E-ARC2 共同目標 | ε≤1 已證；ε≥3 在原域自動滿足。ε=2 的三點弧命題仍 OPEN，等價排除 941 形三點及四點弧來源；Q=B 的 932 是較強版本的另項義務 | [母猜想與等價證明](c5_research_synthesis.md#81-猜想-e超額拒絕定律)、[E2 低 ε 證明](../artifacts/c5_excess_one_e2/REPORT.md)、[E3 三列化約](../artifacts/c5_excess_two_e3/REPORT.md) |
 | E-ARC2 真子圖與共同核心 | 沿用 E2／唯一 degree-5 相鄰列分離及兩-root44排除，目標反例的任意真子圖至多單拒絕；任意兩個不同拒絕列的 minimal cores 聯集必為 G，所有內點皆不可同接24。179固定圖中172觸發一般 Z 引理並成立，目標來源0觸發；後續完整N2的45／54已排；原55、其他域與主目標仍 OPEN，未Lean化 | [完整紙面證明與負控制](c5_excess_two_arc_pair_critical.md) |
 | E-ARC2 原分量共同限制 | 同一degree-4原分量的boundary重色至多涉及一個拒絕列；完整N2前提再接已採納N45-U，所有原分量刪除均全收，每個非root點至多接兩個相鄰框點，真core只能省一條root-spoke。63固定圖／13,010完整外部投影核對，目標0觸發；spoke45／54由後續報告涵蓋，原55仍OPEN，未Lean化 | [證明、完整fibres與控制](c5_excess_two_arc_component_slack.md) |
@@ -85,8 +88,10 @@ B的固定域重接控制亦已交付。[全內部五輪](c5_degree5_link_reduct
 有 degree-5 中心與五個鄰點全在原內部；尚未證這個位置可保持完整Σ縮減。
 任意 Σ-飽和族無全內部 C5、四度單分支識別丟列的反控制均保存。
 
-目前五度縮減的窄入口是原 B/U 十個 pins 的 annulus 完整 J_p：保留同一外部圖、
-同色框、十列全部空 cells 與 full lifts，尋找保Σ的合法操作或聯集分解。
+目前五度縮減的窄入口仍是原 B/U 十個 pins 的 annulus 完整 J_p。
+[五份單對商圖](c5_w5_marked_relation.md) 已能以同圖、同色框的 full-lift 重數重建
+全部 H／G fibres；外框投影或各自成功的 witnesses 均不足。下一步是保 Σ 的合法
+正聯集縮減，或同槽位、同完整具名 support 且私人點 r≤6 的 annulus 代表。
 B固定域的1020項操作均不等價，不能據此排除一般縮減；其餘必要介面與重播
 見[交付入口](c5_degree5_link_reductions.md)。
 

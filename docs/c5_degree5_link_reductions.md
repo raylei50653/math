@@ -4,6 +4,8 @@
 採納全內部五輪及 [A／B／C 任務](tasks/c5_degree5_link_tasks.md) 的隔離交付。
 目前停止點由 [Kempe 導覽](c5_kempe_guide.md) 維護；
 本次驗證與封存範圍見 [發布紀錄](history/2026-10-12-degree5-collar-progress-publish.md)。
+同日後續 [W5 具名完整關係縮減](c5_w5_marked_relation.md) 已用五個合法單對商圖的
+完整拉回重建 H／G 全部 fibres；一般正聯集縮減與 annulus 小代表仍 OPEN。
 
 ## 1. 共同來源與全內部五輪
 
@@ -39,7 +41,10 @@ A／全內部五輪／外圈 crosscut 各有紙面來源排除；C 另完成原�
 已保證可選 m=0 的全內部五輪。刪中心後需保留原 B 與鄰環 U 的十個 pins、
 annulus 拓撲及同一外部圖的完整 J_p(B,U)，含全部空 cells 與 full lifts。
 普通外 C5 的小代表會忘掉 U 及中心的接回空位，不能替代這份 marked relation。
-下一個義務是找到保整份 Σ 的合法操作，或由同份完整 lifts 證成可用聯集分解。
+後續 [具名完整關係縮減](c5_w5_marked_relation.md) 已證五個合法單對商圖的完整
+拉回聯集等於全部 H lifts；同一 lift 的重數二恰能唯一接回中心。
+五種三色型的精確分解仍依賴共同 lifts，交叉双對識別不構成合法局部正聯集。
+剩餘義務是把這份完整資料轉成保整份 Σ 的合法正聯集縮減，或構造同槽位小代表。
 計數上的 m=0 代表界為 6+r≤12；m=1 的 5+r≤12 及相鄰 m=2 的 4+r8≤12
 仍是其他介面的待證界，並未構造這些代表。
 

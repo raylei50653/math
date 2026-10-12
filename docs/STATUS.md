@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-12（最小來源全內部五輪、A／B／C交付及完整外圈限制已接入；一般縮減與K∞=K≤5仍OPEN）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-12（W5十pin完整fibres的五商圖無損重建已接入；一般正聯集縮減、annulus小代表與K∞=K≤5仍OPEN）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -10,6 +10,8 @@
 內部至少五、至少六個五度內點；[衍生任務](tasks/c5_degree5_link_tasks.md) 聚焦具名五鄰環。
 後續 [全內部五輪與任務交付](c5_degree5_link_reductions.md) 保證原內部 induced W5；
 [完整外圈限制](c5_neartri_boundary_collar.md) 將933／941五度點下界提高至九／八。
+[W5 具名完整關係縮減](c5_w5_marked_relation.md) 進一步保存十個 pins 與全部 lifts，
+由五個合法較小商圖重建原完整染色；其外框關係本身不足以完成一般縮減。
 
 ## 1. 閱讀順序與文件角色
 
@@ -276,7 +278,8 @@
 | [共面識別正規形與十二內點界](c5_cofacial_normal_form.md) | 聯集封閉目錄＋global 最小內點／最大邊數，證簡單三角面正規形不增內點；接外部 Cor20 得 K≤12=K≤5。132 witnesses／8778 unions／十候選及完整 fibres 核對；十三內點以上、一般重接與 Lean 保留，不混用舊 edge-critical 前提 |
 | [最小目錄外來源的度數界與五度鄰環](c5_saturation_degree_bound.md) | 沿用全域最小性及 K≤12，證 C4 三內點代表、邊界度數≥4、內部≥5、n5≥6；完整控制與條件性紙面分層，十三內點以上及五度縮減仍 OPEN |
 | [近三角化完整外圈限制](c5_neartri_boundary_collar.md) | 二邊 crosscut 全排；933 的 h≥3／n5≥9，941 的 h≥2／n5≥8；h≤2 只剩941邊界度數(4,4,5,4,5)的C7 55列必要上界。完整欄＋Kempe閉包與獨立重算，來源／一般主命題仍OPEN |
-| [全內部五輪、位置與重接交付](c5_degree5_link_reductions.md) | 最小來源必有全內部 induced W5；A九種位置／完整pins契約、B1020項固定操作及C17424組完整cap閉合已交付。annulus完整J_p縮減、一般來源及Lean保留 |
+| [全內部五輪、位置與重接交付](c5_degree5_link_reductions.md) | 最小來源必有全內部 induced W5；A九種位置／完整pins契約、B1020項固定操作及C17424組完整cap閉合已交付。後續五商圖完整重建已接入；一般正聯集縮減、小代表及Lean保留 |
+| [W5 具名完整關係縮減](c5_w5_marked_relation.md) | 五個合法單對商圖的完整拉回重建 H／G 全 fibres；保留十pin、空cells及共同色框。34圖／348160格獨立核對；零新頂點局部正聯集有紙面限制，一般縮減與r≤6 annulus代表OPEN，未Lean化 |
 | [五度鄰環的三份衍生任務](tasks/c5_degree5_link_tasks.md) | 保存原BASE任務；A／B／C各自完成明列規格。C來源另由crosscut排除，獨立132² joins亦完成；一般縮減仍OPEN |
 | [最小來源度數界的本地發布紀錄](history/2026-10-12-c5-saturation-degree-bound-publish.md) | 凍結、覆核、replay 與文件／Lean 回歸；只 commit，不 push，保留 unrelated staged 工作 |
 | [count-cone bridge](c5_count_cone_bridge.md)、[B₅ face](c5_b5_face.md)、[Kempe-class 計數](c5_kempe_class_counts.md) | near-triangulation 化約、部分 Lean 代數及 class 級紙面計數已完成；普通 pairing 不給最終矛盾，cone／connectivity 缺口仍在 |
@@ -491,6 +494,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-12：W5具名完整關係縮減採納與發布](history/2026-10-12-w5-marked-relation-publish.md)
 - [2026-10-12：五度鄰環、外圈限制與產物儲存整理發布](history/2026-10-12-degree5-collar-progress-publish.md)
 - [2026-10-12：近三角化完整外圈限制與精確C7殘留](history/2026-10-12-neartri-boundary-collar.md)
 - [2026-10-12：共面正規形、十二內點界與發布核對](history/2026-10-12-cofacial-normal-form-publish.md)

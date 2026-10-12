@@ -1,0 +1,126 @@
+{
+  "base": "e299ae987fcc4cdeb55dd41bede0a3a7c9d9db86",
+  "source_manifest_sha256": "57fb8e07dc9e1ec1aad1c6d7bdc003b9483ac28f79ed2bee04b7de0e9943ce46",
+  "fresh_index_package_files": 42,
+  "fresh_manifest_entries_verified": 41,
+  "frozen_inputs": 9,
+  "original_audit_mutated": false,
+  "checks": [
+    {
+      "name": "fresh-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "/tmp/math-w5-publish-index-yilr1cg1/audits/2026-10-12-w5-marked-relation-e299ae98/controls/check_w5.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-w5-publish-index-yilr1cg1",
+      "seed": null,
+      "exit_code": 0,
+      "log": "logs/fresh-normal.log"
+    },
+    {
+      "name": "fresh-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "/tmp/math-w5-publish-index-yilr1cg1/audits/2026-10-12-w5-marked-relation-e299ae98/controls/check_w5.py",
+        "--check",
+        "--seed",
+        "17"
+      ],
+      "cwd": "/tmp",
+      "seed": 17,
+      "exit_code": 0,
+      "log": "logs/fresh-seed17.log"
+    },
+    {
+      "name": "fresh-independent",
+      "argv": [
+        "python3",
+        "-B",
+        "/tmp/math-w5-publish-index-yilr1cg1/audits/2026-10-12-w5-marked-relation-e299ae98/review/independent_check.py",
+        "--primary",
+        "/tmp/math-w5-publish-index-yilr1cg1/audits/2026-10-12-w5-marked-relation-e299ae98/controls/certificate.json.gz"
+      ],
+      "cwd": "/tmp/math-w5-publish-index-yilr1cg1",
+      "seed": null,
+      "exit_code": 0,
+      "log": "logs/fresh-independent.log"
+    },
+    {
+      "name": "docs",
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "seed": null,
+      "exit_code": 0,
+      "log": "logs/docs.log"
+    },
+    {
+      "name": "formal-docgraph",
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "seed": null,
+      "exit_code": 0,
+      "log": "logs/formal-docgraph.log"
+    },
+    {
+      "name": "whole-tree-docgraph",
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "seed": null,
+      "exit_code": 1,
+      "log": "logs/whole-tree-docgraph.log"
+    },
+    {
+      "name": "storage-index",
+      "argv": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "seed": null,
+      "exit_code": 0,
+      "log": "logs/storage-index.log"
+    },
+    {
+      "name": "staged-whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "seed": null,
+      "exit_code": 0,
+      "log": "logs/staged-whitespace.log"
+    }
+  ],
+  "lake_build": {
+    "exit_code": 0,
+    "log": "logs/lake-build.log",
+    "scope": "Existing Lean regression only; no new W5 theorem"
+  },
+  "prior_negative_controls": "Preserved six failed corruptions and exclusive-write rejection; not rerun for publication",
+  "status": "PASS with known whole-tree DocGraph failure",
+  "errors": [],
+  "whole_tree_docgraph": {
+    "status": "FAIL",
+    "duplicate_id_errors": 62,
+    "other_errors": []
+  }
+}
