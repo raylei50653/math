@@ -1,0 +1,527 @@
+{
+  "base_head": "8b76dcc82adabba679e7b0d2ef6dbe6eb9cc37f3",
+  "byte_identical_normal_and_seed17_stdout": {
+    "equal-pin": true,
+    "partition": true,
+    "used-one": true
+  },
+  "checks": [
+    {
+      "command": "python3 -B audits/2026-10-12-n2-boundary-partition-law/controls/checker.py --check",
+      "exit_code": 0,
+      "label": "partition-normal",
+      "stderr": "logs/partition-normal.stderr.log",
+      "stdout": "logs/partition-normal.stdout.log"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-12-n2-boundary-partition-law/controls/checker.py --check",
+      "exit_code": 0,
+      "label": "partition-seed17",
+      "stderr": "logs/partition-seed17.stderr.log",
+      "stdout": "logs/partition-seed17.stdout.log"
+    },
+    {
+      "command": "python3 -B audits/2026-10-12-n2-boundary-partition-law/review/equal_pin_probe.py --check",
+      "exit_code": 0,
+      "label": "equal-pin-normal",
+      "stderr": "logs/equal-pin-normal.stderr.log",
+      "stdout": "logs/equal-pin-normal.stdout.log"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-12-n2-boundary-partition-law/review/equal_pin_probe.py --check",
+      "exit_code": 0,
+      "label": "equal-pin-seed17",
+      "stderr": "logs/equal-pin-seed17.stderr.log",
+      "stdout": "logs/equal-pin-seed17.stdout.log"
+    },
+    {
+      "command": "python3 -B audits/2026-10-12-n2-boundary-partition-law/controls/paper_controls.py --check",
+      "exit_code": 0,
+      "label": "used-one-normal",
+      "stderr": "logs/used-one-normal.stderr.log",
+      "stdout": "logs/used-one-normal.stdout.log"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-12-n2-boundary-partition-law/controls/paper_controls.py --check",
+      "exit_code": 0,
+      "label": "used-one-seed17",
+      "stderr": "logs/used-one-seed17.stderr.log",
+      "stdout": "logs/used-one-seed17.stdout.log"
+    },
+    {
+      "command": "python3 -B scripts/check_docs.py",
+      "exit_code": 0,
+      "label": "check-docs",
+      "stderr": "logs/check-docs.stderr.log",
+      "stdout": "logs/check-docs.stdout.log"
+    },
+    {
+      "command": "python3 -B tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "label": "docgraph-docs",
+      "stderr": "logs/docgraph-docs.stderr.log",
+      "stdout": "logs/docgraph-docs.stdout.log"
+    },
+    {
+      "command": "lake build",
+      "exit_code": 0,
+      "label": "lake-build",
+      "stderr": "logs/lake-build.stderr.log",
+      "stdout": "logs/lake-build.stdout.log"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "label": "diff-check",
+      "stderr": "logs/diff-check.stderr.log",
+      "stdout": "logs/diff-check.stdout.log"
+    }
+  ],
+  "commit_or_push": false,
+  "component_verification_receipts": [
+    {
+      "BASE_sha256": "ea22f0f9d72d3a8c9f9a152e42258068429ffaa2ec8f77cba7f95c79665b2d45",
+      "E_ARC2": "OPEN",
+      "N2_55": "OPEN",
+      "checker_sha256": "0f2122436c23fe947e83c692aef34cc53844452ab2d7b7a97509a9284216daf3",
+      "counts": {
+        "all_saved_graphs": 65,
+        "baseline_inputs_verified": 12,
+        "collision_filtered_three_arc_interface_classes": 4464,
+        "collision_interface_partition_classes": 3694,
+        "complete_global_rows": 650,
+        "complete_local_tuples_checked": 106760,
+        "complete_target_sources": 0,
+        "complete_tuple_bijections": 36480,
+        "edge_disjoint_two_arc_geometries": 5,
+        "empty_full_join_cells": 7534,
+        "empty_local_cells": 3643,
+        "external_colour_collision_degree_hypothesis_not_applicable": 0,
+        "external_colour_collision_not_triggered": 11765,
+        "external_colour_collision_not_triggered_empty": 3643,
+        "external_colour_collision_triggered_and_holds": 24715,
+        "independent_local_dfs_cells": 36480,
+        "interface_partition_classes": 5246,
+        "nonidentity_permutation_maps": 24816,
+        "original_source_piece_rows_checked": 1790,
+        "original_source_pieces": 179,
+        "proper_four_colour_boundary_rows": 240,
+        "proper_three_colour_boundary_rows": 30,
+        "residual_interface_partition_classes": 1552,
+        "residual_three_arc_interface_classes": 1984,
+        "same_original_graphs": 63,
+        "same_row_same_pin_full_join_cells": 10400,
+        "saved_bounded_motif_exemplars": 45,
+        "saved_connected_complete_degree_four_pieces": 228,
+        "saved_high_contact_pieces": 2,
+        "saved_local_pieces": 228,
+        "saved_named_joint_graphs": 2,
+        "saved_named_joint_pieces": 2,
+        "three_arc_full_partition_classes": 6448,
+        "three_arc_mask_checks": 248
+      },
+      "frozen_head": "8b76dcc82adabba679e7b0d2ef6dbe6eb9cc37f3",
+      "negative_controls": [
+        {
+          "cell_index": 0,
+          "control_status": "counterexample",
+          "corruption_rejected": true,
+          "name": "corrupted_complete_fibre_digest_preserving_tuple_count",
+          "piece_index": 0,
+          "reason": "artifact complete transported relation hash mismatch"
+        },
+        {
+          "cell_index": 11,
+          "control_status": "counterexample",
+          "corruption_rejected": true,
+          "name": "dropped_empty_cell",
+          "piece_index": 0,
+          "reason": "artifact must contain all 160 cells including empties"
+        },
+        {
+          "cell_index": 3,
+          "control_status": "counterexample",
+          "corruption_rejected": true,
+          "name": "wrong_single_colour_permutation",
+          "piece_index": 0,
+          "reason": "artifact interface permutation mismatch"
+        },
+        {
+          "cell_index": 0,
+          "control_status": "counterexample",
+          "corruption_rejected": true,
+          "name": "one_tuple_colour_changed_same_relation_size",
+          "piece_index": 0,
+          "reason": "corrupted complete tuple relation mismatch",
+          "tuple_count_unchanged": true
+        }
+      ],
+      "observations_sha256": "de1928c7f6c8dc5eb352fc1e1d8b25d98398321d023b26956be689da5db73b6c",
+      "scope": "Only saved original pieces and full fibres; no new source graph or motif enumeration.",
+      "status": "PASS",
+      "target_source_status": "not triggered"
+    },
+    {
+      "BASE_sha256": "ea22f0f9d72d3a8c9f9a152e42258068429ffaa2ec8f77cba7f95c79665b2d45",
+      "E_ARC2": "OPEN",
+      "N2_55": "OPEN",
+      "artifact_negative_control": {
+        "control_status": "counterexample",
+        "corruption_rejected": true,
+        "mutation": "two wrong forbidden used colours added without changing complete tuple hashes",
+        "reason": "generic artifact used-forbidden colour mismatch"
+      },
+      "complete_target_sources": 0,
+      "counts": {
+        "all_saved_boundary_rows": 2280,
+        "all_saved_local_pieces": 228,
+        "complete_equal_pin_tuples": 28225,
+        "generic_local_hypotheses_not_triggered_pieces": 139,
+        "generic_local_hypotheses_triggered_pieces": 89,
+        "generic_theorem_not_triggered_rows": 1835,
+        "generic_theorem_triggered_and_holds_rows": 445,
+        "independent_complete_equal_pin_cells": 9120,
+        "negative_control_complete_equal_pin_cells": 120,
+        "original_source_piece_rows_checked": 1790,
+        "proper_four_colour_saved_rows": 1140,
+        "proper_three_colour_saved_rows": 1140,
+        "triggered_actual_mixed_equal_pin_pieces": 47,
+        "triggered_actual_unary_pieces": 42,
+        "triggered_k_2_pieces": 47,
+        "triggered_k_3_pieces": 42,
+        "triggered_used_forbidden_size_0": 341,
+        "triggered_used_forbidden_size_1": 104
+      },
+      "frozen_head": "8b76dcc82adabba679e7b0d2ef6dbe6eb9cc37f3",
+      "paper_checker_sha256": "dc70b5c7122053bf17b9f360351742a082ab69816c83019b4b827bfd8cbb381f",
+      "paper_observations_sha256": "3476870d8b0a98094be28afbe2d1aaedfd0d666e2fc8821200e16cd4f823e43e",
+      "status": "PASS",
+      "target_source_status": "not triggered",
+      "unchanged_base_checker_sha256": "0f2122436c23fe947e83c692aef34cc53844452ab2d7b7a97509a9284216daf3"
+    },
+    {
+      "base_head": "8b76dcc82adabba679e7b0d2ef6dbe6eb9cc37f3",
+      "controls": {
+        "exact_frozen_attachment_controls": 800,
+        "named_negative_complete_boundary_rows": 10,
+        "named_negative_original_mixed_ordered_pin_cells_per_row": 16,
+        "named_negative_unary_owner_cells_per_row": 4,
+        "named_negative_unary_planarity_status": "counterexample with explicit original K5 bags",
+        "strong_empty_forbidden_row_counterexamples": 10,
+        "target_source_status": "not triggered",
+        "used_one_violations": 0
+      },
+      "corrupt_negative": {
+        "command": "python3 -B audits/2026-10-12-n2-boundary-partition-law/review/equal_pin_probe.py --check --artifact audits/2026-10-12-n2-boundary-partition-law/review/corrupt_probe_negative.json",
+        "exit_code": 1,
+        "expected": "reject",
+        "output": "artifact mismatch"
+      },
+      "frozen_input_hashes_verified_per_run": 12,
+      "lean_status": "no new Lean theorem",
+      "normal_check": {
+        "artifact_bytes": 11984197,
+        "artifact_sha256": "522146aa6ae93e3d2bbe1a42c6f29f480e6c1e32d18d748ae22518bfc747789b",
+        "command": "python3 -B audits/2026-10-12-n2-boundary-partition-law/review/equal_pin_probe.py --check",
+        "exit_code": 0
+      },
+      "paper_status": "independent review accepted in review/independent_review.md",
+      "parent_status": "original55 N2 E-ARC2 OPEN",
+      "seed17_check": {
+        "artifact_bytes": 11984197,
+        "artifact_sha256": "522146aa6ae93e3d2bbe1a42c6f29f480e6c1e32d18d748ae22518bfc747789b",
+        "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-12-n2-boundary-partition-law/review/equal_pin_probe.py --check",
+        "exit_code": 0
+      }
+    }
+  ],
+  "current_head": "8b76dcc82adabba679e7b0d2ef6dbe6eb9cc37f3",
+  "date": "2026-10-12",
+  "equal_pin_probe_counts": {
+    "all_rows_nonempty": 10,
+    "controls": 800,
+    "used_one_violations": 0
+  },
+  "frozen_baseline_inputs_verified": 12,
+  "local_control_counts": {
+    "all_saved_graphs": 65,
+    "baseline_inputs_verified": 12,
+    "collision_filtered_three_arc_interface_classes": 4464,
+    "collision_interface_partition_classes": 3694,
+    "complete_global_rows": 650,
+    "complete_local_tuples_checked": 106760,
+    "complete_target_sources": 0,
+    "complete_tuple_bijections": 36480,
+    "edge_disjoint_two_arc_geometries": 5,
+    "empty_full_join_cells": 7534,
+    "empty_local_cells": 3643,
+    "external_colour_collision_degree_hypothesis_not_applicable": 0,
+    "external_colour_collision_not_triggered": 11765,
+    "external_colour_collision_not_triggered_empty": 3643,
+    "external_colour_collision_triggered_and_holds": 24715,
+    "independent_local_dfs_cells": 36480,
+    "interface_partition_classes": 5246,
+    "nonidentity_permutation_maps": 24816,
+    "original_source_piece_rows_checked": 1790,
+    "original_source_pieces": 179,
+    "proper_four_colour_boundary_rows": 240,
+    "proper_three_colour_boundary_rows": 30,
+    "residual_interface_partition_classes": 1552,
+    "residual_three_arc_interface_classes": 1984,
+    "same_original_graphs": 63,
+    "same_row_same_pin_full_join_cells": 10400,
+    "saved_bounded_motif_exemplars": 45,
+    "saved_connected_complete_degree_four_pieces": 228,
+    "saved_high_contact_pieces": 2,
+    "saved_local_pieces": 228,
+    "saved_named_joint_graphs": 2,
+    "saved_named_joint_pieces": 2,
+    "three_arc_full_partition_classes": 6448,
+    "three_arc_mask_checks": 248
+  },
+  "not_rerun": [
+    "upstream N45/44/SD-A/ES/ER generation",
+    "source rotations",
+    "full-worktree DocGraph"
+  ],
+  "output_manifest": [
+    {
+      "bytes": 11033,
+      "path": "README.md",
+      "sha256": "652a5d7bd99fab35bcdb8999a201556539009088dfebe5348e6648f630ef2616"
+    },
+    {
+      "bytes": 2435,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/BASE.json",
+      "sha256": "ea22f0f9d72d3a8c9f9a152e42258068429ffaa2ec8f77cba7f95c79665b2d45"
+    },
+    {
+      "bytes": 3033,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/REPORT.md",
+      "sha256": "5af587897c55836c54f011986a1a474f72486baf26d3b2cea2f4ebfbc78dcddc"
+    },
+    {
+      "bytes": 5424,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/controls/PAPER_REPORT.md",
+      "sha256": "9af293a6996ba857309be1af7e9e76546f3abd1acc1f3fa35102890059508bd3"
+    },
+    {
+      "bytes": 8460,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/controls/REPORT.md",
+      "sha256": "bd2dafdcbc7ad7ab4da21753560303d50cdc54d8037ceb7784fc080f0f530425"
+    },
+    {
+      "bytes": 33305,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/controls/checker.py",
+      "sha256": "0f2122436c23fe947e83c692aef34cc53844452ab2d7b7a97509a9284216daf3"
+    },
+    {
+      "bytes": 12160630,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/controls/observations.json",
+      "sha256": "de1928c7f6c8dc5eb352fc1e1d8b25d98398321d023b26956be689da5db73b6c"
+    },
+    {
+      "bytes": 17383,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/controls/paper_controls.py",
+      "sha256": "dc70b5c7122053bf17b9f360351742a082ab69816c83019b4b827bfd8cbb381f"
+    },
+    {
+      "bytes": 2900358,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/controls/paper_observations.json",
+      "sha256": "3476870d8b0a98094be28afbe2d1aaedfd0d666e2fc8821200e16cd4f823e43e"
+    },
+    {
+      "bytes": 1676,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/controls/paper_verification.json",
+      "sha256": "da2e6c62e4fdb384addb97d492d3dc25a43a77a9002c2f948b8600fdef5b79d5"
+    },
+    {
+      "bytes": 0,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/check-docs.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 74,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/check-docs.stdout.log",
+      "sha256": "67ee8ae15ba6ba00a41c72c87bf61923642ae2de7e77523775228e77b1a52731"
+    },
+    {
+      "bytes": 0,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/diff-check.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/diff-check.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/docgraph-docs.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 63,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/docgraph-docs.stdout.log",
+      "sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb"
+    },
+    {
+      "bytes": 0,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/equal-pin-normal.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 195,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/equal-pin-normal.stdout.log",
+      "sha256": "6c55a2f2b6fdf72593f5c80599e97c49885572645fcabe3fbe750fcef580f154"
+    },
+    {
+      "bytes": 0,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/equal-pin-seed17.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 195,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/equal-pin-seed17.stdout.log",
+      "sha256": "6c55a2f2b6fdf72593f5c80599e97c49885572645fcabe3fbe750fcef580f154"
+    },
+    {
+      "bytes": 0,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/lake-build.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 7494,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/lake-build.stdout.log",
+      "sha256": "2103291d39ceb734f800128950d507eded343e0e0678cc7e96414c1cc372b250"
+    },
+    {
+      "bytes": 0,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/partition-normal.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1480,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/partition-normal.stdout.log",
+      "sha256": "7011e88df7b9e431274875d0a7f6af21f0a562cbc8bf481f8afdaad63cb3b6bb"
+    },
+    {
+      "bytes": 0,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/partition-seed17.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1480,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/partition-seed17.stdout.log",
+      "sha256": "7011e88df7b9e431274875d0a7f6af21f0a562cbc8bf481f8afdaad63cb3b6bb"
+    },
+    {
+      "bytes": 0,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/used-one-normal.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 766,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/used-one-normal.stdout.log",
+      "sha256": "9833ae9b1fe1ed7659a3224bedf14017a9851466da764c265070cd7fbba68d36"
+    },
+    {
+      "bytes": 0,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/used-one-seed17.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 766,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/logs/used-one-seed17.stdout.log",
+      "sha256": "9833ae9b1fe1ed7659a3224bedf14017a9851466da764c265070cd7fbba68d36"
+    },
+    {
+      "bytes": 13528,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/paper/REPORT.md",
+      "sha256": "9839ad40e788398057e972eeb81bcdbc5f0c91aaef1a4d854acb11e300fc3c6a"
+    },
+    {
+      "bytes": 13205,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/review/REPORT.md",
+      "sha256": "3d0e646a332068f592ab672b0103838f680dedb507885df2dd22e494da22affa"
+    },
+    {
+      "bytes": 33,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/review/corrupt_probe_negative.json",
+      "sha256": "9d1d5070774dbb328d9b126c3b528aa421b3b754d7427a94f094eb056d5d0839"
+    },
+    {
+      "bytes": 11984197,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/review/equal_pin_full_probe.json",
+      "sha256": "522146aa6ae93e3d2bbe1a42c6f29f480e6c1e32d18d748ae22518bfc747789b"
+    },
+    {
+      "bytes": 7593,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/review/equal_pin_probe.py",
+      "sha256": "c8f559dee6673371200c51c9f801224ac157111188098db763ddd13fe8199df9"
+    },
+    {
+      "bytes": 7521,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/review/independent_review.md",
+      "sha256": "c910c3972ab5e7c23f04801ba7990b6f7e86ad05f45c9ed1c7dc45f120804736"
+    },
+    {
+      "bytes": 1855,
+      "path": "audits/2026-10-12-n2-boundary-partition-law/review/stronger_lemma.md",
+      "sha256": "8663d8d3c446c00c57f18a253a66beaa19785dbc2db36c7421dc840b4cff6b6a"
+    },
+    {
+      "bytes": 160026,
+      "path": "docs/STATUS.md",
+      "sha256": "dc23561366844ebc49094fd259bb710e0d0a28172f4f7a4d3801ac2b6d9478cc"
+    },
+    {
+      "bytes": 10275,
+      "path": "docs/c5_excess_two_n2_long_synchrony.md",
+      "sha256": "690910383f47b8968954a92b85e98a9fa142bcc37495d0aac2d5827a9c148b10"
+    },
+    {
+      "bytes": 22687,
+      "path": "docs/c5_excess_two_n2_partition_rule.md",
+      "sha256": "e6b8717e85ac340d06da7f0be1f94475efb57e7be68de200c4bc914232409527"
+    },
+    {
+      "bytes": 17610,
+      "path": "docs/c5_excess_two_n2_residual_unification.md",
+      "sha256": "94b1be022f73e4a32280711a80e3208c370810cfa5ae33e783d9d4d59a3a4bea"
+    },
+    {
+      "bytes": 62352,
+      "path": "docs/c5_kempe_guide.md",
+      "sha256": "7ade87e5a7183b49a0a81e2289077638853560c675d619072ae10ed4c9d22de1"
+    }
+  ],
+  "remaining_open": [
+    "N2 original-55",
+    "general N2",
+    "E-ARC2",
+    "UL residual: k_U=2, M_U empty, M_L=I, 4<=k_L<=6"
+  ],
+  "scope": "Arbitrary-size paper interface and unary capacity laws; fixed saved complete fibres, empty cells and same-source joins; no parent N2/E-ARC2 closure or new Lean theorem.",
+  "status": "PASS",
+  "used_one_calibration_counts": {
+    "all_saved_boundary_rows": 2280,
+    "all_saved_local_pieces": 228,
+    "complete_equal_pin_tuples": 28225,
+    "generic_local_hypotheses_not_triggered_pieces": 139,
+    "generic_local_hypotheses_triggered_pieces": 89,
+    "generic_theorem_not_triggered_rows": 1835,
+    "generic_theorem_triggered_and_holds_rows": 445,
+    "independent_complete_equal_pin_cells": 9120,
+    "negative_control_complete_equal_pin_cells": 120,
+    "original_source_piece_rows_checked": 1790,
+    "proper_four_colour_saved_rows": 1140,
+    "proper_three_colour_saved_rows": 1140,
+    "triggered_actual_mixed_equal_pin_pieces": 47,
+    "triggered_actual_unary_pieces": 42,
+    "triggered_k_2_pieces": 47,
+    "triggered_k_3_pieces": 42,
+    "triggered_used_forbidden_size_0": 341,
+    "triggered_used_forbidden_size_1": 104
+  }
+}

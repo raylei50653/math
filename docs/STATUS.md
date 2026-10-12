@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-11（N2原55新增兩低接點long／葉接點tree排除及含U的Eq-Diff同步化約；九格仍七格、含long父情形及E-ARC2 OPEN）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-12（兩接線U的全色Diff出口及原K₅已排完整N2原55(1,1)；剩u=0的(1,0)/(2,0)。九格仍七格、N2／E-ARC2 OPEN）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -331,7 +331,9 @@
 | [N2九格殘餘統一與原55下界衝突](c5_excess_two_n2_residual_unification.md) | 原55每欄容量為1，singleton mixed只能u=t=0，兩unary已排，u≤1。後續一U兩short採納使九格七格覆蓋；含long三情形及joint／Δ門檻仍缺。精確式H點數=35−6u−3t−Δ與有限下界10無直接衝突，原55／N2／E-ARC2 OPEN，未Lean化 |
 | [N2原55：unary三列未用色出口與兩short排除候選](c5_excess_two_n2_unary_three_row_escape.md) | 原無界block-tree候選現由下列獨立審查採納，完整(ℓ,u)=(0,1)原55子族已排；本頁保留作者當輪候選語境。97原U／15,520 cells與42局部觸發另經獨立重算，target not triggered；含long三情形及父N2／E-ARC2 OPEN |
 | [N2原55：unary三列出口採納與低接點long化約](c5_excess_two_n2_diagonal_three_row.md) | 另人紙面採納(0,1)來源排除；shared contact接受所有同色pins，long接線總數≤3有一指定列完整(D,D)出口，排一long無U低接點子域及指定shared子域。九格七格覆蓋，含long三情形同步仍OPEN；97U完整fibres及63圖完整joins獨立一致，target not triggered，無新Lean |
-| [N2原55：long同列同步與葉接點tree化約](c5_excess_two_n2_long_synchrony.md) | 兩long都k≤3由原相同spoke邊K₅排除；無U的long tree若所有root contacts為C葉則任意k排除；含U低接點非空mask恰Eq／Diff，異類同列排除，同類剩七個必要弧模板。九格仍七格；28,640原local cells及10,080同圖joins重算相符，k4 path反控制保留，target not triggered，無新Lean，父N2／E-ARC2 OPEN |
+| [N2原55：long同列同步與葉接點tree化約](c5_excess_two_n2_long_synchrony.md) | 兩long都k≤3由原相同spoke邊K₅排除；無U的long tree若所有root contacts為C葉則任意k排除；含U低接點非空mask恰Eq／Diff。當輪七個同類必要模板已由下列統一規律一起排除；28,640原local cells及10,080同圖joins校準，k4 path反控制保留，target not triggered，父N2／E-ARC2 OPEN |
+| [N2原55：完整fibre分割與已用色禁色規律](c5_excess_two_n2_partition_rule.md) | 同一具名接口分割決定完整tuple雙射；三點支援任意k四類mask，mixed26／unary7代表。已用禁色上界合原55容量排三接線U及七個同步模板；當輪兩接線U residual現由下列全色Diff出口全排。36,480完整local cells／10,400同列joins校準；target not triggered，九格仍七格，無新Lean，父N2／E-ARC2 OPEN |
+| [N2原55：兩接線U全色Diff出口與含U子情形排除](c5_excess_two_n2_unary_diff_closure.md) | 原五形任意大小窮盡，唯一Diff拒絕六點形有原K₅；每個owner色完整lift同列接G−U，排完整(1,1)。目標必u=0、H二連通，剩(1,0)/(2,0)，九格仍七格；168,000完整ambient cells校準、target not triggered、無新Lean，N2／E-ARC2 OPEN |
 | [C₅ 全線進展與高階假設](c5_research_synthesis.md) | §8.1 完整 E 與 E-ARC2 等價；新增真子圖單拒絕必要條件，ε=2 三點弧仍 OPEN；Q=B／932 另屬較強版本。八線證據及歷史快照保留；兩-root44已限定排除，不推升 E／H2／H3，不替代導覽排程 |
 | [C₅ 跨線結果對照與共通語言](c5_common_language.md) | 五欄代表成果對照；統一完整介面、兩種臨界性、結論類型與共用引理叫法；保留原來源、框族及操作義務；文件整理，無新定理或數學重播 |
 | [Phase B 共通引理候選分析](c5_phase_b_common_lemmas.md) | 三組候選與前提／反例／義務／效益；抽出原圖盾弧收費、推得任意两自由roots的條件容量恆等式、區分密封與動態充分性；兩非平面q-critical容量負控制及小型重播，未新增45／54／55排除或ε≥3下界 |
