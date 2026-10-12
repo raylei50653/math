@@ -4,6 +4,9 @@
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
+2026-10-12 新增：[共面識別正規形](c5_cofacial_normal_form.md) 接外部計數定理，
+得到一般 disk 圖的 `K≤12=K≤5`；十三內點以上仍 OPEN，未 Lean 化。
+
 ## 1. 閱讀順序與文件角色
 
 | 需求 | 入口 |
@@ -266,6 +269,7 @@
 | [C5 循環流與整數 orbit 分解](c5_circulation.md) | 六維／153 支撐／十二循環等價；36 份有限基底覆蓋推出任意非負整數恆等式解皆通過三套分開的 orbit 分解；獨立 singleton 支撐分解唯一，未新增平面來源排除或 Lean theorem |
 | [C5 代數—邊位置對座標](c5_edge_pair_coordinates.md) | 十態完整對照、S4／D5 搬運與 20 條蘊涵；1,024 masks 核對與既有 Kempe screen 等價，仍為 153／142／10，未增加排除力；紙面＋Python，未新增 Lean theorem |
 | [Kempe screen](c5_kempe_screen.md)、[adjacent-singleton 計數](c5_adjacent_singleton_counts.md) | 必要條件與剩餘候選已保存；一般 adjacent-singleton lemma 未證，與主線的相鄰雙「缺失」候選 A 不同 |
+| [共面識別正規形與十二內點界](c5_cofacial_normal_form.md) | 聯集封閉目錄＋global 最小內點／最大邊數，證簡單三角面正規形不增內點；接外部 Cor20 得 K≤12=K≤5。132 witnesses／8778 unions／十候選及完整 fibres 核對；十三內點以上、一般重接與 Lean 保留，不混用舊 edge-critical 前提 |
 | [count-cone bridge](c5_count_cone_bridge.md)、[B₅ face](c5_b5_face.md)、[Kempe-class 計數](c5_kempe_class_counts.md) | near-triangulation 化約、部分 Lean 代數及 class 級紙面計數已完成；普通 pairing 不給最終矛盾，cone／connectivity 缺口仍在 |
 | [connectivity surgery](c5_kempe_connectivity.md)、[AB 立方體](c5_ab_swap_cube.md)、[complementary 立方體](c5_complementary_cube.md)、[高度數 disk](c5_corner_disks.md) | 同圖 connectivity 更新與控制可重播；AB-only 必逃逸、固定 AB\|CD 必失敗等推測已有反例；較早低度數零 survivor 不再是一般候選依據 |
 | [edge states](c5_edge_states.md)、[incidence](c5_edge_incidence.md)、[edge switches](c5_edge_switches.md)、[多候選 choices](c5_edge_choices.md) | pairing／incidence 壓縮不足與 coherent witness 操作已核對；多候選欄位不能任意拼成同一個可實現 state |
@@ -477,6 +481,8 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 所有「已完成」均限於原報告前提；來源排除與指定列延拓不互換。
 
 ## 歷史紀錄與舊連結
+
+- [2026-10-12：共面正規形、十二內點界與發布核對](history/2026-10-12-cofacial-normal-form-publish.md)
 
 - [2026-10-11：N2原55殘餘、unary採納與long同步整理發布](history/2026-10-11-n2-55-progress-publish.md)；九格七格覆蓋、三項限定long排除及七個必要弧模板，四輪audit／完整fibres／負控制相連提交；target not triggered，原55父情形及E-ARC2 OPEN、未Lean化
 - [2026-10-11：三點弧研究與完整N2的原55大小界整理發布](history/2026-10-11-three-point-arc-publish.md)；四份紙面報告／checkers／固定控制相連提交，完整N2的45／54全排、原55有效內點≤35；目標來源not triggered，E-ARC2仍OPEN

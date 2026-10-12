@@ -1,0 +1,36 @@
+{
+  "certificate_unchanged": true,
+  "certificate_sha256": "8263f98986da73904fa1c4a5b9fcdcde4d9a56bec6ec74078e7b0ca02b323a98",
+  "checks": [
+    {
+      "label": "normal",
+      "returncode": 0,
+      "stdout": "{\"D_flip\": 1015, \"D_identify\": 959, \"F\": 854, \"G\": 567, \"Q\": 774}",
+      "certificate_sha256": "8263f98986da73904fa1c4a5b9fcdcde4d9a56bec6ec74078e7b0ca02b323a98",
+      "stdout_sha256": "1cbfce225ae4668d6d7241107638a51fe84b33985eef831a11241e990dbb1559"
+    },
+    {
+      "label": "seed17",
+      "returncode": 0,
+      "stdout": "{\"D_flip\": 1015, \"D_identify\": 959, \"F\": 854, \"G\": 567, \"Q\": 774}",
+      "certificate_sha256": "8263f98986da73904fa1c4a5b9fcdcde4d9a56bec6ec74078e7b0ca02b323a98",
+      "stdout_sha256": "1cbfce225ae4668d6d7241107638a51fe84b33985eef831a11241e990dbb1559"
+    },
+    {
+      "label": "corrupted-p-star-lift-rejected",
+      "returncode": 1,
+      "expected_error": "saved evidence differs",
+      "corrupt_sha256": "4c0414023fd6039605e6984de3cf4c4c9b1e1ab3c04080d556fcc6fe6f7abbca"
+    },
+    {
+      "label": "missing-certificate-read-only-check",
+      "returncode": 1,
+      "path_created": false
+    },
+    {
+      "label": "exclusive-write-existing-rejected",
+      "returncode": 1,
+      "expected_error": "FileExistsError"
+    }
+  ]
+}

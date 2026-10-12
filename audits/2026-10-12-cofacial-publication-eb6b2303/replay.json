@@ -1,0 +1,105 @@
+[
+  {
+    "name": "catalogue",
+    "command": [
+      "python3",
+      "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/checker.py",
+      "--check",
+      "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/VGgqpOS0eMjyutRd/lib/python3.13/site-packages",
+      "PYTHONHASHSEED": null
+    },
+    "exit_code": 0,
+    "expected_success": true,
+    "pass": true,
+    "seconds": 0.5690751075744629
+  },
+  {
+    "name": "catalogue-seed17",
+    "command": [
+      "python3",
+      "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/checker.py",
+      "--check",
+      "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json",
+      "--seed",
+      "17"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/VGgqpOS0eMjyutRd/lib/python3.13/site-packages",
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "expected_success": true,
+    "pass": true,
+    "seconds": 0.5676229000091553
+  },
+  {
+    "name": "rewire",
+    "command": [
+      "python3",
+      "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/review/rewire_controls.py",
+      "--check"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/VGgqpOS0eMjyutRd/lib/python3.13/site-packages",
+      "PYTHONHASHSEED": null
+    },
+    "exit_code": 0,
+    "expected_success": true,
+    "pass": true,
+    "seconds": 0.03467679023742676
+  },
+  {
+    "name": "rewire-seed17",
+    "command": [
+      "python3",
+      "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/review/rewire_controls.py",
+      "--check"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/VGgqpOS0eMjyutRd/lib/python3.13/site-packages",
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "expected_success": true,
+    "pass": true,
+    "seconds": 0.03539156913757324
+  },
+  {
+    "name": "catalogue-negative",
+    "command": [
+      "python3",
+      "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/checker.py",
+      "--check",
+      "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.corrupted.v2.json"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/VGgqpOS0eMjyutRd/lib/python3.13/site-packages",
+      "PYTHONHASHSEED": null
+    },
+    "exit_code": 1,
+    "expected_success": false,
+    "pass": true,
+    "seconds": 0.570634126663208
+  },
+  {
+    "name": "rewire-negative",
+    "command": [
+      "python3",
+      "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/review/rewire_controls.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/review/rewire_controls.corrupt.json"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/VGgqpOS0eMjyutRd/lib/python3.13/site-packages",
+      "PYTHONHASHSEED": null
+    },
+    "exit_code": 1,
+    "expected_success": false,
+    "pass": true,
+    "seconds": 0.03681659698486328
+  }
+]

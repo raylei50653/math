@@ -1,0 +1,168 @@
+{
+  "task_replays": [
+    {
+      "name": "catalogue",
+      "command": [
+        "python3",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/checker.py",
+        "--check",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json"
+      ],
+      "environment": {
+        "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/VGgqpOS0eMjyutRd/lib/python3.13/site-packages",
+        "PYTHONHASHSEED": null
+      },
+      "exit_code": 0,
+      "expected_success": true,
+      "pass": true,
+      "seconds": 0.5690751075744629
+    },
+    {
+      "name": "catalogue-seed17",
+      "command": [
+        "python3",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/checker.py",
+        "--check",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json",
+        "--seed",
+        "17"
+      ],
+      "environment": {
+        "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/VGgqpOS0eMjyutRd/lib/python3.13/site-packages",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_success": true,
+      "pass": true,
+      "seconds": 0.5676229000091553
+    },
+    {
+      "name": "rewire",
+      "command": [
+        "python3",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/review/rewire_controls.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/VGgqpOS0eMjyutRd/lib/python3.13/site-packages",
+        "PYTHONHASHSEED": null
+      },
+      "exit_code": 0,
+      "expected_success": true,
+      "pass": true,
+      "seconds": 0.03467679023742676
+    },
+    {
+      "name": "rewire-seed17",
+      "command": [
+        "python3",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/review/rewire_controls.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/VGgqpOS0eMjyutRd/lib/python3.13/site-packages",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_success": true,
+      "pass": true,
+      "seconds": 0.03539156913757324
+    },
+    {
+      "name": "catalogue-negative",
+      "command": [
+        "python3",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/checker.py",
+        "--check",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.corrupted.v2.json"
+      ],
+      "environment": {
+        "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/VGgqpOS0eMjyutRd/lib/python3.13/site-packages",
+        "PYTHONHASHSEED": null
+      },
+      "exit_code": 1,
+      "expected_success": false,
+      "pass": true,
+      "seconds": 0.570634126663208
+    },
+    {
+      "name": "rewire-negative",
+      "command": [
+        "python3",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/review/rewire_controls.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/review/rewire_controls.corrupt.json"
+      ],
+      "environment": {
+        "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/VGgqpOS0eMjyutRd/lib/python3.13/site-packages",
+        "PYTHONHASHSEED": null
+      },
+      "exit_code": 1,
+      "expected_success": false,
+      "pass": true,
+      "seconds": 0.03681659698486328
+    }
+  ],
+  "documentation": [
+    {
+      "name": "check-docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.7478101253509521
+    },
+    {
+      "name": "docgraph-docs",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.08803200721740723
+    },
+    {
+      "name": "docgraph-full",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "seconds": 7.4392805099487305
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.011352777481079102
+    }
+  ],
+  "lean": {
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit_code": 0,
+    "seconds": 10.246129274368286,
+    "scope": "existing Lean regression only; no new paper topology or external theorem formalized"
+  },
+  "full_docgraph_limitation": {
+    "errors": 62,
+    "kind": "duplicate-id",
+    "new_task_paths_in_errors": false
+  },
+  "original_manifest_unchanged": true,
+  "independent_review": "Original paper manifest and PROOF_REVIEW hash match; no new blocker. Complete isolated audit and direct document routing only.",
+  "scope": "K<=12=K<=5; K_infinity=K<=5 OPEN; new topology and external theorem not Lean formalized",
+  "readme_handoff": "reviewed unchanged: routes and active tags unchanged; README has unrelated staged content"
+}

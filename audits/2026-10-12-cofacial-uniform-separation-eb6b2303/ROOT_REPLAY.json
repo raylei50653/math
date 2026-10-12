@@ -1,0 +1,189 @@
+{
+  "base": "ab0862485b30b12b538c734271f354630afa8e26",
+  "checks": [
+    {
+      "label": "catalogue_normal",
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/checker.py",
+        "--check",
+        "/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "expected_success": true,
+      "pass": true,
+      "stdout": "PASS: read-only recomputation matches /home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json\n132 witnesses; 8778 unions; 10 targets; full ten-row pair lifts; joint negative counterexample; outside source not triggered\n",
+      "stderr": ""
+    },
+    {
+      "label": "catalogue_seed17",
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/checker.py",
+        "--check",
+        "/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json",
+        "--seed",
+        "17"
+      ],
+      "seed": 17,
+      "returncode": 0,
+      "expected_success": true,
+      "pass": true,
+      "stdout": "PASS: read-only recomputation matches /home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json\n132 witnesses; 8778 unions; 10 targets; full ten-row pair lifts; joint negative counterexample; outside source not triggered\n",
+      "stderr": ""
+    },
+    {
+      "label": "catalogue_corrupt_rejected",
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/checker.py",
+        "--check",
+        "/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.corrupted.v2.json"
+      ],
+      "seed": null,
+      "returncode": 1,
+      "expected_success": false,
+      "pass": true,
+      "stdout": "",
+      "stderr": "FAIL: certificate does not equal complete recomputation\n"
+    },
+    {
+      "label": "rewire_normal",
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/review/rewire_controls.py",
+        "--check"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "expected_success": true,
+      "pass": true,
+      "stdout": "{\"D_flip\": 1015, \"D_identify\": 959, \"F\": 854, \"G\": 567, \"Q\": 774}\n",
+      "stderr": ""
+    },
+    {
+      "label": "rewire_seed17",
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/review/rewire_controls.py",
+        "--check"
+      ],
+      "seed": 17,
+      "returncode": 0,
+      "expected_success": true,
+      "pass": true,
+      "stdout": "{\"D_flip\": 1015, \"D_identify\": 959, \"F\": 854, \"G\": 567, \"Q\": 774}\n",
+      "stderr": ""
+    },
+    {
+      "label": "rewire_corrupt_rejected",
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/review/rewire_controls.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/review/rewire_controls.corrupt.json"
+      ],
+      "seed": null,
+      "returncode": 1,
+      "expected_success": false,
+      "pass": true,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/review/rewire_controls.py\", line 133, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/review/rewire_controls.py\", line 128, in main\n    assert target.read_text() == serialized, \"saved evidence differs\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: saved evidence differs\n"
+    },
+    {
+      "label": "tracked_diff_whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "expected_success": true,
+      "pass": true,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "certificates_before": {
+    "controls/certificate.v2.json": "acaf18296c4463fe11dc081c27d882dfd484839af068e2cec9505dedd92f48da",
+    "review/rewire_controls.json": "8263f98986da73904fa1c4a5b9fcdcde4d9a56bec6ec74078e7b0ca02b323a98"
+  },
+  "certificates_after": {
+    "controls/certificate.v2.json": "acaf18296c4463fe11dc081c27d882dfd484839af068e2cec9505dedd92f48da",
+    "review/rewire_controls.json": "8263f98986da73904fa1c4a5b9fcdcde4d9a56bec6ec74078e7b0ca02b323a98"
+  },
+  "input_drift": [
+    {
+      "path": "artifacts/c5_cells/cells.json",
+      "expected_sha256": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+      "frozen_sha256": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+      "current_sha256": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8"
+    },
+    {
+      "path": "artifacts/c5_cells/kempe_screen.json",
+      "expected_sha256": "da327ab0ed0e9d46b82f8127e6ee26217667541a1edff5923852a78ee21c8083",
+      "frozen_sha256": "da327ab0ed0e9d46b82f8127e6ee26217667541a1edff5923852a78ee21c8083",
+      "current_sha256": "da327ab0ed0e9d46b82f8127e6ee26217667541a1edff5923852a78ee21c8083"
+    },
+    {
+      "path": "scripts/c5_kempe_screen.py",
+      "expected_sha256": "033fd7d6d2ff673ca1f7b78b8958b729351942092d58e027ea7d6b8713560a70",
+      "frozen_sha256": "033fd7d6d2ff673ca1f7b78b8958b729351942092d58e027ea7d6b8713560a70",
+      "current_sha256": "033fd7d6d2ff673ca1f7b78b8958b729351942092d58e027ea7d6b8713560a70"
+    },
+    {
+      "path": "docs/c5_boundary_relations.md",
+      "expected_sha256": "23f868d245176cea1e9d520af64ea63f96decdb57b39e3578e4340e66311fc63",
+      "frozen_sha256": "23f868d245176cea1e9d520af64ea63f96decdb57b39e3578e4340e66311fc63",
+      "current_sha256": "23f868d245176cea1e9d520af64ea63f96decdb57b39e3578e4340e66311fc63"
+    },
+    {
+      "path": "docs/c5_cell_enumerator.md",
+      "expected_sha256": "8b7dd0bf3c525178ba42b7afd867f97c58ea1257dd6e17c169549e2b0b19ca20",
+      "frozen_sha256": "8b7dd0bf3c525178ba42b7afd867f97c58ea1257dd6e17c169549e2b0b19ca20",
+      "current_sha256": "8b7dd0bf3c525178ba42b7afd867f97c58ea1257dd6e17c169549e2b0b19ca20"
+    },
+    {
+      "path": "docs/c5_kempe_screen.md",
+      "expected_sha256": "c2629835e06d51929c2797e70680d380040a3dcaf8b8ca2295bc88315d204e5d",
+      "frozen_sha256": "c2629835e06d51929c2797e70680d380040a3dcaf8b8ca2295bc88315d204e5d",
+      "current_sha256": "c2629835e06d51929c2797e70680d380040a3dcaf8b8ca2295bc88315d204e5d"
+    },
+    {
+      "path": "docs/c5_adjacent_singleton_counts.md",
+      "expected_sha256": "4e0389a457ee684bd05718ccbd928e75202194e89d99432db13329948cc67cac",
+      "frozen_sha256": "4e0389a457ee684bd05718ccbd928e75202194e89d99432db13329948cc67cac",
+      "current_sha256": "4e0389a457ee684bd05718ccbd928e75202194e89d99432db13329948cc67cac"
+    },
+    {
+      "path": "docs/c5_count_cone_bridge.md",
+      "expected_sha256": "1f667b782a6357327a41269372d2afb94d53e6f3a9415c3cc286e728c1afb7b3",
+      "frozen_sha256": "1f667b782a6357327a41269372d2afb94d53e6f3a9415c3cc286e728c1afb7b3",
+      "current_sha256": "1f667b782a6357327a41269372d2afb94d53e6f3a9415c3cc286e728c1afb7b3"
+    },
+    {
+      "path": "docs/c5_kempe_guide.md",
+      "expected_sha256": "d99771873bc196d58cee0ac4870cca0ddaed9938d87104f00f716b4d75b5c621",
+      "frozen_sha256": "d99771873bc196d58cee0ac4870cca0ddaed9938d87104f00f716b4d75b5c621",
+      "current_sha256": "d99771873bc196d58cee0ac4870cca0ddaed9938d87104f00f716b4d75b5c621"
+    },
+    {
+      "path": "docs/DOCUMENTATION.md",
+      "expected_sha256": "40214801431719f88f6a808bc9c2f74ed0ec3044a5c555cac0a99678af105ac3",
+      "frozen_sha256": "40214801431719f88f6a808bc9c2f74ed0ec3044a5c555cac0a99678af105ac3",
+      "current_sha256": "40214801431719f88f6a808bc9c2f74ed0ec3044a5c555cac0a99678af105ac3"
+    }
+  ],
+  "input_drift_count": 0,
+  "preexisting_worktree_status_unchanged": true,
+  "scripts_parse": true,
+  "prior_attempt": {
+    "status": "verification-wrapper assertion failed after successful test commands",
+    "reason": "Initial git status was captured after creating the audit directory. The first comparator filtered this directory from only the final snapshot. Both snapshots are now filtered symmetrically; no original input or pre-existing status changed."
+  },
+  "lean_build": "not run: no Lean changes",
+  "external_computation_reproduction": "not run: cited theorem dependency"
+}

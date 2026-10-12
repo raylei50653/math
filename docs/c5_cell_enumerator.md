@@ -1,5 +1,10 @@
 # C5 cell 窮舉器：C5 邊界＋密封內部＋只把邊界限制往外暴露
 
+**後續（2026-10-12）**：[共面正規形與十二內點界](c5_cofacial_normal_form.md) 由
+132 個具體 witness、有限必要 screen、聯集封閉性、紙面正規形及外部計數定理
+推出 `K≤12=K≤5`，不依賴五內點 graph enumeration 完備性。這條獨立證據鏈不
+改寫下列原 DFS／reduced 搜尋的 computationally observed 或 Lean 信任範圍。
+
 2026-09-13。使用者提問：C5 能不能當子結構——
 
 $$

@@ -1,0 +1,67 @@
+{
+  "certificate_bytes": 467023,
+  "corruption": "inserted an impossible Eq full lift in an originally empty 01232 row; rejected",
+  "exclusive_create": "existing certificate rewrite rejected",
+  "frozen_files_preserved": true,
+  "networkx_version": "3.5",
+  "normal_and_seed17_byte_equal": true,
+  "pythonpath_used": "/home/ray/.cache/uv/archive-v0/VGgqpOS0eMjyutRd/lib/python3.13/site-packages",
+  "read_only_checks_preserved_hashes": true,
+  "runs": [
+    {
+      "args": [
+        "--write",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.seed17.v2.json",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "PASS: exclusively created /home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.seed17.v2.json\n132 witnesses; 8778 unions; 10 targets; full ten-row pair lifts; joint negative counterexample; outside source not triggered\n"
+    },
+    {
+      "args": [
+        "--check",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "PASS: read-only recomputation matches audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json\n132 witnesses; 8778 unions; 10 targets; full ten-row pair lifts; joint negative counterexample; outside source not triggered\n"
+    },
+    {
+      "args": [
+        "--check",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "PASS: read-only recomputation matches audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json\n132 witnesses; 8778 unions; 10 targets; full ten-row pair lifts; joint negative counterexample; outside source not triggered\n"
+    },
+    {
+      "args": [
+        "--write",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json"
+      ],
+      "exit_code": 1,
+      "stderr": "FAIL: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json'\n",
+      "stdout": ""
+    },
+    {
+      "args": [
+        "--check",
+        "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.corrupted.v2.json"
+      ],
+      "exit_code": 1,
+      "stderr": "FAIL: certificate does not equal complete recomputation\n",
+      "stdout": ""
+    }
+  ],
+  "sha256": {
+    "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.seed17.v2.json": "acaf18296c4463fe11dc081c27d882dfd484839af068e2cec9505dedd92f48da",
+    "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json": "acaf18296c4463fe11dc081c27d882dfd484839af068e2cec9505dedd92f48da",
+    "audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/checker.py": "8b0d5ce0d83c722ec5128c94b8f3f139e803e93371659c0a043d34d2ce324dd1"
+  },
+  "status": "triggered and holds"
+}
