@@ -1,0 +1,19 @@
+name: Generated artifacts
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Test artifact storage checks
+        run: python3 -m unittest discover -s tools/tests -p 'test_*.py'
+      - name: Reject tracked large generated files
+        run: python3 tools/check_generated_artifacts.py

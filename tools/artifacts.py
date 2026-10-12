@@ -17,7 +17,8 @@ python tools/artifacts.py record [PATH ...]   # accept current bytes (after an i
                                               # with no PATH: rescan artifacts/ for large files
 
 Run under the pinned environment:  uv run --with-requirements requirements.txt python tools/artifacts.py ...
-A rebuild moves each existing output aside first; a mismatching rerun is kept as
+A rebuild moves each existing output and its declared small companions aside
+first, and verifies saved companion bytes too; a mismatching rerun is kept as
 <path>.rebuilt and the recorded file is restored (--keep-going instead leaves the
 new bytes in place so downstream producers still run).  Exit status 1 on any failure.
 """
@@ -30,7 +31,7 @@ from hashlib import sha256
 from importlib import metadata
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import re
 import subprocess
 import sys
@@ -52,9 +53,42 @@ FROZEN = {
 }
 # Outputs whose producer cannot be read off an `OUT = ROOT / '...'` style assignment.
 PRODUCER_OVERRIDES = {
+    'artifacts/c5_excess_two_arc_component_slack/observations.json': 'c5_excess_two_arc_component_slack.py',
+    'artifacts/c5_excess_two_c44p/two_private.json': 'c5_excess_two_c44p_two_private.py',
+    'artifacts/c5_excess_two_e4/control_probe/split_hub_probe.json':
+        'artifacts/c5_excess_two_e4/control_probe/split_hub_probe.py',
     'artifacts/automata/': 'triangle_automata.py',
     'artifacts/stepwise/layer_refinement.json': 'stepwise_layer_refinement.py',
     'artifacts/c5_no_mixed_hypothesis_audit/anchor.json': 'c5_no_mixed_hypothesis_anchor.py',
+}
+# These producers exclusively create small companion files as well as their
+# MANIFEST outputs. Move and verify only their declared companions on rebuild.
+ADDITIONAL_OUTPUTS = {
+    'c5_excess_two_c44p_two_private.py': (
+        'artifacts/c5_excess_two_c44p/two_private_table.md',
+        'artifacts/c5_excess_two_c44p/two_private_proof.txt',
+        'artifacts/c5_excess_two_c44p/named_C44P-AD2-012-034.json',
+    ),
+    'c5_kempe_diagonal_transport.py': (
+        'artifacts/c5_kempe_diagonal_transport/observations.json',
+        'artifacts/c5_kempe_diagonal_transport/controls.json',
+        'artifacts/c5_kempe_diagonal_transport/KD933-0001.json',
+        'artifacts/c5_kempe_diagonal_transport/KD941-0001.json',
+    ),
+    'c5_shield_calibration.py': (
+        'artifacts/c5_shield_calibration/counterexample_S935.json',
+    ),
+    'c5_excess_one_e2_951_remaining.py': (
+        'artifacts/c5_excess_one_e2_951_remaining/subdivisions.json',
+        'artifacts/c5_excess_one_e2_951_remaining/interior_bridges_and_sidebranches.json',
+        'artifacts/c5_excess_one_e2_951_remaining/final_sidebranch_terminal_blocks.json',
+    ),
+}
+# Reproduce each saved run's CLI settings, including explicit write modes.
+PRODUCER_ARGS = {
+    'c5_excess_rejection_law.py': ('--max-k', '5', '--greedy-trials', '40', '--seed', '17'),
+    'c5_qcore_shield_screen.py': ('--write',),
+    'c5_open_leaf_ledger.py': ('--write',),
 }
 
 
@@ -74,13 +108,31 @@ def save(manifest):
     MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, sort_keys=True, indent=1) + '\n')
 
 
+def script_path(name):
+    """Resolve a legacy scripts/ basename or an exact repository-relative Python path."""
+    if not isinstance(name, str) or not name or '\\' in name:
+        raise ValueError(f'invalid producer path: {name!r}')
+    relative = PurePosixPath(name)
+    if (relative.is_absolute() or '..' in relative.parts
+            or relative.as_posix() != name or relative.suffix != '.py'):
+        raise ValueError(f'invalid producer path: {name!r}')
+    full = ROOT / ('scripts' if len(relative.parts) == 1 else '') / relative
+    if not full.resolve().is_relative_to(ROOT.resolve()):
+        raise ValueError(f'producer path escapes repository: {name!r}')
+    return full
+
+
+def script_label(name):
+    return script_path(name).relative_to(ROOT).as_posix()
+
+
 def script_text(name):
-    return (ROOT / 'scripts' / name).read_text()
+    return script_path(name).read_text()
 
 
 def infer_producer(path):
     for prefix, script in PRODUCER_OVERRIDES.items():
-        if path.startswith(prefix):
+        if path == prefix or prefix.endswith('/') and path.startswith(prefix):
             return script
     directory = path.split('/')[1]
     exact, by_directory = [], []
@@ -145,7 +197,7 @@ def code_closure(script):
         text = script_text(name)
         refs = re.findall(r'^\s*(?:from|import)\s+(\w+)', text, re.M)
         refs += re.findall(r'''["'](?:scripts/)?(\w+)\.py["']''', text)
-        todo.extend(f'{ref}.py' for ref in refs if (ROOT / 'scripts' / f'{ref}.py').exists())
+        todo.extend(f'{ref}.py' for ref in refs if script_path(f'{ref}.py').exists())
     return sorted(seen)
 
 
@@ -154,7 +206,9 @@ def fingerprint(script, manifest):
     recorded hashes of the files its needs produce."""
     h = sha256()
     for name in code_closure(script):
-        h.update(f'scripts/{name}\0'.encode() + (ROOT / 'scripts' / name).read_bytes() + b'\0')
+        h.update(f'{script_label(name)}\0'.encode() + script_path(name).read_bytes() + b'\0')
+    if arguments := PRODUCER_ARGS.get(script):
+        h.update(b'argv\0' + json.dumps(arguments, separators=(',', ':')).encode() + b'\0')
     needs = set(manifest['producers'].get(script, []))
     for path, entry in sorted(manifest['files'].items()):
         if entry['script'] in needs:
@@ -205,27 +259,50 @@ def cmd_status(args):
             s = 'stale'
         counts[s] = counts.get(s, 0) + 1
         if s != 'ok' or args.verbose:
-            print(f'{s:8s} {path}  <- scripts/{entry["script"]}')
+            print(f'{s:8s} {path}  <- {script_label(entry["script"])}')
     print(' '.join(f'{k}={v}' for k, v in sorted(counts.items())))
     return 0 if set(counts) <= {'ok'} else 1
 
 
 def run_producer(script, paths, manifest, keep_going):
     """Run one producer with its recorded outputs moved aside; return (run, seconds, mismatching paths)."""
+    producer = script_path(script)
+    all_paths = sorted(set(paths) | set(ADDITIONAL_OUTPUTS.get(script, ())))
+    companions = {}
     aside = {}
-    for path in paths:
+    for path in all_paths:
+        full = ROOT / path
+        if path not in paths and full.exists():
+            companions[path] = dict(bytes=full.stat().st_size, sha256=file_sha(full))
+        temporary = full.with_name(full.name + '.pre-rebuild')
+        if temporary.exists() or temporary.is_symlink():
+            raise ValueError(f'previous rebuild backup already exists: {temporary}')
+    for path in all_paths:
         full = ROOT / path
         if full.exists():
             aside[path] = full.with_name(full.name + '.pre-rebuild')
             full.rename(aside[path])
     started = time.monotonic()
-    run = subprocess.run([sys.executable, str(ROOT / 'scripts' / script)], cwd=ROOT,
-                         stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True)
+    try:
+        run = subprocess.run([sys.executable, str(producer), *PRODUCER_ARGS.get(script, ())], cwd=ROOT,
+                             stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True)
+    except BaseException:
+        # A launch failure or interrupted subprocess must not strand saved bytes
+        # under the temporary name. Preserve any partial output for inspection.
+        for path in all_paths:
+            full = ROOT / path
+            if full.exists():
+                full.rename(full.with_name(full.name + '.rebuilt'))
+            if path in aside:
+                aside[path].rename(full)
+        raise
     seconds = time.monotonic() - started
     bad = []
-    for path in sorted(paths):
+    for path in all_paths:
         full = ROOT / path
-        if run.returncode == 0 and state(path, manifest['files'][path]) == 'ok':
+        entry = manifest['files'][path] if path in paths else companions.get(path)
+        matches = state(path, entry) == 'ok' if entry is not None else full.is_file()
+        if run.returncode == 0 and matches:
             if path in aside:
                 aside[path].unlink()
             continue
@@ -282,7 +359,7 @@ def cmd_rebuild(args):
                 if bad := [n for n in needs if status[n] in ('failed', 'blocked')
                                                    or status[n] == 'mismatch' and not args.keep_going]:
                     status[script] = 'blocked'
-                    report('BLOCKED', f'scripts/{script}  (needs {", ".join(bad)})')
+                    report('BLOCKED', f'{script_label(script)}  (needs {", ".join(bad)})')
                 elif len(running) < args.jobs and all(status[n] in passable for n in needs):
                     status[script] = 'running'
                     running[pool.submit(run_producer, script, outputs[script], manifest,
@@ -303,24 +380,24 @@ def cmd_rebuild(args):
                     rank = {s: i for i, s in enumerate(order(manifest))}
                     status.setdefault(upstream, 'pending')
                     status[script] = 'pending'
-                    report('learned', f'scripts/{script} needs scripts/{upstream}')
+                    report('learned', f'{script_label(script)} needs {script_label(upstream)}')
                     continue
                 if run.returncode != 0:
                     status[script] = 'failed'
-                    report('FAIL', f'scripts/{script} exit {run.returncode} ({seconds:.0f}s)\n'
+                    report('FAIL', f'{script_label(script)} exit {run.returncode} ({seconds:.0f}s)\n'
                            + run.stderr.strip()[-2000:])
                 elif bad:
                     status[script] = 'mismatch'
                     for path in bad:
-                        report('MISMATCH', f'{path}  <- scripts/{script}')
+                        report('MISMATCH', f'{path}  <- {script_label(script)}')
                 else:
                     status[script] = 'ok'
                     manifest.setdefault('fingerprints', {})[script] = fingerprint(script, manifest)
                     save(manifest)
-                    report('ok', f'scripts/{script} ({seconds:.0f}s, {len(outputs[script])} file(s))')
+                    report('ok', f'{script_label(script)} ({seconds:.0f}s, {len(outputs[script])} file(s))')
     stuck = [s for s, v in status.items() if v == 'pending']
     for script in stuck:
-        print(f'STUCK    scripts/{script}  (dependency cycle?)')
+        print(f'STUCK    {script_label(script)}  (dependency cycle?)')
     counts = {}
     for value in status.values():
         counts[value] = counts.get(value, 0) + 1

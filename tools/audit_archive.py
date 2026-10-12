@@ -6,6 +6,7 @@ diagnostics. append adds later audits to an existing archive without touching
 archived paths (and, with --artifacts, the bytes of MANIFEST artifacts not yet
 archived). restore recreates their exact paths; verify checks every blob and
 every original. Small audit reports and active tools remain ordinary Git files.
+append --paths archives only the named regular audit files, including small files.
 """
 from __future__ import annotations
 
@@ -52,6 +53,12 @@ def historical_whitespace(path):
     return value.endswith('\n\n') or any(line.rstrip() != line for line in value.splitlines())
 
 
+def file_record(path, reason, stat=None):
+    stat = stat or path.stat()
+    return dict(sha256=digest(path), bytes=stat.st_size,
+                mode=stat.st_mode & 0o777, reason=reason)
+
+
 def scan(root):
     records, sources = {}, {}
     for directory, dirs, names in os.walk(root / 'audits'):
@@ -70,10 +77,35 @@ def scan(root):
                       else 'historical-whitespace' if historical_whitespace(path) else None)
             if not reason:
                 continue
-            sha = digest(path)
-            sources.setdefault(sha, path)
-            records[relative] = dict(sha256=sha, bytes=stat.st_size,
-                                     mode=stat.st_mode & 0o777, reason=reason)
+            record = file_record(path, reason, stat)
+            sources.setdefault(record['sha256'], path)
+            records[relative] = record
+    return records, sources
+
+
+def selected_files(root, paths):
+    records, sources = {}, {}
+    for relative in paths:
+        parts = PurePosixPath(relative)
+        if (parts.is_absolute() or '..' in parts.parts or len(parts.parts) < 2
+                or parts.parts[0] != 'audits'):
+            raise ValueError(f'Selected path must be relative inside audits/: {relative}')
+        relative = parts.as_posix()
+        if relative == INDEX or parts.parts[1] == '.archive':
+            raise ValueError(f'Cannot select archive metadata or blobs: {relative}')
+        path = root
+        for part in parts.parts:
+            path /= part
+            if path.is_symlink():
+                raise ValueError(f'Selected path contains a symlink: {relative}')
+        path = safe_path(root, relative)
+        if not path.is_file():
+            raise ValueError(f'Selected path is missing or not a regular file: {relative}')
+        if relative in records:
+            continue
+        record = file_record(path, 'explicit')
+        records[relative] = record
+        sources.setdefault(record['sha256'], path)
     return records, sources
 
 
@@ -129,10 +161,10 @@ def pack(root):
                           compressed_bytes=sum(x['bytes'] for x in blobs.values()))))
 
 
-def append(root, include_artifacts=False):
+def append(root, include_artifacts=False, paths=None):
     index = root / INDEX
     data = json.loads(index.read_text())
-    scanned, sources = scan(root)
+    scanned, sources = scan(root) if paths is None else selected_files(root, paths)
     added = {}
     for relative, record in scanned.items():
         old = data['files'].get(relative)
@@ -228,12 +260,16 @@ def main():
                         help='Restore/verify archived paths under a separate checkout')
     parser.add_argument('--artifacts', action='store_true',
                         help='Also restore/verify (or, for append, archive) live artifacts by their MANIFEST SHA256')
+    parser.add_argument('--paths', nargs='+',
+                        help='For append, archive only these regular files relative to the repo inside audits/')
     args = parser.parse_args()
+    if args.paths is not None and args.action != 'append':
+        parser.error('--paths is only supported for append')
     root = args.repo.resolve()
     if args.action == 'pack':
         pack(root)
     elif args.action == 'append':
-        append(root, args.artifacts)
+        append(root, args.artifacts, args.paths)
     else:
         replay(root, args.action, (args.destination or root).resolve(), args.artifacts)
 

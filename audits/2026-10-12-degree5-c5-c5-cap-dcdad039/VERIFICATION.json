@@ -1,0 +1,238 @@
+{
+  "schema": "task-c-verification-v1",
+  "base": "bc7c0820e6b5e585869b8a59e04f52da0dad2d33",
+  "created_utc": "2026-10-12T12:23:20.743336+00:00",
+  "environment": {
+    "python": "3.14.7",
+    "networkx": "3.5"
+  },
+  "checks": [
+    {
+      "name": "upstream_v2_readonly",
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python audits/2026-10-12-degree5-c5-c5-cap-dcdad039/frozen/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/checker.py --check audits/2026-10-12-degree5-c5-c5-cap-dcdad039/frozen/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json",
+      "exit_code": 0,
+      "status": "triggered and holds",
+      "log": "logs/upstream-replay.log",
+      "log_sha256": "0fbe4f86683283b35d5e2691683d7d795b6a366d1058e62120831b3d220c7e9e"
+    },
+    {
+      "name": "main_generation",
+      "command": ".venv/bin/python audits/2026-10-12-degree5-c5-c5-cap-dcdad039/controls/checker.py --write > audits/2026-10-12-degree5-c5-c5-cap-dcdad039/controls/generation.log 2>&1",
+      "exit_code": 0,
+      "status": "triggered and holds",
+      "log": "controls/generation.log",
+      "log_sha256": "bb79411935763171e65adcafb7ebc8c43ec9988516399dee7e981888c0d1d89a",
+      "note": "First generation preceded additional bytecode prevention and explicit star-rotation assertions; both final normal and seed17 replays enforced those assertions without changing certificate data."
+    },
+    {
+      "name": "normal_readonly",
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python audits/2026-10-12-degree5-c5-c5-cap-dcdad039/controls/checker.py --check",
+      "exit_code": 0,
+      "status": "triggered and holds",
+      "log": "logs/replay-normal.log",
+      "log_sha256": "3fa595f90d2023b4a9982e3cdf6c2e16811bfbdc9fba79e6a9a06c59defc35f6"
+    },
+    {
+      "name": "hashseed_and_order_17_readonly",
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONHASHSEED=17 .venv/bin/python audits/2026-10-12-degree5-c5-c5-cap-dcdad039/controls/checker.py --check --seed 17",
+      "exit_code": 0,
+      "status": "triggered and holds",
+      "log": "logs/replay-seed17.log",
+      "log_sha256": "054cc8008e032f9399ca28f8de3117c78434d65ede82e0cf9e7fb48a05611740"
+    },
+    {
+      "name": "independent_relation_readonly",
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python audits/2026-10-12-degree5-c5-c5-cap-dcdad039/review/independent_join.py --check",
+      "exit_code": 0,
+      "status": "triggered and holds",
+      "log": "logs/independent-replay.log",
+      "log_sha256": "b57303be559cc817ac7adc7146ed1d7e07ffd7ceff7ff5c114c771b8e0dc7c77"
+    },
+    {
+      "name": "independent_certificate_readonly",
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python audits/2026-10-12-degree5-c5-c5-cap-dcdad039/review/compare_certificate.py --check",
+      "exit_code": 0,
+      "status": "triggered and holds",
+      "log": "logs/independent-certificate-replay.log",
+      "log_sha256": "dc3ce00f62936829c5cab9be30b1a534d1d1f34803851c59b158005ba1809476"
+    },
+    {
+      "name": "six_negative_controls_generation",
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python audits/2026-10-12-degree5-c5-c5-cap-dcdad039/check_negative_controls.py --write",
+      "exit_code": 0,
+      "status": "triggered and holds",
+      "log": "logs/negative-controls.log",
+      "log_sha256": "c7bb6060bd54ea6cf58022c109a9c93b59bdd38d6ce0af01e4061bf4816bf119"
+    },
+    {
+      "name": "six_negative_controls_readonly",
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python audits/2026-10-12-degree5-c5-c5-cap-dcdad039/check_negative_controls.py --check",
+      "exit_code": 0,
+      "status": "triggered and holds",
+      "log": "logs/negative-readonly-replay.log",
+      "log_sha256": "c7bb6060bd54ea6cf58022c109a9c93b59bdd38d6ce0af01e4061bf4816bf119"
+    }
+  ],
+  "hashes": {
+    "INPUTS.json": "9f00b0fa953cb038b56f04bc9236c2b38a841a48d80d7d4bd4d90a164abf36c3",
+    "controls/DOMAIN.json": "77b45b05bf6d15aa1abf63a68c45622237e70495f30ee4a5fa5f024d08c3d647",
+    "controls/checker.py": "c6599b40b7a098c54f0bfb1692235f76bdf6e982396695abc399cc9129279b9a",
+    "controls/certificate.json": "2b4b956d10a39cb91ee44f41fccde880eed1d1bf17981de87d67386aa177ba3d",
+    "paper/PAPER.md": "03dd93fa5533812572a12b5df151c1e78465c0c329758be0cb31d23fd5a42fd5",
+    "review/independent_join.py": "aba70031756e2b8f4058fde3356b755b9625182356a4aafd6e88969333885255",
+    "review/compare_certificate.py": "27eb8025f55a36ea6195a3b7d7c023f07a8a7e629ad38c88faf9306565d1a682",
+    "check_negative_controls.py": "89313d5cd884f00af5bf60c152a6635d609ed3eeb528228605caa7f445357813"
+  },
+  "finite_summary": {
+    "933_941_actual_source": "not triggered",
+    "Lean": "not triggered",
+    "all_outputs_in_K": true,
+    "empty_joint_rows": 24082,
+    "full_lifts_checked": 2606752,
+    "independent_complete_whole_graph_recolouring": "triggered and holds",
+    "joint_blocks": 657432,
+    "joint_rows": 174240,
+    "literal_disk_and_rotation_checks": "triggered and holds",
+    "maximum_literal_internal_vertices": 14,
+    "maximum_output_representative_k_eff": 5,
+    "minimum_outside_source": "not triggered",
+    "ordered_pairs": 17424,
+    "outside_pairs": [],
+    "pairs_with_parallel_simplification": 49,
+    "relation_counts": {
+      "1000": 300,
+      "1005": 14,
+      "1006": 14,
+      "1007": 2828,
+      "1015": 32,
+      "1016": 552,
+      "1019": 21,
+      "1021": 21,
+      "1022": 21,
+      "1023": 7013,
+      "127": 16,
+      "167": 11,
+      "191": 16,
+      "199": 13,
+      "223": 16,
+      "231": 16,
+      "255": 19,
+      "271": 13,
+      "319": 16,
+      "351": 16,
+      "383": 16,
+      "424": 174,
+      "429": 7,
+      "431": 719,
+      "440": 181,
+      "445": 14,
+      "447": 829,
+      "463": 8,
+      "479": 11,
+      "495": 22,
+      "511": 32,
+      "567": 16,
+      "575": 16,
+      "607": 16,
+      "631": 16,
+      "632": 237,
+      "635": 28,
+      "639": 1751,
+      "695": 16,
+      "703": 16,
+      "727": 16,
+      "735": 16,
+      "759": 21,
+      "767": 32,
+      "775": 11,
+      "783": 16,
+      "823": 16,
+      "831": 21,
+      "855": 16,
+      "863": 19,
+      "887": 16,
+      "895": 32,
+      "935": 8,
+      "943": 26,
+      "95": 16,
+      "951": 13,
+      "959": 32,
+      "960": 174,
+      "966": 7,
+      "967": 719,
+      "975": 22,
+      "976": 181,
+      "982": 14,
+      "983": 829,
+      "991": 32,
+      "999": 26
+    }
+  },
+  "custody_record": "CUSTODY.json",
+  "frozen_input_drift_count": 0,
+  "live_input_drift": [
+    {
+      "path": "docs/STATUS.md",
+      "sha256": "d2d6a9dba7ec09286e9c13aba926038ed6409292b801f884e8ac45c52560aff9",
+      "matches_frozen_base": false
+    },
+    {
+      "path": "docs/tasks/c5_degree5_link_tasks.md",
+      "sha256": "b8be3ad71e68c10a1076bb07900310d8c823e1137c100e17cc69d49d2142b6d9",
+      "matches_frozen_base": false
+    },
+    {
+      "path": "docs/c5_saturation_degree_bound.md",
+      "sha256": "91ece9c99c51bd7ed87aab1987719addfd5ab6297d3ef557b0e75691b80e0e99",
+      "matches_frozen_base": false
+    },
+    {
+      "path": "docs/c5_cofacial_normal_form.md",
+      "sha256": "47ea6506f0fe6f8fce42b4c3df2a877ccb55763df520826fd53e4923c5606179",
+      "matches_frozen_base": false
+    }
+  ],
+  "preexisting_staged_file_drift_count": 0,
+  "preexisting_index_diff_unchanged": true,
+  "live_routing_snapshots": {
+    "scope": "observed concurrent routing changes only; not proof inputs",
+    "files": [
+      {
+        "path": "routing-at-close/docs/STATUS.md",
+        "sha256": "d2d6a9dba7ec09286e9c13aba926038ed6409292b801f884e8ac45c52560aff9"
+      },
+      {
+        "path": "routing-at-close/docs/c5_cofacial_normal_form.md",
+        "sha256": "47ea6506f0fe6f8fce42b4c3df2a877ccb55763df520826fd53e4923c5606179"
+      },
+      {
+        "path": "routing-at-close/docs/c5_neartri_boundary_collar.md",
+        "sha256": "111181345fd53c7dce26aa3e05003091236b6cda0f227b67b83fc317079ec53a"
+      },
+      {
+        "path": "routing-at-close/docs/c5_saturation_degree_bound.md",
+        "sha256": "91ece9c99c51bd7ed87aab1987719addfd5ab6297d3ef557b0e75691b80e0e99"
+      },
+      {
+        "path": "routing-at-close/docs/tasks/c5_degree5_link_tasks.md",
+        "sha256": "b8be3ad71e68c10a1076bb07900310d8c823e1137c100e17cc69d49d2142b6d9"
+      }
+    ]
+  },
+  "not_run": [
+    "Lean build or new Lean theorem",
+    "external Dvorak-Lidicky computational proof replay",
+    "unbounded graph search"
+  ],
+  "publication": {
+    "commit": false,
+    "push": false,
+    "PR": false,
+    "shared_document_edits_by_this_task": false
+  },
+  "domain_freeze": {
+    "command": ".venv/bin/python audits/2026-10-12-degree5-c5-c5-cap-dcdad039/controls/checker.py --freeze-domain",
+    "exclusive_creation": true,
+    "before_pair_computation": true
+  }
+}

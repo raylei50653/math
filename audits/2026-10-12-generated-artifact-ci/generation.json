@@ -1,0 +1,1900 @@
+{
+  "schema_version": 1,
+  "scope": "PARTIAL",
+  "source_HEAD": "ab0862485b30b12b538c734271f354630afa8e26",
+  "first_pass_source_index_sha256": "ba9e35198405895e60855bb99670d78c56be94ebd655eb1ee043c56ba3a782e3",
+  "environment": {
+    "python": "3.14.7 (main, Aug 10 2026, 07:46:56) [GCC 16.1.1 20260728]",
+    "networkx": "3.5",
+    "PYTHONHASHSEED": "0",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "method": {
+    "checkout": "isolated shared clone of actual Git history, checked out from staged index",
+    "inputs": "165 MANIFEST outputs restored and verified from exact gzip blobs; archived D5 scope ledger restored for QCORE retry",
+    "command": "python tools/artifacts.py rebuild --all -j 4",
+    "comparison": "Move recorded outputs aside, actually generate, compare SHA256 and byte size, restore recorded bytes on mismatch; no --keep-going",
+    "first_pass_started_utc": "2026-10-12T08:58:47.363388+00:00",
+    "first_pass_finished_utc": "2026-10-12T09:04:03.344064+00:00",
+    "first_pass_exit_code": 1,
+    "retry_scope": "Only initially failed/mismatching/blocked producers affected by concrete recipe fixes, plus the newly registered probe; prior successes were not repeated"
+  },
+  "effective_counts": {
+    "producers": 160,
+    "outputs": 166,
+    "producer_statuses": {
+      "ok": 137,
+      "failed": 1,
+      "mismatch": 1,
+      "blocked": 21
+    },
+    "output_statuses": {
+      "ok": 143,
+      "failed": 1,
+      "blocked": 21,
+      "mismatch": 1
+    }
+  },
+  "recipe_tool_sha256": "cfecfd5e0747c1332040dbc01bdf197dfc73ea056c1adbb85f113e24a00d640c",
+  "manifest_sha256": "a6839706f5d9ef8fb66c9a8f1dab9d74d8efa1b26f839be63ff89222e65f2961",
+  "producer_results": {
+    "artifacts/c5_excess_two_e4/control_probe/split_hub_probe.py": {
+      "started_utc": "2026-10-12T09:20:51.107708+00:00",
+      "finished_utc": "2026-10-12T09:20:51.731412+00:00",
+      "script": "artifacts/c5_excess_two_e4/control_probe/split_hub_probe.py",
+      "path": "artifacts/c5_excess_two_e4/control_probe/split_hub_probe.json",
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 0.619,
+      "mismatching_paths": [],
+      "stderr": "",
+      "recorded_sha256": "e7286d173cedb86c22fb3f07c2d5e49969e98e25f634a6aa7b02436bebef64c1",
+      "recorded_bytes": 5312816,
+      "producer_sha256": "e3df894f9041577c79a315268fed6e03e2e63d7df8f35d493efd3424b4a481c6",
+      "verification_round": "probe-rebuild"
+    },
+    "c5_941_single_spoke.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_941_three_spoke.py": {
+      "status": "ok",
+      "detail": "(5s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_941_two_spoke.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_mixed_edge.py": {
+      "status": "ok",
+      "detail": "(4s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_mixed_edge_k4.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_mixed_edge_order.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_mixed_edge_same_endpoint.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_mixed_edge_shared.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_mixed_edge_shared_t0_singles.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_mixed_edge_shared_t1_pair.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_mixed_edge_shared_t1_singles.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_bb.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_bc.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_bd.py": {
+      "status": "ok",
+      "detail": "(3s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_be.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_cc.py": {
+      "status": "ok",
+      "detail": "(5s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_cd.py": {
+      "status": "ok",
+      "detail": "(5s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_ce.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_dd.py": {
+      "status": "ok",
+      "detail": "(4s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_de.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_ee.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_t2.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_t2_bridge.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_t2_endpoints.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_t2_path_palettes.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_t2_t0_overlap.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_t2_t0_pairs.py": {
+      "status": "ok",
+      "detail": "(3s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_t2_t0_singles.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_t2_t1.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_t2_t1_bridge.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_no_mixed_t2_t1_endpoints.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_singleton_end_arc.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_singleton_long_arc.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_adjacent_degree5_singleton_middle_arc.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_cut_observations.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_bridge_arms.py": {
+      "status": "ok",
+      "detail": "(31s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_bridge_mark_minors.py": {
+      "status": "ok",
+      "detail": "(18s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_bridge_marks.py": {
+      "status": "ok",
+      "detail": "(8s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_bridge_triangles.py": {
+      "status": "ok",
+      "detail": "(10s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_interfaces.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_long_triangle_minors.py": {
+      "status": "ok",
+      "detail": "(4s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_middle_cycle_minors.py": {
+      "status": "ok",
+      "detail": "(176s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_middle_pentagon.py": {
+      "status": "ok",
+      "detail": "(101s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_odd_cycle_components.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_same_terminal_triangles.py": {
+      "status": "ok",
+      "detail": "(6s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_shared_cycle_minors.py": {
+      "status": "ok",
+      "detail": "(11s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_shared_triangles.py": {
+      "status": "ok",
+      "detail": "(74s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_three_cycle_minors.py": {
+      "status": "ok",
+      "detail": "(45s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_three_triangles.py": {
+      "status": "ok",
+      "detail": "(84s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_tree_components.py": {
+      "status": "ok",
+      "detail": "(3s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_triangle_components.py": {
+      "status": "ok",
+      "detail": "(26s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_degree5_two_long_cycles.py": {
+      "status": "ok",
+      "detail": "(17s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_disk_deletions.py": {
+      "status": "ok",
+      "detail": "(5s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_edge_choices.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_edge_incidence.py": {
+      "status": "ok",
+      "detail": "(17s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_edge_states.py": {
+      "status": "ok",
+      "detail": "(10s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_one_e2_951_remaining.py": {
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 0.617,
+      "mismatching_paths": [],
+      "stderr": "",
+      "verification_round": "recipe-retry"
+    },
+    "c5_excess_one_e2_951_unary_core.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_one_subcovers.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_rejection_law.py": {
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 52.723,
+      "mismatching_paths": [],
+      "stderr": "",
+      "verification_round": "recipe-retry"
+    },
+    "c5_excess_two_adjacent_two_mixed_core44.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_arc_component_slack.py": {
+      "status": "ok",
+      "detail": "(4s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_binary_two_unary.py": {
+      "status": "ok",
+      "detail": "(21s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_c44p_independent.py": {
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 2.51,
+      "mismatching_paths": [],
+      "stderr": "",
+      "verification_round": "recipe-retry"
+    },
+    "c5_excess_two_c44p_two_private.py": {
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 0.663,
+      "mismatching_paths": [],
+      "stderr": "",
+      "verification_round": "recipe-retry"
+    },
+    "c5_excess_two_double_spoke.py": {
+      "status": "ok",
+      "detail": "(11s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_e3_degree6.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_finite_search.py": {
+      "status": "failed",
+      "detail": "exit 1 (0s)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_four_spoke_binary_hubs.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_four_spoke_binary_star.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_four_spoke_binary_star.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_four_spoke_binary.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_binary.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_crosscut.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_four_spoke_long_face.py, c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_disjoint_pairs.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_four_spoke_long_face.py, c5_excess_two_mixed_core_four_spoke_short_arc.py, c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_equal_pair.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_long_face.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_four_spoke_short_face.py, c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_mixed12.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_mixed12_01_01.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_four_spoke_mixed12_01_12.py, c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_mixed12_01_12.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_four_spoke_mixed12.py, c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_mixed12_04_04.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_four_spoke_mixed12_01_01.py, c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_mixed22.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_mixed22_long_face.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_four_spoke_mixed22.py, c5_excess_two_mixed_core_four_spoke_mixed22_short_face.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_mixed22_shared4.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_four_spoke_mixed22.py, c5_excess_two_mixed_core_four_spoke_mixed22_long_face.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_mixed22_short_face.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_four_spoke_mixed22.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_quaternary.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_short_arc.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_four_spoke_crosscut.py, c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_short_face.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_four_spoke_equal_pair.py, c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_singles.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_four_spoke_ternary.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_leaf_fibers.py": {
+      "status": "blocked",
+      "detail": "(needs c5_excess_two_mixed_core_single_spoke.py)",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_single_spoke.py": {
+      "status": "mismatch",
+      "path": "artifacts/c5_excess_two_mixed_core_single_spoke/observations.json",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_spoke_unary.py": {
+      "status": "ok",
+      "detail": "(38s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_spokes.py": {
+      "status": "ok",
+      "detail": "(23s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_core_two_unary.py": {
+      "status": "ok",
+      "detail": "(55s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_mixed_omission.py": {
+      "status": "ok",
+      "detail": "(7s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_nonadjacent_mixed12_double_core44.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_nonadjacent_mixed12_single_core44.py": {
+      "status": "ok",
+      "detail": "(8s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_nonadjacent_two_mixed_core44.py": {
+      "status": "ok",
+      "detail": "(8s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_nonadjacent_two_mixed_core44_audit.py": {
+      "status": "ok",
+      "detail": "(5s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_path_edge.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_root_deletions.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_single_spoke_binary.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_single_spoke_two_unary.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_spoke_unary.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_three_spoke_unary.py": {
+      "status": "ok",
+      "detail": "(13s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_triangle_edge.py": {
+      "status": "ok",
+      "detail": "(4s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_two_binary.py": {
+      "status": "ok",
+      "detail": "(4s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_two_spoke_binary.py": {
+      "status": "ok",
+      "detail": "(13s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_two_spoke_four.py": {
+      "status": "ok",
+      "detail": "(4s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_excess_two_two_unary.py": {
+      "status": "ok",
+      "detail": "(4s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_exchange_geometry_scope.py": {
+      "status": "ok",
+      "detail": "(6s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_four_triangle_star.py": {
+      "status": "ok",
+      "detail": "(16s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_k4_blocks.py": {
+      "status": "ok",
+      "detail": "(3s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_kempe_diagonal_transport.py": {
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 0.497,
+      "mismatching_paths": [],
+      "stderr": "",
+      "verification_round": "recipe-retry"
+    },
+    "c5_multi_odd_cycles.py": {
+      "status": "ok",
+      "detail": "(3s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_no_mixed_growth_completion.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_no_mixed_hypothesis_anchor.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_no_mixed_hypothesis_palettes.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_no_mixed_hypothesis_transport.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_no_mixed_local_screen.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_no_mixed_no_growth.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_no_mixed_root_transport.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_no_mixed_span_budget.py": {
+      "status": "ok",
+      "detail": "(7s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_no_spoke_exterior.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_no_spoke_first_bridge.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_no_spoke_path_minor.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_no_spoke_supports.py": {
+      "status": "ok",
+      "detail": "(2s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_open_leaf_ledger.py": {
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 1.635,
+      "mismatching_paths": [],
+      "stderr": "",
+      "argv": [
+        "--write"
+      ],
+      "verification_round": "write-retry"
+    },
+    "c5_qcore_shield_screen.py": {
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 0.873,
+      "mismatching_paths": [],
+      "stderr": "",
+      "argv": [
+        "--write"
+      ],
+      "verification_round": "write-retry"
+    },
+    "c5_root_interfaces.py": {
+      "status": "ok",
+      "detail": "(34s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_sector_cross_row.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_shield_calibration.py": {
+      "status": "ok",
+      "exit_code": 0,
+      "seconds": 1.671,
+      "mismatching_paths": [],
+      "stderr": "",
+      "verification_round": "recipe-retry"
+    },
+    "c5_short_support_singleton.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_single_spoke_branch_minor.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_single_spoke_cores.py": {
+      "status": "ok",
+      "detail": "(3s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_single_spoke_cross_row.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_single_spoke_first_bridge.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_single_spoke_four.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_single_spoke_frame_arc.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_single_spoke_residual_locality.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_single_spoke_three_one.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_single_spoke_two_arc.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_single_spoke_two_contact_bounds.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_single_spoke_two_two_external.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_single_spoke_two_two_minor.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_strategy_safe.py": {
+      "status": "ok",
+      "detail": "(4s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_three_triangle_blocks.py": {
+      "status": "ok",
+      "detail": "(13s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_tree_cores.py": {
+      "status": "ok",
+      "detail": "(23s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_two_spoke_nonadjacent.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_two_spoke_reflection.py": {
+      "status": "ok",
+      "detail": "(0s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_two_spoke_split_support.py": {
+      "status": "ok",
+      "detail": "(4s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_two_triangle_blocks.py": {
+      "status": "ok",
+      "detail": "(7s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_two_vertex_quaternary_repairs.py": {
+      "status": "ok",
+      "detail": "(5s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "c5_two_vertex_ternary_projections.py": {
+      "status": "ok",
+      "detail": "(1s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "extension_effects.py": {
+      "status": "ok",
+      "detail": "(3s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "fan_pentagon.py": {
+      "status": "ok",
+      "detail": "(4s, 2 file(s))",
+      "verification_round": "first-pass"
+    },
+    "stepwise_layer_refinement.py": {
+      "status": "ok",
+      "detail": "(4s, 1 file(s))",
+      "verification_round": "first-pass"
+    },
+    "triangle_automata.py": {
+      "status": "ok",
+      "detail": "(16s, 5 file(s))",
+      "verification_round": "first-pass"
+    }
+  },
+  "output_results": {
+    "artifacts/automata/disk_embeddings.jsonl": {
+      "status": "ok",
+      "script": "triangle_automata.py",
+      "recorded_sha256": "6c59f738a79b060f35fee6caf2d761d3805d9fac540328ba7d02d2b0a471f1ee",
+      "recorded_bytes": 3368733
+    },
+    "artifacts/automata/nerode_color.json": {
+      "status": "ok",
+      "script": "triangle_automata.py",
+      "recorded_sha256": "3f27411bcb4f8cb486b5ee62332dd2dd775d2191e97f043291cd3f4427b484bb",
+      "recorded_bytes": 1980669
+    },
+    "artifacts/automata/nerode_moore.json": {
+      "status": "ok",
+      "script": "triangle_automata.py",
+      "recorded_sha256": "71ce74267d640de4f41d994cdc97c822db9a771cb2ad8afecde4b8f2ba1f7593",
+      "recorded_bytes": 1371630
+    },
+    "artifacts/automata/nerode_pair.json": {
+      "status": "ok",
+      "script": "triangle_automata.py",
+      "recorded_sha256": "d8bf7a1556989d20065afe08bba1f82144de1ab1b4fd93d3931f04b969eb3e84",
+      "recorded_bytes": 1423196
+    },
+    "artifacts/automata/words.jsonl": {
+      "status": "ok",
+      "script": "triangle_automata.py",
+      "recorded_sha256": "b9574285d989a02c00db8b618ca136cca45e2a24d97277bfca2cacae233188be",
+      "recorded_bytes": 6895031
+    },
+    "artifacts/c5_941_single_spoke/observations.json": {
+      "status": "ok",
+      "script": "c5_941_single_spoke.py",
+      "recorded_sha256": "1efd61af9f00ec549f00f7393b894ad6a26ba328e643ee30974bcb6fc4804b52",
+      "recorded_bytes": 3378597
+    },
+    "artifacts/c5_941_three_spoke/observations.json": {
+      "status": "ok",
+      "script": "c5_941_three_spoke.py",
+      "recorded_sha256": "1a9ea43a7e1f7eefecb073ab1cb8d8d1e1b9621a4f0a2527093c1970f9e2942c",
+      "recorded_bytes": 13586886
+    },
+    "artifacts/c5_941_two_spoke/observations.json": {
+      "status": "ok",
+      "script": "c5_941_two_spoke.py",
+      "recorded_sha256": "ba7870ad56b5d239b7d24c7b11eeb76ec968ac7fe9921473ab71bc30df2e5e31",
+      "recorded_bytes": 7657820
+    },
+    "artifacts/c5_adjacent_degree5_mixed_edge/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_mixed_edge.py",
+      "recorded_sha256": "630dd02d45f34e760754ab8d44c5c5e2fda65e78dfd0b85a8d60f8b312596746",
+      "recorded_bytes": 3137875
+    },
+    "artifacts/c5_adjacent_degree5_mixed_edge_k4/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_mixed_edge_k4.py",
+      "recorded_sha256": "b3252f73500edd17305784bd77f84947ad30b09d305ea738752b6725b3eb6e67",
+      "recorded_bytes": 1361221
+    },
+    "artifacts/c5_adjacent_degree5_mixed_edge_order/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_mixed_edge_order.py",
+      "recorded_sha256": "976d176d2fd4f29d819ef757cda84dde9e34323eb536d71eba8299b05415c899",
+      "recorded_bytes": 1006169
+    },
+    "artifacts/c5_adjacent_degree5_mixed_edge_same_endpoint/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_mixed_edge_same_endpoint.py",
+      "recorded_sha256": "6355ced5a82ad7d126d72b11871d8c570129548b84786370379be4fdb47780ee",
+      "recorded_bytes": 1833457
+    },
+    "artifacts/c5_adjacent_degree5_mixed_edge_shared/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_mixed_edge_shared.py",
+      "recorded_sha256": "6b9b689c1f45b22feb182958c953b18989fe47655f69d5d2a17d8ed509555532",
+      "recorded_bytes": 1153150
+    },
+    "artifacts/c5_adjacent_degree5_mixed_edge_shared_t0_pair_single/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.py",
+      "recorded_sha256": "c9861f66d320c8328aa4b7d03830158359f6d45ffed78a2c812c1d7f4c70c30d",
+      "recorded_bytes": 2266498
+    },
+    "artifacts/c5_adjacent_degree5_mixed_edge_shared_t0_singles/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_mixed_edge_shared_t0_singles.py",
+      "recorded_sha256": "f85e92716fc49e0290382afa9e8758174d76e58699f87e3ed132a995e006970c",
+      "recorded_bytes": 3377713
+    },
+    "artifacts/c5_adjacent_degree5_mixed_edge_shared_t1_pair/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_mixed_edge_shared_t1_pair.py",
+      "recorded_sha256": "adb613f22a75b546d13e8be00d93e821adb0a8e65ec8b7dd72ed187a22a2e11f",
+      "recorded_bytes": 6902793
+    },
+    "artifacts/c5_adjacent_degree5_mixed_edge_shared_t1_singles/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_mixed_edge_shared_t1_singles.py",
+      "recorded_sha256": "3990d7edeb69e131ca57188f5221692b200d17f264cf526692f31accb41768b4",
+      "recorded_bytes": 1220550
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed.py",
+      "recorded_sha256": "849f573426a5830135a63ba5c637fb0666ffed8321bbe6ff9a1f64cce8372a00",
+      "recorded_bytes": 2034531
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_bb/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_bb.py",
+      "recorded_sha256": "bf8f469b0eca2f8aef094cd6c74652e9cd5cf85990d04389281778e686b71a5e",
+      "recorded_bytes": 29881678
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_bc/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_bc.py",
+      "recorded_sha256": "bb2e741061a6401c10a9fc08b5e0703f04e1b239cc46881e7aa7abf316324159",
+      "recorded_bytes": 19911045
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_bd/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_bd.py",
+      "recorded_sha256": "ad9d08b6a7da38c7e5921652eaf333a67c6cdcb03958d8ddc130e5a08201e1ca",
+      "recorded_bytes": 33629218
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_be/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_be.py",
+      "recorded_sha256": "83329acc2d0ff0a95349d0573a3fd2ac76d0c77d6c37c743f72d9c0710cd77e5",
+      "recorded_bytes": 2131843
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_cc/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_cc.py",
+      "recorded_sha256": "996c2e042a650aeb55d1a2eb509bd0c181cf61f0a5a26cea7880c0539bd70cc0",
+      "recorded_bytes": 73847984
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_cd/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_cd.py",
+      "recorded_sha256": "e78d80074b7ad63cee03d03b874342a17b00059a30e64dab2e69082750a37fcc",
+      "recorded_bytes": 62969910
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_ce/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_ce.py",
+      "recorded_sha256": "b7e2dedca8c9da7c0a1aeb1bd36ddb908a061216a5f2fbf06ab65e1db0266dd4",
+      "recorded_bytes": 5259588
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_dd/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_dd.py",
+      "recorded_sha256": "299dc300cea4dab64b57da3ab83827ed241b272d41186637fa9c48dbddd93bd8",
+      "recorded_bytes": 48707179
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_de/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_de.py",
+      "recorded_sha256": "3be348a416ff973780c9842e182c4ae3ae41def30c5bbdbc3ecd48837eb4af48",
+      "recorded_bytes": 5169671
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_ee/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_ee.py",
+      "recorded_sha256": "3375e16820e147cd31567a2999f44107325014978436c479029025dc39825f70",
+      "recorded_bytes": 1110881
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_t2/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_t2.py",
+      "recorded_sha256": "4364bbfb6a272fb39fff98178a59636ad82b6b7ea992951f6af9e2ae0464a3e0",
+      "recorded_bytes": 6179032
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_t2_bridge/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_t2_bridge.py",
+      "recorded_sha256": "70cf8b2c1550ed5cf0ae686087345b4d154913edf24357ea75fde3d83ffc648d",
+      "recorded_bytes": 12582346
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_t2_endpoints/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_t2_endpoints.py",
+      "recorded_sha256": "3a26e95fb754ce66cdbfbd5730c6c370320b4ad075f2e601ee366a4284b31805",
+      "recorded_bytes": 15467424
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_t2_path_palettes/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_t2_path_palettes.py",
+      "recorded_sha256": "c64d67994dd2ed577e952e1b9c697930f36e1b4cc42b498555a51c2a8939688a",
+      "recorded_bytes": 9403071
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_t2_t0_overlap/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_t2_t0_overlap.py",
+      "recorded_sha256": "0cb90492e81560d1d5e83d99059874f51168a8d52fa8a6e165ced111f5fe538d",
+      "recorded_bytes": 21799881
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_t2_t0_pairs/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_t2_t0_pairs.py",
+      "recorded_sha256": "3c9f65daed2fc410677a1fc8e6ddd01f18f5004ab8bc366ec1fa33b938a932d7",
+      "recorded_bytes": 20232111
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_t2_t0_singles/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_t2_t0_singles.py",
+      "recorded_sha256": "70b5ab59674825decb3b8d791c1c96d4f72d930c7ec4a66dd41fe8bedb6b369b",
+      "recorded_bytes": 1890329
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_t2_t1/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_t2_t1.py",
+      "recorded_sha256": "f18156c900bbc70838a134be94e6ae5761087e69b5f4792c207ea9f8b83d775b",
+      "recorded_bytes": 8971628
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_t2_t1_bridge/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_t2_t1_bridge.py",
+      "recorded_sha256": "17837b33e177f86d87ed534a2bfc38e72204b3636dbb93343f82af83e23da8a1",
+      "recorded_bytes": 24386527
+    },
+    "artifacts/c5_adjacent_degree5_no_mixed_t2_t1_endpoints/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_no_mixed_t2_t1_endpoints.py",
+      "recorded_sha256": "8fa8a4e42f255bffddf262290a5906de81046472ecc1f4e7a1ecc568151f2220",
+      "recorded_bytes": 25884876
+    },
+    "artifacts/c5_adjacent_degree5_singleton_end_arc/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_singleton_end_arc.py",
+      "recorded_sha256": "c06ab719feba7ef6a722e5ce261f2a2b285b1f42b96b467cb3c4fb90ac984929",
+      "recorded_bytes": 1427401
+    },
+    "artifacts/c5_adjacent_degree5_singleton_long_arc/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_singleton_long_arc.py",
+      "recorded_sha256": "f56e40bc7d67abd4b90e86f9b927f02ddf3ac3c86744ee3ee1bf2f4c830346ef",
+      "recorded_bytes": 3085928
+    },
+    "artifacts/c5_adjacent_degree5_singleton_middle_arc/observations.json": {
+      "status": "ok",
+      "script": "c5_adjacent_degree5_singleton_middle_arc.py",
+      "recorded_sha256": "cf15ebb1d7b57edbc2b38c44601fca4069d7df059100a5cb9b3af4716b15df69",
+      "recorded_bytes": 4410947
+    },
+    "artifacts/c5_cells/cut_observations.json": {
+      "status": "ok",
+      "script": "c5_cut_observations.py",
+      "recorded_sha256": "4f0563f6f57ee3e7864233b88ce8d278ad016523aaa59425db3209d0e9a7cf98",
+      "recorded_bytes": 1178688
+    },
+    "artifacts/c5_cells/edge_choices.json": {
+      "status": "ok",
+      "script": "c5_edge_choices.py",
+      "recorded_sha256": "773b10de2c1455d83dd81d69ecdde481c85457bcd6d37552a867e91e19c78dc2",
+      "recorded_bytes": 1042808
+    },
+    "artifacts/c5_cells/edge_incidence.json": {
+      "status": "ok",
+      "script": "c5_edge_incidence.py",
+      "recorded_sha256": "3345fd5105b8c2ee36bdad3daa4e0a1182955be5a2ec1d077bcadc63df0cc410",
+      "recorded_bytes": 2768638
+    },
+    "artifacts/c5_cells/edge_states.json": {
+      "status": "ok",
+      "script": "c5_edge_states.py",
+      "recorded_sha256": "75d0905fdb18e852a7053fabc17cab7c374735216589ca753fcb7d4027cc42db",
+      "recorded_bytes": 2038017
+    },
+    "artifacts/c5_cells/strategy_safe.json": {
+      "status": "ok",
+      "script": "c5_strategy_safe.py",
+      "recorded_sha256": "2bd2ef388183dffe2a1d7c8eeaf6f7ccb87cf12b71784afe01e245d230f36f3f",
+      "recorded_bytes": 6097713
+    },
+    "artifacts/c5_degree5_bridge_arms/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_bridge_arms.py",
+      "recorded_sha256": "da64c3731600b7c8185743381d6c6836b0d50842ff7e66d519c281658c7fce5f",
+      "recorded_bytes": 24188827
+    },
+    "artifacts/c5_degree5_bridge_mark_minors/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_bridge_mark_minors.py",
+      "recorded_sha256": "2a9a54c1e0ff2c856f603452938070ee993c3eb0d2078338d0b9afc25c4309a4",
+      "recorded_bytes": 28390912
+    },
+    "artifacts/c5_degree5_bridge_marks/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_bridge_marks.py",
+      "recorded_sha256": "98e07290d3b1d18b108678fc61b7f0cf8653628e26d516736ed4dbf73a5aa9b4",
+      "recorded_bytes": 22227820
+    },
+    "artifacts/c5_degree5_bridge_triangles/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_bridge_triangles.py",
+      "recorded_sha256": "68fbdb106d5febaa4af7d218ff2b39c932152f4a2659c221a7ab80f82c72f264",
+      "recorded_bytes": 3126421
+    },
+    "artifacts/c5_degree5_interfaces/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_interfaces.py",
+      "recorded_sha256": "a12fb6e344f073d41c893a20bf3e5b1fe695674226d16e0ab293f66c5ead4f69",
+      "recorded_bytes": 1453708
+    },
+    "artifacts/c5_degree5_long_triangle_minors/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_long_triangle_minors.py",
+      "recorded_sha256": "6e444f36548baf619b82e7427284c2e50336d7cb88e8d197e5a957b4d364427e",
+      "recorded_bytes": 12688007
+    },
+    "artifacts/c5_degree5_middle_cycle_minors/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_middle_cycle_minors.py",
+      "recorded_sha256": "9ab5b9b4fd597dc06e881ea47b5b04ad5437877aa8d83e5a843e3c4bee0b85cb",
+      "recorded_bytes": 52270485
+    },
+    "artifacts/c5_degree5_middle_pentagon/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_middle_pentagon.py",
+      "recorded_sha256": "76f41da8111d1f7e97af48eff1cba39aa5b3db93179a31fa263266d2453d3021",
+      "recorded_bytes": 25993740
+    },
+    "artifacts/c5_degree5_odd_cycle_components/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_odd_cycle_components.py",
+      "recorded_sha256": "91b07eb484ed64a6a04221612706d711e0709db6be2d74e7b3ea747f91611ecd",
+      "recorded_bytes": 6043588
+    },
+    "artifacts/c5_degree5_same_terminal_triangles/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_same_terminal_triangles.py",
+      "recorded_sha256": "ddfe2344bf48b4899c88305889a91bc9e3de8336b3a78ab120d998cdc1f5af17",
+      "recorded_bytes": 1592286
+    },
+    "artifacts/c5_degree5_shared_cycle_minors/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_shared_cycle_minors.py",
+      "recorded_sha256": "a3683a2c105a4247e4e231d47f99ed3e93c855f78a9380f6d8ab66c35f76501c",
+      "recorded_bytes": 38454611
+    },
+    "artifacts/c5_degree5_shared_triangles/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_shared_triangles.py",
+      "recorded_sha256": "508198d46ac9581f5ba36c86d6cd4445c68ee82e027bfbd057492890eebf0ad9",
+      "recorded_bytes": 20201173
+    },
+    "artifacts/c5_degree5_three_cycle_minors/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_three_cycle_minors.py",
+      "recorded_sha256": "b53c58c6026d5d023adf92f0b83ed923a404551f1d4c0bf59ef632206345fd31",
+      "recorded_bytes": 15331986
+    },
+    "artifacts/c5_degree5_three_triangles/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_three_triangles.py",
+      "recorded_sha256": "c6eb21bb8beb8cdb873dabc35c0000bc6724d3fce312b78334fac6031053050b",
+      "recorded_bytes": 9618272
+    },
+    "artifacts/c5_degree5_tree_components/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_tree_components.py",
+      "recorded_sha256": "980dd473422e9eb6949f2b585e8c437c507a7e8a58f089ad791f21e10c9f760c",
+      "recorded_bytes": 8284806
+    },
+    "artifacts/c5_degree5_triangle_components/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_triangle_components.py",
+      "recorded_sha256": "9ac35e63072adbfa458350784197fb3ccd3f4bc22dbfc4dbf3ced9f69143bdec",
+      "recorded_bytes": 9531091
+    },
+    "artifacts/c5_degree5_two_long_cycles/observations.json": {
+      "status": "ok",
+      "script": "c5_degree5_two_long_cycles.py",
+      "recorded_sha256": "e4a0e93c993e1ba10bc0ffb673a4ae9fc0cf4f966e820e1c765ab38bb31e20f9",
+      "recorded_bytes": 42360406
+    },
+    "artifacts/c5_disk_deletions/observations.json": {
+      "status": "ok",
+      "script": "c5_disk_deletions.py",
+      "recorded_sha256": "6ec3fac27a53efebdc86d41680716edc86fe1d43a353b3cbe1faf8f3dde54cb3",
+      "recorded_bytes": 2337165
+    },
+    "artifacts/c5_excess_one_e2_951_remaining/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_one_e2_951_remaining.py",
+      "recorded_sha256": "5c71dbc80d6068841f1a71f5e89f0a0e46aff5084e2e0b63effd276ede53d4bb",
+      "recorded_bytes": 1982741
+    },
+    "artifacts/c5_excess_one_e2_951_unary_core/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_one_e2_951_unary_core.py",
+      "recorded_sha256": "4f0c4df71701ec52eae942be40aefba6faf60a5715812d34f7c9a7805999c72b",
+      "recorded_bytes": 1825193
+    },
+    "artifacts/c5_excess_one_subcovers/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_one_subcovers.py",
+      "recorded_sha256": "4e0ef78e6948d6cd3b5a22752da5a90fce0f494cfc74cdddba4e0d2451039a3a",
+      "recorded_bytes": 1032611
+    },
+    "artifacts/c5_excess_rejection_law/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_rejection_law.py",
+      "recorded_sha256": "23a92b56f325bd4bd496d7e8dfb14714d8481618253f88243df4cb7916ca999e",
+      "recorded_bytes": 1125356
+    },
+    "artifacts/c5_excess_two_adjacent_two_mixed_core44/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_adjacent_two_mixed_core44.py",
+      "recorded_sha256": "65e5c8d3e8c039a94c97e5eb1baf7681e125e276a3ea904740852627b8477e95",
+      "recorded_bytes": 4064924
+    },
+    "artifacts/c5_excess_two_arc_component_slack/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_arc_component_slack.py",
+      "recorded_sha256": "e57dd4e28b1029fb53fd740da3aa79378c67fe4a336ee146dd9fda2a49105d20",
+      "recorded_bytes": 6250157
+    },
+    "artifacts/c5_excess_two_binary_two_unary/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_binary_two_unary.py",
+      "recorded_sha256": "f157d9affdc76c416508c9302b8a4abcc7c785981e5a8576892f42519f81ef1b",
+      "recorded_bytes": 10750259
+    },
+    "artifacts/c5_excess_two_c44p/independent.json": {
+      "status": "ok",
+      "script": "c5_excess_two_c44p_independent.py",
+      "recorded_sha256": "afade5f0e74322b5df7b80f94e3f2f605636433b392ecfb2bb58b5a29fafb13e",
+      "recorded_bytes": 5529125
+    },
+    "artifacts/c5_excess_two_c44p/two_private.json": {
+      "status": "ok",
+      "script": "c5_excess_two_c44p_two_private.py",
+      "recorded_sha256": "8ebd56f620d9a9bcde72744cd19ab3e5a98a0f8f764fb55d092937f05a78a3ef",
+      "recorded_bytes": 1286549
+    },
+    "artifacts/c5_excess_two_double_spoke/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_double_spoke.py",
+      "recorded_sha256": "5a5053bd7edf42cc2e43251ceaad4511d27710ad915316304b347b72714a9171",
+      "recorded_bytes": 111144359
+    },
+    "artifacts/c5_excess_two_e3/degree6.json": {
+      "status": "ok",
+      "script": "c5_excess_two_e3_degree6.py",
+      "recorded_sha256": "826818db6861ff45696b7a8d69708eb64f0577de54f92ffe9f3c44a30096bd8d",
+      "recorded_bytes": 2027696
+    },
+    "artifacts/c5_excess_two_e4/control_probe/split_hub_probe.json": {
+      "status": "ok",
+      "script": "artifacts/c5_excess_two_e4/control_probe/split_hub_probe.py",
+      "recorded_sha256": "e7286d173cedb86c22fb3f07c2d5e49969e98e25f634a6aa7b02436bebef64c1",
+      "recorded_bytes": 5312816
+    },
+    "artifacts/c5_excess_two_finite_search/NA_k9_validate.json": {
+      "status": "failed",
+      "script": "c5_excess_two_finite_search.py",
+      "recorded_sha256": "0b08675df72ecd21415d8fb54df567fc2daa7b802df9bc22c97f4cd6f89dc9bb",
+      "recorded_bytes": 1152495
+    },
+    "artifacts/c5_excess_two_four_spoke_binary_hubs/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_four_spoke_binary_hubs.py",
+      "recorded_sha256": "b4e2c4371a9fb8e635de5ffcd347abc2a2798116412ae2a97331e77b974e9cea",
+      "recorded_bytes": 7345191
+    },
+    "artifacts/c5_excess_two_four_spoke_binary_star/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_four_spoke_binary_star.py",
+      "recorded_sha256": "650d8fdf6f9e97bae8761a85f974afc407c313dbbee20ece2e566b7b418b3a89",
+      "recorded_bytes": 9453034
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_binary/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_binary.py",
+      "recorded_sha256": "385799e64e72ea57f089c48bda48e55b02d8bcca5301e79dcd8ceaa11720b052",
+      "recorded_bytes": 18888946
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_crosscut/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_crosscut.py",
+      "recorded_sha256": "dae9101d20470dc24cad8d87c2e78a8596a26764c778428aed3f4f125cd26d0d",
+      "recorded_bytes": 38737018
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_disjoint_pairs/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_disjoint_pairs.py",
+      "recorded_sha256": "e58e36b14e56730ddb422b80b9ec11b487e4c03f98402b66c9755c1bac61634c",
+      "recorded_bytes": 1773561
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_equal_pair/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_equal_pair.py",
+      "recorded_sha256": "426870ac0f7c2ec60090f82ba3c759457e157d4317b6ce63a9456b2bcb4a95de",
+      "recorded_bytes": 29991464
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_long_face/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_long_face.py",
+      "recorded_sha256": "26a705db3b4ce938acb0a8ac996b4994f207659214c9fd14d20a0a8797232cec",
+      "recorded_bytes": 19091926
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_mixed12/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_mixed12.py",
+      "recorded_sha256": "c906fa12ada875b624421b8b7402ed4159e8756f78673a974c9056f7fa0a5082",
+      "recorded_bytes": 156113384
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_mixed12_01_01/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_mixed12_01_01.py",
+      "recorded_sha256": "a3f2ea31aea8cd2b9c008595f85430f0260612b431a8d1b3c03192d9171d70e2",
+      "recorded_bytes": 80967491
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_mixed12_01_12/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_mixed12_01_12.py",
+      "recorded_sha256": "a69f6d8fd188acb1f414885b7d04303cc0163dd2efe9b4821320b7143d00ccf4",
+      "recorded_bytes": 77602012
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_mixed12_04_04/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_mixed12_04_04.py",
+      "recorded_sha256": "84f4062c0148763d3c1ccb90c8d18defed0e0c99ac633510a72f243099d1cf49",
+      "recorded_bytes": 54015850
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_mixed22/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_mixed22.py",
+      "recorded_sha256": "f7168b09b9a19957e0c3be50cbd9382cc4fa650619a563c5819962c4a3c254de",
+      "recorded_bytes": 26566749
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_mixed22_long_face/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_mixed22_long_face.py",
+      "recorded_sha256": "513c582f1067306ae67d8ef1fab46ba6c6fe5889923c95923688ba4a2aaaebd7",
+      "recorded_bytes": 18465674
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_mixed22_shared4/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_mixed22_shared4.py",
+      "recorded_sha256": "75031e3eee07a05a65aaba31c7a6d659ac4c2620340809dd8dbf2ae1227d58c0",
+      "recorded_bytes": 35337366
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_mixed22_short_face/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_mixed22_short_face.py",
+      "recorded_sha256": "2164f870d128ee22ead68f8d7a4a900cddb06314ce52f97884ac86e08a6061bc",
+      "recorded_bytes": 7382053
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_quaternary/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_quaternary.py",
+      "recorded_sha256": "a5ffb7f80b33196cbe42be4c1f3cc00452d545b692fb6428e8573989cfd2ad07",
+      "recorded_bytes": 52711125
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_short_arc/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_short_arc.py",
+      "recorded_sha256": "36ea360ac09ccc978d7168a65ccfb3a13229138ece2436b9f8aa2430d42c6df0",
+      "recorded_bytes": 18675547
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_short_face/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_short_face.py",
+      "recorded_sha256": "ac9bfe98fdb11894584b7ef71bc4f38ac146c14ad0363869b579faa38adf8630",
+      "recorded_bytes": 33200245
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_singles/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_singles.py",
+      "recorded_sha256": "26ffc72f2b501aedfb23525cf1ed7d7c8059b5ac496deb9439befa44c74e6e5a",
+      "recorded_bytes": 13771331
+    },
+    "artifacts/c5_excess_two_mixed_core_four_spoke_ternary/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_four_spoke_ternary.py",
+      "recorded_sha256": "a5b2720255048e94eae4a129fb395dff107e36e6b354aed072a3b355e230233e",
+      "recorded_bytes": 25895377
+    },
+    "artifacts/c5_excess_two_mixed_core_leaf_fibers/observations.json": {
+      "status": "blocked",
+      "script": "c5_excess_two_mixed_core_leaf_fibers.py",
+      "recorded_sha256": "f39f18c0955e470927ad7468356cf3d3627c9522b7563d0c9d05b98862e3c8ef",
+      "recorded_bytes": 2397122
+    },
+    "artifacts/c5_excess_two_mixed_core_single_spoke/observations.json": {
+      "status": "mismatch",
+      "script": "c5_excess_two_mixed_core_single_spoke.py",
+      "recorded_sha256": "387a0904bfb7b76c2ad1aad638bc6a4d50bce34c54b77c22205acc10a101aefa",
+      "recorded_bytes": 1720841
+    },
+    "artifacts/c5_excess_two_mixed_core_spoke_unary/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_mixed_core_spoke_unary.py",
+      "recorded_sha256": "79f83e8191f865a7264f977c2e743220756c0fe26fe6c9f4626d44ec289c1ef6",
+      "recorded_bytes": 189362323
+    },
+    "artifacts/c5_excess_two_mixed_core_spokes/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_mixed_core_spokes.py",
+      "recorded_sha256": "0ae4dee743d75d2a0b74650204ff2fa730fd45010f0fd3f295796460d564283f",
+      "recorded_bytes": 113696727
+    },
+    "artifacts/c5_excess_two_mixed_core_two_unary/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_mixed_core_two_unary.py",
+      "recorded_sha256": "69ff8d64ea254498f5e38bc2cf49c6b9b66fe39a1ec5d8a9c25db2ef6b402a8d",
+      "recorded_bytes": 107665331
+    },
+    "artifacts/c5_excess_two_mixed_omission/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_mixed_omission.py",
+      "recorded_sha256": "ded2ff09f1fba01426d801bfda0d975e9c52b5e89554538d9d963f5656db98cc",
+      "recorded_bytes": 56106614
+    },
+    "artifacts/c5_excess_two_nonadjacent_mixed12_double_core44/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_nonadjacent_mixed12_double_core44.py",
+      "recorded_sha256": "b996f21dfe8bda30e85ae68a9f5e4c8072491b5bf9e1be0169a6953c15c98c3d",
+      "recorded_bytes": 3418271
+    },
+    "artifacts/c5_excess_two_nonadjacent_mixed12_single_core44/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_nonadjacent_mixed12_single_core44.py",
+      "recorded_sha256": "97cf6e1ed786fa195df10cb086487a8c1e5b4de54ddfdb4c89d878b6d6cda342",
+      "recorded_bytes": 18090359
+    },
+    "artifacts/c5_excess_two_nonadjacent_two_mixed_core44/independent_audit.json": {
+      "status": "ok",
+      "script": "c5_excess_two_nonadjacent_two_mixed_core44_audit.py",
+      "recorded_sha256": "74ce25c3d019a1b94548eee4f5cc330be2058441df0024d8fd41e13141b735ba",
+      "recorded_bytes": 3001769
+    },
+    "artifacts/c5_excess_two_nonadjacent_two_mixed_core44/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_nonadjacent_two_mixed_core44.py",
+      "recorded_sha256": "54da77c7e7c8c7d13fc402d65f4ac3e096bb43767255d3717f6ccbde2f965d96",
+      "recorded_bytes": 11211909
+    },
+    "artifacts/c5_excess_two_path_edge/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_path_edge.py",
+      "recorded_sha256": "5611792cfc1671e9e9fd7d53119a1360cbef7709580bc44baff9c4cba22c8d3f",
+      "recorded_bytes": 2475798
+    },
+    "artifacts/c5_excess_two_root_deletions/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_root_deletions.py",
+      "recorded_sha256": "71f2e4a97c355d5da97088e3108c5463b6267a939915abee28c2a98f17ea1245",
+      "recorded_bytes": 4451048
+    },
+    "artifacts/c5_excess_two_single_spoke_binary/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_single_spoke_binary.py",
+      "recorded_sha256": "33e61bfca644dba8d8b1bf6977d17d3573f7262ddb75acd701dfeaf4bc827fc3",
+      "recorded_bytes": 3536253
+    },
+    "artifacts/c5_excess_two_single_spoke_two_unary/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_single_spoke_two_unary.py",
+      "recorded_sha256": "f9c329e6673bdd6733df726c6515a0d17c7765662ab2240dbe3e0ddf159bdd53",
+      "recorded_bytes": 1157626
+    },
+    "artifacts/c5_excess_two_spoke_unary/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_spoke_unary.py",
+      "recorded_sha256": "fdbc5ffc20c477105c78862e7b90867ff164f3be670d193e058d143ce39e8a55",
+      "recorded_bytes": 66817546
+    },
+    "artifacts/c5_excess_two_three_spoke_unary/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_three_spoke_unary.py",
+      "recorded_sha256": "07ecd43e24fab4b68ba71a1867222c8aef66667a16c9e6ff60e200b5315bac2e",
+      "recorded_bytes": 207785595
+    },
+    "artifacts/c5_excess_two_triangle_edge/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_triangle_edge.py",
+      "recorded_sha256": "d702e0484fabb64fd44912339b33612ebcc4074358b471f27c9e8ad03e3ac0c8",
+      "recorded_bytes": 15364827
+    },
+    "artifacts/c5_excess_two_two_binary/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_two_binary.py",
+      "recorded_sha256": "d3eafd513740b7054588ccb9f644c765d4daa0e233521d61c21eefe4da143637",
+      "recorded_bytes": 4021708
+    },
+    "artifacts/c5_excess_two_two_spoke_binary/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_two_spoke_binary.py",
+      "recorded_sha256": "e2ab472990a8dc2311fd7c838110bb38045f0619f4ae4ee1eb1f3cadefacbc4b",
+      "recorded_bytes": 3455178
+    },
+    "artifacts/c5_excess_two_two_spoke_four/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_two_spoke_four.py",
+      "recorded_sha256": "4cf2fef94a34ed003c99a164ea4e3ef78a9960b7cbfea857631adff100720084",
+      "recorded_bytes": 1278618
+    },
+    "artifacts/c5_excess_two_two_unary/observations.json": {
+      "status": "ok",
+      "script": "c5_excess_two_two_unary.py",
+      "recorded_sha256": "9dd0a03a4d11efa8003dd6063f365dfb98ac6f001b88684e7715618048e9e16f",
+      "recorded_bytes": 2086800
+    },
+    "artifacts/c5_exchange_geometry_scope/observations.json": {
+      "status": "ok",
+      "script": "c5_exchange_geometry_scope.py",
+      "recorded_sha256": "20ce8ed5cee38d74472b0df75a3b0fa03200fcfa139750753b15b1e0176d0a55",
+      "recorded_bytes": 2672657
+    },
+    "artifacts/c5_four_triangle_star/observations.json": {
+      "status": "ok",
+      "script": "c5_four_triangle_star.py",
+      "recorded_sha256": "fccfeffd57282089c6e78ba2fb43868b5390aa7f9576fc81ebb384a6ecfa9d15",
+      "recorded_bytes": 3827978
+    },
+    "artifacts/c5_k4_blocks/observations.json": {
+      "status": "ok",
+      "script": "c5_k4_blocks.py",
+      "recorded_sha256": "caa55f413bc5ead715279e905ec686c7cb910c8ff27803f4eadb6b0f35e6966f",
+      "recorded_bytes": 4592969
+    },
+    "artifacts/c5_kempe_diagonal_transport/assignments.jsonl": {
+      "status": "ok",
+      "script": "c5_kempe_diagonal_transport.py",
+      "recorded_sha256": "cfafe29e421989a909cf0cdd2ce6531477a3318290319ec27ed173426e0bb6ab",
+      "recorded_bytes": 6293376
+    },
+    "artifacts/c5_kempe_diagonal_transport/bounded_realization.json": {
+      "status": "ok",
+      "script": "c5_kempe_diagonal_transport.py",
+      "recorded_sha256": "2f7ea323d97b8584c5b4f7e219e6956ff4fe239e2fc94cba472e8a187e3648c8",
+      "recorded_bytes": 3485345
+    },
+    "artifacts/c5_multi_odd_cycles/observations.json": {
+      "status": "ok",
+      "script": "c5_multi_odd_cycles.py",
+      "recorded_sha256": "268a50a6dcfae581088b0c0fcbdf32e31231ee49287cf95122fc2d876d873e29",
+      "recorded_bytes": 4382125
+    },
+    "artifacts/c5_no_mixed_growth_completion/observations.json": {
+      "status": "ok",
+      "script": "c5_no_mixed_growth_completion.py",
+      "recorded_sha256": "b5a96f34e323ac594dc382913414c88aef97dbbe8ad15b97347ddd39fa5096a1",
+      "recorded_bytes": 6770533
+    },
+    "artifacts/c5_no_mixed_hypothesis_audit/anchor.json": {
+      "status": "ok",
+      "script": "c5_no_mixed_hypothesis_anchor.py",
+      "recorded_sha256": "88ea1accb96be343a8ca5dc2d3076263da258366aa7f32e5da282300ddc6e2ef",
+      "recorded_bytes": 2319619
+    },
+    "artifacts/c5_no_mixed_hypothesis_audit/palettes.json": {
+      "status": "ok",
+      "script": "c5_no_mixed_hypothesis_palettes.py",
+      "recorded_sha256": "83b0855b836b657b837acf1f7bc6d7bef874bf4bc3845af2d6cae40af0af4f64",
+      "recorded_bytes": 5798680
+    },
+    "artifacts/c5_no_mixed_hypothesis_audit/transport.json": {
+      "status": "ok",
+      "script": "c5_no_mixed_hypothesis_transport.py",
+      "recorded_sha256": "6983d32bcc732690cbbac0fb1ca8cdf685de0c8723aec8b3ebf90a2a27eba61d",
+      "recorded_bytes": 13791656
+    },
+    "artifacts/c5_no_mixed_local_screen/observations.json": {
+      "status": "ok",
+      "script": "c5_no_mixed_local_screen.py",
+      "recorded_sha256": "657d667754466a49e970e2d00799456b1e344495577e86bc491dac800d0d215c",
+      "recorded_bytes": 7013506
+    },
+    "artifacts/c5_no_mixed_no_growth/observations.json": {
+      "status": "ok",
+      "script": "c5_no_mixed_no_growth.py",
+      "recorded_sha256": "7e4faefc3abccdbaeeff9465551153efc811e413c590ca7a1c2e87db3582de81",
+      "recorded_bytes": 8959697
+    },
+    "artifacts/c5_no_mixed_root_transport/observations.json": {
+      "status": "ok",
+      "script": "c5_no_mixed_root_transport.py",
+      "recorded_sha256": "9a27a3b3c9b84fa64ae6f736f693ed4268d313e69d932e7cc73c4e976ad13b83",
+      "recorded_bytes": 29696424
+    },
+    "artifacts/c5_no_mixed_span_budget/observations.json": {
+      "status": "ok",
+      "script": "c5_no_mixed_span_budget.py",
+      "recorded_sha256": "2489bfb62e55270d7a1a57a49d074274e532da90c34e438b0b87530df1de7c71",
+      "recorded_bytes": 5359747
+    },
+    "artifacts/c5_no_spoke_exterior/observations.json": {
+      "status": "ok",
+      "script": "c5_no_spoke_exterior.py",
+      "recorded_sha256": "d13c5aa2e94a610f3b220b57e03903170eb641871c04103ec12ed5cf5d3dd14d",
+      "recorded_bytes": 2314779
+    },
+    "artifacts/c5_no_spoke_first_bridge/observations.json": {
+      "status": "ok",
+      "script": "c5_no_spoke_first_bridge.py",
+      "recorded_sha256": "168b3c7aeea5e6696ed7c4533d6af610f46ba9a882074a64fc08cb0128484a6f",
+      "recorded_bytes": 11917001
+    },
+    "artifacts/c5_no_spoke_path_minor/observations.json": {
+      "status": "ok",
+      "script": "c5_no_spoke_path_minor.py",
+      "recorded_sha256": "fdc575aa8bb212b86137a414b70ec46d12bfb485a66a91fa9bbdb9d0c24f5b9e",
+      "recorded_bytes": 16892358
+    },
+    "artifacts/c5_no_spoke_supports/observations.json": {
+      "status": "ok",
+      "script": "c5_no_spoke_supports.py",
+      "recorded_sha256": "85473f58d4e189c92f9d73f5a15709baf160165010d20104c013a8732b3aae4c",
+      "recorded_bytes": 7777372
+    },
+    "artifacts/c5_open_leaf_ledger/cw-v1/ledger.json": {
+      "status": "ok",
+      "script": "c5_open_leaf_ledger.py",
+      "recorded_sha256": "d7ee4f99ff1c150cfc45ad551afd23232e993a7d9e19135351f27ba5a45221b2",
+      "recorded_bytes": 3203644
+    },
+    "artifacts/c5_qcore_shield_budget/verdicts.json": {
+      "status": "ok",
+      "script": "c5_qcore_shield_screen.py",
+      "recorded_sha256": "e84a6b7dafd62fb497b813f30e0e1545f56a41b588e9f8065f42b2454120c89d",
+      "recorded_bytes": 1283294
+    },
+    "artifacts/c5_root_interfaces/observations.json": {
+      "status": "ok",
+      "script": "c5_root_interfaces.py",
+      "recorded_sha256": "6d1dd63e8324fab71ff8a7320ecdb64567b0ac22e87650275594540804f36512",
+      "recorded_bytes": 1142615
+    },
+    "artifacts/c5_sector_cross_row/observations.json": {
+      "status": "ok",
+      "script": "c5_sector_cross_row.py",
+      "recorded_sha256": "39accd5789e29b76242622ebe5891eab27449fcb0dcfd22a420389074037c439",
+      "recorded_bytes": 3862398
+    },
+    "artifacts/c5_shield_calibration/observations.json": {
+      "status": "ok",
+      "script": "c5_shield_calibration.py",
+      "recorded_sha256": "e575ca80c4a33c96832bbbee0be934c05e4c327083382e19776080a3240dd1ef",
+      "recorded_bytes": 2582601
+    },
+    "artifacts/c5_short_support_singleton/observations.json": {
+      "status": "ok",
+      "script": "c5_short_support_singleton.py",
+      "recorded_sha256": "03e3b192d599b09c8ad708dd424e50c8c71e3804f25abedbba7535a18c728096",
+      "recorded_bytes": 10865534
+    },
+    "artifacts/c5_single_spoke_branch_minor/observations.json": {
+      "status": "ok",
+      "script": "c5_single_spoke_branch_minor.py",
+      "recorded_sha256": "00e38c696cb542f3b1d628d1f3ecc6a894f307e8e47db235104f93c308550ad8",
+      "recorded_bytes": 1461321
+    },
+    "artifacts/c5_single_spoke_cores/observations.json": {
+      "status": "ok",
+      "script": "c5_single_spoke_cores.py",
+      "recorded_sha256": "e2c01bd58bae463f9496011061436d39ecdc8cce84158f9335e4b229ff844c91",
+      "recorded_bytes": 4314128
+    },
+    "artifacts/c5_single_spoke_cross_row/observations.json": {
+      "status": "ok",
+      "script": "c5_single_spoke_cross_row.py",
+      "recorded_sha256": "12e57b849a57d46c7dc3fa47b5ab90e89212bacc48ff17ffb785f6b1a8a49895",
+      "recorded_bytes": 5719709
+    },
+    "artifacts/c5_single_spoke_first_bridge/observations.json": {
+      "status": "ok",
+      "script": "c5_single_spoke_first_bridge.py",
+      "recorded_sha256": "4dd84f416201e1c25389d22c8a6d8b4f353d9b199589fe309d4565441441c414",
+      "recorded_bytes": 11006596
+    },
+    "artifacts/c5_single_spoke_four/observations.json": {
+      "status": "ok",
+      "script": "c5_single_spoke_four.py",
+      "recorded_sha256": "5b2cf95e9c7a6e96ce2c9ee955f36c9b556e67604ab183a6b25ce16fc927b9cd",
+      "recorded_bytes": 3707864
+    },
+    "artifacts/c5_single_spoke_frame_arc/observations.json": {
+      "status": "ok",
+      "script": "c5_single_spoke_frame_arc.py",
+      "recorded_sha256": "1fd18ad51b4180f8c9aa248989a33b2cbb7364d471ac9a9031526e4cc018787e",
+      "recorded_bytes": 8678948
+    },
+    "artifacts/c5_single_spoke_residual_locality/observations.json": {
+      "status": "ok",
+      "script": "c5_single_spoke_residual_locality.py",
+      "recorded_sha256": "24f8d039c905bfc51ce3a806f58edae7f89155282ca87e70cd8751b8db565118",
+      "recorded_bytes": 10043463
+    },
+    "artifacts/c5_single_spoke_three_one/observations.json": {
+      "status": "ok",
+      "script": "c5_single_spoke_three_one.py",
+      "recorded_sha256": "2b433e720e1813de20013255e19b585b472ec51795ed9c1e2521602f6438ced8",
+      "recorded_bytes": 3615188
+    },
+    "artifacts/c5_single_spoke_two_arc/observations.json": {
+      "status": "ok",
+      "script": "c5_single_spoke_two_arc.py",
+      "recorded_sha256": "1a09fd0538e9f52df61b53bdfcb89b0a9055b780d477dcc43c5e911c41287c84",
+      "recorded_bytes": 14376281
+    },
+    "artifacts/c5_single_spoke_two_contact_bounds/observations.json": {
+      "status": "ok",
+      "script": "c5_single_spoke_two_contact_bounds.py",
+      "recorded_sha256": "03f26fe93254747f226146278c32111f7c4c1a34a69d277afb1371b415bdad02",
+      "recorded_bytes": 2112971
+    },
+    "artifacts/c5_single_spoke_two_two_external/observations.json": {
+      "status": "ok",
+      "script": "c5_single_spoke_two_two_external.py",
+      "recorded_sha256": "e49a31543a24cf31b9b3e2245b19f4851a04ba13234d36a4157c9a49ac3bb598",
+      "recorded_bytes": 5075039
+    },
+    "artifacts/c5_single_spoke_two_two_minor/observations.json": {
+      "status": "ok",
+      "script": "c5_single_spoke_two_two_minor.py",
+      "recorded_sha256": "e3a18825ef78b602eceddaa46d7ca84d84388785fd84db2e2a0ba558f908a489",
+      "recorded_bytes": 1306191
+    },
+    "artifacts/c5_three_triangle_blocks/observations.json": {
+      "status": "ok",
+      "script": "c5_three_triangle_blocks.py",
+      "recorded_sha256": "849216cafbae06d2471c54baf4f66c8695e4cac6bd1f20dfa7803d37cf67d45f",
+      "recorded_bytes": 2069707
+    },
+    "artifacts/c5_tree_cores/observations.json": {
+      "status": "ok",
+      "script": "c5_tree_cores.py",
+      "recorded_sha256": "a6e80eb52b27c004856323a93be9b2f816789a66951d273a1778870777c70ba0",
+      "recorded_bytes": 8668398
+    },
+    "artifacts/c5_two_spoke_nonadjacent/observations.json": {
+      "status": "ok",
+      "script": "c5_two_spoke_nonadjacent.py",
+      "recorded_sha256": "8f07190809af18bbe257e274b6f74364179b9c652adfc6024f9093638262b14d",
+      "recorded_bytes": 7673011
+    },
+    "artifacts/c5_two_spoke_reflection/observations.json": {
+      "status": "ok",
+      "script": "c5_two_spoke_reflection.py",
+      "recorded_sha256": "8d5e66a151416a16e31c8599a66eb6d4efa9991f05ce6882e722176a7b38b33a",
+      "recorded_bytes": 3220267
+    },
+    "artifacts/c5_two_spoke_split_support/observations.json": {
+      "status": "ok",
+      "script": "c5_two_spoke_split_support.py",
+      "recorded_sha256": "cd532fc0a592a9be0be77fabe068430b88dc83c50bdaca5eb814392400102bb1",
+      "recorded_bytes": 10313824
+    },
+    "artifacts/c5_two_triangle_blocks/observations.json": {
+      "status": "ok",
+      "script": "c5_two_triangle_blocks.py",
+      "recorded_sha256": "b7181f8e2c926d00118f46643cc51b97e004a271b217975ae449dba01eb1702b",
+      "recorded_bytes": 1058824
+    },
+    "artifacts/c5_two_vertex_overlap/quaternary_repairs.json": {
+      "status": "ok",
+      "script": "c5_two_vertex_quaternary_repairs.py",
+      "recorded_sha256": "9ab10a76089e8138f2033d5d930ac987560fc227403600c1b9121a0321dd24e5",
+      "recorded_bytes": 3876919
+    },
+    "artifacts/c5_two_vertex_overlap/ternary_projections.json": {
+      "status": "ok",
+      "script": "c5_two_vertex_ternary_projections.py",
+      "recorded_sha256": "b383d9fcadc97cb39ede032ccadd2d354adc0990f0a8eda054884d2cb61cd5f7",
+      "recorded_bytes": 2440491
+    },
+    "artifacts/extension_effects/observations.json": {
+      "status": "ok",
+      "script": "extension_effects.py",
+      "recorded_sha256": "dbe665befe04772b4a3b61be037df41be8aa66545cf3a99d3082259649372b24",
+      "recorded_bytes": 1512808
+    },
+    "artifacts/fan_pentagon/disk_rows.bin": {
+      "status": "ok",
+      "script": "fan_pentagon.py",
+      "recorded_sha256": "38bd7468abed692fcc5d5a4598c28ff198d47e377615c3f9cd1972a556770e52",
+      "recorded_bytes": 1046736
+    },
+    "artifacts/fan_pentagon/nonplanar_frontier.bin": {
+      "status": "ok",
+      "script": "fan_pentagon.py",
+      "recorded_sha256": "80de1441d18ed72d73c4834535673a2b11a5b32b37374aff1b94bb5fef38b6e1",
+      "recorded_bytes": 1278336
+    },
+    "artifacts/stepwise/layer_refinement.json": {
+      "status": "ok",
+      "script": "stepwise_layer_refinement.py",
+      "recorded_sha256": "2ddb6ad0c6ce2abbef4d903670a7e441d7848a5293237eef8b66f5015c9a32a1",
+      "recorded_bytes": 5773393
+    }
+  },
+  "limits": [
+    "This is actual MANIFEST replay, not all repository producers or all small outputs.",
+    "CI enforces indexed storage policy; it does not run this replay.",
+    "status checks current main-file bytes and producer fingerprints, not proof of actual successful generation.",
+    "Declared sidecars are checked against pre-run existing bytes; missing sidecars are required to be generated, but their historical hashes are not recorded in MANIFEST.",
+    "status and default rebuild selection do not fully inspect sidecars.",
+    "Dependency inference is based on named paths and learned missing inputs, not a complete dependency proof.",
+    "Scratch .rebuilt/.recorded files can be replaced by later retries; the saved per-round receipts preserve this run history."
+  ],
+  "evidence_sha256": {
+    "first-pass.json": "2035529352b58df89e4ecf4cc08a37d87f8a647fbca81cf8057f8a6f3992536e",
+    "mixed-core-diff.json": "42f2ad050f0f8eed216a060cea21cca2adcc3bfbd4c25644544eefa4b4eaf28a",
+    "probe-rebuild.json": "a89f2369ada4a5b7ca2eedc255e2cc3bb40da021e4b25a79aaa47be3e05c1586",
+    "rebuild.log": "bc7d25ab5ec726495c2da98e3c5d47d9d19924c66416cd602283d3a4634b841d",
+    "retry-write.json": "c8d695f0d32f031977d9302e0ec75fcc3b6f416751ebb8a6b278e9aab1774924",
+    "retry-write.log": "3883610b3417a4ddb6165a18b154f7b622f162afc83caade1b416974ca8d6179",
+    "retry.json": "89411852e9f9bbbd09ae4110e2939ca4f57db89fa08a6b060270d0b7d34a18b0",
+    "retry.log": "b962c2edcf0f6a738552540eae53366276f2493e33006b988f50c081b5704e9a",
+    "storage-verification.json": "62564f592f62892a224a699ff0601e15e3d27ac04564db3a815d896f72e81a12"
+  }
+}

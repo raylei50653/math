@@ -1,0 +1,104 @@
+2026-10-12: degree restrictions beyond the cofacial normal form
+
+Domain: finite simple plane disk graphs with five named outer-cycle vertices.
+Boundary chords are allowed. Sigma is the complete ten-row S4-orbit relation;
+boundary positions are fixed and every interface uses one shared color frame.
+
+Inherited premises, checked against current documents:
+P1. The 132-relation catalogue K has <=5-interior witnesses and is closed under
+    binary union. Every genuine disk source outside K belongs to the D5 orbit
+    of 933 or 941, by the universal Kempe/exterior screen and 4CT.
+P2. A globally minimum-interior source outside K, then maximum-edge source,
+    can be chosen simple, 2-connected, chordless-C5, with triangular inner faces.
+P3. K_le12 = K_le5 = K. This uses P1, the cofacial normal form and the external
+    Dvorak-Lidicky Corollary 20; the external computational proof was not rerun.
+
+The existing frozen cofacial v2 certificate was replayed read-only: PASS, 132
+witnesses, 8778 unordered unions. These are inherited paper premises, not new
+unbounded conclusions established by the controls in this directory.
+
+New conditional paper conclusions:
+1. Every four-cycle disk relation has a representative with <=3 interiors.
+2. The source in P2 has all boundary degrees >=4 and all interior degrees >=5.
+3. It has at least six interior vertices of degree exactly five.
+
+Proof of 1.
+For a C4 source with named boundary (a,b,c,d), put a new degree-two vertex z
+outside edge ab and use (a,z,b,c,d) as the outer C5, retaining ab as a chord.
+The universal outside-K screen accepts all five T4 rows and therefore forbids
+boundary chords in an outside-K source. This augmented source must lie in K.
+The C4 orbits, in order, are ABAB, ABAC, ABCB, ABCD. Among all 16 possible C4
+masks, exactly seven augment to catalogue keys:
+  C4 mask:          7    10   11   12   13   14    15
+  C5 key:        632   424  440  960  976 1000  1016
+  witness k:       1     0    2    0    2    3     0
+Every selected literal C5 witness has dummy slot 1 of degree two, adjacent
+only to slots 0 and 2. Delete it to obtain the required C4 witness. c4/report.json
+records literal edges, all complete fibres including empties, the entire mask
+map and apex-planarity checks. All 84 C4 assignments and all 240 C5 assignments
+were independently compared by direct products and MRV backtracking.
+
+Proof of 2: boundary vertices.
+In the chordless near-triangulation a boundary vertex b cannot have degree two:
+its single incident inner triangle would require a boundary chord. If b has
+degree three, write the outer cycle as (a,b,c,d,e) and its interior neighbor as
+x. The two facial triangles abx and bcx fill the ear. Delete b and promote x
+to the boundary, giving a disk R with outer cycle (a,x,c,d,e) and k(G)-1 interior
+vertices. Global minimum k gives Sigma(R) in K. Replace R by its <=5-interior
+witness, reattach b with edges ba,bc,bx, and return x to the interior. Complete
+interface equality preserves Sigma(G), and the replacement has <=6 interiors.
+P3 contradicts Sigma(G) outside K. Hence every boundary degree is >=4.
+
+Proof of 2: interior vertices.
+Degrees <=3 are removed by the standard greedy extension argument, contradicting
+global minimum k. Also every occupied separating triangle can be emptied while
+preserving Sigma: restrict one accepted whole-graph coloring to its inside and
+permute all inside colors to match any proper coloring of its three interface
+vertices. Proper triangle colorings have one S4 orbit. Thus there are no occupied
+separating triangles in G; the four-neighbor link of a degree-four interior
+vertex v is an induced cyclic quadrilateral (a,b,c,d).
+
+For this link, every extendible coloring has a=c or b=d. If each opposite pair
+contains at least one interior vertex, delete v and identify that pair through
+the vacated disk. Both quotients preserve the five distinct boundary labels,
+have fewer interior vertices and have relations in K. Their complete relations
+have union Sigma(G), contradicting union closure. This proof does not require
+either individual quotient to retain all rows.
+
+Four boundary neighbors would give a C4 in the chordless boundary C5 and are
+impossible. Three boundary neighbors are consecutive in the link and force
+the middle boundary vertex to have degree three, already excluded. The only
+remaining case has exactly two boundary neighbors, opposite in the link; they
+are nonadjacent on C5. Name the outer cycle (a,b,c,d,e), and name the link
+(a,x,c,y), choosing x on the short boundary arc side.
+
+The four facial star triangles fill a-x-c-y and contain only v. Jordan
+separation gives precisely a short C4 disk (a,b,c,x), a long C5 disk
+(a,y,c,d,e), and this central wheel. There are no cross-cap edges. Replace
+the C4 cap by its <=3-interior witness (conclusion 1), and the C5 cap by its
+<=5-interior witness (global minimum k, since that cap has fewer interiors).
+Use the same named colors of a,c,x,y,v when taking the complete join. Exactly
+x,y,v are additional interface/interior vertices, so the reconstructed source
+has at most 3+5+3=11 interiors and the same Sigma(G). P3 again contradicts
+Sigma(G) outside K. Every interior degree is therefore >=5.
+
+Proof of 3.
+Euler gives E=3k+7. With D_B the sum of the five boundary degrees,
+  sum_inner (6-degree) = D_B-14.
+All inner degrees are >=5, all boundary degrees >=4, and therefore
+  n_5 = D_B-14 + sum_inner,degree>=7 (degree-6) >=6.
+
+Controls separating saturation from reduction:
+- octahedral/report.json: nested octahedron patches in triangle 012 of C5+02;
+  k=6, Sigma=1016, all interior degrees>=4, no all-interior C5. The only two
+  disk-admissible additions 03 and 24 strictly shrink Sigma. Arbitrary m gives
+  k=3m and the same relation; each final patch can be peeled off.
+- degree4/report.json: a saturated three-interior graph with Sigma=429. The
+  two legitimate opposite quotients have Sigma=424 and 165; both strict, with
+  union 429. This is compatible with the new outside-K argument, because all
+  three relations already belong to the union-closed catalogue.
+
+Limits: k>=13 sources remain unexcluded. No actual 933/941 source is exhibited;
+no new Lean theorem is claimed. The five-neighbor cycle of a degree-five vertex
+can touch the outer boundary, and its existence does not yet give a smaller
+representative with the same complete Sigma. K_infinity=K_le5 remains OPEN.

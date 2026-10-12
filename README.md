@@ -102,6 +102,46 @@ uv run --with-requirements requirements.txt python tools/artifacts.py status
 無法再由產生器逐位元組重現、但仍被下游重播的大檔列在工具的 `FROZEN`，留在 git
 （目前只有 `artifacts/c5_single_spoke_two_two/observations.json`）。
 
+[`Generated artifacts` CI](.github/workflows/generated-artifacts.yml) 在每次 push／PR 檢查
+Git index：整個 repo 的 JSON、JSONL、NDJSON、JSON5、bin 達 1,000,000 bytes 時，
+預設由腳本生成，不直接追蹤輸出。MANIFEST 所列的產物必須有已追蹤的產生器，
+並列入 repo 的 `.gitignore`；已追蹤的大檔不會因為新增 ignore 規則而通過。
+一般大型 `artifacts/` 先驗證產生器，再用 `record <path>` 登錄，最後
+`git rm --cached -- <path>` 移除追蹤並保留本地檔案。
+
+需要保存原始 hash、失敗紀錄或交付 seal 的歷史稽核資料，以
+`python3 tools/audit_archive.py append --paths audits/<path> ...` 選定封存，
+核對 gzip 的還原 bytes 後再移除原檔追蹤；新 checkout 先按
+[封存說明](audits/README.md)還原。不得以重生成覆寫歷史證據。
+必須直接追蹤的大檔在 [逐檔例外表](tools/generated_artifact_exceptions.json) 說明理由：
+frozen 證書鎖定大小與 SHA256，bootstrap metadata 指明產生器。目前只保留上述
+FROZEN 證書與 `audits/ARCHIVE.json` 主還原索引兩項例外。
+
+本機先 stage 本次變更，再執行與 CI 相同的檢查：
+
+```bash
+python3 tools/check_generated_artifacts.py
+python3 -m unittest discover -s tools/tests -p 'test_*.py'
+```
+
+此 CI 核對儲存規則及產生器登錄，不會執行整批生成。實際重建由
+`rebuild --all` 驗證主要產物的 SHA256／大小；單支腳本亦可用其 `--check`。
+產生器需要額外 CLI 參數或排他建立的小型伴隨檔時，在 `tools/artifacts.py` 的
+`PRODUCER_ARGS`／`ADDITIONAL_OUTPUTS` 明列。伴隨檔對照本次重建前的 bytes，
+不代表已核對歷史登錄 hash；`status`／預設 `rebuild` 亦不完整檢查伴隨檔。
+`status` 的 `ok` 只表示主要產物與 fingerprint 相符，不能代替實際生成通過。
+
+[2026-10-12 實際生成紀錄](audits/2026-10-12-generated-artifact-ci/REPORT.md)：
+隔離 checkout 整批跑過，再針對生成方式修補後重試；目前137／160支產生器、
+143／166份主要產物重建 bytes 一致，其餘保留失敗與依賴阻擋。
+此次亦掃描本地 `artifacts/`，補登錄先前僅忽略的 split-hub probe 並實際重建；
+儲存 CI 不會發現新 checkout 中不存在的未登錄、未追蹤輸出。
+
+未涵蓋的新大型產物，先補明確產生器、完整參數與輸出集合，再實際重建比較，
+通過後才登錄與移除追蹤。若輸出不一致，保存原 bytes 與逐輪紀錄，阻擋下游，
+不以 `record` 自動接受新結果；需要固定保存的歷史證據走上述封存／逐檔例外。
+小檔、其他副檔名、未追蹤或已忽略但未登錄的輸出不在這個 CI 的完整驗證範圍。
+
 ## 檔案
 
 | 路徑 | 用途 |

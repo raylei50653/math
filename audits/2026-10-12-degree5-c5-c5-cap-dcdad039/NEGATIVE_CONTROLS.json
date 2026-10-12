@@ -1,0 +1,51 @@
+{
+  "schema": "task-c-negative-controls-v1",
+  "certificate_sha256": "2b4b956d10a39cb91ee44f41fccde880eed1d1bf17981de87d67386aa177ba3d",
+  "checker_sha256": "c6599b40b7a098c54f0bfb1692235f76bdf6e982396695abc399cc9129279b9a",
+  "method": "same make_certificate(expected=...) validator as CLI --check",
+  "cases": [
+    {
+      "case": "missing ordered pair",
+      "expected_diagnostic": "complete pair array",
+      "actual_diagnostic": "complete pair array",
+      "status": "triggered and holds",
+      "corruption_rejected": true
+    },
+    {
+      "case": "missing boundary row including its empty/nonempty fibre",
+      "expected_diagnostic": "complete ten joint rows",
+      "actual_diagnostic": "complete ten joint rows",
+      "status": "triggered and holds",
+      "corruption_rejected": true
+    },
+    {
+      "case": "incorrect named pair label",
+      "expected_diagnostic": "pair labels/order",
+      "actual_diagnostic": "pair labels/order",
+      "status": "triggered and holds",
+      "corruption_rejected": true
+    },
+    {
+      "case": "invalid full lift on original spoke va",
+      "expected_diagnostic": "pair certificate differs",
+      "actual_diagnostic": "pair certificate differs: (91, 91)",
+      "status": "triggered and holds",
+      "corruption_rejected": true
+    },
+    {
+      "case": "incorrect central rotation",
+      "expected_diagnostic": "pair certificate differs",
+      "actual_diagnostic": "pair certificate differs: (91, 91)",
+      "status": "triggered and holds",
+      "corruption_rejected": true
+    },
+    {
+      "case": "omitted literal cap full lift",
+      "expected_diagnostic": "cap certificate differs",
+      "actual_diagnostic": "cap certificate differs: 91",
+      "status": "triggered and holds",
+      "corruption_rejected": true
+    }
+  ],
+  "certificate_unchanged": true
+}

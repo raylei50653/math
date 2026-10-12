@@ -5,6 +5,13 @@
 目前停止點由 [Kempe 導覽](c5_kempe_guide.md) 維護，後續可發布工作見
 [三份衍生任務](tasks/c5_degree5_link_tasks.md)。
 
+2026-10-12 後續：[完整外圈限制](c5_neartri_boundary_collar.md) 加入普遍二邊
+crosscut 排除，將同一最小來源的 n5 下界提高為 933 的九、941 的八；
+非相鄰兩框接點的五度 link 來源亦已排除。下文六個五度點及 cap 分支為當輪
+結論，既有證據保留；一般五度縮減仍 OPEN。
+同日 [全內部五輪與任務交付](c5_degree5_link_reductions.md) 已保證原內部 induced W5，
+並完成 A／B／C 的各自規格；下文尚未取得全內部 link 的界線保留當輪語境。
+
 ## 1. 結論及精確前提
 
 圖類為有限簡單平面 disk 圖，外邊界是具名、有序的簡單五環

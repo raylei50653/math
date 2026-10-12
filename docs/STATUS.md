@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-12（兩接線U的全色Diff出口及原K₅已排完整N2原55(1,1)；剩u=0的(1,0)/(2,0)。九格仍七格、N2／E-ARC2 OPEN）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-12（最小來源全內部五輪、A／B／C交付及完整外圈限制已接入；一般縮減與K∞=K≤5仍OPEN）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -8,6 +8,8 @@
 得到一般 disk 圖的 `K≤12=K≤5`；十三內點以上仍 OPEN，未 Lean 化。
 同日[最小來源度數界](c5_saturation_degree_bound.md) 接上述前提，證邊界度數至少四、
 內部至少五、至少六個五度內點；[衍生任務](tasks/c5_degree5_link_tasks.md) 聚焦具名五鄰環。
+後續 [全內部五輪與任務交付](c5_degree5_link_reductions.md) 保證原內部 induced W5；
+[完整外圈限制](c5_neartri_boundary_collar.md) 將933／941五度點下界提高至九／八。
 
 ## 1. 閱讀順序與文件角色
 
@@ -273,7 +275,9 @@
 | [Kempe screen](c5_kempe_screen.md)、[adjacent-singleton 計數](c5_adjacent_singleton_counts.md) | 必要條件與剩餘候選已保存；一般 adjacent-singleton lemma 未證，與主線的相鄰雙「缺失」候選 A 不同 |
 | [共面識別正規形與十二內點界](c5_cofacial_normal_form.md) | 聯集封閉目錄＋global 最小內點／最大邊數，證簡單三角面正規形不增內點；接外部 Cor20 得 K≤12=K≤5。132 witnesses／8778 unions／十候選及完整 fibres 核對；十三內點以上、一般重接與 Lean 保留，不混用舊 edge-critical 前提 |
 | [最小目錄外來源的度數界與五度鄰環](c5_saturation_degree_bound.md) | 沿用全域最小性及 K≤12，證 C4 三內點代表、邊界度數≥4、內部≥5、n5≥6；完整控制與條件性紙面分層，十三內點以上及五度縮減仍 OPEN |
-| [五度鄰環的三份衍生任務](tasks/c5_degree5_link_tasks.md) | 待執行：位置／pinned contract、同源十列重接控制、固定 C5＋C5 cap 的 132² 完整 joins；各有 BASE、獨占目錄、驗收與停止點 |
+| [近三角化完整外圈限制](c5_neartri_boundary_collar.md) | 二邊 crosscut 全排；933 的 h≥3／n5≥9，941 的 h≥2／n5≥8；h≤2 只剩941邊界度數(4,4,5,4,5)的C7 55列必要上界。完整欄＋Kempe閉包與獨立重算，來源／一般主命題仍OPEN |
+| [全內部五輪、位置與重接交付](c5_degree5_link_reductions.md) | 最小來源必有全內部 induced W5；A九種位置／完整pins契約、B1020項固定操作及C17424組完整cap閉合已交付。annulus完整J_p縮減、一般來源及Lean保留 |
+| [五度鄰環的三份衍生任務](tasks/c5_degree5_link_tasks.md) | 保存原BASE任務；A／B／C各自完成明列規格。C來源另由crosscut排除，獨立132² joins亦完成；一般縮減仍OPEN |
 | [最小來源度數界的本地發布紀錄](history/2026-10-12-c5-saturation-degree-bound-publish.md) | 凍結、覆核、replay 與文件／Lean 回歸；只 commit，不 push，保留 unrelated staged 工作 |
 | [count-cone bridge](c5_count_cone_bridge.md)、[B₅ face](c5_b5_face.md)、[Kempe-class 計數](c5_kempe_class_counts.md) | near-triangulation 化約、部分 Lean 代數及 class 級紙面計數已完成；普通 pairing 不給最終矛盾，cone／connectivity 缺口仍在 |
 | [connectivity surgery](c5_kempe_connectivity.md)、[AB 立方體](c5_ab_swap_cube.md)、[complementary 立方體](c5_complementary_cube.md)、[高度數 disk](c5_corner_disks.md) | 同圖 connectivity 更新與控制可重播；AB-only 必逃逸、固定 AB\|CD 必失敗等推測已有反例；較早低度數零 survivor 不再是一般候選依據 |
@@ -487,6 +491,8 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-12：五度鄰環、外圈限制與產物儲存整理發布](history/2026-10-12-degree5-collar-progress-publish.md)
+- [2026-10-12：近三角化完整外圈限制與精確C7殘留](history/2026-10-12-neartri-boundary-collar.md)
 - [2026-10-12：共面正規形、十二內點界與發布核對](history/2026-10-12-cofacial-normal-form-publish.md)
 
 - [2026-10-11：N2原55殘餘、unary採納與long同步整理發布](history/2026-10-11-n2-55-progress-publish.md)；九格七格覆蓋、三項限定long排除及七個必要弧模板，四輪audit／完整fibres／負控制相連提交；target not triggered，原55父情形及E-ARC2 OPEN、未Lean化

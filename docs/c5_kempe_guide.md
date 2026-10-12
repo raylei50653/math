@@ -5,6 +5,10 @@
 簡單近三角化圖，接外部定理得到 `K≤12=K≤5`；一般主命題仍 OPEN。
 其後[最小來源度數界](c5_saturation_degree_bound.md) 證邊界度數至少四、內部至少五、
 至少六個五度內點；五度可縮減性仍 OPEN，已有[三份有界任務](tasks/c5_degree5_link_tasks.md)。
+同日 [全內部五輪與任務交付](c5_degree5_link_reductions.md) 已保證 induced W5
+全部位於原內部；A／B／C 分別完成位置契約、固定域重接與 132² cap 閉合。
+[完整外圈限制](c5_neartri_boundary_collar.md) 再排二邊 crosscut，將 933／941 的
+五度內點下界提高為九／八；941 最小邊界超額只剩具名 C7 必要上界，仍 OPEN。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
 
@@ -37,7 +41,8 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
 | 共面識別／聯集封閉正規形 | global 最小內點、最大邊數來源的共面完備及簡單三角面正規形；接文獻 Cor20 得一般 disk 的 K≤12=K≤5。132 witnesses／8778 unions／十候選及完整 fibres 重播；至少十三內點的一般來源、完整關係重接仍 OPEN，未 Lean 化 | [權威入口、證明及重播](c5_cofacial_normal_form.md) |
-| 最小來源度數／五度鄰環 | 沿用前列全域最小性，C4 關係≤3內點、邊界度數≥4、內部≥5、n5≥6。完整 fibres 及兩反控制；沒有推出全內部五環或縮減，無新 Lean | [條件性證明與證據](c5_saturation_degree_bound.md)、[衍生任務](tasks/c5_degree5_link_tasks.md) |
+| 近三角化完整外圈 | 二邊 crosscut 全排；933 必 h≥3、n5≥9，941 必 h≥2、n5≥8。h≤2 的42項完整限制排41，941只剩邊界度數(4,4,5,4,5)的C7 55列必要上界；任意大小仍OPEN，未Lean化 | [完整接合、閉包與殘留](c5_neartri_boundary_collar.md) |
+| 最小來源度數／五度鄰環 | 沿用全域最小性，C4 關係≤3內點、邊界度數≥4、內部≥5；後續已保證全內部 induced W5。A九種位置契約、B固定域1020項操作及C全部17424組cap閉合已交付，一般縮減仍OPEN，無新Lean | [度數界](c5_saturation_degree_bound.md)、[全內部五輪與交付界線](c5_degree5_link_reductions.md) |
 | 猜想 E／E-ARC2 共同目標 | ε≤1 已證；ε≥3 在原域自動滿足。ε=2 的三點弧命題仍 OPEN，等價排除 941 形三點及四點弧來源；Q=B 的 932 是較強版本的另項義務 | [母猜想與等價證明](c5_research_synthesis.md#81-猜想-e超額拒絕定律)、[E2 低 ε 證明](../artifacts/c5_excess_one_e2/REPORT.md)、[E3 三列化約](../artifacts/c5_excess_two_e3/REPORT.md) |
 | E-ARC2 真子圖與共同核心 | 沿用 E2／唯一 degree-5 相鄰列分離及兩-root44排除，目標反例的任意真子圖至多單拒絕；任意兩個不同拒絕列的 minimal cores 聯集必為 G，所有內點皆不可同接24。179固定圖中172觸發一般 Z 引理並成立，目標來源0觸發；後續完整N2的45／54已排；原55、其他域與主目標仍 OPEN，未Lean化 | [完整紙面證明與負控制](c5_excess_two_arc_pair_critical.md) |
 | E-ARC2 原分量共同限制 | 同一degree-4原分量的boundary重色至多涉及一個拒絕列；完整N2前提再接已採納N45-U，所有原分量刪除均全收，每個非root點至多接兩個相鄰框點，真core只能省一條root-spoke。63固定圖／13,010完整外部投影核對，目標0觸發；spoke45／54由後續報告涵蓋，原55仍OPEN，未Lean化 | [證明、完整fibres與控制](c5_excess_two_arc_component_slack.md) |
@@ -64,7 +69,7 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 ## 3. 停止點與保留缺口
 
 **共面正規形／完整關係重接（2026-10-12）。** 有界等式 `K≤12=K≤5` 已由紙面、
-有限核對及外部定理接合；十三內點以上仍保留。接續只追蹤刪一條內邊後同一原圖
+有限核對及外部定理接合；十三內點以上仍保留。重接方向追蹤刪一條內邊後同一原圖
 的十列四格關係 `J_e(p;[s≠t],[u≠v])`。`01232` 的同色 opposite 見證已迫某個
 原拒絕列有 `(0,0)` 的二色四邊形完整 lift，但未證不同邊的見證能共同配合。
 單獨保留 `01232` 的 flip／識別有 567→854／774 反控制。
@@ -72,12 +77,25 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 前提，亦未更動那些分支的證書或覆蓋。詳見[權威報告](c5_cofacial_normal_form.md)。
 
 **最小來源五度鄰環（2026-10-12）。** [度數界](c5_saturation_degree_bound.md) 已排
-這個 global 最小來源的全部四度內點，留下至少六個五度內點、k≥13。
-下一步可獨立發布[三份任務](tasks/c5_degree5_link_tasks.md)：具名 link 位置與 pinned
-替換契約、實際固定圖十列重接校準、兩外框接點的 C5＋C5 cap 完整 132² joins。
-最後一支的代表有至多十四內點，必須直接核對目錄 membership，不能套十二內點界。
-尚未證六個候選迫出某個可縮減位置；全內部 link、C4＋C6 cap 與一般主命題保留。
+這個 global 最小來源的全部四度內點；後續[完整外圈限制](c5_neartri_boundary_collar.md)
+已提高至 933 至少九個、941 至少八個五度內點，k≥13 不變。二邊 crosscut 定理
+亦已排除[三份任務](tasks/c5_degree5_link_tasks.md)中 C 的來源子域及另一 C4＋C6
+非相鄰兩框接點方向；C另獨立完成全部132² cap閉合，A的位置／pinned契約與
+B的固定域重接控制亦已交付。[全內部五輪](c5_degree5_link_reductions.md)已保證
+有 degree-5 中心與五個鄰點全在原內部；尚未證這個位置可保持完整Σ縮減。
 任意 Σ-飽和族無全內部 C5、四度單分支識別丟列的反控制均保存。
+
+目前五度縮減的窄入口是原 B/U 十個 pins 的 annulus 完整 J_p：保留同一外部圖、
+同色框、十列全部空 cells 與 full lifts，尋找保Σ的合法操作或聯集分解。
+B固定域的1020項操作均不等價，不能據此排除一般縮減；其餘必要介面與重播
+見[交付入口](c5_degree5_link_reductions.md)。
+
+**完整外圈的最小殘留（2026-10-12）。** 令 h=Σ_B(deg−4)。933 必 h≥3；941
+必 h≥2，且 h=2 僅剩原邊界度數 `(4,4,5,4,5)`，內側完整關係包含於具名 C7
+的55／91列上界；它的完整外列聯集仍為941。3,383個實際外側cap控制未排除它。
+下一個窄問題是同一C7內側圖的完整關係能否落在此上界並覆蓋941的全部接受列；
+不是證所有near-cubic圖的通用計數猜想。h≥3及跨邊J_e共同見證亦保留；各邊
+自己的拒絕列full lift不能合併。來源、全部欄與重播見[權威報告](c5_neartri_boundary_collar.md)。
 
 **主攻的共同義務（2026-10-11）：證 E-ARC2。**
 把反例的拒絕三點整圖搬到 {0,1,3}，在同一來源、完整 relations／fibres／full lifts

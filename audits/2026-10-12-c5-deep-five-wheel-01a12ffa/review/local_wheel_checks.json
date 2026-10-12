@@ -1,0 +1,35 @@
+{
+  "certificate_sha256": "8b032fbe72f11e77d8cfec7a1639960a32c24275c539c71b318afcc4efa0a9d7",
+  "checker_sha256": "3cb01ec54101a3d305a35d924ae79c41d0473b7b989dbb71ac4a89f4b803cff9",
+  "checks": [
+    {
+      "exit_code": 0,
+      "name": "normal",
+      "status": "triggered and holds",
+      "stderr": "",
+      "stdout": "PASS: two controls, ten rows, five quotients each, complete lifts; independent product/MRV and apex-planarity checks\n"
+    },
+    {
+      "exit_code": 0,
+      "name": "seed17",
+      "status": "triggered and holds",
+      "stderr": "",
+      "stdout": "PASS: two controls, ten rows, five quotients each, complete lifts; independent product/MRV and apex-planarity checks\n"
+    },
+    {
+      "exit_code": 1,
+      "name": "corrupted-full-lift-rejected",
+      "status": "triggered and holds",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-12-c5-deep-five-wheel-01a12ffa/controls/degree5_local.py\", line 277, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-12-c5-deep-five-wheel-01a12ffa/controls/degree5_local.py\", line 271, in main\n    need(computed == json.loads(args.check.read_text()), 'certificate exact replay')\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-12-c5-deep-five-wheel-01a12ffa/controls/degree5_local.py\", line 19, in need\n    raise ValueError(message)\nValueError: certificate exact replay\n",
+      "stdout": ""
+    }
+  ],
+  "claim_statuses": {
+    "five_single_quotients_always_have_exact_union": "counterexample",
+    "full_fibre_equalities_and_literal_K5_subdivisions": "triggered and holds",
+    "outside_K_source": "not triggered",
+    "single_quotient_always_preserves_sigma": "counterexample",
+    "two_equal_pairs_always_give_planar_quotient": "counterexample"
+  },
+  "networkx_version": "3.6.1"
+}

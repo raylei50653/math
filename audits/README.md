@@ -38,7 +38,7 @@ python3 audits/2026-10-04-task-d5/run_validation.py --scope original --output /t
 output 路徑；歷史 absolute 路徑與執行時間是原紀錄，不替換成新執行資料。
 大型 live `artifacts/` 仍沿用 [MANIFEST](../artifacts/MANIFEST.json) 的生成／
 hash 政策；本封存另保存稽核當時的完整 bytes，不以目前 producer 重生成舊快照。
-`--artifacts` 另按現行 MANIFEST 的原 SHA256／大小，從同一封存恢復160份
+`--artifacts` 另按現行 MANIFEST 的原 SHA256／大小，從同一封存恢復166份
 live大型產物；不修改MANIFEST，也不以重生成修正歷史文件hash漂移。
 
 ## 2026-10-04 發布快照
@@ -69,3 +69,23 @@ fresh checkout仍先用上述restore指令。A的舊live HEAD／docs checker保�
 原checker與證書不改。B的原frozen-input verifier可直接在新HEAD執行。
 本輪來源範圍、BR-SD-1a待獨立封存的任務與實際驗證見
 [整理紀錄](../docs/history/2026-10-11-single-deficit-progress.md)。
+
+## 2026-10-12 大型產物 CI 與儲存整理
+
+從 `ab0862485b30b12b538c734271f354630afa8e26` 的已追蹤檔案選出21份大型
+稽核 JSON，以 `append --paths` 追加到主 ARCHIVE；原 bytes、modes、seal、
+checker 及失敗紀錄保持。包含 N45 publication 的 `archive.json`／`inputs.json`
+等四份索引與歷史副本、BR-SD-1g的六份證據、N2的十一份控制與probe。
+N45的還原順序仍是先執行主 `tools/audit_archive.py restore --artifacts`，
+再執行其原 `archive.py restore`；主還原步驟會先恢復N45的bootstrap索引。
+
+另有五份 live產物已由各自產生器的 `--check` 逐byte重播，新增MANIFEST登錄：
+941 single-spoke、excess-one subcovers、arc component-slack、C44P independent
+及C44P two-private。它們可由生成腳本重建，也可由主封存按原hash還原。
+本次儲存整理不改舊publication verifier所要求的歷史HEAD／index，不聲稱其舊gate
+在新的追蹤方式下通過；驗證範圍是原records不變、所選檔案完整gzip還原及新的CI規則。
+
+後續已在隔離 checkout 實際執行整批生成，並補登錄 split-hub probe。
+最後137／160支產生器、143／166份主要產物逐byte一致；1項文件hash漂移、
+21項依賴阻擋與1項執行環境限制仍未通過。完整範圍、修補參數與原失敗紀錄見
+[生成驗證紀錄](2026-10-12-generated-artifact-ci/REPORT.md)。

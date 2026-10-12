@@ -1,0 +1,100 @@
+{
+  "Lean": "not run; this task has no new Lean theorem",
+  "certificate": "controls/certificate.v2.json",
+  "certificate_sha256": "3a0ef3e3909935b3d08abb3c334cf8a7698df2c2b03e6b177823ec8f35bf953a",
+  "negative_controls": [
+    {
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/final-negative-missing-row.log",
+      "malformed_sha256": "52e590aceae3c9100fedddf07ac9e6afe86a23f6dd2d78571a2779c87419ef0b",
+      "name": "negative-missing-row",
+      "recipe": "remove last row from graphs.W5.rows"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/final-negative-wrong-label.log",
+      "malformed_sha256": "86ca1bcc81d9939dc54aa3d5f2e98f878f0ef51e334faa1b439f138cc32ac652",
+      "name": "negative-wrong-label",
+      "recipe": "replace W5 boundary label b4 by b0 in embedded domain"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/final-negative-wrong-lift.log",
+      "malformed_sha256": "ac94caa9583b0ecf6748e119df6839295a85b5d6b5bf509f1a4fd291cf2dbd42",
+      "name": "negative-wrong-lift",
+      "recipe": "set W5 row0 first lift color at b0 equal to b1"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/final-negative-illegal-quotient.log",
+      "malformed_sha256": "8bf1fd7d527eda57aad56d92a002076f38dea5c3861cc7204fe2ab89fa06f9a0",
+      "name": "negative-illegal-quotient",
+      "recipe": "replace first admitted quotient partition by a block merging b0 and b1"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/final-negative-missing-empty-fibre.log",
+      "malformed_sha256": "6f7229edf391c581c18eda776df7a75cb953b89e467bee018706a6230079059b",
+      "name": "negative-missing-empty-fibre",
+      "recipe": "remove empty truth-value fibre 00 from first operation row"
+    }
+  ],
+  "normal_and_seed17_match_same_complete_certificate": true,
+  "outside_933_941_source": "not triggered",
+  "protected_file_drift": [],
+  "protected_file_hashes": {
+    "DESIGN.json": "6ed90d56a6fa8670a352ab0c241e37bd46f05a34e4126ec2067aa4d012968ec0",
+    "INPUTS.json": "299aea6ef6835c2e296d222abf8186520883862594e90d2820381b5bc3c29de4",
+    "controls/certificate.json": "5bfe49b42dd2ac0ccc709905ef9a325fe5dda7c4af8b8eeb39dc71bc948073d9",
+    "controls/certificate.v2.json": "3a0ef3e3909935b3d08abb3c334cf8a7698df2c2b03e6b177823ec8f35bf953a",
+    "controls/check.py": "9959c21550454d490f72b0eafc5fbf3e270214bfb2b2e630c22983713fa53539",
+    "controls/domain.json": "2bcacec6f103d19962158ca38591f5f9c8f3708217b893d49b8a22a57fbedd01",
+    "controls/independent.py": "261c0e0c220b21a937d6239cd075d6033b8c08236fa13a3125938ca1d3f361f3",
+    "controls/topology.py": "c66ab8c4a8a86560c422dc369db6df7bc033f1fbc50eca24c0459c357b8f69b9",
+    "controls/validate.py": "06d60f41eb39e87a9de416df486897d6dd26826129298b7126d8b43f51c12749",
+    "frozen/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/EXTERNAL.md": "5f0acf56790771b888e20b88ee88e16304d8f9c65f90c1c8830dcf57a618d33c",
+    "frozen/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/INPUTS.json": "6f4fc53a01f747ca56f7a9a88e622c6a78b096e54953d2b3f1f67b7d62dcfc6d",
+    "frozen/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json": "acaf18296c4463fe11dc081c27d882dfd484839af068e2cec9505dedd92f48da",
+    "frozen/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/checker.py": "8b0d5ce0d83c722ec5128c94b8f3f139e803e93371659c0a043d34d2ce324dd1",
+    "frozen/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/frozen/artifacts/c5_cells/cells.json": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+    "frozen/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/frozen/artifacts/c5_cells/kempe_screen.json": "da327ab0ed0e9d46b82f8127e6ee26217667541a1edff5923852a78ee21c8083",
+    "frozen/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/frozen/scripts/c5_kempe_screen.py": "033fd7d6d2ff673ca1f7b78b8958b729351942092d58e027ea7d6b8713560a70",
+    "frozen/audits/2026-10-12-cofacial-uniform-separation-eb6b2303/paper/cofacial_normal_form.md": "579054e712697c353834ea351e40df5b4b516310265148816ae5d8ad3179f08c",
+    "frozen/docs/c5_cofacial_normal_form.md": "9ef77b005da1b0345e109c537282976ac96b29aacc2400c3b63804ab10ae2e83",
+    "frozen/docs/c5_saturation_degree_bound.md": "b12e914d4a49ff6f30fe5e10c46c0ee5ce7891746250f0bdc88e79bc374791fc",
+    "frozen/docs/tasks/c5_degree5_link_tasks.md": "04853e230051f166037a5763f2be5d69b26c3a3a25f5a7da40c2570c19b51d9a",
+    "paper/CONTRACT.md": "31c1ebb1ba5d3f99d6e4fcfaf5c3d80df776f10cedc03ca917d661243af95a28"
+  },
+  "replays": [
+    {
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/final-replay-normal.log",
+      "name": "replay-normal"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/final-replay-seed17-other-cwd.log",
+      "name": "replay-seed17-other-cwd"
+    },
+    {
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/final-inherited-cofacial-v2.log",
+      "name": "inherited-cofacial-v2"
+    },
+    {
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/final-negative-exclusive-write.log",
+      "name": "negative-exclusive-write"
+    }
+  ],
+  "schema": "degree5-star-B-validation-v1"
+}

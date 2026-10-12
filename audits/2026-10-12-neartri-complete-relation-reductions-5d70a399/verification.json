@@ -1,0 +1,128 @@
+{
+  "checker.py": {
+    "normal_and_seed17": [
+      {
+        "seed": null,
+        "exit_code": 0,
+        "stdout": "{\"arbitrary_ring_inputs\": 1023, \"arbitrary_ring_outputs\": 121, \"c4_necessary\": [7, 10, 11, 12, 13, 14, 15], \"geometries\": 9240, \"join_outputs\": 90, \"joins\": 924, \"link_words\": 30, \"literal_control_mask\": 603, \"ring_inputs\": 132, \"ring_outputs\": 11, \"spoke_pushes\": 660, \"status\": \"PASS\", \"target_source_status\": \"not triggered\", \"union_pairs\": 8778}\n",
+        "stderr": ""
+      },
+      {
+        "seed": "17",
+        "exit_code": 0,
+        "stdout": "{\"arbitrary_ring_inputs\": 1023, \"arbitrary_ring_outputs\": 121, \"c4_necessary\": [7, 10, 11, 12, 13, 14, 15], \"geometries\": 9240, \"join_outputs\": 90, \"joins\": 924, \"link_words\": 30, \"literal_control_mask\": 603, \"ring_inputs\": 132, \"ring_outputs\": 11, \"spoke_pushes\": 660, \"status\": \"PASS\", \"target_source_status\": \"not triggered\", \"union_pairs\": 8778}\n",
+        "stderr": ""
+      }
+    ],
+    "certificate_sha256": "9187813049538d77673dd2c108bb7b4fa0101b1859b2b78aa234ec9a33c03822",
+    "corruption": {
+      "kind": "removed one complete literal-graph lift",
+      "exit_code": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/checker.py\", line 280, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/checker.py\", line 267, in main\n    assert json.loads(args.certificate.read_text()) == normalized, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    "missing_read_is_nonmutating": {
+      "exit_code": 1,
+      "created": false
+    },
+    "exclusive_write": {
+      "exit_code": 1,
+      "existing_bytes_unchanged": true
+    }
+  },
+  "collar_checker.py": {
+    "normal_and_seed17": [
+      {
+        "seed": null,
+        "exit_code": 0,
+        "stdout": "{\"h\": 0, \"target\": 933, \"cases\": 1, \"excluded\": 1, \"survivors\": []}\n{\"h\": 0, \"target\": 941, \"cases\": 1, \"excluded\": 1, \"survivors\": []}\n{\"h\": 1, \"target\": 933, \"cases\": 5, \"excluded\": 5, \"survivors\": []}\n{\"h\": 1, \"target\": 941, \"cases\": 5, \"excluded\": 5, \"survivors\": []}\n{\"h\": 2, \"target\": 933, \"cases\": 15, \"excluded\": 15, \"survivors\": []}\n{\"h\": 2, \"target\": 941, \"cases\": 15, \"excluded\": 14, \"survivors\": [{\"extras\": [0, 0, 1, 0, 1], \"initial\": 63, \"fixed_point\": 55, \"outer\": 941}]}\n{\"status\": \"PASS\", \"target_source_status\": \"not triggered\"}\n",
+        "stderr": ""
+      },
+      {
+        "seed": "17",
+        "exit_code": 0,
+        "stdout": "{\"h\": 0, \"target\": 933, \"cases\": 1, \"excluded\": 1, \"survivors\": []}\n{\"h\": 0, \"target\": 941, \"cases\": 1, \"excluded\": 1, \"survivors\": []}\n{\"h\": 1, \"target\": 933, \"cases\": 5, \"excluded\": 5, \"survivors\": []}\n{\"h\": 1, \"target\": 941, \"cases\": 5, \"excluded\": 5, \"survivors\": []}\n{\"h\": 2, \"target\": 933, \"cases\": 15, \"excluded\": 15, \"survivors\": []}\n{\"h\": 2, \"target\": 941, \"cases\": 15, \"excluded\": 14, \"survivors\": [{\"extras\": [0, 0, 1, 0, 1], \"initial\": 63, \"fixed_point\": 55, \"outer\": 941}]}\n{\"status\": \"PASS\", \"target_source_status\": \"not triggered\"}\n",
+        "stderr": ""
+      }
+    ],
+    "certificate_sha256": "8112ab1f09de8a18f915a3d25e9133083b54f2032c363c32285ece1fe9b1d87e",
+    "corruption": {
+      "kind": "flipped one fixed-point membership bit",
+      "exit_code": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/collar_checker.py\", line 186, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/collar_checker.py\", line 175, in main\n    assert json.loads(args.certificate.read_text()) == json.loads(json.dumps(payload)), 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    "missing_read_is_nonmutating": {
+      "exit_code": 1,
+      "created": false
+    },
+    "exclusive_write": {
+      "exit_code": 1,
+      "existing_bytes_unchanged": true
+    }
+  },
+  "cap_probe.py": {
+    "normal_and_seed17": [
+      {
+        "seed": null,
+        "exit_code": 0,
+        "stdout": "C5-ears 55440 distinct 3318 hits []\nhub 128 distinct 65 hits []\ntriangulations 42 distinct 42 hits []\nPASS combined 3383 disjoint hits 0\n",
+        "stderr": ""
+      },
+      {
+        "seed": "17",
+        "exit_code": 0,
+        "stdout": "C5-ears 55440 distinct 3318 hits []\nhub 128 distinct 65 hits []\ntriangulations 42 distinct 42 hits []\nPASS combined 3383 disjoint hits 0\n",
+        "stderr": ""
+      }
+    ],
+    "certificate_sha256": "d448dc15cf476eeeb3df62d79442e5b52ad027601eed13ea33c7316bf84701ff"
+  },
+  "cap_literal_check.py": {
+    "certificate_sha256": "d448dc15cf476eeeb3df62d79442e5b52ad027601eed13ea33c7316bf84701ff",
+    "disjoint_hits": 0,
+    "full_row_queries": 307853,
+    "literal_cap_graphs": 3383,
+    "mismatches": 0
+  },
+  "lake_build": {
+    "exit_code": 0,
+    "completed_jobs": 8831,
+    "warnings": "existing AttachmentOrder and SymRelabel linter warnings",
+    "new_lean_theorems": false
+  },
+  "source_status": "not triggered",
+  "independent_review": {
+    "status": "PASS",
+    "report": "independent_review.json",
+    "sha256": "ff85f39ab064ad07e4393375078f445897c3c5e62abae33ea076602f42ea1c06",
+    "methods": [
+      "full S4 three-shared-vertex joins",
+      "reverse literal collar transfer",
+      "restricted-growth noncrossing partitions",
+      "asynchronous set pruning and all recorded synchronous rounds"
+    ]
+  },
+  "documentation": {
+    "check_docs": {
+      "exit_code": 0,
+      "markdown_files": 632,
+      "local_links": 7861
+    },
+    "docgraph_docs": {
+      "exit_code": 0,
+      "documents": 62,
+      "relations": 213,
+      "families": 5
+    },
+    "docgraph_workspace": {
+      "exit_code": 1,
+      "errors": 62,
+      "kind": "duplicate-id",
+      "scope": "preserved historical audits and scratch snapshots also declare existing production IDs",
+      "example_id": "c5.adjacent-degree5-interfaces",
+      "current_audit_declares_no_docgraph_ids": true
+    },
+    "git_diff_check": {
+      "exit_code": 0
+    }
+  }
+}
