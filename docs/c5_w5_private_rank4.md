@@ -18,6 +18,11 @@ docgraph:
 保存層次見[具名關係總表](c5_w5_marked_relation.md#0-保存強度與私人圈秩覆蓋鏈)。
 目前停止點由 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)維護。
 
+2026-10-13 後續：[W5-NO4CT-BRIDGE](../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md)
+已將森林至圈秩四完整接入 no4ct 全域最小來源的932／933／941三支。
+新r≥10只取原必要域子集，兩支來源覆蓋及原BASE／seals／完整染色receipts
+不變；任取合法W5得ρ≥5，一般縮減及無界來源仍OPEN。
+
 ## 1. 精確合併結論
 
 G 在全部完整外框關係不屬 K132 的 disk-C₅ 圖中先最小化內點數 k，再

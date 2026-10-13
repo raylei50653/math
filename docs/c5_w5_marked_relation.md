@@ -58,6 +58,13 @@ N2、ε、edge-critical 或 Gallai 前提。
 | [圈秩三 essential](c5_w5_private_rank3_essential.md)＋[contractible](c5_w5_private_rank3_contractible.md) | 分隔 B/U 的原環域 1,283 份；U/v 在 F 無界面域 c=1 的 2,162 份及 c=2 的 108 份；兩支窮盡，直接完整 Σ∈K132 | `ρ≥4` |
 | [圈秩四兩分支](c5_w5_private_rank4.md) | 同一原嵌入的 contractible 6,389 份＋essential 2,872 份；兩支窮盡，直接完整 Σ∈K132 | **`ρ≥5`** |
 
+2026-10-13 新接入：[W5-NO4CT-BRIDGE](../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md)
+在 no4ct 全域最小目錄外來源契約下，逐條接通森林至圈秩四，932／933／941
+三支任取合法全內部 W5 均得 **ρ≥5**，沒有剩餘低圈秩橋接引理缺口。
+[依賴矩陣](../audits/2026-10-13-w5-no4ct-bridge-d521163/DEPENDENCIES.md)以原小cap及附件界重證局部前提；
+新 k≥16、r≥10 屬原完整必要域子集。七份原seal／407筆記錄保留，舊完整
+染色證據沿用，未重枚舉；上表的原輪次及原4CT依賴保留為歷史證明路徑。
+
 森林至圈秩三各輪沿用 `k≥13,r≥7`；圈秩四兩支的 BASE 為 `acd2b1b`，
 沿已採納 K13 使用 `k≥14,r≥8`。各輪 BASE、來源限制與模板超集以連入的
 原報告為準；不以後來 K15 改寫原枚舉前提。圈秩三／四的直接目錄排除

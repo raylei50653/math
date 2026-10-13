@@ -19,6 +19,13 @@ docgraph:
 `6cafdfb02fe5892a49eee21f92aea2369a25c022`。本批發布與驗證由
 [整理發布紀錄](../history/2026-10-13-k15-c8-no4ct-publish.md)追蹤；接手時先重新查 Git。
 
+2026-10-13 後續採納（研究 BASE=`d521163`）：[T1](../../audits/2026-10-13-c8-terminal-s1-d521163/REPORT.md)
+證 h=3、p>0⇒s≥2，PINCH k≥21／BRIDGE k≥22；[T2](../../audits/2026-10-13-c9-932-source-d521163/REPORT.md)
+證完整932、h=4的五 apex 均 d_H≥4、d_G≥6，九個原面第三點互異，k≥18；
+[T3](../../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md) 接通三支任取合法全內部 W5 的 ρ≥5。
+本頁採納指定來源結論；原報告及凍結 seals 保持當輪內容，
+[本批驗證與發布範圍](../history/2026-10-13-t123-no4ct-publish.md)另記。
+
 ## 1. 先讀這四份權威報告
 
 本頁負責兩鏈的閱讀路由、替代鏈契約與停止點；各命題的證明仍由下列權威
@@ -128,6 +135,9 @@ d(B)\ge4,\quad d(V\setminus B)\ge5,\quad h\ge3,\quad n_5\ge9.
 | 一般 `K∞=K≤5` | **OPEN**。主命題自身蘊含 4CT；無循環證明須承擔這部分內容 |
 | h≥3、n5≥9 的新三支版本 | **已接入**；932 另有 h≥4、n5≥10，不提高三支共同界 |
 | C8 八項分類及其後續大小界 | **已接入**。932 的 h=3 全排，原八項必要條件殘留及 h=3⇒k≥19 保留；無界來源仍 OPEN |
+| h=3、p>0 的 s=0／1 | **已排除**；[T1](../../audits/2026-10-13-c8-terminal-s1-d521163/REPORT.md) 完成640份外側轉移，C6內點無上限；s≥2與一般RING仍OPEN |
+| 932、h=4 的低度apex | **已排除**；[T2](../../audits/2026-10-13-c9-932-source-d521163/REPORT.md) 得五apex d_H≥4、d_G≥6及k≥18；20項較高度數完整來源仍OPEN |
+| no4ct 私人圈秩0至4 | **已接通三支**；[T3](../../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md) 對任取合法W5得ρ≥5；一般縮減仍OPEN |
 | h≥4 來源與固定寬度剝層 | **OPEN**。一般 separator 轉移已證，下一層 C8／度數／接點前提不自動傳遞 |
 | 新論證 Lean 形式化 | **未做**；舊 `lake build` 不代表以上紙面拓撲已形式化 |
 
@@ -136,13 +146,16 @@ d(B)\ge4,\quad d(V\setminus B)\ge5,\quad h\ge3,\quad n_5\ge9.
 
 ## 5. 建議的第一個窄任務
 
-先從 [C8 接入報告 §5](../../audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md#5-驗證停止點與後續入口)
-及 [剝層定理](../c5_c8_peeling.md) 的同一原 C8、m≥11 出發，保留八份完整
-必要上界與全部 actual faces。第一層 RING／PINCH／BRIDGE 已完備；PINCH
-首次可在 m=11 進入，不能只沿 RING 推論。下一層度數、無弦及至多雙接不傳遞，
-須在具名完整 separator 轉移上證明更強縮減或同圖實現矛盾。
+先讀 [T1](../../audits/2026-10-13-c8-terminal-s1-d521163/REPORT.md) 的完整原圖分類與 P→B 轉移。
+h=3、p>0 已有 s≥2；PINCH 從 m≥13／k≥21、BRIDGE 從 m≥14／k≥22 接續。
+一般 RING（p=0）仍 OPEN，只沿用共同 h=3⇒k≥19。保留同一原 C8、八份
+完整必要上界、原面與全部 separator fibres；下一層前提仍不自動傳遞。
 
-h≥4 是另一項 OPEN 義務，包含一般 932；不把 h=3 的十九內點界套過去。
+另一窄入口是 [T2](../../audits/2026-10-13-c9-932-source-d521163/REPORT.md) 的完整932、h=4：保留20份
+較高度數來源，聯合五apex的d_H≥4、九個互異面第三點與同一H的完整計數。
+此支已得 k≥18；h≥5 及 h=4 的933／941另列，不套用 h=3 十九內點界。
+[T3](../../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md) 已完成私人低圈秩的三支接入；接續義務
+是ρ≥5來源的合法嚴格縮減，不需再補森林至圈秩四的橋接引理。
 保持受限 C4 的 `s<k`、相對平面可染性的 `N≤k+5`，不把 source-relative
 商圖引理提升成普遍可染性。指定 transfer=941 的 C7 計數矛盾亦不等於任意
 C7 關係不能含於 U。不以擴大有限 graph 搜尋代替無界論證。
@@ -177,6 +190,18 @@ python3 -B audits/2026-10-13-k14-sphere-acd2b1b/check.py --check
 python3 -B audits/2026-10-13-k15-sphere-6cafdfb/check.py --check
 ```
 
+本批新增檢查入口（完整重播及沿用界線見各 `VERIFICATION.json`）：
+
+```bash
+python3 -B audits/2026-10-13-c8-terminal-s1-d521163/verify.py --check
+python3 -B audits/2026-10-13-c9-932-source-d521163/verify.py --check --negative
+python3 -B audits/2026-10-13-w5-no4ct-bridge-d521163/evidence.py
+python3 -B audits/2026-10-13-w5-no4ct-bridge-d521163/verify_delivery.py
+```
+
+T1 此整合入口只查 custody 與證書一致性；完整著色重播另見其報告。
+T3 沿用舊完整染色 receipts，不以接入 checker 冒充重枚舉。
+
 保留的外部信任為 Dvořák–Lidický Corollary 20 的計算證明、plantri 生成完備性
 及 C 實作。本輪研究重播了關係／full fibres，未重播外部 cone 證書，亦未重跑
 整套 min4 生成。詳見 [球面依賴表](../../audits/2026-10-13-c5-no4ct-degrees-6cafdfb/SPHERE_DEPENDENCIES.md)。
@@ -195,7 +220,8 @@ Lean build 或全部球面搜尋。接手研究時建立新的獨占 audit、凍
 > 新來源契約為全域最小內點、再最大邊數，保留 932／933／941；C4 代表引理
 > 僅在 s<k 成立，相對平面可染性僅在 N≤k+5 成立。共同 h≥3、n5≥9；932
 > 必 h≥4、n5≥10；h=3 只留原八項，且 k≥19。先在新獨占 audit 從同一原
-> C8 的 m≥11／第一層三型和完整 separator 轉移接續，包含 m=11 可進入的
-> PINCH；h≥4 另列 OPEN。不要用 4CT 刪 932，不要把 N2 的具名 932 排除
+> C8 的完整 separator 轉移接續；先讀T1／T2／T3：p>0⇒s≥2，PINCH k≥21、
+> BRIDGE k≥22；932、h=4的五apex均d_H≥4、d_G≥6且k≥18，20項較高度數
+> 來源仍OPEN；三支任取合法W5的ρ≥5已接通。一般RING與其餘h≥4仍OPEN。不要用 4CT 刪 932，不要把 N2 的具名 932 排除
 > 當成一般排除，也不要把第一層 C8 前提傳給下一層或宣稱主命題完成。
 > 交付精確紙面論證、有限重播、OPEN 義務與下一個入口；保留並行工作，不自動發布。

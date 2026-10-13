@@ -8,7 +8,9 @@
 已接到 `K≤15=K≤5`；[完整外圈](../audits/2026-10-13-c5-no4ct-collar-6cafdfb/REPORT.md)
 與 [C8](../audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md)亦完成三支接入。
 共同h≥3／n5≥9，932必h≥4／n5≥10；105項排97留原八項，h=3⇒k≥19。
-下一入口為m≥11第一層三型及另列h≥4；無界932／933／941與一般主命題仍OPEN。
+後續T1得h=3、p>0⇒s≥2（PINCH k≥21／BRIDGE k≥22）；T2得932、h=4的
+五apex d_H≥4、d_G≥6及k≥18；T3接通no4ct三支私人ρ≥5。一般RING、
+20項較高度數C9-932來源、其餘無界三支及一般主命題仍OPEN。
 
 2026-10-12 新增：[共面識別正規形](c5_cofacial_normal_form.md) 接外部計數定理，
 得到一般 disk 圖的 `K≤12=K≤5`；後續 [K13-COLLAR](c5_k13_collar.md)
@@ -302,6 +304,9 @@
 | [W5 私人單環排除](c5_w5_private_unicyclic.md) | 任意合法 W5 的最小來源私人圈秩≥2；contractible 純紙面排除，essential 完備1652模板全Σ1023，另有只保Σ的r′=0 prism代表、減少7–10內點，不保R³。全fibres與獨立核對；後續[雙環排除](c5_w5_private_rank2.md)提高至圈秩至少三，一般縮減與K∞仍OPEN，未Lean化 |
 | [W5 私人雙環排除](c5_w5_private_rank2.md) | 完整最小來源前提下任取合法全內部W5，私人圈秩≥3；四型及全部essential位置完備覆蓋，theta 974模板與9,973,760完整cells核對。四個annulus代表只保Σ、不保R³，減少3或7–10內點；後續圈秩三兩分支均已排除，私人圈秩下界後由圈秩四排除提高為五，更高圈秩縮減仍OPEN，真正933／941來源not triggered，未Lean化 |
 | [W5 私人圈秩三環繞分支](c5_w5_private_rank3_essential.md) | 完整最小來源若私人圖含essential環則ρ≥4；1,283模板完整十列皆1023。後續contractible分支亦完整排除，任取合法W5私人圈秩至少四，後續圈秩四全排提高為五，主命題OPEN，未Lean化 |
+| [T1：C8單接末端排除](../audits/2026-10-13-c8-terminal-s1-d521163/REPORT.md) | no4ct最小來源h=3、p>0⇒s≥2；640份全排、C6內點無上限，PINCH k≥21／BRIDGE k≥22；一般RING及其餘無界來源OPEN，未Lean化 |
+| [T2：C9-932來源下界](../audits/2026-10-13-c9-932-source-d521163/REPORT.md) | 完整932、h=4的100個低度apex假設全排；五apex d_H≥4、d_G≥6，九邊第三點互異、k≥18；20項較高度數來源、一般932與h≥5 OPEN |
+| [T3：W5 no4ct圈秩接入](../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md) | 全域最小目錄外來源三支任取合法W5皆ρ≥5；森林至圈秩四橋接完整，七seal／407記錄零漂移；沿用舊完整染色證據，一般縮減與無界來源OPEN |
 | [W5 私人圈秩四兩分支排除](c5_w5_private_rank4.md) | contractible 6,389與essential 2,872完整必要模板皆Σ∈K132；合併得任取合法W5私人ρ≥5。原十pins、全部fibres／空格／lifts與rotation保留；來源由完備化約排除，一般縮減、小代表及K∞仍OPEN，未Lean化 |
 | [W5 私人圈秩三contractible分支](c5_w5_private_rank3_contractible.md) | 固定50d5474、k≥13；c≤2與完整block/M化約，c=1的2,162及c=2的108模板全Σ∈K132，直接排除。接essential結果得任取合法W5私人ρ≥4，後續圈秩四亦排除至ρ≥5；23,244,800完整cells、獨立checker與16次破損拒絕；無代表保存宣稱，一般小代表及K∞OPEN，未Lean化 |
 | [五度鄰環的三份衍生任務](tasks/c5_degree5_link_tasks.md) | 保存原BASE任務；A／B／C各自完成明列規格。C來源另由crosscut排除，獨立132² joins亦完成；一般縮減仍OPEN |
@@ -527,6 +532,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-13：T1／T2／T3 no4ct來源結論整理發布](history/2026-10-13-t123-no4ct-publish.md)
 - [2026-10-13：九組本地 commit、隔離 audit 現況與驗證界線](history/2026-10-13-multi-commit-status.md)
 - [2026-10-13：研究線頁首現況、生命週期與維護成本試點](history/2026-10-13-research-line-lifecycle.md)
 - [2026-10-13：K15、C8剝層與無四色定理前提路線整理發布](history/2026-10-13-k15-c8-no4ct-publish.md)

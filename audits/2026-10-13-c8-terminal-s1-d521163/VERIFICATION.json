@@ -1,0 +1,256 @@
+{
+  "all_original_targets_excluded": true,
+  "base": "d5211633ba80c2b10cb12eaa8189421e35a31cc3",
+  "checks": [
+    {
+      "checker": "transfer/check.py",
+      "checker_sha256": "5d9caa0d341218dd388ac687ecb75fd539b83260d1c7fb6b871ee7ff9713f55a",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-terminal-s1-d521163/transfer/check.py",
+        "--check",
+        "--negative"
+      ],
+      "environment_override": {},
+      "exit_code": 0,
+      "log": "transfer/final-normal.log",
+      "name": "full-transfer-normal",
+      "result": {
+        "chord_calibrations": 256,
+        "chosen_missing_01012": 569,
+        "chosen_missing_01023": 21,
+        "chosen_missing_01201": 34,
+        "chosen_missing_01232": 16,
+        "explicit_B_D_fibres": 26214400,
+        "explicit_empty_B_D_fibres": 25659554,
+        "exteriors": 640,
+        "full_P_lifts": 2515696,
+        "remaining_C6_interior_size_bound": null,
+        "semantic_negative_controls": 8,
+        "source_exclusions": 640,
+        "status": "PASS"
+      }
+    },
+    {
+      "checker": "transfer/check.py",
+      "checker_sha256": "5d9caa0d341218dd388ac687ecb75fd539b83260d1c7fb6b871ee7ff9713f55a",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-terminal-s1-d521163/transfer/check.py",
+        "--check",
+        "--negative"
+      ],
+      "environment_override": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "log": "transfer/final-seed17.log",
+      "name": "full-transfer-seed17",
+      "result": {
+        "chord_calibrations": 256,
+        "chosen_missing_01012": 569,
+        "chosen_missing_01023": 21,
+        "chosen_missing_01201": 34,
+        "chosen_missing_01232": 16,
+        "explicit_B_D_fibres": 26214400,
+        "explicit_empty_B_D_fibres": 25659554,
+        "exteriors": 640,
+        "full_P_lifts": 2515696,
+        "remaining_C6_interior_size_bound": null,
+        "semantic_negative_controls": 8,
+        "source_exclusions": 640,
+        "status": "PASS"
+      }
+    },
+    {
+      "checker": "review/independent_transfer.py",
+      "checker_sha256": "8a414c59f427d0a16f85cfa3bab4429e5661f3063bb6afa10c82b1853ba30edd",
+      "command": "python3 -B audits/2026-10-13-c8-terminal-s1-d521163/review/independent_transfer.py",
+      "exit_code": 0,
+      "log": "review/independent_transfer.stdout",
+      "name": "independent-transfer-normal",
+      "result": {
+        "named_exteriors": 640,
+        "semantic_negative_controls": 6
+      }
+    },
+    {
+      "checker": "review/independent_transfer.py",
+      "checker_sha256": "8a414c59f427d0a16f85cfa3bab4429e5661f3063bb6afa10c82b1853ba30edd",
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-13-c8-terminal-s1-d521163/review/independent_transfer.py",
+      "exit_code": 0,
+      "log": "review/independent_transfer.seed17.stdout",
+      "name": "independent-transfer-seed17",
+      "result": {
+        "named_exteriors": 640,
+        "semantic_negative_controls": 6
+      }
+    },
+    {
+      "checker": "authority.py",
+      "checker_sha256": "9ab46a08794e493fc32877469cc3ee0aca663e67ba63385b12771f6e1f88e5ec",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-terminal-s1-d521163/authority.py",
+        "--check",
+        "--negative"
+      ],
+      "environment_override": {},
+      "exit_code": 0,
+      "log": "logs/authority-normal.log",
+      "name": "authority-normal",
+      "result": {
+        "U_sizes": {
+          "c04-941": 193,
+          "c07-941": 193,
+          "c15-933": 134,
+          "c15-941": 171,
+          "c18-933": 134,
+          "c18-941": 175,
+          "c20-941": 171,
+          "c30-941": 175
+        },
+        "frozen_files": 20,
+        "negative_controls_rejected": 3,
+        "queries": 8,
+        "status": "PASS"
+      }
+    },
+    {
+      "checker": "authority.py",
+      "checker_sha256": "9ab46a08794e493fc32877469cc3ee0aca663e67ba63385b12771f6e1f88e5ec",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-terminal-s1-d521163/authority.py",
+        "--check",
+        "--negative"
+      ],
+      "environment_override": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "log": "logs/authority-seed17.log",
+      "name": "authority-seed17",
+      "result": {
+        "U_sizes": {
+          "c04-941": 193,
+          "c07-941": 193,
+          "c15-933": 134,
+          "c15-941": 171,
+          "c18-933": 134,
+          "c18-941": 175,
+          "c20-941": 171,
+          "c30-941": 175
+        },
+        "frozen_files": 20,
+        "negative_controls_rejected": 3,
+        "queries": 8,
+        "status": "PASS"
+      }
+    },
+    {
+      "checker": "theory/check_structure.py",
+      "checker_sha256": "330bebfa23202a10b259df32d2a90acbe1d9d2bd3717bcbffdf3467385e1e58f",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-terminal-s1-d521163/theory/check_structure.py"
+      ],
+      "environment_override": {},
+      "exit_code": 0,
+      "log": "theory/check_structure.log",
+      "name": "structure-normal",
+      "result": {
+        "checks": [
+          "original H edges",
+          "named D order",
+          "all five singleton slots",
+          "both half orientations",
+          "C degrees",
+          "C link paths",
+          "oriented original C-link faces",
+          "saved cyclic rotations"
+        ],
+        "evidence_files_written": false,
+        "negative_controls": {
+          "endpoint_singleton_wrong_attachment": "rejected",
+          "original_bridge_face_reversed": "rejected",
+          "original_bridge_omitted": "rejected"
+        },
+        "original_C_links_and_degrees": 640,
+        "original_H_configurations": 80,
+        "status": "PASS"
+      }
+    },
+    {
+      "checker": "theory/check_structure.py",
+      "checker_sha256": "330bebfa23202a10b259df32d2a90acbe1d9d2bd3717bcbffdf3467385e1e58f",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-terminal-s1-d521163/theory/check_structure.py"
+      ],
+      "environment_override": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "log": "theory/check_structure.seed17.log",
+      "name": "structure-seed17",
+      "result": {
+        "checks": [
+          "original H edges",
+          "named D order",
+          "all five singleton slots",
+          "both half orientations",
+          "C degrees",
+          "C link paths",
+          "oriented original C-link faces",
+          "saved cyclic rotations"
+        ],
+        "evidence_files_written": false,
+        "negative_controls": {
+          "endpoint_singleton_wrong_attachment": "rejected",
+          "original_bridge_face_reversed": "rejected",
+          "original_bridge_omitted": "rejected"
+        },
+        "original_C_links_and_degrees": 640,
+        "original_H_configurations": 80,
+        "status": "PASS"
+      }
+    }
+  ],
+  "chord_calibrations": 256,
+  "claim": "In the frozen global-minimum-interior then maximum-edge no4ct source contract, h=3 and p>0 imply s>=2.",
+  "claim_status": "PROVED_WITH_COMPLETE_FINITE_EXTERIOR_CERTIFICATE",
+  "delivery": {
+    "commit": false,
+    "push": false,
+    "scope": "audits/2026-10-13-c8-terminal-s1-d521163",
+    "shared_research_documents_modified": false
+  },
+  "dependencies": "Frozen no4ct C8 geometry, original link classification, zero-single-terminal W5 theorem and literal terminal kernel; upstream catalogue/generator trust retained; no new external theorem or 4CT premise.",
+  "explicit_empty_B_D_fibres": 25659554,
+  "frozen_input_drift": 0,
+  "frozen_inputs": 20,
+  "full_P_lifts": 2515696,
+  "literal_B_D_fibres": 26214400,
+  "live_original_input_drift": [],
+  "named_exteriors": 640,
+  "remaining_open": [
+    "s>=2 PINCH/BRIDGE",
+    "p=0 RING",
+    "other arbitrary-size h=3 sources",
+    "h>=4",
+    "general K-infinity=K<=5",
+    "Lean formalization"
+  ],
+  "remaining_original_C6_interior_size_bound": null,
+  "schema": "c8-terminal-s1-verification-v1",
+  "source_exclusion_basis": "Universal original layout classification and exact full-lift join, then impossibility for every S4-invariant remaining-D relation; not finite interior search.",
+  "status": "PASS",
+  "storage_policy_scoped_raw_generated_files_over_1MB": []
+}

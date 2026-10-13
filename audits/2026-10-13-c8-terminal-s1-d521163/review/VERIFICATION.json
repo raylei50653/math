@@ -1,0 +1,45 @@
+{
+  "all_640_named_graphs_and_full_orbit_matrices_equal": true,
+  "all_640_source_targets_unattainable": true,
+  "all_640_ten_row_full_P_lift_counts_equal": true,
+  "certificate_raw_sha256": "30bfabaae505c991afd45bc82b598b84f0a702f6bac865fa241d1c8520818807",
+  "checks": [
+    {
+      "command": "python3 -B audits/2026-10-13-c8-terminal-s1-d521163/review/independent_transfer.py",
+      "exit_code": 0,
+      "stdout": "review/independent_transfer.stdout"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-13-c8-terminal-s1-d521163/review/independent_transfer.py",
+      "exit_code": 0,
+      "stdout": "review/independent_transfer.seed17.stdout"
+    }
+  ],
+  "compared_final_certificate": "transfer/certificate.json.gz",
+  "files": {
+    "review/independent_transfer.json": "2ec7e9bfc50442f6aa4ee1a80b5e275b19ae52aa2fd3e679d23256a9ac358c34",
+    "review/independent_transfer.py": "8a414c59f427d0a16f85cfa3bab4429e5661f3063bb6afa10c82b1853ba30edd",
+    "review/independent_transfer.seed17.stdout": "34e73a4387e3afc5ac1b97d30362f9059949200d1b6f93ef326305c02270c3ef",
+    "review/independent_transfer.stdout": "c7b9e5c0f8eec7110e554a4240a3c8ef6cb50b2d3be3f1ddf266a6d6678393b2",
+    "review/negative_controls.json": "f0785cd78fdf33cd384c406b81443022c94ab29d3ad2e11156abc701d614b56b",
+    "transfer/certificate.json.gz": "f278bd1f2c8facaa81eba7b8269e1bab63cfbca64fda17a1c114c988c47fa4fa"
+  },
+  "full_P_lifts_with_repeated_collar_queries": 2515696,
+  "schema": 1,
+  "semantic_negative_controls": {
+    "corrupt_allowed_union": true,
+    "corrupt_missing_target": true,
+    "corrupt_orbit_matrix": true,
+    "missing_full_P_lift": true,
+    "omitted_original_bridge": {
+      "invalid_relaxed_lifts": 1212,
+      "proper_P_lifts": 660
+    },
+    "split_shared_original_endpoint": {
+      "invalid_split_lifts": 1212,
+      "proper_P_lifts": 552
+    }
+  },
+  "source_size_bound": null,
+  "status": "PASS"
+}

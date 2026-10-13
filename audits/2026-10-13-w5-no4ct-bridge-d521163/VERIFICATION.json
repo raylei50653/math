@@ -1,0 +1,77 @@
+{
+  "base": "d5211633ba80c2b10cb12eaa8189421e35a31cc3",
+  "mathematics": "PASS conditional no4ct all-three-branch rho>=5 theorem; paper coverage plus inherited complete finite certificates",
+  "checks": [
+    {
+      "command": "python3 -B audits/2026-10-13-w5-no4ct-bridge-d521163/evidence.py",
+      "exit_code": 0,
+      "log": "validation/evidence-normal.json"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-13-w5-no4ct-bridge-d521163/evidence.py",
+      "exit_code": 0,
+      "log": "validation/evidence-seed17.json",
+      "byte_identical": true
+    },
+    {
+      "command": "python3 scripts/check_docs.py",
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "log": "validation/docs-main.log",
+      "capture": "tool output from completed command"
+    },
+    {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "log": "validation/docgraph-formal.log"
+    },
+    {
+      "command": "python3 tools/docgraph check",
+      "exit_code": 1,
+      "log": "validation/docgraph-whole.log",
+      "reason": "63 retained duplicate-id errors"
+    },
+    {
+      "command": "python3 scripts/check_docs.py",
+      "cwd": "/home/ray/developer/ai/math-w5-no4ct-bridge-d521163",
+      "exit_code": 1,
+      "log": "validation/docs-restored-final.log",
+      "reason": "18 references to four historical paths missing from BASE checkout/archive; main working tree passes"
+    }
+  ],
+  "negative_controls": [
+    {
+      "mutation": "proof_hash",
+      "exit_code": 1,
+      "expected_rejection": true
+    },
+    {
+      "mutation": "missing_sealed_record",
+      "exit_code": 1,
+      "expected_rejection": true
+    }
+  ],
+  "original_seals": 7,
+  "sealed_records": 407,
+  "proof_inputs": 42,
+  "old_evidence_drift": 0,
+  "colouring_enumeration_replayed": false,
+  "actual_minimum_source": "not triggered",
+  "new_Lean_theorem": false,
+  "scope": "exclusive bridge audit; shared docs and old seals unchanged; no commit/push",
+  "package_validation": {
+    "local_links": 49,
+    "anchors": "PASS",
+    "new_text_whitespace": "PASS",
+    "receipt": "validation/package-check.json"
+  },
+  "normal_receipt": "validation/evidence-normal.json",
+  "seed17_receipt": "validation/evidence-seed17.json",
+  "historical_receipts": "validation/normal.json and seed17.json are pre-extension custody outputs retained; final evidence receipts additionally check restricted template masks",
+  "reviews": [
+    "review/LOWRANK.md",
+    "review/RANK3.md",
+    "review/RANK4.md",
+    "review/FINAL_REVIEW.md"
+  ]
+}

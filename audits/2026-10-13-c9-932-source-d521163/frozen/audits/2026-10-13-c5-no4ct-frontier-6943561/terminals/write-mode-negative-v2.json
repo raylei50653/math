@@ -1,0 +1,30 @@
+{
+  "controls": [
+    {
+      "expected_rejection": "exclusive evidence files already exist",
+      "flags": [
+        "--write"
+      ],
+      "returncode": 1
+    },
+    {
+      "expected_rejection": "one of the arguments --write --check is required",
+      "flags": [],
+      "returncode": 2
+    },
+    {
+      "expected_rejection": "not allowed with argument",
+      "flags": [
+        "--check",
+        "--write"
+      ],
+      "returncode": 2
+    }
+  ],
+  "exclusive_bytes_unchanged": true,
+  "sha256": {
+    "audits/2026-10-13-c5-no4ct-frontier-6943561/terminals/certificate.v2.json": "d1ed5916212e42758598b00ade364fc228d2e2315f038e85511aa05664acc351",
+    "audits/2026-10-13-c5-no4ct-frontier-6943561/terminals/full_lifts.v2.json.gz": "d18abe9cffe32959dc749339c3c712a751d3293c2c0f8269b1fe32385c67da3e"
+  },
+  "status": "PASS"
+}

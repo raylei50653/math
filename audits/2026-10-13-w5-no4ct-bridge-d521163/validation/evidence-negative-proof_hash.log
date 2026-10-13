@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math-w5-no4ct-bridge-d521163/audits/2026-10-13-w5-no4ct-bridge-d521163/evidence.py", line 157, in <module>
+    print(json.dumps(check(args.inputs), sort_keys=True, indent=2))
+                     ~~~~~^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math-w5-no4ct-bridge-d521163/audits/2026-10-13-w5-no4ct-bridge-d521163/evidence.py", line 87, in check
+    assert sha(raw) == item['sha256'] and len(raw) == item['bytes'], item['path']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: artifacts/c5_cells/cells.json
