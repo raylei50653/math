@@ -1,0 +1,150 @@
+{
+  "algorithm": "first-block interval noncrossing recursion; named oriented triangles and clockwise rotation paths; literal B-vertex DFS; support-set Kempe pruning",
+  "all_annulus_fibres_compared": 574000,
+  "all_literal_annulus_lifts_compared": 48450,
+  "all_queries_compared": 435,
+  "base": "6943561e644e7598342d1ccd7df44dac0ebcd5cf",
+  "ear_source_adoption": "225 complete necessary ear queries excluded; paper dichotomy yields h=4 implies original C9 induced",
+  "final_certificate": "c9/finite/certificate.v2.json.gz",
+  "four_colour_theorem_used": false,
+  "frozen_input_files_checked": 19,
+  "independent_quotient_masks_compared": 232,
+  "kempe_row_split_options_compared": 2460,
+  "lean": "not formalized",
+  "main_proposition": "OPEN",
+  "noncrossing_partitions_before_independence": 4862,
+  "original_named_annulus_rotations_compared": 980,
+  "producer_imports": false,
+  "receipts": [
+    {
+      "bytes": 20485,
+      "path": "c9/review/check.py",
+      "sha256": "06492da5a53b8d815497d103c87ceaba5e6281e6623c49ab4ca28dcb292d7641"
+    },
+    {
+      "bytes": 7040,
+      "path": "c9/review/REVIEW.md",
+      "sha256": "1c927db41208ed6e90283794b739cabf320e9cc0a0e9a544a1aa0b22387fc8e5"
+    },
+    {
+      "bytes": 3690,
+      "path": "INPUTS.json",
+      "sha256": "c8ddb709777d062d4f9800f2a6049c606d906ecfc3b4b05a5df7906d655824fc"
+    },
+    {
+      "bytes": 3579233,
+      "path": "c9/finite/certificate.v2.json.gz",
+      "sha256": "34902ef44a5e76ac7a7c57531ae3a0e09b87ed24d84257f4c012a9f9057c7944"
+    },
+    {
+      "bytes": 1297,
+      "path": "c9/review/v2-final-normal-negative.log",
+      "sha256": "c8bcb67eb501ea2c583aca9bbf462dde2debe81e3e74870ff355af7fda0e3dbf"
+    },
+    {
+      "bytes": 1297,
+      "path": "c9/review/v2-final-seed17-negative.log",
+      "sha256": "c8bcb67eb501ea2c583aca9bbf462dde2debe81e3e74870ff355af7fda0e3dbf"
+    }
+  ],
+  "residual_scope": "84 necessary-condition residuals; common-source realizability OPEN",
+  "result": {
+    "algorithm": "first-block-interval-noncrossing; literal-boundary-DFS",
+    "annulus_empty_fibres": 530845,
+    "annulus_fibres": 574000,
+    "annulus_full_lifts": 48450,
+    "by_geometry_type": {
+      "induced": {
+        "excluded_relative_quotient": 4,
+        "excluded_transfer_kempe": 122,
+        "necessary_condition_residual": 84
+      },
+      "one_w5_ear": {
+        "excluded_transfer_kempe": 225
+      }
+    },
+    "by_target": {
+      "932": {
+        "excluded_transfer_kempe": 125,
+        "necessary_condition_residual": 20
+      },
+      "933": {
+        "excluded_transfer_kempe": 119,
+        "necessary_condition_residual": 26
+      },
+      "941": {
+        "excluded_relative_quotient": 4,
+        "excluded_transfer_kempe": 103,
+        "necessary_condition_residual": 38
+      }
+    },
+    "independent_noncrossing_partitions": 232,
+    "inner_orbits": 820,
+    "literal_inner_assignments": 19680,
+    "named_collars": 70,
+    "named_geometries": 145,
+    "negative_controls_rejected": [
+      "wrong_original_boundary_order",
+      "missing_literal_full_lift",
+      "forgotten_original_ear_chord_and_center",
+      "loop_creating_ear_endpoint_identification",
+      "missing_joint_kempe_component_orbit",
+      "false_unbounded_source_exclusion",
+      "reversed_actual_triangle_orientation",
+      "reversed_original_rotation_path"
+    ],
+    "residual_degree_restrictions": {
+      "932_maximum_gap": 2,
+      "932_three_consecutive_211": 15,
+      "932_two_nonadjacent_twos": 5,
+      "all_three_targets_maximum_gap": 3
+    },
+    "status": "PASS",
+    "target_queries": 435
+  },
+  "retained_failed_attempts": [
+    {
+      "log": "normal-negative.log",
+      "reason": "partial checker contained unterminated cycle-edge f-string",
+      "status": "FAIL"
+    },
+    {
+      "log": "normal-negative-v2.log",
+      "reason": "support sets compared as ordered lists; a4 [4,0] differs only in enumeration from [0,4]",
+      "status": "FAIL"
+    },
+    {
+      "log": "seed17-negative-v2.log",
+      "reason": "same support enumeration issue",
+      "status": "FAIL"
+    }
+  ],
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c5-no4ct-frontier-6943561/c9/review/check.py",
+        "--negative"
+      ],
+      "elapsed_seconds": 10.813,
+      "returncode": 0,
+      "seed": "default",
+      "stdout_log": "v2-final-normal-negative.log"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c5-no4ct-frontier-6943561/c9/review/check.py",
+        "--negative"
+      ],
+      "elapsed_seconds": 10.977,
+      "returncode": 0,
+      "seed": "17",
+      "stdout_log": "v2-final-seed17-negative.log"
+    }
+  ],
+  "schema": "c9-independent-review-v1",
+  "status": "PASS"
+}

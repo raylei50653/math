@@ -1,0 +1,356 @@
+{
+  "schema": "no4ct-frontier-verification-v1",
+  "base": "6943561e644e7598342d1ccd7df44dac0ebcd5cf",
+  "status": "PASS",
+  "input_custody": {
+    "base": "6943561e644e7598342d1ccd7df44dac0ebcd5cf",
+    "frozen_files": 19,
+    "live_input_drift": []
+  },
+  "sealed_outputs": 22,
+  "integration": {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c5-no4ct-frontier-6943561/verify.py",
+      "--check",
+      "--negative"
+    ],
+    "returncode": 0,
+    "stdout": "logs/integration-normal.log",
+    "result": {
+      "actual_target_source": "not triggered",
+      "c9_independent": {
+        "algorithm": "first-block-interval-noncrossing; literal-boundary-DFS",
+        "annulus_empty_fibres": 530845,
+        "annulus_fibres": 574000,
+        "annulus_full_lifts": 48450,
+        "by_geometry_type": {
+          "induced": {
+            "excluded_relative_quotient": 4,
+            "excluded_transfer_kempe": 122,
+            "necessary_condition_residual": 84
+          },
+          "one_w5_ear": {
+            "excluded_transfer_kempe": 225
+          }
+        },
+        "by_target": {
+          "932": {
+            "excluded_transfer_kempe": 125,
+            "necessary_condition_residual": 20
+          },
+          "933": {
+            "excluded_transfer_kempe": 119,
+            "necessary_condition_residual": 26
+          },
+          "941": {
+            "excluded_relative_quotient": 4,
+            "excluded_transfer_kempe": 103,
+            "necessary_condition_residual": 38
+          }
+        },
+        "independent_noncrossing_partitions": 232,
+        "inner_orbits": 820,
+        "literal_inner_assignments": 19680,
+        "named_collars": 70,
+        "named_geometries": 145,
+        "negative_controls_rejected": [
+          "wrong_original_boundary_order",
+          "missing_literal_full_lift",
+          "forgotten_original_ear_chord_and_center",
+          "loop_creating_ear_endpoint_identification",
+          "missing_joint_kempe_component_orbit",
+          "false_unbounded_source_exclusion",
+          "reversed_actual_triangle_orientation",
+          "reversed_original_rotation_path"
+        ],
+        "residual_degree_restrictions": {
+          "932_maximum_gap": 2,
+          "932_three_consecutive_211": 15,
+          "932_two_nonadjacent_twos": 5,
+          "all_three_targets_maximum_gap": 3
+        },
+        "status": "PASS",
+        "target_queries": 435
+      },
+      "c9_primary": {
+        "annulus_empty_fibres": 530845,
+        "annulus_fibres": 574000,
+        "annulus_full_lifts": 48450,
+        "by_geometry_type": {
+          "induced": {
+            "excluded_relative_quotient": 4,
+            "excluded_transfer_kempe": 122,
+            "necessary_condition_residual": 84
+          },
+          "one_w5_ear": {
+            "excluded_transfer_kempe": 225
+          }
+        },
+        "by_target": {
+          "932": {
+            "excluded_transfer_kempe": 125,
+            "necessary_condition_residual": 20
+          },
+          "933": {
+            "excluded_transfer_kempe": 119,
+            "necessary_condition_residual": 26
+          },
+          "941": {
+            "excluded_relative_quotient": 4,
+            "excluded_transfer_kempe": 103,
+            "necessary_condition_residual": 38
+          }
+        },
+        "independent_noncrossing_partitions": 232,
+        "inner_orbits": 820,
+        "literal_inner_assignments": 19680,
+        "named_collars": 70,
+        "named_geometries": 145,
+        "negative_controls_rejected": [
+          "changed_named_boundary_order",
+          "changed_original_rotation_path",
+          "deleted_annulus_full_lift",
+          "removed_w5_ear_condition",
+          "false_source_exclusion"
+        ],
+        "status": "PASS",
+        "target_queries": 435
+      },
+      "custody": {
+        "base": "6943561e644e7598342d1ccd7df44dac0ebcd5cf",
+        "frozen_files": 19,
+        "live_input_drift": []
+      },
+      "evidence": "conditional paper structure plus exhaustive named interface/full-fibre verification",
+      "lean": "not formalized",
+      "main_proposition": "OPEN",
+      "sealed_outputs": 22,
+      "source_realizability": "OPEN for all necessary residuals",
+      "status": "PASS",
+      "terminal_full_lifts": {
+        "all_source_Sigma": 1023,
+        "archive_corruptions_rejected": 2,
+        "literal_terminal_fibres": 4096,
+        "semantic_negative_controls": 3,
+        "source_B_fibres": 640,
+        "source_full_lifts": 61752,
+        "source_graphs": 64,
+        "status": "PASS",
+        "terminal_full_lifts": 744
+      },
+      "unbounded_three_branches": "OPEN"
+    }
+  },
+  "final_child_replays": {
+    "c9_primary": {
+      "normal_seed17_identical": true,
+      "result": {
+        "annulus_empty_fibres": 530845,
+        "annulus_fibres": 574000,
+        "annulus_full_lifts": 48450,
+        "by_geometry_type": {
+          "induced": {
+            "excluded_relative_quotient": 4,
+            "excluded_transfer_kempe": 122,
+            "necessary_condition_residual": 84
+          },
+          "one_w5_ear": {
+            "excluded_transfer_kempe": 225
+          }
+        },
+        "by_target": {
+          "932": {
+            "excluded_transfer_kempe": 125,
+            "necessary_condition_residual": 20
+          },
+          "933": {
+            "excluded_transfer_kempe": 119,
+            "necessary_condition_residual": 26
+          },
+          "941": {
+            "excluded_relative_quotient": 4,
+            "excluded_transfer_kempe": 103,
+            "necessary_condition_residual": 38
+          }
+        },
+        "independent_noncrossing_partitions": 232,
+        "inner_orbits": 820,
+        "literal_inner_assignments": 19680,
+        "named_collars": 70,
+        "named_geometries": 145,
+        "negative_controls_rejected": [
+          "changed_named_boundary_order",
+          "changed_original_rotation_path",
+          "deleted_annulus_full_lift",
+          "removed_w5_ear_condition",
+          "false_source_exclusion"
+        ],
+        "status": "PASS",
+        "target_queries": 435
+      }
+    },
+    "c9_independent": {
+      "normal_seed17_identical": true,
+      "result": {
+        "algorithm": "first-block-interval-noncrossing; literal-boundary-DFS",
+        "annulus_empty_fibres": 530845,
+        "annulus_fibres": 574000,
+        "annulus_full_lifts": 48450,
+        "by_geometry_type": {
+          "induced": {
+            "excluded_relative_quotient": 4,
+            "excluded_transfer_kempe": 122,
+            "necessary_condition_residual": 84
+          },
+          "one_w5_ear": {
+            "excluded_transfer_kempe": 225
+          }
+        },
+        "by_target": {
+          "932": {
+            "excluded_transfer_kempe": 125,
+            "necessary_condition_residual": 20
+          },
+          "933": {
+            "excluded_transfer_kempe": 119,
+            "necessary_condition_residual": 26
+          },
+          "941": {
+            "excluded_relative_quotient": 4,
+            "excluded_transfer_kempe": 103,
+            "necessary_condition_residual": 38
+          }
+        },
+        "independent_noncrossing_partitions": 232,
+        "inner_orbits": 820,
+        "literal_inner_assignments": 19680,
+        "named_collars": 70,
+        "named_geometries": 145,
+        "negative_controls_rejected": [
+          "wrong_original_boundary_order",
+          "missing_literal_full_lift",
+          "forgotten_original_ear_chord_and_center",
+          "loop_creating_ear_endpoint_identification",
+          "missing_joint_kempe_component_orbit",
+          "false_unbounded_source_exclusion",
+          "reversed_actual_triangle_orientation",
+          "reversed_original_rotation_path"
+        ],
+        "residual_degree_restrictions": {
+          "932_maximum_gap": 2,
+          "932_three_consecutive_211": 15,
+          "932_two_nonadjacent_twos": 5,
+          "all_three_targets_maximum_gap": 3
+        },
+        "status": "PASS",
+        "target_queries": 435
+      }
+    },
+    "terminals": {
+      "normal_seed17_identical": true,
+      "result": {
+        "all_source_Sigma": 1023,
+        "archive_corruptions_rejected": 2,
+        "literal_terminal_fibres": 4096,
+        "semantic_negative_controls": 3,
+        "source_B_fibres": 640,
+        "source_full_lifts": 61752,
+        "source_graphs": 64,
+        "status": "PASS",
+        "terminal_full_lifts": 744
+      }
+    }
+  },
+  "logs": [
+    {
+      "path": "logs/integration-normal.log",
+      "sha256": "410413050d255a5ab4a763bfe7896c404a5e2e92f89ca311fab1129a8510de48"
+    },
+    {
+      "path": "logs/c9-normal-v2.log",
+      "sha256": "7d8d16b7c738e4b9470cc02a5070cb21df6ea3ac3c97b7d2d84bdc7d22860a32"
+    },
+    {
+      "path": "logs/c9-seed17-v2.log",
+      "sha256": "7d8d16b7c738e4b9470cc02a5070cb21df6ea3ac3c97b7d2d84bdc7d22860a32"
+    },
+    {
+      "path": "c9/review/v2-final-normal-negative.log",
+      "sha256": "c8bcb67eb501ea2c583aca9bbf462dde2debe81e3e74870ff355af7fda0e3dbf"
+    },
+    {
+      "path": "c9/review/v2-final-seed17-negative.log",
+      "sha256": "c8bcb67eb501ea2c583aca9bbf462dde2debe81e3e74870ff355af7fda0e3dbf"
+    },
+    {
+      "path": "terminals/normal-negative-v2.log",
+      "sha256": "cfc2ad051e92e2303b40ac48a82e145adfed21723a37c40d9ce7ac0ecd15ef31"
+    },
+    {
+      "path": "terminals/seed17-negative-v2.log",
+      "sha256": "cfc2ad051e92e2303b40ac48a82e145adfed21723a37c40d9ce7ac0ecd15ef31"
+    }
+  ],
+  "exclusive_terminal_write_controls": {
+    "controls": [
+      {
+        "expected_rejection": "exclusive evidence files already exist",
+        "flags": [
+          "--write"
+        ],
+        "returncode": 1
+      },
+      {
+        "expected_rejection": "one of the arguments --write --check is required",
+        "flags": [],
+        "returncode": 2
+      },
+      {
+        "expected_rejection": "not allowed with argument",
+        "flags": [
+          "--check",
+          "--write"
+        ],
+        "returncode": 2
+      }
+    ],
+    "exclusive_bytes_unchanged": true,
+    "sha256": {
+      "audits/2026-10-13-c5-no4ct-frontier-6943561/terminals/certificate.v2.json": "d1ed5916212e42758598b00ade364fc228d2e2315f038e85511aa05664acc351",
+      "audits/2026-10-13-c5-no4ct-frontier-6943561/terminals/full_lifts.v2.json.gz": "d18abe9cffe32959dc749339c3c712a751d3293c2c0f8269b1fe32385c67da3e"
+    },
+    "status": "PASS"
+  },
+  "paper_review": "ROOT_REVIEW.md; C9 independent topology and no4ct contract review in c9/review/REVIEW.md",
+  "local_docs": {
+    "files": [
+      "REPORT.md",
+      "ROOT_REVIEW.md",
+      "c9/finite/PAPER.md",
+      "c9/geometry/ADOPTION.md",
+      "c9/geometry/DEPENDENCIES.md",
+      "c9/geometry/PROOF.md",
+      "c9/review/REVIEW.md",
+      "terminals/PROOF.md",
+      "w5/DEPENDENCIES.md",
+      "w5/PROOF.md"
+    ],
+    "missing_local_links": [],
+    "trailing_whitespace": []
+  },
+  "git_diff_check": "PASS",
+  "actual_target_source": "not triggered",
+  "conditional_source_exclusions": "paper-complete geometric coverage plus all named complete relations; not inferred from not-triggered controls",
+  "remaining_open": [
+    "unbounded 932/933/941",
+    "84 h=4 source realizability/exclusion obligations",
+    "h>=5",
+    "general K infinity = K<=5",
+    "new Lean formalization"
+  ],
+  "external_trust": "Inherited no4ct bounded catalogue/counting/sphere prerequisites retained; no external cone or sphere generation replay in this turn",
+  "write_scope": "audits/2026-10-13-c5-no4ct-frontier-6943561",
+  "shared_tracked_files_changed": false
+}
