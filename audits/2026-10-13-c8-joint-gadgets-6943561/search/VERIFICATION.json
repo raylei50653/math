@@ -1,0 +1,51 @@
+{
+  "checks": [
+    {
+      "bytes": 9592,
+      "command": "python3 -B search/run.py --check",
+      "result": {
+        "graphs": 334512,
+        "minimum_intersections": {
+          "c04-941": 2,
+          "c07-941": 2,
+          "c15-933": 4,
+          "c15-941": 4,
+          "c18-933": 4,
+          "c18-941": 4,
+          "c20-941": 4,
+          "c30-941": 4
+        },
+        "newly_excluded": [],
+        "status": "PASS"
+      },
+      "sha256": "d8d120f3de3f52a00329a8d5cf9146da0cc2bfc222b9e184fa0131f7c56e9247",
+      "stdout": "replay.stdout"
+    },
+    {
+      "bytes": 169,
+      "command": "python3 -B search/witnesses.py --check",
+      "result": {
+        "full_fibres": 2192,
+        "full_lifts": 272,
+        "negative_controls_rejected": [
+          "deleted_lift",
+          "reversed_names",
+          "false_empty_intersection"
+        ],
+        "status": "PASS",
+        "witnesses": 8
+      },
+      "sha256": "bd3b94eec69d05e5c0695e87286e2a0211d302199fe0b14cab56e965a695909f",
+      "stdout": "witnesses-check.stdout"
+    }
+  ],
+  "custody_files": 26,
+  "empty_fibres": 76526879,
+  "enumeration_completeness_dependency": "frozen plantri5.8",
+  "fibres": 91656288,
+  "full_lifts": 26145720,
+  "graphs": 334512,
+  "independent_full_domain_review": "See parent review artifacts; not certified by this producer receipt.",
+  "source_drift": false,
+  "status": "PASS"
+}

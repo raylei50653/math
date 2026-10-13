@@ -1,0 +1,102 @@
+{
+  "checks": [
+    {
+      "bytes": 12021,
+      "command": "PYTHONHASHSEED=17 python3 -B search/signed_run.py --check",
+      "result": {
+        "empty_fibres_ignoring_chords": 23025110,
+        "forced_rows": {
+          "c04-941": [],
+          "c07-941": [],
+          "c15-933": [
+            19,
+            33,
+            188,
+            249
+          ],
+          "c15-941": [],
+          "c18-933": [
+            44,
+            67,
+            157,
+            188
+          ],
+          "c18-941": [],
+          "c20-941": [],
+          "c30-941": []
+        },
+        "full_lifts_ignoring_chords": 204250566,
+        "graphs": 334512,
+        "minimum_intersections": {
+          "c04-941": 2,
+          "c07-941": 2,
+          "c15-933": 1,
+          "c15-941": 3,
+          "c18-933": 1,
+          "c18-941": 2,
+          "c20-941": 3,
+          "c30-941": 2
+        },
+        "queries": [
+          "c04-941",
+          "c07-941",
+          "c15-933",
+          "c15-941",
+          "c18-933",
+          "c18-941",
+          "c20-941",
+          "c30-941"
+        ],
+        "raw_fibre_encoding": "signed_data/hN.counts.u16le.gz and hN.tuples.u16le.gz use the pure-cap encoding but ignore all boundary chords. hN.signatures.u8.gz stores one byte per graph and row: bit j=1 exactly when endpoints of lexicographically sorted chord j have equal colors. A signed cap fibre is the raw full fibre if this byte equals its Eq mask, and empty otherwise. All original private edges and spokes retain Diff.",
+        "rejections": 0,
+        "schema": "c8-signed-chord-caps-v1",
+        "scope": "All Eq/Diff assignments to boundary chords of all frozen simple C8 disk triangulations with h<=5. All other edges retain Diff. Equality chords are contracted simultaneously; signatures creating a loop from a C8 edge or Diff chord are rejected. This is a bounded grammar, not all budget-admissible quotient gadgets.",
+        "status": "PASS",
+        "valid_signed_graphs": 2599458
+      },
+      "sha256": "9fc3f0a1f399a222ced6792fd94d240ea5f20fe02310a5b2e6caa5a503c25640",
+      "stdout": "signed_replay_seed17.stdout"
+    },
+    {
+      "bytes": 129,
+      "command": "python3 -B search/signed_witnesses.py --check",
+      "result": {
+        "full_fibres": 2192,
+        "negative_controls_rejected": [
+          "deleted_forced_lift",
+          "reversed_names"
+        ],
+        "status": "PASS",
+        "witnesses": 8
+      },
+      "sha256": "c42b7a75abaa9098cd8b1a3f93b610d31563581e8b57b970b25d3dc19cebfb28",
+      "stdout": "signed_witnesses_check.stdout"
+    }
+  ],
+  "custody_files": 30,
+  "forced_rows": {
+    "c04-941": [],
+    "c07-941": [],
+    "c15-933": [
+      19,
+      33,
+      188,
+      249
+    ],
+    "c15-941": [],
+    "c18-933": [
+      44,
+      67,
+      157,
+      188
+    ],
+    "c18-941": [],
+    "c20-941": [],
+    "c30-941": []
+  },
+  "full_lifts_ignoring_chords": 204250566,
+  "graphs": 334512,
+  "independent_full_domain_review": "See parent review/signed_* artifacts.",
+  "status": "PASS",
+  "valid_signed_graphs": 2599458
+}

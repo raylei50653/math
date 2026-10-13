@@ -1,0 +1,109 @@
+{
+  "base": "6943561e644e7598342d1ccd7df44dac0ebcd5cf",
+  "custody_output": "logs/custody.stdout",
+  "final_git_status": [
+    "?? audits/2026-10-13-c5-no4ct-frontier-6943561/",
+    "?? audits/2026-10-13-c8-joint-gadgets-6943561/",
+    "?? audits/2026-10-13-no4ct-generalization-6943561/"
+  ],
+  "git_tracked_diff_empty": true,
+  "input_drift": [],
+  "local_custody_command": "python3 -B check_custody.py",
+  "retained_initial_failure": "review/VERIFICATION.initial_failure.json records an earlier tuple/list serialization mismatch; corrected and complete exact replays passed.",
+  "root_readonly_replays": [
+    {
+      "command_relative_to_audit": "python3 -B independent_check.py --negative",
+      "exit_code": 0,
+      "name": "independent-tuples-normal",
+      "status": "PASS",
+      "stderr": "logs/independent-tuples-normal.stderr",
+      "stdout": "logs/independent-tuples-normal.stdout",
+      "stdout_sha256": "01a024ff1931a9c5a4ce7f722ca97ca6143a75a0c46d0b3e81008e1eef4372f8"
+    },
+    {
+      "command_relative_to_audit": "PYTHONHASHSEED=17 python3 -B independent_check.py --negative",
+      "exit_code": 0,
+      "name": "independent-tuples-seed17",
+      "status": "PASS",
+      "stderr": "logs/independent-tuples-seed17.stderr",
+      "stdout": "logs/independent-tuples-seed17.stdout",
+      "stdout_sha256": "01a024ff1931a9c5a4ce7f722ca97ca6143a75a0c46d0b3e81008e1eef4372f8"
+    },
+    {
+      "command_relative_to_audit": "python3 -B theory/degree4_check.py --check",
+      "exit_code": 0,
+      "name": "degree4-normal",
+      "status": "PASS",
+      "stderr": "logs/degree4-normal.stderr",
+      "stdout": "logs/degree4-normal.stdout",
+      "stdout_sha256": "a47e9027fb5e0685a7d08b65ae2d3ed62a44f81417495a7f69d82314ffd6d557"
+    },
+    {
+      "command_relative_to_audit": "PYTHONHASHSEED=17 python3 -B theory/degree4_check.py --check",
+      "exit_code": 0,
+      "name": "degree4-seed17",
+      "status": "PASS",
+      "stderr": "logs/degree4-seed17.stderr",
+      "stdout": "logs/degree4-seed17.stdout",
+      "stdout_sha256": "a47e9027fb5e0685a7d08b65ae2d3ed62a44f81417495a7f69d82314ffd6d557"
+    },
+    {
+      "command_relative_to_audit": "python3 -B quotients/explore.py",
+      "exit_code": 0,
+      "name": "signed-grammar-normal",
+      "status": "PASS",
+      "stderr": "logs/signed-grammar-normal.stderr",
+      "stdout": "logs/signed-grammar-normal.stdout",
+      "stdout_sha256": "fbb0badcb20f97c229f522d387ad4e2baa608e9778155f47a86bc2cf11cdae81"
+    },
+    {
+      "command_relative_to_audit": "PYTHONHASHSEED=17 python3 -B quotients/explore.py",
+      "exit_code": 0,
+      "name": "signed-grammar-seed17",
+      "status": "PASS",
+      "stderr": "logs/signed-grammar-seed17.stderr",
+      "stdout": "logs/signed-grammar-seed17.stdout",
+      "stdout_sha256": "fbb0badcb20f97c229f522d387ad4e2baa608e9778155f47a86bc2cf11cdae81"
+    }
+  ],
+  "schema": "c8-joint-gadgets-verification-v1",
+  "scope": "Paper lemmas and finite controls only; no residual source exclusions, no source realization, no new Lean formalization. Plantri completeness remains a separate generator dependency.",
+  "status": "PASS",
+  "subreceipts": [
+    {
+      "path": "search/VERIFICATION.json",
+      "sha256": "caa4dc277db7e82e3f954aac0f5d351c647e94a3789ed43cb1e2c750079b8320",
+      "status": "PASS"
+    },
+    {
+      "path": "search/SIGNED_VERIFICATION.json",
+      "sha256": "cfddbc33bf919b3d4c023afac388914c46f9c434018c4b6677dbd3c94d4f84be",
+      "status": "PASS"
+    },
+    {
+      "path": "review/VERIFICATION.json",
+      "sha256": "47040d2745b1f935ac8e636a3ae7c30bac67c53987beee4efeb5a8a3577894c9",
+      "status": "PASS"
+    },
+    {
+      "path": "review/SIGNED_VERIFICATION.json",
+      "sha256": "164a4b9c925add840febe7255511836603c8c28920d3f096f705ce796f1180fd",
+      "status": "PASS"
+    },
+    {
+      "path": "review/SIGNED_VERIFICATION.seed17.json",
+      "sha256": "5842d394b1f21b80690897ea208fb15a7b26b295c2f59b0bbce1c69f2f6138ff",
+      "status": "PASS"
+    },
+    {
+      "path": "theory/signed_result.json",
+      "sha256": "8be685ef2f3c7a7cfd47b0b8bacfcc3bb4568c7bbc213b4ae703f597a8de770a",
+      "status": "PASS"
+    },
+    {
+      "path": "theory/signed_result.seed17.json",
+      "sha256": "8be685ef2f3c7a7cfd47b0b8bacfcc3bb4568c7bbc213b4ae703f597a8de770a",
+      "status": "PASS"
+    }
+  ]
+}
