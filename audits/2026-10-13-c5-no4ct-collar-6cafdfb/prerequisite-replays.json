@@ -1,0 +1,31 @@
+[
+  {
+    "name": "relative-c4",
+    "command": [
+      "uv",
+      "run",
+      "--with",
+      "networkx==3.5",
+      "python",
+      "-B",
+      "audits/2026-10-13-c5-no4ct-collar-6cafdfb/frozen/audits/2026-10-13-c5-no4ct-degrees-6cafdfb/check_c4.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.377,
+    "log": "logs/relative-c4.log",
+    "output": "{\"C4_assignments_per_witness\": 84, \"C5_assignments_per_witness\": 240, \"maximum_witness_interiors\": 3, \"possible_C4_masks_under_relative_size_premise\": [7, 10, 11, 12, 13, 14, 15]}"
+  },
+  {
+    "name": "c7-independent",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c5-no4ct-collar-6cafdfb/frozen/audits/2026-10-13-c7-joint-kempe-19209f4c/topology/count_review.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.078,
+    "log": "logs/c7-independent.log",
+    "output": "{\"status\": \"PASS\", \"independently_generated_NC_partitions\": 429, \"identities_checked\": 7, \"forced_zero_outer_preimages\": [6, 58, 89], \"universal_scope\": \"Every finite graph embedded in the named C7 disk\", \"verdict\": \"No S subset U55 can transfer to 941\"}"
+  }
+]

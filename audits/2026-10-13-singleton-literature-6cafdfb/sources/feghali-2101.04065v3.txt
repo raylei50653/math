@@ -1,0 +1,399 @@
+                                                      Kempe equivalence of 4-critical planar graphs
+                                                                                      Carl Feghali∗
+
+
+
+
+arXiv:2101.04065v3 [math.CO] 4 Jul 2022
+                                                                                        Abstract
+                                                       Answering a question of Mohar from 2007, we show that for every 4-critical planar
+                                                    graph, its set of 4-colorings is a Kempe class.
+
+
+                                          1         Introduction
+                                          Let G be a graph, and let k be a non-negative integer. A (proper) k-coloring of G is a
+                                          function ϕ : V (G) → {1, . . . , k} such that ϕ(u) 6= ϕ(v) whenever uv ∈ E(G).
+                                              A Kempe chain in colors {a, b} is a maximal connected subgraph K of G such that
+                                          every vertex of K has color a or b. By swapping the colors a and b on K, a new coloring
+                                          is obtained. This operation is called a K-change. If c2 is a k-coloring obtained from a
+                                          k-coloring c1 by a single K-change, then we write c1 ∼k c2 . Two k-colorings c1 and c2 are
+                                          K-equivalent (or K k -equivalent) if c1 be obtained from c2 by a sequence of K-changes. A
+                                          K-change is trivial if the Kempe chain under consideration consists of a single vertex.
+                                              Let CGk be the set of k-colorings of G. The equivalence classes CGk / ∼k are called Kempe
+                                          classes. The number of Kempe classes of G is denoted Kc(G, k).
+                                              Kempe chains were introduced by Kempe in his failed attempt at proving the Four
+                                          Colour Theorem. Nevertheless, they have proved to be one of the most useful tools in
+                                          graph coloring theory. As pointed out by Mohar [16], the number of Kempe equivalence
+                                          classes of colorings has some applications in statistical physics [17] and Markov chains [23].
+                                          Furthermore, there are many results on determining whether all colorings of a graph are
+                                          Kempe equivalent or not whenever the graph belongs to a special graph class. For instance,
+                                          Meyniel [14] showed that the set of 5-colorings of a planar graph forms a single Kempe
+                                          class, and Las Vergnas and Meyniel [12] extended this result to K5 -minor-free graphs.
+                                          Mohar [16] showed that the set of 4-colorings of every 3-colorable planar graph is a Kempe
+                                          class, and asked whether his result can be extended to 4-critical planar graphs (a graph G
+                                          is 4-critical if it is not 3-colorable, but every proper subgraph of G is 3-colorable). In that
+                                          same paper, Mohar also conjectured that the set of k-colorings of a k-regular graph forms
+                                          a Kempe class, and this was settled in [2, 9]. For further details and examples, we refer
+                                          the reader to [4, 5, 7, 16, 22]. The edge-coloring version has also been considered in several
+                                              ∗
+                                                  Univ Lyon, EnsL, CNRS, LIP, F-69342, Lyon Cedex 07, France, email: carl.feghali@ens-lyon.fr
+
+
+
+                                                                                             1
+papers [1, 3, 13, 18] so has the vertex-coloring version where only trivial Kempe changes
+are allowed [6, 8].
+    In this note, we answer Mohar’s aforementioned problem in the positive.
+Theorem 1. Let G be a 4-critical planar graph. Then Kc(G, 4) = 1.
+  We should note that Theorem 1 is best possible in the sense that there are infinitely
+many planar graphs with more than one Kempe equivalence class as shown by Mohar [15].
+
+
+2     Preliminaries
+In this section, we gather some of the necessary tools to establish Theorem 1. The first
+lemma is implicit in [16].
+Lemma 1 (Mohar [16, Proposition 2.4]). Let k ≥ 1 be an integer, G be a graph, and v a
+vertex of G with degree strictly less than k. If Kc(G − v, k) = 1, then Kc(G, k) = 1.
+Lemma 2 (Mohar [16, Lemma 4.2]). Suppose that G is a subgraph of a graph G0 . Let
+c01 , c02 be r-colorings of G0 . For i ∈ {1, 2}, denote by ci the restriction of c0i to G. If c01 and
+c02 are K r -equivalent, then c1 and c2 are K r -equivalent colorings of G.
+Lemma 3 (Mohar [16, Theorem 4.4]). For every 3-colorable planar graph G, Kc(G, 4) = 1.
+   Let G be a planar graph, and let S ⊆ V (G). Two 4-colorings c1 , c2 of G are said to be
+KS -equivalent if there exists a sequence of K-changes from c1 to c2 that does not change
+the color of a vertex in S to color 4. We have the following proposition.
+Proposition 1. Let G = (V, E) be a 3-colorable triangulation of the plane. Then every
+4-coloring of G is KV -equivalent to the (unique) 3-coloring of G.
+    The proof of Proposition 1 follows, nearly word by word, from the proof of Theorem 1
+in [10] by Fisk. We include some of the details for the convenience of the reader. First, we
+require some definitions and an auxiliary lemma.
+    Let f be a 4-coloring of a triangulation G, and let e = xy be an edge of G. By the
+color of e under f , we mean {f (x), f (y)}. Two triangles xyz and xyw contain the edge
+e. If f (w) = f (z) then e is called singular, and if f (w) 6= f (z) then e is nonsingular. We
+require the following result of Fisk extracted from the proof of Theorem 1 in [10].
+Lemma 4 (Fisk [10]). Let G be a 3-colorable triangulation of the plane, and let f be a
+4-coloring of G. If G contains a nonsingular edge e under f and S denotes the set of
+nonsingular edges of G having the same color as e, then S contains a cycle that bounds
+some region of the plane.
+Proof of Proposition 1. Given a 4-coloring f of G, we show how to obtain a new coloring
+g that is KV -equivalent to f and with fewer nonsingular edges. Note that each edge in the
+unique 3-coloring of G is singular, and thus, by repetition, this will prove the proposition.
+
+                                                 2
+    We first show that for every v ∈ V (G) with f (v) = 4, either v is incident with a
+nonsingular edge or we may change the color of v to a color distinct from 4 by exhibiting
+a trivial K-change. To see this, note that since G is a triangulation and is 3-colorable, the
+neighborhood of v induces an even cycle C. If |f (C)| = 2, i.e., there is a color a ∈ {1, 2, 3}
+not used by f on C, then we may change the color of v to a. Otherwise, f (C) = {1, 2, 3}
+and, by the pigeonhole principle, some edge incident with v is nonsingular, as needed.
+    To prove the proposition, we can thus safely assume that there is a nonsingular edge e
+under f having color {a, 4} for some a ∈ {1, 2, 3}. By Lemma 4, there is a cycle in G whose
+edges have the same color as e and bounding some region D of the plane. By interchanging
+the two colors in {1, 2, 3} \ {a} in the interior of D, we obtain a new coloring g with fewer
+nonsingular edges than f (the edges in the interior of D stay singular or nonsingular, while
+the edges of the cycle on the boundary of D change from nonsingular to singular). This
+completes the proof.
+    We will also need the following result of Mohar. A plane graph is a near-triangulation
+if every facial cycle of the graph is a triangle except possibly for the outer cycle.
+
+Proposition 2 (Mohar [16, Proposition 4.3]). Suppose that G is a planar graph with a
+facial cycle C. If c1 , c2 are 4-colorings of G, then there is a near-triangulation T of the
+plane with the outer cycle C such that T ∩ G = C and there are 4-colorings c01 , c02 of G
+that are K-equivalent to c1 and c2 , respectively, such that c01 and c02 can be extended to
+4-colorings of T ∪ G. Moreover, if the restriction of c1 to C is a 3-coloring, then c01 = c1 ,
+and c1 can be extended to a 3-coloring of T ∪ G.
+
+
+3     The proof of Theorem 1
+In this section, we prove Theorem 1. We begin with some lemmas.
+
+Lemma 5 (Koester [11]). Every 4-critical planar graph has a vertex of degree at most 4.
+
+    For a graph G, a subgraph H of G and a coloring ϕ of G, let ϕ  H denote the restriction
+of ϕ to H. For a vertex v of G of degree exactly 4 and a 4-coloring f of G, we say that f is
+v-good if f colors exactly two neighbors of v alike; in other words, if all four colors appear
+in the closed neighborhood of v under f .
+
+Lemma 6. Let G be a 4-critical planar graph, let v be a vertex of degree exactly four in
+G, and let ϕ be a 4-coloring of G. Then ϕ is K-equivalent to a v-good 4-coloring ψ of G.
+
+Proof. Since G is 4-critical, the graph H = G − v is 3-colorable. By Lemma 3, there is a
+sequence of K-changes ϕ  H = c01 ∼4 · · · ∼4 c0m in H where c0m is a 3-coloring; moreover,
+c0m uses all three colors in the neighborhood of v else G would be 3-colorable.
+    Thus, we may choose t ∈ {1, . . . , m} to be the smallest index such that c0t colors exactly
+two neighbors of v alike. Now, the same argument as in the proof of Lemma 1 can be applied
+to show that the sequence of K-changes ϕ  H = c01 ∼4 · · · ∼4 c0t extends to a sequence of
+
+                                               3
+K-changes from ϕ to some 4-coloring ϕ0 of G such that ϕ0  H = c0t and so ψ = ϕ0 is our
+required coloring. We repeat the argument here for completeness.
+    For j ∈ {1, . . . , t}, we extend c0j to a 4-coloring cj of G as follows. Observe that
+each c0i+1 differs from c0i by a single K-change. We then use the same K-change in G to
+obtain ci+1 from ci , unless this K-change involves v and there are at least two neighbors
+of v in the component under consideration. However, by hypothesis, v has at least three
+neighbors colored alike and has degree 4 and so there is a color a not appearing in its closed
+neighborhood. Thus, by first preceding this K-change by changing the color of v to a (via
+a trivial K-change), the result follows.
+Lemma 7. Let G be a 4-critical plane graph. Let v be a vertex of degree exactly four in
+G. Let c1 , c2 be v-good 4-colorings of G such that c1  (G − v) is a 3-coloring. Then c2 is
+K-equivalent to c1 .
+Proof. We may assume that v is on the outer face of G. Let v0 , . . . , v3 denote the neighbors
+of v in this clockwise order around v. We begin by constructing a new graph G∗ from G
+as follows.
+     Initially, we set G∗ = G. For i ∈ {0, 1, 2, 3}, if vi vi+1 6∈ E(G) (where addition is taken
+modulo 4) and cj (vi ) 6= cj (vi+1 ) for each j ∈ {1, 2}, then we add the edge vi vi+1 to G∗ . If
+vi vi+1 6∈ E(G) but cj (vi ) = cj (vi+1 ) for some j ∈ {1, 2}, then we add to G∗ a new vertex
+ui,i+1 adjacent to vi , vi+1 , v.
+     It is not difficult to see that G∗ is planar, and that c1 , c2 extend to 4-colorings c∗1 , c∗2 of
+G∗ such that c∗1  (G∗ − v) is a 3-coloring; moreover, if vi vi+1 6∈ E(G) and c1 (vi ) = c1 (vi+1 ),
+then, by the v-goodness of c2 , there is a vertex z where either z = vi−1 and zvi ∈ E(G∗ )
+or z = vi+2 and zvi+1 ∈ E(G∗ ). In this case, we set
+
+      c∗1 (ui,i+1 ) = c∗1 (z).                                                                    (1)
+
+Claim 1. There is a near-triangulation M of the plane containing G∗ with a 4-coloring f
+such that f  (M − v) is a 3-coloring and c∗1 is K-equivalent to f  G∗ .
+Proof. Let C1 , . . . , Cm be the facial cycles of G∗ not incident with v. Let G0 = G∗ , c01 = c∗1
+and c02 = c∗2 . For i ∈ {1, . . . , m} we apply Proposition 2 to the graph Gi−1 , its facial cycle
+Ci and the colorings ci−1 1   and ci−12 . We conclude that there is a near-triangulation Ti with
+outer cycle Ci such that Gi−1 ∩ Ti = Ci . Let Gi = Gi−1 ∪ Ti . By Proposition 2, ci−1     1   can
+                                    i           i−1
+be extended to a 3-coloring c1 of Gi and c2 is K-equivalent in Gi−1 to a 4-coloring that
+has an extension ci2 to Gi . The final graph Gm is a near-triangulation of the plane, with
+the 4-coloring cm                   m
+                  1 such that c1  (Gm − v) is a 3-coloring, as claimed.
+
+     Borrowing the notation from the proof of the claim, let H = Gm − v, and assume up
+to a single K-change that cm2 (v) = 4. Note that H is a near-triangulation with the outer
+face bounded by the cycle C consisting of the neighbors of v in Gm . For i ∈ {1, 2}, let
+c0i = cm
+       i  H.
+
+Claim 2. There is a triangulation N of the plane containing H such that c01 extends to a
+                        0
+3-coloring cN                              N
+            1 of N and c2 to a 4-coloring c2 of N .
+
+
+                                                  4
+                                              3c
+
+
+                      1a                 2b
+
+
+
+
+                      3c                 1a
+
+
+            2b
+
+
+
+                  Figure 1: The first case
+
+
+
+
+                 1a                      2c
+
+
+
+
+                 3c                      1b
+
+
+Figure 2: The special case (up to permutations of colors)
+
+
+
+
+                             5
+                                           3d                    2b
+
+
+
+                                                     3d
+                  2a                       1b                    2a                      1c
+
+
+
+
+                               H                2d          3c               H’
+
+
+
+
+                  1c                       3a                    1b                      3a
+                                                     2d
+
+
+
+
+                                      Figure 3: The construction
+
+Proof. Observe by the construction of G∗ and the definition of v-goodness that C =
+x1 . . . xk x0 for some k ∈ {4, 5, 6}. We distinguish two cases.
+    Case 1: k = 4. Without loss of generality, we have c01 (x1 ) = c01 (x3 ), and the goodness
+of c1 implies c01 (x2 ) 6= c01 (x4 ). We distinguish two subcases.
+    Subcase 1.1: c02 (x1 ) = c02 (x3 ). In this case, we add two exterior vertices w1 , w2 where
+w1 is adjacent to w2 , x1 , x3 , x4 and w2 is adjacent to w1 , x1 , x2 , x3 ; see Figure 1 (where the
+coloring c01 is represented by colors 1–3 and the coloring c02 is represented by colors a–c).
+   Subcase 1.2: c02 (x1 ) 6= c02 (x3 ). In this case, we arrive at the configuration in Figure
+2. We take a copy H 0 of H (where the vertices with colors 1b and 1c are flipped) and add
+edges and new vertices as shown in Figure 3. This completes the case k = 4.
+     Case 2: k ∈ {5, 6}. Following Proposition 4.3 in [16] verbatim, we show that there
+are non-consecutive vertices xi , xj on C such that c01 (xi ) 6= c01 (xj ) and c02 (xi ) 6= c02 (xj ).
+We may assume that c01 (x1 ) = c01 (x3 ). Then c01 (x1 ) 6= c01 (x4 ) so c02 (x1 ) = c02 (x4 ) = a
+. Suppose that c01 (x2 ) = 2 and c02 (x2 ) = b. Since b = c02 (x2 ) 6= c02 (x4 ) = a, we have
+c01 (x4 ) = c01 (x2 ) = 2. Now, c01 (x2 ) 6= c01 (x5 ), so c02 (x5 ) = b. Next, c02 (x5 ) 6= c02 (x3 ) implies
+that c01 (x5 ) = c01 (x3 ) = 1, but then x1 and x5 are colored alike under c01 and so cannot be
+adjacent. It follows, in particular, that k = 6. Similar conclusions as before imply that
+c01 (x6 ) = 2 and c02 (x3 ) = c02 (x6 ) = c. But then c1 is not a good 4-coloring of G by (1) and
+our aim is achieved.
+     We proceed to add the edge xi xj outside C. If k = 5 then xj = xi+2 and we let the
+cycle C 0 = xi xi+2 xi+3 xi+4 xi play the role of C in Case 1. Similarly, if k = 6 and xj = xi+2 ,
+we let the cycle C 0 = xi xi+2 xi+3 xi+4 xi+5 xi play the role of C 0 in the preceding sentence.
+     We are left to consider the case k = 6 with i = 1 and j = 4. We distinguish two cases.
+
+                                                      6
+    Subcase 2.1: the restrictions of c01 and c02 to the cycle C 1 = x1 x2 x3 x4 x1 or the cycle
+  2
+C = x1 x6 x5 x4 x1 is not as in Figure 2. In this case, we apply the argument from Case
+1 simultaneously to C 1 and C 2 . Precisely, if both are not as in Figure 2, then we apply
+the construction of Subcase 1.1 for one cycle by placing the two new vertices in its interior
+and then we apply the construction of Subcase 1.1 for the other cycle by placing the two
+new vertices in its exterior; similarly, if only of them is not as in Figure 2, then we apply
+the construction of Subcase 1.1 for this cycle by placing the two new vertices in its interior
+and then we apply the construction of Subcase 1.2 for the other cycle. The resulting graph
+satisfies the claim and Subcase 2.1 is completed.
+     Subcase 2.2: the restrictions of c01 and c02 to both C 1 and C 2 are as in Figure 2. In
+this case, we may assume c01 (x1 ) = 1 6= c01 (x4 ) = 2 and c02 (x1 ) = a 6= c02 (x4 ) = b. We may
+also assume that c01 (x3 ) = c01 (x1 ) = 1, c02 (x4 ) = c02 (x2 ) = b, c01 (x2 ) = 3 and c02 (x3 ) = c. For
+the colorings of C 2 , there are two possibilities meeting the requirements of Figure 2.
+     The first possibility is c01 (x5 ) = c01 (x1 ) = 1, c02 (x6 ) = c02 (x4 ) = b, c01 (x6 ) = 3 and
+c02 (x5 ) = c. In this case, we delete the edge x1 x4 and add instead the edge x3 x6 outside C.
+The edge x3 x6 splits C into two parts which do not both match Figure 2, and hence we
+can apply the procedure as in the treatment of Subcase 2.1.
+     The second and last possibility is c02 (x5 ) = c02 (x1 ) = a, c01 (x6 ) = c01 (x4 ) = 2, c01 (x5 ) = 3
+and c02 (x6 ) = c. In this case, we delete the edge x1 x4 and add instead the edge x2 x6 outside
+C and proceed as before. The claim is proved.
+    We can now complete the proof of the lemma. By Lemma 4, cN              2 is KV (N ) -equivalent
+                          0                             0
+to cN
+    1 .  By Lemma    2, c 2 is K V (H) -equivalent to c 1 . Since c m
+                                                                    2 (v) =  cm
+                                                                              1 (v) = 4, it follows
+                m                         m
+vacuously that c2 is K-equivalent to c1 . By successively applying Lemma 2 to Gm−1 ⊆ Gm
+etc. up until G0 ⊆ G1 we conclude that cm−1    2   is K-equivalent to cm−11     in Gm−1 , etc. until
+finally concluding that c∗1 = c01 is K-equivalent to c02 = c∗2 in G∗ . By Lemma 2, c2 is
+K-equivalent to c1 . The lemma is proved.
+      We are now ready to prove Theorem 1.
+Proof of Theorem 1. Suppose G has a vertex v of degree three or less. Since G is 4-critical,
+G − v is 3-colorable. By Lemma 3, Kc(G − v, 4) = 1. By Lemma 1, Kc(G, 4) = 1. So we
+can assume that every vertex of G has degree at least four. By Lemma 5, G has a vertex v
+of degree exactly four. Let ϕ1 and ϕ2 be 4-coloring of G. To prove the theorem, it suffices
+to show that ϕ1 and ϕ2 are K-equivalent.
+    By Lemma 6, we may assume that ϕ1 and ϕ2 are v-good 4-colorings of G. Since G is
+4-critical, there is a v-good 4-coloring ψ of G such that ψ  (G − v) is a 3-coloring. By
+Lemma 7, for i ∈ {1, 2} ϕi is K-equivalent to ψ. Thus, ϕ1 is K-equivalent to ϕ2 and the
+theorem is proved.
+
+
+
+
+                                                    7
+4    Final remarks
+Meyniel [14] showed that the set of 5-colorings of a planar graph is a Kempe class. We
+propose the following generalization. A list assignment of a graph is a function L that
+assigns to each vertex v a list L(v) of colors. The graph G is L-colorable if it has a proper
+coloring f such that f (v) ∈ L(v) for each vertex v of G.
+Conjecture 1. Let G be a planar graph, and L be a list assignment for G such that
+|L(v)| ≥ 5 for each v ∈ V (G). Then the set of L-colorings of G forms a Kempe class.
+    Note that the set of L-colorings of G in the statement of Conjecture 1 is non-empty by
+a celebrated result of Thomassen [20].
+    A fundamental theorem of Grötzsch states that triangle-free planar graphs are 3-
+colorable. Towards a Kempe analogue Grötzsch’s theorem, Salas and Sokal [19] recently
+asked if Kc(G, 3) = 1 for every triangle-free planar graph G. We believe this to be true.
+Conjecture 2. If G is a triangle-free planar graph, then Kc(G, 3) = 1.
+    There are triangle-free planar graphs G and a list assignment L for G such that |L(v)| =
+3 for each v ∈ V (G) with the property that G is not L-colorable. However, if G has girth
+at least 5, then G is always L-colorable [21].
+Conjecture 3. Let G be a planar graph of girth 5, and L a list assignment for G such
+that |L(v)| ≥ 3 for each v ∈ V (G). Then the set of L-colorings of G forms a Kempe class.
+
+
+Acknowledgments
+I am very grateful to Mykhaylo Tyomkyn for several helpful discussions. This work was
+partially supported by grant 19-21082S of the Czech Science Foundation and the French
+National Research Agency under research grant ANR DIGRAPHS ANR-19-CE48-0013-01
+
+
+References
+ [1] S.-M. Belcastro and R. Haas. Counting edge-kempe-equivalence classes for 3-edge-
+     colored cubic graphs. Discrete Mathematics, 325:77, 2014.
+ [2] M. Bonamy, N. Bousquet, C. Feghali, and M. Johnson. On a conjecture of Mohar
+     concerning Kempe equivalence of regular graphs. Journal of Combinatorial Theory,
+     Series B, 135:179–199, 2019.
+ [3] M. Bonamy, O. Defrain, T. Klimošová, A. Lagoutte, and J. Narboni. On vizing’s edge
+     colouring question. arXiv preprint arXiv:2107.07900, 2021.
+ [4] M. Bonamy, M. Heinrich, T. Ito, Y. Kobayashi, H. Mizuta, M. Mühlenthaler,
+     A. Suzuki, and K. Wasa. Diameter of colorings under Kempe changes. Theoreti-
+     cal Computer Science, 2020.
+
+                                             8
+ [5] M. Bonamy, M. Heinrich, T. Ito, Y. Kobayashi, H. Mizuta, M. Mühlenthaler,
+     A. Suzuki, and K. Wasa. Shortest reconfiguration of colorings under Kempe changes.
+     In 37th International Symposium on Theoretical Aspects of Computer Science (STACS
+     2020). Schloss Dagstuhl-Leibniz-Zentrum für Informatik, 2020.
+ [6] L. Cereceda, J. Van Den Heuvel, and M. Johnson. Connectedness of the graph of
+     vertex-colourings. Discrete Mathematics, 308(5-6):913–919, 2008.
+ [7] D. W. Cranston and R. Mahmoud. Kempe equivalent list colorings. arXiv preprint
+     arXiv:2112.07439, 2021.
+ [8] C. Feghali, M. Johnson, and D. Paulusma. A reconfigurations analogue of brooks’
+     theorem and its consequences. Journal of Graph Theory, 83(4):340–358, 2016.
+ [9] C. Feghali, M. Johnson, and D. Paulusma. Kempe equivalence of colourings of cubic
+     graphs. European Journal of Combinatorics, 59:1–10, 2017.
+[10] S. Fisk. Geometric coloring theory. Advances in Mathematics, 24(3):298–340, 1977.
+[11] G. Koester. On 4-critical planar graphs with high edge density. Discrete Mathematics,
+     98(2):147–151, 1991.
+[12] M. Las Vergnas and H. Meyniel. Kempe classes and the Hadwiger conjecture. Journal
+     of Combinatorial Theory, Series B, 31(1):95–104, 1981.
+[13] J. McDonald, B. Mohar, and D. Scheide. Kempe equivalence of edge-colorings in
+     subcubic and subquartic graphs. Journal of Graph theory, 70(2):226–239, 2012.
+[14] H. Meyniel. Les 5-colorations d’un graphe planaire forment une classe de commutation
+     unique. Journal of Combinatorial Theory, Series B, 24(3):251–257, 1978.
+[15] B. Mohar. Akempic triangulations with 4 odd vertices.          Discrete mathematics,
+     54(1):23–29, 1985.
+[16] B. Mohar. Kempe equivalence of colorings. In A. Bondy, J. Fonlupt, J.-L. Fouquet, J.-
+     C. Fournier, and J. L. Ramı́rez Alfonsı́n, editors, Graph Theory in Paris: Proceedings
+     of a Conference in Memory of Claude Berge, pages 287–297. Birkhäuser Basel, Basel,
+     2007.
+[17] B. Mohar and J. Salas. A new Kempe invariant and the (non)-ergodicity of the Wang–
+     Swendsen–Koteckỳ algorithm. Journal of Physics A: Mathematical and Theoretical,
+     42(22):225204, 2009.
+[18] K. Ozeki. Kempe equivalence classes of cubic graphs embedded on the projective
+     plane. Combinatorica, pages 1–30, 2022.
+[19] J. Salas and A. D. Sokal. Ergodicity of the Wang–Swendsen–Kotecký algorithm on
+     several classes of lattices on the torus. arXiv preprint arXiv:2206.13126, 2022.
+
+                                            9
+[20] C. Thomassen. Every planar graph is 5-choosable. Journal of Combinatorial Theory
+     Series B, 62(1):180–181, 1994.
+
+[21] C. Thomassen. A short list color proof of Grötzsch’s theorem. Journal of Combina-
+     torial Theory, Series B, 88(1):189–192, 2003.
+
+[22] J. van den Heuvel. The complexity of change. Surveys in Combinatorics 2013, edited
+     by S. R. Blackburn, S. Gerke, and M. Wildon, London Mathematical Society Lecture
+     Notes Series, 409, 2013.
+
+[23] E. Vigoda. Improved bounds for sampling colorings. Journal of Mathematical Physics,
+     41(3):1555–1569, 2000.
+
+
+
+
+                                          10
+

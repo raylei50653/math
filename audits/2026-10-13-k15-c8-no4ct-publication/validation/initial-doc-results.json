@@ -1,0 +1,47 @@
+[
+  {
+    "name": "docs",
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 1,
+    "log": "validation/initial-docs.log",
+    "elapsed_seconds": 0.937
+  },
+  {
+    "name": "docgraph-formal",
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "log": "validation/initial-docgraph-formal.log",
+    "elapsed_seconds": 0.082
+  },
+  {
+    "name": "docgraph-global",
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "exit_code": 1,
+    "log": "validation/initial-docgraph-global.log",
+    "elapsed_seconds": 5.718
+  },
+  {
+    "name": "whitespace",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "validation/initial-whitespace.log",
+    "elapsed_seconds": 0.022
+  }
+]

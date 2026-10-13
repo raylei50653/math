@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "index_imported_files": 966,
+  "restored_from_archive": 706,
+  "checks": [
+    {
+      "name": "k15",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-k15-sphere-6cafdfb/check.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "validation/index-k15.log",
+      "elapsed_seconds": 9.232
+    },
+    {
+      "name": "no4ct-c8",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c5-no4ct-c8-6cafdfb/verify.py",
+        "--check",
+        "--negative"
+      ],
+      "exit_code": 0,
+      "log": "validation/index-no4ct-c8.log",
+      "elapsed_seconds": 45.736
+    },
+    {
+      "name": "w5-construction",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-small-representatives-6cafdfb/construction/check.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "validation/index-w5-construction.log",
+      "elapsed_seconds": 4.711
+    }
+  ]
+}

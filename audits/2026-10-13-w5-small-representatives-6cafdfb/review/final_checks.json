@@ -1,0 +1,47 @@
+[
+  {
+    "name": "check-docs-final",
+    "argv": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "stdout": "OK: 670 Markdown files, 8417 local links; anchors, index, handoff checked\n",
+    "stderr": ""
+  },
+  {
+    "name": "docgraph-formal-final",
+    "argv": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "stdout": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n",
+    "stderr": ""
+  },
+  {
+    "name": "diff-check-final",
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "name": "chromatic-final",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-small-representatives-6cafdfb/review/chromatic.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"status\": \"PASS\",\n  \"source\": {\n    \"chi\": 3,\n    \"literal_witness\": [\n      0,\n      1,\n      0,\n      1,\n      2,\n      2,\n      0,\n      1,\n      0,\n      1,\n      2\n    ],\n    \"three_colorings_with_b0_fixed_0\": 38\n  },\n  \"target\": {\n    \"chi\": 4,\n    \"literal_witness\": [\n      0,\n      1,\n      0,\n      1,\n      2,\n      1,\n      2,\n      3,\n      2,\n      3\n    ],\n    \"three_colorings_with_b0_fixed_0\": 0\n  },\n  \"capped_complete_Sigma\": \"1023 on both sides by the all-m prism proof\",\n  \"source_minimality\": \"not triggered\"\n}\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "schema": "c5-no4ct-crosscut-verification-v1",
+  "status": "PASS",
+  "input_manifest_sha256": "780d47740e16537eb7555df140445faa7a5b670d44c3a18275ffe2f3a2e3d2cb",
+  "frozen_inputs_verified": 119,
+  "old_checker": {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-13-c5-no4ct-collar-6cafdfb/frozen/audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/checker.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "elapsed_seconds": 0.57,
+    "log": "old-neartri-check.log",
+    "summary": {
+      "arbitrary_ring_inputs": 1023,
+      "arbitrary_ring_outputs": 121,
+      "c4_necessary": [
+        7,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "geometries": 9240,
+      "join_outputs": 90,
+      "joins": 924,
+      "link_words": 30,
+      "literal_control_mask": 603,
+      "ring_inputs": 132,
+      "ring_outputs": 11,
+      "spoke_pushes": 660,
+      "status": "PASS",
+      "target_source_status": "not triggered",
+      "union_pairs": 8778
+    }
+  },
+  "paper_status": {
+    "crosscut_932_933_941": "PROVED under stated globally minimal source contract",
+    "simple_inner_cycle_932_933_941": "PROVED under stated globally minimal source contract",
+    "unbounded_main_claim": "OPEN"
+  },
+  "scope": "Finite replay validates pinned complete-relation joins. General source coverage and topology are paper arguments; no source existence or Lean claim.",
+  "old_checker_seed17": {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-13-c5-no4ct-collar-6cafdfb/frozen/audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/checker.py",
+      "--check"
+    ],
+    "environment": {
+      "PYTHONHASHSEED": "17"
+    },
+    "returncode": 0,
+    "elapsed_seconds": 0.609,
+    "log": "old-neartri-check-seed17.log",
+    "summary_matches_normal": true
+  },
+  "document_checks": {
+    "local_links_verified": 6,
+    "trailing_whitespace": "PASS"
+  }
+}

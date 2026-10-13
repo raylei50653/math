@@ -1,0 +1,58 @@
+[
+  {
+    "name": "generated-artifacts",
+    "command": [
+      "python3",
+      "tools/check_generated_artifacts.py"
+    ],
+    "exit_code": 0,
+    "log": "validation/generated-artifacts.log",
+    "elapsed_seconds": 0.254
+  },
+  {
+    "name": "staged-whitespace",
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "validation/staged-whitespace.log",
+    "elapsed_seconds": 0.028
+  },
+  {
+    "name": "docs-final",
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "log": "validation/docs-final.log",
+    "elapsed_seconds": 0.661
+  },
+  {
+    "name": "docgraph-formal-final",
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "log": "validation/docgraph-formal-final.log",
+    "elapsed_seconds": 0.077
+  },
+  {
+    "name": "preservation-final",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-k15-c8-no4ct-publication/verify.py"
+    ],
+    "exit_code": 0,
+    "log": "validation/preservation-final.log",
+    "elapsed_seconds": 0.134
+  }
+]

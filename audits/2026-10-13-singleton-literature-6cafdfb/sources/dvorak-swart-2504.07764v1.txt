@@ -1,0 +1,302 @@
+                                           A note on extendable sets of colorings and rooted
+
+
+
+
+arXiv:2504.07764v1 [math.CO] 10 Apr 2025
+                                                               minors
+                                                                 Zdeněk Dvořák∗               Jan M. Swart†
+                                                                                 January 2025
+
+
+                                                                                     Abstract
+                                                      DeVos and Seymour (2003) proved that for every set C of 3-colorings
+                                                  of a set X of vertices, there exists a plane graph G with vertices of X
+                                                  incident with the outer face such that a 3-coloring of X extends to a 3-
+                                                  coloring of G if and only if it belongs to C. We prove a generalization of
+                                                  this claim for k-colorings of X-rooted-Kk+1 -minor-free Kk+2 -minor-free
+                                                  graphs.
+
+
+                                           1      Introduction
+                                           For a positive integer k, a set of k-colorings of a set X of vertices is a set C
+                                           of functions f : X → [k] closed under permutations of colors, i.e., for every
+                                           permutation π : [k] → [k], if f ∈ C, then π ◦ f ∈ C. For a graph G, we say
+                                           that G realizes C if X ⊆ V (G) and each function f : X → [k] belongs to C
+                                           if and only if f extends to a proper k-coloring of G. Suppose that the set X
+                                           is cyclically ordered. In this case, we say that C is planarly realizable if there
+                                           exists a plane graph G realizing C such that all vertices of X are incident with
+                                           the outer face of G and the order of appearance of the vertices of X in the
+                                           boundary of the outer face of X matches the prescribed cyclic ordering of X.
+                                               The proofs of many coloring results in planar graphs, including the proof
+                                           of the Four Color Theorem, depend on the following fact: For every k ≥ 4,
+                                           there exist many sets of k-colorings that are not planarly realizable (indeed, the
+                                           planarly realizable sets must satisfy Kempe chain constraints). Briefly, these
+                                           proofs are based on the existence of reducible configurations. Let K be a plane
+                                           graph with a specified set X of vertices incident with the outer face of K, let
+                                           X be cyclically ordered in the order the vertices appear along the boundary
+                                               ∗ Charles University, Prague, Czech Republic, rakdver@iuuk.mff.cuni.cz.        Supported by
+                                           the ERC-CZ project LL2328 (Beyond the Four Color Theorem, registered as “Realizace pro-
+                                           jektu hraničnı́ho výzkumu v oblasti teorie grafů – barevnost a návrh algoritmů”) of the Min-
+                                           istry of Education of Czech Republic.
+                                               † The Czech Academy of Sciences, Institute of Information Theory and Automation,
+
+                                           Prague, Czech Republic, swart@utia.cas.cz.
+
+
+
+                                                                                          1
+of the outer face of K, and let CK be the set of all k-colorings of X that
+extend to a k-coloring of K. In the simplest form, we say that (K, X) is a
+reducible configuration if every non-empty planarly realizable set of k-colorings
+of X intersects C, or equivalently, no non-empty subset of the complement of
+C is planarly realizable.
+    The motivation for this definition is as follows. Suppose that G is a plane
+graph and ∆ is a closed disk in the plane whose boundary intersects the drawing
+of G in a set Y of vertices. Let G1 be the subgraph of G drawn in ∆ and G2
+the subgraph of G drawn in the closure of the complement of ∆. If (G1 , Y ) is
+isomorphic to (K, X), we say that the configuration (K, X) appears in G. Since
+(K, X) is a reducible configuration, it follows that G is k-colorable if and only
+if G2 is k-colorable. This reduces the problem of proving that G is k-colorable
+to the smaller graph G2 .
+    On the other hand, DeVos and Seymour [DS03] proved that the situation is
+different for k = 3.
+Theorem 1 (DeVos and Seymour [DS03]). For every cyclically ordered set X
+of vertices, every set of 3-colorings of X is planarly realizable.
+    Thus, for 3-coloring, (K, X) is a reducible configuration only if all 3-colorings
+of X extend to K, making the reducible confgurations for 3-coloring much less
+prevalent. Of course, there are other variants of reducibility (e.g., instead of fully
+removing K, we can replace it by a smaller subgraph), but they are similarly
+affected.
+    The influential Hadwiger’s conjecture states that for every positive integer
+k, every Kk+1 -minor-free graph is k-colorable. The conjecture has only been
+confirmed for k ≤ 5, see [RST93], but it has sparked a lot of interest in the
+theory of graph minors and in particular in their coloring properties. Thus, it
+is important to consider the limits of the method of reducible configurations in
+this context as well.
+    A model of a graph H in a graph G is a function µ that assigns pairwise
+vertex-disjoint connected subgraphs of G to vertices of H so that for every edge
+uv ∈ E(H), there exists an edge of G with one end in µ(u) and the other
+end in µ(v). If H has a model in G, then H is a minor of G; otherwise, we
+say that G is H-minor-free. For a set X ⊆ V (G), we say that the model is
+X-rooted if V (µ(v)) ∩ X 6= ∅ for all v ∈ V (H). If H has an X-rooted model
+in G, we say that H is an X-rooted minor of G; otherwise, we say that G is
+X-rooted-H-minor-free.
+    Since the graph K4 is not outerplanar and K5 is not planar, Theorem 1 has
+the following consequence.
+Corollary 2. For every set X of vertices and every set C of 3-colorings of X,
+there exists an X-rooted-K4 -minor-free K5 -minor-free graph G realizing C.
+   In this note, we show that this statement generalizes as follows.
+Theorem 3. For every integer k ≥ 3, every set X of vertices and every set C
+of k-colorings of X, there exists an X-rooted-Kk+1 -minor-free Kk+2 -minor-free
+graph G realizing C.
+
+                                          2
+    Thus, similarly to Theorem 1, reducible configurations in general cannot
+exploit the global properties when the number of colors is smaller than what is
+postulated by Hadwiger’s conjecture.
+    Holroyd [Hol97] proposed the following strengthening of Hadwiger’s conjec-
+ture: If G is k-colorable and every k-coloring of G uses all k colors on a set X
+of vertices, then Kk is an X-rooted minor of G. Holroyd proved this to be true
+for k = 3, and Martinsson and Steiner [MS24] for k = 4. If true in general, this
+conjecture implies that Theorem 3 does not extend to X-rooted-Kk -minor-free
+graphs, i.e., the following conjecture is a weakening of Holroyd’s one.
+Conjecture 4. For every integer k ≥ 3, there exists a set X of vertices and a set
+C of k-colorings of X such that no X-rooted-Kk -minor-free graph G realizes C.
+
+
+2     Proof
+Our proof depends on the result of DeVos and Seymour (Theorem 1). Since the
+case k = 3 is Corollary 2, we assume k ≥ 4 from now on.
+    We are going to need several gadgets. The first one is a “copy gadget”
+Fcopy,k (u, v), obtained from the clique on k + 1 vertices by deleting an edge uv.
+Clearly, f : {u, v} → [k] extends to a k-coloring of Fcopy,k (u, v) if and only if
+                           +
+f (u) = f (v). Let Fcopy,k       = Fcopy,k (u, v) + uv be the clique of size k + 1.
+    The second gadget is more complicated. For s ∈ {4, . . . , k}, we are going
+to construct Fenc,s,k (u, v, w; y4 , . . . , yk ) as a graph F that contains a set A =
+{u, v, w, y4 , . . . , yk } of distinct vertices and the following claim holds: Let f :
+A → [k] be a function such that f (yi ) = i for all i ∈ {4, . . . , k}. Then f extends
+to a k-coloring of F if and only if
+    • f (u) ∈ {1, 2, 3} and f (u) = f (v) = f (w), or
+    • f (u) = s, f (v), f (w) ∈ {1, 2, 3}, and f (v) 6= f (w), or
+    • f (u) ∈ {4, . . . , k} \ {s} and f (v) = f (w) ∈ {1, 2, 3}.
+Thus, this gadget encodes information about the color of u in the 3-coloring of
+v and w: The vertices v and w have different colors if and only if u has color s,
+and if the color of u belongs to {1, 2, 3}, it is copied to the colors of v and w.
+We construct F from several pieces, see Figure 1:
+    • Let F1′ be graph with vertex set {u, v, w, v1 , v2 , w1 , w2 } and edges uvi , vi v,
+      uwi , wi w for i ∈ {1, 2}, v1 v2 , and w1 w2 . Let F1 be obtained from F1′ by
+      adding the vertices y4 , . . . , yk adjacent to all vertices of V (F1′ ) \ {u}. Note
+      that f extends to a k-coloring of F1 if and only if either
+         – f (u) ∈ {4, . . . , k} and f (v), f (w) ∈ {1, 2, 3}, or
+         – f (u) = f (v) = v(w) ∈ {1, 2, 3}.
+    • Let F2′ be the graph with vertex set {u, v, w, u′ , w1 , w2 } and edges u′ wi ,
+      wi w for i ∈ {1, 2}, uu′ , w1 w2 , and u′ v. Let F2′′ be obtained from F2′ by
+
+                                            3
+    u                                           u
+
+                            y4                                     y4
+
+
+
+                            y5                                     y5
+
+v                 w                      v                     w
+    F1                                         F4
+                                 u
+
+                                                         y4
+
+
+
+                                                         y5
+
+                   v                            w
+                                 F5
+
+    Figure 1: Pieces of the gadget Fenc,4,5 (u, v, w; y4 , y5 ).
+
+
+
+
+                                 4
+      adding the vertices y4 , . . . , yk adjacent to all vertices of V (F2′ ) \ {u}. Let
+      Fs = F2′′ − u′ ys . Note that f extends to a k-coloring of Fs if and only if
+      either
+         – f (u) 6= s and f (v), f (w) ∈ {1, 2, 3}, or
+         – f (u) = s, f (v), f (w) ∈ {1, 2, 3}, and f (v) 6= f (w).
+   • Let F3′ be the graph with vertex set {u, v, w, u′ , v1 , v2 , w1 , w2 } and edges
+     u′ vi , vi v, u′ wi , wi w for i ∈ {1, 2}, uu′ , v1 v2 , and w1 w2 . Let F3′′ be
+     obtained from F3′ by adding the vertices y4 , . . . , yk adjacent to all vertices
+     of V (F3′ ) \ {u}. For r ∈ {4, . . . , k} \ {s}, let Fr = F3′′ − u′ yr . Note that f
+     extends to a k-coloring of Fr if and only if either
+         – f (u) 6= r and f (v), f (w) ∈ {1, 2, 3}, or
+         – f (u) = r and f (v) = f (w) ∈ {1, 2, 3}.
+Then F is obtained from the disjoint union of copies of F1 , F4 , . . . , Fk by
+                                                         +
+identifying the copies of the vertices A. Let Fenc,s,k       be obtained from F by
+adding all edges of a clique on {u, v, w; y4 , . . . , yk }.
+                                                                          +
+Observation 5. For all integers k ≥ 4 and s ∈ {4, . . . , k}, the graphs Fcopy,k
+     +
+and Fenc,s,k are Kk+2 -minor-free.
+                                +                               +
+Proof. This is clear for Fcopy,k     = Kk+1 . The graph of Fenc,s,k   can be obtained
+as follows: We start with the planar graphs F1 +uvw, F2 +uvw, and k −4 copies
+                                                   ′          ′
+
+of F3′ + uvw, which are K5 -minor-free. We take the clique-sum of these graphs
+on the triangle uvw, obtaining another K5 -minor-free graph. Finally, we add
+k − 3 vertices y4 , . . . , yk and the incident edges, resulting in a Kk+2 -minor-free
+graph.
+   We are now ready to prove the main result.
+Proof of Theorem 3. Let X = {x1 , . . . , xm }, and let Y = {y4 , . . . , yk } and Z =
+{zi,j : i ∈ [m], j ∈ {3, . . . , k}} be sets of distinct vertices. Given a function
+f : X → [k], let Cf be the set of functions g : Z → [3] such that for each
+i ∈ [m],
+   • if f (xi ) ∈ {1, 2, 3}, then g(zi,3 ) = g(zi,4 ) = . . . = g(zi,k ) = f (xi ), and
+   • if f (xi ) = s ∈ {4, . . . , k}, then g(zi,3 ) = . . . = g(zi,s−1 ) 6= g(zi,s ) = . . . =
+     g(zi,k ).
+A function h : X ∪ Y ∪ Z → [k] is Y -rainbow if h(yi ) = i for i ∈ {4, . . . , k}. We
+are going to construct a graph G1 with X ∪ Y ∪ Z ⊆ V (G1 ) such that every
+Y -rainbow function h can be extended to a k-coloring of G1 if and only if its
+restrictions f and g to X and Z, respectively, satisfy g ∈ Cf . Let us remark that
+this implies that the restriction of h to Z is a 3-coloring. Thus, for each i ∈ [m],
+the graph G1 uniquely encodes the color of xi in the 3-coloring of {zi,3 , . . . , zi,k }.
+
+
+                                             5
+                      x1                                                     x2
+
+
+
+                                ,k                                                     ,k
+
+                      Fcopy,k                                                Fcopy,k
+              py,                                                   py ,
+                                 F copy                                                 F copy
+                  k                                                      k
+            Fco                                                   Fco
+
+
+
+
+      Fenc,4,k Fenc,5,k Fenc,6,k                             Fenc,4,k Fenc,5,k Fenc,6,k
+   z1,3     z1,4                z1,5      z1,6            z2,3     z2,4                z2,5      z2,6
+
+
+                                                     G2
+
+
+
+
+Figure 2: The construction from the proof of Theorem 3, the case m = 2 and
+k = 6. The apex vertices y4 , . . . , yk are not shown.
+
+
+
+
+                                                 6
+    We construct G1 as follows, see the top part of Figure 2. We start with the
+set of vertices X ∪ Y ∪ Z. For i ∈ [m] and j ∈ {4, . . . , k}, we add a vertex xi,j
+and a copy of the gadget Fcopy,k (xi , xi,j ). For i ∈ [m] and s ∈ {4, . . . , k}, we
+add a copy of the gadget Fenc,s,k (xi,s , zi,s−1 , zi,s ; y4 , . . . , yk ). Then G1 has the
+property just described.
+S Let C be the set of k-colorings    of X that we want to realize and let C ′ =
+                          ′                                                 ′
+  f ∈C Cf . Observe that C is a set of 3-colorings of Z. Let G2 be a plane graph
+with the vertices
+
+                  z1,3 , z1,4 , . . . , z1,k , z2,3 , . . . z2,k , . . . , zm,3 , . . . , zm,k
+
+drawn in the boundary of the outer face of G′2 in order such that G′2 realizes C ′ ;
+such a plane graph exists by Theorem 1. Let G2 be the graph obtained from G′2
+by adding Y and all edges between Y and G′2 as well as the edges of the clique
+on Y . We define G to be the union of G1 and G2 . We claim that G realizes C.
+    Indeed, for any k-coloring f ∈ C, we can choose a Y -rainbow function h :
+X ∪ Y ∪ Z → [k] that extends f and whose restriction g to Z satisfies g ∈ Cf .
+Such a function can be extended to a k-coloring of both G1 and G2 , and hence
+also of G.
+    Conversely, suppose that h : X ∪ Y ∪ Z → [k] extends to a k-coloring of G,
+and let f be the restriction of h to X. We need to show that f ∈ C. Since C
+is a set of k-colorings, we can permute the colors and without loss of generality
+assume that h is Y -rainbow. By the choice of G2 , the restriction g of h to Z is
+a 3-coloring and g ∈ C ′ , and by the choice of G1 , we have g ∈ Cf . It follows
+that Cf ∩ C ′ 6= ∅, and thus f ∈ C by the choice of C ′ .
+    It remains to argue that G is X-rooted-Kk+1-minor-free and Kk+2 -minor-
+free. Observe that G can be obtained as follows. We start with the plane
+graph G0 consisting of G′2 and and the graph drawn in Figure 2 in blue (i.e.,
+the triangles xi,j zi,j−1 zi,j and the edges xi xi,j for i ∈ [m] and j ∈ {4, . . . , k}).
+Note that the vertices of X are drawn in the boundary of the outer face of G0 ,
+and thus G0 is X-rooted-K4-minor-free and K5 -minor-free. We then add k − 3
+universal vertices of Y , obtaining a graph which is X-rooted-Kk+1 -minor-free
+and Kk+2 -minor free. Finally, we perform clique-sums of this graph with copies
+             +             +
+of graphs Fcopy,k  and Fenc,⋆,k  . Since the added graphs are Kk+2 -minor-free and
+all vertices of X are contained in G0 , it follows that the resulting graph G is
+also X-rooted-Kk+1-minor-free and Kk+2 -minor-free.
+
+
+References
+[DS03]     M. DeVos and P. Seymour. Extending partial 3-colourings in a planar
+           graph. J. Combin. Theory Ser. B 88 (2003), 219–225.
+[Hol97]    F. Holroyd. Strengthening Hadwiger’s conjecture. Bull. Lond. Math.
+           Soc. 29 (1997), 139–144.
+
+
+
+
+                                                       7
+[MS24]   A. Martinsson and R. Steiner. Strengthening Hadwiger’s conjecture
+         for 4- and 5-chromatic graphs. J. Combin. Theory Ser. B 164 (2024),
+         1–16.
+[RST93] N. Robertson, P. Seymour, and R. Thomas. Hadwiger’s conjecture for
+        K6 -free graphs. Combinatorica 13 (1993), 279–361.
+
+
+
+
+                                     8
+

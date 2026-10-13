@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "base": "6cafdfb02fe5892a49eee21f92aea2369a25c022",
+  "claim": "At the globally minimum interior count and then maximum edge count outside-K source, each branch 932/933/941 has no two-edge crosscut, a simple named collar, h>=3 and n5>=9, without assuming 4CT.",
+  "evidence_levels": {
+    "paper": "conditional minimal-source topology, exact gluing, Kempe soundness, count identities and Euler",
+    "finite": "63 collar queries; 924 crosscut joins; C7 identities and full annulus fibres",
+    "target_source_status": "not triggered",
+    "lean": "not performed",
+    "unbounded_main_theorem": "OPEN",
+    "C8_admission": "OPEN"
+  },
+  "frozen_inputs_verified": 119,
+  "frozen_and_live_input_drift": [],
+  "final_replays": "root-replays-v2.json",
+  "prerequisite_replays": "prerequisite-replays.json",
+  "subreports": [
+    "crosscut/VERIFICATION.json",
+    "collar/VERIFICATION.json",
+    "review/verification.json"
+  ],
+  "final_exit_codes": {
+    "normal-v2": 0,
+    "seed17-v2": 0
+  },
+  "negative_controls": {
+    "missing_annulus_full_lift": 1,
+    "changed_932_fixed_point": 1,
+    "changed_count_identity_coefficient": 1,
+    "exclusive_write_rejects_existing": 1
+  },
+  "documentation_checks": [
+    {
+      "name": "check-docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 0.952,
+      "log": "logs/check-docs.log",
+      "output": "OK: 671 Markdown files, 8432 local links; anchors, index, handoff checked"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 0.012,
+      "log": "logs/diff-check.log",
+      "output": ""
+    }
+  ],
+  "retained_initial_failure": {
+    "record": "root-replays.json",
+    "reason": "Initial root replays read an intermediate independent-review assertion with an incorrect ordering of algebraically equal signed terms; final checker sorts terms and checks the exact signed identities. Final normal and seed17 replays both pass. Frozen inputs and mathematical certificates were unchanged."
+  },
+  "shared_git_status_unchanged": true,
+  "writes_confined_to": "audits/2026-10-13-c5-no4ct-collar-6cafdfb",
+  "commit": false,
+  "push": false,
+  "not_rerun": [
+    "K13-K15 sphere generation",
+    "external Corollary 20 cone certificate",
+    "Lean build"
+  ],
+  "new_audit_markdown": {
+    "files": 4,
+    "local_links_checked": 26,
+    "trailing_whitespace": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "normal_replay": "PASS",
+  "command": "uv run --with networkx==3.5 python audits/2026-10-13-c5-no4ct-dependency-6cafdfb/check.py --check",
+  "counts": {
+    "catalogue": 132,
+    "kempe_including_zero": 154,
+    "nonempty_extras": 21,
+    "zero_interior_caps": 10,
+    "minimal_source_candidates": 11,
+    "union_pairs": 8778
+  },
+  "negative_control": {
+    "corruption": "cap_rows[0].cap_private_vertices changed from 0 to 1",
+    "returncode": 1,
+    "rejected": true
+  },
+  "frozen_hashes": "PASS",
+  "report_local_links": "PASS",
+  "whitespace": "PASS",
+  "live_input_drift": [
+    "docs/c5_cofacial_normal_form.md"
+  ],
+  "drift_note": "Concurrent shared worktree updates detected; proof and checker consume frozen inputs. This task writes only its exclusive audit directory.",
+  "paper_independent_review": "PASS: degree-four identification, both minima, concrete K versus K<=5, and no4CT bounded deduction."
+}

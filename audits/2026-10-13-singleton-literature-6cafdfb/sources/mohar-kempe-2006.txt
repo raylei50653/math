@@ -1,0 +1,491 @@
+Graph Theory
+Trends in Mathematics, 287–297
+
+c 2006 Birkhäuser Verlag Basel/Switzerland
+
+
+
+
+Kempe Equivalence of Colorings
+Bojan Mohar
+
+     Abstract. Several basic theorems about the chromatic number of graphs can
+     be extended to results in which, in addition to the existence of a k-coloring, it
+     is also shown that all k-colorings of the graph in question are Kempe equiv-
+     alent. Here, it is also proved that for a planar graph with chromatic number
+     less than k, all k-colorings are Kempe equivalent.
+
+
+
+
+1. Introduction
+Let G be a graph and k ≥ 1 an integer. A vertex set U ⊆ V (G) is independent if
+no two vertices of U are adjacent in G. A k-coloring of G is a partition of V (G)
+in k independent sets U1 , . . . , Uk , called color classes. If v ∈ Ui (i ∈ {1, . . . , k}),
+then v is said to have color i. Every k-coloring can be identiﬁed with a mapping
+c : V (G) → {1, . . . , k} where c(v) is the color of v. The chromatic number of G is
+denoted by χ(G).
+       Let a, b ∈ {1, . . . , k} be distinct colors. Denote by G(a, b) the subgraph of
+G induced on vertices of color a or b. Every connected component K of G(a, b)
+is called a K-component (short for Kempe component). By switching the colors a
+and b on K, a new coloring is obtained. This operation is called a K-change (short
+for Kempe change). Two k-colorings c1 , c2 are K-equivalent (or Kk -equivalent ),
+in symbols c1 ∼k c2 , if c2 can be obtained from c1 by a sequence of K-changes,
+possibly involving more than one pair of colors in successive K-changes.
+       Let C k = C k (G) be the set of all k-colorings of G. The equivalence classes
+C k / ∼k are called the Kk -classes (or just K-classes). The number of Kk -classes of
+G is denoted by Kc(G, k).
+       K-changes have been introduced by Kempe in his false proof of the four color
+theorem. They have proved to be an utmost useful tool in graph coloring theory.
+It remains one of the basic and most powerful tools. The results of this paper
+show that some basic theorems about graph colorings can usually be turned into
+
+Supported in part by the Ministry for Higher Education, Science and Technology of Slovenia,
+Research Program P1–0297.
+288                                   B. Mohar
+
+stronger K-equivalence results where it can be proved that all k-colorings are K-
+equivalent. These results have been one of our motivations to study K-equivalence
+of colorings. Several such results have been published by Meyniel and Las Vergnas
+[9, 7] who proved, in particular, that all 5-colorings of a planar graph (respectively,
+a K5 -minor free graph) are K-equivalent. Fisk [5] proved that all 4-colorings of an
+Eulerian triangulation of the plane are K-equivalent. We extend these results by
+showing that in every planar graph G with chromatic number less than k, all
+k-colorings are K-equivalent (see Corollary 4.5).
+       The second motivation to study K-equivalence is the possibility to gener-
+ate colorings either by using K-changes as a heuristic argument [1, 12], or with
+the goal of obtaining a random coloring by applying random walks and rapidly
+mixing Markov chains [16]. For instance, Vigoda [16] proved that the Markov
+chain, whose state space is C k (G) and whose transitions correspond to K-changes,
+quickly converges to the stationary distribution if k ≥ 11      6 ∆(G). On the other
+hand [8], there are bipartite graphs for which the Markov chain needs exponen-
+tially many steps to come close to the stationary distribution if k = O(∆/ log ∆).
+Later, Hayes and Vigoda [6] proved rapid mixing for k > (1 + ε)∆(G) for all
+ε > 0 assuming that G has girth more than 9 and ∆ = Ω(log n). Dyer et al. [3]
+studied the same phenomenon on random graphs with expected average degree
+d, where d is a constant. Kempe change method has been successfully applied in
+some experiments [13] leading to new theoretical results. In relation to this, let us
+mention that K-changes appear in theoretical physics in the study of the Glauber
+dynamics for the hard-core lattice gas model at zero temperature. The related
+Wang-Swendsen-Kotecký dynamics [17, 18] uses K-changes to move from state to
+state. The question whether the associated Markov chain is ergodic is the same
+as asking if all colorings are K-equivalent. We refer to a survey by Sokal [14] for
+further details.
+       Finally, let us observe that Claude Berge, to whom we dedicate this paper,
+considered Kempe changes in some of his late papers, e.g., [2].
+
+
+2. Basic results
+The following result shows that the study of Kk -equivalence may be interesting
+also when k is much larger than the chromatic number of the graph. It also shows
+that it is possible that Kc(G, k − 1) = 1 and Kc(G, k) > 1.
+Proposition 2.1.
+ (a) Let G be a bipartite graph and k ≥ 2 an integer. Then Kc(G, k) = 1.
+ (b) For any integers l ≥ 3 and k > l, there exists a graph G with chromatic
+     number l such that Kc(G, l) = 1 and Kc(G, k) > 1.
+Proof. (a) Clearly, any two 2-colorings are K2 -equivalent. Hence, it suﬃces to prove
+that every k-coloring of G is K-equivalent to a 2-coloring. This is easy to see and
+is left to the reader.
+                           Kempe Equivalence of Colorings                              289
+
+       (b) Let G be the categorical product Kl × Kk . Its vertices are pairs (i, j),
+1 ≤ i ≤ l, 1 ≤ j ≤ k, and vertices (i, j) and (i , j  ) are adjacent if and only if
+i = i and j = j  . Let c be the l-coloring of G where c((i, j)) = i, and let c be the
+k-coloring of G where c ((i, j)) = j. It is easy to see that c is the unique l-coloring
+of G, so χ(G) = l and Kc(G, l) = 1. On the other hand, c is not K-equivalent
+to any other k-coloring since all its 2-colored subgraphs G(a, b) are connected. In
+particular, it is not K-equivalent to c, so Kc(G, k) > 1.                               
+      There are other graphs with the same properties as in Proposition 2.1(b).
+They can be obtained from Kl × Kk by replacing every vertex (i, j) by an inde-
+pendent set U (i, j) (of any size) and, for any two adjacent vertices (i, a) and (i , b)
+of Kl × Kk adding edges between U (i, a) and U (i , b) so that the subgraph induced
+on ∪li=1 (U (i, a) ∪ U (i, b)) is connected. This construction describes the l-colorable
+graphs with a k-coloring which is not K-equivalent to any other k-coloring. More
+generally, it would be interesting to characterize l-colorable graphs (l < k) with a
+k-coloring (k large) which is not K-equivalent to any (k −1)-coloring. This problem
+was considered by Las Vergnas and Meyniel [7] who conjectured that such graphs
+contain the complete graph Kk as a minor.
+Lemma 2.2. Suppose that c0 is a (k − 1)-coloring of a graph G and that U is an
+independent vertex set of G. Then c0 is K-equivalent in C k (G) to a k-coloring of
+G, one of whose color classes is U .
+Proof. Let U = {u1 , . . . , ur }. For i = 1, . . . , r, let ci be the k-coloring of G that
+is obtained from ci−1 by recoloring the vertex ui with color k. It is clear that
+the vertex ui forms a K-component in ci−1 for colors k and ci−1 (ui ) = c0 (ui ).
+Therefore, ci is K-equivalent to ci−1 . This shows that cr is a coloring that is K-
+equivalent to c0 , and one of its color classes is U .                                   
+Corollary 2.3. Let k be an integer. Suppose that G is a graph such that every k-
+coloring of G is K-equivalent to some (k − 1)-coloring. If U is an independent
+vertex set of G, then Kc(G, k) ≤ Kc(G − U, k − 1).
+Proof. For i = 1, 2, let ci be a k-coloring of G. By assumption, ci is K-equivalent
+to a (k − 1)-coloring ci . By Lemma 2.2, ci is K-equivalent to a k-coloring ci , one
+of whose color classes is U . The restrictions of c1 and c2 to G − U are (k − 1)-
+colorings of G − U . If they are Kk−1 -equivalent, then c1 ∼k c2 , and hence c1 ∼k c2 .
+This completes the proof.                                                               
+     A graph G is d-degenerate if every subgraph of G contains a vertex of degree
+≤ d. Las Vergnas and Meyniel [7, Proposition 2.1] proved the following result,
+whose proof we include for completeness.
+Proposition 2.4. If G is a d-degenerate graph and k > d is an integer, then
+Kc(G, k) = 1.
+Proof. The proof is by induction on |V (G)|. The statement is clear if G = K1 .
+Otherwise, let v be a vertex of degree ≤ d, and let G = G − v. Let c1 and c be
+290                                      B. Mohar
+
+arbitrary k-colorings of G. By c1 and c we denote their restrictions to G . By the
+induction hypothesis, c1 is K-equivalent to c . There is a sequence of K-changes,
+c1 ∼k c2 ∼k · · · ∼k cr = c .
+       For i = 2, . . . , r, let ci be an extension of ci to G which is obtained as follows.
+There are two colors, say ai and bi , that are involved in the K-change yielding
+ci from ci−1 . We assume that ai = ci−1 (v). Now we distinguish three cases. If
+ci−1 (v) = bi , then we let ci (v) = ci−1 (v), and the same K-change as performed
+on G shows that ci ∼k ci−1 . If ci−1 (v) = bi and v has precisely one neighbor u
+with ci−1 (u) = ai , then the K-components for ai and bi of the coloring ci−1 are
+the same as in G , except that the component containing u is extended by one
+vertex, namely v. Now we set ci (v) = ci−1 (v) if the K-change yielding ci does not
+involve u, and we set ci (v) = ai if it does. In both cases, ci is K-equivalent with
+ci−1 . Finally, suppose that ci−1 (v) = bi and v has more than one neighbor whose
+color in ci−1 is ai . Then there is a color bi = bi that is not contained among the
+neighbors of v in ci−1 . Now we ﬁrst make a K-change replacing ci−1 (v) with bi ,
+and then another change as described above (since now the color of v is diﬀerent
+from ai and bi ). This gives the coloring ci which is K-equivalent with ci−1 also in
+this case.
+       Finally, repeating the above changes, we see that c1 is K-equivalent to cr ,
+an extension of cr . Note that cr and c are the same except that they possibly
+disagree on v. Therefore, if cr = c, another K-change can replace the color cr (v)
+by c(v) since none of these colors appears in the neighborhood of v. This shows
+that cr ∼k c, and the proof is complete.                                                   
+      An immediate corollary of Proposition 2.4 is:
+Corollary 2.5. Let ∆ be the maximum degree of a graph G and let k ≥ ∆ + 1 be
+an integer. Then Kc(G, k) = 1. If G is connected and contains a vertex of degree
+< ∆, then also Kc(G, ∆) = 1.
+     We conjecture that the last statement of Corollary 2.5 can be extended to
+include all connected ∆-regular graphs with the exception of odd cycles and com-
+plete graphs.
+     The following proposition is left as an exercise.
+Proposition 2.6. Let G be a graph of order n, let α be the cardinality of a largest
+independent vertex set in G, and let k ≥ n − α + 1 be an integer. Then every
+k-coloring of G is Kk -equivalent to the k-coloring in which a ﬁxed maximum in-
+dependent set is a color class and every other color class is a single vertex. In
+particular, Kc(G, k) = 1.
+
+
+3. Edge-colorings
+Coloring the edges of a graph G is the same as coloring the vertices of its line
+graph L(G). Vizing’s Theorem states that the edges of a graph with maximum
+degree ∆ can be colored with ∆ + 1 colors, i.e., χ (G) = χ(L(G)) ≤ ∆ + 1.
+                             Kempe Equivalence of Colorings                                  291
+
+      We prove:
+Theorem 3.1. Let ∆ be the maximum degree of a graph G. If k ≥ χ (G) + 2 is an
+integer, then Kc(L(G), k) = 1.
+Proof. The proof is by induction on χ (G). The case when χ (G) ≤ 2 follows by
+Proposition 2.1(a), so assume that χ (G) ≥ 3.
+        Let c be an arbitrary k-edge-coloring of G. First, we claim that c is K-
+equivalent to a (k − 1)-edge-coloring. To prove this, we may assume that c has
+m > 0 edges of color k and that every k-edge-coloring which is K-equivalent to
+c has at least m edges of color k. The standard “fan” arguments of Vizing show
+that there is a sequence of K-changes which transforms c into an edge-coloring
+with m − 1 edges of color k, a contradiction. (Cf., e.g., [4] for details.) However,
+in order to make the proof self-contained, we repeat those arguments.
+        Let c and m > 0 be as above. We say that a color a is missing at a vertex v
+of G if no edge incident with v is colored a. Since k ≥ ∆ + 2, at least two colors
+are missing at each vertex, and at least one of them is diﬀerent from k. Clearly,
+if the same color a is missing at adjacent vertices u and v, then the change of the
+color of the edge uv to a represents a K-change.
+        Let e = uv be an edge of color k. Suppose that color a1 is missing at u and
+that a0 is missing at v. If a0 = a1 , then changing the color of e to a0 is a K-change,
+yielding a coloring with m − 1 edges of color k, a contradiction. So, there is an
+edge vv1 of color a1 . There is a color a2 = k which is missing at v1 . If a2 is missing
+at v, we recolor vv1 with a2 and, as mentioned above, are henceforth able to get
+rid of the color k at e. Therefore, there is an edge vv2 of color a2 .
+        Consider the K-component K ⊆ G(a0 , a2 ) at the vertex v1 . After the corre-
+sponding K-change, a0 becomes missing at v1 . If a0 is still missing at v, then we
+get a contradiction as above. Therefore, the corresponding K-change has changed
+the color a2 at v to a0 , so vv2 ∈ E(K).
+        We shall now repeat the above procedure and henceforth have distinct edges
+vv1 , . . . , vvr whose colors are a1 , . . . , ar (respectively), and such that color ai is
+missing at vi−1 for i = 2, . . . , r. Moreover, the K-component in G(a0 , ai ) at vi−1
+is a path from vi−1 to v, whose last edge is vi v. Having this situation, there is a
+color ar+1 = k that is missing at vr . If ar+1 ∈       / {a0 , . . . , ar }, then we consider the
+K-component K ⊆ G(a0 , ar+1 ) at vr . If this is a path ending at v, its last edge,
+call it vr+1 v, has color ar+1 , and we proceed with the next step. If K does not
+contain v, then after the K-change at K, a0 is missing at vr and at v. Now, we
+recolor vvr with a0 , then we recolor vvr−1 with ar , vvr−2 with ar−1 , . . . , vv1 with
+a2 . Finally, recolor e with a1 . All these recolorings were K-changes, so we have a
+coloring with m − 1 edges of color k, a contradiction.
+        From now on, we may assume that ar+1 = aj , where 0 ≤ j < r. Let us
+consider K ⊆ G(a0 , aj ) at vr . The K-change at K makes a0 missing at vr . Since
+the component of G(a0 , aj ) containing vvj is a path from vj−1 to vj and v, K does
+not contain vvj . Therefore, a0 is still missing at v. Now we conclude as above. This
+completes the proof of the claim.
+292                                   B. Mohar
+
+     By repeating the above arguments again if necessary, we conclude that c is
+K-equivalent to a (∆ + 1)-edge-coloring.
+     Fix an edge-coloring c0 with the color partition E(G) = M1 ∪ · · · ∪ Mr ,
+r = χ (G). It suﬃces to prove that any (∆+1)-edge-coloring c of G is K-equivalent
+with c0 in C ∆+2 (L(G)). By Lemma 2.2, c is K-equivalent to a (∆ + 2)-coloring c
+whose ﬁrst color class is Mr . Now, the proof is complete by applying induction on
+the graph G − Mr .                                                               
+      It would be interesting to extend Theorem 3.1 to include (∆ + 1)-colorings
+as well. It is quite plausible that Kc(L(G), χ (G) + 1), Kc(L(G), ∆ + 2), or even
+Kc(L(G), ∆ + 1) are always 1. Let us remark, however, that there are graphs for
+which Kc(L(G), χ (G)) > 1. Such examples are given after Theorem 3.3 below. We
+emphasize, speciﬁcally, the following interesting special case of the above specula-
+tions:
+Conjecture 3.2. If G is a graph with ∆(G) ≤ 3, then all its 4-edge-colorings are
+K-equivalent.
+    The most challenging example, the Petersen graph, has been checked using
+computer by Drago Bokal (and it satisﬁes the conjecture).
+    We can say more if G is bipartite.
+Theorem 3.3. Let ∆ be the maximum degree of a bipartite graph G. If k ≥ ∆ + 1
+is an integer, then Kc(L(G), k) = 1.
+Proof. The proof is the same as for Theorem 3.1 except that we need to show
+that every k-edge-coloring of G is Kk -equivalent to a ∆-edge-coloring. This is a
+standard exercise and is left to the reader.                                   
+     The complete bipartite graph Kp,p (where p is a prime) has a p-edge-coloring
+in which any two color classes form a Hamiltonian cycle. This example shows that
+Theorem 3.3 cannot be extended to ∆-colorings, not even for complete bipartite
+graphs.
+Problem 3.4. For which cubic bipartite graphs is Kc(L(G), 3) = 1?
+      A special case of this problem, when G is planar and 3-connected has been
+solved by Fisk. Let G be a 3-connected cubic planar bipartite graph. Its dual
+graph T is a 3-colorable triangulation of the plane. Fisk [5] proved (see Theorem
+4.1 below) that any two 4-colorings of T are K-equivalent. If c1 , c2 are 3-edge-
+colorings of G, they determine 4-colorings c∗1 , c∗2 (respectively) of T . It is easy to
+see that a K-change on 4-colorings of T corresponds to a sequence of one or more
+K-changes among the corresponding 3-edge-colorings in G. This implies that c1
+and c2 are K-equivalent, and hence Kc(L(G), 3) = 1.
+      Let us observe that planarity is essential for the above examples since the
+graph K3,3 has non-equivalent edge-colorings, Kc(L(K3,3 ), 3) = 2.
+                           Kempe Equivalence of Colorings                              293
+
+4. Planar graphs
+In [11], the author described an inﬁnite class of “almost Eulerian” triangulations
+of the plane that have a special 4-coloring which is not K-equivalent to any other
+4-coloring (and other 4-colorings exist). This shows that there are planar triangu-
+lations for which Kc(G, 4) ≥ 2. By taking 3-sums of such graphs, we get planar
+triangulations with arbitrarily many equivalence classes of 4-colorings.
+      Meyniel [9] proved that Kc(G, 5) = 1 for every planar graph (and also
+Kc(G, k) = 1 if k ≥ 6, which follows by 5-degeneracy of planar graphs). In this sec-
+tion we prove a similar result for 4-colorings in the case when G is 3-colorable (cf.
+Theorem 4.4). A special case of this result, when G is a 3-colorable triangulation
+of the plane was proved by Fisk [5].
+Theorem 4.1 (Fisk [5]). Let G be a 3-colorable triangulation of the plane. Then
+Kc(G, 4) = 1.
+     In order to extend Theorem 4.1, we shall need two auxiliary results.
+Lemma 4.2. Suppose that G is a subgraph of a graph G̃. Let c̃1 , c̃2 be r-colorings of
+G̃. Denote by ci the restriction of c̃i to G, i = 1, 2. If c̃1 and c̃2 are Kr -equivalent,
+then c1 and c2 are Kr -equivalent colorings of G.
+Proof. Any K-component in G̃ gives rise to one or more K-components in G, with
+respect to the induced coloring of G. This implies the lemma.               
+     A near-triangulation of the plane is a plane graph such that all its faces
+except the outer face are triangles.
+Proposition 4.3. Suppose that G is a planar graph with a facial cycle C. If c1 , c2
+are 4-colorings of G, then there is a near-triangulation T of the plane with the
+outer cycle C such that T ∩ G = C and there are 4-colorings c1 , c2 of G which
+are K-equivalent to c1 and c2 , respectively, such that they both can be extended to
+4-colorings of G ∪ T . Moreover, if the restriction of c1 to C is a 3-coloring, then
+c1 = c1 , and c1 can be extended to a 3-coloring of T .
+Proof. Let C = v1 v2 . . . vk v1 . The proof is by induction on k. If k = 3, then
+T = C, c1 = c1 , and c2 = c2 . Suppose now that k ≥ 4. If there are indices i, j
+(1 ≤ i < j ≤ k) such that vi and vj are not consecutive vertices of C and such
+that c1 (vi ) = c1 (vj ) and c2 (vi ) = c2 (vj ), then we add the edge vi vj inside C and
+apply induction on C1 = vi vi+1 . . . vj vi and C2 = vj vj+1 . . . vk v1 . . . vi vj .
+      More precisely, let G1 = G + vi vj . By the induction hypothesis for the cycle
+C1 , there are sequences of K-changes in G1 (and hence also in G, by Lemma 4.2)
+transforming c1 into c11 , and transforming c2 into c12 , respectively, and there is a
+near-triangulation T1 with outer cycle C1 such that c11 and c12 can be extended to
+colorings c̄11 and c̄12 of G1 ∪ T1 . Next, apply the induction hypothesis to G1 ∪ T1
+for the facial cycle C2 and colorings c̄11 and c̄12 . Let T2 be the corresponding
+near-triangulation, and c11 , c12 the corresponding colorings of G1 ∪ T1 that can be
+extended to G1 ∪ T1 ∪ T2 . By Lemma 4.2, the K-changes which produce c11 and
+294                                       B. Mohar
+
+c12 from c̄11 and c̄12 , respectively, can be made in G. All together, the restriction
+cl of the coloring c1l to G is K-equivalent to cl in G (l = 1, 2). Clearly, cl has an
+extension to G ∪ T , where T = T1 ∪ T2 . Therefore, T can be taken as the required
+near-triangulation for C.
+       If the restriction of c1 to C is a 3-coloring, then c11 = c1 and the restriction
+of c1 to C1 can be extended to a 3-coloring of T1 . Similarly, c11 = c1 , and c1 can be
+extended to a 3-coloring of T . This proves the “moreover” part of the proposition.
+
+
+                                                                        2b
+           1a               2b       1a                2b      1a                1c
+
+
+
+
+          24b              13a       2c               3a        2c               2a
+                                                                        1b
+                   (a)                       (b)                        (c)
+
+                              Figure 1. The special cases
+
+       Next, we show that vertices vi , vj exist unless one of the cases in Figure 1
+occurs (where c1 is represented by colors 1–4 and c2 by colors a–d), up to per-
+mutations of colors, dihedral symmetries of C and up to changing the roles of
+c1 and c2 . This is easy to see if k = 4. The details are left to the reader. If
+k ≥ 5, we argue as follows. Suppose that vi , vj do not exist. We may assume that
+c1 (v1 ) = c1 (v3 ) = 1. Then c1 (v1 ) = c1 (v4 ), so c2 (v1 ) = c2 (v4 ) = a may be assumed.
+Suppose that c1 (v2 ) = 2 and c2 (v2 ) = b. Since b = c2 (v2 ) = c2 (v4 ) = a, we have
+c1 (v4 ) = c1 (v2 ) = 2. Now, c1 (v2 ) = c1 (v5 ), so c2 (v5 ) = b. Next, c2 (v5 ) = c2 (v3 )
+implies that c1 (v5 ) = c1 (v3 ) = 1. It follows, in particular, that k ≥ 6. Similar
+conclusions as before imply that c1 (v6 ) = 2 and c2 (v3 ) = c2 (v6 ) = c. If k = 6, this
+is the exceptional case of Figure 1(c). If k ≥ 7, then we see that either v2 , v7 or
+v4 , v7 is the required pair vi , vj .
+       Let us consider the exceptional case shown in Figure 1(c). Let v1 be the
+vertex with c1 (v1 ) = 1 and c2 (v1 ) = a (upper-left). Try ﬁrst a K-change of colors 1
+and 3 at v1 . If this change gives rise to the same exception, there is a (1,3)-colored
+path P joining v1 and v3 . Now, a K-change of colors 2 and 4 at v2 changes c1 into
+a coloring which does not ﬁt Figure 1(c). None of these K-changes aﬀects c2 , and
+we are done unless we do not want to change c1 because of the “moreover” part.
+In that case we are allowed to use the fourth color in the extension of c2 , and we
+take T to be the near-triangulation with one interior point joined to all vertices
+on C.
+                          Kempe Equivalence of Colorings                             295
+
+       Consider now the case of Figure 1(b). By symmetry, we may assume that c1
+is not allowed to be changed according to the “moreover” part of the proposition.
+Let v1 be the vertex in the upper-left corner. By a K-change of colors a and d
+at v1 , or of b and c at v2 , we replace c2 either by a 4-coloring which uses on C
+all four or only two of the colors. In each case, we can triangulate C by adding
+two adjacent vertices p, q such that p is adjacent to v1 , v2 , v4 , and q is adjacent to
+v2 , v3 , v4 .
+       The ﬁnal case is the one shown in Figure 1(a). If we want c2 = c2 , then we
+let T be the near-triangulation consisting of C and a vertex of degree 4 inside.
+Then c2 extends to a 3-coloring of T , and c1 also extends to a 4-coloring with the
+exception of the case when all vertices on C have distinct colors. In the latter case,
+we can either K-change colors 1 and 3 at v1 , or change 2 and 4 at v2 , without
+aﬀecting the colors at v3 and v4 . The new coloring c1 extends to T .
+       Suppose, ﬁnally, that we want c1 = c1 . In this case, c1 is a 3-coloring on C.
+Up to symmetries, we may assume either c1 (v3 ) = 1 and c1 (v4 ) = 2, or c1 (v3 ) = 3
+and c1 (v4 ) = 2. In the ﬁrst case we can take the same near-triangulation T as
+above (one interior vertex of degree 4). In the latter case, we take two interior
+vertices u1 , u2 in T , where u1 is adjacent to u2 , v4 , v1 , v2 and u2 is adjacent to
+u1 , v2 , v3 , v4 . This completes the proof.                                          
+Theorem 4.4. Let G be a 3-colorable planar graph. Then Kc(G, 4) = 1.
+Proof. In order to be able to assume that G is 2-connected, we apply induction
+on the number of blocks of G. If G = G1 ∪ G2 , where G1 ∩ G2 is either empty or
+a cutvertex v, we apply induction hypotheses on G1 and G2 but making sure that
+we never use a K-change on a K-component containing v. This is possible since a
+K-change using component K of Gi (a, b) is the same as making K-changes on all
+components of Gi (a, b) distinct from K.
+      From now on, we assume that G is 2-connected. Let c1 be a 3-coloring of G.
+It suﬃces to see that every 4-coloring of G is K-equivalent to c1 .
+      Let c2 be a 4-coloring of G. Let C1 , . . . , Cm be the facial cycles of G. Let
+G0 = G, c01 = c1 and c02 = c2 . For i = 1, . . . , m, we apply Proposition 4.3 to the
+graph Gi−1 , its facial cycle Ci and the colorings ci−1 1  and ci−1
+                                                                2 . We conclude that
+there is a near-triangulation Ti with outer cycle Ci such that Gi−1 ∩ Ti = Ci . Let
+Gi = Gi−1 ∪ Ti . By Proposition 4.3, ci−11    can be extended to a 3-coloring ci1 of Gi ,
+      i−1
+and c2 is K-equivalent in Gi−1 to a 4-coloring that has an extension ci2 to Gi .
+      The ﬁnal graph Gm is a triangulation with the 3-coloring cm      1 . By Theorem
+4.1, cm
+      2 is K-equivalent  to c m
+                              1 . By successively applying Lemma   4.2 to Gm−1 ⊆ Gm ,
+etc. up until G0 ⊆ G1 , we conclude that c2   m−1
+                                                   ∼ k c1
+                                                        m−1
+                                                            in Gm−1 , etc., until ﬁnally
+concluding that c1 = c01 ∼k c02 = c2 in G0 = G.                                       
+      It is worth mentioning that there exist 3-colorable planar graphs G with
+Kc(G, 3) ≥ 2. An inﬁnite family of such examples can be obtained as follows. In
+[11], a family of planar triangulations T is constructed for which a special 4-coloring
+exists for which no nontrivial K-change exists. Let T ∗ be the dual cubic graph, and
+296                                  B. Mohar
+
+let L be its line graph. It is well-known that every 4-coloring of a triangulation
+gives rise to a 3-edge-coloring of its dual. The special 4-coloring of T therefore
+determines a (vertex) 3-coloring of L. The property of the 4-coloring of T implies
+that the 3-coloring of L is not K-equivalent with any other 3-coloring of L. Since
+T admits other 4-colorings, also L admits other 3-colorings, hence Kc(L, 3) ≥ 2.
+    Theorem 4.4 combined with Proposition 2.1(a) and the aforementioned result
+of Meyniel [9] yield:
+
+Corollary 4.5. Let G be a planar graph and k > χ(G) and integer. Then
+                                   Kc(G, k) = 1.
+
+      A planar graph G may have 4-colorings which are not K-equivalent. However,
+if G is “almost 3-colorable”, this is not likely to happen.
+
+Problem 4.6. Suppose that G is a 4-critical planar graph. Is it possible that G has
+two 4-colorings that are not K-equivalent to each other?
+
+
+
+5. Some further open problems
+In the preceding sections, we have exposed several open problems about K-classes
+of graph colorings. Two further questions are presented below.
+      Meyniel [10] proved that a graph, in which every odd cycle of length 5 or
+more has at least two chords, is perfect. He conjectured that for every such graph
+G and every integer k ≥ χ(G), Kc(G, k) = 1. He proved that every k-coloring
+of G is K-equivalent to some χ(G)-coloring. The last property does not hold for
+arbitrary perfect graphs.
+      Let G be a triangulation of some orientable surface, and let c be a 4-coloring
+of G. Let t+ 1 be the number of facial 3-cycles whose coloring (in the clockwise
+order around the face) is 234, and let t−   1 be the number of facial 3-cycles whose
+                                      −
+coloring is 432. Let d(c) = |t+1 −  t 1 |. The number d(c) turns out to be invariant
+on permutations of the colors, and it is called the degree of the coloring c [5]. The
+degree, in particular its parity has been studied by Tutte who also observed that
+this is Kempe invariant, i.e., all colorings within the same K-class have the same
+parity.
+      One can also deﬁne two colorings to be close if they have at least one color
+class in common. Two colorings are similar if there is a sequence of colorings,
+starting with one and ending with the other, such that any two consecutive col-
+orings in this sequence are close. The parity of the degree is constant on close
+colorings. It is not diﬃcult to ﬁnd triangulations of the plane with two similarity
+classes of 4-colorings. However, in all such examples known, colorings in diﬀerent
+similarity classes have diﬀerent parity of the degree. Tutte [15] asked if it is pos-
+sible to have non-similar 4-colorings of a planar triangulation whose degrees have
+the same parity.
+                          Kempe Equivalence of Colorings                             297
+
+References
+ [1] U. Baumann, Über das Erzeugen minimaler Kantenfärbungen von Graphen, in
+     Graphentheorie und ihre Anwendungen, Päd. Hochsch. Dresden, Dresden, 1988, pp.
+     5–8.
+ [2] C. Berge, A new color change to improve the coloring of a graph, Discrete Appl.
+     Math. 24 (1989) 25–28.
+ [3] M. Dyer, A. Flaxman, A. Frieze, and E. Vigoda, Randomly coloring sparse random
+     graphs with fewer colors than the maximum degree, to appear in Random Structures
+     and Algorithms.
+ [4] A. Ehrenfeucht, V. Faber, H.A. Kierstead, A new method of proving theorems on
+     chromatic index, Discrete Math. 52 (1984) 159–164.
+ [5] S. Fisk, Geometric coloring theory, Adv. Math. 24 (1977) 298–340.
+ [6] T.P. Hayes, E. Vigoda, A non-Markovian coupling for randomly sampling colorings,
+     in Proc. 44th Ann. IEEE Symp. on Found. of Comp. Sci., 2003, pp. 618–627.
+ [7] M. Las Vergnas, H. Meyniel, Kempe classes and the Hadwiger conjecture, J. Combin.
+     Theory Ser. B 31 (1981) 95–104.
+ [8] T. Luczak, E. Vigoda, Torpid mixing of the Wang-Swendsen-Kotecký algorithm for
+     sampling colorings, J. Discrete Algorithms 3 (2005) 92–100.
+ [9] H. Meyniel, Les 5-colorations d’un graphe planaire forment une classe de commuta-
+     tion unique, J. Combin. Theory Ser. B 24 (1978) 251–257.
+[10] H. Meyniel, The graphs whose odd cycles have at least two chords, in Topics on
+     perfect graphs, Eds. C. Berge and V. Chvátal, Ann. Discrete Math. 21 (1984) 115–
+     119.
+[11] B. Mohar, Akempic triangulations with 4 odd vertices, Discrete Math. 54 (1985)
+     23–29.
+[12] C.A. Morgenstern, H.D. Shapiro, Heuristics for rapidly four-coloring large planar
+     graphs, Algorithmica 6 (1991) 869–891.
+[13] T. Sibley, S. Wagon, Rhombic Penrose tilings can be 3-colored, Amer. Math. Monthly
+     107 (2000) 251–253.
+[14] A.D. Sokal, A personal list of unsolved problems concerning lattice gasses and anti-
+     ferromagnetic Potts models, Markov Processes and Related Fields 7 (2001) 21–38.
+[15] W.T. Tutte, Invited address at the Workshop in Combinatorics and Discrete Struc-
+     tures — In honour of Prof. W.T. Tutte, UNICAMP, Campinas, Brazil, August 2–4,
+     1999.
+[16] E. Vigoda, Improved bounds for sampling colorings, J. Math. Phys. 41 (2000) 1555–
+     1569.
+[17] J.-S. Wang, R.H. Swendsen, and R. Kotecký, Antiferromagnetic Potts models, Phys.
+     Rev. Lett. 63 (1989) 109–112.
+[18] J.-S. Wang, R.H. Swendsen, and R. Kotecký, Three-state antiferromagnetic Potts
+     models: A Monte Carlo study, Phys. Rev. B 42 (1990) 2465–2474.
+
+Bojan Mohar
+Department of Mathematics, University of Ljubljana
+1000 Ljubljana, Slovenia
+e-mail: bojan.mohar@uni-lj.si
+

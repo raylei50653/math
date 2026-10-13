@@ -1,0 +1,170 @@
+{
+  "schema": "no4ct-c8-verification-v1",
+  "status": "PASS",
+  "scope": "Final complete integration and independent review; first uv prerequisite attempt separately failed and was recovered",
+  "normal_seed17_output_identical": true,
+  "integration": [
+    {
+      "name": "integration",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c5-no4ct-c8-6cafdfb/verify.py",
+        "--check",
+        "--negative"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "stdout": "logs/integration.stdout",
+      "stderr": "logs/integration.stderr"
+    },
+    {
+      "name": "integration-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c5-no4ct-c8-6cafdfb/verify.py",
+        "--check",
+        "--negative"
+      ],
+      "seed": "17",
+      "returncode": 0,
+      "stdout": "logs/integration-seed17.stdout",
+      "stderr": "logs/integration-seed17.stderr"
+    }
+  ],
+  "prerequisite_replays": [
+    {
+      "name": "upstream-wrapper-first-attempt",
+      "command": "python3 -B audits/2026-10-13-c5-no4ct-collar-6cafdfb/verify.py --check",
+      "returncode": 1,
+      "stderr": "logs/upstream-collar.stderr",
+      "reason": "uv default cache not writable; retained failure; no mathematics evaluated past relative-C4 runner"
+    },
+    {
+      "name": "relative-C4-readonly-fallback",
+      "command": "PYTHONPATH=/home/ray/.cache/uv/archive-v0/HGS6nMcAklcC0r9f python3 -B frozen/audits/2026-10-13-c5-no4ct-collar-6cafdfb/frozen/audits/2026-10-13-c5-no4ct-degrees-6cafdfb/check_c4.py --check",
+      "returncode": 0,
+      "stdout": "logs/relative-c4.stdout",
+      "networkx_version": "3.5"
+    },
+    {
+      "name": "upstream-collar-standardlib",
+      "command": "python3 -B frozen/audits/2026-10-13-c5-no4ct-collar-6cafdfb/collar/check.py --check",
+      "returncode": 0,
+      "stdout": "logs/upstream-collar-standardlib.stdout"
+    }
+  ],
+  "earlier_downstream_replays": [
+    {
+      "name": "2026-10-13-c8-followup-6cafdfb-normal",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c5-no4ct-c8-6cafdfb/frozen/audits/2026-10-13-c8-followup-6cafdfb/check.py",
+        "--check"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "2026-10-13-c8-followup-6cafdfb-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c5-no4ct-c8-6cafdfb/frozen/audits/2026-10-13-c8-followup-6cafdfb/check.py",
+        "--check"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "2026-10-13-c8-followup-6cafdfb-negative",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c5-no4ct-c8-6cafdfb/frozen/audits/2026-10-13-c8-followup-6cafdfb/check.py",
+        "--check",
+        "--negative"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "2026-10-13-c8-peeling-6cafdfb-normal",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c5-no4ct-c8-6cafdfb/frozen/audits/2026-10-13-c8-peeling-6cafdfb/check.py",
+        "--check"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "2026-10-13-c8-peeling-6cafdfb-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c5-no4ct-c8-6cafdfb/frozen/audits/2026-10-13-c8-peeling-6cafdfb/check.py",
+        "--check"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "2026-10-13-c8-peeling-6cafdfb-negative",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c5-no4ct-c8-6cafdfb/frozen/audits/2026-10-13-c8-peeling-6cafdfb/check.py",
+        "--check",
+        "--negative"
+      ],
+      "returncode": 0
+    }
+  ],
+  "earlier_apex_replays": [
+    {
+      "name": "apex",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c5-no4ct-c8-6cafdfb/frozen/audits/2026-10-13-c8-apex-degree-45bc1c3/check.py",
+        "--check"
+      ],
+      "seed": null,
+      "returncode": 0
+    },
+    {
+      "name": "apex-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c5-no4ct-c8-6cafdfb/frozen/audits/2026-10-13-c8-apex-degree-45bc1c3/check.py",
+        "--check"
+      ],
+      "seed": "17",
+      "returncode": 0
+    }
+  ],
+  "finite": "finite/VERIFICATION.json",
+  "geometry": "geometry/VERIFICATION.json",
+  "independent_review": "review/VERIFICATION.json",
+  "input_counts": {
+    ".": 436,
+    "geometry": 11,
+    "finite": 15
+  },
+  "frozen_and_current_input_drift": [],
+  "actual_source_status": "not triggered",
+  "external_cone_replayed": false,
+  "sphere_generation_replayed": false,
+  "new_Lean_theorem": false,
+  "lean_build_run": false,
+  "commit_or_push": false,
+  "delivery_checks": {
+    "local_markdown_links": 29,
+    "link_errors": [],
+    "new_markdown_trailing_whitespace": [],
+    "git_diff_check": 0,
+    "initial_status": "logs/git-status-start.txt",
+    "final_status": "logs/git-status-end.txt",
+    "shared_evidence_sources_unchanged": true
+  }
+}

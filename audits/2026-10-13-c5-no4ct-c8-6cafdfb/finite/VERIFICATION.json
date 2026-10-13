@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "commands": [
+    {
+      "command": "python3 -B audits/2026-10-13-c5-no4ct-c8-6cafdfb/finite/check.py --write",
+      "exit_code": 0,
+      "log": "write.log"
+    },
+    {
+      "command": "python3 -B audits/2026-10-13-c5-no4ct-c8-6cafdfb/finite/check.py --check --negative-controls",
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-13-c5-no4ct-c8-6cafdfb/finite/check.py --check --negative-controls",
+      "exit_code": 0,
+      "log": "check.seed17.log"
+    }
+  ],
+  "normal_seed17_output_equal": true,
+  "logs": {
+    "write.log": {
+      "sha256": "855f4cadbd0791c06782978b62fb48c08580298d272f0bb417eee18cc68976b3",
+      "bytes": 577
+    },
+    "check.log": {
+      "sha256": "248d3d4417b5b1385af87db5a60a77fdd1b7402f8f110a8719befb0b19d2ccfc",
+      "bytes": 784
+    },
+    "check.seed17.log": {
+      "sha256": "248d3d4417b5b1385af87db5a60a77fdd1b7402f8f110a8719befb0b19d2ccfc",
+      "bytes": 784
+    }
+  },
+  "results": [
+    {
+      "common_count_exclusions": 3,
+      "fixed_split_forced_zero_fibres": 4,
+      "fixed_split_rows": 821,
+      "generic_orbit_generators": 1552,
+      "inner_pattern_coordinates": 274,
+      "literal_inner_assignments": 6564,
+      "named_collars": 35,
+      "necessary_condition_residuals": 10,
+      "new_932_empty_fixed_points": 30,
+      "new_932_excluded": 35,
+      "new_932_nonempty_fixed_points_missing_accepted_rows": 5,
+      "new_932_queries": 35,
+      "noncrossing_equality_partitions": 1430,
+      "status": "PASS",
+      "target_queries": 105,
+      "total_finite_exclusions": 95,
+      "transfer_kempe_exclusions": 92,
+      "triangulated_orbit_generators": 981
+    },
+    {
+      "rejected": [
+        "changed_literal_transfer_coefficient",
+        "mixed_named_inner_order",
+        "missing_joint_full_lift",
+        "changed_full_count_coordinate",
+        "false_total_closure",
+        "reversed_932_verdict"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "independent_interface": "reconstruct_interface from frozen old controls/checker.py imports neither producer nor frozen collar",
+  "no_four_color_theorem": true,
+  "actual_target_source_status": "not triggered"
+}

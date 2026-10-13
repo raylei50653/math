@@ -1,12 +1,18 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-13（K≤14=K≤5已證；原E4契約的廣義N2已排除；W5圈秩四兩分支均排除、任取合法W5私人圈秩至少五；C₈八項殘留在h=3時必k≥16；E-ARC2與一般主命題仍OPEN）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-13（K≤15=K≤5已證；原E4契約的廣義N2已排除；W5圈秩四兩分支均排除、任取合法W5私人圈秩至少五；C₈八項殘留在h=3時必k≥19，任意大小原接點三型與完整separator剝層已證；E-ARC2與一般主命題仍OPEN）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
+[無四色定理前提路線交接](tasks/c5_no4ct_handoff.md)：零內點cap下降與受限C4度數修復
+已接到 `K≤15=K≤5`；[完整外圈](../audits/2026-10-13-c5-no4ct-collar-6cafdfb/REPORT.md)
+與 [C8](../audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md)亦完成三支接入。
+共同h≥3／n5≥9，932必h≥4／n5≥10；105項排97留原八項，h=3⇒k≥19。
+下一入口為m≥11第一層三型及另列h≥4；無界932／933／941與一般主命題仍OPEN。
+
 2026-10-12 新增：[共面識別正規形](c5_cofacial_normal_form.md) 接外部計數定理，
 得到一般 disk 圖的 `K≤12=K≤5`；後續 [K13-COLLAR](c5_k13_collar.md)
-完整排除十三內點來源，再由 [K14-SPHERE](c5_k14_sphere.md) 得 `K≤14=K≤5`；十五內點以上仍 OPEN，未 Lean 化。
+完整排除十三內點來源，再由 [K14-SPHERE](c5_k14_sphere.md)及[K15-SPHERE](c5_k15_sphere.md) 得 `K≤15=K≤5`；十六內點以上仍 OPEN，未 Lean 化。
 同日[最小來源度數界](c5_saturation_degree_bound.md) 接上述前提，證邊界度數至少四、
 內部至少五、至少六個五度內點；[衍生任務](tasks/c5_degree5_link_tasks.md) 聚焦具名五鄰環。
 後續 [全內部五輪與任務交付](c5_degree5_link_reductions.md) 保證原內部 induced W5；
@@ -279,17 +285,20 @@
 | [933／941 excess、容量與跨度下界](c5_independent_support_capacity.md) | 第一輪共同 ε≥1、mixed 條件容量與 unary 六跨度禁形保留；後續兩候選均提高至 ε≥2。未證候選必含六跨度禁形；紙面＋三張固定圖控制，未 Lean 化 |
 | [C5 循環流與整數 orbit 分解](c5_circulation.md) | 六維／153 支撐／十二循環等價；36 份有限基底覆蓋推出任意非負整數恆等式解皆通過三套分開的 orbit 分解；獨立 singleton 支撐分解唯一，未新增平面來源排除或 Lean theorem |
 | [C5 代數—邊位置對座標](c5_edge_pair_coordinates.md) | 十態完整對照、S4／D5 搬運與 20 條蘊涵；1,024 masks 核對與既有 Kempe screen 等價，仍為 153／142／10，未增加排除力；紙面＋Python，未新增 Lean theorem |
-| [Kempe screen](c5_kempe_screen.md)、[adjacent-singleton 計數](c5_adjacent_singleton_counts.md) | 必要條件與剩餘候選已保存；一般 adjacent-singleton lemma 未證，與主線的相鄰雙「缺失」候選 A 不同 |
-| [共面識別正規形與十二內點界](c5_cofacial_normal_form.md) | 聯集封閉目錄＋global 最小內點／最大邊數，證簡單三角面正規形不增內點；接外部 Cor20 得 K≤12=K≤5。132 witnesses／8778 unions／十候選及完整 fibres 核對；十三、十四內點後由 K13／K14 排除；十五內點以上、一般重接與 Lean 保留，不混用舊 edge-critical 前提 |
-| [最小目錄外來源的度數界與五度鄰環](c5_saturation_degree_bound.md) | 沿用全域最小性及 K≤12，證 C4 三內點代表、邊界度數≥4、內部≥5、n5≥6；完整控制與條件性紙面分層，十三、十四內點後由 K13／K14 排除；十五內點以上及五度縮減仍 OPEN |
+| [Kempe screen](c5_kempe_screen.md)、[adjacent-singleton 計數](c5_adjacent_singleton_counts.md) | 必要條件與剩餘候選已保存；一般 adjacent-singleton lemma 未證，與主線的相鄰雙「缺失」候選 A 不同；[原始文獻稽核](../audits/2026-10-13-singleton-literature-6cafdfb/REPORT.md)本輪未找到可直接排任意大小933／941的定理，count-cone的可用排除結果僅有界或附條件 |
+| [共面識別正規形與十二內點界](c5_cofacial_normal_form.md) | 聯集封閉目錄＋global 最小內點／最大邊數，證簡單三角面正規形不增內點；接外部 Cor20 得 K≤12=K≤5。132 witnesses／8778 unions／十候選及完整 fibres 核對；十三至十五內點後由 K13／K14／K15 排除；十六內點以上、一般重接與 Lean 保留，不混用舊 edge-critical 前提 |
+| [最小目錄外來源的度數界與五度鄰環](c5_saturation_degree_bound.md) | 沿用全域最小性及 K≤12，證 C4 三內點代表、邊界度數≥4、內部≥5、n5≥6；完整控制與條件性紙面分層，十三至十五內點後由 K13／K14／K15 排除；十六內點以上及五度縮減仍 OPEN |
 | [近三角化完整外圈限制](c5_neartri_boundary_collar.md) | h≤2全排；C₈的70查詢現排62、留8。C8-STRUCT證無內弦並由cofacial識別排c16/c32-941；新可逆計數在c15/c20-941各迫零兩列。仍只採納h≥3、n5≥9；同圖幾何／跨split實現OPEN，未Lean化 |
-| [十四內點完整球面覆蓋與C₈加強](c5_k14_sphere.md) | K≤14=K≤5；73球面嵌入／1,001根圖全Σ1023，180,228完整lifts獨立一致；另以原面配對／無葉點純紙面證h=3⇒k≥16。K≤15及一般主命題OPEN，未Lean化 |
+| [十四內點完整球面覆蓋與C₈加強](c5_k14_sphere.md) | K≤14=K≤5；73球面嵌入／1,001根圖全Σ1023，180,228完整lifts獨立一致；另以原面配對／無葉點純紙面證h=3⇒k≥16。十五內點後由K15排除，一般主命題OPEN，未Lean化 |
+| [十五內點完整球面覆蓋](c5_k15_sphere.md) | K≤15=K≤5；192球面嵌入／2,714根圖全Σ1023，624,617完整lifts獨立一致；一般來源至少十六內點，主命題OPEN，未Lean化 |
+| [C8原短弧接點與內圈](c5_c8_inner_collar.md) | 每I點至多兩個C附件、八原面third points相異；m≥9，等號唯一W8，八契約完整Σ1023排除m=9；後續剝層分類排m=10，h=3⇒k≥19；八項無界殘留仍OPEN |
+| [C8反覆剝層與完整轉移](c5_c8_peeling.md) | 任意大小RING／PINCH／BRIDGE完備，simple iff無正對點；保存原面與原點的完整separator轉移已證，同型C8遞迴七障礙。m=10三族16H、128原collar圖、75936full lifts全Σ1023，得h=3⇒k≥19；固定寬度與八無界契約OPEN，未Lean化 |
 | [十三內點完整外圈與 K≤13 界](c5_k13_collar.md) | h4–7全部覆蓋；23球面嵌入／306根圖皆Σ1023，完整lifts独立一致；h6／h7另有紙面排除。K≤13=K≤5，目錄外來源至少十四內點；不提高h／n5；後續K14亦完成，一般命題OPEN，未Lean化 |
-| [C₈ apex度數與十四內點分支界](c5_c8_apex_degree.md) | 八項全部40個apex-H三度假設排除，原apex均至少六度；原h=3⇒k≥14，後續純結構證明加強為k≥16。八項仍留；一般k≥15由K14另證，h≥3、n₅≥9不提高；紙面＋精確Python，未Lean化 |
+| [C₈ apex度數與十四內點分支界](c5_c8_apex_degree.md) | 八項全部40個apex-H三度假設排除，原apex均至少六度；原h=3⇒k≥14，後續原面配對、短弧／內圈及m=10剝層分類加強為k≥19。八項仍留；一般k≥16由K15另證，h≥3、n₅≥9不提高；紙面＋精確Python，未Lean化 |
 | [跨原邊 Kempe 缺陷搬運](c5_cross_edge_kempe.md) | 五度輪完整四格雙射、相鄰中心共同lift搬運與全域計數式；五度點下界迫同一拒絕列至少六條單缺陷原邊。5圖／2440格及拼接反控制；單步逃逸判準已證，普遍同步／933／941排除OPEN，無新Lean |
 | [全內部五輪、位置與重接交付](c5_degree5_link_reductions.md) | 最小來源必有全內部 induced W5；A九種位置／完整pins契約、B1020項固定操作及C17424組完整cap閉合已交付。後續五商圖完整重建已接入；一般正聯集縮減、小代表及Lean保留 |
 | [W5 具名完整關係縮減](c5_w5_marked_relation.md) | 五個合法單對商圖的完整拉回重建 H／G 全 fibres；保留十pin、空cells及共同色框。34圖／348160格獨立核對；零新頂點局部正聯集有紙面限制，一般縮減與r≤6 annulus代表OPEN，未Lean化 |
-| [W5 三色支援與私人森林排除](c5_w5_three_color_support.md) | 同槽位三色具名support恰對應保全部B/U pins的雙向total full-lift對照，非fibre雙射；當輪排私人森林，後續單環至圈秩四排除使完整最小來源私人圈秩≥5。70個必要森林模板完整覆核，另有r_min=2構造及來源專用商圖no-go；一般r≤6代表存在性仍OPEN，無新Lean |
+| [W5 最弱保存契約與小代表](c5_w5_three_color_support.md) | 最弱為補中心後完整Σ＝pr_B R³，保R³較強，不要求染色數相等。已認出K132的102個induced-B關係都有r′≤5合法代表；新增任意m→0嚴格替換族，完整控制16→6。K15對應r′≤9；一般九點代表及真正最小來源私人ρ≥5的縮減仍OPEN，無新Lean |
 | [W5 私人單環排除](c5_w5_private_unicyclic.md) | 任意合法 W5 的最小來源私人圈秩≥2；contractible 純紙面排除，essential 完備1652模板全Σ1023，另有只保Σ的r′=0 prism代表、減少7–10內點，不保R³。全fibres與獨立核對；後續[雙環排除](c5_w5_private_rank2.md)提高至圈秩至少三，一般縮減與K∞仍OPEN，未Lean化 |
 | [W5 私人雙環排除](c5_w5_private_rank2.md) | 完整最小來源前提下任取合法全內部W5，私人圈秩≥3；四型及全部essential位置完備覆蓋，theta 974模板與9,973,760完整cells核對。四個annulus代表只保Σ、不保R³，減少3或7–10內點；後續圈秩三兩分支均已排除，私人圈秩下界後由圈秩四排除提高為五，更高圈秩縮減仍OPEN，真正933／941來源not triggered，未Lean化 |
 | [W5 私人圈秩三環繞分支](c5_w5_private_rank3_essential.md) | 完整最小來源若私人圖含essential環則ρ≥4；1,283模板完整十列皆1023。後續contractible分支亦完整排除，任取合法W5私人圈秩至少四，後續圈秩四全排提高為五，主命題OPEN，未Lean化 |
@@ -518,6 +527,8 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-13：K15、C8剝層與無四色定理前提路線整理發布](history/2026-10-13-k15-c8-no4ct-publish.md)
+- [2026-10-13：十五內點與C8內圈剩餘縮減](history/2026-10-13-c5-k15-c8-progress.md)
 - [2026-10-13：K≤14、W5 圈秩四與組合圖譜整理發布](history/2026-10-13-k14-rank4-atlas-publish.md)
 - [2026-10-13：K≤14、C₈分支界與W5圈秩四排除](history/2026-10-13-c5-k14-rank4-progress.md)
 

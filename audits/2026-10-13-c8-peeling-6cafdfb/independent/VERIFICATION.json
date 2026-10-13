@@ -1,0 +1,98 @@
+{
+  "artifact_sha256": {
+    "calibration_replay.json": "f2668ba627d880ab799c4da3b8e8d443ad011fc165a796c5cfe8dbb3c61ab259",
+    "certificate.json": "f26f3cd583272c4dc1cadd78402eb0facabc7e3b2d02e304accb164a726cb17d",
+    "check.py": "093ac8c3856af1460b88a6d2be30f1acc946646de8d3a64bda379ecf84f2bd89",
+    "check_calibration.py": "6a042508154fbd940265c3cfaa11eddd926891b42ea155c945e8692f9d836318",
+    "full_lifts.json.gz": "19bc82b903dc40defddaf0ed699c0f365437214c5eb02f7bf62a88a4e7267949"
+  },
+  "runs": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-peeling-6cafdfb/independent/check.py",
+        "--check"
+      ],
+      "elapsed_seconds": 1.701,
+      "exit_code": 0,
+      "mode": "normal",
+      "script": "check.py",
+      "stderr": "",
+      "stdout": "{\"C8_fibres\": 1644, \"fixtures\": 6, \"full_lifts\": 3422, \"negative_controls\": 2, \"negative_corruptions_rejected\": 0, \"status\": \"PASS\"}"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-peeling-6cafdfb/independent/check_calibration.py",
+        "--check"
+      ],
+      "elapsed_seconds": 2.017,
+      "exit_code": 0,
+      "mode": "normal",
+      "script": "check_calibration.py",
+      "stderr": "",
+      "stdout": "{\"G_fibres\": 1280, \"G_graphs\": 128, \"G_lifts\": 75936, \"H_empty_fibres\": 1500, \"H_fibres\": 4384, \"H_graphs\": 16, \"H_lifts\": 7408, \"all_G_sigma\": 1023, \"core_literal_fibres\": 105024, \"core_literal_lifts\": 20832, \"input_sha256\": \"82f233e3382b89398239156f1c92e2a09a24d0f25ebf0889a66f837e2774fb8b\", \"method\": \"literal edge lists; independent fixed search order; exact sorted full-lift equality, including empty fibres; no primary generator import\", \"named_class_counts\": {\"M10-CHORD4\": 4, \"M10-FAN3\": 8, \"M10-FAN4\": 4}, \"negative_corruptions_rejected\": 0, \"status\": \"PASS\"}"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-peeling-6cafdfb/independent/check.py",
+        "--check"
+      ],
+      "elapsed_seconds": 1.746,
+      "exit_code": 0,
+      "mode": "seed17",
+      "script": "check.py",
+      "stderr": "",
+      "stdout": "{\"C8_fibres\": 1644, \"fixtures\": 6, \"full_lifts\": 3422, \"negative_controls\": 2, \"negative_corruptions_rejected\": 0, \"status\": \"PASS\"}"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-peeling-6cafdfb/independent/check_calibration.py",
+        "--check"
+      ],
+      "elapsed_seconds": 2.009,
+      "exit_code": 0,
+      "mode": "seed17",
+      "script": "check_calibration.py",
+      "stderr": "",
+      "stdout": "{\"G_fibres\": 1280, \"G_graphs\": 128, \"G_lifts\": 75936, \"H_empty_fibres\": 1500, \"H_fibres\": 4384, \"H_graphs\": 16, \"H_lifts\": 7408, \"all_G_sigma\": 1023, \"core_literal_fibres\": 105024, \"core_literal_lifts\": 20832, \"input_sha256\": \"82f233e3382b89398239156f1c92e2a09a24d0f25ebf0889a66f837e2774fb8b\", \"method\": \"literal edge lists; independent fixed search order; exact sorted full-lift equality, including empty fibres; no primary generator import\", \"named_class_counts\": {\"M10-CHORD4\": 4, \"M10-FAN3\": 8, \"M10-FAN4\": 4}, \"negative_corruptions_rejected\": 0, \"status\": \"PASS\"}"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-peeling-6cafdfb/independent/check.py",
+        "--check",
+        "--negative"
+      ],
+      "elapsed_seconds": 1.697,
+      "exit_code": 0,
+      "mode": "negative",
+      "script": "check.py",
+      "stderr": "",
+      "stdout": "{\"C8_fibres\": 1644, \"fixtures\": 6, \"full_lifts\": 3422, \"negative_controls\": 2, \"negative_corruptions_rejected\": 2, \"status\": \"PASS\"}"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-peeling-6cafdfb/independent/check_calibration.py",
+        "--check",
+        "--negative"
+      ],
+      "elapsed_seconds": 1.973,
+      "exit_code": 0,
+      "mode": "negative",
+      "script": "check_calibration.py",
+      "stderr": "",
+      "stdout": "{\"G_fibres\": 1280, \"G_graphs\": 128, \"G_lifts\": 75936, \"H_empty_fibres\": 1500, \"H_fibres\": 4384, \"H_graphs\": 16, \"H_lifts\": 7408, \"all_G_sigma\": 1023, \"core_literal_fibres\": 105024, \"core_literal_lifts\": 20832, \"input_sha256\": \"82f233e3382b89398239156f1c92e2a09a24d0f25ebf0889a66f837e2774fb8b\", \"method\": \"literal edge lists; independent fixed search order; exact sorted full-lift equality, including empty fibres; no primary generator import\", \"named_class_counts\": {\"M10-CHORD4\": 4, \"M10-FAN3\": 8, \"M10-FAN4\": 4}, \"negative_corruptions_rejected\": 2, \"status\": \"PASS\"}"
+    }
+  ],
+  "status": "PASS"
+}

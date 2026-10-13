@@ -1,0 +1,138 @@
+[
+  {
+    "name": "dependency",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c5-no4ct-dependency-6cafdfb/check.py",
+      "--check"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/HGS6nMcAklcC0r9f"
+    },
+    "exit_code": 0,
+    "log": "validation/no4ct-dependency.log",
+    "elapsed_seconds": 0.456
+  },
+  {
+    "name": "relative-c4",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c5-no4ct-degrees-6cafdfb/check_c4.py",
+      "--check"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/HGS6nMcAklcC0r9f"
+    },
+    "exit_code": 0,
+    "log": "validation/no4ct-relative-c4.log",
+    "elapsed_seconds": 0.378
+  },
+  {
+    "name": "collar-frozen-c4",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c5-no4ct-collar-6cafdfb/frozen/audits/2026-10-13-c5-no4ct-degrees-6cafdfb/check_c4.py",
+      "--check"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/HGS6nMcAklcC0r9f"
+    },
+    "exit_code": 0,
+    "log": "validation/no4ct-collar-frozen-c4.log",
+    "elapsed_seconds": 0.383
+  },
+  {
+    "name": "crosscut",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c5-no4ct-collar-6cafdfb/frozen/audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/checker.py",
+      "--check"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/HGS6nMcAklcC0r9f"
+    },
+    "exit_code": 0,
+    "log": "validation/no4ct-crosscut.log",
+    "elapsed_seconds": 0.594
+  },
+  {
+    "name": "three-target-collar",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c5-no4ct-collar-6cafdfb/collar/check.py",
+      "--check"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/HGS6nMcAklcC0r9f"
+    },
+    "exit_code": 0,
+    "log": "validation/no4ct-three-target-collar.log",
+    "elapsed_seconds": 0.508
+  },
+  {
+    "name": "collar-independent",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c5-no4ct-collar-6cafdfb/review/independent_review.py"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/HGS6nMcAklcC0r9f"
+    },
+    "exit_code": 0,
+    "log": "validation/no4ct-collar-independent.log",
+    "elapsed_seconds": 0.409
+  },
+  {
+    "name": "c7-independent-count",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c5-no4ct-collar-6cafdfb/frozen/audits/2026-10-13-c7-joint-kempe-19209f4c/topology/count_review.py"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/HGS6nMcAklcC0r9f"
+    },
+    "exit_code": 0,
+    "log": "validation/no4ct-c7-independent-count.log",
+    "elapsed_seconds": 0.077
+  },
+  {
+    "name": "c8-no4ct",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c5-no4ct-c8-6cafdfb/verify.py",
+      "--check",
+      "--negative"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/HGS6nMcAklcC0r9f"
+    },
+    "exit_code": 0,
+    "log": "validation/no4ct-c8-no4ct.log",
+    "elapsed_seconds": 49.019
+  },
+  {
+    "name": "c8-no4ct-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c5-no4ct-c8-6cafdfb/verify.py",
+      "--check",
+      "--negative"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/HGS6nMcAklcC0r9f",
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "log": "validation/no4ct-c8-no4ct-seed17.log",
+    "elapsed_seconds": 50.463
+  }
+]

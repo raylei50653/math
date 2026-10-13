@@ -1,0 +1,58 @@
+[
+  {
+    "name": "normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c5-no4ct-collar-6cafdfb/verify.py",
+      "--check"
+    ],
+    "environment": {},
+    "exit_code": 1,
+    "seconds": 1.945,
+    "log": "logs/normal.log",
+    "output": ""
+  },
+  {
+    "name": "seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c5-no4ct-collar-6cafdfb/verify.py",
+      "--check"
+    ],
+    "environment": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 1,
+    "seconds": 1.95,
+    "log": "logs/seed17.log",
+    "output": ""
+  },
+  {
+    "name": "check-docs",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/check_docs.py"
+    ],
+    "environment": {},
+    "exit_code": 0,
+    "seconds": 0.952,
+    "log": "logs/check-docs.log",
+    "output": "OK: 671 Markdown files, 8432 local links; anchors, index, handoff checked"
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "environment": {},
+    "exit_code": 0,
+    "seconds": 0.012,
+    "log": "logs/diff-check.log",
+    "output": ""
+  }
+]

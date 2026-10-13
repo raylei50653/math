@@ -1,0 +1,860 @@
+                                  European Journal of Combinatorics 127 (2025) 104138
+
+
+
+                                       Contents lists available at ScienceDirect
+
+
+                         European Journal of Combinatorics
+                         journal homepage: https://www.sciencedirect.com/journal/
+                                    european-journal-of-combinatorics
+
+
+
+
+Precoloring extension in planar
+near-Eulerian-triangulationsI
+Zdeněk Dvořák, Benjamin Moore 1 , Michaela Seifrtová,
+Robert Šámal
+Computer Science Institute, Charles University, Prague, Czech Republic
+
+
+article              info                          a b s t r a c t
+
+Article history:                                   We consider the 4-precoloring extension problem in planar near-
+Available online 7 March 2025                      Eulerian- triangulations, i.e., plane graphs where all faces except
+                                                   possibly for the outer one have length three, all vertices not
+                                                   incident with the outer face have even degree, and exactly the
+                                                   vertices incident with the outer face are precolored. We give
+                                                   a necessary topological condition for the precoloring to extend,
+                                                   and give a complete characterization when the outer face has
+                                                   length at most five and when all vertices of the outer face have
+                                                   odd degree and are colored using only three colors.
+                                                       © 2025 The Author(s). Published by Elsevier Ltd. This is an open
+                                                                                   access article under the CC BY license
+                                                                       (http://creativecommons.org/licenses/by/4.0/).
+
+
+
+1. Introduction
+
+   Recall that a k-coloring of a graph G is a mapping using k colors such that adjacent vertices
+receive different colors and that a graph is Eulerian if all of its vertices have even degree. We study
+the precoloring extension problem for planar (near) Eulerian triangulations from an algorithmic
+perspective.
+   Famously, the Four Color Theorem states that all planar graphs are 4-colorable [1] and thus from
+an algorithmic point of view, the problem of determining if a planar graph is 4-colorable is trivial.
+
+  I Supported by project 22-17398S (Flows and cycles in graphs on surfaces) of Czech Science Foundation. An extended
+abstract appeared in Proceedings of the 12th European Conference on Combinatorics, Graph Theory and Applications
+(EUROCOMB’23).
+     E-mail addresses: rakdver@iuuk.mff.cuni.cz (Z. Dvořák), Benjamin.Moore@ist.ac.at (B. Moore),
+mikina@iuuk.mff.cuni.cz (M. Seifrtová), samal@iuuk.mff.cuni.cz (R. Šámal).
+  1 The second author completed this work while at Charles University, and is now at the Institute of Science and
+Technology, Klosterneuburg, Austria.
+
+https://doi.org/10.1016/j.ejc.2025.104138
+0195-6698/© 2025 The Author(s). Published by Elsevier Ltd. This is an open access article under the CC BY license
+(http://creativecommons.org/licenses/by/4.0/).
+Z. Dvořák, B. Moore, M. Seifrtová et al.                  European Journal of Combinatorics 127 (2025) 104138
+
+
+Here, 4-colorability cannot be improved to 3-colorability, as deciding if a planar graph is 3-colorable
+is a well known NP-complete problem [20].
+    Let us now consider the k-colorability for graphs on surfaces of non-zero genus g. By Heawood’s
+formula, the problem becomes trivial in this setting for k = Ω (g 1/2 ), however it is actually quite
+well understood for all k ≥ 5. Recall that a graph G is (k + 1)-critical if all proper subgraphs of G
+are k-colorable, but G itself is not. Thus, (k + 1)-critical graphs are exactly the minimal forbidden
+subgraphs for k-colorability. A deep result of Thomassen [22] says that for any fixed surface Σ ,
+there are only finitely many (k + 1)-critical graphs for k ≥ 5. Thus, we can test whether a graph
+drawn on Σ is k-colorable simply by checking whether it contains one of this finite list of forbidden
+(k + 1)-critical graphs as a subgraph (this can be done in linear time by the result of Eppstein [7]).
+    Unfortunately, we cannot extend this result to 4-colorability—it is known that there are infinitely
+many 5-critical graphs on any surface other than the sphere [22] (by a result of Fisk [9] that if G
+is a triangulation of an orientable surface and G has exactly two vertices u and v of odd degree,
+then u and v must have the same color in any 4-coloring of G, and thus the graph G + uv is not
+4-colorable). This does not exclude the possibility that for every fixed surface Σ , there is a
+polynomial time algorithm to decide if a graph drawn on Σ is 4-colorable; and indeed, the question
+of existence of such an algorithm is a fundamental open problem.
+    The case of 3-coloring triangle-free graphs on surfaces may shed some light on this problem. It
+is known that there are infinitely many 4-critical triangle-free graphs on all surfaces other than the
+plane, yet there is a linear time algorithm to decide if a triangle-free graph on any fixed surface
+is 3-colorable [6]. The algorithm consists of two parts: In the first part, the problem is reduced to
+(near) quadrangulations [5], and the second part gives a topological criterion for 3-colorability of
+near-quadrangulations [2].
+    Our hope is that (near) Eulerian triangulations could play the same intermediate role in the
+case of 4-colorability of graphs on surfaces. Indeed, there are a number of arguments and analogies
+supporting this idea:
+
+ (A) The only constructions of ‘‘generic’’ (e.g., avoiding non-trivial small separations) non-4-
+     colorable graphs drawn on a fixed surface that we are aware of are based on near Eulerian
+     triangulations, such as Fisk’s construction [9] or adding vertices to faces of non-3-colorable
+     quadrangulations of the projective plane [13].
+ (B) Many results on coloring quadrangulations of surfaces correspond to results for Eulerian
+     triangulations. For example:
+
+          – Planar quadrangulations are 2-colorable, and analogously, planar Eulerian triangulations
+            are 3-colorable, and in fact characterize 3-colorability of planar graphs.
+          – Famously, Youngs [25] proved that a graph drawn in the projective plane so that all
+            faces have even length is 3-colorable if and only if it does not contain a non-bipartite
+            quadrangulation as a subgraph. Compare this to the fact that for Eulerian triangulation
+            T of the projective plane, Fisk [8] showed that T has an independent set U such that all
+            faces of T − U have even length, and Mohar [13] proved that T is 4-colorable if and only
+            if T − U is 3-colorable.
+          – Hutchinson [11] proved that every graph drawn on a fixed orientable surface with
+            only even-length faces and with sufficiently large edge-width (the length of the short-
+            est non-contractible cycle) is 3-colorable, and Nakamoto et al. [16] and Mohar and
+            Seymour [14] have shown that such graphs on non-orientable surfaces are 3-colorable
+            unless they contain a quadrangulation with an odd-length orienting cycle. Analogously,
+            for any orientable surface, any Eulerian triangulation with sufficiently large edge-width
+            is 4-colorable [12], and for non-orientable surfaces, the only non-4-colorable Eulerian
+            triangulations of large edge-width are those that have an independent set whose removal
+            results in an even-faced non-3-colorable graph [15]
+
+   In this paper, we make the first step towards the design of a polynomial-time algorithm to
+decide whether an Eulerian triangulation of a fixed surface is 4-colorable. In particular, we give
+the following algorithm for planar near-Eulerian-triangulations, i.e., plane graphs where all the faces
+except possibly for the outer one have length three and all the vertices not incident with the outer
+face have even degree.
+                                                  2
+Z. Dvořák, B. Moore, M. Seifrtová et al.                   European Journal of Combinatorics 127 (2025) 104138
+
+
+Theorem 1. For every integer ℓ, there is a linear-time algorithm that given
+
+   • a planar near-Eulerian-triangulation G with the outer face bounded by a cycle C of length at most
+     ℓ such that all vertices of C have odd degree in G, and
+   • a precoloring ϕ of the vertices incident with the outer face of G using only three colors,
+decides whether ϕ extends to a 4-coloring of G.
+   The motivation for considering the special case of planar near-Eulerian-triangulations with
+precolored outer face comes from the general approach towards solving problems for graphs
+on surfaces, which can be seen e.g. in [2–4,18,19,21,23] and many other works and is explored
+systematically in the hyperbolic theory of Postle and Thomas [17]. The general outline of this
+approach is as follows:
+
+   • Generalize the problem to surfaces with boundary, with the boundary vertices precolored (or
+      otherwise constrained).
+   • Use this generalization to reduce the problem to ‘‘generic’’ instances (e.g., those without short
+     non-contractible cycles, since if an instance contains a short non-contractible cycle, we can
+     cut the surface along the cycle and try to extend all the possible precolorings of the cycle in
+     the resulting graph drawn in a simpler surface).
+   • The problem is solved in the basic case of graphs drawn in a disk and on a cylinder (plane
+     graphs with one or two precolored faces).
+   • Finally, the general case is solved with the help of the two basic cases by reducing it to the basic
+     cases by further cutting the surface and carefully selecting the constraints on the boundary
+     vertices [2,19], or using quantitative bounds from the basic cases to show that truly generic
+     cases do not actually arise [17].
+
+Thus, Theorem 1 is a step towards solving the basic case of graphs drawn in a disk. It unfortunately
+does not solve this case fully because of the extra assumption that ϕ only uses three colors (and
+to a lesser extent due to the assumption that vertices of C have odd degree). Without this extra
+assumption, we were able to solve the problem when the precolored outer face has length at most
+five.
+
+Theorem 2. There is a linear-time algorithm that given
+
+   • a planar near-Eulerian-triangulation G with the outer face bounded by a cycle C of length at most
+      five and
+   • a precoloring ϕ of C
+decides whether ϕ extends to a 4-coloring of G.
+   In general, we were only able to find a necessary topological condition for such an extension
+to exist (Lemma 24). Moreover, we show that this condition is sufficient in the special case when
+G has an independent set U disjoint from C such that all faces of G − U except for the outer one
+have length four (Theorem 26); the discussion in (B) above justifies the importance of this special
+case. We conjecture that using this topological condition in combination with further ideas, it will
+be possible to resolve the disk case in full.
+
+Conjecture 3. For every positive integer ℓ, there is a polynomial-time algorithm that given
+
+   • a planar near-Eulerian-triangulation G with the outer face of length at most ℓ and
+   • a precoloring ϕ of the vertices incident with the outer face
+decides whether ϕ extends to a 4-coloring of G.
+    A step towards this conjecture would be to prove that the precoloring always extends if G
+is ‘‘sufficiently generic’’ as described in the following conjecture (for the definition of a viable
+precoloring, see Section 2, where we show that if a precoloring of the outer face of a planar
+near-Eulerian-triangulation extends to a 4-coloring of the whole graph, then it must be viable).
+                                                   3
+Z. Dvořák, B. Moore, M. Seifrtová et al.                         European Journal of Combinatorics 127 (2025) 104138
+
+
+Conjecture 4. For every positive even integer ℓ, there exists an integer d such that the following claim
+holds. Let G be a planar near-Eulerian-triangulation with the outer face bounded by a cycle C of length
+ℓ and let U be an independent set disjoint from C such that G − U is bipartite. Moreover, suppose that
+G − U has a set S of d faces of length at least six such that
+
+   • there is no 4-cycle in G − U separating a face of S from the outer face, and
+   • for distinct faces s1 , s2 ∈ S, the distance between s1 and s2 in G − U is at least d and there is no
+     closed walk of length less than ℓ in G − U separating both s1 and s2 from the outer face.
+Then any viable 4-coloring of C extends to a 4-coloring of G.
+    The structure of the paper and outline of the proofs are as follows. In Section 2, we prove that
+the precoloring extension problem is equivalent to finding color-preserving homomorphisms to the
+infinite triangular grid. In Section 3 we prove a common generalization of Theorems 1 and 2 by
+applying an old result of Hell [10] to the triangular grid. In Section 4, we describe the necessary
+topological condition for precoloring extension in planar near-Eulerian-triangulations, and show
+that this condition is sufficient in the case where the near-Eulerian-triangulation arises from a
+near-quadrangulation, proving Theorem 26.
+
+2. Homomorphisms to triangular grid
+
+   A patch is a connected plane graph with all faces of length three except possibly for the outer
+face. A vertex of a patch is internal if it is not incident with the outer face. Let us note the following
+standard observation.
+
+Observation 5. A patch G is 3-colorable if and only if all internal vertices of G have even degree, i.e., if
+G is a near-Eulerian-triangulation.
+
+Proof. Without loss of generality, we can assume that G is 2-connected, as otherwise we can
+3-color each 2-connected block of G separately and combine the colorings (after possibly permuting
+the colors) to obtain a 3-coloring of G. It follows that the outer face of G is bounded by a cycle. Let
+G′ be the plane triangulation obtained by taking two copies of G and identifying the corresponding
+vertices on the outer face. Clearly G is 3-colorable if and only if G′ is 3-colorable, and it is well-known
+that a plane triangulation is 3-colorable if and only if it is Eulerian. □
+    Note that if the patch is 2-connected, then its 3-coloring is unique up to a permutation of colors,
+but otherwise there is some ambiguity in the choice of the 3-coloring. Motivated by this observation,
+it will be convenient to work with graphs equipped with a fixed 3-coloring. A hued graph is a graph
+G together with a proper 3-coloring ψG : V (G) → Z3 .
+    It will also be often useful to additionally fix a 4-coloring of G, and it will be notationally
+convenient to use the elements of Z22 as colors. Hence, a dappled graph is a hued graph G together
+with a proper 4-coloring ϕG : V (G) → Z22 . For a vertex v ∈ V (G), we say that ψG (v ) is the hue and
+ϕG (v ) is the color of v . For a hued graph H and a 4-coloring θ of H, let H θ denote the corresponding
+dappled graph such that ϕH θ = θ . Conversely, for a dappled graph G, let G− denote the hued graph
+obtained by forgetting the colors of vertices.
+    Homomorphisms of dappled graphs are required to preserve edges and both hue and color, i.e., f :
+V (G) → V (H) is a homomorphism if f (u)f (v ) ∈ E(H) for every uv ∈ E(G) and ψH (f (v )) = ψG (v ) and
+ϕH (f (v )) = ϕG (v ) for every v ∈ V (G).
+    The dappled triangular grid (see Fig. 1) is the infinite dappled graph T with
+
+   • vertex set {(i, j) : i, j ∈ Z},
+   • vertices (i1 , j1 ) and (i2 , j2 ) adjacent if and only if (i2 − i1 , j2 − j1 ) ∈ {±(1, 0), ±(0, 1), ±(1, 1)},
+   • hue ψT (i, j) = (i + j) mod 3 for each vertex (i, j), and
+   • color ϕT (i, j) = (i mod 2, j mod 2) for each vertex (i, j).
+   Let us remark that since T is a triangulation, the hue is unique up to permutation of colors,
+while the choice of the 4-coloring is more deliberate. In particular, the following claim follows by
+an inspection of the definition.
+                                                        4
+Z. Dvořák, B. Moore, M. Seifrtová et al.                           European Journal of Combinatorics 127 (2025) 104138
+
+
+
+
+Fig. 1. A portion of the dappled triangular grid T. The hues of the vertices are represented by their shapes. The dashed
+lines indicate a toroidal drawing of the graph K3 × K4 for which T is the universal cover.
+
+
+
+
+Observation 6. Let T be the dappled triangular grid. For any vertex v ∈ V (T), if u1 and u2 are distinct
+neighbors of v , then (ψT (u1 ), ϕT (u1 )) ̸ = (ψT (u2 ), ϕT (u2 )). Consequently, for any connected dappled graph
+G and any vertex x ∈ V (G), if f1 , f2 : V (G) → V (T) are homomorphisms and f1 (x) = f2 (x), then f1 = f2 .
+
+   Let us now give the key property of dappled patches; the proof easily follows from the
+coloring-flow duality of Tutte [24], we give the details for completeness.
+
+Theorem 7. Every dappled patch G has a homomorphism to the dappled triangular grid T.
+
+Proof. For a ∈ {1, 2} and (b, c) ∈ {(0, 1), (1, 0), (1, 1)}, let
+                           {
+                               1  if a = b + c
+        σ (a, (b, c)) =
+                               −1 otherwise
+        δ (a, (b, c)) = σ (a, (b, c)) · (b, c).
+For each pair u, v ∈ V (G) of adjacent vertices of G, let us define
+
+        δ (u, v ) = δ (ψG (v ) − ψG (u), ϕG (v ) − ϕG (u)).
+Here, the subtractions are performed in Z3 and in Z22 , respectively, and the results are interpreted
+as integers in {1, 2} or pairs of integers in {(0, 1), (1, 0), (1, 1)}. Note that it is not possible for the
+differences to be 0 or (0, 0), since ψG and ϕG are proper colorings. Clearly δ (u, v ) = −δ (v, u). For a
+walk W = v0 v1 . . . vk in G, let
+                   k
+                   ∑
+        δ (W ) =         δ (vi−1 , vi ).
+                   i=1
+
+Observe that for any triangle Q = v0 v1 v2 v3 in G with v0 = v3 , there exists a ∈ {1, 2} such that
+
+        ψG (vi ) − ψG (vi−1 ) = a for all i ∈ {1, 2, 3},
+and
+
+        {ϕG (vi ) − ϕG (vi−1 ) : i ∈ {1, 2, 3}} = {(0, 1), (1, 0), (1, 1)}
+Consequently,
+
+        δ (Q ) = δ (a, (0, 1)) + δ (a, (1, 0)) + δ (a, (1, 1)) = (0, 0).
+Since this holds for the boundary of every internal face of G, we conclude that also for every closed
+walk C in G, we have δ (C ) = 0. Therefore, for any (not necessarily adjacent) vertices u, v ∈ V (G),
+                                                              5
+Z. Dvořák, B. Moore, M. Seifrtová et al.                              European Journal of Combinatorics 127 (2025) 104138
+
+
+we can define δ (u, v ) = δ (W ) for any walk W from u to v , and the definition does not depend on
+the choice of W .
+    Let u be an arbitrary vertex of G and let u′ be a vertex of T such that ψG (u) = ψT (u′ ) and
+ϕG (u) = ϕT (u′ ); such a vertex u′ exists, since T contains vertices with all combinations of hue and
+color. Let f : V (G) → V (T) be defined by letting f (v ) = u′ + δ (u, v ) for each v ∈ V (G). It is
+straightforward to verify that f is a homomorphism from G to T:
+
+   • If xy ∈ E(G), then f (y) − f (x) = δ (x, y), as seen by considering a walk W from u to x and
+     the walk from u to y obtained by appending the edge xy at the end of W . Consequently
+     f (y) − f (x) ∈ {±(0, 1), ±(1, 0), ±(1, 1)}, and thus f (x) and f (y) are adjacent in T.
+   • We prove that each vertex y ∈ V (G) is mapped to a vertex of the same hue and color in T by
+     induction on the distance between y and u in G. If y = u, then the claim holds by the choice of
+     u′ . Hence, suppose that y ̸ = u and let x be a neighbor of y on a shortest path from u to y in G.
+     By the induction hypothesis, ψT (f (x)) = ψG (x) and ϕT (f (x)) = ϕG (x). Let a = ψG (y) − ψG (x) and
+     (b, c) = ϕG (y) − ϕG (x). Recall that f (y) − f (x) = δ (x, y) = σ (a, (b, c)) · (b, c). By the definition
+     of the hue and coloring of T, when computing in Z3 , we have
+                                                                      {
+                                                                          b+c         if a = b + c
+              ψT (f (y)) − ψT (f (x)) = σ (a, (b, c)) · (b + c) =                                          = a,
+                                                                          −(b + c)    if a = −(b + c)
+
+      and when computing in Z22 , we have
+              ϕT (f (y)) − ϕT (f (x)) = (b, c).
+      Therefore,
+              ψT (f (y)) = ψT (f (x)) + a = ψG (x) + a = ψG (y)
+              ϕT (f (y)) = ϕT (f (x)) + (b, c) = ϕG (x) + (b, c) = ϕG (y). □
+
+   Let us remark that another way of interpreting (and proving) Theorem 7 is as follows: The hue
+and coloring of G determine a homomorphism from G to the graph KZ3 × KZ2 , i.e. the categorical
+                                                                                                  2
+product of cliques with 3 and 4 vertices.2 This graph can be drawn as a triangulation of the torus,
+and T is its universal cover.3
+    A 4-coloring ϕ of a connected hued graph C is viable if and only if the dappled graph C ϕ has
+a homomorphism to the dappled triangular grid. Let us note that by Observation 6, this condition
+is easy to verify, as such a homomorphism, if it exists, can be found in linear time by extending a
+partial homomorphism step-by-step.
+
+Corollary 8. Let G be a hued patch and let ϕ be a 4-coloring of the boundary C of the outer face of G.
+If ϕ extends to a 4-coloring of G, then ϕ is viable.
+    This condition is topological in nature; another way how to view it is as follows: Recall that the
+dappled triangular grid T is the universal cover of the dappled graph KZ3 × KZ2 drawn on the torus.
+                                                                                  2
+A 4-coloring of a hued cycle C is viable if and only if the corresponding homomorphism to KZ3 × KZ2
+                                                                                                          2
+maps C to a contractible closed walk on the torus.
+    Note that viability is a necessary but of course not sufficient condition. However, it is the strictest
+possible condition based only on the coloring and hue of the boundary of the outer face, in the
+following sense.
+
+Lemma 9. If C is a dappled cycle with ϕC viable, then there exists a dappled patch G with the outer
+face bounded by a dappled cycle isomorphic to C .
+
+  2 For graphs G and G , G × G is the graph with vertex set V (G ) × V (G ) and with (u , u ) adjacent to (v , v ) if
+                   1       2   1     2                                1        2             1  2              1   2
+and only if u1 v1 ∈ E(G1 ) and u2 v2 ∈ E(G2 ).
+  3 More precisely, the plane is a universal cover of the torus, i.e., the plane is simply connected and there exists a
+covering map f from the plane to the torus, and the restriction of f to the drawing of T in the plane is a locally bijective
+homomorphism to the toroidal drawing of K3 × K4 .
+
+                                                             6
+Z. Dvořák, B. Moore, M. Seifrtová et al.                          European Journal of Combinatorics 127 (2025) 104138
+
+
+
+
+Fig. 2. Construction from the proof of Lemma 9. The vertex shapes indicate their hue. The color choices represent one
+possible extension, depending on if the hue’s of y and x are the same or not. (For interpretation of the references to
+color in this figure legend, the reader is referred to the web version of this article.)
+
+
+
+
+Proof. Let us prove the claim by induction on the length of C . Let f : V (C ) → V (T) be a
+homomorphism from C to the dappled triangular grid T that exists by the viability of ϕC . If f is
+injective, then we can let G be the subgraph of T drawn inside the cycle f (C ).
+    Otherwise, there exist distinct vertices u, v ∈ V (C ) such that f (u) = f (v ). Since f is a
+homomorphism, this implies that u and v have the same color and hue, and in particular u and
+v are not adjacent in C . Let C1 and C2 be the 2-connected blocks (or single edges) of the dappled
+graph obtained from C by identifying u with v to a single vertex z (C1 and C2 are cycles if the
+distance between u and v in C is at least three, and otherwise at least one of them consists of a
+single edge). For i ∈ {1, 2}, the restriction of f to Ci is a homomorphism to T, and thus ϕCi is viable. If
+Ci is just an edge, then let Gi = Ci , otherwise let Gi be a dappled patch with the outer face bounded
+by a dappled cycle isomorphic to Ci , which exists by the induction hypothesis.
+    Let G′ be the dappled patch obtained from the disjoint union of G1 and G2 by identifying the
+vertices corresponding to z. Let xzy be a part of the boundary walk of the outer face of G′ . The
+dappled patch G is obtained from G′ by the following operation, ensuring that the outer face of G is
+bounded by a cycle isomorphic to C (see Fig. 2 for an illustration): Add a path Q between x and y
+of length two if x and y have the same hue and of length three if they have a different hue. Add a
+vertex w , and edges between w and all vertices of Q , and between z and all vertices of Q . Observe
+that both ψG′ and ϕG′ can be extended to G so that w has the same hue and color as z. □
+
+3. Single-hexagon precolorings
+
+    In this section we aim to prove a common generalization of Theorems 1 and 2. The key
+observation is that in both cases, the homomorphism to the dappled triangular grid T associated
+with the precoloring ϕ maps C to the neighborhood of a single vertex of T.
+    A hexagon is a dappled subgraph of T induced by a vertex and its neighbors. A 4-coloring ϕ
+of a connected hued graph C is a single-hexagon coloring if it is viable and the corresponding
+homomorphism f maps C ϕ to a subgraph of a hexagon H of T. The central hue c and the central
+color k of a single-hexagon coloring is the hue and the color of the central vertex x of H. Let us
+remark that since x is a universal vertex in H, no other vertex of H has hue c or color k; and since
+f is a homomorphism, this implies that a vertex of C ϕ has color k if and only if it has hue c.
+    There are two important examples of single-hexagon colorings, corresponding to the assump-
+tions of Theorems 2 and 1, respectively.
+
+Lemma 10. Every viable 4-coloring of a hued (≤ 5)-cycle is single-hexagon.
+                                                          7
+Z. Dvořák, B. Moore, M. Seifrtová et al.                     European Journal of Combinatorics 127 (2025) 104138
+
+
+Proof. Let C be a hued (≤ 5)-cycle, and θ a viable 4-coloring of C . By the assumption, there exists
+a homomorphism f from C θ to T.
+   Observe that all connected subgraphs with at most 3 vertices in T are contained inside a hexagon,
+hence we may assume the image of f contains at least 4 vertices. Since f is a homomorphism
+of a (≤ 5)-cycle, the only possible images on 4 vertices are isomorphic to a 4-cycle, or a triangle
+with a pendant vertex. Again, one checks that every subgraph isomorphic to one of these images is
+contained in a hexagon.
+   The last case to consider is if C is a 5-cycle and the image of C under f is isomorphic to a
+5-cycle. Observe that the subgraph of T induced by the vertex set of any 5-cycle is the union of
+three triangles sharing a vertex, and thus it is again contained in a hexagon. □
+   Let us call a patch odd if its outer face is bounded by a cycle C and all vertices incident with the
+outer face have odd degree.
+
+Observation 11. If G is a hued odd patch with the outer face bounded by the cycle C , then only two
+different hues appear on C .
+
+Proof. Let v be any vertex of C and let x1 , . . . , xk be the neighbors of v in the cyclic order around
+v according to the plane drawing of G, where x1 and xk are the neighbors of v in C . Since G is an
+odd patch, x1 . . . xk is a path and k is odd. The hue ψC (v ) cannot appear on this path, and thus the
+remaining two values of the hue alternate on it. It follows that ψC (x1 ) = ψC (xk ).
+    Let C = v1 . . . vm , where vm = v0 . By the previous observation applied to each vertex of C , we
+conclude that ψC (v1 ) = ψC (v3 ) = ψC (v5 ) = · · · and ψC (v2 ) = ψC (v4 ) = · · · , and thus only two
+different hues appear on C . □
+
+Corollary 12. Let G be a hued odd patch with the outer face bounded by the cycle C . If a viable
+4-coloring θ of C only uses three colors, then θ is a single-hexagon coloring.
+
+Proof. By Observation 11, we can assume that only the hues 0 and 1 are used on C . Moreover, we
+can assume that only the colors (0, 0), (0, 1), and (1, 0) are used by θ . Since θ is viable, there exists
+a homomorphism f from C θ to T. By symmetry, we can assume that f maps a vertex of C to the
+vertex (0, 0). We claim that f maps C to a subgraph of the 6-cycle K of T induced by the neighbors
+(0, 0), (0, 1), (1, 2), (2, 2), (2, 1), and (1, 0) of the vertex (1, 1) of hue 2. To see this, it suffices to
+observe that for each vertex x ∈ V (K ), all neighbors of x not in K have color (1, 1) or hue 2, and
+thus they cannot be used in the image of f . It follows that f maps C to a 6-cycle which lies in the
+neighborhood of the vertex (1, 1), and thus θ is a single-hexagon coloring. □
+    A retract of a hued graph G is an induced subgraph H of G such that there exists a retraction
+f from G to H, i.e., a homomorphism such that f (v ) = v for each v ∈ V (H). Note that if G is a
+retraction to H, then all edges of H are preserved. Let us note the following key observation, which
+is a consequence of the fact that each shortest cycle in a bipartite graph is a retract [10]; we include
+a proof for completeness. Recall that for a dappled graph G, the graph G− is obtained from G by
+forgetting the colors of the vertices.
+
+Lemma 13. For every hexagon X of the triangular grid T, the hued hexagon X − is a retract of T− .
+
+Proof. By symmetry, we can assume that X is the subgraph of T induced by the vertex (1, 1) and
+its neighbors. Let H be the subgraph of T induced by vertices of hue 0 and 1, and let e be the edge
+of H between vertices (0, 0) and (0, 1). Let h : Z+
+                                                  0 → V (X ) be defined as follows:
+
+                 (0, 0)
+               ⎧
+               ⎪
+               ⎪              if m = 0
+                 (1, 0)
+               ⎪
+               ⎪
+               ⎪
+               ⎪              if m = 1
+                 (2, 1)
+               ⎪
+                              if m = 2
+               ⎨
+        h(m) =
+               ⎪
+               ⎪ (2, 2)       if m = 3
+                 (1, 2)
+               ⎪
+               ⎪
+               ⎪
+               ⎪              if m ≥ 4 is even
+                 (0, 1)
+               ⎪
+                              if m ≥ 5 is odd
+               ⎩
+
+                                                     8
+Z. Dvořák, B. Moore, M. Seifrtová et al.                                 European Journal of Combinatorics 127 (2025) 104138
+
+
+
+
+Fig. 3. A picture showing the retraction for Lemma 13. The hexagon with red edges is target hexagon, with the blue
+circle in the red hexagon being the node (1, 1). The blue dotted edge indicates the edge (0, 0)(0, 1) which is the edge
+deleted in the proof of Lemma 13. The shapes on the vertex nodes indicate the respective hues, and colors represent
+which vertex in the retraction the vertices get mapped to. The graph H is the graph obtained by deleting all blue circles.
+(For interpretation of the references to color in this figure legend, the reader is referred to the web version of this article.)
+
+
+
+
+See Fig. 3 for a picture of the retraction. Observe that for each m ≤ 5, the distance of h(m) from (0, 0)
+in H − e is exactly m. Moreover, note that H − e is bipartite and the vertices at even distance from
+(0, 0) have hue 0 and those at odd distance have hue 1. For each vertex v of T, define f (v ) = (1, 1)
+if v has hue 2 and f (v ) = h(m) if v has hue 0 or 1 and its distance from (0, 0) in H − e is m. Clearly,
+f preserves hue and it is the identity on X .
+    Consider any edge uv of G.
+
+   • If uv ∈ E(H − e), then since H − e is bipartite, the distances from (0, 0) to u and v in H − e
+     differ by exactly one. Observe that h(0)h(1)h(2) . . . is a walk in X , and consequently f maps u
+     and v to adjacent vertices of X .
+   • If uv = e, then f maps u and v to adjacent vertices h(0) = (0, 0) and h(5) = (0, 1) of X .
+   • If uv ̸∈ E(H), then exactly one of u and v (say u) has hue 2, and thus f maps u to the central
+     vertex of X and v to a different vertex of X .
+Therefore f preserves the edges, and consequently f is a retraction from T− to X − . □
+   This implies that the precoloring extension problem in hued patches for single-hexagon precol-
+orings can be reduced to the problem of 3-precoloring extension in planar bipartite graphs.
+
+Corollary 14. Let G be a hued patch and let ϕ : V (C ) → Z22 be a single-hexagon 4-coloring of the
+boundary C of the outer face of G, with central hue c and central color k. Let K = Z22 \ {k}. Let H be the
+bipartite subgraph of G induced by the vertices of hue different from c, and let ϕ ′ be the restriction of ϕ
+to H. Then ϕ extends to a 4-coloring of G if and only if ϕ ′ extends to a 3-coloring of H (using the colors
+in K ).
+
+Proof. The vertices of G of hue c form an independent set; hence, a 3-coloring of H extending ϕ ′
+can be extended to a 4-coloring θ of G by giving all vertices of hue c the color k. Recall that all
+vertices of C of hue c have color k, and thus θ extends ϕ .
+   Conversely, suppose that ϕ extends to a 4-coloring β of G. By Theorem 7, the dappled graph
+Gβ has a homomorphism f to the dappled triangular grid T. Since ϕ is a single-hexagon 4-coloring,
+there exists a hexagon X in T such that the restriction of f to C is a homomorphism to X . By Lemma
+13, there exists a retraction r from T− to X − . Let f ′ be the composition of f and r. Then f ′ is a
+homomorphism from G to X − such that f ′ (v ) = f (v ) for every v ∈ V (C ). Let β ′ : V (G) → Z22 be
+defined by setting β ′ (u) = ϕX (f ′ (u)) for each u ∈ V (G). Since f ′ is a homomorphism from G to X −
+and ϕX is a proper 4-coloring of X − , β ′ is a proper 4-coloring of G. Moreover, for each v ∈ V (C ), we
+have β ′ (v ) = ϕX (f ′ (v )) = ϕT (f (v )) = β (v ) = ϕ (v ), and thus β ′ extends ϕ and is a single-hexagon
+coloring.
+                                                               9
+Z. Dvořák, B. Moore, M. Seifrtová et al.                         European Journal of Combinatorics 127 (2025) 104138
+
+
+    Every vertex of X other than the central one has hue different from c and color different from
+k, and thus β ′ assigns color k exactly to vertices of G of hue c. Consequently, the restriction of β ′
+to H is a 3-coloring of H using the colors in K and extending ϕ ′ . □
+   Dvořák, Král’ and Thomas [6] gave for every b a linear-time algorithm to decide whether a
+precoloring of at most b vertices of a planar triangle-free graph extends to a 3-coloring. Hence, we
+have the following consequence, which by Lemma 10 and Corollary 12 strengthens both Theorem
+1 and Theorem 2.
+
+Corollary 15. For every integer ℓ, there exists an algorithm that, given a hued patch G with the outer
+face of length at most ℓ and a single-hexagon precoloring ϕ of the boundary of the outer face, decides
+in linear time whether ϕ extends to a 4-coloring of G.
+    Corollary 14 shows that the problem of extending the precoloring of the outer face in Eulerian
+triangulations generalizes the analogous problem in bipartite graphs. For a 2-connected bipartite
+plane graph B, the patch extension of B is the hued odd patch created by adding a vertex to each
+face except for the outer one and joining it with all vertices in the boundary of the face; the vertices
+of B are given hues 0 and 1 and the newly added vertices are given hue 2.
+
+Corollary 16. Let B be a 2-connected bipartite planar graph. A 3-coloring of the boundary of the outer
+face of B extends to a 3-coloring of B if and only if it extends to a 4-coloring of the patch extension of B.
+
+4. Homotopy
+
+   We were not able to find an exact characterization for extendability of a precoloring ϕ of the
+cycle C bounding the outer face of a hued patch in general. However, a useful necessary condition
+(Lemma 24) can be expressed in terms of the homotopy of the walk to which C is mapped
+by the homomorphism of C ϕ to the dappled triangular grid T. This condition leads to an exact
+characterization for the precoloring extension in patch extensions, Theorem 26.
+   In the language of algebraic topology, the condition is based on the free homotopy in the
+1-dimensional complex T. We prefer a self-contained treatment, so in the following subsection we
+give preliminary observations. Those comfortable with the notions may skip ahead to Lemma 24.
+
+4.1. Preliminaries
+
+    Let us start with some definitions.
+    A closed walk U in a simple graph is a cyclic sequence u1 , . . . , um such that ui ui+1 is an edge for
+i ∈ {1, . . . , m − 1} and um u1 is an edge. Let us remark that the labeling of vertices in the cyclic
+sequence is arbitrary, i.e., u1 and um do not play any special role and are not specified with the
+closed walk. By a walk, we mean a sequence W = v1 , . . . , vk of vertices such that vi vi+1 is an edge
+for i ∈ {1, . . . , k − 1}. We say that v1 and vk are the ends of the walk. If v1 = vk , we say that W is
+an opening of the closed walk given by the cyclic sequence v1 , . . . , vk−1 . Note that if the vertices of
+a closed walk U = u1 , . . . , um are pairwise different, then U has exactly m different openings. For
+a closed walk U, we write −U for the reversed closed walk.
+    We say that a walk W is a combination of a walk W1 = v1 , . . . , vk and a closed walk W2
+if there exists an opening z1 , . . . , zm of W2 and i ∈ {1, . . . , k} such that vi = z1 = zm and
+W = v1 , . . . , vi , z2 . . . , zm , vi+1 , . . . , vk . A combination of two closed walks is defined analogously.
+    Let W = v1 , v2 , . . . , vk be a walk. If vi = vi+2 for some i ∈ {1, . . . , k − 2}, we say that the segment
+vi vi+1 vi+2 of the walk is retractable, and that W ′ = v1 , . . . , vi vi+3 , . . . , vk is obtained from W by a
+one-step retraction. The topological retract of W is the walk obtained by performing the one-step
+retraction operation as long as possible; note that the topological retract of W has the same ends
+as W .
+
+Observation 17. The topological retract of a walk is unique, independent of the choice and order of
+the one-step retraction operations.
+                                                        10
+Z. Dvořák, B. Moore, M. Seifrtová et al.                           European Journal of Combinatorics 127 (2025) 104138
+
+
+Proof. Suppose for a contradiction that there exists a walk W and two sequences R = r1 , . . . , ra
+and R′ = r1′ , . . . , rb′ of one-step retraction operations ending in different topological retracts Z and
+Z ′ . Choose W and these sequences to be as short as possible. Let x1 x2 x3 be the retractable segment
+of W contracted by r1 . This segment does not appear in Z ′ , and thus at least one of its edges must
+be removed by a one-step retraction operation of R′ . Thus, there exists j ∈ {1, . . . , b} such that,
+letting W ′ be the walk obtained from W by performing the operations r1′ , . . . , rj′−1 , W ′ still contains
+the segment x1 x2 x3 and
+
+   • rj′ contracts the segment x1 x2 x3 , or
+   • W ′ contains segment x1 x2 x3 x4 with x2 = x4 and rj′ contracts the retractable segment x2 x3 x4 , or
+   • W ′ contains segment x0 x1 x2 x3 with x0 = x2 and rj′ contracts the retractable segment x0 x1 x2 .
+Let R′′ = r1 , r2′ , . . . , rj′−1 , rj′+1 , . . . , rb′ , and observe that in any of the three cases, performing the
+sequence R′′ on W has the same effect as performing R′ , i.e., results in Z ′ . Let W1 be obtained
+from W by performing r1 ; then Z and Z ′ are obtained from W1 by performing R1 = r2 , . . . , ra
+and R′′1 = r2′ , . . . , rj′−1 , rj′+1 , . . . , rb′ . This contradicts the choice of the sequences R and R′ as shortest
+possible. □
+   We define a one-step retraction and the topological retract for closed walk analogously; to clarify,
+we define a one-step retraction of a closed walk of length two to be an empty walk. We say that a
+closed walk is null-homotopic if its topological retract is empty. Note that a null-homotopic closed
+walk necessarily has even length. The following claim has the same proof as Observation 17.
+
+Observation 18. The topological retract of a closed walk is unique, independent of the choice and order
+of the one-step retraction operations.
+    We need several further simple observations on topological retracts.
+
+Observation 19.         If W is a non-empty null-homotopic closed walk, then at least two segments of W
+are retractable.
+
+Proof. By induction on the length of W . The claim is obvious if |W | = 2. Otherwise, consider a
+retractable segment x1 x2 x3 of S1 of W , and let W ′ be the one-step retraction of W on this segment.
+By the induction hypothesis, W ′ has at least two retractable segments; hence, there is a retractable
+segment S2 of W ′ whose middle vertex is not x1 . Then S1 and S2 are retractable segments of W . □
+
+Observation 20. A combination Z of a closed walk W with a null-homotopic closed walk W ′ is
+null-homotopic if and only if W is null-homotopic.
+
+Proof. The claim is trivial if W ′ is empty. Otherwise, by Observation 19, there exists a retractable
+segment S of W ′ that also appears in the opening of W ′ used to construct Z , and thus also in S. Let
+Z1 and W1′ be the one-step retractions of Z and W ′ on S, respectively; then Z1 is a combination of W
+and W1′ . The claim now follows by induction, using the uniqueness of the topological retracts. □
+
+Observation 21. Let W = u1 , . . . , um be a closed walk and let W1 and W2 be walks such that W1 =
+u1 , u2 , . . . , uk and W2 = u1 , um , um−1 , . . . , uk for some k ∈ {1, . . . , m}. Then W is null-homotopic if
+and only if W1 and W2 have the same topological retract.
+
+Proof. If W1 and W2 have the same topological retracts W1′ and W2′ , then the concatenation Z of
+W1′ and W2′ is obtained from W by a sequence of one-step retractions, and since W1′ = W2′ , we can
+retract Z from either end to an empty closed walk, showing that W is null-homotopic.
+   Conversely, suppose that W is null-homotopic. If there exists i ∈ {1, 2} such that Wi contains a
+retractable segment S, then we can perform a one-step retraction on S in Wi and in W and proceed
+by induction. Otherwise, neither of the two retractable segments S1 and S2 which exist in W appear
+in W1 and W2 , and thus u1 and uk are their middle points, respectively. This implies that W1 and W2
+                                                          11
+Z. Dvořák, B. Moore, M. Seifrtová et al.                         European Journal of Combinatorics 127 (2025) 104138
+
+
+have the same starting edge, i.e., u2 = um . We can contract S1 in W and apply the same observation
+to walks W1′′ = u2 , . . . , uk and W2′′ = um , um−1 , . . . , uk to conclude u3 = um−1 , etc., eventually
+concluding that W1 = W2 . □
+
+Observation 22. Let H be a connected plane graph with the outer face bounded by a cycle C (in
+clockwise order). For each internal face p of H, let Fp be the closed walk bounding p (in clockwise order).
+There exists a combination of these closed walks (in some order) and −C such that the resulting closed
+walk is null-homotopic.
+
+Proof. The claim is obvious if H = C , since in that case H has only one internal face p and Fp = C .
+    Otherwise, there exists an edge e incident with two internal faces p1 and p2 such that H − e
+is connected. Let p be the face of H − e containing p1 and p2 . Note that Fp is obtained from a
+combination W of Fp1 and Fp2 by a one-step retraction eliminating the two appearances of the edge
+e. By induction, there exists a combination of −C and closed walks Fp′ for internal faces p′ of H such
+that the resulting closed walk Z1 is null-homotopic. We can replace Fp in this combination by W
+while keeping the two appearances of e next to each other in the resulting closed walk Z2 . Since
+Z1 is obtained from Z2 by the one-step retraction eliminating the two appearances of e, Z2 is also
+null-homotopic. Since W is a combination of Fp1 and Fp2 , the claim of the lemma follows. □
+
+   For a closed walk Z in a graph H and a homomorphism f from H to another graph F , observe
+that f maps Z to a closed walk f (Z ) in F .
+
+Observation 23. Let Z be a closed walk in a graph H and let f be a homomorphism from H to a graph
+F . If Z is null-homotopic, then f (Z ) is also null-homotopic.
+
+Proof. If a segment S = x1 x2 x3 of Z is retractable, i.e., x1 = x3 , then f (x1 ) = f (x3 ), and thus the
+segment f (S) = f (x1 )f (x2 )f (x3 ) of f (Z ) is also retractable. Moreover, if Z ′ is the one-step retraction
+of Z on S, then f (Z ′ ) is the one-step retraction of f (Z ) on f (S). The claim then easily follows by
+induction. □
+
+    Let G be a hued graph. For a closed walk Z in G, let Z be the subgraph of G formed by the vertices
+and edges traversed Z . For a viable 4-coloring ϕ of Z , let W (Z , ϕ ) be the set of the closed walks f (Z )
+                                     ϕ
+over all homomorphisms f from Z to the dappled triangular grid T. Note that since f is unique up
+to the choice of the image of a vertex, all these walks are translations of one another. We say that ϕ
+is null-homotopic on Z if the walks in W (Z , ϕ ) are null-homotopic. Let W (Z ) be the union of W (Z , ϕ )
+over all viable 4-colorings of Z . Note that W (Z ) consists of all closed walks in T with length equal
+to the length of Z and such that the hues of their vertices match the hues of vertices of Z in order.
+    If G is a connected plane graph, then for each face p of G, let⨁    W (p) = W (Z ) for the closed walk
+Z bounding p. Given sets W1 , . . . , Wn of closed walks in T, let        (W1 , . . . , Wn ) denote the set of
+closed walks that can be obtained as a combination of a walk from W1 , a walk from W2 , . . . , and a
+walk from Wn , in any order. For a set W of closed walks, let −W = {−W : W ∈ W }.
+
+4.2. A condition for extension and an application
+
+    With the previous section, the following lemma is rather easy:
+
+Lemma 24. Let G be a hued patch with the outer face bounded by a cycle C and let ϕ be a viable
+4-coloring of C . If ϕ extends to a 4-coloring of G, then for every connected subgraph H of G containing C ,
+               ⨁
+        W =         (−W (C , ϕ ), W (p) for all internal faces p of H)
+
+contains a null-homotopic closed walk.
+
+Proof. Suppose ϕ extends to a 4-coloring β of G, and let f be the corresponding homomorphism
+from Gβ to T. Let β ′ and f ′ be the restrictions of β and f to H; then f ′ is a homomorphism from H β
+                                                                                                       ′
+
+
+                                                        12
+Z. Dvořák, B. Moore, M. Seifrtová et al.                        European Journal of Combinatorics 127 (2025) 104138
+
+
+to T. By Observation 22, there is a null-homotopic composition of −C and the boundary walks of
+internal faces of H, and by Observation 23, the corresponding composition of the images of these
+closed walks under f ′ (which belongs to W ) is null-homotopic. □
+   Let us now give a simple application. A plane graph H is a near-quadrangulation if it is
+2-connected and all internal faces have length four.
+
+Corollary 25. Let H be a near-quadrangulation and let G be the patch extension of H. If a viable
+4-coloring ϕ of the boundary of the outer face of G extends to a 4-coloring of G, then ϕ is null-homotopic
+on the cycle C bounding the outer face of G.
+
+Proof. Observe that if K is a hued 4-cycle using only two values of hue, then W (K ) only contains
+null-homotopic walks. By definition, only two hues appear on H in G. Hence, for each internal face
+p of H, W (p) only contains null-homotopic walks. By Lemma 24 and Observation 20, this implies
+that W (C , ϕ ) contains a null-homotopic closed walk, and thus ϕ is null-homotopic on C . □
+    The condition from Lemma 24 is necessary but not sufficient. However, for the special case of
+the patch extension of a near-quadrangulation H, it is easy to strengthen it to a sufficient condition.
+Let us recall that this special case is motivated by the important role the quadrangulations play in
+the problem of 3-coloring triangle-free graphs on surfaces.
+    Let C be the cycle bounding the outer face of H. We say a path P in H is a generalized chord
+of C with base B if P intersects C exactly in the ends of P, and B is a subpath of C with the same
+ends (note that there are two possible choices for a base of any given generalized chord). Let ϕ be
+a viable 4-coloring of C and let f be the corresponding homomorphism to the dappled triangular
+grid T. A ϕ -shortcut is a generalized chord P of C with base B such that the topological retract of
+f (B) has more edges than P. Note that by Observation 21, if P is a ϕ -shortcut with base B and ϕ is
+null-homotopic on C , then P is also a ϕ -shortcut for the other possible base of P.
+
+Theorem 26. Let H be a near-quadrangulation with the outer face bounded by a cycle C and let G
+be the patch extension of H. A viable 4-coloring ϕ of C extends to a 4-coloring of G if and only if ϕ is
+null-homotopic on C and H has no ϕ -shortcuts.
+
+Proof. Suppose first that ϕ extends to a 4-coloring β of G, and let f be the corresponding
+homomorphism from Gβ to the dappled triangular grid T. By Corollary 25, ϕ is null-homotopic on
+C , and thus it suffices to show that H has no ϕ -shortcuts. Let P be a generalized chord of C with
+base B, let H ′ be the subgraph of H drawn in the closed disk bounded by the cycle C ′ = P ∪ B,
+and let G′ be the patch extension of H ′ , considered as a subgraph of G. Let ϕ ′ be the restriction of
+β to C ′ . Since ϕ ′ extends to a 4-coloring of G′ , Corollary 25 implies ϕ ′ is null-homotopic on C ′ . By
+Observation 21, f (P) has the same topological retract as f (B), and thus P has at least as many edges
+as the topological retract of f (B).
+    We prove the converse by induction on |E(H) \ E(C )|. Let f be the homomorphism from C ϕ to
+the dappled triangular grid T. If H = C , then |C | = 4 and since ϕ is null-homotopic on C , f maps
+two vertices of C to the same vertex of T. Consequently, ϕ uses at most three colors on C , and since
+|V (G) \ V (C )| = 1, ϕ extends to a 4-coloring of G. Hence, we can assume that H ̸= C .
+    Suppose next that there exists a generalized chord P of C with base B such that the topological
+retract R of f (B) has exactly |E(P)| edges. Then f has a unique extension to P such that f (B ∪ P) is
+null-homotopic—if P = v0 , v1 , . . . , vk and R = u0 , . . . , uk , where f (v0 ) = u0 and f (vk ) = uk , we set
+f (vi ) = ui for i = 1, . . . , k − 1. Extend ϕ to P by giving each vertex v ∈ V (P) the color of f (v ). Let
+B′ be the subpath of C from v0 to vk edge-disjoint from B. By Observation 21, f (B) and f (B′ ) have
+the same topological retract, and consequently f (B′ ∪ P) is null-homotopic as well. Let C1 = B ∪ P
+and C2 = B′ ∪ P. For i ∈ {1, 2}, let Hi and Gi be the subgraphs of H and G drawn in the closed disk
+bounded by Ci ; note that Gi is the patch extension of Hi and that ϕ is null-homotopic on Ci .
+    We claim that Hi has no ϕ -shortcuts: By symmetry, we can assume that i = 1. Suppose for a
+contradiction that Q is a ϕ -shortcut of H1 . If both endpoints of Q were contained in B, then Q would
+also be a ϕ -shortcut of H. If both endpoints of Q were contained in P, then consider the subpath
+                                                       13
+Z. Dvořák, B. Moore, M. Seifrtová et al.                            European Journal of Combinatorics 127 (2025) 104138
+
+
+P ′ of P between the endpoints of Q . Since f (P) is equal to its topological retract, f (P ′ ) is also equal
+to its retract, and since Q is a ϕ -shortcut, we have |E(Q )| < |E(P ′ )|. But then the path P ′′ obtained
+from P by replacing P ′ by Q is shorter than P, and since R has exactly |E(P)| edges, P ′′ would be a
+ϕ -shortcut of H. Hence, Q joins a vertex va of P (with 1 ≤ i ≤ k − 1) with a vertex w of V (B) \ V (P).
+Let B1 and B2 be the subpaths of B from v0 and vk to w , and for j ∈ {1, 2}, let Rj be the topological
+retract of f (Bj ). Since R is the topological retract of the concatenation of R1 and R2 and both R1 and
+R2 are already topological retracts, R is a concatenation of a prefix R′1 of R1 with a suffix R′2 of R2 .
+Since |E(R′1 )| + |E(R′2 )| = k = a + (k − a), we have |E(R′1 )| ≥ a or |E(R′2 )| ≥ k − a. By symmetry
+we can assume that |E(R′1 )| ≥ a. Let P0 = v0 . . . va and let D be the base of Q consisting of P0 and
+B1 . Since the prefix R′1 of R1 of length at least a = |E(P0 )| is also a prefix of R, and f (P) = R, the
+topological retract of f (D) is obtained from R1 by deleting the first a vertices, and thus it has length
+|E(R1 )| − a. Since Q is a ϕ -shortcut, it follows that |E(Q )| < |E(R1 )| − a and |E(Q ∪ P0 )| < |E(R1 )|.
+However, this implies that Q ∪ P0 is a ϕ -shortcut in H, which is a contradiction.
+    Therefore, neither H1 nor H2 has a ϕ -shortcut, and thus by the induction hypothesis, ϕ extends
+to a 4-coloring of G1 and G2 . This gives an extension of ϕ to a 4-coloring of G.
+    Finally, suppose that every generalized chord P of C with base B has more edges than the
+topological retract R of f (B). Since H is bipartite, the lengths of P and B have the same parity. Clearly
+the length of a walk and its topological retract also has the same parity, and thus |E(P)| ≡ |E(R)|
+(mod 2). Consequently, |E(P)| ≥ |E(R)| + 2. In particular, this implies that C is an induced cycle.
+    Since H ̸ = C , there exists a vertex v ∈ V (H) \ V (C ) with a neighbor u in C . Let H ′ be the graph
+obtained from H by cutting from the outer face along the edge uv ; i.e., u is split into two vertices u1
+and u2 , where u1 is adjacent to v and the vertices adjacent to u via edges leaving u to the left from
+uv (as seen from the outer face), and u2 is adjacent to v and the vertices adjacent to u via edges
+leaving u to the right from uv . Let ϕ ′ be the 4-coloring of the cycle C ′ bounding the outer face of
+H ′ matching ϕ on V (C ) \ {u}, with ϕ ′ (u1 ) = ϕ ′ (u2 ) = ϕ (u) and with ϕ ′ (v ) chosen to be an arbitrary
+color different from ϕ (u). Since ϕ is null-homotopic on C , observe that ϕ ′ is null-homotopic on C ′ .
+Let f ′ be the corresponding homomorphism from (C ′ )ϕ to T.
+                                                               ′
+
+    Suppose now that H has a ϕ -shortcut Q with base D. If Q does not start in v , it is also a
+                             ′         ′
+
+ϕ -shortcut in H, which is a contradiction. Otherwise, consider the generalized chord P = Q + uv in
+H and let B be its base obtained from D −v by replacing u1 or u2 by u. Let R be the topological retract
+of f (B), and recall that |E(P)| ≥ |E(R)| + 2. Note that the topological retract of f ′ (D) has length at
+most |E(R)| + 1, and since Q is a ϕ ′ -shortcut, we have |E(P)| − 1 = |E(Q )| < |E(R)| + 1 ≤ |E(P)| − 1.
+This is a contradiction. Therefore, there are no ϕ ′ -shortcuts, and by the induction hypothesis, ϕ ′
+extends to a 4-coloring of the patch extension G′ of H. Since G is obtained from G′ by identifying
+u1 with u2 and ϕ ′ (u1 ) = ϕ ′ (u2 ) = ϕ (u), we conclude that ϕ extends to a 4-coloring of G. □
+   It is tempting to ask whether the absence of shortcuts does not imply the extendability to
+4-coloring in more general situations, say just assuming that H is a 2-connected bipartite planar
+graph. Indeed, the assumption that H is a near-quadrangulation is only used in the base case of
+the induction. However, this base case also shows why it is needed: If H is a 6-cycle with vertices
+colored 1, 2, 1, 3, 1, 4 in order, the precoloring is null-homotopic on C and yet it cannot be extended
+to a 4-coloring of the patch extension of H.
+
+References
+
+ [1] Kenneth Appel, Wolfgang Haken, Every planar map is four colorable. Part I: Discharging, Illinois J. Math. 21 (3)
+     (1977) 429–490.
+ [2] Zdeněk Dvořák, Daniel Král’, Robin Thomas, Three-coloring triangle-free graphs on surfaces VI. 3-colorability of
+     quadrangulations, 2015, arXiv, 1509.01013.
+ [3] Zdeněk Dvořák, Daniel Král’, Robin Thomas, Three-coloring triangle-free graphs on surfaces II. 4-critical graphs in a
+     disk, J. Combin. Theory Ser. B 132 (2018) 1–46.
+ [4] Zdeněk Dvořák, Daniel Král’, Robin Thomas, Three-coloring triangle-free graphs on surfaces III. Graphs of girth five,
+     J. Combin. Theory Ser. B 145 (2020) 376–432.
+ [5] Zdeněk Dvořák, Daniel Král’, Robin Thomas, Three-coloring triangle-free graphs on surfaces IV. Bounding face sizes
+     of 4-critical graphs, J. Combin. Theory Ser. B 150 (2021) 270–304.
+ [6] Zdeněk Dvořák, Daniel Král’, Robin Thomas, Three-coloring triangle-free graphs on surfaces VII. a linear-time
+     algorithm, J. Combin. Theory Ser. B 152 (2022) 483–504.
+
+                                                           14
+Z. Dvořák, B. Moore, M. Seifrtová et al.                           European Journal of Combinatorics 127 (2025) 104138
+
+
+ [7] David Eppstein, Subgraph isomorphism in planar graphs and related problems, in: Proceedings of the Sixth Annual
+     ACM-SIAM Symposium on Discrete Algorithms, SODA ’95, Society for Industrial and Applied Mathematics, USA, 1995,
+     pp. 632–640.
+ [8] Steve Fisk, Geometric coloring theory, Adv. Math. 24 (3) (1977) 298–340.
+ [9] Steve Fisk, The nonexistence of colorings, J. Combin. Theory Ser. B 24 (1978) 247–248.
+[10] Pavol Hell, Absolute retracts in graphs, in: Ruth A. Bari, Frank Harary (Eds.), Graphs and Combinatorics, Springer
+     Berlin Heidelberg, Berlin, Heidelberg, 1974, pp. 291–301.
+[11] Joan Hutchinson, Three-coloring graphs embedded on surfaces with all faces even-sided, J. Combin. Theory Ser. B
+     65 (1995) 139–155.
+[12] Joan Hutchinson, Bruce Richter, Paul D. Seymour, Colouring Eulerian triangulations, J. Combin. Theory Ser. B 84
+     (2002) 225–239.
+[13] Bojan Mohar, Coloring Eulerian triangulations of the projective plane, Discret. Math. 244 (2002) 339–343.
+[14] Bojan Mohar, Paul D. Seymour, Coloring locally bipartite graphs on surfaces, J. Combin. Theory Ser. B 84 (2002)
+     301–310.
+[15] Atsuhiro Nakamoto, 5-chromatic even triangulations on surfaces, Discrete Math. 308 (12) (2008) 2571–2580.
+[16] Atsuhiro Nakamoto, Seiya Negami, Katsurhiro Ota, Chromatic numbers and cycle parities of quadrangulations on
+     nonorientable closed surfaces, Discrete Math. 285 (2004) 211–218.
+[17] Luke Postle, Robin Thomas, Hyperbolic families and coloring graphs on surfaces, Trans. Am. Math. Soc. Ser. B 5
+     (2018) 167–221.
+[18] Neil Robertson, Paul D. Seymour, Graph minors. VI. Disjoint paths across a disc, J. Combin. Theory Ser. B 41 (1986)
+     115–138.
+[19] Neil Robertson, Paul D. Seymour, Graph Minors VII. Disjoint paths on a surface, J. Combin. Theory Ser. B 45 (1988)
+     212–254.
+[20] Larry Stockmeyer, Planar 3-colorability is polynomial complete, SIGACT News 5 (3) (1973) 19–25.
+[21] Carsten Thomassen, Five-coloring graphs on surfaces, J. Combin. Theory Ser. B 59 (1993) 89–105.
+[22] Carsten Thomassen, Color-critical graphs on a fixed surface, J. Combin. Theory Ser. B 70 (1) (1997) 67–100.
+[23] Carsten Thomassen, The chromatic number of a graph of girth 5 on a fixed surface, J. Combin. Theory Ser. B 87
+     (2003) 38–71.
+[24] William Tutte, A contribution to the theory of chromatic polynomials, Canad. J. Math. 6 (1954) 80–91.
+[25] Daniel Youngs, 4-chromatic projective graphs, J. Graph Theory 21 (1996) 219–227.
+
+
+
+
+                                                          15
+

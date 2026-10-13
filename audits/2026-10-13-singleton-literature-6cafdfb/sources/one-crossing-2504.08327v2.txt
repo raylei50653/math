@@ -1,0 +1,2151 @@
+                                              On a conjecture concerning 4-coloring of graphs
+
+
+
+
+arXiv:2504.08327v2 [math.CO] 14 Apr 2025
+                                                            with one crossing
+                                                    Zdeněk Dvořák∗          Bernard Lidický†            Bojan Mohar‡
+
+
+
+                                                                                   Abstract
+                                                      We conjecture that every graph of minimum degree five with no
+                                                  separating triangles and drawn in the plane with one crossing is 4-
+                                                  colorable. In this paper, we use computer enumeration to show that
+                                                  this conjecture holds for all graphs with at most 28 vertices, explore
+                                                  the consequences of this conjecture and provide some insights on how
+                                                  it could be proved.
+
+                                               Famously, every planar graph is 4-colorable [1, 2]. It is natural to ask
+                                           whether this statement can be strengthened. As shown in [7, 9], for every
+                                           surface Σ other than the sphere, there are infinitely many minimal non-4-
+                                           colorable, i.e., 5-critical, graphs which can be drawn in Σ (a graph G is
+                                           k-critical if χ(G) = k and every proper subgraph of G is (k − 1)-colorable).
+                                           Still, one could hope that at least for simplest non-trivial surfaces Σ (pro-
+                                           jective plane, torus), it might be possible to characterize 5-critical graphs
+                                           drawn in Σ, or at least to develop a polynomial-time algorithm to test 4-
+                                           colorability of graphs drawn in Σ. However, either of these goals seems far
+                                           beyond our reach using the current methods.
+                                              ∗
+                                                Computer Science Institute, Charles University, Prague, Czech Republic. E-mail:
+                                           rakdver@iuuk.mff.cuni.cz. Supported by the ERC-CZ project LL2328 (Beyond the
+                                           Four Color Theorem, registered as “Realizace projektu hraničnı́ho výzkumu v oblasti teorie
+                                           grafů – barevnost a návrh algoritmů”) of the Ministry of Education of Czech Republic.
+                                              †
+                                                Department of Mathematics, Iowa State University. Ames, IA, USA. E-mail:
+                                           lidicky@iasate.edu. Supported in part by NSF DMS-2152490. This material is based
+                                           upon work supported by the National Science Foundation under Grant No. DMS-1928930,
+                                           while the author was in residence at the Simons Laufer Mathematical Sciences Institute
+                                           in Berkeley, California, during the Spring 2025 semester.
+                                              ‡
+                                                Department of Mathematics, Simon Fraser University, Burnaby, BC V5A 1S6,
+                                           Canada. E-mail: mohar@sfu.ca. Supported in part by the NSERC Discovery Grant
+                                           R832714 (Canada), by the ERC Synergy grant (European Union, ERC, KARST, project
+                                           number 101071836), and by the Research Project N1-0218 of ARIS (Slovenia). On leave
+                                           from FMF, Department of Mathematics, University of Ljubljana, Ljubljana, Slovenia.
+
+
+                                                                                        1
+    To obtain at least some intuition, we consider “minimally nonplanar”
+graphs, or more precisely, graphs that can be drawn in the plane with at
+most one crossing; let C denote the class of all such graphs. Let us remark
+that graphs in C can be drawn without crossings both in the projective plane
+and on the torus. It is still easy to construct infinite families of 5-critical
+graphs in C; however, preliminary computer-assisted investigations suggest
+that obtaining their characterization could be possible. In this paper, we
+explore in detail a natural conjecture arising from these investigations.
+    Of course, 5-critical graphs have minimum degree at least four. More-
+over, there is a natural way how to handle vertices of degree four: Suppose
+G 6= K5 is a 5-critical graph and a vertex v ∈ V (G) has degree four. Since
+G is 5-critical and G 6= K5 , the graph G does not contain K5 as a subgraph,
+and thus v has distinct neighbors x and y such that xy 6∈ E(G). Let G′ be
+the graph obtained from G − v by identifying x with y to a single vertex.
+Assuming that G can be drawn in the plane with one crossing so that this
+crossing is not on the edges vx and vy, the graph G′ can also be drawn in
+the plane with at most one crossing. Moreover, it is easy to see that any
+4-coloring of G′ could be extended to a 4-coloring of G. Since G is 5-critical,
+it follows that G′ is not 4-colorable, and thus it has a 5-critical subgraph
+G′′ ∈ C. Based on this observation, one could hope to inductively prove
+statements about the structure of 5-critical graphs in C of minimum degree
+four. Indeed, a similar inductive argument used to handle 4-faces has been
+crucial in the development of the theory of 4-critical triangle-free graphs,
+which eventually lead to design of a linear-time algorithm for 3-colorability
+of triangle-free graphs on surfaces [5].
+    For this argument to take off, one needs to handle the basic case of
+5-critical graphs in C of minimum degree at least five. Based on computer-
+assisted experiments, we believe no such graphs exists, and thus K5 is the
+sole basic case for the argument described above.
+
+Conjecture 1. Every 5-critical graph in C contains a vertex of degree four.
+
+    Indeed, the following stronger statement seems to hold (a subgraph K
+of a graph G is separating if G − V (K) is not connected).
+
+Conjecture 2. If a graph G does not contain separating triangles and has
+a drawing in the plane with one crossing such that all vertices not incident
+with the crossed edges have degree at least five, then G is 4-colorable.
+
+   Let us remark that throughout the paper, the graphs are simple, without
+loops and parallel edges. It is easy to see that 5-critical graphs do not
+
+
+                                      2
+contain separating cliques, and thus Conjecture 2 implies Conjecture 1. The
+assumption that G does not contain separating triangles cannot be dropped:
+Every graph G ∈ C has a supergraph of minimum degree at least five in C,
+obtained by gluing a copy of the icosahedron at each vertex of G. A similar
+argument shows that Conjecture 2 has the following consequence.
+
+Lemma 3. Let G ∈ C be a graph without separating triangles, and consider
+any drawing of G in the plane with at most one crossing. If G is not 4-
+colorable and Conjecture 2 holds, then there exists a vertex v ∈ V (G) of
+degree four such that all incident faces have length three and their boundaries
+do not contain the crossing.
+
+    In particular, this has the following consequence (where Wk is the k-
+wheel graph consisting of a k-cycle and a vertex adjacent to all vertices of
+this cycle).
+
+Corollary 4. If Conjecture 2 holds, then every graph in C that does not
+contain W4 as a subgraph is 4-colorable.
+
+    It is well known that it suffices to prove the Four Color Theorem for
+triangulations of the plane. Similarly, Conjecture 2 has the following equiv-
+alent form. Let C0 ⊆ C consist of graphs obtained from 4-connected plane
+triangulations by choosing distinct facial triangles xuv and yuv sharing an
+edge uv and adding the edge xy; we say that the vertices x, y, u, and v are
+external and all other vertices internal.
+
+Conjecture 5. Every non-4-colorable graph in C0 has an internal vertex of
+degree four.
+
+    Assuming Conjecture 2 holds, we can show that every non-4-colorable
+graph in C0 can be obtained from K5 by a sequence of simple operations.
+Since we want to avoid creating separating triangles, this is not completely
+straightforward; see Section 3 for the definition of the expansion operation.
+
+Theorem 6. If Conjecture 2 holds, then for every non-4-colorable graph
+G ∈ C0 , there exists a sequence K5 = G0 , G1 , . . . , Gm = G of graphs such
+that for every i ∈ {1, . . . , m}, the graph Gi ∈ C0 is non-4-colorable and is
+obtained from Gi−1 by expansion.
+
+    The expansion operation increases the number of vertices, and thus The-
+orem 6 can be turned into a relatively efficient algorithm to enumerate the
+non-4-colorable graphs in C0 . However, it needs to be noted that there are
+5-critical graphs in C that do not belong to C0 ; see Figure 1 for an example.
+
+                                      3
+                                             h
+
+
+
+
+             Figure 1: A 5-critical graph in C with a 4-face h.
+
+Consequently, Theorem 6 is somewhat less explicit than it might appear,
+since one of the options for the expansion operation needs to be essentially
+“if Gi−1 contains the subgraph depicted in Figure 1, then Gi can be ob-
+tained by replacing the part of Gi−1 drawn inside the face h by any larger
+triangulation without separating triangles”.
+    The rest of the paper is organized as follows. In Section 1, we give
+some basic facts on 5-critical graphs in C, relating them to plane graphs
+which are not 4-colorable so that the coloring of a specific 4-face matches a
+prescribed pattern, and prove Lemma 3 and the equivalence of Conjectures 2
+and 5. In Section 2, we give results on enumeration of planar graphs without
+separating triangles and with all vertices of degree at most four incident with
+a specific face. Using these results, we give a computer-assisted proof that
+Conjecture 2 holds for graphs with at most 28 vertices. In Section 3, we
+prove Theorem 6. Finally, in Section 4, we investigate how the proof of the
+Four Color Theorem could be modified to prove Conjecture 2.
+
+
+1    Reduction to precoloring extension
+Let us start with a simple observation.
+Lemma 7. If a graph G ∈ C is not 4-colorable, then G is non-planar and for
+any drawing of G in the plane with one crossing, the vertices of G incident
+with the crossing edges induce a clique.
+Proof. The graph G is clearly non-planar by the Four Color Theorem. Con-
+
+                                      4
+sider any drawing of G in the plane with one crossing, let u1 v1 and u2 v2
+be the crossed edges in this drawing, and suppose for a contradiction that
+{u1 , u2 , v1 , v2 } is not a clique in G. By symmetry, we can assume that the
+vertices u1 and u2 are non-adjacent in G. Let G′ be the graph obtained from
+G by identifying u1 with u2 to a single vertex u. Observe that G′ is planar,
+and thus it has a proper 4-coloring. The 4-coloring of G′ corresponds to
+a 4-coloring of G obtained by giving u1 and u2 the color of u. This is a
+contradiction, since G is non-4-colorable.
+
+    Consider a graph G drawn in the plane with one crossings, let u1 v1 and
+u2 v2 be the crossed edges in this drawing, and suppose {u1 , u2 , v1 , v2 } is a
+clique in G. We can redraw the edges u1 u2 , u2 v1 , v1 v2 , and v2 u1 next to
+the edges u1 v1 and u2 v2 without introducing any crossings, so that the 4-
+cycle C = u1 u2 v1 v2 bounds a face of the corresponding plane drawing of the
+graph G0 = G − {u1 v1 , u2 v2 }. Clearly any 4-coloring of G assigns pairwise
+different colors to the vertices of C, and thus G is 4-colorable if and only if
+there exists a 4-coloring of G0 using all four colors on C.
+    The type of a coloring ψ of a graph F is the equivalence ≈ such that
+for u, v ∈ V (F ), we have u ≈ v if and only if ψ(u) = ψ(v). Note that
+there are exactly four types of 4-colorings of a 4-cycle K = x1 x2 x3 x4 ; such
+a 4-coloring ϕ is
+
+   • rainbow if ϕ(x1 ) 6= ϕ(x3 ) and ϕ(x2 ) 6= ϕ(x4 ),
+
+   • xi -diagonal for i ∈ {1, 2} if ϕ(xi ) = ϕ(xi+2 ) and ϕ(x3−i ) 6= ϕ(x5−i ),
+     and
+
+   • bichromatic if ϕ(x1 ) = ϕ(x3 ) and ϕ(x2 ) = ϕ(x4 ).
+
+Let H be a plane graph and let F be the subgraph of H consisting of
+the vertices and edges incident with the outer face of H. For a type ≈ of
+colorings of F , we say that a 4-coloring ψ of H matches ≈ if ≈ is the type
+of the restriction of ψ to F . We say that a graph H is ≈-forbidding if H
+does not have any 4-coloring matching ≈. Equivalently, for any 4-coloring
+ϕ of F , if the type of ϕ is ≈, then ϕ does not extend to a 4-coloring of H.
+    A plane graph G with the outer face bounded by a 4-cycle K is rainbow-
+forbidding if G is ≈-forbidding for the type ≈ of rainbow colorings of K.
+Similarly, we define the notion of an x-diagonal-forbidding graph for x ∈
+V (K) and of a bichromatic-forbidding graph. With these definitions in place,
+we can restate Lemma 7 as follows.
+
+
+
+                                       5
+Corollary 8. A graph G is not 4-colorable and belongs to C if and only if
+there exists a rainbow-forbidding plane graph H with the outer face bounded
+by a 4-cycle u1 u2 v1 v2 such that G is isomorphic to the graph obtained from
+H by adding the edges u1 v1 and u2 v2 .
+
+    Thus, the problem of characterizing non-4-colorable graphs in C is equiv-
+alent to the rainbow precoloring extension problem in plane graphs with the
+outer face of size four. Next, let us note a standard observation on triangu-
+lating planar graphs.
+
+Lemma 9. Let H be a plane graph such that every triangle bounds a face and
+the outer face has length greater than three. Then there exists a supergraph
+H ′ of H such that V (H ′ ) = V (H), the outer face of H is also the outer face
+of H ′ , all internal faces of H ′ are triangles, and every triangle in H ′ bounds
+a face.
+
+Proof. Let us argue that if f is an internal face of H of length at least four,
+then there exist distinct non-adjacent vertices u and v incident with f such
+that every triangle in H + uv (with the edge uv drawn inside f ) bounds a
+face.
+
+   • If the boundary of f is disconnected, then we can simply add an edge
+     between different components; such an edge clearly is not contained in
+     any triangle in the resulting graph, and thus every triangle still bounds
+     a face.
+
+   • Otherwise, let W = v1 v2 . . . vk be the closed walk bounding f . If say
+     v2 is a cut vertex separating v1 from v3 in H, then we can let u = v1
+     and v = v3 ; the only triangle in H + v1 v3 containing the edge v1 v3 is
+     v1 v2 v3 , and the edge v1 v3 can be drawn inside f so that this triangle
+     bounds a face.
+
+   • Hence, we can assume that W does not contain such a cut vertex, and
+     thus W is a cycle. Suppose that say v2 vi , where i ∈ {4, 5, . . . , k}, is an
+     edge of H. By planarity, v1 and v3 are not adjacent in H. Moreover,
+     the vertices v1 and v3 have no common neighbors except for v2 if k ≥ 5
+     and except for v2 and v4 if k = 4. Hence, every triangle in H + v1 v3
+     bounds a face.
+
+   • Consequently, we can assume that W is an induced cycle. Suppose
+     next that each pair of distinct non-consecutive vertices of W has a
+     common neighbor not in W . By planarity, it follows that all vertices
+
+
+                                        6
+      in W have a common neighbor outside of W . However, since the outer
+      face of H has length greater than three, this implies that H contains
+      a non-facial triangle, which is a contradiction.
+
+   • Therefore, there exist distinct non-consecutive vertices u and v of W
+     that do not have a common neighbor outside of W . Then all triangles
+     in H + uv bound faces.
+
+   Thus, we can repeatedly add edges to H while preserving its outer face
+and the invariant that every triangle bounds a face, until all internal faces
+become triangles.
+
+    Using this lemma, we can reformulate Conjecture 2 in terms of precol-
+oring extension in plane graphs (a vertex of a plane graph is internal if it is
+not incident with the outer face, and external otherwise); as well as prove
+the equivalence with Conjecture 5.
+
+Theorem 10. The following claims are equivalent for every positive inte-
+ger n:
+
+  (i) Let G be a graph with |V (G)| = n and without separating triangles. If
+      G has a drawing in the plane with one crossing such that all vertices
+      not incident with the crossed edges have degree at least five, then G is
+      4-colorable.
+
+ (ii) Let H ′ be a plane graph with |V (H ′ )| = n such that every triangle in
+      H ′ bounds a face and all internal faces of H ′ are triangles. If H ′ is
+      rainbow-forbidding, then H ′ has an internal vertex of degree at most
+      four.
+
+(iii) Let H be a plane graph with |V (H)| = n such that every triangle in
+      H bounds a face. If H is rainbow-forbidding, then H has an internal
+      vertex of degree at most four.
+
+ (iv) Every non-4-colorable graph G ∈ C0 with n vertices has an internal
+      vertex of degree four.
+
+Proof. We prove several implications:
+
+(i)⇒(ii) Let H ′ be a rainbow-forbidding plane graph with n vertices such
+     that every triangle in H ′ bounds a face and all internal faces of H ′
+     are triangles. Let K = x1 x2 x3 x4 be the 4-cycle bounding the outer
+     face of H ′ . Note that the cycle K is induced: Otherwise, since every
+
+
+                                      7
+     triangle in H ′ bounds a face, H ′ would consist of K together with one
+     additional edge, and H ′ would not be rainbow-forbidding. Consider
+     the graph G = H ′ + {x1 x3 , x2 x4 }, drawn in the plane so that only the
+     edges x1 x3 and x2 x4 cross.
+     We claim that G does not contain any separating triangles. Indeed,
+     consider any triangle T in G. By symmetry, we can assume that T does
+     not contain the edge x2 x4 , and thus H ′ ∪ T is a plane triangulation.
+     In particular, H ′ ∪ T is 3-connected. If T is a separating triangle in
+     H ′ ∪ T , then the planarity and 3-connectedness implies that H ′ − V (T )
+     has exactly two components K1 and K2 , each induced by all vertices of
+     H ′ drawn in one of the faces of T . Since every triangle in H ′ bounds
+     a face, it follows that x1 x3 ∈ E(T ), x2 ∈ V (K1 ) and x4 ∈ V (K2 ).
+     However, since the edge x2 x4 of G connects K1 with K2 , this implies
+     that G − V (T ) has only one component, and thus the triangle T is not
+     separating.
+     Since H ′ is rainbow-forbidding, the graph G is not 4-colorable, and
+     thus by (i), there exists a vertex v ∈ V (G) \ V (K) such that 4 ≥
+     degG v = degH ′ v. Hence, (i) implies (ii).
+(ii)⇒(iii) Consider a rainbow-forbidding plane graph H with n vertices
+     such that every triangle bounds a face, and let K = x1 x2 x3 x4 be the
+     4-cycle bounding the outer face of H. By Lemma 9, there exists a
+     supergraph H ′ of H such that V (H ′ ) = V (H), the outer face of H ′ is
+     bounded by K, all internal faces of H ′ are triangles, and every triangle
+     in H ′ bounds a face. Clearly H ′ is also rainbow-forbidding. By (ii),
+     H ′ has an internal vertex v of degree at most four. Clearly v is also
+     an internal vertex of H and its degree in H is at most as large as in
+     H ′ . Hence, (ii) implies (iii).
+(iii)⇒(i) Suppose now that G is a graph such that |V (G)| = n, G does not
+      contain separating triangles, and G has a drawing in the plane with
+      one crossing such that all vertices not incident with the crossed edges
+      have degree at least five. If the set X of vertices incident with the
+      crossed edges e1 and e2 of G does not induce a clique in G, then G is
+      4-colorable by Lemma 7.
+     Otherwise, the graph H = G − {e1 , e2 } has a plane drawing where the
+     4-cycle on X bounds the outer face. All internal vertices of H have
+     the same degree as in G, i.e., at least five. Moreover, every triangle
+     in H bounds a face, as otherwise it would be a separating triangle in
+     G. By (iii), H is not rainbow-forbidding, and thus H has a 4-coloring
+
+                                      8
+       ϕ whose restriction to H[X] has the rainbow type. Then ϕ is also a
+       proper 4-coloring of G. Therefore, (iii) implies (i).
+
+ (iv)⇒(ii) Consider a rainbow-forbidding plane graph H ′ with n vertices
+      such that every triangle in H ′ bounds a face and all internal faces of
+      H ′ are triangles. Let K = x1 x2 x3 x4 be the 4-cycle bounding the outer
+      face of H ′ . Note that K is an induced cycle, as otherwise we would
+      have V (H ′ ) = V (K) and H ′ would not be rainbow-forbidding. For
+      i ∈ {1, 2}, let Gi = H ′ + xi xi+2 , so that Gi is a plane triangulation. If
+      Gi is 4-connected, then Gi + x3−i x5−i ∈ C0 has an internal vertex of
+      degree at most four by (iv), and so does H ′ .
+       Otherwise, for both i ∈ {1, 2}, there must exist a separating triangle
+       in Gi , necessarily containing the edge xi xi+2 since all other triangles
+       bound faces by the assumptions on H ′ . By planarity, this is only
+       possible if H ′ contains a vertex v adjacent to x1 , . . . , x4 . Since all
+       triangles in H ′ bound faces, we conclude that deg v = 4. Therefore,
+       (iv) implies (ii).
+
+ Finally, it is clear that (i) implies (iv).
+
+      In particular, to verify Conjecture 2 for graphs with n vertices, it suffices
+ it verify the claim from Theorem 10(ii) for graphs with n vertices. For small
+ n, this can be done by a computer-assisted enumeration, as we discuss in
+ the following section.
+      Next, let us argue that Conjecture 2 is also equivalent to a claim about
+ diagonal-forbidding graphs (we say that a plane graph is diagonal-forbidding
+ if it is x-diagonal-forbidding for a vertex x incident with its outer face). For
+ an integer n ≥ 5, let D(n) be the following claim:
+
+D(n): For every plane graph H such that 5 ≤ |V (H)| ≤ n, all internal faces
+      of H are triangles, and every triangle in H bounds a face, if H is
+      diagonal-forbidding, then H contains an internal vertex of degree at
+      most four.
+
+ Let R(n) be the analogous claim for rainbow-forbidding graphs.
+
+ Theorem 11. For every integer n ≥ 5, R(n + 1) implies D(n) and D(n + 1)
+ implies R(n).
+
+ Proof. Let us prove that R(n + 1) implies D(n). Let H be a plane graph
+ with at least five but at most n vertices such that all internal faces of H
+ are triangles and every triangle in H bounds a face, with the outer face
+
+                                          9
+bounded by a 4-cycle K. Suppose that H is x-diagonal-forbidding for a
+vertex x ∈ V (K). We need to argue that if R(n + 1) holds, then H contains
+an internal vertex of degree at most four.
+    Note that K is an induced cycle in H, since H has at least five vertices
+and every triangle in H bounds a face. Furthermore, note that this implies
+that every vertex of K has degree at least three in H. If |V (H)| = 5, then
+H consists of K and an internal vertex of degree four, and the conclusion
+holds (and also, H actually is not diagonal-forbidding).
+    Hence, suppose that |V (H)| ≥ 6. If deg x = 3, then let H ′ = H − x.
+Otherwise, let H ′ be the graph obtained from H by adding a vertex x′ drawn
+in the outer face of H and adjacent to x and the two neighbors of x in K.
+Observe than in both cases, the outer face of H ′ is bounded by a 4-cycle,
+H ′ is rainbow-forbidding, it has at least five but at most n + 1 vertices, all
+internal faces of H ′ are triangles, and every triangle in H ′ bounds a face.
+By R(n + 1), there exists an internal vertex v of H ′ of degree at most four.
+Note that v 6= x, since if x ∈ V (H ′ ), then x has degree at least four in H
+and at least five in H ′ . Hence, v is also an internal vertex of H of degree at
+most four.
+    The implication D(n + 1) ⇒ R(n) is proved analogously.
+
+   Together with Theorem 10, this gives the following consequence.
+
+Corollary 12. The following claims are equivalent:
+
+   • Conjecture 2 holds.
+
+   • D(n) holds for every n ≥ 5.
+
+   • R(n) holds for every n ≥ 5.
+
+    Interestingly, the analogous claim for bichromatic-forbidding graphs is
+false, as we discuss at the end of Section 2.
+    The proof of Lemma 3 follows an idea similar to the proof of Theo-
+rem 10. For a future use, we prove a somewhat stronger claim, which implies
+Lemma 3 by Lemma 7.
+
+Lemma 13. Let H be a rainbow- or diagonal-forbidding plane graph such
+that every triangle in H bounds a face and |V (H)| ≥ 5. If Conjecture 2
+holds, then there exists an internal vertex v ∈ V (H) of degree four such that
+all incident faces have length three.
+
+Proof. For any integer k ≥ 4, let Fk be a plane graph such that the outer face
+of Fk is bounded by an induced cycle of length k, all triangles in Fk bound
+
+                                      10
+faces, all internal faces of Fk have length three, and all internal vertices of
+Fk have degree at least five. For example, we can define F4 to be the graph
+obtained from the icosahedron by deleting an edge, and for k ≥ 5, we can
+let Fk be the k-wheel. The claim of the lemma essentially follows by filling
+in each internal face f of H of length |f | ≥ 4 by a copy of F|f | and applying
+D(n) or R(n) to the resulting n-vertex graph H ′ . However, we need to be
+slightly more careful in order to argue that H ′ satisfies the assumptions of
+D(n) or R(n).
+     Suppose for a contradiction that H is a counterexample to Lemma 13
+with the smallest number of vertices. Let K be the 4-cycle bounding the
+outer face of H. Note that the cycle K is induced, since |V (H)| ≥ 5 and
+every triangle in H bounds a face.
+     Let us consider the case that H contains a separating clique Q. There
+exists a component C of H − V [Q] such that the subgraph H1 = H[V (Q) ∪
+V (C)] satisfies K ⊆ H1 . Let H2 = H − V (C). By the Four Color Theorem,
+H2 has a 4-coloring ϕ2 . Since Q is a clique, for any 4-coloring ϕ1 of H1 , we
+can permute the colors in the coloring ϕ2 so that it matches ϕ1 on Q, and
+thus ϕ1 ∪ϕ2 is a 4-coloring of H. Since H is rainbow- or diagonal-forbidding,
+it follows that H1 also is rainbow- or diagonal-forbidding. By the minimality
+of H, there exists an internal vertex v ∈ V (H1 ) of degree four such that all
+incident faces are bounded by triangles. Since all triangles in H bound faces,
+these triangles also bound faces in H, and thus v has degree four in H as
+well. This is a contradiction, since H is a counterexample.
+     Therefore, the graph H does not contain any separating clique. A similar
+argument shows that every internal vertex of H has degree at least four.
+Since H does not contain separating cliques, it is 2-connected and every face
+of H is bounded by an induced cycle. Let H ′ be the plane graph obtained
+from H by, for each internal face f of length |f | ≥ 4, adding a copy of F|f |
+and identifying the cycle bounding its outer face with the boundary cycle
+of f . Since the cycles bounding the internal faces of H are induced, all
+triangles created by this modification bound faces, and thus every triangle
+in H ′ bounds a face. Since H is rainbow- or diagonal-forbidding, H ′ is
+rainbow- or diagonal-forbidding as well. Moreover, all internal faces of H ′
+have length three.
+     Assuming that Conjecture 2 holds, R(|V (H ′ )|) or D(|V (H ′ )|) applies
+and consequently H ′ contains an internal vertex v of degree at most four.
+Since all internal vertices of the graphs Fk have degree at least five, v is
+also an internal vertex of H. All internal vertices of H have degree at least
+four, and thus v has degree exactly four and all faces of H incident with v
+are triangles (otherwise a copy of a graph F|f | would be glued into a face f
+
+                                      11
+incident with v in the construction of H ′ , increasing the degree of v to at
+least five). Hence, the conclusion of the lemma holds for v.
+
+    Finally, let us point out a useful fact about non-extendable precolorings
+in a plane graph G with the outer face bounded by a 4-cycle K = x1 x2 x3 x4 .
+If K has a chord, say x1 x3 ∈ E(G), then G is both x1 -diagonal-forbidding
+and bichromatic-forbidding. However, we claim that at most one type of
+colorings can be forbidden when K is an induced cycle.
+    To see this, let us define ≈r , ≈1 , ≈2 , and ≈b to be the types of rainbow,
+x1 -diagonal, x2 -diagonal, and bichromatic 4-colorings of K, let Q be an
+auxiliary graph formed by the 4-cycle with vertices ≈r , ≈1 , ≈b , and ≈2 in
+order, and let us note the following observation based on Kempe chains.
+
+Lemma 14. Let G be a plane graph with the outer face bounded by a 4-
+cycle K = x1 x2 x3 x4 , let ϕ be a 4-coloring of G, and let ≈ be the type of the
+restriction of ϕ to K. There exists a 4-coloring ϕ′ of G such that the type
+of the restriction of ϕ′ to K is adjacent to ≈ in Q.
+
+Proof. This follows by the inspection of Kempe chains. Let us illustrate the
+argument for a coloring ϕ assigning colors 1, 2, 1, 3 to vertices of K in order,
+i.e., for the case that ≈ is ≈1 . Let A be the subgraph of G induced by
+vertices of colors 1 and 4, and let B be the subgraph induced by the vertices
+of colors 2 and 3. If A does not contain a path between x1 and x3 , then we
+can exchange colors 1 and 4 on the component of A containing x3 , obtaining
+a 4-coloring of G whose restriction to K has type ≈r . If B does not contain
+a path between x2 and x4 , then we can exchange the colors 2 and 3 on the
+component of B containing x4 , obtaining a 4-coloring of G whose restriction
+to K has type ≈b . And, by planarity, G cannot at the same time contain a
+path between x1 and x3 in colors 1 and 4, as well as a path between x2 and
+x4 in colors 2 and 3.
+
+    Next, let us make some observations on the existence of 4-colorings that
+follow from the Four Color Theorem.
+
+Observation 15. Let G be a plane graph with the outer face bounded by a
+4-cycle K = x1 x2 x3 x4 . Then either G has a 4-coloring matching ≈r , or two
+4-colorings matching ≈1 and ≈2 .
+
+Proof. By the Four Color Theorem, the planar graph G1 obtained from G
+by adding the edge x2 x4 has a 4-coloring ϕ1 , and the planar graph obtained
+from G by adding the x1 x3 has a 4-coloring ϕ2 . Note that either at least
+one of ϕ1 and ϕ2 matches ≈r , or ϕ1 matches ≈1 and ϕ2 matches ≈2 .
+
+                                      12
+Observation 16. Let G be a plane graph with the outer face bounded by an
+induced 4-cycle K = x1 x2 x3 x4 . Then either G has a 4-coloring matching
+≈b , or two 4-colorings matching ≈1 and ≈2 .
+
+Proof. This follows similarly to Observation 15 by considering the planar
+graphs obtained from G by identifying x1 with x3 and by by identifying x2
+with x4 . Note that these graphs do not contain loops, since K is an induced
+cycle.
+
+    The desired claim is now just a simple combination of these observations.
+
+Corollary 17. Let G be a plane graph with the outer face bounded by an
+induced 4-cycle K = x1 x2 x3 x4 . Then G has three 4-colorings whose restric-
+tions to K have different types.
+
+Proof. Let A be the set of vertices ≈ ∈ V (Q) such that G has a 4-coloring
+matching ≈. By Observations 15 and 16, either ≈1 , ≈2 ∈ A, or ≈b , ≈r ∈ A.
+In either case Observation 14 implies that A contains at least one more
+type.
+
+
+2    Generating candidates
+A canvas is a plane graph with the outer face bounded by a cycle of length
+at least four and all other faces of length three. A candidate is a canvas
+such that every triangle bounds a face and all internal vertices have degree
+at least five. A candidate is an ℓ-candidate if its outer face has length ℓ.
+By Theorem 10, in order to verify Conjecture 2 for graphs with at most n
+vertices, it suffices to enumerate the 4-candidates with at most n vertices
+and check that none of them is rainbow-forbidding.
+    In this section, we develop a way to enumerate ℓ-candidates for any
+fixed ℓ ≥ 4. More precisely, we are going to describe a system of reductions
+which turn each sufficiently large ℓ-candidate into a smaller one. Thus, all
+ℓ-candidates can be produced from small ℓ-candidates by a sequence of the
+inverse operations to these reductions.
+    A cycle K in a canvas is hollow if no vertex is drawn in the open disk
+bounded by K (but edges can be drawn in this disk). A candidate is in-
+ternally k-connected if all cycles of length less than k other than the one
+bounding the outer face are hollow. In particular, every candidate is inter-
+nally 4-connected. For a canvas G and a cycle C in G, the subgraph G′ of
+G drawn in the closed disk bounded by C is a subcanvas of G. When G is a
+candidate, we also say that G′ is a subcandidate, and it is an m-subcandidate
+
+                                     13
+if C has length m. When we look for a reducible configuration, it is conve-
+nient to assume that the candidate is internally 5-connected, since then its
+reduction turns out to be guaranteed not to create non-facial triangles. We
+can do so by focusing on the smallest 4-subcandidate H of the considered
+ℓ-candidate G; the minimality of H clearly implies that H is internally 5-
+connected. In order for the reducible configuration found in H to be valid
+in G, we need to ensure that the degrees of external vertices of H are not
+decreased below five when the reduction is performed in G. To facilitate
+this, we are going to require that in the canvas resulting from the reduction
+in H, all external vertices have degree at least four. Thus, we say that a
+canvas H is thick if its outer face has length at least five or all external
+vertices of H have degree at least four. Let us argue that this condition is
+automatically satisfied by non-trivial internally 5-connected candidates.
+Observation 18. Every internally 5-connected ℓ-candidate H with at least
+one internal vertex is thick.
+Proof. By the definition of thickness, this is trivial if ℓ ≥ 5. Hence, suppose
+that ℓ = 4, and let K = v1 v2 v3 v4 be the cycle bounding the outer face of H.
+Suppose for a contradiction that H is not thick, and thus say deg v1 ≤ 3.
+Let C be the cycle in H formed by the path on the neighbors of v1 and the
+path v2 v3 v4 ; we have |V (C)| = deg v1 + 1 ≤ 4. Observe that every vertex
+of H except for v1 is drawn in the closed disk bounded by C. However,
+the candidate H is internally 5-connected, and thus the cycle C is hollow.
+Since H has at least one internal vertex, we conclude that deg v1 = 3 and
+H has exactly one internal vertex v. However, then deg v ≤ |V (K)| = 4,
+contradicting the assumption that H is a candidate.
+
+   We are also going to need the following simple discharging argument.
+Lemma 19. Every thick 4-candidate contains an internal vertex of degree
+five with no external neighbor.
+Proof. Let G be a thick 4-candidate and let K be the 4-cycle bounding the
+outer face of G. Assign charge c0 (v) = d − 6 to each vertex v ∈ V (G) of
+degree d. Since all faces of G except for the outer one have length three and
+|V (K)| = 4, observe that G has exactly 3|V (G)| − 7 edges. Consequently,
+                    X
+                         c0 (v) = 2|E(G)| − 6|V (G)| = −14.
+                  v∈V (G)
+
+For each external vertex v of G, we redistribute the charge as follows. Let
+u1 , . . . , ud be the neighbors of v in order according to the drawing of G,
+
+                                      14
+where u1 vud is a subpath of K; since G is thick, we have d ≥ 4. The vertex
+v sends 1/2 to u2 and ud−1 and 1 to each of u3 , . . . , ud−2 . Let us remark
+that since all internal faces of G have length three, the vertices u2 and ud−1
+receive additional 1/2 in charge from this rule being applied at u1 and ud ,
+respectively.
+    For each vertex x ∈ V (G), let c(x) be the charge of x after the redistri-
+bution. Since no charge is created or lost, we have
+                         X            X
+                              c(x) =        c0 (x) = −14.
+                      x∈V (G)        x∈V (G)
+
+Moreover, for each vertex v ∈ V (K), we have
+
+               c(v) ≥ c0 (v) − 2 × 1/2 − (deg v − 4) × 1 = −3,
+
+and for each internal vertex x with a neighbor in K, we have
+
+                      c(x) ≥ c0 (x) + 1 = deg x − 5 ≥ 0.
+
+Thus, the sum of charges of vertices in the closed neighborhood of K is
+at least −3|V (K)| = −12 > −14. It follows that there exists a vertex
+u ∈ V (G) \ V (K) with no external neighbor and with c(u) = c0 (u) < 0, i.e.,
+deg u < 6. Since G is a candidate, we have deg u = 5.
+
+   Let us now describe the reductions needed in the generation of candi-
+dates, see Figures 2 and 3 for an illustration. After contraction of an edge,
+we always suppress the resulting 2-faces.
+
+   • The 1-contraction is a contraction of an edge v1 v2 , where v2 is an
+     internal vertex.
+
+   • The 2-contraction is contraction of two edges v1 v2 and v3 v4 , where
+     v1 v2 v3 v4 is a hollow 4-cycle (whose interior consists of two 3-faces)
+     and v1 , . . . , v4 are internal vertices of degree five.
+
+   • The 5-contraction is a contraction of the five edges v1 v, . . . , v5 v inci-
+     dent to an internal vertex v of degree five, where v1 , . . . , v5 are also
+     internal vertices of degree five.
+
+   • The extended 5-contraction applies in the same situation. Let x 6= v
+     be the common neighbor of v1 and v2 . The operation consists of the
+     5-contraction of the edges incident with v followed by a 1-contraction
+     of the edge between the resulting vertex and x.
+
+                                       15
+           hat
+
+
+
+ v1               v2             1-contraction
+
+
+           hat
+
+           hat
+
+v1
+                 v2
+
+                                 2-contraction
+      v4
+                      v3
+
+
+           hat
+
+           v1
+v5                     v2
+           v                     5-contraction
+     v4           v3
+
+
+                       x
+           v1
+v5                     v2
+           v                      ext. 5-contr.
+     v4           v3
+
+
+
+                           Figure 2: ⋆-contractions (1)
+
+                                       16
+                  x1                                            x1
+
+
+
+     z                       x2                        z                  x2
+                                  8-contraction
+
+
+                  x3                                            x3
+           8-diamond                                            x1
+
+
+
+                                                       z                  x2
+                                  8-contraction
+
+
+                                                                x3
+
+
+y1                      y2                     y1                    y2
+              x1
+
+
+
+ z                     x2                          z
+                                  10-contraction
+
+
+             x3         y3                                 x3        y3
+         10-diamond
+
+
+                       Figure 3: ⋆-contractions (2)
+
+
+
+
+                                      17
+   • Let K = x1 x2 x3 z be a 4-cycle such that the subgraph H drawn in
+     the closed disk bounded by K is as depicted in Figure 3 on the top
+     left; in particular, all vertices of V (H) \ V (K) are internal and have
+     degree five. We say that H is an 8-diamond. The 8-contraction is the
+     operation of deleting the vertices of V (H) \ V (K) and adding either
+     the edge x1 x3 or the edge x2 z.
+
+   • Let K = zy1 y2 y3 x3 be a 5-cycle such that the subgraph H drawn
+     in the closed disk bounded by K consists of an 8-diamond inside the
+     4-cycle zx1 x2 x3 and the edges of the path y1 x1 y2 x2 y3 x3 , as depicted
+     in Figure 3 on the bottom left. in particular, all vertices of V (H) \
+     (V (K)∪{x1 , x2 }) are internal and have degree five, and the vertices x1
+     and x2 are internal and have degrees 7 and 6, respectively. We say that
+     H is a 10-diamond. The 10-contraction is the operation of deleting
+     the vertices of V (H) \ V (K) and replacing them by the 5-wheel of six
+     internal vertices of degree five.
+
+Let us remark that this set of reductions is inspired by [3]. By a ⋆-contraction,
+we mean any of these operations. We say that a ⋆-contraction is safe if the
+result of the operation is a candidate, i.e., it is internally 4-connected and
+all internal vertices have degree at least five. Since we are only working with
+simple graphs, this also implicitly contains the assumption that no parallel
+edges or loops (except for those eliminated by suppression of 2-faces) arise in
+the reduction. A ⋆-contraction is strongly safe if it is safe and the resulting
+candidate is thick.
+     For a 1-contraction, the hats are the two vertices distinct from v1 and
+v2 and incident with the faces whose boundary contains the edge v1 v2 . For
+a 2-contraction, the hats are the two vertices distinct from v1 , . . . , v4 and
+incident with the faces whose boundary contains the edge v1 v2 or the edge
+v3 v4 . The safety of 1- and 2-contractions can be described in terms of the
+degrees of the hats as follows.
+
+Observation 20. Let G be a internally 5-connected ℓ-candidate. Consider
+a 1- or 2-contraction in G. If neither of the hats of this ⋆-contraction is an
+internal vertex of degree five, then the ⋆-contraction is safe. If additionally
+ℓ > 4 or neither of the hats is an external vertex of degree four, then the
+⋆-contraction is strongly safe.
+
+Proof. Let the canvas G′ be created by performing the 1- or 2-contraction.
+Since G is internally 5-connected, observe that this ⋆-contraction cannot
+create parallel edges or a non-facial triangle. In the case of 1-contraction,
+
+
+                                       18
+the vertex v of G′ created by contracting the edge v1 v2 has degree deg(v1 ) +
+deg(v2 ) − 4 > deg v1 , and it is internal if and only if v1 is internal. In the
+case of a 2-contraction, both vertices of G′ created by the contractions are
+internal and have degree five. The degrees of vertices other than hats are
+unchanged, and the degree of each hat decreases by one (note that the two
+hats are distinct, since G does not contain non-facial triangles).
+    Hence, if neither of the hats is an internal vertex of degree five, then
+every internal vertex of G′ has degree at least five. Consequently, G′ is
+a candidate, and thus the ⋆-contraction is safe. If ℓ ≥ 5, then G′ is also
+automatically strongly safe. For ℓ = 4, note that every external vertex has
+degree at least four in G by Observation 18. If additionally neither of the
+hats is an external vertex of degree four, this implies that the candidate G′
+is also thick, and thus the ⋆-contraction is strongly safe.
+
+   Let us now argue that with a few exceptions, a strongly safe ⋆-contraction
+can be performed in every internally 5-connected candidate. Let us start
+with a quite restrictive special case.
+
+Lemma 21. Let G be an internally 5-connected ℓ-candidate, not isomorphic
+to the 8-diamond. If G contains an internal vertex v of degree five such that
+all neighbors of v are internal and have degree five, then G admits a strongly
+safe 1-contraction, 5-contraction, or extended 5-contraction.
+
+Proof. Let G′ be the canvas obtained from G obtained by the 5-contraction
+of the edges incident with v, and let w denote the vertex created by the
+contraction. Let v1 , . . . , v5 be the neighbors of v in order. For i = 1, . . . , 5,
+let xi be the common neighbor of vi and vi+1 (where v6 = v1 ) distinct from
+v. Note that x1 , . . . , x5 are the neighbors of w in G′ in order. For distinct
+i, j ∈ {1, . . . , 5}, we have xi 6= xj , as otherwise G would contain a non-facial
+triangle. In particular, G′ does not have any parallel edges. Moreover, xi
+is adjacent to xj if and only if |i − j| ≡ ±1 (mod 5), since G is internally
+5-connected. Therefore, x1 . . . x5 is an induced cycle in G as well as in G′ ,
+and consequently G′ does not contain any non-facial triangles.
+
+   • Let us first consider the case that ℓ > 4 or none of x1 , . . . , x5 is an
+     external vertex of degree four in G. Note that degG′ xi = degG xi − 1
+     for i ∈ {1, . . . , 5}, and thus this implies that the canvas G′ is thick.
+     Hence, if the 5-contraction of the edges around v is not strongly safe,
+     then it is not safe, and one of the vertices x1 , . . . , x5 is internal and
+     has degree at most four in G′ .
+
+
+
+                                         19
+  We can by symmetry assume that x2 is an internal vertex of degree
+  five in G, so that x2 has degree four in G′ . Let x′2 be the neighbor of
+  x2 distinct from x1 , v2 , v3 , and x3 ; since all internal faces of G′ are
+  triangles, x′2 is adjacent to x1 and x3 . If neither x1 nor x3 is an internal
+  vertex of degree five in G, then by Observation 20, the 1-contraction
+  of the edge x2 x′2 in G is strongly safe.
+  If say x1 were an internal vertex of degree five, then since all internal
+  faces of G are triangles, we would have x′2 x5 ∈ E(G). Since G is
+  internally 5-connected and the 4-cycle x′2 x5 x4 x3 is not hollow, this
+  cycle would bound the outer face of G. But then ℓ = 4 and x4 would
+  be an external vertex of degree four, contradicting the assumptions of
+  this case.
+  We conclude that in this case, G admits a strongly safe 1-contraction
+  or 5-contraction.
+
+• Hence, we can suppose that ℓ = 4 and say x2 is an external vertex
+  of degree four. Then the outer face is bounded by the cycle x1 x2 x3 z
+  for some vertex z. Note that z 6∈ {x4 , x5 }, since otherwise the cycle
+  zv5 v4 x3 or zv5 v1 x1 would contradict the internal 5-connectivity of G.
+  Thus, x4 and x5 are internal vertices.
+  Let G′′ be obtained from G′ by contracting the edge wx2 ; then the
+  canvas G′′ is obtained from G by an extended 5-contraction. Note
+  that G′′ does not contain non-facial triangles, since x1 x4 , x3 x5 , x1 x3 6∈
+  E(G). If x5 z ∈ E(G), then since the 4-cycle x5 zx3 x4 is hollow and
+  degG (x4 ) ≥ 5, we have also x4 z ∈ E(G), and thus G would be an
+  8-diamond. Hence, we can assume x4 z 6∈ E(G), and symmetrically
+  that x5 z 6∈ E(G). Hence, zx1 x5 and zx3 x4 are not 3-faces of G, and
+  since all internal faces of G are triangles, it follows that degG xi ≥ 6
+  and degG′′ xi ≥ 4 for i ∈ {1, 3}. Since x2 x4 , x2 x5 ∈ E(G′′ ), we have
+  degG′′ x2 = 4. Moreover, degG′′ z = degG z ≥ 4 by Observation 18. If
+  the extended 5-contraction of G to G′′ is not strongly safe, it follows
+  that G′′ contains an internal vertex of degree at most four. Clearly,
+  this vertex must be x4 or x5 .
+  Suppose that say x5 has degree at most four in G′′ , and thus it has
+  degree five in G. Let x′5 be the neighbor of x5 distinct from x1 , v1 , v5 ,
+  and x4 . Since all internal faces of G are triangles, we have x′5 x1 , x′5 x4 ∈
+  E(G). If x′5 x3 ∈ E(G), then x′5 x1 x2 x3 would be a non-hollow 4-cycle in
+  G. It follows that x′5 x3 6∈ E(G) and x′5 x4 x3 is not a 3-face of G. Since
+  all internal faces of G are triangles, we conclude that degG x4 ≥ 6.
+
+                                    20
+      Observation 20 then implies that the 1-contraction of the edge x5 x′5
+      in G is strongly safe.
+      We conclude that in this case, G admits a strongly safe 1-contraction,
+      or 5-contraction, or extended 5-contraction.
+
+
+
+    Next, we consider a much less restrictive special case.
+
+Lemma 22. Let G be an internally 5-connected ℓ-candidate, not isomorphic
+to the 8-diamond. If G contains a 4-cycle C = v1 v2 v3 v4 of internal vertices
+of degree five, then G admits a strongly safe ⋆-contraction.
+
+Proof. Since the candidate G is internally 5-connected, the open disk bounded
+by the 4-cycle C contains exactly two faces; by symmetry, we can assume
+that v1 v3 is an edge drawn inside C. For i = 1, . . . , 4, let xi be the com-
+mon neighbor of vi and vi+1 (where v5 = v1 ) distinct from v1 , . . . , v4 .
+Since deg v1 = deg v3 = 5 and all internal faces of G are triangles, we have
+x1 x4 , x2 x3 ∈ E(G). For i ∈ {2, 4}, let vi′ be the neighbor of vi different from
+v1 , . . . , v4 , x1 , . . . , x4 , and similarly note that vi is adjacent to xi−1 and xi .
+Moreover, C ′ = x1 v2′ x2 x3 v4′ x4 is an induced cycle, as otherwise G would not
+be internally 5-connected (v2′ is not adjacent to v4′ , as otherwise by symme-
+try between v2′ x2 x3 v4′ and v2′ x1 x4 v4′ , we can assume that the former 4-cycle
+does not bound the outer face, and thus it must be hollow and x2 or x3
+would be an internal vertex of degree four).
+     Let us first consider the case that either ℓ > 4 or none of x1 , . . . , x4 is
+an external vertex of degree four. By Observation 20, if the 2-contraction
+of v1 v2 and v3 v4 is not strongly safe, then x1 or x3 is an internal vertex
+of degree five; by symmetry, suppose this is the case for x1 . If x4 is an
+internal vertex of degree five, then G admits a strongly safe ⋆-contraction
+by Lemma 21 applied to v1 and its neighbors; hence suppose this is not the
+case. By Observation 20, if the 2-contraction of v2 v3 and v1 v4 is not strongly
+safe, then x2 is an internal vertex of degree five. If x3 is an internal vertex
+of degree five, then G admits a strongly safe ⋆-contraction by Lemma 21
+applied to v3 and its neighbors. Otherwise, Observation 20 implies that the
+1-contraction of the edge v4 v4′ is strongly safe.
+     Next, suppose that ℓ = 4 and at least one of the vertices x1 , . . . , x4 ,
+say x1 , is an external vertex of degree four. Hence, the outer face of G is
+bounded by the cycle x4 x1 v2′ y for another vertex y. Since the cycle C ′ is
+induced, we have y 6∈ V (C ′ ), and thus the vertices x2 , x3 , and v4′ are internal
+and deg x4 ≥ 5. By Observation 20, if deg(x3 ) > 5, then the 1-contraction
+
+                                           21
+of v4 v4′ is strongly safe, and if deg(x2 ) > 5, then the 2-contraction of v1 v4
+and v2 v3 is strongly safe. Finally, if deg(x2 ) = deg(x4 ) = 5, then the claim
+follows from Lemma 21 applied to v3 and its neighbors.
+
+   We can now consider the general case of internally 5-connected candi-
+dates.
+
+Lemma 23. Let G be an internally 5-connected ℓ-candidate, not isomorphic
+to the 8-diamond. If G contains an internal vertex, then G admits a strongly
+safe ⋆-contraction.
+
+Proof. Suppose first that G has an internal vertex v of degree five, and let
+v1 , . . . , v5 be the neighbors of v in order. If ℓ = 4, then by Observation 18
+and Lemma 19, we can additionally choose v so that v1 , . . . , v5 are internal
+vertices. If three consecutive neighbors of v are internal vertices of degree
+five, then the claim follows by Lemma 22. Otherwise, we can by symmetry
+assume that neither v1 nor v3 is an internal vertex of degree five, and the
+1-contraction of the edge vv2 is strongly safe by Observation 20.
+     Hence, we can assume that all internal vertices of G have degree at
+least six. By Observation 18 and Lemma 19, it follows that ℓ > 4. Hence,
+by Observation 20, the 1-contraction of any edge incident with an internal
+vertex of G is strongly safe.
+
+   Finally, let us get rid of the assumption of internal 5-connectivity.
+
+Lemma 24. Every ℓ-candidate G with at least one internal vertex admits
+a safe ⋆-contraction.
+
+Proof. We can assume G is not an 8-diamond, as this 4-candidate admits
+a safe 8-contraction. Hence, by Lemma 23, we can assume that G is not
+internally 5-connected. Let G′ be a minimal 4-subcandidate of G with at
+least one internal vertex, and let C = x1 x2 x3 z be the cycle bounding the
+outer face of G′ . Note that G′ is internally 5-connected. Moreover, note
+that each vertex of C which is not external in G is incident with an edge not
+belonging to E(G′ ): If say z were internal and had no neighbors outside of
+G′ , then since every internal face of G is a triangle, the triangle x1 zx3 would
+bound a face drawn outside of C, and x1 x2 x3 would be a non-facial triangle
+of G. Hence, if the interior of C is replaced by a thick 4-candidate, then
+every internal vertex belonging to C has degree at least five in the resulting
+graph. We conclude that if G′ admits a strongly safe ⋆-contraction, then
+this ⋆-contraction is also safe in G. Hence, by Lemma 23, we can assume G′
+is an 8-diamond.
+
+                                       22
+    For i ∈ {1, 3}, since degG′ xi = 5, the analysis from the previous para-
+graph shows that if xi is an internal vertex of G, then degG xi > 5. Suppose
+that u ∈ V (C) is an internal vertex of G with exactly one neighbor u′ outside
+of G′ , and let x and y be the common neighbors of u and u′ in C. Observe
+that every 4-cycle containing the edge uu′ is hollow, since every path of
+length three from u to u′ in G passes through x or y and every triangle
+in G bounds a face. Thus, the 1-contraction of the edge uu′ in G is safe.
+Hence, we can assume that in G, each internal vertex of C has at least two
+neighbors outside of G′ .
+    Let G1 and G2 be the 8-contractions of G obtained by replacing the
+interior of C by the edges x1 x3 and x2 z, respectively. Note that at most
+one of the graphs G1 and G2 contains a non-facial triangle, as otherwise
+all vertices of C would have a common neighbor and G would contain a
+non-facial triangle.
+    Suppose first that G1 contains a non-facial triangle, and thus the vertices
+x1 and x3 have a common neighbor u distinct from x2 and z. Note that
+ux2 , uz 6∈ E(G), as otherwise G would either contain a non-facial triangle
+or x2 or z would be an internal vertex with only one neighbor outside of G′ .
+Since all internal faces of G are triangles, it follows that for i ∈ {1, 3}, if the
+vertex xi is internal in G, then it has at least two neighbors outside of G′ in
+addition to u, and thus it has degree at least five in G2 . Moreover, if z or
+x2 is an internal vertex of G, then recall that it has at least two neighbors
+outside of G′ , and thus it also has degree at least five in G2 . It follows that
+the 8-contraction of G to G2 is safe.
+    Similarly, if G2 contains a non-facial triangle, then the 8-contraction to
+G1 is safe. Hence, we can assume neither G1 nor G2 contains a non-facial
+triangle. If the 8-contraction neither to G1 nor to G2 is safe, then we can by
+symmetry assume that x1 and x2 are internal vertices of G with exactly two
+neighbors outside of G′ . Let y1 and y2 be the neighbors of x1 outside of G′ ,
+and let y2 and y3 be the neighbors of x2 outside of G′ . Let C ′ be the 5-cycle
+y1 y2 y3 x3 z, and let G′′ be the subgraph of G drawn in the closed disk bounded
+by C ′ . Then G′′ is a 10-diamond. Since neither x3 nor z is an internal vertex
+of G with all neighbors in G′′ , the corresponding 10-contraction is safe.
+
+   Thus, we obtain the desired result on generation of candidates.
+
+Corollary 25. For every ℓ-candidate G, there exists an ℓ-candidate G′ with
+no internal vertices such that G can be obtained from G′ by a sequence of
+inverses to ⋆-contractions, where all intermediate canvases in this sequence
+are ℓ-candidates.
+
+
+                                        23
+    Corollary 25 can be used to generate all non-isomorphic ℓ-candidates
+with at most n vertices in time Cℓ (n) · poly(n), were Cℓ (n) is the num-
+ber of such ℓ-candidates. The basic idea is as follows: We start from the
+ℓ-candidates with no internal vertices, i.e., from 2-connected outerplanar
+graphs with ℓ vertices and all internal faces of length three (such graphs
+can be easily enumerated, since the graphs obtained from their duals by
+deleting the vertex corresponding to the outer face are exactly the subcubic
+trees with ℓ − 2 vertices). We then process these ℓ-candidates as well as all
+ℓ-candidates generated later. For the currently processed ℓ-candidate G, we
+perform all possible inverses to ⋆-contractions to obtain larger ℓ-candidates.
+For each such ℓ-candidate G′ with at most n vertices, we first check whether
+we have not seen it before (e.g., by storing canonical isomorphism-invariant
+codes of all encountered ℓ-candidates in a hash table; since we deal with
+plane graphs, such a canonical code can be computed in linear time), and if
+not, we schedule it for processing.
+    This procedure is guaranteed to generate all non-isomorphic ℓ-candidates
+with at most n vertices by Corollary 25. However, the test whether we have
+seen the currently considered ℓ-candidate before is somewhat time consum-
+ing and requires space linear in Cℓ (n). A more efficient approach is described
+in [10]; briefly, for each ℓ-candidate, we canonically pick one way of obtain-
+ing it through the inverse to a ⋆-contraction, then only process it when we
+reach it through this particular operation. Let us mention that another ad-
+vantage of this approach is that it is easy to distribute, since each candidate
+is processed in isolation.
+    We implemented this algorithm and used it to generate all non-isomorphic
+4-candidates with at most 28 vertices, testing more than 109 graphs, see Ta-
+ble 1 for exact statistics1 . None of them is rainbow-forbidding, and only
+the one consisting of the 4-cycle bounding the outer face with a single chord
+(the diamond) is diagonal-forbidding. This confirms Conjecture 2 for graphs
+with at most 28 vertices.
+    Interestingly, there turn out to be infinitely many bichromatic-forbidding
+4-candidates. Next, we describe a construction of such candidates. To justify
+its validity, it is convenient to use the following result of Fisk [6].
+Lemma 26. Let G be a triangulation of an orientable surface, and let ϕ
+be a 4-coloring of G. For i ∈ {1, . . . , 4}, let ni be the number of odd degree
+vertices of color i. Then n1 ≡ . . . ≡ n4 (mod 2).
+
+   1
+    More precisely, two of the authors wrote their own implementations, one in C++, one
+in Python/SageMath; the latter is slower and we only used it to double-check the claim
+up to 25 vertices. The programs can be found at https://lidicky.name/pub/mindeg5/.
+
+
+                                          24
+             Vertices   4-candidates        bichromatic-forbidding
+                4               1                      1
+               12               1                      0
+               13               3                      0
+               14              11                      0
+               15              37                      0
+               16             134                      1
+               17             470                      0
+               18            1 713                     0
+               19            6 150                     3
+               20           22 353                     10
+               21           81 158                     29
+               22          296 023                    122
+               23         1 081 761                   490
+               24         3 965 863                  1 851
+               25        14 576 016                  6 915
+               26        53 728 107                 25 631
+               27        198 572 799                94 323
+               28        735 894 150               346 005
+
+
+Table 1: Numbers of all non-isomorphic 4-candidates with up to 28 vertices,
+and the numbers of non-isomorphic bichromatic forbidding candidates with
+up to 28 vertices. No rainbow- or diagonal-forbidding candidates except for
+the diamond were found.
+
+
+
+
+                                       25
+                                                          u1
+
+
+                                                    v1            v2
+
+                    u1                       u4            H               u2
+
+                                                    v4            v3
+        y4          x1          y1
+
+             v1            v2                             u3
+                                                          (b)
+u4                  H                   u2
+      x4                          x2
+             v4            v3                             u1
+
+        y3                      y2
+                      x3                            v1            v2
+                    u3                       u4                            u2
+                                                           H
+                    (a)                             v4            v3
+
+
+                                                          u3
+                                                          (c)
+
+
+     Figure 4: The constructions of bichromatic-forbidding 4-candidates.
+
+
+
+
+                                       26
+    The construction is as follows.
+Lemma 27. Let H be a plane graph with the outer face bounded by the cycle
+Q = v1 v2 v3 v4 . Let G be the plane graph obtained as follows (see Figure 4(a)):
+We add a cycle x1 y1 . . . x4 y4 to the outer face of H, together with edges vi xi ,
+vi xi−1 , and vi yi−1 for i ∈ {1, . . . , 4}, where x0 = x4 and y0 = y4 . Then,
+we add the 4-cycle K = u1 . . . u4 bounding the outer face, and edges ui yi−1 ,
+ui xi , and ui yi for i ∈ {1, . . . , 4}. The graph G is bichromatic-forbidding
+if and only if the graph H is bichromatic-forbidding. Moreover, if H is a
+4-candidate, then G is a 4-candidate.
+Proof. Suppose first that G is not bichromatic-forbidding, and thus G has a
+4-coloring ϕ such that ϕ(u1 ) = ϕ(u3 ) = 1 and ϕ(u2 ) = ϕ(u4 ) = 2. We claim
+that ϕ uses only two colors on Q, and thus the restriction of ϕ to H shows
+that H is not bichromatic-forbidding. For contradiction, suppose that ϕ
+uses at least three colors on Q, and thus by symmetry, we can assume that
+ϕ(v1 ) 6= ϕ(v3 ).
+    Let G′ be the triangulation of the plane obtained from G − (V (H) \
+V (K)) − (E(H) \ E(K)) by adding the edge v1 v3 and a vertex z adjacent
+to u1 , . . . , u4 , and let ϕ′ be the 4-coloring of G′ obtained from the re-
+striction of ϕ to V (G) \ (V (H) \ V (K)) by letting ϕ′ (z) = 3. Let M =
+{v1 , . . . , v4 , x1 , . . . , x4 , y1 , . . . , y4 } and for c ∈ {1, . . . , 4}, let mc be the num-
+ber of vertices in M of color c. Note that M is covered by four triangles in
+G′ [M ], namely vi xi−1 yi−1 for i ∈ {1, . . . , 4}, and thus m1 , . . . , m4 ≤ 4. More-
+over, since ϕ′ (u1 ) = ϕ′ (u3 ) = 1, the color 1 can only be used on M on the
+triangles v1 v4 x4 and v2 v3 x2 , and thus m1 ≤ 2, and symmetrically m2 ≤ 2.
+Since m1 + · · · + m4 = |M | = 12, this is only possible if m1 = m2 = 2 and
+m3 = m4 = 4.
+    Note that the odd degree vertices of G′ are exactly those in M ′ = M \
+{v1 , v3 }. Each of the two colors that do not appear on v1 and v3 is used
+an even number of times on M ′ (twice or four times). By Lemma 26, the
+remaining two colors ϕ′ (v1 ) and ϕ′ (v3 ) also have to be used even number of
+times on M ′ . However, then the color ϕ′ (v1 ) would be used odd number of
+times on M , which is a contradiction, since mϕ′ (v1 ) ∈ {2, 4}.
+    Conversely, suppose that H is not bichromatic-forbidding, and thus H
+has a 4-coloring ψ such that ψ(v1 ) = ψ(v3 ) = 1 and ψ(v2 ) = ψ(v4 ) = 2. Let
+us extend ψ by letting ψ(x1 ) = . . . = ψ(x4 ) = 3, ψ(y1 ) = . . . = ψ(y4 ) = 4,
+ψ(u1 ) = ψ(u3 ) = 1 and ψ(u2 ) = ψ(u4 ) = 2. This gives a 4-coloring of G
+which shows that G is not bichromatic-forbidding.
+    Therefore, the graph G is bichromatic-forbidding if and only if the graph
+H is. If H is a 4-candidate, then note that the construction of G does not
+
+                                                27
+create non-facial triangles, and clearly all vertices of M have degree at least
+five in G; therefore, G is a 4-candidate as well.
+
+    According to Lemma 27, we can start with the diamond (a trivial bichromatic-
+forbidding 4-candidate) and iterate the construction described in the state-
+ment of the lemma to obtain larger and larger bichromatic-forbidding 4-
+candidates.
+    A simpler construction is given in the following lemma.
+Lemma 28. Let H be a 4-candidate with the outer face bounded by an
+induced cycle Q = v1 v2 v3 v4 . Let G be a canvas obtained from H by adding
+a cycle K = u1 u2 u3 u4 bounding the outer face and the edges ui vi and ui vi+1
+for i ∈ {1, . . . , 4}, where v5 = v1 (see Figure 4(b)). Then G is a 4-candidate,
+and it is bichromatic-forbidding if and only if H is.
+Proof. Since Q is an induced cycle in H, all its vertices have degree at least
+three in H and at least five in G. It follows that G is a candidate.
+    Suppose that G is not bichromatic-forbidding, and thus G has a 4-
+coloring ϕ such that ϕ(u1 ) = ϕ(u3 ) = 1 and ϕ(u2 ) = ϕ(u4 ) = 2. Then
+ϕ can only use colors 3 and 4 on the 4-cycle Q, and thus the restriction of
+ϕ to H shows that H is not bichromatic-forbidding.
+    Conversely, if H is not bichromatic-forbidding, then H has a 4-coloring
+ψ such that ψ(v1 ) = ψ(v3 ) = 3 and ψ(v2 ) = ψ(v4 ) = 4. We can extend ψ
+to a 4-coloring of G by letting ψ(u1 ) = ψ(u3 ) = 1 and ψ(u2 ) = ψ(u4 ) = 2,
+thus showing that G is not bichromatic-forbidding.
+    Therefore, G is bichromatic-forbidding if and only if H is.
+
+    Since Lemma 28 requires Q to be an induced cycle, it cannot be applied
+to the diamond directly. However, it can be applied to the 4-candidates
+arising from Lemma 27. Note that Lemma 27 produces 4-candidates with
+all external vertices of degree five and Lemma 28 ones with all external
+vertices of degree four. There is also the following variant of Lemma 28
+producing 4-candidates with three external vertices of degree four and one
+of degree at least seven.
+Lemma 29. Let H be a 4-candidate with the outer face bounded by an
+induced cycle Q = v1 v2 v3 v4 , and let v1 v2 u1 be the triangle bounding the
+other face incident with the edge v1 v2 . Let G be a canvas obtained from
+H − v1 v2 by adding a cycle K = u1 u2 u3 u4 bounding the outer face and the
+edges ui vi and ui vi+1 for i ∈ {2, 3, 4}, where v5 = v1 (see Figure 4(c)). If
+degH v1 , degH v2 ≥ 5, then G is a 4-candidate. Moreover, G is bichromatic-
+forbidding if and only if H is.
+
+                                       28
+Proof. If degH v1 ≥ 5 and degH v2 ≥ 5, then all vertices of Q have degree at
+least five in G. From this, it follows that G is a candidate.
+    Suppose that G is not bichromatic-forbidding, and thus G has a 4-
+coloring ϕ such that ϕ(u1 ) = ϕ(u3 ) = 1 and ϕ(u2 ) = ϕ(u4 ) = 2. Then
+ϕ can only use colors 3 and 4 on the path Q − v1 v2 . This implies that
+ϕ(v1 ) 6= ϕ(v2 ), and thus the restriction of ϕ to V (H) is a proper 4-coloring
+of H. This 4-coloring shows that H is not bichromatic-forbidding.
+    Conversely, if H is not bichromatic-forbidding, then H has a 4-coloring
+ψ such that ψ(v1 ) = ψ(v3 ) = 3 and ψ(v2 ) = ψ(v4 ) = 4. By symmetry,
+we can assume that ψ(u1 ) = 1. We can extend ψ to a 4-coloring of G
+by letting ψ(u3 ) = 1 and ψ(u2 ) = ψ(u4 ) = 2, thus showing that G is not
+bichromatic-forbidding.
+    Therefore, G is bichromatic-forbidding if and only if H is.
+
+   The aforementioned enumeration of 4-candidates with at most 28 vertices
+supports the following conjecture.
+Conjecture 30. Every bichromatic-forbidding 4-candidate can be obtained
+from the diamond by a sequence of the operations described in Lemmas 27,
+28, and 29.
+
+
+3    Generating rainbow-forbidding weak 4-candidates
+A canvas G is a weak ℓ-candidate if its outer face is bounded by an ℓ-cycle
+and all triangles in G bound faces. Note that this in particular implies
+that all internal vertices of G have degree at least four. It is easy to see
+that to enumerate non-4-colorable graphs in C0 , it suffices to enumerate the
+rainbow-forbidding weak 4-candidates. To do so, we fundamentally use the
+reduction discussed in the introduction, deletion of an internal vertex v of
+degree four followed by identification of two non-adjacent neighbors of v.
+An issue here is that this might create a non-facial triangle, leading to a
+somewhat more involved argument presented in this section. Let us remark
+that the same procedure can be used to generate diagonal-forbidding weak
+4-candidates; thus, we say that a plane graph H with the outer face bounded
+by a 4-cycle is restrictive if it is rainbow- or diagonal-forbidding. The kind
+of H is r if H is rainbow-forbidding and d if H is diagonal-forbidding.
+    Let G be a restrictive weak 4-candidate and let P = uvw be a path in
+G, where
+    • v is an internal vertex of degree four and u, x, w, y are its neighbors
+      in order according to the plane drawing of G,
+
+                                      29
+   • at least one of the vertices u and w is internal, and
+
+   • uw 6∈ E(G) and x, y, and v are the only common neighbors of u and
+     w.
+
+Let G/P be the canvas obtained by contracting the edges of P and suppress-
+ing the 2-faces; by the assumptions, G/P does not have loops or parallel
+edges. We say that a vertex z of G/P is triangle-isolated if there exists a
+triangle T in G/P such that the open disk bounded by T contains z. For
+a non-negative integer m, we say that the path P is m-contractible if it
+satisfies the conditions described above and the open disk bounded by any
+triangle in G/P contains at most m vertices. Since every triangle in G is
+facial, observe that all triangle-isolated vertices in G/P are contained in
+open disks bounded by at most two triangles, corresponding to 5-cycles in
+G passing through P and drawn on the opposite sides of P . Hence, if the
+path P is m-contractible, then G/P contains at most 2m triangle-isolated
+vertices.
+
+Observation 31. Let G be a weak 4-candidate, let P = uvw be an m-
+contractible path in G for an integer m ≥ 0, and let F be the graph obtained
+from G/P by deleting all triangle-isolated vertices. If G is restrictive, then
+F is restrictive as well, and F has the same kind as G.
+
+Proof. It suffices to show that every 4-coloring ϕ of F extends to a 4-coloring
+of G. First, for every non-facial triangle T in G/P , we can extend ϕ to the
+subgraph of G/P drawn inside T : The subgraph has a 4-coloring by the Four
+Color Theorem, and by permuting the colors, we can modify it to match ϕ
+on T . Thus, ϕ extends to a 4-coloring of G/P . Next, we extend ϕ to G:
+We give u and w the color of the vertex resulting from the contraction of P ,
+and then extend the coloring to v greedily.
+
+    It will be convenient to consider a variant of this operation: A bidiamond
+consists of two adjacent internal vertices u and v of degree four. Let x and
+y be the common neighbors of u and v, and let u′ and v ′ be the neighbors of
+u and v, respectively, not in {u, v, x, y}. If at least one of x and y is internal
+and there is no path of length at most three from x to y in G − {u′ , u, v, v ′ },
+then we say that the bidiamond is contractible. The contraction of the
+bidiamond is the canvas obtained from G − {u, v} by identifying x with y
+and suppressing the 2-faces. Observe that the resulting canvas is a restrictive
+weak 4-candidate of the same kind as G. According to the following lemma,
+even non-contractible bidiamonds are useful.
+
+
+                                       30
+Lemma 32. Let G be a restrictive triangulated weak 4-candidate, and sup-
+pose that vertices u and v form a bidiamond in G. Then either this bidia-
+mond is contractible, or G contains a 1-contractible path.
+
+Proof. Let x and y be the common neighbors of u and v, and let u′ and v ′
+be the neighbors of u and v, respectively, not in {u, v, x, y}. We can assume
+that the path u′ uv is not 1-contractible, and in particular there exists a
+path of length at most three between u′ and v in G − {u, x, y}. The vertices
+u′ and v ′ are non-adjacent, since G does not contain separating triangles.
+Therefore, u′ and v ′ have a common neighbor z 6∈ {x, y}.
+     By symmetry, we can assume that the open disk Λ1 bounded by the
+5-cycle u′ uvv ′ z contains x; and in particular, x is an internal vertex. Note
+that since G does not contain non-facial triangles, z is not adjacent to y. Let
+z ′ be a common neighbor of u′ and v ′ such that the open disk Λ2 bounded
+by the 5-cycle u′ uvv ′ z ′ contains the face bounded by the triangle uvy; note
+that z ′ = y is possible. Subject to these properties, choose the vertices z
+and z ′ so that the disks Λ1 and Λ2 are as large as possible.
+     We can assume that the bidiamond {u, v} is not contractible, and thus
+there exists a path R of length at most three from x to y in G − {u′ , u, v, v ′ }.
+By planarity, R intersects the path u′ zv ′ , and since zy 6∈ E(G), we conclude
+that R = xzy ′ y for a vertex y ′ . Since all triangles is G bound faces and
+xz ∈ E(G), note that x is the only vertex contained in Λ1 . Moreover,
+observe that either z ′ = y or z ′ = y ′ , and thus only the vertex y can be
+contained in Λ2 . By the maximality of Λ1 and Λ2 , it follows that only
+x and possibly y is triangle-isolated in G/u′ uv, and thus the path u′ uv is
+1-contractible.
+
+   We also need the following observations.
+
+Observation 33. Let G be a plane graph and let P be a path of length at
+most two contained in the boundary of a face of G. Then every precoloring
+of G[V (P )] extends to a 4-coloring of G.
+
+Proof. We can assume that P has length two, as otherwise we can extend
+P by another vertex; let P = v1 v2 v3 . Let ψ be any precoloring of G[V (P )].
+Add the edge v1 v3 to G, and if ψ(v1 ) = ψ(v3 ), contract this edge. The
+resulting planar graph G′ is 4-colorable by the Four Color Theorem, and we
+can permute the colors in this 4-coloring to match ψ. Thus, the 4-coloring
+of G′ corresponds to a 4-coloring of G extending ψ.
+
+
+
+
+                                        31
+Observation 34. Let G be a plane graph and let P be a path of length three
+contained in the boundary of a face of G. Then every precoloring of G[V (P )]
+giving the ends of P the same color extends to a 4-coloring of G.
+
+Proof. Let P = v1 v2 v3 v4 and let ψ be any precoloring of G[V (P )] such that
+ψ(v1 ) = ψ(v4 ). Since ψ exists, we have v1 v4 6∈ E(G). Identify the vertices
+v1 and v4 , turning P into a triangle. The resulting planar graph G′ is 4-
+colorable by the Four Color Theorem, and we can permute the colors in this
+4-coloring to match ψ. Thus, the 4-coloring of G′ corresponds to a 4-coloring
+of G extending ψ.
+
+    We say that a canvas is trivial if it has at most one internal vertex. A
+restrictive weak 4-candidate G is deepest if it is non-trivial and no proper
+subcanvas of G is a non-trivial restrictive weak 4-candidate. Lemma 32
+makes the following observation useful even when G is a subcanvas of a
+larger weak 4-candidate.
+
+Lemma 35. Let G be a deepest restrictive weak 4-candidate with the outer
+face bounded by the cycle K = x1 x2 x3 x4 . If x1 and x3 have a common
+neighbor v 6∈ {x2 , x4 }, then G contains a bidiamond.
+
+Proof. For i ∈ {1, 2}, let Ki be the 4-cycle x2i−1 x2 vx4 and let Gi be the
+subcanvas of G bounded by Ki . Since G is non-trivial and all triangles
+in G bound faces, G contains at most one of the edges x1 v and x3 v. We
+claim that both G1 and G2 are trivial, and thus G contains a bidiamond.
+For contradiction, suppose that say G1 is non-trivial. Clearly G1 is a weak
+4-candidate, and since G is deepest, G1 is not restrictive.
+     Let ϕ be a coloring of K that does not extend to a 4-coloring of G,
+such that the type of ϕ is rainbow or diagonal. By Observation 33, the
+restriction of ϕ to the path x2 x3 x4 extends to a 4-coloring ϕ2 of G2 . Let
+ψ1 be the 4-coloring of K1 matching ϕ on x2 , x1 , and x4 , and matching ϕ2
+on v. Since ϕ does not extend to a 4-coloring of G, the coloring ψ1 does
+not extend to a 4-coloring of G1 . Since G1 is not restrictive, we can assume
+that ϕ(x1 ) = ψ1 (v) = 1 and ϕ(x2 ) = ϕ(x4 ) = 2. Since the type of ϕ is not
+bichromatic, we can assume that ϕ(x3 ) = 3.
+     Observe that Corollary 17 implies that there exists a color c ∈ {3, 4} such
+that G2 has a 4-coloring ϕ′2 matching ϕ on the path x2 x3 x4 and such that
+ϕ′2 (v) = c. Since G1 is not restrictive, it has has a 4-coloring ϕ1 matching
+ϕ on the path x2 x1 x4 and such that ϕ1 (v) = c. The combination of ϕ′2 and
+ϕ1 is a 4-coloring of G extending ϕ, which is a contradiction.
+
+
+
+                                      32
+                                      v1
+
+
+
+
+                v5                                          v2
+                       wing      x         y      wing
+
+
+
+
+                                      z
+
+
+                       v4                           v3
+
+
+                     Figure 5: A troublesome pentagon.
+
+    Next, we need to consider properties of two special configurations. Let
+G be a weak 4-candidate. A troublesome pentagon in G is a subcanvas H
+of G with the outer face bounded by a 5-cycle Q = v1 . . . v5 containing a
+triangle xyz of internal vertices such that x is adjacent to v1 and v4 , y is
+adjacent to v1 and v3 , and z is adjacent to v3 and v4 ; see Figure 5. The
+vertex z is the center of the pentagon. The subcanvases of H bounded by
+the cycles v1 xv4 v5 and v1 v2 v3 y are the wings of the troublesome pentagon.
+We say that a vertex w of G is potentially useful if there exists a restrictive
+induced subgraph F of G with the same outer face as G such that F − w is
+not restrictive.
+Lemma 36. Let G be a restrictive weak 4-candidate and let H be a trou-
+blesome pentagon in G. If neither of the wings of H is restrictive, then the
+center of H is not potentially useful.
+Proof. Let K be the 4-cycle bounding the outer face of G. Let Q = v1 . . . v5
+and xyz be as in the definition of a troublesome pentagon and let H1 and
+H2 be the wings, where v2 ∈ V (H2 ). Suppose for a contradiction that z is
+potentially useful, and thus there exists a restrictive induced subgraph F of
+G with the outer face bounded by K such that F − z is not restrictive. Let
+ψ be a precoloring of K (of rainbow or diagonal type) that does not extend
+to a 4-coloring of F , but does extend to a 4-coloring of F − z.
+
+                                      33
+    Let F ′ = (F − z) ∪ Q. Note that F ′ is obtained from F − z by adding
+the vertices of V (Q) \ V (F ) and the incident edges of Q, and thus F − z is
+an induced subgraph of F ′ and all vertices of V (F ′ ) \ V (F ) have degree two
+in F ′ . Hence, ψ also extends to a 4-coloring of F ′ . Let F ′′ be the subgraph
+of F ′ obtained by deleting the vertices and edges drawn in the open disk
+bounded by Q.
+    Consider any 4-coloring ϕ of F ′′ extending ψ. Since ψ does not extend
+to a 4-coloring of F , the coloring ϕ does not extend to a 4-coloring of H.
+We claim that this implies the following:
+
+ (⋆) Every 4-coloring ϕ of F ′′ extending ψ satisfies either ϕ(v1 ) = ϕ(v4 )
+     and ϕ(v3 ) = ϕ(v5 ), or ϕ(v1 ) = ϕ(v3 ) and ϕ(v2 ) = ϕ(v4 ).
+
+Indeed, if ϕ(v1 ) 6∈ {ϕ(v3 ), ϕ(v4 )}, then we could give x the color ϕ(v3 ), y the
+color ϕ(v4 ), extend the coloring to z, and extend the coloring to H1 and H2
+using the assumption that they are not restrictive, which is a contradiction.
+Hence, suppose that ϕ(v1 ) = ϕ(v4 ) (the case ϕ(v1 ) = ϕ(v3 ) is symmetric).
+Then we can color x by ϕ(v3 ) and extend the 4-coloring to z, y, and H2 .
+Since ϕ does not extend to H, this coloring does not extend to H1 . It
+follows that the subcanvas H1 is bichromatic-forbidding and the coloring of
+its boundary 4-cycle given by ϕ and the assignment of the color ϕ(v3 ) to
+x uses only two colors, i.e., ϕ(v5 ) = ϕ(v3 ). This confirms the conclusion of
+(⋆).
+     Since ψ extends to a 4-coloring of F − z, it also extends to a 4-coloring ϕ
+of F ′′ . By (⋆), we can assume that ϕ(v1 ) = ϕ(v4 ) = 1 and ϕ(v3 ) = ϕ(v5 ) = 2.
+For distinct colors a, b ∈ {1, . . . , 4}, let Ca,b be the subgraph of F ′′ induced
+by the vertices whose colors according to ϕ are a or b.
+     If v1 and v4 are in the same component of C1,3 , then by planarity, there
+exists i ∈ {3, 5} such that the component C1 of C2,4 containing vi does not
+contain v8−i and does not intersect K. We can exchange the colors 2 and
+4 on C1 to obtain a 4-coloring of F ′′ violating (⋆), which is a contradiction.
+Therefore, v1 and v4 are not in the same component of C1,3 , and similarly,
+they are not in the same component of C1,4 .
+     If there exists i ∈ {1, 4} such that the component C2 of C1,3 or C1,4
+containing vi is disjoint from K, we can exchange the colors on C2 , again
+obtaining a 4-coloring of F ′′ violating (⋆). Thus, we can assume that all such
+components intersect K. Since v1 and v4 are not in the same component of
+C1,3 or C1,4 , for both a ∈ {3, 4}, there exist distinct non-adjacent vertices
+sa , ta ∈ V (K) such that ψ(sa ), ψ(ta ) ∈ {1, a} and all other vertices of K
+have colors different from 1 and a.
+
+
+                                        34
+    If {s3 , t3 } = {s4 , t4 }, this implies that ψ(s3 ) = ψ(t3 ) = 1 and ψ assigns
+the color 2 to the remaining two vertices of K. If {s3 , t3 } 6= {s4 , t4 }, then
+ψ(s3 ) = ψ(t3 ) = 3 and ψ(s4 ) = ψ(t4 ) = 4. In either case, the type of ψ were
+bichromatic, which is a contradiction.
+
+    Let G be a weak 4-candidate. An amoeba in G is a subcanvas H of G
+with the outer face bounded by a 4-cycle Q = v1 . . . v4 , where H contains a
+triangle wyz of internal vertices, v1 is adjacent to w and y, v2 is adjacent
+to w and z, and v3 is adjacent to z, and moreover y and v3 have a common
+neighbor x 6= z, where either x is an internal vertex of H or x = v4 ; see
+bottom right of Figure 6. The subcanvas of G bounded by the 4-cycle
+C = xyzv3 is the eye of the amoeba, and the subgraph of G resulting from
+deleting all vertices and edges drawn in the open disk bounded by C is said
+to be obtained from G by blinding the amoeba. The amoeba is proper if
+its eye has at least one internal vertex. The eye of H is irrelevant for the
+restrictive precoloring extension in G, in the following sense.
+Lemma 37. Let G be a restrictive weak 4-candidate, let ψ be a precoloring
+of the 4-cycle K bounding the outer face of G that does not extend to a
+precoloring of G, and let H be an amoeba in G. Then ψ does not extend to
+a 4-coloring of the subgraph G′ of G obtained by blinding the amoeba H.
+Proof. Let Q = v1 . . . v4 , w, x, y, and z be as in the definition of an amoeba.
+Suppose for a contradiction that ψ extends to a 4-coloring ϕ of G′ .
+    If ϕ(v1 ) 6= ϕ(v3 ), then we let ϕ0 be the restriction of ϕ to the vertices
+of G which are not internal in H and we show that ϕ0 can be extended to
+a 4-coloring of G, obtaining a contradiction: We extend ϕ0 to z by letting
+ϕ0 (z) = ϕ(v1 ). By Observation 34, ϕ0 further extends to the subcanvas of
+G bounded by the 5-cycle zv3 v4 v1 y. Since ϕ0 (v1 ) = ϕ0 (z), we can finally
+extend this 4-coloring to w as well.
+    Therefore, we have ϕ(v1 ) = ϕ(v3 ), and thus ϕ(z) 6= ϕ(v1 ), and conse-
+quently ϕ(y) = ϕ(v2 ). Let ϕ1 be the restriction of ϕ obtained by uncoloring
+the vertices z and w. By Observation 33, ϕ1 can be extended to the eye of
+H, and since ϕ1 (y) = ϕ1 (v2 ), we can finally extend ϕ1 to w as well. This is
+again a contradiction.
+
+    Finally, we are ready to state the result showing that every non-trivial
+restrictive weak 4-candidate contains a reducible configuration.
+Theorem 38. If Conjecture 2 holds, then every non-trivial restrictive weak
+4-candidate G contains a contractible bidiamond, a 1-contractible path, or a
+proper amoeba.
+
+                                        35
+                                                                          x
+                         p                                                        v
+        u   ′
+                                        v′                      u′    u                   v′
+                                                                          y
+
+                                 decontraction of a bidiamond
+
+
+                                                                              u
+                         p                                           y1    v
+                x1
+                               x2       y2                                                y2
+                                                                              w
+
+                             decontraction of a 1-contractible path
+
+
+   v1                                        v2           v1                                   v2
+                         w                                                w
+
+                     y                                                y
+                                    z                                                 z
+
+                                                                          eye
+        x                                                      x
+   v4                                        v3           v4                                   v3
+
+                                             amoeba expansion
+
+
+Figure 6: Configurations from Theorem 38 and the corresponding expan-
+sions.
+
+
+
+
+                                                    36
+Proof. By Lemma 32, we can assume that G does not contain a bidiamond.
+Let H be a minimal non-trivial restrictive subcanvas of G; note that H
+is deepest. Let Q be the 4-cycle bounding the outer face of H. Since H
+is non-trivial and all triangles in G are facial, the cycle Q is induced. By
+Lemmas 32 and 35, we can assume that no internal vertex of H has non-
+adjacent neighbors in Q.
+     Suppose now that there exists an induced path S = v1 vv3 w in H such
+that v1 , w ∈ V (Q), v, v3 6∈ V (Q), and v has degree four. Let v1 v2 v3 v4 be the
+cycle formed by the neighbors of v. Note that {v2 , v4 } 6⊆ V (Q), since v does
+not have two non-adjacent neighbors in Q; by symmetry, we can assume that
+v4 6∈ V (Q). Let Q = v1 u1 wu2 , where v4 is drawn in the open disk bounded
+by the 5-cycle v1 vv3 wu2 . Since v4 does not have two non-adjacent neighbors
+in Q, it is not adjacent to w. Similarly, if v2 6= u1 , then v2 w 6∈ E(G). We
+can assume that the path v2 vv4 is not 1-contractible in G, and thus there
+exists an induced path R of length at most three in G − {v, v1 , v3 } between
+v2 and v4 . This is not possible if v2 6= u1 , since then v4 w, v2 w, u1 u2 6∈ E(G).
+Therefore, v2 = u1 .
+     Suppose that v4 is adjacent to u2 . Note that v3 is not adjacent to v2 ,
+as otherwise v and v4 would form a bidiamond. Consider any 4-coloring ψ
+of Q whose type is rainbow or diagonal. By symmetry, we can assume that
+ψ(v1 ) 6= ψ(w). We can color v3 by the color ψ(v1 ) and by Observation 33,
+extend the 4-coloring to the subcanvas drawn in the closed disk bounded by
+the 4-cycle wv3 v4 u2 . Finally, we can greedily extend the coloring to v, since
+two of its neighbors (v1 and v3 ) have the same color. Therefore, any such
+4-coloring of Q extends to a 4-coloring H, which is a contradiction since H
+is restrictive.
+     Hence, we can assume that v4 u2 6∈ E(G). Let us now continue the
+discussion of the path R showing that the path v2 vv4 is not 1-contractible.
+Since v4 is also not adjacent to w, the neighbor x of v4 in R is contained
+in V (H) \ V (Q). Since Q is an induced cycle, it follows that R = v4 xwv2 .
+Therefore, H is an amoeba. Since the path R shows that v2 vv4 is not 1-
+contractible, the open disk bounded by the 5-cycle v2 vv4 xw must contain at
+least two vertices, and thus the eye of the amoeba H has at least one internal
+vertex. It follows that the amoeba H is proper, and thus the conclusion of
+the Lemma holds. In conclusion,
+
+ (⋆) there is no induced path in H of length at most three with ends in
+     Q containing a vertex in V (H) \ V (Q) of degree four. In particular,
+     every induced (≤ 5)-cycle C in G such that C contains a vertex in
+     V (H) \ V (Q) of degree four satisfies C ⊆ H.
+
+
+                                        37
+    Recall that the canvas H is restrictive, and let H ′ be a minimal induced
+subgraph of H such that Q ⊆ H ′ and H ′ is restrictive. In particular, all
+internal vertices of H ′ are potentially useful in H. Since H is non-trivial
+and every triangle in H bounds a face, observe that H ′ is non-trivial as well.
+By Lemma 13, there exists an internal vertex v ∈ V (H ′ ) of degree four such
+that all incident faces of H ′ have length three. Thus, v also has degree four
+in H.
+    Let v1 v2 v3 v4 be the cycle formed by the neighbors of v; since each triangle
+in G bounds a face, this cycle is induced. As we have observed, v does
+not have two non-adjacent neighbors in Q, and thus {v1 , v3 } 6⊆ V (Q) and
+{v2 , v4 } 6⊆ V (Q). In particular, v1 or v3 is an internal vertex, and v2 or v4
+is an internal vertex of H.
+    We can assume that the path P1 = v1 vv3 is not 1-contractible, as other-
+wise the conclusion of the Lemma holds. Thus, G − {v, v2 , v4 } contains an
+induced path R1 of length at most three from v1 to v3 such that either R1
+has length two, or R1 has length three and the open disk bounded by the
+triangle T1 in G/P1 corresponding to R1 contains at least two vertices. By
+symmetry, we can assume that v4 is contained in the open disk Λ1 bounded
+by the cycle P1 ∪ R1 in G.
+    Similarly, we can assume that the path P2 = v2 vv4 is not 1-contractible,
+and thus G − {v, v1 , v3 } contains an induced path R2 of length at most three
+from v2 to v4 such that either R2 has length two, or R2 has length three
+and the open disk bounded by the triangle T2 in G/P2 corresponding to
+R2 contains at least two vertices. By symmetry, we can assume that v3 is
+contained in the open disk Λ2 bounded by the cycle P2 ∪ R2 in G.
+    By (⋆), we have R1 ∪ R2 ⊆ H. By planarity, the paths R1 and R2
+intersect in (at least) a vertex z ∈ V (H) \ {v, v1 , . . . , v4 }. Since each triangle
+in G bounds a face, z is not adjacent to both v1 in R1 and v2 in R2 . By
+symmetry, we can assume that z is not adjacent to v1 in R1 , and thus the
+path R1 has length three and R1 = v1 z1 zv3 for a vertex z1 .
+    Suppose now that z is adjacent to v2 in R2 . If R2 has length two, then z
+is also adjacent to v4 , and since all triangles in G bound faces, it follows that
+deg v3 = 4; however, then v and v3 would form a bidiamond. Therefore, R2
+has length three, and thus the subcanvas H ′′ of H drawn in the closed disk
+bounded by the 4-cycle v1 z1 zv2 is an amoeba. Moreover, since the open
+disk bounded by T2 contains at least two vertices, the eye of this amoeba
+contains at least one internal vertex. Therefore, the amoeba H ′′ is proper,
+and thus the conclusion of the Lemma holds.
+    Hence, we can assume that z is not adjacent to v2 in R2 , and thus the
+path R2 has length three and R2 = v2 z2 zv4 for a vertex z2 . If v1 z2 ∈
+
+                                          38
+E(G), then note that v1 v2 z2 is a triangle bounding a face. Observe that the
+subcanvas of G drawn in the closed disk bounded by the 4-cycle zv4 v1 z2 is
+an amoeba. Moreover, since the open disk bounded by T2 contains at least
+two vertices, this amoeba is proper, and thus the conclusion of the Lemma
+holds. Therefore, we can assume that v1 z2 6∈ E(G), and symmetrically
+v2 z1 6∈ E(G).
+    Let F be the subcanvas of H drawn in the closed disk bounded by the
+5-cycle v1 v2 z2 zz1 . Then F is a troublesome pentagon with center v. Since v
+is potentially useful in H, a wing of F is restrictive. Thus, by symmetry, we
+can assume that the subcanvas H1 of H drawn in the closed disk bounded
+by the cycle Q1 = v1 v4 zz1 is restrictive.
+    By the minimality of H, the subcanvas H1 is trivial. Since the open disk
+bounded by T1 contains at least two vertices, H1 has exactly one internal
+vertex y and deg y = 4. Since the open disk bounded by T2 contains at least
+two vertices, we have v3 z2 6∈ E(G). Since v2 z1 6∈ E(G), it follows that the
+distance between z1 and v4 in G − {v1 , y, z} is greater than three, and thus
+the path v4 yz1 is 0-contractible. Therefore, the conclusion of the theorem
+holds.
+
+    Let F be a weak 4-candidate. We say that a weak 4-candidate G is an
+expansion of F if G is obtained from F by one of the following operations,
+see Figure 6:
+
+   • Decontraction of a bidiamond: Choose a path u′ pv ′ in F . Double the
+     edges u′ p and pv ′ , letting f1 and f2 be the resulting 2-faces. Split p
+     into two vertices x and y along a simple curve from f1 to f2 , and add
+     new vertices u and v and edges ux, u′ u, uy, uv, vx, vv ′ , and vy to the
+     resulting face.
+
+   • Decontraction of a 1-contractible path: Choose a vertex p of F . For
+     i ∈ {1, 2}, either
+
+        – choose an edge xi = pyi incident with p, double it and let fi be
+          the resulting 2-face, or
+        – choose a 3-face xi incident with p, add a vertex yi of degree four
+          inside xi adjacent to all the vertices of the boundary of xi and
+          with the edge xi p having multiplicity two, and let fi be the 2-face
+          bounded by this double edge,
+
+     so that xi 6= x3−i , and xi is not incident with x3−i in the case that xi
+     is an edge and x3−i is a 3-face. Split p into two vertices u and w along
+
+
+                                     39
+      a simple curve from f1 to f2 , and add a vertex v of degree four to the
+      resulting 4-face bounded by the cycle uy1 wy2 .
+
+   • Amoeba expansion: Choose a non-proper amoeba in F and replace its
+     eye by any weak 4-candidate with at least one internal vertex.
+
+   With this definition, Theorem 38 can be reformulated as follows.
+
+Corollary 39. If Conjecture 2 holds, then for every non-trivial restrictive
+weak 4-candidate G, there exists a restrictive weak 4-candidate F such that
+G is an expansion of F . Moreover, F has the same kind as G.
+
+Proof. Let us discuss each of the conclusions of Theorem 38 separately.
+    If G contains a contractible bidiamond {u, v}, then let F be obtained
+from G by a contraction of this bidiamond, so that G is obtained from F by
+a decontraction of a bidiamond. Since the bidiamond is contractible, F is a
+simple graph and every triangle in F bounds a face, and thus F is a weak
+4-candidate. Moreover, every 4-coloring ϕ of F extends to a 4-coloring of
+G: Let x and y be the common neighbors of u and v, let u′ and v ′ be the
+neighbors of u and v, respectively, not in {u, v, x, y}, and let p be the vertex
+of F obtained by identifying x with y. Without loss of generality, we can
+assume that ϕ(p) = 1, ϕ(u′ ) = 2, and ϕ(v ′ ) ∈ {2, 3}. We give x and y the
+color 1, u the color 3, and v the color 4. Therefore, since G is restrictive, F
+is restrictive as well, and has the same kind.
+    If G contains a 1-contractible path P , then let F be obtained from G/P
+by deleting all (at most two) triangle-isolated vertices, so that F is a weak
+4-candidate. Observe that G is obtained from F by a decontraction of a
+1-contractible path. Moreover, by Observation 31, the weak 4-candidate F
+is restrictive and has the same kind as G.
+    Finally, suppose that H is a proper amoeba in G, with vertices labeled
+as in the definition of an amoeba. We can choose H so that the eye of H
+is as large as possible; thus, the vertices y and v3 do not have any common
+neighbor not belonging to the eye. Let F be obtained from G by deleting
+the internal vertices of the eye and adding the edge yv3 . Then F is a weak
+4-candidate and G is obtained from F by amoeba expansion. Moreover, by
+Lemma 37, the weak 4-candidate F is restrictive (actually, even the canvas
+F − yv3 is restrictive) and has the same kind as G.
+
+   By induction, this has the following consequence.
+
+Corollary 40. If Conjecture 2 holds, then for every restrictive weak 4-
+candidate G, there exists a sequence G0 , G1 , . . . , Gm = G of restrictive
+
+                                      40
+weak 4-candidates of the same kind as G such that G0 is trivial and for
+every i ∈ {1, . . . , m}, the weak 4-candidate Gi is an expansion of Gi−1 .
+    Note that the diamond is the only trivial weak 4-candidate of kind d and
+W4 is the only trivial weak 4-candidate of kind r. Since the graphs in C0 are
+exactly the graphs obtained from weak 4-candidates by adding a crossing
+to the outer face, Corollary 40 implies Theorem 6, with the operation of
+expansion naturally lifted to the graphs in C0 .
+
+
+4    How to prove Conjecture 2?
+It is easy to see that Conjecture 2 is a strengthening of the Four Color The-
+orem (indeed, it is well-known and straightforward to prove that a minimal
+counterexample to the Four Color Theorem would have minimum degree
+five and no separating triangles). Up to some minor variations, we know
+essentially only one proof of the Four Color Theorem: Using Kempe chains,
+prove that many configurations in planar graphs are reducible, i.e., cannot
+appear in a minimal counterexample, then use discharging to show that at
+least one of them appears in every planar graph. It is natural to ask whether
+a similar approach can be used to prove Conjecture 2. This indeed seems
+promising, but there are several issues to overcome (we state them in the
+setting of restrictive 4-candidates, which is equivalent by Corollary 12).
+    • Some of the Kempe chains may contain precolored vertices. This limits
+      how we can exchange colors on Kempe chains, and results in fewer of
+      the configurations being reducible.
+
+    • Reducibility arguments often involve replacing a configuration by a
+      smaller one. This could decrease degrees of vertices or create non-facial
+      triangles, and thus we would not obtain a smaller counterexample and
+      reach a contradiction.
+
+    • The reducible configurations typically cannot contain precolored ver-
+      tices, and this affects the discharging procedure.
+The last issue is the least severe, since there is a standard technique for
+dealing with it by allocating extra charge for the precolored vertices. We
+discuss the first two issues in more detail in the rest of this section. Let us
+start with a useful observation.
+Lemma 41. Let G be a restrictive weak 4-candidate, let K be a 4-cycle in
+G, and let H be the subcanvas of G drawn in the closed disk bounded by K.
+
+                                      41
+If H is not restrictive, then the graph G1 obtained from G by deleting the
+internal vertices of H is restrictive. Moreover, if u, v ∈ V (K) are adjacent
+internal vertices whose degree in G1 is four, then the graph G1 − {u, v} is
+also restrictive.
+
+Proof. Let Q be the cycle bounding the outer face of G, and let ψ be a
+4-coloring of Q which does not extend to a 4-coloring of G. Suppose for
+a contradiction that ψ extends to a 4-coloring ϕ1 of G1 , and let ψ1 be the
+restriction of ϕ1 to K. Then ψ1 does not extend to a 4-coloring of H,
+and since H is not restrictive, it follows that ψ1 is bichromatic. Let K =
+v1 v2 v3 v4 ; we can assume that ψ1 (v1 ) = ψ1 (v3 ) = 1 and ψ2 (v2 ) = ψ2 (v4 ) = 2.
+    For any distinct colors c1 and c2 , let Gc1 ,c2 be the subgraph of G1 induced
+by the vertices to which ϕ1 assigns colors c1 and c2 . For a vertex v such that
+ϕ1 (v) ∈ {c1 , c2 }, let Gc1 ,c2 (v) be the component of Gc1 ,c2 containing v. If
+G1,3 (v1 ) contains v3 , then observe that by planarity, there exists i ∈ {2, 4}
+such that G2,4 (vi ) is disjoint from Q and does not contain v6−i . However,
+then we can exchange the colors 2 and 4 on G2,4 (vi ), turning ϕ1 into a 4-
+coloring ϕ3 of G1 extending ψ and whose restriction to K is v1 -diagonal.
+Since H is not restrictive, ϕ2 further extends to a 4-coloring of G, which is
+a contradiction. If G1,3 (v1 ) does not contain v3 and does not intersect Q,
+then we can similarly exchange colors 1 and 3 on G1,3 (v1 ) to turn ϕ1 into
+a 4-coloring which is v2 -diagonal and extends ψ, then further extend it to a
+4-coloring of G, again obtaining a contradiction.
+    We conclude that G1,3 (v1 ) does not contain v3 and intersects Q. By
+symmetry, for every i ∈ {1, . . . , 4} and c ∈ {3, 4}, the subgraph Gψ1 (vi ),c (vi )
+intersects K only in vi and intersects Q. Note that this implies that for
+every x ∈ V (G1,3 (v1 ) ∩ Q) and y ∈ V (G1,3 (v3 ) ∩ Q), the vertices x and y are
+distinct and non-adjacent. Therefore, letting Q = u1 u2 u3 u4 , we can assume
+that ψ(u1 ), ψ(u3 ) ∈ {1, 3} and ψ(u2 ), ψ(u4 ) ∈ {2, 4}.
+    If u1 ∈ V (G1,4 (v1 ) ∩ Q) ∪ V (G1,4 (v3 ) ∩ Q), we similarly conclude that
+ψ(u1 ), ψ(u3 ) ∈ {1, 4} and ψ(u2 ), ψ(u4 ) ∈ {2, 3}, and thus ψ(u1 ) = ψ(u3 ) = 1
+and ψ(u2 ) = ψ(u4 ) = 2. Otherwise, we have V (G1,4 (v1 ) ∩ Q) ∪ V (G1,4 (v3 ) ∩
+Q) = {u2 , u4 }, ψ(u2 ), ψ(u4 ) ∈ {1, 4} and ψ(u1 ), ψ(u3 ) ∈ {2, 3}, and thus
+ψ(u1 ) = ψ(u3 ) = 3 and ψ(u2 ) = ψ(u4 ) = 4. We conclude that ψ is bichro-
+matic, which is a contradiction. Therefore, G1 is restrictive.
+    Suppose now that say v1 and v2 are internal vertices whose degree in
+G1 is four, and suppose for a contradiction that ψ extends to a 4-coloring
+ϕ′1 of G2 = G1 − {v1 , v2 }. Since G is a weak 4-candidate, G1 contains
+triangles v1 v4 w1 , v2 v3 w2 , v1 v2 z, v1 w1 z, and v2 w2 z bounding faces, and K ′ =
+w1 zw2 v3 v4 is a cycle bounding a face of G2 . Since G1 is restrictive, ϕ′1
+
+
+                                          42
+cannot be extended to v1 and v2 , and thus we can assume that ϕ′1 (z) = 1,
+ϕ′1 (w1 ) = ϕ′1 (v3 ) = 2, and ϕ′1 (w2 ) = ϕ′1 (v4 ) = 3.
+     For any distinct colors c1 and c2 , let G′c1 ,c2 be the subgraph of G2 in-
+duced by the vertices to which ϕ′1 assigns colors c1 and c2 . For a vertex v
+such that ϕ′1 (v) ∈ {c1 , c2 }, let G′c1 ,c2 (v) be the component of G′c1 ,c2 contain-
+ing v. If G′1,3 (v4 ) contains z, then observe that by planarity, there exists
+u ∈ {v3 , w1 } such that G′2,4 (u) is disjoint from Q and does not contain the
+vertex of {v3 , w1 } \ {u}. However, then we can exchange the colors 2 and 4
+on G′2,4 (u), turning ϕ′1 into a 4-coloring of G2 which extends ψ and which
+can be extended to a 4-coloring of G1 , which is a contradiction. Therefore,
+z 6∈ V (G′1,3 (v4 )) and v4 6∈ V (G′1,3 (z)). Let us remark that w2 always belongs
+to V (G′1,3 (z)). If G′1,3 (v4 ) or G′1,3 (z) is disjoint from Q, then we can simi-
+larly exchange the colors 1 and 3 on G′1,3 (v4 ) or G′1,3 (z) and turn ϕ′1 into a
+4-coloring of G2 which extends ψ and which can be extended to a 4-coloring
+of G1 , again obtaining a contradiction.
+     We conclude that G′1,3 (v4 ) and G′1,3 (z) are disjoint and intersect Q. By
+planarity, G′2,4 (v3 ) and G′2,4 (w1 ) are disjoint, and a similar argument shows
+that they intersect Q. Symmetrically, G′1,2 (v3 ) and G′1,2 (z) are disjoint and
+intersect Q, and G′3,4 (v4 ) and G′3,4 (w2 ) are disjoint and intersect Q. As
+in the previous case, this is only possible if ψ is bichromatic, which is a
+contradiction.
+
+   In particular, using this lemma, we can exclude separating 4-cycles from
+a minimal counterexample to Conjecture 2.
+
+Corollary 42. Let G be a restrictive 4-candidate and let K be a 4-cycle in
+G that does not bound the outer face. If no 4-candidate with less that |V (G)|
+vertices is restrictive, then the cycle K is hollow.
+
+Proof. Let Q be the 4-cycle bounding the outer face of G. Suppose for a
+contradiction that the subcanvas H of G drawn in the closed disk bounded
+by K has an internal vertex. Let G1 be the subgraph of G obtained by
+deleting the internal vertices of H, and let f be the 4-face of G1 bounded by
+K. We can assume that the 4-cycle K is chosen so that H is maximal, and
+thus no 4-cycle in G1 other than Q and K bounds an open disk containing
+f . If K contains adjacent internal vertices u and v whose degree in G1 is
+four, then let G2 = G1 − {u, v}, otherwise let G2 = G1 . By Lemma 41, the
+graph G2 is restrictive.
+    Next, iteratively repeat the following procedure: Let f ′ be the face of
+G2 containing f . If G2 contains an induced path P of length at most two
+with ends incident with f ′ and otherwise disjoint from the boundary of f ′ ,
+
+                                         43
+then let ∆ be the minimal closed disk containing f ′ and P , delete from G2
+the vertices and edges drawn in the interior of ∆, and repeat.
+    Let G3 be the resulting graph. Using Observation 33, it is easy to see
+that every 4-coloring of G3 extends to a 4-coloring of G2 , and thus G3 is
+restrictive. Furthermore, observe that
+
+   • all faces of G3 except for f ′ and the outer one are triangles,
+
+   • all internal vertices of G3 not incident with f ′ have degree at least five,
+
+   • the face f ′ is bounded by an induced cycle K ′ and no vertex of V (G3 )\
+     V (K ′ ) has non-adjacent neighbors in K ′ , and in particular all internal
+     vertices of K ′ have degree at least four, and
+
+   • either G3 = G1 , or K ′ has length at least five.
+
+If G3 6= G1 , then let G′ be the graph obtained from G3 by adding a vertex
+adjacent to all vertices of K ′ and drawing it inside f ′ . Then G′ is a restrictive
+4-candidate with fewer vertices than G, which is a contradiction.
+    Hence, suppose that G3 = G1 . The construction of G2 implies that no
+two internal vertices of K of degree four are adjacent. Hence, there exist
+non-adjacent vertices x, y ∈ V (K) such that neither of the two vertices
+of V (K) \ {x, y} is an internal vertex of degree four. In this case, we let
+G′ = G3 + xy. Again, observe that G′ is a restrictive 4-candidate with fewer
+vertices than G, which is a contradiction.
+
+   This allows us to exclude reducible configurations which do not need to
+be replaced by smaller ones. More precisely, the following claim holds.
+
+Corollary 43. Let G be a restrictive 4-candidate and let K be a cycle in G
+such that the open disk Λ bounded by K contains at least two vertices. Let
+G1 be the graph obtained from G by deleting the vertices and edges drawn in
+Λ. If no 4-candidate with less that |V (G)| vertices is restrictive, then G1 is
+not restrictive.
+
+Proof. Suppose for a contradiction that G1 is restrictive. Iteratively repeat
+the following procedure: Let f be the face of G1 containing Λ. If G1 contains
+an induced path P of length at most two with ends incident with f and
+otherwise disjoint from the boundary of f , then let ∆ be the minimal closed
+disk containing f and P , delete from G1 the vertices and edges drawn in the
+interior of ∆, and repeat.
+    Let G2 be the resulting graph. By Observation 33, every 4-coloring of
+G2 extends to a 4-coloring of G1 , and thus G2 is restrictive. Moreover, all
+
+                                        44
+faces of G2 except for f and the outer one are triangles, all internal vertices
+of G2 not incident with f have degree at least five, the face f is bounded
+by an induced cycle K ′ and no vertex of V (G2 ) \ V (K ′ ) has non-adjacent
+neighbors in K ′ , and in particular all internal vertices of K ′ have degree at
+least four. Moreover, Corollary 42 implies that K ′ has length at least five.
+    Let G′ be obtained from G2 by adding a vertex adjacent to all vertices of
+K and drawing it inside f . Then G′ is a restrictive 4-candidate with fewer
+  ′
+
+vertices than G, which is a contradiction.
+
+     Let θ be a (diagonal or rainbow) 4-coloring of the cycle Q bounding the
+outer face of G which does not extend to a 4-coloring of G, and let H be
+the subcanvas of G drawn in the closure of Λ. Corollary 43 implies that
+if we can show (using Kempe chains and the properties of H) that every
+4-coloring of G1 extending θ can be turned into a 4-coloring of G with the
+same restriction to Q, then we obtain a contradiction. Since the procedure
+for obtaining such proofs (showing that H is D-reducible) is standard (see
+e.g. [11] for a detailed description) and requires only minor modifications to
+fit our setting, we leave its presentation to Appendix.
+     As shown in [12], D-reducibility arguments are sufficient to prove the
+Four Color Theorem. However, many of the configurations that are D-
+reducible in the setting of the Four Color Theorem are not D-reducible
+in our setting, since we get extra constraints on switching Kempe chains
+containing the precolored vertices (in fact, small D-reducible configurations
+seem to be very rare—there is some hope that for large configurations, the
+loss of a few Kempe chains because of the precolored vertices becomes less
+important).
+     Realistically, to prove the conjecture, we will need to use C-reducible
+configurations, where the configuration H is replaced by a smaller configu-
+ration H ′ (thus, we only need to argue that every 4-coloring of the resulting
+graph G′ which extends θ can be turned into a 4-coloring of G with the same
+restriction to Q); note that this replacement can also involve identification
+of the vertices of the cycle K bounding the configuration. An issue that
+proofs of the Four Color Theorem using C-reducible configurations need to
+overcome is that such a replacement could result in creation of loops, making
+the reduced graph impossible to color (this is dealt with by observing that
+the loops correspond to short separating cycles in the original graph, which
+are excluded using arguments similar to the proof of Corollary 42). In our
+setting, the issue is compounded by the possibility that G′ is not a candi-
+date, i.e., that the replacement of H by H ′ can create internal vertices of
+degree at most four or non-facial triangles (and no reduction along the lines
+
+
+                                      45
+of Corollary 43 may be possible). One way to deal with the issue would be
+to find an exact (or at least sufficiently detailed) characterization of restric-
+tive weak 4-candidates based on the assumption that the conjecture holds
+for graphs with less than |V (G)| vertices, and then use it to argue that G′
+cannot be restrictive even if it is not a candidate.
+
+
+References
+ [1] K. Appel and W. Haken. Every planar map is four colorable, Part I:
+     Discharging. Illinois J. of Math., 21:429–490, 1977.
+ [2] K. Appel, W. Haken, and J. Koch. Every planar map is four colorable,
+     Part II: Reducibility. Illinois J. of Math., 21:491–567, 1977.
+ [3] G. Brinkmann and B. D. McKay. Construction of planar triangulations
+     with minimum degree 5. Discrete Mathematics, 301:147–163, 2005.
+ [4] D. I. A. Cohen. Block count consistency and the four color problem.
+     Manuscript.
+ [5] Z. Dvořák, D. Král’, and R. Thomas. Three-coloring triangle-free
+     graphs on surfaces VII. A linear-time algorithm. Journal of Combi-
+     natorial Theory, Series B, 152:483–504, 2022.
+ [6] S. Fisk. Combinatorial structure on triangulations. I. The structure of
+     four colorings. Advances in Mathematics, 11:326–338, 1973.
+ [7] S. Fisk. The nonexistence of colorings. J. Combin. Theory, Ser. B,
+     24:247–248, 1978.
+ [8] S. J. Gismondi and E. R. Swart. A new type of 4-colour reducibility.
+     Congressus Numerantium, 82:33–48, 1991.
+ [9] J. Hutchinson, B. Richter, and P. Seymour. Colouring Eulerian tri-
+     angulations. Journal of Combinatorial Theory, Series B, 84:225–239,
+     2002.
+[10] Brendan D. McKay. Isomorph-free exhaustive generation. J. Algo-
+     rithms, 26:306–324, 1998.
+[11] N. Robertson, D. P. Sanders, P. Seymour, and R. Thomas. The four
+     colour theorem. J. Combin. Theory, Ser. B, 70:2–44, 1997.
+[12] J. P. Steinberger. An unavoidable set of D-reducible configurations.
+     Trans. Amer. Math. Soc, 362:6633–6661, 2010.
+
+                                       46
+Appendix
+In this Appendix, we give a precise description of the standard Kempe chain
+reducibility argument in our setting.
+    A color partition is an equivalence π on the set {1, . . . , 4} which has
+exactly two equivalence classes of size two. Let Q and K be disjoint cycles
+drawn in the plane so that K is contained in the closed disk bounded by Q,
+and let ψ be a 4-coloring of Q ∪ K. Let ψ/π be the equivalence on V (Q ∪ K)
+such that u ≡ψ/π v if and only if ψ(u) ≡π ψ(v). An edge uv of Q ∪ K is
+ψ/π-monochromatic if u ≡ψ/π v. A potential π-Kempe chain extract for ψ
+is a triple (β, κ, σ) of equivalences on V (Q ∪ K) such that
+
+  (i) β = ψ/π,
+
+ (ii) κ is a refinement of ψ/π such that u ≡κ v for every ψ/π-monochromatic
+      edge uv ∈ E(Q ∪ K),
+
+(iii) σ is the refinement of κ such that for every u, v ∈ V (Q ∪ K), we have
+      u ≡σ v if and only if u ≡κ v and ψ(u) = ψ(v), and
+
+(iv) there exists a plane graph F consisting of a perfect matching M on the
+     non-ψ/π-monochromatic edges of E(Q ∪ K) and possibly of a cycle C
+     vertex-disjoint from the matching, such that
+
+        – the drawing of F is contained in the annulus Θ between K and Q
+          and intersects the boundary of Θ only in the points representing
+          the vertices of M , equal to the midpoints of the drawings of the
+          corresponding edges of Q ∪ K, and
+        – any two vertices of V (Q ∪ K) are κ-equivalent if and only if they
+          are drawn in the same arcwise-connected component of the space
+          obtained from Θ by removing the drawing of F .
+
+We say that such a plane graph F is a realizer for the potential π-Kempe
+chain extract. Let us remark that whether such a realizer exists can of
+course be determined from the combinatorial properties of κ. Informally,
+the triple (β, κ, σ) describes a possibility how Kempe chains of a 4-colored
+plane graph with facial cycles K and Q could look like:
+
+   • We simultaneously consider Kempe chains for two disjoint pairs A =
+     {c1 , c2 } and B = {c3 , c4 } of colors, and β divides V (Q ∪ K) into
+     vertices whose color belongs to A and vertices whose colors belong to
+     B (without explicitly saying which equivalence class corresponds to A
+
+
+                                     47
+      and which to B—this does not matter, since the two possibilities are
+      equivalent up to a permutation of colors).
+
+   • The classes of the equivalence κ correspond to the intersections of
+     the Kempe chains with V (Q ∪ K); the condition (iv) expresses the
+     planarity constraints on Kempe chains, as we discuss below.
+
+   • The equivalence σ divides each class of κ into (at most) two parts
+     based on the colors of vertices (without explicitly specifying the col-
+     ors corresponding to the equivalence classes, since the colors can be
+     exchanged on the Kempe chain).
+    An environment is a triple (G, Q, K), where G is a plane graph such
+that the cycle Q ⊆ G bounds the outer face of G, the cycle K ⊆ G bounds
+an internal face of G, and all other faces of G have length three. Let ϕ
+be a 4-coloring of G. We are going to consider the Kempe chains of this
+4-coloring for two disjoint pairs {c1 , c2 } and {c3 , c4 } of colors. Let π be the
+color partition such that c1 ≡π c2 and c3 ≡π c4 , let ψ be the restriction of ϕ
+to Q ∪ K, and let β = ψ/π. Let X ⊆ E(G) consist of the edges uv such that
+ϕ(u) 6≡π ϕ(v), so that G − X is the disjoint union of the {c1 , c2 } and {c3 , c4 }
+Kempe chains of ϕ, and let κ be the equivalence on V (Q ∪ K) where two
+vertices are equivalent if and only if they belong to the same component of
+G − X. Let σ be the equivalence on V (Q ∪ K) such that two vertices are
+equivalent if and only if they are κ-equivalent and have the same color.
+    We claim that (β, κ, σ) is a potential π-Kempe chain extract for ψ. In-
+deed, the conditions (i), (ii), and (iii) are clearly satisfied, and thus it suffices
+to find a realizer showing that (iv) holds. Let F1 be the spanning subgraph
+of the dual of G containing exactly the duals of the edges of X, and let k and
+q be the vertices of F1 corresponding to the faces of G bounded by K and Q,
+respectively. Observe that all vertices of F1 have even degree; in particular,
+all vertices other than k and q have degree 0 or 2. Hence, the drawing of F1
+can be decomposed into simple curves from k to q and simple closed curves
+passing through at most one of k and q, disjoint everywhere except for k and
+q. Moreover, note that that each {c1 , c2 } and {c3 , c4 } Kempe chain consists
+exactly of the vertices of G drawn in a face of F1 . Thus, F1 can be turned
+into a realizer of (β, κ, σ) by
+   • deleting all components not containing k and q, except for one cycle
+     separating k from q if any is present,
+
+   • subdividing each edge e⋆ of F1 dual to an edge e of Q ∪ K by a vertex
+     drawn at the intersection of these edges, and
+
+                                         48
+   • deleting the vertices k and q and suppressing the vertices of degree
+     two.
+
+We say that (β, κ, σ) is the π-Kempe chain extract of ϕ.
+    For a potential π-Kempe chain extract (β, κ, σ) for a 4-coloring ψ of
+Q ∪ K, let nψ,π,β,κ,σ (G) denote the number of 4-colorings of G which extend
+ψ and whose π-Kempe chain extract is equal to (β, κ, σ). Let us note the
+following key observation.
+
+Observation 44. Let (G, Q, K) be an environment, and for i ∈ {1, 2}, let
+πi be a color partition and ψi a 4-coloring of Q ∪ K. Suppose that (β, κ, σ)
+is both a potential π1 -Kempe chain extract for ψ1 and a potential π2 -Kempe
+chain extract for ψ2 . Then
+
+                      nψ1 ,π1 ,β,κ,σ (G) = nψ2 ,π2 ,β,κ,σ (G).
+
+Proof. By permuting the colors if needed, we can assume that π1 and π2
+are both equal to the color partition π such that 1 ≡π 2 and 3 ≡π 4. Since
+ψ1 /π = ψ2 /π = β, by exchanging the colors 1 and 2 with colors 3 and 4
+in ψ2 if needed, we can furthermore assume that ψ1 (v) ≡π ψ2 (v) for every
+v ∈ V (Q ∪ K). Because ψ1 and ψ2 also share the part σ of the potential
+π-Kempe chain extract, this implies that there exists a set S of equivalence
+classes of κ such that ψ2 is obtained from ψ1 by exchanging the color 1 with
+2 and the color 3 with 4 on the vertices of the elements of S.
+    Let ϕ be any 4-coloring of G extending ψ1 whose π-Kempe chain extract
+is (β, κ, σ). For distinct colors c1 and c2 , let Gc1 ,c2 be the subgraph of
+G induced by the vertices of colors c1 and c2 . The definition of the π-
+Kempe chain extract implies that for each equivalence class C of κ, there
+exists a component GC of G1,2 ∪ G3,4 intersecting V (Q ∪ K) exactly S       in
+C. By exchanging the color 1 with 2 and the color 3 with 4 on C∈S GC ,
+we transform ϕ into a 4-coloring of G extending ψ2 whose π-Kempe chain
+extract is (β, κ, σ). It is easy to see that this correspondence establishes a
+bijection proving the equality
+
+                      nψ1 ,π1 ,β,κ,σ (G) = nψ2 ,π2 ,β,κ,σ (G).
+
+
+
+    Thus, let us define nβ,κ,σ (G) as nψ,π,β,κ,σ (G) for any 4-coloring ψ and
+color partition π such that (β, κ, σ) is a potential π-Kempe chain extract for
+ψ. Let us also define Ψ as the set of all 4-colorings of K ∪ Q and E as the
+
+
+                                        49
+set of all potential Kempe chain extracts, and for every ψ ∈ Ψ, let nψ (G)
+be the number of 4-colorings of G that extend ψ.
+    Consider now an environment (G, Q, K) and a plane graph F with the
+outer face bounded by K. Suppose that θ is a 4-coloring of Q that does not
+extend to 4-coloring of G ∪ F . Thus, nψ (G) = 0 for every 4-coloring ψ of
+Q ∪ K that extends θ. Together with Observation 44 and the obvious fact
+that the number of 4-colorings subject to any condition is non-negative, this
+gives a set of linear constraints satisfied by the vector (ni (G) : i ∈ Ψ ∪ E).
+    More precisely, let Π be the set of all three color partitions, and for
+ψ ∈ Ψ and π ∈ Π, let Eψ,π ⊆ E denote the set of all potential π-Kempe
+chain extracts for ψ. For a 4-coloring θ of Q, let ΨF,θ be the set of 4-colorings
+ψ ∈ Ψ such that the restriction of ψ to Q is θ and such that ψ extends to a
+4-coloring of F . We define ΦF,θ as the cone (independent of the environment
+G) consisting of the points x ∈ RΨ∪E satisfying the following constraints:
+
+              x≥0
+                     X
+          x(ψ) =            x(ǫ)         for every ψ ∈ Ψ and π ∈ Π
+                   ǫ∈Eψ,π
+
+          x(ψ) = 0                               for every ψ ∈ ΨF,θ .
+
+A coloring ω of K is (F, θ)-feasible if there exists x ∈ ΦF,θ such that x(ω ∪
+θ) 6= 0; that is, the set of constraints defining ΦF,θ does not exclude the
+possibility that G has a 4-coloring extending θ whose restriction to K equals
+ω. Otherwise, we say that ω is (F, θ)-infeasible. In particular, every 4-
+coloring of K which extends to a 4-coloring of F is (F, θ)-infeasible.
+    Let F1 be a plane graph with the outer face bounded by a closed walk
+W of the same length as K and let f be a function mapping the vertices
+of K to vertices of W in order. Note that for a 4-coloring ω1 of W , f ◦ ω1
+is a 4-coloring of K. We say that (F1 , f ) is a θ-reducent for F if for every
+4-coloring ω1 of W which extends to a 4-coloring of F1 , the 4-coloring f ◦ ω1
+is (F, θ)-infeasible. Let G1 be the graph obtained from G by adding F1 and
+identifying each vertex v ∈ V (K) with the vertex f (v); we say that G1 is
+obtained from G ∪ F by replacing F by (F1 , f ). The basic property used to
+show reducibility of configurations is given in the following observation.
+
+Observation 45. Let G0 be a canvas with the outer face bounded by a cycle
+Q and let K be a cycle in G disjoint from Q. Let F be the subgraph of
+G0 drawn in the closed disk bounded by K and let G be the subgraph of
+G0 drawn in the closed annulus between K and Q, so that (G, Q, K) is an
+environment. Let θ be a 4-coloring of Q and let (F1 , f ) be a θ-reducent for
+
+                                       50
+F . Let G1 be the graph obtained from G0 by replacing F by (F1 , f ). If θ
+does not extend to a 4-coloring of G0 , it also does not extend to a 4-coloring
+of G1 .
+Proof. Since θ does not extend to a 4-coloring of G0 , we have nψ (G) = 0 for
+every ψ ∈ ΨF,θ . Moreover, for every ψ ∈ Ψ and π ∈ Π, every 4-coloring of
+G which extends ψ has a uniquely determined π-Kempe chain extract, and
+thus                        X                  X
+                 nψ (G) =        nψ,π,ǫ (G) =       nǫ (G).
+                             ǫ∈Eψ,π              ǫ∈Eψ,π
+
+Therefore, the point x ∈ RΨ∪E         such that x(ψ) = nψ (G) for ψ ∈ Ψ and
+x(ǫ) = nǫ (G) for ǫ ∈ E belongs to ΦF,θ .
+    Suppose for a contradiction that ϕ1 is a 4-coloring of G1 extending θ,
+and let ω1 be the restriction of ϕ1 to W . Clearly ω1 extends to a 4-coloring
+of F1 , and since (F1 , f ) is a θ-reducent, the 4-coloring f ◦ ω1 of K is (F, θ)-
+infeasible.
+    Let ϕ be the 4-coloring of G corresponding to ϕ1 ; that is, ϕ(v) = ϕ1 (v)
+for v ∈ V (G) \ V (K) and ϕ(v) = ϕ1 (f (v)) for v ∈ V (K). Let ψ be the
+restriction of ϕ to Q ∪ K. Since ψ extends to a 4-coloring ϕ of G, we have
+                              0 < nψ (G) = x(ψ).
+Observe that ψ = θ ∪(f ◦ω1 ), and thus the 4-coloring f ◦ω1 is (F, θ)-feasible.
+This is a contradiction.
+     In the situation of Observation 45, if |V (F )| > |V (K)| and F1 = K
+(i.e., all 4-colorings of K are (F, θ)-infeasible), then we say that F is D-
+reducible. In case that we know that θ extends to a 4-coloring of every
+non-trivial environment in G0 (e.g., as in Corollary 43), this implies that
+the configuration F cannot appear in G0 . If F1 is any graph with |V (F1 )| <
+|V (F )|, then F is C-reducible with reducent F1 . As we discuss at the end
+of Section 4, there are extra challenges in being able to use C-reducible
+configurations, since it is harder to ensure that induction hypothesis can be
+applied to G1 .
+     Finally, let us remark that in the presented formulation (called block-
+count reducibility [4, 8]), determining whether a coloring is (F, θ)-feasible
+involves solving a linear program; this is generally too slow to be practical
+for large configurations. Instead, one usually solves the boolean restriction
+of the program, with variables x(ψ) and x(ǫ) being true when nψ (G) > 0 and
+nǫ (G) > 0, respectively, and with addition replaced by logical disjunction.
+In this boolean formulation, the program can be solved by straightforward
+greedy propagation, see e.g. [11] for more details.
+
+                                       51
+

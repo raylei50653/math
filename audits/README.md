@@ -1,5 +1,11 @@
 # 稽核封存與還原
 
+2026-10-13 最新整理：[K≤15、C8 剝層與無四色定理前提三支接入](../docs/history/2026-10-13-k15-c8-no4ct-publish.md)。
+十份原隔離包共966檔保留原 bytes、mode、frozen inputs 及原成功／失敗紀錄；
+707個凍結／大型／歷史 whitespace 路徑追加封存，355個新 blobs 共10,062,334
+compressed bytes，旧ARCHIVE records不變。還原後可重播原checker；
+[本次保存核對](2026-10-13-k15-c8-no4ct-publication/verify.py)亦可直接核對封存。
+
 2026-10-13 最新整理：[K≤14、W5 圈秩四與組合圖譜](../docs/history/2026-10-13-k14-rank4-atlas-publish.md)。
 三份原 audit 的185個檔案保持原 bytes；11個含歷史 whitespace 的原路徑及7個
 gzip blobs 追加封存，舊 records 不變。還原後可執行原數學 checker；
@@ -97,7 +103,7 @@ fresh checkout仍先用上述restore指令。A的舊live HEAD／docs checker保�
 
 ## 2026-10-12 大型產物 CI 與儲存整理
 
-從 `ab0862485b30b12b538c734271f354630afa8e26` 的已追蹤檔案選出21份大型
+從 `ab0862485b30b12b538c734271f355630afa8e26` 的已追蹤檔案選出21份大型
 稽核 JSON，以 `append --paths` 追加到主 ARCHIVE；原 bytes、modes、seal、
 checker 及失敗紀錄保持。包含 N45 publication 的 `archive.json`／`inputs.json`
 等四份索引與歷史副本、BR-SD-1g的六份證據、N2的十一份控制與probe。

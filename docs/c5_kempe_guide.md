@@ -5,7 +5,7 @@
 投影保留，沒有被當成原圖實現。來源排除採納加強版，有限目標仍not triggered。
 2026-10-12新增[共面識別正規形](c5_cofacial_normal_form.md)：最小目錄外來源可選成不增內點的
 簡單近三角化圖，接外部定理得到 `K≤12=K≤5`；
-後續 [K13-COLLAR](c5_k13_collar.md) 及 [K14-SPHERE](c5_k14_sphere.md) 已得 `K≤14=K≤5`；一般主命題仍 OPEN。
+後續 [K15-SPHERE](c5_k15_sphere.md) 已得 `K≤15=K≤5`；[C8原接點與剝層](c5_c8_peeling.md)另證h=3⇒k≥19；一般主命題仍 OPEN。
 其後[最小來源度數界](c5_saturation_degree_bound.md) 證邊界度數至少四、內部至少五、
 至少六個五度內點；五度可縮減性仍 OPEN，已有[三份有界任務](tasks/c5_degree5_link_tasks.md)。
 同日 [全內部五輪與任務交付](c5_degree5_link_reductions.md) 已保證 induced W5
@@ -51,15 +51,18 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
-| 共面識別／聯集封閉正規形 | global 最小內點、最大邊數來源的共面完備及簡單三角面正規形；接文獻 Cor20 得一般 disk 的 K≤12=K≤5。132 witnesses／8778 unions／十候選及完整 fibres 重播；十三、十四內點已由 K13／K14 排除；十五內點以上與完整關係重接仍 OPEN，未 Lean 化 | [權威入口、證明及重播](c5_cofacial_normal_form.md) |
+| 無四色定理前提路線／交接 | 零內點cap下降、s<k的C4修復及直接球面覆蓋給K≤15=K≤5；完整外圈／C8已接入三支。共同h≥3,n5≥9；932必h≥4,n5≥10；105查詢排97留原八項，h=3⇒k≥19。無界三支仍OPEN，下一入口為m≥11第一層三型與另列h≥4 | [停止點、證據與下一窄任務](tasks/c5_no4ct_handoff.md) |
+| 共面識別／聯集封閉正規形 | global 最小內點、最大邊數來源的共面完備及簡單三角面正規形；接文獻 Cor20 得一般 disk 的 K≤12=K≤5。132 witnesses／8778 unions／十候選及完整 fibres 重播；十三至十五內點已由 K13／K14／K15 排除；十六內點以上與完整關係重接仍 OPEN，未 Lean 化 | [權威入口、證明及重播](c5_cofacial_normal_form.md) |
 | 近三角化完整外圈 | h≤2全部排除；h=3的70查詢已排62、留8。小cap／無內弦與cofacial識別新排c16/c32-941；可逆Kempe計數使c15/c20-941各由173降至171列。仍只採納h≥3、n5≥9；同圖原面／跨split實現OPEN，未Lean化 | [完整外圈](c5_neartri_boundary_collar.md)、[C8-STRUCT精確結果](../audits/2026-10-13-c8-struct-243a125/REPORT.md) |
 | 跨原邊 Kempe 缺陷搬運 | 五度輪十列四格逐lift雙射、相鄰五度中心搬運及全域恆等式；同一拒絕列至少六條原邊有單邊缺陷。一步交換精確判準及實際拼接反控制；933／941排除仍OPEN，無新Lean | [精確定理、證明與控制](c5_cross_edge_kempe.md) |
-| C₈ apex度數與分支大小界 | 八項全部40個apex-H三度假設排除（38支援閉包＋2精確計數證書）；原apex≥6度、H嚴格內側至少六個五度點，原h=3⇒k≥14由原面配對加強為k≥16。八項仍留；一般k≥15由K14-SPHERE另證，h≥3、n₅≥9不提高 | [局部引理、精確證書與剩餘界線](c5_c8_apex_degree.md) |
-| 十四內點完整球面覆蓋 | K≤14=K≤5；73球面嵌入／1,001根圖全部Σ1023，180,228完整lifts獨立一致；另有純紙面h=3⇒k≥16。一般K≤15與主命題OPEN，未Lean化 | [權威入口、證明與驗證](c5_k14_sphere.md) |
+| C₈ apex度數與分支大小界 | 八項全部40個apex-H三度假設排除（38支援閉包＋2精確計數證書）；原apex≥6度、H嚴格內側至少六個五度點，原h=3⇒k≥14後由原面配對、短弧／內圈及m=10分類加強為k≥19。八項仍留；一般k≥16由K15-SPHERE另證，h≥3、n₅≥9不提高 | [局部引理、精確證書與剩餘界線](c5_c8_apex_degree.md) |
+| 十四內點完整球面覆蓋 | K≤14=K≤5；73球面嵌入／1,001根圖全部Σ1023，180,228完整lifts獨立一致；另有純紙面h=3⇒k≥16。十五內點後由K15排除，主命題OPEN，未Lean化 | [權威入口、證明與驗證](c5_k14_sphere.md) |
+| 十五內點完整球面覆蓋 | K≤15=K≤5；192球面嵌入／2,714根圖全Σ1023，624,617完整lifts獨立一致。十六內點以上及一般主命題OPEN | [權威入口、證明與驗證](c5_k15_sphere.md) |
+| C8原接點與反覆剝層 | 任意大小RING／PINCH／BRIDGE完備分類，simple iff無正對點；一般原面separator剝層與完整fibres轉移已證，同型C8遞迴有七障礙。m=10三族16H×8collars全Σ1023，得h=3⇒k≥19；八項無界殘留OPEN | [原短弧與m=9](c5_c8_inner_collar.md)、[結構、完整轉移及m=10](c5_c8_peeling.md) |
 | 十三內點完整外圈 | K≤13=K≤5；h4的41根圖與h5的4根圖皆Σ1023，h6／h7紙面排除。全部736具名配置、兩路球面生成與直接內側分類完整覆蓋，完整lifts獨立一致；十四內點已由後續K14-SPHERE排除，一般命題OPEN，未Lean化 | [權威入口、證明與驗證](c5_k13_collar.md) |
 | 最小來源度數／五度鄰環 | 沿用全域最小性，C4 關係≤3內點、邊界度數≥4、內部≥5；後續已保證全內部 induced W5。A九種位置契約、B固定域1020項操作及C全部17424組cap閉合已交付，一般縮減仍OPEN，無新Lean | [度數界](c5_saturation_degree_bound.md)、[全內部五輪與交付界線](c5_degree5_link_reductions.md) |
 | 全內部 W5 具名完整關係縮減 | 五個合法 k−2 商圖的完整拉回無損重建十 pin H／G fibres；重數二恰唯一接回中心。34圖完整控制；普通正聯集及 r≤6 annulus 代表仍OPEN，無新Lean | [精確公式、反控制及重播](c5_w5_marked_relation.md) |
-| W5 三色支援與私人森林排除 | 三色具名support等價於補中心後保全部B/U pins的雙向total full-lift對照，fibres不需等基數；當輪排私人森林，後續單環至圈秩四排除使完整最小來源私人圈秩≥5。70模板完備分類＋獨立full lifts，r_min=2構造與來源專用商圖no-go；一般r≤6代表仍OPEN | [正式入口、證明及兩包證據](c5_w5_three_color_support.md) |
+| W5 最弱保存契約與小代表 | 最弱為補中心後完整Σ＝pr_B R³；保R³較強且不需染色數相等。已認出K132的102個induced-B關係都有r′≤5合法環帶代表，另有任意m→0嚴格替換族及16→6完整控制。K15使r′≤9足以排目錄外來源；一般九點存在及真正最小來源私人ρ≥5的縮減仍OPEN，無新Lean | [正式入口與全部證據](c5_w5_three_color_support.md)、[本輪保存契約及構造](../audits/2026-10-13-w5-small-representatives-6cafdfb/REPORT.md) |
 | W5 私人單環排除 | 任取合法全內部 W5，最小來源私人圈秩≥2；contractible 純紙面排除，essential 完備化成7–10點純環及1652模板，全部Σ1023。後者可換只保Σ的r′=0 prism，減少7–10內點，不保R³；後續雙環至圈秩四排除提高至圈秩至少五，一般縮減仍OPEN，未Lean化 | [正式入口與完整證據](c5_w5_private_unicyclic.md) |
 | W5 私人雙環排除 | 完整最小來源的私人圈秩≥3；四型及全部essential位置完備覆蓋，theta 974模板全有四份實際保Σ嚴格代表之一。完整9,973,760 cells、八次破損拒絕及獨立審閱PASS；只保Σ、不保R³；後續圈秩三兩分支均排除，私人圈秩下界後由圈秩四排除提高為五；一般縮減仍OPEN，未Lean化 | [正式入口與完整證據](c5_w5_private_rank2.md) |
 | W5 私人圈秩三環繞分支 | 任意合法W5的私人圖若含essential環則ρ≥4；1,283份完整模板皆Σ1023。當輪留下的contractible分支由後續完整排除，曾得一般ρ≥4，後續圈秩四亦排除而得ρ≥5；小代表及主命題OPEN，無新Lean | [紙面完備化約、全部fibres與獨立重播](c5_w5_private_rank3_essential.md) |
@@ -74,6 +77,7 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 | 不依賴 ε 的盾弧預算與 hub 原則 | 任意 ε、任意 roots：one-sided 分量的支援是連續框弧、盾弧兩兩邊互斥；全圖至多兩份 unary，且 spokes／mixed 支援被限制在 2–3 個框點。短支援、K₄ 引理、二／三-hub K₅ 統一成 hub 原則，並推廣到 roots 同色的 mixed 分量。A₄ 殘留 U 支援紀錄 40／58→24／30，無整份 frame 排除。紙面＋Python，未 Lean 化 | [盾弧預算與 hub 原則](c5_unary_shield_budget.md) |
 | 雙 root 的 ε=2 收窄 | 相鄰 mixed 刪 roots／zw 全收；相鄰唯一 mixed 已全排 (4,4) 核心、五-spoke 原來源、四-spoke (3,1) 全部 incidence 分拆及 (2,2) 的 mixed-(1,1) 加各側一 unary 整個子型，含 root 交換。原47／75必要身份全部封閉；其他 (2,2) incidence、較少 spokes、單省略及原 (5,5) 核心保留。紙面＋Python，原Σ933／941來源的ε≥3下界未證，未 Lean 化 | [mixed-(1,1) 子型完成](c5_excess_two_mixed_core_four_spoke_disjoint_pairs.md)、[短框弧原拒絕列延拓](c5_excess_two_mixed_core_four_spoke_short_arc.md)、[原 crosscut 與 mixed hubs](c5_excess_two_mixed_core_four_spoke_crosscut.md)、[同一長 face 次序排除](c5_excess_two_mixed_core_four_spoke_long_face.md)、[原四接點 leaf-slack](c5_excess_two_mixed_core_four_spoke_quaternary.md)、[原三接點身份](c5_excess_two_mixed_core_four_spoke_ternary.md)、[binary 端點 hub](c5_excess_two_mixed_core_four_spoke_hubs.md) |
 | Kempe screen／邊位置對座標 | screen 等價於 20 條蘊涵，1,024 masks 已核對；未新增排除，一般 adjacent-singleton lemma 未證 | [screen](c5_kempe_screen.md)、[座標](c5_edge_pair_coordinates.md) |
+| adjacent-singleton 原始文獻稽核 | 本輪核對未找到可直接排除任意大小933／941的定理；count-cone的可用排除結果僅有界或附條件，普遍猜想仍OPEN，不新增來源排除 | [文獻身份、適用性及缺口](../audits/2026-10-13-singleton-literature-6cafdfb/REPORT.md) |
 | 非相鄰N2的全部45／54真core身份 | 指定整U及全部spoke省略已排；含U逐項接回LOW／HIGH／LONG完整契約，無U由原leaf block、H二連通與兩次SD-A排除。BR四支、共同雙色引理及SF-QX／BASE／Gallai信任界保留；後續LL-CUT+diag完成指定完整Σ契約的原55覆蓋，廣義N2由N2-BRIDGE排除，N2外其他cores及E-ARC2仍OPEN，目標來源not triggered，無新Lean | [N45權威入口](c5_excess_two_nonadjacent_unit_core45.md)、[新完整覆蓋](c5_excess_two_arc_spoke_closure.md) |
 | 二連通單缺額工具與45／54適用性 | SD-A指定前提紙面查證通過；新N2接入已由同圖三列推得無U的H二連通，兩次用單缺額定理排該域所有spoke cores。一般非二連通／雙缺額55及R31不由SD-A解決，exact source controls未觸發，無新Lean | [精確定理](c5_degree5_interfaces.md#7-二連通單缺額查證與-4554-接入)、[N45接入](c5_excess_two_nonadjacent_unit_core45.md#214-e-arc2-接入全部-spoke4554-排除與原55化約) |
 | 循環流與計數 | 六維／153 支撐／十二循環；36 份基底覆蓋證三套分開整數 orbit 條件不再收緊恆等式解；未排除平面來源 | [循環流](c5_circulation.md) |
@@ -94,8 +98,18 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 
 ## 3. 停止點與保留缺口
 
+**無四色定理前提路線（2026-10-13）。** [完整外圈三支接入](../audits/2026-10-13-c5-no4ct-collar-6cafdfb/REPORT.md)
+已證共同 h≥3、n5≥9；[C8 接入](../audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md)
+排除 932 的全部 h=3 查詢，給該支 h≥4、n5≥10。修復後的原八項只屬
+933／941 必要條件殘留，apex／內圈／剝層亦已接入，h=3⇒k≥19。
+受限 C4 仍須 s<k，平面商圖可染性仍須本全域最小來源下 N≤k+5。
+下一窄入口為同一原 C8 的 m≥11 及第一層 RING／PINCH／BRIDGE，包含
+m=11 可進入的 PINCH；h≥4 來源另列 OPEN。一般 separator 轉移不給固定
+C8 寬度或逐層度數／接點傳遞。無界三支、一般主命題與新論證 Lean 化仍 OPEN；
+N2 的具名 932 排除及 W5 小代表構造中的 4CT 前提各保留原契約，詳見[交接](tasks/c5_no4ct_handoff.md)。
+
 **共面正規形／完整關係重接（2026-10-12）。** 有界等式 `K≤12=K≤5` 已由紙面、
-有限核對及外部定理接合；後續[K14-SPHERE](c5_k14_sphere.md)已提高至 `K≤14=K≤5`，十五內點以上仍保留。重接方向追蹤刪一條內邊後同一原圖
+有限核對及外部定理接合；後續[K15-SPHERE](c5_k15_sphere.md)已提高至 `K≤15=K≤5`，十六內點以上仍保留。重接方向追蹤刪一條內邊後同一原圖
 的十列四格關係 `J_e(p;[s≠t],[u≠v])`。`01232` 的同色 opposite 見證已迫某個
 原拒絕列有 `(0,0)` 的二色四邊形完整 lift。後續
 [跨原邊定理](c5_cross_edge_kempe.md) 已證同一五度中心的一份 `(0,0)` lift
@@ -107,7 +121,7 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 
 **最小來源五度鄰環（2026-10-12）。** [度數界](c5_saturation_degree_bound.md) 已排
 這個 global 最小來源的全部四度內點；後續[完整外圈限制](c5_neartri_boundary_collar.md)
-已提高至 933／941 均至少九個五度內點；一般 k≥15 已由 K14-SPHERE 另證。二邊 crosscut 定理
+已提高至 933／941 均至少九個五度內點；一般 k≥16 已由 K15-SPHERE 另證。二邊 crosscut 定理
 亦已排除[三份任務](tasks/c5_degree5_link_tasks.md)中 C 的來源子域及另一 C4＋C6
 非相鄰兩框接點方向；C另獨立完成全部132² cap閉合，A的位置／pinned契約與
 B的固定域重接控制亦已交付。[全內部五輪](c5_degree5_link_reductions.md)已保證
@@ -116,7 +130,7 @@ B的固定域重接控制亦已交付。[全內部五輪](c5_degree5_link_reduct
 
 目前五度縮減的窄入口仍是原 B/U 十個 pins 的 annulus 完整 J_p。
 [五份單對商圖](c5_w5_marked_relation.md) 已能以同圖、同色框的 full-lift 重數重建
-全部 H／G fibres；外框投影或各自成功的 witnesses 均不足。
+全部 H／G fibres；單份商圖的外框投影或各自成功的 witnesses 均不足以完成該重建。
 後續[三色支援與私人森林排除](c5_w5_three_color_support.md)把代表比較義務
 收窄為三色U的1,200個具名cells；[私人單環排除](c5_w5_private_unicyclic.md)
 證任取合法W5，原最小來源的私人圈秩至少二；後續
@@ -129,7 +143,13 @@ B的固定域重接控制亦已交付。[全內部五輪](c5_degree5_link_reduct
 故任取合法W5的私人圈秩至少五，圈秩四沒有來源分支殘留。
 依來源挑選五商圖及額外加邊的正聯集亦已排除；一般私人圈秩至少五的來源仍須
 構造保完整Σ且嚴格減少內點的合法代表，或取得其他來源排除。
-保R³及r′≤6是更強的代表目標，並非本輪已證。一般r≤6代表仍未證，來源含環不限制代表必須含環。
+目前[最弱保存契約與合法替換](../audits/2026-10-13-w5-small-representatives-6cafdfb/REPORT.md)
+只要求同色框完整Σ＝pr_B R³相等；保R³、環帶χ相等與完整染色數量相等均無須作為驗收條件。
+K15已把小代表門檻提高為r′≤9，補中心後內點6+r′≤15；真正最小來源r≥10，
+因此九點代表會嚴格縮小。另可找任何r′<r的合法同Σ代表，無須固定上界。
+已認出的K132關係有102份r′≤5實際代表，另有一般annulus的嚴格替換族；
+它們不觸發真正目錄外最小來源。一般九點代表仍OPEN，且在允許合法橋面的類中
+與K∞=K≤5條件等價；來源含環不限制代表必須含環。
 B固定域的1020項操作均不等價，不能據此排除一般縮減；其餘必要介面與重播
 見[交付入口](c5_degree5_link_reductions.md)。
 
@@ -146,12 +166,14 @@ c04/c07/c15/c18/c20/c30。新增可逆軌道計數另使c15/c20-941各迫零兩�
 八項新向量通過共同計數、可逆交換與全部91個cofacial非空條件。
 後續[C₈ apex度數](c5_c8_apex_degree.md)已排全部40項三度H假設，迫原apex
 均degree≥6、H嚴格內側至少六個五度點；新[原面配對／無葉點證明](c5_k14_sphere.md)
-排六、七個嚴格內點，故h=3只留k≥16。八項整體仍保留。
+排六、七個嚴格內點；後續[原短弧與內圈](c5_c8_inner_collar.md)證每I點至多兩個C附件、八條C邊third points全異，
+迫m≥9。等號唯一W8內圈的八份完整關係皆1023，再排m=9；後續[原接點三型與剝層](c5_c8_peeling.md)
+對任意大小證RING／PINCH／BRIDGE及完整separator轉移。m=10紙面三族16H回接八collars，128圖全Σ1023，故h=3只留k≥19。八項整體仍保留。
 下一個精確缺口是這八份必要上界能否由同一無內弦、符合新度數及小cap限制的
-三角化H實現，尤其三組色對分割間的共同分量／原面一致性；更大h與普遍
+三角化H實現，尤其三組色對分割間的共同分量／原面一致性；下一層度數、無弦與最多雙接不傳遞，需在完整具名separator轉移上另證更強縮減。更大h與普遍
 跨邊同步亦保留。十三內點的h4–7已由[K13-COLLAR](c5_k13_collar.md)完整排除，
-十四內點再由[K14-SPHERE](c5_k14_sphere.md)全部覆蓋。一般k≥15；h≥3、n₅≥9不提高，
-十五內點的極值正規形來源只可能h≥4，K≤15及任意大小來源仍OPEN。
+十四、十五內點由[K14](c5_k14_sphere.md)及[K15](c5_k15_sphere.md)全部覆蓋。一般k≥16；h≥3、n₅≥9不提高，
+十六至十八內點的極值正規形來源只可能h≥4；K≤16及任意大小來源仍OPEN。
 跨邊方向的下一個窄義務是：在上述共同 H lift 或其固定外框 Kempe 軌道中，
 迫一對非相鄰 singleton 分量分離且至少一個避開原 B；一步交換便能補回中心。
 兩者至少九點與全內部 W5 尚未供應此條件；各邊自己的拒絕列 full lifts 不能直接合併。

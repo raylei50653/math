@@ -1,0 +1,82 @@
+[
+  {
+    "name": "docs",
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "log": "validation/docs.log",
+    "elapsed_seconds": 0.658
+  },
+  {
+    "name": "docgraph-formal",
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "log": "validation/docgraph-formal.log",
+    "elapsed_seconds": 0.076
+  },
+  {
+    "name": "whitespace",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "validation/whitespace.log",
+    "elapsed_seconds": 0.02
+  },
+  {
+    "name": "preservation",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-k15-c8-no4ct-publication/verify.py"
+    ],
+    "exit_code": 0,
+    "log": "validation/preservation.log",
+    "elapsed_seconds": 0.132
+  },
+  {
+    "name": "storage-tests",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 1,
+    "log": "validation/storage-tests.log",
+    "elapsed_seconds": 4.167
+  },
+  {
+    "name": "storage-tests-with-networkx-3.5",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "environment": {
+      "PYTHONPATH": "/home/ray/.cache/uv/archive-v0/HGS6nMcAklcC0r9f"
+    },
+    "exit_code": 0,
+    "log": "validation/storage-tests-networkx.log",
+    "elapsed_seconds": 4.642
+  }
+]

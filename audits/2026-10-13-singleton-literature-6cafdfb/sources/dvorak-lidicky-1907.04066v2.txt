@@ -1,0 +1,796 @@
+                                                     Coloring count cones of planar graphs
+
+
+
+
+arXiv:1907.04066v2 [math.CO] 25 Oct 2021
+                                                             Zdeněk Dvořák∗              Bernard Lidický†
+                                                                            October 26, 2021
+
+
+                                                                                   Abstract
+                                                     For a plane near-triangulation G with the outer face bounded by a cy-
+                                                 cle C, let n⋆G denote the function that to each 4-coloring ψ of C assigns
+                                                 the number of ways ψ extends to a 4-coloring of G. The block-count
+                                                 reducibility argument (which has been developed in connection with at-
+                                                 tempted proofs of the Four Color Theorem) is equivalent to the statement
+                                                 that the function n⋆G belongs to a certain cone in the space of all functions
+                                                 from 4-colorings of C to real numbers. We investigate the properties of
+                                                 this cone for |C| = 5, formulate a conjecture strengthening the Four Color
+                                                 Theorem, and present evidence supporting this conjecture.
+                                              Key words: graph coloring, planar graphs, four color theorem, coloring
+                                           count cone
+                                              By the Four Color Theorem [1, 2, 5], every planar graph is 4-colorable.
+                                           Nevertheless, many natural followup questions regarding 4-colorability of planar
+                                           graphs are wide open. Even very basic precoloring extension questions, such as
+                                           the one given in the following problem, are unresolved (a near-triangulation is
+                                           a connected plane graph in which all faces except for the outer one have length
+                                           three).
+                                           Problem 1. Does there exists a polynomial-time algorithm which, given a near-
+                                           triangulation G with the outer face bounded by a 4-cycle C and a 4-coloring ψ
+                                           of C, correctly decides whether ψ extends to a 4-coloring of G?
+                                               Note that there exist infinitely many near-triangulations G with the outer
+                                           face bounded by a 4-cycle C such that not every precoloring of C extends to a 4-
+                                           coloring of G; and we do not have any good guess at how the near-triangulations
+                                           with this property could be described.
+                                               Nevertheless, we do have some information about the precoloring extension
+                                           properties of plane near-triangulations. For a plane near-triangulation G with
+                                           the outer face bounded by a cycle C, let n⋆G denote the function that to each
+                                             ∗ Computer Science Institute (CSI) of Charles University, Malostranské náměstı́ 25, 118
+
+                                           00 Prague, Czech Republic. E-mail: rakdver@iuuk.mff.cuni.cz. Supported by the Neuron
+                                           Foundation for Support of Science under Neuron Impuls programme.
+                                              † Department of Mathematics, Iowa State University.       Ames, IA, USA. E-mail:
+                                           lidicky@iastate.edu. Supported in part by NSF grants DMS-1600390 and DMS-1855653.
+
+
+                                                                                       1
+      v2   2          1   v1     v2   2          1   v1     v2   2         1   v1
+
+
+
+      v3   1          2   v4     v3   3          2   v4     v3   1         4   v4
+
+                ψ1                         ψ2                        ψ3
+
+
+               Figure 1: Precolorings ψ1 , ψ2 , and ψ3 of a 4-cycle.
+
+
+4-coloring ψ of C assigns the number of ways ψ extends to a 4-coloring of
+G; hence, ψ extends to a 4-coloring of G if and only if n⋆G (ψ) 6= 0. Suppose
+C = v1 v2 v3 v4 is a 4-cycle and ψ1 , ψ2 and ψ3 are its 4-colorings such that
+ψi (vj ) = j for i ∈ {1, 2, 3} and j ∈ {1, 2}, ψ1 (v3 ) = ψ3 (v3 ) = 1, ψ2 (v3 ) = 3,
+ψ1 (v4 ) = ψ2 (v4 ) = 2, and ψ3 (v4 ) = 4; see Figure 1. A standard Kempe chain
+argument shows that if n⋆G (ψ1 ) 6= 0, then n⋆G (ψ2 ) 6= 0 or n⋆G (ψ3 ) 6= 0.
+    Actually, much more information can be obtained along these lines, using the
+idea of Block-count reducibility [3, 4] developed in connection with the attempts
+to prove the Four Color Theorem: Certain inequalities between linear combina-
+tions of n⋆G (ψ1 ), n⋆G (ψ2 ), and n⋆G (ψ3 ) are satisfied for all near-triangulations G,
+or equivalently, the vector (n⋆G (ψ1 ), n⋆G (ψ2 ), n⋆G (ψ3 )) is contained in a certain
+cone in R3 . The main goal of this note is to present and motivate a conjec-
+ture regarding this cone in the case of near-triangulations with the outer face
+bounded by a 5-cycle; this conjecture strengthens the Four Color Theorem. We
+also provide evidence supporting this conjecture.
+
+
+1     Definitions
+In order to describe the cone we alluded to in the introduction, we need a
+number of definitions, which we introduce in this section. It is easier to state
+the idea in the dual setting of 3-edge-colorings of cubic plane graphs, which is
+well-known to be equivalent to 4-coloring of plane triangulations [6].
+   Some graphs in this paper may have parallel edges or loops. We call two
+parallel edges a double edge and three parallel edges a triple edge.
+
+1.1    Near-cubic graphs and their edge-colorings
+Let G be a connected graph and let v be a vertex of G. A half-edge is (e, u),
+where e is an edge and u is one of its endpoints. If e = uv, when we say u
+is incident with (e, u) but it is not incident with (e, v). We consider each edge
+e = uv of G as consisting of two half-edges (e, u) and (e, v) even if e is a loop. Let
+ν be a bijection between the half-edges incident with v and {0, . . . , deg(v) − 1}
+(so, if v is incident with a loop, each half of the loop is assigned a different
+number by ν). If all vertices of G other than v have degree three, we say that
+
+
+                                           2
+G̃ = (G, v, ν) is a near-cubic graph. We say that G̃ is a plane near-cubic graph if
+G is a plane graph and the half-edges incident with v are drawn around it in the
+clockwise cyclic order ν −1 (0), . . . , ν −1 (deg(v) − 1). We define d(G̃) = deg(v).
+    A 3-edge-coloring of G̃ is an assignment of colors 1, 2, and 3 to edges of
+G such that any two edges incident with a common vertex other than v have
+different colors. For an integer d ≥ 2, a function ψ : {0, . . . , d − 1} → {1, 2, 3}
+is a d-precoloring if |ψ −1 (1)| ≡ |ψ −1 (2)| ≡ |ψ −1 (3)| ≡ d (mod 2). This parity
+condition is necessary, see Observation 2. We say that a 3-edge-coloring ϕ of G̃
+extends a d(G̃)-precoloring ψ if for any edge e incident with v and a half-edge
+h of e incident with v, we have ϕ(e) = ψ(ν(h)).
+Observation 2. For an integer d ≥ 2, if a function ψ : {0, . . . , d−1} → {1, 2, 3}
+does not satisfy |ψ −1 (1)| ≡ |ψ −1 (2)| ≡ |ψ −1 (3)| ≡ d (mod 2), then there is no
+G̃ and 3-edge-coloring ϕ of G̃ such that ϕ extends ψ.
+Proof. Let ϕ be a 3-edge-coloring of G̃ extending ψ. Let n = |V (G̃)|. Since
+G̃ is cubic except for one vertex of degree d, the handshaking lemma gives
+|E(G̃)| = (3(n − 1) + d)/2. For i ∈ {1, 2, 3}, then number of edges colored by
+|ϕ−1 (i)| = ((n − 1) + |ψ −1 (i)|)/2. Therefore the parities of d, |ψ −1 (1)|, |ψ −1 (2)|,
+and |ψ −1 (3)| are the same.
+    Let nG̃ (ψ) denote the number of 3-edge-colorings of G̃ which extend ψ.
+Via the theory of nowhere-zero flows [7], it is easy to establish the following
+correspondence between 4-colorings of near-triangulations and 3-edge-colorings
+in their duals. Recall n⋆G (ψ) denotes the number of 4-colorings of G which
+extend ψ.
+Observation 3. Let G̃ = (G, v, ν) be a plane near-cubic graph, and let G⋆ be
+the dual of G drawn so that the outer face of G⋆ corresponds to v. Suppose the
+outer face of G⋆ is bounded by a cycle C. Then there exists a mapping f from
+4-colorings of C to d(G̃)-precolorings such that
+   • f maps exactly four distinct 4-colorings of C to each d(G̃)-precoloring,
+     and
+   • every 4-coloring ψ of C satisfies n⋆G⋆ (ψ) = nG̃ (f (ψ)).
+    Given two near-cubic graphs G̃1 = (G1 , v1 , ν1 ) and G̃2 = (G2 , v2 , ν2 ) with
+deg(v1 ) = deg(v2 ), let G̃1 ⊕ G̃2 denote the graph obtained from G1 and G2
+by, for 0 ≤ i ≤ deg(v1 ) − 1, removing the half-edges ν1−1 (i) and ν2−1 (i) and
+connecting the other halfs of the edges. Note that G̃1 ⊕ G̃2 is a cubic graph,
+and if G̃1 and G̃2 are plane near-cubic graphs, then G̃1 ⊕ G̃2 is a cubic planar
+graph. Observe that the number of 3-edge-colorings of G̃1 ⊕ G̃2 is
+                               X
+                                   nG̃1 (ψ)nG˜2 (ψ),                             (1)
+                                   ψ
+
+where the sum goes over all deg(v1 )-precolorings ψ. For any integer n ≥ 3, let
+C̃n denote the plane near-cubic graph (Wn , v, ν), where Wn is the wheel with
+the central vertex v adjacent to all vertices of an n-cycle; see Figure 2.
+
+                                            3
+                                                             0
+                               0
+                         1         4                1                 4
+             v
+                         2         3
+                                                        2         3
+                             C̃5                            C̃5
+
+
+
+Figure 2: (W5 , v, ν) also known as C̃5 . Entire graph on the left and partial
+drawing as we use in the rest of the paper on the right.
+
+
+1.2    Signatures and Kempe chains
+The following definition of d-signature is will be used to capture the possible
+parities of 2-edge-colored cycles containing v in a 3-edge-coloring of G̃ = (G, v, ν)
+distinguished by the half-edges contained in the cycles. In particular, parity will
+be s ∈ {−1, 1} and the pair of half-edges will be m. For an integer d ≥ 2, a
+d-signature is a set S of pairs (m, s), where m is an unordered pair of integers
+in {0, . . . , d − 1} and s ∈ {−1, 1}, satisfying the following conditions:
+  (i) for any distinct (m1 , s1 ), (m2 , s2 ) ∈ S we have m1 ∩ m2 = ∅, and
+ (ii) S does not contain elements ({a, b}, s1 ) and ({c, d}, s2 ) such that a < c <
+      b < d.
+A d-precoloring ψ is compatible in (distinct) colors i, j ∈ {1, 2, 3} with a d-
+signature S if
+                     S
+    • ψ −1 ({i, j}) = (m,s)∈S m, and
+
+   • for each ({a1 , a2 }, s) ∈ S, ψ(a1 ) = ψ(a2 ) holds if and only if s = −1.
+    Now, consider a 3-edge-coloring ϕ of a near-cubic graph G̃ = (G, v, ν). Each
+vertex other than v is incident with edges of all three colors. Hence, for any
+distinct i, j ∈ {1, 2, 3}, the subgraph Gij of G consisting of edges of colors i or
+j is a union of pairwise edge-disjoint cycles, vertex-disjoint except for possible
+intersections in v. An ij-Kempe chain of ϕ is a cycle C in Gij containing v; the
+sign σ(C) of the ij-Kempe chain C is 1 if the length of C is even and −1 if the
+length of C is odd. If h1 and h2 are the half-edges in C incident with v, we let
+µ(C) = {ν(h1 ), ν(h2 )}. The ij-Kempe chain signature σij (ϕ) of ϕ is defined as
+
+                 {(µ(C), σ(C)) : C is an ij-Kempe chain of ϕ}.
+
+Note that if G̃ is plane, then the ij-Kempe chains do not cross and the ij-
+Kempe chain signature of ϕ satisfies the condition (ii); and thus σij (ϕ) is a
+d(G̃)-signature.
+
+                                         4
+2     Coloring count cones
+Let G̃ = (G, v, ν) be a plane near-cubic graph and let ψ be a d(G̃)-precoloring.
+Suppose that ψ is compatible (in colors i, j ∈ {1, 2, 3}) with a d(G̃)-signature
+S. We define nG̃,S (ψ) as the number of 3-edge-colorings ϕ of G̃ extending ψ
+such that σij (ϕ) = S. Note that swapping the colors i and j on any set of ij-
+Kempe chains of ϕ results in another 3-edge-coloring with the same ij-Kempe
+chain signature. Furthermore, clearly for any permutation π of colors, we have
+nG̃,S (ψ ◦ π) = nG̃,S (ψ). This establishes bijections implying the following.
+
+Observation 4. Let G̃ be a plane near-cubic graph and let S be a d(G̃)-
+signature. Any d(G̃)-precolorings ψ1 and ψ2 compatible with S satisfy
+
+                              nG̃,S (ψ1 ) = nG̃,S (ψ2 ).
+
+    Hence, we can define an integer nG̃,S to be equal to nG̃,S (ψ) for an arbitrarily
+chosen d(G̃)-precoloring ψ compatible with S.
+    Let d ≥ 2 be an integer and let i, j ∈ {1, 2, 3} be distinct colors. For a
+d-precoloring ψ, let us define Sψ,ij as the set of d-signatures compatible with ψ
+in colors ij. Since every 3-edge-coloring of G̃ has an ij-Kempe chain signature,
+we have                         X                   X
+                     nG̃ (ψ) =        nG̃,S (ψ) =        nG̃,S .                 (2)
+                               S∈Sψ,ij               S∈Sψ,ij
+
+Let Pd denote the set of all d-precolorings and Sd the set of all d-signatures. We
+will work in the vector spaces RPd and RSd with coordinates corresponding to
+the d-precolorings and to the d-signatures, respectively. For each integer d ≥ 2,
+the coloring count cone Bd is the set of all x ∈ RPd such that
+    • x(ψ) ≥ 0 for every d-precoloring ψ, and
+    • there exists y ∈ RSd such that
+        – y(S) ≥ 0 for every d-signature S, and
+                   P
+        – x(ψ) = S∈Sψ,ij y(S) for every d-precoloring ψ and distinct colors
+          i, j ∈ {1, 2, 3}.
+Note that Bd is indeed a cone, i.e., an unbounded polytope closed under linear
+combinations with non-negative coefficients. By (2), the vector of precoloring
+extension counts for any plane near-cubic graph belongs to the corresponding
+coloring count cone.
+Theorem 5. For each plane near-cubic graph G̃, we have
+
+                                    nG̃ ∈ Bd(G̃) .
+
+   Each cone is uniquely determined as the set of non-negative linear combi-
+nations of its rays. For d ∈ {2, 3, 4, 5}, the rays of Bd are easy to enumer-
+ate by hand or using polytope-manipulation software such as Sage Math or
+
+                                          5
+the Parma Polyhedra Library (a program doing so for d = 5 can be found at
+http://lidicky.name/pub/4cone/). For a near-cubic graph G̃ such that nG̃
+is not the zero function, let ray(G̃) denote the set of all non-negative multi-
+ples of nG̃ . Graphs R̃2,1 , . . . , R̃5,12 used in the following lemma are depicted in
+Figure 3.
+Lemma 6. Refering to graphs in Figure 3:
+    • the cone B2 has exactly one ray equal to ray(R̃2,1 );
+
+    • the cone B3 has exactly one ray equal to ray(R̃3,1 );
+
+    • the cone B4 has exactly four rays equal to ray(R̃4,1 ), . . . , ray(R̃4,4 ); and
+
+    • the cone B5 has exactly 12 rays equal to ray(R̃5,1 ), . . . , ray(R̃5,12 ).
+   Let us remark that B6 has 208 rays; the direct method we employ is too
+slow to enumerate all rays for d ≥ 7 on current workstations.
+
+
+3     The cone B5 and the conjecture
+Note that while R̃5,1 , . . . , R̃5,11 are plane, R̃5,12 is not. Indeed, the following
+holds.
+Lemma 7. The following claims are equivalent.
+ (a) Every planar cubic 2-edge-connected graph is 3-edge-colorable.
+ (b) For every plane near-cubic graph G̃ with d(G̃) = 5, if nG̃ ∈ ray(R̃5,12 ),
+     then nG̃ is the zero function.
+Proof. Let us first prove that (a) implies (b). Consider a plane near-cubic
+graph G̃ = (G, v, ν) such that nG̃ ∈ ray(R̃5,12 ), and thus for some constant
+c ≥ 0, we have nG̃ (ψ) = c · nR̃5,12 (ψ) for every 5-precoloring ψ. Observe that
+nR̃5,12 (ψ)nC̃5 (ψ) = 0 for every 5-precoloring ψ (since R̃5,12 ⊕ C̃5 is the Petersen
+graph, which is not 3-edge-colorable; see Figure 4), and thus the number of
+3-edge-colorings of G̃ ⊕ C̃5 using (1) is
+                      X                    X
+                          nG̃ nC̃5 (ψ) = c   nR̃5,12 nC̃5 (ψ) = 0.
+                       ψ                   ψ
+
+
+Hence, the planar cubic graph G̃ ⊕ C̃5 is not 3-edge-colorable. By (a), G̃ ⊕ C̃5
+has a bridge, and thus G has a bridge. But then a standard parity argument
+implies that G̃ has no 3-edge-coloring, and thus nG̃ is the zero function.
+    Next, let us prove that (b) implies (a). Suppose for a contradiction that (b)
+holds, but there exists a plane cubic 2-edge-connected graph that is not 3-edge-
+colorable, and let H be one with the smallest number of vertices. By Euler’s
+formula and possible parallel edges, H has a face f of length 2 ≤ d ≤ 5; hence,
+
+
+                                           6
+                                                                                   0
+
+                                  0                            1
+
+                                                                      1                            2
+                                              R̃2,1
+                                                                                R̃3,1
+        0                     3       3                   2         1                      0       0                     3
+
+
+
+
+        1                     2       0                   1         2                      3       1                     2
+                R̃4,1                         R̃4,2                           R̃4,3                          R̃4,4
+                          0                                    4                                        3
+
+            1                             4      0                             3       4                             2
+
+
+
+                 2                    3               1                   2                    0                1
+                        R̃5,1                                 R̃5,2                                    R̃5,3
+                         2                                     1                                         0
+
+            3                             1     2                              0       1                             4
+
+
+
+                 4                    0               3                   4                    2                3
+                        R̃5,4                             R̃5,5                                        R̃5,6
+                          4                                    3                                        2
+
+            0                             3      4                             2       3                             1
+
+
+
+                 1                    2               0                   1                    4                0
+                        R̃5,7                                 R̃5,8                                    R̃5,9
+                          1                                     0                                       0
+
+            2                             0      1                              4 1                                  4
+
+
+
+                  3                   4               2                   3                2                   3
+                        R̃5,10                                R̃5,11                               R̃5,12
+                                                               7
+Figure 3: Graphs R̃2,1 , . . . , R̃5,12 . The dashed circle intersects the half-edges
+incident with the vertex v, which is not depicted for the sake of clarity; the
+values of ν are written at the respective half-edges.
+                                                                           0
+                  0                         0
+          1                4    1                     4        1               4
+
+
+                                                                2              3
+              2            3            2             3             R̃5,12
+
+                  R̃5,12                        C̃5                  C̃5
+
+                      Figure 4: R̃5,12 ⊕ C̃5 in two different drawings.
+
+
+
+we can write H = G̃ ⊕ C̃d for a plane near-cubic graph G̃. By Theorem 5, we
+have nG̃ ∈ Bd , and by Lemma 6, there exist non-negative real numbers ci such
+that                                X
+                              nG̃ =    ci nR̃d,i .
+                                                          i
+
+Observe there exists a plane near-cubic graph P̃ with d − 1 vertices such that
+G̃ ⊕ P̃ is 2-edge-connected. By the minimality of H, G̃ ⊕ P̃ is 3-edge-colorable,
+and in particular nG̃ is not the zero function. By (b), nG̃ is not a positive
+multiple of nR̃5,12 , and thus there exists an index k ≤ 11 such that ck > 0.
+Observe that R̃d,k ⊕ C̃d is 3-edge-colorable, and thus there exists a d-precoloring
+ψ0 such that nR̃d,k (ψ0 )nC̃d (ψ0 ) > 0. However, then the number of 3-edge-
+colorings of H is
+     X                        X
+        nG̃ (ψ)nC̃d (ψ) ≥ ck     nR̃d,k (ψ)nC̃d (ψ) ≥ ck nR̃d,k (ψ0 )nC̃d (ψ0 ) > 0.
+      ψ                             ψ
+
+This contradicts the assumption that H is not 3-edge-colorable.
+    Note that (a) from Lemma 7 is well-known to be equivalent to the Four Color
+Theorem [6], and thus indeed there is no plane near-cubic graph G̃ with d(G̃) = 5
+such that nG̃ is not the zero function and nG̃ ∈ ray(R̃5,12 ); and furthermore, a
+direct proof of this fact would imply the Four Color Theorem. Motivated by this
+observation (and experimental evidence), we propose the following conjecture, a
+strengthening of the Four Color Theorem. Let B5′ denote the cone in RPd with
+rays ray(R̃5,1 ), . . . , ray(R̃5,11 ).
+
+Conjecture 8. Every plane near-cubic graph G̃ with d(G̃) = 5 satisfies nG̃ ∈
+B5′ .
+
+    For i ∈ {0, . . . , 4}, let ψi5,a and ψi5,b denote the 5-precolorings whose values
+at j ∈ {0, . . . , 4} are defined by the following table; see also Figure 5. Notice
+that i is a rotating the coloring.
+
+
+                                                          8
+                   0                                    0                                     0
+               1                                    1                                     1
+       1               1     4              1                3      4             1               3   4
+           1                                    1                                     2
+                       3                                     2                                    1
+               2                                    1                                     1
+           2           3                        2             3                       2           3
+               ψ05,a                                ψ15,a                                 ψ05,b
+
+
+                           Figure 5: Precolorings ψ05,a and ψ05,b .
+
+
+                             (j − i) mod 5              ψi5,a (j)       ψi5,b (j)
+                                    0                       1               1
+                                    1                       1               2
+                                    2                       2               1
+                                    3                       3               1
+                                    4                       1               3
+    Note that each 5-precoloring is obtained from one of these ten by a permu-
+tation of colors. The cone B5′ has exactly one facet which is not also a facet of
+B5 , giving an equivalent formulation of Conjecture 8.
+Conjecture 9. Every plane near-cubic graph G̃ with d(G̃) = 5 satisfies
+
+                                     X
+                                     4                      X
+                                                            4
+                                 3         nG̃ (ψi5,a ) ≥         nG̃ (ψi5,b ).
+                                     i=0                    i=0
+
+    In the rest of the note, we provide some evidence supporting Conjecture 8;
+in particular, we show there are no counterexamples to the conjecture for plane
+near-cubic graphs with less than 30 vertices.
+
+
+4    Evidence
+In this section we present experimental evidence for the validity of Conjecture 8.
+Our goal is to show Corollary 20 stating that Conjecture 8 holds for graphs on
+at most 30 vertices. The main idea of our approach is to generate larger graphs
+G̃ from smaller graphs by planarity preserving operations. One such is depicted
+in Figure 7. We will generate “all” possibilities for d(G̃) ≤ 7 and particular ones
+with d(G̃) = 8. We then argue that all graphs in at most 30 vertices can be
+generated this way.
+    We begin by stating a few more definitions. A vector x ∈ Pd is invariant
+with respect to permutation of colors if all d-precolorings ψ and ψ ′ that only
+differ by a permutation of colors satisfy x(ψ) = x(ψ ′ ).
+    See Figure 6 for an illustration of the following definitions. The rotation by t
+of a d-precoloring ψ is the d-precoloring rt (ψ) such that rt (ψ)((i + t) mod d) =
+
+                                                        9
+      0 1 ··· d − 1                      0 1 ··· d− 1             0    1 ··· d − 1
+ ψ                           r1 (ψ)                       f (ψ)
+      c0 c1 · · · cd−1                 cd−1 c0 · · · cd−2       cd−1 cd−2 · · · c0
+                       0                        1                         4
+
+             1                   4    2                     0   3                    0
+                     G−v                      G−v                       G−v
+
+
+                 2           3            3             4           2            1
+                       G̃                     r1 (G̃)                   f (G̃)
+
+
+  Figure 6: Rotation and flip operations. Colors are denoted by c0 , . . . , cd−1 .
+
+ψ(i) for i ∈ {0, . . . , d−1}. The flip of a d-precoloring ψ is the d-precoloring f (ψ)
+such that f (ψ)(i) = ψ(d − 1 − i) for i ∈ {0, . . . , d − 1}. For x ∈ RPd , let rt (x) be
+defined as y ∈ RPd such that y(rt (ψ)) = x(ψ) for every d-precoloring ψ, and let
+f (x) be defined as z ∈ RPd such that z(f (ψ)) = x(ψ) for every d-precoloring ψ.
+A set K ⊆ RPd is closed under rotations and flips if we have x ∈ K if and only
+if f (x) ∈ K and rt (x) ∈ K for all t ∈ {0, 1, . . . , d − 1}. For a near-cubic graph
+G̃ = (G, v, ν) with deg(v) = d, let rt (G̃) denote the near-cubic graph (G, v, ν1 ),
+where ν1−1 ((i+t) mod d) = ν −1 (i) for i ∈ {0, . . . , d−1}, and let f (G̃) denote the
+near-cubic graph (G, v, ν2 ), where ν2−1 (i) = ν2−1 (d − 1 − i) for i ∈ {0, . . . , d − 1}.
+Observation 10. Let G̃ be a near-cubic graph, d = d(G̃) and t ∈ {0, . . . , d− 1}.
+Then nrt (G̃) = rt (nG̃ ) and nf (G̃) = f (nG̃ ).
+    Let ψ1 be a d1 -precoloring and ψ2 a d2 -precoloring. For an integer k ≤
+min(d1 , d2 ), we say that ψ1 k-matches ψ2 if ψ1 (d1 − k + i) = ψ2 (d2 − 1 − i) for
+i ∈ {0, 1, . . . , k − 1}. By γk (ψ1 , ψ2 ), we denote the (d1 + d2 − 2k)-precoloring γ
+such that γ(i) = ψ1 (i) for i ∈ {0, . . . , d1 − k − 1} and γ(i) = ψ2 (i − (d1 − k))
+for i ∈ {d1 − k, . . . , d1 + d2 − 2k − 1}. For x1 ∈ RPd1 and x2 ∈ RPd2 , we define
+γk (x1 , x2 ) as the vector y ∈ RPd1 +d2 −2k such that
+                                           X
+                          y(ψ) =                    x1 (ψ1 )x2 (ψ2 ),
+                                  ψ1 ,ψ2 :γk (ψ1 ,ψ2 )=ψ
+
+where the sum is over all k-matching d1 -precolorings ψ1 and d2 -precolorings ψ2 .
+For near-cubic graphs G̃1 = (G1 , v1 , ν1 ) with deg(v1 ) = d1 and G̃2 = (G2 , v2 , ν2 )
+with deg(v2 ) = d2 , let γk (G̃1 , G̃2 ) denote the near-cubic graph (G, v, ν), where
+G is obtained from G1 and G2 by identifying v1 with v2 to a single vertex
+v and for i ∈ {0, 1, . . . , k − 1} removing the half-edges ν1−1 (d1 − k + i) and
+ν2−1 (d2 − 1 − i) and connecting the other halfs of the edges; and ν −1 (i) = ν1−1 (i)
+for i ∈ {0, . . . , d1 − k − 1} and ν −1 (i) = ν2−1 (i − (d1 − k)) for i ∈ {d1 − k, . . . , d1 +
+d2 − 2k − 1}. See Figure 7 for an illustration.
+Observation 11. Let G̃1 and G̃2 be near-cubic graphs. For every integer k ∈
+{0, . . . , min(d(G̃1 ), d(G̃2 ))}, we have nγk (G̃1 ,G̃2 ) = γk (nG̃1 , nG̃2 ).
+
+                                                10
+               0                         2                          0                     5
+
+    1                     4   3                      1   1                                        4
+            G1 − v1                   G2 − v2                    G1 − v1            G2 − v2
+
+
+        2             3           4             0            2                                3
+              G̃1                       G̃2                             γ2 (G̃1 , G̃2 )
+
+
+                                      Figure 7: γk (G̃1 , G̃2 )
+
+
+   By a computer-assisted enumeration, we verified the following claim.
+Lemma 12. There exists cones Kd ⊆ RPd for d = 2, . . . , 8 such that the fol-
+lowing claims hold.
+ (a) Kd = Bd when d ≤ 4 and K5 = B5′ .
+ (b) For all d ∈ {2, . . . , 8}, the elements of Kd are invariant with respect to
+     permutation of colors.
+ (c) For d ∈ {2, . . . , 7}, the cone Kd is closed under rotations and flips.
+ (d) If 2 ≤ d1 ≤ d2 and d1 + d2 ≤ 7, then for all x1 ∈ Kd1 and x2 ∈ Kd2 we
+     have γ0 (x1 , x2 ) ∈ Kd1 +d2 .
+ (e) If 2 ≤ d ≤ 5, then for all x ∈ Kd we have γ1 (nR̃3,1 , x) ∈ Kd+1 .
+
+ (f) If 3 ≤ d ≤ 7, then for all x ∈ Kd we have γ2 (nR̃3,1 , x) ∈ Kd−1 .
+
+ (g) If 2 ≤ d1 ≤ 6 and 1 ≤ c ≤ d1 /2, then for all x1 ∈ Kd1 and x2 ∈ K7+2c−d1 ,
+     we have γc (x1 , x2 ) ∈ K7 .
+ (h) For every x1 ∈ K8 and x2 ∈ K7 , we have γ4 (x1 , x2 ) ∈ K7 .
+  (i) For every x1 , x2 ∈ K6 , we have r2 (γ2 (x1 , x2 )) ∈ K8 .
+Proof. The proof and the program to verify the proof can be found at http://lidicky.name/pub/4cone/.
+The cones are described by their rays, enumerated in the file. Cone K6 has 102
+rays, K7 has 22605 rays, and K8 has 4330 rays. It suffices to verify all the claims
+for x, x1 , x2 being the rays of the cones specified in the claims; the inclusion of
+the resulting vectors in the appropriate cone is certified by expressing them as
+a linear non-negative combination of the rays of the cone.
+   Parts (e) and (f) of Lemma 12 have the following corollary.
+Lemma 13. Let G̃ = (G, v, ν) be a plane near-cubic graph and let d = d(G̃).
+If d ∈ {2, . . . , 7} and nG̃ 6∈ Kd , then there exists a plane near-cubic graph
+G̃0 = (G0 , v0 , ν0 ) such that d(G̃0 ) = 7, nG̃0 6∈ K7 , G0 − v0 is an induced
+subgraph of G − v, and |V (G0 )| ≤ |V (G)| − (7 − d).
+
+                                                    11
+Proof. We prove the claim by induction on the number of vertices of G. When
+d ≤ 4, the claim is vacuously true by Theorem 5, since Kd = Bd . When d = 7,
+we can set G̃0 = G̃. Hence, suppose that d ∈ {5, 6}. Since nG̃ 6∈ Kd , the
+function nG̃ is not identically zero.
+    If G − v is disconnected, we can by symmetry assume that G̃ = γ0 (G̃1 , G̃2 )
+for plane near-cubic graphs G̃1 and G̃2 such that d = d(G̃1 )+d(G̃2 ) and d(G̃1 ) ≤
+d(G̃2 ). Since nG̃ is not the zero function, nG̃1 is not the zero function either,
+and thus d(G̃1 ) 6= 1. Hence d(G̃1 ) ≥ 2, and thus 2 ≤ d(G̃2 ) ≤ 4. Hence by
+Lemma 12(a), nG̃1 ∈ Kd(G̃1 ) and nG̃2 ∈ Kd(G̃2 ) , and nG̃ ∈ Kd by Lemma 12(d),
+which is a contradiction.
+    Hence, G − v is connected (and the same argument as for disconnected G − v
+shows that no loop is incident with v). Consequently, v is not incident with a
+triple edge. If v is incident with a double edge, then we can by symmetry assume
+that G̃ = γ1 (R̃3,1 , G̃1 ) for a plane near-cubic graph G̃1 = (G1 , v1 , ν1 ) with
+d(G̃1 ) = d − 1 ≤ 5. By Lemma 12(e), since nG̃ 6∈ Kd , we have nG̃1 6∈ Kd−1 . By
+the induction hypothesis, there exists a plane near-cubic graph G̃0 = (G0 , v0 , ν0 )
+with d(G̃0 ) = 7, such that nG̃0 6∈ K7 , G0 − v0 is an induced subgraph of G1 − v1 ,
+and thus also of G − v, and |V (G0 )| ≤ |V (G1 )| − (7 − (d − 1)) < |V (G)| − (7 − d),
+as required.
+    Hence, we can assume v is not incident with a double edge. Consequently,
+we can by symmetry assume that G̃ = γ2 (R̃3,1 , G̃1 ) for a plane near-cubic graph
+G̃1 = (G1 , v1 , ν1 ) with d(G̃1 ) = d + 1. By Lemma 12(f), since nG̃ 6∈ Kd , we have
+nG̃1 6∈ Kd+1 . By the induction hypothesis, there exists a plane near-cubic graph
+G̃0 = (G0 , v0 , ν0 ) with d(G̃0 ) = 7, such that nG̃0 6∈ K7 , G0 − v0 is an induced
+subgraph of G1 − v1 , and |V (G0 )| ≤ |V (G1 )| − (7 − (d + 1)) = |V (G)| − (7 − d).
+Hence, the claim of the lemma follows.
+    We will say that a plane near-cubic graph G̃ = (G, v, ν) is extremal if d(G̃) =
+7, nG̃ 6∈ K7 , and there does not exist any plane near-cubic graph G̃0 = (G0 , v0 , ν)
+with d(G̃0 ) = 7 such that nG̃0 6∈ K7 and G0 − v0 is a proper minor of G − v.
+
+Lemma 14. If G̃ = (G, v, ν) is an extremal plane near-cubic graph and G̃′ =
+(G′ , v ′ , ν ′ ) is a plane near-cubic graph with d(G̃′ ) ≤ 7 such that G′ − v ′ is a
+proper minor of G − v, then nG̃′ ∈ Kd(G̃′ ) .
+Proof. If nG̃′ 6∈ Kd(G̃′ ) , then by Lemma 13 there would exist a plane near-cubic
+graph G̃0 = (G0 , v0 , ν0 ) such that d(G̃0 ) = 7, nG̃0 6∈ K7 and G0 − v0 is an
+induced subgraph of G′ − v ′ . However, then G0 − v0 would be a proper minor
+of G − v, contradicting the assumption that G̃ is extremal.
+   Next, let us explore consequences of part (g) of Lemma 12.
+Lemma 15. If G̃ = (G, v, ν) is an extremal plane near-cubic graph, then v is
+not incident with loops or parallel edges and G − v is 2-edge-connected.
+Proof. Analogously to the proof of Lemma 13, if v were incident with a loop
+or a parallel edge or if G − v were not 2-edge-connected, we would have G̃ =
+
+                                         12
+γc (G̃1 , G̃2 ) for plane near-cubic graphs G̃1 and G̃2 such that 2 ≤ d(G̃1 ) ≤ d(G̃2 ),
+d(G̃1 ) + d(G̃2 ) = 7 + 2c, and c ≤ 1; in particular, d(G̃2 ) ≤ 7 and d(G̃1 ) ≤
+⌊(7 + 2c)/2⌋ ≤ 4. By Lemma 14, we have nG̃i ∈ Kd(G̃i ) for i ∈ {1, 2}. By
+Lemma 12(g), we conclude nG̃ ∈ K7 , which is a contradiction.
+    Suppose A and B form a partition of the vertex set of a graph H, and let
+S be the set of edges of H with one end in A and the other end in B. In this
+situation, we say S is an edge cut of H with sides A and B.
+Lemma 16. If G̃ = (G, v, ν) is an extremal plane near-cubic graph, then G − v
+does not contain an edge cut S such that v has at least |S| neighbors in each
+side of the cut.
+Proof. Suppose for a contradiction G − v contains such an edge cut S of size c,
+and thus G̃ = γc (G̃1 , G̃2 ) for plane near-cubic graphs G̃1 and G̃2 such that
+2c ≤ d(G̃1 ) ≤ d(G̃2 ) and d(G̃1 ) + d(G̃2 ) = 7 + 2c. Since v has 7 neighbors and
+at least c of them are contained in each of the sides of the cut, we have c ≤ 3.
+Note that d(G̃2 ) ≤ 7 and d(G̃1 ) ≤ ⌊(7 + 2c)/2⌋ ≤ 6. By Lemma 14, we have
+nG̃i ∈ Kd(G̃i ) for i ∈ {1, 2}. By Lemma 12(g), we conclude nG̃ ∈ K7 , which is a
+contradiction.
+   An edge cut S of size at most five in a near-cubic graph G̃ = (G, v, ν) is
+essential if the side of S containing v contains at least one other vertex and the
+other side B of S induces neither a tree nor a 5-cycle.
+Lemma 17. If G̃ = (G, v, ν) is an extremal plane near-cubic graph, then G̃
+does not contain an essential edge cut S of size at most five.
+Proof. Suppose for a contradiction that G̃ contains an essential edge-cut S of
+size k ≤ 5, and choose one with minimum k, and subject to that one for which
+the side B not containing v is minimal. We claim G[B] is 2-edge-connected.
+Otherwise, B is a disjoint union of non-empty sets B1 and B2 , where G contains
+r ≤ 1 edges with one end in B1 and the other end in B2 . For i ∈ {1, 2},
+let Si denote the set of edges of G with exactly one end in Bi . Since G̃ is
+extremal, nG̃ 6∈ K7 is not identically zero, and thus G is 2-edge-connected,
+implying |Si | ≥ 2. Hence, |Si | = k + 2r − |S3−i | ≤ k. By the minimality of
+B, we conclude that Bi induces a tree or a 5-cycle, and thus |Si | ≥ 3. Hence
+5 ≥ k = |S1 | + |S2 | − 2r ≥ 6 − 2r, and thus r = 1 and |S1 |, |S2 | ≤ 4. This implies
+that neither B1 nor B2 induces a 5-cycle, and thus both of them induce trees;
+and G contains an edge between them, implying that B induces a tree, contrary
+to the assumption that S is an essential edge cut.
+    Since G[B] is 2-edge-connected and subcubic, each face of G[B] is bounded
+by a cycle. Let CS denote the cycle bounding the face f of G[B] whose interior
+contains v. Observe that all edges of S are drawn inside f . Otherwise, the set
+S ′ of edges of S drawn inside C forms an edge cut of order smaller than k and
+by the minimality of k, its side B ′ ) B induces a tree or a 5-cycle; this is not
+possible, since G[B] is 2-edge connected and not a tree.
+
+
+
+                                          13
+    Let G̃c be the plane near-cubic graph obtained from G by contracting the
+side of the cut containing v to a single vertex. By Lemma 14, we have nG̃c ∈ Kk .
+Since Kd = Bd for d ≤ 4 and K5 = B5′ ,
+                                        X
+                                 nG̃c =     ci nR̃k,i ,
+                                        i
+
+where i ≤ 11 if k = 5 and the coefficients ci are non-negative. Let G̃i =
+(Gi , vi , νi ) denote the plane near-cubic graph obtained fromP
+                                                               G̃ by replacing the
+side of the cut S not containing v by R̃k,i . Note that nG̃ = i ci nG̃i , and since
+K7 is a cone and nG̃ 6∈ K7 , there exists i such that nG̃i 6∈ K7 . Because B
+contains the cycle CS and all edges of S are incident with vertices of CS , we see
+Gi − vi is a proper minor of G − v, contradicting the extremality of G̃.
+    In Lemma 15, we argued that if G̃ = (G, v, ν) is an extremal plane near-
+cubic graph, then G − v is 2-edge-connected, and thus its face containing v is
+bounded by a cycle C. Let us now argue that the graph stays 2-edge-connected
+after removing V (C) as well.
+Lemma 18. Let G̃ = (G, v, ν) be an extremal plane near-cubic graph and let C
+be the cycle bounding the face of G − v containing v. The cycle C is induced,
+no two neighbors of v in C are adjacent, and the graph G − (V (C) ∪ {v}) is
+2-edge-connected and has more than one vertex.
+Proof. Consider a simple closed curve c in the plane intersecting G in two edges
+of C, b ≤ 4 edges incident with v, and r ≤ 1 edges of E(G − v) \ E(C), where
+each edge is intersected at most once. The curve c separates the plane into two
+parts; let A and B be the corresponding partition of vertices of G, where v ∈ A,
+and let S be the edge cut in G consisting of the edges with one end in A and
+the other end in B. By Lemma 16 applied to the edge cut in G − v obtained
+from S by removing the edges incident with v, it follows that b ≤ r + 1, and
+thus |S| ≤ 3 + 2r ≤ 5. By Lemma 17 we conclude that the edge cut satisfies
+one of the following conditions.
+   • r = 0, b = 1, |S| = 3, and B consists of a single vertex of C, or
+   • r = 1 and G[B] is a subpath of C, or
+   • r = 1, b = 2, and G[B] is a 5-cycle containing exactly one vertex not in
+     V (C).
+If C had a chord e, this would give a contradiction by considering a curve c
+(with r = 0) drawn next to the chord so that e ∈ E(G[B]) and b ≤ 3; hence,
+C is an induced cycle. If two neighbors of v in C were adjacent, we would
+obtain a contradiction by considering a curve c (with r = 0 and b = 2) drawn
+around them. If the graph G − (V (C) ∪ {v}) were not connected, we would
+obtain a contradiction by considering a curve c (with r = 0 and b ≤ 3) chosen
+so that both A and B contain a vertex of G − (V (C) ∪ {v}). Finally, if the
+graph G − (V (C) ∪ {v}) were not 2-edge-connected, then we could choose c so
+
+                                        14
+that r = 1, b ≤ 3, and B contains a vertex of G − (V (C) ∪ {v}). But then G[B]
+would be a 5-cycle containing exactly one vertex not in V (C) and consequently
+two adjacent vertices of C would be neighbors of v, which is a contradiction.
+   Therefore, the graph G − (V (C) ∪ {v}) is 2-edge-connected. Since no two
+neighbors of v in C are adjacent, G contains at least 7 edges between V (C) and
+V (G) \ (V (C) ∪ {v}), and thus G − (V (C) ∪ {v}) has more than one vertex.
+   Finally, let us apply the parts (h) and (i) of Lemma 12.
+Lemma 19. If G̃ = (G, v, ν) is an extremal plane near-cubic graph, then G has
+at least 28 vertices.
+Proof. Recall that by the definition of extremal, d(G̃) = 7. By Lemma 15, the
+face of G − v containing v is bounded by a cycle C. Let v1 , . . . , v7 be the
+neighbors of v in C in order. For i ∈ {1, . . . , 7}, let Pi denote the subpath of C
+from vi to vi+1 (where v8 = v1 ).
+     By Lemma 18, the cycle C is induced, no two neighbors of v in C are
+adjacent, and the graph G − (V (C) ∪ {v}) is 2-edge-connected and has more
+than one vertex. Hence, the face of G − (V (C) ∪ {v}) containing v is bounded
+by a cycle C ′ . For a subgraph G′ ⊆ G containing C ∪ C ′ , let X(G′ ) denote the
+set of faces of G′ separated from v by C ′ and let Y (G′ ) denote the set of faces
+of G′ separated from v by C but not by C ′ . See Figure 8(a) for an example.
+For i ∈ {1, . . . , 7}, we say that a face f ∈ X(G′ ) sees Pi if there exists a face
+f ′ ∈ Y (G′ ) such that f ′ is incident with an edge of Pi and the boundaries of f
+and f ′ share at least one edge.
+     If for some i ∈ {1, . . . , 7}, some face of X(G) saw Pi , Pi+2 , and Pi+4 (with
+indices taken cyclically) then G̃ = γ4 (r2 (γ2 (G̃1 , G̃2 )), G̃3 ) for plane near-cubic
+graphs G̃1 , G̃2 , and G̃3 with d(G̃1 ) = d(G̃2 ) = 6 and d(G̃3 ) = 7 (see Figure 8(b)).
+Lemma 14 would imply nG̃j ∈ Kd(G̃j ) for j ∈ {1, 2, 3}, and by Lemma 12(h)
+and (i), we would have nG̃ ∈ K7 , which is a contradiction. Hence,
+
+                     no face of X(G) sees Pi , Pi+2 , and Pi+4 .                    (3)
+
+    Let b1 be the number of edges of G with one end in C and the other end in C ′ ,
+let b2 be the number of chords of C ′ , let b3 be the number of edges with one end
+in C ′ and the other end in V (G) \ V (C ∪ C ′ ), and let b4 be the number of edges
+of G − v − V (C ∪ C ′ ). Note that b1 ≥ 7, b3 is at least three times the number of
+components of G − v − V (C ∪ C ′ ), |E(C)| = 7 + b1, |E(C ′ )| = b1 + 2b2 + b3, and
+
+|E(G)| = 7 + (7 + b1)+ b1 + (b1 + 2b2 + b3 )+ b2 + b3 + b4 = 14 + 3b1 + 3b2 + 2b3 + b4 .
+
+A case analysis shows that since (3) holds, one of the following conditions holds:
+   • b1 ≥ 8 and b2 ≥ 2, or
+   • b1 ≥ 8 and b3 ≥ 3, or
+   • b3 ≥ 6, or
+
+
+                                          15
+                      0                                                 0
+                                                                   v7        P6
+          1                         6                1        P7                  v6     6
+                                                                     G̃3
+                                                      v1
+                                                     P1                                P5
+                   X(G)                                                                v5
+                                                            G̃1               G̃2
+      2                                 5        2       v2                                  5
+                           C′                             P2                        P4
+                                C                                                 v4
+                                                                   v3 P3
+               3                4                            3                    4
+                      G̃                                                G̃
+
+                     (a)                                             (b)
+
+
+Figure 8: Graph G̃ from Lemma 19. Edges incident to v are crossing the dashed
+circle and v is not depicted. (a) Cycles C and C ′ are depicted by thick red and
+dotted blue, respectively. The gray faces belong to Y (G). The white face in
+the center belongs to X(G). (b) A construction of G̃ from G̃1 , G̃2 and G̃3 is
+indicated by the dotted lines.
+
+
+   • b3 ≥ 4 and b4 ≥ 1.
+Hence 3b1 + 3b2 + 2b3 + b4 ≥ 30, and thus G has at least 44 edges. Consequently,
+|V (G)| ≥ (2|E(G)| − 4)/3 ≥ 28.
+   As a consequence, this verifies Conjecture 8 for small graphs.
+Corollary 20. Conjecture 8 holds for all plane near-cubic graphs with less than
+30 vertices.
+Proof. Let G̃ = (G, v, ν) be a counterexample to Conjecture 8, and in particular
+nG̃ 6∈ B5′ = K5 . By Lemma 13, there exists a plane near-cubic graph G̃0 =
+(G0 , v0 , ν0 ) such that d(G̃0 ) = 7, nG̃0 6∈ K7 , and |V (G0 )| ≤ |V (G)| − 2. Hence,
+there exists an extremal plane near-cubic graph G̃1 = (G1 , v1 , ν1 ) such that
+|V (G1 )| ≤ |V (G0 )|. By Lemma 19, we have |V (G1 )| ≥ 28, and thus |V (G)| ≥
+30.
+   Note that the analysis at the end of the proof of Lemma 19 can be improved.
+By a computer-assisted enumeration, one can show that to ensure that (3)
+holds, G − v must contain one of 38 specific graphs as a minor; the smallest
+are depicted in Figure 9. Hence, every counterexample to Conjecture 8 must
+contain one of these 38 as a minor. The list of these 38 graphs is available at
+http://lidicky.name/pub/4cone/.
+
+
+
+                                            16
+            5                                                        5
+
+    6                       4                        6                       4
+
+
+
+
+0                                   3        0                                   3
+
+
+
+        1           2                                        1           2
+                                        5
+
+                        6                                4
+
+
+
+
+                0                                                3
+
+
+
+                                1                2
+
+
+                Figure 9: The smallest minors.
+
+
+
+
+                                        17
+References
+[1] Appel, K., and Haken, W. Every planar map is four colorable, Part I:
+    Discharging. Illinois J. of Math. 21 (1977), 429–490.
+[2] Appel, K., Haken, W., and Koch, J. Every planar map is four colorable,
+    Part II: Reducibility. Illinois J. of Math. 21 (1977), 491–567.
+[3] Cohen, D. I. A. Block count consistency and the four color problem.
+    Manuscript.
+[4] Gismondi, S. J., and Swart, E. R. A new type of 4-colour reducibility.
+    Congressus Numerantium 82 (1991), 33–48.
+[5] Robertson, N., Sanders, D. P., Seymour, P., and Thomas, R. The
+    four colour theorem. J. Combin. Theory, Ser. B 70 (1997), 2–44.
+[6] Tait, P. G. Note on a theorem in geometry of position. Trans. Roy. Soc.
+    Edinburgh 29 (1880), 657–660.
+[7] Tutte, W. A contribution on the theory of chromatic polynomials. Canad.
+    J. Math. 6 (1954), 80–91.
+
+
+
+
+                                    18
+

@@ -1,5 +1,10 @@
 # C5 adjacent-singleton problem：計數層與剩餘缺口
 
+2026-10-13 整理補註：[稀疏 singleton 文獻與適用性](../audits/2026-10-13-singleton-literature-6cafdfb/REPORT.md)
+本輪有界檢索未找到可直接排除任意大小 933／941 的已證定理；既有 count-cone
+大小限制、全內點偶度等條件與原始猜想分開標示。一般 adjacent-singleton
+命題仍 OPEN；此檢索不證明不存在其他定理，也沒有新增來源排除。
+
 2026-09-15。接續 [主問題](c5_kempe_screen.md#4-c5-adjacent-singleton-problemunproved)。
 
 **2026-09-27 後續**：[循環流與整數 orbit 覆蓋](c5_circulation.md) 將恆等式重述
