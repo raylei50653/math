@@ -399,6 +399,7 @@
 | [fan pentagon](fan_pentagon.md)、[boundary relation 庫](boundary_relations.md)、[pp relations](pp_relations.md) | 固定 grammar 的 87 states 與完整 relation／pair 查詢已保存；pp 求值器仍屬 Python 層，87 不是一般 cell catalogue 的 132 |
 | [state language](state_language.md)、[stepwise sufficiency](stepwise_state_sufficiency.md)、[local closure](local_closure.md)、[C5 interface 想法](c5_interface_idea.md) | 表示法、strip／fan 的有界控制及 separator 引理可用；一般移動前緣、context／future 充分性、C6／C7 轉接仍待證或未啟動 |
 | [cell enumerator](c5_cell_enumerator.md) | R1／SYM／prefix／DFS／bitmask／integer viable 的 Lean 鏈與外部信任已明列；k=6、7 獨立重現僅為有界計算證據；原重複 §14 已整理為 §16 |
+| [K₄ 非平面障礙偵測與效果](k4_nonplanarity.md) | 原圖 K₄＋同一外部分量四接點產生可核對 K₅ minor；Atlas 161／237、平面零誤報，603 命中；76 漏判分為 25 有 K₅ minor／51 無，屬充分判準，無新 Lean 或來源排除 |
 | [extension effects](extension_effects.md) | 一般圖的新增點／邊完整 relation 變化已觀察；pair projections 漏掉高階限制，geometry=unknown 的 rows 不能當 disk transitions |
 
 各表只概括成果層級；具體 theorem 名稱、公理審計、證書及完整重播命令仍放原報告。

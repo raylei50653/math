@@ -1,5 +1,9 @@
 # 稽核封存與還原
 
+2026-10-13 K₄ 非平面偵測：[效果與漏判分類](../docs/k4_nonplanarity.md)。
+本輪兩份大型 JSON 依既有格式追加封存，原 bytes 與 frozen hashes 保持；
+新 checkout 先用下方 restore 指令，再執行該報告的固定域重播。
+
 2026-10-13 最新整理：[W5圈秩三環繞排除與C₈ apex度數](../docs/history/2026-10-13-w5-rank3-c8-apex-publish.md)。
 兩份原包75個非快取檔案保持原bytes；追加3個路徑、3個gzip blobs，
 新增6,288,444 compressed bytes，舊records不變。新checkout仍使用下方restore指令。
