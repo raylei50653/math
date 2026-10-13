@@ -1,0 +1,74 @@
+{
+  "schema": "c6-cap-completion-verification-v1",
+  "base": "6943561e644e7598342d1ccd7df44dac0ebcd5cf",
+  "producer_verification": "search/VERIFICATION.json",
+  "independent_receipts": [
+    "review/INDEPENDENT_CHECK.json",
+    "review/INDEPENDENT_CHECK_SEED17.json"
+  ],
+  "root_commands": [
+    {
+      "command": "PYTHONHASHSEED=17 python -B audits/2026-10-13-c6-cap-completion-6943561/search/produce.py --check --seed 17",
+      "exit_code": 0,
+      "stdout": "logs/producer-hashseed17.stdout",
+      "stderr": "logs/producer-hashseed17.stderr"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python -B audits/2026-10-13-c6-cap-completion-6943561/review/independent_check.py --seed 17",
+      "exit_code": 0,
+      "stdout": "logs/independent-hashseed17.stdout",
+      "stderr": "logs/independent-hashseed17.stderr"
+    },
+    {
+      "command": "python audits/2026-10-13-c6-cap-completion-6943561/check_custody.py --write",
+      "exit_code": 0,
+      "stdout": "logs/custody.json"
+    }
+  ],
+  "package_replay": "python -B audits/2026-10-13-c6-cap-completion-6943561/verify_package.py",
+  "package_inventory": "MANIFEST.json",
+  "artifact_checks": "ARTIFACT_CHECK.json",
+  "input_drift": "INPUT_DRIFT.json",
+  "paper_reviews": [
+    "theory/PROOF.md",
+    "review/REVIEW.md"
+  ],
+  "diagram_edge_mappings": "figures/MAPPINGS.json",
+  "negative_controls": {
+    "damaged_pin_map": {
+      "reason": "original pin map mismatch",
+      "rejected": true
+    },
+    "damaged_rotation": {
+      "reason": "rotation custody mismatch",
+      "rejected": true
+    },
+    "missing_fibre": {
+      "reason": "missing C6 fibre",
+      "rejected": true
+    },
+    "missing_graph": {
+      "reason": "missing or extra cap",
+      "rejected": true
+    },
+    "missing_tuple": {
+      "reason": "C6 full tuple mismatch",
+      "rejected": true
+    }
+  },
+  "claims": {
+    "three_plane_cap_types": "paper proof with independent annulus generator and full edge-isomorphism control",
+    "all_new_U_intersections": "2304 nonempty same-row full-lift intersections",
+    "same_side_boundary_pin_only_budget": "all a-d<=5 gadgets cannot directly empty-intersection-reject the eight U, conditional on inherited exact minimal-source assumptions and prior signed search",
+    "new_domain_plantri_dependency": false,
+    "inherited_signed_five_point_plantri_dependency": true,
+    "new_source_exclusions": 0,
+    "actual_unknown_H": "not triggered",
+    "source_realization": "OPEN",
+    "eight_U": "retained",
+    "general_main_theorem": "OPEN",
+    "Lean": "not performed",
+    "commit_push": "not performed",
+    "write_scope": "Only this new exclusive package; pre-existing changes preserved"
+  }
+}

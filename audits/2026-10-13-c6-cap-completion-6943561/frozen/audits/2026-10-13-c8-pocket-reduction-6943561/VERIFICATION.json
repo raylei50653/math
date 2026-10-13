@@ -1,0 +1,54 @@
+{
+  "schema": "c8-pocket-reduction-verification-v1",
+  "base": "6943561e644e7598342d1ccd7df44dac0ebcd5cf",
+  "commands": [
+    {
+      "name": "producer_normal",
+      "command": "python3 -B /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/controls/produce.py --check > /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/logs/producer-normal.stdout 2> /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/logs/producer-normal.stderr",
+      "exit_code": 0
+    },
+    {
+      "name": "producer_seed17",
+      "command": "PYTHONHASHSEED=17 python3 -B /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/controls/produce.py --check > /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/logs/producer-seed17.stdout 2> /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/logs/producer-seed17.stderr",
+      "exit_code": 0
+    },
+    {
+      "name": "independent_normal",
+      "command": "python3 -B /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/controls/independent_check.py --negative > /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/logs/independent-normal.stdout 2> /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/logs/independent-normal.stderr",
+      "exit_code": 0
+    },
+    {
+      "name": "independent_seed17",
+      "command": "PYTHONHASHSEED=17 python3 -B /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/controls/independent_check.py --negative > /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/logs/independent-seed17.stdout 2> /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/logs/independent-seed17.stderr",
+      "exit_code": 0
+    },
+    {
+      "name": "custody",
+      "command": "python3 -B /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/check_custody.py --write > /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/logs/custody.stdout 2> /home/ray/developer/ai/math/audits/2026-10-13-c8-pocket-reduction-6943561/logs/custody.stderr",
+      "exit_code": 0
+    }
+  ],
+  "finite_certificate": "controls/CERTIFICATE.json.gz",
+  "independent_receipt": "controls/INDEPENDENT_CHECK.v2.json",
+  "producer_negative_controls": "Four mutation-difference detections, explicitly separate from validator rejection.",
+  "independent_negative_controls": "Five actual mutated certificate objects rejected by the same independent check() validator.",
+  "mathematical_review": [
+    "review/PROOF_REVIEW.md",
+    "review/CORE_REVIEW.md"
+  ],
+  "frozen_custody": "INPUT_DRIFT.json",
+  "claims": {
+    "new_source_exclusions": 0,
+    "actual_unknown_H_source": "not triggered",
+    "original_eight_U": "retained",
+    "gadget_reduction": "Boundary-pin-only simultaneous exterior gadgets: a7/a8 and all a6 except chordless triangulated C6 cap6 with private minimum degree5 reduce to the inherited signed h<=5 domain.",
+    "inherited_generator_completeness": "plantri dependency retained; inherited large search not rerun.",
+    "core_frontier": "Maximal outerplane private core6 or at least one deep W5 center; complete attachments remain OPEN.",
+    "Lean": "not performed",
+    "general_K_infty_equals_K_le5": "OPEN",
+    "commit_push": "not performed",
+    "edits": "Only the new exclusive audit; pre-existing and parallel work preserved."
+  },
+  "logs_directory": "logs",
+  "artifact_checks": "ARTIFACT_CHECK.json"
+}

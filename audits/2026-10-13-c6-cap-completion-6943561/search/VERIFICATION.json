@@ -1,0 +1,96 @@
+{
+  "artifacts": {
+    "CERTIFICATE.json.gz": {
+      "bytes": 360404,
+      "sha256": "1b79ea8ea60f728942125bb03b4e6e671d84a8b993f4ddfcf7e3f749f8ec2826"
+    },
+    "REPLAY.json": {
+      "bytes": 592,
+      "sha256": "1ea1c604364985f8fbde4942800ec119bf33ff16f3535efe84af090dcb17110f"
+    },
+    "REPLAY_SEED17.json": {
+      "bytes": 593,
+      "sha256": "f2d0f09480fbdfbf9ab261b0ff05483b367924a3145eff512f553af01eafd1b6"
+    },
+    "RESULTS.json": {
+      "bytes": 100336,
+      "sha256": "388ed2d0cae91caadb2513cf2a4f4b6a158b72052aa8cef4e2b24dcf83f0e7e7"
+    },
+    "all-c6-n12.ascii.gz": {
+      "bytes": 1138618,
+      "sha256": "3170b00551b7f1366e5faee1295dfbf0a8d959c4c669906e6bbd73bd4f49af70"
+    },
+    "produce.py": {
+      "bytes": 17700,
+      "sha256": "57b3d6fc1769978f892caaf482ece867e22294aa8969241012f509cbbae0de34"
+    }
+  },
+  "certificate_canonical_json_sha256": "5c9cffe44788b6c6a84721d2106e0ca9247fcd9d1de8b2b9f04200f97548890a",
+  "checks": [
+    "Every frozen manifest input bytes and SHA256 verified.",
+    "Original C8 patterns and U queries exactly match frozen predecessor certificate and original authority.",
+    "Every plantri rotation face cycle checked; 89038 raw embeddings filtered by exact chord and private-degree conditions.",
+    "Complete 31 canonical C6 fibres computed by whole-graph DFS for every retained cap.",
+    "Every original C8 Eq row lift reconstructed via a total colour permutation and compared with fresh whole-cap DFS.",
+    "All 8 short equalities and all 12 C6 dihedral alignments retained with duplicates.",
+    "Complete 6564 literal fibre expansion decoded and streamed into per-attachment SHA256.",
+    "Fresh generator/DFS replay and seed17 candidate/DFS tie-order replay reproduce exact certificate JSON."
+  ],
+  "commands": [
+    {
+      "command": "python3 audits/2026-10-13-c6-cap-completion-6943561/search/produce.py --write",
+      "exit_code": 0,
+      "stdout": "Captured in agent execution; summary values are also in RESULTS.json."
+    },
+    {
+      "command": "python3 audits/2026-10-13-c6-cap-completion-6943561/search/produce.py --check > audits/2026-10-13-c6-cap-completion-6943561/search/REPLAY.json",
+      "exit_code": 0,
+      "stdout_file": "REPLAY.json"
+    },
+    {
+      "command": "python3 audits/2026-10-13-c6-cap-completion-6943561/search/produce.py --check --seed 17 > audits/2026-10-13-c6-cap-completion-6943561/search/REPLAY_SEED17.json",
+      "exit_code": 0,
+      "stdout_file": "REPLAY_SEED17.json"
+    }
+  ],
+  "fibre_count_totals": {
+    "C6_empty_fibres": 30,
+    "C8_empty_fibres": 60864,
+    "C8_literal_empty_fibres": 1458432,
+    "C8_literal_nonempty_fibres": 432000,
+    "C8_nonempty_fibres": 18048
+  },
+  "fibre_counts_by_cap": [
+    {
+      "C6_empty_fibres": 9,
+      "C8_empty_fibres": 19968,
+      "C8_literal_empty_fibres": 478080,
+      "C8_literal_nonempty_fibres": 152064,
+      "C8_nonempty_fibres": 6336,
+      "cap_id": "cap-43569"
+    },
+    {
+      "C6_empty_fibres": 10,
+      "C8_empty_fibres": 20352,
+      "C8_literal_empty_fibres": 488448,
+      "C8_literal_nonempty_fibres": 141696,
+      "C8_nonempty_fibres": 5952,
+      "cap_id": "cap-43570"
+    },
+    {
+      "C6_empty_fibres": 11,
+      "C8_empty_fibres": 20544,
+      "C8_literal_empty_fibres": 491904,
+      "C8_literal_nonempty_fibres": 138240,
+      "C8_nonempty_fibres": 5760,
+      "cap_id": "cap-81910"
+    }
+  ],
+  "general_theorem": "OPEN",
+  "independent_checker": "See ../review; this producer verification does not assert generator independence.",
+  "new_Lean_theorem": false,
+  "schema": "c6-cap-producer-verification-v1",
+  "source_realizability": "OPEN",
+  "status": "PASS",
+  "working_directory": "/home/ray/developer/ai/math"
+}
