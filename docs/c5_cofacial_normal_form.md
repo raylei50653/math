@@ -4,9 +4,13 @@
 [隔離研究報告](../audits/2026-10-12-cofacial-uniform-separation-eb6b2303/REPORT.md)。
 目前停止點由 [Kempe 導覽](c5_kempe_guide.md) 維護。
 
+2026-10-13 後續：[跨原邊缺陷搬運](c5_cross_edge_kempe.md) 證五度輪的完整
+J_e fibres 三元組、相鄰五度中心的共同中間 lift 雙射及同一 lift 的二色路徑限制；
+一般來源排除與普遍同步仍 OPEN。
+
 2026-10-12 後續：[完整外圈限制](c5_neartri_boundary_collar.md) 在同一最小來源
-排除二邊 crosscut，並證 933／941 分別至少有九／八個五度內點；941 的最低
-邊界超額只剩 `(4,4,5,4,5)` 的 C7 必要上界。一般來源仍 OPEN。
+排除二邊 crosscut；2026-10-13 再以共同計數排除941的最後C7上界，
+933／941 均必 h≥3、至少九個五度內點。一般來源仍 OPEN。
 同日 [全內部五輪及 A／B／C 交付](c5_degree5_link_reductions.md) 進一步保證
 全內部 induced W5，完成具名位置契約、固定域重接表及 C5＋C5 cap 閉合；一般縮減仍 OPEN。
 同日後續[最小來源度數界](c5_saturation_degree_bound.md) 沿用本文前提，排全部四度內點，

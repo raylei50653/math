@@ -5,6 +5,10 @@
 本頁是正式入口；目前停止點由 [Kempe 導覽](c5_kempe_guide.md) 維護，
 發布核對見 [本輪紀錄](history/2026-10-12-w5-marked-relation-publish.md)。
 
+2026-10-13 後續：[三色具名 support 與代表界線](c5_w5_three_color_support.md)
+已接入雙向 total 染色對照、最小來源私人森林排除、r_min=2 的精確例及
+來源專用五商圖正聯集 no-go；不給 fibre 雙射，一般 r≤6 代表存在仍 OPEN。
+
 ## 1. 前提與保存的完整資料
 
 固定有限簡單 plane disk 圖 G、原有序外 C5 框 B，以及五度原內點 v。

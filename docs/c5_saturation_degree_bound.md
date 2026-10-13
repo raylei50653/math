@@ -6,7 +6,8 @@
 [三份衍生任務](tasks/c5_degree5_link_tasks.md)。
 
 2026-10-12 後續：[完整外圈限制](c5_neartri_boundary_collar.md) 加入普遍二邊
-crosscut 排除，將同一最小來源的 n5 下界提高為 933 的九、941 的八；
+crosscut 排除；2026-10-13 共同計數排除最後C7上界後，同一最小來源
+的 n5 下界對 933／941 均提高為九；
 非相鄰兩框接點的五度 link 來源亦已排除。下文六個五度點及 cap 分支為當輪
 結論，既有證據保留；一般五度縮減仍 OPEN。
 同日 [全內部五輪與任務交付](c5_degree5_link_reductions.md) 已保證原內部 induced W5，

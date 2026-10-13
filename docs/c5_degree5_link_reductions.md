@@ -6,6 +6,11 @@
 本次驗證與封存範圍見 [發布紀錄](history/2026-10-12-degree5-collar-progress-publish.md)。
 同日後續 [W5 具名完整關係縮減](c5_w5_marked_relation.md) 已用五個合法單對商圖的
 完整拉回重建 H／G 全部 fibres；一般正聯集縮減與 annulus 小代表仍 OPEN。
+2026-10-13 [跨原邊缺陷搬運](c5_cross_edge_kempe.md) 另證五條 spokes 的 J_e
+完整 lifts 雙射與同一染色的 Kempe 路徑限制；一般來源排除仍 OPEN。
+同日 [三色支援與私人森林排除](c5_w5_three_color_support.md) 已證最小來源的
+annulus 私人圖必含環，並以三色具名 support 給補中心後的雙向 full-lift
+對照契約；一般同槽位 r≤6 代表仍未構造。
 
 ## 1. 共同來源與全內部五輪
 
@@ -20,8 +25,8 @@ edge-critical／ε／Gallai 身份；不得移植到 E-ARC2／N2 證書。
 原框接觸的計數進一步迫存在 degree-5 原內點 v，其五個鄰點也全部是原內點，
 形成 induced 五輪。這是上述最小來源的條件性紙面定理，尚未給出保 Σ 的縮減。
 
-同輪 [完整外圈限制](c5_neartri_boundary_collar.md) 提高五度內點下界為
-933 的九、941 的八；它涵蓋較早的七點下界，並保留全內部五輪的存在結論。
+[完整外圈限制](c5_neartri_boundary_collar.md) 已於2026-10-13排除941的最後C7上界，
+五度內點下界對933／941均為九；它涵蓋較早下界，並保留全內部五輪的存在結論。
 
 ## 2. 三份任務的交付與範圍
 
