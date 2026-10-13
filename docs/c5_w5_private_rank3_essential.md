@@ -1,21 +1,28 @@
+---
+docgraph:
+  id: c5.w5-private-rank3-essential
+  family: [c5, c5.w5]
+  derives_from: [c5.w5-private-rank2]
+  verified_by:
+    - audits/2026-10-13-w5-rank3-essential-45bc1c3/REPORT.md
+---
+
 # 最小來源 W5：私人圈秩三的環繞分支排除
 
-2026-10-13 最新後續：[圈秩四兩分支排除](c5_w5_private_rank4.md)
-合併contractible的6,389模板與新essential的2,872模板，
-得到任取合法全內部W5的私人 `ρ(F)≥5`。一般縮減／小代表及主命題仍OPEN；
-下文原輪次界線與證書保留，不宣稱不同圖的R³等價。
-
+2026-10-13 現況：在全部完整外框關係不屬 K132 的 disk-C5 圖中，先最小化
+內點數、再最大化邊數，對所得原來源任取合法全內部 induced W5，後續已得
+私人 `ρ(F)≥5`。本頁只排除 `ρ=3` 的 essential 分支；
+[contractible 圈秩三排除](c5_w5_private_rank3_contractible.md)覆蓋另一支，
+兩支合併才得到 `ρ≥4`，再由[圈秩四兩分支排除](c5_w5_private_rank4.md)得到 `ρ≥5`。
+保存層次及全鏈見[具名關係入口](c5_w5_marked_relation.md#0-保存強度與私人圈秩覆蓋鏈)。
+一般私人來源縮減、小代表存在及 `K∞=K≤5` 仍 **OPEN**；下文保留原輪次
+證明、證書與當時停止點。
 
 2026-10-13。接續[私人圈秩至少三](c5_w5_private_rank2.md)，本頁是新增結果的
 正式入口。完整任意大小證明、凍結輸入與全 fibres 證書見
 [隔離報告](../audits/2026-10-13-w5-rank3-essential-45bc1c3/REPORT.md)。
 目前停止點由 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)維護。
 本次封存及發布核對見[整理紀錄](history/2026-10-13-w5-rank3-c8-apex-publish.md)。
-
-2026-10-13 後續：[contractible 圈秩三排除](c5_w5_private_rank3_contractible.md)已覆蓋 c=1、c=2 全部来源，
-2,270 份必要模板的完整 Σ 均屬 K132。接 essential 分支，任取合法全內部 W5
-的私人圈秩至少四；一般小代表與 K∞=K≤5 仍 OPEN，未新增 Lean theorem。
-下文保留原輪次的結果及當時停止點。
 
 ## 1. 精確結論與來源
 
@@ -65,10 +72,14 @@ pins；其餘點在兩側沿同一方向前進。原 degree≥5 與各環恰用�
 空 fibres 及全部 A=G−v、G 完整 lifts。主／獨立 checker 都得到所有模板
 \(\Sigma(G)=1023\)，與原來源 933／941 矛盾。
 模板化先有任意大小的完備證明；沒有把有限搜尋上限當作完備性。
-不同來源的 pin 座標需整圖拉回；1023 在此拉回下不變，不表示 R³、U 色或
-fibre 重數也被任意代表保存。
+來源到模板是原嵌入的整圖具名同構，須用同一份原 B/U pin map 及共同四色框
+逐 cell 拉回；這一步保 R³、完整 fibres（含空格）及全部 A/G lifts。
+本輪用完整 Σ=1023 直接排除來源；此同構模板不是較小代表，沒有提出
+保 R³ 或 fibre 雙射的縮減構造。
 
-## 3. 驗證與保留界線
+<a id="3-驗證與保留界線"></a>
+
+## 3. 原輪次驗證與當時保留界線
 
 兩套 checker 核對 **13,137,920 cells、12,714,781 空格、730,480 A lifts、
 352,020 G lifts**；主程式 normal／seed17 與獨立固定次序 DFS 重播相同。
@@ -85,5 +96,5 @@ python3 -B audits/2026-10-13-w5-rank3-essential-45bc1c3/independent/negative.py
 證據為紙面完備化約＋Python 完整有限證書；沿用既有四色定理及外部計數定理
 的信任界線，沒有新增 Lean theorem。真正最小 933／941 來源的構造控制為
 `not triggered`，排除來自普遍化約，並非零觸發樣本。
-Contractible 圈秩三、一般圈秩至少四、一般 annulus 小代表及
+當輪的 contractible 圈秩三、一般圈秩至少四、一般 annulus 小代表及
 \(K_\infty=K_{\le5}\) 仍 **OPEN**。

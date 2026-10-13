@@ -1,18 +1,24 @@
+---
+docgraph:
+  id: c5.w5-private-unicyclic
+  family: [c5, c5.w5]
+  derives_from: [c5.w5-three-color-support]
+  verified_by:
+    - audits/2026-10-13-w5-private-unicyclic-3097ef5/REPORT.md
+---
+
 # 最小來源 W5 的私人圈秩至少二
 
-2026-10-13 最新後續：[圈秩四兩分支排除](c5_w5_private_rank4.md)
-合併contractible的6,389模板與新essential的2,872模板，
-得到任取合法全內部W5的私人 `ρ(F)≥5`。一般縮減／小代表及主命題仍OPEN；
-下文原輪次界線與證書保留，不宣稱不同圖的R³等價。
-
-
-2026-10-13 後續：[圈秩三兩分支排除](c5_w5_private_rank3_contractible.md)接既有結果，
-任取合法全內部 W5 的完整最小來源私人圈秩至少四；一般縮減仍 OPEN。
-下文保留原單環研究及其後續雙環排除的日期語境。
-
-**後續（2026-10-13，BASE 243a125）**：[私人雙環排除](c5_w5_private_rank2.md)
-已覆蓋圈秩二的四型及全部 essential 位置，將完整最小來源的私人圈秩提高至至少三。
-四個實際 annulus 代表只保完整 Σ、不保 R³；下文保留原單環證明與當輪停止點。
+2026-10-13 現況：在全部完整外框關係不屬 K132 的 disk-C5 圖中，先最小化
+內點數、再最大化邊數，對所得原來源任取合法全內部 induced W5，後續已得
+私人 `ρ(F)≥5`。本頁排除 `ρ=1`，接前置森林排除得到當輪的 `ρ≥2`；
+再接[私人雙環排除](c5_w5_private_rank2.md)覆蓋 `ρ=2`、
+[essential](c5_w5_private_rank3_essential.md)與
+[contractible](c5_w5_private_rank3_contractible.md)兩支覆蓋 `ρ=3`，以及
+[圈秩四兩分支排除](c5_w5_private_rank4.md)覆蓋 `ρ=4`。
+保存層次及全鏈見[具名關係入口](c5_w5_marked_relation.md#0-保存強度與私人圈秩覆蓋鏈)。
+一般私人來源縮減、小代表存在及 `K∞=K≤5` 仍 **OPEN**；下文保留原輪次
+證明、證書與當時停止點。
 
 2026-10-13。接續 [三色支援與私人森林排除](c5_w5_three_color_support.md)。
 完整來源、紙面分類及可重播證據見
@@ -57,6 +63,9 @@ M=2(c-1+h),\quad p=a+c-1+h,\quad r\le11-c-p.
 ## 2. 完整染色核心與合法代表
 
 每個模板均交付原邊、定向面、rotation、pin map、全部十列×1024 cells 及 full lifts。
+來源到模板是原嵌入的整圖具名同構：以同一份原 B/U pin map 與共同四色框
+逐 cell 搬運，保 R³、完整 fibres（含空格）及全部 A/G lifts。
+這一步的逐份 lift 對照由同構給出，不是縮小私人圖的代表構造。
 主、獨立程式重算均得 **全部 1,652 個 capped Σ=1023**，與目錄外身份矛盾。
 因此 ρ≠1；再接既有私人森林排除，得任意合法 W5 的 **ρ≥2**。
 兩層使用同一私人環指派，計算直接枚舉全 A/G，未拼接獨立 marginals。
@@ -67,11 +76,15 @@ M=2(c-1+h),\quad p=a+c-1+h,\quad r\le11-c-p.
 k=13,…,16 變 k′=6，減少 7–10 個內點。嚴格縮減本已足夠，不必要求 r′≤6。
 
 此搬運保 B，容許 U 與中心色改变，**只保 `pr_B R³`，不保 R³**。
+雙向 total full-lift selectors 按同一 beta 選完整輸出，但不要求互逆，
+不給出逐 U cell 的 fibre 雙射，也不保 fibre 重數。
 必要模板與 prism 的實際不同 R³ cell 已保存；沒有把相同 Σ 提升為十 pin
 染色對照。代表不必保持來源的 degree、三角化或私人含環性。
 [代表完整證明及槽位資料](../audits/2026-10-13-w5-private-unicyclic-3097ef5/structure/REPRESENTATIVE.md)
 
-## 3. 驗證及精確停止點
+<a id="3-驗證及精確停止點"></a>
+
+## 3. 原輪次驗證及當時停止點
 
 新核心核對 16,916,480 cells、16,448,400 空格、657,580 A／320,840 G lifts。
 normal／seed17 完整數學產物一致；獨立固定次序 DFS 與主 MRV DFS 逐份相等。
@@ -87,5 +100,5 @@ python3 -B audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/strength.py -
 
 真正最小 933／941 來源是 **not triggered**。來源排除来自紙面完備化約及
 有限核心，不来自零觸發。上游外部計數信任邊界不變；沒有新增 Lean theorem。
-剩餘來源的私人圈秩至少二；其一般嚴格縮減、r≤6 代表、R³ 代表及 K∞=K≤5
+當輪剩餘來源的私人圈秩至少二；其一般嚴格縮減、r≤6 代表、R³ 代表及 K∞=K≤5
 均未證。本輪僅本地採納，未 commit／push。

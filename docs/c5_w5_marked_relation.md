@@ -1,42 +1,77 @@
+---
+docgraph:
+  id: c5.w5-marked-relation
+  family: [c5, c5.w5]
+  related: [c5.degree5-link-reductions]
+  verified_by:
+    - audits/2026-10-12-w5-marked-relation-e299ae98/REPORT.md
+    - audits/2026-10-12-w5-marked-relation-e299ae98/review/INDEPENDENT.md
+---
+
 # 全內部 W5 的具名完整關係縮減
 
-2026-10-13 最新後續：[K15-SPHERE](c5_k15_sphere.md)證 `K≤15=K≤5`，一般來源至少十六內點；
-[C8原接點／剝層定理](c5_c8_peeling.md)另證 `h=3 ⇒ k≥19`；八項無界來源仍 OPEN。
-八項無界殘留與一般主命題仍OPEN；下文及舊證書保存各原輪次語境。
+2026-10-13 整理：本頁是十 pin 完整關係的權威入口，也串接私人圈秩排除鏈。
+原全內部五輪的來源前提見[全內部五輪與任務交付](c5_degree5_link_reductions.md)；
+本頁的五商圖染色恆等式本身不需最小性。
+目前停止點由 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)維護。
 
+原成果日期為 2026-10-12，完整證明與證據見
+[隔離報告](../audits/2026-10-12-w5-marked-relation-e299ae98/REPORT.md)、
+[獨立審查](../audits/2026-10-12-w5-marked-relation-e299ae98/review/INDEPENDENT.md)
+及[發布紀錄](history/2026-10-12-w5-marked-relation-publish.md)。
+以下 §§1–4 保留原輪次論證、內點門檻及重播紀錄；當時的 OPEN 由後續鏈判讀，
+不改凍結證據。目錄內點界後續由 [K13](c5_k13_collar.md)、[K14](c5_k14_sphere.md)
+提高至 [K15](c5_k15_sphere.md)；這些界不等於一般 W5 代表存在定理。
 
-2026-10-13 最新後續：[圈秩四兩分支排除](c5_w5_private_rank4.md)
-合併contractible的6,389模板與新essential的2,872模板，
-得到任取合法全內部W5的私人 `ρ(F)≥5`。一般縮減／小代表及主命題仍OPEN；
-下文原輪次界線與證書保留，不宣稱不同圖的R³等價。
+## 0. 保存強度與私人圈秩覆蓋鏈
 
+在同一 literal 四色框中，`J_A(β,τ)` 保存刪中心 annulus A 的完整染色，
+`R_A³` 是 U 恰用三色的非空具名 cells，補中心後的完整外框關係為
+`Σ(A+v)=pr_B R_A³`。三種保存目標須分別判定：
 
-2026-10-13 最新後續：[K14-SPHERE](c5_k14_sphere.md) 已證 `K≤14=K≤5`，
-一般目錄外來源至少十五內點；同份新紙面證明給 `h=3 ⇒ k≥16`。
-下文先前界線與證書保留當輪語境，h≥3、n₅≥9不提高。
+| 目標 | 必須保存的資料 | 已證內容與界線 |
+| --- | --- | --- |
+| 完整 fibres／lifts 重建 | 十個原 B/U pins、每列全部 1,024 cells（含空格）、每份完整私人指派及原商映射 | 本頁五商圖拉回到同一 H，按同一 lift 的重數無損重建 H/G；只存商圖的外框 Σ 無法重建 |
+| 保 `R_A³=R_A′³` | 同槽位、同色框的每個三色 `(β,τ)` cell 同時非空或同時空 | [三色支援 §1](c5_w5_three_color_support.md#1-同槽位契約與精確保存目標)給保 B/U 及中心色的雙向 total full-lift 對照；不要求 fibre 雙射、重數相同、四色 U support 相同或私人指派可逆 |
+| 保完整 `Σ(A+v)=Σ(A′+v)` | `pr_B R_A³=pr_B R_A′³`，並有合法同槽位替換；外部環境只沿 B 接入 | 只需保 B 色列的雙向 total full-lift 搬運，可改 U／中心色；[單環](c5_w5_private_unicyclic.md)及[雙環](c5_w5_private_rank2.md)的代表用此目標，不保 R³ |
 
+證書保存來源與代表**各自**的全部 fibres/lifts，不表示兩圖的 fibres 相等。
+來源化成必要模板時則須以原圖同構搬運全部 pins、原邊、實際附件、rotation、
+ownership、分量及 bridges，再搬運全部空／非空 fibres 和 full lifts；
+它保同一原圖的完整資料，不能與較小代表的 Σ-only 搬運混為一項。
 
-2026-10-13 後續：[K13-COLLAR](c5_k13_collar.md) 已證 `K≤13=K≤5`，
-一般目錄外來源至少十四內點；下文原輪次的 k≥13 前提與證書不改。
+私人圈秩鏈的共同前提是：G 在**所有**完整 `Σ(G)∉K132` 的有限簡單
+plane disk-C5 圖中先最小化內點數 k，再最大化邊數；沿用原共面正規形、
+完整 G-degree、原三角面及小分隔環限制，並保留其四色定理與外部計數依賴。
+在此 G 中**任取**合法全內部 induced W5，保原 B、中心 v、循環鄰環 U，
+十 pins 互異且 U 內恰為 v 與五個原三角面。令
+`P=V(G)\(B∪U∪{v})`、`F=G[P]`、`r=k−6`，
+`ρ(F)=|E(F)|−|V(F)|+c(F)`，c 包括私人孤立分量。
+完整 degree 下界屬 G，不能當成 F 的私人 degree 下界；也不另加 F 連通、
+N2、ε、edge-critical 或 Gallai 前提。
 
-2026-10-12。採納 [隔離報告與完整證明](../audits/2026-10-12-w5-marked-relation-e299ae98/REPORT.md)
-及其 [獨立審查](../audits/2026-10-12-w5-marked-relation-e299ae98/review/INDEPENDENT.md)。
-本頁是正式入口；目前停止點由 [Kempe 導覽](c5_kempe_guide.md) 維護，
-發布核對見 [本輪紀錄](history/2026-10-12-w5-marked-relation-publish.md)。
+| 排除範圍與入口 | 分支覆蓋／必要模板 | 接上前一步後的下界 |
+| --- | --- | --- |
+| [森林：三色支援 §2](c5_w5_three_color_support.md#2-最小來源的私人森林已排除) | 任意大小、多分量及分支樹化成七／八點路徑；70 份模板完整 Σ=1023 | `ρ≥1` |
+| [單環](c5_w5_private_unicyclic.md) | contractible 純紙面排除；essential 化成純環，1,652 份完整 Σ=1023；另有只保 Σ 的 prism 嚴格代表 | `ρ≥2` |
+| [雙環](c5_w5_private_rank2.md) | 四種私人核心、全部細分／附樹及 essential 位置；剩 contractible theta 的 974 份模板，四個只保 Σ 的嚴格代表 | `ρ≥3` |
+| [圈秩三 essential](c5_w5_private_rank3_essential.md)＋[contractible](c5_w5_private_rank3_contractible.md) | 分隔 B/U 的原環域 1,283 份；U/v 在 F 無界面域 c=1 的 2,162 份及 c=2 的 108 份；兩支窮盡，直接完整 Σ∈K132 | `ρ≥4` |
+| [圈秩四兩分支](c5_w5_private_rank4.md) | 同一原嵌入的 contractible 6,389 份＋essential 2,872 份；兩支窮盡，直接完整 Σ∈K132 | **`ρ≥5`** |
 
-2026-10-13 後續：[三色具名 support 與代表界線](c5_w5_three_color_support.md)
-已接入雙向 total 染色對照、最小來源私人森林排除、r_min=2 的精確例及
-來源專用五商圖正聯集 no-go；不給 fibre 雙射，一般 r≤6 代表存在仍 OPEN。
-同日[私人單環排除](c5_w5_private_unicyclic.md)將最小來源私人圈秩提高至至少二；
-環繞U的必要單環域有只保Σ的嚴格prism代表，已有反控制證明它不保R³。
-本頁十pin完整關係契約及一般r≤6代表義務不因此完成。
-同日[私人雙環排除](c5_w5_private_rank2.md)再將完整最小來源的私人圈秩提高至至少三，
-只保完整Σ的四個嚴格代表排除全部圈秩二來源；一般R³代表仍OPEN。
+森林至圈秩三各輪沿用 `k≥13,r≥7`；圈秩四兩支的 BASE 為 `acd2b1b`，
+沿已採納 K13 使用 `k≥14,r≥8`。各輪 BASE、來源限制與模板超集以連入的
+原報告為準；不以後來 K15 改寫原枚舉前提。圈秩三／四的直接目錄排除
+不需要較小代表，也不宣稱模板間的 R³ 相等。
 
-2026-10-13 後續：[contractible 圈秩三排除](c5_w5_private_rank3_contractible.md)已覆蓋 c=1、c=2 全部来源，
-2,270 份必要模板的完整 Σ 均屬 K132。接 essential 分支，任取合法全內部 W5
-的私人圈秩至少四；一般小代表與 K∞=K≤5 仍 OPEN，未新增 Lean theorem。
-下文保留原輪次的結果及當時停止點。
+因此 **在上述完整最小目錄外來源前提下，任取合法全內部 W5 的私人圈秩至少五**。
+紙面完備化約承擔任意大小量詞，Python 證書核對有限必要核心；真正最小
+933／941 實例仍為 `not triggered`，零觸發不承擔排除。沒有新增 Lean theorem。
+一般 `ρ≥5` 來源的合法縮減、一般小代表（含當前 K15 的 `r′≤9` 目標）、
+保 R³ 的一般代表及 `K∞=K≤5` 均仍 **OPEN**；
+已認出 K132 的代表與具體縮減族見[三色支援的最新界線](c5_w5_three_color_support.md)。
+
+本次文件整理核對上述來源前提、分支覆蓋、保存強度及前後連結，沿用原報告
+的染色證書與審查紀錄；未重跑研究枚舉、上游外部計算或 Lean build。
 
 ## 1. 前提與保存的完整資料
 
