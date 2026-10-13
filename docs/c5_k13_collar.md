@@ -1,3 +1,17 @@
+---
+docgraph:
+  id: c5.k13-collar
+  family: [c5, c5.minimal-source]
+  requires: [c5.saturation-degree-bound, c5.neartri-boundary-collar]
+  derives_from: [c5.cofacial-normal-form]
+  related: [c5.no4ct-handoff]
+  verified_by:
+    - audits/2026-10-13-k13-collar-50d5474/REPORT.md
+    - audits/2026-10-13-k13-collar-50d5474/PROOF.md
+    - audits/2026-10-13-k13-collar-50d5474/generation/COMPLETENESS.md
+    - audits/2026-10-13-k13-collar-50d5474/independent/compare_main.json
+---
+
 # 十三內點完整外圈排除與 K≤13 界
 
 2026-10-13 最新後續：[K15-SPHERE](c5_k15_sphere.md)證 `K≤15=K≤5`，一般來源至少十六內點；
@@ -15,6 +29,30 @@
 來源原邊／rotation／有向面、全部 fibres 與重播見
 [隔離報告](../audits/2026-10-13-k13-collar-50d5474/REPORT.md)。
 目前研究停止點由 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口) 維護。
+
+## 0. 原證明與替代接入
+
+本頁是十三內點界的權威入口；原鏈先讀
+[共面正規形／K≤12](c5_cofacial_normal_form.md)及
+[度數界](c5_saturation_degree_bound.md)，再讀
+[完整外圈](c5_neartri_boundary_collar.md)與
+[C₈ apex 度數](c5_c8_apex_degree.md)以得到下文 h=4–7 的四分支。
+這組上游報告保留普遍 exterior screen／4CT、K132 witnesses 與外部
+Dvořák–Lidický Corollary 20 的依賴；原 K13 完整論證及有限證據由隔離報告負責。
+
+另一條入口是[無四色定理前提交接](tasks/c5_no4ct_handoff.md)：先用
+[零內點 cap 下降](../audits/2026-10-13-c5-no4ct-dependency-6cafdfb/REPORT.md)
+建立全域最小 932／933／941 三支及 K≤12，再用
+[替代度數與直接球面覆蓋](../audits/2026-10-13-c5-no4ct-degrees-6cafdfb/REPORT.md#5-接入-k13k15直接使用所有球面根點)
+重用本域的所有十九點球面圖與全部五度 roots。此接入不使用 h≥3、外圈排除
+或 C₈ 前提；受限 C4 代表仍須 `s<k`，plantri 生成定理／C 實作與
+Corollary 20 的外部計算信任仍保留。
+
+DocGraph 的 `requires`／`derives_from` 記原鏈中的前置與推導，沒有編碼兩個
+證明分支的 AND／OR；未補 metadata 的 C₈ 前置由上述直接連結記錄。
+`related` 只導向替代鏈，`verified_by` 是證據路徑標籤，工具不驗證其內容。
+本輪只核對文件依賴與證據入口，未重跑枚舉、染色證書或外部計算。
+一般 932／933／941 排除及 `K∞=K≤5` 仍 **OPEN**。
 
 ## 1. 結論與來源選擇
 

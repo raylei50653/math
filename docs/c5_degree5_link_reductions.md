@@ -1,4 +1,34 @@
+---
+docgraph:
+  id: c5.degree5-link-reductions
+  family: [c5, c5.minimal-source]
+  requires: [c5.saturation-degree-bound]
+  related: [c5.neartri-boundary-collar, c5.no4ct-handoff]
+  verified_by:
+    - audits/2026-10-12-c5-deep-five-wheel-01a12ffa/REPORT.md
+    - audits/2026-10-12-degree5-link-a-e293fc11/REPORT.md
+    - audits/2026-10-12-degree5-star-b-6ef2c06c/REPORT.md
+    - audits/2026-10-12-degree5-c5-c5-cap-dcdad039/REPORT.md
+---
 # 最小來源的全內部五輪與具名重接界線
+
+2026-10-13 證明依賴定位：本頁是全內部五輪及 A／B／C 交付的權威入口。
+原鏈先讀[共面正規形](c5_cofacial_normal_form.md)、
+[最小來源度數界](c5_saturation_degree_bound.md)，再讀本頁 §1 及
+[全內部五輪報告](../audits/2026-10-12-c5-deep-five-wheel-01a12ffa/REPORT.md)。
+該報告沿用普遍 screen／4CT 的 C4 小代表及外部 Corollary 20 的十二內點界；
+[完整外圈](c5_neartri_boundary_collar.md)提高五度點下界，並非五輪存在證明的前置。
+DocGraph 的 `requires` 記這份原鏈的數學前提；`related` 導向補強與替代鏈，
+`verified_by` 導向上述四份實際紙面／有限證據，不把導航次序當作證明依賴。
+
+不以 4CT 為前提的閱讀入口是[三支交接](tasks/c5_no4ct_handoff.md)。
+其[C8 依賴修復](../audits/2026-10-13-c5-no4ct-c8-6cafdfb/geometry/PROOF.md)
+§2 已在新 932／933／941 契約重證**原內部** C4 cap 空、C5 cap 空或 W5，
+並以 `s≤k−4`／`s≤k−5` 保留受限 C4 引理的 `s<k`；實際下游為 C8 及剝層。
+本頁不把原全內部五輪存在定理或 A／B／C 整包標成已在新三支契約重證。
+兩鏈都只比較所有目錄外來源的全域內點最小、再邊數最大者；
+同一原框、具名接點及完整 fibres（含空格）始終共同對齊。
+一般 932／933／941 排除及 `K∞=K≤5` 仍 **OPEN**；舊正文及證書保留原輪次前提。
 
 2026-10-13 最新後續：[K15-SPHERE](c5_k15_sphere.md)證 `K≤15=K≤5`，一般來源至少十六內點；
 [C8原接點／剝層定理](c5_c8_peeling.md)另證 `h=3 ⇒ k≥19`；八項無界來源仍 OPEN。

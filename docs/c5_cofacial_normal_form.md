@@ -1,4 +1,36 @@
+---
+docgraph:
+  id: c5.cofacial-normal-form
+  family: [c5, c5.minimal-source]
+  related: [c5.no4ct-handoff]
+  verified_by:
+    - audits/2026-10-12-cofacial-uniform-separation-eb6b2303/REPORT.md
+    - audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/checker.py
+    - audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json
+---
+
 # 共面識別正規形與十二內點的完整關係界
+
+## 證明鏈與閱讀定位
+
+本文是共面正規形及原 `K≤12=K≤5` 推導的權威入口；
+[兩條證明鏈的閱讀表](tasks/c5_no4ct_handoff.md#1-先讀這四份權威報告)
+分列原鏈與不以 4CT 為前提的替代鏈。下列歷史補註不取代各步的原前提。
+
+| 本文使用的前置 | 實際用途與證據 |
+| --- | --- |
+| [Kempe／外側 screen](c5_kempe_screen.md#3-外側-cell-測試) | 原鏈由非空性及外側黏合的 4CT 得普遍必要 screen，只留 933／941 的整圖 D5 像；有限 mask 表不證普遍 soundness |
+| K 的 132 份小 witnesses、二元聯集封閉與全域最小內點／再最大邊數 | 共面 Eq／Diff 分解給不增內點的正規形；[紙面證明](../audits/2026-10-12-cofacial-uniform-separation-eb6b2303/paper/cofacial_normal_form.md)與 [v2 證書](../audits/2026-10-12-cofacial-uniform-separation-eb6b2303/controls/certificate.v2.json)分開承擔一般論證與有限核對 |
+| [count-cone 翻譯](c5_count_cone_bridge.md#1-文獻錨點與精確翻譯)及外部 Corollary 20 | 對偶 `2k+4<30` 才可得 `m≤0`，與候選的 `m=x24>0` 矛盾；[EXTERNAL](../audits/2026-10-12-cofacial-uniform-separation-eb6b2303/EXTERNAL.md)保留未重播的文獻計算信任 |
+
+替代鏈的前置改由[零內點 cap 下降報告 §§2–5](../audits/2026-10-13-c5-no4ct-dependency-6cafdfb/REPORT.md#4-不用-4ct-的最小來源分類)
+提供：空關係及十個低候選嚴格下降，只對全域最小來源保留 **932／933／941**。
+三支均非空、全收 T4，故可重用本文的共面／Jordan 論證及 count-cone 翻譯，
+仍接同一外部 Corollary 20。這不證普遍 exterior screen，也不排除一般 932。
+一般 932／933／941 及 `K∞=K≤5` 仍 **OPEN**。
+
+DocGraph 的 `related` 連到替代鏈交接；無 metadata 的 screen／count-cone 前置
+以本表定位，未虛造 ID。`verified_by` 是證據路徑標籤，正文連結與重播命令才是核對入口。
 
 2026-10-13 整理補註：[無四色定理前提下降與正規形](../audits/2026-10-13-c5-no4ct-dependency-6cafdfb/REPORT.md)
 另以零內點 cap 下降處理空關係／低候選，保留 932／933／941 三支；

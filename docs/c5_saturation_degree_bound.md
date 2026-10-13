@@ -1,4 +1,41 @@
+---
+docgraph:
+  id: c5.saturation-degree-bound
+  family: [c5, c5.minimal-source]
+  requires: [c5.cofacial-normal-form]
+  related: [c5.no4ct-handoff]
+  verified_by:
+    - audits/2026-10-12-c5-saturation-degree-bound/REPORT.md
+    - audits/2026-10-12-c5-saturation-degree-bound/controls/check.py
+    - audits/2026-10-12-c5-saturation-degree-bound/controls/certificate.json
+---
+
 # 最小目錄外來源的度數界與五度鄰環
+
+## 證明鏈與閱讀定位
+
+本文是原度數界證明的權威入口。DocGraph 的 `requires` 指向
+[共面正規形](c5_cofacial_normal_form.md)，實際使用其全域最小內點／再最大邊數、
+近三角正規形、目錄聯集封閉及 `K≤12=K`。原鏈另用
+[普遍外側 screen](c5_kempe_screen.md#3-外側-cell-測試)的 4CT 前提，
+才在 §2 對**任意大小** C4 宣稱三內點代表；七份有限代表不能自行提供普遍性。
+[原隔離報告](../audits/2026-10-12-c5-saturation-degree-bound/REPORT.md)、
+[紙面覆核](../audits/2026-10-12-c5-saturation-degree-bound/PROOF_REVIEW.md)及
+[有限證書](../audits/2026-10-12-c5-saturation-degree-bound/controls/certificate.json)
+分別定位採納範圍、一般論證與控制。
+
+替代鏈以[度數修復報告 §§3–4](../audits/2026-10-13-c5-no4ct-degrees-6cafdfb/REPORT.md#3-足夠的替代引理只處理-sk-的-c4)
+另行重證三支 932／933／941 的度數界。C4 cap 的私有內點數必滿足 **`s<k`**；
+新增 dummy 是框點，增廣 C5 內點仍為 s，才能由全域最小性進入 K。
+四度點接觸外框的例外有 `k=s+t+3`，故兩 cap 都較小，
+同框重建至多 `3+5+3=11` 內點且保完整 Σ；不主張 fibres 等基數或 full-lift 雙射。
+
+後續 C8 所用的[相對平面可染性](../audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md#2-修復兩個舊四色定理入口)
+亦限 **`N≤k+5` 的無 loop 平面圖**：不可染時只會下降到至多 `N−6<k` 內點的 932 disk。
+外側 wheel 產生 `k+6` 點，沒有嚴格下降，不能藉此刪除一般 932。
+替代鏈接 K≤15 的完整球面覆蓋見
+[交接閱讀表](tasks/c5_no4ct_handoff.md#1-先讀這四份權威報告)；
+一般 932／933／941、五度縮減與 `K∞=K≤5` 仍 **OPEN**。
 
 2026-10-13 整理補註：[無四色定理前提度數修復](../audits/2026-10-13-c5-no4ct-degrees-6cafdfb/REPORT.md)
 另在保留 932／933／941 的全域最小來源上重證度數界。替代 C4 代表引理

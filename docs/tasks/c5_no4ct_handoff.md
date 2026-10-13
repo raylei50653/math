@@ -1,3 +1,14 @@
+---
+docgraph:
+  id: c5.no4ct-handoff
+  family: [c5, c5.minimal-source, c5.no4ct]
+  verified_by:
+    - audits/2026-10-13-c5-no4ct-dependency-6cafdfb/REPORT.md
+    - audits/2026-10-13-c5-no4ct-degrees-6cafdfb/REPORT.md
+    - audits/2026-10-13-c5-no4ct-collar-6cafdfb/REPORT.md
+    - audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md
+---
+
 # K∞＝K≤5 無四色定理前提路線：研究交接
 
 2026-10-13。**尚未補完一般 `K∞=K≤5`。** 已完成的是不把四色定理當前提的
@@ -10,12 +21,43 @@
 
 ## 1. 先讀這四份權威報告
 
+本頁負責兩鏈的閱讀路由、替代鏈契約與停止點；各命題的證明仍由下列權威
+專題及 audit 報告承擔。原鏈的 4CT 前提與替代鏈的相對大小引理分開保留。
+
+### 原證明鏈：保留普遍 exterior screen 的 4CT 前提
+
+| 讀序／權威入口 | 真正使用的前置與結論 | 證據入口 |
+| --- | --- | --- |
+| 1. [Kempe／外側 screen](../c5_kempe_screen.md)及 [count-cone 翻譯](../c5_count_cone_bridge.md) | 原完整關係的 Kempe 必要性；4CT 給外側黏合非空，留下 933／941；primal／dual 計數翻譯及 Cor20 的嚴格 `<30` 界 | [screen 證據](../../artifacts/c5_cells/kempe_screen.json)、[外部界線](../../audits/2026-10-12-cofacial-uniform-separation-eb6b2303/EXTERNAL.md) |
+| 2. [共面正規形](../c5_cofacial_normal_form.md) | K 的小 witnesses／聯集封閉、全域最小 k／再最大邊數與原 screen，給不增 k 的近三角正規形；Cor20 得 K≤12 | [完整紙面及有限核對](../../audits/2026-10-12-cofacial-uniform-separation-eb6b2303/REPORT.md) |
+| 3. [最小來源度數界](../c5_saturation_degree_bound.md) | 原 screen 給普遍 C4 三內點代表；正規形／K≤12／全域最小性給邊界≥4、內部≥5、n5≥6 | [凍結證據與覆核](../../audits/2026-10-12-c5-saturation-degree-bound/REPORT.md) |
+| 4. [全內部 W5／A–C 交付](../c5_degree5_link_reductions.md)與 [完整外圈](../c5_neartri_boundary_collar.md) | 兩個結構分支承接度數界；全內部 induced W5 的 cap／原框計數論證，及外圈 crosscut／共同計數給 h≥3、n5≥9 | [W5 紙面報告](../../audits/2026-10-12-c5-deep-five-wheel-01a12ffa/REPORT.md)、[原外圈證據](../../audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/REPORT.md)與[最後 C7 共同計數排除](../../audits/2026-10-13-c7-joint-kempe-19209f4c/REPORT.md)；A／B／C 各自證據由專題表定位 |
+| 5. [K13](../c5_k13_collar.md) → [K14](../c5_k14_sphere.md) → [K15](../c5_k15_sphere.md) | 原 K13 外圈分支再用 [C8 apex](../c5_c8_apex_degree.md)；K14／K15 由相應較小階數界、度數與 cone 接完整球面根圖，得 K≤15 | 三份專題的 primary／independent 證書及生成來源；[球面依賴表](../../audits/2026-10-13-c5-no4ct-degrees-6cafdfb/SPHERE_DEPENDENCIES.md)另核對全部根點覆蓋 |
+
+第 4 列是平行閱讀的結構分支，不表示 W5 是外圈定理的前置。
+第 5 列是原報告的逐階敘事；替代鏈採用完整球面域的另一條接入證明。
+
+### 替代證明鏈：四份權威報告
+
 | 順序 | 來源 | 接手要點 |
 | --- | --- | --- |
 | 1 | [零內點 cap 下降與恢復 932](../../audits/2026-10-13-c5-no4ct-dependency-6cafdfb/REPORT.md) | 兩層最小性、三支最小來源、無 4CT 的十二內點界；E932 與 4CT 等價 |
 | 2 | [度數依賴修復與 K13–K15 接入](../../audits/2026-10-13-c5-no4ct-degrees-6cafdfb/REPORT.md) | 受限 C4 引理、度數界逐條重證、直接完整球面覆蓋 |
 | 3 | [三支完整外圈接入](../../audits/2026-10-13-c5-no4ct-collar-6cafdfb/REPORT.md) | 二邊 crosscut、原簡單內圈、共同 h≥3／n5≥9；不採納普遍 C7 可染性 |
 | 4 | [C8 三支依賴接入](../../audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md) | 相對大小商圖可染性、105 查詢與原八項、932 的 h≥4／n5≥10、h=3⇒k≥19 |
+
+若只核對 **K≤15**，讀第 1 份 → 第 2 份 §§3–6 →
+[球面依賴表](../../audits/2026-10-13-c5-no4ct-degrees-6cafdfb/SPHERE_DEPENDENCIES.md)
+→ K13／K14／K15 的完整球面證據即可：受限 C4 給三支共同度數，
+外加 cone 後 `k+6=19,20,21`，每個五度 root 都核對十列完整關係。
+這條接入不使用第 3／4 份的 h／C8 分類。接續無界來源研究時，才再依序讀
+第 3／4 份的 `s<k` 接合、`N≤k+5` 商圖、完整外圈與 C8 剝層。
+
+DocGraph 中各專題的 `requires`／`derives_from` 記原證明鏈的實際前置；
+`related` 連向本替代交接，避免把兩個證明分支合成必須同時成立的依賴。
+本頁是路由，未反向宣告專題為自己的數學前提。`verified_by` 僅為外部證據
+路徑標籤，DocGraph 不檢查其檔案內容／定理 soundness，也不編碼兩鏈的選擇。
+未有 metadata 的前置由正文連結核對；零反向邊不表示不存在依賴。
 
 後續報告依序補上先前停止點；各原報告保留當輪語境。
 現有共享 [共面正規形](../c5_cofacial_normal_form.md)、[度數界](../c5_saturation_degree_bound.md)

@@ -1,4 +1,36 @@
+---
+docgraph:
+  id: c5.neartri-boundary-collar
+  family: [c5, c5.minimal-source]
+  requires: [c5.saturation-degree-bound]
+  related: [c5.no4ct-handoff]
+  verified_by:
+    - audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/REPORT.md
+    - audits/2026-10-13-c7-joint-kempe-19209f4c/REPORT.md
+    - audits/2026-10-13-c5-no4ct-collar-6cafdfb/REPORT.md
+---
 # 933／941 近三角化來源的完整外圈限制
+
+2026-10-13 證明依賴定位：本頁是完整外圈限制的權威入口。
+原鏈先讀[共面正規形](c5_cofacial_normal_form.md)、
+[最小來源度數界](c5_saturation_degree_bound.md)，再讀本頁與
+[外圈隔離報告](../audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/REPORT.md)；
+最後 C7 的同圖計數證明見[C7 排除報告](../audits/2026-10-13-c7-joint-kempe-19209f4c/REPORT.md)。
+原鏈的普遍 C4 必要表及較強 C7 排除均保留各自的 4CT 前提。
+DocGraph 的 `requires` 記原鏈的度數／正規形前提；`related` 指替代鏈入口，
+`verified_by` 列實際證據，並不宣稱兩種 C7 命題有相同依賴。
+
+替代鏈按[三支交接](tasks/c5_no4ct_handoff.md)讀到
+[no4ct 外圈報告](../audits/2026-10-13-c5-no4ct-collar-6cafdfb/REPORT.md)：
+二邊 crosscut 兩側滿足 `k=s+t+1`，因此短側 C4 可用 **`s<k`** 的受限代表，
+長側 C5 可用全域最小性；兩側沿同一原 v 色值接合全部 fibres，含空格。
+該報告已重證三支的 crosscut、簡單內圈與共同 `h≥3,n₅≥9`，僅消費
+「指定外圈不能 transfer 成 941」的 C7 計數矛盾。
+後續[C8 三支接入](../audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md)的商圖可染性
+只適用於 **`N≤k+5`** 的 loopless planar graph，不是普遍可染性；932 另得 `h≥4,n₅≥10`。
+兩鏈均要求所有目錄外來源的全域內點最小、再邊數最大及共同色框；
+一般 932／933／941 排除與 `K∞=K≤5` 仍 **OPEN**，外部 Corollary 20／plantri 信任仍由上游有界界限承擔。
+下文「任意 C7 關係不能含於 U」及較早 OPEN／下界保留原證明與當輪語境。
 
 2026-10-13 整理補註：[新三支完整外圈](../audits/2026-10-13-c5-no4ct-collar-6cafdfb/REPORT.md)
 已在不以四色定理為前提的全域最小 932／933／941 契約下重證 crosscut、

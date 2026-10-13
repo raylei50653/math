@@ -1,17 +1,37 @@
+---
+docgraph:
+  id: c5.c8-peeling
+  family: [c5, c5.c8]
+  requires: [c5.c8-inner-collar]
+  verified_by:
+    - audits/2026-10-13-c8-peeling-6cafdfb/structure/PROOF.md
+    - audits/2026-10-13-c8-peeling-6cafdfb/TRANSFER.md
+    - audits/2026-10-13-c8-peeling-6cafdfb/calibration/PROOF.md
+    - audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md
+---
 # C8 反覆剝層：原接點三型與完整染色轉移
 
-2026-10-13 整理補註：[無四色定理前提 C8 接入](../audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md)
-已在新的全域最小 932／933／941 契約下重證所需小 cap 與相對商圖可染性，
-完整 105 查詢排 97、留原八項；932 分支必 `h≥4,n₅≥10`。
-本頁原八項的三型、完整轉移及 `h=3⇒k≥19` 已接入；無界三支與固定寬度仍 OPEN。
-[目前交接與下一窄任務](tasks/c5_no4ct_handoff.md)；下文原證明／證書保留。
+更新：2026-10-13。本頁是 **第一層接點三型、完整 separator 轉移及 m=10
+排除**的權威入口。對[同一八項必要殘留](c5_c8_apex_degree.md#八項必要殘留)，
+目前大小界為 **`h=3⇒m≥11⇒k≥19`**；八項無界來源仍 OPEN。
+任意有限原嵌入的完整剝層轉移已證，下一層的 C8 度數、無弦與接點限制
+尚不自動傳遞。h≥4 的義務另列於 [§5](#5-h4-的另列義務)。
 
-2026-10-13。接續 [C8 原短弧與 m=9 內圈](c5_c8_inner_collar.md)。
-本頁為剝層題的權威入口；[隔離報告](../audits/2026-10-13-c8-peeling-6cafdfb/REPORT.md)
-串接任意大小的 [結構證明](../audits/2026-10-13-c8-peeling-6cafdfb/structure/PROOF.md)、
-[完整轉移公式](../audits/2026-10-13-c8-peeling-6cafdfb/TRANSFER.md)及
-[m=10 校準](../audits/2026-10-13-c8-peeling-6cafdfb/calibration/PROOF.md)。
-目前停止點見 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)。
+## 前置來源與交付角色
+
+| 來源／交付 | 所消費的前提與涵蓋範圍 |
+| --- | --- |
+| [apex 度數](c5_c8_apex_degree.md)、[原短弧與 m=9 內圈](c5_c8_inner_collar.md) | 同一具名 induced C8、H 內面三角化、d_H(C)≥4、d_H(I)≥5；每 I 點至多雙接，相鄰或正對，八個原面第三點全異；m≤9 已排除。 |
+| [新三支 C8 接入 §4](../audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md#4-接回-apex原內圈與剝層)、[原 cap 修復](../audits/2026-10-13-c5-no4ct-c8-6cafdfb/geometry/PROOF.md) | 在全域 k 最小、再邊數最大的 932／933／941 契約下，保留 s<k 的小 cap 與 N≤k+5 的相對可染性；原 C3／C4 cap 空、C5 cap 空或 W5。本頁歷史證明鏈已接入此契約。 |
+| [第一層結構證明](../audits/2026-10-13-c8-peeling-6cafdfb/structure/PROOF.md) → [§1](#1-適用前提與任意大小分類) | 另消費原 rotation 及無 occupied C3，證相鄰雙接唯一性與 RING／PINCH／BRIDGE 完備分類；量詞為任意有限 m 的第一層。 |
+| [完整轉移 T1–T9](../audits/2026-10-13-c8-peeling-6cafdfb/TRANSFER.md) → [§2](#2-完整染色轉移與任意大小反覆剝層) | 轉移本身只需有限簡單平面圖、固定嵌入、全部原邊與同一 literal 色框；保存完整 fibres／空 fibres／full lifts，逐層終止並接回原 B 十列。原三角面保留另使用既有三角化嵌入。 |
+| [m=10 完備校準](../audits/2026-10-13-c8-peeling-6cafdfb/calibration/PROOF.md) → [§3](#3-m10-完備分類與原來源排除) | 紙面三族共16份具名 H，接回八 collars 的128圖完整 Σ1023；配合上游 m≤9 排除，才推出 h=3⇒k≥19。 |
+| [七項具名障礙](#4-不能照搬-c8-契約的具名障礙與停止點) | 說明局部前提不足以保證同型 C8 遞迴；完整 separator 轉移本身不給來源排除、固定寬度或可染性存在。 |
+
+[原隔離報告](../audits/2026-10-13-c8-peeling-6cafdfb/REPORT.md)保存 BASE `6cafdfb`
+的證明／證書與驗證；本次只整理依賴，不新增研究結論或 Lean theorem。
+目前停止點由 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)及
+[無四色定理前提交接](tasks/c5_no4ct_handoff.md#4-精確停止點與未完成項目)維護。
 
 ## 1. 適用前提與任意大小分類
 
@@ -60,6 +80,10 @@ improper 的 a 給空集。PINCH 使用
 其中原邊 xy 強制 b_x≠b_y。重複 walk 位置必滿足同一原點同色，不能建立
 兩份 x，也不能把各側投影的非空性當作共同 witness。
 
+T1–T3 處理原 C 與 Q 外面點集合，T4–T6 處理共享原點與 bridge，
+T7–T8 處理以下一般剝層，T9 將結果沿原 B–C collar 接回完整十列。
+這是一條同一色框、同一原點身份的完整轉移鏈，不能在中途改用各側 marginals。
+
 一般反覆剝層取 R_0=Q，每步取各分量無界面原點集合 S_l，令
 R_(l+1)=R_l−S_l。刪除外面點後，每條跨層原邊的內端都 incident 於下一層
 無界面，故所有原邊只連同層或相鄰兩層。完整公式為
@@ -70,6 +94,7 @@ N_l(a)=[a\text{ proper}]\sum_bK_l(a,b)N_{l+1}(b),
 \]
 
 K_l 檢查全部具名跨層邊，空圖基底為 F(∅)={∅}、N(∅)=1。
+若 a improper，F_l(a)=∅；其餘分解保留每個 b 的空 fibre。
 每步嚴格減少原點數，所以適用**任意有限內側大小**。分量可分別計算，
 articulation 須同色 join，孤點及單邊亦有明確終止公式。
 [完整公式 T1–T9](../audits/2026-10-13-c8-peeling-6cafdfb/TRANSFER.md)另列
@@ -124,6 +149,31 @@ direct 整圖染色與逐層同色框 full join 比對全部 lifts。
 八個 h=3 任意大小來源的染色排除、固定寬度壓縮及一般 K∞=K≤5 仍 OPEN。
 一般 k≥16、h≥3、n5≥9 均不提高；新結果是 h=3 的 k≥19。
 證據為紙面結構與完整 Python 證書，沒有新增 Lean theorem。
+
+<a id="5-h4-的另列義務"></a>
+
+## 5. h≥4 的另列義務
+
+下列義務沿用[新三支契約與停止點](tasks/c5_no4ct_handoff.md#4-精確停止點與未完成項目)，
+不由本頁 h=3 的分類或十九內點界完成。
+
+| 分支／義務 | 已有輸入與尚未完成的部分 |
+| --- | --- |
+| h≥4 的 932 | 已知 h≥4、n₅≥10、一般 k≥16；任意大小來源排除仍 OPEN。932 不屬本頁八項，不能引用原 E4／N2 的特定來源排除刪除一般分支。 |
+| h≥4 的 933／941 | 已知一般 k≥16、原內圈 C_(5+h)、原度數與小 cap 的受限前提；仍須將較長內圈的具名附件接入既有完整 transfer，另證共同計數限制與來源排除，不能沿用八份 h=3 collars。 |
+| 下一層結構 | 完整 separator 轉移可使用實際外面點集合；若要重用 C8 結構簡化，必須另證其度數、induced／無弦、接點限制、連通性及寬度。§4 的控制已顯示局部前提不足。 |
+| 固定寬度與一般主命題 | 大小無關的介面壓縮及 K∞=K≤5 仍 OPEN；有限終止與精確轉移不完成這兩項義務。 |
+
+h=3 的剩餘義務則是對同一八項、m≥11 的原 H 給出共同圖層矛盾。
+PINCH 可從 m=11 進入，BRIDGE 必 m≥12；不能只沿 RING 推論。
+[交接的下一窄入口](tasks/c5_no4ct_handoff.md#5-建議的第一個窄任務)維護這項研究安排。
+[K15-SPHERE](c5_k15_sphere.md)的一般 k≥16 與本頁 h=3⇒k≥19 分別採納；
+**十九內點界不能套到 h≥4，也未證 K≤18=K≤5。**
+
+## 6. 重播入口與本次整理範圍
+
+以下是既有數學證書的重播入口；本次依賴整理只做文件與 metadata 檢查，
+未重跑研究枚舉、這些數學 checker 或 Lean build。
 
 ```bash
 python3 -B audits/2026-10-13-c8-peeling-6cafdfb/check.py --check

@@ -1,3 +1,18 @@
+---
+docgraph:
+  id: c5.k15-sphere
+  family: [c5, c5.minimal-source]
+  requires: [c5.cofacial-normal-form, c5.saturation-degree-bound]
+  derives_from: [c5.k14-sphere]
+  related: [c5.no4ct-handoff]
+  verified_by:
+    - audits/2026-10-13-k15-sphere-6cafdfb/REPORT.md
+    - audits/2026-10-13-k15-sphere-6cafdfb/PROOF.md
+    - audits/2026-10-13-k15-sphere-6cafdfb/certificate.json.gz
+    - audits/2026-10-13-k15-sphere-6cafdfb/independent/compare.py
+    - audits/2026-10-13-c5-no4ct-degrees-6cafdfb/REPORT.md
+---
+
 # 十五內點完整關係界
 
 2026-10-13 整理補註：[無四色定理前提交接](tasks/c5_no4ct_handoff.md)另接
@@ -10,6 +25,31 @@
 完整前提、紙面覆蓋、全部原圖／fibres及獨立審閱見
 [隔離報告](../audits/2026-10-13-k15-sphere-6cafdfb/REPORT.md)。
 目前停止點由 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)維護。
+
+## 1. 兩條證明鏈與共同有限證據
+
+本頁是 K≤15 的權威入口；原鏈的完整覆蓋證明見
+[PROOF](../audits/2026-10-13-k15-sphere-6cafdfb/PROOF.md)，替代鏈的前提重綁
+由[無四色定理前提交接](tasks/c5_no4ct_handoff.md)導向各隔離權威報告。
+
+| 鏈 | 閱讀順序與實際使用的前提 |
+|---|---|
+| 原證明鏈 | [共面正規形／K≤12](c5_cofacial_normal_form.md) → [度數界](c5_saturation_degree_bound.md) → [K13](c5_k13_collar.md) → [K14](c5_k14_sphere.md) → 本頁。保留普遍 screen／4CT；K13 的外圈與 C₈ 分支前置見其 §0。K14 使最小來源恰 k=15，正規形與度數界使外加 cone 成二十一點最小度五球面圖。 |
+| 不以 4CT 為前提的替代鏈 | [零內點 cap 下降與三支正規形／K≤12](../audits/2026-10-13-c5-no4ct-dependency-6cafdfb/REPORT.md) → [受限 C4／度數與球面接入](../audits/2026-10-13-c5-no4ct-degrees-6cafdfb/REPORT.md)。全域最小來源保留 932／933／941；受限 C4 必須 `s<k`。直接覆蓋 k=13、14、15 的全部球面 roots，不以原 K13→K14 的逐階證明或外圈／C₈ 排除作前提。 |
+
+兩鏈都使用同一固定有序原框的完整十列關係、所有五度 root 與逐列完整 fibres；
+空 fibre 也須保存。球面域及逐圖關係核對是排除證據，`not triggered` 不是排除理由。
+兩鏈仍保留 Dvořák–Lidický Corollary 20 的外部計算證明及 plantri 生成
+完備性定理／C 實作；雙路生成一致不取代完備性定理，既有 Lean 回歸不認證
+這套紙面化約。替代鏈的 collar／C₈ 後續需另走交接中的報告，保持相對
+loopless 平面圖可染性的 `N≤k+5`；球面接入本身不需要該前提。
+
+DocGraph 的 `requires`／`derives_from` 記原鏈的前置與推導，沒有編碼兩個
+證明分支的 AND／OR；`related` 導向替代鏈，`verified_by` 只是工具不驗證
+內容的證據路徑標籤。本輪核對文件與既有證據連結，未重跑枚舉或研究證書。
+一般 932／933／941 排除及 `K∞=K≤5` 仍 **OPEN**。
+
+## 2. 原證明鏈的十五內點界
 
 對有限簡單 disk 圖、固定有序原 C5 外框與完整十列關係，
 
