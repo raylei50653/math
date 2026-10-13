@@ -24,6 +24,8 @@
 | Embedding 到 grammar | 固定 C5＋K3 接線的紙面 topology 論證依賴 Jordan–Schoenflies 等事實；embedding 抽取與 topology soundness 未 Lean 化 | [topology](topology_completeness.md) |
 | 固定 relation 庫／pp | 固定 grammar 的 87 states 與完整 relation 查詢保存；pp 求值器屬 Python，87 不等於一般 cell catalogue 的 132 | [relation 庫](boundary_relations.md)、[pp](pp_relations.md)、[fan](fan_pentagon.md) |
 | Cell 枚舉 | R1／SYM／prefix／DFS／bitmask／integer viable 的 Lean 鏈及外部信任已明列；k=6、7 重現只是有界證據 | [enumerator](c5_cell_enumerator.md) |
+| Cell 翻邊／編碼 | 四格完整關係給保 Σ 充要條件；五格加五格座標使旋轉及加邊界弦成 bit 操作。同 Σ、同操作反例及同逐列計數反例排除一般直接更新；指定 flip 可用四十位元四格 support，迭代仍保存實圖／full lifts；未 Lean 化 | [翻邊引理、工具與編碼](c5_cell_flip.md) |
+| Cell 翻邊分類 | 132 份原代表作三步實圖 BFS：20,531 圖、29 組距離特徵，完整 132×132 有向距離表；1,179 個初始翻邊全改 Σ。120 份一步到較小目錄代表的關係，W5 要兩步；限指定代表與嵌入規則，未得一般縮減 | [距離與分類](c5_cell_flip_classification.md) |
 | K₄ 非平面障礙偵測 | K₄＋同一外部分量四接點輸出原圖 K₅ minor；Atlas 161／237、平面零誤報，603 命中；漏判含無 K₅ minor 及無字面 K₄ 兩類，不能取代完整判定，未 Lean 化 | [效果、證書與漏判分類](k4_nonplanarity.md) |
 | 基礎構造與 gadgets | exact relations、有限 Lean 證書與 gadget synthesis 已保存；一般 planar／separating C5 的 BAD 不是 disk 反例 | [phase 1](phase1.md)、[構造](construction.md)、[gadgets](gadgets.md) |
 

@@ -1,0 +1,143 @@
+{
+  "status": "PASS",
+  "commands": [
+    {
+      "command": "python3 artifacts/c5_cell_encoding/check.py",
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"PASS\",\n  \"verification_scope\": \"Independent exhaustive complete lifts and four bins; saved local facial data compared, facial validity separately replayed by transform --check.\",\n  \"input_hashes_checked\": 4,\n  \"full_reports\": 4,\n  \"complete_graph_states\": 16,\n  \"catalogue_representatives_checked\": 4,\n  \"joint_rows_including_empty_bins\": 40,\n  \"collisions\": [\n    {\n      \"reports\": [\n        \"collision-1-708.json\",\n        \"collision-1-736.json\"\n      ],\n      \"source_sigma\": 431,\n      \"result_sigmas\": [\n        639,\n        987\n      ],\n      \"equal_ten_counts_required\": false\n    },\n    {\n      \"reports\": [\n        \"collision-2-38030.json\",\n        \"collision-2-6734.json\"\n      ],\n      \"source_sigma\": 199,\n      \"result_sigmas\": [\n        91,\n        255\n      ],\n      \"equal_ten_counts_required\": true\n    }\n  ],\n  \"encoding_roundtrips\": 1024,\n  \"chord_clearing_cases\": 5120,\n  \"initial_flips\": 1179,\n  \"xor_labels\": 290,\n  \"lost_gained_labels\": 514,\n  \"initial_flip_kinds\": {\n    \"exchange\": 1063,\n    \"gain_only\": 96,\n    \"loss_only\": 20\n  }\n}\n"
+    },
+    {
+      "command": "uv run --with networkx==3.5 python scripts/c5_cell_transform.py --check artifacts/c5_cell_encoding/collision-1-708.json",
+      "exit_code": 0,
+      "output": "PASS: graph, disk tests, ten full fibres, operations and catalogue match replayed\n"
+    },
+    {
+      "command": "uv run --with networkx==3.5 python scripts/c5_cell_transform.py --check artifacts/c5_cell_encoding/collision-1-736.json",
+      "exit_code": 0,
+      "output": "PASS: graph, disk tests, ten full fibres, operations and catalogue match replayed\n"
+    },
+    {
+      "command": "uv run --with networkx==3.5 python scripts/c5_cell_transform.py --check artifacts/c5_cell_encoding/collision-2-38030.json",
+      "exit_code": 0,
+      "output": "PASS: graph, disk tests, ten full fibres, operations and catalogue match replayed\n"
+    },
+    {
+      "command": "uv run --with networkx==3.5 python scripts/c5_cell_transform.py --check artifacts/c5_cell_encoding/collision-2-6734.json",
+      "exit_code": 0,
+      "output": "PASS: graph, disk tests, ten full fibres, operations and catalogue match replayed\n"
+    }
+  ],
+  "independent_result": {
+    "status": "PASS",
+    "verification_scope": "Independent exhaustive complete lifts and four bins; saved local facial data compared, facial validity separately replayed by transform --check.",
+    "input_hashes_checked": 4,
+    "full_reports": 4,
+    "complete_graph_states": 16,
+    "catalogue_representatives_checked": 4,
+    "joint_rows_including_empty_bins": 40,
+    "collisions": [
+      {
+        "reports": [
+          "collision-1-708.json",
+          "collision-1-736.json"
+        ],
+        "source_sigma": 431,
+        "result_sigmas": [
+          639,
+          987
+        ],
+        "equal_ten_counts_required": false
+      },
+      {
+        "reports": [
+          "collision-2-38030.json",
+          "collision-2-6734.json"
+        ],
+        "source_sigma": 199,
+        "result_sigmas": [
+          91,
+          255
+        ],
+        "equal_ten_counts_required": true
+      }
+    ],
+    "encoding_roundtrips": 1024,
+    "chord_clearing_cases": 5120,
+    "initial_flips": 1179,
+    "xor_labels": 290,
+    "lost_gained_labels": 514,
+    "initial_flip_kinds": {
+      "exchange": 1063,
+      "gain_only": 96,
+      "loss_only": 20
+    }
+  },
+  "parent_validation": [
+    {
+      "command": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_cell_transform.py",
+        "--check",
+        "artifacts/c5_cell_encoding/collision-1-708.json"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: graph, disk tests, ten full fibres, operations and catalogue match replayed\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_cell_transform.py",
+        "--check",
+        "artifacts/c5_cell_encoding/collision-1-736.json"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: graph, disk tests, ten full fibres, operations and catalogue match replayed\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_cell_transform.py",
+        "--check",
+        "artifacts/c5_cell_encoding/collision-2-38030.json"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: graph, disk tests, ten full fibres, operations and catalogue match replayed\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/ray/developer/ai/math/.venv/bin/python",
+        "scripts/c5_cell_transform.py",
+        "--check",
+        "artifacts/c5_cell_encoding/collision-2-6734.json"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: graph, disk tests, ten full fibres, operations and catalogue match replayed\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "summary": "FAIL: 62 documents, 213 relations, 5 families; 62 errors, 0 notes",
+      "error_count": 62,
+      "only_duplicate_ids": true,
+      "scope": "Existing frozen audits and scratch copies; no historical files changed"
+    }
+  ],
+  "documentation": {
+    "command": "python3 scripts/check_docs.py && python3 tools/docgraph --include 'docs/**/*.md' check && git diff --check",
+    "exit_code": 0,
+    "output": "OK: 655 Markdown files, 8192 local links; anchors, index, handoff checked\nOK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n"
+  },
+  "independent_parent_replay": {
+    "command": "python3 artifacts/c5_cell_encoding/check.py",
+    "exit_code": 0,
+    "output": "{\n  \"status\": \"PASS\",\n  \"verification_scope\": \"Independent exhaustive complete lifts and four bins; saved local facial data compared, facial validity separately replayed by transform --check.\",\n  \"input_hashes_checked\": 4,\n  \"full_reports\": 4,\n  \"complete_graph_states\": 16,\n  \"catalogue_representatives_checked\": 4,\n  \"joint_rows_including_empty_bins\": 40,\n  \"collisions\": [\n    {\n      \"reports\": [\n        \"collision-1-708.json\",\n        \"collision-1-736.json\"\n      ],\n      \"source_sigma\": 431,\n      \"result_sigmas\": [\n        639,\n        987\n      ],\n      \"equal_ten_counts_required\": false\n    },\n    {\n      \"reports\": [\n        \"collision-2-38030.json\",\n        \"collision-2-6734.json\"\n      ],\n      \"source_sigma\": 199,\n      \"result_sigmas\": [\n        91,\n        255\n      ],\n      \"equal_ten_counts_required\": true\n    }\n  ],\n  \"encoding_roundtrips\": 1024,\n  \"chord_clearing_cases\": 5120,\n  \"initial_flips\": 1179,\n  \"xor_labels\": 290,\n  \"lost_gained_labels\": 514,\n  \"initial_flip_kinds\": {\n    \"exchange\": 1063,\n    \"gain_only\": 96,\n    \"loss_only\": 20\n  }\n}\n"
+  }
+}

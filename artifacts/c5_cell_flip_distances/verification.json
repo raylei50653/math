@@ -1,0 +1,111 @@
+{
+  "scope": "132 saved representatives; depth 3; selected disk embedding policy; finite Python evidence; no Lean claim",
+  "checks": [
+    {
+      "name": "independent_atlas",
+      "command": "python3 scripts/check_c5_cell_flip_distances.py artifacts/c5_cell_flip_distances/atlas.json.gz",
+      "result": {
+        "chunk_id": "30f54b",
+        "wall_time_seconds": 9.137e-06,
+        "exit_code": 0,
+        "original_token_count": 66,
+        "output": "{\n  \"status\": \"PASS\",\n  \"checked_graphs\": 20531,\n  \"checked_sources\": 132,\n  \"checked_expanded_rotations\": 5441,\n  \"color_check\": \"all literal assignments in all ten boundary rows\",\n  \"exhaustion_check\": \"true flags verified; conservative false flags permitted\"\n}\n"
+      }
+    },
+    {
+      "name": "distance_tests",
+      "command": "python3 -m unittest discover -s tools/tests -p test_c5_cell_flip_distances.py",
+      "result": {
+        "chunk_id": "36e2d9",
+        "wall_time_seconds": 6.563e-06,
+        "exit_code": 0,
+        "original_token_count": 28,
+        "output": ".............\n----------------------------------------------------------------------\nRan 14 tests in 1.350s\n\nOK\n"
+      }
+    },
+    {
+      "name": "frozen_complete_replay",
+      "command": "uv run --with networkx==3.5 python artifacts/c5_cell_flip_distances/inputs/scripts/c5_cell_flip_distances.py --check artifacts/c5_cell_flip_distances/atlas.json.gz",
+      "result": {
+        "chunk_id": "96dea2",
+        "wall_time_seconds": 5.531e-06,
+        "exit_code": 0,
+        "original_token_count": 102,
+        "output": "24/132 sources; 4552 distinct graphs\n36/132 sources; 7321 distinct graphs\n48/132 sources; 9230 distinct graphs\n60/132 sources; 10976 distinct graphs\n72/132 sources; 12914 distinct graphs\n84/132 sources; 15232 distinct graphs\n96/132 sources; 16862 distinct graphs\n108/132 sources; 17963 distinct graphs\n120/132 sources; 19984 distinct graphs\n132/132 sources; 20531 distinct graphs\nPASS: complete atlas replay\n"
+      }
+    },
+    {
+      "name": "full_lifts_and_csv",
+      "command": "python3 artifacts/c5_cell_flip_distances/verify_witnesses.py",
+      "result": {
+        "chunk_id": "fbad34",
+        "wall_time_seconds": 0.1064412,
+        "exit_code": 0,
+        "original_token_count": 36,
+        "output": "{\n  \"status\": \"PASS\",\n  \"full_reports\": 8,\n  \"complete_graph_states\": 32,\n  \"joint_rows_including_empty_cells\": 80,\n  \"csv_entries\": 17424\n}\n"
+      }
+    },
+    {
+      "name": "existing_transform_tests",
+      "command": "uv run --with networkx==3.5 python -m unittest discover -s tools/tests -p test_c5_cell_transform.py",
+      "result": {
+        "exit_code": 0,
+        "output": "Ran 15 tests in 0.169s; OK"
+      }
+    },
+    {
+      "name": "docs",
+      "command": "python3 scripts/check_docs.py",
+      "result": {
+        "chunk_id": "8a7458",
+        "wall_time_seconds": 0.506726269,
+        "exit_code": 0,
+        "original_token_count": 19,
+        "output": "OK: 655 Markdown files, 8188 local links; anchors, index, handoff checked\n"
+      }
+    },
+    {
+      "name": "formal_docgraph",
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "result": {
+        "chunk_id": "bffd97",
+        "wall_time_seconds": 1.1832e-05,
+        "exit_code": 0,
+        "original_token_count": 16,
+        "output": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n"
+      }
+    },
+    {
+      "name": "whole_tree_docgraph",
+      "command": "python3 tools/docgraph check",
+      "result": {
+        "exit_code": 1,
+        "output": "FAIL: 62 documents, 213 relations, 5 families; 62 errors, 0 notes",
+        "reason": "Existing duplicate IDs in frozen audits and scratch copies; examples c5.adjacent-degree5-interfaces and c5.two-spoke-three-contacts. No old evidence altered."
+      }
+    },
+    {
+      "name": "whitespace",
+      "command": "git diff --check",
+      "result": {
+        "exit_code": 0
+      }
+    },
+    {
+      "name": "full_witness_replays_and_cli",
+      "command": "Eight c5_cell_transform.py --check calls; c5_cell_flip_distances.py --query --source 91 --target 165; existing --output rejection",
+      "result": {
+        "chunk_id": "89694f",
+        "wall_time_seconds": 1.2744e-05,
+        "exit_code": 0,
+        "original_token_count": 40,
+        "output": "{\n  \"status\": \"PASS\",\n  \"transform_full_report_replays\": 8,\n  \"cli_query\": [\n    91,\n    721,\n    165\n  ],\n  \"exclusive_output\": \"existing bytes preserved\"\n}\n"
+      }
+    }
+  ],
+  "review": {
+    "status": "PASS",
+    "method": "Independent read-only mathematical review of all29 table rows, D5 splits, distances, source hashes and representative-preservation scope",
+    "limitations": "Finite depth3 and selected embedding policy; no graph-isomorphism invariant or all-representative claim"
+  }
+}

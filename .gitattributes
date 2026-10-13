@@ -1,2 +1,5 @@
 # This retained corruption fixture deliberately appends whitespace to change its bytes.
 audits/2026-10-11-n2-long-mask-sync/high-contact/observations_corrupted_negative.json whitespace=-blank-at-eol,-blank-at-eof
+
+# Preserve the checked CSV writer's CRLF bytes while still checking real trailing whitespace.
+artifacts/c5_cell_flip_distances/distances.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

@@ -399,6 +399,8 @@
 | [fan pentagon](fan_pentagon.md)、[boundary relation 庫](boundary_relations.md)、[pp relations](pp_relations.md) | 固定 grammar 的 87 states 與完整 relation／pair 查詢已保存；pp 求值器仍屬 Python 層，87 不是一般 cell catalogue 的 132 |
 | [state language](state_language.md)、[stepwise sufficiency](stepwise_state_sufficiency.md)、[local closure](local_closure.md)、[C5 interface 想法](c5_interface_idea.md) | 表示法、strip／fan 的有界控制及 separator 引理可用；一般移動前緣、context／future 充分性、C6／C7 轉接仍待證或未啟動 |
 | [cell enumerator](c5_cell_enumerator.md) | R1／SYM／prefix／DFS／bitmask／integer viable 的 Lean 鏈與外部信任已明列；k=6、7 獨立重現僅為有界計算證據；原重複 §14 已整理為 §16 |
+| [Cell 翻邊引理、工具與編碼](c5_cell_flip.md) | 四格完整 lifts 給保 Σ 充要條件；891→987 可重播。五格加五格座標給旋轉／邊界弦 bit 公式；兩組具名反例證相同 Σ 甚至逐列計數仍不決定相同 flip 結果。指定 flip 四十位元四格 support 不替代實圖／full lifts，無一般縮減或新Lean |
+| [Cell 翻邊距離與有限分類](c5_cell_flip_classification.md) | 132原代表三步BFS保留20,531實圖；132×132有向距離表與29組特徵，四個D₅軌道再分裂。1,179初始翻邊無保Σ；120份一步到較小目錄代表的關係、91要兩步。限定嵌入規則，未達不等於不可達，無一般縮減或新Lean |
 | [K₄ 非平面障礙偵測與效果](k4_nonplanarity.md) | 原圖 K₄＋同一外部分量四接點產生可核對 K₅ minor；Atlas 161／237、平面零誤報，603 命中；76 漏判分為 25 有 K₅ minor／51 無，屬充分判準，無新 Lean 或來源排除 |
 | [extension effects](extension_effects.md) | 一般圖的新增點／邊完整 relation 變化已觀察；pair projections 漏掉高階限制，geometry=unknown 的 rows 不能當 disk transitions |
 
@@ -510,6 +512,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-13：C5 翻邊、三步分類與 Σ 編碼整理發布](history/2026-10-13-cell-flip-classification-encoding-publish.md)
 - [2026-10-13：W5 圈秩三環繞排除與 C₈ apex 度數發布](history/2026-10-13-w5-rank3-c8-apex-publish.md)
 - [2026-10-13：廣義N2、W5私人雙環及C₈來源結構整理發布](history/2026-10-13-n2-rank2-c8-publish.md)
 
