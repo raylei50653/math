@@ -1,16 +1,32 @@
 # Weak-deletion／單側與共同出口導覽
 
-更新：2026-10-09（現況與來源入口整理；不新增研究結論）。
+## 最新進度
+
+現況核對：2026-10-13；本次只整理入口，未新增研究結論。
+
+| 欄位 | 現況 |
+| --- | --- |
+| 階段／生命週期 | 指定核心分支與條件式出口已收尾；一般單側／共同出口及 `K∞=K≤5` 仍 OPEN。 |
+| 最近研究更新 | 2026-10-08：[Phase B](c5_phase_b_common_lemmas.md#21-b-s0有原見證的共同盾弧排除準則)採納同源盾弧見證接口；共鄰 P₃ 整支收尾為 10-04。 |
+| 上次完成 | No-mixed 指定 p₁、p₂ 免表存在性分離；C-W／D₆ 在 [C §1 完整前提](c5_mixed_p3_common_endpoint.md#1-原-source-前提與完整三點關係)下排除共鄰端點 P₃，unary 大小不限、不需 T4。 |
+| 目前停止點 | 其他 incidences、更大／多 mixed、逐染色 repair、非相鄰／更多 roots、degree≥6 與一般出口仍 OPEN；固定 q 不等於完整 Σ 分類。 |
+| 下一步 | 核其餘保留分支能否提供三份不同原 one-sided pieces 的同源盾弧見證；先核原接點、各自支援及外路，分隔型或缺外路時停止推廣。 |
+| 接手入口 | [精確停止點 §3](#3-精確停止點與下一個窄問題) → [W-A／C-W](c5_qcore_shield_budget.md)與 [B-S0](c5_phase_b_common_lemmas.md#21-b-s0有原見證的共同盾弧排除準則)；證據／重播見 [§4](#4-重播入口與驗證範圍)。 |
+
+### 近期里程碑
+
+| 日期／階段 | 進展與來源 |
+| --- | --- |
+| No-mixed 收尾 | 原十五類由來源排除或雙列分離全覆蓋；指定 p₁、p₂ 共同存在性分離免查表證成，仍非逐染色 repair。[十五類總覽](c5_no_mixed_span_budget.md)、[增長完備性](c5_no_mixed_growth_completion.md) |
+| P₃ 不同接點收尾 | 兩端及中點／端點各一 incidence 完成任意 unary 大小的來源排除；其他接線保留。[末端保留論證](c5_mixed_p3_middle_endpoint.md) |
+| 2026-10-04 | C-W 加 D₆ 零-unary 補證，完成 C §1 整個共鄰端點 P₃；[cw-v1 固定目錄](c5_open_leaf_ledger.md)歸零，主線葉總數與每日下降率仍未知。[權威入口 §8](c5_qcore_shield_budget.md#8-稽核後更正與補證2026-10-04d₆-之後) |
+| 2026-10-08 | Phase B 統一有原見證的盾弧與條件容量接口；存在性分離升為操作式 repair 仍欠合法操作／fibre 匹配。[Phase B](c5_phase_b_common_lemmas.md) |
+
 研究線標記見 [HANDOFF](HANDOFF.md)，全文件索引見 [STATUS](STATUS.md)，
 共通信任界線與工作約定見 [DOCUMENTATION](DOCUMENTATION.md)。
 
 本批成果及D至D₅稽核的發布驗證見[發布紀錄](history/2026-10-04-c5-parallel-progress-publish.md)；
 新checkout的凍結快照／完整輸出先依[封存還原說明](../audits/README.md)還原。
-
-共鄰端點 P₃ 已由 C-W／D₆ 在 C §1 前提下完成來源排除；
-[固定目錄 cw-v1](c5_open_leaf_ledger.md)已無開放 keys。
-該子題的權威論證入口及本線仍未解義務見 [§3](#3-精確停止點與下一個窄問題)。
-固定目錄不代表全主線葉總數；全主線葉數與每日下降率仍未知。
 
 ## 1. 目標與範圍
 

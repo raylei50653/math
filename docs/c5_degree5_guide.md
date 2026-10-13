@@ -1,14 +1,31 @@
 # degree-5／R 系列導讀：介面、排除範圍與保留缺口
 
-更新：2026-10-13（指定完整N2契約的原55由LL-CUT+diag涵蓋；保留雙色唯一缺口及一般R31義務）。本頁維護 R9–R31 的來源結構、minor 與單缺額查證情況。
+## 最新進度
+
+現況核對：2026-10-13；本次只整理入口，未新增研究結論。
+
+| 欄位 | 現況 |
+| --- | --- |
+| 階段／生命週期 | 指定 degree-5 分支與後續 N2 契約已有排除成果；一般 degree-5／R31 來源 minor 義務保留 OPEN，未由子域收尾推升。 |
+| 最近研究更新 | 2026-10-13：[LL-CUT+diag 完整 N2 九格覆蓋](c5_excess_two_n2_ll_cut.md)，以及 [N2-BRIDGE 原 E4 三列契約橋接](c5_excess_two_n2_bridge.md)。 |
+| 上次完成 | 二連通單缺額已查證；後續在指定完整 N2 前提排除 spoke45／54，再涵蓋原55。N2-BRIDGE 另承擔原 E4 三列契約的移植證明。 |
+| 目前停止點 | R31 同末端不同二接點僅正常形完成，任意長來源 minors 待補；未覆蓋來源及一般出口 OPEN。基本 LL-CUT 的獨立觸發機制仍未證成。 |
+| 下一步 | 接續時補 R31 任意長奇環及重複色外臂的 boundary 固定來源 minors，逐步核對 degree、四列、刪邊著色，再合成正常形拓撲證書。 |
+| 接手入口 | [R31 精確停止點](c5_degree5_same_terminal_triangles.md#4-精確停止點)與本頁 §4；N2 後續見 [Kempe 導覽](c5_kempe_guide.md)，一般出口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。 |
+
+### 近期里程碑
+
+| 日期／階段 | 進展與來源 |
+| --- | --- |
+| 2026-09-18／R24–R31 | [雙環](c5_degree5_shared_cycle_minors.md)及指定三環來源型陸續完成；[R31](c5_degree5_same_terminal_triangles.md)停在同末端不同二接點正常形，任意長來源義務保留。 |
+| 2026-09-28／雙列分離接入 | 唯一 degree-5 全部核心的指定雙列分離接回[條件式單側出口](c5_single_sided_exit.md)；一般完整 Σ 及 R31 minor 缺口保留。 |
+| 2026-10-11／單缺額與共用排除 | [二連通單缺額查證](c5_degree5_interfaces.md#7-二連通單缺額查證與-4554-接入)及[雙色唯一缺口推論](c5_two_color_single_gap_bridge.md)接入指定 N45 域。 |
+| 2026-10-13／N2 契約收尾 | [LL-CUT+diag](c5_excess_two_n2_ll_cut.md)完成指定完整 Σ 九格；[N2-BRIDGE](c5_excess_two_n2_bridge.md)另排原 E4 三列契約 N2。基本 LL-CUT、N1／相鄰分支及一般 R31 不由此完成。 |
+
+本頁維護 R9–R31 的來源結構、minor 與單缺額查證情況。
 研究線標記見 [HANDOFF](HANDOFF.md)，全索引見 [STATUS](STATUS.md)。
 前置依賴見 [全 degree-4 導覽](c5_degree4_guide.md)。
 
-唯一 degree-5 全部核心的指定雙列分離已接回 [條件式單側出口](c5_single_sided_exit.md)。
-這不補完 R31 的任意長來源 minor 或任意來源的完整 Σ；相鄰雙 root 與出口後續
-統一見 [weak-deletion 導覽](c5_weak_deletion_guide.md)，不在本頁累積逐輪摘要。
-本線保留缺口是 R31 同末端不同二接點及未覆蓋來源；完整N2目標契約的N45真cores
-已由後續共同排除涵蓋，不再按旁支／三環形狀列為該域存活來源。
 舊摘要數字與證書仍見原報告及 [九組成果發布紀錄](history/2026-09-28-adjacent-progress-publish.md)。
 R9–R31 為研究輪次，不是報告參考文獻編號。
 

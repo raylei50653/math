@@ -1,7 +1,29 @@
 # Sector／雙拒絕分類導覽：3903 系列與證據入口
 
-文件整理：2026-09-23；研究依據截至 2026-09-22。本頁不新增研究結論。
-研究線標記見 [HANDOFF](HANDOFF.md)，全專案索引見 [STATUS](STATUS.md)。
+## 最新進度
+
+現況核對：2026-10-13；本次只整理入口，未新增研究結論。
+
+| 欄位 | 現況 |
+| --- | --- |
+| 階段／生命週期 | 指定 sector 五目標的任意大小紙面排除已收尾；完整分類形式化與抽象 profiles 接入仍保留。 |
+| 最近研究更新 | 2026-09-28：[BoundaryDegree](lean_boundary_degree.md)補實際接線至拒絕迫緊的 Lean 基礎；五目標排除於 09-24 完成。 |
+| 上次完成 | 有限簡單圖的 induced C₅ disk 外框、非空連通內部、內點完整 degree≤4、b₀ 恰有兩個不同內鄰點下，[雙拒絕分類](c5_two_rejection_proof_zh.md#0-精確命題與適用範圍)加 [3703 三拒絕排除](c5_sector_3703_exclusion.md#1-前提與結論)涵蓋五目標；仍依賴外部 degree-list 定理。 |
+| 目前停止點 | 完整分類未 Lean 化；603 profiles 未編入後續分類或重算固定點。一般單側／共同出口及 `K∞=K≤5` 仍 OPEN。 |
+| 下一步 | 接續時以完整形式化依賴及 603 profiles 的未接入範圍為界；不重啟已排除的 3903／331 分支，一般出口接回 weak-deletion 線。 |
+| 接手入口 | [目前結論 §1](#1-目前結論與最短閱讀路徑) → [雙拒絕分類](c5_two_rejection_proof_zh.md)、[3703 收尾](c5_sector_3703_exclusion.md)；形式化缺口見 [Lean 工具](lean_two_rejection_tools.md#未完成的形式化依賴)，重播見 [§4](#4-證書重播與歷史)。 |
+
+### 近期里程碑
+
+| 日期／階段 | 進展與來源 |
+| --- | --- |
+| 指定轉移收尾 | 空／非空分支合成指定前提下的 397/action 2→330 禁令；仍保留原603閉合集合，單禁令不等於完整來源分類。[空分支末端排除](c5_sector_empty_terminal.md)、[後繼核對](c5_sector_successor_audit.md) |
+| 2026-09-22 | 雙拒絕的任意大小紙面分類排除3647、3895、3901、3903；舊3903／331停止點被涵蓋，外部 degree-list 信任保留。[分類 §0–7](c5_two_rejection_proof_zh.md) |
+| 2026-09-24 | 3703 的任意長度三拒絕排除完成，五目標在指定 sector 圖類內全排除；不刪抽象603 profiles。[3703 排除](c5_sector_3703_exclusion.md) |
+| 2026-09-28 | 實際圖／完整附件／剩餘 lists／拒絕迫緊接入 Lean；Gallai 結構、disk 拓撲與完整分類仍未形式化。[BoundaryDegree](lean_boundary_degree.md) |
+
+研究線標記見 [HANDOFF](HANDOFF.md)，全專案索引見 [STATUS](STATUS.md)，
+共通規則見 [DOCUMENTATION](DOCUMENTATION.md)。
 
 ## 1. 目前結論與最短閱讀路徑
 

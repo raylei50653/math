@@ -1,6 +1,28 @@
 # State／grammar／topology 與枚舉導覽
 
-更新：2026-10-13。新增強迫異色的無界平面構造、共用支援／交錯通道限制與 critical 適用界線；F／Z 原域仍 OPEN。來源投影階數與精確接合上界及跨線整理見
+## 最新進度
+
+現況核對：2026-10-13；本次只整理入口，未新增研究結論。
+
+| 欄位 | 現況 |
+| --- | --- |
+| 階段／生命週期 | 研究中；完整表示、指定 grammar 與有界枚舉已有成果，一般可迭代 state 充分性待證。F／Z 為待初驗提案，域外構造研究已交付。 |
+| 最近研究更新 | 2026-10-13：[強迫異色研究](c5_forced_inequality_transport.md)交付無界平面構造、不交叉限制與 critical 適用界線；F／Z 原來源域尚未完成初驗。 |
+| 上次完成 | 一般平面圖有任意遠強迫對且證書寬度≤5；共用雙支援樹恰 path 可平面，交錯獨立 Diff×Diff 不可實現；clique 分隔枝塊對外框 Σ 透明。 |
+| 目前停止點 | 域外無界例不觸發原低超額 critical 前提；F／Z 仍 OPEN。一般 context／future、刪內邊與 Kempe 的後繼充分性、grammar 外 topology 及全部來源必要分類均未完成。 |
+| 下一步 | 接續 §3：在具名前提觸發的實際來源量測半徑與完整證書寬度；同一 β 下檢查非 clique 分隔介面的支援／超額。Z 另查完整不增轉移圖的終端平台。 |
+| 接手入口 | 先讀本頁 §3，再讀 [F／Z 的量詞與初驗計畫](c5_forcing_transport_conjectures.md)、[異色構造及原域界線](c5_forced_inequality_transport.md)；多步接口見 [Phase B](c5_phase_b_common_lemmas.md)，兩點接合見 [專線導覽](c5_two_vertex_overlap_guide.md)。 |
+
+### 近期里程碑
+
+| 日期／階段 | 進展與來源 |
+| --- | --- |
+| 2026-10-02／來源階數初驗 | [階數報告](c5_relation_arity.md)將 132 來源分為 11 個二階、101 個四階、20 個五階，證精確兩來源接合 r*≤來源最大階數≤5；忘掉接點及多步上界未證。 |
+| 2026-10-08／共通接口 | [Phase B](c5_phase_b_common_lemmas.md)分開密封外部接合、保 action 的後繼充分性與刪邊 weak bisimulation；接續義務為指定 grammar、幾何 residual 與同一染色 fibre 匹配。 |
+| 2026-10-11／提案形成 | [強迫同色與閉環一致](c5_forcing_transport_conjectures.md)明確化 F 的有界介面證書與 Z 的零邊數不增修復；當輪只整理提案，兩項均未初驗。 |
+| 2026-10-13／域外構造與原域收窄 | [強迫異色](c5_forced_inequality_transport.md)證一般距離無界、寬度≤5及不交叉限制，排巢狀 clique／割點接力作原 critical 來源；下一入口收窄至固定 β 的非 clique 介面。 |
+
+來源投影階數與精確接合上界及跨線整理見
 [全線進展與高階假設](c5_research_synthesis.md)，實際重播範圍見專題報告。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。

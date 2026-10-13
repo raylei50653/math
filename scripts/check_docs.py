@@ -108,6 +108,46 @@ def check_handoff(text: str) -> list[str]:
     return errors
 
 
+def check_guide_progress(text: str, label: str) -> list[str]:
+    """Check the small handoff summary, without interpreting research claims."""
+    visible = prose(text)
+    heading = re.search(r"^## 最新進度\s*$", visible, re.MULTILINE)
+    if not heading:
+        return [f"{label}: missing 最新進度 handoff summary"]
+    errors = []
+    if len(re.findall(r"^## 最新進度\s*$", visible, re.MULTILINE)) != 1:
+        errors.append(f"{label}: 最新進度 must occur exactly once")
+    if len(visible[:heading.start()].splitlines()) >= 12:
+        errors.append(f"{label}: 最新進度 must start within the first 12 lines")
+    rest = visible[heading.end():]
+    end = re.search(r"^## ", rest, re.MULTILINE)
+    section = rest[:end.start()] if end else rest
+    if len(section.strip().splitlines()) + 1 > 40:
+        errors.append(f"{label}: 最新進度 exceeds 40 lines; link to detailed sections")
+    milestone = re.search(r"^### 近期里程碑\s*$", section, re.MULTILINE)
+    summary = section[:milestone.start()] if milestone else section
+    for field in ("階段／生命週期", "最近研究更新", "上次完成", "目前停止點", "下一步", "接手入口"):
+        cells = re.findall(rf"^\|\s*{re.escape(field)}\s*\|\s*(.*?)\s*\|\s*$", summary, re.MULTILINE)
+        if len(cells) != 1 or not cells[0].strip():
+            errors.append(f"{label}: expected one nonempty 最新進度 field: {field}")
+    if not milestone:
+        errors.append(f"{label}: missing 近期里程碑")
+    else:
+        rows = []
+        for line in section[milestone.end():].splitlines():
+            cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+            if not line.startswith("|") or not cells[0] or cells[0] == "日期／階段":
+                continue
+            if all(re.fullmatch(r":?-+:?", cell) for cell in cells):
+                continue
+            rows.append(line)
+        if not 3 <= len(rows) <= 5:
+            errors.append(f"{label}: 近期里程碑 must contain 3–5 entries")
+        if any(not list(links(row)) for row in rows):
+            errors.append(f"{label}: each 近期里程碑 entry must link to its source")
+    return errors
+
+
 def check(root: Path) -> tuple[list[str], int, int]:
     files = [root / "README.md"]
     for directory in ("docs", "paper", "artifacts"):
@@ -145,6 +185,14 @@ def check(root: Path) -> tuple[list[str], int, int]:
             errors.append(f"not directly indexed by STATUS: {target.relative_to(root)}")
     handoff = (root / "docs/HANDOFF.md").read_text()
     errors.extend(check_handoff(handoff))
+    for _, destination in links(handoff):
+        url = urlsplit(destination)
+        if (not url.scheme and not url.netloc and not url.fragment and not url.query
+                and not Path(unquote(url.path)).is_absolute()
+                and unquote(url.path).endswith("_guide.md")):
+            target = root / "docs" / unquote(url.path)
+            if target.exists():
+                errors.extend(check_guide_progress(target.read_text(), str(target.relative_to(root))))
     return errors, len(files), count
 
 
@@ -154,7 +202,7 @@ def main() -> int:
         print("\n".join(errors))
         print(f"FAIL: {len(errors)} errors ({files} Markdown files, {count} local links)")
         return 1
-    print(f"OK: {files} Markdown files, {count} local links; anchors, index, handoff checked")
+    print(f"OK: {files} Markdown files, {count} local links; anchors, index, handoff, guide progress checked")
     return 0
 
 

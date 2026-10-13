@@ -1,6 +1,29 @@
 # C₅ class 兩點重疊研究導覽
 
-更新：2026-10-02。研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見
+## 最新進度
+
+現況核對：2026-10-13；本次只整理入口，未新增研究結論。
+
+| 欄位 | 現況 |
+| --- | --- |
+| 階段／生命週期 | 指定兩核心 repair 分類與局部密封替換已形式化；任意大小來源族已有充分規則，全部代表必要分類仍 OPEN。 |
+| 最近研究更新 | 2026-10-08：[Phase B](c5_phase_b_common_lemmas.md#41-b-rs完整介面等價的反覆密封上下文定理)採納密封 relation／同框族接口；[具名 Lean 實例](lean_named_repair.md)為 10-02。 |
+| 上次完成 | D₁₃ 來源族保完整 J/P、全部可用框、十五組 repairs 及 r*=4；兩十五點核心指定兩框的 J/P、W／C 已 Lean 化，來源族及 disk 框仍屬紙面／Python。 |
+| 目前停止點 | 加入 D₁₃ 後的其他局部四接點實現、統一結構條件、必要分類與改寫完備性仍 OPEN；D₁₃ 具名來源附件及全部可用框尚未端到端形式化。 |
+| 下一步 | 研究加入 D₁₃ 後的局部四接點實現或統一條件；形式化接續具名附件與替換介面，保原 U 的 J／指定框 P，disk 框可用性另查。 |
+| 接手入口 | [精確停止點 §3](#3-精確停止點與下一個窄問題) → [D₁₃ 來源族](c5_two_vertex_repair_caps.md)、[NamedRepair](lean_named_repair.md)與 [SealedFourPort](lean_sealed_four_port.md)；重播見 [§4](#4-閱讀與重播入口)。 |
+
+### 近期里程碑
+
+| 日期／階段 | 進展與來源 |
+| --- | --- |
+| 2026-09-30／共同 repair | 完整 rejector witnesses／覆蓋的充要 lemma，及原接線、密封消去與保框證書的來源充分條件完成；全部代表未分類。[共同 lemma](c5_two_vertex_common_repair.md)、[來源充分條件](c5_two_vertex_repair_sources.md) |
+| 2026-09-30／D₁₃ | 補片、私有路徑、輪環、偶長雙扇後，D₁₃ 給舊縮減皆無起點的任意大小 R127／R167 族及新充分規則；完整框族與 repairs 保留。[D₁₃](c5_two_vertex_repair_caps.md) |
+| 2026-10-02／Lean | 抽象判準、D₁₃ 完整四接點密封替換、兩核心指定框 repair 分類完成普通 Lean 證明；disk／任意大小來源族仍未形式化。[CommonRepair](lean_common_repair.md)、[SealedFourPort](lean_sealed_four_port.md)、[NamedRepair](lean_named_repair.md) |
+| 2026-10-02／階數初驗 | 132 來源有20個五階，紙面 repair 階數受來源投影階數上界控制；未新搜 class pair。[關係階數](c5_relation_arity.md) |
+| 2026-10-08／接口採納 | 完整具名 relation、sealed ownership、同可用框族統一 J/P 與 repair 傳遞；多步操作另欠合法性、後繼及完整 fibres 匹配。[Phase B](c5_phase_b_common_lemmas.md) |
+
+研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見
 [STATUS](STATUS.md)，共通規則見 [DOCUMENTATION](DOCUMENTATION.md)。
 
 ## 1. 目標與範圍

@@ -1,41 +1,31 @@
 # Kempe／重接／計數與策略導覽
 
-更新：2026-10-13（[N2-BRIDGE](c5_excess_two_n2_bridge.md)補齊932並排除原E4契約的廣義N2；E-ARC2仍剩N1與相鄰roots的0／1／2 mixed來源，無新Lean）。本頁維護本線現況；證明及實際重播範圍見各報告。
-雙long剩餘t=2／3由原leaf K₅／K₃,₃與接線容量排除；基本介面的19,229份共同可行
-投影保留，沒有被當成原圖實現。來源排除採納加強版，有限目標仍not triggered。
-2026-10-12新增[共面識別正規形](c5_cofacial_normal_form.md)：最小目錄外來源可選成不增內點的
-簡單近三角化圖，接外部定理得到 `K≤12=K≤5`；
-後續 [K15-SPHERE](c5_k15_sphere.md) 已得 `K≤15=K≤5`；[C8原接點與剝層](c5_c8_peeling.md)另證h=3⇒k≥19；一般主命題仍 OPEN。
-其後[最小來源度數界](c5_saturation_degree_bound.md) 證邊界度數至少四、內部至少五、
-至少六個五度內點；五度可縮減性仍 OPEN，已有[三份有界任務](tasks/c5_degree5_link_tasks.md)。
-同日 [全內部五輪與任務交付](c5_degree5_link_reductions.md) 已保證 induced W5
-全部位於原內部；A／B／C 分別完成位置契約、固定域重接與 132² cap 閉合。
-後續 [W5 完整關係縮減](c5_w5_marked_relation.md) 已由五個合法商圖的完整拉回
-重建 H／G 全部 fibres；普通正聯集縮減及 annulus 小代表仍 OPEN。
-同日[私人雙環排除](c5_w5_private_rank2.md)已在完整最小來源前提下證任取合法W5的
-私人圈秩至少三；四個嚴格annulus代表只保完整Σ、不保R³。
-同日[圈秩三contractible排除](c5_w5_private_rank3_contractible.md)接essential分支，
-曾將任取合法W5的私人圈秩提高為至少四；後續[圈秩四兩支排除](c5_w5_private_rank4.md)再提高至至少五。一般小代表與主命題仍OPEN。
-[完整外圈限制](c5_neartri_boundary_collar.md) 再排二邊 crosscut，將 933／941 的
-五度內點下界均提高為九；941 的具名 C7 上界已由共同計數恆等式排除，兩者均必 h≥3。
-2026-10-13 [跨原邊缺陷搬運](c5_cross_edge_kempe.md) 已證同輪完整 lift 三元組、
-相鄰五度中心的共同缺陷雙射及單步 Kempe 逃逸判準；普遍逃逸與來源排除仍 OPEN。
+## 最新進度
+
+現況核對：2026-10-13；本次只整理入口，未新增研究結論。
+
+| 欄位 | 現況 |
+| --- | --- |
+| 階段／生命週期 | 主攻 E-ARC2 仍在證明階段；N2 的原 E4 契約已收尾。no4ct／C8、W5 縮減與跨邊出口並行，尚未完成一般來源排除。 |
+| 最近研究更新 | 2026-10-13：N2-BRIDGE、no4ct／C8、W5 圈秩四及跨原邊定理；另封存五組隔離 audit，最新 C6 完成指定 gadget 域，見[本批現況](history/2026-10-13-multi-commit-status.md)。日期取原研究輪次。 |
+| 上次完成 | no4ct 得 `K≤15=K≤5`、`h=3⇒k≥19`；N2-BRIDGE 排原 E4 契約的廣義 N2；W5 在目錄外來源先最小內點、再最大邊數前提下，任取合法 W5 得 `ρ≥5`。 |
+| 目前停止點 | E-ARC2 剩 N1／相鄰 roots，基本 LL-CUT 未獨立證成；no4ct 的 m≥11 三型來源排除與 h≥4 分別 OPEN，剝層前提不自動傳遞；W5 一般縮減／小代表、一般 932／933／941 及 `K∞=K≤5` 仍 OPEN。 |
+| 下一步 | 依 §3 各原契約接續：E-ARC2 的 N1／相鄰 m=0／1／2；no4ct 用同一 H 的原面／separator／full lifts 收緊八項，h=4 的 C9 84 項另列；W5 找保完整 Σ 且嚴格減少內點的合法代表。 |
+| 接手入口 | 先查本頁 §3；E-ARC2 讀 [N2 父覆蓋](c5_excess_two_n2_bridge.md#3-接回父分類與剩餘來源)，no4ct 讀 [交接](tasks/c5_no4ct_handoff.md)，W5 讀 [保存契約與排除鏈](c5_w5_marked_relation.md#0-保存強度與私人圈秩覆蓋鏈)，跨邊讀 [精確定理](c5_cross_edge_kempe.md)。 |
+
+### 近期里程碑
+
+| 日期／階段 | 進展與來源 |
+| --- | --- |
+| 2026-10-12／正規形與五度入口 | [共面正規形](c5_cofacial_normal_form.md)接外部定理得 `K≤12=K≤5`；[全內部五輪](c5_degree5_link_reductions.md)建立合法 W5 位置及 A／B／C 指定交付，一般縮減尚未證成。 |
+| 2026-10-13／有界覆蓋與 C8 接入 | [K15](c5_k15_sphere.md)將有界等式提高至十五內點；[no4ct 交接](tasks/c5_no4ct_handoff.md)接入替代鏈與 C8，保留 `s<k`、`N≤k+5`，僅 h=3 得 k≥19，下一步轉 m≥11 三型。 |
+| 2026-10-13／W5 下界提高 | [圈秩四兩支](c5_w5_private_rank4.md)接此前 ρ≤3 排除，於完整最小來源前提下提高至 `ρ≥5`；來源縮減或小代表存在仍 OPEN。 |
+| 2026-10-13／N2 指定分支收尾 | [N2-BRIDGE](c5_excess_two_n2_bridge.md)補完整 mask 932，接九格覆蓋而排原 E4 契約的廣義 N2；停止點移到 E-ARC2 的 N1／相鄰分支，一般 932 未排除。 |
+| 2026-10-13／跨邊共同資料 | [缺陷搬運](c5_cross_edge_kempe.md)建立同輪完整 lift 雙射、相鄰中心搬運及一步逃逸判準；普遍逃逸與來源排除仍 OPEN。 |
+
+本頁維護本線現況；證明及實際重播範圍見各報告。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
-
-本批成果及D至D₅稽核的發布驗證見[發布紀錄](history/2026-10-04-c5-parallel-progress-publish.md)；
-新checkout的凍結快照／完整輸出先依[封存還原說明](../audits/README.md)還原。
-U2–U4與後續M4／M5交付證據的整批發布見[2026-10-08紀錄](history/2026-10-08-core44-batch-publish.md)。
-三點弧的四份相連報告、固定證書及本輪重播見[2026-10-11整理發布紀錄](history/2026-10-11-three-point-arc-publish.md)。
-
-U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定前提化約與完整必要域，
-上游分類／拓撲信任及來源正控制未觸發界線保留。
-[M3 fresh驗證](../audits/2026-10-07-m3-fresh-checkout/REPORT.md)經
-[監督補件](../audits/2026-10-07-merge-supervision/REPORT.md)驗收具名presence／文件hash例外；
-原strict FAIL及歷史whitespace保持原紀錄，不推升數學或Lean結論。
-最終文件版本的fresh provenance診斷及本地交付見
-[M4-L報告](../audits/2026-10-07-m4-local/REPORT.md)與
-[發布紀錄](history/2026-10-07-m4-local-delivery.md)；遠端驗收及可合併判定仍分開。
 
 ## 1. 目標與範圍
 
@@ -51,6 +41,7 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
+| 新封存的 no4ct／C8 隔離成果 | 三支 W5 前提修復、C8 零端部排除、h=4 的 induced C9 與 84 項殘留；C6 補完同側、僅原 C8 pins、a−d≤5 的 gadget 域，全部與八份 U 非空相交。量詞為 ∀G∀U∃row(G,U)，八項來源與主命題仍 OPEN | [五包成果、前提、重播及接續入口](history/2026-10-13-multi-commit-status.md) |
 | 無四色定理前提路線／交接 | 零內點cap下降、s<k的C4修復及直接球面覆蓋給K≤15=K≤5；完整外圈／C8已接入三支。共同h≥3,n5≥9；932必h≥4,n5≥10；105查詢排97留原八項，h=3⇒k≥19。無界三支仍OPEN，下一入口為m≥11第一層三型與另列h≥4 | [停止點、證據與下一窄任務](tasks/c5_no4ct_handoff.md) |
 | 共面識別／聯集封閉正規形 | global 最小內點、最大邊數來源的共面完備及簡單三角面正規形；接文獻 Cor20 得一般 disk 的 K≤12=K≤5。132 witnesses／8778 unions／十候選及完整 fibres 重播；十三至十五內點已由 K13／K14／K15 排除；十六內點以上與完整關係重接仍 OPEN，未 Lean 化 | [權威入口、證明及重播](c5_cofacial_normal_form.md) |
 | 近三角化完整外圈 | h≤2全部排除；h=3的70查詢已排62、留8。小cap／無內弦與cofacial識別新排c16/c32-941；可逆Kempe計數使c15/c20-941各由173降至171列。仍只採納h≥3、n5≥9；同圖原面／跨split實現OPEN，未Lean化 | [完整外圈](c5_neartri_boundary_collar.md)、[C8-STRUCT精確結果](../audits/2026-10-13-c8-struct-243a125/REPORT.md) |
@@ -517,6 +508,20 @@ contact附件／短face及其他骨架均不新增排除，W933-129整份骨架�
 與 K∞=K≤5 未證，接手點見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
 
 ## 4. 閱讀與重播入口
+
+本批成果及D至D₅稽核的發布驗證見[發布紀錄](history/2026-10-04-c5-parallel-progress-publish.md)；
+新checkout的凍結快照／完整輸出先依[封存還原說明](../audits/README.md)還原。
+U2–U4與後續M4／M5交付證據的整批發布見[2026-10-08紀錄](history/2026-10-08-core44-batch-publish.md)。
+三點弧的四份相連報告、固定證書及本輪重播見[2026-10-11整理發布紀錄](history/2026-10-11-three-point-arc-publish.md)。
+
+U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定前提化約與完整必要域，
+上游分類／拓撲信任及來源正控制未觸發界線保留。
+[M3 fresh驗證](../audits/2026-10-07-m3-fresh-checkout/REPORT.md)經
+[監督補件](../audits/2026-10-07-merge-supervision/REPORT.md)驗收具名presence／文件hash例外；
+原strict FAIL及歷史whitespace保持原紀錄，不推升數學或Lean結論。
+最終文件版本的fresh provenance診斷及本地交付見
+[M4-L報告](../audits/2026-10-07-m4-local/REPORT.md)與
+[發布紀錄](history/2026-10-07-m4-local-delivery.md)；遠端驗收及可合併判定仍分開。
 
 A₄／B₄已由[D₅固定快照與獨立稽核](../audits/2026-10-04-task-d5/REPORT.md)驗收：
 A逐身份16／20及全部保留support／schedules不變；B只登記W933-129的

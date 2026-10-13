@@ -1,9 +1,27 @@
 # 全 degree-4／block 化約系列導讀
 
-文件整理：2026-09-23；研究依據截至 2026-09-22。本頁不新增研究結論。
+## 最新進度
+
+現況核對：2026-10-13；本次只整理入口，未新增研究結論。
+
+| 欄位 | 現況 |
+| --- | --- |
+| 階段／生命週期 | 指定全 degree-4 分支已完成：接受全部 T4 的 C5 disk minimal q-obstruction，所有有效內點在 obstruction 中的完整 degree=4；一般出口及主命題仍 OPEN。 |
+| 最近研究更新 | 2026-09-18：[R9 K4 排除與全 degree-4 合成](c5_k4_blocks.md)。後續文件整理不改此成果日期。 |
+| 上次完成 | 任意內點數下 `Σ(G)=Ω\{q}`；依賴紙面 block／minor 化約、外部 degree-choosability 定理及 Python 有限證書，未完成整套 Lean 形式化。 |
+| 目前停止點 | 本分支在上述前提內無殘留；一般單側／共同出口、候選 A 與 `K∞=K≤5` 未證，唯一 degree-5 另有來源 minor 義務。 |
+| 下一步 | 已完成範圍保留作依賴；接續時從 [degree-5 導覽](c5_degree5_guide.md) 的共同關係與來源 minors 進入，不能把整圖 degree-4 結論直接套到分量。 |
+| 接手入口 | 先讀 [R9 合成 §4](c5_k4_blocks.md#4-合成全-degree-4-的單缺失結論)；依賴見本頁 §2，checker／證書與重播見 §5。 |
+
+### 近期里程碑
+
+| 日期／階段 | 進展與來源 |
+| --- | --- |
+| 前置：樹與 triangle | [樹核心](c5_tree_cores.md)、[單 triangle](c5_triangle_forks.md)及[兩 triangle](c5_two_triangle_blocks.md)完成各自單缺失端，任意 block tree 尚待合成。 |
+| 2026-09-17／R7–R8 | [長環 root](c5_odd_cycle_roots.md)擴為十一介面；[多長環](c5_multi_odd_cycles.md)以歸納及終止論證排除任意有限長環，含 K4 的缺口保留。 |
+| 2026-09-18／R9 | [K4 排除與合成](c5_k4_blocks.md)補齊最後 block 類別，指定全 degree-4 分支完成；後續轉向[唯一 degree-5 介面](c5_degree5_interfaces.md)。 |
+
 研究線標記見 [HANDOFF](HANDOFF.md)，全專案索引見 [STATUS](STATUS.md)。
-本系列從 minimal obstruction 的 list 翻譯，經樹、triangle、長奇環與 K4，
-合成全 degree-4 的單缺失結論；後續唯一 degree-5 見 [R 系列導讀](c5_degree5_guide.md)。
 
 ## 1. 完成的結論與完整前提
 

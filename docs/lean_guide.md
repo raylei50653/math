@@ -1,7 +1,27 @@
 # Lean 形式化導覽
 
-更新：2026-10-04。已整合 LC 的179個 ES 代表 soundness 證書；
-具名 repair 普通證明及其他項目的證據範圍沿用各報告。
+## 最新進度
+
+現況核對：2026-10-13；本次只整理入口，未新增研究結論。
+
+| 欄位 | 現況 |
+| --- | --- |
+| 階段／生命週期 | 可重用普通定理、具名 repair 實例及固定 LC soundness 證書已有完成項；來源替換實例、枚舉 completeness 與拓撲層仍待形式化。 |
+| 最近研究更新 | 2026-10-04：[LC 固定 179 個 ES 代表的 soundness 證書](c5_excess_two_lean_certificates.md)完成並整合；本次入口整理不改研究日期。 |
+| 上次完成 | LC 179／179 證書與公理審計完成；只證具名圖及其有限條件為真，不證枚舉完整性。普通 theorem 與 `native_decide` 信任分開。 |
+| 目前停止點 | LC 尚未匯入預設 Math.lean／CI；兩核心的 D₁₃ 具名替換尚未接到 J／P 保持；Gallai、來源 minors、disk topology 及一般枚舉 completeness 未形式化。 |
+| 下一步 | 接續時固定兩核心內 D₁₃ 的具名附件，接到密封替換定理，證原 U 上的 J 與指定框 P 保持；任意層數圖結構另行處理。 |
+| 接手入口 | [NamedRepair](lean_named_repair.md)→ [D₁₃ 密封替換](lean_sealed_four_port.md)；LC 範圍見[證書報告](c5_excess_two_lean_certificates.md)，顯式 build／axiom audit 見本頁 §4。 |
+
+### 近期里程碑
+
+| 日期／階段 | 進展與來源 |
+| --- | --- |
+| 2026-09-18／共同接合 | [RootInterfaces](lean_root_interfaces.md)提供十五個普通 theorem，支援完整 root 關係接合；來源 minor／disk 層未形式化。 |
+| 2026-09-28／原圖到 lists | [BoundaryDegree](lean_boundary_degree.md)以十三個普通 theorem 接通原圖延拓、degree 拆分與拒絕迫緊，lists 保留實際 attachments。 |
+| 2026-10-02／具名 repair | [CommonRepair](lean_common_repair.md)、[SealedFourPort](lean_sealed_four_port.md)及[NamedRepair](lean_named_repair.md)接通抽象判準、D₁₃ 外部關係與兩核心實例；來源替換接線仍待補。 |
+| 2026-10-04／固定來源證書 | [LC](c5_excess_two_lean_certificates.md)完成 179 張 soundness 證書；顯式建置、公理與未涵蓋 completeness／topology 分別記錄。 |
+
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
 
