@@ -1,0 +1,115 @@
+{
+  "base": "acd2b1beea6c909edade565a00eeeeac05d2b3a7",
+  "checks": [
+    {
+      "check": "primary normal",
+      "status": "PASS",
+      "log": "logs/check.log",
+      "sha256": "62154beba5ffca58b8b334fc08281049a7ab0880df8f295a12b29f6cb9870a6d"
+    },
+    {
+      "check": "primary seed17",
+      "status": "PASS",
+      "log": "logs/check-seed17.log",
+      "sha256": "62154beba5ffca58b8b334fc08281049a7ab0880df8f295a12b29f6cb9870a6d"
+    },
+    {
+      "check": "primary final",
+      "status": "PASS",
+      "log": "logs/final-check.log",
+      "sha256": "62154beba5ffca58b8b334fc08281049a7ab0880df8f295a12b29f6cb9870a6d"
+    },
+    {
+      "check": "independent normal",
+      "status": "PASS",
+      "log": "logs/independent.log",
+      "sha256": "5494480b62a167408b71941f6641426815e5938562026a5826a21adcb73f1161"
+    },
+    {
+      "check": "independent seed17",
+      "status": "PASS",
+      "log": "logs/independent-seed17.log",
+      "sha256": "5494480b62a167408b71941f6641426815e5938562026a5826a21adcb73f1161"
+    },
+    {
+      "check": "generation replay",
+      "status": "PASS",
+      "log": "logs/generation-replay.log",
+      "sha256": "970ceb3175d08ed205aa7cc733ccec45bb5a0d4e6b85604c2b335224ac1d6a98"
+    },
+    {
+      "check": "negative",
+      "status": "PASS",
+      "log": "logs/negative.log",
+      "sha256": "a516ce3f53ed2e0b13b1d39286f888868d055413b5a8edd42afc29d13632863e"
+    },
+    {
+      "check": "empty fibre calibration",
+      "status": "PASS",
+      "log": "logs/calibration.log",
+      "sha256": "202179edd968c4b2ab5756947f9d80b3789fcc7adce967d1702c410db3610798"
+    },
+    {
+      "check": "formal docs",
+      "status": "PASS",
+      "log": "logs/final-check-docs.log",
+      "sha256": "5e1579343219fde5de266bd779f22fdc24ad7a5b63c6c24a92f38c7ebb9e6e21"
+    },
+    {
+      "check": "formal DocGraph",
+      "status": "PASS",
+      "log": "logs/final-docgraph-formal.log",
+      "sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb"
+    },
+    {
+      "check": "Lean regression",
+      "status": "PASS",
+      "log": "logs/lake-build.log",
+      "sha256": "a1edb803aaf587051f354b106bf62231349e9e76a2886d5aa07b4953a2bf6dda"
+    },
+    {
+      "check": "rank4-C integrity",
+      "status": "PASS",
+      "log": "logs/rank4-contractible-verify.log",
+      "sha256": "70eee7d26bafc867c2c84c85ae0bd2bdeb456203bfad447837ae687473b565c7"
+    },
+    {
+      "check": "rank4-C primary",
+      "status": "PASS",
+      "log": "logs/rank4-contractible-primary.log",
+      "sha256": "ce7bdf11efb147ea1069055bb9a62ddd93b55a4c45850f94a649e94542520926"
+    },
+    {
+      "check": "rank4-C independent",
+      "status": "PASS",
+      "log": "logs/rank4-contractible-independent.log",
+      "sha256": "dab5c2f5db7ebcab7370ec87e33dbdc5205e84b6f239d1b70308dd7accdc351d"
+    },
+    {
+      "check": "rank4-E integrity",
+      "status": "PASS",
+      "log": "logs/rank4-essential-seal.log",
+      "sha256": "710bbc44b3c3f112b2435a95b6e8bd004086244c4b0069b096e474b61378d1d4"
+    }
+  ],
+  "git_diff_check": "PASS",
+  "global_docgraph": {
+    "status": "FAIL existing",
+    "errors": 62,
+    "identical_error_lines_to_existing_base": true,
+    "log": "logs/docgraph-global.log",
+    "baseline": "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/base-docgraph-global.log"
+  },
+  "new_Lean_theorem": false,
+  "commit_push": false,
+  "paper_C8_bound": "h=3 implies k>=16",
+  "claimed_general_bound": "K<=14=K<=5",
+  "combined_W5_private_rank_bound": 5,
+  "remaining_open": [
+    "K<=15",
+    "K infinity",
+    "general rho>=5 exclusion",
+    "unbounded 933/941",
+    "E-ARC2 remaining classes"
+  ]
+}

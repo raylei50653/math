@@ -24,6 +24,7 @@
 | Embedding 到 grammar | 固定 C5＋K3 接線的紙面 topology 論證依賴 Jordan–Schoenflies 等事實；embedding 抽取與 topology soundness 未 Lean 化 | [topology](topology_completeness.md) |
 | 固定 relation 庫／pp | 固定 grammar 的 87 states 與完整 relation 查詢保存；pp 求值器屬 Python，87 不等於一般 cell catalogue 的 132 | [relation 庫](boundary_relations.md)、[pp](pp_relations.md)、[fan](fan_pentagon.md) |
 | Cell 枚舉 | R1／SYM／prefix／DFS／bitmask／integer viable 的 Lean 鏈及外部信任已明列；k=6、7 重現只是有界證據 | [enumerator](c5_cell_enumerator.md) |
+| C₅ 組合與結構分類 | 完整 1,023 個 raw masks 分成 135 個 D₅ 類；必要條件 153→142、已知 132／24 類與 OPEN 10／2 類分層。Burnside、全部 witness 與原證書重播；兩側對齊交集覆蓋 1,023 不等於單側實現 | [圖譜、資料與重播](c5_combinatorial_atlas.md) |
 | Cell 翻邊／編碼 | 四格完整關係給保 Σ 充要條件；五格加五格座標使旋轉及加邊界弦成 bit 操作。同 Σ、同操作反例及同逐列計數反例排除一般直接更新；指定 flip 可用四十位元四格 support，迭代仍保存實圖／full lifts；未 Lean 化 | [翻邊引理、工具與編碼](c5_cell_flip.md) |
 | Cell 翻邊分類 | 132 份原代表作三步實圖 BFS：20,531 圖、29 組距離特徵，完整 132×132 有向距離表；1,179 個初始翻邊全改 Σ。120 份一步到較小目錄代表的關係，W5 要兩步；限指定代表與嵌入規則，未得一般縮減 | [距離與分類](c5_cell_flip_classification.md) |
 | K₄ 非平面障礙偵測 | K₄＋同一外部分量四接點輸出原圖 K₅ minor；Atlas 161／237、平面零誤報，603 命中；漏判含無 K₅ minor 及無字面 K₄ 兩類，不能取代完整判定，未 Lean 化 | [效果、證書與漏判分類](k4_nonplanarity.md) |
@@ -57,6 +58,10 @@ Topology 論證只處理原報告的接線圖，不能代表任意較大 patch�
 attachment normal form，再讀 topology 的精確範圍。枚舉的算法、檢查命令與
 信任拆分以 enumerator 報告為準。所有 artifacts 保留原範圍與來源；
 本次沒有重新生成 catalogue，也未重跑舊 local-closure 實驗或 Lean axiom audit。
+
+組合分類由[圖譜入口](c5_combinatorial_atlas.md)展開原始 masks、對稱轉換、必要條件、
+witness 與描述性結構；`.venv/bin/python scripts/c5_combinatorial_atlas.py --check`
+重算並逐 byte 比對全部圖譜產物，不修改 production Σ 或原證書。
 
 跨線初驗以 `python3 scripts/c5_relation_arity_audit.py --check` 重播132份既有
 關係、20個五階原圖及六個具名接合；詳見[紀錄](history/2026-10-02-c5-research-synthesis.md)。

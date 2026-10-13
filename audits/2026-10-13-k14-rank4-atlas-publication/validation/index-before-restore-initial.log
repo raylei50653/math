@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/tmp/math-progress-index-vod6e34i/audits/2026-10-13-k14-rank4-atlas-publication/verify.py", line 70, in <module>
+    check()
+    ~~~~~^^
+  File "/tmp/math-progress-index-vod6e34i/audits/2026-10-13-k14-rank4-atlas-publication/verify.py", line 54, in check
+    raw = gzip.decompress((REPO / blob["path"]).read_bytes())
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 777, in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/math-progress-index-vod6e34i/audits/.archive/blobs/79bbe51083318aa22797d5ca1a28cc347bc38a6871c7cf35e057863de3f785fc.gz'

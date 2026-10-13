@@ -1,0 +1,53 @@
+{
+  "exported_staged_files": 239,
+  "additional_support_files": 6,
+  "archived_paths_restored": 11,
+  "inherited_source_paths_restored": 1,
+  "raw_bytes_verified": true,
+  "commands": [
+    {
+      "name": "index-before-restore",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-k14-rank4-atlas-publication/verify.py"
+      ],
+      "exit_code": 0,
+      "log": "index-before-restore.log",
+      "scope": "fresh actual Git index export including required archive and inherited source dependencies"
+    },
+    {
+      "name": "index-after-restore",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-k14-rank4-atlas-publication/verify.py"
+      ],
+      "exit_code": 0,
+      "log": "index-after-restore.log",
+      "scope": "fresh actual Git index export including required archive and inherited source dependencies"
+    },
+    {
+      "name": "index-k14-delivery",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-k14-sphere-acd2b1b/verify.py"
+      ],
+      "exit_code": 0,
+      "log": "index-k14-delivery.log",
+      "scope": "fresh actual Git index export including required archive and inherited source dependencies"
+    },
+    {
+      "name": "index-essential-delivery",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank4-essential-acd2b1b/verify.py"
+      ],
+      "exit_code": 0,
+      "log": "index-essential-delivery.log",
+      "scope": "fresh actual Git index export including required archive and inherited source dependencies"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | --- | --- |
 | [研究線入口](docs/HANDOFF.md) | 新對話先讀；選擇研究線導覽，進行中以 tag 標記 |
 | [完整文件索引](docs/STATUS.md) | 查找專題報告、短狀態、後續關係與歷史 |
+| [C₅ 組合與結構分類圖譜](docs/c5_combinatorial_atlas.md) | 1,023 個原始 masks／135 個 D₅ 類的可重播分類與五種視圖；24 類已有 disk witness、2 類 OPEN，保留原 Σ 與接合對齊 |
 | [Weak-deletion 開放葉 ledger](docs/c5_open_leaf_ledger.md) | 共鄰 P₃ 固定具名目錄的葉數、關閉事件、階段趨勢與每日觀測入口 |
 | [C₅ 全線進展與高階假設](docs/c5_research_synthesis.md) | 跨線成果、同源關係／臨界預算／幾何框架、三個可反駁假設及階數初驗 |
 | [Phase B 共通引理候選分析](docs/c5_phase_b_common_lemmas.md) | U1–U4／Weak-deletion、Excess／Mixed／No-mixed、Relation／Repair／State 的精確候選、前提、反例、證明義務與分支效益；條件容量推廣與小型重播 |

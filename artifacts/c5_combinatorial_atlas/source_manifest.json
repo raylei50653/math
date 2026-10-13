@@ -1,0 +1,47 @@
+{
+ "dependency_pin": "requirements.txt",
+ "inputs": {
+  "artifacts/c5_cells/cells.json": {
+   "bytes": 103215,
+   "sha256": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8"
+  },
+  "artifacts/c5_cells/kempe_screen.json": {
+   "bytes": 123724,
+   "sha256": "da327ab0ed0e9d46b82f8127e6ee26217667541a1edff5923852a78ee21c8083"
+  },
+  "requirements.txt": {
+   "bytes": 115,
+   "sha256": "fc56d59d2f7333da27a4c66c04bffc5a2cc493ef928e2d997c039bddfbdf5d60"
+  },
+  "scripts/boundary_relations.py": {
+   "bytes": 5522,
+   "sha256": "6f69347417fcc12775ecd0c5edf653b2ade43c664d0aac1da623b41eecc7ee25"
+  },
+  "scripts/c5_cell_enumerator.py": {
+   "bytes": 17859,
+   "sha256": "456dc759f0038a9c4455fcd12df6d37e14edca0a2411e32af585efedb4de6e6e"
+  },
+  "scripts/c5_combinatorial_atlas.py": {
+   "bytes": 30107,
+   "sha256": "9f8cb29572058e2c88d3b66d7e761e760b4762444ac7f5b2c7aefc5c09995982"
+  },
+  "scripts/c5_combinatorial_atlas_views.py": {
+   "bytes": 33429,
+   "sha256": "d6fb0830ce79e87fa62d36359ff0cf71b00c3078d86503f0b760bfd5138501e9"
+  },
+  "scripts/c5_kempe_screen.py": {
+   "bytes": 9006,
+   "sha256": "033fd7d6d2ff673ca1f7b78b8958b729351942092d58e027ea7d6b8713560a70"
+  }
+ },
+ "legacy_evidence_policy": "read only; original cells.json and kempe_screen.json never regenerated",
+ "networkx_version": "3.5",
+ "reproduction": [
+  "python scripts/c5_combinatorial_atlas.py --write",
+  "python scripts/c5_combinatorial_atlas.py --check"
+ ],
+ "schema": "c5-atlas-source-manifest-v1",
+ "source_base_commit": "acd2b1beea6c909edade565a00eeeeac05d2b3a7",
+ "source_base_note": "Snapshot provenance; replay gates are file hashes, not current branch identity.",
+ "source_base_repository": "https://github.com/raylei50653/math"
+}

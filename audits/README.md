@@ -1,5 +1,11 @@
 # 稽核封存與還原
 
+2026-10-13 最新整理：[K≤14、W5 圈秩四與組合圖譜](../docs/history/2026-10-13-k14-rank4-atlas-publish.md)。
+三份原 audit 的185個檔案保持原 bytes；11個含歷史 whitespace 的原路徑及7個
+gzip blobs 追加封存，舊 records 不變。還原後可執行原數學 checker；
+[本次保存核對](2026-10-13-k14-rank4-atlas-publication/verify.py)亦可直接核對封存 bytes。
+Contractible 原 verify 的 HEAD／空 index 限制保留原隔離語境，發布後不作為現行 gate。
+
 2026-10-13 最新整理：[十三內點完整外圈與 W5 私人圈秩至少四](../docs/history/2026-10-13-k13-rank3-publish.md)。
 兩份隔離原包、frozen inputs、原 seal 與失敗紀錄按原 bytes 保存；
 K13 的17個原路徑及13個 gzip blobs 追加到既有封存，舊 records 不變。

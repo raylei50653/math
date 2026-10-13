@@ -1,0 +1,228 @@
+{
+  "authority": "local isolated audit; no commit push PR merge",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "expected": 0,
+      "log": "logs/final-check-docs.log",
+      "name": "final-check-docs",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "expected": 0,
+      "log": "logs/final-docgraph-formal.log",
+      "name": "final-docgraph-formal",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "expected": 1,
+      "log": "logs/final-docgraph-global.log",
+      "name": "final-docgraph-global",
+      "returncode": 1
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "expected": 0,
+      "log": "logs/final-whitespace.log",
+      "name": "final-whitespace",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/check_generated_artifacts.py"
+      ],
+      "expected": 0,
+      "log": "logs/storage-temporary-index.log",
+      "name": "storage-temporary-index",
+      "returncode": 0
+    }
+  ],
+  "concurrent_worktree": "validation/concurrent-worktree.json",
+  "global_docgraph_exact_base_match": true,
+  "navigation": "shared source routing reviewed and left at BASE; new independent report only",
+  "other_checks": {
+    "base_check_docs": {
+      "log": "logs/base-check-docs.log",
+      "returncode": 0
+    },
+    "base_global_docgraph": {
+      "errors": 62,
+      "log": "logs/base-docgraph-global.log",
+      "returncode": 1
+    },
+    "certificate_metadata": {
+      "receipt": "logs/certificate-metadata.json",
+      "returncode": 0
+    },
+    "independent_domain_and_geometry": {
+      "receipt": "review/domain-review.json",
+      "returncode": 0
+    },
+    "independent_normal": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank4-contractible-acd2b1b/independent/check.py"
+      ],
+      "log": "logs/independent-replay.log",
+      "returncode": 0
+    },
+    "independent_seed17": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank4-contractible-acd2b1b/independent/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "log": "logs/independent-replay-seed17.log",
+      "returncode": 0
+    },
+    "lake_build": {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "log": "logs/lake-build.log",
+      "new_Lean_theorem": false,
+      "returncode": 0
+    },
+    "negative_generation_v2": {
+      "log": "logs/negative-generate-v2.log",
+      "prior_harness_failure_retained": "logs/negative-generate.log",
+      "returncode": 0
+    },
+    "negative_replay_seed17": {
+      "log": "logs/negative-replay-seed17.log",
+      "returncode": 0
+    },
+    "primary": {
+      "receipt": "controls/results.json"
+    },
+    "storage_tools_tests": {
+      "command": [
+        ".venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "log": "logs/storage-tests-venv.log",
+      "prior_missing_networkx_failure": "logs/storage-tests.log",
+      "returncode": 0
+    }
+  },
+  "postseal_receipts": {
+    "audit_links": "logs/audit-links.log",
+    "frozen_and_seal_verification": "logs/seal.log"
+  },
+  "raw_large_new_JSON": [],
+  "status": "PASS scoped checks; global DocGraph retains 62 known errors",
+  "storage": {
+    "files": 71,
+    "objects_written_only_to_tmp": true,
+    "paths": [
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/BASE.json",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/CATALOGUE_INPUT.json",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/REPORT.md",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/controls/README.md",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/controls/catalogue-replay.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/controls/catalogue.json",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/controls/catalogue.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/controls/catalogue.py",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/controls/certificate.jsonl.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/controls/check.py",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/controls/normal.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/controls/replay.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/controls/results.json",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/controls/seed17.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/controls/summary.json",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/controls/templates.json.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/artifacts/c5_cells/cells.json",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/audits/2026-10-13-w5-rank3-contractible-50d5474/REPORT.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/audits/2026-10-13-w5-rank3-contractible-50d5474/controls/check.py",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/audits/2026-10-13-w5-rank3-contractible-50d5474/independent/check.py",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/audits/2026-10-13-w5-rank3-contractible-50d5474/independent/negative.py",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/audits/2026-10-13-w5-rank3-contractible-50d5474/structure/ATTACHMENTS.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/audits/2026-10-13-w5-rank3-contractible-50d5474/structure/CORE.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/audits/2026-10-13-w5-rank3-contractible-50d5474/structure/FORMULAS.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/docs/DOCUMENTATION.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/docs/HANDOFF.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/docs/STATUS.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/docs/c5_cofacial_normal_form.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/docs/c5_degree5_link_reductions.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/docs/c5_k13_collar.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/docs/c5_kempe_guide.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/docs/c5_neartri_boundary_collar.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/docs/c5_saturation_degree_bound.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/docs/c5_w5_marked_relation.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/docs/c5_w5_private_rank2.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/docs/c5_w5_private_rank3_contractible.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/docs/c5_w5_private_rank3_essential.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/frozen/docs/c5_w5_three_color_support.md.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/independent/check.py",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/independent/kernels.py",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/independent/negative-results.json",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/independent/negative.py",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/independent/prism-control.json.gz",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/base-check-docs.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/base-docgraph-global.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/certificate-metadata.json",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/docgraph-formal.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/domain-geometry-crosscheck.json",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/final-check-docs.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/final-docgraph-formal.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/final-docgraph-global.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/final-whitespace.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/governance.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/independent-domain.json",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/independent-replay-seed17.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/independent-replay.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/lake-build.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/negative-generate-v2.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/negative-generate.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/negative-replay-seed17.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/storage-tests-venv.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/logs/storage-tests.log",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/review/REVIEW.md",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/review/domain-review.json",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/review/domain_check.py",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/structure/ATTACHMENTS.md",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/structure/CORE.md",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/structure/FORMULAS.md",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/validation/concurrent-worktree.json",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/validation/governance.py",
+      "audits/2026-10-13-w5-rank4-contractible-acd2b1b/verify.py"
+    ],
+    "real_index_unchanged": true
+  }
+}

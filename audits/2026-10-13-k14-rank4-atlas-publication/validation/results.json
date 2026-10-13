@@ -1,0 +1,380 @@
+{
+  "base": "acd2b1beea6c909edade565a00eeeeac05d2b3a7",
+  "checks": [
+    {
+      "name": "k14-primary",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-k14-sphere-acd2b1b/check.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "math-review-k14-primary.log"
+    },
+    {
+      "name": "k14-independent",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-k14-sphere-acd2b1b/independent/compare.py"
+      ],
+      "exit_code": 0,
+      "log": "math-review-k14-independent.log"
+    },
+    {
+      "name": "k14-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-k14-sphere-acd2b1b/independent/negative.py"
+      ],
+      "exit_code": 0,
+      "log": "math-review-k14-negative.log"
+    },
+    {
+      "name": "k14-calibration",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-k14-sphere-acd2b1b/independent/calibration.py"
+      ],
+      "exit_code": 0,
+      "log": "math-review-k14-calibration.log"
+    },
+    {
+      "name": "rank4-contractible-primary",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank4-contractible-acd2b1b/controls/check.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "math-review-rank4-contractible-primary.log"
+    },
+    {
+      "name": "rank4-contractible-independent",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank4-contractible-acd2b1b/independent/check.py"
+      ],
+      "exit_code": 0,
+      "log": "math-review-rank4-contractible-independent.log"
+    },
+    {
+      "name": "rank4-contractible-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank4-contractible-acd2b1b/independent/negative.py"
+      ],
+      "exit_code": 0,
+      "log": "math-review-rank4-contractible-negative.log"
+    },
+    {
+      "name": "rank4-contractible-domain",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank4-contractible-acd2b1b/review/domain_check.py"
+      ],
+      "exit_code": 0,
+      "log": "math-review-rank4-contractible-domain.log"
+    },
+    {
+      "name": "rank4-essential-primary",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank4-essential-acd2b1b/controls/check.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "math-review-rank4-essential-primary.log"
+    },
+    {
+      "name": "rank4-essential-independent",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank4-essential-acd2b1b/independent/check.py"
+      ],
+      "exit_code": 0,
+      "log": "math-review-rank4-essential-independent.log"
+    },
+    {
+      "name": "rank4-essential-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank4-essential-acd2b1b/independent/negative.py"
+      ],
+      "exit_code": 0,
+      "log": "math-review-rank4-essential-negative.log"
+    },
+    {
+      "name": "rank4-essential-triangle-count",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank4-essential-acd2b1b/review/triangle_and_count_check.py"
+      ],
+      "exit_code": 0,
+      "log": "math-review-rank4-essential-triangle-count.log"
+    },
+    {
+      "name": "k14-sphere-integrity",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-k14-sphere-acd2b1b/verify.py"
+      ],
+      "exit_code": 0,
+      "log": null,
+      "receipt": "tool output; ran before staging and archive mutation"
+    },
+    {
+      "name": "w5-rank4-contractible-integrity",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank4-contractible-acd2b1b/verify.py"
+      ],
+      "exit_code": 0,
+      "log": null,
+      "receipt": "tool output; ran before staging and archive mutation"
+    },
+    {
+      "name": "w5-rank4-essential-integrity",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank4-essential-acd2b1b/verify.py"
+      ],
+      "exit_code": 0,
+      "log": null,
+      "receipt": "tool output; ran before staging and archive mutation"
+    },
+    {
+      "name": "atlas-normal",
+      "command": [
+        ".venv/bin/python",
+        "scripts/c5_combinatorial_atlas.py",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "log": null,
+      "receipt": "tool output"
+    },
+    {
+      "name": "atlas-seed17",
+      "command": [
+        ".venv/bin/python",
+        "scripts/c5_combinatorial_atlas.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "log": null,
+      "receipt": "tool output"
+    },
+    {
+      "name": "kempe-screen",
+      "command": [
+        ".venv/bin/python",
+        "scripts/c5_kempe_screen.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "log": null,
+      "receipt": "tool output"
+    },
+    {
+      "name": "cell-witnesses",
+      "command": [
+        ".venv/bin/python",
+        "scripts/c5_cell_enumerator.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "log": null,
+      "receipt": "tool output"
+    },
+    {
+      "name": "Lean-regression",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "log": null,
+      "receipt": "tool output"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 1,
+      "log": "docs.log"
+    },
+    {
+      "name": "docgraph-formal",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": "docgraph-formal.log"
+    },
+    {
+      "name": "docgraph-global",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "log": "docgraph-global.log"
+    },
+    {
+      "name": "diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "diff.log"
+    },
+    {
+      "name": "docs-final",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "log": "docs-final.log"
+    },
+    {
+      "name": "index-before-restore-initial",
+      "exit_code": 1,
+      "log": "index-before-restore-initial.log",
+      "reason": "Subset export omitted previously tracked archive blobs reused by four paths; corrected export includes required archive dependencies."
+    },
+    {
+      "name": "index-essential-delivery-initial",
+      "exit_code": 1,
+      "log": "index-essential-delivery-initial.log",
+      "reason": "Subset export omitted inherited rank3 working-tree input; restored its exact bytes from the existing tracked archive."
+    },
+    {
+      "name": "index-before-restore",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-k14-rank4-atlas-publication/verify.py"
+      ],
+      "exit_code": 0,
+      "log": "index-before-restore.log",
+      "scope": "fresh actual Git index export including required archive and inherited source dependencies"
+    },
+    {
+      "name": "index-after-restore",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-k14-rank4-atlas-publication/verify.py"
+      ],
+      "exit_code": 0,
+      "log": "index-after-restore.log",
+      "scope": "fresh actual Git index export including required archive and inherited source dependencies"
+    },
+    {
+      "name": "index-k14-delivery",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-k14-sphere-acd2b1b/verify.py"
+      ],
+      "exit_code": 0,
+      "log": "index-k14-delivery.log",
+      "scope": "fresh actual Git index export including required archive and inherited source dependencies"
+    },
+    {
+      "name": "index-essential-delivery",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank4-essential-acd2b1b/verify.py"
+      ],
+      "exit_code": 0,
+      "log": "index-essential-delivery.log",
+      "scope": "fresh actual Git index export including required archive and inherited source dependencies"
+    },
+    {
+      "name": "staged-storage-policy",
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "receipt": "Generated artifact policy OK: 4685 indexed files, 2 large files with documented exceptions, 166 registered outputs."
+    },
+    {
+      "name": "staged-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "receipt": "empty stdout"
+    },
+    {
+      "name": "unstaged-diff-before-index-export",
+      "command": [
+        "git",
+        "diff",
+        "--name-only"
+      ],
+      "exit_code": 0,
+      "receipt": "empty stdout"
+    }
+  ],
+  "global_docgraph": {
+    "status": "FAIL existing",
+    "errors": 62,
+    "identical_to_original_log": true
+  },
+  "new_Lean_theorem": false,
+  "not_rerun": [
+    "full plantri generation",
+    "external literature computation",
+    "browser interaction"
+  ],
+  "counts": {
+    "k14_rooted_disks": 1001,
+    "k14_full_lifts": 180228,
+    "rank4_contractible_templates": 6389,
+    "rank4_essential_templates": 2872,
+    "atlas_classes": 135
+  }
+}

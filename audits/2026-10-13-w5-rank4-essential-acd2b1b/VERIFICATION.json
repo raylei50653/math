@@ -1,0 +1,62 @@
+{
+  "base": "acd2b1beea6c909edade565a00eeeeac05d2b3a7",
+  "checks": [
+    {
+      "command": "python3 -B controls/check.py --write",
+      "exit_code": 0,
+      "log": "logs/generate.log"
+    },
+    {
+      "command": "python3 -B controls/check.py --check",
+      "exit_code": 0,
+      "log": "logs/replay.log"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B controls/check.py --check --seed 17",
+      "exit_code": 0,
+      "log": "logs/seed17.log",
+      "note": "changes MRV tie priorities and color visit order; canonical full lists identical"
+    },
+    {
+      "command": "python3 -B independent/check.py",
+      "exit_code": 0,
+      "log": "logs/independent-v2.log",
+      "note": "After this complete replay, exact seen==domain assertion was extracted into coverage() without behavioral change and directly tested by the negative v2 replay."
+    },
+    {
+      "command": "python3 -B independent/negative.py",
+      "exit_code": 0,
+      "log": "logs/negative-v2-results.json",
+      "note": "4 positive full-record controls; 28 corruption rejections plus actual missing-template coverage rejection"
+    },
+    {
+      "command": "python3 -B review/triangle_and_count_check.py",
+      "exit_code": 0,
+      "result": "PASS: templates=2872, triangle_vertex_counts=[4,5,6]"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B review/triangle_and_count_check.py",
+      "exit_code": 0,
+      "evidence": "reviewer reported completed normal/seed17 checks; review/e_arc2_gap_review.md"
+    }
+  ],
+  "failed_attempts": [
+    {
+      "step": "initial freeze",
+      "cause": "pre-existing independent/check.py absent from HEAD; recovered by explicit working-tree snapshot authority"
+    },
+    {
+      "step": "first independent replay",
+      "cause": "cyclic face-array starting index mismatch in flipped orientation, corrected to oriented cyclic equality",
+      "receipt": "logs/independent-v1-failure.txt"
+    }
+  ],
+  "bounds": {
+    "paper": "complete source-to-template classification, independently reviewed",
+    "finite": "all 2872 complete full-fibre records agree",
+    "source_realizability": "not triggered",
+    "Lean": "no new theorem; no lake build invoked by this subtask",
+    "repository_docs_and_storage": "parent task handles shared integration and broad repository checks",
+    "merge_authority": "no commit/push/PR/merge"
+  }
+}
