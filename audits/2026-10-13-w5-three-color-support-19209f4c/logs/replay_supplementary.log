@@ -1,0 +1,98 @@
+{
+  "R3_equal": true,
+  "explicit_cells": 20480,
+  "full_support_equal": false,
+  "geometry": "triggered and holds",
+  "graphs": [
+    {
+      "R3": 700,
+      "R4": 700,
+      "g_lifts": 700,
+      "h_lifts": 1400,
+      "id": "two_spoke",
+      "sigma_g": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "support": 1400
+    },
+    {
+      "R3": 700,
+      "R4": 0,
+      "g_lifts": 700,
+      "h_lifts": 700,
+      "id": "two_spoke_external_apex",
+      "sigma_g": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "support": 700
+    }
+  ],
+  "limits": [
+    "Not claimed near-triangulated or a minimal source",
+    "No general small representative constructed"
+  ],
+  "strictness": "counterexample",
+  "transfers": [
+    {
+      "complete_g_lifts": 700,
+      "score": "triggered and holds",
+      "source": "two_spoke",
+      "target": "two_spoke_external_apex"
+    },
+    {
+      "complete_g_lifts": 700,
+      "score": "triggered and holds",
+      "source": "two_spoke_external_apex",
+      "target": "two_spoke"
+    }
+  ],
+  "witness": {
+    "beta": [
+      0,
+      1,
+      0,
+      1,
+      2
+    ],
+    "first_fibre": [
+      [
+        0,
+        1,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "second_fibre": [],
+    "tau": [
+      1,
+      0,
+      1,
+      2,
+      3
+    ]
+  }
+}

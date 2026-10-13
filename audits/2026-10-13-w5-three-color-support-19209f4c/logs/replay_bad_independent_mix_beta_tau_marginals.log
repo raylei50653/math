@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-13-w5-three-color-support-19209f4c/review/independent_check.py", line 510, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-w5-three-color-support-19209f4c/review/independent_check.py", line 480, in main
+    compare_graphs(graphs, certificate)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-w5-three-color-support-19209f4c/review/independent_check.py", line 200, in compare_graphs
+    require(gr[rk] == json_form(rv),
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+            "%s beta%d: %s mismatch" % (want["id"], bi, rk))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-w5-three-color-support-19209f4c/review/independent_check.py", line 29, in require
+    raise ValueError(message)
+ValueError: prism beta0: r3_tau_indices mismatch

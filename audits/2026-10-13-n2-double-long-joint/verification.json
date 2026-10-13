@@ -1,0 +1,248 @@
+{
+  "head": "19209f4cf68261fdce5e84a7804cfe04ae0957bf",
+  "scope": "T0/T1 paper exclusions; LL-CUT remains OPEN; finite calibration only",
+  "math_replays": [
+    {
+      "label": "fibres-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-double-long-joint/controls/checker.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "seconds": 0.142
+    },
+    {
+      "label": "fibres-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-double-long-joint/controls/checker.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": "17",
+      "exit_code": 0,
+      "seconds": 0.143
+    },
+    {
+      "label": "minor-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-double-long-joint/controls/supplemental_minor_checker.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "seconds": 0.034
+    },
+    {
+      "label": "minor-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-double-long-joint/controls/supplemental_minor_checker.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": "17",
+      "exit_code": 0,
+      "seconds": 0.034
+    },
+    {
+      "label": "matrix-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-double-long-joint/joint/checker.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "seconds": 1.895
+    },
+    {
+      "label": "matrix-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-double-long-joint/joint/checker.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": "17",
+      "exit_code": 0,
+      "seconds": 1.908
+    },
+    {
+      "label": "matrix-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-double-long-joint/joint/checker.py",
+        "--check",
+        "--artifact",
+        "audits/2026-10-13-n2-double-long-joint/joint/corrupt-observations.json"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "reason": "retained certificate falsely changes maximum binary cells from9 to8"
+    }
+  ],
+  "initial_integration_replays": [
+    {
+      "label": "check-docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 1,
+      "seconds": 0.633
+    },
+    {
+      "label": "docgraph",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.077
+    },
+    {
+      "label": "lake-build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 3.629
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.012
+    }
+  ],
+  "frozen_input_verification": [
+    {
+      "path": "docs/HANDOFF.md",
+      "frozen_sha256": "41db71af42d1e86568c00d8063226e7ca513c2a1756448e74b7cb6ab4dad90fa",
+      "frozen_unchanged": true,
+      "live_equals_initial": true
+    },
+    {
+      "path": "docs/STATUS.md",
+      "frozen_sha256": "9ad8128047bed281049a60bad4abdaea6b03ba8ce7beea809f3db43e3c6f5293",
+      "frozen_unchanged": true,
+      "live_equals_initial": false
+    },
+    {
+      "path": "docs/c5_kempe_guide.md",
+      "frozen_sha256": "2cb026644374fda0e7c79f2923793a48a6fa155c03e1c5b81d1ee572328c12d7",
+      "frozen_unchanged": true,
+      "live_equals_initial": false
+    },
+    {
+      "path": "docs/c5_excess_two_n2_residual_unification.md",
+      "frozen_sha256": "6697781fd7ff1bc3adf3cd63c3dfe16cb45315367a3e671313730973b1a59012",
+      "frozen_unchanged": true,
+      "live_equals_initial": false
+    },
+    {
+      "path": "docs/c5_excess_two_n2_long_synchrony.md",
+      "frozen_sha256": "fa136f9a1c92f40d4a833d3b36768a76a524988bc2789d5f40bcde4a32577754",
+      "frozen_unchanged": true,
+      "live_equals_initial": false
+    },
+    {
+      "path": "docs/c5_excess_two_n2_partition_rule.md",
+      "frozen_sha256": "000a764cd6b834e86ac2cc930ef0224446698516ea32bc14d775c4b2fbc8f339",
+      "frozen_unchanged": true,
+      "live_equals_initial": false
+    },
+    {
+      "path": "docs/c5_excess_two_n2_unary_diff_closure.md",
+      "frozen_sha256": "ccdfc8e37c6d19e709592b059fcc1ff742d485b6654f74430214c2ac7fef1263",
+      "frozen_unchanged": true,
+      "live_equals_initial": false
+    },
+    {
+      "path": "docs/c5_excess_two_n2_diagonal_three_row.md",
+      "frozen_sha256": "3427daff05eb66d52c03e3e1f236b8f6589fd95927b2243c934a5f9a363c3955",
+      "frozen_unchanged": true,
+      "live_equals_initial": false
+    },
+    {
+      "path": "docs/c5_excess_two_arc_size_bound.md",
+      "frozen_sha256": "d2633f08c1a81f984b2e4c5985d525e5bd39ede7ef284667ddc77662900c0ad6",
+      "frozen_unchanged": true,
+      "live_equals_initial": true
+    },
+    {
+      "path": "docs/c5_excess_two_arc_spoke_closure.md",
+      "frozen_sha256": "165d31d6c9d4b45e3fcf5c662c3e5e47fb8ae7e8d82e5d159ea5e6957c7be447",
+      "frozen_unchanged": true,
+      "live_equals_initial": true
+    },
+    {
+      "path": "docs/c5_unary_shield_budget.md",
+      "frozen_sha256": "c4039e805abcc94a6a8c824ba38e5858420535c5c5528e3bf43aec5721c8e082",
+      "frozen_unchanged": true,
+      "live_equals_initial": true
+    },
+    {
+      "path": "docs/c5_phase_b_common_lemmas.md",
+      "frozen_sha256": "5e38c45762c914deca1866f38334630fd3681d8fa44a7c4ff5ff76a0b79c8855",
+      "frozen_unchanged": true,
+      "live_equals_initial": true
+    },
+    {
+      "path": "docs/DOCUMENTATION.md",
+      "frozen_sha256": "40214801431719f88f6a808bc9c2f74ed0ec3044a5c555cac0a99678af105ac3",
+      "frozen_unchanged": true,
+      "live_equals_initial": true
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "controls/observations.json",
+      "bytes": 241306,
+      "sha256": "724a540c00a8248d2b45b48acdb1cd9d702f26ab68053d8926a3d3d31c406658"
+    },
+    {
+      "path": "controls/supplemental_minors.json",
+      "bytes": 24345,
+      "sha256": "4fa487989869cf81077e09354cad593e9352992d587ae09a117181e285abe057"
+    },
+    {
+      "path": "joint/observations.json",
+      "bytes": 33197,
+      "sha256": "6eac3a2ae83cc5c38f026ba9dffa0d88d4c051868188ff24b3c9a56d825d79d9"
+    }
+  ],
+  "control_negative_receipts": [
+    "controls/verification.json",
+    "controls/supplemental_verification.json"
+  ],
+  "final_integration_followup": "verification-final.json",
+  "initial_document_failure": "own receipt not yet written plus concurrently incomplete forced-inequality report/index; original failure logs retained",
+  "target_status": "not triggered",
+  "new_lean_theorem": false,
+  "commit_push": false,
+  "concurrent_changes": "Current routing contains new one-long closure and unrelated C7/W5/Kempe results. Preserved; original proofs remain based on frozen inputs.",
+  "not_rerun": [
+    "upstream ES/ER source enumeration",
+    "all N45/44/SD-A certificates",
+    "whole-worktree DocGraph including frozen audit copies"
+  ]
+}

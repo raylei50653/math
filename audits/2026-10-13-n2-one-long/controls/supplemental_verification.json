@@ -1,0 +1,122 @@
+{
+  "checks": [
+    {
+      "artifact": "boundary_observations.json",
+      "artifact_sha256": "51b0641d286f96a4cca7adf65bc085096ba566d3f176f0639e30d63969ab26a5",
+      "checker": "boundary_checker.py",
+      "checker_sha256": "01f969f66cebfc73fec677a7b764201d764e56b06c120b27562d1704fb15c144",
+      "checks": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "audits/2026-10-13-n2-one-long/controls/boundary_checker.py",
+            "--check"
+          ],
+          "label": "normal",
+          "returncode": 0,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "7dce526d59126e5ffc41015e933f6991e1b7bcbbe9f2703286c247a1cf56a8fd"
+        },
+        {
+          "command": [
+            "python3",
+            "-B",
+            "audits/2026-10-13-n2-one-long/controls/boundary_checker.py",
+            "--check"
+          ],
+          "label": "seed17",
+          "returncode": 0,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "7dce526d59126e5ffc41015e933f6991e1b7bcbbe9f2703286c247a1cf56a8fd"
+        },
+        {
+          "command": [
+            "python3",
+            "-B",
+            "audits/2026-10-13-n2-one-long/controls/boundary_checker.py",
+            "--check",
+            "--artifact",
+            "audits/2026-10-13-n2-one-long/controls/boundary_corrupted_negative.json"
+          ],
+          "label": "corrupted-negative",
+          "returncode": 1,
+          "stderr_sha256": "140418270d649a42a8158fbe193be23a4642f668762d6f75167e5e0c492f7fb4",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "corrupted_negative_rejected": true,
+      "counts": {
+        "T_subsets": 32,
+        "T_with_any_candidate_leaf_edge": 6,
+        "T_with_two_distinct_candidate_leaf_edges": 2,
+        "target_sources": 0
+      },
+      "normal_seed17_stdout_identical": true,
+      "readonly_payload_mutations": 0
+    },
+    {
+      "artifact": "side_observations.json",
+      "artifact_sha256": "52524f4124aaf11562cf9679663431572d338bd79bc40a4a809e35dc0b6d4bce",
+      "checker": "boundary_side_checker.py",
+      "checker_sha256": "d4d02d13d5fd7fb563df4460c7f24d9a6f4ced8a73df0e37a98359a4f3b6f496",
+      "checks": [
+        {
+          "command": [
+            "python3",
+            "-B",
+            "audits/2026-10-13-n2-one-long/controls/boundary_side_checker.py",
+            "--check"
+          ],
+          "label": "normal",
+          "returncode": 0,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "3f315667d94b5be03284bfdafbee3583a528f691bd63c26c601dd8b907e65535"
+        },
+        {
+          "command": [
+            "python3",
+            "-B",
+            "audits/2026-10-13-n2-one-long/controls/boundary_side_checker.py",
+            "--check"
+          ],
+          "label": "seed17",
+          "returncode": 0,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "3f315667d94b5be03284bfdafbee3583a528f691bd63c26c601dd8b907e65535"
+        },
+        {
+          "command": [
+            "python3",
+            "-B",
+            "audits/2026-10-13-n2-one-long/controls/boundary_side_checker.py",
+            "--check",
+            "--artifact",
+            "audits/2026-10-13-n2-one-long/controls/side_corrupted_negative.json"
+          ],
+          "label": "corrupted-negative",
+          "returncode": 1,
+          "stderr_sha256": "f622e718d911de2bbf662e9556d408c2532c96d672fefb801428fc7992f22fe9",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "corrupted_negative_rejected": true,
+      "counts": {
+        "boundary_spoke_schedules_including_root_swap": 4,
+        "empty_exterior_cells": 120,
+        "fixed_degree_five_root_graphs": 3,
+        "full_exterior_lifts": 246,
+        "full_exterior_owner_color_cells": 240,
+        "literal_boundary_row_color_witnesses": 32,
+        "named_leaf_owner_cases": 16,
+        "sidewise_escape_trigger_cells": 43,
+        "target_sources": 0,
+        "whole_graph_root_fixed_DFS_comparisons": 240
+      },
+      "normal_seed17_stdout_identical": true,
+      "readonly_payload_mutations": 0
+    }
+  ],
+  "status": "triggered and holds",
+  "target_source_status": "not triggered"
+}

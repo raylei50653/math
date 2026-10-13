@@ -1,0 +1,56 @@
+{
+  "representatives": {
+    "normal_seed17": {
+      "exit_code": 0,
+      "stdout": "{\n  \"representative\": {\n    \"private_vertices\": 2,\n    \"cells\": 10240,\n    \"empty_cells\": 9640,\n    \"H_full_lifts\": 1200,\n    \"three_color_cells\": 1200,\n    \"nonempty_three_color_cells\": 300,\n    \"G_full_lifts\": 600,\n    \"wheel_total_internal_vertices\": 8\n  },\n  \"source_r7\": {\n    \"private_vertices\": 7,\n    \"cells\": 10240,\n    \"empty_cells\": 9640,\n    \"H_full_lifts\": 1200,\n    \"three_color_cells\": 1200,\n    \"nonempty_three_color_cells\": 300,\n    \"G_full_lifts\": 600,\n    \"wheel_total_internal_vertices\": 13\n  },\n  \"minimum_private_for_target_relation\": 2,\n  \"r_le_1_no_go\": \"paper argument, independent of planarity; finite control verifies named edge witnesses\",\n  \"source_minimality\": \"not triggered\",\n  \"general_r_le_6_annulus_representative\": \"OPEN\"\n}\n",
+      "stderr": ""
+    },
+    "corrupted_copy": {
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-w5-three-support-19209f4c/representatives/review-tmp-d0qy2phz/representatives/check.py\", line 216, in <module>\n    if __name__=='__main__': main()\n                             ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-w5-three-support-19209f4c/representatives/review-tmp-d0qy2phz/representatives/check.py\", line 213, in main\n    with gzip.open(p,'rt') as f: assert json.load(f)==cert\n                                        ^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    "original_hashes_unchanged": true,
+    "sha256": {
+      "representatives/check.py": "6df24df34c50d2764853fc6e1b3ee8e55856b5af35a13a1251219e28709a9a72",
+      "representatives/certificate.json.gz": "3409c0d87e17eb5f7ea8d8f200814e4b64a754bccf29486b3b705f4ec87ea7d2",
+      "representatives/summary.json": "077720278fbbb2b2712a56b611590b317c3050f13a6cdc47fec32c977518e4b2"
+    }
+  },
+  "t1": {
+    "normal_seed17": {
+      "exit_code": 0,
+      "stdout": "{\n  \"counts_are_not_part_of_transport\": \"prism_decorated has exactly two lifts over every prism lift\",\n  \"graphs\": [\n    {\n      \"annulus_lifts\": 670,\n      \"id\": \"prism\",\n      \"sigma_annulus\": 1023,\n      \"sigma_wheel\": 1023,\n      \"three_color_support_size\": 340,\n      \"wheel_lifts\": 340\n    },\n    {\n      \"annulus_lifts\": 1340,\n      \"id\": \"prism_decorated\",\n      \"sigma_annulus\": 1023,\n      \"sigma_wheel\": 1023,\n      \"three_color_support_size\": 340,\n      \"wheel_lifts\": 680\n    },\n    {\n      \"annulus_lifts\": 50,\n      \"id\": \"triangulated_00\",\n      \"sigma_annulus\": 1023,\n      \"sigma_wheel\": 1023,\n      \"three_color_support_size\": 20,\n      \"wheel_lifts\": 20\n    },\n    {\n      \"annulus_lifts\": 47,\n      \"id\": \"triangulated_01\",\n      \"sigma_annulus\": 1023,\n      \"sigma_wheel\": 831,\n      \"three_color_support_size\": 23,\n      \"wheel_lifts\": 23\n    }\n  ],\n  \"minimal_933_941_sources\": \"not triggered\",\n  \"named_three_color_cells_per_graph\": 1200,\n  \"proper_three_color_tuples\": 120,\n  \"same_wheel_sigma_different_named_support\": {\n    \"beta\": [\n      0,\n      1,\n      0,\n      1,\n      2\n    ],\n    \"graphs\": [\n      \"prism\",\n      \"triangulated_00\"\n    ],\n    \"prism_full_wheel_lift\": [\n      0,\n      1,\n      0,\n      1,\n      2,\n      1,\n      0,\n      1,\n      0,\n      3,\n      2\n    ],\n    \"rejected_edge_in_triangulated_00\": [\n      1,\n      5\n    ],\n    \"tau\": [\n      1,\n      0,\n      1,\n      0,\n      3\n    ]\n  },\n  \"status\": \"triggered and holds; four synthetic literal annuli only\",\n  \"stored_cells\": 40960,\n  \"triangulated_00_one_full_wheel_lift_per_beta\": [\n    [\n      0,\n      1,\n      0,\n      1,\n      2,\n      2,\n      3,\n      2,\n      0,\n      3,\n      1\n    ],\n    [\n      0,\n      1,\n      0,\n      2,\n      1,\n      3,\n      2,\n      1,\n      3,\n      2,\n      0\n    ],\n    [\n      0,\n      1,\n      0,\n      2,\n      3,\n      3,\n      2,\n      3,\n      0,\n      2,\n      1\n    ],\n    [\n      0,\n      1,\n      2,\n      0,\n      1,\n      2,\n      0,\n      3,\n      2,\n      3,\n      1\n    ],\n    [\n      0,\n      1,\n      2,\n      0,\n      2,\n      2,\n      3,\n      1,\n      3,\n      1,\n      0\n    ],\n    [\n      0,\n      1,\n      2,\n      0,\n      3,\n      2,\n      0,\n      1,\n      2,\n      1,\n      3\n    ],\n    [\n      0,\n      1,\n      2,\n      1,\n      2,\n      2,\n      0,\n      3,\n      0,\n      3,\n      1\n    ],\n    [\n      0,\n      1,\n      2,\n      1,\n      3,\n      3,\n      0,\n      3,\n      0,\n      1,\n      2\n    ],\n    [\n      0,\n      1,\n      2,\n      3,\n      1,\n      2,\n      3,\n      0,\n      2,\n      3,\n      1\n    ],\n    [\n      0,\n      1,\n      2,\n      3,\n      2,\n      2,\n      0,\n      1,\n      0,\n      1,\n      3\n    ]\n  ]\n}\n",
+      "stderr": ""
+    },
+    "corrupted_copy": {
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-w5-three-support-19209f4c/representatives/review-tmp-glk3i9k1/t1/check.py\", line 195, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-w5-three-support-19209f4c/representatives/review-tmp-glk3i9k1/t1/check.py\", line 189, in main\n    assert certificate_path.read_bytes() == packed\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    "original_hashes_unchanged": true,
+    "sha256": {
+      "t1/check.py": "cbe62750020ca7bda4d444d653eefb5ce0f85e542997c8502da34cd2dc33903a",
+      "t1/certificate.json.gz": "c5dd984339bbb824632d21a9ad82554a2591549977e50ba39f81a0006f169ce9",
+      "t1/summary.json": "09d991ef1595efbcd7450db5ffdea4131083879a22f0d9c9a92f7739bbdb4b09"
+    }
+  },
+  "conditional": {
+    "normal_seed17": {
+      "exit_code": 0,
+      "stdout": "PASS: 132 catalogue masks; 240 proper rim tuples; two exact abstract controls\n933/941 minimum source: not triggered; abstract controls: no graph realization asserted\n",
+      "stderr": ""
+    },
+    "corrupted_copy": {
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-w5-three-support-19209f4c/representatives/review-tmp-setciiaq/conditional/check.py\", line 170, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-w5-three-support-19209f4c/representatives/review-tmp-setciiaq/conditional/check.py\", line 164, in main\n    assert json.loads(path.read_text()) == value, \"certificate mismatch\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    "original_hashes_unchanged": true,
+    "sha256": {
+      "conditional/check.py": "08b50cd73fc54a73b0ab9d5d838ea8cd615aae686e5e63188d4b7e4db886dc08",
+      "conditional/certificate.json": "f0ffe4f0f07c7cc2dde22eddda1285c157b3577d47caef3f294dbb6ffb4e85fb",
+      "conditional/frozen/cells.json": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "primary",
+    "cmd": "python3 audits/2026-10-13-c7-joint-kempe-19209f4c/topology/checker.py --check",
+    "chunk_id": "608b14",
+    "wall_time_seconds": 0.385045433,
+    "exit_code": 0,
+    "original_token_count": 33,
+    "output": "{\"status\": \"PASS\", \"chord_joins\": 6468, \"excluded_crosscuts\": 973, \"source_status\": \"not triggered\", \"h2_source_excluded\": false}\n"
+  },
+  {
+    "name": "independent_and_negative",
+    "cmd": "python3 audits/2026-10-13-c7-joint-kempe-19209f4c/topology/independent_review.py --negative-controls",
+    "chunk_id": "806298",
+    "wall_time_seconds": 7.880255527,
+    "exit_code": 0,
+    "original_token_count": 169,
+    "output": "{\"chord_joins\": 6468, \"every_crosscut_possible_outer_union_subset_of\": 429, \"excluded_crosscuts\": 973, \"negative_controls\": [{\"corrupted_certificate_rejected\": true, \"name\": \"alter_accepted_inner_row\", \"status\": \"counterexample\"}, {\"corrupted_certificate_rejected\": true, \"name\": \"alter_rejected_inner_row\", \"status\": \"counterexample\"}, {\"corrupted_certificate_rejected\": true, \"name\": \"delete_literal_outer_lift\", \"status\": \"counterexample\"}, {\"corrupted_certificate_rejected\": true, \"name\": \"alter_crosscut_fixed_point\", \"status\": \"counterexample\"}, {\"corrupted_certificate_rejected\": true, \"name\": \"delete_short_completion\", \"status\": \"counterexample\"}], \"status\": \"PASS\"}\n"
+  },
+  {
+    "name": "literal_controls",
+    "cmd": ".venv/bin/python audits/2026-10-13-c7-joint-kempe-19209f4c/topology/literal_controls.py --check",
+    "chunk_id": "5c5f7b",
+    "wall_time_seconds": 0.086039472,
+    "exit_code": 0,
+    "original_token_count": 137,
+    "output": "{\"status\": \"PASS\", \"controls\": [{\"kind\": \"chord\", \"start\": 0, \"short_mask\": 10, \"long_mask\": 165, \"outer_mask\": 894, \"complete_lifts\": 32}, {\"kind\": \"chord\", \"start\": 1, \"short_mask\": 7, \"long_mask\": 429, \"outer_mask\": 1021, \"complete_lifts\": 180}, {\"kind\": \"crosscut\", \"start\": 1, \"short_mask\": 7, \"long_mask\": 2475880078570760549798248447, \"outer_mask\": 1023, \"complete_lifts\": 368}, {\"kind\": \"crosscut\", \"start\": 4, \"short_mask\": 429, \"long_mask\": 1452215, \"outer_mask\": 1023, \"complete_lifts\": 146}], \"target_source_status\": \"not triggered\"}\n"
+  },
+  {
+    "name": "universal_count_review",
+    "cmd": "python3 audits/2026-10-13-c7-joint-kempe-19209f4c/topology/count_review.py",
+    "chunk_id": "ec3202",
+    "wall_time_seconds": 0.000018435,
+    "exit_code": 0,
+    "original_token_count": 64,
+    "output": "{\"status\": \"PASS\", \"independently_generated_NC_partitions\": 429, \"identities_checked\": 7, \"forced_zero_outer_preimages\": [6, 58, 89], \"universal_scope\": \"Every finite graph embedded in the named C7 disk\", \"verdict\": \"No S subset U55 can transfer to 941\"}\n"
+  }
+]

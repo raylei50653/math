@@ -1,0 +1,48 @@
+{
+  "artifacts": {
+    "supplemental_minor_checker.py": {
+      "bytes": 5465,
+      "sha256": "42d358eea8b8ef2b9bbe5df23a312eed0e48fe0946612ed9145bfca930957dcd"
+    },
+    "supplemental_minors.json": {
+      "bytes": 24345,
+      "sha256": "4fa487989869cf81077e09354cad593e9352992d587ae09a117181e285abe057"
+    }
+  },
+  "full_T1_premise_status": "not triggered",
+  "full_target_source_status": "not triggered",
+  "negative_control": {
+    "corruption": "replace A-R witness with original A-P edge; wrong bag adjacency",
+    "observed_error": "AssertionError: artifact mismatch",
+    "returncode": 1,
+    "sha256": "42e75f23d2ce7c5b4edafa59cb929ca3dde87b9d562ef1a77b9b55e956c9ca6d"
+  },
+  "normal_seed17_identical": true,
+  "previous_observations_unchanged_sha256": "724a540c00a8248d2b45b48acdb1cd9d702f26ab68053d8926a3d3d31c406658",
+  "replays": [
+    {
+      "PYTHONHASHSEED": null,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-double-long-joint/controls/supplemental_minor_checker.py",
+        "--check"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"bytes\": 24345, \"counts\": {\"certified_K5_minors\": 4, \"full_T1_triggers\": 0, \"full_target_sources\": 0, \"local_minor_controls\": 4, \"original_bag_spanning_trees\": 20, \"original_cross_adjacencies\": 40}, \"mode\": \"check\", \"sha256\": \"4fa487989869cf81077e09354cad593e9352992d587ae09a117181e285abe057\"}\n"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-double-long-joint/controls/supplemental_minor_checker.py",
+        "--check"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"bytes\": 24345, \"counts\": {\"certified_K5_minors\": 4, \"full_T1_triggers\": 0, \"full_target_sources\": 0, \"local_minor_controls\": 4, \"original_bag_spanning_trees\": 20, \"original_cross_adjacencies\": 40}, \"mode\": \"check\", \"sha256\": \"4fa487989869cf81077e09354cad593e9352992d587ae09a117181e285abe057\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "own_markdown_files": 6,
+  "own_links_checked": 26,
+  "own_errors": [],
+  "global_docs_check": {
+    "exit_code": 0,
+    "output": "OK: 639 Markdown files, 7956 local links; anchors, index, handoff checked\n"
+  },
+  "independent_seed17_same": true,
+  "independent_negative": {
+    "negative_controls": [
+      {
+        "diagnostic": "ValueError: outer_w5: J (0, 5)/[0, 1, 0, 1, 2]/[1, 1]: full lift mismatch",
+        "negative": "drop_nonempty_J_lift",
+        "returncode": 1,
+        "status": "triggered and holds"
+      },
+      {
+        "diagnostic": "ValueError: outer_w5: J (0, 5)/[0, 1, 0, 1, 2]/[0, 0]: full lift mismatch",
+        "negative": "populate_empty_J_cell",
+        "returncode": 1,
+        "status": "triggered and holds"
+      },
+      {
+        "diagnostic": "ValueError: outer_w5: H: full lift mismatch",
+        "negative": "drop_H_lift",
+        "returncode": 1,
+        "status": "triggered and holds"
+      }
+    ],
+    "source_sha256": "200109de855e537cbcd5871015873528afb0d2be7c3e8dcd493d34fd05750960",
+    "source_unchanged": true
+  }
+}

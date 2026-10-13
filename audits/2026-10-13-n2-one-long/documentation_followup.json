@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "scripts/check_docs.py"
+  ],
+  "exit_code": 1,
+  "output": "missing path: docs/c5_excess_two_n2_double_long_joint.md:221: ../audits/2026-10-13-n2-double-long-joint/verification.json\nmissing path: docs/c5_forced_inequality_transport.md:197: ../audits/2026-10-13-forced-inequality-19209f4c/REPORT.md\nFAIL: 2 errors (641 Markdown files, 7986 local links)",
+  "log": "logs/check-docs-followup.log",
+  "earlier_success": "639 Markdown files, 7956 local links; anchors, index, handoff checked",
+  "preceding_failure": "Concurrent unrelated double-long report referenced a not-yet-created audit verification.json; preserved in verification.json",
+  "our_audit_links": {
+    "count": 42,
+    "missing": 0
+  },
+  "scope": "read-only documentation followup; no unrelated files edited"
+}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/boundary_checker.py", line 91, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/boundary_checker.py", line 84, in main
+    require(args.artifact.read_bytes() == encoded, 'boundary artifact mismatch')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/boundary_checker.py", line 18, in require
+    raise ValueError(message)
+ValueError: boundary artifact mismatch

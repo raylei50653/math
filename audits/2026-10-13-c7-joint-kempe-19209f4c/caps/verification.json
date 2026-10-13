@@ -1,0 +1,114 @@
+{
+  "certificate_sha256": "6f5fcaca5b6805f7e60efd2f3e7845fa5afbb6f4308c4191e6ffc6416de74cbe",
+  "checks": [
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/checker.py",
+        "--check"
+      ],
+      "name": "producer-replay",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"cap_controls\": 3383, \"mandatory_rows\": 45, \"minimal_relation_size\": 47, \"optional_rows\": 10, \"residual_relations\": 72, \"source_status\": \"not triggered\", \"status\": \"PASS\"}"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/independent_verify.py"
+      ],
+      "name": "independent-full",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"cardinality_lower_bound\": 47, \"exact_residual_count\": 72, \"full_outer_lift_rows\": 91, \"independent_Kempe_rows\": 91, \"independent_Kempe_splits\": 273, \"literal_cap_graphs\": 3383, \"literal_cap_row_queries\": 307853, \"mandatory_rows\": 45, \"row42_forcing\": \"verified\", \"source_status\": \"not triggered\", \"status\": \"PASS\"}"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/independent_verify.py",
+        "--skip-literal-caps",
+        "--certificate",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/controls/removed-mandatory-row.json"
+      ],
+      "name": "removed-mandatory-row",
+      "returncode": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c7-joint-kempe-19209f4c/caps/independent_verify.py\", line 202, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c7-joint-kempe-19209f4c/caps/independent_verify.py\", line 149, in main\n    assert mandatory == set(certificate['mandatory_indices']) and len(mandatory) == 45\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/independent_verify.py",
+        "--skip-literal-caps",
+        "--certificate",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/controls/broken-implication-path.json"
+      ],
+      "name": "broken-implication-path",
+      "returncode": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c7-joint-kempe-19209f4c/caps/independent_verify.py\", line 202, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c7-joint-kempe-19209f4c/caps/independent_verify.py\", line 181, in main\n    assert 42 in reached, ('missing implication path to row42', start)\n           ^^^^^^^^^^^^^\nAssertionError: ('missing implication path to row42', 6)",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/independent_verify.py",
+        "--skip-literal-caps",
+        "--certificate",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/controls/false-rejected-row.json"
+      ],
+      "name": "false-rejected-row",
+      "returncode": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c7-joint-kempe-19209f4c/caps/independent_verify.py\", line 202, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c7-joint-kempe-19209f4c/caps/independent_verify.py\", line 163, in main\n    assert r['rejected_indices'] == sorted(set(range(91)) - chosen)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/singleton_verify.py",
+        "--certificate",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/singleton_cap.json"
+      ],
+      "name": "singleton-normal",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"accepted\": 16, \"complete_fixed_boundary_lifts\": 16, \"control_status\": \"triggered and holds\", \"embedding\": \"explicit fan triangulation\", \"full_boundary_rows\": 91, \"rejected\": 75, \"status\": \"PASS\", \"unique_upper_intersection\": \"0123231\"}"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/singleton_verify.py",
+        "--certificate",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/controls/singleton-delete-lift.json"
+      ],
+      "name": "singleton-delete-lift",
+      "returncode": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c7-joint-kempe-19209f4c/caps/singleton_verify.py\", line 35, in <module>\n    assert record == dict(index=i, boundary_row=list(p), accepted=accepted,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                          full_lifts=[list(p)] if accepted else [])\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/singleton_verify.py",
+        "--certificate",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/controls/singleton-omit-chord.json"
+      ],
+      "name": "singleton-omit-chord",
+      "returncode": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c7-joint-kempe-19209f4c/caps/singleton_verify.py\", line 28, in <module>\n    assert {tuple(sorted(e)) for e in c['edges']} == fan\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/checker.py",
+        "--check"
+      ],
+      "name": "scope-label-producer-replay",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"cap_controls\": 3383, \"mandatory_rows\": 45, \"minimal_relation_size\": 47, \"optional_rows\": 10, \"residual_relations\": 72, \"source_status\": \"not triggered\", \"status\": \"PASS\"}"
+    }
+  ],
+  "status": "PASS",
+  "target_source_status": "not triggered"
+}

@@ -1,0 +1,18 @@
+{
+  "normal_seed17": {
+    "exit_code": 0,
+    "stdout": "PASS: 132 catalogue masks; 240 proper rim tuples; two exact abstract controls\n933/941 minimum source: not triggered; abstract controls: no graph realization asserted\n",
+    "stderr": ""
+  },
+  "corrupted_copy": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/w5-conditional-negative-6iwtd343/conditional/check.py\", line 175, in <module>\n    main()\n    ~~~~^^\n  File \"/tmp/w5-conditional-negative-6iwtd343/conditional/check.py\", line 169, in main\n    assert json.loads(path.read_text()) == value, \"certificate mismatch\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+  },
+  "current_hashes": {
+    "check.py": "46ac1291a71b9a4177847018c8a46f73d4ac7902fd56ba00f32f2e540fec3e42",
+    "certificate.json": "f0ffe4f0f07c7cc2dde22eddda1285c157b3577d47caef3f294dbb6ffb4e85fb",
+    "INPUTS.json": "e70707f0ef3c3261d2f5788ddbd4a03c9ca0302fcd9be2110b6fac71d5add6df"
+  },
+  "note": "Supersedes earlier check.py hash after adding frozen-input manifest validation; original certificate unchanged."
+}

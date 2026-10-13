@@ -1,0 +1,30 @@
+{
+  "forest_seed17": {
+    "command": [
+      "/home/ray/developer/ai/math/audits/2026-10-13-w5-three-support-19209f4c/forest/check.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"G_full_lifts\": 9308, \"H_full_lifts\": 18282, \"catalogue_sha256\": \"04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8\", \"cells\": 716800, \"empty_cells\": 701956, \"masks\": {\"1023\": 70}, \"templates\": 70, \"types\": {\"B_triangle\": 10, \"U_triangle\": 10, \"p1_r7\": 30, \"p1_r8\": 20}}\n",
+    "stderr": ""
+  },
+  "forest_deleted_lift_negative": {
+    "command": [
+      "/home/ray/developer/ai/math/audits/2026-10-13-w5-three-support-19209f4c/forest/check.py",
+      "--check",
+      "--certificate",
+      "/tmp/forest-negative-96lxowbv/corrupt.json.gz"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-w5-three-support-19209f4c/forest/check.py\", line 202, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-w5-three-support-19209f4c/forest/check.py\", line 197, in main\n    assert gzip.decompress(args.certificate.read_bytes()) == data, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+  },
+  "removed_lift": "010122010132323203",
+  "forest_certificate_sha256": "859205443fa44628ae095b170fa458babf347412a9094cf4622dd5aed8dc1fe9",
+  "frozen_inputs_unchanged": true,
+  "original_forest_certificate_unchanged": true,
+  "three_subpackage_checks": "representatives/review_checks.json",
+  "three_subpackage_checks_sha256": "110d9c81f46485d58b9e028fd522125343cdcfde2c9babdbf64b42fa29c18713",
+  "initial_generation_note": "Start/end face orientations corrected before first certificate creation; final directed-dart and rotation checks pass.",
+  "scope": "Finite controls and frozen inputs; actual minimum source not triggered."
+}

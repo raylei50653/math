@@ -1,0 +1,59 @@
+{
+  "artifact_sha256": "14655e1f78fd94f43c753b683c4bc93ac53bf053d5f181303e5d22bafe11ce88",
+  "checker_sha256": "a3af4e5b928920cbd8ebdce31f24dbd1cca05a38e83e9a6e0e65eb1330a0c847",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-one-long/controls/minor_checker.py",
+        "--check"
+      ],
+      "label": "normal",
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9cf602fecbd1a451f76649f4f8be14bc0d0f3cf4d582864b28e032f87341b576"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-one-long/controls/minor_checker.py",
+        "--check"
+      ],
+      "label": "seed17",
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9cf602fecbd1a451f76649f4f8be14bc0d0f3cf4d582864b28e032f87341b576"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-one-long/controls/minor_checker.py",
+        "--check",
+        "--source",
+        "audits/2026-10-13-n2-one-long/controls/minor_source_corrupted_negative.json"
+      ],
+      "label": "corrupted-negative",
+      "returncode": 1,
+      "stderr_sha256": "ee77c6651e9ef7961ed6c24510774047455656637ab95ed21f1d562f3db888b5",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "frozen_source": "frozen/topology/minor_controls.json",
+  "negative": {
+    "deleted_original_edge": [
+      "p",
+      "q"
+    ],
+    "exit": 1,
+    "expected": "missing original cross edge"
+  },
+  "normal_seed17_stdout_identical": true,
+  "original_source": "../topology/minor_controls.json",
+  "readonly_payload_mutations": 0,
+  "source_sha256": "7cc4567aba9e24d65611bf2c53786f5ad4d89d6bd00525c643ba4ec577022435",
+  "status": "triggered and holds",
+  "target_source_status": "not triggered"
+}

@@ -1,0 +1,238 @@
+{
+  "date": "2026-10-13",
+  "base": "19209f4cf68261fdce5e84a7804cfe04ae0957bf",
+  "control_replays": [
+    {
+      "label": "checker-normal",
+      "command": "python3 -B /home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/checker.py --check",
+      "seed": null,
+      "exit_code": 0,
+      "output": "{\"bytes\": 3743691, \"counts\": {\"catalogued_ambient_cells\": 2560, \"empty_join_cells\": 981, \"empty_local_cells\": 64, \"full_local_cells\": 640, \"full_same_row_join_cells\": 1920, \"global_unpinned_DFS_comparisons\": 120, \"local_pieces\": 4, \"named_support_catalogues\": 16, \"same_row_common_color_full_witnesses\": 197, \"saved_local_lifts\": 1688, \"signature_T_W_equivalences\": 1024, \"signature_T_subsets\": 32, \"target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"516c44fc1480002c4fe358ea5ce0cc69349d55ed463427c685db42ec887ec2a7\"}",
+      "log": "logs/checker-normal.log"
+    },
+    {
+      "label": "checker-seed17",
+      "command": "python3 -B /home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/checker.py --check",
+      "seed": "17",
+      "exit_code": 0,
+      "output": "{\"bytes\": 3743691, \"counts\": {\"catalogued_ambient_cells\": 2560, \"empty_join_cells\": 981, \"empty_local_cells\": 64, \"full_local_cells\": 640, \"full_same_row_join_cells\": 1920, \"global_unpinned_DFS_comparisons\": 120, \"local_pieces\": 4, \"named_support_catalogues\": 16, \"same_row_common_color_full_witnesses\": 197, \"saved_local_lifts\": 1688, \"signature_T_W_equivalences\": 1024, \"signature_T_subsets\": 32, \"target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"516c44fc1480002c4fe358ea5ce0cc69349d55ed463427c685db42ec887ec2a7\"}",
+      "log": "logs/checker-seed17.log"
+    },
+    {
+      "label": "boundary_checker-normal",
+      "command": "python3 -B /home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/boundary_checker.py --check",
+      "seed": null,
+      "exit_code": 0,
+      "output": "{\"bytes\": 15377, \"counts\": {\"T_subsets\": 32, \"T_with_any_candidate_leaf_edge\": 6, \"T_with_two_distinct_candidate_leaf_edges\": 2, \"target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"51b0641d286f96a4cca7adf65bc085096ba566d3f176f0639e30d63969ab26a5\"}",
+      "log": "logs/boundary_checker-normal.log"
+    },
+    {
+      "label": "boundary_checker-seed17",
+      "command": "python3 -B /home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/boundary_checker.py --check",
+      "seed": "17",
+      "exit_code": 0,
+      "output": "{\"bytes\": 15377, \"counts\": {\"T_subsets\": 32, \"T_with_any_candidate_leaf_edge\": 6, \"T_with_two_distinct_candidate_leaf_edges\": 2, \"target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"51b0641d286f96a4cca7adf65bc085096ba566d3f176f0639e30d63969ab26a5\"}",
+      "log": "logs/boundary_checker-seed17.log"
+    },
+    {
+      "label": "boundary_side_checker-normal",
+      "command": "python3 -B /home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/boundary_side_checker.py --check",
+      "seed": null,
+      "exit_code": 0,
+      "output": "{\"bytes\": 272094, \"counts\": {\"boundary_spoke_schedules_including_root_swap\": 4, \"empty_exterior_cells\": 120, \"fixed_degree_five_root_graphs\": 3, \"full_exterior_lifts\": 246, \"full_exterior_owner_color_cells\": 240, \"literal_boundary_row_color_witnesses\": 32, \"named_leaf_owner_cases\": 16, \"sidewise_escape_trigger_cells\": 43, \"target_sources\": 0, \"whole_graph_root_fixed_DFS_comparisons\": 240}, \"mode\": \"check\", \"sha256\": \"52524f4124aaf11562cf9679663431572d338bd79bc40a4a809e35dc0b6d4bce\"}",
+      "log": "logs/boundary_side_checker-normal.log"
+    },
+    {
+      "label": "boundary_side_checker-seed17",
+      "command": "python3 -B /home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/boundary_side_checker.py --check",
+      "seed": "17",
+      "exit_code": 0,
+      "output": "{\"bytes\": 272094, \"counts\": {\"boundary_spoke_schedules_including_root_swap\": 4, \"empty_exterior_cells\": 120, \"fixed_degree_five_root_graphs\": 3, \"full_exterior_lifts\": 246, \"full_exterior_owner_color_cells\": 240, \"literal_boundary_row_color_witnesses\": 32, \"named_leaf_owner_cases\": 16, \"sidewise_escape_trigger_cells\": 43, \"target_sources\": 0, \"whole_graph_root_fixed_DFS_comparisons\": 240}, \"mode\": \"check\", \"sha256\": \"52524f4124aaf11562cf9679663431572d338bd79bc40a4a809e35dc0b6d4bce\"}",
+      "log": "logs/boundary_side_checker-seed17.log"
+    },
+    {
+      "label": "minor_checker-normal",
+      "command": "python3 -B /home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/minor_checker.py --check",
+      "seed": null,
+      "exit_code": 0,
+      "output": "{\"bytes\": 17109, \"counts\": {\"fixed_minor_controls\": 3, \"original_connected_disjoint_bags\": 15, \"original_cross_edge_pairs\": 30, \"target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"14655e1f78fd94f43c753b683c4bc93ac53bf053d5f181303e5d22bafe11ce88\"}",
+      "log": "logs/minor_checker-normal.log"
+    },
+    {
+      "label": "minor_checker-seed17",
+      "command": "python3 -B /home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/minor_checker.py --check",
+      "seed": "17",
+      "exit_code": 0,
+      "output": "{\"bytes\": 17109, \"counts\": {\"fixed_minor_controls\": 3, \"original_connected_disjoint_bags\": 15, \"original_cross_edge_pairs\": 30, \"target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"14655e1f78fd94f43c753b683c4bc93ac53bf053d5f181303e5d22bafe11ce88\"}",
+      "log": "logs/minor_checker-seed17.log"
+    }
+  ],
+  "frozen_integrity": [
+    {
+      "path": "docs/c5_kempe_guide.md",
+      "snapshot_sha256": "2cb026644374fda0e7c79f2923793a48a6fa155c03e1c5b81d1ee572328c12d7",
+      "status": "authorized routing update"
+    },
+    {
+      "path": "docs/c5_excess_two_n2_long_synchrony.md",
+      "snapshot_sha256": "fa136f9a1c92f40d4a833d3b36768a76a524988bc2789d5f40bcde4a32577754",
+      "status": "dated successor notice only; original body byte-identical"
+    },
+    {
+      "path": "docs/c5_excess_two_n2_partition_rule.md",
+      "snapshot_sha256": "000a764cd6b834e86ac2cc930ef0224446698516ea32bc14d775c4b2fbc8f339",
+      "status": "dated successor notice only; original body byte-identical"
+    },
+    {
+      "path": "docs/c5_excess_two_n2_unary_diff_closure.md",
+      "snapshot_sha256": "ccdfc8e37c6d19e709592b059fcc1ff742d485b6654f74430214c2ac7fef1263",
+      "status": "dated successor notice only; original body byte-identical"
+    },
+    {
+      "path": "docs/c5_excess_two_n2_diagonal_three_row.md",
+      "snapshot_sha256": "3427daff05eb66d52c03e3e1f236b8f6589fd95927b2243c934a5f9a363c3955",
+      "status": "dated successor notice only; original body byte-identical"
+    },
+    {
+      "path": "docs/c5_excess_two_n2_residual_unification.md",
+      "snapshot_sha256": "6697781fd7ff1bc3adf3cd63c3dfe16cb45315367a3e671313730973b1a59012",
+      "status": "dated successor notice only; original body byte-identical"
+    },
+    {
+      "path": "docs/c5_excess_two_arc_spoke_closure.md",
+      "snapshot_sha256": "165d31d6c9d4b45e3fcf5c662c3e5e47fb8ae7e8d82e5d159ea5e6957c7be447",
+      "status": "unchanged"
+    },
+    {
+      "path": "docs/c5_excess_two_arc_size_bound.md",
+      "snapshot_sha256": "d2633f08c1a81f984b2e4c5985d525e5bd39ede7ef284667ddc77662900c0ad6",
+      "status": "unchanged"
+    },
+    {
+      "path": "docs/c5_excess_two_arc_component_slack.md",
+      "snapshot_sha256": "8c95b777d32e0bc4251b7762e59bb2723ca27b15525a259d631f93ed18789595",
+      "status": "unchanged"
+    },
+    {
+      "path": "docs/c5_unary_shield_budget.md",
+      "snapshot_sha256": "c4039e805abcc94a6a8c824ba38e5858420535c5c5528e3bf43aec5721c8e082",
+      "status": "unchanged"
+    },
+    {
+      "path": "docs/c5_short_support_singleton.md",
+      "snapshot_sha256": "03f1e76abfae31f08c26b39e6a0fef957520fe073c934d69fe9527f9b0f3f22b",
+      "status": "unchanged"
+    },
+    {
+      "path": "docs/c5_excess_two_n2_unary_three_row_escape.md",
+      "snapshot_sha256": "8757dd98aacd136c8eb8033f4881d36f0e5ebb96c5c6efda7ac4dbcd830b8f46",
+      "status": "unchanged"
+    },
+    {
+      "path": "docs/c5_phase_b_common_lemmas.md",
+      "snapshot_sha256": "5e38c45762c914deca1866f38334630fd3681d8fa44a7c4ff5ff76a0b79c8855",
+      "status": "unchanged"
+    },
+    {
+      "path": "artifacts/c5_excess_two_e4/REPORT.md",
+      "snapshot_sha256": "2f4c12e5d947ccdee8019daa5acd34c05b56965047b558f6ceda31f37a66ac04",
+      "status": "unchanged"
+    },
+    {
+      "path": "audits/2026-10-11-n2-unary-adoption-long-joint/long/REPORT.md",
+      "snapshot_sha256": "696b57981e93d07ec4495d00d29233e5522d1562987acff963892f95053f4e0d",
+      "status": "unchanged"
+    },
+    {
+      "path": "audits/2026-10-11-n2-long-mask-sync/high-contact/REPORT.md",
+      "snapshot_sha256": "6b882255a10148db200ae844fadeef482c38aa945ad622b9517c76f0c758d446",
+      "status": "unchanged"
+    },
+    {
+      "path": "audits/2026-10-11-n2-long-mask-sync/high-contact/checker.py",
+      "snapshot_sha256": "4e9cd458e0b9a86ccd7298d09ad1d0a4d0415c07ab7ba3cdf3068bc0c8d3dadc",
+      "status": "unchanged"
+    },
+    {
+      "path": "audits/2026-10-11-n2-long-mask-sync/high-contact/observations.json",
+      "snapshot_sha256": "f91d8a12bdf4b4c07c2ff64b6c345f292942668ad00af224ab4b71cdaa7326b7",
+      "status": "unchanged"
+    },
+    {
+      "path": "audits/2026-10-11-n2-long-mask-sync/review/root_topology.md",
+      "snapshot_sha256": "d7afa06a65e9793af507786aaf862b6e834738d61530af50c318aec34d32e7b7",
+      "status": "unchanged"
+    }
+  ],
+  "full_target": "not triggered",
+  "paper_decision": "adopted complete original N2-55 (1,0) exclusion",
+  "lean_theorem_added": false,
+  "documentation_checks": [
+    {
+      "label": "check-docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 1,
+      "output": "missing path: docs/c5_excess_two_n2_double_long_joint.md:221: ../audits/2026-10-13-n2-double-long-joint/verification.json\nFAIL: 1 errors (640 Markdown files, 7975 local links)",
+      "log": "logs/check-docs.log"
+    },
+    {
+      "label": "docgraph-formal",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes",
+      "log": "logs/docgraph-formal.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": "",
+      "log": "logs/diff-check.log"
+    }
+  ],
+  "negative_controls": "see controls/verification.json, supplemental_verification.json and minor_verification.json",
+  "unrelated_workspace_changes": "preserved",
+  "audit_local_links": {
+    "count": 42,
+    "missing": []
+  },
+  "lake_build": {
+    "exit_code": 0,
+    "log": "lake-build.log",
+    "result": "Build completed successfully (8831 jobs).",
+    "new_theorem_formalized": false,
+    "existing_linter_warnings": true
+  },
+  "independent_reviews": [
+    "REVIEW.md",
+    "topology/INTEGRATION_REVIEW.md",
+    "colouring/INTEGRATION_REVIEW.md"
+  ],
+  "negative_control_receipts": [
+    "controls/verification.json",
+    "controls/supplemental_verification.json",
+    "controls/minor_verification.json"
+  ],
+  "not_rerun": [
+    "upstream 44/N45/SD-A full audits",
+    "ES/ER source enumeration",
+    "whole-worktree DocGraph",
+    "original source rotations"
+  ],
+  "delivery_status": "complete paper exclusion of full contracted original N2-55 (1,0); (2,0) and parent E-ARC2 OPEN; no commit/push"
+}

@@ -1,0 +1,61 @@
+{
+  "artifact_sha256_after": {
+    "certificate.json.gz": "200109de855e537cbcd5871015873528afb0d2be7c3e8dcd493d34fd05750960",
+    "check_cross_edge.py": "00d299b393173d7fc9802025f277589d1e1063d82b8afa6d1fca1867454825a7",
+    "summary.json": "f3b74e870af6e32af7ddca03610b326ade6391172e9b57b0271e566d82048f11"
+  },
+  "artifact_sha256_before": {
+    "certificate.json.gz": "200109de855e537cbcd5871015873528afb0d2be7c3e8dcd493d34fd05750960",
+    "check_cross_edge.py": "00d299b393173d7fc9802025f277589d1e1063d82b8afa6d1fca1867454825a7",
+    "summary.json": "f3b74e870af6e32af7ddca03610b326ade6391172e9b57b0271e566d82048f11"
+  },
+  "read_only_artifacts_unchanged": true,
+  "result": "PASS",
+  "tests": {
+    "broken_Kempe_component_partition": {
+      "exit_code": 1,
+      "stderr": "FAIL: certificate mismatch: $.graphs[0].rows[0].pointwise_h_records[0].Kempe.color_pair_records[0].components[0]: length 3, expected 4",
+      "stdout": ""
+    },
+    "change_named_color_in_full_J_lift": {
+      "exit_code": 1,
+      "stderr": "FAIL: certificate mismatch: $.graphs[0].edge_fibres[0].rows[0].cells[3][0][0]: value mismatch",
+      "stdout": ""
+    },
+    "default_readonly": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\"canonical_certificate_sha256\": \"8bcc3f9dd04ae7cec9f3079797cfa669b2e111ff42a190ffbda5b80eab4575d5\", \"complete_G_lifts\": 403, \"complete_H_lifts\": 1253, \"complete_J_lifts\": 4894, \"dfs_seed\": null, \"empty_J_cells\": 1063, \"explicit_J_cells\": 2440, \"graph_count\": 5, \"mode\": \"check\", \"nonempty_rejected_H_rows\": 16, \"rejected_H_lifts\": 32, \"result\": \"PASS\"}"
+    },
+    "drop_empty_J_cell": {
+      "exit_code": 1,
+      "stderr": "FAIL: certificate mismatch: $.graphs[0].edge_fibres[0].rows[0].cells: length 3, expected 4",
+      "stdout": ""
+    },
+    "exclusive_write_refusal": {
+      "exit_code": 1,
+      "stderr": "FAIL: refusing to overwrite existing outputs",
+      "stdout": ""
+    },
+    "missing_rejected_H_lift": {
+      "exit_code": 1,
+      "stderr": "FAIL: certificate mismatch: $.graphs[0].rows[2].h_lifts: length 0, expected 1",
+      "stdout": ""
+    },
+    "normal": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\"canonical_certificate_sha256\": \"8bcc3f9dd04ae7cec9f3079797cfa669b2e111ff42a190ffbda5b80eab4575d5\", \"complete_G_lifts\": 403, \"complete_H_lifts\": 1253, \"complete_J_lifts\": 4894, \"dfs_seed\": null, \"empty_J_cells\": 1063, \"explicit_J_cells\": 2440, \"graph_count\": 5, \"mode\": \"check\", \"nonempty_rejected_H_rows\": 16, \"rejected_H_lifts\": 32, \"result\": \"PASS\"}"
+    },
+    "seed17": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\"canonical_certificate_sha256\": \"8bcc3f9dd04ae7cec9f3079797cfa669b2e111ff42a190ffbda5b80eab4575d5\", \"complete_G_lifts\": 403, \"complete_H_lifts\": 1253, \"complete_J_lifts\": 4894, \"dfs_seed\": 17, \"empty_J_cells\": 1063, \"explicit_J_cells\": 2440, \"graph_count\": 5, \"mode\": \"check\", \"nonempty_rejected_H_rows\": 16, \"rejected_H_lifts\": 32, \"result\": \"PASS\"}"
+    },
+    "wrong_shared_edge_multiplicity": {
+      "exit_code": 1,
+      "stderr": "FAIL: certificate mismatch: $.graphs[2].edge_fibres[10].m5: value mismatch",
+      "stdout": ""
+    }
+  }
+}

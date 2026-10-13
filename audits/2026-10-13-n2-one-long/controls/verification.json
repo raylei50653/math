@@ -1,0 +1,80 @@
+{
+  "artifact_sha256": "516c44fc1480002c4fe358ea5ce0cc69349d55ed463427c685db42ec887ec2a7",
+  "checker_sha256": "bfc5bd286fad1deb684b3cf25290a8481f13eb81990127ff68ae8d7f5e68432d",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-one-long/controls/checker.py",
+        "--check"
+      ],
+      "label": "normal",
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "5ab4c4495c500ebf16bb3579b3daaaa63d24d12656cc20181db8fd64b879a164"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-one-long/controls/checker.py",
+        "--check"
+      ],
+      "label": "seed17",
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "5ab4c4495c500ebf16bb3579b3daaaa63d24d12656cc20181db8fd64b879a164"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-one-long/controls/checker.py",
+        "--check",
+        "--artifact",
+        "audits/2026-10-13-n2-one-long/controls/observations_corrupted_negative.json"
+      ],
+      "label": "corrupted-negative",
+      "returncode": 1,
+      "stderr_sha256": "8b78894620d71636f2ac9a3fec249fe864c0cce19deaf833383c23a25379eca2",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "corrupted_negative": {
+    "actual_exit_code": 1,
+    "changed_first_nonempty_local_tuple_from": [
+      2,
+      1,
+      2,
+      3
+    ],
+    "expected_rejection": "artifact mismatch",
+    "to": [
+      3,
+      1,
+      2,
+      3
+    ]
+  },
+  "counts": {
+    "catalogued_ambient_cells": 2560,
+    "empty_join_cells": 981,
+    "empty_local_cells": 64,
+    "full_local_cells": 640,
+    "full_same_row_join_cells": 1920,
+    "global_unpinned_DFS_comparisons": 120,
+    "local_pieces": 4,
+    "named_support_catalogues": 16,
+    "same_row_common_color_full_witnesses": 197,
+    "saved_local_lifts": 1688,
+    "signature_T_W_equivalences": 1024,
+    "signature_T_subsets": 32,
+    "target_sources": 0
+  },
+  "normal_seed17_stdout_identical": true,
+  "readonly_payload_file_count": 8,
+  "readonly_payload_mutations": 0,
+  "status": "triggered and holds",
+  "target_source_status": "not triggered"
+}

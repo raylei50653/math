@@ -89,3 +89,11 @@ N45的還原順序仍是先執行主 `tools/audit_archive.py restore --artifacts
 最後137／160支產生器、143／166份主要產物逐byte一致；1項文件hash漂移、
 21項依賴阻擋與1項執行環境限制仍未通過。完整範圍、修補參數與原失敗紀錄見
 [生成驗證紀錄](2026-10-12-generated-artifact-ci/REPORT.md)。
+
+## 2026-10-13 N2、W5／C₇與搬運研究發布
+
+七份原隔離包共413檔保持原bytes、frozen輸入、seals及成功／失敗紀錄。
+其中八份大型JSON及兩份有歷史whitespace的原文，依既有格式追加10個路徑、
+7個blobs，新增684,507 compressed bytes；舊ARCHIVE records不改。
+新checkout先執行上述restore指令，再重播各包checker；詳細採納範圍、
+目前OPEN界線與本次實際核對見[發布紀錄](../docs/history/2026-10-13-progress-publish.md)。

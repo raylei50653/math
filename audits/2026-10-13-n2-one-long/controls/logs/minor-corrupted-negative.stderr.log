@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/minor_checker.py", line 112, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/minor_checker.py", line 100, in main
+    result = generate(args.source)
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/minor_checker.py", line 72, in generate
+    require(possible, 'missing original cross edge for ' + repr(pair))
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-one-long/controls/minor_checker.py", line 15, in require
+    raise ValueError(message)
+ValueError: missing original cross edge for ('P', 'Q')
