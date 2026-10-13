@@ -3,6 +3,8 @@
 2026-10-13。基準 `19209f4cf68261fdce5e84a7804cfe04ae0957bf`；
 [BASE](../audits/2026-10-13-n2-one-long/BASE.json)保存十九份原輸入及 SHA。
 目前入口見 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)。
+本頁已納入[2026-10-13整理發布](history/2026-10-13-progress-publish.md)；
+下文驗證與原audit的發布狀態保留獨立交付當時語境。
 
 **定理 OL：完整下述 N2 原55來源不存在 `(ℓ,u)=(1,0)`。**
 證明對任意原 long 長度成立：先排全部末端奇環，再把末端 bridges 收窄到兩份

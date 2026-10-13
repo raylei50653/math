@@ -1,0 +1,82 @@
+[
+  {
+    "name": "one-main-negative",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-one-long/controls/checker.py",
+      "--check",
+      "--artifact",
+      "audits/2026-10-13-n2-one-long/controls/observations_corrupted_negative.json"
+    ],
+    "exit_code": 1,
+    "seconds": 0.241,
+    "rejected": true,
+    "last_error": "ValueError: artifact mismatch",
+    "fixture_sha256": "6b963c9904129d41713b8d607257827f6bca177ba7d028f3763a4619e53979e8"
+  },
+  {
+    "name": "one-boundary-negative",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-one-long/controls/boundary_checker.py",
+      "--check",
+      "--artifact",
+      "audits/2026-10-13-n2-one-long/controls/boundary_corrupted_negative.json"
+    ],
+    "exit_code": 1,
+    "seconds": 0.054,
+    "rejected": true,
+    "last_error": "ValueError: boundary artifact mismatch",
+    "fixture_sha256": "2b2f77a80ef6a889859442ce7f12a56952722c6a24f4e9fe8e401e3de976537c"
+  },
+  {
+    "name": "one-side-negative",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-one-long/controls/boundary_side_checker.py",
+      "--check",
+      "--artifact",
+      "audits/2026-10-13-n2-one-long/controls/side_corrupted_negative.json"
+    ],
+    "exit_code": 1,
+    "seconds": 0.073,
+    "rejected": true,
+    "last_error": "ValueError: sidewise artifact mismatch",
+    "fixture_sha256": "92600c2ac5f233b9e36222903940ad1067e5fd2f6378861c994bdfaa28a716dc"
+  },
+  {
+    "name": "one-minor-negative",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-one-long/controls/minor_checker.py",
+      "--check",
+      "--source",
+      "audits/2026-10-13-n2-one-long/controls/minor_source_corrupted_negative.json"
+    ],
+    "exit_code": 1,
+    "seconds": 0.039,
+    "rejected": true,
+    "last_error": "ValueError: missing original cross edge for ('P', 'Q')",
+    "fixture_sha256": "03482fb6b6ae3368d69093f0c9742d23459a723c8cf17919a255ae492433c762"
+  },
+  {
+    "name": "double-matrix-negative",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-double-long-joint/joint/checker.py",
+      "--check",
+      "--artifact",
+      "audits/2026-10-13-n2-double-long-joint/joint/corrupt-observations.json"
+    ],
+    "exit_code": 1,
+    "seconds": 1.973,
+    "rejected": true,
+    "last_error": "artifact mismatch",
+    "fixture_sha256": "199de5ed55285462d260367fe88a6c9f8e7acf8cf5eb0be50e838b18fd97b9c3"
+  }
+]

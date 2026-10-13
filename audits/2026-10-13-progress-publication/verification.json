@@ -1,0 +1,165 @@
+{
+  "date": "2026-10-13",
+  "base": "19209f4cf68261fdce5e84a7804cfe04ae0957bf",
+  "scope": "Publication of seven connected audit bundles; paper, finite controls, external dependencies and Lean remain distinct.",
+  "custody": {
+    "original_audit_files": 413,
+    "reconstructed_from_git_index": 413,
+    "original_bytes_unchanged": true,
+    "staged_whitelist_exact": true,
+    "staged_files": 413,
+    "old_archive_file_records_unchanged": 2455,
+    "old_archive_blob_records_unchanged": 1527,
+    "added_archive_paths": [
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/frozen/cap_probe.json",
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/frozen/audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/cap_probe.json",
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/topology/REPORT.md",
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/topology/certificate.json",
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/topology/count_review.md",
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/topology/frozen/cap_probe.json",
+      "audits/2026-10-13-forced-inequality-19209f4c/alternatives/results.json",
+      "audits/2026-10-13-forced-inequality-19209f4c/alternatives/results.v2.json",
+      "audits/2026-10-13-n2-one-long/controls/observations.json",
+      "audits/2026-10-13-n2-one-long/controls/observations_corrupted_negative.json"
+    ],
+    "added_blob_count": 7,
+    "new_compressed_bytes": 684507,
+    "fresh_destination": "/tmp/math-publish-20261013/fresh-evidence"
+  },
+  "focused_receipts": [
+    "n2/focused-replay-results.json",
+    "n2/negative-replay-results.json",
+    "w5-c7/replay-results.json",
+    "transport/replay_results.json",
+    "transport/hash_checks.json",
+    "transport/snapshot_checks.json",
+    "n2-fresh/focused-replay-results.json",
+    "w5-c7-fresh/fresh-replay-results.json",
+    "transport-fresh/results.json"
+  ],
+  "reconstruction_commands_scope": "Primary focused checks run from the reconstructed Git-index/ARCHIVE bytes; full-repository C7 integration aggregator replayed only in the original root.",
+  "lean_regression": {
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit_code": 0,
+    "jobs": 8831,
+    "warnings": "Existing AttachmentOrder and SymRelabel linter warnings; no new Lean theorem."
+  },
+  "global_docgraph": {
+    "command": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "check"
+    ],
+    "exit_code": 1,
+    "documents": 62,
+    "relations": 213,
+    "families": 5,
+    "errors": 62,
+    "reason": "Retained historical frozen copies and scratch duplicate IDs; distinct from formal docs check."
+  },
+  "not_rerun": [
+    "Upstream broad source enumerations",
+    "All historical artifact generators",
+    "External literature counting computations",
+    "All older Lean certificates"
+  ],
+  "known_historical_receipts": [
+    "Earlier one-long manifest has one superseded canonical-document hash mismatch; manifest-final matches.",
+    "Cross-edge ROUTING reflects historical shared-document hashes; source and frozen manifest remain unchanged."
+  ],
+  "remaining_open": [
+    "N2 original-55 double-long (2,0) and LL-CUT",
+    "General N2 and E-ARC2",
+    "Private-cycle minimum sources r<=6 legal annulus representative existence",
+    "General h>=3 sources and cross-edge synchronization",
+    "Original critical C5 domain F/Z",
+    "K-infinity=K<=5"
+  ],
+  "status": "local_publication_validation_complete",
+  "final_checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.623,
+      "stdout": "OK: 643 Markdown files, 8017 local links; anchors, index, handoff checked\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.075,
+      "stdout": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.008,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.006,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.252,
+      "stdout": "Generated artifact policy OK: 4327 indexed files, 2 large files with documented exceptions, 166 registered outputs.\n",
+      "stderr": ""
+    }
+  ],
+  "focused_expected_outcomes": {
+    "normal_seed_receipts": {
+      "n2": 14,
+      "w5_c7": 11
+    },
+    "n2_corrupt_certificates_rejected": 5,
+    "transport_expected_outcomes": 9
+  },
+  "fresh_checkout_checks": {
+    "n2": 7,
+    "w5_c7": 11,
+    "transport": 3
+  },
+  "original_audit_bytes_still_unchanged": true,
+  "publication_commits_before_routing": [
+    "3415a40950ad62e76691b4b2b8da12e23294adc1 docs(math): publish cross-edge Kempe and forced-inequality transport",
+    "07500d737035c667de3fc2a9d712a45232ea53cc docs(math): adopt W5 three-color support and exclude the final C7 collar",
+    "a8b4f6432f7b734c2b6c1194352f6de0f941e529 docs(math): exclude N2 one-long sources and narrow double-long joints",
+    "5d65a92a0e9d3d44fc5a3c1ef2a5ae8ff1a80dc0 chore(math): preserve seven research audit bundles"
+  ],
+  "remote_state": "Push and final remote equality are verified after the final commit; final SHA is recorded in Git and the user reply."
+}

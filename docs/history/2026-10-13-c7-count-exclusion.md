@@ -2,6 +2,8 @@
 
 2026-10-13。[權威入口](../c5_neartri_boundary_collar.md)／
 [完整證明與證據](../../audits/2026-10-13-c7-joint-kempe-19209f4c/REPORT.md)。
+後續整理與發布見[同日整批紀錄](2026-10-13-progress-publish.md)；
+下文「本輪沒有commit／push」是本次數學交付當時的狀態。
 
 Closure scope：具名 C₇ `(a0,a1,y2,a2,a3,y4,a4)` 的既有55列上界 U，
 不包含任何合法 disk 圖的完整關係。任意有限平面內側圖的共同延伸計數

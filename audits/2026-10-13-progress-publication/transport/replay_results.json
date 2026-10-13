@@ -1,0 +1,142 @@
+[
+  {
+    "name": "cross-catalogue",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-cross-edge-kempe-19209f4c/review/catalogue_check.py"
+    ],
+    "seed17": false,
+    "expected_exit": 0,
+    "exit_code": 0,
+    "pass_expected": true,
+    "seconds": 0.041,
+    "output_tail": "et_minimum_source\": \"not triggered\",\n  \"targets\": {\n    \"933\": {\n      \"catalogue_supersets\": [\n        935,\n        943,\n        951,\n        957,\n        959,\n        997,\n        999,\n        1005,\n        1007,\n        1013,\n        1015,\n        1021,\n        1023\n      ],\n      \"intersection_new_rows\": 0,\n      \"new_masks\": [\n        2,\n        10,\n        18,\n        24,\n        26,\n        64,\n        66,\n        72,\n        74,\n        80,\n        82,\n        88,\n        90\n      ],\n      \"rejected_patterns\": [\n        \"01021\",\n        \"01201\",\n        \"01202\",\n        \"01212\"\n      ]\n    },\n    \"941\": {\n      \"catalogue_supersets\": [\n        943,\n        957,\n        959,\n        1005,\n        1007,\n        1021,\n        1023\n      ],\n      \"intersection_new_rows\": 0,\n      \"new_masks\": [\n        2,\n        16,\n        18,\n        64,\n        66,\n        80,\n        82\n      ],\n      \"rejected_patterns\": [\n        \"01021\",\n        \"01202\",\n        \"01212\"\n      ]\n    }\n  }\n}\n"
+  },
+  {
+    "name": "cross-main-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-cross-edge-kempe-19209f4c/controls/check_cross_edge.py",
+      "--check"
+    ],
+    "seed17": false,
+    "expected_exit": 0,
+    "exit_code": 0,
+    "pass_expected": true,
+    "seconds": 0.372,
+    "output_tail": "{\"canonical_certificate_sha256\": \"8bcc3f9dd04ae7cec9f3079797cfa669b2e111ff42a190ffbda5b80eab4575d5\", \"complete_G_lifts\": 403, \"complete_H_lifts\": 1253, \"complete_J_lifts\": 4894, \"dfs_seed\": null, \"empty_J_cells\": 1063, \"explicit_J_cells\": 2440, \"graph_count\": 5, \"mode\": \"check\", \"nonempty_rejected_H_rows\": 16, \"rejected_H_lifts\": 32, \"result\": \"PASS\"}\n"
+  },
+  {
+    "name": "cross-main-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-cross-edge-kempe-19209f4c/controls/check_cross_edge.py",
+      "--check",
+      "--seed",
+      "17"
+    ],
+    "seed17": true,
+    "expected_exit": 0,
+    "exit_code": 0,
+    "pass_expected": true,
+    "seconds": 0.387,
+    "output_tail": "{\"canonical_certificate_sha256\": \"8bcc3f9dd04ae7cec9f3079797cfa669b2e111ff42a190ffbda5b80eab4575d5\", \"complete_G_lifts\": 403, \"complete_H_lifts\": 1253, \"complete_J_lifts\": 4894, \"dfs_seed\": 17, \"empty_J_cells\": 1063, \"explicit_J_cells\": 2440, \"graph_count\": 5, \"mode\": \"check\", \"nonempty_rejected_H_rows\": 16, \"rejected_H_lifts\": 32, \"result\": \"PASS\"}\n"
+  },
+  {
+    "name": "forced-main-normal",
+    "command": [
+      ".venv/bin/python",
+      "-B",
+      "audits/2026-10-13-forced-inequality-19209f4c/controls/checker.py",
+      "--check",
+      "audits/2026-10-13-forced-inequality-19209f4c/controls/certificate.json"
+    ],
+    "seed17": false,
+    "expected_exit": 0,
+    "exit_code": 0,
+    "pass_expected": true,
+    "seconds": 1.545,
+    "output_tail": "{\"complete_coloring_controls\": 64, \"families_and_sizes\": 28, \"full_lifts\": 7608, \"low_excess_critical_C5_source\": \"not triggered\", \"max_forced_pair_graph_distance\": 33, \"nonplanar_controls\": 2, \"planar_controls\": 62}\n"
+  },
+  {
+    "name": "forced-main-seed17",
+    "command": [
+      ".venv/bin/python",
+      "-B",
+      "audits/2026-10-13-forced-inequality-19209f4c/controls/checker.py",
+      "--check",
+      "audits/2026-10-13-forced-inequality-19209f4c/controls/certificate.json"
+    ],
+    "seed17": true,
+    "expected_exit": 0,
+    "exit_code": 0,
+    "pass_expected": true,
+    "seconds": 1.545,
+    "output_tail": "{\"complete_coloring_controls\": 64, \"families_and_sizes\": 28, \"full_lifts\": 7608, \"low_excess_critical_C5_source\": \"not triggered\", \"max_forced_pair_graph_distance\": 33, \"nonplanar_controls\": 2, \"planar_controls\": 62}\n"
+  },
+  {
+    "name": "forced-alternatives-normal",
+    "command": [
+      ".venv/bin/python",
+      "-B",
+      "audits/2026-10-13-forced-inequality-19209f4c/alternatives/check_alternatives.py",
+      "--check",
+      "audits/2026-10-13-forced-inequality-19209f4c/alternatives/results.v2.json"
+    ],
+    "seed17": false,
+    "expected_exit": 0,
+    "exit_code": 0,
+    "pass_expected": true,
+    "seconds": 0.257,
+    "output_tail": "{\n  \"mode\": \"check\",\n  \"cases\": 84,\n  \"enumerated_cases\": 81,\n  \"total_colorings\": 12650,\n  \"sha256\": \"9ab6ced92935226e683e7fe88ebc49f5962dfa31487a001c35a96791b4ce985e\",\n  \"output\": \"audits/2026-10-13-forced-inequality-19209f4c/alternatives/results.v2.json\"\n}\n"
+  },
+  {
+    "name": "forced-alternatives-seed17",
+    "command": [
+      ".venv/bin/python",
+      "-B",
+      "audits/2026-10-13-forced-inequality-19209f4c/alternatives/check_alternatives.py",
+      "--check",
+      "audits/2026-10-13-forced-inequality-19209f4c/alternatives/results.v2.json"
+    ],
+    "seed17": true,
+    "expected_exit": 0,
+    "exit_code": 0,
+    "pass_expected": true,
+    "seconds": 0.274,
+    "output_tail": "{\n  \"mode\": \"check\",\n  \"cases\": 84,\n  \"enumerated_cases\": 81,\n  \"total_colorings\": 12650,\n  \"sha256\": \"9ab6ced92935226e683e7fe88ebc49f5962dfa31487a001c35a96791b4ce985e\",\n  \"output\": \"audits/2026-10-13-forced-inequality-19209f4c/alternatives/results.v2.json\"\n}\n"
+  },
+  {
+    "name": "cross-independent",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-cross-edge-kempe-19209f4c/review/independent_full_lifts.py"
+    ],
+    "seed17": false,
+    "expected_exit": 0,
+    "exit_code": 0,
+    "pass_expected": true,
+    "seconds": 3.27,
+    "output_tail": "djacent_transport\": {\n        \"rejected_adjacent_edge_rows\": 0,\n        \"transported_full_lifts\": 0,\n        \"triggered_adjacent_edge_rows\": 0\n      },\n      \"edge_fibres\": 20,\n      \"id\": \"triangulated_00\",\n      \"wheels\": 6\n    },\n    {\n      \"G_lifts\": 23,\n      \"J_lifts\": 591,\n      \"adjacent_transport\": {\n        \"rejected_adjacent_edge_rows\": 10,\n        \"transported_full_lifts\": 4,\n        \"triggered_adjacent_edge_rows\": 4\n      },\n      \"edge_fibres\": 15,\n      \"id\": \"triangulated_01\",\n      \"wheels\": 4\n    },\n    {\n      \"G_lifts\": 15,\n      \"J_lifts\": 488,\n      \"adjacent_transport\": {\n        \"rejected_adjacent_edge_rows\": 4,\n        \"transported_full_lifts\": 6,\n        \"triggered_adjacent_edge_rows\": 4\n      },\n      \"edge_fibres\": 16,\n      \"id\": \"triangulated_03\",\n      \"wheels\": 4\n    }\n  ],\n  \"method\": \"independent direct Cartesian product of free vertex colours\",\n  \"status\": \"triggered and holds\",\n  \"target_minimum_source\": \"not triggered\",\n  \"writes\": \"stdout only\"\n}\n"
+  },
+  {
+    "name": "forced-missing-lift-negative",
+    "command": [
+      ".venv/bin/python",
+      "-B",
+      "audits/2026-10-13-forced-inequality-19209f4c/controls/checker.py",
+      "--check",
+      "audits/2026-10-13-forced-inequality-19209f4c/controls/corrupt_missing_lift.json"
+    ],
+    "seed17": false,
+    "expected_exit": 1,
+    "exit_code": 1,
+    "pass_expected": true,
+    "seconds": 1.471,
+    "output_tail": "FAIL: certificate differs from complete recomputation\n"
+  }
+]

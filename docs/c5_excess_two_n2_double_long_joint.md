@@ -6,6 +6,8 @@
 [long synchrony](c5_excess_two_n2_long_synchrony.md)及
 [完整接口分割](c5_excess_two_n2_partition_rule.md)。
 目前停止點見 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)。
+本頁已納入[2026-10-13整理發布](history/2026-10-13-progress-publish.md)；
+文末「本輪不commit／push」保留原独立研究交付語境，後續狀態以發布紀錄及Git為準。
 
 **完整原55 `(ℓ,u)=(2,0)` 的零／一條 root-spoke 子域已排除，不限制 long 的大小。**
 這裏 `t=t_r+t_s` 是兩 roots 接原框的 spokes 總數，不是 long 數或接點數。

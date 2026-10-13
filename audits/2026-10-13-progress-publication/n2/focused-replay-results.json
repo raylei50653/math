@@ -1,0 +1,198 @@
+[
+  {
+    "name": "one-main-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-one-long/controls/checker.py",
+      "--check"
+    ],
+    "hashseed": null,
+    "exit_code": 0,
+    "seconds": 0.25,
+    "stdout": "{\"bytes\": 3743691, \"counts\": {\"catalogued_ambient_cells\": 2560, \"empty_join_cells\": 981, \"empty_local_cells\": 64, \"full_local_cells\": 640, \"full_same_row_join_cells\": 1920, \"global_unpinned_DFS_comparisons\": 120, \"local_pieces\": 4, \"named_support_catalogues\": 16, \"same_row_common_color_full_witnesses\": 197, \"saved_local_lifts\": 1688, \"signature_T_W_equivalences\": 1024, \"signature_T_subsets\": 32, \"target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"516c44fc1480002c4fe358ea5ce0cc69349d55ed463427c685db42ec887ec2a7\"}",
+    "stderr": ""
+  },
+  {
+    "name": "one-main-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-one-long/controls/checker.py",
+      "--check"
+    ],
+    "hashseed": "17",
+    "exit_code": 0,
+    "seconds": 0.256,
+    "stdout": "{\"bytes\": 3743691, \"counts\": {\"catalogued_ambient_cells\": 2560, \"empty_join_cells\": 981, \"empty_local_cells\": 64, \"full_local_cells\": 640, \"full_same_row_join_cells\": 1920, \"global_unpinned_DFS_comparisons\": 120, \"local_pieces\": 4, \"named_support_catalogues\": 16, \"same_row_common_color_full_witnesses\": 197, \"saved_local_lifts\": 1688, \"signature_T_W_equivalences\": 1024, \"signature_T_subsets\": 32, \"target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"516c44fc1480002c4fe358ea5ce0cc69349d55ed463427c685db42ec887ec2a7\"}",
+    "stderr": ""
+  },
+  {
+    "name": "one-boundary-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-one-long/controls/boundary_checker.py",
+      "--check"
+    ],
+    "hashseed": null,
+    "exit_code": 0,
+    "seconds": 0.063,
+    "stdout": "{\"bytes\": 15377, \"counts\": {\"T_subsets\": 32, \"T_with_any_candidate_leaf_edge\": 6, \"T_with_two_distinct_candidate_leaf_edges\": 2, \"target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"51b0641d286f96a4cca7adf65bc085096ba566d3f176f0639e30d63969ab26a5\"}",
+    "stderr": ""
+  },
+  {
+    "name": "one-boundary-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-one-long/controls/boundary_checker.py",
+      "--check"
+    ],
+    "hashseed": "17",
+    "exit_code": 0,
+    "seconds": 0.06,
+    "stdout": "{\"bytes\": 15377, \"counts\": {\"T_subsets\": 32, \"T_with_any_candidate_leaf_edge\": 6, \"T_with_two_distinct_candidate_leaf_edges\": 2, \"target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"51b0641d286f96a4cca7adf65bc085096ba566d3f176f0639e30d63969ab26a5\"}",
+    "stderr": ""
+  },
+  {
+    "name": "one-side-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-one-long/controls/boundary_side_checker.py",
+      "--check"
+    ],
+    "hashseed": null,
+    "exit_code": 0,
+    "seconds": 0.086,
+    "stdout": "{\"bytes\": 272094, \"counts\": {\"boundary_spoke_schedules_including_root_swap\": 4, \"empty_exterior_cells\": 120, \"fixed_degree_five_root_graphs\": 3, \"full_exterior_lifts\": 246, \"full_exterior_owner_color_cells\": 240, \"literal_boundary_row_color_witnesses\": 32, \"named_leaf_owner_cases\": 16, \"sidewise_escape_trigger_cells\": 43, \"target_sources\": 0, \"whole_graph_root_fixed_DFS_comparisons\": 240}, \"mode\": \"check\", \"sha256\": \"52524f4124aaf11562cf9679663431572d338bd79bc40a4a809e35dc0b6d4bce\"}",
+    "stderr": ""
+  },
+  {
+    "name": "one-side-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-one-long/controls/boundary_side_checker.py",
+      "--check"
+    ],
+    "hashseed": "17",
+    "exit_code": 0,
+    "seconds": 0.088,
+    "stdout": "{\"bytes\": 272094, \"counts\": {\"boundary_spoke_schedules_including_root_swap\": 4, \"empty_exterior_cells\": 120, \"fixed_degree_five_root_graphs\": 3, \"full_exterior_lifts\": 246, \"full_exterior_owner_color_cells\": 240, \"literal_boundary_row_color_witnesses\": 32, \"named_leaf_owner_cases\": 16, \"sidewise_escape_trigger_cells\": 43, \"target_sources\": 0, \"whole_graph_root_fixed_DFS_comparisons\": 240}, \"mode\": \"check\", \"sha256\": \"52524f4124aaf11562cf9679663431572d338bd79bc40a4a809e35dc0b6d4bce\"}",
+    "stderr": ""
+  },
+  {
+    "name": "one-minor-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-one-long/controls/minor_checker.py",
+      "--check"
+    ],
+    "hashseed": null,
+    "exit_code": 0,
+    "seconds": 0.04,
+    "stdout": "{\"bytes\": 17109, \"counts\": {\"fixed_minor_controls\": 3, \"original_connected_disjoint_bags\": 15, \"original_cross_edge_pairs\": 30, \"target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"14655e1f78fd94f43c753b683c4bc93ac53bf053d5f181303e5d22bafe11ce88\"}",
+    "stderr": ""
+  },
+  {
+    "name": "one-minor-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-one-long/controls/minor_checker.py",
+      "--check"
+    ],
+    "hashseed": "17",
+    "exit_code": 0,
+    "seconds": 0.036,
+    "stdout": "{\"bytes\": 17109, \"counts\": {\"fixed_minor_controls\": 3, \"original_connected_disjoint_bags\": 15, \"original_cross_edge_pairs\": 30, \"target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"14655e1f78fd94f43c753b683c4bc93ac53bf053d5f181303e5d22bafe11ce88\"}",
+    "stderr": ""
+  },
+  {
+    "name": "double-fibres-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-double-long-joint/controls/checker.py",
+      "--check"
+    ],
+    "hashseed": null,
+    "exit_code": 0,
+    "seconds": 0.15,
+    "stdout": "{\"bytes\": 241306, \"counts\": {\"complete_global_full_lifts\": 181, \"complete_target_sources\": 0, \"cross_collision_joints\": 29, \"fixed_original_gluings\": 1, \"joint_ambient_cells\": 160, \"local_ambient_cells\": 320, \"local_collision_triggered_cells\": 240, \"local_empty_cells\": 80, \"local_full_tuples\": 856, \"local_pieces\": 2, \"one_sided_collision_capacity_joints\": 48}, \"mode\": \"check\", \"sha256\": \"724a540c00a8248d2b45b48acdb1cd9d702f26ab68053d8926a3d3d31c406658\"}",
+    "stderr": ""
+  },
+  {
+    "name": "double-fibres-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-double-long-joint/controls/checker.py",
+      "--check"
+    ],
+    "hashseed": "17",
+    "exit_code": 0,
+    "seconds": 0.152,
+    "stdout": "{\"bytes\": 241306, \"counts\": {\"complete_global_full_lifts\": 181, \"complete_target_sources\": 0, \"cross_collision_joints\": 29, \"fixed_original_gluings\": 1, \"joint_ambient_cells\": 160, \"local_ambient_cells\": 320, \"local_collision_triggered_cells\": 240, \"local_empty_cells\": 80, \"local_full_tuples\": 856, \"local_pieces\": 2, \"one_sided_collision_capacity_joints\": 48}, \"mode\": \"check\", \"sha256\": \"724a540c00a8248d2b45b48acdb1cd9d702f26ab68053d8926a3d3d31c406658\"}",
+    "stderr": ""
+  },
+  {
+    "name": "double-minor-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-double-long-joint/controls/supplemental_minor_checker.py",
+      "--check"
+    ],
+    "hashseed": null,
+    "exit_code": 0,
+    "seconds": 0.037,
+    "stdout": "{\"bytes\": 24345, \"counts\": {\"certified_K5_minors\": 4, \"full_T1_triggers\": 0, \"full_target_sources\": 0, \"local_minor_controls\": 4, \"original_bag_spanning_trees\": 20, \"original_cross_adjacencies\": 40}, \"mode\": \"check\", \"sha256\": \"4fa487989869cf81077e09354cad593e9352992d587ae09a117181e285abe057\"}",
+    "stderr": ""
+  },
+  {
+    "name": "double-minor-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-double-long-joint/controls/supplemental_minor_checker.py",
+      "--check"
+    ],
+    "hashseed": "17",
+    "exit_code": 0,
+    "seconds": 0.037,
+    "stdout": "{\"bytes\": 24345, \"counts\": {\"certified_K5_minors\": 4, \"full_T1_triggers\": 0, \"full_target_sources\": 0, \"local_minor_controls\": 4, \"original_bag_spanning_trees\": 20, \"original_cross_adjacencies\": 40}, \"mode\": \"check\", \"sha256\": \"4fa487989869cf81077e09354cad593e9352992d587ae09a117181e285abe057\"}",
+    "stderr": ""
+  },
+  {
+    "name": "double-matrix-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-double-long-joint/joint/checker.py",
+      "--check"
+    ],
+    "hashseed": null,
+    "exit_code": 0,
+    "seconds": 1.95,
+    "stdout": "{\"abstract_incidence_profiles\": 81, \"bytes\": 33197, \"original_control_rows\": 10, \"sha256\": \"6eac3a2ae83cc5c38f026ba9dffa0d88d4c051868188ff24b3c9a56d825d79d9\", \"target_sources\": 0}",
+    "stderr": ""
+  },
+  {
+    "name": "double-matrix-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-double-long-joint/joint/checker.py",
+      "--check"
+    ],
+    "hashseed": "17",
+    "exit_code": 0,
+    "seconds": 1.964,
+    "stdout": "{\"abstract_incidence_profiles\": 81, \"bytes\": 33197, \"original_control_rows\": 10, \"sha256\": \"6eac3a2ae83cc5c38f026ba9dffa0d88d4c051868188ff24b3c9a56d825d79d9\", \"target_sources\": 0}",
+    "stderr": ""
+  }
+]

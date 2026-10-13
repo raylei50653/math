@@ -1,0 +1,140 @@
+[
+  {
+    "name": "w5-primary",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-three-color-support-19209f4c/controls/check_three_color_support.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "seconds": 1.087,
+    "stdout": "{\"canonical_certificate_sha256\": \"58b0de5c450f00fdbb7b089c53a6ae1f2ee9b6a6f0f4646c34fbea1cfec4bf0e\", \"complete_g_lift_count\": 1620, \"complete_h_lift_count\": 3250, \"dfs_seed\": null, \"empty_cell_count\": 345580, \"equal_r3_pair_count\": 1, \"explicit_cell_count\": 348160, \"graph_count\": 34, \"mode\": \"check\", \"r3_nonempty_cell_count\": 1280, \"result\": \"PASS\", \"selector_lift_instances\": 1020, \"unordered_distinct_pair_count\": 561}",
+    "stderr": ""
+  },
+  {
+    "name": "w5-forest",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-three-support-19209f4c/forest/check.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "seconds": 1.447,
+    "stdout": "{\"G_full_lifts\": 9308, \"H_full_lifts\": 18282, \"catalogue_sha256\": \"04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8\", \"cells\": 716800, \"empty_cells\": 701956, \"masks\": {\"1023\": 70}, \"templates\": 70, \"types\": {\"B_triangle\": 10, \"U_triangle\": 10, \"p1_r7\": 30, \"p1_r8\": 20}}",
+    "stderr": ""
+  },
+  {
+    "name": "w5-forest-independent",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-three-support-19209f4c/t1/forest_independent.py"
+    ],
+    "returncode": 0,
+    "seconds": 1.198,
+    "stdout": "{\n  \"G_lifts\": 9308,\n  \"H_lifts\": 18282,\n  \"catalogue_dihedral_checks\": 1320,\n  \"empty_cells\": 701956,\n  \"full_cells_compared\": 716800,\n  \"masks\": {\n    \"1023\": 70\n  },\n  \"source_realizability\": \"not triggered; source exclusion depends on paper classification\",\n  \"status\": \"PASS independent exact comparison\",\n  \"template_count\": 70,\n  \"types\": {\n    \"B_triangle\": 10,\n    \"U_triangle\": 10,\n    \"p1_r7\": 30,\n    \"p1_r8\": 20\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "name": "c7-count-identities",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/joint/count_identity.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "seconds": 0.12,
+    "stdout": "{\"status\": \"PASS\", \"proper_rows\": 91, \"NC_partitions\": 429, \"active_columns\": 36, \"identities\": 7, \"final_outer_preimages\": [6, 58, 89], \"target_source_status\": \"excluded universally by planar count identities and nonnegativity\"}",
+    "stderr": ""
+  },
+  {
+    "name": "c7-independent-count-review",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/topology/count_review.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.08,
+    "stdout": "{\"status\": \"PASS\", \"independently_generated_NC_partitions\": 429, \"identities_checked\": 7, \"forced_zero_outer_preimages\": [6, 58, 89], \"universal_scope\": \"Every finite graph embedded in the named C7 disk\", \"verdict\": \"No S subset U55 can transfer to 941\"}",
+    "stderr": ""
+  },
+  {
+    "name": "c7-caps",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/checker.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "seconds": 0.507,
+    "stdout": "{\"cap_controls\": 3383, \"mandatory_rows\": 45, \"minimal_relation_size\": 47, \"optional_rows\": 10, \"residual_relations\": 72, \"source_status\": \"not triggered\", \"status\": \"PASS\"}",
+    "stderr": ""
+  },
+  {
+    "name": "c7-independent-caps",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/independent_verify.py"
+    ],
+    "returncode": 0,
+    "seconds": 1.313,
+    "stdout": "{\"cardinality_lower_bound\": 47, \"exact_residual_count\": 72, \"full_outer_lift_rows\": 91, \"independent_Kempe_rows\": 91, \"independent_Kempe_splits\": 273, \"literal_cap_graphs\": 3383, \"literal_cap_row_queries\": 307853, \"mandatory_rows\": 45, \"row42_forcing\": \"verified\", \"source_status\": \"not triggered\", \"status\": \"PASS\"}",
+    "stderr": ""
+  },
+  {
+    "name": "c7-singleton-cap",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/caps/singleton_verify.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.039,
+    "stdout": "{\"accepted\": 16, \"complete_fixed_boundary_lifts\": 16, \"control_status\": \"triggered and holds\", \"embedding\": \"explicit fan triangulation\", \"full_boundary_rows\": 91, \"rejected\": 75, \"status\": \"PASS\", \"unique_upper_intersection\": \"0123231\"}",
+    "stderr": ""
+  },
+  {
+    "name": "c7-count-controls",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/counts/controls.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "seconds": 0.079,
+    "stdout": "{\"fixed_row_queries\": 364, \"full_lifts\": 492, \"literal_graphs\": 4, \"status\": \"PASS\", \"target_source_status\": \"not triggered\"}",
+    "stderr": ""
+  },
+  {
+    "name": "c7-topology",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/topology/checker.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "seconds": 0.512,
+    "stdout": "{\"status\": \"PASS\", \"chord_joins\": 6468, \"excluded_crosscuts\": 973, \"source_status\": \"not triggered\", \"h2_source_excluded\": false}",
+    "stderr": ""
+  },
+  {
+    "name": "c7-independent-topology",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/topology/independent_review.py"
+    ],
+    "returncode": 0,
+    "seconds": 3.916,
+    "stdout": "{\"chord_joins\": 6468, \"every_crosscut_possible_outer_union_subset_of\": 429, \"excluded_crosscuts\": 973, \"status\": \"PASS\"}",
+    "stderr": ""
+  }
+]

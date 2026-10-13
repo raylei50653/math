@@ -1,0 +1,43 @@
+[
+  {
+    "name": "forced-alternatives",
+    "command": [
+      "/home/ray/developer/ai/math/.venv/bin/python",
+      "-B",
+      "audits/2026-10-13-forced-inequality-19209f4c/alternatives/check_alternatives.py",
+      "--check",
+      "audits/2026-10-13-forced-inequality-19209f4c/alternatives/results.v2.json"
+    ],
+    "cwd": "/tmp/math-publish-20261013/fresh-evidence",
+    "exit_code": 0,
+    "seconds": 0.251,
+    "output": "{\n  \"mode\": \"check\",\n  \"cases\": 84,\n  \"enumerated_cases\": 81,\n  \"total_colorings\": 12650,\n  \"sha256\": \"9ab6ced92935226e683e7fe88ebc49f5962dfa31487a001c35a96791b4ce985e\",\n  \"output\": \"audits/2026-10-13-forced-inequality-19209f4c/alternatives/results.v2.json\"\n}\n"
+  },
+  {
+    "name": "cross-main",
+    "command": [
+      "/home/ray/developer/ai/math/.venv/bin/python",
+      "-B",
+      "audits/2026-10-13-cross-edge-kempe-19209f4c/controls/check_cross_edge.py",
+      "--check"
+    ],
+    "cwd": "/tmp/math-publish-20261013/fresh-evidence",
+    "exit_code": 0,
+    "seconds": 0.34,
+    "output": "{\"canonical_certificate_sha256\": \"8bcc3f9dd04ae7cec9f3079797cfa669b2e111ff42a190ffbda5b80eab4575d5\", \"complete_G_lifts\": 403, \"complete_H_lifts\": 1253, \"complete_J_lifts\": 4894, \"dfs_seed\": null, \"empty_J_cells\": 1063, \"explicit_J_cells\": 2440, \"graph_count\": 5, \"mode\": \"check\", \"nonempty_rejected_H_rows\": 16, \"rejected_H_lifts\": 32, \"result\": \"PASS\"}\n"
+  },
+  {
+    "name": "forced-main",
+    "command": [
+      "/home/ray/developer/ai/math/.venv/bin/python",
+      "-B",
+      "audits/2026-10-13-forced-inequality-19209f4c/controls/checker.py",
+      "--check",
+      "audits/2026-10-13-forced-inequality-19209f4c/controls/certificate.json"
+    ],
+    "cwd": "/tmp/math-publish-20261013/fresh-evidence",
+    "exit_code": 0,
+    "seconds": 1.452,
+    "output": "{\"complete_coloring_controls\": 64, \"families_and_sizes\": 28, \"full_lifts\": 7608, \"low_excess_critical_C5_source\": \"not triggered\", \"max_forced_pair_graph_distance\": 33, \"nonplanar_controls\": 2, \"planar_controls\": 62}\n"
+  }
+]

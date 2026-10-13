@@ -1,0 +1,31 @@
+{
+  "snapshot_files": 46,
+  "snapshot_matches_original": true,
+  "original_unchanged": true,
+  "tests": [
+    {
+      "name": "cross-independent-negative-snapshot",
+      "command": [
+        "python3",
+        "-B",
+        "/tmp/math-publish-20261013/transport/cross-snapshot/review/independent_full_lifts.py",
+        "--negative-controls"
+      ],
+      "exit_code": 0,
+      "seconds": 1.023,
+      "output": "{\n  \"negative_controls\": [\n    {\n      \"diagnostic\": \"ValueError: outer_w5: J (0, 5)/[0, 1, 0, 1, 2]/[1, 1]: full lift mismatch\",\n      \"negative\": \"drop_nonempty_J_lift\",\n      \"returncode\": 1,\n      \"status\": \"triggered and holds\"\n    },\n    {\n      \"diagnostic\": \"ValueError: outer_w5: J (0, 5)/[0, 1, 0, 1, 2]/[0, 0]: full lift mismatch\",\n      \"negative\": \"populate_empty_J_cell\",\n      \"returncode\": 1,\n      \"status\": \"triggered and holds\"\n    },\n    {\n      \"diagnostic\": \"ValueError: outer_w5: H: full lift mismatch\",\n      \"negative\": \"drop_H_lift\",\n      \"returncode\": 1,\n      \"status\": \"triggered and holds\"\n    }\n  ],\n  \"source_sha256\": \"200109de855e537cbcd5871015873528afb0d2be7c3e8dcd493d34fd05750960\",\n  \"source_unchanged\": true\n}\n"
+    },
+    {
+      "name": "cross-validator-snapshot",
+      "command": [
+        "python3",
+        "-B",
+        "/tmp/math-publish-20261013/transport/cross-snapshot/controls/validate_controls.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 3.679,
+      "output": "{\"read_only_artifacts_unchanged\": true, \"result\": \"PASS\", \"test_count\": 9}\n"
+    }
+  ]
+}

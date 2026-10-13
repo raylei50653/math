@@ -1,7 +1,9 @@
 # Kempe／重接／計數與策略導覽
 
-更新：2026-10-12（兩接線U的全色Diff出口及原K₅已排完整原55(1,1)；目標只剩u=0、H二連通的(1,0)/(2,0)。九格仍七格、N2／E-ARC2 OPEN）。本頁維護本線現況；證明及實際重播範圍見各報告。
-同日新增[共面識別正規形](c5_cofacial_normal_form.md)：最小目錄外來源可選成不增內點的
+更新：2026-10-13（一long的末端block與固定root完整接回已排完整原55(1,0)；目標只剩u=0、H二連通的(2,0)。九格八格覆蓋、N2／E-ARC2 OPEN）。本頁維護本線現況；證明及實際重播範圍見各報告。
+雙 long 後續已排 t=0／1 root-spokes；剩 t=2／3，下一充分子命題
+[LL-CUT](c5_excess_two_n2_double_long_joint.md#4-剩餘域與可反駁的-ll-cut)每列至多九格，完整 `(2,0)` 仍 OPEN。
+2026-10-12新增[共面識別正規形](c5_cofacial_normal_form.md)：最小目錄外來源可選成不增內點的
 簡單近三角化圖，接外部定理得到 `K≤12=K≤5`；一般主命題仍 OPEN。
 其後[最小來源度數界](c5_saturation_degree_bound.md) 證邊界度數至少四、內部至少五、
 至少六個五度內點；五度可縮減性仍 OPEN，已有[三份有界任務](tasks/c5_degree5_link_tasks.md)。
@@ -10,7 +12,9 @@
 後續 [W5 完整關係縮減](c5_w5_marked_relation.md) 已由五個合法商圖的完整拉回
 重建 H／G 全部 fibres；普通正聯集縮減及 annulus 小代表仍 OPEN。
 [完整外圈限制](c5_neartri_boundary_collar.md) 再排二邊 crosscut，將 933／941 的
-五度內點下界提高為九／八；941 最小邊界超額只剩具名 C7 必要上界，仍 OPEN。
+五度內點下界均提高為九；941 的具名 C7 上界已由共同計數恆等式排除，兩者均必 h≥3。
+2026-10-13 [跨原邊缺陷搬運](c5_cross_edge_kempe.md) 已證同輪完整 lift 三元組、
+相鄰五度中心的共同缺陷雙射及單步 Kempe 逃逸判準；普遍逃逸與來源排除仍 OPEN。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
 
@@ -43,9 +47,11 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
 | 共面識別／聯集封閉正規形 | global 最小內點、最大邊數來源的共面完備及簡單三角面正規形；接文獻 Cor20 得一般 disk 的 K≤12=K≤5。132 witnesses／8778 unions／十候選及完整 fibres 重播；至少十三內點的一般來源、完整關係重接仍 OPEN，未 Lean 化 | [權威入口、證明及重播](c5_cofacial_normal_form.md) |
-| 近三角化完整外圈 | 二邊 crosscut 全排；933 必 h≥3、n5≥9，941 必 h≥2、n5≥8。h≤2 的42項完整限制排41，941只剩邊界度數(4,4,5,4,5)的C7 55列必要上界；任意大小仍OPEN，未Lean化 | [完整接合、閉包與殘留](c5_neartri_boundary_collar.md) |
+| 近三角化完整外圈 | 二邊 crosscut 全排；共同計數恆等式排除最後941的C7 55列上界，h≤2全部排除，933／941均必h≥3、n5≥9。一般h≥3來源仍OPEN，未Lean化 | [完整接合、閉包與排除](c5_neartri_boundary_collar.md) |
+| 跨原邊 Kempe 缺陷搬運 | 五度輪十列四格逐lift雙射、相鄰五度中心搬運及全域恆等式；同一拒絕列至少六條原邊有單邊缺陷。一步交換精確判準及實際拼接反控制；933／941排除仍OPEN，無新Lean | [精確定理、證明與控制](c5_cross_edge_kempe.md) |
 | 最小來源度數／五度鄰環 | 沿用全域最小性，C4 關係≤3內點、邊界度數≥4、內部≥5；後續已保證全內部 induced W5。A九種位置契約、B固定域1020項操作及C全部17424組cap閉合已交付，一般縮減仍OPEN，無新Lean | [度數界](c5_saturation_degree_bound.md)、[全內部五輪與交付界線](c5_degree5_link_reductions.md) |
 | 全內部 W5 具名完整關係縮減 | 五個合法 k−2 商圖的完整拉回無損重建十 pin H／G fibres；重數二恰唯一接回中心。34圖完整控制；普通正聯集及 r≤6 annulus 代表仍OPEN，無新Lean | [精確公式、反控制及重播](c5_w5_marked_relation.md) |
+| W5 三色支援與私人森林排除 | 三色具名support等價於補中心後保全部B/U pins的雙向total full-lift對照，fibres不需等基數；最小來源私人圖必含環。70模板完備分類＋獨立full lifts，r_min=2構造與來源專用商圖no-go；一般r≤6代表仍OPEN | [正式入口、證明及兩包證據](c5_w5_three_color_support.md) |
 | 猜想 E／E-ARC2 共同目標 | ε≤1 已證；ε≥3 在原域自動滿足。ε=2 的三點弧命題仍 OPEN，等價排除 941 形三點及四點弧來源；Q=B 的 932 是較強版本的另項義務 | [母猜想與等價證明](c5_research_synthesis.md#81-猜想-e超額拒絕定律)、[E2 低 ε 證明](../artifacts/c5_excess_one_e2/REPORT.md)、[E3 三列化約](../artifacts/c5_excess_two_e3/REPORT.md) |
 | E-ARC2 真子圖與共同核心 | 沿用 E2／唯一 degree-5 相鄰列分離及兩-root44排除，目標反例的任意真子圖至多單拒絕；任意兩個不同拒絕列的 minimal cores 聯集必為 G，所有內點皆不可同接24。179固定圖中172觸發一般 Z 引理並成立，目標來源0觸發；後續完整N2的45／54已排；原55、其他域與主目標仍 OPEN，未Lean化 | [完整紙面證明與負控制](c5_excess_two_arc_pair_critical.md) |
 | E-ARC2 原分量共同限制 | 同一degree-4原分量的boundary重色至多涉及一個拒絕列；完整N2前提再接已採納N45-U，所有原分量刪除均全收，每個非root點至多接兩個相鄰框點，真core只能省一條root-spoke。63固定圖／13,010完整外部投影核對，目標0觸發；spoke45／54由後續報告涵蓋，原55仍OPEN，未Lean化 | [證明、完整fibres與控制](c5_excess_two_arc_component_slack.md) |
@@ -63,25 +69,30 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 | Cut／behavior | retained-component 重建有 Lean 支援；粗 cut 摘要有反例，有界 behavior 控制不證多步充分性 | [cut](c5_cut_interfaces.md)、[behavior](c5_behavior_refinement_results.md)、[state 導覽](c5_state_guide.md) |
 | 固定圖策略與 repair | survivor-811 固定閉包、必要低谷／回升與 B₂ 準備已保存；一般 K=4 策略、共同安全 repair 機制未證 | [barriers](c5_strategy_barriers.md)、[repair](c5_repair_interface.md) |
 | 閉環一致／零邊修復猜想 | 固定可延拓 C₅ 邊界，猜想任意 flat 標記可經內部 cut XOR、零邊數不增而修復；容許持平步，未初驗，不推出邊界可延拓或其他來源排除。驗證需完整不增轉移圖，不能只找一步下降 | [猜想 Z 與驗證計畫](c5_forcing_transport_conjectures.md)、[State 導覽](c5_state_guide.md) |
-| N2原55共同引理與下界衝突檢查 | 原55每欄Dᵘ+δ+o+λ=1，singleton mixed迫u=t=0，兩unary子族已排；後續一U兩short採納使九格七格有覆蓋。精確式H點數=35−6u−3t−Δ，有限下界10不與原上界直接衝突；含long三情形的joint／Δ門檻未證，原55及E-ARC2 OPEN | [九格、共同證明及缺条件](c5_excess_two_n2_residual_unification.md) |
-| N2三列diagonal採納及long限定縮減 | unary接線2／3的無界block-tree證明及同列完整lifts經另人採納，排(0,1)，第三relation族原55全排。shared contact迫所有同色pins全接回；long接點總數≤3有一指定列(D,D)出口，排一long無U的該子域。含long三情形仍OPEN；97U及63整圖完整joins獨立重算，target not triggered，無新Lean | [採納、完整證明及殘餘](c5_excess_two_n2_diagonal_three_row.md) |
+| N2原55共同引理與下界衝突檢查 | 原55每欄Dᵘ+δ+o+λ=1，singleton mixed迫u=t=0，兩unary子族已排；後續含U及一long排除使九格八格有覆蓋。精確式H點數=35−6u−3t−Δ，有限下界10不與原上界直接衝突；兩long的joint／Δ義務仍缺，原55及E-ARC2 OPEN | [九格、共同證明及缺条件](c5_excess_two_n2_residual_unification.md) |
+| N2三列diagonal採納及long限定縮減 | unary接線2／3的無界block-tree證明及同列完整lifts經另人採納，排(0,1)，第三relation族原55全排。shared contact迫所有同色pins全接回；long接點總數≤3有一指定列(D,D)出口，排一long無U的該子域。當輪long殘留後由下列含U／一long排除收窄至(2,0)；97U及63整圖完整joins獨立重算，target not triggered，無新Lean | [採納、完整證明及殘餘](c5_excess_two_n2_diagonal_three_row.md) |
 | N2 long同步與葉接點tree | 兩long都k≤3全排；一long無U的全葉接點tree任意k排除；含U低接點mask精確Eq／Diff，異類同列接回。當輪七個同類必要模板已由下列統一規律一起排除；k4 path局部全拒diagonal反控制保留，父情形／E-ARC2仍OPEN，無新Lean | [新證明、獨立採納及完整fibres](c5_excess_two_n2_long_synchrony.md) |
 | N2原55的統一接口與禁色規律 | 相同具名接口分割給完整tuple雙射；三點支援任意k有四類mask，mixed完整表26代表、unary7代表。每份低接線U在三色框至多禁一個已用色，合原55容量排k_U=3及七個同步模板；當輪兩接線U residual已由下列全色Diff出口完整排除。紙面＋完整fibres校準，未Lean化，父N2／E-ARC2 OPEN | [統一證明與當輪剩餘合同](c5_excess_two_n2_partition_rule.md) |
-| N2原55含U子情形完成 | 任意大小兩接線U由原附件容量化約五形；Diff列拒絕唯一六點形有原K₅，故每個owner色均有完整lift。同列G−U實際ownerpin接回，排完整(1,1)，不限制long接線數；目標必u=0、H二連通，剩(1,0)/(2,0)，九格仍七格。獨立紙面採納＋完整fibres校準，target not triggered，無新Lean，E-ARC2 OPEN | [完整證明、審查與重播](c5_excess_two_n2_unary_diff_closure.md) |
+| N2原55含U子情形完成 | 任意大小兩接線U由原附件容量化約五形；Diff列拒絕唯一六點形有原K₅，故每個owner色均有完整lift。同列G−U實際ownerpin接回，排完整(1,1)，不限制long接線數；目標必u=0、H二連通。當輪(1,0) residual由下列排除；target not triggered，無新Lean，E-ARC2 OPEN | [完整證明、審查與重播](c5_excess_two_n2_unary_diff_closure.md) |
+| N2原55一long子分支完成 | 原框弧K₅排任意長leaf cycles；共同同色接回、leaf bridge minor與附件單射迫兩個四spoke配置；固定root後外側strict slack再接回完整L，排全部(1,0)。任意長度紙面＋獨立審查＋具名分割/full fibres校準，target not triggered，無新Lean；九格八格、只剩(2,0) | [來源排除、完整witnesses與checker](c5_excess_two_n2_one_long_closure.md) |
+| N2原55雙long共同容量接回 | 原碰色＋容量與leaf K₅排t=0／1；剩t=2／3、支援{3,3}或{3,4}的限定域，有效H≤29。LL-CUT每列至多九格，仍須共同原joint；完整fibres校準，target not triggered，無新Lean | [新證明、精確子命題與控制](c5_excess_two_n2_double_long_joint.md) |
 
 ## 3. 停止點與保留缺口
 
 **共面正規形／完整關係重接（2026-10-12）。** 有界等式 `K≤12=K≤5` 已由紙面、
 有限核對及外部定理接合；十三內點以上仍保留。重接方向追蹤刪一條內邊後同一原圖
 的十列四格關係 `J_e(p;[s≠t],[u≠v])`。`01232` 的同色 opposite 見證已迫某個
-原拒絕列有 `(0,0)` 的二色四邊形完整 lift，但未證不同邊的見證能共同配合。
+原拒絕列有 `(0,0)` 的二色四邊形完整 lift。後續
+[跨原邊定理](c5_cross_edge_kempe.md) 已證同一五度中心的一份 `(0,0)` lift
+精確配出其他兩條 spokes 的 `(0,1)` lifts，只改中心色；相鄰五度中心另可經
+共同原邊 lift 搬運。一般不同邊的任選 witnesses 仍不能拼接。
 單獨保留 `01232` 的 flip／識別有 567→854／774 反控制。
 此路線採 global 最小內點／最大邊數來源，不能挪用下列 edge-critical／ε／N2
 前提，亦未更動那些分支的證書或覆蓋。詳見[權威報告](c5_cofacial_normal_form.md)。
 
 **最小來源五度鄰環（2026-10-12）。** [度數界](c5_saturation_degree_bound.md) 已排
 這個 global 最小來源的全部四度內點；後續[完整外圈限制](c5_neartri_boundary_collar.md)
-已提高至 933 至少九個、941 至少八個五度內點，k≥13 不變。二邊 crosscut 定理
+已提高至 933／941 均至少九個五度內點，k≥13 不變。二邊 crosscut 定理
 亦已排除[三份任務](tasks/c5_degree5_link_tasks.md)中 C 的來源子域及另一 C4＋C6
 非相鄰兩框接點方向；C另獨立完成全部132² cap閉合，A的位置／pinned契約與
 B的固定域重接控制亦已交付。[全內部五輪](c5_degree5_link_reductions.md)已保證
@@ -90,17 +101,25 @@ B的固定域重接控制亦已交付。[全內部五輪](c5_degree5_link_reduct
 
 目前五度縮減的窄入口仍是原 B/U 十個 pins 的 annulus 完整 J_p。
 [五份單對商圖](c5_w5_marked_relation.md) 已能以同圖、同色框的 full-lift 重數重建
-全部 H／G fibres；外框投影或各自成功的 witnesses 均不足。下一步是保 Σ 的合法
-正聯集縮減，或同槽位、同完整具名 support 且私人點 r≤6 的 annulus 代表。
+全部 H／G fibres；外框投影或各自成功的 witnesses 均不足。
+後續[三色支援與私人森林排除](c5_w5_three_color_support.md)把代表比較義務
+收窄為三色U的1,200個具名cells，且原最小來源的私人圖必含環。
+依來源挑選五商圖及額外加邊的正聯集亦已排除；下一步是對私人含環來源，
+構造同槽位、三色具名support相等且私人點r≤6的合法annulus代表，
+或取得其他保Σ縮減。一般r≤6代表仍未證，來源含環不限制代表必須含環。
 B固定域的1020項操作均不等價，不能據此排除一般縮減；其餘必要介面與重播
 見[交付入口](c5_degree5_link_reductions.md)。
 
-**完整外圈的最小殘留（2026-10-12）。** 令 h=Σ_B(deg−4)。933 必 h≥3；941
-必 h≥2，且 h=2 僅剩原邊界度數 `(4,4,5,4,5)`，內側完整關係包含於具名 C7
-的55／91列上界；它的完整外列聯集仍為941。3,383個實際外側cap控制未排除它。
-下一個窄問題是同一C7內側圖的完整關係能否落在此上界並覆蓋941的全部接受列；
-不是證所有near-cubic圖的通用計數猜想。h≥3及跨邊J_e共同見證亦保留；各邊
-自己的拒絕列full lift不能合併。來源、全部欄與重播見[權威報告](c5_neartri_boundary_collar.md)。
+**完整外圈 h≤2 已排除（2026-10-13）。** 令 h=Σ_B(deg−4)。933／941 均必
+h≥3、n5≥9。原最後 `(4,4,5,4,5)` 的具名 C7 55列上界，受到同一圖全部
+延伸計數的 noncrossing 恆等式限制；外列 `01232` 的三個內列前像皆被迫
+計數為零。既有 fan cap 另證沒有任何合法 disk C7 完整關係包含於該上界。
+3,383 caps 與72個僅通過舊必要條件的抽象關係保留為反控制，沒有新增來源枚舉。
+下一個外圈缺口是 h≥3；普遍跨邊同步亦保留。
+跨邊方向的下一個窄義務是：在上述共同 H lift 或其固定外框 Kempe 軌道中，
+迫一對非相鄰 singleton 分量分離且至少一個避開原 B；一步交換便能補回中心。
+兩者至少九點與全內部 W5 尚未供應此條件；各邊自己的拒絕列 full lifts 不能直接合併。
+來源、全部欄與重播見[外圈報告](c5_neartri_boundary_collar.md)及[跨邊定理](c5_cross_edge_kempe.md)。
 
 **主攻的共同義務（2026-10-11）：證 E-ARC2。**
 把反例的拒絕三點整圖搬到 {0,1,3}，在同一來源、完整 relations／fibres／full lifts
@@ -122,8 +141,8 @@ E3＋D₈ 已排唯一 degree-6，故證明工作集中於雙 degree-5；下列 
 u=0／1／2時至多35／29／23內點；這是原圖必要界，尚未排除界內來源。
 後續[N2殘餘統一](c5_excess_two_n2_residual_unification.md)以共同三-hub排兩unary，故u≤1；
 singleton mixed只能在u=t=0。原55每欄仍有一單位容量；精確大小式保留Δ，
-已知有限下界10沒有直接衝突。下一窄義務只處理含long的三個參數情形，
-取得同列完整joint或證Δ≥26−6u−3t；未搜尋10–35內點。
+已知有限下界10沒有直接衝突。當輪含long的三個參數情形，
+已由後續收窄至下列(2,0)；其同列完整joint或Δ門檻仍缺，未搜尋10–35內點。
 其中(0,1)已由[三列diagonal獨立採納](c5_excess_two_n2_diagonal_three_row.md)排除，
 當輪剩(2,0)、(1,0)、(1,1)，其中(1,1)已由下述全色Diff出口涵蓋。
 [long同步新化約](c5_excess_two_n2_long_synchrony.md)
@@ -132,11 +151,17 @@ singleton mixed只能在u=t=0。原55每欄仍有一單位容量；精確大小�
 [接口與已用色禁色規律](c5_excess_two_n2_partition_rule.md#6-已用色禁色規律與原七模板的統一排除)
 一起排除，不再逐模板處理。再由[兩接線U全色Diff出口](c5_excess_two_n2_unary_diff_closure.md)
 以原五形及K₅排除全部完整(1,1)，不必先處理high-contact long接口。
-**目前完整目標只剩u=0、H二連通的(1,0)/(2,0)。下一窄義務：在同一原H與
-同列完整fibres中，排一long的永久diagonal障礙，或取得兩long的共同joint。**
-一long須k≥4且有cycle或cutpoint接root；兩long至少一份k≥4。
-支援四／五點須用完整具名分割，不能套三點弧兩位元。四接點path局部三列全拒
-反控制已保留，不能直接外推escape。
+再由[一long末端block與固定root接回](c5_excess_two_n2_one_long_closure.md)，
+任意長leaf cycle由原框弧K₅排除；leaf bridges迫兩種四spoke必要配置，
+固定root後完整外側染色與L碰色slack給同列全圖矛盾，關閉完整(1,0)。
+**目前完整目標只剩u=0、H二連通的(2,0)，九格八格已有覆蓋。下一窄義務：
+在同一原H與同列完整fibres中，取得兩long的共同joint或原來源矛盾。**
+[雙long共同容量接回](c5_excess_two_n2_double_long_joint.md)已排 t=0／1；
+剩支援大小 `{3,3}`、t=2／3，或 `{3,4}`、t=2，至少一份k≥4，有效H≤29。
+下一窄子命題 LL-CUT 要求至少一個指定列的原碰色／shared接受cells，
+使共同容量矩陣不可行；剩餘每列至多九格，不能將可行矩陣誤當來源或拒絕證書。
+四點支援仍須完整具名分割，不能套三點弧兩位元。四接點path局部三列全拒
+反控制保留，但其完整off-diagonal可接回；該精確path與另一long另有原K₃,₃。
 其餘仍須同一列接回全部pieces，不能把不同列的lifts拼接。
 SD-A只有單缺額，不能直接用於這份双degree5原G。N1、相鄰及單-root例外仍各保留。
 目前仍缺同一來源的完整跨列 joint 矛盾，未取得整個 E-ARC2 的來源排除；

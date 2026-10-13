@@ -1,0 +1,157 @@
+[
+  {
+    "name": "w5-r3-primary",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-three-color-support-19209f4c/controls/check_three_color_support.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "seconds": 1.149,
+    "seed": null,
+    "stdout": "{\"canonical_certificate_sha256\": \"58b0de5c450f00fdbb7b089c53a6ae1f2ee9b6a6f0f4646c34fbea1cfec4bf0e\", \"complete_g_lift_count\": 1620, \"complete_h_lift_count\": 3250, \"dfs_seed\": null, \"empty_cell_count\": 345580, \"equal_r3_pair_count\": 1, \"explicit_cell_count\": 348160, \"graph_count\": 34, \"mode\": \"check\", \"r3_nonempty_cell_count\": 1280, \"result\": \"PASS\", \"selector_lift_instances\": 1020, \"unordered_distinct_pair_count\": 561}",
+    "stderr": ""
+  },
+  {
+    "name": "w5-r3-primary-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-three-color-support-19209f4c/controls/check_three_color_support.py",
+      "--check",
+      "--seed",
+      "17"
+    ],
+    "returncode": 0,
+    "seconds": 1.154,
+    "seed": 17,
+    "stdout": "{\"canonical_certificate_sha256\": \"58b0de5c450f00fdbb7b089c53a6ae1f2ee9b6a6f0f4646c34fbea1cfec4bf0e\", \"complete_g_lift_count\": 1620, \"complete_h_lift_count\": 3250, \"dfs_seed\": 17, \"empty_cell_count\": 345580, \"equal_r3_pair_count\": 1, \"explicit_cell_count\": 348160, \"graph_count\": 34, \"mode\": \"check\", \"r3_nonempty_cell_count\": 1280, \"result\": \"PASS\", \"selector_lift_instances\": 1020, \"unordered_distinct_pair_count\": 561}",
+    "stderr": ""
+  },
+  {
+    "name": "w5-r3-independent",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-three-color-support-19209f4c/review/independent_check.py"
+    ],
+    "returncode": 0,
+    "seconds": 2.212,
+    "seed": null,
+    "stdout": "{\n  \"beta_count\": 10,\n  \"compared_distinct_graph_pairs\": 561,\n  \"complete_g_lift_count\": 1620,\n  \"complete_h_lift_count\": 3250,\n  \"directional_selector_lift_instances\": 1020,\n  \"embedding_count\": 68,\n  \"empty_cell_count\": 345580,\n  \"equal_r3_distinct_graph_pairs\": 1,\n  \"explicit_cell_count\": 348160,\n  \"graph_count\": 34,\n  \"limitations\": [\n    \"34 constructed controls, no globally minimal-source admission\",\n    \"No general small representative constructed\",\n    \"No Lean verification; no finite-to-universal inference\"\n  ],\n  \"literal_frame\": {\n    \"expanded_g_lifts\": 38880,\n    \"expanded_h_lifts\": 78000,\n    \"global_permutation_count\": 24,\n    \"independently_enumerated_literal_rows\": 480,\n    \"literal_beta_count\": 240\n  },\n  \"negative_controls\": {\n    \"counterexample_count\": 7,\n    \"decorated_fibre_multiplier\": 2,\n    \"marginal_false_cell\": [\n      0,\n      274\n    ],\n    \"marginal_true_cells\": [\n      [\n        0,\n        275\n      ],\n      [\n        1,\n        274\n      ]\n    ],\n    \"normalization_violated_edges\": [\n      [\n        0,\n        5\n      ],\n      [\n        1,\n        6\n      ],\n      [\n        2,\n        7\n      ],\n      [\n        3,\n        8\n      ],\n      [\n        4,\n        9\n      ]\n    ],\n    \"outer_projection_difference_beta_indices\": [\n      6,\n      7\n    ],\n    \"same_r3_different_fibre_multiplicity_graphs\": [\n      \"prism\",\n      \"prism_decorated\"\n    ],\n    \"same_sigma_different_r3_graphs\": [\n      \"prism\",\n      \"triangulated_00\"\n    ],\n    \"same_sigma_different_r3_sizes\": [\n      340,\n      20\n    ],\n    \"separate_equality_left_lifts\": [\n      [\n        0,\n        1,\n        0,\n        1,\n        2,\n        2,\n        3,\n        2,\n        3,\n        1\n      ]\n    ],\n    \"separate_equality_right_lifts\": [\n      [\n        0,\n        1,\n        0,\n        1,\n        2,\n        1,\n        2,\n        3,\n        0,\n        3\n      ]\n    ]\n  },\n  \"primary_sha256\": \"e3b76f5cf3541744f1ddfb53ac4c6a9ae2399b9fcc36c54686aaf65d0a426c7e\",\n  \"r3_support_pair_count\": 1280,\n  \"schema\": \"w5-three-color-support-independent-v1\",\n  \"score\": \"triggered and holds\",\n  \"supplementary\": {\n    \"complete_g_lift_count\": 1400,\n    \"complete_h_lift_count\": 2100,\n    \"directional_selector_lift_instances\": 1400,\n    \"embedding_count\": 4,\n    \"empty_cell_count\": 18380,\n    \"explicit_cell_count\": 20480,\n    \"graph_count\": 2,\n    \"graphs\": [\n      {\n        \"R3\": 700,\n        \"R4\": 700,\n        \"g_lifts\": 700,\n        \"h_lifts\": 1400,\n        \"id\": \"two_spoke\",\n        \"sigma_g\": [\n          true,\n          true,\n          true,\n          true,\n          true,\n          true,\n          true,\n          true,\n          true,\n          true\n        ],\n        \"support\": 1400\n      },\n      {\n        \"R3\": 700,\n        \"R4\": 0,\n        \"g_lifts\": 700,\n        \"h_lifts\": 700,\n        \"id\": \"two_spoke_external_apex\",\n        \"sigma_g\": [\n          true,\n          true,\n          true,\n          true,\n          true,\n          true,\n          true,\n          true,\n          true,\n          true\n        ],\n        \"support\": 700\n      }\n    ],\n    \"score\": \"triggered and holds\",\n    \"sha256\": \"22a9c671711c9e63378a16d1b59484e859d41a79fdcd894a8b0476868a05d4f5\"\n  },\n  \"tau_count\": 1024\n}",
+    "stderr": ""
+  },
+  {
+    "name": "w5-r3-strict-support",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-three-color-support-19209f4c/review/strict_support_check.py",
+      "--check",
+      "audits/2026-10-13-w5-three-color-support-19209f4c/review/strict_support.json"
+    ],
+    "returncode": 0,
+    "seconds": 0.311,
+    "seed": null,
+    "stdout": "{\n  \"R3_equal\": true,\n  \"explicit_cells\": 20480,\n  \"full_support_equal\": false,\n  \"geometry\": \"triggered and holds\",\n  \"graphs\": [\n    {\n      \"R3\": 700,\n      \"R4\": 700,\n      \"g_lifts\": 700,\n      \"h_lifts\": 1400,\n      \"id\": \"two_spoke\",\n      \"sigma_g\": [\n        true,\n        true,\n        true,\n        true,\n        true,\n        true,\n        true,\n        true,\n        true,\n        true\n      ],\n      \"support\": 1400\n    },\n    {\n      \"R3\": 700,\n      \"R4\": 0,\n      \"g_lifts\": 700,\n      \"h_lifts\": 700,\n      \"id\": \"two_spoke_external_apex\",\n      \"sigma_g\": [\n        true,\n        true,\n        true,\n        true,\n        true,\n        true,\n        true,\n        true,\n        true,\n        true\n      ],\n      \"support\": 700\n    }\n  ],\n  \"limits\": [\n    \"Not claimed near-triangulated or a minimal source\",\n    \"No general small representative constructed\"\n  ],\n  \"strictness\": \"counterexample\",\n  \"transfers\": [\n    {\n      \"complete_g_lifts\": 700,\n      \"score\": \"triggered and holds\",\n      \"source\": \"two_spoke\",\n      \"target\": \"two_spoke_external_apex\"\n    },\n    {\n      \"complete_g_lifts\": 700,\n      \"score\": \"triggered and holds\",\n      \"source\": \"two_spoke_external_apex\",\n      \"target\": \"two_spoke\"\n    }\n  ],\n  \"witness\": {\n    \"beta\": [\n      0,\n      1,\n      0,\n      1,\n      2\n    ],\n    \"first_fibre\": [\n      [\n        0,\n        1,\n        0,\n        1,\n        2,\n        1,\n        0,\n        1,\n        2,\n        3\n      ]\n    ],\n    \"second_fibre\": [],\n    \"tau\": [\n      1,\n      0,\n      1,\n      2,\n      3\n    ]\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "name": "w5-private-transport",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-three-support-19209f4c/t1/check.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.122,
+    "seed": null,
+    "stdout": "{\n  \"counts_are_not_part_of_transport\": \"prism_decorated has exactly two lifts over every prism lift\",\n  \"graphs\": [\n    {\n      \"annulus_lifts\": 670,\n      \"id\": \"prism\",\n      \"sigma_annulus\": 1023,\n      \"sigma_wheel\": 1023,\n      \"three_color_support_size\": 340,\n      \"wheel_lifts\": 340\n    },\n    {\n      \"annulus_lifts\": 1340,\n      \"id\": \"prism_decorated\",\n      \"sigma_annulus\": 1023,\n      \"sigma_wheel\": 1023,\n      \"three_color_support_size\": 340,\n      \"wheel_lifts\": 680\n    },\n    {\n      \"annulus_lifts\": 50,\n      \"id\": \"triangulated_00\",\n      \"sigma_annulus\": 1023,\n      \"sigma_wheel\": 1023,\n      \"three_color_support_size\": 20,\n      \"wheel_lifts\": 20\n    },\n    {\n      \"annulus_lifts\": 47,\n      \"id\": \"triangulated_01\",\n      \"sigma_annulus\": 1023,\n      \"sigma_wheel\": 831,\n      \"three_color_support_size\": 23,\n      \"wheel_lifts\": 23\n    }\n  ],\n  \"minimal_933_941_sources\": \"not triggered\",\n  \"named_three_color_cells_per_graph\": 1200,\n  \"proper_three_color_tuples\": 120,\n  \"same_wheel_sigma_different_named_support\": {\n    \"beta\": [\n      0,\n      1,\n      0,\n      1,\n      2\n    ],\n    \"graphs\": [\n      \"prism\",\n      \"triangulated_00\"\n    ],\n    \"prism_full_wheel_lift\": [\n      0,\n      1,\n      0,\n      1,\n      2,\n      1,\n      0,\n      1,\n      0,\n      3,\n      2\n    ],\n    \"rejected_edge_in_triangulated_00\": [\n      1,\n      5\n    ],\n    \"tau\": [\n      1,\n      0,\n      1,\n      0,\n      3\n    ]\n  },\n  \"status\": \"triggered and holds; four synthetic literal annuli only\",\n  \"stored_cells\": 40960,\n  \"triangulated_00_one_full_wheel_lift_per_beta\": [\n    [\n      0,\n      1,\n      0,\n      1,\n      2,\n      2,\n      3,\n      2,\n      0,\n      3,\n      1\n    ],\n    [\n      0,\n      1,\n      0,\n      2,\n      1,\n      3,\n      2,\n      1,\n      3,\n      2,\n      0\n    ],\n    [\n      0,\n      1,\n      0,\n      2,\n      3,\n      3,\n      2,\n      3,\n      0,\n      2,\n      1\n    ],\n    [\n      0,\n      1,\n      2,\n      0,\n      1,\n      2,\n      0,\n      3,\n      2,\n      3,\n      1\n    ],\n    [\n      0,\n      1,\n      2,\n      0,\n      2,\n      2,\n      3,\n      1,\n      3,\n      1,\n      0\n    ],\n    [\n      0,\n      1,\n      2,\n      0,\n      3,\n      2,\n      0,\n      1,\n      2,\n      1,\n      3\n    ],\n    [\n      0,\n      1,\n      2,\n      1,\n      2,\n      2,\n      0,\n      3,\n      0,\n      3,\n      1\n    ],\n    [\n      0,\n      1,\n      2,\n      1,\n      3,\n      3,\n      0,\n      3,\n      0,\n      1,\n      2\n    ],\n    [\n      0,\n      1,\n      2,\n      3,\n      1,\n      2,\n      3,\n      0,\n      2,\n      3,\n      1\n    ],\n    [\n      0,\n      1,\n      2,\n      3,\n      2,\n      2,\n      0,\n      1,\n      0,\n      1,\n      3\n    ]\n  ]\n}",
+    "stderr": ""
+  },
+  {
+    "name": "w5-private-representatives",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-three-support-19209f4c/representatives/check.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "seconds": 0.107,
+    "seed": null,
+    "stdout": "{\n  \"representative\": {\n    \"private_vertices\": 2,\n    \"cells\": 10240,\n    \"empty_cells\": 9640,\n    \"H_full_lifts\": 1200,\n    \"three_color_cells\": 1200,\n    \"nonempty_three_color_cells\": 300,\n    \"G_full_lifts\": 600,\n    \"wheel_total_internal_vertices\": 8\n  },\n  \"source_r7\": {\n    \"private_vertices\": 7,\n    \"cells\": 10240,\n    \"empty_cells\": 9640,\n    \"H_full_lifts\": 1200,\n    \"three_color_cells\": 1200,\n    \"nonempty_three_color_cells\": 300,\n    \"G_full_lifts\": 600,\n    \"wheel_total_internal_vertices\": 13\n  },\n  \"minimum_private_for_target_relation\": 2,\n  \"r_le_1_no_go\": \"paper argument, independent of planarity; finite control verifies named edge witnesses\",\n  \"source_minimality\": \"not triggered\",\n  \"general_r_le_6_annulus_representative\": \"OPEN\"\n}",
+    "stderr": ""
+  },
+  {
+    "name": "w5-private-conditional",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-three-support-19209f4c/conditional/check.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "seconds": 0.044,
+    "seed": null,
+    "stdout": "PASS: 132 catalogue masks; 240 proper rim tuples; two exact abstract controls\n933/941 minimum source: not triggered; abstract controls: no graph realization asserted",
+    "stderr": ""
+  },
+  {
+    "name": "w5-private-forest",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-three-support-19209f4c/forest/check.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "seconds": 1.618,
+    "seed": null,
+    "stdout": "{\"G_full_lifts\": 9308, \"H_full_lifts\": 18282, \"catalogue_sha256\": \"04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8\", \"cells\": 716800, \"empty_cells\": 701956, \"masks\": {\"1023\": 70}, \"templates\": 70, \"types\": {\"B_triangle\": 10, \"U_triangle\": 10, \"p1_r7\": 30, \"p1_r8\": 20}}",
+    "stderr": ""
+  },
+  {
+    "name": "w5-private-forest-independent",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-three-support-19209f4c/t1/forest_independent.py"
+    ],
+    "returncode": 0,
+    "seconds": 1.232,
+    "seed": null,
+    "stdout": "{\n  \"G_lifts\": 9308,\n  \"H_lifts\": 18282,\n  \"catalogue_dihedral_checks\": 1320,\n  \"empty_cells\": 701956,\n  \"full_cells_compared\": 716800,\n  \"masks\": {\n    \"1023\": 70\n  },\n  \"source_realizability\": \"not triggered; source exclusion depends on paper classification\",\n  \"status\": \"PASS independent exact comparison\",\n  \"template_count\": 70,\n  \"types\": {\n    \"B_triangle\": 10,\n    \"U_triangle\": 10,\n    \"p1_r7\": 30,\n    \"p1_r8\": 20\n  }\n}",
+    "stderr": ""
+  },
+  {
+    "name": "w5-private-verify-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-three-support-19209f4c/verify.py",
+      "--output",
+      "/tmp/math-publish-20261013/w5-c7/w5-private-fresh-verification.json"
+    ],
+    "returncode": 0,
+    "seconds": 3.24,
+    "seed": 17,
+    "stdout": "PASS: forest seed17, deleted-lift rejection, immutable evidence; three subpackage controls recorded",
+    "stderr": ""
+  },
+  {
+    "name": "c7-aggregate-verify",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-c7-joint-kempe-19209f4c/verify.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "seconds": 1.75,
+    "seed": null,
+    "stdout": "{\"independent_full_cap_queries_per_seed\": 307853, \"negative_certificates_rejected\": 3, \"normal_seed17_agree\": true, \"replay_checks\": 16, \"source_input_drift\": 0, \"status\": \"PASS\"}",
+    "stderr": ""
+  }
+]
