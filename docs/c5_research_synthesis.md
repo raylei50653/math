@@ -513,8 +513,10 @@ Roots亦至多接兩個相鄰框點。[原55大小界](c5_excess_two_arc_size_bo
 大小上界保留鬆弛為H點數=35−6u−3t−Δ；既有有限下界10無直接衝突，
 後續[兩接線U全色Diff出口](c5_excess_two_n2_unary_diff_closure.md)合原55容量，
 以任意大小原五形及K₅排完整(1,1)，不限制long接線數；與既有含U覆蓋合成，
-完整目標只剩u=0、H二連通的(1,0)/(2,0)。九格仍七格、N2／E-ARC2 OPEN，未Lean化。
-仍須證足夠Δ或同列完整joint。原55、N2及E-ARC2仍OPEN，
+當輪目標剩u=0、H二連通的(1,0)/(2,0)。再由
+[一long來源排除](c5_excess_two_n2_one_long_closure.md)，原末端block minors與
+固定root完整外側接回關閉(1,0)，不限制long長度；九格八格覆蓋，完整目標只剩(2,0)。
+兩long仍須證足夠Δ或同列完整joint。原55、N2及E-ARC2仍OPEN，未Lean化；
 不能借未證三點弧取得本子域缺條件；目標來源有限控制未觸發，未搜尋10–35內點。
 既有三列集合化約及這兩張原圖控制可重播：
 `uv run --with networkx==3.5 python -B scripts/c5_excess_two_e3_foundation.py --check`。

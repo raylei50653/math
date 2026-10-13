@@ -1,5 +1,10 @@
 # N2 原55：兩接線 unary 的全色出口與含 U 子情形排除
 
+**最新後續（2026-10-13）**：[一long來源排除](c5_excess_two_n2_one_long_closure.md)
+以任意長末端block的原K₅及固定root完整外側接回，關閉完整原55 `(1,0)`。
+合既有含U覆蓋，九格八格、完整目標只剩 `(2,0)`；父N2／E-ARC2仍OPEN。
+以下舊日期的剩餘表與證據保留當輪語境。
+
 2026-10-12。基準 HEAD `8b76dcc82adabba679e7b0d2ef6dbe6eb9cc37f3`，
 包含前輪尚未提交的[接口分割成果](c5_excess_two_n2_partition_rule.md)。
 十八份精確工作樹輸入與 SHA 見

@@ -1,5 +1,14 @@
 # N2 原55：long 同列同步與葉接點 tree 化約
 
+**雙 long 後續（2026-10-13）**：[共同容量接回](c5_excess_two_n2_double_long_joint.md)
+排完整 `(2,0)` 的 t=0／1 root-spokes；剩支援 `{3,3}` 的 t=2／3，
+或 `{3,4}` 的 t=2。下一充分子命題 LL-CUT 每列至多九格；完整分支仍 OPEN。
+
+**最新後續（2026-10-13）**：[一long來源排除](c5_excess_two_n2_one_long_closure.md)
+以任意長末端block的原K₅及固定root完整外側接回，關閉完整原55 `(1,0)`。
+合既有含U覆蓋，九格八格、完整目標只剩 `(2,0)`；父N2／E-ARC2仍OPEN。
+以下舊日期的剩餘表與證據保留當輪語境。
+
 **最新後續（2026-10-12）**：[兩接線 U 的全色 Diff 出口](c5_excess_two_n2_unary_diff_closure.md)
 已排完整 `(1,1)`，不限制 long 接線數；原55剩 u=0 的 `(1,0)`、`(2,0)`。
 下文歷次同步 residual 保留當輪語境；九格仍七格，父 N2／E-ARC2 OPEN。
