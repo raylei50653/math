@@ -1,0 +1,61 @@
+{
+  "classification_sha256": "115f0f6bac95658cb9a6c946f48d2601f856060111f8dcc013c4ddeb5124ff52",
+  "deterministic_byte_replay": true,
+  "runs": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/checker.py"
+      ],
+      "returncode": 0,
+      "seed": null,
+      "stderr": "",
+      "stdout": "{\"classes\": 5, \"full_transfer_entries_checked\": 13700, \"pair_equality_checks\": 200, \"proof_scope\": \"named whole-collar equivalence; conditional edge obstructions; no source exclusion\", \"queries\": 10, \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/checker.py"
+      ],
+      "returncode": 0,
+      "seed": 17,
+      "stderr": "",
+      "stdout": "{\"classes\": 5, \"full_transfer_entries_checked\": 13700, \"pair_equality_checks\": 200, \"proof_scope\": \"named whole-collar equivalence; conditional edge obstructions; no source exclusion\", \"queries\": 10, \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/negative_controls.py"
+      ],
+      "returncode": 0,
+      "seed": null,
+      "stderr": "",
+      "stdout": "{\"negative_controls\": [{\"name\": \"wrong_inner_pattern_map\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"private_order_not_reversed\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"missing_positive_equality_witness\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"unsupported_vector_equivalence\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"missing_named_residual\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"corrupted_complete_target_map\", \"returncode\": 1, \"status\": \"rejected\"}], \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/generate.py",
+        "--output",
+        "/tmp/c8-struct-classification-replay-4bew3fqg/normal.json"
+      ],
+      "returncode": 0,
+      "seed": null,
+      "stderr": "",
+      "stdout": "PASS: 10 named residuals, five explicit whole-collar symmetry pairs\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/generate.py",
+        "--output",
+        "/tmp/c8-struct-classification-replay-4bew3fqg/seed17.json"
+      ],
+      "returncode": 0,
+      "seed": 17,
+      "stderr": "",
+      "stdout": "PASS: 10 named residuals, five explicit whole-collar symmetry pairs\n"
+    }
+  ],
+  "status": "PASS"
+}

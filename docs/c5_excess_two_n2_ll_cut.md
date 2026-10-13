@@ -1,5 +1,9 @@
 # N2 原55雙 long：基本 LL-CUT 介面與加強版來源排除
 
+**後續（2026-10-13，N2-BRIDGE）**：[前提橋接與932來源排除](c5_excess_two_n2_bridge.md)
+已逐項補足原E4三列契約，廣義N2全排；E-ARC2仍剩N1及相鄰roots來源。
+本頁完整Σ契約及歷史正文保留，新移植證明由上述入口承擔；無新Lean theorem。
+
 2026-10-13；凍結 BASE `3097ef5be241b7777451a5ef8a663f3987d6b866`。
 [完整契約與前提核對](../audits/2026-10-13-n2-ll-cut-3097ef5/CONTRACT.md)、
 [本輪報告](../audits/2026-10-13-n2-ll-cut-3097ef5/REPORT.md)及

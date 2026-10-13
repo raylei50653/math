@@ -1,0 +1,116 @@
+{
+  "classification_sha256": "115f0f6bac95658cb9a6c946f48d2601f856060111f8dcc013c4ddeb5124ff52",
+  "deterministic_byte_replay": true,
+  "quotient_sha256": "26a6ddd08488163ff6fc0e681cd8d83e2d3a4dee8980a8f041478aa177ce2cb6",
+  "runs": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/checker.py"
+      ],
+      "returncode": 0,
+      "seed": null,
+      "stderr": "",
+      "stdout": "{\"classes\": 5, \"full_transfer_entries_checked\": 13700, \"pair_equality_checks\": 200, \"proof_scope\": \"named whole-collar equivalence; conditional edge obstructions; no source exclusion\", \"queries\": 10, \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/checker.py"
+      ],
+      "returncode": 0,
+      "seed": 17,
+      "stderr": "",
+      "stdout": "{\"classes\": 5, \"full_transfer_entries_checked\": 13700, \"pair_equality_checks\": 200, \"proof_scope\": \"named whole-collar equivalence; conditional edge obstructions; no source exclusion\", \"queries\": 10, \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/negative_controls.py"
+      ],
+      "returncode": 0,
+      "seed": null,
+      "stderr": "",
+      "stdout": "{\"negative_controls\": [{\"name\": \"wrong_inner_pattern_map\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"private_order_not_reversed\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"missing_positive_equality_witness\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"unsupported_vector_equivalence\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"missing_named_residual\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"corrupted_complete_target_map\", \"returncode\": 1, \"status\": \"rejected\"}], \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/quotient_checker.py"
+      ],
+      "returncode": 0,
+      "seed": null,
+      "stderr": "",
+      "stdout": "{\"complete_equality_conditions_checked\": 910, \"excluded\": [\"c16-941\", \"c32-941\"], \"pair_equality_rows_checked\": 148, \"residual\": 8, \"scope\": \"complete boundary core under proved induced-C8 and four-color theorem\", \"set_partitions_independently_enumerated\": 4140, \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/quotient_checker.py"
+      ],
+      "returncode": 0,
+      "seed": 17,
+      "stderr": "",
+      "stdout": "{\"complete_equality_conditions_checked\": 910, \"excluded\": [\"c16-941\", \"c32-941\"], \"pair_equality_rows_checked\": 148, \"residual\": 8, \"scope\": \"complete boundary core under proved induced-C8 and four-color theorem\", \"set_partitions_independently_enumerated\": 4140, \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/quotient_negative_controls.py"
+      ],
+      "returncode": 0,
+      "seed": null,
+      "stderr": "",
+      "stdout": "{\"negative_controls\": [{\"name\": \"missing_equal_pair_preimage\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"missing_named_query\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"corrupted_noncrossing_partition\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"corrupted_frozen_upper\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"unsupported_additional_exclusion\", \"returncode\": 1, \"status\": \"rejected\"}], \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/generate.py",
+        "--output",
+        "/tmp/c8-struct-classification-replay-x72m1n32/normal.json"
+      ],
+      "returncode": 0,
+      "seed": null,
+      "stderr": "",
+      "stdout": "PASS: 10 named residuals, five explicit whole-collar symmetry pairs\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/generate.py",
+        "--output",
+        "/tmp/c8-struct-classification-replay-x72m1n32/seed17.json"
+      ],
+      "returncode": 0,
+      "seed": 17,
+      "stderr": "",
+      "stdout": "PASS: 10 named residuals, five explicit whole-collar symmetry pairs\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/quotient.py",
+        "--output",
+        "/tmp/c8-struct-classification-replay-x72m1n32/quotient.normal.json"
+      ],
+      "returncode": 0,
+      "seed": null,
+      "stderr": "",
+      "stdout": "PASS: cofacial quotient excludes c16-941 and c32-941; eight queries remain\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/classification/quotient.py",
+        "--output",
+        "/tmp/c8-struct-classification-replay-x72m1n32/quotient.seed17.json"
+      ],
+      "returncode": 0,
+      "seed": 17,
+      "stderr": "",
+      "stdout": "PASS: cofacial quotient excludes c16-941 and c32-941; eight queries remain\n"
+    }
+  ],
+  "status": "PASS"
+}

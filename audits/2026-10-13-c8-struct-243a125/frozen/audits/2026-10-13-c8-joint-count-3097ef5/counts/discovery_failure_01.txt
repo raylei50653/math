@@ -1,0 +1,43 @@
+c04 941 stage 0 upper 201 count_support 194 Kempe_after 193
+c04 941 stage 1 upper 193 count_support 193 Kempe_after 193
+c04 941 FINAL necessary_condition_residual
+c07 941 stage 0 upper 201 count_support 194 Kempe_after 193
+c07 941 stage 1 upper 193 count_support 193 Kempe_after 193
+c07 941 FINAL necessary_condition_residual
+c15 933 stage 0 upper 144 count_support 138 Kempe_after 134
+c15 933 stage 1 upper 134 count_support 134 Kempe_after 134
+c15 933 FINAL necessary_condition_residual
+c15 941 stage 0 upper 175 count_support 173 Kempe_after 173
+c15 941 FINAL necessary_condition_residual
+c16 941 stage 0 upper 102 count_support 102 Kempe_after 102
+c16 941 FINAL necessary_condition_residual
+c18 933 stage 0 upper 144 count_support 138 Kempe_after 134
+c18 933 stage 1 upper 134 count_support 134 Kempe_after 134
+c18 933 FINAL necessary_condition_residual
+c18 941 stage 0 upper 175 count_support 175 Kempe_after 175
+c18 941 FINAL necessary_condition_residual
+c20 941 stage 0 upper 175 count_support 173 Kempe_after 173
+c20 941 FINAL necessary_condition_residual
+c30 941 stage 0 upper 175 count_support 175 Kempe_after 175
+c30 941 FINAL necessary_condition_residual
+c32 941 stage 0 upper 102 count_support 102 Kempe_after 102
+c32 941 FINAL necessary_condition_residual
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/counts/strengthen.py", line 175, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/counts/strengthen.py", line 168, in main
+    result = build(json.loads(args.initial.read_text()), json.loads(args.interface.read_text()))
+  File "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/counts/strengthen.py", line 158, in build
+    verify(result, interface)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/counts/checker.py", line 111, in verify
+    lhs, rhs = check_identity(identity, words, nc)
+               ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/counts/checker.py", line 68, in check_identity
+    lhs, rhs = term_map(identity['lhs'], words), term_map(identity['rhs'], words)
+               ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/counts/checker.py", line 62, in term_map
+    assert t['word'] == list(words[i]), 'mixed pattern labels'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: mixed pattern labels

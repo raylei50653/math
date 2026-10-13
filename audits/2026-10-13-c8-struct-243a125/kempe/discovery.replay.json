@@ -1,0 +1,52 @@
+{
+  "byte_equal": {
+    "certificate.json": true,
+    "cone.triangulated.json": true,
+    "discovery.triangulated.json": true,
+    "discovery.triangulated.sparse.json": true
+  },
+  "runs": [
+    {
+      "command": [
+        "/home/ray/.cache/uv/archive-v0/3XJ9zwHiKOnoDAN7/bin/python",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/kempe/discover.py",
+        "--triangulated",
+        "--sparse-support",
+        "--output-dir",
+        "/tmp/c8-struct-kempe-replay-hd53gspx"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "reps 821 columns 981\nc04 941 old vector 2 columns 418\nc04 941 joint 0\nc07 941 old vector 2 columns 418\nc07 941 joint 0\nc15 933 old vector 0 columns 206\nc15 933 joint 0\nc15 941 old vector 2 columns 329\nc15 941 joint 0\nc16 941 old vector 0 columns 142\nc16 941 joint 0\nc18 933 old vector 0 columns 206\nc18 933 joint 0\nc18 941 old vector 2 columns 333\nc18 941 joint 0\nc20 941 old vector 2 columns 329\nc20 941 joint 0\nc30 941 old vector 2 columns 333\nc30 941 joint 0\nc32 941 old vector 0 columns 142\nc32 941 joint 0\n"
+    },
+    {
+      "command": [
+        "/home/ray/.cache/uv/archive-v0/3XJ9zwHiKOnoDAN7/bin/python",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/kempe/discover.py",
+        "--triangulated",
+        "--output-dir",
+        "/tmp/c8-struct-kempe-replay-hd53gspx"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "reps 821 columns 981\nc04 941 old vector 2 columns 418\nc04 941 joint 0\nc07 941 old vector 2 columns 418\nc07 941 joint 0\nc15 933 old vector 0 columns 206\nc15 933 joint 0\nc15 941 old vector 2 columns 329\nc15 941 joint 2\nc16 941 old vector 0 columns 142\nc16 941 joint 0\nc18 933 old vector 0 columns 206\nc18 933 joint 0\nc18 941 old vector 2 columns 333\nc18 941 joint 0\nc20 941 old vector 2 columns 329\nc20 941 joint 2\nc30 941 old vector 2 columns 333\nc30 941 joint 0\nc32 941 old vector 0 columns 142\nc32 941 joint 0\n"
+    },
+    {
+      "command": [
+        "/home/ray/.cache/uv/archive-v0/3XJ9zwHiKOnoDAN7/bin/python",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/kempe/certify.py",
+        "--input-dir",
+        "/tmp/c8-struct-kempe-replay-hd53gspx",
+        "--output",
+        "/tmp/c8-struct-kempe-replay-hd53gspx/certificate.json"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "c04 941 support 193 forced 0 exact PASS\nc07 941 support 193 forced 0 exact PASS\nc15 933 support 134 forced 0 exact PASS\nc15 add support 3\nc15 forced zero 98\nc15 add support 113\nc15 forced zero 159\nc15 941 support 171 forced 2 exact PASS\nc16 941 support 102 forced 0 exact PASS\nc18 933 support 134 forced 0 exact PASS\nc18 941 support 175 forced 0 exact PASS\nc20 add support 9\nc20 add support 26\nc20 forced zero 34\nc20 add support 44\nc20 forced zero 54\nc20 941 support 171 forced 2 exact PASS\nc30 941 support 175 forced 0 exact PASS\nc32 941 support 102 forced 0 exact PASS\n"
+    }
+  ],
+  "status": "PASS"
+}

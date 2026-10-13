@@ -1,0 +1,72 @@
+{
+  "controls": {
+    "actual_checker_cli_rejections": {
+      "coefficient": {
+        "exit_code": 1,
+        "last_stderr_line": "AssertionError: identity fails on a noncrossing equality vector"
+      },
+      "preimage": {
+        "exit_code": 1,
+        "last_stderr_line": "AssertionError: incomplete necessary preimages"
+      }
+    },
+    "boolean_upper_count_countercontrol": {
+      "case_id": "c05",
+      "identity_residual": "8",
+      "result": "Boolean necessary upper is not an actual count vector",
+      "target": 941
+    },
+    "coefficient_corruption": "identity fails on a noncrossing equality vector",
+    "missing_joint_support_verification": "incomplete joint residual",
+    "missing_preimage": "incomplete necessary preimages",
+    "mixed_named_pattern": "mixed pattern labels",
+    "status": "PASS"
+  },
+  "discovery": {
+    "interpreter": "/home/ray/.cache/uv/archive-v0/3XJ9zwHiKOnoDAN7/bin/python",
+    "normal_logs": [
+      "generate.log",
+      "strengthen.log"
+    ],
+    "purpose": "candidate LP discovery only; all outputs verified exactly",
+    "scipy": "1.18.1",
+    "seed17_logs": [
+      "initial_seed17.log",
+      "seed17.log"
+    ]
+  },
+  "failure_cause": "Tuple/list serialization mismatch detected before certificate emission; corrected by JSON normalization without weakening checks",
+  "final_certificate_sha256": "20241db3a3093c5ae3d18b4ca8526a55f2066ff12ce3ae91fda8c6be768f2b56",
+  "final_seed17_sha256": "20241db3a3093c5ae3d18b4ca8526a55f2066ff12ce3ae91fda8c6be768f2b56",
+  "initial_certificate_sha256": "0d022632bcbaee5dd58bdef4dbbecb64eb1ae20265479e7bec16335b1b005f66",
+  "initial_seed17_sha256": "0d022632bcbaee5dd58bdef4dbbecb64eb1ae20265479e7bec16335b1b005f66",
+  "normal_check": {
+    "NC_partitions": 1430,
+    "arithmetic": "int/Fraction only",
+    "queries": 70,
+    "status": "PASS",
+    "summary": {
+      "excluded_count": 3,
+      "excluded_transfer": 57,
+      "necessary_condition_residual": 10
+    }
+  },
+  "preserved_failed_run": "discovery_failure_01.txt",
+  "preserved_intermediate_certificate": "certificate.json",
+  "python": "3.14.7",
+  "seed17_check": {
+    "NC_partitions": 1430,
+    "arithmetic": "int/Fraction only",
+    "queries": 70,
+    "status": "PASS",
+    "summary": {
+      "excluded_count": 3,
+      "excluded_transfer": 57,
+      "necessary_condition_residual": 10
+    }
+  },
+  "seed17_mathematical_artifacts_byte_equal": true,
+  "seed17_verifier_output_equal": true,
+  "status": "PASS",
+  "verifier": "Python standard library; integer and Fraction only"
+}

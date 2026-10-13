@@ -1,5 +1,9 @@
 # E-ARC2：原55的 block 骨架與35內點上界
 
+**後續（2026-10-13，BASE 243a125）**：[N2-BRIDGE](c5_excess_two_n2_bridge.md)
+另排932，完成原E4完整來源契約的廣義N2；E-ARC2仍OPEN，未新增Lean證明。
+以下各輪大小界與停止點保留當時語境。
+
 **後續（2026-10-13）**：[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)已排指定完整Σ契約的
 原55最後雙long，九格全覆蓋；基本LL-CUT、較廣N2／E-ARC2仍OPEN。
 下文保留原輪大小界、控制及OPEN語境，沒有新增Δ門檻。

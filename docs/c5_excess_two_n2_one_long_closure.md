@@ -1,5 +1,9 @@
 # N2 原55：一 long 的末端 block 與固定 root 接回
 
+**後續（2026-10-13，BASE 243a125）**：[N2-BRIDGE](c5_excess_two_n2_bridge.md)
+另排932，完成原E4完整來源契約的廣義N2；E-ARC2仍OPEN，未新增Lean證明。
+以下各輪證明與停止點保留當時語境。
+
 **後續（2026-10-13，BASE 3097ef5）**：[同來源 LL-CUT+diag](c5_excess_two_n2_ll_cut.md)
 已排指定完整Σ契約的最後 `(2,0)`，九格全覆蓋；基本LL-CUT、較廣N2／E-ARC2仍OPEN。
 下文保留原輪證明、有限控制及停止點。

@@ -1,5 +1,9 @@
 # E-ARC2：末端 block 接點與 N2 的全部真核心排除
 
+**後續（2026-10-13，N2-BRIDGE）**：[前提橋接與932來源排除](c5_excess_two_n2_bridge.md)
+已逐項補足原E4三列契約，廣義N2全排；E-ARC2仍剩N1及相鄰roots來源。
+本頁完整Σ契約及歷史正文保留，新移植證明由上述入口承擔；無新Lean theorem。
+
 **後續（2026-10-13）**：[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)已完成指定完整Σ契約的
 原55九格覆蓋；基本LL-CUT、較廣N2／E-ARC2仍OPEN。
 下文保留本報告當轮45／54定理、有限控制及停止點。

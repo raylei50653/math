@@ -1,0 +1,124 @@
+{
+  "audit": "audits/2026-10-13-c8-struct-243a125",
+  "audit_manifest_entries_verified": 146,
+  "audit_manifest_mismatches": [],
+  "cwd": "/home/ray/developer/ai/math",
+  "entries": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-struct-243a125/check.py"
+      ],
+      "exit_code": 0,
+      "name": "check-normal",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\"bounds\": {\"h\": 3, \"n5\": 9}, \"excluded\": [\"c16-941\", \"c32-941\"], \"frozen_inputs\": 59, \"independent_checkers\": [\"geometry/check_geometry.py\", \"classification/checker.py\", \"classification/quotient_checker.py\", \"kempe/checker.py\"], \"residuals\": [{\"cofacial_conditions\": 91, \"query\": \"c04-941\", \"status\": \"necessary-condition residual\", \"support\": 193}, {\"cofacial_conditions\": 91, \"query\": \"c07-941\", \"status\": \"necessary-condition residual\", \"support\": 193}, {\"cofacial_conditions\": 91, \"query\": \"c15-933\", \"status\": \"necessary-condition residual\", \"support\": 134}, {\"cofacial_conditions\": 91, \"query\": \"c15-941\", \"status\": \"necessary-condition residual\", \"support\": 171}, {\"cofacial_conditions\": 91, \"query\": \"c18-933\", \"status\": \"necessary-condition residual\", \"support\": 134}, {\"cofacial_conditions\": 91, \"query\": \"c18-941\", \"status\": \"necessary-condition residual\", \"support\": 175}, {\"cofacial_conditions\": 91, \"query\": \"c20-941\", \"status\": \"necessary-condition residual\", \"support\": 171}, {\"cofacial_conditions\": 91, \"query\": \"c30-941\", \"status\": \"necessary-condition residual\", \"support\": 175}], \"source_queries_excluded\": 2, \"source_queries_residual\": 8, \"status\": \"PASS\", \"total_C8_excluded\": 62, \"total_C8_queries\": 70}\n",
+      "stdout_sha256": "8595192a10d4533cc0f1e75ab0f4d2e801f9faac552f1baec1a56b3c07e31f2c"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-struct-243a125/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "name": "check-seed17",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\"bounds\": {\"h\": 3, \"n5\": 9}, \"excluded\": [\"c16-941\", \"c32-941\"], \"frozen_inputs\": 59, \"independent_checkers\": [\"geometry/check_geometry.py\", \"classification/checker.py\", \"classification/quotient_checker.py\", \"kempe/checker.py\"], \"residuals\": [{\"cofacial_conditions\": 91, \"query\": \"c04-941\", \"status\": \"necessary-condition residual\", \"support\": 193}, {\"cofacial_conditions\": 91, \"query\": \"c07-941\", \"status\": \"necessary-condition residual\", \"support\": 193}, {\"cofacial_conditions\": 91, \"query\": \"c15-933\", \"status\": \"necessary-condition residual\", \"support\": 134}, {\"cofacial_conditions\": 91, \"query\": \"c15-941\", \"status\": \"necessary-condition residual\", \"support\": 171}, {\"cofacial_conditions\": 91, \"query\": \"c18-933\", \"status\": \"necessary-condition residual\", \"support\": 134}, {\"cofacial_conditions\": 91, \"query\": \"c18-941\", \"status\": \"necessary-condition residual\", \"support\": 175}, {\"cofacial_conditions\": 91, \"query\": \"c20-941\", \"status\": \"necessary-condition residual\", \"support\": 171}, {\"cofacial_conditions\": 91, \"query\": \"c30-941\", \"status\": \"necessary-condition residual\", \"support\": 175}], \"source_queries_excluded\": 2, \"source_queries_residual\": 8, \"status\": \"PASS\", \"total_C8_excluded\": 62, \"total_C8_queries\": 70}\n",
+      "stdout_sha256": "8595192a10d4533cc0f1e75ab0f4d2e801f9faac552f1baec1a56b3c07e31f2c"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-struct-243a125/check_results.py"
+      ],
+      "exit_code": 0,
+      "name": "independent-final-ledger",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\"complete_residual_vectors\": 8, \"excluded\": [\"c16-941\", \"c32-941\"], \"status\": \"PASS\"}\n{\"negative_control\": \"false full closure\", \"status\": \"rejected\"}\n",
+      "stdout_sha256": "dbe8b59a00d77ad60d4fbaee22d91dc18dfd2395843593d1d158a7514c4dc1ec"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-struct-243a125/classification/negative_controls.py"
+      ],
+      "exit_code": 0,
+      "name": "classification-cli-controls",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\"negative_controls\": [{\"name\": \"wrong_inner_pattern_map\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"private_order_not_reversed\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"missing_positive_equality_witness\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"unsupported_vector_equivalence\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"missing_named_residual\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"corrupted_complete_target_map\", \"returncode\": 1, \"status\": \"rejected\"}], \"status\": \"PASS\"}\n",
+      "stdout_sha256": "aa39c92b5f768040b06af634fdcc41f71979725d1f8fe4fc460a8f379fb77b6b"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-struct-243a125/classification/quotient_negative_controls.py"
+      ],
+      "exit_code": 0,
+      "name": "quotient-cli-controls",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\"negative_controls\": [{\"name\": \"missing_equal_pair_preimage\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"missing_named_query\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"corrupted_noncrossing_partition\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"corrupted_frozen_upper\", \"returncode\": 1, \"status\": \"rejected\"}, {\"name\": \"unsupported_additional_exclusion\", \"returncode\": 1, \"status\": \"rejected\"}], \"status\": \"PASS\"}\n",
+      "stdout_sha256": "d30a1c2224509413575bd75775e0103c8d22e94ffc01a54c33074ffbd9fe01b4"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-struct-243a125/kempe/checker.py",
+        "--negative-controls"
+      ],
+      "exit_code": 0,
+      "name": "kempe-in-process-controls",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\"arithmetic\": \"Fraction only\", \"forced_zero_fibres\": 4, \"generic_columns\": 1552, \"normalizer_rows\": 821, \"queries_excluded\": 0, \"queries_residual\": 10, \"results\": [{\"cofacial_positive_columns\": 91, \"forced_zero_patterns\": [], \"old_vector_status\": \"counterexample to weakened claim\", \"query\": \"c04-941\", \"support\": 193}, {\"cofacial_positive_columns\": 91, \"forced_zero_patterns\": [], \"old_vector_status\": \"counterexample to weakened claim\", \"query\": \"c07-941\", \"support\": 193}, {\"cofacial_positive_columns\": 91, \"forced_zero_patterns\": [], \"old_vector_status\": \"passes new necessary condition\", \"query\": \"c15-933\", \"support\": 134}, {\"cofacial_positive_columns\": 91, \"forced_zero_patterns\": [98, 159], \"old_vector_status\": \"counterexample to weakened claim\", \"query\": \"c15-941\", \"support\": 171}, {\"cofacial_positive_columns\": 82, \"forced_zero_patterns\": [], \"old_vector_status\": \"passes new necessary condition\", \"query\": \"c16-941\", \"support\": 102}, {\"cofacial_positive_columns\": 91, \"forced_zero_patterns\": [], \"old_vector_status\": \"passes new necessary condition\", \"query\": \"c18-933\", \"support\": 134}, {\"cofacial_positive_columns\": 91, \"forced_zero_patterns\": [], \"old_vector_status\": \"counterexample to weakened claim\", \"query\": \"c18-941\", \"support\": 175}, {\"cofacial_positive_columns\": 91, \"forced_zero_patterns\": [34, 54], \"old_vector_status\": \"counterexample to weakened claim\", \"query\": \"c20-941\", \"support\": 171}, {\"cofacial_positive_columns\": 91, \"forced_zero_patterns\": [], \"old_vector_status\": \"counterexample to weakened claim\", \"query\": \"c30-941\", \"support\": 175}, {\"cofacial_positive_columns\": 82, \"forced_zero_patterns\": [], \"old_vector_status\": \"passes new necessary condition\", \"query\": \"c32-941\", \"support\": 102}], \"status\": \"PASS\", \"triangulated_columns\": 981}\n{\"rejected\": [\"orbit-multiplicity\", \"old-vector-dual-sign\", \"named-fibre\", \"forced-zero-identity\", \"named-boundary-order\"], \"status\": \"PASS\"}\n",
+      "stdout_sha256": "25da3bb3f8a8fcacc3f28b7ca57e4dafd268366b5fa885516382447f8ce27fd7"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-c8-struct-243a125/geometry/check_geometry.py",
+        "--negative-controls"
+      ],
+      "exit_code": 0,
+      "name": "geometry-controls",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\n  \"queries\": 10,\n  \"named_chord_subdomains_excluded\": 200,\n  \"C4_empty_triangulations\": 2,\n  \"C5_empty_triangulations\": 5,\n  \"complete_queries_excluded\": 0,\n  \"controls\": [\n    {\n      \"vertices\": 11,\n      \"edges\": 25,\n      \"inner_faces\": 15,\n      \"strict_interior\": 6,\n      \"interior_degrees\": [\n        5,\n        5,\n        5,\n        5,\n        5,\n        5\n      ],\n      \"boundary_degrees\": [\n        4,\n        4,\n        4,\n        4,\n        4\n      ],\n      \"all_triangles_facial\": true\n    },\n    {\n      \"vertices\": 10,\n      \"edges\": 19,\n      \"inner_faces\": 10,\n      \"strict_interior\": 2,\n      \"interior_degrees\": [\n        5,\n        5\n      ],\n      \"boundary_degrees\": [\n        5,\n        3,\n        3,\n        3,\n        5,\n        3,\n        3,\n        3\n      ],\n      \"all_triangles_facial\": true\n    }\n  ],\n  \"negative_controls\": [\n    {\n      \"name\": \"wrong C4 bound\",\n      \"status\": \"rejected\"\n    },\n    {\n      \"name\": \"omitted chord\",\n      \"status\": \"rejected\"\n    },\n    {\n      \"name\": \"reversed named boundary\",\n      \"status\": \"rejected\"\n    },\n    {\n      \"name\": \"missing original face\",\n      \"status\": \"rejected\"\n    },\n    {\n      \"name\": \"unsupported whole-query exclusion\",\n      \"status\": \"rejected\"\n    }\n  ]\n}\n",
+      "stdout_sha256": "60871bfe8627058f796c9e49c009f01bc42bba8635eb3c0da079f6aa2513ca61"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-"
+      ],
+      "exit_code": 0,
+      "name": "temporary-cli-controls",
+      "script_description": "TemporaryDirectory wrapper copied verify.py frozen SHA control and verify_runs.py count/name controls, executing real checker CLIs on /tmp certificates",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\"controls\": [{\"error\": \"ValueError: input hash drift: audits/2026-10-13-c8-joint-count-3097ef5/BASE.json\", \"exit\": 1, \"name\": \"root-frozen-hash\"}, {\"error\": \"AssertionError: incorrect common orbit multiplicity\", \"exit\": 1, \"name\": \"kempe-count\"}, {\"error\": \"AssertionError\", \"exit\": 1, \"name\": \"kempe-name\"}], \"status\": \"PASS\"}\n",
+      "stdout_sha256": "6a7dd8355524f23377eb24da678cc4d833405f9f5d67d005c60e8977fa2ec4dd"
+    }
+  ],
+  "frozen_inputs_verified": 59,
+  "normal_seed17_byte_identical": true,
+  "note": "stdout copied from actual tool results; no additional checker reruns for this receipt",
+  "repository_mutations": [],
+  "schema": "c8-publication-readonly-review-v1",
+  "status": "PASS"
+}

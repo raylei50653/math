@@ -1,5 +1,9 @@
 # 最小來源 W5 的私人圈秩至少二
 
+**後續（2026-10-13，BASE 243a125）**：[私人雙環排除](c5_w5_private_rank2.md)
+已覆蓋圈秩二的四型及全部 essential 位置，將完整最小來源的私人圈秩提高至至少三。
+四個實際 annulus 代表只保完整 Σ、不保 R³；下文保留原單環證明與當輪停止點。
+
 2026-10-13。接續 [三色支援與私人森林排除](c5_w5_three_color_support.md)。
 完整來源、紙面分類及可重播證據見
 [隔離 REPORT](../audits/2026-10-13-w5-private-unicyclic-3097ef5/REPORT.md)，

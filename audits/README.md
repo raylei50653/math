@@ -1,5 +1,10 @@
 # 稽核封存與還原
 
+2026-10-13 最新整理：[廣義N2、W5私人雙環及C₈來源結構發布](../docs/history/2026-10-13-n2-rank2-c8-publish.md)。
+三份原包共390個非快取檔案保持原bytes；本次僅追加7個大型路徑、3個gzip
+blobs與3,743,086 compressed bytes，舊ARCHIVE records不改。
+新checkout仍使用下面的restore指令；數學範圍及本次實際核對見發布紀錄。
+
 本目錄保存 [D](2026-10-04-task-d/REPORT.md)、
 [D₂](2026-10-04-task-d2/REPORT.md)、[D₃](2026-10-04-task-d3/REPORT.md)、
 [D₄](2026-10-04-task-d4/REPORT.md)與[D₅](2026-10-04-task-d5/REPORT.md)

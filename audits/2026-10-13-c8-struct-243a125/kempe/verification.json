@@ -1,0 +1,38 @@
+{
+  "normal_seed17_byte_equal": true,
+  "runs": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/kempe/checker.py",
+        "--negative-controls"
+      ],
+      "exit_code": 0,
+      "hash_seed": null,
+      "stdout_sha256": "25da3bb3f8a8fcacc3f28b7ca57e4dafd268366b5fa885516382447f8ce27fd7"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/kempe/checker.py",
+        "--negative-controls"
+      ],
+      "exit_code": 0,
+      "hash_seed": "17",
+      "stdout_sha256": "25da3bb3f8a8fcacc3f28b7ca57e4dafd268366b5fa885516382447f8ce27fd7"
+    },
+    {
+      "control": "count",
+      "exit_code": 1,
+      "stderr_last_line": "AssertionError: incorrect common orbit multiplicity"
+    },
+    {
+      "control": "name",
+      "exit_code": 1,
+      "stderr_last_line": "AssertionError"
+    }
+  ],
+  "status": "PASS"
+}

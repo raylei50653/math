@@ -1,0 +1,220 @@
+{
+  "reviewed_at_utc": "2026-10-13T05:05:27.917067+00:00",
+  "base": "243a125a80e4d8de40957f59d8da0bdbc974cf69",
+  "mode": "read-only publication review; no repository writes",
+  "scope": "Theorem NB at original E4 full source contract; paper proof with explicit inherited external and finite-terminal dependencies. E-ARC2 OPEN. No new Lean theorem. Full target controls not triggered.",
+  "replays": [
+    {
+      "name": "main-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-bridge-243a125/checker.py",
+        "--check",
+        "--negative-tests"
+      ],
+      "environment_overrides": {},
+      "exit_code": 0,
+      "observed_status": "PASS",
+      "evidence": "Observed tool output in this read-only review; summarized here without rerunning."
+    },
+    {
+      "name": "main-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-bridge-243a125/checker.py",
+        "--check",
+        "--negative-tests"
+      ],
+      "environment_overrides": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "observed_status": "PASS",
+      "evidence": "Observed tool output in this read-only review; summarized here without rerunning."
+    },
+    {
+      "name": "independent-graphs-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-bridge-243a125/independent_checker.py",
+        "--check",
+        "--negative-tests"
+      ],
+      "environment_overrides": {},
+      "exit_code": 0,
+      "observed_status": "PASS",
+      "evidence": "Observed tool output in this read-only review; summarized here without rerunning."
+    },
+    {
+      "name": "independent-graphs-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-bridge-243a125/independent_checker.py",
+        "--check",
+        "--negative-tests"
+      ],
+      "environment_overrides": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "observed_status": "PASS",
+      "evidence": "Observed tool output in this read-only review; summarized here without rerunning."
+    },
+    {
+      "name": "independent-u4-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-bridge-243a125/independent_checker.py",
+        "--u4",
+        "--check",
+        "--negative-tests"
+      ],
+      "environment_overrides": {},
+      "exit_code": 0,
+      "observed_status": "PASS",
+      "evidence": "Observed tool output in this read-only review; summarized here without rerunning."
+    },
+    {
+      "name": "independent-u4-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-bridge-243a125/independent_checker.py",
+        "--u4",
+        "--check",
+        "--negative-tests"
+      ],
+      "environment_overrides": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "observed_status": "PASS",
+      "evidence": "Observed tool output in this read-only review; summarized here without rerunning."
+    },
+    {
+      "name": "arithmetic",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-bridge-243a125/independent_checker.py",
+        "--arithmetic",
+        "--check"
+      ],
+      "exit_code": 0,
+      "observed_status": "PASS"
+    },
+    {
+      "name": "u4-t3-negative",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-bridge-243a125/independent_checker.py",
+        "--u4-t3-negative",
+        "--check"
+      ],
+      "exit_code": 0,
+      "observed_status": "PASS"
+    },
+    {
+      "name": "corrupted-q2-artifact",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-bridge-243a125/checker.py",
+        "--check",
+        "--artifact",
+        "audits/2026-10-13-n2-bridge-243a125/verification/negative_invented_q2.json"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "observed_rejection": "AssertionError: artifact mismatch"
+    }
+  ],
+  "inherited_replays": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/c5_excess_two_nonadjacent_two_mixed_core44.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout_log": "/tmp/math-n2-publication-review-dih3c_l_/u4-base-0.stdout.log",
+      "stderr_log": "/tmp/math-n2-publication-review-dih3c_l_/u4-base-0.stderr.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/c5_excess_two_nonadjacent_two_mixed_core44_audit.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout_log": "/tmp/math-n2-publication-review-dih3c_l_/u4-base-1.stdout.log",
+      "stderr_log": "/tmp/math-n2-publication-review-dih3c_l_/u4-base-1.stderr.log"
+    }
+  ],
+  "manifest": {
+    "files": 179,
+    "sha256_and_bytes_match": true
+  },
+  "frozen_inputs": {
+    "unique_files": 111,
+    "sha256_matches": true
+  },
+  "old_non_documentation_inputs": {
+    "unique_files": 23,
+    "current_sha256_matches": true
+  },
+  "observed_counts": {
+    "primary": {
+      "unique_frozen_inputs": 108,
+      "graphs": 2,
+      "distinct_row_queries": 1180,
+      "queried_fibre_cells": 20000,
+      "empty_fibre_cells": 15370,
+      "full_lifts_with_query_multiplicity": 12645
+    },
+    "independent_graphs": {
+      "minimal_cores": 8,
+      "nonframe_edge_deletions": 29,
+      "core_minimality_deletions": 86,
+      "artifact_sha256": "f424e3703a6c13088fbd63d3a990de75c32342f561f096721a39f23395f4629e",
+      "normal_seed17_identical": true
+    },
+    "u4_mask_free": {
+      "marked_cores": 828,
+      "full_rows": 8280,
+      "all_full_lifts": 122240,
+      "non_q_T3_collisions": 3312,
+      "empty_fibres": 102536,
+      "nonempty_fibres": 29944,
+      "q_minimality_full_lifts": 15460,
+      "artifact_sha256": "bf352ee4d93bbf853fa0763d0662ab2d95018ae8b3d0dd073ee70a9ed86b4d83",
+      "normal_seed17_identical": true
+    }
+  },
+  "connected_paths": [
+    "audits/2026-10-13-n2-bridge-243a125/",
+    "docs/c5_excess_two_n2_bridge.md",
+    "docs/c5_excess_two_arc_spoke_closure.md",
+    "docs/c5_excess_two_n2_diagonal_three_row.md",
+    "docs/c5_excess_two_n2_ll_cut.md",
+    "docs/c5_excess_two_n2_residual_unification.md",
+    "docs/c5_kempe_guide.md",
+    "docs/c5_research_synthesis.md",
+    "docs/STATUS.md"
+  ],
+  "publication_routing_recommendations": [
+    "Update README current N2 status",
+    "Update current synthesis opening status",
+    "Add scoped N2-BRIDGE follow-up to immediate N2 predecessor notices if root elects",
+    "Keep historical audit evidence and HANDOFF tag-only contract unchanged"
+  ],
+  "blockers": []
+}

@@ -1,0 +1,155 @@
+{
+  "base": "243a125a80e4d8de40957f59d8da0bdbc974cf69",
+  "lake_build": {
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "jobs": 8831,
+    "evidence": "Observed live exec/write_stdin output; no saved raw log and no rerun to create this record. Existing linter warnings retained; no new Lean theorem."
+  },
+  "omitted": [
+    "Upstream broad source enumeration",
+    "All historical artifact generation",
+    "External counting/4CT certificate replay",
+    "New Lean formalization",
+    "Remote CI qualification"
+  ],
+  "publication_checks": {
+    "docs": {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "logs/docs.stdout.log",
+      "stderr": "logs/docs.stderr.log",
+      "stdout_sha256": "89470584c59fded35a3bf37fcc7cd81cd528669126ac50e5c894f0690930e3c3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tail": "OK: 649 Markdown files, 8131 local links; anchors, index, handoff checked\n"
+    },
+    "docgraph-docs": {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "logs/docgraph-docs.stdout.log",
+      "stderr": "logs/docgraph-docs.stderr.log",
+      "stdout_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tail": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n"
+    },
+    "docgraph-all": {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "logs/docgraph-all.stdout.log",
+      "stderr": "logs/docgraph-all.stderr.log",
+      "stdout_sha256": "3b55401c56babce0efbd6b1c4c480eea52dc0ff51ae277d0c4c218d81b59afa2",
+      "stderr_sha256": "0de85e9399aab43badf40ea6ef2c2531835c9ed19379760db2e9ee48777e275a",
+      "tail": "o_spoke_three_contacts.md, audits/2026-10-10-n45-l1a/frozen/base/docs/c5_two_spoke_three_contacts.md, audits/2026-10-10-n45-l1r/frozen/BASE/docs/c5_two_spoke_three_contacts.md, audits/2026-10-10-n45-l2a/frozen/BASE/docs/c5_two_spoke_three_contacts.md, audits/2026-10-10-n45-l2c/frozen/worker/frozen/BASE/docs/c5_two_spoke_three_contacts.md, audits/2026-10-10-n45-l2r/frozen/worker/frozen/BASE/docs/c5_two_spoke_three_contacts.md, audits/2026-10-10-n45-pa/frozen/base/docs/c5_two_spoke_three_contacts.md, audits/2026-10-10-n45-s-long-r-map/frozen/docs/c5_two_spoke_three_contacts.md, audits/2026-10-10-n45-s-low1/base-source/docs/c5_two_spoke_three_contacts.md, audits/2026-10-10-n45-s-low2/frozen/BASE/docs/c5_two_spoke_three_contacts.md, audits/2026-10-10-n45-ssa/frozen/base/docs/c5_two_spoke_three_contacts.md, audits/2026-10-10-n45-ssc/frozen/base-object/docs/c5_two_spoke_three_contacts.md, audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_two_spoke_three_contacts.md, audits/2026-10-10-n45-ssc/frozen/worker/frozen/base/docs/c5_two_spoke_three_contacts.md, audits/2026-10-10-n45-u-ss/base-source/docs/c5_two_spoke_three_contacts.md, audits/2026-10-10-n45-u-ss/frozen/base/docs/c5_two_spoke_three_contacts.md, audits/2026-10-11-n45-s-long-s-direct/frozen/docs/c5_two_spoke_three_contacts.md, audits/2026-10-11-single-deficit-applicability-804e3b0b1b/frozen/docs/c5_two_spoke_three_contacts.md, audits/2026-10-13-n2-ll-cut-3097ef5/frozen/docs/c5_two_spoke_three_contacts.md, docs/c5_two_spoke_three_contacts.md, scratch/task-c44-delivery/repository/docs/c5_two_spoke_three_contacts.md\n"
+    },
+    "diff-whitespace": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "logs/diff-whitespace.stdout.log",
+      "stderr": "logs/diff-whitespace.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tail": ""
+    },
+    "storage-tests": {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "logs/storage-tests.stdout.log",
+      "stderr": "logs/storage-tests.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "8d1efae1ff3f92a4d9bb24e10ebac3bdb9f97d91c850d839695a54cc908e9217",
+      "tail": "........................................................\n----------------------------------------------------------------------\nRan 56 tests in 2.794s\n\nOK\n"
+    },
+    "staged-generated-policy": {
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Generated artifact policy OK: 4512 indexed files, 2 large files with documented exceptions, 166 registered outputs.\n",
+      "stderr": "",
+      "stdout_sha256": "c91df7d3f70b28e71db38ec1bc6d037403c0a643454cc983d306641e1bf73ead",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "staged-whitespace": {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs-final": {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "OK: 649 Markdown files, 8131 local links; anchors, index, handoff checked\n",
+      "stderr": "",
+      "stdout_sha256": "89470584c59fded35a3bf37fcc7cd81cd528669126ac50e5c894f0690930e3c3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "diff-whitespace-final": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "custody_status": "PASS",
+  "formal_docgraph_status": "PASS",
+  "whole_tree_docgraph": {
+    "status": "FAIL",
+    "errors": 62,
+    "cause": "retained frozen/scratch duplicate IDs"
+  },
+  "staging_whitelist_entries": 447
+}

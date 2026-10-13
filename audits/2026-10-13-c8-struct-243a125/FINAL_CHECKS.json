@@ -1,0 +1,60 @@
+{
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "stdout": "OK: 647 Markdown files, 8096 local links; anchors, index, handoff checked\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "243a125a80e4d8de40957f59d8da0bdbc974cf69\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--name-only",
+        "--",
+        "audits/2026-10-13-c8-joint-count-3097ef5"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "root_replay": "validation-02/verification.json",
+  "final_ledger_replay": "final-ledger.verification.json",
+  "global_docgraph_status": "FAIL: 62 historical duplicate-id errors; see validation-02/docgraph-whole-tree.stdout"
+}

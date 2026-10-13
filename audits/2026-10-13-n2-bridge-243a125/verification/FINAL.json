@@ -1,0 +1,89 @@
+{
+  "base": "243a125a80e4d8de40957f59d8da0bdbc974cf69",
+  "head": "243a125a80e4d8de40957f59d8da0bdbc974cf69",
+  "paper_verdict": "Theorem NB adopted at original E4 N2 contract",
+  "generalized_N2": "CLOSED",
+  "E_ARC2": "OPEN",
+  "remaining_E_ARC2": [
+    "EARC-NA1",
+    "EARC-AD0",
+    "EARC-AD1-A4",
+    "EARC-AD1-LOW",
+    "EARC-AD2"
+  ],
+  "checks": [
+    {
+      "name": "negative-artifact",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-bridge-243a125/checker.py",
+        "--check",
+        "--artifact",
+        "audits/2026-10-13-n2-bridge-243a125/verification/negative_invented_q2.json"
+      ],
+      "exit_code": 1,
+      "expected_exit": 1,
+      "matched": true
+    },
+    {
+      "name": "docs-final",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "matched": true
+    },
+    {
+      "name": "docgraph-formal-final",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "matched": true
+    },
+    {
+      "name": "diff-final",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "matched": true
+    }
+  ],
+  "audit_prose_files": 10,
+  "audit_local_links_checked": 79,
+  "unique_frozen_inputs": 111,
+  "frozen_input_drift": 0,
+  "checked_old_evidence_files": 23,
+  "old_evidence_drift": 0,
+  "main_replays": "primary_runs.json",
+  "independent_replays": "../controls/verification/SUMMARY.json",
+  "scoped_docgraph": "62 documents,213 relations,0 errors",
+  "global_docgraph": "not run; historical62duplicate IDs outside scope",
+  "lake_build": "not run; no new Lean theorem or Lean changes",
+  "source_enumeration": "none",
+  "full_target_controls": "not triggered; not source exclusion evidence",
+  "git_mutations": "none",
+  "concurrent_work_preserved": [
+    "audits/2026-10-13-c8-struct-243a125/",
+    "audits/2026-10-13-w5-rank2-243a125/",
+    "concurrent C8 current-document changes retained"
+  ],
+  "retained_failures": [
+    "U4 initial direct Git blob lookup exit128 recorded in U4_INPUTS.json",
+    "own STATUS row insertion boundary corrected before final documentation check"
+  ]
+}

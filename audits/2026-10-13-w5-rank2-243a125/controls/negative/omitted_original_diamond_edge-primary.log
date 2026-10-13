@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-13-w5-rank2-243a125/controls/check.py", line 304, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-w5-rank2-243a125/controls/check.py", line 271, in main
+    accept(g)
+    ~~~~~~^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-w5-rank2-243a125/controls/check.py", line 264, in accept
+    assert stream.readline() == data, 'certificate mismatch: '+str(record.get('key', 'header'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: certificate mismatch: {"after":"UUU","c":1,"diamond":"BOBBD","gap":0,"path":"","r":7}

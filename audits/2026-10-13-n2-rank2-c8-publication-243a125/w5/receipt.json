@@ -1,0 +1,341 @@
+{
+  "authority": "Fresh tool exec/write_stdin outputs observed by rank2_review agent; these are canonical transcriptions of final result summaries, not saved verbatim stdout logs. No reruns were made to create this receipt.",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank2-243a125/controls/check.py",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "name": "primary-normal",
+      "observed_summary": {
+        "A_full_lifts": 344416,
+        "G_full_lifts": 167814,
+        "cells": 9973760,
+        "empty_cells": 9762297,
+        "masks": {
+          "1021": 1,
+          "1023": 970,
+          "639": 2,
+          "959": 1
+        },
+        "mathematical_sha256": "daf4b2524be46c2615202ddc42430eb11be7d0329bfd3aa4c529a6be0fb0c326",
+        "templates": 974,
+        "types": {
+          "c1_r10_a0": 70,
+          "c1_r7_a0": 42,
+          "c1_r7_a1": 88,
+          "c1_r7_a2": 104,
+          "c1_r7_a3": 52,
+          "c1_r8_a0": 141,
+          "c1_r8_a1": 136,
+          "c1_r8_a2": 58,
+          "c1_r9_a0": 172,
+          "c1_r9_a1": 64,
+          "c2_r7_a0": 12,
+          "c2_r7_a1": 20,
+          "c2_r8_a0": 15
+        }
+      },
+      "observed_summary_file": "primary-normal.observed-summary.json",
+      "observed_summary_sha256": "e8af33fffda32a3f687fbfc7f42dbc188c516899bc7aa1063a0d059f979aeb1e",
+      "status": "PASS",
+      "tool_exec_session_id": 78616
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank2-243a125/controls/check.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "name": "primary-seed17",
+      "observed_summary": {
+        "A_full_lifts": 344416,
+        "G_full_lifts": 167814,
+        "cells": 9973760,
+        "empty_cells": 9762297,
+        "masks": {
+          "1021": 1,
+          "1023": 970,
+          "639": 2,
+          "959": 1
+        },
+        "mathematical_sha256": "daf4b2524be46c2615202ddc42430eb11be7d0329bfd3aa4c529a6be0fb0c326",
+        "templates": 974,
+        "types": {
+          "c1_r10_a0": 70,
+          "c1_r7_a0": 42,
+          "c1_r7_a1": 88,
+          "c1_r7_a2": 104,
+          "c1_r7_a3": 52,
+          "c1_r8_a0": 141,
+          "c1_r8_a1": 136,
+          "c1_r8_a2": 58,
+          "c1_r9_a0": 172,
+          "c1_r9_a1": 64,
+          "c2_r7_a0": 12,
+          "c2_r7_a1": 20,
+          "c2_r8_a0": 15
+        }
+      },
+      "observed_summary_file": "primary-seed17.observed-summary.json",
+      "observed_summary_sha256": "e8af33fffda32a3f687fbfc7f42dbc188c516899bc7aa1063a0d059f979aeb1e",
+      "status": "PASS",
+      "tool_exec_session_id": 39192
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank2-243a125/independent/check.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "name": "independent-normal",
+      "observed_summary": {
+        "A_full_lifts": 344416,
+        "G_full_lifts": 167814,
+        "Sigma_counts": {
+          "1021": 1,
+          "1023": 970,
+          "639": 2,
+          "959": 1
+        },
+        "cells": 9973760,
+        "empty_cells": 9762297,
+        "representatives": {
+          "actual_minimum_933_941_source": "not triggered",
+          "masks": {
+            "1021": 1,
+            "1023": 970,
+            "639": 2,
+            "959": 1
+          },
+          "representative_A_lifts": 1059,
+          "representative_G_lifts": 551,
+          "representative_cells": 40960,
+          "representative_empty_cells": 40028,
+          "representatives": 4,
+          "source_templates": 974,
+          "strict_reductions": {
+            "10": 70,
+            "3": 4,
+            "7": 314,
+            "8": 350,
+            "9": 236
+          }
+        },
+        "source_realizability": "not triggered; universal coverage is a paper theorem",
+        "status": "PASS independent exact comparison",
+        "templates": 974
+      },
+      "observed_summary_file": "independent-normal.observed-summary.json",
+      "observed_summary_sha256": "7abfd5f191b7f5caa1768c28dc488f39e901550ae589623c6271fe62d3051c98",
+      "status": "PASS",
+      "tool_exec_session_id": 73649
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank2-243a125/independent/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "name": "independent-seed17",
+      "observed_summary": {
+        "A_full_lifts": 344416,
+        "G_full_lifts": 167814,
+        "Sigma_counts": {
+          "1021": 1,
+          "1023": 970,
+          "639": 2,
+          "959": 1
+        },
+        "cells": 9973760,
+        "empty_cells": 9762297,
+        "representatives": {
+          "actual_minimum_933_941_source": "not triggered",
+          "masks": {
+            "1021": 1,
+            "1023": 970,
+            "639": 2,
+            "959": 1
+          },
+          "representative_A_lifts": 1059,
+          "representative_G_lifts": 551,
+          "representative_cells": 40960,
+          "representative_empty_cells": 40028,
+          "representatives": 4,
+          "source_templates": 974,
+          "strict_reductions": {
+            "10": 70,
+            "3": 4,
+            "7": 314,
+            "8": 350,
+            "9": 236
+          }
+        },
+        "source_realizability": "not triggered; universal coverage is a paper theorem",
+        "status": "PASS independent exact comparison",
+        "templates": 974
+      },
+      "observed_summary_file": "independent-seed17.observed-summary.json",
+      "observed_summary_sha256": "7abfd5f191b7f5caa1768c28dc488f39e901550ae589623c6271fe62d3051c98",
+      "status": "PASS",
+      "tool_exec_session_id": 47451
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank2-243a125/controls/representatives.py",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "name": "representatives-normal",
+      "observed_summary": {
+        "actual_minimum_933_941_source": "not triggered",
+        "masks": {
+          "1021": 1,
+          "1023": 970,
+          "639": 2,
+          "959": 1
+        },
+        "representative_A_lifts": 1059,
+        "representative_G_lifts": 551,
+        "representative_cells": 40960,
+        "representative_empty_cells": 40028,
+        "representatives": 4,
+        "source_templates": 974,
+        "strict_reductions": {
+          "10": 70,
+          "3": 4,
+          "7": 314,
+          "8": 350,
+          "9": 236
+        }
+      },
+      "observed_summary_file": "representatives-normal.observed-summary.json",
+      "observed_summary_sha256": "0fc5dfc4de3e34fa838fccedbfc11641e149675d97126b7b19ecbde498385e01",
+      "status": "PASS",
+      "tool_exec_session_id": null
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank2-243a125/controls/representatives.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "name": "representatives-seed17",
+      "observed_summary": {
+        "actual_minimum_933_941_source": "not triggered",
+        "masks": {
+          "1021": 1,
+          "1023": 970,
+          "639": 2,
+          "959": 1
+        },
+        "representative_A_lifts": 1059,
+        "representative_G_lifts": 551,
+        "representative_cells": 40960,
+        "representative_empty_cells": 40028,
+        "representatives": 4,
+        "source_templates": 974,
+        "strict_reductions": {
+          "10": 70,
+          "3": 4,
+          "7": 314,
+          "8": 350,
+          "9": 236
+        }
+      },
+      "observed_summary_file": "representatives-seed17.observed-summary.json",
+      "observed_summary_sha256": "0fc5dfc4de3e34fa838fccedbfc11641e149675d97126b7b19ecbde498385e01",
+      "status": "PASS",
+      "tool_exec_session_id": null
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank2-243a125/controls/negative.py",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "name": "negative",
+      "observed_summary": {
+        "Sigma_equal_R3_different": "counterexample in representatives.json.gz",
+        "malformed_fixtures": 4,
+        "rejections": 8,
+        "status": "triggered and holds"
+      },
+      "observed_summary_file": "negative.observed-summary.json",
+      "observed_summary_sha256": "5e10f5eaedab6d3993a66f6c47e6b8a11de113e5756a6b4cffd1492cb640dee3",
+      "status": "PASS",
+      "tool_exec_session_id": 32186
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank2-243a125/review/local_patch.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "name": "local-patch",
+      "observed_summary": {
+        "accepted_rows": 300,
+        "empty_rows": 432,
+        "full_lift_count": 312,
+        "proper_boundary_rows": 732,
+        "status": "triggered and holds on the stated local patch"
+      },
+      "observed_summary_file": "local-patch.observed-summary.json",
+      "observed_summary_sha256": "ae62ac84b486efa0f783992895583a2b807974eaec9b76bccd031051a8807d39",
+      "status": "PASS",
+      "tool_exec_session_id": null
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank2-243a125/verify_delivery.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "name": "delivery",
+      "observed_summary": {
+        "files": 61,
+        "frozen_inputs": 13,
+        "live_input_drift_not_used_as_authority": [
+          "docs/c5_neartri_boundary_collar.md"
+        ],
+        "status": "PASS immutable delivery and BASE authority"
+      },
+      "observed_summary_file": "delivery.observed-summary.json",
+      "observed_summary_sha256": "2935db0b87cdafb62a58c3c188a263dca8cf016efbf8a31b8c642cec16959222",
+      "status": "PASS",
+      "tool_exec_session_id": null
+    }
+  ],
+  "scope": "No repo files changed; all checkers run with python3 -B; normal and seed17 main/independent results matched.",
+  "status": "PASS all nine read-only publication replays"
+}

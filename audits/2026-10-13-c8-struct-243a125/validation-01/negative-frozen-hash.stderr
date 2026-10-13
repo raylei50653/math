@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/check.py", line 100, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/check.py", line 54, in main
+    count = check_inputs(args.base_manifest)
+  File "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/check.py", line 37, in check_inputs
+    require(hashlib.sha256(data).hexdigest() == entry['sha256'], 'input hash drift: ' + entry['path'])
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-c8-struct-243a125/check.py", line 25, in require
+    raise ValueError(message)
+ValueError: input hash drift: audits/2026-10-13-c8-joint-count-3097ef5/BASE.json

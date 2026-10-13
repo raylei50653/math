@@ -11,7 +11,9 @@
 每條非框邊刪除全收，連roots在內每點至多接兩個相鄰框點；精確残留縮至原55。
 後續[原55大小界](c5_excess_two_arc_size_bound.md)給有效`|H|≤35−6u−3t`；原圖已有有限上界，
 2026-10-13 [LL-CUT+diag](c5_excess_two_n2_ll_cut.md)已完成指定完整Σ契約內的原55
-共同矛盾，九格全覆蓋；基本LL-CUT、較廣N2及E-ARC2仍OPEN，沒有新增來源搜尋或Lean證明。
+共同矛盾，九格全覆蓋；基本LL-CUT未獨立證成。
+同日[N2-BRIDGE](c5_excess_two_n2_bridge.md)補932的完整來源橋接，排原E4契約的
+廣義N2；E-ARC2仍剩N1及相鄰分支，沒有新增來源搜尋或Lean證明。
 本線主攻入口及各子分支的精確停止點由 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)維護。
 
 **後續整合（2026-10-08）**：[跨線結果對照與共通語言](c5_common_language.md)
@@ -520,7 +522,13 @@ Roots亦至多接兩個相鄰框點。[原55大小界](c5_excess_two_arc_size_bo
 2026-10-13 [LL-CUT+diag](c5_excess_two_n2_ll_cut.md)再以原leaf K₅／K₃,₃、接線容量及
 最後行和cut排除(2,0)，指定完整Σ契約內九格全覆蓋；沒有證新Δ門檻。
 基本LL-CUT未獨立證成，19,229共同可行投影與64,408 contact介面保留為必要條件。
-較廣N2及E-ARC2仍OPEN，未Lean化；目標有限控制not triggered，未搜尋10–35內點。
+該輪較廣N2及E-ARC2仍OPEN，未Lean化；目標有限控制not triggered，未搜尋10–35內點。
+同日[N2-BRIDGE](c5_excess_two_n2_bridge.md)另核原父量詞：三列N2比完整Σ恰多932，
+以U4三列移植、五列slack／完整分量witness、unit-U排除及UC3容量修補，
+接回局部unary／OL／LL證明，完成原E4契約的廣義N2排除。
+E-ARC2仍剩N1及相鄰roots的m=0／1／2來源，
+[具名父ledger](../audits/2026-10-13-n2-bridge-243a125/paper/PARENT_COVERAGE.md)保各自core／spoke限制。
+932不屬原E-ARC2域，ε≥3亦無另項義務；沒有新Lean theorem。
 既有三列集合化約及這兩張原圖控制可重播：
 `uv run --with networkx==3.5 python -B scripts/c5_excess_two_e3_foundation.py --check`。
 本輪一般及 `PYTHONHASHSEED=17` 重播均通過，輸出 hash 相同；另獨立核對全部 32 個 Q，

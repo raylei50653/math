@@ -1,0 +1,71 @@
+[
+  {
+    "name": "primary-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-rank2-243a125/controls/check.py",
+      "--check"
+    ],
+    "seed17": false,
+    "exit_code": 0,
+    "seconds": 8.423,
+    "log": "review/primary-normal.log",
+    "sha256": "86b8a9af30684864be18c23d00c2211ac2d989c9a59f80ef4c7f50be3a28ce3e"
+  },
+  {
+    "name": "primary-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-rank2-243a125/controls/check.py",
+      "--check"
+    ],
+    "seed17": true,
+    "exit_code": 0,
+    "seconds": 8.425,
+    "log": "review/primary-seed17.log",
+    "sha256": "86b8a9af30684864be18c23d00c2211ac2d989c9a59f80ef4c7f50be3a28ce3e"
+  },
+  {
+    "name": "representatives-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-rank2-243a125/controls/representatives.py",
+      "--check"
+    ],
+    "seed17": false,
+    "exit_code": 0,
+    "seconds": 0.876,
+    "log": "review/representatives-normal.log",
+    "sha256": "2b48ae6e2705d9547b3c9d9af0f5b101a925d5ac645f17dd98a4c2d6ca2f6c7d"
+  },
+  {
+    "name": "representatives-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-rank2-243a125/controls/representatives.py",
+      "--check"
+    ],
+    "seed17": true,
+    "exit_code": 0,
+    "seconds": 0.865,
+    "log": "review/representatives-seed17.log",
+    "sha256": "2b48ae6e2705d9547b3c9d9af0f5b101a925d5ac645f17dd98a4c2d6ca2f6c7d"
+  },
+  {
+    "name": "local-patch",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-rank2-243a125/review/local_patch.py"
+    ],
+    "seed17": false,
+    "exit_code": 0,
+    "seconds": 0.041,
+    "log": "review/local-patch.log",
+    "sha256": "3c55749201756e580e1fa6f371040920060f474c9ab86f38dc6526328364fe06"
+  }
+]
