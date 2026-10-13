@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "scope": "Independent scope review, W4 and ear-wheel countercontrols, complete finite C8 cap-family review",
+  "commands": [
+    {"command": "python3 -B review/independent_caps.py --check", "exit_code": 0},
+    {"command": "PYTHONHASHSEED=17 python3 -B review/independent_caps.py --check", "exit_code": 0},
+    {"command": "python3 -B review/scope_controls.py --check", "exit_code": 0},
+    {"command": "PYTHONHASHSEED=17 python3 -B review/scope_controls.py --check", "exit_code": 0}
+  ],
+  "working_directory_for_commands": "audits/2026-10-13-no4ct-generalization-6943561",
+  "initial_receipt": "Both result files were first generated before --write/--check modes were added. Their contents were preserved. Final --write uses exclusive creation; final --check performs read-only comparison.",
+  "development_failure": "The first two scope_controls --check runs failed because JSON lists were compared to in-memory edge tuples. The comparison was repaired by JSON canonicalization; neither the mathematical controls nor stored certificate changed. Both final reruns passed.",
+  "source_realization": "No minimal catalogue-outside source constructed or claimed.",
+  "proof_boundary": "The all-t ear-wheel lower bound is a paper proof. Its explicit finite controls cover only t=2,3,4. The cap family is all labelled C8 dissections with at most one independent hub in each selected nontriangular face, not all caps within a private-vertex budget.",
+  "lean": "No new Lean theorem or Lean build."
+}
