@@ -10,15 +10,16 @@
 再由[末端block與兩次SD-A](c5_excess_two_arc_spoke_closure.md)排除完整N2的全部45／54，
 每條非框邊刪除全收，連roots在內每點至多接兩個相鄰框點；精確残留縮至原55。
 後續[原55大小界](c5_excess_two_arc_size_bound.md)給有效`|H|≤35−6u−3t`；原圖已有有限上界，
-界內共同矛盾仍未證，沒有新增來源搜尋或Lean證明。
+2026-10-13 [LL-CUT+diag](c5_excess_two_n2_ll_cut.md)已完成指定完整Σ契約內的原55
+共同矛盾，九格全覆蓋；基本LL-CUT、較廣N2及E-ARC2仍OPEN，沒有新增來源搜尋或Lean證明。
 本線主攻入口及各子分支的精確停止點由 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)維護。
 
 **後續整合（2026-10-08）**：[跨線結果對照與共通語言](c5_common_language.md)
 按結果、精確前提、共用引理、剩餘缺口與證據類型整理各線接口。
 最新 [Kempe 導覽 §3](c5_kempe_guide.md#3-停止點與保留缺口)已確認：
 在固定完整 Σ933／941 或整圖 D₅ 像、disk、Σ-critical、ε=2 等逐格前提下，
-U1–U4 及前序已完成兩-root `(4,4)` q-core 身份排除；45／54、原55及單-root
-例外仍保留，ε≥3 與一般出口仍未證。下列2026-10-04快照及各輪殘留數字保留
+U1–U4 及前序已完成兩-root `(4,4)` q-core 身份排除；後續指定完整N2契約的45／54
+及原55亦全覆蓋。契約外來源與單-root例外保留，ε≥3 與一般出口仍未證。下列2026-10-04快照及各輪殘留數字保留
 當時語境；目前停止點以各線導覽為準。
 
 **整合快照（2026-10-04，K′／E3–E6／ES／ER／LC）**：
@@ -516,8 +517,10 @@ Roots亦至多接兩個相鄰框點。[原55大小界](c5_excess_two_arc_size_bo
 當輪目標剩u=0、H二連通的(1,0)/(2,0)。再由
 [一long來源排除](c5_excess_two_n2_one_long_closure.md)，原末端block minors與
 固定root完整外側接回關閉(1,0)，不限制long長度；九格八格覆蓋，完整目標只剩(2,0)。
-兩long仍須證足夠Δ或同列完整joint。原55、N2及E-ARC2仍OPEN，未Lean化；
-不能借未證三點弧取得本子域缺條件；目標來源有限控制未觸發，未搜尋10–35內點。
+2026-10-13 [LL-CUT+diag](c5_excess_two_n2_ll_cut.md)再以原leaf K₅／K₃,₃、接線容量及
+最後行和cut排除(2,0)，指定完整Σ契約內九格全覆蓋；沒有證新Δ門檻。
+基本LL-CUT未獨立證成，19,229共同可行投影與64,408 contact介面保留為必要條件。
+較廣N2及E-ARC2仍OPEN，未Lean化；目標有限控制not triggered，未搜尋10–35內點。
 既有三列集合化約及這兩張原圖控制可重播：
 `uv run --with networkx==3.5 python -B scripts/c5_excess_two_e3_foundation.py --check`。
 本輪一般及 `PYTHONHASHSEED=17` 重播均通過，輸出 hash 相同；另獨立核對全部 32 個 Q，

@@ -1,0 +1,131 @@
+{
+  "actual_cli_negative_controls": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py",
+        "--check",
+        "--interface",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/negative-inputs-6c_qe1jj/swapped_row_labels.json"
+      ],
+      "elapsed_seconds": 0.102,
+      "exit_code": 1,
+      "expected_error": "mixed inner row labels",
+      "expected_success": false,
+      "mutated_interface_sha256": "637f457208cfabb441880363e2bfd4890659dcd7dba51ca4cb44cd0dd6166c98",
+      "mutation": {
+        "indices": [
+          0,
+          1
+        ]
+      },
+      "name": "swapped_row_labels",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 381, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 369, in main\n    result = run(data)\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 304, in run\n    patterns,outer,partitions,cases = reconstruct_interface(data)\n                                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 144, in reconstruct_interface\n    require_equal(data['pattern_order'], patterns, 'mixed inner row labels')\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 56, in require_equal\n    assert actual == json.loads(json.dumps(expected)), label\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: mixed inner row labels\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py",
+        "--check",
+        "--interface",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/negative-inputs-6c_qe1jj/uniform_orbit_weight.json"
+      ],
+      "elapsed_seconds": 0.107,
+      "exit_code": 1,
+      "expected_error": "wrong orbit weights",
+      "expected_success": false,
+      "mutated_interface_sha256": "3473152cd33774e27241948be27a84cdc7225a09f2a0a04f867c721fd8dc8cb2",
+      "mutation": {
+        "after": 24,
+        "before": 12,
+        "index": 0
+      },
+      "name": "uniform_orbit_weight",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 381, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 369, in main\n    result = run(data)\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 304, in run\n    patterns,outer,partitions,cases = reconstruct_interface(data)\n                                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 148, in reconstruct_interface\n    require_equal(data['orbit_sizes'], sizes, 'wrong orbit weights')\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 56, in require_equal\n    assert actual == json.loads(json.dumps(expected)), label\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: wrong orbit weights\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py",
+        "--check",
+        "--interface",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/negative-inputs-6c_qe1jj/transfer_coefficient.json"
+      ],
+      "elapsed_seconds": 1.129,
+      "exit_code": 1,
+      "expected_error": "literal transfer coefficient",
+      "expected_success": false,
+      "mutated_interface_sha256": "052721c367b7ce85b915f24f45da4f77af2e5ec73d5c303cbe24784ed3aae835",
+      "mutation": {
+        "case": "c00",
+        "delta": 1,
+        "inner": 0,
+        "outer": 0
+      },
+      "name": "transfer_coefficient",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 381, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 369, in main\n    result = run(data)\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 304, in run\n    patterns,outer,partitions,cases = reconstruct_interface(data)\n                                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 188, in reconstruct_interface\n    require_equal(case['transfer'], transfer, 'literal transfer coefficient')\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 56, in require_equal\n    assert actual == json.loads(json.dumps(expected)), label\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: literal transfer coefficient\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py",
+        "--check",
+        "--interface",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/negative-inputs-6c_qe1jj/omitted_accepted_preimage.json"
+      ],
+      "elapsed_seconds": 1.123,
+      "exit_code": 1,
+      "expected_error": "missing necessary accepted preimage",
+      "expected_success": false,
+      "mutated_interface_sha256": "ce8527523fa05d967e8a7552015d69ce804de4968c08fb305c4bc7a0bef01ee7",
+      "mutation": {
+        "outer": 0,
+        "query": "c00-933",
+        "removed_inner": 90
+      },
+      "name": "omitted_accepted_preimage",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 381, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 369, in main\n    result = run(data)\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 304, in run\n    patterns,outer,partitions,cases = reconstruct_interface(data)\n                                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 202, in reconstruct_interface\n    require_equal(query['accepted_preimages'], accepted_preimages, 'missing necessary accepted preimage')\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py\", line 56, in require_equal\n    assert actual == json.loads(json.dumps(expected)), label\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: missing necessary accepted preimage\n",
+      "stdout": ""
+    }
+  ],
+  "initial_replays": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py",
+        "--check"
+      ],
+      "elapsed_seconds": 3.196,
+      "exit_code": 0,
+      "expected_error": null,
+      "expected_success": true,
+      "name": "normal_check",
+      "stderr": "",
+      "stdout": "{\"direct_whole_graph_queries\": 1400, \"finite_inner_graphs\": 4, \"literal_assignments\": 6564, \"named_compositions\": 35, \"negative_controls\": {\"altered_transfer_coefficient\": true, \"boolean_support_as_counts_rejected\": true, \"corrupted_count_identity\": true, \"omitted_necessary_preimage\": true, \"omitted_preimage_inner_row\": 90, \"omitted_preimage_outer_row\": 0, \"omitted_preimage_query\": \"c00-933\", \"swapped_row_labels\": true, \"uniform_orbit_weight_24\": true}, \"noncrossing_partitions\": 1430, \"orbit_sizes\": {\"12\": 1, \"24\": 273}, \"proper_orbits\": 274, \"queries\": 70, \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py",
+        "--write",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-joint-count-3097ef5/controls/control_certificate.seed17.json"
+      ],
+      "elapsed_seconds": 3.206,
+      "exit_code": 0,
+      "expected_error": null,
+      "expected_success": true,
+      "name": "seed17_write",
+      "stderr": "",
+      "stdout": "{\"direct_whole_graph_queries\": 1400, \"finite_inner_graphs\": 4, \"literal_assignments\": 6564, \"named_compositions\": 35, \"negative_controls\": {\"altered_transfer_coefficient\": true, \"boolean_support_as_counts_rejected\": true, \"corrupted_count_identity\": true, \"omitted_necessary_preimage\": true, \"omitted_preimage_inner_row\": 90, \"omitted_preimage_outer_row\": 0, \"omitted_preimage_query\": \"c00-933\", \"swapped_row_labels\": true, \"uniform_orbit_weight_24\": true}, \"noncrossing_partitions\": 1430, \"orbit_sizes\": {\"12\": 1, \"24\": 273}, \"proper_orbits\": 274, \"queries\": 70, \"status\": \"PASS\"}\n"
+    }
+  ],
+  "negative_input_retention": "Temporary mutated inputs removed after exact bytes hash, mutation recipe and complete rejection output were recorded. No baseline or certificate was altered.",
+  "normal_and_seed17_byte_identical": true,
+  "normal_certificate_sha256": "7ce7b85ef3588b5384e56ee158ad79a38c3d805751f97e18d95b3ba7118a4cac",
+  "seed17_certificate_sha256": "7ce7b85ef3588b5384e56ee158ad79a38c3d805751f97e18d95b3ba7118a4cac",
+  "status": "PASS"
+}

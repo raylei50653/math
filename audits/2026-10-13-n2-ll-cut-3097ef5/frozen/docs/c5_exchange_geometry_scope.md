@@ -1,0 +1,265 @@
+---
+docgraph:
+  id: c5.exchange-geometry-scope
+  family:
+    - c5
+    - c5.degree5
+  derives_from:
+    - c5.root-degree-excess
+    - c5.adjacent-degree5-no-mixed-t2-path-palettes
+    - c5.adjacent-degree5-no-mixed-t2-t1-endpoints
+    - c5.adjacent-degree5-no-mixed-t2-t0-singles
+---
+# 「交換或幾何阻斷」假設：適用範圍遍歷
+
+整理（2026-09-29）：[十五類總表與側跨度預算](c5_no_mixed_span_budget.md)
+將全部後續結果接成同一入口；m+s+a≤5 統一八類 source 排除，七類保留
+既有完整關係／跨列證明。原輪 25 格矩陣、機制計數與停止點保持快照，
+一般交換或幾何阻斷的完備性仍未證。
+
+後續（2026-09-29）：[D–E 五正跨度與雙飽和原路徑排除](c5_adjacent_degree5_no_mixed_de.md)
+完成最後一類及 root 交換型：48 份必要支援全 source K5，120 個正向原 IDs
+無相容支援；0 target，不需 T4。no-mixed 十五類／3,548 份原接合全部覆蓋，
+出口第九類涵蓋全部 no-mixed 分拆；一般／共同出口與 K∞=K≤5 仍未證。
+下文保留各輪語境，目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+後續（2026-09-29）：[D–D 四飽和原分量排除](c5_adjacent_degree5_no_mixed_dd.md)
+完成兩側 t=0,(2,2)、各 D=0、O=1；352 份必要支援全 source K5，
+80 個原 IDs 無相容支援，0 target，不需 T4。四正跨度保證至少三份
+框邊支援，飽和原路徑與補弧給統一 minor。累計十四類／3,260 份覆蓋，
+只剩 D–E 含交換型一類／288 份；目前入口見
+[weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+後續（2026-09-29）：[C–E 五正跨度與原路徑排除](c5_adjacent_degree5_no_mixed_ce.md)
+完成一側 t=0,(2,2)、D=1、O=0，另一側 t=0,(2,1,1) 及交換型。
+96 份必要支援全 source K5；108 個正向原 IDs 無相容支援，0 target，不需 T4。
+累計十三類／3,116 份覆蓋，兩類／432 份保留；下文保留當輪語境，
+目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+
+後續（2026-09-29）：[C–D 三飽和原分量排除](c5_adjacent_degree5_no_mixed_cd.md)
+完成兩側 t=0,(2,2)、一側缺額／另一側重疊及 root 交換型：640 份必要支援
+全 source K5，0 target，不需 T4。累計十二類／2,828 份覆蓋，三類／720
+份保留；下文保留當輪語境，目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+
+後續（2026-09-29）：[C–C 無 spoke 四分量排除](c5_adjacent_degree5_no_mixed_cc.md)
+完成兩側 t=0,(2,2)、各 D=1、O=0：1,176 份必要支援全部 source K5，
+0 target 查詢，不需 T4。累計十一類／2,540 份覆蓋，四類／1,008 份保留；
+下文保留當輪語境，目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+
+後續（2026-09-29）：[B–D 雙飽和來源排除](c5_adjacent_degree5_no_mixed_bd.md)
+完成 180 份原接合的 312 份必要支援，全以 source K5 排除，含 root 交換型；
+八份需原分量外部路徑，0 target 查詢，不需 T4。累計十類／2,396 份覆蓋，
+五類／1,152 份保留；下文保留當輪語境，目前停止點見研究線導覽。
+
+
+後續（2026-09-29）：[B–C 原路徑與雙列分離](c5_adjacent_degree5_no_mixed_bc.md)
+完成 t_z=1,(2,1)，t_w=0,(2,2)、D_w=1、O_w=0 及 root 交換型。
+608 份必要支援中 584 份 source K5 排除，保留 24 份的 48 個 target 全接受。
+累計九類／2,036 份覆蓋，六類／1,512 份保留；下文保留當輪語境，
+目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+
+後續（2026-09-29）：[E–E 六份正跨度](c5_adjacent_degree5_no_mixed_ee.md)
+已排除兩側 t=0,(2,1,1) 的全部 disk 來源；144 份原接合全無必要支援，
+0 target 查詢。累計八類／1,676 份原接合覆蓋，七類／1,872 份保留；
+下文及既有 artifacts 保留當輪語境，目前入口見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+後續（2026-09-29）：[B–E 完整關係搬運](c5_adjacent_degree5_no_mixed_be.md)
+再完成 B–E 及 E–B：144 份必要支援、288 個 target 全接受，沒有新增 minor
+排除。累計七類／1,532 份原接合已覆蓋，八類／2,016 份保留；舊矩陣與
+artifacts 保持快照，目前排程見 [weak-deletion 導覽](c5_weak_deletion_guide.md)。
+
+後續（2026-09-29）：[B–B 支援／環序與雙列](c5_adjacent_degree5_no_mixed_bb.md)
+完成 236 份原接合的必要覆蓋，888 份支援的 1,776 個 target 全接受。
+累計六類／1,172 份原接合已覆蓋，九類／2,376 份仍開放；本輪未新增來源
+minor 排除。下文矩陣及舊 checker／artifacts 保持各輪快照；下一入口見
+[weak-deletion 導覽](c5_weak_deletion_guide.md)，不從有限覆蓋推出一般完備性。
+
+後續（2026-09-29）：[A–D 重疊型](c5_adjacent_degree5_no_mixed_t2_t0_overlap.md)
+已將 212 份必要支援全部以原分量 source K5 排除，0 target 查詢；五類／936 份
+原接合已覆蓋，十類／2,612 份仍開放。所有含 A（t=2）側的格均完成；
+其中 A–D 是來源排除，其餘四類為雙列分離。新證書逐 ID 綁定新增的正反向
+192 份。原矩陣、checker／artifacts 保持快照；下一入口依 HANDOFF 為 B–B。
+
+前輪（2026-09-29）：[A–C 缺額型](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)
+已完成：364 份支援中 source K5 排除 340，保留 24 份的 48 查詢全證；
+最後八項亦只需飽和分量的 target K5。覆蓋擴為四種交換型／744 份原接合，
+餘 2,804 份。新 JSON 的 coverage_extension 綁定正反向新增 192 個 IDs；
+下文 3 類／552 份矩陣及 checker／artifacts 保留原輪快照，一般 A 仍未證。
+
+2026-09-29，Git 基準 `f29b899`，納入工作區已有的三分量／四分量成果。
+本輪回答 [Root 預算 §6](c5_root_degree_excess.md#6-已證機制與三層待證目標)
+的 A 層機制完備性假設。**已完成子類支持這個機制；一般完備性仍未證。**
+本輪窮盡原 3,548 份必要接合的分拆分類，重算已建支援表的全部候選，
+另窮盡明定範圍的 1,920 份抽象路徑 list 控制。
+未建立其餘分拆的新 actual-support 覆蓋，未新增來源排除或 target 定理。
+
+任意大小結論沿用原報告的紙面證明與外部 degree-list 定理；本輪新增的是
+Python 範圍稽核及有界控制，未新增 Lean theorem。研究優先序見 [HANDOFF](HANDOFF.md)。
+
+## 1. 假設的精確位置
+
+固定同一有限簡單圖 M，B=(b0,…,b4) 為 induced C5 disk 外框，
+H=M−B 非空連通。M 為 q=01012 的 edge-minimal obstruction（不刪框邊）。
+相鄰 z、w 的完整 degree=5，其餘內點完整 degree=4；
+H−{z,w} 無 mixed，每個原分量只接一個 root。
+指定 targets 為 p₁=01021、p₂=01212。
+
+每個 F_C(t) 都由原 C 的**完整有序接點關係**取 tuples 色集的交集。
+原圖精確接合為
+
+\[
+E_r(t)=U\setminus\left(t(N_B(r))\cup\bigcup_{C\sim r}F_C(t)\right),
+\qquad Z_M(t)=(E_z(t)\times E_w(t))\setminus\Delta.
+\]
+
+target 失敗只有 empty_z、empty_w、same_singleton 三類。A 問的是：
+這些失敗所要求的額外禁色，是否總能由同一來源的支援／拓撲矛盾，
+或完整 palette 證書重建出的額外 source 禁色來反駁。
+這仍是機制層問題；「目前程式沒有規則可用」不是 A 的數學反例。
+
+source 預算 D+O=1 來自 q 的 minimality；不能直接當作 target 預算。
+下面三個已完成子類給更強的雙列分離，**不需 T4 或其他來源接受列**。
+出口接合仍須另用來源雙缺失及刪邊繼承，不能只憑 p₁、p₂ 接受推出完整 Σ。
+
+## 2. 全部側型與原 3,548 份接合
+
+原平面化約的四種分拆，將 (2,2) 的缺額／重疊分開後有五型：
+
+| 代號 | t、接點分拆 | (D,O) | source F 的大小 |
+| --- | --- | --- | --- |
+| A | 2、(2) | (1,0) | (1) |
+| B | 1、(2,1) | (1,0) | (1,1) |
+| C | 0、(2,2) | (1,0) | (1,2) 或 (2,1) |
+| D | 0、(2,2) | (0,1) | (2,2)，恰重疊一色 |
+| E | 0、(2,1,1) | (1,0) | (1,1,1) |
+
+逐筆保留原 join ID、兩側 ID、共同字面色 c、具名分量次序與預算。
+下表數字是**必要正常形接合份數**；✓ 表示該整型已有指定雙列分離。
+
+| z \ w | A | B | C | D | E |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| A | 88 ✓ | 136 ✓ | 96 | 96 | 96 ✓ |
+| B | 136 ✓ | 236 | 180 | 180 | 180 |
+| C | 96 | 180 | 144 | 144 | 144 |
+| D | 96 | 180 | 144 | 144 | 144 |
+| E | 96 ✓ | 180 | 144 | 144 | 144 |
+
+25 格全部分類；交換整張來源的 roots 後是 15 種組合，其中 3 種已完成。
+已覆蓋 552 份原有序接合，另 2,996 份所在子類尚無完整支援表。
+這不是「15.6% 的來源圖成立」：正常形沒有自然機率權重，且未證可實現性。
+
+三份原有序子表共 320 份正常形，其中 144 份有必要支援、176 份纖維為空；
+其非空纖維合計 1,002 份支援。整型結論包含空纖維的來源不可能性，
+但本輪未新增刪除，也不把 1,002 份支援當成 1,002 張 disk 圖。
+
+## 3. 全部已建支援表的機制遍歷
+
+每一組完整候選都先以獨立的 16 種字面 root 色對枚舉核對 Z。
+失敗候選依序重算固定框弧、首橋、原雙端點、整路徑交換的既有規則。
+保存原 record／target／join 索引、完整禁色與 residual、全部支援選言、
+每個框弧測試的一份 witness，以及完整重算 evidence 的 hash。
+原證書 hash 綁定全部 contacts、schemas、placements、rotations、旁支與原外部路徑。
+
+| 子類 | 必要支援 | 完整候選 joins | target 查詢 | 原失敗候選 |
+| --- | ---: | ---: | ---: | ---: |
+| A–A | 322 | 2,892 | 644 | 160 |
+| A–B | 560 | 3,148 | 1,120 | 146 |
+| A–E | 120 | 336 | 240 | 0 |
+| 合計 | 1,002 | 6,376 | 2,004 | 306 |
+
+| 最先足夠的層 | 關閉的失敗候選 | 整個 target 在此層完成 |
+| --- | ---: | ---: |
+| 完整搬運／容量上界，所有候選已有 root 色對 | — | 1,754 |
+| 固定框弧／target 支援 | 142 | 86 |
+| 同一首橋跨列限制 | 34 | 34 |
+| 兩個原接點及全部中間路徑 | 126 | 126 |
+| 所有奇數原 bridge 的 palette 交換 | 4 | 4 |
+| 合計 | 306 | 2,004 |
+
+所以目前 302 組由支援／幾何及跨列限制反駁，4 組需要整路徑交換。
+302 不全是新 K5：其中也包含空支援族與守恆色矛盾。
+這是按指定優先序分類；不宣稱規則互斥或交換規則只能處理四筆。
+候選數與查詢數不同，禁止把關閉 306 候選稱作新增 306 個延拓。
+本輪全為既有結論的重播，新增延拓數為零。
+
+## 4. 各機制的必要條件與不能外推之處
+
+| 機制 | 現有證明需要的資料／條件 | 不能略過的界線 |
+| --- | --- | --- |
+| 完整色置換搬運 | 同一實際支援上的 q、p 由同一四色置換對齊；搬運原完整 relation | 不可只搬端點 marginals；無對齊置換時只能用已證上界 |
+| 固定框弧 K5 | 原二接點分量的 target pair 路徑；同一三框弧；兩塊的每個允許支援都碰兩指定弧；避開該 C 的原 root–B 路徑 | 必須是「存在一固定分割，對全部允許支援有效」；逐支援另選分割不夠 |
+| 同一首橋 | source F_C(q)={d}；d 在實際支援上守恆；同一 bridge 兩端的 β | 首橋的 β 未必控制後續奇數 bridge；不適用 singleton target 或單接點分量 |
+| 原雙端點 | source singleton、target pair、兩個原接點的 tightness；全 β 聯集及固定框弧 | 不要求 d 守恆；兩端限制不能套給下一個內點，全部中間 bridges 必須保留 |
+| 整路徑交換 | source singleton d、target pair 包含 d、d 守恆、奇數長原路徑；排除每一奇數位置的其他 β 後只剩同一 b | 只交換路徑 block palettes、保持旁支；須重建整個 C 的拒絕證書，才能推出 b∈F_C(q) |
+
+兩個具體邊界：
+
+- **非守恆 d 仍可能幾何阻斷。** A–B record 22／p₂ 有 d=2、K={1,3}。
+  首橋不適用；原雙端點強迫支援族 {23,234}，原 w–z–b0 路徑給 K5。
+  不能把「交換不適用」誤記為整個 A 假設失敗。
+- **首橋固定不等於全路徑固定。** 抽象 list 控制 d=3、原邊 palettes
+  (2,3,1) 的完整端點 relation 只有禁色 {3}；改為 (2,3,2) 才得到 {2,3}。
+  兩者首橋同為 2，因此第二禁色結論實際使用了全路徑條件。
+
+為檢查第二點，另窮盡 d 的四色、長度 1／3／5／7、每個奇數位置獨立
+選 U∖{d}、偶數位置為 d，以及 bare／leaf／triangle／nested 四種旁支。
+**1,920 份皆以完整有序端點 relation 回溯核對**：192 份奇數 palettes
+恒定者恰禁 {d,b}；1,728 份有變動者恰只禁 {d}。
+同色框、具名端點與全部旁支保留，沒有做對稱商。
+這是明定範圍的抽象 Gallai list 控制，沒有 C5 附件／完整 degree 的來源保證；
+它否定「首橋足夠」的局部強化，**不是 A／B／C 的 disk 反例**。
+
+## 5. 尚未覆蓋的適用範圍與下一入口
+
+C、D 含 source 飽和二禁色分量。現有「重建第二禁色」反證明用
+F_C(q) 為 singleton；對已有二禁色者，多找到其中一色不產生矛盾。
+必須保留完整 relation，重新判定需要第三禁色、丟失原禁色或何種幾何排除。
+因此不能只把 A–A／A–B 的 checker 改分拆數就宣稱完成。
+
+B–B、B–E、E–E 雖沒有飽和二禁色，也尚缺各自的 actual-support／rotation
+必要覆蓋；每側的預算不能代替兩側共用的環序。
+所有未標 ✓ 的格都只列為待研究，沒有把獨立上界接合稱為實現反例。
+
+範圍再往外擴時：
+
+- **degree-5 root 樹：** source 邊標色與 κ=0 已證，target 仍需完整半樹訊息；
+  雙 root 的相同 singleton 拒絕式不能代替整樹遞迴。
+- **degree≥6／非樹：** source 預算恆等式可用，但缺額可大於一，κ 未必為零；
+  本表的側型分類不適用。
+- **mixed／非相鄰 roots：** 要保留多 root 有序 relation 或新的骨架接合；
+  本表的 unary F 聯集和經 zw 的原外部路徑不自動可用。
+- **一般平面、非 disk 外框：** 原 K5 witness 本身仍是非平面證書，
+  但此處的環序必要覆蓋依賴指定 C5 是 disk 外框。
+
+原輪的 A–C 與 A–D 各 96 份入口，已由[缺額型](c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)
+及[重疊型](c5_adjacent_degree5_no_mixed_t2_t0_overlap.md) 分別完成。兩者保留獨立
+支援表，分別以雙列分離及來源排除收束。依 [HANDOFF](HANDOFF.md)，
+目前下一入口為 B–B 的 236 份原接合；四原分量的支援／rotation 覆蓋尚未建立。
+
+## 6. 證書與重播
+
+[Checker](../scripts/c5_exchange_geometry_scope.py)、
+[JSON](../artifacts/c5_exchange_geometry_scope/observations.json) 與
+[生成表](../artifacts/c5_exchange_geometry_scope/scope_table.md) 保留所有 25 格 IDs、
+首筆具名資料、306 組反證的重算結果、2,004 個查詢分類及 1,920 個路徑控制。
+所有原 artifacts 保持；`--check` 重算後逐 byte 比對，無參數只生成本層。
+
+```bash
+python3 scripts/c5_exchange_geometry_scope.py --check
+python3 scripts/c5_adjacent_degree5_no_mixed.py --check
+python3 scripts/c5_root_degree_excess.py --check
+python3 scripts/c5_adjacent_degree5_no_mixed_t2_path_palettes.py --check
+python3 scripts/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.py --check
+python3 scripts/c5_adjacent_degree5_no_mixed_t2_t0_singles.py --check
+lake build
+python3 scripts/check_docs.py
+python3 tools/docgraph check
+git diff --check
+```
+
+實際驗證與省略範圍見 [當輪紀錄](history/2026-09-29-exchange-geometry-scope.md)。
+`lake build` 只驗既有 Lean 專案，不形式化本輪範圍稽核或原紙面幾何證明。

@@ -1,5 +1,10 @@
 # N2 原55雙 long：共同容量接回與九格接口子命題
 
+**後續（2026-10-13，BASE 3097ef5）**：[同來源 LL-CUT+diag](c5_excess_two_n2_ll_cut.md)
+以原 leaf K₅／K₃,₃、接線數及最後行容量cut排除全部剩餘t=2／3來源，
+完成本頁完整原55 `(2,0)` 契約的來源排除。基本LL-CUT機制未獨立證成，
+19,229份抽象共同可行profiles保留；一般N2／E-ARC2仍OPEN。以下保留原輪證據與停止點。
+
 2026-10-13。基準 HEAD `19209f4cf68261fdce5e84a7804cfe04ae0957bf`；
 十三份原輸入與 SHA 見 [BASE](../audits/2026-10-13-n2-double-long-joint/BASE.json)。
 接續 [residual](c5_excess_two_n2_residual_unification.md)、

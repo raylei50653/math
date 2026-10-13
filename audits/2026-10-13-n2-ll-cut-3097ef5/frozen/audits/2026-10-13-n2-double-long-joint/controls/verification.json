@@ -1,0 +1,48 @@
+{
+  "artifact_bytes": 241306,
+  "artifact_sha256": "724a540c00a8248d2b45b48acdb1cd9d702f26ab68053d8926a3d3d31c406658",
+  "negative_controls": [
+    {
+      "corrupt_sha256": "3231482e8cddf2ca1150ba6c52863b5ccab9512a2fd4c5b0d6bacbaac89a7661",
+      "corruption": "remove_complete_lift",
+      "expected_error": "artifact mismatch",
+      "observed_error": "AssertionError: artifact mismatch",
+      "returncode": 1
+    },
+    {
+      "corrupt_sha256": "0a2068de76d63fefe020efc7d8c36601fbb3ba21d325e96ff810007910044394",
+      "corruption": "falsify_external_factor",
+      "expected_error": "artifact mismatch",
+      "observed_error": "AssertionError: artifact mismatch",
+      "returncode": 1
+    }
+  ],
+  "normal_seed17_identical": true,
+  "replays": [
+    {
+      "PYTHONHASHSEED": null,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-double-long-joint/controls/checker.py",
+        "--check"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"bytes\": 241306, \"counts\": {\"complete_global_full_lifts\": 181, \"complete_target_sources\": 0, \"cross_collision_joints\": 29, \"fixed_original_gluings\": 1, \"joint_ambient_cells\": 160, \"local_ambient_cells\": 320, \"local_collision_triggered_cells\": 240, \"local_empty_cells\": 80, \"local_full_tuples\": 856, \"local_pieces\": 2, \"one_sided_collision_capacity_joints\": 48}, \"mode\": \"check\", \"sha256\": \"724a540c00a8248d2b45b48acdb1cd9d702f26ab68053d8926a3d3d31c406658\"}\n"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-double-long-joint/controls/checker.py",
+        "--check"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"bytes\": 241306, \"counts\": {\"complete_global_full_lifts\": 181, \"complete_target_sources\": 0, \"cross_collision_joints\": 29, \"fixed_original_gluings\": 1, \"joint_ambient_cells\": 160, \"local_ambient_cells\": 320, \"local_collision_triggered_cells\": 240, \"local_empty_cells\": 80, \"local_full_tuples\": 856, \"local_pieces\": 2, \"one_sided_collision_capacity_joints\": 48}, \"mode\": \"check\", \"sha256\": \"724a540c00a8248d2b45b48acdb1cd9d702f26ab68053d8926a3d3d31c406658\"}\n"
+    }
+  ],
+  "target_source_status": "not triggered"
+}

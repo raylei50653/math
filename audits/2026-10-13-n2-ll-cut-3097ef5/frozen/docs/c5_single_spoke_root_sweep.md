@@ -1,0 +1,133 @@
+---
+docgraph:
+  id: c5.single-spoke-root-sweep
+  family:
+    - c5
+    - c5.single-spoke
+  requires:
+    - c5.single-spoke-root-conservation
+    - c5.single-spoke-completion
+    - c5.single-spoke-branch-minor
+---
+# Single-spoke：單接點未用色守恆掃過 114 筆
+
+後續（2026-09-27）：[二接點上界分類](c5_single_spoke_two_contact_bounds.md)
+已關閉 root sweep 所剩 18 個含二接點上界的查詢；目前 98 筆兩列已證、
+16 個單接點查詢未決。下文保留原輪次結論；K5 的共同路徑版本見新報告 §4。
+
+2026-09-27。接續 [單接點未用色守恆](c5_single_spoke_root_conservation.md) §2，
+沿用 [外部雙路徑 completion](c5_single_spoke_completion.md) 的已知關係與上界、
+[旁支 K5 minor](c5_single_spoke_branch_minor.md) 的 p₁ 結論。
+研究優先序見 [HANDOFF](HANDOFF.md)。
+
+**結果：** 通用單接點條件掃過原 114 筆具名配置的全部 228 個指定查詢，
+新增 **14 個**接受查詢（p₁ 8 個、p₂ 6 個）。兩列已證 66 → **80**，
+只證 p₁ 18 → 12，只證 p₂ 30 → 22，未決查詢 48 → **34**。
+19 種必要支援型中 11 型的三種二接點角色均已證兩個 p。
+本輪不新增拓撲論證、不改動 19 型、不宣稱任何支援型可實現或已排除。
+
+## 1. 前提與所用條件
+
+完整沿用 [completion §1](c5_single_spoke_completion.md#1-前提與保留的完整關係)：
+有限簡單 induced-C5 disk 圖、q=01012 的 edge-minimal obstruction、
+唯一 degree-5 點 z 與唯一 spoke zb_s、其餘內點完整 degree=4，H−z 分拆
+(2,1,1)，來源接受 T4。分量 0 為二接點；分量 1、2 各一接點，
+且 F_C(q)={a}（a 為表中禁色）。S_C 是實際 boundary 支援。
+
+**條件（root 守恆 §2 的推論）。** 單接點分量 C、目標列 p、色 d≠a，
+若 d∉q(S_C)∪p(S_C)，則 d∉F_C(p)。
+
+證明摘要：反設 d∈F_C(p)。M=(q,z=a)、N=(p,z=d) 都是 C 的拒絕 tight lists。
+非 root 頂點無 z 邊，其 boundary 鄰點都在 S_C，兩列在該處都不用 d，
+故 d 的 membership 在所有 v≠r 相同；root 守恆引理給 root 也相同。
+root 的 boundary 鄰點也在 S_C，所以 d∈M(r)（M 只額外刪 a≠d），
+而 d∉N(r)，矛盾。條件只看支援的色集，不需知道 root 碰哪些框點，
+也不需要其他分量的嵌入次序。二接點分量不適用：第二接點使非 root
+list 隨 z 色改變。
+
+套用方式：對每個查詢，從 completion 證書的未知上界中，只在單接點分量
+刪去上式排除的色；已知禁色（相容色置換搬運）與二接點上界不動。
+若可用 z 色未被三個上界聯集覆蓋，依 R10 以共同 z 色接合三個原分量，
+得原 G 延拓。這與 23、28 的 p₂ 論證相同；§1 的論證不需 C₂／C₃ 的
+completion，只是本輪掃描合用了 completion 已存的上界。
+
+## 2. 掃描結果
+
+以參考列只用 q 為準。另試以另一目標列的已知 singleton 禁色作參考
+（引理只需同一 C 的一份已存拒絕證書），沒有新增接受查詢，故未收入證書。
+
+| 已證查詢 | 前輪 | 本輪 |
+| --- | ---: | ---: |
+| p₁、p₂ 都延拓 | 66 | 80 |
+| 只證 p₁ | 18 | 12 |
+| 只證 p₂ | 30 | 22 |
+| 未決查詢 | 48 | 34 |
+
+新接受的 source_index：p₁ 為 61、72、78、88、154、172、181、202；
+p₂ 為 14、18、112、131、193、212。例：source 14（s=0，
+二接點禁 2 支援 04；單接點禁 1 支援 012、禁 3 支援 234）。p₂=01212，
+可用 {1,2,3}。二接點已知禁 2；禁 3 的分量支援 234 只見 1、2，
+原上界 {1,2}；禁 1 的分量支援 012 在 q、p₂ 下只見 0、1、2，
+新條件刪去 3，上界 {0,1,2}。聯集不含 3，取 **z=3**。
+
+單獨用本條件，也重新推出所有前輪接受查詢，只有 24、29 的 p₁
+例外；它們依賴旁支 K5 minor，沿用原證書。反射 T（ρ=(3,2,1,0,4)、
+π=(0 1)）固定 q、交換 p₁／p₂；checker 核對 72 組表內反射配對的
+接受狀態一致（s=4 的內部配對及 s=0、1 在表內的像）。
+
+更新後按禁色角色整理（支援欄依禁色遞增，欄內列出已證的二接點角色）：
+
+| s | 實際支援 | p₁ | p₂ |
+| --- | --- | --- | --- |
+| 0 | 01 / 04 / 1234 | 3 | 全部 |
+| 0 | 01 / 04 / 234 | 全部 | 全部 |
+| 0 | 012 / 04 / 234 | 全部 | 2,3 |
+| 0 | 12 / 04 / 234 | 全部 | 全部 |
+| 1 | 01 / 04 / 1234 | — | 全部 |
+| 1 | 01 / 04 / 234 | 全部 | 全部 |
+| 1 | 123 / 34 / 014 | 2,3 | 全部 |
+| 4 | 01 / 12 / 234 | 全部 | 全部 |
+| 4 | 014 / 12 / 234 | 1,3 | 全部 |
+| 4 | 04 / 01 / 1234 | — | 全部 |
+| 4 | 04 / 01 / 234 | 全部 | 全部 |
+| 4 | 04 / 012 / 234 | 全部 | 0,3 |
+| 4 | 04 / 12 / 234 | 全部 | 全部 |
+| 4 | 12 / 23 / 014 | 全部 | 全部 |
+| 4 | 12 / 234 / 014 | 全部 | 0,3 |
+| 4 | 12 / 34 / 014 | 全部 | 全部 |
+| 4 | 123 / 34 / 014 | 1,3 | 全部 |
+| 4 | 23 / 34 / 0124 | 全部 | — |
+| 4 | 23 / 34 / 014 | 全部 | 全部 |
+
+剩下 17 個「支援型×二接點角色×目標」各有兩份單接點具名次序，共 34 查詢。
+按剩餘未知上界所在分類：10 個只剩二接點分量的上界（本條件不適用）；
+16 個只剩單接點分量，但上界中每個非 a 色都已在支援的 q 或 p 色中出現，
+無可刪色；
+8 個兩者皆有。這是本條件的界限，不表示這些查詢被拒絕。
+
+## 3. 證書、信任範圍與重播
+
+[checker](../scripts/c5_single_spoke_root_sweep.py) 與
+[artifact](../artifacts/c5_single_spoke_root_sweep/observations.json) 讀入
+root 守恆表與 completion 記錄（保存 SHA256），逐查詢保存繼承上界、
+root 刪去色、修正上界與保證 z 色，並存 19 型角色表、34 個未決查詢清單
+與反射一致性核對。它是對具名支援的有限必要上界計算，不是來源圖 cover；
+任意大小由 root 守恆 §2 的 block-tree 歸納承擔。
+
+證據層：紙面證明＋沿用 R10 外部 degree-list 定理與既有 K4-free 結構＋
+Python 有限表計算。未新增 Lean theorem。
+
+```bash
+python3 scripts/c5_single_spoke_root_sweep.py --check
+python3 scripts/c5_single_spoke_root_conservation.py --check
+python3 scripts/c5_single_spoke_completion.py --check
+python3 scripts/c5_single_spoke_cores.py --check
+python3 scripts/check_docs.py
+git diff --check
+```
+
+實際驗證見 [研究紀錄](history/2026-09-27-single-spoke-root-sweep.md)。
+剩餘 34 查詢需要新論證：二接點分量的上界（10＋8 查詢）需要類似
+completion／旁支 minor 的同圖化約；單接點支援見滿色者需利用實際
+root 接線或其他分量的路徑。其餘 t=1 分拆、t=0、高 degree／多 degree-5、
+一般核心存在／分離、單側／共同出口與 K∞=K≤5 仍保留。

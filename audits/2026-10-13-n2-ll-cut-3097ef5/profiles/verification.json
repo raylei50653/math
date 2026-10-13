@@ -1,0 +1,47 @@
+{
+  "artifacts": {
+    "contact_members.json": "89da171ab5d2bb0708467b5f6b634da01d6fc40c65dab913a601deaf7a2d5b4a",
+    "profiles.json": "e0ff3a1aa5b1f133d91c3ad665e256c3d3bd727fc57488d6c324acbbb8456eef"
+  },
+  "base": "3097ef5be241b7777451a5ef8a663f3987d6b866",
+  "checks": [
+    {
+      "command": "python3 -B .../profiles/domain.py --check",
+      "exit_code": 0,
+      "seed": "normal"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B .../profiles/domain.py --check",
+      "exit_code": 0,
+      "seed": 17
+    },
+    {
+      "command": "python3 -B .../profiles/independent_contacts.py --check",
+      "exit_code": 0,
+      "seed": "normal"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B .../profiles/independent_contacts.py --check",
+      "exit_code": 0,
+      "seed": 17
+    },
+    {
+      "catalogues": 1378,
+      "check": "complete iterator sets versus independently listed owner-group multisets",
+      "members": 3764,
+      "passed": true
+    }
+  ],
+  "full_source_status": "not triggered",
+  "new_Lean_theorem": false,
+  "retained_initial_attempts": [
+    {
+      "file": "profiles.pre-copy-isolation.json",
+      "issue": "Option dictionary annotation aliasing affected cut stream serialization; mathematical fields and counts unchanged; corrected per-profile copies."
+    },
+    {
+      "issue": "First independent contact comparison disagreed on slot ordering; fixed explicit (owner,attachment-size,attachment-tuple) sorting. Counts had already matched; no failed artifact was written."
+    }
+  ],
+  "status": "passed"
+}

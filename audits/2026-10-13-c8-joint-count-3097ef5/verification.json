@@ -1,0 +1,167 @@
+{
+  "adopted_bounds": "h>=3, n5>=9 unchanged",
+  "checks": [
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c8-joint-count-3097ef5/interface.py",
+        "--check"
+      ],
+      "elapsed_seconds": 3.531017792000057,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"cases\": 35, \"kempe_survivors\": [{\"extras\": [0, 0, 1, 0, 2], \"id\": \"c04-941\", \"upper\": 201}, {\"extras\": [0, 0, 1, 1, 1], \"id\": \"c05-941\", \"upper\": 140}, {\"extras\": [0, 0, 2, 0, 1], \"id\": \"c07-941\", \"upper\": 201}, {\"extras\": [0, 1, 1, 0, 1], \"id\": \"c13-941\", \"upper\": 157}, {\"extras\": [0, 1, 2, 0, 0], \"id\": \"c15-933\", \"upper\": 144}, {\"extras\": [0, 1, 2, 0, 0], \"id\": \"c15-941\", \"upper\": 175}, {\"extras\": [0, 2, 0, 0, 1], \"id\": \"c16-941\", \"upper\": 102}, {\"extras\": [0, 2, 1, 0, 0], \"id\": \"c18-933\", \"upper\": 144}, {\"extras\": [0, 2, 1, 0, 0], \"id\": \"c18-941\", \"upper\": 175}, {\"extras\": [1, 0, 0, 0, 2], \"id\": \"c20-941\", \"upper\": 175}, {\"extras\": [1, 0, 1, 0, 1], \"id\": \"c23-941\", \"upper\": 157}, {\"extras\": [2, 0, 0, 0, 1], \"id\": \"c30-941\", \"upper\": 175}, {\"extras\": [2, 0, 1, 0, 0], \"id\": \"c32-941\", \"upper\": 102}], \"literal\": 6564, \"queries\": 70, \"rows\": 274, \"status\": \"PASS\"}\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c8-joint-count-3097ef5/controls/checker.py",
+        "--check"
+      ],
+      "elapsed_seconds": 3.16008716000033,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"direct_whole_graph_queries\": 1400, \"finite_inner_graphs\": 4, \"literal_assignments\": 6564, \"named_compositions\": 35, \"negative_controls\": {\"altered_transfer_coefficient\": true, \"boolean_support_as_counts_rejected\": true, \"corrupted_count_identity\": true, \"omitted_necessary_preimage\": true, \"omitted_preimage_inner_row\": 90, \"omitted_preimage_outer_row\": 0, \"omitted_preimage_query\": \"c00-933\", \"swapped_row_labels\": true, \"uniform_orbit_weight_24\": true}, \"noncrossing_partitions\": 1430, \"orbit_sizes\": {\"12\": 1, \"24\": 273}, \"proper_orbits\": 274, \"queries\": 70, \"status\": \"PASS\"}\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c8-joint-count-3097ef5/counts/checker.py",
+        "--check"
+      ],
+      "elapsed_seconds": 3.8076048419998187,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"NC_partitions\": 1430, \"arithmetic\": \"int/Fraction only\", \"queries\": 70, \"status\": \"PASS\", \"summary\": {\"excluded_count\": 3, \"excluded_transfer\": 57, \"necessary_condition_residual\": 10}}\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c8-joint-count-3097ef5/count_review.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.24550182900020445,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"all_partition_identities\": 25, \"queries\": 70, \"status\": \"PASS\", \"summary\": {\"excluded_count\": 3, \"excluded_transfer\": 57, \"necessary_condition_residual\": 10}}\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/collar_checker.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.3693179969995981,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"h\": 0, \"target\": 933, \"cases\": 1, \"excluded\": 1, \"survivors\": []}\n{\"h\": 0, \"target\": 941, \"cases\": 1, \"excluded\": 1, \"survivors\": []}\n{\"h\": 1, \"target\": 933, \"cases\": 5, \"excluded\": 5, \"survivors\": []}\n{\"h\": 1, \"target\": 941, \"cases\": 5, \"excluded\": 5, \"survivors\": []}\n{\"h\": 2, \"target\": 933, \"cases\": 15, \"excluded\": 15, \"survivors\": []}\n{\"h\": 2, \"target\": 941, \"cases\": 15, \"excluded\": 14, \"survivors\": [{\"extras\": [0, 0, 1, 0, 1], \"initial\": 63, \"fixed_point\": 55, \"outer\": 941}]}\n{\"status\": \"PASS\", \"target_source_status\": \"not triggered\"}\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/joint/count_identity.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.12015753400009999,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"status\": \"PASS\", \"proper_rows\": 91, \"NC_partitions\": 429, \"active_columns\": 36, \"identities\": 7, \"final_outer_preimages\": [6, 58, 89], \"target_source_status\": \"excluded universally by planar count identities and nonnegativity\"}\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "audits/2026-10-13-c7-joint-kempe-19209f4c/topology/count_review.py"
+      ],
+      "elapsed_seconds": 0.0735483659991587,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"status\": \"PASS\", \"independently_generated_NC_partitions\": 429, \"identities_checked\": 7, \"forced_zero_outer_preimages\": [6, 58, 89], \"universal_scope\": \"Every finite graph embedded in the named C7 disk\", \"verdict\": \"No S subset U55 can transfer to 941\"}\n"
+    }
+  ],
+  "excluded_scope": "Every finite planar inner disk compatible with the frozen source collar theorem",
+  "frozen_inputs": [
+    {
+      "frozen_matches_BASE": true,
+      "live_matches_BASE": true,
+      "path": "docs/c5_cofacial_normal_form.md"
+    },
+    {
+      "frozen_matches_BASE": true,
+      "live_matches_BASE": true,
+      "path": "docs/c5_saturation_degree_bound.md"
+    },
+    {
+      "frozen_matches_BASE": true,
+      "live_matches_BASE": false,
+      "path": "docs/c5_neartri_boundary_collar.md"
+    },
+    {
+      "frozen_matches_BASE": true,
+      "live_matches_BASE": true,
+      "path": "docs/DOCUMENTATION.md"
+    },
+    {
+      "frozen_matches_BASE": true,
+      "live_matches_BASE": true,
+      "path": "audits/README.md"
+    },
+    {
+      "frozen_matches_BASE": true,
+      "live_matches_BASE": true,
+      "path": "audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/collar_checker.py"
+    },
+    {
+      "frozen_matches_BASE": true,
+      "live_matches_BASE": true,
+      "path": "audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/collar_certificate.json"
+    },
+    {
+      "frozen_matches_BASE": true,
+      "live_matches_BASE": true,
+      "path": "audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/REPORT.md"
+    },
+    {
+      "frozen_matches_BASE": true,
+      "live_matches_BASE": true,
+      "path": "audits/2026-10-13-c7-joint-kempe-19209f4c/joint/COUNT_PROOF.md"
+    },
+    {
+      "frozen_matches_BASE": true,
+      "live_matches_BASE": true,
+      "path": "audits/2026-10-13-c7-joint-kempe-19209f4c/joint/count_identity.py"
+    },
+    {
+      "frozen_matches_BASE": true,
+      "live_matches_BASE": true,
+      "path": "audits/2026-10-13-c7-joint-kempe-19209f4c/joint/count_identity_certificate.json"
+    },
+    {
+      "frozen_matches_BASE": true,
+      "live_matches_BASE": true,
+      "path": "audits/2026-10-13-c7-joint-kempe-19209f4c/REPORT.md"
+    }
+  ],
+  "not_executed": [
+    "larger source graph enumeration",
+    "external theorem computation",
+    "new Lean formalization",
+    "global duplicate-ID repair",
+    "commit/push/PR/issue/comment"
+  ],
+  "source_input_drift": 0,
+  "status": "PASS",
+  "summary": {
+    "excluded_count": 3,
+    "excluded_transfer_kempe": 57,
+    "named_collars": 35,
+    "necessary_condition_residual": 10,
+    "queries": 70
+  },
+  "validation_records": {
+    "controls/verification.json": "6923415180cd060498df12ab5faa63d4b2f148864dbedd2207070e7e2d2852e8",
+    "counts/verification.json": "b55bb0d8433146bcbb5674f709217672ed149fe6ddc52f5eda7d728330b35932",
+    "documentation_checks.json": "aa079a3ffab6f18580415c284c83318deee20b3c60028af060a2d5fac0a265e7",
+    "validation/interface_checks.json": "eabd430a09f7247b9937becf2f272e30dd0a633e93a2c3c4c6bff6f3c86385e4",
+    "validation/lean.json": "16522f6c81b5cd86e149b9bd0d40d0cb27983e5e0b731a003ff016bad9007248"
+  }
+}

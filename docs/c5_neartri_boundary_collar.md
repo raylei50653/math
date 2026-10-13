@@ -6,6 +6,10 @@
 [隔離報告](../audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/REPORT.md)。
 941 最後 h=2 的 C₇ 上界已由
 [共同計數恆等式](../audits/2026-10-13-c7-joint-kempe-19209f4c/REPORT.md) 普遍排除。
+同日 [C₈ 完整 transfer 與共同計數](../audits/2026-10-13-c8-joint-count-3097ef5/REPORT.md)
+覆蓋 h=3 全部 35 份具名外圈、70 項查詢：57 項由 transfer／Kempe 排除，
+3 項由精確計數恆等式排除，10 項保留通過共同計數與自身 Kempe 閉包的
+必要條件向量。這些向量不代表實際來源；共同下界仍為 h≥3、n5≥9。
 目前停止點由 [Kempe 導覽](c5_kempe_guide.md) 維護。
 
 2026-10-13 後續：[跨原邊缺陷搬運](c5_cross_edge_kempe.md) 把五度中心的
@@ -89,7 +93,9 @@ vertices 同色。故 933／941 現均至少九條不同原邊觸發既有 J_e �
 各邊的拒絕列與完整染色可不同，仍不能拼成共同見證或 simultaneous quotient。
 933 的 `01231` 可獨立套用同一論證，不能將兩次邊數相加。
 
-941 的上述 h=2 C₇ 身份已排除；h≥3 的一般外圈及十三內點以上來源仍 **OPEN**。
+941 的上述 h=2 C₇ 身份已排除。h=3 的 C₈ 查詢尚留 933 的兩份、941 的八份
+必要條件殘留，完整具名清單見 [C₈ 結果表](../audits/2026-10-13-c8-joint-count-3097ef5/QUERIES.md)。
+h≥3 的一般外圈及十三內點以上來源仍 **OPEN**，不能採納 h≥4 或 n5≥10。
 本輪沒有證明 K∞=K≤5，也没有證明所有 near-cubic 圖的計數猜想。
 
 ## 4. 證據與重播

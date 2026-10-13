@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py", line 303, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py", line 292, in main
+    result = verify(json.loads(raw))
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py", line 214, in verify
+    validate_matrix_record(d)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py", line 85, in validate_matrix_record
+    require(len(answers) == d['count'], 'matrix count mismatch')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py", line 26, in require
+    raise ValueError(message)
+ValueError: matrix count mismatch

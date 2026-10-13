@@ -11,6 +11,9 @@
 同日 [三色支援與私人森林排除](c5_w5_three_color_support.md) 已證最小來源的
 annulus 私人圖必含環，並以三色具名 support 給補中心後的雙向 full-lift
 對照契約；一般同槽位 r≤6 代表仍未構造。
+同日 [私人單環排除](c5_w5_private_unicyclic.md)進一步證任取合法全內部W5的
+私人圈秩至少二；環繞U的必要單環域可嚴格替成只保Σ的prism，不保R³。
+私人圈秩至少二的一般縮減與r≤6代表仍OPEN。
 
 ## 1. 共同來源與全內部五輪
 
@@ -53,8 +56,10 @@ annulus 拓撲及同一外部圖的完整 J_p(B,U)，含全部空 cells 與 full
 計數上的 m=0 代表界為 6+r≤12；m=1 的 5+r≤12 及相鄰 m=2 的 4+r8≤12
 仍是其他介面的待證界，並未構造這些代表。
 
-941 的 C7 55列必要上界、h≥3 外圈、跨原邊 J_e 同步、十三內點以上來源、
-一般五度縮減及 K∞=K≤5 仍 **OPEN**。
+941 的 C7 55列必要上界已由[完整外圈報告](c5_neartri_boundary_collar.md)排除；
+後續C₈的70查詢保留10份必要條件殘留，仍只採納h≥3、n₅≥9。
+私人圈秩至少二的一般縮減、h≥3來源實現、跨原邊 J_e 同步、十三內點以上來源
+及 K∞=K≤5 仍 **OPEN**。
 
 ```bash
 python3 audits/2026-10-12-c5-deep-five-wheel-01a12ffa/controls/check.py --check audits/2026-10-12-c5-deep-five-wheel-01a12ffa/controls/certificate.json

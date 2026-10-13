@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-13-w5-private-unicyclic-3097ef5/independent/check.py", line 235, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-w5-private-unicyclic-3097ef5/independent/check.py", line 212, in main
+    check_geometry(expected, word, len(actual['vertices']),
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                   list(map(tuple, actual['edges'])))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-w5-private-unicyclic-3097ef5/independent/check.py", line 147, in check_geometry
+    assert cyclic(list(range(5, 10))) in set(map(cyclic, g['faces']))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

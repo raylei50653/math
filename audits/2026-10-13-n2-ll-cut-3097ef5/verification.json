@@ -1,0 +1,279 @@
+{
+  "base": "3097ef5be241b7777451a5ef8a663f3987d6b866",
+  "status": "mathematical finite replay passed",
+  "checks": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/profiles/domain.py",
+        "--check"
+      ],
+      "seed": "normal",
+      "exit_code": 0,
+      "seconds": 16.5,
+      "stdout": "{\"contact_catalog\": 1378, \"cut_shapes\": 604, \"geometries\": 85, \"profiles\": 19229, \"sha256\": \"e0ff3a1aa5b1f133d91c3ad665e256c3d3bd727fc57488d6c324acbbb8456eef\", \"summary\": {\"33-t11\": {\"basic_cut\": 108018, \"common_feasible\": 5563, \"contact_incompatible\": 18584, \"full_contact_interfaces\": 19470, \"raw_Z_candidates\": 132165}, \"33-t20\": {\"basic_cut\": 13234, \"common_feasible\": 1074, \"contact_incompatible\": 2748, \"full_contact_interfaces\": 1506, \"raw_Z_candidates\": 17056}, \"33-t21\": {\"basic_cut\": 56918, \"common_feasible\": 5912, \"contact_incompatible\": 15132, \"full_contact_interfaces\": 15532, \"raw_Z_candidates\": 77962}, \"34-t11\": {\"basic_cut\": 151720, \"common_feasible\": 6680, \"contact_incompatible\": 36340, \"full_contact_interfaces\": 27900, \"raw_Z_candidates\": 194740}}}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/profiles/domain.py",
+        "--check"
+      ],
+      "seed": "17",
+      "exit_code": 0,
+      "seconds": 16.83,
+      "stdout": "{\"contact_catalog\": 1378, \"cut_shapes\": 604, \"geometries\": 85, \"profiles\": 19229, \"sha256\": \"e0ff3a1aa5b1f133d91c3ad665e256c3d3bd727fc57488d6c324acbbb8456eef\", \"summary\": {\"33-t11\": {\"basic_cut\": 108018, \"common_feasible\": 5563, \"contact_incompatible\": 18584, \"full_contact_interfaces\": 19470, \"raw_Z_candidates\": 132165}, \"33-t20\": {\"basic_cut\": 13234, \"common_feasible\": 1074, \"contact_incompatible\": 2748, \"full_contact_interfaces\": 1506, \"raw_Z_candidates\": 17056}, \"33-t21\": {\"basic_cut\": 56918, \"common_feasible\": 5912, \"contact_incompatible\": 15132, \"full_contact_interfaces\": 15532, \"raw_Z_candidates\": 77962}, \"34-t11\": {\"basic_cut\": 151720, \"common_feasible\": 6680, \"contact_incompatible\": 36340, \"full_contact_interfaces\": 27900, \"raw_Z_candidates\": 194740}}}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/profiles/independent_contacts.py",
+        "--check"
+      ],
+      "seed": "normal",
+      "exit_code": 0,
+      "seconds": 0.28,
+      "stdout": "{\"catalogues\": 1378, \"members\": 3764, \"sha256\": \"89da171ab5d2bb0708467b5f6b634da01d6fc40c65dab913a601deaf7a2d5b4a\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/profiles/independent_contacts.py",
+        "--check"
+      ],
+      "seed": "17",
+      "exit_code": 0,
+      "seconds": 0.281,
+      "stdout": "{\"catalogues\": 1378, \"members\": 3764, \"sha256\": \"89da171ab5d2bb0708467b5f6b634da01d6fc40c65dab913a601deaf7a2d5b4a\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/checker.py",
+        "--check"
+      ],
+      "seed": "normal",
+      "exit_code": 0,
+      "seconds": 0.891,
+      "stdout": "{\"contact_catalogues\":1378,\"contact_interfaces\":64408,\"frozen_files\":652,\"independent_matrix_cases\":3059,\"negative_controls\":[{\"mutation\":\"capacity_bound\",\"reason\":\"source-derived row_bounds mismatch\",\"status\":\"rejected\"},{\"mutation\":\"fixed_cell\",\"reason\":\"source-derived S_P mismatch\",\"status\":\"rejected\"}],\"profile_sha256\":\"e0ff3a1aa5b1f133d91c3ad665e256c3d3bd727fc57488d6c324acbbb8456eef\",\"profiles\":19229,\"source_realizations\":0,\"target_source_status\":\"not triggered\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/checker.py",
+        "--check"
+      ],
+      "seed": "17",
+      "exit_code": 0,
+      "seconds": 0.887,
+      "stdout": "{\"contact_catalogues\":1378,\"contact_interfaces\":64408,\"frozen_files\":652,\"independent_matrix_cases\":3059,\"negative_controls\":[{\"mutation\":\"capacity_bound\",\"reason\":\"source-derived row_bounds mismatch\",\"status\":\"rejected\"},{\"mutation\":\"fixed_cell\",\"reason\":\"source-derived S_P mismatch\",\"status\":\"rejected\"}],\"profile_sha256\":\"e0ff3a1aa5b1f133d91c3ad665e256c3d3bd727fc57488d6c324acbbb8456eef\",\"profiles\":19229,\"source_realizations\":0,\"target_source_status\":\"not triggered\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/controls/checker.py",
+        "--check"
+      ],
+      "seed": "normal",
+      "exit_code": 0,
+      "seconds": 0.137,
+      "stdout": "{\"bytes\": 160534, \"counts\": {\"checked_original_K33_minors\": 2, \"complete_original_lifts\": 181, \"fixed_original_graphs\": 1, \"joint_cells\": 160, \"joint_empty_cells\": 126, \"local_cells\": 320, \"local_complete_tuples\": 856, \"local_empty_cells\": 80, \"negative_controls_rejected\": 10, \"qualified_full_target_sources\": 0, \"target_rows_with_basic_S_overlap\": 3}, \"mode\": \"check\", \"sha256\": \"79388be85546b25d0ab616957f8462c412547c2ae1087f41bbc5f1c1acb946d5\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/controls/checker.py",
+        "--check"
+      ],
+      "seed": "17",
+      "exit_code": 0,
+      "seconds": 0.137,
+      "stdout": "{\"bytes\": 160534, \"counts\": {\"checked_original_K33_minors\": 2, \"complete_original_lifts\": 181, \"fixed_original_graphs\": 1, \"joint_cells\": 160, \"joint_empty_cells\": 126, \"local_cells\": 320, \"local_complete_tuples\": 856, \"local_empty_cells\": 80, \"negative_controls_rejected\": 10, \"qualified_full_target_sources\": 0, \"target_rows_with_basic_S_overlap\": 3}, \"mode\": \"check\", \"sha256\": \"79388be85546b25d0ab616957f8462c412547c2ae1087f41bbc5f1c1acb946d5\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/controls/supplemental_minor_checker.py",
+        "--check"
+      ],
+      "seed": "normal",
+      "exit_code": 0,
+      "seconds": 0.036,
+      "stdout": "{\"bytes\": 27781, \"counts\": {\"local_lemma_triggers\": 4, \"negative_controls_rejected\": 8, \"original_K33_minors\": 4, \"original_bag_trees\": 24, \"original_cross_adjacencies\": 36, \"qualified_full_target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"b146b0a66aba847db62211cfd1cdaa974328c27bfc72626cc31a56d9db4186f2\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/controls/supplemental_minor_checker.py",
+        "--check"
+      ],
+      "seed": "17",
+      "exit_code": 0,
+      "seconds": 0.036,
+      "stdout": "{\"bytes\": 27781, \"counts\": {\"local_lemma_triggers\": 4, \"negative_controls_rejected\": 8, \"original_K33_minors\": 4, \"original_bag_trees\": 24, \"original_cross_adjacencies\": 36, \"qualified_full_target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"b146b0a66aba847db62211cfd1cdaa974328c27bfc72626cc31a56d9db4186f2\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/controls/same_h_minor_checker.py",
+        "--check"
+      ],
+      "seed": "normal",
+      "exit_code": 0,
+      "seconds": 0.033,
+      "stdout": "{\"bytes\": 23196, \"counts\": {\"local_K5_H_triggers\": 4, \"negative_controls_rejected\": 4, \"original_bag_trees\": 20, \"original_cross_adjacencies\": 40, \"qualified_full_target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"1baca2f233fd400f9423db96416e7adf10ea1e7099c734a59a10aaf46491f945\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/controls/same_h_minor_checker.py",
+        "--check"
+      ],
+      "seed": "17",
+      "exit_code": 0,
+      "seconds": 0.034,
+      "stdout": "{\"bytes\": 23196, \"counts\": {\"local_K5_H_triggers\": 4, \"negative_controls_rejected\": 4, \"original_bag_trees\": 20, \"original_cross_adjacencies\": 40, \"qualified_full_target_sources\": 0}, \"mode\": \"check\", \"sha256\": \"1baca2f233fd400f9423db96416e7adf10ea1e7099c734a59a10aaf46491f945\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/paper/topology_checker.py",
+        "--check"
+      ],
+      "seed": "normal",
+      "exit_code": 0,
+      "seconds": 0.04,
+      "stdout": "{\"geometries\": 10, \"literal_arcs\": 5, \"source_status\": \"not triggered\", \"status\": \"PASS\", \"t11_incidence_cases\": 9, \"total_capacity_cuts\": 3}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/paper/topology_checker.py",
+        "--check"
+      ],
+      "seed": "17",
+      "exit_code": 0,
+      "seconds": 0.031,
+      "stdout": "{\"geometries\": 10, \"literal_arcs\": 5, \"source_status\": \"not triggered\", \"status\": \"PASS\", \"t11_incidence_cases\": 9, \"total_capacity_cuts\": 3}\n",
+      "stderr": ""
+    }
+  ],
+  "normal_seed17_equal_for_all_seven": true,
+  "read_only_input_drift": 0,
+  "standalone_corrupt_profiles_rejected": [
+    {
+      "mutation": "capacity-bound",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/checker.py",
+        "--check",
+        "--profiles",
+        "/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/verification/capacity-bound.corrupt.json"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py\", line 303, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py\", line 292, in main\n    result = verify(json.loads(raw))\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py\", line 253, in verify\n    check_row_source(actual, source_row(p, g, i))\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py\", line 58, in check_row_source\n    require(actual[key] == value, 'source-derived ' + key + ' mismatch')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py\", line 26, in require\n    raise ValueError(message)\nValueError: source-derived row_bounds mismatch\n",
+      "sha256": "96d0b87bd765bfe8f1937911c868c1f10d723f854329b66473b90315a2a4445f"
+    },
+    {
+      "mutation": "fixed-cell",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-n2-ll-cut-3097ef5/checker.py",
+        "--check",
+        "--profiles",
+        "/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/verification/fixed-cell.corrupt.json"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py\", line 303, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py\", line 292, in main\n    result = verify(json.loads(raw))\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py\", line 214, in verify\n    validate_matrix_record(d)\n    ~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py\", line 85, in validate_matrix_record\n    require(len(answers) == d['count'], 'matrix count mismatch')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py\", line 26, in require\n    raise ValueError(message)\nValueError: matrix count mismatch\n",
+      "sha256": "5a7f86b35fd3f92b033b444b6c7668356d21ad8bbaa2becb87e0bc6c0cebaf56"
+    }
+  ],
+  "artifact_hashes": {
+    "BASE.json": "c8cb9283ffaa956dfb0394c72592b12a51531aa2eaf3c5a7d2b7b43b48f8e526",
+    "review/PARENT_BASE.json": "9cf671988dd819881689a53e190f7a9311adc5d9e3d5396b8ece3fd3970614f6",
+    "controls/same_h_verification.json": "ea17622d50c9586e4d6ec063612bfe8cb83178356cde76e9dcf22f60b96b15fd",
+    "controls/verification.json": "f19a979853af8262daeee103d2948e341f953c49f52b1f502da2ba1c9fd0135c",
+    "controls/observations.json": "79388be85546b25d0ab616957f8462c412547c2ae1087f41bbc5f1c1acb946d5",
+    "controls/supplemental_minors.json": "b146b0a66aba847db62211cfd1cdaa974328c27bfc72626cc31a56d9db4186f2",
+    "controls/same_h_minors.json": "1baca2f233fd400f9423db96416e7adf10ea1e7099c734a59a10aaf46491f945",
+    "controls/supplemental_verification.json": "42d6fa4f14b3765a0214db8b936f30e1500a955810588aae90353f855aba321c",
+    "profiles/profiles.pre-copy-isolation.json": "68ab5002f685df9eceb8f48375bf6abef342207841d08a8f43f436bb6c498a7a",
+    "profiles/verification.json": "d37d743e251683ae600471de77aff204a90a6da3d62908d67698d06309e5915b",
+    "profiles/contact_members.json": "89da171ab5d2bb0708467b5f6b634da01d6fc40c65dab913a601deaf7a2d5b4a",
+    "profiles/profiles.json": "e0ff3a1aa5b1f133d91c3ad665e256c3d3bd727fc57488d6c324acbbb8456eef",
+    "paper/topology_arithmetic.json": "a3c1d84bcc909c05c4792843ef5c878ae5201a8d4335d20012b2d411943fb9d6",
+    "paper/topology_arithmetic_corrupt.json": "dc94e286fb00876c39b83ffc33d8f6958107de2ccc2b3f069f36584b663cfcec",
+    "paper/DEPENDENCIES.json": "cdb12d6b4925769b957817d896bd150a89e1e03e8062dc3ad23d0dcfe8de4fcc",
+    "paper/topology_verification.json": "ca888b14916eaca94b14a958853e77ae709f8cdaeb04f3d4b5f052b6b2eca916",
+    "frozen/audits/2026-10-13-n2-double-long-joint/BASE.json": "d9769afc0d08a4534fe6e8a3d58d7ee24963c04cc9fd1f8380cf1547a23d807d",
+    "frozen/audits/2026-10-13-n2-double-long-joint/verification-final.json": "033836e36bdc404a1922645fba14053ac896f206659f4ca6351da2b60ba3bdc6",
+    "frozen/audits/2026-10-13-n2-double-long-joint/verification.json": "853108424b6af789805488e864ecf45b5c617102c2fc44632eb7485fd5b56af3",
+    "frozen/audits/2026-10-13-n2-double-long-joint/integration-replays.json": "c9ccc39f5c55f86bb533d92867871db837ccbcc476959ee83e835c4f0866d57b",
+    "frozen/audits/2026-10-13-n2-double-long-joint/math-replays.json": "b5a11f3c3ce3309187bd582f879ffe84abc4fdcaa821e9fbd70b70f22af1cf34",
+    "frozen/audits/2026-10-13-n2-double-long-joint/DELIVERY.json": "3351032a14f643f7d5a2892746038901c0e150180473f71fa8d7ed96dd1dc95d",
+    "frozen/audits/2026-10-13-n2-double-long-joint/routing-before-edit/manifest.json": "a1f1c40e73d675e9d1eaddb41e0edd202819f6b53d7f4752a5c4dc1651a9b265",
+    "frozen/audits/2026-10-13-n2-double-long-joint/joint/BASE.json": "776153a26cd01fb3459d1e8c6052de9da9d1d7c64d85c010e5e51955db90467d",
+    "frozen/audits/2026-10-13-n2-double-long-joint/joint/observations.json": "6eac3a2ae83cc5c38f026ba9dffa0d88d4c051868188ff24b3c9a56d825d79d9",
+    "frozen/audits/2026-10-13-n2-double-long-joint/joint/corrupt-observations.json": "199de5ed55285462d260367fe88a6c9f8e7acf8cf5eb0be50e838b18fd97b9c3",
+    "frozen/audits/2026-10-13-n2-double-long-joint/controls/BASE.json": "2fe65b608e53e1d177ccbe0c35e02401ff10a2ddd4f79f61815d59198422a178",
+    "frozen/audits/2026-10-13-n2-double-long-joint/controls/verification.json": "9eaf950048d45813be5a7c352d38de1e16a693ac76452efa51162304ce2af600",
+    "frozen/audits/2026-10-13-n2-double-long-joint/controls/observations.json": "724a540c00a8248d2b45b48acdb1cd9d702f26ab68053d8926a3d3d31c406658",
+    "frozen/audits/2026-10-13-n2-double-long-joint/controls/supplemental_minors.json": "4fa487989869cf81077e09354cad593e9352992d587ae09a117181e285abe057",
+    "frozen/audits/2026-10-13-n2-double-long-joint/controls/supplemental_verification.json": "f979e0ff42ae894260fe4a4d8a5e2a3eba698d194c1990dc2ac062919302c813",
+    "frozen/audits/2026-10-13-n2-double-long-joint/paper/concurrent/SNAPSHOT.json": "dee885e381f995012d8d58dfb4f868a07304c62817cfa52bc14ee9e44358ef5e",
+    "frozen/audits/2026-10-13-n2-double-long-joint/controls/frozen/audits/2026-10-11-n2-long-mask-sync/high-contact/observations.json": "f91d8a12bdf4b4c07c2ff64b6c345f292942668ad00af224ab4b71cdaa7326b7",
+    "frozen/audits/2026-10-13-n2-double-long-joint/controls/frozen/audits/2026-10-11-n2-long-mask-sync/high-contact/exploration_probes.json": "07048b5668aa2ff2d7c6a9f66585e5d5851ab2f5e0ffbab1e1a3a4ca1ce9372a",
+    "frozen/audits/2026-10-13-n2-double-long-joint/joint/frozen/control.json": "724a540c00a8248d2b45b48acdb1cd9d702f26ab68053d8926a3d3d31c406658"
+  },
+  "other_negative_records": [
+    "controls/verification.json",
+    "controls/supplemental_verification.json",
+    "controls/same_h_verification.json",
+    "paper/topology_verification.json"
+  ],
+  "documentation_record": "verification/documentation.json",
+  "new_Lean_theorem": false,
+  "Lean_build": "not run; no Lean edits, paper theorem not formalized",
+  "full_target_finite_status": "not triggered",
+  "not_run": [
+    "source graph census",
+    "upstream broad source enumerations",
+    "whole-tree DocGraph historical duplicate-ID cleanup",
+    "commit",
+    "push",
+    "PR",
+    "issue",
+    "external messages"
+  ]
+}

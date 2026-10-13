@@ -1,0 +1,25 @@
+{
+  "capacity_corruption_negative": {
+    "corrupt": 3,
+    "mutated_field": "capacity_cuts[0].row_total_lower",
+    "original": 6,
+    "returncode": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/paper/topology_checker.py\", line 118, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/paper/topology_checker.py\", line 106, in main\n    assert args.artifact.read_text() == encoded, 'topology arithmetic artifact mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: topology arithmetic artifact mismatch\n"
+  },
+  "deterministic_stdout": true,
+  "normal": {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-ll-cut-3097ef5/paper/topology_checker.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "stdout": "{\"geometries\": 10, \"literal_arcs\": 5, \"source_status\": \"not triggered\", \"status\": \"PASS\", \"t11_incidence_cases\": 9, \"total_capacity_cuts\": 3}\n"
+  },
+  "scope": "finite literal frame arithmetic; no source qualification",
+  "seed17": {
+    "returncode": 0,
+    "stdout": "{\"geometries\": 10, \"literal_arcs\": 5, \"source_status\": \"not triggered\", \"status\": \"PASS\", \"t11_incidence_cases\": 9, \"total_capacity_cuts\": 3}\n"
+  }
+}

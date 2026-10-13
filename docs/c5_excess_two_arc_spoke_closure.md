@@ -1,5 +1,9 @@
 # E-ARC2：末端 block 接點與 N2 的全部真核心排除
 
+**後續（2026-10-13）**：[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)已完成指定完整Σ契約的
+原55九格覆蓋；基本LL-CUT、較廣N2／E-ARC2仍OPEN。
+下文保留本報告當轮45／54定理、有限控制及停止點。
+
 2026-10-11，工作樹基準 `df60ef5b6a386e5b1e4e3137a145c915875897ce`，
 接續未提交的[原分量共同限制](c5_excess_two_arc_component_slack.md)。
 目前入口及停止點見 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)。

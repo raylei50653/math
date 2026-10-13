@@ -1,0 +1,324 @@
+{
+  "adoption_gate": "h>=4 and n5>=10 only if every one of the 70 target queries is excluded by universally sound certificates.",
+  "base": "3097ef5be241b7777451a5ef8a663f3987d6b866",
+  "boundary_order_rule": "a0, extras at b1, a1, extras at b2, a2, extras at b3, a3, extras at b4, a4, extras at b0",
+  "count_transfer_definition": "T[r,p] counts literal assignments q in Orb(p) compatible with fixed literal outer r. y[r]=sum_p T[r,p] x[p].",
+  "coverage": "Complete annular interfaces; arbitrary chords and interior graph retained in one actual inner disk H.",
+  "double_counting_identity": "24*T[r,p]=orbit_size(p)*L[p,r]; the unique two-color orbit has size 12, not 24.",
+  "independent_enumeration": {
+    "Catalan_sequence_0_to_8": [
+      1,
+      1,
+      2,
+      5,
+      14,
+      42,
+      132,
+      429,
+      1430
+    ],
+    "NC_partitions": 1430,
+    "active_NC_columns": 91,
+    "equality_rank_exact_Fraction": 91,
+    "literal_counts_by_used_colors": {
+      "2": 12,
+      "3": 1008,
+      "4": 5544
+    },
+    "orbit_counts_by_used_colors": {
+      "2": 1,
+      "3": 42,
+      "4": 231
+    },
+    "orbit_sizes_by_used_colors": {
+      "2": 12,
+      "3": 24,
+      "4": 24
+    },
+    "proper_literal": 6564,
+    "proper_orbits": 274,
+    "weak_compositions_stars_and_bars": 35,
+    "weak_compositions_types": {
+      "1+1+1": 10,
+      "2+1": 20,
+      "3": 5
+    }
+  },
+  "label_backtracking": "identity map for every query; fixed original labels b0..b4 and actual rotation order of each extra",
+  "positivity_scope": "x>=0 only; signed inclusion-exclusion coefficients unrestricted.",
+  "query_compositions": [
+    [
+      0,
+      0,
+      0,
+      0,
+      3
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      2,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      3,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      3,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      2,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      2,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      2,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      2,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "query_total": 70,
+  "residual_caveats": [
+    "support(x) subset A_infinity need not itself satisfy Kempe closure; check it separately.",
+    "Rational feasibility scales to integer coordinates because all equalities are homogeneous and accepted transfers are strictly positive; this does not establish graph realizability.",
+    "No N2, edge-critical, epsilon=2, prescribed root degrees, Gallai, or count-cone conjecture is used."
+  ],
+  "scope": "Independent source, topology, orbit-size and count-identity soundness review; query verdicts are verified elsewhere in this package.",
+  "source_sha256": {
+    "audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/REPORT.md": "7afd2861a79f65cfaee77618453381cd06eacc947f294220bcdccbd24a55454a",
+    "audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/collar_certificate.json": "8112ab1f09de8a18f915a3d25e9133083b54f2032c363c32285ece1fe9b1d87e",
+    "audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/collar_checker.py": "5a9fdd84959c5728194cd3c1a036966c6cf1bf757a9105097767410315c47bbf",
+    "audits/2026-10-13-c7-joint-kempe-19209f4c/REPORT.md": "32a0cfb33b298d3253e0308bf1e0003140068ebcab2846333244e67d82f188f7",
+    "audits/2026-10-13-c7-joint-kempe-19209f4c/joint/COUNT_PROOF.md": "af826dd7b5c1a590b999a59d3b2396a13e9932ef024e7ddcc5fb80d2a1da65c1",
+    "audits/2026-10-13-c7-joint-kempe-19209f4c/joint/count_identity.py": "f489b941933a7fdb5b7baed365b0273c33b3a8bcf5cd44f5c00a12c64b49c8ea",
+    "audits/2026-10-13-c7-joint-kempe-19209f4c/joint/count_identity_certificate.json": "05519f2752c4074e065530efcf281fc13de956d0a8dd0cd0c8090a751c0abcaa",
+    "audits/README.md": "848169ad164ca4b6527edeb19f265da5f9caa734d0a31c40ab28d0504af5b4a6",
+    "docs/DOCUMENTATION.md": "40214801431719f88f6a808bc9c2f74ed0ec3044a5c555cac0a99678af105ac3",
+    "docs/c5_cofacial_normal_form.md": "51f8e1832e7147be0c4104dac59b0980b66bfe3bbf4c2f32300eab98b19868bf",
+    "docs/c5_neartri_boundary_collar.md": "f8953126d72599634d3a72b74d2a1b6378e2aa51d1a359ea9d280015a04ec716",
+    "docs/c5_saturation_degree_bound.md": "8aa4c924615d44d6506392ab2ef05d40a275da0b17a27f127e803ae8c23fcb23"
+  },
+  "status": "PASS",
+  "symmetry_reduction": false,
+  "targets": [
+    933,
+    941
+  ],
+  "universal_count_identity": "x_p=sum_{F subset E(H)} (-1)^|F| 4^k0(F) E_pi(F)(p), with one H and coefficients shared by every p."
+}

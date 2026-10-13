@@ -1,0 +1,88 @@
+[
+  {
+    "label": "fibres-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-double-long-joint/controls/checker.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "seconds": 0.142
+  },
+  {
+    "label": "fibres-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-double-long-joint/controls/checker.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": "17",
+    "exit_code": 0,
+    "seconds": 0.143
+  },
+  {
+    "label": "minor-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-double-long-joint/controls/supplemental_minor_checker.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "seconds": 0.034
+  },
+  {
+    "label": "minor-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-double-long-joint/controls/supplemental_minor_checker.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": "17",
+    "exit_code": 0,
+    "seconds": 0.034
+  },
+  {
+    "label": "matrix-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-double-long-joint/joint/checker.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "seconds": 1.895
+  },
+  {
+    "label": "matrix-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-double-long-joint/joint/checker.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": "17",
+    "exit_code": 0,
+    "seconds": 1.908
+  },
+  {
+    "label": "matrix-negative",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-n2-double-long-joint/joint/checker.py",
+      "--check",
+      "--artifact",
+      "audits/2026-10-13-n2-double-long-joint/joint/corrupt-observations.json"
+    ],
+    "exit_code": 1,
+    "expected_failure": true,
+    "reason": "retained certificate falsely changes maximum binary cells from9 to8"
+  }
+]

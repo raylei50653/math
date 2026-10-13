@@ -1,0 +1,251 @@
+{
+  "audit": "audits/2026-10-13-w5-private-unicyclic-3097ef5",
+  "base": "3097ef5be241b7777451a5ef8a663f3987d6b866",
+  "byte_equalities": {
+    "fresh_kernel_normal_seed17_equal": true,
+    "stored_independent_normal_seed17_equal_verified": true,
+    "stored_independent_strength_normal_seed17_equal_verified": true,
+    "stored_math_and_final_verification_all_log_hashes_verified": true
+  },
+  "integrity": {
+    "actual_audit_files": 78,
+    "all_delivery_entries_match_recorded_bytes_and_hashes": true,
+    "all_frozen_inputs_match_base_blobs_and_recorded_hashes": true,
+    "checks_performed": "Python read_bytes and SHA256 comparison against BASE.json/DELIVERY.json; each frozen input also compared to git show BASE:path",
+    "dedicated_docs_snapshot_hashes_match": [
+      "docs/c5_w5_private_unicyclic.md",
+      "docs/c5_w5_three_color_support.md"
+    ],
+    "delivery_entry_count": 77,
+    "frozen_input_count": 30,
+    "self_excluded_delivery_only": true,
+    "shared_docs_snapshot_hashes_differ_as_expected": [
+      "docs/c5_kempe_guide.md",
+      "docs/STATUS.md"
+    ],
+    "unlisted_audit_files": [
+      "DELIVERY.json"
+    ]
+  },
+  "records": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/check.py",
+        "--check"
+      ],
+      "env": {},
+      "expected_behavior": "pass",
+      "log": "/tmp/w5-publication-review-d6ia5ve5/kernel-normal.log",
+      "log_sha256": "06e17d5bc5c58037f12e1a794b4789e1cf1f80533757f8258a41cabd25ef7ffa",
+      "name": "kernel-normal",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/check.py",
+        "--check"
+      ],
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_behavior": "pass",
+      "log": "/tmp/w5-publication-review-d6ia5ve5/kernel-seed17.log",
+      "log_sha256": "06e17d5bc5c58037f12e1a794b4789e1cf1f80533757f8258a41cabd25ef7ffa",
+      "name": "kernel-seed17",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/independent/check.py"
+      ],
+      "env": {},
+      "expected_behavior": "pass",
+      "log": "/tmp/w5-publication-review-d6ia5ve5/independent-normal.log",
+      "log_sha256": "b96beb41185dc9b83603c6fe48b8d481755009b75d0f1e046668a9b32bcb4f39",
+      "name": "independent-normal",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/strength.py",
+        "--check"
+      ],
+      "env": {},
+      "expected_behavior": "pass",
+      "log": "/tmp/w5-publication-review-d6ia5ve5/strength-normal.log",
+      "log_sha256": "daeb9fc8a6237028c7ee57cd8b0cc5fccf9fa4d3c1d89a84e6c5dea6fa99b5c0",
+      "name": "strength-normal",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/independent/strength_check.py"
+      ],
+      "env": {},
+      "expected_behavior": "pass",
+      "log": "/tmp/w5-publication-review-d6ia5ve5/strength-independent.log",
+      "log_sha256": "31c3d011e39e48057dbde9c9e4ed0d3bdcc47f9abf34171d37694f34daf7cbb4",
+      "name": "strength-independent",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/independent/negative/missing_necessary_lift.jsonl.gz"
+      ],
+      "env": {},
+      "expected_behavior": "reject corrupted first graph for intended reason, not stream truncation",
+      "log": "/tmp/w5-publication-controls-drkzozk3/missing_necessary_lift-primary.log",
+      "log_sha256": "9e892b5d02ac1f8e47c9778fe021050afa496240ddc94c92f6b9576cbad2e4e3",
+      "name": "missing_necessary_lift-primary",
+      "returncode": 1
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/independent/check.py",
+        "--certificate",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/independent/negative/missing_necessary_lift.jsonl.gz"
+      ],
+      "env": {},
+      "expected_behavior": "reject corrupted first graph for intended reason, not stream truncation",
+      "log": "/tmp/w5-publication-controls-drkzozk3/missing_necessary_lift-independent.log",
+      "log_sha256": "8d859ee525cadf721e869963f3db4eeeea88825a8d0fbd36366084434b150900",
+      "name": "missing_necessary_lift-independent",
+      "returncode": 1
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/independent/negative/changed_original_edge.jsonl.gz"
+      ],
+      "env": {},
+      "expected_behavior": "reject corrupted first graph for intended reason, not stream truncation",
+      "log": "/tmp/w5-publication-controls-drkzozk3/changed_original_edge-primary.log",
+      "log_sha256": "9e892b5d02ac1f8e47c9778fe021050afa496240ddc94c92f6b9576cbad2e4e3",
+      "name": "changed_original_edge-primary",
+      "returncode": 1
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/independent/check.py",
+        "--certificate",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/independent/negative/changed_original_edge.jsonl.gz"
+      ],
+      "env": {},
+      "expected_behavior": "reject corrupted first graph for intended reason, not stream truncation",
+      "log": "/tmp/w5-publication-controls-drkzozk3/changed_original_edge-independent.log",
+      "log_sha256": "7869238a76d478eb019fb01943c1fc8e7853e07054bc0ece658c6eea9c0b712d",
+      "name": "changed_original_edge-independent",
+      "returncode": 1
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/independent/negative/reversed_U_face.jsonl.gz"
+      ],
+      "env": {},
+      "expected_behavior": "reject corrupted first graph for intended reason, not stream truncation",
+      "log": "/tmp/w5-publication-controls-drkzozk3/reversed_U_face-primary.log",
+      "log_sha256": "9e892b5d02ac1f8e47c9778fe021050afa496240ddc94c92f6b9576cbad2e4e3",
+      "name": "reversed_U_face-primary",
+      "returncode": 1
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/independent/check.py",
+        "--certificate",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/independent/negative/reversed_U_face.jsonl.gz"
+      ],
+      "env": {},
+      "expected_behavior": "reject corrupted first graph for intended reason, not stream truncation",
+      "log": "/tmp/w5-publication-controls-drkzozk3/reversed_U_face-independent.log",
+      "log_sha256": "1f304b192521bab9245b94c949f68a49977fe88ca589e4f30901e441f9919c49",
+      "name": "reversed_U_face-independent",
+      "returncode": 1
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-three-support-19209f4c/forest/check.py",
+        "--check"
+      ],
+      "env": {},
+      "expected_behavior": "pass",
+      "log": "/tmp/w5-publication-controls-drkzozk3/forest-primary.log",
+      "log_sha256": "2a8d58e72885d0899df1b093d702ed954a4e53f7512de7fe31b2a4f0e1e7ec80",
+      "name": "forest-primary",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-three-support-19209f4c/t1/forest_independent.py"
+      ],
+      "env": {},
+      "expected_behavior": "pass",
+      "log": "/tmp/w5-publication-controls-drkzozk3/forest-independent.log",
+      "log_sha256": "4cd9a9eda1174671a95ffcda7ee98e622ca7b10f10f2b5ee721b2aca0df3f774",
+      "name": "forest-independent",
+      "returncode": 0
+    }
+  ],
+  "scope": {
+    "forest_regression": "primary and independent full 70 templates, 716800 cells",
+    "negative_controls": "read-only replay of existing three corruption fixtures through both checkers; all six intended first-graph rejections",
+    "new_kernel": "full 1652 templates, 16916480 cells, 16448400 empty cells, 657580 A lifts, 320840 G lifts; all capped Sigma 1023",
+    "not_performed": [
+      "new source graph enumeration",
+      "new Lean formalization",
+      "audit generators",
+      "verify.py runner",
+      "audit or frozen mutation",
+      "git index mutation",
+      "web browsing"
+    ],
+    "not_rerun": [
+      "independent main seed17",
+      "strength primary seed17",
+      "independent strength seed17",
+      "forest seed17",
+      "other six prior regression commands",
+      "check_docs",
+      "DocGraph",
+      "lake build",
+      "upstream external computation"
+    ],
+    "paper_review": "arbitrary-size disconnected rho=1 face counts; contractible contradiction; essential pure-cycle completeness; prism Sigma-only strength and rho>=2 residual boundary",
+    "remaining_open": "private cycle rank >=2 general strict reduction, r<=6 or R3 representative, K_infinity=K_le5",
+    "source_realizability": "not triggered"
+  },
+  "status": "PASS read-only publication review"
+}

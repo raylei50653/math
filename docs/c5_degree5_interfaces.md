@@ -258,6 +258,8 @@ R10 的完整染色介面已完成，disk／T4 排除仍開放。一般 degree�
 **後續（2026-10-11）**：[N2末端block與兩次SD-A](c5_excess_two_arc_spoke_closure.md)
 已證完整N2目標前提下無U的原H二連通，對兩個相反方向spoke derivatives各用本節定理，
 排除無U全部45／54；再接含U契約，完整N2真cores全排，只剩原55。
+2026-10-13 [LL-CUT+diag](c5_excess_two_n2_ll_cut.md)已排指定完整Σ契約的原55最後分支；
+基本LL-CUT、契約外雙缺額55及較廣N2／E-ARC2仍保留。
 下文原適用性查證及BR各輪的OPEN保留當時語境；一般R31與雙缺額55仍未解。
 
 2026-10-11，查證 BASE `4dd11f422c6fa49265a412085116b088786d0344`。

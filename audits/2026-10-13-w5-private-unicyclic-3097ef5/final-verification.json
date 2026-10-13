@@ -1,0 +1,57 @@
+{
+  "phase": "final",
+  "records": [
+    {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "env": {},
+      "exit_code": 0,
+      "log": "logs/docs.log",
+      "log_sha256": "786a9745a21153023dddd3b7b3622b2b94073dee5d2b4e5d84aaf88864da2eac",
+      "name": "docs",
+      "seconds": 0.675
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "env": {},
+      "exit_code": 0,
+      "log": "logs/docgraph-formal.log",
+      "log_sha256": "c8d2bd3a384c3523c8a0278862859d1e1f4677d1cccc7310b434e4595489a0bb",
+      "name": "docgraph-formal",
+      "seconds": 0.083
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "env": {},
+      "exit_code": 0,
+      "log": "logs/diff-check.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "diff-check",
+      "seconds": 0.01
+    },
+    {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "env": {},
+      "exit_code": 0,
+      "log": "logs/lean-regression.log",
+      "log_sha256": "2103291d39ceb734f800128950d507eded343e0e0678cc7e96414c1cc372b250",
+      "name": "lean-regression",
+      "seconds": 3.671
+    }
+  ]
+}

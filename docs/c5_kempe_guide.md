@@ -1,8 +1,8 @@
 # Kempe／重接／計數與策略導覽
 
-更新：2026-10-13（一long的末端block與固定root完整接回已排完整原55(1,0)；目標只剩u=0、H二連通的(2,0)。九格八格覆蓋、N2／E-ARC2 OPEN）。本頁維護本線現況；證明及實際重播範圍見各報告。
-雙 long 後續已排 t=0／1 root-spokes；剩 t=2／3，下一充分子命題
-[LL-CUT](c5_excess_two_n2_double_long_joint.md#4-剩餘域與可反駁的-ll-cut)每列至多九格，完整 `(2,0)` 仍 OPEN。
+更新：2026-10-13（[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)已排完整原55雙long最後分支，指定完整Σ契約內九格全覆蓋；基本LL-CUT機制、較廣N2／E-ARC2仍OPEN）。本頁維護本線現況；證明及實際重播範圍見各報告。
+雙long剩餘t=2／3由原leaf K₅／K₃,₃與接線容量排除；基本介面的19,229份共同可行
+投影保留，沒有被當成原圖實現。來源排除採納加強版，有限目標仍not triggered。
 2026-10-12新增[共面識別正規形](c5_cofacial_normal_form.md)：最小目錄外來源可選成不增內點的
 簡單近三角化圖，接外部定理得到 `K≤12=K≤5`；一般主命題仍 OPEN。
 其後[最小來源度數界](c5_saturation_degree_bound.md) 證邊界度數至少四、內部至少五、
@@ -47,20 +47,21 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
 | 共面識別／聯集封閉正規形 | global 最小內點、最大邊數來源的共面完備及簡單三角面正規形；接文獻 Cor20 得一般 disk 的 K≤12=K≤5。132 witnesses／8778 unions／十候選及完整 fibres 重播；至少十三內點的一般來源、完整關係重接仍 OPEN，未 Lean 化 | [權威入口、證明及重播](c5_cofacial_normal_form.md) |
-| 近三角化完整外圈 | 二邊 crosscut 全排；共同計數恆等式排除最後941的C7 55列上界，h≤2全部排除，933／941均必h≥3、n5≥9。一般h≥3來源仍OPEN，未Lean化 | [完整接合、閉包與排除](c5_neartri_boundary_collar.md) |
+| 近三角化完整外圈 | h≤2全部排除；h=3的35份具名C₈外圈共70查詢已排60、留10份共同計數與自身Kempe閉包殘留。933／941仍只採納h≥3、n5≥9；一般來源OPEN，未Lean化 | [完整接合、閉包與排除](c5_neartri_boundary_collar.md)、[C₈精確結果](../audits/2026-10-13-c8-joint-count-3097ef5/REPORT.md) |
 | 跨原邊 Kempe 缺陷搬運 | 五度輪十列四格逐lift雙射、相鄰五度中心搬運及全域恆等式；同一拒絕列至少六條原邊有單邊缺陷。一步交換精確判準及實際拼接反控制；933／941排除仍OPEN，無新Lean | [精確定理、證明與控制](c5_cross_edge_kempe.md) |
 | 最小來源度數／五度鄰環 | 沿用全域最小性，C4 關係≤3內點、邊界度數≥4、內部≥5；後續已保證全內部 induced W5。A九種位置契約、B固定域1020項操作及C全部17424組cap閉合已交付，一般縮減仍OPEN，無新Lean | [度數界](c5_saturation_degree_bound.md)、[全內部五輪與交付界線](c5_degree5_link_reductions.md) |
 | 全內部 W5 具名完整關係縮減 | 五個合法 k−2 商圖的完整拉回無損重建十 pin H／G fibres；重數二恰唯一接回中心。34圖完整控制；普通正聯集及 r≤6 annulus 代表仍OPEN，無新Lean | [精確公式、反控制及重播](c5_w5_marked_relation.md) |
-| W5 三色支援與私人森林排除 | 三色具名support等價於補中心後保全部B/U pins的雙向total full-lift對照，fibres不需等基數；最小來源私人圖必含環。70模板完備分類＋獨立full lifts，r_min=2構造與來源專用商圖no-go；一般r≤6代表仍OPEN | [正式入口、證明及兩包證據](c5_w5_three_color_support.md) |
+| W5 三色支援與私人森林排除 | 三色具名support等價於補中心後保全部B/U pins的雙向total full-lift對照，fibres不需等基數；當輪排私人森林，後續單環排除使最小來源私人圈秩≥2。70模板完備分類＋獨立full lifts，r_min=2構造與來源專用商圖no-go；一般r≤6代表仍OPEN | [正式入口、證明及兩包證據](c5_w5_three_color_support.md) |
+| W5 私人單環排除 | 任取合法全內部 W5，最小來源私人圈秩≥2；contractible 純紙面排除，essential 完備化成7–10點純環及1652模板，全部Σ1023。後者可換只保Σ的r′=0 prism，減少7–10內點，不保R³；圈秩至少二來源的一般縮減仍OPEN，未Lean化 | [正式入口與完整證據](c5_w5_private_unicyclic.md) |
 | 猜想 E／E-ARC2 共同目標 | ε≤1 已證；ε≥3 在原域自動滿足。ε=2 的三點弧命題仍 OPEN，等價排除 941 形三點及四點弧來源；Q=B 的 932 是較強版本的另項義務 | [母猜想與等價證明](c5_research_synthesis.md#81-猜想-e超額拒絕定律)、[E2 低 ε 證明](../artifacts/c5_excess_one_e2/REPORT.md)、[E3 三列化約](../artifacts/c5_excess_two_e3/REPORT.md) |
-| E-ARC2 真子圖與共同核心 | 沿用 E2／唯一 degree-5 相鄰列分離及兩-root44排除，目標反例的任意真子圖至多單拒絕；任意兩個不同拒絕列的 minimal cores 聯集必為 G，所有內點皆不可同接24。179固定圖中172觸發一般 Z 引理並成立，目標來源0觸發；後續完整N2的45／54已排；原55、其他域與主目標仍 OPEN，未Lean化 | [完整紙面證明與負控制](c5_excess_two_arc_pair_critical.md) |
-| E-ARC2 原分量共同限制 | 同一degree-4原分量的boundary重色至多涉及一個拒絕列；完整N2前提再接已採納N45-U，所有原分量刪除均全收，每個非root點至多接兩個相鄰框點，真core只能省一條root-spoke。63固定圖／13,010完整外部投影核對，目標0觸發；spoke45／54由後續報告涵蓋，原55仍OPEN，未Lean化 | [證明、完整fibres與控制](c5_excess_two_arc_component_slack.md) |
-| E-ARC2 N2全部真核心排除 | 原leaf block必有私有root接點；無U的H二連通，同H兩次SD-A加雙star／diagonal排spoke core，含U接既有完整契約。全部非框邊刪除均全收，roots亦至多接相鄰兩框點，所有拒絕列只剩原55。63圖完整local fibres校準，目標0觸發，未Lean化 | [完整證明、契約覆蓋及控制](c5_excess_two_arc_spoke_closure.md) |
+| E-ARC2 真子圖與共同核心 | 沿用 E2／唯一 degree-5 相鄰列分離及兩-root44排除，目標反例的任意真子圖至多單拒絕；任意兩個不同拒絕列的 minimal cores 聯集必為 G，所有內點皆不可同接24。179固定圖中172觸發一般 Z 引理並成立，目標來源0觸發；後續45／54與LL-CUT+diag合成指定完整Σ的N2契約九格覆蓋，其他域與E-ARC2仍OPEN，未Lean化 | [完整紙面證明與負控制](c5_excess_two_arc_pair_critical.md) |
+| E-ARC2 原分量共同限制 | 同一degree-4原分量的boundary重色至多涉及一個拒絕列；完整N2前提再接已採納N45-U，所有原分量刪除均全收，每個非root點至多接兩個相鄰框點，真core只能省一條root-spoke。63固定圖／13,010完整外部投影核對，目標0觸發；後續spoke與LL-CUT+diag涵蓋指定完整Σ契約的45／54及原55，較廣N2／E-ARC2 OPEN，未Lean化 | [證明、完整fibres與控制](c5_excess_two_arc_component_slack.md) |
+| E-ARC2 N2全部真核心排除 | 原leaf block必有私有root接點；無U的H二連通，同H兩次SD-A加雙star／diagonal排spoke core，含U接既有完整契約。全部非框邊刪除均全收，roots亦至多接相鄰兩框點，當輪只剩原55；後續LL-CUT+diag完成指定完整Σ契約九格覆蓋。63圖完整local fibres校準，目標0觸發，較廣N2／E-ARC2 OPEN，未Lean化 | [完整證明、契約覆蓋及控制](c5_excess_two_arc_spoke_closure.md) |
 | 933／941 的 excess／容量／跨度 | 兩候選均已證 ε≥2。唯一 degree-6 root 的 t=0、1、2、3 全部分拆均已作整型來源排除，T4 迫 t≤3，完成此 ε=2 分支。t=0 的 (6) 用飽和兩 K₄，(4,2) 用原 binary 路徑的同源框弧 K₅；若 ε=2，只剩兩個 degree-5 roots。任意大小紙面＋Python、未 Lean 化，一般來源保留 | [t=0 全分拆總報告](c5_excess_two_no_spoke_complete.md)、[t=3 全分拆總報告](c5_excess_two_three_spoke_complete.md)、[t=2 全分拆總報告](c5_excess_two_two_spoke_complete.md)、[t=1 全分拆總報告](c5_excess_two_single_spoke_complete.md)、[941 ε≥2](c5_941_three_spoke.md) |
 | 不依賴 ε 的盾弧預算與 hub 原則 | 任意 ε、任意 roots：one-sided 分量的支援是連續框弧、盾弧兩兩邊互斥；全圖至多兩份 unary，且 spokes／mixed 支援被限制在 2–3 個框點。短支援、K₄ 引理、二／三-hub K₅ 統一成 hub 原則，並推廣到 roots 同色的 mixed 分量。A₄ 殘留 U 支援紀錄 40／58→24／30，無整份 frame 排除。紙面＋Python，未 Lean 化 | [盾弧預算與 hub 原則](c5_unary_shield_budget.md) |
 | 雙 root 的 ε=2 收窄 | 相鄰 mixed 刪 roots／zw 全收；相鄰唯一 mixed 已全排 (4,4) 核心、五-spoke 原來源、四-spoke (3,1) 全部 incidence 分拆及 (2,2) 的 mixed-(1,1) 加各側一 unary 整個子型，含 root 交換。原47／75必要身份全部封閉；其他 (2,2) incidence、較少 spokes、單省略及原 (5,5) 核心保留。紙面＋Python，原Σ933／941來源的ε≥3下界未證，未 Lean 化 | [mixed-(1,1) 子型完成](c5_excess_two_mixed_core_four_spoke_disjoint_pairs.md)、[短框弧原拒絕列延拓](c5_excess_two_mixed_core_four_spoke_short_arc.md)、[原 crosscut 與 mixed hubs](c5_excess_two_mixed_core_four_spoke_crosscut.md)、[同一長 face 次序排除](c5_excess_two_mixed_core_four_spoke_long_face.md)、[原四接點 leaf-slack](c5_excess_two_mixed_core_four_spoke_quaternary.md)、[原三接點身份](c5_excess_two_mixed_core_four_spoke_ternary.md)、[binary 端點 hub](c5_excess_two_mixed_core_four_spoke_hubs.md) |
 | Kempe screen／邊位置對座標 | screen 等價於 20 條蘊涵，1,024 masks 已核對；未新增排除，一般 adjacent-singleton lemma 未證 | [screen](c5_kempe_screen.md)、[座標](c5_edge_pair_coordinates.md) |
-| 非相鄰N2的全部45／54真core身份 | 指定整U及全部spoke省略已排；含U逐項接回LOW／HIGH／LONG完整契約，無U由原leaf block、H二連通與兩次SD-A排除。BR四支、共同雙色引理及SF-QX／BASE／Gallai信任界保留；原55、N2外其他cores及一般N2／E仍OPEN，目標來源not triggered，無新Lean | [N45權威入口](c5_excess_two_nonadjacent_unit_core45.md)、[新完整覆蓋](c5_excess_two_arc_spoke_closure.md) |
+| 非相鄰N2的全部45／54真core身份 | 指定整U及全部spoke省略已排；含U逐項接回LOW／HIGH／LONG完整契約，無U由原leaf block、H二連通與兩次SD-A排除。BR四支、共同雙色引理及SF-QX／BASE／Gallai信任界保留；後續LL-CUT+diag完成指定完整Σ契約的原55覆蓋，N2外其他cores及一般N2／E仍OPEN，目標來源not triggered，無新Lean | [N45權威入口](c5_excess_two_nonadjacent_unit_core45.md)、[新完整覆蓋](c5_excess_two_arc_spoke_closure.md) |
 | 二連通單缺額工具與45／54適用性 | SD-A指定前提紙面查證通過；新N2接入已由同圖三列推得無U的H二連通，兩次用單缺額定理排該域所有spoke cores。一般非二連通／雙缺額55及R31不由SD-A解決，exact source controls未觸發，無新Lean | [精確定理](c5_degree5_interfaces.md#7-二連通單缺額查證與-4554-接入)、[N45接入](c5_excess_two_nonadjacent_unit_core45.md#214-e-arc2-接入全部-spoke4554-排除與原55化約) |
 | 循環流與計數 | 六維／153 支撐／十二循環；36 份基底覆蓋證三套分開整數 orbit 條件不再收緊恆等式解；未排除平面來源 | [循環流](c5_circulation.md) |
 | Count cone／class 計數 | near-triangulation 化約、部分 Lean 代數與 class 級紙面計數已有；cone／connectivity 缺口仍在 | [count cone](c5_count_cone_bridge.md)、[B₅ face](c5_b5_face.md)、[class 計數](c5_kempe_class_counts.md) |
@@ -69,13 +70,14 @@ U1的[M2獨立稽核](../audits/2026-10-07-m2-u1-audit/REPORT.md)已驗收指定
 | Cut／behavior | retained-component 重建有 Lean 支援；粗 cut 摘要有反例，有界 behavior 控制不證多步充分性 | [cut](c5_cut_interfaces.md)、[behavior](c5_behavior_refinement_results.md)、[state 導覽](c5_state_guide.md) |
 | 固定圖策略與 repair | survivor-811 固定閉包、必要低谷／回升與 B₂ 準備已保存；一般 K=4 策略、共同安全 repair 機制未證 | [barriers](c5_strategy_barriers.md)、[repair](c5_repair_interface.md) |
 | 閉環一致／零邊修復猜想 | 固定可延拓 C₅ 邊界，猜想任意 flat 標記可經內部 cut XOR、零邊數不增而修復；容許持平步，未初驗，不推出邊界可延拓或其他來源排除。驗證需完整不增轉移圖，不能只找一步下降 | [猜想 Z 與驗證計畫](c5_forcing_transport_conjectures.md)、[State 導覽](c5_state_guide.md) |
-| N2原55共同引理與下界衝突檢查 | 原55每欄Dᵘ+δ+o+λ=1，singleton mixed迫u=t=0，兩unary子族已排；後續含U及一long排除使九格八格有覆蓋。精確式H點數=35−6u−3t−Δ，有限下界10不與原上界直接衝突；兩long的joint／Δ義務仍缺，原55及E-ARC2 OPEN | [九格、共同證明及缺条件](c5_excess_two_n2_residual_unification.md) |
+| N2原55共同引理與下界衝突檢查 | 原55每欄容量為1，singleton與兩unary限制保留；後續LL-CUT+diag排最後雙long，指定完整Σ契約內九格全覆蓋。大小式與有限下界10仍無直接衝突，沒有以Δ排除；較廣N2／E-ARC2 OPEN | [九格、共同證明及父前提](c5_excess_two_n2_residual_unification.md) |
 | N2三列diagonal採納及long限定縮減 | unary接線2／3的無界block-tree證明及同列完整lifts經另人採納，排(0,1)，第三relation族原55全排。shared contact迫所有同色pins全接回；long接點總數≤3有一指定列(D,D)出口，排一long無U的該子域。當輪long殘留後由下列含U／一long排除收窄至(2,0)；97U及63整圖完整joins獨立重算，target not triggered，無新Lean | [採納、完整證明及殘餘](c5_excess_two_n2_diagonal_three_row.md) |
 | N2 long同步與葉接點tree | 兩long都k≤3全排；一long無U的全葉接點tree任意k排除；含U低接點mask精確Eq／Diff，異類同列接回。當輪七個同類必要模板已由下列統一規律一起排除；k4 path局部全拒diagonal反控制保留，父情形／E-ARC2仍OPEN，無新Lean | [新證明、獨立採納及完整fibres](c5_excess_two_n2_long_synchrony.md) |
 | N2原55的統一接口與禁色規律 | 相同具名接口分割給完整tuple雙射；三點支援任意k有四類mask，mixed完整表26代表、unary7代表。每份低接線U在三色框至多禁一個已用色，合原55容量排k_U=3及七個同步模板；當輪兩接線U residual已由下列全色Diff出口完整排除。紙面＋完整fibres校準，未Lean化，父N2／E-ARC2 OPEN | [統一證明與當輪剩餘合同](c5_excess_two_n2_partition_rule.md) |
 | N2原55含U子情形完成 | 任意大小兩接線U由原附件容量化約五形；Diff列拒絕唯一六點形有原K₅，故每個owner色均有完整lift。同列G−U實際ownerpin接回，排完整(1,1)，不限制long接線數；目標必u=0、H二連通。當輪(1,0) residual由下列排除；target not triggered，無新Lean，E-ARC2 OPEN | [完整證明、審查與重播](c5_excess_two_n2_unary_diff_closure.md) |
-| N2原55一long子分支完成 | 原框弧K₅排任意長leaf cycles；共同同色接回、leaf bridge minor與附件單射迫兩個四spoke配置；固定root後外側strict slack再接回完整L，排全部(1,0)。任意長度紙面＋獨立審查＋具名分割/full fibres校準，target not triggered，無新Lean；九格八格、只剩(2,0) | [來源排除、完整witnesses與checker](c5_excess_two_n2_one_long_closure.md) |
-| N2原55雙long共同容量接回 | 原碰色＋容量與leaf K₅排t=0／1；剩t=2／3、支援{3,3}或{3,4}的限定域，有效H≤29。LL-CUT每列至多九格，仍須共同原joint；完整fibres校準，target not triggered，無新Lean | [新證明、精確子命題與控制](c5_excess_two_n2_double_long_joint.md) |
+| N2原55一long子分支完成 | 原框弧K₅、leaf bridge附件單射及固定root完整接回排全部(1,0)；其當輪雙long殘留現由下列加強版排除。任意長度紙面＋獨立審查＋完整fibres，target not triggered，無新Lean | [來源排除、完整witnesses與checker](c5_excess_two_n2_one_long_closure.md) |
+| N2原55雙long共同容量接回 | 原碰色＋容量與leaf K₅排t=0／1；剩餘t=2／3已由下列LL-CUT+diag排除。本頁基本S與至多九格矩陣定理保留；target not triggered，無新Lean | [原定理、基本子命題與控制](c5_excess_two_n2_double_long_joint.md) |
+| N2原55同來源LL-CUT+diag | 原K₅-H／K₃,₃-O、leaf接線數及2≤行和≤1排全部剩餘spokes，完整原55(2,0)來源排除。基本LL-CUT未獨立證成；19,229必要共同可行投影保留。完整契約內九格全覆蓋，一般N2／E-ARC2 OPEN；無新Lean | [完整證明、父覆蓋與獨立checker](c5_excess_two_n2_ll_cut.md) |
 
 ## 3. 停止點與保留缺口
 
@@ -103,8 +105,10 @@ B的固定域重接控制亦已交付。[全內部五輪](c5_degree5_link_reduct
 [五份單對商圖](c5_w5_marked_relation.md) 已能以同圖、同色框的 full-lift 重數重建
 全部 H／G fibres；外框投影或各自成功的 witnesses 均不足。
 後續[三色支援與私人森林排除](c5_w5_three_color_support.md)把代表比較義務
-收窄為三色U的1,200個具名cells，且原最小來源的私人圖必含環。
-依來源挑選五商圖及額外加邊的正聯集亦已排除；下一步是對私人含環來源，
+收窄為三色U的1,200個具名cells；[私人單環排除](c5_w5_private_unicyclic.md)
+進一步證任取合法W5，原最小來源的私人圈秩至少二。環繞U的單環必要域可換
+只保完整Σ的r′=0 prism，嚴格減少7–10內點，不保R³。
+依來源挑選五商圖及額外加邊的正聯集亦已排除；下一步是對私人圈秩至少二的來源，
 構造同槽位、三色具名support相等且私人點r≤6的合法annulus代表，
 或取得其他保Σ縮減。一般r≤6代表仍未證，來源含環不限制代表必須含環。
 B固定域的1020項操作均不等價，不能據此排除一般縮減；其餘必要介面與重播
@@ -115,7 +119,11 @@ h≥3、n5≥9。原最後 `(4,4,5,4,5)` 的具名 C7 55列上界，受到同一
 延伸計數的 noncrossing 恆等式限制；外列 `01232` 的三個內列前像皆被迫
 計數為零。既有 fan cap 另證沒有任何合法 disk C7 完整關係包含於該上界。
 3,383 caps 與72個僅通過舊必要條件的抽象關係保留為反控制，沒有新增來源枚舉。
-下一個外圈缺口是 h≥3；普遍跨邊同步亦保留。
+同日 [C₈ 完整 transfer 與共同計數](../audits/2026-10-13-c8-joint-count-3097ef5/REPORT.md)
+已覆蓋 h=3 的70項查詢，普遍排除60項，保留933的2項、941的8項必要條件殘留。
+最終精確向量的正計數支援亦通過 Kempe 閉包；尚缺同一近三角化最小來源的
+度數、面配置及跨染色分量實現條件，不能提升下界。下一個外圈缺口是這
+10份具名殘留與更大h；普遍跨邊同步亦保留。
 跨邊方向的下一個窄義務是：在上述共同 H lift 或其固定外框 Kempe 軌道中，
 迫一對非相鄰 singleton 分量分離且至少一個避開原 B；一步交換便能補回中心。
 兩者至少九點與全內部 W5 尚未供應此條件；各邊自己的拒絕列 full lifts 不能直接合併。
@@ -135,14 +143,14 @@ E3＋D₈ 已排唯一 degree-6，故證明工作集中於雙 degree-5；下列 
 兩個相鄰框點，真core只剩單root-spoke省略。
 再由[末端block與spoke共同排除](c5_excess_two_arc_spoke_closure.md)，完整N2的45／54
 真cores全排；每條非框邊刪除全收，連roots在內每點至多接兩個相鄰框點。
-**下一步只處理這個N2域的原55共同矛盾**：每個拒絕列都以有效原G作minimal core；
+**這個完整N2契約的原55共同矛盾已由下列LL-CUT+diag完成**：每個拒絕列都以有效原G作minimal core；
 後續[原55大小界](c5_excess_two_arc_size_bound.md)已證H是中央block加至多兩個root葉blocks，
 全H內度二點至多五個，所有原C為bridges／奇環cactus，且`|H|≤35−6u−3t`。
 u=0／1／2時至多35／29／23內點；這是原圖必要界，尚未排除界內來源。
 後續[N2殘餘統一](c5_excess_two_n2_residual_unification.md)以共同三-hub排兩unary，故u≤1；
 singleton mixed只能在u=t=0。原55每欄仍有一單位容量；精確大小式保留Δ，
 已知有限下界10沒有直接衝突。當輪含long的三個參數情形，
-已由後續收窄至下列(2,0)；其同列完整joint或Δ門檻仍缺，未搜尋10–35內點。
+當時收窄至下列(2,0)，現以同列完整joint排除；未證新Δ門檻，未搜尋10–35內點。
 其中(0,1)已由[三列diagonal獨立採納](c5_excess_two_n2_diagonal_three_row.md)排除，
 當輪剩(2,0)、(1,0)、(1,1)，其中(1,1)已由下述全色Diff出口涵蓋。
 [long同步新化約](c5_excess_two_n2_long_synchrony.md)
@@ -154,17 +162,16 @@ singleton mixed只能在u=t=0。原55每欄仍有一單位容量；精確大小�
 再由[一long末端block與固定root接回](c5_excess_two_n2_one_long_closure.md)，
 任意長leaf cycle由原框弧K₅排除；leaf bridges迫兩種四spoke必要配置，
 固定root後完整外側染色與L碰色slack給同列全圖矛盾，關閉完整(1,0)。
-**目前完整目標只剩u=0、H二連通的(2,0)，九格八格已有覆蓋。下一窄義務：
-在同一原H與同列完整fibres中，取得兩long的共同joint或原來源矛盾。**
-[雙long共同容量接回](c5_excess_two_n2_double_long_joint.md)已排 t=0／1；
-剩支援大小 `{3,3}`、t=2／3，或 `{3,4}`、t=2，至少一份k≥4，有效H≤29。
-下一窄子命題 LL-CUT 要求至少一個指定列的原碰色／shared接受cells，
-使共同容量矩陣不可行；剩餘每列至多九格，不能將可行矩陣誤當來源或拒絕證書。
-四點支援仍須完整具名分割，不能套三點弧兩位元。四接點path局部三列全拒
-反控制保留，但其完整off-diagonal可接回；該精確path與另一long另有原K₃,₃。
-其餘仍須同一列接回全部pieces，不能把不同列的lifts拼接。
+**[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)現排全部完整原55(2,0)，
+指定完整Σ契約內九格全覆蓋。** 既有t=0／1與新t=2／3證明相接；
+原leaf K₅／K₃,₃排除失敗diagonal的cycle接點型，leaf接線容量及最後2≤行和≤1
+给同列完整joint。基本LL-CUT機制未獨立證成；19,229份共同可行投影及64,408份
+contact介面組合保留，不能當作原圖實現或反例。若續研基本機制，可檢驗新報告的
+BASIC-11-SAME-SITE弱化結構子命題；它已非完整原55來源排除的必要缺口。
+四點支援未套三點弧兩位元；既有雙diagonal拒、off-diagonal接回控制及原K₃,₃
+完整保存。所有新接回仍在同列、同pins取兩份完整原lifts。
 SD-A只有單缺額，不能直接用於這份双degree5原G。N1、相鄰及單-root例外仍各保留。
-目前仍缺同一來源的完整跨列 joint 矛盾，未取得整個 E-ARC2 的來源排除；
+較廣三列N2的前提不能自動提升為完整Σ，未取得整個 E-ARC2 的來源排除；
 N2外45／54、原55及單-root例外不因此改為 CLOSED。
 不使用指定三列拒絕前提的新共用引理須保留可實現的 ε=2、Σ=951／935 控制；
 只證局部必要條件不算完成主目標。
@@ -174,8 +181,8 @@ N2外45／54、原55及單-root例外不因此改為 CLOSED。
 45／54入口須先核原unit省略身份與mixed支援下界，再核同一pins的完整joint；
 U4的44專用下界不能直接搬用。一般化候選未證成新的來源排除，以下分支狀態保持。
 
-**目前停止點（2026-10-11）：固定完整Σ933／941下兩-root44身份已全排；完整N2的45／54亦全排，
-只剩原55。N2外的45／54、單-root例外及一般N2／E仍OPEN，原Σ933／941來源的ε≥3下界未證。**
+**目前停止點（2026-10-13）：固定完整Σ933／941的指定N2契約內，兩-root44、45／54及原55均有覆蓋。
+N2外的45／54、單-root例外及較廣N2／E仍OPEN，原Σ933／941來源的ε≥3下界未證。**
 U4的原mixed11省略身份由原盾弧／star收窄、保留root的任意長run化約與
 828份標記核心完整接回全排；3,312份三色列同座標容量碰撞均經獨立重算。
 無44 core的來源、單-root例外與N2外45／54、原55 cores保留。
@@ -226,7 +233,8 @@ E3 的三列推廣不能直接復用部分精確 Σ 證書；E5／E6 在精確 9
 [E4完整原relation介面](../artifacts/c5_excess_two_e4/REPORT.md#6-完整原-relation-的參數化交付與-core-身份)。
 原工作先固定spoke或capacity-one unary省略、完整mixed／附件／盾弧與空fibres，
 分開G的Σ-criticality與core的q-minimality。此完整N2的45／54義務現由
-[spoke共同排除](c5_excess_two_arc_spoke_closure.md)收尾；下一步是原55，單-root例外另保留。
+[spoke共同排除](c5_excess_two_arc_spoke_closure.md)收尾；當輪原55缺口現由
+[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)完成指定完整Σ契約的覆蓋，單-root例外另保留。
 U4三色列相等不推升成全部十列Σ相等，1018控制界線保留。
 
 下列N45／SD-A／BR批次保留各輪採納及當時OPEN語境；目前完整N2的45／54覆蓋以
@@ -325,7 +333,7 @@ r 對 S 至少兩個原 contacts 即矛盾；旁支數／位置、三環形狀�
 上列「多旁支／其他形狀 OPEN」扣除這個完整域；剩餘須按單 r-contact、多個 s-contacts、
 未證雙色 lists／其他出口及更廣父身份區分。任意大小紙面＋外部 Gallai，無新有限來源或 Lean，E 仍 OPEN。
 該共用引理當輪保留一般非二連通來源及其他cores；後續N2 exact-S已由[N45§2.14](c5_excess_two_nonadjacent_unit_core45.md#214-e-arc2-接入全部-spoke4554-排除與原55化約)涵蓋，
-原55、N2外其他core及一般N2／E仍保留，未執行新來源搜尋。
+指定完整Σ契約的原55再由[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)覆蓋；N2外其他core及一般N2／E仍保留，未執行新來源搜尋。
 原[HIGH2派工](history/2026-10-10-n45-high1-adoption.md)保留當輪語境；
 兩支的採納／finding／完整tree與custody界線見[本輪紀錄](history/2026-10-10-n45-high23-adoption.md)。
 來源paper依BASE／外部Gallai，無新finite來源或Lean，其他cores／一般N2／E仍OPEN，傳播停止L2。

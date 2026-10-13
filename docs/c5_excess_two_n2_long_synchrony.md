@@ -1,5 +1,9 @@
 # N2 原55：long 同列同步與葉接點 tree 化約
 
+**後續（2026-10-13，BASE 3097ef5）**：[同來源 LL-CUT+diag](c5_excess_two_n2_ll_cut.md)
+已排指定完整Σ契約的最後 `(2,0)`，九格全覆蓋；基本LL-CUT、較廣N2／E-ARC2仍OPEN。
+下文保留原輪證明、有限控制及停止點。
+
 **雙 long 後續（2026-10-13）**：[共同容量接回](c5_excess_two_n2_double_long_joint.md)
 排完整 `(2,0)` 的 t=0／1 root-spokes；剩支援 `{3,3}` 的 t=2／3，
 或 `{3,4}` 的 t=2。下一充分子命題 LL-CUT 每列至多九格；完整分支仍 OPEN。

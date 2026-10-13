@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py", line 303, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py", line 292, in main
+    result = verify(json.loads(raw))
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py", line 253, in verify
+    check_row_source(actual, source_row(p, g, i))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py", line 58, in check_row_source
+    require(actual[key] == value, 'source-derived ' + key + ' mismatch')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-n2-ll-cut-3097ef5/checker.py", line 26, in require
+    raise ValueError(message)
+ValueError: source-derived row_bounds mismatch

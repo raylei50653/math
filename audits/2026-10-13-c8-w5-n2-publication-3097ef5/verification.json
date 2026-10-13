@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-13",
+  "base": "3097ef5be241b7777451a5ef8a663f3987d6b866",
+  "scope": "Publication validation of the connected C8, W5 private-unicyclic and N2 LL-CUT+diag bundles; paper, external dependencies, finite controls and Lean remain separate.",
+  "focused_receipts": [
+    "logs/c8-verify.log",
+    "logs/c8-negative-controls.log",
+    "w5/receipt.json",
+    "n2/receipt.json"
+  ],
+  "c8": {
+    "commands": [
+      {
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-13-c8-joint-count-3097ef5/verify.py",
+          "--check"
+        ],
+        "returncode": 0,
+        "log": "logs/c8-verify.log"
+      },
+      {
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-13-c8-joint-count-3097ef5/counts/negative_controls.py"
+        ],
+        "returncode": 0,
+        "log": "logs/c8-negative-controls.log"
+      }
+    ],
+    "frozen_base_files": 12,
+    "manifest_payload_files": 53,
+    "named_collars": 35,
+    "queries": 70,
+    "transfer_kempe_excluded": 57,
+    "joint_count_excluded": 3,
+    "necessary_condition_residues": 10,
+    "fresh_check_scope": "Umbrella exact checks, saved normal/seed17 equality and specified count negative controls; no broad source enumeration."
+  },
+  "lean_regression": {
+    "command": [
+      "lake",
+      "build"
+    ],
+    "returncode": 0,
+    "jobs": 8831,
+    "log": "logs/lake-build.log",
+    "new_lean_theorems": false
+  },
+  "storage_tests": {
+    "command": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "returncode": 0,
+    "tests": 56,
+    "log": "logs/storage-tests.log"
+  },
+  "not_rerun": [
+    "Broad source graph enumeration",
+    "All historical artifact producers",
+    "External literature computations",
+    "New Lean formalization"
+  ],
+  "remote_ci_claimed": false,
+  "documentation": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "returncode": 0,
+      "markdown_files": 646,
+      "local_links": 8076,
+      "log": "logs/check-docs.log"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "returncode": 0,
+      "documents": 62,
+      "relations": 213,
+      "errors": 0,
+      "log": "logs/docgraph-formal.log"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "returncode": 1,
+      "errors": 62,
+      "reason": "Retained frozen copies and scratch duplicate IDs; formal docs check separately passes.",
+      "log": "logs/docgraph-global.log"
+    }
+  ],
+  "staged_storage_policy": {
+    "command": [
+      "python3",
+      "-B",
+      "tools/check_generated_artifacts.py"
+    ],
+    "returncode": 0,
+    "log": "logs/generated-artifacts.log"
+  },
+  "custody": "custody.json",
+  "git_whitespace": {
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "returncode": 0
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "checks": [
+    {
+      "label": "check-docs-final",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 1
+    },
+    {
+      "label": "docgraph-final",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0
+    },
+    {
+      "label": "diff-final",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "initial_failures_retained": "verification.json",
+  "all_passed": false
+}

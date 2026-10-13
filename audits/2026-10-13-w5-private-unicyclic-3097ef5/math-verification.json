@@ -1,0 +1,67 @@
+{
+  "kernel_normal_seed17_output_identical": true,
+  "phase": "math",
+  "records": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/check.py",
+        "--check"
+      ],
+      "env": {},
+      "exit_code": 0,
+      "log": "logs/kernel-normal.log",
+      "log_sha256": "06e17d5bc5c58037f12e1a794b4789e1cf1f80533757f8258a41cabd25ef7ffa",
+      "name": "kernel-normal",
+      "seconds": 15.08
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/check.py",
+        "--check"
+      ],
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "log": "logs/kernel-seed17.log",
+      "log_sha256": "06e17d5bc5c58037f12e1a794b4789e1cf1f80533757f8258a41cabd25ef7ffa",
+      "name": "kernel-seed17",
+      "seconds": 14.989
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/strength.py",
+        "--check"
+      ],
+      "env": {},
+      "exit_code": 0,
+      "log": "logs/strength-normal.log",
+      "log_sha256": "daeb9fc8a6237028c7ee57cd8b0cc5fccf9fa4d3c1d89a84e6c5dea6fa99b5c0",
+      "name": "strength-normal",
+      "seconds": 0.088
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/strength.py",
+        "--check"
+      ],
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "log": "logs/strength-seed17.log",
+      "log_sha256": "daeb9fc8a6237028c7ee57cd8b0cc5fccf9fa4d3c1d89a84e6c5dea6fa99b5c0",
+      "name": "strength-seed17",
+      "seconds": 0.088
+    }
+  ],
+  "strength_normal_seed17_output_identical": true
+}

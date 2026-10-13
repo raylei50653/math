@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/check.py", line 236, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/check.py", line 232, in main
+    run(p.parse_args())
+    ~~~^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/check.py", line 190, in run
+    accept(g)
+    ~~~~~~^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-13-w5-private-unicyclic-3097ef5/controls/check.py", line 184, in accept
+    assert stream.readline() == data, 'certificate mismatch: '+str(record.get('key', 'header'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: certificate mismatch: BBDDDUU

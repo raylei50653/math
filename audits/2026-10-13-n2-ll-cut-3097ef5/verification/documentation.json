@@ -1,0 +1,51 @@
+{
+  "checks": [
+    {
+      "label": "docs",
+      "args": {
+        "cmd": "python3 -B scripts/check_docs.py",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 3000
+      },
+      "result": {
+        "chunk_id": "c05bbd",
+        "wall_time_seconds": 0.576675589,
+        "exit_code": 0,
+        "original_token_count": 19,
+        "output": "OK: 645 Markdown files, 8046 local links; anchors, index, handoff checked\n"
+      }
+    },
+    {
+      "label": "formal_docgraph",
+      "args": {
+        "cmd": "python3 -B tools/docgraph --include 'docs/**/*.md' check",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 3000
+      },
+      "result": {
+        "chunk_id": "3ed31d",
+        "wall_time_seconds": 0.12976326,
+        "exit_code": 0,
+        "original_token_count": 16,
+        "output": "OK: 62 documents, 213 relations, 5 families; 0 errors, 0 notes\n"
+      }
+    },
+    {
+      "label": "diff",
+      "args": {
+        "cmd": "git diff --check",
+        "max_output_tokens": 1000
+      },
+      "result": {
+        "chunk_id": "225ba7",
+        "wall_time_seconds": 0.00001024,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    }
+  ],
+  "status": "passed",
+  "scope": "Full check_docs and docs-only DocGraph; no whole-tree duplicate-ID cleanup",
+  "Lean_build": "not run; no Lean changes"
+}

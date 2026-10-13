@@ -1,5 +1,9 @@
 # E-ARC2：原55的 block 骨架與35內點上界
 
+**後續（2026-10-13）**：[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)已排指定完整Σ契約的
+原55最後雙long，九格全覆蓋；基本LL-CUT、較廣N2／E-ARC2仍OPEN。
+下文保留原輪大小界、控制及OPEN語境，沒有新增Δ門檻。
+
 2026-10-11，工作樹 HEAD `f428f6be3ee1eb59e3cb0b356239c4f16c4a6444`。
 接續未提交的[完整N2真核心排除](c5_excess_two_arc_spoke_closure.md)；
 目前停止點見 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)。

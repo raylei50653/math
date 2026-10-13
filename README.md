@@ -14,7 +14,7 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [Phase B 共通引理候選分析](docs/c5_phase_b_common_lemmas.md) | U1–U4／Weak-deletion、Excess／Mixed／No-mixed、Relation／Repair／State 的精確候選、前提、反例、證明義務與分支效益；條件容量推廣與小型重播 |
 | [C₅ class 兩點重疊](docs/c5_two_vertex_overlap_guide.md) | 具名八點接合、拓撲、混合外框與關係修復；現況、停止點及重播入口 |
 | [Degree-5／R 系列](docs/c5_degree5_guide.md) | 二連通單缺額定理已完成紙面查證；45／54 的適用性須核實際 core 前提，R31／一般三環及完整來源分類保留 |
-| [猜想 E／ε=2 三點弧主攻入口](docs/c5_kempe_guide.md) | 原域 1≤\|Q\|≤4；ε≤1 已證、ε≥3 自動滿足，完整 E 剩下 ε=2 三點弧。完整N2的45／54真核心及原55含U子情形已排；目標只剩無U、H二連通、有效內點≤35的兩個long情形，原55與一般E仍OPEN |
+| [猜想 E／ε=2 三點弧主攻入口](docs/c5_kempe_guide.md) | 原域 1≤\|Q\|≤4；ε≤1 已證、ε≥3 自動滿足，完整 E 剩下 ε=2 三點弧。指定完整Σ契約內的N2 45／54及原55已全覆蓋；雙long採納LL-CUT+diag，基本LL-CUT、較廣N2及一般E仍OPEN |
 | [ε=2 有限搜尋與雙實作對照](docs/c5_excess_two_independent_search.md) | ES／ER 三種 root 型 k≤9 的 q／critical orbit 集合逐層一致，共179個 critical orbits，無猜想 E 反例；[LC](docs/c5_excess_two_lean_certificates.md) 提供179／179個 Lean soundness 證書，有限完整性與任意大小定理分開 |
 | [No-mixed 實驗總覽](docs/c5_no_mixed_span_budget.md) | 十五類證據總表、共同跨度結構及推廣界線 |
 | [No-mixed 搬運與介面驗證](docs/c5_no_mixed_hypothesis_audit.md) | 逐 root 不可搬運界、精確接合介面與守恆禁色的證據界線 |

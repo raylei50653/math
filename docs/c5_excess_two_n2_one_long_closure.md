@@ -1,5 +1,9 @@
 # N2 原55：一 long 的末端 block 與固定 root 接回
 
+**後續（2026-10-13，BASE 3097ef5）**：[同來源 LL-CUT+diag](c5_excess_two_n2_ll_cut.md)
+已排指定完整Σ契約的最後 `(2,0)`，九格全覆蓋；基本LL-CUT、較廣N2／E-ARC2仍OPEN。
+下文保留原輪證明、有限控制及停止點。
+
 2026-10-13。基準 `19209f4cf68261fdce5e84a7804cfe04ae0957bf`；
 [BASE](../audits/2026-10-13-n2-one-long/BASE.json)保存十九份原輸入及 SHA。
 目前入口見 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)。

@@ -1,0 +1,74 @@
+{
+  "base": "3097ef5be241b7777451a5ef8a663f3987d6b866",
+  "records": [
+    {
+      "command": "python3 -B audits/2026-10-13-w5-three-support-19209f4c/forest/check.py --check",
+      "exit_code": 0,
+      "mode": "read-only replay"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-13-w5-three-support-19209f4c/forest/check.py --check",
+      "exit_code": 0,
+      "mode": "read-only replay"
+    },
+    {
+      "command": "python3 -B audits/2026-10-13-w5-three-support-19209f4c/t1/forest_independent.py",
+      "exit_code": 0,
+      "mode": "read-only replay"
+    },
+    {
+      "command": "python3 -B audits/2026-10-13-w5-three-support-19209f4c/t1/check.py",
+      "exit_code": 0,
+      "mode": "read-only replay"
+    },
+    {
+      "command": "python3 -B audits/2026-10-13-w5-three-support-19209f4c/representatives/check.py --check",
+      "exit_code": 0,
+      "mode": "read-only replay"
+    },
+    {
+      "command": "python3 -B audits/2026-10-13-w5-three-support-19209f4c/conditional/check.py --check",
+      "exit_code": 0,
+      "mode": "read-only replay"
+    },
+    {
+      "command": "python3 -B audits/2026-10-13-w5-three-color-support-19209f4c/controls/check_three_color_support.py --check",
+      "exit_code": 0,
+      "mode": "read-only replay"
+    },
+    {
+      "command": "python3 -B audits/2026-10-13-w5-three-color-support-19209f4c/review/independent_check.py",
+      "exit_code": 0,
+      "mode": "read-only replay"
+    }
+  ],
+  "forest": {
+    "templates": 70,
+    "cells": 716800,
+    "empty_cells": 701956,
+    "H_lifts": 18282,
+    "G_lifts": 9308,
+    "masks": {
+      "1023": 70
+    },
+    "seed17": "both runs compared complete decompressed generated certificate bytes to the same frozen bytes",
+    "independent": "exact edges and all H/G lifts recomputed with fixed-order DFS"
+  },
+  "minimal_933_941_source": "not triggered",
+  "new_Lean_theorem": false,
+  "old_audits_modified": false,
+  "three_color_support": {
+    "graphs": 34,
+    "cells": 348160,
+    "empty_cells": 345580,
+    "H_lifts": 3250,
+    "G_lifts": 1620,
+    "R3_nonempty_cells": 1280,
+    "primary_certificate_sha256": "58b0de5c450f00fdbb7b089c53a6ae1f2ee9b6a6f0f4646c34fbea1cfec4bf0e",
+    "independently_enumerated_literal_rows": 480,
+    "supplementary_graphs": 2,
+    "supplementary_cells": 20480,
+    "same_Sigma_different_R3": "triggered and holds as counterexample to implication",
+    "same_R3_different_multiplicity": "triggered and holds as counterexample to implication"
+  }
+}

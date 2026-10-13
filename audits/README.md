@@ -97,3 +97,11 @@ N45的還原順序仍是先執行主 `tools/audit_archive.py restore --artifacts
 7個blobs，新增684,507 compressed bytes；舊ARCHIVE records不改。
 新checkout先執行上述restore指令，再重播各包checker；詳細採納範圍、
 目前OPEN界線與本次實際核對見[發布紀錄](../docs/history/2026-10-13-progress-publish.md)。
+
+## 2026-10-13 C₈、W5私人單環及N2 LL-CUT+diag發布
+
+三份原隔離包共828個非快取檔案保持原bytes、frozen輸入與歷史驗證。
+本批僅追加7個大型路徑、6個blobs，新增8,145,402 compressed bytes；
+原2465個路徑及1534個blob records保持。新checkout使用上面的restore指令，
+再重播各包checker；精確採納域及[本次發布核對](2026-10-13-c8-w5-n2-publication-3097ef5/REPORT.md)
+見[整理紀錄](../docs/history/2026-10-13-c8-w5-n2-publish.md)。

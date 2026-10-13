@@ -1,5 +1,9 @@
 # N2 原55：兩接線 unary 的全色出口與含 U 子情形排除
 
+**後續（2026-10-13，BASE 3097ef5）**：[同來源 LL-CUT+diag](c5_excess_two_n2_ll_cut.md)
+已排指定完整Σ契約的最後 `(2,0)`，九格全覆蓋；基本LL-CUT、較廣N2／E-ARC2仍OPEN。
+下文保留原輪證明、有限控制及停止點。
+
 **最新後續（2026-10-13）**：[一long來源排除](c5_excess_two_n2_one_long_closure.md)
 以任意長末端block的原K₅及固定root完整外側接回，關閉完整原55 `(1,0)`。
 合既有含U覆蓋，九格八格、完整目標只剩 `(2,0)`；父N2／E-ARC2仍OPEN。

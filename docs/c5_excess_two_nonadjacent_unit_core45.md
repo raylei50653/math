@@ -1,6 +1,6 @@
 # N45：非相鄰 N2 原 unit 省略的 45／54 身份
 
-更新：2026-10-11（完整N2的45／54全排；§2.17一U兩short原55已採納，後續long同步／tree限定排除；含long父情形及E-ARC2 OPEN）；
+更新：2026-10-13（完整N2的45／54全排；指定完整Σ契約的原55由LL-CUT+diag完成九格覆蓋，較廣N2及E-ARC2 OPEN）；
 原研究 BASE `dc8e9aa7d6fccb51f63d30aa3f9c132296d44744`，既有 N45 驗收 BASE
 `f2692089ad4259808e27d9b7e882ac09505b180a`；BR-SD-1b 採納基準為
 `fc3d3d8b4c5b8e6378268edb5cd3f04b50940b5a`；BR-SD-1d 採納基準為
@@ -18,7 +18,8 @@
 exact-S root-spoke身份，連同既有exact-U，完整N2目標前提的45／54真cores已全排。
 每條非框邊刪除全收，所有拒絕列只剩原G自身55（忽略自由孤立因子）。
 後續[原55大小界](c5_excess_two_arc_size_bound.md)證`|H|≤35−6u−3t`，見§2.15。
-原55、一般N2來源排除及E-ARC2仍OPEN；新論證未Lean化，有限目標來源仍未觸發。
+後續[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)已完成指定完整Σ契約的原55九格覆蓋；
+契約外原55、一般N2及E-ARC2仍OPEN。新論證未Lean化，有限目標仍not triggered。
 以下歷次採納及其當時限定範圍保留，目前缺口以§3為準。
 第二批 [PG](../audits/2026-10-09-n45-pg/REPORT.md)、
 [PR](../audits/2026-10-09-n45-pr/REPORT.md)、[PC](../audits/2026-10-09-n45-pc/REPORT.md)
@@ -824,7 +825,7 @@ slack，完整外側染色再接回L，排除兩型。沒有內部長度cutoff�
 
 ## 3. 精確 OPEN 與下一個窄分支
 
-**完整§1的45／54真core身份已全排；N2本身仍OPEN。**
+**完整§1的45／54真core身份已全排；指定完整Σ契約的原55亦由後續涵蓋，較廣N2仍OPEN。**
 §2.2排整U，§2.14排全部原root-spoke；§2.13已使兩種身份窮盡完整N2的真cores。
 所有拒絕列只能以原G自己作55 minimal core（忽略自由孤立因子），
 每條原非框邊刪除全收，連roots在內每點至多接兩個相鄰框點。
@@ -837,14 +838,14 @@ H原為中央block加至多兩個root葉blocks；§2.18已排完整目標全部�
 | §1 exact-U及exact-S；完整N2目標契約的全部45／54真cores | 紙面排除完成；既有採納＋§2.14新共同證明，未Lean化 |
 | N45-S-NOU-LS-PAIR、無U兩long及其原split／旁支子型 | 作為§1 exact-S均由§2.14涵蓋；不再以一般非二連通形狀列為此域存活理由 |
 | BR-SD-1a／1c／1e／1g、雙色唯一缺口 | 原限定採納／任意大小共同引理保留；封存bytes及當時OPEN語境不改 |
-| 原55，沒有45／54的N2來源 | OPEN；§2.18已使u=0、H二連通，§2.19排(1,0)；只剩(2,0)的同列joint或原來源矛盾，九格八格覆蓋 |
+| 指定完整Σ契約的原55，沒有45／54的N2來源 | §2.18排含U、§2.19排(1,0)，後續[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)排最後(2,0)，九格全覆蓋；基本LL-CUT未獨立證成 |
 | N1、相鄰、單-root例外及N2契約外其他45／54 | 本輪未涵蓋 |
 | 一般degree5／R31任意長來源minor | OPEN；本輪N2排除不補該一般minor路線 |
 | 一般N2／E-ARC2、一般單側／共同出口、主命題及K∞=K≤5 | OPEN |
 
-下一個窄義務見[Kempe導覽§3](c5_kempe_guide.md#3-停止點與保留缺口)：
-無U的兩long至少一份k≥4，仍須同列完整joint或足夠Δ門檻；
-含U的(1,1)已由§2.18、一long的(1,0)已由§2.19完整排除。
+目前較廣缺口見[Kempe導覽§3](c5_kempe_guide.md#3-停止點與保留缺口)：
+只指定三列的較廣N2不能自動提升為完整Σ契約；契約外來源與E-ARC2仍OPEN。
+原雙long的同列joint已由LL-CUT+diag完成，沒有新增Δ門檻；基本LL-CUT仍可另行研究。
 未搜尋10–35內點，不能把SD-A直接套到雙degree5的G，亦不能先假設三點弧取得缺條件。
 §2.11的歷史block-chain缺口及B適用性表不再是本頁完整N2 exact-S的存活清單；
 它們在一般degree5／其他來源合同中的方法義務仍由
