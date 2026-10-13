@@ -1,0 +1,84 @@
+{
+  "schema": "c8-apex-verification-v1",
+  "checks": [
+    {
+      "name": "check",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-apex-degree-45bc1c3/check.py",
+        "--check"
+      ],
+      "environment_overrides": {},
+      "returncode": 0,
+      "stdout": "check.stdout",
+      "stderr": "check.stderr"
+    },
+    {
+      "name": "check.seed17",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-apex-degree-45bc1c3/check.py",
+        "--check"
+      ],
+      "environment_overrides": {
+        "PYTHONHASHSEED": "17"
+      },
+      "returncode": 0,
+      "stdout": "check.seed17.stdout",
+      "stderr": "check.seed17.stderr"
+    },
+    {
+      "name": "controls",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-apex-degree-45bc1c3/controls.py"
+      ],
+      "environment_overrides": {},
+      "returncode": 0,
+      "stdout": "controls.stdout",
+      "stderr": "controls.stderr"
+    },
+    {
+      "name": "review.support",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-apex-degree-45bc1c3/review/check_support.py"
+      ],
+      "environment_overrides": {},
+      "returncode": 0,
+      "stdout": "review.support.stdout",
+      "stderr": "review.support.stderr"
+    },
+    {
+      "name": "review.dual-c04",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-apex-degree-45bc1c3/review/check_dual.py",
+        "dual-c04-a1.json"
+      ],
+      "environment_overrides": {},
+      "returncode": 0,
+      "stdout": "review.dual-c04.stdout",
+      "stderr": "review.dual-c04.stderr"
+    },
+    {
+      "name": "review.dual-c07",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-13-c8-apex-degree-45bc1c3/review/check_dual.py",
+        "dual-c07-a4.json"
+      ],
+      "environment_overrides": {},
+      "returncode": 0,
+      "stdout": "review.dual-c07.stdout",
+      "stderr": "review.dual-c07.stderr"
+    }
+  ],
+  "all_pass": true
+}

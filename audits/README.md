@@ -1,6 +1,10 @@
 # 稽核封存與還原
 
-2026-10-13 最新整理：[廣義N2、W5私人雙環及C₈來源結構發布](../docs/history/2026-10-13-n2-rank2-c8-publish.md)。
+2026-10-13 最新整理：[W5圈秩三環繞排除與C₈ apex度數](../docs/history/2026-10-13-w5-rank3-c8-apex-publish.md)。
+兩份原包75個非快取檔案保持原bytes；追加3個路徑、3個gzip blobs，
+新增6,288,444 compressed bytes，舊records不變。新checkout仍使用下方restore指令。
+
+2026-10-13 前次整理：[廣義N2、W5私人雙環及C₈來源結構發布](../docs/history/2026-10-13-n2-rank2-c8-publish.md)。
 三份原包共390個非快取檔案保持原bytes；本次僅追加7個大型路徑、3個gzip
 blobs與3,743,086 compressed bytes，舊ARCHIVE records不改。
 新checkout仍使用下面的restore指令；數學範圍及本次實際核對見發布紀錄。

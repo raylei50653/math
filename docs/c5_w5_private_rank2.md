@@ -7,6 +7,10 @@
 本次整理及原證據保存見[發布紀錄](history/2026-10-13-n2-rank2-c8-publish.md)。
 目前停止點由 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)維護。
 
+2026-10-13 後續：[圈秩三 essential 排除](c5_w5_private_rank3_essential.md)
+已證私人圖若含環繞 U 的環則圈秩至少四；圈秩三只留 contractible、7≤r≤11。
+一般私人圈秩下界仍為三。
+
 **在全部目錄外 disk-C5 圖中先最小化內點、再最大化邊數的完整來源前提下，
 任取合法全內部 induced W5，原外框為 B，輪中心為 v、原循環鄰點為 U，
 令 k 為 G 的內點數、P=V(G)\(B∪U∪{v})、r=|P|=k−6，則 ρ(G[P])≥3。**
@@ -51,6 +55,6 @@ python3 -B audits/2026-10-13-w5-rank2-243a125/controls/negative.py --check
 ```
 
 真正最小 933／941 來源仍為 **not triggered**；排除由紙面完備化約與有限完整
-核心承擔，零觸發不作來源排除。圈秩二域沒有殘留；下一個最小義務是 ρ=3 的
-完整結構分類與保 Σ 嚴格縮減。一般 ρ≥3 的縮減、r≤6 代表、R³ 代表及
+核心承擔，零觸發不作來源排除。圈秩二域沒有殘留；後續已排除 ρ=3 的 essential 分支，
+剩餘最小義務是 contractible ρ=3 的完整結構分類與保 Σ 嚴格縮減。一般 ρ≥3 的縮減、r≤6 代表、R³ 代表及
 `K∞=K≤5` 仍 **OPEN**。新 checkout 先依[封存說明](../audits/README.md)還原。

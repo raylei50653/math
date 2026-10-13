@@ -1,0 +1,38 @@
+{
+  "manifest_files": 39,
+  "base_inputs": 7,
+  "base": "45bc1c3dc9dacaee1b10df9d64f1c6a27bb0e954",
+  "sealed_audit_unchanged": true,
+  "checks": [
+    {
+      "name": "check",
+      "returncode": 0,
+      "stdout": "PASS: 40 conditional apex-degree3 exclusions (38 support, 2 exact count duals); h=3 implies at least 14 original inner vertices.\n",
+      "stderr": ""
+    },
+    {
+      "name": "review-support",
+      "returncode": 0,
+      "stdout": "{\"degree3_triples_per_position\": [31, 31, 31, 31, 31, 31, 31, 31], \"hypotheses\": 40, \"residual\": [{\"apex\": \"a1\", \"iterations\": 2, \"missing\": [], \"query\": \"c04-941\", \"remaining\": 184}, {\"apex\": \"a4\", \"iterations\": 2, \"missing\": [], \"query\": \"c07-941\", \"remaining\": 184}], \"status\": \"PASS\", \"support_exclusions\": 38}\n",
+      "stderr": ""
+    },
+    {
+      "name": "review-dual-c04",
+      "returncode": 0,
+      "stdout": "{\"allowed_orbits\": 418, \"apex\": \"a1\", \"degree3_triples\": 31, \"exact_span_coordinates\": 91, \"literal_contexts\": 732, \"minimum_dual_on_allowed_orbits\": \"0\", \"query\": \"c04-941\", \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "review-dual-c07",
+      "returncode": 0,
+      "stdout": "{\"allowed_orbits\": 418, \"apex\": \"a4\", \"degree3_triples\": 31, \"exact_span_coordinates\": 91, \"literal_contexts\": 732, \"minimum_dual_on_allowed_orbits\": \"0\", \"query\": \"c07-941\", \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "controls-in-temporary-copy",
+      "returncode": 0,
+      "stdout": "PASS: literal W8 calibration, degree4 weakened-claim counterexample, 3 certificate negative controls\n",
+      "stderr": ""
+    }
+  ]
+}

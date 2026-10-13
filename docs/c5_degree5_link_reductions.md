@@ -60,7 +60,8 @@ annulus 拓撲及同一外部圖的完整 J_p(B,U)，含全部空 cells 與 full
 941 的 C7 55列必要上界已由[完整外圈報告](c5_neartri_boundary_collar.md)排除；
 後續[C8-STRUCT](../audits/2026-10-13-c8-struct-243a125/REPORT.md)將70查詢收窄為
 62項排除、8份必要條件殘留，仍只採納h≥3、n₅≥9。
-私人圈秩三的結構分類與保Σ縮減、一般私人圈秩至少三的縮減、h≥3來源實現、跨原邊 J_e 同步、十三內點以上來源
+後續[圈秩三 essential 排除](c5_w5_private_rank3_essential.md)將ρ=3收窄為
+contractible、7≤r≤11；其結構分類與保Σ縮減、一般ρ≥4的縮減、h≥3來源實現、跨原邊 J_e 同步、十三內點以上來源
 及 K∞=K≤5 仍 **OPEN**。
 
 ```bash

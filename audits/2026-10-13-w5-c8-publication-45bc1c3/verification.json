@@ -1,0 +1,86 @@
+{
+  "status": "PASS scoped publication checks; existing full-worktree DocGraph failure retained",
+  "base": "45bc1c3dc9dacaee1b10df9d64f1c6a27bb0e954",
+  "source_replays": {
+    "status": "PASS",
+    "evidence": "logs/math-w5-publication-* and logs/math-c8-publication-*"
+  },
+  "original_manifest_and_frozen_inputs": {
+    "status": "PASS",
+    "manifest_payloads": 73,
+    "base_git_inputs": 21
+  },
+  "original_byte_custody": {
+    "status": "PASS",
+    "original_files": 75,
+    "direct_git_index_files": 72,
+    "archived_git_index_files": 3,
+    "sha256_bytes_mode_verified": true,
+    "live_originals_unchanged": true
+  },
+  "archive_append": {
+    "status": "PASS",
+    "old_path_records_unchanged": 2479,
+    "old_blob_records_unchanged": 1543,
+    "new_paths": 3,
+    "new_blobs": 3
+  },
+  "staged_snapshot_docs": {
+    "status": "PASS",
+    "command": "python3 scripts/check_docs.py",
+    "markdown_files": 652,
+    "local_links": 8155,
+    "log": "logs/docs-staged.log"
+  },
+  "staged_snapshot_formal_docgraph": {
+    "status": "PASS",
+    "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+    "documents": 62,
+    "relations": 213,
+    "families": 5,
+    "errors": 0,
+    "evidence_kind": "Observed tool output in this publication turn; no raw log captured"
+  },
+  "staged_snapshot_tool_tests": {
+    "status": "PASS",
+    "command": "python3 -m unittest discover -s tools/tests -p 'test_*.py'",
+    "tests": 56,
+    "seconds": 2.748,
+    "evidence_kind": "Observed tool output in this publication turn; no raw log captured"
+  },
+  "generated_artifact_policy": {
+    "status": "PASS",
+    "command": "python3 tools/check_generated_artifacts.py"
+  },
+  "staged_whitespace": {
+    "status": "PASS",
+    "command": "git diff --cached --check"
+  },
+  "snapshot_setup_retries": {
+    "status": "RESOLVED",
+    "record": "logs/snapshot-attempt-note.txt",
+    "initial_failures": [
+      "Cross-device hardlinks unavailable; switched to upstream read-only symlinks",
+      "18 document-link failures referenced four old secondary-archive files absent from snapshot; verified and restored before successful rerun"
+    ]
+  },
+  "lean": {
+    "status": "PRIOR PASS",
+    "jobs": 8831,
+    "rerun_for_publication": false,
+    "reason": "Publication changed documents and storage only; original research log preserved"
+  },
+  "seed17_and_negative_controls": {
+    "status": "PRIOR PASS",
+    "rerun_for_publication": false,
+    "evidence": "Original sealed research bundle logs"
+  },
+  "full_worktree_docgraph": {
+    "status": "PRIOR FAIL",
+    "existing_duplicate_id_errors": 62,
+    "evidence": "Original sealed logs/docgraph-full.log",
+    "scope_note": "Preserved as existing full-worktree failure, distinct from passing formal-document check"
+  },
+  "research_boundary": "No new Lean theorem; K_infinity = K_le5 remains OPEN",
+  "commit_scope": "Exact connected whitelist plus partial docs/STATUS.md; unrelated Cell and K4 work excluded"
+}

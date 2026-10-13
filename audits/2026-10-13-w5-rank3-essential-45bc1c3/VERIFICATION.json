@@ -1,0 +1,59 @@
+{
+  "base": "45bc1c3dc9dacaee1b10df9d64f1c6a27bb0e954",
+  "checks": {
+    "primary_normal": {
+      "status": "PASS",
+      "log": "controls/replay.log"
+    },
+    "primary_seed17": {
+      "status": "PASS",
+      "log": "controls/seed17.log"
+    },
+    "independent_full_recompute": {
+      "status": "PASS",
+      "log": "logs/independent.log"
+    },
+    "negative_controls": {
+      "status": "PASS",
+      "rejections": 8,
+      "log": "logs/negative.log"
+    },
+    "frozen_inputs": {
+      "status": "PASS",
+      "files": 14
+    },
+    "lake_build": {
+      "status": "PASS",
+      "jobs": 8831,
+      "log": "logs/lake-build.log",
+      "scope": "existing project regression; no new Lean theorem"
+    },
+    "documents": {
+      "status": "PASS",
+      "command": "python3 scripts/check_docs.py",
+      "files": 651,
+      "links": 8148,
+      "log": "logs/docs.log"
+    },
+    "full_docgraph": {
+      "status": "FAIL",
+      "errors": 62,
+      "kind": "existing duplicate IDs in preserved audits and scratch",
+      "log": "logs/docgraph-full.log"
+    },
+    "git_diff_check": {
+      "status": "PASS",
+      "command": "git diff --check"
+    },
+    "formal_docgraph": {
+      "status": "PASS",
+      "documents": 62,
+      "relations": 213,
+      "families": 5,
+      "log": "logs/docgraph-formal.log"
+    }
+  },
+  "upstream_large_enumerations": "not rerun",
+  "external_computational_proof": "not rerun",
+  "actual_minimum_source": "not triggered"
+}
