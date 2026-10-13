@@ -1,3 +1,11 @@
+---
+docgraph:
+  id: c5.excess-two-n2-residual-unification
+  family: [c5, c5.excess-two, c5.n2]
+  derives_from:
+    - c5.excess-two-arc-spoke-closure
+    - c5.excess-two-arc-size-bound
+---
 # N2 九格殘餘統一、原55上下界與共同缺口
 
 **後續（2026-10-13，N2-BRIDGE）**：[前提橋接與932來源排除](c5_excess_two_n2_bridge.md)
@@ -6,7 +14,8 @@
 
 **最新後續（2026-10-13，BASE 3097ef5）**：[同來源 LL-CUT+diag](c5_excess_two_n2_ll_cut.md)
 已排完整原55最後的 `(2,0)` 雙long來源；合下列既有覆蓋，本頁完整Σ契約內九格全覆蓋。
-基本LL-CUT未獨立證成，較廣三列N2及E-ARC2仍OPEN；完整父前提核對見新報告。
+基本LL-CUT未獨立證成；LL-CUT當輪未涵蓋的原E4三列N2，後由上述N2-BRIDGE排除。
+E-ARC2仍OPEN；目前五個原55子情形及父覆蓋見[依賴與覆蓋表](c5_excess_two_n2_bridge.md#0-依賴與覆蓋的閱讀順序)。
 以下各輪數字、OPEN與界線保留其歷史語境。
 
 **雙 long 後續（2026-10-13）**：[同列共同容量接回](c5_excess_two_n2_double_long_joint.md)
@@ -56,6 +65,8 @@ remaining 參數情形為 `(1,0)`、`(2,0)`；九格仍七格，原55／N2／E-A
 使用者已確認，九格指 [E4 §4.3](../artifacts/c5_excess_two_e4/REPORT.md#43-n2-精確殘留)
 的三個參數化 relation 族，乘三個 core 層；45／54 合為一層。
 令 ℓ 是原 long mixed 數，u 是原 unary 數。
+
+以下為原輪九格表；目前完整契約內三族的原55均已排除，分支來源見上述覆蓋表。
 
 | 原 relation 族 | 兩-root44 | 45／54 | 原55 |
 | --- | --- | --- | --- |

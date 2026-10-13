@@ -1,6 +1,20 @@
+---
+docgraph:
+  id: c5.excess-two-nonadjacent-unit-core45
+  family: [c5, c5.excess-two, c5.arc2, c5.n2]
+  requires:
+    - c5.degree5-interfaces
+  related:
+    - c5.excess-two-arc-component-slack
+    - c5.excess-two-arc-spoke-closure
+    - c5.excess-two-arc-size-bound
+    - c5.excess-two-n2-ll-cut
+    - c5.excess-two-n2-bridge
+---
 # N45：非相鄰 N2 原 unit 省略的 45／54 身份
 
-更新：2026-10-13（完整N2的45／54全排；指定完整Σ契約的原55由LL-CUT+diag完成九格覆蓋，較廣N2及E-ARC2 OPEN）；
+更新：2026-10-13（指定完整Σ契約的45／54與原55全排；N2-BRIDGE另排原E4三列契約的932，
+該契約N2全排；基本LL-CUT未獨立證成，E-ARC2的N1／相鄰來源仍OPEN）；
 原研究 BASE `dc8e9aa7d6fccb51f63d30aa3f9c132296d44744`，既有 N45 驗收 BASE
 `f2692089ad4259808e27d9b7e882ac09505b180a`；BR-SD-1b 採納基準為
 `fc3d3d8b4c5b8e6378268edb5cd3f04b50940b5a`；BR-SD-1d 採納基準為
@@ -16,10 +30,13 @@
 
 **目前完整覆蓋：** [新紙面合成](c5_excess_two_arc_spoke_closure.md)已排除本頁§1的全部
 exact-S root-spoke身份，連同既有exact-U，完整N2目標前提的45／54真cores已全排。
-每條非框邊刪除全收，所有拒絕列只剩原G自身55（忽略自由孤立因子）。
+這一步使每條非框邊刪除全收，將來源化約為每列以原G自身作55核心（忽略自由孤立因子）。
 後續[原55大小界](c5_excess_two_arc_size_bound.md)證`|H|≤35−6u−3t`，見§2.15。
-後續[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)已完成指定完整Σ契約的原55九格覆蓋；
-契約外原55、一般N2及E-ARC2仍OPEN。新論證未Lean化，有限目標仍not triggered。
+後續[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)已完成指定完整Σ契約的原55九格覆蓋，見§2.20。
+**後續（2026-10-13，N2-BRIDGE）**：[前提橋接與932來源排除](c5_excess_two_n2_bridge.md)
+另證932而完成原E4三列完整來源契約的廣義N2，見§2.21；未刪去本頁§1的原完整Σ前提。
+基本LL-CUT尚未獨立證成，E-ARC2的N1／相鄰來源仍OPEN；契約外來源不作推廣。
+新論證未Lean化，有限目標仍not triggered。
 以下歷次採納及其當時限定範圍保留，目前缺口以§3為準。
 第二批 [PG](../audits/2026-10-09-n45-pg/REPORT.md)、
 [PR](../audits/2026-10-09-n45-pr/REPORT.md)、[PC](../audits/2026-10-09-n45-pc/REPORT.md)
@@ -114,6 +131,9 @@ canonical q positions 的 cells indices 是 q0=6、q1=4、q2=3、q3=1、q4=0，
 T4={2,5,7,8,9}。941 拒絕 q0,q1,q3；933 另拒絕 q2。
 
 ## 2. 已採納結論與必要化約
+
+本節依研究次序保存各輪證明及當輪停止點；§2.13–2.19所列尚缺的來源排除，
+其後續涵蓋見§2.20–2.21，目前狀態以§3為準。歷史audit、採納契約及not-triggered證據不改。
 
 | CLAIM | 已採納的精確結果 | 界線 |
 | --- | --- | --- |
@@ -823,28 +843,58 @@ Eq／Diff 異類 masks。非空同類只剩七個必要字面弧模板。完整 
 slack，完整外側染色再接回L，排除兩型。沒有內部長度cutoff，也不壓縮四／五點
 完整具名接口。合§2.18，九格八格已有覆蓋，完整原55只剩(2,0)；N2／E-ARC2 OPEN。
 
+### 2.20 LL-CUT+diag 與指定完整Σ契約的原55全覆蓋
+
+[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)保留§1的完整Σ933／941或共同D₅像契約，
+以原leaf K₅／K₃,₃ minors、同來源接線容量及完整diagonal lifts排最後原55 `(ℓ,u)=(2,0)`。
+合§2.17–2.19的含U與一long排除，指定完整契約的三relation族乘三core層九格均已覆蓋。
+這是任意大小的來源排除；有限目標仍not triggered，沒有新Lean theorem。
+
+基本LL-CUT尚未獨立證成：本輪沒有證明基本contact／框碰色／shared diagonal cuts
+本身必觸發矛盾。19,229份共同可行投影只屬抽象介面控制，不是來源實現或LL-CUT反例。
+原E4三列來源在該輪未涵蓋的前提橋接，另由下一節承擔。
+
+### 2.21 N2-BRIDGE：原E4三列契約與932來源排除
+
+[N2-BRIDGE](c5_excess_two_n2_bridge.md#1-真正的前提差異)另證完整mask 932，
+連同既有933／941及整圖共同反射的940，排除**原E4三列完整來源契約的廣義N2**。
+原契約仍要求ordered induced-C₅ disk、T4全收、每條非框邊對完整Σ critical、ε=2、
+非相鄰原degree5 roots及其餘有效內點原degree4、恰兩份原mixed，並拒絕q₀／q₁／q₃；
+全部具名原資料、同一色框、完整relations／空fibres及full lifts照留。
+
+932不能直接引用本頁完整Σ排除。該報告以U4三列移植、五列slack與原分量刪除witness
+另補CW橋接，再逐項接回含U、OL及LL-CUT+diag來源排除；原前提帳本與全證明由其§1–2承擔。
+本頁§1及舊採納的契約保持原範圍。對父題的實際覆蓋見
+[N2-BRIDGE父分類](c5_excess_two_n2_bridge.md#3-接回父分類與剩餘來源)：
+932原在E-ARC2的`1≤|Q|≤4`域外；E-ARC2剩N1及相鄰m=0／1／2來源，仍OPEN。
+
 ## 3. 精確 OPEN 與下一個窄分支
 
-**完整§1的45／54真core身份已全排；指定完整Σ契約的原55亦由後續涵蓋，較廣N2仍OPEN。**
-§2.2排整U，§2.14排全部原root-spoke；§2.13已使兩種身份窮盡完整N2的真cores。
-所有拒絕列只能以原G自己作55 minimal core（忽略自由孤立因子），
-每條原非框邊刪除全收，連roots在內每點至多接兩個相鄰框點。
-H原為中央block加至多兩個root葉blocks；§2.18已排完整目標全部含U子情形，
-因此目前u=0、H二連通。Singleton mixed仍必有u=t=0。
-全H內度二點至多五個，且`|H|=35−3t−Δ`，Δ≥0。
+**指定完整Σ契約的九格來源排除已完成；原E4三列完整來源契約的廣義N2亦已排除。**
+前者沿§2.2、§2.13–2.14完成全部45／54真cores，再由§2.17–2.20排原55；
+後者由§2.21另橋接932。本頁§1的完整Σ前提及N45各具名採納契約照留。
+
+反設原55來源時曾推出的每條非框邊刪除全收、唯一有效原G核心、框附件相鄰pair、
+含U全排後的u=0／H二連通及`|H|=35−3t−Δ`等，都是來源排除鏈中的必要條件；
+它們不再構成本契約內的存活來源清單。
 
 | 來源身份／義務 | 目前狀態 |
 | --- | --- |
 | §1 exact-U及exact-S；完整N2目標契約的全部45／54真cores | 紙面排除完成；既有採納＋§2.14新共同證明，未Lean化 |
 | N45-S-NOU-LS-PAIR、無U兩long及其原split／旁支子型 | 作為§1 exact-S均由§2.14涵蓋；不再以一般非二連通形狀列為此域存活理由 |
 | BR-SD-1a／1c／1e／1g、雙色唯一缺口 | 原限定採納／任意大小共同引理保留；封存bytes及當時OPEN語境不改 |
-| 指定完整Σ契約的原55，沒有45／54的N2來源 | §2.18排含U、§2.19排(1,0)，後續[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)排最後(2,0)，九格全覆蓋；基本LL-CUT未獨立證成 |
-| N1、相鄰、單-root例外及N2契約外其他45／54 | 本輪未涵蓋 |
+| 指定完整Σ契約的原55，沒有45／54的N2來源 | §2.18排含U、§2.19排(1,0)，§2.20排最後(2,0)；九格全覆蓋 |
+| 原E4三列完整來源契約的廣義N2，包括932 | §2.21的N2-BRIDGE另補前提與witness後排除；未把舊完整Σ證明擅自推廣 |
+| 基本LL-CUT的獨立cut必觸發機制 | 尚未獨立證成；LL-CUT+diag的來源排除不承擔此義務 |
+| E-ARC2的N1與相鄰m=0／1／2來源 | OPEN；保留未排的45／54、原55及原分類允許的單-root4例外，扣除各權威報告已排具名子域 |
+| 本頁及原E4來源契約外的其他來源 | 不作推廣；其各自義務與證據範圍保留 |
 | 一般degree5／R31任意長來源minor | OPEN；本輪N2排除不補該一般minor路線 |
-| 一般N2／E-ARC2、一般單側／共同出口、主命題及K∞=K≤5 | OPEN |
+| E-ARC2、一般單側／共同出口、主命題及K∞=K≤5 | OPEN |
 
-目前較廣缺口見[Kempe導覽§3](c5_kempe_guide.md#3-停止點與保留缺口)：
-只指定三列的較廣N2不能自動提升為完整Σ契約；契約外來源與E-ARC2仍OPEN。
+只指定三列不能自動提升為完整Σ933／941契約；N2-BRIDGE是另證932與前提移植，
+保留原E4完整來源契約，並非刪除舊引理的前提。父題剩餘來源見
+[N2-BRIDGE覆蓋表](c5_excess_two_n2_bridge.md#3-接回父分類與剩餘來源)，
+跨線缺口見[Kempe導覽§3](c5_kempe_guide.md#3-停止點與保留缺口)。
 原雙long的同列joint已由LL-CUT+diag完成，沒有新增Δ門檻；基本LL-CUT仍可另行研究。
 未搜尋10–35內點，不能把SD-A直接套到雙degree5的G，亦不能先假設三點弧取得缺條件。
 §2.11的歷史block-chain缺口及B適用性表不再是本頁完整N2 exact-S的存活清單；

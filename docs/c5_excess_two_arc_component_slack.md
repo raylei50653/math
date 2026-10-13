@@ -1,8 +1,20 @@
+---
+docgraph:
+  id: c5.excess-two-arc-component-slack
+  family: [c5, c5.excess-two, c5.arc2]
+  derives_from:
+    - c5.excess-two-arc-pair-critical
+  requires:
+    - c5.excess-two-nonadjacent-unit-core45
+  related:
+    - c5.excess-two-n2-ll-cut
+    - c5.excess-two-n2-bridge
+---
 # E-ARC2：原分量的共同重色限制與 N2 必留分量
 
 **後續（2026-10-13，BASE 243a125）**：[N2-BRIDGE](c5_excess_two_n2_bridge.md)
-以五列slack與完整分量刪除witness另橋接932，排原E4完整來源契約的廣義N2。
-E-ARC2仍OPEN；本頁原前提、證明與當輪停止點保留。
+以五列slack與完整分量刪除witness另橋接932，排原E4三列完整來源契約的廣義N2。
+E-ARC2仍剩N1及相鄰roots來源，均保持OPEN；本頁原前提、證明與當輪停止點保留。
 
 2026-10-11，接續工作樹基準 `df60ef5` 及未提交的
 [真子圖單拒絕定理](c5_excess_two_arc_pair_critical.md)。

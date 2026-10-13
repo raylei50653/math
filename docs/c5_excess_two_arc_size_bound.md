@@ -1,12 +1,23 @@
+---
+docgraph:
+  id: c5.excess-two-arc-size-bound
+  family: [c5, c5.excess-two, c5.arc2]
+  derives_from:
+    - c5.excess-two-arc-spoke-closure
+  related:
+    - c5.excess-two-n2-ll-cut
+    - c5.excess-two-n2-bridge
+---
 # E-ARC2：原55的 block 骨架與35內點上界
 
 **後續（2026-10-13，BASE 243a125）**：[N2-BRIDGE](c5_excess_two_n2_bridge.md)
-另排932，完成原E4完整來源契約的廣義N2；E-ARC2仍OPEN，未新增Lean證明。
+另排932，完成原E4三列完整來源契約的廣義N2；E-ARC2仍剩N1及相鄰roots來源，
+均保持OPEN，未新增Lean證明。
 以下各輪大小界與停止點保留當時語境。
 
 **後續（2026-10-13）**：[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)已排指定完整Σ契約的
-原55最後雙long，九格全覆蓋；基本LL-CUT、較廣N2／E-ARC2仍OPEN。
-下文保留原輪大小界、控制及OPEN語境，沒有新增Δ門檻。
+原55最後雙long，九格全覆蓋。LL-CUT當輪未涵蓋的原E4三列來源已由上述N2-BRIDGE後續排除；
+基本LL-CUT仍未獨立證成，E-ARC2仍OPEN。下文保留原輪大小界、控制及OPEN語境，沒有新增Δ門檻。
 
 2026-10-11，工作樹 HEAD `f428f6be3ee1eb59e3cb0b356239c4f16c4a6444`。
 接續未提交的[完整N2真核心排除](c5_excess_two_arc_spoke_closure.md)；

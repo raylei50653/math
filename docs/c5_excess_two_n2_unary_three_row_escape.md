@@ -1,4 +1,19 @@
+---
+docgraph:
+  id: c5.excess-two-n2-unary-three-row-escape
+  family: [c5, c5.excess-two, c5.n2]
+  requires:
+    - c5.excess-two-n2-residual-unification
+    - c5.excess-two-arc-size-bound
+---
 # N2 原55：unary 三列未用色出口與兩short排除候選
+
+**後續涵蓋（2026-10-13）**：[三列出口採納](c5_excess_two_n2_diagonal_three_row.md)
+已排本頁完整契約的 `(0,1)`；[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)
+合其餘原55子分支完成指定完整Σ契約九格覆蓋。
+[N2-BRIDGE](c5_excess_two_n2_bridge.md#0-依賴與覆蓋的閱讀順序)另補932來源橋接，
+排原E4完整三列來源契約的N2；基本LL-CUT未獨立證成，E-ARC2的N1／相鄰分支仍OPEN。
+下文候選、未採納及OPEN敘述均保留當輪語境，原契約與證据不改。
 
 **整理發布（2026-10-11）**：相連四輪成果由[發布紀錄](history/2026-10-11-n2-55-progress-publish.md)
 統一保存驗證與提交範圍；下文原生成基準及當輪「未提交」語境保留。

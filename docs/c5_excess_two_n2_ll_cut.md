@@ -1,7 +1,16 @@
+---
+docgraph:
+  id: c5.excess-two-n2-ll-cut
+  family: [c5, c5.excess-two, c5.n2]
+  requires:
+    - c5.excess-two-n2-diagonal-three-row
+  derives_from:
+    - c5.excess-two-n2-double-long-joint
+---
 # N2 原55雙 long：基本 LL-CUT 介面與加強版來源排除
 
 **後續（2026-10-13，N2-BRIDGE）**：[前提橋接與932來源排除](c5_excess_two_n2_bridge.md)
-已逐項補足原E4三列契約，廣義N2全排；E-ARC2仍剩N1及相鄰roots來源。
+已逐項補足原E4完整三列來源契約，該域N2全排；E-ARC2仍剩N1及相鄰roots來源。
 本頁完整Σ契約及歷史正文保留，新移植證明由上述入口承擔；無新Lean theorem。
 
 2026-10-13；凍結 BASE `3097ef5be241b7777451a5ef8a663f3987d6b866`。
@@ -19,7 +28,8 @@
 基本介面仍有19,229份共同可行投影，不能稱為來源實現或 LL-CUT 反例。
 
 合既有含U及一long排除，**指定完整契約內的九格已有全部覆蓋**。
-這不關閉只指定三列的較廣 N2、N1、相鄰／單-root、契約外原55或 E-ARC2。
+LL-CUT當輪未涵蓋只指定三列的較廣 N2；原E4完整三列來源契約已由上述N2-BRIDGE後續排除。
+N1、相鄰／允許的單-root core例外、契約外原55及E-ARC2仍不由本頁排除。
 有限完整目標仍 **not triggered**；一般來源排除由紙面證明承擔。
 沒有新增 Lean theorem；本輪只作本地研究，未 commit／push／發布。
 
@@ -176,6 +186,7 @@ python3 -B audits/2026-10-13-n2-ll-cut-3097ef5/paper/topology_checker.py --check
 正常／seed17、負控制、文件檢查及回歸執行範圍見
 [驗證紀錄](../audits/2026-10-13-n2-ll-cut-3097ef5/verification.json)。
 [父分類核對](../audits/2026-10-13-n2-ll-cut-3097ef5/review/ROOT_REVIEW.md)
-只將完整Σ契約內的原55最後一格接回；一般N2與E-ARC2保持OPEN。
+只將完整Σ契約內的原55最後一格接回；當輪一般N2與E-ARC2保持OPEN，
+原E4完整三列N2的後續涵蓋見頁首N2-BRIDGE。
 基本LL-CUT保留為未獨立證成的較強證書機制；不以加強版排空來源後的真空性，
 冒稱每份基本可行profile已被基本cut排除。

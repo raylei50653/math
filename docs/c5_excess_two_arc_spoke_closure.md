@@ -1,12 +1,26 @@
+---
+docgraph:
+  id: c5.excess-two-arc-spoke-closure
+  family: [c5, c5.excess-two, c5.arc2]
+  derives_from:
+    - c5.excess-two-arc-component-slack
+  requires:
+    - c5.excess-two-nonadjacent-unit-core45
+    - c5.degree5-interfaces
+  related:
+    - c5.excess-two-n2-ll-cut
+    - c5.excess-two-n2-bridge
+---
 # E-ARC2：末端 block 接點與 N2 的全部真核心排除
 
 **後續（2026-10-13，N2-BRIDGE）**：[前提橋接與932來源排除](c5_excess_two_n2_bridge.md)
-已逐項補足原E4三列契約，廣義N2全排；E-ARC2仍剩N1及相鄰roots來源。
+已逐項補足原E4三列完整來源契約並另排932，該契約的廣義N2全排；
+E-ARC2仍剩N1及相鄰roots來源，均保持OPEN。
 本頁完整Σ契約及歷史正文保留，新移植證明由上述入口承擔；無新Lean theorem。
 
 **後續（2026-10-13）**：[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)已完成指定完整Σ契約的
-原55九格覆蓋；基本LL-CUT、較廣N2／E-ARC2仍OPEN。
-下文保留本報告當轮45／54定理、有限控制及停止點。
+原55九格覆蓋。LL-CUT當輪未涵蓋的原E4三列來源已由上述N2-BRIDGE後續排除；
+基本LL-CUT仍未獨立證成，E-ARC2仍OPEN。下文保留本報告當轮45／54定理、有限控制及停止點。
 
 2026-10-11，工作樹基準 `df60ef5b6a386e5b1e4e3137a145c915875897ce`，
 接續未提交的[原分量共同限制](c5_excess_two_arc_component_slack.md)。

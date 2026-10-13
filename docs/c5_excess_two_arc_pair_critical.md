@@ -1,4 +1,19 @@
+---
+docgraph:
+  id: c5.excess-two-arc-pair-critical
+  family: [c5, c5.excess-two, c5.arc2]
+  related:
+    - c5.excess-two-arc-component-slack
+    - c5.excess-two-n2-ll-cut
+    - c5.excess-two-n2-bridge
+---
 # E-ARC2：真子圖單拒絕與共同核心覆蓋
+
+**後續（2026-10-13，N2-BRIDGE）**：[前提橋接與932來源排除](c5_excess_two_n2_bridge.md)
+已排除原 E4 三列完整來源契約的 N2，包括另證的完整 mask 932；
+E-ARC2 仍剩 N1 及相鄰 roots 來源，均保持 OPEN。本頁原前提、證明與當輪停止點保留。
+完整 Σ933／941 契約的原55覆蓋由 [LL-CUT+diag](c5_excess_two_n2_ll_cut.md)完成，
+前置45／54排除見 [spoke closure](c5_excess_two_arc_spoke_closure.md)；基本 LL-CUT 尚未獨立證成。
 
 2026-10-11，基準 `fdbef272c9f74ed95a4dac644b1c7f8b071a7722`。
 接續 [E-ARC2 原命題](c5_research_synthesis.md#81-猜想-e超額拒絕定律)；

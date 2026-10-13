@@ -1,3 +1,12 @@
+---
+docgraph:
+  id: c5.excess-two-n2-diagonal-three-row
+  family: [c5, c5.excess-two, c5.n2]
+  requires:
+    - c5.excess-two-n2-residual-unification
+  derives_from:
+    - c5.excess-two-n2-unary-three-row-escape
+---
 # N2 原55：unary 三列出口採納與低接點 long 化約
 
 **後續（2026-10-13，N2-BRIDGE）**：[前提橋接與932來源排除](c5_excess_two_n2_bridge.md)
@@ -5,7 +14,8 @@
 本頁完整Σ契約及歷史正文保留，新移植證明由上述入口承擔；無新Lean theorem。
 
 **後續（2026-10-13，BASE 3097ef5）**：[同來源 LL-CUT+diag](c5_excess_two_n2_ll_cut.md)
-已排指定完整Σ契約的最後 `(2,0)`，九格全覆蓋；基本LL-CUT、較廣N2／E-ARC2仍OPEN。
+已排指定完整Σ契約的最後 `(2,0)`，九格全覆蓋；基本LL-CUT未獨立證成。
+LL-CUT當輪未涵蓋的原E4三列N2，後由上述N2-BRIDGE排除；E-ARC2仍OPEN。
 下文保留原輪證明、有限控制及停止點。
 
 **最新後續（2026-10-13）**：[一long來源排除](c5_excess_two_n2_one_long_closure.md)

@@ -1,3 +1,18 @@
+---
+docgraph:
+  id: c5.excess-two-n2-bridge
+  family: [c5, c5.excess-two, c5.n2, c5.arc2]
+  derives_from:
+    - c5.excess-two-arc-pair-critical
+    - c5.excess-two-n2-unary-three-row-escape
+    - c5.excess-two-n2-partition-rule
+    - c5.excess-two-n2-unary-diff-closure
+    - c5.excess-two-n2-one-long-closure
+    - c5.excess-two-n2-ll-cut
+  related:
+    - c5.excess-two-nonadjacent-unit-core45
+    - c5.excess-two-arc-component-slack
+---
 # N2-BRIDGE：完整Σ與三列來源的缺口及932排除
 
 2026-10-13，BASE `243a125a80e4d8de40957f59d8da0bdbc974cf69`。
@@ -6,14 +21,60 @@
 原audit的「未commit／push」保留研究完成截點。
 
 **原 E4 契約的廣義 N2 已排除。** 新增的是完整 mask 932 的來源證明，
-加上既有 933／941 及共同 D₅ 像覆蓋，才得到此結論。
+加上既有 [933／941完整契約九格覆蓋](c5_excess_two_n2_residual_unification.md)
+及共同 D₅ 像覆蓋，才得到此結論。
 **E-ARC2 仍 OPEN**：其剩餘為 N1 及相鄰雙 root 來源，詳見下表。
 證據是任意大小紙面證明、明列外部／上游有限分類及獨立核對，沒有新 Lean theorem。
+
+## 0. 依賴與覆蓋的閱讀順序
+
+以下按結論的適用契約串接；有日期的舊OPEN與控制數字保留當輪語境。
+DocGraph metadata記錄報告中實際使用的結果與接口，不代表整份來源契約可直接繼承。
+N45節內的後續摘要是導航，不反向成為舊N45採納的前置；本頁移植OL／LL等局部證明前，
+另在§2補足932所需前提，沒有把N45完整Σ契約或SD-A套到932。
+
+| 階段 | 權威來源與依賴 | 實際覆蓋 |
+| --- | --- | --- |
+| 真子圖單拒絕 | [pair-critical §3](c5_excess_two_arc_pair_critical.md#3-任意真子圖至多單拒絕)的一般P引理；須先核對Z前提 | 完整Σ目標用既有44覆蓋；932另用本頁U4三列移植建立Z=∅ |
+| 分量必留、45／54排除 | [N45](c5_excess_two_nonadjacent_unit_core45.md)採納＋[分量slack](c5_excess_two_arc_component_slack.md)→[spoke closure](c5_excess_two_arc_spoke_closure.md) | 指定完整Σ的N2全部真cores排除；逐列只剩原G的55 core。932由本頁另證分量witness，不直接沿用N45 |
+| 原55共同結構與容量 | [block骨架](c5_excess_two_arc_size_bound.md)→[九格統一](c5_excess_two_n2_residual_unification.md) | 原cactus、leaf contacts、附件單射與共同容量；35點上界／有限下界未構成排除矛盾，數值上界不是OL／LL收尾前提 |
+| 原55五個參數子情形 | 下表的unary、OL與LL鏈 | 指定完整Σ933／941或整圖共同D₅像的原55全排；三relation族×44／45-54／55共九格完成 |
+| 父三列N2橋接 | 本頁§1–2、[前提帳本](../audits/2026-10-13-n2-bridge-243a125/paper/PREMISE_LEDGER.md)與[Theorem NB](../audits/2026-10-13-n2-bridge-243a125/paper/CLOSURE.md) | 941／933沿用完整Σ鏈，940整圖反射成933；932另補U4／五列slack／CW／UC3，排原E4完整三列來源契約的N2 |
+
+令ℓ為原long mixed數、u為原unary數、t為原root-spoke總數。
+以下五個子情形均保[原55完整契約](c5_excess_two_n2_diagonal_three_row.md#1-完整來源契約)，
+不是五份可實現來源，也不能把完整Σ直接弱化為任意三列拒絕。
+
+| 原55子情形 `(ℓ,u)` | 排除鏈與同列接回 |
+| --- | --- |
+| `(0,2)` | [九格統一 §3](c5_excess_two_n2_residual_unification.md#3-共同三-hub-引理與兩-unary-子族排除)：兩mixed為pair，原盾邊收費 `1+1+2+2>5` |
+| `(0,1)` | [unary三列候選](c5_excess_two_n2_unary_three_row_escape.md)→[diagonal獨立採納](c5_excess_two_n2_diagonal_three_row.md)：同一U至少一指定列接受D，兩short在同一列以完整 `(D,D)` lifts接回 |
+| `(1,1)` | [long同步](c5_excess_two_n2_long_synchrony.md)→[接口分割／已用禁色界](c5_excess_two_n2_partition_rule.md)排三接線U；[兩接線Diff全色出口](c5_excess_two_n2_unary_diff_closure.md)接同列G−U的實際owner pin |
+| `(1,0)` | [OL一long排除](c5_excess_two_n2_one_long_closure.md)：原末端block／minor與固定root的完整外側接回，任意原長度皆覆蓋 |
+| `(2,0)` | [雙long共同容量](c5_excess_two_n2_double_long_joint.md)排t=0／1；[LL-CUT+diag](c5_excess_two_n2_ll_cut.md)以原leaf minors及新增完整diagonal資訊排剩餘t=2／3 |
+
+**來源排除與基本機制分開。** LL-CUT+diag完成上述完整來源排除；基本LL-CUT只讀基本S，
+尚未獨立證成必觸發cut。19,229共同可行投影既不是來源實現，也不是基本LL-CUT反例。
+有限完整N2控制仍not triggered；紙面來源排除、上游有限分類及Lean狀態分開，無新Lean theorem。
+
+**對E-ARC2的覆蓋。** 原域 `1≤|Q|≤4` 的N2已由完整Σ鏈涵蓋；932的補證擴展原E4三列N2，
+不擴大E-ARC2原域。父命題仍剩N1與相鄰m=0／1／2，精確core例外、已排具名子域及後續入口
+見[§3父分類](#3-接回父分類與剩餘來源)與[父覆蓋表](../audits/2026-10-13-n2-bridge-243a125/paper/PARENT_COVERAGE.md)。
 
 ## 1. 真正的前提差異
 
 父量詞直接讀 [E4 §1](../artifacts/c5_excess_two_e4/REPORT.md#1-完整前提依賴與證據層)
 及 [E3 §2](../artifacts/c5_excess_two_e3/REPORT.md#2-第-0-步約化成立)，不由 STATUS 推定。
+
+**具名定理NB的原來源契約（包括932）。** G為有限簡單planar disk，B是指定有序induced C₅；
+T4五列全收，每條原非框邊對完整有序Σ critical，ε=2。
+兩個原完整degree5 roots r,s不相鄰，其餘有效內點原完整degree4；
+H−{r,s}恰兩份原mixed，其餘分量為unary；在同一原色框拒絕q₀、q₁、q₃，q₂／q₄不預設。
+保留全部原接點身份、ordered/shared contacts、owners、實際附件與支援、rotation、bridges、旁支、
+完整relations、空fibres及full lifts；自由孤立點只從有效計數略去，四色乘積因子仍保留。
+有效H連通／full B-touch及pieces one-sided沿E2／E3／E4導出；
+逐列minimality、分量刪除全收與H二連通都不是「三列拒絕」自行提供的前提。
+完整陳述及證明以[Theorem NB §1](../audits/2026-10-13-n2-bridge-243a125/paper/CLOSURE.md#1-statement-and-the-exact-missing-bridge)為準。
 
 | 前提 | 完整Σ來源 | 父三列 N2 |
 | --- | --- | --- |

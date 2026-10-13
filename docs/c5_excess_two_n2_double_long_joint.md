@@ -1,13 +1,25 @@
+---
+docgraph:
+  id: c5.excess-two-n2-double-long-joint
+  family: [c5, c5.excess-two, c5.n2]
+  requires:
+    - c5.excess-two-n2-diagonal-three-row
+  derives_from:
+    - c5.excess-two-n2-residual-unification
+    - c5.excess-two-n2-long-synchrony
+    - c5.excess-two-n2-partition-rule
+---
 # N2 原55雙 long：共同容量接回與九格接口子命題
 
 **後續（2026-10-13，BASE 243a125）**：[N2-BRIDGE](c5_excess_two_n2_bridge.md)
-另排932，完成原E4完整來源契約的廣義N2；E-ARC2仍OPEN，未新增Lean證明。
+另排932，完成原E4完整三列來源契約的N2；E-ARC2仍OPEN，未新增Lean證明。
 以下各輪證明與停止點保留當時語境。
 
 **後續（2026-10-13，BASE 3097ef5）**：[同來源 LL-CUT+diag](c5_excess_two_n2_ll_cut.md)
 以原 leaf K₅／K₃,₃、接線數及最後行容量cut排除全部剩餘t=2／3來源，
 完成本頁完整原55 `(2,0)` 契約的來源排除。基本LL-CUT機制未獨立證成，
-19,229份抽象共同可行profiles保留；一般N2／E-ARC2仍OPEN。以下保留原輪證據與停止點。
+19,229份抽象共同可行profiles保留；LL-CUT當輪未涵蓋的原E4三列N2，
+後由上述N2-BRIDGE排除。E-ARC2仍OPEN；以下保留原輪證據與停止點。
 
 2026-10-13。基準 HEAD `19209f4cf68261fdce5e84a7804cfe04ae0957bf`；
 十三份原輸入與 SHA 見 [BASE](../audits/2026-10-13-n2-double-long-joint/BASE.json)。
