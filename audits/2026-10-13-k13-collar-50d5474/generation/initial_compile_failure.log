@@ -1,0 +1,11 @@
+Historical exploratory attempt, before the successful compile. No mathematical
+generator output was produced by this attempt. Kept rather than overwritten.
+
+The PLUGIN macro value was passed including literal quote characters, while
+plantri.c applies its own TOSTRING macro. GCC reported at plantri.c:606:25:
+fatal error: \"/home/ray/developer/ai/math-k13-collar-50d5474/audits/2026-10-13-k13-collar-50d5474/generation/min5_filter.c\": No such file or directory
+606 | #include TOSTRING(PLUGIN)
+compilation terminated.
+
+Corrected invocation (successful in both recorded replays):
+cc -O3 -std=c11 -DPLUGIN=/absolute/path/to/min5_filter.c /absolute/path/to/plantri.c -o /temporary/path/to/plantri_min4_filter

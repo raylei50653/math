@@ -1,0 +1,341 @@
+{
+  "catalogue_summary": {
+    "D5_closed_all_132": true,
+    "R3_preservation_claim": false,
+    "accepted_rows": {
+      "1007": [
+        "01012",
+        "01021",
+        "01023",
+        "01201",
+        "01203",
+        "01212",
+        "01213",
+        "01231",
+        "01232"
+      ],
+      "1021": [
+        "01012",
+        "01023",
+        "01201",
+        "01202",
+        "01203",
+        "01212",
+        "01213",
+        "01231",
+        "01232"
+      ],
+      "1022": [
+        "01021",
+        "01023",
+        "01201",
+        "01202",
+        "01203",
+        "01212",
+        "01213",
+        "01231",
+        "01232"
+      ],
+      "1023": [
+        "01012",
+        "01021",
+        "01023",
+        "01201",
+        "01202",
+        "01203",
+        "01212",
+        "01213",
+        "01231",
+        "01232"
+      ],
+      "511": [
+        "01012",
+        "01021",
+        "01023",
+        "01201",
+        "01202",
+        "01203",
+        "01212",
+        "01213",
+        "01231"
+      ],
+      "639": [
+        "01012",
+        "01021",
+        "01023",
+        "01201",
+        "01202",
+        "01203",
+        "01212",
+        "01232"
+      ],
+      "767": [
+        "01012",
+        "01021",
+        "01023",
+        "01201",
+        "01202",
+        "01203",
+        "01212",
+        "01213",
+        "01232"
+      ],
+      "91": [
+        "01012",
+        "01021",
+        "01201",
+        "01202",
+        "01212"
+      ]
+    },
+    "base": "50d5474f2446403f3b3001d5943571184c8c9936",
+    "by_c": {
+      "1": 2162,
+      "2": 108
+    },
+    "by_r": {
+      "10": 384,
+      "11": 100,
+      "7": 492,
+      "8": 652,
+      "9": 642
+    },
+    "catalogue_sha256": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+    "catalogue_size": 132,
+    "completion": "all necessary templates have complete Sigma in frozen K132",
+    "masks": {
+      "1007": 2,
+      "1021": 1,
+      "1022": 1,
+      "1023": 2216,
+      "511": 8,
+      "639": 32,
+      "767": 8,
+      "91": 2
+    },
+    "minimum_outside_catalogue_source": "not triggered",
+    "pullback_masks": {
+      "1007": [
+        959,
+        1007,
+        1015,
+        1021,
+        1022
+      ],
+      "1021": [
+        959,
+        1007,
+        1015,
+        1021,
+        1022
+      ],
+      "1022": [
+        959,
+        1007,
+        1015,
+        1021,
+        1022
+      ],
+      "1023": [
+        1023
+      ],
+      "511": [
+        511,
+        767,
+        895,
+        991,
+        1019
+      ],
+      "639": [
+        255,
+        507,
+        639,
+        863,
+        987
+      ],
+      "767": [
+        511,
+        767,
+        895,
+        991,
+        1019
+      ],
+      "91": [
+        91
+      ]
+    },
+    "representative_claim": "none; direct membership completion",
+    "status": "triggered and holds",
+    "templates": 2270
+  },
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank3-contractible-50d5474/controls/check.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "exit": 0,
+      "log": "audits/2026-10-13-k13-rank3-publication/validation/rank3/primary-normal.log",
+      "name": "primary-normal",
+      "seconds": 21.264
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank3-contractible-50d5474/controls/check.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit": 0,
+      "log": "audits/2026-10-13-k13-rank3-publication/validation/rank3/primary-seed17.log",
+      "name": "primary-seed17",
+      "seconds": 20.913
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank3-contractible-50d5474/independent/check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "exit": 0,
+      "log": "audits/2026-10-13-k13-rank3-publication/validation/rank3/independent.log",
+      "name": "independent",
+      "seconds": 19.352
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank3-contractible-50d5474/controls/catalogue.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "exit": 0,
+      "log": "audits/2026-10-13-k13-rank3-publication/validation/rank3/catalogue.log",
+      "name": "catalogue",
+      "seconds": 1.66
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-13-w5-rank3-contractible-50d5474/independent/negative.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {},
+      "exit": 0,
+      "log": "audits/2026-10-13-k13-rank3-publication/validation/rank3/negative.log",
+      "name": "negative",
+      "seconds": 1.681
+    }
+  ],
+  "independent_summary": {
+    "A_full_lifts": 928404,
+    "G_full_lifts": 465866,
+    "Sigma_counts": {
+      "1007": 2,
+      "1021": 1,
+      "1022": 1,
+      "1023": 2216,
+      "511": 8,
+      "639": 32,
+      "767": 8,
+      "91": 2
+    },
+    "catalogue_membership": "every complete mask in frozen K132",
+    "cells": 23244800,
+    "empty_cells": 22713170,
+    "source_realizability": "not triggered; universal coverage is a paper theorem",
+    "status": "PASS independent exact comparison",
+    "templates": 2270
+  },
+  "negative_summary": {
+    "actual_minimum_source": "not triggered",
+    "corrupted_records": 8,
+    "positive_records": 2,
+    "prism_cells": 10240,
+    "same_Sigma_different_R3": {
+      "beta": [
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      "prism_nonempty": true,
+      "source_nonempty": false,
+      "status": "counterexample",
+      "tau": [
+        1,
+        0,
+        1,
+        0,
+        3
+      ]
+    },
+    "status": "PASS",
+    "uncompressed_sha256": "779962ec7edf32b48e5aa7539f64db5adf516f3ff32290807573cfb42b9ac6ad",
+    "validator_rejections": 16
+  },
+  "new_Lean_theorem": false,
+  "original_audit_bytes_unchanged": true,
+  "original_files": 59,
+  "sealed_audit_files": 58,
+  "source_after": "audits/2026-10-13-k13-rank3-publication/validation/rank3/source-after.json",
+  "source_before": "audits/2026-10-13-k13-rank3-publication/validation/rank3/source-before.json",
+  "source_verify_scope": "isolation-only source verifier preserved unchanged; publication importer checks seals separately",
+  "status": "PASS",
+  "summary": {
+    "A_full_lifts": 928404,
+    "G_full_lifts": 465866,
+    "cells": 23244800,
+    "empty_cells": 22713170,
+    "masks": {
+      "1007": 2,
+      "1021": 1,
+      "1022": 1,
+      "1023": 2216,
+      "511": 8,
+      "639": 32,
+      "767": 8,
+      "91": 2
+    },
+    "mathematical_sha256": "4cab09423e33b04109669daed9f5c3388ade6486b9943f55ec0cd32bcb5edd2b",
+    "templates": 2270,
+    "types": {
+      "c1_r10_a0": 292,
+      "c1_r10_a1": 92,
+      "c1_r11_a0": 100,
+      "c1_r7_a0": 16,
+      "c1_r7_a1": 66,
+      "c1_r7_a2": 140,
+      "c1_r7_a3": 154,
+      "c1_r7_a4": 68,
+      "c1_r8_a0": 124,
+      "c1_r8_a1": 212,
+      "c1_r8_a2": 196,
+      "c1_r8_a3": 76,
+      "c1_r9_a0": 300,
+      "c1_r9_a1": 242,
+      "c1_r9_a2": 84,
+      "c2_r7_a0": 4,
+      "c2_r7_a1": 20,
+      "c2_r7_a2": 24,
+      "c2_r8_a0": 20,
+      "c2_r8_a1": 24,
+      "c2_r9_a0": 16
+    }
+  }
+}

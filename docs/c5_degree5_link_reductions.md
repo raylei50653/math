@@ -1,5 +1,8 @@
 # 最小來源的全內部五輪與具名重接界線
 
+2026-10-13 後續：[K13-COLLAR](c5_k13_collar.md) 已證 `K≤13=K≤5`，
+一般目錄外來源至少十四內點；下文原輪次的 k≥13 前提與證書不改。
+
 2026-10-12。本頁接續 [最小來源度數界](c5_saturation_degree_bound.md)，
 採納全內部五輪及 [A／B／C 任務](tasks/c5_degree5_link_tasks.md) 的隔離交付。
 目前停止點由 [Kempe 導覽](c5_kempe_guide.md) 維護；
@@ -60,8 +63,10 @@ annulus 拓撲及同一外部圖的完整 J_p(B,U)，含全部空 cells 與 full
 941 的 C7 55列必要上界已由[完整外圈報告](c5_neartri_boundary_collar.md)排除；
 後續[C8-STRUCT](../audits/2026-10-13-c8-struct-243a125/REPORT.md)將70查詢收窄為
 62項排除、8份必要條件殘留，仍只採納h≥3、n₅≥9。
-後續[圈秩三 essential 排除](c5_w5_private_rank3_essential.md)將ρ=3收窄為
-contractible、7≤r≤11；其結構分類與保Σ縮減、一般ρ≥4的縮減、h≥3來源實現、跨原邊 J_e 同步、十三內點以上來源
+後續[圈秩三 essential 排除](c5_w5_private_rank3_essential.md)及
+[contractible 完整排除](c5_w5_private_rank3_contractible.md)已覆蓋ρ=3的兩分支，
+任取合法全內部W5均有私人ρ≥4；後者2,270模板的完整Σ皆屬K132，不需代表。
+一般ρ≥4來源的縮減、h≥3來源實現、跨原邊 J_e 同步、十四內點以上來源
 及 K∞=K≤5 仍 **OPEN**。
 
 ```bash

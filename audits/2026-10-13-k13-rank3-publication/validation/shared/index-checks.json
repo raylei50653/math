@@ -1,0 +1,23 @@
+{
+  "storage-policy": {
+    "command": [
+      "python3",
+      "-B",
+      "tools/check_generated_artifacts.py"
+    ],
+    "exit_code": 0,
+    "stdout": "storage-policy.stdout.log",
+    "stderr": "storage-policy.stderr.log"
+  },
+  "staged-whitespace": {
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "staged-whitespace.stdout.log",
+    "stderr": "staged-whitespace.stderr.log"
+  }
+}

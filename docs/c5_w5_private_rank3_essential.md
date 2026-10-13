@@ -6,6 +6,11 @@
 目前停止點由 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)維護。
 本次封存及發布核對見[整理紀錄](history/2026-10-13-w5-rank3-c8-apex-publish.md)。
 
+2026-10-13 後續：[contractible 圈秩三排除](c5_w5_private_rank3_contractible.md)已覆蓋 c=1、c=2 全部来源，
+2,270 份必要模板的完整 Σ 均屬 K132。接 essential 分支，任取合法全內部 W5
+的私人圈秩至少四；一般小代表與 K∞=K≤5 仍 OPEN，未新增 Lean theorem。
+下文保留原輪次的結果及當時停止點。
+
 ## 1. 精確結論與來源
 
 G 是所有完整關係不在 K132 的簡單 disk-C5 圖中，先最小化內點數、再最大化
@@ -24,7 +29,7 @@ r=|P|=k-6,\quad \rho=|E(F)|-|V(F)|+c(F).
 \boxed{F\text{ 含 essential 環}\Longrightarrow\rho(F)\ge4.}
 \]
 
-原已證 \(\rho\ge3\) 不提高為普遍四。若 \(\rho=3\)，則只能保留全部私人環
+本輪原已證 \(\rho\ge3\) 尚未提高為普遍四；後續提升見頁首。若 \(\rho=3\)，則只能保留全部私人環
 皆 contractible 的分支；其必要界進一步是
 \(7\le r\le13-2c-a\le11\)，其中 a 是全 terminal 的原三角面數。
 這是全域最小來源的條件性排除，不加入 N2、ε、edge-critical 或 Gallai 身份。

@@ -1,0 +1,240 @@
+{
+  "base": "50d5474f2446403f3b3001d5943571184c8c9936",
+  "result": "K_le_13 = K_le_5 proved within explicit paper/external-generator/computational trust boundary",
+  "scope": "all finite simple disk-C5 sources; fixed ordered B; k<=13",
+  "source_residual_h4_to_h7": [],
+  "checks": [
+    {
+      "name": "main normal",
+      "command": "python3 -B audits/2026-10-13-k13-collar-50d5474/check.py --check",
+      "exit_code": 0,
+      "log": "logs/main-normal.log"
+    },
+    {
+      "name": "main seed17",
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-13-k13-collar-50d5474/check.py --check",
+      "exit_code": 0,
+      "log": "logs/main-seed17.log"
+    },
+    {
+      "name": "docs after exact archive hydration",
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 0,
+      "log": "logs/docs-restored-v2.log",
+      "markdown_files": 653,
+      "local_links": 8172
+    },
+    {
+      "name": "formal docs DocGraph",
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "log": "logs/docgraph-docs.log"
+    },
+    {
+      "name": "global DocGraph",
+      "command": "python3 tools/docgraph check",
+      "exit_code": 1,
+      "log": "logs/docgraph-global-restored.log",
+      "classification": "known existing 62 duplicate-ID errors; out of scope"
+    },
+    {
+      "name": "tools tests",
+      "command": "python3 -m unittest discover -s tools/tests -p 'test_*.py'",
+      "exit_code": 0,
+      "tests": 56,
+      "log": "logs/tool-tests.log"
+    },
+    {
+      "name": "DocGraph tests",
+      "command": "python3 -m unittest discover -s tools/docgraph/tests",
+      "exit_code": 0,
+      "tests": 18,
+      "log": "logs/docgraph-tests.log"
+    },
+    {
+      "name": "Lean existing regression",
+      "command": "lake build",
+      "exit_code": 0,
+      "jobs": 8831,
+      "log": "logs/lake-build.log",
+      "new_Lean_theorem": false,
+      "environment": "separate copied .lake in isolated worktree"
+    },
+    {
+      "name": "new archive replay and task links",
+      "command": "python3 -B audits/2026-10-13-k13-collar-50d5474/delivery_check.py",
+      "exit_code": 0,
+      "log": "logs/delivery-final.log"
+    },
+    {
+      "name": "storage policy",
+      "command": "python3 tools/check_generated_artifacts.py",
+      "exit_code": 0,
+      "log": "logs/storage-policy-v2.log",
+      "index": "isolated temporary index; real index untouched"
+    },
+    {
+      "name": "whitespace",
+      "command": "git diff --cached --check",
+      "exit_code": 0,
+      "log": "logs/whitespace-v2.log",
+      "index": "isolated temporary index; real index untouched"
+    },
+    {
+      "name": "independent check.py seed0",
+      "command": "python3 -B audits/2026-10-13-k13-collar-50d5474/independent/check.py --check",
+      "exit_code": 0,
+      "log": "independent/normal.log",
+      "certificate": "independent/relations.json.gz"
+    },
+    {
+      "name": "independent check.py seed17",
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-13-k13-collar-50d5474/independent/check.py --check",
+      "exit_code": 0,
+      "log": "independent/seed17.log",
+      "certificate": "independent/relations.json.gz"
+    },
+    {
+      "name": "independent review.py seed0",
+      "command": "python3 -B audits/2026-10-13-k13-collar-50d5474/independent/review.py --check",
+      "exit_code": 0,
+      "log": "independent/review.log",
+      "certificate": "independent/review.json"
+    },
+    {
+      "name": "independent review.py seed17",
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-13-k13-collar-50d5474/independent/review.py --check",
+      "exit_code": 0,
+      "log": "independent/review_seed17.log",
+      "certificate": "independent/review.json"
+    },
+    {
+      "name": "independent compare_main.py seed0",
+      "command": "python3 -B audits/2026-10-13-k13-collar-50d5474/independent/compare_main.py --check",
+      "exit_code": 0,
+      "log": "independent/compare_main.log",
+      "certificate": "independent/compare_main.json"
+    },
+    {
+      "name": "independent compare_main.py seed17",
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-13-k13-collar-50d5474/independent/compare_main.py --check",
+      "exit_code": 0,
+      "log": "independent/compare_main_seed17.log",
+      "certificate": "independent/compare_main.json"
+    },
+    {
+      "name": "independent inner_coverage.py seed0",
+      "command": "/home/ray/developer/ai/math/.venv/bin/python -B audits/2026-10-13-k13-collar-50d5474/independent/inner_coverage.py --check",
+      "exit_code": 0,
+      "log": "independent/inner_coverage_v2.log",
+      "certificate": "independent/inner_coverage.json"
+    },
+    {
+      "name": "independent inner_coverage.py seed17",
+      "command": "PYTHONHASHSEED=17 /home/ray/developer/ai/math/.venv/bin/python -B audits/2026-10-13-k13-collar-50d5474/independent/inner_coverage.py --check",
+      "exit_code": 0,
+      "log": "independent/inner_coverage_seed17_v2.log",
+      "certificate": "independent/inner_coverage.json"
+    },
+    {
+      "name": "independent small_exhaustive.py seed0",
+      "command": "/home/ray/developer/ai/math/.venv/bin/python -B audits/2026-10-13-k13-collar-50d5474/independent/small_exhaustive.py --check",
+      "exit_code": 0,
+      "log": "independent/small_exhaustive.log",
+      "certificate": "independent/small_exhaustive.json"
+    },
+    {
+      "name": "independent small_exhaustive.py seed17",
+      "command": "PYTHONHASHSEED=17 /home/ray/developer/ai/math/.venv/bin/python -B audits/2026-10-13-k13-collar-50d5474/independent/small_exhaustive.py --check",
+      "exit_code": 0,
+      "log": "independent/small_exhaustive_seed17.log",
+      "certificate": "independent/small_exhaustive.json"
+    },
+    {
+      "name": "independent calibration_check.py seed0",
+      "command": "python3 -B audits/2026-10-13-k13-collar-50d5474/independent/calibration_check.py --check",
+      "exit_code": 0,
+      "log": "independent/calibration_review.log",
+      "certificate": "independent/calibration_review.json"
+    },
+    {
+      "name": "independent calibration_check.py seed17",
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-13-k13-collar-50d5474/independent/calibration_check.py --check",
+      "exit_code": 0,
+      "log": "independent/calibration_review_seed17.log",
+      "certificate": "independent/calibration_review.json"
+    }
+  ],
+  "generation_replays": {
+    "normal": "generation/normal/replay_manifest.json",
+    "seed17": "generation/seed17/replay_manifest.json",
+    "comparison": "generation/normal_seed17_comparison.json",
+    "mathematical_products_identical": 12
+  },
+  "proofs": [
+    "PROOF.md",
+    "generation/COMPLETENESS.md"
+  ],
+  "independent": "independent/README.md",
+  "frozen_input_manifest": "INPUTS.json",
+  "archives": {
+    "new_paths": 17,
+    "new_blobs": 13,
+    "new_compressed_bytes": 356933,
+    "old_records_unchanged": true,
+    "manifest": "ARCHIVE_ADDITIONS.json"
+  },
+  "retained_failures": [
+    {
+      "log": "logs/main-write.log",
+      "reason": "outer-face dart orientation assertion; resolved before certificate creation"
+    },
+    {
+      "log": "logs/docs.log",
+      "reason": "22 missing historical archived paths; exact originals hydrated"
+    },
+    {
+      "log": "logs/docs-hydration.log",
+      "reason": "legacy archive uses regular kind rather than file; corrected"
+    },
+    {
+      "log": "logs/whitespace.log",
+      "reason": "unchanged frozen vendor and raw logs contain original whitespace; byte-exact archive preserves them"
+    },
+    {
+      "reference": "generation/COMPLETENESS.md",
+      "reason": "initial plugin macro quoting compile failure"
+    },
+    {
+      "reference": "independent/README.md",
+      "reason": "initial comparator expected flat y while schema has five named groups"
+    }
+  ],
+  "not_run": [
+    "new Lean formalization",
+    "formal verification of plantri/compiler/Python",
+    "Dvorak-Lidicky external computation replay",
+    "unrelated research enumerations",
+    "commit",
+    "push",
+    "PR or Issue or comment publishing"
+  ],
+  "remaining_open": [
+    "K_le_14 = K_le_5",
+    "K_infinity = K_le_5",
+    "arbitrary-size h=3 eight necessary contracts",
+    "universal relation-preserving reduction"
+  ],
+  "not_claimed": [
+    "general h>=4",
+    "n5>=10"
+  ],
+  "original_checkout_end": {
+    "head": "5211a92178dffd9d7cd3f883a19d8a3f03932d07",
+    "status": ""
+  },
+  "isolated_head": "50d5474f2446403f3b3001d5943571184c8c9936",
+  "isolated_real_index_changes": "",
+  "delivery_seal": "SEAL.json",
+  "seal_check_command": "python3 -B audits/2026-10-13-k13-collar-50d5474/verify_bundle.py --check"
+}

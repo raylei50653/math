@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math-k13-collar-50d5474/audits/2026-10-13-k13-collar-50d5474/check.py", line 234, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/ray/developer/ai/math-k13-collar-50d5474/audits/2026-10-13-k13-collar-50d5474/check.py", line 208, in main
+    cs=[core(rot,sid,z) for z in range(19) if len(rot[z])==5]
+        ~~~~^^^^^^^^^^^
+  File "/home/ray/developer/ai/math-k13-collar-50d5474/audits/2026-10-13-k13-collar-50d5474/check.py", line 131, in core
+    need(outer==[list(cyclic(list(range(5))))], 'specified ordered B is outer face')
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math-k13-collar-50d5474/audits/2026-10-13-k13-collar-50d5474/check.py", line 19, in need
+    raise ValueError(message)
+ValueError: specified ordered B is outer face

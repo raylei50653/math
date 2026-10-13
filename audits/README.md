@@ -1,5 +1,11 @@
 # 稽核封存與還原
 
+2026-10-13 最新整理：[十三內點完整外圈與 W5 私人圈秩至少四](../docs/history/2026-10-13-k13-rank3-publish.md)。
+兩份隔離原包、frozen inputs、原 seal 與失敗紀錄按原 bytes 保存；
+K13 的17個原路徑及13個 gzip blobs 追加到既有封存，舊 records 不變。
+新 checkout 先依下方還原規則，再執行[整合保存核對](2026-10-13-k13-rank3-publication/verify.py)。
+原 HEAD／共享文件 seal 檢查保留隔離適用範圍；整合核對使用原文件的 gzip 快照。
+
 2026-10-13 K₄ 非平面偵測：[效果與漏判分類](../docs/k4_nonplanarity.md)。
 本輪兩份大型 JSON 依既有格式追加封存，原 bytes 與 frozen hashes 保持；
 新 checkout 先用下方 restore 指令，再執行該報告的固定域重播。

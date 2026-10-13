@@ -1,0 +1,141 @@
+{
+  "R3_preservation_claim": false,
+  "adopted_private_rank_lower_bound": 4,
+  "base": "50d5474f2446403f3b3001d5943571184c8c9936",
+  "c1_coverage": 2162,
+  "c2_coverage": 108,
+  "certificate_summary": {
+    "A_full_lifts": 928404,
+    "G_full_lifts": 465866,
+    "cells": 23244800,
+    "empty_cells": 22713170,
+    "masks": {
+      "1007": 2,
+      "1021": 1,
+      "1022": 1,
+      "1023": 2216,
+      "511": 8,
+      "639": 32,
+      "767": 8,
+      "91": 2
+    },
+    "mathematical_sha256": "4cab09423e33b04109669daed9f5c3388ade6486b9943f55ec0cd32bcb5edd2b",
+    "templates": 2270,
+    "types": {
+      "c1_r10_a0": 292,
+      "c1_r10_a1": 92,
+      "c1_r11_a0": 100,
+      "c1_r7_a0": 16,
+      "c1_r7_a1": 66,
+      "c1_r7_a2": 140,
+      "c1_r7_a3": 154,
+      "c1_r7_a4": 68,
+      "c1_r8_a0": 124,
+      "c1_r8_a1": 212,
+      "c1_r8_a2": 196,
+      "c1_r8_a3": 76,
+      "c1_r9_a0": 300,
+      "c1_r9_a1": 242,
+      "c1_r9_a2": 84,
+      "c2_r7_a0": 4,
+      "c2_r7_a1": 20,
+      "c2_r7_a2": 24,
+      "c2_r8_a0": 20,
+      "c2_r8_a1": 24,
+      "c2_r9_a0": 16
+    }
+  },
+  "checks": {
+    "catalogue_and_D5": {
+      "artifact": "controls/catalogue.json",
+      "status": "PASS"
+    },
+    "documentation": {
+      "initial_failure_preserved": "validation/docs.log: 18 missing legacy N45 archive links, resolved by documented second-layer byte-exact restore",
+      "local_links": 8172,
+      "log": "validation/docs-final.log",
+      "markdown_files": 653,
+      "status": "PASS"
+    },
+    "formal_docgraph": {
+      "log": "validation/docgraph-formal.log",
+      "status": "PASS"
+    },
+    "generated_artifact_policy": {
+      "log": "validation/storage-projected-index.log",
+      "scope": "temporary projected Git index with task whitelist; real index untouched",
+      "status": "PASS"
+    },
+    "global_docgraph": {
+      "errors": 62,
+      "kind": "duplicate-id",
+      "log": "validation/docgraph-global-final.log",
+      "policy": "retained; outside task scope",
+      "status": "FAIL-existing"
+    },
+    "independent_full": {
+      "log": "logs/independent.log",
+      "status": "PASS"
+    },
+    "lake_build": {
+      "jobs": 8831,
+      "log": "validation/lake-build.log",
+      "scope": "regression only; independent copied .lake; no new Lean theorem",
+      "status": "PASS"
+    },
+    "main_archive": {
+      "blobs": 1546,
+      "files": 2648,
+      "log": "validation/archive-verify.log",
+      "status": "PASS"
+    },
+    "negative": {
+      "corruptions": 8,
+      "log": "logs/negative-replay.log",
+      "status": "PASS",
+      "strength": "counterexample: same Sigma different R3",
+      "validator_rejections": 16
+    },
+    "nested_N45_archive": {
+      "blobs": 5188,
+      "files": 49699,
+      "log": "validation/n45-archive-restore.log",
+      "scope": "restore verifies all original bytes and modes; no overwrite of differing files",
+      "status": "PASS"
+    },
+    "paper_review": {
+      "files": [
+        "review/REVIEW.md",
+        "review/CORE_REVIEW.md"
+      ],
+      "status": "PASS"
+    },
+    "primary_normal": {
+      "log": "validation/normal.log",
+      "status": "PASS"
+    },
+    "primary_seed17": {
+      "log": "validation/seed17.log",
+      "status": "PASS"
+    },
+    "whitespace": {
+      "scope": "git diff --check and all new non-frozen text",
+      "status": "PASS"
+    }
+  },
+  "closure_evidence": "paper complete original-embedding reduction plus two exhaustive full-relation checkers and frozen K132 membership",
+  "contractible_rank3": "fully excluded for every legal internal W5 in the full minimum-source contract",
+  "delivery_verifier": "python3 -B audits/2026-10-13-w5-rank3-contractible-50d5474/verify.py",
+  "new_Lean_theorem": false,
+  "parallel_K13_results_used": false,
+  "remaining_open": [
+    "general rank-at-least-four source reduction",
+    "general small marked annulus representatives",
+    "general R3 representatives",
+    "K_infinity=K_le_5"
+  ],
+  "remote_actions": [],
+  "representative_claim": null,
+  "source_instance": "not triggered",
+  "task": "W5-RANK3-C"
+}

@@ -1,0 +1,76 @@
+{
+  "docs": {
+    "command": [
+      "python3",
+      "-B",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.706,
+    "stdout": "docs.stdout.log",
+    "stderr": "docs.stderr.log"
+  },
+  "docgraph-global": {
+    "command": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "check"
+    ],
+    "exit_code": 1,
+    "seconds": 2.322,
+    "stdout": "docgraph-global.stdout.log",
+    "stderr": "docgraph-global.stderr.log",
+    "known_baseline_errors": 62,
+    "same_duplicate_id_set": true
+  },
+  "lake-build": {
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit_code": 0,
+    "seconds": 4.043,
+    "stdout": "lake-build.stdout.log",
+    "stderr": "lake-build.stderr.log"
+  },
+  "preservation": {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-k13-rank3-publication/verify.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.386,
+    "stdout": "preservation.stdout.log",
+    "stderr": "preservation.stderr.log"
+  },
+  "docgraph-formal-initial": {
+    "command": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "check",
+      "--include",
+      "docs/**/*.md"
+    ],
+    "exit_code": 2,
+    "seconds": 0.042,
+    "stdout": "docgraph-formal-initial.stdout.log",
+    "stderr": "docgraph-formal-initial.stderr.log"
+  },
+  "docgraph-formal": {
+    "command": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "stdout": "docgraph-formal.stdout.log",
+    "stderr": "docgraph-formal.stderr.log"
+  }
+}

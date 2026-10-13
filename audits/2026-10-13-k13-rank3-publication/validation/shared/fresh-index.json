@@ -1,0 +1,39 @@
+{
+  "preservation": {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-k13-rank3-publication/verify.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "fresh-index-preservation.stdout.log",
+    "stderr": "fresh-index-preservation.stderr.log",
+    "raw_archived_paths_initially_absent": 17
+  },
+  "restored_new_archive_paths_byte_exact": 17,
+  "k13": {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-k13-collar-50d5474/check.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "fresh-index-k13.stdout.log",
+    "stderr": "fresh-index-k13.stderr.log"
+  },
+  "rank3-catalogue": {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-13-w5-rank3-contractible-50d5474/controls/catalogue.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "fresh-index-rank3-catalogue.stdout.log",
+    "stderr": "fresh-index-rank3-catalogue.stderr.log"
+  },
+  "status": "PASS",
+  "tracked_files_exported": 337
+}

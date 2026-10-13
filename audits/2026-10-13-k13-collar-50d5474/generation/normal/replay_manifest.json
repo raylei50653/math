@@ -1,0 +1,144 @@
+{
+  "base": "50d5474f2446403f3b3001d5943571184c8c9936",
+  "commands": [
+    {
+      "argv": [
+        "cc",
+        "-O3",
+        "-std=c11",
+        "/home/ray/developer/ai/math-k13-collar-50d5474/artifacts/c5_excess_two_independent_search/vendor/plantri.c",
+        "-o",
+        "/tmp/k13-plantri-472y7cmd/plantri"
+      ],
+      "label": "compile",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "cc",
+        "-O3",
+        "-std=c11",
+        "-DPLUGIN=/home/ray/developer/ai/math-k13-collar-50d5474/audits/2026-10-13-k13-collar-50d5474/generation/min5_filter.c",
+        "/home/ray/developer/ai/math-k13-collar-50d5474/artifacts/c5_excess_two_independent_search/vendor/plantri.c",
+        "-o",
+        "/tmp/k13-plantri-472y7cmd/plantri_min4_filter"
+      ],
+      "label": "compile_filter",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/tmp/k13-plantri-472y7cmd/plantri",
+        "-m5",
+        "19",
+        "/home/ray/developer/ai/math-k13-collar-50d5474/audits/2026-10-13-k13-collar-50d5474/generation/normal/spheres19.pc"
+      ],
+      "label": "min5_19",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/tmp/k13-plantri-472y7cmd/plantri_min4_filter",
+        "-m4",
+        "19",
+        "/home/ray/developer/ai/math-k13-collar-50d5474/audits/2026-10-13-k13-collar-50d5474/generation/normal/spheres19_from_min4.pc"
+      ],
+      "label": "min4_19_filter",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/tmp/k13-plantri-472y7cmd/plantri",
+        "-m4",
+        "14",
+        "/home/ray/developer/ai/math-k13-collar-50d5474/audits/2026-10-13-k13-collar-50d5474/generation/normal/inner_spheres14.pc"
+      ],
+      "label": "min4_14",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/usr/bin/python",
+        "/home/ray/developer/ai/math-k13-collar-50d5474/audits/2026-10-13-k13-collar-50d5474/generation/generate.py",
+        "--directory",
+        "/home/ray/developer/ai/math-k13-collar-50d5474/audits/2026-10-13-k13-collar-50d5474/generation/normal"
+      ],
+      "label": "parse_sources",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/usr/bin/python",
+        "/home/ray/developer/ai/math-k13-collar-50d5474/audits/2026-10-13-k13-collar-50d5474/generation/inner_cover.py",
+        "--directory",
+        "/home/ray/developer/ai/math-k13-collar-50d5474/audits/2026-10-13-k13-collar-50d5474/generation/normal"
+      ],
+      "label": "inner_cover",
+      "returncode": 0
+    }
+  ],
+  "compiler": "cc (GCC) 16.2.1 20260810",
+  "external_min4_description": "https://users.cecs.anu.edu.au/~bdm/papers/plantri-full.pdf",
+  "external_min5_theorem": "https://users.cecs.anu.edu.au/~bdm/plantri/min5paper_sc.pdf",
+  "external_page": "https://users.cecs.anu.edu.au/~bdm/plantri/",
+  "inputs": {
+    "artifacts/c5_excess_two_independent_search/vendor/plantri-guide.txt": "79bbe51083318aa22797d5ca1a28cc347bc38a6871c7cf35e057863de3f785fc",
+    "artifacts/c5_excess_two_independent_search/vendor/plantri.c": "3f70de5a3cacc78b2ed25b6a257588da94a518d8ae1dae74bcd0bf259cea07e8",
+    "audits/2026-10-13-k13-collar-50d5474/generation/generate.py": "50339f64b43c3d905c18965bf26e1dddc243df177db26b1e987f28d07a081887",
+    "audits/2026-10-13-k13-collar-50d5474/generation/inner_cover.py": "c6da2ea67605271973e1a2b147ca94d8ef1f84a35ed0f2641f67658472c5d6d9",
+    "audits/2026-10-13-k13-collar-50d5474/generation/min5_filter.c": "ce45905f62ad577d5a63ecfd2e0d58959a2cbdd51f02307d99d082d2b048fe6d",
+    "audits/2026-10-13-k13-collar-50d5474/generation/replay.py": "5fd9dfd25d7d11097c6f2a8059da49b308944a244dd88e2f761d41d72fded503"
+  },
+  "products": {
+    "generation_summary.json": {
+      "bytes": 482,
+      "sha256": "bdf7b4aa80636cc6b435483ebf07858553f2d14524e199bc84f945c443c1ba9b"
+    },
+    "inner_cores.json": {
+      "bytes": 153466,
+      "sha256": "f39f51bd5915d56503372f805c371fff55f5c0e90aa37fa7868bf18ff6abb573"
+    },
+    "inner_filters.json": {
+      "bytes": 1347758,
+      "sha256": "a03798ae3853b35c868147f5c87866843c3c34c09bdf7bb5b6b2c0db3f6a62cb"
+    },
+    "inner_spheres14.pc": {
+      "bytes": 215079,
+      "sha256": "0204b2ce8e08f3c668bc17a184ed047f1116b500bf51a11aeb0898104d61a9e7"
+    },
+    "inner_summary.json": {
+      "bytes": 628,
+      "sha256": "451c4d403bb0d56e7e29350fb2fb6cabd08abf7606049a2fe1d62a6c9bfb352a"
+    },
+    "min4_to_min5.json": {
+      "bytes": 3479,
+      "sha256": "e0c9dfa0174db74943269cd63aa61a2783a62f9cbc261aa11eaeb19319e118f9"
+    },
+    "named_configurations.json": {
+      "bytes": 280269,
+      "sha256": "5fb1b613b4608b09dc9774c9e34491c2f9ffedc714df1f64b9cdfc7f00f64360"
+    },
+    "primary_to_inner.json": {
+      "bytes": 3420,
+      "sha256": "f16e1e320708a2794ccdc1736cd5fe32198b1fb006e01f1d7e5a287b2f85e9ca"
+    },
+    "rooted_sources.json": {
+      "bytes": 4328680,
+      "sha256": "a2489cdaf5929c6c8fdecf509a85bfbf6566f4bb169a7834735e024a097d0338"
+    },
+    "spheres19.json": {
+      "bytes": 125452,
+      "sha256": "ef6bc732694cb6ad09b65c3fa29deaccfcd3ef2f430dabd4d3b7c2297be34c66"
+    },
+    "spheres19.pc": {
+      "bytes": 2821,
+      "sha256": "87a83df7d22e6c37cbe80a753a4caf7b5d7c72c864db205af48b89286f0470f2"
+    },
+    "spheres19_from_min4.pc": {
+      "bytes": 2821,
+      "sha256": "7cef84d4d44b9770f1493a20b51b0283479a89616f6c8cf2b9495a3c2e39357c"
+    }
+  },
+  "python": "3.14.7 (main, Aug 10 2026, 07:46:56) [GCC 16.1.1 20260728]",
+  "seed": 0
+}

@@ -7,9 +7,14 @@
 本次整理及原證據保存見[發布紀錄](history/2026-10-13-n2-rank2-c8-publish.md)。
 目前停止點由 [Kempe 導覽](c5_kempe_guide.md#3-停止點與保留缺口)維護。
 
-2026-10-13 後續：[圈秩三 essential 排除](c5_w5_private_rank3_essential.md)
+2026-10-13 先前進展：[圈秩三 essential 排除](c5_w5_private_rank3_essential.md)
 已證私人圖若含環繞 U 的環則圈秩至少四；圈秩三只留 contractible、7≤r≤11。
-一般私人圈秩下界仍為三。
+該輪的一般私人圈秩下界為三；後續採納見下一段。
+
+2026-10-13 後續：[contractible 圈秩三排除](c5_w5_private_rank3_contractible.md)已覆蓋 c=1、c=2 全部来源，
+2,270 份必要模板的完整 Σ 均屬 K132。接 essential 分支，任取合法全內部 W5
+的私人圈秩至少四；一般小代表與 K∞=K≤5 仍 OPEN，未新增 Lean theorem。
+下文保留原輪次的結果及當時停止點。
 
 **在全部目錄外 disk-C5 圖中先最小化內點、再最大化邊數的完整來源前提下，
 任取合法全內部 induced W5，原外框為 B，輪中心為 v、原循環鄰點為 U，
