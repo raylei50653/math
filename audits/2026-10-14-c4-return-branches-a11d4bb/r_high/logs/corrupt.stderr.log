@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math-c4-return-branches-a11d4bb/audits/2026-10-14-c4-return-branches-a11d4bb/r_high/check_high.py", line 218, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math-c4-return-branches-a11d4bb/audits/2026-10-14-c4-return-branches-a11d4bb/r_high/check_high.py", line 209, in main
+    need(json.loads(args.certificate.read_text()) == json.loads(json.dumps(result)), 'certificate mismatch')
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math-c4-return-branches-a11d4bb/audits/2026-10-14-c4-return-branches-a11d4bb/r_high/check_high.py", line 28, in need
+    raise ValueError(reason)
+ValueError: certificate mismatch

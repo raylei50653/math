@@ -1,0 +1,92 @@
+[
+  {
+    "label": "pq",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/pq/check.py",
+      "--check"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "r_high",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/r_high/check_high.py",
+      "--check"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "general",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/general/check_general.py",
+      "--check"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "rotation",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/rotation/check_rotation.py",
+      "--check"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "lake-build",
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit": 0,
+    "jobs": 8832,
+    "evidence": "completed in publication turn; existing linter warnings replayed; no new Lean theorem"
+  },
+  {
+    "label": "docs",
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "formal-docgraph",
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "staged-whitespace",
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "generated-artifacts",
+    "command": [
+      "python3",
+      "tools/check_generated_artifacts.py"
+    ],
+    "exit": 0,
+    "indexed_files": 5060,
+    "large_exceptions": 8,
+    "registered_outputs": 166
+  }
+]

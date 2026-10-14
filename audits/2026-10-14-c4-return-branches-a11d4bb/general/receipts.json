@@ -1,0 +1,59 @@
+[
+  {
+    "label": "generate-final",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/general/check_general.py"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "generate-final.stdout.log",
+    "stderr": "generate-final.stderr.log"
+  },
+  {
+    "label": "final-default",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/general/check_general.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "final-default.stdout.log",
+    "stderr": "final-default.stderr.log"
+  },
+  {
+    "label": "final-seed17",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/general/check_general.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": 17,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "final-seed17.stdout.log",
+    "stderr": "final-seed17.stderr.log"
+  },
+  {
+    "label": "final-negative",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/general/check_general.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/general/tampered-negative.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "stdout": "final-negative.stdout.log",
+    "stderr": "final-negative.stderr.log"
+  }
+]

@@ -17,6 +17,7 @@ docgraph:
     - audits/2026-10-14-c4-tait-lock-review-fdd3e22/controls/check_matchings.py
     - audits/2026-10-14-c4-c5-recursion-fdd3e22/REPORT.md
     - audits/2026-10-14-c4-c5-recursion-fdd3e22/fibre/PROOF.md
+    - audits/2026-10-14-c4-return-branches-a11d4bb/REPORT.md
 ---
 
 # C4 指定延拓壓到四連通三角化圖
@@ -26,6 +27,8 @@ docgraph:
 已補上 ABCB 的同份 fibre 分解及高 p,q 子域的 k≥28。
 [返回單射與 C4／C5 遞迴](../audits/2026-10-14-c4-c5-recursion-fdd3e22/REPORT.md)
 進一步排除 r 原五度全支；r 原六度時也迫 s,t 至少六度，七接點 C5 關係只留271／314／319。
+[其他返回分支](../audits/2026-10-14-c4-return-branches-a11d4bb/REPORT.md)再給
+a=4⇒t≥6、c=4⇒s≥6；p=q=5時另一個原共同鄰點至少六度，單低p/q化成精確mask14。
 來源沿用 [C5→C4 橋](c5_c4_boundary_pivot.md)的 no4ct 全域最小來源契約，
 原T／T0證明及實際重播見 [前輪報告](../audits/2026-10-14-c4-triangle-core-b66f592/REPORT.md)。
 
@@ -109,6 +112,26 @@ T 支的 `b=μ(zxy)` 等價於 `Δ(zb)=Δ(xy)`；T0 支的兩面色集合相同
 [新證明](../audits/2026-10-14-c4-c5-recursion-fdd3e22/fibre/PROOF.md)已排除原 r=5 的較小 mask7。
 因此原 r=5、高 p,q 的 k≥29 子域為空，不再作目前未解分支。
 新的七接點狀態仍須保同份全部接回，純刪點的完成成本尚未嚴格下降。
+
+### 其他返回分支與新的低度介面
+
+[新分支證明](../audits/2026-10-14-c4-return-branches-a11d4bb/REPORT.md)全部限定於上述
+原x,y,b四度的同一最小來源；degree均指原G，不提高共同k≥23。
+
+| 附加原條件 | 已證結果／保留義務 |
+| --- | --- |
+| p=5；q=5對稱 | 以T0−p的原link作外框，完整C4支持恰14；rainbow分成兩個完整fibre palette sectors，單低度支仍OPEN |
+| p=q=5 | pq的另一面頂點ell原度≥6；交換指定面角色後使用原返回單射，未排ell≥6支 |
+| a=4；c=4對稱 | 直接刪t的424子支被外面z=r商圖的較小來源可染性排除，故t≥6；反射給s≥6，932／933／941均適用 |
+| t=5；s=5對稱 | 必a≥5；直接刪t後的C5完整支持只留956／1012／1020，仍保內部p,q逐列full lifts |
+| 932／933且a=4 | 整份原圖旋轉給p≥6；p=6⇒t,q≥6。若k≤27，必q=5、p≥7 |
+| 932且c=4 | 對稱旋轉給q≥6；q=6⇒p,s≥6。若k≤27，必p=5、q≥7 |
+| r=7 | 刪r露出C6，必要全lift／Kempe模型保留26外框型、111joint orbits；沒有來源排除 |
+
+一般mask13另有缺色端點連通及條件式BC子fibre雙射，但返回落入允許的另一ABCB
+sector，沒有空fibre矛盾。旋轉必保留兩個完整singleton fibres皆空的前提，
+不可把上述p/q旋轉界直接套941。紙面、有限控制及獨立審閱分見新報告；無新Lean。
+
 本輪七張明列圖的42份完整染色、14份集合雙射與有限閉包重播見
 [驗證紀錄](../audits/2026-10-14-c4-mask13-joint6-fdd3e22/VERIFICATION.md)；真正目標來源0，未新增Lean。
 

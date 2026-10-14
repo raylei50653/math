@@ -1,0 +1,40 @@
+[
+  {
+    "name": "rotation-final-default",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/rotation/check_rotation.py",
+      "--check"
+    ],
+    "seed": null,
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "name": "rotation-final-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/rotation/check_rotation.py",
+      "--check"
+    ],
+    "seed": "17",
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "name": "rotation-final-negative",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/rotation/check_rotation.py",
+      "--check",
+      "--certificate",
+      "/home/ray/developer/ai/math-c4-return-branches-a11d4bb/audits/2026-10-14-c4-return-branches-a11d4bb/rotation/tampered-negative.json"
+    ],
+    "seed": null,
+    "exit": 1,
+    "expected_exit": 1
+  }
+]

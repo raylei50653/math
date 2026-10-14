@@ -1,0 +1,40 @@
+[
+  {
+    "PYTHONHASHSEED": null,
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/pq/check.py",
+      "--check"
+    ],
+    "expected_returncode": 0,
+    "label": "final-default",
+    "returncode": 0
+  },
+  {
+    "PYTHONHASHSEED": "17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/pq/check.py",
+      "--check"
+    ],
+    "expected_returncode": 0,
+    "label": "final-seed17",
+    "returncode": 0
+  },
+  {
+    "PYTHONHASHSEED": null,
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/pq/check.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/pq/tampered-negative.json"
+    ],
+    "expected_returncode": 1,
+    "label": "final-negative",
+    "returncode": 1
+  }
+]

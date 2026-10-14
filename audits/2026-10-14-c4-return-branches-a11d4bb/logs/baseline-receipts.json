@@ -1,0 +1,29 @@
+{
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-c4-c5-recursion-fdd3e22/fibre/check_return.py",
+        "--check"
+      ],
+      "seed": null,
+      "exit": 0,
+      "stdout": "{\"status\": \"PASS: local return injection; mask7 support excluded\", \"initial_labelled_count\": 120, \"surviving_labelled_count\": 72, \"surviving_outer_mask\": 5, \"required_outer_mask\": 7, \"actual_target_sources\": 0}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-c4-c5-recursion-fdd3e22/fibre/check_return.py",
+        "--check"
+      ],
+      "seed": "17",
+      "exit": 0,
+      "stdout": "{\"status\": \"PASS: local return injection; mask7 support excluded\", \"initial_labelled_count\": 120, \"surviving_labelled_count\": 72, \"surviving_outer_mask\": 5, \"required_outer_mask\": 7, \"actual_target_sources\": 0}",
+      "stderr": ""
+    }
+  ],
+  "input_drift": []
+}

@@ -2,22 +2,22 @@
 
 ## 最新進度
 
-現況核對：2026-10-14；C4共同Tait判準已採納，返回單射排r五度、六度前緣迫s,t≥6；一般K≤22不變。
+現況核對：2026-10-14；返回旁支補上單低p/q的mask14、雙低度共同鄰點界與a四度迫t≥6；一般K≤22不變。
 
 | 欄位 | 現況 |
 | --- | --- |
 | 階段／生命週期 | 主攻 E-ARC2 仍在證明階段；N2 的原 E4 契約已收尾。no4ct／C8、W5 縮減與跨邊出口並行，尚未完成一般來源排除。 |
-| 最近研究更新 | [C4／C5 多型遞迴](../audits/2026-10-14-c4-c5-recursion-fdd3e22/REPORT.md)：返回單射排 r 五度，r 六度迫 s,t≥6；[共同 Tait 判準](../audits/2026-10-14-c4-tait-lock-review-fdd3e22/REPORT.md)另採納 XOR、全染色雙環及偶補完美匹配等價式。 |
-| 上次完成 | r 五度及 r 六度兩側五度全支排除；七接點 C5 完整關係縮至271／314／319，保全部接回。一般K≤22／k≥23不變，無新Lean。 |
-| 目前停止點 | C4 的 r 六度七接點三關係、r≥7 及一般 T／T0 延拓 OPEN。E-ARC2 的 N1／相鄰 roots、基本 LL-CUT，一般 RING、C9-932 較高度數來源、其餘 h≥4、W5 一般縮減及 K∞ 仍 OPEN。 |
-| 下一步 | 推進 r 六度、s,t≥6 的七接點共同轉移；另保留 r≥7、原p或q五度子域（k≤27必有）。下降須連同合法完成成本與目錄外壞性核對。 |
+| 最近研究更新 | [其他返回分支](../audits/2026-10-14-c4-return-branches-a11d4bb/REPORT.md)：單低p/q精確mask14；p=q=5迫另一共同鄰點≥6；a=4⇒t≥6、c=4⇒s≥6；一般t五度C5只留956／1012／1020。 |
+| 上次完成 | 原r五度排除、r六度迫s,t≥6仍有效；新旁支保完整fibre並取得上述條件界，旋轉另有singleton限制。一般K≤22／k≥23不變，無新Lean。 |
+| 目前停止點 | 低p/q的mask14共同介面、r六度三關係、一般t五度三關係、r≥7及一般T／T0延拓OPEN。E-ARC2的N1／相鄰roots、基本LL-CUT，一般RING、較高C9／h及W5縮減、K∞仍OPEN。 |
+| 下一步 | 從原p或q五度的mask14完整fibre split續推，保原內部指定面與附件；另保留r六度271／314／319與t五度956／1012／1020。下降仍須合法完成與目錄外壞性。 |
 | 接手入口 | 先查本頁 §3；E-ARC2 讀 [N2 父覆蓋](c5_excess_two_n2_bridge.md#3-接回父分類與剩餘來源)，no4ct 讀 [交接](tasks/c5_no4ct_handoff.md)，W5 讀 [保存契約與排除鏈](c5_w5_marked_relation.md#0-保存強度與私人圈秩覆蓋鏈)，跨邊讀 [精確定理](c5_cross_edge_kempe.md)。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
-| 2026-10-14／C4共同判準與前緣 | [T／T0共同Tait及多型遞迴](c5_c4_triangle_core.md)：偶補匹配判準與全染色雙環必要條件；mask13支排r五度，r六度迫s,t≥6，C5只留271／314／319；無界仍OPEN。 |
+| 2026-10-14／C4共同判準與返回旁支 | [T／T0及其他返回](c5_c4_triangle_core.md)：保共同Tait與r五度排除，補低p/q的mask14、雙低度共同鄰點≥6及a=4⇒t≥6；一般t五度只留三個C5支持，無界仍OPEN。 |
 | 2026-10-14／換邊界與K≤22 | [完整C5→C4來源橋](c5_c4_boundary_pivot.md)補上舊文獻稽核的缺口；三支皆為具名對角拒絕4-candidate，接外部≤28點計算得最小來源k≥23。 |
 | 2026-10-13／no4ct 來源收緊 | [K15](c5_k15_sphere.md)與三支 C8 接入後，[T1](../audits/2026-10-13-c8-terminal-s1-d521163/REPORT.md) 曾得 p>0⇒s≥2，現由 T1-CROSSCUT 涵蓋，原證書保留；[T2](../audits/2026-10-13-c9-932-source-d521163/REPORT.md) 得 932、h=4⇒k≥18。 |
 | 2026-10-13／W5 no4ct 接通 | [圈秩四兩支](c5_w5_private_rank4.md)的原完整證據由 [T3](../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md)接入 no4ct 三支；任取合法 W5 的 ρ≥5，一般縮減仍 OPEN。 |
@@ -106,6 +106,8 @@
 無界排除與最小性接回仍 OPEN。
 原x,y,b皆四度的窄支已由[完整cap表](../audits/2026-10-14-c4-triangle-core-b66f592/ADJACENT4.md)
 將R的完整C4關係縮至mask13。[JOINT6續進](../audits/2026-10-14-c4-mask13-joint6-fdd3e22/REPORT.md)已排ABCB的pq=BC，得到CD／BD兩個非空完整fibre分支；八列必要閉包仍非空。原p,q都至少六度則k≥28，故k≤27必有p或q五度，可先攻這個低度子域。[返回單射](../audits/2026-10-14-c4-c5-recursion-fdd3e22/REPORT.md)已排除原r五度，r六度另迫s,t≥6，下一層C5完整關係只留271／314／319。高p,q的k≥28子域及一般T／T0另留。仍須打破同份ABAB／ABCD對p,q的共同強迫。以下C8／W5保留各輪原結構及較弱歷史大小界，不將條件界升格為全域界或無界排除。
+
+[其他返回分支](../audits/2026-10-14-c4-return-branches-a11d4bb/REPORT.md)將單低p/q改以原link作外框，取得精確mask14及rainbow完整fibre分解；雙低p=q=5迫另一共同鄰點ell≥6。直接刪t並作外面z=r商圖另排a=4,t=5，給a=4⇒t≥6、c=4⇒s≥6；一般t=5只留C5支持956／1012／1020。旋轉的p/q界須保相應singleton fibres皆空，941不能沿用。一般mask13的BC返回只接到允許sector；r=7的C6必要模型仍存活，來源排除OPEN。
 
 **無四色定理前提路線（2026-10-14）。** [完整外圈三支接入](../audits/2026-10-13-c5-no4ct-collar-6cafdfb/REPORT.md)
 已證共同 h≥3、n5≥9；[C8 接入](../audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md)

@@ -14,6 +14,8 @@
 [JOINT6續進](../audits/2026-10-14-c4-mask13-joint6-fdd3e22/REPORT.md)已得ABCB的完整fibre分解，
 高p,q子域有k≥28；[返回單射與多型遞迴](../audits/2026-10-14-c4-c5-recursion-fdd3e22/REPORT.md)
 已排除r原五度，r六度時迫s,t≥6，七接點C5只留271／314／319；一般界不變，無界仍OPEN。
+[其他返回分支](../audits/2026-10-14-c4-return-branches-a11d4bb/REPORT.md)補單低p/q的精確mask14、
+p=q=5時另一共同鄰點≥6、a=4⇒t≥6及c=4⇒s≥6；一般t五度C5只留956／1012／1020。
 
 [共同 Tait 判準](../audits/2026-10-14-c4-tait-lock-review-fdd3e22/REPORT.md)
 另將 T／T0 精確化為指定邊異色，等價於偶補完美匹配恰含一條指定邊。
@@ -310,7 +312,7 @@ d_G≥6及k≥18；T3接通no4ct三支私人ρ≥5。一般RING、
 | [十四內點完整球面覆蓋與C₈加強](c5_k14_sphere.md) | K≤14=K≤5；73球面嵌入／1,001根圖全Σ1023，180,228完整lifts獨立一致；另以原面配對／無葉點純紙面證h=3⇒k≥16。十五內點後由K15排除，一般主命題OPEN，未Lean化 |
 | [十五內點完整球面覆蓋](c5_k15_sphere.md) | K≤15=K≤5；192球面嵌入／2,714根圖全Σ1023，624,617完整lifts獨立一致；後續C4來源橋提高至K≤22／共同k≥23，主命題OPEN，未Lean化 |
 | [C8原短弧接點與內圈](c5_c8_inner_collar.md) | 每I點至多兩個C附件、八原面third points相異；m≥9，等號唯一W8，八契約完整Σ1023排除m=9；後續剝層分類排m=10，h=3⇒k≥19；八項無界殘留仍OPEN |
-| [C4指定延拓與四連通三角化圖](c5_c4_triangle_core.md) | 共同XOR／Tait與偶補匹配判準；全染色鎖定排除OPEN。原x,y,b四度支已證r≥6、r=6⇒s,t≥6；七接點C5只留271／314／319，計數必要模型不證實現。高p,q條件k≥28保留，一般K≤22不變，無新Lean |
+| [C4指定延拓與四連通三角化圖](c5_c4_triangle_core.md) | 原x,y,b四度支已證r≥6、r=6⇒s,t≥6；[返回旁支](../audits/2026-10-14-c4-return-branches-a11d4bb/REPORT.md)補單低p/q的mask14、雙低度共同鄰點≥6、a=4⇒t≥6與反射界，t五度C5只留956／1012／1020。共同Tait、一般來源排除及K∞仍OPEN；K≤22不變，無新Lean |
 | [C8反覆剝層與完整轉移](c5_c8_peeling.md) | 原三型分類與完整separator轉移保留；T1-CROSSCUT在no4ct最小來源契約下證h=3⇒p=0，全部PINCH／BRIDGE排除，任意單接點數與兩片大小。剝層自身給h=3⇒k≥19，當前共同C4界為k≥23；RING、固定寬度與一般來源OPEN，未Lean化 |
 | [十三內點完整外圈與 K≤13 界](c5_k13_collar.md) | h4–7全部覆蓋；23球面嵌入／306根圖皆Σ1023，完整lifts独立一致；h6／h7另有紙面排除。K≤13=K≤5，目錄外來源至少十四內點；不提高h／n5；後續K14亦完成，一般命題OPEN，未Lean化 |
 | [C₈ apex度數與十四內點分支界](c5_c8_apex_degree.md) | 八項全部40個apex-H三度假設排除，原apex均至少六度；原h=3⇒k≥14，後續原面配對、短弧／內圈及m=10剝層分類加強為k≥19。八項仍留；一般k≥16由K15另證，h≥3、n₅≥9不提高；紙面＋精確Python，未Lean化 |
@@ -552,6 +554,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 ## 歷史紀錄與舊連結
 
 - [2026-10-14：目前進展跨線整合與發布](history/2026-10-14-progress-consolidation-publish.md)
+- [2026-10-14：C4返回旁支、低p/q介面與度數界相接發布](history/2026-10-14-c4-return-branches-publish.md)
 - [2026-10-14：C4共同Tait判準、完整fibre返回與六度前緣整理發布](history/2026-10-14-c4-tait-return-publish.md)
 - [2026-10-14：C4四連通化約與mask13六接點殘題整理發布](history/2026-10-14-c4-triangle-core-publish.md)
 - [2026-10-14：C4來源橋、T1正對切口與具名Lean替換整理發布](history/2026-10-14-c4-t1-lean-progress-publish.md)
