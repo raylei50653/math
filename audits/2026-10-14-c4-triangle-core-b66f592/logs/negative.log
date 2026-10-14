@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "negative_controls": [
+    {
+      "name": "missing fibre record",
+      "rejected": true,
+      "reason": "Certificate differs"
+    },
+    {
+      "name": "source drift",
+      "rejected": true,
+      "reason": "Frozen source hash differs"
+    },
+    {
+      "name": "exclusive create",
+      "rejected": true,
+      "reason": "FileExistsError"
+    },
+    {
+      "name": "missing rooted opening",
+      "rejected": true,
+      "reason": "certificate differs"
+    }
+  ],
+  "protected_sha256_before_and_after": {
+    "controls/certificate.json": "4da9e6505a16dd13650a9ed2c37d7fd2adf39ef7c41737e8b220d9d418823ca5",
+    "controls/structure.json": "fa758b2f77e7f04d26d1fd9a36fdde75dc4b72513b10f8deed981f7272f9feed",
+    "frozen/artifacts/c5_cells/cells.json": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8"
+  }
+}

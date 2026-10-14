@@ -171,8 +171,12 @@ d(B)\ge4,\quad d(V\setminus B)\ge5,\quad h\ge3,\quad n_5\ge9.
 
 ## 5. 建議的第一個窄任務
 
-新方向先讀 [C4 來源橋](../c5_c4_boundary_pivot.md)，保外點 u 度四及原 b0／b1
-內鄰點，研究這個具名 4-candidate 子類任意大小的 ABCB 延拓；一般子類仍 OPEN。
+新方向先讀 [C4 來源橋](../c5_c4_boundary_pivot.md)及[四連通 T／T0 化約](../c5_c4_triangle_core.md)。
+後者已將原 b 四度分支壓到同一 T0 的兩個具名三角面色集合差異，
+另一支保留 T 的 b 出口；兩支仍 OPEN。原 b0、b1、b3 皆四度子支中，
+較小 R 的完整 C4 關係已縮至 mask13，可先攻其六接點對 p,q 的共同強迫。
+保留原接點與同份完整染色，
+不能把一步 Kempe 受阻或兩面各自的可行投影當成無界延拓的結論。
 
 C8 方向先讀 [T1-CROSSCUT](../../audits/2026-10-14-t1-crosscut-review-77fbd5d/REPORT.md)
 的任意來源覆蓋與雙 C6 完整接合，再由 [C8 剝層](../c5_c8_peeling.md) 接續

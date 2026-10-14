@@ -1,0 +1,91 @@
+{
+  "base": "b66f592167bf7c3fab0ed89e57b092e49877be15",
+  "checks": [
+    {
+      "name": "check-docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "check-docs.log",
+      "status": "PASS",
+      "scope": "Final publication prose and links"
+    },
+    {
+      "name": "docgraph-formal",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "docgraph-formal.log",
+      "status": "PASS",
+      "scope": "Final publication prose and links"
+    },
+    {
+      "name": "docgraph-whole",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 5.728,
+      "log": "docgraph-whole.log",
+      "status": "FAIL",
+      "duplicate_id_errors": 69,
+      "retained_history_failure": true,
+      "classification_note": "Diagnostic syntax is ERROR [duplicate-id]; initial summary parsing used the wrong marker. Raw command output is retained unchanged."
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.024,
+      "log": "diff-check.log",
+      "status": "PASS"
+    },
+    {
+      "name": "generated-artifacts",
+      "command": [
+        "python3",
+        "-B",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "generated-artifacts.log",
+      "status": "PASS",
+      "scope": "Final staged whitelist"
+    },
+    {
+      "name": "staged-diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "staged-diff-check.log",
+      "status": "PASS",
+      "scope": "Final staged whitelist"
+    }
+  ]
+}

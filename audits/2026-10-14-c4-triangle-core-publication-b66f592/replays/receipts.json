@@ -1,0 +1,41 @@
+{
+  "cwd": "/home/ray/developer/ai/math",
+  "capture": "Complete untruncated exec_command.output; running commands completed through write_stdin. Raw output is copied verbatim to each log, with exit codes recorded here.",
+  "commands": [
+    {
+      "command": "python3 -B audits/2026-10-14-c4-triangle-core-b66f592/controls/check_quotient.py --check",
+      "exit_code": 0,
+      "log": "quotient-normal.log"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-14-c4-triangle-core-b66f592/controls/check_quotient.py --check",
+      "exit_code": 0,
+      "log": "quotient-seed17.log"
+    },
+    {
+      "command": "python3 -B audits/2026-10-14-c4-triangle-core-b66f592/controls/check_structure.py --check",
+      "exit_code": 0,
+      "log": "structure-normal.log"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-14-c4-triangle-core-b66f592/controls/check_structure.py --check",
+      "exit_code": 0,
+      "log": "structure-seed17.log"
+    },
+    {
+      "command": "python3 -B audits/2026-10-14-c4-triangle-core-b66f592/controls/check_cap.py --check",
+      "exit_code": 0,
+      "log": "cap-normal.log"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-14-c4-triangle-core-b66f592/controls/check_cap.py --check",
+      "exit_code": 0,
+      "log": "cap-seed17.log"
+    },
+    {
+      "command": "python3 -B audits/2026-10-14-c4-triangle-core-b66f592/controls/negative.py",
+      "exit_code": 0,
+      "log": "negative.log"
+    }
+  ]
+}

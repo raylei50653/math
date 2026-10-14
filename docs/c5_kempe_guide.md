@@ -2,25 +2,25 @@
 
 ## 最新進度
 
-現況核對：2026-10-14；新增 C5→C4 來源橋，接外部計算得 K≤22；h=3 第一剝層仍只剩 RING。
+現況核對：2026-10-14；C4 已化約到四連通 T／T0 的具名染色義務；K≤22 不變，h=3 第一剝層只剩 RING。
 
 | 欄位 | 現況 |
 | --- | --- |
 | 階段／生命週期 | 主攻 E-ARC2 仍在證明階段；N2 的原 E4 契約已收尾。no4ct／C8、W5 縮減與跨邊出口並行，尚未完成一般來源排除。 |
-| 最近研究更新 | [C5→C4 換邊界](c5_c4_boundary_pivot.md)：原圖全保留，只加外侧四-spoke 點；完整轉移 n_H(ABCB)=y0+y1 將932／933／941轉為4-candidate的對角拒絕。 |
-| 上次完成 | 來源的面／度數前提、132實圖的528完整fibres與獨立核對；接外部≤28總點完整枚舉得K≤22=K≤5、共同k≥23。未重播外部枚舉，無新Lean theorem。 |
-| 目前停止點 | E-ARC2 的 N1／相鄰 roots 與基本 LL-CUT 仍 OPEN；no4ct 留一般 RING、C9-932 的20項較高度數來源及其餘 h≥4。W5 一般縮減、無界三支與 K∞ 仍 OPEN。 |
-| 下一步 | 新方向先看具名C4的度四外點／ABCB延拓義務；C8仍可保原面與完整separator研究RING，C9-932及W5依§3原契約保留。所有無界義務仍OPEN。 |
+| 最近研究更新 | [C4 三角化圖化約](c5_c4_triangle_core.md)：指定同色點識別後，得到四連通 T 的 b 出口，或四連通 T0 的兩個具名三角面色集合問題；完整 fibres 雙射保留。 |
+| 上次完成 | no4ct 小圈、唯一分離三角形及三原框四度子支的 mask13 化約；264份完整fibre等式、10,895開口結構核對與兩步Kempe反控制。K≤22／k≥23不變，無新Lean。 |
+| 目前停止點 | C4 的 mask13 六接點共同義務及一般 T／T0 延拓 OPEN。E-ARC2 的 N1／相鄰 roots、基本 LL-CUT，一般 RING、C9-932 較高度數來源、其餘 h≥4、W5 一般縮減及 K∞ 仍 OPEN。 |
+| 下一步 | C4先攻原 b0、b1、b3皆四度、R完整關係為mask13的六接點共同義務；一般T0兩面色集合與T的b出口另留。須保同份full lift及內部p,q。 |
 | 接手入口 | 先查本頁 §3；E-ARC2 讀 [N2 父覆蓋](c5_excess_two_n2_bridge.md#3-接回父分類與剩餘來源)，no4ct 讀 [交接](tasks/c5_no4ct_handoff.md)，W5 讀 [保存契約與排除鏈](c5_w5_marked_relation.md#0-保存強度與私人圈秩覆蓋鏈)，跨邊讀 [精確定理](c5_cross_edge_kempe.md)。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
+| 2026-10-14／C4四連通化約 | [具名T／T0化約](c5_c4_triangle_core.md)分類唯一分離三角形；原b0、b1、b3皆四度子支的R完整C4關係只剩mask13。六接點共同義務及一般延拓仍OPEN。 |
 | 2026-10-14／換邊界與K≤22 | [完整C5→C4來源橋](c5_c4_boundary_pivot.md)補上舊文獻稽核的缺口；三支皆為具名對角拒絕4-candidate，接外部≤28點計算得最小來源k≥23。 |
 | 2026-10-13／no4ct 來源收緊 | [K15](c5_k15_sphere.md)與三支 C8 接入後，[T1](../audits/2026-10-13-c8-terminal-s1-d521163/REPORT.md) 曾得 p>0⇒s≥2，現由 T1-CROSSCUT 涵蓋，原證書保留；[T2](../audits/2026-10-13-c9-932-source-d521163/REPORT.md) 得 932、h=4⇒k≥18。 |
 | 2026-10-13／W5 no4ct 接通 | [圈秩四兩支](c5_w5_private_rank4.md)的原完整證據由 [T3](../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md)接入 no4ct 三支；任取合法 W5 的 ρ≥5，一般縮減仍 OPEN。 |
-| 2026-10-13／N2 指定分支收尾 | [N2-BRIDGE](c5_excess_two_n2_bridge.md)補完整 mask 932，接九格覆蓋而排原 E4 契約的廣義 N2；停止點移到 E-ARC2 的 N1／相鄰分支，一般 932 未排除。 |
 | 2026-10-14／一般正對切口 | [T1-CROSSCUT](../audits/2026-10-14-t1-crosscut-review-77fbd5d/REPORT.md) 排除任意大小 PINCH／BRIDGE；32 個必要單 x 核心、512,568 個安全矩形完整核對，h=3 只剩 RING。 |
 
 本頁維護本線現況；證明及實際重播範圍見各報告。
@@ -41,6 +41,7 @@
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
+| C4具名四連通三角化圖 | 同色點識別及刪u得到四連通T，或刪唯一三度b得到四連通T0；完整fibres把延拓變成b出口／兩個同圖三角面色集合差異。無界仍OPEN，不提高K≤22 | [權威入口](c5_c4_triangle_core.md)、[證明與控制](../audits/2026-10-14-c4-triangle-core-b66f592/REPORT.md) |
 | C5→C4完整來源橋與K≤22 | 四-spoke外點與原圖全部相容lifts作完整接合；共同拒絕y0、y1化為ABCB空fibre，面／度數符合非diamond 4-candidate。接外部完整≤28點計算得K≤22=K≤5；無界具名子類及K∞仍OPEN | [權威入口](c5_c4_boundary_pivot.md)、[證明及驗證](../audits/2026-10-14-c5-c4-boundary-pivot-77fbd5d/REPORT.md) |
 | 新封存的 no4ct／C8 隔離成果 | 三支 W5 前提修復、C8 零端部排除、h=4 的 induced C9 與 84 項殘留；C6 補完同側、僅原 C8 pins、a−d≤5 的 gadget 域，全部與八份 U 非空相交。量詞為 ∀G∀U∃row(G,U)，八項來源與主命題仍 OPEN | [五包成果、前提、重播及接續入口](history/2026-10-13-multi-commit-status.md) |
 | 無四色定理前提路線／交接 | C4來源橋接外部計算得K≤22及共同k≥23；三支外圈／C8已接入，T1-CROSSCUT 證 h=3⇒p=0，只留 RING。T2的apex結構及三支私人ρ≥5保留；一般來源仍OPEN | [停止點、證據與下一窄任務](tasks/c5_no4ct_handoff.md) |
@@ -95,8 +96,11 @@
 ## 3. 停止點與保留缺口
 
 **換邊界方向（2026-10-14）。** [C5→C4](c5_c4_boundary_pivot.md)已得共同 k≥23。
-新的窄義務是外點u度四、保留原b0／b1內鄰點的具名4-candidate必有ABCB延拓；
-一般大小尚未證。以下C8／W5保留各輪原結構及較弱歷史大小界，不將外部有界結果升格為無界排除。
+[本輪化約](c5_c4_triangle_core.md)把義務壓到四連通T／T0：原b四度時，先攻同一T0
+兩個指定三角面zxy／zpq能否取不同色集合；原b至少五度時，保留T上固定三角的b出口。
+兩面只共享z，四個其餘接點沒有交叉邊；須保留同份完整染色。
+原x,y,b皆四度的窄支已由[完整cap表](../audits/2026-10-14-c4-triangle-core-b66f592/ADJACENT4.md)
+將R的完整C4關係縮至mask13；下一步攻(z,s,r,t,p,q)同份full-lift義務，打破ABAB／ABCD對p,q的共同強迫。一般大小仍未證。以下C8／W5保留各輪原結構及較弱歷史大小界，不將外部有界結果升格為無界排除。
 
 **無四色定理前提路線（2026-10-14）。** [完整外圈三支接入](../audits/2026-10-13-c5-no4ct-collar-6cafdfb/REPORT.md)
 已證共同 h≥3、n5≥9；[C8 接入](../audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md)

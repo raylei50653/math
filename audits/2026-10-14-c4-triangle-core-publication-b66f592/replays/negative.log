@@ -1,0 +1,36 @@
+{
+  "ok": true,
+  "negative_controls": [
+    {
+      "name": "missing fibre record",
+      "rejected": true,
+      "reason": "Certificate differs"
+    },
+    {
+      "name": "source drift",
+      "rejected": true,
+      "reason": "Frozen source hash differs"
+    },
+    {
+      "name": "exclusive create",
+      "rejected": true,
+      "reason": "FileExistsError"
+    },
+    {
+      "name": "missing rooted opening",
+      "rejected": true,
+      "reason": "certificate differs"
+    },
+    {
+      "name": "pinched two icosahedra",
+      "v1_accepted": true,
+      "v2_rejected": true,
+      "reason": "vertex link is one cycle"
+    }
+  ],
+  "protected_sha256_before_and_after": {
+    "controls/certificate.json": "4da9e6505a16dd13650a9ed2c37d7fd2adf39ef7c41737e8b220d9d418823ca5",
+    "controls/structure-v2.json": "8e3c1e041040e98ca3a2f3512b7c81fa5b30290f6b085ba2a0b1314c950abecf",
+    "frozen/artifacts/c5_cells/cells.json": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8"
+  }
+}
