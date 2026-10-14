@@ -1,0 +1,50 @@
+{
+  "status": "PASS fresh Git-index reconstruction and read-only replay",
+  "parent": "3953c85e334b96533e44652df065640f5463715a",
+  "sealed_artifacts_verified": 536,
+  "archive_paths_restored": 185,
+  "archive_blobs_verified": 185,
+  "elapsed_seconds": 1.9376316560001214,
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "src/controls.py"
+      ],
+      "seed": null,
+      "exit": 0,
+      "stdout": "{\"status\": \"PASS\", \"brute_full_fibres\": 30, \"labelled_seven_pin_assignments\": 16384, \"allowed_canonical_joint_rows\": 26, \"rejected_corruptions\": 3}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "src/controls.py"
+      ],
+      "seed": "17",
+      "exit": 0,
+      "stdout": "{\"status\": \"PASS\", \"brute_full_fibres\": 30, \"labelled_seven_pin_assignments\": 16384, \"allowed_canonical_joint_rows\": 26, \"rejected_corruptions\": 3}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "src/replay.py",
+        "runs/pilot29-filter.jsonl",
+        "runs/pilot29-audit.jsonl.gz",
+        "runs/pilot29-audit.jsonl.gz.summary.json"
+      ],
+      "exit": 0,
+      "stdout": "{\"status\": \"PASS exact original-edge witness replay\", \"counts\": {\"frames\": 6326, \"queries\": 6326, \"forbidden_outer\": 6326, \"spheres\": 2737}}\n",
+      "stderr": ""
+    }
+  ],
+  "lake_build": "PASS 8832 jobs; inherited linter warnings; no new Lean theorem",
+  "generated_artifact_policy": "PASS",
+  "document_navigation": "PASS 686 Markdown files, 8945 local links",
+  "staged_whitespace": "PASS",
+  "complete_production_replays": "normal and seed17 existing unchanged-byte receipts retained; full generation not repeated"
+}
