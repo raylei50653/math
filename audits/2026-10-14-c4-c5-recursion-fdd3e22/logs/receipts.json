@@ -1,0 +1,232 @@
+[
+  {
+    "name": "check-docs",
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "check-docs.stdout.log",
+    "stderr": "check-docs.stderr.log"
+  },
+  {
+    "name": "counts-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/fibre/r6_counts/check_counts.py",
+      "--check"
+    ],
+    "env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "stdout": "counts-seed17.stdout.log",
+    "stderr": "counts-seed17.stderr.log"
+  },
+  {
+    "name": "counts",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/fibre/r6_counts/check_counts.py",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "counts.stdout.log",
+    "stderr": "counts.stderr.log"
+  },
+  {
+    "name": "degree3-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree3/check.py",
+      "--check"
+    ],
+    "env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "stdout": "degree3-seed17.stdout.log",
+    "stderr": "degree3-seed17.stderr.log"
+  },
+  {
+    "name": "degree3",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree3/check.py",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "degree3.stdout.log",
+    "stderr": "degree3.stderr.log"
+  },
+  {
+    "name": "final-degree3",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree3/check.py",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "final-degree3.stdout.log",
+    "stderr": "final-degree3.stderr.log"
+  },
+  {
+    "name": "final-r6-independent",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree3/check_r6_review.py",
+      "--check"
+    ],
+    "env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "stdout": "final-r6-independent.stdout.log",
+    "stderr": "final-r6-independent.stderr.log"
+  },
+  {
+    "name": "formal-docgraph",
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "formal-docgraph.stdout.log",
+    "stderr": "formal-docgraph.stderr.log"
+  },
+  {
+    "name": "r6-independent",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree3/check_r6_review.py",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "r6-independent.stdout.log",
+    "stderr": "r6-independent.stderr.log"
+  },
+  {
+    "name": "return-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/fibre/check_return.py",
+      "--check"
+    ],
+    "env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "stdout": "return-seed17.stdout.log",
+    "stderr": "return-seed17.stderr.log"
+  },
+  {
+    "name": "return",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/fibre/check_return.py",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "return.stdout.log",
+    "stderr": "return.stderr.log"
+  },
+  {
+    "name": "t5-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/check_t5.py",
+      "--check"
+    ],
+    "env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "stdout": "t5-seed17.stdout.log",
+    "stderr": "t5-seed17.stderr.log"
+  },
+  {
+    "name": "t5",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/check_t5.py",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "t5.stdout.log",
+    "stderr": "t5.stderr.log"
+  },
+  {
+    "name": "transfer-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/check_transfer.py",
+      "--check"
+    ],
+    "env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "stdout": "transfer-seed17.stdout.log",
+    "stderr": "transfer-seed17.stderr.log"
+  },
+  {
+    "name": "transfer",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/check_transfer.py",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "transfer.stdout.log",
+    "stderr": "transfer.stderr.log"
+  },
+  {
+    "name": "whitespace",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "whitespace.stdout.log",
+    "stderr": "whitespace.stderr.log"
+  },
+  {
+    "name": "whole-docgraph",
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "env": {},
+    "exit_code": 1,
+    "stdout": "whole-docgraph.stdout.log",
+    "stderr": "whole-docgraph.stderr.log"
+  }
+]

@@ -1,0 +1,10 @@
+Expected failing replay with surviving_labelled_rows changed from 168 to 169.
+Exit code: 1
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-14-c4-mask13-joint6-fdd3e22/controls/check_interface.py", line 183, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-14-c4-mask13-joint6-fdd3e22/controls/check_interface.py", line 174, in main
+    assert args.certificate.read_text() == payload, 'Interface certificate differs'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Interface certificate differs

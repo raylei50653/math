@@ -174,9 +174,17 @@ d(B)\ge4,\quad d(V\setminus B)\ge5,\quad h\ge3,\quad n_5\ge9.
 新方向先讀 [C4 來源橋](../c5_c4_boundary_pivot.md)及[四連通 T／T0 化約](../c5_c4_triangle_core.md)。
 後者已將原 b 四度分支壓到同一 T0 的兩個具名三角面色集合差異，
 另一支保留 T 的 b 出口；兩支仍 OPEN。原 b0、b1、b3 皆四度子支中，
-較小 R 的完整 C4 關係已縮至 mask13，可先攻其六接點對 p,q 的共同強迫。
-保留原接點與同份完整染色，
+較小 R 的完整 C4 關係已縮至 mask13；[JOINT6續進](../../audits/2026-10-14-c4-mask13-joint6-fdd3e22/REPORT.md)
+補上ABCB的CD／BD完整fibre分解，高p,q子域有k≥28。
+[返回單射與多型遞迴](../../audits/2026-10-14-c4-c5-recursion-fdd3e22/REPORT.md)
+已排除原r五度；r六度時s,t≥6，較小C5七接點狀態只留271／314／319，
+可續推這三份完整共同關係，嚴格下降仍須核對完成成本與目錄外壞性。
+可先攻原p或q五度子域（k≤27必有）；高p,q的k≥28及一般T／T0仍另留。
+保留六個原接點與同份完整染色，
 不能把一步 Kempe 受阻或兩面各自的可行投影當成無界延拓的結論。
+[共同 Tait／匹配判準](../../audits/2026-10-14-c4-tait-lock-review-fdd3e22/REPORT.md)
+把 T／T0 兩支精確化為指定對偶邊異色，亦即偶補完美匹配恰含一邊；
+整個 edge-Kempe 類鎖定仍不能代表全部完整染色鎖定。無界來源排除及合法最小性接回 OPEN。
 
 C8 方向先讀 [T1-CROSSCUT](../../audits/2026-10-14-t1-crosscut-review-77fbd5d/REPORT.md)
 的任意來源覆蓋與雙 C6 完整接合，再由 [C8 剝層](../c5_c8_peeling.md) 接續

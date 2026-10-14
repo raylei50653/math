@@ -1,0 +1,68 @@
+[
+  {
+    "name": "transfer-seeddefault",
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/check_transfer.py",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "transfer-seed17",
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/check_transfer.py",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "transfer-tampered",
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/check_transfer.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/logs/transfer-tampered.json"
+    ],
+    "exit_code": 1,
+    "expected": "nonzero"
+  },
+  {
+    "name": "t5-seeddefault",
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/check_t5.py",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "t5-seed17",
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/check_t5.py",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "t5-tampered",
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/check_t5.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/logs/t5-tampered.json"
+    ],
+    "exit_code": 1,
+    "expected": "nonzero"
+  }
+]

@@ -1,0 +1,197 @@
+[
+  {
+    "name": "interface",
+    "argv": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-14-c4-mask13-joint6-fdd3e22/controls/check_interface.py",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "interface.stdout.log",
+    "stderr": "interface.stderr.log",
+    "summary": "{\"ok\": true, \"orbits\": [9, 7], \"fixed_Q_rows\": [10, 8], \"surviving_labelled_rows\": 168, \"actual_target_sources\": 0}\n"
+  },
+  {
+    "name": "interface-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-14-c4-mask13-joint6-fdd3e22/controls/check_interface.py",
+      "--check"
+    ],
+    "env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "stdout": "interface-seed17.stdout.log",
+    "stderr": "interface-seed17.stderr.log",
+    "summary": "{\"ok\": true, \"orbits\": [9, 7], \"fixed_Q_rows\": [10, 8], \"surviving_labelled_rows\": 168, \"actual_target_sources\": 0}\n"
+  },
+  {
+    "name": "fibres",
+    "argv": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-14-c4-mask13-joint6-fdd3e22/controls/check_fibres.py",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "fibres.stdout.log",
+    "stderr": "fibres.stderr.log",
+    "summary": "{\"status\": \"PASS\", \"graphs\": 7, \"complete_fixed_Q_colorings\": 42, \"full_set_bijections\": 14, \"actual_target_sources\": 0}\n"
+  },
+  {
+    "name": "fibres-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-14-c4-mask13-joint6-fdd3e22/controls/check_fibres.py",
+      "--check"
+    ],
+    "env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "stdout": "fibres-seed17.stdout.log",
+    "stderr": "fibres-seed17.stderr.log",
+    "summary": "{\"status\": \"PASS\", \"graphs\": 7, \"complete_fixed_Q_colorings\": 42, \"full_set_bijections\": 14, \"actual_target_sources\": 0}\n"
+  },
+  {
+    "name": "geometry",
+    "argv": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-14-c4-mask13-joint6-fdd3e22/controls/check_geometry.py",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "geometry.stdout.log",
+    "stderr": "geometry.stderr.log",
+    "summary": "{\"openings\": 8, \"r_five_deletions\": 8, \"rejected_face_corruptions\": 2, \"sphere_controls\": 4, \"target_source_actual\": 0}\n"
+  },
+  {
+    "name": "geometry-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-14-c4-mask13-joint6-fdd3e22/controls/check_geometry.py",
+      "--check"
+    ],
+    "env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "stdout": "geometry-seed17.stdout.log",
+    "stderr": "geometry-seed17.stderr.log",
+    "summary": "{\"openings\": 8, \"r_five_deletions\": 8, \"rejected_face_corruptions\": 2, \"sphere_controls\": 4, \"target_source_actual\": 0}\n"
+  },
+  {
+    "name": "independent",
+    "argv": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-14-c4-mask13-joint6-fdd3e22/review/check_fibres_independent.py"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "independent.stdout.log",
+    "stderr": "independent.stderr.log",
+    "summary": "{\"status\": \"PASS\", \"independent_bruteforce_graphs\": 7, \"complete_fixed_Q_colorings\": 42, \"full_set_bijections\": 14, \"r_degree5_joint_table\": \"PASS\", \"actual_target_sources\": 0}\n"
+  },
+  {
+    "name": "check-docs",
+    "argv": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "check-docs.stdout.log",
+    "stderr": "check-docs.stderr.log",
+    "summary": "OK: 683 Markdown files, 8890 local links; anchors, index, handoff, guide progress checked\n"
+  },
+  {
+    "name": "formal-docgraph",
+    "argv": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "formal-docgraph.stdout.log",
+    "stderr": "formal-docgraph.stderr.log",
+    "summary": "OK: 97 documents, 375 relations, 12 families; 0 errors, 0 notes\n"
+  },
+  {
+    "name": "whole-docgraph",
+    "argv": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "env": {},
+    "exit_code": 1,
+    "stdout": "whole-docgraph.stdout.log",
+    "stderr": "whole-docgraph.stderr.log",
+    "summary": "FAIL: 97 documents, 365 relations, 12 families; 70 errors, 0 notes\n"
+  },
+  {
+    "name": "whitespace",
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "whitespace.stdout.log",
+    "stderr": "whitespace.stderr.log",
+    "summary": ""
+  },
+  {
+    "name": "subrelations",
+    "argv": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-14-c4-mask13-joint6-fdd3e22/controls/check_subrelations.py",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "subrelations.stdout.log",
+    "stderr": "subrelations.stderr.log",
+    "summary": "{\"ok\": true, \"subsets_per_case\": 128, \"closed_counts_none_tp_qs_both\": [9, 1, 1, 0], \"minimal_base_subrelations\": 4, \"minimal_base_size\": 5, \"actual_target_sources\": 0}\n"
+  },
+  {
+    "name": "final-check-docs",
+    "argv": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "final-check-docs.stdout.log",
+    "stderr": "final-check-docs.stderr.log",
+    "summary": "OK: 683 Markdown files, 8890 local links; anchors, index, handoff, guide progress checked\n"
+  },
+  {
+    "name": "final-whitespace",
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "stdout": "final-whitespace.stdout.log",
+    "stderr": "final-whitespace.stderr.log",
+    "summary": ""
+  }
+]
