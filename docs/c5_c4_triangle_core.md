@@ -20,6 +20,7 @@ docgraph:
     - audits/2026-10-14-c4-return-branches-a11d4bb/REPORT.md
     - audits/2026-10-14-cofacial-fibres-676b102/REPORT.md
     - audits/2026-10-14-lowpq-source-676b102/REPORT.md
+    - audits/2026-10-14-r6-lowpq-3953c85/REPORT.md
 ---
 
 # C4 指定延拓壓到四連通三角化圖
@@ -32,6 +33,8 @@ docgraph:
 [相對共面識別](../audits/2026-10-14-cofacial-fibres-676b102/REPORT.md)再把該C5支持由271／314／319縮為恰319；
 同一T0的兩面共同商圖先證p=5⇒a≥5、q=5⇒c≥5；
 [低p/q來源續進](../audits/2026-10-14-lowpq-source-676b102/REPORT.md)再以三點共同識別提高為 **p=5⇒a≥6、q=5⇒c≥6**，三種來源皆適用。
+[共同W與原內圈](../audits/2026-10-14-r6-lowpq-3953c85/REPORT.md)再證r6p5的ell-v、ell-w原非邊及反射側對應結論；
+固定x,y,b四度支有k≥ceil((3h+16)/2)，故k≤27⇒h≤12。
 [其他返回分支](../audits/2026-10-14-c4-return-branches-a11d4bb/REPORT.md)再給
 a=4⇒t≥6、c=4⇒s≥6；p=q=5時另一個原共同鄰點至少六度，單低p/q化成精確mask14。
 來源沿用 [C5→C4 橋](c5_c4_boundary_pivot.md)的 no4ct 全域最小來源契約，
@@ -141,7 +144,12 @@ m與t互異時，七接點(z,s,r,t,q,ell,m)有完整ABABCBC fibre，迫ell s、e
 後者s=t=m給ms、mt非邊，與a=5的原tm邊矛盾，故p=5⇒a≥6，反射q=5⇒c≥6。
 兩個fibre分別存在，不能合併成同一染色。p5a≥6及反射、r6的319仍OPEN。
 [r6原幾何](../audits/2026-10-14-lowpq-source-676b102/r6/PROOF.md)另排第一層a/c鄰點接r的兩個私人link點；
-[活躍來源表](../audits/2026-10-14-lowpq-source-676b102/classification/SOURCE_TABLE.md)按932／933／941、h、p/q及r分類k≤27殘支。
+[前輪來源表](../audits/2026-10-14-lowpq-source-676b102/classification/SOURCE_TABLE.md)的degree、旋轉與預算仍保留；
+[本輪活躍域](../audits/2026-10-14-r6-lowpq-3953c85/REPORT.md#4-更新的活躍來源域與剩餘義務)把k≤27的h上界降為12。
+原collar無弦、私人圖連通無葉且圈秩rho≥2，精確式2k=3h+12+E_C+rho給上述界。
+r6p5在同一W的兩個合法商圖另迫ell-v、ell-w非邊，反射側取對應結論；兩份完整fibre聯集分別非空，整支仍OPEN。
+[獨立有限枚舉](../audits/2026-10-14-r6-319-enumeration-676b102/REPORT.md)已排固定四度框支中r6的k=23、24，
+因此r6另有k≥25；合上述任意大小幾何界，k≤27時只留25≤k≤27、h≤12，不能提高一般K≤22。
 
 一般mask13另有缺色端點連通及條件式BC子fibre雙射，但返回落入允許的另一ABCB
 sector，沒有空fibre矛盾。旋轉必保留兩個完整singleton fibres皆空的前提，

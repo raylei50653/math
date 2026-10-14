@@ -181,8 +181,12 @@ d(B)\ge4,\quad d(V\setminus B)\ge5,\quad h\ge3,\quad n_5\ge9.
 縮為恰319。[低p/q真實來源續進](../../audits/2026-10-14-lowpq-source-676b102/REPORT.md)
 再以同一T0兩個實際面的三點共同商圖證p=5⇒a≥6、q=5⇒c≥6；
 保留七接點ABABCBC與ABABCAB各自非空的完整fibre，舊計數證書原樣保留。
-按[活躍來源表](../../audits/2026-10-14-lowpq-source-676b102/classification/SOURCE_TABLE.md)
-先攻p5a≥6及反射側（k≤27必低p/q），分單低與雙低，再攻r6的319；高p,q的k≥28及一般T／T0仍另留。
+[共同W與原內圈續進](../../audits/2026-10-14-r6-lowpq-3953c85/REPORT.md)另證r6p5的ell-v、ell-w原非邊與反射側對應結論，
+固定三框點四度支由原collar無弦與私人圈秩≥2得到k≥ceil((3h+16)/2)，故k≤27⇒h≤12。
+續攻r6p5及反射的共同延拓，原[來源表](../../audits/2026-10-14-lowpq-source-676b102/classification/SOURCE_TABLE.md)
+其餘degree、旋轉與預算條件保留；完整319、高r低p/q及一般T／T0仍OPEN，高p,q的k≥28條件界不變。
+[獨立有限枚舉](../../audits/2026-10-14-r6-319-enumeration-676b102/REPORT.md)另在同一固定框度數支排r6的k=23、24，
+給條件式k≥25；k≤27的r6續進限25≤k≤27，不宣稱一般K≤24。
 嚴格下降仍須核對完成成本與目錄外壞性。
 保留六個原接點與同份完整染色，
 不能把一步 Kempe 受阻或兩面各自的可行投影當成無界延拓的結論。

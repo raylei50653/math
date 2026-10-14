@@ -1,0 +1,346 @@
+{
+  "parent": "664c9378c6333d07810763f4f00a5c143a111f82",
+  "checks": [
+    {
+      "name": "custody",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-r6-lowpq-3953c85/check_inputs.py"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "e00c7c58db19b6eb4f81a71790f0918550095de60554fdd8157650502b0ea186",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "custody-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-r6-lowpq-3953c85/check_inputs.py"
+      ],
+      "seed": "17",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "e00c7c58db19b6eb4f81a71790f0918550095de60554fdd8157650502b0ea186",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "r6",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-r6-lowpq-3953c85/r6/check.py",
+        "--check"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "1bfd3aba7d3e602ae8f49fb1de05c8625a6d0076595be586e439b137e2c0d4ab",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "r6-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-r6-lowpq-3953c85/r6/check.py",
+        "--check"
+      ],
+      "seed": "17",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "1bfd3aba7d3e602ae8f49fb1de05c8625a6d0076595be586e439b137e2c0d4ab",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "h18",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-r6-lowpq-3953c85/h18/check.py",
+        "--check"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "773f9305f778058574da9c642642e4078b4d6036b5c9893b9f78d2567ef34021",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "h18-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-r6-lowpq-3953c85/h18/check.py",
+        "--check"
+      ],
+      "seed": "17",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "773f9305f778058574da9c642642e4078b4d6036b5c9893b9f78d2567ef34021",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "r6-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-r6-lowpq-3953c85/r6/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-14-r6-lowpq-3953c85/r6/tampered-negative.json"
+      ],
+      "seed": null,
+      "returncode": 1,
+      "expected_returncode": 1,
+      "matched_expected": true,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "0fc02a5799164cd1510792316fe9d326958bf28ef24d21352853f78a06c61d9f"
+    },
+    {
+      "name": "h18-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-r6-lowpq-3953c85/h18/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-14-r6-lowpq-3953c85/h18/certificate-corrupt.json"
+      ],
+      "seed": null,
+      "returncode": 1,
+      "expected_returncode": 1,
+      "matched_expected": true,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "cd6b25f9d9dbe9afaf00b73d2c338ef637cd15e58d87b9d44d8f661cf4de6b6b"
+    },
+    {
+      "name": "custody-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-r6-lowpq-3953c85/check_inputs.py",
+        "--manifest",
+        "audits/2026-10-14-r6-lowpq-3953c85/validation/tampered-inputs.json"
+      ],
+      "seed": null,
+      "returncode": 1,
+      "expected_returncode": 1,
+      "matched_expected": true,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "d13ab5c884379302f95267e773633f7a49b394eb103a0b49a0e25e8a5d039dd0"
+    },
+    {
+      "name": "direct",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-r6-lowpq-3953c85/validation/direct_joint.py"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "462d3afa42b16991e24d509e6fc3723c819e2148c79968276bc065dc2b94f3e7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "direct-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-r6-lowpq-3953c85/validation/direct_joint.py"
+      ],
+      "seed": "17",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "462d3afa42b16991e24d509e6fc3723c819e2148c79968276bc065dc2b94f3e7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "independent-caps",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-r6-lowpq-3953c85/review/independent_caps.py"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "b98d2320f1b1f228e3acfb8990b714964cc4780cc979ad61c689802c5c675744",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docgraph-formal",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docgraph-whole",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "seed": null,
+      "returncode": 1,
+      "expected_returncode": 1,
+      "matched_expected": true,
+      "stdout_sha256": "f69339a3492e38930bc017ba7a64472b61a2e70f197336dcdb939e72eb71789f",
+      "stderr_sha256": "7b5dfd22a99d30cdd4b044a55eb09dee7def91286ce8fd675a05a5db00384f56"
+    },
+    {
+      "name": "check-docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "525bde1e0a0a54dfc67842f7ed7b765f32dea8d200fe530af55abfa38cf73715",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "normal_seed17_identical": {
+    "custody": true,
+    "r6": true,
+    "h18": true,
+    "direct": true
+  },
+  "independent_outputs_match_recorded": true,
+  "docgraph_comparison": {
+    "baseline_errors": 70,
+    "current_errors": 70,
+    "same_error_keys": true,
+    "added": [],
+    "removed": []
+  },
+  "lake_build": {
+    "command": [
+      "lake",
+      "build"
+    ],
+    "returncode": 0,
+    "jobs": 8832,
+    "note": "Completed before integration; no Lean files changed. Existing warnings retained in tool output; no new theorem."
+  },
+  "storage_checks": [
+    {
+      "name": "generated-artifacts",
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "f4cc62651716713bc760089225623b8f2cbcdd58cbcf4266bd5a7464c9997008",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "storage-tests",
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.14",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "b39c5094b7c3b068ebf7be01175fc79ed0114d27869b7606045cca08101c9f2b"
+    },
+    {
+      "name": "staged-diff",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "generated-artifacts-final",
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "matched_expected": true,
+      "stdout_sha256": "f4cc62651716713bc760089225623b8f2cbcdd58cbcf4266bd5a7464c9997008",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "Main-workspace replays and documentation; no large generation or external-paper calculation.",
+  "retained_initial_documentation_failure": "Six milestone entries exceeded the existing 3-5 entry rule; merged the two related updates into one entry.",
+  "initial_staged_diff": {
+    "name": "staged-diff",
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "returncode": 2,
+    "expected_returncode": 0,
+    "matched_expected": false,
+    "stdout_sha256": "e9f046eccd5f90c7cb9815f5643f9a8924ec6842e715c1463f51c15496072e77",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "note": "Diff snapshot context blank lines preserved losslessly as gzip; retained initial failure output as gzip."
+  }
+}

@@ -2,22 +2,22 @@
 
 ## 最新進度
 
-現況核對：2026-10-14；低p/q真實來源已得p=5⇒a≥6、q=5⇒c≥6；r六度319及一般K≤22不變。
+現況核對：2026-10-14；固定三原框點四度支的k≤27已迫h≤12；r6p5再得ell-v、ell-w原非邊，反射側取對應結論；有限枚舉另給r6⇒k≥25，一般K≤22不變。
 
 | 欄位 | 現況 |
 | --- | --- |
-| 階段／生命週期 | 本輪主攻低p/q真實來源排除，已完成相鄰框點≤5子支；一般來源仍OPEN。E-ARC2、C8／W5及跨邊出口保留，N2原E4契約已收尾。 |
-| 最近研究更新 | [低p/q來源排除](../audits/2026-10-14-lowpq-source-676b102/REPORT.md)：兩面三點識別迫ABABCAB完整fibre，證p=5⇒a≥6、q=5⇒c≥6；三種來源皆適用。 |
-| 上次完成 | p5a5／q5c5全來源排除；r6另有原collar指定非邊，低p/q來源表已分類。前輪319篩選及舊計數證書保留；一般K≤22／k≥23不變，無新Lean。 |
+| 階段／生命週期 | r6與低p/q共同來源續進；固定三框點四度支的k≤27,h≥13已排除，整個低p/q仍OPEN。E-ARC2、C8／W5及跨邊出口保留，N2原E4契約已收尾。 |
+| 最近研究更新 | [共同W與原內圈](../audits/2026-10-14-r6-lowpq-3953c85/REPORT.md)：r6p5迫ell-v、ell-w非邊並有反射對應；無弦原內圈及私人圈秩≥2給k≥ceil((3h+16)/2)，故k≤27⇒h≤12。 |
+| 上次完成 | 兩份指定W完整fibre聯集分別非空；h=18及其下至13的k≤27來源全排。前輪p5⇒a≥6／q5⇒c≥6、319與舊證書保留；一般K≤22／k≥23不變，無新Lean。 |
 | 目前停止點 | 低p=5,a≥6及反射側的mask14共同介面、r六度319、一般t五度三關係、r≥7及一般T／T0延拓OPEN。E-ARC2的N1／相鄰roots、基本LL-CUT，一般RING、較高C9／h及W5縮減、K∞仍OPEN。 |
-| 下一步 | 按[來源表](../audits/2026-10-14-lowpq-source-676b102/classification/SOURCE_TABLE.md)先攻p5a≥6，分雙低與單低；保ABABCBC／ABABCAB各自完整fibre、指定面與附件，次攻r6的319。只有必要條件而無來源排除時停止擴張。 |
+| 下一步 | 按[更新活躍域](../audits/2026-10-14-r6-lowpq-3953c85/REPORT.md#4-更新的活躍來源域與剩餘義務)續攻r6p5／反射的共同延拓，保兩實際面、完整fibre聯集與所有原非邊；高r低p/q限k≤27,h≤12。指定商圖仍存活時不擴大邊界分類。 |
 | 接手入口 | 先查本頁 §3；E-ARC2 讀 [N2 父覆蓋](c5_excess_two_n2_bridge.md#3-接回父分類與剩餘來源)，no4ct 讀 [交接](tasks/c5_no4ct_handoff.md)，W5 讀 [保存契約與排除鏈](c5_w5_marked_relation.md#0-保存強度與私人圈秩覆蓋鏈)，跨邊讀 [精確定理](c5_cross_edge_kempe.md)。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
-| 2026-10-14／低p/q真實來源 | [新三點商圖](../audits/2026-10-14-lowpq-source-676b102/REPORT.md)接[前輪共面識別](../audits/2026-10-14-cofacial-fibres-676b102/REPORT.md)：p5⇒a≥6、q5⇒c≥6；r六度支持仍319，舊證書保留。 |
+| 2026-10-14／原內圈與r6有限排除 | [共同W及高h排除](../audits/2026-10-14-r6-lowpq-3953c85/REPORT.md)續接p5⇒a≥6／q5⇒c≥6：r6p5另迫ell-v、ell-w非邊並有反射對應，固定三框點四度支k≤27⇒h≤12；[完整k23／24枚舉](../audits/2026-10-14-r6-319-enumeration-676b102/REPORT.md)另給同一固定支r6⇒k≥25，完整319仍OPEN，一般K≤22不變。 |
 | 2026-10-14／換邊界與K≤22 | [完整C5→C4來源橋](c5_c4_boundary_pivot.md)補上舊文獻稽核的缺口；三支皆為具名對角拒絕4-candidate，接外部≤28點計算得最小來源k≥23。 |
 | 2026-10-13／no4ct 來源收緊 | [K15](c5_k15_sphere.md)與三支 C8 接入後，[T1](../audits/2026-10-13-c8-terminal-s1-d521163/REPORT.md) 曾得 p>0⇒s≥2，現由 T1-CROSSCUT 涵蓋，原證書保留；[T2](../audits/2026-10-13-c9-932-source-d521163/REPORT.md) 得 932、h=4⇒k≥18。 |
 | 2026-10-13／W5 no4ct 接通 | [圈秩四兩支](c5_w5_private_rank4.md)的原完整證據由 [T3](../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md)接入 no4ct 三支；任取合法 W5 的 ρ≥5，一般縮減仍 OPEN。 |
@@ -114,8 +114,12 @@
 [後續三點共同商圖](../audits/2026-10-14-lowpq-source-676b102/pq/PROOF.md)再得ABABCAB完整fibre與ms、mt非邊，
 從而p=5⇒a≥6，反射q=5⇒c≥6。兩個fibre分別存在，不能合一。
 兩面只共享z，識別弧各在原面內並共端z；不任作跨面識別。
-[k≤27活躍來源表](../audits/2026-10-14-lowpq-source-676b102/classification/SOURCE_TABLE.md)保留單低／雙低、h與r預算；
-一般p5a≥6、r六度319與高r低t/s仍OPEN。
+[前輪來源表](../audits/2026-10-14-lowpq-source-676b102/classification/SOURCE_TABLE.md)的單低／雙低與r預算保留；
+[共同W與原內圈續進](../audits/2026-10-14-r6-lowpq-3953c85/REPORT.md)在r6p5中再排ell-v、ell-w原邊，反射側取對應結論，
+並證原collar無弦、私人圖連通無葉且圈秩≥2，給精確式2k=3h+12+E_C+rho。
+故固定三框點四度支k≤27的h上界由18降為12；933／941留4≤h≤12，932留5≤h≤12。
+[已發布的有限枚舉](../audits/2026-10-14-r6-319-enumeration-676b102/REPORT.md)另給同一固定支r6⇒k≥25，故k≤27的r6只留25≤k≤27。
+一般p5a≥6、r六度319與高r低t/s仍OPEN，不把局部必要列或整數配置當來源實現。
 
 **無四色定理前提路線（2026-10-14）。** [完整外圈三支接入](../audits/2026-10-13-c5-no4ct-collar-6cafdfb/REPORT.md)
 已證共同 h≥3、n5≥9；[C8 接入](../audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md)

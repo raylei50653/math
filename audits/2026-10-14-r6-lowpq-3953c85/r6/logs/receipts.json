@@ -1,0 +1,51 @@
+[
+  {
+    "name": "check",
+    "cmd": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math-r6-lowpq-3953c85/audits/2026-10-14-r6-lowpq-3953c85/r6/check.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math-r6-lowpq-3953c85",
+    "env": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_sha256": "1bfd3aba7d3e602ae8f49fb1de05c8625a6d0076595be586e439b137e2c0d4ab",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "check-seed17",
+    "cmd": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math-r6-lowpq-3953c85/audits/2026-10-14-r6-lowpq-3953c85/r6/check.py",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math-r6-lowpq-3953c85",
+    "env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout_sha256": "1bfd3aba7d3e602ae8f49fb1de05c8625a6d0076595be586e439b137e2c0d4ab",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "tampered-negative",
+    "cmd": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math-r6-lowpq-3953c85/audits/2026-10-14-r6-lowpq-3953c85/r6/check.py",
+      "--check",
+      "--certificate",
+      "/home/ray/developer/ai/math-r6-lowpq-3953c85/audits/2026-10-14-r6-lowpq-3953c85/r6/tampered-negative.json"
+    ],
+    "cwd": "/home/ray/developer/ai/math-r6-lowpq-3953c85",
+    "env": {},
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "0fc02a5799164cd1510792316fe9d326958bf28ef24d21352853f78a06c61d9f"
+  }
+]

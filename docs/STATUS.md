@@ -15,7 +15,11 @@
 高p,q子域有k≥28；[返回單射與多型遞迴](../audits/2026-10-14-c4-c5-recursion-fdd3e22/REPORT.md)
 已排除r原五度，r六度時迫s,t≥6；後續[相對共面識別](../audits/2026-10-14-cofacial-fibres-676b102/REPORT.md)
 再把七接點C5支持縮為恰319；[低p/q來源續進](../audits/2026-10-14-lowpq-source-676b102/REPORT.md)以共同三點商圖證p=5⇒a≥6、q=5⇒c≥6，
-並附[活躍來源表](../audits/2026-10-14-lowpq-source-676b102/classification/SOURCE_TABLE.md)。三支皆適用，一般界不變，無界仍OPEN。
+並附[來源表](../audits/2026-10-14-lowpq-source-676b102/classification/SOURCE_TABLE.md)。
+[共同W與原內圈續進](../audits/2026-10-14-r6-lowpq-3953c85/REPORT.md)再給r6p5的ell-v、ell-w原非邊及反射側對應結論，
+且固定三框點四度支k≥ceil((3h+16)/2)，故k≤27⇒h≤12。三支皆適用，一般界不變，無界仍OPEN。
+已發布的[r6有限枚舉](../audits/2026-10-14-r6-319-enumeration-676b102/REPORT.md)另排固定支k=23、24，故r6⇒k≥25；
+本輪與該界的整合及驗證見[發布紀錄](../audits/2026-10-14-r6-lowpq-3953c85/PUBLICATION.md)。
 [其他返回分支](../audits/2026-10-14-c4-return-branches-a11d4bb/REPORT.md)補單低p/q的精確mask14、
 p=q=5時另一共同鄰點≥6、a=4⇒t≥6及c=4⇒s≥6；一般t五度C5只留956／1012／1020。
 

@@ -1,0 +1,144 @@
+[
+  {
+    "name": "custody",
+    "cmd": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math-r6-lowpq-3953c85/audits/2026-10-14-r6-lowpq-3953c85/check_inputs.py"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "elapsed_seconds": 0.083,
+    "stdout_sha256": "e00c7c58db19b6eb4f81a71790f0918550095de60554fdd8157650502b0ea186",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary": "PASS: 23 frozen inputs equal exact BASE; all immutable live inputs unchanged\n"
+  },
+  {
+    "name": "custody-seed17",
+    "cmd": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math-r6-lowpq-3953c85/audits/2026-10-14-r6-lowpq-3953c85/check_inputs.py"
+    ],
+    "env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "elapsed_seconds": 0.082,
+    "stdout_sha256": "e00c7c58db19b6eb4f81a71790f0918550095de60554fdd8157650502b0ea186",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary": "PASS: 23 frozen inputs equal exact BASE; all immutable live inputs unchanged\n"
+  },
+  {
+    "name": "custody-negative",
+    "cmd": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math-r6-lowpq-3953c85/audits/2026-10-14-r6-lowpq-3953c85/check_inputs.py",
+      "--manifest",
+      "/home/ray/developer/ai/math-r6-lowpq-3953c85/audits/2026-10-14-r6-lowpq-3953c85/validation/tampered-inputs.json"
+    ],
+    "env": {},
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "elapsed_seconds": 0.038,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "09bbbc4976262d86af7eaaef219c1b2ae42977a86b085f8943e7b72106b54e68",
+    "summary": ""
+  },
+  {
+    "name": "r6-final",
+    "cmd": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math-r6-lowpq-3953c85/audits/2026-10-14-r6-lowpq-3953c85/r6/check.py",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "elapsed_seconds": 0.991,
+    "stdout_sha256": "1bfd3aba7d3e602ae8f49fb1de05c8625a6d0076595be586e439b137e2c0d4ab",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary": "PASS: all eight-pin assignments, every full cap lift, and all ten outer fibres match\n{\"all_labelled_full_cap_lifts\": 6048, \"canonical_rows\": 210, \"genuine_target_sources\": 0, \"labelled_assignments\": 65536, \"necessary_rows\": 120, \"necessary_rows_without_p_lift\": 60, \"necessary_rows_without_r_lift\": 42, \"proper_labelled_rows\": 5040}\n"
+  },
+  {
+    "name": "h18-final",
+    "cmd": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math-r6-lowpq-3953c85/audits/2026-10-14-r6-lowpq-3953c85/h18/check.py",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "elapsed_seconds": 0.037,
+    "stdout_sha256": "773f9305f778058574da9c642642e4078b4d6036b5c9893b9f78d2567ef34021",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary": "PASS: h18 impossible; bounded max h = 12 with rho >= 2\nNecessary arithmetic rows: {'nonnegative_edges': 881, 'connected': 765, 'cycle_rank_at_least_two': 698}\n"
+  },
+  {
+    "name": "check-docs",
+    "cmd": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "env": {},
+    "exit_code": 1,
+    "expected_exit_code": 0,
+    "elapsed_seconds": 0.73,
+    "stdout_sha256": "0bc27bb77ec90025077d42aaa996451402e5e15e0cbf608e18057bf3f7c88596",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary": "t_unit_core45.md:353: ../audits/2026-10-10-n45-h3a/frozen/authority/common-contract.md\nmissing path: docs/c5_excess_two_nonadjacent_unit_core45.md:945: ../audits/2026-10-10-n45-high1-supervision/REPORT.md\nmissing path: docs/c5_excess_two_nonadjacent_unit_core45.md:981: ../audits/2026-10-10-n45-low2-supervision/REPORT.md\nmissing path: docs/c5_kempe_guide.md:352: ../audits/2026-10-10-n45-low2-supervision/REPORT.md\nmissing path: docs/c5_kempe_guide.md:358: ../audits/2026-10-10-n45-high1-supervision/REPORT.md\nmissing path: docs/c5_open_leaf_ledger.md:78: ../audits/2026-10-04-task-d5/c4/scope_ledger.json\nmissing path: docs/history/2026-10-04-task-d2-integration-audit.md:39: ../../audits/2026-10-04-task-d2/integration_doc_changes.diff\nmissing path: docs/history/2026-10-10-n45-low2-adoption.md:4: ../../audits/2026-10-10-n45-low2-supervision/REPORT.md\nmissing path: docs/history/2026-10-10-n45-progress-publish.md:27: ../../audits/2026-10-10-n45-publication/archive.json\nmissing path: docs/k4_nonplanarity.md:6: ../audits/2026-10-13-k4-nonplanarity-45bc1c3/results.json\nmissing path: artifacts/2026-10-11-math-consolidate-1/COMMON_LEMMAS.md:54: ../../audits/2026-10-10-n45-pa/REPORT.md\nmissing path: artifacts/2026-10-11-math-consolidate-1/COMMON_LEMMAS.md:80: ../../audits/2026-10-10-n45-pa/REPORT.md\nmissing path: artifacts/2026-10-11-math-consolidate-1/DEPENDENCY_DAG.md:149: ../../audits/2026-10-10-n45-pa/REPORT.md\nmissing path: artifacts/c5_excess_two_e4/REPORT.md:21: ../../audits/2026-10-10-n45-high1-supervision/REPORT.md\nmissing path: artifacts/c5_excess_two_e4/REPORT.md:27: ../../audits/2026-10-10-n45-low2-supervision/REPORT.md\nFAIL: 23 errors (686 Markdown files, 8950 local links)\n"
+  },
+  {
+    "name": "docgraph-formal",
+    "cmd": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "elapsed_seconds": 0.095,
+    "stdout_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n"
+  },
+  {
+    "name": "docgraph-whole",
+    "cmd": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "env": {},
+    "exit_code": 1,
+    "expected_exit_code": null,
+    "elapsed_seconds": 0.382,
+    "stdout_sha256": "f69339a3492e38930bc017ba7a64472b61a2e70f197336dcdb939e72eb71789f",
+    "stderr_sha256": "fc2e623507ffd1b730c8173acc2f118c3d446ce1d278b10ee030d3076ff4a4d9",
+    "summary": "FAIL: 97 documents, 368 relations, 12 families; 70 errors, 0 notes\n"
+  },
+  {
+    "name": "diff-check",
+    "cmd": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "env": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "elapsed_seconds": 0.012,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary": ""
+  }
+]
