@@ -395,7 +395,7 @@ d_G≥6及k≥18；T3接通no4ct三支私人ρ≥5。一般RING、
 | [N2原55：雙long共同容量接回與九格接口](c5_excess_two_n2_double_long_joint.md) | 原碰色＋容量及leaf K₅排t=0／1；t=2／3殘留由下列LL-CUT+diag排除。基本S矩陣定理與每列至多九格保留，基本機制未獨立證成；target not triggered，無新Lean |
 | [N2原55：同來源LL-CUT與加強版來源排除](c5_excess_two_n2_ll_cut.md) | 新原K₅-H／K₃,₃-O、leaf接線數及2≤行和≤1排全部剩餘spokes，採納LL-CUT+diag與完整原55(2,0)來源排除。基本LL-CUT未獨立證成，19,229共同可行投影／64,408 contact介面保留；指定完整Σ契約九格全覆蓋，廣義N2後由N2-BRIDGE排除，E-ARC2仍OPEN，無新Lean |
 | [N2-BRIDGE：完整Σ與三列來源橋接](c5_excess_two_n2_bridge.md) | 精確額外mask為932；U4三列移植、五列slack、unit-U／分量必留及UC3補齊來源前提，再接局部unary／OL／LL，排原E4契約全部廣義N2。E-ARC2仍剩N1、相鄰0／1／2 mixed；具名父ledger、完整圖反控制與雙實作重播保存，無新Lean |
-| [C₅ 全線進展與高階假設](c5_research_synthesis.md) | §8.1 完整 E 與 E-ARC2 等價；新增真子圖單拒絕必要條件，ε=2 三點弧仍 OPEN；Q=B／932 另屬較強版本。八線證據及歷史快照保留；兩-root44已限定排除，不推升 E／H2／H3，不替代導覽排程 |
+| [C₅ 全線進展與高階假設](c5_research_synthesis.md) | 頁首整合 K≤22／k≥23、C4 的 mask13 六接點義務、T1 只留 RING、私人ρ≥5及 Lean 具名首層替換；E-ARC2／一般主命題仍 OPEN。§8.1 的 E 等價及八線歷史保留，不替代各題權威來源或導覽排程 |
 | [C₅ 跨線結果對照與共通語言](c5_common_language.md) | 五欄代表成果對照；統一完整介面、兩種臨界性、結論類型與共用引理叫法；保留原來源、框族及操作義務；文件整理，無新定理或數學重播 |
 | [Phase B 共通引理候選分析](c5_phase_b_common_lemmas.md) | 三組候選與前提／反例／義務／效益；抽出原圖盾弧收費、推得任意两自由roots的條件容量恆等式、區分密封與動態充分性；兩非平面q-critical容量負控制及小型重播，未新增45／54／55排除或ε≥3下界 |
 | [C₅ 關係階數與接合上界](c5_relation_arity.md) | 132類為11個二階、101個四階、20個五階；原邊重驗20反例及100份局部延拓；紙面證接合r*≤來源最大階數≤5、T4全收時≤4；六圖回歸，非一般五階接合實現或多步state定理，未Lean化 |
@@ -544,6 +544,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-14：目前進展跨線整合與發布](history/2026-10-14-progress-consolidation-publish.md)
 - [2026-10-14：C4四連通化約與mask13六接點殘題整理發布](history/2026-10-14-c4-triangle-core-publish.md)
 - [2026-10-14：C4來源橋、T1正對切口與具名Lean替換整理發布](history/2026-10-14-c4-t1-lean-progress-publish.md)
 - [2026-10-14：T1一般正對切口定理採納與證據整合](history/2026-10-14-t1-crosscut-adoption.md)
