@@ -1,0 +1,43 @@
+[
+  {
+    "name": "check-docs",
+    "argv": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "name": "docgraph-formal",
+    "argv": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "name": "docgraph-whole",
+    "argv": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "exit": 1,
+    "expected_exit": 1
+  },
+  {
+    "name": "diff-check",
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  }
+]

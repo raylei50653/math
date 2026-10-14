@@ -1,0 +1,29 @@
+Preliminary bounded arithmetic, superseded by check.py and PROOF.md.
+These are local assignment counts, not source realization tests.
+
+p=5,a=5,m=5 deletion:
+pins=(z,s,r,t,q,ell,v), face edges=
+zs,sr,rt,tz,zq,qell,ellv,vt.
+For each second facial identification below, also impose z=r.
+Enumerate all 4^7 pin assignments and every p,m,x,y cap lift.
+
+pair (z,ell): 216 proper labelled rows; 0 universal-failure survivors.
+pair (z,v):   216 proper labelled rows; 96 survivors.
+pair (q,v):   216 proper labelled rows; 144 survivors.
+pair (q,t):   216 proper labelled rows; 144 survivors.
+pair (ell,t): 216 proper labelled rows; 120 survivors.
+
+The nonzero alternatives include rows with no complete restoration.
+They do not exclude sources or show graph realizability. No larger
+closure was built around them.
+
+Independent p=5,a=5,t=5 deletion:
+pins=(z,s,r,v,m,q,ell), face edges=
+zs,sr,rv,vm,mz,zq,qell,ellm.
+Impose z=r=ell and enumerate every p,t,x,y restoration.
+Universal-failure survivors: 0.
+
+Both zero-survivor computations were subsequently subsumed by the
+stronger original-seven-pin quotient in PROOF.md, which excludes a=5
+without assumptions on m or t degree. They are preserved here as the
+actual preliminary counts, not promoted to final certificates.

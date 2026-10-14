@@ -1,0 +1,61 @@
+{
+  "checks": [
+    {
+      "name": "default",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/tmp/math-cofacial-676b102/audits/2026-10-14-cofacial-fibres-676b102/r6/check_r6.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-cofacial-676b102",
+      "PYTHONHASHSEED": null,
+      "utc": "2026-10-14T13:54:28.303647+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "default.stdout",
+      "stderr": "default.stderr",
+      "exit": "default.exit"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/tmp/math-cofacial-676b102/audits/2026-10-14-cofacial-fibres-676b102/r6/check_r6.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-cofacial-676b102",
+      "PYTHONHASHSEED": 17,
+      "utc": "2026-10-14T13:54:28.348589+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "seed17.stdout",
+      "stderr": "seed17.stderr",
+      "exit": "seed17.exit"
+    },
+    {
+      "name": "negative",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/tmp/math-cofacial-676b102/audits/2026-10-14-cofacial-fibres-676b102/r6/check_r6.py",
+        "--check",
+        "--certificate",
+        "/tmp/math-cofacial-676b102/audits/2026-10-14-cofacial-fibres-676b102/r6/logs/corrupt-r6.json"
+      ],
+      "cwd": "/tmp/math-cofacial-676b102",
+      "PYTHONHASHSEED": null,
+      "utc": "2026-10-14T13:54:28.395578+00:00",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expectation_met": true,
+      "stdout": "negative.stdout",
+      "stderr": "negative.stderr",
+      "exit": "negative.exit"
+    }
+  ],
+  "all_expectations_met": true
+}

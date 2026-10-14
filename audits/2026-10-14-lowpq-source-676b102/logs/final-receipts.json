@@ -1,0 +1,558 @@
+{
+  "base": "676b1024715f24a0d969fba90baab21b756406e2",
+  "research_replays": [
+    {
+      "name": "pq",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-lowpq-source-676b102/pq/check.py",
+        "--check"
+      ],
+      "seed": null,
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "pq-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-lowpq-source-676b102/pq/check.py",
+        "--check"
+      ],
+      "seed": "17",
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "classification",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-lowpq-source-676b102/classification/check_common_fibre.py",
+        "--check"
+      ],
+      "seed": null,
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "classification-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-lowpq-source-676b102/classification/check_common_fibre.py",
+        "--check"
+      ],
+      "seed": "17",
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "r6-custody",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-lowpq-source-676b102/r6/check_inputs.py"
+      ],
+      "seed": null,
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "r6-custody-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-lowpq-source-676b102/r6/check_inputs.py"
+      ],
+      "seed": "17",
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "pq-negative",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-lowpq-source-676b102/pq/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-14-lowpq-source-676b102/pq/tampered-negative.json"
+      ],
+      "seed": null,
+      "exit": 1,
+      "expected_exit": 1,
+      "passed": true
+    },
+    {
+      "name": "classification-negative",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-lowpq-source-676b102/classification/check_common_fibre.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-14-lowpq-source-676b102/classification/tampered-review-certificate.json"
+      ],
+      "seed": null,
+      "exit": 1,
+      "expected_exit": 1,
+      "passed": true
+    },
+    {
+      "name": "r6-negative",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-lowpq-source-676b102/r6/check_inputs.py",
+        "--certificate",
+        "audits/2026-10-14-lowpq-source-676b102/r6/logs/tampered-seal.json"
+      ],
+      "seed": null,
+      "exit": 1,
+      "expected_exit": 1,
+      "passed": true
+    }
+  ],
+  "previous_replays": [
+    {
+      "name": "prior-r6",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-cofacial-fibres-676b102/r6/check_r6.py",
+        "--check"
+      ],
+      "seed17": false,
+      "returncode": 0,
+      "elapsed_seconds": 0.047
+    },
+    {
+      "name": "prior-r6-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-cofacial-fibres-676b102/r6/check_r6.py",
+        "--check"
+      ],
+      "seed17": true,
+      "returncode": 0,
+      "elapsed_seconds": 0.048
+    },
+    {
+      "name": "prior-pq",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-cofacial-fibres-676b102/pq/check.py",
+        "--check"
+      ],
+      "seed17": false,
+      "returncode": 0,
+      "elapsed_seconds": 0.107
+    },
+    {
+      "name": "prior-pq-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-cofacial-fibres-676b102/pq/check.py",
+        "--check",
+        "--seed",
+        "17"
+      ],
+      "seed17": true,
+      "returncode": 0,
+      "elapsed_seconds": 0.105
+    },
+    {
+      "name": "prior-counts",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-14-c4-c5-recursion-fdd3e22/fibre/r6_counts/check_counts.py",
+        "--check"
+      ],
+      "seed17": false,
+      "returncode": 0,
+      "elapsed_seconds": 0.36
+    }
+  ],
+  "documentation": [
+    {
+      "name": "check-docs",
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "docgraph-formal",
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "name": "docgraph-whole",
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit": 1,
+      "expected_exit": 1
+    },
+    {
+      "name": "diff-check",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit": 0,
+      "expected_exit": 0
+    }
+  ],
+  "custody": {
+    "authority_files_verified": 105,
+    "frozen_drift": 0,
+    "historical_tracked_audits_unchanged": true,
+    "local_audit_targets_checked": 73,
+    "missing": []
+  },
+  "whole_tree_docgraph": {
+    "baseline_errors": 70,
+    "current_errors": 70,
+    "same_error_ids": true,
+    "new_error_ids": [],
+    "removed_error_ids": [],
+    "error_keys": [
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-interfaces"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-mixed-edge"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-mixed-edge-k4"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-mixed-edge-order"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-mixed-edge-same-endpoint"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-mixed-edge-shared"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-mixed-edge-shared-t0-pair-single"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-mixed-edge-shared-t0-singles"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-mixed-edge-shared-t1-pair"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-mixed-edge-shared-t1-singles"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-mixed-edge-shared-t2"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-no-mixed"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-no-mixed-t2"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-no-mixed-t2-bridge"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-no-mixed-t2-endpoints"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-no-mixed-t2-path-palettes"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-no-mixed-t2-t0-overlap"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-no-mixed-t2-t0-pairs"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-no-mixed-t2-t0-singles"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-no-mixed-t2-t1"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-no-mixed-t2-t1-bridge"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-no-mixed-t2-t1-endpoints"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-shared-singleton"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-singleton-end-arc"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-singleton-long-arc"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-singleton-middle-arc"
+      ],
+      [
+        "duplicate-id",
+        "c5.adjacent-degree5-singleton-sectors"
+      ],
+      [
+        "duplicate-id",
+        "c5.c4-boundary-pivot"
+      ],
+      [
+        "duplicate-id",
+        "c5.c4-triangle-core"
+      ],
+      [
+        "duplicate-id",
+        "c5.c8-apex-degree"
+      ],
+      [
+        "duplicate-id",
+        "c5.c8-inner-collar"
+      ],
+      [
+        "duplicate-id",
+        "c5.c8-peeling"
+      ],
+      [
+        "duplicate-id",
+        "c5.cofacial-normal-form"
+      ],
+      [
+        "duplicate-id",
+        "c5.degree5-interfaces"
+      ],
+      [
+        "duplicate-id",
+        "c5.degree5-two-spoke-sectors"
+      ],
+      [
+        "duplicate-id",
+        "c5.dual-path-surgery"
+      ],
+      [
+        "duplicate-id",
+        "c5.exchange-geometry-scope"
+      ],
+      [
+        "duplicate-id",
+        "c5.no-spoke-exterior"
+      ],
+      [
+        "duplicate-id",
+        "c5.no-spoke-first-bridge"
+      ],
+      [
+        "duplicate-id",
+        "c5.no-spoke-path-minor"
+      ],
+      [
+        "duplicate-id",
+        "c5.no-spoke-supports"
+      ],
+      [
+        "duplicate-id",
+        "c5.no4ct-handoff"
+      ],
+      [
+        "duplicate-id",
+        "c5.root-degree-excess"
+      ],
+      [
+        "duplicate-id",
+        "c5.saturation-degree-bound"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-sided-exit"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-branch-minor"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-branch-palettes"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-bridge-path"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-completion"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-cores"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-cross-row"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-first-bridge"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-four"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-frame-arc"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-residual-locality"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-root-conservation"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-root-sweep"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-single-contact-bounds"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-three-one"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-two-arc"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-two-contact-bounds"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-two-two"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-two-two-external"
+      ],
+      [
+        "duplicate-id",
+        "c5.single-spoke-two-two-minor"
+      ],
+      [
+        "duplicate-id",
+        "c5.two-spoke-adjacent-21"
+      ],
+      [
+        "duplicate-id",
+        "c5.two-spoke-middle-21"
+      ],
+      [
+        "duplicate-id",
+        "c5.two-spoke-nonadjacent"
+      ],
+      [
+        "duplicate-id",
+        "c5.two-spoke-reflection"
+      ],
+      [
+        "duplicate-id",
+        "c5.two-spoke-split-support"
+      ],
+      [
+        "duplicate-id",
+        "c5.two-spoke-three-contacts"
+      ]
+    ]
+  },
+  "existing_lean_library": {
+    "argv": [
+      "lake",
+      "build"
+    ],
+    "returncode": 0,
+    "elapsed_seconds": 9.505,
+    "scope": "Existing Lean library only; no new Lean theorem"
+  },
+  "publication_preflight": [
+    {
+      "name": "generated-artifacts",
+      "argv": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cached-diff",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit": 0
+    }
+  ],
+  "scope": "New arbitrary-size p5a5/q5c5 source exclusion; local arithmetic certificates; no new Lean theorem; general p5 and mask319 remain OPEN."
+}

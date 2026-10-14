@@ -1,0 +1,122 @@
+[
+  {
+    "name": "pq",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-lowpq-source-676b102/pq/check.py",
+      "--check"
+    ],
+    "seed": null,
+    "exit": 0,
+    "expected_exit": 0,
+    "passed": true
+  },
+  {
+    "name": "pq-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-lowpq-source-676b102/pq/check.py",
+      "--check"
+    ],
+    "seed": "17",
+    "exit": 0,
+    "expected_exit": 0,
+    "passed": true
+  },
+  {
+    "name": "classification",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-lowpq-source-676b102/classification/check_common_fibre.py",
+      "--check"
+    ],
+    "seed": null,
+    "exit": 0,
+    "expected_exit": 0,
+    "passed": true
+  },
+  {
+    "name": "classification-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-lowpq-source-676b102/classification/check_common_fibre.py",
+      "--check"
+    ],
+    "seed": "17",
+    "exit": 0,
+    "expected_exit": 0,
+    "passed": true
+  },
+  {
+    "name": "r6-custody",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-lowpq-source-676b102/r6/check_inputs.py"
+    ],
+    "seed": null,
+    "exit": 0,
+    "expected_exit": 0,
+    "passed": true
+  },
+  {
+    "name": "r6-custody-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-lowpq-source-676b102/r6/check_inputs.py"
+    ],
+    "seed": "17",
+    "exit": 0,
+    "expected_exit": 0,
+    "passed": true
+  },
+  {
+    "name": "pq-negative",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-lowpq-source-676b102/pq/check.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-14-lowpq-source-676b102/pq/tampered-negative.json"
+    ],
+    "seed": null,
+    "exit": 1,
+    "expected_exit": 1,
+    "passed": true
+  },
+  {
+    "name": "classification-negative",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-lowpq-source-676b102/classification/check_common_fibre.py",
+      "--check",
+      "--certificate",
+      "audits/2026-10-14-lowpq-source-676b102/classification/tampered-review-certificate.json"
+    ],
+    "seed": null,
+    "exit": 1,
+    "expected_exit": 1,
+    "passed": true
+  },
+  {
+    "name": "r6-negative",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-lowpq-source-676b102/r6/check_inputs.py",
+      "--certificate",
+      "audits/2026-10-14-lowpq-source-676b102/r6/logs/tampered-seal.json"
+    ],
+    "seed": null,
+    "exit": 1,
+    "expected_exit": 1,
+    "passed": true
+  }
+]

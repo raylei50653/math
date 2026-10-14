@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "command": "python3 -B audits/2026-10-14-lowpq-source-676b102/pq/check.py --check",
+      "exit_code": 0,
+      "log": "check-final.log",
+      "log_sha256": "842ee3d2f8a6004074ccb33c2eb8186d10938f8bcb646add574fd40b68493a5a"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-14-lowpq-source-676b102/pq/check.py --check",
+      "exit_code": 0,
+      "log": "check-seed17.log",
+      "log_sha256": "842ee3d2f8a6004074ccb33c2eb8186d10938f8bcb646add574fd40b68493a5a"
+    },
+    {
+      "command": "python3 -B audits/2026-10-14-lowpq-source-676b102/pq/check.py --check --certificate audits/2026-10-14-lowpq-source-676b102/pq/tampered-negative.json",
+      "exit_code": 1,
+      "expected_rejection": true,
+      "log": "check-negative.log",
+      "log_sha256": "0fc02a5799164cd1510792316fe9d326958bf28ef24d21352853f78a06c61d9f"
+    }
+  ],
+  "artifact_sha256": {
+    "check.py": "78958d5f1fa98a5d284aad8c96d3fb9cd907d36b7b057ba8f6ede22e594e98ff",
+    "certificate-final.json": "52074c31a4d2c6b35063cf9d49d71ced44a5f35657c91e90299b0a440f4aa8df",
+    "tampered-negative.json": "323a70b93aef863c6181d541c39f807c144f1225baad77be06ca16c50420fa53",
+    "generate.log": "ec2a23f189d26f270c008625741d56e2da018ac93ce21e827f4a22f7474dd990",
+    "generate-final.log": "7d938a3dd1bdaca4dab4b7e07c7515c0dee0e473516d333d3a4c0944cd6910a1"
+  }
+}

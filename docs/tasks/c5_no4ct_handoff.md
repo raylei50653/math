@@ -177,9 +177,13 @@ d(B)\ge4,\quad d(V\setminus B)\ge5,\quad h\ge3,\quad n_5\ge9.
 較小 R 的完整 C4 關係已縮至 mask13；[JOINT6續進](../../audits/2026-10-14-c4-mask13-joint6-fdd3e22/REPORT.md)
 補上ABCB的CD／BD完整fibre分解，高p,q子域有k≥28。
 [返回單射與多型遞迴](../../audits/2026-10-14-c4-c5-recursion-fdd3e22/REPORT.md)
-已排除原r五度；r六度時s,t≥6，較小C5七接點狀態只留271／314／319，
-可續推這三份完整共同關係，嚴格下降仍須核對完成成本與目錄外壞性。
-可先攻原p或q五度子域（k≤27必有）；高p,q的k≥28及一般T／T0仍另留。
+已排除原r五度；r六度時s,t≥6，較小C5支持經[相對共面識別](../../audits/2026-10-14-cofacial-fibres-676b102/REPORT.md)
+縮為恰319。[低p/q真實來源續進](../../audits/2026-10-14-lowpq-source-676b102/REPORT.md)
+再以同一T0兩個實際面的三點共同商圖證p=5⇒a≥6、q=5⇒c≥6；
+保留七接點ABABCBC與ABABCAB各自非空的完整fibre，舊計數證書原樣保留。
+按[活躍來源表](../../audits/2026-10-14-lowpq-source-676b102/classification/SOURCE_TABLE.md)
+先攻p5a≥6及反射側（k≤27必低p/q），分單低與雙低，再攻r6的319；高p,q的k≥28及一般T／T0仍另留。
+嚴格下降仍須核對完成成本與目錄外壞性。
 保留六個原接點與同份完整染色，
 不能把一步 Kempe 受阻或兩面各自的可行投影當成無界延拓的結論。
 [共同 Tait／匹配判準](../../audits/2026-10-14-c4-tait-lock-review-fdd3e22/REPORT.md)

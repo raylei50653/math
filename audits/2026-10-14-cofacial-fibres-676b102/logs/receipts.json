@@ -1,0 +1,173 @@
+[
+  {
+    "name": "r6-default",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-cofacial-fibres-676b102/r6/check_r6.py",
+      "--check"
+    ],
+    "env": {},
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "stdout": "r6-default.stdout",
+    "stderr": "r6-default.stderr"
+  },
+  {
+    "name": "r6-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-cofacial-fibres-676b102/r6/check_r6.py",
+      "--check"
+    ],
+    "env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "stdout": "r6-seed17.stdout",
+    "stderr": "r6-seed17.stderr"
+  },
+  {
+    "name": "pq-default",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-cofacial-fibres-676b102/pq/check.py",
+      "--check"
+    ],
+    "env": {},
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "stdout": "pq-default.stdout",
+    "stderr": "pq-default.stderr"
+  },
+  {
+    "name": "pq-seed17",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-cofacial-fibres-676b102/pq/check.py",
+      "--check",
+      "--seed",
+      "17"
+    ],
+    "env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "stdout": "pq-seed17.stdout",
+    "stderr": "pq-seed17.stderr"
+  },
+  {
+    "name": "independent-alias",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-cofacial-fibres-676b102/review/check_alias_local.py"
+    ],
+    "env": {},
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "stdout": "independent-alias.stdout",
+    "stderr": "independent-alias.stderr",
+    "matches_saved_independent_certificate": true
+  },
+  {
+    "name": "independent-generic",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-cofacial-fibres-676b102/review/check_double_quotient.py"
+    ],
+    "env": {},
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "stdout": "independent-generic.stdout",
+    "stderr": "independent-generic.stderr",
+    "matches_saved_independent_certificate": true
+  },
+  {
+    "name": "historical-counts",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22/fibre/r6_counts/check_counts.py",
+      "--check"
+    ],
+    "env": {},
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "stdout": "historical-counts.stdout",
+    "stderr": "historical-counts.stderr"
+  },
+  {
+    "name": "check-docs",
+    "argv": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "env": {},
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "stdout": "check-docs.stdout",
+    "stderr": "check-docs.stderr"
+  },
+  {
+    "name": "docgraph-formal",
+    "argv": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "env": {},
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "stdout": "docgraph-formal.stdout",
+    "stderr": "docgraph-formal.stderr"
+  },
+  {
+    "name": "docgraph-whole",
+    "argv": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "env": {},
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 1,
+    "stdout": "docgraph-whole.stdout",
+    "stderr": "docgraph-whole.stderr"
+  },
+  {
+    "name": "diff-check",
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "env": {},
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 0,
+    "stdout": "diff-check.stdout",
+    "stderr": "diff-check.stderr"
+  },
+  {
+    "name": "frozen-input-integrity",
+    "inputs": 16,
+    "drift": [],
+    "exit_code": 0
+  },
+  {
+    "name": "historical-audit-byte-custody",
+    "exit_code": 0,
+    "paths": [
+      "audits/2026-10-14-c4-c5-recursion-fdd3e22",
+      "audits/2026-10-14-c4-return-branches-a11d4bb"
+    ]
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "default": {
+    "command": [
+      "python3",
+      "-B",
+      "check.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "check-final.log"
+  },
+  "seed17": {
+    "command": [
+      "python3",
+      "-B",
+      "check.py",
+      "--check",
+      "--seed",
+      "17"
+    ],
+    "exit_code": 0,
+    "log": "check-seed17.log"
+  },
+  "negative": {
+    "command": [
+      "python3",
+      "-B",
+      "check.py",
+      "--check",
+      "--certificate",
+      "tampered-negative.json"
+    ],
+    "exit_code": 1,
+    "expected": "nonzero rejection",
+    "tamper": "Omitted one legal full x,y,p lift from ABABCBC",
+    "log": "check-negative.log"
+  },
+  "artifacts_sha256": {
+    "check.py": "18b3414b936e2096d5455a308c2f4a92360fa260a3167b4cbf605da905243f16",
+    "certificate-final.json": "4eea40fa851138732f6785e28f9d1210845ed7ba182f5b0b96baaad8432d510a",
+    "check-final.log": "70754c0f747893d702b4688cd71f29bec68533ac8f8bedaea9d8256d8975eac7",
+    "check-seed17.log": "e963ccb3a4416129511b38284d2ba35615f6c6d66f7037542f3d266b32f60dbe",
+    "tampered-negative.json": "da29e84ea39fe866ffae649d1b672c10eecbbe3d29d72cc332e68e559de14395",
+    "check-negative.log": "28be9fbf0b36c6b52da05b06b33ed98ba0190501b8a3305681b7d679806e457f"
+  }
+}

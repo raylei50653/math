@@ -1,0 +1,82 @@
+{
+  "checks": [
+    {
+      "name": "default",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/tmp/math-cofacial-676b102/audits/2026-10-14-cofacial-fibres-676b102/r6/check_r6.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-cofacial-676b102",
+      "PYTHONHASHSEED": null,
+      "utc": "2026-10-14T13:56:46.553352+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "default.stdout",
+      "stderr": "default.stderr",
+      "exit": "default.exit"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/tmp/math-cofacial-676b102/audits/2026-10-14-cofacial-fibres-676b102/r6/check_r6.py",
+        "--check"
+      ],
+      "cwd": "/tmp/math-cofacial-676b102",
+      "PYTHONHASHSEED": 17,
+      "utc": "2026-10-14T13:56:46.597645+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "stdout": "seed17.stdout",
+      "stderr": "seed17.stderr",
+      "exit": "seed17.exit"
+    },
+    {
+      "name": "negative",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/tmp/math-cofacial-676b102/audits/2026-10-14-cofacial-fibres-676b102/r6/check_r6.py",
+        "--check",
+        "--certificate",
+        "/tmp/math-cofacial-676b102/audits/2026-10-14-cofacial-fibres-676b102/r6/logs/final/corrupt-r6.json"
+      ],
+      "cwd": "/tmp/math-cofacial-676b102",
+      "PYTHONHASHSEED": null,
+      "utc": "2026-10-14T13:56:46.644248+00:00",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expectation_met": true,
+      "stdout": "negative.stdout",
+      "stderr": "negative.stderr",
+      "exit": "negative.exit"
+    },
+    {
+      "name": "exclusive_create",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/tmp/math-cofacial-676b102/audits/2026-10-14-cofacial-fibres-676b102/r6/check_r6.py",
+        "--write"
+      ],
+      "cwd": "/tmp/math-cofacial-676b102",
+      "PYTHONHASHSEED": null,
+      "utc": "2026-10-14T13:56:46.692414+00:00",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expectation_met": true,
+      "stdout": "exclusive_create.stdout",
+      "stderr": "exclusive_create.stderr",
+      "exit": "exclusive_create.exit"
+    }
+  ],
+  "all_expectations_met": true,
+  "exclusive_create_preserved_existing_bytes": true,
+  "certificate_sha256_before": "1de12cb27df170c224dd70b637f41dfc0f83dc04316c8ed4eb1ffea842cb632e",
+  "certificate_sha256_after": "1de12cb27df170c224dd70b637f41dfc0f83dc04316c8ed4eb1ffea842cb632e"
+}

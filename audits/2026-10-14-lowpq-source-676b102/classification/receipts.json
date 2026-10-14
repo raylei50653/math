@@ -1,0 +1,61 @@
+{
+  "certificate_sha256": "5bd70fe09aec87424da17b8a2049913267f5b91886eec49ef1e2b6f6e6706265",
+  "certificate_unchanged": true,
+  "checks": [
+    {
+      "PYTHONHASHSEED": null,
+      "command": [
+        "python3",
+        "-B",
+        "/tmp/math-lowpq-676b102/audits/2026-10-14-lowpq-source-676b102/classification/check_common_fibre.py",
+        "--check"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "name": "default",
+      "passed": true
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "command": [
+        "python3",
+        "-B",
+        "/tmp/math-lowpq-676b102/audits/2026-10-14-lowpq-source-676b102/classification/check_common_fibre.py",
+        "--check"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "name": "seed17",
+      "passed": true
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "command": [
+        "python3",
+        "-B",
+        "/tmp/math-lowpq-676b102/audits/2026-10-14-lowpq-source-676b102/classification/check_common_fibre.py",
+        "--check",
+        "--certificate",
+        "/tmp/math-lowpq-676b102/audits/2026-10-14-lowpq-source-676b102/classification/tampered-review-certificate.json"
+      ],
+      "exit": 1,
+      "expected_exit": 1,
+      "name": "negative",
+      "passed": true
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "command": [
+        "python3",
+        "-B",
+        "/tmp/math-lowpq-676b102/audits/2026-10-14-lowpq-source-676b102/classification/check_common_fibre.py",
+        "--write"
+      ],
+      "exit": 1,
+      "expected_exit": 1,
+      "name": "exclusive-create",
+      "passed": true
+    }
+  ],
+  "scope": "Independent local colour arithmetic only; no source realizations"
+}

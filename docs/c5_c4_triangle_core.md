@@ -18,6 +18,8 @@ docgraph:
     - audits/2026-10-14-c4-c5-recursion-fdd3e22/REPORT.md
     - audits/2026-10-14-c4-c5-recursion-fdd3e22/fibre/PROOF.md
     - audits/2026-10-14-c4-return-branches-a11d4bb/REPORT.md
+    - audits/2026-10-14-cofacial-fibres-676b102/REPORT.md
+    - audits/2026-10-14-lowpq-source-676b102/REPORT.md
 ---
 
 # C4 指定延拓壓到四連通三角化圖
@@ -26,7 +28,10 @@ docgraph:
 本日後續 [C4-MASK13-JOINT6](../audits/2026-10-14-c4-mask13-joint6-fdd3e22/REPORT.md)
 已補上 ABCB 的同份 fibre 分解及高 p,q 子域的 k≥28。
 [返回單射與 C4／C5 遞迴](../audits/2026-10-14-c4-c5-recursion-fdd3e22/REPORT.md)
-進一步排除 r 原五度全支；r 原六度時也迫 s,t 至少六度，七接點 C5 關係只留271／314／319。
+進一步排除 r 原五度全支；r 原六度時也迫 s,t 至少六度。
+[相對共面識別](../audits/2026-10-14-cofacial-fibres-676b102/REPORT.md)再把該C5支持由271／314／319縮為恰319；
+同一T0的兩面共同商圖先證p=5⇒a≥5、q=5⇒c≥5；
+[低p/q來源續進](../audits/2026-10-14-lowpq-source-676b102/REPORT.md)再以三點共同識別提高為 **p=5⇒a≥6、q=5⇒c≥6**，三種來源皆適用。
 [其他返回分支](../audits/2026-10-14-c4-return-branches-a11d4bb/REPORT.md)再給
 a=4⇒t≥6、c=4⇒s≥6；p=q=5時另一個原共同鄰點至少六度，單低p/q化成精確mask14。
 來源沿用 [C5→C4 橋](c5_c4_boundary_pivot.md)的 no4ct 全域最小來源契約，
@@ -105,7 +110,7 @@ T 支的 `b=μ(zxy)` 等價於 `Δ(zb)=Δ(xy)`；T0 支的兩面色集合相同
 | 本分支 h=3 | 只剩 c04／c07-941，已採納 apex 下界滿足上列，故 k≥28 |
 | 本分支完整932、h=4 | 只剩 c09-induced-932，同樣 k≥28 |
 | r 恰五度 | 刪 r 的 mask7 共同表已由返回單射排除，故原 r≥6 |
-| r 原六度 | 刪 r 露出 C5，保留 p,q 後完整關係只可能271、314、319；再剝除與同圖交換迫 s,t 原度數≥6 |
+| r 原六度 | 刪 r 露出 C5；全lift加兩個較小外面商圖迫完整支持恰319，並有 s,t 原度數≥6；舊三份計數模型保留 |
 
 一般 p 或 q 原五度時，R 有四度內點，不能套用高 p,q 的候選界；
 若 k≤27，這個低度情況必發生。無界八列殘題仍 OPEN；
@@ -120,13 +125,23 @@ T 支的 `b=μ(zxy)` 等價於 `Δ(zb)=Δ(xy)`；T0 支的兩面色集合相同
 
 | 附加原條件 | 已證結果／保留義務 |
 | --- | --- |
-| p=5；q=5對稱 | 以T0−p的原link作外框，完整C4支持恰14；rainbow分成兩個完整fibre palette sectors，單低度支仍OPEN |
+| p=5；q=5對稱 | 以T0−p的原link作外框，完整C4支持恰14；rainbow分成兩個完整fibre palette sectors；同圖兩面識別已排p=5,a≤5及反射側，其餘低度支OPEN |
 | p=q=5 | pq的另一面頂點ell原度≥6；交換指定面角色後使用原返回單射，未排ell≥6支 |
-| a=4；c=4對稱 | 直接刪t的424子支被外面z=r商圖的較小來源可染性排除，故t≥6；反射給s≥6，932／933／941均適用 |
+| a=4；c=4對稱 | 直接刪t的424子支給t≥6；新共同商圖另給p≥6。反射給s,q≥6，932／933／941均適用 |
 | t=5；s=5對稱 | 必a≥5；直接刪t後的C5完整支持只留956／1012／1020，仍保內部p,q逐列full lifts |
 | 932／933且a=4 | 整份原圖旋轉給p≥6；p=6⇒t,q≥6。若k≤27，必q=5、p≥7 |
 | 932且c=4 | 對稱旋轉給q≥6；q=6⇒p,s≥6。若k≤27，必p=5、q≥7 |
 | r=7 | 刪r露出C6，必要全lift／Kempe模型保留26外框型、111joint orbits；沒有來源排除 |
+
+[共同來源補件](../audits/2026-10-14-cofacial-fibres-676b102/REPORT.md)保留D=T0−{x,y,p}的兩個實際C4面；
+p=5時的原link接點m=t恰對應a=4，該整個子支已由同一商圖染色排除。
+m與t互異時，七接點(z,s,r,t,q,ell,m)有完整ABABCBC fibre，迫ell s、ell t非邊。
+[新來源證明](../audits/2026-10-14-lowpq-source-676b102/pq/PROOF.md)先由原小C5幾何得ell r非邊，
+再在兩個實際面內共同識別z=r=ell，迫另一個完整ABABCAB fibre非空；
+後者s=t=m給ms、mt非邊，與a=5的原tm邊矛盾，故p=5⇒a≥6，反射q=5⇒c≥6。
+兩個fibre分別存在，不能合併成同一染色。p5a≥6及反射、r6的319仍OPEN。
+[r6原幾何](../audits/2026-10-14-lowpq-source-676b102/r6/PROOF.md)另排第一層a/c鄰點接r的兩個私人link點；
+[活躍來源表](../audits/2026-10-14-lowpq-source-676b102/classification/SOURCE_TABLE.md)按932／933／941、h、p/q及r分類k≤27殘支。
 
 一般mask13另有缺色端點連通及條件式BC子fibre雙射，但返回落入允許的另一ABCB
 sector，沒有空fibre矛盾。旋轉必保留兩個完整singleton fibres皆空的前提，
