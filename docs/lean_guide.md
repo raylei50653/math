@@ -2,16 +2,16 @@
 
 ## 最新進度
 
-現況核對：2026-10-13；本次只整理入口，未新增研究結論。
+現況核對：2026-10-14；兩核心 D₁₃ 首層具名替換已接到完整 J／指定框 P。
 
 | 欄位 | 現況 |
 | --- | --- |
-| 階段／生命週期 | 可重用普通定理、具名 repair 實例及固定 LC soundness 證書已有完成項；來源替換實例、枚舉 completeness 與拓撲層仍待形式化。 |
-| 最近研究更新 | 2026-10-04：[LC 固定 179 個 ES 代表的 soundness 證書](c5_excess_two_lean_certificates.md)完成並整合；本次入口整理不改研究日期。 |
-| 上次完成 | LC 179／179 證書與公理審計完成；只證具名圖及其有限條件為真，不證枚舉完整性。普通 theorem 與 `native_decide` 信任分開。 |
-| 目前停止點 | LC 尚未匯入預設 Math.lean／CI；兩核心的 D₁₃ 具名替換尚未接到 J／P 保持；Gallai、來源 minors、disk topology 及一般枚舉 completeness 未形式化。 |
-| 下一步 | 接續時固定兩核心內 D₁₃ 的具名附件，接到密封替換定理，證原 U 上的 J 與指定框 P 保持；任意層數圖結構另行處理。 |
-| 接手入口 | [NamedRepair](lean_named_repair.md)→ [D₁₃ 密封替換](lean_sealed_four_port.md)；LC 範圍見[證書報告](c5_excess_two_lean_certificates.md)，顯式 build／axiom audit 見本頁 §4。 |
+| 階段／生命週期 | 可重用普通定理、具名 repair、首層來源替換及固定 LC soundness 已有完成項；任意層數、枚舉 completeness 與拓撲仍待形式化。 |
+| 最近研究更新 | 2026-10-14：[兩核心 D₁₃ 具名替換](lean_named_replacement.md)完成 A、B 單側與雙側各一次的完整外部關係、J／指定框 P 及 repair 傳遞。 |
+| 上次完成 | 首層替換由實際接線保持同一十三點外部 row，再保原 U 的 J、指定框 P、十五組極小 repairs 與 r*=4；普通證明及公理審計見報告。 |
+| 目前停止點 | D₁₃ 任意層數圖結構、disk 可用框仍未形式化；LC 尚未匯入預設 Math.lean／CI；Gallai、來源 minors 及一般枚舉 completeness 保留。 |
+| 下一步 | 接續時定義 D₁₃ 指定下一中心與 rim 的遞迴實際接線，將首層關係保持接成任意有限層數；disk／框可用性另證。 |
+| 接手入口 | [具名替換](lean_named_replacement.md)→ [NamedRepair](lean_named_repair.md)／[密封替換](lean_sealed_four_port.md)；LC 顯式 build／axiom audit 見本頁 §4。 |
 
 ### 近期里程碑
 
@@ -21,6 +21,7 @@
 | 2026-09-28／原圖到 lists | [BoundaryDegree](lean_boundary_degree.md)以十三個普通 theorem 接通原圖延拓、degree 拆分與拒絕迫緊，lists 保留實際 attachments。 |
 | 2026-10-02／具名 repair | [CommonRepair](lean_common_repair.md)、[SealedFourPort](lean_sealed_four_port.md)及[NamedRepair](lean_named_repair.md)接通抽象判準、D₁₃ 外部關係與兩核心實例；來源替換接線仍待補。 |
 | 2026-10-04／固定來源證書 | [LC](c5_excess_two_lean_certificates.md)完成 179 張 soundness 證書；顯式建置、公理與未涵蓋 completeness／topology 分別記錄。 |
+| 2026-10-14／具名首層替換 | [NamedRepairReplacement](lean_named_replacement.md)將兩核心實際附件接到 D₁₃ 等價；保完整外部關係、J／指定框 P 與 repair 分類。 |
 
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
@@ -36,7 +37,8 @@
 | --- | --- | --- |
 | 共同 repair 判準 | 27 個普通 theorem：W／C 雙向判準、極小修復／極大失敗、唯一最少解、退化支及具名投影介面；兩核心指定框前提由後續實例完成；其餘四圖與拓撲未形式化 | [CommonRepair](lean_common_repair.md) |
 | D₁₃ 四接點與密封替換 | 22 個普通 theorem：原圖完整關係、三型構造延拓、全部外部染色保留及密封／缺邊控制；disk 與來源族未匯入 Lean；核心 repair 見下列實例 | [SealedFourPort](lean_sealed_four_port.md) |
-| 具名來源 repair 實例 | 34 個普通 theorem：兩方向原35邊 J、指定兩框 P、完整 W／C、各15組極小 repairs、唯一最少對及 r*=4；disk 框完備性與替換來源族仍未形式化 | [NamedRepair](lean_named_repair.md) |
+| 具名來源 repair 實例 | 34 個普通 theorem：兩方向原35邊 J、指定兩框 P、完整 W／C、各15組極小 repairs、唯一最少對及 r*=4；首層替換由後續完成，任意層數與 disk 框仍保留 | [NamedRepair](lean_named_repair.md) |
+| 具名 D₁₃ 首層替換 | 兩方向、A 單側／B 單側／雙側各一次，實際接線保完整十三點外部關係、原 U 的 J、指定 P 及 repair 分類；任意層數與 disk 框仍保留 | [NamedRepairReplacement](lean_named_replacement.md) |
 | ε=2 的具名來源 soundness（LC） | 179／179個 ES critical 代表：完整 Σ、逐邊 criticality、degree 型及 genus-0 rotation／框外面。正列與 witness 用 `decide +kernel`，拒絕列用 `native_decide`；558項 axioms audit 無 `sorryAx`。只證所列圖為真，不證枚舉完整性或拓撲 disk 定理；未接入 Math.lean | [LC 證書與公理範圍](c5_excess_two_lean_certificates.md) |
 | Root 接合 | 15 個普通 Lean 定理與報告對照；不含完整 minor／disk 層 | [root 工具](lean_root_interfaces.md) |
 | 雙拒絕共用工具 | 共用 list／接合引理已具名；完整紙面分類仍有形式化依賴 | [雙拒絕工具](lean_two_rejection_tools.md) |
@@ -60,8 +62,10 @@ Lean 的枚舉 completeness、軌道互異、拓撲實現及任意大小分類�
 另已接通「D₁₃ 原32邊 → 完整四接點等價 → 密封替換保留全部外部染色」；
 此處外部共同色框與附件由同一 `attach`／`outside` 保留。
 兩個十五點核心已接通「原圖 J → 指定兩框 P → 完整 W／C → repair 分類與 r*=4」。
-下一個窄接口是將核心內 D₁₃ 替換的具名附件接到密封替換定理，
-證替換圖在原 U 上的 J 與指定框 P 保持；任意層數的圖結構另行處理。
+[具名首層替換](lean_named_replacement.md)已將 A 的 `(h7,y,h9,x)` 與
+B 的 `(r,q,w,p)` 完整附件接到四接點等價；兩方向、單側與雙側各一次
+均保原 U 的 J、指定兩框 P 及 repair 分類。
+下一個窄接口是指定下一中心與 rim 的遞迴實際接線，以及任意有限層數的圖結構。
 指定兩框恰為全部 disk 可用框、四個 P=J 圖的具體前提與來源族拓撲仍未形式化。
 Gallai／degree-list 外部定理、完整紙面分類、來源 minors 與 disk topology
 仍須分別補齊，不能以 BoundaryDegree 或有限 `native_decide` 證書代替。

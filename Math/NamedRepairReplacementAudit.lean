@@ -1,0 +1,36 @@
+import Math.NamedRepairReplacement
+
+/-! Audit every public theorem of the once-only named D₁₃ replacement.
+Graph realization is literal; topology and arbitrary iteration remain separate. -/
+#print axioms FiveBoundary.NamedRepairReplacement.coreColor_exterior
+#print axioms FiveBoundary.NamedRepairReplacement.coreColor_reconstruct
+#print axioms FiveBoundary.NamedRepairReplacement.core_proper_decomposition
+#print axioms FiveBoundary.NamedRepairReplacement.edgeProper_map
+#print axioms FiveBoundary.NamedRepairReplacement.edgeProper_append
+#print axioms FiveBoundary.NamedRepairReplacement.graftColor_aMap
+#print axioms FiveBoundary.NamedRepairReplacement.graftColor_bMap
+#print axioms FiveBoundary.NamedRepairReplacement.graft_edgeProper_iff
+#print axioms FiveBoundary.NamedRepairReplacement.vertex_counts
+#print axioms FiveBoundary.NamedRepairReplacement.graft_no_loops
+#print axioms FiveBoundary.NamedRepairReplacement.exteriorRelation_iff
+#print axioms FiveBoundary.NamedRepairReplacement.patch_extends_iff
+#print axioms FiveBoundary.NamedRepairReplacement.exteriorRelation_eq_unpatched
+#print axioms FiveBoundary.NamedRepairReplacement.coreExterior_eq_unpatched
+#print axioms FiveBoundary.NamedRepairReplacement.exteriorRelation_eq_core
+#print axioms FiveBoundary.NamedRepairReplacement.attachments_literal
+#print axioms FiveBoundary.NamedRepairReplacement.joint_iff_graph
+#print axioms FiveBoundary.NamedRepairReplacement.observe_core
+#print axioms FiveBoundary.NamedRepairReplacement.joint_eq
+#print axioms FiveBoundary.NamedRepairReplacement.accept_iff
+#print axioms FiveBoundary.NamedRepairReplacement.candidate_eq
+#print axioms FiveBoundary.NamedRepairReplacement.joint_subset_candidate
+#print axioms FiveBoundary.NamedRepairReplacement.system_eq
+#print axioms FiveBoundary.NamedRepairReplacement.witness_coverage
+#print axioms FiveBoundary.NamedRepairReplacement.repairs_iff
+#print axioms FiveBoundary.NamedRepairReplacement.minimal_repairs_iff
+#print axioms FiveBoundary.NamedRepairReplacement.unique_minimum_pair
+#print axioms FiveBoundary.NamedRepairReplacement.forced_scope_iff
+#print axioms FiveBoundary.NamedRepairReplacement.minimal_repairs_mem
+#print axioms FiveBoundary.NamedRepairReplacement.fifteen_minimal_repairs
+#print axioms FiveBoundary.NamedRepairReplacement.no_small_projection_repair
+#print axioms FiveBoundary.NamedRepairReplacement.four_point_repair

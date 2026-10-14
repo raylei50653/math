@@ -1,5 +1,9 @@
 # 具名來源 J/P 與 W／C 的 Lean 實例
 
+**2026-10-14 後續：** [具名 D₁₃ 替換](lean_named_replacement.md)已將兩核心
+A、B 單側及雙側各一次的實際附件接到完整外部關係、原 U 的 J／指定框 P，
+並傳遞既有 repair 分類及 r*=4。任意層數與 disk 框完備性仍保留；下文保留當輪語境。
+
 2026-10-02。接續 [CommonRepair](lean_common_repair.md)、
 [D₁₃ 密封替換](lean_sealed_four_port.md)及
 [來源充分條件](c5_two_vertex_repair_sources.md)，完成正、反向兩個

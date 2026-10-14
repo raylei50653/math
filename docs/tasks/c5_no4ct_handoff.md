@@ -7,26 +7,40 @@ docgraph:
     - audits/2026-10-13-c5-no4ct-degrees-6cafdfb/REPORT.md
     - audits/2026-10-13-c5-no4ct-collar-6cafdfb/REPORT.md
     - audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md
+    - audits/2026-10-14-t1-crosscut-review-77fbd5d/REPORT.md
+    - audits/2026-10-14-c5-c4-boundary-pivot-77fbd5d/REPORT.md
 ---
 
 # K∞＝K≤5 無四色定理前提路線：研究交接
 
-2026-10-13。**尚未補完一般 `K∞=K≤5`。** 已完成的是不把四色定理當前提的
-`K≤15=K≤5=K132` 替代推導。無界 932／933／941 三支仍須處理。
-本交接供接手者繼續研究；後續完整外圈與 C8 去依賴接入亦已完成，不新增數學結論。
+2026-10-14。**尚未補完一般 `K∞=K≤5`。** 已完成的是不把四色定理當前提的
+`K≤22=K≤5=K132` 推導：[C5→C4 完整來源橋](../c5_c4_boundary_pivot.md)
+將三支共同的 y0=y1=0 轉為具名 C4 對角拒絕，接外部完整 ≤28 點計算。
+本地化約不用 4CT，外部生成與計算信任另列；本輪未重播該枚舉。無界三支仍須處理。
+同日已採納 **T1-CROSSCUT：原 no4ct 全域最小來源下 `h=3⇒p=0`**；
+全部 PINCH／BRIDGE 已排除，不限制單接點數及兩側內點數，第一剝層只留 RING。
+權威入口為 [C8 剝層](../c5_c8_peeling.md)，證明與完整重播見
+[一般正對切口採納審查](../../audits/2026-10-14-t1-crosscut-review-77fbd5d/REPORT.md)。
 
 工作根目錄 `/home/ray/developer/ai/math`；研究 BASE 為
-`6cafdfb02fe5892a49eee21f92aea2369a25c022`。本批發布與驗證由
+`6cafdfb02fe5892a49eee21f92aea2369a25c022`（原四包）；T1-CROSSCUT 的凍結 BASE 為 `77fbd5d`。
+原四包發布與驗證由
 [整理發布紀錄](../history/2026-10-13-k15-c8-no4ct-publish.md)追蹤；接手時先重新查 Git。
 
-2026-10-13 後續採納（研究 BASE=`d521163`）：[T1](../../audits/2026-10-13-c8-terminal-s1-d521163/REPORT.md)
-證 h=3、p>0⇒s≥2，PINCH k≥21／BRIDGE k≥22；[T2](../../audits/2026-10-13-c9-932-source-d521163/REPORT.md)
+2026-10-13 歷史里程碑（研究 BASE=`d521163`）：[T1](../../audits/2026-10-13-c8-terminal-s1-d521163/REPORT.md)
+曾證 h=3、p>0⇒s≥2，PINCH k≥21／BRIDGE k≥22；其剩餘分支現由 T1-CROSSCUT 全部排除，原證書保留。
+[T2](../../audits/2026-10-13-c9-932-source-d521163/REPORT.md)
 證完整932、h=4的五 apex 均 d_H≥4、d_G≥6，九個原面第三點互異，k≥18；
 [T3](../../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md) 接通三支任取合法全內部 W5 的 ρ≥5。
 本頁採納指定來源結論；原報告及凍結 seals 保持當輪內容，
 [本批驗證與發布範圍](../history/2026-10-13-t123-no4ct-publish.md)另記。
 
 ## 1. 先讀這四份權威報告
+
+**K≤22 的新捷徑：** 下表替代鏈第1份給三支最小來源，第2份§§3–4給度數及面結構，
+再讀 [C5→C4 證明](../../audits/2026-10-14-c5-c4-boundary-pivot-77fbd5d/PROOF.md)
+及 [外部完整計算界線](../../audits/2026-10-14-c5-c4-boundary-pivot-77fbd5d/EXTERNAL.md)。
+這條新鏈不以 K13–K15 球面枚舉或 C8／W5 分支為前置；以下保存各既有分支的閱讀路由。
 
 本頁負責兩鏈的閱讀路由、替代鏈契約與停止點；各命題的證明仍由下列權威
 專題及 audit 報告承擔。原鏈的 4CT 前提與替代鏈的相對大小引理分開保留。
@@ -84,7 +98,7 @@ K 先定義為已有 132 個具體關係及其至多五內點 witnesses，不先
 在此最小来源上，現已取得：
 
 \[
-\Sigma(G)\in D_5\!\cdot\{932,933,941\},\qquad k\ge16;
+\Sigma(G)\in D_5\!\cdot\{932,933,941\},\qquad k\ge23;
 \]
 \[
 G\text{ 簡單、二連通、chordless-C5、內面全三角},\qquad
@@ -92,12 +106,17 @@ d(B)\ge4,\quad d(V\setminus B)\ge5,\quad h\ge3,\quad n_5\ge9.
 \]
 
 若完整關係為 932，另有 `h≥4,n5≥10`；若 h=3，只有原八項 933／941
-必要條件殘留，且 `k≥19`。十九內點界不能套到 h≥4。
+必要條件殘留；原剝層給 `k≥19`，現共同 C4 界提高為 `k≥23`；T1-CROSSCUT 再給 `p=0`，只剩 RING。
+這裡 p 是原 C8 嚴格內點中正對雙接點的數量；結論不適用於任意非最小來源。
+舊十九內點界限定 h=3；新的二十三內點界來自 C4 來源橋，適用全部三支及所有 h。
 
 共同對齊時，三支的 singleton support 分別為 `∅,{4},{2,4}`，全部包含 T4。
 **分類只對全域最小來源成立**，尚未證任意目錄外圖都只可能是這三類。
 
 ## 3. 已完成的證明鏈與不能省略的步驟
+
+**新增有界終點：** 完成下列第1–4步後，可直接由 C5→C4 接外部4-candidate完整枚舉，
+得 K≤22；後列球面／外圈成果仍各有獨立結構價值，不是此新大小界的必需前置。
 
 1. **空關係與十個低候選的下降。** 零內點外側 cap 黏合給至多 k+5 點的
    不可四色平面圖。由其存在性取全域最少頂點的不可四色平面圖，三角化、
@@ -125,6 +144,12 @@ d(B)\ge4,\quad d(V\setminus B)\ge5,\quad h\ge3,\quad n_5\ge9.
    可染；原 H 的商圖恰有 k−1 或 k−8+q≤k 點，足以修復 cofacial 步驟。
    全部 105 查詢排 97、留原八項，932 迫 h≥4、n5≥10。原 cap 的 s<k
    亦接回 apex／內圈／剝層，m=9、10 的完整來源排除給 h=3⇒k≥19。
+8. **T1-CROSSCUT 排除所有正對點。** 任取原正對點 x，以原路徑
+   `c_i–x–c_(i+4)` 切出兩個固定 C6；全部未知內部留在原兩片，單 x
+   外側亦覆蓋 BRIDGE。八份原 collar／完整 target × 四個正對位置的
+   32 項共同 literal 轉移與 512,568 個安全矩形全部矛盾；保留兩片
+   同一完整支援的直積及 full-fibre 接合，並用必要 Kempe 條件收縮。
+   這是任意大小來源覆蓋加完整有限判準，不是有界來源搜尋或普遍 4CT。
 
 ## 4. 精確停止點與未完成項目
 
@@ -135,7 +160,7 @@ d(B)\ge4,\quad d(V\setminus B)\ge5,\quad h\ge3,\quad n_5\ge9.
 | 一般 `K∞=K≤5` | **OPEN**。主命題自身蘊含 4CT；無循環證明須承擔這部分內容 |
 | h≥3、n5≥9 的新三支版本 | **已接入**；932 另有 h≥4、n5≥10，不提高三支共同界 |
 | C8 八項分類及其後續大小界 | **已接入**。932 的 h=3 全排，原八項必要條件殘留及 h=3⇒k≥19 保留；無界來源仍 OPEN |
-| h=3、p>0 的 s=0／1 | **已排除**；[T1](../../audits/2026-10-13-c8-terminal-s1-d521163/REPORT.md) 完成640份外側轉移，C6內點無上限；s≥2與一般RING仍OPEN |
+| h=3 的全部 PINCH／BRIDGE | **已排除**；[T1-CROSSCUT](../../audits/2026-10-14-t1-crosscut-review-77fbd5d/REPORT.md) 證 p=0，不限 s 或兩片內點數；一般 RING 仍 **OPEN**。剝層自身給k≥19，當前另接C4共同k≥23 |
 | 932、h=4 的低度apex | **已排除**；[T2](../../audits/2026-10-13-c9-932-source-d521163/REPORT.md) 得五apex d_H≥4、d_G≥6及k≥18；20項較高度數完整來源仍OPEN |
 | no4ct 私人圈秩0至4 | **已接通三支**；[T3](../../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md) 對任取合法W5得ρ≥5；一般縮減仍OPEN |
 | h≥4 來源與固定寬度剝層 | **OPEN**。一般 separator 轉移已證，下一層 C8／度數／接點前提不自動傳遞 |
@@ -146,14 +171,20 @@ d(B)\ge4,\quad d(V\setminus B)\ge5,\quad h\ge3,\quad n_5\ge9.
 
 ## 5. 建議的第一個窄任務
 
-先讀 [T1](../../audits/2026-10-13-c8-terminal-s1-d521163/REPORT.md) 的完整原圖分類與 P→B 轉移。
-h=3、p>0 已有 s≥2；PINCH 從 m≥13／k≥21、BRIDGE 從 m≥14／k≥22 接續。
-一般 RING（p=0）仍 OPEN，只沿用共同 h=3⇒k≥19。保留同一原 C8、八份
-完整必要上界、原面與全部 separator fibres；下一層前提仍不自動傳遞。
+新方向先讀 [C4 來源橋](../c5_c4_boundary_pivot.md)，保外點 u 度四及原 b0／b1
+內鄰點，研究這個具名 4-candidate 子類任意大小的 ABCB 延拓；一般子類仍 OPEN。
+
+C8 方向先讀 [T1-CROSSCUT](../../audits/2026-10-14-t1-crosscut-review-77fbd5d/REPORT.md)
+的任意來源覆蓋與雙 C6 完整接合，再由 [C8 剝層](../c5_c8_peeling.md) 接續
+**RING（p=0）**：保留同一原 C8、原八份具名 collar／完整 target、原面及
+全部 separator fibres，研究同一 H 的完整支援或合法嚴格縮減。
+一般 RING 仍 OPEN，剝層自身給 h=3⇒k≥19，當前共同 C4 界為 k≥23；下一層度數、無弦及接點前提
+不自動傳遞。PINCH／BRIDGE 的 s≥2 逐級任務已由一般定理涵蓋。
 
 另一窄入口是 [T2](../../audits/2026-10-13-c9-932-source-d521163/REPORT.md) 的完整932、h=4：保留20份
 較高度數來源，聯合五apex的d_H≥4、九個互異面第三點與同一H的完整計數。
-此支已得 k≥18；h≥5 及 h=4 的933／941另列，不套用 h=3 十九內點界。
+T2 自身給此支 k≥18，當前亦有共同 C4 界 k≥23；h≥5 及 h=4 的933／941另列，
+不套用 h=3 十九內點界。
 [T3](../../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md) 已完成私人低圈秩的三支接入；接續義務
 是ρ≥5來源的合法嚴格縮減，不需再補森林至圈秩四的橋接引理。
 保持受限 C4 的 `s<k`、相對平面可染性的 `N≤k+5`，不把 source-relative
@@ -202,26 +233,43 @@ python3 -B audits/2026-10-13-w5-no4ct-bridge-d521163/verify_delivery.py
 T1 此整合入口只查 custody 與證書一致性；完整著色重播另見其報告。
 T3 沿用舊完整染色 receipts，不以接入 checker 冒充重枚舉。
 
-保留的外部信任為 Dvořák–Lidický Corollary 20 的計算證明、plantri 生成完備性
-及 C 實作。本輪研究重播了關係／full fibres，未重播外部 cone 證書，亦未重跑
+T1-CROSSCUT 的目前採納入口使用凍結輸入，不要求已更新的研究導覽仍等於 BASE：
+
+```bash
+python3 -B audits/2026-10-14-t1-crosscut-review-77fbd5d/check_adoption.py --check
+python3 -B audits/2026-10-14-t1-crosscut-review-77fbd5d/check_adoption.py --replay
+```
+
+`--check` 核對 custody／已存結果；`--replay` 另獨立重算全部 64 項核對，
+不覆寫原證書。audit 原 `verify_review.py` 保持歷史凍結審查入口，
+不能要求已採納新結論的文件 bytes 與 `77fbd5d` 相同。主結論只需其中
+32 項單 x 切口；另一 32 項 BRIDGE 是額外控制。未新增 Lean theorem。
+
+保留的外部信任包括 Dvořák–Lidický Corollary 20 的計算證明、plantri 生成完備性
+及 C 實作。新增 K≤22 另引用 Dvořák–Lidický–Mohar §2 的完整4-candidate計算，
+本輪未重播；[來源與依賴核對](../../audits/2026-10-14-c5-c4-boundary-pivot-77fbd5d/EXTERNAL.md)分開記錄。
+原球面研究重播了關係／full fibres，未重播外部 cone 證書，亦未重跑
 整套 min4 生成。詳見 [球面依賴表](../../audits/2026-10-13-c5-no4ct-degrees-6cafdfb/SPHERE_DEPENDENCIES.md)。
 
-本次交接文件只整理既有結果與待辦，不新增 Lean 或來源排除；不為文件變更重跑
-Lean build 或全部球面搜尋。接手研究時建立新的獨占 audit、凍結當時輸入，
+本次交接採納已完成的 T1-CROSSCUT 審查並更新待辦，不新增 Lean；實際驗證見
+[採納記錄](../../audits/2026-10-14-t1-crosscut-review-77fbd5d/ADOPTION.md)，未重跑全部球面搜尋。
+接手研究時建立新的獨占 audit、凍結當時輸入，
 保留舊證書；多列論證始終使用原圖、原具名接點、完整 fibres 及同一色框。
 
 各研究輪的正常／seed17、負控制及獨立覆核以四包驗證紀錄為準；
-本批發布檢查另見整理發布紀錄。研究線未增減，未改寫舊數學證書。
+各批發布檢查另見相應整理發布紀錄。本次採納保留舊數學證書與歷史失敗紀錄。
 
 ## 7. 可直接交給下一位 agent
 
 > 接續 `/home/ray/developer/ai/math` 的無四色定理前提路線。先讀本交接與四份
-> no4ct 報告。一般 K∞=K≤5 尚未證；K≤15、度數修復及完整外圈／C8 接入已完成。
+> no4ct 報告，再讀 C5→C4 來源橋。一般 K∞=K≤5 尚未證；新橋接外部完整計算
+> 得 K≤22=K≤5、共同 k≥23；外部十億級枚舉未由本輪重播。
 > 新來源契約為全域最小內點、再最大邊數，保留 932／933／941；C4 代表引理
 > 僅在 s<k 成立，相對平面可染性僅在 N≤k+5 成立。共同 h≥3、n5≥9；932
-> 必 h≥4、n5≥10；h=3 只留原八項，且 k≥19。先在新獨占 audit 從同一原
-> C8 的完整 separator 轉移接續；先讀T1／T2／T3：p>0⇒s≥2，PINCH k≥21、
-> BRIDGE k≥22；932、h=4的五apex均d_H≥4、d_G≥6且k≥18，20項較高度數
-> 來源仍OPEN；三支任取合法W5的ρ≥5已接通。一般RING與其餘h≥4仍OPEN。不要用 4CT 刪 932，不要把 N2 的具名 932 排除
+> 必 h≥4、n5≥10；h=3 只留原八項。T1-CROSSCUT 已證 h=3⇒p=0，
+> 全部 PINCH／BRIDGE 排除，不限 s 或兩片內點數。新方向為具名C4的度四外點
+> 與ABCB延拓；一般大小仍OPEN。C8的RING與完整separator研究也保留原target。
+> 932、h=4的五apex均d_H≥4、d_G≥6且k≥18，20項較高度數來源仍OPEN；
+> 三支任取合法W5的ρ≥5已接通。一般RING與其餘h≥4仍OPEN。不要用 4CT 刪 932，不要把 N2 的具名 932 排除
 > 當成一般排除，也不要把第一層 C8 前提傳給下一層或宣稱主命題完成。
 > 交付精確紙面論證、有限重播、OPEN 義務與下一個入口；保留並行工作，不自動發布。

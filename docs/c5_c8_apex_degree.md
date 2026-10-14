@@ -11,6 +11,11 @@ docgraph:
 ---
 # C₈ 殘留的 apex 度數與十四內點必要界
 
+2026-10-14 後續：[C5→C4 來源橋](c5_c4_boundary_pivot.md)接外部完整計算，
+當前共同界為 `k≥23`、`K≤22=K≤5`；[T1-CROSSCUT](c5_c8_peeling.md#t1-crosscut)
+已排 h=3 的全部 PINCH／BRIDGE，原八項只留 RING。下文度數引理、
+剝層自身的 k≥19 及舊證書保留；RING、h≥4 與一般主命題仍 OPEN。
+
 更新：2026-10-13。本頁是八項 h=3 必要殘留的 **apex 度數**來源入口。
 本頁當輪的 `h=3⇒k≥14` 已由原面配對、內圈及剝層加強為
 **`h=3⇒k≥19`**；度數引理仍是後續接點分類的前提。八項任意大小來源
@@ -28,7 +33,7 @@ docgraph:
 | [原短弧與內圈](c5_c8_inner_collar.md) | 消費 induced C8、d_H(C8)≥4 與原小 cap 前提；證至多雙接、八個第三點全異，排 m=9，得 h=3⇒k≥18。 |
 | [第一層三型與完整剝層](c5_c8_peeling.md) | 消費內圈接點限制與原 rotation；分類 RING／PINCH／BRIDGE，排 m=10，得 h=3⇒k≥19。完整 separator 轉移另適用任意有限原嵌入。 |
 | [K13-COLLAR](c5_k13_collar.md) | 原外圈證明消費本頁 h=3⇒k≥14，先排 k=13 的 h=3，再處理 h=4–7；其一般十四內點下界後由 K14／K15 涵蓋。 |
-| [K15-SPHERE](c5_k15_sphere.md) | 替代球面接入獨立於外圈／C8 分類；現有一般 k≥16 不由 h=3 的 C8 分支界推出。 |
+| [K15-SPHERE](c5_k15_sphere.md) | 替代球面接入獨立於外圈／C8 分類；當輪一般 k≥16 不由 h=3 的 C8 分支界推出，當前共同界由 C4 來源橋提高至 k≥23。 |
 
 DocGraph 的 `requires` 記原證明鏈的前置，`related` 導向新三支採納鏈；
 `verified_by` 是證據路徑標籤，工具不驗證其內容或兩條證明鏈的替代關係。

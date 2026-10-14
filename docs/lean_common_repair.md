@@ -1,5 +1,9 @@
 # 共同 repair 判準的 Lean 形式化
 
+**2026-10-14 後續：** [具名 D₁₃ 替換](lean_named_replacement.md)已傳遞兩核心
+A、B 單側及雙側各一次的完整 J／指定框 P 與 repair 分類；任意層數族及
+disk 框仍保留，下文保留當輪語境。
+
 **2026-10-02 具名實例後續：** [NamedRepair](lean_named_repair.md) 已形式化
 兩個十五點核心的原圖 J、指定兩框 P、全部 W／C、各15組極小 repairs、
 唯一最少對與 r*=4。下文保留當輪界線；四個退化圖、disk 框完備性與

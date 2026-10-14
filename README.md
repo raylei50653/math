@@ -31,8 +31,8 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 | [共鄰 P₃ 雙框點三接點 unary](docs/c5_mixed_p3_two_frame_ternary_unary.md) | 固定 C₃ 身份的新非接點葉 K₅、原 bridges／完整 tuples 控制與葉數證明 |
 | [共鄰 P₃ 雙框點兩份 unary](docs/c5_mixed_p3_two_frame_two_unary.md) | 固定 C₄ join60 的逐份完整 relation 排除、九份自身支援配置及原 bridges 控制 |
 | [研究目標](docs/c5_boundary_relations.md) | 主命題、最小反例路線與局部壓縮的區別 |
-| [最小來源度數界與五度鄰環](docs/c5_saturation_degree_bound.md) | 全域最小目錄外來源的邊界／內部度數界、至少六個五度內點及三份衍生任務；後續一般[k≥16](docs/c5_k15_sphere.md)、[h=3時k≥19及完整剝層](docs/c5_c8_peeling.md)，任意大小來源仍 OPEN |
-| [無四色定理前提路線](docs/tasks/c5_no4ct_handoff.md) | K≤15與三支外圈／C8已接入；C8末端、C9-932度數及W5私人圈秩的最新指定結論、未解義務與重播見交接；無界三支及一般主命題仍OPEN |
+| [最小來源度數界與五度鄰環](docs/c5_saturation_degree_bound.md) | 全域最小目錄外來源的度數界及五度鄰環；[C5→C4來源橋](docs/c5_c4_boundary_pivot.md)接外部計算提高為一般k≥23，[h=3完整剝層](docs/c5_c8_peeling.md)只留RING；任意大小來源仍OPEN |
+| [無四色定理前提路線](docs/tasks/c5_no4ct_handoff.md) | C5→C4來源橋接外部完整≤28點計算得K≤22=K≤5；三支外圈／C8、C9-932及W5結構另保留；無界三支及一般主命題仍OPEN |
 | [文件治理與工作約定](docs/DOCUMENTATION.md) | 文件分工、信任界線、更新及驗證流程 |
 
 項目現況、精確停止點與重播入口由各研究線導覽維護；完整論證與證書見原報告。
@@ -105,7 +105,8 @@ uv run --with-requirements requirements.txt python tools/artifacts.py status
 （目前只有 `artifacts/c5_single_spoke_two_two/observations.json`）。
 
 [`Generated artifacts` CI](.github/workflows/generated-artifacts.yml) 在每次 push／PR 檢查
-Git index：整個 repo 的 JSON、JSONL、NDJSON、JSON5、bin 達 1,000,000 bytes 時，
+Git index，並以 Python 3.14 安裝 `requirements.txt` 後執行 `tools/tests/`：
+整個 repo 的 JSON、JSONL、NDJSON、JSON5、bin 達 1,000,000 bytes 時，
 預設由腳本生成，不直接追蹤輸出。MANIFEST 所列的產物必須有已追蹤的產生器，
 並列入 repo 的 `.gitignore`；已追蹤的大檔不會因為新增 ignore 規則而通過。
 一般大型 `artifacts/` 先驗證產生器，再用 `record <path>` 登錄，最後
@@ -123,7 +124,7 @@ FROZEN 證書與 `audits/ARCHIVE.json` 主還原索引兩項例外。
 
 ```bash
 python3 tools/check_generated_artifacts.py
-python3 -m unittest discover -s tools/tests -p 'test_*.py'
+uv run --python 3.14 --with-requirements requirements.txt python -m unittest discover -s tools/tests -p 'test_*.py'
 ```
 
 此 CI 核對儲存規則及產生器登錄，不會執行整批生成。實際重建由
@@ -162,6 +163,7 @@ python3 -m unittest discover -s tools/tests -p 'test_*.py'
 | `Math/CommonRepair.lean` | 完整 relation 的 W／C 充要判準、全部極小 repairs、唯一最少解及退化支；[前提與重播](docs/lean_common_repair.md)，審計 `Math/CommonRepairAudit.lean` |
 | `Math/SealedFourPort.lean` | D₁₃／四輪星完整具名四接點等價及密封上下文替換；[前提與重播](docs/lean_sealed_four_port.md)，審計 `Math/SealedFourPortAudit.lean`；不含 disk 嵌入 |
 | `Math/NamedRepairCore.lean`, `Math/NamedRepair.lean` | 兩個具名十五點核心的 J/P、W／C、完整極小 repairs 及 r*=4；[前提與重播](docs/lean_named_repair.md)，審計 `Math/NamedRepairAudit.lean`；指定框的 disk 完備性另證 |
+| `Math/NamedRepairReplacement.lean` | 兩核心 A／B 單側及雙側各一次 D₁₃ 替換，保完整外部關係、原 U 的 J／指定 P 與 repair 分類；[範圍與重播](docs/lean_named_replacement.md)，審計 `Math/NamedRepairReplacementAudit.lean`；任意層數與 disk 框另證 |
 | `Math.lean` | 函式庫根，`import` 子模組 |
 | `lakefile.toml` | 依賴（mathlib）與編譯選項 |
 | `lean-toolchain` | 這個專案用的 Lean 版本 |

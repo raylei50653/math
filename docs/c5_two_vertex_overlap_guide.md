@@ -2,16 +2,16 @@
 
 ## 最新進度
 
-現況核對：2026-10-13；本次只整理入口，未新增研究結論。
+現況核對：2026-10-14；兩核心 D₁₃ 首層具名替換已接到原 U 的 J／指定框 P。
 
 | 欄位 | 現況 |
 | --- | --- |
-| 階段／生命週期 | 指定兩核心 repair 分類與局部密封替換已形式化；任意大小來源族已有充分規則，全部代表必要分類仍 OPEN。 |
-| 最近研究更新 | 2026-10-08：[Phase B](c5_phase_b_common_lemmas.md#41-b-rs完整介面等價的反覆密封上下文定理)採納密封 relation／同框族接口；[具名 Lean 實例](lean_named_repair.md)為 10-02。 |
-| 上次完成 | D₁₃ 來源族保完整 J/P、全部可用框、十五組 repairs 及 r*=4；兩十五點核心指定兩框的 J/P、W／C 已 Lean 化，來源族及 disk 框仍屬紙面／Python。 |
-| 目前停止點 | 加入 D₁₃ 後的其他局部四接點實現、統一結構條件、必要分類與改寫完備性仍 OPEN；D₁₃ 具名來源附件及全部可用框尚未端到端形式化。 |
-| 下一步 | 研究加入 D₁₃ 後的局部四接點實現或統一條件；形式化接續具名附件與替換介面，保原 U 的 J／指定框 P，disk 框可用性另查。 |
-| 接手入口 | [精確停止點 §3](#3-精確停止點與下一個窄問題) → [D₁₃ 來源族](c5_two_vertex_repair_caps.md)、[NamedRepair](lean_named_repair.md)與 [SealedFourPort](lean_sealed_four_port.md)；重播見 [§4](#4-閱讀與重播入口)。 |
+| 階段／生命週期 | 兩核心 repair 分類、局部密封與首層具名替換已形式化；任意大小來源族已有紙面充分規則，全部代表必要分類仍 OPEN。 |
+| 最近研究更新 | 2026-10-14：[具名 D₁₃ 首層替換](lean_named_replacement.md)完成兩方向、A／B 單側及雙側各一次的完整外部關係、J／指定 P 與 repair 傳遞。 |
+| 上次完成 | 兩核心首層替換由實際接線保完整十三點外部關係、原 U 的 J／指定框 P、十五組極小 repairs 及 r*=4；任意層數與 disk 框仍屬紙面／Python。 |
+| 目前停止點 | 加入 D₁₃ 後的其他局部實現、統一條件、必要分類與改寫完備性仍 OPEN；任意層數實際圖結構及全部 disk 可用框尚未形式化。 |
+| 下一步 | 研究其他局部四接點實現或統一條件；形式化接續指定下一中心／rim 的遞迴接線與任意有限層數，disk 框可用性另證。 |
+| 接手入口 | [精確停止點 §3](#3-精確停止點與下一個窄問題) → [具名首層替換](lean_named_replacement.md)、[D₁₃ 來源族](c5_two_vertex_repair_caps.md)；重播見 [§4](#4-閱讀與重播入口)。 |
 
 ### 近期里程碑
 
@@ -20,8 +20,8 @@
 | 2026-09-30／共同 repair | 完整 rejector witnesses／覆蓋的充要 lemma，及原接線、密封消去與保框證書的來源充分條件完成；全部代表未分類。[共同 lemma](c5_two_vertex_common_repair.md)、[來源充分條件](c5_two_vertex_repair_sources.md) |
 | 2026-09-30／D₁₃ | 補片、私有路徑、輪環、偶長雙扇後，D₁₃ 給舊縮減皆無起點的任意大小 R127／R167 族及新充分規則；完整框族與 repairs 保留。[D₁₃](c5_two_vertex_repair_caps.md) |
 | 2026-10-02／Lean | 抽象判準、D₁₃ 完整四接點密封替換、兩核心指定框 repair 分類完成普通 Lean 證明；disk／任意大小來源族仍未形式化。[CommonRepair](lean_common_repair.md)、[SealedFourPort](lean_sealed_four_port.md)、[NamedRepair](lean_named_repair.md) |
-| 2026-10-02／階數初驗 | 132 來源有20個五階，紙面 repair 階數受來源投影階數上界控制；未新搜 class pair。[關係階數](c5_relation_arity.md) |
 | 2026-10-08／接口採納 | 完整具名 relation、sealed ownership、同可用框族統一 J/P 與 repair 傳遞；多步操作另欠合法性、後繼及完整 fibres 匹配。[Phase B](c5_phase_b_common_lemmas.md) |
+| 2026-10-14／具名首層 Lean | A／B 單側及雙側各一次，由實際圖保持完整外部 row、原 U 的 J／指定 P 及 repair 分類；任意層數與 disk 框仍保留。[具名替換](lean_named_replacement.md) |
 
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見
 [STATUS](STATUS.md)，共通規則見 [DOCUMENTATION](DOCUMENTATION.md)。
@@ -60,7 +60,8 @@
 | 不含舊核心的同 class 路徑族 | 完整接線族中 A 兩臂偶長、B 奇長充要保持 R127／R167；加長後無保持框點及 ownership 的舊核心副本，私有最低度數四，仍保十五組 repairs／r*=4；十圖14,400份延拓、八奇偶控制，紙面＋Python，未 Lean 化 | [奇偶定理](c5_two_vertex_repair_strips.md)、[artifact](../artifacts/c5_two_vertex_overlap/repair_strips.json) |
 | 舊補片／路徑之外的輪環骨架 | 四輪星與四環帶加中心的完整四接點關係相等；任意層數同 class 族無密封 clique 補片、私有圖含環且無舊核心副本，保十五組 repairs／r*=4；八圖11,520份延拓，必要分類仍未完成，未 Lean 化 | [輪環定理](c5_two_vertex_repair_rings.md)、[artifact](../artifacts/c5_two_vertex_overlap/repair_rings.json) |
 | 輪環逆化約之外的偶長雙扇 | 四輪星與偶長雙扇的完整四接點 relation 相等；任意大小同 class 族無密封 clique 補片、私有圖含環且無私有度數五點，三種舊縮減皆無起點；保十五組 repairs／r*=4，八圖11,520份延拓，未 Lean 化 | [雙扇定理](c5_two_vertex_repair_fans.md)、[artifact](../artifacts/c5_two_vertex_overlap/repair_fans.json) |
-| 輪環及雙扇之外的非對稱 disk | 十三點 D₁₃ 與四輪星完整四接點等價及密封上下文替換已有普通 Lean 證明；任意大小同 class 族、私有度數障礙、完整 J/P 及十五組 repairs／r*=4 仍為紙面＋Python | [D₁₃ 定理](c5_two_vertex_repair_caps.md)、[Lean 替換](lean_sealed_four_port.md)、[artifact](../artifacts/c5_two_vertex_overlap/repair_caps.json) |
+| 輪環及雙扇之外的非對稱 disk | D₁₃ 完整四接點／密封替換與兩核心首層 J／指定 P／repairs 已 Lean 化；任意層數圖結構、來源度數障礙與 disk 框仍屬紙面＋Python | [D₁₃ 定理](c5_two_vertex_repair_caps.md)、[Lean 具名替換](lean_named_replacement.md)、[artifact](../artifacts/c5_two_vertex_overlap/repair_caps.json) |
+| 兩核心具名首層替換 | A／B 單側及雙側各一次、兩方向的實際接線保完整外部關係、原 U 的 J、指定框 P 與 repair 分類；任意層數與 disk 框保留 | [Lean 具名替換](lean_named_replacement.md) |
 | 一般拓撲與多步 | 其餘代表、指定接合政策及未來接觸範圍須另查；尚無一般充分摘要 | [拓撲界線](c5_two_vertex_overlap.md) §5 |
 
 ## 3. 精確停止點與下一個窄問題
@@ -125,6 +126,8 @@ rejector witnesses `{A}`、`{B,T}`、`{B}∪𝓔`，加上 `F_A∪F_B=Δ` 與
 保留任意外部共同關係與全部外部染色。22 個普通 theorem 包含中心
 升為第五接點失效、缺邊4–6後接受四色框的控制；無 `native_decide`。
 disk rotation、任意大小來源 ownership 及全部可用框仍未形式化；核心 W／C 已由上述實例完成。
+[具名首層替換](lean_named_replacement.md)再將兩側的實際完整附件接到局部等價，
+保 A／B 單側及雙側各一次的完整十三點外部關係、原 U 的 J／指定 P 與 repair 分類。
 
 **來源充分條件已推進。** A 的五內點路徑及 B 的兩相鄰內點，保留完整附件，
 以可用色構造證明精確來源 relation；每例十一份補全給全部 scopes 的三種
@@ -184,8 +187,9 @@ clique，一份全圖染色可逐分量換色對齊同一份核心染色，保�
 這未分類其他來源；可能r*=5的後續實驗須至少含一份已列出的五階來源，
 本輪未新搜尋class pair，也不改變上述來源族問題。
 來源族研究未搜尋新 class pair；後續 Lean theorem 涵蓋抽象 repair 層、
-D₁₃ 局部密封替換及兩核心指定框的完整 repair 分類，尚未接成具名來源族的端到端定理。
-形式化下一步是將核心內 D₁₃ 的具名附件接到替換介面，保持原 U 的 J 與指定框 P；
+D₁₃ 局部密封替換、兩核心指定框的完整 repair 分類，以及
+[首層具名替換](lean_named_replacement.md)的實際接線與 J／指定 P 保持。
+形式化下一步是指定下一中心與 rim 的遞迴實際接線及任意有限層數圖結構；
 框族的 disk 可用性仍須獨立處理。
 
 六圖的 U 上五框可用性已窮盡，但未分類其所有嵌入、指定來源 disk
