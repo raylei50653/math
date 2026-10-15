@@ -1,0 +1,134 @@
+{
+  "status": "PASS",
+  "plan": {
+    "immutable_files": [
+      "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json",
+      "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+      "audits/2026-10-15-xor-batch-descent-6ddea32/INPUTS.json",
+      "audits/2026-10-15-xor-batch-descent-6ddea32/graphs.json"
+    ],
+    "cases": [
+      {
+        "name": "normal",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+          "--check",
+          "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json"
+        ],
+        "expected": "accept"
+      },
+      {
+        "name": "seed17",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+          "--check",
+          "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json"
+        ],
+        "expected": "accept",
+        "seed17": true
+      },
+      {
+        "name": "missing-batch",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+          "--check",
+          "audits/2026-10-15-xor-batch-descent-6ddea32/negative/missing-batch.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "wrong-joint-parity",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+          "--check",
+          "audits/2026-10-15-xor-batch-descent-6ddea32/negative/wrong-joint-parity.json"
+        ],
+        "expected": "reject"
+      }
+    ]
+  },
+  "receipts": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json"
+      ],
+      "expected": "accept",
+      "exit_code": 0,
+      "seconds": 18.576,
+      "stdout": "{\"controls\": {\"dodecahedron_4sum_named_nonedge\": {\"all_pair_canonical_paths_checked\": 18721, \"direction_weights\": [120, 120], \"double_moves\": 964, \"matching_count\": 365, \"single_moves\": 5719, \"start_double_even\": 6, \"start_double_neighbours\": 7, \"start_single_even\": 26, \"start_single_neighbours\": 54, \"xor_even_states\": 83, \"xor_states\": 194}, \"dodecahedron_4sum_original\": {\"all_pair_canonical_paths_checked\": 5886, \"direction_weights\": [80, 80], \"double_moves\": 556, \"matching_count\": 365, \"single_moves\": 1962, \"start_double_even\": 5, \"start_double_neighbours\": 6, \"start_single_even\": 11, \"start_single_neighbours\": 26, \"xor_even_states\": 44, \"xor_states\": 109}, \"petersen_positive_oddness\": {\"all_pair_canonical_paths_checked\": 6, \"direction_weights\": [0, 0], \"double_moves\": 0, \"matching_count\": 6, \"single_moves\": 6, \"start_double_even\": 0, \"start_double_neighbours\": 0, \"start_single_even\": 0, \"start_single_neighbours\": 3, \"xor_even_states\": 0, \"xor_states\": 4}, \"tutte_xor_trap\": {\"all_pair_canonical_paths_checked\": 51681, \"direction_weights\": [144, 144], \"double_moves\": 9953, \"matching_count\": 960, \"single_moves\": 8864, \"start_double_even\": 2, \"start_double_neighbours\": 38, \"start_single_even\": 0, \"start_single_neighbours\": 37, \"xor_even_states\": 39, \"xor_states\": 322}}, \"input_drift\": 0, \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json"
+      ],
+      "expected": "accept",
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 18.697,
+      "stdout": "{\"controls\": {\"dodecahedron_4sum_named_nonedge\": {\"all_pair_canonical_paths_checked\": 18721, \"direction_weights\": [120, 120], \"double_moves\": 964, \"matching_count\": 365, \"single_moves\": 5719, \"start_double_even\": 6, \"start_double_neighbours\": 7, \"start_single_even\": 26, \"start_single_neighbours\": 54, \"xor_even_states\": 83, \"xor_states\": 194}, \"dodecahedron_4sum_original\": {\"all_pair_canonical_paths_checked\": 5886, \"direction_weights\": [80, 80], \"double_moves\": 556, \"matching_count\": 365, \"single_moves\": 1962, \"start_double_even\": 5, \"start_double_neighbours\": 6, \"start_single_even\": 11, \"start_single_neighbours\": 26, \"xor_even_states\": 44, \"xor_states\": 109}, \"petersen_positive_oddness\": {\"all_pair_canonical_paths_checked\": 6, \"direction_weights\": [0, 0], \"double_moves\": 0, \"matching_count\": 6, \"single_moves\": 6, \"start_double_even\": 0, \"start_double_neighbours\": 0, \"start_single_even\": 0, \"start_single_neighbours\": 3, \"xor_even_states\": 0, \"xor_states\": 4}, \"tutte_xor_trap\": {\"all_pair_canonical_paths_checked\": 51681, \"direction_weights\": [144, 144], \"double_moves\": 9953, \"matching_count\": 960, \"single_moves\": 8864, \"start_double_even\": 2, \"start_double_neighbours\": 38, \"start_single_even\": 0, \"start_single_neighbours\": 37, \"xor_even_states\": 39, \"xor_states\": 322}}, \"input_drift\": 0, \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "missing-batch",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/negative/missing-batch.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 18.572,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-xor-batch-descent-6ddea32/check.py\", line 385, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-xor-batch-descent-6ddea32/check.py\", line 379, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    {
+      "name": "wrong-joint-parity",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/negative/wrong-joint-parity.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 18.693,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-xor-batch-descent-6ddea32/check.py\", line 385, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-xor-batch-descent-6ddea32/check.py\", line 379, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    }
+  ],
+  "hashes_before": {
+    "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json": "2a23b137f6f9a1a3ad9237db24f062a2d060d84e857f147670249bcd107db1aa",
+    "audits/2026-10-15-xor-batch-descent-6ddea32/check.py": "e221602786421ddbff1b449effee18a8725271f8553e1633562a04cde17bbdef",
+    "audits/2026-10-15-xor-batch-descent-6ddea32/INPUTS.json": "3fb32b8b9ff5d52ec23dc7eba1a3b91d8846f10778677fb0d3f5a7465c7c4a6d",
+    "audits/2026-10-15-xor-batch-descent-6ddea32/graphs.json": "b88f7c1854c7998357b6cf9c8454e9e3a3b85f6416390514752f597b32ac29a5"
+  },
+  "hashes_after": {
+    "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json": "2a23b137f6f9a1a3ad9237db24f062a2d060d84e857f147670249bcd107db1aa",
+    "audits/2026-10-15-xor-batch-descent-6ddea32/check.py": "e221602786421ddbff1b449effee18a8725271f8553e1633562a04cde17bbdef",
+    "audits/2026-10-15-xor-batch-descent-6ddea32/INPUTS.json": "3fb32b8b9ff5d52ec23dc7eba1a3b91d8846f10778677fb0d3f5a7465c7c4a6d",
+    "audits/2026-10-15-xor-batch-descent-6ddea32/graphs.json": "b88f7c1854c7998357b6cf9c8454e9e3a3b85f6416390514752f597b32ac29a5"
+  },
+  "input_drift": 0
+}

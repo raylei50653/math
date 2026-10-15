@@ -1,0 +1,1480 @@
+{
+  "date": "2026-10-15",
+  "base": "6ddea32a81349821ad3724ae1652bddb9c6a7b04",
+  "status": "PASS within publication scope; archival/global limitations recorded",
+  "original_audit_files": 602,
+  "original_audit_drift": 0,
+  "new_exact_artifact_exceptions": 22,
+  "checks": [
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        "docs",
+        "tools/generated_artifact_exceptions.json"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "output": "OK: 687 Markdown files, 9007 local links; anchors, index, handoff, guide progress checked\n"
+    },
+    {
+      "name": "formal_docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n"
+    },
+    {
+      "name": "artifact_policy",
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "output": "Generated artifact policy OK: 5459 indexed files, 30 large files with documented exceptions, 166 registered outputs.\n"
+    },
+    {
+      "name": "tools_tests",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": "..............................................................................................\n----------------------------------------------------------------------\nRan 94 tests in 4.026s\n\nOK\n"
+    },
+    {
+      "name": "archival_whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 2,
+      "output": "audits/2026-10-15-three-edge-matchings-6ddea32/check.py:366: new blank line at EOF.\naudits/2026-10-15-three-edge-matchings-6ddea32/frozen/audits/2026-10-15-xor-batch-descent-6ddea32/check.py:386: new blank line at EOF.\naudits/2026-10-15-xor-batch-descent-6ddea32/check.py:386: new blank line at EOF.\n"
+    },
+    {
+      "name": "lean_build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "summary": "Build completed successfully (8832 jobs); existing linter warnings retained. No new Lean theorem."
+    },
+    {
+      "name": "whole_tree_docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "summary": "70 duplicate-id error keys, equal to detached BASE plus the same 16 audits; formal docs checked separately.",
+      "baseline_comparison": {
+        "schema_version": 1,
+        "status": "PASS_WITH_EXISTING_WHOLE_TREE_FAILURE",
+        "base": "6ddea32a81349821ad3724ae1652bddb9c6a7b04",
+        "baseline_worktree": "/tmp/math-route-baseline-replay-sx91jnqo",
+        "main_worktree": "/home/ray/developer/ai/math",
+        "commands": {
+          "baseline": [
+            "python3",
+            "tools/docgraph",
+            "check"
+          ],
+          "publication": [
+            "python3",
+            "tools/docgraph",
+            "check"
+          ]
+        },
+        "exit_codes": {
+          "baseline": 1,
+          "publication": 1
+        },
+        "logs": {
+          "baseline": {
+            "path": "/tmp/math-route-baseline-docgraph-whole.log",
+            "sha256": "6dad895c1e3adc3b058506c00611274c2d47baf3d99cccd84cae50727aa5a432",
+            "summary": [
+              "FAIL: 97 documents, 368 relations, 12 families; 70 errors, 0 notes"
+            ]
+          },
+          "publication": {
+            "path": "/tmp/math-route-final-docgraph-whole.log",
+            "sha256": "a6c6237b45934ea5cd5cb5817266dbc7dc03b99a72f34f6136569096680797af",
+            "summary": [
+              "FAIL: 97 documents, 368 relations, 12 families; 70 errors, 0 notes"
+            ]
+          }
+        },
+        "summary": {
+          "baseline_error_keys": 70,
+          "publication_error_keys": 70,
+          "error_keys_added": 0,
+          "error_keys_removed": 0,
+          "all_error_kinds": [
+            "duplicate-id"
+          ],
+          "duplicate_keys_with_declaration_list_changes": 67,
+          "unique_declaration_paths_added": 777,
+          "unique_declaration_paths_removed": 0,
+          "all_added_declaration_paths_are_ignored": true,
+          "all_added_declaration_paths_absent_from_base_git_tree": true,
+          "documents": 97,
+          "relations": 368,
+          "families": 12,
+          "notes": 0
+        },
+        "comparison_scope": "Error identity is (kind,id). Declaration-list differences come exclusively from ignored local historical audit snapshots and scratch files absent from the detached Git worktree. The sixteen new route audit directories were copied identically to the baseline.",
+        "conclusion": "Both whole-tree checks retain the same seventy duplicate-id error keys. Publication adds or removes no error keys. No frozen IDs or files were edited.",
+        "error_keys_added": [],
+        "error_keys_removed": [],
+        "declaration_addition_scope_counts": {
+          "audits/2026-10-09-n45-pc": 62,
+          "audits/2026-10-09-n45-pg": 62,
+          "audits/2026-10-09-n45-pr": 62,
+          "audits/2026-10-09-n45-su-j": 62,
+          "audits/2026-10-09-n45-u": 62,
+          "audits/2026-10-10-n45-h1a": 7,
+          "audits/2026-10-10-n45-h1r": 7,
+          "audits/2026-10-10-n45-h2a": 25,
+          "audits/2026-10-10-n45-h2c": 13,
+          "audits/2026-10-10-n45-h2r": 13,
+          "audits/2026-10-10-n45-h3a": 4,
+          "audits/2026-10-10-n45-h3g": 4,
+          "audits/2026-10-10-n45-h3r": 4,
+          "audits/2026-10-10-n45-high23-supervision": 76,
+          "audits/2026-10-10-n45-l1a": 2,
+          "audits/2026-10-10-n45-l1r": 2,
+          "audits/2026-10-10-n45-l2a": 2,
+          "audits/2026-10-10-n45-l2c": 2,
+          "audits/2026-10-10-n45-l2r": 2,
+          "audits/2026-10-10-n45-pa": 5,
+          "audits/2026-10-10-n45-progress-management": 4,
+          "audits/2026-10-10-n45-s-high1": 7,
+          "audits/2026-10-10-n45-s-high2": 13,
+          "audits/2026-10-10-n45-s-low1": 62,
+          "audits/2026-10-10-n45-s-low2": 2,
+          "audits/2026-10-10-n45-ssa": 5,
+          "audits/2026-10-10-n45-ssc": 72,
+          "audits/2026-10-10-n45-u-ss": 67,
+          "audits/2026-10-14-r6-319-enumeration-676b102": 1,
+          "audits/2026-10-14-t1-crosscut-review-77fbd5d": 4,
+          "scratch/task-c44-delivery": 62
+        },
+        "declaration_changes": [
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-interfaces",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_interfaces.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_interfaces.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_interfaces.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_interfaces.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_interfaces.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_interfaces.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_interfaces.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_interfaces.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_interfaces.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-mixed-edge",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_mixed_edge.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_mixed_edge.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_mixed_edge.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_mixed_edge.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_mixed_edge.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_mixed_edge.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_mixed_edge.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_mixed_edge.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_mixed_edge.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-mixed-edge-k4",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_mixed_edge_k4.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_mixed_edge_k4.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_mixed_edge_k4.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_mixed_edge_k4.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_mixed_edge_k4.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_mixed_edge_k4.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_mixed_edge_k4.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_mixed_edge_k4.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_mixed_edge_k4.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-mixed-edge-order",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_mixed_edge_order.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_mixed_edge_order.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_mixed_edge_order.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_mixed_edge_order.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_mixed_edge_order.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_mixed_edge_order.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_mixed_edge_order.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_mixed_edge_order.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_mixed_edge_order.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-mixed-edge-same-endpoint",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_mixed_edge_same_endpoint.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_mixed_edge_same_endpoint.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_mixed_edge_same_endpoint.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_mixed_edge_same_endpoint.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_mixed_edge_same_endpoint.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_mixed_edge_same_endpoint.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_mixed_edge_same_endpoint.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_mixed_edge_same_endpoint.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_mixed_edge_same_endpoint.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-mixed-edge-shared",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_mixed_edge_shared.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_mixed_edge_shared.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_mixed_edge_shared.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_mixed_edge_shared.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_mixed_edge_shared.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_mixed_edge_shared.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_mixed_edge_shared.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_mixed_edge_shared.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_mixed_edge_shared.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-mixed-edge-shared-t0-pair-single",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-mixed-edge-shared-t0-singles",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_singles.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_singles.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_singles.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_singles.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_singles.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_singles.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_singles.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t0_singles.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_mixed_edge_shared_t0_singles.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-mixed-edge-shared-t1-pair",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_pair.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_pair.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_pair.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_pair.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_pair.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_pair.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_pair.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_pair.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_mixed_edge_shared_t1_pair.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-mixed-edge-shared-t1-singles",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_singles.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_singles.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_singles.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_singles.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_singles.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_singles.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_singles.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t1_singles.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_mixed_edge_shared_t1_singles.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-mixed-edge-shared-t2",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_mixed_edge_shared_t2.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t2.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t2.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t2.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_mixed_edge_shared_t2.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t2.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t2.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_mixed_edge_shared_t2.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_mixed_edge_shared_t2.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-no-mixed",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_no_mixed.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_no_mixed.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_no_mixed.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_no_mixed.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_no_mixed.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_no_mixed.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_no_mixed.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_no_mixed.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_no_mixed.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-no-mixed-t2",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_no_mixed_t2.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_no_mixed_t2.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_no_mixed_t2.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_no_mixed_t2.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_no_mixed_t2.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_no_mixed_t2.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_no_mixed_t2.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_no_mixed_t2.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_no_mixed_t2.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-no-mixed-t2-bridge",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_no_mixed_t2_bridge.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_no_mixed_t2_bridge.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_no_mixed_t2_bridge.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_no_mixed_t2_bridge.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_no_mixed_t2_bridge.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_no_mixed_t2_bridge.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_no_mixed_t2_bridge.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_no_mixed_t2_bridge.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_no_mixed_t2_bridge.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-no-mixed-t2-endpoints",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_no_mixed_t2_endpoints.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_no_mixed_t2_endpoints.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_no_mixed_t2_endpoints.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_no_mixed_t2_endpoints.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_no_mixed_t2_endpoints.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_no_mixed_t2_endpoints.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_no_mixed_t2_endpoints.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_no_mixed_t2_endpoints.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_no_mixed_t2_endpoints.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-no-mixed-t2-path-palettes",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_no_mixed_t2_path_palettes.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_no_mixed_t2_path_palettes.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_no_mixed_t2_path_palettes.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_no_mixed_t2_path_palettes.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_no_mixed_t2_path_palettes.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_no_mixed_t2_path_palettes.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_no_mixed_t2_path_palettes.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_no_mixed_t2_path_palettes.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_no_mixed_t2_path_palettes.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-no-mixed-t2-t0-overlap",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_no_mixed_t2_t0_overlap.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_overlap.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_overlap.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_overlap.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_no_mixed_t2_t0_overlap.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_overlap.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_overlap.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_overlap.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_no_mixed_t2_t0_overlap.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-no-mixed-t2-t0-pairs",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-no-mixed-t2-t0-singles",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_no_mixed_t2_t0_singles.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_singles.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_singles.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_singles.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_no_mixed_t2_t0_singles.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_singles.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_singles.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t0_singles.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_no_mixed_t2_t0_singles.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-no-mixed-t2-t1",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_no_mixed_t2_t1.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_no_mixed_t2_t1.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_no_mixed_t2_t1.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-no-mixed-t2-t1-bridge",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_no_mixed_t2_t1_bridge.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1_bridge.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1_bridge.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1_bridge.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_no_mixed_t2_t1_bridge.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1_bridge.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1_bridge.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1_bridge.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_no_mixed_t2_t1_bridge.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-no-mixed-t2-t1-endpoints",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-shared-singleton",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_shared_singleton.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_shared_singleton.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_shared_singleton.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_shared_singleton.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_shared_singleton.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_shared_singleton.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_shared_singleton.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_shared_singleton.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_shared_singleton.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-singleton-end-arc",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_singleton_end_arc.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_singleton_end_arc.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_singleton_end_arc.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_singleton_end_arc.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_singleton_end_arc.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_singleton_end_arc.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_singleton_end_arc.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_singleton_end_arc.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_singleton_end_arc.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-singleton-long-arc",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_singleton_long_arc.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_singleton_long_arc.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_singleton_long_arc.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_singleton_long_arc.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_singleton_long_arc.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_singleton_long_arc.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_singleton_long_arc.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_singleton_long_arc.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_singleton_long_arc.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-singleton-middle-arc",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_singleton_middle_arc.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_singleton_middle_arc.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_singleton_middle_arc.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_singleton_middle_arc.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_singleton_middle_arc.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_singleton_middle_arc.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_singleton_middle_arc.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_singleton_middle_arc.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_singleton_middle_arc.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.adjacent-degree5-singleton-sectors",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_adjacent_degree5_singleton_sectors.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_adjacent_degree5_singleton_sectors.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_adjacent_degree5_singleton_sectors.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_adjacent_degree5_singleton_sectors.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_adjacent_degree5_singleton_sectors.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_adjacent_degree5_singleton_sectors.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_adjacent_degree5_singleton_sectors.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_adjacent_degree5_singleton_sectors.md",
+              "scratch/task-c44-delivery/repository/docs/c5_adjacent_degree5_singleton_sectors.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.c4-triangle-core",
+            "declaration_paths_added": [
+              "audits/2026-10-14-r6-319-enumeration-676b102/frozen/docs/c5_c4_triangle_core.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.c8-apex-degree",
+            "declaration_paths_added": [
+              "audits/2026-10-14-t1-crosscut-review-77fbd5d/frozen/docs/c5_c8_apex_degree.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.c8-inner-collar",
+            "declaration_paths_added": [
+              "audits/2026-10-14-t1-crosscut-review-77fbd5d/frozen/docs/c5_c8_inner_collar.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.c8-peeling",
+            "declaration_paths_added": [
+              "audits/2026-10-14-t1-crosscut-review-77fbd5d/frozen/docs/c5_c8_peeling.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.degree5-interfaces",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-h1a/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-h1r/frozen/worker/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3a/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3g/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3r/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-h3a/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-h3g/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-h3r/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3a/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3g/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3r/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h3a/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h3g/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h3r/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-l1a/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-l1r/frozen/BASE/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-l2a/frozen/BASE/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-l2c/frozen/worker/frozen/BASE/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-l2r/frozen/worker/frozen/BASE/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-pa/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-progress-management/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-s-high1/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-s-low2/frozen/BASE/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-ssa/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-ssc/frozen/base-object/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/frozen/base/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_degree5_interfaces.md",
+              "audits/2026-10-10-n45-u-ss/frozen/base/docs/c5_degree5_interfaces.md",
+              "scratch/task-c44-delivery/repository/docs/c5_degree5_interfaces.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.degree5-two-spoke-sectors",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_degree5_two_spoke_sectors.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_degree5_two_spoke_sectors.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_degree5_two_spoke_sectors.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_degree5_two_spoke_sectors.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_degree5_two_spoke_sectors.md",
+              "audits/2026-10-10-n45-h1a/frozen/base/docs/c5_degree5_two_spoke_sectors.md",
+              "audits/2026-10-10-n45-h1r/frozen/worker/frozen/base/docs/c5_degree5_two_spoke_sectors.md",
+              "audits/2026-10-10-n45-s-high1/frozen/base/docs/c5_degree5_two_spoke_sectors.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_degree5_two_spoke_sectors.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_degree5_two_spoke_sectors.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_degree5_two_spoke_sectors.md",
+              "scratch/task-c44-delivery/repository/docs/c5_degree5_two_spoke_sectors.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.dual-path-surgery",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_dual_path_surgery.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_dual_path_surgery.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_dual_path_surgery.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_dual_path_surgery.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_dual_path_surgery.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_dual_path_surgery.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_dual_path_surgery.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_dual_path_surgery.md",
+              "scratch/task-c44-delivery/repository/docs/c5_dual_path_surgery.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.exchange-geometry-scope",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_exchange_geometry_scope.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_exchange_geometry_scope.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_exchange_geometry_scope.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_exchange_geometry_scope.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_exchange_geometry_scope.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_exchange_geometry_scope.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_exchange_geometry_scope.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_exchange_geometry_scope.md",
+              "scratch/task-c44-delivery/repository/docs/c5_exchange_geometry_scope.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.no-spoke-exterior",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3a/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3g/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3r/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-h3a/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-h3g/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-h3r/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3a/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3g/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3r/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h3a/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h3g/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h3r/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-pa/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-progress-management/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-ssa/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-ssc/frozen/base-object/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/frozen/base/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_no_spoke_exterior.md",
+              "audits/2026-10-10-n45-u-ss/frozen/base/docs/c5_no_spoke_exterior.md",
+              "scratch/task-c44-delivery/repository/docs/c5_no_spoke_exterior.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.no-spoke-first-bridge",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_no_spoke_first_bridge.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_no_spoke_first_bridge.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_no_spoke_first_bridge.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_no_spoke_first_bridge.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_no_spoke_first_bridge.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_no_spoke_first_bridge.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_no_spoke_first_bridge.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_no_spoke_first_bridge.md",
+              "scratch/task-c44-delivery/repository/docs/c5_no_spoke_first_bridge.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.no-spoke-path-minor",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_no_spoke_path_minor.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_no_spoke_path_minor.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_no_spoke_path_minor.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_no_spoke_path_minor.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_no_spoke_path_minor.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_no_spoke_path_minor.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_no_spoke_path_minor.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_no_spoke_path_minor.md",
+              "scratch/task-c44-delivery/repository/docs/c5_no_spoke_path_minor.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.no-spoke-supports",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_no_spoke_supports.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_no_spoke_supports.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_no_spoke_supports.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_no_spoke_supports.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_no_spoke_supports.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_no_spoke_supports.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_no_spoke_supports.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_no_spoke_supports.md",
+              "scratch/task-c44-delivery/repository/docs/c5_no_spoke_supports.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.no4ct-handoff",
+            "declaration_paths_added": [
+              "audits/2026-10-14-t1-crosscut-review-77fbd5d/frozen/docs/tasks/c5_no4ct_handoff.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.root-degree-excess",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_root_degree_excess.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_root_degree_excess.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_root_degree_excess.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_root_degree_excess.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_root_degree_excess.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_root_degree_excess.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_root_degree_excess.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_root_degree_excess.md",
+              "scratch/task-c44-delivery/repository/docs/c5_root_degree_excess.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-sided-exit",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_sided_exit.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_sided_exit.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_sided_exit.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_sided_exit.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_sided_exit.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_sided_exit.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_sided_exit.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_sided_exit.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_sided_exit.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-branch-minor",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_branch_minor.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_branch_minor.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_branch_minor.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_branch_minor.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_branch_minor.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_branch_minor.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_branch_minor.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_branch_minor.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_branch_minor.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-branch-palettes",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_branch_palettes.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_branch_palettes.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_branch_palettes.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-bridge-path",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_bridge_path.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_bridge_path.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_bridge_path.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-completion",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_completion.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_completion.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_completion.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_completion.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_completion.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_completion.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_completion.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_completion.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_completion.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-cores",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_cores.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_cores.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_cores.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-cross-row",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_cross_row.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_cross_row.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_cross_row.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-first-bridge",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_first_bridge.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_first_bridge.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_first_bridge.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-four",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_four.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_four.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_four.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_four.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3a/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3g/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3r/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-h3a/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-h3g/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-h3r/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3a/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3g/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3r/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h3a/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h3g/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h3r/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-pa/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-progress-management/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-ssa/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-ssc/frozen/base-object/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/frozen/base/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_four.md",
+              "audits/2026-10-10-n45-u-ss/frozen/base/docs/c5_single_spoke_four.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_four.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-frame-arc",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_frame_arc.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_frame_arc.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_frame_arc.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-residual-locality",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_residual_locality.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_residual_locality.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_residual_locality.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-root-conservation",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_root_conservation.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_root_conservation.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_root_conservation.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_root_conservation.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_root_conservation.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_root_conservation.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_root_conservation.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_root_conservation.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_root_conservation.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-root-sweep",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_root_sweep.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_root_sweep.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_root_sweep.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_root_sweep.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_root_sweep.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_root_sweep.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_root_sweep.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_root_sweep.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_root_sweep.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-single-contact-bounds",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_single_contact_bounds.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_single_contact_bounds.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_single_contact_bounds.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_single_contact_bounds.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_single_contact_bounds.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_single_contact_bounds.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_single_contact_bounds.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_single_contact_bounds.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_single_contact_bounds.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-three-one",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3a/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3g/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3r/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-h3a/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-h3g/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-h3r/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3a/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3g/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-h3r/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h3a/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h3g/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h3r/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-pa/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-progress-management/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-ssa/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-ssc/frozen/base-object/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/frozen/base/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_three_one.md",
+              "audits/2026-10-10-n45-u-ss/frozen/base/docs/c5_single_spoke_three_one.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_three_one.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-two-arc",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_two_arc.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_two_arc.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_two_arc.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-two-contact-bounds",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_two_contact_bounds.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_two_contact_bounds.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_two_contact_bounds.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-two-two",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_two_two.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_two_two.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_two_two.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-two-two-external",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_two_two_external.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_two_two_external.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_two_two_external.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.single-spoke-two-two-minor",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2a/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2c/frozen/worker/frozen/base/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-h2r/frozen/worker/frozen/base/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-10-n45-high23-supervision/frozen/audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-10-n45-s-high2/frozen/base/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_single_spoke_two_two_minor.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_single_spoke_two_two_minor.md",
+              "scratch/task-c44-delivery/repository/docs/c5_single_spoke_two_two_minor.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.two-spoke-adjacent-21",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_two_spoke_adjacent_21.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_two_spoke_adjacent_21.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_two_spoke_adjacent_21.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_two_spoke_adjacent_21.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_two_spoke_adjacent_21.md",
+              "audits/2026-10-10-n45-h1a/frozen/base/docs/c5_two_spoke_adjacent_21.md",
+              "audits/2026-10-10-n45-h1r/frozen/worker/frozen/base/docs/c5_two_spoke_adjacent_21.md",
+              "audits/2026-10-10-n45-s-high1/frozen/base/docs/c5_two_spoke_adjacent_21.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_two_spoke_adjacent_21.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_two_spoke_adjacent_21.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_two_spoke_adjacent_21.md",
+              "scratch/task-c44-delivery/repository/docs/c5_two_spoke_adjacent_21.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.two-spoke-middle-21",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_two_spoke_middle_21.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_two_spoke_middle_21.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_two_spoke_middle_21.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_two_spoke_middle_21.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_two_spoke_middle_21.md",
+              "audits/2026-10-10-n45-h1a/frozen/base/docs/c5_two_spoke_middle_21.md",
+              "audits/2026-10-10-n45-h1r/frozen/worker/frozen/base/docs/c5_two_spoke_middle_21.md",
+              "audits/2026-10-10-n45-s-high1/frozen/base/docs/c5_two_spoke_middle_21.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_two_spoke_middle_21.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_two_spoke_middle_21.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_two_spoke_middle_21.md",
+              "scratch/task-c44-delivery/repository/docs/c5_two_spoke_middle_21.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.two-spoke-nonadjacent",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_two_spoke_nonadjacent.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_two_spoke_nonadjacent.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_two_spoke_nonadjacent.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_two_spoke_nonadjacent.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_two_spoke_nonadjacent.md",
+              "audits/2026-10-10-n45-h1a/frozen/base/docs/c5_two_spoke_nonadjacent.md",
+              "audits/2026-10-10-n45-h1r/frozen/worker/frozen/base/docs/c5_two_spoke_nonadjacent.md",
+              "audits/2026-10-10-n45-s-high1/frozen/base/docs/c5_two_spoke_nonadjacent.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_two_spoke_nonadjacent.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_two_spoke_nonadjacent.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_two_spoke_nonadjacent.md",
+              "scratch/task-c44-delivery/repository/docs/c5_two_spoke_nonadjacent.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.two-spoke-reflection",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_two_spoke_reflection.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_two_spoke_reflection.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_two_spoke_reflection.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_two_spoke_reflection.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_two_spoke_reflection.md",
+              "audits/2026-10-10-n45-h1a/frozen/base/docs/c5_two_spoke_reflection.md",
+              "audits/2026-10-10-n45-h1r/frozen/worker/frozen/base/docs/c5_two_spoke_reflection.md",
+              "audits/2026-10-10-n45-s-high1/frozen/base/docs/c5_two_spoke_reflection.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_two_spoke_reflection.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_two_spoke_reflection.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_two_spoke_reflection.md",
+              "scratch/task-c44-delivery/repository/docs/c5_two_spoke_reflection.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.two-spoke-split-support",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_two_spoke_split_support.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_two_spoke_split_support.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_two_spoke_split_support.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_two_spoke_split_support.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_two_spoke_split_support.md",
+              "audits/2026-10-10-n45-h1a/frozen/base/docs/c5_two_spoke_split_support.md",
+              "audits/2026-10-10-n45-h1r/frozen/worker/frozen/base/docs/c5_two_spoke_split_support.md",
+              "audits/2026-10-10-n45-s-high1/frozen/base/docs/c5_two_spoke_split_support.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_two_spoke_split_support.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_two_spoke_split_support.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_two_spoke_split_support.md",
+              "scratch/task-c44-delivery/repository/docs/c5_two_spoke_split_support.md"
+            ],
+            "declaration_paths_removed": []
+          },
+          {
+            "kind": "duplicate-id",
+            "id": "c5.two-spoke-three-contacts",
+            "declaration_paths_added": [
+              "audits/2026-10-09-n45-pc/source/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-09-n45-pg/base-source/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-09-n45-pr/base-source/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-09-n45-su-j/base-source/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-09-n45-u/source/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-10-n45-l1a/frozen/base/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-10-n45-l1r/frozen/BASE/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-10-n45-l2a/frozen/BASE/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-10-n45-l2c/frozen/worker/frozen/BASE/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-10-n45-l2r/frozen/worker/frozen/BASE/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-10-n45-pa/frozen/base/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-10-n45-s-low1/base-source/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-10-n45-s-low2/frozen/BASE/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-10-n45-ssa/frozen/base/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-10-n45-ssc/frozen/base-object/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/base-source/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-10-n45-ssc/frozen/worker/frozen/base/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-10-n45-u-ss/base-source/docs/c5_two_spoke_three_contacts.md",
+              "audits/2026-10-10-n45-u-ss/frozen/base/docs/c5_two_spoke_three_contacts.md",
+              "scratch/task-c44-delivery/repository/docs/c5_two_spoke_three_contacts.md"
+            ],
+            "declaration_paths_removed": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "initial_system_python_tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 1,
+      "summary": "Initial system Python lacked networkx; rerun with repository requirements via uv passed all 94 tests.",
+      "output": "....................................E...........................................\n======================================================================\nERROR: test_c5_cell_transform (unittest.loader._FailedTest.test_c5_cell_transform)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_c5_cell_transform\nTraceback (most recent call last):\n  File \"/usr/lib/python3.14/unittest/loader.py\", line 433, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"/usr/lib/python3.14/unittest/loader.py\", line 374, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"/home/ray/developer/ai/math/tools/tests/test_c5_cell_transform.py\", line 11, in <module>\n    import c5_cell_transform as transform  # noqa: E402\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/scripts/c5_cell_transform.py\", line 16, in <module>\n    import networkx as nx\nModuleNotFoundError: No module named 'networkx'\n\n\n----------------------------------------------------------------------\nRan 80 tests in 3.878s\n\nFAILED (errors=1)\n"
+    }
+  ],
+  "not_rerun": [
+    "Plantri source enumeration",
+    "external-paper exhaustive computations"
+  ],
+  "limitations": [
+    "Whole-tree duplicate IDs in frozen/history snapshots retained.",
+    "Three original source/frozen files retain an extra blank line at EOF to preserve sealed bytes.",
+    "Historical content/bundle checks require BASE authority bytes; use replay-baseline.sh."
+  ]
+}

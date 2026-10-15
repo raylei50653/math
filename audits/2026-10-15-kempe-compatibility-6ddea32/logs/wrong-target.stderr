@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py", line 219, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py", line 216, in main
+    supplied=json.loads(a.certificate.read_text());verify_full_certificate_system(supplied['states'])
+                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py", line 173, in verify_full_certificate_system
+    need(target['literal_row']==h.name(switch(rr,j,ps,mask)),'wrong literal switch target')
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py", line 14, in need
+    if not ok:raise ValueError(msg)
+              ^^^^^^^^^^^^^^^^^^^^^
+ValueError: wrong literal switch target

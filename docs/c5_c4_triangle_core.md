@@ -26,6 +26,12 @@ docgraph:
 # C4 指定延拓壓到四連通三角化圖
 
 2026-10-14。**無界延拓仍 OPEN，一般 K≤22 與 k≥23 不變。**
+2026-10-15 後續[四輪具名路線](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)：
+合法T／T0已證指定邊普通PM雙向分離，偶補正值仍OPEN；r六度支的來源J四連通，
+完整all-r為(e=f)⇔(e=g)，兩星disk W保留全部hub fibres並迫兩個二色缺集相等。
+三標記普通障礙與Layer0二層共同圖均未完成319排除或保壞嚴格下降。
+目前停止點見[Kempe導覽](c5_kempe_guide.md#3-停止點與保留缺口)，重播見[整理紀錄](history/2026-10-15-kempe-routes-publish.md)。
+
 本日後續 [C4-MASK13-JOINT6](../audits/2026-10-14-c4-mask13-joint6-fdd3e22/REPORT.md)
 已補上 ABCB 的同份 fibre 分解及高 p,q 子域的 k≥28。
 [返回單射與 C4／C5 遞迴](../audits/2026-10-14-c4-c5-recursion-fdd3e22/REPORT.md)

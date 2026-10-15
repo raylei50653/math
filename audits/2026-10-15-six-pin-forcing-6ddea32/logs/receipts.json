@@ -1,0 +1,96 @@
+{
+  "certificate_sha256_before": "489d86dccb7f72ca0a46624a59633924109df4234aaa642cb30f2841b973a08b",
+  "certificate_sha256_after": "489d86dccb7f72ca0a46624a59633924109df4234aaa642cb30f2841b973a08b",
+  "runs": [
+    {
+      "name": "normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py",
+        "--check"
+      ],
+      "seed": null,
+      "exit_code": 0,
+      "expected_success": true,
+      "stdout": "logs/normal.stdout",
+      "stderr": "logs/normal.stderr"
+    },
+    {
+      "name": "seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py",
+        "--check"
+      ],
+      "seed": 17,
+      "exit_code": 0,
+      "expected_success": true,
+      "stdout": "logs/seed17.stdout",
+      "stderr": "logs/seed17.stderr"
+    },
+    {
+      "name": "missing-full-lift",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/logs/missing-full-lift.json"
+      ],
+      "seed": null,
+      "exit_code": 1,
+      "expected_success": false,
+      "stdout": "logs/missing-full-lift.stdout",
+      "stderr": "logs/missing-full-lift.stderr"
+    },
+    {
+      "name": "wrong-density",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/logs/wrong-density.json"
+      ],
+      "seed": null,
+      "exit_code": 1,
+      "expected_success": false,
+      "stdout": "logs/wrong-density.stdout",
+      "stderr": "logs/wrong-density.stderr"
+    },
+    {
+      "name": "missing-empty-fibre",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/logs/missing-empty-fibre.json"
+      ],
+      "seed": null,
+      "exit_code": 1,
+      "expected_success": false,
+      "stdout": "logs/missing-empty-fibre.stdout",
+      "stderr": "logs/missing-empty-fibre.stderr"
+    },
+    {
+      "name": "exclusive-create",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py",
+        "--generate"
+      ],
+      "seed": null,
+      "exit_code": 1,
+      "expected_success": false,
+      "stdout": "logs/exclusive-create.stdout",
+      "stderr": "logs/exclusive-create.stderr"
+    }
+  ]
+}

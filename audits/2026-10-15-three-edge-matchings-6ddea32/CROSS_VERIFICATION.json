@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "independent-review",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/review_geometry.py"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 0,
+      "stdout_sha256": "5071353d3256349921786a72d37cd0d5820f9e3aa13a7287a4e1dddd8d2602d9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "geometry-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check.py"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 0,
+      "stdout_sha256": "43abdcac487ccfec7512a86319b9f37c3099827294b2d71669319149d5326df3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "geometry-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check.py"
+      ],
+      "PYTHONHASHSEED": "17",
+      "returncode": 0,
+      "stdout_sha256": "43abdcac487ccfec7512a86319b9f37c3099827294b2d71669319149d5326df3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "two-palette-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 0,
+      "stdout_sha256": "818ad303539b1d9aaf9681761df7f6a4e8f21213d7298213623c6fe4dfa438aa",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "two-palette-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py"
+      ],
+      "PYTHONHASHSEED": "17",
+      "returncode": 0,
+      "stdout_sha256": "818ad303539b1d9aaf9681761df7f6a4e8f21213d7298213623c6fe4dfa438aa",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "full-j-original-table",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_original_table.py"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 0,
+      "stdout_sha256": "ecae3703bf8a068b90dacd6da942e97c8127ba491e559b0f8d604d4a91a339ec",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "geometry-missing-lift",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-full-lift.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "ec3148516731ed97acf893cab40c0fbe36376590ee5bc671eb5c24b624b00e89"
+    },
+    {
+      "name": "two-palette-wrong-return",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py",
+        "--certificate",
+        "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-hub-return.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "610b2f81314c57bf2a8fd54b84bea99ec5bc3f45b8dbe8a6289c7f1b9ac26d49"
+    }
+  ],
+  "same_round_authority": {
+    "audits/2026-10-15-j-source-geometry-6ddea32/PROOF.md": {
+      "sha256": "2e4dc0452b8732e21fd50f98154eb62c760ee78f04ea808fd2c801930a4545bd",
+      "frozen": "frozen/audits/2026-10-15-j-source-geometry-6ddea32/PROOF.md"
+    },
+    "audits/2026-10-15-j-source-geometry-6ddea32/REPORT.md": {
+      "sha256": "97dfca86dd4e02232c7261ecf6e42599a2fc6d70286aecf1f0250b307890eebe",
+      "frozen": "frozen/audits/2026-10-15-j-source-geometry-6ddea32/REPORT.md"
+    },
+    "audits/2026-10-15-route-round4-6ddea32/FULL_J_BRIDGE.md": {
+      "sha256": "634c44cd22dbed0bdad6a084ca9705dba4459f41c182016d5bf253ce210c373c",
+      "frozen": "frozen/audits/2026-10-15-route-round4-6ddea32/FULL_J_BRIDGE.md"
+    }
+  }
+}

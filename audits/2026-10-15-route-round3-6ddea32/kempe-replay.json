@@ -1,0 +1,276 @@
+{
+  "status": "PASS",
+  "plan": {
+    "immutable_files": [
+      "audits/2026-10-15-kempe-common-graph-6ddea32/certificate.json",
+      "audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+      "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+      "audits/2026-10-15-kempe-common-graph-6ddea32/INPUTS.json"
+    ],
+    "cases": [
+      {
+        "name": "check.py-normal",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/check.py"
+        ],
+        "expected": "accept"
+      },
+      {
+        "name": "check.py-seed17",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/check.py"
+        ],
+        "expected": "accept",
+        "seed17": true
+      },
+      {
+        "name": "check.py-missing-type",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+          "--certificate",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-type.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "check.py-false-edge",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+          "--certificate",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/logs/false-edge.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "check.py-missing-branch",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+          "--certificate",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-branch.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "verify.py-normal",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py"
+        ],
+        "expected": "accept"
+      },
+      {
+        "name": "verify.py-seed17",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py"
+        ],
+        "expected": "accept",
+        "seed17": true
+      },
+      {
+        "name": "verify.py-missing-type",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+          "--certificate",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-type.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "verify.py-false-edge",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+          "--certificate",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/logs/false-edge.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "verify.py-missing-branch",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+          "--certificate",
+          "audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-branch.json"
+        ],
+        "expected": "reject"
+      }
+    ]
+  },
+  "receipts": [
+    {
+      "name": "check.py-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/check.py"
+      ],
+      "expected": "accept",
+      "exit_code": 0,
+      "seconds": 0.285,
+      "stdout": "{\"binary_constraints\": 53, \"canonical_variables\": 18, \"failed_blocks\": 1056, \"first_obstruction\": {\"colour_pair\": [2, 3], \"pairing_index\": 0, \"pin_block\": [4, 6], \"reached_types\": [15, 19, 24], \"row\": \"ABABCBC\", \"state\": 0}, \"source_exclusion\": \"OPEN\", \"states\": 432, \"status\": \"PASS\", \"strict_edges\": 18, \"strict_types\": 13, \"weak_edges\": 41, \"weak_types\": 25}\n",
+      "stderr": ""
+    },
+    {
+      "name": "check.py-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/check.py"
+      ],
+      "expected": "accept",
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 0.286,
+      "stdout": "{\"binary_constraints\": 53, \"canonical_variables\": 18, \"failed_blocks\": 1056, \"first_obstruction\": {\"colour_pair\": [2, 3], \"pairing_index\": 0, \"pin_block\": [4, 6], \"reached_types\": [15, 19, 24], \"row\": \"ABABCBC\", \"state\": 0}, \"source_exclusion\": \"OPEN\", \"states\": 432, \"status\": \"PASS\", \"strict_edges\": 18, \"strict_types\": 13, \"weak_edges\": 41, \"weak_types\": 25}\n",
+      "stderr": ""
+    },
+    {
+      "name": "check.py-missing-type",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-type.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.294,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py\", line 180, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py\", line 176, in main\n    else:need(json.loads(path.read_text())==expected,'certificate mismatch')\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py\", line 10, in need\n    if not ok: raise ValueError(msg)\n               ^^^^^^^^^^^^^^^^^^^^^\nValueError: certificate mismatch\n"
+    },
+    {
+      "name": "check.py-false-edge",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/logs/false-edge.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.291,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py\", line 180, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py\", line 176, in main\n    else:need(json.loads(path.read_text())==expected,'certificate mismatch')\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py\", line 10, in need\n    if not ok: raise ValueError(msg)\n               ^^^^^^^^^^^^^^^^^^^^^\nValueError: certificate mismatch\n"
+    },
+    {
+      "name": "check.py-missing-branch",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-branch.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.287,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py\", line 180, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py\", line 176, in main\n    else:need(json.loads(path.read_text())==expected,'certificate mismatch')\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py\", line 10, in need\n    if not ok: raise ValueError(msg)\n               ^^^^^^^^^^^^^^^^^^^^^\nValueError: certificate mismatch\n"
+    },
+    {
+      "name": "verify.py-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py"
+      ],
+      "expected": "accept",
+      "exit_code": 0,
+      "seconds": 0.235,
+      "stdout": "{\"all_weak_functions\": 25, \"failed_blocks\": 1056, \"first_reached_types\": [15, 19, 24], \"independent_replay\": true, \"maximal_edges\": 41, \"proof_tree_nodes\": 47, \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "verify.py-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py"
+      ],
+      "expected": "accept",
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 0.231,
+      "stdout": "{\"all_weak_functions\": 25, \"failed_blocks\": 1056, \"first_reached_types\": [15, 19, 24], \"independent_replay\": true, \"maximal_edges\": 41, \"proof_tree_nodes\": 47, \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "verify.py-missing-type",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-type.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.142,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py\", line 131, in <module>\n    p=argparse.ArgumentParser();p.add_argument('--certificate',default=str(HERE/'certificate.json'));args=p.parse_args();run(args.certificate)\n                                                                                                                         ~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py\", line 76, in run\n    require(values==certificate['weak_functions'] and len(values)==25,'incomplete colour-function list')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py\", line 8, in require\n    if not ok:raise ValueError(msg)\n              ^^^^^^^^^^^^^^^^^^^^^\nValueError: incomplete colour-function list\n"
+    },
+    {
+      "name": "verify.py-false-edge",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/logs/false-edge.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.142,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py\", line 131, in <module>\n    p=argparse.ArgumentParser();p.add_argument('--certificate',default=str(HERE/'certificate.json'));args=p.parse_args();run(args.certificate)\n                                                                                                                         ~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py\", line 80, in run\n    require(edges==certificate['maximal_type_edges'] and len(edges)==41,'maximal common-edge graph')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py\", line 8, in require\n    if not ok:raise ValueError(msg)\n              ^^^^^^^^^^^^^^^^^^^^^\nValueError: maximal common-edge graph\n"
+    },
+    {
+      "name": "verify.py-missing-branch",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-branch.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.136,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py\", line 131, in <module>\n    p=argparse.ArgumentParser();p.add_argument('--certificate',default=str(HERE/'certificate.json'));args=p.parse_args();run(args.certificate)\n                                                                                                                         ~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py\", line 73, in run\n    replay(certificate['enumeration']['tree'],[set(range(4)) for k in keys])\n    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py\", line 69, in replay\n    require([child['value'] for child in children]==sorted(domains[i]),'branch does not cover all values')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py\", line 8, in require\n    if not ok:raise ValueError(msg)\n              ^^^^^^^^^^^^^^^^^^^^^\nValueError: branch does not cover all values\n"
+    }
+  ],
+  "hashes_before": {
+    "audits/2026-10-15-kempe-common-graph-6ddea32/certificate.json": "dedfeb4fcd80ccaf3ef43d315894084881456c16fb5682e801aae4c5b06c3344",
+    "audits/2026-10-15-kempe-common-graph-6ddea32/check.py": "4e45bbee73b3dc45b8a9c9887af8fcb516a1a0a1a4d6fad5699048312a8e7810",
+    "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py": "1cf186448636bf79b784db8c6a2636be366ffe194fc05222e8e0d5c834c73cd2",
+    "audits/2026-10-15-kempe-common-graph-6ddea32/INPUTS.json": "020042b72ed90e210338a6c272de527c84489ef378f0729e1727512b58a3c0fa"
+  },
+  "hashes_after": {
+    "audits/2026-10-15-kempe-common-graph-6ddea32/certificate.json": "dedfeb4fcd80ccaf3ef43d315894084881456c16fb5682e801aae4c5b06c3344",
+    "audits/2026-10-15-kempe-common-graph-6ddea32/check.py": "4e45bbee73b3dc45b8a9c9887af8fcb516a1a0a1a4d6fad5699048312a8e7810",
+    "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py": "1cf186448636bf79b784db8c6a2636be366ffe194fc05222e8e0d5c834c73cd2",
+    "audits/2026-10-15-kempe-common-graph-6ddea32/INPUTS.json": "020042b72ed90e210338a6c272de527c84489ef378f0729e1727512b58a3c0fa"
+  },
+  "input_drift": 0
+}

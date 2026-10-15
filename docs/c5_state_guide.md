@@ -2,13 +2,13 @@
 
 ## 最新進度
 
-現況核對：2026-10-13；本次只整理入口，未新增研究結論。
+現況核對：2026-10-15；新增固定七接點必要表的精確階數及Kempe共同圖／二層cover結果，一般state充分性仍OPEN。
 
 | 欄位 | 現況 |
 | --- | --- |
 | 階段／生命週期 | 研究中；完整表示、指定 grammar 與有界枚舉已有成果，一般可迭代 state 充分性待證。F／Z 為待初驗提案，域外構造研究已交付。 |
-| 最近研究更新 | 2026-10-13：[強迫異色研究](c5_forced_inequality_transport.md)交付無界平面構造、不交叉限制與 critical 適用界線；F／Z 原來源域尚未完成初驗。 |
-| 上次完成 | 一般平面圖有任意遠強迫對且證書寬度≤5；共用雙支援樹恰 path 可平面，交錯獨立 Diff×Diff 不可實現；clique 分隔枝塊對外框 Σ 透明。 |
+| 最近研究更新 | 2026-10-15：[四輪具名模型](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)分開必要表階數、抽象交換相容性、單值section障礙及Layer0二層共同原圖。 |
+| 上次完成 | 固定26列必要表階數恰6；720態交換公理模型存在但無相容單值共同圖；Layer0有75／121點二層共同圖，各864份完整染色，兩圖非平面。 |
 | 目前停止點 | 域外無界例不觸發原低超額 critical 前提；F／Z 仍 OPEN。一般 context／future、刪內邊與 Kempe 的後繼充分性、grammar 外 topology 及全部來源必要分類均未完成。 |
 | 下一步 | 接續 §3：在具名前提觸發的實際來源量測半徑與完整證書寬度；同一 β 下檢查非 clique 分隔介面的支援／超額。Z 另查完整不增轉移圖的終端平台。 |
 | 接手入口 | 先讀本頁 §3，再讀 [F／Z 的量詞與初驗計畫](c5_forcing_transport_conjectures.md)、[異色構造及原域界線](c5_forced_inequality_transport.md)；多步接口見 [Phase B](c5_phase_b_common_lemmas.md)，兩點接合見 [專線導覽](c5_two_vertex_overlap_guide.md)。 |
@@ -17,6 +17,7 @@
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
+| 2026-10-15／共同原圖與二層cover | [必要表階數](../audits/2026-10-15-f4-relation-6ddea32/REPORT.md)及[二層共同圖](../audits/2026-10-15-kempe-state-covers-6ddea32/REPORT.md)分開精確關係、抽象交換與真圖多值lift；原平面來源及一般充分性仍OPEN。 |
 | 2026-10-02／來源階數初驗 | [階數報告](c5_relation_arity.md)將 132 來源分為 11 個二階、101 個四階、20 個五階，證精確兩來源接合 r*≤來源最大階數≤5；忘掉接點及多步上界未證。 |
 | 2026-10-08／共通接口 | [Phase B](c5_phase_b_common_lemmas.md)分開密封外部接合、保 action 的後繼充分性與刪邊 weak bisimulation；接續義務為指定 grammar、幾何 residual 與同一染色 fibre 匹配。 |
 | 2026-10-11／提案形成 | [強迫同色與閉環一致](c5_forcing_transport_conjectures.md)明確化 F 的有界介面證書與 Z 的零邊數不增修復；當輪只整理提案，兩項均未初驗。 |
@@ -36,6 +37,7 @@
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
+| 七接點必要表與Kempe共同圖 | 固定26列上界的投影階數恰6；全部五點投影誤收96份賦色。特定720交換模型無單值共同圖，但Layer0有非平面二層真圖；未證完整720、平面來源或一般後繼充分性 | [有限域與階數](../audits/2026-10-15-f4-relation-6ddea32/REPORT.md)、[單值障礙](../audits/2026-10-15-kempe-common-graph-6ddea32/REPORT.md)、[二層共同圖](../audits/2026-10-15-kempe-state-covers-6ddea32/REPORT.md) |
 | 來源階數／接合上界 | 132類有11個二階、101個四階、20個五階；精確接合r*≤來源最大階數≤5，T4全收來源≤4；六圖回歸，不證忘掉接點後或多步的同一上界，未Lean化 | [階數報告](c5_relation_arity.md) |
 | C₅ class 兩點重疊 | 新十三點 D₁₃ 完整四接點替換給任意大小同 class 族，私有四度點只成孤點及配對，輪環與偶長雙扇都無縮減起點；保持完整 J/P、全部外框、十五組 repairs／r*=4；加入 D₁₃ 後其餘骨架、必要分類／政策與多步充分性未證 | [兩點重疊導覽](c5_two_vertex_overlap_guide.md)、[D₁₃ 定理](c5_two_vertex_repair_caps.md) |
 | 完整 relation／表示法 | Interface、State、Branch、Choice 及接合語意已有；pair projections 漏掉高階限制 | [state language](state_language.md)、[extension effects](extension_effects.md) |
@@ -53,6 +55,12 @@
 | 基礎構造與 gadgets | exact relations、有限 Lean 證書與 gadget synthesis 已保存；一般 planar／separating C5 的 BAD 不是 disk 反例 | [phase 1](phase1.md)、[構造](construction.md)、[gadgets](gadgets.md) |
 
 ## 3. 停止點與保留缺口
+
+2026-10-15的[具名模型續進](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)
+沒有把抽象state指定成真來源。Layer0二層共同圖只覆18列，完整720／22列、
+其他平面實現及原degree／collar來源均OPEN；不能假設每份cover有交換相容單值section。
+其原來源接回義務由[Kempe導覽](c5_kempe_guide.md#3-停止點與保留缺口)維護，
+不取代本頁F／Z的具名初驗及一般多步充分性問題。
 
 新增提案見[強迫同色與閉環一致](c5_forcing_transport_conjectures.md)：先在具名前提觸發的
 實際來源量測局部半徑及完整關係證書寬度；零邊修復另檢查完整不增轉移圖的終端平台。

@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "created_at_utc": "2026-10-15T14:56:00.702520+00:00",
+  "base": "6ddea32a81349821ad3724ae1652bddb9c6a7b04",
+  "scope": "Publication verification of unchanged sixteen route audits; historical scope checks replay in a detached baseline worktree; no new mathematical exclusion.",
+  "summary": {
+    "core_normal_accepted": 8,
+    "core_corrupted_rejected": 4,
+    "detached_audit_directories": 16,
+    "detached_copied_files": 603,
+    "frozen_inputs_changed": false,
+    "main_worktree_files_changed_by_this_review": false
+  },
+  "replay_recipe": {
+    "path": "/tmp/math-route-replay-baseline.sh",
+    "sha256": "edc99d27f4a528a6abacec6c2828e8d9e4c70f8bb1ff9f137f97ad0001244799",
+    "shell": "sh",
+    "text": "task_source=/home/ray/developer/ai/math\ntask_replay=\"$(mktemp -d /tmp/math-route-baseline-replay.XXXXXX)\"\ngit -C \"$task_source\" worktree add --detach \"$task_replay\" 6ddea32a81349821ad3724ae1652bddb9c6a7b04\npython3 -B - \"$task_source\" \"$task_replay\" <<'PY_COPY'\nimport hashlib, json, pathlib, shutil, sys\nsource, replay = map(pathlib.Path, sys.argv[1:])\nbase = json.loads((source / 'audits/2026-10-15-route-round4-6ddea32/BASE.json').read_text())\nnames = base['prior_audits'] + base['write_scope']\nassert len(names) == len(set(names)) == 16\nfor name in names:\n    shutil.copytree(source / name, replay / name)\n    for path in (source / name).rglob('*'):\n        if path.is_file():\n            target = replay / path.relative_to(source)\n            assert hashlib.sha256(path.read_bytes()).digest() == hashlib.sha256(target.read_bytes()).digest()\nPY_COPY\npython3 -B \"$task_replay/audits/2026-10-15-route-round4-6ddea32/check_bundle.py\" --write \"$task_replay.bundle.json\"\n"
+  },
+  "evidence": {
+    "prepublication_workspace_bundle": {
+      "source_path": "/tmp/math-route-round4-precommit-bundle.json",
+      "sha256": "b27f86cfcab4f292139703fe52d07f2b68035503e439adcb3a5308f3d36a01ef",
+      "receipt": {
+        "authority_drift": 0,
+        "base": "6ddea32a81349821ad3724ae1652bddb9c6a7b04",
+        "checks": {
+          "local_links": 70,
+          "markdown": 15,
+          "python": 22
+        },
+        "formal_replay_results": {
+          "accept": 14,
+          "reject": 11
+        },
+        "new_audits": [
+          "audits/2026-10-15-route-round4-6ddea32",
+          "audits/2026-10-15-three-edge-matchings-6ddea32",
+          "audits/2026-10-15-j-source-geometry-6ddea32",
+          "audits/2026-10-15-kempe-state-covers-6ddea32"
+        ],
+        "post_replay_drift": 0,
+        "prior_drift": 0,
+        "prior_files": 388,
+        "scope": "Round-four files and immutable inputs; not a mathematical source-exclusion checker.",
+        "status": "PASS",
+        "tracked_changes": 0
+      }
+    },
+    "core_replays": {
+      "source_path": "/tmp/math-route-precommit-core-replays.json",
+      "sha256": "395581166ab7ef27e7611418e1c184cda1ece24e5f5fb8a9c9869e90869807d5",
+      "receipt": {
+        "status": "PASS",
+        "receipts": [
+          {
+            "label": "cut",
+            "command": [
+              "python3",
+              "-B",
+              "audits/2026-10-15-route-research-6ddea32/check_cut_bridge.py",
+              "--check",
+              "audits/2026-10-15-route-research-6ddea32/cut-certificate.json"
+            ],
+            "exit_code": 0,
+            "expected": "accept",
+            "as_expected": true,
+            "seconds": 0.035,
+            "stdout": "{\"status\": \"PASS\", \"controls\": [{\"name\": \"icosahedron\", \"ordinary_matchings\": 36, \"even_complement_matchings\": 30}, {\"name\": \"pentagonal_bipyramid\", \"ordinary_matchings\": 11, \"even_complement_matchings\": 10}]}\n",
+            "stderr": ""
+          },
+          {
+            "label": "counts",
+            "command": [
+              "python3",
+              "-B",
+              "audits/2026-10-15-route-round2-6ddea32/check_counts.py",
+              "--check",
+              "audits/2026-10-15-route-round2-6ddea32/count-certificate.json"
+            ],
+            "exit_code": 0,
+            "expected": "accept",
+            "as_expected": true,
+            "seconds": 0.083,
+            "stdout": "{\"status\": \"PASS\", \"source_status\": \"not triggered\", \"controls\": [{\"name\": \"icosahedron\", \"ordinary_matchings\": 36, \"even_complement_matchings\": 30, \"root_fixed_four_colourings\": 60, \"edge_pairs\": 435}, {\"name\": \"pentagonal_bipyramid\", \"ordinary_matchings\": 11, \"even_complement_matchings\": 10, \"root_fixed_four_colourings\": 30, \"edge_pairs\": 105}]}\n",
+            "stderr": ""
+          },
+          {
+            "label": "marked",
+            "command": [
+              "python3",
+              "-B",
+              "audits/2026-10-15-route-round3-6ddea32/check_marked_patterns.py",
+              "--check",
+              "audits/2026-10-15-route-round3-6ddea32/marked-patterns.json"
+            ],
+            "exit_code": 0,
+            "expected": "accept",
+            "as_expected": true,
+            "seconds": 0.038,
+            "stdout": "{\"status\": \"PASS\", \"proper_six_vertex_rows\": 432, \"event_rows\": 96, \"marked_partition_cases\": 165, \"scope\": \"Exhaustive local algebra and marked-cycle partitions only; no source realization.\"}\n",
+            "stderr": ""
+          },
+          {
+            "label": "common",
+            "command": [
+              "python3",
+              "-B",
+              "audits/2026-10-15-route-round3-6ddea32/check_common_graph_independent.py",
+              "--check",
+              "audits/2026-10-15-route-round3-6ddea32/common-graph-independent.json"
+            ],
+            "exit_code": 0,
+            "expected": "accept",
+            "as_expected": true,
+            "seconds": 0.081,
+            "stdout": "{\"status\": \"PASS\", \"states\": 432, \"search_nodes\": 429, \"all_literal_transition_checks\": 102000, \"pin_function_ids\": [0, 2, 1, 10, 19, 13, 18], \"obstruction\": {\"state\": 0, \"pair\": [2, 3], \"required_block\": [4, 6], \"t_component\": [15, 19, 24], \"q_id\": 18}, \"scope\": \"Exact single-valued S4-equivariant state lift only; refined state covers remain open.\"}\n",
+            "stderr": ""
+          },
+          {
+            "label": "vertex",
+            "command": [
+              "python3",
+              "-B",
+              "audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py",
+              "--check",
+              "audits/2026-10-15-route-round3-6ddea32/vertex-kempe-independent.json"
+            ],
+            "exit_code": 0,
+            "expected": "accept",
+            "as_expected": true,
+            "seconds": 0.077,
+            "stdout": "{\"status\": \"PASS\", \"full_colourings\": 240, \"E_free_colourings\": 216, \"complete_moves\": 1296, \"all_triangles_facial\": true, \"all_degrees_five\": true, \"split_U_pin_degrees\": {\"p\": 5, \"q\": 5, \"s\": 4, \"t\": 2, \"v\": 5, \"w\": 5, \"z\": 6}, \"scope\": \"One explicit non-source control; closure under every ordinary vertex component switch.\"}\n",
+            "stderr": ""
+          },
+          {
+            "label": "full-j",
+            "command": [
+              "python3",
+              "-B",
+              "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+              "--check",
+              "audits/2026-10-15-route-round4-6ddea32/full-j-certificate.json"
+            ],
+            "exit_code": 0,
+            "expected": "accept",
+            "as_expected": true,
+            "seconds": 0.08,
+            "stdout": "{\"status\": \"PASS\", \"proper_rows\": 432, \"allowed_rows\": 240, \"E_rows\": 96, \"additional_bad_rows\": 96, \"combined_cubes\": 117, \"controls\": {\"icosahedral\": {\"source_allowed\": 144, \"E\": 24, \"additional_bad_event\": 72}, \"flipped_icosahedral_return\": {\"source_allowed\": 120, \"E\": 96, \"additional_bad_event\": 72}, \"stacked_E_empty\": {\"source_allowed\": 0, \"E\": 0, \"additional_bad_event\": 24}}}\n",
+            "stderr": ""
+          },
+          {
+            "label": "cover",
+            "command": [
+              "python3",
+              "-B",
+              "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py",
+              "--check",
+              "audits/2026-10-15-route-round4-6ddea32/cover-graph-independent.json"
+            ],
+            "exit_code": 0,
+            "expected": "accept",
+            "as_expected": true,
+            "seconds": 0.331,
+            "stdout": "{\"status\": \"PASS\", \"scope\": \"Complete original-edge Layer0 graph; no planar or full720 claim.\", \"vertices\": 121, \"edges\": 711, \"pins\": [0, 16, 7, 60, 71, 63, 64], \"distinct_named_pins\": 7, \"base_states\": 432, \"sheets_per_state\": 2, \"full_colourings\": 864, \"dsatur_nodes\": 2834, \"component_checks\": 8160, \"single_component_switch_checks\": 8160, \"whole_cube_checks\": 26112, \"hidden_components\": 0, \"nonplanarity\": {\"edges\": 711, \"planar_upper_bound\": 357}}\n",
+            "stderr": ""
+          },
+          {
+            "label": "original-table",
+            "command": [
+              "python3",
+              "-B",
+              "audits/2026-10-15-route-round4-6ddea32/check_original_table.py"
+            ],
+            "exit_code": 0,
+            "expected": "accept",
+            "as_expected": true,
+            "seconds": 0.025,
+            "stdout": "{\"allowed\": 240, \"by_original_frame\": {\"ABACB\": {\"allowed\": 96, \"proper\": 144}, \"ABCAB\": {\"allowed\": 96, \"proper\": 144}, \"ABCDB\": {\"allowed\": 48, \"proper\": 144}}, \"literal_rows_checked\": 432, \"new_certificate_sha256\": \"8b6b547b4a602bb8df3bdc0e2ccd3aff74fe3206ddbbaf338a818c3caa757095\", \"original_path\": \"audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/transfer.json\", \"original_sha256\": \"cf7b64805d9a8b1e6a0e264673a338f4c05ae2c6507229f14e20c3699cca8747\", \"status\": \"PASS\"}\n",
+            "stderr": ""
+          },
+          {
+            "label": "cut-reject",
+            "command": [
+              "python3",
+              "-B",
+              "audits/2026-10-15-route-research-6ddea32/check_cut_bridge.py",
+              "--check",
+              "audits/2026-10-15-route-research-6ddea32/cut-certificate.corrupted.json"
+            ],
+            "exit_code": 1,
+            "expected": "reject",
+            "as_expected": true,
+            "seconds": 0.035,
+            "stdout": "",
+            "stderr": "FAIL: stored certificate differs from exhaustive recomputation\n"
+          },
+          {
+            "label": "counts-reject",
+            "command": [
+              "python3",
+              "-B",
+              "audits/2026-10-15-route-round2-6ddea32/check_counts.py",
+              "--check",
+              "audits/2026-10-15-route-round2-6ddea32/count-certificate.corrupted.json"
+            ],
+            "exit_code": 1,
+            "expected": "reject",
+            "as_expected": true,
+            "seconds": 0.084,
+            "stdout": "",
+            "stderr": "FAIL: certificate differs from complete recomputation\n"
+          },
+          {
+            "label": "full-j-reject",
+            "command": [
+              "python3",
+              "-B",
+              "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+              "--check",
+              "audits/2026-10-15-route-round4-6ddea32/full-j-corrupted.json"
+            ],
+            "exit_code": 1,
+            "expected": "reject",
+            "as_expected": true,
+            "seconds": 0.069,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round4-6ddea32/check_full_j.py\", line 143, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round4-6ddea32/check_full_j.py\", line 136, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+          },
+          {
+            "label": "cover-reject",
+            "command": [
+              "python3",
+              "-B",
+              "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py",
+              "--check",
+              "audits/2026-10-15-route-round4-6ddea32/cover-graph-corrupted.json"
+            ],
+            "exit_code": 1,
+            "expected": "reject",
+            "as_expected": true,
+            "seconds": 0.34,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py\", line 145, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py\", line 140, in main\n    assert json.loads(args.check.read_text()) == result, 'independent certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: independent certificate mismatch\n"
+          }
+        ]
+      }
+    },
+    "detached_baseline_replay": {
+      "source_path": "/tmp/math-route-detached-baseline-verification.json",
+      "sha256": "75d9f61b91b57bb24f4cc8fd7da5493101f9283200c73a4ec4f7d00263566315",
+      "receipt": {
+        "status": "PASS",
+        "base": "6ddea32a81349821ad3724ae1652bddb9c6a7b04",
+        "source": "/home/ray/developer/ai/math",
+        "worktree": "/tmp/math-route-baseline-replay-sx91jnqo",
+        "directories": [
+          "audits/2026-10-15-f4-relation-6ddea32",
+          "audits/2026-10-15-kempe-common-graph-6ddea32",
+          "audits/2026-10-15-kempe-compatibility-6ddea32",
+          "audits/2026-10-15-oddness-descent-6ddea32",
+          "audits/2026-10-15-r6-seven-pin-6ddea32",
+          "audits/2026-10-15-route-research-6ddea32",
+          "audits/2026-10-15-route-round2-6ddea32",
+          "audits/2026-10-15-route-round3-6ddea32",
+          "audits/2026-10-15-six-pin-forcing-6ddea32",
+          "audits/2026-10-15-six-pin-lifts-6ddea32",
+          "audits/2026-10-15-tait-separation-6ddea32",
+          "audits/2026-10-15-xor-batch-descent-6ddea32",
+          "audits/2026-10-15-route-round4-6ddea32",
+          "audits/2026-10-15-three-edge-matchings-6ddea32",
+          "audits/2026-10-15-j-source-geometry-6ddea32",
+          "audits/2026-10-15-kempe-state-covers-6ddea32"
+        ],
+        "copied_files": 603,
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round4-6ddea32/check_bundle.py"
+        ],
+        "exit_code": 0,
+        "seconds": 0.556,
+        "stdout": "{\"authority_drift\": 0, \"base\": \"6ddea32a81349821ad3724ae1652bddb9c6a7b04\", \"checks\": {\"local_links\": 70, \"markdown\": 15, \"python\": 22}, \"formal_replay_results\": {\"accept\": 14, \"reject\": 11}, \"new_audits\": [\"audits/2026-10-15-route-round4-6ddea32\", \"audits/2026-10-15-three-edge-matchings-6ddea32\", \"audits/2026-10-15-j-source-geometry-6ddea32\", \"audits/2026-10-15-kempe-state-covers-6ddea32\"], \"post_replay_drift\": 0, \"prior_drift\": 0, \"prior_files\": 388, \"scope\": \"Round-four files and immutable inputs; not a mathematical source-exclusion checker.\", \"status\": \"PASS\", \"tracked_changes\": 0}\n",
+        "stderr": "",
+        "result": {
+          "authority_drift": 0,
+          "base": "6ddea32a81349821ad3724ae1652bddb9c6a7b04",
+          "checks": {
+            "local_links": 70,
+            "markdown": 15,
+            "python": 22
+          },
+          "formal_replay_results": {
+            "accept": 14,
+            "reject": 11
+          },
+          "new_audits": [
+            "audits/2026-10-15-route-round4-6ddea32",
+            "audits/2026-10-15-three-edge-matchings-6ddea32",
+            "audits/2026-10-15-j-source-geometry-6ddea32",
+            "audits/2026-10-15-kempe-state-covers-6ddea32"
+          ],
+          "post_replay_drift": 0,
+          "prior_drift": 0,
+          "prior_files": 388,
+          "scope": "Round-four files and immutable inputs; not a mathematical source-exclusion checker.",
+          "status": "PASS",
+          "tracked_changes": 0
+        }
+      }
+    }
+  }
+}

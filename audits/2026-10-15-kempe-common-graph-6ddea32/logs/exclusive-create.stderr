@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py", line 180, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py", line 175, in main
+    with path.open('x') as f:json.dump(expected,f,indent=2);f.write('\n')
+         ~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/certificate.json'

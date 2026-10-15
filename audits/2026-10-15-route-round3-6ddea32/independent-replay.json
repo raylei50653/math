@@ -1,0 +1,188 @@
+{
+  "status": "PASS",
+  "plan": {
+    "immutable_files": [
+      "audits/2026-10-15-route-round3-6ddea32/marked-patterns.json",
+      "audits/2026-10-15-route-round3-6ddea32/common-graph-independent.json",
+      "audits/2026-10-15-route-round3-6ddea32/check_marked_patterns.py",
+      "audits/2026-10-15-route-round3-6ddea32/check_common_graph_independent.py"
+    ],
+    "cases": [
+      {
+        "name": "marked-patterns-normal",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round3-6ddea32/check_marked_patterns.py",
+          "--check",
+          "audits/2026-10-15-route-round3-6ddea32/marked-patterns.json"
+        ],
+        "expected": "accept"
+      },
+      {
+        "name": "marked-patterns-seed17",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round3-6ddea32/check_marked_patterns.py",
+          "--check",
+          "audits/2026-10-15-route-round3-6ddea32/marked-patterns.json"
+        ],
+        "expected": "accept",
+        "seed17": true
+      },
+      {
+        "name": "marked-patterns-corrupted",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round3-6ddea32/check_marked_patterns.py",
+          "--check",
+          "audits/2026-10-15-route-round3-6ddea32/marked-patterns.corrupted.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "common-graph-independent-normal",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round3-6ddea32/check_common_graph_independent.py",
+          "--check",
+          "audits/2026-10-15-route-round3-6ddea32/common-graph-independent.json"
+        ],
+        "expected": "accept"
+      },
+      {
+        "name": "common-graph-independent-seed17",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round3-6ddea32/check_common_graph_independent.py",
+          "--check",
+          "audits/2026-10-15-route-round3-6ddea32/common-graph-independent.json"
+        ],
+        "expected": "accept",
+        "seed17": true
+      },
+      {
+        "name": "common-graph-independent-corrupted",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round3-6ddea32/check_common_graph_independent.py",
+          "--check",
+          "audits/2026-10-15-route-round3-6ddea32/common-graph-independent.corrupted.json"
+        ],
+        "expected": "reject"
+      }
+    ]
+  },
+  "receipts": [
+    {
+      "name": "marked-patterns-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round3-6ddea32/check_marked_patterns.py",
+        "--check",
+        "audits/2026-10-15-route-round3-6ddea32/marked-patterns.json"
+      ],
+      "expected": "accept",
+      "exit_code": 0,
+      "seconds": 0.08,
+      "stdout": "{\"status\": \"PASS\", \"proper_six_vertex_rows\": 432, \"event_rows\": 96, \"marked_partition_cases\": 165, \"scope\": \"Exhaustive local algebra and marked-cycle partitions only; no source realization.\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "marked-patterns-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round3-6ddea32/check_marked_patterns.py",
+        "--check",
+        "audits/2026-10-15-route-round3-6ddea32/marked-patterns.json"
+      ],
+      "expected": "accept",
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 0.082,
+      "stdout": "{\"status\": \"PASS\", \"proper_six_vertex_rows\": 432, \"event_rows\": 96, \"marked_partition_cases\": 165, \"scope\": \"Exhaustive local algebra and marked-cycle partitions only; no source realization.\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "marked-patterns-corrupted",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round3-6ddea32/check_marked_patterns.py",
+        "--check",
+        "audits/2026-10-15-route-round3-6ddea32/marked-patterns.corrupted.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.087,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round3-6ddea32/check_marked_patterns.py\", line 101, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round3-6ddea32/check_marked_patterns.py\", line 95, in main\n    assert json.loads(args.check.read_text()) == encoded, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    {
+      "name": "common-graph-independent-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round3-6ddea32/check_common_graph_independent.py",
+        "--check",
+        "audits/2026-10-15-route-round3-6ddea32/common-graph-independent.json"
+      ],
+      "expected": "accept",
+      "exit_code": 0,
+      "seconds": 0.178,
+      "stdout": "{\"status\": \"PASS\", \"states\": 432, \"search_nodes\": 429, \"all_literal_transition_checks\": 102000, \"pin_function_ids\": [0, 2, 1, 10, 19, 13, 18], \"obstruction\": {\"state\": 0, \"pair\": [2, 3], \"required_block\": [4, 6], \"t_component\": [15, 19, 24], \"q_id\": 18}, \"scope\": \"Exact single-valued S4-equivariant state lift only; refined state covers remain open.\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "common-graph-independent-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round3-6ddea32/check_common_graph_independent.py",
+        "--check",
+        "audits/2026-10-15-route-round3-6ddea32/common-graph-independent.json"
+      ],
+      "expected": "accept",
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 0.18,
+      "stdout": "{\"status\": \"PASS\", \"states\": 432, \"search_nodes\": 429, \"all_literal_transition_checks\": 102000, \"pin_function_ids\": [0, 2, 1, 10, 19, 13, 18], \"obstruction\": {\"state\": 0, \"pair\": [2, 3], \"required_block\": [4, 6], \"t_component\": [15, 19, 24], \"q_id\": 18}, \"scope\": \"Exact single-valued S4-equivariant state lift only; refined state covers remain open.\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "common-graph-independent-corrupted",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round3-6ddea32/check_common_graph_independent.py",
+        "--check",
+        "audits/2026-10-15-route-round3-6ddea32/common-graph-independent.corrupted.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.184,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round3-6ddea32/check_common_graph_independent.py\", line 134, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round3-6ddea32/check_common_graph_independent.py\", line 128, in main\n    assert json.loads(args.check.read_text()) == json.loads(json.dumps(result)), 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    }
+  ],
+  "hashes_before": {
+    "audits/2026-10-15-route-round3-6ddea32/marked-patterns.json": "389ffca0fbc1fdb1f36f904ba5092c7c66138dde9cb9cf224b110d8b9c293f0d",
+    "audits/2026-10-15-route-round3-6ddea32/common-graph-independent.json": "6da3a5e486598ea6c6b6a7ebd3c31475f324118a71f28092bc578c07e888fe24",
+    "audits/2026-10-15-route-round3-6ddea32/check_marked_patterns.py": "a26030b4a711c87cd468dcd5f25e9f3028c2a739fe5a51a6381b54ec0042e812",
+    "audits/2026-10-15-route-round3-6ddea32/check_common_graph_independent.py": "785f219d7b793e3e2de726d3b4ce2d2e41df6548027a02dd7cdfff2489f43658"
+  },
+  "hashes_after": {
+    "audits/2026-10-15-route-round3-6ddea32/marked-patterns.json": "389ffca0fbc1fdb1f36f904ba5092c7c66138dde9cb9cf224b110d8b9c293f0d",
+    "audits/2026-10-15-route-round3-6ddea32/common-graph-independent.json": "6da3a5e486598ea6c6b6a7ebd3c31475f324118a71f28092bc578c07e888fe24",
+    "audits/2026-10-15-route-round3-6ddea32/check_marked_patterns.py": "a26030b4a711c87cd468dcd5f25e9f3028c2a739fe5a51a6381b54ec0042e812",
+    "audits/2026-10-15-route-round3-6ddea32/check_common_graph_independent.py": "785f219d7b793e3e2de726d3b4ce2d2e41df6548027a02dd7cdfff2489f43658"
+  },
+  "input_drift": 0
+}

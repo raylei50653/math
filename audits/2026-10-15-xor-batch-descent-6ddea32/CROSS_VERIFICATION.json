@@ -1,0 +1,131 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "six-independent",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/review_six.py"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "stdout": {
+        "E_six_rows": 96,
+        "abstract_partition_cases": 165,
+        "controls": [
+          {
+            "E_rows": 24,
+            "J_rows": 240,
+            "U_rows": 864,
+            "empty_r_lifts": 96,
+            "name": "icosahedral"
+          },
+          {
+            "E_rows": 96,
+            "J_rows": 288,
+            "U_rows": 960,
+            "empty_r_lifts": 192,
+            "name": "flipped_icosahedral_return"
+          },
+          {
+            "E_rows": 0,
+            "J_rows": 24,
+            "U_rows": 96,
+            "empty_r_lifts": 0,
+            "name": "stacked_E_empty"
+          }
+        ],
+        "proper_six_rows": 432,
+        "status": "PASS",
+        "target_certificate_sha256": "ef94c994cccca96192f1b6781b456887ed2f83295df9b839d9c3d0a7a5dc2583"
+      }
+    },
+    {
+      "name": "six-official-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/check.py"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "stdout": {
+        "abstract_cube_count": 165,
+        "controls": [
+          {
+            "E_count": 24,
+            "full_J_count": 240,
+            "full_U_count": 864,
+            "name": "icosahedral",
+            "unsafe_state_pairs": 0
+          },
+          {
+            "E_count": 96,
+            "full_J_count": 288,
+            "full_U_count": 960,
+            "name": "flipped_icosahedral_return",
+            "unsafe_state_pairs": 96
+          },
+          {
+            "E_count": 0,
+            "full_J_count": 24,
+            "full_U_count": 96,
+            "name": "stacked_E_empty",
+            "unsafe_state_pairs": 0
+          }
+        ],
+        "genuine_source_status": "not triggered",
+        "input_drift": 0,
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "six-official-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/check.py"
+      ],
+      "seed": "17",
+      "returncode": 0,
+      "stdout": {
+        "abstract_cube_count": 165,
+        "controls": [
+          {
+            "E_count": 24,
+            "full_J_count": 240,
+            "full_U_count": 864,
+            "name": "icosahedral",
+            "unsafe_state_pairs": 0
+          },
+          {
+            "E_count": 96,
+            "full_J_count": 288,
+            "full_U_count": 960,
+            "name": "flipped_icosahedral_return",
+            "unsafe_state_pairs": 96
+          },
+          {
+            "E_count": 0,
+            "full_J_count": 24,
+            "full_U_count": 96,
+            "name": "stacked_E_empty",
+            "unsafe_state_pairs": 0
+          }
+        ],
+        "genuine_source_status": "not triggered",
+        "input_drift": 0,
+        "status": "PASS"
+      }
+    }
+  ],
+  "icosahedral_all_triangles_are_facial": true,
+  "reviewed_files": {
+    "PROOF.md": "e9d29c5f79f7fd8a4bff701df896e95b12fc5def04d62f905d9f3b37a3d70bc7",
+    "check.py": "fd6f6a22f9c3c23e6ab17a2d11072951036cf4f30399d5968a01579ff5bbbbd4",
+    "certificate.json": "ef94c994cccca96192f1b6781b456887ed2f83295df9b839d9c3d0a7a5dc2583",
+    "INPUTS.json": "7833817ae098020b6ad2989e99cbf24632eb3b54aa4d6974bfe3f601ed665b3a",
+    "REPORT.md": "4fd7344b2e7bc200b51755db85430a7e4e8570296c2ed49f6e3df9fd41c01eab"
+  }
+}

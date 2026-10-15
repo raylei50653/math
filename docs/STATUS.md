@@ -1,8 +1,14 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-14（C5→C4來源橋接外部完整計算得K≤22=K≤5；最小來源共同k≥23；原E4契約的廣義N2已排除；W5私人圈秩至少五；T1-CROSSCUT已證h=3時p=0、第一剝層只留RING；E-ARC2與一般主命題仍OPEN）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
+更新：2026-10-15（新增四輪普通分離、批次交換、完整J接回、來源兩星幾何及二層共同圖；一般K≤22、共同k≥23及固定r6的k≥25不變；完整319、偶補正值、E-ARC2與一般主命題仍OPEN）。研究線標記見 [HANDOFF](HANDOFF.md)；項目現況、停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
+
+2026-10-15 [四輪具名路線](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)：
+合法T／T0普通雙向分離已證；r六度來源J四連通，完整all-r須同時排除兩個禁止事件。
+兩星W的完整hub fibre與三標記Tutte障礙已定位，尚未證偶補正值。
+Layer0已有兩份非平面二層共同圖，完整720態及原平面來源仍OPEN；
+原證據、歷史重播及驗證界線見[整理紀錄](history/2026-10-15-kempe-routes-publish.md)。
 
 2026-10-14 [C5 換到 C4](c5_c4_boundary_pivot.md)：只增加一個外側四-spoke 點，
 完整 fibre 雙射給 `n_H(ABCB)=y0+y1=0`；正規形及度數使 H 為非 diamond 的
@@ -319,6 +325,22 @@ d_G≥6及k≥18；T3接通no4ct三支私人ρ≥5。一般RING、
 | [十五內點完整球面覆蓋](c5_k15_sphere.md) | K≤15=K≤5；192球面嵌入／2,714根圖全Σ1023，624,617完整lifts獨立一致；後續C4來源橋提高至K≤22／共同k≥23，主命題OPEN，未Lean化 |
 | [C8原短弧接點與內圈](c5_c8_inner_collar.md) | 每I點至多兩個C附件、八原面third points相異；m≥9，等號唯一W8，八契約完整Σ1023排除m=9；後續剝層分類排m=10，h=3⇒k≥19；八項無界殘留仍OPEN |
 | [C4指定延拓與四連通三角化圖](c5_c4_triangle_core.md) | 原x,y,b四度支已證r≥6、r=6⇒s,t≥6；[低p/q來源](../audits/2026-10-14-lowpq-source-676b102/REPORT.md)再證p5⇒a≥6、q5⇒c≥6，r6仍319；[返回旁支](../audits/2026-10-14-c4-return-branches-a11d4bb/REPORT.md)補單低p/q的mask14、雙低度共同鄰點≥6、a=4⇒t≥6與反射界，t五度C5只留956／1012／1020。共同Tait、一般來源排除及K∞仍OPEN；K≤22不變，無新Lean |
+| [第一輪：四種表示與切割橋接](../audits/2026-10-15-route-research-6ddea32/REPORT.md) | 普通分離存在、必要表階數6及單切割／雙切割等價；偶補與來源排除OPEN |
+| [指定邊普通匹配雙向分離](../audits/2026-10-15-tait-separation-6ddea32/REPORT.md) | 原T／T0來源條件下兩方向普通PM均存在，ω不再為∞；ω=0未證。外部Edmonds＋紙面＋有限控制，無新Lean |
+| [七接點必要關係與F4](../audits/2026-10-15-f4-relation-6ddea32/REPORT.md) | 固定26列上界的投影階數恰6；所有五點投影多收96份賦色，六點多項式精確補回；不證真來源關係等於該表 |
+| [r6切z與七接點拓撲測試](../audits/2026-10-15-r6-seven-pin-6ddea32/REPORT.md) | 明列切點／非交叉分割放寬模型不刪原選項；弱候選有小真圖反控制，完整來源未觸發 |
+| [第二輪：奇環下降、商圖與交換相容性](../audits/2026-10-15-route-round2-6ddea32/REPORT.md) | 完整計數橋接、普通同方向交換連通、商圖非平面方法障礙及720態抽象模型；正偶補仍OPEN |
+| [單環奇偶手術與下降反控制](../audits/2026-10-15-oddness-descent-6ddea32/REPORT.md) | 任意單環完整路徑奇偶公式及充分下降條件；36點平面控制否決固定方向逐步降低指定量，未否決保XOR來源下降 |
+| [六接點迫色商圖](../audits/2026-10-15-six-pin-forcing-6ddea32/REPORT.md) | 原共同鄰點與合法J識別已證；後續指定迫色商圖有loop或非平面，這些施工不能代替來源排除 |
+| [Kempe交換相容模型](../audits/2026-10-15-kempe-compatibility-6ddea32/REPORT.md) | 720態／22列滿足同pairing可逆、可交換、S4協變；抽象模型不供應共同原圖 |
+| [第三輪：雙環換向、三邊返回與共同圖障礙](../audits/2026-10-15-route-round3-6ddea32/REPORT.md) | 保XOR批次交換連通、三邊返回判準、特定720模型單值共同圖不可能；單一禁止事件後由第四輪補成完整all-r |
+| [保XOR雙環同步交換](../audits/2026-10-15-xor-batch-descent-6ddea32/REPORT.md) | 一／兩環批次交換使普通XOR族連通，46點控制有直接偶補退出；不證來源必能下降或正偶補 |
+| [完整六接點lifts與三邊返回](../audits/2026-10-15-six-pin-lifts-6ddea32/REPORT.md) | 同一J上的e=f≠g禁止事件與單環返回分類；弱12點球面有216態閉集，仍違來源度數；完整all-r另需第四輪第二事件 |
+| [Kempe單值共同原圖障礙](../audits/2026-10-15-kempe-common-graph-6ddea32/REPORT.md) | 25種相容原點函數／41條允許邊不足以實現指定連通性，排特定720模型的任意有限單值實現；不排多值cover或22列本身 |
+| [第四輪：完整J接回與來源兩星幾何](../audits/2026-10-15-route-round4-6ddea32/REPORT.md) | 完整all-r為(e=f)⇔(e=g)，兩禁止事件各96列；J來源幾何、匹配窄割表與Layer0二層共同圖整合，完整319及完成後嚴格下降OPEN |
+| [J四連通與兩星完整W介面](../audits/2026-10-15-j-source-geometry-6ddea32/REPORT.md) | 原來源J四連通、短圈anchors及實際兩鄰弧disk；逐完整W染色的hub fibre恰為缺色直積去對角，來源迫兩個二色缺集相等；尚未迫違規lift |
+| [三標記普通匹配的Tutte障礙](../audits/2026-10-15-three-edge-matchings-6ddea32/REPORT.md) | 二入一出普通PM失敗恰二缺額，非單點分量只可能無／一5割／二5割／一7割；未排全部障礙，普通PM與偶補權重分開 |
+| [Layer0二層共同原圖](../audits/2026-10-15-kempe-state-covers-6ddea32/REPORT.md) | 75／121點兩圖各864份全部完整染色、二對一投影432態、無hidden分量；monodromy無相容section。兩圖非平面，完整720／22列及來源仍OPEN |
 | [C8反覆剝層與完整轉移](c5_c8_peeling.md) | 原三型分類與完整separator轉移保留；T1-CROSSCUT在no4ct最小來源契約下證h=3⇒p=0，全部PINCH／BRIDGE排除，任意單接點數與兩片大小。剝層自身給h=3⇒k≥19，當前共同C4界為k≥23；RING、固定寬度與一般來源OPEN，未Lean化 |
 | [十三內點完整外圈與 K≤13 界](c5_k13_collar.md) | h4–7全部覆蓋；23球面嵌入／306根圖皆Σ1023，完整lifts独立一致；h6／h7另有紙面排除。K≤13=K≤5，目錄外來源至少十四內點；不提高h／n5；後續K14亦完成，一般命題OPEN，未Lean化 |
 | [C₈ apex度數與十四內點分支界](c5_c8_apex_degree.md) | 八項全部40個apex-H三度假設排除，原apex均至少六度；原h=3⇒k≥14，後續原面配對、短弧／內圈及m=10剝層分類加強為k≥19。八項仍留；一般k≥16由K15另證，h≥3、n₅≥9不提高；紙面＋精確Python，未Lean化 |
@@ -559,6 +581,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-15：四輪具名匹配、完整接回與共同圖整理提交](history/2026-10-15-kempe-routes-publish.md)
 - [2026-10-14：目前進展跨線整合與發布](history/2026-10-14-progress-consolidation-publish.md)
 - [2026-10-14：C4返回旁支、低p/q介面與度數界相接發布](history/2026-10-14-c4-return-branches-publish.md)
 - [2026-10-14：低p/q真實來源與前輪共面識別採納](history/2026-10-14-lowpq-source-publish.md)

@@ -1,0 +1,69 @@
+[
+  {
+    "name": "normal",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/check.py"
+    ],
+    "seed": null,
+    "exit": 0,
+    "expected": "pass"
+  },
+  {
+    "name": "seed17",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/check.py"
+    ],
+    "seed": 17,
+    "exit": 0,
+    "expected": "pass"
+  },
+  {
+    "name": "missing-full-colouring",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/logs/missing-full-colouring.json"
+    ],
+    "seed": null,
+    "exit": 1,
+    "expected": "reject"
+  },
+  {
+    "name": "wrong-monodromy",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-monodromy.json"
+    ],
+    "seed": null,
+    "exit": 1,
+    "expected": "reject"
+  },
+  {
+    "name": "wrong-cover-rank",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-cover-rank.json"
+    ],
+    "seed": null,
+    "exit": 1,
+    "expected": "reject"
+  },
+  {
+    "name": "exclusive-create",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+      "--write"
+    ],
+    "seed": null,
+    "exit": 1,
+    "expected": "reject"
+  }
+]

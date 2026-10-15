@@ -2,24 +2,24 @@
 
 ## 最新進度
 
-現況核對：2026-10-14；固定三原框點四度支的k≤27已迫h≤12；r6p5再得ell-v、ell-w原非邊，反射側取對應結論；有限枚舉另給r6⇒k≥25，一般K≤22不變。
+現況核對：2026-10-15；四輪匹配、完整接回與共同圖研究已整合；來源J四連通及兩星介面成立，偶補正值與完整319排除仍OPEN，既有點數界不變。
 
 | 欄位 | 現況 |
 | --- | --- |
-| 階段／生命週期 | r6與低p/q共同來源續進；固定三框點四度支的k≤27,h≥13已排除，整個低p/q仍OPEN。E-ARC2、C8／W5及跨邊出口保留，N2原E4契約已收尾。 |
-| 最近研究更新 | [共同W與原內圈](../audits/2026-10-14-r6-lowpq-3953c85/REPORT.md)：r6p5迫ell-v、ell-w非邊並有反射對應；無弦原內圈及私人圈秩≥2給k≥ceil((3h+16)/2)，故k≤27⇒h≤12。 |
-| 上次完成 | 兩份指定W完整fibre聯集分別非空；h=18及其下至13的k≤27來源全排。前輪p5⇒a≥6／q5⇒c≥6、319與舊證書保留；一般K≤22／k≥23不變，無新Lean。 |
-| 目前停止點 | 低p=5,a≥6及反射側的mask14共同介面、r六度319、一般t五度三關係、r≥7及一般T／T0延拓OPEN。E-ARC2的N1／相鄰roots、基本LL-CUT，一般RING、較高C9／h及W5縮減、K∞仍OPEN。 |
-| 下一步 | 按[更新活躍域](../audits/2026-10-14-r6-lowpq-3953c85/REPORT.md#4-更新的活躍來源域與剩餘義務)續攻r6p5／反射的共同延拓，保兩實際面、完整fibre聯集與所有原非邊；高r低p/q限k≤27,h≤12。指定商圖仍存活時不擴大邊界分類。 |
-| 接手入口 | 先查本頁 §3；E-ARC2 讀 [N2 父覆蓋](c5_excess_two_n2_bridge.md#3-接回父分類與剩餘來源)，no4ct 讀 [交接](tasks/c5_no4ct_handoff.md)，W5 讀 [保存契約與排除鏈](c5_w5_marked_relation.md#0-保存強度與私人圈秩覆蓋鏈)，跨邊讀 [精確定理](c5_cross_edge_kempe.md)。 |
+| 階段／生命週期 | r6共同來源與三標記匹配續進；普通雙向分離及XOR批次交換連通已證，來源偶補仍OPEN。E-ARC2、C8／W5及低p/q保留。 |
+| 最近研究更新 | 2026-10-15：[第四輪整合](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)得來源J四連通、兩星disk完整fibres、all-r兩個禁止事件、三標記Tutte障礙與Layer0二層共同圖。 |
+| 上次完成 | 同一J完整all-r為(e=f)⇔(e=g)；W的兩個二色缺集必相等。普通PM失敗限四類割障礙；Layer0有75／121點共同圖。紙面與有限證書分層，無新Lean。 |
+| 目前停止點 | 來源違規完整W/J lift、兩族偶補正值、完成後保壞嚴格下降、完整319及無界T／T0仍OPEN；二層見證非平面且只覆Layer0。E-ARC2的N1／相鄰roots、基本LL-CUT、RING及W5一般縮減保留。 |
+| 下一步 | 按[第四輪剩餘義務](../audits/2026-10-15-route-round4-6ddea32/REPORT.md#5-驗證採納與剩餘義務)，用原兩star與短圈幾何迫違規完整W lift，或排三標記障礙並證偶補正值；保留同圖全部空fibres與接回成本。 |
+| 接手入口 | 本頁 §3及[第四輪](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)；前輪與重播見[整理紀錄](history/2026-10-15-kempe-routes-publish.md)。其他線仍按[N2父覆蓋](c5_excess_two_n2_bridge.md#3-接回父分類與剩餘來源)、[no4ct交接](tasks/c5_no4ct_handoff.md)及[W5保存契約](c5_w5_marked_relation.md#0-保存強度與私人圈秩覆蓋鏈)。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
+| 2026-10-15／完整接回與共同圖 | [四輪整合](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)：普通分離存在、批次交換連通、J四連通與兩星必要條件；特定720模型無單值section，但Layer0有二層真圖。偶補正值及完整來源排除仍OPEN。 |
 | 2026-10-14／原內圈與r6有限排除 | [共同W及高h排除](../audits/2026-10-14-r6-lowpq-3953c85/REPORT.md)續接p5⇒a≥6／q5⇒c≥6：r6p5另迫ell-v、ell-w非邊並有反射對應，固定三框點四度支k≤27⇒h≤12；[完整k23／24枚舉](../audits/2026-10-14-r6-319-enumeration-676b102/REPORT.md)另給同一固定支r6⇒k≥25，完整319仍OPEN，一般K≤22不變。 |
 | 2026-10-14／換邊界與K≤22 | [完整C5→C4來源橋](c5_c4_boundary_pivot.md)補上舊文獻稽核的缺口；三支皆為具名對角拒絕4-candidate，接外部≤28點計算得最小來源k≥23。 |
-| 2026-10-13／no4ct 來源收緊 | [K15](c5_k15_sphere.md)與三支 C8 接入後，[T1](../audits/2026-10-13-c8-terminal-s1-d521163/REPORT.md) 曾得 p>0⇒s≥2，現由 T1-CROSSCUT 涵蓋，原證書保留；[T2](../audits/2026-10-13-c9-932-source-d521163/REPORT.md) 得 932、h=4⇒k≥18。 |
 | 2026-10-13／W5 no4ct 接通 | [圈秩四兩支](c5_w5_private_rank4.md)的原完整證據由 [T3](../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md)接入 no4ct 三支；任取合法 W5 的 ρ≥5，一般縮減仍 OPEN。 |
 | 2026-10-14／一般正對切口 | [T1-CROSSCUT](../audits/2026-10-14-t1-crosscut-review-77fbd5d/REPORT.md) 排除任意大小 PINCH／BRIDGE；32 個必要單 x 核心、512,568 個安全矩形完整核對，h=3 只剩 RING。 |
 
@@ -41,6 +41,8 @@
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
+| 四輪具名匹配／完整來源續進 | 普通雙向分離及保XOR批次交換連通已證；完整all-r需同時拒e=f≠g及e=g≠f。來源J四連通、兩星W完整fibre與三標記窄割表成立，尚未迫偶補正值或來源矛盾 | [最新整合](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)、[四輪證據與歷史重播](history/2026-10-15-kempe-routes-publish.md) |
+| Kempe共同原圖與多值細分 | 特定720-state表無交換相容單值section；Layer0有75／121點二層共同圖且各864份完整染色。兩圖非平面、只覆18列；完整720／22列及平面來源仍OPEN | [共同原圖障礙](../audits/2026-10-15-kempe-common-graph-6ddea32/REPORT.md)、[二層共同圖](../audits/2026-10-15-kempe-state-covers-6ddea32/REPORT.md) |
 | C4具名四連通三角化圖 | 同色點識別及刪u得到四連通T，或刪唯一三度b得到四連通T0；完整fibres把延拓變成b出口／兩個同圖三角面色集合差異。無界仍OPEN，不提高K≤22 | [權威入口](c5_c4_triangle_core.md)、[證明與控制](../audits/2026-10-14-c4-triangle-core-b66f592/REPORT.md) |
 | C5→C4完整來源橋與K≤22 | 四-spoke外點與原圖全部相容lifts作完整接合；共同拒絕y0、y1化為ABCB空fibre，面／度數符合非diamond 4-candidate。接外部完整≤28點計算得K≤22=K≤5；無界具名子類及K∞仍OPEN | [權威入口](c5_c4_boundary_pivot.md)、[證明及驗證](../audits/2026-10-14-c5-c4-boundary-pivot-77fbd5d/REPORT.md) |
 | 新封存的 no4ct／C8 隔離成果 | 三支 W5 前提修復、C8 零端部排除、h=4 的 induced C9 與 84 項殘留；C6 補完同側、僅原 C8 pins、a−d≤5 的 gadget 域，全部與八份 U 非空相交。量詞為 ∀G∀U∃row(G,U)，八項來源與主命題仍 OPEN | [五包成果、前提、重播及接續入口](history/2026-10-13-multi-commit-status.md) |
@@ -94,6 +96,21 @@
 | N2原55同來源LL-CUT+diag | 原K₅-H／K₃,₃-O、leaf接線數及2≤行和≤1排全部剩餘spokes，完整原55(2,0)來源排除。基本LL-CUT未獨立證成；19,229必要共同可行投影保留。完整契約內九格全覆蓋；廣義N2由N2-BRIDGE在原E4契約排除，E-ARC2仍OPEN；無新Lean | [完整證明、父覆蓋與獨立checker](c5_excess_two_n2_ll_cut.md) |
 
 ## 3. 停止點與保留缺口
+
+**四輪續進（2026-10-15）。** [最新整合](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)
+接通[普通分離存在](../audits/2026-10-15-tait-separation-6ddea32/REPORT.md)及
+[保XOR批次交換連通](../audits/2026-10-15-xor-batch-descent-6ddea32/REPORT.md)：
+合法T／T0的ω已知有限，但尚未證ω=0；連通性不供應偶補終點。
+在固定三框點四度、r六度的原來源中，J=U/(s=t)四連通，令e=d(vw)、f=d(pq)、g=d(mz)，
+完整all-r恰為(e=f)⇔(e=g)，兩個禁止事件皆須排除。
+刪m,z所得兩原鄰弧disk W的每份完整染色，hub fibre恰為Am×Az去對角；
+來源迫|Am|=|Az|=2⇒Am=Az，但尚未迫出違規染色。
+三標記普通PM失敗只留無非單點分量、一個5割、兩個5割或一個7割；
+排掉普通障礙後仍須證偶補正值。完成後點數回到k+5，未有保壞嚴格下降。
+特定720模型的單值共同圖障礙與Layer0二層真圖相容；後者非平面且未涵蓋完整22列。
+既有低p/q、k≤27⇒h≤12、一般K≤22／k≥23及固定r6⇒k≥25均保留；
+完整319來源排除、r≥7、無界延拓與K∞仍OPEN。原始報告與凍結證據不改寫，
+重播契約見[整理紀錄](history/2026-10-15-kempe-routes-publish.md)。
 
 **換邊界方向（2026-10-14）。** [C5→C4](c5_c4_boundary_pivot.md)已得共同 k≥23。
 [本輪化約](c5_c4_triangle_core.md)把義務壓到四連通T／T0：原b四度時，先攻同一T0

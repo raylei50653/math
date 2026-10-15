@@ -1,0 +1,43 @@
+{
+  "immutable_files": [
+    "audits/2026-10-15-route-round3-6ddea32/vertex-kempe-independent.json",
+    "audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py",
+    "audits/2026-10-15-six-pin-lifts-6ddea32/certificate.json"
+  ],
+  "cases": [
+    {
+      "name": "vertex-kempe-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py",
+        "--check",
+        "audits/2026-10-15-route-round3-6ddea32/vertex-kempe-independent.json"
+      ],
+      "expected": "accept"
+    },
+    {
+      "name": "vertex-kempe-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py",
+        "--check",
+        "audits/2026-10-15-route-round3-6ddea32/vertex-kempe-independent.json"
+      ],
+      "expected": "accept",
+      "seed17": true
+    },
+    {
+      "name": "vertex-kempe-missing-move",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py",
+        "--check",
+        "audits/2026-10-15-route-round3-6ddea32/vertex-kempe-independent.corrupted.json"
+      ],
+      "expected": "reject"
+    }
+  ]
+}

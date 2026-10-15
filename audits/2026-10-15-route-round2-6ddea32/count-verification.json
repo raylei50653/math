@@ -1,0 +1,66 @@
+[
+  {
+    "name": "count-normal",
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-15-route-round2-6ddea32/check_counts.py",
+      "--check",
+      "/home/ray/developer/ai/math/audits/2026-10-15-route-round2-6ddea32/count-certificate.json"
+    ],
+    "seed": null,
+    "exit_code": 0,
+    "seconds": 0.178,
+    "stdout": "{\"status\": \"PASS\", \"source_status\": \"not triggered\", \"controls\": [{\"name\": \"icosahedron\", \"ordinary_matchings\": 36, \"even_complement_matchings\": 30, \"root_fixed_four_colourings\": 60, \"edge_pairs\": 435}, {\"name\": \"pentagonal_bipyramid\", \"ordinary_matchings\": 11, \"even_complement_matchings\": 10, \"root_fixed_four_colourings\": 30, \"edge_pairs\": 105}]}\n",
+    "stderr": "",
+    "certificate_sha256": "cd4054bfe48e34e98f1fed0f5eb64865fbdd4af2139f7a9bb516ebdc680c7478"
+  },
+  {
+    "name": "count-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-15-route-round2-6ddea32/check_counts.py",
+      "--check",
+      "/home/ray/developer/ai/math/audits/2026-10-15-route-round2-6ddea32/count-certificate.json"
+    ],
+    "seed": "17",
+    "exit_code": 0,
+    "seconds": 0.177,
+    "stdout": "{\"status\": \"PASS\", \"source_status\": \"not triggered\", \"controls\": [{\"name\": \"icosahedron\", \"ordinary_matchings\": 36, \"even_complement_matchings\": 30, \"root_fixed_four_colourings\": 60, \"edge_pairs\": 435}, {\"name\": \"pentagonal_bipyramid\", \"ordinary_matchings\": 11, \"even_complement_matchings\": 10, \"root_fixed_four_colourings\": 30, \"edge_pairs\": 105}]}\n",
+    "stderr": "",
+    "certificate_sha256": "cd4054bfe48e34e98f1fed0f5eb64865fbdd4af2139f7a9bb516ebdc680c7478"
+  },
+  {
+    "name": "count-corrupted",
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-15-route-round2-6ddea32/check_counts.py",
+      "--check",
+      "/home/ray/developer/ai/math/audits/2026-10-15-route-round2-6ddea32/count-certificate.corrupted.json"
+    ],
+    "seed": null,
+    "exit_code": 1,
+    "seconds": 0.176,
+    "stdout": "",
+    "stderr": "FAIL: certificate differs from complete recomputation\n",
+    "certificate_sha256": "cd4054bfe48e34e98f1fed0f5eb64865fbdd4af2139f7a9bb516ebdc680c7478"
+  },
+  {
+    "name": "count-exclusive",
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-15-route-round2-6ddea32/check_counts.py",
+      "--write",
+      "/home/ray/developer/ai/math/audits/2026-10-15-route-round2-6ddea32/count-certificate.json"
+    ],
+    "seed": null,
+    "exit_code": 1,
+    "seconds": 0.181,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round2-6ddea32/check_counts.py\", line 172, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round2-6ddea32/check_counts.py\", line 162, in main\n    with args.write.open('x') as stream:\n         ~~~~~~~~~~~~~~~^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-15-route-round2-6ddea32/count-certificate.json'\n",
+    "certificate_sha256": "cd4054bfe48e34e98f1fed0f5eb64865fbdd4af2139f7a9bb516ebdc680c7478"
+  }
+]

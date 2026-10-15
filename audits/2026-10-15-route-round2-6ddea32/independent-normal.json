@@ -1,0 +1,30 @@
+[
+  {
+    "name": "oddness",
+    "command": "python3 -B audits/2026-10-15-oddness-descent-6ddea32/check_controls.py --check audits/2026-10-15-oddness-descent-6ddea32/certificate.json",
+    "result": {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "c564be",
+        "wall_time_seconds": 0.000014247,
+        "exit_code": 0,
+        "original_token_count": 155,
+        "output": "{\"controls\": {\"dodecahedron_4sum\": {\"admissible_count\": 60, \"admissible_even_count\": 20, \"checked_surgeries\": 390, \"matching_count\": 365, \"single_cycle_exchange_edges\": 390, \"start_neighbours\": 12}, \"icosahedron_dual_transversal_control\": {\"admissible_count\": 10, \"admissible_even_count\": 8, \"checked_surgeries\": 35, \"matching_count\": 36, \"single_cycle_exchange_edges\": 35, \"start_neighbours\": 6}, \"tutte_graph\": {\"admissible_count\": 322, \"admissible_even_count\": 39, \"checked_surgeries\": 8864, \"matching_count\": 960, \"single_cycle_exchange_edges\": 8864, \"start_neighbours\": 37}}, \"input_drift\": 0, \"status\": \"PASS\"}\n"
+      }
+    }
+  },
+  {
+    "name": "kempe",
+    "command": "python3 -B audits/2026-10-15-kempe-compatibility-6ddea32/check.py --check",
+    "result": {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "e47a96",
+        "wall_time_seconds": 0.000010019,
+        "exit_code": 0,
+        "original_token_count": 81,
+        "output": "{\"canonical_rows\": 22, \"outer_mask\": 319, \"states\": 720, \"status\": \"PASS finite abstract switch system; genuine source not triggered\", \"verified_laws\": {\"S4_partition_transports\": 51840, \"S4_switch_transports\": 153216, \"cube_composition_laws\": 202752, \"same_pairing_cube_targets\": 18816, \"whole_pair_global_swaps\": 4320}}\n"
+      }
+    }
+  }
+]

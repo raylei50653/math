@@ -1,0 +1,114 @@
+{
+  "immutable_files": [
+    "audits/2026-10-15-kempe-common-graph-6ddea32/certificate.json",
+    "audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+    "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+    "audits/2026-10-15-kempe-common-graph-6ddea32/INPUTS.json"
+  ],
+  "cases": [
+    {
+      "name": "check.py-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/check.py"
+      ],
+      "expected": "accept"
+    },
+    {
+      "name": "check.py-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/check.py"
+      ],
+      "expected": "accept",
+      "seed17": true
+    },
+    {
+      "name": "check.py-missing-type",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-type.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "check.py-false-edge",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/logs/false-edge.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "check.py-missing-branch",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-branch.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "verify.py-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py"
+      ],
+      "expected": "accept"
+    },
+    {
+      "name": "verify.py-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py"
+      ],
+      "expected": "accept",
+      "seed17": true
+    },
+    {
+      "name": "verify.py-missing-type",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-type.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "verify.py-false-edge",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/logs/false-edge.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "verify.py-missing-branch",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-branch.json"
+      ],
+      "expected": "reject"
+    }
+  ]
+}

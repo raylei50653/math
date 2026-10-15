@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-15-r6-seven-pin-6ddea32/check_unsplit.py", line 56, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-15-r6-seven-pin-6ddea32/check_unsplit.py", line 53, in main
+    else:base.need(a.certificate.read_text()==payload,'unsplit certificate differs')
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-15-r6-seven-pin-6ddea32/check.py", line 17, in need
+    if not ok:raise ValueError(msg)
+              ^^^^^^^^^^^^^^^^^^^^^
+ValueError: unsplit certificate differs

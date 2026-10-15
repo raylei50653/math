@@ -1,0 +1,102 @@
+{
+  "schema": "math-precommit-replay-summary-v1",
+  "recorded_date": "2026-10-15",
+  "cwd": "/home/ray/developer/ai/math",
+  "base": "6ddea32a81349821ad3724ae1652bddb9c6a7b04",
+  "provenance": "Transcribed from actual completed tool outputs in this review; no commands rerun to create this receipt. Full stdout/stderr are not included.",
+  "audit_writes": false,
+  "runs": [
+    {
+      "name": "compatibility",
+      "command": "python3 -B audits/2026-10-15-kempe-compatibility-6ddea32/check.py --check",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "summary": "PASS: 720 states, 22 canonical rows, outer mask319; genuine source not triggered"
+    },
+    {
+      "name": "common-check",
+      "command": "python3 -B audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "summary": "PASS: 25 weak types, 41 weak edges, 1056 failed blocks; source exclusion OPEN"
+    },
+    {
+      "name": "common-verify",
+      "command": "python3 -B audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "summary": "PASS: independent replay, 47 proof tree nodes, 25 functions, 41 edges, 1056 failed blocks"
+    },
+    {
+      "name": "state-covers",
+      "command": "python3 -B audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "summary": "PASS: graphs75/121 each have864 complete labelled colourings,432 projection states,2 sheets,hidden max0,outer mask319; quotient dimension117,zero-product quotient dimension13"
+    },
+    {
+      "name": "tait",
+      "command": "python3 -B audits/2026-10-15-tait-separation-6ddea32/check_controls.py --check audits/2026-10-15-tait-separation-6ddea32/controls.json",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "summary": "PASS: six named finite controls,69 perfect matchings,frozen input drift0; source not triggered"
+    },
+    {
+      "name": "cover75-independent",
+      "command": "python3 -B audits/2026-10-15-j-source-geometry-6ddea32/check_cover75.py",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "summary": "PASS:75 vertices,353 edges,864 complete labelled colourings,1462 search nodes,8160 actual component switches,26112 cubes,hidden0,section conflict detected"
+    },
+    {
+      "name": "cover121-independent",
+      "command": "python3 -B audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py --check audits/2026-10-15-route-round4-6ddea32/cover-graph-independent.json",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "summary": "PASS:121 vertices,711 edges,864 full colourings,2834 DSATUR nodes,8160 component/switch checks,26112 cubes,hidden0; no planar or full720 claim"
+    },
+    {
+      "name": "compatibility-negative",
+      "command": "python3 -B audits/2026-10-15-kempe-compatibility-6ddea32/check.py --check --certificate audits/2026-10-15-kempe-compatibility-6ddea32/logs/missing-state.json",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "summary": "Expected rejection: ValueError: missing cube target"
+    },
+    {
+      "name": "common-negative",
+      "command": "python3 -B audits/2026-10-15-kempe-common-graph-6ddea32/verify.py --certificate audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-branch.json",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "summary": "Expected rejection: ValueError: branch does not cover all values"
+    },
+    {
+      "name": "covers-negative",
+      "command": "python3 -B audits/2026-10-15-kempe-state-covers-6ddea32/check.py --certificate audits/2026-10-15-kempe-state-covers-6ddea32/logs/missing-full-colouring.json",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "summary": "Expected rejection: ValueError: certificate mismatch"
+    },
+    {
+      "name": "tait-negative",
+      "command": "python3 -B audits/2026-10-15-tait-separation-6ddea32/check_controls.py --check audits/2026-10-15-tait-separation-6ddea32/negative/controls-one-matching-omitted.json",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "summary": "Expected rejection: FAIL: certificate is malformed, incomplete, or differs from complete reconstruction"
+    }
+  ],
+  "additional_actual_checks": {
+    "command": "python3 -B - (inline AST/local Markdown link/FINAL_MANIFEST checks)",
+    "exit_code": 0,
+    "python_ast": "PASS for top-level .py files in the four reviewed audit directories",
+    "local_markdown_links": "PASS, no broken relative local links in top-level .md files",
+    "state_covers_final_manifest": {
+      "listed": 61,
+      "claimed": 61,
+      "hash_mismatch": [],
+      "unlisted": [],
+      "missing": []
+    }
+  },
+  "custody_note": "These executions preceded shared docs updates. Historical checkers verify live authority hashes, including docs/HANDOFF.md and docs/STATUS.md in compatibility/tait. A later publication replay should restore the frozen BASE authorities in an isolated worktree rather than weaken the historical checkers.",
+  "scope": "Finite evidence and exact stated graph/ordinary-matching contracts only; full720/22-row source realization, planar alternative, omega=0 and general main claim remain OPEN."
+}

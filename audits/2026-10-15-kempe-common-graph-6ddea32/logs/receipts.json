@@ -1,0 +1,125 @@
+[
+  {
+    "name": "normal",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "expected": "pass"
+  },
+  {
+    "name": "normal-seed17",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py"
+    ],
+    "PYTHONHASHSEED": 17,
+    "exit_code": 0,
+    "expected": "pass"
+  },
+  {
+    "name": "independent",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "expected": "pass"
+  },
+  {
+    "name": "independent-seed17",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py"
+    ],
+    "PYTHONHASHSEED": 17,
+    "exit_code": 0,
+    "expected": "pass"
+  },
+  {
+    "name": "missing-type-check",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-type.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected": "reject"
+  },
+  {
+    "name": "missing-type-verify",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-type.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected": "reject"
+  },
+  {
+    "name": "false-edge-check",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/logs/false-edge.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected": "reject"
+  },
+  {
+    "name": "false-edge-verify",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/logs/false-edge.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected": "reject"
+  },
+  {
+    "name": "missing-branch-check",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-branch.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected": "reject"
+  },
+  {
+    "name": "missing-branch-verify",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/verify.py",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/logs/missing-branch.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected": "reject"
+  },
+  {
+    "name": "exclusive-create",
+    "argv": [
+      "python",
+      "/home/ray/developer/ai/math/audits/2026-10-15-kempe-common-graph-6ddea32/check.py",
+      "--write"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected": "reject"
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "immutable_files": [
+    "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json",
+    "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+    "audits/2026-10-15-xor-batch-descent-6ddea32/INPUTS.json",
+    "audits/2026-10-15-xor-batch-descent-6ddea32/graphs.json"
+  ],
+  "cases": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json"
+      ],
+      "expected": "accept"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json"
+      ],
+      "expected": "accept",
+      "seed17": true
+    },
+    {
+      "name": "missing-batch",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/negative/missing-batch.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "wrong-joint-parity",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/negative/wrong-joint-parity.json"
+      ],
+      "expected": "reject"
+    }
+  ]
+}

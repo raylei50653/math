@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 0,
+      "seconds": 19.155,
+      "stdout_sha256": "c40c1faccabc922ca6077af5aae5c7847ff382b39092ad789148a12aade9d3ca",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json"
+      ],
+      "PYTHONHASHSEED": "17",
+      "returncode": 0,
+      "seconds": 18.603,
+      "stdout_sha256": "c40c1faccabc922ca6077af5aae5c7847ff382b39092ad789148a12aade9d3ca",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "missing-batch",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/negative/missing-batch.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "seconds": 18.542,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "171034256becc4dc1b6aab16301f33cf9d4dadb802c30cf58ee4b29f6f3f9d28"
+    },
+    {
+      "name": "wrong-joint-parity",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/negative/wrong-joint-parity.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "seconds": 19.168,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "171034256becc4dc1b6aab16301f33cf9d4dadb802c30cf58ee4b29f6f3f9d28"
+    },
+    {
+      "name": "exclusive-create",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+        "--write",
+        "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "seconds": 18.565,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "d4c4b03501da246c49002ddf9064bf96921bf0504b8b1a62835fa2b2bd902d0d"
+    }
+  ],
+  "certificate_sha256": "2a23b137f6f9a1a3ad9237db24f062a2d060d84e857f147670249bcd107db1aa"
+}

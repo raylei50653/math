@@ -1,0 +1,61 @@
+{
+  "immutable_files": [
+    "audits/2026-10-15-six-pin-lifts-6ddea32/certificate.json",
+    "audits/2026-10-15-six-pin-lifts-6ddea32/check.py",
+    "audits/2026-10-15-six-pin-lifts-6ddea32/INPUTS.json"
+  ],
+  "cases": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/check.py"
+      ],
+      "expected": "accept"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/check.py"
+      ],
+      "expected": "accept",
+      "seed17": true
+    },
+    {
+      "name": "missing-full-lift",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/negative/missing-full-lift.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "missing-empty-fibre",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/negative/missing-empty-fibre.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "wrong-return-side",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/negative/wrong-return-side.json"
+      ],
+      "expected": "reject"
+    }
+  ]
+}

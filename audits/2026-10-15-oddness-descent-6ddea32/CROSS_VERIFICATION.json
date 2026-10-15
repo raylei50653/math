@@ -1,0 +1,68 @@
+{
+  "read_only_hashes": {
+    "audits/2026-10-15-kempe-compatibility-6ddea32/PROOF.md": "a0145878278507ef44557de803db21acd1b87e714b1a324189543fa2f26b713d",
+    "audits/2026-10-15-kempe-compatibility-6ddea32/REPORT.md": "6de6a8f3bef66d469fa2a21494b0c23b6b14e15e15b3c23f3b66917966a00f27",
+    "audits/2026-10-15-kempe-compatibility-6ddea32/check.py": "10cb692e59e97a40aeb877989dac13833c24c43df8547d33c00f6f827bcb90ca",
+    "audits/2026-10-15-kempe-compatibility-6ddea32/certificate.json": "149383e607f1b9c90c85592115b941600fa8ce2d54e8073b76c9f86bcd63d9ab",
+    "audits/2026-10-15-route-round2-6ddea32/COUNT_BRIDGE.md": "ce570f4349a39d528310d9130242025bd1976d5862ff25949888ea18cb8588dd",
+    "audits/2026-10-15-route-round2-6ddea32/check_counts.py": "b6ed14a5448364b6402efc295919cc2042719c397828e1be405ca5f23b7274e9",
+    "audits/2026-10-15-route-round2-6ddea32/count-certificate.json": "cd4054bfe48e34e98f1fed0f5eb64865fbdd4af2139f7a9bb516ebdc680c7478"
+  },
+  "checks": [
+    {
+      "name": "kempe-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-compatibility-6ddea32/check.py",
+        "--check"
+      ],
+      "seed": null,
+      "exit": 0,
+      "seconds": 2.034,
+      "stdout_sha256": "a5d65d6f7c568fd94de1405d779a9576872feffd6455dbfb400898fc29e8c426"
+    },
+    {
+      "name": "kempe-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-compatibility-6ddea32/check.py",
+        "--check"
+      ],
+      "seed": "17",
+      "exit": 0,
+      "seconds": 2.157,
+      "stdout_sha256": "a5d65d6f7c568fd94de1405d779a9576872feffd6455dbfb400898fc29e8c426"
+    },
+    {
+      "name": "count-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round2-6ddea32/check_counts.py",
+        "--check",
+        "audits/2026-10-15-route-round2-6ddea32/count-certificate.json"
+      ],
+      "seed": null,
+      "exit": 0,
+      "seconds": 0.184,
+      "stdout_sha256": "0b40e3442271202fca4f97c7fb72726eb78673420ef64e82eef6ca13bcb0c82c"
+    },
+    {
+      "name": "count-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round2-6ddea32/check_counts.py",
+        "--check",
+        "audits/2026-10-15-route-round2-6ddea32/count-certificate.json"
+      ],
+      "seed": "17",
+      "exit": 0,
+      "seconds": 0.185,
+      "stdout_sha256": "0b40e3442271202fca4f97c7fb72726eb78673420ef64e82eef6ca13bcb0c82c"
+    }
+  ],
+  "drift": 0
+}

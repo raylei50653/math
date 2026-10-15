@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "plan": {
+    "immutable_files": [
+      "audits/2026-10-15-route-round3-6ddea32/vertex-kempe-independent.json",
+      "audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py",
+      "audits/2026-10-15-six-pin-lifts-6ddea32/certificate.json"
+    ],
+    "cases": [
+      {
+        "name": "vertex-kempe-normal",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py",
+          "--check",
+          "audits/2026-10-15-route-round3-6ddea32/vertex-kempe-independent.json"
+        ],
+        "expected": "accept"
+      },
+      {
+        "name": "vertex-kempe-seed17",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py",
+          "--check",
+          "audits/2026-10-15-route-round3-6ddea32/vertex-kempe-independent.json"
+        ],
+        "expected": "accept",
+        "seed17": true
+      },
+      {
+        "name": "vertex-kempe-missing-move",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py",
+          "--check",
+          "audits/2026-10-15-route-round3-6ddea32/vertex-kempe-independent.corrupted.json"
+        ],
+        "expected": "reject"
+      }
+    ]
+  },
+  "receipts": [
+    {
+      "name": "vertex-kempe-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py",
+        "--check",
+        "audits/2026-10-15-route-round3-6ddea32/vertex-kempe-independent.json"
+      ],
+      "expected": "accept",
+      "exit_code": 0,
+      "seconds": 0.069,
+      "stdout": "{\"status\": \"PASS\", \"full_colourings\": 240, \"E_free_colourings\": 216, \"complete_moves\": 1296, \"all_triangles_facial\": true, \"all_degrees_five\": true, \"split_U_pin_degrees\": {\"p\": 5, \"q\": 5, \"s\": 4, \"t\": 2, \"v\": 5, \"w\": 5, \"z\": 6}, \"scope\": \"One explicit non-source control; closure under every ordinary vertex component switch.\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "vertex-kempe-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py",
+        "--check",
+        "audits/2026-10-15-route-round3-6ddea32/vertex-kempe-independent.json"
+      ],
+      "expected": "accept",
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 0.075,
+      "stdout": "{\"status\": \"PASS\", \"full_colourings\": 240, \"E_free_colourings\": 216, \"complete_moves\": 1296, \"all_triangles_facial\": true, \"all_degrees_five\": true, \"split_U_pin_degrees\": {\"p\": 5, \"q\": 5, \"s\": 4, \"t\": 2, \"v\": 5, \"w\": 5, \"z\": 6}, \"scope\": \"One explicit non-source control; closure under every ordinary vertex component switch.\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "vertex-kempe-missing-move",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py",
+        "--check",
+        "audits/2026-10-15-route-round3-6ddea32/vertex-kempe-independent.corrupted.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.07,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py\", line 91, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py\", line 85, in main\n    assert json.loads(args.check.read_text()) == json.loads(json.dumps(result)), 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    }
+  ],
+  "hashes_before": {
+    "audits/2026-10-15-route-round3-6ddea32/vertex-kempe-independent.json": "2aa1edea2b0f26e9e3bcee5e7446a634382131b457d7db51d339ad5589570a3a",
+    "audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py": "60b6c38667074f0ef6702d33246144b1a01a9bb46db8911d65a291cf495a6c69",
+    "audits/2026-10-15-six-pin-lifts-6ddea32/certificate.json": "ef94c994cccca96192f1b6781b456887ed2f83295df9b839d9c3d0a7a5dc2583"
+  },
+  "hashes_after": {
+    "audits/2026-10-15-route-round3-6ddea32/vertex-kempe-independent.json": "2aa1edea2b0f26e9e3bcee5e7446a634382131b457d7db51d339ad5589570a3a",
+    "audits/2026-10-15-route-round3-6ddea32/check_vertex_kempe.py": "60b6c38667074f0ef6702d33246144b1a01a9bb46db8911d65a291cf495a6c69",
+    "audits/2026-10-15-six-pin-lifts-6ddea32/certificate.json": "ef94c994cccca96192f1b6781b456887ed2f83295df9b839d9c3d0a7a5dc2583"
+  },
+  "input_drift": 0
+}

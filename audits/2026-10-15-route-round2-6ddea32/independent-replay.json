@@ -1,0 +1,177 @@
+{
+  "certificate_hashes_before": {
+    "audits/2026-10-15-oddness-descent-6ddea32": "40c4830f66ea4b9eeaa64fac735a35954420d205bfc610fa42b4d81cc47d98a8",
+    "audits/2026-10-15-six-pin-forcing-6ddea32": "489d86dccb7f72ca0a46624a59633924109df4234aaa642cb30f2841b973a08b",
+    "audits/2026-10-15-kempe-compatibility-6ddea32": "149383e607f1b9c90c85592115b941600fa8ce2d54e8073b76c9f86bcd63d9ab"
+  },
+  "certificate_hashes_after": {
+    "audits/2026-10-15-oddness-descent-6ddea32": "40c4830f66ea4b9eeaa64fac735a35954420d205bfc610fa42b4d81cc47d98a8",
+    "audits/2026-10-15-six-pin-forcing-6ddea32": "489d86dccb7f72ca0a46624a59633924109df4234aaa642cb30f2841b973a08b",
+    "audits/2026-10-15-kempe-compatibility-6ddea32": "149383e607f1b9c90c85592115b941600fa8ce2d54e8073b76c9f86bcd63d9ab"
+  },
+  "runs": [
+    {
+      "name": "oddness-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-oddness-descent-6ddea32/check_controls.py",
+        "--check",
+        "audits/2026-10-15-oddness-descent-6ddea32/certificate.json"
+      ],
+      "seed": "17",
+      "expected_success": true,
+      "exit_code": 0,
+      "seconds": 7.193,
+      "stdout": "{\"controls\": {\"dodecahedron_4sum\": {\"admissible_count\": 60, \"admissible_even_count\": 20, \"checked_surgeries\": 390, \"matching_count\": 365, \"single_cycle_exchange_edges\": 390, \"start_neighbours\": 12}, \"icosahedron_dual_transversal_control\": {\"admissible_count\": 10, \"admissible_even_count\": 8, \"checked_surgeries\": 35, \"matching_count\": 36, \"single_cycle_exchange_edges\": 35, \"start_neighbours\": 6}, \"tutte_graph\": {\"admissible_count\": 322, \"admissible_even_count\": 39, \"checked_surgeries\": 8864, \"matching_count\": 960, \"single_cycle_exchange_edges\": 8864, \"start_neighbours\": 37}}, \"input_drift\": 0, \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "oddness-omitted-neighbour",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-oddness-descent-6ddea32/check_controls.py",
+        "--check",
+        "audits/2026-10-15-oddness-descent-6ddea32/negative/omitted-neighbour.json"
+      ],
+      "seed": null,
+      "expected_success": false,
+      "exit_code": 1,
+      "seconds": 7.204,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-oddness-descent-6ddea32/check_controls.py\", line 268, in <module>\n    if __name__ == '__main__': main()\n                               ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-oddness-descent-6ddea32/check_controls.py\", line 265, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    {
+      "name": "oddness-broken-path",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-oddness-descent-6ddea32/check_controls.py",
+        "--check",
+        "audits/2026-10-15-oddness-descent-6ddea32/negative/broken-path.json"
+      ],
+      "seed": null,
+      "expected_success": false,
+      "exit_code": 1,
+      "seconds": 7.007,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-oddness-descent-6ddea32/check_controls.py\", line 268, in <module>\n    if __name__ == '__main__': main()\n                               ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-oddness-descent-6ddea32/check_controls.py\", line 265, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    {
+      "name": "six-pin-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py",
+        "--check"
+      ],
+      "seed": "17",
+      "expected_success": true,
+      "exit_code": 0,
+      "seconds": 0.465,
+      "stdout": "{\"event_rows\": 96, \"full_control_colourings\": [2880, 1920, 1920], \"full_control_event_colourings\": [192, 96, 96], \"input_drift\": 0, \"local_proper_rows\": 1440, \"mode\": \"read_only_check\", \"source_status\": \"not triggered\", \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "six-pin-missing-full-lift",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/logs/missing-full-lift.json"
+      ],
+      "seed": null,
+      "expected_success": false,
+      "exit_code": 1,
+      "seconds": 0.487,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py\", line 255, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py\", line 246, in main\n    assert read_json(args.certificate) == json.loads(json.dumps(expected)), \"certificate mismatch\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    {
+      "name": "six-pin-wrong-density",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/logs/wrong-density.json"
+      ],
+      "seed": null,
+      "expected_success": false,
+      "exit_code": 1,
+      "seconds": 0.491,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py\", line 255, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py\", line 246, in main\n    assert read_json(args.certificate) == json.loads(json.dumps(expected)), \"certificate mismatch\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    {
+      "name": "six-pin-missing-empty-fibre",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-15-six-pin-forcing-6ddea32/logs/missing-empty-fibre.json"
+      ],
+      "seed": null,
+      "expected_success": false,
+      "exit_code": 1,
+      "seconds": 0.499,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py\", line 255, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-six-pin-forcing-6ddea32/checks/check_forcing.py\", line 246, in main\n    assert read_json(args.certificate) == json.loads(json.dumps(expected)), \"certificate mismatch\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    {
+      "name": "kempe-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-compatibility-6ddea32/check.py",
+        "--check"
+      ],
+      "seed": "17",
+      "expected_success": true,
+      "exit_code": 0,
+      "seconds": 2.12,
+      "stdout": "{\"canonical_rows\": 22, \"outer_mask\": 319, \"states\": 720, \"status\": \"PASS finite abstract switch system; genuine source not triggered\", \"verified_laws\": {\"S4_partition_transports\": 51840, \"S4_switch_transports\": 153216, \"cube_composition_laws\": 202752, \"same_pairing_cube_targets\": 18816, \"whole_pair_global_swaps\": 4320}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "kempe-wrong-target",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-compatibility-6ddea32/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-15-kempe-compatibility-6ddea32/logs/wrong-target.json"
+      ],
+      "seed": null,
+      "expected_success": false,
+      "exit_code": 1,
+      "seconds": 1.945,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py\", line 219, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py\", line 216, in main\n    supplied=json.loads(a.certificate.read_text());verify_full_certificate_system(supplied['states'])\n                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py\", line 173, in verify_full_certificate_system\n    need(target['literal_row']==h.name(switch(rr,j,ps,mask)),'wrong literal switch target')\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py\", line 14, in need\n    if not ok:raise ValueError(msg)\n              ^^^^^^^^^^^^^^^^^^^^^\nValueError: wrong literal switch target\n"
+    },
+    {
+      "name": "kempe-missing-state",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-compatibility-6ddea32/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-15-kempe-compatibility-6ddea32/logs/missing-state.json"
+      ],
+      "seed": null,
+      "expected_success": false,
+      "exit_code": 1,
+      "seconds": 2.111,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py\", line 219, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py\", line 216, in main\n    supplied=json.loads(a.certificate.read_text());verify_full_certificate_system(supplied['states'])\n                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py\", line 171, in verify_full_certificate_system\n    need(t in byid,'missing cube target');target=byid[t]\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py\", line 14, in need\n    if not ok:raise ValueError(msg)\n              ^^^^^^^^^^^^^^^^^^^^^\nValueError: missing cube target\n"
+    }
+  ]
+}

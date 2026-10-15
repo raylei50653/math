@@ -1,0 +1,137 @@
+[
+  {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-15-oddness-descent-6ddea32/check_controls.py",
+      "--check",
+      "audits/2026-10-15-oddness-descent-6ddea32/certificate.json"
+    ],
+    "PYTHONHASHSEED": "17",
+    "exit_code": 0,
+    "expected": 0,
+    "seconds": 3.168,
+    "stdout": "{\"controls\": {\"dodecahedron_4sum\": {\"admissible_count\": 60, \"admissible_even_count\": 20, \"checked_surgeries\": 390, \"matching_count\": 365, \"single_cycle_exchange_edges\": 390, \"start_neighbours\": 12}, \"icosahedron_dual_transversal_control\": {\"admissible_count\": 10, \"admissible_even_count\": 8, \"checked_surgeries\": 35, \"matching_count\": 36, \"single_cycle_exchange_edges\": 35, \"start_neighbours\": 6}, \"tutte_graph\": {\"admissible_count\": 322, \"admissible_even_count\": 39, \"checked_surgeries\": 8864, \"matching_count\": 960, \"single_cycle_exchange_edges\": 8864, \"start_neighbours\": 37}}, \"input_drift\": 0, \"status\": \"PASS\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-15-oddness-descent-6ddea32/check_controls.py",
+      "--check",
+      "audits/2026-10-15-oddness-descent-6ddea32/negative/broken-path.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected": 1,
+    "seconds": 3.125,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-oddness-descent-6ddea32/check_controls.py\", line 268, in <module>\n    if __name__ == '__main__': main()\n                               ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-oddness-descent-6ddea32/check_controls.py\", line 265, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-15-oddness-descent-6ddea32/check_controls.py",
+      "--check",
+      "audits/2026-10-15-oddness-descent-6ddea32/negative/omitted-neighbour.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected": 1,
+    "seconds": 3.202,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-oddness-descent-6ddea32/check_controls.py\", line 268, in <module>\n    if __name__ == '__main__': main()\n                               ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-oddness-descent-6ddea32/check_controls.py\", line 265, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+      "--check",
+      "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json"
+    ],
+    "PYTHONHASHSEED": "17",
+    "exit_code": 0,
+    "expected": 0,
+    "seconds": 8.358,
+    "stdout": "{\"controls\": {\"dodecahedron_4sum_named_nonedge\": {\"all_pair_canonical_paths_checked\": 18721, \"direction_weights\": [120, 120], \"double_moves\": 964, \"matching_count\": 365, \"single_moves\": 5719, \"start_double_even\": 6, \"start_double_neighbours\": 7, \"start_single_even\": 26, \"start_single_neighbours\": 54, \"xor_even_states\": 83, \"xor_states\": 194}, \"dodecahedron_4sum_original\": {\"all_pair_canonical_paths_checked\": 5886, \"direction_weights\": [80, 80], \"double_moves\": 556, \"matching_count\": 365, \"single_moves\": 1962, \"start_double_even\": 5, \"start_double_neighbours\": 6, \"start_single_even\": 11, \"start_single_neighbours\": 26, \"xor_even_states\": 44, \"xor_states\": 109}, \"petersen_positive_oddness\": {\"all_pair_canonical_paths_checked\": 6, \"direction_weights\": [0, 0], \"double_moves\": 0, \"matching_count\": 6, \"single_moves\": 6, \"start_double_even\": 0, \"start_double_neighbours\": 0, \"start_single_even\": 0, \"start_single_neighbours\": 3, \"xor_even_states\": 0, \"xor_states\": 4}, \"tutte_xor_trap\": {\"all_pair_canonical_paths_checked\": 51681, \"direction_weights\": [144, 144], \"double_moves\": 9953, \"matching_count\": 960, \"single_moves\": 8864, \"start_double_even\": 2, \"start_double_neighbours\": 38, \"start_single_even\": 0, \"start_single_neighbours\": 37, \"xor_even_states\": 39, \"xor_states\": 322}}, \"input_drift\": 0, \"status\": \"PASS\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+      "--check",
+      "audits/2026-10-15-xor-batch-descent-6ddea32/negative/missing-batch.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected": 1,
+    "seconds": 8.073,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-xor-batch-descent-6ddea32/check.py\", line 385, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-xor-batch-descent-6ddea32/check.py\", line 379, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-15-xor-batch-descent-6ddea32/check.py",
+      "--check",
+      "audits/2026-10-15-xor-batch-descent-6ddea32/negative/wrong-joint-parity.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected": 1,
+    "seconds": 8.092,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-xor-batch-descent-6ddea32/check.py\", line 385, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-xor-batch-descent-6ddea32/check.py\", line 379, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+      "--check",
+      "audits/2026-10-15-three-edge-matchings-6ddea32/certificate.json"
+    ],
+    "PYTHONHASHSEED": "17",
+    "exit_code": 0,
+    "expected": 0,
+    "seconds": 0.736,
+    "stdout": "{\"controls\": {\"flipped_icosahedral_return\": {\"P101\": 2, \"P110\": 2, \"Q_n\": 20, \"W101\": 6, \"W110\": 8, \"all_PM\": 38, \"no_nontrivial_3cut\": true, \"tutte_subsets\": 131072}, \"icosahedral\": {\"P101\": 4, \"P110\": 1, \"Q_n\": 20, \"W101\": 6, \"W110\": 2, \"all_PM\": 36, \"no_nontrivial_3cut\": true, \"tutte_subsets\": 131072}, \"petersen_double_obstruction\": {\"P101\": 0, \"P110\": 0, \"Q_n\": 10, \"W101\": 0, \"W110\": 0, \"all_PM\": 6, \"no_nontrivial_3cut\": true, \"tutte_subsets\": 128}, \"stacked_E_empty\": {\"P101\": 1, \"P110\": 0, \"Q_n\": 12, \"W101\": 2, \"W110\": 0, \"all_PM\": 7, \"no_nontrivial_3cut\": false, \"tutte_subsets\": 512}}, \"input_drift\": 0, \"status\": \"PASS\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+      "--check",
+      "audits/2026-10-15-three-edge-matchings-6ddea32/negative/missing-barrier.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected": 1,
+    "seconds": 0.734,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-three-edge-matchings-6ddea32/check.py\", line 365, in <module>\n    if __name__ == '__main__': main()\n                               ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-three-edge-matchings-6ddea32/check.py\", line 360, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+      "--check",
+      "audits/2026-10-15-three-edge-matchings-6ddea32/negative/wrong-weight.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected": 1,
+    "seconds": 0.732,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-three-edge-matchings-6ddea32/check.py\", line 365, in <module>\n    if __name__ == '__main__': main()\n                               ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-three-edge-matchings-6ddea32/check.py\", line 360, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+  }
+]

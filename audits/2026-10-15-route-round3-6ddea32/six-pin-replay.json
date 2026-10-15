@@ -1,0 +1,149 @@
+{
+  "status": "PASS",
+  "plan": {
+    "immutable_files": [
+      "audits/2026-10-15-six-pin-lifts-6ddea32/certificate.json",
+      "audits/2026-10-15-six-pin-lifts-6ddea32/check.py",
+      "audits/2026-10-15-six-pin-lifts-6ddea32/INPUTS.json"
+    ],
+    "cases": [
+      {
+        "name": "normal",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-six-pin-lifts-6ddea32/check.py"
+        ],
+        "expected": "accept"
+      },
+      {
+        "name": "seed17",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-six-pin-lifts-6ddea32/check.py"
+        ],
+        "expected": "accept",
+        "seed17": true
+      },
+      {
+        "name": "missing-full-lift",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-six-pin-lifts-6ddea32/check.py",
+          "--certificate",
+          "audits/2026-10-15-six-pin-lifts-6ddea32/negative/missing-full-lift.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "missing-empty-fibre",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-six-pin-lifts-6ddea32/check.py",
+          "--certificate",
+          "audits/2026-10-15-six-pin-lifts-6ddea32/negative/missing-empty-fibre.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "wrong-return-side",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-six-pin-lifts-6ddea32/check.py",
+          "--certificate",
+          "audits/2026-10-15-six-pin-lifts-6ddea32/negative/wrong-return-side.json"
+        ],
+        "expected": "reject"
+      }
+    ]
+  },
+  "receipts": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/check.py"
+      ],
+      "expected": "accept",
+      "exit_code": 0,
+      "seconds": 0.22,
+      "stdout": "{\"abstract_cube_count\": 165, \"controls\": [{\"E_count\": 24, \"full_J_count\": 240, \"full_U_count\": 864, \"name\": \"icosahedral\", \"unsafe_state_pairs\": 0}, {\"E_count\": 96, \"full_J_count\": 288, \"full_U_count\": 960, \"name\": \"flipped_icosahedral_return\", \"unsafe_state_pairs\": 96}, {\"E_count\": 0, \"full_J_count\": 24, \"full_U_count\": 96, \"name\": \"stacked_E_empty\", \"unsafe_state_pairs\": 0}], \"genuine_source_status\": \"not triggered\", \"input_drift\": 0, \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/check.py"
+      ],
+      "expected": "accept",
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 0.221,
+      "stdout": "{\"abstract_cube_count\": 165, \"controls\": [{\"E_count\": 24, \"full_J_count\": 240, \"full_U_count\": 864, \"name\": \"icosahedral\", \"unsafe_state_pairs\": 0}, {\"E_count\": 96, \"full_J_count\": 288, \"full_U_count\": 960, \"name\": \"flipped_icosahedral_return\", \"unsafe_state_pairs\": 96}, {\"E_count\": 0, \"full_J_count\": 24, \"full_U_count\": 96, \"name\": \"stacked_E_empty\", \"unsafe_state_pairs\": 0}], \"genuine_source_status\": \"not triggered\", \"input_drift\": 0, \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "missing-full-lift",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/negative/missing-full-lift.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.229,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-six-pin-lifts-6ddea32/check.py\", line 340, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-six-pin-lifts-6ddea32/check.py\", line 332, in main\n    assert json.loads(args.certificate.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    {
+      "name": "missing-empty-fibre",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/negative/missing-empty-fibre.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.225,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-six-pin-lifts-6ddea32/check.py\", line 340, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-six-pin-lifts-6ddea32/check.py\", line 332, in main\n    assert json.loads(args.certificate.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    {
+      "name": "wrong-return-side",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-six-pin-lifts-6ddea32/negative/wrong-return-side.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.242,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-six-pin-lifts-6ddea32/check.py\", line 340, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-six-pin-lifts-6ddea32/check.py\", line 332, in main\n    assert json.loads(args.certificate.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    }
+  ],
+  "hashes_before": {
+    "audits/2026-10-15-six-pin-lifts-6ddea32/certificate.json": "ef94c994cccca96192f1b6781b456887ed2f83295df9b839d9c3d0a7a5dc2583",
+    "audits/2026-10-15-six-pin-lifts-6ddea32/check.py": "fd6f6a22f9c3c23e6ab17a2d11072951036cf4f30399d5968a01579ff5bbbbd4",
+    "audits/2026-10-15-six-pin-lifts-6ddea32/INPUTS.json": "7833817ae098020b6ad2989e99cbf24632eb3b54aa4d6974bfe3f601ed665b3a"
+  },
+  "hashes_after": {
+    "audits/2026-10-15-six-pin-lifts-6ddea32/certificate.json": "ef94c994cccca96192f1b6781b456887ed2f83295df9b839d9c3d0a7a5dc2583",
+    "audits/2026-10-15-six-pin-lifts-6ddea32/check.py": "fd6f6a22f9c3c23e6ab17a2d11072951036cf4f30399d5968a01579ff5bbbbd4",
+    "audits/2026-10-15-six-pin-lifts-6ddea32/INPUTS.json": "7833817ae098020b6ad2989e99cbf24632eb3b54aa4d6974bfe3f601ed665b3a"
+  },
+  "input_drift": 0
+}

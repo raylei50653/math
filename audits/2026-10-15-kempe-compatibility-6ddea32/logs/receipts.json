@@ -1,0 +1,77 @@
+{
+  "certificate_sha256_before": "149383e607f1b9c90c85592115b941600fa8ce2d54e8073b76c9f86bcd63d9ab",
+  "certificate_sha256_after": "149383e607f1b9c90c85592115b941600fa8ce2d54e8073b76c9f86bcd63d9ab",
+  "runs": [
+    {
+      "name": "normal",
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py",
+        "--check"
+      ],
+      "extra_environment": {},
+      "returncode": 0,
+      "expected_success": true,
+      "seconds": 2.144
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py",
+        "--check"
+      ],
+      "extra_environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "returncode": 0,
+      "expected_success": true,
+      "seconds": 2.078
+    },
+    {
+      "name": "wrong-target",
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/logs/wrong-target.json"
+      ],
+      "extra_environment": {},
+      "returncode": 1,
+      "expected_success": false,
+      "seconds": 1.944
+    },
+    {
+      "name": "missing-state",
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/logs/missing-state.json"
+      ],
+      "extra_environment": {},
+      "returncode": 1,
+      "expected_success": false,
+      "seconds": 2.034
+    },
+    {
+      "name": "exclusive-create",
+      "command": [
+        "/usr/sbin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-15-kempe-compatibility-6ddea32/check.py",
+        "--write"
+      ],
+      "extra_environment": {},
+      "returncode": 1,
+      "expected_success": false,
+      "seconds": 1.982
+    }
+  ]
+}

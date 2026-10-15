@@ -1,0 +1,70 @@
+{
+  "base": "6ddea32a81349821ad3724ae1652bddb9c6a7b04",
+  "certificate_sha256_before": "9e8337df9ba565e4dd5c69b34b25d8fab2cbc41b01cac02e8e893ec35d52b93b",
+  "certificate_sha256_after": "9e8337df9ba565e4dd5c69b34b25d8fab2cbc41b01cac02e8e893ec35d52b93b",
+  "certificate_unchanged": true,
+  "runs": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-15-f4-relation-6ddea32/checks/check_relation.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "expected_success": true,
+      "seconds": 1.371,
+      "stdout_sha256": "b6896fccad538b06025c7932dca5a0a9c335bfacfc843111e8b50b5eb40527d2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-15-f4-relation-6ddea32/checks/check_relation.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": 17,
+      "exit_code": 0,
+      "expected_success": true,
+      "seconds": 1.293,
+      "stdout_sha256": "b6896fccad538b06025c7932dca5a0a9c335bfacfc843111e8b50b5eb40527d2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "corrupt-rejected",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-15-f4-relation-6ddea32/checks/check_relation.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-15-f4-relation-6ddea32/logs/certificate-corrupt.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 1,
+      "expected_success": false,
+      "seconds": 1.316,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "c79ed1f0c6167389b20630f015feb0b2177139c043c2d2388ffddf1a78ea0d0a"
+    },
+    {
+      "name": "exclusive-create-rejected",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-15-f4-relation-6ddea32/checks/check_relation.py",
+        "--generate"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 1,
+      "expected_success": false,
+      "seconds": 1.324,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "5d8a0a344a72d195659a49ef00550ea4307677bae9ea513fee65c27e8304719c"
+    }
+  ]
+}
