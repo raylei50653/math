@@ -1,0 +1,96 @@
+{
+  "immutable_files": [
+    "audits/2026-10-15-j-source-geometry-6ddea32/check.py",
+    "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py",
+    "audits/2026-10-15-j-source-geometry-6ddea32/certificate.json",
+    "audits/2026-10-15-j-source-geometry-6ddea32/two-palette.json.gz",
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-full-lift.json",
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-empty-fibre.json",
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-source-palette.json",
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-hub-return.json.gz"
+  ],
+  "cases": [
+    {
+      "name": "check.py-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check.py"
+      ],
+      "expected": "accept"
+    },
+    {
+      "name": "check.py-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check.py"
+      ],
+      "expected": "accept",
+      "seed17": true
+    },
+    {
+      "name": "check_two_palette.py-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py"
+      ],
+      "expected": "accept"
+    },
+    {
+      "name": "check_two_palette.py-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py"
+      ],
+      "expected": "accept",
+      "seed17": true
+    },
+    {
+      "name": "missing-full-lift",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-full-lift.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "missing-empty-fibre",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-empty-fibre.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "wrong-source-palette",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-source-palette.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "wrong-hub-return",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py",
+        "--certificate",
+        "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-hub-return.json.gz"
+      ],
+      "expected": "reject"
+    }
+  ]
+}

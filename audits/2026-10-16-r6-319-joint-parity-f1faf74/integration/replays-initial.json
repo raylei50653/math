@@ -1,0 +1,105 @@
+[
+  {
+    "name": "A-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/A/check.py"
+    ],
+    "seed": null,
+    "exit_code": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "name": "A-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/A/check.py"
+    ],
+    "seed": 17,
+    "exit_code": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "name": "B-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py",
+      "--check",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/certificate.json"
+    ],
+    "seed": null,
+    "exit_code": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "name": "B-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py",
+      "--check",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/certificate.json"
+    ],
+    "seed": 17,
+    "exit_code": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "name": "root-control-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/integration/independent_control.py"
+    ],
+    "seed": null,
+    "exit_code": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "name": "root-control-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/integration/independent_control.py"
+    ],
+    "seed": 17,
+    "exit_code": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "name": "root-corrupt",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/integration/independent_control.py",
+      "--certificate",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/integration/invented-even-joint.json"
+    ],
+    "seed": null,
+    "exit_code": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "name": "root-exclusive",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/integration/independent_control.py",
+      "--write"
+    ],
+    "seed": null,
+    "exit_code": 1,
+    "expected": 1,
+    "passed": true
+  }
+]

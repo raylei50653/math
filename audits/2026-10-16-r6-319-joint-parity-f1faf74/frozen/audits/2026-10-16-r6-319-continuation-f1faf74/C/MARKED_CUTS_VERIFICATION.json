@@ -1,0 +1,59 @@
+{
+  "active_certificate": "marked-cuts-certificate.json",
+  "sha256": "9b5c10492a7b86da455e8771a33a7737c02625ff1a377cb4356e82c4d6b4bccf",
+  "source_trigger": "not triggered",
+  "unchanged_after_exclusive_rejection": true,
+  "checks": [
+    {
+      "name": "marked-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/C/check_marked_cuts.py"
+      ],
+      "hash_seed": null,
+      "returncode": 0,
+      "expected_returncode": 0,
+      "pass_": true
+    },
+    {
+      "name": "marked-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/C/check_marked_cuts.py"
+      ],
+      "hash_seed": "17",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "pass_": true
+    },
+    {
+      "name": "marked-negative-j-chord",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/C/check_marked_cuts.py",
+        "--certificate",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/C/negative-marked-j-chord.json"
+      ],
+      "hash_seed": null,
+      "returncode": 1,
+      "expected_returncode": 1,
+      "pass_": true
+    },
+    {
+      "name": "marked-exclusive-create",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/C/check_marked_cuts.py",
+        "--write"
+      ],
+      "hash_seed": null,
+      "returncode": 1,
+      "expected_returncode": 1,
+      "pass_": true
+    }
+  ]
+}

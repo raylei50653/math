@@ -1,0 +1,85 @@
+{
+  "checks": [
+    {
+      "name": "marked-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/C/check_marked_cuts.py"
+      ],
+      "hash_seed": null,
+      "exit_code": 0,
+      "stdout": "PASS: 5 unbounded degree classes, 10 oriented core cases; e/f 16 and e/g 10 admissible local graphs; source not triggered\n",
+      "stderr": ""
+    },
+    {
+      "name": "marked-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/C/check_marked_cuts.py"
+      ],
+      "hash_seed": 17,
+      "exit_code": 0,
+      "stdout": "PASS: 5 unbounded degree classes, 10 oriented core cases; e/f 16 and e/g 10 admissible local graphs; source not triggered\n",
+      "stderr": ""
+    },
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "hash_seed": null,
+      "exit_code": 0,
+      "stdout": "OK: 691 Markdown files, 9089 local links; anchors, index, handoff, guide progress checked\n",
+      "stderr": ""
+    },
+    {
+      "name": "formal-docgraph",
+      "command": [
+        "uv",
+        "run",
+        "--with",
+        "networkx==3.5",
+        "python",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "hash_seed": null,
+      "exit_code": 0,
+      "stdout": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n",
+      "stderr": ""
+    },
+    {
+      "name": "whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "hash_seed": null,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "lake_build": {
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit_code": 0,
+    "jobs": 8832,
+    "evidence": "completed exec session 15052; existing AttachmentOrder/SymRelabel linter warnings",
+    "new_Lean_theorems": false
+  },
+  "whole_tree_docgraph": "not run; formal docs scope reported separately",
+  "initial_errors_retained": [
+    "initial-doc-check.txt",
+    "root-replays/formal-docgraph.stderr"
+  ],
+  "docgraph_entrypoint_correction": "python -m tools.docgraph fails because its directory entrypoint imports top-level docgraph; actual supported command is python tools/docgraph"
+}

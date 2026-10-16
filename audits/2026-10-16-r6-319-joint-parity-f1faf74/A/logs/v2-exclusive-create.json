@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/A/check.py",
+    "--write"
+  ],
+  "env": {},
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/A/check.py\", line 239, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/A/check.py\", line 230, in main\n    with args.certificate.open('x') as handle:\n         ~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/A/certificate-v2.json'\n",
+  "expected_returncode": 1
+}

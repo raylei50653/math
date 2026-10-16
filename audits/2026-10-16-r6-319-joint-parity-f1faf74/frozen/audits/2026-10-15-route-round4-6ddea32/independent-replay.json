@@ -1,0 +1,243 @@
+{
+  "status": "PASS",
+  "plan": {
+    "immutable_files": [
+      "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+      "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py",
+      "audits/2026-10-15-route-round4-6ddea32/check_original_table.py",
+      "audits/2026-10-15-route-round4-6ddea32/full-j-certificate.json",
+      "audits/2026-10-15-route-round4-6ddea32/full-j-corrupted.json",
+      "audits/2026-10-15-route-round4-6ddea32/cover-graph-independent.json",
+      "audits/2026-10-15-route-round4-6ddea32/cover-graph-corrupted.json"
+    ],
+    "cases": [
+      {
+        "name": "check_full_j.py-normal",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+          "--check",
+          "audits/2026-10-15-route-round4-6ddea32/full-j-certificate.json"
+        ],
+        "expected": "accept"
+      },
+      {
+        "name": "check_full_j.py-seed17",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+          "--check",
+          "audits/2026-10-15-route-round4-6ddea32/full-j-certificate.json"
+        ],
+        "expected": "accept",
+        "seed17": true
+      },
+      {
+        "name": "check_full_j.py-corrupt",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+          "--check",
+          "audits/2026-10-15-route-round4-6ddea32/full-j-corrupted.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "check_cover_graph.py-normal",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py",
+          "--check",
+          "audits/2026-10-15-route-round4-6ddea32/cover-graph-independent.json"
+        ],
+        "expected": "accept"
+      },
+      {
+        "name": "check_cover_graph.py-seed17",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py",
+          "--check",
+          "audits/2026-10-15-route-round4-6ddea32/cover-graph-independent.json"
+        ],
+        "expected": "accept",
+        "seed17": true
+      },
+      {
+        "name": "check_cover_graph.py-corrupt",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py",
+          "--check",
+          "audits/2026-10-15-route-round4-6ddea32/cover-graph-corrupted.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "original-table-normal",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round4-6ddea32/check_original_table.py"
+        ],
+        "expected": "accept"
+      },
+      {
+        "name": "original-table-seed17",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-route-round4-6ddea32/check_original_table.py"
+        ],
+        "expected": "accept",
+        "seed17": true
+      }
+    ]
+  },
+  "receipts": [
+    {
+      "name": "check_full_j.py-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/full-j-certificate.json"
+      ],
+      "expected": "accept",
+      "exit_code": 0,
+      "seconds": 0.07,
+      "stdout": "{\"status\": \"PASS\", \"proper_rows\": 432, \"allowed_rows\": 240, \"E_rows\": 96, \"additional_bad_rows\": 96, \"combined_cubes\": 117, \"controls\": {\"icosahedral\": {\"source_allowed\": 144, \"E\": 24, \"additional_bad_event\": 72}, \"flipped_icosahedral_return\": {\"source_allowed\": 120, \"E\": 96, \"additional_bad_event\": 72}, \"stacked_E_empty\": {\"source_allowed\": 0, \"E\": 0, \"additional_bad_event\": 24}}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "check_full_j.py-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/full-j-certificate.json"
+      ],
+      "expected": "accept",
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 0.078,
+      "stdout": "{\"status\": \"PASS\", \"proper_rows\": 432, \"allowed_rows\": 240, \"E_rows\": 96, \"additional_bad_rows\": 96, \"combined_cubes\": 117, \"controls\": {\"icosahedral\": {\"source_allowed\": 144, \"E\": 24, \"additional_bad_event\": 72}, \"flipped_icosahedral_return\": {\"source_allowed\": 120, \"E\": 96, \"additional_bad_event\": 72}, \"stacked_E_empty\": {\"source_allowed\": 0, \"E\": 0, \"additional_bad_event\": 24}}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "check_full_j.py-corrupt",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/full-j-corrupted.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.07,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round4-6ddea32/check_full_j.py\", line 143, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round4-6ddea32/check_full_j.py\", line 136, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    {
+      "name": "check_cover_graph.py-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/cover-graph-independent.json"
+      ],
+      "expected": "accept",
+      "exit_code": 0,
+      "seconds": 0.338,
+      "stdout": "{\"status\": \"PASS\", \"scope\": \"Complete original-edge Layer0 graph; no planar or full720 claim.\", \"vertices\": 121, \"edges\": 711, \"pins\": [0, 16, 7, 60, 71, 63, 64], \"distinct_named_pins\": 7, \"base_states\": 432, \"sheets_per_state\": 2, \"full_colourings\": 864, \"dsatur_nodes\": 2834, \"component_checks\": 8160, \"single_component_switch_checks\": 8160, \"whole_cube_checks\": 26112, \"hidden_components\": 0, \"nonplanarity\": {\"edges\": 711, \"planar_upper_bound\": 357}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "check_cover_graph.py-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/cover-graph-independent.json"
+      ],
+      "expected": "accept",
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 0.344,
+      "stdout": "{\"status\": \"PASS\", \"scope\": \"Complete original-edge Layer0 graph; no planar or full720 claim.\", \"vertices\": 121, \"edges\": 711, \"pins\": [0, 16, 7, 60, 71, 63, 64], \"distinct_named_pins\": 7, \"base_states\": 432, \"sheets_per_state\": 2, \"full_colourings\": 864, \"dsatur_nodes\": 2834, \"component_checks\": 8160, \"single_component_switch_checks\": 8160, \"whole_cube_checks\": 26112, \"hidden_components\": 0, \"nonplanarity\": {\"edges\": 711, \"planar_upper_bound\": 357}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "check_cover_graph.py-corrupt",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/cover-graph-corrupted.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.35,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py\", line 145, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py\", line 140, in main\n    assert json.loads(args.check.read_text()) == result, 'independent certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: independent certificate mismatch\n"
+    },
+    {
+      "name": "original-table-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_original_table.py"
+      ],
+      "expected": "accept",
+      "exit_code": 0,
+      "seconds": 0.028,
+      "stdout": "{\"allowed\": 240, \"by_original_frame\": {\"ABACB\": {\"allowed\": 96, \"proper\": 144}, \"ABCAB\": {\"allowed\": 96, \"proper\": 144}, \"ABCDB\": {\"allowed\": 48, \"proper\": 144}}, \"literal_rows_checked\": 432, \"new_certificate_sha256\": \"8b6b547b4a602bb8df3bdc0e2ccd3aff74fe3206ddbbaf338a818c3caa757095\", \"original_path\": \"audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/transfer.json\", \"original_sha256\": \"cf7b64805d9a8b1e6a0e264673a338f4c05ae2c6507229f14e20c3699cca8747\", \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "original-table-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_original_table.py"
+      ],
+      "expected": "accept",
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 0.024,
+      "stdout": "{\"allowed\": 240, \"by_original_frame\": {\"ABACB\": {\"allowed\": 96, \"proper\": 144}, \"ABCAB\": {\"allowed\": 96, \"proper\": 144}, \"ABCDB\": {\"allowed\": 48, \"proper\": 144}}, \"literal_rows_checked\": 432, \"new_certificate_sha256\": \"8b6b547b4a602bb8df3bdc0e2ccd3aff74fe3206ddbbaf338a818c3caa757095\", \"original_path\": \"audits/2026-10-14-c4-c5-recursion-fdd3e22/degree4/transfer.json\", \"original_sha256\": \"cf7b64805d9a8b1e6a0e264673a338f4c05ae2c6507229f14e20c3699cca8747\", \"status\": \"PASS\"}\n",
+      "stderr": ""
+    }
+  ],
+  "hashes_before": {
+    "audits/2026-10-15-route-round4-6ddea32/check_full_j.py": "c0917320b8b145c0f40a29ecb570bad8f203975d0cf677c317f534f1963e5073",
+    "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py": "09bf5d019c652acd14c87244f25f693aa5ff8ba8f2192603b8bb101b8859c63b",
+    "audits/2026-10-15-route-round4-6ddea32/check_original_table.py": "17361f7a7a3d7e9f4c8301cd124c10d878ee751ec480a1d964575d3dfec95b2a",
+    "audits/2026-10-15-route-round4-6ddea32/full-j-certificate.json": "8b6b547b4a602bb8df3bdc0e2ccd3aff74fe3206ddbbaf338a818c3caa757095",
+    "audits/2026-10-15-route-round4-6ddea32/full-j-corrupted.json": "77a704011039553ca45a85b151a659d90b7e6db0028afb74386122badc25815d",
+    "audits/2026-10-15-route-round4-6ddea32/cover-graph-independent.json": "c3b43bed6f820c438af5366201e906315315006b7026f4417ce041c915765e87",
+    "audits/2026-10-15-route-round4-6ddea32/cover-graph-corrupted.json": "3bb72d5095b982e9cac670dd24df0276cd0c301af05243f300b4c0fe59f62dd3"
+  },
+  "hashes_after": {
+    "audits/2026-10-15-route-round4-6ddea32/check_full_j.py": "c0917320b8b145c0f40a29ecb570bad8f203975d0cf677c317f534f1963e5073",
+    "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py": "09bf5d019c652acd14c87244f25f693aa5ff8ba8f2192603b8bb101b8859c63b",
+    "audits/2026-10-15-route-round4-6ddea32/check_original_table.py": "17361f7a7a3d7e9f4c8301cd124c10d878ee751ec480a1d964575d3dfec95b2a",
+    "audits/2026-10-15-route-round4-6ddea32/full-j-certificate.json": "8b6b547b4a602bb8df3bdc0e2ccd3aff74fe3206ddbbaf338a818c3caa757095",
+    "audits/2026-10-15-route-round4-6ddea32/full-j-corrupted.json": "77a704011039553ca45a85b151a659d90b7e6db0028afb74386122badc25815d",
+    "audits/2026-10-15-route-round4-6ddea32/cover-graph-independent.json": "c3b43bed6f820c438af5366201e906315315006b7026f4417ce041c915765e87",
+    "audits/2026-10-15-route-round4-6ddea32/cover-graph-corrupted.json": "3bb72d5095b982e9cac670dd24df0276cd0c301af05243f300b4c0fe59f62dd3"
+  },
+  "input_drift": 0
+}

@@ -1,0 +1,100 @@
+{
+  "immutable_files": [
+    "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+    "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py",
+    "audits/2026-10-15-route-round4-6ddea32/check_original_table.py",
+    "audits/2026-10-15-route-round4-6ddea32/full-j-certificate.json",
+    "audits/2026-10-15-route-round4-6ddea32/full-j-corrupted.json",
+    "audits/2026-10-15-route-round4-6ddea32/cover-graph-independent.json",
+    "audits/2026-10-15-route-round4-6ddea32/cover-graph-corrupted.json"
+  ],
+  "cases": [
+    {
+      "name": "check_full_j.py-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/full-j-certificate.json"
+      ],
+      "expected": "accept"
+    },
+    {
+      "name": "check_full_j.py-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/full-j-certificate.json"
+      ],
+      "expected": "accept",
+      "seed17": true
+    },
+    {
+      "name": "check_full_j.py-corrupt",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/full-j-corrupted.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "check_cover_graph.py-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/cover-graph-independent.json"
+      ],
+      "expected": "accept"
+    },
+    {
+      "name": "check_cover_graph.py-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/cover-graph-independent.json"
+      ],
+      "expected": "accept",
+      "seed17": true
+    },
+    {
+      "name": "check_cover_graph.py-corrupt",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_cover_graph.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/cover-graph-corrupted.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "original-table-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_original_table.py"
+      ],
+      "expected": "accept"
+    },
+    {
+      "name": "original-table-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_original_table.py"
+      ],
+      "expected": "accept",
+      "seed17": true
+    }
+  ]
+}

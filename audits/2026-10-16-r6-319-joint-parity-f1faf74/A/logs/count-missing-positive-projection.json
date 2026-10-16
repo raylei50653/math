@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/A/count_cone.py",
+    "--certificate",
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/A/negative/count-missing-positive-projection.json"
+  ],
+  "environment": {},
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/A/count_cone.py\", line 206, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/A/count_cone.py\", line 196, in main\n    verify(certificate,model)\n    ~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/A/count_cone.py\", line 126, in verify\n    assert cert['positivity_obligations']==[[p,b,list(indices)] for p,b,indices in positivity]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "expected_returncode": 1
+}

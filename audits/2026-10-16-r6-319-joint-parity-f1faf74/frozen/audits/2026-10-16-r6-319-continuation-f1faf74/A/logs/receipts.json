@@ -1,0 +1,63 @@
+{
+  "checks": [
+    {
+      "label": "normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/A/check.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "normal.stdout",
+      "stderr": "normal.stderr"
+    },
+    {
+      "label": "seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/A/check.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": 17,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "seed17.stdout",
+      "stderr": "seed17.stderr"
+    },
+    {
+      "label": "negative-corrupt-full-r-fibre",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/A/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/A/logs/corrupt-certificate.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "negative-corrupt-full-r-fibre.stdout",
+      "stderr": "negative-corrupt-full-r-fibre.stderr"
+    },
+    {
+      "label": "exclusive-create-reject",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/A/check.py"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "exclusive-create-reject.stdout",
+      "stderr": "exclusive-create-reject.stderr"
+    }
+  ],
+  "sealed_certificate_sha256": "4053466f1cfa876c44a188d35c4836dc5d76e1e38ee70a51de75a4a948b4ffaa",
+  "all_passed": true
+}

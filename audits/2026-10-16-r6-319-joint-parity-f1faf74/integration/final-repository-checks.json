@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "returncode": 0,
+      "stdout": "OK: 691 Markdown files, 9094 local links; anchors, index, handoff, guide progress checked\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--with",
+        "networkx==3.5",
+        "python",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "returncode": 0,
+      "stdout": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/integration/check_bundle.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"allowed_routing_drift\": [\"docs/STATUS.md\", \"docs/c5_c4_triangle_core.md\", \"docs/c5_kempe_guide.md\"], \"frozen_inputs\": 228, \"head\": \"f1faf743833c51ddc5efbe9e0f390b87b9f2311d\", \"mathematical_input_drift\": 0, \"sealed_outputs\": 174, \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "returncode": 0,
+      "stdout": "f1faf743833c51ddc5efbe9e0f390b87b9f2311d\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "returncode": 0,
+      "stdout": "## main...origin/main\n M docs/STATUS.md\n M docs/c5_c4_triangle_core.md\n M docs/c5_kempe_guide.md\n?? audits/2026-10-16-r6-319-continuation-f1faf74/\n?? audits/2026-10-16-r6-319-joint-parity-f1faf74/\n",
+      "stderr": ""
+    }
+  ],
+  "initial_document_check": {
+    "returncode": 1,
+    "error": "docs/c5_kempe_guide.md: 近期里程碑 must contain 3–5 entries",
+    "resolution": "Moved the oldest sixth milestone into the detailed project-status index; preserved both source links."
+  },
+  "lean": {
+    "command": "lake build",
+    "returncode": 0,
+    "jobs": 8832,
+    "evidence": "Completed tool execution in this turn before this receipt; existing AttachmentOrder and SymRelabel linter warnings.",
+    "new_formalization": false
+  },
+  "routing_sha256": {
+    "docs/STATUS.md": "5947b9ffbacde75fbb952b368e646875fe761450f09507489d46c779e3a7254c",
+    "docs/c5_kempe_guide.md": "15c1ce5def18b645a623ffd20a2bb98f72af78d835e1ca7e7ba76e5e1d6bde0f",
+    "docs/c5_c4_triangle_core.md": "d1ab031de0bcf826d713c95bc814ff3066b78b2a9989c33079b5e2d5db2555a2"
+  },
+  "scope": "Formal-doc-scoped DocGraph only. git diff --check covers tracked changes. No commit or push."
+}

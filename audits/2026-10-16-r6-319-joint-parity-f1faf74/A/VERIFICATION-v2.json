@@ -1,0 +1,45 @@
+{
+  "active_certificate": "certificate-v2.json",
+  "active_checker": "check.py",
+  "historical": "certificate.json and check-initial.py retain the first-generation certificate and checker bytes.",
+  "runs": [
+    {
+      "name": "normal",
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "seed17",
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "exclusive-create",
+      "returncode": 1,
+      "passed": true
+    },
+    {
+      "name": "missing-empty-slot",
+      "returncode": 1,
+      "passed": true
+    },
+    {
+      "name": "missing-whole-cube-member",
+      "returncode": 1,
+      "passed": true
+    },
+    {
+      "name": "invented-second-z-lift",
+      "returncode": 1,
+      "passed": true
+    },
+    {
+      "name": "missing-mixed-link-condition",
+      "returncode": 1,
+      "passed": true
+    }
+  ],
+  "exclusive_create_preserved_sha256": "efc33774c90382afc4f1aa8fa34119d3e5817da294613b61e02873354f48e110",
+  "source_coverage": "not triggered",
+  "scope": "full local r fibres, complementary component cubes, singleton and mixed-link algebra; paper proof supplies arbitrary-size source authority"
+}

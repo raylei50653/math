@@ -1,0 +1,54 @@
+{
+  "checks": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/integration/independent_interface.py",
+        "--check",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/integration/independent-interface.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/integration/independent_interface.py",
+        "--check",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/integration/independent-interface.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/integration/independent_interface.py",
+        "--check",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/integration/wrong-independent-interface.json"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "name": "exclusive-create",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/integration/independent_interface.py",
+        "--write",
+        "audits/2026-10-16-r6-319-continuation-f1faf74/integration/independent-interface.json"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1
+    }
+  ],
+  "frozen_inputs": 21,
+  "frozen_and_live_drift": []
+}

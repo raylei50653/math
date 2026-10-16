@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/A/check.py",
+    "--certificate",
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/A/negative/v2-missing-whole-cube-member.json"
+  ],
+  "env": {},
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/A/check.py\", line 239, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/A/check.py\", line 233, in main\n    need(json.loads(args.certificate.read_text()) == json.loads(json.dumps(result)),\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n         'certificate mismatch: complete fibres/cubes or proof binding changed')\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/A/check.py\", line 26, in need\n    raise ValueError(message)\nValueError: certificate mismatch: complete fibres/cubes or proof binding changed\n",
+  "expected_returncode": 1
+}

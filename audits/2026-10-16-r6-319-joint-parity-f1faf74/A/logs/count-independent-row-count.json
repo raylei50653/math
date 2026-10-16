@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/A/count_cone.py",
+    "--certificate",
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/A/negative/count-independent-row-count.json"
+  ],
+  "environment": {},
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/A/count_cone.py\", line 206, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/A/count_cone.py\", line 196, in main\n    verify(certificate,model)\n    ~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/A/count_cone.py\", line 124, in verify\n    assert all(value==n[classes[i]] for i,value in enumerate(reconstructed)), family\n           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 0\n",
+  "expected_returncode": 1
+}

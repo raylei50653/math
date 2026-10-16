@@ -1,0 +1,37 @@
+{
+  "runs": [
+    {
+      "name": "normal",
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "seed17",
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "missing-empty-slot",
+      "returncode": 1,
+      "passed": true
+    },
+    {
+      "name": "missing-whole-cube-member",
+      "returncode": 1,
+      "passed": true
+    },
+    {
+      "name": "invented-second-z-lift",
+      "returncode": 1,
+      "passed": true
+    },
+    {
+      "name": "missing-mixed-link-condition",
+      "returncode": 1,
+      "passed": true
+    }
+  ],
+  "initial_negative_correction": "The first invented-second-z-lift mutation accidentally rewrote an already invalid row to its existing [0,3] value; retained as logs/initial-ineffective-negative.json. Corrected mutation selects an actual singleton [0] and inserts 3.",
+  "source_coverage": "not triggered",
+  "scope": "full local r fibres, complementary component cubes, singleton and mixed-link algebra; paper proof supplies arbitrary-size source authority"
+}

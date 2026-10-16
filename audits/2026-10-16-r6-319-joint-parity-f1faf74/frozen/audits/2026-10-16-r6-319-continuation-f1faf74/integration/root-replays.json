@@ -1,0 +1,124 @@
+[
+  {
+    "name": "A-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-continuation-f1faf74/A/check.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "stdout": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/A-normal.stdout",
+    "stderr": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/A-normal.stderr"
+  },
+  {
+    "name": "A-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-continuation-f1faf74/A/check.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": 17,
+    "exit_code": 0,
+    "stdout": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/A-seed17.stdout",
+    "stderr": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/A-seed17.stderr"
+  },
+  {
+    "name": "B-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-continuation-f1faf74/B/verify.py",
+      "--check",
+      "audits/2026-10-16-r6-319-continuation-f1faf74/B/certificate.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "stdout": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/B-normal.stdout",
+    "stderr": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/B-normal.stderr"
+  },
+  {
+    "name": "B-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-continuation-f1faf74/B/verify.py",
+      "--check",
+      "audits/2026-10-16-r6-319-continuation-f1faf74/B/certificate.json",
+      "--seed",
+      "17"
+    ],
+    "PYTHONHASHSEED": 17,
+    "exit_code": 0,
+    "stdout": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/B-seed17.stdout",
+    "stderr": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/B-seed17.stderr"
+  },
+  {
+    "name": "C-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-continuation-f1faf74/C/check.py",
+      "--certificate",
+      "audits/2026-10-16-r6-319-continuation-f1faf74/C/certificate-v2.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "stdout": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/C-normal.stdout",
+    "stderr": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/C-normal.stderr"
+  },
+  {
+    "name": "C-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-continuation-f1faf74/C/check.py",
+      "--certificate",
+      "audits/2026-10-16-r6-319-continuation-f1faf74/C/certificate-v2.json"
+    ],
+    "PYTHONHASHSEED": 17,
+    "exit_code": 0,
+    "stdout": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/C-seed17.stdout",
+    "stderr": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/C-seed17.stderr"
+  },
+  {
+    "name": "docs",
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "stdout": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/docs.stdout",
+    "stderr": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/docs.stderr"
+  },
+  {
+    "name": "formal-docgraph",
+    "command": [
+      "python3",
+      "-m",
+      "tools.docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "stdout": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/formal-docgraph.stdout",
+    "stderr": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/formal-docgraph.stderr"
+  },
+  {
+    "name": "tracked-whitespace",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "stdout": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/tracked-whitespace.stdout",
+    "stderr": "audits/2026-10-16-r6-319-continuation-f1faf74/integration/root-replays/tracked-whitespace.stderr"
+  }
+]

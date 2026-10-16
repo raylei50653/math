@@ -1,0 +1,94 @@
+[
+  {
+    "name": "C-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/C/check.py"
+    ],
+    "seed": null,
+    "exit_code": 0,
+    "passed": true
+  },
+  {
+    "name": "C-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/C/check.py"
+    ],
+    "seed": 17,
+    "exit_code": 0,
+    "passed": true
+  },
+  {
+    "name": "A-independent-C-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/A/review_c_independent.py"
+    ],
+    "seed": null,
+    "exit_code": 0,
+    "passed": true
+  },
+  {
+    "name": "A-independent-C-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/A/review_c_independent.py"
+    ],
+    "seed": 17,
+    "exit_code": 0,
+    "passed": true
+  },
+  {
+    "name": "B-source-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/check_source_lifts.py",
+      "--check",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/SOURCE_LIFTS_CERTIFICATE.json"
+    ],
+    "seed": null,
+    "exit_code": 0,
+    "passed": true
+  },
+  {
+    "name": "B-source-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/check_source_lifts.py",
+      "--check",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/SOURCE_LIFTS_CERTIFICATE.json"
+    ],
+    "seed": 17,
+    "exit_code": 0,
+    "passed": true
+  },
+  {
+    "name": "count-cone-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/A/count_cone.py"
+    ],
+    "seed": null,
+    "exit_code": 0,
+    "passed": true
+  },
+  {
+    "name": "count-cone-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-319-joint-parity-f1faf74/A/count_cone.py"
+    ],
+    "seed": 17,
+    "exit_code": 0,
+    "passed": true
+  }
+]
