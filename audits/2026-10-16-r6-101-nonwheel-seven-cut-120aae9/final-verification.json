@@ -1,0 +1,277 @@
+{
+  "status": "FAIL",
+  "runs": [
+    {
+      "name": "final-matching-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_certificate-v2.json"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.073
+    },
+    {
+      "name": "final-geometry-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/geometry_certificate.json"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.038
+    },
+    {
+      "name": "final-matching-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_certificate-v2.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.074
+    },
+    {
+      "name": "final-geometry-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/geometry_certificate.json",
+        "--seed",
+        "17"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.038
+    },
+    {
+      "name": "final-negative-matching-path-parity",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_certificate-v2.json",
+        "--negative",
+        "path-parity"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "seconds": 0.075
+    },
+    {
+      "name": "final-negative-matching-missing-empty",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_certificate-v2.json",
+        "--negative",
+        "missing-empty"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "seconds": 0.078
+    },
+    {
+      "name": "final-negative-matching-odd-cycle-flag",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_certificate-v2.json",
+        "--negative",
+        "odd-cycle-flag"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "seconds": 0.077
+    },
+    {
+      "name": "final-negative-geometry-face",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/negative-geometry-face.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "seconds": 0.039
+    },
+    {
+      "name": "final-negative-geometry-source",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/negative-geometry-source.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "seconds": 0.039
+    },
+    {
+      "name": "final-exclusive-matching",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py",
+        "--write",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_certificate-v2.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "seconds": 0.071
+    },
+    {
+      "name": "final-exclusive-geometry",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py",
+        "--write",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/geometry_certificate.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "seconds": 0.04
+    },
+    {
+      "name": "final-prior-double-w5-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-double-w5-101-0b639cf/check.py",
+        "--check",
+        "audits/2026-10-16-r6-double-w5-101-0b639cf/certificate.json"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.082
+    },
+    {
+      "name": "final-prior-chorded-five-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/check.py",
+        "--check",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/certificate.json"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.079
+    },
+    {
+      "name": "final-prior-double-w5-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-double-w5-101-0b639cf/check.py",
+        "--check",
+        "audits/2026-10-16-r6-double-w5-101-0b639cf/certificate.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.08
+    },
+    {
+      "name": "final-prior-chorded-five-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/check.py",
+        "--check",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/certificate.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.078
+    },
+    {
+      "name": "final-prior-curvature",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/A/check.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.072
+    },
+    {
+      "name": "final-prior-complete-w5",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/check.py",
+        "--check",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/certificate.json"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.035
+    },
+    {
+      "name": "final-prior-saturation",
+      "command": [
+        "uv",
+        "run",
+        "--offline",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py",
+        "--verify",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/certificate-v2.json"
+      ],
+      "environment": {},
+      "exit_code": 2,
+      "expected_exit_code": 0,
+      "seconds": 0.01
+    }
+  ],
+  "normal_seed17_outputs_identical": true
+}

@@ -1,0 +1,117 @@
+{
+  "actual_minimal_source_tests": 0,
+  "base": "120aae90cab8bc4881916adc598cf344f2f20f4b",
+  "checks": {
+    "artifact-policy": {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/check_generated_artifacts.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.551,
+      "status": "PASS",
+      "stderr": "artifact-policy.stderr",
+      "stdout": "artifact-policy.stdout"
+    },
+    "docgraph-base-comparison": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_docgraph_baseline.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 12.043,
+      "status": "PASS",
+      "stderr": "docgraph-base-comparison.stderr",
+      "stdout": "docgraph-base-comparison.stdout"
+    },
+    "docgraph-docs": {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.315,
+      "status": "PASS",
+      "stderr": "docgraph-docs.stderr",
+      "stdout": "docgraph-docs.stdout"
+    },
+    "docgraph-whole": {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "interpretation": "Expected historical failure; exact BASE error kinds and logical IDs retained",
+      "seconds": 8.227,
+      "status": "PASS",
+      "stderr": "docgraph-whole.stderr",
+      "stdout": "docgraph-whole.stdout",
+      "tool_pass": false
+    },
+    "docs": {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.939,
+      "status": "PASS",
+      "stderr": "docs.stderr",
+      "stdout": "docs.stdout"
+    },
+    "publication-custody": {
+      "argv": [
+        "python3",
+        "-B",
+        "docs/history/2026-10-16-r6-ordinary101/check_custody.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.171,
+      "status": "PASS",
+      "stderr": "publication-custody.stderr",
+      "stdout": "publication-custody.stdout"
+    },
+    "staged-whitespace": {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.019,
+      "status": "PASS",
+      "stderr": "staged-whitespace.stderr",
+      "stdout": "staged-whitespace.stdout"
+    }
+  },
+  "independent_review": "Both audit scope reviews and final routing semantic review passed; escaped a Markdown table cell and clarified remaining cuts are 110",
+  "paper_theorem_not_formalized": true,
+  "same_base_docgraph_error_kinds_and_logical_ids": true,
+  "staged_checks_before_receipt_addition": true,
+  "status": "PASS_WITH_UNCHANGED_HISTORICAL_DOCGRAPH_ERRORS",
+  "whole_tree_docgraph_pass": false
+}

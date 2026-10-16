@@ -1,0 +1,231 @@
+{
+  "mathematical_proof_verifier": false,
+  "normal_seed17_outputs_identical": {
+    "geometry": true,
+    "matching": true
+  },
+  "note": "Summary assembled from the completed replay commands and their captured outputs; commands were not rerun. A null hash_seed means PYTHONHASHSEED was not explicitly overridden by the replay runner.",
+  "runs": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/geometry_certificate.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "hash_seed": null,
+      "name": "geometry",
+      "stderr": "",
+      "stderr_file": "geometry.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\"certificate_sha256\": \"a287add3b5e3bf7de01d0c63a3457a8933f7fd8cb46dd5d36ed5304de50294bd\", \"disk_faces\": 13, \"full_deletion_matching_lifts\": 24, \"induced_C4\": 0, \"induced_C5\": 4, \"ports\": 7, \"primal_vertices\": 11, \"source_realization\": \"not triggered\", \"status\": \"PASS\"}\n",
+      "stdout_file": "geometry.stdout",
+      "stdout_sha256": "43421e0295cfe60caefcbef1848af7fde7598ff0f138a2cd3b87e24c3c900c4d"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/geometry_certificate.json",
+        "--seed",
+        "17"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "hash_seed": "17",
+      "name": "geometry-seed17",
+      "stderr": "",
+      "stderr_file": "geometry-seed17.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\"certificate_sha256\": \"a287add3b5e3bf7de01d0c63a3457a8933f7fd8cb46dd5d36ed5304de50294bd\", \"disk_faces\": 13, \"full_deletion_matching_lifts\": 24, \"induced_C4\": 0, \"induced_C5\": 4, \"ports\": 7, \"primal_vertices\": 11, \"source_realization\": \"not triggered\", \"status\": \"PASS\"}\n",
+      "stdout_file": "geometry-seed17.stdout",
+      "stdout_sha256": "43421e0295cfe60caefcbef1848af7fde7598ff0f138a2cd3b87e24c3c900c4d"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_certificate-v2.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "hash_seed": null,
+      "name": "matching",
+      "stderr": "",
+      "stderr_file": "matching.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\"glued_counts\": [29, 44, 104], \"ordinary_states\": 1206, \"patches\": [{\"empty_boundary_cells\": 99, \"empty_state_fibres\": 1177, \"internal_lifts\": 29, \"name\": \"cycle7\"}, {\"empty_boundary_cells\": 93, \"empty_state_fibres\": 1168, \"internal_lifts\": 38, \"name\": \"theta_1_5_4\"}, {\"empty_boundary_cells\": 81, \"empty_state_fibres\": 1149, \"internal_lifts\": 64, \"name\": \"thirteen_face_triangle_pendant_disk\"}], \"source_realization\": \"not triggered\", \"status\": \"PASS\", \"tight_states\": 560}\n",
+      "stdout_file": "matching.stdout",
+      "stdout_sha256": "4b92ffd82ae505e8bc6b4c527cf2aad876c03949051b4029ca48ce1254e41620"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_certificate-v2.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "hash_seed": "17",
+      "name": "matching-seed17",
+      "stderr": "",
+      "stderr_file": "matching-seed17.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\"glued_counts\": [29, 44, 104], \"ordinary_states\": 1206, \"patches\": [{\"empty_boundary_cells\": 99, \"empty_state_fibres\": 1177, \"internal_lifts\": 29, \"name\": \"cycle7\"}, {\"empty_boundary_cells\": 93, \"empty_state_fibres\": 1168, \"internal_lifts\": 38, \"name\": \"theta_1_5_4\"}, {\"empty_boundary_cells\": 81, \"empty_state_fibres\": 1149, \"internal_lifts\": 64, \"name\": \"thirteen_face_triangle_pendant_disk\"}], \"source_realization\": \"not triggered\", \"status\": \"PASS\", \"tight_states\": 560}\n",
+      "stdout_file": "matching-seed17.stdout",
+      "stdout_sha256": "4b92ffd82ae505e8bc6b4c527cf2aad876c03949051b4029ca48ce1254e41620"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_certificate-v2.json",
+        "--negative",
+        "path-parity"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "hash_seed": null,
+      "name": "negative-matching-path-parity",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py\", line 347, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py\", line 336, in main\n    require(result == expected, 'complete certificate mismatch')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py\", line 12, in require\n    raise ValueError(message)\nValueError: complete certificate mismatch\n",
+      "stderr_file": "negative-matching-path-parity.stderr",
+      "stderr_sha256": "9f420da9059a518647c619ac01860a541d016281cda5f742bc0ae7e81782ea4e",
+      "stdout": "",
+      "stdout_file": "negative-matching-path-parity.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_certificate-v2.json",
+        "--negative",
+        "missing-empty"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "hash_seed": null,
+      "name": "negative-matching-missing-empty",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py\", line 347, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py\", line 336, in main\n    require(result == expected, 'complete certificate mismatch')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py\", line 12, in require\n    raise ValueError(message)\nValueError: complete certificate mismatch\n",
+      "stderr_file": "negative-matching-missing-empty.stderr",
+      "stderr_sha256": "9f420da9059a518647c619ac01860a541d016281cda5f742bc0ae7e81782ea4e",
+      "stdout": "",
+      "stdout_file": "negative-matching-missing-empty.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_certificate-v2.json",
+        "--negative",
+        "odd-cycle-flag"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "hash_seed": null,
+      "name": "negative-matching-odd-cycle-flag",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py\", line 347, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py\", line 336, in main\n    require(result == expected, 'complete certificate mismatch')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py\", line 12, in require\n    raise ValueError(message)\nValueError: complete certificate mismatch\n",
+      "stderr_file": "negative-matching-odd-cycle-flag.stderr",
+      "stderr_sha256": "9f420da9059a518647c619ac01860a541d016281cda5f742bc0ae7e81782ea4e",
+      "stdout": "",
+      "stdout_file": "negative-matching-odd-cycle-flag.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/negative-geometry-face.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "hash_seed": null,
+      "name": "negative-geometry-face",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py\", line 250, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py\", line 239, in main\n    require(supplied == raw, \"certificate mismatch (including source-domain promotion)\")\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py\", line 26, in require\n    raise ValueError(message)\nValueError: certificate mismatch (including source-domain promotion)\n",
+      "stderr_file": "negative-geometry-face.stderr",
+      "stderr_sha256": "25242c94071c08a368262db5fced48902db6f4aec61dee0e99391ea9bf28b75f",
+      "stdout": "",
+      "stdout_file": "negative-geometry-face.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/negative-geometry-source.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "hash_seed": null,
+      "name": "negative-geometry-source",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py\", line 250, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py\", line 239, in main\n    require(supplied == raw, \"certificate mismatch (including source-domain promotion)\")\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_geometry.py\", line 26, in require\n    raise ValueError(message)\nValueError: certificate mismatch (including source-domain promotion)\n",
+      "stderr_file": "negative-geometry-source.stderr",
+      "stderr_sha256": "25242c94071c08a368262db5fced48902db6f4aec61dee0e99391ea9bf28b75f",
+      "stdout": "",
+      "stdout_file": "negative-geometry-source.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_audit": "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9",
+  "source_realization": "not triggered",
+  "status": "PASS",
+  "task": "Independent read-only nonwheel publication review"
+}

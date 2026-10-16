@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "scope": "independent read-only review of matching algebra controls; genuine sources not triggered",
+  "checker_sha256": "aa5975a4dc4de1ccdb40283a3edbd63b3a7d706f0678eaf188789b9ac8dd19a4",
+  "certificate_sha256": "88320d6b591831e56909765629523bc9da78ab1c4c5fd47b25263bee69340326",
+  "normal": {
+    "arguments": [],
+    "returncode": 0,
+    "stdout": "{\"controls\": [{\"P101\": 0, \"P111\": 1, \"all_pm\": 10, \"all_tait_lifts_fixed_matching_colour\": 6, \"even111\": 0, \"exterior111_zero_length_paths\": 2, \"name\": \"C7__crossing_f\", \"source_realizability\": \"not triggered\"}, {\"P101\": 0, \"P111\": 1, \"all_pm\": 11, \"all_tait_lifts_fixed_matching_colour\": 6, \"even111\": 0, \"exterior111_zero_length_paths\": 2, \"name\": \"C7__external_f\", \"source_realizability\": \"not triggered\"}, {\"P101\": 0, \"P111\": 2, \"all_pm\": 15, \"all_tait_lifts_fixed_matching_colour\": 30, \"even111\": 1, \"exterior111_zero_length_paths\": 2, \"name\": \"theta_1_4_5_rotated__crossing_f\", \"source_realizability\": \"not triggered\"}, {\"P101\": 0, \"P111\": 2, \"all_pm\": 16, \"all_tait_lifts_fixed_matching_colour\": 30, \"even111\": 1, \"exterior111_zero_length_paths\": 2, \"name\": \"theta_1_4_5_rotated__external_f\", \"source_realizability\": \"not triggered\"}], \"seed\": 0, \"status\": \"PASS\"}\n",
+    "stderr": ""
+  },
+  "seed17_with_hashseed17": {
+    "arguments": [
+      "--seed",
+      "17"
+    ],
+    "returncode": 0,
+    "stdout": "{\"controls\": [{\"P101\": 0, \"P111\": 1, \"all_pm\": 10, \"all_tait_lifts_fixed_matching_colour\": 6, \"even111\": 0, \"exterior111_zero_length_paths\": 2, \"name\": \"C7__crossing_f\", \"source_realizability\": \"not triggered\"}, {\"P101\": 0, \"P111\": 1, \"all_pm\": 11, \"all_tait_lifts_fixed_matching_colour\": 6, \"even111\": 0, \"exterior111_zero_length_paths\": 2, \"name\": \"C7__external_f\", \"source_realizability\": \"not triggered\"}, {\"P101\": 0, \"P111\": 2, \"all_pm\": 15, \"all_tait_lifts_fixed_matching_colour\": 30, \"even111\": 1, \"exterior111_zero_length_paths\": 2, \"name\": \"theta_1_4_5_rotated__crossing_f\", \"source_realizability\": \"not triggered\"}, {\"P101\": 0, \"P111\": 2, \"all_pm\": 16, \"all_tait_lifts_fixed_matching_colour\": 30, \"even111\": 1, \"exterior111_zero_length_paths\": 2, \"name\": \"theta_1_4_5_rotated__external_f\", \"source_realizability\": \"not triggered\"}], \"seed\": 17, \"status\": \"PASS\"}\n",
+    "stderr": ""
+  },
+  "negative_controls": [
+    {
+      "name": "missing_empty_state",
+      "returncode": 1,
+      "sha256": "5f58ecb3a93eb4a8e1aa8f695a15998966350cc3e8cd668d7065769de8d758e5",
+      "rejection": "complete certificate exact replay"
+    },
+    {
+      "name": "outside_path_parity",
+      "returncode": 1,
+      "sha256": "da6303590c1419ec57a0dd7addb51b1a03ebcc654bbbcb89cf97bf4efb1eb651",
+      "rejection": "complete certificate exact replay"
+    },
+    {
+      "name": "zero_length_path",
+      "returncode": 1,
+      "sha256": "6e735843789218e17fc3faecfa5a67777f6013589ebfc59aa555f396e210d325",
+      "rejection": "complete certificate exact replay"
+    },
+    {
+      "name": "missing_tait_lift",
+      "returncode": 1,
+      "sha256": "64f554db8cc3fa1c2356fb19968978d6348dd8a68ce0dec9774079d37012abce",
+      "rejection": "complete certificate exact replay"
+    }
+  ]
+}

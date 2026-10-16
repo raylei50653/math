@@ -2,7 +2,7 @@
 
 ## 最新進度
 
-現況核對：2026-10-16；既有必要表／Layer0共同圖成果保留；本輪[R6雙W5來源排除](../audits/2026-10-16-r6-double-w5-101-0b639cf/REPORT.md)使101普通失敗僅剩非輪七割，完整720態平面cover暫緩，一般state充分性仍OPEN。
+現況核對：2026-10-16；既有必要表／Layer0共同圖成果保留；[R6七割全排除](../audits/2026-10-16-r6-seven-disk-rigidity-120aae9/REPORT.md)已證普通P101非空，偶補正值仍OPEN；完整720態平面cover暫緩，一般state充分性仍OPEN。
 
 | 欄位 | 現況 |
 | --- | --- |

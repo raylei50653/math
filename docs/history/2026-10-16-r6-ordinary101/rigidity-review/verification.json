@@ -1,0 +1,147 @@
+{
+  "task": "independent publication read-only replay of R6-SEVEN-DISK-RIGIDITY",
+  "time_utc": "2026-10-16T13:21:59.706781+00:00",
+  "audit_directory": "audits/2026-10-16-r6-seven-disk-rigidity-120aae9",
+  "original_audit_mutated": false,
+  "commands": [
+    {
+      "name": "geometry-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-seven-disk-rigidity-120aae9/geometry_check.py",
+        "--verify",
+        "audits/2026-10-16-r6-seven-disk-rigidity-120aae9/geometry_certificate.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true,
+      "stdout": "geometry-normal.stdout",
+      "stderr": "geometry-normal.stderr"
+    },
+    {
+      "name": "geometry-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-seven-disk-rigidity-120aae9/geometry_check.py",
+        "--seed",
+        "17",
+        "--verify",
+        "audits/2026-10-16-r6-seven-disk-rigidity-120aae9/geometry_certificate.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true,
+      "stdout": "geometry-seed17.stdout",
+      "stderr": "geometry-seed17.stderr"
+    },
+    {
+      "name": "geometry-negative",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-seven-disk-rigidity-120aae9/geometry_check.py",
+        "--negative"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true,
+      "stdout": "geometry-negative.stdout",
+      "stderr": "geometry-negative.stderr"
+    },
+    {
+      "name": "matching-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-seven-disk-rigidity-120aae9/matching_check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true,
+      "stdout": "matching-normal.stdout",
+      "stderr": "matching-normal.stderr"
+    },
+    {
+      "name": "matching-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-seven-disk-rigidity-120aae9/matching_check.py",
+        "--seed",
+        "17"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true,
+      "stdout": "matching-seed17.stdout",
+      "stderr": "matching-seed17.stderr"
+    },
+    {
+      "name": "charge-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-seven-disk-rigidity-120aae9/charge_check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true,
+      "stdout": "charge-normal.stdout",
+      "stderr": "charge-normal.stderr"
+    },
+    {
+      "name": "charge-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-seven-disk-rigidity-120aae9/charge_check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true,
+      "stdout": "charge-seed17.stdout",
+      "stderr": "charge-seed17.stderr"
+    },
+    {
+      "name": "charge-negative-m",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-seven-disk-rigidity-120aae9/charge_check.py",
+        "--negative",
+        "missing-m-cost"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "pass": true,
+      "stdout": "charge-negative-m.stdout",
+      "stderr": "charge-negative-m.stderr"
+    }
+  ],
+  "status": "PASS",
+  "scope": "Finite controls and arithmetic checks only; paper theorem ordinary P101 nonempty is separate. Actual source realizability remains not triggered; omega_e and W110+W101 remain OPEN."
+}

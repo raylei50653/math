@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "reason": "Prior checker uses only Python standard library; direct replay avoids read-only uv cache. Original failed launch retained.",
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py",
+        "--verify",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/certificate-v2.json"
+      ],
+      "seed17": false,
+      "exit_code": 0,
+      "seconds": 2.236
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py",
+        "--verify",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/certificate-v2.json"
+      ],
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 2.42
+    }
+  ]
+}

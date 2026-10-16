@@ -31,13 +31,17 @@ docgraph:
 同一111族的跨割飽和與原五圈扇區定位當輪迫101單一五割必有弦。
 後續[R6-CHORDED-FIVE](../audits/2026-10-16-r6-chorded-five-c4c3d99/REPORT.md)
 再排全部101有弦五割，故其五割全為W5、單一五割整列排除。
-最新[R6-DOUBLE-W5-101](../audits/2026-10-16-r6-double-w5-101-0b639cf/REPORT.md)
+後續[R6-DOUBLE-W5-101](../audits/2026-10-16-r6-double-w5-101-0b639cf/REPORT.md)
 以同圖完整五度輪的第二鄰域與原扇區再完整排除101雙W5；
-101普通失敗僅剩非輪七割，110其餘割及偶補正值仍OPEN。
+當輪剩餘非輪七割先由[七disk結構](../audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/REPORT.md)
+化為有序七埠disk、I≥5；最新[任意excess三耳矛盾](../audits/2026-10-16-r6-seven-disk-rigidity-120aae9/REPORT.md)
+任意大小全排七割，故同一D的普通P101非空。聯合族的omega_e=0／W110+W101>0、
+110其餘普通障礙及完整319仍OPEN，未取得父題延拓或completed-source嚴格下降。
 
 2026-10-16 後續[R6-JOINT-ZERO](../audits/2026-10-16-r6-joint-zero-c4c3d99/REPORT.md)
 已任意大小排除固定三框點四度、r6來源的全單點Tutte障礙；
-兩族普通失敗均須非單點5／7割，聯合偶補正值及完整319排除仍OPEN。
+當輪兩族普通失敗均須非單點5／7割；101現已由上述後續全排，110仍保留。
+聯合偶補正值及完整319排除仍OPEN。
 
 2026-10-15 後續[四輪具名路線](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)：
 合法T／T0已證指定邊普通PM雙向分離，偶補正值仍OPEN；r六度支的來源J四連通，

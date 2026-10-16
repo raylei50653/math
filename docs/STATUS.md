@@ -1,23 +1,32 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-16（R6-DOUBLE-W5-101任意大小完全排除101雙W5最大障礙，101普通失敗僅剩非輪七割；聯合偶補正值與完整319仍OPEN，一般K≤22及固定r6的k≥25不變）。研究線標記見 [HANDOFF](HANDOFF.md)；精確停止點與重播由各線導覽維護。
+更新：2026-10-16（R6-SEVEN-DISK-RIGIDITY 任意大小排除全部剩餘101七割，普通P101及普通聯合族非空；omega_e=0／W110+W101>0與完整319仍OPEN，一般K≤22及固定r6的k≥25不變）。研究線標記見 [HANDOFF](HANDOFF.md)；精確停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
+
+2026-10-16 [R6-SEVEN-DISK-RIGIDITY](../audits/2026-10-16-r6-seven-disk-rigidity-120aae9/REPORT.md)：
+完整excess抵消迫三個普通外耳，填耳後的induced C4與原m/z扇區矛盾；
+任意大小排除最後七割，接窮盡Tutte分類證同一D普通P101非空。
+普通聯合族非空，偶補正值仍OPEN；[採納與重播紀錄](history/2026-10-16-r6-ordinary101-publish.md)。
+
+2026-10-16 [R6-101-NONWHEEL-SEVEN-CUT](../audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/REPORT.md)：
+七割為實際簡單disk，七個有序ports及完整fibres保留；I+B≥12、I≥5、|C|≥15，
+排除整個I≤4無界子類。當輪普通101的OPEN由上述後續解決；有限registry不是來源大小界。
 
 2026-10-16 [R6-DOUBLE-W5-101](../audits/2026-10-16-r6-double-w5-101-0b639cf/REPORT.md)：
 任意大小排除101雙完整W5最大障礙；zpq與f另一端皆單點、兩輪鄰域互不相交，
 再展開一純五度輪的15個原面，迫外側W5及整J全五度矛盾。獨立重建通過；
-101普通失敗僅剩非輪七割，110其餘割、偶補正值及完整319仍OPEN。
+當輪101僅剩非輪七割，現由上述續輪全排；110其餘割、偶補正值及完整319仍OPEN。
 
 2026-10-16 [R6-CHORDED-FIVE](../audits/2026-10-16-r6-chorded-five-c4c3d99/REPORT.md)：
 任意大小排除101有弦五割；每個五割分量必為保留W5，單一五割整列排除，
-當輪雙五割整列滿足前輪雙W5剛性，現由上述續輪完整排除；101僅剩非輪七割；
+當輪雙五割整列由後續完整排除；101七割亦已由上述續輪全排；
 110其餘割及聯合偶補正值仍OPEN，接回成本k+5不變。
 
 2026-10-16 [R6-CAP-BARRIERS](../audits/2026-10-16-r6-cap-barriers-c4c3d99/REPORT.md)：
 任意大小排除唯一非單點為W5／W7的Tutte障礙；當輪101單一五割有弦殘留由上述續輪排除。雙W5迫閉鄰域交集至多一點、
 全圖度數餘量至多二及原s,t≤8、h≤6。來源111族對每個障礙奇分量恰跨一次，
-奇補五圈進一步限於保留W5或跨原扇區；剩餘非輪割與偶補正值仍OPEN。
+奇補五圈進一步限於保留W5或跨原扇區；110剩餘非輪割與聯合偶補正值仍OPEN。
 
 2026-10-16 [R6-JOINT-ZERO](../audits/2026-10-16-r6-joint-zero-c4c3d99/REPORT.md)：
 原來源T外至少五個五度點，與全單點Tutte障礙最多覆蓋四點矛盾，
@@ -357,13 +366,15 @@ d_G≥6及k≥18；T3接通no4ct三支私人ρ≥5。一般RING、
 | [保XOR雙環同步交換](../audits/2026-10-15-xor-batch-descent-6ddea32/REPORT.md) | 一／兩環批次交換使普通XOR族連通，46點控制有直接偶補退出；不證來源必能下降或正偶補 |
 | [完整六接點lifts與三邊返回](../audits/2026-10-15-six-pin-lifts-6ddea32/REPORT.md) | 同一J上的e=f≠g禁止事件與單環返回分類；弱12點球面有216態閉集，仍違來源度數；完整all-r另需第四輪第二事件 |
 | [Kempe單值共同原圖障礙](../audits/2026-10-15-kempe-common-graph-6ddea32/REPORT.md) | 25種相容原點函數／41條允許邊不足以實現指定連通性，排特定720模型的任意有限單值實現；不排多值cover或22列本身 |
-| [R6-DOUBLE-W5-101：雙輪來源排除](../audits/2026-10-16-r6-double-w5-101-0b639cf/REPORT.md) | 任意大小完全排除101雙W5最大障礙；純五度輪第二鄰域的15原面及原扇區迫整J全五度矛盾。獨立審查通過，101普通失敗僅剩非輪七割；110、偶補正值及完整319仍OPEN；[發布與提交後重播](history/2026-10-16-r6-double-w5-101-publish.md) |
-| [R6-CHORDED-FIVE：101有弦五割排除](../audits/2026-10-16-r6-chorded-five-c4c3d99/REPORT.md) | 任意大小排除101每個有弦五割分量，五割全為W5，接前輪排除單一五割整列；當輪雙W5殘留已由上述續輪排除。110其餘割、聯合普通非空與偶補正值仍OPEN；[當輪整理與重播](history/2026-10-16-r6-barriers-publish.md) |
+| [R6-SEVEN-DISK-RIGIDITY：普通101存在性](../audits/2026-10-16-r6-seven-disk-rigidity-120aae9/REPORT.md) | 任意excess抵消迫三耳及原扇區C4矛盾，任意大小全排最後七割，普通P101及普通聯合族非空。兩份獨立審查；omega_e=0／W110+W101>0、完整319及一般主命題仍OPEN，無新Lean；[採納與提交後重播](history/2026-10-16-r6-ordinary101-publish.md) |
+| [R6-101-NONWHEEL-SEVEN-CUT：實際七disk與完整介面](../audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/REPORT.md) | 任意大小證簡單七disk、I+B≥12、I≥5及\|C\|≥15，排I≤4整個無界子類；tight560格／至多420簽名，ordinary1206格／至多904簽名，完整空fibres保留。當輪普通101未解已由上述續輪解決；不證來源大小界或下降 |
+| [R6-DOUBLE-W5-101：雙輪來源排除](../audits/2026-10-16-r6-double-w5-101-0b639cf/REPORT.md) | 任意大小完全排除101雙W5最大障礙；純五度輪第二鄰域的15原面及原扇區迫整J全五度矛盾。當輪剩餘七割已由上述續輪全排；110、偶補正值及完整319仍OPEN；[當輪發布與重播](history/2026-10-16-r6-double-w5-101-publish.md) |
+| [R6-CHORDED-FIVE：101有弦五割排除](../audits/2026-10-16-r6-chorded-five-c4c3d99/REPORT.md) | 任意大小排除101每個有弦五割分量，五割全為W5，接前輪排除單一五割整列；當輪雙W5及其餘101普通障礙已由上述續輪排除。110其餘割及偶補正值仍OPEN；[當輪整理與重播](history/2026-10-16-r6-barriers-publish.md) |
 | [R6-CAP-BARRIERS：輪障礙排除與雙輪剛性](../audits/2026-10-16-r6-cap-barriers-c4c3d99/REPORT.md) | 任意大小排單一W5／W7輪障礙；當輪101單一五割必有弦，後由R6-CHORDED-FIVE整列排除。雙W5有精確交集／度數剛性，所有111匹配共同跨割飽和；W110+W101>0與完整319仍OPEN |
 | [R6-JOINT-ZERO：聯合零值與全單點障礙排除](../audits/2026-10-16-r6-joint-zero-c4c3d99/REPORT.md) | 完整來源下任意大小排除兩族全單點Tutte障礙；當輪剩一5割／二5割／一7割，後續收窄見上述兩輪。聯合奇補有原圈定位，C4有原扇區限制；W110+W101>0及整支排除仍OPEN |
 | [第四輪：完整J接回與來源兩星幾何](../audits/2026-10-15-route-round4-6ddea32/REPORT.md) | 完整all-r為(e=f)⇔(e=g)，兩禁止事件各96列；J來源幾何、匹配窄割表與Layer0二層共同圖整合，完整319及完成後嚴格下降OPEN |
 | [J四連通與兩星完整W介面](../audits/2026-10-15-j-source-geometry-6ddea32/REPORT.md) | 原來源J四連通、短圈anchors及實際兩鄰弧disk；逐完整W染色的hub fibre恰為缺色直積去對角，來源迫兩個二色缺集相等；尚未迫違規lift |
-| [三標記普通匹配的Tutte障礙](../audits/2026-10-15-three-edge-matchings-6ddea32/REPORT.md) | 二入一出普通PM失敗恰二缺額，當輪四類表保留；全單點類由R6-JOINT-ZERO後續排除，其餘5／7割仍OPEN，普通PM與偶補權重分開 |
+| [三標記普通匹配的Tutte障礙](../audits/2026-10-15-three-edge-matchings-6ddea32/REPORT.md) | 二入一出普通PM失敗恰二缺額，當輪四類表保留；全單點類由後續排除，101其餘類現已全排、普通P101非空，110其餘5／7割仍OPEN；普通PM與偶補權重分開 |
 | [Layer0二層共同原圖](../audits/2026-10-15-kempe-state-covers-6ddea32/REPORT.md) | 75／121點兩圖各864份全部完整染色、二對一投影432態、無hidden分量；monodromy無相容section。兩圖非平面，完整720／22列及來源仍OPEN |
 | [C8反覆剝層與完整轉移](c5_c8_peeling.md) | 原三型分類與完整separator轉移保留；T1-CROSSCUT在no4ct最小來源契約下證h=3⇒p=0，全部PINCH／BRIDGE排除，任意單接點數與兩片大小。剝層自身給h=3⇒k≥19，當前共同C4界為k≥23；RING、固定寬度與一般來源OPEN，未Lean化 |
 | [十三內點完整外圈與 K≤13 界](c5_k13_collar.md) | h4–7全部覆蓋；23球面嵌入／306根圖皆Σ1023，完整lifts独立一致；h6／h7另有紙面排除。K≤13=K≤5，目錄外來源至少十四內點；不提高h／n5；後續K14亦完成，一般命題OPEN，未Lean化 |
@@ -605,6 +616,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-16：七disk結構、普通101存在性採納與整理發布](history/2026-10-16-r6-ordinary101-publish.md)
 - [2026-10-15：四輪具名匹配、完整接回與共同圖整理提交](history/2026-10-15-kempe-routes-publish.md)
 - [2026-10-14：目前進展跨線整合與發布](history/2026-10-14-progress-consolidation-publish.md)
 - [2026-10-14：C4返回旁支、低p/q介面與度數界相接發布](history/2026-10-14-c4-return-branches-publish.md)

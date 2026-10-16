@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "name": "postreview-matching-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_certificate-v2.json"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 0.079
+    },
+    {
+      "name": "postreview-matching-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_check.py",
+        "--check",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/matching_certificate-v2.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "seconds": 0.073
+    },
+    {
+      "name": "delivery-custody",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/check_bundle.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 0.126
+    },
+    {
+      "name": "delivery-docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 0.795
+    },
+    {
+      "name": "delivery-docgraph-scoped",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 0.091
+    },
+    {
+      "name": "delivery-git-diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 0.009
+    }
+  ],
+  "new_nonfrozen_text_whitespace_errors": [],
+  "symlinks": 0,
+  "files_over_1MB": [],
+  "git": {
+    "HEAD": "120aae90cab8bc4881916adc598cf344f2f20f4b",
+    "status": "?? audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/\n",
+    "tracked_diff": "",
+    "staged_diff": ""
+  },
+  "normal_seed17_matching_stdout_identical": true,
+  "prior_failed_uv_launch": "retained; resolved by saturation-repair.json",
+  "independent_review": "REVIEW.md: B / PASS"
+}
