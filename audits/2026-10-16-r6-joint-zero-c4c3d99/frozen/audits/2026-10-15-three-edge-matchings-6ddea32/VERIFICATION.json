@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/certificate.json"
+      ],
+      "seed": null,
+      "returncode": 0,
+      "seconds": 0.735,
+      "stdout_sha256": "cf5e0afcc4a9fdce690dd205cee958e05b4b6f3361e18d0bf5f8579cf445e116",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/certificate.json"
+      ],
+      "seed": "17",
+      "returncode": 0,
+      "seconds": 0.722,
+      "stdout_sha256": "cf5e0afcc4a9fdce690dd205cee958e05b4b6f3361e18d0bf5f8579cf445e116",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "wrong-weight",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/negative/wrong-weight.json"
+      ],
+      "seed": null,
+      "returncode": 1,
+      "seconds": 0.732,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "5773d3455407e0057ea957747bd1e9c052b5e6bfcc9de4a4cb0e636579009aa0"
+    },
+    {
+      "name": "missing-barrier",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/negative/missing-barrier.json"
+      ],
+      "seed": null,
+      "returncode": 1,
+      "seconds": 0.743,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "5773d3455407e0057ea957747bd1e9c052b5e6bfcc9de4a4cb0e636579009aa0"
+    },
+    {
+      "name": "exclusive-create",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+        "--write",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/certificate.json"
+      ],
+      "seed": null,
+      "returncode": 1,
+      "seconds": 0.739,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "2c864cbfc627af95db7f8db52065f6bf024b81c2f03e76a9af6c2e79b7466f07"
+    }
+  ],
+  "certificate_sha256": "63d60cc1db45cc3e6ae7f8af0994e8c9ab7daab3325b8688ce8af6a0fe8e8efd"
+}

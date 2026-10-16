@@ -1,0 +1,91 @@
+{
+  "arbitrary_size_authority": "paper proof only",
+  "certificate_unchanged": true,
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/certificate.json"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "name": "normal"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/certificate.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "name": "seed17"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/negative/missing-empty-fibre.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "name": "missing-empty-fibre"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/negative/wrong-joint-minimum.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "name": "wrong-joint-minimum"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py",
+        "--output",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/certificate.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "name": "exclusive-create"
+    }
+  ],
+  "empty_planar_fibres": 24,
+  "files": {
+    "PROOF.md": "414bdf90274ae35d8a0b7e24828967f5527f20903a9583d400cf3696fa6c8d3f",
+    "certificate.json": "75fbc66ead9470678b68e0befb8caa2d1ea8115595b1b92ca484cf6b445f0de3",
+    "logs/exclusive-create.stderr": "803de351a7b670981d6abf8e61f7d0a9b6924e2ecd0b1f8b79546521ae936e2f",
+    "logs/exclusive-create.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/missing-empty-fibre.stderr": "e35e14fc5b8bc80a6db0c7c44ae3ee3ab63d9d51bcb3626008f63419ceb6f7ec",
+    "logs/missing-empty-fibre.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/normal.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/normal.stdout": "d2a4eb204a1cc9513d356d9efd25be2bc5d2ee03d41f5c194399f73484aef2af",
+    "logs/seed17.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/seed17.stdout": "d2a4eb204a1cc9513d356d9efd25be2bc5d2ee03d41f5c194399f73484aef2af",
+    "logs/wrong-joint-minimum.stderr": "e35e14fc5b8bc80a6db0c7c44ae3ee3ab63d9d51bcb3626008f63419ceb6f7ec",
+    "logs/wrong-joint-minimum.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "negative/missing-empty-fibre.json": "853ef1677cbb0efdaa46debc90e388914197bd55818338c55c6c66c6afe3e2a9",
+    "negative/wrong-joint-minimum.json": "90f08e03ab3abc9406b41a53e197459632861b484ca4d848ebf9df6612e3b945",
+    "verify.py": "efe33b96a109aa5c29365676ab2fa85fa179dd89b4437a684029a61a15116eb3"
+  },
+  "finite_controls": 4,
+  "ordered_joint_pairs": 46,
+  "planar_complete_pm_rows": 81,
+  "source_controls": "not triggered",
+  "status": "PASS"
+}

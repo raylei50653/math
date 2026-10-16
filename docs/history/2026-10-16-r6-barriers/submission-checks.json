@@ -1,0 +1,79 @@
+{
+  "docs": {
+    "argv": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "returncode": 0,
+    "seconds": 0.692,
+    "stdout": "docs.stdout",
+    "stderr": "docs.stderr"
+  },
+  "artifact-policy": {
+    "argv": [
+      "python3",
+      "tools/check_generated_artifacts.py"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "returncode": 0,
+    "seconds": 0.508,
+    "stdout": "artifact-policy.stdout",
+    "stderr": "artifact-policy.stderr"
+  },
+  "whitespace-staged": {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "returncode": 2,
+    "seconds": 0.098,
+    "stdout": "whitespace-staged.stdout",
+    "stderr": "whitespace-staged.stderr",
+    "documented_exception": "Only three original frozen checker EOF blank lines; bytes retained under audit custody."
+  },
+  "whitespace-routing-policy": {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check",
+      "--",
+      "docs/STATUS.md",
+      "docs/c5_c4_triangle_core.md",
+      "docs/c5_kempe_guide.md",
+      "docs/c5_state_guide.md",
+      "docs/history/2026-10-16-r6-barriers-publish.md",
+      "docs/history/2026-10-16-r6-barriers",
+      "tools/generated_artifact_exceptions.json"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "returncode": 0,
+    "seconds": 0.01,
+    "stdout": "whitespace-routing-policy.stdout",
+    "stderr": "whitespace-routing-policy.stderr"
+  },
+  "whitespace-unstaged": {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "returncode": 0,
+    "seconds": 0.009,
+    "stdout": "whitespace-unstaged.stdout",
+    "stderr": "whitespace-unstaged.stderr"
+  },
+  "audit_custody": {
+    "original_files_verified_in_worktree_and_index": 424,
+    "byte_drift": false
+  },
+  "stage_scope": {
+    "connected_paths_verified": 558,
+    "unexpected_paths": []
+  }
+}

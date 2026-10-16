@@ -1,0 +1,167 @@
+{
+  "status": "PASS",
+  "plan": {
+    "immutable_files": [
+      "audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+      "audits/2026-10-15-kempe-state-covers-6ddea32/space.py",
+      "audits/2026-10-15-kempe-state-covers-6ddea32/certificate.json",
+      "audits/2026-10-15-kempe-state-covers-6ddea32/INPUTS.json",
+      "audits/2026-10-15-kempe-state-covers-6ddea32/graph-75.json",
+      "audits/2026-10-15-kempe-state-covers-6ddea32/graph-121.json",
+      "audits/2026-10-15-kempe-state-covers-6ddea32/logs/missing-full-colouring.json",
+      "audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-monodromy.json",
+      "audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-cover-rank.json"
+    ],
+    "cases": [
+      {
+        "name": "normal",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-state-covers-6ddea32/check.py"
+        ],
+        "expected": "accept"
+      },
+      {
+        "name": "seed17",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-state-covers-6ddea32/check.py"
+        ],
+        "expected": "accept",
+        "seed17": true
+      },
+      {
+        "name": "missing-full-colouring",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+          "--certificate",
+          "audits/2026-10-15-kempe-state-covers-6ddea32/logs/missing-full-colouring.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "wrong-monodromy",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+          "--certificate",
+          "audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-monodromy.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "wrong-cover-rank",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+          "--certificate",
+          "audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-cover-rank.json"
+        ],
+        "expected": "reject"
+      }
+    ]
+  },
+  "receipts": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/check.py"
+      ],
+      "expected": "accept",
+      "exit_code": 0,
+      "seconds": 0.85,
+      "stdout": "{\"cover_space\": {\"cover_dimension\": 142, \"edge_orbits\": 184, \"gauge_rank\": 25, \"quotient_dimension\": 117, \"square_rank\": 42, \"zero_product_quotient_dimension\": 13}, \"graphs\": [{\"complete_labelled_colourings\": 864, \"edges\": 353, \"graph_file\": \"graph-75.json\", \"hidden_components_max\": 0, \"outer_mask\": 319, \"projection_states\": 432, \"sheets\": 2, \"vertices\": 75}, {\"complete_labelled_colourings\": 864, \"edges\": 711, \"graph_file\": \"graph-121.json\", \"hidden_components_max\": 0, \"outer_mask\": 319, \"projection_states\": 432, \"sheets\": 2, \"vertices\": 121}], \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/check.py"
+      ],
+      "expected": "accept",
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 0.865,
+      "stdout": "{\"cover_space\": {\"cover_dimension\": 142, \"edge_orbits\": 184, \"gauge_rank\": 25, \"quotient_dimension\": 117, \"square_rank\": 42, \"zero_product_quotient_dimension\": 13}, \"graphs\": [{\"complete_labelled_colourings\": 864, \"edges\": 353, \"graph_file\": \"graph-75.json\", \"hidden_components_max\": 0, \"outer_mask\": 319, \"projection_states\": 432, \"sheets\": 2, \"vertices\": 75}, {\"complete_labelled_colourings\": 864, \"edges\": 711, \"graph_file\": \"graph-121.json\", \"hidden_components_max\": 0, \"outer_mask\": 319, \"projection_states\": 432, \"sheets\": 2, \"vertices\": 121}], \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "missing-full-colouring",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/logs/missing-full-colouring.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.867,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/check.py\", line 156, in <module>\n    else:need(json.loads(Path(a.certificate).read_text())==result,'certificate mismatch')\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/check.py\", line 9, in need\n    if not ok:raise ValueError(msg)\n              ^^^^^^^^^^^^^^^^^^^^^\nValueError: certificate mismatch\n"
+    },
+    {
+      "name": "wrong-monodromy",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-monodromy.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.856,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/check.py\", line 156, in <module>\n    else:need(json.loads(Path(a.certificate).read_text())==result,'certificate mismatch')\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/check.py\", line 9, in need\n    if not ok:raise ValueError(msg)\n              ^^^^^^^^^^^^^^^^^^^^^\nValueError: certificate mismatch\n"
+    },
+    {
+      "name": "wrong-cover-rank",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-cover-rank.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.887,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/check.py\", line 156, in <module>\n    else:need(json.loads(Path(a.certificate).read_text())==result,'certificate mismatch')\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-kempe-state-covers-6ddea32/check.py\", line 9, in need\n    if not ok:raise ValueError(msg)\n              ^^^^^^^^^^^^^^^^^^^^^\nValueError: certificate mismatch\n"
+    }
+  ],
+  "hashes_before": {
+    "audits/2026-10-15-kempe-state-covers-6ddea32/check.py": "ebfdb5421d60ad32a6da7078f33ae27e38bfdebb1d03f7978492904ffab44909",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/space.py": "28548a906fc9301b1d3ea5e84c0fa1c5f9e99bb891412d71ce8f14039d199cf5",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/certificate.json": "5fe59ef32989b2062ebdf335ee205e57e3107248709d8f022d63e4e019cd70d6",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/INPUTS.json": "6f1acf27ecdf9f0fd373a59517032a697c3197749dee2c09937a131dfa6ea120",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/graph-75.json": "e78e3dfb3b6a7ea7458cb4b42b93d605fd3c06941da5314c497c280f06158bd6",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/graph-121.json": "dfcbffbe01ec168e85c525d956105f79262db4bfbcdc0429476a57fd4e763c11",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/logs/missing-full-colouring.json": "9fd85bbc2c9b0fe548afba5fb06b770c5b7832c20b7bfa69774c75588a211adb",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-monodromy.json": "e5b81e637b74357f673ebbc826207592c979b519b79f6e243d562150c7247359",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-cover-rank.json": "7713761fecf4b095f34d2c2a2e3c9acd6c9e2fa9bda212c77783f5c09556458c"
+  },
+  "hashes_after": {
+    "audits/2026-10-15-kempe-state-covers-6ddea32/check.py": "ebfdb5421d60ad32a6da7078f33ae27e38bfdebb1d03f7978492904ffab44909",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/space.py": "28548a906fc9301b1d3ea5e84c0fa1c5f9e99bb891412d71ce8f14039d199cf5",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/certificate.json": "5fe59ef32989b2062ebdf335ee205e57e3107248709d8f022d63e4e019cd70d6",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/INPUTS.json": "6f1acf27ecdf9f0fd373a59517032a697c3197749dee2c09937a131dfa6ea120",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/graph-75.json": "e78e3dfb3b6a7ea7458cb4b42b93d605fd3c06941da5314c497c280f06158bd6",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/graph-121.json": "dfcbffbe01ec168e85c525d956105f79262db4bfbcdc0429476a57fd4e763c11",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/logs/missing-full-colouring.json": "9fd85bbc2c9b0fe548afba5fb06b770c5b7832c20b7bfa69774c75588a211adb",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-monodromy.json": "e5b81e637b74357f673ebbc826207592c979b519b79f6e243d562150c7247359",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-cover-rank.json": "7713761fecf4b095f34d2c2a2e3c9acd6c9e2fa9bda212c77783f5c09556458c"
+  },
+  "input_drift": 0
+}

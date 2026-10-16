@@ -1,0 +1,52 @@
+[
+  {
+    "name": "A-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-cap-barriers-c4c3d99/A/check.py"
+    ],
+    "environment": {},
+    "exit_code": 0
+  },
+  {
+    "name": "A-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-cap-barriers-c4c3d99/A/check.py",
+      "--seed",
+      "17"
+    ],
+    "environment": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0
+  },
+  {
+    "name": "C-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/check.py",
+      "--check",
+      "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/certificate.json"
+    ],
+    "environment": {},
+    "exit_code": 0
+  },
+  {
+    "name": "C-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/check.py",
+      "--check",
+      "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/certificate.json"
+    ],
+    "environment": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,173 @@
+{
+  "source_repository": "/home/ray/developer/ai/math",
+  "source_head": "c4c3d99c59cfe4f85b3e33f6831da955a8efcbc7",
+  "base": "c4c3d99c59cfe4f85b3e33f6831da955a8efcbc7",
+  "output_directory": "/tmp/math-r6-publish-replay-nktwomsz/baseline",
+  "copies": [
+    {
+      "operation": "copy audit without __pycache__",
+      "source": "audits/2026-10-16-r6-joint-zero-c4c3d99",
+      "target": "audits/2026-10-16-r6-joint-zero-c4c3d99"
+    },
+    {
+      "operation": "copy audit without __pycache__",
+      "source": "audits/2026-10-16-r6-cap-barriers-c4c3d99",
+      "target": "audits/2026-10-16-r6-cap-barriers-c4c3d99"
+    },
+    {
+      "operation": "copy audit without __pycache__",
+      "source": "audits/2026-10-16-r6-chorded-five-c4c3d99",
+      "target": "audits/2026-10-16-r6-chorded-five-c4c3d99"
+    },
+    {
+      "operation": "copy live routing",
+      "source": "docs/STATUS.md",
+      "target": "docs/STATUS.md",
+      "sha256": "0e5427b0b4c6db728eead1c8b918b214af1967210503eb1ca6811050df74e0de"
+    },
+    {
+      "operation": "copy live routing",
+      "source": "docs/c5_kempe_guide.md",
+      "target": "docs/c5_kempe_guide.md",
+      "sha256": "e3e72b33c1e8d7cad95ae42315a5159d3a8921ab36a403d4f13768c35943dc28"
+    },
+    {
+      "operation": "copy live routing",
+      "source": "docs/c5_c4_triangle_core.md",
+      "target": "docs/c5_c4_triangle_core.md",
+      "sha256": "587765924536d3a46f5cdee2b9f97936e529211e9d280bfad094ef6bfe454b53"
+    },
+    {
+      "operation": "copy live routing",
+      "source": "docs/c5_state_guide.md",
+      "target": "docs/c5_state_guide.md",
+      "sha256": "da6eca6eb04918f61318e0f760af8f8e2452707fdc1388a779969f9f884b5d4a"
+    },
+    {
+      "operation": "restore JOINT sealed routing",
+      "source": "audits/2026-10-16-r6-cap-barriers-c4c3d99/frozen/docs/STATUS.md",
+      "target": "docs/STATUS.md",
+      "sha256": "da3b8a25b8af7881ddc8193635e881a7f63e3328151ed8b8d1d51c2dcfdf6325"
+    },
+    {
+      "operation": "restore JOINT sealed routing",
+      "source": "audits/2026-10-16-r6-cap-barriers-c4c3d99/frozen/docs/c5_kempe_guide.md",
+      "target": "docs/c5_kempe_guide.md",
+      "sha256": "ff8faa2f206abd00df40fc8b92088251b97f9d18877a3cc4791f8157f97130d5"
+    },
+    {
+      "operation": "restore JOINT sealed routing",
+      "source": "audits/2026-10-16-r6-cap-barriers-c4c3d99/frozen/docs/c5_c4_triangle_core.md",
+      "target": "docs/c5_c4_triangle_core.md",
+      "sha256": "11322ba5ef0432a4fb45091bfc8fa3138d27ebc159d9508b25898ff7be8b61ce"
+    },
+    {
+      "operation": "restore JOINT sealed routing",
+      "source": "audits/2026-10-16-r6-cap-barriers-c4c3d99/frozen/docs/c5_state_guide.md",
+      "target": "docs/c5_state_guide.md",
+      "sha256": "713a0a64658bb5479e3e7bc7b9b92337b8d48a6bb40259ba348ab6420099f05c"
+    }
+  ],
+  "runs": [
+    {
+      "name": "worktree-add",
+      "argv": [
+        "git",
+        "worktree",
+        "add",
+        "--detach",
+        "/tmp/math-r6-publish-replay-nktwomsz/baseline/baseline-worktree",
+        "c4c3d99c59cfe4f85b3e33f6831da955a8efcbc7"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 3.574,
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "worktree-add.stdout",
+      "stderr": "worktree-add.stderr"
+    },
+    {
+      "name": "cap-barriers-bundle-at-base",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/check_bundle.py"
+      ],
+      "cwd": "/tmp/math-r6-publish-replay-nktwomsz/baseline/baseline-worktree",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.109,
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "cap-barriers-bundle-at-base.stdout",
+      "stderr": "cap-barriers-bundle-at-base.stderr"
+    },
+    {
+      "name": "chorded-five-bundle-at-base",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/check_bundle.py"
+      ],
+      "cwd": "/tmp/math-r6-publish-replay-nktwomsz/baseline/baseline-worktree",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.103,
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "chorded-five-bundle-at-base.stdout",
+      "stderr": "chorded-five-bundle-at-base.stderr"
+    },
+    {
+      "name": "joint-zero-bundle-at-base",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/check_bundle.py"
+      ],
+      "cwd": "/tmp/math-r6-publish-replay-nktwomsz/baseline/baseline-worktree",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.169,
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "joint-zero-bundle-at-base.stdout",
+      "stderr": "joint-zero-bundle-at-base.stderr"
+    },
+    {
+      "name": "worktree-remove",
+      "argv": [
+        "git",
+        "worktree",
+        "remove",
+        "--force",
+        "/tmp/math-r6-publish-replay-nktwomsz/baseline/baseline-worktree"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.323,
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "worktree-remove.stdout",
+      "stderr": "worktree-remove.stderr"
+    }
+  ],
+  "source_audit_files": 424,
+  "source_audit_bytes_unchanged": true,
+  "failure": null,
+  "result": "PASS",
+  "mathematical_proof_verified": false
+}

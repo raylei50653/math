@@ -1,0 +1,32 @@
+{
+  "finite_scope": "all local W5 bit and complete colouring fibres plus square mark table",
+  "paper_result": "PROOF.md C1-C3",
+  "source_trigger": "not triggered",
+  "tests": [
+    {
+      "expected_success": true,
+      "returncode": 0,
+      "test": "normal"
+    },
+    {
+      "expected_success": true,
+      "returncode": 0,
+      "test": "seed17"
+    },
+    {
+      "expected_success": false,
+      "returncode": 1,
+      "test": "missing-odd-rim"
+    },
+    {
+      "expected_success": false,
+      "returncode": 1,
+      "test": "allowed-square"
+    },
+    {
+      "expected_success": false,
+      "returncode": 1,
+      "test": "exclusive-create"
+    }
+  ]
+}

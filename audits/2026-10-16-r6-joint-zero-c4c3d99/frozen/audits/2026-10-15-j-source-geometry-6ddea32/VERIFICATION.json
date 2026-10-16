@@ -1,0 +1,72 @@
+{
+  "certificate_hashes_unchanged": {
+    "certificate.json": "5940f81bb1f7b7fac1b6c7af4a1c867b1608bb10d8847180cdce449e1d59b088",
+    "two-palette.json.gz": "bdb71c4c16e61fdbcc5ff91851f788269dd54a9a6fe35887652708c8a7823854"
+  },
+  "complete_319_exclusion": "OPEN",
+  "prior_file_drift": [],
+  "prior_files_checked": 388,
+  "receipts": [
+    {
+      "exit_code": 0,
+      "expected": "accept",
+      "name": "normal",
+      "script": "check.py"
+    },
+    {
+      "exit_code": 0,
+      "expected": "accept",
+      "name": "seed17",
+      "script": "check.py"
+    },
+    {
+      "exit_code": 0,
+      "expected": "accept",
+      "name": "two-palette-normal",
+      "script": "check_two_palette.py"
+    },
+    {
+      "exit_code": 0,
+      "expected": "accept",
+      "name": "two-palette-seed17",
+      "script": "check_two_palette.py"
+    },
+    {
+      "exit_code": 1,
+      "expected": "reject",
+      "name": "missing-full-lift",
+      "script": "check.py"
+    },
+    {
+      "exit_code": 1,
+      "expected": "reject",
+      "name": "missing-empty-fibre",
+      "script": "check.py"
+    },
+    {
+      "exit_code": 1,
+      "expected": "reject",
+      "name": "wrong-source-palette",
+      "script": "check.py"
+    },
+    {
+      "exit_code": 1,
+      "expected": "reject",
+      "name": "wrong-hub-return",
+      "script": "check_two_palette.py"
+    },
+    {
+      "exit_code": 1,
+      "expected": "reject",
+      "name": "exclusive-create",
+      "script": "check.py"
+    },
+    {
+      "exit_code": 1,
+      "expected": "reject",
+      "name": "two-palette-exclusive-create",
+      "script": "check_two_palette.py"
+    }
+  ],
+  "source_status": "not triggered"
+}

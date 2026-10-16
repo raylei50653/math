@@ -1,0 +1,67 @@
+{
+  "immutable_files": [
+    "audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/space.py",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/certificate.json",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/INPUTS.json",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/graph-75.json",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/graph-121.json",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/logs/missing-full-colouring.json",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-monodromy.json",
+    "audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-cover-rank.json"
+  ],
+  "cases": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/check.py"
+      ],
+      "expected": "accept"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/check.py"
+      ],
+      "expected": "accept",
+      "seed17": true
+    },
+    {
+      "name": "missing-full-colouring",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/logs/missing-full-colouring.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "wrong-monodromy",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-monodromy.json"
+      ],
+      "expected": "reject"
+    },
+    {
+      "name": "wrong-cover-rank",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-kempe-state-covers-6ddea32/logs/wrong-cover-rank.json"
+      ],
+      "expected": "reject"
+    }
+  ]
+}

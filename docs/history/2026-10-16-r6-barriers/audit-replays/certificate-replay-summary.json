@@ -1,0 +1,688 @@
+{
+  "repository": "/home/ray/developer/ai/math",
+  "output_directory": "/tmp/math-r6-publish-replay-nktwomsz",
+  "audit_files_before": 424,
+  "audit_files_after": 424,
+  "audit_bytes_unchanged": true,
+  "runs": [
+    {
+      "name": "joint-A-normal",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/A/check.py",
+        "--check",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/A/certificate.json"
+      ],
+      "environment": {},
+      "expected_returncode": 0,
+      "returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.995,
+      "stdout": "joint-A-normal.stdout",
+      "stderr": "joint-A-normal.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-joint-zero-c4c3d99/A/check.py --check audits/2026-10-16-r6-joint-zero-c4c3d99/A/certificate.json"
+    },
+    {
+      "name": "joint-A-seed17",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/A/check.py",
+        "--check",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/A/certificate.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_returncode": 0,
+      "returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.995,
+      "stdout": "joint-A-seed17.stdout",
+      "stderr": "joint-A-seed17.stderr",
+      "shell_command": "PYTHONHASHSEED=17 uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-joint-zero-c4c3d99/A/check.py --check audits/2026-10-16-r6-joint-zero-c4c3d99/A/certificate.json"
+    },
+    {
+      "name": "joint-A-nonplanar-source",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/A/check.py",
+        "--check",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/A/negative-nonplanar-source.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 1.001,
+      "stdout": "joint-A-nonplanar-source.stdout",
+      "stderr": "joint-A-nonplanar-source.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-joint-zero-c4c3d99/A/check.py --check audits/2026-10-16-r6-joint-zero-c4c3d99/A/negative-nonplanar-source.json"
+    },
+    {
+      "name": "joint-A-missing-exceptional-edge",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/A/check.py",
+        "--check",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/A/negative-missing-exceptional-edge.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 0.977,
+      "stdout": "joint-A-missing-exceptional-edge.stdout",
+      "stderr": "joint-A-missing-exceptional-edge.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-joint-zero-c4c3d99/A/check.py --check audits/2026-10-16-r6-joint-zero-c4c3d99/A/negative-missing-exceptional-edge.json"
+    },
+    {
+      "name": "joint-A-exclusive-create",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/A/check.py",
+        "--output",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/A/certificate.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 0.966,
+      "stdout": "joint-A-exclusive-create.stdout",
+      "stderr": "joint-A-exclusive-create.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-joint-zero-c4c3d99/A/check.py --output audits/2026-10-16-r6-joint-zero-c4c3d99/A/certificate.json"
+    },
+    {
+      "name": "joint-B-normal",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/certificate.json"
+      ],
+      "environment": {},
+      "expected_returncode": 0,
+      "returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.062,
+      "stdout": "joint-B-normal.stdout",
+      "stderr": "joint-B-normal.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py --check audits/2026-10-16-r6-joint-zero-c4c3d99/B/certificate.json"
+    },
+    {
+      "name": "joint-B-seed17",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/certificate.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_returncode": 0,
+      "returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.067,
+      "stdout": "joint-B-seed17.stdout",
+      "stderr": "joint-B-seed17.stderr",
+      "shell_command": "PYTHONHASHSEED=17 uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py --check audits/2026-10-16-r6-joint-zero-c4c3d99/B/certificate.json"
+    },
+    {
+      "name": "joint-B-missing-empty-fibre",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/negative/missing-empty-fibre.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 0.06,
+      "stdout": "joint-B-missing-empty-fibre.stdout",
+      "stderr": "joint-B-missing-empty-fibre.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py --check audits/2026-10-16-r6-joint-zero-c4c3d99/B/negative/missing-empty-fibre.json"
+    },
+    {
+      "name": "joint-B-wrong-joint-minimum",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/negative/wrong-joint-minimum.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 0.063,
+      "stdout": "joint-B-wrong-joint-minimum.stdout",
+      "stderr": "joint-B-wrong-joint-minimum.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py --check audits/2026-10-16-r6-joint-zero-c4c3d99/B/negative/wrong-joint-minimum.json"
+    },
+    {
+      "name": "joint-B-exclusive-create",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py",
+        "--output",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/B/certificate.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 0.061,
+      "stdout": "joint-B-exclusive-create.stdout",
+      "stderr": "joint-B-exclusive-create.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py --output audits/2026-10-16-r6-joint-zero-c4c3d99/B/certificate.json"
+    },
+    {
+      "name": "joint-C-normal",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/C/check.py",
+        "--check"
+      ],
+      "environment": {},
+      "expected_returncode": 0,
+      "returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.125,
+      "stdout": "joint-C-normal.stdout",
+      "stderr": "joint-C-normal.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-joint-zero-c4c3d99/C/check.py --check"
+    },
+    {
+      "name": "joint-C-seed17",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/C/check.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_returncode": 0,
+      "returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.13,
+      "stdout": "joint-C-seed17.stdout",
+      "stderr": "joint-C-seed17.stderr",
+      "shell_command": "PYTHONHASHSEED=17 uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-joint-zero-c4c3d99/C/check.py --check"
+    },
+    {
+      "name": "joint-C-negative-certificate",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/C/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/C/negative-certificate.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 0.131,
+      "stdout": "joint-C-negative-certificate.stdout",
+      "stderr": "joint-C-negative-certificate.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-joint-zero-c4c3d99/C/check.py --check --certificate audits/2026-10-16-r6-joint-zero-c4c3d99/C/negative-certificate.json"
+    },
+    {
+      "name": "joint-C-exclusive-create",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/C/check.py"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 0.127,
+      "stdout": "joint-C-exclusive-create.stdout",
+      "stderr": "joint-C-exclusive-create.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-joint-zero-c4c3d99/C/check.py"
+    },
+    {
+      "name": "cap-A-normal",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/A/check.py"
+      ],
+      "environment": {},
+      "expected_returncode": 0,
+      "returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.085,
+      "stdout": "cap-A-normal.stdout",
+      "stderr": "cap-A-normal.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-cap-barriers-c4c3d99/A/check.py"
+    },
+    {
+      "name": "cap-A-seed17",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/A/check.py",
+        "--seed",
+        "17"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_returncode": 0,
+      "returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.089,
+      "stdout": "cap-A-seed17.stdout",
+      "stderr": "cap-A-seed17.stderr",
+      "shell_command": "PYTHONHASHSEED=17 uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-cap-barriers-c4c3d99/A/check.py --seed 17"
+    },
+    {
+      "name": "cap-B-normal",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py",
+        "--verify",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/certificate-v2.json"
+      ],
+      "environment": {},
+      "expected_returncode": 0,
+      "returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 2.328,
+      "stdout": "cap-B-normal.stdout",
+      "stderr": "cap-B-normal.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py --verify audits/2026-10-16-r6-cap-barriers-c4c3d99/B/certificate-v2.json"
+    },
+    {
+      "name": "cap-B-seed17",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py",
+        "--verify",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/certificate-v2.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_returncode": 0,
+      "returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 2.367,
+      "stdout": "cap-B-seed17.stdout",
+      "stderr": "cap-B-seed17.stderr",
+      "shell_command": "PYTHONHASHSEED=17 uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py --verify audits/2026-10-16-r6-cap-barriers-c4c3d99/B/certificate-v2.json"
+    },
+    {
+      "name": "cap-B-negative-tau",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py",
+        "--verify",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/negative-tau.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 2.319,
+      "stdout": "cap-B-negative-tau.stdout",
+      "stderr": "cap-B-negative-tau.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py --verify audits/2026-10-16-r6-cap-barriers-c4c3d99/B/negative-tau.json"
+    },
+    {
+      "name": "cap-B-exclusive-create",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py",
+        "--write",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/certificate-v2.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 2.268,
+      "stdout": "cap-B-exclusive-create.stdout",
+      "stderr": "cap-B-exclusive-create.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py --write audits/2026-10-16-r6-cap-barriers-c4c3d99/B/certificate-v2.json"
+    },
+    {
+      "name": "cap-C-normal",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/check.py",
+        "--check",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/certificate.json"
+      ],
+      "environment": {},
+      "expected_returncode": 0,
+      "returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.046,
+      "stdout": "cap-C-normal.stdout",
+      "stderr": "cap-C-normal.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-cap-barriers-c4c3d99/C/check.py --check audits/2026-10-16-r6-cap-barriers-c4c3d99/C/certificate.json"
+    },
+    {
+      "name": "cap-C-seed17",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/check.py",
+        "--check",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/certificate.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_returncode": 0,
+      "returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.046,
+      "stdout": "cap-C-seed17.stdout",
+      "stderr": "cap-C-seed17.stderr",
+      "shell_command": "PYTHONHASHSEED=17 uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-cap-barriers-c4c3d99/C/check.py --check audits/2026-10-16-r6-cap-barriers-c4c3d99/C/certificate.json"
+    },
+    {
+      "name": "cap-C-missing-odd-rim",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/check.py",
+        "--check",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/negative-missing-odd-rim.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 0.046,
+      "stdout": "cap-C-missing-odd-rim.stdout",
+      "stderr": "cap-C-missing-odd-rim.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-cap-barriers-c4c3d99/C/check.py --check audits/2026-10-16-r6-cap-barriers-c4c3d99/C/negative-missing-odd-rim.json"
+    },
+    {
+      "name": "cap-C-allowed-square",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/check.py",
+        "--check",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/negative-allowed-square.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 0.047,
+      "stdout": "cap-C-allowed-square.stdout",
+      "stderr": "cap-C-allowed-square.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-cap-barriers-c4c3d99/C/check.py --check audits/2026-10-16-r6-cap-barriers-c4c3d99/C/negative-allowed-square.json"
+    },
+    {
+      "name": "cap-C-exclusive-create",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/check.py",
+        "--output",
+        "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/certificate.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 0.047,
+      "stdout": "cap-C-exclusive-create.stdout",
+      "stderr": "cap-C-exclusive-create.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-cap-barriers-c4c3d99/C/check.py --output audits/2026-10-16-r6-cap-barriers-c4c3d99/C/certificate.json"
+    },
+    {
+      "name": "chorded-normal",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/check.py",
+        "--check",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/certificate.json"
+      ],
+      "environment": {},
+      "expected_returncode": 0,
+      "returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.098,
+      "stdout": "chorded-normal.stdout",
+      "stderr": "chorded-normal.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-chorded-five-c4c3d99/check.py --check audits/2026-10-16-r6-chorded-five-c4c3d99/certificate.json"
+    },
+    {
+      "name": "chorded-seed17",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/check.py",
+        "--check",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/certificate.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "expected_returncode": 0,
+      "returncode": 0,
+      "expected_status_met": true,
+      "duration_seconds": 0.096,
+      "stdout": "chorded-seed17.stdout",
+      "stderr": "chorded-seed17.stderr",
+      "shell_command": "PYTHONHASHSEED=17 uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-chorded-five-c4c3d99/check.py --check audits/2026-10-16-r6-chorded-five-c4c3d99/certificate.json"
+    },
+    {
+      "name": "chorded-missing-deletion",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/check.py",
+        "--check",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/negative-missing-deletion.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 0.109,
+      "stdout": "chorded-missing-deletion.stdout",
+      "stderr": "chorded-missing-deletion.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-chorded-five-c4c3d99/check.py --check audits/2026-10-16-r6-chorded-five-c4c3d99/negative-missing-deletion.json"
+    },
+    {
+      "name": "chorded-source-promotion",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/check.py",
+        "--check",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/negative-source-promotion.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 0.103,
+      "stdout": "chorded-source-promotion.stdout",
+      "stderr": "chorded-source-promotion.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-chorded-five-c4c3d99/check.py --check audits/2026-10-16-r6-chorded-five-c4c3d99/negative-source-promotion.json"
+    },
+    {
+      "name": "chorded-exclusive-create",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/check.py",
+        "--write",
+        "audits/2026-10-16-r6-chorded-five-c4c3d99/certificate.json"
+      ],
+      "environment": {},
+      "expected_returncode": 1,
+      "returncode": 1,
+      "expected_status_met": true,
+      "duration_seconds": 0.101,
+      "stdout": "chorded-exclusive-create.stdout",
+      "stderr": "chorded-exclusive-create.stderr",
+      "shell_command": "uv run --with-requirements requirements.txt python -B audits/2026-10-16-r6-chorded-five-c4c3d99/check.py --write audits/2026-10-16-r6-chorded-five-c4c3d99/certificate.json"
+    }
+  ],
+  "normal_seed17_outputs_identical": {
+    "joint-A": true,
+    "joint-B": true,
+    "joint-C": true,
+    "cap-A": true,
+    "cap-B": true,
+    "cap-C": true,
+    "chorded": true
+  },
+  "all_expected_statuses_met": true
+}

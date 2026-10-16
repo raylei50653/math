@@ -1,0 +1,236 @@
+{
+  "status": "PASS",
+  "plan": {
+    "immutable_files": [
+      "audits/2026-10-15-j-source-geometry-6ddea32/check.py",
+      "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py",
+      "audits/2026-10-15-j-source-geometry-6ddea32/certificate.json",
+      "audits/2026-10-15-j-source-geometry-6ddea32/two-palette.json.gz",
+      "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-full-lift.json",
+      "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-empty-fibre.json",
+      "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-source-palette.json",
+      "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-hub-return.json.gz"
+    ],
+    "cases": [
+      {
+        "name": "check.py-normal",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-j-source-geometry-6ddea32/check.py"
+        ],
+        "expected": "accept"
+      },
+      {
+        "name": "check.py-seed17",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-j-source-geometry-6ddea32/check.py"
+        ],
+        "expected": "accept",
+        "seed17": true
+      },
+      {
+        "name": "check_two_palette.py-normal",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py"
+        ],
+        "expected": "accept"
+      },
+      {
+        "name": "check_two_palette.py-seed17",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py"
+        ],
+        "expected": "accept",
+        "seed17": true
+      },
+      {
+        "name": "missing-full-lift",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-j-source-geometry-6ddea32/check.py",
+          "--certificate",
+          "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-full-lift.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "missing-empty-fibre",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-j-source-geometry-6ddea32/check.py",
+          "--certificate",
+          "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-empty-fibre.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "wrong-source-palette",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-j-source-geometry-6ddea32/check.py",
+          "--certificate",
+          "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-source-palette.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "wrong-hub-return",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py",
+          "--certificate",
+          "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-hub-return.json.gz"
+        ],
+        "expected": "reject"
+      }
+    ]
+  },
+  "receipts": [
+    {
+      "name": "check.py-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check.py"
+      ],
+      "expected": "accept",
+      "exit_code": 0,
+      "seconds": 0.837,
+      "stdout": "{\"all_r_allowed\": 240, \"input_drift\": 0, \"patches\": [{\"empty_fibres\": 17040, \"full_count\": 2760, \"parameters\": {\"a0\": 5, \"c0\": 6, \"dG_s\": 6, \"dG_t\": 6, \"h\": 3}}, {\"empty_fibres\": 17040, \"full_count\": 2760, \"parameters\": {\"a0\": 4, \"c0\": 7, \"dG_s\": 6, \"dG_t\": 6, \"h\": 3}}, {\"empty_fibres\": 17040, \"full_count\": 2760, \"parameters\": {\"a0\": 7, \"c0\": 4, \"dG_s\": 6, \"dG_t\": 6, \"h\": 3}}], \"proper_six_pin_rows\": 432, \"source_status\": \"not triggered\", \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "check.py-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check.py"
+      ],
+      "expected": "accept",
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 0.814,
+      "stdout": "{\"all_r_allowed\": 240, \"input_drift\": 0, \"patches\": [{\"empty_fibres\": 17040, \"full_count\": 2760, \"parameters\": {\"a0\": 5, \"c0\": 6, \"dG_s\": 6, \"dG_t\": 6, \"h\": 3}}, {\"empty_fibres\": 17040, \"full_count\": 2760, \"parameters\": {\"a0\": 4, \"c0\": 7, \"dG_s\": 6, \"dG_t\": 6, \"h\": 3}}, {\"empty_fibres\": 17040, \"full_count\": 2760, \"parameters\": {\"a0\": 7, \"c0\": 4, \"dG_s\": 6, \"dG_t\": 6, \"h\": 3}}], \"proper_six_pin_rows\": 432, \"source_status\": \"not triggered\", \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "check_two_palette.py-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py"
+      ],
+      "expected": "accept",
+      "exit_code": 0,
+      "seconds": 0.86,
+      "stdout": "{\"complete_patch_colourings\": 5688, \"empty_boundary_fibres\": 53712, \"forbidden_unequal_two_palette_fibres\": 24, \"source_status\": \"not triggered\", \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "check_two_palette.py-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py"
+      ],
+      "expected": "accept",
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 0.814,
+      "stdout": "{\"complete_patch_colourings\": 5688, \"empty_boundary_fibres\": 53712, \"forbidden_unequal_two_palette_fibres\": 24, \"source_status\": \"not triggered\", \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "missing-full-lift",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-full-lift.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.828,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-j-source-geometry-6ddea32/check.py\", line 181, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-j-source-geometry-6ddea32/check.py\", line 173, in main\n    assert json.loads(args.certificate.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    {
+      "name": "missing-empty-fibre",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-empty-fibre.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.831,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-j-source-geometry-6ddea32/check.py\", line 181, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-j-source-geometry-6ddea32/check.py\", line 173, in main\n    assert json.loads(args.certificate.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    {
+      "name": "wrong-source-palette",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check.py",
+        "--certificate",
+        "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-source-palette.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.867,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-j-source-geometry-6ddea32/check.py\", line 181, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-j-source-geometry-6ddea32/check.py\", line 173, in main\n    assert json.loads(args.certificate.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    {
+      "name": "wrong-hub-return",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py",
+        "--certificate",
+        "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-hub-return.json.gz"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.874,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py\", line 66, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py\", line 58, in main\n    assert json.loads(gzip.decompress(args.certificate.read_bytes())) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    }
+  ],
+  "hashes_before": {
+    "audits/2026-10-15-j-source-geometry-6ddea32/check.py": "e6eddf1a63b66b1822dec68e40a224f7dc209d93b3f7eb2a7ccf9d9e53d700ba",
+    "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py": "633a899d8204ae0f5f03aa57430716f5ce60555d531fc0dc341e842d4524540d",
+    "audits/2026-10-15-j-source-geometry-6ddea32/certificate.json": "5940f81bb1f7b7fac1b6c7af4a1c867b1608bb10d8847180cdce449e1d59b088",
+    "audits/2026-10-15-j-source-geometry-6ddea32/two-palette.json.gz": "bdb71c4c16e61fdbcc5ff91851f788269dd54a9a6fe35887652708c8a7823854",
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-full-lift.json": "e2d09e18a3980771a0d82b7c341771961fd45ef3087c5feb50ac8cf9f00e5d67",
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-empty-fibre.json": "e98838efdabee78ff69bbfe7a078059acf31118253f2e65773d9a0d089bf2911",
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-source-palette.json": "411fee719681fa3da3f4e36f70a0a44636db0b7d2ff43d57707293814bd610f5",
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-hub-return.json.gz": "db20b46c70658772329b9802bca6989084aea21ade021c9616c40f689717beaf"
+  },
+  "hashes_after": {
+    "audits/2026-10-15-j-source-geometry-6ddea32/check.py": "e6eddf1a63b66b1822dec68e40a224f7dc209d93b3f7eb2a7ccf9d9e53d700ba",
+    "audits/2026-10-15-j-source-geometry-6ddea32/check_two_palette.py": "633a899d8204ae0f5f03aa57430716f5ce60555d531fc0dc341e842d4524540d",
+    "audits/2026-10-15-j-source-geometry-6ddea32/certificate.json": "5940f81bb1f7b7fac1b6c7af4a1c867b1608bb10d8847180cdce449e1d59b088",
+    "audits/2026-10-15-j-source-geometry-6ddea32/two-palette.json.gz": "bdb71c4c16e61fdbcc5ff91851f788269dd54a9a6fe35887652708c8a7823854",
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-full-lift.json": "e2d09e18a3980771a0d82b7c341771961fd45ef3087c5feb50ac8cf9f00e5d67",
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-empty-fibre.json": "e98838efdabee78ff69bbfe7a078059acf31118253f2e65773d9a0d089bf2911",
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-source-palette.json": "411fee719681fa3da3f4e36f70a0a44636db0b7d2ff43d57707293814bd610f5",
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-hub-return.json.gz": "db20b46c70658772329b9802bca6989084aea21ade021c9616c40f689717beaf"
+  },
+  "input_drift": 0
+}

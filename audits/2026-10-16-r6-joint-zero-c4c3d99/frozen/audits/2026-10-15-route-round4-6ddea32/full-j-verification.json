@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "certificate_hash": "8b6b547b4a602bb8df3bdc0e2ccd3aff74fe3206ddbbaf338a818c3caa757095",
+  "receipts": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/full-j-certificate.json"
+      ],
+      "seed": null,
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"proper_rows\": 432, \"allowed_rows\": 240, \"E_rows\": 96, \"additional_bad_rows\": 96, \"combined_cubes\": 117, \"controls\": {\"icosahedral\": {\"source_allowed\": 144, \"E\": 24, \"additional_bad_event\": 72}, \"flipped_icosahedral_return\": {\"source_allowed\": 120, \"E\": 96, \"additional_bad_event\": 72}, \"stacked_E_empty\": {\"source_allowed\": 0, \"E\": 0, \"additional_bad_event\": 24}}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/full-j-certificate.json"
+      ],
+      "seed": "17",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"proper_rows\": 432, \"allowed_rows\": 240, \"E_rows\": 96, \"additional_bad_rows\": 96, \"combined_cubes\": 117, \"controls\": {\"icosahedral\": {\"source_allowed\": 144, \"E\": 24, \"additional_bad_event\": 72}, \"flipped_icosahedral_return\": {\"source_allowed\": 120, \"E\": 96, \"additional_bad_event\": 72}, \"stacked_E_empty\": {\"source_allowed\": 0, \"E\": 0, \"additional_bad_event\": 24}}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "corrupted",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-route-round4-6ddea32/check_full_j.py",
+        "--check",
+        "audits/2026-10-15-route-round4-6ddea32/full-j-corrupted.json"
+      ],
+      "seed": null,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round4-6ddea32/check_full_j.py\", line 139, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-route-round4-6ddea32/check_full_j.py\", line 132, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    }
+  ],
+  "input_drift": 0
+}

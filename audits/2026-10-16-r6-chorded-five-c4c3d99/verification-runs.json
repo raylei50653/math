@@ -1,0 +1,103 @@
+[
+  {
+    "name": "normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/check.py",
+      "--check",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/certificate.json"
+    ],
+    "seed17": false,
+    "exit_code": 0,
+    "classification": "PASS",
+    "stdout": "logs/normal.stdout",
+    "stderr": "logs/normal.stderr"
+  },
+  {
+    "name": "seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/check.py",
+      "--check",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/certificate.json"
+    ],
+    "seed17": true,
+    "exit_code": 0,
+    "classification": "PASS",
+    "stdout": "logs/seed17.stdout",
+    "stderr": "logs/seed17.stderr"
+  },
+  {
+    "name": "negative-missing-deletion",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/check.py",
+      "--check",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/negative-missing-deletion.json"
+    ],
+    "seed17": false,
+    "exit_code": 1,
+    "classification": "expected rejection",
+    "stdout": "logs/negative-missing-deletion.stdout",
+    "stderr": "logs/negative-missing-deletion.stderr"
+  },
+  {
+    "name": "negative-source-promotion",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/check.py",
+      "--check",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/negative-source-promotion.json"
+    ],
+    "seed17": false,
+    "exit_code": 1,
+    "classification": "expected rejection",
+    "stdout": "logs/negative-source-promotion.stdout",
+    "stderr": "logs/negative-source-promotion.stderr"
+  },
+  {
+    "name": "exclusive-create",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/check.py",
+      "--write",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/certificate.json"
+    ],
+    "seed17": false,
+    "exit_code": 1,
+    "classification": "expected rejection",
+    "stdout": "logs/exclusive-create.stdout",
+    "stderr": "logs/exclusive-create.stderr"
+  },
+  {
+    "name": "prior-cap-bundle",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-cap-barriers-c4c3d99/check_bundle.py"
+    ],
+    "seed17": false,
+    "exit_code": 0,
+    "classification": "PASS",
+    "stdout": "logs/prior-cap-bundle.stdout",
+    "stderr": "logs/prior-cap-bundle.stderr"
+  },
+  {
+    "name": "prior-joint-bundle",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-joint-zero-c4c3d99/check_bundle.py"
+    ],
+    "seed17": false,
+    "exit_code": 1,
+    "classification": "historical live routing hash mismatch",
+    "stdout": "logs/prior-joint-bundle.stdout",
+    "stderr": "logs/prior-joint-bundle.stderr"
+  }
+]

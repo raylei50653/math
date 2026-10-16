@@ -1,0 +1,53 @@
+{
+  "certificate_sha256": "c111564640003dd8bd981ff1705f8214b6c9015b8399c63e193971d4319ebc74",
+  "normal_seed17_identical": true,
+  "paper_review_A": "Independent review of A1-A4 passed: exact parity minima, complete monochromatic edge set, center exclusion, W5/W7 bounds, and pair-wheel overlap/degree restrictions.",
+  "retained_first_certificate": "certificate.json predates explicit nonvacuous uncrossing algebra control; authoritative final certificate is certificate-v2.json",
+  "runs": [
+    {
+      "command": [
+        "python",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py",
+        "--verify",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-cap-barriers-c4c3d99/B/certificate-v2.json"
+      ],
+      "label": "normal",
+      "returncode": 0,
+      "stdout": "{\"controls\": 5, \"saturation_checks\": 12, \"source_status\": \"not triggered\", \"uncrossing_algebra_checks\": 720, \"uncrossing_checks\": 0}"
+    },
+    {
+      "command": [
+        "python",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py",
+        "--verify",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-cap-barriers-c4c3d99/B/certificate-v2.json"
+      ],
+      "label": "seed17",
+      "returncode": 0,
+      "stdout": "{\"controls\": 5, \"saturation_checks\": 12, \"source_status\": \"not triggered\", \"uncrossing_algebra_checks\": 720, \"uncrossing_checks\": 0}"
+    },
+    {
+      "command": [
+        "python",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py",
+        "--verify",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-cap-barriers-c4c3d99/B/negative-tau.json"
+      ],
+      "label": "negative-tau",
+      "returncode": 1,
+      "stdout": ""
+    },
+    {
+      "command": [
+        "python",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py",
+        "--write",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-cap-barriers-c4c3d99/B/certificate-v2.json"
+      ],
+      "label": "exclusive-create",
+      "returncode": 1,
+      "stdout": ""
+    }
+  ],
+  "source_status": "not triggered"
+}

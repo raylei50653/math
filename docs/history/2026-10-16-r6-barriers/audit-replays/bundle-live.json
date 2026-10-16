@@ -1,0 +1,50 @@
+[
+  {
+    "name": "joint-zero-bundle-live",
+    "command": [
+      "uv",
+      "run",
+      "--with-requirements",
+      "requirements.txt",
+      "python",
+      "-B",
+      "audits/2026-10-16-r6-joint-zero-c4c3d99/check_bundle.py"
+    ],
+    "environment": {},
+    "returncode": 1,
+    "stdout": "joint-zero-bundle-live.stdout",
+    "stderr": "joint-zero-bundle-live.stderr"
+  },
+  {
+    "name": "cap-barriers-bundle-live",
+    "command": [
+      "uv",
+      "run",
+      "--with-requirements",
+      "requirements.txt",
+      "python",
+      "-B",
+      "audits/2026-10-16-r6-cap-barriers-c4c3d99/check_bundle.py"
+    ],
+    "environment": {},
+    "returncode": 0,
+    "stdout": "cap-barriers-bundle-live.stdout",
+    "stderr": "cap-barriers-bundle-live.stderr"
+  },
+  {
+    "name": "chorded-five-bundle-live",
+    "command": [
+      "uv",
+      "run",
+      "--with-requirements",
+      "requirements.txt",
+      "python",
+      "-B",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/check_bundle.py"
+    ],
+    "environment": {},
+    "returncode": 0,
+    "stdout": "chorded-five-bundle-live.stdout",
+    "stderr": "chorded-five-bundle-live.stderr"
+  }
+]
