@@ -1,0 +1,65 @@
+{
+  "checks": [
+    {
+      "name": "final-bundle-preseal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-double-w5-101-0b639cf/check_bundle.py",
+        "--preseal"
+      ],
+      "exit_code": 0,
+      "seconds": 0.114
+    },
+    {
+      "name": "final-docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.775
+    },
+    {
+      "name": "final-docgraph-docs",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.085
+    },
+    {
+      "name": "final-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.011
+    },
+    {
+      "name": "final-sector-replay",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-double-w5-101-0b639cf/check.py",
+        "--check",
+        "audits/2026-10-16-r6-double-w5-101-0b639cf/certificate.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.078
+    }
+  ],
+  "normal_seed17_outputs_identical": true,
+  "paper_theorem": "101 double-W5 excluded; ordinary 101 only nonwheel seven-cut remains",
+  "lean_source_changes": false,
+  "commit_performed": false,
+  "push_performed": false
+}

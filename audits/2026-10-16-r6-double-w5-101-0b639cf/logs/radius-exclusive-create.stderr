@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-16-r6-double-w5-101-0b639cf/check_radius2.py", line 232, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-16-r6-double-w5-101-0b639cf/check_radius2.py", line 220, in main
+    with args.write.open('x') as stream:
+         ~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: 'audits/2026-10-16-r6-double-w5-101-0b639cf/certificate-radius2.json'

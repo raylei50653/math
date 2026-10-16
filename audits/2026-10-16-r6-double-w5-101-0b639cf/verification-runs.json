@@ -1,0 +1,184 @@
+[
+  {
+    "name": "normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-double-w5-101-0b639cf/check.py",
+      "--check",
+      "audits/2026-10-16-r6-double-w5-101-0b639cf/certificate.json"
+    ],
+    "environment": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "expected_result_observed": true,
+    "seconds": 0.091
+  },
+  {
+    "name": "seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-double-w5-101-0b639cf/check.py",
+      "--check",
+      "audits/2026-10-16-r6-double-w5-101-0b639cf/certificate.json"
+    ],
+    "environment": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "expected_result_observed": true,
+    "seconds": 0.091
+  },
+  {
+    "name": "negative-missing-fibre",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-double-w5-101-0b639cf/check.py",
+      "--check",
+      "audits/2026-10-16-r6-double-w5-101-0b639cf/negative-missing-fibre.json"
+    ],
+    "environment": {},
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "expected_result_observed": true,
+    "seconds": 0.092
+  },
+  {
+    "name": "negative-source-promotion",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-double-w5-101-0b639cf/check.py",
+      "--check",
+      "audits/2026-10-16-r6-double-w5-101-0b639cf/negative-source-promotion.json"
+    ],
+    "environment": {},
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "expected_result_observed": true,
+    "seconds": 0.092
+  },
+  {
+    "name": "exclusive-create",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-double-w5-101-0b639cf/check.py",
+      "--write",
+      "audits/2026-10-16-r6-double-w5-101-0b639cf/certificate.json"
+    ],
+    "environment": {},
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "expected_result_observed": true,
+    "seconds": 0.095
+  },
+  {
+    "name": "prior-chorded-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/check.py",
+      "--check",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/certificate.json"
+    ],
+    "environment": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "expected_result_observed": true,
+    "seconds": 0.104
+  },
+  {
+    "name": "prior-chorded-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/check.py",
+      "--check",
+      "audits/2026-10-16-r6-chorded-five-c4c3d99/certificate.json"
+    ],
+    "environment": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "expected_result_observed": true,
+    "seconds": 0.1
+  },
+  {
+    "name": "prior-return-theorem",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-14-c4-return-branches-a11d4bb/pq/check.py",
+      "--check"
+    ],
+    "environment": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "expected_result_observed": true,
+    "seconds": 0.034
+  },
+  {
+    "name": "prior-curvature",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-cap-barriers-c4c3d99/A/check.py"
+    ],
+    "environment": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "expected_result_observed": true,
+    "seconds": 0.078
+  },
+  {
+    "name": "prior-saturation",
+    "command": [
+      "uv",
+      "run",
+      "--with-requirements",
+      "requirements.txt",
+      "python",
+      "-B",
+      "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/check.py",
+      "--verify",
+      "audits/2026-10-16-r6-cap-barriers-c4c3d99/B/certificate-v2.json"
+    ],
+    "environment": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "expected_result_observed": true,
+    "seconds": 2.401
+  },
+  {
+    "name": "prior-wheel-fibres",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/check.py",
+      "--check",
+      "audits/2026-10-16-r6-cap-barriers-c4c3d99/C/certificate.json"
+    ],
+    "environment": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "expected_result_observed": true,
+    "seconds": 0.042
+  },
+  {
+    "name": "lake-build",
+    "command": [
+      "lake",
+      "build"
+    ],
+    "environment": {},
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "expected_result_observed": true,
+    "seconds": 9.854
+  }
+]
