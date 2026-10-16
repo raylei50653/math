@@ -1,0 +1,105 @@
+{
+  "BASE": "e98a1cc1afd9a428600dcf4027d8138078c01650",
+  "checks": [
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "summary": "OK: 691 Markdown files, 9083 local links; anchors, index, handoff, guide progress checked"
+    },
+    {
+      "name": "formal-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "summary": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes"
+    },
+    {
+      "name": "custody",
+      "command": [
+        "python3",
+        "-B",
+        "docs/history/2026-10-16-r6-319-publication/check_custody.py"
+      ],
+      "exit_code": 0,
+      "summary": "{\"frozen_authority_files\": 245, \"mathematical_proof_verifier\": false, \"nested_manifests_checked_via_base\": 7, \"original_audit_bytes_unchanged\": true, \"research_base\": \"e98a1cc1afd9a428600dcf4027d8138078c01650\", \"research_manifest_files\": 369, \"routing_snapshots\": 4, \"sealed_files_including_manifests\": 377, \"source_positivity\": \"OPEN\", \"status\": \"PASS\"}"
+    }
+  ],
+  "source_positivity": "OPEN",
+  "original_audit_files_unchanged": 377,
+  "artifact_exception_additions": 16,
+  "whole_tree_docgraph": {
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "exit_code": 1,
+    "summary": "FAIL: 97 documents, 368 relations, 12 families; 70 errors, 0 notes",
+    "baseline_without_new_bundle_errors": 70,
+    "current_errors": 70,
+    "added_error_keys": [],
+    "removed_error_keys": [],
+    "comparison": "Same worktree with new audit/publication metadata excluded; snapshots retain existing duplicate IDs"
+  },
+  "whitespace": {
+    "full_exit_code": 2,
+    "exception": {
+      "path": "audits/2026-10-16-r6-319-complete-e98a1cc/frozen/audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+      "source_at_BASE": "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+      "sha256": "62b9a0ce12535b19a61646a7d5774b2d8d41f8ee91fb999bfd68b7a953628b9d",
+      "reason": "Byte-identical frozen checker already has the trailing blank line; keep the original source/certificate hash rather than rewriting archived evidence."
+    },
+    "all_other_staged_paths_exit_code": 0
+  },
+  "engineering": "engineering.json",
+  "replays": "replays.json",
+  "publication_status": "commit and push authorized; actual state is recorded in Git",
+  "staged_checks": [
+    {
+      "name": "artifact-policy",
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "summary": "Generated artifact policy OK: 5816 indexed files, 58 large files with documented exceptions, 166 registered outputs."
+    },
+    {
+      "name": "staged-whitespace-final",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "summary": "audits/2026-10-16-r6-319-complete-e98a1cc/frozen/audits/2026-10-15-three-edge-matchings-6ddea32/check.py:366: new blank line at EOF."
+    },
+    {
+      "name": "staged-whitespace-clean",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(exclude)audits/2026-10-16-r6-319-complete-e98a1cc/frozen/audits/2026-10-15-three-edge-matchings-6ddea32/check.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "summary": ""
+    }
+  ]
+}

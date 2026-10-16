@@ -1,0 +1,112 @@
+{
+  "BASE": "e98a1cc1afd9a428600dcf4027d8138078c01650",
+  "active_certificate": "sealed-certificate.json",
+  "superseded_certificate": "complete-certificate.json; refined schema distinguishes raw neighbor-avoiding colours from legal full local r lifts of improper seven-pin assignments",
+  "initial_normalization_failure": "Retained initial-check.py, certificate.json, initial-normal.stderr; tuple/list JSON mismatch corrected without mathematical row changes.",
+  "records": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/check.py",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit": 0,
+      "pass": true
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/check.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "pass": true
+    },
+    {
+      "name": "sealed-discard-empty-fibres",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/sealed-discard-empty-fibres.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit": 1,
+      "pass": true
+    },
+    {
+      "name": "sealed-wrong-empty-count",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/sealed-wrong-empty-count.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit": 1,
+      "pass": true
+    },
+    {
+      "name": "sealed-missing-zero-slot",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/sealed-missing-zero-slot.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit": 1,
+      "pass": true
+    },
+    {
+      "name": "sealed-improper-row-has-r-lift",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/sealed-improper-row-has-r-lift.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit": 1,
+      "pass": true
+    },
+    {
+      "name": "exclusive-create",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/check.py"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit": 1,
+      "pass": true
+    }
+  ],
+  "frozen_authority_files_checked": 245,
+  "frozen_authority_drift": [],
+  "actual_sources": 0,
+  "source_coverage": "not triggered"
+}

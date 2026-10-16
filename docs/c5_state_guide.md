@@ -2,7 +2,7 @@
 
 ## 最新進度
 
-現況核對：2026-10-16；既有必要表／Layer0共同圖成果保留；[R6七割全排除](../audits/2026-10-16-r6-seven-disk-rigidity-120aae9/REPORT.md)已證普通P101非空，偶補正值仍OPEN；完整720態平面cover暫緩，一般state充分性仍OPEN。
+現況核對：2026-10-16；既有必要表／Layer0成果保留；[319續進](../audits/2026-10-16-r6-319-complete-e98a1cc/REPORT.md)補全U的紙面fibre雙射及平面ordinary/even反控制，原來源偶補正值仍OPEN；完整720態平面cover暫緩，一般state充分性仍OPEN。
 
 | 欄位 | 現況 |
 | --- | --- |
@@ -61,6 +61,9 @@
 其他平面實現及原degree／collar來源均OPEN；不能假設每份cover有交換相容單值section。
 其原來源接回義務由[Kempe導覽](c5_kempe_guide.md#3-停止點與保留缺口)維護，
 不取代本頁F／Z的具名初驗及一般多步充分性問題。
+2026-10-16的[319完整fibres續進](../audits/2026-10-16-r6-319-complete-e98a1cc/REPORT.md)
+為舊22列screen補上實際Kempe分量紙面雙射，未縮小舊screen；新平面反控制的完整U支持為
+1016／967且有違規lifts，不是完整319來源，也不供應完整720態cover。
 
 新增提案見[強迫同色與閉環一致](c5_forcing_transport_conjectures.md)：先在具名前提觸發的
 實際來源量測局部半徑及完整關係證書寬度；零邊修復另檢查完整不增轉移圖的終端平台。

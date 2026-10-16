@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "plan": {
+    "immutable_files": [
+      "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+      "audits/2026-10-15-three-edge-matchings-6ddea32/graphs.json",
+      "audits/2026-10-15-three-edge-matchings-6ddea32/certificate.json",
+      "audits/2026-10-15-three-edge-matchings-6ddea32/negative/wrong-weight.json",
+      "audits/2026-10-15-three-edge-matchings-6ddea32/negative/missing-barrier.json"
+    ],
+    "cases": [
+      {
+        "name": "normal",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+          "--check",
+          "audits/2026-10-15-three-edge-matchings-6ddea32/certificate.json"
+        ],
+        "expected": "accept"
+      },
+      {
+        "name": "seed17",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+          "--check",
+          "audits/2026-10-15-three-edge-matchings-6ddea32/certificate.json"
+        ],
+        "expected": "accept",
+        "seed17": true
+      },
+      {
+        "name": "wrong-weight",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+          "--check",
+          "audits/2026-10-15-three-edge-matchings-6ddea32/negative/wrong-weight.json"
+        ],
+        "expected": "reject"
+      },
+      {
+        "name": "missing-barrier",
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+          "--check",
+          "audits/2026-10-15-three-edge-matchings-6ddea32/negative/missing-barrier.json"
+        ],
+        "expected": "reject"
+      }
+    ]
+  },
+  "receipts": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/certificate.json"
+      ],
+      "expected": "accept",
+      "exit_code": 0,
+      "seconds": 0.765,
+      "stdout": "{\"controls\": {\"flipped_icosahedral_return\": {\"P101\": 2, \"P110\": 2, \"Q_n\": 20, \"W101\": 6, \"W110\": 8, \"all_PM\": 38, \"no_nontrivial_3cut\": true, \"tutte_subsets\": 131072}, \"icosahedral\": {\"P101\": 4, \"P110\": 1, \"Q_n\": 20, \"W101\": 6, \"W110\": 2, \"all_PM\": 36, \"no_nontrivial_3cut\": true, \"tutte_subsets\": 131072}, \"petersen_double_obstruction\": {\"P101\": 0, \"P110\": 0, \"Q_n\": 10, \"W101\": 0, \"W110\": 0, \"all_PM\": 6, \"no_nontrivial_3cut\": true, \"tutte_subsets\": 128}, \"stacked_E_empty\": {\"P101\": 1, \"P110\": 0, \"Q_n\": 12, \"W101\": 2, \"W110\": 0, \"all_PM\": 7, \"no_nontrivial_3cut\": false, \"tutte_subsets\": 512}}, \"input_drift\": 0, \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/certificate.json"
+      ],
+      "expected": "accept",
+      "seed17": true,
+      "exit_code": 0,
+      "seconds": 0.755,
+      "stdout": "{\"controls\": {\"flipped_icosahedral_return\": {\"P101\": 2, \"P110\": 2, \"Q_n\": 20, \"W101\": 6, \"W110\": 8, \"all_PM\": 38, \"no_nontrivial_3cut\": true, \"tutte_subsets\": 131072}, \"icosahedral\": {\"P101\": 4, \"P110\": 1, \"Q_n\": 20, \"W101\": 6, \"W110\": 2, \"all_PM\": 36, \"no_nontrivial_3cut\": true, \"tutte_subsets\": 131072}, \"petersen_double_obstruction\": {\"P101\": 0, \"P110\": 0, \"Q_n\": 10, \"W101\": 0, \"W110\": 0, \"all_PM\": 6, \"no_nontrivial_3cut\": true, \"tutte_subsets\": 128}, \"stacked_E_empty\": {\"P101\": 1, \"P110\": 0, \"Q_n\": 12, \"W101\": 2, \"W110\": 0, \"all_PM\": 7, \"no_nontrivial_3cut\": false, \"tutte_subsets\": 512}}, \"input_drift\": 0, \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "wrong-weight",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/negative/wrong-weight.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.734,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-three-edge-matchings-6ddea32/check.py\", line 365, in <module>\n    if __name__ == '__main__': main()\n                               ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-three-edge-matchings-6ddea32/check.py\", line 360, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    },
+    {
+      "name": "missing-barrier",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/check.py",
+        "--check",
+        "audits/2026-10-15-three-edge-matchings-6ddea32/negative/missing-barrier.json"
+      ],
+      "expected": "reject",
+      "exit_code": 1,
+      "seconds": 0.74,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-three-edge-matchings-6ddea32/check.py\", line 365, in <module>\n    if __name__ == '__main__': main()\n                               ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-15-three-edge-matchings-6ddea32/check.py\", line 360, in main\n    assert json.loads(args.check.read_text()) == result, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+    }
+  ],
+  "hashes_before": {
+    "audits/2026-10-15-three-edge-matchings-6ddea32/check.py": "62b9a0ce12535b19a61646a7d5774b2d8d41f8ee91fb999bfd68b7a953628b9d",
+    "audits/2026-10-15-three-edge-matchings-6ddea32/graphs.json": "6e770c0082d3bd5de9f3825aacad0f1f7cc3b85d661b9c5b401769e5bfa84583",
+    "audits/2026-10-15-three-edge-matchings-6ddea32/certificate.json": "63d60cc1db45cc3e6ae7f8af0994e8c9ab7daab3325b8688ce8af6a0fe8e8efd",
+    "audits/2026-10-15-three-edge-matchings-6ddea32/negative/wrong-weight.json": "ded94d830946f51be255e63a0d9750cc59478697069811d640408b705dac5c9e",
+    "audits/2026-10-15-three-edge-matchings-6ddea32/negative/missing-barrier.json": "5870b18535fa207713f5fceebec942f2f395b94f36f3a5e0a8974bae8eacf4ef"
+  },
+  "hashes_after": {
+    "audits/2026-10-15-three-edge-matchings-6ddea32/check.py": "62b9a0ce12535b19a61646a7d5774b2d8d41f8ee91fb999bfd68b7a953628b9d",
+    "audits/2026-10-15-three-edge-matchings-6ddea32/graphs.json": "6e770c0082d3bd5de9f3825aacad0f1f7cc3b85d661b9c5b401769e5bfa84583",
+    "audits/2026-10-15-three-edge-matchings-6ddea32/certificate.json": "63d60cc1db45cc3e6ae7f8af0994e8c9ab7daab3325b8688ce8af6a0fe8e8efd",
+    "audits/2026-10-15-three-edge-matchings-6ddea32/negative/wrong-weight.json": "ded94d830946f51be255e63a0d9750cc59478697069811d640408b705dac5c9e",
+    "audits/2026-10-15-three-edge-matchings-6ddea32/negative/missing-barrier.json": "5870b18535fa207713f5fceebec942f2f395b94f36f3a5e0a8974bae8eacf4ef"
+  },
+  "input_drift": 0
+}

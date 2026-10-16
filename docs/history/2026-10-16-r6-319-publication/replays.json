@@ -1,0 +1,207 @@
+{
+  "BASE": "e98a1cc1afd9a428600dcf4027d8138078c01650",
+  "records": [
+    {
+      "name": "A-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/check.py",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected": 0,
+      "elapsed_seconds": 0.107,
+      "pass": true
+    },
+    {
+      "name": "A-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/check.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected": 0,
+      "elapsed_seconds": 0.108,
+      "pass": true
+    },
+    {
+      "name": "B-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/B/certificate.json"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected": 0,
+      "elapsed_seconds": 0.23,
+      "pass": true
+    },
+    {
+      "name": "B-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/B/certificate.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected": 0,
+      "elapsed_seconds": 0.23,
+      "pass": true
+    },
+    {
+      "name": "C-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/verify.py",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected": 0,
+      "elapsed_seconds": 0.086,
+      "pass": true
+    },
+    {
+      "name": "C-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/verify.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected": 0,
+      "elapsed_seconds": 0.077,
+      "pass": true
+    },
+    {
+      "name": "independent-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/integration/check_independent.py",
+        "--check",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/integration/independent.json"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected": 0,
+      "elapsed_seconds": 0.106,
+      "pass": true
+    },
+    {
+      "name": "independent-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/integration/check_independent.py",
+        "--check",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/integration/independent.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected": 0,
+      "elapsed_seconds": 0.108,
+      "pass": true
+    },
+    {
+      "name": "A-missing-empty-fibres",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/check.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/sealed-discard-empty-fibres.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected": 1,
+      "elapsed_seconds": 0.113,
+      "pass": true
+    },
+    {
+      "name": "B-wrong-transition",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/B/negative/wrong-transition-parity.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected": 1,
+      "elapsed_seconds": 0.231,
+      "pass": true
+    },
+    {
+      "name": "C-missing-zero-pin-cell",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/verify.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/negative/missing-empty-seven-pin-cell.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected": 1,
+      "elapsed_seconds": 0.077,
+      "pass": true
+    },
+    {
+      "name": "independent-false-positive",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/integration/check_independent.py",
+        "--check",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/integration/independent-corrupted.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected": 1,
+      "elapsed_seconds": 0.107,
+      "pass": true
+    },
+    {
+      "name": "publication-custody",
+      "command": [
+        "python3",
+        "-B",
+        "docs/history/2026-10-16-r6-319-publication/check_custody.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected": 0,
+      "elapsed_seconds": 0.699,
+      "pass": true
+    }
+  ],
+  "source_realizability": "not triggered",
+  "source_positivity": "OPEN",
+  "lake_build_receipt": "engineering.json"
+}

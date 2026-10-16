@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "certificate": "matching_certificate-v3.json",
+  "normal": {
+    "command_arguments": [],
+    "returncode": 0,
+    "stdout": "{\"controls\": [{\"P101\": 0, \"P111\": 1, \"all_pm\": 10, \"all_tait_lifts_fixed_matching_colour\": 6, \"even111\": 0, \"exterior111_zero_length_paths\": 2, \"name\": \"C7__crossing_f\", \"source_realizability\": \"not triggered\"}, {\"P101\": 0, \"P111\": 1, \"all_pm\": 11, \"all_tait_lifts_fixed_matching_colour\": 6, \"even111\": 0, \"exterior111_zero_length_paths\": 2, \"name\": \"C7__external_f\", \"source_realizability\": \"not triggered\"}, {\"P101\": 0, \"P111\": 2, \"all_pm\": 15, \"all_tait_lifts_fixed_matching_colour\": 30, \"even111\": 1, \"exterior111_zero_length_paths\": 2, \"name\": \"theta_1_4_5_rotated__crossing_f\", \"source_realizability\": \"not triggered\"}, {\"P101\": 0, \"P111\": 2, \"all_pm\": 16, \"all_tait_lifts_fixed_matching_colour\": 30, \"even111\": 1, \"exterior111_zero_length_paths\": 2, \"name\": \"theta_1_4_5_rotated__external_f\", \"source_realizability\": \"not triggered\"}], \"seed\": 0, \"status\": \"PASS\"}\n",
+    "stderr": ""
+  },
+  "seed17": {
+    "command_arguments": [
+      "--seed",
+      "17"
+    ],
+    "returncode": 0,
+    "stdout": "{\"controls\": [{\"P101\": 0, \"P111\": 1, \"all_pm\": 10, \"all_tait_lifts_fixed_matching_colour\": 6, \"even111\": 0, \"exterior111_zero_length_paths\": 2, \"name\": \"C7__crossing_f\", \"source_realizability\": \"not triggered\"}, {\"P101\": 0, \"P111\": 1, \"all_pm\": 11, \"all_tait_lifts_fixed_matching_colour\": 6, \"even111\": 0, \"exterior111_zero_length_paths\": 2, \"name\": \"C7__external_f\", \"source_realizability\": \"not triggered\"}, {\"P101\": 0, \"P111\": 2, \"all_pm\": 15, \"all_tait_lifts_fixed_matching_colour\": 30, \"even111\": 1, \"exterior111_zero_length_paths\": 2, \"name\": \"theta_1_4_5_rotated__crossing_f\", \"source_realizability\": \"not triggered\"}, {\"P101\": 0, \"P111\": 2, \"all_pm\": 16, \"all_tait_lifts_fixed_matching_colour\": 30, \"even111\": 1, \"exterior111_zero_length_paths\": 2, \"name\": \"theta_1_4_5_rotated__external_f\", \"source_realizability\": \"not triggered\"}], \"seed\": 17, \"status\": \"PASS\"}\n",
+    "stderr": ""
+  },
+  "negative_controls": [
+    {
+      "name": "missing_empty_state",
+      "mutation": {
+        "removed_state": "[[0],[[1,2],[3,4],[5,6]],[0,0,0],0]"
+      },
+      "mutated_sha256": "a818fae2824f8b9e82a6979df2d569c47fe1e26860c457413ba63d9f07c342b0",
+      "command_arguments": [
+        "--certificate",
+        "<temporary corrupted certificate>"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-seven-disk-rigidity-120aae9/matching_check.py\", line 383, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-seven-disk-rigidity-120aae9/matching_check.py\", line 377, in main\n    require(json.loads(args.certificate.read_text()) == json.loads(json.dumps(expected)), 'complete certificate exact replay')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-seven-disk-rigidity-120aae9/matching_check.py\", line 12, in require\n    raise ValueError(message)\nValueError: complete certificate exact replay\n"
+    },
+    {
+      "name": "outside_even_parity_corrupted",
+      "mutation": {
+        "exterior_lift": 2
+      },
+      "mutated_sha256": "6717fd07a7874f48f2fd4385a3eb264a163a43bf907144432c8e05f4b308bff1",
+      "command_arguments": [
+        "--certificate",
+        "<temporary corrupted certificate>"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-seven-disk-rigidity-120aae9/matching_check.py\", line 383, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-seven-disk-rigidity-120aae9/matching_check.py\", line 377, in main\n    require(json.loads(args.certificate.read_text()) == json.loads(json.dumps(expected)), 'complete certificate exact replay')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-seven-disk-rigidity-120aae9/matching_check.py\", line 12, in require\n    raise ValueError(message)\nValueError: complete certificate exact replay\n"
+    },
+    {
+      "name": "zero_path_length_corrupted",
+      "mutation": {
+        "ports": [
+          0,
+          1
+        ]
+      },
+      "mutated_sha256": "d0f3a11512694b33a09bc4bf4184d7a15f2f75b14d1507018646694190eb319f",
+      "command_arguments": [
+        "--certificate",
+        "<temporary corrupted certificate>"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-seven-disk-rigidity-120aae9/matching_check.py\", line 383, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-seven-disk-rigidity-120aae9/matching_check.py\", line 377, in main\n    require(json.loads(args.certificate.read_text()) == json.loads(json.dumps(expected)), 'complete certificate exact replay')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-seven-disk-rigidity-120aae9/matching_check.py\", line 12, in require\n    raise ValueError(message)\nValueError: complete certificate exact replay\n"
+    },
+    {
+      "name": "missing_complete_tait_lift",
+      "mutation": {
+        "global_matching": 12
+      },
+      "mutated_sha256": "6940716f1c40e977fb0315545b8ed4d6ae21cfd500bf6452913bf3c291b1a315",
+      "command_arguments": [
+        "--certificate",
+        "<temporary corrupted certificate>"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-seven-disk-rigidity-120aae9/matching_check.py\", line 383, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-seven-disk-rigidity-120aae9/matching_check.py\", line 377, in main\n    require(json.loads(args.certificate.read_text()) == json.loads(json.dumps(expected)), 'complete certificate exact replay')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-seven-disk-rigidity-120aae9/matching_check.py\", line 12, in require\n    raise ValueError(message)\nValueError: complete certificate exact replay\n"
+    }
+  ],
+  "source_realizability": "not triggered"
+}

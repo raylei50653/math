@@ -1,0 +1,978 @@
+{
+  "status": "PASS: local return injection; mask7 support excluded",
+  "pins": [
+    "z",
+    "s",
+    "v",
+    "t",
+    "p",
+    "q"
+  ],
+  "mandatory_edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      0
+    ]
+  ],
+  "outer_jordan_boundary": [
+    "z",
+    "s",
+    "v",
+    "t"
+  ],
+  "initial_labelled_count": 120,
+  "initial_orbits": [
+    "ABABCD",
+    "ABACBC",
+    "ABACCB",
+    "ABCBCD",
+    "ABCBDC"
+  ],
+  "rounds": [
+    {
+      "live": [
+        "ABABCD",
+        "ABACBC",
+        "ABACCB",
+        "ABCBCD",
+        "ABCBDC"
+      ],
+      "removed": [
+        "ABACBC",
+        "ABACCB"
+      ]
+    },
+    {
+      "live": [
+        "ABABCD",
+        "ABCBCD",
+        "ABCBDC"
+      ],
+      "removed": []
+    }
+  ],
+  "surviving_labelled_count": 72,
+  "surviving_outer_mask": 5,
+  "required_outer_mask": 7,
+  "direct_return_checks": [
+    {
+      "row": "ABACBC",
+      "all_possible_partitions": [
+        {
+          "AD": [
+            [
+              0,
+              2
+            ]
+          ],
+          "BC": [
+            [
+              1,
+              4,
+              5
+            ],
+            [
+              3
+            ]
+          ],
+          "target": "ABABBC",
+          "inverse_recovers_full_pin_row": true
+        },
+        {
+          "AD": [
+            [
+              0,
+              2
+            ]
+          ],
+          "BC": [
+            [
+              1
+            ],
+            [
+              3,
+              4,
+              5
+            ]
+          ],
+          "target": "ABABCB",
+          "inverse_recovers_full_pin_row": true
+        },
+        {
+          "AD": [
+            [
+              0,
+              2
+            ]
+          ],
+          "BC": [
+            [
+              1
+            ],
+            [
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "target": "ABABBC",
+          "inverse_recovers_full_pin_row": true
+        }
+      ]
+    },
+    {
+      "row": "ABACCB",
+      "all_possible_partitions": [
+        {
+          "AD": [
+            [
+              0,
+              2
+            ]
+          ],
+          "BC": [
+            [
+              1,
+              4,
+              5
+            ],
+            [
+              3
+            ]
+          ],
+          "target": "ABABCB",
+          "inverse_recovers_full_pin_row": true
+        },
+        {
+          "AD": [
+            [
+              0,
+              2
+            ]
+          ],
+          "BC": [
+            [
+              1
+            ],
+            [
+              3,
+              4,
+              5
+            ]
+          ],
+          "target": "ABABBC",
+          "inverse_recovers_full_pin_row": true
+        },
+        {
+          "AD": [
+            [
+              0,
+              2
+            ]
+          ],
+          "BC": [
+            [
+              1
+            ],
+            [
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "target": "ABABCB",
+          "inverse_recovers_full_pin_row": true
+        }
+      ]
+    }
+  ],
+  "survivors": [
+    {
+      "row": "ABABCD",
+      "splits": [
+        {
+          "split": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "options": [
+            {
+              "parts": [
+                [
+                  [
+                    0,
+                    1,
+                    2,
+                    3
+                  ]
+                ],
+                [
+                  [
+                    4,
+                    5
+                  ]
+                ]
+              ],
+              "successors": [
+                "ABABCD"
+              ]
+            }
+          ]
+        },
+        {
+          "split": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "options": [
+            {
+              "parts": [
+                [
+                  [
+                    0,
+                    4
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    3,
+                    5
+                  ]
+                ]
+              ],
+              "successors": [
+                "ABABCD",
+                "ABCBCD"
+              ]
+            }
+          ]
+        },
+        {
+          "split": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "options": [
+            {
+              "parts": [
+                [
+                  [
+                    0,
+                    5
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    3,
+                    4
+                  ]
+                ]
+              ],
+              "successors": [
+                "ABABCD",
+                "ABCBDC"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "row": "ABCBCD",
+      "splits": [
+        {
+          "split": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "options": [
+            {
+              "parts": [
+                [
+                  [
+                    0,
+                    1,
+                    3
+                  ]
+                ],
+                [
+                  [
+                    2,
+                    4,
+                    5
+                  ]
+                ]
+              ],
+              "successors": [
+                "ABCBCD"
+              ]
+            },
+            {
+              "parts": [
+                [
+                  [
+                    0,
+                    1,
+                    3
+                  ]
+                ],
+                [
+                  [
+                    2
+                  ],
+                  [
+                    4,
+                    5
+                  ]
+                ]
+              ],
+              "successors": [
+                "ABCBCD",
+                "ABCBDC"
+              ]
+            }
+          ]
+        },
+        {
+          "split": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "options": [
+            {
+              "parts": [
+                [
+                  [
+                    0,
+                    4
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    3,
+                    5
+                  ]
+                ]
+              ],
+              "successors": [
+                "ABABCD",
+                "ABCBCD"
+              ]
+            }
+          ]
+        },
+        {
+          "split": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "options": [
+            {
+              "parts": [
+                [
+                  [
+                    0,
+                    5
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ]
+                ]
+              ],
+              "successors": [
+                "ABCBCD"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "row": "ABCBDC",
+      "splits": [
+        {
+          "split": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "options": [
+            {
+              "parts": [
+                [
+                  [
+                    0,
+                    1,
+                    3
+                  ]
+                ],
+                [
+                  [
+                    2,
+                    4,
+                    5
+                  ]
+                ]
+              ],
+              "successors": [
+                "ABCBDC"
+              ]
+            },
+            {
+              "parts": [
+                [
+                  [
+                    0,
+                    1,
+                    3
+                  ]
+                ],
+                [
+                  [
+                    2
+                  ],
+                  [
+                    4,
+                    5
+                  ]
+                ]
+              ],
+              "successors": [
+                "ABCBCD",
+                "ABCBDC"
+              ]
+            }
+          ]
+        },
+        {
+          "split": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "options": [
+            {
+              "parts": [
+                [
+                  [
+                    0,
+                    5
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    3,
+                    4
+                  ]
+                ]
+              ],
+              "successors": [
+                "ABABCD",
+                "ABCBDC"
+              ]
+            }
+          ]
+        },
+        {
+          "split": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "options": [
+            {
+              "parts": [
+                [
+                  [
+                    0,
+                    4
+                  ]
+                ],
+                [
+                  [
+                    1,
+                    2,
+                    3,
+                    5
+                  ]
+                ]
+              ],
+              "successors": [
+                "ABCBDC"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "nonvacuous_full_graph_controls": [
+    {
+      "label": "without no-rainbow: E nonempty but T empty",
+      "vertices": 6,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "triangular_inner_faces": [
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          1,
+          2,
+          4
+        ],
+        [
+          2,
+          3,
+          5
+        ],
+        [
+          2,
+          5,
+          4
+        ],
+        [
+          0,
+          4,
+          5
+        ],
+        [
+          0,
+          5,
+          3
+        ]
+      ],
+      "complete_fixed_frame_fibres": {
+        "ABAB": [
+          "ABABCD",
+          "ABABDC"
+        ],
+        "ABAC": [
+          "ABACCB",
+          "ABACCD",
+          "ABACDB"
+        ],
+        "ABCB": [],
+        "ABCD": [
+          "ABCDDB"
+        ]
+      },
+      "E": [
+        "ABACCB"
+      ],
+      "T": [],
+      "T0": [],
+      "return_bijection": []
+    },
+    {
+      "label": "rainbow-free with nonempty actual return bijection",
+      "vertices": 7,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "triangular_inner_faces": [
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          1,
+          6,
+          4
+        ],
+        [
+          0,
+          4,
+          5
+        ],
+        [
+          4,
+          6,
+          5
+        ],
+        [
+          6,
+          0,
+          5
+        ],
+        [
+          1,
+          2,
+          6
+        ],
+        [
+          2,
+          3,
+          6
+        ],
+        [
+          3,
+          0,
+          6
+        ]
+      ],
+      "complete_fixed_frame_fibres": {
+        "ABAB": [
+          "ABABCBD",
+          "ABABDBC"
+        ],
+        "ABAC": [
+          "ABACCBD"
+        ],
+        "ABCB": [
+          "ABCBCBD"
+        ],
+        "ABCD": []
+      },
+      "E": [
+        "ABACCBD"
+      ],
+      "T": [
+        "ABABCBD"
+      ],
+      "T0": [
+        "ABABCBD"
+      ],
+      "return_bijection": [
+        {
+          "source": "ABACCBD",
+          "component": [
+            3
+          ],
+          "target": "ABABCBD"
+        }
+      ]
+    },
+    {
+      "label": "rainbow-free ABAB/CD with ABAC outside BC sector",
+      "vertices": 7,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "triangular_inner_faces": [
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          1,
+          5,
+          4
+        ],
+        [
+          5,
+          0,
+          4
+        ],
+        [
+          1,
+          6,
+          5
+        ],
+        [
+          6,
+          0,
+          5
+        ],
+        [
+          1,
+          2,
+          6
+        ],
+        [
+          2,
+          3,
+          6
+        ],
+        [
+          3,
+          0,
+          6
+        ]
+      ],
+      "complete_fixed_frame_fibres": {
+        "ABAB": [
+          "ABABCDC",
+          "ABABDCD"
+        ],
+        "ABAC": [
+          "ABACDCD"
+        ],
+        "ABCB": [
+          "ABCBDCD"
+        ],
+        "ABCD": []
+      },
+      "E": [],
+      "T": [],
+      "T0": [],
+      "return_bijection": []
+    }
+  ],
+  "actual_target_sources": 0,
+  "negative_controls": {
+    "crossing_rejected": true,
+    "edge_split_rejected": true,
+    "bad_ABAB_palette_rejected": true,
+    "rainbow_rejected": true
+  },
+  "script_sha256": "b99a7230229502bcb18d54b533b548c603225ee9ef7ea3538e1255a6004dd53b"
+}

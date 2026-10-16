@@ -1,0 +1,40 @@
+{
+  "checks": [
+    {
+      "name": "root-seed17",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true,
+      "provenance": "exit code asserted before the first receipt-aggregation schema error; retained stdout/stderr checked here"
+    },
+    {
+      "name": "root-corrupted-rejected",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "pass": true,
+      "provenance": "exit code asserted before the first receipt-aggregation schema error; retained stdout/stderr checked here"
+    },
+    {
+      "name": "A-sealed-verification",
+      "receipt": "audits/2026-10-16-r6-319-complete-e98a1cc/A/VERIFICATION.json",
+      "sha256": "2ecda59a34d298858d1118380202d0f46f050385ed7da6c4aeefbee1d1ddfb51",
+      "checks": 7,
+      "pass": true
+    },
+    {
+      "name": "B-sealed-verification",
+      "receipt": "audits/2026-10-16-r6-319-complete-e98a1cc/B/VERIFICATION.json",
+      "sha256": "8bf251de548762ef08bb943424c1cce6b0139b53f4a3629eec1e785f368d6c1e",
+      "checks": 5,
+      "pass": true
+    },
+    {
+      "name": "C-sealed-verification",
+      "receipt": "audits/2026-10-16-r6-319-complete-e98a1cc/C/VERIFICATION.json",
+      "sha256": "bee12069c02a63f00d8f4ca20eabaf9b931ddc5d4739f69d40e1fd4332f38476",
+      "checks": 7,
+      "pass": true
+    }
+  ],
+  "source_claim": "not triggered; positivity remains OPEN"
+}

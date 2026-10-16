@@ -1,0 +1,57 @@
+{
+  "base": "c4c3d99",
+  "input_files": [
+    {
+      "path": "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-three-edge-matchings-6ddea32/graphs.json",
+      "sha256": "6e770c0082d3bd5de9f3825aacad0f1f7cc3b85d661b9c5b401769e5bfa84583"
+    },
+    {
+      "path": "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-three-edge-matchings-6ddea32/PROOF.md",
+      "sha256": "7f9d78635d65a2722de831f209e371ed6be3e06f2c65d73d8d2656a936ebc58b"
+    },
+    {
+      "path": "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-j-source-geometry-6ddea32/PROOF.md",
+      "sha256": "ea1b16704a689dcf14e80ea232be2bfed114c5d5535b783d4d55b297cc576093"
+    }
+  ],
+  "runs": [
+    {
+      "name": "normal",
+      "returncode": 0,
+      "expected_returncode": 0
+    },
+    {
+      "name": "negative-nonplanar-source",
+      "returncode": 1,
+      "expected_returncode": 1
+    },
+    {
+      "name": "negative-missing-exceptional-edge",
+      "returncode": 1,
+      "expected_returncode": 1
+    },
+    {
+      "name": "exclusive-create",
+      "returncode": 1,
+      "expected_returncode": 1
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/A/check.py",
+        "--check",
+        "audits/2026-10-16-r6-joint-zero-c4c3d99/A/certificate.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "returncode": 0,
+      "expected_returncode": 0
+    }
+  ],
+  "source_status": "not triggered",
+  "paper_theorem": "A1-A4 in PROOF.md",
+  "new_external_theorems": 0
+}

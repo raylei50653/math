@@ -1,0 +1,57 @@
+{
+  "scope": "finite synthetic local controls only; arbitrary-size source proof is GEOMETRY sections 2-4",
+  "actual_sources": 0,
+  "actual_source_status": "not triggered",
+  "results": [
+    {
+      "name": "normal",
+      "args": [],
+      "exit_code": 0,
+      "stdout": "{\"actual_source_status\": \"not triggered\", \"empty_port_fibres\": 77, \"five_interior_core_candidates\": 135, \"five_interior_survivors\": 0, \"matching_lifts\": 116, \"ordered_port_fibres\": 128, \"result\": \"PASS\", \"sha256\": \"f23c55828313ff72b9e1cb9713ef9e83e3d7ba61aeb2b51a3f6119853fc79cac\", \"source_instances\": 0, \"synthetic_dual_vertices\": 17, \"synthetic_factor_critical_vertices\": 17}\n",
+      "stderr": ""
+    },
+    {
+      "name": "seed17",
+      "args": [
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"actual_source_status\": \"not triggered\", \"empty_port_fibres\": 77, \"five_interior_core_candidates\": 135, \"five_interior_survivors\": 0, \"matching_lifts\": 116, \"ordered_port_fibres\": 128, \"result\": \"PASS\", \"sha256\": \"f23c55828313ff72b9e1cb9713ef9e83e3d7ba61aeb2b51a3f6119853fc79cac\", \"source_instances\": 0, \"synthetic_dual_vertices\": 17, \"synthetic_factor_critical_vertices\": 17}\n",
+      "stderr": ""
+    },
+    {
+      "name": "certificate reload",
+      "args": [
+        "--verify",
+        "audits/2026-10-16-r6-seven-disk-rigidity-120aae9/geometry_certificate.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"actual_source_status\": \"not triggered\", \"empty_port_fibres\": 77, \"five_interior_core_candidates\": 135, \"five_interior_survivors\": 0, \"matching_lifts\": 116, \"ordered_port_fibres\": 128, \"result\": \"PASS\", \"sha256\": \"f23c55828313ff72b9e1cb9713ef9e83e3d7ba61aeb2b51a3f6119853fc79cac\", \"source_instances\": 0, \"synthetic_dual_vertices\": 17, \"synthetic_factor_critical_vertices\": 17}\n",
+      "stderr": ""
+    },
+    {
+      "name": "three corrupted controls",
+      "args": [
+        "--negative"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"negative_control\": \"PASS\", \"rejected\": [\"boundary incidence\", \"omitted complete matching lift\", \"false nonempty fibre\"]}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exclusive create rejection",
+      "args": [
+        "--certificate",
+        "audits/2026-10-16-r6-seven-disk-rigidity-120aae9/geometry_certificate.json"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-seven-disk-rigidity-120aae9/geometry_check.py\", line 300, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-seven-disk-rigidity-120aae9/geometry_check.py\", line 288, in main\n    with args.certificate.open('xb') as stream:\n         ~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: 'audits/2026-10-16-r6-seven-disk-rigidity-120aae9/geometry_certificate.json'\n"
+    }
+  ],
+  "hashes": {
+    "geometry_check.py": "1b31d3b1ec571b1be96e34020881b66aba9c8a4559ccbb238c3798df73a5075b",
+    "geometry_certificate.json": "f23c55828313ff72b9e1cb9713ef9e83e3d7ba61aeb2b51a3f6119853fc79cac"
+  }
+}

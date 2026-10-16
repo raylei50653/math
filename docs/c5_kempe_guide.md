@@ -2,26 +2,26 @@
 
 ## 最新進度
 
-現況核對：2026-10-16；R6-SEVEN-DISK-RIGIDITY 已任意大小排除全部剩餘101七割，普通 P101 非空。聯合偶補正值與完整319仍OPEN，既有點數界不變。
+現況核對：2026-10-16；普通 P101 已證非空；[完整319續進](../audits/2026-10-16-r6-319-complete-e98a1cc/REPORT.md)給來源商圖非空義務與精確變色奇偶式，平面反控制排除普通到偶補的一般橋接。聯合正值及完整319仍OPEN，既有界不變。
 
 | 欄位 | 現況 |
 | --- | --- |
 | 階段／生命週期 | 普通101存在性完成；主攻同一110／101聯合族的偶補正值，主命題仍OPEN。完整720態平面cover暫緩；E-ARC2、C8／W5及低p/q保留。 |
-| 最近研究更新 | 2026-10-16：[七割全排除](../audits/2026-10-16-r6-seven-disk-rigidity-120aae9/REPORT.md)以任意 excess 抵消迫三耳，再由原扇區排除 induced C4；接窮盡Tutte分類得普通 P101 非空。 |
-| 上次完成 | 同一原D有含e,g而不含f的普通完美匹配；七割任意大小全排除，無內點數或度數excess上限。紙面證明及兩份獨立審查，有限控制另列，無新Lean。 |
+| 最近研究更新 | 2026-10-16：[319證明續進](../audits/2026-10-16-r6-319-complete-e98a1cc/REPORT.md)補同圖商圖完整hub fibres、交換後每圈變色奇偶式及四連通平面反控制；未證來源偶補正值。 |
+| 上次完成 | 原來源至少一個刪z共面商圖有完整染色，但接回可空；每個新補圈的奇偶等於其變色位置數奇偶。完整有限控制有普通101而聯合W為零，並非來源反例；無新Lean。 |
 | 目前停止點 | 普通聯合族非空，但 omega_e=0／W110+W101>0 仍OPEN；不要求兩項各自正。110其餘普通障礙、完整319及一般T／T0未證，接回仍k+5。 |
-| 下一步 | 按[剩餘義務](../audits/2026-10-16-r6-seven-disk-rigidity-120aae9/PROOF.md#7-停止點與證據層級)，在同一D的完整聯合族中尋找偶補終點或可證下降，保留具名e,f,g、原rotation及全部fibres。 |
-| 接手入口 | 本頁 §3及[普通101存在性證明](../audits/2026-10-16-r6-seven-disk-rigidity-120aae9/PROOF.md)；[七disk前輪](../audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/REPORT.md)與[發布重播](history/2026-10-16-r6-ordinary101-publish.md)。 |
+| 下一步 | 用原來源扇區、度數／小圈或完整U限制，證合法交換後每個完整補圈變色數皆偶；兩位置分圈仍須排除。或在同一來源商圖迫違規的非空z fibre，見[精確缺口](../audits/2026-10-16-r6-319-complete-e98a1cc/REPORT.md#7-精確停止點接回成本與傳播)。 |
+| 接手入口 | 本頁 §3及[319整合證明鏈](../audits/2026-10-16-r6-319-complete-e98a1cc/REPORT.md)；[原普通101證明](../audits/2026-10-16-r6-seven-disk-rigidity-120aae9/PROOF.md)與[發布後重播](history/2026-10-16-r6-319-publish.md)。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
+| 2026-10-16／319接回缺口 | [來源商圖與變色奇偶式](../audits/2026-10-16-r6-319-complete-e98a1cc/REPORT.md)保留空fibres；實際四連通平面控制顯示ordinary101與even111仍不足，來源正值未證。 |
 | 2026-10-16／普通101存在性 | [前輪障礙排除](../audits/2026-10-16-r6-double-w5-101-0b639cf/REPORT.md)後，[七disk結構](../audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/REPORT.md)先排I≤4無界子類，[任意excess三耳矛盾](../audits/2026-10-16-r6-seven-disk-rigidity-120aae9/REPORT.md)再排全部七割，得普通P101非空；偶補正值仍OPEN。 |
 | 2026-10-15／完整接回與共同圖 | [四輪整合](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)：普通分離存在、批次交換連通、J四連通與兩星必要條件；特定720模型無單值section，但Layer0有二層真圖。偶補正值及完整來源排除仍OPEN。 |
 | 2026-10-14／原內圈與r6有限排除 | [共同W及高h排除](../audits/2026-10-14-r6-lowpq-3953c85/REPORT.md)續接p5⇒a≥6／q5⇒c≥6：r6p5另迫ell-v、ell-w非邊並有反射對應，固定三框點四度支k≤27⇒h≤12；[完整k23／24枚舉](../audits/2026-10-14-r6-319-enumeration-676b102/REPORT.md)另給同一固定支r6⇒k≥25，完整319仍OPEN，一般K≤22不變。 |
 | 2026-10-14／換邊界與K≤22 | [完整C5→C4來源橋](c5_c4_boundary_pivot.md)補上舊文獻稽核的缺口；三支皆為具名對角拒絕4-candidate，接外部≤28點計算得最小來源k≥23。 |
-| 2026-10-14／一般正對切口 | [T1-CROSSCUT](../audits/2026-10-14-t1-crosscut-review-77fbd5d/REPORT.md) 排除任意大小 PINCH／BRIDGE；32 個必要單 x 核心、512,568 個安全矩形完整核對，h=3 只剩 RING。 |
 
 本頁維護本線現況；證明及實際重播範圍見各報告。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
@@ -99,6 +99,15 @@
 | N2原55同來源LL-CUT+diag | 原K₅-H／K₃,₃-O、leaf接線數及2≤行和≤1排全部剩餘spokes，完整原55(2,0)來源排除。基本LL-CUT未獨立證成；19,229必要共同可行投影保留。完整契約內九格全覆蓋；廣義N2由N2-BRIDGE在原E4契約排除，E-ARC2仍OPEN；無新Lean | [完整證明、父覆蓋與獨立checker](c5_excess_two_n2_ll_cut.md) |
 
 ## 3. 停止點與保留缺口
+
+**完整319續進（2026-10-16）。** [整合證明鏈](../audits/2026-10-16-r6-319-complete-e98a1cc/REPORT.md)
+在同一來源證至少一個`(J-z)/(m=p或q)`合法商圖非空；尚未證存在非空z接回fibre，
+非空者須為來源相容singleton。[變色奇偶式](../audits/2026-10-16-r6-319-complete-e98a1cc/B/PROOF.md)
+從已知完整111染色與普通101取得實際含f交替環，精確計算每個新補圈奇偶。
+兩個變色位置須在同圈才成功，分圈仍留兩奇圈；尚未證可取t≤2，亦未排除分圈。
+[四連通平面反控制](../audits/2026-10-16-r6-319-complete-e98a1cc/C/PROOF.md)
+有144份完整J染色、18個PM及唯一普通101，卻W110=W101=0；它違反原度數、小C4與
+完整U fibres，不能當319來源反例。原來源特有條件仍須進入最後一步。
 
 **聯合零值（2026-10-16）。** [R6-CAP-BARRIERS](../audits/2026-10-16-r6-cap-barriers-c4c3d99/REPORT.md)
 接續[全單點排除](../audits/2026-10-16-r6-joint-zero-c4c3d99/REPORT.md)，

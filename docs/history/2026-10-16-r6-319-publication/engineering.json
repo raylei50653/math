@@ -1,0 +1,33 @@
+{
+  "command": [
+    "lake",
+    "build"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 9.879,
+  "warning_count": 30,
+  "summary": "Build completed successfully (8832 jobs).",
+  "tool_tests": {
+    "command": [
+      "uv",
+      "run",
+      "--with-requirements",
+      "requirements.txt",
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 5.46,
+    "summary": [
+      "Ran 94 tests in 4.730s",
+      "",
+      "OK"
+    ]
+  }
+}

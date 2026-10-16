@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-16（R6-SEVEN-DISK-RIGIDITY 任意大小排除全部剩餘101七割，普通P101及普通聯合族非空；omega_e=0／W110+W101>0與完整319仍OPEN，一般K≤22及固定r6的k≥25不變）。研究線標記見 [HANDOFF](HANDOFF.md)；精確停止點與重播由各線導覽維護。
+更新：2026-10-16（完整319續進補來源商圖非空義務、完整fibres及交換變色奇偶式；四連通平面反控制排除ordinary→even一般橋接。普通P101已證非空；omega_e=0／W110+W101>0與完整319仍OPEN，一般K≤22及固定r6的k≥25不變）。研究線標記見 [HANDOFF](HANDOFF.md)；精確停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
@@ -366,6 +366,7 @@ d_G≥6及k≥18；T3接通no4ct三支私人ρ≥5。一般RING、
 | [保XOR雙環同步交換](../audits/2026-10-15-xor-batch-descent-6ddea32/REPORT.md) | 一／兩環批次交換使普通XOR族連通，46點控制有直接偶補退出；不證來源必能下降或正偶補 |
 | [完整六接點lifts與三邊返回](../audits/2026-10-15-six-pin-lifts-6ddea32/REPORT.md) | 同一J上的e=f≠g禁止事件與單環返回分類；弱12點球面有216態閉集，仍違來源度數；完整all-r另需第四輪第二事件 |
 | [Kempe單值共同原圖障礙](../audits/2026-10-15-kempe-common-graph-6ddea32/REPORT.md) | 25種相容原點函數／41條允許邊不足以實現指定連通性，排特定720模型的任意有限單值實現；不排多值cover或22列本身 |
+| [完整319證明續進：來源商圖、變色奇偶與平面反控制](../audits/2026-10-16-r6-319-complete-e98a1cc/REPORT.md) | 刪z共面商圖有完整染色但hub接回可空；交換後每個補圈奇偶等於變色位置數奇偶。10點四連通平面控制有even111及唯一ordinary101，卻聯合W為零；違反原度數、小C4及完整U，並非來源反例。完整319仍OPEN，無新Lean；[驗證](../audits/2026-10-16-r6-319-complete-e98a1cc/VERIFICATION.md)、[發布後重播](history/2026-10-16-r6-319-publish.md) |
 | [R6-SEVEN-DISK-RIGIDITY：普通101存在性](../audits/2026-10-16-r6-seven-disk-rigidity-120aae9/REPORT.md) | 任意excess抵消迫三耳及原扇區C4矛盾，任意大小全排最後七割，普通P101及普通聯合族非空。兩份獨立審查；omega_e=0／W110+W101>0、完整319及一般主命題仍OPEN，無新Lean；[採納與提交後重播](history/2026-10-16-r6-ordinary101-publish.md) |
 | [R6-101-NONWHEEL-SEVEN-CUT：實際七disk與完整介面](../audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/REPORT.md) | 任意大小證簡單七disk、I+B≥12、I≥5及\|C\|≥15，排I≤4整個無界子類；tight560格／至多420簽名，ordinary1206格／至多904簽名，完整空fibres保留。當輪普通101未解已由上述續輪解決；不證來源大小界或下降 |
 | [R6-DOUBLE-W5-101：雙輪來源排除](../audits/2026-10-16-r6-double-w5-101-0b639cf/REPORT.md) | 任意大小完全排除101雙W5最大障礙；純五度輪第二鄰域的15原面及原扇區迫整J全五度矛盾。當輪剩餘七割已由上述續輪全排；110、偶補正值及完整319仍OPEN；[當輪發布與重播](history/2026-10-16-r6-double-w5-101-publish.md) |
@@ -616,6 +617,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-16：完整319續進、變色奇偶與平面反控制發布](history/2026-10-16-r6-319-publish.md)
 - [2026-10-16：七disk結構、普通101存在性採納與整理發布](history/2026-10-16-r6-ordinary101-publish.md)
 - [2026-10-15：四輪具名匹配、完整接回與共同圖整理提交](history/2026-10-15-kempe-routes-publish.md)
 - [2026-10-14：目前進展跨線整合與發布](history/2026-10-14-progress-consolidation-publish.md)

@@ -1,0 +1,76 @@
+[
+  {
+    "name": "A-independent-replay",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "audits/2026-10-16-r6-joint-zero-c4c3d99/A/check.py",
+      "--check",
+      "audits/2026-10-16-r6-joint-zero-c4c3d99/A/certificate.json"
+    ],
+    "exit_code": 0,
+    "stdout": "PASS independent full-certificate replay\n{\"controls\": 4, \"source_status\": \"not triggered\", \"singleton_barriers\": [0, 0, 0, 0, 1, 0, 1, 1]}\n",
+    "stderr": ""
+  },
+  {
+    "name": "B-independent-replay",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "audits/2026-10-16-r6-joint-zero-c4c3d99/B/verify.py",
+      "--check",
+      "audits/2026-10-16-r6-joint-zero-c4c3d99/B/certificate.json"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"controls\": [{\"joint_minimum\": 0, \"matching_count\": 36, \"name\": \"icosahedral\", \"source\": \"not triggered\"}, {\"joint_minimum\": 0, \"matching_count\": 38, \"name\": \"flipped_icosahedral_return\", \"source\": \"not triggered\"}, {\"joint_minimum\": 0, \"matching_count\": 7, \"name\": \"stacked_E_empty\", \"source\": \"not triggered\"}, {\"joint_minimum\": 2, \"matching_count\": 6, \"name\": \"Petersen_positive_joint_minimum\", \"source\": \"not triggered; nonplanar\"}], \"status\": \"PASS\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "C-independent-replay",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "audits/2026-10-16-r6-joint-zero-c4c3d99/C/check.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"E1\": 96, \"E2\": 96, \"allowed\": 240, \"empty_fibres\": 9936, \"interface_rows\": 13296, \"lifts\": 3936, \"proper_rows\": 432, \"result\": \"PASS\", \"violating_fibres\": 1440, \"violating_lifts\": 1536}\n",
+    "stderr": ""
+  },
+  {
+    "name": "docs",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "stdout": "OK: 687 Markdown files, 9011 local links; anchors, index, handoff, guide progress checked\n",
+    "stderr": ""
+  },
+  {
+    "name": "docgraph-formal-docs",
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "stdout": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n",
+    "stderr": ""
+  },
+  {
+    "name": "tracked-whitespace",
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]
