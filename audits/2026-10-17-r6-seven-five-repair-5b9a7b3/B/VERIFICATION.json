@@ -1,0 +1,74 @@
+{
+  "base": "5b9a7b3190c84bc10ff99608e372a9b4be57a0f6",
+  "certificate_sha256": "5396d6485bbdfc5718f8bc33df1be5293627eee8efcad034da2320be4613a765",
+  "controls": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/B/check.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "log": "replay-normal.log",
+      "name": "normal",
+      "stdout_sha256": "b53a419a81019e72f264cc059445e002a8bce71214be3ed7a4a0798d36b285d7"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/B/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "log": "replay-seed17.log",
+      "name": "seed17",
+      "stdout_sha256": "b53a419a81019e72f264cc059445e002a8bce71214be3ed7a4a0798d36b285d7"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/B/check.py",
+        "--certificate",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/B/negative-missing-empty-row.json"
+      ],
+      "exit_code": 1,
+      "expected_rejection": true,
+      "log": "negative-missing-empty-row.log",
+      "name": "missing-empty-row"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/B/check.py",
+        "--certificate",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/B/negative-changed-complete-fragment.json"
+      ],
+      "exit_code": 1,
+      "expected_rejection": true,
+      "log": "negative-changed-complete-fragment.log",
+      "name": "changed-complete-fragment"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/B/check.py",
+        "--write",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/B/certificate.json"
+      ],
+      "exit_code": 1,
+      "expected_rejection": true,
+      "log": "negative-exclusive-create.log",
+      "name": "exclusive-create"
+    }
+  ],
+  "frozen_input_drift": 0,
+  "normal_seed17_stdout_equal": true,
+  "schema": "r6-seven-cap-verification-v1"
+}

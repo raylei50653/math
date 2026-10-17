@@ -1,0 +1,50 @@
+[
+  {
+    "name": "generate",
+    "args": [
+      "--write",
+      "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/certificate.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "expected_success": true
+  },
+  {
+    "name": "normal",
+    "args": [
+      "--check"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "expected_success": true
+  },
+  {
+    "name": "seed17",
+    "args": [
+      "--check"
+    ],
+    "PYTHONHASHSEED": 17,
+    "exit_code": 0,
+    "expected_success": true
+  },
+  {
+    "name": "negative",
+    "args": [
+      "--check",
+      "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/integration/negative-missing-mark-row.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected_success": false
+  },
+  {
+    "name": "exclusive",
+    "args": [
+      "--write",
+      "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/certificate.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected_success": false
+  }
+]

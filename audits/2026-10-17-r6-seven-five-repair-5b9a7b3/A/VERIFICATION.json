@@ -1,0 +1,59 @@
+{
+  "certificate": "certificate-v2.json",
+  "certificate_sha256": "664d0236d2cd2e3688f4b9f66cbc694b415c3f711fd25c56445980b201c04c9e",
+  "results": [
+    {
+      "case": "replay",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/check.py"
+      ],
+      "environment": {},
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"certificate_sha256\": \"664d0236d2cd2e3688f4b9f66cbc694b415c3f711fd25c56445980b201c04c9e\", \"ok\": true, \"safe_Q_old_new_oddness\": [2, 2], \"stats\": {\"PMs\": 38, \"all_PM_even_reference_pairs\": 912, \"cluster_components\": 928, \"even_PM\": 24, \"value3_nonfacial7_pairs\": 28}}\n"
+    },
+    {
+      "case": "hashseed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"certificate_sha256\": \"664d0236d2cd2e3688f4b9f66cbc694b415c3f711fd25c56445980b201c04c9e\", \"ok\": true, \"safe_Q_old_new_oddness\": [2, 2], \"stats\": {\"PMs\": 38, \"all_PM_even_reference_pairs\": 912, \"cluster_components\": 928, \"even_PM\": 24, \"value3_nonfacial7_pairs\": 28}}\n"
+    },
+    {
+      "case": "corrupt_rejection",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/check.py",
+        "--certificate",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/malformed-certificate.json"
+      ],
+      "environment": {},
+      "returncode": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/check.py\", line 284, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/check.py\", line 277, in main\n    assert json.loads(args.certificate.read_text()) == certificate, 'certificate mismatch'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n",
+      "stdout": ""
+    },
+    {
+      "case": "exclusive_rejection",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/check.py",
+        "--create"
+      ],
+      "environment": {},
+      "returncode": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/check.py\", line 284, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/check.py\", line 274, in main\n    with args.certificate.open('x') as handle:\n         ~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/certificate-v2.json'\n",
+      "stdout": ""
+    }
+  ]
+}

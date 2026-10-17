@@ -1,0 +1,73 @@
+{
+  "BASE": "5b9a7b3190c84bc10ff99608e372a9b4be57a0f6",
+  "artifact_sha256": {
+    "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/certificate.json": "28bb60c5819f29a7500cda0dba908ec01962f46cd203278c10ba00aac468b1d4",
+    "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/check.py": "8189707111b6cc9d1bee7859c8cd59a3696e1d9e855df89d91b63fe518166b54"
+  },
+  "corrupted_certificate": {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/check.py",
+      "check",
+      "/home/ray/developer/ai/math/audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/corrupt-n72t1xtz/bad.json"
+    ],
+    "returncode": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/check.py\", line 89, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/check.py\", line 83, in main\n    assert json.loads(args.certificate.read_text()) == rebuilt, \"certificate mismatch\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n",
+    "stdout": ""
+  },
+  "exclusive_create": {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/check.py",
+      "create",
+      "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/certificate.json"
+    ],
+    "returncode": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/check.py\", line 89, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/check.py\", line 79, in main\n    with args.certificate.open(\"x\") as handle:\n         ~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: 'audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/certificate.json'\n",
+    "stdout": ""
+  },
+  "inputs": [
+    {
+      "live_equals_BASE": true,
+      "path": "audits/2026-10-17-r6-joint-positive-113e41f/A/PROOF.md",
+      "sha256": "bcadc3f33d6e30ec3d3f557bd4f52f91c5b25aa0ca37cd358f005d884276005d"
+    },
+    {
+      "live_equals_BASE": true,
+      "path": "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/PROOF.md",
+      "sha256": "463cb574f3d8bf4b7abd1de668ae1f67d31f07b42838406c621cc04de73aef10"
+    },
+    {
+      "live_equals_BASE": true,
+      "path": "audits/2026-10-16-r6-319-complete-e98a1cc/B/PROOF.md",
+      "sha256": "3b155526121d96ec978c8f42d47fde708dcdec577fe4195472a124f385270014"
+    }
+  ],
+  "normal": {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/check.py",
+      "check",
+      "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/certificate.json"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"placements\": 25, \"result\": \"PASS\", \"source_status\": \"not triggered\"}\n"
+  },
+  "scope": "25 local cap placements; source not triggered; no full repair claimed",
+  "seed17": {
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/check.py",
+      "check",
+      "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/C/certificate.json"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"placements\": 25, \"result\": \"PASS\", \"source_status\": \"not triggered\"}\n"
+  }
+}
