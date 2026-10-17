@@ -1,0 +1,33 @@
+{
+  "checks": [
+    {
+      "name": "docs-final",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "logs_sha256": {
+        "logs/docs-final.stdout.log": "a86bf1dfe56a6726935cba23dc937d65674b7b676f313f47e898d7fbfb11ac19",
+        "logs/docs-final.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "custody-final",
+      "command": [
+        "python3",
+        "-B",
+        "docs/history/2026-10-17-r6-two-cycle-cap-publication/check_custody.py"
+      ],
+      "exit_code": 0,
+      "logs_sha256": {
+        "logs/custody-final.stdout.log": "55f1b2a3bd54f48b71f7cafc5874e936f8b13deb322d75c7c65b401cec78c6b2",
+        "logs/custody-final.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "publication_files": 48,
+  "max_publication_file_bytes": 194053,
+  "research_bytes_unchanged": true
+}

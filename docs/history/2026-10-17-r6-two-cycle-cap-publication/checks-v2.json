@@ -1,0 +1,342 @@
+{
+  "base": "3d325d7197aa05815c71bedc52c1b253d736c7bb",
+  "checks": [
+    {
+      "name": "custody",
+      "command": [
+        "python3",
+        "-B",
+        "docs/history/2026-10-17-r6-two-cycle-cap-publication/check_custody.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.031,
+      "logs_sha256": {
+        "logs/custody.stdout.log": "55f1b2a3bd54f48b71f7cafc5874e936f8b13deb322d75c7c65b401cec78c6b2",
+        "logs/custody.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_outcome": true
+    },
+    {
+      "name": "custody-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "docs/history/2026-10-17-r6-two-cycle-cap-publication/check_custody.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.031,
+      "logs_sha256": {
+        "logs/custody-seed17.stdout.log": "55f1b2a3bd54f48b71f7cafc5874e936f8b13deb322d75c7c65b401cec78c6b2",
+        "logs/custody-seed17.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_outcome": true
+    },
+    {
+      "name": "root",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-two-cycle-cap-3d325d7/check.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.07,
+      "logs_sha256": {
+        "logs/root.stdout.log": "fc3b5bd893e5e55c6d88f422cf11ffe014d207387a40f1b27e9eb373318a7897",
+        "logs/root.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_outcome": true
+    },
+    {
+      "name": "root-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-two-cycle-cap-3d325d7/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.07,
+      "logs_sha256": {
+        "logs/root-seed17.stdout.log": "fc3b5bd893e5e55c6d88f422cf11ffe014d207387a40f1b27e9eb373318a7897",
+        "logs/root-seed17.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_outcome": true
+    },
+    {
+      "name": "B-controls",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-two-cycle-cap-3d325d7/B/check_controls.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.018,
+      "logs_sha256": {
+        "logs/B-controls.stdout.log": "cda5bdc0c19740c14b8afd0f277595d4a042850f997670c0bd952e3ec494f509",
+        "logs/B-controls.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_outcome": true
+    },
+    {
+      "name": "root-negative-certificate",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-two-cycle-cap-3d325d7/check.py",
+        "--certificate",
+        "audits/2026-10-17-r6-two-cycle-cap-3d325d7/certificate-negative-missing-reference.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 0.068,
+      "logs_sha256": {
+        "logs/root-negative-certificate.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "logs/root-negative-certificate.stderr.log": "92f2ce1b300f6104e210717927a46e0c2edd94496c647331db3b21d2b89e2bcd"
+      },
+      "expected_outcome": true,
+      "required_error": "certificate differs from complete reconstruction"
+    },
+    {
+      "name": "root-negative-authority",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-two-cycle-cap-3d325d7/check.py",
+        "--inputs",
+        "audits/2026-10-17-r6-two-cycle-cap-3d325d7/inputs-negative-missing-authority.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 0.041,
+      "logs_sha256": {
+        "logs/root-negative-authority.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "logs/root-negative-authority.stderr.log": "6365923f041ad576bfdd7979c3d4d85d7fdc6ee7a949e005ea3742dbda59760c"
+      },
+      "expected_outcome": true,
+      "required_error": "input manifest changed"
+    },
+    {
+      "name": "old-custody-at-BASE",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-two-cycle-cap-3d325d7/replay_old_custody.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.188,
+      "logs_sha256": {
+        "logs/old-custody-at-BASE.stdout.log": "9343823bb373d7b639af0c3b53b9fae4ece0d27570e39c3532a0e0215cd45b11",
+        "logs/old-custody-at-BASE.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_outcome": true
+    },
+    {
+      "name": "docgraph-formal",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "--include",
+        "paper/**/*.md",
+        "check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.098,
+      "logs_sha256": {
+        "logs/docgraph-formal.stdout.log": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+        "logs/docgraph-formal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_outcome": true
+    },
+    {
+      "name": "docgraph-scoped",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "--include",
+        "paper/**/*.md",
+        "--include",
+        "audits/2026-10-17-r6-two-cycle-cap-3d325d7/*.md",
+        "--include",
+        "audits/2026-10-17-r6-two-cycle-cap-3d325d7/A/*.md",
+        "--include",
+        "audits/2026-10-17-r6-two-cycle-cap-3d325d7/B/*.md",
+        "--include",
+        "audits/2026-10-17-r6-two-cycle-cap-3d325d7/C/*.md",
+        "check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.09,
+      "logs_sha256": {
+        "logs/docgraph-scoped.stdout.log": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+        "logs/docgraph-scoped.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_outcome": true
+    },
+    {
+      "name": "lake",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 3.588,
+      "logs_sha256": {
+        "logs/lake.stdout.log": "8104be9d036bacf8bed91d79c2258da89881e2e6652e9d327e3af5292cf7fa71",
+        "logs/lake.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_outcome": true
+    },
+    {
+      "name": "CI-tool-tests",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 4.794,
+      "logs_sha256": {
+        "logs/CI-tool-tests.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "logs/CI-tool-tests.stderr.log": "84ae5fe2c531e19f707417c558ca67be842a5a395e53bff2dcc8928127d97ec2"
+      },
+      "expected_outcome": true
+    },
+    {
+      "name": "whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.013,
+      "logs_sha256": {
+        "logs/whitespace.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "logs/whitespace.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_outcome": true
+    },
+    {
+      "name": "docs-after-receipt",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.698,
+      "logs_sha256": {
+        "logs/docs-after-receipt.stdout.log": "7e501560f0ee842aa29d69ee421ee09370a09a8fe0313077302b539f5270d4d4",
+        "logs/docs-after-receipt.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_outcome": true
+    },
+    {
+      "name": "index-artifacts",
+      "command": [
+        "python3",
+        "-B",
+        "tools/check_generated_artifacts.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.707,
+      "logs_sha256": {
+        "logs/index-artifacts.stdout.log": "6126531b0e5369735bcdeafd59b37295abcc47ad89b285d80da707c5e0bab445",
+        "logs/index-artifacts.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_outcome": true
+    },
+    {
+      "name": "cached-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.009,
+      "logs_sha256": {
+        "logs/cached-whitespace.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "logs/cached-whitespace.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_outcome": true
+    },
+    {
+      "name": "custody-before-commit",
+      "command": [
+        "python3",
+        "-B",
+        "docs/history/2026-10-17-r6-two-cycle-cap-publication/check_custody.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.029,
+      "logs_sha256": {
+        "logs/custody-before-commit.stdout.log": "55f1b2a3bd54f48b71f7cafc5874e936f8b13deb322d75c7c65b401cec78c6b2",
+        "logs/custody-before-commit.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_outcome": true
+    }
+  ],
+  "superseded_failure": {
+    "receipt": "checks.json",
+    "check": "docs",
+    "exit_code": 1,
+    "reason": "publication page linked checks.json before that receipt was emitted",
+    "resolution": "receipt exists; docs-after-receipt passes"
+  },
+  "all_expected_outcomes": true,
+  "research_bytes_unchanged": true,
+  "root_and_custody_seed17_equal": true
+}

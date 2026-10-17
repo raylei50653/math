@@ -1,0 +1,17 @@
+{
+  "check": "new-file-whitespace",
+  "file": "audits/2026-10-17-r6-two-cycle-cap-3d325d7/A/CROSS_REVIEW.md",
+  "command": [
+    "git",
+    "diff",
+    "--no-index",
+    "--check",
+    "/dev/null",
+    "audits/2026-10-17-r6-two-cycle-cap-3d325d7/A/CROSS_REVIEW.md"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "",
+  "classification": "validation harness interpreted ordinary no-index difference exit1 as whitespace failure; no whitespace diagnostic emitted",
+  "correction": "accept code0/1 only with empty diagnostic output; reject code2 or any output"
+}
