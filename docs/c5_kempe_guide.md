@@ -2,25 +2,25 @@
 
 ## 最新進度
 
-現況核對：2026-10-17；[聯合偶補續進](../audits/2026-10-17-r6-joint-positive-113e41f/REPORT.md)證完整交換的跨palette阻斷與七長奇補圈分類；原v五度的同標記六圈只餘c4跨扇區型。全九框共同計數仍精確可行；W110+W101>0及完整319仍OPEN。
+現況核對：2026-10-17；[R6-MARKED-SIX](../audits/2026-10-17-r6-marked-six-exclusion-6c420f3/REPORT.md)已在完整原r6來源排除全部同含vw,pq的簡單六圈及同含e,f的cyclic六割，不需原v五度，舊c4型亦排除。聯合正值與完整319仍OPEN。
 
 | 欄位 | 現況 |
 | --- | --- |
 | 階段／生命週期 | 普通101及兩個全異完整染色扇區已證存在；主攻110／101聯合偶補正值，主命題仍OPEN。其他保留線不變。 |
-| 最近研究更新 | 2026-10-17：[分量阻斷、七長缺陷與六割來源限制](../audits/2026-10-17-r6-joint-positive-113e41f/REPORT.md)；紙面引理與獨立完整字面計數重建，未證聯合正值。 |
-| 上次完成 | E/F迫相反AD/BC連通，實際CD分量必截斷全部舊AD路；非面七缺陷必暴露跨扇區五割。原v5且c≥5排同含e,f的六割；c4型保留，全九框計數三支皆可行。 |
+| 最近研究更新 | 2026-10-17：[完整r6同標記六圈／六割排除](../audits/2026-10-17-r6-marked-six-exclusion-6c420f3/REPORT.md)；任意大小紙證、三路獨立重建及固定控制圖核對，未證聯合正值。 |
+| 上次完成 | 新原五圈給p-h-w⇒a≤5與q-h-v⇒c≤5；實際disk及兩個原hub cap排完整六圈。舊omega_e=2控制圖有五個標記六圈、其中兩個cyclic六割，已違反新來源限制。 |
 | 目前停止點 | 普通聯合族非空，但 omega_e=0／W110+W101>0 仍OPEN；不要求兩項各自正。110其餘普通障礙、完整319及一般T／T0未證，接回仍k+5。 |
-| 下一步 | 用原幾何排除實際CD分量的pivotal阻斷，或沿七缺陷暴露的原跨扇區五割作保持聯合身份的奇數下降；原v5/c4六圈仍保留。見[精確停止點](../audits/2026-10-17-r6-joint-positive-113e41f/REPORT.md#6-精確停止點驗證與接續)。 |
-| 接手入口 | 本頁 §3及[本輪整合](../audits/2026-10-17-r6-joint-positive-113e41f/REPORT.md)；[完整分量阻斷](../audits/2026-10-17-r6-joint-positive-113e41f/C/PROOF.md)、[七長缺陷](../audits/2026-10-17-r6-joint-positive-113e41f/A/PROOF.md)、[六圈修正版](../audits/2026-10-17-r6-joint-positive-113e41f/B/PROOF.md)。 |
+| 下一步 | 沿非面七缺陷的五個原有序接點，證保持聯合身份的實際奇數下降，或證修復受阻必迫同含e,f的小cyclic cut；該失敗到割的連接仍未證。見[精確契約](../audits/2026-10-17-r6-marked-six-exclusion-6c420f3/REPORT.md#4-下一個窄問題與交換契約)。 |
+| 接手入口 | 本頁 §3及[新定理與重播](../audits/2026-10-17-r6-marked-six-exclusion-6c420f3/REPORT.md)；[完整紙證](../audits/2026-10-17-r6-marked-six-exclusion-6c420f3/PROOF.md)、[前輪七長缺陷](../audits/2026-10-17-r6-joint-positive-113e41f/A/PROOF.md)。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
+| 2026-10-17／完整r6六圈排除 | [R6-MARKED-SIX](../audits/2026-10-17-r6-marked-six-exclusion-6c420f3/REPORT.md)以原外框cap與實際disk排全部同標記六圈／cyclic六割，無v5前提；舊c4殘支及固定奇數控制圖被排除，正值仍OPEN。 |
 | 2026-10-17／聯合偶補續進 | [跨palette阻斷與七缺陷分類](../audits/2026-10-17-r6-joint-positive-113e41f/REPORT.md)保留同一完整染色的路徑身份；原v5六圈只餘c4型，全九框精確計數仍可行，聯合正值OPEN。 |
 | 2026-10-16／同源雙補全與九框 | [雙C5完整1022與58列H必要關係](../audits/2026-10-16-r6-319-joint-parity-f1faf74/REPORT.md)保留同一原G全部五點接回；cyclic四割避e,f已證，完整319與偶補正值仍OPEN。 |
 | 2026-10-16／完整全異來源 | [兩份全異fibre與精確正值](../audits/2026-10-16-r6-319-continuation-f1faf74/REPORT.md)補至少一個真實z接回；原五圈分類及受保護外弧收窄奇圈路線，主目標仍OPEN。 |
-| 2026-10-16／319接回缺口 | [來源商圖與變色奇偶式](../audits/2026-10-16-r6-319-complete-e98a1cc/REPORT.md)保留空fibres；實際四連通平面控制顯示ordinary101與even111仍不足，來源正值未證。 |
 | 2026-10-16／普通101存在性 | [前輪障礙排除](../audits/2026-10-16-r6-double-w5-101-0b639cf/REPORT.md)後，[七disk結構](../audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/REPORT.md)先排I≤4無界子類，[任意excess三耳矛盾](../audits/2026-10-16-r6-seven-disk-rigidity-120aae9/REPORT.md)再排全部七割，得普通P101非空；偶補正值仍OPEN。 |
 
 本頁維護本線現況；證明及實際重播範圍見各報告。
@@ -43,7 +43,7 @@
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
-| R6聯合偶補／完整分量更新 | E/F迫相反AD/BC連通與CD阻斷；七缺陷有同源跨扇區五割分類，原v5/c≥5排同含e,f六割。全九框共同計數三支均可行，正值及完整319仍OPEN | [整合、審核與重播](../audits/2026-10-17-r6-joint-positive-113e41f/REPORT.md) |
+| R6-MARKED-SIX／聯合偶補 | 完整原r6下同含vw,pq的簡單圈與同含e,f的cyclic cut皆至少七；無v5前提，舊c4型全排。E/F分量阻斷、七缺陷分類與九框精確可行保留；正值及完整319仍OPEN | [新定理、控制圖與重播](../audits/2026-10-17-r6-marked-six-exclusion-6c420f3/REPORT.md)、[前輪分量與計數](../audits/2026-10-17-r6-joint-positive-113e41f/REPORT.md) |
 | R6-SEVEN-DISK-RIGIDITY／普通101 | 任意大小排除最後七割障礙；同一D的普通P101非空，故普通聯合族非空。omega_e=0、W110+W101>0及完整319仍OPEN | [最終證明、審查及驗證](../audits/2026-10-16-r6-seven-disk-rigidity-120aae9/REPORT.md)、[七disk結構及完整介面](../audits/2026-10-16-r6-101-nonwheel-seven-cut-120aae9/REPORT.md) |
 | 原內圈與r6有限排除 | 2026-10-14：p5⇒a≥6／q5⇒c≥6；r6p5另迫ell-v、ell-w非邊並有反射對應，固定三框點四度支k≤27⇒h≤12。完整k23／24枚舉得同一固定支r6⇒k≥25；完整319仍OPEN，一般K≤22不變 | [共同W及高h排除](../audits/2026-10-14-r6-lowpq-3953c85/REPORT.md)、[完整k23／24枚舉](../audits/2026-10-14-r6-319-enumeration-676b102/REPORT.md) |
 | 四輪具名匹配／完整來源續進 | 普通雙向分離及保XOR批次交換連通已證；完整all-r需同時拒e=f≠g及e=g≠f。來源J四連通、兩星W完整fibre與三標記窄割表成立，尚未迫偶補正值或來源矛盾 | [最新整合](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)、[四輪證據與歷史重播](history/2026-10-15-kempe-routes-publish.md) |
@@ -102,13 +102,23 @@
 
 ## 3. 停止點與保留缺口
 
-**完整分量與奇補缺陷（2026-10-17）。** [本輪整合](../audits/2026-10-17-r6-joint-positive-113e41f/REPORT.md)
+**完整r6同標記六圈／六割排除（2026-10-17）。** [新定理](../audits/2026-10-17-r6-marked-six-exclusion-6c420f3/REPORT.md)
+在完整原來源、不需v5或c≥5下，證所有同含vw,pq的簡單J圈長至少七，
+所有同含e,f的cyclic D cut至少七邊。原外框proper五圈給兩步路徑度數界，
+實際disk交錯端點及兩個原hub cap完成分類，舊c4殘支已排除。
+固定omega_e=2弱前提圖有五個標記六圈、其中兩個cyclic六割，亦被新限制排除；
+仍未證任意正奇數障礙必迫此類小割。下一步保留非面七缺陷的五個原有序接點
+及任意大小完整外側，證實際奇數下降或受阻到禁止小割的連接。
+從110/101聯合族交換，e不可翻且f,g必同翻或同不翻；從111進入聯合族才恰翻一條。
+新結論沒有替D-M奇圈給長度下界；五長、七面與九長以上缺陷仍保留。
+
+**完整分量與奇補缺陷（2026-10-17前輪）。** [前輪整合](../audits/2026-10-17-r6-joint-positive-113e41f/REPORT.md)
 證每個真實E/F完整染色迫相反AD(z,v)、BC(s,t)連通；若CD(u)與CD(m)分離，
 u分量的原D點必阻斷所有舊AD路並支撐所有新BC路，對整個實際cube成立。
 每份F另有完整111雙射與必要CD重連，但仍未迫出兩步來源出口。
 每個非面七長奇補圈必為相鄰四／五面邊界，五根M spokes給同源跨扇區induced C5。
-原v5時同含e,f六圈只留mq跨扇區型，迫c4、a≥7；v5且c≥5時整類六割排除。
-初始無條件六圈排除已被獨立審核拒絕，修正版保留原框及933→940的反射界線。
+當輪原v5六圈留下的mq跨扇區c4型，現由上述不同的原五圈方法排除。
+當輪初稿的錯誤反射論證及被拒PASS仍保留；新定理不沿用它或更換原支持。
 全原九框（含a≠c）共同計數三支皆有精確解且58列H全正，故接續須使用實際分量
 相容性或保持聯合身份的奇數下降；不能以加強計數可行當作來源實現。
 

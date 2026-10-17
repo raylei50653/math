@@ -1,0 +1,104 @@
+{
+  "checks": [
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "log": "docs.log",
+      "sha256": "5b6371efcb45df77cab718aeca0bf08e298dc83d04511e145f1eb552387e637f"
+    },
+    {
+      "name": "formal-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": "formal-docgraph.log",
+      "sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca"
+    },
+    {
+      "name": "scoped-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/**/*.md",
+        "check"
+      ],
+      "exit_code": 1,
+      "log": "scoped-docgraph.log",
+      "sha256": "398dd0825432c4bfad1b9a25b6ad1c6208c82c83a8b277a9f9011d1aa6a690fb"
+    },
+    {
+      "name": "whole-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "log": "whole-docgraph.log",
+      "sha256": "c517061458fe1e63d004eeaaf49f733c2520241e53f4654dcf6168e486afeb2a",
+      "error_count": 70,
+      "same_error_signatures_as_before": true,
+      "identical_output_to_before": false
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "diff-check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "active-scoped-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "--include",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/*.md",
+        "--include",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/[ABC]/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": "active-scoped-docgraph.log",
+      "sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+      "scope": "formal docs plus active audit Markdown; frozen historical metadata excluded"
+    },
+    {
+      "name": "docs-final",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "log": "docs-final.log",
+      "sha256": "5b6371efcb45df77cab718aeca0bf08e298dc83d04511e145f1eb552387e637f"
+    },
+    {
+      "name": "diff-final",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "diff-final.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

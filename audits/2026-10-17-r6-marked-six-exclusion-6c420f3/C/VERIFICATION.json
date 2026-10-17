@@ -1,0 +1,78 @@
+{
+  "all_expected_outcomes": true,
+  "base": "6c420f3ca77d60952ed76f93dff7449c522715ca",
+  "cases": [
+    {
+      "case": "normal replay",
+      "expected_success": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "PASS: 38 PMs; 3 joint101; omega=2; 5 marked six-cycles; 2 actual cyclic six-cuts; source not triggered"
+    },
+    {
+      "case": "seed17 replay",
+      "expected_success": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "PASS: 38 PMs; 3 joint101; omega=2; 5 marked six-cycles; 2 actual cyclic six-cuts; source not triggered"
+    },
+    {
+      "case": "omitted ordinary matching",
+      "expected_success": false,
+      "returncode": 1,
+      "stderr": "FAIL: certificate mismatch",
+      "stdout": ""
+    },
+    {
+      "case": "corrupted actual complement vertex",
+      "expected_success": false,
+      "returncode": 1,
+      "stderr": "FAIL: certificate mismatch",
+      "stdout": ""
+    },
+    {
+      "case": "corrupted cyclic-cut side edge count",
+      "expected_success": false,
+      "returncode": 1,
+      "stderr": "FAIL: certificate mismatch",
+      "stdout": ""
+    },
+    {
+      "case": "omitted marked six-cycle",
+      "expected_success": false,
+      "returncode": 1,
+      "stderr": "FAIL: certificate mismatch",
+      "stdout": ""
+    },
+    {
+      "case": "changed literal marked edge ID",
+      "expected_success": false,
+      "returncode": 1,
+      "stderr": "FAIL: certificate mismatch",
+      "stdout": ""
+    },
+    {
+      "case": "invented source authority",
+      "expected_success": false,
+      "returncode": 1,
+      "stderr": "FAIL: certificate mismatch",
+      "stdout": ""
+    },
+    {
+      "case": "changed source input rejected by frozen hash",
+      "expected_success": false,
+      "returncode": 1,
+      "stderr": "FAIL: input graph hash mismatch",
+      "stdout": ""
+    },
+    {
+      "case": "exclusive creation refuses existing file and preserves bytes",
+      "expected_success": false,
+      "result": "existing bytes preserved; File exists rejection",
+      "returncode": 1
+    }
+  ],
+  "certificate_sha256": "d9094ce8b36cd6bd068a6e70b84b3028591ea8b7ee1b78ab664cb51865fc90fc",
+  "checker_sha256": "cb9d3e27ee36c3084c5e5135010b2ad672883903115b2cfa0dde4432d4f72dac",
+  "schema": "r6-marked-six-control-verification-v1"
+}

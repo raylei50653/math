@@ -1,0 +1,334 @@
+{
+  "base": "6c420f3ca77d60952ed76f93dff7449c522715ca",
+  "checks": [
+    {
+      "name": "custody",
+      "command": [
+        "python3",
+        "-B",
+        "docs/history/2026-10-17-r6-marked-six-publication/check_custody.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/custody.log",
+      "sha256": "5c77afcf27295d45258e633342dac1b568975bac71506d3e00f947f22b675702"
+    },
+    {
+      "name": "root",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/check.py",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/root.log",
+      "sha256": "ad58d6e7591381498af8fcc2a697333c6ac6b14180fc7b66901c11b445875a9a"
+    },
+    {
+      "name": "root-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/check.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/root-seed17.log",
+      "sha256": "ad58d6e7591381498af8fcc2a697333c6ac6b14180fc7b66901c11b445875a9a"
+    },
+    {
+      "name": "A",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/A/check.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/A.log",
+      "sha256": "f8af69157268a9dad577e06d05a73fe2a26c8cc520eff40fa7de922c7a1b6638"
+    },
+    {
+      "name": "A-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/A/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/A-seed17.log",
+      "sha256": "f8af69157268a9dad577e06d05a73fe2a26c8cc520eff40fa7de922c7a1b6638"
+    },
+    {
+      "name": "B",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/B/check.py",
+        "--check",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/B/certificate.json"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/B.log",
+      "sha256": "8476afc06dd92f36a1355a3800a17af74b16cc9c436ce703b349eff949641bbc"
+    },
+    {
+      "name": "B-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/B/check.py",
+        "--check",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/B/certificate.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/B-seed17.log",
+      "sha256": "8476afc06dd92f36a1355a3800a17af74b16cc9c436ce703b349eff949641bbc"
+    },
+    {
+      "name": "C",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/C/check.py",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/C.log",
+      "sha256": "6474334f21a75aacf2d3d8795e9a8ce5354efcdfed9a73f85933de96f4bba99f"
+    },
+    {
+      "name": "C-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/C/check.py",
+        "--check",
+        "--seed",
+        "17"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/C-seed17.log",
+      "sha256": "6474334f21a75aacf2d3d8795e9a8ce5354efcdfed9a73f85933de96f4bba99f"
+    },
+    {
+      "name": "C-negatives",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/C/run_checks.py",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/C-negatives.log",
+      "sha256": "7493617eae0beb4ba5951313a020046a9cf775e25df1ab8e1adb57a6ee382cfb"
+    },
+    {
+      "name": "lake-build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/lake-build.log",
+      "sha256": "8104be9d036bacf8bed91d79c2258da89881e2e6652e9d327e3af5292cf7fa71"
+    },
+    {
+      "name": "tool-tests",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "log": "logs/tool-tests.log",
+      "sha256": "37cb6b62e227cfcde8b65b00952776f51f510b26e4a15ffa7312884ff38f0789"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/docs.log",
+      "sha256": "555590e5a914a054f22b3bbdecdbef251d045ab681f4e930badaa0f002c4b2af"
+    },
+    {
+      "name": "formal-docgraph",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/formal-docgraph.log",
+      "sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca"
+    },
+    {
+      "name": "active-docgraph",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "--include",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/*.md",
+        "--include",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/[ABC]/*.md",
+        "check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/active-docgraph.log",
+      "sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca"
+    },
+    {
+      "name": "whole-docgraph",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "logs/whole-docgraph.log",
+      "sha256": "c517061458fe1e63d004eeaaf49f733c2520241e53f4654dcf6168e486afeb2a",
+      "error_count": 70,
+      "same_error_identities_as_research_base": true
+    },
+    {
+      "name": "tool-tests-with-requirements",
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/tool-tests-with-requirements.log",
+      "sha256": "c1c220c58ebf3d99426300ffce029290b2f5134f284840ce84e354e4ba2b3530"
+    },
+    {
+      "name": "staged-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/staged-whitespace.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "staged-artifact-policy",
+      "command": [
+        "python3",
+        "-B",
+        "tools/check_generated_artifacts.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/staged-artifact-policy.log",
+      "sha256": "e15195ecd36ba13317cc53e39b1179908cf7460e1f3c4c4e145a333703fefe96"
+    },
+    {
+      "name": "final-docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/final-docs.log",
+      "sha256": "555590e5a914a054f22b3bbdecdbef251d045ab681f4e930badaa0f002c4b2af"
+    },
+    {
+      "name": "final-custody",
+      "command": [
+        "python3",
+        "-B",
+        "docs/history/2026-10-17-r6-marked-six-publication/check_custody.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "logs/final-custody.log",
+      "sha256": "5c77afcf27295d45258e633342dac1b568975bac71506d3e00f947f22b675702"
+    }
+  ],
+  "required_checks_pass_after_environment_recovery": true,
+  "initial_environment_failure": {
+    "check": "tool-tests",
+    "reason": "system Python lacks networkx",
+    "resolved_by": "tool-tests-with-requirements"
+  },
+  "initial_batch_all_expected_outcomes": false,
+  "status": "PASS after dependency environment recovery"
+}

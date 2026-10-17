@@ -1,0 +1,66 @@
+{
+  "base": "6c420f3ca77d60952ed76f93dff7449c522715ca",
+  "runs": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/A/check.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "normal.log",
+      "log_sha256": "f8af69157268a9dad577e06d05a73fe2a26c8cc520eff40fa7de922c7a1b6638"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/A/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "seed17.log",
+      "log_sha256": "f8af69157268a9dad577e06d05a73fe2a26c8cc520eff40fa7de922c7a1b6638"
+    },
+    {
+      "name": "negative-allow-aw",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/A/check.py",
+        "--negative",
+        "allow-aw"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "negative-allow-aw.log",
+      "log_sha256": "facdb8e97ff2b280528fdef4b95281bf349b434a65e21b3bdde02271882aadf2"
+    },
+    {
+      "name": "negative-wheel-chord",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/A/check.py",
+        "--negative",
+        "wheel-chord"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "negative-wheel-chord.log",
+      "log_sha256": "7ce68a403b45bf279f956c49c3917caae59b53d8efe5967cf21aa44a417f1499"
+    }
+  ],
+  "normal_seed17_identical": true,
+  "frozen_input_drift": 0,
+  "scope": "local calibration only; arbitrary-size source proof is PROOF.md"
+}

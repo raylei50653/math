@@ -1,0 +1,123 @@
+{
+  "base": "6c420f3ca77d60952ed76f93dff7449c522715ca",
+  "cases": [
+    {
+      "name": "root",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/check.py",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "root.log",
+      "sha256": "ad58d6e7591381498af8fcc2a697333c6ac6b14180fc7b66901c11b445875a9a"
+    },
+    {
+      "name": "root-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/check.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "root-seed17.log",
+      "sha256": "ad58d6e7591381498af8fcc2a697333c6ac6b14180fc7b66901c11b445875a9a"
+    },
+    {
+      "name": "root-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/check.py",
+        "--check",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/integration/wrong-switch-contract.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "root-negative.log",
+      "sha256": "47688fbb6db7371c502ada960b621750086767e06ecd940ec4be528854ed9c7b"
+    },
+    {
+      "name": "root-exclusive",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/check.py",
+        "--write",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/certificate.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "root-exclusive.log",
+      "sha256": "3a0d861170a8b79a39b1fcdf369492dad93ecbcd8974083c7cd12d7e9fe9a02b"
+    },
+    {
+      "name": "A",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/A/check.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "A.log",
+      "sha256": "f8af69157268a9dad577e06d05a73fe2a26c8cc520eff40fa7de922c7a1b6638"
+    },
+    {
+      "name": "B",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/B/check.py",
+        "--check",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/B/certificate.json"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "B.log",
+      "sha256": "8476afc06dd92f36a1355a3800a17af74b16cc9c436ce703b349eff949641bbc"
+    },
+    {
+      "name": "C",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/C/check.py",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "C.log",
+      "sha256": "6474334f21a75aacf2d3d8795e9a8ce5354efcdfed9a73f85933de96f4bba99f"
+    },
+    {
+      "name": "C-negative-replay",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-marked-six-exclusion-6c420f3/C/run_checks.py",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "C-negative-replay.log",
+      "sha256": "7493617eae0beb4ba5951313a020046a9cf775e25df1ab8e1adb57a6ee382cfb"
+    }
+  ],
+  "root_certificate_preserved": true,
+  "all_expected_outcomes": true
+}
