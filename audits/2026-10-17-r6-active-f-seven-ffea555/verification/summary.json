@@ -1,0 +1,178 @@
+{
+  "base": "ffea555fc2a896d8166ce198ca28ed9262912f25",
+  "receipts": {
+    "A-replay": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/A/check.py",
+        "--certificate",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/A/certificate.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.036,
+      "stdout_sha256": "b4e74b9e88770a0a86e130b049fc414d920da24c4dc64b544f6626982dc52fad",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "A-seed17": {
+      "command": [
+        "env",
+        "PYTHONHASHSEED=17",
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/A/check.py",
+        "--certificate",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/A/certificate.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.037,
+      "stdout_sha256": "b4e74b9e88770a0a86e130b049fc414d920da24c4dc64b544f6626982dc52fad",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "audit-links": {
+      "command": [
+        "python3",
+        "-B",
+        "-c",
+        "from pathlib import Path\nfrom urllib.parse import unquote,urlsplit\nimport json,sys\nfrom scripts.check_docs import links,anchors\nroot=Path(sys.argv[1])\nerrors=[]\ncount=0\nactive=[p for p in root.rglob('*') if p.is_file() and 'frozen' not in p.relative_to(root).parts]\nfor source in active:\n if source.suffix in {'.md','.py','.json'}:\n  for n,line in enumerate(source.read_text().splitlines(),1):\n   if line.rstrip()!=line: errors.append(f'trailing whitespace: {source}:{n}')\n if source.suffix!='.md': continue\n for number,destination in links(source.read_text()):\n  url=urlsplit(destination)\n  if url.scheme or url.netloc: continue\n  count+=1\n  target=(source.parent/unquote(url.path)).resolve() if url.path else source.resolve()\n  if not target.exists(): errors.append(f'missing path: {source}:{number}: {destination}')\n  elif url.fragment and target.suffix=='.md' and unquote(url.fragment) not in anchors(target.read_text()): errors.append(f'missing anchor: {source}:{number}: {destination}')\nprint(json.dumps({'active_markdown':sum(p.suffix=='.md' for p in active),'links_checked':count,'errors':errors},sort_keys=True))\nraise SystemExit(bool(errors))\n",
+        "audits/2026-10-17-r6-active-f-seven-ffea555"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.031,
+      "stdout_sha256": "064c2d2bd93007d61fbf9daef7960056237348f8868b42c4b703458dbdbcacee",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "custody-negative": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/check.py",
+        "--inputs",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/verification/inputs-negative.json"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 0.037,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "6365923f041ad576bfdd7979c3d4d85d7fdc6ee7a949e005ea3742dbda59760c"
+    },
+    "custody-seed17": {
+      "command": [
+        "env",
+        "PYTHONHASHSEED=17",
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/check.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.07,
+      "stdout_sha256": "a756b3585dc719fd34b4ce97b8cf2f05abe383bc17fb83b75935f39e19fd40d1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "custody": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/check.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.072,
+      "stdout_sha256": "a756b3585dc719fd34b4ce97b8cf2f05abe383bc17fb83b75935f39e19fd40d1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "diff-check": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.013,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docgraph-formal": {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "--include",
+        "paper/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.092,
+      "stdout_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docgraph-scoped": {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "--include",
+        "paper/**/*.md",
+        "--include",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/*.md",
+        "--include",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/A/*.md",
+        "--include",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/B/*.md",
+        "--include",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/C/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.089,
+      "stdout_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs": {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.724,
+      "stdout_sha256": "e8d7460015b106684712660a8afd2197bc54359b531d24e79a74726a50acc599",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "lake": {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.654,
+      "stdout_sha256": "8104be9d036bacf8bed91d79c2258da89881e2e6652e9d327e3af5292cf7fa71",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "parent-replay": {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/check.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.061,
+      "stdout_sha256": "64019dad77b3e9ad42524491e080f1d3c9ccc3c69e3791022124b51a3c09c3a1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "all_expected_outcomes": true,
+  "source_realizability": "not triggered",
+  "new_lean_theorem": false
+}

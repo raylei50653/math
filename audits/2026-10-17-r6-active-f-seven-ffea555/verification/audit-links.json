@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "-c",
+    "from pathlib import Path\nfrom urllib.parse import unquote,urlsplit\nimport json,sys\nfrom scripts.check_docs import links,anchors\nroot=Path(sys.argv[1])\nerrors=[]\ncount=0\nactive=[p for p in root.rglob('*') if p.is_file() and 'frozen' not in p.relative_to(root).parts]\nfor source in active:\n if source.suffix in {'.md','.py','.json'}:\n  for n,line in enumerate(source.read_text().splitlines(),1):\n   if line.rstrip()!=line: errors.append(f'trailing whitespace: {source}:{n}')\n if source.suffix!='.md': continue\n for number,destination in links(source.read_text()):\n  url=urlsplit(destination)\n  if url.scheme or url.netloc: continue\n  count+=1\n  target=(source.parent/unquote(url.path)).resolve() if url.path else source.resolve()\n  if not target.exists(): errors.append(f'missing path: {source}:{number}: {destination}')\n  elif url.fragment and target.suffix=='.md' and unquote(url.fragment) not in anchors(target.read_text()): errors.append(f'missing anchor: {source}:{number}: {destination}')\nprint(json.dumps({'active_markdown':sum(p.suffix=='.md' for p in active),'links_checked':count,'errors':errors},sort_keys=True))\nraise SystemExit(bool(errors))\n",
+    "audits/2026-10-17-r6-active-f-seven-ffea555"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "elapsed_seconds": 0.031,
+  "stdout_sha256": "064c2d2bd93007d61fbf9daef7960056237348f8868b42c4b703458dbdbcacee",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

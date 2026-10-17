@@ -1,0 +1,28 @@
+{
+  "name": "tool-tests-deps",
+  "command": [
+    "uv",
+    "run",
+    "--with-requirements",
+    "requirements.txt",
+    "python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tools/tests",
+    "-p",
+    "test_*.py"
+  ],
+  "environment": {},
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "elapsed_seconds": 4.369,
+  "logs_sha256": {
+    "tool-tests-deps.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tool-tests-deps.stderr.log": "6013246e5c2db4975e7753dfd3ba641bd4f8f04b4e7d91bbeafb32891d53afb0"
+  },
+  "supersedes": "tool-tests in checks.json",
+  "reason": "system Python lacks pinned networkx; run with repository requirements as in CI"
+}

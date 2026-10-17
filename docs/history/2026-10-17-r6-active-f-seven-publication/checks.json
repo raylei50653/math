@@ -1,0 +1,287 @@
+{
+  "base": "ffea555fc2a896d8166ce198ca28ed9262912f25",
+  "checks": [
+    {
+      "name": "research-seal",
+      "command": [
+        "sha256sum",
+        "--quiet",
+        "-c",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/OUTPUTS.sha256"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.005,
+      "logs_sha256": {
+        "research-seal.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "research-seal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "root-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/check.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.069,
+      "logs_sha256": {
+        "root-normal.stdout.log": "a756b3585dc719fd34b4ce97b8cf2f05abe383bc17fb83b75935f39e19fd40d1",
+        "root-normal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "root-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.071,
+      "logs_sha256": {
+        "root-seed17.stdout.log": "a756b3585dc719fd34b4ce97b8cf2f05abe383bc17fb83b75935f39e19fd40d1",
+        "root-seed17.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "A-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/A/check.py",
+        "--certificate",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/A/certificate.json"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.037,
+      "logs_sha256": {
+        "A-normal.stdout.log": "b4e74b9e88770a0a86e130b049fc414d920da24c4dc64b544f6626982dc52fad",
+        "A-normal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "A-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/A/check.py",
+        "--certificate",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/A/certificate.json"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.037,
+      "logs_sha256": {
+        "A-seed17.stdout.log": "b4e74b9e88770a0a86e130b049fc414d920da24c4dc64b544f6626982dc52fad",
+        "A-seed17.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "root-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/check.py",
+        "--inputs",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/verification/inputs-negative.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 0.037,
+      "logs_sha256": {
+        "root-negative.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "root-negative.stderr.log": "6365923f041ad576bfdd7979c3d4d85d7fdc6ee7a949e005ea3742dbda59760c"
+      },
+      "required_error": "input manifest changed"
+    },
+    {
+      "name": "A-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/A/check.py",
+        "--certificate",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/A/certificate-negative-missing-row.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 0.039,
+      "logs_sha256": {
+        "A-negative.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "A-negative.stderr.log": "dec1b92b0fd3d125b3f037d50f8001cbf73e8ee0a924a0b9198a27d11858daf7"
+      },
+      "required_error": "certificate differs from full reconstruction"
+    },
+    {
+      "name": "publication-custody",
+      "command": [
+        "python3",
+        "-B",
+        "docs/history/2026-10-17-r6-active-f-seven-publication/check_custody.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.03,
+      "logs_sha256": {
+        "publication-custody.stdout.log": "9343823bb373d7b639af0c3b53b9fae4ece0d27570e39c3532a0e0215cd45b11",
+        "publication-custody.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "publication-custody-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "docs/history/2026-10-17-r6-active-f-seven-publication/check_custody.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.029,
+      "logs_sha256": {
+        "publication-custody-seed17.stdout.log": "9343823bb373d7b639af0c3b53b9fae4ece0d27570e39c3532a0e0215cd45b11",
+        "publication-custody-seed17.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "parent-root",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/check.py",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.059,
+      "logs_sha256": {
+        "parent-root.stdout.log": "64019dad77b3e9ad42524491e080f1d3c9ccc3c69e3791022124b51a3c09c3a1",
+        "parent-root.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.709,
+      "logs_sha256": {
+        "docs.stdout.log": "eb6c861c86ddbdbf8bc3343bac58b3fcd616c3d04bcede06db02727e94dacd57",
+        "docs.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "docgraph-formal",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "--include",
+        "paper/**/*.md",
+        "check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.089,
+      "logs_sha256": {
+        "docgraph-formal.stdout.log": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+        "docgraph-formal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "docgraph-scoped",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "--include",
+        "paper/**/*.md",
+        "--include",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/*.md",
+        "--include",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/A/*.md",
+        "--include",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/B/*.md",
+        "--include",
+        "audits/2026-10-17-r6-active-f-seven-ffea555/C/*.md",
+        "check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.087,
+      "logs_sha256": {
+        "docgraph-scoped.stdout.log": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+        "docgraph-scoped.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "tool-tests",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 4.178,
+      "logs_sha256": {
+        "tool-tests.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tool-tests.stderr.log": "639981b6c55dcdd579b3612da44f3806da59ddd795ec0256d444988ecc992acc"
+      }
+    },
+    {
+      "name": "lake",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 3.658,
+      "logs_sha256": {
+        "lake.stdout.log": "8104be9d036bacf8bed91d79c2258da89881e2e6652e9d327e3af5292cf7fa71",
+        "lake.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "all_expected_outcomes": false
+}

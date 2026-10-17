@@ -1,0 +1,13 @@
+$ /usr/bin/python3 -B /home/ray/developer/ai/math/audits/2026-10-17-r6-active-f-seven-ffea555/A/check.py --write-certificate /home/ray/developer/ai/math/audits/2026-10-17-r6-active-f-seven-ffea555/A/certificate.json
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-17-r6-active-f-seven-ffea555/A/check.py", line 170, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-17-r6-active-f-seven-ffea555/A/check.py", line 151, in main
+    with args.write_certificate.open("x") as output:
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-17-r6-active-f-seven-ffea555/A/certificate.json'
+exit_code=1

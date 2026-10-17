@@ -1,0 +1,23 @@
+....................................E...........................................
+======================================================================
+ERROR: test_c5_cell_transform (unittest.loader._FailedTest.test_c5_cell_transform)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_c5_cell_transform
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/unittest/loader.py", line 433, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.14/unittest/loader.py", line 374, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/home/ray/developer/ai/math/tools/tests/test_c5_cell_transform.py", line 11, in <module>
+    import c5_cell_transform as transform  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/scripts/c5_cell_transform.py", line 16, in <module>
+    import networkx as nx
+ModuleNotFoundError: No module named 'networkx'
+
+
+----------------------------------------------------------------------
+Ran 80 tests in 3.923s
+
+FAILED (errors=1)
