@@ -1,0 +1,79 @@
+{
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/check_source_lifts.py",
+        "--check",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/SOURCE_LIFTS_CERTIFICATE.json"
+      ],
+      "exit_code": 0,
+      "name": "normal",
+      "stderr": "",
+      "stdout": "{\"status\": \"PASS\", \"proper_boundary_orbits\": 820, \"upper_counts\": [607, 659, 716], \"empty_fibre_counts\": [475, 475, 475], \"provided_fixed_counts\": [362, 536, 662]}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/check_source_lifts.py",
+        "--check",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/SOURCE_LIFTS_CERTIFICATE.json",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "name": "seed17",
+      "stderr": "",
+      "stdout": "{\"status\": \"PASS\", \"proper_boundary_orbits\": 820, \"upper_counts\": [607, 659, 716], \"empty_fibre_counts\": [475, 475, 475], \"provided_fixed_counts\": [362, 536, 662]}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/check_source_lifts.py",
+        "--check",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/negative/deleted-empty-original-fibre.json"
+      ],
+      "exit_code": 1,
+      "name": "deleted-empty-original-fibre",
+      "stderr": "FAIL: complete original lift reconstruction differs\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/check_source_lifts.py",
+        "--check",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/negative/missing-original-five-vertex-lift.json"
+      ],
+      "exit_code": 1,
+      "name": "missing-original-five-vertex-lift",
+      "stderr": "FAIL: complete original lift reconstruction differs\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/check_source_lifts.py",
+        "--check",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/negative/missing-original-r-v-edge.json"
+      ],
+      "exit_code": 1,
+      "name": "missing-original-r-v-edge",
+      "stderr": "FAIL: complete original lift reconstruction differs\n",
+      "stdout": ""
+    }
+  ],
+  "sha256": {
+    "SOURCE_LIFTS_CERTIFICATE.json": "3400c30bfc22a618a4e0ffa3a4cfecc0de2252c1614c9eb4664958fdd1bf277e",
+    "check_source_lifts.py": "78775df3943be283f0804540cb5fb5bcc0573c761d6366c049d1d9c49be18be4",
+    "negative/deleted-empty-original-fibre.json": "14bed9dcb4ed54e015584091c88fa3bc80218555950169b27644f1cfdce3c98d",
+    "negative/missing-original-five-vertex-lift.json": "c81005cf4d90f038c218344c5ff23ba87a034e9ca09bd0f52d7c5755597faeee",
+    "negative/missing-original-r-v-edge.json": "bf6afc103bb32226fea934920fb36e40844bd7b4350cb1731225526ca90379e8"
+  },
+  "status": "PASS"
+}

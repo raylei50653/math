@@ -1,0 +1,72 @@
+{
+  "active_certificate": "certificate-v3.json",
+  "active_certificate_sha256": "dbc1d85d1afbd2d4aabfd04ceb8946561664bf76879c28d869bac69e576e0bad",
+  "base": "113e41f7023aa00c8257b815ce8727035b648f26",
+  "checker_sha256": "1a86ad2fb706c2240011774359879dde817cb1f61579d95279665ff0ef54ca82",
+  "proof_sha256": "bcadc3f33d6e30ec3d3f557bd4f52f91c5b25aa0ca37cd358f005d884276005d",
+  "records": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-17-r6-joint-positive-113e41f/A/check.py",
+        "--create"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "label": "normal",
+      "stderr": "normal.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "normal.stdout",
+      "stdout_sha256": "c167cc7874d9148eddea8d2a0178c850050e8fce10abd0b58f824d5379b9dca4"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-17-r6-joint-positive-113e41f/A/check.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "label": "seed17",
+      "stderr": "seed17.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "seed17.stdout",
+      "stdout_sha256": "8e6e03705bf427e657ae69055f26c5883055f1caffeaaf0061f95b34957098a5"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-17-r6-joint-positive-113e41f/A/check.py",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-17-r6-joint-positive-113e41f/A/corrupt-chord.json"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "label": "corrupt-chord",
+      "stderr": "corrupt-chord.stderr",
+      "stderr_sha256": "c3e8f9fb04c9f1b4bd54fe1d17d302452284a13f88647997a2319c8c6428db3c",
+      "stdout": "corrupt-chord.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-17-r6-joint-positive-113e41f/A/check.py",
+        "--create"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "label": "exclusive-create",
+      "stderr": "exclusive-create.stderr",
+      "stderr_sha256": "7d13b849f59c74defb2e4b0e0f6e558c06848a250c4e38fdaa766384cd2b7aef",
+      "stdout": "exclusive-create.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "paper arbitrary-size lemma with finite geometric calibration; no source supplied; no joint positivity proved"
+}

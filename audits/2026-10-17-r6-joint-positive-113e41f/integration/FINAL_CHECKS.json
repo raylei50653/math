@@ -1,0 +1,117 @@
+{
+  "records": [
+    {
+      "tag": "A-root",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/A/check.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_status": true,
+      "seconds": 0.093
+    },
+    {
+      "tag": "B-root",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/check.py",
+        "--check",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/certificate.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_status": true,
+      "seconds": 0.326
+    },
+    {
+      "tag": "C-root",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/C/check.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_status": true,
+      "seconds": 0.077
+    },
+    {
+      "tag": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_status": true,
+      "seconds": 0.717
+    },
+    {
+      "tag": "formal-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_status": true,
+      "seconds": 0.091
+    },
+    {
+      "tag": "scoped-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "--include",
+        "audits/2026-10-17-r6-joint-positive-113e41f/*.md",
+        "--include",
+        "audits/2026-10-17-r6-joint-positive-113e41f/A/*.md",
+        "--include",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/*.md",
+        "--include",
+        "audits/2026-10-17-r6-joint-positive-113e41f/C/*.md",
+        "--include",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_status": true,
+      "seconds": 0.09
+    },
+    {
+      "tag": "whole-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expected_status": true,
+      "seconds": 5.198
+    },
+    {
+      "tag": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_status": true,
+      "seconds": 0.024
+    }
+  ],
+  "all_expected": true,
+  "whole_tree_note": "Whole-tree failure must be reported separately from formal/scoped checks; see comparison receipt."
+}

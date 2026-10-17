@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "scope": "Publication engineering checks; no broad artifact rebuild or dependency updates.",
+  "created_utc": "2026-10-17T09:45:47.472034+00:00",
+  "checks": [
+    {
+      "name": "lake-build",
+      "argv": [
+        "lake",
+        "build"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-17T09:45:38.318442+00:00",
+      "finished_utc": "2026-10-17T09:45:47.471062+00:00",
+      "elapsed_seconds": 9.153,
+      "returncode": 0,
+      "launch_error": null,
+      "stdout": "lake-build.stdout.txt",
+      "stderr": "lake-build.stderr.txt",
+      "stdout_bytes": 7494,
+      "stdout_sha256": "8104be9d036bacf8bed91d79c2258da89881e2e6652e9d327e3af5292cf7fa71",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "result": "Build completed successfully (8832 jobs).",
+      "warning_count": 30,
+      "authority_boundary": "Successful existing Lean project build; does not formalize the new paper results."
+    },
+    {
+      "name": "tools-unittest",
+      "argv": [
+        "uv",
+        "run",
+        "--python",
+        "3.14",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-17T09:45:38.318793+00:00",
+      "finished_utc": "2026-10-17T09:45:43.406477+00:00",
+      "elapsed_seconds": 5.088,
+      "returncode": 0,
+      "launch_error": null,
+      "stdout": "tools-unittest.stdout.txt",
+      "stderr": "tools-unittest.stderr.txt",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_bytes": 193,
+      "stderr_sha256": "6d3776fb069363b8481e3bbe5268ffadb825202f8dd38086379237ff6f974c10",
+      "tests_run": 94,
+      "test_runner_seconds": 4.263,
+      "result": "OK"
+    }
+  ],
+  "all_passed": true
+}

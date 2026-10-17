@@ -1,0 +1,134 @@
+{
+  "records": [
+    {
+      "tag": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_status": true,
+      "seconds": 0.874
+    },
+    {
+      "tag": "formal-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_status": true,
+      "seconds": 0.276
+    },
+    {
+      "tag": "scoped-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "--include",
+        "audits/2026-10-17-r6-joint-positive-113e41f/*.md",
+        "--include",
+        "audits/2026-10-17-r6-joint-positive-113e41f/A/*.md",
+        "--include",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/*.md",
+        "--include",
+        "audits/2026-10-17-r6-joint-positive-113e41f/C/*.md",
+        "--include",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_status": true,
+      "seconds": 0.275
+    },
+    {
+      "tag": "whole-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expected_status": true,
+      "seconds": 7.157
+    },
+    {
+      "tag": "staged-artifact-policy",
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_status": true,
+      "seconds": 2.15
+    },
+    {
+      "tag": "staged-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_status": true,
+      "seconds": 0.046
+    },
+    {
+      "tag": "publication-custody",
+      "command": [
+        "python3",
+        "-B",
+        "docs/history/2026-10-17-r6-joint-positive-publication/check_custody.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_status": true,
+      "seconds": 0.64
+    },
+    {
+      "tag": "negative-inventory-hash",
+      "command": [
+        "python3",
+        "-B",
+        "docs/history/2026-10-17-r6-joint-positive-publication/check_custody.py",
+        "--inventory",
+        "docs/history/2026-10-17-r6-joint-positive-publication/negative-inventory-hash.json"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expected_status": true,
+      "seconds": 0.06
+    },
+    {
+      "tag": "original-sha256sums",
+      "command": [
+        "sha256sum",
+        "-c",
+        "audits/2026-10-17-r6-joint-positive-113e41f/SHA256SUMS"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_status": true,
+      "seconds": 0.017
+    }
+  ],
+  "all_expected": true,
+  "gzip_fallback": {
+    "archived_paths_checked": 10,
+    "originals_absent_in_temporary_checkout": true,
+    "gzip_fallback": "PASS"
+  },
+  "whole_docgraph": "FAIL retained separately; 70 historical duplicate-ID groups"
+}

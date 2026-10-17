@@ -1,0 +1,159 @@
+{
+  "checks": [
+    {
+      "tag": "932-normal",
+      "cmd": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/full_count_cone.py",
+        "--source-mask",
+        "932",
+        "--certificate",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/counts932.json"
+      ],
+      "seed17": false,
+      "exit_code": 0,
+      "expected": 0,
+      "ok": true,
+      "seconds": 3.529
+    },
+    {
+      "tag": "932-seed17",
+      "cmd": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/full_count_cone.py",
+        "--source-mask",
+        "932",
+        "--certificate",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/counts932.json"
+      ],
+      "seed17": true,
+      "exit_code": 0,
+      "expected": 0,
+      "ok": true,
+      "seconds": 3.515
+    },
+    {
+      "tag": "933-normal",
+      "cmd": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/full_count_cone.py",
+        "--source-mask",
+        "933",
+        "--certificate",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/counts933.json"
+      ],
+      "seed17": false,
+      "exit_code": 0,
+      "expected": 0,
+      "ok": true,
+      "seconds": 5.449
+    },
+    {
+      "tag": "933-seed17",
+      "cmd": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/full_count_cone.py",
+        "--source-mask",
+        "933",
+        "--certificate",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/counts933.json"
+      ],
+      "seed17": true,
+      "exit_code": 0,
+      "expected": 0,
+      "ok": true,
+      "seconds": 5.413
+    },
+    {
+      "tag": "941-normal",
+      "cmd": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/full_count_cone.py",
+        "--source-mask",
+        "941",
+        "--certificate",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/counts941.json"
+      ],
+      "seed17": false,
+      "exit_code": 0,
+      "expected": 0,
+      "ok": true,
+      "seconds": 6.671
+    },
+    {
+      "tag": "941-seed17",
+      "cmd": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/full_count_cone.py",
+        "--source-mask",
+        "941",
+        "--certificate",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/counts941.json"
+      ],
+      "seed17": true,
+      "exit_code": 0,
+      "expected": 0,
+      "ok": true,
+      "seconds": 6.712
+    },
+    {
+      "tag": "changed-common-count",
+      "cmd": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/full_count_cone.py",
+        "--source-mask",
+        "932",
+        "--certificate",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/count_logs/changed-common-count.json"
+      ],
+      "seed17": false,
+      "exit_code": 1,
+      "expected": 1,
+      "ok": true,
+      "seconds": 3.586
+    },
+    {
+      "tag": "changed-cube-multiplicity",
+      "cmd": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/full_count_cone.py",
+        "--source-mask",
+        "932",
+        "--certificate",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/count_logs/changed-cube-multiplicity.json"
+      ],
+      "seed17": false,
+      "exit_code": 1,
+      "expected": 1,
+      "ok": true,
+      "seconds": 3.5
+    },
+    {
+      "tag": "omitted-projection",
+      "cmd": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/full_count_cone.py",
+        "--source-mask",
+        "932",
+        "--certificate",
+        "audits/2026-10-17-r6-joint-positive-113e41f/integration/count_logs/omitted-projection.json"
+      ],
+      "seed17": false,
+      "exit_code": 1,
+      "expected": 1,
+      "ok": true,
+      "seconds": 3.506
+    }
+  ],
+  "all_expected": true,
+  "solver": "SciPy 1.18.1 via uv; exact replays use stdlib only"
+}

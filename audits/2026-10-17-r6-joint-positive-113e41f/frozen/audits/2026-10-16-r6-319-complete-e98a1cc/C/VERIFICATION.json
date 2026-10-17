@@ -1,0 +1,148 @@
+{
+  "BASE": "e98a1cc1afd9a428600dcf4027d8138078c01650",
+  "source": "not triggered",
+  "summary": {
+    "V": 10,
+    "E": 24,
+    "F": 16,
+    "four_connected": true,
+    "labelled_J_colourings": 144,
+    "perfect_matchings": 18,
+    "empty_colour_fibres": 6,
+    "ordinary_101": 1,
+    "ordinary_110": 0,
+    "joint_minimum": 2,
+    "weighted": {
+      "111": 6,
+      "110": 0,
+      "101": 0
+    },
+    "event_counts": {
+      "E1": 0,
+      "E2": 0,
+      "all_equal": 72
+    },
+    "complete_W_colourings": 408,
+    "empty_W_fibres": 288
+  },
+  "runs": [
+    {
+      "name": "normal",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/verify.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "expected": "pass",
+      "stdout": "logs/normal.stdout",
+      "stderr": "logs/normal.stderr"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/verify.py",
+        "--check"
+      ],
+      "PYTHONHASHSEED": "17",
+      "exit_code": 0,
+      "expected": "pass",
+      "stdout": "logs/seed17.stdout",
+      "stderr": "logs/seed17.stderr"
+    },
+    {
+      "name": "wrong-joint-minimum",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/verify.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/negative/wrong-joint-minimum.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 1,
+      "expected": "reject",
+      "stdout": "logs/wrong-joint-minimum.stdout",
+      "stderr": "logs/wrong-joint-minimum.stderr"
+    },
+    {
+      "name": "missing-empty-seven-pin-cell",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/verify.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/negative/missing-empty-seven-pin-cell.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 1,
+      "expected": "reject",
+      "stdout": "logs/missing-empty-seven-pin-cell.stdout",
+      "stderr": "logs/missing-empty-seven-pin-cell.stderr"
+    },
+    {
+      "name": "missing-legal-r-lift",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/verify.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/negative/missing-legal-r-lift.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 1,
+      "expected": "reject",
+      "stdout": "logs/missing-legal-r-lift.stdout",
+      "stderr": "logs/missing-legal-r-lift.stderr"
+    },
+    {
+      "name": "missing-private-full-colouring",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/verify.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/negative/missing-private-full-colouring.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 1,
+      "expected": "reject",
+      "stdout": "logs/missing-private-full-colouring.stdout",
+      "stderr": "logs/missing-private-full-colouring.stderr"
+    },
+    {
+      "name": "exclusive-create",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-16-r6-319-complete-e98a1cc/C/verify.py"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 1,
+      "expected": "reject",
+      "stdout": "logs/exclusive-create.stdout",
+      "stderr": "logs/exclusive-create.stderr"
+    }
+  ],
+  "files": {
+    "verify.py": "3e8bd9259f87ed9718afd7727146bb65429032bb34772ea133cc7ecf573d7916",
+    "certificate.json": "22e67138fa399716d446da5f0fb0400fc21cb04c88c8dbb6b97dd1708defd5c2",
+    "INPUTS.json": "0b912f17918b4ed7f399e10a4c4cb5590eadcd3cb83269597b1bb44d814d3c8f",
+    "PROOF.md": "815740fbdcf2fe58aa0ae2fa6e75e289a0475e88b2d2082a2beea5714fe7a225",
+    "source-failures.json": "01bcb8cf92eb1e06909c1ab16a54fdcccfa55a9008fd20df9e1b9b15e4a51f1b",
+    "CROSS_REVIEW_A_B.md": "724184d35d0f20833feaae05454ef29a43e1f088e2a27b70236f08554a2f6ce6",
+    "VERIFICATION.md": "a56046383ec0834f2423a0da8a1a808e6d6487b065a36b5e08493008f6b8f874"
+  },
+  "cross_review_proof_hashes": {
+    "A/PROOF.md": "2f1ba45bad4cd4d2bb36d6f1822cb1f95303b3dd88ee429f5ebccea8ea5b45e1",
+    "B/PROOF.md": "3b155526121d96ec978c8f42d47fde708dcdec577fe4195472a124f385270014"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "checks": [
+    {
+      "name": "normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/check.py",
+        "--check",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/certificate.json"
+      ],
+      "environment_overlay": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "normal.stdout.log",
+      "stderr": "normal.stderr.log"
+    },
+    {
+      "name": "seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/check.py",
+        "--check",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/certificate.json"
+      ],
+      "environment_overlay": {
+        "PYTHONHASHSEED": "17"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "seed17.stdout.log",
+      "stderr": "seed17.stderr.log"
+    },
+    {
+      "name": "missing-complete-witness",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/check.py",
+        "--check",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/negative-missing-complete-witness.json"
+      ],
+      "environment_overlay": {},
+      "returncode": 1,
+      "expected_returncode": 1,
+      "stdout": "missing-complete-witness.stdout.log",
+      "stderr": "missing-complete-witness.stderr.log"
+    },
+    {
+      "name": "wrong-cap-degree",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/check.py",
+        "--check",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/negative-wrong-cap-degree.json"
+      ],
+      "environment_overlay": {},
+      "returncode": 1,
+      "expected_returncode": 1,
+      "stdout": "wrong-cap-degree.stdout.log",
+      "stderr": "wrong-cap-degree.stderr.log"
+    },
+    {
+      "name": "crossed-sector-lift",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/check.py",
+        "--check",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/negative-crossed-sector-lift.json"
+      ],
+      "environment_overlay": {},
+      "returncode": 1,
+      "expected_returncode": 1,
+      "stdout": "crossed-sector-lift.stdout.log",
+      "stderr": "crossed-sector-lift.stderr.log"
+    },
+    {
+      "name": "exclusive-create",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/check.py",
+        "--output",
+        "audits/2026-10-17-r6-joint-positive-113e41f/B/certificate.json"
+      ],
+      "environment_overlay": {},
+      "returncode": 1,
+      "expected_returncode": 1,
+      "stdout": "exclusive-create.stdout.log",
+      "stderr": "exclusive-create.stderr.log"
+    }
+  ],
+  "all_expected": true,
+  "rejected_initial_scope": "initial/REJECTED.md",
+  "active_scope": "one same-sector branch excluded; one crossed branch OPEN"
+}

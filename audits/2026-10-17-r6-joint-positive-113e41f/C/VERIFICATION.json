@@ -1,0 +1,47 @@
+{
+  "schema": "source319-split-pivotal-verification-v1",
+  "runs": [
+    {
+      "name": "generate",
+      "exit": 0
+    },
+    {
+      "name": "normal",
+      "exit": 0
+    },
+    {
+      "name": "seed17",
+      "exit": 0
+    },
+    {
+      "name": "negative-missing-zero-slot",
+      "exit": 1,
+      "expected_reject": true
+    },
+    {
+      "name": "exclusive-create",
+      "exit": 1,
+      "expected_reject": true,
+      "sha256_before": "9b08d90739603f2e1d560b2408ab9fc37207bdb3fb5759750b12db60bff53e22",
+      "sha256_after": "9b08d90739603f2e1d560b2408ab9fc37207bdb3fb5759750b12db60bff53e22",
+      "unchanged": true
+    }
+  ],
+  "paper_scope": "arbitrary-size conditional source pivotal theorem; positivity remains OPEN",
+  "count_independent_review": {
+    "normal": "COUNT-REVIEW-NORMAL.json",
+    "seed17": "COUNT-REVIEW-SEED17.json",
+    "normal_seed17_equal": true,
+    "negative": "count-negative-common-count.json",
+    "rejected": true,
+    "exact_literal_equations": 8688,
+    "source_mask": 932,
+    "root_checker_sha256": "0ae5388b7e3c7727d2ecd5ffd6553f22e53bf5dd67a6927758a4df3ce35ca851",
+    "root_certificate_sha256": "3103cb0edd7e8115a5e3a6d5fa2684c435516cab2d234c60120802b378d12d9b"
+  },
+  "frozen_manifest_inputs": 202,
+  "frozen_input_drift": [],
+  "actual_minimum_sources": 0,
+  "source_realizability": "not triggered",
+  "joint_even_complement_positivity": "OPEN"
+}

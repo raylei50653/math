@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/docs/history/2026-10-17-r6-joint-positive-publication/check_custody.py", line 114, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/docs/history/2026-10-17-r6-joint-positive-publication/check_custody.py", line 75, in main
+    require(len(data) == record['bytes'] and digest(data) == record['sha256']
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            and mode == record['mode'], 'audit identity drift: ' + rel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/docs/history/2026-10-17-r6-joint-positive-publication/check_custody.py", line 17, in require
+    raise ValueError(message)
+ValueError: audit identity drift: A/PROOF.md

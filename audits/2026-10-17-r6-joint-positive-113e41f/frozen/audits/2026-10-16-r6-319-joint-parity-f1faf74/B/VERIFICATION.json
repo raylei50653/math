@@ -1,0 +1,121 @@
+{
+  "actual_sources": "not triggered",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/certificate.json"
+      ],
+      "exit_code": 0,
+      "expected": "PASS",
+      "name": "normal",
+      "stderr": "",
+      "stdout": "{\"PMs\": 38, \"colourings\": 288, \"cyclic4_cuts\": 2, \"cyclic5_cuts\": 22, \"joint_PM_count\": 3, \"layers\": {\"FJ_111_all_distinct\": 224, \"plus_cyclic4_avoid_e_f\": 52, \"plus_cyclic5_at_most_one_mark\": 12, \"plus_literal_two_faces_and_bridge\": 0, \"plus_ordinary_joint\": 144}, \"omega_e\": 2, \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/certificate.json",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "expected": "PASS",
+      "name": "seed17",
+      "stderr": "",
+      "stdout": "{\"PMs\": 38, \"colourings\": 288, \"cyclic4_cuts\": 2, \"cyclic5_cuts\": 22, \"joint_PM_count\": 3, \"layers\": {\"FJ_111_all_distinct\": 224, \"plus_cyclic4_avoid_e_f\": 52, \"plus_cyclic5_at_most_one_mark\": 12, \"plus_literal_two_faces_and_bridge\": 0, \"plus_ordinary_joint\": 144}, \"omega_e\": 2, \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/negative/invented-joint-colouring-fibre.json"
+      ],
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "invented-joint-colouring-fibre",
+      "stderr": "FAIL: certificate differs from independent complete reconstruction\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/negative/missing-cyclic-five-cut.json"
+      ],
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "missing-cyclic-five-cut",
+      "stderr": "FAIL: certificate differs from independent complete reconstruction\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/negative/invented-source-layout.json"
+      ],
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "invented-source-layout",
+      "stderr": "FAIL: certificate differs from independent complete reconstruction\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/certificate.json",
+        "--input",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/negative/stale-original-marking.json"
+      ],
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "stale-original-marking",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py\", line 283, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py\", line 265, in main\n    'result': reconstruct(json.loads(source.read_text()), args.seed)}\n              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py\", line 149, in reconstruct\n    assert graph['marked_original_edges'] == [list(edges[i]) for i in (e, f, g)]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py",
+        "--check",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/certificate.json",
+        "--input",
+        "audits/2026-10-16-r6-319-joint-parity-f1faf74/B/negative/inherited-other-pins.json"
+      ],
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "inherited-other-pins",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py\", line 283, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py\", line 265, in main\n    'result': reconstruct(json.loads(source.read_text()), args.seed)}\n              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/B/verify.py\", line 150, in reconstruct\n    assert 'pins' not in graph, 'weak control must not inherit a different named marking'\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError: weak control must not inherit a different named marking\n",
+      "stdout": ""
+    }
+  ],
+  "sha256": {
+    "PROOF.md": "20aaa426fdc83d087dc98587dce8608a33fd7fafa0c657d8be274168bce993f5",
+    "certificate.json": "6cd9e064d1ddb8b3ffaaece57823e7e56d902e8b2b00e9925321e802d5c35d2c",
+    "input_graph.json": "c07c851ee37e1f327d19042a6216a085e546aa27dd72f67366083b1dab7b60ca",
+    "negative/inherited-other-pins.json": "5de2af5900bee6d635a9e76089f7138d1db4caabf636108dea55b43c766f738f",
+    "negative/invented-joint-colouring-fibre.json": "1572e6fd815848f2e54af873f3c5892aaeb1b39cccb79b12ceb68956f0d0802a",
+    "negative/invented-source-layout.json": "233259fdfdb26a9108694c3a9bbfdf44e48dd06e81dd2413f5ba94ece478d633",
+    "negative/missing-cyclic-five-cut.json": "f9b3e3d1c6d5bf5a8685207fe6f883179f8a92fbd84e02083ecd23f4f2451dd9",
+    "negative/stale-original-marking.json": "c3ba86d57c1fc6e7ce32ca26017bc3cb8e25dde873ac6dd34897346ca675cfc3",
+    "verify.py": "a4e122b1e7ac496994e9949e64fa012c7610f9c444feda866dd74741e3aabef1"
+  },
+  "status": "PASS"
+}

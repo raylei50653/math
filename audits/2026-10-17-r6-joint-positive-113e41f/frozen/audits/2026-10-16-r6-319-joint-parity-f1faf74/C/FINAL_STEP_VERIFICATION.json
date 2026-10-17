@@ -1,0 +1,67 @@
+{
+  "checks": [
+    {
+      "name": "final-normal",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/C/check_final_step.py",
+        "--check",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/C/final-step-certificate.json"
+      ],
+      "environment_patch": {},
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/final-normal.stdout",
+      "stderr": "logs/final-normal.stderr"
+    },
+    {
+      "name": "final-seed17",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/C/check_final_step.py",
+        "--check",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/C/final-step-certificate.json"
+      ],
+      "environment_patch": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stdout": "logs/final-seed17.stdout",
+      "stderr": "logs/final-seed17.stderr"
+    },
+    {
+      "name": "final-negative",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/C/check_final_step.py",
+        "--check",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/C/negative/missing-mandatory-row.json"
+      ],
+      "environment_patch": {},
+      "exit_code": 1,
+      "expected_exit": 1,
+      "stdout": "logs/final-negative.stdout",
+      "stderr": "logs/final-negative.stderr"
+    },
+    {
+      "name": "final-exclusive",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/C/check_final_step.py",
+        "--output",
+        "/home/ray/developer/ai/math/audits/2026-10-16-r6-319-joint-parity-f1faf74/C/final-step-certificate.json"
+      ],
+      "environment_patch": {},
+      "exit_code": 1,
+      "expected_exit": 1,
+      "stdout": "logs/final-exclusive.stdout",
+      "stderr": "logs/final-exclusive.stderr"
+    }
+  ],
+  "source_coverage": "not triggered"
+}
