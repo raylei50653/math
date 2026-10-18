@@ -1,0 +1,42 @@
+{
+  "runs": [
+    {
+      "name": "normal",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-18-smaller-source-9f1fe84/C/check_bridge.py",
+        "--check"
+      ],
+      "seed": null,
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-18-smaller-source-9f1fe84/C/check_bridge.py",
+        "--check"
+      ],
+      "seed": "17",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "bad-cost",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-18-smaller-source-9f1fe84/C/check_bridge.py",
+        "--check",
+        "--certificate",
+        "audits/2026-10-18-smaller-source-9f1fe84/C/negative-certificate.json"
+      ],
+      "seed": null,
+      "exit_code": 1,
+      "expected_exit_code": 1
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "input_drift": 0,
+  "certificate_sha256": "6441c67d67cd99fa0e8e81e6a0f2eb2b324d2b524e9abf5959acc5910f6e1891",
+  "checker_sha256": "a2015fe9193e2402992d33f8bc85393b4dff21339c95181d0d33af9b366a9dde",
+  "runs": [
+    {
+      "name": "normal",
+      "args": [
+        "--check",
+        "audits/2026-10-18-smaller-source-9f1fe84/B/patches.json"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "d31f211dccce7a53a689b2e008e5e34a97f443a2c6da167c45aaa27c9af0b728",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "seed17",
+      "args": [
+        "--check",
+        "audits/2026-10-18-smaller-source-9f1fe84/B/patches.json"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "d31f211dccce7a53a689b2e008e5e34a97f443a2c6da167c45aaa27c9af0b728",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "negative-missing-fibre",
+      "args": [
+        "--check",
+        "audits/2026-10-18-smaller-source-9f1fe84/B/negative-missing-fibre.json"
+      ],
+      "returncode": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "8e7e130865cd91eae3793076c8b2a4bc80f2e3e23e0ce19a13c94ce63157483b"
+    },
+    {
+      "name": "negative-existing-output",
+      "args": [
+        "--write",
+        "audits/2026-10-18-smaller-source-9f1fe84/B/patches.json"
+      ],
+      "returncode": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "f574731bf5c176827ad0ee6c7c5c2375108f5adf820f954cff913ca977ca6c01"
+    }
+  ]
+}

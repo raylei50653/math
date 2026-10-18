@@ -1,0 +1,38 @@
+{
+  "scope": "final sealed-output replays; no source realization claimed",
+  "checks": [
+    {
+      "command": "python3 -B audits/2026-10-18-abstraction-bottleneck-9f1fe84/check.py",
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "3f7520",
+        "wall_time_seconds": 0.097478269,
+        "exit_code": 0,
+        "original_token_count": 113,
+        "output": "{\n  \"A\": \"PASS\",\n  \"B\": \"PASS\",\n  \"C\": \"PASS\",\n  \"corrupted_A_certificate\": \"rejected\",\n  \"frozen_inputs_equal_base\": 19,\n  \"independent_four_queries\": {\n    \"932\": {\n      \"minimum\": 4,\n      \"number\": 5\n    },\n    \"933\": {\n      \"minimum\": 4,\n      \"number\": 2\n    },\n    \"941\": {\n      \"minimum\": 4,\n      \"number\": 1\n    }\n  },\n  \"scope\": \"paper abstraction controls; source realization and closure not established\",\n  \"sealed_outputs\": \"PASS\"\n}\n"
+      }
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-18-abstraction-bottleneck-9f1fe84/check.py",
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "212858",
+        "wall_time_seconds": 0.098550631,
+        "exit_code": 0,
+        "original_token_count": 113,
+        "output": "{\n  \"A\": \"PASS\",\n  \"B\": \"PASS\",\n  \"C\": \"PASS\",\n  \"corrupted_A_certificate\": \"rejected\",\n  \"frozen_inputs_equal_base\": 19,\n  \"independent_four_queries\": {\n    \"932\": {\n      \"minimum\": 4,\n      \"number\": 5\n    },\n    \"933\": {\n      \"minimum\": 4,\n      \"number\": 2\n    },\n    \"941\": {\n      \"minimum\": 4,\n      \"number\": 1\n    }\n  },\n  \"scope\": \"paper abstraction controls; source realization and closure not established\",\n  \"sealed_outputs\": \"PASS\"\n}\n"
+      }
+    },
+    {
+      "command": "git diff --check && git status --short",
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "d4849a",
+        "wall_time_seconds": 0.32098005,
+        "exit_code": 0,
+        "original_token_count": 25,
+        "output": " M docs/STATUS.md\n M docs/c5_kempe_guide.md\n?? audits/2026-10-18-abstraction-bottleneck-9f1fe84/\n"
+      }
+    }
+  ]
+}
