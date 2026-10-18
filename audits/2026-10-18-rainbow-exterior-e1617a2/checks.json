@@ -1,0 +1,158 @@
+{
+  "base": "e1617a2756813327d7ad333cfdd0fd92fa9efc38",
+  "status": "passed within recorded scope",
+  "normal_replay": {
+    "command": "python3 -B audits/2026-10-18-rainbow-exterior-e1617a2/check.py",
+    "exit_code": 0,
+    "result": {
+      "base": "e1617a2756813327d7ad333cfdd0fd92fa9efc38",
+      "fixed_control": {
+        "component_join_records": 318,
+        "conditional_force_statuses": [
+          "not-triggered"
+        ],
+        "fan_a_bijection_size": 2,
+        "full_fibre_counts": {
+          "G": [
+            5,
+            13,
+            8,
+            5,
+            1,
+            0,
+            1,
+            0,
+            8,
+            4
+          ],
+          "G_a": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            2
+          ],
+          "G_b": [
+            1,
+            12,
+            11,
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            10
+          ]
+        },
+        "interface_transfers": 38,
+        "negative_controls_rejected": 3,
+        "ok": true,
+        "target_source_realized": false
+      },
+      "frozen_drift": 0,
+      "frozen_inputs": 13,
+      "ok": true
+    }
+  },
+  "seed17_replay": {
+    "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-18-rainbow-exterior-e1617a2/check.py",
+    "exit_code": 0,
+    "result": {
+      "base": "e1617a2756813327d7ad333cfdd0fd92fa9efc38",
+      "fixed_control": {
+        "component_join_records": 318,
+        "conditional_force_statuses": [
+          "not-triggered"
+        ],
+        "fan_a_bijection_size": 2,
+        "full_fibre_counts": {
+          "G": [
+            5,
+            13,
+            8,
+            5,
+            1,
+            0,
+            1,
+            0,
+            8,
+            4
+          ],
+          "G_a": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            2
+          ],
+          "G_b": [
+            1,
+            12,
+            11,
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            10
+          ]
+        },
+        "interface_transfers": 38,
+        "negative_controls_rejected": 3,
+        "ok": true,
+        "target_source_realized": false
+      },
+      "frozen_drift": 0,
+      "frozen_inputs": 13,
+      "ok": true
+    }
+  },
+  "deterministic_results_equal": true,
+  "documentation": {
+    "commands": [
+      "python3 scripts/check_docs.py",
+      "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "git diff --check"
+    ],
+    "exit_code": 0,
+    "output": "OK: 697 Markdown files, 9172 local links; anchors, index, handoff, guide progress checked\nOK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n"
+  },
+  "lake_build": {
+    "exit_code": 0,
+    "output": "lake-build.log",
+    "result": "Build completed successfully (8832 jobs).",
+    "new_lean_theorems": false
+  },
+  "negative_control": {
+    "record": "negative-control.json",
+    "expected_failure_observed": true
+  },
+  "independent_validation": "C/validation.json",
+  "fixed_domain": {
+    "completed_original_graphs": 1,
+    "completed_candidate_graphs": 2,
+    "full_candidate_colouring_lift_sets": 53,
+    "actual_component_joins": 318,
+    "existing_interface_transfers": 38,
+    "source_emptiness_premises": "not-triggered",
+    "target_source_realized": false
+  },
+  "not_rerun": [
+    "whole-tree DocGraph",
+    "prior source enumeration",
+    "prior small patch catalogue"
+  ],
+  "scope": "paper fan-A no-go for the specified four-query certificate and conditional same-colouring exterior lemmas; fan-B acceptance and three empty fibres remain OPEN"
+}

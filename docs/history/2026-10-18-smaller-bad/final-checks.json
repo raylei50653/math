@@ -1,0 +1,134 @@
+{
+  "base": "e1617a2756813327d7ad333cfdd0fd92fa9efc38",
+  "checks": [
+    {
+      "command": "python3 -B audits/2026-10-18-rainbow-exterior-e1617a2/check.py",
+      "exit_code": 0,
+      "elapsed_seconds": 0.12,
+      "stdout": "rainbow-replay.stdout",
+      "stderr": "rainbow-replay.stderr"
+    },
+    {
+      "command": "python3 -B audits/2026-10-18-smaller-bad-e1617a2/check.py",
+      "exit_code": 0,
+      "elapsed_seconds": 4.54,
+      "stdout": "smaller-bad-replay.stdout",
+      "stderr": "smaller-bad-replay.stderr"
+    },
+    {
+      "command": "python3 -B audits/2026-10-18-smaller-bad-counts-e1617a2/check.py",
+      "exit_code": 0,
+      "elapsed_seconds": 7.481,
+      "stdout": "counts-replay.stdout",
+      "stderr": "counts-replay.stderr"
+    },
+    {
+      "command": "uv run --with sympy python -B audits/2026-10-18-smaller-bad-counts-e1617a2/A/review_c_final.py",
+      "exit_code": 0,
+      "elapsed_seconds": 1.808,
+      "stdout": "independent-counts.stdout",
+      "stderr": "independent-counts.stderr"
+    },
+    {
+      "command": "lake build",
+      "exit_code": 0,
+      "elapsed_seconds": 4.231,
+      "stdout": "lake-build.stdout",
+      "stderr": "lake-build.stderr"
+    },
+    {
+      "command": "uv run --with-requirements requirements.txt python -B -m unittest discover -s tools/tests -p 'test_*.py'",
+      "exit_code": 0,
+      "elapsed_seconds": 5.206,
+      "stdout": "tool-tests.stdout",
+      "stderr": "tool-tests.stderr"
+    },
+    {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 0,
+      "elapsed_seconds": 0.706,
+      "stdout": "docs.stdout",
+      "stderr": "docs.stderr"
+    },
+    {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "elapsed_seconds": 0.094,
+      "stdout": "formal-docgraph.stdout",
+      "stderr": "formal-docgraph.stderr"
+    },
+    {
+      "command": "python3 tools/check_generated_artifacts.py",
+      "exit_code": 0,
+      "elapsed_seconds": 0.739,
+      "stdout": "generated-artifacts.stdout",
+      "stderr": "generated-artifacts.stderr"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exit_code": 2,
+      "elapsed_seconds": 0.034,
+      "output": "staged-whitespace-output.json",
+      "classification": "13 preserved archived unified-diff blank context lines in counts/routing.diff; no evidence modification."
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(exclude)audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.034,
+      "excluded_archived_evidence": "audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff",
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "scope": "Publication validation; paper, finite controls and Lean build are distinct.",
+  "not_rerun": [
+    "seed17 (original research receipts retained)",
+    "prior source enumeration",
+    "prior small patch catalogue",
+    "whole-tree DocGraph (historical snapshot duplicate IDs; no current whole-tree pass claimed)"
+  ],
+  "smaller_bad_source_constructed": false,
+  "new_lean_theorem": false,
+  "audit_custody": {
+    "base": "e1617a2756813327d7ad333cfdd0fd92fa9efc38",
+    "audit_files_checked": 206,
+    "total_bytes": 9406940,
+    "drift": 0,
+    "json_files_parsed": 58,
+    "output_manifests": [
+      {
+        "path": "audits/2026-10-18-rainbow-exterior-e1617a2/OUTPUTS.sha256",
+        "records": 30
+      },
+      {
+        "path": "audits/2026-10-18-smaller-bad-counts-e1617a2/C/OUTPUTS.sha256",
+        "records": 5
+      },
+      {
+        "path": "audits/2026-10-18-smaller-bad-counts-e1617a2/OUTPUTS.sha256",
+        "records": 32
+      },
+      {
+        "path": "audits/2026-10-18-smaller-bad-e1617a2/OUTPUTS.sha256",
+        "records": 51
+      }
+    ],
+    "status": "PASS"
+  },
+  "all_nonarchival_checks_pass": true,
+  "preserved_archival_whitespace": {
+    "file": "audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff",
+    "diagnostics": 13,
+    "full_diff_check_exit_code": 2,
+    "scope": "Unified-diff blank context lines; preserve exact original evidence.",
+    "scoped_check_exit_code": 0
+  }
+}
