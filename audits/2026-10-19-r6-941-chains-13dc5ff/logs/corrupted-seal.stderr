@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-19-r6-941-chains-13dc5ff/check.py", line 96, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-19-r6-941-chains-13dc5ff/check.py", line 50, in main
+    verify_seal(seal)
+    ~~~~~~~~~~~^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-19-r6-941-chains-13dc5ff/check.py", line 37, in verify_seal
+    assert hashlib.sha256((HERE / name).read_bytes()).hexdigest() == digest, ('sealed drift', name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('sealed drift', 'C/certificate.json.gz')

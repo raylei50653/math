@@ -1,0 +1,159 @@
+{
+  "base": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+  "frozen_inputs": 406,
+  "frozen_drift": 0,
+  "sealed_drift": 0,
+  "replays": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-acceptance-13dc5ff/check.py"
+      ],
+      "extra_env": {},
+      "exit_code": 0,
+      "seconds": 22.135,
+      "stdout_sha256": "9fa686bb63677d059c3789d617ad37828feeeebccc09efd089d71acca3771634"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-acceptance-13dc5ff/check.py"
+      ],
+      "extra_env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "seconds": 21.681,
+      "stdout_sha256": "9fa686bb63677d059c3789d617ad37828feeeebccc09efd089d71acca3771634"
+    }
+  ],
+  "read_only_normal_seed17_identical": true,
+  "prior_full_audit_replay": {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-19-r6-941-quotients-13dc5ff/check.py"
+    ],
+    "exit_code": 0,
+    "seconds": 18.035
+  },
+  "engineering": [
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.714,
+      "stdout_sha256": "b1ecdefcd7d9e2afe6d6bcced7538211b5c26c0a8555d406e36a0f4fe7255f5b"
+    },
+    {
+      "name": "docgraph-docs",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.086,
+      "stdout_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca"
+    },
+    {
+      "name": "docgraph-whole",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "seconds": 1.406,
+      "stdout_sha256": "214ce6f854ff299bfbe99d599b539a6dde6bcefbb96aa8beb36f7bb643c5f293"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.017,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "lake_build": {
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit_code": 0,
+    "seconds": 9.304,
+    "new_Lean_theorem": false
+  },
+  "artifact_policy": {
+    "command": [
+      "python3",
+      "tools/check_generated_artifacts.py"
+    ],
+    "exit_code": 0,
+    "stdout": "Generated artifact policy OK: 6496 indexed files, 85 large files with documented exceptions, 166 registered outputs.\n",
+    "stderr": "",
+    "staged_diff_check_exit": 0,
+    "staged_diff_output": "",
+    "scope": "temporary index with all connected changes; real index unchanged",
+    "real_index_unchanged": true
+  },
+  "whole_tree_docgraph": {
+    "baseline": "docs/history/2026-10-19-c5-pr-publication/whole-tree-docgraph.log",
+    "baseline_sha256": "c2ce2451a8307d1d835940e4e645afe4070f0495e97141f4a9a14f1d33bee559",
+    "baseline_errors": 72,
+    "current_errors": 72,
+    "same_error_multiset": true,
+    "added": [],
+    "removed": []
+  },
+  "audit_links": {
+    "markdown_files": 19,
+    "local_links": 59,
+    "errors": [],
+    "pass": true
+  },
+  "initial_documentation_failure": {
+    "reason": "recent milestone table had 6 entries, maximum5",
+    "corrected": "removed oldest routing summary row; source evidence retained",
+    "receipt": "logs/engineering-initial.json"
+  },
+  "not_rerun": {
+    "tools_unit_tests": "No tools implementation or Lean source changed; prior94-test result retained as prior evidence, not claimed as this-run validation."
+  },
+  "scope": {
+    "n5_implies_a7": true,
+    "c5_implies_q7": true,
+    "dist_G_t_R_at_least3": true,
+    "dist_G_L_s_at_least3": true,
+    "private_C10_contacts_at_most4": true,
+    "main_target": "OPEN",
+    "smaller_bad_constructed": false,
+    "source_realized": false,
+    "new_Lean_theorem": false
+  },
+  "routing": {
+    "updated": [
+      "docs/c5_kempe_guide.md",
+      "docs/STATUS.md"
+    ],
+    "reviewed_unchanged": [
+      "README.md",
+      "docs/HANDOFF.md"
+    ],
+    "reason": "same research lines, active tags and entry usage"
+  },
+  "commit_push": "not requested and not performed"
+}
