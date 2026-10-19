@@ -1,0 +1,118 @@
+{
+  "schema": "c5-pr-publication/submission-checks-v1",
+  "parent_head": "ed59843ff8aad66cf3dd895da101787b3daec7a0",
+  "checks": [
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit": 0,
+      "seconds": 1.097,
+      "log": "docs.log"
+    },
+    {
+      "name": "formal-docgraph",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit": 0,
+      "seconds": 0.111,
+      "log": "formal-docgraph.log"
+    },
+    {
+      "name": "whole-tree-docgraph",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit": 1,
+      "seconds": 6.491,
+      "log": "whole-tree-docgraph.log",
+      "historical_errors": 72,
+      "error_lines_equal_frozen_baseline": true
+    },
+    {
+      "name": "artifact-policy",
+      "command": [
+        "python3",
+        "-B",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit": 0,
+      "seconds": 2.094,
+      "log": "artifact-policy.log"
+    },
+    {
+      "name": "staged-whitespace-full",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit": 2,
+      "seconds": 0.034,
+      "log": "staged-whitespace-full.json",
+      "expected_archived_diff_context_diagnostics": 10,
+      "note": "Retain exact sealed evidence; scoped result is separate.",
+      "diagnostic_storage": "exact UTF-8 output in a JSON string to preserve diagnostic trailing whitespace"
+    },
+    {
+      "name": "staged-whitespace-scoped",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(exclude)audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff"
+      ],
+      "exit": 0,
+      "seconds": 0.034,
+      "log": "staged-whitespace-scoped.log"
+    },
+    {
+      "name": "published-original-bytes-custody",
+      "pass": true,
+      "files": 85,
+      "bytes": 8868831,
+      "index_and_worktree_match": true
+    }
+  ],
+  "independent_review": "Read-only agent verified six checkers, all manifests, complete85-file bundle, no bytecode/ignored files; exact artifact exceptions added by root.",
+  "not_rerun": [
+    "Original missing historical generator/tests/UI",
+    "Original certificate corruption inputs and exclusive-write refusals, already sealed in unchanged research verification",
+    "Unrelated graph enumerations"
+  ],
+  "final_staged_review": {
+    "scoped_whitespace_exit": 0,
+    "full_whitespace_exit": 2,
+    "full_diagnostics": 10,
+    "artifact_policy_exit": 0,
+    "artifact_policy_stdout": "Generated artifact policy OK: 6422 indexed files, 85 large files with documented exceptions, 166 registered outputs.\n",
+    "connected_staged_files": 102,
+    "scope_whitelist": [
+      "audits/2026-10-19-c5-observation-depth-ed59843/",
+      "audits/2026-10-19-c5-pr-disk-semantics-ed59843/",
+      "docs/sources/2026-10-19-c5-grammar-v02/",
+      "docs/history/2026-10-19-c5-pr-publication/",
+      "docs/HANDOFF.md",
+      "docs/STATUS.md",
+      "docs/c5_state_guide.md",
+      "docs/history/2026-10-19-c5-pr-publish.md",
+      "tools/generated_artifact_exceptions.json"
+    ]
+  }
+}

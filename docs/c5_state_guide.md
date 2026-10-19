@@ -2,24 +2,24 @@
 
 ## 最新進度
 
-現況核對：2026-10-16；既有必要表／Layer0成果保留；[319續進](../audits/2026-10-16-r6-319-complete-e98a1cc/REPORT.md)補全U的紙面fibre雙射及平面ordinary/even反控制，原來源偶補正值仍OPEN；完整720態平面cover暫緩，一般state充分性仍OPEN。
+現況核對：2026-10-19；[P/R實圖語義](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)已證明定的外側push／右轉在任意大小C₅ disk上合法，完整fibre轉移等於附件整數矩陣；RR／PRR／RRR可恢復十列支援及固定字面計數。一般來源的F/C文法代表覆蓋仍OPEN；原附件程式身份未恢復，既有Layer0／319與一般state充分性邊界保留。
 
 | 欄位 | 現況 |
 | --- | --- |
 | 階段／生命週期 | 研究中；完整表示、指定 grammar 與有界枚舉已有成果，一般可迭代 state 充分性待證。F／Z 為待初驗提案，域外構造研究已交付。 |
-| 最近研究更新 | 2026-10-15：[四輪具名模型](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)分開必要表階數、抽象交換相容性、單值section障礙及Layer0二層共同原圖。 |
-| 上次完成 | 固定26列必要表階數恰6；720態交換公理模型存在但無相容單值共同圖；Layer0有75／121點二層共同圖，各864份完整染色，兩圖非平面。 |
-| 目前停止點 | 域外無界例不觸發原低超額 critical 前提；F／Z 仍 OPEN。一般 context／future、刪內邊與 Kempe 的後繼充分性、grammar 外 topology 及全部來源必要分類均未完成。 |
-| 下一步 | 接續 §3：在具名前提觸發的實際來源量測半徑與完整證書寬度；同一 β 下檢查非 clique 分隔介面的支援／超額。Z 另查完整不增轉移圖的終端平台。 |
-| 接手入口 | 先讀本頁 §3，再讀 [F／Z 的量詞與初驗計畫](c5_forcing_transport_conjectures.md)、[異色構造及原域界線](c5_forced_inequality_transport.md)；多步接口見 [Phase B](c5_phase_b_common_lemmas.md)，兩點接合見 [專線導覽](c5_two_vertex_overlap_guide.md)。 |
+| 最近研究更新 | 2026-10-19：[實圖語義與計數解碼](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)完成任意大小完整fibre雙射；局部字面編譯與792個全圖案例獨立重建吻合。 |
+| 上次完成 | 明定P/R的任意disk合法性、整數矩陣轉移及十列計數解碼；文法族132態最小性取得圖語義，一般disk的支援上界另證。 |
+| 目前停止點 | 一般disk／剩餘r6的F/C文法代表覆蓋仍OPEN；歷史原程式未補齊。F／Z、一般context／future、刪內邊與Kempe的後繼充分性及來源分類均未完成。 |
+| 下一步 | 對指定剩餘來源給保完整十列的文法代表，或計入接回成本的成功／更小bad化約；不能把可觀察解碼當成來源覆蓋。F／Z另依§3接續。 |
+| 接手入口 | P/R先讀[實圖語義報告](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)及[三探測報告](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md)；其他分支讀§3、[F／Z](c5_forcing_transport_conjectures.md)及[Phase B](c5_phase_b_common_lemmas.md)。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
 | 2026-10-15／共同原圖與二層cover | [必要表階數](../audits/2026-10-15-f4-relation-6ddea32/REPORT.md)及[二層共同圖](../audits/2026-10-15-kempe-state-covers-6ddea32/REPORT.md)分開精確關係、抽象交換與真圖多值lift；原平面來源及一般充分性仍OPEN。 |
-| 2026-10-02／來源階數初驗 | [階數報告](c5_relation_arity.md)將 132 來源分為 11 個二階、101 個四階、20 個五階，證精確兩來源接合 r*≤來源最大階數≤5；忘掉接點及多步上界未證。 |
-| 2026-10-08／共通接口 | [Phase B](c5_phase_b_common_lemmas.md)分開密封外部接合、保 action 的後繼充分性與刪邊 weak bisimulation；接續義務為指定 grammar、幾何 residual 與同一染色 fibre 匹配。 |
+| 2026-10-19／三探測完整解碼 | [有限P/R模型](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md)中，四列未來行為需要全部132態；三個指定後綴已能還原十列，圖層語義與來源覆蓋另證。 |
+| 2026-10-19／任意disk的P/R語義 | [完整fibre雙射](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)將三探測推到任意大小disk的十列固定字面計數；一般文法代表覆蓋保留OPEN。 |
 | 2026-10-11／提案形成 | [強迫同色與閉環一致](c5_forcing_transport_conjectures.md)明確化 F 的有界介面證書與 Z 的零邊數不增修復；當輪只整理提案，兩項均未初驗。 |
 | 2026-10-13／域外構造與原域收窄 | [強迫異色](c5_forced_inequality_transport.md)證一般距離無界、寬度≤5及不交叉限制，排巢狀 clique／割點接力作原 critical 來源；下一入口收窄至固定 β 的非 clique 介面。 |
 
@@ -45,6 +45,9 @@
 | 強迫異色的距離／不交叉 | 一般平面圖有任意遠強迫對且證書寬度≤5；共用雙支援樹恰 path 可平面、交錯獨立 Diff×Diff 不可實現。邊界外 clique 分隔枝塊對 Σ 透明，原 critical／低超額來源未觸發，無新 Lean | [構造、證明及完整 fibres](c5_forced_inequality_transport.md) |
 | 逐步充分性／closure | strip／fan 有界控制與 separator 引理可用；一般移動前緣、context／future 充分性及 C6／C7 轉接待證或未啟動 | [充分性](stepwise_state_sufficiency.md)、[closure](local_closure.md)、[介面提案](c5_interface_idea.md) |
 | Triangle grammar | 染色語義、attachment normal form、GeoReject 與 endpoint-order 編譯已有形式化；只限指定 grammar | [automata](automata.md)、[normal form](attachment_normal_form.md) |
+| P/R 文法 v0.2 附件 | 所附132態／264轉移模型核對一致；319有56 Live／76 Dead，F及F/C文法最大最小成本為6／5。原程式／測試未隨附；後續以明定實圖操作獨立重建，未證一般覆蓋 | [匯入範圍、原檔與完整性核對](sources/2026-10-19-c5-grammar-v02/README.md) |
+| P/R四列三步解碼 | 最小統一深度3，59對需三步；深度≤3唯一最小探測集合RR／PRR／RRR重建全部十列，適用1024形式mask；文法族四列最小機器132態。圖語義及計數升級由下項完成 | [代數證明、見證及三路重播](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md) |
+| P/R實圖語義與計數解碼 | 任意大小disk上，明定外側push／右轉合法且完整fibre轉移等於附件整數矩陣；三探測解碼十列支援／固定字面計數。5120局部指派與792圖／7920完整fibres重建；一般F/C代表覆蓋及新Lean仍OPEN | [任意大小證明、獨立圖重播及計數證書](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md) |
 | Embedding 到 grammar | 固定 C5＋K3 接線的紙面 topology 論證依賴 Jordan–Schoenflies 等事實；embedding 抽取與 topology soundness 未 Lean 化 | [topology](topology_completeness.md) |
 | 固定 relation 庫／pp | 固定 grammar 的 87 states 與完整 relation 查詢保存；pp 求值器屬 Python，87 不等於一般 cell catalogue 的 132 | [relation 庫](boundary_relations.md)、[pp](pp_relations.md)、[fan](fan_pentagon.md) |
 | Cell 枚舉 | R1／SYM／prefix／DFS／bitmask／integer viable 的 Lean 鏈及外部信任已明列；k=6、7 重現只是有界證據 | [enumerator](c5_cell_enumerator.md) |
@@ -55,6 +58,13 @@
 | 基礎構造與 gadgets | exact relations、有限 Lean 證書與 gadget synthesis 已保存；一般 planar／separating C5 的 BAD 不是 disk 反例 | [phase 1](phase1.md)、[構造](construction.md)、[gadgets](gadgets.md) |
 
 ## 3. 停止點與保留缺口
+
+2026-10-19的[四列三步解碼](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md)
+完成矩陣層觀察深度及重編碼；後續[實圖語義](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)
+證明定外側push／右轉在任意大小disk合法，完整字面fibre雙射給相同整數矩陣，
+故三探測可恢復任意這類disk的十列支援與計數；文法族132種四列行為仍不可合併。
+下一個窄義務是指定剩餘來源的完整十列文法代表，或成功／更小bad的實圖化約並計入接回成本。
+逆P的局部幾何不保證存在；原歷史程式仍缺，一般來源覆蓋及主命題仍OPEN。
 
 2026-10-15的[具名模型續進](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)
 沒有把抽象state指定成真來源。Layer0二層共同圖只覆18列，完整720／22列、

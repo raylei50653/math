@@ -1,8 +1,18 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-18（完整r6的p,ell位置：932的Q1／Q2／fan-B完整支持全在K132；932／933每張接受01232者必洩漏01212，須依分支改道。941同候選三負fibres、較小bad、W110+W101>0、omega_e=0及完整319仍OPEN；一般K≤22及固定r6的k≥25不變）。研究線標記見 [HANDOFF](HANDOFF.md)；精確停止點與重播由各線導覽維護。
+更新：2026-10-19（明定P/R的任意disk完整fibre語義及十列計數解碼已證；一般F/C來源覆蓋仍OPEN。完整r6的p,ell位置：932的Q1／Q2／fan-B完整支持全在K132；932／933每張接受01232者必洩漏01212，須依分支改道。941同候選三負fibres、較小bad、W110+W101>0、omega_e=0及完整319仍OPEN；一般K≤22及固定r6的k≥25不變）。研究線標記見 [HANDOFF](HANDOFF.md)；精確停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
+
+2026-10-19 [P/R實圖語義與十列計數解碼](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)：
+明定外側push／右轉對任意大小C₅ disk合法，完整字面fibre雙射證附件整數矩陣；
+三探測恢復十列支援及固定字面計數。5120局部指派、792圖／7920完整fibres獨立重建；
+原歷史程式未恢復，一般文法代表覆蓋仍OPEN，無新Lean。
+
+2026-10-19 [四列三步觀察與十列解碼](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md)：
+所附P/R模型的最小統一觀察深度恰3；RR／PRR／RRR是深度≤3的唯一最小三探測集合，
+直接還原十列支援。代數式適用1024形式mask，四列行為最小機器恰132態；
+紙面＋三路有限重播；圖語義及計數解碼由上述後續完成，一般disk覆蓋仍OPEN，無新Lean。
 
 2026-10-18 [三候選完整計數障礙與分支選路排除](../audits/2026-10-18-smaller-bad-counts-e1617a2/REPORT.md)：
 同一原外側的平面計數張成與必要Kempe零座標證932／933三候選N01232≤4N01212；
@@ -563,6 +573,9 @@ d_G≥6及k≥18；T3接通no4ct三支私人ρ≥5。一般RING、
 | [研究目標](c5_boundary_relations.md) | 主命題未證；全域存在小代表、指定局部規則的完備性必須分開 |
 | [phase 1](phase1.md)、[BAD 構造](construction.md)、[gadgets](gadgets.md) | 基礎 exact relation／有限 Lean 證書與 gadget synthesis；一般 planar、separating C5 的 BAD 不構成 disk 反例 |
 | [automata](automata.md)、[attachment normal form](attachment_normal_form.md)、[topology completeness](topology_completeness.md) | 固定 triangle grammar 的染色語義、normal form、GeoReject 與 endpoint-order 編譯已形式化；embedding 抽取與 topology soundness 仍在紙面層 |
+| [P/R 文法 v0.2 匯入說明](sources/2026-10-19-c5-grammar-v02/README.md)、[原始 RESULTS](sources/2026-10-19-c5-grammar-v02/RESULTS.md) | 2026-10-19 收錄三份原始附件及 SHA-256；所附132態／264轉移模型內部核對一致，319為56 Live／76 Dead，F及F/C最小代表上界6／5。原完整驗證器與圖構造程式未隨附；來源PASS未完整重播，一般disk覆蓋及主命題仍OPEN，無新Lean |
+| [P/R 四列三步觀察與十列解碼](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md) | 132態最小統一深度3，59對必需三步；深度≤3唯一最小探測集RR／PRR／RRR的逆公式適用1024形式mask。文法族四列最小機器132態；圖語義由後續完成，一般覆蓋仍OPEN，無新Lean |
+| [P/R實圖語義與十列計數解碼](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md) | 明定push／右轉在任意大小disk合法，完整字面fibre雙射給附件整數矩陣；三探測恢復全部十列支援／計數。5120局部指派及792圖／7920完整fibres重建吻合；一般文法代表覆蓋、主命題及新Lean仍OPEN |
 | [fan pentagon](fan_pentagon.md)、[boundary relation 庫](boundary_relations.md)、[pp relations](pp_relations.md) | 固定 grammar 的 87 states 與完整 relation／pair 查詢已保存；pp 求值器仍屬 Python 層，87 不是一般 cell catalogue 的 132 |
 | [state language](state_language.md)、[stepwise sufficiency](stepwise_state_sufficiency.md)、[local closure](local_closure.md)、[C5 interface 想法](c5_interface_idea.md) | 表示法、strip／fan 的有界控制及 separator 引理可用；一般移動前緣、context／future 充分性、C6／C7 轉接仍待證或未啟動 |
 | [cell enumerator](c5_cell_enumerator.md) | R1／SYM／prefix／DFS／bitmask／integer viable 的 Lean 鏈與外部信任已明列；k=6、7 獨立重現僅為有界計算證據；原重複 §14 已整理為 §16 |
@@ -680,6 +693,7 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-19：P/R三探測、實圖語義與十列計數解碼整理發布](history/2026-10-19-c5-pr-publish.md)
 - [2026-10-18：同候選原外側、較小 bad 嘗試與三候選計數障礙發布](history/2026-10-18-smaller-bad-publish.md)
 - [2026-10-18：四列保壞接口與較小原圖候選發布](history/2026-10-18-smaller-source-publish.md)
 - [2026-10-17：七-cap接觸排除、兩完整補圈全參考阻斷與z-圈判準整理發布](history/2026-10-17-r6-two-cycle-cap-publish.md)

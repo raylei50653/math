@@ -1,0 +1,170 @@
+[
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-19-c5-observation-depth-ed59843/check_observation_depth.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": null,
+    "cwd": "/home/ray/developer/ai/math",
+    "exit": 0,
+    "seconds": 0.099,
+    "stdout": "{\"formal_masks_decoded\": 1024, \"minimum_probe_sets\": [[\"RR\", \"PRR\", \"RRR\"]], \"pair_histogram\": {\"0\": 7661, \"1\": 820, \"2\": 106, \"3\": 59}, \"pass\": true, \"round_counts\": [15, 66, 97, 132]}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-19-c5-observation-depth-ed59843/A/replay_pair_depth.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": null,
+    "cwd": "/home/ray/developer/ai/math",
+    "exit": 0,
+    "seconds": 0.109,
+    "stdout": "{\n  \"schema\": \"c5-independent-pair-depth-audit/v1\",\n  \"scope\": \"reachable support-mask Moore automaton from supplied nonnegative matrices, seed F only\",\n  \"certificate_sha256\": \"55109b2872294bb43dcd161635a65dff6ed3453d5c870a05ef0f3a9248e0d933\",\n  \"observation_rows\": [\n    \"01232\",\n    \"01021\",\n    \"01202\",\n    \"01212\"\n  ],\n  \"observation_indices_zero_based\": [\n    9,\n    1,\n    4,\n    6\n  ],\n  \"observation_type\": \"ordered Boolean nonempty-support bits, not literal fibre counts\",\n  \"depth_cost\": {\n    \"P\": 1,\n    \"R\": 1\n  },\n  \"state_count\": 132,\n  \"matrix_transition_checks\": 264,\n  \"all_submitted_reachability_words_replayed\": true,\n  \"pair_count\": 8646,\n  \"shortest_distinguishing_depth_histogram\": {\n    \"0\": 7661,\n    \"1\": 820,\n    \"2\": 106,\n    \"3\": 59\n  },\n  \"max_shortest_distinguishing_depth\": 3,\n  \"partition_block_counts_from_pair_BFS\": [\n    15,\n    66,\n    97,\n    132\n  ],\n  \"all_four_partitions_match_certificate\": true,\n  \"observation_order_matches_supplied_example\": true,\n  \"depth_3_necessity_witness\": {\n    \"left\": 91,\n    \"right\": 347,\n    \"depth\": 3,\n    \"suffix\": \"RRR\",\n    \"construction_words\": [\n      \"FP\",\n      \"FPPP\"\n    ],\n    \"common_outputs_through_depth_2\": [\n      {\n        \"suffix\": \"\",\n        \"output\": [\n          0,\n          1,\n          1,\n          1\n        ]\n      },\n      {\n        \"suffix\": \"P\",\n        \"output\": [\n          1,\n          1,\n          0,\n          1\n        ]\n      },\n      {\n        \"suffix\": \"R\",\n        \"output\": [\n          0,\n          1,\n          1,\n          1\n        ]\n      },\n      {\n        \"suffix\": \"PP\",\n        \"output\": [\n          0,\n          1,\n          1,\n          1\n        ]\n      },\n      {\n        \"suffix\": \"PR\",\n        \"output\": [\n          1,\n          1,\n          1,\n          0\n        ]\n      },\n      {\n        \"suffix\": \"RP\",\n        \"output\": [\n          1,\n          1,\n          0,\n          1\n        ]\n      },\n      {\n        \"suffix\": \"RR\",\n        \"output\": [\n          0,\n          1,\n          1,\n          1\n        ]\n      }\n    ],\n    \"after_masks\": [\n      91,\n      603\n    ],\n    \"after_outputs\": [\n      [\n        0,\n        1,\n        1,\n        1\n      ],\n      [\n        1,\n        1,\n        1,\n        1\n      ]\n    ]\n  },\n  \"negative_controls\": {\n    \"depth_2_is_sufficient_rejected\": true,\n    \"one_final_four_bit_output_identifies_132_rejected\": true\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-19-c5-observation-depth-ed59843/B/replay_minimum_observations.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": null,
+    "cwd": "/home/ray/developer/ai/math",
+    "exit": 0,
+    "seconds": 0.121,
+    "stdout": "PASS: unique minimum {RR, PRR, RRR}; 121 smaller-subset collisions; 132-state codebook; 1024 formal masks reconstructed\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/check_count_decoder.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": null,
+    "cwd": "/home/ray/developer/ai/math",
+    "exit": 0,
+    "seconds": 0.035,
+    "stdout": "PASS: integer D E = I; exact nonnegative integer image; frozen custody\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/B/check_local_operators.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": null,
+    "cwd": "/home/ray/developer/ai/math",
+    "exit": 0,
+    "seconds": 0.093,
+    "stdout": "{\"assignments_enumerated\": 5120, \"formal_mask_transfers_checked\": 2048, \"integer_matrix_entries_checked\": 200, \"negative_controls_rejected\": 4, \"pass\": true, \"proper_patch_assignments\": {\"P\": 312, \"R\": 240}, \"proper_target_literals_per_operator\": 240, \"source_transitions_checked\": 264}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/check_full_graph.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": null,
+    "cwd": "/home/ray/developer/ai/math",
+    "exit": 0,
+    "seconds": 0.445,
+    "stdout": "{\"all_pass\": true, \"certificate_sha256\": \"e426653ac4a047c9e21175c215a7ef0e5025fbd812bab4c327282cbba613e321\", \"disk_cellulation_failures\": 0, \"empty_fibres\": 2278, \"grammars\": {\"F\": 396, \"FC\": 396}, \"graph_cases\": 792, \"independent_product_fibres\": 80, \"integer_matrix_disagreements\": 0, \"literal_fibres\": 7920, \"literal_full_colourings\": 10642, \"max_single_fibre_size\": 8, \"max_vertices\": 12, \"negative_controls_detected\": 7, \"representatives_per_grammar\": 132, \"schema\": \"c5-pr-disk-whole-graph-verification/v1\", \"scope\": \"independent_reconstruction_not_historical_original_code_replay\", \"source_sha256\": \"55109b2872294bb43dcd161635a65dff6ed3453d5c870a05ef0f3a9248e0d933\", \"successors_per_representative\": 2, \"support_disagreements\": 0}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-19-c5-observation-depth-ed59843/check_observation_depth.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": "17",
+    "cwd": "/tmp",
+    "exit": 0,
+    "seconds": 0.104,
+    "stdout": "{\"formal_masks_decoded\": 1024, \"minimum_probe_sets\": [[\"RR\", \"PRR\", \"RRR\"]], \"pair_histogram\": {\"0\": 7661, \"1\": 820, \"2\": 106, \"3\": 59}, \"pass\": true, \"round_counts\": [15, 66, 97, 132]}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-19-c5-observation-depth-ed59843/A/replay_pair_depth.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": "17",
+    "cwd": "/tmp",
+    "exit": 0,
+    "seconds": 0.109,
+    "stdout": "{\n  \"schema\": \"c5-independent-pair-depth-audit/v1\",\n  \"scope\": \"reachable support-mask Moore automaton from supplied nonnegative matrices, seed F only\",\n  \"certificate_sha256\": \"55109b2872294bb43dcd161635a65dff6ed3453d5c870a05ef0f3a9248e0d933\",\n  \"observation_rows\": [\n    \"01232\",\n    \"01021\",\n    \"01202\",\n    \"01212\"\n  ],\n  \"observation_indices_zero_based\": [\n    9,\n    1,\n    4,\n    6\n  ],\n  \"observation_type\": \"ordered Boolean nonempty-support bits, not literal fibre counts\",\n  \"depth_cost\": {\n    \"P\": 1,\n    \"R\": 1\n  },\n  \"state_count\": 132,\n  \"matrix_transition_checks\": 264,\n  \"all_submitted_reachability_words_replayed\": true,\n  \"pair_count\": 8646,\n  \"shortest_distinguishing_depth_histogram\": {\n    \"0\": 7661,\n    \"1\": 820,\n    \"2\": 106,\n    \"3\": 59\n  },\n  \"max_shortest_distinguishing_depth\": 3,\n  \"partition_block_counts_from_pair_BFS\": [\n    15,\n    66,\n    97,\n    132\n  ],\n  \"all_four_partitions_match_certificate\": true,\n  \"observation_order_matches_supplied_example\": true,\n  \"depth_3_necessity_witness\": {\n    \"left\": 91,\n    \"right\": 347,\n    \"depth\": 3,\n    \"suffix\": \"RRR\",\n    \"construction_words\": [\n      \"FP\",\n      \"FPPP\"\n    ],\n    \"common_outputs_through_depth_2\": [\n      {\n        \"suffix\": \"\",\n        \"output\": [\n          0,\n          1,\n          1,\n          1\n        ]\n      },\n      {\n        \"suffix\": \"P\",\n        \"output\": [\n          1,\n          1,\n          0,\n          1\n        ]\n      },\n      {\n        \"suffix\": \"R\",\n        \"output\": [\n          0,\n          1,\n          1,\n          1\n        ]\n      },\n      {\n        \"suffix\": \"PP\",\n        \"output\": [\n          0,\n          1,\n          1,\n          1\n        ]\n      },\n      {\n        \"suffix\": \"PR\",\n        \"output\": [\n          1,\n          1,\n          1,\n          0\n        ]\n      },\n      {\n        \"suffix\": \"RP\",\n        \"output\": [\n          1,\n          1,\n          0,\n          1\n        ]\n      },\n      {\n        \"suffix\": \"RR\",\n        \"output\": [\n          0,\n          1,\n          1,\n          1\n        ]\n      }\n    ],\n    \"after_masks\": [\n      91,\n      603\n    ],\n    \"after_outputs\": [\n      [\n        0,\n        1,\n        1,\n        1\n      ],\n      [\n        1,\n        1,\n        1,\n        1\n      ]\n    ]\n  },\n  \"negative_controls\": {\n    \"depth_2_is_sufficient_rejected\": true,\n    \"one_final_four_bit_output_identifies_132_rejected\": true\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-19-c5-observation-depth-ed59843/B/replay_minimum_observations.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": "17",
+    "cwd": "/tmp",
+    "exit": 0,
+    "seconds": 0.117,
+    "stdout": "PASS: unique minimum {RR, PRR, RRR}; 121 smaller-subset collisions; 132-state codebook; 1024 formal masks reconstructed\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/check_count_decoder.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": "17",
+    "cwd": "/tmp",
+    "exit": 0,
+    "seconds": 0.039,
+    "stdout": "PASS: integer D E = I; exact nonnegative integer image; frozen custody\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/B/check_local_operators.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": "17",
+    "cwd": "/tmp",
+    "exit": 0,
+    "seconds": 0.091,
+    "stdout": "{\"assignments_enumerated\": 5120, \"formal_mask_transfers_checked\": 2048, \"integer_matrix_entries_checked\": 200, \"negative_controls_rejected\": 4, \"pass\": true, \"proper_patch_assignments\": {\"P\": 312, \"R\": 240}, \"proper_target_literals_per_operator\": 240, \"source_transitions_checked\": 264}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/check_full_graph.py",
+      "--check"
+    ],
+    "PYTHONHASHSEED": "17",
+    "cwd": "/tmp",
+    "exit": 0,
+    "seconds": 0.443,
+    "stdout": "{\"all_pass\": true, \"certificate_sha256\": \"e426653ac4a047c9e21175c215a7ef0e5025fbd812bab4c327282cbba613e321\", \"disk_cellulation_failures\": 0, \"empty_fibres\": 2278, \"grammars\": {\"F\": 396, \"FC\": 396}, \"graph_cases\": 792, \"independent_product_fibres\": 80, \"integer_matrix_disagreements\": 0, \"literal_fibres\": 7920, \"literal_full_colourings\": 10642, \"max_single_fibre_size\": 8, \"max_vertices\": 12, \"negative_controls_detected\": 7, \"representatives_per_grammar\": 132, \"schema\": \"c5-pr-disk-whole-graph-verification/v1\", \"scope\": \"independent_reconstruction_not_historical_original_code_replay\", \"source_sha256\": \"55109b2872294bb43dcd161635a65dff6ed3453d5c870a05ef0f3a9248e0d933\", \"successors_per_representative\": 2, \"support_disagreements\": 0}\n",
+    "stderr": ""
+  }
+]

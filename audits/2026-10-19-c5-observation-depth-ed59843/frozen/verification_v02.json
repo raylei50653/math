@@ -1,0 +1,177 @@
+{
+  "pass": true,
+  "independent_local_assignments": 5120,
+  "states": 132,
+  "transition_edges": 264,
+  "reachability": {
+    "319": {
+      "live": 56,
+      "dead": 76,
+      "goal_labels": 1
+    },
+    "932": {
+      "live": 0,
+      "dead": 132,
+      "goal_labels": 1
+    },
+    "933": {
+      "live": 0,
+      "dead": 132,
+      "goal_labels": 1
+    },
+    "941": {
+      "live": 0,
+      "dead": 132,
+      "goal_labels": 1
+    },
+    "four_fibres": {
+      "live": 0,
+      "dead": 132,
+      "goal_labels": 64
+    }
+  },
+  "bellman_inequalities_checked": 528,
+  "minimum_maximum": {
+    "F": 6,
+    "FC": 5
+  },
+  "refinement_rounds": {
+    "four_fibres": [
+      15,
+      66,
+      97,
+      132
+    ],
+    "exact_319": [
+      2,
+      4,
+      7,
+      12,
+      18,
+      25,
+      34,
+      41,
+      50,
+      55,
+      57
+    ]
+  },
+  "full_graph_representative_cases": 792,
+  "triangle_graph_cases": 10,
+  "fixed_literal_fibres_checked": 8020,
+  "dead_family_states": 61,
+  "formal_Lean_proof": false,
+  "general_disk_coverage": false,
+  "negative_controls": [
+    {
+      "mutation": "operator_coefficient_with_rehashed_model",
+      "rejected": true,
+      "reason": "independent local transfer mismatch"
+    },
+    {
+      "mutation": "transition_with_rehashed_model",
+      "rejected": true,
+      "reason": "transition not literal transfer"
+    },
+    {
+      "mutation": "undeclared_new_letter_I",
+      "rejected": true,
+      "reason": "scope or alphabet overclaim"
+    },
+    {
+      "mutation": "false_arbitrary_disk_coverage",
+      "rejected": true,
+      "reason": "scope or alphabet overclaim"
+    },
+    {
+      "mutation": "false_original_boundary_preservation",
+      "rejected": true,
+      "reason": "scope or alphabet overclaim"
+    },
+    {
+      "mutation": "nonclosed_dead_set",
+      "rejected": true,
+      "reason": "dead set is not forward closed"
+    },
+    {
+      "mutation": "dropped_dead_state",
+      "rejected": true,
+      "reason": "live/dead partition mismatch"
+    },
+    {
+      "mutation": "false_live_rank",
+      "rejected": true,
+      "reason": "live policy does not strictly decrease rank"
+    },
+    {
+      "mutation": "policy_uses_unapproved_I",
+      "rejected": true,
+      "reason": "policy uses unapproved operation"
+    },
+    {
+      "mutation": "four_queries_replaced_by_one_mask",
+      "rejected": true,
+      "reason": "joint target incorrectly projected or truncated"
+    },
+    {
+      "mutation": "missing_target_contract",
+      "rejected": true,
+      "reason": "target contract domain mismatch"
+    },
+    {
+      "mutation": "old_grammar_false_five_point_bound",
+      "rejected": true,
+      "reason": "minimum upper-bound witness cost mismatch"
+    },
+    {
+      "mutation": "fake_C_as_F_minimum_witness",
+      "rejected": true,
+      "reason": "minimum witness uses a seed outside its grammar"
+    },
+    {
+      "mutation": "hide_new_seed_C",
+      "rejected": true,
+      "reason": "seed extension not explicitly declared"
+    },
+    {
+      "mutation": "false_global_minimum",
+      "rejected": true,
+      "reason": "global-minimum overclaim"
+    },
+    {
+      "mutation": "false_refinement_collapse",
+      "rejected": true,
+      "reason": "false final partition or block count"
+    },
+    {
+      "mutation": "wrong_distinguishing_suffix",
+      "rejected": true,
+      "reason": "suffix does not distinguish"
+    },
+    {
+      "mutation": "family_claims_reach_319",
+      "rejected": true,
+      "reason": "family closure mismatch"
+    },
+    {
+      "mutation": "triangle_false_empty_fibre",
+      "rejected": true,
+      "reason": "triangle record does not preserve all fibres"
+    },
+    {
+      "mutation": "triangle_without_guard",
+      "rejected": true,
+      "reason": "unguarded triangle or alphabet overclaim"
+    },
+    {
+      "mutation": "C_seed_count_corruption",
+      "rejected": true,
+      "reason": "literal seed semantics mismatch"
+    },
+    {
+      "mutation": "old_grammar_false_bound_summary",
+      "rejected": true,
+      "reason": "wrong maximum representative cost"
+    }
+  ]
+}

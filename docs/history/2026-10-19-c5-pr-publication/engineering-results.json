@@ -1,0 +1,31 @@
+[
+  {
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit": 0,
+    "seconds": 9.131,
+    "log": "lean.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--with-requirements",
+      "requirements.txt",
+      "python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "exit": 0,
+    "seconds": 4.826,
+    "log": "tool-tests.log"
+  }
+]
