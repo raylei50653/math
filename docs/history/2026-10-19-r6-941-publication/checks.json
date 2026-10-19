@@ -1,0 +1,231 @@
+{
+  "base": "b89c5913cea9df2305845be0f65fa6f1c1aaf55f",
+  "checks": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-leakage-b89c591/check.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 6.258,
+      "stdout_file": "logs/normal.stdout",
+      "stderr_file": "logs/normal.stderr",
+      "summary": "h actual source-positive D7 subsets\\\"}]}\"}], \"frozen_drift\": 0, \"frozen_inputs\": 238, \"omitted_completed_cost_negative_rejected\": true, \"output_drift\": 0, \"pass\": true, \"smaller_bad_constructed\": false, \"whole_three_candidate_route_excluded\": false}"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-leakage-b89c591/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "seconds": 6.134,
+      "stdout_file": "logs/seed17.stdout",
+      "stderr_file": "logs/seed17.stderr",
+      "summary": "h actual source-positive D7 subsets\\\"}]}\"}], \"frozen_drift\": 0, \"frozen_inputs\": 238, \"omitted_completed_cost_negative_rejected\": true, \"output_drift\": 0, \"pass\": true, \"smaller_bad_constructed\": false, \"whole_three_candidate_route_excluded\": false}"
+    },
+    {
+      "name": "lake-build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 9.602,
+      "stdout_file": "logs/lake-build.stdout",
+      "stderr_file": "logs/lake-build.stderr",
+      "summary": "ter.style.longLine false`\nwarning: Math/SymRelabel.lean:170:100: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`\nBuild completed successfully (8832 jobs)."
+    },
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 1.11,
+      "stdout_file": "logs/docs.stdout",
+      "stderr_file": "logs/docs.stderr",
+      "summary": "OK: 702 Markdown files, 9222 local links; anchors, index, handoff, guide progress checked"
+    },
+    {
+      "name": "docgraph-docs",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 0.517,
+      "stdout_file": "logs/docgraph-docs.stdout",
+      "stderr_file": "logs/docgraph-docs.stderr",
+      "summary": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes"
+    },
+    {
+      "name": "docgraph-whole",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "seconds": 8.937,
+      "stdout_file": "logs/docgraph-whole.stdout",
+      "stderr_file": "logs/docgraph-whole.stderr",
+      "summary": "FAIL: 97 documents, 368 relations, 12 families; 72 errors, 0 notes"
+    }
+  ],
+  "normal_seed17_identical": true,
+  "normal_seed17_sha256": "dbc40314785deb830dc67d044bbdf362e8bbaf539f3a2dd3f2b889c39898132b",
+  "audit_custody_files": 72,
+  "audit_custody_drift": 0,
+  "whole_tree_docgraph": {
+    "status": "existing failure",
+    "errors": 72,
+    "baseline_error_multiset_equal": true,
+    "new_errors": 0
+  },
+  "independent_publication_review": {
+    "reviewer": "count_theorem",
+    "status": "PASS",
+    "sealed_outputs": 24,
+    "delivery_files": 72,
+    "frozen_input_drift": 0,
+    "scope_reviewed": "GB four-row no-go only; Q1/Q2 and strict smaller bad OPEN"
+  },
+  "tool_tests": {
+    "status": "prior unmodified research receipt reused",
+    "tests": 94,
+    "receipt": "audits/2026-10-19-r6-941-leakage-b89c591/checks.json"
+  },
+  "submission_checks": {
+    "staged_whitelist_valid": true,
+    "audit_index_custody_drift": 0,
+    "staged_paths": [
+      "audits/2026-10-19-r6-941-leakage-b89c591/.gitignore",
+      "audits/2026-10-19-r6-941-leakage-b89c591/A/PROOF.md",
+      "audits/2026-10-19-r6-941-leakage-b89c591/A/REVIEW-B-C.md",
+      "audits/2026-10-19-r6-941-leakage-b89c591/A/certificate.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/A/check.py",
+      "audits/2026-10-19-r6-941-leakage-b89c591/A/discovery/.gitignore",
+      "audits/2026-10-19-r6-941-leakage-b89c591/A/model.py",
+      "audits/2026-10-19-r6-941-leakage-b89c591/A/source-positive-certificate.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/A/verification.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/B/CORE.md",
+      "audits/2026-10-19-r6-941-leakage-b89c591/B/FORCED_SECTORS.md",
+      "audits/2026-10-19-r6-941-leakage-b89c591/B/REVIEW-A.md",
+      "audits/2026-10-19-r6-941-leakage-b89c591/B/REVIEW-C.md",
+      "audits/2026-10-19-r6-941-leakage-b89c591/B/SOURCE_CONTRACT.md",
+      "audits/2026-10-19-r6-941-leakage-b89c591/B/additional-inputs.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/B/check_core.py",
+      "audits/2026-10-19-r6-941-leakage-b89c591/B/core-certificate.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/B/verification.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/PROOF.md",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/REVIEW-A.md",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/REVIEW-B.md",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/build_joint.py",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/build_u319.py",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/check-negative.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/check-normal.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/check-seed17.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/check.py",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/gb941-identities.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/joint-fibres.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/old-controls-projected.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/review-a-results.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/review_a.py",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/u319-core.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/C/u319-inequality.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/INPUTS.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/OUTPUTS.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/PROOF.md",
+      "audits/2026-10-19-r6-941-leakage-b89c591/REPORT.md",
+      "audits/2026-10-19-r6-941-leakage-b89c591/REVIEW.md",
+      "audits/2026-10-19-r6-941-leakage-b89c591/check.py",
+      "audits/2026-10-19-r6-941-leakage-b89c591/checks-initial.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/checks.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/costs.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/final-verification.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/artifact-policy.stderr",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/artifact-policy.stdout",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/diff-check.stderr",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/diff-check.stdout",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/docgraph-baseline-comparison.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/docgraph-docs.stderr",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/docgraph-docs.stdout",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/docgraph-whole.stderr",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/docgraph-whole.stdout",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/docs.stderr",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/docs.stdout",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/final-artifact-policy.stderr",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/final-artifact-policy.stdout",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/final-diff.stderr",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/final-diff.stdout",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/final-docgraph-docs.stderr",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/final-docgraph-docs.stdout",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/final-docs.stderr",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/final-docs.stdout",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/final-staged-diff.stderr",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/final-staged-diff.stdout",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/new-audit-links.json",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/normal.stderr",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/normal.stdout",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/seed17.stderr",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/seed17.stdout",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/temporary-staged-diff-check.stderr",
+      "audits/2026-10-19-r6-941-leakage-b89c591/logs/temporary-staged-diff-check.stdout",
+      "docs/STATUS.md",
+      "docs/c5_kempe_guide.md",
+      "docs/history/2026-10-19-r6-941-publication/audit-custody.json",
+      "docs/history/2026-10-19-r6-941-publication/checks.json",
+      "docs/history/2026-10-19-r6-941-publication/logs/docgraph-docs.stderr",
+      "docs/history/2026-10-19-r6-941-publication/logs/docgraph-docs.stdout",
+      "docs/history/2026-10-19-r6-941-publication/logs/docgraph-whole.stderr",
+      "docs/history/2026-10-19-r6-941-publication/logs/docgraph-whole.stdout",
+      "docs/history/2026-10-19-r6-941-publication/logs/docs.stderr",
+      "docs/history/2026-10-19-r6-941-publication/logs/docs.stdout",
+      "docs/history/2026-10-19-r6-941-publication/logs/lake-build.stderr",
+      "docs/history/2026-10-19-r6-941-publication/logs/lake-build.stdout",
+      "docs/history/2026-10-19-r6-941-publication/logs/normal.stderr",
+      "docs/history/2026-10-19-r6-941-publication/logs/normal.stdout",
+      "docs/history/2026-10-19-r6-941-publication/logs/seed17.stderr",
+      "docs/history/2026-10-19-r6-941-publication/logs/seed17.stdout",
+      "docs/history/2026-10-19-r6-941-publish.md"
+    ],
+    "checks": [
+      {
+        "name": "staged-whitespace",
+        "command": [
+          "git",
+          "diff",
+          "--cached",
+          "--check"
+        ],
+        "exit_code": 0,
+        "stdout": ""
+      },
+      {
+        "name": "artifact-policy",
+        "command": [
+          "python3",
+          "tools/check_generated_artifacts.py"
+        ],
+        "exit_code": 0,
+        "stdout": "Generated artifact policy OK: 6447 indexed files, 85 large files with documented exceptions, 166 registered outputs."
+      }
+    ]
+  }
+}
