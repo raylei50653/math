@@ -1,0 +1,308 @@
+{
+  "additional_checks": {
+    "local_links_checked": 31,
+    "missing_links": [],
+    "negative_seal_exit": 1,
+    "negative_seal_rejected": true,
+    "pending_generated_link": "checks.json",
+    "status": "PASS"
+  },
+  "base": "1148ce026aaf764e6e2766aebc096eebe193ed13",
+  "commit_or_push_by_this_task": false,
+  "compact_positive_and_negative_controls": {
+    "negative_controls": [
+      {
+        "name": "swap_two_signs_preserving_64_68_totals",
+        "reason": "signed halfrows do not give exactly the two complete fibres",
+        "rejected": true
+      },
+      {
+        "name": "change_actual_witness",
+        "reason": "",
+        "rejected": true
+      },
+      {
+        "name": "omit_halfrow",
+        "reason": "",
+        "rejected": true
+      },
+      {
+        "name": "change_literal_frame",
+        "reason": "",
+        "rejected": true
+      }
+    ],
+    "numeric_solver_used": false,
+    "original_valid": true,
+    "reordered_semantically_identical_rows_valid": true,
+    "status": "PASS"
+  },
+  "comparison_ignored_fields": [
+    "progress.elapsed_seconds"
+  ],
+  "current_head_at_validation": "af0df8081e79b51f8b24e17e01b2bd5572e46a0a",
+  "documentation": {
+    "check_docs": "PASS 703 Markdown files; 9274 local links",
+    "formal_docs_docgraph": "PASS 97 documents; 383 relations; 12 families",
+    "whole_tree_docgraph": {
+      "errors": {
+        "duplicate-id": 72
+      },
+      "no_history_or_frozen_files_deleted": true,
+      "status": "FAIL archived duplicate ids"
+    }
+  },
+  "final_local_link_check": {
+    "checks_json_link_resolved": true,
+    "links": 32,
+    "status": "PASS"
+  },
+  "independent_negative_controls": [
+    {
+      "name": "drop-active-halfrow",
+      "reason": "positive coefficient on nonnegative core variable",
+      "rejected": true
+    },
+    {
+      "name": "excess-witness-weight",
+      "reason": "positive coefficient on nonnegative core variable",
+      "rejected": true
+    },
+    {
+      "name": "omit-zero-halfrows",
+      "reason": "positive coefficient on nonnegative Kempe orbit variable",
+      "rejected": true
+    },
+    {
+      "name": "uncancelled-signed-span",
+      "reason": "signed planar-span coordinate was not cancelled",
+      "rejected": true
+    },
+    {
+      "name": "flip-live-multiplier",
+      "reason": "positive coefficient on nonnegative core variable",
+      "rejected": true
+    },
+    {
+      "name": "drop-positive-witness",
+      "reason": "",
+      "rejected": true
+    },
+    {
+      "name": "omit-orbit-slack",
+      "reason": "nonnegative slack manifest differs",
+      "rejected": true
+    }
+  ],
+  "lake_build": {
+    "jobs": 8832,
+    "new_Lean": false,
+    "receipt": {
+      "bytes": 7494,
+      "path": "validation/lake-build.log",
+      "sha256": "8104be9d036bacf8bed91d79c2258da89881e2e6652e9d327e3af5292cf7fa71"
+    },
+    "status": "PASS"
+  },
+  "normal_and_seed17_mathematical_results_identical": true,
+  "not_rerun": "All upstream theorem suites; inherited n=5 reduction accepted from frozen completed audit. C11 cap, zero-fibre and complete-orbit arithmetic replayed here.",
+  "read_only_replays_verified_frozen_inputs_before_and_after": 1240,
+  "read_only_replays_verified_sealed_outputs_before_and_after": 33,
+  "receipts": [
+    {
+      "bytes": 5048,
+      "path": "OUTPUTS.json",
+      "sha256": "516e6c211c60574c19cb569239b267ae6e1d5a30493134cc163b5e8c5c1453a4"
+    },
+    {
+      "bytes": 655,
+      "path": "review/checks.json",
+      "sha256": "808ffebe46c69aa4bbc5143e7e545e5ed201766dd5010ae9768ae68bba82c805"
+    },
+    {
+      "bytes": 1557,
+      "path": "review/dual-checks.json",
+      "sha256": "3fe03f5a6f66c8b82cd7bc1c6ddf52f63a82d5fd14d6bee67ba5c11e234ccb27"
+    },
+    {
+      "bytes": 416,
+      "path": "review/dual-requested-checks.json",
+      "sha256": "67464f1934cf7df0e669986a901c2cb8a96da8b2b9a72de65b8b2236900f483d"
+    },
+    {
+      "bytes": 660,
+      "path": "validation/negative-seal.log",
+      "sha256": "c024a09730667b3903ebd65f5a070eb7ec8a64e8ea6f7958ba5ddb949bd89205"
+    },
+    {
+      "bytes": 139,
+      "path": "validation/final-status.txt",
+      "sha256": "519ebe8ce3f31615fa2e2a89e69ee356ae57cbaaacdc96dd7aaa56a42b858659"
+    }
+  ],
+  "routing_context": "Concurrent joint Kempe work committed af0df80; audit authority remains frozen BASE. Other concurrent audit preserved.",
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "name": "docs",
+      "seconds": 0.764,
+      "stderr": {
+        "bytes": 0,
+        "path": "validation/docs.err",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 90,
+        "path": "validation/docs.log",
+        "sha256": "98c9094dab1e8eb45fc97f3dd689a512b718b91df987dd095505253aae49abcf"
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "name": "docgraph-docs",
+      "seconds": 0.097,
+      "stderr": {
+        "bytes": 0,
+        "path": "validation/docgraph-docs.err",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 64,
+        "path": "validation/docgraph-docs.log",
+        "sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca"
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "name": "docgraph-all",
+      "seconds": 1.988,
+      "stderr": {
+        "bytes": 101986,
+        "path": "validation/docgraph-all.err",
+        "sha256": "4862f2a4895a14b7cc48da66d057387e1c5e5bb956957edb05c9323a637d766a"
+      },
+      "stdout": {
+        "bytes": 67,
+        "path": "validation/docgraph-all.log",
+        "sha256": "214ce6f854ff299bfbe99d599b539a6dde6bcefbb96aa8beb36f7bb643c5f293"
+      }
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "name": "diff-check",
+      "seconds": 0.017,
+      "stderr": {
+        "bytes": 0,
+        "path": "validation/diff-check.err",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 0,
+        "path": "validation/diff-check.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-c11-1148ce0/counting/controls.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "name": "compact-controls",
+      "seconds": 15.722,
+      "stderr": {
+        "bytes": 0,
+        "path": "validation/compact-controls.err",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 483,
+        "path": "validation/compact-controls.log",
+        "sha256": "59cb495863b93ac4130716dbb2e32d2d793663f28d3e349b36f6b0be245dea3f"
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-c11-1148ce0/check.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "name": "normal",
+      "seconds": 52.298,
+      "stderr": {
+        "bytes": 0,
+        "path": "validation/normal.err",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 3512,
+        "path": "validation/normal.log",
+        "sha256": "4e813d34a3769a7fbbe278933783f20617aed9050487187ee16cc6f265fca82f"
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-c11-1148ce0/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "name": "seed17",
+      "seconds": 53.38,
+      "stderr": {
+        "bytes": 0,
+        "path": "validation/seed17.err",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 3511,
+        "path": "validation/seed17.log",
+        "sha256": "ad08afff6884937473ebc2b1be8f229156d5068e744d26cb559d759c9143171f"
+      }
+    }
+  ],
+  "source_scope": {
+    "arbitrary_n_ge_6_attachments_preserved": true,
+    "combined_with_inherited_n5_original_W5_branch_closed": true,
+    "general_J1_J2_closed": false,
+    "induced_C11_branch_excluded": true,
+    "main_theorem_closed": false,
+    "new_Lean": false
+  },
+  "status": "PASS scoped J1 original W5 C11 source exclusion"
+}

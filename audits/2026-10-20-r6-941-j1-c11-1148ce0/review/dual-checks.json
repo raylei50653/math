@@ -1,0 +1,64 @@
+{
+  "independent_normal": {
+    "status": "PASS independent exact integer separating functional",
+    "certificate_sha256": "20b206458c3a62e5697e85de0dea8c82e3bd7a882e65ebce79ca18094603a6f8",
+    "states": 7381,
+    "half_rows": 22143,
+    "kempe_columns": 36487,
+    "proper_noncrossing_span_columns": 1585,
+    "live_nonnegative_core_coordinates": 5951,
+    "positive_row_names": [
+      "N01012(G)",
+      "N01023(G)",
+      "N01201(G)",
+      "N01203(G)",
+      "N01213(G)",
+      "N01231(G)",
+      "N01232(G)",
+      "A_a",
+      "A_b",
+      "short_W5_witness_sum"
+    ],
+    "positive_weights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      16
+    ],
+    "positive_weight_sum": 16,
+    "nonzero_slacks": 15693,
+    "same_source_contradiction_under_frozen_contract": true,
+    "arbitrary_necessary_model_realized": false,
+    "new_Lean": false
+  },
+  "negative_controls": [
+    {
+      "name": "drop-active-halfrow",
+      "rejected": true,
+      "reason": "positive coefficient on nonnegative core variable"
+    },
+    {
+      "name": "excess-witness-weight",
+      "rejected": true,
+      "reason": "positive coefficient on nonnegative core variable"
+    },
+    {
+      "name": "omit-zero-halfrows",
+      "rejected": true,
+      "reason": "positive coefficient on nonnegative Kempe orbit variable"
+    },
+    {
+      "name": "uncancelled-signed-span",
+      "rejected": true,
+      "reason": "signed planar-span coordinate was not cancelled"
+    }
+  ],
+  "all_passed": true,
+  "python_hash_seed": "17"
+}

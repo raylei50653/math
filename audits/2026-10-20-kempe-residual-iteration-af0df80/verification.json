@@ -1,0 +1,150 @@
+{
+  "scope": "Exact residual update for all finite histories by proof; complete fixed cell95 residual closure and phase controls by computation.",
+  "checks": {
+    "audit-links": {
+      "markdown_files": [
+        "REPORT.md",
+        "SOURCE_CONTRACT.md",
+        "experiment/RESULT.md",
+        "review/REVIEW.md",
+        "theory/REPORT.md"
+      ],
+      "local_links": 24,
+      "errors": []
+    },
+    "diff": {
+      "name": "diff",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "seconds": 0.018
+    },
+    "docgraph-all": {
+      "name": "docgraph-all",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "returncode": 1,
+      "seconds": 7.63
+    },
+    "docgraph-docs": {
+      "name": "docgraph-docs",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "returncode": 0,
+      "seconds": 0.334
+    },
+    "docs": {
+      "name": "docs",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.85
+    },
+    "negative-controls": [
+      {
+        "name": "exclusive-main",
+        "rejected": true,
+        "returncode": 1
+      },
+      {
+        "name": "exclusive-phase",
+        "rejected": true,
+        "returncode": 1
+      },
+      {
+        "name": "drop-informative-identity-phases",
+        "rejected": true,
+        "returncode": 1
+      }
+    ],
+    "normal": {
+      "name": "normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-kempe-residual-iteration-af0df80/check.py"
+      ],
+      "returncode": 0,
+      "seconds": 3.015
+    },
+    "seed17": {
+      "name": "seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-kempe-residual-iteration-af0df80/check.py"
+      ],
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "returncode": 0,
+      "seconds": 3.003
+    }
+  },
+  "frozen_input_count": 11,
+  "frozen_input_drift": [],
+  "previous_audit_input_drift": [],
+  "artifact_sha256": {
+    "BASE.json": "ba3d4cfc1f60c1bd9a5a990afc32ddfb3fe3155c522fe3178ccc14543e7fa145",
+    "INPUTS.json": "19d397a4b9e507cd690c6a30d931bbdc9c27542c7d6b89f9f58cef95dc66f4f4",
+    "REPORT.md": "99afccbb7269b08edb0f9fd8a6e2de0c09ddd78db24eabc7460ee0998b708c18",
+    "SOURCE_CONTRACT.md": "224844f7e182c4bc95a49019d571556efaf32ba83421d319ac4f1ce050d2584c",
+    "check.py": "e1a6f9ad0ef66c53a07e978fc21eea6f98ff1545e97ea824951562bc390c558e",
+    "experiment/RESULT.md": "5936d4757811dbf00834a1f468d22872d0289aba6bd6078f4b6f682d70ae3a1b",
+    "experiment/certificate.json": "86c4af15ea6fd14902d27d2f578fb6ee750c2d52d8fe59aaf0a4b00cd165483c",
+    "experiment/check.py": "fae6f773d6d4cd3f1678daf7e02859ce2765ca5b59c50d879e9e3b5fa17594d3",
+    "experiment/generate.log": "430aff07301cf873e4420cf6b57b6838070ce19bffaa1432d881f79e551e74b0",
+    "experiment/negative_controls.log": "39a7b88a9b2cdbb5be7e1e7b11f474f4acd161b64a182f3e14ca0ecaaf8b441a",
+    "experiment/replay.log": "430aff07301cf873e4420cf6b57b6838070ce19bffaa1432d881f79e551e74b0",
+    "experiment/seed17.log": "37457d0d8a304a5a392c535607f6666e233119778e91ec0439913b3a1298a0c5",
+    "phase.json": "4db972ed4b7c8d9da7156e78c0e88ed2a647db135671635da5e9af2c90a8292b",
+    "phase.py": "7b69f31e2bed359cfe96946ac01c9a6cdd3d3377e29b79d7b27ee09249faa9a8",
+    "review/REVIEW.md": "d2b3f5d8e0708785a4a1603bd95415d08916884e3741ac2954dd75dc2b60a800",
+    "review/check_residual.py": "408240aa63fdfff5d2a6c80d9ec0e0baa39c0dc909a2b74def67cd1279a7dfc1",
+    "review/compare_residual_phase.py": "32f544dcb59af3931c6949e88e6002982a07dc83d6883afe00a266cc97151c50",
+    "review/cross_review.json": "781809c3af6d14ca842cd34c405e6ae5f9ac9851609a148563609250d0a62009",
+    "review/independent_residual_certificate.json": "87cd3e409139ea7f020eb7545043c3c80a2a63780dba87d74efcab26c1d34c8a",
+    "theory/REPORT.md": "e55f40cb1911244172a975e251c44ce906763c1b7d64c6f9b83d1051bb3e3475"
+  },
+  "docgraph_all": {
+    "status": "FAIL",
+    "duplicate_id_count": 72,
+    "this_audit_in_diagnostics": false
+  },
+  "lean": {
+    "new_lean": false,
+    "lake_build_rerun_this_turn": false,
+    "reason": "No Lean source changes; new obligations are paper and Python."
+  },
+  "j1_source_status": "not triggered",
+  "general_small_state_bound": "OPEN",
+  "strict_graph_descent": "OPEN",
+  "semantic_review": "Independent review found no root report counting/source errors; named12root1 negative replayed separately from generated23root4 example.",
+  "updated_docs": [
+    "docs/c5_state_guide.md",
+    "docs/STATUS.md"
+  ],
+  "reviewed_unchanged": [
+    "README.md",
+    "docs/HANDOFF.md",
+    "docs/c5_kempe_guide.md"
+  ],
+  "commit_or_push": false,
+  "git_status": " M docs/STATUS.md\n M docs/c5_kempe_guide.md\n M docs/c5_state_guide.md\n?? audits/2026-10-20-kempe-residual-iteration-af0df80/\n?? audits/2026-10-20-multi-kempe-machines-af0df80/\n?? audits/2026-10-20-r6-941-j1-c11-1148ce0/\n"
+}

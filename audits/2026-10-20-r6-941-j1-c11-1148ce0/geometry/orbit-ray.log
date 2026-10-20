@@ -1,0 +1,55 @@
+Running HiGHS 1.12.0 (git hash: 4f96ee8): Copyright (c) 2025 HiGHS under MIT licence terms
+LP has 17863 rows; 26745 cols; 193668 nonzeros
+Coefficient ranges:
+  Matrix  [1e+00, 8e+00]
+  Cost    [1e+00, 1e+00]
+  Bound   [0e+00, 0e+00]
+  RHS     [1e+00, 1e+00]
+Presolving model
+17160 rows, 26042 cols, 192242 nonzeros  0s
+11981 rows, 20863 cols, 195152 nonzeros  0s
+Dependent equations search running on 11750 equations with time limit of 1.80s
+Dependent equations search terminated after 0.0796s due to expected time exceeding limit
+11760 rows, 20646 cols, 196328 nonzeros  0s
+Presolve reductions: rows 11760(-6103); columns 20646(-6099); nonzeros 196328(+2660) 
+Solving the presolved LP
+Using EKK dual simplex solver - serial
+  Iteration        Objective     Infeasibilities num(sum)
+          0     0.0000000000e+00 Pr: 10(14) 0s
+       8411     3.4194201104e+02 Pr: 7819(334650); Du: 0(5.36256e-07) 5s
+      10476     6.7515890969e+02 Pr: 7749(989108); Du: 0(8.83864e-07) 11s
+      11647     4.7523927497e+03 Pr: 7524(1.17122e+08); Du: 0(1.20426e-06) 16s
+WARNING:    Increasing Markowitz threshold to 0.5
+      11739     1.3753002285e+04 20s
+Using EKK dual simplex solver - serial
+  Iteration        Objective     Infeasibilities num(sum)
+      11739     1.3604084335e+04 Pr: 7584(3.72484e+08); Du: 0(1.68474e-06) 20s
+      11739     1.3604084335e+04 20s
+Model status        : Infeasible
+Simplex   iterations: 11739
+Objective value     :  1.3740598700e+04
+HiGHS run time      :         20.14
+model status HighsModelStatus.kInfeasible
+Solving LP to try to compute dual ray
+LP has 17863 rows; 26745 cols; 193668 nonzeros
+Coefficient ranges:
+  Matrix  [1e+00, 8e+00]
+  Cost    [0e+00, 0e+00]
+  Bound   [0e+00, 0e+00]
+  RHS     [1e+00, 1e+00]
+Solving LP without presolve or useful basis
+Using EKK dual simplex solver - serial
+  Iteration        Objective     Infeasibilities num(sum)
+          0     0.0000000000e+00 Pr: 10(28) 20s
+       8645     1.6428614271e-03 Pr: 8564(134535); Du: 0(5.71012e-06) 25s
+      12625     2.8153522621e-03 Pr: 10164(386301); Du: 0(8.22579e-06) 30s
+      15371     5.3766129972e-03 Pr: 10538(1.22301e+06); Du: 0(1.13147e-05) 37s
+      16561     9.3447678932e-03 40s
+
+Model status        : Infeasible
+Simplex   iterations: 16561
+Objective value     :  0.0000000000e+00
+P-D objective error :  9.2582516801e-03
+HiGHS run time      :         40.44
+Solving linear system to compute dual ray
+{'exact': True, 'weights': [0, 0, 0, 0, 0, 0, 0, 0, 0, 16], 'bound': 1, 'dead_half_row_adjustment': 8, 'nonzero_equalities': 4422, 'nonzero_slacks': 15693}

@@ -1,0 +1,105 @@
+{
+  "status": "PASS with documented sealed evidence whitespace and whole-tree DocGraph scope limitation",
+  "base": "af0df8081e79b51f8b24e17e01b2bd5572e46a0a",
+  "checks": [
+    {
+      "name": "custody",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-kempe-c11-publication-af0df80/check_custody.py"
+      ],
+      "exit_code": 0,
+      "stdout": "final-checks/custody.stdout",
+      "stdout_sha256": "36b5e77c0fdb4f4349041b5fa764fd52ff92079455b7a2e5ba3ec37afaacf36d",
+      "stderr": "final-checks/custody.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docs",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "stdout": "final-checks/docs.stdout",
+      "stdout_sha256": "d4da8dc61b65ad62fa36217e80f301ed118ec85beda9554989ffd0abdcd88131",
+      "stderr": "final-checks/docs.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docgraph-docs",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": "final-checks/docgraph-docs.stdout",
+      "stdout_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+      "stderr": "final-checks/docgraph-docs.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "artifact-policy",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "stdout": "final-checks/artifact-policy.stdout",
+      "stdout_sha256": "b9e03b37ff3b234c1d034d82b6b57bc5b59548ee842552d243528b80100d65a8",
+      "stderr": "final-checks/artifact-policy.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "staged-whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "final-checks/staged-whitespace.stdout.gz",
+      "stdout_sha256": "c7682a0e1dff1a353235bfbdb41899b5fe3b4d2f4d8ee7449dc986c2ff85af3c",
+      "stderr": "final-checks/staged-whitespace.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_encoding": "gzip; stdout_sha256 describes the uncompressed command output"
+    },
+    {
+      "name": "whitespace-excluding-exact-preserved-evidence",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(exclude)audits/2026-10-20-kempe-c11-publication-af0df80/review-kempe/multi-normal.stdout",
+        ":(exclude)audits/2026-10-20-kempe-c11-publication-af0df80/review-kempe/multi-seed17.stdout",
+        ":(exclude)audits/2026-10-20-multi-kempe-machines-af0df80/logs/normal.stdout",
+        ":(exclude)audits/2026-10-20-multi-kempe-machines-af0df80/logs/seed17.stdout",
+        ":(exclude)audits/2026-10-20-r6-941-j1-c11-1148ce0/counting/extract-ray.log",
+        ":(exclude)audits/2026-10-20-r6-941-j1-c11-1148ce0/frozen/audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff",
+        ":(exclude)audits/2026-10-20-r6-941-j1-c11-1148ce0/frozen/audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff",
+        ":(exclude)audits/2026-10-20-r6-941-j1-c11-1148ce0/geometry/orbit-ray.log"
+      ],
+      "exit_code": 0,
+      "stdout": "final-checks/scoped-whitespace.stdout",
+      "stderr": "final-checks/scoped-whitespace.stderr",
+      "exceptions": "whitespace-preserved.json"
+    }
+  ],
+  "source_drift": false,
+  "whole_tree_docgraph": {
+    "status": "FAIL",
+    "duplicate_id_errors": 72,
+    "receipt": "review-project/summary.json"
+  }
+}

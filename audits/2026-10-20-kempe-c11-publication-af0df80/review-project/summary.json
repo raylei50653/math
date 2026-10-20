@@ -1,0 +1,159 @@
+{
+  "schema": "math-publication-project-checks-v1",
+  "baseline_head": "af0df8081e79b51f8b24e17e01b2bd5572e46a0a",
+  "head_at_summary": "af0df8081e79b51f8b24e17e01b2bd5572e46a0a",
+  "scope": "Read-only publication checks against frozen baseline HEAD and worktree during initial verification. Logs exclusively in this folder; no Git mutation, source edits or evidence edits. Build uses standard ignored outputs. Final index/new audits and final documentation edits require targeted rechecks.",
+  "checks": [
+    {
+      "name": "lake-build",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "lake",
+        "build",
+        "--no-ansi"
+      ],
+      "exit_code": 0,
+      "log": "lake-build.log",
+      "log_bytes": 7494,
+      "log_sha256": "8104be9d036bacf8bed91d79c2258da89881e2e6652e9d327e3af5292cf7fa71",
+      "interpretation": "Lean build completed successfully: 8832 jobs. Existing style-linter warnings do not invalidate build; does not formalize new paper/audit mathematics."
+    },
+    {
+      "name": "docs-check",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "log": "docs-check.log",
+      "log_bytes": 90,
+      "log_sha256": "dcbb97cd0c3519a4872a4a9315f64d21a007fd9a01b5688beb026df9e6c5ef08",
+      "interpretation": "Starting worktree documentation passed: 703 Markdown files, 9282 local links. Rerun after final documentation integration."
+    },
+    {
+      "name": "docgraph-docs",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": "docgraph-docs.log",
+      "log_bytes": 64,
+      "log_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+      "interpretation": "Formal docs scope passed: 97 documents, 383 relations, 12 families. Not a whole-tree PASS or mathematical closure."
+    },
+    {
+      "name": "docgraph-all",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "log": "docgraph-all.log",
+      "log_bytes": 102053,
+      "log_sha256": "bf08b41e3821e514e5026a16f0b95ae149f72205eed80718ca60a31b4042bda7",
+      "interpretation": "Whole worktree failed with exactly 72 duplicate-id errors in preserved audits/scratch/frozen copies; zero other error kinds. Existing archival scope limitation retained; do not delete evidence to obtain PASS."
+    },
+    {
+      "name": "generated-artifacts",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "log": "generated-artifacts.log",
+      "log_bytes": 118,
+      "log_sha256": "302813759619c89c114213fccb85603491992f410baceef0c265b1360b1f04f4",
+      "interpretation": "Starting index passed: 8004 indexed files, 106 large files with documented exceptions, 166 registered outputs. New untracked audits not covered; rerun after staging."
+    },
+    {
+      "name": "tools-tests",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "log": "tools-tests.log",
+      "log_bytes": 193,
+      "log_sha256": "e176be04d396b94486a2c224bfb64808631bbcb3a4e9467eb014d355aeeef81d",
+      "interpretation": "94 tests passed using pinned requirements."
+    },
+    {
+      "name": "joint-kempe-replay",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python3",
+        "-B",
+        "audits/2026-10-20-joint-kempe-state-1148ce0/check.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "joint-kempe-replay.log",
+      "log_bytes": 1136,
+      "log_sha256": "6b4ea8e2d92b6da3744ef010acc6aade1372b3bd06fc1c2ff5a48e83a9c1997a",
+      "interpretation": "Committed audit replay passed: 17 frozen inputs, zero nonrouting input drift, all four subchecks PASS, output evidence hashes unchanged. j1_source_status remains not triggered; finite scope does not establish source exclusion."
+    },
+    {
+      "name": "docgraph-tests",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/docgraph/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "log": "docgraph-tests.log",
+      "log_bytes": 117,
+      "log_sha256": "23062775cedb84eafd2b59f4a04fbd2439da2f59d6cbf1dcb0ad436bebc67cfe",
+      "interpretation": "18 tests passed."
+    },
+    {
+      "name": "git-diff-check",
+      "cwd": "/home/ray/developer/ai/math",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "git-diff-check.log",
+      "log_bytes": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "interpretation": "Starting worktree passed whitespace check; rerun after final integration."
+    }
+  ]
+}

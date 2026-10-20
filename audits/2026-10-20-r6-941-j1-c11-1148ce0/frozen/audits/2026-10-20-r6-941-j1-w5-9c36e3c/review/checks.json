@@ -1,0 +1,51 @@
+{
+  "runs": [
+    {
+      "PYTHONHASHSEED": null,
+      "exit": 0,
+      "script": "check.py",
+      "stdout": "{\"D_model_remainder\": 50, \"empty_complete_lifts\": 60, \"nonempty_complete_lifts\": 31, \"proper_C7_orbits\": 91, \"sealed_inputs\": 1147, \"smaller_bad_constructed\": false, \"source_excluded\": false, \"status\": \"PASS\"}"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "exit": 0,
+      "script": "check.py",
+      "stdout": "{\"D_model_remainder\": 50, \"empty_complete_lifts\": 60, \"nonempty_complete_lifts\": 31, \"proper_C7_orbits\": 91, \"sealed_inputs\": 1147, \"smaller_bad_constructed\": false, \"source_excluded\": false, \"status\": \"PASS\"}"
+    },
+    {
+      "PYTHONHASHSEED": null,
+      "exit": 0,
+      "script": "check_interface.py",
+      "stdout": "{\"closure_replayed_independently\": false, \"empty_cap_rows\": {\"G\": 4315, \"J1\": 5561, \"Q1\": 5925, \"right\": 2461}, \"initial_zero_states\": 702, \"matrices_sha256\": \"00054d06f2013ebcd6dcde8c2cb8fbd3c245cef5507aa2367aa00bb11c59fa99\", \"method\": \"all complete assignments tested directly against named edge lists; no imported checker code\", \"smaller_bad_constructed\": false, \"source_excluded\": false, \"states\": 7381, \"status\": \"PASS\"}"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "exit": 0,
+      "script": "check_interface.py",
+      "stdout": "{\"closure_replayed_independently\": false, \"empty_cap_rows\": {\"G\": 4315, \"J1\": 5561, \"Q1\": 5925, \"right\": 2461}, \"initial_zero_states\": 702, \"matrices_sha256\": \"00054d06f2013ebcd6dcde8c2cb8fbd3c245cef5507aa2367aa00bb11c59fa99\", \"method\": \"all complete assignments tested directly against named edge lists; no imported checker code\", \"smaller_bad_constructed\": false, \"source_excluded\": false, \"states\": 7381, \"status\": \"PASS\"}"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/check.py",
+        "--certificate",
+        "audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/negative-relation.json"
+      ],
+      "exit": 1,
+      "last_error": "AssertionError"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/check_interface.py",
+        "--source",
+        "audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/negative-interface.json.gz"
+      ],
+      "exit": 1,
+      "last_error": "AssertionError"
+    }
+  ],
+  "status": "PASS"
+}

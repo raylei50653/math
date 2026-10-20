@@ -1,0 +1,155 @@
+{
+  "stage": "Final, including active probe/filter/inverse-restore extension.",
+  "supersedes_artifact_hashes_in": "verification.json",
+  "checks": {
+    "diff-v2": {
+      "name": "diff-v2",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "seconds": 0.02
+    },
+    "docs-v2": {
+      "name": "docs-v2",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "returncode": 0,
+      "seconds": 1.11
+    },
+    "normal-v2": {
+      "name": "normal-v2",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-kempe-residual-iteration-af0df80/check.py"
+      ],
+      "returncode": 0,
+      "seconds": 3.099
+    },
+    "seed17-v2": {
+      "name": "seed17-v2",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-kempe-residual-iteration-af0df80/check.py"
+      ],
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "returncode": 0,
+      "seconds": 3.045
+    }
+  },
+  "retained_earlier_checks": {
+    "docgraph-all": {
+      "name": "docgraph-all",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "returncode": 1,
+      "seconds": 7.63
+    },
+    "docgraph-docs": {
+      "name": "docgraph-docs",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "returncode": 0,
+      "seconds": 0.334
+    },
+    "negative-controls": [
+      {
+        "name": "exclusive-main",
+        "rejected": true,
+        "returncode": 1
+      },
+      {
+        "name": "exclusive-phase",
+        "rejected": true,
+        "returncode": 1
+      },
+      {
+        "name": "drop-informative-identity-phases",
+        "rejected": true,
+        "returncode": 1
+      }
+    ]
+  },
+  "probe_negative_controls": [
+    {
+      "name": "exclusive-probe-certificate",
+      "rejected": true
+    },
+    {
+      "name": "wrong-round-trip-upper-bound",
+      "rejected": true
+    }
+  ],
+  "audit_links": {
+    "local_links": 29,
+    "errors": []
+  },
+  "frozen_inputs": 11,
+  "frozen_drift": [],
+  "previous_audit_drift": [],
+  "artifact_sha256": {
+    "BASE.json": "ba3d4cfc1f60c1bd9a5a990afc32ddfb3fe3155c522fe3178ccc14543e7fa145",
+    "INPUTS.json": "19d397a4b9e507cd690c6a30d931bbdc9c27542c7d6b89f9f58cef95dc66f4f4",
+    "REPORT.md": "a686be26a86b8ea3d3a7dec4928c5e8fc88ce0bd9234873100c942b196e2de42",
+    "SOURCE_CONTRACT.md": "224844f7e182c4bc95a49019d571556efaf32ba83421d319ac4f1ce050d2584c",
+    "check.py": "785355729f2ad0a1fc58667992a033dd9731fd73d978a78565f52fcb0fa8804a",
+    "experiment/RESULT.md": "5936d4757811dbf00834a1f468d22872d0289aba6bd6078f4b6f682d70ae3a1b",
+    "experiment/certificate.json": "86c4af15ea6fd14902d27d2f578fb6ee750c2d52d8fe59aaf0a4b00cd165483c",
+    "experiment/check.py": "fae6f773d6d4cd3f1678daf7e02859ce2765ca5b59c50d879e9e3b5fa17594d3",
+    "experiment/generate.log": "430aff07301cf873e4420cf6b57b6838070ce19bffaa1432d881f79e551e74b0",
+    "experiment/negative_controls.log": "39a7b88a9b2cdbb5be7e1e7b11f474f4acd161b64a182f3e14ca0ecaaf8b441a",
+    "experiment/replay.log": "430aff07301cf873e4420cf6b57b6838070ce19bffaa1432d881f79e551e74b0",
+    "experiment/seed17.log": "37457d0d8a304a5a392c535607f6666e233119778e91ec0439913b3a1298a0c5",
+    "phase.json": "4db972ed4b7c8d9da7156e78c0e88ed2a647db135671635da5e9af2c90a8292b",
+    "phase.py": "7b69f31e2bed359cfe96946ac01c9a6cdd3d3377e29b79d7b27ee09249faa9a8",
+    "probe.json": "58492d3930606a204e35abe534c4f3e973c7812cdc16a468e57ad0a2732a6bcc",
+    "probe.py": "721e71254fd89d3bd97e2a0967cd6ddc783f326746aee5a0f69144a85cca8df9",
+    "review/REVIEW.md": "e38fcd2d9ae201a37a22549dcb36a3fde4790e9c3de3438e8151aa55c5f58ed6",
+    "review/check_probe.py": "29abff893c7a9d6d9dd7a1ac2d1d0d0dcd13a96b568a23078605a44a96104f85",
+    "review/check_residual.py": "408240aa63fdfff5d2a6c80d9ec0e0baa39c0dc909a2b74def67cd1279a7dfc1",
+    "review/compare_residual_phase.py": "32f544dcb59af3931c6949e88e6002982a07dc83d6883afe00a266cc97151c50",
+    "review/cross_review.json": "781809c3af6d14ca842cd34c405e6ae5f9ac9851609a148563609250d0a62009",
+    "review/independent_residual_certificate.json": "87cd3e409139ea7f020eb7545043c3c80a2a63780dba87d74efcab26c1d34c8a",
+    "review/probe_review.json": "a98e45a344ccae3d244233c214060d1844375e84b570fec048dc7c39426f5e2d",
+    "theory/REPORT.md": "b7c5b9176bc2d2b8eabcb4def568d19fe912ecb8c97c89a10f3d74094bbb5e02",
+    "verification.json": "8e7c547aa2d938d0d716730cfaf219424823904358b9e7c7aa44bcb1211c08be"
+  },
+  "docgraph_all": {
+    "status": "FAIL",
+    "duplicate_id_count": 72,
+    "this_audit_in_diagnostics": false
+  },
+  "new_lean": false,
+  "lake_build_rerun": false,
+  "j1_source_status": "not triggered",
+  "active_probe_result": {
+    "double_fibres": 72,
+    "probe_length_1": 48,
+    "probe_length_2": 24,
+    "actual_branches": 144,
+    "max_scheme_round_trip": 4,
+    "round_trip_optimality": false
+  },
+  "semantic_scope": "Arbitrary finite history exactness; active strict candidate decrease only under future distinguishability; no graph size decrease.",
+  "commit_or_push": false,
+  "git_status": " M docs/STATUS.md\n M docs/c5_kempe_guide.md\n M docs/c5_state_guide.md\n?? audits/2026-10-20-kempe-residual-iteration-af0df80/\n?? audits/2026-10-20-multi-kempe-machines-af0df80/\n?? audits/2026-10-20-r6-941-j1-c11-1148ce0/\n"
+}

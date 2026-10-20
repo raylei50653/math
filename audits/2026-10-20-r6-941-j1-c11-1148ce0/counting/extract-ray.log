@@ -1,0 +1,76 @@
+Running HiGHS 1.12.0 (git hash: 4f96ee8): Copyright (c) 2025 HiGHS under MIT licence terms
+LP has 29534 rows; 44023 cols; 827109 nonzeros
+Coefficient ranges:
+  Matrix  [1e+00, 8e+00]
+  Cost    [1e+00, 1e+00]
+  Bound   [0e+00, 0e+00]
+  RHS     [1e+00, 1e+00]
+Presolving model
+25125 rows, 28211 cols, 694469 nonzeros  0s
+19594 rows, 22680 cols, 705922 nonzeros  0s
+Dependent equations search running on 19344 equations with time limit of 2.40s
+Dependent equations search terminated after 0.0242s due to expected time exceeding limit
+19354 rows, 22440 cols, 707657 nonzeros  0s
+Presolve reductions: rows 19354(-10180); columns 22440(-21583); nonzeros 707657(-119452) 
+Solving the presolved LP
+Using EKK dual simplex solver - serial
+  Iteration        Objective     Infeasibilities num(sum)
+          0     0.0000000000e+00 Pr: 10(12); Du: 0(5.83509e-09) 0s
+       3678     1.2143329555e+02 Pr: 9136(353892); Du: 0(4.83656e-07) 8s
+       5905     1.9056891305e+02 Pr: 11913(635481); Du: 0(4.04518e-07) 14s
+       7693     2.4296424863e+02 Pr: 13349(666666); Du: 0(1.80906e-07) 21s
+       8666     2.8841606596e+02 Pr: 13649(92416.3); Du: 0(1.98876e-07) 28s
+       9766     3.6421236884e+02 Pr: 13842(938044); Du: 0(2.2013e-07) 40s
+      10522     4.8516522019e+02 Pr: 13686(435769); Du: 0(3.69199e-07) 50s
+      11169     7.0972395463e+02 Pr: 13656(2.70142e+06); Du: 0(7.73014e-07) 62s
+      11271     7.7776912315e+02 Pr: 13589(4.20154e+06); Du: 0(6.83372e-07) 70s
+      11604     1.2205031566e+03 Pr: 13530(602437); Du: 0(6.96714e-07) 82s
+      11793     1.7711615383e+03 Pr: 13519(1.53739e+07); Du: 0(8.01976e-07) 93s
+      11967     3.7371595675e+03 Pr: 13394(1.28541e+06); Du: 0(8.58903e-07) 102s
+      12026     6.0766408017e+04 Pr: 13544(2.26585e+08); Du: 0(7.86447e-07) 110s
+      12027     8.4514222967e+05 Pr: 13547(2.26458e+09); Du: 0(7.92009e-07) 118s
+      12027     8.4514222967e+05 118s
+Using EKK dual simplex solver - serial
+  Iteration        Objective     Infeasibilities num(sum)
+      12027     8.4478384443e+05 Pr: 13539(3.71341e+09); Du: 0(3.34295e-06) 118s
+      12027     8.4478384443e+05 118s
+Model status        : Infeasible
+Simplex   iterations: 12027
+Objective value     :  8.4475977705e+05
+HiGHS run time      :        118.44
+status HighsModelStatus.kInfeasible
+Solving LP to try to compute dual ray
+LP has 29534 rows; 44023 cols; 827109 nonzeros
+Coefficient ranges:
+  Matrix  [1e+00, 8e+00]
+  Cost    [0e+00, 0e+00]
+  Bound   [0e+00, 0e+00]
+  RHS     [1e+00, 1e+00]
+Solving LP without presolve or useful basis
+Using EKK dual simplex solver - serial
+  Iteration        Objective     Infeasibilities num(sum)
+          0     0.0000000000e+00 Pr: 10(22); Du: 0(5.87549e-09) 118s
+       3506     2.3906713312e-04 Pr: 7321(363697); Du: 0(6.01094e-06) 126s
+       5517     3.9752831833e-04 Pr: 10110(724203); Du: 0(6.84943e-06) 133s
+       7266     5.0803640762e-04 Pr: 11776(1.9356e+06); Du: 0(6.41477e-06) 140s
+       9020     6.0537291714e-04 Pr: 13623(189499); Du: 0(1.00699e-05) 150s
+       9923     6.5906522933e-04 Pr: 14548(361089); Du: 0(7.31791e-06) 156s
+      10908     7.2341856448e-04 Pr: 15275(148597); Du: 0(9.39333e-06) 162s
+      11898     7.7976199024e-04 Pr: 15976(448190); Du: 0(9.93589e-06) 171s
+      13011     8.3636164251e-04 Pr: 16546(102504); Du: 0(9.68347e-06) 182s
+      14132     9.1132524888e-04 Pr: 17076(180104); Du: 0(9.82327e-06) 196s
+      15381     1.0021817749e-03 Pr: 17534(259428); Du: 0(1.06952e-05) 215s
+      16675     1.1228380869e-03 Pr: 17839(180905); Du: 0(1.10241e-05) 236s
+      17138     1.1771446777e-03 240s
+
+Model status        : Time limit reached
+Simplex   iterations: 17138
+Objective value     :  0.0000000000e+00
+P-D objective error :  0.0000000000e+00
+HiGHS run time      :        240.01
+No dual ray found
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-c11-1148ce0/counting/extract_ray.py", line 36, in <module>
+    assert exists,(status,exists)
+           ^^^^^^
+AssertionError: (<HighsStatus.kOk: 0>, False)

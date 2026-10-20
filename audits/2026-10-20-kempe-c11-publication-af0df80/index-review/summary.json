@@ -1,0 +1,162 @@
+{
+  "schema": "math-publication-independent-index-review-v1",
+  "status": "PASS_WITH_DOCUMENTED_SCOPE_LIMITATIONS",
+  "baseline_head": "af0df8081e79b51f8b24e17e01b2bd5572e46a0a",
+  "invocation_argv": [
+    "python3",
+    "-B",
+    "audits/2026-10-20-kempe-c11-publication-af0df80/index-review/independent_index_review.py"
+  ],
+  "invocation_exit_code": 0,
+  "custody": "custody.json",
+  "custody_sha256": "065a463bf1988c54ec2d0fb07f6f01f638a8f4d070e3cf8f8c6b634a0f46e376",
+  "checks": [
+    {
+      "name": "docs",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "docs.stdout",
+      "stdout_bytes": 90,
+      "stdout_sha256": "d4da8dc61b65ad62fa36217e80f301ed118ec85beda9554989ffd0abdcd88131",
+      "stdout_encoding": "raw",
+      "stored_stdout_bytes": 90,
+      "stored_stdout_sha256": "d4da8dc61b65ad62fa36217e80f301ed118ec85beda9554989ffd0abdcd88131",
+      "stderr": "docs.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docgraph-docs",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "docgraph-docs.stdout",
+      "stdout_bytes": 64,
+      "stdout_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+      "stdout_encoding": "raw",
+      "stored_stdout_bytes": 64,
+      "stored_stdout_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+      "stderr": "docgraph-docs.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docgraph-all",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "docgraph-all.stdout",
+      "stdout_bytes": 67,
+      "stdout_sha256": "214ce6f854ff299bfbe99d599b539a6dde6bcefbb96aa8beb36f7bb643c5f293",
+      "stdout_encoding": "raw",
+      "stored_stdout_bytes": 67,
+      "stored_stdout_sha256": "214ce6f854ff299bfbe99d599b539a6dde6bcefbb96aa8beb36f7bb643c5f293",
+      "stderr": "docgraph-all.stderr",
+      "stderr_bytes": 101986,
+      "stderr_sha256": "4862f2a4895a14b7cc48da66d057387e1c5e5bb956957edb05c9323a637d766a",
+      "error_kinds": {
+        "duplicate-id": 72
+      },
+      "interpretation": "Known archival duplicate IDs retained; formal docs pass reported separately."
+    },
+    {
+      "name": "artifact-policy",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/check_generated_artifacts.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "artifact-policy.stdout",
+      "stdout_bytes": 118,
+      "stdout_sha256": "480d3440cedfd6f0846944a4cbb394b01554ec1f530da5527658d92eb1121f30",
+      "stdout_encoding": "raw",
+      "stored_stdout_bytes": 118,
+      "stored_stdout_sha256": "480d3440cedfd6f0846944a4cbb394b01554ec1f530da5527658d92eb1121f30",
+      "stderr": "artifact-policy.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "scoped-whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(exclude)audits/2026-10-20-kempe-c11-publication-af0df80/review-kempe/multi-normal.stdout",
+        ":(exclude)audits/2026-10-20-kempe-c11-publication-af0df80/review-kempe/multi-seed17.stdout",
+        ":(exclude)audits/2026-10-20-multi-kempe-machines-af0df80/logs/normal.stdout",
+        ":(exclude)audits/2026-10-20-multi-kempe-machines-af0df80/logs/seed17.stdout",
+        ":(exclude)audits/2026-10-20-r6-941-j1-c11-1148ce0/counting/extract-ray.log",
+        ":(exclude)audits/2026-10-20-r6-941-j1-c11-1148ce0/frozen/audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff",
+        ":(exclude)audits/2026-10-20-r6-941-j1-c11-1148ce0/frozen/audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff",
+        ":(exclude)audits/2026-10-20-r6-941-j1-c11-1148ce0/geometry/orbit-ray.log"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "scoped-whitespace.stdout",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_encoding": "raw",
+      "stored_stdout_bytes": 0,
+      "stored_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "scoped-whitespace.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preserved-whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "preserved-whitespace.stdout.gz",
+      "stdout_bytes": 8820,
+      "stdout_sha256": "c7682a0e1dff1a353235bfbdb41899b5fe3b4d2f4d8ee7449dc986c2ff85af3c",
+      "stdout_encoding": "gzip",
+      "stored_stdout_bytes": 555,
+      "stored_stdout_sha256": "b6b3218670be1f5a4c1097eeb101cfb19819ccb4dfd91a655240795af221cdfc",
+      "stderr": "preserved-whitespace.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_count": 29,
+      "path_count": 8,
+      "interpretation": "Exactly the 29 declared warnings in eight sealed evidence/review stdout paths; scoped check is clean."
+    }
+  ],
+  "index_changed_during_review": false,
+  "source_evidence_drift": false,
+  "mathematical_closure_claim": false,
+  "interpretation": "Independent Git blob review confirms original sealed source, full indexed frozen dependencies including empty files, exact seven policy additions and connected staging scope. Whole-tree archival duplicate IDs and declared original evidence whitespace remain explicitly reported."
+}

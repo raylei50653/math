@@ -1,0 +1,36 @@
+{
+  "base": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+  "cap_check_negative_controls": 8,
+  "checks": [
+    {
+      "command": "python3 -B audits/2026-10-19-r6-941-acceptance-13dc5ff/B/check.py",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-19-r6-941-acceptance-13dc5ff/B/check.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -B audits/2026-10-19-r6-941-acceptance-13dc5ff/B/check_contacts.py",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-19-r6-941-acceptance-13dc5ff/B/check_contacts.py",
+      "exit_code": 0
+    }
+  ],
+  "contact_check_negative_controls": 4,
+  "normal_seed17_identical": true,
+  "sha256": {
+    "CONTACT_INPUTS.json": "ad186bc0ac3c8d212808d97bf9b065e7e733ef8af3789f2cab35fe3a85b8de6d",
+    "cap-lifts.json": "522e218747004bb22129e48dfc5fc0d12559b538d975cf2ca25c41910cb08df5",
+    "certificate.json": "2d4067a8a5c4970af5345a443af17cb7ce2f7bf7194f67cbbdc3bd48c5ce2288",
+    "check-normal.log": "aa8c67ae241006e7655210f44762e098cd47095806ce5b03f44db9c7917a7368",
+    "check-seed17.log": "aa8c67ae241006e7655210f44762e098cd47095806ce5b03f44db9c7917a7368",
+    "check.py": "de4fe6b65f432d3f54737d3f684a5e4201f39d8067d242343067b4af9e3ae756",
+    "check_contacts.py": "319bb8df6542b34c728e8bf4d3cd67b0c57fc0dc28a3a019356f0ba99dd275ed",
+    "contacts-normal.log": "e49b91187df041ca050d3ca85f8d84650f0056a5ee3377194e516ddef961ce2a",
+    "contacts-seed17.log": "e49b91187df041ca050d3ca85f8d84650f0056a5ee3377194e516ddef961ce2a",
+    "contacts.json": "37cfe913c14adee9284b30b7d4467aabbebd6e4c15aafb8def165a35abd085b6"
+  }
+}

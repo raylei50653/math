@@ -1,0 +1,182 @@
+{
+  "scope": "Fixed cell95 264 literal proper colorings, three same-witness monitors, original boundary roots.",
+  "checks": {
+    "diff-final": {
+      "name": "diff-final",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0
+    },
+    "diff": {
+      "name": "diff",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "seconds": 0.018
+    },
+    "docgraph-all": {
+      "name": "docgraph-all",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "returncode": 1,
+      "seconds": 1.675
+    },
+    "docgraph-docs": {
+      "name": "docgraph-docs",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "returncode": 0,
+      "seconds": 0.1
+    },
+    "docs-final": {
+      "name": "docs-final",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "returncode": 0
+    },
+    "docs": {
+      "name": "docs",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.784
+    },
+    "lake": {
+      "name": "lake",
+      "argv": [
+        "lake",
+        "build"
+      ],
+      "returncode": 0,
+      "seconds": 3.743
+    },
+    "negative-controls": [
+      {
+        "name": "exclusive-experiment",
+        "returncode": 1,
+        "rejected": true
+      },
+      {
+        "name": "exclusive-coupling",
+        "returncode": 1,
+        "rejected": true
+      },
+      {
+        "name": "exclusive-review",
+        "returncode": 1,
+        "rejected": true
+      },
+      {
+        "name": "corrupted-temporal-path-count",
+        "returncode": 1,
+        "rejected": true
+      }
+    ],
+    "normal": {
+      "name": "normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-multi-kempe-machines-af0df80/check.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.95
+    },
+    "seed17": {
+      "name": "seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-multi-kempe-machines-af0df80/check.py"
+      ],
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "returncode": 0,
+      "seconds": 0.942
+    }
+  },
+  "audit_links": {
+    "files": [
+      "REPORT.md",
+      "SOURCE_CONTRACT.md",
+      "experiment/RESULT.md",
+      "review/REVIEW.md",
+      "theory/REPORT.md"
+    ],
+    "local_links_checked": 34,
+    "errors": []
+  },
+  "frozen_input_count": 12,
+  "frozen_input_drift": [],
+  "artifact_sha256": {
+    "BASE.json": "58635c367f51963e7dfe77c836ce86017067f773fe353209bc8e3cd3db13071d",
+    "INPUTS.json": "cafb93fb12295a3f348aaf5a073d45565c7aafec3970daf33abaf95694884fe6",
+    "REPORT.md": "e670a0ae008d512bb4f2fb21387ecf7c1beddb5e5cdf08095ae825678e1aa6cb",
+    "SOURCE_CONTRACT.md": "4fdd2a77b02681ae32e9d2bf1ec15119f4aac5740b0a59f72f54d05802c41343",
+    "check.py": "4d3191712b981877d892c276077d8229fbbe281ecb5f1258ad163234abcfaeb1",
+    "coupling-v2.json": "98b5586e7ae1c7170ac0462e3c50c7a8614d45c7876cbe64f1077f54058ae1a6",
+    "coupling.json": "125ab3c5f5e37581c06d2d09c3bd7c60133856cf7adb2a22814c6fc41e34f001",
+    "coupling.py": "5a50216d93a0bd7d9d5d41788cb25c44d813b2e9ba8db601e588d0a7f0efe65b",
+    "experiment/RESULT.md": "20a276f67c59f9403a84c934c3b33bc13625785a3a09c33ad0020c239e6ca5d3",
+    "experiment/certificate.json": "feed98beeb5f83e29bf9c690283aff5d768d4f1e8ba0504f0422560fddeea6dc",
+    "experiment/check.py": "de5475bf9acb9c2715891d440593157bb48b13c702448e4ce530312e82299411",
+    "experiment/generate.log": "5489e0554611ea12267f6538bd36e658a0f0c5dced464812c2122177652b22af",
+    "experiment/negative_controls.log": "1e241032e50f16320b08a7fea49c7fe704f18c0be868fe26a2a8cae05fbe422f",
+    "experiment/replay.log": "5489e0554611ea12267f6538bd36e658a0f0c5dced464812c2122177652b22af",
+    "experiment/seed17.log": "c53bffdfd3415f0235cd338c98831df4550d56d3791454d8bda12afafd28acb2",
+    "review/REVIEW.md": "4f0e034c72c770d249577cf345b11c2232ebd023885870cede41af73fb00e584",
+    "review/check_independent.py": "470af529235e418bdcd210045f0d72b072116a41161e9a27b5a8c4a9e96bb8df",
+    "review/compare_certificates.py": "c765535b820fafa0bf0039f24888137b6399b0ead75827ab29feadef66195a8c",
+    "review/cross_review.json": "7ab416ceceeb108ea0b8138e3960aa5f8e12e5224a6f253c8c2c5f5a927c784e",
+    "review/final_check.log": "c82747c1b712a36040afe8ba0085c1f9cf2f90aea019acba1119a8d0a48d7f3e",
+    "review/generate.log": "c82747c1b712a36040afe8ba0085c1f9cf2f90aea019acba1119a8d0a48d7f3e",
+    "review/independent_certificate.json": "50e524737cd6db0734525cee6075cfed8d410bd0bf066479bd76b71d8f2e9d76",
+    "theory/REPORT.md": "b0e0de8d74a8b21b68ec2be78ed9c53822e73213abaa722393845e1712fa46c8",
+    "theory/check.py": "e24d58e546a4355149c4e42729190f20effc52ea27205626823be1be60e65288"
+  },
+  "docgraph_all": {
+    "status": "FAIL",
+    "duplicate_id_diagnostic_count": 72,
+    "this_audit_named_in_diagnostics": false,
+    "scope": "Retained historical duplicate-ID errors; formal docs pass separately."
+  },
+  "semantic_cross_review": "theory agent reviewed integrated report and guide; two wording corrections applied; no blocking finding.",
+  "new_lean": false,
+  "j1_source_status": "not triggered",
+  "commit_or_push_performed": false,
+  "unchanged_entrypoints": [
+    "README.md",
+    "docs/HANDOFF.md",
+    "docs/c5_kempe_guide.md"
+  ],
+  "updated_entrypoints": [
+    "docs/c5_state_guide.md",
+    "docs/STATUS.md"
+  ],
+  "final_git_status": " M docs/STATUS.md\n M docs/c5_kempe_guide.md\n M docs/c5_state_guide.md\n?? audits/2026-10-20-multi-kempe-machines-af0df80/\n?? audits/2026-10-20-r6-941-j1-c11-1148ce0/\n",
+  "invocation_correction": "Frozen geometry checker first called with --check, which rejected usage; corrected positional check completed successfully.",
+  "custody": "Frozen inputs preserved. coupling.json v1 retained; coupling-v2.json is current. Independent review development-time certificate regeneration is disclosed in review/REVIEW.md."
+}

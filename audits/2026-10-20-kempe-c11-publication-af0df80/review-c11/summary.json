@@ -1,0 +1,220 @@
+{
+  "status": "PASS scoped publication review",
+  "reviewer": "independent read-only c11 subagent",
+  "root_head_at_review_start": "af0df8081e79b51f8b24e17e01b2bd5572e46a0a",
+  "evidence_base": "1148ce026aaf764e6e2766aebc096eebe193ed13",
+  "audit": "audits/2026-10-20-r6-941-j1-c11-1148ce0",
+  "normal_and_seed17_passed": true,
+  "normal_seed17_math_equal": true,
+  "comparison_ignored_fields": [
+    "results[].progress[].elapsed_seconds"
+  ],
+  "compact_controls": {
+    "negative_controls": [
+      {
+        "name": "swap_two_signs_preserving_64_68_totals",
+        "reason": "signed halfrows do not give exactly the two complete fibres",
+        "rejected": true
+      },
+      {
+        "name": "change_actual_witness",
+        "reason": "",
+        "rejected": true
+      },
+      {
+        "name": "omit_halfrow",
+        "reason": "",
+        "rejected": true
+      },
+      {
+        "name": "change_literal_frame",
+        "reason": "",
+        "rejected": true
+      }
+    ],
+    "numeric_solver_used": false,
+    "original_valid": true,
+    "reordered_semantically_identical_rows_valid": true,
+    "status": "PASS"
+  },
+  "independent_negative_controls": [
+    {
+      "negative_control": "drop-active-halfrow",
+      "rejected": true,
+      "reason": "positive coefficient on nonnegative core variable"
+    },
+    {
+      "negative_control": "excess-witness-weight",
+      "rejected": true,
+      "reason": "positive coefficient on nonnegative core variable"
+    },
+    {
+      "negative_control": "omit-zero-halfrows",
+      "rejected": true,
+      "reason": "positive coefficient on nonnegative Kempe orbit variable"
+    },
+    {
+      "negative_control": "uncancelled-signed-span",
+      "rejected": true,
+      "reason": "signed planar-span coordinate was not cancelled"
+    },
+    {
+      "negative_control": "flip-live-multiplier",
+      "rejected": true,
+      "reason": "positive coefficient on nonnegative core variable"
+    },
+    {
+      "negative_control": "drop-positive-witness",
+      "rejected": true,
+      "reason": ""
+    },
+    {
+      "negative_control": "omit-orbit-slack",
+      "rejected": true,
+      "reason": "nonnegative slack manifest differs"
+    }
+  ],
+  "negative_seal_rejected": true,
+  "seal_inventory": {
+    "status": "PASS frozen inputs, sealed outputs, and original validation receipts",
+    "frozen_input_count": 1240,
+    "sealed_output_count": 33,
+    "original_validation_receipts_checked": 21,
+    "total_files": 1368,
+    "total_bytes": 158539348,
+    "non_frozen_files": 128,
+    "non_frozen_bytes": 78793739,
+    "largest_non_frozen": [
+      {
+        "path": "geometry/span-only-discovery.pickle",
+        "bytes": 38534914,
+        "sha256": "dc7c4792cc04ccecba226c1c6647cd23deae26c8613213b46ce1608242e4d501"
+      },
+      {
+        "path": "geometry/span-rank-discovery.npz",
+        "bytes": 18150926,
+        "sha256": "5a1a4f6cd18f7a9a9f06d026f20a612af1acc391d87139f7e629931f9bd99d84"
+      },
+      {
+        "path": "counting/discovery.pickle",
+        "bytes": 15701113,
+        "sha256": "6a6166ebf48f89b1828b0529f875775dfcea3798fc514eca288172af13ab962d"
+      },
+      {
+        "path": "counting/direct-dual.pickle",
+        "bytes": 1886517,
+        "sha256": "f0da0281df0e51ae292ee4dde539fe6a73430107913151993671d1e936f47ebb"
+      },
+      {
+        "path": "reduction/span-normalized-result.pickle",
+        "bytes": 442763,
+        "sha256": "4aec1ed6396fa0c114b0cb7ae9a4a6c43e7e0c28e9ca808d4dd200aedaeff6c2"
+      },
+      {
+        "path": "INPUTS.json",
+        "bytes": 437448,
+        "sha256": "f692d9bfb25a12de63ef520c55db64963e11ea0b9568105f33f868e782081f28"
+      },
+      {
+        "path": "geometry/orbit-only-dual-ray.pickle",
+        "bytes": 276629,
+        "sha256": "a867da48d4c423843b13f152991bc44481e5d06e83ef606201f3d08b7d239594"
+      },
+      {
+        "path": "review/dual-negative-uncancelled-signed-span.json",
+        "bytes": 220826,
+        "sha256": "557b2a22bf69aef9e5ebf2f83713c6063c92eaf6c507a57204fe8ee430a05e06"
+      }
+    ]
+  },
+  "source_contract_findings": [
+    "Same actual F prime equals G minus b,p,h,R,x,y,r, with ordered rim a,n,u2,u1,L,q,c,s,v,w,t.",
+    "No deletion of n; every original private vertex, n neighbor, edge, rotation, and attachment remains in the disk.",
+    "Z indexes complete fixed-labelled-colour fibres of this same disk, with all empty fibres retained.",
+    "Actual selected J1 residual complete colouring gives only the positive sum Z5093+Z5100>=1, without separately requiring either summand positive.",
+    "Caps are Cartesian products over the same complete core colouring; all other rim values and cap R are re-quantified.",
+    "Complete complementary-palette swaps include invisible private components through nonnegative integral multiplicity 2^q.",
+    "Source-to-finite-family authority is the paper disk-arc argument in geometry/PROOF.md and reduction/ORBIT_LEMMA.md; integer replay does not claim this topology is formalized in Lean.",
+    "Exact certificate uses 64 positive and 68 negative halfrows; 20794 surviving orbit columns cancel, and 15693 other columns are forced zero by nonnegative zero-row equations.",
+    "The final identity is 16*(Z5093+Z5100)=0, contradicting the actual selected positive fibre sum.",
+    "All final runtime dependencies are within sealed audit scripts/data or frozen inputs; unsealed pickle/npz discoveries do not enter the final top-level replay."
+  ],
+  "closure": {
+    "n_ge_6_named_original_J1_W5_three_edge_induced_C11_branch_excluded": true,
+    "inherited_n_eq_5_accepted_from_frozen_completed_audit": true,
+    "combined_original_J1_W5_three_edge_branch_closed": true,
+    "type_III_actual_12_colour_n_L_simple_paths_at_least_five_edges": true,
+    "general_J1_J2_closed": false,
+    "general_smaller_bad_constructed": false,
+    "main_theorem_closed": false,
+    "new_Lean": false
+  },
+  "documentation_review": {
+    "current_top_STATUS_and_Kempe_guide_scoped_claims_supported": true,
+    "historical_routing_issue_reported_to_root": [
+      "docs/c5_kempe_guide.md line 150 retains an old short-C11-survives statement in the 2026-10-19 chains discussion; mark it explicitly as historical and route the named W5 successor without broadening to other short paths.",
+      "docs/STATUS.md line 50 retains the old chains short-C11-survives bullet; add a precise successor note."
+    ],
+    "root_says_it_will_fix_historical_routing": true,
+    "frozen_reports_must_remain_byte_identical": true
+  },
+  "publication_artifacts": {
+    "individual_files_over_100_MB": false,
+    "unsealed_exploration_pickles_and_npz_preserved": true,
+    "original_run_control_scripts_write_once": true,
+    "independent_negatives_replayed_existing_corrupt_json_without_mutating_audit": true,
+    "review_writes_only_tmp": true
+  },
+  "evidence_logs": [
+    {
+      "path": "commands.json",
+      "bytes": 3273,
+      "sha256": "0c4464c1856adbea6bd31d2e0e430114d7afb878a9bb42dcc53b02d9b688ee44"
+    },
+    {
+      "path": "normal.log",
+      "bytes": 3512,
+      "sha256": "bd4399b6fac4416298978fefcefc32f9f8be54d1cd03dd954b754893789ef2ab"
+    },
+    {
+      "path": "seed17.log",
+      "bytes": 3512,
+      "sha256": "014504722cb07be7686c3b65f44e9650c26d9f873db5eee69a8e8c734a79d6dc"
+    },
+    {
+      "path": "compact-controls.log",
+      "bytes": 483,
+      "sha256": "59cb495863b93ac4130716dbb2e32d2d793663f28d3e349b36f6b0be245dea3f"
+    },
+    {
+      "path": "independent-controls.log",
+      "bytes": 1901,
+      "sha256": "972e3daaac985057516be02544ba5f415c885de928190e0c4bbae62e6e1d4686"
+    },
+    {
+      "path": "negative-seal.log",
+      "bytes": 660,
+      "sha256": "c024a09730667b3903ebd65f5a070eb7ec8a64e8ea6f7958ba5ddb949bd89205"
+    },
+    {
+      "path": "inventory.json",
+      "bytes": 17111,
+      "sha256": "d44c1fed981caef7f11addfb2b615c36d269e19d224d9bec2205fb85fea7dd21"
+    },
+    {
+      "path": "inventory.py",
+      "bytes": 1505,
+      "sha256": "6ee42096f57e4bc6246a82bb4ad49eac1cc8018c9ab77e5ee57f13ce6575c974"
+    },
+    {
+      "path": "independent_controls.py",
+      "bytes": 751,
+      "sha256": "1495e330fe933b3ffcf992c29341fde2b0ff82eec2b244ef653ae49bd1a5d16f"
+    },
+    {
+      "path": "invalid-seal.json",
+      "bytes": 4451,
+      "sha256": "0aff33f4fa37f074c282dc0e79941603309610ef9f3b75f12c015bfba2a7d1da"
+    }
+  ]
+}

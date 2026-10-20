@@ -1,0 +1,126 @@
+{
+  "cwd": "/home/ray/developer/ai/math",
+  "commands": [
+    {
+      "name": "normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-941-j1-c11-1148ce0/check.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "stdout": {
+        "path": "normal.log",
+        "bytes": 3512,
+        "sha256": "bd4399b6fac4416298978fefcefc32f9f8be54d1cd03dd954b754893789ef2ab"
+      },
+      "stderr_empty": true
+    },
+    {
+      "name": "seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-941-j1-c11-1148ce0/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "stdout": {
+        "path": "seed17.log",
+        "bytes": 3512,
+        "sha256": "014504722cb07be7686c3b65f44e9650c26d9f873db5eee69a8e8c734a79d6dc"
+      },
+      "stderr_empty": true
+    },
+    {
+      "name": "compact_controls",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-941-j1-c11-1148ce0/counting/controls.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "stdout": {
+        "path": "compact-controls.log",
+        "bytes": 483,
+        "sha256": "59cb495863b93ac4130716dbb2e32d2d793663f28d3e349b36f6b0be245dea3f"
+      },
+      "stderr_empty": true
+    },
+    {
+      "name": "independent_negative_controls",
+      "argv": [
+        "python3",
+        "-B",
+        "-"
+      ],
+      "stdin_script": {
+        "path": "independent_controls.py",
+        "bytes": 751,
+        "sha256": "1495e330fe933b3ffcf992c29341fde2b0ff82eec2b244ef653ae49bd1a5d16f"
+      },
+      "environment": {},
+      "exit_code": 0,
+      "stdout": {
+        "path": "independent-controls.log",
+        "bytes": 1901,
+        "sha256": "972e3daaac985057516be02544ba5f415c885de928190e0c4bbae62e6e1d4686"
+      },
+      "stderr_empty": true,
+      "replay_equivalent_argv": [
+        "python3",
+        "-B",
+        "independent_controls.py"
+      ]
+    },
+    {
+      "name": "negative_seal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-941-j1-c11-1148ce0/check.py",
+        "--seal",
+        "/tmp/c11-publication-invalid-seal.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "combined_stdout_stderr": {
+        "path": "negative-seal.log",
+        "bytes": 660,
+        "sha256": "c024a09730667b3903ebd65f5a070eb7ec8a64e8ea6f7958ba5ddb949bd89205"
+      },
+      "invalid_seal": {
+        "path": "invalid-seal.json",
+        "bytes": 4451,
+        "sha256": "0aff33f4fa37f074c282dc0e79941603309610ef9f3b75f12c015bfba2a7d1da"
+      },
+      "expected_failure": true,
+      "assertion": "sealed drift, BASE.md"
+    },
+    {
+      "name": "integrity_inventory",
+      "argv": [
+        "python3",
+        "-B",
+        "/tmp/c11-publication-review/inventory.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "script": {
+        "path": "inventory.py",
+        "bytes": 1505,
+        "sha256": "6ee42096f57e4bc6246a82bb4ad49eac1cc8018c9ab77e5ee57f13ce6575c974"
+      },
+      "stdout": {
+        "path": "inventory.json",
+        "bytes": 17111,
+        "sha256": "d44c1fed981caef7f11addfb2b615c36d269e19d224d9bec2205fb85fea7dd21"
+      },
+      "stderr_empty": true
+    }
+  ]
+}

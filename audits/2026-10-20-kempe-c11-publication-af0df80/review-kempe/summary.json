@@ -1,0 +1,916 @@
+{
+  "checks": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-multi-kempe-machines-af0df80/check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "expect_stderr_fragment": null,
+      "expected_exit_code": 0,
+      "name": "multi-normal",
+      "pass": true,
+      "seconds": 0.857,
+      "stderr": "multi-normal.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "multi-normal.stdout",
+      "stdout_sha256": "15c94663cdcebf4934950a90dba3ec0b48b9226134f424b3528bd17e9755aca3"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-multi-kempe-machines-af0df80/check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_overrides": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expect_stderr_fragment": null,
+      "expected_exit_code": 0,
+      "name": "multi-seed17",
+      "pass": true,
+      "seconds": 0.86,
+      "stderr": "multi-seed17.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "multi-seed17.stdout",
+      "stdout_sha256": "15c94663cdcebf4934950a90dba3ec0b48b9226134f424b3528bd17e9755aca3"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-kempe-residual-iteration-af0df80/check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_overrides": {},
+      "exit_code": 0,
+      "expect_stderr_fragment": null,
+      "expected_exit_code": 0,
+      "name": "residual-normal",
+      "pass": true,
+      "seconds": 2.964,
+      "stderr": "residual-normal.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "residual-normal.stdout",
+      "stdout_sha256": "3810427f50a9896cb0e0a1c17eeb4bf76e0aa433c47077189667df8f5da8a5e6"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-kempe-residual-iteration-af0df80/check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_overrides": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expect_stderr_fragment": null,
+      "expected_exit_code": 0,
+      "name": "residual-seed17",
+      "pass": true,
+      "seconds": 3.01,
+      "stderr": "residual-seed17.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "residual-seed17.stdout",
+      "stdout_sha256": "3810427f50a9896cb0e0a1c17eeb4bf76e0aa433c47077189667df8f5da8a5e6"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/tmp/kempe-publication-review-receipt-nbgy6fwv/temporary-control-copies/2026-10-20-multi-kempe-machines-af0df80/experiment/check.py",
+        "--generate"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_overrides": {},
+      "exit_code": 1,
+      "expect_stderr_fragment": "FileExistsError",
+      "expected_exit_code": 1,
+      "name": "multi-exclusive-experiment",
+      "pass": true,
+      "seconds": 0.135,
+      "stderr": "multi-exclusive-experiment.stderr",
+      "stderr_sha256": "fa1332ba9b4bff647eaf76ad2a943192c5ac6d51c4f1bc2a424da6c3093b7331",
+      "stdout": "multi-exclusive-experiment.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/tmp/kempe-publication-review-receipt-nbgy6fwv/temporary-control-copies/2026-10-20-multi-kempe-machines-af0df80/coupling.py",
+        "--generate"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_overrides": {},
+      "exit_code": 1,
+      "expect_stderr_fragment": "FileExistsError",
+      "expected_exit_code": 1,
+      "name": "multi-exclusive-coupling",
+      "pass": true,
+      "seconds": 0.148,
+      "stderr": "multi-exclusive-coupling.stderr",
+      "stderr_sha256": "7c52c52a7fe00e6ad6e6c3b9fbf747b8907d902a73b6ce1bcc390b2cd5fbe867",
+      "stdout": "multi-exclusive-coupling.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/tmp/kempe-publication-review-receipt-nbgy6fwv/temporary-control-copies/2026-10-20-multi-kempe-machines-af0df80/review/check_independent.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_overrides": {},
+      "exit_code": 1,
+      "expect_stderr_fragment": "FileExistsError",
+      "expected_exit_code": 1,
+      "name": "multi-exclusive-review",
+      "pass": true,
+      "seconds": 0.18,
+      "stderr": "multi-exclusive-review.stderr",
+      "stderr_sha256": "da72877709121b44996f1651c40632a56ff2a2f7e43bcd9357fa838fa804b675",
+      "stdout": "multi-exclusive-review.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/tmp/kempe-publication-review-receipt-nbgy6fwv/temporary-control-copies/2026-10-20-kempe-residual-iteration-af0df80/experiment/check.py",
+        "--generate"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_overrides": {},
+      "exit_code": 1,
+      "expect_stderr_fragment": "FileExistsError",
+      "expected_exit_code": 1,
+      "name": "residual-exclusive-main",
+      "pass": true,
+      "seconds": 0.928,
+      "stderr": "residual-exclusive-main.stderr",
+      "stderr_sha256": "6a310a7c7a31e032fd9b3476ff385b00aa548aca2a2dbd189c2b78712a943139",
+      "stdout": "residual-exclusive-main.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/tmp/kempe-publication-review-receipt-nbgy6fwv/temporary-control-copies/2026-10-20-kempe-residual-iteration-af0df80/phase.py",
+        "--generate"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_overrides": {},
+      "exit_code": 1,
+      "expect_stderr_fragment": "FileExistsError",
+      "expected_exit_code": 1,
+      "name": "residual-exclusive-phase",
+      "pass": true,
+      "seconds": 0.17,
+      "stderr": "residual-exclusive-phase.stderr",
+      "stderr_sha256": "b35622eeca94ef26810396fb36e73d1582bda8f8de458c5fce4211b47158d404",
+      "stdout": "residual-exclusive-phase.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/tmp/kempe-publication-review-receipt-nbgy6fwv/temporary-control-copies/2026-10-20-kempe-residual-iteration-af0df80/probe.py",
+        "--generate"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_overrides": {},
+      "exit_code": 1,
+      "expect_stderr_fragment": "FileExistsError",
+      "expected_exit_code": 1,
+      "name": "residual-exclusive-probe",
+      "pass": true,
+      "seconds": 0.041,
+      "stderr": "residual-exclusive-probe.stderr",
+      "stderr_sha256": "077c24842df393c6bf6abf768bfda4569844d63545fa3bbbbd56ec10d3dbfe81",
+      "stdout": "residual-exclusive-probe.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-multi-kempe-machines-af0df80/coupling.py",
+        "--check",
+        "--certificate",
+        "/tmp/kempe-publication-review-receipt-nbgy6fwv/multi-corrupted-temporal-path-count.bad.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_overrides": {},
+      "exit_code": 1,
+      "expect_stderr_fragment": "differs from reconstruction",
+      "expected_exit_code": 1,
+      "name": "multi-corrupted-temporal-path-count",
+      "pass": true,
+      "seconds": 0.143,
+      "stderr": "multi-corrupted-temporal-path-count.stderr",
+      "stderr_sha256": "6f0d61885fafce55942f4051392068c8a28e8b47465bbddec7a1eb7bf9758b57",
+      "stdout": "multi-corrupted-temporal-path-count.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-kempe-residual-iteration-af0df80/phase.py",
+        "--check",
+        "--certificate",
+        "/tmp/kempe-publication-review-receipt-nbgy6fwv/residual-drop-informative-identity-phases.bad.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_overrides": {},
+      "exit_code": 1,
+      "expect_stderr_fragment": "differs from reconstruction",
+      "expected_exit_code": 1,
+      "name": "residual-drop-informative-identity-phases",
+      "pass": true,
+      "seconds": 0.165,
+      "stderr": "residual-drop-informative-identity-phases.stderr",
+      "stderr_sha256": "e9159b110c7a99ce4a63590db23184fde8cccdcf7501c2dc1f7df8b9c3bf1cd7",
+      "stdout": "residual-drop-informative-identity-phases.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-kempe-residual-iteration-af0df80/probe.py",
+        "--check",
+        "--certificate",
+        "/tmp/kempe-publication-review-receipt-nbgy6fwv/residual-wrong-round-trip-upper-bound.bad.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "environment_overrides": {},
+      "exit_code": 1,
+      "expect_stderr_fragment": "differs from reconstruction",
+      "expected_exit_code": 1,
+      "name": "residual-wrong-round-trip-upper-bound",
+      "pass": true,
+      "seconds": 0.038,
+      "stderr": "residual-wrong-round-trip-upper-bound.stderr",
+      "stderr_sha256": "c0d37422c19b218010458f324e4240b611194c58cec81ffa7eb4df7e64986040",
+      "stdout": "residual-wrong-round-trip-upper-bound.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "created_at_utc": "2026-10-20T13:20:34.945135+00:00",
+  "evidence_custody": {
+    "all_mutating_negative_control_commands_targeted_temporary_copies": true,
+    "changed_original_files": [],
+    "original_file_count": 141,
+    "original_source_sha256": {
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/BASE.json": "ba3d4cfc1f60c1bd9a5a990afc32ddfb3fe3155c522fe3178ccc14543e7fa145",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/INPUTS.json": "19d397a4b9e507cd690c6a30d931bbdc9c27542c7d6b89f9f58cef95dc66f4f4",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/REPORT.md": "a686be26a86b8ea3d3a7dec4928c5e8fc88ce0bd9234873100c942b196e2de42",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/SOURCE_CONTRACT.md": "224844f7e182c4bc95a49019d571556efaf32ba83421d319ac4f1ce050d2584c",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/check.py": "785355729f2ad0a1fc58667992a033dd9731fd73d978a78565f52fcb0fa8804a",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/experiment/RESULT.md": "5936d4757811dbf00834a1f468d22872d0289aba6bd6078f4b6f682d70ae3a1b",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/experiment/certificate.json": "86c4af15ea6fd14902d27d2f578fb6ee750c2d52d8fe59aaf0a4b00cd165483c",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/experiment/check.py": "fae6f773d6d4cd3f1678daf7e02859ce2765ca5b59c50d879e9e3b5fa17594d3",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/experiment/generate.log": "430aff07301cf873e4420cf6b57b6838070ce19bffaa1432d881f79e551e74b0",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/experiment/negative_controls.log": "39a7b88a9b2cdbb5be7e1e7b11f474f4acd161b64a182f3e14ca0ecaaf8b441a",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/experiment/replay.log": "430aff07301cf873e4420cf6b57b6838070ce19bffaa1432d881f79e551e74b0",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/experiment/seed17.log": "37457d0d8a304a5a392c535607f6666e233119778e91ec0439913b3a1298a0c5",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/frozen/audits/2026-10-20-multi-kempe-machines-af0df80/REPORT.md": "e670a0ae008d512bb4f2fb21387ecf7c1beddb5e5cdf08095ae825678e1aa6cb",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/frozen/audits/2026-10-20-multi-kempe-machines-af0df80/SOURCE_CONTRACT.md": "4fdd2a77b02681ae32e9d2bf1ec15119f4aac5740b0a59f72f54d05802c41343",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/frozen/audits/2026-10-20-multi-kempe-machines-af0df80/coupling-v2.json": "98b5586e7ae1c7170ac0462e3c50c7a8614d45c7876cbe64f1077f54058ae1a6",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/frozen/audits/2026-10-20-multi-kempe-machines-af0df80/experiment/certificate.json": "feed98beeb5f83e29bf9c690283aff5d768d4f1e8ba0504f0422560fddeea6dc",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/frozen/audits/2026-10-20-multi-kempe-machines-af0df80/experiment/check.py": "de5475bf9acb9c2715891d440593157bb48b13c702448e4ce530312e82299411",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/frozen/audits/2026-10-20-multi-kempe-machines-af0df80/review/independent_certificate.json": "50e524737cd6db0734525cee6075cfed8d410bd0bf066479bd76b71d8f2e9d76",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/frozen/audits/2026-10-20-multi-kempe-machines-af0df80/theory/REPORT.md": "b0e0de8d74a8b21b68ec2be78ed9c53822e73213abaa722393845e1712fa46c8",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/frozen/audits/2026-10-20-multi-kempe-machines-af0df80/verification.json": "711e7ce0ea4522044ee86d7b0793526df6512eda7f7782260a87af3a082b855e",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/frozen/docs/HANDOFF.md": "9cfa72f9049d77f74c183a057589102160556084c72bc68d064eb0b933fee2ce",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/frozen/docs/STATUS.md": "aee16745f88457cb1340132fe65886bb72a52036e06d6c94e9f95dd5f1827fdb",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/frozen/docs/c5_state_guide.md": "7497be232ee74ba74a4290b9a3e1ee14b60816ee75f049b04f5445d087cbee94",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/audit-links.json": "9daf7fa118763772aaa67b554e84628f060cb23db1c8896db281b1b9b23453e4",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/diff-v2.json": "b9cccaaf4f8316431a7eed52a7ad7dde51946b0f6e46f5ec812e554f72f025dd",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/diff-v2.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/diff-v2.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/diff.json": "aec5a0b4098a67591b84159503ec2b478f8b5c563d997aa9de9c0559529b8f7a",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/diff.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/diff.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/docgraph-all.json": "4dab1f3a4aff531afcf1fa731dcdc94a44a69a59e6085d9a3e99d57582245ef6",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/docgraph-all.stderr": "4862f2a4895a14b7cc48da66d057387e1c5e5bb956957edb05c9323a637d766a",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/docgraph-all.stdout": "214ce6f854ff299bfbe99d599b539a6dde6bcefbb96aa8beb36f7bb643c5f293",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/docgraph-docs.json": "2e23c9963c6c0df387f759fbc882db3dfb75d062d8772bff67a770aeeeb4fe98",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/docgraph-docs.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/docgraph-docs.stdout": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/docs-v2.json": "81bb30bf205db512758fefb4bf12bf2aa75ffd492330610e3b8eaa082c3f252b",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/docs-v2.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/docs-v2.stdout": "dcbb97cd0c3519a4872a4a9315f64d21a007fd9a01b5688beb026df9e6c5ef08",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/docs.json": "db6c826afc73bfeda823f885fb5f1cd24aded238fef295e712549ec70cfe5b87",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/docs.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/docs.stdout": "dcbb97cd0c3519a4872a4a9315f64d21a007fd9a01b5688beb026df9e6c5ef08",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/exclusive-main.stderr": "69653f71a2ea9a5dca4827f3c54728ddb698e233411be71f3c829560b14aaad7",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/exclusive-phase.stderr": "40cab8638ac16121c2de4402bdabe5e201c49598e41c1ae500e8c663a30552e1",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/negative-controls.json": "5568c24e32e75e0335e8b92bb85bc1295ef9eb61405f12b255df79e2052896c3",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/normal-v2.json": "d7c4dc819de4feba9d82ccc73b843d0a5807711b17bd87174f1841c9cd4ef1e6",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/normal-v2.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/normal-v2.stdout": "3810427f50a9896cb0e0a1c17eeb4bf76e0aa433c47077189667df8f5da8a5e6",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/normal.json": "72e164f152926734651120788033baf78d2bf9a5ce5d75b13b1dea063abcc110",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/normal.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/normal.stdout": "c3c71e13e47b19305bfffa52b6759a0689e7ba776f55f7eded1fdf29010e26c9",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/probe-negative-controls.json": "5c0d4310e4de3099511cea81b83cde3f0a83ec6822d040f56e93969ccdeff033",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/seed17-v2.json": "7b359a78ca9724aa161eefc0a68e1f2efdaeb0173610ceb4d3756ca5b1c0fa33",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/seed17-v2.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/seed17-v2.stdout": "3810427f50a9896cb0e0a1c17eeb4bf76e0aa433c47077189667df8f5da8a5e6",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/seed17.json": "2b0933304147fbaf96d5facd035756ebb6a794c9f690430e980b269ea4c16b93",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/seed17.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/logs/seed17.stdout": "c3c71e13e47b19305bfffa52b6759a0689e7ba776f55f7eded1fdf29010e26c9",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/phase.json": "4db972ed4b7c8d9da7156e78c0e88ed2a647db135671635da5e9af2c90a8292b",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/phase.py": "7b69f31e2bed359cfe96946ac01c9a6cdd3d3377e29b79d7b27ee09249faa9a8",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/probe.json": "58492d3930606a204e35abe534c4f3e973c7812cdc16a468e57ad0a2732a6bcc",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/probe.py": "721e71254fd89d3bd97e2a0967cd6ddc783f326746aee5a0f69144a85cca8df9",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/review/REVIEW.md": "e38fcd2d9ae201a37a22549dcb36a3fde4790e9c3de3438e8151aa55c5f58ed6",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/review/check_probe.py": "29abff893c7a9d6d9dd7a1ac2d1d0d0dcd13a96b568a23078605a44a96104f85",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/review/check_residual.py": "408240aa63fdfff5d2a6c80d9ec0e0baa39c0dc909a2b74def67cd1279a7dfc1",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/review/compare_residual_phase.py": "32f544dcb59af3931c6949e88e6002982a07dc83d6883afe00a266cc97151c50",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/review/cross_review.json": "781809c3af6d14ca842cd34c405e6ae5f9ac9851609a148563609250d0a62009",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/review/independent_residual_certificate.json": "87cd3e409139ea7f020eb7545043c3c80a2a63780dba87d74efcab26c1d34c8a",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/review/probe_review.json": "a98e45a344ccae3d244233c214060d1844375e84b570fec048dc7c39426f5e2d",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/theory/REPORT.md": "b7c5b9176bc2d2b8eabcb4def568d19fe912ecb8c97c89a10f3d74094bbb5e02",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/verification-v2.json": "8cd4aed524b5a9d2387ea77f9a057fa6a5754ddd981b0d627cd2277bc8ce30d1",
+      "audits/2026-10-20-kempe-residual-iteration-af0df80/verification.json": "8e7c547aa2d938d0d716730cfaf219424823904358b9e7c7aa44bcb1211c08be",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/BASE.json": "58635c367f51963e7dfe77c836ce86017067f773fe353209bc8e3cd3db13071d",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/INPUTS.json": "cafb93fb12295a3f348aaf5a073d45565c7aafec3970daf33abaf95694884fe6",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/REPORT.md": "e670a0ae008d512bb4f2fb21387ecf7c1beddb5e5cdf08095ae825678e1aa6cb",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/SOURCE_CONTRACT.md": "4fdd2a77b02681ae32e9d2bf1ec15119f4aac5740b0a59f72f54d05802c41343",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/check.py": "4d3191712b981877d892c276077d8229fbbe281ecb5f1258ad163234abcfaeb1",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/coupling-v2.json": "98b5586e7ae1c7170ac0462e3c50c7a8614d45c7876cbe64f1077f54058ae1a6",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/coupling.json": "125ab3c5f5e37581c06d2d09c3bd7c60133856cf7adb2a22814c6fc41e34f001",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/coupling.py": "5a50216d93a0bd7d9d5d41788cb25c44d813b2e9ba8db601e588d0a7f0efe65b",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/experiment/RESULT.md": "20a276f67c59f9403a84c934c3b33bc13625785a3a09c33ad0020c239e6ca5d3",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/experiment/certificate.json": "feed98beeb5f83e29bf9c690283aff5d768d4f1e8ba0504f0422560fddeea6dc",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/experiment/check.py": "de5475bf9acb9c2715891d440593157bb48b13c702448e4ce530312e82299411",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/experiment/generate.log": "5489e0554611ea12267f6538bd36e658a0f0c5dced464812c2122177652b22af",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/experiment/negative_controls.log": "1e241032e50f16320b08a7fea49c7fe704f18c0be868fe26a2a8cae05fbe422f",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/experiment/replay.log": "5489e0554611ea12267f6538bd36e658a0f0c5dced464812c2122177652b22af",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/experiment/seed17.log": "c53bffdfd3415f0235cd338c98831df4550d56d3791454d8bda12afafd28acb2",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/frozen/audits/2026-10-20-joint-kempe-state-1148ce0/REPORT.md": "7bdae88fbf1a00ddccfd2f80222f922e6ec433a6db6c69a8f57b7f0bb640a29c",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/frozen/audits/2026-10-20-joint-kempe-state-1148ce0/SOURCE_CONTRACT.md": "fac2ac5261dc0c9e0755ee0b633c8e8d88f17b92f18bcb5c5ebca8ead929647f",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/frozen/audits/2026-10-20-joint-kempe-state-1148ce0/frozen/artifacts/c5_cells/cells.json": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/frozen/audits/2026-10-20-joint-kempe-state-1148ce0/refine.py": "b7f21322535ad96e7859f98fbcb48c72c71c6d5a54388181c34b3cfe9235042d",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/frozen/audits/2026-10-20-joint-kempe-state-1148ce0/refinement.json": "d7852df52de18a68bffaaeef3b2672260a207aa9fd262f8050ee8e2d9df38ec7",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/frozen/audits/2026-10-20-joint-kempe-state-1148ce0/review/check_collision.py": "2ac2427c4fb554263b2a1e02973456cc2705e9534ad08733bdb5d1f6368eed8d",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/frozen/audits/2026-10-20-joint-kempe-state-1148ce0/review/collision_certificate.json": "a8a97fc207534e465a334ba6e34ddf55cbc02ed721bbd8b87e654b01a0904e64",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/frozen/audits/2026-10-20-joint-kempe-state-1148ce0/theory/REPORT.md": "c17e1943a59418d5d942c451d4a2f6b1c244aab572c95a5f570384011793c4be",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/frozen/docs/DOCUMENTATION.md": "96095814f8a22cdb1809c46d73082576302882da202160e009a2b140d6ec2c01",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/frozen/docs/HANDOFF.md": "9cfa72f9049d77f74c183a057589102160556084c72bc68d064eb0b933fee2ce",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/frozen/docs/STATUS.md": "9727031d37a5d55c36816be78c572488e9fc12fef8d3b6904adf0e16597118ae",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/frozen/docs/c5_state_guide.md": "dffc254fba681e967a53f2ed027879f7d2af3fa92944f19c80faf0ea095a96d1",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/audit-links.json": "42fb80c87bc2e7934cb5257fd430c87457a64c9ae4f191008fd1272f9489cb2c",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/diff-final.json": "1a840df82ce318af4209a5903d2cf439ff6b5966bcd4e9b2012247aa04e3034d",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/diff-final.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/diff-final.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/diff.json": "aec5a0b4098a67591b84159503ec2b478f8b5c563d997aa9de9c0559529b8f7a",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/diff.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/diff.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/docgraph-all.json": "5533a6d4df3cdb1f06dd9f6cf6206742a0b55bef57aca8be5d84223b680f6c91",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/docgraph-all.stderr": "4862f2a4895a14b7cc48da66d057387e1c5e5bb956957edb05c9323a637d766a",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/docgraph-all.stdout": "214ce6f854ff299bfbe99d599b539a6dde6bcefbb96aa8beb36f7bb643c5f293",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/docgraph-docs.json": "71500087cf29fdb7e70f7b4b557c8838d3bd3d9dfd5de7a6a472be66ee8151a1",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/docgraph-docs.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/docgraph-docs.stdout": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/docs-final.json": "adec10812b09142a9707efdd95896bcdbfc33c4145d20d27a7d6f74109084264",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/docs-final.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/docs-final.stdout": "ff0173bd9e3472d54074e2d7d4e404a20fc5416bf188b02178f17d6d2991104a",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/docs.json": "b55d79826b10a759916402eb1fde0f4cb44ec8d309a748d34dc7082f51d54939",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/docs.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/docs.stdout": "ff0173bd9e3472d54074e2d7d4e404a20fc5416bf188b02178f17d6d2991104a",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/exclusive-coupling.stderr": "40706d433eab7823f8b90e494be2010a8c29fcd9bd3a73ae6b32d226a8375eb4",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/exclusive-experiment.stderr": "44a214c168c3a57a72414eba22d70e208b1b4ef107eb0c0105a4413a50789d8a",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/exclusive-review.stderr": "5675a4b43798fab3c4ddac3516ea60899d6137158365d370243e9d655fe37fdb",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/lake.json": "eb5ea14012d372b51c3e5111f1636af997a81afdbf69e9b470a87ba49d49dda2",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/lake.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/lake.stdout": "8104be9d036bacf8bed91d79c2258da89881e2e6652e9d327e3af5292cf7fa71",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/negative-controls.json": "7d8b86e0b873392f49c0efda96197ebb8bf6e73d114db2ff6667479a309608e6",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/normal.json": "934b3c3f001d1677e3c0347578faf59f3b8e1d165e4b1f277ad0279eedc634d6",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/normal.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/normal.stdout": "15c94663cdcebf4934950a90dba3ec0b48b9226134f424b3528bd17e9755aca3",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/seed17.json": "841f2e31693d16e914b715b548617a00e21f6195ed763a17c88006ab09fa1fc4",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/seed17.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/logs/seed17.stdout": "15c94663cdcebf4934950a90dba3ec0b48b9226134f424b3528bd17e9755aca3",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/review/REVIEW.md": "4f0e034c72c770d249577cf345b11c2232ebd023885870cede41af73fb00e584",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/review/check_independent.py": "470af529235e418bdcd210045f0d72b072116a41161e9a27b5a8c4a9e96bb8df",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/review/compare_certificates.py": "c765535b820fafa0bf0039f24888137b6399b0ead75827ab29feadef66195a8c",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/review/cross_review.json": "7ab416ceceeb108ea0b8138e3960aa5f8e12e5224a6f253c8c2c5f5a927c784e",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/review/final_check.log": "c82747c1b712a36040afe8ba0085c1f9cf2f90aea019acba1119a8d0a48d7f3e",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/review/generate.log": "c82747c1b712a36040afe8ba0085c1f9cf2f90aea019acba1119a8d0a48d7f3e",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/review/independent_certificate.json": "50e524737cd6db0734525cee6075cfed8d410bd0bf066479bd76b71d8f2e9d76",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/theory/REPORT.md": "b0e0de8d74a8b21b68ec2be78ed9c53822e73213abaa722393845e1712fa46c8",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/theory/check.py": "e24d58e546a4355149c4e42729190f20effc52ea27205626823be1be60e65288",
+      "audits/2026-10-20-multi-kempe-machines-af0df80/verification.json": "711e7ce0ea4522044ee86d7b0793526df6512eda7f7782260a87af3a082b855e"
+    }
+  },
+  "frozen_head": "af0df8081e79b51f8b24e17e01b2bd5572e46a0a",
+  "manifest_checks": [
+    {
+      "audit": "2026-10-20-multi-kempe-machines-af0df80",
+      "frozen_input_count": 12,
+      "frozen_inputs": [
+        {
+          "actual_sha256": "7bdae88fbf1a00ddccfd2f80222f922e6ec433a6db6c69a8f57b7f0bb640a29c",
+          "expected_sha256": "7bdae88fbf1a00ddccfd2f80222f922e6ec433a6db6c69a8f57b7f0bb640a29c",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-joint-kempe-state-1148ce0/REPORT.md"
+        },
+        {
+          "actual_sha256": "fac2ac5261dc0c9e0755ee0b633c8e8d88f17b92f18bcb5c5ebca8ead929647f",
+          "expected_sha256": "fac2ac5261dc0c9e0755ee0b633c8e8d88f17b92f18bcb5c5ebca8ead929647f",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-joint-kempe-state-1148ce0/SOURCE_CONTRACT.md"
+        },
+        {
+          "actual_sha256": "c17e1943a59418d5d942c451d4a2f6b1c244aab572c95a5f570384011793c4be",
+          "expected_sha256": "c17e1943a59418d5d942c451d4a2f6b1c244aab572c95a5f570384011793c4be",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-joint-kempe-state-1148ce0/theory/REPORT.md"
+        },
+        {
+          "actual_sha256": "b7f21322535ad96e7859f98fbcb48c72c71c6d5a54388181c34b3cfe9235042d",
+          "expected_sha256": "b7f21322535ad96e7859f98fbcb48c72c71c6d5a54388181c34b3cfe9235042d",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-joint-kempe-state-1148ce0/refine.py"
+        },
+        {
+          "actual_sha256": "d7852df52de18a68bffaaeef3b2672260a207aa9fd262f8050ee8e2d9df38ec7",
+          "expected_sha256": "d7852df52de18a68bffaaeef3b2672260a207aa9fd262f8050ee8e2d9df38ec7",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-joint-kempe-state-1148ce0/refinement.json"
+        },
+        {
+          "actual_sha256": "2ac2427c4fb554263b2a1e02973456cc2705e9534ad08733bdb5d1f6368eed8d",
+          "expected_sha256": "2ac2427c4fb554263b2a1e02973456cc2705e9534ad08733bdb5d1f6368eed8d",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-joint-kempe-state-1148ce0/review/check_collision.py"
+        },
+        {
+          "actual_sha256": "a8a97fc207534e465a334ba6e34ddf55cbc02ed721bbd8b87e654b01a0904e64",
+          "expected_sha256": "a8a97fc207534e465a334ba6e34ddf55cbc02ed721bbd8b87e654b01a0904e64",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-joint-kempe-state-1148ce0/review/collision_certificate.json"
+        },
+        {
+          "actual_sha256": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+          "expected_sha256": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-joint-kempe-state-1148ce0/frozen/artifacts/c5_cells/cells.json"
+        },
+        {
+          "actual_sha256": "9cfa72f9049d77f74c183a057589102160556084c72bc68d064eb0b933fee2ce",
+          "expected_sha256": "9cfa72f9049d77f74c183a057589102160556084c72bc68d064eb0b933fee2ce",
+          "pass": true,
+          "path": "frozen/docs/HANDOFF.md"
+        },
+        {
+          "actual_sha256": "9727031d37a5d55c36816be78c572488e9fc12fef8d3b6904adf0e16597118ae",
+          "expected_sha256": "9727031d37a5d55c36816be78c572488e9fc12fef8d3b6904adf0e16597118ae",
+          "pass": true,
+          "path": "frozen/docs/STATUS.md"
+        },
+        {
+          "actual_sha256": "dffc254fba681e967a53f2ed027879f7d2af3fa92944f19c80faf0ea095a96d1",
+          "expected_sha256": "dffc254fba681e967a53f2ed027879f7d2af3fa92944f19c80faf0ea095a96d1",
+          "pass": true,
+          "path": "frozen/docs/c5_state_guide.md"
+        },
+        {
+          "actual_sha256": "96095814f8a22cdb1809c46d73082576302882da202160e009a2b140d6ec2c01",
+          "expected_sha256": "96095814f8a22cdb1809c46d73082576302882da202160e009a2b140d6ec2c01",
+          "pass": true,
+          "path": "frozen/docs/DOCUMENTATION.md"
+        }
+      ],
+      "receipt": "verification.json",
+      "recorded_artifact_count": 24,
+      "recorded_artifacts": [
+        {
+          "actual_sha256": "58635c367f51963e7dfe77c836ce86017067f773fe353209bc8e3cd3db13071d",
+          "expected_sha256": "58635c367f51963e7dfe77c836ce86017067f773fe353209bc8e3cd3db13071d",
+          "pass": true,
+          "path": "BASE.json"
+        },
+        {
+          "actual_sha256": "cafb93fb12295a3f348aaf5a073d45565c7aafec3970daf33abaf95694884fe6",
+          "expected_sha256": "cafb93fb12295a3f348aaf5a073d45565c7aafec3970daf33abaf95694884fe6",
+          "pass": true,
+          "path": "INPUTS.json"
+        },
+        {
+          "actual_sha256": "e670a0ae008d512bb4f2fb21387ecf7c1beddb5e5cdf08095ae825678e1aa6cb",
+          "expected_sha256": "e670a0ae008d512bb4f2fb21387ecf7c1beddb5e5cdf08095ae825678e1aa6cb",
+          "pass": true,
+          "path": "REPORT.md"
+        },
+        {
+          "actual_sha256": "4fdd2a77b02681ae32e9d2bf1ec15119f4aac5740b0a59f72f54d05802c41343",
+          "expected_sha256": "4fdd2a77b02681ae32e9d2bf1ec15119f4aac5740b0a59f72f54d05802c41343",
+          "pass": true,
+          "path": "SOURCE_CONTRACT.md"
+        },
+        {
+          "actual_sha256": "4d3191712b981877d892c276077d8229fbbe281ecb5f1258ad163234abcfaeb1",
+          "expected_sha256": "4d3191712b981877d892c276077d8229fbbe281ecb5f1258ad163234abcfaeb1",
+          "pass": true,
+          "path": "check.py"
+        },
+        {
+          "actual_sha256": "98b5586e7ae1c7170ac0462e3c50c7a8614d45c7876cbe64f1077f54058ae1a6",
+          "expected_sha256": "98b5586e7ae1c7170ac0462e3c50c7a8614d45c7876cbe64f1077f54058ae1a6",
+          "pass": true,
+          "path": "coupling-v2.json"
+        },
+        {
+          "actual_sha256": "125ab3c5f5e37581c06d2d09c3bd7c60133856cf7adb2a22814c6fc41e34f001",
+          "expected_sha256": "125ab3c5f5e37581c06d2d09c3bd7c60133856cf7adb2a22814c6fc41e34f001",
+          "pass": true,
+          "path": "coupling.json"
+        },
+        {
+          "actual_sha256": "5a50216d93a0bd7d9d5d41788cb25c44d813b2e9ba8db601e588d0a7f0efe65b",
+          "expected_sha256": "5a50216d93a0bd7d9d5d41788cb25c44d813b2e9ba8db601e588d0a7f0efe65b",
+          "pass": true,
+          "path": "coupling.py"
+        },
+        {
+          "actual_sha256": "20a276f67c59f9403a84c934c3b33bc13625785a3a09c33ad0020c239e6ca5d3",
+          "expected_sha256": "20a276f67c59f9403a84c934c3b33bc13625785a3a09c33ad0020c239e6ca5d3",
+          "pass": true,
+          "path": "experiment/RESULT.md"
+        },
+        {
+          "actual_sha256": "feed98beeb5f83e29bf9c690283aff5d768d4f1e8ba0504f0422560fddeea6dc",
+          "expected_sha256": "feed98beeb5f83e29bf9c690283aff5d768d4f1e8ba0504f0422560fddeea6dc",
+          "pass": true,
+          "path": "experiment/certificate.json"
+        },
+        {
+          "actual_sha256": "de5475bf9acb9c2715891d440593157bb48b13c702448e4ce530312e82299411",
+          "expected_sha256": "de5475bf9acb9c2715891d440593157bb48b13c702448e4ce530312e82299411",
+          "pass": true,
+          "path": "experiment/check.py"
+        },
+        {
+          "actual_sha256": "5489e0554611ea12267f6538bd36e658a0f0c5dced464812c2122177652b22af",
+          "expected_sha256": "5489e0554611ea12267f6538bd36e658a0f0c5dced464812c2122177652b22af",
+          "pass": true,
+          "path": "experiment/generate.log"
+        },
+        {
+          "actual_sha256": "1e241032e50f16320b08a7fea49c7fe704f18c0be868fe26a2a8cae05fbe422f",
+          "expected_sha256": "1e241032e50f16320b08a7fea49c7fe704f18c0be868fe26a2a8cae05fbe422f",
+          "pass": true,
+          "path": "experiment/negative_controls.log"
+        },
+        {
+          "actual_sha256": "5489e0554611ea12267f6538bd36e658a0f0c5dced464812c2122177652b22af",
+          "expected_sha256": "5489e0554611ea12267f6538bd36e658a0f0c5dced464812c2122177652b22af",
+          "pass": true,
+          "path": "experiment/replay.log"
+        },
+        {
+          "actual_sha256": "c53bffdfd3415f0235cd338c98831df4550d56d3791454d8bda12afafd28acb2",
+          "expected_sha256": "c53bffdfd3415f0235cd338c98831df4550d56d3791454d8bda12afafd28acb2",
+          "pass": true,
+          "path": "experiment/seed17.log"
+        },
+        {
+          "actual_sha256": "4f0e034c72c770d249577cf345b11c2232ebd023885870cede41af73fb00e584",
+          "expected_sha256": "4f0e034c72c770d249577cf345b11c2232ebd023885870cede41af73fb00e584",
+          "pass": true,
+          "path": "review/REVIEW.md"
+        },
+        {
+          "actual_sha256": "470af529235e418bdcd210045f0d72b072116a41161e9a27b5a8c4a9e96bb8df",
+          "expected_sha256": "470af529235e418bdcd210045f0d72b072116a41161e9a27b5a8c4a9e96bb8df",
+          "pass": true,
+          "path": "review/check_independent.py"
+        },
+        {
+          "actual_sha256": "c765535b820fafa0bf0039f24888137b6399b0ead75827ab29feadef66195a8c",
+          "expected_sha256": "c765535b820fafa0bf0039f24888137b6399b0ead75827ab29feadef66195a8c",
+          "pass": true,
+          "path": "review/compare_certificates.py"
+        },
+        {
+          "actual_sha256": "7ab416ceceeb108ea0b8138e3960aa5f8e12e5224a6f253c8c2c5f5a927c784e",
+          "expected_sha256": "7ab416ceceeb108ea0b8138e3960aa5f8e12e5224a6f253c8c2c5f5a927c784e",
+          "pass": true,
+          "path": "review/cross_review.json"
+        },
+        {
+          "actual_sha256": "c82747c1b712a36040afe8ba0085c1f9cf2f90aea019acba1119a8d0a48d7f3e",
+          "expected_sha256": "c82747c1b712a36040afe8ba0085c1f9cf2f90aea019acba1119a8d0a48d7f3e",
+          "pass": true,
+          "path": "review/final_check.log"
+        },
+        {
+          "actual_sha256": "c82747c1b712a36040afe8ba0085c1f9cf2f90aea019acba1119a8d0a48d7f3e",
+          "expected_sha256": "c82747c1b712a36040afe8ba0085c1f9cf2f90aea019acba1119a8d0a48d7f3e",
+          "pass": true,
+          "path": "review/generate.log"
+        },
+        {
+          "actual_sha256": "50e524737cd6db0734525cee6075cfed8d410bd0bf066479bd76b71d8f2e9d76",
+          "expected_sha256": "50e524737cd6db0734525cee6075cfed8d410bd0bf066479bd76b71d8f2e9d76",
+          "pass": true,
+          "path": "review/independent_certificate.json"
+        },
+        {
+          "actual_sha256": "b0e0de8d74a8b21b68ec2be78ed9c53822e73213abaa722393845e1712fa46c8",
+          "expected_sha256": "b0e0de8d74a8b21b68ec2be78ed9c53822e73213abaa722393845e1712fa46c8",
+          "pass": true,
+          "path": "theory/REPORT.md"
+        },
+        {
+          "actual_sha256": "e24d58e546a4355149c4e42729190f20effc52ea27205626823be1be60e65288",
+          "expected_sha256": "e24d58e546a4355149c4e42729190f20effc52ea27205626823be1be60e65288",
+          "pass": true,
+          "path": "theory/check.py"
+        }
+      ]
+    },
+    {
+      "audit": "2026-10-20-kempe-residual-iteration-af0df80",
+      "frozen_input_count": 11,
+      "frozen_inputs": [
+        {
+          "actual_sha256": "e670a0ae008d512bb4f2fb21387ecf7c1beddb5e5cdf08095ae825678e1aa6cb",
+          "expected_sha256": "e670a0ae008d512bb4f2fb21387ecf7c1beddb5e5cdf08095ae825678e1aa6cb",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-multi-kempe-machines-af0df80/REPORT.md"
+        },
+        {
+          "actual_sha256": "4fdd2a77b02681ae32e9d2bf1ec15119f4aac5740b0a59f72f54d05802c41343",
+          "expected_sha256": "4fdd2a77b02681ae32e9d2bf1ec15119f4aac5740b0a59f72f54d05802c41343",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-multi-kempe-machines-af0df80/SOURCE_CONTRACT.md"
+        },
+        {
+          "actual_sha256": "feed98beeb5f83e29bf9c690283aff5d768d4f1e8ba0504f0422560fddeea6dc",
+          "expected_sha256": "feed98beeb5f83e29bf9c690283aff5d768d4f1e8ba0504f0422560fddeea6dc",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-multi-kempe-machines-af0df80/experiment/certificate.json"
+        },
+        {
+          "actual_sha256": "de5475bf9acb9c2715891d440593157bb48b13c702448e4ce530312e82299411",
+          "expected_sha256": "de5475bf9acb9c2715891d440593157bb48b13c702448e4ce530312e82299411",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-multi-kempe-machines-af0df80/experiment/check.py"
+        },
+        {
+          "actual_sha256": "98b5586e7ae1c7170ac0462e3c50c7a8614d45c7876cbe64f1077f54058ae1a6",
+          "expected_sha256": "98b5586e7ae1c7170ac0462e3c50c7a8614d45c7876cbe64f1077f54058ae1a6",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-multi-kempe-machines-af0df80/coupling-v2.json"
+        },
+        {
+          "actual_sha256": "b0e0de8d74a8b21b68ec2be78ed9c53822e73213abaa722393845e1712fa46c8",
+          "expected_sha256": "b0e0de8d74a8b21b68ec2be78ed9c53822e73213abaa722393845e1712fa46c8",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-multi-kempe-machines-af0df80/theory/REPORT.md"
+        },
+        {
+          "actual_sha256": "50e524737cd6db0734525cee6075cfed8d410bd0bf066479bd76b71d8f2e9d76",
+          "expected_sha256": "50e524737cd6db0734525cee6075cfed8d410bd0bf066479bd76b71d8f2e9d76",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-multi-kempe-machines-af0df80/review/independent_certificate.json"
+        },
+        {
+          "actual_sha256": "711e7ce0ea4522044ee86d7b0793526df6512eda7f7782260a87af3a082b855e",
+          "expected_sha256": "711e7ce0ea4522044ee86d7b0793526df6512eda7f7782260a87af3a082b855e",
+          "pass": true,
+          "path": "frozen/audits/2026-10-20-multi-kempe-machines-af0df80/verification.json"
+        },
+        {
+          "actual_sha256": "aee16745f88457cb1340132fe65886bb72a52036e06d6c94e9f95dd5f1827fdb",
+          "expected_sha256": "aee16745f88457cb1340132fe65886bb72a52036e06d6c94e9f95dd5f1827fdb",
+          "pass": true,
+          "path": "frozen/docs/STATUS.md"
+        },
+        {
+          "actual_sha256": "7497be232ee74ba74a4290b9a3e1ee14b60816ee75f049b04f5445d087cbee94",
+          "expected_sha256": "7497be232ee74ba74a4290b9a3e1ee14b60816ee75f049b04f5445d087cbee94",
+          "pass": true,
+          "path": "frozen/docs/c5_state_guide.md"
+        },
+        {
+          "actual_sha256": "9cfa72f9049d77f74c183a057589102160556084c72bc68d064eb0b933fee2ce",
+          "expected_sha256": "9cfa72f9049d77f74c183a057589102160556084c72bc68d064eb0b933fee2ce",
+          "pass": true,
+          "path": "frozen/docs/HANDOFF.md"
+        }
+      ],
+      "receipt": "verification-v2.json",
+      "recorded_artifact_count": 25,
+      "recorded_artifacts": [
+        {
+          "actual_sha256": "ba3d4cfc1f60c1bd9a5a990afc32ddfb3fe3155c522fe3178ccc14543e7fa145",
+          "expected_sha256": "ba3d4cfc1f60c1bd9a5a990afc32ddfb3fe3155c522fe3178ccc14543e7fa145",
+          "pass": true,
+          "path": "BASE.json"
+        },
+        {
+          "actual_sha256": "19d397a4b9e507cd690c6a30d931bbdc9c27542c7d6b89f9f58cef95dc66f4f4",
+          "expected_sha256": "19d397a4b9e507cd690c6a30d931bbdc9c27542c7d6b89f9f58cef95dc66f4f4",
+          "pass": true,
+          "path": "INPUTS.json"
+        },
+        {
+          "actual_sha256": "a686be26a86b8ea3d3a7dec4928c5e8fc88ce0bd9234873100c942b196e2de42",
+          "expected_sha256": "a686be26a86b8ea3d3a7dec4928c5e8fc88ce0bd9234873100c942b196e2de42",
+          "pass": true,
+          "path": "REPORT.md"
+        },
+        {
+          "actual_sha256": "224844f7e182c4bc95a49019d571556efaf32ba83421d319ac4f1ce050d2584c",
+          "expected_sha256": "224844f7e182c4bc95a49019d571556efaf32ba83421d319ac4f1ce050d2584c",
+          "pass": true,
+          "path": "SOURCE_CONTRACT.md"
+        },
+        {
+          "actual_sha256": "785355729f2ad0a1fc58667992a033dd9731fd73d978a78565f52fcb0fa8804a",
+          "expected_sha256": "785355729f2ad0a1fc58667992a033dd9731fd73d978a78565f52fcb0fa8804a",
+          "pass": true,
+          "path": "check.py"
+        },
+        {
+          "actual_sha256": "5936d4757811dbf00834a1f468d22872d0289aba6bd6078f4b6f682d70ae3a1b",
+          "expected_sha256": "5936d4757811dbf00834a1f468d22872d0289aba6bd6078f4b6f682d70ae3a1b",
+          "pass": true,
+          "path": "experiment/RESULT.md"
+        },
+        {
+          "actual_sha256": "86c4af15ea6fd14902d27d2f578fb6ee750c2d52d8fe59aaf0a4b00cd165483c",
+          "expected_sha256": "86c4af15ea6fd14902d27d2f578fb6ee750c2d52d8fe59aaf0a4b00cd165483c",
+          "pass": true,
+          "path": "experiment/certificate.json"
+        },
+        {
+          "actual_sha256": "fae6f773d6d4cd3f1678daf7e02859ce2765ca5b59c50d879e9e3b5fa17594d3",
+          "expected_sha256": "fae6f773d6d4cd3f1678daf7e02859ce2765ca5b59c50d879e9e3b5fa17594d3",
+          "pass": true,
+          "path": "experiment/check.py"
+        },
+        {
+          "actual_sha256": "430aff07301cf873e4420cf6b57b6838070ce19bffaa1432d881f79e551e74b0",
+          "expected_sha256": "430aff07301cf873e4420cf6b57b6838070ce19bffaa1432d881f79e551e74b0",
+          "pass": true,
+          "path": "experiment/generate.log"
+        },
+        {
+          "actual_sha256": "39a7b88a9b2cdbb5be7e1e7b11f474f4acd161b64a182f3e14ca0ecaaf8b441a",
+          "expected_sha256": "39a7b88a9b2cdbb5be7e1e7b11f474f4acd161b64a182f3e14ca0ecaaf8b441a",
+          "pass": true,
+          "path": "experiment/negative_controls.log"
+        },
+        {
+          "actual_sha256": "430aff07301cf873e4420cf6b57b6838070ce19bffaa1432d881f79e551e74b0",
+          "expected_sha256": "430aff07301cf873e4420cf6b57b6838070ce19bffaa1432d881f79e551e74b0",
+          "pass": true,
+          "path": "experiment/replay.log"
+        },
+        {
+          "actual_sha256": "37457d0d8a304a5a392c535607f6666e233119778e91ec0439913b3a1298a0c5",
+          "expected_sha256": "37457d0d8a304a5a392c535607f6666e233119778e91ec0439913b3a1298a0c5",
+          "pass": true,
+          "path": "experiment/seed17.log"
+        },
+        {
+          "actual_sha256": "4db972ed4b7c8d9da7156e78c0e88ed2a647db135671635da5e9af2c90a8292b",
+          "expected_sha256": "4db972ed4b7c8d9da7156e78c0e88ed2a647db135671635da5e9af2c90a8292b",
+          "pass": true,
+          "path": "phase.json"
+        },
+        {
+          "actual_sha256": "7b69f31e2bed359cfe96946ac01c9a6cdd3d3377e29b79d7b27ee09249faa9a8",
+          "expected_sha256": "7b69f31e2bed359cfe96946ac01c9a6cdd3d3377e29b79d7b27ee09249faa9a8",
+          "pass": true,
+          "path": "phase.py"
+        },
+        {
+          "actual_sha256": "58492d3930606a204e35abe534c4f3e973c7812cdc16a468e57ad0a2732a6bcc",
+          "expected_sha256": "58492d3930606a204e35abe534c4f3e973c7812cdc16a468e57ad0a2732a6bcc",
+          "pass": true,
+          "path": "probe.json"
+        },
+        {
+          "actual_sha256": "721e71254fd89d3bd97e2a0967cd6ddc783f326746aee5a0f69144a85cca8df9",
+          "expected_sha256": "721e71254fd89d3bd97e2a0967cd6ddc783f326746aee5a0f69144a85cca8df9",
+          "pass": true,
+          "path": "probe.py"
+        },
+        {
+          "actual_sha256": "e38fcd2d9ae201a37a22549dcb36a3fde4790e9c3de3438e8151aa55c5f58ed6",
+          "expected_sha256": "e38fcd2d9ae201a37a22549dcb36a3fde4790e9c3de3438e8151aa55c5f58ed6",
+          "pass": true,
+          "path": "review/REVIEW.md"
+        },
+        {
+          "actual_sha256": "29abff893c7a9d6d9dd7a1ac2d1d0d0dcd13a96b568a23078605a44a96104f85",
+          "expected_sha256": "29abff893c7a9d6d9dd7a1ac2d1d0d0dcd13a96b568a23078605a44a96104f85",
+          "pass": true,
+          "path": "review/check_probe.py"
+        },
+        {
+          "actual_sha256": "408240aa63fdfff5d2a6c80d9ec0e0baa39c0dc909a2b74def67cd1279a7dfc1",
+          "expected_sha256": "408240aa63fdfff5d2a6c80d9ec0e0baa39c0dc909a2b74def67cd1279a7dfc1",
+          "pass": true,
+          "path": "review/check_residual.py"
+        },
+        {
+          "actual_sha256": "32f544dcb59af3931c6949e88e6002982a07dc83d6883afe00a266cc97151c50",
+          "expected_sha256": "32f544dcb59af3931c6949e88e6002982a07dc83d6883afe00a266cc97151c50",
+          "pass": true,
+          "path": "review/compare_residual_phase.py"
+        },
+        {
+          "actual_sha256": "781809c3af6d14ca842cd34c405e6ae5f9ac9851609a148563609250d0a62009",
+          "expected_sha256": "781809c3af6d14ca842cd34c405e6ae5f9ac9851609a148563609250d0a62009",
+          "pass": true,
+          "path": "review/cross_review.json"
+        },
+        {
+          "actual_sha256": "87cd3e409139ea7f020eb7545043c3c80a2a63780dba87d74efcab26c1d34c8a",
+          "expected_sha256": "87cd3e409139ea7f020eb7545043c3c80a2a63780dba87d74efcab26c1d34c8a",
+          "pass": true,
+          "path": "review/independent_residual_certificate.json"
+        },
+        {
+          "actual_sha256": "a98e45a344ccae3d244233c214060d1844375e84b570fec048dc7c39426f5e2d",
+          "expected_sha256": "a98e45a344ccae3d244233c214060d1844375e84b570fec048dc7c39426f5e2d",
+          "pass": true,
+          "path": "review/probe_review.json"
+        },
+        {
+          "actual_sha256": "b7c5b9176bc2d2b8eabcb4def568d19fe912ecb8c97c89a10f3d74094bbb5e02",
+          "expected_sha256": "b7c5b9176bc2d2b8eabcb4def568d19fe912ecb8c97c89a10f3d74094bbb5e02",
+          "pass": true,
+          "path": "theory/REPORT.md"
+        },
+        {
+          "actual_sha256": "8e7c547aa2d938d0d716730cfaf219424823904358b9e7c7aa44bcb1211c08be",
+          "expected_sha256": "8e7c547aa2d938d0d716730cfaf219424823904358b9e7c7aa44bcb1211c08be",
+          "pass": true,
+          "path": "verification.json"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Normal and seed17 top-level replay include ordinary corruption controls plus independent reconstructions and current root comparisons.",
+    "Six exclusive-create controls use full audit copies in /tmp; original evidence was never targeted by generation.",
+    "This review does not broaden source graph enumeration or browse external sources."
+  ],
+  "observed_head": "af0df8081e79b51f8b24e17e01b2bd5572e46a0a",
+  "publication_findings": [
+    {
+      "finding": "Lifecycle row still says general iterable state sufficiency unproved although exact residual-set iteration is now established. Clarify remaining obligation as general small-state representation.",
+      "path": "docs/c5_state_guide.md",
+      "severity": "nonblocking wording",
+      "suggested_replacement": "一般小狀態表示待證"
+    }
+  ],
+  "repository": "/home/ray/developer/ai/math",
+  "reviewer": "independent read-only publication review agent verify_kempe",
+  "scientific_scope": {
+    "active_probe_actual_branches": 144,
+    "active_probe_doubletons": 72,
+    "active_strict_candidate_descent_requires_future_distinguishability": true,
+    "complementary_phase_parity_requires_survivor_mask_and_intermediate_observations": true,
+    "general_finite_history_exactness_supported_by_induction_for_fixed_finite_system": true,
+    "j1_source_status": "not triggered; no J1 exclusion",
+    "maximum_candidates_two_is_fixed_cell95_and_full_J_initialization_only": true,
+    "multi_monitor_counts": [
+      160,
+      176,
+      192
+    ],
+    "new_lean": false,
+    "no_graph_size_descent_or_general_state_bound": true,
+    "one_common_full_coloring_trajectory_required": true,
+    "probe_round_trip_histogram": {
+      "2": 48,
+      "4": 24
+    },
+    "residual_nonempty_states": 336,
+    "residual_states_including_reject_sink": 337,
+    "same_graph_literal_colors_ordered_boundary_complete_components_and_empty_fibres_preserved": true,
+    "two_step_spurious_paths": 384,
+    "two_step_true_paths": 45888
+  },
+  "status": "PASS"
+}

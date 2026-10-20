@@ -1,0 +1,265 @@
+{
+  "base": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+  "frozen_inputs": 488,
+  "frozen_drift": 0,
+  "sealed_files": 39,
+  "sealed_drift": 0,
+  "replays": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-chains-13dc5ff/check.py"
+      ],
+      "extra_env": {},
+      "exit_code": 0,
+      "seconds": 33.228,
+      "stdout_sha256": "cfea79da758430d85346120063d253cf2b9d536089114305906cde7fdae363d1"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-chains-13dc5ff/check.py"
+      ],
+      "extra_env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "seconds": 33.386,
+      "stdout_sha256": "cfea79da758430d85346120063d253cf2b9d536089114305906cde7fdae363d1"
+    }
+  ],
+  "read_only_normal_seed17_identical": true,
+  "prior_acceptance_audit_replay": {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-19-r6-941-acceptance-13dc5ff/check.py"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "9fa686bb63677d059c3789d617ad37828feeeebccc09efd089d71acca3771634"
+  },
+  "engineering": [
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.887,
+      "stdout_sha256": "50a5b0f4d7e0beed6d4ac3da2e99f28dc1303309bdde10a4e7a8cc89ef4067e9"
+    },
+    {
+      "name": "docgraph-docs",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.466,
+      "stdout_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca"
+    },
+    {
+      "name": "docgraph-whole",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "seconds": 7.895,
+      "stdout_sha256": "214ce6f854ff299bfbe99d599b539a6dde6bcefbb96aa8beb36f7bb643c5f293"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.012,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "lake_build": {
+    "name": "lake-build",
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit_code": 0,
+    "seconds": 9.162,
+    "stdout_sha256": "8104be9d036bacf8bed91d79c2258da89881e2e6652e9d327e3af5292cf7fa71"
+  },
+  "artifact_policy": {
+    "command": [
+      "python3",
+      "-B",
+      "tools/check_generated_artifacts.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.762,
+    "stdout": "Generated artifact policy OK: 6527 indexed files, 85 large files with documented exceptions, 166 registered outputs.\n",
+    "stderr": "",
+    "staged_diff_check_exit": 0,
+    "staged_diff_output": "",
+    "real_index_unchanged": true,
+    "scope": "temporary index with connected audits and routing; real index unchanged"
+  },
+  "whole_tree_docgraph": {
+    "baseline": "docs/history/2026-10-19-c5-pr-publication/whole-tree-docgraph.log",
+    "baseline_sha256": "c2ce2451a8307d1d835940e4e645afe4070f0495e97141f4a9a14f1d33bee559",
+    "baseline_errors": 72,
+    "current_errors": 72,
+    "same_error_multiset": true,
+    "added": [],
+    "removed": []
+  },
+  "corrupted_output_seal": {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-19-r6-941-chains-13dc5ff/check.py",
+      "--seal",
+      "audits/2026-10-19-r6-941-chains-13dc5ff/logs/corrupted-OUTPUTS.json"
+    ],
+    "exit_code": 1,
+    "corrupted_output_sha_rejected": true,
+    "target": "C/certificate.json.gz"
+  },
+  "audit_links": {
+    "markdown_files": 13,
+    "local_links": 37,
+    "errors": [],
+    "pass": true
+  },
+  "whitespace_normalization": {
+    "AST_identical": true,
+    "certificate_mathematical_fields_identical": true,
+    "changed_certificate_input_SHA_fields": [
+      "audits/2026-10-19-r6-941-chains-13dc5ff/A/interface.py"
+    ]
+  },
+  "initial_temporary_index_check": {
+    "receipt": "logs/pre-whitespace-artifact-policy.json",
+    "staged_diff_exit": 2,
+    "reason": "one extra blank line at EOF A/interface.py; AST unchanged, source and certificate bytes archived, new exclusive certificate and final replays pass"
+  },
+  "source_index_correction": {
+    "wrong_indices": [
+      0,
+      3,
+      5
+    ],
+    "correct_indices": [
+      1,
+      4,
+      6
+    ],
+    "correct_named_zero_rows": [
+      "01021",
+      "01202",
+      "01212"
+    ],
+    "failed_evidence": "A/discovery/failed-zero-indices",
+    "formal_evidence_rebuilt": true
+  },
+  "scope": {
+    "new_forbidden_private_contact_pairs": [
+      [
+        "a",
+        "q"
+      ],
+      [
+        "a",
+        "s"
+      ],
+      [
+        "n",
+        "c"
+      ],
+      [
+        "q",
+        "t"
+      ],
+      [
+        "c",
+        "t"
+      ]
+    ],
+    "new_original_distance_bounds": [
+      [
+        "a",
+        "s"
+      ],
+      [
+        "c",
+        "n"
+      ],
+      [
+        "q",
+        "t"
+      ],
+      [
+        "c",
+        "t"
+      ]
+    ],
+    "necessary_contact_sets": 46,
+    "four_contact_types": [
+      [
+        "n",
+        "R",
+        "s",
+        "v"
+      ],
+      [
+        "R",
+        "L",
+        "v",
+        "w"
+      ]
+    ],
+    "maximum_four_contact_private_vertices": 1,
+    "private_graph_connected": true,
+    "private_graph_minimum_degree": 2,
+    "c5_H1_support": 1022,
+    "c5_joint_support_patterns_not_excluded": 8,
+    "C11_corrected_live_counts": [
+      5975,
+      5987
+    ],
+    "main_target": "OPEN",
+    "source_realized": false,
+    "smaller_bad_constructed": false,
+    "new_Lean_theorem": false
+  },
+  "completion_index_clarification": "The pentagon (b,q,u,s,x) indexes the five pairs of completion arcs only. bx is a virtual closing edge of this index, never an original edge or an edge added to any Hi. The actual deleted-c graph has a seven-vertex outer boundary; the table in C/PROOF.md gives each new ordered C5 boundary.",
+  "routing": {
+    "updated": [
+      "docs/STATUS.md",
+      "docs/c5_kempe_guide.md"
+    ],
+    "reviewed_unchanged": [
+      "README.md",
+      "docs/HANDOFF.md"
+    ],
+    "reason": "same research lines and entry usage; governance limits routing edits to the direct guide and STATUS"
+  },
+  "not_rerun": {
+    "tools_unit_tests": "No tools implementation or Lean source changed.",
+    "prior_quotients_root": "Prior acceptance root replayed once; frozen upstream evidence was hashed. No claim of a fresh standalone quotient-root replay."
+  },
+  "commit_push": "not requested and not performed"
+}
