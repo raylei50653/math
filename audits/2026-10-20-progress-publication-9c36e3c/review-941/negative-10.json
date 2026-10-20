@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/check.py",
+    "--certificate",
+    "audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/final-negative-relation.json"
+  ],
+  "code": 1,
+  "seconds": 0.285,
+  "stdout": "",
+  "stderr_tail": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/check.py\", line 78, in <module>\n    else:assert json.loads(args.certificate.read_text())==output\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

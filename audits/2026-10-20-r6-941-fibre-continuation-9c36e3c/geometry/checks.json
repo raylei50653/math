@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/geometry/check.py"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "expected_success": true,
+      "matched_expectation": true
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/geometry/check.py"
+      ],
+      "PYTHONHASHSEED": 17,
+      "exit_code": 0,
+      "expected_success": true,
+      "matched_expectation": true
+    },
+    {
+      "name": "tampered-unconditional-five",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/geometry/check.py",
+        "--certificate",
+        "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/geometry/negative-certificate.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 1,
+      "expected_success": false,
+      "matched_expectation": true
+    }
+  ]
+}

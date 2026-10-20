@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "python3",
+      "-B",
+      "scripts/check_docs.py"
+    ],
+    "returncode": 0,
+    "log": "logs/docs-final.log",
+    "output": "OK: 702 Markdown files, 9241 local links; anchors, index, handoff, guide progress checked"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "returncode": 0,
+    "log": "logs/diff-final.log",
+    "output": ""
+  },
+  {
+    "new_audit_report_local_links": "PASS",
+    "broken": []
+  }
+]

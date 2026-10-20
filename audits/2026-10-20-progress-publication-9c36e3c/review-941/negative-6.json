@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/review/j2_transport.py",
+    "--certificate",
+    "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/review/j2-transport-negative.json"
+  ],
+  "code": 1,
+  "seconds": 0.525,
+  "stdout": "",
+  "stderr_tail": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/review/j2_transport.py\", line 75, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/review/j2_transport.py\", line 69, in main\n    assert json.loads(args.certificate.read_text()) == result\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

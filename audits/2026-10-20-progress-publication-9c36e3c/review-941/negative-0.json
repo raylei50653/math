@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "audits/2026-10-20-r6-941-fibre-transport-9c36e3c/check.py",
+    "--certificate",
+    "audits/2026-10-20-r6-941-fibre-transport-9c36e3c/negative-certificate.json"
+  ],
+  "code": 1,
+  "seconds": 0.048,
+  "stdout": "",
+  "stderr_tail": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-fibre-transport-9c36e3c/check.py\", line 63, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-fibre-transport-9c36e3c/check.py\", line 61, in main\n    else:assert json.loads(a.certificate.read_text())==out\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

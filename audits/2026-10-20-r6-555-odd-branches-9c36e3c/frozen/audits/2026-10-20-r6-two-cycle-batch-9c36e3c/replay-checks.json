@@ -1,0 +1,66 @@
+[
+  {
+    "name": "normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/check.py"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "logs/normal.stdout.log",
+    "stderr": "logs/normal.stderr.log",
+    "stdout_sha256": "60b87b7f819276e9ef34ff7d61e4076683d884fb9fcde23d5ef5cd4504344a86",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/check.py"
+    ],
+    "PYTHONHASHSEED": "17",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "logs/seed17.stdout.log",
+    "stderr": "logs/seed17.stderr.log",
+    "stdout_sha256": "60b87b7f819276e9ef34ff7d61e4076683d884fb9fcde23d5ef5cd4504344a86",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "negative-authority",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/check.py",
+      "--inputs",
+      "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/negative-missing-authority.json"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "stdout": "logs/negative-authority.stdout.log",
+    "stderr": "logs/negative-authority.stderr.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "59bff1c34bcee545558c8ad46996fae982c55c2616f5098da73bd6aae87d92d2"
+  },
+  {
+    "name": "negative-outer-cycle",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/check.py",
+      "--certificate",
+      "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/negative-omitted-outer-odd-cycle.json.gz"
+    ],
+    "PYTHONHASHSEED": null,
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "stdout": "logs/negative-outer-cycle.stdout.log",
+    "stderr": "logs/negative-outer-cycle.stderr.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "4244437ab5b40a9026d8b64ea57bc639b52fba48cd2c1bc31fddc8e51a0a6a3a"
+  }
+]

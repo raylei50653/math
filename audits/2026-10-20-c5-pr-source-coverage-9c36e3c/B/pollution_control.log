@@ -1,0 +1,11 @@
+MUTATION: claimed first P from 932 enters K
+COMMAND: python3 -B audits/2026-10-20-c5-pr-source-coverage-9c36e3c/B/check_transition_obstruction.py --check --certificate audits/2026-10-20-c5-pr-source-coverage-9c36e3c/B/polluted_transition_obstruction.json
+RETURN_CODE: 1
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/B/check_transition_obstruction.py", line 261, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/B/check_transition_obstruction.py", line 247, in main
+    assert args.certificate.read_text() == encoded, "Certificate mismatch."
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Certificate mismatch.

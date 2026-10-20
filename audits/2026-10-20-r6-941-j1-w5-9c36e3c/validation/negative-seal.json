@@ -1,0 +1,6 @@
+{
+  "mutation": "first sealed output hash replaced by zeros",
+  "returncode": 1,
+  "expected_rejection": true,
+  "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-w5-9c36e3c/check.py\", line 60, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-w5-9c36e3c/check.py\", line 40, in main\n    verify(outputs,D)\n    ~~~~~~^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-w5-9c36e3c/check.py\", line 28, in verify\n    assert hashlib.sha256(raw).hexdigest() == row['sha256'], ('sealed drift', row['path'])\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('sealed drift', 'BASE.md')\n"
+}

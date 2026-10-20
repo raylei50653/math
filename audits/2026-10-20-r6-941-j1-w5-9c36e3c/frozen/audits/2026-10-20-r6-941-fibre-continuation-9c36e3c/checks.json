@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "normal_seed17_identical": true,
+  "checks": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/check.py"
+      ],
+      "seed": null,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "matched_expectation": true,
+      "seconds": 8.896,
+      "stdout": "{\"J1_zero_targets\": 2, \"J2_zero_targets\": 6, \"frozen_inputs\": 1082, \"last_rejection\": \"OPEN\", \"new_Lean\": false, \"results\": [{\"checker\": \"transport/check.py\", \"result\": {\"J1_partial_bijections\": 8, \"J2_rounds\": 1, \"J2_zero_targets\": 6, \"last_rejection\": \"OPEN\", \"source_realized\": false, \"status\": \"PASS\"}}, {\"checker\": \"geometry/check.py\", \"result\": {\"03_12_types_per_fibre\": 3, \"W5_exception_retained\": true, \"residual_fibres\": 2, \"source_excluded\": false, \"status\": \"PASS\"}}, {\"checker\": \"review/check.py\", \"result\": {\"input_files\": 1082, \"j1_partition_records\": 24, \"j1_partitions\": 56, \"j2_partition_records\": 36, \"j2_partitions\": 112, \"last_rejection\": \"OPEN\", \"scope\": \"independent partition reconstruction and transport formulas\", \"source_realized\": false, \"status\": \"PASS\", \"upstream_zero_closure\": \"frozen theorem input\"}}, {\"checker\": \"review/j2_transport.py\", \"result\": {\"fibres\": 12, \"identity\": \"N01021(J2)=2*sum(six literal d=2 complete F fibre counts)\", \"last_rejection\": \"OPEN\", \"map\": \"switch distinct 23 components meeting {s,t} once\", \"partitions\": 64, \"source_realized\": false, \"status\": \"PASS\"}}, {\"checker\": \"review/closure.py\", \"result\": {\"conclusion\": \"simultaneous six d=2 zeros imply all twelve J2 target zeros\", \"family_rows\": 7383, \"family_sha256\": \"01dafc6d59bd4f7e20dc73d282c83987552337d0c9ccb12c52d40da6d00b6e4c\", \"initial_live\": 1973, \"last_rejection\": \"OPEN\", \"method\": \"three complementary-pair obligations for each literal canonical state\", \"seed_indices\": [1652, 1659, 1813, 1820, 1935, 1942], \"source_realized\": false, \"status\": \"PASS\", \"target_indices\": [1631, 1638, 1652, 1659, 1813, 1820, 1834, 1841, 1935, 1942, 1956, 1963]}}, {\"checker\": \"right_cap/probe.py\", \"result\": {\"complete_cap_records\": 68908, \"empty_cap_records\": 57364, \"full_lift_count\": 18592, \"source_realized\": false, \"status\": \"bounded necessary-control extension; source not realized\"}}], \"source_realized\": false, \"status\": \"PASS\"}\n"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/check.py"
+      ],
+      "seed": "17",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "matched_expectation": true,
+      "seconds": 8.834,
+      "stdout": "{\"J1_zero_targets\": 2, \"J2_zero_targets\": 6, \"frozen_inputs\": 1082, \"last_rejection\": \"OPEN\", \"new_Lean\": false, \"results\": [{\"checker\": \"transport/check.py\", \"result\": {\"J1_partial_bijections\": 8, \"J2_rounds\": 1, \"J2_zero_targets\": 6, \"last_rejection\": \"OPEN\", \"source_realized\": false, \"status\": \"PASS\"}}, {\"checker\": \"geometry/check.py\", \"result\": {\"03_12_types_per_fibre\": 3, \"W5_exception_retained\": true, \"residual_fibres\": 2, \"source_excluded\": false, \"status\": \"PASS\"}}, {\"checker\": \"review/check.py\", \"result\": {\"input_files\": 1082, \"j1_partition_records\": 24, \"j1_partitions\": 56, \"j2_partition_records\": 36, \"j2_partitions\": 112, \"last_rejection\": \"OPEN\", \"scope\": \"independent partition reconstruction and transport formulas\", \"source_realized\": false, \"status\": \"PASS\", \"upstream_zero_closure\": \"frozen theorem input\"}}, {\"checker\": \"review/j2_transport.py\", \"result\": {\"fibres\": 12, \"identity\": \"N01021(J2)=2*sum(six literal d=2 complete F fibre counts)\", \"last_rejection\": \"OPEN\", \"map\": \"switch distinct 23 components meeting {s,t} once\", \"partitions\": 64, \"source_realized\": false, \"status\": \"PASS\"}}, {\"checker\": \"review/closure.py\", \"result\": {\"conclusion\": \"simultaneous six d=2 zeros imply all twelve J2 target zeros\", \"family_rows\": 7383, \"family_sha256\": \"01dafc6d59bd4f7e20dc73d282c83987552337d0c9ccb12c52d40da6d00b6e4c\", \"initial_live\": 1973, \"last_rejection\": \"OPEN\", \"method\": \"three complementary-pair obligations for each literal canonical state\", \"seed_indices\": [1652, 1659, 1813, 1820, 1935, 1942], \"source_realized\": false, \"status\": \"PASS\", \"target_indices\": [1631, 1638, 1652, 1659, 1813, 1820, 1834, 1841, 1935, 1942, 1956, 1963]}}, {\"checker\": \"right_cap/probe.py\", \"result\": {\"complete_cap_records\": 68908, \"empty_cap_records\": 57364, \"full_lift_count\": 18592, \"source_realized\": false, \"status\": \"bounded necessary-control extension; source not realized\"}}], \"source_realized\": false, \"status\": \"PASS\"}\n"
+    },
+    {
+      "name": "negative-seal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/check.py",
+        "--seal",
+        "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/verification/negative-seal.json"
+      ],
+      "seed": null,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "matched_expectation": true,
+      "seconds": 0.343,
+      "stdout": ""
+    },
+    {
+      "name": "right-cap-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/right_cap/probe.py",
+        "--certificate",
+        "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/verification/right-cap-negative.json"
+      ],
+      "seed": null,
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "matched_expectation": true,
+      "seconds": 0.393,
+      "stdout": ""
+    }
+  ],
+  "original_input_drift": 0,
+  "frozen_input_files": 1082,
+  "new_Lean": false,
+  "last_rejection": "OPEN",
+  "upstream_count_control_replay": "Frozen last-rejection D/check.py --negative-controls passed in this turn; seven negative controls rejected."
+}

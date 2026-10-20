@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "full_replays": [
+    {
+      "tag": "normal",
+      "returncode": 0,
+      "elapsed_seconds": 38.262
+    },
+    {
+      "tag": "seed17",
+      "returncode": 0,
+      "elapsed_seconds": 39.788
+    }
+  ],
+  "full_replay_stdout_identical": true,
+  "stdout_sha256": "43853eaabfb3e4c2301e4b05518e319e8b8d75d630bb53a80a5b45088999432c",
+  "component_checkers": 10,
+  "frozen_input_files": 1147,
+  "frozen_input_drift": 0,
+  "sealed_output_files": 78,
+  "sealed_output_drift": 0,
+  "negative_seal": {
+    "mutation": "first sealed output hash replaced by zeros",
+    "returncode": 1,
+    "expected_rejection": true,
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-w5-9c36e3c/check.py\", line 60, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-w5-9c36e3c/check.py\", line 40, in main\n    verify(outputs,D)\n    ~~~~~~^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-w5-9c36e3c/check.py\", line 28, in verify\n    assert hashlib.sha256(raw).hexdigest() == row['sha256'], ('sealed drift', row['path'])\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('sealed drift', 'BASE.md')\n"
+  },
+  "component_receipts": [
+    "geometry/checks.json",
+    "replacement/checks.json",
+    "review/final-checks.json",
+    "review/catalog-checks.json"
+  ],
+  "lake_build": {
+    "returncode": 0,
+    "jobs": 8832,
+    "existing_linter_warnings": true,
+    "new_Lean": false
+  },
+  "document_checks": {
+    "check_docs.py": "PASS;702 Markdown files,9249 local links,final routing labels checked",
+    "formal_docs_only_DocGraph": "PASS;97documents,383relations,0errors",
+    "whole_tree_DocGraph": "not rerun; archived/frozen duplicates are outside this formal docs scope",
+    "git_diff_check": "PASS"
+  },
+  "result_scope": {
+    "n5_source_excluded": true,
+    "n_ge_6_induced_C11": "OPEN",
+    "entire_W5_closed": false,
+    "all_J1_J2_closed": false,
+    "commit": false,
+    "push": false
+  }
+}

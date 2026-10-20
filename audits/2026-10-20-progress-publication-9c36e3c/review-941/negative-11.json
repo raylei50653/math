@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/check_interface.py",
+    "--certificate",
+    "audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/final-negative-interface.json.gz"
+  ],
+  "code": 1,
+  "seconds": 1.71,
+  "stdout": "",
+  "stderr_tail": "r/ai/math/audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/check_interface.py\", line 75, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/check_interface.py\", line 73, in main\n    else:assert json.loads(a.certificate.read_text())==out\n                           ~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 788, in read_text\n    return f.read()\n           ~~~~~~^^\n  File \"<frozen codecs>\", line 325, in decode\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte\n"
+}

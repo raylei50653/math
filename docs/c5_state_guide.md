@@ -2,16 +2,16 @@
 
 ## 最新進度
 
-現況核對：2026-10-19；[P/R實圖語義](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)已證明定的外側push／右轉在任意大小C₅ disk上合法，完整fibre轉移等於附件整數矩陣；RR／PRR／RRR可恢復十列支援及固定字面計數。一般來源的F/C文法代表覆蓋仍OPEN；原附件程式身份未恢復，既有Layer0／319與一般state充分性邊界保留。
+現況核對：2026-10-20；[P/R來源覆蓋審核](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)證明保全部未來四列支援等價完整十列相等，一般支援覆蓋仍OPEN。保計數的普遍文法代表命題由真disk反例否定；933／941一經P即入K132，不能反推原來源覆蓋。逆P／三角星剝除給可證子類，另有不可剝但已覆蓋的真圖控制。
 
 | 欄位 | 現況 |
 | --- | --- |
 | 階段／生命週期 | 研究中；完整表示、指定 grammar 與有界枚舉已有成果，一般可迭代 state 充分性待證。F／Z 為待初驗提案，域外構造研究已交付。 |
-| 最近研究更新 | 2026-10-19：[實圖語義與計數解碼](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)完成任意大小完整fibre雙射；局部字面編譯與792個全圖案例獨立重建吻合。 |
-| 上次完成 | 明定P/R的任意disk合法性、整數矩陣轉移及十列計數解碼；文法族132態最小性取得圖語義，一般disk的支援上界另證。 |
-| 目前停止點 | 一般disk／剩餘r6的F/C文法代表覆蓋仍OPEN；歷史原程式未補齊。F／Z、一般context／future、刪內邊與Kempe的後繼充分性及來源分類均未完成。 |
-| 下一步 | 對指定剩餘來源給保完整十列的文法代表，或計入接回成本的成功／更小bad化約；不能把可觀察解碼當成來源覆蓋。F／Z另依§3接續。 |
-| 接手入口 | P/R先讀[實圖語義報告](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)及[三探測報告](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md)；其他分支讀§3、[F／Z](c5_forcing_transport_conjectures.md)及[Phase B](c5_phase_b_common_lemmas.md)。 |
+| 最近研究更新 | 2026-10-20：[來源覆蓋](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)完成精確量詞、一般計數覆蓋反例、剩餘支援後繼與可剝子類；一般支援覆蓋未解。 |
+| 上次完成 | 行為代表等價完整十列支援；P的整數逆與支援資訊損失、933／941首次P吸收及932殘留轉移、合法剝除與完整fibres控制。 |
+| 目前停止點 | 一般disk／剩餘r6的支援代表覆蓋仍OPEN；逆P／三角星剝除不覆蓋全部來源，一般計數代表命題為假。歷史原程式、F／Z及一般後繼充分性邊界保留。 |
+| 下一步 | 對具名原來源給同一完整十列支援代表，或計入接回成本的成功／更小bad下降；後繼入K及不可剝都不能裁決原來源。F／Z另依§3接續。 |
+| 接手入口 | P/R先讀[來源覆蓋報告](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)及[實圖語義](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)；其他分支讀§3、[F／Z](c5_forcing_transport_conjectures.md)及[Phase B](c5_phase_b_common_lemmas.md)。 |
 
 ### 近期里程碑
 
@@ -20,7 +20,7 @@
 | 2026-10-15／共同原圖與二層cover | [必要表階數](../audits/2026-10-15-f4-relation-6ddea32/REPORT.md)及[二層共同圖](../audits/2026-10-15-kempe-state-covers-6ddea32/REPORT.md)分開精確關係、抽象交換與真圖多值lift；原平面來源及一般充分性仍OPEN。 |
 | 2026-10-19／三探測完整解碼 | [有限P/R模型](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md)中，四列未來行為需要全部132態；三個指定後綴已能還原十列，圖層語義與來源覆蓋另證。 |
 | 2026-10-19／任意disk的P/R語義 | [完整fibre雙射](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)將三探測推到任意大小disk的十列固定字面計數；一般文法代表覆蓋保留OPEN。 |
-| 2026-10-11／提案形成 | [強迫同色與閉環一致](c5_forcing_transport_conjectures.md)明確化 F 的有界介面證書與 Z 的零邊數不增修復；當輪只整理提案，兩項均未初驗。 |
+| 2026-10-20／來源覆蓋界線 | [精確合同與反控制](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)證一般計數代表不存在；支援覆蓋等價原分類，P吸收及幾何可剝子類皆不關閉一般義務。 |
 | 2026-10-13／域外構造與原域收窄 | [強迫異色](c5_forced_inequality_transport.md)證一般距離無界、寬度≤5及不交叉限制，排巢狀 clique／割點接力作原 critical 來源；下一入口收窄至固定 β 的非 clique 介面。 |
 
 來源投影階數與精確接合上界及跨線整理見
@@ -48,6 +48,7 @@
 | P/R 文法 v0.2 附件 | 所附132態／264轉移模型核對一致；319有56 Live／76 Dead，F及F/C文法最大最小成本為6／5。原程式／測試未隨附；後續以明定實圖操作獨立重建，未證一般覆蓋 | [匯入範圍、原檔與完整性核對](sources/2026-10-19-c5-grammar-v02/README.md) |
 | P/R四列三步解碼 | 最小統一深度3，59對需三步；深度≤3唯一最小探測集合RR／PRR／RRR重建全部十列，適用1024形式mask；文法族四列最小機器132態。圖語義及計數升級由下項完成 | [代數證明、見證及三路重播](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md) |
 | P/R實圖語義與計數解碼 | 任意大小disk上，明定外側push／右轉合法且完整fibre轉移等於附件整數矩陣；三探測解碼十列支援／固定字面計數。5120局部指派與792圖／7920完整fibres重建；一般F/C代表覆蓋及新Lean仍OPEN | [任意大小證明、獨立圖重播及計數證書](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md) |
+| P/R文法來源覆蓋 | 保全部未來四列支援等價完整十列相等；一般計數代表由C5內葉點反駁。933／941首次P入K、932六態殘留；固定17P外補把任意非空支援送1023，會改框增點。逆P／三角星剝除給充分子類，一般支援及r6覆蓋OPEN，無新Lean | [精確量詞、任意字串定理與真圖證書](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md) |
 | Embedding 到 grammar | 固定 C5＋K3 接線的紙面 topology 論證依賴 Jordan–Schoenflies 等事實；embedding 抽取與 topology soundness 未 Lean 化 | [topology](topology_completeness.md) |
 | 固定 relation 庫／pp | 固定 grammar 的 87 states 與完整 relation 查詢保存；pp 求值器屬 Python，87 不等於一般 cell catalogue 的 132 | [relation 庫](boundary_relations.md)、[pp](pp_relations.md)、[fan](fan_pentagon.md) |
 | Cell 枚舉 | R1／SYM／prefix／DFS／bitmask／integer viable 的 Lean 鏈及外部信任已明列；k=6、7 重現只是有界證據 | [enumerator](c5_cell_enumerator.md) |
@@ -63,8 +64,14 @@
 完成矩陣層觀察深度及重編碼；後續[實圖語義](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)
 證明定外側push／右轉在任意大小disk合法，完整字面fibre雙射給相同整數矩陣，
 故三探測可恢復任意這類disk的十列支援與計數；文法族132種四列行為仍不可合併。
-下一個窄義務是指定剩餘來源的完整十列文法代表，或成功／更小bad的實圖化約並計入接回成本。
-逆P的局部幾何不保證存在；原歷史程式仍缺，一般來源覆蓋及主命題仍OPEN。
+2026-10-20的[來源覆蓋審核](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)
+證這種行為代表恰要求同一來源完整十列支援；一般計數／fibre雙射代表已被真圖反例否定，
+不能將它當成原支援覆蓋的必要條件。933／941的每個含P後繼都在K132，
+932另留六個K外態；後繼可代表不反推原框可代表。
+固定共同字串可用17次P將所有非空支援送1023，但改框且增加17個內點，不能供應原來源下降。
+逆P與內三度三角星剝除給任意大小的條件式覆蓋，但無此剝除的真disk仍可有C代表。
+下一窄義務仍是具名原來源的同一完整十列支援代表，或計入接回成本的成功／更小bad下降。
+原歷史程式仍缺，一般支援來源覆蓋及主命題仍OPEN。
 
 2026-10-15的[具名模型續進](../audits/2026-10-15-route-round4-6ddea32/REPORT.md)
 沒有把抽象state指定成真來源。Layer0二層共同圖只覆18列，完整720／22列、

@@ -1,0 +1,142 @@
+[
+  {
+    "name": "polluted-0",
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/check_integer_inverse.py",
+      "--check",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/negative-controls/polluted-0.json"
+    ],
+    "returncode": 1,
+    "expected_nonzero": true,
+    "log": "logs/polluted-0.log",
+    "error_tail": "ValueError: certificate mismatch"
+  },
+  {
+    "name": "exclusive-0",
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/check_integer_inverse.py",
+      "--write"
+    ],
+    "returncode": 1,
+    "expected_nonzero": true,
+    "log": "logs/exclusive-0.log",
+    "error_tail": "FileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/integer_inverse.json'"
+  },
+  {
+    "name": "polluted-1",
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/A/check_contract.py",
+      "--check",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/negative-controls/polluted-1.json"
+    ],
+    "returncode": 1,
+    "expected_nonzero": true,
+    "log": "logs/polluted-1.log",
+    "error_tail": "ValueError: contract control bytes differ"
+  },
+  {
+    "name": "exclusive-1",
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/A/check_contract.py",
+      "--write"
+    ],
+    "returncode": 1,
+    "expected_nonzero": true,
+    "log": "logs/exclusive-1.log",
+    "error_tail": "FileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/A/contract_controls.json'"
+  },
+  {
+    "name": "polluted-2",
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/B/check_transition_obstruction.py",
+      "--check",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/negative-controls/polluted-2.json"
+    ],
+    "returncode": 1,
+    "expected_nonzero": true,
+    "log": "logs/polluted-2.log",
+    "error_tail": "AssertionError: Certificate mismatch."
+  },
+  {
+    "name": "exclusive-2",
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/B/check_transition_obstruction.py",
+      "--write"
+    ],
+    "returncode": 2,
+    "expected_nonzero": true,
+    "log": "logs/exclusive-2.log",
+    "error_tail": "check_transition_obstruction.py: error: unrecognized arguments: --write"
+  },
+  {
+    "name": "polluted-3",
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/B/check_universal_collar.py",
+      "--check",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/negative-controls/polluted-3.json"
+    ],
+    "returncode": 1,
+    "expected_nonzero": true,
+    "log": "logs/polluted-3.log",
+    "error_tail": "AssertionError: Certificate mismatch."
+  },
+  {
+    "name": "exclusive-3",
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/B/check_universal_collar.py",
+      "--write"
+    ],
+    "returncode": 2,
+    "expected_nonzero": true,
+    "log": "logs/exclusive-3.log",
+    "error_tail": "check_universal_collar.py: error: unrecognized arguments: --write"
+  },
+  {
+    "name": "polluted-4",
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/C/check_geometry.py",
+      "--check",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/negative-controls/polluted-4.json"
+    ],
+    "returncode": 1,
+    "expected_nonzero": true,
+    "log": "logs/polluted-4.log",
+    "error_tail": "ValueError: certificate differs from independent reconstruction"
+  },
+  {
+    "name": "exclusive-4",
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/C/check_geometry.py",
+      "--write"
+    ],
+    "returncode": 1,
+    "expected_nonzero": true,
+    "log": "logs/exclusive-4.log",
+    "error_tail": "FileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/C/geometry_certificate.json'"
+  }
+]

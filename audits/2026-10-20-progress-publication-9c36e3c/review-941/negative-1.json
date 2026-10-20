@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/check.py",
+    "--seal",
+    "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/verification/negative-seal.json"
+  ],
+  "code": 1,
+  "seconds": 0.106,
+  "stdout": "",
+  "stderr_tail": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/check.py\", line 47, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/check.py\", line 23, in main\n    assert actual == row[\"sha256\"], (\"sealed output drift\", row[\"path\"])\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('sealed output drift', 'BASE.md')\n"
+}

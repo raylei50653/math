@@ -1,0 +1,65 @@
+[
+  {
+    "name": "final-normal",
+    "command": "python3 -B audits/2026-10-20-r6-two-cycle-repair-9c36e3c/check.py",
+    "exit_code": 0,
+    "stdout": "logs/final-normal.stdout.log",
+    "stderr": "logs/final-normal.stderr.log",
+    "stdout_sha256": "f00ff9d36d38ec431d14c2116c86685efcd5f69b92da6be43bacbc8f2bb0f604",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "final-seed17",
+    "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-20-r6-two-cycle-repair-9c36e3c/check.py",
+    "exit_code": 0,
+    "stdout": "logs/final-seed17.stdout.log",
+    "stderr": "logs/final-seed17.stderr.log",
+    "stdout_sha256": "f00ff9d36d38ec431d14c2116c86685efcd5f69b92da6be43bacbc8f2bb0f604",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "docs",
+    "command": "python3 -B scripts/check_docs.py",
+    "exit_code": 0,
+    "stdout": "logs/docs.stdout.log",
+    "stderr": "logs/docs.stderr.log",
+    "stdout_sha256": "b2ee7b7f6b9d88f75eede58531c6e03fce09283e090b39fdc6119e40415f1dd6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "docgraph-formal",
+    "command": "python3 -B tools/docgraph --include 'docs/**/*.md' check",
+    "exit_code": 0,
+    "stdout": "logs/docgraph-formal.stdout.log",
+    "stderr": "logs/docgraph-formal.stderr.log",
+    "stdout_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "docgraph-scoped",
+    "command": "python3 -B tools/docgraph --include 'audits/2026-10-20-r6-two-cycle-repair-9c36e3c/*.md' --include 'audits/2026-10-20-r6-two-cycle-repair-9c36e3c/A/*.md' --include 'audits/2026-10-20-r6-two-cycle-repair-9c36e3c/B/*.md' --include 'audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/*.md' check",
+    "exit_code": 0,
+    "stdout": "logs/docgraph-scoped.stdout.log",
+    "stderr": "logs/docgraph-scoped.stderr.log",
+    "stdout_sha256": "54d64e8f9baf27a73a3e192d1a307d712380add0052cd5068d60b6d75b95565f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "artifacts",
+    "command": "python3 -B tools/check_generated_artifacts.py",
+    "exit_code": 0,
+    "stdout": "logs/artifacts.stdout.log",
+    "stderr": "logs/artifacts.stderr.log",
+    "stdout_sha256": "8caff25fc1a60cfb6a95bb83980351a8b4eb202fd4c23792a611b8df0a7d32cd",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "whitespace",
+    "command": "git diff --check",
+    "exit_code": 0,
+    "stdout": "logs/whitespace.stdout.log",
+    "stderr": "logs/whitespace.stderr.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

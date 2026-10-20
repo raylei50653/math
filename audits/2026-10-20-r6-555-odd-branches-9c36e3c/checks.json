@@ -1,0 +1,67 @@
+[
+  {
+    "name": "normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-20-r6-555-odd-branches-9c36e3c/check.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-20-r6-555-odd-branches-9c36e3c/check.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "docs",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/check_docs.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "docgraph-docs",
+    "command": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "artifacts",
+    "command": [
+      "python3",
+      "-B",
+      "tools/check_generated_artifacts.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "lake",
+    "command": [
+      "lake",
+      "build"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "whitespace",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "returncode": 0
+  }
+]

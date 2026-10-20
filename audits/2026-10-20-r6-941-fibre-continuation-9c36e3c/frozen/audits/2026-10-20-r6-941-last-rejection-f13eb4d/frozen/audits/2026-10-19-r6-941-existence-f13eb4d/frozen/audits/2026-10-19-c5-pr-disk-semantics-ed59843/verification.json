@@ -1,0 +1,408 @@
+{
+  "schema": "c5-pr-disk-semantics/verification-v1",
+  "scope": "Reconstructed explicit disk operations; arbitrary-size paper theorem + independent finite evidence; no historical original-code replay or general grammar coverage.",
+  "replays": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/check_count_decoder.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "PYTHONHASHSEED": null,
+      "exit": 0,
+      "elapsed_seconds": 0.035,
+      "log": "logs/replay-0-normal.log",
+      "output_sha256": "fc965f374e14d06f940592b55da07eeec33d9f1b219afa0a4ffb2f0e591063da"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/B/check_local_operators.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "PYTHONHASHSEED": null,
+      "exit": 0,
+      "elapsed_seconds": 0.095,
+      "log": "logs/replay-1-normal.log",
+      "output_sha256": "ab880f18015449540bb54dc3a9d3922934687e420f97e42e1efc5d222a782c19"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/check_full_graph.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "PYTHONHASHSEED": null,
+      "exit": 0,
+      "elapsed_seconds": 0.445,
+      "log": "logs/replay-2-normal.log",
+      "output_sha256": "db4b76f14ce08814ffea7a31cee33ce81fb6b85026e3f29da027955ca194ba4b"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/check_count_decoder.py",
+        "--check"
+      ],
+      "cwd": "/tmp",
+      "PYTHONHASHSEED": "17",
+      "exit": 0,
+      "elapsed_seconds": 0.035,
+      "log": "logs/replay-0-seed17.log",
+      "output_sha256": "fc965f374e14d06f940592b55da07eeec33d9f1b219afa0a4ffb2f0e591063da"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/B/check_local_operators.py",
+        "--check"
+      ],
+      "cwd": "/tmp",
+      "PYTHONHASHSEED": "17",
+      "exit": 0,
+      "elapsed_seconds": 0.094,
+      "log": "logs/replay-1-seed17.log",
+      "output_sha256": "ab880f18015449540bb54dc3a9d3922934687e420f97e42e1efc5d222a782c19"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/check_full_graph.py",
+        "--check"
+      ],
+      "cwd": "/tmp",
+      "PYTHONHASHSEED": "17",
+      "exit": 0,
+      "elapsed_seconds": 0.452,
+      "log": "logs/replay-2-seed17.log",
+      "output_sha256": "db4b76f14ce08814ffea7a31cee33ce81fb6b85026e3f29da027955ca194ba4b"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-c5-observation-depth-ed59843/check_observation_depth.py",
+        "--check"
+      ],
+      "exit": 0,
+      "log": "logs/observation-consumer.log"
+    }
+  ],
+  "negative_controls": {
+    "local_graph_controls": 4,
+    "whole_graph_controls": 7,
+    "certificate_corruptions_rejected": 3,
+    "exclusive_existing_outputs_rejected": 3,
+    "details": [
+      {
+        "name": "wrong-count-decoder",
+        "command": [
+          "python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/check_count_decoder.py",
+          "--check",
+          "--certificate",
+          "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/negative-controls/wrong-count-decoder.json"
+        ],
+        "expected": "nonzero",
+        "exit": 1,
+        "log": "logs/wrong-count-decoder.log",
+        "reason": "FAIL: count decoder certificate mismatch"
+      },
+      {
+        "name": "wrong-local-matrix",
+        "command": [
+          "python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/B/check_local_operators.py",
+          "--check",
+          "--certificate",
+          "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/B/negative-certificate.json"
+        ],
+        "expected": "nonzero",
+        "exit": 1,
+        "log": "logs/wrong-local-matrix.log",
+        "reason": "FAIL: local compilation certificate mismatch"
+      },
+      {
+        "name": "wrong-whole-graph-fibre",
+        "command": [
+          "python3",
+          "-B",
+          "-c",
+          "import pathlib,runpy,sys; m=runpy.run_path(sys.argv[1]); m['main'].__globals__['HERE']=pathlib.Path(sys.argv[2]); sys.argv=[sys.argv[1],'--check']; m['main']()",
+          "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/check_full_graph.py",
+          "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/negative-controls/whole-graph"
+        ],
+        "expected": "nonzero",
+        "exit": 1,
+        "log": "logs/wrong-whole-graph-fibre.log",
+        "reason": "ValueError: generated bytes differ: certificate.json"
+      },
+      {
+        "name": "existing-count-output",
+        "command": [
+          "python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/check_count_decoder.py",
+          "--write"
+        ],
+        "expected": "nonzero",
+        "exit": 1,
+        "log": "logs/existing-count-output.log",
+        "reason": "FAIL: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/count_decoder.json'"
+      },
+      {
+        "name": "existing-local-output",
+        "command": [
+          "python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/B/check_local_operators.py",
+          "--write"
+        ],
+        "expected": "nonzero",
+        "exit": 1,
+        "log": "logs/existing-local-output.log",
+        "reason": "FAIL: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/B/certificate.json'"
+      },
+      {
+        "name": "existing-whole-graph-output",
+        "command": [
+          "python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/check_full_graph.py",
+          "--write"
+        ],
+        "expected": "nonzero",
+        "exit": 1,
+        "log": "logs/existing-whole-graph-output.log",
+        "reason": "ValueError: --write requires absent C output files"
+      },
+      {
+        "name": "issued_evidence_unchanged_after_rejections",
+        "pass": true,
+        "sha256": {
+          "count_decoder.json": "f8f96efcf424f9d54e294d11e5405d9dc7161333445ebee905761b911b694f9b",
+          "check_count_decoder.py": "63d0ee901322d5c714de8b21bd02bccc9295630690e255c33157235c8002a7cc",
+          "B/check_local_operators.py": "d742430591bd59407f5a4b191420c4370ff409d5afe983a449122baf40984e6c",
+          "B/certificate.json": "c24e86ed7dda5d274a344823955bbf32e05030d3a0d5419d9201b1796e58c573",
+          "C/check_full_graph.py": "242663cebce02ab86df97f7a7c9ec91ce3d90d7138640939301284c4bbf09652",
+          "C/certificate.json": "e426653ac4a047c9e21175c215a7ef0e5025fbd812bab4c327282cbba613e321",
+          "C/verification.json": "b080082a31e6bd0534879a762a1a4d27ed442f7c81099e5f003b82f1b5e5ac95"
+        }
+      }
+    ]
+  },
+  "custody": [
+    {
+      "path": "docs/sources/2026-10-19-c5-grammar-v02/IMPORT.json",
+      "frozen_unchanged": true,
+      "live_unchanged": true
+    },
+    {
+      "path": "docs/sources/2026-10-19-c5-grammar-v02/README.md",
+      "frozen_unchanged": true,
+      "live_unchanged": true
+    },
+    {
+      "path": "docs/sources/2026-10-19-c5-grammar-v02/RESULTS.md",
+      "frozen_unchanged": true,
+      "live_unchanged": true
+    },
+    {
+      "path": "docs/sources/2026-10-19-c5-grammar-v02/SHA256SUMS",
+      "frozen_unchanged": true,
+      "live_unchanged": true
+    },
+    {
+      "path": "docs/sources/2026-10-19-c5-grammar-v02/certificate_v02.json",
+      "frozen_unchanged": true,
+      "live_unchanged": true
+    },
+    {
+      "path": "docs/sources/2026-10-19-c5-grammar-v02/verification_v02.json",
+      "frozen_unchanged": true,
+      "live_unchanged": true
+    },
+    {
+      "path": "docs/HANDOFF.md",
+      "frozen_unchanged": true,
+      "live_unchanged": true
+    },
+    {
+      "path": "docs/STATUS.md",
+      "frozen_unchanged": true,
+      "live": "authorized routing update"
+    },
+    {
+      "path": "docs/c5_state_guide.md",
+      "frozen_unchanged": true,
+      "live": "authorized routing update"
+    },
+    {
+      "path": "docs/DOCUMENTATION.md",
+      "frozen_unchanged": true,
+      "live_unchanged": true
+    },
+    {
+      "path": "audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md",
+      "frozen_unchanged": true,
+      "live_unchanged": true
+    },
+    {
+      "path": "audits/2026-10-19-c5-observation-depth-ed59843/check_observation_depth.py",
+      "frozen_unchanged": true,
+      "live_unchanged": true
+    },
+    {
+      "path": "audits/2026-10-19-c5-observation-depth-ed59843/certificate.json",
+      "frozen_unchanged": true,
+      "live_unchanged": true
+    },
+    {
+      "path": "docs/c5_kempe_screen.md",
+      "frozen_unchanged": true,
+      "live_unchanged": true
+    },
+    {
+      "path": "scripts/c5_kempe_screen.py",
+      "frozen_unchanged": true,
+      "live_unchanged": true
+    }
+  ],
+  "whole_graph_summary": {
+    "all_pass": true,
+    "certificate_sha256": "e426653ac4a047c9e21175c215a7ef0e5025fbd812bab4c327282cbba613e321",
+    "disk_cellulation_failures": 0,
+    "empty_fibres": 2278,
+    "grammars": {
+      "F": 396,
+      "FC": 396
+    },
+    "graph_cases": 792,
+    "independent_product_fibres": 80,
+    "integer_matrix_disagreements": 0,
+    "literal_fibres": 7920,
+    "literal_full_colourings": 10642,
+    "max_single_fibre_size": 8,
+    "max_vertices": 12,
+    "negative_controls_detected": 7,
+    "representatives_per_grammar": 132,
+    "schema": "c5-pr-disk-whole-graph-verification/v1",
+    "scope": "independent_reconstruction_not_historical_original_code_replay",
+    "source_sha256": "55109b2872294bb43dcd161635a65dff6ed3453d5c870a05ef0f3a9248e0d933",
+    "successors_per_representative": 2,
+    "support_disagreements": 0
+  },
+  "cross_reviews": [
+    "A/CROSS_REVIEW.md",
+    "B/CROSS_REVIEW.md",
+    "C/CROSS_REVIEW.md"
+  ],
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit": 0,
+      "result": "700 Markdown files; 9205 local links; anchors, index, handoff, guide progress checked",
+      "evidence": "actual exec output from this turn"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit": 0,
+      "result": "97 documents, 383 relations, 12 families; 0 errors, 0 notes",
+      "evidence": "actual exec output from this turn"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit": 0,
+      "evidence": "actual exec output from this turn"
+    },
+    {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit": 0,
+      "jobs": 8832,
+      "existing_linter_warnings": true,
+      "evidence": "tool session 41987 completed successfully; full console log not copied into audit"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit": 1,
+      "errors": 72,
+      "error_lines_equal_baseline": true,
+      "baseline": "docgraph-baseline.log",
+      "log": "logs/docgraph-final.log",
+      "summary": "ERROR [duplicate-id] id 'c5.w5-three-color-support' is declared by audits/2026-10-18-abstraction-bottleneck-9f1fe84/A/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-source-9f1fe84/frozen/docs/c5_w5_three_color_support.md, docs/c5_w5_three_color_support.md",
+      "note": "routing relation counts may change; all 72 historical error lines are unchanged"
+    },
+    {
+      "command": "reuse scripts/check_docs.py links/anchors on seven current audit Markdown files",
+      "exit": 0,
+      "local_links": 17
+    },
+    {
+      "command": "git diff --no-index --check /dev/null FILE for all own non-frozen audit files except routing-before.diff",
+      "result": "no whitespace diagnostics; no-index returns 1 when files differ",
+      "files": 42,
+      "archive_exception": "routing-before.diff retains 10 whitespace-only original context lines; frozen historical bytes not rewritten"
+    }
+  ],
+  "claim_layers": {
+    "arbitrary_disk_legality_and_fibres": "proved on paper for explicit operation contract",
+    "local_matrix_compilation": "triggered and holds",
+    "named_792_graph_fibres": "triggered and holds",
+    "all_disk_FC_grammar_coverage": "OPEN; not proved or inferred",
+    "missing_historical_generator_identity": "unverified",
+    "new_Lean_theorem": false
+  },
+  "routing_review": {
+    "updated": [
+      "docs/c5_state_guide.md",
+      "docs/STATUS.md"
+    ],
+    "reviewed_unchanged": [
+      "README.md",
+      "docs/HANDOFF.md"
+    ],
+    "stop": "L2; general source coverage and main theorem remain OPEN",
+    "historical_observation_audit": "all frozen source/report/certificate bytes preserved"
+  },
+  "not_rerun": [
+    "original missing 40+31 tests",
+    "original missing 22 pollution inputs",
+    "triangle-face insertion source controls",
+    "original UI tests",
+    "unrelated research graph enumerations"
+  ]
+}

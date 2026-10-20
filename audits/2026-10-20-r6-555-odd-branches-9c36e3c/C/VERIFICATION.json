@@ -1,0 +1,119 @@
+{
+  "checker_independent_of_prior_code": true,
+  "frozen_input_hashes_checked": true,
+  "negative_controls_rejected": 11,
+  "normal_seed17_same_stdout": true,
+  "protected_sha256_after": {
+    "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/certificate.json.gz": "449546be03f870ffb62fec0e34279f61be1fd2527a29f5f1841f5fcc214aee28",
+    "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py": "bb88fcd98f3380b2f01cfa679f7a642b337baab5b249dfa5f46cc6b6c97f0e65"
+  },
+  "protected_sha256_before": {
+    "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/certificate.json.gz": "449546be03f870ffb62fec0e34279f61be1fd2527a29f5f1841f5fcc214aee28",
+    "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py": "bb88fcd98f3380b2f01cfa679f7a642b337baab5b249dfa5f46cc6b6c97f0e65"
+  },
+  "replay_read_only": true,
+  "results": [
+    {
+      "args": [],
+      "expected_success": true,
+      "name": "replay-normal",
+      "returncode": 0
+    },
+    {
+      "args": [],
+      "expected_success": true,
+      "name": "replay-seed17",
+      "returncode": 0
+    },
+    {
+      "args": [
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-omitted-complete-component.json.gz"
+      ],
+      "expected_success": false,
+      "name": "negative-omitted-complete-component",
+      "returncode": 1
+    },
+    {
+      "args": [
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-changed-component-charge.json.gz"
+      ],
+      "expected_success": false,
+      "name": "negative-changed-component-charge",
+      "returncode": 1
+    },
+    {
+      "args": [
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-omitted-complete-outer-cycle.json.gz"
+      ],
+      "expected_success": false,
+      "name": "negative-omitted-complete-outer-cycle",
+      "returncode": 1
+    },
+    {
+      "args": [
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-changed-literal-mark.json.gz"
+      ],
+      "expected_success": false,
+      "name": "negative-changed-literal-mark",
+      "returncode": 1
+    },
+    {
+      "args": [
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-changed-original-rotation.json.gz"
+      ],
+      "expected_success": false,
+      "name": "negative-changed-original-rotation",
+      "returncode": 1
+    },
+    {
+      "args": [
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-missing-mark-fibre.json.gz"
+      ],
+      "expected_success": false,
+      "name": "negative-missing-mark-fibre",
+      "returncode": 1
+    },
+    {
+      "args": [
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-omitted-anchored-cut.json.gz"
+      ],
+      "expected_success": false,
+      "name": "negative-omitted-anchored-cut",
+      "returncode": 1
+    },
+    {
+      "args": [
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-invented-pair-repair.json.gz"
+      ],
+      "expected_success": false,
+      "name": "negative-invented-pair-repair",
+      "returncode": 1
+    },
+    {
+      "args": [
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-changed-diamond-cut.json.gz"
+      ],
+      "expected_success": false,
+      "name": "negative-changed-diamond-cut",
+      "returncode": 1
+    },
+    {
+      "args": [
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-source-authority.json.gz"
+      ],
+      "expected_success": false,
+      "name": "negative-source-authority",
+      "returncode": 1
+    },
+    {
+      "args": [
+        "--write",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/certificate.json.gz"
+      ],
+      "expected_success": false,
+      "name": "negative-exclusive-create",
+      "returncode": 1
+    }
+  ],
+  "status": "PASS"
+}

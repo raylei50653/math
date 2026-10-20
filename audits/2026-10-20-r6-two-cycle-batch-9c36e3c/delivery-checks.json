@@ -1,0 +1,26 @@
+[
+  {
+    "name": "docs",
+    "command": "python3 -B scripts/check_docs.py",
+    "exit_code": 0,
+    "output": "OK: 702 Markdown files, 9245 local links; anchors, index, handoff, guide progress checked\n"
+  },
+  {
+    "name": "docgraph-formal",
+    "command": "python3 -B tools/docgraph --include 'docs/**/*.md' check",
+    "exit_code": 0,
+    "output": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n"
+  },
+  {
+    "name": "artifacts-index",
+    "command": "python3 -B tools/check_generated_artifacts.py",
+    "exit_code": 0,
+    "output": "Generated artifact policy OK: 7073 indexed files, 95 large files with documented exceptions, 166 registered outputs.\n"
+  },
+  {
+    "name": "whitespace",
+    "command": "git diff --check",
+    "exit_code": 0,
+    "output": ""
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "docs",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/check_docs.py"
+    ],
+    "returncode": 0,
+    "log": "logs/docs.log",
+    "tail": [
+      "OK: 702 Markdown files, 9238 local links; anchors, index, handoff, guide progress checked"
+    ]
+  },
+  {
+    "name": "formal-docgraph",
+    "command": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "returncode": 0,
+    "log": "logs/formal-docgraph.log",
+    "tail": [
+      "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes"
+    ]
+  },
+  {
+    "name": "all-tree-docgraph",
+    "command": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "check"
+    ],
+    "returncode": 1,
+    "log": "logs/all-tree-docgraph.log",
+    "tail": [
+      "ERROR [duplicate-id] id 'c5.w5-marked-relation' is declared by audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_marked_relation.md, audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_marked_relation.md, audits/2026-10-18-smaller-source-9f1fe84/frozen/docs/c5_w5_marked_relation.md, audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_marked_relation.md, audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_marked_relation.md, audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_marked_relation.md, audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_marked_relation.md, audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_marked_relation.md, audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_marked_relation.md, docs/c5_w5_marked_relation.md",
+      "ERROR [duplicate-id] id 'c5.w5-three-color-support' is declared by audits/2026-10-18-abstraction-bottleneck-9f1fe84/A/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-source-9f1fe84/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, docs/c5_w5_three_color_support.md",
+      "FAIL: 97 documents, 368 relations, 12 families; 72 errors, 0 notes"
+    ]
+  },
+  {
+    "name": "diff",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "returncode": 0,
+    "log": "logs/diff.log",
+    "tail": []
+  }
+]

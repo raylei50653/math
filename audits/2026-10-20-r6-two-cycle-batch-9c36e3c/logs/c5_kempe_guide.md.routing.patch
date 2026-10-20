@@ -1,0 +1,60 @@
+diff --git a/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/routing-before/docs/c5_kempe_guide.md b/docs/c5_kempe_guide.md
+index 9def9d1..6968a7f 100644
+--- a/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/routing-before/docs/c5_kempe_guide.md
++++ b/docs/c5_kempe_guide.md
+@@ -2,22 +2,22 @@
+ 
+ ## 最新進度
+ 
+-現況核對：2026-10-20；[兩完整補圈條件修復](../audits/2026-10-20-r6-two-cycle-repair-9c36e3c/REPORT.md)已構造兩個安全rim點的完整對偶面翻轉，完整奇數公式與同O介面通過獨立核對；尚未證來源必能觸發。[941 fibre續進](../audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/REPORT.md)把J1／J2排除目標縮至兩／六個完整fibres；J2有精確二倍計數式，來源存在性仍OPEN。
++現況核對：2026-10-20；[兩完整補圈雙點修復](../audits/2026-10-20-r6-two-cycle-batch-9c36e3c/REPORT.md)已構造跨單面阻礙的相鄰雙面交換，完整分量奇偶與5／5／5子案已證；普遍觸發仍OPEN。[941 fibre續進](../audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/REPORT.md)把J1／J2排除目標縮至兩／六個完整fibres；J2有精確二倍計數式，來源存在性仍OPEN。
+ 
+ | 欄位 | 現況 |
+ | --- | --- |
+ | 階段／生命週期 | 普通101及兩個全異完整染色扇區已證存在；主攻110／101聯合偶補正值，主命題仍OPEN。其他保留線不變。 |
+-| 最近研究更新 | 2026-10-20：[兩圈安全面條件修復](../audits/2026-10-20-r6-two-cycle-repair-9c36e3c/REPORT.md)及[941分量傳送與六項化約](../audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/REPORT.md)；任意大小條件紙證與有限控制分開，無新Lean。 |
+-| 上次完成 | 兩圈分支已構造安全rim點的條件面翻轉，完整奇數與子樹度和精確對應。941的J1仍有兩項排除目標，J2由十項縮六項且拒絕計數為其和的兩倍；J1分層交換與原W5例外已定位。 |
+-| 目前停止點 | 兩個安全rim點同受阻尚未排除，其他修復批次未構造。941兩／六個完整fibres及H4零分支仍OPEN；未有較小bad，未證聯合偶補正值。 |
+-| 下一步 | 兩圈分支用原rotation、短割及完整來源排連續T鄰點對／奇度和附樹的雙重阻斷，或構造其他批次。941續處理兩／六項、原W5短路子支與H4零分支；932／933依原分支改道。 |
+-| 接手入口 | 本頁 §3、[兩圈修復報告](../audits/2026-10-20-r6-two-cycle-repair-9c36e3c/REPORT.md)、[完整面及原樹枝](../audits/2026-10-20-r6-two-cycle-repair-9c36e3c/B/PROOF.md)、[941續進報告](../audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/REPORT.md)；各報告連向完整紙證、空／非空fibres及重播。 |
++| 最近研究更新 | 2026-10-20：[兩圈相鄰雙點修復](../audits/2026-10-20-r6-two-cycle-batch-9c36e3c/REPORT.md)及[941分量傳送與六項化約](../audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/REPORT.md)；任意大小條件紙證與有限控制分開，無新Lean。 |
++| 上次完成 | 兩圈已構造相鄰雙點條件修復；全偶補等價每個完整primal分量度和偶，5／5／5子案縮為同樹兩支奇偶。941的J1仍有兩項排除目標，J2由十項縮六項且拒絕計數為其和的兩倍；J1分層交換與原W5例外已定位。 |
++| 目前停止點 | 尚未證來源必有合格雙點；5／5／5的同樹兩奇支及一般更大批次仍OPEN。941兩／六個完整fibres及H4零分支仍OPEN；未有較小bad，未證聯合偶補正值。 |
++| 下一步 | 兩圈分支尋同一rho、tau通過原rotation及全部未接合分量偶性；處理5／5／5兩奇支，或構造更大合法cut。941續處理兩／六項、原W5短路子支與H4零分支；932／933依原分支改道。 |
++| 接手入口 | 本頁 §3、[雙點修復報告](../audits/2026-10-20-r6-two-cycle-batch-9c36e3c/REPORT.md)、[完整分量及5／5／5](../audits/2026-10-20-r6-two-cycle-batch-9c36e3c/PROOF.md)、[941續進報告](../audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/REPORT.md)；各報告連向完整紙證、空／非空fibres及重播。 |
+ 
+ ### 近期里程碑
+ 
+ | 日期／階段 | 進展與來源 |
+ | --- | --- |
+-| 2026-10-20／兩完整補圈條件修復 | [兩個安全rim點的完整面翻轉與同O判準](../audits/2026-10-20-r6-two-cycle-repair-9c36e3c/REPORT.md)；完整奇數恰j+(j mod2)，原rotation與子樹度和給精確條件，普遍觸發仍OPEN。 |
++| 2026-10-20／兩完整補圈雙點修復 | [相鄰雙面、完整分量奇偶與5／5／5](../audits/2026-10-20-r6-two-cycle-batch-9c36e3c/REPORT.md)；兩單面受阻仍可有合法雙面，275完整PM及16,384個cut控制通過；來源普遍觸發仍OPEN。 |
+ | 2026-10-20／最後拒絕與方法邊界 | [J2六項化約與J1分層交換](../audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/REPORT.md)；完整分量聯集雙射給J2二倍計數式，新增原W5例外，來源矛盾仍未得。 |
+ | 2026-10-19／同候選存在性 | [新Ji接受與兩拒絕零、交叉計數及H4分支](../audits/2026-10-19-r6-941-existence-f13eb4d/REPORT.md)；兩舊接受零控制排除，最後01021與較小bad仍OPEN。 |
+ | 2026-10-19／941接觸與共同支持 | [五個共鄰排除、至多一四接觸點與H1恰1022](../audits/2026-10-19-r6-941-chains-13dc5ff/REPORT.md)；同染色分量及短路原五輪已分類，未給較小bad。 |
+@@ -46,7 +46,7 @@
+ | 較小bad三候選計數 | J1／J2最後拒絕零值等價兩／六個完整fibres同時空；J2精確二倍計數、J1分層交換與原W5例外已證。必要控制另通過28張右填片圖，較小bad仍OPEN | [941最新結果](../audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/REPORT.md)、[Ji構造](../audits/2026-10-19-r6-941-existence-f13eb4d/REPORT.md)、[932／933](../audits/2026-10-18-smaller-bad-counts-e1617a2/REPORT.md) |
+ | 同候選rainbow與原外側 | 原b四度的四位置fan-A接受必洩漏；fan-B兩個重色拒絕列迫q,N同原外側分量，01021容雙接框。後續932／933及941均已證fan-B接受且洩漏；941其他支持證書未排 | [完整雙射、分量表與固定圖重播](../audits/2026-10-18-rainbow-exterior-e1617a2/REPORT.md) |
+ | 原圖較小來源構造 | 具名原相鄰五度兩星有兩個合法k−2候選、至少一個保01232；回填iff四接點非rainbow。三拒絕列完整排除及普遍位置存在仍OPEN | [構造、局部限制及實際完成控制](../audits/2026-10-18-smaller-source-9f1fe84/REPORT.md) |
+-| R6兩完整補圈／匹配修復 | 固定M全參考阻斷保留；兩安全rim點若原rotation交替且各附樹度和偶，翻完整對偶面即全偶補N101。完整奇數j+(j mod2)、13-state同O充要介面已證；兩點同受阻及其他修復存在性仍OPEN | [條件修復與四圖控制](../audits/2026-10-20-r6-two-cycle-repair-9c36e3c/REPORT.md)、[原兩圈結構](../audits/2026-10-17-r6-two-cycle-cap-3d325d7/REPORT.md) |
++| R6兩完整補圈／匹配修復 | 固定M全參考阻斷保留；相鄰雙點的完整rotation及未接合分量偶性給全偶補N101。一般合法批次全偶等價每個完整primal分量度和偶；5／5／5只剩同樹兩奇支。普遍雙點／更大修復存在性仍OPEN | [雙點修復與完整控制](../audits/2026-10-20-r6-two-cycle-batch-9c36e3c/REPORT.md)、[前輪單面及同O介面](../audits/2026-10-20-r6-two-cycle-repair-9c36e3c/REPORT.md)、[原兩圈結構](../audits/2026-10-17-r6-two-cycle-cap-3d325d7/REPORT.md) |
+ | R6主動f非面七-cap／原度數 | 原a或c四度整個子類已排；p與a扇區鄰點為中心時a≥7，q側反射。Q5恰經z、避m,v,w，e,g端點外置且距cap≥2。R100區域分離足以完整下降，但分離存在性仍OPEN | [整合紙證與獨立審查](../audits/2026-10-17-r6-active-f-seven-ffea555/REPORT.md) |
+ | R6非面七缺陷／五接點修復 | 參考偶補跨一／三條spokes；三-spoke有六個局部相容態。完整無H區域可安全嚴格下降；101主動f七圈不容e-spoke。所有奇圈被迫同在H區域，但該剩餘子類未排 | [紙證、完整局部關係與控制](../audits/2026-10-17-r6-seven-five-repair-5b9a7b3/REPORT.md) |
+ | R6-MARKED-SIX／聯合偶補 | 完整原r6下同含vw,pq的簡單圈與同含e,f的cyclic cut皆至少七；無v5前提，舊c4型全排。E/F分量阻斷、七缺陷分類與九框精確可行保留；正值及完整319仍OPEN | [新定理、控制圖與重播](../audits/2026-10-17-r6-marked-six-exclusion-6c420f3/REPORT.md)、[前輪分量與計數](../audits/2026-10-17-r6-joint-positive-113e41f/REPORT.md) |
+@@ -185,8 +185,14 @@ chord03正規標號下，45／56對應兩個安全rim點rho。
+ 等價地，沿其O區間的單調交替鏈成功且全部跳弧奇長；若j段跳弧偶長，
+ 完整新奇圈數恰j+(j mod2)。局部七圈消失不足：固定控制有7+13→9+11。
+ 
+-仍需證兩個安全點不可能同受阻，或另構造保e、同翻／不翻f,g的實際頂點不交批次。
+-同受阻的必要物件已縮為各點的連續T鄰點對，或奇度和附著子樹；尚未排除。
++[相鄰雙點續進](../audits/2026-10-20-r6-two-cycle-batch-9c36e3c/PROOF.md)已給另一條件構造：
++取安全rho與相鄰tau∈T−{v,w}，若全部壞角都在共有兩面，兩面外邊界即實際交替圈，避e/f/g。
++刪rho、tau後，未被對點的原J鄰接接合的每個完整分量度和偶，恰當此交換得全偶補N101。
++一般合法cut的全偶性等價每個新完整primal分量度和偶；區域樹保留所有外側補圈。
++只加入舊U0頂點不能修好包含rotation受阻rho的交換；T葉點亦不能作雙點伙伴。
++若兩安全點及共同外側第三點皆五度，兩個指定配對自動合法且同成同敗；剩餘恰同一T的兩奇支。
++仍未證來源必有合格雙點或更大批次，也未排除兩安全點同受阻。
++七張固定圖275完整PM、16,384個cut及獨立重建通過；三張新控制最小修復cut恰兩點，皆非原來源。
+ 全部32個spoke masks保留，13個無內部奇圈狀態加同一O的完整閉圈／配對／奇偶
+ 及字面標記給修復充要介面，但未證存在通過介面的外側匹配。
+ 四張控制共160個完整PM、正常／seed17與污染拒絕通過；來源實現仍not triggered。

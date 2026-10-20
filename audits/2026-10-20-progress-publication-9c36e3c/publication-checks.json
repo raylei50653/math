@@ -1,0 +1,179 @@
+{
+  "source_base": "9c36e3c4789dfec07d60ec4e042f0bafe17451d1",
+  "lake_build": {
+    "returncode": 0,
+    "jobs": 8832,
+    "warnings": "existing linter warnings; no new Lean theorem"
+  },
+  "independent_replays": {
+    "941": {
+      "normal_and_seed17": 6,
+      "returncode": 0,
+      "negative_certificates_rejected": 16,
+      "receipt": "review-941/summary.json"
+    },
+    "cycles": {
+      "normal_and_seed17": 6,
+      "returncode": 0,
+      "negative_or_exclusive_controls_rejected": 29,
+      "receipt": "review-cycles/review.json"
+    },
+    "pr": {
+      "normal_and_seed17": 10,
+      "returncode": 0,
+      "negative_or_exclusive_controls_rejected": 15,
+      "receipt": "review-pr/review-results.json"
+    }
+  },
+  "source_inventory": {
+    "files": 2924,
+    "worktree_drift": [],
+    "required_ignored_frozen_inputs": 78
+  },
+  "docgraph_docs": {
+    "name": "docgraph-docs",
+    "argv": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "returncode": 0,
+    "log": "logs/docgraph-docs.log",
+    "tail": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n"
+  },
+  "docgraph_all": {
+    "name": "docgraph-all",
+    "argv": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "check"
+    ],
+    "returncode": 1,
+    "log": "logs/docgraph-all.log",
+    "tail": "-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, docs/c5_w5_three_color_support.md\n",
+    "duplicate_id_errors": 72,
+    "scope": "retained frozen, historical and scratch copies; not a whole-tree PASS"
+  },
+  "artifact_policy_tests": {
+    "argv": [
+      "uv",
+      "run",
+      "--with-requirements",
+      "requirements.txt",
+      "python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_generated_artifacts.py"
+    ],
+    "returncode": 0,
+    "output": "..................................\n----------------------------------------------------------------------\nRan 34 tests in 2.645s\n\nOK\n"
+  },
+  "initial_test_invocation": {
+    "name": "artifact-policy-tests",
+    "argv": [
+      "uv",
+      "run",
+      "--with-requirements",
+      "requirements.txt",
+      "python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_check_generated_artifacts.py"
+    ],
+    "returncode": 5,
+    "log": "logs/artifact-policy-tests.log",
+    "tail": "\n----------------------------------------------------------------------\nRan 0 tests in 0.000s\n\nNO TESTS RAN\n"
+  },
+  "whitespace": {
+    "full_staged_returncode": 2,
+    "warnings": 62,
+    "files": 8,
+    "cause": "single-space blank context lines in sealed unified diffs",
+    "exceptions": "whitespace-exceptions.json",
+    "remaining_staged_returncode": 0
+  },
+  "remote_ci": "not observed before commit/push",
+  "independent_index_custody": {
+    "status": "PASS",
+    "files": 2924,
+    "source_bytes": 165192659,
+    "dependency_rows": 2444,
+    "missing_dependencies": [],
+    "nonrouting_drift": [],
+    "pycache_in_changed_staged_paths": 0,
+    "receipt": "index-review/summary.json",
+    "note": "Review covered source audit files and dependencies before final publication receipts were staged."
+  },
+  "final_checks": [
+    {
+      "name": "docs",
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "returncode": 0,
+      "stdout": "OK: 703 Markdown files, 9268 local links; anchors, index, handoff, guide progress checked\n",
+      "stderr": ""
+    },
+    {
+      "name": "artifact-policy",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/check_generated_artifacts.py"
+      ],
+      "returncode": 0,
+      "stdout": "Generated artifact policy OK: 7982 indexed files, 106 large files with documented exceptions, 166 registered outputs.\n",
+      "stderr": ""
+    },
+    {
+      "name": "scoped-whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(literal,exclude)audits/2026-10-20-r6-555-odd-branches-9c36e3c/frozen/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/logs/STATUS.md.routing.patch",
+        ":(literal,exclude)audits/2026-10-20-r6-555-odd-branches-9c36e3c/frozen/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/logs/c5_kempe_guide.md.routing.patch",
+        ":(literal,exclude)audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff",
+        ":(literal,exclude)audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff",
+        ":(literal,exclude)audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff",
+        ":(literal,exclude)audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff",
+        ":(literal,exclude)audits/2026-10-20-r6-two-cycle-batch-9c36e3c/logs/STATUS.md.routing.patch",
+        ":(literal,exclude)audits/2026-10-20-r6-two-cycle-batch-9c36e3c/logs/c5_kempe_guide.md.routing.patch"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree-matches-index",
+      "argv": [
+        "git",
+        "diff",
+        "--quiet"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "staged_changed_files_before_final_receipt_update": 3083
+}

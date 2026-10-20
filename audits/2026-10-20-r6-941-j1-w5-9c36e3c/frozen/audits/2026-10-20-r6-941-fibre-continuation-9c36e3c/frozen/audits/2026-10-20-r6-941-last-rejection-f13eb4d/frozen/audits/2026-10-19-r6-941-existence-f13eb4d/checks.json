@@ -1,0 +1,151 @@
+{
+  "base": "f13eb4d0887d962021992ae7afe3323af4d79cd3",
+  "frozen_inputs": 516,
+  "frozen_drift": 0,
+  "sealed_files": 45,
+  "sealed_drift": 0,
+  "replays": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-existence-f13eb4d/check.py"
+      ],
+      "extra_env": {},
+      "exit_code": 0,
+      "seconds": 110.654,
+      "stdout_sha256": "8e047c3dec44b02d77245e981e550dc3043b478b6bbd93f535e0d89a6cc6a041"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-existence-f13eb4d/check.py"
+      ],
+      "extra_env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "seconds": 109.799,
+      "stdout_sha256": "8e047c3dec44b02d77245e981e550dc3043b478b6bbd93f535e0d89a6cc6a041"
+    }
+  ],
+  "read_only_normal_seed17_identical": true,
+  "engineering": [
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.106,
+      "stdout_sha256": "c3c88185ad8fa4aae832d5ff74126e66ff5e2a66490cf4df33deb120da950d6a"
+    },
+    {
+      "name": "docgraph-docs",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.097,
+      "stdout_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.014,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "lake-build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 10.263,
+      "stdout_sha256": "8104be9d036bacf8bed91d79c2258da89881e2e6652e9d327e3af5292cf7fa71"
+    }
+  ],
+  "corrupted_output_seal": {
+    "exit_code": 1,
+    "corrupted_output_sha_rejected": true,
+    "target": "B/certificate.json.gz",
+    "stderr_sha256": "d1b1b387a18b9fd1509ca2f45ab9ba7dfa35200e95857327874ba1d151dfca1d"
+  },
+  "audit_links": {
+    "new_text_whitespace_errors": [],
+    "local_links_checked": 54,
+    "missing_links": []
+  },
+  "editorial_notation_clarification": {
+    "changed": [
+      "REPORT.md",
+      "SOURCE_CONTRACT.md"
+    ],
+    "meaning": "p and h are distinct original vertices, each degree five; h=ell.",
+    "mathematical_scripts_and_certificates_unchanged": true,
+    "prior_bytes_preserved": "logs/notation-before",
+    "current_output_seal_verified": true
+  },
+  "scope": {
+    "a1_zero_J1_supports": [
+      935,
+      942,
+      943
+    ],
+    "a2_zero_J2_support": 943,
+    "new_J_completed_inner_deltas": [
+      -3,
+      -2
+    ],
+    "same_candidate_zero_rejections": [
+      "01202",
+      "01212"
+    ],
+    "remaining_rejection": "01021",
+    "H4_zero_Q_supports": [
+      1021,
+      1021
+    ],
+    "new_same_exterior_identities": [
+      "b1=u2+v2",
+      "b2=u1+v1",
+      "b1+b2=Aa"
+    ],
+    "main_target": "OPEN",
+    "source_realized": false,
+    "smaller_bad_constructed": false,
+    "new_Lean_theorem": false
+  },
+  "routing": {
+    "updated": [
+      "docs/STATUS.md",
+      "docs/c5_kempe_guide.md"
+    ],
+    "reviewed_unchanged": [
+      "README.md",
+      "docs/HANDOFF.md"
+    ]
+  },
+  "not_rerun": {
+    "whole_tree_docgraph": "Scoped docs check passed; no whole-tree revalidation claimed.",
+    "generated_artifact_index_policy": "No staging or publication requested; new artifacts remain untracked.",
+    "upstream_root_checkers": "Inputs frozen and hashed; required mathematical interfaces reconstructed by the ten current checkers."
+  },
+  "commit_push": "not requested and not performed"
+}

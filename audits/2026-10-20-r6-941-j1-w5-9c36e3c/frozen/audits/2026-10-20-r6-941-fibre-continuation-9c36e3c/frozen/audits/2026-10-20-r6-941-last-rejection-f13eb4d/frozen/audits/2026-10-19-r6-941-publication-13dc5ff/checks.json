@@ -1,0 +1,140 @@
+{
+  "base": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+  "source_custody": {
+    "base": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+    "source_files": 244,
+    "source_bytes": 9794270,
+    "source_drift": 0,
+    "existing_sealed_evidence_edited": false,
+    "ignored_bytecode_excluded": true,
+    "required_input_reference_omissions": []
+  },
+  "independent_review": {
+    "method": "independent read-only publication review",
+    "scope": [
+      "docs/STATUS.md",
+      "docs/c5_kempe_guide.md",
+      "audits/2026-10-19-r6-941-quotients-13dc5ff",
+      "audits/2026-10-19-r6-941-acceptance-13dc5ff",
+      "audits/2026-10-19-r6-941-chains-13dc5ff"
+    ],
+    "frozen_inputs": 488,
+    "sealed_chain_outputs": 39,
+    "verified_routing_hashes": 2,
+    "source_realization_asserted": false,
+    "main_target": "OPEN",
+    "new_Lean_theorem": false,
+    "archives_retained": [
+      "failed-zero-indices",
+      "pre-whitespace-normalization"
+    ],
+    "blockers": [],
+    "pass": true
+  },
+  "formal_replays_receipt": "replays/receipts.json",
+  "normal_seed17_pairs": 3,
+  "mathematical_replays": 6,
+  "engineering": [
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.722,
+      "stdout_sha256": "50a5b0f4d7e0beed6d4ac3da2e99f28dc1303309bdde10a4e7a8cc89ef4067e9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docgraph-docs",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.09,
+      "stdout_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "docgraph-whole",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "seconds": 1.418,
+      "stdout_sha256": "214ce6f854ff299bfbe99d599b539a6dde6bcefbb96aa8beb36f7bb643c5f293",
+      "stderr_sha256": "293def061def09f3142b2ce04a36897948958092cae7f35ee2a9a26c4b89e0be"
+    },
+    {
+      "name": "lake-build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 3.45,
+      "stdout_sha256": "8b91c4978026d6a7e4044c946bee102b6a1416f756cca7366addf153341d0ea9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.013,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "whole_tree_docgraph": {
+    "baseline": "docs/history/2026-10-19-c5-pr-publication/whole-tree-docgraph.log",
+    "baseline_sha256": "c2ce2451a8307d1d835940e4e645afe4070f0495e97141f4a9a14f1d33bee559",
+    "baseline_errors": 72,
+    "current_errors": 72,
+    "same_error_multiset": true,
+    "added": [],
+    "removed": []
+  },
+  "main_target": "OPEN",
+  "new_Lean_theorem": false,
+  "not_rerun": "Unrelated tools unit tests: no tools implementation or Lean source changed.",
+  "commit_push_authorized": true,
+  "artifact_policy": {
+    "command": [
+      "python3",
+      "-B",
+      "tools/check_generated_artifacts.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.75,
+    "stdout": "Generated artifact policy OK: 6547 indexed files, 85 large files with documented exceptions, 166 registered outputs.\n",
+    "stderr": "",
+    "staged_whitespace_exit": 0,
+    "staged_whitespace_output": "",
+    "scope": "actual Git index for this authorized publication"
+  },
+  "final_index_source_verification": {
+    "staged_source_files": 244,
+    "source_bytes": 9794270,
+    "source_drift": 0,
+    "Git_index_source_bytes_equal": true,
+    "staged_paths_outside_whitelist": [],
+    "replay_logs_integrity_verified": true,
+    "normal_seed17_pairs_equal": 3,
+    "publication_local_links": 9,
+    "publication_link_errors": []
+  }
+}

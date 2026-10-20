@@ -1,0 +1,30 @@
+[
+  {
+    "name": "negative-authority",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/check_inputs.py",
+      "--inputs",
+      "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/negative-missing-authority.json"
+    ],
+    "exit_code": 1,
+    "expected": "nonzero rejection",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "3f3cb09aefe09c62f75819c640a25819c96dd1e913548305d4444b687af353f6"
+  },
+  {
+    "name": "negative-empty-mask",
+    "argv": [
+      "python3",
+      "-B",
+      "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/check.py",
+      "--interface-certificate",
+      "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/negative-missing-empty-mask.json"
+    ],
+    "exit_code": 1,
+    "expected": "nonzero rejection",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "906b485bedccfd45b9f7bc3f8b6a456d4a397c2ba3a527448c8735f5d6be3733"
+  }
+]

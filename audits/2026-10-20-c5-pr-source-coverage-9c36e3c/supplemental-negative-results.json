@@ -1,0 +1,48 @@
+[
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/B/check_transition_obstruction.py"
+    ],
+    "returncode": 1,
+    "log": "logs/exclusive-corrected-2.log",
+    "corrects": "initial --write rejected by argparse, which did not test exclusive creation",
+    "file_exists_rejection": true
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/B/check_universal_collar.py"
+    ],
+    "returncode": 1,
+    "log": "logs/exclusive-corrected-3.log",
+    "corrects": "initial --write rejected by argparse, which did not test exclusive creation",
+    "file_exists_rejection": true
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/check_integer_inverse.py",
+      "--check",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/negative-controls/semantic-pollution-0.json"
+    ],
+    "returncode": 1,
+    "log": "logs/semantic-pollution-0.log"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/A/check_contract.py",
+      "--check",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/negative-controls/semantic-pollution-1.json"
+    ],
+    "returncode": 1,
+    "log": "logs/semantic-pollution-1.log"
+  }
+]

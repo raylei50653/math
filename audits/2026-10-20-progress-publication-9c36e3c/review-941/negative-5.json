@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/review/check.py",
+    "--certificate",
+    "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/review/negative-certificate.json"
+  ],
+  "code": 1,
+  "seconds": 0.761,
+  "stdout": "",
+  "stderr_tail": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/review/check.py\", line 183, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/review/check.py\", line 177, in main\n    assert json.loads(args.certificate.read_text()) == out\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "audits/2026-10-20-r6-941-j1-w5-9c36e3c/geometry/check.py",
+    "--certificate",
+    "audits/2026-10-20-r6-941-j1-w5-9c36e3c/geometry/negative-unconditional-induced.json"
+  ],
+  "code": 1,
+  "seconds": 0.043,
+  "stdout": "",
+  "stderr_tail": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-w5-9c36e3c/geometry/check.py\", line 199, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-w5-9c36e3c/geometry/check.py\", line 183, in main\n    assert json.loads(args.certificate.read_text()) == actual, \"certificate mismatch\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate mismatch\n"
+}

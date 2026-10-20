@@ -1,0 +1,64 @@
+{
+  "certificate_sha256": "d8a1e012c67a6e553b92ae7a49c2aa578459980922e543868b62239969539d09",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/C/check_geometry.py",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "name": "normal",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"all_cases_cross_checked_by_cartesian_and_pruned_enumeration\": true, \"initial_complete_fibres\": 60, \"initial_empty_fibres\": 18, \"initial_full_colourings\": 57, \"initial_graph_cases\": 6, \"inverse_I_full_fibre_bijections\": 5, \"inverse_P_roundtrips\": 4, \"rejected_invalid_operation_controls\": 4, \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/C/check_geometry.py",
+        "--check"
+      ],
+      "cwd": "/tmp",
+      "environment_override": {
+        "PYTHONHASHSEED": "17"
+      },
+      "name": "hashseed17_other_cwd",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"all_cases_cross_checked_by_cartesian_and_pruned_enumeration\": true, \"initial_complete_fibres\": 60, \"initial_empty_fibres\": 18, \"initial_full_colourings\": 57, \"initial_graph_cases\": 6, \"inverse_I_full_fibre_bijections\": 5, \"inverse_P_roundtrips\": 4, \"rejected_invalid_operation_controls\": 4, \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/C/check_geometry.py",
+        "--check",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/C/polluted_geometry_certificate.json"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "name": "deleted_full_lift",
+      "returncode": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/C/check_geometry.py\", line 362, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/C/check_geometry.py\", line 357, in main\n    require(args.certificate.read_bytes() == encoded, \"certificate differs from independent reconstruction\")\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/C/check_geometry.py\", line 30, in require\n    raise ValueError(message)\nValueError: certificate differs from independent reconstruction\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/C/check_geometry.py",
+        "--write"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "name": "exclusive_output",
+      "returncode": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/C/check_geometry.py\", line 362, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/C/check_geometry.py\", line 354, in main\n    with args.certificate.open(\"xb\") as stream:\n         ~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-20-c5-pr-source-coverage-9c36e3c/C/geometry_certificate.json'\n",
+      "stdout": ""
+    }
+  ],
+  "normal_certificate_unchanged": true,
+  "polluted_certificate_sha256": "cd56ec07e12a0cc7085dab6bbc3b6fd0d02a1bcc64854a0f5f5cad1d5daf210a"
+}

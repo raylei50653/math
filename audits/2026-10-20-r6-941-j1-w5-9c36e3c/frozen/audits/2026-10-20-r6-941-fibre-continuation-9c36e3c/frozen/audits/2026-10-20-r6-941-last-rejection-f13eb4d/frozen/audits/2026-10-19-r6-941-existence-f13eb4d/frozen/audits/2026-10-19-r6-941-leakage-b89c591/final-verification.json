@@ -1,0 +1,61 @@
+{
+  "seal_drift": 0,
+  "new_audit_markdown_files": 13,
+  "new_audit_local_links": 94,
+  "commands": [
+    {
+      "name": "final-docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "stdout": "OK: 701 Markdown files, 9217 local links; anchors, index, handoff, guide progress checked"
+    },
+    {
+      "name": "final-docgraph-docs",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes"
+    },
+    {
+      "name": "final-diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "name": "final-staged-diff",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "scope": "connected changes in temporary index"
+    },
+    {
+      "name": "final-artifact-policy",
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Generated artifact policy OK: 6444 indexed files, 85 large files with documented exceptions, 166 registered outputs.",
+      "scope": "connected changes in temporary index"
+    }
+  ],
+  "real_index_unchanged": true
+}

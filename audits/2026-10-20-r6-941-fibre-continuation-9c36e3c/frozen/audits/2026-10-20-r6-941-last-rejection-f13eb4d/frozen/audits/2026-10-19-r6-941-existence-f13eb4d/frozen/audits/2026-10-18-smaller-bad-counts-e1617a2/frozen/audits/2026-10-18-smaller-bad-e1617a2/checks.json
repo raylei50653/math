@@ -1,0 +1,145 @@
+{
+  "status": "PASS within stated verification scope; research objective remains OPEN",
+  "base": "e1617a2756813327d7ad333cfdd0fd92fa9efc38",
+  "smaller_bad_source_constructed": false,
+  "normal_and_seed17_identical": true,
+  "commands": [
+    {
+      "command": "python3 -B audits/2026-10-18-smaller-bad-e1617a2/check.py",
+      "exit_code": 0,
+      "stdout": {
+        "ok": true,
+        "input_records_checked": 22,
+        "frozen_drift": 0,
+        "checks": [
+          {
+            "checker": "kempe_consistency.py",
+            "exit_code": 0,
+            "stdout": "[{\"source_mask\": 932, \"initial\": 197, \"surviving\": 154, \"round_removals\": [31, 8, 4], \"accepted\": 8, \"old_projection\": 932}, {\"source_mask\": 933, \"initial\": 215, \"surviving\": 191, \"round_removals\": [18, 4, 2], \"accepted\": 9, \"old_projection\": 933}, {\"source_mask\": 941, \"initial\": 233, \"surviving\": 225, \"round_removals\": [6, 2], \"accepted\": 10, \"old_projection\": 941}]"
+          },
+          {
+            "checker": "A/verify_kempe.py",
+            "exit_code": 0,
+            "stdout": "{\"independent_replay\": [{\"source_mask\": 932, \"initial\": 197, \"surviving\": 154, \"accepted\": 8, \"old_projection\": 932}, {\"source_mask\": 933, \"initial\": 215, \"surviving\": 191, \"accepted\": 9, \"old_projection\": 933}, {\"source_mask\": 941, \"initial\": 233, \"surviving\": 225, \"accepted\": 10, \"old_projection\": 941}], \"scope\": \"necessary C8 boundary partition closure; no common exterior graph witness\"}"
+          },
+          {
+            "checker": "candidate_projection.py",
+            "exit_code": 0,
+            "stdout": "[{\"original_mask\": 932, \"candidate_masks\": {\"GA\": 1021, \"GB\": 1023, \"H\": 509, \"S\": 1021, \"Q1\": 1021, \"Q2\": 1021}}, {\"original_mask\": 933, \"candidate_masks\": {\"GA\": 1021, \"GB\": 1023, \"H\": 509, \"S\": 1021, \"Q1\": 1021, \"Q2\": 1021}}, {\"original_mask\": 941, \"candidate_masks\": {\"GA\": 1023, \"GB\": 1023, \"H\": 511, \"S\": 1023, \"Q1\": 1023, \"Q2\": 1023}}]"
+          },
+          {
+            "checker": "C/check.py",
+            "exit_code": 0,
+            "stdout": "{\"ok\": true, \"models\": {\"932\": {\"supports\": [932, 854, 91, 91, 165, 91, 935], \"exterior_orbits\": 20, \"literal_states\": 480}, \"933\": {\"supports\": [933, 854, 91, 91, 165, 91, 935], \"exterior_orbits\": 19, \"literal_states\": 456}, \"941\": {\"supports\": [941, 854, 91, 91, 165, 91, 935], \"exterior_orbits\": 19, \"literal_states\": 456}}, \"catalogue_ear_images\": 132, \"negative_controls\": 3, \"actual_smaller_bad_source_proved\": false}"
+          },
+          {
+            "checker": "C/review_kempe.py",
+            "exit_code": 0,
+            "stdout": "{\"scope\": \"independent full-local-lift projections of supplied surviving states; does not audit partition fixed point or claim graph realization\", \"kempe_certificate_sha256\": \"f04e8cd81d6cdb53ed317b3e0cf14b2e9d9407d3a2ccb8db1679041a49cb69fc\", \"kempe_script_sha256\": \"53f76836b86f2f64078335f886e76245891fbdc93db48aec71de10713ff131e2\", \"C_script_sha256\": \"6679afa0754d051388b3c2e79abe7a0d308eed7cfb753e605a2c943856c99f57\", \"C_certificate_sha256\": \"9715e28c910dcae974fe098aff40822a81f804c6351b9280a2f131725966cf00\", \"review_script_sha256\": \"1fb98ebf38b65329a286edadd479d7de5fd05edc7c5bb4dd2c94194280f5392a\", \"all_274_old_projection_masks_match\": true, \"results\": [{\"source_mask\": 932, \"initial_states\": 197, \"surviving_states\": 154, \"accepted_states\": 8, \"support_order\": [\"G\", \"G_a\", \"G_b\", \"H\", \"S\", \"H1\", \"H2\"], \"joint_supports\": [932, 1021, 1023, 509, 1021, 1021, 1021], \"all_six_candidates_in_K132\": true}, {\"source_mask\": 933, \"initial_states\": 215, \"surviving_states\": 191, \"accepted_states\": 9, \"support_order\": [\"G\", \"G_a\", \"G_b\", \"H\", \"S\", \"H1\", \"H2\"], \"joint_supports\": [933, 1021, 1023, 509, 1021, 1021, 1021], \"all_six_candidates_in_K132\": true}, {\"source_mask\": 941, \"initial_states\": 233, \"surviving_states\": 225, \"accepted_states\": 10, \"support_order\": [\"G\", \"G_a\", \"G_b\", \"H\", \"S\", \"H1\", \"H2\"], \"joint_supports\": [941, 1023, 1023, 511, 1023, 1023, 1023], \"all_six_candidates_in_K132\": true}]}"
+          },
+          {
+            "checker": "B/check.py",
+            "exit_code": 0,
+            "stdout": "{\"certificate_sha256\": \"ee86623807e402011b0f361a56c5c6dc832fd4aa8f17b4e0e318a12e2b5e1342\", \"graphs\": {\"Q1\": {\"counts\": [2, 2, 0, 2, 2, 0, 2, 0, 0, 0], \"in_K132\": true, \"inner_vertices\": 3, \"mask\": 91}, \"Q2\": {\"counts\": [2, 2, 0, 2, 2, 0, 2, 0, 0, 0], \"in_K132\": true, \"inner_vertices\": 3, \"mask\": 91}}, \"source_target\": \"not-triggered\", \"status\": \"pass\"}"
+          }
+        ],
+        "smaller_bad_source_constructed": false
+      }
+    },
+    {
+      "command": "env PYTHONHASHSEED=17 python3 -B audits/2026-10-18-smaller-bad-e1617a2/check.py",
+      "exit_code": 0,
+      "stdout": {
+        "ok": true,
+        "input_records_checked": 22,
+        "frozen_drift": 0,
+        "checks": [
+          {
+            "checker": "kempe_consistency.py",
+            "exit_code": 0,
+            "stdout": "[{\"source_mask\": 932, \"initial\": 197, \"surviving\": 154, \"round_removals\": [31, 8, 4], \"accepted\": 8, \"old_projection\": 932}, {\"source_mask\": 933, \"initial\": 215, \"surviving\": 191, \"round_removals\": [18, 4, 2], \"accepted\": 9, \"old_projection\": 933}, {\"source_mask\": 941, \"initial\": 233, \"surviving\": 225, \"round_removals\": [6, 2], \"accepted\": 10, \"old_projection\": 941}]"
+          },
+          {
+            "checker": "A/verify_kempe.py",
+            "exit_code": 0,
+            "stdout": "{\"independent_replay\": [{\"source_mask\": 932, \"initial\": 197, \"surviving\": 154, \"accepted\": 8, \"old_projection\": 932}, {\"source_mask\": 933, \"initial\": 215, \"surviving\": 191, \"accepted\": 9, \"old_projection\": 933}, {\"source_mask\": 941, \"initial\": 233, \"surviving\": 225, \"accepted\": 10, \"old_projection\": 941}], \"scope\": \"necessary C8 boundary partition closure; no common exterior graph witness\"}"
+          },
+          {
+            "checker": "candidate_projection.py",
+            "exit_code": 0,
+            "stdout": "[{\"original_mask\": 932, \"candidate_masks\": {\"GA\": 1021, \"GB\": 1023, \"H\": 509, \"S\": 1021, \"Q1\": 1021, \"Q2\": 1021}}, {\"original_mask\": 933, \"candidate_masks\": {\"GA\": 1021, \"GB\": 1023, \"H\": 509, \"S\": 1021, \"Q1\": 1021, \"Q2\": 1021}}, {\"original_mask\": 941, \"candidate_masks\": {\"GA\": 1023, \"GB\": 1023, \"H\": 511, \"S\": 1023, \"Q1\": 1023, \"Q2\": 1023}}]"
+          },
+          {
+            "checker": "C/check.py",
+            "exit_code": 0,
+            "stdout": "{\"ok\": true, \"models\": {\"932\": {\"supports\": [932, 854, 91, 91, 165, 91, 935], \"exterior_orbits\": 20, \"literal_states\": 480}, \"933\": {\"supports\": [933, 854, 91, 91, 165, 91, 935], \"exterior_orbits\": 19, \"literal_states\": 456}, \"941\": {\"supports\": [941, 854, 91, 91, 165, 91, 935], \"exterior_orbits\": 19, \"literal_states\": 456}}, \"catalogue_ear_images\": 132, \"negative_controls\": 3, \"actual_smaller_bad_source_proved\": false}"
+          },
+          {
+            "checker": "C/review_kempe.py",
+            "exit_code": 0,
+            "stdout": "{\"scope\": \"independent full-local-lift projections of supplied surviving states; does not audit partition fixed point or claim graph realization\", \"kempe_certificate_sha256\": \"f04e8cd81d6cdb53ed317b3e0cf14b2e9d9407d3a2ccb8db1679041a49cb69fc\", \"kempe_script_sha256\": \"53f76836b86f2f64078335f886e76245891fbdc93db48aec71de10713ff131e2\", \"C_script_sha256\": \"6679afa0754d051388b3c2e79abe7a0d308eed7cfb753e605a2c943856c99f57\", \"C_certificate_sha256\": \"9715e28c910dcae974fe098aff40822a81f804c6351b9280a2f131725966cf00\", \"review_script_sha256\": \"1fb98ebf38b65329a286edadd479d7de5fd05edc7c5bb4dd2c94194280f5392a\", \"all_274_old_projection_masks_match\": true, \"results\": [{\"source_mask\": 932, \"initial_states\": 197, \"surviving_states\": 154, \"accepted_states\": 8, \"support_order\": [\"G\", \"G_a\", \"G_b\", \"H\", \"S\", \"H1\", \"H2\"], \"joint_supports\": [932, 1021, 1023, 509, 1021, 1021, 1021], \"all_six_candidates_in_K132\": true}, {\"source_mask\": 933, \"initial_states\": 215, \"surviving_states\": 191, \"accepted_states\": 9, \"support_order\": [\"G\", \"G_a\", \"G_b\", \"H\", \"S\", \"H1\", \"H2\"], \"joint_supports\": [933, 1021, 1023, 509, 1021, 1021, 1021], \"all_six_candidates_in_K132\": true}, {\"source_mask\": 941, \"initial_states\": 233, \"surviving_states\": 225, \"accepted_states\": 10, \"support_order\": [\"G\", \"G_a\", \"G_b\", \"H\", \"S\", \"H1\", \"H2\"], \"joint_supports\": [941, 1023, 1023, 511, 1023, 1023, 1023], \"all_six_candidates_in_K132\": true}]}"
+          },
+          {
+            "checker": "B/check.py",
+            "exit_code": 0,
+            "stdout": "{\"certificate_sha256\": \"ee86623807e402011b0f361a56c5c6dc832fd4aa8f17b4e0e318a12e2b5e1342\", \"graphs\": {\"Q1\": {\"counts\": [2, 2, 0, 2, 2, 0, 2, 0, 0, 0], \"in_K132\": true, \"inner_vertices\": 3, \"mask\": 91}, \"Q2\": {\"counts\": [2, 2, 0, 2, 2, 0, 2, 0, 0, 0], \"in_K132\": true, \"inner_vertices\": 3, \"mask\": 91}}, \"source_target\": \"not-triggered\", \"status\": \"pass\"}"
+          }
+        ],
+        "smaller_bad_source_constructed": false
+      }
+    },
+    {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 0,
+      "stdout": "OK: 697 Markdown files, 9173 local links; anchors, index, handoff, guide progress checked\n"
+    },
+    {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "stdout": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "command": "lake build > audits/2026-10-18-smaller-bad-e1617a2/lake-build.log 2>&1",
+      "exit_code": 0,
+      "stdout": ""
+    }
+  ],
+  "build": {
+    "log": "lake-build.log",
+    "result": "Build completed successfully (8832 jobs).",
+    "existing_warnings": true,
+    "new_lean_theorem": false
+  },
+  "negative_controls": "negative-controls.json",
+  "other_negative_controls": "C/check.py checks three corrupted full-fibre/realizability claims; B/check.py checks false unconditional lift and omitted a=q.",
+  "initial_runner_failure": {
+    "reason": "B/check.py has no --check option; integrated wrapper corrected to --negative-control, which also performs its default exact certificate replay.",
+    "exit_code": 1,
+    "resolved": true,
+    "mathematical_certificates_changed": false
+  },
+  "independent_reviews": [
+    "A/REVIEW-B.md",
+    "B/REVIEW-A.md",
+    "B/REVIEW-REPORT.md",
+    "A/REVIEW-KEMPE.md",
+    "C/REVIEW-KEMPE.json"
+  ],
+  "scope": {
+    "actual_completed_graph_controls": "Two quotients of the same fixed original control, all ten full fibres and every original p,h lift; original target premises not triggered.",
+    "necessary_kempe_closure": "Arbitrary-size exterior necessary boundary-component closure; survivors not realized as one graph.",
+    "docs": "Formal-doc and docs/**/*.md DocGraph only.",
+    "whole_tree_docgraph": "Not run; no claim beyond scoped documentation."
+  },
+  "commit_or_push_performed": false,
+  "authored_text_whitespace": {
+    "files_checked": 29,
+    "errors": 0,
+    "frozen_inputs_excluded": true
+  }
+}

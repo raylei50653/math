@@ -1,0 +1,83 @@
+[
+  {
+    "name": "normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-19-r6-941-leakage-b89c591/check.py"
+    ],
+    "extra_env": {},
+    "exit_code": 0,
+    "seconds": 5.988,
+    "stdout": "}, {\\\"name\\\": \\\"allK_source_positive\\\", \\\"positive_core_fibres\\\": 1663, \\\"positive_E_fibres\\\": 222, \\\"component_orbits\\\": 1751, \\\"source_mask\\\": 941, \\\"U_mask\\\": 319, \\\"candidate_masks\\\": {\\\"Q1\\\": 1023, \\\"Q2\\\": 1023, \\\"GB\\\": 1023}}], \\\"negative_controls\\\": [{\\\"name\\\": \\\"different-core-for-cached-fibres\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"same core planar span\\\"}, {\\\"name\\\": \\\"drop-complete-orbit-multiplicity\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"full literal counted-component equations\\\"}, {\\\"name\\\": \\\"truncate-signed-planar-span\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"same core planar span\\\"}, {\\\"name\\\": \\\"omit-positive-U319-fibre\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"full same-core U319 lifts including positive rows\\\"}, {\\\"name\\\": \\\"cross-candidate-rejection-splice\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"all complete original and candidate lifts\\\"}, {\\\"name\\\": \\\"omit-mandatory-original-positive-sector\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"both actual source-positive D7 subsets\\\"}]}\"}], \"frozen_drift\": 0, \"frozen_inputs\": 238, \"omitted_completed_cost_negative_rejected\": true, \"output_drift\": 0, \"pass\": true, \"smaller_bad_constructed\": false, \"whole_three_candidate_route_excluded\": false}\n",
+    "stderr": ""
+  },
+  {
+    "name": "seed17",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-19-r6-941-leakage-b89c591/check.py"
+    ],
+    "extra_env": {
+      "PYTHONHASHSEED": "17"
+    },
+    "exit_code": 0,
+    "seconds": 6.169,
+    "stdout": "}, {\\\"name\\\": \\\"allK_source_positive\\\", \\\"positive_core_fibres\\\": 1663, \\\"positive_E_fibres\\\": 222, \\\"component_orbits\\\": 1751, \\\"source_mask\\\": 941, \\\"U_mask\\\": 319, \\\"candidate_masks\\\": {\\\"Q1\\\": 1023, \\\"Q2\\\": 1023, \\\"GB\\\": 1023}}], \\\"negative_controls\\\": [{\\\"name\\\": \\\"different-core-for-cached-fibres\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"same core planar span\\\"}, {\\\"name\\\": \\\"drop-complete-orbit-multiplicity\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"full literal counted-component equations\\\"}, {\\\"name\\\": \\\"truncate-signed-planar-span\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"same core planar span\\\"}, {\\\"name\\\": \\\"omit-positive-U319-fibre\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"full same-core U319 lifts including positive rows\\\"}, {\\\"name\\\": \\\"cross-candidate-rejection-splice\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"all complete original and candidate lifts\\\"}, {\\\"name\\\": \\\"omit-mandatory-original-positive-sector\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"both actual source-positive D7 subsets\\\"}]}\"}], \"frozen_drift\": 0, \"frozen_inputs\": 238, \"omitted_completed_cost_negative_rejected\": true, \"output_drift\": 0, \"pass\": true, \"smaller_bad_constructed\": false, \"whole_three_candidate_route_excluded\": false}\n",
+    "stderr": ""
+  },
+  {
+    "name": "docs",
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "extra_env": {},
+    "exit_code": 0,
+    "seconds": 0.745,
+    "stdout": "OK: 701 Markdown files, 9217 local links; anchors, index, handoff, guide progress checked\n",
+    "stderr": ""
+  },
+  {
+    "name": "docgraph-docs",
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "extra_env": {},
+    "exit_code": 0,
+    "seconds": 0.089,
+    "stdout": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n",
+    "stderr": ""
+  },
+  {
+    "name": "docgraph-whole",
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "extra_env": {},
+    "exit_code": 1,
+    "seconds": 7.03,
+    "stdout": "FAIL: 97 documents, 368 relations, 12 families; 72 errors, 0 notes\n",
+    "stderr": "elation.md\nERROR [duplicate-id] id 'c5.w5-three-color-support' is declared by audits/2026-10-18-abstraction-bottleneck-9f1fe84/A/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-source-9f1fe84/frozen/docs/c5_w5_three_color_support.md, docs/c5_w5_three_color_support.md\n"
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "extra_env": {},
+    "exit_code": 0,
+    "seconds": 0.024,
+    "stdout": "",
+    "stderr": ""
+  }
+]

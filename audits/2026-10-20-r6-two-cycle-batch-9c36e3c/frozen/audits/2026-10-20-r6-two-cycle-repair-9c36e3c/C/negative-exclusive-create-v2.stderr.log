@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py", line 353, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py", line 341, in main
+    with args.write.open('x') as stream:
+         ~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: 'audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/certificate-v2.json'

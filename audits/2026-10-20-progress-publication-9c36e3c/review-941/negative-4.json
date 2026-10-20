@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/geometry/check.py",
+    "--certificate",
+    "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/geometry/negative-certificate.json"
+  ],
+  "code": 1,
+  "seconds": 0.045,
+  "stdout": "",
+  "stderr_tail": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/geometry/check.py\", line 81, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/geometry/check.py\", line 76, in main\n    if args.certificate.exists():assert json.loads(args.certificate.read_text())==out\n                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

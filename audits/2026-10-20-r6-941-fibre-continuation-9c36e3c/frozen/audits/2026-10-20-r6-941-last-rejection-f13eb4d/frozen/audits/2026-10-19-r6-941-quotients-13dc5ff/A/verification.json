@@ -1,0 +1,27 @@
+{
+  "base": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+  "checks": [
+    {
+      "command": "python3 -B audits/2026-10-19-r6-941-quotients-13dc5ff/A/check.py --negative-controls",
+      "output": "check.stdout.json",
+      "pass": true
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B audits/2026-10-19-r6-941-quotients-13dc5ff/A/check.py --negative-controls",
+      "output": "check.seed17.stdout.json",
+      "pass": true
+    }
+  ],
+  "normal_seed17_identical": true,
+  "artifacts_sha256": {
+    "model.py": "26a0d9cad2142b4834773da8ab9580805bd76f904a436cf40ea42c022aadd31f",
+    "check.py": "52b5cae5e88b5a98104da2f01d14466378b843e2edda0de9e27364e2a6b08ce5",
+    "PROOF.md": "816a6687a248fcca690f4492fe9ab7e60af366ea4ab62cd3c08294a525c5c347",
+    "certificate.json": "b731faa89ecd7b72956679b7138649a36777c6285f8ea03b583f4f52fda5ff86",
+    "cap-lifts.json": "2eba7328439db08864504529946ca8f25efd283d7324e9000c24788cb66f39ee",
+    "chord-closures.json": "032e2d65a33f84a56b44cc282f68c3de5285130d071f341e4a5e089ca5343598",
+    "check.stdout.json": "ec5e1d1e9b5e2a6e6aa40ee214a3df0f6e3cb282c053ff419a8653e574173a02",
+    "check.seed17.stdout.json": "ec5e1d1e9b5e2a6e6aa40ee214a3df0f6e3cb282c053ff419a8653e574173a02"
+  },
+  "all_json_below_1000000": true
+}

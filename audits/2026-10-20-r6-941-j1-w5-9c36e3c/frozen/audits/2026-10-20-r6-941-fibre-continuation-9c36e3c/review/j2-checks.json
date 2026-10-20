@@ -1,0 +1,37 @@
+[
+  {
+    "name": "j2-normal",
+    "returncode": 0,
+    "seconds": 0.507,
+    "stdout": "{\"fibres\": 12, \"identity\": \"N01021(J2)=2*sum(six literal d=2 complete F fibre counts)\", \"last_rejection\": \"OPEN\", \"map\": \"switch distinct 23 components meeting {s,t} once\", \"partitions\": 64, \"source_realized\": false, \"status\": \"PASS\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "j2-seed17",
+    "returncode": 0,
+    "seconds": 0.472,
+    "stdout": "{\"fibres\": 12, \"identity\": \"N01021(J2)=2*sum(six literal d=2 complete F fibre counts)\", \"last_rejection\": \"OPEN\", \"map\": \"switch distinct 23 components meeting {s,t} once\", \"partitions\": 64, \"source_realized\": false, \"status\": \"PASS\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "j2-tampered-target",
+    "returncode": 1,
+    "seconds": 0.483,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/review/j2_transport.py\", line 75, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/review/j2_transport.py\", line 69, in main\n    assert json.loads(args.certificate.read_text()) == result\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "name": "closure-normal",
+    "returncode": 0,
+    "seconds": 3.733,
+    "stdout": "{\"conclusion\": \"simultaneous six d=2 zeros imply all twelve J2 target zeros\", \"family_rows\": 7383, \"family_sha256\": \"01dafc6d59bd4f7e20dc73d282c83987552337d0c9ccb12c52d40da6d00b6e4c\", \"initial_live\": 1973, \"last_rejection\": \"OPEN\", \"method\": \"three complementary-pair obligations for each literal canonical state\", \"seed_indices\": [1652, 1659, 1813, 1820, 1935, 1942], \"source_realized\": false, \"status\": \"PASS\", \"target_indices\": [1631, 1638, 1652, 1659, 1813, 1820, 1834, 1841, 1935, 1942, 1956, 1963]}\n",
+    "stderr": ""
+  },
+  {
+    "name": "closure-seed17",
+    "returncode": 0,
+    "seconds": 3.68,
+    "stdout": "{\"conclusion\": \"simultaneous six d=2 zeros imply all twelve J2 target zeros\", \"family_rows\": 7383, \"family_sha256\": \"01dafc6d59bd4f7e20dc73d282c83987552337d0c9ccb12c52d40da6d00b6e4c\", \"initial_live\": 1973, \"last_rejection\": \"OPEN\", \"method\": \"three complementary-pair obligations for each literal canonical state\", \"seed_indices\": [1652, 1659, 1813, 1820, 1935, 1942], \"source_realized\": false, \"status\": \"PASS\", \"target_indices\": [1631, 1638, 1652, 1659, 1813, 1820, 1834, 1841, 1935, 1942, 1956, 1963]}\n",
+    "stderr": ""
+  }
+]

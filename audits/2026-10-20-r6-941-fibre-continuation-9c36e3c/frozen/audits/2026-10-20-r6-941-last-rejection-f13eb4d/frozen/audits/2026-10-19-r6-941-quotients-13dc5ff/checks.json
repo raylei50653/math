@@ -1,0 +1,160 @@
+{
+  "base": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+  "checks": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-quotients-13dc5ff/check.py"
+      ],
+      "extra_env": {},
+      "exit_code": 0,
+      "seconds": 17.857,
+      "stdout_sha256": "f44cc1daa455733cea9660495d519e3d6a0844a87008f19ef86e82345532fce1"
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-quotients-13dc5ff/check.py"
+      ],
+      "extra_env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "seconds": 17.52,
+      "stdout_sha256": "f44cc1daa455733cea9660495d519e3d6a0844a87008f19ef86e82345532fce1"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "extra_env": {},
+      "exit_code": 0,
+      "seconds": 0.712,
+      "stdout_sha256": "2f4b32bb67a65a0ef0735bb6579b8a234ba4589e60b7f4f2a9cb078f822b4cea"
+    },
+    {
+      "name": "docgraph-docs",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "extra_env": {},
+      "exit_code": 0,
+      "seconds": 0.083,
+      "stdout_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "extra_env": {},
+      "exit_code": 0,
+      "seconds": 0.012,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "read_only_normal_seed17_identical": true,
+  "read_only_stdout_sha256": "f44cc1daa455733cea9660495d519e3d6a0844a87008f19ef86e82345532fce1",
+  "frozen_inputs": 322,
+  "frozen_drift": 0,
+  "output_drift": 0,
+  "artifact_policy": {
+    "command": [
+      "python3",
+      "tools/check_generated_artifacts.py"
+    ],
+    "exit_code": 0,
+    "stdout": "Generated artifact policy OK: 6475 indexed files, 85 large files with documented exceptions, 166 registered outputs.\n",
+    "stderr": "",
+    "staged_diff_check_exit": 0,
+    "staged_diff_output": "",
+    "real_index_unchanged": true,
+    "real_index_sha256": "829198004ae1f7fa034a896105e91882df78d57cb6e56feaa7f934c0a2477c4f",
+    "scope": "temporary index with all connected changes; real index unchanged"
+  },
+  "whole_tree_docgraph": {
+    "exit_code": 1,
+    "baseline_commit": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+    "baseline_log": "docs/history/2026-10-19-c5-pr-publication/whole-tree-docgraph.log",
+    "baseline_sha256": "c2ce2451a8307d1d835940e4e645afe4070f0495e97141f4a9a14f1d33bee559",
+    "baseline_errors": 72,
+    "current_errors": 72,
+    "same_error_multiset": true,
+    "added": [],
+    "removed": []
+  },
+  "lake_build": {
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit_code": 0,
+    "jobs": 8832,
+    "new_Lean_theorem": false,
+    "existing_warnings": [
+      "Math/AttachmentOrder.lean linter",
+      "Math/SymRelabel.lean linter"
+    ],
+    "stdout": "logs/lake-build.stdout",
+    "stderr": "logs/lake-build.stderr"
+  },
+  "tool_tests": {
+    "command": [
+      "uv",
+      "run",
+      "--with-requirements",
+      "requirements.txt",
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "tests": 94,
+    "stdout": "logs/tool-tests.stdout",
+    "stderr": "logs/tool-tests.stderr"
+  },
+  "audit_links": {
+    "pass_check": true,
+    "markdown_files": 14,
+    "local_links": 73,
+    "errors": []
+  },
+  "scope": {
+    "original_c_degree4_excluded": true,
+    "original_q_at_least_six": true,
+    "D10_induced": true,
+    "same_candidate_main_target": "OPEN",
+    "allK_control_still_live": true,
+    "source_realizations": 0,
+    "smaller_bad_constructed": false
+  },
+  "routing": {
+    "updated": [
+      "docs/c5_kempe_guide.md",
+      "docs/STATUS.md"
+    ],
+    "reviewed_unchanged": [
+      "README.md",
+      "docs/HANDOFF.md"
+    ],
+    "reason": "same research lines and entry usage; no active-tag change"
+  },
+  "commit_push": "not requested and not performed"
+}

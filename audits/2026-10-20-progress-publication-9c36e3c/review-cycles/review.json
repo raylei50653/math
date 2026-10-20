@@ -1,0 +1,536 @@
+{
+  "status": "PASS",
+  "receipt_directory": "/tmp/math-publish-cycles-review-uam6uvge",
+  "receipts": [
+    {
+      "label": "two-cycle-repair-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/check.py"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 0,
+      "expected": 0,
+      "stdout_sha256": "f00ff9d36d38ec431d14c2116c86685efcd5f69b92da6be43bacbc8f2bb0f604",
+      "stderr": ""
+    },
+    {
+      "label": "two-cycle-repair-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/check.py"
+      ],
+      "PYTHONHASHSEED": 17,
+      "returncode": 0,
+      "expected": 0,
+      "stdout_sha256": "f00ff9d36d38ec431d14c2116c86685efcd5f69b92da6be43bacbc8f2bb0f604",
+      "stderr": ""
+    },
+    {
+      "label": "two-cycle-repair-negative-changed-jump-parity-v2",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-changed-jump-parity-v2.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py\", line 353, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py\", line 347, in main\n    assert actual == json.loads(json.dumps(data)), 'certificate differs from complete exact replay'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from complete exact replay\n"
+    },
+    {
+      "label": "two-cycle-repair-negative-changed-literal-sector-v2",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-changed-literal-sector-v2.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py\", line 353, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py\", line 347, in main\n    assert actual == json.loads(json.dumps(data)), 'certificate differs from complete exact replay'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from complete exact replay\n"
+    },
+    {
+      "label": "two-cycle-repair-negative-dropped-complete-cycle-v2",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-dropped-complete-cycle-v2.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py\", line 353, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py\", line 347, in main\n    assert actual == json.loads(json.dumps(data)), 'certificate differs from complete exact replay'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from complete exact replay\n"
+    },
+    {
+      "label": "two-cycle-repair-negative-missing-empty-fibre-v2",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-missing-empty-fibre-v2.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py\", line 353, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py\", line 347, in main\n    assert actual == json.loads(json.dumps(data)), 'certificate differs from complete exact replay'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from complete exact replay\n"
+    },
+    {
+      "label": "two-cycle-repair-negative-authority",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/check_inputs.py",
+        "--inputs",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/negative-missing-authority.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "REJECTED: missing or repeated authority\n"
+    },
+    {
+      "label": "two-cycle-repair-negative-empty-mask",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/check.py",
+        "--interface-certificate",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/negative-missing-empty-mask.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "REJECTED: interface certificate differs from full replay\n"
+    },
+    {
+      "label": "two-cycle-repair-negative-exclusive-create",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py",
+        "--write",
+        "/tmp/math-publish-cycles-review-uam6uvge/two-cycle-repair-certificate-v2.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py\", line 353, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py\", line 341, in main\n    with args.write.open('x') as stream:\n         ~~~~~~~~~~~~~~~^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: '/tmp/math-publish-cycles-review-uam6uvge/two-cycle-repair-certificate-v2.json'\n"
+    },
+    {
+      "label": "two-cycle-repair-outputs-sha256",
+      "argv": [
+        "sha256sum",
+        "-c",
+        "OUTPUTS.sha256"
+      ],
+      "cwd": "audits/2026-10-20-r6-two-cycle-repair-9c36e3c",
+      "returncode": 0,
+      "stdout": "A/PROOF.md: OK\nA/REVIEW.md: OK\nA/VERIFICATION.json: OK\nA/check_interface.py: OK\nA/interface-certificate.json: OK\nB/INPUTS.json: OK\nB/PROOF.md: OK\nB/REVIEW.md: OK\nB/frozen/j-source-geometry.md: OK\nB/independent-check.json: OK\nC/CROSS_REVIEW.md: OK\nC/REPORT.md: OK\nC/VERIFICATION-v2.json: OK\nC/VERIFICATION.json: OK\nC/certificate-v2.json: OK\nC/certificate.json: OK\nC/check.py: OK\nC/negative-changed-jump-parity-v2.json: OK\nC/negative-changed-jump-parity-v2.stderr.log: OK\nC/negative-changed-jump-parity-v2.stdout.log: OK\nC/negative-changed-literal-sector-v2.json: OK\nC/negative-changed-literal-sector-v2.stderr.log: OK\nC/negative-changed-literal-sector-v2.stdout.log: OK\nC/negative-changed-literal-sector.json: OK\nC/negative-changed-literal-sector.stderr.log: OK\nC/negative-changed-literal-sector.stdout.log: OK\nC/negative-dropped-complete-cycle-v2.json: OK\nC/negative-dropped-complete-cycle-v2.stderr.log: OK\nC/negative-dropped-complete-cycle-v2.stdout.log: OK\nC/negative-dropped-complete-cycle.json: OK\nC/negative-dropped-complete-cycle.stderr.log: OK\nC/negative-dropped-complete-cycle.stdout.log: OK\nC/negative-exclusive-create-v2.stderr.log: OK\nC/negative-exclusive-create-v2.stdout.log: OK\nC/negative-exclusive-create.stderr.log: OK\nC/negative-exclusive-create.stdout.log: OK\nC/negative-missing-empty-fibre-v2.json: OK\nC/negative-missing-empty-fibre-v2.stderr.log: OK\nC/negative-missing-empty-fibre-v2.stdout.log: OK\nC/negative-missing-empty-fibre.json: OK\nC/negative-missing-empty-fibre.stderr.log: OK\nC/negative-missing-empty-fibre.stdout.log: OK\nC/replay-normal-v2.stderr.log: OK\nC/replay-normal-v2.stdout.log: OK\nC/replay-normal.stderr.log: OK\nC/replay-normal.stdout.log: OK\nC/replay-seed17-v2.stderr.log: OK\nC/replay-seed17-v2.stdout.log: OK\nC/replay-seed17.stderr.log: OK\nC/replay-seed17.stdout.log: OK\nINPUTS.json: OK\nPROOF.md: OK\nREPORT.md: OK\nVERIFICATION.md: OK\ncheck.py: OK\ncheck_inputs.py: OK\nchecks.json: OK\ndelivery-attempt1.json: OK\ndelivery-check.json: OK\nfinal-checks.json: OK\nfrozen/audits/2026-10-17-r6-active-f-seven-ffea555/B/PROOF.md: OK\nfrozen/audits/2026-10-17-r6-active-f-seven-ffea555/C/PROOF.md: OK\nfrozen/audits/2026-10-17-r6-active-f-seven-ffea555/PROOF.md: OK\nfrozen/audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/PROOF.md: OK\nfrozen/audits/2026-10-17-r6-two-cycle-cap-3d325d7/A/PROOF.md: OK\nfrozen/audits/2026-10-17-r6-two-cycle-cap-3d325d7/B/PROOF.md: OK\nfrozen/audits/2026-10-17-r6-two-cycle-cap-3d325d7/C/PROOF.md: OK\nfrozen/audits/2026-10-17-r6-two-cycle-cap-3d325d7/PROOF.md: OK\nfrozen/audits/2026-10-18-abstraction-bottleneck-9f1fe84/REPORT.md: OK\nfrozen/docs/DOCUMENTATION.md: OK\nfrozen/docs/HANDOFF.md: OK\nfrozen/docs/STATUS.md: OK\nfrozen/docs/c5_kempe_guide.md: OK\nlogs/artifacts.stderr.log: OK\nlogs/artifacts.stdout.log: OK\nlogs/docgraph-formal.stderr.log: OK\nlogs/docgraph-formal.stdout.log: OK\nlogs/docgraph-scoped.stderr.log: OK\nlogs/docgraph-scoped.stdout.log: OK\nlogs/docs.stderr.log: OK\nlogs/docs.stdout.log: OK\nlogs/final-normal.stderr.log: OK\nlogs/final-normal.stdout.log: OK\nlogs/final-seed17.stderr.log: OK\nlogs/final-seed17.stdout.log: OK\nlogs/negative-authority.stderr.log: OK\nlogs/negative-authority.stdout.log: OK\nlogs/negative-empty-mask.stderr.log: OK\nlogs/negative-empty-mask.stdout.log: OK\nlogs/normal.stderr.log: OK\nlogs/normal.stdout.log: OK\nlogs/seed17.stderr.log: OK\nlogs/seed17.stdout.log: OK\nlogs/whitespace.stderr.log: OK\nlogs/whitespace.stdout.log: OK\nnegative-checks.json: OK\nnegative-missing-authority.json: OK\nnegative-missing-empty-mask.json: OK\n",
+      "stderr": ""
+    },
+    {
+      "label": "two-cycle-batch-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/check.py"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 0,
+      "expected": 0,
+      "stdout_sha256": "60b87b7f819276e9ef34ff7d61e4076683d884fb9fcde23d5ef5cd4504344a86",
+      "stderr": ""
+    },
+    {
+      "label": "two-cycle-batch-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/check.py"
+      ],
+      "PYTHONHASHSEED": 17,
+      "returncode": 0,
+      "expected": 0,
+      "stdout_sha256": "60b87b7f819276e9ef34ff7d61e4076683d884fb9fcde23d5ef5cd4504344a86",
+      "stderr": ""
+    },
+    {
+      "label": "two-cycle-batch-negative-changed-component-charge.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/negative-changed-component-charge.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 364, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 353, in main\n    assert actual == normalized(data), \"certificate differs from complete exact replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from complete exact replay\n"
+    },
+    {
+      "label": "two-cycle-batch-negative-changed-literal-mark.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/negative-changed-literal-mark.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 364, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 353, in main\n    assert actual == normalized(data), \"certificate differs from complete exact replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from complete exact replay\n"
+    },
+    {
+      "label": "two-cycle-batch-negative-changed-shore-charge.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/negative-changed-shore-charge.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 364, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 353, in main\n    assert actual == normalized(data), \"certificate differs from complete exact replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from complete exact replay\n"
+    },
+    {
+      "label": "two-cycle-batch-negative-invented-cut-fibre.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/negative-invented-cut-fibre.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 364, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 353, in main\n    assert actual == normalized(data), \"certificate differs from complete exact replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from complete exact replay\n"
+    },
+    {
+      "label": "two-cycle-batch-negative-missing-empty-spoke-fibre.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/negative-missing-empty-spoke-fibre.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 364, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 353, in main\n    assert actual == normalized(data), \"certificate differs from complete exact replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from complete exact replay\n"
+    },
+    {
+      "label": "two-cycle-batch-negative-omitted-outer-odd-cycle.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/negative-omitted-outer-odd-cycle.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 364, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 353, in main\n    assert actual == normalized(data), \"certificate differs from complete exact replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from complete exact replay\n"
+    },
+    {
+      "label": "two-cycle-batch-negative-omitted-untouched-odd-component.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/negative-omitted-untouched-odd-component.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 364, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 353, in main\n    assert actual == normalized(data), \"certificate differs from complete exact replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from complete exact replay\n"
+    },
+    {
+      "label": "two-cycle-batch-negative-source-authority.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/negative-source-authority.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 364, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 353, in main\n    assert actual == normalized(data), \"certificate differs from complete exact replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from complete exact replay\n"
+    },
+    {
+      "label": "two-cycle-batch-negative-authority",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/check.py",
+        "--inputs",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/negative-missing-authority.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "REJECTED: Command '['/usr/bin/python3', '-B', '/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/check_inputs.py', '--inputs', 'audits/2026-10-20-r6-two-cycle-batch-9c36e3c/negative-missing-authority.json']' returned non-zero exit status 1.\n"
+    },
+    {
+      "label": "two-cycle-batch-negative-exclusive-create",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py",
+        "--write",
+        "/tmp/math-publish-cycles-review-uam6uvge/two-cycle-batch-certificate.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 364, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-two-cycle-batch-9c36e3c/C/check.py\", line 345, in main\n    with args.write.open(\"xb\") as stream:\n         ~~~~~~~~~~~~~~~^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: '/tmp/math-publish-cycles-review-uam6uvge/two-cycle-batch-certificate.json.gz'\n"
+    },
+    {
+      "label": "two-cycle-batch-outputs-sha256",
+      "argv": [
+        "sha256sum",
+        "-c",
+        "OUTPUTS.sha256"
+      ],
+      "cwd": "audits/2026-10-20-r6-two-cycle-batch-9c36e3c",
+      "returncode": 0,
+      "stdout": "A/PROOF.md: OK\nA/REVIEW.md: OK\nA/check.py: OK\nA/independent-check-seed17.json: OK\nA/independent-check.json: OK\nB/PROOF.md: OK\nB/REVIEW.md: OK\nC/CROSS_REVIEW.md: OK\nC/REPORT.md: OK\nC/VERIFICATION.json: OK\nC/certificate-initial.json.gz: OK\nC/certificate.json.gz: OK\nC/check.py: OK\nC/negative-changed-component-charge.json.gz: OK\nC/negative-changed-component-charge.stderr.log: OK\nC/negative-changed-component-charge.stdout.log: OK\nC/negative-changed-literal-mark.json.gz: OK\nC/negative-changed-literal-mark.stderr.log: OK\nC/negative-changed-literal-mark.stdout.log: OK\nC/negative-changed-shore-charge.json.gz: OK\nC/negative-changed-shore-charge.stderr.log: OK\nC/negative-changed-shore-charge.stdout.log: OK\nC/negative-exclusive-create.stderr.log: OK\nC/negative-exclusive-create.stdout.log: OK\nC/negative-invented-cut-fibre.json.gz: OK\nC/negative-invented-cut-fibre.stderr.log: OK\nC/negative-invented-cut-fibre.stdout.log: OK\nC/negative-missing-empty-spoke-fibre.json.gz: OK\nC/negative-missing-empty-spoke-fibre.stderr.log: OK\nC/negative-missing-empty-spoke-fibre.stdout.log: OK\nC/negative-omitted-outer-odd-cycle.json.gz: OK\nC/negative-omitted-outer-odd-cycle.stderr.log: OK\nC/negative-omitted-outer-odd-cycle.stdout.log: OK\nC/negative-omitted-untouched-odd-component.json.gz: OK\nC/negative-omitted-untouched-odd-component.stderr.log: OK\nC/negative-omitted-untouched-odd-component.stdout.log: OK\nC/negative-source-authority.json.gz: OK\nC/negative-source-authority.stderr.log: OK\nC/negative-source-authority.stdout.log: OK\nC/replay-normal.stderr.log: OK\nC/replay-normal.stdout.log: OK\nC/replay-seed17.stderr.log: OK\nC/replay-seed17.stdout.log: OK\nC/verify.py: OK\nINPUTS.json: OK\nPROOF.md: OK\nREPORT.md: OK\nVERIFICATION.md: OK\naudit-delivery.json: OK\ncheck.py: OK\ncheck_inputs.py: OK\ndelivery-checks.json: OK\ndelivery-state.json: OK\nfrozen/README.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/A/PROOF.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/A/REVIEW.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/A/VERIFICATION.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/A/check_interface.py: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/A/interface-certificate.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/B/INPUTS.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/B/PROOF.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/B/REVIEW.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/B/frozen/j-source-geometry.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/B/independent-check.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/CROSS_REVIEW.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/REPORT.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/VERIFICATION-v2.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/VERIFICATION.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/certificate-v2.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/certificate.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/check.py: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-changed-jump-parity-v2.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-changed-jump-parity-v2.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-changed-jump-parity-v2.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-changed-literal-sector-v2.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-changed-literal-sector-v2.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-changed-literal-sector-v2.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-changed-literal-sector.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-changed-literal-sector.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-changed-literal-sector.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-dropped-complete-cycle-v2.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-dropped-complete-cycle-v2.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-dropped-complete-cycle-v2.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-dropped-complete-cycle.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-dropped-complete-cycle.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-dropped-complete-cycle.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-exclusive-create-v2.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-exclusive-create-v2.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-exclusive-create.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-exclusive-create.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-missing-empty-fibre-v2.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-missing-empty-fibre-v2.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-missing-empty-fibre-v2.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-missing-empty-fibre.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-missing-empty-fibre.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/negative-missing-empty-fibre.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/replay-normal-v2.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/replay-normal-v2.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/replay-normal.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/replay-normal.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/replay-seed17-v2.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/replay-seed17-v2.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/replay-seed17.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/C/replay-seed17.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/INPUTS.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/PROOF.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/REPORT.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/VERIFICATION.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/check.py: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/check_inputs.py: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/checks.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/delivery-attempt1.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/delivery-check.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/final-checks.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/frozen/audits/2026-10-17-r6-active-f-seven-ffea555/B/PROOF.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/frozen/audits/2026-10-17-r6-active-f-seven-ffea555/C/PROOF.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/frozen/audits/2026-10-17-r6-active-f-seven-ffea555/PROOF.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/frozen/audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/PROOF.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/frozen/audits/2026-10-17-r6-two-cycle-cap-3d325d7/A/PROOF.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/frozen/audits/2026-10-17-r6-two-cycle-cap-3d325d7/B/PROOF.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/frozen/audits/2026-10-17-r6-two-cycle-cap-3d325d7/C/PROOF.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/frozen/audits/2026-10-17-r6-two-cycle-cap-3d325d7/PROOF.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/frozen/audits/2026-10-18-abstraction-bottleneck-9f1fe84/REPORT.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/frozen/docs/DOCUMENTATION.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/frozen/docs/HANDOFF.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/frozen/docs/STATUS.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/frozen/docs/c5_kempe_guide.md: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/artifacts.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/artifacts.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/docgraph-formal.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/docgraph-formal.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/docgraph-scoped.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/docgraph-scoped.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/docs.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/docs.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/final-normal.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/final-normal.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/final-seed17.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/final-seed17.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/negative-authority.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/negative-authority.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/negative-empty-mask.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/negative-empty-mask.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/normal.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/normal.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/seed17.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/seed17.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/whitespace.stderr.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/logs/whitespace.stdout.log: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/negative-checks.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/negative-missing-authority.json: OK\nfrozen/audits/2026-10-20-r6-two-cycle-repair-9c36e3c/negative-missing-empty-mask.json: OK\nfrozen/docs/DOCUMENTATION.md: OK\nfrozen/docs/HANDOFF.md: OK\nfrozen/docs/STATUS.md: OK\nfrozen/docs/c5_kempe_guide.md: OK\nlake-check.json: OK\nlogs/STATUS.md.routing.patch: OK\nlogs/c5_kempe_guide.md.routing.patch: OK\nlogs/lake.stderr.log: OK\nlogs/lake.stdout.log: OK\nlogs/negative-authority.stderr.log: OK\nlogs/negative-authority.stdout.log: OK\nlogs/negative-outer-cycle.stderr.log: OK\nlogs/negative-outer-cycle.stdout.log: OK\nlogs/normal.stderr.log: OK\nlogs/normal.stdout.log: OK\nlogs/seed17.stderr.log: OK\nlogs/seed17.stdout.log: OK\nnegative-missing-authority.json: OK\nreplay-checks.json: OK\nrouting-before/docs/STATUS.md: OK\nrouting-before/docs/c5_kempe_guide.md: OK\n",
+      "stderr": ""
+    },
+    {
+      "label": "555-odd-branches-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/check.py"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 0,
+      "expected": 0,
+      "stdout_sha256": "478692e4cdd9b94df8a9af548b4597b378f72e9e623014adb53e86cbbb6d4050",
+      "stderr": ""
+    },
+    {
+      "label": "555-odd-branches-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/check.py"
+      ],
+      "PYTHONHASHSEED": 17,
+      "returncode": 0,
+      "expected": 0,
+      "stdout_sha256": "478692e4cdd9b94df8a9af548b4597b378f72e9e623014adb53e86cbbb6d4050",
+      "stderr": ""
+    },
+    {
+      "label": "555-odd-branches-negative-changed-component-charge.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-changed-component-charge.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 417, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 409, in main\n    assert json.loads(payload) == json.loads(json.dumps(data)), \"certificate differs from independent complete replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from independent complete replay\n"
+    },
+    {
+      "label": "555-odd-branches-negative-changed-diamond-cut.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-changed-diamond-cut.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 417, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 409, in main\n    assert json.loads(payload) == json.loads(json.dumps(data)), \"certificate differs from independent complete replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from independent complete replay\n"
+    },
+    {
+      "label": "555-odd-branches-negative-changed-literal-mark.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-changed-literal-mark.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 417, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 409, in main\n    assert json.loads(payload) == json.loads(json.dumps(data)), \"certificate differs from independent complete replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from independent complete replay\n"
+    },
+    {
+      "label": "555-odd-branches-negative-changed-original-rotation.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-changed-original-rotation.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 417, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 409, in main\n    assert json.loads(payload) == json.loads(json.dumps(data)), \"certificate differs from independent complete replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from independent complete replay\n"
+    },
+    {
+      "label": "555-odd-branches-negative-invented-pair-repair.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-invented-pair-repair.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 417, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 409, in main\n    assert json.loads(payload) == json.loads(json.dumps(data)), \"certificate differs from independent complete replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from independent complete replay\n"
+    },
+    {
+      "label": "555-odd-branches-negative-missing-mark-fibre.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-missing-mark-fibre.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 417, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 409, in main\n    assert json.loads(payload) == json.loads(json.dumps(data)), \"certificate differs from independent complete replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from independent complete replay\n"
+    },
+    {
+      "label": "555-odd-branches-negative-omitted-anchored-cut.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-omitted-anchored-cut.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 417, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 409, in main\n    assert json.loads(payload) == json.loads(json.dumps(data)), \"certificate differs from independent complete replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from independent complete replay\n"
+    },
+    {
+      "label": "555-odd-branches-negative-omitted-complete-component.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-omitted-complete-component.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 417, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 409, in main\n    assert json.loads(payload) == json.loads(json.dumps(data)), \"certificate differs from independent complete replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from independent complete replay\n"
+    },
+    {
+      "label": "555-odd-branches-negative-omitted-complete-outer-cycle.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-omitted-complete-outer-cycle.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 417, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 409, in main\n    assert json.loads(payload) == json.loads(json.dumps(data)), \"certificate differs from independent complete replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from independent complete replay\n"
+    },
+    {
+      "label": "555-odd-branches-negative-source-authority.json",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/negative-source-authority.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 417, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 409, in main\n    assert json.loads(payload) == json.loads(json.dumps(data)), \"certificate differs from independent complete replay\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: certificate differs from independent complete replay\n"
+    },
+    {
+      "label": "555-odd-branches-negative-authority",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/check.py",
+        "--inputs",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/negative-authority-manifest.json"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "REJECTED: Command '['/usr/bin/python3', '-B', '/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/check_inputs.py', '--inputs', 'audits/2026-10-20-r6-555-odd-branches-9c36e3c/negative-authority-manifest.json']' returned non-zero exit status 1.\n"
+    },
+    {
+      "label": "555-odd-branches-negative-exclusive-create",
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py",
+        "--write",
+        "/tmp/math-publish-cycles-review-uam6uvge/555-odd-branches-certificate.json.gz"
+      ],
+      "PYTHONHASHSEED": null,
+      "returncode": 1,
+      "expected": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 417, in <module>\n    main()\n    ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-555-odd-branches-9c36e3c/C/check.py\", line 402, in main\n    with args.write.open(\"xb\") as stream:\n         ~~~~~~~~~~~~~~~^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: '/tmp/math-publish-cycles-review-uam6uvge/555-odd-branches-certificate.json.gz'\n"
+    },
+    {
+      "label": "555-odd-branches-outputs-sha256",
+      "argv": [
+        "sha256sum",
+        "-c",
+        "OUTPUTS.sha256"
+      ],
+      "cwd": "audits/2026-10-20-r6-555-odd-branches-9c36e3c",
+      "returncode": 0,
+      "stdout": "A/PROOF.md: OK\nA/REVIEW.md: OK\nB/PROOF.md: OK\nB/REVIEW.md: OK\nC/CROSS_REVIEW.md: OK\nC/REPORT.md: OK\nC/VERIFICATION.json: OK\nC/certificate.json.gz: OK\nC/check.py: OK\nC/replay-normal.stderr.log: OK\nC/replay-normal.stdout.log: OK\nC/replay-seed17.stderr.log: OK\nC/replay-seed17.stdout.log: OK\nINPUTS-supplemental.json: OK\nINPUTS.json: OK\nPROOF.md: OK\nREPORT.md: OK\nVERIFICATION.md: OK\ncheck.py: OK\ncheck_inputs.py: OK\nchecks.json: OK\nlocal-verification.json: OK\n",
+      "stderr": ""
+    }
+  ],
+  "protected_files": 436,
+  "changed_files": [],
+  "head": "9c36e3c4789dfec07d60ec4e042f0bafe17451d1"
+}

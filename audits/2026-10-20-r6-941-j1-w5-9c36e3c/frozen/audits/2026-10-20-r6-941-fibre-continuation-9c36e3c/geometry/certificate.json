@@ -1,0 +1,409 @@
+{
+  "exceptional_patch": {
+    "boundary_edges": [
+      [
+        "L",
+        "q"
+      ],
+      [
+        "L",
+        "u1"
+      ],
+      [
+        "a",
+        "b"
+      ],
+      [
+        "a",
+        "n"
+      ],
+      [
+        "b",
+        "q"
+      ],
+      [
+        "n",
+        "u2"
+      ],
+      [
+        "u1",
+        "u2"
+      ]
+    ],
+    "faces": [
+      [
+        "a",
+        "b",
+        "p"
+      ],
+      [
+        "b",
+        "p",
+        "q"
+      ],
+      [
+        "p",
+        "q",
+        "h"
+      ],
+      [
+        "p",
+        "h",
+        "n"
+      ],
+      [
+        "p",
+        "n",
+        "a"
+      ],
+      [
+        "h",
+        "q",
+        "L"
+      ],
+      [
+        "h",
+        "L",
+        "R"
+      ],
+      [
+        "h",
+        "R",
+        "n"
+      ],
+      [
+        "R",
+        "n",
+        "u2"
+      ],
+      [
+        "R",
+        "u2",
+        "u1"
+      ],
+      [
+        "R",
+        "u1",
+        "L"
+      ]
+    ],
+    "interior": [
+      "p",
+      "h",
+      "R"
+    ],
+    "rim": [
+      "a",
+      "b",
+      "q",
+      "L",
+      "u1",
+      "u2",
+      "n"
+    ]
+  },
+  "input_sha256": {
+    "audits/2026-10-20-r6-941-last-rejection-f13eb4d/J1/PROOF.md": "cd11d776aa9afdae281f0968ad64d26ac91623b514471643f8085d28b86e6d6c",
+    "audits/2026-10-20-r6-941-last-rejection-f13eb4d/J1/certificate.json": "cf061922144c5e68f3084d0d588e8db2b4dde407c137e07562771064e97ffcb5",
+    "audits/2026-10-20-r6-941-last-rejection-f13eb4d/SOURCE_CONTRACT.md": "d9f5982a64d996e654d3c8b29544ea92b5379d590ba49b0c59c516f6b61974b4",
+    "audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-leakage-b89c591/B/CORE.md": "f5a86d9f49b9352777eaf443ed3c4826c91cf01eeb0365d5dce1eac6a785ff4d",
+    "audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-leakage-b89c591/B/SOURCE_CONTRACT.md": "b45517a0d8c90a0654f2fb72bf3843dcca9f0dd6753ea49bee9393ca2c8b2010"
+  },
+  "path_bounds": {
+    "03_R_q": {
+      "conditional": "type I",
+      "minimum_edges": 4
+    },
+    "12_n_L": {
+      "conditional": "type III",
+      "minimum_edges": 3,
+      "otherwise_minimum_edges": 5,
+      "three_edge_exception": "W5 with sole interior R and exact N_G(R)=(n,h,L,u1,u2)"
+    },
+    "23_s_t": {
+      "conditional": "s~t in 23",
+      "minimum_edges": 4
+    }
+  },
+  "residual_records": [
+    {
+      "01_23_partitions": [
+        [
+          [
+            "L",
+            "R",
+            "q"
+          ],
+          [
+            "a",
+            "c",
+            "n",
+            "v",
+            "w"
+          ],
+          [
+            "s"
+          ],
+          [
+            "t"
+          ]
+        ],
+        [
+          [
+            "L",
+            "R",
+            "q"
+          ],
+          [
+            "a",
+            "c",
+            "n"
+          ],
+          [
+            "s",
+            "t"
+          ],
+          [
+            "v",
+            "w"
+          ]
+        ]
+      ],
+      "03_12_types": [
+        {
+          "blocks": [
+            [
+              "L"
+            ],
+            [
+              "R",
+              "q",
+              "v"
+            ],
+            [
+              "a"
+            ],
+            [
+              "c",
+              "s"
+            ],
+            [
+              "n",
+              "t",
+              "w"
+            ]
+          ],
+          "type": "I"
+        },
+        {
+          "blocks": [
+            [
+              "L",
+              "c",
+              "s"
+            ],
+            [
+              "R",
+              "v"
+            ],
+            [
+              "a"
+            ],
+            [
+              "n",
+              "t",
+              "w"
+            ],
+            [
+              "q"
+            ]
+          ],
+          "type": "II"
+        },
+        {
+          "blocks": [
+            [
+              "L",
+              "n",
+              "t",
+              "w"
+            ],
+            [
+              "R"
+            ],
+            [
+              "a"
+            ],
+            [
+              "c",
+              "s"
+            ],
+            [
+              "q",
+              "v"
+            ]
+          ],
+          "type": "III"
+        }
+      ],
+      "literal_core": [
+        0,
+        1,
+        3,
+        2,
+        3,
+        1,
+        2,
+        0,
+        1,
+        2
+      ],
+      "z0": "v",
+      "z1": "w"
+    },
+    {
+      "01_23_partitions": [
+        [
+          [
+            "L",
+            "R",
+            "q"
+          ],
+          [
+            "a",
+            "c",
+            "n"
+          ],
+          [
+            "s",
+            "t"
+          ],
+          [
+            "v",
+            "w"
+          ]
+        ],
+        [
+          [
+            "L",
+            "R",
+            "q"
+          ],
+          [
+            "a",
+            "c",
+            "n",
+            "v",
+            "w"
+          ],
+          [
+            "s"
+          ],
+          [
+            "t"
+          ]
+        ]
+      ],
+      "03_12_types": [
+        {
+          "blocks": [
+            [
+              "L"
+            ],
+            [
+              "R",
+              "q",
+              "w"
+            ],
+            [
+              "a"
+            ],
+            [
+              "c",
+              "s",
+              "v"
+            ],
+            [
+              "n",
+              "t"
+            ]
+          ],
+          "type": "I"
+        },
+        {
+          "blocks": [
+            [
+              "L",
+              "c",
+              "s",
+              "v"
+            ],
+            [
+              "R",
+              "w"
+            ],
+            [
+              "a"
+            ],
+            [
+              "n",
+              "t"
+            ],
+            [
+              "q"
+            ]
+          ],
+          "type": "II"
+        },
+        {
+          "blocks": [
+            [
+              "L",
+              "n",
+              "t"
+            ],
+            [
+              "R"
+            ],
+            [
+              "a"
+            ],
+            [
+              "c",
+              "s",
+              "v"
+            ],
+            [
+              "q",
+              "w"
+            ]
+          ],
+          "type": "III"
+        }
+      ],
+      "literal_core": [
+        0,
+        1,
+        3,
+        2,
+        3,
+        1,
+        2,
+        1,
+        0,
+        2
+      ],
+      "z0": "w",
+      "z1": "v"
+    }
+  ],
+  "scope": {
+    "arbitrary_cross_pair_choices_realized": false,
+    "geometric_proof_automatically_verified": false,
+    "same_complete_colouring": true,
+    "smaller_bad_constructed": false,
+    "source_excluded": false,
+    "source_realized": false
+  },
+  "status": "necessary geometry; OPEN"
+}

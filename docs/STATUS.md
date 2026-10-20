@@ -1,11 +1,17 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-20（明定P/R的任意disk完整fibre語義及十列計數解碼已證；一般F/C來源覆蓋仍OPEN。完整r6的p,ell位置：932的Q1／Q2／fan-B完整支持全在K132；932／933每張接受01232者必洩漏01212，須依分支改道。941的fan-B已證接受且洩漏01212、指定四列合同不可行；原p,ell來源已排c=4並得q≥6及C10無弦。既有兩側低度與距離界保留；新增五個私有共鄰排除、四組原圖距離界，四接觸僅兩型且全圖至多一點。c=5換框H1支持恰1022；接受零分量型與三邊路原五輪已分類。Q1／Q2及其他支持證書、較小bad、W110+W101>0、omega_e=0及完整319仍OPEN；一般K≤22及固定r6的k≥25不變；原接受零分支J1／J2保接受且兩拒絕零；本輪將最後01021縮為八／十二完整fibres並證實際分量限制。新精確控制通過U319及1552舊補片仍留拒絕；H4零分支四張合成圖皆1023，主存在性仍OPEN）。研究線標記見 [HANDOFF](HANDOFF.md)；精確停止點與重播由各線導覽維護。
+更新：2026-10-20。941最後拒絕已縮為J1兩項／J2六項完整fibres；J1原W5三邊路排n=5，剩n≥6的induced C11。兩完整補圈的5／5／5條件型已用四點交替十圈修復；一般來源度數型覆蓋仍OPEN。P/R保未來四列支援等價完整十列相等；一般計數代表命題已被真disk反駁，一般支援覆蓋仍OPEN。
+同候選一般三拒絕排除、嚴格較小bad、W110+W101>0、omega_e=0及完整319仍OPEN；一般K≤22、固定r6的k≥25不變，無新Lean。研究線標記見 [HANDOFF](HANDOFF.md)；精確停止點與重播由各線導覽維護。
 本頁保留所有文件的直接索引、短狀態與後續關係；詳細前提及數字以原報告為準。
 **一般單側／共同出口與 `K∞=K≤5` 仍未證。**
 
-2026-10-20 [941兩輪證據發布紀錄](../audits/2026-10-20-r6-941-publication-f13eb4d/REPORT.md)：
-同候選存在性與最後拒絕兩輪證據、完整凍結依賴及重播紀錄一併發布；歷史封存不改寫，主存在性仍OPEN。
+2026-10-20 [941 J1 原W5三邊路：排n=5，剩induced C11](../audits/2026-10-20-r6-941-j1-w5-9c36e3c/REPORT.md)：
+四條跨框原弦被完整01232矛盾排除；n=5時同一候選`(G−{p,h,R,n})/(a=u1,b=L)`完成k−6，保01232且01021／01202／01212完整fibres全空，故此型排除。
+整個原W5子支只剩n≥6的induced C11，完整接觸恰`S(u1)={R,L},S(u2)={n,R}`；該剩餘型、全部J1／J2及新Lean仍OPEN。
+
+2026-10-20 [941 fibre續進：J2六項化約與J1分層交換](../audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/REPORT.md)：
+J1保留兩項；[fibre搬運](../audits/2026-10-20-r6-941-fibre-transport-9c36e3c/REPORT.md)經J2完整23分量聯集雙射將十項縮六項，最後拒絕計數恰為六項和的兩倍。
+新增J1同染色幾何與原W5短路例外；28張右填片圖仍不排前輪必要控制。來源矛盾、較小bad與新Lean仍未得。
 
 2026-10-20 [最後拒絕：完整fibres、原分量與新共同計數控制](../audits/2026-10-20-r6-941-last-rejection-f13eb4d/REPORT.md)：
 J1／J2的01021精確縮為八／十二個同核心完整fibres；J1的01長路至少五邊，J2兩族分割唯一。
@@ -72,10 +78,19 @@ fan-B在p,ell位置的兩重色拒絕列迫q,N同原外側分量，01021保留�
 另六列可變，但須同一合法較小disk及完整接合。任意邊界的加權回應支配、
 仿射標記阻斷秩為紙面引理；來源改善／縮減仍OPEN，未Lean化。
 
+2026-10-20 [兩圈5／5／5型的四點十圈修復](../audits/2026-10-20-r6-555-odd-branches-9c36e3c/REPORT.md)：
+同一原來源與M取X={h,A,B,τ}，原rotation、三標記及全部新完整分量偶性同時通過；補圖恰C4與C_(|O|+3)。
+同樹兩奇支條件子案完成；56完整PM／4096cut獨立重播。來源型覆蓋、其他度數型及父題仍OPEN，無新Lean。
+
+2026-10-20 [兩完整補圈的相鄰雙點修復](../audits/2026-10-20-r6-two-cycle-batch-9c36e3c/REPORT.md)：
+原rotation與未接合完整分量偶性給跨單面阻礙的雙面N101；全偶補恰當每個完整primal分量度和偶。
+5／5／5子案兩配對同成同敗，兩奇支後由上列四點十圈完成修復；七圖275完整PM、16,384個cut獨立重播。
+[前輪單面／同O判準](../audits/2026-10-20-r6-two-cycle-repair-9c36e3c/REPORT.md)保留；來源實現not triggered，普遍修復與父題仍OPEN，無新Lean。
+
 2026-10-17 [七-cap接觸排除與兩完整補圈分支](../audits/2026-10-17-r6-two-cycle-cap-3d325d7/REPORT.md)：
 任意M101、無原v5下，cap除z外完全不接m，整個m-面距cap≥2。
 每區含偶數個補奇圈；恰兩完整補圈時所有偶補參考皆連通，M*恰三分量且唯一圈Q5。
-優先兩圈實際匹配修復；其他未阻斷分支尋同一完整染色的指定z-偶圈。兩項存在性及父題OPEN。
+兩圈修復的條件子案由上列後續處理；其他未阻斷分支尋同一完整染色的指定z-偶圈。普遍存在性及父題OPEN。
 
 2026-10-17 [主動f非面七圈的原度數排除與R100參考化約](../audits/2026-10-17-r6-active-f-seven-ffea555/REPORT.md)：
 任意M101、無原v5前提下，排除a0=4或c0=4，以及p,n_a中心的a0=6與反射位置。
@@ -609,6 +624,7 @@ d_G≥6及k≥18；T3接通no4ct三支私人ρ≥5。一般RING、
 | [P/R 文法 v0.2 匯入說明](sources/2026-10-19-c5-grammar-v02/README.md)、[原始 RESULTS](sources/2026-10-19-c5-grammar-v02/RESULTS.md) | 2026-10-19 收錄三份原始附件及 SHA-256；所附132態／264轉移模型內部核對一致，319為56 Live／76 Dead，F及F/C最小代表上界6／5。原完整驗證器與圖構造程式未隨附；來源PASS未完整重播，一般disk覆蓋及主命題仍OPEN，無新Lean |
 | [P/R 四列三步觀察與十列解碼](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md) | 132態最小統一深度3，59對必需三步；深度≤3唯一最小探測集RR／PRR／RRR的逆公式適用1024形式mask。文法族四列最小機器132態；圖語義由後續完成，一般覆蓋仍OPEN，無新Lean |
 | [P/R實圖語義與十列計數解碼](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md) | 明定push／右轉在任意大小disk合法，完整字面fibre雙射給附件整數矩陣；三探測恢復全部十列支援／計數。5120局部指派及792圖／7920完整fibres重建吻合；一般文法代表覆蓋、主命題及新Lean仍OPEN |
+| [P/R文法來源覆蓋](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md) | 保全部未來四列支援等價完整十列相等；一般計數代表由真disk反駁。933／941首次P入K、932保留六個K外態；逆P／三角星剝除給可證子類，不可剝仍可有代表。一般支援與r6來源覆蓋仍OPEN，無新Lean |
 | [fan pentagon](fan_pentagon.md)、[boundary relation 庫](boundary_relations.md)、[pp relations](pp_relations.md) | 固定 grammar 的 87 states 與完整 relation／pair 查詢已保存；pp 求值器仍屬 Python 層，87 不是一般 cell catalogue 的 132 |
 | [state language](state_language.md)、[stepwise sufficiency](stepwise_state_sufficiency.md)、[local closure](local_closure.md)、[C5 interface 想法](c5_interface_idea.md) | 表示法、strip／fan 的有界控制及 separator 引理可用；一般移動前緣、context／future 充分性、C6／C7 轉接仍待證或未啟動 |
 | [cell enumerator](c5_cell_enumerator.md) | R1／SYM／prefix／DFS／bitmask／integer viable 的 Lean 鏈與外部信任已明列；k=6、7 獨立重現僅為有界計算證據；原重複 §14 已整理為 §16 |
@@ -726,6 +742,8 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-20：941 fibre與原W5縮減、兩圈條件修復及P/R來源覆蓋整理發布](history/2026-10-20-progress-publish.md)
+- [2026-10-20：941同候選存在性與最後拒絕兩輪證據發布](../audits/2026-10-20-r6-941-publication-f13eb4d/REPORT.md)
 - [2026-10-19：完整r6／941雙接受扇區與fan-B洩漏成果整理發布](history/2026-10-19-r6-941-publish.md)
 - [2026-10-19：P/R三探測、實圖語義與十列計數解碼整理發布](history/2026-10-19-c5-pr-publish.md)
 - [2026-10-18：同候選原外側、較小 bad 嘗試與三候選計數障礙發布](history/2026-10-18-smaller-bad-publish.md)

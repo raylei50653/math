@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/check_interface.py",
+    "--source",
+    "audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/final-negative-interface.json.gz"
+  ],
+  "code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/check_interface.py\", line 75, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/check_interface.py\", line 70, in main\n    p=argparse.ArgumentParser();p.add_argument('--build',action='store_true');p.add_argument('--source',type=Path,default=D.parent/'interface/certificate-v4.json.gz');p.add_argument('--certificate',type=Path,default=D/'interface-check-v2.json');a=p.parse_args();out=json.loads(json.dumps(compute(a.source)))\n                                                                                                                                                                                                                                                                                                ~~~~~~~^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-w5-9c36e3c/review/check_interface.py\", line 46, in compute\n    assert all(tuple(map(tuple,source['caps'][i][k]))==tuple(v) for k,v in expected.items())\n           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}
