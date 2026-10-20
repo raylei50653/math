@@ -1,0 +1,155 @@
+{
+  "base": "b89c5913cea9df2305845be0f65fa6f1c1aaf55f",
+  "read_only_normal_seed17_identical": true,
+  "normal_seed17_sha256": "dbc40314785deb830dc67d044bbdf362e8bbaf539f3a2dd3f2b889c39898132b",
+  "checks": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-leakage-b89c591/check.py"
+      ],
+      "extra_env": {},
+      "exit_code": 0,
+      "seconds": 5.988,
+      "stdout": "}, {\\\"name\\\": \\\"allK_source_positive\\\", \\\"positive_core_fibres\\\": 1663, \\\"positive_E_fibres\\\": 222, \\\"component_orbits\\\": 1751, \\\"source_mask\\\": 941, \\\"U_mask\\\": 319, \\\"candidate_masks\\\": {\\\"Q1\\\": 1023, \\\"Q2\\\": 1023, \\\"GB\\\": 1023}}], \\\"negative_controls\\\": [{\\\"name\\\": \\\"different-core-for-cached-fibres\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"same core planar span\\\"}, {\\\"name\\\": \\\"drop-complete-orbit-multiplicity\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"full literal counted-component equations\\\"}, {\\\"name\\\": \\\"truncate-signed-planar-span\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"same core planar span\\\"}, {\\\"name\\\": \\\"omit-positive-U319-fibre\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"full same-core U319 lifts including positive rows\\\"}, {\\\"name\\\": \\\"cross-candidate-rejection-splice\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"all complete original and candidate lifts\\\"}, {\\\"name\\\": \\\"omit-mandatory-original-positive-sector\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"both actual source-positive D7 subsets\\\"}]}\"}], \"frozen_drift\": 0, \"frozen_inputs\": 238, \"omitted_completed_cost_negative_rejected\": true, \"output_drift\": 0, \"pass\": true, \"smaller_bad_constructed\": false, \"whole_three_candidate_route_excluded\": false}\n",
+      "stderr": ""
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-leakage-b89c591/check.py"
+      ],
+      "extra_env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "seconds": 6.169,
+      "stdout": "}, {\\\"name\\\": \\\"allK_source_positive\\\", \\\"positive_core_fibres\\\": 1663, \\\"positive_E_fibres\\\": 222, \\\"component_orbits\\\": 1751, \\\"source_mask\\\": 941, \\\"U_mask\\\": 319, \\\"candidate_masks\\\": {\\\"Q1\\\": 1023, \\\"Q2\\\": 1023, \\\"GB\\\": 1023}}], \\\"negative_controls\\\": [{\\\"name\\\": \\\"different-core-for-cached-fibres\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"same core planar span\\\"}, {\\\"name\\\": \\\"drop-complete-orbit-multiplicity\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"full literal counted-component equations\\\"}, {\\\"name\\\": \\\"truncate-signed-planar-span\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"same core planar span\\\"}, {\\\"name\\\": \\\"omit-positive-U319-fibre\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"full same-core U319 lifts including positive rows\\\"}, {\\\"name\\\": \\\"cross-candidate-rejection-splice\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"all complete original and candidate lifts\\\"}, {\\\"name\\\": \\\"omit-mandatory-original-positive-sector\\\", \\\"rejected\\\": true, \\\"reason\\\": \\\"both actual source-positive D7 subsets\\\"}]}\"}], \"frozen_drift\": 0, \"frozen_inputs\": 238, \"omitted_completed_cost_negative_rejected\": true, \"output_drift\": 0, \"pass\": true, \"smaller_bad_constructed\": false, \"whole_three_candidate_route_excluded\": false}\n",
+      "stderr": ""
+    },
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "extra_env": {},
+      "exit_code": 0,
+      "seconds": 0.745,
+      "stdout": "OK: 701 Markdown files, 9217 local links; anchors, index, handoff, guide progress checked\n",
+      "stderr": ""
+    },
+    {
+      "name": "docgraph-docs",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "extra_env": {},
+      "exit_code": 0,
+      "seconds": 0.089,
+      "stdout": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n",
+      "stderr": ""
+    },
+    {
+      "name": "docgraph-whole",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "extra_env": {},
+      "exit_code": 1,
+      "seconds": 7.03,
+      "stdout": "FAIL: 97 documents, 368 relations, 12 families; 72 errors, 0 notes\n",
+      "stderr": "elation.md\nERROR [duplicate-id] id 'c5.w5-three-color-support' is declared by audits/2026-10-18-abstraction-bottleneck-9f1fe84/A/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-source-9f1fe84/frozen/docs/c5_w5_three_color_support.md, docs/c5_w5_three_color_support.md\n"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "extra_env": {},
+      "exit_code": 0,
+      "seconds": 0.024,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "artifact_policy": {
+    "exit_code": 0,
+    "stdout": "Generated artifact policy OK: 6442 indexed files, 85 large files with documented exceptions, 166 registered outputs.",
+    "scope": "temporary index containing connected prospective changes; real index unchanged"
+  },
+  "temporary_staged_diff_check": {
+    "exit_code": 0,
+    "real_index_sha256_unchanged": "f3788be5168e10164c213052c4697a1ac2fc1f92b6b488177f9494d2e1164f12"
+  },
+  "whole_tree_docgraph": {
+    "baseline_commit": "b89c5913cea9df2305845be0f65fa6f1c1aaf55f",
+    "baseline_log": "docs/history/2026-10-19-c5-pr-publication/whole-tree-docgraph.log",
+    "baseline_sha256": "c2ce2451a8307d1d835940e4e645afe4070f0495e97141f4a9a14f1d33bee559",
+    "same_error_multiset": true,
+    "baseline_errors": 72,
+    "current_errors": 72,
+    "added_errors": [],
+    "removed_errors": []
+  },
+  "lake_build": {
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit_code": 0,
+    "jobs": 8832,
+    "existing_warnings": [
+      "Math/AttachmentOrder.lean: long lines and unused simp arguments",
+      "Math/SymRelabel.lean: long lines and show tactic style"
+    ],
+    "new_Lean_theorem": false
+  },
+  "tool_tests": {
+    "command": [
+      "uv",
+      "run",
+      "--with-requirements",
+      "requirements.txt",
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "tests": 94,
+    "seconds": 4.28
+  },
+  "scope": {
+    "GB_four_row_route_excluded": true,
+    "all_GB_supports_in_K132_proved": false,
+    "whole_three_candidate_route_excluded": false,
+    "smaller_bad_constructed": false,
+    "Q1_Q2": "OPEN"
+  },
+  "commit_push": "not requested and not performed",
+  "new_audit_links": {
+    "pass": true,
+    "markdown_files": 13,
+    "local_links": 93,
+    "errors": [],
+    "scope": "new audit Markdown using existing check_docs link and anchor functions"
+  },
+  "final_verification": "final-verification.json"
+}

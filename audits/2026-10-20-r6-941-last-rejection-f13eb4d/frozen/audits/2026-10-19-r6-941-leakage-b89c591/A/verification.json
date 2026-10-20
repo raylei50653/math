@@ -1,0 +1,273 @@
+{
+  "base": "b89c5913cea9df2305845be0f65fa6f1c1aaf55f",
+  "checks": [
+    {
+      "hash_seed": null,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-leakage-b89c591/A/check.py",
+        "--negative-controls"
+      ],
+      "returncode": 0,
+      "result": {
+        "pass": true,
+        "exact_integer_replay": true,
+        "same_vector_counted_C10_and_planar_span": true,
+        "actual_source_realized": false,
+        "smaller_bad_source_constructed": false,
+        "results": [
+          {
+            "name": "Q1",
+            "positive_core_fibres": 234,
+            "positive_E_fibres": 30,
+            "component_orbits": 182,
+            "source_mask": 941,
+            "U_mask": 319,
+            "candidate_masks": {
+              "Q1": 932,
+              "Q2": 932,
+              "GB": 249
+            }
+          },
+          {
+            "name": "Q2",
+            "positive_core_fibres": 234,
+            "positive_E_fibres": 30,
+            "component_orbits": 182,
+            "source_mask": 941,
+            "U_mask": 319,
+            "candidate_masks": {
+              "Q1": 932,
+              "Q2": 932,
+              "GB": 249
+            }
+          },
+          {
+            "name": "GB",
+            "positive_core_fibres": 506,
+            "positive_E_fibres": 66,
+            "component_orbits": 393,
+            "source_mask": 941,
+            "U_mask": 319,
+            "candidate_masks": {
+              "Q1": 249,
+              "Q2": 249,
+              "GB": 932
+            }
+          },
+          {
+            "name": "allK",
+            "positive_core_fibres": 1663,
+            "positive_E_fibres": 222,
+            "component_orbits": 1751,
+            "source_mask": 941,
+            "U_mask": 319,
+            "candidate_masks": {
+              "Q1": 1023,
+              "Q2": 1023,
+              "GB": 1023
+            }
+          }
+        ],
+        "source_positive_results": [
+          {
+            "name": "Q2_source_positive",
+            "positive_core_fibres": 545,
+            "positive_E_fibres": 93,
+            "component_orbits": 431,
+            "source_mask": 941,
+            "U_mask": 319,
+            "candidate_masks": {
+              "Q1": 1021,
+              "Q2": 941,
+              "GB": 1021
+            }
+          },
+          {
+            "name": "allK_source_positive",
+            "positive_core_fibres": 1663,
+            "positive_E_fibres": 222,
+            "component_orbits": 1751,
+            "source_mask": 941,
+            "U_mask": 319,
+            "candidate_masks": {
+              "Q1": 1023,
+              "Q2": 1023,
+              "GB": 1023
+            }
+          }
+        ],
+        "negative_controls": [
+          {
+            "name": "different-core-for-cached-fibres",
+            "rejected": true,
+            "reason": "same core planar span"
+          },
+          {
+            "name": "drop-complete-orbit-multiplicity",
+            "rejected": true,
+            "reason": "full literal counted-component equations"
+          },
+          {
+            "name": "truncate-signed-planar-span",
+            "rejected": true,
+            "reason": "same core planar span"
+          },
+          {
+            "name": "omit-positive-U319-fibre",
+            "rejected": true,
+            "reason": "full same-core U319 lifts including positive rows"
+          },
+          {
+            "name": "cross-candidate-rejection-splice",
+            "rejected": true,
+            "reason": "all complete original and candidate lifts"
+          },
+          {
+            "name": "omit-mandatory-original-positive-sector",
+            "rejected": true,
+            "reason": "both actual source-positive D7 subsets"
+          }
+        ]
+      }
+    },
+    {
+      "hash_seed": 17,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-leakage-b89c591/A/check.py",
+        "--negative-controls"
+      ],
+      "returncode": 0,
+      "result": {
+        "pass": true,
+        "exact_integer_replay": true,
+        "same_vector_counted_C10_and_planar_span": true,
+        "actual_source_realized": false,
+        "smaller_bad_source_constructed": false,
+        "results": [
+          {
+            "name": "Q1",
+            "positive_core_fibres": 234,
+            "positive_E_fibres": 30,
+            "component_orbits": 182,
+            "source_mask": 941,
+            "U_mask": 319,
+            "candidate_masks": {
+              "Q1": 932,
+              "Q2": 932,
+              "GB": 249
+            }
+          },
+          {
+            "name": "Q2",
+            "positive_core_fibres": 234,
+            "positive_E_fibres": 30,
+            "component_orbits": 182,
+            "source_mask": 941,
+            "U_mask": 319,
+            "candidate_masks": {
+              "Q1": 932,
+              "Q2": 932,
+              "GB": 249
+            }
+          },
+          {
+            "name": "GB",
+            "positive_core_fibres": 506,
+            "positive_E_fibres": 66,
+            "component_orbits": 393,
+            "source_mask": 941,
+            "U_mask": 319,
+            "candidate_masks": {
+              "Q1": 249,
+              "Q2": 249,
+              "GB": 932
+            }
+          },
+          {
+            "name": "allK",
+            "positive_core_fibres": 1663,
+            "positive_E_fibres": 222,
+            "component_orbits": 1751,
+            "source_mask": 941,
+            "U_mask": 319,
+            "candidate_masks": {
+              "Q1": 1023,
+              "Q2": 1023,
+              "GB": 1023
+            }
+          }
+        ],
+        "source_positive_results": [
+          {
+            "name": "Q2_source_positive",
+            "positive_core_fibres": 545,
+            "positive_E_fibres": 93,
+            "component_orbits": 431,
+            "source_mask": 941,
+            "U_mask": 319,
+            "candidate_masks": {
+              "Q1": 1021,
+              "Q2": 941,
+              "GB": 1021
+            }
+          },
+          {
+            "name": "allK_source_positive",
+            "positive_core_fibres": 1663,
+            "positive_E_fibres": 222,
+            "component_orbits": 1751,
+            "source_mask": 941,
+            "U_mask": 319,
+            "candidate_masks": {
+              "Q1": 1023,
+              "Q2": 1023,
+              "GB": 1023
+            }
+          }
+        ],
+        "negative_controls": [
+          {
+            "name": "different-core-for-cached-fibres",
+            "rejected": true,
+            "reason": "same core planar span"
+          },
+          {
+            "name": "drop-complete-orbit-multiplicity",
+            "rejected": true,
+            "reason": "full literal counted-component equations"
+          },
+          {
+            "name": "truncate-signed-planar-span",
+            "rejected": true,
+            "reason": "same core planar span"
+          },
+          {
+            "name": "omit-positive-U319-fibre",
+            "rejected": true,
+            "reason": "full same-core U319 lifts including positive rows"
+          },
+          {
+            "name": "cross-candidate-rejection-splice",
+            "rejected": true,
+            "reason": "all complete original and candidate lifts"
+          },
+          {
+            "name": "omit-mandatory-original-positive-sector",
+            "rejected": true,
+            "reason": "both actual source-positive D7 subsets"
+          }
+        ]
+      }
+    }
+  ],
+  "checked_sha256": {
+    "check.py": "8adeea95ba93c7e591592bd4b3f1621e240155ec9812258560f53742135a2a36",
+    "model.py": "b49eda582853102fb6c832ec2765dd83f37d302a61dfb26735314b54c9c46fcb",
+    "certificate.json": "6f48e845a15ad08bfe05dc885c5cea9f00981e29ecc419198b26ef9a05d2cdf0",
+    "source-positive-certificate.json": "d2acce9769cbb1b5ac1a6156e78ac872f5afd361d1ef1449fe3eb3dce1ec577c"
+  }
+}

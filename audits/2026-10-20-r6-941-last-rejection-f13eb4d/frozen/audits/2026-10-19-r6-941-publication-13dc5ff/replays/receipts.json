@@ -1,0 +1,270 @@
+{
+  "comparisons": [
+    {
+      "all_exit_zero": true,
+      "audit": "quotients",
+      "both_pass": true,
+      "stdout_equal": true
+    },
+    {
+      "all_exit_zero": true,
+      "audit": "acceptance",
+      "both_pass": true,
+      "stdout_equal": true
+    },
+    {
+      "all_exit_zero": true,
+      "audit": "chains",
+      "both_pass": true,
+      "stdout_equal": true
+    }
+  ],
+  "head": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+  "negative_control": {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-19-r6-941-chains-13dc5ff/check.py",
+      "--seal",
+      "audits/2026-10-19-r6-941-chains-13dc5ff/logs/corrupted-OUTPUTS.json"
+    ],
+    "cwd": "/home/ray/developer/ai/math",
+    "exit_code": 1,
+    "input_corrupted_seal_sha256": "252f4eafc07dc495c3bf0ab929cd5c0894197ac48f3e6e1f905fc9a467e5a0f1",
+    "negative_control_rejected": true,
+    "seconds": 0.061,
+    "started_utc": "2026-10-19T14:58:12.182752+00:00",
+    "stderr_path": "chains-corrupted-seal.stderr",
+    "stderr_sha256": "ca7385d85bd45ebdea300f66a4f7a364c32f81c3ad5db828d139e1448da21a8e",
+    "stdout_path": "chains-corrupted-seal.stdout",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "no_new_Lean_claim": true,
+  "receipt_logs_integrity_verified": true,
+  "records": [
+    {
+      "audit": "quotients",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-quotients-13dc5ff/check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "extra_env": {},
+      "head": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+      "result_summary": {
+        "actual_source_realized": false,
+        "base": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+        "frozen_drift": 0,
+        "frozen_inputs": 322,
+        "main_target": "OPEN",
+        "omitted_completed_cost_rejected": true,
+        "output_drift": 0,
+        "pass": true,
+        "smaller_bad_constructed": false
+      },
+      "seconds": 18.035,
+      "started_utc": "2026-10-19T14:57:59.330519+00:00",
+      "stderr_bytes": 0,
+      "stderr_path": "quotients-normal.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 17230,
+      "stdout_path": "quotients-normal.stdout",
+      "stdout_sha256": "f44cc1daa455733cea9660495d519e3d6a0844a87008f19ef86e82345532fce1",
+      "variant": "normal"
+    },
+    {
+      "audit": "quotients",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-quotients-13dc5ff/check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "extra_env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "head": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+      "result_summary": {
+        "actual_source_realized": false,
+        "base": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+        "frozen_drift": 0,
+        "frozen_inputs": 322,
+        "main_target": "OPEN",
+        "omitted_completed_cost_rejected": true,
+        "output_drift": 0,
+        "pass": true,
+        "smaller_bad_constructed": false
+      },
+      "seconds": 17.713,
+      "started_utc": "2026-10-19T14:57:59.330898+00:00",
+      "stderr_bytes": 0,
+      "stderr_path": "quotients-seed17.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 17230,
+      "stdout_path": "quotients-seed17.stdout",
+      "stdout_sha256": "f44cc1daa455733cea9660495d519e3d6a0844a87008f19ef86e82345532fce1",
+      "variant": "seed17"
+    },
+    {
+      "audit": "acceptance",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-acceptance-13dc5ff/check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "extra_env": {},
+      "head": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+      "result_summary": {
+        "base": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+        "frozen_drift": 0,
+        "frozen_hash_corruption_rejected": true,
+        "frozen_inputs": 406,
+        "main_target": "OPEN",
+        "new_Lean_theorem": false,
+        "original_source_theorems": [
+          "n=5 => a>=7",
+          "c=5 => q>=7",
+          "dist_G(t,R)>=3",
+          "dist_G(L,s)>=3"
+        ],
+        "pass": true,
+        "sealed_drift": 0,
+        "smaller_bad_constructed": false,
+        "source_authority_escalation_rejected": true,
+        "source_realized": false
+      },
+      "seconds": 22.115,
+      "started_utc": "2026-10-19T14:58:17.044509+00:00",
+      "stderr_bytes": 0,
+      "stderr_path": "acceptance-normal.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 5418,
+      "stdout_path": "acceptance-normal.stdout",
+      "stdout_sha256": "9fa686bb63677d059c3789d617ad37828feeeebccc09efd089d71acca3771634",
+      "variant": "normal"
+    },
+    {
+      "audit": "acceptance",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-acceptance-13dc5ff/check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "extra_env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "head": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+      "result_summary": {
+        "base": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+        "frozen_drift": 0,
+        "frozen_hash_corruption_rejected": true,
+        "frozen_inputs": 406,
+        "main_target": "OPEN",
+        "new_Lean_theorem": false,
+        "original_source_theorems": [
+          "n=5 => a>=7",
+          "c=5 => q>=7",
+          "dist_G(t,R)>=3",
+          "dist_G(L,s)>=3"
+        ],
+        "pass": true,
+        "sealed_drift": 0,
+        "smaller_bad_constructed": false,
+        "source_authority_escalation_rejected": true,
+        "source_realized": false
+      },
+      "seconds": 21.906,
+      "started_utc": "2026-10-19T14:58:17.366335+00:00",
+      "stderr_bytes": 0,
+      "stderr_path": "acceptance-seed17.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 5418,
+      "stdout_path": "acceptance-seed17.stdout",
+      "stdout_sha256": "9fa686bb63677d059c3789d617ad37828feeeebccc09efd089d71acca3771634",
+      "variant": "seed17"
+    },
+    {
+      "audit": "chains",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-chains-13dc5ff/check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "extra_env": {},
+      "head": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+      "result_summary": {
+        "base": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+        "both_low_degree_replacement_C10_induced": true,
+        "frozen_drift": 0,
+        "frozen_inputs": 488,
+        "main_target": "OPEN",
+        "negative_controls_rejected": [
+          "corrupted-frozen-SHA",
+          "source-authority-escalation"
+        ],
+        "new_Lean_theorem": false,
+        "pass": true,
+        "sealed_drift": 0,
+        "smaller_bad_constructed": false,
+        "source_realized": false
+      },
+      "seconds": 34.848,
+      "started_utc": "2026-10-19T14:58:39.168611+00:00",
+      "stderr_bytes": 0,
+      "stderr_path": "chains-normal.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 3808,
+      "stdout_path": "chains-normal.stdout",
+      "stdout_sha256": "cfea79da758430d85346120063d253cf2b9d536089114305906cde7fdae363d1",
+      "variant": "normal"
+    },
+    {
+      "audit": "chains",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-19-r6-941-chains-13dc5ff/check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "exit_code": 0,
+      "extra_env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "head": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+      "result_summary": {
+        "base": "13dc5ff163045c85b5c82dde438eb5f275dab999",
+        "both_low_degree_replacement_C10_induced": true,
+        "frozen_drift": 0,
+        "frozen_inputs": 488,
+        "main_target": "OPEN",
+        "negative_controls_rejected": [
+          "corrupted-frozen-SHA",
+          "source-authority-escalation"
+        ],
+        "new_Lean_theorem": false,
+        "pass": true,
+        "sealed_drift": 0,
+        "smaller_bad_constructed": false,
+        "source_realized": false
+      },
+      "seconds": 34.71,
+      "started_utc": "2026-10-19T14:58:39.273368+00:00",
+      "stderr_bytes": 0,
+      "stderr_path": "chains-seed17.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 3808,
+      "stdout_path": "chains-seed17.stdout",
+      "stdout_sha256": "cfea79da758430d85346120063d253cf2b9d536089114305906cde7fdae363d1",
+      "variant": "seed17"
+    }
+  ]
+}

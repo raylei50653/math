@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/check_full_graph.py", line 348, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/check_full_graph.py", line 335, in main
+    require(all(not (HERE / filename).exists() for filename in ("certificate.json", "verification.json")), "--write requires absent C output files")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/check_full_graph.py", line 26, in require
+    raise ValueError(message)
+ValueError: --write requires absent C output files

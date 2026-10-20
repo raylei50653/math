@@ -1,0 +1,77 @@
+[
+  {
+    "name": "docs",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "log_sha256": "d4993e9abdca272591e97a6fee647f4ca970ff7a8cb16ef8a9083cc7dbde2d6f",
+    "output": "OK: 702 Markdown files, 9235 local links; anchors, index, handoff, guide progress checked\n"
+  },
+  {
+    "name": "formal-docgraph",
+    "command": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "log_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+    "output": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n"
+  },
+  {
+    "name": "artifact-policy",
+    "command": [
+      "python3",
+      "-B",
+      "tools/check_generated_artifacts.py"
+    ],
+    "exit_code": 0,
+    "log_sha256": "1f47cbb43d9bc442312352be9fa957410fb381aecaa350d69fac31b599e47582",
+    "output": "Generated artifact policy OK: 7070 indexed files, 95 large files with documented exceptions, 166 registered outputs.\n"
+  },
+  {
+    "name": "staged-whitespace",
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit_code": 2,
+    "log_sha256": "98306326785352f81acd7a7e379a7ac3f4555bf3dc16d10cd2478456ff7fef90",
+    "output": "audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:5: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:15: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:21: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:27: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:33: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:35: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:38: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:52: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:54: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:63: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:66: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:85: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:95: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:12: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:20: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:25: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:48: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:50: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:53: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:67: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:69: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:88: trailing whitespace.\n+ \naudits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:90: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:5: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:15: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:21: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:27: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:33: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:35: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:38: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:52: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:54: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:63: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:66: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:85: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff:95: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:12: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:20: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:25: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:48: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:50: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:53: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:67: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:69: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:88: trailing whitespace.\n+ \naudits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff:90: trailing whitespace.\n+ \n",
+    "archival_exceptions": [
+      "audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff",
+      "audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff",
+      "audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff",
+      "audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff"
+    ],
+    "warnings": 46,
+    "log_path": "staged-whitespace.log.gz",
+    "log_encoding": "gzip; log_sha256 refers to uncompressed output"
+  },
+  {
+    "name": "staged-whitespace-except-sealed-diff-copies",
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check",
+      "--",
+      ".",
+      ":(exclude)audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff",
+      ":(exclude)audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff",
+      ":(exclude)audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/routing.diff",
+      ":(exclude)audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/routing-before.diff"
+    ],
+    "exit_code": 0,
+    "output": "",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

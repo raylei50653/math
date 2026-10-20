@@ -1,0 +1,11 @@
+exec((__import__('pathlib').Path(__file__).parent/'explore_acceptance.py').read_text().split("for name in ('Q1','Q2'):")[0])
+ids=mod.source_positive_subsets(index)['h_equals_b'];v=np.asarray((np.array(original['Q1'][4])+np.array(original['Q1'][6]))@T).ravel()
+print('d_b core projection',[(i,int(v[i])) for i in ids],flush=True)
+for i in ids:print(i,ten[i])
+print('pointwise min slack',min(int(v[i])-2*int(i in ids) for i in range(n)),flush=True)
+for name in ('Q1','Q2'):
+ rej=np.asarray((np.array(original[name][1])+np.array(original[name][4])+np.array(original[name][6])+np.array(original[name][9]))@T).ravel()
+ eq2=vstack([eq,hstack([csr_matrix(rej.reshape(1,-1)),csr_matrix((1,k+m))])]).tocsr()
+ ub2=ub
+ ans=linprog(np.zeros(n+k+m),A_eq=eq2,b_eq=np.zeros(eq2.shape[0]),A_ub=ub2,b_ub=-np.ones(len(pos)),bounds=bounds)
+ print(name,'reject_all_zero',ans.success,ans.message,flush=True)

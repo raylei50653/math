@@ -1,0 +1,85 @@
+{
+  "import_date": "2026-10-19",
+  "source": "user-supplied attachments",
+  "attachment_directory_id": "6f6fecb9-174b-499a-8098-a5d91e1fff86",
+  "repository_head_at_import": "ed59843ff8aad66cf3dd895da101787b3daec7a0",
+  "certificate_schema": "boundary-grammar-certificates/v2",
+  "certificate_declared_legacy_commit": "ed59843ff8aad66cf3dd895da101787b3daec7a0",
+  "legacy_commit_matches_import_head": true,
+  "files": [
+    {
+      "name": "RESULTS.md",
+      "bytes": 5444,
+      "sha256": "afdd8e2a5b0fd2ac6cb892115aa4a8b13041e8aba85bf6164b392d5e1b348b94"
+    },
+    {
+      "name": "certificate_v02.json",
+      "bytes": 110231,
+      "sha256": "55109b2872294bb43dcd161635a65dff6ed3453d5c870a05ef0f3a9248e0d933"
+    },
+    {
+      "name": "verification_v02.json",
+      "bytes": 4105,
+      "sha256": "e15b6a60c1716b46a0aa9b3318f9dc0ae40ca519978a29dcf682cf1529a12ef8"
+    }
+  ],
+  "local_checks": {
+    "byte_identical_to_attachments": true,
+    "both_json_files_parse": true,
+    "distinct_model_states": 132,
+    "P_R_transition_edges": 264,
+    "transition_domain_and_targets_closed": true
+  },
+  "supplied_verification": {
+    "pass": true,
+    "original_checker_replayed_locally": false
+  },
+  "missing_from_attachment_bundle": [
+    "original README.md",
+    "certificate generator and independent verifier source",
+    "test suite and negative-control inputs",
+    "HTML/UI source and browser test scripts"
+  ],
+  "scope": "Source intake and structural checks only; no adoption of general disk coverage or new Lean theorem.",
+  "finite_model_review": {
+    "method": "Independent read-only calculations using the supplied model; not an independent derivation from graph operations.",
+    "assertions_passed": 58,
+    "checked": [
+      "operator matrices versus transitions",
+      "F and FC reachable closures",
+      "target predicates and live/dead partitions",
+      "shortest-distance ranks and decreasing policies",
+      "61-state dead family",
+      "Dijkstra minima, witness costs and histograms",
+      "528 Bellman inequalities",
+      "all refinement partitions",
+      "distinguishing suffix",
+      "compact sorted-key model SHA-256"
+    ],
+    "original_graph_semantics_and_full_verifier_replayed": false
+  },
+  "documentation_checks": {
+    "check_docs": {
+      "exit_code": 0,
+      "markdown_files": 700,
+      "local_links": 9197
+    },
+    "formal_docs_docgraph": {
+      "exit_code": 0,
+      "documents_with_metadata": 97,
+      "relations": 383,
+      "families": 12
+    },
+    "whole_tree_docgraph": {
+      "exit_code": 1,
+      "errors": {
+        "duplicate-id": 72
+      },
+      "error_output_identical_to_pre_import": true
+    },
+    "git_diff_check": {
+      "exit_code": 0
+    },
+    "lean_build": "not run: source and documentation intake only"
+  }
+}

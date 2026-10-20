@@ -1,0 +1,48 @@
+[
+  {
+    "name": "docs",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "seconds": 1.106,
+    "stdout_sha256": "c3c88185ad8fa4aae832d5ff74126e66ff5e2a66490cf4df33deb120da950d6a"
+  },
+  {
+    "name": "docgraph-docs",
+    "command": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.097,
+    "stdout_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca"
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.014,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "lake-build",
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit_code": 0,
+    "seconds": 10.263,
+    "stdout_sha256": "8104be9d036bacf8bed91d79c2258da89881e2e6652e9d327e3af5292cf7fa71"
+  }
+]
