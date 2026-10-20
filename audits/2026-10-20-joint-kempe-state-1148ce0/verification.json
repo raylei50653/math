@@ -1,0 +1,197 @@
+{
+  "checks": [
+    {
+      "name": "docgraph-all",
+      "cmd": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 1,
+      "seconds": 7.112
+    },
+    {
+      "name": "docgraph-docs",
+      "cmd": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "seconds": 0.097
+    },
+    {
+      "name": "docs",
+      "cmd": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "seconds": 0.866
+    },
+    {
+      "name": "lake",
+      "cmd": [
+        "lake",
+        "build"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "seconds": 4.322
+    },
+    {
+      "name": "normal",
+      "cmd": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-joint-kempe-state-1148ce0/check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "seconds": 2.925
+    },
+    {
+      "name": "seed17",
+      "cmd": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-joint-kempe-state-1148ce0/check.py"
+      ],
+      "cwd": "/tmp",
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "seconds": 2.459
+    },
+    {
+      "name": "final-normal",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-joint-kempe-state-1148ce0/check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "env": {},
+      "exit_code": 0,
+      "seconds": 2.425
+    },
+    {
+      "name": "final-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-joint-kempe-state-1148ce0/check.py"
+      ],
+      "cwd": "/tmp",
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "seconds": 2.434
+    },
+    {
+      "name": "git-diff-check",
+      "exit_code": 0
+    },
+    {
+      "name": "new-primary-whitespace",
+      "files": 13,
+      "exit_code": 0
+    }
+  ],
+  "final_checker_sha256": {
+    "check.py": "b323a394d3a9042b6b72f8d6f948e6374231a5815e53ab2e7d85036baca27081",
+    "refine.py": "b7f21322535ad96e7859f98fbcb48c72c71c6d5a54388181c34b3cfe9235042d",
+    "experiment/check.py": "49be4422650b9553cc598455f6e4db5534e042bce921eddb320a71560d969d75",
+    "review/check_collision.py": "2ac2427c4fb554263b2a1e02973456cc2705e9534ad08733bdb5d1f6368eed8d",
+    "review/check_cross.py": "8405c73b1f3e447f28f674ea355bebb4d563e29d5c94abc12a5016edada865cc"
+  },
+  "negative_controls": {
+    "results": [
+      {
+        "name": "negative-refinement",
+        "command": [
+          "python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-20-joint-kempe-state-1148ce0/refine.py",
+          "--check",
+          "--certificate",
+          "/home/ray/developer/ai/math/audits/2026-10-20-joint-kempe-state-1148ce0/logs/corrupted-refinement.json"
+        ],
+        "exit_code": 1,
+        "status": "rejected as expected"
+      },
+      {
+        "name": "exclusive-refinement",
+        "command": [
+          "python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-20-joint-kempe-state-1148ce0/refine.py",
+          "--generate"
+        ],
+        "exit_code": 1,
+        "status": "rejected as expected"
+      },
+      {
+        "name": "exclusive-experiment",
+        "command": [
+          "python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-20-joint-kempe-state-1148ce0/experiment/check.py",
+          "--generate"
+        ],
+        "exit_code": 1,
+        "status": "rejected as expected"
+      },
+      {
+        "name": "exclusive-review",
+        "command": [
+          "python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-20-joint-kempe-state-1148ce0/review/check_collision.py",
+          "build"
+        ],
+        "exit_code": 1,
+        "status": "rejected as expected"
+      }
+    ],
+    "successful_certificates_unchanged": true
+  },
+  "frozen_input_count": 17,
+  "frozen_input_drift": 0,
+  "docgraph_scope": {
+    "formal_docs": "PASS",
+    "all_worktree": "FAIL: 72 duplicate-ID errors; diagnostic does not name this audit"
+  },
+  "source_status": "full r6/941/J1 not triggered",
+  "new_lean_theorems": false,
+  "commit": false,
+  "push": false,
+  "custody_limit": "Experiment v1 restored without independent pre-edit hash; current evidence independently recomputed; frozen authority inputs unchanged.",
+  "audit_primary_links": {
+    "files": [
+      "audits/2026-10-20-joint-kempe-state-1148ce0/REPORT.md",
+      "audits/2026-10-20-joint-kempe-state-1148ce0/SOURCE_CONTRACT.md",
+      "audits/2026-10-20-joint-kempe-state-1148ce0/experiment/CUSTODY.md",
+      "audits/2026-10-20-joint-kempe-state-1148ce0/experiment/RESULT.md",
+      "audits/2026-10-20-joint-kempe-state-1148ce0/review/REVIEW.md",
+      "audits/2026-10-20-joint-kempe-state-1148ce0/theory/REPORT.md"
+    ],
+    "local_links": 32,
+    "errors": []
+  }
+}

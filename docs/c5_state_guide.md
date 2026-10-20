@@ -2,16 +2,16 @@
 
 ## 最新進度
 
-現況核對：2026-10-20；[P/R來源覆蓋審核](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)證明保全部未來四列支援等價完整十列相等，一般支援覆蓋仍OPEN。保計數的普遍文法代表命題由真disk反例否定；933／941一經P即入K132，不能反推原來源覆蓋。逆P／三角星剝除給可證子類，另有不可剝但已覆蓋的真圖控制。
+現況核對：2026-10-20；[同染色聯合Kempe初驗](../audits/2026-10-20-joint-kempe-state-1148ce0/REPORT.md)證六對接框分割恰為單步框色觀測，八點真disk反駁其逐步充分性；132份代表有90圖碰撞。固定95圖加一接點可區分全部染色，非一般壓縮或J1排除。[P/R來源覆蓋](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)仍OPEN，計數代表的一般版本已否定。
 
 | 欄位 | 現況 |
 | --- | --- |
 | 階段／生命週期 | 研究中；完整表示、指定 grammar 與有界枚舉已有成果，一般可迭代 state 充分性待證。F／Z 為待初驗提案，域外構造研究已交付。 |
-| 最近研究更新 | 2026-10-20：[來源覆蓋](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)完成精確量詞、一般計數覆蓋反例、剩餘支援後繼與可剝子類；一般支援覆蓋未解。 |
-| 上次完成 | 行為代表等價完整十列支援；P的整數逆與支援資訊損失、933／941首次P吸收及932殘留轉移、合法剝除與完整fibres控制。 |
-| 目前停止點 | 一般disk／剩餘r6的支援代表覆蓋仍OPEN；逆P／三角星剝除不覆蓋全部來源，一般計數代表命題為假。歷史原程式、F／Z及一般後繼充分性邊界保留。 |
-| 下一步 | 對具名原來源給同一完整十列支援代表，或計入接回成本的成功／更小bad下降；後繼入K及不可剝都不能裁決原來源。F／Z另依§3接續。 |
-| 接手入口 | P/R先讀[來源覆蓋報告](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)及[實圖語義](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)；其他分支讀§3、[F／Z](c5_forcing_transport_conjectures.md)及[Phase B](c5_phase_b_common_lemmas.md)。 |
+| 最近研究更新 | 2026-10-20：[聯合Kempe狀態](../audits/2026-10-20-joint-kempe-state-1148ce0/REPORT.md)完成單步觀察等價、真disk反例及獨立完整染色核對；一般增強狀態與J1仍OPEN。 |
+| 上次完成 | 六分割摘要在95圖細分192→240→264；加內點5或7後恰逐份區分264染色。J1同染色六格與固定框動作合同已整理；沒有來源排除。 |
+| 目前停止點 | 六分割一般逐步充分性已否定；指定動作的surgery quotient只保一步，遞迴閉合與J1兩項仍OPEN。P/R一般支援覆蓋、歷史原程式及F／Z邊界保留。 |
+| 下一步 | 對具名J1動作保同一染色的刪後分量與實際附件，檢查原來源幾何能否控制四個混合色對更新。P/R另尋同十列代表或計入接回成本的成功／更小bad下降。 |
+| 接手入口 | 聯合狀態先讀[初驗與重播](../audits/2026-10-20-joint-kempe-state-1148ce0/REPORT.md)及[精確合同](../audits/2026-10-20-joint-kempe-state-1148ce0/theory/REPORT.md)；P/R讀[來源覆蓋](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)，其他分支依§3。 |
 
 ### 近期里程碑
 
@@ -21,7 +21,7 @@
 | 2026-10-19／三探測完整解碼 | [有限P/R模型](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md)中，四列未來行為需要全部132態；三個指定後綴已能還原十列，圖層語義與來源覆蓋另證。 |
 | 2026-10-19／任意disk的P/R語義 | [完整fibre雙射](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)將三探測推到任意大小disk的十列固定字面計數；一般文法代表覆蓋保留OPEN。 |
 | 2026-10-20／來源覆蓋界線 | [精確合同與反控制](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)證一般計數代表不存在；支援覆蓋等價原分類，P吸收及幾何可剝子類皆不關閉一般義務。 |
-| 2026-10-13／域外構造與原域收窄 | [強迫異色](c5_forced_inequality_transport.md)證一般距離無界、寬度≤5及不交叉限制，排巢狀 clique／割點接力作原 critical 來源；下一入口收窄至固定 β 的非 clique 介面。 |
+| 2026-10-20／聯合Kempe狀態初驗 | [單步觀察等價與八點反例](../audits/2026-10-20-joint-kempe-state-1148ce0/REPORT.md)保同一圖／染色／字面框；加接點與細分僅限固定95圖，J1來源not triggered。 |
 
 來源投影階數與精確接合上界及跨線整理見
 [全線進展與高階假設](c5_research_synthesis.md)，實際重播範圍見專題報告。
@@ -37,6 +37,7 @@
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
+| 同染色聯合Kempe狀態 | 六對接框分割等價所有接點root actions的深度一框色觀測；八點真disk後繼碰撞，132圖1810份完整lifts中90圖失敗。95圖加一接點恰恢復全部染色，非一般壓縮；J1與增強狀態閉合OPEN | [反例、有限細分與獨立重播](../audits/2026-10-20-joint-kempe-state-1148ce0/REPORT.md) |
 | 七接點必要表與Kempe共同圖 | 固定26列上界的投影階數恰6；全部五點投影誤收96份賦色。特定720交換模型無單值共同圖，但Layer0有非平面二層真圖；未證完整720、平面來源或一般後繼充分性 | [有限域與階數](../audits/2026-10-15-f4-relation-6ddea32/REPORT.md)、[單值障礙](../audits/2026-10-15-kempe-common-graph-6ddea32/REPORT.md)、[二層共同圖](../audits/2026-10-15-kempe-state-covers-6ddea32/REPORT.md) |
 | 來源階數／接合上界 | 132類有11個二階、101個四階、20個五階；精確接合r*≤來源最大階數≤5，T4全收來源≤4；六圖回歸，不證忘掉接點後或多步的同一上界，未Lean化 | [階數報告](c5_relation_arity.md) |
 | C₅ class 兩點重疊 | 新十三點 D₁₃ 完整四接點替換給任意大小同 class 族，私有四度點只成孤點及配對，輪環與偶長雙扇都無縮減起點；保持完整 J/P、全部外框、十五組 repairs／r*=4；加入 D₁₃ 後其餘骨架、必要分類／政策與多步充分性未證 | [兩點重疊導覽](c5_two_vertex_overlap_guide.md)、[D₁₃ 定理](c5_two_vertex_repair_caps.md) |
@@ -59,6 +60,14 @@
 | 基礎構造與 gadgets | exact relations、有限 Lean 證書與 gadget synthesis 已保存；一般 planar／separating C5 的 BAD 不是 disk 反例 | [phase 1](phase1.md)、[構造](construction.md)、[gadgets](gadgets.md) |
 
 ## 3. 停止點與保留缺口
+
+2026-10-20的[同染色聯合Kempe初驗](../audits/2026-10-20-joint-kempe-state-1148ce0/REPORT.md)
+區分同一完整染色的joint觀測與可迭代狀態。六分割精確保存一步框色回應，
+但同一八點圖的兩份染色在第二步框色已不同；一般逐步充分性因此否定。
+固定95圖的加接點修正為完整染色的單射編碼，未提供一般小狀態界。
+下一版可對指定實際分量保存四個混合色對的刪後分量與附件quotient；
+既有surgery只保證單步，下一步descriptor仍須由實際染色重算或另證更新。
+J1六格須由同一原核心完整染色形成，hidden swaps不能省略；原兩項拒絕仍OPEN。
 
 2026-10-19的[四列三步解碼](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md)
 完成矩陣層觀察深度及重編碼；後續[實圖語義](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)

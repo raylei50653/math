@@ -93,7 +93,7 @@
 | 循環流與計數 | 六維／153 支撐／十二循環；36 份基底覆蓋證三套分開整數 orbit 條件不再收緊恆等式解；未排除平面來源 | [循環流](c5_circulation.md) |
 | Count cone／class 計數 | near-triangulation 化約、部分 Lean 代數與 class 級紙面計數已有；cone／connectivity 缺口仍在 | [count cone](c5_count_cone_bridge.md)、[B₅ face](c5_b5_face.md)、[class 計數](c5_kempe_class_counts.md) |
 | 同染色有序重接 | 一步精確公式及同圖三配對同 state／不同後繼反例；record 110 已另由原圖 K5 排除，有限可迭代 state 未證 | [有序重接](c5_dual_path_surgery.md)、[來源排除](c5_single_spoke_two_two_minor.md) |
-| Connectivity／候選 state | 同圖更新與有限控制可重播；AB-only／固定 AB\|CD 猜測有反例，多候選不能任意拼成可實現 state | [connectivity](c5_kempe_connectivity.md)、[AB cube](c5_ab_swap_cube.md)、[choices](c5_edge_choices.md) |
+| Connectivity／候選 state | 同染色六對接框分割恰為一步框色觀測，八點真disk反駁其逐步充分性；指定動作仍可用既有surgery，增強狀態閉合與J1來源排除OPEN。AB-only／固定 AB\|CD 舊反例保留 | [聯合狀態初驗](../audits/2026-10-20-joint-kempe-state-1148ce0/REPORT.md)、[connectivity](c5_kempe_connectivity.md)、[AB cube](c5_ab_swap_cube.md)、[choices](c5_edge_choices.md) |
 | Cut／behavior | retained-component 重建有 Lean 支援；粗 cut 摘要有反例，有界 behavior 控制不證多步充分性 | [cut](c5_cut_interfaces.md)、[behavior](c5_behavior_refinement_results.md)、[state 導覽](c5_state_guide.md) |
 | 固定圖策略與 repair | survivor-811 固定閉包、必要低谷／回升與 B₂ 準備已保存；一般 K=4 策略、共同安全 repair 機制未證 | [barriers](c5_strategy_barriers.md)、[repair](c5_repair_interface.md) |
 | 閉環一致／零邊修復猜想 | 固定可延拓 C₅ 邊界，猜想任意 flat 標記可經內部 cut XOR、零邊數不增而修復；容許持平步，未初驗，不推出邊界可延拓或其他來源排除。驗證需完整不增轉移圖，不能只找一步下降 | [猜想 Z 與驗證計畫](c5_forcing_transport_conjectures.md)、[State 導覽](c5_state_guide.md) |

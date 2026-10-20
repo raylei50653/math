@@ -1,0 +1,59 @@
+{
+  "sha256": {
+    "audits/2026-10-20-joint-kempe-state-1148ce0/review/check_collision.py": "2ac2427c4fb554263b2a1e02973456cc2705e9534ad08733bdb5d1f6368eed8d",
+    "audits/2026-10-20-joint-kempe-state-1148ce0/review/check_cross.py": "8405c73b1f3e447f28f674ea355bebb4d563e29d5c94abc12a5016edada865cc",
+    "audits/2026-10-20-joint-kempe-state-1148ce0/review/collision_certificate.json": "a8a97fc207534e465a334ba6e34ddf55cbc02ed721bbd8b87e654b01a0904e64",
+    "audits/2026-10-20-joint-kempe-state-1148ce0/review/cross_certificate.json": "c557a289f79643399e824d4fdf683b26062585a01222e4994c994bf56ab88f61"
+  },
+  "read_only_unchanged": true,
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-joint-kempe-state-1148ce0/review/check_collision.py",
+        "check"
+      ],
+      "PYTHONHASHSEED": "0",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"mode\": \"check\",\n  \"certificate_sha256\": \"a8a97fc207534e465a334ba6e34ddf55cbc02ed721bbd8b87e654b01a0904e64\",\n  \"literal_boundary_fibre_count\": 3,\n  \"negative_controls\": {\n    \"missing_action\": \"certificate fields\",\n    \"boolean_integer\": \"vertex count\",\n    \"improper_source\": \"improper supplied coloring\",\n    \"nonmaximal_component\": \"supplied maximal components/signature\",\n    \"wrong_boundary_partition\": \"supplied maximal components/signature\",\n    \"different_action\": \"wrong supplied target\",\n    \"partial_swap\": \"improper supplied coloring\",\n    \"coincident_geometry\": \"coincident vertices\",\n    \"outside_geometry\": \"strict convex boundary/interior\",\n    \"reversed_face\": \"positive oriented face\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-joint-kempe-state-1148ce0/review/check_cross.py",
+        "check"
+      ],
+      "PYTHONHASHSEED": "0",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"mode\": \"check\",\n  \"certificate_sha256\": \"c557a289f79643399e824d4fdf683b26062585a01222e4994c994bf56ab88f61\",\n  \"fixed_graph\": {\n    \"literal_colorings\": 264,\n    \"enabled_actions\": 3960,\n    \"pin_results\": [\n      {\n        \"pins\": [],\n        \"classes\": 192,\n        \"conflicting_class_action_pairs\": 96\n      },\n      {\n        \"pins\": [\n          5\n        ],\n        \"classes\": 264,\n        \"conflicting_class_action_pairs\": 0\n      },\n      {\n        \"pins\": [\n          6\n        ],\n        \"classes\": 192,\n        \"conflicting_class_action_pairs\": 96\n      },\n      {\n        \"pins\": [\n          7\n        ],\n        \"classes\": 264,\n        \"conflicting_class_action_pairs\": 0\n      },\n      {\n        \"pins\": [\n          5,\n          6\n        ],\n        \"classes\": 264,\n        \"conflicting_class_action_pairs\": 0\n      },\n      {\n        \"pins\": [\n          5,\n          7\n        ],\n        \"classes\": 264,\n        \"conflicting_class_action_pairs\": 0\n      },\n      {\n        \"pins\": [\n          6,\n          7\n        ],\n        \"classes\": 264,\n        \"conflicting_class_action_pairs\": 0\n      },\n      {\n        \"pins\": [\n          5,\n          6,\n          7\n        ],\n        \"classes\": 264,\n        \"conflicting_class_action_pairs\": 0\n      }\n    ],\n    \"joint_signature_refinement_counts\": [\n      192,\n      240,\n      264\n    ],\n    \"boundary_observation_refinement_counts\": [\n      144,\n      192,\n      240,\n      264\n    ],\n    \"boundary_depth_one_and_joint_partition_equal\": true,\n    \"distinguishing_word\": [\n      [\n        1,\n        2,\n        1\n      ],\n      [\n        0,\n        1,\n        0\n      ]\n    ],\n    \"distinguishing_traces\": [\n      [\n        [\n          0,\n          1,\n          0,\n          1,\n          2,\n          1,\n          3,\n          2\n        ],\n        [\n          0,\n          2,\n          0,\n          1,\n          2,\n          2,\n          3,\n          1\n        ],\n        [\n          1,\n          2,\n          1,\n          0,\n          2,\n          2,\n          3,\n          0\n        ]\n      ],\n      [\n        [\n          0,\n          1,\n          0,\n          1,\n          2,\n          2,\n          3,\n          3\n        ],\n        [\n          0,\n          2,\n          0,\n          1,\n          2,\n          2,\n          3,\n          3\n        ],\n        [\n          1,\n          2,\n          0,\n          1,\n          2,\n          2,\n          3,\n          3\n        ]\n      ]\n    ]\n  },\n  \"catalogue_totals\": {\n    \"graphs\": 132,\n    \"fibres\": 1320,\n    \"empty_fibres\": 405,\n    \"full_lifts\": 1810,\n    \"joint_states\": 1280,\n    \"boundary_fibres_split_by_joint_state\": 310,\n    \"graphs_with_boundary_fibre_split\": 120,\n    \"enabled_rooted_actions\": 27150,\n    \"state_action_pairs\": 19200,\n    \"ambiguous_state_action_pairs\": 1229,\n    \"ambiguous_joint_states\": 290,\n    \"graphs_with_collision\": 90\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-joint-kempe-state-1148ce0/review/check_collision.py",
+        "check"
+      ],
+      "PYTHONHASHSEED": "17",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"mode\": \"check\",\n  \"certificate_sha256\": \"a8a97fc207534e465a334ba6e34ddf55cbc02ed721bbd8b87e654b01a0904e64\",\n  \"literal_boundary_fibre_count\": 3,\n  \"negative_controls\": {\n    \"missing_action\": \"certificate fields\",\n    \"boolean_integer\": \"vertex count\",\n    \"improper_source\": \"improper supplied coloring\",\n    \"nonmaximal_component\": \"supplied maximal components/signature\",\n    \"wrong_boundary_partition\": \"supplied maximal components/signature\",\n    \"different_action\": \"wrong supplied target\",\n    \"partial_swap\": \"improper supplied coloring\",\n    \"coincident_geometry\": \"coincident vertices\",\n    \"outside_geometry\": \"strict convex boundary/interior\",\n    \"reversed_face\": \"positive oriented face\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-20-joint-kempe-state-1148ce0/review/check_cross.py",
+        "check"
+      ],
+      "PYTHONHASHSEED": "17",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"mode\": \"check\",\n  \"certificate_sha256\": \"c557a289f79643399e824d4fdf683b26062585a01222e4994c994bf56ab88f61\",\n  \"fixed_graph\": {\n    \"literal_colorings\": 264,\n    \"enabled_actions\": 3960,\n    \"pin_results\": [\n      {\n        \"pins\": [],\n        \"classes\": 192,\n        \"conflicting_class_action_pairs\": 96\n      },\n      {\n        \"pins\": [\n          5\n        ],\n        \"classes\": 264,\n        \"conflicting_class_action_pairs\": 0\n      },\n      {\n        \"pins\": [\n          6\n        ],\n        \"classes\": 192,\n        \"conflicting_class_action_pairs\": 96\n      },\n      {\n        \"pins\": [\n          7\n        ],\n        \"classes\": 264,\n        \"conflicting_class_action_pairs\": 0\n      },\n      {\n        \"pins\": [\n          5,\n          6\n        ],\n        \"classes\": 264,\n        \"conflicting_class_action_pairs\": 0\n      },\n      {\n        \"pins\": [\n          5,\n          7\n        ],\n        \"classes\": 264,\n        \"conflicting_class_action_pairs\": 0\n      },\n      {\n        \"pins\": [\n          6,\n          7\n        ],\n        \"classes\": 264,\n        \"conflicting_class_action_pairs\": 0\n      },\n      {\n        \"pins\": [\n          5,\n          6,\n          7\n        ],\n        \"classes\": 264,\n        \"conflicting_class_action_pairs\": 0\n      }\n    ],\n    \"joint_signature_refinement_counts\": [\n      192,\n      240,\n      264\n    ],\n    \"boundary_observation_refinement_counts\": [\n      144,\n      192,\n      240,\n      264\n    ],\n    \"boundary_depth_one_and_joint_partition_equal\": true,\n    \"distinguishing_word\": [\n      [\n        1,\n        2,\n        1\n      ],\n      [\n        0,\n        1,\n        0\n      ]\n    ],\n    \"distinguishing_traces\": [\n      [\n        [\n          0,\n          1,\n          0,\n          1,\n          2,\n          1,\n          3,\n          2\n        ],\n        [\n          0,\n          2,\n          0,\n          1,\n          2,\n          2,\n          3,\n          1\n        ],\n        [\n          1,\n          2,\n          1,\n          0,\n          2,\n          2,\n          3,\n          0\n        ]\n      ],\n      [\n        [\n          0,\n          1,\n          0,\n          1,\n          2,\n          2,\n          3,\n          3\n        ],\n        [\n          0,\n          2,\n          0,\n          1,\n          2,\n          2,\n          3,\n          3\n        ],\n        [\n          1,\n          2,\n          0,\n          1,\n          2,\n          2,\n          3,\n          3\n        ]\n      ]\n    ]\n  },\n  \"catalogue_totals\": {\n    \"graphs\": 132,\n    \"fibres\": 1320,\n    \"empty_fibres\": 405,\n    \"full_lifts\": 1810,\n    \"joint_states\": 1280,\n    \"boundary_fibres_split_by_joint_state\": 310,\n    \"graphs_with_boundary_fibre_split\": 120,\n    \"enabled_rooted_actions\": 27150,\n    \"state_action_pairs\": 19200,\n    \"ambiguous_state_action_pairs\": 1229,\n    \"ambiguous_joint_states\": 290,\n    \"graphs_with_collision\": 90\n  }\n}\n",
+      "stderr": ""
+    }
+  ]
+}
