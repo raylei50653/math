@@ -2,26 +2,26 @@
 
 ## 最新進度
 
-現況核對：2026-10-20；[殘餘候選迭代](../audits/2026-10-20-kempe-residual-iteration-af0df80/REPORT.md)以實際傳輸再共同篩選，對任意有限歷史保完整軌跡；固定95圖336個非空殘餘態，384條舊假路徑全拒絕。互補phase可合併翻轉奇偶，但須保中途篩選；一般壓縮與J1仍OPEN。[P/R來源覆蓋](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)仍OPEN。
+現況核對：2026-10-20；[J1五邊路的精確殘餘與計數](../audits/2026-10-20-r6-941-j1-five-edge-417732f/REPORT.md)已接上原C7／W7語義；真14點disk往返篩選2→1，完整cap可1→0，不能假設交換與接回可交換。一般J1與壓縮仍OPEN；原固定95圖336態及P/R覆蓋界線保留。
 
 | 欄位 | 現況 |
 | --- | --- |
 | 階段／生命週期 | 研究中；完整候選集合已有精確迭代語義，一般小狀態表示待證。指定 grammar 與有界枚舉已有成果；F／Z 為待初驗提案，域外構造研究已交付。 |
-| 最近研究更新 | 2026-10-20：[殘餘迭代](../audits/2026-10-20-kempe-residual-iteration-af0df80/REPORT.md)完成任意有限歷史正確性、固定圖完整集合閉包及保篩選的phase公式；一般小狀態界與J1仍OPEN。 |
-| 上次完成 | 固定95圖336非空殘餘態，384假路徑全拒絕；72個雙候選皆有試探／還原方案，48個用2次交換、24個用4次，染色回原點而候選只留一份。 |
-| 目前停止點 | 精確候選集合可迭代，主動辨識有條件嚴格下降，但總狀態數未壓縮；同J不能代替同殘餘集合，phase不能丟中途觀測。一般有界表示、圖大小下降與J1仍OPEN。 |
+| 最近研究更新 | 2026-10-20：[J1五邊路接口](../audits/2026-10-20-r6-941-j1-five-edge-417732f/REPORT.md)分清全來源Z、篩選後候選及完整cap；真disk核對中途觀測、來源回溯與不交換反控制。 |
+| 上次完成 | 真14點disk的11,088完整著色與48,048刪R核心著色全枚舉、全部完整cap接合一致；往返2→1及丟mask復活反例成立。固定95圖336態保留。 |
+| 目前停止點 | 選路候選不保全來源正性、色置換或完整orbit守恆；交換與cap未必交換。一般小狀態表示、完整J1來源及圖大小下降仍OPEN。 |
 | 下一步 | 對具名J1動作，以精確殘餘更新作語義基線，尋能保傳輸／篩選的較小surgery描述，並保來源回溯及接回成本；候選數不增不能當較小bad。P/R另尋來源代表。 |
-| 接手入口 | 先讀[迭代規則與重播](../audits/2026-10-20-kempe-residual-iteration-af0df80/REPORT.md)及[一般紙面語義](../audits/2026-10-20-kempe-residual-iteration-af0df80/theory/REPORT.md)；J1沿[來源合同](../audits/2026-10-20-joint-kempe-state-1148ce0/theory/REPORT.md)，P/R讀[來源覆蓋](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)。 |
+| 接手入口 | [五邊路與同源計數](../audits/2026-10-20-r6-941-j1-five-edge-417732f/REPORT.md)、[精確殘餘／cap義務](../audits/2026-10-20-r6-941-j1-five-edge-417732f/residual/REPORT.md)；一般迭代沿[既有紙證](../audits/2026-10-20-kempe-residual-iteration-af0df80/theory/REPORT.md)，P/R沿[來源覆蓋](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
-| 2026-10-15／共同原圖與二層cover | [必要表階數](../audits/2026-10-15-f4-relation-6ddea32/REPORT.md)及[二層共同圖](../audits/2026-10-15-kempe-state-covers-6ddea32/REPORT.md)分開精確關係、抽象交換與真圖多值lift；原平面來源及一般充分性仍OPEN。 |
 | 2026-10-19／三探測完整解碼 | [有限P/R模型](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md)中，四列未來行為需要全部132態；三個指定後綴已能還原十列，圖層語義與來源覆蓋另證。 |
 | 2026-10-19／任意disk的P/R語義 | [完整fibre雙射](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)將三探測推到任意大小disk的十列固定字面計數；一般文法代表覆蓋保留OPEN。 |
 | 2026-10-20／來源覆蓋界線 | [精確合同與反控制](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)證一般計數代表不存在；支援覆蓋等價原分類，P吸收及幾何可剝子類皆不關閉一般義務。 |
 | 2026-10-20／聯合觀測到精確迭代 | [三台同步](../audits/2026-10-20-multi-kempe-machines-af0df80/REPORT.md)定位384條假路徑；[殘餘迭代](../audits/2026-10-20-kempe-residual-iteration-af0df80/REPORT.md)以傳輸＋篩選全排，固定圖336個非空集合；一般壓縮及J1仍OPEN。 |
+| 2026-10-20／五邊路的同源語義 | [W7計數及殘餘接合](../audits/2026-10-20-r6-941-j1-five-edge-417732f/REPORT.md)以真disk核對保共同軌跡與完整cap；選路後計數不替全來源，一般J1仍OPEN。 |
 
 來源投影階數與精確接合上界及跨線整理見
 [全線進展與高階假設](c5_research_synthesis.md)，實際重播範圍見專題報告。

@@ -1,0 +1,76 @@
+{
+  "status": "PASS final connected verification",
+  "completed_utc": "2026-10-20T13:49:09.854630+00:00",
+  "base": "417732fc5ef0a012829fd6712333b1c906128d3a",
+  "connected_replay": {
+    "normal_returncode": 0,
+    "seed17_returncode": 0,
+    "semantic_outputs_equal_after_dropping_elapsed_seconds": true,
+    "subcheckers": 6
+  },
+  "negative_controls": {
+    "corrupted_output_seal": "rejected (exit 1)",
+    "geometry": "normal/seed17 and degree/induced tampering plus exclusive-create overwrite rejected; geometry/checks.json",
+    "counting": "column and multiplicity tampering rejected; counting/checks.json",
+    "residual": "middle-mask certificate tampering rejected; residual/checks.json"
+  },
+  "custody": {
+    "frozen_files": 2593,
+    "immutable_original_drift": 0,
+    "sealed_outputs": 49,
+    "output_seal_sha256": "20f2c6283431b3c334f884678bb2cff18c3750bd9ede3de5ceada750b4dc285f",
+    "authorized_routing_changes": [
+      "docs/STATUS.md",
+      "docs/c5_kempe_guide.md",
+      "docs/c5_state_guide.md"
+    ]
+  },
+  "lake_build": {
+    "returncode": 0,
+    "jobs": 8832,
+    "existing_linter_warnings": true,
+    "new_Lean": false
+  },
+  "documentation_checks": {
+    "check_docs": "PASS 704 Markdown files / 9297 local links",
+    "docs_scope_docgraph": "PASS 97 documents / 383 relations / 0 errors / 0 notes",
+    "new_audit_links": {
+      "status": "PASS",
+      "new_audit_markdown_files": 9,
+      "local_links_checked": 48,
+      "broken": 0
+    },
+    "all_tree_docgraph": "not rerun; frozen history copies lie outside formal docs scope"
+  },
+  "git_diff_check_returncode": 0,
+  "not_rerun": [
+    "unrelated research certificates",
+    "whole-tree DocGraph",
+    "numeric LP beyond the single stopped attempt",
+    "staged artifact policy (no staging requested)"
+  ],
+  "scope": {
+    "general_five_edge_induced_C7_paper_lemma": true,
+    "W7_count_cone_feasible": null,
+    "W7_count_cone_infeasible": null,
+    "W7_source_excluded": false,
+    "general_J1_excluded": false,
+    "smaller_bad_constructed": false,
+    "committed": false,
+    "pushed": false
+  },
+  "logs": {
+    "normal.log": {
+      "bytes": 4778,
+      "sha256": "cd717d54c5bd7bad4955a18f0a66829dad7495cd64a5653c08f20cb02eb1f655"
+    },
+    "seed17.log": {
+      "bytes": 4778,
+      "sha256": "fdf37602ee4fd1c9ed7780631b0f6720a4fc1022bd02d071c8d208a13a2b6ae6"
+    },
+    "negative-seal.log": {
+      "bytes": 744,
+      "sha256": "d26fe0aa125c13e9c9a2ed61ffb69cfe67dc24fcde3567a59d0318ddf97eca87"
+    }
+  }
+}

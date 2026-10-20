@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-five-edge-417732f/check.py", line 38, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-five-edge-417732f/check.py", line 18, in main
+    verify(inputs['inputs'],D/'frozen');verify(seal,D)
+                                        ~~~~~~^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-20-r6-941-j1-five-edge-417732f/check.py", line 12, in verify
+    assert hashlib.sha256(data).hexdigest()==row['sha256'],('sealed drift',row['path'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('sealed drift', 'BASE.json')
