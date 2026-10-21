@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-single-barrier-30dde27/exterior/check.py", line 341, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-single-barrier-30dde27/exterior/check.py", line 331, in main
+    require(json.loads(args.certificate.read_text()) == result, 'certificate missing, corrupted, or incomplete')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-single-barrier-30dde27/exterior/check.py", line 36, in require
+    raise ValueError(message)
+ValueError: certificate missing, corrupted, or incomplete

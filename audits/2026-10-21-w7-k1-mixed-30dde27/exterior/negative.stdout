@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-k1-mixed-30dde27/exterior/check.py", line 371, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-k1-mixed-30dde27/exterior/check.py", line 360, in main
+    verify(json.loads(gzip.decompress(args.certificate.read_bytes())), result)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-k1-mixed-30dde27/exterior/check.py", line 322, in verify
+    require(proposal == actual, 'certificate corrupted, incomplete, or closure scope enlarged')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-k1-mixed-30dde27/exterior/check.py", line 37, in require
+    raise ValueError(message)
+ValueError: certificate corrupted, incomplete, or closure scope enlarged

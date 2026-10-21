@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-k1-mixed-30dde27/transport/check.py", line 333, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-k1-mixed-30dde27/transport/check.py", line 323, in main
+    verify(json.loads(path.read_text()),expected)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-k1-mixed-30dde27/transport/check.py", line 283, in verify
+    require(packed(cert) == packed(expected),'damaged complete source history, cap lift, or enlarged closure')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-k1-mixed-30dde27/transport/check.py", line 35, in require
+    raise ValueError(message)
+ValueError: damaged complete source history, cap lift, or enlarged closure

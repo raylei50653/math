@@ -1,0 +1,105 @@
+{
+  "base": "30dde27293b5d3ad63c75fae73cda5be96db705b",
+  "custody": {
+    "historical_routing_pins": {
+      "docs/HANDOFF.md": {
+        "before_sha256": "9cfa72f9049d77f74c183a057589102160556084c72bc68d064eb0b933fee2ce",
+        "current_equals_before": true,
+        "current_sha256": "9cfa72f9049d77f74c183a057589102160556084c72bc68d064eb0b933fee2ce"
+      },
+      "docs/STATUS.md": {
+        "before_sha256": "a5fea06b06e0b5bb934768a9a32c6d8bf98f67d7cc1a74dcfc26602bb483d6e5",
+        "current_equals_before": false,
+        "current_sha256": "486ca8c53333f98f4d4ea4d7bd57d7b363b3d675143c90bff5db8e7ca07e0390"
+      },
+      "docs/c5_kempe_guide.md": {
+        "before_sha256": "745c057cbfab0c57998fa14fdf406af621a7264dd6a30ca2ae7a308f79feabf7",
+        "current_equals_before": false,
+        "current_sha256": "9649b922d6a7716b7612cbdbe1243cae440bd87e875dfa9861665da4ae923f09"
+      }
+    },
+    "new_archive_original_bytes": 21816344,
+    "new_archive_paths": [
+      "audits/2026-10-21-w7-exploration-30dde27/lists/certificate.json",
+      "audits/2026-10-21-w7-k1-mixed-30dde27/transport/certificate.json",
+      "audits/2026-10-21-w7-k1-mixed-30dde27/transport/runs/negative-whole-profile0.json"
+    ],
+    "nonrouting_authorities_unchanged": 28,
+    "old_archive_records_unchanged": true,
+    "original_audit_bytes": 138163658,
+    "original_audit_files": 317,
+    "result": "PASS"
+  },
+  "docs": {
+    "local_links": 9374,
+    "markdown_files": 710,
+    "result": "PASS"
+  },
+  "formal_docs_docgraph": {
+    "documents": 97,
+    "errors": 0,
+    "families": 12,
+    "relations": 383,
+    "result": "PASS"
+  },
+  "independent_publication_review": "PASS: archive preservation, routing pins, portable replay scope, docs closure boundaries",
+  "lake_build": "PASS",
+  "portable_replays": {
+    "integrated": {
+      "normal_seed17_optimized_stdout_equal": true,
+      "sha256": "6ed41cb8a00b85fb74063c48bbaeeffcf87fe57e0486ebd12d529b6106b072c4"
+    },
+    "mixed": {
+      "normal_seed17_optimized_stdout_equal": true,
+      "sha256": "e69ec9a8765a5f3bf2d59e61141bafd997a94a3d53292e3b06f4aa3fab92b38f"
+    },
+    "root": {
+      "normal_seed17_optimized_stdout_equal": true,
+      "sha256": "12ff60f43d8632e63bc61ddd8a41db32bb0b6fe42c8487a73393990d2985bf21"
+    },
+    "single": {
+      "normal_seed17_optimized_stdout_equal": true,
+      "sha256": "97b7448bf3d1dd6d10f100b48ea5961ae1f5fbf7bc477a0d6609ee1b553431ba"
+    }
+  },
+  "pre_routing_replays": {
+    "one_failure": "mixed receipt: extra ignored bytecode; no original artifact drift",
+    "pass": 21,
+    "total": 22
+  },
+  "source_claims": {
+    "L_entirely_excluded": false,
+    "new_source_exclusion": "II/44466/U=original_w",
+    "original_profiles_excluded": 38,
+    "original_profiles_open": 2
+  },
+  "stage_checks": {
+    "cached_whitespace": "PASS",
+    "clean_checkout_full_replay_performed": false,
+    "generated_artifact_policy": "PASS: 8803 indexed files, 113 large files with documented exceptions, 166 registered outputs",
+    "historical_overlay_replay_separate_from_index_custody": true,
+    "source_bytes": {
+      "all_original_bytes_recovered_from_staged_objects": 138163658,
+      "archived_source_paths": 3,
+      "direct_staged_source_paths": 314,
+      "original_source_files": 317,
+      "result": "PASS",
+      "staged_bytecode_paths": [],
+      "staged_paths": 394,
+      "unrelated_staged_paths": []
+    }
+  },
+  "tools_tests": {
+    "initial_uv_readonly_cache_failure_retained": true,
+    "result": "PASS",
+    "tests": 94
+  },
+  "whole_tree_docgraph": {
+    "added": [],
+    "baseline": "audits/2026-10-21-w7-interface-publish-13e51db/docgraph-whole-tree.log",
+    "baseline_errors": 72,
+    "current_errors": 72,
+    "exact_diagnostic_set_unchanged": true,
+    "removed": []
+  }
+}

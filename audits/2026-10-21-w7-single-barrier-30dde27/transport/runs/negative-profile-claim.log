@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-single-barrier-30dde27/transport/check.py", line 402, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-single-barrier-30dde27/transport/check.py", line 391, in main
+    verify(json.loads(path.read_text()),result)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-single-barrier-30dde27/transport/check.py", line 352, in verify
+    require(packed(cert) == packed(expected),'damaged or overextended transport certificate')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-single-barrier-30dde27/transport/check.py", line 33, in require
+    raise ValueError(message)
+ValueError: damaged or overextended transport certificate

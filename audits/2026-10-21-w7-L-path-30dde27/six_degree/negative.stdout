@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-L-path-30dde27/six_degree/check.py", line 368, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-L-path-30dde27/six_degree/check.py", line 356, in main
+    verify(json.loads(gzip.decompress(args.certificate.read_bytes())), result)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-L-path-30dde27/six_degree/check.py", line 309, in verify
+    require(actual == expected, 'incomplete full fibre, alias abuse, or enlarged closure')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-L-path-30dde27/six_degree/check.py", line 39, in require
+    raise ValueError(why)
+ValueError: incomplete full fibre, alias abuse, or enlarged closure

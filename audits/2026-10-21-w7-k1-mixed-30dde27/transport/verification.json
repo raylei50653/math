@@ -1,0 +1,70 @@
+{
+  "L_source_excluded": false,
+  "external_enlarged_profile_closure_rejected": true,
+  "files": {
+    "BASE.json": {
+      "bytes": 2261,
+      "sha256": "7e73eb3747c506365e03db28f0e59ddd895b83aee297459e057dfd542f8eb79d"
+    },
+    "PROOF.md": {
+      "bytes": 9807,
+      "sha256": "155c8c0c2ee3bb629bd3ff8d3ab52741ec5d62346a13f878e3da8d3f3eab377e"
+    },
+    "REPORT.md": {
+      "bytes": 1597,
+      "sha256": "ffaaebf7a19484bb847d39ac0411f854cee27b882082e06eae1409f0243a50dd"
+    },
+    "certificate.json": {
+      "bytes": 11687430,
+      "sha256": "2dec633b70ba7a680391168881d36c20edb5a92d5cb7f16deb776beec8a90131"
+    },
+    "check.py": {
+      "bytes": 17679,
+      "sha256": "657d65254ac33b2b8464d141984181940ec4d47af31d5f02a0fc702225bc1241"
+    },
+    "runs/negative-whole-profile0.log": {
+      "bytes": 944,
+      "sha256": "d8bb9ab81fcacb7245a1ebeb45b994e6b364de35680a4f94e758e1d4aa2a8028"
+    },
+    "runs/normal.log": {
+      "bytes": 475,
+      "sha256": "68d3cd70d46741b9f4f4d9fc50c980f0e2f8c358f9f11990d557a431998a93d0"
+    },
+    "runs/seed17-optimized.log": {
+      "bytes": 475,
+      "sha256": "68d3cd70d46741b9f4f4d9fc50c980f0e2f8c358f9f11990d557a431998a93d0"
+    }
+  },
+  "frozen_live_source_drift": 0,
+  "negative_returncode": 1,
+  "normal_seed17_optimized_stdout_equal": true,
+  "profile0_K1_positions_newly_excluded": [
+    "u3",
+    "u1"
+  ],
+  "runs": [
+    {
+      "PYTHONHASHSEED": null,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-k1-mixed-30dde27/transport/check.py"
+      ],
+      "name": "normal",
+      "returncode": 0,
+      "stdout": "{\"L_surviving_marked_cases\": 20, \"complete_literal_cap_kernels\": 5208, \"marked_cases\": 250, \"negative_controls_rejected\": [\"omit_original_source_column\", \"split_original_face_component\", \"corrupt_full_cap_witness\", \"claim_whole_profile0_exclusion\"], \"newly_excluded_positions\": [\"u3\", \"u1\"], \"result\": \"PASS: profile0 K1 u3/u1 excluded; L requires K01(Y)=K01(a)\", \"same_E_complete_strip_kernels\": 1856, \"source_columns_per_target\": [10, 10], \"whole_profile_excluded\": false}"
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-21-w7-k1-mixed-30dde27/transport/check.py"
+      ],
+      "name": "seed17-optimized",
+      "returncode": 0,
+      "stdout": "{\"L_surviving_marked_cases\": 20, \"complete_literal_cap_kernels\": 5208, \"marked_cases\": 250, \"negative_controls_rejected\": [\"omit_original_source_column\", \"split_original_face_component\", \"corrupt_full_cap_witness\", \"claim_whole_profile0_exclusion\"], \"newly_excluded_positions\": [\"u3\", \"u1\"], \"result\": \"PASS: profile0 K1 u3/u1 excluded; L requires K01(Y)=K01(a)\", \"same_E_complete_strip_kernels\": 1856, \"source_columns_per_target\": [10, 10], \"whole_profile_excluded\": false}"
+    }
+  ]
+}

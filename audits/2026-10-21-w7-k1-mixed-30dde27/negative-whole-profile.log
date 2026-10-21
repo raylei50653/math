@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-k1-mixed-30dde27/full_exterior.py", line 294, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-k1-mixed-30dde27/full_exterior.py", line 290, in main
+    else:verify(json.loads(gzip.decompress(path.read_bytes())),result)
+         ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-k1-mixed-30dde27/full_exterior.py", line 261, in verify
+    require(actual == expected,'damaged exterior full fibres or enlarged source claim')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-k1-mixed-30dde27/full_exterior.py", line 27, in require
+    raise ValueError(why)
+ValueError: damaged exterior full fibres or enlarged source claim

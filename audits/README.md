@@ -1,5 +1,9 @@
 # 稽核封存與還原
 
+2026-10-21 最新整理：[W7單障礙、完整原E與L混色路](../docs/history/2026-10-21-w7-L-path-publish.md)。
+四包317份原證據保持bytes；三份大型JSON新增三個去重gzip blobs，原ARCHIVE records不變。
+還原後用[發布verifier](2026-10-21-w7-L-publish-30dde27/verify.py)核對；原routing快照的臨時重放與現行文件檢查分開，L整支仍OPEN。
+
 2026-10-21 最新整理：[W7原接觸結構與u3v／u1v八型排除](../docs/history/2026-10-21-w7-structural-publish.md)。
 三組108份新證據保持原bytes，連同依賴共123個不同來源檔案，見
 [SHA256清單](2026-10-21-w7-structural-publish-30f2d19/SOURCE_SHA256SUMS)。
