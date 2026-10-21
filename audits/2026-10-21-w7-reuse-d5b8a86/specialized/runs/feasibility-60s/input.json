@@ -1,0 +1,48 @@
+{
+  "model": "frozen W7; min 0, D X=0, Q X>=2, X>=0; all ten positivity forms",
+  "method": "diagonally preconditioned PDHG, theta=1, warm primal and zero dual",
+  "requested_seconds": 60.0,
+  "warm": "/home/ray/developer/ai/math/audits/2026-10-20-w7-count-opt-d5b8a86/runs/all-cu-pdlp/vectors.npz",
+  "warm_sha256": "2a51a692cef27330b44b5f065a82bf91a1c7771b1b8c43c1d4e7ed211e7f5e14",
+  "source_sha256": {
+    "run_pdhg.py": "fdbb396f52446a942fdb65755ea3635672c5e9054cb1f9a41ff2a0228647afc2",
+    "w7_operator.py": "20406f48302020ae86986b75a22f38b4f5775285926536f71c8a9d87286c5312",
+    "kernels.cpp": "d5c80b6d174165253153cff6febb8624fa0ffb7cd3beb5fc08ff296be4e58267"
+  },
+  "scaling": {
+    "row_bound_min_max": [
+      2.0,
+      13934.0
+    ],
+    "column_bound_min_max": [
+      2.0,
+      80.0
+    ],
+    "eta": 0.99,
+    "proof": "B=|L|C majorizes abs(A); weighted Cauchy-Schwarz gives scaled norm <= eta"
+  },
+  "initial": {
+    "balance_inf": 2.9882532559533104e-08,
+    "balance_l2": 9.779738337595152e-07,
+    "positivity_violation": 6.408251707057389e-11,
+    "primal_residual_inf": 2.9882532559533104e-08,
+    "PZ_ten": [
+      569.6096548000056,
+      672.4696409744666,
+      663.7266510688606,
+      1336.1962920116205,
+      1336.1962920484816,
+      766.5866372082083,
+      102.85998615824633,
+      30.43442813146506,
+      72.42555802678122,
+      0.9999999999679587
+    ],
+    "sum_x": 15452.442501988018,
+    "min_x": 0.0,
+    "support_1e-9": 170466
+  },
+  "setup_seconds": 0.4374770879994685,
+  "no_explicit_D_or_Q": true,
+  "necessary_cone": "OPEN"
+}

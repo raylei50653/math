@@ -1,0 +1,101 @@
+{
+  "status": "PASS; one numerical trial, no cone or source verdict",
+  "implementation_review": "PDHG signs, extrapolation, diagonal bounds and buffer reuse checked",
+  "explicit_matrix_shape": [
+    122626,
+    307197
+  ],
+  "explicit_matrix_nnz": 4738275,
+  "warm_sha256_verified": "2a51a692cef27330b44b5f065a82bf91a1c7771b1b8c43c1d4e7ed211e7f5e14",
+  "source_sha256_verified": {
+    "run_pdhg.py": "fdbb396f52446a942fdb65755ea3635672c5e9054cb1f9a41ff2a0228647afc2",
+    "w7_operator.py": "20406f48302020ae86986b75a22f38b4f5775285926536f71c8a9d87286c5312",
+    "kernels.cpp": "d5c80b6d174165253153cff6febb8624fa0ffb7cd3beb5fc08ff296be4e58267"
+  },
+  "operator_row_bound_valid": true,
+  "operator_column_bound_valid": true,
+  "iterations": 13207,
+  "elapsed_seconds": 60.00252848499986,
+  "checks": {
+    "initial": {
+      "explicit_metrics": {
+        "balance_inf": 2.98825325959623e-08,
+        "balance_l2": 9.77973833562149e-07,
+        "positivity_violation": 6.408251707057389e-11,
+        "primal_residual_inf": 2.98825325959623e-08,
+        "PZ_ten": [
+          569.609654800005,
+          672.4696409744668,
+          663.7266510688592,
+          1336.19629201162,
+          1336.1962920484846,
+          766.586637208209,
+          102.8599861582463,
+          30.43442813146507,
+          72.42555802678119,
+          0.9999999999679587
+        ],
+        "sum_x": 15452.442501988018,
+        "min_x": 0.0,
+        "support_1e-9": 170466
+      },
+      "max_reported_metric_absolute_difference": 2.9558577807620168e-12,
+      "max_operator_forward_absolute_difference": 5.9117155615240335e-12
+    },
+    "final": {
+      "explicit_metrics": {
+        "balance_inf": 4.523575053926553e-09,
+        "balance_l2": 6.433876037438689e-08,
+        "positivity_violation": 0.0,
+        "primal_residual_inf": 4.523575053926553e-09,
+        "PZ_ten": [
+          569.6097755836004,
+          672.4697874566613,
+          663.7267835054752,
+          1336.196570956009,
+          1336.196570955224,
+          766.5867953729905,
+          102.86001186917254,
+          30.434435187240698,
+          72.42557668193182,
+          1.000000008273195
+        ],
+        "sum_x": 15452.447874441148,
+        "min_x": 0.0,
+        "support_1e-9": 262415
+      },
+      "max_reported_metric_absolute_difference": 4.320099833421409e-12,
+      "max_operator_forward_absolute_difference": 8.640199666842818e-12
+    },
+    "best": {
+      "explicit_metrics": {
+        "balance_inf": 2.5968117874289346e-09,
+        "balance_l2": 5.524656792085815e-08,
+        "positivity_violation": 0.0,
+        "primal_residual_inf": 2.5968117874289346e-09,
+        "PZ_ten": [
+          569.6097754558683,
+          672.4697873127612,
+          663.7267833529371,
+          1336.1965706698572,
+          1336.196570673336,
+          766.586795212449,
+          102.8600118600439,
+          30.434435182848276,
+          72.42557667719558,
+          1.0000000184408284
+        ],
+        "sum_x": 15452.447871779568,
+        "min_x": 0.0,
+        "support_1e-9": 262687
+      },
+      "max_reported_metric_absolute_difference": 5.229594535194337e-12,
+      "max_operator_forward_absolute_difference": 1.0459189070388675e-11
+    }
+  },
+  "output_sha256": {
+    "input.json": "08dc85de137a95becd4381a7787fd1ae6547f1f696bad4e94059395ffd7c31e2",
+    "result.json": "2a08acac89ad83c4cbbec26f71e40d704d1f69db0a3df2616957a6e145c80941",
+    "vectors.npz": "c95daaad1c2a53e6f80d2d3f19b67a16843b9485d240c78f42562544587eaaae"
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "status": "independent wrapper review passed; no solver",
+  "wrapper_sha256": "20406f48302020ae86986b75a22f38b4f5775285926536f71c8a9d87286c5312",
+  "cases": [
+    {
+      "backend": "direct",
+      "reference": "mindeg",
+      "positive": [],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "template",
+      "reference": "mindeg",
+      "positive": [],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "direct",
+      "reference": "mindeg",
+      "positive": [
+        9
+      ],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "template",
+      "reference": "mindeg",
+      "positive": [
+        9
+      ],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "direct",
+      "reference": "mindeg",
+      "positive": [
+        9,
+        0,
+        7
+      ],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "template",
+      "reference": "mindeg",
+      "positive": [
+        9,
+        0,
+        7
+      ],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "direct",
+      "reference": "mindeg",
+      "positive": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "template",
+      "reference": "mindeg",
+      "positive": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "direct",
+      "reference": "h2",
+      "positive": [],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "template",
+      "reference": "h2",
+      "positive": [],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "direct",
+      "reference": "h2",
+      "positive": [
+        9
+      ],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "template",
+      "reference": "h2",
+      "positive": [
+        9
+      ],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "direct",
+      "reference": "h2",
+      "positive": [
+        9,
+        0,
+        7
+      ],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "template",
+      "reference": "h2",
+      "positive": [
+        9,
+        0,
+        7
+      ],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "direct",
+      "reference": "h2",
+      "positive": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    },
+    {
+      "backend": "template",
+      "reference": "h2",
+      "positive": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "integer_forward_transpose_recovery_adjoint_exact": true
+    }
+  ],
+  "negative_controls_rejected": [
+    "direct:wrong_input_length",
+    "direct:complex_input",
+    "direct:float32_output",
+    "direct:noncontiguous_output",
+    "direct:readonly_output",
+    "direct:short_workspace",
+    "direct:readonly_workspace",
+    "direct:input_workspace_overlap",
+    "direct:input_output_overlap",
+    "direct:rinput_output_overlap",
+    "template:wrong_input_length",
+    "template:complex_input",
+    "template:float32_output",
+    "template:noncontiguous_output",
+    "template:readonly_output",
+    "template:short_workspace",
+    "template:readonly_workspace",
+    "template:input_workspace_overlap",
+    "template:input_output_overlap",
+    "template:rinput_output_overlap",
+    "{'backend': 'bad'}",
+    "{'reference': 'bad'}",
+    "{'positive': (9, 9)}",
+    "{'positive': (-1,)}",
+    "{'positive': (True,)}"
+  ],
+  "separate_workspace_concurrency_pass": true,
+  "timing_policy": "float64 CPU one thread; persistent native workspace; every native/SciPy call allocates returned output; setup excluded;8warmups,5x60",
+  "benchmark": {
+    "scipy_forward": {
+      "median_ms": 2.890322749999541,
+      "batch_ms": [
+        2.890322749999541,
+        2.9112960000020394,
+        2.86687364999428,
+        2.868706966667863,
+        2.8945627833309118
+      ]
+    },
+    "scipy_transpose": {
+      "median_ms": 2.6530666166612114,
+      "batch_ms": [
+        2.665880050002064,
+        2.649871400005092,
+        2.6530666166612114,
+        2.645992883344661,
+        2.666309033338621
+      ]
+    },
+    "direct_forward": {
+      "median_ms": 2.1571072166655845,
+      "batch_ms": [
+        2.181287349988755,
+        2.1571072166655845,
+        2.163930466667807,
+        2.1457998000035636,
+        2.151438466656449
+      ]
+    },
+    "direct_transpose": {
+      "median_ms": 1.686257199996059,
+      "batch_ms": [
+        1.5619901166549728,
+        2.0104747833405177,
+        1.686257199996059,
+        1.606057766654582,
+        1.8528108999968633
+      ]
+    },
+    "template_forward": {
+      "median_ms": 2.2577969500010417,
+      "batch_ms": [
+        2.2577969500010417,
+        2.3005083833443982,
+        2.1486430166684536,
+        3.2387453000107294,
+        2.241323433342283
+      ]
+    },
+    "template_transpose": {
+      "median_ms": 2.157303250002466,
+      "batch_ms": [
+        2.1327483999963683,
+        2.1981369499978123,
+        2.1192554999894733,
+        2.157303250002466,
+        2.9489382999903078
+      ]
+    }
+  }
+}

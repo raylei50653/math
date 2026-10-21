@@ -1,0 +1,36 @@
+{
+  "input_count": 9,
+  "input_drift": 0,
+  "python_ast": "PASS",
+  "new_source_whitespace": "PASS",
+  "checks": {
+    "specialized/normal-final.json": {
+      "sha256": "2190fdec1c4aa41f76ed1717bfcac0850cf9890a1b5f9db320b8326f3521587f",
+      "status": "PASS compiled operator equivalence; cone OPEN"
+    },
+    "specialized/seed17.json": {
+      "sha256": "824d021cdd974929628446c7c0721a6a619d183dde01eb2b690a52a0c5140666",
+      "status": "PASS compiled operator equivalence; cone OPEN"
+    },
+    "review/trial-review.json": {
+      "sha256": "00c7ed2e0fd34b26e6fb013fb0aa78aa664df983fa8d6393a15ec6c41214bfd6",
+      "status": "PASS; one numerical trial, no cone or source verdict"
+    },
+    "algebra/wrapper-review.json": {
+      "sha256": "860c6e5035cc7642041f6077933bb7e66cbab363189c62abf09c6248dc271d0b",
+      "status": "independent wrapper review passed; no solver"
+    }
+  },
+  "trial": {
+    "iterations": 13207,
+    "seconds": 60.00252848499986,
+    "best_residual": 2.5968117656205436e-09,
+    "cone": "OPEN"
+  },
+  "git_diff_check": "run separately",
+  "not_run": [
+    "lake build: no Lean changes",
+    "unrelated research certificates"
+  ],
+  "writes": "only this exclusive audit directory"
+}

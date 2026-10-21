@@ -1,0 +1,348 @@
+{
+  "status": "PASS compiled operator equivalence; cone OPEN",
+  "cases": [
+    {
+      "backend": "direct",
+      "reference": "mindeg",
+      "positive": [],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36323392,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "mindeg",
+      "positive": [],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8083500,
+      "workspace_bytes": 2826144
+    },
+    {
+      "backend": "direct",
+      "reference": "mindeg",
+      "positive": [
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36323412,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "mindeg",
+      "positive": [
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8083520,
+      "workspace_bytes": 2826144
+    },
+    {
+      "backend": "direct",
+      "reference": "mindeg",
+      "positive": [
+        9,
+        0,
+        8
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36336412,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "mindeg",
+      "positive": [
+        9,
+        0,
+        8
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8096520,
+      "workspace_bytes": 2826144
+    },
+    {
+      "backend": "direct",
+      "reference": "mindeg",
+      "positive": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36407544,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "mindeg",
+      "positive": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8167652,
+      "workspace_bytes": 2826144
+    },
+    {
+      "backend": "direct",
+      "reference": "h2",
+      "positive": [],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36323392,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "h2",
+      "positive": [],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8083500,
+      "workspace_bytes": 2826144
+    },
+    {
+      "backend": "direct",
+      "reference": "h2",
+      "positive": [
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36323412,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "h2",
+      "positive": [
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8083520,
+      "workspace_bytes": 2826144
+    },
+    {
+      "backend": "direct",
+      "reference": "h2",
+      "positive": [
+        9,
+        0,
+        8
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36336412,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "h2",
+      "positive": [
+        9,
+        0,
+        8
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8096520,
+      "workspace_bytes": 2826144
+    },
+    {
+      "backend": "direct",
+      "reference": "h2",
+      "positive": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36407544,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "h2",
+      "positive": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8167652,
+      "workspace_bytes": 2826144
+    }
+  ],
+  "controls": {
+    "direct": {
+      "wrong_input_length": true,
+      "complex_input": true,
+      "wrong_output_dtype": true,
+      "short_workspace": true,
+      "overlapping_input_output": true,
+      "readonly_output": true
+    },
+    "template": {
+      "wrong_input_length": true,
+      "complex_input": true,
+      "wrong_output_dtype": true,
+      "short_workspace": true,
+      "overlapping_input_output": true,
+      "readonly_output": true,
+      "changed_column_mapping_detected": true
+    },
+    "invalid_row_selection": true,
+    "bool_row_selection": true
+  },
+  "max_float64_forward_absolute_error": 2.7569058147491887e-12,
+  "max_float64_transpose_absolute_error": 4.263256414560601e-14,
+  "max_float64_adjoint_relative_error": 2.5285019757498654e-14,
+  "benchmark": {
+    "direct": {
+      "setup_seconds": 0.3667643849998967,
+      "operator_array_bytes": 36407544,
+      "workspace_bytes": 1471392,
+      "forward": {
+        "median_seconds": 0.0023319053200066262,
+        "batch_seconds": [
+          0.0026782450400060043,
+          0.0023319053200066262,
+          0.0023419655600082478,
+          0.002337837360009871,
+          0.002328453959999024,
+          0.002311668999991525,
+          0.0023278107599981014
+        ],
+        "batches": 7,
+        "repeats_per_batch": 25
+      },
+      "transpose": {
+        "median_seconds": 0.0015702407600110746,
+        "batch_seconds": [
+          0.0017092481199870236,
+          0.0015839106800012814,
+          0.0016004980800062186,
+          0.0015702407600110746,
+          0.001567412639997201,
+          0.0015698905200042645,
+          0.0015680814799998188
+        ],
+        "batches": 7,
+        "repeats_per_batch": 25
+      },
+      "build": {
+        "compiler": "g++ (GCC) 16.2.1 20260810",
+        "flags": [
+          "-O3",
+          "-std=c++17",
+          "-march=native",
+          "-shared",
+          "-fPIC"
+        ],
+        "source_sha256": "d5c80b6d174165253153cff6febb8624fa0ffb7cd3beb5fc08ff296be4e58267"
+      }
+    },
+    "scipy": {
+      "forward": {
+        "median_seconds": 0.0031707593200007976,
+        "batch_seconds": [
+          0.0031922752799982846,
+          0.0031923762400037957,
+          0.003159933599999931,
+          0.0031707593200007976,
+          0.00316423616000975,
+          0.0031395806399996218,
+          0.003212004639990482
+        ],
+        "batches": 7,
+        "repeats_per_batch": 25
+      },
+      "transpose": {
+        "median_seconds": 0.002612292919984611,
+        "batch_seconds": [
+          0.0026336108800023793,
+          0.002622315879998496,
+          0.0026171653600067656,
+          0.0026079342399862072,
+          0.0026112385200030984,
+          0.002612292919984611,
+          0.002596235719993274
+        ],
+        "batches": 7,
+        "repeats_per_batch": 25
+      },
+      "both_csr_orientation_array_bytes": 115437900
+    },
+    "template": {
+      "setup_seconds": 0.6896742170001744,
+      "operator_array_bytes": 8167652,
+      "workspace_bytes": 2826144,
+      "forward": {
+        "median_seconds": 0.0025590287600061857,
+        "batch_seconds": [
+          0.002892048080011591,
+          0.0025695479200112457,
+          0.0025678679200063924,
+          0.002554827240001032,
+          0.002556201040006272,
+          0.0025536991199987826,
+          0.0025590287600061857
+        ],
+        "batches": 7,
+        "repeats_per_batch": 25
+      },
+      "transpose": {
+        "median_seconds": 0.0022003304799909527,
+        "batch_seconds": [
+          0.0022030520000043906,
+          0.0022003304799909527,
+          0.0021893760800048767,
+          0.002198805600000924,
+          0.002197569640011352,
+          0.0022090189199843735,
+          0.0022106460000031803
+        ],
+        "batches": 7,
+        "repeats_per_batch": 25
+      },
+      "build": {
+        "compiler": "g++ (GCC) 16.2.1 20260810",
+        "flags": [
+          "-O3",
+          "-std=c++17",
+          "-march=native",
+          "-shared",
+          "-fPIC"
+        ],
+        "source_sha256": "d5c80b6d174165253153cff6febb8624fa0ffb7cd3beb5fc08ff296be4e58267"
+      }
+    }
+  },
+  "benchmark_scope": "single-thread CPU float64, 7x25 calls, median, output allocation matched; no solver run",
+  "seed": 0
+}

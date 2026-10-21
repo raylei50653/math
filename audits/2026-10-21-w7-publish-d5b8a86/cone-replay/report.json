@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "necessary_cone": "OPEN",
+  "exact_certificate": null,
+  "source_excluded": false,
+  "source_realized": false,
+  "existing_cone_and_opt_files_unchanged": true,
+  "existing_file_count": 187,
+  "existing_total_bytes": 109779632,
+  "results": [
+    {
+      "name": "complete-normal",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-w7-count-cone-d5b8a86/check.py",
+        "--controls",
+        "--orbits"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 16.554466503000185,
+      "necessary_cone": "OPEN",
+      "sealed_outputs": 88,
+      "input_custody": "PASS",
+      "model": "PASS independent reconstruction",
+      "complete_orbit_generation": "exact full complementary-pair orbit necessary closure"
+    },
+    {
+      "name": "complete-hash17",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-w7-count-cone-d5b8a86/check.py",
+        "--controls",
+        "--orbits"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "seconds": 14.856874482000421,
+      "necessary_cone": "OPEN",
+      "sealed_outputs": 88,
+      "input_custody": "PASS",
+      "model": "PASS independent reconstruction",
+      "complete_orbit_generation": "exact full complementary-pair orbit necessary closure"
+    },
+    {
+      "name": "independent-normal",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-w7-count-cone-d5b8a86/independent/check.py",
+        "--model-controls",
+        "--malformed-controls"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 26.787336831000175,
+      "status": "PASS",
+      "model_control_count": 4,
+      "malformed_control_count": 8
+    },
+    {
+      "name": "independent-seed17",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-20-w7-count-cone-d5b8a86/independent/check.py",
+        "--model-controls",
+        "--malformed-controls",
+        "--seed",
+        "17"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "seconds": 39.3138600100001,
+      "status": "PASS",
+      "model_control_count": 4,
+      "malformed_control_count": 8
+    }
+  ],
+  "seconds": 97.81928104599956
+}

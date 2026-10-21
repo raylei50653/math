@@ -1,0 +1,70 @@
+{
+  "meaning": "these controls only test replay accuracy of an incomplete residual; they provide no cone feasibility verdict",
+  "artifact_sha256": "a2e9ec29a08549e099862ff98aea7abf1f495e3020143f87c4ca7b6085b1bdfe",
+  "controls": [
+    {
+      "control": "wrong_halfrow_weight",
+      "optimized": false,
+      "result": "MUTATED RESIDUAL REJECTED",
+      "returncode": 1,
+      "mutated_payload_sha256": "66d9d76062da6d79f8be599edd9d052d08b927189d669e79d7279632d4bb44d0",
+      "last_error_line": "ValueError: half-row weights do not equal the expanded integer dual"
+    },
+    {
+      "control": "wrong_halfrow_weight",
+      "optimized": true,
+      "result": "MUTATED RESIDUAL REJECTED",
+      "returncode": 1,
+      "mutated_payload_sha256": "66d9d76062da6d79f8be599edd9d052d08b927189d669e79d7279632d4bb44d0",
+      "last_error_line": "ValueError: half-row weights do not equal the expanded integer dual"
+    },
+    {
+      "control": "wrong_state_coefficient",
+      "optimized": false,
+      "result": "MUTATED RESIDUAL REJECTED",
+      "returncode": 1,
+      "mutated_payload_sha256": "fc6d731e504fd2e37f4b1b9d666ed3ef1a71fb9872b2d2d927965f812144b369",
+      "last_error_line": "ValueError: state coefficients do not equal the recomputed coefficients"
+    },
+    {
+      "control": "wrong_state_coefficient",
+      "optimized": true,
+      "result": "MUTATED RESIDUAL REJECTED",
+      "returncode": 1,
+      "mutated_payload_sha256": "fc6d731e504fd2e37f4b1b9d666ed3ef1a71fb9872b2d2d927965f812144b369",
+      "last_error_line": "ValueError: state coefficients do not equal the recomputed coefficients"
+    },
+    {
+      "control": "omitted_positive_price_column",
+      "optimized": false,
+      "result": "MUTATED RESIDUAL REJECTED",
+      "returncode": 1,
+      "mutated_payload_sha256": "a51eef40194dbb351c639ec5228328789f9225280a26df09447367b2447f5c31",
+      "last_error_line": "ValueError: positive-price column list disagrees"
+    },
+    {
+      "control": "omitted_positive_price_column",
+      "optimized": true,
+      "result": "MUTATED RESIDUAL REJECTED",
+      "returncode": 1,
+      "mutated_payload_sha256": "a51eef40194dbb351c639ec5228328789f9225280a26df09447367b2447f5c31",
+      "last_error_line": "ValueError: positive-price column list disagrees"
+    },
+    {
+      "control": "boolean_dual_coefficient",
+      "optimized": false,
+      "result": "MUTATED RESIDUAL REJECTED",
+      "returncode": 1,
+      "mutated_payload_sha256": "262386c8d40a036476ca98fddd760768dc352b72c0a3cf1f7e63d805f9ad2884",
+      "last_error_line": "ValueError: integer_dual_terms must contain exact integers; booleans are forbidden"
+    },
+    {
+      "control": "boolean_dual_coefficient",
+      "optimized": true,
+      "result": "MUTATED RESIDUAL REJECTED",
+      "returncode": 1,
+      "mutated_payload_sha256": "262386c8d40a036476ca98fddd760768dc352b72c0a3cf1f7e63d805f9ad2884",
+      "last_error_line": "ValueError: integer_dual_terms must contain exact integers; booleans are forbidden"
+    }
+  ]
+}

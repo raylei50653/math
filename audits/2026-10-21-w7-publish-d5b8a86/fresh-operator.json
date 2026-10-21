@@ -1,0 +1,228 @@
+{
+  "status": "PASS compiled operator equivalence; cone OPEN",
+  "cases": [
+    {
+      "backend": "direct",
+      "reference": "mindeg",
+      "positive": [],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36323392,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "mindeg",
+      "positive": [],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8083500,
+      "workspace_bytes": 2826144
+    },
+    {
+      "backend": "direct",
+      "reference": "mindeg",
+      "positive": [
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36323412,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "mindeg",
+      "positive": [
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8083520,
+      "workspace_bytes": 2826144
+    },
+    {
+      "backend": "direct",
+      "reference": "mindeg",
+      "positive": [
+        9,
+        0,
+        8
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36336412,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "mindeg",
+      "positive": [
+        9,
+        0,
+        8
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8096520,
+      "workspace_bytes": 2826144
+    },
+    {
+      "backend": "direct",
+      "reference": "mindeg",
+      "positive": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36407544,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "mindeg",
+      "positive": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8167652,
+      "workspace_bytes": 2826144
+    },
+    {
+      "backend": "direct",
+      "reference": "h2",
+      "positive": [],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36323392,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "h2",
+      "positive": [],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8083500,
+      "workspace_bytes": 2826144
+    },
+    {
+      "backend": "direct",
+      "reference": "h2",
+      "positive": [
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36323412,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "h2",
+      "positive": [
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8083520,
+      "workspace_bytes": 2826144
+    },
+    {
+      "backend": "direct",
+      "reference": "h2",
+      "positive": [
+        9,
+        0,
+        8
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36336412,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "h2",
+      "positive": [
+        9,
+        0,
+        8
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8096520,
+      "workspace_bytes": 2826144
+    },
+    {
+      "backend": "direct",
+      "reference": "h2",
+      "positive": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 36407544,
+      "workspace_bytes": 1471392
+    },
+    {
+      "backend": "template",
+      "reference": "h2",
+      "positive": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "integer_forward_and_transpose_exact": true,
+      "operator_array_bytes": 8167652,
+      "workspace_bytes": 2826144
+    }
+  ],
+  "controls": {
+    "direct": {
+      "wrong_input_length": true,
+      "complex_input": true,
+      "wrong_output_dtype": true,
+      "short_workspace": true,
+      "overlapping_input_output": true,
+      "readonly_output": true
+    },
+    "template": {
+      "wrong_input_length": true,
+      "complex_input": true,
+      "wrong_output_dtype": true,
+      "short_workspace": true,
+      "overlapping_input_output": true,
+      "readonly_output": true,
+      "changed_column_mapping_detected": true
+    },
+    "invalid_row_selection": true,
+    "bool_row_selection": true
+  },
+  "max_float64_forward_absolute_error": 2.7569058147491887e-12,
+  "max_float64_transpose_absolute_error": 4.263256414560601e-14,
+  "max_float64_adjoint_relative_error": 2.5285019757498654e-14,
+  "benchmark": {},
+  "benchmark_scope": "single-thread CPU float64, 7x25 calls, median, output allocation matched; no solver run",
+  "seed": 0
+}

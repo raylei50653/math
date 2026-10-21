@@ -1,0 +1,222 @@
+[
+  {
+    "directory": "target-ipm",
+    "input": {
+      "arguments": {
+        "name": "target-ipm",
+        "solver": "ipm",
+        "seconds": 600.0,
+        "positive": "target",
+        "objective": "size",
+        "threads": 4
+      },
+      "highs_version": "1.15.1",
+      "shape": [
+        183925,
+        368505
+      ],
+      "nnz": 4448134,
+      "active_positivities": [
+        9
+      ],
+      "setup_seconds": 2.351748809000128
+    },
+    "result": {
+      "model_status": "HighsModelStatus.kTimeLimit",
+      "seconds": 602.8732971500003,
+      "primal_solution_status": 0,
+      "dual_solution_status": 0,
+      "simplex_iterations": 0,
+      "ipm_iterations": 4,
+      "max_primal_infeasibility": null,
+      "max_dual_infeasibility": null,
+      "objective": 0.0,
+      "value_valid": false,
+      "dual_valid": false
+    },
+    "raw_nonfinite_diagnostics_preserved": true,
+    "numerical_solution_is_certificate": false
+  },
+  {
+    "directory": "homogeneous-simplex",
+    "input": {
+      "arguments": {
+        "name": "homogeneous-simplex",
+        "solver": "simplex",
+        "seconds": 600.0,
+        "positive": "none",
+        "objective": "target",
+        "threads": 2
+      },
+      "highs_version": "1.15.1",
+      "shape": [
+        183924,
+        368505
+      ],
+      "nnz": 4448132,
+      "active_positivities": [],
+      "setup_seconds": 2.0587134379993586
+    },
+    "result": {
+      "model_status": "HighsModelStatus.kTimeLimit",
+      "seconds": 604.8230317770003,
+      "primal_solution_status": 0,
+      "dual_solution_status": 0,
+      "simplex_iterations": 39097,
+      "ipm_iterations": 0,
+      "max_primal_infeasibility": null,
+      "max_dual_infeasibility": null,
+      "objective": 0.0,
+      "value_valid": false,
+      "dual_valid": false
+    },
+    "raw_nonfinite_diagnostics_preserved": true,
+    "numerical_solution_is_certificate": false
+  },
+  {
+    "directory": "homogeneous-primal",
+    "input": {
+      "arguments": {
+        "name": "homogeneous-primal",
+        "solver": "simplex",
+        "seconds": 600.0,
+        "positive": "none",
+        "objective": "target",
+        "threads": 1,
+        "simplex_strategy": 4
+      },
+      "highs_version": "1.15.1",
+      "shape": [
+        183924,
+        368505
+      ],
+      "nnz": 4448132,
+      "active_positivities": [],
+      "setup_seconds": 2.1183505869994406
+    },
+    "result": {
+      "model_status": "HighsModelStatus.kSolveError",
+      "seconds": 9.750875160999385,
+      "primal_solution_status": 0,
+      "dual_solution_status": 0,
+      "simplex_iterations": -1,
+      "ipm_iterations": -1,
+      "max_primal_infeasibility": null,
+      "max_dual_infeasibility": null,
+      "objective": 0.0,
+      "value_valid": false,
+      "dual_valid": false
+    },
+    "raw_nonfinite_diagnostics_preserved": true,
+    "numerical_solution_is_certificate": false
+  },
+  {
+    "directory": "target-pdlp",
+    "input": {
+      "arguments": {
+        "name": "target-pdlp",
+        "solver": "pdlp",
+        "seconds": 300.0,
+        "positive": "target",
+        "objective": "zero",
+        "threads": 2,
+        "simplex_strategy": null
+      },
+      "highs_version": "1.15.1",
+      "shape": [
+        183925,
+        368505
+      ],
+      "nnz": 4448134,
+      "active_positivities": [
+        9
+      ],
+      "setup_seconds": 2.2120506250012113
+    },
+    "result": {
+      "model_status": "HighsModelStatus.kTimeLimit",
+      "seconds": 307.4674086640007,
+      "primal_solution_status": 0,
+      "dual_solution_status": 0,
+      "simplex_iterations": 0,
+      "ipm_iterations": 0,
+      "max_primal_infeasibility": null,
+      "max_dual_infeasibility": null,
+      "objective": 0.0,
+      "value_valid": false,
+      "dual_valid": false
+    },
+    "raw_nonfinite_diagnostics_preserved": true,
+    "numerical_solution_is_certificate": false
+  },
+  {
+    "directory": "full-positive-ipm",
+    "input": {
+      "arguments": {
+        "name": "full-positive-ipm",
+        "solver": "ipm",
+        "seconds": 300.0,
+        "positive": "all",
+        "objective": "zero",
+        "threads": 2,
+        "simplex_strategy": null
+      },
+      "highs_version": "1.15.1",
+      "shape": [
+        183934,
+        368505
+      ],
+      "nnz": 4458646,
+      "active_positivities": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "setup_seconds": 2.3968009639993397
+    },
+    "result": {
+      "model_status": "HighsModelStatus.kTimeLimit",
+      "seconds": 303.4614380910007,
+      "primal_solution_status": 0,
+      "dual_solution_status": 0,
+      "simplex_iterations": 0,
+      "ipm_iterations": 9,
+      "max_primal_infeasibility": null,
+      "max_dual_infeasibility": null,
+      "objective": 0.0,
+      "value_valid": false,
+      "dual_valid": false
+    },
+    "raw_nonfinite_diagnostics_preserved": true,
+    "numerical_solution_is_certificate": false
+  },
+  {
+    "directory": "review/full-dual",
+    "result": {
+      "targets": [
+        44459,
+        44466
+      ],
+      "depth": 0,
+      "c11_defect_support": false,
+      "full": true,
+      "state_slacks": true,
+      "states": 61308,
+      "halfrows": 183924,
+      "columns": 307197,
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 302.8989213929999,
+      "exact_certificate": false
+    },
+    "raw_optimize_result": "review/full-dual.pickle",
+    "numerical_solution_is_certificate": false
+  }
+]

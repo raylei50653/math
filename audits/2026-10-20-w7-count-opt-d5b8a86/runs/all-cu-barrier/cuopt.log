@@ -1,0 +1,46 @@
+cuOpt version: 26.10.0, git hash: e93f7dc5, host arch: x86_64, device archs: 75-real,80-real,86-real,90a-real,100f-real,120a-real,120
+CPU: AMD Ryzen 9 8940HX with Radeon Graphics, threads: 16C/32T, RAM usage: 8.01/47.04GiB
+CPU SIMD target: AVX-512
+CUDA 13.3, device: NVIDIA GeForce RTX 5070 Ti Laptop GPU (ID 0), VRAM: 11.91 GiB
+CUDA device UUID: 825ae551-ba16-539a-e444-22726b59ee9a
+Solving a problem with 122626 constraints, 307197 variables (0 integers), and 4738275 nonzeros
+Problem scaling:
+Objective coefficents range:          [1e+00, 1e+00]
+Constraint matrix coefficients range: [1e+00, 2e+01]
+Constraint rhs / bounds range:        [0e+00, 2e+00]
+Variable bounds range:                [0e+00, 0e+00]
+
+Using PSLP presolver
+PSLP Presolved problem: 122626 constraints, 307197 variables, 4738275 non-zeros
+PSLP presolve time: 0.62s
+Objective offset 0.000000 scaling_factor 1.000000
+Folding: Number of colors exceeds threshold
+Folding: Coloring aborted in 0.65 seconds
+Presolved problem: 122626 constraints 307207 variables 4738285 nonzeros
+Applying row scaling. Maximum row norm 1.600000e+01, minimum row norm 1.000000e+00
+Scaling matrix. Maximum column norm 5.659616e+00, minimum column norm 6.250000e-02
+Barrier solver started at 2.03 seconds
+Barrier solver: 122626 constraints, 307207 variables, 4738285 nonzeros
+
+
+Density estimator time      : 0.00s
+Linear system               : ADAT
+cuDSS Version               : 0.7.1
+cuDSS Threading layer       : libcudss_mtlayer_cuopt.so
+ADAT time                   : 0.10s
+ADAT nonzeros               : 1.83e+07
+ADAT density                : 0.00
+Reordering time             : 6.11s
+Symbolic factorization time : 5.22s
+Symbolic nonzeros in factor : 2.81e+09
+Barrier setup complete at 13.70 seconds
+Elapsed time                : 13.70s
+Error in barrier_solver_t: Cuda error in cudss_device_alloc
+Obtained 34 stack frames
+#1 in /tmp/claude-1000/-home-ray-developer-ai-math/3fddc2fd-c020-4a87-b3a4-612c96d9e9a8/scratchpad/cuopt-venv/lib/python3.13/site-packages/libcuopt_mathopt/lib64/libcuopt_mathopt.so(+0xc40b72) [0x7c0102c1eb72]
+#2 in /tmp/claude-1000/-home-ray-developer-ai-math/3fddc2fd-c020-4a87-b3a4-612c96d9e9a8/scratchpad/cuopt-venv/lib/python3.13/site-packages/libcuopt_mathopt/lib64/libcuopt_mathopt.so(+0xc40cff) [0x7c0102c1ecff]
+#3 in /tmp/claude-1000/-home-ray-developer-ai-math/3fddc2fd-c020-4a87-b3a4-612c96d9e9a8/scratchpad/cuopt-venv/lib/python3.13/site-packages/libcuopt_mathopt/lib64/../../nvidia/cu13/lib/libcudss.so.0(+0x7422a) [0x7c00eec7422a]
+#4 in /tmp/claude-1000/-home-ray-developer-ai-math/3fddc2fd-c020-4a87-b3a4-612c96d9e9a8/scratchpad/cuopt-venv/lib/python3.13/site-packages/libcuopt_mathopt/lib64/../../nvidia/cu13/lib/libcudss.so.0(+0x33517d) [0x7c00eef3517d]
+#5 in /tmp/claude-1000/-home-ray-developer-ai-math/3fddc2fd-c020-4a
+Barrier finished in 13.78 seconds
+Barrier Solve status A numerical error was encountered.

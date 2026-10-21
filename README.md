@@ -41,6 +41,8 @@ C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
 U2–U4及M4／M5證據的整批重播與發布範圍見[2026-10-08紀錄](docs/history/2026-10-08-core44-batch-publish.md)。
 前序K′／E3–E6整合見[2026-10-04紀錄](docs/history/2026-10-04-kprime-excess-two-progress-publish.md)。
 
+W7六模板、專用算子與60秒數值試跑的相連發布見[2026-10-21紀錄](docs/history/2026-10-21-w7-operator-publish.md)；計數錐仍OPEN。
+
 前序A₄／B₄／C₄的固定快照、獨立驗收與scope ledger見[D₅](audits/2026-10-04-task-d5/REPORT.md)；
 歷史artifacts、完整relations／空fibres／witnesses及所有hash失敗保留。
 新checkout先執行 `python3 tools/audit_archive.py restore --artifacts`，還原凍結快照及完整

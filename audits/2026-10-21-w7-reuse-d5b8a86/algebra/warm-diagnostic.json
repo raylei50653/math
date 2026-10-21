@@ -1,0 +1,140 @@
+{
+  "status": "input diagnostics only; no new solve",
+  "warm_path": "audits/2026-10-20-w7-count-opt-d5b8a86/runs/all-cu-pdlp/vectors.npz",
+  "warm_sha256": "2a51a692cef27330b44b5f065a82bf91a1c7771b1b8c43c1d4e7ed211e7f5e14",
+  "keys": [
+    "ref",
+    "x",
+    "y",
+    "reduced_costs"
+  ],
+  "shape_x": [
+    307197
+  ],
+  "shape_y": [
+    122626
+  ],
+  "saved_reference_matches_mindeg": true,
+  "labels": [
+    "G[01012]",
+    "G[01023]",
+    "G[01201]",
+    "G[01203]",
+    "G[01213]",
+    "G[01231]",
+    "G[01232]",
+    "G[01232,h=a]",
+    "G[01232,h=b]",
+    "Z[44459]+Z[44466]"
+  ],
+  "scale": "Q_l X=2P_l Z; all ten lower bounds Q_l X>=2",
+  "primal": [
+    {
+      "vector": "original",
+      "min_x": 0.0,
+      "max_x": 4.529580323037824,
+      "sum_x": 15452.442501988018,
+      "negative_coordinates": 0,
+      "support_gt1e-9": 170466,
+      "D_residual_inf": 2.98825325959623e-08,
+      "D_residual_l2": 9.779738335621496e-07,
+      "D_residual_l2_per_sqrt_rowcount": 2.7928889185257694e-09,
+      "Q_values": [
+        1139.2193096000094,
+        1344.9392819489326,
+        1327.4533021377183,
+        2672.392584023237,
+        2672.3925840969614,
+        1533.1732744164192,
+        205.7199723164926,
+        60.86885626293012,
+        144.85111605356238,
+        1.9999999999359175
+      ],
+      "PZ_values": [
+        569.6096548000047,
+        672.4696409744663,
+        663.7266510688592,
+        1336.1962920116184,
+        1336.1962920484807,
+        766.5866372082096,
+        102.8599861582463,
+        30.43442813146506,
+        72.42555802678119,
+        0.9999999999679587
+      ],
+      "minimum_Q_minus2": -6.408251707057389e-11,
+      "positivity_violation_inf": 6.408251707057389e-11,
+      "combined_feasibility_violation_inf": 2.98825325959623e-08
+    },
+    {
+      "vector": "clipped_nonnegative",
+      "min_x": 0.0,
+      "max_x": 4.529580323037824,
+      "sum_x": 15452.442501988018,
+      "negative_coordinates": 0,
+      "support_gt1e-9": 170466,
+      "D_residual_inf": 2.98825325959623e-08,
+      "D_residual_l2": 9.779738335621496e-07,
+      "D_residual_l2_per_sqrt_rowcount": 2.7928889185257694e-09,
+      "Q_values": [
+        1139.2193096000094,
+        1344.9392819489326,
+        1327.4533021377183,
+        2672.392584023237,
+        2672.3925840969614,
+        1533.1732744164192,
+        205.7199723164926,
+        60.86885626293012,
+        144.85111605356238,
+        1.9999999999359175
+      ],
+      "PZ_values": [
+        569.6096548000047,
+        672.4696409744663,
+        663.7266510688592,
+        1336.1962920116184,
+        1336.1962920484807,
+        766.5866372082096,
+        102.8599861582463,
+        30.43442813146506,
+        72.42555802678119,
+        0.9999999999679587
+      ],
+      "minimum_Q_minus2": -6.408251707057389e-11,
+      "positivity_violation_inf": 6.408251707057389e-11,
+      "combined_feasibility_violation_inf": 2.98825325959623e-08
+    }
+  ],
+  "old_dual": {
+    "saved_objective": "min sum(X)",
+    "min_y": -3096.9908834359617,
+    "max_y": 7726.22134507567,
+    "positive_row_duals": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      7726.22134507567
+    ],
+    "min_reduced_cost_c_minus_ATy": -9.428862419724737e-07,
+    "max_reduced_cost_c_minus_ATy": 10421.437476351988,
+    "saved_rc_max_abs_difference": 1.0391117000185801e-06
+  },
+  "recommended_warm": "Use original x clipped to nonnegative (clipping is a no-op here); do not rescale; set all feasibility-PDHG dual coordinates to zero.",
+  "why_no_old_dual": "Old y optimizes c=ones, while feasibility uses c=zero. For standard saddle F(Ax), lower-bound row duals have nonpositive sign, opposite the saved cuOpt lower-bound duals.",
+  "recommended_metrics": [
+    "initial and final unscaled ||D X||_inf",
+    "minimum X and negative-coordinate count",
+    "all ten Q values and min(Q-2)",
+    "combined violation max(||D X||_inf,max(2-Q,0),max(-X,0))",
+    "last iterate and ergodic/best iterate separately",
+    "iterations, walltime and operator matvec count"
+  ],
+  "scope": "A 60 s approximate feasibility trial may improve or worsen the warm residual. No cone/source verdict and no exact certificate."
+}

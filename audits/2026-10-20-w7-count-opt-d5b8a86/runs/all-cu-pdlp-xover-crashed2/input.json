@@ -1,0 +1,24 @@
+{
+  "from_run": "runs/all-cu-pdlp",
+  "arguments": {
+    "run": "runs/all-cu-pdlp",
+    "name": "all-cu-pdlp-xover2",
+    "seconds": 3600.0,
+    "threads": 8,
+    "simplex_after": true
+  },
+  "model_arguments": {
+    "name": "all-cu-pdlp",
+    "method": "pdlp",
+    "positive": -1,
+    "objective": "sum",
+    "ref": "mindeg",
+    "seconds": 600.0,
+    "seed": 0,
+    "eps": 1e-08,
+    "crossover": true,
+    "pdlp_mode": "Stable3",
+    "warm": null
+  },
+  "highs_version": "1.15.1"
+}

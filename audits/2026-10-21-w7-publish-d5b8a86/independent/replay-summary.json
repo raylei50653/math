@@ -1,0 +1,39 @@
+{
+  "status": "PASS independent publication replays; no solver run",
+  "sealed_files_verified_before_and_after": 69,
+  "base_input_count_before_docs_routing": 9,
+  "base_input_drift_before_docs_routing": 0,
+  "checks": [
+    {
+      "new_log": "operator-normal.json",
+      "sealed_evidence": "specialized/normal-final.json",
+      "status": "PASS compiled operator equivalence; cone OPEN",
+      "exact_json_match": true,
+      "sha256": "2190fdec1c4aa41f76ed1717bfcac0850cf9890a1b5f9db320b8326f3521587f"
+    },
+    {
+      "new_log": "operator-seed17.json",
+      "sealed_evidence": "specialized/seed17.json",
+      "status": "PASS compiled operator equivalence; cone OPEN",
+      "exact_json_match": true,
+      "sha256": "824d021cdd974929628446c7c0721a6a619d183dde01eb2b690a52a0c5140666"
+    },
+    {
+      "new_log": "fourier-readonly.json",
+      "sealed_evidence": "review/fourier-review.json",
+      "status": "PASS; structural/rank reconstruction only; no cone verdict",
+      "exact_json_match": true,
+      "sha256": "d01d6f05acc1893438786364af8ef05cff115d7bd5b030fd2f3c838568ffa3b3"
+    },
+    {
+      "new_log": "trial-readonly.json",
+      "sealed_evidence": "review/trial-review.json",
+      "status": "PASS; one numerical trial, no cone or source verdict",
+      "exact_json_match": true,
+      "sha256": "00c7ed2e0fd34b26e6fb013fb0aa78aa664df983fa8d6393a15ec6c41214bfd6"
+    }
+  ],
+  "scope": "operator equivalence, finite template ranks and existing numerical trial review only; necessary cone OPEN; no source/exclusion/Lean claim",
+  "benchmark_rerun": false,
+  "solver_rerun": false
+}

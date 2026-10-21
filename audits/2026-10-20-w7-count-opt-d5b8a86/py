@@ -1,0 +1,3 @@
+#!/bin/sh
+# Pinned discovery environment (numerical only; the exact checker is stdlib python3).
+exec uv run --no-project --python 3.14 --with highspy==1.15.1 --with scipy==1.18.1 --with ortools==9.15.6755 python "$@"

@@ -1,5 +1,10 @@
 # 稽核封存與還原
 
+2026-10-21 最新整理：[W7完整計數、可復用結構與專用算子](../docs/history/2026-10-21-w7-operator-publish.md)。
+三個相連目錄的251份非暫存證據保留；35份大型／歷史whitespace路徑新增32個
+去重blobs，原bytes與舊ARCHIVE records不變。先依下方restore指令還原，再用
+[發布verifier](2026-10-21-w7-publish-d5b8a86/verify.py)核對；計數錐仍OPEN。
+
 2026-10-13 最新整理：[K≤15、C8 剝層與無四色定理前提三支接入](../docs/history/2026-10-13-k15-c8-no4ct-publish.md)。
 十份原隔離包共966檔保留原 bytes、mode、frozen inputs 及原成功／失敗紀錄；
 707個凍結／大型／歷史 whitespace 路徑追加封存，355個新 blobs 共10,062,334

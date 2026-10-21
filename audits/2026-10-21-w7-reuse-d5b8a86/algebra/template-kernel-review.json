@@ -1,0 +1,114 @@
+{
+  "status": "independent template kernel metadata and exact outputs pass; no solver",
+  "source_snapshot_sha256": "d5c80b6d174165253153cff6febb8624fa0ffb7cd3beb5fc08ff296be4e58267",
+  "patterns": 333,
+  "scatter_rows_cover_once": true,
+  "scatter_columns_cover_once": true,
+  "metadata_int32_bytes": 7838264,
+  "scratch_doubles": 84672,
+  "three_integer_trials_exact_all_four_operations": true,
+  "all_ten_positivities": true,
+  "float64_max_abs_errors": {
+    "C": 3.552713678800501e-14,
+    "CT": 1.0658141036401503e-14,
+    "A_all10": 7.958078640513122e-13,
+    "AT_all10": 1.2434497875801753e-14
+  },
+  "adjoint_relative_error": 3.1912669649399306e-15,
+  "setup_seconds": 1.253415273000428,
+  "timing_policy": "one thread; each timed operation allocates output; template A also allocates h intermediate; shared packed/sums scratch; 8 warmups then5x60",
+  "timings": {
+    "C": {
+      "scipy_float64": {
+        "median_ms": 2.6748715833340007,
+        "batch_ms": [
+          2.681074483325574,
+          2.6748715833340007,
+          2.661876783334568,
+          2.6736791499994674,
+          2.79355975000423
+        ]
+      },
+      "template_float64": {
+        "median_ms": 1.707017033337858,
+        "batch_ms": [
+          1.702056300003581,
+          1.7071726500034856,
+          1.7120582333366958,
+          1.7016538666666747,
+          1.707017033337858
+        ]
+      },
+      "speedup": 1.5669858771728975
+    },
+    "CT": {
+      "scipy_float64": {
+        "median_ms": 2.3086242333344367,
+        "batch_ms": [
+          2.3048211999897226,
+          2.3117834000004223,
+          2.3086242333344367,
+          2.308843983337283,
+          2.305815583334455
+        ]
+      },
+      "template_float64": {
+        "median_ms": 1.548533633331317,
+        "batch_ms": [
+          1.548533633331317,
+          1.5493506666643952,
+          1.5558452999963872,
+          1.53812825001296,
+          1.5182679500109468
+        ]
+      },
+      "speedup": 1.4908453931142316
+    },
+    "A_all10": {
+      "scipy_float64": {
+        "median_ms": 2.8056763833319565,
+        "batch_ms": [
+          2.796370416672289,
+          2.8056763833319565,
+          2.8157347666668406,
+          2.7990217666683748,
+          2.840848499999993
+        ]
+      },
+      "template_float64": {
+        "median_ms": 1.7874353666684328,
+        "batch_ms": [
+          1.7668680833442825,
+          1.7874353666684328,
+          1.7901597000066733,
+          1.7988217833438587,
+          1.780916349995702
+        ]
+      },
+      "speedup": 1.5696659222769012
+    },
+    "AT_all10": {
+      "scipy_float64": {
+        "median_ms": 2.6109337833228587,
+        "batch_ms": [
+          2.630870049991548,
+          2.6140413500039963,
+          2.610770150007132,
+          2.6065655000062784,
+          2.6109337833228587
+        ]
+      },
+      "template_float64": {
+        "median_ms": 1.6481905666599534,
+        "batch_ms": [
+          1.6481905666599534,
+          1.643748166664712,
+          1.8375045500003278,
+          1.6529041833261242,
+          1.639325966668063
+        ]
+      },
+      "speedup": 1.5841213001321186
+    }
+  }
+}

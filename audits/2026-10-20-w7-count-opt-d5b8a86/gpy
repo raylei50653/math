@@ -1,0 +1,7 @@
+#!/bin/sh
+# GPU discovery environment.  Create once with:
+#   uv venv --python 3.13 "$CUOPT_VENV"
+#   VIRTUAL_ENV="$CUOPT_VENV" UV_HTTP_TIMEOUT=600 uv pip install --extra-index-url https://pypi.nvidia.com \
+#       cuopt-cu13==26.10.0 scipy==1.18.1 highspy==1.15.1
+: "${CUOPT_VENV:=/tmp/claude-1000/-home-ray-developer-ai-math/3fddc2fd-c020-4a87-b3a4-612c96d9e9a8/scratchpad/cuopt-venv}"
+exec "$CUOPT_VENV/bin/python" "$@"
