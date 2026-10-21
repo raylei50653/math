@@ -1,0 +1,97 @@
+{
+  "checks": [
+    {
+      "name": "docs-check",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.743,
+      "log": "docs-check-final.log",
+      "log_sha256": "96bfcc948c75661124644f8577803f3e5fd870cac1b6bd7fce46edfd41eda070"
+    },
+    {
+      "name": "docgraph-docs",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.091,
+      "log": "docgraph-docs.log",
+      "log_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca"
+    },
+    {
+      "name": "docgraph-whole-tree",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 7.397,
+      "log": "docgraph-whole-tree.log",
+      "log_sha256": "a69e6e445b1789ad1db613e33f26baecfff63adb94bc54d4a0e5555e7a9cd0e9"
+    },
+    {
+      "name": "artifact-policy",
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.899,
+      "log": "artifact-policy-final.log",
+      "log_sha256": "7022b13565fd5feffddc4a4eb9114fef8c4c6914727d1c215e70eddf34738feb"
+    },
+    {
+      "name": "staged-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.017,
+      "log": "staged-whitespace-final.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "source-sha",
+      "command": [
+        "sha256sum",
+        "--check",
+        "--quiet",
+        "audits/2026-10-21-w7-interface-publish-13e51db/SOURCE_SHA256SUMS"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.017,
+      "log": "source-sha.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "whole_tree_docgraph_is_separate_historical_diagnostic": true,
+  "research_scope": "no new source exclusions; profiles0/1 remain OPEN",
+  "whole_tree_docgraph": {
+    "errors": 72,
+    "errors_identical_to_previous_publication": true,
+    "new_audits_in_error_paths": false,
+    "baseline_log": "audits/2026-10-21-w7-progress-publish-d23f94f/docgraph-whole-tree.log"
+  },
+  "initial_whitespace_failure": "Historical publication file had an extra blank line at EOF; fixed. checks-first.json preserves the initial result.",
+  "status": "PASS for required publication checks; whole-tree historical duplicate-ID diagnostic remains FAIL",
+  "git_index_custody": {
+    "all_source_records_match_index": 76,
+    "staged_paths": 106,
+    "outside_authorized_whitelist": [],
+    "tracked_unstaged_changes": false,
+    "head_still_exclusive_base": true,
+    "final_index_artifact_policy": "Generated artifact policy OK: 8721 indexed files, 113 large files with documented exceptions, 166 registered outputs.",
+    "final_staged_whitespace_exit_code": 0
+  }
+}

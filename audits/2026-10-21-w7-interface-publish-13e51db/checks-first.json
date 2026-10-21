@@ -1,0 +1,80 @@
+{
+  "checks": [
+    {
+      "name": "docs-check",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.759,
+      "log": "docs-check.log",
+      "log_sha256": "96bfcc948c75661124644f8577803f3e5fd870cac1b6bd7fce46edfd41eda070"
+    },
+    {
+      "name": "docgraph-docs",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.091,
+      "log": "docgraph-docs.log",
+      "log_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca"
+    },
+    {
+      "name": "docgraph-whole-tree",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 7.397,
+      "log": "docgraph-whole-tree.log",
+      "log_sha256": "a69e6e445b1789ad1db613e33f26baecfff63adb94bc54d4a0e5555e7a9cd0e9"
+    },
+    {
+      "name": "artifact-policy",
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.903,
+      "log": "artifact-policy.log",
+      "log_sha256": "50e42500805cdc89d11f39c6118feb6472b6e88a9632605e57420af5bac13380"
+    },
+    {
+      "name": "staged-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.017,
+      "log": "staged-whitespace.log",
+      "log_sha256": "aa97da350925fad28ef74d1007db8a713da9c49ec4b5f023d28533ebd8416e83"
+    },
+    {
+      "name": "source-sha",
+      "command": [
+        "sha256sum",
+        "--check",
+        "--quiet",
+        "audits/2026-10-21-w7-interface-publish-13e51db/SOURCE_SHA256SUMS"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.017,
+      "log": "source-sha.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "whole_tree_docgraph_is_separate_historical_diagnostic": true,
+  "research_scope": "no new source exclusions; profiles0/1 remain OPEN"
+}

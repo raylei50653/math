@@ -2,26 +2,26 @@
 
 ## 最新進度
 
-現況核對：2026-10-21；[W7同源證法與逐型排除](../audits/2026-10-21-w7-transport-synthesis-d23f94f/REPORT.md)完成u3w八型、u1w四型及其餘十型，必要接觸24→2；原40型合計已排38型。每支保同一原D、全部私有點與cap lifts，八條原邊引理經完整incident短證及獨立同步復算一致。餘profile0無弦與profile1僅au4，原第三面點與完整度數另給條件排除；一般W7、必要計數錐與J1／J2仍OPEN，無新Lean或較小bad。
+現況核對：2026-10-21；[剩餘兩型的原第二層與縮減審核](../audits/2026-10-21-w7-remaining-two-13e51db/REPORT.md)證外側完整鄰點恰為induced圈，圈內恰八原點；profile0圈長≥9，profile1≥8，七列表精確保全部lifts。完整n-star未再縮支持；具名局部替換未給排除。原40型仍已排38型、餘0／1，一般W7、必要計數錐與J1／J2仍OPEN，無新Lean或較小bad。
 
 | 欄位 | 現況 |
 | --- | --- |
-| 階段／生命週期 | W7原40份必要型已排38型；保原面點與完整link處理餘兩型，父題仍OPEN。 |
-| 最近研究更新 | 2026-10-21：[u3w／u1w與其他型](../audits/2026-10-21-w7-transport-synthesis-d23f94f/REPORT.md)完成22型新排除；[第三面點](../audits/2026-10-21-w7-private-face-points-d23f94f/REPORT.md)細分兩型與度數義務。 |
-| 上次完成 | u3w四態29分支、u1w五態40分支；u4v／u3s／u2v／u2w四原邊引理再排10型；全307,197欄及48組同步殘餘獨立一致。 |
-| 目前停止點 | profile0無弦、n≥6；profile1僅au4、n=5。兩者必要支持仍留兩target；來源、精確計數錐、一般J1／J2及較小bad均OPEN。 |
-| 下一步 | 沿兩型原外側完整link追蹤被迫出現的反向12色鄰點及其03分量；保所有接合邊界，另找保持完整關係的較小替換。 |
-| 接手入口 | [共用來源證法](../audits/2026-10-21-w7-transport-synthesis-d23f94f/PROOF.md)、[完整兩型殘餘](../audits/2026-10-21-w7-transport-synthesis-d23f94f/RESIDUAL.json)、[原面點與完整link](../audits/2026-10-21-w7-private-face-points-d23f94f/REPORT.md)。 |
+| 階段／生命週期 | W7原40份必要型已排38型；餘兩型取得完整八內點界面，來源排除仍OPEN。 |
+| 最近研究更新 | 2026-10-21：[第二層induced圈與縮減審核](../audits/2026-10-21-w7-remaining-two-13e51db/REPORT.md)保全部原附件；沒有新增profile排除。 |
+| 上次完成 | 原C3／C4／C5排第二層全部弦；七列表精確接合。profile1完整n-star閉包不變，555通用較小替換及52個cap候選均未供排除。 |
+| 目前停止點 | profile0／1皆K≥1，外側induced圈分別長8+K／7+K，內恰八點；兩target仍存活，來源、計數錐、一般J1／J2及較小bad均OPEN。 |
+| 下一步 | 用同一原第二層S的七列表完整關係，找合法較小patch或證原外側E的更強完整fibre限制；保全部接點與空列。 |
+| 接手入口 | [本輪報告](../audits/2026-10-21-w7-remaining-two-13e51db/REPORT.md)、[原第二層紙證與七列表](../audits/2026-10-21-w7-profile0-13e51db/PROOF.md)、[原兩型殘餘](../audits/2026-10-21-w7-transport-synthesis-d23f94f/RESIDUAL.json)。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
+| 2026-10-21／完整第二層 | [induced圈、八內點與七列表](../audits/2026-10-21-w7-remaining-two-13e51db/REPORT.md)定位同一來源完整界面；局部縮減未給排除，仍餘兩型。 |
 | 2026-10-21／原面點與度數 | [五個第三面點、profile1首點a與完整link](../audits/2026-10-21-w7-private-face-points-d23f94f/REPORT.md)給03色約束及條件低度排除；兩型來源與縮減仍OPEN。 |
 | 2026-10-21／24型縮至2型 | [u3w八型、u1w四型與其餘十型](../audits/2026-10-21-w7-transport-synthesis-d23f94f/REPORT.md)由完整同源零覆蓋排除，48組同步復算與短證獨立一致。 |
 | 2026-10-21／W7原u1v八型完成 | [原family同源字面作用](../audits/2026-10-21-w7-u1v-30f2d19/REPORT.md)排X48617、X67755與兩target；當輪父W7餘24型。 |
 | 2026-10-21／W7原u3v八型完成 | [同源兩輪分量作用與三態支配證書](../audits/2026-10-21-w7-u3v-30f2d19/REPORT.md)排X66582、X67755及兩target；當輪父W7餘32型。 |
-| 2026-10-21／W7轉入來源結構 | [原接觸、完整分量與任意k模板秩](../audits/2026-10-21-w7-structural-30f2d19/REPORT.md)：112→69→40必要覆蓋，28型迫joined二型；當輪完整來源及計數錐仍OPEN。 |
 
 本頁維護本線現況；證明及實際重播範圍見各報告。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
@@ -43,7 +43,7 @@
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
-| 較小bad三候選計數 | 原W5三邊路整支關閉；W7原40型已排38型，餘0／1及較高度數原面點義務。兩型來源、較小bad及一般J1兩項／J2六項仍OPEN | [38型排除與兩型殘餘](../audits/2026-10-21-w7-transport-synthesis-d23f94f/REPORT.md)、[W7完整模型](../audits/2026-10-20-w7-count-cone-d5b8a86/REPORT.md)、[三邊路](../audits/2026-10-20-r6-941-j1-c11-1148ce0/REPORT.md) |
+| 較小bad三候選計數 | 原W5三邊路整支關閉；W7原40型已排38型，餘0／1有完整induced第二層、內恰八點。兩型來源、較小bad及一般J1兩項／J2六項仍OPEN | [兩型界面與縮減審核](../audits/2026-10-21-w7-remaining-two-13e51db/REPORT.md)、[38型排除](../audits/2026-10-21-w7-transport-synthesis-d23f94f/REPORT.md)、[三邊路](../audits/2026-10-20-r6-941-j1-c11-1148ce0/REPORT.md) |
 | 同候選rainbow與原外側 | 原b四度的四位置fan-A接受必洩漏；fan-B兩個重色拒絕列迫q,N同原外側分量，01021容雙接框。後續932／933及941均已證fan-B接受且洩漏；941其他支持證書未排 | [完整雙射、分量表與固定圖重播](../audits/2026-10-18-rainbow-exterior-e1617a2/REPORT.md) |
 | 原圖較小來源構造 | 具名原相鄰五度兩星有兩個合法k−2候選、至少一個保01232；回填iff四接點非rainbow。三拒絕列完整排除及普遍位置存在仍OPEN | [構造、局部限制及實際完成控制](../audits/2026-10-18-smaller-source-9f1fe84/REPORT.md) |
 | R6兩完整補圈／匹配修復 | 固定M全參考阻斷保留；5／5／5型四點十圈給保三標記全偶補N101，同樹兩奇支已解。一般合法批次全偶恰當每個完整primal分量度和偶；其他度數型及來源覆蓋仍OPEN | [5／5／5修復](../audits/2026-10-20-r6-555-odd-branches-9c36e3c/REPORT.md)、[雙點及完整分量判準](../audits/2026-10-20-r6-two-cycle-batch-9c36e3c/REPORT.md)、[原兩圈結構](../audits/2026-10-17-r6-two-cycle-cap-3d325d7/REPORT.md) |

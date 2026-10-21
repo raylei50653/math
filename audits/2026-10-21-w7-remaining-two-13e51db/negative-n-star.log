@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-remaining-two-13e51db/check_n_star.py", line 170, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-remaining-two-13e51db/check_n_star.py", line 165, in main
+    verify(json.loads(args.certificate.read_text()), actual)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-remaining-two-13e51db/check_n_star.py", line 138, in verify
+    require(expected == actual, 'certificate mismatch')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-remaining-two-13e51db/check_n_star.py", line 20, in require
+    raise ValueError(message)
+ValueError: certificate mismatch

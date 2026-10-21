@@ -1,0 +1,36 @@
+[
+  {
+    "name": "lake-build",
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 10.13,
+    "log": "lake-build.log",
+    "log_sha256": "8104be9d036bacf8bed91d79c2258da89881e2e6652e9d327e3af5292cf7fa71"
+  },
+  {
+    "name": "tool-tests",
+    "command": [
+      "uv",
+      "run",
+      "--python",
+      "3.14",
+      "--with-requirements",
+      "requirements.txt",
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 5.076,
+    "log": "tool-tests.log",
+    "log_sha256": "689abf72f51768488060d822c54c8d3ecdbcffb255c2c4e32b7cb79bebfa95f1"
+  }
+]

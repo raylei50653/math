@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-profile1-13e51db/check.py", line 213, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-profile1-13e51db/check.py", line 178, in main
+    verify(json.loads(args.certificate.read_text()), expected)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-profile1-13e51db/check.py", line 165, in verify
+    require(stored == expected, "certificate differs from independently regenerated complete relation audit")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-profile1-13e51db/check.py", line 32, in require
+    raise ValueError(message)
+ValueError: certificate differs from independently regenerated complete relation audit

@@ -1,0 +1,326 @@
+{
+  "checker_results": [
+    {
+      "name": "profile0",
+      "pass": true,
+      "normal_seed17_stdout_identical": true,
+      "runs": [
+        {
+          "name": "profile0",
+          "mode": "normal",
+          "command": [
+            "uv",
+            "run",
+            "--python",
+            "3.14",
+            "--with-requirements",
+            "requirements.txt",
+            "python",
+            "-B",
+            "audits/2026-10-21-w7-profile0-13e51db/check.py"
+          ],
+          "env_overrides": {},
+          "exit_code": 0,
+          "elapsed_seconds": 0.125,
+          "log": "profile0-normal.log",
+          "log_sha256": "8bd513a9889e3fab5293800651a21b57ce57546556fe740c1f90e1e28e8de17e"
+        },
+        {
+          "name": "profile0",
+          "mode": "seed17-optimized",
+          "command": [
+            "uv",
+            "run",
+            "--python",
+            "3.14",
+            "--with-requirements",
+            "requirements.txt",
+            "python",
+            "-B",
+            "-O",
+            "audits/2026-10-21-w7-profile0-13e51db/check.py"
+          ],
+          "env_overrides": {
+            "PYTHONHASHSEED": "17"
+          },
+          "exit_code": 0,
+          "elapsed_seconds": 0.125,
+          "log": "profile0-seed17-optimized.log",
+          "log_sha256": "8bd513a9889e3fab5293800651a21b57ce57546556fe740c1f90e1e28e8de17e"
+        }
+      ]
+    },
+    {
+      "name": "profile1",
+      "pass": true,
+      "normal_seed17_stdout_identical": true,
+      "runs": [
+        {
+          "name": "profile1",
+          "mode": "normal",
+          "command": [
+            "uv",
+            "run",
+            "--python",
+            "3.14",
+            "--with-requirements",
+            "requirements.txt",
+            "python",
+            "-B",
+            "audits/2026-10-21-w7-profile1-13e51db/check.py",
+            "--controls"
+          ],
+          "env_overrides": {},
+          "exit_code": 0,
+          "elapsed_seconds": 0.267,
+          "log": "profile1-normal.log",
+          "log_sha256": "55c0c556b81f7233664a9d315b38ccbd42c1c77a522d201033baa3e87af2b538"
+        },
+        {
+          "name": "profile1",
+          "mode": "seed17-optimized",
+          "command": [
+            "uv",
+            "run",
+            "--python",
+            "3.14",
+            "--with-requirements",
+            "requirements.txt",
+            "python",
+            "-B",
+            "-O",
+            "audits/2026-10-21-w7-profile1-13e51db/check.py",
+            "--controls"
+          ],
+          "env_overrides": {
+            "PYTHONHASHSEED": "17"
+          },
+          "exit_code": 0,
+          "elapsed_seconds": 0.302,
+          "log": "profile1-seed17-optimized.log",
+          "log_sha256": "55c0c556b81f7233664a9d315b38ccbd42c1c77a522d201033baa3e87af2b538"
+        }
+      ]
+    },
+    {
+      "name": "replacement",
+      "pass": true,
+      "normal_seed17_stdout_identical": true,
+      "runs": [
+        {
+          "name": "replacement",
+          "mode": "normal",
+          "command": [
+            "uv",
+            "run",
+            "--python",
+            "3.14",
+            "--with-requirements",
+            "requirements.txt",
+            "python",
+            "-B",
+            "audits/2026-10-21-w7-replacement-13e51db/check.py"
+          ],
+          "env_overrides": {},
+          "exit_code": 0,
+          "elapsed_seconds": 5.153,
+          "log": "replacement-normal.log",
+          "log_sha256": "fbb76e3b74d6f9d5ad11cde21c9a4509c40708476b7896314cb3dd54b637930a"
+        },
+        {
+          "name": "replacement",
+          "mode": "seed17-optimized",
+          "command": [
+            "uv",
+            "run",
+            "--python",
+            "3.14",
+            "--with-requirements",
+            "requirements.txt",
+            "python",
+            "-B",
+            "-O",
+            "audits/2026-10-21-w7-replacement-13e51db/check.py"
+          ],
+          "env_overrides": {
+            "PYTHONHASHSEED": "17"
+          },
+          "exit_code": 0,
+          "elapsed_seconds": 5.331,
+          "log": "replacement-seed17-optimized.log",
+          "log_sha256": "fbb76e3b74d6f9d5ad11cde21c9a4509c40708476b7896314cb3dd54b637930a"
+        }
+      ]
+    },
+    {
+      "name": "n-star",
+      "pass": true,
+      "normal_seed17_stdout_identical": true,
+      "runs": [
+        {
+          "name": "n-star",
+          "mode": "normal",
+          "command": [
+            "uv",
+            "run",
+            "--python",
+            "3.14",
+            "--with-requirements",
+            "requirements.txt",
+            "python",
+            "-B",
+            "audits/2026-10-21-w7-remaining-two-13e51db/check_n_star.py"
+          ],
+          "env_overrides": {},
+          "exit_code": 0,
+          "elapsed_seconds": 2.595,
+          "log": "n-star-normal.log",
+          "log_sha256": "66298ee860862a98fd30124786077c5e4e1d5301dcf068beb2d45d37130cd934"
+        },
+        {
+          "name": "n-star",
+          "mode": "seed17-optimized",
+          "command": [
+            "uv",
+            "run",
+            "--python",
+            "3.14",
+            "--with-requirements",
+            "requirements.txt",
+            "python",
+            "-B",
+            "-O",
+            "audits/2026-10-21-w7-remaining-two-13e51db/check_n_star.py"
+          ],
+          "env_overrides": {
+            "PYTHONHASHSEED": "17"
+          },
+          "exit_code": 0,
+          "elapsed_seconds": 2.69,
+          "log": "n-star-seed17-optimized.log",
+          "log_sha256": "66298ee860862a98fd30124786077c5e4e1d5301dcf068beb2d45d37130cd934"
+        }
+      ]
+    },
+    {
+      "name": "independent-555",
+      "pass": true,
+      "normal_seed17_stdout_identical": true,
+      "runs": [
+        {
+          "name": "independent-555",
+          "mode": "normal",
+          "command": [
+            "uv",
+            "run",
+            "--python",
+            "3.14",
+            "--with-requirements",
+            "requirements.txt",
+            "python",
+            "-B",
+            "audits/2026-10-21-w7-remaining-two-13e51db/independent_555.py"
+          ],
+          "env_overrides": {},
+          "exit_code": 0,
+          "elapsed_seconds": 0.104,
+          "log": "independent-555-normal.log",
+          "log_sha256": "ddac1e8f9d565460ced57821f6cac66ed4f2c32d6c2190ff72ebe417c3fd4718"
+        },
+        {
+          "name": "independent-555",
+          "mode": "seed17-optimized",
+          "command": [
+            "uv",
+            "run",
+            "--python",
+            "3.14",
+            "--with-requirements",
+            "requirements.txt",
+            "python",
+            "-B",
+            "-O",
+            "audits/2026-10-21-w7-remaining-two-13e51db/independent_555.py"
+          ],
+          "env_overrides": {
+            "PYTHONHASHSEED": "17"
+          },
+          "exit_code": 0,
+          "elapsed_seconds": 0.105,
+          "log": "independent-555-seed17-optimized.log",
+          "log_sha256": "ddac1e8f9d565460ced57821f6cac66ed4f2c32d6c2190ff72ebe417c3fd4718"
+        }
+      ]
+    }
+  ],
+  "external_negative_controls": [
+    {
+      "name": "profile1-external",
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.14",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-21-w7-profile1-13e51db/check.py",
+        "--certificate",
+        "audits/2026-10-21-w7-profile1-13e51db/runs/corrupted-certificate.json"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "rejected": true,
+      "elapsed_seconds": 0.243,
+      "log": "profile1-external.log",
+      "log_sha256": "d6e3ed75d26f83fdd29ed35fd9723f2225e4247bba011f98c9e03f53a8fcff6f"
+    },
+    {
+      "name": "replacement-external",
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.14",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-21-w7-replacement-13e51db/check.py",
+        "--certificate",
+        "audits/2026-10-21-w7-replacement-13e51db/tampered.json"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "rejected": true,
+      "elapsed_seconds": 5.159,
+      "log": "replacement-external.log",
+      "log_sha256": "c13d24f9f00441f6a2a69538eb77926da196216603291f3d4e6e32ee85853f0f"
+    },
+    {
+      "name": "n-star-external",
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.14",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-21-w7-remaining-two-13e51db/check_n_star.py",
+        "--certificate",
+        "audits/2026-10-21-w7-remaining-two-13e51db/negative-n-star.json"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "rejected": true,
+      "elapsed_seconds": 2.525,
+      "log": "n-star-external.log",
+      "log_sha256": "8bb7685905d3252a9e29b7e1ba03de71877686788af1fd9ff5539f2077ddd5fe"
+    }
+  ],
+  "original_certificates_regenerated": false,
+  "passed": true
+}

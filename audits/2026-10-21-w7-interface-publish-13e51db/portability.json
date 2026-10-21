@@ -1,0 +1,108 @@
+{
+  "result": "PASS: isolated staged-source replays",
+  "staged_source_files_exported_and_hashed": 76,
+  "harness_files": [
+    "requirements.txt"
+  ],
+  "archive_restore_needed_for_these_sources": false,
+  "external_worktree_files_used": false,
+  "git_metadata": "detached no-checkout worktree at exclusive BASE; only staged inventory and tracked requirements exported",
+  "runs": [
+    {
+      "name": "profile0",
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.14",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-21-w7-profile0-13e51db/check.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.162,
+      "log": "portable-profile0.log",
+      "log_sha256": "f55f55d6a8ccf092f773c1fe8cdf0fc7db339fd7448e48dc52e594423546a2c0",
+      "stdout_matches_current_replay": true
+    },
+    {
+      "name": "profile1",
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.14",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-21-w7-profile1-13e51db/check.py",
+        "--controls"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.285,
+      "log": "portable-profile1.log",
+      "log_sha256": "55c0c556b81f7233664a9d315b38ccbd42c1c77a522d201033baa3e87af2b538",
+      "stdout_matches_current_replay": true
+    },
+    {
+      "name": "replacement",
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.14",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-21-w7-replacement-13e51db/check.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 4.869,
+      "log": "portable-replacement.log",
+      "log_sha256": "fbb76e3b74d6f9d5ad11cde21c9a4509c40708476b7896314cb3dd54b637930a",
+      "stdout_matches_current_replay": true
+    },
+    {
+      "name": "n-star",
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.14",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-21-w7-remaining-two-13e51db/check_n_star.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.555,
+      "log": "portable-n-star.log",
+      "log_sha256": "66298ee860862a98fd30124786077c5e4e1d5301dcf068beb2d45d37130cd934",
+      "stdout_matches_current_replay": true
+    },
+    {
+      "name": "independent-555",
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.14",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "audits/2026-10-21-w7-remaining-two-13e51db/independent_555.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.131,
+      "log": "portable-independent-555.log",
+      "log_sha256": "ddac1e8f9d565460ced57821f6cac66ed4f2c32d6c2190ff72ebe417c3fd4718",
+      "stdout_matches_current_replay": true
+    }
+  ]
+}
