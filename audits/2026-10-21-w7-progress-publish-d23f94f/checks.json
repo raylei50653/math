@@ -1,0 +1,101 @@
+{
+  "base": "d23f94f739468593db653ec03f903c30adfd5fb0",
+  "read_only_replays": {
+    "count": 12,
+    "all_exit_codes_zero": true,
+    "normal_and_seed17_optimized_identical": true
+  },
+  "lake_build": {
+    "exit_code": 0,
+    "log_sha256": "8104be9d036bacf8bed91d79c2258da89881e2e6652e9d327e3af5292cf7fa71",
+    "summary": "Build completed successfully (8832 jobs)."
+  },
+  "artifact_policy": {
+    "name": "artifact-policy",
+    "exit_code": 0,
+    "summary": "Generated artifact policy OK: 8696 indexed files, 113 large files with documented exceptions, 166 registered outputs.",
+    "log_sha256": "332151d762ccea3d578c5865ccedced2723dab29ce739e31b1d6c34f9aa7ca46"
+  },
+  "document_checks": [
+    {
+      "name": "docs-check",
+      "exit_code": 0,
+      "summary": "OK: 708 Markdown files, 9347 local links; anchors, index, handoff, guide progress checked",
+      "log_sha256": "aacab4b5167c6f7eaaef19f5a2b8bdcd53ac4a3000249a21d8acd5fd72600ca8"
+    },
+    {
+      "name": "docgraph-docs",
+      "exit_code": 0,
+      "summary": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes",
+      "log_sha256": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca"
+    },
+    {
+      "name": "docgraph-whole-tree",
+      "exit_code": 1,
+      "summary": "FAIL: 97 documents, 368 relations, 12 families; 72 errors, 0 notes",
+      "log_sha256": "9378d610adaa892dc75eeb08343a5fc299993a528916581ba40495016d891832"
+    }
+  ],
+  "staged_portability": {
+    "result": "PASS: isolated staged-source replays",
+    "staged_source_files_exported_and_hashed": 97,
+    "archive_restore_needed_for_these_sources": false,
+    "external_worktree_files_used": false,
+    "runs": [
+      {
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-21-w7-transport-synthesis-d23f94f/short_check.py",
+          "--controls"
+        ],
+        "isolated_staged_sources": true,
+        "exit_code": 0,
+        "elapsed_seconds": 1.318,
+        "log": "audits/2026-10-21-w7-progress-publish-d23f94f/portable-short-certificate.log",
+        "log_sha256": "2a63e2947b914375ba3f032a88383ee4cdc6c8d0d6efdb92b058884ab3b6a1a0"
+      },
+      {
+        "command": [
+          "python3",
+          "-B",
+          "audits/2026-10-21-w7-private-face-points-d23f94f/check.py"
+        ],
+        "isolated_staged_sources": true,
+        "exit_code": 0,
+        "elapsed_seconds": 0.966,
+        "log": "audits/2026-10-21-w7-progress-publish-d23f94f/portable-private-face-points.log",
+        "log_sha256": "167e3418f962c35c163dcff9e163168b692a068bb220856be51ed6a59e59a9e0"
+      }
+    ]
+  },
+  "source_preservation": {
+    "command": [
+      "sha256sum",
+      "--check",
+      "--quiet",
+      "audits/2026-10-21-w7-progress-publish-d23f94f/SOURCE_SHA256SUMS"
+    ],
+    "exit_code": 0,
+    "preserved_original_files": 97,
+    "raw_bytes": 33673758
+  },
+  "unchanged_tool_unit_suites": "not rerun; no tools implementation changes",
+  "new_Lean_theorems": false,
+  "remaining_profiles": [
+    0,
+    1
+  ],
+  "general_W7": "OPEN",
+  "general_J1_J2": "OPEN",
+  "whole_tree_diagnostic": {
+    "existing_duplicate_id_errors": 72,
+    "errors_mentioning_new_audits": 0
+  },
+  "staged_whitespace": {
+    "name": "staged-whitespace",
+    "exit_code": 0,
+    "summary": "no whitespace diagnostics",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

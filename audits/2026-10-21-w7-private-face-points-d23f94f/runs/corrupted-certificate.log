@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-private-face-points-d23f94f/check.py", line 221, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-private-face-points-d23f94f/check.py", line 212, in main
+    verify(json.loads(path.read_text()),result)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-private-face-points-d23f94f/check.py", line 175, in verify
+    require(packed(cert)==packed(expected),'damaged or overextended structural certificate')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-private-face-points-d23f94f/check.py", line 29, in require
+    raise ValueError(message)
+ValueError: damaged or overextended structural certificate
+
+returncode=1

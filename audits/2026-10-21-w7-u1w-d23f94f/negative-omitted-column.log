@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-u1w-d23f94f/check.py", line 344, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-u1w-d23f94f/check.py", line 333, in main
+    result = verify(cert,inputs)
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-u1w-d23f94f/check.py", line 243, in verify
+    require(record['all_incident_columns']==incidence[h] and bool(incidence[h]),
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'the complete original incident-column family was truncated')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-21-w7-u1w-d23f94f/check.py", line 46, in require
+    raise ValueError(message)
+ValueError: the complete original incident-column family was truncated

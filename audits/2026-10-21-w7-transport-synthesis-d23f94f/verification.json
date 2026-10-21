@@ -1,0 +1,109 @@
+{
+  "base": "d23f94f739468593db653ec03f903c30adfd5fb0",
+  "current_head": "d23f94f739468593db653ec03f903c30adfd5fb0",
+  "independent_replays": [
+    {
+      "name": "short-normal",
+      "result": "PASS: eight separate same-source edge-zero proofs",
+      "sha256": "2a63e2947b914375ba3f032a88383ee4cdc6c8d0d6efdb92b058884ab3b6a1a0"
+    },
+    {
+      "name": "short-seed17-optimized",
+      "result": "PASS: eight separate same-source edge-zero proofs",
+      "sha256": "2a63e2947b914375ba3f032a88383ee4cdc6c8d0d6efdb92b058884ab3b6a1a0"
+    },
+    {
+      "name": "independent-normal",
+      "result": "PASS",
+      "sha256": "b39720ca9ba44e6df5ed2b5865f84e5d167d09ca477146e67773cc3f7cdb6e01"
+    },
+    {
+      "name": "independent-seed17-optimized",
+      "result": "PASS",
+      "sha256": "b39720ca9ba44e6df5ed2b5865f84e5d167d09ca477146e67773cc3f7cdb6e01"
+    }
+  ],
+  "normal_and_seed17_optimized_exactly_equal": true,
+  "all_frozen_bytes_checked": 14,
+  "frozen_snapshot_drift": [],
+  "immutable_live_source_drift": [],
+  "authorized_routing_changes": [
+    "docs/STATUS.md",
+    "docs/c5_kempe_guide.md"
+  ],
+  "document_checks": {
+    "check_docs": {
+      "exit_code": 0,
+      "summary": "OK: 707 Markdown files, 9338 local links; anchors, index, handoff, guide progress checked"
+    },
+    "docgraph_docs": {
+      "exit_code": 0,
+      "summary": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes"
+    },
+    "docgraph_whole_tree": {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "errors": 72,
+      "duplicate_id_errors": 72,
+      "errors_mentioning_new_audits": 0,
+      "summary": "FAIL: 97 documents, 368 relations, 12 families; 72 errors, 0 notes",
+      "log_sha256": "9378d610adaa892dc75eeb08343a5fc299993a528916581ba40495016d891832"
+    },
+    "new_audit_markdown_links": {
+      "checked": 59,
+      "missing": []
+    },
+    "git_diff_check": {
+      "exit_code": 0
+    }
+  },
+  "general_W7": "OPEN",
+  "general_J1_J2": "OPEN",
+  "source_realization_claimed": false,
+  "new_Lean": false,
+  "private_face_independent_replay": {
+    "negative_controls_rejected": [
+      "five_private_points_in_profile1",
+      "omit_the_a_face",
+      "merge_a_q_components",
+      "drop_unknown_outer_neighbors",
+      "invent_minimality_replacement",
+      "claim_profile_exclusion"
+    ],
+    "private_face_point_counts": [
+      5,
+      4
+    ],
+    "profile1_z1": "a",
+    "result": "PASS: profile 0/1 face/link custody; both sources remain OPEN",
+    "smaller_source_constructed": false,
+    "source_exclusion": false,
+    "source_realization": "not triggered",
+    "target_03_incidence": [
+      [
+        306985
+      ],
+      [
+        306993
+      ]
+    ]
+  },
+  "worker_validations": [
+    {
+      "path": "audits/2026-10-21-w7-u1w-d23f94f/checks.json",
+      "sha256": "dafcbb3023554dfb8f8a3888ba32a9e691c9930132914fbdcf8c95f3667d4063"
+    },
+    {
+      "path": "audits/2026-10-21-w7-other-types-d23f94f/checks.json",
+      "sha256": "e4c9c0170384babc3e68160bd71ffb044222f569fe769d6a4daba5d3e7e8649c"
+    },
+    {
+      "path": "audits/2026-10-21-w7-private-face-points-d23f94f/runs/base-custody.json",
+      "sha256": "f83b1129a8448d4a8f5aa6fc7379da537914de6b9409919fac2b00e22b522d72"
+    }
+  ]
+}

@@ -2,26 +2,26 @@
 
 ## 最新進度
 
-現況核對：2026-10-21；[W7原u1v同源排除](../audits/2026-10-21-w7-u1v-30f2d19/REPORT.md)證X48617=X67755=0，含原邊u1v的八型整支關閉。原完整family的字面作用給Z44459≤Z44111≤Z44127=0，終點u1=v=1；不使用u3v前提或圖對稱。繼[原u3v八型](../audits/2026-10-21-w7-u3v-30f2d19/REPORT.md)後，必要接觸32→24（12份B-joined二欄型、12份全15欄型）。一般W7、原必要計數錐及J1／J2仍OPEN；沒有LP、新Lean或較小bad。
+現況核對：2026-10-21；[W7同源證法與逐型排除](../audits/2026-10-21-w7-transport-synthesis-d23f94f/REPORT.md)完成u3w八型、u1w四型及其餘十型，必要接觸24→2；原40型合計已排38型。每支保同一原D、全部私有點與cap lifts，八條原邊引理經完整incident短證及獨立同步復算一致。餘profile0無弦與profile1僅au4，原第三面點與完整度數另給條件排除；一般W7、必要計數錐與J1／J2仍OPEN，無新Lean或較小bad。
 
 | 欄位 | 現況 |
 | --- | --- |
-| 階段／生命週期 | W7原u3v及u1v兩批各八型已具名關閉，其他來源型繼續；普通101已證，110／101聯合偶補及主命題仍OPEN。 |
-| 最近研究更新 | 2026-10-21：[原u1v八型完整來源排除](../audits/2026-10-21-w7-u1v-30f2d19/REPORT.md)；原family重新核對相同字面交換鏈，同契約下新增原非邊u1v。 |
-| 上次完成 | X48617、X67755及兩target在u1v分支全零；完整分量forcing、三態支配證書及獨立來源審查一致。沒有u3v額外前提或頂點對稱。 |
-| 目前停止點 | 剩24份必要接觸：12份B-joined二欄型、12份全15欄型；無弦型仍存活。一般W7、J1兩項／J2六項及較小bad仍OPEN。 |
-| 下一步 | 先攻含原邊u3w的八型（X66602／X67765），從B44466完整fibres重新重建forcing與字面傳輸；保原D與全部cap lifts，不把v/w交換當圖對稱。 |
-| 接手入口 | [u1v閉合與父題邊界](../audits/2026-10-21-w7-u1v-30f2d19/REPORT.md)、[兩輪完整來源紙證](../audits/2026-10-21-w7-u1v-30f2d19/transport/PROOF.md)、[三態精確checker](../audits/2026-10-21-w7-u1v-30f2d19/closure/compact.py)、[完整剩餘24型](../audits/2026-10-21-w7-u1v-30f2d19/RESIDUAL.json)。 |
+| 階段／生命週期 | W7原40份必要型已排38型；保原面點與完整link處理餘兩型，父題仍OPEN。 |
+| 最近研究更新 | 2026-10-21：[u3w／u1w與其他型](../audits/2026-10-21-w7-transport-synthesis-d23f94f/REPORT.md)完成22型新排除；[第三面點](../audits/2026-10-21-w7-private-face-points-d23f94f/REPORT.md)細分兩型與度數義務。 |
+| 上次完成 | u3w四態29分支、u1w五態40分支；u4v／u3s／u2v／u2w四原邊引理再排10型；全307,197欄及48組同步殘餘獨立一致。 |
+| 目前停止點 | profile0無弦、n≥6；profile1僅au4、n=5。兩者必要支持仍留兩target；來源、精確計數錐、一般J1／J2及較小bad均OPEN。 |
+| 下一步 | 沿兩型原外側完整link追蹤被迫出現的反向12色鄰點及其03分量；保所有接合邊界，另找保持完整關係的較小替換。 |
+| 接手入口 | [共用來源證法](../audits/2026-10-21-w7-transport-synthesis-d23f94f/PROOF.md)、[完整兩型殘餘](../audits/2026-10-21-w7-transport-synthesis-d23f94f/RESIDUAL.json)、[原面點與完整link](../audits/2026-10-21-w7-private-face-points-d23f94f/REPORT.md)。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
-| 2026-10-21／W7原u1v八型完成 | [原family同源字面作用](../audits/2026-10-21-w7-u1v-30f2d19/REPORT.md)排X48617、X67755與兩target；不假設圖對稱，父W7餘24型仍OPEN。 |
-| 2026-10-21／W7原u3v八型完成 | [同源兩輪分量作用與三態支配證書](../audits/2026-10-21-w7-u3v-30f2d19/REPORT.md)排X66582、X67755及兩target；八型整支關閉，當輪父W7餘32型。 |
-| 2026-10-21／W7轉入來源結構 | [原接觸、完整分量與任意k模板秩](../audits/2026-10-21-w7-structural-30f2d19/REPORT.md)：112→69→40必要覆蓋，28型迫joined二型；完整來源排除及計數錐仍OPEN。 |
-| 2026-10-20／J1五邊路與計數殘餘 | [原C7及W7介面](../audits/2026-10-20-r6-941-j1-five-edge-417732f/REPORT.md)保全來源量詞；[後續精確checker與求解](../audits/2026-10-20-w7-count-cone-d5b8a86/REPORT.md)仍無證書，保存103個正價欄殘餘。 |
-| 2026-10-20／941原W5整支完成 | [132項完整計數守恆](../audits/2026-10-20-r6-941-j1-c11-1148ce0/REPORT.md)排n≥6的induced C11；合前輪n=5排除，type III的12色n–L路皆至少五邊。一般J1／J2仍OPEN。 |
+| 2026-10-21／原面點與度數 | [五個第三面點、profile1首點a與完整link](../audits/2026-10-21-w7-private-face-points-d23f94f/REPORT.md)給03色約束及條件低度排除；兩型來源與縮減仍OPEN。 |
+| 2026-10-21／24型縮至2型 | [u3w八型、u1w四型與其餘十型](../audits/2026-10-21-w7-transport-synthesis-d23f94f/REPORT.md)由完整同源零覆蓋排除，48組同步復算與短證獨立一致。 |
+| 2026-10-21／W7原u1v八型完成 | [原family同源字面作用](../audits/2026-10-21-w7-u1v-30f2d19/REPORT.md)排X48617、X67755與兩target；當輪父W7餘24型。 |
+| 2026-10-21／W7原u3v八型完成 | [同源兩輪分量作用與三態支配證書](../audits/2026-10-21-w7-u3v-30f2d19/REPORT.md)排X66582、X67755及兩target；當輪父W7餘32型。 |
+| 2026-10-21／W7轉入來源結構 | [原接觸、完整分量與任意k模板秩](../audits/2026-10-21-w7-structural-30f2d19/REPORT.md)：112→69→40必要覆蓋，28型迫joined二型；當輪完整來源及計數錐仍OPEN。 |
 
 本頁維護本線現況；證明及實際重播範圍見各報告。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
@@ -43,7 +43,7 @@
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
-| 較小bad三候選計數 | 原W5三邊路整支關閉；W7原u3v、u1v共16型已排，餘24份必要原接觸。其他W7型、較小bad及一般J1兩項／J2六項仍OPEN | [u1v同源排除](../audits/2026-10-21-w7-u1v-30f2d19/REPORT.md)、[W7完整模型](../audits/2026-10-20-w7-count-cone-d5b8a86/REPORT.md)、[三邊路](../audits/2026-10-20-r6-941-j1-c11-1148ce0/REPORT.md) |
+| 較小bad三候選計數 | 原W5三邊路整支關閉；W7原40型已排38型，餘0／1及較高度數原面點義務。兩型來源、較小bad及一般J1兩項／J2六項仍OPEN | [38型排除與兩型殘餘](../audits/2026-10-21-w7-transport-synthesis-d23f94f/REPORT.md)、[W7完整模型](../audits/2026-10-20-w7-count-cone-d5b8a86/REPORT.md)、[三邊路](../audits/2026-10-20-r6-941-j1-c11-1148ce0/REPORT.md) |
 | 同候選rainbow與原外側 | 原b四度的四位置fan-A接受必洩漏；fan-B兩個重色拒絕列迫q,N同原外側分量，01021容雙接框。後續932／933及941均已證fan-B接受且洩漏；941其他支持證書未排 | [完整雙射、分量表與固定圖重播](../audits/2026-10-18-rainbow-exterior-e1617a2/REPORT.md) |
 | 原圖較小來源構造 | 具名原相鄰五度兩星有兩個合法k−2候選、至少一個保01232；回填iff四接點非rainbow。三拒絕列完整排除及普遍位置存在仍OPEN | [構造、局部限制及實際完成控制](../audits/2026-10-18-smaller-source-9f1fe84/REPORT.md) |
 | R6兩完整補圈／匹配修復 | 固定M全參考阻斷保留；5／5／5型四點十圈給保三標記全偶補N101，同樹兩奇支已解。一般合法批次全偶恰當每個完整primal分量度和偶；其他度數型及來源覆蓋仍OPEN | [5／5／5修復](../audits/2026-10-20-r6-555-odd-branches-9c36e3c/REPORT.md)、[雙點及完整分量判準](../audits/2026-10-20-r6-two-cycle-batch-9c36e3c/REPORT.md)、[原兩圈結構](../audits/2026-10-17-r6-two-cycle-cap-3d325d7/REPORT.md) |
@@ -151,8 +151,9 @@ alpha正、01023／01212雙零或01202／01231雙零兩個替代目標；未有�
 [五邊路續進](../audits/2026-10-20-r6-941-j1-five-edge-417732f/REPORT.md)證type III的原C7 induced；only-R子型給原W7及C13全部同源計數，但兩個目標在61,308格必要閉包中仍存活。一般C7多內點與較小bad未解。
 [後續計數求解](../audits/2026-10-20-w7-count-cone-d5b8a86/REPORT.md)獨立核對完整共同模型，尚無精確可行點或對偶；保存2Z44459守恆式的103個正價欄完整殘餘，計數錐仍OPEN。
 [結構續進](../audits/2026-10-21-w7-structural-30f2d19/REPORT.md)已改以原來源定理為主線：外側共鄰C4與完整W5中心把112型縮為69，實際正witness限40；逐型完整orbit接合有28型只留joined二型。任意k模板秩已紙證，但兩target與非負接合仍OPEN。目前下一步見頁首；以下帶日期求解提議保留當時實驗語境。
-[原u3v後續排除](../audits/2026-10-21-w7-u3v-30f2d19/REPORT.md)由同一完整D的03／12、13分量作用給Z44459≤Z44111≤Z44127=0；原u3v另迫Z44466=0，故X66582、X67755及八型全排。同契約下原u3v必為非邊；前輪40型現餘32（20份其他joined二型、12份全15欄型），不推升一般W7或J1／J2。前輪凍結報告保留40型的當時語境。
+[原u3v後續排除](../audits/2026-10-21-w7-u3v-30f2d19/REPORT.md)由同一完整D的03／12、13分量作用給Z44459≤Z44111≤Z44127=0；原u3v另迫Z44466=0，故X66582、X67755及八型全排。同契約下原u3v必為非邊；當輪40型縮為32（20份其他joined二型、12份全15欄型），不推升一般W7或J1／J2。前輪凍結報告保留40型的當時語境。
 [原u1v續輪](../audits/2026-10-21-w7-u1v-30f2d19/REPORT.md)從原未加弦family重核同一字面作用；終點u1=v=1，故X48617、X67755與另一批八型全排，無u3v前提或位置對稱。原接觸32→24（12份B-joined二欄型、12份全15欄型），同契約下u1v亦為原非邊；一般W7、J1／J2與較小bad仍OPEN，凍結32型報告保留當輪語境。
+[本輪證明整理與逐型排除](../audits/2026-10-21-w7-transport-synthesis-d23f94f/REPORT.md)以同一完整原family分別證u3w、u1w及u4v／u3s／u2v／u2w不可能，現已24→2，原40型只餘profile0／1。[原第三面點](../audits/2026-10-21-w7-private-face-points-d23f94f/REPORT.md)區分五私有點與首點a，保原rotation、完整link及03分量，並排指定全低度子案；兩型較高度數、必要計數錐、來源縮減及父W7仍OPEN。
 **優先於新實驗的求解提議（2026-10-20）**：同一既有必要錐、不加112接觸型。十個P_ℓ非負，故共同正性等價於十個單一正性各可行（點相加）；先只裁定target。以消去Z的X-only差分系統加有界正規化（Z44459+Z44466=1、min ΣX）取代齊次無界模型，比較HiGHS HiPO／IPX、OR-Tools PDLP（feasibility polishing）等；數值點只供支撐或基底猜測，再在該支撐上作精確有理求解，交獨立checker。完成條件為checker PASS的primal或dual；停止條件為同預算仍無證書時保存checkpoint、完整殘餘及實際停止原因並維持OPEN。restricted子錐不可行不作裁定。
 **續進提議（2026-10-21，實驗前記錄）**：GPU PDLP十項共同點殘差3e-8，但支撐170,466欄／121,175列無欄單點；貪婪三角基只得63,960主元、留57,215綁定列，cuOpt LU亦於約73k主元後明顯停滯，這些指定支撐與消元順序留下約5萬列的難解殘餘；尚未證明每個基底都必有同樣稠密核心，也未量出精確分母。先讓重跑的crossover完成並量測頂點基底核心與分母；其次找小支撐primal點（九項非target正性餘裕61–2672，只需閉合target支撐），或作狀態層聚合縮小核心。restricted支撐失敗仍不作裁定，計數錐維持OPEN。
 **外部方法對照提議（2026-10-21，實驗前記錄，取代上條的狀態層聚合）**：fastpath四輪reweighted-L1把target支撐壓到82,835欄，但restricted頂點的LU仍停在約69k主元，該指定消元仍未完成。依序作兩項便宜量測，再決定精確化路線：(1) C11拉回失配全表：對全部307,197欄精確算舊132項λ的刪u4,u3拉回配對r_j，並算Z側各live state係數，依u4,u3接觸型分類；只回答失配稀疏或分散，不作證書，修補δ須限結構模板並保target係數符號（δ=−λ₀為零證書）。(2) 完整可行性LP（c=0，D或原2Z=ΣX方程、十正量列及右端）的colour refinement／equitable partition（Grohe–Kersting–Mladenov–Selman 2013，Reduction Lemma 7.1）：記錄縮減前後列欄數、分類表及還原映射；分割近離散則停止。核心仍大時才試精確LP迭代修正（Gleixner–Steffy–Wolter 2016、SoPlex exact；停滯時Eifler等2023精度提升）或p-adic lifting（Eberly等2006／LinBox），兩者最終仍須精確解同一基底，不自動繞過稠密核心。見證庫相加只在已有至少一個精確向量後使用。完成條件：兩項量測表與是否改路的決定；任何證書仍交獨立checker，計數錐維持OPEN。
