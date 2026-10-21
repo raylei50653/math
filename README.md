@@ -44,6 +44,7 @@ U2–U4及M4／M5證據的整批重播與發布範圍見[2026-10-08紀錄](docs/
 W7六模板、專用算子與60秒數值試跑的相連發布見[2026-10-21紀錄](docs/history/2026-10-21-w7-operator-publish.md)；計數錐仍OPEN。
 後續原接觸結構、u3v／u1v兩批八型排除與24型停止點見[結構成果發布紀錄](docs/history/2026-10-21-w7-structural-publish.md)。
 最新單障礙、同一E完整接合與L短路／長路見[本次發布紀錄](docs/history/2026-10-21-w7-L-path-publish.md)；原profiles仍排38／40，L整支仍OPEN。
+短型I的03／02長路、私有交錯點與唯一後繼見[共同義務發布紀錄](docs/history/2026-10-21-w7-I-joint-publish.md)；八配對同源性仍OPEN。
 
 前序A₄／B₄／C₄的固定快照、獨立驗收與scope ledger見[D₅](audits/2026-10-04-task-d5/REPORT.md)；
 歷史artifacts、完整relations／空fibres／witnesses及所有hash失敗保留。

@@ -2,26 +2,26 @@
 
 ## 最新進度
 
-現況核對：2026-10-21；[L混色短路與長路](../audits/2026-10-21-w7-L-path-30dde27/REPORT.md)承接完整原E與fibres：profile0的K=1只餘L；L三邊路的六度／雙五度整型仍OPEN，僅雙五度型B44466的U=原w子支已排。五邊路分七個spoke型，任意奇長的gap規則已證；大cell內點未定。原40 profiles仍排38、餘0／1，一般W7、必要計數錐與J1／J2仍OPEN，無新Lean、來源實現或較小bad。
+現況核對：2026-10-21；[短型I的03／02共同義務](../audits/2026-10-21-w7-I-joint-2c38d1d/REPORT.md)證各替代路至少四邊、混合配對迫私有色2／3交錯點；02第2／4型翻U02後03唯一，二步必要審核仍留2／4型，八配對同源性OPEN。[L短路／長路](../audits/2026-10-21-w7-L-path-30dde27/REPORT.md)的II窄排除與五邊七型保留；兩短整型及長路大cell仍OPEN。原40 profiles仍排38、餘0／1，一般W7、必要計數錐與J1／J2仍OPEN，無新Lean、來源實現或較小bad。
 
 | 欄位 | 現況 |
 | --- | --- |
 | 階段／生命週期 | W7原40 profiles仍排38型；profile0的K=1僅L未排，L四個完整01必要型仍OPEN。 |
-| 最近研究更新 | 2026-10-21：[L短路／長路](../audits/2026-10-21-w7-L-path-30dde27/REPORT.md)排II／B／U=w子支，證五邊七型與一般奇長gap引理。 |
-| 上次完成 | K=1先排n／u4／u2，再以同E全分量與完整cap排u3／u1；L普通六度／雙五度各留4／4／2及4／4／3必要型。 |
-| 目前停止點 | L四型、短型共同來源及pinched aliases、長路大cell、K≥2與profile1仍OPEN；沒有新增整個profile排除。 |
-| 下一步 | 先追六度同F的03二選一與02四型、雙五度4／4／3及pinched aliases；再追≥5路已封star型與多內點induced cell。 |
-| 接手入口 | [L完整報告](../audits/2026-10-21-w7-L-path-30dde27/REPORT.md)、[父完整E紙證](../audits/2026-10-21-w7-k1-mixed-30dde27/FULL_E_PROOF.md)、[原SOURCE_CONTRACT](../audits/2026-10-20-r6-941-j1-five-edge-417732f/SOURCE_CONTRACT.md)。 |
+| 最近研究更新 | 2026-10-21：[短型I共同義務](../audits/2026-10-21-w7-I-joint-2c38d1d/REPORT.md)給長路、交錯點與U02單翻後唯一03，尚無配對排除。 |
+| 上次完成 | 普通I的二步必要審核全留03二型／02四型；兩張同圖02／03控制皆敗於01及原四度點。II仍留4／4／3型。 |
+| 目前停止點 | I每target八配對的同源實現／矛盾未定；II、pinched aliases、長路大cell、K≥2與profile1仍OPEN。 |
+| 下一步 | 優先追I至少四邊的替代路、混合分支五度交錯點的剩餘色鄰點及偶數高度分支，結合U02單翻後唯一03與原01四型。 |
+| 接手入口 | [I共同義務](../audits/2026-10-21-w7-I-joint-2c38d1d/REPORT.md)、[原圖紙證](../audits/2026-10-21-w7-I-joint-2c38d1d/geometry/PROOF.md)、[完整二步審核](../audits/2026-10-21-w7-I-joint-2c38d1d/transport/REPORT.md)、[L兩短型／長路](../audits/2026-10-21-w7-L-path-30dde27/REPORT.md)。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
+| 2026-10-21／I的03與02共同義務 | [八配對的長路與私有交錯點](../audits/2026-10-21-w7-I-joint-2c38d1d/REPORT.md)、U02單翻後唯一03；二步未排型，同源性OPEN。 |
 | 2026-10-21／L原混色路 | [三邊兩短型與五邊七型](../audits/2026-10-21-w7-L-path-30dde27/REPORT.md)只排II／B／U=w，保留同E完整fibres與整型OPEN。 |
 | 2026-10-21／K=1只餘L | [完整E作用排u3／u1](../audits/2026-10-21-w7-k1-mixed-30dde27/REPORT.md)，L四個01必要型及02／03整欄完整保留。 |
 | 2026-10-21／單障礙原幾何 | [n／u4／u2排除](../audits/2026-10-21-w7-single-barrier-30dde27/REPORT.md)與[30項規則及列表探索](../audits/2026-10-21-w7-exploration-30dde27/REPORT.md)把後續收窄為同一外側完整接合。 |
 | 2026-10-21／完整第二層 | [induced圈、八內點與七列表](../audits/2026-10-21-w7-remaining-two-13e51db/REPORT.md)定位同一來源完整界面；局部縮減未給排除。 |
-| 2026-10-21／24型縮至2型 | [u3w八型、u1w四型與其餘十型](../audits/2026-10-21-w7-transport-synthesis-d23f94f/REPORT.md)由完整同源零覆蓋排除，48組同步復算與短證獨立一致。 |
 
 本頁維護本線現況；證明及實際重播範圍見各報告。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
@@ -43,7 +43,7 @@
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
-| 較小bad三候選計數 | 原W5三邊路整支關閉；W7原profiles仍排38／40，profile0的K=1僅L。L只新增II／B／U=w窄排除，兩短型與長路大cell仍OPEN；一般J1兩項／J2六項及較小bad未解 | [L短路／長路](../audits/2026-10-21-w7-L-path-30dde27/REPORT.md)、[父完整E](../audits/2026-10-21-w7-k1-mixed-30dde27/FULL_E_PROOF.md)、[38型排除](../audits/2026-10-21-w7-transport-synthesis-d23f94f/REPORT.md) |
+| 較小bad三候選計數 | 原W5三邊路整支關閉；W7仍排38／40，profile0的K=1僅L。I的03／02八配對已得長路與交錯點義務，尚未排型；II與長路大cell仍OPEN，一般J1／J2及較小bad未解 | [I共同義務](../audits/2026-10-21-w7-I-joint-2c38d1d/REPORT.md)、[L短路／長路](../audits/2026-10-21-w7-L-path-30dde27/REPORT.md)、[38型排除](../audits/2026-10-21-w7-transport-synthesis-d23f94f/REPORT.md) |
 | 同候選rainbow與原外側 | 原b四度的四位置fan-A接受必洩漏；fan-B兩個重色拒絕列迫q,N同原外側分量，01021容雙接框。後續932／933及941均已證fan-B接受且洩漏；941其他支持證書未排 | [完整雙射、分量表與固定圖重播](../audits/2026-10-18-rainbow-exterior-e1617a2/REPORT.md) |
 | 原圖較小來源構造 | 具名原相鄰五度兩星有兩個合法k−2候選、至少一個保01232；回填iff四接點非rainbow。三拒絕列完整排除及普遍位置存在仍OPEN | [構造、局部限制及實際完成控制](../audits/2026-10-18-smaller-source-9f1fe84/REPORT.md) |
 | R6兩完整補圈／匹配修復 | 固定M全參考阻斷保留；5／5／5型四點十圈給保三標記全偶補N101，同樹兩奇支已解。一般合法批次全偶恰當每個完整primal分量度和偶；其他度數型及來源覆蓋仍OPEN | [5／5／5修復](../audits/2026-10-20-r6-555-odd-branches-9c36e3c/REPORT.md)、[雙點及完整分量判準](../audits/2026-10-20-r6-two-cycle-batch-9c36e3c/REPORT.md)、[原兩圈結構](../audits/2026-10-17-r6-two-cycle-cap-3d325d7/REPORT.md) |

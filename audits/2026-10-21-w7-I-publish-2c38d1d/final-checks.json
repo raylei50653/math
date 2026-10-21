@@ -1,0 +1,203 @@
+{
+  "base": "2c38d1dcb4490017312467deb19d9da02b7bb2a6",
+  "authorization": "User requested organize current progress, commit and push.",
+  "source_snapshot": {
+    "files": 51,
+    "bytes": 3158326,
+    "dependency_records": 63,
+    "dependency_bytes": 8613718,
+    "changed_original_bytes": 0
+  },
+  "checks": [
+    {
+      "name": "lake-build",
+      "command": "lake build --no-ansi",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/lake-build.stdout",
+      "stderr": "runs/lake-build.stderr"
+    },
+    {
+      "name": "custody",
+      "command": "python3 -B audits/2026-10-21-w7-I-publish-2c38d1d/verify.py",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/custody.stdout",
+      "stderr": "runs/custody.stderr"
+    },
+    {
+      "name": "staged-custody",
+      "command": "python3 -B audits/2026-10-21-w7-I-publish-2c38d1d/verify.py --repo /tmp/math-w7-I-staged-e_43qjae",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/staged-custody.stdout",
+      "stderr": "runs/staged-custody.stderr"
+    },
+    {
+      "name": "staged-root-normal",
+      "command": "python3 -B /tmp/math-w7-I-staged-e_43qjae/audits/2026-10-21-w7-I-joint-2c38d1d/check.py",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/staged-root-normal.stdout",
+      "stderr": "runs/staged-root-normal.stderr"
+    },
+    {
+      "name": "staged-root-seed17",
+      "command": "PYTHONHASHSEED=17 python3 -B -O /tmp/math-w7-I-staged-e_43qjae/audits/2026-10-21-w7-I-joint-2c38d1d/check.py",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/staged-root-seed17.stdout",
+      "stderr": "runs/staged-root-seed17.stderr"
+    },
+    {
+      "name": "staged-geometry-normal",
+      "command": "python3 -B /tmp/math-w7-I-staged-e_43qjae/audits/2026-10-21-w7-I-joint-2c38d1d/geometry/check.py",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/staged-geometry-normal.stdout",
+      "stderr": "runs/staged-geometry-normal.stderr"
+    },
+    {
+      "name": "staged-geometry-seed17",
+      "command": "PYTHONHASHSEED=17 python3 -B -O /tmp/math-w7-I-staged-e_43qjae/audits/2026-10-21-w7-I-joint-2c38d1d/geometry/check.py",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/staged-geometry-seed17.stdout",
+      "stderr": "runs/staged-geometry-seed17.stderr"
+    },
+    {
+      "name": "staged-controls-normal",
+      "command": "python3 -B /tmp/math-w7-I-staged-e_43qjae/audits/2026-10-21-w7-I-joint-2c38d1d/controls/check.py",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/staged-controls-normal.stdout",
+      "stderr": "runs/staged-controls-normal.stderr"
+    },
+    {
+      "name": "staged-controls-seed17",
+      "command": "PYTHONHASHSEED=17 python3 -B -O /tmp/math-w7-I-staged-e_43qjae/audits/2026-10-21-w7-I-joint-2c38d1d/controls/check.py",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/staged-controls-seed17.stdout",
+      "stderr": "runs/staged-controls-seed17.stderr"
+    },
+    {
+      "name": "staged-transport-normal",
+      "command": "python3 -B /tmp/math-w7-I-staged-e_43qjae/audits/2026-10-21-w7-I-joint-2c38d1d/transport/check.py",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/staged-transport-normal.stdout",
+      "stderr": "runs/staged-transport-normal.stderr"
+    },
+    {
+      "name": "staged-transport-seed17",
+      "command": "PYTHONHASHSEED=17 python3 -B -O /tmp/math-w7-I-staged-e_43qjae/audits/2026-10-21-w7-I-joint-2c38d1d/transport/check.py --seed 17",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/staged-transport-seed17.stdout",
+      "stderr": "runs/staged-transport-seed17.stderr"
+    },
+    {
+      "name": "tool-tests",
+      "command": "uv run --with-requirements requirements.txt python -B -m unittest discover -s tools/tests -p 'test_*.py'",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/tool-tests.stdout",
+      "stderr": "runs/tool-tests.stderr"
+    },
+    {
+      "name": "staged-diff-check",
+      "command": "git diff --cached --check",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/staged-diff-check.stdout",
+      "stderr": "runs/staged-diff-check.stderr"
+    },
+    {
+      "name": "docs",
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/docs.stdout",
+      "stderr": "runs/docs.stderr"
+    },
+    {
+      "name": "docgraph-formal",
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/docgraph-formal.stdout",
+      "stderr": "runs/docgraph-formal.stderr"
+    },
+    {
+      "name": "docgraph-whole",
+      "command": "python3 tools/docgraph check",
+      "exit_code": 1,
+      "classification": "72 retained archival duplicate-id errors",
+      "stdout": "runs/docgraph-whole.stdout",
+      "stderr": "runs/docgraph-whole.stderr"
+    },
+    {
+      "name": "artifact-policy",
+      "command": "python3 tools/check_generated_artifacts.py",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/artifact-policy.stdout",
+      "stderr": "runs/artifact-policy.stderr"
+    },
+    {
+      "name": "staged-diff-final",
+      "command": "git diff --cached --check",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/staged-diff-final.stdout",
+      "stderr": "runs/staged-diff-final.stderr"
+    },
+    {
+      "name": "worktree-diff-final",
+      "command": "git diff --check",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/worktree-diff-final.stdout",
+      "stderr": "runs/worktree-diff-final.stderr"
+    },
+    {
+      "name": "custody-final",
+      "command": "python3 -B audits/2026-10-21-w7-I-publish-2c38d1d/verify.py",
+      "exit_code": 0,
+      "classification": "PASS",
+      "stdout": "runs/custody-final.stdout",
+      "stderr": "runs/custody-final.stderr"
+    }
+  ],
+  "staged_normal_seed17_outputs_identical": true,
+  "negative_controls_per_mode": 25,
+  "independent_publication_review": "PASS; source hashes, complete source scope, four unique successor cases, OPEN boundaries",
+  "formal_docgraph": {
+    "documents": 97,
+    "relations": 383,
+    "families": 12,
+    "errors": 0
+  },
+  "whole_tree_docgraph": {
+    "errors": 72,
+    "categories": {
+      "duplicate-id": 72
+    },
+    "classification": "retained archival duplicate-ID diagnostic; not a pass"
+  },
+  "lake_build": {
+    "result": "PASS",
+    "jobs": 8832,
+    "new_Lean_theorems": 0
+  },
+  "tool_tests": {
+    "result": "PASS",
+    "tests": 94
+  },
+  "source_pair_exclusions": 0,
+  "source_realizations": 0,
+  "profiles_excluded_out_of_40": 38,
+  "archive_and_artifact_exceptions_changed": false,
+  "publication_status": "Pre-commit local checks; push and remote CI verified separately after commit."
+}

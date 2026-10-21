@@ -1,5 +1,9 @@
 # 稽核封存與還原
 
+2026-10-21 最新整理：[短型I的03／02共同義務](../docs/history/2026-10-21-w7-I-joint-publish.md)。
+51份原研究檔及其直接依賴共63份來源保持原bytes，以現有gzip直接Git保存，未追加ARCHIVE。
+[發布verifier](2026-10-21-w7-I-publish-2c38d1d/verify.py)可核全部來源；八配對同源性仍OPEN。
+
 2026-10-21 最新整理：[W7單障礙、完整原E與L混色路](../docs/history/2026-10-21-w7-L-path-publish.md)。
 四包317份原證據保持bytes；三份大型JSON新增三個去重gzip blobs，原ARCHIVE records不變。
 還原後用[發布verifier](2026-10-21-w7-L-publish-30dde27/verify.py)核對；原routing快照的臨時重放與現行文件檢查分開，L整支仍OPEN。

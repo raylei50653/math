@@ -1,0 +1,132 @@
+{
+  "base": "2c38d1dcb4490017312467deb19d9da02b7bb2a6",
+  "artifacts": [
+    {
+      "path": "BASE.json",
+      "bytes": 894,
+      "sha256": "ba751091598d1a1ff0106f477ae4828e475178ec9de534096afb2d634e39a8c5"
+    },
+    {
+      "path": "check.py",
+      "bytes": 11847,
+      "sha256": "d2925b58c6c1092f2faad8240c53175f61088cf51d0b42e459a6e327f83d7ecf"
+    },
+    {
+      "path": "certificate.json.gz",
+      "bytes": 2429513,
+      "sha256": "0dd357b8d6da2c0a313118d995325a7dcc0eec1d9252c588a985adf926843415"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 5251,
+      "sha256": "01ae188bb1f471aff8d9f7f3427426bbb72d7edd9443b567690356144ebcd5cc"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 -B audits/2026-10-21-w7-I-joint-2c38d1d/transport/check.py",
+      "exit_code": 0,
+      "output": {
+        "result": "PASS",
+        "cases": [
+          {
+            "target": 44459,
+            "first_split": [
+              0,
+              2
+            ],
+            "initial_types": 4,
+            "two_step_surviving_types": 4
+          },
+          {
+            "target": 44459,
+            "first_split": [
+              0,
+              3
+            ],
+            "initial_types": 2,
+            "two_step_surviving_types": 2
+          },
+          {
+            "target": 44466,
+            "first_split": [
+              0,
+              2
+            ],
+            "initial_types": 4,
+            "two_step_surviving_types": 4
+          },
+          {
+            "target": 44466,
+            "first_split": [
+              0,
+              3
+            ],
+            "initial_types": 2,
+            "two_step_surviving_types": 2
+          }
+        ],
+        "boundary_images": 99009,
+        "normalized_second_palette_checks": 214,
+        "complete_normalized_seven_point_kernels": 23152,
+        "complete_original_cap_states": 28987,
+        "negative_controls": 10,
+        "new_source_exclusions": []
+      }
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 -B -O audits/2026-10-21-w7-I-joint-2c38d1d/transport/check.py --seed 17",
+      "exit_code": 0,
+      "output": {
+        "result": "PASS",
+        "cases": [
+          {
+            "target": 44459,
+            "first_split": [
+              0,
+              2
+            ],
+            "initial_types": 4,
+            "two_step_surviving_types": 4
+          },
+          {
+            "target": 44459,
+            "first_split": [
+              0,
+              3
+            ],
+            "initial_types": 2,
+            "two_step_surviving_types": 2
+          },
+          {
+            "target": 44466,
+            "first_split": [
+              0,
+              2
+            ],
+            "initial_types": 4,
+            "two_step_surviving_types": 4
+          },
+          {
+            "target": 44466,
+            "first_split": [
+              0,
+              3
+            ],
+            "initial_types": 2,
+            "two_step_surviving_types": 2
+          }
+        ],
+        "boundary_images": 99009,
+        "normalized_second_palette_checks": 214,
+        "complete_normalized_seven_point_kernels": 23152,
+        "complete_original_cap_states": 28987,
+        "negative_controls": 10,
+        "new_source_exclusions": []
+      }
+    }
+  ],
+  "all_complete_seven_point_fibres_including_empty_preserved": true,
+  "unknown_cross_palette_updates_invented": false,
+  "paired_initial_source_realizability_claimed": false
+}

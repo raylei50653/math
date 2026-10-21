@@ -1,0 +1,73 @@
+{
+  "files": [
+    {
+      "bytes": 4952,
+      "path": "REPORT.md",
+      "sha256": "c5311c3fbaeeb3a9cfe9816840e0e01bf8221d0fcc709094b477d46b953a8644"
+    },
+    {
+      "bytes": 1306,
+      "path": "certificate-v2.json.gz",
+      "sha256": "d5ba42905c85acc9ac6b04fbd0a70dfd3d91ad0ba425f91dda9c1d7e1594205e"
+    },
+    {
+      "bytes": 1268,
+      "path": "certificate.json.gz",
+      "sha256": "f650ea02793971c1ccd8e43913ba3d7ed2d640fe272641855212d98d60fd6e13"
+    },
+    {
+      "bytes": 14899,
+      "path": "check.py",
+      "sha256": "309e9ebad2ae8653709ac04139506ebbc03ec3b20ccab69032ab416cbd2b8860"
+    }
+  ],
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-I-joint-2c38d1d/controls/check.py"
+      ],
+      "exit_code": 0,
+      "name": "normal",
+      "result": {
+        "certificate_sha256": "d5ba42905c85acc9ac6b04fbd0a70dfd3d91ad0ba425f91dda9c1d7e1594205e",
+        "literal_pairs_tested": 16,
+        "negative_controls_rejected": [
+          "claimed_source_realization",
+          "claimed_source_exclusion_from_bounded_search",
+          "claimed_01_gate",
+          "missing_face",
+          "missing_complete_seven_point_lift"
+        ],
+        "positive_same_disk_controls": 2,
+        "status": "PASS"
+      }
+    },
+    {
+      "command": [
+        "env",
+        "PYTHONHASHSEED=17",
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-21-w7-I-joint-2c38d1d/controls/check.py"
+      ],
+      "exit_code": 0,
+      "name": "hashseed17_optimized",
+      "result": {
+        "certificate_sha256": "d5ba42905c85acc9ac6b04fbd0a70dfd3d91ad0ba425f91dda9c1d7e1594205e",
+        "literal_pairs_tested": 16,
+        "negative_controls_rejected": [
+          "claimed_source_realization",
+          "claimed_source_exclusion_from_bounded_search",
+          "claimed_01_gate",
+          "missing_face",
+          "missing_complete_seven_point_lift"
+        ],
+        "positive_same_disk_controls": 2,
+        "status": "PASS"
+      }
+    }
+  ]
+}
