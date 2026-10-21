@@ -1,0 +1,72 @@
+{
+  "checked_at_utc": "2026-10-21T09:52:36.967645+00:00",
+  "controls": {
+    "geometry_promoted_to_exclusion_rejected": true,
+    "mismatched_literal_cut_rejected": true,
+    "omitted_full_fibre_zero_rejected": true,
+    "omitted_private_gap_rejected": true
+  },
+  "new_Lean": false,
+  "no_LP": true,
+  "no_new_original_graph_enumeration": true,
+  "outputs": {
+    "PROOF.md": {
+      "bytes": 7103,
+      "sha256": "ed25dbfed9a9095331699f6b21bf905decef9f05fecd624361656ceae85490cb"
+    },
+    "certificate.json": {
+      "bytes": 198248,
+      "sha256": "45ca23a55b2a31abaf224d6657007948f5d8bd223c3ed14e03bf57b98a103529"
+    },
+    "check.py": {
+      "bytes": 8285,
+      "sha256": "0d8729343023346628bc3bf3ffced52e01ff52b6c3a354f765b6f92658b02f22"
+    }
+  },
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-u3v-30f2d19/geometry/check.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "label": "normal",
+      "stderr": "",
+      "stdout": "{\"fixed_cut_rectangle_sizes\": [32, 32, 48], \"profile_ids\": [10, 11, 12, 13, 14, 15, 43, 44], \"same_colour_zero_original_live_states\": 15382, \"u3_degree_lower_bounds\": [6, 6, 5, 7, 7, 6, 5, 5]}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-u3v-30f2d19/geometry/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "label": "seed17",
+      "stderr": "",
+      "stdout": "{\"fixed_cut_rectangle_sizes\": [32, 32, 48], \"profile_ids\": [10, 11, 12, 13, 14, 15, 43, 44], \"same_colour_zero_original_live_states\": 15382, \"u3_degree_lower_bounds\": [6, 6, 5, 7, 7, 6, 5, 5]}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-21-w7-u3v-30f2d19/geometry/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "label": "seed17_optimized",
+      "stderr": "",
+      "stdout": "{\"fixed_cut_rectangle_sizes\": [32, 32, 48], \"profile_ids\": [10, 11, 12, 13, 14, 15, 43, 44], \"same_colour_zero_original_live_states\": 15382, \"u3_degree_lower_bounds\": [6, 6, 5, 7, 7, 6, 5, 5]}\n"
+    }
+  ],
+  "smaller_bad": false,
+  "source_excluded_by_geometry_alone": false,
+  "source_exclusion_authority": "sibling closure certificate plus original source bridge"
+}

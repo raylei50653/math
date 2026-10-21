@@ -1,0 +1,220 @@
+{
+  "base": "30f2d19275657393b7354ed75eca31439d8ee12b",
+  "research_runs": [
+    {
+      "name": "geometry",
+      "seed": 0,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-structural-30f2d19/geometry/check.py",
+        "--controls"
+      ],
+      "exit_code": 0,
+      "seconds": 0.297,
+      "log": "runs/geometry-0.log",
+      "log_sha256": "35413e5025c79f1f360f61e005e5f0e4efcee5b046bd665a56a84fa181df05e3",
+      "output": null
+    },
+    {
+      "name": "geometry",
+      "seed": 17,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-structural-30f2d19/geometry/check.py",
+        "--controls"
+      ],
+      "exit_code": 0,
+      "seconds": 0.297,
+      "log": "runs/geometry-17.log",
+      "log_sha256": "35413e5025c79f1f360f61e005e5f0e4efcee5b046bd665a56a84fa181df05e3",
+      "output": null
+    },
+    {
+      "name": "targets",
+      "seed": 0,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-structural-30f2d19/review/target_exchange.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.911,
+      "log": "runs/targets-0.log",
+      "log_sha256": "1fafbc827054106491d6f3574511b29f53c3f1ca4e88c92599f5050b88d6fe70",
+      "output": null
+    },
+    {
+      "name": "targets",
+      "seed": 17,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-structural-30f2d19/review/target_exchange.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.918,
+      "log": "runs/targets-17.log",
+      "log_sha256": "1fafbc827054106491d6f3574511b29f53c3f1ca4e88c92599f5050b88d6fe70",
+      "output": null
+    },
+    {
+      "name": "profiles",
+      "seed": 0,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-structural-30f2d19/review/profile_orbits.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.919,
+      "log": "runs/profiles-0.log",
+      "log_sha256": "dbb88680abfe8d3805ba3bfa83b617d62f957a61661f2ce7661b59cbee13f6a4",
+      "output": null
+    },
+    {
+      "name": "profiles",
+      "seed": 17,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-structural-30f2d19/review/profile_orbits.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.911,
+      "log": "runs/profiles-17.log",
+      "log_sha256": "dbb88680abfe8d3805ba3bfa83b617d62f957a61661f2ce7661b59cbee13f6a4",
+      "output": null
+    },
+    {
+      "name": "compensation",
+      "seed": 0,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-structural-30f2d19/compensation/check.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.173,
+      "log": "runs/compensation-0.log",
+      "log_sha256": "5bec144fe837f9a2e9f30d4afc4ed663b7e2293563f6f03bd69958960c2eed5e",
+      "output": null
+    },
+    {
+      "name": "compensation",
+      "seed": 17,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-structural-30f2d19/compensation/check.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "seconds": 2.237,
+      "log": "runs/compensation-17.log",
+      "log_sha256": "4bdbcd84d096cbf665b5855fa403ab62737b51ac647df5d0c0dfd95dbe646c46",
+      "output": null
+    },
+    {
+      "name": "template",
+      "seed": 0,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-structural-30f2d19/template/check.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.159,
+      "log": "runs/template-0.log",
+      "log_sha256": "e36fb8c23c2f24b8d9d84293eaf3565a6bdc582a2d276a166a8d8bbfe17ae6ca",
+      "output": null
+    },
+    {
+      "name": "template",
+      "seed": 17,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-structural-30f2d19/template/check.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "seconds": 0.156,
+      "log": "runs/template-17.log",
+      "log_sha256": "8191e24b7ba9d79def615b3251157757ca5526a40a97ea43e5c7de529787b075",
+      "output": null
+    }
+  ],
+  "research_runs_passed": 10,
+  "immutable_input_drift": [],
+  "routing_snapshot_changes_permitted": [
+    "docs/c5_kempe_guide.md",
+    "docs/STATUS.md"
+  ],
+  "proof_sha256": {
+    "REPORT.md": "fffc730cf7dda70c5d2af471139aaddacb8abe64ee5dfa4b9d3f834dcdd4b4ec",
+    "geometry/PROOF.md": "21c8bb811d784e2aa1602cd9ce23f19ae6202161100c2a86707afd88d7cab1a0",
+    "compensation/REPORT.md": "4181722fc9ebb30e7bbf75fee99f807c809311888e6b6be8c489f058ef11a4e1",
+    "template/REPORT.md": "f65654068741a186daefb338e2f29921c0d96fda5b948089abc0b8ae589fb8bf",
+    "review/PROOF.md": "266fb0b183b6576ebd5ab415d9d82767a68cda053e9b70c5ce4616553d418a82",
+    "review/PROFILE_ORBITS.md": "61b63db81336df9046e3e8d09fd51c6df19aed89e5ef78164befb5cda1468765",
+    "review/all-k-review.md": "c1a8866f3c3e6c9bce0387f8d92bbc4d84caf83ac2cb7cf4126058df7e7f851c",
+    "template/CROSS_REVIEW.md": "3e1db78b938a22f72f0b31d33a68bd9abe359eac599b75d55a6aa939b426fbd7"
+  },
+  "checks": {
+    "docs": {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "files": 706,
+      "local_links": 9321
+    },
+    "docgraph_docs": {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "documents": 97,
+      "relations": 383,
+      "families": 12,
+      "errors": 0
+    },
+    "docgraph_whole_tree": {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "documents": 97,
+      "relations": 368,
+      "families": 12,
+      "errors": 72,
+      "diagnostic": "existing duplicate-id declarations in frozen audit/scratch snapshots; no new audit metadata IDs"
+    },
+    "git_diff_check": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0
+    }
+  },
+  "large_LP_run": false,
+  "new_original_source_graph_enumeration": false,
+  "lean_changed": false,
+  "lake_build_run": false,
+  "source_excluded": false,
+  "cone_feasibility": "OPEN",
+  "commit_push_run": false
+}

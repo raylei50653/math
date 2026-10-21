@@ -1,0 +1,157 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_WHOLE_TREE_BASELINE",
+  "checks": [
+    {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "jobs": 8832,
+      "note": "Existing linter warnings; no Lean changes or new theorem."
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "markdown_files": 707,
+      "local_links": 9333
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "documents": 97,
+      "relations": 383,
+      "errors": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "errors": 72,
+      "same_diagnostic_lines_as_original_u1v_log": true,
+      "stdout_stderr_order_differs": true,
+      "log": "docgraph-whole-tree.log",
+      "log_sha256": "9378d610adaa892dc75eeb08343a5fc299993a528916581ba40495016d891832",
+      "scope": "Existing frozen/scratch duplicate IDs; separate from formal docs PASS."
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--python",
+        "3.14",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "tests": 94
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/docgraph/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "tests": 18
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "indexed_generated_files": 8662,
+      "large_documented_exceptions": 113,
+      "registered_outputs": 166
+    },
+    {
+      "command": [
+        "sha256sum",
+        "--check",
+        "--quiet",
+        "audits/2026-10-21-w7-structural-publish-30f2d19/SOURCE_SHA256SUMS"
+      ],
+      "exit_code": 0,
+      "unique_source_files": 123
+    }
+  ],
+  "research_replays": {
+    "receipt": "replay.json",
+    "runs": 28,
+    "all_exit_codes_zero": true
+  },
+  "independent_review": {
+    "receipt": "review.json",
+    "normal_replays": 14,
+    "status": "PASS"
+  },
+  "initial_tool_test_attempt": {
+    "command": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "result": "Failed: system Python missing networkx; resolved with pinned requirements uv command above."
+  },
+  "not_rerun": [
+    "Large LP or numerical trial",
+    "Broad original-graph enumeration",
+    "Unrelated research-line audits"
+  ],
+  "push_verification": "After commit + push, compare HEAD, origin/main and remote refs/heads/main; remote CI status is separate and must be queried live.",
+  "isolated_staged_source_replay": {
+    "receipt": "portability.json",
+    "status": "PASS",
+    "source_files": 123,
+    "normal_checker_names_passed": 14,
+    "initial_missing_dependency": "Nested B/PROOF.md was already archived; added to source inventory and recovered from staged archive bytes; two affected checkers passed on recovery."
+  }
+}

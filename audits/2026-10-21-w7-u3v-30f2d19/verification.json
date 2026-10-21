@@ -1,0 +1,235 @@
+{
+  "base": "30f2d19275657393b7354ed75eca31439d8ee12b",
+  "scope": "strict original only-R/W7 plus original edge u3v: all eight named profiles excluded",
+  "research_runs": [
+    {
+      "name": "geometry",
+      "seed": 0,
+      "optimized": false,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-u3v-30f2d19/geometry/check.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.836,
+      "log": "runs/geometry-0.log",
+      "log_sha256": "da2e079856b7aa601e6fed9b7dd668c1818098cf05c64823ff0590cf44be632a"
+    },
+    {
+      "name": "geometry",
+      "seed": 17,
+      "optimized": true,
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-21-w7-u3v-30f2d19/geometry/check.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.838,
+      "log": "runs/geometry-17.log",
+      "log_sha256": "da2e079856b7aa601e6fed9b7dd668c1818098cf05c64823ff0590cf44be632a"
+    },
+    {
+      "name": "transport",
+      "seed": 0,
+      "optimized": false,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-u3v-30f2d19/transport/check.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.884,
+      "log": "runs/transport-0.log",
+      "log_sha256": "70d531ae37fc77ff43eefda1309114017716b810cc15f4698d59cd711b4cafa8"
+    },
+    {
+      "name": "transport",
+      "seed": 17,
+      "optimized": true,
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-21-w7-u3v-30f2d19/transport/check.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.887,
+      "log": "runs/transport-17.log",
+      "log_sha256": "70d531ae37fc77ff43eefda1309114017716b810cc15f4698d59cd711b4cafa8"
+    },
+    {
+      "name": "compact",
+      "seed": 0,
+      "optimized": false,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-u3v-30f2d19/closure/compact.py",
+        "--controls"
+      ],
+      "exit_code": 0,
+      "seconds": 1.213,
+      "log": "runs/compact-0.log",
+      "log_sha256": "b89401ca14b68ae74f0bf9d33654198ae10601863243398831eefc072390a135"
+    },
+    {
+      "name": "compact",
+      "seed": 17,
+      "optimized": true,
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-21-w7-u3v-30f2d19/closure/compact.py",
+        "--controls"
+      ],
+      "exit_code": 0,
+      "seconds": 1.211,
+      "log": "runs/compact-17.log",
+      "log_sha256": "b89401ca14b68ae74f0bf9d33654198ae10601863243398831eefc072390a135"
+    },
+    {
+      "name": "closure-eight",
+      "seed": 0,
+      "optimized": false,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-u3v-30f2d19/closure/check.py"
+      ],
+      "exit_code": 0,
+      "seconds": 8.717,
+      "log": "runs/closure-eight-0.log",
+      "log_sha256": "f9bfe53d8572cd57692d8080c721145fc149a0c7ad90402e52518f9234d3d520"
+    },
+    {
+      "name": "closure-eight",
+      "seed": 17,
+      "optimized": true,
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-21-w7-u3v-30f2d19/closure/check.py"
+      ],
+      "exit_code": 0,
+      "seconds": 8.703,
+      "log": "runs/closure-eight-17.log",
+      "log_sha256": "664487ca5d35adabf5f32a38418aef915deb5832c5b6e478189c22691acbf35c"
+    },
+    {
+      "name": "independent",
+      "seed": 0,
+      "optimized": false,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-u3v-30f2d19/review/independent.py"
+      ],
+      "exit_code": 0,
+      "seconds": 7.413,
+      "log": "runs/independent-0.log",
+      "log_sha256": "2cc1a61a03b1ce67582ecc33b237aa8413a3a439e34e1e15235d35aeae4e71ee"
+    },
+    {
+      "name": "independent",
+      "seed": 17,
+      "optimized": true,
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-21-w7-u3v-30f2d19/review/independent.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "seconds": 7.487,
+      "log": "runs/independent-17.log",
+      "log_sha256": "78c7163809b4182a7501e469ba830562f62520c92b7b885ebefa03b2b83e51e2"
+    }
+  ],
+  "research_runs_passed": 10,
+  "immutable_inputs_checked": 46,
+  "immutable_input_drift": [],
+  "previous_audit_preserved": true,
+  "proof_sha256": {
+    "REPORT.md": "f5674925a7a0daedf035be7c3aaae8d92088abc1c60f7a2f0729a5445a8d3906",
+    "transport/PROOF.md": "37d082195333d82f514aab6d8c4895562745b44760b93d6c055f8672001efb17",
+    "review/PROOF.md": "fdc69a1111e590c9e411fd837d5e64589e4089a107c119f70327c9426278a4be",
+    "geometry/PROOF.md": "ed25dbfed9a9095331699f6b21bf905decef9f05fecd624361656ceae85490cb"
+  },
+  "checks": {
+    "docs": {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "markdown_files": 706,
+      "local_links": 9323
+    },
+    "docgraph_docs": {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "documents": 97,
+      "relations": 383,
+      "errors": 0
+    },
+    "docgraph_whole_tree": {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "errors": 72,
+      "duplicate_id_errors": 72,
+      "errors_mentioning_new_audit": 0,
+      "log_sha256": "a69e6e445b1789ad1db613e33f26baecfff63adb94bc54d4a0e5555e7a9cd0e9"
+    },
+    "git_diff_check": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0
+    }
+  },
+  "source_excluded_original_profile_ids": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    43,
+    44
+  ],
+  "remaining_necessary_profiles": 32,
+  "general_W7": "OPEN",
+  "general_J1_J2": "OPEN",
+  "original_unrestricted_count_cone": "OPEN",
+  "no_LP": true,
+  "new_original_graph_enumeration": false,
+  "new_Lean": false,
+  "lake_build_run": false,
+  "smaller_bad_constructed": false,
+  "commit_push_run": false,
+  "propagation_level": "L2; direct W7 parent and current consumers only",
+  "new_audit_links": {
+    "checked": 34,
+    "errors": []
+  },
+  "new_audit_whitespace_errors": []
+}

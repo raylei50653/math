@@ -1,0 +1,72 @@
+{
+  "checked_at_utc": "2026-10-21T10:11:42.671086+00:00",
+  "general_W7_excluded": false,
+  "negative_controls": {
+    "general_W7_scope_promotion_rejected": true,
+    "omitted_incident_column_rejected": true,
+    "wrong_original_edge_rejected": true
+  },
+  "new_Lean": false,
+  "no_LP": true,
+  "no_new_original_graph_enumeration": true,
+  "outputs": {
+    "SOURCE_BRIDGE.md": {
+      "bytes": 5509,
+      "sha256": "718f76aa1a26abee4874e7ce00e80787ad08b3c426cacfab5e2dbd08eb4160c8"
+    },
+    "source-bridge-certificate.json": {
+      "bytes": 8610,
+      "sha256": "3182109c87587103e543e7c1f44d32d4b80edcf182c68059952f551ff0fcf504"
+    },
+    "source_bridge.py": {
+      "bytes": 8777,
+      "sha256": "8006d7ab779f06765c5662f1ef6d526a0c9085662ff5a7eef0d0755024cc6568"
+    }
+  },
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-u1v-30f2d19/closure/source_bridge.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "label": "normal",
+      "stderr": "",
+      "stdout": "{\"general_W7_excluded\": false, \"original_profiles\": [68, 69, 78, 79, 88, 89, 92, 93], \"remaining_profiles\": 24, \"source_branch_excluded\": true, \"source_law\": \"0<=Z44459<=Z44111=Z44127; no new edge used in this law\"}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-u1v-30f2d19/closure/source_bridge.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "label": "seed17",
+      "stderr": "",
+      "stdout": "{\"general_W7_excluded\": false, \"original_profiles\": [68, 69, 78, 79, 88, 89, 92, 93], \"remaining_profiles\": 24, \"source_branch_excluded\": true, \"source_law\": \"0<=Z44459<=Z44111=Z44127; no new edge used in this law\"}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-21-w7-u1v-30f2d19/closure/source_bridge.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "label": "seed17_optimized",
+      "stderr": "",
+      "stdout": "{\"general_W7_excluded\": false, \"original_profiles\": [68, 69, 78, 79, 88, 89, 92, 93], \"remaining_profiles\": 24, \"source_branch_excluded\": true, \"source_law\": \"0<=Z44459<=Z44111=Z44127; no new edge used in this law\"}\n"
+    }
+  ],
+  "smaller_bad": false,
+  "source_branch_excluded": true,
+  "uses_u3v_to_prove_u1v": false
+}

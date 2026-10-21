@@ -1,5 +1,10 @@
 # 稽核封存與還原
 
+2026-10-21 最新整理：[W7原接觸結構與u3v／u1v八型排除](../docs/history/2026-10-21-w7-structural-publish.md)。
+三組108份新證據保持原bytes，連同依賴共123個不同來源檔案，見
+[SHA256清單](2026-10-21-w7-structural-publish-30f2d19/SOURCE_SHA256SUMS)。
+本批直接保存既有gzip閉包，不新增ARCHIVE項；既有依賴仍先依下方指令還原。
+
 2026-10-21 最新整理：[W7完整計數、可復用結構與專用算子](../docs/history/2026-10-21-w7-operator-publish.md)。
 三個相連目錄的251份非暫存證據保留；35份大型／歷史whitespace路徑新增32個
 去重blobs，原bytes與舊ARCHIVE records不變。先依下方restore指令還原，再用

@@ -1,0 +1,104 @@
+{
+  "status": "PASS; all-k paper theorem, finite compatibility only; no cone verdict",
+  "mathematical_base": "d5b8a8605bcbcef7aebbcf1934dad7ba255ccf02",
+  "audit_base": "30f2d19275657393b7354ed75eca31439d8ee12b",
+  "arbitrary_k_authority": "REPORT.md self-contained paper proof; not a Lean theorem",
+  "inputs_sha256": {
+    "audits/2026-10-21-w7-reuse-d5b8a86/templates/templates.json.gz": "7a70484af2b2b86ff16f2eaa28902c657e2c2bba621b0971683a155e8df64b52",
+    "audits/2026-10-21-w7-reuse-d5b8a86/fourier/ranks.json": "1fd364f285eff69e4e52e75b4503667fa1b6f947ce464a1813a3c8d691708c75"
+  },
+  "templates": [
+    {
+      "k": 1,
+      "rows": 1,
+      "columns": 1,
+      "complete_coset_families": 1,
+      "exact_rank": 1,
+      "literal_template_reconstruction": true,
+      "frequency_by_frequency_word_equivalence": true
+    },
+    {
+      "k": 2,
+      "rows": 4,
+      "columns": 4,
+      "complete_coset_families": 2,
+      "exact_rank": 3,
+      "literal_template_reconstruction": true,
+      "frequency_by_frequency_word_equivalence": true
+    },
+    {
+      "k": 3,
+      "rows": 16,
+      "columns": 20,
+      "complete_coset_families": 5,
+      "exact_rank": 10,
+      "literal_template_reconstruction": true,
+      "frequency_by_frequency_word_equivalence": true
+    },
+    {
+      "k": 4,
+      "rows": 64,
+      "columns": 112,
+      "complete_coset_families": 14,
+      "exact_rank": 35,
+      "literal_template_reconstruction": true,
+      "frequency_by_frequency_word_equivalence": true
+    },
+    {
+      "k": 5,
+      "rows": 256,
+      "columns": 672,
+      "complete_coset_families": 42,
+      "exact_rank": 126,
+      "literal_template_reconstruction": true,
+      "frequency_by_frequency_word_equivalence": true
+    },
+    {
+      "k": 6,
+      "rows": 1024,
+      "columns": 4224,
+      "complete_coset_families": 132,
+      "exact_rank": 462,
+      "literal_template_reconstruction": true,
+      "frequency_by_frequency_word_equivalence": true
+    }
+  ],
+  "negative_controls": {
+    "palette_even_crossing_word": {
+      "k": 2,
+      "frequency": 3,
+      "completed_bits": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "excluded_by_frozen_columns": true
+    },
+    "incomplete_subgroup_family": {
+      "k": 2,
+      "columns": 2,
+      "exact_rank": 2,
+      "full_template_rank": 3,
+      "full_rank_formula_rejected": true
+    },
+    "size_preserving_column_corruption": {
+      "k": 2,
+      "original": [
+        0,
+        1
+      ],
+      "changed": [
+        1,
+        2
+      ],
+      "rejected": true
+    }
+  },
+  "limitations": [
+    "Walsh character reconstruction uses signed column sums",
+    "No nonnegative-cone characterization or shared-Z gluing",
+    "No original-source realization or exclusion",
+    "No large LP, new original-disk enumeration, or Lean change"
+  ]
+}

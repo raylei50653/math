@@ -1,0 +1,70 @@
+{
+  "checked_at_utc": "2026-10-21T09:32:02.694266+00:00",
+  "input_custody": "three original geometry/source input hashes match parent BASE; frozen cap proof hash matches pinned upstream geometry certificate input_sha256",
+  "large_LP_run": false,
+  "new_lean": false,
+  "outputs": {
+    "PROOF.md": {
+      "bytes": 8507,
+      "sha256": "21c8bb811d784e2aa1602cd9ce23f19ae6202161100c2a86707afd88d7cab1a0"
+    },
+    "certificate.json": {
+      "bytes": 611832,
+      "sha256": "ee7b544a16192a9e6d4b37682d7177f03981acc8e427bc188777ff6f942bdcba"
+    },
+    "check.py": {
+      "bytes": 16111,
+      "sha256": "9f8a99cbedc2fbcfbd38b4046b400ab925068f12aeea5b6985d24c488d477648"
+    }
+  },
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-structural-30f2d19/geometry/check.py",
+        "--controls"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "label": "normal",
+      "stderr": "",
+      "stdout": "{\"excluded\": 43, \"input\": 112, \"reasons_by_profile\": {\"C4_nonempty\": 28, \"C5_at_least_two\": 4, \"C5_center_absent_spoke\": 43}, \"surviving\": 69, \"surviving_n5\": 30, \"target_union_surviving\": 40}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-structural-30f2d19/geometry/check.py",
+        "--controls"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "label": "seed17",
+      "stderr": "",
+      "stdout": "{\"excluded\": 43, \"input\": 112, \"reasons_by_profile\": {\"C4_nonempty\": 28, \"C5_at_least_two\": 4, \"C5_center_absent_spoke\": 43}, \"surviving\": 69, \"surviving_n5\": 30, \"target_union_surviving\": 40}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-21-w7-structural-30f2d19/geometry/check.py",
+        "--controls"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "label": "seed17_optimized",
+      "stderr": "",
+      "stdout": "{\"excluded\": 43, \"input\": 112, \"reasons_by_profile\": {\"C4_nonempty\": 28, \"C5_at_least_two\": 4, \"C5_center_absent_spoke\": 43}, \"surviving\": 69, \"surviving_n5\": 30, \"target_union_surviving\": 40}\n"
+    }
+  ],
+  "smaller_bad": false,
+  "source_excluded": false,
+  "source_graph_enumeration": false,
+  "source_realized": false
+}

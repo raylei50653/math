@@ -42,6 +42,7 @@ U2–U4及M4／M5證據的整批重播與發布範圍見[2026-10-08紀錄](docs/
 前序K′／E3–E6整合見[2026-10-04紀錄](docs/history/2026-10-04-kprime-excess-two-progress-publish.md)。
 
 W7六模板、專用算子與60秒數值試跑的相連發布見[2026-10-21紀錄](docs/history/2026-10-21-w7-operator-publish.md)；計數錐仍OPEN。
+後續原接觸結構、u3v／u1v兩批八型排除與24型停止點見[結構成果發布紀錄](docs/history/2026-10-21-w7-structural-publish.md)。
 
 前序A₄／B₄／C₄的固定快照、獨立驗收與scope ledger見[D₅](audits/2026-10-04-task-d5/REPORT.md)；
 歷史artifacts、完整relations／空fibres／witnesses及所有hash失敗保留。

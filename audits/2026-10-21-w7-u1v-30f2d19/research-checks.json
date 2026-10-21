@@ -1,0 +1,122 @@
+[
+  {
+    "name": "transport",
+    "seed": 0,
+    "optimized": false,
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-21-w7-u1v-30f2d19/transport/check.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.981,
+    "log": "runs/transport-0.log",
+    "log_sha256": "b3c6d1aa42e6feabca1ef235de7d919f4ec8147eebc2f1354d29a0346acf1a6d"
+  },
+  {
+    "name": "transport",
+    "seed": 17,
+    "optimized": true,
+    "command": [
+      "python3",
+      "-B",
+      "-O",
+      "audits/2026-10-21-w7-u1v-30f2d19/transport/check.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.971,
+    "log": "runs/transport-17.log",
+    "log_sha256": "b3c6d1aa42e6feabca1ef235de7d919f4ec8147eebc2f1354d29a0346acf1a6d"
+  },
+  {
+    "name": "compact",
+    "seed": 0,
+    "optimized": false,
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-21-w7-u1v-30f2d19/closure/compact.py",
+      "--controls"
+    ],
+    "exit_code": 0,
+    "seconds": 1.135,
+    "log": "runs/compact-0.log",
+    "log_sha256": "8cf5f64f29928be6762057bca35b6d97f5c03dae677d50a8d60d2354729b9e76"
+  },
+  {
+    "name": "compact",
+    "seed": 17,
+    "optimized": true,
+    "command": [
+      "python3",
+      "-B",
+      "-O",
+      "audits/2026-10-21-w7-u1v-30f2d19/closure/compact.py",
+      "--controls"
+    ],
+    "exit_code": 0,
+    "seconds": 1.145,
+    "log": "runs/compact-17.log",
+    "log_sha256": "8cf5f64f29928be6762057bca35b6d97f5c03dae677d50a8d60d2354729b9e76"
+  },
+  {
+    "name": "source-bridge",
+    "seed": 0,
+    "optimized": false,
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-21-w7-u1v-30f2d19/closure/source_bridge.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.878,
+    "log": "runs/source-bridge-0.log",
+    "log_sha256": "6970aa9fc837fb0dcf29423cdf199228c16b53431033582ea841dbac5ca1667d"
+  },
+  {
+    "name": "source-bridge",
+    "seed": 17,
+    "optimized": true,
+    "command": [
+      "python3",
+      "-B",
+      "-O",
+      "audits/2026-10-21-w7-u1v-30f2d19/closure/source_bridge.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.914,
+    "log": "runs/source-bridge-17.log",
+    "log_sha256": "6970aa9fc837fb0dcf29423cdf199228c16b53431033582ea841dbac5ca1667d"
+  },
+  {
+    "name": "review",
+    "seed": 0,
+    "optimized": false,
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-21-w7-u1v-30f2d19/review/check.py"
+    ],
+    "exit_code": 0,
+    "seconds": 1.233,
+    "log": "runs/review-0.log",
+    "log_sha256": "120fdb01b1349c0da24e98305f1e423b5b8a48ab324d3a1342876588281cf4f0"
+  },
+  {
+    "name": "review",
+    "seed": 17,
+    "optimized": true,
+    "command": [
+      "python3",
+      "-B",
+      "-O",
+      "audits/2026-10-21-w7-u1v-30f2d19/review/check.py",
+      "--seed",
+      "17"
+    ],
+    "exit_code": 0,
+    "seconds": 1.245,
+    "log": "runs/review-17.log",
+    "log_sha256": "480be41a2b63704aa204e911b2b02590f0736dc605a06f4306a4dc8c738565c7"
+  }
+]

@@ -1,0 +1,213 @@
+{
+  "base": "30f2d19275657393b7354ed75eca31439d8ee12b",
+  "scope": "complete941/J1strictW7 plus originalu1v: profiles68,69,78,79,88,89,92,93 excluded",
+  "research_runs": [
+    {
+      "name": "transport",
+      "seed": 0,
+      "optimized": false,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-u1v-30f2d19/transport/check.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.981,
+      "log": "runs/transport-0.log",
+      "log_sha256": "b3c6d1aa42e6feabca1ef235de7d919f4ec8147eebc2f1354d29a0346acf1a6d"
+    },
+    {
+      "name": "transport",
+      "seed": 17,
+      "optimized": true,
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-21-w7-u1v-30f2d19/transport/check.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.971,
+      "log": "runs/transport-17.log",
+      "log_sha256": "b3c6d1aa42e6feabca1ef235de7d919f4ec8147eebc2f1354d29a0346acf1a6d"
+    },
+    {
+      "name": "compact",
+      "seed": 0,
+      "optimized": false,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-u1v-30f2d19/closure/compact.py",
+        "--controls"
+      ],
+      "exit_code": 0,
+      "seconds": 1.135,
+      "log": "runs/compact-0.log",
+      "log_sha256": "8cf5f64f29928be6762057bca35b6d97f5c03dae677d50a8d60d2354729b9e76"
+    },
+    {
+      "name": "compact",
+      "seed": 17,
+      "optimized": true,
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-21-w7-u1v-30f2d19/closure/compact.py",
+        "--controls"
+      ],
+      "exit_code": 0,
+      "seconds": 1.145,
+      "log": "runs/compact-17.log",
+      "log_sha256": "8cf5f64f29928be6762057bca35b6d97f5c03dae677d50a8d60d2354729b9e76"
+    },
+    {
+      "name": "source-bridge",
+      "seed": 0,
+      "optimized": false,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-u1v-30f2d19/closure/source_bridge.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.878,
+      "log": "runs/source-bridge-0.log",
+      "log_sha256": "6970aa9fc837fb0dcf29423cdf199228c16b53431033582ea841dbac5ca1667d"
+    },
+    {
+      "name": "source-bridge",
+      "seed": 17,
+      "optimized": true,
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-21-w7-u1v-30f2d19/closure/source_bridge.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.914,
+      "log": "runs/source-bridge-17.log",
+      "log_sha256": "6970aa9fc837fb0dcf29423cdf199228c16b53431033582ea841dbac5ca1667d"
+    },
+    {
+      "name": "review",
+      "seed": 0,
+      "optimized": false,
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-21-w7-u1v-30f2d19/review/check.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.233,
+      "log": "runs/review-0.log",
+      "log_sha256": "120fdb01b1349c0da24e98305f1e423b5b8a48ab324d3a1342876588281cf4f0"
+    },
+    {
+      "name": "review",
+      "seed": 17,
+      "optimized": true,
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-21-w7-u1v-30f2d19/review/check.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "seconds": 1.245,
+      "log": "runs/review-17.log",
+      "log_sha256": "480be41a2b63704aa204e911b2b02590f0736dc605a06f4306a4dc8c738565c7"
+    }
+  ],
+  "research_runs_passed": 8,
+  "immutable_inputs_checked": 81,
+  "immutable_input_drift": [],
+  "all_previous_audit_bytes_preserved": true,
+  "proof_sha256": {
+    "REPORT.md": "db0852786e70a04ef67af087765b0e28d3a53b0b4d05d8fd8dd17c881d3142e3",
+    "transport/PROOF.md": "a064ac0dd7232b7310282d5c535491e8a48ad8d8a5205daa63a92fb253589bd2",
+    "review/PROOF.md": "6f0a3c833c496c18a58c377cabc0d897e7f748efc44c64027ee7e34bd3d0f14c",
+    "closure/SOURCE_BRIDGE.md": "718f76aa1a26abee4874e7ce00e80787ad08b3c426cacfab5e2dbd08eb4160c8"
+  },
+  "checks": {
+    "docs": {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "markdown_files": 706,
+      "local_links": 9324
+    },
+    "docgraph_docs": {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "documents": 97,
+      "relations": 383,
+      "errors": 0
+    },
+    "docgraph_whole_tree": {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "errors": 72,
+      "duplicate_id_errors": 72,
+      "errors_mentioning_new_audit": 0,
+      "summary": "FAIL: 97 documents, 368 relations, 12 families; 72 errors, 0 notes",
+      "log_sha256": "a69e6e445b1789ad1db613e33f26baecfff63adb94bc54d4a0e5555e7a9cd0e9"
+    },
+    "git_diff_check": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0
+    }
+  },
+  "new_original_edge_premise": [
+    "u1",
+    "v"
+  ],
+  "u3v_edge_premise_used": false,
+  "graph_symmetry_used": false,
+  "source_excluded_profile_ids": [
+    68,
+    69,
+    78,
+    79,
+    88,
+    89,
+    92,
+    93
+  ],
+  "remaining_necessary_profiles": 24,
+  "general_W7": "OPEN",
+  "general_J1_J2": "OPEN",
+  "unrestricted_original_cone": "OPEN",
+  "no_LP": true,
+  "new_original_graph_enumeration": false,
+  "new_Lean": false,
+  "lake_build_run": false,
+  "smaller_bad_constructed": false,
+  "commit_push_run": false,
+  "propagation": "L2; direct W7 parent and current consumers only",
+  "new_audit_links": {
+    "checked": 31,
+    "errors": []
+  },
+  "new_audit_whitespace_errors": []
+}
