@@ -1,0 +1,33 @@
+[
+  {
+    "argv": [
+      ".venv/bin/python",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "label": "docs",
+    "output": "OK: 713 Markdown files, 9478 local links; anchors, index, handoff, guide progress checked\n"
+  },
+  {
+    "argv": [
+      ".venv/bin/python",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "label": "formal_docs_docgraph",
+    "output": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "label": "tracked_diff_whitespace",
+    "output": ""
+  }
+]

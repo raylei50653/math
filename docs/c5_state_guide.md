@@ -2,13 +2,13 @@
 
 ## 最新進度
 
-現況核對：2026-10-20；[J1五邊路的精確殘餘與計數](../audits/2026-10-20-r6-941-j1-five-edge-417732f/REPORT.md)已接上原C7／W7語義；真14點disk往返篩選2→1，完整cap可1→0，不能假設交換與接回可交換。一般J1與壓縮仍OPEN；原固定95圖336態及P/R覆蓋界線保留。
+現況核對：2026-10-23；[大k隨機搜尋](../audits/2026-10-23-c5-large-k-random-78375cc/REPORT.md)完成k=25–60共14,400圖，零K外；定向3,600圖全為1023，非均勻抽樣不證一般覆蓋。[J1五邊路的精確殘餘與計數](../audits/2026-10-20-r6-941-j1-five-edge-417732f/REPORT.md)及原固定95圖336態保留；一般J1、壓縮與P/R覆蓋仍OPEN。
 
 | 欄位 | 現況 |
 | --- | --- |
 | 階段／生命週期 | 研究中；完整候選集合已有精確迭代語義，一般小狀態表示待證。指定 grammar 與有界枚舉已有成果；F／Z 為待初驗提案，域外構造研究已交付。 |
-| 最近研究更新 | 2026-10-20：[J1五邊路接口](../audits/2026-10-20-r6-941-j1-five-edge-417732f/REPORT.md)分清全來源Z、篩選後候選及完整cap；真disk核對中途觀測、來源回溯與不交換反控制。 |
-| 上次完成 | 真14點disk的11,088完整著色與48,048刪R核心著色全枚舉、全部完整cap接合一致；往返2→1及丟mask復活反例成立。固定95圖336態保留。 |
+| 最近研究更新 | 2026-10-23：[大k反例抽樣](../audits/2026-10-23-c5-large-k-random-78375cc/REPORT.md)先記提議再做兩階段實驗；一般抽樣126個已知keys，定向幾何內3,600圖全為1023，一般覆蓋未關閉。 |
+| 上次完成 | k=25–60共14,400份原圖、144,000列精確判定與獨立幾何／witness核驗；零新key。既有J1真14點disk的往返2→1、完整cap可1→0及固定95圖336態保留。 |
 | 目前停止點 | 選路候選不保全來源正性、色置換或完整orbit守恆；交換與cap未必交換。一般小狀態表示、完整J1來源及圖大小下降仍OPEN。 |
 | 下一步 | 對具名J1動作，以精確殘餘更新作語義基線，尋能保傳輸／篩選的較小surgery描述，並保來源回溯及接回成本；候選數不增不能當較小bad。P/R另尋來源代表。 |
 | 接手入口 | [五邊路與同源計數](../audits/2026-10-20-r6-941-j1-five-edge-417732f/REPORT.md)、[精確殘餘／cap義務](../audits/2026-10-20-r6-941-j1-five-edge-417732f/residual/REPORT.md)；一般迭代沿[既有紙證](../audits/2026-10-20-kempe-residual-iteration-af0df80/theory/REPORT.md)，P/R沿[來源覆蓋](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)。 |
@@ -17,8 +17,8 @@
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
-| 2026-10-19／三探測完整解碼 | [有限P/R模型](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md)中，四列未來行為需要全部132態；三個指定後綴已能還原十列，圖層語義與來源覆蓋另證。 |
-| 2026-10-19／任意disk的P/R語義 | [完整fibre雙射](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)將三探測推到任意大小disk的十列固定字面計數；一般文法代表覆蓋保留OPEN。 |
+| 2026-10-23／大k非窮舉反例搜尋 | [兩階段實圖與精確Σ](../audits/2026-10-23-c5-large-k-random-78375cc/REPORT.md)14,400圖零新key；定向族全1023，下一抽樣義務是獨立起始族與固定k鏈長對照，一般覆蓋OPEN。 |
+| 2026-10-19／三探測及實圖語義 | [有限P/R模型](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md)四列未來行為需要132態；[完整fibre雙射](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md)把三探測解碼推到任意disk十列支援／計數，一般文法代表覆蓋OPEN。 |
 | 2026-10-20／來源覆蓋界線 | [精確合同與反控制](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md)證一般計數代表不存在；支援覆蓋等價原分類，P吸收及幾何可剝子類皆不關閉一般義務。 |
 | 2026-10-20／聯合觀測到精確迭代 | [三台同步](../audits/2026-10-20-multi-kempe-machines-af0df80/REPORT.md)定位384條假路徑；[殘餘迭代](../audits/2026-10-20-kempe-residual-iteration-af0df80/REPORT.md)以傳輸＋篩選全排，固定圖336個非空集合；一般壓縮及J1仍OPEN。 |
 | 2026-10-20／五邊路的同源語義 | [W7計數及殘餘接合](../audits/2026-10-20-r6-941-j1-five-edge-417732f/REPORT.md)以真disk核對保共同軌跡與完整cap；選路後計數不替全來源，一般J1仍OPEN。 |
@@ -50,6 +50,7 @@
 | P/R四列三步解碼 | 最小統一深度3，59對需三步；深度≤3唯一最小探測集合RR／PRR／RRR重建全部十列，適用1024形式mask；文法族四列最小機器132態。圖語義及計數升級由下項完成 | [代數證明、見證及三路重播](../audits/2026-10-19-c5-observation-depth-ed59843/REPORT.md) |
 | P/R實圖語義與計數解碼 | 任意大小disk上，明定外側push／右轉合法且完整fibre轉移等於附件整數矩陣；三探測解碼十列支援／固定字面計數。5120局部指派與792圖／7920完整fibres重建；一般F/C代表覆蓋及新Lean仍OPEN | [任意大小證明、獨立圖重播及計數證書](../audits/2026-10-19-c5-pr-disk-semantics-ed59843/REPORT.md) |
 | P/R文法來源覆蓋 | 保全部未來四列支援等價完整十列相等；一般計數代表由C5內葉點反駁。933／941首次P入K、932六態殘留；固定17P外補把任意非空支援送1023，會改框增點。逆P／三角星剝除給充分子類，一般支援及r6覆蓋OPEN，無新Lean | [精確量詞、任意字串定理與真圖證書](../audits/2026-10-20-c5-pr-source-coverage-9c36e3c/REPORT.md) |
+| 大k隨機反例搜尋 | k=25–60共14,400不同帶標號圖，精確十列零K外、見126個已知keys；3,600圖保指定必要幾何且全1023，其中3,027另滿足h≥3／n₅≥9。非均勻、未證混合，下一抽樣須換獨立起始族並比較固定k鏈長；一般覆蓋OPEN | [實驗前提議、完整原圖、獨立核驗與重播](../audits/2026-10-23-c5-large-k-random-78375cc/REPORT.md) |
 | Embedding 到 grammar | 固定 C5＋K3 接線的紙面 topology 論證依賴 Jordan–Schoenflies 等事實；embedding 抽取與 topology soundness 未 Lean 化 | [topology](topology_completeness.md) |
 | 固定 relation 庫／pp | 固定 grammar 的 87 states 與完整 relation 查詢保存；pp 求值器屬 Python，87 不等於一般 cell catalogue 的 132 | [relation 庫](boundary_relations.md)、[pp](pp_relations.md)、[fan](fan_pentagon.md) |
 | Cell 枚舉 | R1／SYM／prefix／DFS／bitmask／integer viable 的 Lean 鏈及外部信任已明列；k=6、7 重現只是有界證據 | [enumerator](c5_cell_enumerator.md) |

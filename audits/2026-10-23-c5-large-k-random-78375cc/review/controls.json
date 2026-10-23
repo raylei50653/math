@@ -1,0 +1,55 @@
+{
+  "all_passed": true,
+  "brute_force_comparison_rows": 320,
+  "catalogue_sha256": "04650cea947a5086360e895c1a7350690f53da745314379a3328b97ee02d81b8",
+  "checked_catalogue_rows": 1320,
+  "negative_controls": [
+    {
+      "name": "edge missing",
+      "rejection": "wrong edge count for C5 near triangulation"
+    },
+    {
+      "name": "edge duplicated",
+      "rejection": "duplicate undirected edge"
+    },
+    {
+      "name": "face reversed locally",
+      "rejection": "internal edge must meet two oppositely oriented faces"
+    },
+    {
+      "name": "face duplicated",
+      "rejection": "duplicate triangular face"
+    },
+    {
+      "name": "wrong k",
+      "rejection": "k != n - 5"
+    },
+    {
+      "name": "boundary order changed",
+      "rejection": "missing boundary edge"
+    },
+    {
+      "name": "rows omitted empty",
+      "rejection": "rows must preserve all ten fixed patterns"
+    },
+    {
+      "name": "bad full witness",
+      "rejection": "witness has a monochromatic edge"
+    },
+    {
+      "name": "missing accepted witness",
+      "rejection": "witness must give a color 0..3 at every vertex"
+    },
+    {
+      "name": "false UNSAT",
+      "rejection": "independent exact solver disagrees on row 01012"
+    },
+    {
+      "name": "partial witness",
+      "rejection": "witness must give a color 0..3 at every vertex"
+    }
+  ],
+  "node_limit_distinguishes_unresolved": true,
+  "positive_topology_controls": 2,
+  "schema": "c5-independent-checker-controls-v1"
+}
