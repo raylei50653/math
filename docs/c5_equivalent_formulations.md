@@ -217,6 +217,7 @@ python3 scripts/c5_equivalent_forms_check.py
 | (E) 對 K132 | 64 個抽象四列 masks 全在 K132 外；132 keys 在 10 個 D₅ 位置皆不違反 (E) | 窮舉 |
 | 相鄰拒絕 keys | 45 keys、8 軌道 | 窮舉 `cells.json` |
 | 端邊色字 | 四列色字及 singleton 端邊與 §4 表一致 | 窮舉 |
+| 暴露端點對圖 Γ 的強 Plücker 封閉性 | K132 有 10 個反例（935、943 軌道）；弱版本全通過，見[去奇偶任務](tasks/c5_parity_relaxation_tasks.md) | 窮舉 |
 | `N_β=Σ2^{c(M)}` | 60 張隨機近三角化（內點 1–8，seed 17）×10 列全等，312 列為正 | 隨機控制 |
 
 負控制：拿掉閉環偶性檢查，或把權重 `2^{c(M)}` 改成 1，隨機控制均失敗。

@@ -120,6 +120,8 @@ W7既有[短型I的03／02共同義務](../audits/2026-10-21-w7-I-joint-2c38d1d/
 完成條件：任一分支得到同 H 四列證書的較小 bad，或給出同一外側不能分離的具名障礙。
 停止條件：若只得到新的局部必要表而未改變 (S)／六 fibre／九列表的判定，記為診斷，不再沿同一子支加界。
 被延後的實驗：941 Γ8 逐輪外點下界、W7 剩餘 profiles 的新枚舉。R5 與強化假設 U 只作記錄，未排程。
+(M) 方向的四份探索任務見[去掉奇偶任務](tasks/c5_parity_relaxation_tasks.md)：去奇偶後 (E) 由不交交錯路直接成立，
+反例的全部難度在補圖奇偶；單次交錯交換與 Γ 的強 Plücker 封閉性已被小圖／目錄反例否定。尚未開始。
 
 **第五輪的具名停止點（2026-10-23）。** 原全域最小r6／933兩星來源下，[933新換框圖](../audits/2026-10-23-three-mask-round5-cb8f859/933/REPORT.md)在同一原D外面識別a=c，再於新空五面識別A=R，外框改為(A,s,v,w,t)，完成k−8。完整支持限271／314／319，迫01021／01201／01231三族正，前兩族全部原rxy回填皆空；具名36-target測試後，各留下16-fibre OR必正，未算可行。原bph回填精確iff n=q且唯一；非crossed掛橋C還迫至少五邊原02 r–a/c路，五邊時為原induced C7，否則至少七邊，V crossed例外保留。六D fibre全空與[第三輪兩新k−2圖](../audits/2026-10-23-three-mask-round3-cb8f859/933/REPORT.md)的較小bad義務仍OPEN；H*本身在K132，固定Q1／Q2／fan-B方法不重啟。
 [932原Q接續](../audits/2026-10-23-three-mask-round5-cb8f859/932/REPORT.md)在原h=4分支以同一完整C9–Q9環帶、全部C lifts及原Q whole-Kempe排二十份s=0，得s≥1、d≥2、Q長至少10。每真弦兩側皆深點，端點C contacts最小距離≥3；23點局部反控制仍有Q弦。一般s的空band row必保留，不可把Q當induced。原s≥1零pair、h≥5及一般932仍OPEN，共同k≥23不變。

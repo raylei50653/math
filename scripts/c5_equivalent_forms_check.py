@@ -9,7 +9,8 @@ python3 scripts/c5_equivalent_forms_check.py
 2. None of the 132 catalogue keys violates statement (E) in any D5 position;
    all 64 abstract four-row masks lie outside the catalogue.
 3. Catalogue keys rejecting two adjacent singletons: 45 keys, 8 D5 orbits.
-4. XOR words of the four certificate rows and their singleton edge positions.
+4. XOR words of the four certificate rows and their singleton edge positions;
+   Tait-Pluecker closure of the exposed-pair graph fails on 10 catalogue keys.
 5. On random C5 near-triangulations (explicit face lists, no embedding
    search), every literal boundary row beta satisfies
    N_beta = sum over admissible even-complement matchings M of 2^c(M).
@@ -90,6 +91,45 @@ def check_catalogue():
 
 def xor_word(beta):
     return tuple(beta[i] ^ beta[(i + 1) % 5] for i in range(5))
+
+
+def exposed_pair(beta):
+    w = xor_word(beta)
+    c = Counter(w)
+    return frozenset(i for i in range(5) if c[w[i]] == 1)
+
+
+def check_tait_plucker():
+    """Gamma(mask) = exposed terminal pairs. Strong closure: two crossing pairs
+    in Gamma force both pairs of some noncrossing re-pairing; weak: one pair."""
+    pairs = [exposed_pair(p) for p in PO]
+
+    def gamma(mask):
+        return {pairs[b] for b in range(10) if mask >> b & 1}
+
+    def crossing(p, q):
+        a, b = sorted(p)
+        return not (p & q) and len([x for x in q if a < x < b]) == 1
+
+    def repairings(p, q):
+        a, b, c, d = sorted(p | q)
+        return ((frozenset((a, b)), frozenset((c, d))), (frozenset((a, d)), frozenset((b, c))))
+
+    def strong(g):
+        return all(any(x in g and y in g for x, y in repairings(p, q))
+                   for p in g for q in g if crossing(p, q))
+
+    def weak(g):
+        return all(any(x in g or y in g for x, y in repairings(p, q))
+                   for p in g for q in g if crossing(p, q))
+    strong_fail = sorted(k for k in KEYS if not strong(gamma(k)))
+    assert strong_fail == [935, 942, 943, 956, 958, 997, 999, 1012, 1013, 1020], strong_fail
+    assert all(weak(gamma(k)) for k in KEYS)
+    assert not any(strong(gamma(m)) for m in (932, 933, 941))
+    assert all(weak(gamma(m)) for m in (932, 933, 941))
+    return {'strong_closure_failures_in_K': strong_fail,
+            'weak_closure_failures_in_K': 0,
+            'three_branches_strong': False, 'three_branches_weak': True}
 
 
 def check_words():
@@ -249,6 +289,7 @@ def main():
         'identity_masks': check_identity_masks(),
         'catalogue': check_catalogue(),
         'xor_words': check_words(),
+        'tait_plucker': check_tait_plucker(),
         'matching_control': check_matchings(),
     }
     json.dump(report, sys.stdout, indent=1)

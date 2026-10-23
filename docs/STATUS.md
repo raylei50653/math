@@ -724,6 +724,7 @@ d_G≥6及k≥18；T3接通no4ct三支私人ρ≥5。一般RING、
 | [T3：W5 no4ct圈秩接入](../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md) | 全域最小目錄外來源三支任取合法W5皆ρ≥5；森林至圈秩四橋接完整，七seal／407記錄零漂移；沿用舊完整染色證據，一般縮減與無界來源OPEN |
 | [W5 私人圈秩四兩分支排除](c5_w5_private_rank4.md) | contractible 6,389與essential 2,872完整必要模板皆Σ∈K132；合併得任取合法W5私人ρ≥5。原十pins、全部fibres／空格／lifts與rotation保留；來源由完備化約排除，一般縮減、小代表及K∞仍OPEN，未Lean化 |
 | [W5 私人圈秩三contractible分支](c5_w5_private_rank3_contractible.md) | 固定50d5474、k≥13；c≤2與完整block/M化約，c=1的2,162及c=2的108模板全Σ∈K132，直接排除。接essential結果得任取合法W5私人ρ≥4，後續圈秩四亦排除至ρ≥5；23,244,800完整cells、獨立checker與16次破損拒絕；無代表保存宣稱，一般小代表及K∞OPEN，未Lean化 |
+| [去掉奇偶的四份探索任務](tasks/c5_parity_relaxation_tasks.md) | (M) 方向：去奇偶 (E) 引理、交換奇偶公式、五葉 C1 與多參考阻斷、負面資料凍結。只登記起點資料，任務未開始 |
 | [五度鄰環的三份衍生任務](tasks/c5_degree5_link_tasks.md) | 保存原BASE任務；A／B／C各自完成明列規格。C來源另由crosscut排除，獨立132² joins亦完成；一般縮減仍OPEN |
 | [最小來源度數界的本地發布紀錄](history/2026-10-12-c5-saturation-degree-bound-publish.md) | 凍結、覆核、replay 與文件／Lean 回歸；只 commit，不 push，保留 unrelated staged 工作 |
 | [count-cone bridge](c5_count_cone_bridge.md)、[B₅ face](c5_b5_face.md)、[Kempe-class 計數](c5_kempe_class_counts.md) | near-triangulation 化約、部分 Lean 代數及 class 級紙面計數已完成；普通 pairing 不給最終矛盾，cone／connectivity 缺口仍在 |
