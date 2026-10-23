@@ -586,6 +586,7 @@ d_G≥6及k≥18；T3接通no4ct三支私人ρ≥5。一般RING、
 
 | 文件 | 現況與剩餘界線 |
 | --- | --- |
+| [三支共同目標的等價表述](c5_equivalent_formulations.md) | 四列延拓 (E)、相鄰 singleton (AS) 與五端點偶補匹配 (M) 互相等價，皆 ⇔ `K∞=K≤5`；DLM 受限 D₄ ⇔ (E) ∧ R5，D–L Conj 9 ⇒ (E)。另列 932／933／941 的局部 iff 接口。紙面＋有限核對，命題仍OPEN，未Lean化 |
 | [任務 A：ε=2 四-spoke mixed-(1,2)+a-unary](c5_excess_two_mixed_core_four_spoke_mixed12.md) | 原01／23及root交換來源排除；a-spoke省略為原C+a+U單一ternary、整份G−U亦Ω，完整joint迫U三列singleton3／2／3違反未用色守恆。當輪22／26必要殘留由A₂再排01／12；原artifact、72完整degree控制與witnesses保留，未排整型、ε≥3未證，紙面＋Python、未Lean化 |
 | [A₂：mixed-(1,2) 原01／12共同長／短face](c5_excess_two_mixed_core_four_spoke_mixed12_01_12.md) | 原actual U接2的crosscut封長C至{2}，短C至{1}；01202完整R_U={2}，固定(a,b,u)=(3,0,2)的三hub引理给完整原joint，來源及root交換全排。其餘20／24框架、52／86支援、68／124relations保存；36完整degree控制、2,880joins／46,080fibres。未排mixed12整型、未證ε≥3，紙面＋Python、未Lean化 |
 | [A₃：mixed-(1,2) 共用01／01原三hub](c5_excess_two_mixed_core_four_spoke_mixed12_01_01.md) | 每份四disk rotations與完整ternary保持；C原face支援為{0}或{1}，原互異色三hub延拓使ax非critical，01202的U singleton2／3亦給完整joint矛盾。含root交換全排；其餘18／22框架、44／70支援、56／102relations保存。36完整degree控制、360投影等式與5,712整份C替換witnesses；mixed12整型與ε≥3未證，紙面＋Python、未Lean化 |
