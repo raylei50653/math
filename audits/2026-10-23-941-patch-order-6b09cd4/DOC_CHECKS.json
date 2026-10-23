@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "scope": "formal docs and scoped formal DocGraph; whole-tree DocGraph not rerun",
+  "checks": [
+    {
+      "command": "python3 -B scripts/check_docs.py",
+      "exit_code": 0,
+      "stdout": "OK: 712 Markdown files, 9423 local links; anchors, index, handoff, guide progress checked"
+    },
+    {
+      "command": "python3 -B tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "stdout": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes"
+    },
+    {
+      "command": "git diff --check; git diff --numstat (read-only diff summary)",
+      "exit_code": 0,
+      "stdout": "git diff --check: no whitespace errors; diff summary verified"
+    }
+  ],
+  "whole_tree_docgraph": "not rerun; no whole-tree PASS claim",
+  "propagation": "L1 only; guide and STATUS; HANDOFF and common language unchanged"
+}

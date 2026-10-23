@@ -1,0 +1,156 @@
+{
+  "id": "wrong-side-general--negative",
+  "directory": "audits/2026-10-23-941-wrong-side-general-6b09cd4",
+  "group": "wrong-side-general",
+  "mode": "negative",
+  "argv": [
+    "python3",
+    "-B",
+    "audits/2026-10-23-941-wrong-side-general-6b09cd4/check.py",
+    "--negative"
+  ],
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "documented_command": "python3 -B audits/2026-10-23-941-wrong-side-general-6b09cd4/check.py --negative",
+  "authority": "audits/2026-10-23-941-wrong-side-general-6b09cd4/REPORT.md",
+  "cwd": "repository root",
+  "started_utc": "2026-10-23T14:07:49.386699+00:00",
+  "timeout_seconds": 180,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "{\"authority_inputs\": 54, \"finite_calibration\": \"triggered and holds\", \"negative_controls\": [{\"name\": \"promote_source\", \"status\": \"rejected\"}, {\"name\": \"erase_rootless_E\", \"status\": \"rejected\"}, {\"name\": \"erase_q_exception\", \"status\": \"rejected\"}, {\"name\": \"remove_private_cutpoint\", \"status\": \"rejected\"}, {\"name\": \"invent_cycle_cutpoint\", \"status\": \"rejected\"}, {\"name\": \"lose_boundary_Yq\", \"status\": \"rejected\"}, {\"name\": \"invent_C_bridge\", \"status\": \"rejected\"}, {\"name\": \"erase_actual_q_face\", \"status\": \"rejected\"}, {\"name\": \"move_boundary_q_face_outside\", \"status\": \"rejected\"}, {\"name\": \"use_interior_q_as_boundary\", \"status\": \"rejected\"}, {\"name\": \"swap_one_direction_identity\", \"status\": \"rejected\"}], \"seed\": 0, \"source_control\": \"not triggered\", \"statistics\": {\"B13\": [{\"name\": \"boundary_b_equals_c\", \"simple_paths\": 1, \"unavoidable_vertices\": [\"q\"]}, {\"name\": \"private_B_cutpoint_rootless_tail\", \"simple_paths\": 1, \"unavoidable_vertices\": [\"q\", \"t\", \"w\"]}, {\"name\": \"alternative_B_path_avoids_q\", \"simple_paths\": 2, \"unavoidable_vertices\": []}], \"C12\": [{\"name\": \"C_literal01_bridge\", \"r_e_bridges\": [[\"a\", \"k0\"], [\"a\", \"u\"], [\"b1\", \"k0\"], [\"b1\", \"v\"], [\"e\", \"v\"], [\"r\", \"u\"]], \"simple_paths\": 1}, {\"name\": \"C_cycle_has_no_r_e_bridge\", \"r_e_bridges\": [], \"simple_paths\": 2}], \"wedges\": [{\"inside\": 3, \"name\": \"boundary_q_all_F_faces_inside\", \"outside\": 0, \"q_faces\": 3}, {\"inside\": 2, \"name\": \"interior_q_requires_boundary_premise\", \"outside\": 2, \"q_faces\": 4}]}, \"status\": \"PASS\"}\n",
+  "stderr": "",
+  "elapsed_seconds": 0.053778,
+  "payload": {
+    "authority_inputs": 54,
+    "finite_calibration": "triggered and holds",
+    "negative_controls": [
+      {
+        "name": "promote_source",
+        "status": "rejected"
+      },
+      {
+        "name": "erase_rootless_E",
+        "status": "rejected"
+      },
+      {
+        "name": "erase_q_exception",
+        "status": "rejected"
+      },
+      {
+        "name": "remove_private_cutpoint",
+        "status": "rejected"
+      },
+      {
+        "name": "invent_cycle_cutpoint",
+        "status": "rejected"
+      },
+      {
+        "name": "lose_boundary_Yq",
+        "status": "rejected"
+      },
+      {
+        "name": "invent_C_bridge",
+        "status": "rejected"
+      },
+      {
+        "name": "erase_actual_q_face",
+        "status": "rejected"
+      },
+      {
+        "name": "move_boundary_q_face_outside",
+        "status": "rejected"
+      },
+      {
+        "name": "use_interior_q_as_boundary",
+        "status": "rejected"
+      },
+      {
+        "name": "swap_one_direction_identity",
+        "status": "rejected"
+      }
+    ],
+    "seed": 0,
+    "source_control": "not triggered",
+    "statistics": {
+      "B13": [
+        {
+          "name": "boundary_b_equals_c",
+          "simple_paths": 1,
+          "unavoidable_vertices": [
+            "q"
+          ]
+        },
+        {
+          "name": "private_B_cutpoint_rootless_tail",
+          "simple_paths": 1,
+          "unavoidable_vertices": [
+            "q",
+            "t",
+            "w"
+          ]
+        },
+        {
+          "name": "alternative_B_path_avoids_q",
+          "simple_paths": 2,
+          "unavoidable_vertices": []
+        }
+      ],
+      "C12": [
+        {
+          "name": "C_literal01_bridge",
+          "r_e_bridges": [
+            [
+              "a",
+              "k0"
+            ],
+            [
+              "a",
+              "u"
+            ],
+            [
+              "b1",
+              "k0"
+            ],
+            [
+              "b1",
+              "v"
+            ],
+            [
+              "e",
+              "v"
+            ],
+            [
+              "r",
+              "u"
+            ]
+          ],
+          "simple_paths": 1
+        },
+        {
+          "name": "C_cycle_has_no_r_e_bridge",
+          "r_e_bridges": [],
+          "simple_paths": 2
+        }
+      ],
+      "wedges": [
+        {
+          "inside": 3,
+          "name": "boundary_q_all_F_faces_inside",
+          "outside": 0,
+          "q_faces": 3
+        },
+        {
+          "inside": 2,
+          "name": "interior_q_requires_boundary_premise",
+          "outside": 2,
+          "q_faces": 4
+        }
+      ]
+    },
+    "status": "PASS"
+  },
+  "success_evidence": "explicit PASS",
+  "passed": true
+}

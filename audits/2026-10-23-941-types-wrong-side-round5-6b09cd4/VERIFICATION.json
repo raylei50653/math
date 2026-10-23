@@ -1,0 +1,130 @@
+{
+  "schema": "941-k-collar-round5-verification-v1",
+  "status": "PASS",
+  "root_checks": "ROOT_CHECKS.json",
+  "child_checks": [
+    {
+      "path": "audits/2026-10-23-941-gamma8-empty-k-stars-6b09cd4/VERIFICATION.json",
+      "sha256": "bb63cd17edf08b82c9d22406853eb9e588bbfde48b0a141b6cf7643625acc0b3",
+      "semantic_negative_controls": 10,
+      "external_negative_controls": 2,
+      "normal_and_seed17": "PASS"
+    },
+    {
+      "path": "audits/2026-10-23-941-gamma8-nonempty-k-stars-6b09cd4/VERIFICATION.json",
+      "sha256": "df39752065d2e62821eaaafc0bdd076d917bfbd49a6c4276f4a4eeefbc9127d5",
+      "semantic_negative_controls": 12,
+      "external_negative_controls": 2,
+      "normal_and_seed17": "PASS"
+    },
+    {
+      "path": "audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/VERIFICATION.json",
+      "sha256": "f92b47ca5446cdfcd22200a3be2bf704ad2cf7b21a16d44ba872e4f41ba2bb77",
+      "semantic_negative_controls": 11,
+      "external_negative_controls": 2,
+      "normal_and_seed17": "PASS"
+    }
+  ],
+  "old34_replays": [
+    {
+      "seed": "normal",
+      "returncode": 0,
+      "log": "runs/old34-normal.stdout",
+      "result": {
+        "all_backfill": true,
+        "candidates": 34,
+        "caps": 16,
+        "complete_original_lifts": 1196,
+        "complete_proper_words": 31,
+        "complete_safe_cover": true,
+        "frozen_inputs": 13,
+        "immutable_drift": 0,
+        "original_relation_sizes": [
+          [
+            23,
+            2
+          ],
+          [
+            25,
+            2
+          ],
+          [
+            26,
+            8
+          ],
+          [
+            28,
+            4
+          ]
+        ],
+        "paper": "conditional sealed cap, planarity, actual accepted witness and global minimum: PROOF.md",
+        "previous_manifest_entries": 253,
+        "same_candidate_all_row_checks": 12896,
+        "savings": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "seed": 0,
+        "source_controls": "not triggered",
+        "status": "PASS"
+      }
+    },
+    {
+      "seed": "seed17",
+      "returncode": 0,
+      "log": "runs/old34-seed17.stdout",
+      "result": {
+        "all_backfill": true,
+        "candidates": 34,
+        "caps": 16,
+        "complete_original_lifts": 1196,
+        "complete_proper_words": 31,
+        "complete_safe_cover": true,
+        "frozen_inputs": 13,
+        "immutable_drift": 0,
+        "original_relation_sizes": [
+          [
+            23,
+            2
+          ],
+          [
+            25,
+            2
+          ],
+          [
+            26,
+            8
+          ],
+          [
+            28,
+            4
+          ]
+        ],
+        "paper": "conditional sealed cap, planarity, actual accepted witness and global minimum: PROOF.md",
+        "previous_manifest_entries": 253,
+        "same_candidate_all_row_checks": 12896,
+        "savings": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "seed": 17,
+        "source_controls": "not triggered",
+        "status": "PASS"
+      }
+    }
+  ],
+  "new_semantic_negatives": 44,
+  "new_external_negative_controls": 8,
+  "root_semantic_negatives": 6,
+  "transfer_semantic_negatives": 5,
+  "child_manifest_entries_checked": 128,
+  "round4_manifest_entries_checked": 162,
+  "immutable_drift": 0,
+  "source_realizability": "not triggered",
+  "new_Lean": false,
+  "lake_build_rerun": false
+}

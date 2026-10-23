@@ -1,0 +1,100 @@
+{
+  "schema": "941-wrong-side-general-verification-v1",
+  "replays": [
+    {
+      "name": "current-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-wrong-side-general-6b09cd4/check.py"
+      ],
+      "env": {},
+      "returncode": 0,
+      "output": "runs/current-normal.json",
+      "sha256": "caedea81930f7a66ac32ede89a84e6a76aafffc6ec008071484b62428330a1d5",
+      "status": "PASS"
+    },
+    {
+      "name": "current-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-wrong-side-general-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "returncode": 0,
+      "output": "runs/current-seed17.json",
+      "sha256": "532b0ac07c8e456efb06a7cae41767360c6af2f40197bc85fd2c64049ca1c442",
+      "status": "PASS"
+    },
+    {
+      "name": "current-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-wrong-side-general-6b09cd4/check.py",
+        "--negative"
+      ],
+      "env": {},
+      "returncode": 0,
+      "output": "runs/current-negative.json",
+      "sha256": "578955843055c8e08cd41e95c003d10ab17012cc37c396886ec8fc292e20fcb1",
+      "status": "PASS"
+    },
+    {
+      "name": "predecessor-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-p-b13-6b09cd4/check.py"
+      ],
+      "env": {},
+      "returncode": 0,
+      "output": "runs/predecessor-normal.json",
+      "sha256": "b871971d8462d749e6dec5c21f7b4e5b50777db01d0774814d746cb2179a7ffb",
+      "status": "PASS"
+    },
+    {
+      "name": "predecessor-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-p-b13-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "returncode": 0,
+      "output": "runs/predecessor-seed17.json",
+      "sha256": "d3100b0a9782b79229334bd520c6ef68380334db584f543d604d4371eae48100",
+      "status": "PASS"
+    },
+    {
+      "name": "predecessor-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-p-b13-6b09cd4/check.py",
+        "--negative"
+      ],
+      "env": {},
+      "returncode": 0,
+      "output": "runs/predecessor-negative.json",
+      "sha256": "ad9535220cf48793f051626c7573edcc879b842ca6b775ea4b22d68c21d2f71e",
+      "status": "PASS"
+    }
+  ],
+  "mathematical_authority_inputs": 54,
+  "authority_drift": [],
+  "finite_calibration": "triggered and holds",
+  "source_control": "not triggered",
+  "same_statistics_normal_seed17": true
+}

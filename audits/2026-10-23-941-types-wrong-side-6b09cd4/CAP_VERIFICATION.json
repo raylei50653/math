@@ -1,0 +1,449 @@
+{
+  "status": "PASS",
+  "certificate": "CAP_RELATION-v2.json",
+  "normal_seed17_equal": true,
+  "runs": [
+    {
+      "mode": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-6b09cd4/check_cap_relation.py"
+      ],
+      "exit_code": 0,
+      "result": {
+        "complete_lifts_each": 52,
+        "empty_caps_safe": [
+          {
+            "diagonals": [
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                4
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "leak": []
+          },
+          {
+            "diagonals": [
+              [
+                1,
+                3
+              ],
+              [
+                1,
+                5
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "leak": []
+          }
+        ],
+        "empty_caps_unsafe_count": 12,
+        "empty_each": 12,
+        "nonempty_each": 19,
+        "normalized_ordered_words": 31,
+        "original_caps": "only new named K6 cap independently recomputed; upstream complete fibres/lifts retained",
+        "replacement": "not established",
+        "seed": 0,
+        "source_realizability": "not triggered",
+        "status": "PASS",
+        "two_hub_leaks": [
+          {
+            "diameter": [
+              0,
+              3
+            ],
+            "leak": [
+              [
+                0,
+                1,
+                0,
+                2,
+                1,
+                2
+              ],
+              [
+                0,
+                1,
+                0,
+                2,
+                3,
+                2
+              ],
+              [
+                0,
+                1,
+                2,
+                1,
+                0,
+                2
+              ],
+              [
+                0,
+                1,
+                2,
+                1,
+                0,
+                3
+              ]
+            ]
+          },
+          {
+            "diameter": [
+              1,
+              4
+            ],
+            "leak": [
+              [
+                0,
+                1,
+                2,
+                0,
+                2,
+                1
+              ],
+              [
+                0,
+                1,
+                2,
+                1,
+                0,
+                2
+              ],
+              [
+                0,
+                1,
+                2,
+                1,
+                0,
+                3
+              ],
+              [
+                0,
+                1,
+                2,
+                3,
+                2,
+                1
+              ]
+            ]
+          },
+          {
+            "diameter": [
+              2,
+              5
+            ],
+            "leak": [
+              [
+                0,
+                1,
+                0,
+                2,
+                1,
+                2
+              ],
+              [
+                0,
+                1,
+                0,
+                2,
+                3,
+                2
+              ],
+              [
+                0,
+                1,
+                2,
+                0,
+                2,
+                1
+              ],
+              [
+                0,
+                1,
+                2,
+                3,
+                2,
+                1
+              ]
+            ]
+          }
+        ],
+        "wheel_leak": [
+          [
+            0,
+            1,
+            0,
+            2,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2,
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            1,
+            2,
+            1,
+            0,
+            2
+          ]
+        ]
+      },
+      "stdout_sha256": "d2a01ee749d582958bf1944e0607c0b32180c5683a3417e9763f42b14555d21f"
+    },
+    {
+      "mode": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-types-wrong-side-6b09cd4/check_cap_relation.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "result": {
+        "complete_lifts_each": 52,
+        "empty_caps_safe": [
+          {
+            "diagonals": [
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                4
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "leak": []
+          },
+          {
+            "diagonals": [
+              [
+                1,
+                3
+              ],
+              [
+                1,
+                5
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            "leak": []
+          }
+        ],
+        "empty_caps_unsafe_count": 12,
+        "empty_each": 12,
+        "nonempty_each": 19,
+        "normalized_ordered_words": 31,
+        "original_caps": "only new named K6 cap independently recomputed; upstream complete fibres/lifts retained",
+        "replacement": "not established",
+        "seed": 17,
+        "source_realizability": "not triggered",
+        "status": "PASS",
+        "two_hub_leaks": [
+          {
+            "diameter": [
+              0,
+              3
+            ],
+            "leak": [
+              [
+                0,
+                1,
+                0,
+                2,
+                1,
+                2
+              ],
+              [
+                0,
+                1,
+                0,
+                2,
+                3,
+                2
+              ],
+              [
+                0,
+                1,
+                2,
+                1,
+                0,
+                2
+              ],
+              [
+                0,
+                1,
+                2,
+                1,
+                0,
+                3
+              ]
+            ]
+          },
+          {
+            "diameter": [
+              1,
+              4
+            ],
+            "leak": [
+              [
+                0,
+                1,
+                2,
+                0,
+                2,
+                1
+              ],
+              [
+                0,
+                1,
+                2,
+                1,
+                0,
+                2
+              ],
+              [
+                0,
+                1,
+                2,
+                1,
+                0,
+                3
+              ],
+              [
+                0,
+                1,
+                2,
+                3,
+                2,
+                1
+              ]
+            ]
+          },
+          {
+            "diameter": [
+              2,
+              5
+            ],
+            "leak": [
+              [
+                0,
+                1,
+                0,
+                2,
+                1,
+                2
+              ],
+              [
+                0,
+                1,
+                0,
+                2,
+                3,
+                2
+              ],
+              [
+                0,
+                1,
+                2,
+                0,
+                2,
+                1
+              ],
+              [
+                0,
+                1,
+                2,
+                3,
+                2,
+                1
+              ]
+            ]
+          }
+        ],
+        "wheel_leak": [
+          [
+            0,
+            1,
+            0,
+            2,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2,
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            1,
+            2,
+            1,
+            0,
+            2
+          ]
+        ]
+      },
+      "stdout_sha256": "dcf945506fe91a651e070ac42641528ca2142137121c9ab0abd7cbaf3ea53ff4"
+    },
+    {
+      "mode": "negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-6b09cd4/check_cap_relation.py",
+        "--negative"
+      ],
+      "exit_code": 0,
+      "result": {
+        "negative_controls_rejected": [
+          "delete_empty_fibre",
+          "delete_full_lift",
+          "wrong_boundary_order",
+          "input_hash"
+        ],
+        "seed": 0,
+        "source_realizability": "not triggered",
+        "status": "PASS"
+      },
+      "stdout_sha256": "9ac04cd64811674d3e28a5a643c2012d81a86829a18c2df57ac2fc496076cf89"
+    }
+  ],
+  "preserved_v1_failure": {
+    "log": "runs/cap-relation-normal.stdout",
+    "reason": "concurrent draft K6_CAPS gained oriented actual faces after first snapshot; frozen v1 retained, no edge/frame change",
+    "superseded_certificate": "CAP_RELATION.json"
+  }
+}

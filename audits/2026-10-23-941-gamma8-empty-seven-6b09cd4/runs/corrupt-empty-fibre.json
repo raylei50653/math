@@ -1,0 +1,13 @@
+{
+  "PYTHONHASHSEED": null,
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-seven-6b09cd4/check.py",
+    "--certificate",
+    "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-seven-6b09cd4/negative-inputs/corrupt-empty-fibre.json"
+  ],
+  "returncode": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-seven-6b09cd4/check.py\", line 178, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-seven-6b09cd4/check.py\", line 169, in main\n    custody_result=custody();c=load(args.certificate);verify(c);rel=relations(c);negative=[]\n                                                                    ~~~~~~~~~^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-seven-6b09cd4/check.py\", line 121, in relations\n    old=load(HERE/'frozen'/REL);require(c['complete_retained_K6_relation']==old,'complete old relations changed')\n                                ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-seven-6b09cd4/check.py\", line 11, in require\n    if not ok:raise ValueError(msg)\n              ^^^^^^^^^^^^^^^^^^^^^\nValueError: complete old relations changed\n",
+  "stdout": ""
+}

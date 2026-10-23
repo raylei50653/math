@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round5-6b09cd4/check.py", line 53, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round5-6b09cd4/check.py", line 45, in main
+    c=load(a.certificate);verify(c,e);neg=[]
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round5-6b09cd4/check.py", line 11, in load
+    def load(p):return json.loads(p.read_text())
+                       ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.14/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/json/decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)

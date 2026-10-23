@@ -1,0 +1,36 @@
+{
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "stdout": "OK: 712 Markdown files, 9434 local links; anchors, index, handoff, guide progress checked\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n"
+    }
+  ],
+  "new_audit_markdown": {
+    "broken_links": 0,
+    "files": 3,
+    "local_links": 17,
+    "status": "PASS",
+    "top_level_whitespace_errors": 0
+  },
+  "propagation": "L1 guide/STATUS updated; L2 conditional branches audited, parent source problems remain OPEN",
+  "scope": "formal docs, scoped formal DocGraph, tracked whitespace",
+  "status": "PASS",
+  "whole_tree_docgraph": "not rerun; no whole-tree PASS claim"
+}

@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/check.py", line 195, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/check.py", line 158, in main
+    frozen = custody(args.inputs)
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/check.py", line 53, in custody
+    check_row(HERE / row['snapshot'], row)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/check.py", line 37, in check_row
+    require((len(data), hashlib.sha256(data).hexdigest()) ==
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (row['bytes'], row['sha256']), 'authority drift: ' + str(path))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/check.py", line 28, in require
+    raise ValueError(message)
+ValueError: authority drift: /home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/entry/audits/2026-10-23-941-types-wrong-side-round5-6b09cd4/check.py

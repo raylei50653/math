@@ -1,0 +1,112 @@
+{
+  "checked_output_hashes": {
+    "INPUTS.json": "cd46ba9e06180ad5b4e4a4c687b701065b2bc23bcec438eb630cd9dad7c80e4f",
+    "PROOF.md": "d002fed2cfeac732f27cf38484fef3c8cef639aa6d660d6f78040f3b53f8c2fa",
+    "REPORT.md": "db197cca5949cfba7abdb0d8b77b03c94882eb4fc3a30f144f0840f30c2f69f4",
+    "certificate.json": "e00012a238695a47723b3145431d5bf37d859564dc316535e9b8fb4174aed75d",
+    "check.py": "aff1fc1315d3e1a0a9f710bd535b3106b5760458a58fa6bfdd669187aacccf55",
+    "produce.py": "82d713592c952970def6db73e0d7bc986bc1bd7af835409072018d8167c2c717",
+    "verify.py": "4fa5f9895fee9fe3ff7b3e513e6491cf6c6fce7740097ce156ea4e7ac0b17590"
+  },
+  "external_certificate_negative": {
+    "exit_code": 1,
+    "expected_error": "certificate mismatch: conclusion",
+    "rejected": true
+  },
+  "isolated_frozen_authority_negative": {
+    "expected_error": "frozen authority changed: audits/2026-10-23-941-types-wrong-side-round3-6b09cd4/REPORT.md",
+    "live_and_canonical_frozen_bytes_untouched": true,
+    "rejected": true
+  },
+  "normal": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-nonempty-resource-stars-6b09cd4/check.py"
+    ],
+    "exit_code": 0,
+    "result": {
+      "N1_omega_full_stars": 2,
+      "common_k_lower_bound": 23,
+      "complete_predecessor_preserved": true,
+      "eleven_type_exclusions": 0,
+      "extra_M0_star_trials": 26,
+      "full_T_m_star_trials": 24,
+      "immutable_drift": 0,
+      "immutable_inputs": 8,
+      "maximum_extra_M0_degree": 4,
+      "necessary_survivors": 2,
+      "omega_component_trials": 8,
+      "source_realizability": "not triggered",
+      "status": "PASS",
+      "u_full_link_trials": 62
+    }
+  },
+  "schema": "941-gamma8-nonempty-resource-stars-verification-v1",
+  "seed17": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "-O",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-nonempty-resource-stars-6b09cd4/check.py",
+      "--seed",
+      "17"
+    ],
+    "exit_code": 0,
+    "result": {
+      "N1_omega_full_stars": 2,
+      "common_k_lower_bound": 23,
+      "complete_predecessor_preserved": true,
+      "eleven_type_exclusions": 0,
+      "extra_M0_star_trials": 26,
+      "full_T_m_star_trials": 24,
+      "immutable_drift": 0,
+      "immutable_inputs": 8,
+      "maximum_extra_M0_degree": 4,
+      "necessary_survivors": 2,
+      "omega_component_trials": 8,
+      "source_realizability": "not triggered",
+      "status": "PASS",
+      "u_full_link_trials": 62
+    }
+  },
+  "semantic_negatives": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-nonempty-resource-stars-6b09cd4/check.py",
+      "--negative"
+    ],
+    "exit_code": 0,
+    "result": {
+      "N1_omega_full_stars": 2,
+      "common_k_lower_bound": 23,
+      "complete_predecessor_preserved": true,
+      "eleven_type_exclusions": 0,
+      "extra_M0_star_trials": 26,
+      "full_T_m_star_trials": 24,
+      "immutable_drift": 0,
+      "immutable_inputs": 8,
+      "maximum_extra_M0_degree": 4,
+      "necessary_survivors": 2,
+      "negative_controls_rejected": [
+        "drop-full-star",
+        "change-complete-m-link",
+        "lose-spare-point",
+        "promote-degree-six",
+        "drop-omega-type",
+        "force-C-side",
+        "admit-new-rootless-02",
+        "inherit-old-60",
+        "omit-full-u-link",
+        "lose-N1-forced-neighbor",
+        "claim-source",
+        "alter-full-lift"
+      ],
+      "omega_component_trials": 8,
+      "source_realizability": "not triggered",
+      "status": "PASS",
+      "u_full_link_trials": 62
+    }
+  }
+}

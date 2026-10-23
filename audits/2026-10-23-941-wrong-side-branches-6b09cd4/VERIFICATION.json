@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "certificate": "certificate-v2.json",
+  "replays": [
+    {
+      "name": "current-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-wrong-side-branches-6b09cd4/check.py"
+      ],
+      "env": {},
+      "returncode": 0,
+      "output": "runs/current-normal.json",
+      "sha256": "340fed34a6d1f141d1f9a92b018ca196912d95e439dfa8ad79af83155f6f3435"
+    },
+    {
+      "name": "current-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-wrong-side-branches-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "returncode": 0,
+      "output": "runs/current-seed17.json",
+      "sha256": "a3b44c9b4f262d906193dfd7abc2797a1e7ba1cc7314e41f5b49978558d8ff94"
+    },
+    {
+      "name": "current-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-wrong-side-branches-6b09cd4/check.py",
+        "--negative"
+      ],
+      "env": {},
+      "returncode": 0,
+      "output": "runs/current-negative.json",
+      "sha256": "58b361b420266357c4cea6f9d31d4d22b2972ba02c9bfafc226ca633d095d4fc"
+    },
+    {
+      "name": "predecessor-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-wrong-side-general-6b09cd4/check.py"
+      ],
+      "env": {},
+      "returncode": 0,
+      "output": "runs/predecessor-normal.json",
+      "sha256": "caedea81930f7a66ac32ede89a84e6a76aafffc6ec008071484b62428330a1d5"
+    },
+    {
+      "name": "predecessor-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-wrong-side-general-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "env": {
+        "PYTHONHASHSEED": "17"
+      },
+      "returncode": 0,
+      "output": "runs/predecessor-seed17.json",
+      "sha256": "532b0ac07c8e456efb06a7cae41767360c6af2f40197bc85fd2c64049ca1c442"
+    },
+    {
+      "name": "predecessor-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-wrong-side-general-6b09cd4/check.py",
+        "--negative"
+      ],
+      "env": {},
+      "returncode": 0,
+      "output": "runs/predecessor-negative.json",
+      "sha256": "578955843055c8e08cd41e95c003d10ab17012cc37c396886ec8fc292e20fcb1"
+    }
+  ],
+  "authority_inputs": 61,
+  "authority_drift": [],
+  "normal_seed17_statistics_equal": true,
+  "source_control": "not triggered"
+}

@@ -1,0 +1,412 @@
+{
+  "caps": "complete predecessor certificate/fibres including empties/full lifts unchanged; not all original caps recomputed",
+  "eleven_type_exclusions": 0,
+  "external_corrupt": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-six-equality-6b09cd4/check.py",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-six-equality-6b09cd4/runs/corrupt-certificate.json"
+    ],
+    "exit_code": 1,
+    "result": {
+      "reason": "paper contract drift",
+      "status": "REJECT"
+    },
+    "stdout_sha256": "94264350f658fd1f27fdb913dd80a1b20acdefe13500269823f3b21a96d86356"
+  },
+  "external_malformed": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-six-equality-6b09cd4/check.py",
+      "--certificate",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-six-equality-6b09cd4/runs/malformed-certificate.json"
+    ],
+    "exit_code": 1,
+    "result": {
+      "reason": "'base'",
+      "status": "REJECT"
+    },
+    "stdout_sha256": "e69016d2e8527e3576bc0ff63b52e3e97931f12f16bebfa3954acc64ec541dd1"
+  },
+  "finite_scope": "66 six-point color cases, 22 d=U aliases, 22 empty-M2 cases; 66 u-link and 48 L/R y-link necessary restrictions",
+  "immutable_and_prior_drift": [],
+  "normal": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-six-equality-6b09cd4/check.py"
+    ],
+    "exit_code": 0,
+    "result": {
+      "complete_u_link_restrictions": 66,
+      "custody": {
+        "immutable_drift": 0,
+        "inputs": 8,
+        "prior_outputs": 490,
+        "routing_snapshots": 4
+      },
+      "d_U_alias_cases": 22,
+      "eleven_type_exclusions": 0,
+      "empty_L_R_link_restrictions": 48,
+      "empty_M2_cases": 22,
+      "seed": 0,
+      "six_point_color_cases": 66,
+      "source_realizability": "not triggered",
+      "status": "PASS",
+      "surviving_cell_side_cases": 11
+    },
+    "stdout_sha256": "d9486bbb93b9b96df2e53faa446b4d059665487258820032a09e40710b91829f"
+  },
+  "normal_seed17_equal_except_seed": true,
+  "paper_scope": "j=2; six-point equality forces M={T,m}, m in C, d!=U and full u-link through U; empty-M2 T6 five-point equality forces Uy and d!=U",
+  "predecessor_negative": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-rootless-stars-6b09cd4/check.py",
+      "--negative"
+    ],
+    "exit_code": 0,
+    "result": {
+      "M2_side_boundary_audits": 2,
+      "Tm_known_facial_common_neighbor_pairs": 104,
+      "actual_cells": 11,
+      "allowed_first_departure_transitions": 4,
+      "custody": {
+        "immutable_drift": 0,
+        "inputs": 11,
+        "prior_outputs": 442,
+        "routing_snapshots": 4
+      },
+      "distinct_prefix_audits": 88,
+      "eleven_type_exclusions": 0,
+      "first_departure_trials": 12,
+      "original_source_control": "not triggered",
+      "predecessor_prefix_rows": 104,
+      "seed": 0,
+      "semantic_negatives": [
+        {
+          "name": "missing_cell",
+          "status": "rejected"
+        },
+        {
+          "name": "lose_interior_common_neighbor_ban",
+          "status": "rejected"
+        },
+        {
+          "name": "lose_d_exit",
+          "status": "rejected"
+        },
+        {
+          "name": "missing_prefix",
+          "status": "rejected"
+        },
+        {
+          "name": "alter_m_contact",
+          "status": "rejected"
+        },
+        {
+          "name": "lose_known_m_neighbor",
+          "status": "rejected"
+        },
+        {
+          "name": "alter_K2_face_identity",
+          "status": "rejected"
+        },
+        {
+          "name": "admit_other_13_component",
+          "status": "rejected"
+        },
+        {
+          "name": "admit_foreign_02_component",
+          "status": "rejected"
+        },
+        {
+          "name": "drop_transition",
+          "status": "rejected"
+        },
+        {
+          "name": "allow_both_C_E_neighbors",
+          "status": "rejected"
+        },
+        {
+          "name": "allow_three_Gamma_neighbors",
+          "status": "rejected"
+        },
+        {
+          "name": "drop_degree_five",
+          "status": "rejected"
+        },
+        {
+          "name": "drop_complete_M2_count",
+          "status": "rejected"
+        },
+        {
+          "name": "weaken_adjacent_two_star_bound",
+          "status": "rejected"
+        },
+        {
+          "name": "miscount_nonadjacent_star_overlap",
+          "status": "rejected"
+        },
+        {
+          "name": "lose_non_singleton_M2_bound",
+          "status": "rejected"
+        },
+        {
+          "name": "lose_six_vertex_T_degree",
+          "status": "rejected"
+        },
+        {
+          "name": "make_empty_M2_have_two_vertices",
+          "status": "rejected"
+        },
+        {
+          "name": "drop_d_U_privacy",
+          "status": "rejected"
+        },
+        {
+          "name": "drop_complete_original_stars",
+          "status": "rejected"
+        },
+        {
+          "name": "shrink_full_M2",
+          "status": "rejected"
+        },
+        {
+          "name": "presume_E_rooted",
+          "status": "rejected"
+        },
+        {
+          "name": "raise_protected_bound",
+          "status": "rejected"
+        },
+        {
+          "name": "lose_C3_premise",
+          "status": "rejected"
+        },
+        {
+          "name": "lose_prior_empty_fibre",
+          "status": "rejected"
+        },
+        {
+          "name": "promote_source",
+          "status": "rejected"
+        },
+        {
+          "name": "exclude_local_type",
+          "status": "rejected"
+        },
+        {
+          "name": "raise_global_k",
+          "status": "rejected"
+        }
+      ],
+      "status": "PASS"
+    },
+    "stdout_sha256": "a9a93e189870dc4c2c9ff1d91b298703b771db9781d925b77d9b2428724bc572"
+  },
+  "predecessor_normal": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-rootless-stars-6b09cd4/check.py"
+    ],
+    "exit_code": 0,
+    "result": {
+      "M2_side_boundary_audits": 2,
+      "Tm_known_facial_common_neighbor_pairs": 104,
+      "actual_cells": 11,
+      "allowed_first_departure_transitions": 4,
+      "custody": {
+        "immutable_drift": 0,
+        "inputs": 11,
+        "prior_outputs": 442,
+        "routing_snapshots": 4
+      },
+      "distinct_prefix_audits": 88,
+      "eleven_type_exclusions": 0,
+      "first_departure_trials": 12,
+      "original_source_control": "not triggered",
+      "predecessor_prefix_rows": 104,
+      "seed": 0,
+      "status": "PASS"
+    },
+    "stdout_sha256": "5a0e108f830d537f9ab3b6b0c5f43885cf6d50ab1bbbefe73a51caab7de5578f"
+  },
+  "predecessor_normal_seed17_equal_except_seed": true,
+  "predecessor_seed17": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "-O",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-rootless-stars-6b09cd4/check.py",
+      "--seed",
+      "17"
+    ],
+    "exit_code": 0,
+    "result": {
+      "M2_side_boundary_audits": 2,
+      "Tm_known_facial_common_neighbor_pairs": 104,
+      "actual_cells": 11,
+      "allowed_first_departure_transitions": 4,
+      "custody": {
+        "immutable_drift": 0,
+        "inputs": 11,
+        "prior_outputs": 442,
+        "routing_snapshots": 4
+      },
+      "distinct_prefix_audits": 88,
+      "eleven_type_exclusions": 0,
+      "first_departure_trials": 12,
+      "original_source_control": "not triggered",
+      "predecessor_prefix_rows": 104,
+      "seed": 17,
+      "status": "PASS"
+    },
+    "stdout_sha256": "ba516c6f511b9d48ad1b8493acb348025f3d950e420843913fe4055da03f73e9"
+  },
+  "predecessor_semantic_negative_count": 29,
+  "seed17": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "-O",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-six-equality-6b09cd4/check.py",
+      "--seed",
+      "17"
+    ],
+    "exit_code": 0,
+    "result": {
+      "complete_u_link_restrictions": 66,
+      "custody": {
+        "immutable_drift": 0,
+        "inputs": 8,
+        "prior_outputs": 490,
+        "routing_snapshots": 4
+      },
+      "d_U_alias_cases": 22,
+      "eleven_type_exclusions": 0,
+      "empty_L_R_link_restrictions": 48,
+      "empty_M2_cases": 22,
+      "seed": 17,
+      "six_point_color_cases": 66,
+      "source_realizability": "not triggered",
+      "status": "PASS",
+      "surviving_cell_side_cases": 11
+    },
+    "stdout_sha256": "bc0351c40296f20dee9ee82d0880e6b450a7bc1deabef229f5a43a34a0996111"
+  },
+  "semantic_negative": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-six-equality-6b09cd4/check.py",
+      "--negative"
+    ],
+    "exit_code": 0,
+    "result": {
+      "complete_u_link_restrictions": 66,
+      "custody": {
+        "immutable_drift": 0,
+        "inputs": 8,
+        "prior_outputs": 490,
+        "routing_snapshots": 4
+      },
+      "d_U_alias_cases": 22,
+      "eleven_type_exclusions": 0,
+      "empty_L_R_link_restrictions": 48,
+      "empty_M2_cases": 22,
+      "seed": 0,
+      "semantic_negatives": [
+        {
+          "name": "missing_color_case",
+          "status": "rejected"
+        },
+        {
+          "name": "missing_alias_case",
+          "status": "rejected"
+        },
+        {
+          "name": "missing_empty_case",
+          "status": "rejected"
+        },
+        {
+          "name": "wrong_m_side",
+          "status": "rejected"
+        },
+        {
+          "name": "allow_K_neighbor_for_M0",
+          "status": "rejected"
+        },
+        {
+          "name": "drop_U_exception",
+          "status": "rejected"
+        },
+        {
+          "name": "lose_complete_link",
+          "status": "rejected"
+        },
+        {
+          "name": "allow_same_color_link_edge",
+          "status": "rejected"
+        },
+        {
+          "name": "drop_E_case_rejection",
+          "status": "rejected"
+        },
+        {
+          "name": "allow_d_U",
+          "status": "rejected"
+        },
+        {
+          "name": "allow_empty_d_U",
+          "status": "rejected"
+        },
+        {
+          "name": "presume_E_rooted",
+          "status": "rejected"
+        },
+        {
+          "name": "drop_complete_M2",
+          "status": "rejected"
+        },
+        {
+          "name": "invent_seven_point_bound",
+          "status": "rejected"
+        },
+        {
+          "name": "close_C_completion",
+          "status": "rejected"
+        },
+        {
+          "name": "exclude_eleven_type",
+          "status": "rejected"
+        },
+        {
+          "name": "promote_source",
+          "status": "rejected"
+        },
+        {
+          "name": "raise_k",
+          "status": "rejected"
+        },
+        {
+          "name": "lose_predecessor_fibre",
+          "status": "rejected"
+        }
+      ],
+      "six_point_color_cases": 66,
+      "source_realizability": "not triggered",
+      "status": "PASS",
+      "surviving_cell_side_cases": 11
+    },
+    "stdout_sha256": "426c9ef6d4558e219c91b981c1546922a161c779460e67621d37abd7771ffbed"
+  },
+  "semantic_negative_count": 19,
+  "source_realizability": "not triggered",
+  "status": "PASS"
+}

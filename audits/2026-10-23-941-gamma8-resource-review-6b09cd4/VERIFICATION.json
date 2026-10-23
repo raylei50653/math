@@ -1,0 +1,66 @@
+{
+  "schema": "941-rootless-resource-independent-review-v1",
+  "base": "6b09cd4f8476ca93af8cb51e3a95a632c3f05fcd",
+  "review_status": "no mathematical issue found",
+  "finite_scope": "exact arithmetic/capacity controls only",
+  "actual_complete_source": "not triggered",
+  "original_authorities": 10,
+  "reviewed_final_artifacts": 9,
+  "own_runs": [
+    {
+      "name": "normal",
+      "command": "python3 -B audits/2026-10-23-941-gamma8-resource-review-6b09cd4/check.py",
+      "chunk_id": "9a4665",
+      "wall_time_seconds": 0.000010871,
+      "exit_code": 0,
+      "original_token_count": 100,
+      "output": "{\"actual_complete_source\":\"not triggered\",\"authority_count\":10,\"empty_N1\":{\"d_equals_U_max_degree\":4,\"nonalias_degree5_stars\":[[\"U\",\"a\",\"d\",\"p_d\",\"p_x\"],[\"U\",\"a\",\"p_d\",\"p_x\",\"x\"],[\"U\",\"b\",\"d\",\"p_d\",\"p_x\"],[\"U\",\"b\",\"p_d\",\"p_x\",\"x\"]]},\"negative_controls\":0,\"pair_cases\":21,\"pair_min_Z_minus_q\":7,\"reviewed_artifacts\":9,\"scope\":\"finite arithmetic/capacity controls only\",\"status\":\"triggered and holds\"}\n"
+    },
+    {
+      "name": "seed17",
+      "command": "PYTHONHASHSEED=17 python3 -B -O audits/2026-10-23-941-gamma8-resource-review-6b09cd4/check.py --seed 17",
+      "chunk_id": "885590",
+      "wall_time_seconds": 0.00001568,
+      "exit_code": 0,
+      "original_token_count": 100,
+      "output": "{\"actual_complete_source\":\"not triggered\",\"authority_count\":10,\"empty_N1\":{\"d_equals_U_max_degree\":4,\"nonalias_degree5_stars\":[[\"U\",\"a\",\"d\",\"p_d\",\"p_x\"],[\"U\",\"a\",\"p_d\",\"p_x\",\"x\"],[\"U\",\"b\",\"d\",\"p_d\",\"p_x\"],[\"U\",\"b\",\"p_d\",\"p_x\",\"x\"]]},\"negative_controls\":0,\"pair_cases\":21,\"pair_min_Z_minus_q\":7,\"reviewed_artifacts\":9,\"scope\":\"finite arithmetic/capacity controls only\",\"status\":\"triggered and holds\"}\n"
+    },
+    {
+      "name": "negative",
+      "command": "python3 -B audits/2026-10-23-941-gamma8-resource-review-6b09cd4/check.py --negative",
+      "chunk_id": "c1637e",
+      "wall_time_seconds": 0.00001049,
+      "exit_code": 0,
+      "original_token_count": 100,
+      "output": "{\"actual_complete_source\":\"not triggered\",\"authority_count\":10,\"empty_N1\":{\"d_equals_U_max_degree\":4,\"nonalias_degree5_stars\":[[\"U\",\"a\",\"d\",\"p_d\",\"p_x\"],[\"U\",\"a\",\"p_d\",\"p_x\",\"x\"],[\"U\",\"b\",\"d\",\"p_d\",\"p_x\"],[\"U\",\"b\",\"p_d\",\"p_x\",\"x\"]]},\"negative_controls\":2,\"pair_cases\":21,\"pair_min_Z_minus_q\":7,\"reviewed_artifacts\":9,\"scope\":\"finite arithmetic/capacity controls only\",\"status\":\"triggered and holds\"}\n"
+    }
+  ],
+  "independent_branch_normal_replays": [
+    {
+      "name": "empty_normal",
+      "chunk_id": "7894fa",
+      "wall_time_seconds": 0.000008617,
+      "exit_code": 0,
+      "original_token_count": 137,
+      "output": "{\n  \"custody\": {\n    \"direct_authorities\": 9,\n    \"drift\": 0,\n    \"retained_round3_artifacts\": 173,\n    \"routing_snapshots\": 2\n  },\n  \"owner_controls\": {\n    \"N1_degree_five_sets\": 4,\n    \"N1_three_common_neighbor_obstructions\": 8,\n    \"R02_max_neighbors\": 4,\n    \"R13_new_component_contacts\": 0\n  },\n  \"seed\": 0,\n  \"status\": \"PASS\",\n  \"verification\": {\n    \"complete_N3_stars\": 0,\n    \"owners_remaining\": [\n      \"K0\",\n      \"K2\"\n    ],\n    \"partial_N3_stars\": 20,\n    \"source_realizability\": \"not triggered\",\n    \"source_star_cases\": 22\n  }\n}\n"
+    },
+    {
+      "name": "nonempty_normal",
+      "chunk_id": "8f8bb1",
+      "wall_time_seconds": 0.000012454,
+      "exit_code": 0,
+      "original_token_count": 99,
+      "output": "{\"N1_omega_full_stars\": 2, \"common_k_lower_bound\": 23, \"complete_predecessor_preserved\": true, \"eleven_type_exclusions\": 0, \"extra_M0_star_trials\": 26, \"full_T_m_star_trials\": 24, \"immutable_drift\": 0, \"immutable_inputs\": 8, \"maximum_extra_M0_degree\": 4, \"necessary_survivors\": 2, \"omega_component_trials\": 8, \"source_realizability\": \"not triggered\", \"status\": \"PASS\", \"u_full_link_trials\": 62}\n"
+    }
+  ],
+  "root_pair_normal": {
+    "name": "root_pair_normal",
+    "chunk_id": "a62228",
+    "wall_time_seconds": 0.000009719,
+    "exit_code": 0,
+    "original_token_count": 76,
+    "output": "{\"exterior_minimum_for_q2\": 10, \"frozen_inputs\": 10, \"global_k_lower_bound\": 23, \"immutable_drift\": 0, \"outside_set_assignments\": 1432, \"pair_cases\": 21, \"predecessor_manifest_entries\": 173, \"reservoir_minimum_for_q2\": 9, \"source_controls\": \"not triggered\", \"status\": \"PASS\", \"whole_type_exclusions\": 0}\n"
+  },
+  "global_k_lower_bound": 23,
+  "whole_type_exclusions": 0
+}

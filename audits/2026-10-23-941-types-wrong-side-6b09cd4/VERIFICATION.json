@@ -1,0 +1,602 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "audit": "gamma8-u-link",
+      "mode": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-u-link-6b09cd4/check.py"
+      ],
+      "exit_code": 0,
+      "result": {
+        "custody": {
+          "frozen_direct_inputs": 8,
+          "immutable_drift": 0
+        },
+        "validation": {
+          "B_models": 6,
+          "complete_star_restrictions": 60,
+          "eleven_type_exclusions": 0,
+          "per_core": {
+            "L": 16,
+            "O": 12,
+            "R": 32
+          },
+          "source_realizability": "not triggered"
+        }
+      },
+      "stdout_sha256": "1810a887a53e504d2f70901bd3068589ebb6a77e9f29522b4fd58bd617bf0cb8"
+    },
+    {
+      "audit": "gamma8-u-link",
+      "mode": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-gamma8-u-link-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "result": {
+        "custody": {
+          "frozen_direct_inputs": 8,
+          "immutable_drift": 0
+        },
+        "validation": {
+          "B_models": 6,
+          "complete_star_restrictions": 60,
+          "eleven_type_exclusions": 0,
+          "per_core": {
+            "L": 16,
+            "O": 12,
+            "R": 32
+          },
+          "source_realizability": "not triggered"
+        }
+      },
+      "stdout_sha256": "1810a887a53e504d2f70901bd3068589ebb6a77e9f29522b4fd58bd617bf0cb8"
+    },
+    {
+      "audit": "gamma8-u-link",
+      "mode": "negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-u-link-6b09cd4/check.py",
+        "--negative"
+      ],
+      "exit_code": 0,
+      "result": {
+        "custody": {
+          "frozen_direct_inputs": 8,
+          "immutable_drift": 0
+        },
+        "negative": {
+          "count": 14,
+          "negative_controls_rejected": [
+            "missing_star",
+            "false_nx_L",
+            "lost_full_n",
+            "bad_exit_arc",
+            "bad_U_arc",
+            "missing_B",
+            "false_B_edge",
+            "wrong_B_bridge",
+            "allow_W_q",
+            "allow_e_Y",
+            "root_E",
+            "claim_source",
+            "claim_type_exclusion",
+            "wrong_U_order"
+          ]
+        },
+        "validation": {
+          "B_models": 6,
+          "complete_star_restrictions": 60,
+          "eleven_type_exclusions": 0,
+          "per_core": {
+            "L": 16,
+            "O": 12,
+            "R": 32
+          },
+          "source_realizability": "not triggered"
+        }
+      },
+      "stdout_sha256": "f19415d2d2d75c5a51d17ff197c0531200bc9aa18414e44793ed3b95871768c2"
+    },
+    {
+      "audit": "gamma8-empty-m2",
+      "mode": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-empty-m2-6b09cd4/check.py"
+      ],
+      "exit_code": 0,
+      "result": {
+        "B13_tree_rows": 40,
+        "complete_literal_fibres": 16,
+        "complete_star_rows": 8,
+        "custody": {
+          "direct_inputs": 9,
+          "immutable_drift": 0,
+          "routing_snapshots": 3
+        },
+        "eleven_type_exclusions": 0,
+        "empty_assignments": 262080,
+        "full_lifts": 64,
+        "joint_link_cases": 66,
+        "seed": 0,
+        "source_realizability": "not triggered",
+        "status": "PASS"
+      },
+      "stdout_sha256": "4d25b7f3504081e22ab5ee6f87bc17c5fc6da48b48e3b1c732a0966cad209abf"
+    },
+    {
+      "audit": "gamma8-empty-m2",
+      "mode": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-gamma8-empty-m2-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "result": {
+        "B13_tree_rows": 40,
+        "complete_literal_fibres": 16,
+        "complete_star_rows": 8,
+        "custody": {
+          "direct_inputs": 9,
+          "immutable_drift": 0,
+          "routing_snapshots": 3
+        },
+        "eleven_type_exclusions": 0,
+        "empty_assignments": 262080,
+        "full_lifts": 64,
+        "joint_link_cases": 66,
+        "seed": 17,
+        "source_realizability": "not triggered",
+        "status": "PASS"
+      },
+      "stdout_sha256": "1c2da2b82f591ea1a4a6269f96690bbc83a88b9fba02a4cd3b2e6a4a977f84a6"
+    },
+    {
+      "audit": "gamma8-empty-m2",
+      "mode": "negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-empty-m2-6b09cd4/check.py",
+        "--negative"
+      ],
+      "exit_code": 0,
+      "result": {
+        "B13_tree_rows": 40,
+        "complete_literal_fibres": 16,
+        "complete_star_rows": 8,
+        "custody": {
+          "direct_inputs": 9,
+          "immutable_drift": 0,
+          "routing_snapshots": 3
+        },
+        "eleven_type_exclusions": 0,
+        "empty_assignments": 262080,
+        "full_lifts": 64,
+        "joint_link_cases": 66,
+        "seed": 0,
+        "semantic_negatives": [
+          {
+            "name": "lose_joint_case",
+            "status": "rejected"
+          },
+          {
+            "name": "lose_star_row",
+            "status": "rejected"
+          },
+          {
+            "name": "change_original_link",
+            "status": "rejected"
+          },
+          {
+            "name": "erase_U_F_arc",
+            "status": "rejected"
+          },
+          {
+            "name": "drop_full_lift",
+            "status": "rejected"
+          },
+          {
+            "name": "drop_empty_assignment",
+            "status": "rejected"
+          },
+          {
+            "name": "wrong_literal_frame",
+            "status": "rejected"
+          },
+          {
+            "name": "drop_B13_exit",
+            "status": "rejected"
+          },
+          {
+            "name": "presume_E_rooted",
+            "status": "rejected"
+          },
+          {
+            "name": "cyclic_U_star",
+            "status": "rejected"
+          },
+          {
+            "name": "invent_source",
+            "status": "rejected"
+          },
+          {
+            "name": "exclude_eleven_type",
+            "status": "rejected"
+          },
+          {
+            "name": "raise_k",
+            "status": "rejected"
+          },
+          {
+            "name": "lose_prior_fibre",
+            "status": "rejected"
+          }
+        ],
+        "source_realizability": "not triggered",
+        "status": "PASS"
+      },
+      "stdout_sha256": "3f2fba8a62c794693d446bec399a4c8efa1375d97e2099b2d38728188d6bbd06"
+    },
+    {
+      "audit": "wrong-side-general",
+      "mode": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-wrong-side-general-6b09cd4/check.py"
+      ],
+      "exit_code": 0,
+      "result": {
+        "authority_inputs": 54,
+        "finite_calibration": "triggered and holds",
+        "seed": 0,
+        "source_control": "not triggered",
+        "statistics": {
+          "B13": [
+            {
+              "name": "boundary_b_equals_c",
+              "simple_paths": 1,
+              "unavoidable_vertices": [
+                "q"
+              ]
+            },
+            {
+              "name": "private_B_cutpoint_rootless_tail",
+              "simple_paths": 1,
+              "unavoidable_vertices": [
+                "q",
+                "t",
+                "w"
+              ]
+            },
+            {
+              "name": "alternative_B_path_avoids_q",
+              "simple_paths": 2,
+              "unavoidable_vertices": []
+            }
+          ],
+          "C12": [
+            {
+              "name": "C_literal01_bridge",
+              "r_e_bridges": [
+                [
+                  "a",
+                  "k0"
+                ],
+                [
+                  "a",
+                  "u"
+                ],
+                [
+                  "b1",
+                  "k0"
+                ],
+                [
+                  "b1",
+                  "v"
+                ],
+                [
+                  "e",
+                  "v"
+                ],
+                [
+                  "r",
+                  "u"
+                ]
+              ],
+              "simple_paths": 1
+            },
+            {
+              "name": "C_cycle_has_no_r_e_bridge",
+              "r_e_bridges": [],
+              "simple_paths": 2
+            }
+          ],
+          "wedges": [
+            {
+              "inside": 3,
+              "name": "boundary_q_all_F_faces_inside",
+              "outside": 0,
+              "q_faces": 3
+            },
+            {
+              "inside": 2,
+              "name": "interior_q_requires_boundary_premise",
+              "outside": 2,
+              "q_faces": 4
+            }
+          ]
+        },
+        "status": "PASS"
+      },
+      "stdout_sha256": "caedea81930f7a66ac32ede89a84e6a76aafffc6ec008071484b62428330a1d5"
+    },
+    {
+      "audit": "wrong-side-general",
+      "mode": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-wrong-side-general-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "result": {
+        "authority_inputs": 54,
+        "finite_calibration": "triggered and holds",
+        "seed": 17,
+        "source_control": "not triggered",
+        "statistics": {
+          "B13": [
+            {
+              "name": "boundary_b_equals_c",
+              "simple_paths": 1,
+              "unavoidable_vertices": [
+                "q"
+              ]
+            },
+            {
+              "name": "private_B_cutpoint_rootless_tail",
+              "simple_paths": 1,
+              "unavoidable_vertices": [
+                "q",
+                "t",
+                "w"
+              ]
+            },
+            {
+              "name": "alternative_B_path_avoids_q",
+              "simple_paths": 2,
+              "unavoidable_vertices": []
+            }
+          ],
+          "C12": [
+            {
+              "name": "C_literal01_bridge",
+              "r_e_bridges": [
+                [
+                  "a",
+                  "k0"
+                ],
+                [
+                  "a",
+                  "u"
+                ],
+                [
+                  "b1",
+                  "k0"
+                ],
+                [
+                  "b1",
+                  "v"
+                ],
+                [
+                  "e",
+                  "v"
+                ],
+                [
+                  "r",
+                  "u"
+                ]
+              ],
+              "simple_paths": 1
+            },
+            {
+              "name": "C_cycle_has_no_r_e_bridge",
+              "r_e_bridges": [],
+              "simple_paths": 2
+            }
+          ],
+          "wedges": [
+            {
+              "inside": 3,
+              "name": "boundary_q_all_F_faces_inside",
+              "outside": 0,
+              "q_faces": 3
+            },
+            {
+              "inside": 2,
+              "name": "interior_q_requires_boundary_premise",
+              "outside": 2,
+              "q_faces": 4
+            }
+          ]
+        },
+        "status": "PASS"
+      },
+      "stdout_sha256": "532b0ac07c8e456efb06a7cae41767360c6af2f40197bc85fd2c64049ca1c442"
+    },
+    {
+      "audit": "wrong-side-general",
+      "mode": "negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-wrong-side-general-6b09cd4/check.py",
+        "--negative"
+      ],
+      "exit_code": 0,
+      "result": {
+        "authority_inputs": 54,
+        "finite_calibration": "triggered and holds",
+        "negative_controls": [
+          {
+            "name": "promote_source",
+            "status": "rejected"
+          },
+          {
+            "name": "erase_rootless_E",
+            "status": "rejected"
+          },
+          {
+            "name": "erase_q_exception",
+            "status": "rejected"
+          },
+          {
+            "name": "remove_private_cutpoint",
+            "status": "rejected"
+          },
+          {
+            "name": "invent_cycle_cutpoint",
+            "status": "rejected"
+          },
+          {
+            "name": "lose_boundary_Yq",
+            "status": "rejected"
+          },
+          {
+            "name": "invent_C_bridge",
+            "status": "rejected"
+          },
+          {
+            "name": "erase_actual_q_face",
+            "status": "rejected"
+          },
+          {
+            "name": "move_boundary_q_face_outside",
+            "status": "rejected"
+          },
+          {
+            "name": "use_interior_q_as_boundary",
+            "status": "rejected"
+          },
+          {
+            "name": "swap_one_direction_identity",
+            "status": "rejected"
+          }
+        ],
+        "seed": 0,
+        "source_control": "not triggered",
+        "statistics": {
+          "B13": [
+            {
+              "name": "boundary_b_equals_c",
+              "simple_paths": 1,
+              "unavoidable_vertices": [
+                "q"
+              ]
+            },
+            {
+              "name": "private_B_cutpoint_rootless_tail",
+              "simple_paths": 1,
+              "unavoidable_vertices": [
+                "q",
+                "t",
+                "w"
+              ]
+            },
+            {
+              "name": "alternative_B_path_avoids_q",
+              "simple_paths": 2,
+              "unavoidable_vertices": []
+            }
+          ],
+          "C12": [
+            {
+              "name": "C_literal01_bridge",
+              "r_e_bridges": [
+                [
+                  "a",
+                  "k0"
+                ],
+                [
+                  "a",
+                  "u"
+                ],
+                [
+                  "b1",
+                  "k0"
+                ],
+                [
+                  "b1",
+                  "v"
+                ],
+                [
+                  "e",
+                  "v"
+                ],
+                [
+                  "r",
+                  "u"
+                ]
+              ],
+              "simple_paths": 1
+            },
+            {
+              "name": "C_cycle_has_no_r_e_bridge",
+              "r_e_bridges": [],
+              "simple_paths": 2
+            }
+          ],
+          "wedges": [
+            {
+              "inside": 3,
+              "name": "boundary_q_all_F_faces_inside",
+              "outside": 0,
+              "q_faces": 3
+            },
+            {
+              "inside": 2,
+              "name": "interior_q_requires_boundary_premise",
+              "outside": 2,
+              "q_faces": 4
+            }
+          ]
+        },
+        "status": "PASS"
+      },
+      "stdout_sha256": "578955843055c8e08cd41e95c003d10ab17012cc37c396886ec8fc292e20fcb1"
+    }
+  ],
+  "all_normal_seed17_equal": true,
+  "immutable_entry_drift": [],
+  "authorized_routing_changes": [
+    "docs/STATUS.md",
+    "docs/c5_kempe_guide.md"
+  ],
+  "predecessors": "PREDECESSOR_REPLAY.json: six prior normal/seed17/negative runs PASS",
+  "new_cap_relation": "CAP_VERIFICATION.json: v2 normal/seed17/negative PASS",
+  "source_realizability": "not triggered",
+  "eleven_types_excluded": 0,
+  "shared_lower_bound": "k>=23 unchanged",
+  "commit_push": "not performed"
+}

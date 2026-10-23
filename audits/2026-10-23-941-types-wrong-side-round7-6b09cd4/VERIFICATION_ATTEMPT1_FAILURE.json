@@ -1,0 +1,8 @@
+{
+  "status": "FAIL_RETAINED",
+  "reason": "predecessor manifest mixed 125 immutable evidence files with two permitted routing files; checker initially compared updated live routing bytes instead of frozen entry bytes",
+  "normal_seed17_negative": "REJECT predecessor drift docs/STATUS.md",
+  "external_negatives": "not valid as targeted controls: all were rejected by the same custody check",
+  "harness_failure": "KeyError seed while parsing failed replay",
+  "fix": "verify two routing-entry snapshots; keep other 125 predecessor paths live immutable; require targeted rejection reasons; issue runs-v2 and negative-inputs-v2 without overwriting attempt1 receipts"
+}

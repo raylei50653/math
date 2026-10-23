@@ -1,0 +1,41 @@
+{
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "OK: 712 Markdown files, 9432 local links; anchors, index, handoff, guide progress checked\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "propagation": "L1 guide/STATUS; parent source questions remain OPEN",
+  "scope": "formal docs, scoped formal DocGraph, tracked whitespace",
+  "status": "PASS",
+  "whole_tree_docgraph": "not rerun; no whole-tree PASS claim"
+}

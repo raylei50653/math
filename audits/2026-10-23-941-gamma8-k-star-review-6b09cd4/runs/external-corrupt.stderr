@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check.py", line 162, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check.py", line 133, in main
+    verify(certificate, actual)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check.py", line 117, in verify
+    require(certificate['authority'] == dict(finite_control='triggered and holds',
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            actual_source='not triggered', source_coverage='paper REVIEW sections 1-3',
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            empty_M2_D6_Z6='excluded_by_conditional_sealed_cap_theorem',
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            all_eleven_types='OPEN', general_wrong_side='OPEN', common_k=23,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            new_Lean=False, new_matching=False), 'authority boundary')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check.py", line 19, in require
+    raise ValueError(message)
+ValueError: authority boundary

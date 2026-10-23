@@ -1,0 +1,569 @@
+{
+  "B13_controls": [
+    {
+      "C_in_B": [
+        "V",
+        "Y"
+      ],
+      "b_component": [
+        "b"
+      ],
+      "c_in_b_component": false,
+      "colors": {
+        "V": 1,
+        "Y": 1,
+        "a": 3,
+        "b": 1,
+        "c": 1,
+        "cut": 3,
+        "d": 3,
+        "f": 1,
+        "q": 3,
+        "u": 1
+      },
+      "corner_trigger": false,
+      "cut": "cut",
+      "edges": [
+        [
+          "Y",
+          "q"
+        ],
+        [
+          "q",
+          "c"
+        ],
+        [
+          "Y",
+          "a"
+        ],
+        [
+          "a",
+          "u"
+        ],
+        [
+          "u",
+          "d"
+        ],
+        [
+          "d",
+          "V"
+        ],
+        [
+          "q",
+          "f"
+        ],
+        [
+          "f",
+          "cut"
+        ],
+        [
+          "cut",
+          "b"
+        ]
+      ],
+      "name": "private_cut_unframed_b_branch",
+      "special_Y_q_c_path": null
+    },
+    {
+      "C_in_B": [
+        "V",
+        "Y"
+      ],
+      "b_component": [
+        "b",
+        "c",
+        "t"
+      ],
+      "c_in_b_component": true,
+      "colors": {
+        "V": 1,
+        "Y": 1,
+        "a": 3,
+        "b": 1,
+        "c": 1,
+        "d": 3,
+        "q": 3,
+        "t": 3,
+        "u": 1
+      },
+      "corner_trigger": true,
+      "cut": "q",
+      "edges": [
+        [
+          "Y",
+          "q"
+        ],
+        [
+          "q",
+          "c"
+        ],
+        [
+          "Y",
+          "a"
+        ],
+        [
+          "a",
+          "u"
+        ],
+        [
+          "u",
+          "d"
+        ],
+        [
+          "d",
+          "V"
+        ],
+        [
+          "c",
+          "t"
+        ],
+        [
+          "t",
+          "b"
+        ]
+      ],
+      "name": "q_cut_c_side_now_excluded_conditionally",
+      "special_Y_q_c_path": [
+        "Y",
+        "q",
+        "c",
+        "t",
+        "b"
+      ]
+    },
+    {
+      "C_in_B": [
+        "V",
+        "Y"
+      ],
+      "b_component": [
+        "b"
+      ],
+      "c_in_b_component": false,
+      "colors": {
+        "V": 1,
+        "Y": 1,
+        "a": 3,
+        "b": 1,
+        "c": 1,
+        "d": 3,
+        "q": 3,
+        "u": 1
+      },
+      "corner_trigger": false,
+      "cut": "q",
+      "edges": [
+        [
+          "Y",
+          "q"
+        ],
+        [
+          "q",
+          "c"
+        ],
+        [
+          "Y",
+          "a"
+        ],
+        [
+          "a",
+          "u"
+        ],
+        [
+          "u",
+          "d"
+        ],
+        [
+          "d",
+          "V"
+        ],
+        [
+          "q",
+          "b"
+        ]
+      ],
+      "name": "q_cut_unframed_b_branch_still_necessary",
+      "special_Y_q_c_path": null
+    }
+  ],
+  "C12_controls": [
+    {
+      "colors": {
+        "U": 2,
+        "V": 1,
+        "Y": 1,
+        "a": 2,
+        "b": 2,
+        "e": 1,
+        "r": 1
+      },
+      "corner_trigger": true,
+      "e_branch": [
+        "Y",
+        "b",
+        "e"
+      ],
+      "edges": [
+        [
+          "r",
+          "a"
+        ],
+        [
+          "a",
+          "V"
+        ],
+        [
+          "V",
+          "U"
+        ],
+        [
+          "U",
+          "Y"
+        ],
+        [
+          "Y",
+          "b"
+        ],
+        [
+          "b",
+          "e"
+        ]
+      ],
+      "name": "U_two_boundary_neighbor_branches_excluded_conditionally",
+      "r_branch": [
+        "V",
+        "a",
+        "r"
+      ],
+      "special_r_e_path": [
+        "r",
+        "a",
+        "V",
+        "U",
+        "Y",
+        "b",
+        "e"
+      ]
+    },
+    {
+      "colors": {
+        "U": 2,
+        "V": 1,
+        "Y": 1,
+        "e": 1,
+        "r": 1
+      },
+      "corner_trigger": false,
+      "e_branch": [
+        "e"
+      ],
+      "edges": [
+        [
+          "U",
+          "r"
+        ],
+        [
+          "U",
+          "e"
+        ],
+        [
+          "U",
+          "V"
+        ],
+        [
+          "U",
+          "Y"
+        ]
+      ],
+      "name": "U_both_branches_avoid_neighbor_frames",
+      "r_branch": [
+        "r"
+      ],
+      "special_r_e_path": null
+    }
+  ],
+  "base": "6b09cd4f8476ca93af8cb51e3a95a632c3f05fcd",
+  "boundaries": {
+    "E_may_be_rootless": true,
+    "P_tail_not_assumed_inside_B": true,
+    "U_and_q_use_F_link_paths": true,
+    "Wstar_may_equal_q": true,
+    "common_k_lower_bound": 23,
+    "finite_calibration": "triggered and holds",
+    "general_wrong_side": "OPEN",
+    "initial_pair_exclusions": 0,
+    "new_Lean": false,
+    "smaller_bad": false,
+    "source_control": "not triggered",
+    "source_realized": false
+  },
+  "escape_control": {
+    "B13_vertices": [
+      "b",
+      "c",
+      "q"
+    ],
+    "colors": {
+      "b": 1,
+      "c": 1,
+      "q": 3,
+      "x": 0
+    },
+    "not_a_source": true,
+    "original_K_vertices": [],
+    "original_edges": [
+      [
+        "b",
+        "q"
+      ],
+      [
+        "c",
+        "q"
+      ],
+      [
+        "b",
+        "x"
+      ],
+      [
+        "x",
+        "c"
+      ],
+      [
+        "q",
+        "x"
+      ]
+    ],
+    "root02_label": "L0",
+    "same_P_tail": [
+      "b",
+      "x",
+      "c"
+    ]
+  },
+  "link_controls": [
+    {
+      "kind": "cyclic",
+      "minimum_color1_neighbors": 3,
+      "minimum_degree": 6,
+      "original_center_color": 3,
+      "required_distinct_non1_edges": 0,
+      "witness_color_word": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "word_is_not_a_source": true
+    },
+    {
+      "kind": "cyclic",
+      "minimum_color1_neighbors": 3,
+      "minimum_degree": 7,
+      "original_center_color": 3,
+      "required_distinct_non1_edges": 1,
+      "witness_color_word": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "word_is_not_a_source": true
+    },
+    {
+      "kind": "cyclic",
+      "minimum_color1_neighbors": 3,
+      "minimum_degree": 8,
+      "original_center_color": 3,
+      "required_distinct_non1_edges": 2,
+      "witness_color_word": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      "word_is_not_a_source": true
+    },
+    {
+      "kind": "path",
+      "minimum_color1_neighbors": 3,
+      "minimum_degree": 5,
+      "original_center_color": 0,
+      "required_distinct_non1_edges": 0,
+      "witness_color_word": [
+        1,
+        3,
+        1,
+        3,
+        1
+      ],
+      "word_is_not_a_source": true
+    },
+    {
+      "kind": "path",
+      "minimum_color1_neighbors": 3,
+      "minimum_degree": 6,
+      "original_center_color": 0,
+      "required_distinct_non1_edges": 1,
+      "witness_color_word": [
+        1,
+        3,
+        1,
+        3,
+        2,
+        1
+      ],
+      "word_is_not_a_source": true
+    },
+    {
+      "kind": "path",
+      "minimum_color1_neighbors": 3,
+      "minimum_degree": 7,
+      "original_center_color": 0,
+      "required_distinct_non1_edges": 2,
+      "witness_color_word": [
+        1,
+        3,
+        1,
+        3,
+        2,
+        3,
+        1
+      ],
+      "word_is_not_a_source": true
+    },
+    {
+      "kind": "path",
+      "minimum_color1_neighbors": 4,
+      "minimum_degree": 7,
+      "original_center_color": 3,
+      "required_distinct_non1_edges": 0,
+      "witness_color_word": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "word_is_not_a_source": true
+    },
+    {
+      "kind": "path",
+      "minimum_color1_neighbors": 4,
+      "minimum_degree": 8,
+      "original_center_color": 3,
+      "required_distinct_non1_edges": 1,
+      "witness_color_word": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        1
+      ],
+      "word_is_not_a_source": true
+    },
+    {
+      "kind": "path",
+      "minimum_color1_neighbors": 4,
+      "minimum_degree": 9,
+      "original_center_color": 3,
+      "required_distinct_non1_edges": 2,
+      "witness_color_word": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "word_is_not_a_source": true
+    },
+    {
+      "kind": "path",
+      "minimum_color1_neighbors": 5,
+      "minimum_degree": 9,
+      "original_center_color": 3,
+      "required_distinct_non1_edges": 0,
+      "witness_color_word": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "word_is_not_a_source": true
+    },
+    {
+      "kind": "path",
+      "minimum_color1_neighbors": 5,
+      "minimum_degree": 10,
+      "original_center_color": 3,
+      "required_distinct_non1_edges": 1,
+      "witness_color_word": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        1
+      ],
+      "word_is_not_a_source": true
+    },
+    {
+      "kind": "path",
+      "minimum_color1_neighbors": 5,
+      "minimum_degree": 11,
+      "original_center_color": 3,
+      "required_distinct_non1_edges": 2,
+      "witness_color_word": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "word_is_not_a_source": true
+    }
+  ],
+  "paper_claims": [
+    "exact_two_shared_b3_b_branch_has_no_B14_contact_including_q_case",
+    "private_shared_b3_degree_at_least_6_plus_D0",
+    "q_shared_b3_F_degree_at_least_7_plus_D0",
+    "q_both_patch_b1_not_Y_F_degree_at_least_9_plus_D0",
+    "same_P_tail_has_B_free_01_escape_in_nonK_J_minus_B_branch",
+    "opposite_patches_shared_U_r_e_branches_cannot_split_V_Y",
+    "opposite_patches_shared_U_F_degree_at_least_5_plus_D0",
+    "opposite_patches_shared_U_G_degree_at_least_6_plus_D0"
+  ],
+  "schema": "941-wrong-side-branches-v2"
+}

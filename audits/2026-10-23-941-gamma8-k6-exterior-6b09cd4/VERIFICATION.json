@@ -1,0 +1,292 @@
+{
+  "artifact_hashes": [
+    {
+      "bytes": 3634,
+      "path": "produce.py",
+      "sha256": "4ff24d5416bec244b5213efba73e32fce085cd3a3b9bfe6ec41169c2c03a7f46"
+    },
+    {
+      "bytes": 11391,
+      "path": "check.py",
+      "sha256": "02929dcdd0adfa75b3f8c0b6f44245e6fec10cd269b0962c5e9702fdce15b500"
+    },
+    {
+      "bytes": 4640490,
+      "path": "certificate.json",
+      "sha256": "53e8a16a9e5a71240d79f745822dd4764c86ac0dac17712bec91bf3bdeab4edf"
+    },
+    {
+      "bytes": 2663,
+      "path": "INPUTS.json",
+      "sha256": "d5d3462f5a05cd49ef6794023fff61cd488a787fb3c5cc0dbd6ef532e6761746"
+    },
+    {
+      "bytes": 866,
+      "path": "INPUTS_REPLACEMENT.json",
+      "sha256": "1e80499032436d9193800e83a4363ebefa07c26682b742cb8113d8c3b0a9fc78"
+    },
+    {
+      "bytes": 404,
+      "path": "INPUTS_GEOMETRY.json",
+      "sha256": "92dbb7b148d0c2c58e46151d3e0148b4d3d97538d4c39c7a690bdb1e9f27b019"
+    },
+    {
+      "bytes": 7097,
+      "path": "PREDECESSOR_HASH_REPLAY.json",
+      "sha256": "48f792c5cc9c2773b790f3f56372ed4bbe43ae26a58487634210912ed7c9bc7c"
+    },
+    {
+      "bytes": 2416,
+      "path": "REPORT.md",
+      "sha256": "a50fcf65e9e426b89413e6192e3e6d68014649b9d672e1c0167ce0046bfbe00d"
+    },
+    {
+      "bytes": 9990,
+      "path": "PROOF.md",
+      "sha256": "90c38ac81fe177f59a189998c8e199894215f2552b607a15a6ea0e5ff28d62b5"
+    }
+  ],
+  "base": "6b09cd4f8476ca93af8cb51e3a95a632c3f05fcd",
+  "finite_cover": "triggered and holds",
+  "immutable_drift": 0,
+  "normal_seed17_equal": true,
+  "replays": [
+    {
+      "PYTHONHASHSEED": "inherited",
+      "actual_exit": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-k6-exterior-6b09cd4/check.py"
+      ],
+      "expected_exit": 0,
+      "name": "normal",
+      "output": {
+        "candidate_literal_tuple_counts": [
+          192,
+          192,
+          108,
+          108
+        ],
+        "candidate_support_classes": [
+          8,
+          8,
+          5,
+          5
+        ],
+        "candidates": 4,
+        "complete_literal_boundary_tuples": 4096,
+        "custody": {
+          "direct_inputs": 13,
+          "immutable_drift": 0,
+          "previous_manifest_entries": 32
+        },
+        "literal_old_full_lifts_checked": 2400,
+        "normalized_boundary_words": 31,
+        "old_empty_classes": 12,
+        "old_nonempty_literal_tuples": 444,
+        "old_support_classes": 19,
+        "paper_minimal_source_five_point_branch": "excluded",
+        "proper_literal_tuples": 732,
+        "seed": 0,
+        "source_instance_control": "not triggered",
+        "status": "PASS"
+      },
+      "stderr": ""
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "actual_exit": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-gamma8-k6-exterior-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "expected_exit": 0,
+      "name": "seed17",
+      "output": {
+        "candidate_literal_tuple_counts": [
+          192,
+          192,
+          108,
+          108
+        ],
+        "candidate_support_classes": [
+          8,
+          8,
+          5,
+          5
+        ],
+        "candidates": 4,
+        "complete_literal_boundary_tuples": 4096,
+        "custody": {
+          "direct_inputs": 13,
+          "immutable_drift": 0,
+          "previous_manifest_entries": 32
+        },
+        "literal_old_full_lifts_checked": 2400,
+        "normalized_boundary_words": 31,
+        "old_empty_classes": 12,
+        "old_nonempty_literal_tuples": 444,
+        "old_support_classes": 19,
+        "paper_minimal_source_five_point_branch": "excluded",
+        "proper_literal_tuples": 732,
+        "seed": 17,
+        "source_instance_control": "not triggered",
+        "status": "PASS"
+      },
+      "stderr": ""
+    },
+    {
+      "PYTHONHASHSEED": "inherited",
+      "actual_exit": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-k6-exterior-6b09cd4/check.py",
+        "--negative"
+      ],
+      "expected_exit": 0,
+      "name": "semantic_negatives",
+      "output": {
+        "candidate_literal_tuple_counts": [
+          192,
+          192,
+          108,
+          108
+        ],
+        "candidate_support_classes": [
+          8,
+          8,
+          5,
+          5
+        ],
+        "candidates": 4,
+        "complete_literal_boundary_tuples": 4096,
+        "custody": {
+          "direct_inputs": 13,
+          "immutable_drift": 0,
+          "previous_manifest_entries": 32
+        },
+        "literal_old_full_lifts_checked": 2400,
+        "normalized_boundary_words": 31,
+        "old_empty_classes": 12,
+        "old_nonempty_literal_tuples": 444,
+        "old_support_classes": 19,
+        "paper_minimal_source_five_point_branch": "excluded",
+        "proper_literal_tuples": 732,
+        "seed": 0,
+        "semantic_negatives": [
+          {
+            "name": "lose_fixed_candidate",
+            "status": "rejected"
+          },
+          {
+            "name": "change_triangle_edge",
+            "status": "rejected"
+          },
+          {
+            "name": "change_quotient_ports",
+            "status": "rejected"
+          },
+          {
+            "name": "lose_normalized_empty_row",
+            "status": "rejected"
+          },
+          {
+            "name": "invent_literal_extension",
+            "status": "rejected"
+          },
+          {
+            "name": "wrong_completed_cost",
+            "status": "rejected"
+          },
+          {
+            "name": "lose_original_empty_fibre",
+            "status": "rejected"
+          },
+          {
+            "name": "lose_full_old_lift",
+            "status": "rejected"
+          },
+          {
+            "name": "choose_per_rejected_row",
+            "status": "rejected"
+          },
+          {
+            "name": "erase_accepted_witness",
+            "status": "rejected"
+          },
+          {
+            "name": "pretend_exterior_unchanged",
+            "status": "rejected"
+          },
+          {
+            "name": "identify_outer_C5",
+            "status": "rejected"
+          },
+          {
+            "name": "cyclic_U_star",
+            "status": "rejected"
+          },
+          {
+            "name": "pretend_source_triggered",
+            "status": "rejected"
+          },
+          {
+            "name": "exclude_whole_eleven_type",
+            "status": "rejected"
+          },
+          {
+            "name": "raise_global_k",
+            "status": "rejected"
+          }
+        ],
+        "source_instance_control": "not triggered",
+        "status": "PASS"
+      },
+      "stderr": ""
+    },
+    {
+      "PYTHONHASHSEED": "inherited",
+      "actual_exit": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-k6-exterior-6b09cd4/check.py",
+        "--certificate",
+        "audits/2026-10-23-941-gamma8-k6-exterior-6b09cd4/negative-corrupted-certificate.json"
+      ],
+      "expected_exit": 1,
+      "name": "external_corrupted",
+      "output": {
+        "reason": "four fixed candidates missing",
+        "status": "REJECT"
+      },
+      "stderr": ""
+    },
+    {
+      "PYTHONHASHSEED": "inherited",
+      "actual_exit": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-k6-exterior-6b09cd4/check.py",
+        "--certificate",
+        "audits/2026-10-23-941-gamma8-k6-exterior-6b09cd4/negative-malformed-certificate.json"
+      ],
+      "expected_exit": 1,
+      "name": "external_malformed",
+      "output": {
+        "reason": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+        "status": "REJECT"
+      },
+      "stderr": ""
+    }
+  ],
+  "schema": "941-gamma8-k6-exterior-verification-v1",
+  "source_instance_control": "not triggered"
+}

@@ -1,0 +1,1314 @@
+{
+  "schema": "941-chi-round3-verification-v1",
+  "status": "PASS",
+  "normal_seed17_reduction_equal": true,
+  "immutable_drift": 0,
+  "runs": [
+    {
+      "name": "reduction-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round3-6b09cd4/check_reduction.py"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "default",
+      "stdout": "runs/reduction-normal.stdout",
+      "stderr": "runs/reduction-normal.stderr",
+      "result": {
+        "all_backfill": true,
+        "candidates": 34,
+        "caps": 16,
+        "complete_original_lifts": 1196,
+        "complete_proper_words": 31,
+        "complete_safe_cover": true,
+        "frozen_inputs": 13,
+        "immutable_drift": 0,
+        "original_relation_sizes": [
+          [
+            23,
+            2
+          ],
+          [
+            25,
+            2
+          ],
+          [
+            26,
+            8
+          ],
+          [
+            28,
+            4
+          ]
+        ],
+        "paper": "conditional sealed cap, planarity, actual accepted witness and global minimum: PROOF.md",
+        "previous_manifest_entries": 253,
+        "same_candidate_all_row_checks": 12896,
+        "savings": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "seed": 0,
+        "source_controls": "not triggered",
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "reduction-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-types-wrong-side-round3-6b09cd4/check_reduction.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "17",
+      "stdout": "runs/reduction-seed17.stdout",
+      "stderr": "runs/reduction-seed17.stderr",
+      "result": {
+        "all_backfill": true,
+        "candidates": 34,
+        "caps": 16,
+        "complete_original_lifts": 1196,
+        "complete_proper_words": 31,
+        "complete_safe_cover": true,
+        "frozen_inputs": 13,
+        "immutable_drift": 0,
+        "original_relation_sizes": [
+          [
+            23,
+            2
+          ],
+          [
+            25,
+            2
+          ],
+          [
+            26,
+            8
+          ],
+          [
+            28,
+            4
+          ]
+        ],
+        "paper": "conditional sealed cap, planarity, actual accepted witness and global minimum: PROOF.md",
+        "previous_manifest_entries": 253,
+        "same_candidate_all_row_checks": 12896,
+        "savings": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "seed": 17,
+        "source_controls": "not triggered",
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "reduction-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round3-6b09cd4/check_reduction.py",
+        "--negative"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "default",
+      "stdout": "runs/reduction-negative.stdout",
+      "stderr": "runs/reduction-negative.stderr",
+      "result": {
+        "semantic_negatives_rejected": [
+          "missing_empty_fibre",
+          "lost_original_lift",
+          "wrong_original_frame",
+          "wrong_quotient_map",
+          "missing_cover",
+          "wrong_size",
+          "false_source",
+          "changed_candidate_lift",
+          "missing_cap",
+          "unproved_hub"
+        ],
+        "source_controls": "not triggered",
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "chi-seven-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/check.py"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "default",
+      "stdout": "runs/chi-seven-normal.stdout",
+      "stderr": "runs/chi-seven-normal.stderr",
+      "result": {
+        "arithmetic_equalities": [
+          [
+            1,
+            5,
+            2,
+            5
+          ]
+        ],
+        "caps": 16,
+        "chi_rootless_cases": 8,
+        "empty_fibres": 80,
+        "frozen_inputs": 10,
+        "immutable_drift": 0,
+        "inherited_star_rows": 60,
+        "ordered_boundary_rows": 496,
+        "seven_point_exclusion": "requires_separate_safe_replacement",
+        "source_realizability": "not triggered",
+        "status": "PASS",
+        "total_full_lifts": 1196
+      }
+    },
+    {
+      "name": "chi-seven-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "17",
+      "stdout": "runs/chi-seven-seed17.stdout",
+      "stderr": "runs/chi-seven-seed17.stderr",
+      "result": {
+        "arithmetic_equalities": [
+          [
+            1,
+            5,
+            2,
+            5
+          ]
+        ],
+        "caps": 16,
+        "chi_rootless_cases": 8,
+        "empty_fibres": 80,
+        "frozen_inputs": 10,
+        "immutable_drift": 0,
+        "inherited_star_rows": 60,
+        "ordered_boundary_rows": 496,
+        "seven_point_exclusion": "requires_separate_safe_replacement",
+        "source_realizability": "not triggered",
+        "status": "PASS",
+        "total_full_lifts": 1196
+      }
+    },
+    {
+      "name": "chi-seven-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/check.py",
+        "--negative"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "default",
+      "stdout": "runs/chi-seven-negative.stdout",
+      "stderr": "runs/chi-seven-negative.stderr",
+      "result": {
+        "frozen_inputs": 10,
+        "immutable_drift": 0,
+        "labels": [
+          "chi_to_rootless_edge",
+          "second_M2",
+          "chi_inside_cap",
+          "lost_full_star",
+          "old_B_inherited",
+          "lost_full_lift",
+          "lost_empty_fibre",
+          "false_source",
+          "false_exclusion"
+        ],
+        "negative_controls_rejected": 9,
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "chi-six-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-chi-six-6b09cd4/check.py"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "default",
+      "stdout": "runs/chi-six-normal.stdout",
+      "stderr": "runs/chi-six-normal.stderr",
+      "result": {
+        "complete_star_rows": 16,
+        "custody": {
+          "authority_inputs": 15,
+          "immutable_drift": 0,
+          "routing_snapshots": 3
+        },
+        "empty_normalized_cap_fibres": 24,
+        "exact_caps": 2,
+        "full_lifts": 104,
+        "literal_candidate_relation_bits": 16384,
+        "normalized_cap_fibres": 62,
+        "reduction_graphs": 4,
+        "seed": 0,
+        "source_realizability": "not triggered",
+        "star_cases": 44,
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "chi-six-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-gamma8-chi-six-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "17",
+      "stdout": "runs/chi-six-seed17.stdout",
+      "stderr": "runs/chi-six-seed17.stderr",
+      "result": {
+        "complete_star_rows": 16,
+        "custody": {
+          "authority_inputs": 15,
+          "immutable_drift": 0,
+          "routing_snapshots": 3
+        },
+        "empty_normalized_cap_fibres": 24,
+        "exact_caps": 2,
+        "full_lifts": 104,
+        "literal_candidate_relation_bits": 16384,
+        "normalized_cap_fibres": 62,
+        "reduction_graphs": 4,
+        "seed": 17,
+        "source_realizability": "not triggered",
+        "star_cases": 44,
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "chi-six-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-chi-six-6b09cd4/check.py",
+        "--negative"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "default",
+      "stdout": "runs/chi-six-negative.stdout",
+      "stderr": "runs/chi-six-negative.stderr",
+      "result": {
+        "complete_star_rows": 16,
+        "custody": {
+          "authority_inputs": 15,
+          "immutable_drift": 0,
+          "routing_snapshots": 3
+        },
+        "empty_normalized_cap_fibres": 24,
+        "exact_caps": 2,
+        "full_lifts": 104,
+        "literal_candidate_relation_bits": 16384,
+        "normalized_cap_fibres": 62,
+        "reduction_graphs": 4,
+        "seed": 0,
+        "semantic_negatives": [
+          {
+            "name": "drop_case",
+            "status": "rejected"
+          },
+          {
+            "name": "change_chi_ownership",
+            "status": "rejected"
+          },
+          {
+            "name": "invent_U_cyclic_star",
+            "status": "rejected"
+          },
+          {
+            "name": "drop_full_lift",
+            "status": "rejected"
+          },
+          {
+            "name": "erase_empty_fibre",
+            "status": "rejected"
+          },
+          {
+            "name": "reverse_single_actual_face",
+            "status": "rejected"
+          },
+          {
+            "name": "change_quotient",
+            "status": "rejected"
+          },
+          {
+            "name": "change_completed_cost",
+            "status": "rejected"
+          },
+          {
+            "name": "invent_source",
+            "status": "rejected"
+          },
+          {
+            "name": "raise_global_k",
+            "status": "rejected"
+          }
+        ],
+        "source_realizability": "not triggered",
+        "star_cases": 44,
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "review-topology-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-chi-review-6b09cd4/check.py"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "default",
+      "stdout": "runs/review-topology-normal.stdout",
+      "stderr": "runs/review-topology-normal.stderr",
+      "result": {
+        "cap_topology": [
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 30,
+            "every_face_has_sealed_owner": true,
+            "faces": 18,
+            "id": "empty-L",
+            "sealed_stars": {
+              "T": 6,
+              "a": 5,
+              "b": 5,
+              "r": 5,
+              "s": 5,
+              "tau": 5,
+              "y": 5
+            },
+            "vertices": 13
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 30,
+            "every_face_has_sealed_owner": true,
+            "faces": 18,
+            "id": "empty-R",
+            "sealed_stars": {
+              "T": 6,
+              "a": 5,
+              "b": 5,
+              "r": 5,
+              "s": 5,
+              "tau": 5,
+              "y": 5
+            },
+            "vertices": 13
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-0",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 7,
+              "s": 5,
+              "tau": 5,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-1",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 6,
+              "s": 5,
+              "tau": 5,
+              "u": 5,
+              "v": 6
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-10",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 6,
+              "r": 6,
+              "s": 5,
+              "tau": 5,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-11",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 6,
+              "r": 5,
+              "s": 5,
+              "tau": 5,
+              "u": 5,
+              "v": 6
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-12",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 6,
+              "r": 5,
+              "s": 6,
+              "tau": 5,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-13",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 7,
+              "r": 5,
+              "s": 5,
+              "tau": 5,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-14",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 5,
+              "s": 6,
+              "tau": 5,
+              "u": 6,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-15",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 6,
+              "r": 5,
+              "s": 5,
+              "tau": 5,
+              "u": 6,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-2",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 6,
+              "r": 6,
+              "s": 5,
+              "tau": 5,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-3",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 6,
+              "s": 5,
+              "tau": 5,
+              "u": 6,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-4",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 6,
+              "s": 5,
+              "tau": 6,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-5",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 5,
+              "s": 5,
+              "tau": 6,
+              "u": 5,
+              "v": 6
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-6",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 6,
+              "r": 5,
+              "s": 5,
+              "tau": 6,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-7",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 5,
+              "s": 5,
+              "tau": 6,
+              "u": 6,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-8",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 6,
+              "s": 6,
+              "tau": 5,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-9",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 5,
+              "s": 6,
+              "tau": 5,
+              "u": 5,
+              "v": 6
+            },
+            "vertices": 14
+          }
+        ],
+        "checked_saved_full_lifts": 1196,
+        "frozen_inputs": 10,
+        "full_relation_exhaustiveness": "inherited authority, not re-enumerated",
+        "mathematical_drift": 0,
+        "preserved_complete_boundary_rows": 496,
+        "preserved_empty_fibres": 80,
+        "source_exclusion_from_controls": false,
+        "source_realizability": "not triggered",
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "review-topology-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-gamma8-chi-review-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "17",
+      "stdout": "runs/review-topology-seed17.stdout",
+      "stderr": "runs/review-topology-seed17.stderr",
+      "result": {
+        "cap_topology": [
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 30,
+            "every_face_has_sealed_owner": true,
+            "faces": 18,
+            "id": "empty-L",
+            "sealed_stars": {
+              "T": 6,
+              "a": 5,
+              "b": 5,
+              "r": 5,
+              "s": 5,
+              "tau": 5,
+              "y": 5
+            },
+            "vertices": 13
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 30,
+            "every_face_has_sealed_owner": true,
+            "faces": 18,
+            "id": "empty-R",
+            "sealed_stars": {
+              "T": 6,
+              "a": 5,
+              "b": 5,
+              "r": 5,
+              "s": 5,
+              "tau": 5,
+              "y": 5
+            },
+            "vertices": 13
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-0",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 7,
+              "s": 5,
+              "tau": 5,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-1",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 6,
+              "s": 5,
+              "tau": 5,
+              "u": 5,
+              "v": 6
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-10",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 6,
+              "r": 6,
+              "s": 5,
+              "tau": 5,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-11",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 6,
+              "r": 5,
+              "s": 5,
+              "tau": 5,
+              "u": 5,
+              "v": 6
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-12",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 6,
+              "r": 5,
+              "s": 6,
+              "tau": 5,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-13",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 7,
+              "r": 5,
+              "s": 5,
+              "tau": 5,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-14",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 5,
+              "s": 6,
+              "tau": 5,
+              "u": 6,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-15",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 6,
+              "r": 5,
+              "s": 5,
+              "tau": 5,
+              "u": 6,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-2",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 6,
+              "r": 6,
+              "s": 5,
+              "tau": 5,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-3",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 6,
+              "s": 5,
+              "tau": 5,
+              "u": 6,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-4",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 6,
+              "s": 5,
+              "tau": 6,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-5",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 5,
+              "s": 5,
+              "tau": 6,
+              "u": 5,
+              "v": 6
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-6",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 6,
+              "r": 5,
+              "s": 5,
+              "tau": 6,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-7",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 5,
+              "s": 5,
+              "tau": 6,
+              "u": 6,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-8",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 6,
+              "s": 6,
+              "tau": 5,
+              "u": 5,
+              "v": 5
+            },
+            "vertices": 14
+          },
+          {
+            "boundary_link_paths": 6,
+            "common_orientation": true,
+            "edges": 33,
+            "every_face_has_sealed_owner": true,
+            "faces": 20,
+            "id": "nonempty-9",
+            "sealed_stars": {
+              "T": 5,
+              "m": 5,
+              "n": 5,
+              "r": 5,
+              "s": 6,
+              "tau": 5,
+              "u": 5,
+              "v": 6
+            },
+            "vertices": 14
+          }
+        ],
+        "checked_saved_full_lifts": 1196,
+        "frozen_inputs": 10,
+        "full_relation_exhaustiveness": "inherited authority, not re-enumerated",
+        "mathematical_drift": 0,
+        "preserved_complete_boundary_rows": 496,
+        "preserved_empty_fibres": 80,
+        "source_exclusion_from_controls": false,
+        "source_realizability": "not triggered",
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "review-topology-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-chi-review-6b09cd4/check.py",
+        "--negative"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "default",
+      "stdout": "runs/review-topology-negative.stdout",
+      "stderr": "runs/review-topology-negative.stderr",
+      "result": {
+        "semantic_rejections": [
+          "drop_actual_face",
+          "identify_boundary",
+          "lose_interior_owner",
+          "extra_sealed_star_edge"
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "review-cover-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-chi-review-6b09cd4/check_cover.py"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "default",
+      "stdout": "runs/review-cover-normal.stdout",
+      "stderr": "runs/review-cover-normal.stderr",
+      "result": {
+        "all_drawn_chords_noncrossing": true,
+        "all_literal_tuples": 4096,
+        "all_quotient_classes_checked": true,
+        "candidates": 34,
+        "caps": 16,
+        "exclusions_from_control_pass": false,
+        "hub_drawings": 1,
+        "literal_candidate_backfills": 14724,
+        "literal_proper_tuples": 732,
+        "same_fixed_choice_literal_row_checks": 7167744,
+        "savings": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "source_controls": "not triggered",
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "review-cover-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-gamma8-chi-review-6b09cd4/check_cover.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "17",
+      "stdout": "runs/review-cover-seed17.stdout",
+      "stderr": "runs/review-cover-seed17.stderr",
+      "result": {
+        "all_drawn_chords_noncrossing": true,
+        "all_literal_tuples": 4096,
+        "all_quotient_classes_checked": true,
+        "candidates": 34,
+        "caps": 16,
+        "exclusions_from_control_pass": false,
+        "hub_drawings": 1,
+        "literal_candidate_backfills": 14724,
+        "literal_proper_tuples": 732,
+        "same_fixed_choice_literal_row_checks": 7167744,
+        "savings": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "source_controls": "not triggered",
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "review-cover-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-chi-review-6b09cd4/check_cover.py",
+        "--negative"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "hash_seed": "default",
+      "stdout": "runs/review-cover-negative.stdout",
+      "stderr": "runs/review-cover-negative.stderr",
+      "result": {
+        "rejected": [
+          "drop_candidate_cover",
+          "change_cost",
+          "crossed_diagonals",
+          "change_hub_side"
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "external-corrupt",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round3-6b09cd4/check_reduction.py",
+        "--certificate",
+        "audits/2026-10-23-941-types-wrong-side-round3-6b09cd4/runs/corrupt-reduction.json"
+      ],
+      "exit_code": 1,
+      "expected_exit": 1,
+      "hash_seed": "default",
+      "stdout": "runs/external-corrupt.stdout",
+      "stderr": "runs/external-corrupt.stderr",
+      "result": {
+        "reason": "original complete fibres/lifts drift",
+        "status": "FAIL"
+      }
+    },
+    {
+      "name": "external-malformed",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round3-6b09cd4/check_reduction.py",
+        "--certificate",
+        "audits/2026-10-23-941-types-wrong-side-round3-6b09cd4/runs/malformed-reduction.json"
+      ],
+      "exit_code": 1,
+      "expected_exit": 1,
+      "hash_seed": "default",
+      "stdout": "runs/external-malformed.stdout",
+      "stderr": "runs/external-malformed.stderr",
+      "result": {
+        "reason": "'words'",
+        "status": "FAIL"
+      }
+    },
+    {
+      "name": "exclusive-create-rejection",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round3-6b09cd4/produce_reduction.py"
+      ],
+      "exit_code": 1,
+      "expected_exit": 1,
+      "hash_seed": "default",
+      "stdout": "runs/exclusive-create-rejection.stdout",
+      "stderr": "runs/exclusive-create-rejection.stderr"
+    }
+  ],
+  "syntax_files": [
+    "audits/2026-10-23-941-types-wrong-side-round3-6b09cd4/check_reduction.py",
+    "audits/2026-10-23-941-types-wrong-side-round3-6b09cd4/produce_reduction.py",
+    "audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/check.py",
+    "audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/produce.py",
+    "audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/verify.py",
+    "audits/2026-10-23-941-gamma8-chi-six-6b09cd4/check.py",
+    "audits/2026-10-23-941-gamma8-chi-six-6b09cd4/produce.py",
+    "audits/2026-10-23-941-gamma8-chi-six-6b09cd4/verify.py",
+    "audits/2026-10-23-941-gamma8-chi-review-6b09cd4/check_cover.py",
+    "audits/2026-10-23-941-gamma8-chi-review-6b09cd4/check.py"
+  ],
+  "paper_excluded_branches": [
+    "nonempty_M2_X7",
+    "empty_M2_X6"
+  ],
+  "paper_resource_lower_bounds": {
+    "nonempty_M2": 7,
+    "empty_M2_T6": 6
+  },
+  "all_eleven_exterior_lower_bound": 7,
+  "global_k_lower_bound": 23,
+  "source_controls": "not triggered",
+  "commit_push": false,
+  "retained_initial_failure": "runs-before-routing-fix records explicit STATUS/guide routing drift; final checker compares declared routing-entry snapshots and keeps all mathematical authorities immutable"
+}

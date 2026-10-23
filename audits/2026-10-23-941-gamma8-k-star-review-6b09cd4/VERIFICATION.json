@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "label": "normal",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "label": "seed17",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0
+    },
+    {
+      "label": "negative",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check.py",
+        "--negative"
+      ],
+      "exit_code": 0
+    },
+    {
+      "label": "external-certificate-corruption",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check.py",
+        "--certificate",
+        "audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/runs/external-corrupt-certificate.json"
+      ],
+      "exit_code": 1,
+      "expected_nonzero": true
+    },
+    {
+      "label": "transfer-normal",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check_transfers.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "label": "transfer-seed17",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check_transfers.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "label": "transfer-negative",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check_transfers.py",
+        "--negative"
+      ],
+      "exit_code": 0
+    },
+    {
+      "label": "external-transfer-corruption",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check_transfers.py",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/runs/external-transfer-corrupt-certificate.json"
+      ],
+      "exit_code": 1,
+      "expected_nonzero": true
+    }
+  ],
+  "semantic_controls_rejected": 11,
+  "external_controls_rejected": 2,
+  "authority_drift": 0,
+  "finite_final_input_drift": 0,
+  "prose_final_revisions": 0,
+  "source_control": "not triggered"
+}

@@ -1,0 +1,184 @@
+{
+  "id": "wrong-side-branches--seed17",
+  "directory": "audits/2026-10-23-941-wrong-side-branches-6b09cd4",
+  "group": "wrong-side-branches",
+  "mode": "seed17",
+  "argv": [
+    "python3",
+    "-B",
+    "-O",
+    "audits/2026-10-23-941-wrong-side-branches-6b09cd4/check.py",
+    "--seed",
+    "17"
+  ],
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONHASHSEED": "17"
+  },
+  "documented_command": "PYTHONHASHSEED=17 python3 -B -O audits/2026-10-23-941-wrong-side-branches-6b09cd4/check.py --seed 17",
+  "authority": "audits/2026-10-23-941-wrong-side-branches-6b09cd4/REPORT.md",
+  "cwd": "repository root",
+  "started_utc": "2026-10-23T14:07:49.188190+00:00",
+  "timeout_seconds": 180,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "{\"authority_inputs\": 61, \"finite_calibration\": \"triggered and holds\", \"seed\": 17, \"source_control\": \"not triggered\", \"statistics\": {\"B13\": [{\"b_component\": [\"b\"], \"boundary_contact_count\": 0, \"conditional_exclusion_triggered\": false, \"name\": \"private_cut_unframed_b_branch\"}, {\"b_component\": [\"b\", \"c\", \"t\"], \"boundary_contact_count\": 1, \"conditional_exclusion_triggered\": true, \"name\": \"q_cut_c_side_now_excluded_conditionally\"}, {\"b_component\": [\"b\"], \"boundary_contact_count\": 0, \"conditional_exclusion_triggered\": false, \"name\": \"q_cut_unframed_b_branch_still_necessary\"}], \"C12\": [{\"conditional_exclusion_triggered\": true, \"e_neighbor_frames\": [\"Y\"], \"name\": \"U_two_boundary_neighbor_branches_excluded_conditionally\", \"r_neighbor_frames\": [\"V\"]}, {\"conditional_exclusion_triggered\": false, \"e_neighbor_frames\": [], \"name\": \"U_both_branches_avoid_neighbor_frames\", \"r_neighbor_frames\": []}], \"P_escape\": {\"B13_component_after_q_deletion\": [\"b\"], \"P01\": [\"b\", \"x\", \"c\"], \"P_internal_vertices_not_in_B\": [\"x\"]}, \"links\": [{\"D0\": 0, \"kind\": \"cyclic\", \"minimum_color_words\": 8, \"minimum_degree\": 6, \"n1\": 3}, {\"D0\": 1, \"kind\": \"cyclic\", \"minimum_color_words\": 24, \"minimum_degree\": 7, \"n1\": 3}, {\"D0\": 2, \"kind\": \"cyclic\", \"minimum_color_words\": 48, \"minimum_degree\": 8, \"n1\": 3}, {\"D0\": 0, \"kind\": \"path\", \"minimum_color_words\": 4, \"minimum_degree\": 5, \"n1\": 3}, {\"D0\": 1, \"kind\": \"path\", \"minimum_color_words\": 8, \"minimum_degree\": 6, \"n1\": 3}, {\"D0\": 2, \"kind\": \"path\", \"minimum_color_words\": 12, \"minimum_degree\": 7, \"n1\": 3}, {\"D0\": 0, \"kind\": \"path\", \"minimum_color_words\": 8, \"minimum_degree\": 7, \"n1\": 4}, {\"D0\": 1, \"kind\": \"path\", \"minimum_color_words\": 24, \"minimum_degree\": 8, \"n1\": 4}, {\"D0\": 2, \"kind\": \"path\", \"minimum_color_words\": 48, \"minimum_degree\": 9, \"n1\": 4}, {\"D0\": 0, \"kind\": \"path\", \"minimum_color_words\": 16, \"minimum_degree\": 9, \"n1\": 5}, {\"D0\": 1, \"kind\": \"path\", \"minimum_color_words\": 64, \"minimum_degree\": 10, \"n1\": 5}, {\"D0\": 2, \"kind\": \"path\", \"minimum_color_words\": 160, \"minimum_degree\": 11, \"n1\": 5}]}, \"status\": \"PASS\"}\n",
+  "stderr": "",
+  "elapsed_seconds": 0.050748,
+  "payload": {
+    "authority_inputs": 61,
+    "finite_calibration": "triggered and holds",
+    "seed": 17,
+    "source_control": "not triggered",
+    "statistics": {
+      "B13": [
+        {
+          "b_component": [
+            "b"
+          ],
+          "boundary_contact_count": 0,
+          "conditional_exclusion_triggered": false,
+          "name": "private_cut_unframed_b_branch"
+        },
+        {
+          "b_component": [
+            "b",
+            "c",
+            "t"
+          ],
+          "boundary_contact_count": 1,
+          "conditional_exclusion_triggered": true,
+          "name": "q_cut_c_side_now_excluded_conditionally"
+        },
+        {
+          "b_component": [
+            "b"
+          ],
+          "boundary_contact_count": 0,
+          "conditional_exclusion_triggered": false,
+          "name": "q_cut_unframed_b_branch_still_necessary"
+        }
+      ],
+      "C12": [
+        {
+          "conditional_exclusion_triggered": true,
+          "e_neighbor_frames": [
+            "Y"
+          ],
+          "name": "U_two_boundary_neighbor_branches_excluded_conditionally",
+          "r_neighbor_frames": [
+            "V"
+          ]
+        },
+        {
+          "conditional_exclusion_triggered": false,
+          "e_neighbor_frames": [],
+          "name": "U_both_branches_avoid_neighbor_frames",
+          "r_neighbor_frames": []
+        }
+      ],
+      "P_escape": {
+        "B13_component_after_q_deletion": [
+          "b"
+        ],
+        "P01": [
+          "b",
+          "x",
+          "c"
+        ],
+        "P_internal_vertices_not_in_B": [
+          "x"
+        ]
+      },
+      "links": [
+        {
+          "D0": 0,
+          "kind": "cyclic",
+          "minimum_color_words": 8,
+          "minimum_degree": 6,
+          "n1": 3
+        },
+        {
+          "D0": 1,
+          "kind": "cyclic",
+          "minimum_color_words": 24,
+          "minimum_degree": 7,
+          "n1": 3
+        },
+        {
+          "D0": 2,
+          "kind": "cyclic",
+          "minimum_color_words": 48,
+          "minimum_degree": 8,
+          "n1": 3
+        },
+        {
+          "D0": 0,
+          "kind": "path",
+          "minimum_color_words": 4,
+          "minimum_degree": 5,
+          "n1": 3
+        },
+        {
+          "D0": 1,
+          "kind": "path",
+          "minimum_color_words": 8,
+          "minimum_degree": 6,
+          "n1": 3
+        },
+        {
+          "D0": 2,
+          "kind": "path",
+          "minimum_color_words": 12,
+          "minimum_degree": 7,
+          "n1": 3
+        },
+        {
+          "D0": 0,
+          "kind": "path",
+          "minimum_color_words": 8,
+          "minimum_degree": 7,
+          "n1": 4
+        },
+        {
+          "D0": 1,
+          "kind": "path",
+          "minimum_color_words": 24,
+          "minimum_degree": 8,
+          "n1": 4
+        },
+        {
+          "D0": 2,
+          "kind": "path",
+          "minimum_color_words": 48,
+          "minimum_degree": 9,
+          "n1": 4
+        },
+        {
+          "D0": 0,
+          "kind": "path",
+          "minimum_color_words": 16,
+          "minimum_degree": 9,
+          "n1": 5
+        },
+        {
+          "D0": 1,
+          "kind": "path",
+          "minimum_color_words": 64,
+          "minimum_degree": 10,
+          "n1": 5
+        },
+        {
+          "D0": 2,
+          "kind": "path",
+          "minimum_color_words": 160,
+          "minimum_degree": 11,
+          "n1": 5
+        }
+      ]
+    },
+    "status": "PASS"
+  },
+  "success_evidence": "explicit PASS",
+  "passed": true
+}

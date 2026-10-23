@@ -1,0 +1,109 @@
+{
+  "id": "wrong-side-general--normal",
+  "directory": "audits/2026-10-23-941-wrong-side-general-6b09cd4",
+  "group": "wrong-side-general",
+  "mode": "normal",
+  "argv": [
+    "python3",
+    "-B",
+    "audits/2026-10-23-941-wrong-side-general-6b09cd4/check.py"
+  ],
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "documented_command": "python3 -B audits/2026-10-23-941-wrong-side-general-6b09cd4/check.py",
+  "authority": "audits/2026-10-23-941-wrong-side-general-6b09cd4/REPORT.md",
+  "cwd": "repository root",
+  "started_utc": "2026-10-23T14:07:49.291682+00:00",
+  "timeout_seconds": 180,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "{\"authority_inputs\": 54, \"finite_calibration\": \"triggered and holds\", \"seed\": 0, \"source_control\": \"not triggered\", \"statistics\": {\"B13\": [{\"name\": \"boundary_b_equals_c\", \"simple_paths\": 1, \"unavoidable_vertices\": [\"q\"]}, {\"name\": \"private_B_cutpoint_rootless_tail\", \"simple_paths\": 1, \"unavoidable_vertices\": [\"q\", \"t\", \"w\"]}, {\"name\": \"alternative_B_path_avoids_q\", \"simple_paths\": 2, \"unavoidable_vertices\": []}], \"C12\": [{\"name\": \"C_literal01_bridge\", \"r_e_bridges\": [[\"a\", \"k0\"], [\"a\", \"u\"], [\"b1\", \"k0\"], [\"b1\", \"v\"], [\"e\", \"v\"], [\"r\", \"u\"]], \"simple_paths\": 1}, {\"name\": \"C_cycle_has_no_r_e_bridge\", \"r_e_bridges\": [], \"simple_paths\": 2}], \"wedges\": [{\"inside\": 3, \"name\": \"boundary_q_all_F_faces_inside\", \"outside\": 0, \"q_faces\": 3}, {\"inside\": 2, \"name\": \"interior_q_requires_boundary_premise\", \"outside\": 2, \"q_faces\": 4}]}, \"status\": \"PASS\"}\n",
+  "stderr": "",
+  "elapsed_seconds": 0.046673,
+  "payload": {
+    "authority_inputs": 54,
+    "finite_calibration": "triggered and holds",
+    "seed": 0,
+    "source_control": "not triggered",
+    "statistics": {
+      "B13": [
+        {
+          "name": "boundary_b_equals_c",
+          "simple_paths": 1,
+          "unavoidable_vertices": [
+            "q"
+          ]
+        },
+        {
+          "name": "private_B_cutpoint_rootless_tail",
+          "simple_paths": 1,
+          "unavoidable_vertices": [
+            "q",
+            "t",
+            "w"
+          ]
+        },
+        {
+          "name": "alternative_B_path_avoids_q",
+          "simple_paths": 2,
+          "unavoidable_vertices": []
+        }
+      ],
+      "C12": [
+        {
+          "name": "C_literal01_bridge",
+          "r_e_bridges": [
+            [
+              "a",
+              "k0"
+            ],
+            [
+              "a",
+              "u"
+            ],
+            [
+              "b1",
+              "k0"
+            ],
+            [
+              "b1",
+              "v"
+            ],
+            [
+              "e",
+              "v"
+            ],
+            [
+              "r",
+              "u"
+            ]
+          ],
+          "simple_paths": 1
+        },
+        {
+          "name": "C_cycle_has_no_r_e_bridge",
+          "r_e_bridges": [],
+          "simple_paths": 2
+        }
+      ],
+      "wedges": [
+        {
+          "inside": 3,
+          "name": "boundary_q_all_F_faces_inside",
+          "outside": 0,
+          "q_faces": 3
+        },
+        {
+          "inside": 2,
+          "name": "interior_q_requires_boundary_premise",
+          "outside": 2,
+          "q_faces": 4
+        }
+      ]
+    },
+    "status": "PASS"
+  },
+  "success_evidence": "explicit PASS",
+  "passed": true
+}

@@ -1,0 +1,236 @@
+[
+  {
+    "name": "empty-negative",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-23-941-gamma8-empty-resource-stars-6b09cd4/check.py",
+      "--negative"
+    ],
+    "exit_code": 0,
+    "expected_exit": 0,
+    "hash_seed": "default",
+    "stdout": "runs/empty-negative.stdout",
+    "stderr": "runs/empty-negative.stderr",
+    "result": {
+      "custody": {
+        "direct_authorities": 9,
+        "drift": 0,
+        "retained_round3_artifacts": 173,
+        "routing_snapshots": 2
+      },
+      "owner_controls": {
+        "N1_degree_five_sets": 4,
+        "N1_three_common_neighbor_obstructions": 8,
+        "R02_max_neighbors": 4,
+        "R13_new_component_contacts": 0
+      },
+      "seed": 0,
+      "status": "PASS",
+      "verification": {
+        "complete_N3_stars": 0,
+        "negative_rejected": [
+          "drop_N3_pattern",
+          "invent_R02_owner",
+          "erase_empty_full_star_fibre",
+          "promote_general_wrong_side",
+          "wrong_K0_complete_envelope",
+          "invent_U_complete_star"
+        ],
+        "owners_remaining": [
+          "K0",
+          "K2"
+        ],
+        "partial_N3_stars": 20,
+        "source_realizability": "not triggered",
+        "source_star_cases": 22
+      }
+    }
+  },
+  {
+    "name": "empty-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-23-941-gamma8-empty-resource-stars-6b09cd4/check.py"
+    ],
+    "exit_code": 0,
+    "expected_exit": 0,
+    "hash_seed": "default",
+    "stdout": "runs/empty-normal.stdout",
+    "stderr": "runs/empty-normal.stderr",
+    "result": {
+      "custody": {
+        "direct_authorities": 9,
+        "drift": 0,
+        "retained_round3_artifacts": 173,
+        "routing_snapshots": 2
+      },
+      "owner_controls": {
+        "N1_degree_five_sets": 4,
+        "N1_three_common_neighbor_obstructions": 8,
+        "R02_max_neighbors": 4,
+        "R13_new_component_contacts": 0
+      },
+      "seed": 0,
+      "status": "PASS",
+      "verification": {
+        "complete_N3_stars": 0,
+        "owners_remaining": [
+          "K0",
+          "K2"
+        ],
+        "partial_N3_stars": 20,
+        "source_realizability": "not triggered",
+        "source_star_cases": 22
+      }
+    }
+  },
+  {
+    "name": "empty-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "-O",
+      "audits/2026-10-23-941-gamma8-empty-resource-stars-6b09cd4/check.py",
+      "--seed",
+      "17"
+    ],
+    "exit_code": 0,
+    "expected_exit": 0,
+    "hash_seed": "17",
+    "stdout": "runs/empty-seed17.stdout",
+    "stderr": "runs/empty-seed17.stderr",
+    "result": {
+      "custody": {
+        "direct_authorities": 9,
+        "drift": 0,
+        "retained_round3_artifacts": 173,
+        "routing_snapshots": 2
+      },
+      "owner_controls": {
+        "N1_degree_five_sets": 4,
+        "N1_three_common_neighbor_obstructions": 8,
+        "R02_max_neighbors": 4,
+        "R13_new_component_contacts": 0
+      },
+      "seed": 17,
+      "status": "PASS",
+      "verification": {
+        "complete_N3_stars": 0,
+        "owners_remaining": [
+          "K0",
+          "K2"
+        ],
+        "partial_N3_stars": 20,
+        "source_realizability": "not triggered",
+        "source_star_cases": 22
+      }
+    }
+  },
+  {
+    "name": "nonempty-negative",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-23-941-gamma8-nonempty-resource-stars-6b09cd4/check.py",
+      "--negative"
+    ],
+    "exit_code": 0,
+    "expected_exit": 0,
+    "hash_seed": "default",
+    "stdout": "runs/nonempty-negative.stdout",
+    "stderr": "runs/nonempty-negative.stderr",
+    "result": {
+      "N1_omega_full_stars": 2,
+      "common_k_lower_bound": 23,
+      "complete_predecessor_preserved": true,
+      "eleven_type_exclusions": 0,
+      "extra_M0_star_trials": 26,
+      "full_T_m_star_trials": 24,
+      "immutable_drift": 0,
+      "immutable_inputs": 8,
+      "maximum_extra_M0_degree": 4,
+      "necessary_survivors": 2,
+      "negative_controls_rejected": [
+        "drop-full-star",
+        "change-complete-m-link",
+        "lose-spare-point",
+        "promote-degree-six",
+        "drop-omega-type",
+        "force-C-side",
+        "admit-new-rootless-02",
+        "inherit-old-60",
+        "omit-full-u-link",
+        "lose-N1-forced-neighbor",
+        "claim-source",
+        "alter-full-lift"
+      ],
+      "omega_component_trials": 8,
+      "source_realizability": "not triggered",
+      "status": "PASS",
+      "u_full_link_trials": 62
+    }
+  },
+  {
+    "name": "nonempty-normal",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-23-941-gamma8-nonempty-resource-stars-6b09cd4/check.py"
+    ],
+    "exit_code": 0,
+    "expected_exit": 0,
+    "hash_seed": "default",
+    "stdout": "runs/nonempty-normal.stdout",
+    "stderr": "runs/nonempty-normal.stderr",
+    "result": {
+      "N1_omega_full_stars": 2,
+      "common_k_lower_bound": 23,
+      "complete_predecessor_preserved": true,
+      "eleven_type_exclusions": 0,
+      "extra_M0_star_trials": 26,
+      "full_T_m_star_trials": 24,
+      "immutable_drift": 0,
+      "immutable_inputs": 8,
+      "maximum_extra_M0_degree": 4,
+      "necessary_survivors": 2,
+      "omega_component_trials": 8,
+      "source_realizability": "not triggered",
+      "status": "PASS",
+      "u_full_link_trials": 62
+    }
+  },
+  {
+    "name": "nonempty-seed17",
+    "command": [
+      "python3",
+      "-B",
+      "-O",
+      "audits/2026-10-23-941-gamma8-nonempty-resource-stars-6b09cd4/check.py",
+      "--seed",
+      "17"
+    ],
+    "exit_code": 0,
+    "expected_exit": 0,
+    "hash_seed": "17",
+    "stdout": "runs/nonempty-seed17.stdout",
+    "stderr": "runs/nonempty-seed17.stderr",
+    "result": {
+      "N1_omega_full_stars": 2,
+      "common_k_lower_bound": 23,
+      "complete_predecessor_preserved": true,
+      "eleven_type_exclusions": 0,
+      "extra_M0_star_trials": 26,
+      "full_T_m_star_trials": 24,
+      "immutable_drift": 0,
+      "immutable_inputs": 8,
+      "maximum_extra_M0_degree": 4,
+      "necessary_survivors": 2,
+      "omega_component_trials": 8,
+      "source_realizability": "not triggered",
+      "status": "PASS",
+      "u_full_link_trials": 62
+    }
+  }
+]

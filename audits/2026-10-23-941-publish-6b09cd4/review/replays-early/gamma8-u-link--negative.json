@@ -1,0 +1,63 @@
+{
+  "id": "gamma8-u-link--negative",
+  "directory": "audits/2026-10-23-941-gamma8-u-link-6b09cd4",
+  "group": "gamma8-u-link",
+  "mode": "negative",
+  "argv": [
+    "python3",
+    "-B",
+    "audits/2026-10-23-941-gamma8-u-link-6b09cd4/check.py",
+    "--negative"
+  ],
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "documented_command": "python3 -B audits/2026-10-23-941-gamma8-u-link-6b09cd4/check.py --negative",
+  "authority": "audits/2026-10-23-941-gamma8-u-link-6b09cd4/REPORT.md",
+  "cwd": "repository root",
+  "started_utc": "2026-10-23T14:07:44.939140+00:00",
+  "timeout_seconds": 180,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "{\"custody\": {\"frozen_direct_inputs\": 8, \"immutable_drift\": 0}, \"negative\": {\"count\": 14, \"negative_controls_rejected\": [\"missing_star\", \"false_nx_L\", \"lost_full_n\", \"bad_exit_arc\", \"bad_U_arc\", \"missing_B\", \"false_B_edge\", \"wrong_B_bridge\", \"allow_W_q\", \"allow_e_Y\", \"root_E\", \"claim_source\", \"claim_type_exclusion\", \"wrong_U_order\"]}, \"validation\": {\"B_models\": 6, \"complete_star_restrictions\": 60, \"eleven_type_exclusions\": 0, \"per_core\": {\"L\": 16, \"O\": 12, \"R\": 32}, \"source_realizability\": \"not triggered\"}}\n",
+  "stderr": "",
+  "elapsed_seconds": 4.549974,
+  "payload": {
+    "custody": {
+      "frozen_direct_inputs": 8,
+      "immutable_drift": 0
+    },
+    "negative": {
+      "count": 14,
+      "negative_controls_rejected": [
+        "missing_star",
+        "false_nx_L",
+        "lost_full_n",
+        "bad_exit_arc",
+        "bad_U_arc",
+        "missing_B",
+        "false_B_edge",
+        "wrong_B_bridge",
+        "allow_W_q",
+        "allow_e_Y",
+        "root_E",
+        "claim_source",
+        "claim_type_exclusion",
+        "wrong_U_order"
+      ]
+    },
+    "validation": {
+      "B_models": 6,
+      "complete_star_restrictions": 60,
+      "eleven_type_exclusions": 0,
+      "per_core": {
+        "L": 16,
+        "O": 12,
+        "R": 32
+      },
+      "source_realizability": "not triggered"
+    }
+  },
+  "success_evidence": "zero exit with documented custody/validation schema",
+  "passed": true
+}

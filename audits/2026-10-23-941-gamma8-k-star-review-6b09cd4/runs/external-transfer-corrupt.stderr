@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check_transfers.py", line 172, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check_transfers.py", line 149, in main
+    result = verify_maps(cert,rows,oldcaps)
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check_transfers.py", line 105, in verify_maps
+    require(set(mp) == vertices and set(mp.values()) == set(old['inner']+old['boundary']) and len(set(mp.values())) == 14, 'one whole-graph bijection')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-k-star-review-6b09cd4/check_transfers.py", line 20, in require
+    raise ValueError(why)
+ValueError: one whole-graph bijection

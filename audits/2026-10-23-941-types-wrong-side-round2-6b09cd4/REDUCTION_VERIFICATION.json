@@ -1,0 +1,132 @@
+{
+  "status": "PASS",
+  "normal": {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-23-941-types-wrong-side-round2-6b09cd4/check_reduction.py"
+    ],
+    "exit_code": 0,
+    "result": {
+      "accepted_tuple_choices": 19,
+      "candidate_sizes": [
+        5,
+        8,
+        5,
+        8
+      ],
+      "catalogue_four_row_matches": 0,
+      "catalogue_masks": 132,
+      "complete_original_lifts_each": 52,
+      "complete_proper_words": 31,
+      "each_candidate_backfills": true,
+      "frozen_inputs": 36,
+      "immutable_drift": 0,
+      "new_Lean": false,
+      "original_empty": 12,
+      "original_nonempty": 19,
+      "paper_reduction": "conditional on sealed original K6, all contacts original C5-interior, planarity and minimum-source premises; see PROOF.md",
+      "same_candidate_global_row_checks": 589,
+      "seed": 0,
+      "source_controls": "not triggered",
+      "status": "PASS",
+      "union_equals_original": true
+    },
+    "stdout_sha256": "37de32c6693d82587597a890760636edfcc6bba7c70b2083d4825f37b2510684"
+  },
+  "seed17": {
+    "command": [
+      "python3",
+      "-B",
+      "-O",
+      "audits/2026-10-23-941-types-wrong-side-round2-6b09cd4/check_reduction.py",
+      "--seed",
+      "17"
+    ],
+    "exit_code": 0,
+    "result": {
+      "accepted_tuple_choices": 19,
+      "candidate_sizes": [
+        5,
+        8,
+        5,
+        8
+      ],
+      "catalogue_four_row_matches": 0,
+      "catalogue_masks": 132,
+      "complete_original_lifts_each": 52,
+      "complete_proper_words": 31,
+      "each_candidate_backfills": true,
+      "frozen_inputs": 36,
+      "immutable_drift": 0,
+      "new_Lean": false,
+      "original_empty": 12,
+      "original_nonempty": 19,
+      "paper_reduction": "conditional on sealed original K6, all contacts original C5-interior, planarity and minimum-source premises; see PROOF.md",
+      "same_candidate_global_row_checks": 589,
+      "seed": 17,
+      "source_controls": "not triggered",
+      "status": "PASS",
+      "union_equals_original": true
+    },
+    "stdout_sha256": "b2490a9858a3f1778b6c81bf4d9883092f724edc94ea27e5e8d447347cca59ae"
+  },
+  "normal_seed17_equal": true,
+  "semantic_negative": {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-23-941-types-wrong-side-round2-6b09cd4/check_reduction.py",
+      "--negative"
+    ],
+    "exit_code": 0,
+    "result": {
+      "seed": 0,
+      "semantic_negatives_rejected": [
+        "missing_empty_fibre",
+        "missing_full_lift",
+        "wrong_contact_frame",
+        "crossed_identification_map",
+        "missing_cover_candidate",
+        "wrong_completed_cost",
+        "missing_same_graph_declaration",
+        "false_cover_summary"
+      ],
+      "source_controls": "not triggered",
+      "status": "PASS"
+    },
+    "stdout_sha256": "2e9b56dde40d75c91d15f7442e1d685c826babf3624811c15f84bb9a5647e6ea"
+  },
+  "external_corrupt": {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-23-941-types-wrong-side-round2-6b09cd4/check_reduction.py",
+      "--certificate",
+      "audits/2026-10-23-941-types-wrong-side-round2-6b09cd4/runs/corrupt-reduction.json"
+    ],
+    "exit_code": 1,
+    "result": {
+      "reason": "candidate mapping/edge/cost drift",
+      "status": "FAIL"
+    },
+    "stdout_sha256": "5a0acadea1344b5b7985dbacc6fdb918a10f219f1431588e6a6a64727b8237e3"
+  },
+  "external_malformed": {
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-23-941-types-wrong-side-round2-6b09cd4/check_reduction.py",
+      "--certificate",
+      "audits/2026-10-23-941-types-wrong-side-round2-6b09cd4/runs/malformed-reduction.json"
+    ],
+    "exit_code": 1,
+    "result": {
+      "reason": "'base'",
+      "status": "FAIL"
+    },
+    "stdout_sha256": "0da7561d7604535d082a6245ee01f76f1a819b9db5ece0eb1b74a898b0efaf30"
+  },
+  "paper_scope": "arbitrary actual minimum source containing one of the sealed seven-inner K6 caps: construct one smaller same candidate preserving acceptance and backfilling all rejections",
+  "source_controls": "not triggered"
+}

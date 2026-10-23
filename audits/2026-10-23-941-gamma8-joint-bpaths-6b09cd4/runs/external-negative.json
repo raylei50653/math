@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-joint-bpaths-6b09cd4/check.py",
+    "--certificate",
+    "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-joint-bpaths-6b09cd4/runs/corrupted-certificate.json"
+  ],
+  "returncode": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-joint-bpaths-6b09cd4/check.py\", line 240, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-joint-bpaths-6b09cd4/check.py\", line 235, in main\n    out=dict(custody=custody(),validation=validate(cert,args.seed))\n                                          ~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-joint-bpaths-6b09cd4/check.py\", line 180, in validate\n    require(cert['face_tables']==expected,'source-face domain/value drift')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-joint-bpaths-6b09cd4/check.py\", line 22, in require\n    if not ok:raise ValueError(why)\n              ^^^^^^^^^^^^^^^^^^^^^\nValueError: source-face domain/value drift\n",
+  "stdout": ""
+}

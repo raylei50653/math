@@ -1,0 +1,23 @@
+{
+  "checks": [
+    {
+      "command": "python3 -B scripts/check_docs.py",
+      "exit_code": 0,
+      "stdout": "OK: 712 Markdown files, 9428 local links; anchors, index, handoff, guide progress checked"
+    },
+    {
+      "command": "python3 -B tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "stdout": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "stdout": "no tracked whitespace errors"
+    }
+  ],
+  "propagation": "L1 guide/STATUS; parent wrong-side and global bounds remain OPEN/unchanged",
+  "scope": "formal docs and scoped formal DocGraph",
+  "status": "PASS",
+  "whole_tree_docgraph": "not rerun; no whole-tree PASS claim"
+}

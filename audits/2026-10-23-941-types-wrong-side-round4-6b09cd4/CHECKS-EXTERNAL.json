@@ -1,0 +1,30 @@
+[
+  {
+    "name": "pair-external-corruption",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-23-941-types-wrong-side-round4-6b09cd4/check.py",
+      "--certificate",
+      "audits/2026-10-23-941-types-wrong-side-round4-6b09cd4/broken-pair-certificate.json"
+    ],
+    "exit_code": 1,
+    "expected_exit": "nonzero",
+    "stdout": "runs/pair-external-corruption.stdout",
+    "stderr": "runs/pair-external-corruption.stderr"
+  },
+  {
+    "name": "pair-external-malformed",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-23-941-types-wrong-side-round4-6b09cd4/check.py",
+      "--certificate",
+      "audits/2026-10-23-941-types-wrong-side-round4-6b09cd4/malformed-pair-certificate.json"
+    ],
+    "exit_code": 1,
+    "expected_exit": "nonzero",
+    "stdout": "runs/pair-external-malformed.stdout",
+    "stderr": "runs/pair-external-malformed.stderr"
+  }
+]

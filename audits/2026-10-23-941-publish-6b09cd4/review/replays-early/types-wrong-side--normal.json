@@ -1,0 +1,222 @@
+{
+  "id": "types-wrong-side--normal",
+  "directory": "audits/2026-10-23-941-types-wrong-side-6b09cd4",
+  "group": "types-wrong-side",
+  "mode": "normal",
+  "argv": [
+    "python3",
+    "-B",
+    "audits/2026-10-23-941-types-wrong-side-6b09cd4/check_cap_relation.py"
+  ],
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "documented_command": "python3 -B audits/2026-10-23-941-types-wrong-side-6b09cd4/check_cap_relation.py",
+  "authority": "audits/2026-10-23-941-types-wrong-side-6b09cd4/REPORT.md",
+  "cwd": "repository root",
+  "started_utc": "2026-10-23T14:07:45.724339+00:00",
+  "timeout_seconds": 180,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "{\"complete_lifts_each\": 52, \"empty_caps_safe\": [{\"diagonals\": [[0, 2], [0, 4], [2, 4]], \"leak\": []}, {\"diagonals\": [[1, 3], [1, 5], [3, 5]], \"leak\": []}], \"empty_caps_unsafe_count\": 12, \"empty_each\": 12, \"nonempty_each\": 19, \"normalized_ordered_words\": 31, \"original_caps\": \"only new named K6 cap independently recomputed; upstream complete fibres/lifts retained\", \"replacement\": \"not established\", \"seed\": 0, \"source_realizability\": \"not triggered\", \"status\": \"PASS\", \"two_hub_leaks\": [{\"diameter\": [0, 3], \"leak\": [[0, 1, 0, 2, 1, 2], [0, 1, 0, 2, 3, 2], [0, 1, 2, 1, 0, 2], [0, 1, 2, 1, 0, 3]]}, {\"diameter\": [1, 4], \"leak\": [[0, 1, 2, 0, 2, 1], [0, 1, 2, 1, 0, 2], [0, 1, 2, 1, 0, 3], [0, 1, 2, 3, 2, 1]]}, {\"diameter\": [2, 5], \"leak\": [[0, 1, 0, 2, 1, 2], [0, 1, 0, 2, 3, 2], [0, 1, 2, 0, 2, 1], [0, 1, 2, 3, 2, 1]]}], \"wheel_leak\": [[0, 1, 0, 2, 1, 2], [0, 1, 2, 0, 2, 1], [0, 1, 2, 1, 0, 2]]}\n",
+  "stderr": "",
+  "elapsed_seconds": 0.052664,
+  "payload": {
+    "complete_lifts_each": 52,
+    "empty_caps_safe": [
+      {
+        "diagonals": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "leak": []
+      },
+      {
+        "diagonals": [
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "leak": []
+      }
+    ],
+    "empty_caps_unsafe_count": 12,
+    "empty_each": 12,
+    "nonempty_each": 19,
+    "normalized_ordered_words": 31,
+    "original_caps": "only new named K6 cap independently recomputed; upstream complete fibres/lifts retained",
+    "replacement": "not established",
+    "seed": 0,
+    "source_realizability": "not triggered",
+    "status": "PASS",
+    "two_hub_leaks": [
+      {
+        "diameter": [
+          0,
+          3
+        ],
+        "leak": [
+          [
+            0,
+            1,
+            0,
+            2,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2
+          ],
+          [
+            0,
+            1,
+            2,
+            1,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            2,
+            1,
+            0,
+            3
+          ]
+        ]
+      },
+      {
+        "diameter": [
+          1,
+          4
+        ],
+        "leak": [
+          [
+            0,
+            1,
+            2,
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            1,
+            2,
+            1,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            2,
+            1,
+            0,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            2,
+            1
+          ]
+        ]
+      },
+      {
+        "diameter": [
+          2,
+          5
+        ],
+        "leak": [
+          [
+            0,
+            1,
+            0,
+            2,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2
+          ],
+          [
+            0,
+            1,
+            2,
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            2,
+            1
+          ]
+        ]
+      }
+    ],
+    "wheel_leak": [
+      [
+        0,
+        1,
+        0,
+        2,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        2,
+        0,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        2,
+        1,
+        0,
+        2
+      ]
+    ]
+  },
+  "success_evidence": "explicit PASS",
+  "passed": true
+}

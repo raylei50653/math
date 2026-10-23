@@ -1,0 +1,46 @@
+{
+  "check_docs": {
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "summary": "OK: 712 Markdown files, 9439 local links; anchors, index, handoff, guide progress checked",
+    "full_stdout": "runs/final-check-docs.stdout",
+    "full_stderr": "runs/final-check-docs.stderr"
+  },
+  "formal_docs_docgraph": {
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "summary": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes"
+  },
+  "whole_tree_docgraph": {
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "exit_code": 1,
+    "errors": 72,
+    "duplicate_id_errors": 72,
+    "summary": "FAIL: 97 documents, 368 relations, 12 families; 72 errors, 0 notes",
+    "full_stdout": "runs/whole-tree-docgraph.stdout",
+    "full_stderr": "runs/whole-tree-docgraph.stderr",
+    "scope": "archived/frozen/scratch copies retain duplicated document ids; no historical outputs deleted"
+  },
+  "git_diff_check": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  "scope": "documents and links only; not mathematical closure"
+}

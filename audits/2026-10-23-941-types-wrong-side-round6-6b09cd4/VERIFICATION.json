@@ -1,0 +1,133 @@
+{
+  "child_receipt_semantics_checked": true,
+  "child_verification": [
+    {
+      "bytes": 4176,
+      "path": "audits/2026-10-23-941-gamma8-n-stars-6b09cd4/VERIFICATION.json",
+      "sha256": "f5dd63f0917253baa1aa87b85d61b9af152e2548ce42575659e7b015310e2cbb"
+    },
+    {
+      "bytes": 1268,
+      "path": "audits/2026-10-23-941-gamma8-empty-seven-6b09cd4/VERIFICATION.json",
+      "sha256": "7efc9a9b308cc3d446c251c954bc13d44eb5b3cda3fc4dd35dc1a74b9e8394be"
+    },
+    {
+      "bytes": 2523,
+      "path": "audits/2026-10-23-941-gamma8-n7-review-6b09cd4/VERIFICATION.json",
+      "sha256": "8bf560722987e20360bd8659a38e35e33ed34d843e418d4f33ee09f9697504f3"
+    }
+  ],
+  "external_controls": {
+    "empty": 2,
+    "master": 4,
+    "nonempty": 2,
+    "review": 1,
+    "total": 9
+  },
+  "root_normal_seed17_outputs_match": true,
+  "root_runs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/check.py"
+      ],
+      "elapsed_seconds": 0.064,
+      "expected_rejection": false,
+      "name": "master-normal",
+      "returncode": 0,
+      "seed17": false
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/check.py"
+      ],
+      "elapsed_seconds": 0.076,
+      "expected_rejection": false,
+      "name": "master-seed17",
+      "returncode": 0,
+      "seed17": true
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/check.py",
+        "--negative"
+      ],
+      "elapsed_seconds": 0.064,
+      "expected_rejection": false,
+      "name": "master-negative",
+      "returncode": 0,
+      "seed17": false
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/check.py",
+        "--certificate",
+        "audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/negative-inputs/malformed-contract.json"
+      ],
+      "elapsed_seconds": 0.066,
+      "expected_rejection": true,
+      "name": "external-malformed-contract",
+      "returncode": 1,
+      "seed17": false
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/check.py",
+        "--certificate",
+        "audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/negative-inputs/missing-N3.json"
+      ],
+      "elapsed_seconds": 0.065,
+      "expected_rejection": true,
+      "name": "external-missing-N3",
+      "returncode": 1,
+      "seed17": false
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/check.py",
+        "--inputs",
+        "audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/negative-inputs/missing-authority.json"
+      ],
+      "elapsed_seconds": 0.035,
+      "expected_rejection": true,
+      "name": "external-missing-authority",
+      "returncode": 1,
+      "seed17": false
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/check.py",
+        "--inputs",
+        "audits/2026-10-23-941-types-wrong-side-round6-6b09cd4/negative-inputs/wrong-authority-digest.json"
+      ],
+      "elapsed_seconds": 0.037,
+      "expected_rejection": true,
+      "name": "external-wrong-digest",
+      "returncode": 1,
+      "seed17": false
+    }
+  ],
+  "schema": "941-common-N-round6-verification-v1",
+  "semantic_controls": {
+    "empty": 13,
+    "master": 8,
+    "nonempty": 12,
+    "review": 6,
+    "total": 39
+  },
+  "status": "PASS"
+}

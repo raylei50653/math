@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "name": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-n7-review-6b09cd4/check.py"
+      ],
+      "environment": {},
+      "returncode": 0,
+      "stdout": "{\"N1_u_cycles\": 6, \"complete_omega_stars\": 0, \"source_status\": \"not triggered\", \"status\": \"PASS\", \"terminal_rows\": {\"N1\": 130, \"N3\": 201}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-gamma8-n7-review-6b09cd4/check.py"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "returncode": 0,
+      "stdout": "{\"N1_u_cycles\": 6, \"complete_omega_stars\": 0, \"source_status\": \"not triggered\", \"status\": \"PASS\", \"terminal_rows\": {\"N1\": 130, \"N3\": 201}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "semantic-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-n7-review-6b09cd4/check.py",
+        "--negative"
+      ],
+      "environment": {},
+      "returncode": 0,
+      "stdout": "{\"rejected\": [\"wheel-bound\", \"alias-bound\", \"N1-common\", \"terminal-source\", \"N3-count\", \"fake-star\"], \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "external-corrupt-certificate",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-n7-review-6b09cd4/check.py\", line 160, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-n7-review-6b09cd4/check.py\", line 143, in main\n    cert=json.loads(args.certificate.read_text());validate(cert)\n                                                  ~~~~~~~~^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-n7-review-6b09cd4/check.py\", line 135, in validate\n    require(cert==calculate(),'independent certificate mismatch')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-n7-review-6b09cd4/check.py\", line 15, in require\n    raise ValueError(message)\nValueError: independent certificate mismatch\n",
+      "expected": "nonzero"
+    }
+  ],
+  "authority_input_drift": 0,
+  "preliminary_snapshots": "frozen immutable review snapshots; live development allowed"
+}

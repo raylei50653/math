@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-k-stars-6b09cd4/check.py", line 211, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-k-stars-6b09cd4/check.py", line 202, in main
+    inputs=custody();c=load(args.certificate);rows=reconstruct(args.seed);result=verify(c,rows);relations=relation_check(c);controls=wheel_controls();negative=[]
+                                                                                 ~~~~~~^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-k-stars-6b09cd4/check.py", line 165, in verify
+    caps={p['core']:p for p in load(HERE/'frozen'/CAPS)['caps']};require(len(c['cap_substitutions'])==12,'paper substitution coverage')
+                                                                 ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-k-stars-6b09cd4/check.py", line 12, in require
+    if not ok:raise ValueError(msg)
+              ^^^^^^^^^^^^^^^^^^^^^
+ValueError: paper substitution coverage

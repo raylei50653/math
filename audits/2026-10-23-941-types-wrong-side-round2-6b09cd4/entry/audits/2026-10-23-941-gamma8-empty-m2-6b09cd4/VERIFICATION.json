@@ -1,0 +1,393 @@
+{
+  "artifact_hashes": [
+    {
+      "bytes": 4752,
+      "path": "produce.py",
+      "sha256": "98c62834dede20a996a5ad5c1b43bcdeaa066138c0fcde71b7f2fa299b8ec33f"
+    },
+    {
+      "bytes": 16188,
+      "path": "check.py",
+      "sha256": "db1e34292ad6c686361328306593ab80aea28eefba0fe0275f8f2f9be97b49a8"
+    },
+    {
+      "bytes": 4253311,
+      "path": "certificate.json",
+      "sha256": "d54d48f5fc29bf073f1b88139be69a94740bd1feffab866b32ae1d1ef007ad1c"
+    },
+    {
+      "bytes": 7837,
+      "path": "K6_CAPS.json",
+      "sha256": "c4525ed18825f9ec4e6b826fd915f86e9265f919ebfb081a1a144add2ca84cac"
+    },
+    {
+      "bytes": 3285,
+      "path": "INPUTS.json",
+      "sha256": "497bba24996b5b72639e42e42f76a0fe7cb3f4590fe84c8ec6bfd251ccfc214f"
+    }
+  ],
+  "base": "6b09cd4f8476ca93af8cb51e3a95a632c3f05fcd",
+  "immutable_drift": 0,
+  "normal_seed17_equal": true,
+  "replays": [
+    {
+      "PYTHONHASHSEED": "inherited",
+      "actual_exit": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-empty-m2-6b09cd4/check.py"
+      ],
+      "expected_exit": 0,
+      "name": "normal",
+      "output": {
+        "B13_tree_rows": 40,
+        "complete_literal_fibres": 16,
+        "complete_star_rows": 8,
+        "custody": {
+          "direct_inputs": 9,
+          "immutable_drift": 0,
+          "routing_snapshots": 3
+        },
+        "eleven_type_exclusions": 0,
+        "empty_assignments": 262080,
+        "full_lifts": 64,
+        "joint_link_cases": 66,
+        "seed": 0,
+        "source_realizability": "not triggered",
+        "status": "PASS"
+      },
+      "stderr": ""
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "actual_exit": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-gamma8-empty-m2-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "expected_exit": 0,
+      "name": "seed17",
+      "output": {
+        "B13_tree_rows": 40,
+        "complete_literal_fibres": 16,
+        "complete_star_rows": 8,
+        "custody": {
+          "direct_inputs": 9,
+          "immutable_drift": 0,
+          "routing_snapshots": 3
+        },
+        "eleven_type_exclusions": 0,
+        "empty_assignments": 262080,
+        "full_lifts": 64,
+        "joint_link_cases": 66,
+        "seed": 17,
+        "source_realizability": "not triggered",
+        "status": "PASS"
+      },
+      "stderr": ""
+    },
+    {
+      "PYTHONHASHSEED": "inherited",
+      "actual_exit": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-empty-m2-6b09cd4/check.py",
+        "--negative"
+      ],
+      "expected_exit": 0,
+      "name": "semantic_negatives",
+      "output": {
+        "B13_tree_rows": 40,
+        "complete_literal_fibres": 16,
+        "complete_star_rows": 8,
+        "custody": {
+          "direct_inputs": 9,
+          "immutable_drift": 0,
+          "routing_snapshots": 3
+        },
+        "eleven_type_exclusions": 0,
+        "empty_assignments": 262080,
+        "full_lifts": 64,
+        "joint_link_cases": 66,
+        "seed": 0,
+        "semantic_negatives": [
+          {
+            "name": "lose_joint_case",
+            "status": "rejected"
+          },
+          {
+            "name": "lose_star_row",
+            "status": "rejected"
+          },
+          {
+            "name": "change_original_link",
+            "status": "rejected"
+          },
+          {
+            "name": "erase_U_F_arc",
+            "status": "rejected"
+          },
+          {
+            "name": "drop_full_lift",
+            "status": "rejected"
+          },
+          {
+            "name": "drop_empty_assignment",
+            "status": "rejected"
+          },
+          {
+            "name": "wrong_literal_frame",
+            "status": "rejected"
+          },
+          {
+            "name": "drop_B13_exit",
+            "status": "rejected"
+          },
+          {
+            "name": "presume_E_rooted",
+            "status": "rejected"
+          },
+          {
+            "name": "cyclic_U_star",
+            "status": "rejected"
+          },
+          {
+            "name": "invent_source",
+            "status": "rejected"
+          },
+          {
+            "name": "exclude_eleven_type",
+            "status": "rejected"
+          },
+          {
+            "name": "raise_k",
+            "status": "rejected"
+          },
+          {
+            "name": "lose_prior_fibre",
+            "status": "rejected"
+          }
+        ],
+        "source_realizability": "not triggered",
+        "status": "PASS"
+      },
+      "stderr": ""
+    },
+    {
+      "PYTHONHASHSEED": "inherited",
+      "actual_exit": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-empty-m2-6b09cd4/check.py",
+        "--certificate",
+        "audits/2026-10-23-941-gamma8-empty-m2-6b09cd4/negative-corrupted-certificate.json"
+      ],
+      "expected_exit": 1,
+      "name": "external_corrupted",
+      "output": {
+        "reason": "complete_star_survivors coverage drift",
+        "status": "REJECT"
+      },
+      "stderr": ""
+    },
+    {
+      "PYTHONHASHSEED": "inherited",
+      "actual_exit": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-empty-m2-6b09cd4/check.py",
+        "--certificate",
+        "audits/2026-10-23-941-gamma8-empty-m2-6b09cd4/negative-malformed-certificate.json"
+      ],
+      "expected_exit": 1,
+      "name": "external_malformed",
+      "output": {
+        "reason": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+        "status": "REJECT"
+      },
+      "stderr": ""
+    },
+    {
+      "PYTHONHASHSEED": "inherited",
+      "actual_exit": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-six-equality-6b09cd4/check.py"
+      ],
+      "expected_exit": 0,
+      "name": "predecessor_normal",
+      "output": {
+        "complete_u_link_restrictions": 66,
+        "custody": {
+          "immutable_drift": 0,
+          "inputs": 8,
+          "prior_outputs": 490,
+          "routing_snapshots": 4
+        },
+        "d_U_alias_cases": 22,
+        "eleven_type_exclusions": 0,
+        "empty_L_R_link_restrictions": 48,
+        "empty_M2_cases": 22,
+        "seed": 0,
+        "six_point_color_cases": 66,
+        "source_realizability": "not triggered",
+        "status": "PASS",
+        "surviving_cell_side_cases": 11
+      },
+      "stderr": ""
+    },
+    {
+      "PYTHONHASHSEED": "17",
+      "actual_exit": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-gamma8-six-equality-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "expected_exit": 0,
+      "name": "predecessor_seed17",
+      "output": {
+        "complete_u_link_restrictions": 66,
+        "custody": {
+          "immutable_drift": 0,
+          "inputs": 8,
+          "prior_outputs": 490,
+          "routing_snapshots": 4
+        },
+        "d_U_alias_cases": 22,
+        "eleven_type_exclusions": 0,
+        "empty_L_R_link_restrictions": 48,
+        "empty_M2_cases": 22,
+        "seed": 17,
+        "six_point_color_cases": 66,
+        "source_realizability": "not triggered",
+        "status": "PASS",
+        "surviving_cell_side_cases": 11
+      },
+      "stderr": ""
+    },
+    {
+      "PYTHONHASHSEED": "inherited",
+      "actual_exit": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-six-equality-6b09cd4/check.py",
+        "--negative"
+      ],
+      "expected_exit": 0,
+      "name": "predecessor_negatives",
+      "output": {
+        "complete_u_link_restrictions": 66,
+        "custody": {
+          "immutable_drift": 0,
+          "inputs": 8,
+          "prior_outputs": 490,
+          "routing_snapshots": 4
+        },
+        "d_U_alias_cases": 22,
+        "eleven_type_exclusions": 0,
+        "empty_L_R_link_restrictions": 48,
+        "empty_M2_cases": 22,
+        "seed": 0,
+        "semantic_negatives": [
+          {
+            "name": "missing_color_case",
+            "status": "rejected"
+          },
+          {
+            "name": "missing_alias_case",
+            "status": "rejected"
+          },
+          {
+            "name": "missing_empty_case",
+            "status": "rejected"
+          },
+          {
+            "name": "wrong_m_side",
+            "status": "rejected"
+          },
+          {
+            "name": "allow_K_neighbor_for_M0",
+            "status": "rejected"
+          },
+          {
+            "name": "drop_U_exception",
+            "status": "rejected"
+          },
+          {
+            "name": "lose_complete_link",
+            "status": "rejected"
+          },
+          {
+            "name": "allow_same_color_link_edge",
+            "status": "rejected"
+          },
+          {
+            "name": "drop_E_case_rejection",
+            "status": "rejected"
+          },
+          {
+            "name": "allow_d_U",
+            "status": "rejected"
+          },
+          {
+            "name": "allow_empty_d_U",
+            "status": "rejected"
+          },
+          {
+            "name": "presume_E_rooted",
+            "status": "rejected"
+          },
+          {
+            "name": "drop_complete_M2",
+            "status": "rejected"
+          },
+          {
+            "name": "invent_seven_point_bound",
+            "status": "rejected"
+          },
+          {
+            "name": "close_C_completion",
+            "status": "rejected"
+          },
+          {
+            "name": "exclude_eleven_type",
+            "status": "rejected"
+          },
+          {
+            "name": "promote_source",
+            "status": "rejected"
+          },
+          {
+            "name": "raise_k",
+            "status": "rejected"
+          },
+          {
+            "name": "lose_predecessor_fibre",
+            "status": "rejected"
+          }
+        ],
+        "six_point_color_cases": 66,
+        "source_realizability": "not triggered",
+        "status": "PASS",
+        "surviving_cell_side_cases": 11
+      },
+      "stderr": ""
+    }
+  ],
+  "schema": "941-gamma8-empty-m2-verification-v1",
+  "source_realizability": "not triggered"
+}

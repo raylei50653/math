@@ -1,0 +1,13 @@
+{
+  "PYTHONHASHSEED": null,
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-seven-6b09cd4/check.py",
+    "--certificate",
+    "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-seven-6b09cd4/negative-inputs/corrupt-K8-promotion.json"
+  ],
+  "returncode": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-seven-6b09cd4/check.py\", line 178, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-seven-6b09cd4/check.py\", line 169, in main\n    custody_result=custody();c=load(args.certificate);verify(c);rel=relations(c);negative=[]\n                                                      ~~~~~~^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-seven-6b09cd4/check.py\", line 165, in verify\n    require(c['boundaries']==dict(finite_control='triggered and holds',full_source_realizability='not triggered',paper_D8_Z7_and_Z8='excluded',paper_D6_extra_other_02='excluded',paper_D6_bothK_same_color_or_d_equals_U='excluded',paper_D6_mixed_or_twoN='OPEN',paper_D6_bothK_K8='OPEN',empty_M2_min_exterior=8,full_eleven_types='OPEN',general_wrong_side='OPEN',common_k=23,new_Lean=False,new_matching=False,new_K8_replacement=False),'no authority promotion')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-empty-seven-6b09cd4/check.py\", line 11, in require\n    if not ok:raise ValueError(msg)\n              ^^^^^^^^^^^^^^^^^^^^^\nValueError: no authority promotion\n",
+  "stdout": ""
+}

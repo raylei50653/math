@@ -1,0 +1,129 @@
+{
+  "checked_output_hashes": {
+    "INPUTS.json": "c9d014a2825bf26a067430683c1ca57f4e01f16a385f43b145d7a6b58195cb8d",
+    "PROOF.md": "f1bcc1a1db62cc86fdfd91b97a08bc2625a53885dd4a59594da0e31423c5003b",
+    "REPORT.md": "a927419adfad3bd7bb14764acc0fa8f21160d5baefac8018e82bfd2393d857eb",
+    "certificate.json": "28bf973ea293610d2645f253ec6cb6c92a3c16e1e6e623db2287214e4e1d9c9b",
+    "check.py": "9fc12f1098c062a61a698ff19df2d2ff62fad721d65d6bf958fdac07b234885a",
+    "explore.json": "61e8bc13d2887e7ae644d24776d5e88c1a842fa42fdf5a777c331e7009b23211",
+    "models.py": "9dd157a2944ea52fb2ef120a605b3cb966f6457bcfe7cbd20539d2a755f6c48c",
+    "produce.py": "cf2f275b9028e5e348f2e5f892b90caa9e07d5a3e42463186bf15c2c35a1bfb2",
+    "verify.py": "a8de78d75bacdf4db0f3ee2df5412d8d6f2cc90b64ffbf27cb62ce54a1f341c8"
+  },
+  "external_certificate_negative": {
+    "exit_code": 1,
+    "expected_error": "certificate mismatch: conclusion",
+    "rejected": true
+  },
+  "isolated_frozen_authority_negative": {
+    "canonical_bytes_untouched": true,
+    "expected_error": "frozen authority changed: audits/2026-10-23-941-gamma8-cells-6b09cd4/certificate.json",
+    "rejected": true
+  },
+  "normal": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-nonempty-k-stars-6b09cd4/check.py"
+    ],
+    "exit_code": 0,
+    "result": {
+      "custody": {
+        "immutable_drift": 0,
+        "immutable_inputs": 8
+      },
+      "validation": {
+        "K0_rows": 300,
+        "K2_rows": 180,
+        "bichromatic_C4_rows_rejected": 39,
+        "complete_K_star_interfaces": 480,
+        "d_equals_U_rows": 120,
+        "eleven_type_exclusions": 0,
+        "predecessor_fibres_and_full_lifts_preserved": true,
+        "refined_complete_N_star_rows": 480,
+        "relaxed_complete_N_star_rows": 563,
+        "source_realizability": "not triggered",
+        "status": "PASS",
+        "wrong_C_E_rows_rejected": 44
+      }
+    }
+  },
+  "schema": "941-gamma8-nonempty-k-stars-verification-v1",
+  "seed17": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "-O",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-nonempty-k-stars-6b09cd4/check.py",
+      "--seed",
+      "17"
+    ],
+    "exit_code": 0,
+    "result": {
+      "custody": {
+        "immutable_drift": 0,
+        "immutable_inputs": 8
+      },
+      "validation": {
+        "K0_rows": 300,
+        "K2_rows": 180,
+        "bichromatic_C4_rows_rejected": 39,
+        "complete_K_star_interfaces": 480,
+        "d_equals_U_rows": 120,
+        "eleven_type_exclusions": 0,
+        "predecessor_fibres_and_full_lifts_preserved": true,
+        "refined_complete_N_star_rows": 480,
+        "relaxed_complete_N_star_rows": 563,
+        "source_realizability": "not triggered",
+        "status": "PASS",
+        "wrong_C_E_rows_rejected": 44
+      }
+    }
+  },
+  "semantic_negatives": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-nonempty-k-stars-6b09cd4/check.py",
+      "--negative"
+    ],
+    "exit_code": 0,
+    "result": {
+      "custody": {
+        "immutable_drift": 0,
+        "immutable_inputs": 8
+      },
+      "negative": {
+        "count": 12,
+        "negative_controls_rejected": [
+          "delete_N_star",
+          "delete_full_n_contact",
+          "forget_original_face_edge",
+          "drop_d_U_alias",
+          "restore_wrong_C_E_omega",
+          "lose_complete_K_connectivity",
+          "ban_external_K_13_contacts",
+          "claim_whole_U_cyclic_star",
+          "delete_empty_fibres",
+          "claim_literal_old_cap",
+          "claim_source",
+          "claim_eleven_type_exclusion"
+        ]
+      },
+      "validation": {
+        "K0_rows": 300,
+        "K2_rows": 180,
+        "bichromatic_C4_rows_rejected": 39,
+        "complete_K_star_interfaces": 480,
+        "d_equals_U_rows": 120,
+        "eleven_type_exclusions": 0,
+        "predecessor_fibres_and_full_lifts_preserved": true,
+        "refined_complete_N_star_rows": 480,
+        "relaxed_complete_N_star_rows": 563,
+        "source_realizability": "not triggered",
+        "status": "PASS",
+        "wrong_C_E_rows_rejected": 44
+      }
+    }
+  }
+}

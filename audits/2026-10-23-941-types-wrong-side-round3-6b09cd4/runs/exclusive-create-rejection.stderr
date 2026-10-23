@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round3-6b09cd4/produce_reduction.py", line 110, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round3-6b09cd4/produce_reduction.py", line 101, in main
+    with (HERE/'reduction-certificate.json').open('x') as f:
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round3-6b09cd4/reduction-certificate.json'

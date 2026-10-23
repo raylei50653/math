@@ -1,0 +1,901 @@
+{
+  "status": "PASS",
+  "all_normal_seed17_equal": true,
+  "runs": [
+    {
+      "audit": "gamma8-joint-bpaths",
+      "mode": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-joint-bpaths-6b09cd4/check.py"
+      ],
+      "exit_code": 0,
+      "result": {
+        "custody": {
+          "direct_inputs": 12,
+          "immutable_drift": 0,
+          "previous_final_manifest_entries": 29
+        },
+        "validation": {
+          "cap_nonempty_counts": [
+            23,
+            25,
+            26,
+            28
+          ],
+          "cap_total_lift_counts": [
+            68,
+            76,
+            78,
+            84
+          ],
+          "complete_boundary_rows": 496,
+          "eleven_type_exclusions": 0,
+          "exact_caps": 16,
+          "face_tables": 8,
+          "remaining_old_domain_face_points": 0,
+          "source_realizability": "not triggered",
+          "source_rows": 60
+        }
+      },
+      "stdout_sha256": "d5bada1e362821854bcd0cf546c80a18c2c60d222963aeebfcf20c9042a17b18"
+    },
+    {
+      "audit": "gamma8-joint-bpaths",
+      "mode": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-gamma8-joint-bpaths-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "result": {
+        "custody": {
+          "direct_inputs": 12,
+          "immutable_drift": 0,
+          "previous_final_manifest_entries": 29
+        },
+        "validation": {
+          "cap_nonempty_counts": [
+            23,
+            25,
+            26,
+            28
+          ],
+          "cap_total_lift_counts": [
+            68,
+            76,
+            78,
+            84
+          ],
+          "complete_boundary_rows": 496,
+          "eleven_type_exclusions": 0,
+          "exact_caps": 16,
+          "face_tables": 8,
+          "remaining_old_domain_face_points": 0,
+          "source_realizability": "not triggered",
+          "source_rows": 60
+        }
+      },
+      "stdout_sha256": "d5bada1e362821854bcd0cf546c80a18c2c60d222963aeebfcf20c9042a17b18"
+    },
+    {
+      "audit": "gamma8-joint-bpaths",
+      "mode": "negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-joint-bpaths-6b09cd4/check.py",
+        "--negative"
+      ],
+      "exit_code": 0,
+      "result": {
+        "custody": {
+          "direct_inputs": 12,
+          "immutable_drift": 0,
+          "previous_final_manifest_entries": 29
+        },
+        "negative": {
+          "count": 15,
+          "rejected": [
+            "drop_target",
+            "allow_frame_s",
+            "allow_W_in_A",
+            "merge_L_K",
+            "wrong_chi2_owner",
+            "drop_exterior",
+            "root_E",
+            "claim_all_j_bound",
+            "wrong_degree_bound",
+            "lose_cap",
+            "lose_empty_fibre",
+            "lose_full_lift",
+            "fake_cap_face",
+            "claim_source",
+            "claim_11_types"
+          ]
+        },
+        "validation": {
+          "cap_nonempty_counts": [
+            23,
+            25,
+            26,
+            28
+          ],
+          "cap_total_lift_counts": [
+            68,
+            76,
+            78,
+            84
+          ],
+          "complete_boundary_rows": 496,
+          "eleven_type_exclusions": 0,
+          "exact_caps": 16,
+          "face_tables": 8,
+          "remaining_old_domain_face_points": 0,
+          "source_realizability": "not triggered",
+          "source_rows": 60
+        }
+      },
+      "stdout_sha256": "25d6e0c879859530e33b97caa6b342408867c04e3a540a951516e2b5ed8c4867"
+    },
+    {
+      "audit": "gamma8-k6-exterior",
+      "mode": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-k6-exterior-6b09cd4/check.py"
+      ],
+      "exit_code": 0,
+      "result": {
+        "candidate_literal_tuple_counts": [
+          192,
+          192,
+          108,
+          108
+        ],
+        "candidate_support_classes": [
+          8,
+          8,
+          5,
+          5
+        ],
+        "candidates": 4,
+        "complete_literal_boundary_tuples": 4096,
+        "custody": {
+          "direct_inputs": 13,
+          "immutable_drift": 0,
+          "previous_manifest_entries": 32
+        },
+        "literal_old_full_lifts_checked": 2400,
+        "normalized_boundary_words": 31,
+        "old_empty_classes": 12,
+        "old_nonempty_literal_tuples": 444,
+        "old_support_classes": 19,
+        "paper_minimal_source_five_point_branch": "excluded",
+        "proper_literal_tuples": 732,
+        "seed": 0,
+        "source_instance_control": "not triggered",
+        "status": "PASS"
+      },
+      "stdout_sha256": "dbedf3e5909d9e32e8f03b3f4811c97c7ac6ee78e5e8d783ee5c1da5975bc23b"
+    },
+    {
+      "audit": "gamma8-k6-exterior",
+      "mode": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-gamma8-k6-exterior-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "result": {
+        "candidate_literal_tuple_counts": [
+          192,
+          192,
+          108,
+          108
+        ],
+        "candidate_support_classes": [
+          8,
+          8,
+          5,
+          5
+        ],
+        "candidates": 4,
+        "complete_literal_boundary_tuples": 4096,
+        "custody": {
+          "direct_inputs": 13,
+          "immutable_drift": 0,
+          "previous_manifest_entries": 32
+        },
+        "literal_old_full_lifts_checked": 2400,
+        "normalized_boundary_words": 31,
+        "old_empty_classes": 12,
+        "old_nonempty_literal_tuples": 444,
+        "old_support_classes": 19,
+        "paper_minimal_source_five_point_branch": "excluded",
+        "proper_literal_tuples": 732,
+        "seed": 17,
+        "source_instance_control": "not triggered",
+        "status": "PASS"
+      },
+      "stdout_sha256": "67c0379dee0bd4e7e77ec8fd13a50e99fcc8e46008b2afe06520c0e74e705497"
+    },
+    {
+      "audit": "gamma8-k6-exterior",
+      "mode": "negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-gamma8-k6-exterior-6b09cd4/check.py",
+        "--negative"
+      ],
+      "exit_code": 0,
+      "result": {
+        "candidate_literal_tuple_counts": [
+          192,
+          192,
+          108,
+          108
+        ],
+        "candidate_support_classes": [
+          8,
+          8,
+          5,
+          5
+        ],
+        "candidates": 4,
+        "complete_literal_boundary_tuples": 4096,
+        "custody": {
+          "direct_inputs": 13,
+          "immutable_drift": 0,
+          "previous_manifest_entries": 32
+        },
+        "literal_old_full_lifts_checked": 2400,
+        "normalized_boundary_words": 31,
+        "old_empty_classes": 12,
+        "old_nonempty_literal_tuples": 444,
+        "old_support_classes": 19,
+        "paper_minimal_source_five_point_branch": "excluded",
+        "proper_literal_tuples": 732,
+        "seed": 0,
+        "semantic_negatives": [
+          {
+            "name": "lose_fixed_candidate",
+            "status": "rejected"
+          },
+          {
+            "name": "change_triangle_edge",
+            "status": "rejected"
+          },
+          {
+            "name": "change_quotient_ports",
+            "status": "rejected"
+          },
+          {
+            "name": "lose_normalized_empty_row",
+            "status": "rejected"
+          },
+          {
+            "name": "invent_literal_extension",
+            "status": "rejected"
+          },
+          {
+            "name": "wrong_completed_cost",
+            "status": "rejected"
+          },
+          {
+            "name": "lose_original_empty_fibre",
+            "status": "rejected"
+          },
+          {
+            "name": "lose_full_old_lift",
+            "status": "rejected"
+          },
+          {
+            "name": "choose_per_rejected_row",
+            "status": "rejected"
+          },
+          {
+            "name": "erase_accepted_witness",
+            "status": "rejected"
+          },
+          {
+            "name": "pretend_exterior_unchanged",
+            "status": "rejected"
+          },
+          {
+            "name": "identify_outer_C5",
+            "status": "rejected"
+          },
+          {
+            "name": "cyclic_U_star",
+            "status": "rejected"
+          },
+          {
+            "name": "pretend_source_triggered",
+            "status": "rejected"
+          },
+          {
+            "name": "exclude_whole_eleven_type",
+            "status": "rejected"
+          },
+          {
+            "name": "raise_global_k",
+            "status": "rejected"
+          }
+        ],
+        "source_instance_control": "not triggered",
+        "status": "PASS"
+      },
+      "stdout_sha256": "5e8fa979bf552a34979a0e3590d57702952a0b1abbb870a03e485b9fce09b401"
+    },
+    {
+      "audit": "wrong-side-branches",
+      "mode": "normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-wrong-side-branches-6b09cd4/check.py"
+      ],
+      "exit_code": 0,
+      "result": {
+        "authority_inputs": 61,
+        "finite_calibration": "triggered and holds",
+        "seed": 0,
+        "source_control": "not triggered",
+        "statistics": {
+          "B13": [
+            {
+              "b_component": [
+                "b"
+              ],
+              "boundary_contact_count": 0,
+              "conditional_exclusion_triggered": false,
+              "name": "private_cut_unframed_b_branch"
+            },
+            {
+              "b_component": [
+                "b",
+                "c",
+                "t"
+              ],
+              "boundary_contact_count": 1,
+              "conditional_exclusion_triggered": true,
+              "name": "q_cut_c_side_now_excluded_conditionally"
+            },
+            {
+              "b_component": [
+                "b"
+              ],
+              "boundary_contact_count": 0,
+              "conditional_exclusion_triggered": false,
+              "name": "q_cut_unframed_b_branch_still_necessary"
+            }
+          ],
+          "C12": [
+            {
+              "conditional_exclusion_triggered": true,
+              "e_neighbor_frames": [
+                "Y"
+              ],
+              "name": "U_two_boundary_neighbor_branches_excluded_conditionally",
+              "r_neighbor_frames": [
+                "V"
+              ]
+            },
+            {
+              "conditional_exclusion_triggered": false,
+              "e_neighbor_frames": [],
+              "name": "U_both_branches_avoid_neighbor_frames",
+              "r_neighbor_frames": []
+            }
+          ],
+          "P_escape": {
+            "B13_component_after_q_deletion": [
+              "b"
+            ],
+            "P01": [
+              "b",
+              "x",
+              "c"
+            ],
+            "P_internal_vertices_not_in_B": [
+              "x"
+            ]
+          },
+          "links": [
+            {
+              "D0": 0,
+              "kind": "cyclic",
+              "minimum_color_words": 8,
+              "minimum_degree": 6,
+              "n1": 3
+            },
+            {
+              "D0": 1,
+              "kind": "cyclic",
+              "minimum_color_words": 24,
+              "minimum_degree": 7,
+              "n1": 3
+            },
+            {
+              "D0": 2,
+              "kind": "cyclic",
+              "minimum_color_words": 48,
+              "minimum_degree": 8,
+              "n1": 3
+            },
+            {
+              "D0": 0,
+              "kind": "path",
+              "minimum_color_words": 4,
+              "minimum_degree": 5,
+              "n1": 3
+            },
+            {
+              "D0": 1,
+              "kind": "path",
+              "minimum_color_words": 8,
+              "minimum_degree": 6,
+              "n1": 3
+            },
+            {
+              "D0": 2,
+              "kind": "path",
+              "minimum_color_words": 12,
+              "minimum_degree": 7,
+              "n1": 3
+            },
+            {
+              "D0": 0,
+              "kind": "path",
+              "minimum_color_words": 8,
+              "minimum_degree": 7,
+              "n1": 4
+            },
+            {
+              "D0": 1,
+              "kind": "path",
+              "minimum_color_words": 24,
+              "minimum_degree": 8,
+              "n1": 4
+            },
+            {
+              "D0": 2,
+              "kind": "path",
+              "minimum_color_words": 48,
+              "minimum_degree": 9,
+              "n1": 4
+            },
+            {
+              "D0": 0,
+              "kind": "path",
+              "minimum_color_words": 16,
+              "minimum_degree": 9,
+              "n1": 5
+            },
+            {
+              "D0": 1,
+              "kind": "path",
+              "minimum_color_words": 64,
+              "minimum_degree": 10,
+              "n1": 5
+            },
+            {
+              "D0": 2,
+              "kind": "path",
+              "minimum_color_words": 160,
+              "minimum_degree": 11,
+              "n1": 5
+            }
+          ]
+        },
+        "status": "PASS"
+      },
+      "stdout_sha256": "340fed34a6d1f141d1f9a92b018ca196912d95e439dfa8ad79af83155f6f3435"
+    },
+    {
+      "audit": "wrong-side-branches",
+      "mode": "seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-wrong-side-branches-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0,
+      "result": {
+        "authority_inputs": 61,
+        "finite_calibration": "triggered and holds",
+        "seed": 17,
+        "source_control": "not triggered",
+        "statistics": {
+          "B13": [
+            {
+              "b_component": [
+                "b"
+              ],
+              "boundary_contact_count": 0,
+              "conditional_exclusion_triggered": false,
+              "name": "private_cut_unframed_b_branch"
+            },
+            {
+              "b_component": [
+                "b",
+                "c",
+                "t"
+              ],
+              "boundary_contact_count": 1,
+              "conditional_exclusion_triggered": true,
+              "name": "q_cut_c_side_now_excluded_conditionally"
+            },
+            {
+              "b_component": [
+                "b"
+              ],
+              "boundary_contact_count": 0,
+              "conditional_exclusion_triggered": false,
+              "name": "q_cut_unframed_b_branch_still_necessary"
+            }
+          ],
+          "C12": [
+            {
+              "conditional_exclusion_triggered": true,
+              "e_neighbor_frames": [
+                "Y"
+              ],
+              "name": "U_two_boundary_neighbor_branches_excluded_conditionally",
+              "r_neighbor_frames": [
+                "V"
+              ]
+            },
+            {
+              "conditional_exclusion_triggered": false,
+              "e_neighbor_frames": [],
+              "name": "U_both_branches_avoid_neighbor_frames",
+              "r_neighbor_frames": []
+            }
+          ],
+          "P_escape": {
+            "B13_component_after_q_deletion": [
+              "b"
+            ],
+            "P01": [
+              "b",
+              "x",
+              "c"
+            ],
+            "P_internal_vertices_not_in_B": [
+              "x"
+            ]
+          },
+          "links": [
+            {
+              "D0": 0,
+              "kind": "cyclic",
+              "minimum_color_words": 8,
+              "minimum_degree": 6,
+              "n1": 3
+            },
+            {
+              "D0": 1,
+              "kind": "cyclic",
+              "minimum_color_words": 24,
+              "minimum_degree": 7,
+              "n1": 3
+            },
+            {
+              "D0": 2,
+              "kind": "cyclic",
+              "minimum_color_words": 48,
+              "minimum_degree": 8,
+              "n1": 3
+            },
+            {
+              "D0": 0,
+              "kind": "path",
+              "minimum_color_words": 4,
+              "minimum_degree": 5,
+              "n1": 3
+            },
+            {
+              "D0": 1,
+              "kind": "path",
+              "minimum_color_words": 8,
+              "minimum_degree": 6,
+              "n1": 3
+            },
+            {
+              "D0": 2,
+              "kind": "path",
+              "minimum_color_words": 12,
+              "minimum_degree": 7,
+              "n1": 3
+            },
+            {
+              "D0": 0,
+              "kind": "path",
+              "minimum_color_words": 8,
+              "minimum_degree": 7,
+              "n1": 4
+            },
+            {
+              "D0": 1,
+              "kind": "path",
+              "minimum_color_words": 24,
+              "minimum_degree": 8,
+              "n1": 4
+            },
+            {
+              "D0": 2,
+              "kind": "path",
+              "minimum_color_words": 48,
+              "minimum_degree": 9,
+              "n1": 4
+            },
+            {
+              "D0": 0,
+              "kind": "path",
+              "minimum_color_words": 16,
+              "minimum_degree": 9,
+              "n1": 5
+            },
+            {
+              "D0": 1,
+              "kind": "path",
+              "minimum_color_words": 64,
+              "minimum_degree": 10,
+              "n1": 5
+            },
+            {
+              "D0": 2,
+              "kind": "path",
+              "minimum_color_words": 160,
+              "minimum_degree": 11,
+              "n1": 5
+            }
+          ]
+        },
+        "status": "PASS"
+      },
+      "stdout_sha256": "a3b44c9b4f262d906193dfd7abc2797a1e7ba1cc7314e41f5b49978558d8ff94"
+    },
+    {
+      "audit": "wrong-side-branches",
+      "mode": "negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-wrong-side-branches-6b09cd4/check.py",
+        "--negative"
+      ],
+      "exit_code": 0,
+      "result": {
+        "authority_inputs": 61,
+        "finite_calibration": "triggered and holds",
+        "negative_controls": [
+          {
+            "name": "drop_link_domain",
+            "status": "rejected"
+          },
+          {
+            "name": "lower_private_degree",
+            "status": "rejected"
+          },
+          {
+            "name": "lower_q_path_degree",
+            "status": "rejected"
+          },
+          {
+            "name": "break_proper_link",
+            "status": "rejected"
+          },
+          {
+            "name": "erase_q_c_component",
+            "status": "rejected"
+          },
+          {
+            "name": "skip_original_qc",
+            "status": "rejected"
+          },
+          {
+            "name": "invent_U_untriggered",
+            "status": "rejected"
+          },
+          {
+            "name": "make_tail_inside_B",
+            "status": "rejected"
+          },
+          {
+            "name": "promote_source",
+            "status": "rejected"
+          },
+          {
+            "name": "erase_frame_path_exception",
+            "status": "rejected"
+          },
+          {
+            "name": "erase_rootless_E",
+            "status": "rejected"
+          }
+        ],
+        "seed": 0,
+        "source_control": "not triggered",
+        "statistics": {
+          "B13": [
+            {
+              "b_component": [
+                "b"
+              ],
+              "boundary_contact_count": 0,
+              "conditional_exclusion_triggered": false,
+              "name": "private_cut_unframed_b_branch"
+            },
+            {
+              "b_component": [
+                "b",
+                "c",
+                "t"
+              ],
+              "boundary_contact_count": 1,
+              "conditional_exclusion_triggered": true,
+              "name": "q_cut_c_side_now_excluded_conditionally"
+            },
+            {
+              "b_component": [
+                "b"
+              ],
+              "boundary_contact_count": 0,
+              "conditional_exclusion_triggered": false,
+              "name": "q_cut_unframed_b_branch_still_necessary"
+            }
+          ],
+          "C12": [
+            {
+              "conditional_exclusion_triggered": true,
+              "e_neighbor_frames": [
+                "Y"
+              ],
+              "name": "U_two_boundary_neighbor_branches_excluded_conditionally",
+              "r_neighbor_frames": [
+                "V"
+              ]
+            },
+            {
+              "conditional_exclusion_triggered": false,
+              "e_neighbor_frames": [],
+              "name": "U_both_branches_avoid_neighbor_frames",
+              "r_neighbor_frames": []
+            }
+          ],
+          "P_escape": {
+            "B13_component_after_q_deletion": [
+              "b"
+            ],
+            "P01": [
+              "b",
+              "x",
+              "c"
+            ],
+            "P_internal_vertices_not_in_B": [
+              "x"
+            ]
+          },
+          "links": [
+            {
+              "D0": 0,
+              "kind": "cyclic",
+              "minimum_color_words": 8,
+              "minimum_degree": 6,
+              "n1": 3
+            },
+            {
+              "D0": 1,
+              "kind": "cyclic",
+              "minimum_color_words": 24,
+              "minimum_degree": 7,
+              "n1": 3
+            },
+            {
+              "D0": 2,
+              "kind": "cyclic",
+              "minimum_color_words": 48,
+              "minimum_degree": 8,
+              "n1": 3
+            },
+            {
+              "D0": 0,
+              "kind": "path",
+              "minimum_color_words": 4,
+              "minimum_degree": 5,
+              "n1": 3
+            },
+            {
+              "D0": 1,
+              "kind": "path",
+              "minimum_color_words": 8,
+              "minimum_degree": 6,
+              "n1": 3
+            },
+            {
+              "D0": 2,
+              "kind": "path",
+              "minimum_color_words": 12,
+              "minimum_degree": 7,
+              "n1": 3
+            },
+            {
+              "D0": 0,
+              "kind": "path",
+              "minimum_color_words": 8,
+              "minimum_degree": 7,
+              "n1": 4
+            },
+            {
+              "D0": 1,
+              "kind": "path",
+              "minimum_color_words": 24,
+              "minimum_degree": 8,
+              "n1": 4
+            },
+            {
+              "D0": 2,
+              "kind": "path",
+              "minimum_color_words": 48,
+              "minimum_degree": 9,
+              "n1": 4
+            },
+            {
+              "D0": 0,
+              "kind": "path",
+              "minimum_color_words": 16,
+              "minimum_degree": 9,
+              "n1": 5
+            },
+            {
+              "D0": 1,
+              "kind": "path",
+              "minimum_color_words": 64,
+              "minimum_degree": 10,
+              "n1": 5
+            },
+            {
+              "D0": 2,
+              "kind": "path",
+              "minimum_color_words": 160,
+              "minimum_degree": 11,
+              "n1": 5
+            }
+          ]
+        },
+        "status": "PASS"
+      },
+      "stdout_sha256": "58b361b420266357c4cea6f9d31d4d22b2972ba02c9bfafc226ca633d095d4fc"
+    }
+  ],
+  "prior_final_manifest_files": 245,
+  "prior_mathematical_output_drift": [],
+  "authorized_routing_changes": [
+    "docs/STATUS.md",
+    "docs/c5_kempe_guide.md"
+  ],
+  "root_reduction": "REDUCTION_VERIFICATION.json: normal/seed17/8 semantic and 2 external corruption rejections PASS",
+  "paper_scope": "conditional exclusions: nonempty-M2 six exterior vertices and empty-M2 T6 five exterior vertices; general shared-point branches and star bounds",
+  "source_instances": "not triggered",
+  "whole_eleven_types": "OPEN",
+  "global_lower_bound": "k>=23 unchanged",
+  "new_Lean": false,
+  "commit_push": "not performed"
+}

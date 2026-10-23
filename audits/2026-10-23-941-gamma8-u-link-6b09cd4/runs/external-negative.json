@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-u-link-6b09cd4/check.py",
+    "--certificate",
+    "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-u-link-6b09cd4/runs/corrupted-certificate.json"
+  ],
+  "returncode": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-u-link-6b09cd4/check.py\", line 264, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-u-link-6b09cd4/check.py\", line 259, in main\n    result={'custody':custody(),'validation':validate(cert,args.seed)}\n                                             ~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-u-link-6b09cd4/check.py\", line 210, in validate\n    require(certificate['star_restrictions']==rows,'complete-star domain or value drift')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-u-link-6b09cd4/check.py\", line 18, in require\n    if not ok: raise ValueError(why)\n               ^^^^^^^^^^^^^^^^^^^^^\nValueError: complete-star domain or value drift\n",
+  "stdout": ""
+}

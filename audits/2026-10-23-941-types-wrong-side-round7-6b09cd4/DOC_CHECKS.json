@@ -1,0 +1,50 @@
+{
+  "checks": [
+    {
+      "name": "check-docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 1,
+      "stdout": "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/runs-v2/check-docs.stdout",
+      "stderr": "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/runs-v2/check-docs.stderr"
+    },
+    {
+      "name": "formal-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/runs-v2/formal-docgraph.stdout",
+      "stderr": "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/runs-v2/formal-docgraph.stderr"
+    },
+    {
+      "name": "whole-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "stdout": "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/runs-v2/whole-docgraph.stdout",
+      "stderr": "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/runs-v2/whole-docgraph.stderr"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/runs-v2/diff-check.stdout",
+      "stderr": "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/runs-v2/diff-check.stderr"
+    }
+  ],
+  "whole_tree_is_separate_historical_diagnostic": true
+}

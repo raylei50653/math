@@ -1,0 +1,63 @@
+{
+  "exclusive_create_rejection": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/produce.py"
+    ],
+    "exit_code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/produce.py\", line 42, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/produce.py\", line 39, in main\n    with (HERE/'certificate.json').open('x') as f:json.dump(result,f,sort_keys=True,indent=2);f.write('\\n')\n         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: '/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/certificate.json'\n",
+    "stdout": ""
+  },
+  "external_corruption": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/check.py",
+      "--certificate",
+      "<temporary-corrupt-certificate>"
+    ],
+    "exit_code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/check.py\", line 193, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/check.py\", line 190, in main\n    result=negative(cert) if args.negative else validate(cert,args.seed)\n                                                ~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/check.py\", line 162, in validate\n    for i in indices:require(cert['caps'][i]==caps[i],'full cap/fibre mismatch '+str(i))\n                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/check.py\", line 20, in require\n    if not value:raise ValueError(message)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: full cap/fibre mismatch 0\n",
+    "stdout": ""
+  },
+  "immutable_drift": 0,
+  "negative": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/check.py",
+      "--negative"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "{\"frozen_inputs\": 10, \"immutable_drift\": 0, \"labels\": [\"chi_to_rootless_edge\", \"second_M2\", \"chi_inside_cap\", \"lost_full_star\", \"old_B_inherited\", \"lost_full_lift\", \"lost_empty_fibre\", \"false_source\", \"false_exclusion\"], \"negative_controls_rejected\": 9, \"status\": \"PASS\"}\n"
+  },
+  "normal": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/check.py"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "{\"arithmetic_equalities\": [[1, 5, 2, 5]], \"caps\": 16, \"chi_rootless_cases\": 8, \"empty_fibres\": 80, \"frozen_inputs\": 10, \"immutable_drift\": 0, \"inherited_star_rows\": 60, \"ordered_boundary_rows\": 496, \"seven_point_exclusion\": \"requires_separate_safe_replacement\", \"source_realizability\": \"not triggered\", \"status\": \"PASS\", \"total_full_lifts\": 1196}\n"
+  },
+  "replay_results_equal": true,
+  "schema": "941-gamma8-chi-seven-verification-v1",
+  "seed17": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "-O",
+      "/home/ray/developer/ai/math/audits/2026-10-23-941-gamma8-chi-seven-6b09cd4/check.py",
+      "--seed",
+      "17"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "{\"arithmetic_equalities\": [[1, 5, 2, 5]], \"caps\": 16, \"chi_rootless_cases\": 8, \"empty_fibres\": 80, \"frozen_inputs\": 10, \"immutable_drift\": 0, \"inherited_star_rows\": 60, \"ordered_boundary_rows\": 496, \"seven_point_exclusion\": \"requires_separate_safe_replacement\", \"source_realizability\": \"not triggered\", \"status\": \"PASS\", \"total_full_lifts\": 1196}\n"
+  },
+  "source_realizability": "not triggered",
+  "status": "PASS"
+}

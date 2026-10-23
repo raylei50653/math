@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "name": "master-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round5-6b09cd4/check.py"
+      ],
+      "seed17": false,
+      "returncode": 0,
+      "expected_rejection": false,
+      "elapsed_seconds": 0.63
+    },
+    {
+      "name": "master-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-types-wrong-side-round5-6b09cd4/check.py"
+      ],
+      "seed17": true,
+      "returncode": 0,
+      "expected_rejection": false,
+      "elapsed_seconds": 0.636
+    },
+    {
+      "name": "master-negative",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round5-6b09cd4/check.py",
+        "--negative"
+      ],
+      "seed17": false,
+      "returncode": 0,
+      "expected_rejection": false,
+      "elapsed_seconds": 0.637
+    },
+    {
+      "name": "transfer-normal",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round5-6b09cd4/transfer_caps.py"
+      ],
+      "seed17": false,
+      "returncode": 0,
+      "expected_rejection": false,
+      "elapsed_seconds": 0.619
+    },
+    {
+      "name": "transfer-seed17",
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "audits/2026-10-23-941-types-wrong-side-round5-6b09cd4/transfer_caps.py"
+      ],
+      "seed17": true,
+      "returncode": 0,
+      "expected_rejection": false,
+      "elapsed_seconds": 0.628
+    },
+    {
+      "name": "external-missing-row",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round5-6b09cd4/transfer_caps.py",
+        "--certificate",
+        "audits/2026-10-23-941-types-wrong-side-round5-6b09cd4/broken-cap-transfer-certificate.json"
+      ],
+      "seed17": false,
+      "returncode": 1,
+      "expected_rejection": true,
+      "elapsed_seconds": 0.631
+    },
+    {
+      "name": "external-malformed-source",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-types-wrong-side-round5-6b09cd4/check.py",
+        "--certificate",
+        "audits/2026-10-23-941-types-wrong-side-round5-6b09cd4/malformed-certificate.json"
+      ],
+      "seed17": false,
+      "returncode": 1,
+      "expected_rejection": true,
+      "elapsed_seconds": 0.651
+    }
+  ]
+}

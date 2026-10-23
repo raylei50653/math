@@ -1,0 +1,152 @@
+{
+  "external_negative_count": 6,
+  "normal_seed17_equal_except_seed": true,
+  "runs": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/check.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit": 0,
+      "expected_rejection_reason": null,
+      "name": "normal",
+      "passed": true,
+      "seconds": 21.921
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-O",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/check.py",
+        "--seed",
+        "17"
+      ],
+      "environment": {
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "expected_exit": 0,
+      "expected_rejection_reason": null,
+      "name": "seed17",
+      "passed": true,
+      "seconds": 21.828
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/check.py",
+        "--negative"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "expected_exit": 0,
+      "expected_rejection_reason": null,
+      "name": "negative",
+      "passed": true,
+      "seconds": 22.001
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/check.py",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/negative-inputs-v2/missing-frame.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit": 1,
+      "expected_rejection_reason": "same-source/same-H contract",
+      "name": "external-missing-frame",
+      "passed": true,
+      "seconds": 0.058
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/check.py",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/negative-inputs-v2/missing-alias-context.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit": 1,
+      "expected_rejection_reason": "domain incomplete",
+      "name": "external-missing-alias-context",
+      "passed": true,
+      "seconds": 0.057
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/check.py",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/negative-inputs-v2/invent-source.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit": 1,
+      "expected_rejection_reason": "authority boundary",
+      "name": "external-invent-source",
+      "passed": true,
+      "seconds": 0.059
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/check.py",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/negative-inputs-v2/corrupt-full-lift.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit": 1,
+      "expected_rejection_reason": "complete seven-point lift",
+      "name": "external-corrupt-full-lift",
+      "passed": true,
+      "seconds": 21.111
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/check.py",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/negative-inputs-v2/corrupt-quotient.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit": 1,
+      "expected_rejection_reason": "actual quotient graph",
+      "name": "external-corrupt-quotient",
+      "passed": true,
+      "seconds": 20.999
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/check.py",
+        "--certificate",
+        "/home/ray/developer/ai/math/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/negative-inputs-v2/erase-residual.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "expected_exit": 1,
+      "expected_rejection_reason": "residual accepting witness",
+      "name": "external-erase-residual",
+      "passed": true,
+      "seconds": 21.696
+    }
+  ],
+  "semantic_negative_count": 14,
+  "status": "PASS"
+}

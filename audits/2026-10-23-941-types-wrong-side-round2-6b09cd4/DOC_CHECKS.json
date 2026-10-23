@@ -1,0 +1,63 @@
+{
+  "scope": "document reachability/index/progress and explicit metadata; not proof validity",
+  "checks": [
+    {
+      "name": "check-docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "summary": "OK: 712 Markdown files, 9444 local links; anchors, index, handoff, guide progress checked",
+      "errors": 0,
+      "duplicate_id_errors": 0,
+      "stdout": "runs/check-docs.stdout",
+      "stderr": "runs/check-docs.stderr"
+    },
+    {
+      "name": "formal-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "summary": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes",
+      "errors": 0,
+      "duplicate_id_errors": 0,
+      "stdout": "runs/formal-docgraph.stdout",
+      "stderr": "runs/formal-docgraph.stderr"
+    },
+    {
+      "name": "whole-docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "summary": "FAIL: 97 documents, 368 relations, 12 families; 72 errors, 0 notes",
+      "errors": 72,
+      "duplicate_id_errors": 72,
+      "stdout": "runs/whole-docgraph.stdout",
+      "stderr": "runs/whole-docgraph.stderr"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "summary": "PASS",
+      "errors": 0,
+      "duplicate_id_errors": 0,
+      "stdout": "runs/diff-check.stdout",
+      "stderr": "runs/diff-check.stderr"
+    }
+  ],
+  "whole_tree_boundary": "archived/frozen/scratch duplicate-id diagnostics remain separate from formal docs; history preserved"
+}

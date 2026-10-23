@@ -1,0 +1,53 @@
+{
+  "formal_status": "PASS",
+  "checks": [
+    {
+      "name": "check-docs-final",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "summary": "OK: 712 Markdown files, 9466 local links; anchors, index, handoff, guide progress checked"
+    },
+    {
+      "name": "formal-docgraph-final",
+      "command": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "summary": "OK: 97 documents, 383 relations, 12 families; 0 errors, 0 notes"
+    },
+    {
+      "name": "diff-check-final",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "summary": ""
+    }
+  ],
+  "whole_tree": {
+    "name": "whole-docgraph",
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "exit_code": 1,
+    "stdout": "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/runs-v2/whole-docgraph.stdout",
+    "stderr": "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/runs-v2/whole-docgraph.stderr",
+    "historical_duplicate_ids": 72,
+    "other_errors": 0,
+    "summary": "FAIL: 97 documents, 368 relations, 12 families; 72 errors, 0 notes"
+  },
+  "first_docs_failure": "retained DOC_CHECKS.json: six recent milestones exceeded 3-5 rule; replaced superseded round6 table entry while keeping detailed provenance"
+}
