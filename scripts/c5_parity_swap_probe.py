@@ -139,6 +139,9 @@ def main():
             stats['alpha_some_gamma_ok'] += ok_alpha
             graph_ok |= ok_alpha
         stats['graphs_some_alpha_ok'] += graph_ok
+        if not graph_ok:
+            stats['one_swap_failures'] += 1
+            stats['failures_with_good_target'] += any(good[t] for t in TARGETS)
     print(dict(stats))
 
 
