@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-methods-cb8f859/932/check.py", line 301, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-methods-cb8f859/932/check.py", line 291, in main
+    additional = check_inputs(json.loads((HERE / 'ADDITIONAL_INPUTS.json').read_text()), args.check_entry_shared)
+  File "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-methods-cb8f859/932/check.py", line 43, in check_inputs
+    require(not drift, 'source authority drift: ' + repr(drift))
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-methods-cb8f859/932/check.py", line 28, in require
+    raise AssertionError(message)
+AssertionError: source authority drift: ['docs/tasks/c5_no4ct_handoff.md']

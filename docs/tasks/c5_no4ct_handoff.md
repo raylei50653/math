@@ -161,7 +161,7 @@ d(B)\ge4,\quad d(V\setminus B)\ge5,\quad h\ge3,\quad n_5\ge9.
 | h≥3、n5≥9 的新三支版本 | **已接入**；932 另有 h≥4、n5≥10，不提高三支共同界 |
 | C8 八項分類及其後續大小界 | **已接入**。932 的 h=3 全排，原八項必要條件殘留及 h=3⇒k≥19 保留；無界來源仍 OPEN |
 | h=3 的全部 PINCH／BRIDGE | **已排除**；[T1-CROSSCUT](../../audits/2026-10-14-t1-crosscut-review-77fbd5d/REPORT.md) 證 p=0，不限 s 或兩片內點數；一般 RING 仍 **OPEN**。剝層自身給k≥19，當前另接C4共同k≥23 |
-| 932、h=4 的低度apex | **已排除**；[T2](../../audits/2026-10-13-c9-932-source-d521163/REPORT.md) 得五apex d_H≥4、d_G≥6及k≥18；20項較高度數完整來源仍OPEN |
+| 932、h=4 的原接點 | [T2](../../audits/2026-10-13-c9-932-source-d521163/REPORT.md)五apex下界及三接點／距四全排保留；[第五輪](../../audits/2026-10-23-three-mask-round5-cb8f859/932/REPORT.md)再得s≥1、深點d≥2、Q長至少10。真弦兩側皆深點，端點C contacts間距≥3；Q仍可有弦，一般s≥1來源OPEN，共同k≥23不變 |
 | no4ct 私人圈秩0至4 | **已接通三支**；[T3](../../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md) 對任取合法W5得ρ≥5；一般縮減仍OPEN |
 | h≥4 來源與固定寬度剝層 | **OPEN**。一般 separator 轉移已證，下一層 C8／度數／接點前提不自動傳遞 |
 | 新論證 Lean 形式化 | **未做**；舊 `lake build` 不代表以上紙面拓撲已形式化 |
@@ -202,7 +202,10 @@ C8 方向先讀 [T1-CROSSCUT](../../audits/2026-10-14-t1-crosscut-review-77fbd5d
 不自動傳遞。PINCH／BRIDGE 的 s≥2 逐級任務已由一般定理涵蓋。
 
 另一窄入口是 [T2](../../audits/2026-10-13-c9-932-source-d521163/REPORT.md) 的完整932、h=4：保留20份
-較高度數來源，聯合五apex的d_H≥4、九個互異面第三點與同一H的完整計數。
+較高度數來源。[第二輪原三接點全排](../../audits/2026-10-23-three-mask-round2-cb8f859/932/REPORT.md)已給所有內點至多兩個C9 contacts；
+[第四輪群平均OR接合](../../audits/2026-10-23-three-mask-round4-cb8f859/932/REPORT.md)已排全部距四接點，每原collar只餘零pair。
+[第五輪原Q接續](../../audits/2026-10-23-three-mask-round5-cb8f859/932/REPORT.md)以完整環帶排全部s=0，得s≥1、至少兩深點；真弦兩側皆深點且端點C contacts間距≥3。
+下一步保同一原Q、可變single contacts與全部空band，追完整relation或合法原弦cell回填；不能把Q當induced，也不能因proper Q row沒有環帶lift便從原J刪掉。原C6／C7未平均counts仍只rank≤2／3，第四輪只對unused-color群和使用folded rank-one。
 T2 自身給此支 k≥18，當前亦有共同 C4 界 k≥23；h≥5 及 h=4 的933／941另列，
 不套用 h=3 十九內點界。
 [T3](../../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md) 已完成私人低圈秩的三支接入；接續義務

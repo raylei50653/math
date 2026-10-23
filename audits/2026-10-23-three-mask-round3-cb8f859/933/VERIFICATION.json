@@ -1,0 +1,198 @@
+{
+  "status": "PASS",
+  "base": "cb8f8593e273a7426ecadd59797a6e643cc4768e",
+  "replays": [
+    {
+      "name": "normal",
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round3-cb8f859/933/check.py"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "stdout": "runs/normal.stdout",
+      "stderr": "runs/normal.stderr",
+      "result": {
+        "base": "cb8f8593e273a7426ecadd59797a6e643cc4768e",
+        "candidate_count": 14,
+        "certificate_sha256": "989d5c1ce100dd4876be1672c99333fd8f1f4096eb8cf362609a7fe7af5d2455",
+        "designated_nogos": 12,
+        "immutable_input_drift": 0,
+        "necessary_feasibility_claimed": false,
+        "new_candidates_with_common_open_obligation": [
+          0,
+          1
+        ],
+        "normal_source_graph_control": "not triggered",
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round3-cb8f859/933/check.py"
+      ],
+      "PYTHONHASHSEED": 17,
+      "exit_code": 0,
+      "stdout": "runs/seed17.stdout",
+      "stderr": "runs/seed17.stderr",
+      "result": {
+        "base": "cb8f8593e273a7426ecadd59797a6e643cc4768e",
+        "candidate_count": 14,
+        "certificate_sha256": "989d5c1ce100dd4876be1672c99333fd8f1f4096eb8cf362609a7fe7af5d2455",
+        "designated_nogos": 12,
+        "immutable_input_drift": 0,
+        "necessary_feasibility_claimed": false,
+        "new_candidates_with_common_open_obligation": [
+          0,
+          1
+        ],
+        "normal_source_graph_control": "not triggered",
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "semantic-negative",
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round3-cb8f859/933/check.py",
+        "--negative"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "stdout": "runs/semantic-negative.stdout",
+      "stderr": "runs/semantic-negative.stderr",
+      "result": {
+        "base": "cb8f8593e273a7426ecadd59797a6e643cc4768e",
+        "candidate_count": 14,
+        "certificate_sha256": "989d5c1ce100dd4876be1672c99333fd8f1f4096eb8cf362609a7fe7af5d2455",
+        "designated_nogos": 12,
+        "immutable_input_drift": 0,
+        "necessary_feasibility_claimed": false,
+        "new_candidates_with_common_open_obligation": [
+          0,
+          1
+        ],
+        "normal_source_graph_control": "not triggered",
+        "semantic_negative_controls": [
+          {
+            "name": "change_original_rotation",
+            "status": "counterexample rejected"
+          },
+          {
+            "name": "erase_original_exterior_attachment",
+            "status": "counterexample rejected"
+          },
+          {
+            "name": "erase_an_empty_old_fibre",
+            "status": "counterexample rejected"
+          },
+          {
+            "name": "erase_one_old_full_lift",
+            "status": "counterexample rejected"
+          },
+          {
+            "name": "lose_a_complete_ten_row_projection",
+            "status": "counterexample rejected"
+          },
+          {
+            "name": "swap_E_vectors_between_candidates",
+            "status": "counterexample rejected"
+          },
+          {
+            "name": "overstate_vertex_saving",
+            "status": "counterexample rejected"
+          },
+          {
+            "name": "change_acceptance_factor",
+            "status": "counterexample rejected"
+          },
+          {
+            "name": "drop_one_of_twelve_nogos",
+            "status": "counterexample rejected"
+          },
+          {
+            "name": "omit_strict_original_positive_obligation",
+            "status": "counterexample rejected"
+          },
+          {
+            "name": "omit_one_literal_component_subset_switch",
+            "status": "counterexample rejected"
+          },
+          {
+            "name": "invent_source_realization_from_16dim_space",
+            "status": "counterexample rejected"
+          },
+          {
+            "name": "invent_necessary_feasibility",
+            "status": "counterexample rejected"
+          },
+          {
+            "name": "upgrade_designated_nogos_to_full_support",
+            "status": "counterexample rejected"
+          },
+          {
+            "name": "invent_smaller_bad",
+            "status": "counterexample rejected"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "independent-normal",
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round3-cb8f859/933/independent.py"
+      ],
+      "PYTHONHASHSEED": null,
+      "exit_code": 0,
+      "stdout": "runs/independent-normal.stdout",
+      "stderr": "runs/independent-normal.stderr",
+      "result": {
+        "all_local_fibres_match": true,
+        "candidate_count": 14,
+        "certificate_sha256": "989d5c1ce100dd4876be1672c99333fd8f1f4096eb8cf362609a7fe7af5d2455",
+        "complete_count_matrices_match": true,
+        "independent_order": "canonical-E-word then b, one common literal colour permutation",
+        "source_realization_claimed": false,
+        "status": "PASS"
+      }
+    },
+    {
+      "name": "independent-seed17",
+      "argv": [
+        "python3",
+        "-B",
+        "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round3-cb8f859/933/independent.py"
+      ],
+      "PYTHONHASHSEED": 17,
+      "exit_code": 0,
+      "stdout": "runs/independent-seed17.stdout",
+      "stderr": "runs/independent-seed17.stderr",
+      "result": {
+        "all_local_fibres_match": true,
+        "candidate_count": 14,
+        "certificate_sha256": "989d5c1ce100dd4876be1672c99333fd8f1f4096eb8cf362609a7fe7af5d2455",
+        "complete_count_matrices_match": true,
+        "independent_order": "canonical-E-word then b, one common literal colour permutation",
+        "source_realization_claimed": false,
+        "status": "PASS"
+      }
+    }
+  ],
+  "immutable_authority_drift": 0,
+  "routing_not_used_as_math_input": true,
+  "initial_independent_diagnostic_failure": {
+    "stage": "before independent certificate generation",
+    "issue": "two unused b colour names represented one common S4 orbit",
+    "fix": "deduplicate by entire normalized literal tuple",
+    "overwritten_existing_certificate": false
+  },
+  "source_realization_claimed": false
+}

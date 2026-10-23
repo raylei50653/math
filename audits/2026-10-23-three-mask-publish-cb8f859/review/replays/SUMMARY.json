@@ -1,0 +1,727 @@
+{
+  "K_infinity": "OPEN",
+  "actual_smaller_bad": "OPEN",
+  "all_passing_normal_seed17_substantive_results_equal": true,
+  "external_write_exception": "authorized ephemeral /tmp historical tree, removed after replay",
+  "general_932_933_941": "OPEN",
+  "historical_archive": {
+    "archive_argv": [
+      "git",
+      "archive",
+      "cb8f8593e273a7426ecadd59797a6e643cc4768e"
+    ],
+    "archive_exit_code": 0,
+    "binary_archive_stdout": "streamed directly into tar, not saved as a publication artifact",
+    "cwd": "/home/ray/developer/ai/math",
+    "elapsed_seconds": 7.912743295000837,
+    "end_utc": "2026-10-23T05:38:58.769017+00:00",
+    "extract_argv": [
+      "tar",
+      "--extract",
+      "--file",
+      "-",
+      "--directory",
+      "/tmp/math-three-mask-historical-4hc3miiu"
+    ],
+    "extract_exit_code": 0,
+    "start_utc": "2026-10-23T05:38:50.856246+00:00",
+    "temporary_tree": "/tmp/math-three-mask-historical-4hc3miiu",
+    "tracked_bytes": 2563138900,
+    "tracked_files": 35190
+  },
+  "historical_original_root_replays": 2,
+  "historical_successes": 2,
+  "negative_execution_policy": {
+    "round1_round2": {
+      "932": [
+        "--check",
+        "--negative"
+      ],
+      "933": [
+        "--negative"
+      ],
+      "941": "all negatives automatic by default; no unsupported flag added"
+    },
+    "round3_round4_round5": {
+      "932": [
+        "--negative"
+      ],
+      "933": [
+        "--negative"
+      ],
+      "941": [
+        "--negative"
+      ]
+    }
+  },
+  "new_Lean": false,
+  "original_live_failures": 2,
+  "original_live_root_replays": 10,
+  "original_live_successes": 8,
+  "other_four_rounds_live": {
+    "round2": {
+      "comparison": {
+        "actual_differences": [],
+        "equal_except_explicit_routing_and_seed_metadata": true,
+        "ignored_routing_keys": [
+          "routing",
+          "routing_background_drift",
+          "routing_drift",
+          "routing_live_drift"
+        ],
+        "ignored_seed_field": "seed only",
+        "normal_receipt": "round2-normal.json",
+        "note": "PYTHONHASHSEED=17 inherited by all branch subprocesses; branch CLI --seed flags are unchanged from each sealed root entrypoint",
+        "raw_JSON_equal": true,
+        "seed17_receipt": "round2-seed17.json",
+        "status": "PASS"
+      },
+      "normal": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round2-cb8f859/check.py"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 18.853822517998196,
+        "end_utc": "2026-10-23T05:34:29.159831+00:00",
+        "entrypoint_documentation": "audits/2026-10-23-three-mask-round2-cb8f859/REPORT.md",
+        "entrypoint_sha256": "164f520fba946bdeadcceb14f4f187eb4100240f1c1fb9bb231b9de46111723d",
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTHONHASHSEED": null
+        },
+        "exit_code": 0,
+        "returned_controls": {
+          "negative_controls": [
+            {
+              "count": 9,
+              "path": "$.branch_results.932.negative_controls_rejected"
+            },
+            {
+              "count": 14,
+              "path": "$.branch_results.933.negative_controls"
+            },
+            {
+              "count": 11,
+              "path": "$.branch_results.941.negative_controls"
+            }
+          ],
+          "not_triggered": [
+            "$.branch_results.932.full_lift_geometric_control.complete_932_global_minimal_source",
+            "$.branch_results.933.actual_source_control"
+          ]
+        },
+        "start_utc": "2026-10-23T05:34:10.305999+00:00",
+        "stderr": {
+          "bytes": 0,
+          "path": "round2-normal.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "bytes": 4265,
+          "path": "round2-normal.stdout",
+          "sha256": "60592aaee4bea271e4ef50dfdc25e78b6766c7d356709af580efe2c2d6d7bfa1"
+        }
+      },
+      "seed17": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round2-cb8f859/check.py"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 18.620938125000976,
+        "end_utc": "2026-10-23T05:34:47.781377+00:00",
+        "entrypoint_documentation": "audits/2026-10-23-three-mask-round2-cb8f859/REPORT.md",
+        "entrypoint_sha256": "164f520fba946bdeadcceb14f4f187eb4100240f1c1fb9bb231b9de46111723d",
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTHONHASHSEED": "17"
+        },
+        "exit_code": 0,
+        "returned_controls": {
+          "negative_controls": [
+            {
+              "count": 9,
+              "path": "$.branch_results.932.negative_controls_rejected"
+            },
+            {
+              "count": 14,
+              "path": "$.branch_results.933.negative_controls"
+            },
+            {
+              "count": 11,
+              "path": "$.branch_results.941.negative_controls"
+            }
+          ],
+          "not_triggered": [
+            "$.branch_results.932.full_lift_geometric_control.complete_932_global_minimal_source",
+            "$.branch_results.933.actual_source_control"
+          ]
+        },
+        "start_utc": "2026-10-23T05:34:29.160427+00:00",
+        "stderr": {
+          "bytes": 0,
+          "path": "round2-seed17.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "bytes": 4265,
+          "path": "round2-seed17.stdout",
+          "sha256": "60592aaee4bea271e4ef50dfdc25e78b6766c7d356709af580efe2c2d6d7bfa1"
+        }
+      }
+    },
+    "round3": {
+      "comparison": {
+        "actual_differences": [],
+        "equal_except_explicit_routing_and_seed_metadata": true,
+        "ignored_routing_keys": [
+          "routing",
+          "routing_background_drift",
+          "routing_drift",
+          "routing_live_drift"
+        ],
+        "ignored_seed_field": "seed only",
+        "normal_receipt": "round3-normal.json",
+        "note": "PYTHONHASHSEED=17 inherited by all branch subprocesses; branch CLI --seed flags are unchanged from each sealed root entrypoint",
+        "raw_JSON_equal": true,
+        "seed17_receipt": "round3-seed17.json",
+        "status": "PASS"
+      },
+      "normal": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round3-cb8f859/check.py"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 4.665919217000919,
+        "end_utc": "2026-10-23T05:34:14.972234+00:00",
+        "entrypoint_documentation": "audits/2026-10-23-three-mask-round3-cb8f859/REPORT.md",
+        "entrypoint_sha256": "f18dabbfdbe2ab662aeb87b7f76b9a5c680b7c01b015094253c7fb0a2f8dc9e3",
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTHONHASHSEED": null
+        },
+        "exit_code": 0,
+        "returned_controls": {
+          "negative_controls": [
+            {
+              "count": 11,
+              "path": "$.branch_results.932.semantic_negative_controls"
+            },
+            {
+              "count": 15,
+              "path": "$.branch_results.933.semantic_negative_controls"
+            },
+            {
+              "count": 16,
+              "path": "$.branch_results.941.semantic_negatives_rejected"
+            }
+          ],
+          "not_triggered": [
+            "$.branch_results.932.complete_literal_full_lift_controls.one_double_m12.distinct_anchors.source",
+            "$.branch_results.932.complete_literal_full_lift_controls.one_double_m12.equal_anchors.source",
+            "$.branch_results.932.complete_literal_full_lift_controls.two_double_m13.distinct_anchors.source",
+            "$.branch_results.932.complete_literal_full_lift_controls.two_double_m13.equal_anchors.source",
+            "$.branch_results.932.geometric_controls.one_double_m12.source",
+            "$.branch_results.932.geometric_controls.two_double_m13.source",
+            "$.branch_results.932.source_realizability",
+            "$.branch_results.933.normal_source_graph_control",
+            "$.branch_results.941.source_control"
+          ]
+        },
+        "start_utc": "2026-10-23T05:34:10.306305+00:00",
+        "stderr": {
+          "bytes": 0,
+          "path": "round3-normal.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "bytes": 11370,
+          "path": "round3-normal.stdout",
+          "sha256": "c310089dc9f401026ef6152e9287ccac8da58bdd22fdb6838a3d39207ef01420"
+        }
+      },
+      "seed17": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round3-cb8f859/check.py"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 4.684249504000036,
+        "end_utc": "2026-10-23T05:34:19.657151+00:00",
+        "entrypoint_documentation": "audits/2026-10-23-three-mask-round3-cb8f859/REPORT.md",
+        "entrypoint_sha256": "f18dabbfdbe2ab662aeb87b7f76b9a5c680b7c01b015094253c7fb0a2f8dc9e3",
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTHONHASHSEED": "17"
+        },
+        "exit_code": 0,
+        "returned_controls": {
+          "negative_controls": [
+            {
+              "count": 11,
+              "path": "$.branch_results.932.semantic_negative_controls"
+            },
+            {
+              "count": 15,
+              "path": "$.branch_results.933.semantic_negative_controls"
+            },
+            {
+              "count": 16,
+              "path": "$.branch_results.941.semantic_negatives_rejected"
+            }
+          ],
+          "not_triggered": [
+            "$.branch_results.932.complete_literal_full_lift_controls.one_double_m12.distinct_anchors.source",
+            "$.branch_results.932.complete_literal_full_lift_controls.one_double_m12.equal_anchors.source",
+            "$.branch_results.932.complete_literal_full_lift_controls.two_double_m13.distinct_anchors.source",
+            "$.branch_results.932.complete_literal_full_lift_controls.two_double_m13.equal_anchors.source",
+            "$.branch_results.932.geometric_controls.one_double_m12.source",
+            "$.branch_results.932.geometric_controls.two_double_m13.source",
+            "$.branch_results.932.source_realizability",
+            "$.branch_results.933.normal_source_graph_control",
+            "$.branch_results.941.source_control"
+          ]
+        },
+        "start_utc": "2026-10-23T05:34:14.972893+00:00",
+        "stderr": {
+          "bytes": 0,
+          "path": "round3-seed17.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "bytes": 11370,
+          "path": "round3-seed17.stdout",
+          "sha256": "c310089dc9f401026ef6152e9287ccac8da58bdd22fdb6838a3d39207ef01420"
+        }
+      }
+    },
+    "round4": {
+      "comparison": {
+        "actual_differences": [],
+        "equal_except_explicit_routing_and_seed_metadata": true,
+        "ignored_routing_keys": [
+          "routing",
+          "routing_background_drift",
+          "routing_drift",
+          "routing_live_drift"
+        ],
+        "ignored_seed_field": "seed only",
+        "normal_receipt": "round4-normal.json",
+        "note": "PYTHONHASHSEED=17 inherited by all branch subprocesses; branch CLI --seed flags are unchanged from each sealed root entrypoint",
+        "raw_JSON_equal": true,
+        "seed17_receipt": "round4-seed17.json",
+        "status": "PASS"
+      },
+      "normal": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round4-cb8f859/check.py"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 15.623241032000806,
+        "end_utc": "2026-10-23T05:34:26.074037+00:00",
+        "entrypoint_documentation": "audits/2026-10-23-three-mask-round4-cb8f859/REPORT.md",
+        "entrypoint_sha256": "45775039637fbcb5129b3d15be27afce368979d543663953770733815eac86e4",
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTHONHASHSEED": null
+        },
+        "exit_code": 0,
+        "returned_controls": {
+          "negative_controls": [
+            {
+              "count": 15,
+              "path": "$.branch_results.932.semantic_negative_controls"
+            },
+            {
+              "count": 15,
+              "path": "$.branch_results.933.semantic_negative_controls"
+            },
+            {
+              "count": 5,
+              "path": "$.branch_results.941.negative_disk"
+            },
+            {
+              "count": 16,
+              "path": "$.branch_results.941.semantic_negatives"
+            }
+          ],
+          "not_triggered": [
+            "$.branch_results.932.complete_full_lift_group_average_controls.one_double_m12.distinct.complete_source",
+            "$.branch_results.932.complete_full_lift_group_average_controls.one_double_m12.equal.complete_source",
+            "$.branch_results.932.complete_full_lift_group_average_controls.two_double_m13.distinct.complete_source",
+            "$.branch_results.932.complete_full_lift_group_average_controls.two_double_m13.equal.complete_source",
+            "$.branch_results.932.source_realizability",
+            "$.branch_results.933.actual_source_control",
+            "$.branch_results.941.negative_disk.original941_source_control",
+            "$.branch_results.941.source_trigger"
+          ]
+        },
+        "start_utc": "2026-10-23T05:34:10.450784+00:00",
+        "stderr": {
+          "bytes": 0,
+          "path": "round4-normal.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "bytes": 11143,
+          "path": "round4-normal.stdout",
+          "sha256": "74a146034e8b529aed8c316f70b9e9909d451d6f39263e8f2de5509657e2139c"
+        }
+      },
+      "seed17": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round4-cb8f859/check.py"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 15.9756327340001,
+        "end_utc": "2026-10-23T05:34:42.050761+00:00",
+        "entrypoint_documentation": "audits/2026-10-23-three-mask-round4-cb8f859/REPORT.md",
+        "entrypoint_sha256": "45775039637fbcb5129b3d15be27afce368979d543663953770733815eac86e4",
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTHONHASHSEED": "17"
+        },
+        "exit_code": 0,
+        "returned_controls": {
+          "negative_controls": [
+            {
+              "count": 15,
+              "path": "$.branch_results.932.semantic_negative_controls"
+            },
+            {
+              "count": 15,
+              "path": "$.branch_results.933.semantic_negative_controls"
+            },
+            {
+              "count": 5,
+              "path": "$.branch_results.941.negative_disk"
+            },
+            {
+              "count": 16,
+              "path": "$.branch_results.941.semantic_negatives"
+            }
+          ],
+          "not_triggered": [
+            "$.branch_results.932.complete_full_lift_group_average_controls.one_double_m12.distinct.complete_source",
+            "$.branch_results.932.complete_full_lift_group_average_controls.one_double_m12.equal.complete_source",
+            "$.branch_results.932.complete_full_lift_group_average_controls.two_double_m13.distinct.complete_source",
+            "$.branch_results.932.complete_full_lift_group_average_controls.two_double_m13.equal.complete_source",
+            "$.branch_results.932.source_realizability",
+            "$.branch_results.933.actual_source_control",
+            "$.branch_results.941.negative_disk.original941_source_control",
+            "$.branch_results.941.source_trigger"
+          ]
+        },
+        "start_utc": "2026-10-23T05:34:26.075118+00:00",
+        "stderr": {
+          "bytes": 0,
+          "path": "round4-seed17.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "bytes": 11143,
+          "path": "round4-seed17.stdout",
+          "sha256": "74a146034e8b529aed8c316f70b9e9909d451d6f39263e8f2de5509657e2139c"
+        }
+      }
+    },
+    "round5": {
+      "comparison": {
+        "actual_differences": [],
+        "equal_except_explicit_routing_and_seed_metadata": true,
+        "ignored_routing_keys": [
+          "routing",
+          "routing_background_drift",
+          "routing_drift",
+          "routing_live_drift"
+        ],
+        "ignored_seed_field": "seed only",
+        "normal_receipt": "round5-normal.json",
+        "note": "PYTHONHASHSEED=17 inherited by all branch subprocesses; branch CLI --seed flags are unchanged from each sealed root entrypoint",
+        "raw_JSON_equal": true,
+        "seed17_receipt": "round5-seed17.json",
+        "status": "PASS"
+      },
+      "normal": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round5-cb8f859/check.py"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 29.041975779000495,
+        "end_utc": "2026-10-23T05:34:48.700247+00:00",
+        "entrypoint_documentation": "audits/2026-10-23-three-mask-round5-cb8f859/REPORT.md",
+        "entrypoint_sha256": "541e675dab820d88503b9f811d6fcf41e710b565b1966adc1a0d5c887d56785a",
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTHONHASHSEED": null
+        },
+        "exit_code": 0,
+        "returned_controls": {
+          "negative_controls": [
+            {
+              "count": 13,
+              "path": "$.branch_results.932.semantic_negative_controls"
+            },
+            {
+              "count": 16,
+              "path": "$.branch_results.933.semantic_negative_controls"
+            },
+            {
+              "count": 16,
+              "path": "$.branch_results.941.semantic_negatives"
+            }
+          ],
+          "not_triggered": [
+            "$.branch_results.932.noninduced_control.source",
+            "$.branch_results.932.source_realizability",
+            "$.branch_results.933.actual_original_source_control",
+            "$.branch_results.941.source_trigger"
+          ]
+        },
+        "start_utc": "2026-10-23T05:34:19.658263+00:00",
+        "stderr": {
+          "bytes": 0,
+          "path": "round5-normal.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "bytes": 9691,
+          "path": "round5-normal.stdout",
+          "sha256": "7a482b103e37bffb2261dc0e669afce068cc055fd6438bbef6884b3b53763ecf"
+        }
+      },
+      "seed17": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round5-cb8f859/check.py"
+        ],
+        "cwd": "/home/ray/developer/ai/math",
+        "elapsed_seconds": 27.230523040998378,
+        "end_utc": "2026-10-23T05:35:15.931393+00:00",
+        "entrypoint_documentation": "audits/2026-10-23-three-mask-round5-cb8f859/REPORT.md",
+        "entrypoint_sha256": "541e675dab820d88503b9f811d6fcf41e710b565b1966adc1a0d5c887d56785a",
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTHONHASHSEED": "17"
+        },
+        "exit_code": 0,
+        "returned_controls": {
+          "negative_controls": [
+            {
+              "count": 13,
+              "path": "$.branch_results.932.semantic_negative_controls"
+            },
+            {
+              "count": 16,
+              "path": "$.branch_results.933.semantic_negative_controls"
+            },
+            {
+              "count": 16,
+              "path": "$.branch_results.941.semantic_negatives"
+            }
+          ],
+          "not_triggered": [
+            "$.branch_results.932.noninduced_control.source",
+            "$.branch_results.932.source_realizability",
+            "$.branch_results.933.actual_original_source_control",
+            "$.branch_results.941.source_trigger"
+          ]
+        },
+        "start_utc": "2026-10-23T05:34:48.700862+00:00",
+        "stderr": {
+          "bytes": 0,
+          "path": "round5-seed17.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "bytes": 9691,
+          "path": "round5-seed17.stdout",
+          "sha256": "7a482b103e37bffb2261dc0e669afce068cc055fd6438bbef6884b3b53763ecf"
+        }
+      }
+    }
+  },
+  "publication_BASE_sha256": "7fc654d378d788ba6666ee50918b845d69ad44ea7fbb8ac955c94b5666049c3a",
+  "remote_or_commit_claim": false,
+  "round1_historical_view": {
+    "audit_custody": {
+      "all_bytes_and_SHA_match_publication_BASE": true,
+      "bytes": 69861223,
+      "files": 738,
+      "status": "PASS"
+    },
+    "checker_modified": false,
+    "comparison": {
+      "actual_differences": [],
+      "equal_except_explicit_routing_and_seed_metadata": true,
+      "normal_receipt": "round1-historical-normal.json",
+      "raw_JSON_equal": true,
+      "seed17_receipt": "round1-historical-seed17.json",
+      "status": "PASS"
+    },
+    "historical_expected_hash_weakened": false,
+    "mathematical_inputs_modified": false,
+    "normal": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/tmp/math-three-mask-historical-4hc3miiu/audits/2026-10-23-three-mask-methods-cb8f859/check.py"
+      ],
+      "cwd": "/tmp/math-three-mask-historical-4hc3miiu",
+      "elapsed_seconds": 6.870831770000223,
+      "end_utc": "2026-10-23T05:39:05.796692+00:00",
+      "entrypoint_sha256": "4aa603163c2c97976871f2b2f563f7b868ceb2abb9a623a70cb7a439a3fcca60",
+      "environment_overrides": {
+        "GIT_DIR": "/home/ray/developer/ai/math/.git",
+        "GIT_WORK_TREE": "/tmp/math-three-mask-historical-4hc3miiu",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": null
+      },
+      "exit_code": 0,
+      "historical_view": true,
+      "returned_controls": {
+        "negative_controls": [
+          {
+            "count": 8,
+            "path": "$.branch_results.932.negative_controls_rejected"
+          },
+          {
+            "count": 11,
+            "path": "$.branch_results.933.negative_controls"
+          },
+          {
+            "count": 9,
+            "path": "$.branch_results.941.negative_controls"
+          }
+        ],
+        "not_triggered": [
+          "$.branch_results.932.target_source_control"
+        ]
+      },
+      "start_utc": "2026-10-23T05:38:58.925643+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": "round1-historical-normal.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 3964,
+        "path": "round1-historical-normal.stdout",
+        "sha256": "3ee68afd7af794695d54c4e1c6012b300b9079ea22aa34820afbc693e70621a2"
+      }
+    },
+    "restored_routing": {
+      "bytes": 22619,
+      "equals_ADDITIONAL_INPUTS_expected_hash": true,
+      "equals_original_Git_BASE_bytes": true,
+      "expected_hash_changed": false,
+      "live_repo_file_changed": false,
+      "path": "docs/tasks/c5_no4ct_handoff.md",
+      "sha256": "c9a0caf72832037869ba031e0236cab42986d20c5c82e3c26e2123ddb4a6a683",
+      "source_frozen_path": "audits/2026-10-23-three-mask-methods-cb8f859/932/frozen/docs/tasks/c5_no4ct_handoff.md"
+    },
+    "seed17": {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/tmp/math-three-mask-historical-4hc3miiu/audits/2026-10-23-three-mask-methods-cb8f859/check.py"
+      ],
+      "cwd": "/tmp/math-three-mask-historical-4hc3miiu",
+      "elapsed_seconds": 6.684115251999174,
+      "end_utc": "2026-10-23T05:39:12.483013+00:00",
+      "entrypoint_sha256": "4aa603163c2c97976871f2b2f563f7b868ceb2abb9a623a70cb7a439a3fcca60",
+      "environment_overrides": {
+        "GIT_DIR": "/home/ray/developer/ai/math/.git",
+        "GIT_WORK_TREE": "/tmp/math-three-mask-historical-4hc3miiu",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "17"
+      },
+      "exit_code": 0,
+      "historical_view": true,
+      "returned_controls": {
+        "negative_controls": [
+          {
+            "count": 8,
+            "path": "$.branch_results.932.negative_controls_rejected"
+          },
+          {
+            "count": 11,
+            "path": "$.branch_results.933.negative_controls"
+          },
+          {
+            "count": 9,
+            "path": "$.branch_results.941.negative_controls"
+          }
+        ],
+        "not_triggered": [
+          "$.branch_results.932.target_source_control"
+        ]
+      },
+      "start_utc": "2026-10-23T05:39:05.798592+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": "round1-historical-seed17.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 3964,
+        "path": "round1-historical-seed17.stdout",
+        "sha256": "3ee68afd7af794695d54c4e1c6012b300b9079ea22aa34820afbc693e70621a2"
+      }
+    }
+  },
+  "round1_original_live": {
+    "historical_guard_file": "docs/tasks/c5_no4ct_handoff.md",
+    "normal_receipt": "round1-normal.json",
+    "not_mathematical_input_drift": "publication audit domain/bytes/SHA remain unchanged; later live routing edits cause the guard",
+    "reason": "legacy ADDITIONAL_INPUTS treats later-edited routing file as immutable exact Git BASE authority",
+    "seed17_receipt": "round1-seed17.json",
+    "status": "FAIL preserved"
+  },
+  "scope": "five sealed root entrypoints only; no external census, source graph enumeration, unrelated tests, Git/index/shared-doc edits",
+  "source_controls": "not triggered as returned by the sealed checkers; successful finite replay is not a general source exclusion",
+  "source_custody_after": {
+    "actual_bytes": 69861223,
+    "actual_files": 738,
+    "bytes_or_SHA_drift": [],
+    "checked_utc": "2026-10-23T05:39:13.091646+00:00",
+    "expected_bytes": 69861223,
+    "expected_files": 738,
+    "extra": [],
+    "missing": [],
+    "observed_manifest_sha256": "0854c5503d754de6b7410a8a0b11f269e330bbd34087267fcab556c2d0ed4655",
+    "status": "PASS"
+  },
+  "source_custody_before": {
+    "actual_bytes": 69861223,
+    "actual_files": 738,
+    "bytes_or_SHA_drift": [],
+    "checked_utc": "2026-10-23T05:34:10.301100+00:00",
+    "expected_bytes": 69861223,
+    "expected_files": 738,
+    "extra": [],
+    "missing": [],
+    "observed_manifest_sha256": "0854c5503d754de6b7410a8a0b11f269e330bbd34087267fcab556c2d0ed4655",
+    "status": "PASS"
+  },
+  "status": "PASS with original live legacy-guard failures preserved",
+  "temporary_tree_cleanup": {
+    "large_tree_copied_into_publication": false,
+    "removed": true,
+    "temporary_tree": "/tmp/math-three-mask-historical-4hc3miiu"
+  },
+  "write_boundary": "audits/2026-10-23-three-mask-publish-cb8f859/review/replays"
+}

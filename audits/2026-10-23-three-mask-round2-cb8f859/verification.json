@@ -1,0 +1,188 @@
+{
+  "base": "cb8f8593e273a7426ecadd59797a6e643cc4768e",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "artifact-policy",
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 9.586,
+      "stdout_path": "review/runs/artifact-policy.stdout",
+      "stderr_path": "review/runs/artifact-policy.stderr"
+    },
+    {
+      "name": "diff-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.187,
+      "stdout_path": "review/runs/diff-whitespace.stdout",
+      "stderr_path": "review/runs/diff-whitespace.stderr"
+    },
+    {
+      "name": "docgraph-formal",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.059,
+      "stdout_path": "review/runs/docgraph-formal.stdout",
+      "stderr_path": "review/runs/docgraph-formal.stderr"
+    },
+    {
+      "name": "docgraph-whole",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 23.525,
+      "stdout_path": "review/runs/docgraph-whole.stdout",
+      "stderr_path": "review/runs/docgraph-whole.stderr"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 11.299,
+      "stdout_path": "review/runs/docs.stdout",
+      "stderr_path": "review/runs/docs.stderr"
+    },
+    {
+      "name": "three-audits",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-three-mask-round2-cb8f859/check.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 213.029,
+      "stdout_path": "review/runs/three-audits.stdout",
+      "stderr_path": "review/runs/three-audits.stderr"
+    },
+    {
+      "name": "new-audit-markdown-links",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-three-mask-round2-cb8f859/review/check_audit_links.py"
+      ],
+      "exit_code": 0,
+      "stdout_path": "review/runs/audit-links.stdout",
+      "scope": "10 new audit prose files,26 local links; excludes frozen/routing snapshots and negative-control fixture copies"
+    }
+  ],
+  "preexisting_common_language_preserved": true,
+  "HANDOFF_unchanged": true,
+  "predecessor_101_files_unchanged": true,
+  "normal_seed17_negative_receipts": {
+    "932": "932/VERIFICATION.json",
+    "933": "933/VERIFICATION.json",
+    "941": "941/verification-v2.json"
+  },
+  "whole_tree_docgraph_separate": true,
+  "general_932_933_941_excluded": false,
+  "smaller_bad_constructed": false,
+  "new_Lean": false,
+  "commit_or_push_performed": false,
+  "output_sha256": {
+    "932/INPUTS.json": "161e02bb343ebf58ce3b12f661f8dd595c4ea2f72409631558d5c0fe967605d3",
+    "932/MANIFEST.json": "b9f8d7ff76034e47d417c99a5dd89e04a77320e902ec08bf3da9d9d684550044",
+    "932/REPORT.md": "ebbc38b052f4a2f2f038bcb4b0a1c2a3dc022c5b0346e3aadb183e68d00887ca",
+    "932/SOURCE_CONTRACT.md": "e2abf31ed2afd9785b946756c73402552f837afa180dad0196ab800e6edf6390",
+    "932/VERIFICATION.json": "3ed177106d521bfc370397853883e8403617e9d8209daf20b6c1d6d318180f18",
+    "932/certificate.json.gz": "b5d9127d78f4e52e646f10477dd431e6a3125a26d1cbc46d17d60818dbc927fa",
+    "932/check.py": "4e137756dfc6098d2c1cde23ca86308c0093a4184c6c402c779f1aa067eb8a96",
+    "932/normal.json": "fafde87e8ef77cf857af34aa4bbf2395a5075f0243d3cbfd03dc73e4ba32a246",
+    "932/paper/PROOF.md": "ad081aded99d0e4b6f5ac8a2f23e2b3adb7468dcb0ddddf6869e82785e59c2b9",
+    "932/produce.py": "af00b91c4655d141d380caf33003ddb0c21c74b7bc2e57ad4d5d49140feecdca",
+    "932/seed17.json": "fafde87e8ef77cf857af34aa4bbf2395a5075f0243d3cbfd03dc73e4ba32a246",
+    "933/INPUTS.json": "a78a7a6d298dfce755325e6f7e7893ffb9b3d0619960fed9d9f4196a123d90fb",
+    "933/MANIFEST.json": "23e1c4359dd09aa9d6dcab5340ea4044781c01128c6270230dc9d3fbf79b30e2",
+    "933/PROOF.md": "c3c27229b92e4df04016e67f7982b275cd8c1f0a7515d30543fa089417d4d159",
+    "933/REPORT.md": "0f3ca975afb26a3869333cc3b253604208f99f1ae187543a44bf43d64083e545",
+    "933/VERIFICATION.json": "2dae5281fb734634847e937c949b0417a5999d8c08a94f31369e3b52c958992f",
+    "933/certificate-v2.json": "a65b927c018a7a925e33acee37008505b830619d4e766855f1ab98645b9b93dd",
+    "933/certificate.json": "b52bba97419216f5928b7b6e463280c4c567bb7308c86c76b773b7ce0093fa18",
+    "933/check.py": "a42f765aa5f977d366cd76482b8f4114e43da74ad85dacf7f0abb98411db1e6c",
+    "933/probe.json": "ec1f9f537e2817fed21b57bbbb6cbe5c9d5f4fbee608b060f9f027916485a0ba",
+    "933/probe.py": "178c70958197ae590363f127dc0409e632ba12250af8bcb8fbedc0474cf1c1ff",
+    "933/runs/negative-authority-root/audits/2026-10-23-three-mask-methods-cb8f859/933/REPORT.md": "65a73fd7d93c7de28e8e780ba6f3a236a9347f825279bf5a195a7f30f19705bc",
+    "933/runs/negative-certificate.json": "947d93714cd6bca96734b182f620cb9656b55d4af61d5046ac7fa42d42e7acb6",
+    "933/runs/negative-file.stderr": "58d66479088df6c56f88eb88fc2ef370bc5491a5843d36a4f8a6eb54703985ea",
+    "933/runs/negative-file.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "933/runs/negative.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "933/runs/negative.stdout": "b9d8f72c2ec7220440707f77557b9a78c7b169a2795aff2b22f0af97a0fc57e7",
+    "933/runs/normal.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "933/runs/normal.stdout": "19cb7615d68b037acf0f54864a7b0e11d8d779697746aff120695cee7e10c0a0",
+    "933/runs/seed17.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "933/runs/seed17.stdout": "19cb7615d68b037acf0f54864a7b0e11d8d779697746aff120695cee7e10c0a0",
+    "933/validate.py": "0a9a8b7903bdac0548b6a65276d07b70c18a19a14a7e01fff1437e16c77e23df",
+    "941/INPUTS.json": "74c77d958f53f1e13853fd9fcb65a151e71b068d930db592c482a08ef090ecbe",
+    "941/PROOF.md": "6345f59db784a8a650dfe8c69d22742b91b2983d0a30f33020ad4c034524ae7a",
+    "941/REPORT.md": "904e58b19cafd577e221b6a25d9f09ac0cfd9ea45b249ed4bd81b4bc517b7cd5",
+    "941/certificate.json": "eb483dba113f78df62577d4bc962c193bd71621ace797f97c2cb373f42fe20d5",
+    "941/check.py": "f880cd27fb516c064e7d9bb60afab7673ace76c1a7201f2c0370e647a9a5b633",
+    "941/runs/custody-normal.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "941/runs/custody-normal.stdout": "42d12c412066b69f08333cbd5ad7cee3c36c2403f0d41d3e2368e178244596aa",
+    "941/runs/custody-seed17.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "941/runs/custody-seed17.stdout": "42d12c412066b69f08333cbd5ad7cee3c36c2403f0d41d3e2368e178244596aa",
+    "941/runs/negative-certificate.json": "2ead26304a346a3f9d42b1d3a7ce45f0e9d790ad0ead4ef3aa1beffcb05cf7da",
+    "941/runs/negative.stderr": "9d675fea8ddc30457a586c3cfe7a357bb9afe735115771797e3dfead36c7b70d",
+    "941/runs/negative.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "941/runs/normal.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "941/runs/normal.stdout": "756ff5a94bd203022a40997b9c6e5380210020e87ed25082e47ce75f3bb5194f",
+    "941/runs/seed17.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "941/runs/seed17.stdout": "756ff5a94bd203022a40997b9c6e5380210020e87ed25082e47ce75f3bb5194f",
+    "941/verification-v2.json": "bc7962e44f3b1f6c17c0f2b01ba9a9b83ae765ed599cb11cf5c608a6a5c75e2c",
+    "941/verification.json": "9493fa72ecab3086371c0c244be92d24bf1ae9b30313102f27d64e666bb47236",
+    "ADDITIONAL_ROUTING_ENTRY.json": "5b4463f75437a902fe4b4d9c3257c029c7da36ead29ff411d5a854d0bc374647",
+    "BASE.json": "32ded74cc8a441b2391da17da92b121ba553ff562b073532b6f9b207517e43b4",
+    "REPORT.md": "d654f86b9704cc2ebd50ec962dedbd4edfaa653d8fa30391c59ab30e3ccc735c",
+    "START.md": "2b1819f0a7cbd30c31ac7cc30798dd007341941669fff62b47803806ba343ab0",
+    "check.py": "164f520fba946bdeadcceb14f4f187eb4100240f1c1fb9bb231b9de46111723d",
+    "review/REVIEW.md": "df28a4736894715742a91f69a9605b0879b876ccc1a95ccc10caefc409e128b1",
+    "review/check_audit_links.py": "68fe3e931a072b9040817acb4e48260ec7719df7753d907c204a701e98b633b4",
+    "review/predecessor-entry-check.json": "9bf9a0e7c023fd5e7079435996ccee31f0753bd464508f5621395aa9b72cc976",
+    "review/runs/artifact-policy.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "review/runs/artifact-policy.stdout": "397b9dfee0c5714bf4be2cb5dbeab6e02fd799b564047235d4b1a5f48748fa0e",
+    "review/runs/audit-links.stdout": "83c6a523936ada3daca2dd898d27dd63d38f7f50a580b41b04b49de982084439",
+    "review/runs/diff-whitespace.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "review/runs/diff-whitespace.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "review/runs/docgraph-formal.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "review/runs/docgraph-formal.stdout": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+    "review/runs/docgraph-whole.stderr": "17c14d5e2c631cfcf205cddd901055ea4b25c51018e73059af6f4c92003288c1",
+    "review/runs/docgraph-whole.stdout": "214ce6f854ff299bfbe99d599b539a6dde6bcefbb96aa8beb36f7bb643c5f293",
+    "review/runs/docs.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "review/runs/docs.stdout": "dd9cafcd6987eb9b746a010ae90c84f026607ef14757c7981c339c11b35845d6",
+    "review/runs/three-audits.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "review/runs/three-audits.stdout": "2732fbecd25a4051762dfc356be25b0428099b51055d6a4a3dc8204c7718d359"
+  },
+  "formal_docgraph": {
+    "documents": 97,
+    "relations": 383,
+    "errors": 0
+  },
+  "whole_tree_docgraph": {
+    "errors": 72,
+    "scope": "archive/snapshot duplicate IDs",
+    "passed": false
+  },
+  "artifact_policy_scope": "8815 current indexed files; publication/staging was not requested",
+  "current_git_status": " M docs/STATUS.md\n M docs/c5_c8_peeling.md\n M docs/c5_common_language.md\n M docs/c5_kempe_guide.md\n M docs/tasks/c5_no4ct_handoff.md\n?? audits/2026-10-23-three-mask-methods-cb8f859/\n?? audits/2026-10-23-three-mask-round2-cb8f859/\n",
+  "root_review": "No blocking findings. 932 triple branch and933 fixed-family method closed only in named contracts; all general parents OPEN."
+}

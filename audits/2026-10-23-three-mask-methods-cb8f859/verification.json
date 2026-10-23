@@ -1,0 +1,165 @@
+{
+  "base": "cb8f8593e273a7426ecadd59797a6e643cc4768e",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "three-audits",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-three-mask-methods-cb8f859/check.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 71.133,
+      "stdout_path": "review/runs/three-audits.stdout",
+      "stderr_path": "review/runs/three-audits.stderr"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 10.505,
+      "stdout_path": "review/runs/docs.stdout",
+      "stderr_path": "review/runs/docs.stderr"
+    },
+    {
+      "name": "docgraph-formal",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.209,
+      "stdout_path": "review/runs/docgraph-formal.stdout",
+      "stderr_path": "review/runs/docgraph-formal.stderr"
+    },
+    {
+      "name": "docgraph-whole",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 24.524,
+      "stdout_path": "review/runs/docgraph-whole.stdout",
+      "stderr_path": "review/runs/docgraph-whole.stderr"
+    },
+    {
+      "name": "artifact-policy",
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 18.341,
+      "stdout_path": "review/runs/artifact-policy.stdout",
+      "stderr_path": "review/runs/artifact-policy.stderr"
+    },
+    {
+      "name": "diff-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.168,
+      "stdout_path": "review/runs/diff-whitespace.stdout",
+      "stderr_path": "review/runs/diff-whitespace.stderr"
+    },
+    {
+      "name": "new-audit-markdown-links",
+      "exit_code": 0,
+      "scope": "9 non-frozen new audit Markdown files, 23 local links; scripts.check_docs.links/anchors",
+      "stdout_path": "review/runs/audit-links.stdout"
+    }
+  ],
+  "entry_common_language_preserved_byte_for_byte": true,
+  "preexisting_status_and_kempe_interface_edits_retained": true,
+  "whole_tree_docgraph_separate": true,
+  "normal_seed17_and_negative_evidence": {
+    "932": "932/VERIFICATION.json",
+    "933": "933/VERIFICATION.json",
+    "941": "941/verification.json"
+  },
+  "general_source_exclusions_claimed": false,
+  "smaller_bad_constructed": false,
+  "new_Lean": false,
+  "commit_or_push_performed": false,
+  "output_sha256": {
+    "932/ADDITIONAL_INPUTS.json": "d20930bbb7aa428712ab181acb264e62392b61e9ff916e37a72496c9cf3b6b4f",
+    "932/INPUTS.json": "2761359d3fb22db7b1b8c51ae2bc8558603c0311bd42aa7bf95b33268ff23927",
+    "932/MANIFEST.json": "9b7a03b00cb7b64e4f2ae91ae02f019f361b8205924a1b9c8e4b7364af0abbbd",
+    "932/REPORT.md": "8b8353aafe517d43f1f563f506c10a091b05445162b1862dfa0429672912ed82",
+    "932/SOURCE_CONTRACT.md": "c1b7fc3232862412910a282b392ca20594431a317a532c0106a4fd3cffe1dc91",
+    "932/VERIFICATION.json": "3038bc5adb11a97711cdc747602c20f8c93876d523f23b9da2801f9d0fb7fffa",
+    "932/certificate.json": "bb6c46035d116613137e899237f8f9b3e5e1b609a4ba1da04cb76b850e605bc8",
+    "932/check.py": "1559b605ea2938dddb53a693942dae79cd669a3651409a67b67d3786fbc7fd8e",
+    "932/paper/PROOF.md": "ffe695ed798c396ed64165101b22c46f804a9343a6ce119426decefce1e05542",
+    "932/produce.py": "552b5250a16584a073ced1d66e5543542739966dd73433fc7341dd7223ecb1de",
+    "932/validation/strict-normal.json": "497c7f1d838792a48cb923a71ca5a4d91ef567c14e3bcad1e67cf85070cbc0cd",
+    "932/validation/strict-seed17.json": "ae008ec2c3bb688929649e77d82734efe5005ea40fb46daf5bdbee31c9651353",
+    "933/INPUTS.json": "bc2c4cc8fc5cd6f20967f5614c865b618488f4a9bc956f41a34c65369bf33881",
+    "933/REPORT.md": "5bcf264eff47be90d76c56fd3655b9c158552169811f08e3fe4916f10b111051",
+    "933/VERIFICATION.json": "5d110abf8160a947623732467171d9ec91cf1e5497f04bf3cffe3532e99b5178",
+    "933/certificate.json": "a4050a77123d850a73e7a01d29e7b20015e8fff7a4656df6b4acc98954f596c2",
+    "933/check.py": "9f0349cae16462d7ab76baac8096b82c86b947b53e02b010ab540fe4772e410a",
+    "933/negative-run.json": "dd2adfea3b604e9c6bb428ee325abb7589023c11f171588edbc724f8ed3e450d",
+    "933/negative.json": "414eea047b7d21bdb0ad56e17f099311bfeb816716f8c93f8eb73e126b9a0c47",
+    "933/normal-run.json": "97826c25a022afe9c342d45eeba78c53b6286c909dde7c6f34d6830c1ff69d7a",
+    "933/normal.json": "3aa05e357a09f911f66cb6eb12955f5e86ed48ce627b6070ac034ac322e0b3a0",
+    "933/seed17-run.json": "a3f37c7bbf88616b50d2306bcc5f7719de564d4a0eac7813e2860e252a6f8ea9",
+    "933/seed17.json": "3aa05e357a09f911f66cb6eb12955f5e86ed48ce627b6070ac034ac322e0b3a0",
+    "941/INPUTS.json": "115e09515c802b334f3b8cd3be6b1cd0462554a53cbf3dfb53c2212f141be941",
+    "941/PROOF.md": "f811c7d52ed397f0af71c646e128aad518025fa3d15ba82c476b4646bf6b05bf",
+    "941/REPORT.md": "52e69d0884275d38634d913d142d83e51d4b163940d49d66252900e051e21e61",
+    "941/certificate.json": "4043ee9c89bc9e4dcd7cd4efa368f3e21017099e89aedde1dc80aa56b3938ca2",
+    "941/check.py": "593d046921cf25260ca7852f8a321fc3c8c1661bb67bf5830471b30fdda41d27",
+    "941/runs/negative-barrier-certificate.json": "ffdccf3cee8a320b0cef65666dd17c609e6a9fab60fa5e94bb9e5b47942a5a0e",
+    "941/runs/negative-barrier.stderr": "0484da4e4739e98aa478f57cdc460b4ed7713760cee8a87070ece9137aaa5497",
+    "941/runs/negative-barrier.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "941/runs/normal.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "941/runs/normal.stdout": "81cd1e5b15437461fda70c49905a3266c1625a95f1ce0e16e0fe6bb44a727efe",
+    "941/runs/seed17.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "941/runs/seed17.stdout": "81cd1e5b15437461fda70c49905a3266c1625a95f1ce0e16e0fe6bb44a727efe",
+    "941/verification.json": "2da0687d867ad9c54e8549c32f844dc07d89166da449c81f54fe8a0c4fe9b05c",
+    "BASE.json": "63861ca0d19a7b91b0b69653e39856d50ef85b2ec097d595f6b9636729ceb559",
+    "REPORT.md": "7c8e5755951adf510f9273106151de6ee22bd6b2e2e0bffa3ea6e5ddf86ee316",
+    "check.py": "4aa603163c2c97976871f2b2f563f7b868ceb2abb9a623a70cb7a439a3fcca60",
+    "review/933-alpha-independent-receipt.json": "fbdf686d502f57a1f89a00fb10309292f1382bf2bbcaa5c8cacee30c570861b8",
+    "review/C9-independent-notes.md": "2faa18578f165d20a65babf64ed42194cdb9ef187e3a4d459e79ab7d7f75e4c8",
+    "review/REVIEW.md": "7ba97930fd838f49c918dbb4f9e8c85129dacc768a4541c01eb6b4155a9d5e58",
+    "review/runs/artifact-policy.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "review/runs/artifact-policy.stdout": "397b9dfee0c5714bf4be2cb5dbeab6e02fd799b564047235d4b1a5f48748fa0e",
+    "review/runs/audit-links.stdout": "027190336f50de517ad797198f112b0c3db85a268e40976c6b9a0f98f68c2bad",
+    "review/runs/diff-whitespace.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "review/runs/diff-whitespace.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "review/runs/docgraph-formal.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "review/runs/docgraph-formal.stdout": "1150e22761f0c79fadf1a35425194e4b081c2a14bfd437f084dd08f8f4d7feca",
+    "review/runs/docgraph-whole.stderr": "2bbbfe26b49a5e017a319e10226fe5b2492f1ca08ba55bfe7e58c02b9944f6b5",
+    "review/runs/docgraph-whole.stdout": "214ce6f854ff299bfbe99d599b539a6dde6bcefbb96aa8beb36f7bb643c5f293",
+    "review/runs/docs.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "review/runs/docs.stdout": "af9311e780dc0973a0ccf3358a53d12d89a1c5d5ddc9cd56776d8016410fad73",
+    "review/runs/three-audits.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "review/runs/three-audits.stdout": "9cd739dfed83288d2a3878b3b4e88c3f61198793aea5351701f0628b54849d72"
+  },
+  "root_review_conclusion": "No blocking findings; each result stays within its own named source contract.",
+  "formal_docgraph": {
+    "documents": 97,
+    "relations": 383,
+    "errors": 0
+  },
+  "whole_tree_docgraph": {
+    "errors": 72,
+    "scope": "archival and snapshot duplicate IDs",
+    "passed": false
+  },
+  "current_git_status": " M docs/STATUS.md\n M docs/c5_common_language.md\n M docs/c5_kempe_guide.md\n?? audits/2026-10-23-three-mask-methods-cb8f859/\n"
+}

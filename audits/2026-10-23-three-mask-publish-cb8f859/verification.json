@@ -1,0 +1,261 @@
+{
+  "schema": "three-mask-five-round-publication-verification-v1",
+  "base_head": "cb8f8593e273a7426ecadd59797a6e643cc4768e",
+  "created_utc": "2026-10-23T05:42:13.359518+00:00",
+  "checks": {
+    "whitespace-index-scoped-final": {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(exclude)audits/2026-10-23-three-mask-round2-cb8f859/933/runs/negative-authority-root/audits/2026-10-23-three-mask-methods-cb8f859/933/REPORT.md",
+        ":(exclude)audits/2026-10-23-three-mask-round5-cb8f859/941/check.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:42:13.270180+00:00",
+      "elapsed_seconds": 0.088,
+      "exit_code": 0,
+      "stdout": "whitespace-index-scoped-final.stdout.txt",
+      "stderr": "whitespace-index-scoped-final.stderr.txt"
+    },
+    "lake-build": {
+      "argv": [
+        "lake",
+        "build",
+        "--no-ansi"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:34:22.714114+00:00",
+      "elapsed_seconds": 8.871,
+      "exit_code": 0,
+      "stdout": "lake-build.stdout.txt",
+      "stderr": "lake-build.stderr.txt"
+    },
+    "whitespace-index-final": {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:42:13.181596+00:00",
+      "elapsed_seconds": 0.088,
+      "exit_code": 2,
+      "stdout": "whitespace-index-final.stdout.txt",
+      "stderr": "whitespace-index-final.stderr.txt"
+    },
+    "custody-final": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-three-mask-publish-cb8f859/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:41:43.629228+00:00",
+      "elapsed_seconds": 0.088,
+      "exit_code": 0,
+      "stdout": "custody-final.stdout.txt",
+      "stderr": "custody-final.stderr.txt"
+    },
+    "docs": {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:37:58.594942+00:00",
+      "elapsed_seconds": 0.724,
+      "exit_code": 0,
+      "stdout": "docs.stdout.txt",
+      "stderr": "docs.stderr.txt"
+    },
+    "whitespace-index-initial": {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:38:53.695799+00:00",
+      "elapsed_seconds": 0.087,
+      "exit_code": 2,
+      "stdout": "whitespace-index-initial.stdout.txt",
+      "stderr": "whitespace-index-initial.stderr.txt"
+    },
+    "custody": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-three-mask-publish-cb8f859/verify.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:37:58.506142+00:00",
+      "elapsed_seconds": 0.089,
+      "exit_code": 0,
+      "stdout": "custody.stdout.txt",
+      "stderr": "custody.stderr.txt"
+    },
+    "docs-final": {
+      "argv": [
+        "python3",
+        "-B",
+        "scripts/check_docs.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:41:43.717412+00:00",
+      "elapsed_seconds": 0.726,
+      "exit_code": 0,
+      "stdout": "docs-final.stdout.txt",
+      "stderr": "docs-final.stderr.txt"
+    },
+    "docgraph-formal": {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:37:59.319264+00:00",
+      "elapsed_seconds": 0.091,
+      "exit_code": 0,
+      "stdout": "docgraph-formal.stdout.txt",
+      "stderr": "docgraph-formal.stderr.txt"
+    },
+    "artifact-index-initial": {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/check_generated_artifacts.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:38:52.741681+00:00",
+      "elapsed_seconds": 0.954,
+      "exit_code": 0,
+      "stdout": "artifact-index-initial.stdout.txt",
+      "stderr": "artifact-index-initial.stderr.txt"
+    },
+    "whitespace-index-scoped": {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(exclude)audits/2026-10-23-three-mask-round2-cb8f859/933/runs/negative-authority-root/audits/2026-10-23-three-mask-methods-cb8f859/933/REPORT.md",
+        ":(exclude)audits/2026-10-23-three-mask-round5-cb8f859/941/check.py"
+      ],
+      "excluded_frozen_paths": [
+        "audits/2026-10-23-three-mask-round2-cb8f859/933/runs/negative-authority-root/audits/2026-10-23-three-mask-methods-cb8f859/933/REPORT.md",
+        "audits/2026-10-23-three-mask-round5-cb8f859/941/check.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.086,
+      "reason": "Preserve exact frozen evidence bytes. Full check reports only these two trailing blank lines; all other staged paths remain checked."
+    },
+    "publication-links-final": {
+      "argv": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-three-mask-publish-cb8f859/review/local/check_publication_links.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:41:44.443187+00:00",
+      "elapsed_seconds": 0.024,
+      "exit_code": 0,
+      "stdout": "publication-links-final.stdout.txt",
+      "stderr": "publication-links-final.stderr.txt"
+    },
+    "docgraph-whole": {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/docgraph",
+        "check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:37:59.410633+00:00",
+      "elapsed_seconds": 5.035,
+      "exit_code": 1,
+      "stdout": "docgraph-whole.stdout.txt",
+      "stderr": "docgraph-whole.stderr.txt"
+    },
+    "tool-tests": {
+      "argv": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:34:31.585548+00:00",
+      "elapsed_seconds": 5.305,
+      "exit_code": 0,
+      "stdout": "tool-tests.stdout.txt",
+      "stderr": "tool-tests.stderr.txt"
+    },
+    "whitespace-worktree": {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:38:04.445402+00:00",
+      "elapsed_seconds": 0.016,
+      "exit_code": 0,
+      "stdout": "whitespace-worktree.stdout.txt",
+      "stderr": "whitespace-worktree.stderr.txt"
+    },
+    "artifact-index-final": {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/check_generated_artifacts.py"
+      ],
+      "cwd": "/home/ray/developer/ai/math",
+      "started_utc": "2026-10-23T05:42:12.252431+00:00",
+      "elapsed_seconds": 0.929,
+      "exit_code": 0,
+      "stdout": "artifact-index-final.stdout.txt",
+      "stderr": "artifact-index-final.stderr.txt"
+    }
+  },
+  "replays": {
+    "summary": "review/replays/SUMMARY.json",
+    "original_live_successes": 8,
+    "original_live_failures": 2,
+    "historical_successes": 2,
+    "normal_seed17_payload_equal": true
+  },
+  "frozen_files": 738,
+  "frozen_bytes": 69861223,
+  "frozen_drift": 0,
+  "retained_diagnostics": {
+    "historical_live_root": "2 routing-guard failures, independently restored historical bytes replay PASS",
+    "whole_tree_docgraph": "72 archival duplicate-ID errors; formal docs 0 errors",
+    "full_index_whitespace": "2 frozen blank-at-EOF diagnostics; all other exact paths PASS"
+  },
+  "general_932_933_941": "OPEN",
+  "actual_smaller_bad": "OPEN",
+  "new_Lean": false,
+  "remote_ci": "query exact published SHA after push; not inferred from local checks"
+}

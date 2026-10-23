@@ -1,0 +1,718 @@
+{
+  "version": 1,
+  "files": {
+    "artifacts/c5_single_spoke_two_two/observations.json": {
+      "kind": "frozen",
+      "bytes": 16148688,
+      "sha256": "c0100886fcb2879bda1640a21bca1d0e8a1f9aa4759598ab5d83825ecb71a4d0",
+      "reason": "Legacy complete certificate is replayed by c5_adjacent_degree5_no_mixed_t2_t0_pairs.py. Its original document inputs changed after generation, so current producers cannot reproduce its saved bytes (tools/artifacts.py FROZEN)."
+    },
+    "audits/ARCHIVE.json": {
+      "kind": "metadata",
+      "generator": "tools/audit_archive.py",
+      "reason": "Bootstrap index mapping original paths and exact SHA256 values to gzip blobs. It must be available before tools/audit_archive.py can restore any frozen audit evidence."
+    },
+    "audits/2026-10-13-no4ct-generalization-6943561/frozen/audits/2026-10-13-c8-joint-count-3097ef5/interface.json": {
+      "kind": "frozen",
+      "bytes": 1640739,
+      "sha256": "9e27d41fcf6d33c1892ad402e5cbed986f2cc517249e3953b1507ffec3826883",
+      "reason": "Exact frozen authority snapshot used by the isolated audit; retain original bytes and SHA256 for custody and independent replay."
+    },
+    "audits/2026-10-13-c5-no4ct-frontier-6943561/terminals/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1452136,
+      "sha256": "d1ed5916212e42758598b00ade364fc228d2e2315f038e85511aa05664acc351",
+      "reason": "Sealed complete terminal-fibre certificate retained in its original audit version; exact bytes and SHA256 preserve archived replay evidence."
+    },
+    "audits/2026-10-13-c5-no4ct-frontier-6943561/terminals/certificate.v2.json": {
+      "kind": "frozen",
+      "bytes": 1452136,
+      "sha256": "d1ed5916212e42758598b00ade364fc228d2e2315f038e85511aa05664acc351",
+      "reason": "Sealed complete terminal-fibre certificate retained in its original audit version; exact bytes and SHA256 preserve archived replay evidence."
+    },
+    "audits/2026-10-13-c8-joint-gadgets-6943561/frozen/audits/2026-10-13-c8-joint-count-3097ef5/interface.json": {
+      "kind": "frozen",
+      "bytes": 1640739,
+      "sha256": "9e27d41fcf6d33c1892ad402e5cbed986f2cc517249e3953b1507ffec3826883",
+      "reason": "Exact frozen authority snapshot used by the isolated audit; retain original bytes and SHA256 for custody and independent replay."
+    },
+    "audits/2026-10-13-c8-pocket-reduction-6943561/frozen/audits/2026-10-13-c8-joint-gadgets-6943561/frozen/audits/2026-10-13-c8-joint-count-3097ef5/interface.json": {
+      "kind": "frozen",
+      "bytes": 1640739,
+      "sha256": "9e27d41fcf6d33c1892ad402e5cbed986f2cc517249e3953b1507ffec3826883",
+      "reason": "Exact frozen authority snapshot used by the isolated audit; retain original bytes and SHA256 for custody and independent replay."
+    },
+    "audits/2026-10-13-c6-cap-completion-6943561/frozen/predecessor-authority/audits/2026-10-13-c8-joint-gadgets-6943561/frozen/audits/2026-10-13-c8-joint-count-3097ef5/interface.json": {
+      "kind": "frozen",
+      "bytes": 1640739,
+      "sha256": "9e27d41fcf6d33c1892ad402e5cbed986f2cc517249e3953b1507ffec3826883",
+      "reason": "Exact frozen authority snapshot used by the isolated audit; retain original bytes and SHA256 for custody and independent replay."
+    },
+    "audits/2026-10-15-j-source-geometry-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 7779376,
+      "sha256": "5940f81bb1f7b7fac1b6c7af4a1c867b1608bb10d8847180cdce449e1d59b088",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-empty-fibre.json": {
+      "kind": "frozen",
+      "bytes": 7779262,
+      "sha256": "e98838efdabee78ff69bbfe7a078059acf31118253f2e65773d9a0d089bf2911",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-full-lift.json": {
+      "kind": "frozen",
+      "bytes": 7779261,
+      "sha256": "e2d09e18a3980771a0d82b7c341771961fd45ef3087c5feb50ac8cf9f00e5d67",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-source-palette.json": {
+      "kind": "frozen",
+      "bytes": 7779376,
+      "sha256": "411fee719681fa3da3f4e36f70a0a44636db0b7d2ff43d57707293814bd610f5",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-kempe-common-graph-6ddea32/frozen/audits/2026-10-15-kempe-compatibility-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1718002,
+      "sha256": "149383e607f1b9c90c85592115b941600fa8ce2d54e8073b76c9f86bcd63d9ab",
+      "reason": "Exact frozen authority snapshot retained for the four-round audit chain; original bytes and SHA256 preserve custody and independent replay."
+    },
+    "audits/2026-10-15-kempe-compatibility-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1718002,
+      "sha256": "149383e607f1b9c90c85592115b941600fa8ce2d54e8073b76c9f86bcd63d9ab",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-kempe-compatibility-6ddea32/logs/missing-state.json": {
+      "kind": "frozen",
+      "bytes": 1715916,
+      "sha256": "82762d43978ec51af452b2d79530e8f87bf286a292c4ad3624d41551c104b414",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-kempe-compatibility-6ddea32/logs/wrong-target.json": {
+      "kind": "frozen",
+      "bytes": 1718000,
+      "sha256": "84be0e7cd6163c228930bcd418f33014256da4161078f5304f5e178c6611d168",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-kempe-state-covers-6ddea32/frozen/audits/2026-10-15-kempe-compatibility-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1718002,
+      "sha256": "149383e607f1b9c90c85592115b941600fa8ce2d54e8073b76c9f86bcd63d9ab",
+      "reason": "Exact frozen authority snapshot retained for the four-round audit chain; original bytes and SHA256 preserve custody and independent replay."
+    },
+    "audits/2026-10-15-oddness-descent-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 2593354,
+      "sha256": "40c4830f66ea4b9eeaa64fac735a35954420d205bfc610fa42b4d81cc47d98a8",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-r6-seven-pin-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1122048,
+      "sha256": "ee6c3653195514336ab97707e1e2c25e1e4b877d7ddd79f0cb2111471b5b9b87",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-r6-seven-pin-6ddea32/tampered-negative.json": {
+      "kind": "frozen",
+      "bytes": 1122074,
+      "sha256": "5957a582033a4570378964b2c686e1618d36ea8fb4022d9b0240c87c1d4ff8bb",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-route-round4-6ddea32/frozen/audits/2026-10-15-kempe-compatibility-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1718002,
+      "sha256": "149383e607f1b9c90c85592115b941600fa8ce2d54e8073b76c9f86bcd63d9ab",
+      "reason": "Exact frozen authority snapshot retained for the four-round audit chain; original bytes and SHA256 preserve custody and independent replay."
+    },
+    "audits/2026-10-15-route-round4-6ddea32/frozen/audits/2026-10-15-six-pin-lifts-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1476836,
+      "sha256": "ef94c994cccca96192f1b6781b456887ed2f83295df9b839d9c3d0a7a5dc2583",
+      "reason": "Exact frozen authority snapshot retained for the four-round audit chain; original bytes and SHA256 preserve custody and independent replay."
+    },
+    "audits/2026-10-15-six-pin-lifts-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1476836,
+      "sha256": "ef94c994cccca96192f1b6781b456887ed2f83295df9b839d9c3d0a7a5dc2583",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-six-pin-lifts-6ddea32/negative/missing-empty-fibre.json": {
+      "kind": "frozen",
+      "bytes": 1476824,
+      "sha256": "cd69312702a581414cd7c06563b9854da44b398c68a96b8a9fb94b91c86162db",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-six-pin-lifts-6ddea32/negative/missing-full-lift.json": {
+      "kind": "frozen",
+      "bytes": 1476808,
+      "sha256": "e2afa5f0d6bb7b3873ab5167049d1b705032fd34f601afdb43e70cc3d87c0052",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-six-pin-lifts-6ddea32/negative/wrong-return-side.json": {
+      "kind": "frozen",
+      "bytes": 1476833,
+      "sha256": "f70fbf690a0ea03a5272a5e2f52f5ead62061da1f5bc52cdbd1797e45ee9b75e",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-three-edge-matchings-6ddea32/frozen/audits/2026-10-15-six-pin-lifts-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1476836,
+      "sha256": "ef94c994cccca96192f1b6781b456887ed2f83295df9b839d9c3d0a7a5dc2583",
+      "reason": "Exact frozen authority snapshot retained for the four-round audit chain; original bytes and SHA256 preserve custody and independent replay."
+    },
+    "audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 8218217,
+      "sha256": "2a23b137f6f9a1a3ad9237db24f062a2d060d84e857f147670249bcd107db1aa",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-xor-batch-descent-6ddea32/negative/missing-batch.json": {
+      "kind": "frozen",
+      "bytes": 1815904,
+      "sha256": "f70fe3d0d5b7e1e32aa566a1a2da454cc0ddbcb390c406d8402050d1afe55011",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-15-xor-batch-descent-6ddea32/negative/wrong-joint-parity.json": {
+      "kind": "frozen",
+      "bytes": 1815921,
+      "sha256": "8bd226fa9c2bc2ff67d65fe06e6b6fa4a777963d7c86f9dfe510102493669657",
+      "reason": "Sealed full-fibre certificate or exact corruption control retained by the four-round BASE/MANIFEST chain; original bytes and SHA256 are required for archival replay."
+    },
+    "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-j-source-geometry-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 7779376,
+      "sha256": "5940f81bb1f7b7fac1b6c7af4a1c867b1608bb10d8847180cdce449e1d59b088",
+      "reason": "Exact frozen authority or corruption-control snapshot retained by the R6-JOINT-ZERO BASE/MANIFEST chain; original bytes and SHA256 preserve complete fibres and archival replay."
+    },
+    "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-empty-fibre.json": {
+      "kind": "frozen",
+      "bytes": 7779262,
+      "sha256": "e98838efdabee78ff69bbfe7a078059acf31118253f2e65773d9a0d089bf2911",
+      "reason": "Exact frozen authority or corruption-control snapshot retained by the R6-JOINT-ZERO BASE/MANIFEST chain; original bytes and SHA256 preserve complete fibres and archival replay."
+    },
+    "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-full-lift.json": {
+      "kind": "frozen",
+      "bytes": 7779261,
+      "sha256": "e2d09e18a3980771a0d82b7c341771961fd45ef3087c5feb50ac8cf9f00e5d67",
+      "reason": "Exact frozen authority or corruption-control snapshot retained by the R6-JOINT-ZERO BASE/MANIFEST chain; original bytes and SHA256 preserve complete fibres and archival replay."
+    },
+    "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-source-palette.json": {
+      "kind": "frozen",
+      "bytes": 7779376,
+      "sha256": "411fee719681fa3da3f4e36f70a0a44636db0b7d2ff43d57707293814bd610f5",
+      "reason": "Exact frozen authority or corruption-control snapshot retained by the R6-JOINT-ZERO BASE/MANIFEST chain; original bytes and SHA256 preserve complete fibres and archival replay."
+    },
+    "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-r6-seven-pin-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1122048,
+      "sha256": "ee6c3653195514336ab97707e1e2c25e1e4b877d7ddd79f0cb2111471b5b9b87",
+      "reason": "Exact frozen authority or corruption-control snapshot retained by the R6-JOINT-ZERO BASE/MANIFEST chain; original bytes and SHA256 preserve complete fibres and archival replay."
+    },
+    "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-r6-seven-pin-6ddea32/tampered-negative.json": {
+      "kind": "frozen",
+      "bytes": 1122074,
+      "sha256": "5957a582033a4570378964b2c686e1618d36ea8fb4022d9b0240c87c1d4ff8bb",
+      "reason": "Exact frozen authority or corruption-control snapshot retained by the R6-JOINT-ZERO BASE/MANIFEST chain; original bytes and SHA256 preserve complete fibres and archival replay."
+    },
+    "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-route-round4-6ddea32/frozen/audits/2026-10-15-kempe-compatibility-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1718002,
+      "sha256": "149383e607f1b9c90c85592115b941600fa8ce2d54e8073b76c9f86bcd63d9ab",
+      "reason": "Exact frozen authority or corruption-control snapshot retained by the R6-JOINT-ZERO BASE/MANIFEST chain; original bytes and SHA256 preserve complete fibres and archival replay."
+    },
+    "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-route-round4-6ddea32/frozen/audits/2026-10-15-six-pin-lifts-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1476836,
+      "sha256": "ef94c994cccca96192f1b6781b456887ed2f83295df9b839d9c3d0a7a5dc2583",
+      "reason": "Exact frozen authority or corruption-control snapshot retained by the R6-JOINT-ZERO BASE/MANIFEST chain; original bytes and SHA256 preserve complete fibres and archival replay."
+    },
+    "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-three-edge-matchings-6ddea32/frozen/audits/2026-10-15-six-pin-lifts-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1476836,
+      "sha256": "ef94c994cccca96192f1b6781b456887ed2f83295df9b839d9c3d0a7a5dc2583",
+      "reason": "Exact frozen authority or corruption-control snapshot retained by the R6-JOINT-ZERO BASE/MANIFEST chain; original bytes and SHA256 preserve complete fibres and archival replay."
+    },
+    "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-xor-batch-descent-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 8218217,
+      "sha256": "2a23b137f6f9a1a3ad9237db24f062a2d060d84e857f147670249bcd107db1aa",
+      "reason": "Exact frozen authority or corruption-control snapshot retained by the R6-JOINT-ZERO BASE/MANIFEST chain; original bytes and SHA256 preserve complete fibres and archival replay."
+    },
+    "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-xor-batch-descent-6ddea32/negative/missing-batch.json": {
+      "kind": "frozen",
+      "bytes": 1815904,
+      "sha256": "f70fe3d0d5b7e1e32aa566a1a2da454cc0ddbcb390c406d8402050d1afe55011",
+      "reason": "Exact frozen authority or corruption-control snapshot retained by the R6-JOINT-ZERO BASE/MANIFEST chain; original bytes and SHA256 preserve complete fibres and archival replay."
+    },
+    "audits/2026-10-16-r6-joint-zero-c4c3d99/frozen/audits/2026-10-15-xor-batch-descent-6ddea32/negative/wrong-joint-parity.json": {
+      "kind": "frozen",
+      "bytes": 1815921,
+      "sha256": "8bd226fa9c2bc2ff67d65fe06e6b6fa4a777963d7c86f9dfe510102493669657",
+      "reason": "Exact frozen authority or corruption-control snapshot retained by the R6-JOINT-ZERO BASE/MANIFEST chain; original bytes and SHA256 preserve complete fibres and archival replay."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/A/complete-certificate.json": {
+      "kind": "frozen",
+      "bytes": 1911325,
+      "sha256": "feda93aab068519309faf54e2d8d2b13c2891ae301bd1157c98934e8bf26f756",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/complete-discard-empty-fibres.json": {
+      "kind": "frozen",
+      "bytes": 1911326,
+      "sha256": "3fda07bb715edbe16a166e8b5d821b21d1aea21773ec507e647d796e869fa6a5",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/complete-missing-zero-slot.json": {
+      "kind": "frozen",
+      "bytes": 1911314,
+      "sha256": "db45c3612d154b09e62a1486cad0b2ecd2e39110981cca957ac39d06f0b9ef3d",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/complete-wrong-empty-count.json": {
+      "kind": "frozen",
+      "bytes": 1911325,
+      "sha256": "64bf95082a243e896bf396f5ee3205486c9a42f533340efc52b08eda6b19b49b",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/sealed-discard-empty-fibres.json": {
+      "kind": "frozen",
+      "bytes": 2134050,
+      "sha256": "0bbb6b36c3da9c4c9e467293d203b781f269976887fa69a2a687329dbc0ae882",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/sealed-improper-row-has-r-lift.json": {
+      "kind": "frozen",
+      "bytes": 2134096,
+      "sha256": "ae2bc23e1e71b3deed4a549fb4b1480cf301098cc5efa7f1d71c63dfb5d3dc1b",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/sealed-missing-zero-slot.json": {
+      "kind": "frozen",
+      "bytes": 2134038,
+      "sha256": "1dc794649fed3571b9293c3121e5fbbbc5c7bd94db9ef6eb8aed57a9148a3ef3",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/sealed-wrong-empty-count.json": {
+      "kind": "frozen",
+      "bytes": 2134049,
+      "sha256": "16025528cc5cb95a2722fe127e656cfd573579529bcbd3965535275b594632c4",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/A/sealed-certificate.json": {
+      "kind": "frozen",
+      "bytes": 2134049,
+      "sha256": "34b6f093ba4bd8c5b7f38c5d64ab53e66aa0abfa8281297a28339222a9d46500",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/C/certificate-before-nonedge-diagnostics.json": {
+      "kind": "frozen",
+      "bytes": 1189704,
+      "sha256": "5d9e163d9aa8b36d65609b205b75294e4808692f5bd5c587c6c7450a8a6cb6f9",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/C/certificate-before-transition-crosscheck.json": {
+      "kind": "frozen",
+      "bytes": 1183421,
+      "sha256": "4468038a8ff323cb4b67a2f34e88fbe008f7e54c33fe6b045cf9d8c062623f76",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/C/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1189785,
+      "sha256": "22e67138fa399716d446da5f0fb0400fc21cb04c88c8dbb6b97dd1708defd5c2",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/frozen/audits/2026-10-15-j-source-geometry-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 7779376,
+      "sha256": "5940f81bb1f7b7fac1b6c7af4a1c867b1608bb10d8847180cdce449e1d59b088",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/frozen/audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-empty-fibre.json": {
+      "kind": "frozen",
+      "bytes": 7779262,
+      "sha256": "e98838efdabee78ff69bbfe7a078059acf31118253f2e65773d9a0d089bf2911",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/frozen/audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-full-lift.json": {
+      "kind": "frozen",
+      "bytes": 7779261,
+      "sha256": "e2d09e18a3980771a0d82b7c341771961fd45ef3087c5feb50ac8cf9f00e5d67",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-complete-e98a1cc/frozen/audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-source-palette.json": {
+      "kind": "frozen",
+      "bytes": 7779376,
+      "sha256": "411fee719681fa3da3f4e36f70a0a44636db0b7d2ff43d57707293814bd610f5",
+      "reason": "Exact R6-319 source-fibre, transition or corruption-control evidence retained byte-for-byte by the research BASE/MANIFEST and publication custody replay; includes archived complete fibres and frozen authority copies."
+    },
+    "audits/2026-10-16-r6-319-continuation-f1faf74/A/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1856518,
+      "sha256": "4053466f1cfa876c44a188d35c4836dc5d76e1e38ee70a51de75a4a948b4ffaa",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-continuation-f1faf74/A/logs/corrupt-certificate.json": {
+      "kind": "frozen",
+      "bytes": 1856539,
+      "sha256": "7adef8b9f5b55ebc5afd6e1decdebc3857d7b4e4edf60a3eb109abf9a4d02c57",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-continuation-f1faf74/frozen/audits/2026-10-16-r6-319-complete-e98a1cc/C/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1189785,
+      "sha256": "22e67138fa399716d446da5f0fb0400fc21cb04c88c8dbb6b97dd1708defd5c2",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-15-j-source-geometry-6ddea32/certificate.json": {
+      "kind": "frozen",
+      "bytes": 7779376,
+      "sha256": "5940f81bb1f7b7fac1b6c7af4a1c867b1608bb10d8847180cdce449e1d59b088",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-empty-fibre.json": {
+      "kind": "frozen",
+      "bytes": 7779262,
+      "sha256": "e98838efdabee78ff69bbfe7a078059acf31118253f2e65773d9a0d089bf2911",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-15-j-source-geometry-6ddea32/negative/missing-full-lift.json": {
+      "kind": "frozen",
+      "bytes": 7779261,
+      "sha256": "e2d09e18a3980771a0d82b7c341771961fd45ef3087c5feb50ac8cf9f00e5d67",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-15-j-source-geometry-6ddea32/negative/wrong-source-palette.json": {
+      "kind": "frozen",
+      "bytes": 7779376,
+      "sha256": "411fee719681fa3da3f4e36f70a0a44636db0b7d2ff43d57707293814bd610f5",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-16-r6-319-complete-e98a1cc/A/complete-certificate.json": {
+      "kind": "frozen",
+      "bytes": 1911325,
+      "sha256": "feda93aab068519309faf54e2d8d2b13c2891ae301bd1157c98934e8bf26f756",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/complete-discard-empty-fibres.json": {
+      "kind": "frozen",
+      "bytes": 1911326,
+      "sha256": "3fda07bb715edbe16a166e8b5d821b21d1aea21773ec507e647d796e869fa6a5",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/complete-missing-zero-slot.json": {
+      "kind": "frozen",
+      "bytes": 1911314,
+      "sha256": "db45c3612d154b09e62a1486cad0b2ecd2e39110981cca957ac39d06f0b9ef3d",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/complete-wrong-empty-count.json": {
+      "kind": "frozen",
+      "bytes": 1911325,
+      "sha256": "64bf95082a243e896bf396f5ee3205486c9a42f533340efc52b08eda6b19b49b",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/sealed-discard-empty-fibres.json": {
+      "kind": "frozen",
+      "bytes": 2134050,
+      "sha256": "0bbb6b36c3da9c4c9e467293d203b781f269976887fa69a2a687329dbc0ae882",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/sealed-improper-row-has-r-lift.json": {
+      "kind": "frozen",
+      "bytes": 2134096,
+      "sha256": "ae2bc23e1e71b3deed4a549fb4b1480cf301098cc5efa7f1d71c63dfb5d3dc1b",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/sealed-missing-zero-slot.json": {
+      "kind": "frozen",
+      "bytes": 2134038,
+      "sha256": "1dc794649fed3571b9293c3121e5fbbbc5c7bd94db9ef6eb8aed57a9148a3ef3",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-16-r6-319-complete-e98a1cc/A/negative/sealed-wrong-empty-count.json": {
+      "kind": "frozen",
+      "bytes": 2134049,
+      "sha256": "16025528cc5cb95a2722fe127e656cfd573579529bcbd3965535275b594632c4",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-16-r6-319-complete-e98a1cc/A/sealed-certificate.json": {
+      "kind": "frozen",
+      "bytes": 2134049,
+      "sha256": "34b6f093ba4bd8c5b7f38c5d64ab53e66aa0abfa8281297a28339222a9d46500",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-16-r6-319-complete-e98a1cc/C/certificate-before-nonedge-diagnostics.json": {
+      "kind": "frozen",
+      "bytes": 1189704,
+      "sha256": "5d9e163d9aa8b36d65609b205b75294e4808692f5bd5c587c6c7450a8a6cb6f9",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-16-r6-319-complete-e98a1cc/C/certificate-before-transition-crosscheck.json": {
+      "kind": "frozen",
+      "bytes": 1183421,
+      "sha256": "4468038a8ff323cb4b67a2f34e88fbe008f7e54c33fe6b045cf9d8c062623f76",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-16-r6-319-complete-e98a1cc/C/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1189785,
+      "sha256": "22e67138fa399716d446da5f0fb0400fc21cb04c88c8dbb6b97dd1708defd5c2",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-16-r6-319-continuation-f1faf74/A/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1856518,
+      "sha256": "4053466f1cfa876c44a188d35c4836dc5d76e1e38ee70a51de75a4a948b4ffaa",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-16-r6-319-joint-parity-f1faf74/frozen/audits/2026-10-16-r6-319-continuation-f1faf74/A/logs/corrupt-certificate.json": {
+      "kind": "frozen",
+      "bytes": 1856539,
+      "sha256": "7adef8b9f5b55ebc5afd6e1decdebc3857d7b4e4edf60a3eb109abf9a4d02c57",
+      "reason": "Sealed R6 319 continuation/joint-parity evidence and frozen source snapshots; preserve exact bytes for complete-fibre replay and custody."
+    },
+    "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/certificate.json": {
+      "kind": "frozen",
+      "bytes": 2074104,
+      "sha256": "3da1e2f0244f95eb0011501b1949c74cb9ef6b672249575e1d830499eedbdce3",
+      "reason": "Retained initial development seal for the complete 912-pair, 928-region control; preserve exact pre-publication bytes in the research custody chain."
+    },
+    "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/certificate-v2.json": {
+      "kind": "frozen",
+      "bytes": 2074104,
+      "sha256": "664d0236d2cd2e3688f4b9f66cbc694b415c3f711fd25c56445980b201c04c9e",
+      "reason": "Active sealed complete 912-pair, 928-region certificate replayed by the same audit A/check.py; exact bytes preserve whole complementary components and research custody."
+    },
+    "audits/2026-10-17-r6-seven-five-repair-5b9a7b3/A/malformed-certificate.json": {
+      "kind": "frozen",
+      "bytes": 2074116,
+      "sha256": "9663d7d594e7771b5bc6450e5554f5fa7c42db0ef9e991eae8cf12c319a299c8",
+      "reason": "Exact corrupted complete-certificate negative control retained with its rejection receipt; preserve bytes and SHA256 for archival replay."
+    },
+    "audits/2026-10-18-smaller-source-9f1fe84/A/hexagon_obstruction.json": {
+      "kind": "frozen",
+      "bytes": 1814650,
+      "sha256": "f2cad7410cc0a7a444838613847c839bd631f12d92bfedbccf235823bb2a226d",
+      "reason": "Sealed finite hexagon replacement certificate preserves complete original fibres, empty fibres, every named candidate support, and explicit leakage witnesses. Retain exact audit bytes and SHA256 for independent read-only replay."
+    },
+    "audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/certificate.json": {
+      "kind": "frozen",
+      "bytes": 2308268,
+      "sha256": "e426653ac4a047c9e21175c215a7ef0e5025fbd812bab4c327282cbba613e321",
+      "reason": "Sealed complete literal-colour fibres or exact corruption control from the C5 P/R disk-semantics audit. Preserve original bytes and SHA256 for independent replay and the frozen BASE/SHA256SUMS custody chain."
+    },
+    "audits/2026-10-19-c5-pr-disk-semantics-ed59843/negative-controls/whole-graph/certificate.json": {
+      "kind": "frozen",
+      "bytes": 2308285,
+      "sha256": "2dcd3a1df52ba3523db446f34f57affb1bc5e99a7aacc4a4c5aec06d5d822ba8",
+      "reason": "Sealed complete literal-colour fibres or exact corruption control from the C5 P/R disk-semantics audit. Preserve original bytes and SHA256 for independent replay and the frozen BASE/SHA256SUMS custody chain."
+    },
+    "audits/2026-10-19-r6-941-existence-f13eb4d/B/discovery/seven-results.json": {
+      "kind": "frozen",
+      "bytes": 2545300,
+      "sha256": "aa2c372f8a9cdd7cd08d8111aec438343b3b248976084f9bbeec2bc64890d6d2",
+      "reason": "Sealed complete-fibre certificate or preserved negative-control evidence from the R6/941 existence and last-rejection audits; retain exact bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-19-r6-941-existence-f13eb4d/C/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1148704,
+      "sha256": "c5c84bc8a54e92b5907823b3bb6f2abed4b6269b930cec25635d263c43be42e4",
+      "reason": "Sealed complete-fibre certificate or preserved negative-control evidence from the R6/941 existence and last-rejection audits; retain exact bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-19-r6-941-existence-f13eb4d/C/comparisons.json": {
+      "kind": "frozen",
+      "bytes": 1822956,
+      "sha256": "5e72e52b5fdd5dd88786597e922b772e6522660c7cbe852324679a1c6128b0ff",
+      "reason": "Sealed complete-fibre certificate or preserved negative-control evidence from the R6/941 existence and last-rejection audits; retain exact bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/certificate.json": {
+      "kind": "frozen",
+      "bytes": 2308268,
+      "sha256": "e426653ac4a047c9e21175c215a7ef0e5025fbd812bab4c327282cbba613e321",
+      "reason": "Exact frozen authority snapshot in the sealed R6/941 existence and last-rejection audits; preserve original bytes and SHA256 for complete input custody and independent replay."
+    },
+    "audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/negative-controls/whole-graph/certificate.json": {
+      "kind": "frozen",
+      "bytes": 2308285,
+      "sha256": "2dcd3a1df52ba3523db446f34f57affb1bc5e99a7aacc4a4c5aec06d5d822ba8",
+      "reason": "Exact frozen authority snapshot in the sealed R6/941 existence and last-rejection audits; preserve original bytes and SHA256 for complete input custody and independent replay."
+    },
+    "audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/B/discovery/seven-results.json": {
+      "kind": "frozen",
+      "bytes": 2545300,
+      "sha256": "aa2c372f8a9cdd7cd08d8111aec438343b3b248976084f9bbeec2bc64890d6d2",
+      "reason": "Exact frozen authority snapshot in the sealed R6/941 existence and last-rejection audits; preserve original bytes and SHA256 for complete input custody and independent replay."
+    },
+    "audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/C/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1148704,
+      "sha256": "c5c84bc8a54e92b5907823b3bb6f2abed4b6269b930cec25635d263c43be42e4",
+      "reason": "Exact frozen authority snapshot in the sealed R6/941 existence and last-rejection audits; preserve original bytes and SHA256 for complete input custody and independent replay."
+    },
+    "audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/C/comparisons.json": {
+      "kind": "frozen",
+      "bytes": 1822956,
+      "sha256": "5e72e52b5fdd5dd88786597e922b772e6522660c7cbe852324679a1c6128b0ff",
+      "reason": "Exact frozen authority snapshot in the sealed R6/941 existence and last-rejection audits; preserve original bytes and SHA256 for complete input custody and independent replay."
+    },
+    "audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/certificate.json": {
+      "kind": "frozen",
+      "bytes": 2308268,
+      "sha256": "e426653ac4a047c9e21175c215a7ef0e5025fbd812bab4c327282cbba613e321",
+      "reason": "Exact frozen authority snapshot in the sealed R6/941 existence and last-rejection audits; preserve original bytes and SHA256 for complete input custody and independent replay."
+    },
+    "audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/negative-controls/whole-graph/certificate.json": {
+      "kind": "frozen",
+      "bytes": 2308285,
+      "sha256": "2dcd3a1df52ba3523db446f34f57affb1bc5e99a7aacc4a4c5aec06d5d822ba8",
+      "reason": "Exact frozen authority snapshot in the sealed R6/941 existence and last-rejection audits; preserve original bytes and SHA256 for complete input custody and independent replay."
+    },
+    "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/B/discovery/seven-results.json": {
+      "kind": "frozen",
+      "bytes": 2545300,
+      "sha256": "aa2c372f8a9cdd7cd08d8111aec438343b3b248976084f9bbeec2bc64890d6d2",
+      "reason": "Exact sealed certificate, corruption control, or frozen authority dependency retained for the 2026-10-20 C5 progress publication; preserve original bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/C/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1148704,
+      "sha256": "c5c84bc8a54e92b5907823b3bb6f2abed4b6269b930cec25635d263c43be42e4",
+      "reason": "Exact sealed certificate, corruption control, or frozen authority dependency retained for the 2026-10-20 C5 progress publication; preserve original bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/C/comparisons.json": {
+      "kind": "frozen",
+      "bytes": 1822956,
+      "sha256": "5e72e52b5fdd5dd88786597e922b772e6522660c7cbe852324679a1c6128b0ff",
+      "reason": "Exact sealed certificate, corruption control, or frozen authority dependency retained for the 2026-10-20 C5 progress publication; preserve original bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/certificate.json": {
+      "kind": "frozen",
+      "bytes": 2308268,
+      "sha256": "e426653ac4a047c9e21175c215a7ef0e5025fbd812bab4c327282cbba613e321",
+      "reason": "Exact sealed certificate, corruption control, or frozen authority dependency retained for the 2026-10-20 C5 progress publication; preserve original bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/negative-controls/whole-graph/certificate.json": {
+      "kind": "frozen",
+      "bytes": 2308285,
+      "sha256": "2dcd3a1df52ba3523db446f34f57affb1bc5e99a7aacc4a4c5aec06d5d822ba8",
+      "reason": "Exact sealed certificate, corruption control, or frozen authority dependency retained for the 2026-10-20 C5 progress publication; preserve original bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/B/discovery/seven-results.json": {
+      "kind": "frozen",
+      "bytes": 2545300,
+      "sha256": "aa2c372f8a9cdd7cd08d8111aec438343b3b248976084f9bbeec2bc64890d6d2",
+      "reason": "Exact sealed certificate, corruption control, or frozen authority dependency retained for the 2026-10-20 C5 progress publication; preserve original bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/C/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1148704,
+      "sha256": "c5c84bc8a54e92b5907823b3bb6f2abed4b6269b930cec25635d263c43be42e4",
+      "reason": "Exact sealed certificate, corruption control, or frozen authority dependency retained for the 2026-10-20 C5 progress publication; preserve original bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/C/comparisons.json": {
+      "kind": "frozen",
+      "bytes": 1822956,
+      "sha256": "5e72e52b5fdd5dd88786597e922b772e6522660c7cbe852324679a1c6128b0ff",
+      "reason": "Exact sealed certificate, corruption control, or frozen authority dependency retained for the 2026-10-20 C5 progress publication; preserve original bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/certificate.json": {
+      "kind": "frozen",
+      "bytes": 2308268,
+      "sha256": "e426653ac4a047c9e21175c215a7ef0e5025fbd812bab4c327282cbba613e321",
+      "reason": "Exact sealed certificate, corruption control, or frozen authority dependency retained for the 2026-10-20 C5 progress publication; preserve original bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/negative-controls/whole-graph/certificate.json": {
+      "kind": "frozen",
+      "bytes": 2308285,
+      "sha256": "2dcd3a1df52ba3523db446f34f57affb1bc5e99a7aacc4a4c5aec06d5d822ba8",
+      "reason": "Exact sealed certificate, corruption control, or frozen authority dependency retained for the 2026-10-20 C5 progress publication; preserve original bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-j1-w5-9c36e3c/replacement/combined.json": {
+      "kind": "frozen",
+      "bytes": 1367349,
+      "sha256": "8bf3f605455dc718e1c9b9f8e9cc756549d8b1ed3737b63651aeb55b665597ad",
+      "reason": "Exact sealed certificate, corruption control, or frozen authority dependency retained for the 2026-10-20 C5 progress publication; preserve original bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-j1-c11-1148ce0/frozen/audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/B/discovery/seven-results.json": {
+      "kind": "frozen",
+      "bytes": 2545300,
+      "sha256": "aa2c372f8a9cdd7cd08d8111aec438343b3b248976084f9bbeec2bc64890d6d2",
+      "reason": "Exact complete audit certificate or frozen dependency retained for connected J1 C11 and Kempe iteration publication; preserve sealed bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-j1-c11-1148ce0/frozen/audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/C/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1148704,
+      "sha256": "c5c84bc8a54e92b5907823b3bb6f2abed4b6269b930cec25635d263c43be42e4",
+      "reason": "Exact complete audit certificate or frozen dependency retained for connected J1 C11 and Kempe iteration publication; preserve sealed bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-j1-c11-1148ce0/frozen/audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/C/comparisons.json": {
+      "kind": "frozen",
+      "bytes": 1822956,
+      "sha256": "5e72e52b5fdd5dd88786597e922b772e6522660c7cbe852324679a1c6128b0ff",
+      "reason": "Exact complete audit certificate or frozen dependency retained for connected J1 C11 and Kempe iteration publication; preserve sealed bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-j1-c11-1148ce0/frozen/audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/C/certificate.json": {
+      "kind": "frozen",
+      "bytes": 2308268,
+      "sha256": "e426653ac4a047c9e21175c215a7ef0e5025fbd812bab4c327282cbba613e321",
+      "reason": "Exact complete audit certificate or frozen dependency retained for connected J1 C11 and Kempe iteration publication; preserve sealed bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-j1-c11-1148ce0/frozen/audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-19-c5-pr-disk-semantics-ed59843/negative-controls/whole-graph/certificate.json": {
+      "kind": "frozen",
+      "bytes": 2308285,
+      "sha256": "2dcd3a1df52ba3523db446f34f57affb1bc5e99a7aacc4a4c5aec06d5d822ba8",
+      "reason": "Exact complete audit certificate or frozen dependency retained for connected J1 C11 and Kempe iteration publication; preserve sealed bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-r6-941-j1-c11-1148ce0/frozen/audits/2026-10-20-r6-941-j1-w5-9c36e3c/replacement/combined.json": {
+      "kind": "frozen",
+      "bytes": 1367349,
+      "sha256": "8bf3f605455dc718e1c9b9f8e9cc756549d8b1ed3737b63651aeb55b665597ad",
+      "reason": "Exact complete audit certificate or frozen dependency retained for connected J1 C11 and Kempe iteration publication; preserve sealed bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-20-kempe-residual-iteration-af0df80/experiment/certificate.json": {
+      "kind": "frozen",
+      "bytes": 1084806,
+      "sha256": "86c4af15ea6fd14902d27d2f578fb6ee750c2d52d8fe59aaf0a4b00cd165483c",
+      "reason": "Exact complete audit certificate or frozen dependency retained for connected J1 C11 and Kempe iteration publication; preserve sealed bytes and SHA256 for independent replay."
+    },
+    "audits/2026-10-23-three-mask-round2-cb8f859/933/runs/negative-certificate.json": {
+      "kind": "frozen",
+      "reason": "Retained intentionally corrupted second-round 933 certificate with its rejection receipt; preserve exact historical bytes and SHA256 as negative-control provenance, not as an active mathematical certificate.",
+      "bytes": 2551366,
+      "sha256": "947d93714cd6bca96734b182f620cb9656b55d4af61d5046ac7fa42d42e7acb6"
+    },
+    "audits/2026-10-23-three-mask-round3-cb8f859/933/certificate.json": {
+      "kind": "frozen",
+      "reason": "Sealed third-round 933 same-exterior fourteen-completion certificate, including complete ten-row counts, empty fibres and all original lifts; preserve exact bytes and SHA256 for independent read-only replay.",
+      "bytes": 1692877,
+      "sha256": "989d5c1ce100dd4876be1672c99333fd8f1f4096eb8cf362609a7fe7af5d2455"
+    },
+    "audits/2026-10-23-three-mask-round4-cb8f859/933/certificate.json": {
+      "kind": "frozen",
+      "reason": "Sealed fourth-round 933 genuine-C10 certificate with the complete 70144 cap fibres and whole-component source obligations; preserve exact bytes and SHA256 for independent read-only replay.",
+      "bytes": 1465740,
+      "sha256": "9772f131a4d7c890f6d56a0e38e9ce9692273b1bcba98d6fd23180212aa434ac"
+    },
+    "audits/2026-10-23-three-mask-round4-cb8f859/933/frozen/audits/2026-10-23-three-mask-round3-cb8f859/933/certificate.json": {
+      "kind": "frozen",
+      "reason": "Exact frozen 933 authority snapshot retained by the five-round 932/933/941 publication; preserve sealed bytes and SHA256 for complete-fibre, empty-fibre, full-lift replay and immutable input custody.",
+      "bytes": 1692877,
+      "sha256": "989d5c1ce100dd4876be1672c99333fd8f1f4096eb8cf362609a7fe7af5d2455"
+    },
+    "audits/2026-10-23-three-mask-round5-cb8f859/933/certificate.json": {
+      "kind": "frozen",
+      "reason": "Sealed fifth-round 933 same-D Hstar certificate with full original Cartesian lifts, complete ten-row projections and bounded 36-target component tests; preserve exact bytes and SHA256 for independent read-only replay.",
+      "bytes": 7442759,
+      "sha256": "1711acc0764d5a6f79a1f5ccdcfee0e0c7d4961103354d54efc0d0582e675118"
+    },
+    "audits/2026-10-23-three-mask-round5-cb8f859/933/frozen/audits/2026-10-23-three-mask-round4-cb8f859/933/certificate.json": {
+      "kind": "frozen",
+      "reason": "Exact frozen 933 authority snapshot retained by the five-round 932/933/941 publication; preserve sealed bytes and SHA256 for complete-fibre, empty-fibre, full-lift replay and immutable input custody.",
+      "bytes": 1465740,
+      "sha256": "9772f131a4d7c890f6d56a0e38e9ce9692273b1bcba98d6fd23180212aa434ac"
+    }
+  }
+}

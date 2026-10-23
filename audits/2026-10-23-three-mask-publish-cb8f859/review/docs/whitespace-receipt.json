@@ -1,0 +1,54 @@
+{
+  "schema": "three-mask-publication-whitespace-review-v1",
+  "created_utc": "2026-10-23T05:40:41.624266+00:00",
+  "status": "PASS_WITH_PRESERVED_FULL_FAILURE",
+  "full_check": "FAIL: exactly two archived blank-at-EOF findings; failure is retained",
+  "scoped_check": "PASS: only the two exact archived paths excluded",
+  "runs": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "audits/2026-10-23-three-mask-round2-cb8f859/933/runs/negative-authority-root/audits/2026-10-23-three-mask-methods-cb8f859/933/REPORT.md:139: new blank line at EOF.\naudits/2026-10-23-three-mask-round5-cb8f859/941/check.py:218: new blank line at EOF.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(exclude)audits/2026-10-23-three-mask-round2-cb8f859/933/runs/negative-authority-root/audits/2026-10-23-three-mask-methods-cb8f859/933/REPORT.md",
+        ":(exclude)audits/2026-10-23-three-mask-round5-cb8f859/941/check.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "excluded_BASE_records": [
+    {
+      "path": "audits/2026-10-23-three-mask-round2-cb8f859/933/runs/negative-authority-root/audits/2026-10-23-three-mask-methods-cb8f859/933/REPORT.md",
+      "bytes": 10255,
+      "sha256": "65a73fd7d93c7de28e8e780ba6f3a236a9347f825279bf5a195a7f30f19705bc"
+    },
+    {
+      "path": "audits/2026-10-23-three-mask-round5-cb8f859/941/check.py",
+      "bytes": 15303,
+      "sha256": "113b4c98a35101215627bc5858a18741c96911646f50c077f4b07648bf7df275"
+    }
+  ],
+  "reasons": [
+    "Deliberately corrupted current-authority fixture; bytes are part of the semantic drift negative control. Round2/933/VERIFICATION.json records negative_current_authority_drift_rejected=true.",
+    "Frozen original round5/941 checker; normalizing its EOF would violate publication BASE custody."
+  ],
+  "all_reviewed_document_hashes_still_match": true,
+  "git_index_changed_by_this_review": false,
+  "root_staging_note": "Parent staged publication files after the semantic review snapshot; the original receipt index SHA records that earlier read-only review interval."
+}

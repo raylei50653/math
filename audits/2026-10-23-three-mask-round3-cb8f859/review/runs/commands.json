@@ -1,0 +1,78 @@
+[
+  {
+    "name": "artifact-policy",
+    "command": [
+      "python3",
+      "-B",
+      "tools/check_generated_artifacts.py"
+    ],
+    "exit_code": 0,
+    "seconds": 2.385,
+    "stdout": "review/runs/artifact-policy.stdout",
+    "stderr": "review/runs/artifact-policy.stderr"
+  },
+  {
+    "name": "docgraph-formal",
+    "command": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.294,
+    "stdout": "review/runs/docgraph-formal.stdout",
+    "stderr": "review/runs/docgraph-formal.stderr"
+  },
+  {
+    "name": "docgraph-whole",
+    "command": [
+      "python3",
+      "-B",
+      "tools/docgraph",
+      "check"
+    ],
+    "exit_code": 1,
+    "seconds": 8.116,
+    "stdout": "review/runs/docgraph-whole.stdout",
+    "stderr": "review/runs/docgraph-whole.stderr"
+  },
+  {
+    "name": "docs",
+    "command": [
+      "python3",
+      "-B",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.936,
+    "stdout": "review/runs/docs.stdout",
+    "stderr": "review/runs/docs.stderr"
+  },
+  {
+    "name": "three-audits",
+    "command": [
+      "python3",
+      "-B",
+      "audits/2026-10-23-three-mask-round3-cb8f859/check.py"
+    ],
+    "exit_code": 0,
+    "seconds": 4.833,
+    "stdout": "review/runs/three-audits.stdout",
+    "stderr": "review/runs/three-audits.stderr"
+  },
+  {
+    "name": "whitespace",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.032,
+    "stdout": "review/runs/whitespace.stdout",
+    "stderr": "review/runs/whitespace.stderr"
+  }
+]

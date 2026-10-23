@@ -2,28 +2,30 @@
 
 ## 最新進度
 
-現況核對：2026-10-21；[短型I的03／02共同義務](../audits/2026-10-21-w7-I-joint-2c38d1d/REPORT.md)證各替代路至少四邊、混合配對迫私有色2／3交錯點；02第2／4型翻U02後03唯一，二步必要審核仍留2／4型，八配對同源性OPEN。[L短路／長路](../audits/2026-10-21-w7-L-path-30dde27/REPORT.md)的II窄排除與五邊七型保留；兩短整型及長路大cell仍OPEN。原40 profiles仍排38、餘0／1，一般W7、必要計數錐與J1／J2仍OPEN，無新Lean、來源實現或較小bad。
+現況核對：2026-10-23；[第五輪三線接續](../audits/2026-10-23-three-mask-round5-cb8f859/REPORT.md)證原h=4的C9-932至少一single及兩深點；933新合法k−8換框圖H*支持限271／314／319，迫兩個16-fibre OR正族及掛橋C的原長路義務；941的wrong-side迫至少兩份共同四色原面，合至少六原點。一般三支與較小bad仍OPEN，共同k≥23不變。
+
+W7既有[短型I的03／02共同義務](../audits/2026-10-21-w7-I-joint-2c38d1d/REPORT.md)證各替代路至少四邊、混合配對迫私有色2／3交錯點；02第2／4型翻U02後03唯一，二步必要審核仍留2／4型，八配對同源性OPEN。[L短路／長路](../audits/2026-10-21-w7-L-path-30dde27/REPORT.md)的II窄排除與五邊七型保留；兩短整型及長路大cell仍OPEN。原40 profiles仍排38、餘0／1，一般W7、必要計數錐與J1／J2仍OPEN，無新Lean、來源實現或較小bad。
 
 | 欄位 | 現況 |
 | --- | --- |
-| 階段／生命週期 | W7原40 profiles仍排38型；profile0的K=1僅L未排，L四個完整01必要型仍OPEN。 |
-| 最近研究更新 | 2026-10-21：[短型I共同義務](../audits/2026-10-21-w7-I-joint-2c38d1d/REPORT.md)給長路、交錯點與U02單翻後唯一03，尚無配對排除。 |
-| 上次完成 | 普通I的二步必要審核全留03二型／02四型；兩張同圖02／03控制皆敗於01及原四度點。II仍留4／4／3型。 |
-| 目前停止點 | I每target八配對的同源實現／矛盾未定；II、pinched aliases、長路大cell、K≥2與profile1仍OPEN。 |
-| 下一步 | 優先追I至少四邊的替代路、混合分支五度交錯點的剩餘色鄰點及偶數高度分支，結合U02單翻後唯一03與原01四型。 |
-| 接手入口 | [I共同義務](../audits/2026-10-21-w7-I-joint-2c38d1d/REPORT.md)、[原圖紙證](../audits/2026-10-21-w7-I-joint-2c38d1d/geometry/PROOF.md)、[完整二步審核](../audits/2026-10-21-w7-I-joint-2c38d1d/transport/REPORT.md)、[L兩短型／長路](../audits/2026-10-21-w7-L-path-30dde27/REPORT.md)。 |
+| 階段／生命週期 | 原h=4 C9-932的s=0及941五點patch壓縮已排；933新換框圖分類完成。一般三支OPEN，W7仍38／40。 |
+| 最近研究更新 | 2026-10-23：[第五輪](../audits/2026-10-23-three-mask-round5-cb8f859/REPORT.md)完成原Q負擔、H*完整支持／正族及共同四色原面；未排初始配對。 |
+| 上次完成 | 原h=4 C9-932得s≥1、d≥2及真弦限制；933得k−8合法圖、兩個16-OR正族及非crossed長02路；941兩patch合至少六原點。 |
+| 目前停止點 | 932的s≥1原Q仍有空band／弦；933兩新OR正族與六fibre未排；941 B側與一般wrong-side、八配對OPEN。 |
+| 下一步 | 932保空band推原Q完整relation；933追新OR正族或原C7／長路；941追兩patch沿同一界面的次序及共點。 |
+| 接手入口 | [第五輪結果與重播](../audits/2026-10-23-three-mask-round5-cb8f859/REPORT.md)、[第四輪六fibre](../audits/2026-10-23-three-mask-round4-cb8f859/933/REPORT.md)、[第三輪兩新填片](../audits/2026-10-23-three-mask-round3-cb8f859/933/REPORT.md)。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
+| 2026-10-23／第五輪原Q及共同原面 | [932 single／deep、933新換框圖、941兩份四色patch](../audits/2026-10-23-three-mask-round5-cb8f859/REPORT.md)；一般三支仍OPEN。 |
+| 2026-10-23／第四輪原關係接續 | [932距四全排、933六fibre、941原分枝二分](../audits/2026-10-23-three-mask-round4-cb8f859/REPORT.md)；零pair與一般三支仍OPEN。 |
+| 2026-10-23／第三輪原圖接續 | [932單pair、933兩新填片、941最後橋點](../audits/2026-10-23-three-mask-round3-cb8f859/REPORT.md)；全三支與較小bad仍OPEN。 |
 | 2026-10-21／I的03與02共同義務 | [八配對的長路與私有交錯點](../audits/2026-10-21-w7-I-joint-2c38d1d/REPORT.md)、U02單翻後唯一03；二步未排型，同源性OPEN。 |
 | 2026-10-21／L原混色路 | [三邊兩短型與五邊七型](../audits/2026-10-21-w7-L-path-30dde27/REPORT.md)只排II／B／U=w，保留同E完整fibres與整型OPEN。 |
-| 2026-10-21／K=1只餘L | [完整E作用排u3／u1](../audits/2026-10-21-w7-k1-mixed-30dde27/REPORT.md)，L四個01必要型及02／03整欄完整保留。 |
-| 2026-10-21／單障礙原幾何 | [n／u4／u2排除](../audits/2026-10-21-w7-single-barrier-30dde27/REPORT.md)與[30項規則及列表探索](../audits/2026-10-21-w7-exploration-30dde27/REPORT.md)把後續收窄為同一外側完整接合。 |
-| 2026-10-21／完整第二層 | [induced圈、八內點與七列表](../audits/2026-10-21-w7-remaining-two-13e51db/REPORT.md)定位同一來源完整界面；局部縮減未給排除。 |
 
-本頁維護本線現況；證明及實際重播範圍見各報告。
+本頁維護本線現況；證明及實際重播範圍見各報告；[五輪整理與發布核對](history/2026-10-23-three-mask-five-rounds-publish.md)。
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
 
@@ -43,7 +45,7 @@
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
-| 較小bad三候選計數 | 原W5三邊路整支關閉；W7仍排38／40，profile0的K=1僅L。I的03／02八配對已得長路與交錯點義務，尚未排型；II與長路大cell仍OPEN，一般J1／J2及較小bad未解 | [I共同義務](../audits/2026-10-21-w7-I-joint-2c38d1d/REPORT.md)、[L短路／長路](../audits/2026-10-21-w7-L-path-30dde27/REPORT.md)、[38型排除](../audits/2026-10-21-w7-transport-synthesis-d23f94f/REPORT.md) |
+| 較小bad候選 | 原932／933固定Q1／Q2／fan-B方法已關閉。933新k−8換框圖H*支持限271／314／319，尚非bad；舊兩新k−2圖仍需六D fibre全空。941最後拒絕J1兩項／J2六項與八配對未排 | [933新換框圖](../audits/2026-10-23-three-mask-round5-cb8f859/933/REPORT.md)、[兩新填片](../audits/2026-10-23-three-mask-round3-cb8f859/933/REPORT.md)、[941共同原面](../audits/2026-10-23-three-mask-round5-cb8f859/941/REPORT.md) |
 | 同候選rainbow與原外側 | 原b四度的四位置fan-A接受必洩漏；fan-B兩個重色拒絕列迫q,N同原外側分量，01021容雙接框。後續932／933及941均已證fan-B接受且洩漏；941其他支持證書未排 | [完整雙射、分量表與固定圖重播](../audits/2026-10-18-rainbow-exterior-e1617a2/REPORT.md) |
 | 原圖較小來源構造 | 具名原相鄰五度兩星有兩個合法k−2候選、至少一個保01232；回填iff四接點非rainbow。三拒絕列完整排除及普遍位置存在仍OPEN | [構造、局部限制及實際完成控制](../audits/2026-10-18-smaller-source-9f1fe84/REPORT.md) |
 | R6兩完整補圈／匹配修復 | 固定M全參考阻斷保留；5／5／5型四點十圈給保三標記全偶補N101，同樹兩奇支已解。一般合法批次全偶恰當每個完整primal分量度和偶；其他度數型及來源覆蓋仍OPEN | [5／5／5修復](../audits/2026-10-20-r6-555-odd-branches-9c36e3c/REPORT.md)、[雙點及完整分量判準](../audits/2026-10-20-r6-two-cycle-batch-9c36e3c/REPORT.md)、[原兩圈結構](../audits/2026-10-17-r6-two-cycle-cap-3d325d7/REPORT.md) |
@@ -60,7 +62,7 @@
 | 無四色定理前提路線／交接 | C4來源橋接外部計算得K≤22及共同k≥23；三支外圈／C8已接入，T1-CROSSCUT 證 h=3⇒p=0，只留 RING。T2的apex結構及三支私人ρ≥5保留；一般來源仍OPEN | [停止點、證據與下一窄任務](tasks/c5_no4ct_handoff.md) |
 | C8 一般正對切口 T1-CROSSCUT | 原 no4ct 全域最小內點、再最大邊數契約下 h=3⇒p=0；共同 literal 接合、完整支援直積及全部安全矩形排除 PINCH／BRIDGE，不限 s 或兩片大小。RING、h≥4、主命題 OPEN，無新 Lean | [C8 權威入口](c5_c8_peeling.md)、[採納審查與完整重播](../audits/2026-10-14-t1-crosscut-review-77fbd5d/REPORT.md) |
 | C8 單接末端排除（歷史 T1） | 640份具名外側完整轉移全部排除s=1，不限剩餘C6內點數；保留2,515,696份P lifts及全部空fibres。當輪 s≥2 剩餘分支現已由 T1-CROSSCUT 全部排除，原證據不改寫 | [T1證明與證書](../audits/2026-10-13-c8-terminal-s1-d521163/REPORT.md) |
-| C9-932 原apex下界 | no4ct、完整932、h=4的20×5低度假設全排；五apex的d_H≥4、d_G≥6，九原邊第三點互異，k≥18。20項較高度數來源仍OPEN | [T2證明與證書](../audits/2026-10-13-c9-932-source-d521163/REPORT.md) |
+| C9-932 原接點 | 三接點／距四接點及s=0全排，原Q長9+s≥10、至少兩深點；真弦兩側皆深點且端點C contacts間距≥3。一般s≥1來源OPEN，共同k≥23不變 | [原Q及s=0排除](../audits/2026-10-23-three-mask-round5-cb8f859/932/REPORT.md)、[距四全排](../audits/2026-10-23-three-mask-round4-cb8f859/932/REPORT.md)、[T2](../audits/2026-10-13-c9-932-source-d521163/REPORT.md) |
 | W5 私人圈秩 no4ct 接入 | 全域最小來源三支任取合法W5皆ρ≥5；森林至圈秩四前提及來源分支已接通，沿用七seal／407記錄的完整染色證據 | [T3證明與依賴表](../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md) |
 | 共面識別／聯集封閉正規形 | global 最小內點、最大邊數來源的共面完備及簡單三角面正規形；接文獻 Cor20 得一般 disk 的 K≤12=K≤5。132 witnesses／8778 unions／十候選及完整 fibres 重播；後續K13／K14／K15及C4來源橋已提高至K≤22；二十三內點以上與完整關係重接仍 OPEN，未 Lean 化 | [權威入口、證明及重播](c5_cofacial_normal_form.md) |
 | 近三角化完整外圈 | h≤2全部排除；h=3的70查詢已排62、留8。小cap／無內弦與cofacial識別新排c16/c32-941；可逆Kempe計數使c15/c20-941各由173降至171列。仍只採納h≥3、n5≥9；同圖原面／跨split實現OPEN，未Lean化 | [完整外圈](c5_neartri_boundary_collar.md)、[C8-STRUCT精確結果](../audits/2026-10-13-c8-struct-243a125/REPORT.md) |
@@ -108,6 +110,10 @@
 
 ## 3. 停止點與保留缺口
 
+**第五輪的具名停止點（2026-10-23）。** 原全域最小r6／933兩星來源下，[933新換框圖](../audits/2026-10-23-three-mask-round5-cb8f859/933/REPORT.md)在同一原D外面識別a=c，再於新空五面識別A=R，外框改為(A,s,v,w,t)，完成k−8。完整支持限271／314／319，迫01021／01201／01231三族正，前兩族全部原rxy回填皆空；具名36-target測試後，各留下16-fibre OR必正，未算可行。原bph回填精確iff n=q且唯一；非crossed掛橋C還迫至少五邊原02 r–a/c路，五邊時為原induced C7，否則至少七邊，V crossed例外保留。六D fibre全空與[第三輪兩新k−2圖](../audits/2026-10-23-three-mask-round3-cb8f859/933/REPORT.md)的較小bad義務仍OPEN；H*本身在K132，固定Q1／Q2／fan-B方法不重啟。
+[932原Q接續](../audits/2026-10-23-three-mask-round5-cb8f859/932/REPORT.md)在原h=4分支以同一完整C9–Q9環帶、全部C lifts及原Q whole-Kempe排二十份s=0，得s≥1、d≥2、Q長至少10。每真弦兩側皆深點，端點C contacts最小距離≥3；23點局部反控制仍有Q弦。一般s的空band row必保留，不可把Q當induced。原s≥1零pair、h≥5及一般932仍OPEN，共同k≥23不變。
+[941共同四色原面](../audits/2026-10-23-three-mask-round5-cb8f859/941/REPORT.md)把同一原K–B及後繼C–Q界面接合；wrong-side至少兩次真橫穿，給兩份同K/B/C/Q四色原面，任兩合至少六原點，僅各k2必私有。B側與一般wrong-side、八配對及其他W7殘支仍OPEN；保U/VY/q框例外、兩側與高階。R與r可同可異尚未知，K0不全在C、M不自動認L。前四輪證據由[本輪報告](../audits/2026-10-23-three-mask-round5-cb8f859/REPORT.md)導入，不改舊證書。
+
 **最後拒絕的最新停止點（2026-10-20）。** [續進報告](../audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/REPORT.md)保留同一實際F、原色框與完整接回：a1=0的J1最後拒絕零值等價兩個q=3,d=2 fibres同時為零；a2=0的J2則等價六個d=2 fibres同時為零。
 J2交換含s或t的完整23分量聯集，第一、二族合併配對、第三族自行配對，得N01021恰為六項計數和的兩倍。J1兩個次序只有01分離層可雙射，不能宣稱整體等計數。
 J1未覆蓋部分另有同染色separator限制；12的n—L三邊路暴露p,h,R三個五度點的原W5七圈片。[前輪縮減](../audits/2026-10-20-r6-941-j1-w5-9c36e3c/REPORT.md)排n=5，[132項完整計數守恆](../audits/2026-10-20-r6-941-j1-c11-1148ce0/REPORT.md)現排所有n≥6的induced C11，保留n全部額外附件。此三邊路整支關閉，type III每條12色n–L簡單路皆至少五邊；type I／III長路及一般J1／J2仍OPEN。
@@ -122,7 +128,7 @@ Q1完整回填iff L≠a；Q2 iff a=q或R≠a；原拒絕列的洩漏恰落入相
 fan-B的洩漏是完整rainbow fibres。後續[完整計數審核](../audits/2026-10-18-smaller-bad-counts-e1617a2/REPORT.md)
 已證原932／933時三張各滿足N01232≤4N01212；因此這兩支接受者必洩漏，指定四列合同不可行。
 932更以三個非負整數參數及七種正支持型態證三張的完整支持全在K132，必須換實際構造。
-933尚可尋其他完整支持證書或新圖。[941新定理](../audits/2026-10-19-r6-941-leakage-b89c591/REPORT.md)另證原h=a、h=b接受扇區皆非空，故fan-B接受且Q1／Q2至少一張接受。
+933固定三圖的其他完整支持證書現亦由[第二輪](../audits/2026-10-23-three-mask-round2-cb8f859/933/REPORT.md)全排，須換實際構造。[941新定理](../audits/2026-10-19-r6-941-leakage-b89c591/REPORT.md)另證原h=a、h=b接受扇區皆非空，故fan-B接受且Q1／Q2至少一張接受。
 同一fan-B的A_a=N01021+2N01202、N01212=N01021+N01202，迫其01212非空；fan-B指定四列合同亦不可行。
 這不等於Sigma(fan-B)在K132；941的Q1／Q2指定合同及其他完整支持證書仍OPEN。尚無較小bad。
 
@@ -173,6 +179,9 @@ alpha正、01023／01212雙零或01202／01231雙零兩個替代目標；未有�
 01021、01202、01212，即仍在K132外；另外六列及r6身份可變。
 四列須在同一完整外側接合下驗證，保一份接受lift、三份拒絕的全部空fibres，
 並把完成成本算進嚴格下降。舊五商圖已有洩漏no-go，未提供此種新圖。
+短版見[共通語言 §3.1](c5_common_language.md#31-保壞下降一份接受見證與三個單向回填)：
+負列只需從新圖到原圖的完整回填；密封操作可僅比較與實際外側相容的 tuples，
+不必保存補片全關係。這是既有單向替換定理的接口整理，來源存在性仍OPEN。
 一般加權回應的單向支配可代替全表相等，但還須證來源因子化及實際替代區域存在。
 標記秩定理說明：聯合最小匹配對每個保e偶參考，全部奇圈都在其單一阻斷區域；
 再換整區參考不供改善。匹配線須處理區域內部或另作較小來源，不能先假設含七圈。

@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round2-cb8f859/941/check.py", line 318, in <module>
+    main()
+    ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round2-cb8f859/941/check.py", line 311, in main
+    validate(json.loads(args.certificate.read_text()),expected)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round2-cb8f859/941/check.py", line 273, in validate
+    require(value==expected,'certificate differs from frozen full reconstruction')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round2-cb8f859/941/check.py", line 22, in require
+    raise ValueError(reason)
+ValueError: certificate differs from frozen full reconstruction

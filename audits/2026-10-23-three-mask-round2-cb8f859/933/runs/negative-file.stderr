@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round2-cb8f859/933/check.py", line 291, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round2-cb8f859/933/check.py", line 281, in main
+    cert=json.loads(args.certificate.read_text());verify(cert,expected)
+                                                  ~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ray/developer/ai/math/audits/2026-10-23-three-mask-round2-cb8f859/933/check.py", line 245, in verify
+    assert cert==expected,'complete exact certificate mismatch'
+           ^^^^^^^^^^^^^^
+AssertionError: complete exact certificate mismatch
