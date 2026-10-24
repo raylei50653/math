@@ -1,13 +1,15 @@
 # math
 
 C5 boundary-coloring relation、有限證書與 Lean 形式化研究。
-**主命題 `K∞=K≤5` 仍未證。**
+**2026-10-24 起研究主目標改為四色定理（4CT）的證明路線**：以本 repo 的完整邊界關係、最小來源與 Kempe 工具組織強歸納／可約性證明，見 [4CT 導覽](docs/4ct_guide.md)。
+原主命題 `K∞=K≤5`（蘊含 4CT）仍未證，各線保留為工具與子問題。
 
 ## 研究入口
 
 | 文件 | 用途 |
 | --- | --- |
 | [研究線入口](docs/HANDOFF.md) | 新對話先讀；選擇研究線導覽，進行中以 tag 標記 |
+| [4CT 主目標與可約性路線](docs/4ct_guide.md) | 目前主目標；E932⇔4CT、強歸納／可約性規格、五環切口界線及既有成果對照 ledger |
 | [完整文件索引](docs/STATUS.md) | 查找專題報告、短狀態、後續關係與歷史 |
 | [C₅ 組合與結構分類圖譜](docs/c5_combinatorial_atlas.md) | 1,023 個原始 masks／135 個 D₅ 類的可重播分類與五種視圖；24 類已有 disk witness、2 類 OPEN，保留原 Σ 與接合對齊 |
 | [Weak-deletion 開放葉 ledger](docs/c5_open_leaf_ledger.md) | 共鄰 P₃ 固定具名目錄的葉數、關閉事件、階段趨勢與每日觀測入口 |
