@@ -1,0 +1,180 @@
+{
+  "date": "2026-10-25",
+  "scope": "Organize and publish existing work; no new research search. Remote 4CT direction preserved.",
+  "earlier_in_turn": {
+    "tools_unittest": {
+      "command": "uv run --with-requirements requirements.txt python -m unittest discover -s tools/tests -p test_*.py",
+      "exit_code": 0,
+      "tests": 265,
+      "seconds": 13.638
+    },
+    "lean": {
+      "command": "lake build --no-ansi",
+      "exit_code": 0,
+      "jobs": 8832,
+      "note": "Existing lint warnings retained; no new Lean theorem."
+    },
+    "equivalent_forms": {
+      "command": "python3 scripts/c5_equivalent_forms_check.py",
+      "exit_code": 0,
+      "matching_graphs": 60,
+      "matching_rows": 600,
+      "note": "Finite existing checker; P1-P4 not started."
+    },
+    "whole_tree_docgraph": {
+      "command": "python3 tools/docgraph check",
+      "exit_code": 1,
+      "documents": 98,
+      "relations": 371,
+      "errors": 72,
+      "note": "Historical audit/scratch duplicate IDs; distinct from formal docs-only check."
+    },
+    "triangle_readonly": {
+      "examples": 6,
+      "result": "Saved results and input/checker hashes match; no output overwritten."
+    }
+  },
+  "commit_groups": [
+    {
+      "sha": "9bff34683b2b100ffdd36d0160a2a809fcbc3982",
+      "subject": "feat(coloring): publish solver lab and joint propagation experiments"
+    },
+    {
+      "sha": "8a3a6bcfa51af65440ebbb4e81d46e2266cd833a",
+      "subject": "research(c5): publish K8 same-exterior residual refinement"
+    },
+    {
+      "sha": "ee42fab3c90a2839f7091f2ce620c85e86d9a867",
+      "subject": "docs(coloring): publish embedded triangulation numbering examples"
+    }
+  ],
+  "current_source_sha256": {
+    "scripts/four_color_c5.py": "f038d1e79f3a21c50983fe2a876d2dd6a3ca4fb9a62f8611a606d63539b37324",
+    "scripts/four_color_c5_experiment.py": "10f62c954f33f71140c2be72a9926a3ba1eb3e40ef102313469500762c21598a",
+    "scripts/four_color_c5_profile.py": "cff179b63505eb7150c86794e68238fbfc59a1192e83a2dd5c079d60e4ace223",
+    "scripts/four_color_c5_scan_experiment.py": "75f9b6cdd4a06a00ad51f8f8f56468e30a889ef7f0256dde3c512df0aa692599",
+    "scripts/four_color_combined_experiment.py": "0ad1ba9c0ab37091ca0c8a66e083a1073825277aebb7a10ebd9dcddb0272bc2f",
+    "scripts/four_color_conflict_priority.py": "903fe32c6981de7b6935d3d285027d8dd5d45e949cd8f8efa5c65efb7f8e1df1",
+    "scripts/four_color_conflicts.py": "043b2f612fabe0ff27b296b528cb705e0225d6d0df98d60aafc994ca2b741912",
+    "scripts/four_color_constraint_experiment.py": "56f9c57191abf9fb4ad3aab44b53906d7b54ae3f5c64fa406cf966f04ee4a61b",
+    "scripts/four_color_constraints.py": "f6fe2c27157c4328373e6732971fc7baf1a98943c9ca4c6c6a441191701e8abe",
+    "scripts/four_color_cycle_context_experiment.py": "1d16d4d9d405b2d2aa71d6d51834e6642816f19ffa6985d12348a07277dd4694",
+    "scripts/four_color_cycle_contexts.py": "bcd8e12a9511922954aaba6ba95293cf248182132b8fb56b54e33e09535cbd1a",
+    "scripts/four_color_cycle_propagation.py": "8eed1efbcadca544cde2297e79cc790bf707f10726a2b715dffa4d35bf1e7328",
+    "scripts/four_color_cycle_structure.py": "184ec00531b9eb61181a52496c459335ed2442d4781cfad4dc9ac6391726dc96",
+    "scripts/four_color_examples.py": "cfa9f761475072e2e0e57e0b3afc3b527141e1e8b4b9b65e20f239228eafa953",
+    "scripts/four_color_guarantee_audit.py": "1f6b528fe07e441aa32cbfd3299b3354a3bee9d4dea9ec0d6a546e044350ea96",
+    "scripts/four_color_intersection_experiment.py": "9dec577848df71d9599122f37544ec1bbbac7e8c2e4768b43ebcef511eb5260e",
+    "scripts/four_color_intersections.py": "4a33e07e97128c34bbae6b73d6361f26a2667f9621399bd310edcf9bfed278fa",
+    "scripts/four_color_lab.py": "1894402944c9c7d28e3bdd93b513bb200431c28cecdd3fa9eb4105f43e38e8f4",
+    "scripts/four_color_larger_cases.py": "3121e10d7b33bd8dcfd9472040aaea87d12739fab39ddcc57f4d9e64cc53eddf",
+    "scripts/four_color_larger_experiment.py": "034643493152a937de31ef8751879653ed29f6c035cbecd176676ee216e26394",
+    "scripts/four_color_larger_random.py": "736f74367c2f4489c6b405777be01990d273f614632c4fa0fbe7b256e9c7b24e",
+    "scripts/four_color_local_information.py": "82475ee576d9ae2101dd289a57f778c270b68aa827be2403b9ca1f7fb8057c89"
+  },
+  "remote_integrated": "b59982a6add19f9537a3fb8fedf7cc9d8af0c74e",
+  "limitations": [
+    "Historical browser and normal/seed-17 batch experiments not rerun for the four-color lab.",
+    "941 current normal checker passes are in the separate live-checks receipt; historical seed17 receipts only hash-verified.",
+    "Final push and CI state are checked live after committing; this receipt does not predict CI."
+  ],
+  "after_remote_merge": [
+    {
+      "name": "documentation",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.739,
+      "stdout": "OK: 733 Markdown files, 9732 local links; anchors, index, handoff, guide progress checked\n",
+      "stderr": ""
+    },
+    {
+      "name": "formal_docs_docgraph",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.09,
+      "stdout": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes\n",
+      "stderr": ""
+    },
+    {
+      "name": "generated_artifacts",
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.439,
+      "stdout": "Generated artifact policy OK: 10095 indexed files, 186 large files with documented exceptions, 166 registered outputs.\n",
+      "stderr": ""
+    },
+    {
+      "name": "staged_whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.011,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "unstaged_whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.016,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "tested_python_source_unchanged",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "9bff346",
+        "--",
+        "scripts/four_color*.py",
+        "tools/tests",
+        "tools/four_color_lab_viewer.html"
+      ],
+      "exit_code": 0,
+      "seconds": 0.015,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "built_lean_source_unchanged",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "494208f",
+        "--",
+        "Math",
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.013,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "all_final_checks_passed": true
+}
