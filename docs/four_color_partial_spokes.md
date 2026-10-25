@@ -6,6 +6,9 @@
 後續[共同限制登記](four_color_joint_constraints.md)另保存此九點構型的三點等色必要表及完整fibres，
 該輪先做手動角色映射原型；再後續[自動找型與主傳播](four_color_joint_propagation.md)已接入必要三元表。
 
+2026-10-25後續：[流程優化](four_color_flow_optimization.md)以同四十例與同預算重跑，
+降低接口重查與消元枚舉成本；本頁十份工作超限保留為原輪基準，當前結果見該報告。
+
 ## 預先構造與核對範圍
 
 既有純查詢 `derive_cycle_context` 已允許中心只與部分環點有原輻條，

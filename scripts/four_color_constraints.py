@@ -6,8 +6,10 @@ of the eliminated variable for each allowed frontier tuple.  Reverse lookup is
 therefore witness reconstruction, not a search over guessed assignments.
 
 ``checks`` counts candidate attempts, relation-row filtering/membership tests,
-and enabled C5 index operations.  ``max_checks`` bounds that sum; a separate 100,000-row safety ceiling
-bounds cumulative generated tables and optional certificate snapshots.  Neither
+and enabled C5 index operations.  ``max_checks`` bounds that sum; a separate row
+budget bounds cumulative generated tables and optional certificate snapshots.
+It defaults to ``min(max_checks, 100000)``; explicit ``max_table_rows`` can use
+more memory without increasing the work budget.  Neither
 limit means unsatisfiable.  Graph bookkeeping and final witness verification
 are not charged as relation checks.  General variable elimination remains
 exponential in frontier width.  Optional induced-C5 discovery has its own
@@ -18,6 +20,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from itertools import combinations, islice, permutations, product
+from math import prod
 
 
 CONSTRAINT_RULES = [
@@ -76,7 +79,9 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                       use_cycle_contexts=False, cycle_context_max_contexts=128,
                       cycle_context_max_scan_steps=200000,
                       cycle_context_search="neighbours", use_joint_constraints=False,
-                      joint_max_matches=128, joint_max_scan_steps=200000):
+                      joint_max_matches=128, joint_max_scan_steps=200000,
+                      max_table_rows=None, use_interface_cache=False,
+                      interface_cache_max_rows=1000000):
     """Solve exactly, or return ``limit`` without asserting nonexistence.
 
     Recorded rows equal the join of ``input_relations`` under the explicitly
@@ -107,15 +112,23 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
     original-edge pattern and install its complete three-point equality factor
     before any elimination. Discovery is charged and bounded; omitted matches
     leave the original exact solver intact. No colour is chosen by the factor.
+    ``max_table_rows=None`` preserves the historical storage ceiling. An explicit
+    nonnegative integer independently bounds generated rows and complete
+    certificate snapshots, without changing ``max_checks`` or omitting rows.
+    ``use_interface_cache`` retains complete shared-interface row-group indexes
+    in RAM for reuse across different factor pairs. Its independent row-reference
+    budget evicts optional indexes rather than limiting the exact solver.
     """
     from four_color_lab import graph_fingerprint, normalize_graph, verify_coloring
     from four_color_c5 import C5_ROWS, find_induced_c5, find_local_c5, query_c5
     from four_color_conflicts import KnownConflictIndex, conflict_catalogue
-    from four_color_intersections import intersect_on_shared
+    from four_color_intersections import SharedInterfaceIndex, intersect_on_shared
 
     g = normalize_graph(graph)
-    if any(type(value) is not bool for value in (use_substructures, record_relations, use_c5, use_conflicts, use_intersections, use_cycles, use_cycle_contexts, use_joint_constraints)):
+    if any(type(value) is not bool for value in (use_substructures, record_relations, use_c5, use_conflicts, use_intersections, use_cycles, use_cycle_contexts, use_joint_constraints, use_interface_cache)):
         raise ValueError("constraint feature flags must be booleans")
+    if use_interface_cache and not use_intersections:
+        raise ValueError("interface cache requires use_intersections=True")
     if use_cycle_contexts and not (use_intersections and use_cycles):
         raise ValueError("cycle contexts require use_intersections=True and use_cycles=True")
     if cycle_context_search not in ("neighbours", "partial"):
@@ -128,8 +141,10 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
            for value in (max_checks, trace_limit, c5_max_cycles, c5_max_scan_steps,
                          cycle_max_cycles, cycle_max_scan_steps,
                          cycle_context_max_contexts, cycle_context_max_scan_steps,
-                         joint_max_matches, joint_max_scan_steps)):
+                         joint_max_matches, joint_max_scan_steps, interface_cache_max_rows)):
         raise ValueError("limits must be nonnegative integers")
+    if max_table_rows is not None and (type(max_table_rows) is not int or max_table_rows < 0):
+        raise ValueError("max_table_rows must be a nonnegative integer or None")
     if c5_scan_method not in ("complete", "local"):
         raise ValueError("c5_scan_method must be complete or local")
     if c5_scan_method == "local" and not use_c5:
@@ -149,6 +164,9 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                       all_cycles_complete=False,
                       coverage="bounded fundamental cycles of active original graph and domain-induced subgraphs; not all cycles")
     cycle_contexts, cycle_context_last_domains, context_interface_factors = {}, {}, {}
+    factor_last_domains = {}
+    intersection_index = SharedInterfaceIndex(
+        cache_max_rows=interface_cache_max_rows if use_interface_cache else 0)
     cycle_context_discovery_signature = None
     cycle_context_scan = dict(contexts=[], scan_steps=0, discoveries=0,
                               truncated=False, all_contexts_complete=False,
@@ -267,6 +285,11 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                  c5_structure_ops=0, conflict_checks=0, known_conflicts=0,
                  self_constraints=len(self_constraints),
                  intersection_checks=0, intersection_pairs=0, intersection_prunes=0,
+                 intersection_cache_hits=0, factor_cache_hits=0,
+                 interface_cache_hits=0, interface_cache_builds=0,
+                 interface_cache_rows=0, interface_cache_peak_rows=0,
+                 interface_cache_entries=0, interface_cache_evictions=0,
+                 interface_cover_index_builds=0, interface_cover_index_factors=0,
                  cycle_queries=0, cycle_prunes=0, cycle_checks=0, cycle_conflicts=0,
                  cycle_scan_steps=0, cycle_skips=0, cycle_inactive_skips=0,
                  cycle_context_queries=0, cycle_context_prunes=0,
@@ -282,7 +305,8 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
     events, records, witness_maps, eliminated = [], [], [], []
     active = set(range(len(vertices)))
     emitted = 0
-    max_table_rows = min(max_checks, TABLE_ROW_CEILING)
+    if max_table_rows is None:
+        max_table_rows = min(max_checks, TABLE_ROW_CEILING)
     status = None
 
     def check(kind):
@@ -527,30 +551,32 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
         check("relation_checks")
         stats["intersection_checks"] += 1
 
-    def find_intersection_pairs():
-        # Use shared-variable incidence instead of comparing every factor pair.
-        # Even pair discovery is charged, so dense instances respect the budget.
-        incidence = {}
-        for position, factor in enumerate(factors):
-            for vertex in factor.scope:
-                incidence.setdefault(vertex, []).append(position)
-        shared_counts = {}
-        for vertex in sorted(incidence):
-            for pair in combinations(incidence[vertex], 2):
-                intersection_charge()
-                shared_counts[pair] = shared_counts.get(pair, 0) + 1
-        return sorted(pair for pair, size in shared_counts.items() if size >= 2)
+    def refresh_interface_cache_stats():
+        if not use_interface_cache:
+            return
+        for key, value in intersection_index.cache_stats.items():
+            stats[f"interface_cache_{key}"] = value
+        stats["intersection_cache_hits"] = intersection_index.skipped_pair_queries
 
-    def propagate_intersections(pairs, seen):
+    def propagate_intersections():
         changed = False
-        for left_index, right_index in pairs:
-            left, right = factors[left_index], factors[right_index]
-            signature = (left.revision, right.revision)
-            if seen.get((left_index, right_index)) == signature:
+        # The index retains live factor identities and completed revision
+        # signatures across eliminations; list positions are not cache keys.
+        intersection_index.sync(factors, charge=intersection_charge)
+        refresh_interface_cache_stats()
+        pairs = (intersection_index.pending_pairs() if use_interface_cache
+                 else intersection_index.pairs())
+        for left, right in pairs:
+            if not use_interface_cache and intersection_index.seen(left, right):
+                stats["intersection_cache_hits"] += 1
                 continue
             stats["intersection_pairs"] += 1
-            answer = intersect_on_shared(left.scope, left.rows, right.scope, right.rows,
-                                         charge=intersection_charge)
+            if use_interface_cache:
+                answer = intersection_index.intersect(left, right, charge=intersection_charge)
+                refresh_interface_cache_stats()
+            else:
+                answer = intersect_on_shared(left.scope, left.rows, right.scope, right.rows,
+                                             charge=intersection_charge)
             left_removed = len(left.rows) - len(answer["left_rows"])
             right_removed = len(right.rows) - len(answer["right_rows"])
             if left_removed or right_removed:
@@ -582,7 +608,9 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                 if not answer["common_rows"]:
                     contradiction(left, "兩張完整關係在共同接口上的交集為空；沒有共同延伸。")
                     return False, changed
-            seen[(left_index, right_index)] = (left.revision, right.revision)
+            intersection_index.mark_seen(left, right)
+            refresh_interface_cache_stats()
+        refresh_interface_cache_stats()
         return True, changed
 
     def propagate_cycles():
@@ -710,6 +738,32 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
             charge_context()
             stats["cycle_context_scan_steps"] += 1
 
+        covering_incidence = None
+
+        def add_covering_factor(position, factor):
+            charge_context()
+            for vertex in factor.scope:
+                covering_incidence.setdefault(vertex, set()).add(position)
+            stats["interface_cover_index_factors"] += 1
+
+        def covering_factors(scope):
+            nonlocal covering_incidence
+            if not use_interface_cache:
+                return factors
+            if covering_incidence is None:
+                covering_incidence = {}
+                stats["interface_cover_index_builds"] += 1
+                for position, factor in enumerate(factors):
+                    add_covering_factor(position, factor)
+            candidates = None
+            for vertex in scope:
+                charge_context()
+                positions = covering_incidence.get(vertex, set())
+                candidates = set(positions) if candidates is None else candidates & positions
+                if not candidates:
+                    return ()
+            return (factors[position] for position in sorted(candidates))
+
         selected = tuple(sorted(active))
         masks = tuple(sum(1 << color for color in domain) for domain in domains)
         signature = (selected, tuple(masks[v] for v in selected))
@@ -813,7 +867,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                         # supplies this implication; exact later elimination
                         # preserves it even when that object disappears.
                         implied = False
-                        for factor in factors:
+                        for factor in covering_factors(pair_scope):
                             charge_context()
                             if not set(pair_scope).issubset(factor.scope):
                                 continue
@@ -838,6 +892,12 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                     plans.append((pair_scope, previous, rows))
                 if stats["table_rows"] + stats["cycle_context_rows"] + stats["joint_rows"] + added_rows > max_table_rows:
                     raise _WorkLimit(f"完整關係表已達 {max_table_rows} 列儲存上限；尚未判定。")
+                if covering_incidence is not None:
+                    # Charge every planned index insertion before any domain
+                    # or factor update; an interrupted query stays atomic.
+                    for _, previous, _ in plans:
+                        if previous is None:
+                            charge_context()
 
             removed = sum(len(domains[v]) - len(domain)
                           for v, domain in zip(scope, narrowed))
@@ -852,6 +912,10 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                     factor = _Factor(pair_scope, rows, frozenset(source_edges),
                                      frozenset(source_vertices))
                     factors.append(factor)
+                    if covering_incidence is not None:
+                        for vertex in factor.scope:
+                            covering_incidence.setdefault(vertex, set()).add(len(factors) - 1)
+                        stats["interface_cover_index_factors"] += 1
                     context_interface_factors[pair_scope] = factor
                     new_factors += 1
                 elif rows != previous.rows:
@@ -900,13 +964,23 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
 
     def propagate():
         """Domain consistency, plus optional complete shared-tuple filtering."""
-        pairs, seen = None, {}
+        # Keep strong references until retired entries are removed, so a
+        # recycled Python id can never match a different factor's cached state.
+        live_ids = {id(factor) for factor in factors}
+        for identity in set(factor_last_domains) - live_ids:
+            del factor_last_domains[identity]
         changed = True
         while changed:
             changed = False
             if not propagate_known():
                 return False
             for factor in factors:
+                signature = (factor.revision,
+                             tuple(tuple(sorted(domains[v])) for v in factor.scope))
+                previous = factor_last_domains.get(id(factor))
+                if previous is not None and previous[0] is factor and previous[1] == signature:
+                    stats["factor_cache_hits"] += 1
+                    continue
                 kept = []
                 for row in factor.rows:
                     check("relation_checks")
@@ -954,10 +1028,13 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                     emit("propagate", "C1", detail=f"關係表刪去 {removed_rows} 列，候選域刪去 {removed_colors} 個顏色；尚未寫色。",
                          frontier=[vertices[v] for v in factor.scope],
                          relation_rows=len(factor.rows), **explain(factor))
+                # Unary support projection is idempotent on this exact table.
+                # Cache only after the complete filter and all support updates.
+                factor_last_domains[id(factor)] = (
+                    factor, (factor.revision,
+                             tuple(tuple(sorted(domains[v])) for v in factor.scope)))
             if use_intersections:
-                if pairs is None:
-                    pairs = find_intersection_pairs()
-                compatible, intersection_changed = propagate_intersections(pairs, seen)
+                compatible, intersection_changed = propagate_intersections()
                 if not compatible:
                     return False
                 changed = changed or intersection_changed
@@ -982,9 +1059,8 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                 if not compatible:
                     return False
                 if context_changed:
-                    # New factors change pair incidence; revisions alone cannot
-                    # validate the old factor-pair list.
-                    pairs, seen = None, {}
+                    # The next indexed sync discovers new pairs while keeping
+                    # completed signatures of unchanged, surviving factors.
                     changed = True
         return True
 
@@ -1035,27 +1111,53 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                 {vertices[v]} | {w for factor in bucket for w in factor.source_vertices} |
                 {vertex for w in union_scope for vertex in domain_vertices[w]})
             offsets = {w: offset for offset, w in enumerate(frontier)}
+            # Every satisfying bucket assignment restricts to exactly one row
+            # of any chosen input factor.  Start with the sparsest complete
+            # factor and enumerate only its uncovered frontier coordinates.
+            # This is the same full join, without testing assignments already
+            # excluded by that factor.  No live vertex is assigned a colour.
+            anchor = min(bucket, key=lambda factor: len(factor.rows) * prod(
+                len(domains[w]) for w in frontier if w not in factor.scope)) if bucket else None
             prepared = [(factor, tuple(-1 if w == v else offsets[w] for w in factor.scope))
-                        for factor in bucket]
+                        for factor in bucket if factor is not anchor]
+
+            def bucket_candidates():
+                if anchor is None:
+                    for boundary in product(*(sorted(domains[w]) for w in frontier)):
+                        for color in sorted(domains[v]):
+                            check("candidate_checks")
+                            yield boundary, color
+                    return
+                free = tuple(w for w in frontier if w not in anchor.scope)
+                anchor_offsets = {w: offset for offset, w in enumerate(anchor.scope)}
+                for row in sorted(anchor.rows):
+                    check("relation_checks")
+                    if any(color not in domains[w] for w, color in zip(anchor.scope, row)):
+                        continue
+                    for extension in product(*(sorted(domains[w]) for w in free)):
+                        check("candidate_checks")
+                        assignment = dict(zip(free, extension))
+                        assignment.update(zip(anchor.scope, row))
+                        yield tuple(assignment[w] for w in frontier), row[anchor_offsets[v]]
+
             table = {}
-            for boundary in product(*(sorted(domains[w]) for w in frontier)):
-                choices = []
-                for color in sorted(domains[v]):
-                    check("candidate_checks")
-                    valid = True
-                    for factor, positions in prepared:
-                        check("relation_checks")
-                        row = tuple(color if offset == -1 else boundary[offset] for offset in positions)
-                        if row not in factor.rows:
-                            valid = False
-                            break
-                    if valid:
-                        choices.append(color)
-                if choices:
+            for boundary, color in bucket_candidates():
+                valid = True
+                for factor, positions in prepared:
+                    check("relation_checks")
+                    row = tuple(color if offset == -1 else boundary[offset] for offset in positions)
+                    if row not in factor.rows:
+                        valid = False
+                        break
+                if valid:
+                    if boundary in table:
+                        table[boundary].append(color)
+                        continue
                     if stats["table_rows"] + stats["cycle_context_rows"] + stats["joint_rows"] >= max_table_rows:
                         raise _WorkLimit(f"完整關係表已達 {max_table_rows} 列儲存上限；尚未判定。")
-                    table[boundary] = tuple(choices)
+                    table[boundary] = [color]
                     stats["table_rows"] += 1
+            table = {boundary: tuple(sorted(choices)) for boundary, choices in sorted(table.items())}
 
             projected = _Factor(frontier, frozenset(table), source_edges, source_vertices)
             record = dict(vertex=vertices[v], scope=[vertices[w] for w in frontier],
@@ -1127,6 +1229,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
         status = "limit"
         emit("limit", detail=str(limit), phase="done")
 
+    refresh_interface_cache_stats()
     if status == "unsatisfiable":
         emit("end", detail="限制的完整共同關係為空；這份固定色無法延伸。" if g["fixed"] else
              "限制的完整共同關係為空；此圖不存在四色染色。", phase="done")
@@ -1143,6 +1246,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
         use_c5=use_c5, c5_max_cycles=c5_max_cycles, c5_max_scan_steps=c5_max_scan_steps,
         c5_scan_method=c5_scan_method,
         c5_method=c5_method, use_conflicts=use_conflicts, use_intersections=use_intersections,
+        use_interface_cache=use_interface_cache, interface_cache_max_rows=interface_cache_max_rows,
         use_cycles=use_cycles, cycle_max_cycles=cycle_max_cycles,
         cycle_max_scan_steps=cycle_max_scan_steps, cycle_scan=cycle_scan,
         use_cycle_contexts=use_cycle_contexts,

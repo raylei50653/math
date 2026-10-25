@@ -1,0 +1,95 @@
+{
+  "bundles": [
+    {
+      "distinct_snapshot_files": 126,
+      "large_json_frozen_exceptions": [
+        {
+          "bytes": 1951749,
+          "path": "artifacts/four_color_flow_optimization/baseline/report.json",
+          "sha256": "48bc7d9c0648e4500bc35e1d3f65d8d1b3720309af3d15f980c7b8a63c29e59c"
+        },
+        {
+          "bytes": 1954591,
+          "path": "artifacts/four_color_flow_optimization/incremental/report.json",
+          "sha256": "472827ea84a8c73e76002281df6bb35ce16deb964ebd7c54bb387a469115eec2"
+        },
+        {
+          "bytes": 1954683,
+          "path": "artifacts/four_color_flow_optimization/optimized/report.json",
+          "sha256": "8f65383e64a35e6aea904ee3fd4828c06dce6b80d0f5946aa1b68e5a166f0dff"
+        },
+        {
+          "bytes": 2985056,
+          "path": "artifacts/four_color_flow_optimization/prior-report.json",
+          "sha256": "792a4c65e6c57d3776b33e95882e8df5f4ada0f108921cc31c260579bf9dade3"
+        }
+      ],
+      "name": "four_color_flow_optimization",
+      "publishable_bytes": 30179037,
+      "publishable_files": 266
+    },
+    {
+      "distinct_snapshot_files": 90,
+      "large_json_frozen_exceptions": [
+        {
+          "bytes": 3865540,
+          "path": "artifacts/four_color_memory_optimization/comparison/report.json",
+          "sha256": "b5ec444215842c3500ec84e4a3767a452e7bd8f9182a6096676f2ba11519dbf9"
+        }
+      ],
+      "name": "four_color_memory_optimization",
+      "publishable_bytes": 76886103,
+      "publishable_files": 582
+    },
+    {
+      "distinct_snapshot_files": 93,
+      "large_json_frozen_exceptions": [
+        {
+          "bytes": 3895793,
+          "path": "artifacts/four_color_ram_indexes/comparison/report.json",
+          "sha256": "d512c353611f213aace843fc4d8ba5d1752651fe76f539c7a01d5988cd8bcf61"
+        }
+      ],
+      "name": "four_color_ram_indexes",
+      "publishable_bytes": 77437475,
+      "publishable_files": 585
+    }
+  ],
+  "checks": {
+    "baseline_snapshot_bindings": 131,
+    "comparison_report_hash_bindings": 2,
+    "current_source_hash_bindings": 47,
+    "documentation_log_hash_bindings": 9,
+    "flow_phase_snapshot_bindings": 126,
+    "gzip_json_integrity": 280,
+    "input_hash_bindings": 3,
+    "optimized_snapshot_bindings": 136,
+    "phase_report_hash_bindings": 3,
+    "prior_report_hash_bindings": 3,
+    "receipt_record_hash_bindings": 280,
+    "report_input_hash_bindings": 5,
+    "report_manifest_hash_bindings": 5,
+    "report_record_hash_bindings": 280,
+    "report_source_receipt_bindings": 2,
+    "test_log_hash_bindings": 3,
+    "timings_hash_bindings": 2,
+    "worker_report_hash_bindings": 160
+  },
+  "command": "/usr/bin/python3 /home/ray/developer/ai/math/docs/history/2026-10-25-four-color-completeness-publication/audit_artifacts.py --root /home/ray/developer/ai/math --out /home/ray/developer/ai/math/docs/history/2026-10-25-four-color-completeness-publication/artifact-audit.json",
+  "distinct_counts": {
+    "current_source_hash_bindings": 47,
+    "distinct_baseline_optimized_snapshot_files": 267,
+    "distinct_gzip_records": 280,
+    "distinct_incremental_snapshot_files": 42,
+    "distinct_snapshot_files": 309,
+    "distinct_worker_reports": 160
+  },
+  "errors": [],
+  "recorded_at_utc": "2026-10-25T15:07:10.369904+00:00",
+  "root": "/home/ray/developer/ai/math",
+  "schema": "four-color-publication-artifact-audit/v1",
+  "scope": "Read-only custody, hash consistency, saved-record integrity and dependency closure; not a solver theorem or benchmark rerun.",
+  "script_sha256": "1ca075f267903b1c2de79fb8ca157578398fe229e84dca5b0ffb4026658f18a3",
+  "snapshot_count_interpretation": "267 distinct baseline/optimized files plus 42 distinct incremental files equals 309 distinct snapshot files. The 131 baseline, 136 optimized and 126 flow phase manifest checks total 393 snapshot hash bindings; baseline and optimized flow files are checked twice against independent bindings.",
+  "status": "PASS"
+}
