@@ -1,0 +1,609 @@
+{
+  "success": true,
+  "input": "/home/ray/developer/ai/math/artifacts/four_color_cycle_contexts/index.html",
+  "input_sha256": "13db6afa570acd36a04eb39b4142a0a76fdc22ed393b5b1c81542d3a222e6334",
+  "input_sha256_after": "13db6afa570acd36a04eb39b4142a0a76fdc22ed393b5b1c81542d3a222e6334",
+  "input_unchanged": true,
+  "chromium": "/home/ray/.cache/puppeteer/chrome/linux-155.0.8059.39/chrome-linux64/chrome",
+  "method": "Native Node WebSocket CDP, headless Chromium",
+  "checked_at": "2026-10-25T05:26:23.559Z",
+  "checks": {
+    "sampling_policy": "Start, before first elimination, first elimination, first cycle, first context, first intersection, first conflict, feedback context-to-intersection, final; absent and duplicate steps skipped",
+    "run_count": 10,
+    "total_events_available": 456,
+    "total_steps_rendered": 60,
+    "intersection_events_rendered": 7,
+    "cycle_events_rendered": 16,
+    "context_events_rendered": 5,
+    "reduction_snapshots_checked_no_early_colouring": 408,
+    "sat_witnesses_verified_on_original_edges_and_fixes": 6,
+    "no_decisions_or_backtracks": true,
+    "primary_gap_closed_before_elimination": true,
+    "secondary_gap_remains_four_eliminations": true,
+    "runs": [
+      {
+        "name": "odd-wheel-private-fixed-leaves / 原交集＋原環",
+        "case_id": "odd-wheel-private-fixed-leaves",
+        "role": "primary",
+        "mode": "combined",
+        "vertices": 12,
+        "status": "unsatisfiable",
+        "event_count": 27,
+        "first_elimination_event": 17,
+        "first_context_event": -1,
+        "first_conflict_event": 25,
+        "eliminations_before_first_conflict": 8,
+        "feedback_context_to_intersection_event": -1,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 12,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 16,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 17,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 25,
+            "kind": "conflict",
+            "reasons": [
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 26,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "odd-wheel-private-fixed-leaves / 共同條件接口",
+        "case_id": "odd-wheel-private-fixed-leaves",
+        "role": "primary",
+        "mode": "combined-contexts",
+        "vertices": 12,
+        "status": "unsatisfiable",
+        "event_count": 19,
+        "first_elimination_event": -1,
+        "first_context_event": 17,
+        "first_conflict_event": 17,
+        "eliminations_before_first_conflict": 0,
+        "feedback_context_to_intersection_event": -1,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 12,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 17,
+            "kind": "conflict",
+            "reasons": [
+              "first_context",
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 18,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "even-wheel-private-fixed-leaves / 原交集＋原環",
+        "case_id": "even-wheel-private-fixed-leaves",
+        "role": "even",
+        "mode": "combined",
+        "vertices": 14,
+        "status": "colored",
+        "event_count": 42,
+        "first_elimination_event": 20,
+        "first_context_event": -1,
+        "first_conflict_event": -1,
+        "eliminations_before_first_conflict": null,
+        "feedback_context_to_intersection_event": -1,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 14,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 19,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 20,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 41,
+            "kind": "solution",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "even-wheel-private-fixed-leaves / 共同條件接口",
+        "case_id": "even-wheel-private-fixed-leaves",
+        "role": "even",
+        "mode": "combined-contexts",
+        "vertices": 14,
+        "status": "colored",
+        "event_count": 43,
+        "first_elimination_event": 21,
+        "first_context_event": 20,
+        "first_conflict_event": -1,
+        "eliminations_before_first_conflict": null,
+        "feedback_context_to_intersection_event": -1,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 14,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 20,
+            "kind": "cycle_context",
+            "reasons": [
+              "before_first_eliminate",
+              "first_context"
+            ]
+          },
+          {
+            "step": 21,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 42,
+            "kind": "solution",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "odd-wheel-free-center-leaf / 原交集＋原環",
+        "case_id": "odd-wheel-free-center-leaf",
+        "role": "relaxed",
+        "mode": "combined",
+        "vertices": 12,
+        "status": "colored",
+        "event_count": 37,
+        "first_elimination_event": 17,
+        "first_context_event": -1,
+        "first_conflict_event": -1,
+        "eliminations_before_first_conflict": null,
+        "feedback_context_to_intersection_event": -1,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 11,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 16,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 17,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 36,
+            "kind": "solution",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "odd-wheel-free-center-leaf / 共同條件接口",
+        "case_id": "odd-wheel-free-center-leaf",
+        "role": "relaxed",
+        "mode": "combined-contexts",
+        "vertices": 12,
+        "status": "colored",
+        "event_count": 49,
+        "first_elimination_event": 29,
+        "first_context_event": 17,
+        "first_conflict_event": -1,
+        "eliminations_before_first_conflict": null,
+        "feedback_context_to_intersection_event": -1,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 11,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 17,
+            "kind": "cycle_context",
+            "reasons": [
+              "first_context"
+            ]
+          },
+          {
+            "step": 28,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 29,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 48,
+            "kind": "solution",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "reduced-planar-fixed-gap / 原交集＋原環",
+        "case_id": "reduced-planar-fixed-gap",
+        "role": "secondary",
+        "mode": "combined",
+        "vertices": 9,
+        "status": "unsatisfiable",
+        "event_count": 64,
+        "first_elimination_event": 48,
+        "first_context_event": -1,
+        "first_conflict_event": 62,
+        "eliminations_before_first_conflict": 4,
+        "feedback_context_to_intersection_event": -1,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 15,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 31,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 47,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 48,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 62,
+            "kind": "conflict",
+            "reasons": [
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 63,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "reduced-planar-fixed-gap / 共同條件接口",
+        "case_id": "reduced-planar-fixed-gap",
+        "role": "secondary",
+        "mode": "combined-contexts",
+        "vertices": 9,
+        "status": "unsatisfiable",
+        "event_count": 75,
+        "first_elimination_event": 61,
+        "first_context_event": 48,
+        "first_conflict_event": 73,
+        "eliminations_before_first_conflict": 4,
+        "feedback_context_to_intersection_event": -1,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 15,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 31,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 48,
+            "kind": "cycle_context",
+            "reasons": [
+              "first_context"
+            ]
+          },
+          {
+            "step": 60,
+            "kind": "intersection",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 61,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 73,
+            "kind": "conflict",
+            "reasons": [
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 74,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "feedback-joint-interface / 原交集＋原環",
+        "case_id": "feedback",
+        "role": "feedback",
+        "mode": "combined",
+        "vertices": 12,
+        "status": "colored",
+        "event_count": 49,
+        "first_elimination_event": 22,
+        "first_context_event": -1,
+        "first_conflict_event": -1,
+        "eliminations_before_first_conflict": null,
+        "feedback_context_to_intersection_event": -1,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 18,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 21,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 22,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 30,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 48,
+            "kind": "solution",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "feedback-joint-interface / 共同條件接口",
+        "case_id": "feedback",
+        "role": "feedback",
+        "mode": "combined-contexts",
+        "vertices": 12,
+        "status": "colored",
+        "event_count": 51,
+        "first_elimination_event": 29,
+        "first_context_event": 22,
+        "first_conflict_event": -1,
+        "eliminations_before_first_conflict": null,
+        "feedback_context_to_intersection_event": 25,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 18,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 22,
+            "kind": "cycle_context",
+            "reasons": [
+              "first_context"
+            ]
+          },
+          {
+            "step": 23,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 25,
+            "kind": "intersection",
+            "reasons": [
+              "feedback_context_to_intersection"
+            ]
+          },
+          {
+            "step": 28,
+            "kind": "intersection",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 29,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 50,
+            "kind": "solution",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "javascript_errors": []
+}

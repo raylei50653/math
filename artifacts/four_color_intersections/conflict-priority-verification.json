@@ -1,0 +1,192 @@
+{
+  "schema": "four-color-conflict-priority-verification-v1",
+  "objective": "remove unsupported combinations before writeback and detect incompatibility earlier; elapsed time is not a selection criterion",
+  "controls": 7,
+  "satisfiable": 5,
+  "unsatisfiable": 2,
+  "original_complete_solutions_preserved_per_mode": 174,
+  "solver_rules": "existing exact intersection propagation; no change to solver inference rules in this follow-up",
+  "tests": {
+    "command": "python3 -m unittest discover -s tools/tests -p 'test_four_color*.py' -v",
+    "passed": 120,
+    "new_tests": 6,
+    "log": "conflict-priority-tests.log"
+  },
+  "seed17_replay": {
+    "byte_identical": true,
+    "report_sha256": "3ec404a03d4fdda462d83c23e804e44f55910e83911685db4d62cc0dff074e0a",
+    "report_bytes": 1958721
+  },
+  "sources": {
+    "scripts/four_color_c5.py": "f038d1e79f3a21c50983fe2a876d2dd6a3ca4fb9a62f8611a606d63539b37324",
+    "scripts/four_color_conflict_priority.py": "903fe32c6981de7b6935d3d285027d8dd5d45e949cd8f8efa5c65efb7f8e1df1",
+    "scripts/four_color_conflicts.py": "043b2f612fabe0ff27b296b528cb705e0225d6d0df98d60aafc994ca2b741912",
+    "scripts/four_color_constraints.py": "6c9a0b6a75d9cf6f8de7aa1783a81447b7fcafd8aec337952f8507949be376d0",
+    "scripts/four_color_examples.py": "cfa9f761475072e2e0e57e0b3afc3b527141e1e8b4b9b65e20f239228eafa953",
+    "scripts/four_color_intersection_experiment.py": "9dec577848df71d9599122f37544ec1bbbac7e8c2e4768b43ebcef511eb5260e",
+    "scripts/four_color_intersections.py": "4a33e07e97128c34bbae6b73d6361f26a2667f9621399bd310edcf9bfed278fa",
+    "scripts/four_color_lab.py": "bc4eb76d17bab6b7ac061cb6c6289e56240d865bb94ef92357bcf81c885c5eeb",
+    "tools/tests/test_four_color_conflict_priority.py": "66c22ea7fe14fbc1837e8f85736d92e9798ecba8912b3064983f87002cc30a79"
+  },
+  "source_snapshots_verified": true,
+  "browser": {
+    "success": true,
+    "input": "/home/ray/developer/ai/math/artifacts/four_color_intersections/conflict-priority.html",
+    "chromium": "/home/ray/.cache/puppeteer/chrome/linux-155.0.8059.39/chrome-linux64/chrome",
+    "method": "Native Node WebSocket CDP, headless Chromium",
+    "checked_at": "2026-10-25T04:11:11.681Z",
+    "checks": {
+      "run_count": 14,
+      "total_steps_rendered": 263,
+      "intersection_events_rendered": 9,
+      "nonempty_intersection_events_rendered": 7,
+      "runs": [
+        {
+          "name": "k4_free / 原模式",
+          "enabled": false,
+          "event_count": 10,
+          "intersection_events": 0,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "k4_free / 完整接口交集",
+          "enabled": true,
+          "event_count": 10,
+          "intersection_events": 0,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "bipyramid_restricted_hub / 原模式",
+          "enabled": false,
+          "event_count": 19,
+          "intersection_events": 0,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "bipyramid_restricted_hub / 完整接口交集",
+          "enabled": true,
+          "event_count": 20,
+          "intersection_events": 1,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "bipyramid_incompatible_hubs / 原模式",
+          "enabled": false,
+          "event_count": 16,
+          "intersection_events": 0,
+          "status": "unsatisfiable",
+          "last_kind": "end"
+        },
+        {
+          "name": "bipyramid_incompatible_hubs / 完整接口交集",
+          "enabled": true,
+          "event_count": 12,
+          "intersection_events": 1,
+          "status": "unsatisfiable",
+          "last_kind": "end"
+        },
+        {
+          "name": "odd_five_wheel / 原模式",
+          "enabled": false,
+          "event_count": 14,
+          "intersection_events": 0,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "odd_five_wheel / 完整接口交集",
+          "enabled": true,
+          "event_count": 15,
+          "intersection_events": 1,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "bipyramid_identical_hub_domains / 原模式",
+          "enabled": false,
+          "event_count": 24,
+          "intersection_events": 0,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "bipyramid_identical_hub_domains / 完整接口交集",
+          "enabled": true,
+          "event_count": 24,
+          "intersection_events": 0,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "bipyramid_overlapping_hub_domains / 原模式",
+          "enabled": false,
+          "event_count": 27,
+          "intersection_events": 0,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "bipyramid_overlapping_hub_domains / 完整接口交集",
+          "enabled": true,
+          "event_count": 31,
+          "intersection_events": 1,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "odd_bipyramid_distinct_fixed_hubs / 原模式",
+          "enabled": false,
+          "event_count": 20,
+          "intersection_events": 0,
+          "status": "unsatisfiable",
+          "last_kind": "end"
+        },
+        {
+          "name": "odd_bipyramid_distinct_fixed_hubs / 完整接口交集",
+          "enabled": true,
+          "event_count": 21,
+          "intersection_events": 5,
+          "status": "unsatisfiable",
+          "last_kind": "end"
+        }
+      ],
+      "singleton_overlap_before_elimination": {
+        "run": "bipyramid_overlapping_hub_domains / 完整接口交集",
+        "step": 15,
+        "first_eliminate_step": 16,
+        "hubs": [
+          {
+            "vertex": 3,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 5 個鄰點",
+            "node_aria_label": "頂點 3，{2}"
+          },
+          {
+            "vertex": 4,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 5 個鄰點",
+            "node_aria_label": "頂點 4，{2}"
+          }
+        ],
+        "written_label": "新寫入顏色：0 / 5 個頂點"
+      }
+    },
+    "javascript_errors": []
+  },
+  "semantics": "original-edge oracle checks all full solutions; no uniqueness requirement; actual unsatisfiable contexts remain unsatisfiable; raw conflicts are not minimized",
+  "documentation_checks": {
+    "check_docs": "PASS: 723 Markdown files, 9597 local links",
+    "docgraph_docs_only": "PASS: 98 documents, 386 relations, 12 families; 0 errors, 0 notes",
+    "git_diff_check": "PASS"
+  }
+}

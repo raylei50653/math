@@ -9,6 +9,7 @@
 - [Sector／雙拒絕分類](c5_sector_3903_guide.md)
 - [猜想 E／Kempe／最小來源與重接計數](c5_kempe_guide.md) #進行中
 - [State／grammar／topology 與枚舉](c5_state_guide.md) #進行中
+- [四色染色實驗與約束傳播](four_color_guide.md)
 - [Lean 形式化](lean_guide.md)
 
 `#進行中` 標記正在推進的研究線；無標記不代表完成，列表順序不代表優先級。

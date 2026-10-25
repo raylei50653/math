@@ -1,0 +1,123 @@
+{
+  "schema": "four-color-intersections-verification-v1",
+  "tests": {
+    "command": "python3 -m unittest discover -s tools/tests -p 'test_four_color*.py' -v",
+    "passed": 114,
+    "new_tests": 16,
+    "log": "tests.log"
+  },
+  "hash_seed_replay": {
+    "seed": 17,
+    "mode_results_compared": 68,
+    "matched": [
+      "original graphs",
+      "graph SHA-256",
+      "status",
+      "literal witness",
+      "all work counters",
+      "complete named traces and elimination records"
+    ],
+    "timings_excluded": true,
+    "normal_repeats": 3,
+    "replay_repeats": 1
+  },
+  "source_snapshots_verified": true,
+  "solver_sources": {
+    "four_color_intersection_experiment.py": "9dec577848df71d9599122f37544ec1bbbac7e8c2e4768b43ebcef511eb5260e",
+    "four_color_intersections.py": "4a33e07e97128c34bbae6b73d6361f26a2667f9621399bd310edcf9bfed278fa",
+    "four_color_constraints.py": "6c9a0b6a75d9cf6f8de7aa1783a81447b7fcafd8aec337952f8507949be376d0",
+    "four_color_examples.py": "cfa9f761475072e2e0e57e0b3afc3b527141e1e8b4b9b65e20f239228eafa953",
+    "four_color_lab.py": "bc4eb76d17bab6b7ac061cb6c6289e56240d865bb94ef92357bcf81c885c5eeb",
+    "four_color_c5.py": "f038d1e79f3a21c50983fe2a876d2dd6a3ca4fb9a62f8611a606d63539b37324",
+    "four_color_conflicts.py": "043b2f612fabe0ff27b296b528cb705e0225d6d0df98d60aafc994ca2b741912"
+  },
+  "browser": {
+    "success": true,
+    "input": "/home/ray/developer/ai/math/artifacts/four_color_intersections/index.html",
+    "chromium": "/home/ray/.cache/puppeteer/chrome/linux-155.0.8059.39/chrome-linux64/chrome",
+    "method": "Native Node WebSocket CDP, headless Chromium",
+    "checked_at": "2026-10-25T04:01:29.219Z",
+    "checks": {
+      "run_count": 8,
+      "total_steps_rendered": 116,
+      "intersection_events_rendered": 3,
+      "nonempty_intersection_events_rendered": 2,
+      "runs": [
+        {
+          "name": "k4_free / 原模式",
+          "enabled": false,
+          "event_count": 10,
+          "intersection_events": 0,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "k4_free / 完整接口交集",
+          "enabled": true,
+          "event_count": 10,
+          "intersection_events": 0,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "bipyramid_restricted_hub / 原模式",
+          "enabled": false,
+          "event_count": 19,
+          "intersection_events": 0,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "bipyramid_restricted_hub / 完整接口交集",
+          "enabled": true,
+          "event_count": 20,
+          "intersection_events": 1,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "bipyramid_incompatible_hubs / 原模式",
+          "enabled": false,
+          "event_count": 16,
+          "intersection_events": 0,
+          "status": "unsatisfiable",
+          "last_kind": "end"
+        },
+        {
+          "name": "bipyramid_incompatible_hubs / 完整接口交集",
+          "enabled": true,
+          "event_count": 12,
+          "intersection_events": 1,
+          "status": "unsatisfiable",
+          "last_kind": "end"
+        },
+        {
+          "name": "odd_five_wheel / 原模式",
+          "enabled": false,
+          "event_count": 14,
+          "intersection_events": 0,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "odd_five_wheel / 完整接口交集",
+          "enabled": true,
+          "event_count": 15,
+          "intersection_events": 1,
+          "status": "colored",
+          "last_kind": "solution"
+        }
+      ]
+    },
+    "javascript_errors": []
+  },
+  "semantics": "one legal witness; no uniqueness requirement; limit remains inconclusive; pairwise support is not global satisfiability",
+  "documentation_checks": {
+    "check_docs": "PASS: 723 Markdown files, 9592 local links",
+    "docgraph_docs_only": "PASS: 98 documents, 386 relations, 12 families; 0 errors, 0 notes",
+    "git_diff_check": "PASS"
+  },
+  "viewer_sha256": "39826f1bcd3ea1fd6a3d8fc5b719db165d38202efac5c85021c9e73c21bb20d9",
+  "report_sha256": "cca5011308df21fd4f410dafbd13d1d588f949e07af4211df7ea73b6ccaf9d80",
+  "viewer_template_snapshot_verified": true
+}

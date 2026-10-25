@@ -1,0 +1,2558 @@
+[
+  {
+    "name": "bare_c5",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": false,
+    "c5_scan_method": "complete",
+    "status": "colored",
+    "stats": {
+      "checks": 764,
+      "candidate_checks": 212,
+      "relation_checks": 552,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 5,
+      "writebacks": 5,
+      "conflicts": 0,
+      "peak_scope": 3,
+      "peak_frontier": 2,
+      "peak_rows": 60,
+      "table_rows": 53,
+      "certificate_rows": 165,
+      "template_hits": 5,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 5
+    },
+    "substructures": {
+      "triangles": 0,
+      "k4": 0,
+      "edges": 5,
+      "selected_triangles": 0,
+      "selected_k4": 0,
+      "uncovered_edges": 5,
+      "template_hits": 5,
+      "c5": 0,
+      "c5_selected": 0,
+      "c5_scan_complete": null,
+      "c5_scan_steps": 0,
+      "c5_scan_algorithm": null,
+      "c5_scan_step_unit": null,
+      "c5_scan_method": null,
+      "c5_scan_coverage": null,
+      "c5_local_scan_complete": null,
+      "c5_discovery_centers": [],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [],
+        "k4": [],
+        "selected_triangles": [],
+        "uncovered_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "c5": []
+      }
+    },
+    "graph_sha256": "0cad63b842f7cc88f80954a149b92df898f20625a404f92da7cb7ff7eec422d4"
+  },
+  {
+    "name": "bare_c5",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": true,
+    "c5_scan_method": "complete",
+    "status": "colored",
+    "stats": {
+      "checks": 790,
+      "candidate_checks": 212,
+      "relation_checks": 578,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 5,
+      "writebacks": 5,
+      "conflicts": 0,
+      "peak_scope": 3,
+      "peak_frontier": 2,
+      "peak_rows": 60,
+      "table_rows": 53,
+      "certificate_rows": 165,
+      "template_hits": 5,
+      "c5_queries": 1,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 26,
+      "c5_scan_steps": 13,
+      "c5_inactive_skips": 5,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 5
+    },
+    "substructures": {
+      "triangles": 0,
+      "k4": 0,
+      "edges": 5,
+      "selected_triangles": 0,
+      "selected_k4": 0,
+      "uncovered_edges": 5,
+      "template_hits": 5,
+      "c5": 1,
+      "c5_selected": 1,
+      "c5_scan_complete": true,
+      "c5_scan_steps": 13,
+      "c5_scan_algorithm": "bitset-induced-path-join-v1",
+      "c5_scan_step_unit": "selected candidate extension; setup and bitset filtering uncharged",
+      "c5_scan_method": "complete",
+      "c5_scan_coverage": "all-induced-c5",
+      "c5_local_scan_complete": null,
+      "c5_discovery_centers": [],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [],
+        "k4": [],
+        "selected_triangles": [],
+        "uncovered_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "c5": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    "graph_sha256": "0cad63b842f7cc88f80954a149b92df898f20625a404f92da7cb7ff7eec422d4"
+  },
+  {
+    "name": "bare_c5",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": true,
+    "c5_scan_method": "local",
+    "status": "colored",
+    "stats": {
+      "checks": 764,
+      "candidate_checks": 212,
+      "relation_checks": 552,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 5,
+      "writebacks": 5,
+      "conflicts": 0,
+      "peak_scope": 3,
+      "peak_frontier": 2,
+      "peak_rows": 60,
+      "table_rows": 53,
+      "certificate_rows": 165,
+      "template_hits": 5,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 5,
+      "c5_inactive_skips": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 5
+    },
+    "substructures": {
+      "triangles": 0,
+      "k4": 0,
+      "edges": 5,
+      "selected_triangles": 0,
+      "selected_k4": 0,
+      "uncovered_edges": 5,
+      "template_hits": 5,
+      "c5": 0,
+      "c5_selected": 0,
+      "c5_scan_complete": false,
+      "c5_scan_steps": 5,
+      "c5_scan_algorithm": "degree-five-neighbor-ring-v1",
+      "c5_scan_step_unit": "one inspected center; graph preparation uncharged",
+      "c5_scan_method": "local",
+      "c5_scan_coverage": "degree-five-neighbor-rings",
+      "c5_local_scan_complete": true,
+      "c5_discovery_centers": [],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [],
+        "k4": [],
+        "selected_triangles": [],
+        "uncovered_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "c5": []
+      }
+    },
+    "graph_sha256": "0cad63b842f7cc88f80954a149b92df898f20625a404f92da7cb7ff7eec422d4"
+  },
+  {
+    "name": "c5_bipyramid_free",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": false,
+    "c5_scan_method": "complete",
+    "status": "colored",
+    "stats": {
+      "checks": 9520,
+      "candidate_checks": 3412,
+      "relation_checks": 6108,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 7,
+      "writebacks": 7,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 240,
+      "table_rows": 201,
+      "certificate_rows": 641,
+      "template_hits": 10,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 7
+    },
+    "substructures": {
+      "triangles": 10,
+      "k4": 0,
+      "edges": 15,
+      "selected_triangles": 10,
+      "selected_k4": 0,
+      "uncovered_edges": 0,
+      "template_hits": 10,
+      "c5": 0,
+      "c5_selected": 0,
+      "c5_scan_complete": null,
+      "c5_scan_steps": 0,
+      "c5_scan_algorithm": null,
+      "c5_scan_step_unit": null,
+      "c5_scan_method": null,
+      "c5_scan_coverage": null,
+      "c5_local_scan_complete": null,
+      "c5_discovery_centers": [],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "k4": [],
+        "selected_triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "uncovered_edges": [],
+        "c5": []
+      }
+    },
+    "graph_sha256": "b150fba6da579fc06cb9c09fc41d9a351763982e7989f069966b25013fcd3252"
+  },
+  {
+    "name": "c5_bipyramid_free",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": true,
+    "c5_scan_method": "complete",
+    "status": "colored",
+    "stats": {
+      "checks": 9546,
+      "candidate_checks": 3412,
+      "relation_checks": 6134,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 7,
+      "writebacks": 7,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 240,
+      "table_rows": 201,
+      "certificate_rows": 641,
+      "template_hits": 10,
+      "c5_queries": 1,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 26,
+      "c5_scan_steps": 33,
+      "c5_inactive_skips": 7,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 7
+    },
+    "substructures": {
+      "triangles": 10,
+      "k4": 0,
+      "edges": 15,
+      "selected_triangles": 10,
+      "selected_k4": 0,
+      "uncovered_edges": 0,
+      "template_hits": 10,
+      "c5": 1,
+      "c5_selected": 1,
+      "c5_scan_complete": true,
+      "c5_scan_steps": 33,
+      "c5_scan_algorithm": "bitset-induced-path-join-v1",
+      "c5_scan_step_unit": "selected candidate extension; setup and bitset filtering uncharged",
+      "c5_scan_method": "complete",
+      "c5_scan_coverage": "all-induced-c5",
+      "c5_local_scan_complete": null,
+      "c5_discovery_centers": [],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "k4": [],
+        "selected_triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "uncovered_edges": [],
+        "c5": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    "graph_sha256": "b150fba6da579fc06cb9c09fc41d9a351763982e7989f069966b25013fcd3252"
+  },
+  {
+    "name": "c5_bipyramid_free",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": true,
+    "c5_scan_method": "local",
+    "status": "colored",
+    "stats": {
+      "checks": 9546,
+      "candidate_checks": 3412,
+      "relation_checks": 6134,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 7,
+      "writebacks": 7,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 240,
+      "table_rows": 201,
+      "certificate_rows": 641,
+      "template_hits": 10,
+      "c5_queries": 1,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 26,
+      "c5_scan_steps": 7,
+      "c5_inactive_skips": 7,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 7
+    },
+    "substructures": {
+      "triangles": 10,
+      "k4": 0,
+      "edges": 15,
+      "selected_triangles": 10,
+      "selected_k4": 0,
+      "uncovered_edges": 0,
+      "template_hits": 10,
+      "c5": 1,
+      "c5_selected": 1,
+      "c5_scan_complete": false,
+      "c5_scan_steps": 7,
+      "c5_scan_algorithm": "degree-five-neighbor-ring-v1",
+      "c5_scan_step_unit": "one inspected center; graph preparation uncharged",
+      "c5_scan_method": "local",
+      "c5_scan_coverage": "degree-five-neighbor-rings",
+      "c5_local_scan_complete": true,
+      "c5_discovery_centers": [
+        [
+          5,
+          6
+        ]
+      ],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "k4": [],
+        "selected_triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "uncovered_edges": [],
+        "c5": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    "graph_sha256": "b150fba6da579fc06cb9c09fc41d9a351763982e7989f069966b25013fcd3252"
+  },
+  {
+    "name": "c5_two_color_conflict",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": false,
+    "c5_scan_method": "complete",
+    "status": "unsatisfiable",
+    "stats": {
+      "checks": 406,
+      "candidate_checks": 28,
+      "relation_checks": 378,
+      "prunes": 10,
+      "row_prunes": 220,
+      "eliminations": 3,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 240,
+      "table_rows": 6,
+      "certificate_rows": 32,
+      "template_hits": 10,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "substructures": {
+      "triangles": 10,
+      "k4": 0,
+      "edges": 15,
+      "selected_triangles": 10,
+      "selected_k4": 0,
+      "uncovered_edges": 0,
+      "template_hits": 10,
+      "c5": 0,
+      "c5_selected": 0,
+      "c5_scan_complete": null,
+      "c5_scan_steps": 0,
+      "c5_scan_algorithm": null,
+      "c5_scan_step_unit": null,
+      "c5_scan_method": null,
+      "c5_scan_coverage": null,
+      "c5_local_scan_complete": null,
+      "c5_discovery_centers": [],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "k4": [],
+        "selected_triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "uncovered_edges": [],
+        "c5": []
+      }
+    },
+    "graph_sha256": "b62f0ef6daac0344af6cd112d2dd3ee5b00f8841c342405885a68f18ed75b02e"
+  },
+  {
+    "name": "c5_two_color_conflict",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": true,
+    "c5_scan_method": "complete",
+    "status": "unsatisfiable",
+    "stats": {
+      "checks": 266,
+      "candidate_checks": 0,
+      "relation_checks": 266,
+      "prunes": 20,
+      "row_prunes": 210,
+      "eliminations": 0,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 3,
+      "peak_frontier": 0,
+      "peak_rows": 240,
+      "table_rows": 0,
+      "certificate_rows": 0,
+      "template_hits": 10,
+      "c5_queries": 1,
+      "c5_skips": 0,
+      "c5_prunes": 10,
+      "c5_conflicts": 1,
+      "c5_index_ops": 26,
+      "c5_scan_steps": 33,
+      "c5_inactive_skips": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "substructures": {
+      "triangles": 10,
+      "k4": 0,
+      "edges": 15,
+      "selected_triangles": 10,
+      "selected_k4": 0,
+      "uncovered_edges": 0,
+      "template_hits": 10,
+      "c5": 1,
+      "c5_selected": 1,
+      "c5_scan_complete": true,
+      "c5_scan_steps": 33,
+      "c5_scan_algorithm": "bitset-induced-path-join-v1",
+      "c5_scan_step_unit": "selected candidate extension; setup and bitset filtering uncharged",
+      "c5_scan_method": "complete",
+      "c5_scan_coverage": "all-induced-c5",
+      "c5_local_scan_complete": null,
+      "c5_discovery_centers": [],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "k4": [],
+        "selected_triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "uncovered_edges": [],
+        "c5": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    "graph_sha256": "b62f0ef6daac0344af6cd112d2dd3ee5b00f8841c342405885a68f18ed75b02e"
+  },
+  {
+    "name": "c5_two_color_conflict",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": true,
+    "c5_scan_method": "local",
+    "status": "unsatisfiable",
+    "stats": {
+      "checks": 266,
+      "candidate_checks": 0,
+      "relation_checks": 266,
+      "prunes": 20,
+      "row_prunes": 210,
+      "eliminations": 0,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 3,
+      "peak_frontier": 0,
+      "peak_rows": 240,
+      "table_rows": 0,
+      "certificate_rows": 0,
+      "template_hits": 10,
+      "c5_queries": 1,
+      "c5_skips": 0,
+      "c5_prunes": 10,
+      "c5_conflicts": 1,
+      "c5_index_ops": 26,
+      "c5_scan_steps": 7,
+      "c5_inactive_skips": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "substructures": {
+      "triangles": 10,
+      "k4": 0,
+      "edges": 15,
+      "selected_triangles": 10,
+      "selected_k4": 0,
+      "uncovered_edges": 0,
+      "template_hits": 10,
+      "c5": 1,
+      "c5_selected": 1,
+      "c5_scan_complete": false,
+      "c5_scan_steps": 7,
+      "c5_scan_algorithm": "degree-five-neighbor-ring-v1",
+      "c5_scan_step_unit": "one inspected center; graph preparation uncharged",
+      "c5_scan_method": "local",
+      "c5_scan_coverage": "degree-five-neighbor-rings",
+      "c5_local_scan_complete": true,
+      "c5_discovery_centers": [
+        [
+          5,
+          6
+        ]
+      ],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "k4": [],
+        "selected_triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "uncovered_edges": [],
+        "c5": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    "graph_sha256": "b62f0ef6daac0344af6cd112d2dd3ee5b00f8841c342405885a68f18ed75b02e"
+  },
+  {
+    "name": "c5_forced_exit",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": false,
+    "c5_scan_method": "complete",
+    "status": "colored",
+    "stats": {
+      "checks": 380,
+      "candidate_checks": 36,
+      "relation_checks": 344,
+      "prunes": 9,
+      "row_prunes": 172,
+      "eliminations": 7,
+      "writebacks": 5,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 192,
+      "table_rows": 17,
+      "certificate_rows": 53,
+      "template_hits": 8,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 5
+    },
+    "substructures": {
+      "triangles": 8,
+      "k4": 0,
+      "edges": 14,
+      "selected_triangles": 8,
+      "selected_k4": 0,
+      "uncovered_edges": 0,
+      "template_hits": 8,
+      "c5": 0,
+      "c5_selected": 0,
+      "c5_scan_complete": null,
+      "c5_scan_steps": 0,
+      "c5_scan_algorithm": null,
+      "c5_scan_step_unit": null,
+      "c5_scan_method": null,
+      "c5_scan_coverage": null,
+      "c5_local_scan_complete": null,
+      "c5_discovery_centers": [],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "k4": [],
+        "selected_triangles": [
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "uncovered_edges": [],
+        "c5": []
+      }
+    },
+    "graph_sha256": "5def53a3af0c9d8e38f6205157aed903471fc0ffdb34befb2f4c0d46063e80cd"
+  },
+  {
+    "name": "c5_forced_exit",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": true,
+    "c5_scan_method": "complete",
+    "status": "colored",
+    "stats": {
+      "checks": 382,
+      "candidate_checks": 28,
+      "relation_checks": 354,
+      "prunes": 11,
+      "row_prunes": 176,
+      "eliminations": 7,
+      "writebacks": 5,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 192,
+      "table_rows": 17,
+      "certificate_rows": 49,
+      "template_hits": 8,
+      "c5_queries": 1,
+      "c5_skips": 2,
+      "c5_prunes": 2,
+      "c5_conflicts": 0,
+      "c5_index_ops": 26,
+      "c5_scan_steps": 36,
+      "c5_inactive_skips": 7,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 5
+    },
+    "substructures": {
+      "triangles": 8,
+      "k4": 0,
+      "edges": 14,
+      "selected_triangles": 8,
+      "selected_k4": 0,
+      "uncovered_edges": 0,
+      "template_hits": 8,
+      "c5": 1,
+      "c5_selected": 1,
+      "c5_scan_complete": true,
+      "c5_scan_steps": 36,
+      "c5_scan_algorithm": "bitset-induced-path-join-v1",
+      "c5_scan_step_unit": "selected candidate extension; setup and bitset filtering uncharged",
+      "c5_scan_method": "complete",
+      "c5_scan_coverage": "all-induced-c5",
+      "c5_local_scan_complete": null,
+      "c5_discovery_centers": [],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "k4": [],
+        "selected_triangles": [
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "uncovered_edges": [],
+        "c5": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    "graph_sha256": "5def53a3af0c9d8e38f6205157aed903471fc0ffdb34befb2f4c0d46063e80cd"
+  },
+  {
+    "name": "c5_forced_exit",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": true,
+    "c5_scan_method": "local",
+    "status": "colored",
+    "stats": {
+      "checks": 382,
+      "candidate_checks": 28,
+      "relation_checks": 354,
+      "prunes": 11,
+      "row_prunes": 176,
+      "eliminations": 7,
+      "writebacks": 5,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 192,
+      "table_rows": 17,
+      "certificate_rows": 49,
+      "template_hits": 8,
+      "c5_queries": 1,
+      "c5_skips": 2,
+      "c5_prunes": 2,
+      "c5_conflicts": 0,
+      "c5_index_ops": 26,
+      "c5_scan_steps": 7,
+      "c5_inactive_skips": 7,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 5
+    },
+    "substructures": {
+      "triangles": 8,
+      "k4": 0,
+      "edges": 14,
+      "selected_triangles": 8,
+      "selected_k4": 0,
+      "uncovered_edges": 0,
+      "template_hits": 8,
+      "c5": 1,
+      "c5_selected": 1,
+      "c5_scan_complete": false,
+      "c5_scan_steps": 7,
+      "c5_scan_algorithm": "degree-five-neighbor-ring-v1",
+      "c5_scan_step_unit": "one inspected center; graph preparation uncharged",
+      "c5_scan_method": "local",
+      "c5_scan_coverage": "degree-five-neighbor-rings",
+      "c5_local_scan_complete": true,
+      "c5_discovery_centers": [
+        [
+          6
+        ]
+      ],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "k4": [],
+        "selected_triangles": [
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            6
+          ]
+        ],
+        "uncovered_edges": [],
+        "c5": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    "graph_sha256": "5def53a3af0c9d8e38f6205157aed903471fc0ffdb34befb2f4c0d46063e80cd"
+  },
+  {
+    "name": "triangulation_n12_seed8",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": false,
+    "c5_scan_method": "complete",
+    "status": "colored",
+    "stats": {
+      "checks": 15856,
+      "candidate_checks": 5460,
+      "relation_checks": 10396,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 12,
+      "writebacks": 12,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 312,
+      "table_rows": 401,
+      "certificate_rows": 1113,
+      "template_hits": 13,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 12
+    },
+    "substructures": {
+      "triangles": 24,
+      "k4": 4,
+      "edges": 30,
+      "selected_triangles": 9,
+      "selected_k4": 4,
+      "uncovered_edges": 0,
+      "template_hits": 13,
+      "c5": 0,
+      "c5_selected": 0,
+      "c5_scan_complete": null,
+      "c5_scan_steps": 0,
+      "c5_scan_algorithm": null,
+      "c5_scan_step_unit": null,
+      "c5_scan_method": null,
+      "c5_scan_coverage": null,
+      "c5_local_scan_complete": null,
+      "c5_discovery_centers": [],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            10
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            2,
+            8
+          ],
+          [
+            0,
+            5,
+            10
+          ],
+          [
+            0,
+            7,
+            8
+          ],
+          [
+            0,
+            7,
+            11
+          ],
+          [
+            0,
+            10,
+            11
+          ],
+          [
+            1,
+            5,
+            10
+          ],
+          [
+            2,
+            5,
+            6
+          ],
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            2,
+            7,
+            8
+          ],
+          [
+            3,
+            6,
+            9
+          ],
+          [
+            3,
+            6,
+            10
+          ],
+          [
+            3,
+            9,
+            10
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            4,
+            6,
+            10
+          ],
+          [
+            4,
+            7,
+            11
+          ],
+          [
+            4,
+            10,
+            11
+          ],
+          [
+            5,
+            6,
+            9
+          ],
+          [
+            5,
+            6,
+            10
+          ],
+          [
+            5,
+            9,
+            10
+          ],
+          [
+            6,
+            9,
+            10
+          ]
+        ],
+        "k4": [
+          [
+            0,
+            1,
+            5,
+            10
+          ],
+          [
+            0,
+            2,
+            7,
+            8
+          ],
+          [
+            3,
+            6,
+            9,
+            10
+          ],
+          [
+            5,
+            6,
+            9,
+            10
+          ]
+        ],
+        "selected_triangles": [
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            7,
+            11
+          ],
+          [
+            0,
+            10,
+            11
+          ],
+          [
+            2,
+            5,
+            6
+          ],
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            4,
+            6,
+            10
+          ],
+          [
+            4,
+            7,
+            11
+          ],
+          [
+            4,
+            10,
+            11
+          ]
+        ],
+        "uncovered_edges": [],
+        "c5": []
+      }
+    },
+    "graph_sha256": "7f6e1bbb36ef7a4b8e2398689851e7eb459906e1c0b6c50d58d7450ebb0ebf22"
+  },
+  {
+    "name": "triangulation_n12_seed8",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": true,
+    "c5_scan_method": "complete",
+    "status": "colored",
+    "stats": {
+      "checks": 15960,
+      "candidate_checks": 5460,
+      "relation_checks": 10500,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 12,
+      "writebacks": 12,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 312,
+      "table_rows": 401,
+      "certificate_rows": 1113,
+      "template_hits": 13,
+      "c5_queries": 4,
+      "c5_skips": 17,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 104,
+      "c5_scan_steps": 115,
+      "c5_inactive_skips": 31,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 12
+    },
+    "substructures": {
+      "triangles": 24,
+      "k4": 4,
+      "edges": 30,
+      "selected_triangles": 9,
+      "selected_k4": 4,
+      "uncovered_edges": 0,
+      "template_hits": 13,
+      "c5": 4,
+      "c5_selected": 4,
+      "c5_scan_complete": true,
+      "c5_scan_steps": 115,
+      "c5_scan_algorithm": "bitset-induced-path-join-v1",
+      "c5_scan_step_unit": "selected candidate extension; setup and bitset filtering uncharged",
+      "c5_scan_method": "complete",
+      "c5_scan_coverage": "all-induced-c5",
+      "c5_local_scan_complete": null,
+      "c5_discovery_centers": [],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            10
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            2,
+            8
+          ],
+          [
+            0,
+            5,
+            10
+          ],
+          [
+            0,
+            7,
+            8
+          ],
+          [
+            0,
+            7,
+            11
+          ],
+          [
+            0,
+            10,
+            11
+          ],
+          [
+            1,
+            5,
+            10
+          ],
+          [
+            2,
+            5,
+            6
+          ],
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            2,
+            7,
+            8
+          ],
+          [
+            3,
+            6,
+            9
+          ],
+          [
+            3,
+            6,
+            10
+          ],
+          [
+            3,
+            9,
+            10
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            4,
+            6,
+            10
+          ],
+          [
+            4,
+            7,
+            11
+          ],
+          [
+            4,
+            10,
+            11
+          ],
+          [
+            5,
+            6,
+            9
+          ],
+          [
+            5,
+            6,
+            10
+          ],
+          [
+            5,
+            9,
+            10
+          ],
+          [
+            6,
+            9,
+            10
+          ]
+        ],
+        "k4": [
+          [
+            0,
+            1,
+            5,
+            10
+          ],
+          [
+            0,
+            2,
+            7,
+            8
+          ],
+          [
+            3,
+            6,
+            9,
+            10
+          ],
+          [
+            5,
+            6,
+            9,
+            10
+          ]
+        ],
+        "selected_triangles": [
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            7,
+            11
+          ],
+          [
+            0,
+            10,
+            11
+          ],
+          [
+            2,
+            5,
+            6
+          ],
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            4,
+            6,
+            10
+          ],
+          [
+            4,
+            7,
+            11
+          ],
+          [
+            4,
+            10,
+            11
+          ]
+        ],
+        "uncovered_edges": [],
+        "c5": [
+          [
+            0,
+            2,
+            6,
+            4,
+            11
+          ],
+          [
+            0,
+            5,
+            6,
+            4,
+            11
+          ],
+          [
+            2,
+            5,
+            10,
+            4,
+            7
+          ],
+          [
+            2,
+            5,
+            10,
+            11,
+            7
+          ]
+        ]
+      }
+    },
+    "graph_sha256": "7f6e1bbb36ef7a4b8e2398689851e7eb459906e1c0b6c50d58d7450ebb0ebf22"
+  },
+  {
+    "name": "triangulation_n12_seed8",
+    "engine": "constraints",
+    "use_substructures": true,
+    "use_c5": true,
+    "c5_scan_method": "local",
+    "status": "colored",
+    "stats": {
+      "checks": 15856,
+      "candidate_checks": 5460,
+      "relation_checks": 10396,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 12,
+      "writebacks": 12,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 312,
+      "table_rows": 401,
+      "certificate_rows": 1113,
+      "template_hits": 13,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 12,
+      "c5_inactive_skips": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 12
+    },
+    "substructures": {
+      "triangles": 24,
+      "k4": 4,
+      "edges": 30,
+      "selected_triangles": 9,
+      "selected_k4": 4,
+      "uncovered_edges": 0,
+      "template_hits": 13,
+      "c5": 0,
+      "c5_selected": 0,
+      "c5_scan_complete": false,
+      "c5_scan_steps": 12,
+      "c5_scan_algorithm": "degree-five-neighbor-ring-v1",
+      "c5_scan_step_unit": "one inspected center; graph preparation uncharged",
+      "c5_scan_method": "local",
+      "c5_scan_coverage": "degree-five-neighbor-rings",
+      "c5_local_scan_complete": true,
+      "c5_discovery_centers": [],
+      "c5_scan_truncated": false,
+      "c5_template_rows": 240,
+      "template_hits_definition": "initial edge/triangle/K4 factors reuse immutable tables; C5 lookups are counted as c5_queries; no cached graph solutions",
+      "instances": {
+        "triangles": [
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            10
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            2,
+            8
+          ],
+          [
+            0,
+            5,
+            10
+          ],
+          [
+            0,
+            7,
+            8
+          ],
+          [
+            0,
+            7,
+            11
+          ],
+          [
+            0,
+            10,
+            11
+          ],
+          [
+            1,
+            5,
+            10
+          ],
+          [
+            2,
+            5,
+            6
+          ],
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            2,
+            7,
+            8
+          ],
+          [
+            3,
+            6,
+            9
+          ],
+          [
+            3,
+            6,
+            10
+          ],
+          [
+            3,
+            9,
+            10
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            4,
+            6,
+            10
+          ],
+          [
+            4,
+            7,
+            11
+          ],
+          [
+            4,
+            10,
+            11
+          ],
+          [
+            5,
+            6,
+            9
+          ],
+          [
+            5,
+            6,
+            10
+          ],
+          [
+            5,
+            9,
+            10
+          ],
+          [
+            6,
+            9,
+            10
+          ]
+        ],
+        "k4": [
+          [
+            0,
+            1,
+            5,
+            10
+          ],
+          [
+            0,
+            2,
+            7,
+            8
+          ],
+          [
+            3,
+            6,
+            9,
+            10
+          ],
+          [
+            5,
+            6,
+            9,
+            10
+          ]
+        ],
+        "selected_triangles": [
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            7,
+            11
+          ],
+          [
+            0,
+            10,
+            11
+          ],
+          [
+            2,
+            5,
+            6
+          ],
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            4,
+            6,
+            7
+          ],
+          [
+            4,
+            6,
+            10
+          ],
+          [
+            4,
+            7,
+            11
+          ],
+          [
+            4,
+            10,
+            11
+          ]
+        ],
+        "uncovered_edges": [],
+        "c5": []
+      }
+    },
+    "graph_sha256": "7f6e1bbb36ef7a4b8e2398689851e7eb459906e1c0b6c50d58d7450ebb0ebf22"
+  }
+]

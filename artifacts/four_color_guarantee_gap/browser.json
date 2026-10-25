@@ -1,0 +1,466 @@
+{
+  "success": true,
+  "input": "/home/ray/developer/ai/math/artifacts/four_color_guarantee_gap/index.html",
+  "input_sha256": "798ca74f72b66db26d6f4b14172f308f1c0b350e50e97b5f60881d29cf4df2e6",
+  "input_sha256_after": "798ca74f72b66db26d6f4b14172f308f1c0b350e50e97b5f60881d29cf4df2e6",
+  "input_unchanged": true,
+  "chromium": "/home/ray/.cache/puppeteer/chrome/linux-155.0.8059.39/chrome-linux64/chrome",
+  "method": "Native Node WebSocket CDP, headless Chromium",
+  "checked_at": "2026-10-25T05:01:18.382Z",
+  "checks": {
+    "sampling_policy": "Start, before first elimination, first elimination, first cycle, first intersection, first conflict, final; absent and duplicate steps skipped",
+    "run_count": 8,
+    "total_events_available": 398,
+    "total_steps_rendered": 46,
+    "intersection_events_rendered": 2,
+    "cycle_events_rendered": 16,
+    "reduction_snapshots_checked_no_early_colouring": 362,
+    "sat_witnesses_verified_on_original_edges_and_fixes": 4,
+    "unsat_runs_with_nonempty_stable_initial_domains": 4,
+    "runs": [
+      {
+        "name": "odd-wheel-private-fixed-leaves / 交集＋原環",
+        "case_id": "odd-wheel-private-fixed-leaves",
+        "mode": "combined",
+        "vertices": 12,
+        "status": "unsatisfiable",
+        "event_count": 33,
+        "first_elimination_event": 23,
+        "first_conflict_event": 31,
+        "eliminations_before_first_conflict": 8,
+        "pre_elimination_domains_nonempty": true,
+        "pre_elimination_unknown_colours_unwritten": true,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 18,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 22,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 23,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 31,
+            "kind": "conflict",
+            "reasons": [
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 32,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "odd-wheel-private-fixed-leaves / 交集＋原環＋結構C₅",
+        "case_id": "odd-wheel-private-fixed-leaves",
+        "mode": "c5structure",
+        "vertices": 12,
+        "status": "unsatisfiable",
+        "event_count": 34,
+        "first_elimination_event": 24,
+        "first_conflict_event": 32,
+        "eliminations_before_first_conflict": 8,
+        "pre_elimination_domains_nonempty": true,
+        "pre_elimination_unknown_colours_unwritten": true,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 19,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 23,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 24,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 32,
+            "kind": "conflict",
+            "reasons": [
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 33,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "even-wheel-private-fixed-leaves / 交集＋原環",
+        "case_id": "even-wheel-private-fixed-leaves",
+        "mode": "combined",
+        "vertices": 14,
+        "status": "colored",
+        "event_count": 49,
+        "first_elimination_event": 27,
+        "first_conflict_event": -1,
+        "eliminations_before_first_conflict": null,
+        "pre_elimination_domains_nonempty": true,
+        "pre_elimination_unknown_colours_unwritten": true,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 21,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 26,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 27,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 48,
+            "kind": "solution",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "even-wheel-private-fixed-leaves / 交集＋原環＋結構C₅",
+        "case_id": "even-wheel-private-fixed-leaves",
+        "mode": "c5structure",
+        "vertices": 14,
+        "status": "colored",
+        "event_count": 49,
+        "first_elimination_event": 27,
+        "first_conflict_event": -1,
+        "eliminations_before_first_conflict": null,
+        "pre_elimination_domains_nonempty": true,
+        "pre_elimination_unknown_colours_unwritten": true,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 21,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 26,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 27,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 48,
+            "kind": "solution",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "odd-wheel-free-center-leaf / 交集＋原環",
+        "case_id": "odd-wheel-free-center-leaf",
+        "mode": "combined",
+        "vertices": 12,
+        "status": "colored",
+        "event_count": 42,
+        "first_elimination_event": 22,
+        "first_conflict_event": -1,
+        "eliminations_before_first_conflict": null,
+        "pre_elimination_domains_nonempty": true,
+        "pre_elimination_unknown_colours_unwritten": true,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 16,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 21,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 22,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 41,
+            "kind": "solution",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "odd-wheel-free-center-leaf / 交集＋原環＋結構C₅",
+        "case_id": "odd-wheel-free-center-leaf",
+        "mode": "c5structure",
+        "vertices": 12,
+        "status": "colored",
+        "event_count": 43,
+        "first_elimination_event": 23,
+        "first_conflict_event": -1,
+        "eliminations_before_first_conflict": null,
+        "pre_elimination_domains_nonempty": true,
+        "pre_elimination_unknown_colours_unwritten": true,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 17,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 22,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 23,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 42,
+            "kind": "solution",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "reduced-planar-fixed-gap / 交集＋原環",
+        "case_id": "reduced-planar-fixed-gap",
+        "mode": "combined",
+        "vertices": 9,
+        "status": "unsatisfiable",
+        "event_count": 68,
+        "first_elimination_event": 52,
+        "first_conflict_event": 66,
+        "eliminations_before_first_conflict": 4,
+        "pre_elimination_domains_nonempty": true,
+        "pre_elimination_unknown_colours_unwritten": true,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 23,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 35,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 51,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 52,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 66,
+            "kind": "conflict",
+            "reasons": [
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 67,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "reduced-planar-fixed-gap / 交集＋原環＋結構C₅",
+        "case_id": "reduced-planar-fixed-gap",
+        "mode": "c5structure",
+        "vertices": 9,
+        "status": "unsatisfiable",
+        "event_count": 80,
+        "first_elimination_event": 64,
+        "first_conflict_event": 78,
+        "eliminations_before_first_conflict": 4,
+        "pre_elimination_domains_nonempty": true,
+        "pre_elimination_unknown_colours_unwritten": true,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 23,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 47,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 63,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 64,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 78,
+            "kind": "conflict",
+            "reasons": [
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 79,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "javascript_errors": []
+}

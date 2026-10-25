@@ -1,0 +1,99 @@
+{
+  "schema": "math-publication-propagation-audit-v1",
+  "checked_at_utc": "2026-10-25T05:36:51.300015+00:00",
+  "root": "/home/ray/developer/ai/math",
+  "scope": [
+    {
+      "scope": "four_color_local_information",
+      "document": "docs/four_color_local_information.md",
+      "local_link_paths_checked": 16,
+      "source_snapshots_checked": 0,
+      "source_manifest_current_matches": 2,
+      "historical_source_drift": [],
+      "compressed_run_records_checked": 0
+    },
+    {
+      "scope": "four_color_intersections",
+      "document": "docs/four_color_intersections.md",
+      "local_link_paths_checked": 16,
+      "source_snapshots_checked": 7,
+      "source_manifest_current_matches": 5,
+      "historical_source_drift": [
+        "scripts/four_color_constraints.py",
+        "scripts/four_color_lab.py"
+      ],
+      "compressed_run_records_checked": 0
+    },
+    {
+      "scope": "four_color_larger_structures",
+      "document": "docs/four_color_larger_structures.md",
+      "local_link_paths_checked": 9,
+      "source_snapshots_checked": 12,
+      "source_manifest_current_matches": 10,
+      "historical_source_drift": [
+        "scripts/four_color_constraints.py",
+        "scripts/four_color_lab.py"
+      ],
+      "compressed_run_records_checked": 72
+    },
+    {
+      "scope": "four_color_combined_cycles",
+      "document": "docs/four_color_combined_cycles.md",
+      "local_link_paths_checked": 13,
+      "source_snapshots_checked": 27,
+      "source_manifest_current_matches": 24,
+      "historical_source_drift": [
+        "scripts/four_color_constraints.py",
+        "scripts/four_color_lab.py",
+        "tools/four_color_lab_viewer.html"
+      ],
+      "compressed_run_records_checked": 108
+    },
+    {
+      "scope": "four_color_guarantee_gap",
+      "document": "docs/four_color_guarantee_gap.md",
+      "local_link_paths_checked": 11,
+      "source_snapshots_checked": 28,
+      "source_manifest_current_matches": 25,
+      "historical_source_drift": [
+        "scripts/four_color_constraints.py",
+        "scripts/four_color_lab.py",
+        "tools/four_color_lab_viewer.html"
+      ],
+      "compressed_run_records_checked": 8
+    },
+    {
+      "scope": "four_color_cycle_contexts",
+      "document": "docs/four_color_cycle_contexts.md",
+      "local_link_paths_checked": 11,
+      "source_snapshots_checked": 31,
+      "source_manifest_current_matches": 31,
+      "historical_source_drift": [],
+      "compressed_run_records_checked": 80
+    }
+  ],
+  "totals": {
+    "documents": 6,
+    "local_link_paths_checked": 76,
+    "source_snapshots_checked": 105,
+    "compressed_run_records_checked": 268,
+    "top_level_receipt_artifact_hashes_checked": 12
+  },
+  "local_information_in_memory_replay_byte_identical": true,
+  "methods": [
+    "Check each local Markdown target path exists; anchor validity is outside this receipt.",
+    "Hash source snapshots against each stage report/verification manifest; record later live-source drift separately.",
+    "Hash every referenced compressed run against compressed_record_sha256, decompress JSON, compare status with report.",
+    "Compare top-level report/viewer/input SHA fields from verification receipts where supplied.",
+    "Recompute local_information.build_report() in memory and compare serialized bytes."
+  ],
+  "limitations": [
+    "Historical browser checks were not rerun; existing browser receipts remain historical evidence.",
+    "Normal/seed-17 batch experiments were not rerun by this audit.",
+    "No new graph search, source classification, theorem or formal-program-verification claim.",
+    "Historical sources intentionally differ from current shared solver/CLI/viewer; frozen snapshots supply the original program version.",
+    "Large structured families use exact global scope projections; random SAT cases only retain specified reference witnesses."
+  ],
+  "errors": [],
+  "passed": true
+}

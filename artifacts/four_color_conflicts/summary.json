@@ -1,0 +1,1584 @@
+[
+  {
+    "name": "fixed_edge_conflict",
+    "status": "unsatisfiable",
+    "comparison_mode": "guards",
+    "stats": {
+      "checks": 1,
+      "candidate_checks": 0,
+      "relation_checks": 1,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 0,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 2,
+      "peak_frontier": 0,
+      "peak_rows": 12,
+      "table_rows": 0,
+      "certificate_rows": 0,
+      "template_hits": 1,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 1,
+      "known_conflicts": 1,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "graph_sha256": "7003189be7bcccbdc26b6691cf832069d9d81c7add739ff17d4e418f68cd4a82",
+    "use_conflicts": true,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": [
+      {
+        "id": "fixed_edge",
+        "template_id": "fixed_edge",
+        "name": "原邊同色",
+        "vertices": [
+          -7,
+          30
+        ],
+        "edges": [
+          [
+            -7,
+            30
+          ]
+        ],
+        "domains": [
+          {
+            "vertex": -7,
+            "colors": [
+              2
+            ]
+          },
+          {
+            "vertex": 30,
+            "colors": [
+              2
+            ]
+          }
+        ],
+        "fixed": [
+          [
+            30,
+            2
+          ],
+          [
+            -7,
+            2
+          ]
+        ],
+        "condition": "原邊兩端都只剩同一色。",
+        "scope": "current-domains",
+        "empty_relation": true,
+        "relation_rows": 0,
+        "role_mapping": [
+          -7,
+          30
+        ],
+        "causal_edges": [
+          [
+            -7,
+            30
+          ]
+        ],
+        "causal_vertices": [
+          -7,
+          30
+        ]
+      }
+    ]
+  },
+  {
+    "name": "fixed_edge_conflict",
+    "status": "unsatisfiable",
+    "comparison_mode": "baseline",
+    "stats": {
+      "checks": 12,
+      "candidate_checks": 0,
+      "relation_checks": 12,
+      "prunes": 1,
+      "row_prunes": 12,
+      "eliminations": 0,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 2,
+      "peak_frontier": 0,
+      "peak_rows": 12,
+      "table_rows": 0,
+      "certificate_rows": 0,
+      "template_hits": 1,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "graph_sha256": "7003189be7bcccbdc26b6691cf832069d9d81c7add739ff17d4e418f68cd4a82",
+    "use_conflicts": false,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "star_free",
+    "status": "colored",
+    "comparison_mode": "guards",
+    "stats": {
+      "checks": 377,
+      "candidate_checks": 68,
+      "relation_checks": 309,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 5,
+      "writebacks": 5,
+      "conflicts": 0,
+      "peak_scope": 2,
+      "peak_frontier": 1,
+      "peak_rows": 48,
+      "table_rows": 17,
+      "certificate_rows": 81,
+      "template_hits": 4,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 57,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 5
+    },
+    "graph_sha256": "39a35dca40de6ebde04c738739107548b72d65bee85b94063236308e80bdaea2",
+    "use_conflicts": true,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "star_free",
+    "status": "colored",
+    "comparison_mode": "baseline",
+    "stats": {
+      "checks": 320,
+      "candidate_checks": 68,
+      "relation_checks": 252,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 5,
+      "writebacks": 5,
+      "conflicts": 0,
+      "peak_scope": 2,
+      "peak_frontier": 1,
+      "peak_rows": 48,
+      "table_rows": 17,
+      "certificate_rows": 81,
+      "template_hits": 4,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 5
+    },
+    "graph_sha256": "39a35dca40de6ebde04c738739107548b72d65bee85b94063236308e80bdaea2",
+    "use_conflicts": false,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "star_fixed_four_colours",
+    "status": "unsatisfiable",
+    "comparison_mode": "guards",
+    "stats": {
+      "checks": 8,
+      "candidate_checks": 0,
+      "relation_checks": 8,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 0,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 2,
+      "peak_frontier": 0,
+      "peak_rows": 48,
+      "table_rows": 0,
+      "certificate_rows": 0,
+      "template_hits": 4,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 8,
+      "known_conflicts": 1,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "graph_sha256": "dcb03193f678a619160c4b8e926e9af5b61c1a96c7c6dd69920e50ef8c82ea18",
+    "use_conflicts": true,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": [
+      {
+        "id": "four_color_star",
+        "template_id": "four_color_star",
+        "name": "四色阻擋星形",
+        "vertices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "domains": [
+          {
+            "vertex": 0,
+            "colors": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "vertex": 1,
+            "colors": [
+              0
+            ]
+          },
+          {
+            "vertex": 2,
+            "colors": [
+              1
+            ]
+          },
+          {
+            "vertex": 3,
+            "colors": [
+              2
+            ]
+          },
+          {
+            "vertex": 4,
+            "colors": [
+              3
+            ]
+          }
+        ],
+        "fixed": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "condition": "四個不同原鄰點的唯一色覆蓋四色。",
+        "scope": "current-domains",
+        "empty_relation": true,
+        "relation_rows": 0,
+        "role_mapping": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "center": 0,
+        "causal_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "causal_vertices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "name": "star_fixed_four_colours",
+    "status": "unsatisfiable",
+    "comparison_mode": "baseline",
+    "stats": {
+      "checks": 48,
+      "candidate_checks": 0,
+      "relation_checks": 48,
+      "prunes": 4,
+      "row_prunes": 42,
+      "eliminations": 0,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 2,
+      "peak_frontier": 0,
+      "peak_rows": 48,
+      "table_rows": 0,
+      "certificate_rows": 0,
+      "template_hits": 4,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "graph_sha256": "dcb03193f678a619160c4b8e926e9af5b61c1a96c7c6dd69920e50ef8c82ea18",
+    "use_conflicts": false,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "triangle_joint_free",
+    "status": "colored",
+    "comparison_mode": "guards",
+    "stats": {
+      "checks": 1534,
+      "candidate_checks": 596,
+      "relation_checks": 938,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 5,
+      "writebacks": 5,
+      "conflicts": 0,
+      "peak_scope": 4,
+      "peak_frontier": 3,
+      "peak_rows": 48,
+      "table_rows": 65,
+      "certificate_rows": 177,
+      "template_hits": 2,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 182,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 5
+    },
+    "graph_sha256": "12a91dbc9348f74b4aead18a334eb168d0f8b1a234b5e1a62964b6bcbdfbb6e8",
+    "use_conflicts": true,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "triangle_joint_free",
+    "status": "colored",
+    "comparison_mode": "baseline",
+    "stats": {
+      "checks": 1352,
+      "candidate_checks": 596,
+      "relation_checks": 756,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 5,
+      "writebacks": 5,
+      "conflicts": 0,
+      "peak_scope": 4,
+      "peak_frontier": 3,
+      "peak_rows": 48,
+      "table_rows": 65,
+      "certificate_rows": 177,
+      "template_hits": 2,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 5
+    },
+    "graph_sha256": "12a91dbc9348f74b4aead18a334eb168d0f8b1a234b5e1a62964b6bcbdfbb6e8",
+    "use_conflicts": false,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "triangle_joint_conflict",
+    "status": "unsatisfiable",
+    "comparison_mode": "guards",
+    "stats": {
+      "checks": 70,
+      "candidate_checks": 0,
+      "relation_checks": 70,
+      "prunes": 6,
+      "row_prunes": 0,
+      "eliminations": 0,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 4,
+      "peak_frontier": 0,
+      "peak_rows": 48,
+      "table_rows": 0,
+      "certificate_rows": 0,
+      "template_hits": 2,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 70,
+      "known_conflicts": 1,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "graph_sha256": "e18508e34e85d3978d277dcebb18a3db097a569445814ddef89528faf6030d22",
+    "use_conflicts": true,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": [
+      {
+        "id": "triangle_two_colors",
+        "template_id": "triangle_two_colors",
+        "name": "三角形兩色矛盾",
+        "vertices": [
+          0,
+          1,
+          2
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "domains": [
+          {
+            "vertex": 0,
+            "colors": [
+              0,
+              1
+            ]
+          },
+          {
+            "vertex": 1,
+            "colors": [
+              0,
+              1
+            ]
+          },
+          {
+            "vertex": 2,
+            "colors": [
+              0,
+              1
+            ]
+          }
+        ],
+        "fixed": [
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "condition": "原三角形的候選色聯集至多兩色。",
+        "scope": "current-domains",
+        "empty_relation": true,
+        "relation_rows": 0,
+        "role_mapping": [
+          0,
+          1,
+          2
+        ],
+        "causal_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "causal_vertices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "name": "triangle_joint_conflict",
+    "status": "unsatisfiable",
+    "comparison_mode": "baseline",
+    "stats": {
+      "checks": 48,
+      "candidate_checks": 0,
+      "relation_checks": 48,
+      "prunes": 6,
+      "row_prunes": 42,
+      "eliminations": 0,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 4,
+      "peak_frontier": 0,
+      "peak_rows": 48,
+      "table_rows": 0,
+      "certificate_rows": 0,
+      "template_hits": 2,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "graph_sha256": "e18508e34e85d3978d277dcebb18a3db097a569445814ddef89528faf6030d22",
+    "use_conflicts": false,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "c5_bipyramid_free",
+    "status": "colored",
+    "comparison_mode": "guards",
+    "stats": {
+      "checks": 9971,
+      "candidate_checks": 3412,
+      "relation_checks": 6559,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 7,
+      "writebacks": 7,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 240,
+      "table_rows": 201,
+      "certificate_rows": 641,
+      "template_hits": 10,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 451,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 7
+    },
+    "graph_sha256": "b150fba6da579fc06cb9c09fc41d9a351763982e7989f069966b25013fcd3252",
+    "use_conflicts": true,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "c5_bipyramid_free",
+    "status": "colored",
+    "comparison_mode": "baseline",
+    "stats": {
+      "checks": 9520,
+      "candidate_checks": 3412,
+      "relation_checks": 6108,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 7,
+      "writebacks": 7,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 240,
+      "table_rows": 201,
+      "certificate_rows": 641,
+      "template_hits": 10,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 7
+    },
+    "graph_sha256": "b150fba6da579fc06cb9c09fc41d9a351763982e7989f069966b25013fcd3252",
+    "use_conflicts": false,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "c5_bipyramid_free",
+    "status": "colored",
+    "comparison_mode": "structure",
+    "stats": {
+      "checks": 9647,
+      "candidate_checks": 3412,
+      "relation_checks": 6235,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 7,
+      "writebacks": 7,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 244,
+      "table_rows": 201,
+      "certificate_rows": 645,
+      "template_hits": 10,
+      "c5_queries": 1,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 33,
+      "c5_inactive_skips": 7,
+      "c5_structure_ops": 99,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 1,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 7
+    },
+    "graph_sha256": "b150fba6da579fc06cb9c09fc41d9a351763982e7989f069966b25013fcd3252",
+    "use_conflicts": false,
+    "use_c5": true,
+    "c5_method": "structure",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "c5_bipyramid_free",
+    "status": "colored",
+    "comparison_mode": "table",
+    "stats": {
+      "checks": 9546,
+      "candidate_checks": 3412,
+      "relation_checks": 6134,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 7,
+      "writebacks": 7,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 240,
+      "table_rows": 201,
+      "certificate_rows": 641,
+      "template_hits": 10,
+      "c5_queries": 1,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 26,
+      "c5_scan_steps": 33,
+      "c5_inactive_skips": 7,
+      "c5_structure_ops": 0,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 7
+    },
+    "graph_sha256": "b150fba6da579fc06cb9c09fc41d9a351763982e7989f069966b25013fcd3252",
+    "use_conflicts": false,
+    "use_c5": true,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "c5_two_color_conflict",
+    "status": "unsatisfiable",
+    "comparison_mode": "guards",
+    "stats": {
+      "checks": 138,
+      "candidate_checks": 0,
+      "relation_checks": 138,
+      "prunes": 10,
+      "row_prunes": 0,
+      "eliminations": 0,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 3,
+      "peak_frontier": 0,
+      "peak_rows": 240,
+      "table_rows": 0,
+      "certificate_rows": 0,
+      "template_hits": 10,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 138,
+      "known_conflicts": 1,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "graph_sha256": "b62f0ef6daac0344af6cd112d2dd3ee5b00f8841c342405885a68f18ed75b02e",
+    "use_conflicts": true,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": [
+      {
+        "id": "c5_two_colors",
+        "template_id": "c5_two_colors",
+        "name": "五環兩色奇偶矛盾",
+        "vertices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "domains": [
+          {
+            "vertex": 0,
+            "colors": [
+              0,
+              1
+            ]
+          },
+          {
+            "vertex": 1,
+            "colors": [
+              0,
+              1
+            ]
+          },
+          {
+            "vertex": 2,
+            "colors": [
+              0,
+              1
+            ]
+          },
+          {
+            "vertex": 3,
+            "colors": [
+              0,
+              1
+            ]
+          },
+          {
+            "vertex": 4,
+            "colors": [
+              0,
+              1
+            ]
+          }
+        ],
+        "fixed": [
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            3
+          ]
+        ],
+        "condition": "原五環的候選色聯集至多兩色。",
+        "scope": "current-domains",
+        "empty_relation": true,
+        "relation_rows": 0,
+        "role_mapping": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "palette": [
+          0,
+          1
+        ],
+        "causal_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "causal_vertices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "name": "c5_two_color_conflict",
+    "status": "unsatisfiable",
+    "comparison_mode": "baseline",
+    "stats": {
+      "checks": 406,
+      "candidate_checks": 28,
+      "relation_checks": 378,
+      "prunes": 10,
+      "row_prunes": 220,
+      "eliminations": 3,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 240,
+      "table_rows": 6,
+      "certificate_rows": 32,
+      "template_hits": 10,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "graph_sha256": "b62f0ef6daac0344af6cd112d2dd3ee5b00f8841c342405885a68f18ed75b02e",
+    "use_conflicts": false,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "c5_two_color_conflict",
+    "status": "unsatisfiable",
+    "comparison_mode": "structure",
+    "stats": {
+      "checks": 244,
+      "candidate_checks": 0,
+      "relation_checks": 244,
+      "prunes": 11,
+      "row_prunes": 214,
+      "eliminations": 0,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 3,
+      "peak_frontier": 0,
+      "peak_rows": 244,
+      "table_rows": 0,
+      "certificate_rows": 0,
+      "template_hits": 10,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 33,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 1,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "graph_sha256": "b62f0ef6daac0344af6cd112d2dd3ee5b00f8841c342405885a68f18ed75b02e",
+    "use_conflicts": false,
+    "use_c5": true,
+    "c5_method": "structure",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "c5_two_color_conflict",
+    "status": "unsatisfiable",
+    "comparison_mode": "table",
+    "stats": {
+      "checks": 266,
+      "candidate_checks": 0,
+      "relation_checks": 266,
+      "prunes": 20,
+      "row_prunes": 210,
+      "eliminations": 0,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 3,
+      "peak_frontier": 0,
+      "peak_rows": 240,
+      "table_rows": 0,
+      "certificate_rows": 0,
+      "template_hits": 10,
+      "c5_queries": 1,
+      "c5_skips": 0,
+      "c5_prunes": 10,
+      "c5_conflicts": 1,
+      "c5_index_ops": 26,
+      "c5_scan_steps": 33,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "graph_sha256": "b62f0ef6daac0344af6cd112d2dd3ee5b00f8841c342405885a68f18ed75b02e",
+    "use_conflicts": false,
+    "use_c5": true,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "c5_forced_exit",
+    "status": "colored",
+    "comparison_mode": "guards",
+    "stats": {
+      "checks": 919,
+      "candidate_checks": 36,
+      "relation_checks": 883,
+      "prunes": 9,
+      "row_prunes": 172,
+      "eliminations": 7,
+      "writebacks": 5,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 192,
+      "table_rows": 17,
+      "certificate_rows": 53,
+      "template_hits": 8,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 567,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 5
+    },
+    "graph_sha256": "5def53a3af0c9d8e38f6205157aed903471fc0ffdb34befb2f4c0d46063e80cd",
+    "use_conflicts": true,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "c5_forced_exit",
+    "status": "colored",
+    "comparison_mode": "baseline",
+    "stats": {
+      "checks": 380,
+      "candidate_checks": 36,
+      "relation_checks": 344,
+      "prunes": 9,
+      "row_prunes": 172,
+      "eliminations": 7,
+      "writebacks": 5,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 192,
+      "table_rows": 17,
+      "certificate_rows": 53,
+      "template_hits": 8,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 5
+    },
+    "graph_sha256": "5def53a3af0c9d8e38f6205157aed903471fc0ffdb34befb2f4c0d46063e80cd",
+    "use_conflicts": false,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "c5_forced_exit",
+    "status": "colored",
+    "comparison_mode": "structure",
+    "stats": {
+      "checks": 432,
+      "candidate_checks": 28,
+      "relation_checks": 404,
+      "prunes": 11,
+      "row_prunes": 176,
+      "eliminations": 7,
+      "writebacks": 5,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 192,
+      "table_rows": 17,
+      "certificate_rows": 49,
+      "template_hits": 8,
+      "c5_queries": 1,
+      "c5_skips": 2,
+      "c5_prunes": 2,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 36,
+      "c5_inactive_skips": 7,
+      "c5_structure_ops": 76,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 5
+    },
+    "graph_sha256": "5def53a3af0c9d8e38f6205157aed903471fc0ffdb34befb2f4c0d46063e80cd",
+    "use_conflicts": false,
+    "use_c5": true,
+    "c5_method": "structure",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "c5_forced_exit",
+    "status": "colored",
+    "comparison_mode": "table",
+    "stats": {
+      "checks": 382,
+      "candidate_checks": 28,
+      "relation_checks": 354,
+      "prunes": 11,
+      "row_prunes": 176,
+      "eliminations": 7,
+      "writebacks": 5,
+      "conflicts": 0,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 192,
+      "table_rows": 17,
+      "certificate_rows": 49,
+      "template_hits": 8,
+      "c5_queries": 1,
+      "c5_skips": 2,
+      "c5_prunes": 2,
+      "c5_conflicts": 0,
+      "c5_index_ops": 26,
+      "c5_scan_steps": 36,
+      "c5_inactive_skips": 7,
+      "c5_structure_ops": 0,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 5
+    },
+    "graph_sha256": "5def53a3af0c9d8e38f6205157aed903471fc0ffdb34befb2f4c0d46063e80cd",
+    "use_conflicts": false,
+    "use_c5": true,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  },
+  {
+    "name": "k5_nonplanar_control",
+    "status": "unsatisfiable",
+    "comparison_mode": "guards",
+    "stats": {
+      "checks": 45,
+      "candidate_checks": 0,
+      "relation_checks": 45,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 0,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 4,
+      "peak_frontier": 0,
+      "peak_rows": 120,
+      "table_rows": 0,
+      "certificate_rows": 0,
+      "template_hits": 5,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 45,
+      "known_conflicts": 1,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "graph_sha256": "0f9c807a41dc3d67debdfd49494d62c7281863117856894504fcd572481b01a7",
+    "use_conflicts": true,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": [
+      {
+        "id": "k5",
+        "template_id": "k5",
+        "name": "原 K5",
+        "vertices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "domains": [
+          {
+            "vertex": 0,
+            "colors": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "vertex": 1,
+            "colors": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "vertex": 2,
+            "colors": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "vertex": 3,
+            "colors": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "vertex": 4,
+            "colors": [
+              0,
+              1,
+              2,
+              3
+            ]
+          }
+        ],
+        "fixed": [],
+        "condition": "五個不同原頂點的十條原邊全部存在。",
+        "scope": "current-domains",
+        "empty_relation": true,
+        "relation_rows": 0,
+        "role_mapping": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "causal_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "causal_vertices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "name": "k5_nonplanar_control",
+    "status": "unsatisfiable",
+    "comparison_mode": "baseline",
+    "stats": {
+      "checks": 2288,
+      "candidate_checks": 1024,
+      "relation_checks": 1264,
+      "prunes": 0,
+      "row_prunes": 0,
+      "eliminations": 0,
+      "writebacks": 0,
+      "conflicts": 1,
+      "peak_scope": 5,
+      "peak_frontier": 4,
+      "peak_rows": 120,
+      "table_rows": 0,
+      "certificate_rows": 96,
+      "template_hits": 5,
+      "c5_queries": 0,
+      "c5_skips": 0,
+      "c5_prunes": 0,
+      "c5_conflicts": 0,
+      "c5_index_ops": 0,
+      "c5_scan_steps": 0,
+      "c5_inactive_skips": 0,
+      "c5_structure_ops": 0,
+      "conflict_checks": 0,
+      "known_conflicts": 0,
+      "self_constraints": 0,
+      "decisions": 0,
+      "backtracks": 0,
+      "assignments": 0
+    },
+    "graph_sha256": "0f9c807a41dc3d67debdfd49494d62c7281863117856894504fcd572481b01a7",
+    "use_conflicts": false,
+    "use_c5": false,
+    "c5_method": "table",
+    "conflict_subgraphs": []
+  }
+]

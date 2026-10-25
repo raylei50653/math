@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-25",
+  "baseline_head": "494208f482cf3891dabbb1be04de22c08997a464",
+  "tests": {
+    "command": "python3 -m unittest discover -s tools/tests -p 'test_four_color*.py' -v",
+    "passed": 98,
+    "new_local_information_tests": 18
+  },
+  "finite_cycle_audit": {
+    "lengths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "domain_cases": 144,
+    "mismatches": 0
+  },
+  "seed17_byte_identical": true,
+  "source_sha256": {
+    "scripts/four_color_local_information.py": "82475ee576d9ae2101dd289a57f778c270b68aa827be2403b9ca1f7fb8057c89",
+    "tools/tests/test_four_color_local_information.py": "cc9881da0d8b39aebae8661da3eb9f6d6b2129726da0419d5bfa17384b091dd4"
+  },
+  "artifact_sha256": "21fcdc2abe1fa7f2c0dc1684aae64783e1f3f1425d24376257530225ed117c0e",
+  "artifact_bytes": 232953,
+  "production_scope": "standalone generic path/cycle summaries and separator validator; main finder still C5",
+  "theory_authority": "existing Math/LocalClosure.lean summary_glue/replacement/hub_iff; no new Lean code",
+  "documentation": {
+    "check_docs": "PASS: 722 Markdown files, 9579 local links",
+    "docs_docgraph": "PASS: 98 documents, 0 errors",
+    "diff_check": "PASS"
+  }
+}

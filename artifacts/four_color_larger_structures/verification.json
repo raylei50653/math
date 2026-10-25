@@ -1,0 +1,706 @@
+{
+  "schema": "four-color-larger-verification-v1",
+  "tests": {
+    "passed": 134,
+    "new_tests": 14,
+    "command": "python3 -m unittest discover -s tools/tests -p 'test_four_color*.py' -v",
+    "log": "tests.log"
+  },
+  "replay": {
+    "seed": 17,
+    "byte_identical_files": 74,
+    "byte_identical_run_records": 72,
+    "environment": {
+      "python": "3.14.8",
+      "networkx": "3.5"
+    },
+    "frozen_inputs_sha256": "60b37010d4cec3cf6c079f9f2f46a255defe5d3092a561fe3669316efe68bf81"
+  },
+  "references": {
+    "structured": "exact graph-bound global projections for all saved domains/input rows/reconstruction choices; no omitted projection",
+    "random_sat": "one independent source witness in all saved records; not all solutions",
+    "random_unsat": "exhaustive independent original-edge search"
+  },
+  "source_snapshots_verified": true,
+  "sources": {
+    "scripts/four_color_c5.py": "f038d1e79f3a21c50983fe2a876d2dd6a3ca4fb9a62f8611a606d63539b37324",
+    "scripts/four_color_conflict_priority.py": "903fe32c6981de7b6935d3d285027d8dd5d45e949cd8f8efa5c65efb7f8e1df1",
+    "scripts/four_color_conflicts.py": "043b2f612fabe0ff27b296b528cb705e0225d6d0df98d60aafc994ca2b741912",
+    "scripts/four_color_constraints.py": "6c9a0b6a75d9cf6f8de7aa1783a81447b7fcafd8aec337952f8507949be376d0",
+    "scripts/four_color_examples.py": "cfa9f761475072e2e0e57e0b3afc3b527141e1e8b4b9b65e20f239228eafa953",
+    "scripts/four_color_intersection_experiment.py": "9dec577848df71d9599122f37544ec1bbbac7e8c2e4768b43ebcef511eb5260e",
+    "scripts/four_color_intersections.py": "4a33e07e97128c34bbae6b73d6361f26a2667f9621399bd310edcf9bfed278fa",
+    "scripts/four_color_lab.py": "bc4eb76d17bab6b7ac061cb6c6289e56240d865bb94ef92357bcf81c885c5eeb",
+    "scripts/four_color_larger_cases.py": "3121e10d7b33bd8dcfd9472040aaea87d12739fab39ddcc57f4d9e64cc53eddf",
+    "scripts/four_color_larger_experiment.py": "034643493152a937de31ef8751879653ed29f6c035cbecd176676ee216e26394",
+    "scripts/four_color_larger_random.py": "736f74367c2f4489c6b405777be01990d273f614632c4fa0fbe7b256e9c7b24e",
+    "tools/tests/test_four_color_larger_cases.py": "24d97f80241df0473d80625816c8fb40eeef2c1cdb5647e06a4f87f2ce718c1e"
+  },
+  "report_sha256": "55a779f54bc18f88bda065e4fadc853f66ebd258721789f44013d1e727f61c13",
+  "viewer_sha256": "325dda56515342b031ad5d72874621e3323b9cbc3e95678871a323db82e56a63",
+  "browser": {
+    "success": true,
+    "input": "/home/ray/developer/ai/math/artifacts/four_color_larger_structures/index.html",
+    "chromium": "/home/ray/.cache/puppeteer/chrome/linux-155.0.8059.39/chrome-linux64/chrome",
+    "method": "Native Node WebSocket CDP, headless Chromium",
+    "checked_at": "2026-10-25T04:29:35.628Z",
+    "checks": {
+      "sampling_policy": "Start, before first elimination, first elimination, first intersection, first conflict, final; absent steps skipped and duplicate steps deduplicated",
+      "total_events_available": 1877,
+      "run_count": 8,
+      "total_steps_rendered": 38,
+      "intersection_events_rendered": 5,
+      "nonempty_intersection_events_rendered": 5,
+      "runs": [
+        {
+          "name": "equality-chain-m24-incompatible / 原模式",
+          "vertices": 101,
+          "enabled": false,
+          "event_count": 155,
+          "sampled_steps": [
+            {
+              "step": 0,
+              "kind": "start",
+              "reasons": [
+                "start"
+              ]
+            },
+            {
+              "step": 8,
+              "kind": "propagate",
+              "reasons": [
+                "before_first_eliminate"
+              ]
+            },
+            {
+              "step": 9,
+              "kind": "eliminate",
+              "reasons": [
+                "first_eliminate"
+              ]
+            },
+            {
+              "step": 153,
+              "kind": "conflict",
+              "reasons": [
+                "first_conflict"
+              ]
+            },
+            {
+              "step": 154,
+              "kind": "end",
+              "reasons": [
+                "final"
+              ]
+            }
+          ],
+          "intersection_events_sampled": 0,
+          "status": "unsatisfiable",
+          "last_kind": "end"
+        },
+        {
+          "name": "equality-chain-m24-incompatible / 完整接口交集",
+          "vertices": 101,
+          "enabled": true,
+          "event_count": 80,
+          "sampled_steps": [
+            {
+              "step": 0,
+              "kind": "start",
+              "reasons": [
+                "start"
+              ]
+            },
+            {
+              "step": 9,
+              "kind": "intersection",
+              "reasons": [
+                "first_intersection"
+              ]
+            },
+            {
+              "step": 78,
+              "kind": "conflict",
+              "reasons": [
+                "first_conflict"
+              ]
+            },
+            {
+              "step": 79,
+              "kind": "end",
+              "reasons": [
+                "final"
+              ]
+            }
+          ],
+          "intersection_events_sampled": 1,
+          "status": "unsatisfiable",
+          "last_kind": "end"
+        },
+        {
+          "name": "equality-binary-m30-incompatible / 原模式",
+          "vertices": 125,
+          "enabled": false,
+          "event_count": 143,
+          "sampled_steps": [
+            {
+              "step": 0,
+              "kind": "start",
+              "reasons": [
+                "start"
+              ]
+            },
+            {
+              "step": 9,
+              "kind": "propagate",
+              "reasons": [
+                "before_first_eliminate"
+              ]
+            },
+            {
+              "step": 10,
+              "kind": "eliminate",
+              "reasons": [
+                "first_eliminate"
+              ]
+            },
+            {
+              "step": 141,
+              "kind": "conflict",
+              "reasons": [
+                "first_conflict"
+              ]
+            },
+            {
+              "step": 142,
+              "kind": "end",
+              "reasons": [
+                "final"
+              ]
+            }
+          ],
+          "intersection_events_sampled": 0,
+          "status": "unsatisfiable",
+          "last_kind": "end"
+        },
+        {
+          "name": "equality-binary-m30-incompatible / 完整接口交集",
+          "vertices": 125,
+          "enabled": true,
+          "event_count": 48,
+          "sampled_steps": [
+            {
+              "step": 0,
+              "kind": "start",
+              "reasons": [
+                "start"
+              ]
+            },
+            {
+              "step": 10,
+              "kind": "intersection",
+              "reasons": [
+                "first_intersection"
+              ]
+            },
+            {
+              "step": 46,
+              "kind": "conflict",
+              "reasons": [
+                "first_conflict"
+              ]
+            },
+            {
+              "step": 47,
+              "kind": "end",
+              "reasons": [
+                "final"
+              ]
+            }
+          ],
+          "intersection_events_sampled": 1,
+          "status": "unsatisfiable",
+          "last_kind": "end"
+        },
+        {
+          "name": "equality-binary-m30-overlap / 原模式",
+          "vertices": 125,
+          "enabled": false,
+          "event_count": 267,
+          "sampled_steps": [
+            {
+              "step": 0,
+              "kind": "start",
+              "reasons": [
+                "start"
+              ]
+            },
+            {
+              "step": 9,
+              "kind": "propagate",
+              "reasons": [
+                "before_first_eliminate"
+              ]
+            },
+            {
+              "step": 10,
+              "kind": "eliminate",
+              "reasons": [
+                "first_eliminate"
+              ]
+            },
+            {
+              "step": 266,
+              "kind": "solution",
+              "reasons": [
+                "final"
+              ]
+            }
+          ],
+          "intersection_events_sampled": 0,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "equality-binary-m30-overlap / 完整接口交集",
+          "vertices": 125,
+          "enabled": true,
+          "event_count": 407,
+          "sampled_steps": [
+            {
+              "step": 0,
+              "kind": "start",
+              "reasons": [
+                "start"
+              ]
+            },
+            {
+              "step": 10,
+              "kind": "intersection",
+              "reasons": [
+                "first_intersection"
+              ]
+            },
+            {
+              "step": 159,
+              "kind": "propagate",
+              "reasons": [
+                "before_first_eliminate"
+              ]
+            },
+            {
+              "step": 160,
+              "kind": "eliminate",
+              "reasons": [
+                "first_eliminate"
+              ]
+            },
+            {
+              "step": 406,
+              "kind": "solution",
+              "reasons": [
+                "final"
+              ]
+            }
+          ],
+          "intersection_events_sampled": 1,
+          "status": "colored",
+          "last_kind": "solution"
+        },
+        {
+          "name": "double-wheel-rim97-fixed23 / 原模式",
+          "vertices": 99,
+          "enabled": false,
+          "event_count": 388,
+          "sampled_steps": [
+            {
+              "step": 0,
+              "kind": "start",
+              "reasons": [
+                "start"
+              ]
+            },
+            {
+              "step": 290,
+              "kind": "propagate",
+              "reasons": [
+                "before_first_eliminate"
+              ]
+            },
+            {
+              "step": 291,
+              "kind": "eliminate",
+              "reasons": [
+                "first_eliminate"
+              ]
+            },
+            {
+              "step": 386,
+              "kind": "conflict",
+              "reasons": [
+                "first_conflict"
+              ]
+            },
+            {
+              "step": 387,
+              "kind": "end",
+              "reasons": [
+                "final"
+              ]
+            }
+          ],
+          "intersection_events_sampled": 0,
+          "status": "unsatisfiable",
+          "last_kind": "end"
+        },
+        {
+          "name": "double-wheel-rim97-fixed23 / 完整接口交集",
+          "vertices": 99,
+          "enabled": true,
+          "event_count": 389,
+          "sampled_steps": [
+            {
+              "step": 0,
+              "kind": "start",
+              "reasons": [
+                "start"
+              ]
+            },
+            {
+              "step": 195,
+              "kind": "intersection",
+              "reasons": [
+                "first_intersection"
+              ]
+            },
+            {
+              "step": 290,
+              "kind": "intersection",
+              "reasons": [
+                "before_first_eliminate"
+              ]
+            },
+            {
+              "step": 291,
+              "kind": "eliminate",
+              "reasons": [
+                "first_eliminate"
+              ]
+            },
+            {
+              "step": 387,
+              "kind": "conflict",
+              "reasons": [
+                "first_conflict"
+              ]
+            },
+            {
+              "step": 388,
+              "kind": "end",
+              "reasons": [
+                "final"
+              ]
+            }
+          ],
+          "intersection_events_sampled": 2,
+          "status": "unsatisfiable",
+          "last_kind": "end"
+        }
+      ],
+      "singleton_overlap_before_elimination": {
+        "run": "equality-binary-m30-overlap / 完整接口交集",
+        "step": 159,
+        "first_eliminate_step": 160,
+        "hubs": [
+          {
+            "vertex": 0,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 8 個鄰點",
+            "node_aria_label": "頂點 0，{2}"
+          },
+          {
+            "vertex": 1,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 9 個鄰點",
+            "node_aria_label": "頂點 1，{2}"
+          },
+          {
+            "vertex": 2,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 9 個鄰點",
+            "node_aria_label": "頂點 2，{2}"
+          },
+          {
+            "vertex": 3,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 9 個鄰點",
+            "node_aria_label": "頂點 3，{2}"
+          },
+          {
+            "vertex": 4,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 9 個鄰點",
+            "node_aria_label": "頂點 4，{2}"
+          },
+          {
+            "vertex": 5,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 9 個鄰點",
+            "node_aria_label": "頂點 5，{2}"
+          },
+          {
+            "vertex": 6,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 9 個鄰點",
+            "node_aria_label": "頂點 6，{2}"
+          },
+          {
+            "vertex": 7,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 9 個鄰點",
+            "node_aria_label": "頂點 7，{2}"
+          },
+          {
+            "vertex": 8,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 9 個鄰點",
+            "node_aria_label": "頂點 8，{2}"
+          },
+          {
+            "vertex": 9,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 9 個鄰點",
+            "node_aria_label": "頂點 9，{2}"
+          },
+          {
+            "vertex": 10,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 9 個鄰點",
+            "node_aria_label": "頂點 10，{2}"
+          },
+          {
+            "vertex": 11,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 9 個鄰點",
+            "node_aria_label": "頂點 11，{2}"
+          },
+          {
+            "vertex": 12,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 9 個鄰點",
+            "node_aria_label": "頂點 12，{2}"
+          },
+          {
+            "vertex": 13,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 9 個鄰點",
+            "node_aria_label": "頂點 13，{2}"
+          },
+          {
+            "vertex": 14,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 9 個鄰點",
+            "node_aria_label": "頂點 14，{2}"
+          },
+          {
+            "vertex": 15,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 15，{2}"
+          },
+          {
+            "vertex": 16,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 16，{2}"
+          },
+          {
+            "vertex": 17,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 17，{2}"
+          },
+          {
+            "vertex": 18,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 18，{2}"
+          },
+          {
+            "vertex": 19,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 19，{2}"
+          },
+          {
+            "vertex": 20,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 20，{2}"
+          },
+          {
+            "vertex": 21,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 21，{2}"
+          },
+          {
+            "vertex": 22,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 22，{2}"
+          },
+          {
+            "vertex": 23,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 23，{2}"
+          },
+          {
+            "vertex": 24,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 24，{2}"
+          },
+          {
+            "vertex": 25,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 25，{2}"
+          },
+          {
+            "vertex": 26,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 26，{2}"
+          },
+          {
+            "vertex": 27,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 27，{2}"
+          },
+          {
+            "vertex": 28,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 28，{2}"
+          },
+          {
+            "vertex": 29,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 3 個鄰點",
+            "node_aria_label": "頂點 29，{2}"
+          },
+          {
+            "vertex": 30,
+            "literal_domain": [
+              1
+            ],
+            "assigned_colour": -1,
+            "visible_status": "未染色 · 1 個可用色 · 5 個鄰點",
+            "node_aria_label": "頂點 30，{2}"
+          }
+        ],
+        "written_label": "新寫入顏色：0 / 121 個頂點"
+      }
+    },
+    "javascript_errors": []
+  },
+  "documentation_checks": {
+    "check_docs": "PASS: 724 Markdown files, 9607 local links",
+    "docgraph_docs_only": "PASS: 98 documents, 386 relations, 12 families; 0 errors, 0 notes",
+    "git_diff_check": "PASS"
+  },
+  "viewer_template_sha256": "9917b6fbb7c6a7dc944987239f88479acb7bd3b88ff18bc328c5675c532e45dd"
+}

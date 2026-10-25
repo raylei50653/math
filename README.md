@@ -95,6 +95,12 @@ lake exe cache get
 
 ## Python 產生器與大型 artifacts
 
+[四色染色實驗與約束傳播](docs/four_color_guide.md)提供求解器、有限比較及逐步播放器。
+執行 `python3 scripts/four_color_lab.py demo`，再開啟 `artifacts/four_color_lab/index.html`；
+`constraint-demo`、`c5-demo`、`conflict-demo` 展示完整關係消元／回填、五環與已知衝突。
+自己的圖可用 `python3 scripts/four_color_lab.py solve graph.json --engine constraints --intersections --cycles --cycle-contexts`，
+保留共同接口與原環條件，最後倒序回填；適用範圍及未解保證見導覽。
+
 `scripts/` 的第三方依賴鎖在 `requirements.txt`（Python 3.14）。1 MB 以上的產生檔
 （JSON、JSONL、bin）不進 git，只在 [`artifacts/MANIFEST.json`](artifacts/MANIFEST.json) 記錄
 sha256、大小與產生器；這些檔案列在 `.gitignore` 的自動產生區塊。新 clone 之後重建並逐位元組驗證：

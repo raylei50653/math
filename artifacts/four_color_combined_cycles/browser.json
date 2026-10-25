@@ -1,0 +1,548 @@
+{
+  "success": true,
+  "input": "/home/ray/developer/ai/math/artifacts/four_color_combined_cycles/index.html",
+  "input_sha256": "4718c0f83e53061c8be7c2ce3ae3bd9f375361f6ed3e13a5dbb3a374cc034fbb",
+  "input_sha256_after": "4718c0f83e53061c8be7c2ce3ae3bd9f375361f6ed3e13a5dbb3a374cc034fbb",
+  "input_unchanged": true,
+  "chromium": "/home/ray/.cache/puppeteer/chrome/linux-155.0.8059.39/chrome-linux64/chrome",
+  "method": "Native Node WebSocket CDP, headless Chromium",
+  "checked_at": "2026-10-25T04:48:25.658Z",
+  "checks": {
+    "sampling_policy": "Start, before first elimination, first elimination, first intersection, first cycle, first conflict, final; absent steps skipped and duplicate steps deduplicated",
+    "total_events_available": 2710,
+    "run_count": 11,
+    "total_steps_rendered": 54,
+    "intersection_events_rendered": 10,
+    "nonempty_intersection_events_rendered": 10,
+    "cycle_events_rendered": 7,
+    "cycle_counts_above_safe_integer_rendered": 1,
+    "recorded_reduction_snapshots_checked_no_early_colouring": 2440,
+    "runs": [
+      {
+        "name": "equality-chain-m24-incompatible / 原模式",
+        "vertices": 101,
+        "use_intersections": false,
+        "use_cycles": false,
+        "event_count": 155,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 8,
+            "kind": "propagate",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 9,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 153,
+            "kind": "conflict",
+            "reasons": [
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 154,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ],
+        "intersection_events_sampled": 0,
+        "status": "unsatisfiable",
+        "last_kind": "end"
+      },
+      {
+        "name": "equality-chain-m24-incompatible / 原模式＋交集＋原環閉合",
+        "vertices": 101,
+        "use_intersections": true,
+        "use_cycles": true,
+        "event_count": 80,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 9,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 78,
+            "kind": "conflict",
+            "reasons": [
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 79,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ],
+        "intersection_events_sampled": 1,
+        "status": "unsatisfiable",
+        "last_kind": "end"
+      },
+      {
+        "name": "equality-binary-m30-overlap / 原模式＋交集＋原環閉合",
+        "vertices": 125,
+        "use_intersections": true,
+        "use_cycles": true,
+        "event_count": 535,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 10,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 160,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 287,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 288,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 534,
+            "kind": "solution",
+            "reasons": [
+              "final"
+            ]
+          }
+        ],
+        "intersection_events_sampled": 1,
+        "status": "colored",
+        "last_kind": "solution"
+      },
+      {
+        "name": "equality-binary-m30-incompatible / 原模式＋交集",
+        "vertices": 125,
+        "use_intersections": true,
+        "use_cycles": false,
+        "event_count": 48,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 10,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 46,
+            "kind": "conflict",
+            "reasons": [
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 47,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ],
+        "intersection_events_sampled": 1,
+        "status": "unsatisfiable",
+        "last_kind": "end"
+      },
+      {
+        "name": "equality-binary-m30-incompatible / 原模式＋交集＋原環閉合",
+        "vertices": 125,
+        "use_intersections": true,
+        "use_cycles": true,
+        "event_count": 48,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 10,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 46,
+            "kind": "conflict",
+            "reasons": [
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 47,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ],
+        "intersection_events_sampled": 1,
+        "status": "unsatisfiable",
+        "last_kind": "end"
+      },
+      {
+        "name": "double-wheel-rim97-fixed23 / 原模式",
+        "vertices": 99,
+        "use_intersections": false,
+        "use_cycles": false,
+        "event_count": 388,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 290,
+            "kind": "propagate",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 291,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 386,
+            "kind": "conflict",
+            "reasons": [
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 387,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ],
+        "intersection_events_sampled": 0,
+        "status": "unsatisfiable",
+        "last_kind": "end"
+      },
+      {
+        "name": "double-wheel-rim97-fixed23 / 原模式＋交集",
+        "vertices": 99,
+        "use_intersections": true,
+        "use_cycles": false,
+        "event_count": 389,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 195,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 290,
+            "kind": "intersection",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 291,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 387,
+            "kind": "conflict",
+            "reasons": [
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 388,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ],
+        "intersection_events_sampled": 2,
+        "status": "unsatisfiable",
+        "last_kind": "end"
+      },
+      {
+        "name": "double-wheel-rim97-fixed23 / 原模式＋交集＋原環閉合",
+        "vertices": 99,
+        "use_intersections": true,
+        "use_cycles": true,
+        "event_count": 293,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 195,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 291,
+            "kind": "conflict",
+            "reasons": [
+              "first_cycle",
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 292,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ],
+        "intersection_events_sampled": 1,
+        "status": "unsatisfiable",
+        "last_kind": "end"
+      },
+      {
+        "name": "double-wheel-rim98-fixed23 / 原模式＋交集＋原環閉合",
+        "vertices": 100,
+        "use_intersections": true,
+        "use_cycles": true,
+        "event_count": 621,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 197,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 294,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 421,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate"
+            ]
+          },
+          {
+            "step": 422,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 620,
+            "kind": "solution",
+            "reasons": [
+              "final"
+            ]
+          }
+        ],
+        "intersection_events_sampled": 1,
+        "status": "colored",
+        "last_kind": "solution"
+      },
+      {
+        "name": "unrestricted-cycle40-exact-count",
+        "vertices": 40,
+        "use_intersections": true,
+        "use_cycles": true,
+        "event_count": 84,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 1,
+            "kind": "cycle_query",
+            "reasons": [
+              "before_first_eliminate",
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 2,
+            "kind": "eliminate",
+            "reasons": [
+              "first_eliminate"
+            ]
+          },
+          {
+            "step": 40,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 83,
+            "kind": "solution",
+            "reasons": [
+              "final"
+            ]
+          }
+        ],
+        "intersection_events_sampled": 1,
+        "status": "colored",
+        "last_kind": "solution"
+      },
+      {
+        "name": "alternating-intersection-cycle-feedback",
+        "vertices": 21,
+        "use_intersections": true,
+        "use_cycles": true,
+        "event_count": 69,
+        "sampled_steps": [
+          {
+            "step": 0,
+            "kind": "start",
+            "reasons": [
+              "start"
+            ]
+          },
+          {
+            "step": 17,
+            "kind": "intersection",
+            "reasons": [
+              "first_intersection"
+            ]
+          },
+          {
+            "step": 28,
+            "kind": "cycle_query",
+            "reasons": [
+              "first_cycle"
+            ]
+          },
+          {
+            "step": 67,
+            "kind": "conflict",
+            "reasons": [
+              "first_conflict"
+            ]
+          },
+          {
+            "step": 68,
+            "kind": "end",
+            "reasons": [
+              "final"
+            ]
+          }
+        ],
+        "intersection_events_sampled": 1,
+        "status": "unsatisfiable",
+        "last_kind": "end"
+      }
+    ],
+    "combined_C97": {
+      "name": "double-wheel-rim97-fixed23 / 原模式＋交集＋原環閉合",
+      "status": "unsatisfiable",
+      "eliminations_before_conflict": 0,
+      "cycle_count_decimal": "0"
+    },
+    "combined_C98": {
+      "name": "double-wheel-rim98-fixed23 / 原模式＋交集＋原環閉合",
+      "status": "colored",
+      "cycle_count_decimal": "2",
+      "final_original_edges_and_fixed_colours_verified": true
+    }
+  },
+  "javascript_errors": []
+}
