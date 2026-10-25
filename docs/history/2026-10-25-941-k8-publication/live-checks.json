@@ -1,0 +1,200 @@
+{
+  "audit_path": "audits/2026-10-23-941-k8-exterior-78375cc",
+  "boundaries": {
+    "K8_whole_branch": "OPEN",
+    "new_Lean": false,
+    "new_global_bound": false,
+    "same_actual_exterior_realizability": "OPEN"
+  },
+  "capture_note": "Each live checker subprocess stdout/stderr was captured in memory; only compact stdout and stderr tails were emitted to the tool transcript. Full raw new stdout/stderr files were not retained. Detailed result fields below come from the sealed final receipts and certificates that the successful live checker revalidated.",
+  "checks": [
+    {
+      "authority": "necessary finite envelope only; no source-realizability claim",
+      "canonical_totals": {
+        "initial": 1710,
+        "remaining": 1704
+      },
+      "cap_records_rebuilt": 21,
+      "certificate_sha256": "35f60ee9c663336d6556229cb8329ed47ce38121cc9fde429a56c6685b99a777",
+      "checker_sha256": "456abe2ee1ad5a0af3b00bc834c6d7163e3f6dcb45c53cbbd06eeabce9da16f4",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-k8-exterior-78375cc/checker.py"
+      ],
+      "complete_fibres": 5754,
+      "elapsed_seconds": 271.055,
+      "empty_fibres": 3003,
+      "exit_code": 0,
+      "full_lifts": 4236,
+      "name": "main",
+      "negative_controls_rejected": [
+        "omit_empty_fibre",
+        "omit_full_lift",
+        "omit_original_ring_edge",
+        "transport_different_residual",
+        "transport_wrong_rotation",
+        "transport_partial_fibre",
+        "omit_representative_cap",
+        "duplicate_representative_cap",
+        "downgrade_annular_mode",
+        "change_relative_palette_schema"
+      ],
+      "remaining_by_representative": [
+        30,
+        85,
+        115,
+        108
+      ],
+      "semantic_controls": [
+        "alternating_contacts_rejected",
+        "nested_contacts_retained",
+        "annular_pocket_not_just_ring_crossing",
+        "incompatible_four_through_order",
+        "compatible_four_through_order",
+        "reject_row_visible_from_subset_swap",
+        "global_palette_from_C5_01",
+        "global_palette_from_C5_02",
+        "global_palette_from_C5_03",
+        "global_palette_from_C5_12",
+        "global_palette_from_C5_13",
+        "global_palette_from_C5_23",
+        "one_exterior_must_work_for_every_lift"
+      ],
+      "status": "PASS",
+      "stderr_tail": ""
+    },
+    {
+      "checked_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "checker_reported_seconds": 42.867,
+      "checker_sha256": "4eb543b7dd3d23959e2280d58780992dc55d6694d17cb8e05e6c4adfa596c2b3",
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-k8-exterior-78375cc/multirow/check.py"
+      ],
+      "elapsed_seconds": 42.944,
+      "exit_code": 0,
+      "initial": 83304,
+      "name": "multirow",
+      "remaining": 83280,
+      "status": "PASS",
+      "stderr_tail": "",
+      "survivor_palette_checks": 499680,
+      "validated_deletions": 24
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "audits/2026-10-23-941-k8-exterior-78375cc/alternative/check.py"
+      ],
+      "elapsed_seconds": 11.723,
+      "exit_code": 0,
+      "name": "alternative",
+      "result": {
+        "K8_same_exterior": "OPEN",
+        "actual_exterior_realization": "not triggered",
+        "experiments": [
+          {
+            "centers": 1,
+            "checked_fibres": 331266,
+            "distinct_nonempty_relations": 1209,
+            "empty_fibres": 292111,
+            "full_fibre_sha256": "3e8af668f75d000d3540f4c53445b3d020ba25ebe06a0509f489edbeac4ca7ad",
+            "full_lifts": 45880,
+            "labelings": 31745,
+            "new_exclusions": 0,
+            "residual_total": 1710,
+            "safe_total": 93,
+            "triangulations": 1287
+          },
+          {
+            "centers": 2,
+            "checked_fibres": 1116002,
+            "distinct_nonempty_relations": 4073,
+            "empty_fibres": 956723,
+            "full_fibre_sha256": "386a77e501b1f605c1baaa7cac08c496393311d39e2d2788c2950c65395abc1b",
+            "full_lifts": 227730,
+            "labelings": 209252,
+            "new_exclusions": 0,
+            "residual_total": 1710,
+            "safe_total": 99,
+            "triangulations": 10296
+          }
+        ],
+        "finite_library": "triggered and holds",
+        "source_exclusion": "none",
+        "source_sha256": "0d53cda484f624966dcf5e46cef6933ccc4af2e542d27250258640b7906be6c8",
+        "status": "PASS"
+      },
+      "status": "PASS",
+      "stderr_tail": ""
+    }
+  ],
+  "created_utc": "2026-10-25T05:40:33.672254+00:00",
+  "custody_check": {
+    "frozen_inputs_checked": 10,
+    "mathematical_drift": 0,
+    "mathematical_inputs_compared_to_base_and_live": [
+      "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/PROOF.md",
+      "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/REPORT.md",
+      "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/REVIEW.md",
+      "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/certificate.json",
+      "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/check.py",
+      "audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/FINAL_MANIFEST.json"
+    ],
+    "omission_note": "Top manifest omits itself; frozen round7 FINAL_MANIFEST is sealed by INPUTS.json.",
+    "sealed_verification_receipt_hashes_checked": 10,
+    "status": "PASS",
+    "top_manifest_omissions": [
+      "FINAL_MANIFEST.json",
+      "frozen/audits/2026-10-23-941-types-wrong-side-round7-6b09cd4/FINAL_MANIFEST.json"
+    ]
+  },
+  "exclusive_frozen_base": "78375cc0e995c868c221605c24835d7e622f0091",
+  "existing_seed17_receipts": "Hash-verified final main/multirow/alternative seed17 receipts and matching final checker SHAs were retained; no extra seed17 execution in this publication audit.",
+  "interpretation": {
+    "bounded_replacement_library": "Zero newly covered prior residuals; finite named library only.",
+    "seven_row_result": "Same 24 literal target states excluded, no new propagation exclusion.",
+    "still_open": [
+      "same actual exterior realization",
+      "joint six overlapping palettes and swap histories",
+      "K8 whole branch",
+      "all 11 original types",
+      "general wrong-side",
+      "general smaller bad",
+      "matching"
+    ]
+  },
+  "observed_head": "9bff34683b2b100ffdd36d0160a2a809fcbc3982",
+  "raw_process_stdout_stderr_retained": false,
+  "schema": "math-publication-live-check-summary-v1",
+  "scope": "Read-only publication audit; no mutation of sealed audit, index, commits, or remote.",
+  "seal_checks": [
+    {
+      "entries_checked": 90,
+      "mismatches": [],
+      "path": "audits/2026-10-23-941-k8-exterior-78375cc/FINAL_MANIFEST.json",
+      "status": "PASS"
+    },
+    {
+      "entries_checked": 38,
+      "mismatches": [],
+      "path": "audits/2026-10-23-941-k8-exterior-78375cc/multirow/MANIFEST.json",
+      "status": "PASS"
+    },
+    {
+      "entries_checked": 18,
+      "mismatches": [],
+      "path": "audits/2026-10-23-941-k8-exterior-78375cc/alternative/MANIFEST.json",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}
