@@ -6,11 +6,11 @@
 
 | 欄位 | 現況 |
 | --- | --- |
-| 階段／生命週期 | 已完成下列有限實作及比較；跨區共同關係的傳播仍待補齊。 |
-| 最近研究更新 | 2026-10-25：[共同條件接口](four_color_cycle_contexts.md)接入交集與原環閉合；補明[數學保障](four_color_cycle_contexts.md#數學保障範圍)。 |
-| 上次完成 | 四十份原圖／固定色條件、兩模式均完成；十二點奇輪矛盾提前至零消元，九點反例仍需四次。 |
+| 階段／生命週期 | 已完成下列有限實作及比較；九點缺口已補上，一般跨區傳播完備性仍未解。 |
+| 最近研究更新 | 2026-10-25：[自動找型與主傳播](four_color_joint_propagation.md)在首次消元前產出 `(0,6,9)` 三點等色表。 |
+| 上次完成 | 30份條件／兩模式60份完整執行；全部3,168份原邊解記錄保留，未固定主例48／48；異色固定例4→0次消元。 |
 | 目前停止點 | 局部表、完整共同接口交集及條件原環都非空，仍不保證整圖有共同延伸；見[精確停止點](#精確停止點)。 |
-| 下一步 | 接續時先讀九點反例並選定跨區共同關係義務；本次只整理與發布既有成果，未啟動新研究。 |
+| 下一步 | 已登記九點型的自動找型與主傳播已接入；其他構型、受限搜尋優化與一般條件關係學習仍待選定。 |
 | 接手入口 | [約束語義](four_color_constraints.md)、[數學保障](four_color_cycle_contexts.md#數學保障範圍)、[保證與缺口](four_color_guarantee_gap.md)、[重播](#使用與重播)。 |
 
 ### 近期里程碑
@@ -21,7 +21,7 @@
 | 2026-10-25／五環與衝突 | [C₅結構](four_color_c5_structure.md)及[衝突子型](four_color_conflicts.md)保留字面框與原邊。 |
 | 2026-10-25／跨區交集 | [共同接口](four_color_intersections.md)傳過[長鏈與分支](four_color_larger_structures.md)，長奇環仍有缺口。 |
 | 2026-10-25／原環閉合 | [共同傳播](four_color_combined_cycles.md)識別該批十一無解例；[新反例](four_color_guarantee_gap.md)否定一般保證。 |
-| 2026-10-25／共同條件 | [條件接口](four_color_cycle_contexts.md)補上十二點奇輪，九點仍需四次消元。 |
+| 2026-10-25／共同條件與構型限制 | [條件接口](four_color_cycle_contexts.md)及[部分輻條](four_color_partial_spokes.md)補上十二／九點提前判否；[共同限制登記](four_color_joint_constraints.md)與[自動找型](four_color_joint_propagation.md)接入三點等色表。 |
 
 下表依問題列出權威報告；各報告保留當輪數字、來源快照及歷史模式，不以後續版本改寫。
 
@@ -49,6 +49,9 @@
 | 交集與同一原環反覆回饋 | [共同傳播](four_color_combined_cycles.md) | 三十六份條件、三模式；有界基本環搜尋不等於全部環。 |
 | 穩定未衝突的反例與完整消元保證 | [保證與缺口](four_color_guarantee_gap.md) | 十二點奇輪及九點固定色反例；樹證書尚未實作輸出。 |
 | 同一中心條件、二／三元接口與回饋 | [共同條件接口](four_color_cycle_contexts.md) | 一般解保留及任意長中心環的局部精確性；四十例與九點缺口另列。 |
+| 搜尋部分原輻條、跨區接口回饋 | [部分輻條搜尋](four_color_partial_spokes.md) | 九點4→0次消元；四十例有10份工作超限，沒有一般完備性或加速保證。 |
+| 構型需處理的共同關係 | [九點共同限制登記](four_color_joint_constraints.md) | 21條必要原邊推出 `u=v=h`；三元完整fibres與當輪手動映射原型，後續接入見自動找型報告。 |
+| 自動辨識與共同限制主傳播 | [九點自動找型](four_color_joint_propagation.md) | 消元前輸出三點等色表；30份條件60次完整執行、全部原邊解保留；具名有界搜尋，無一般完備性保證。 |
 
 ## 精確停止點
 
@@ -59,11 +62,15 @@
 [數學保障](four_color_cycle_contexts.md#數學保障範圍)適用任意有限簡單無向圖的全部解保留，
 以及已完成查詢的任意長度中心環；共同三色域奇輪的排除可推至任意奇數環長。
 零消元須在首次消元前命中並完成查詢，現有有界搜尋不保證此事。
-九點缺口是現有傳播的界線，不是二／三元因子無法表達問題的證明；
+九點缺口是歷史鄰域搜尋的界線，部分輻條模式已補上這份固定色判否；它不是二／三元因子無法表達問題的證明。
 非空若要保證共同解，仍須完整消元成功、單例驗證或符合完整樹形接合條件。
 
-最新方法將十二點奇輪固定色反例由八次消元提前至零次；九點反例仍需四次消元。
-確切原圖、固定色、完整記錄與獨立參考見[最新結果](four_color_cycle_contexts.md#實際結果)。
+另已登記九點構型的 `(0,6,9)` 三點等色必要因子，並由[自動找型](four_color_joint_propagation.md)
+核對21條必要原邊，在首次消元前加入主傳播。它在較大目標圖中是必要限制，
+裸構型的非空fibres不能自行保證滿足目標圖外側附件。
+
+最新可選部分輻條模式將十二點奇輪及九點固定色反例都提前至零次消元；歷史鄰域模式的九點例仍需四次。
+確切原圖、固定色、完整記錄與獨立參考見[最新結果](four_color_partial_spokes.md#驗證結果)。
 求解器在完整精確消元全部成功、未遇工作或儲存限制後，由保存的回填表構造一份共同染色。
 `limit` 始終是未判定；有固定色時，`unsatisfiable` 只否定該固定色延伸。
 
@@ -88,8 +95,8 @@ python3 -m unittest discover -s tools/tests -p 'test_four_color*.py' -v
 
 ```bash
 python3 scripts/four_color_lab.py demo --out /tmp/four-color-demo-replay
-python3 scripts/four_color_lab.py solve graph.json --engine constraints --intersections --cycles --cycle-contexts --json /tmp/four-color-result.json --html /tmp/four-color-replay.html
-uv run --with-requirements requirements.txt python scripts/four_color_cycle_context_experiment.py --out-dir /tmp/four-color-context-replay
+python3 scripts/four_color_lab.py solve graph.json --engine constraints --intersections --cycles --cycle-contexts --joint-constraints --json /tmp/four-color-result.json --html /tmp/four-color-replay.html
+python3 scripts/four_color_joint_propagation_experiment.py --out-dir /tmp/four-color-joint-replay
 ```
 
 命令列啟用 `--c5` 時預設 `--c5-method structure`；Python API 的 `c5_method` 預設仍是 `table`。

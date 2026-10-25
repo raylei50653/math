@@ -74,7 +74,9 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                       c5_method="table", use_intersections=False, use_cycles=False,
                       cycle_max_cycles=128, cycle_max_scan_steps=200000,
                       use_cycle_contexts=False, cycle_context_max_contexts=128,
-                      cycle_context_max_scan_steps=200000):
+                      cycle_context_max_scan_steps=200000,
+                      cycle_context_search="neighbours", use_joint_constraints=False,
+                      joint_max_matches=128, joint_max_scan_steps=200000):
     """Solve exactly, or return ``limit`` without asserting nonexistence.
 
     Recorded rows equal the join of ``input_relations`` under the explicitly
@@ -97,6 +99,14 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
     Optional cycle contexts preserve a common original exterior variable while
     closing a cycle, then feed complete binary/ternary projections to intersections.
     They require both intersections and cycles, and never commit a case colour.
+    The historical ``neighbours`` search finds fully spoked cycles only.
+    ``partial`` searches the active original graph minus the context vertex,
+    permitting cycles with partial spokes; only actual spokes constrain them.
+    Both searches are bounded, optional, and leave all original factors intact.
+    Optional joint constraints automatically match the registered nine-point
+    original-edge pattern and install its complete three-point equality factor
+    before any elimination. Discovery is charged and bounded; omitted matches
+    leave the original exact solver intact. No colour is chosen by the factor.
     """
     from four_color_lab import graph_fingerprint, normalize_graph, verify_coloring
     from four_color_c5 import C5_ROWS, find_induced_c5, find_local_c5, query_c5
@@ -104,16 +114,21 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
     from four_color_intersections import intersect_on_shared
 
     g = normalize_graph(graph)
-    if any(type(value) is not bool for value in (use_substructures, record_relations, use_c5, use_conflicts, use_intersections, use_cycles, use_cycle_contexts)):
+    if any(type(value) is not bool for value in (use_substructures, record_relations, use_c5, use_conflicts, use_intersections, use_cycles, use_cycle_contexts, use_joint_constraints)):
         raise ValueError("constraint feature flags must be booleans")
     if use_cycle_contexts and not (use_intersections and use_cycles):
         raise ValueError("cycle contexts require use_intersections=True and use_cycles=True")
+    if cycle_context_search not in ("neighbours", "partial"):
+        raise ValueError("cycle_context_search must be neighbours or partial")
+    if cycle_context_search != "neighbours" and not use_cycle_contexts:
+        raise ValueError("partial cycle-context search requires use_cycle_contexts=True")
     if c5_method not in ("structure", "table"):
         raise ValueError("c5_method must be structure or table")
     if any(type(value) is not int or value < 0
            for value in (max_checks, trace_limit, c5_max_cycles, c5_max_scan_steps,
                          cycle_max_cycles, cycle_max_scan_steps,
-                         cycle_context_max_contexts, cycle_context_max_scan_steps)):
+                         cycle_context_max_contexts, cycle_context_max_scan_steps,
+                         joint_max_matches, joint_max_scan_steps)):
         raise ValueError("limits must be nonnegative integers")
     if c5_scan_method not in ("complete", "local"):
         raise ValueError("c5_scan_method must be complete or local")
@@ -137,7 +152,9 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
     cycle_context_discovery_signature = None
     cycle_context_scan = dict(contexts=[], scan_steps=0, discoveries=0,
                               truncated=False, all_contexts_complete=False,
-                              coverage="bounded original cycles in active original neighbour-induced subgraphs; not all contexts")
+                              coverage=("bounded original cycles in active original neighbour-induced subgraphs; not all contexts"
+                                        if cycle_context_search == "neighbours" else
+                                        "bounded original cycles in the active original graph minus each context vertex; partial actual spokes; not all contexts"))
     adjacency = [set() for _ in vertices]
     for a, b in g["edges"]:
         adjacency[index[a]].add(index[b])
@@ -184,6 +201,9 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
     ]
     template_hits = len(factors)
     self_constraints = []
+    joint_scan = dict(constraints=[], scan_steps=0, complete=None, truncated=False,
+                      interrupted=False,
+                      coverage="bounded injective matches of the registered nine-point original-edge pattern only")
     equality_pairs = set()
     if use_c5 and c5_method == "structure":
         for ring in c5_cycles:
@@ -255,6 +275,8 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                  cycle_context_row_prunes=0, cycle_context_scan_steps=0,
                  cycle_context_redundant_interfaces=0,
                  cycle_context_skips=0, cycle_context_inactive_skips=0,
+                 joint_scan_steps=0, joint_checks=0, joint_matches=0,
+                 joint_factors=0, joint_rows=0,
                  decisions=0, backtracks=0, assignments=0)
     counts = dict.fromkeys((rule["id"] for rule in CONSTRAINT_RULES), 0)
     events, records, witness_maps, eliminated = [], [], [], []
@@ -291,6 +313,60 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
     def explain(factor):
         return dict(causal_vertices=sorted(factor.source_vertices),
                     causal_edges=[list(edge) for edge in sorted(factor.source_edges)])
+
+    def install_joint_constraints():
+        """Discover original-edge occurrences, then commit complete factors."""
+        from four_color_joint_patterns import find_joint_constraints
+
+        def charge_scan():
+            check("relation_checks")
+            stats["joint_checks"] += 1
+            stats["joint_scan_steps"] += 1
+
+        try:
+            found = find_joint_constraints(
+                g, max_matches=joint_max_matches,
+                max_scan_steps=joint_max_scan_steps, charge=charge_scan)
+        except _WorkLimit:
+            joint_scan.update(complete=False, truncated=True, interrupted=True,
+                              scan_steps=stats["joint_scan_steps"])
+            raise
+        joint_scan.update(found, interrupted=False)
+        stats["joint_matches"] = len(found["constraints"])
+        for constraint in found["constraints"]:
+            scope = tuple(index[v] for v in constraint["frontier"])
+            rows = set()
+            for row in constraint["rows"]:
+                check("relation_checks")
+                stats["joint_checks"] += 1
+                rows.add(tuple(row))
+            if (stats["table_rows"] + stats["cycle_context_rows"]
+                    + stats["joint_rows"] + len(rows) > max_table_rows):
+                raise _WorkLimit(f"完整關係表已達 {max_table_rows} 列儲存上限；尚未判定。")
+            record = dict(
+                constraint, name="九點構型三點等色", boundary=constraint["frontier"],
+                vertices=constraint["source_vertices"], edges=constraint["source_edges"],
+                condition="九個互異原頂點的21條必要原邊全部存在。",
+                conclusion=f"同一原九點構型推出 {'、'.join(map(str, constraint['frontier']))} 三點同色；共同字面色尚未選定。",
+                scope="original-subgraph", relation="equality",
+                relation_contract=constraint["contract"])
+            factors.append(_Factor(scope, frozenset(rows),
+                                   frozenset(tuple(edge) for edge in record["source_edges"]),
+                                   frozenset(record["source_vertices"])))
+            self_constraints.append(record)
+            stats["joint_factors"] += 1
+            stats["joint_rows"] += len(rows)
+            stats["self_constraints"] = len(self_constraints)
+            substructures["self_constraints"] = len(self_constraints)
+            stats["peak_scope"] = max(stats["peak_scope"], len(scope))
+            stats["peak_rows"] = max(stats["peak_rows"], sum(len(f.rows) for f in factors))
+            counts["C1"] += 1
+            emit("structural_constraint", "C1", detail=record["conclusion"],
+                 relation_kind="joint_constraint", frontier=record["frontier"],
+                 rows=record["rows"], relation_rows=len(rows),
+                 relation_preview=[dict(boundary=row, colors=[]) for row in record["rows"]],
+                 structural_rules=[record], self_constraint=record,
+                 causal_edges=record["edges"], causal_vertices=record["vertices"])
 
     def record_known_conflict(witness):
         selected = [index[v] for v in witness["vertices"]]
@@ -643,20 +719,22 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
             try:
                 for hub in selected:
                     charge_scan()
-                    neighbours = tuple(sorted(adjacency[hub] & active))
-                    if len(neighbours) < 3:
+                    local_vertices = tuple(sorted(
+                        adjacency[hub] & active if cycle_context_search == "neighbours"
+                        else active - {hub}))
+                    if len(local_vertices) < 3:
                         continue
                     remaining = cycle_context_max_contexts - len(cycle_contexts)
                     if remaining <= 0:
                         complete = False
                         break
-                    neighbour_ids = {vertices[v] for v in neighbours}
+                    local_ids = {vertices[v] for v in local_vertices}
                     local_graph = dict(
-                        vertices=[vertices[v] for v in neighbours],
+                        vertices=[vertices[v] for v in local_vertices],
                         edges=[edge for edge in g["edges"]
-                               if edge[0] in neighbour_ids and edge[1] in neighbour_ids])
+                               if edge[0] in local_ids and edge[1] in local_ids])
                     found = find_original_cycles(
-                        local_graph, tuple(masks[v] for v in neighbours),
+                        local_graph, tuple(masks[v] for v in local_vertices),
                         max_cycles=remaining, max_scan_steps=cycle_context_max_scan_steps,
                         charge=charge_scan)
                     for literal_cycle in found["cycles"]:
@@ -758,7 +836,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                     else:
                         removed_rows += len(previous.rows) - len(rows)
                     plans.append((pair_scope, previous, rows))
-                if stats["table_rows"] + stats["cycle_context_rows"] + added_rows > max_table_rows:
+                if stats["table_rows"] + stats["cycle_context_rows"] + stats["joint_rows"] + added_rows > max_table_rows:
                     raise _WorkLimit(f"完整關係表已達 {max_table_rows} 列儲存上限；尚未判定。")
 
             removed = sum(len(domains[v]) - len(domain)
@@ -939,6 +1017,8 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
              structural_rules=[record], self_constraint=record,
              causal_edges=record["edges"], causal_vertices=record["vertices"], c5_method="structure")
     try:
+        if use_joint_constraints:
+            install_joint_constraints()
         if not propagate():
             status = "unsatisfiable"
         while active and status is None:
@@ -972,7 +1052,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                     if valid:
                         choices.append(color)
                 if choices:
-                    if stats["table_rows"] + stats["cycle_context_rows"] >= max_table_rows:
+                    if stats["table_rows"] + stats["cycle_context_rows"] + stats["joint_rows"] >= max_table_rows:
                         raise _WorkLimit(f"完整關係表已達 {max_table_rows} 列儲存上限；尚未判定。")
                     table[boundary] = tuple(choices)
                     stats["table_rows"] += 1
@@ -1068,7 +1148,10 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
         use_cycle_contexts=use_cycle_contexts,
         cycle_context_max_contexts=cycle_context_max_contexts,
         cycle_context_max_scan_steps=cycle_context_max_scan_steps,
+        cycle_context_search=cycle_context_search,
         cycle_context_scan=cycle_context_scan,
+        use_joint_constraints=use_joint_constraints, joint_max_matches=joint_max_matches,
+        joint_max_scan_steps=joint_max_scan_steps, joint_scan=joint_scan,
         conflict_catalogue=conflict_catalogue(include_rows=False),
         conflict_subgraphs=conflict_subgraphs,
         self_constraints=self_constraints,

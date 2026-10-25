@@ -229,9 +229,9 @@
   const constraintMode = item => {
     const mode = item.use_c5 ? `${item.use_substructures ? "子構造" : "原邊"}＋${isLocalC5(item) ? "局部五環" : "C₅"}${c5Action(item)}` : item.use_substructures ? "約束＋子構造" : "約束：只用邊";
     const comparison = {guards:"結構衝突辨識開", baseline:"辨識關"}[item.comparison_mode];
-    return [mode, item.use_intersections ? "共同接口交集" : null, item.use_cycles ? "原環閉合" : null, item.use_cycle_contexts ? "共同條件原環" : null, comparison].filter(Boolean).join(" · ");
+    return [mode, item.use_intersections ? "共同接口交集" : null, item.use_cycles ? "原環閉合" : null, item.use_cycle_contexts ? "共同條件原環" : null, item.use_joint_constraints ? "構型共同限制" : null, comparison].filter(Boolean).join(" · ");
   };
-  const isC5Event = event => ["c5_lookup","c5_structure","structural_constraint"].includes(event.kind) || event.conflict_shape === "empty_c5_relation";
+  const isC5Event = event => event.relation_kind !== "joint_constraint" && (["c5_lookup","c5_structure","structural_constraint"].includes(event.kind) || event.conflict_shape === "empty_c5_relation");
   const el = (tag, attrs = {}, label) => {
     const node = document.createElementNS("http://www.w3.org/2000/svg", tag);
     for (const [key, value] of Object.entries(attrs)) node.setAttribute(key, value);
@@ -409,11 +409,12 @@
     const intersectionRelation = relation?.kind === "intersection";
     const cycleRelation = relation?.relation_kind === "cycle";
     const contextRelation = relation?.relation_kind === "cycle_context";
+    const jointRelation = relation?.relation_kind === "joint_constraint";
     const c5Relation = relation && (relation.relation_kind === "c5" || isC5Event(relation));
     const structureRelation = hubRelation || c5Relation && (isStructuralC5(relation) || (!relation.c5_method && isStructuralC5(run)));
     $("c5-structure-panel").hidden = !structureRelation;
     $("c5-structure-rules").replaceChildren();
-    $("relation-title").textContent = contextRelation ? `共同點 ${relation.context_vertex} 與 ${relation.cycle_length} 點原環` : cycleRelation ? `${relation.cycle_length} 點原環閉合` : intersectionRelation ? "兩張表共同支持的接口色組" : hubRelation ? "五環推出的雙中心等色關係" : c5Relation ? `${isLocalC5(run) ? "局部五環" : "C₅"}的${structureRelation ? "結構推導" : "完整色組"}` : "記住整組可能性";
+    $("relation-title").textContent = jointRelation ? "九點構型推出的三點等色關係" : contextRelation ? `共同點 ${relation.context_vertex} 與 ${relation.cycle_length} 點原環` : cycleRelation ? `${relation.cycle_length} 點原環閉合` : intersectionRelation ? "兩張表共同支持的接口色組" : hubRelation ? "五環推出的雙中心等色關係" : c5Relation ? `${isLocalC5(run) ? "局部五環" : "C₅"}的${structureRelation ? "結構推導" : "完整色組"}` : "記住整組可能性";
     $("c5-table").setAttribute("aria-label", hubRelation ? "五環推出的雙中心完整等色關係" : "依原圖循環次序排列的五圈完整色組");
     $("relation-table").hidden = !!contextRelation || !!cycleRelation || !!c5Relation || !relation || !(relation.relation_preview || []).length;
     $("c5-table").hidden = !c5Relation;
@@ -457,14 +458,14 @@
       const target = relation.kind === "conflict" ? "檢查頂點" : "記錄消去點";
       $("relation-frontier").textContent = `${relationStep !== step ? `最近關係（步驟 ${relationStep}）：` : ""}` + (frontier.length ? `依序觀察邊界頂點 (${frontier.join(", ")})${relation.vertex !== null && relation.vertex !== undefined ? `，${target} ${relation.vertex}` : ""}。` : `沒有剩餘邊界${relation.vertex !== null && relation.vertex !== undefined ? `；${target} ${relation.vertex}` : ""}。`);
       $("relation-total").textContent = `允許的邊界組合：${relation.relation_rows} 列`;
-      $("relation-color-head").textContent = intersectionRelation ? "共同支援" : relation.vertex !== null && relation.vertex !== undefined ? `點 ${relation.vertex} 可回填色` : "可回填的顏色";
+      $("relation-color-head").textContent = jointRelation || intersectionRelation ? "共同支援" : relation.vertex !== null && relation.vertex !== undefined ? `點 ${relation.vertex} 可回填色` : "可回填的顏色";
       for (const row of preview.slice(0,6)) {
         const tr = document.createElement("tr"), boundary = document.createElement("td"), colors = document.createElement("td");
         boundary.textContent = row.boundary?.length ? `(${row.boundary.map(c => c+1).join(", ")})` : "() 空邊界";
-        colors.textContent = intersectionRelation ? "兩表皆可延伸" : row.colors?.length ? `{${row.colors.map(c => c+1).join(", ")}}` : "∅";
+        colors.textContent = jointRelation ? "三點同色" : intersectionRelation ? "兩表皆可延伸" : row.colors?.length ? `{${row.colors.map(c => c+1).join(", ")}}` : "∅";
         tr.append(boundary,colors); $("relation-body").append(tr);
       }
-      $("relation-note").textContent = intersectionRelation ? `保留完整共同接口，兩表共刪 ${relation.left_removed + relation.right_removed} 列。上表顯示前 ${Math.min(preview.length,6)} 個共同色組；這一步尚未消去頂點，也未寫色。共同支援不等於整圖已可延伸。` : `${relation.kind === "writeback" ? "上表顯示本次寫回使用的那一列。" : relation.relation_rows > preview.slice(0,6).length ? `上表只顯示前 ${Math.min(preview.length,6)} 列。` : ""}一列是一組相容的邊界顏色；右欄只適用於同一列。列數不是全圖染色總數，也不能把不同列各自取色混用。`;
+      $("relation-note").textContent = jointRelation ? "每列同時指定三個原點；同一原九點構型的21條原邊迫三點同色。共同字面色尚未選定，其餘原約束仍須共同滿足，這一步尚未消去頂點或寫色。" : intersectionRelation ? `保留完整共同接口，兩表共刪 ${relation.left_removed + relation.right_removed} 列。上表顯示前 ${Math.min(preview.length,6)} 個共同色組；這一步尚未消去頂點，也未寫色。共同支援不等於整圖已可延伸。` : `${relation.kind === "writeback" ? "上表顯示本次寫回使用的那一列。" : relation.relation_rows > preview.slice(0,6).length ? `上表只顯示前 ${Math.min(preview.length,6)} 列。` : ""}一列是一組相容的邊界顏色；右欄只適用於同一列。列數不是全圖染色總數，也不能把不同列各自取色混用。`;
     } else {
       $("relation-frontier").textContent = "消去一個頂點時，會記住它與剩餘邊界的整組相容關係。";
       $("relation-total").textContent = "尚未顯示消去關係";

@@ -172,13 +172,16 @@ def experiment(out_dir, *, gap_inputs=GAP_INPUT, larger_inputs=LARGER_INPUT,
                max_checks=5_000_000, oracle_max_rows=100_000,
                cycle_max_cycles=128, cycle_max_scan_steps=200_000,
                cycle_context_max_contexts=128,
-               cycle_context_max_scan_steps=200_000):
+               cycle_context_max_scan_steps=200_000,
+               cycle_context_search="neighbours"):
     import networkx as nx
 
     if any(type(value) is not int or value < 0 for value in (
             max_checks, oracle_max_rows, cycle_max_cycles, cycle_max_scan_steps,
             cycle_context_max_contexts, cycle_context_max_scan_steps)):
         raise ValueError("experiment limits must be nonnegative integers")
+    if cycle_context_search not in ("neighbours", "partial"):
+        raise ValueError("cycle_context_search must be neighbours or partial")
     cases, gap_raw, larger_raw = frozen_inputs(gap_inputs, larger_inputs)
     sources = source_hashes()
     options = dict(
@@ -188,6 +191,7 @@ def experiment(out_dir, *, gap_inputs=GAP_INPUT, larger_inputs=LARGER_INPUT,
         cycle_max_cycles=cycle_max_cycles, cycle_max_scan_steps=cycle_max_scan_steps,
         cycle_context_max_contexts=cycle_context_max_contexts,
         cycle_context_max_scan_steps=cycle_context_max_scan_steps,
+        cycle_context_search=cycle_context_search,
     )
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "runs").mkdir(exist_ok=True)
@@ -245,6 +249,8 @@ def experiment(out_dir, *, gap_inputs=GAP_INPUT, larger_inputs=LARGER_INPUT,
                 cycle_max_scan_steps=cycle_max_scan_steps,
                 cycle_context_max_contexts=cycle_context_max_contexts,
                 cycle_context_max_scan_steps=cycle_context_max_scan_steps,
+                cycle_context_search=(cycle_context_search
+                                      if mode_options["use_cycle_contexts"] else "neighbours"),
             )
             if result["graph_sha256"] != graph_fingerprint(graph):
                 raise AssertionError("main solver changed the original graph")
@@ -335,6 +341,8 @@ def main():
     parser.add_argument("--cycle-max-scan-steps", type=int, default=200_000)
     parser.add_argument("--cycle-context-max-contexts", type=int, default=128)
     parser.add_argument("--cycle-context-max-scan-steps", type=int, default=200_000)
+    parser.add_argument("--cycle-context-search", choices=("neighbours", "partial"),
+                        default="neighbours")
     args = parser.parse_args()
     report = experiment(
         args.out_dir, gap_inputs=args.gap_inputs, larger_inputs=args.larger_inputs,
@@ -343,6 +351,7 @@ def main():
         cycle_max_scan_steps=args.cycle_max_scan_steps,
         cycle_context_max_contexts=args.cycle_context_max_contexts,
         cycle_context_max_scan_steps=args.cycle_context_max_scan_steps,
+        cycle_context_search=args.cycle_context_search,
     )
     print(json.dumps(report["totals"], ensure_ascii=False, sort_keys=True))
 

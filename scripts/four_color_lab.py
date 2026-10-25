@@ -365,6 +365,13 @@ def main():
                      help="constraints engine: preserve a common cycle context and export pair relations; requires --intersections --cycles")
     run.add_argument("--cycle-context-max-contexts", type=int, default=128)
     run.add_argument("--cycle-context-max-scan-steps", type=int, default=200000)
+    run.add_argument("--cycle-context-search", choices=("neighbours", "partial"),
+                     default="neighbours",
+                     help="constraints engine: search neighbour cycles (default) or allow partial actual spokes; requires --cycle-contexts")
+    run.add_argument("--joint-constraints", action="store_true",
+                     help="constraints engine: automatically match registered original-edge patterns and propagate their joint relations")
+    run.add_argument("--joint-max-matches", type=int, default=128)
+    run.add_argument("--joint-max-scan-steps", type=int, default=200000)
     run.add_argument("--c5-method", choices=("structure", "table"), default="structure",
                      help="C5 inference: derive from cycle structure (default), or query the audit table")
     c5_mode = run.add_mutually_exclusive_group()
@@ -427,9 +434,13 @@ def main():
                                       cycle_max_scan_steps=args.cycle_max_scan_steps,
                                       use_cycle_contexts=args.cycle_contexts,
                                       cycle_context_max_contexts=args.cycle_context_max_contexts,
-                                      cycle_context_max_scan_steps=args.cycle_context_max_scan_steps)
+                                      cycle_context_max_scan_steps=args.cycle_context_max_scan_steps,
+                                      cycle_context_search=args.cycle_context_search,
+                                      use_joint_constraints=args.joint_constraints,
+                                      joint_max_matches=args.joint_max_matches,
+                                      joint_max_scan_steps=args.joint_max_scan_steps)
             else:
-                if args.edges_only or args.c5 or args.c5_local or args.no_conflicts or args.intersections or args.cycles or args.cycle_contexts:
+                if args.edges_only or args.c5 or args.c5_local or args.no_conflicts or args.intersections or args.cycles or args.cycle_contexts or args.cycle_context_search != "neighbours" or args.joint_constraints:
                     raise ValueError("constraint feature flags require --engine constraints")
                 r = solve(json.loads(args.input.read_text()), args.strategy, not args.no_propagation,
                           not args.no_backtracking, args.max_steps, args.trace_limit)

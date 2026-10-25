@@ -102,6 +102,8 @@ lake exe cache get
 `constraint-demo`、`c5-demo`、`conflict-demo` 展示完整關係消元／回填、五環與已知衝突。
 自己的圖可用 `python3 scripts/four_color_lab.py solve graph.json --engine constraints --intersections --cycles --cycle-contexts`，
 保留共同接口與原環條件，最後倒序回填；適用範圍及未解保證見導覽。
+加上 `--joint-constraints` 可自動辨識已登記的九點構型，在消元前加入三點等色必要關係；
+完整前提、全部解保留核對及搜尋上限見[自動找型與主傳播](docs/four_color_joint_propagation.md)。
 [三角化逐面編號展示](docs/triangle_structure.md)另保存六份嵌入、原點／邊／面身份與有限染色核對。
 
 `scripts/` 的第三方依賴鎖在 `requirements.txt`（Python 3.14）。1 MB 以上的產生檔
