@@ -1,0 +1,215 @@
+<div id="triangle-numbering-20261025">
+  <style>
+    #triangle-numbering-20261025 { color: var(--foreground); }
+    #triangle-numbering-20261025 .tn-title { padding-right: 90px; }
+    #triangle-numbering-20261025 .tn-metrics { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; }
+    #triangle-numbering-20261025 .tn-stage { width: 100%; min-width: 0; }
+    #triangle-numbering-20261025 .tn-graph { display: block; width: 100%; overflow: visible; }
+    #triangle-numbering-20261025 .tn-edge { stroke: var(--muted-foreground); stroke-width: 1.3; fill: none; }
+    #triangle-numbering-20261025 .tn-root { stroke: var(--viz-series-1); stroke-width: 2; fill: none; }
+    #triangle-numbering-20261025 .tn-face { fill: transparent; }
+    #triangle-numbering-20261025 .tn-face-selected { fill: color-mix(in srgb, var(--viz-series-1) 18%, transparent); }
+    #triangle-numbering-20261025 .tn-node { fill: var(--foreground); }
+    #triangle-numbering-20261025 .tn-label { fill: var(--foreground); stroke: var(--background); stroke-width: 3; paint-order: stroke; font-weight: 400; }
+    #triangle-numbering-20261025 .tn-face-label { fill: var(--muted-foreground); }
+    #triangle-numbering-20261025 .tn-active-label { fill: var(--foreground); font-weight: 500; }
+    #triangle-numbering-20261025 .tn-detail { display: block; overflow-wrap: anywhere; margin-top: 8px; }
+    #triangle-numbering-20261025 .tn-step { display: grid; gap: 6px; }
+  </style>
+  <h3 class="tn-title">三角形平面圖：逐面編號</h3>
+  <div class="viz-controls">
+    <label class="form-label">例子
+      <select class="form-select" data-tn-example>
+        <option value="wheel6">六片相接</option>
+        <option value="wheel5">五片相接</option>
+        <option value="wheel7">七片相接</option>
+        <option value="k4">K₄：三角外框與內點</option>
+        <option value="octahedron">八面體平面嵌入</option>
+        <option value="octahedron-insert">八面體內面插點</option>
+      </select>
+    </label>
+    <label class="form-label">標示
+      <select class="form-select" data-tn-labels>
+        <option value="both">頂點與面</option>
+        <option value="vertices">頂點</option>
+        <option value="faces">面</option>
+      </select>
+    </label>
+  </div>
+  <div class="tn-metrics tabular-nums" aria-label="圖的結構" data-tn-metrics></div>
+  <div class="tn-stage" data-tn-stage>
+    <svg class="tn-graph" role="img" aria-labelledby="tn-graph-title tn-graph-desc" data-tn-graph>
+      <title id="tn-graph-title">逐面編號的三角形平面圖</title>
+      <desc id="tn-graph-desc">箭頭是有向根邊，陰影是選取的有界三角面。外面記為 F∞。</desc>
+    </svg>
+  </div>
+  <label class="form-label tn-step">逐面 <span class="tabular-nums" data-tn-step-label>f0</span>
+    <input class="form-range" type="range" min="0" max="5" step="1" value="0" aria-label="選取逐面 BFS 編號" data-tn-step>
+  </label>
+  <output class="tn-detail text-small tabular-nums" aria-live="polite" data-tn-detail></output>
+  <script>
+    (() => {
+      const root = document.getElementById("triangle-numbering-20261025");
+      const source = [
+        {"id":"wheel6","name":"六片相接","vertices":[{"source_id":"b0","x":-0.5,"y":-0.866025},{"source_id":"b1","x":0.5,"y":-0.866025},{"source_id":"b2","x":1,"y":0},{"source_id":"b3","x":0.5,"y":0.866025},{"source_id":"b4","x":-0.5,"y":0.866025},{"source_id":"b5","x":-1,"y":0},{"source_id":"o","x":0,"y":0}],"bounded_faces":[["b0","b1","o"],["b1","b2","o"],["b2","b3","o"],["b3","b4","o"],["b4","b5","o"],["b5","b0","o"]],"boundary":["b0","b1","b2","b3","b4","b5"],"root_edge":["b0","b1"]},
+        {"id":"wheel5","name":"五片相接","vertices":[{"source_id":"b0","x":-0.809017,"y":-0.587785},{"source_id":"b1","x":0.309017,"y":-0.951057},{"source_id":"b2","x":1,"y":0},{"source_id":"b3","x":0.309017,"y":0.951057},{"source_id":"b4","x":-0.809017,"y":0.587785},{"source_id":"o","x":0,"y":0}],"bounded_faces":[["b0","b1","o"],["b1","b2","o"],["b2","b3","o"],["b3","b4","o"],["b4","b0","o"]],"boundary":["b0","b1","b2","b3","b4"],"root_edge":["b0","b1"]},
+        {"id":"wheel7","name":"七片相接","vertices":[{"source_id":"b0","x":-0.62349,"y":-0.781831},{"source_id":"b1","x":0.222521,"y":-0.974928},{"source_id":"b2","x":0.900969,"y":-0.433884},{"source_id":"b3","x":0.900969,"y":0.433884},{"source_id":"b4","x":0.222521,"y":0.974928},{"source_id":"b5","x":-0.62349,"y":0.781831},{"source_id":"b6","x":-1,"y":0},{"source_id":"o","x":0,"y":0}],"bounded_faces":[["b0","b1","o"],["b1","b2","o"],["b2","b3","o"],["b3","b4","o"],["b4","b5","o"],["b5","b6","o"],["b6","b0","o"]],"boundary":["b0","b1","b2","b3","b4","b5","b6"],"root_edge":["b0","b1"]},
+        {"id":"k4","name":"K₄：三角外框與內點","vertices":[{"source_id":"A","x":-1,"y":-0.7},{"source_id":"B","x":1,"y":-0.7},{"source_id":"C","x":0,"y":1},{"source_id":"p","x":0,"y":-0.05}],"bounded_faces":[["A","B","p"],["B","C","p"],["C","A","p"]],"boundary":["A","B","C"],"root_edge":["A","B"]},
+        {"id":"octahedron","name":"八面體平面嵌入","vertices":[{"source_id":"A","x":-1,"y":-0.7},{"source_id":"B","x":1,"y":-0.7},{"source_id":"C","x":0,"y":1},{"source_id":"a","x":0,"y":-0.3},{"source_id":"b","x":0.3,"y":0.25},{"source_id":"c","x":-0.3,"y":0.25}],"bounded_faces":[["A","B","a"],["B","C","b"],["C","A","c"],["A","a","c"],["B","b","a"],["C","c","b"],["a","b","c"]],"boundary":["A","B","C"],"root_edge":["A","B"]},
+        {"id":"octahedron-insert","name":"八面體內面插點","vertices":[{"source_id":"A","x":-1,"y":-0.7},{"source_id":"B","x":1,"y":-0.7},{"source_id":"C","x":0,"y":1},{"source_id":"a","x":0,"y":-0.3},{"source_id":"b","x":0.3,"y":0.25},{"source_id":"c","x":-0.3,"y":0.25},{"source_id":"p","x":0,"y":0.066667}],"bounded_faces":[["A","B","a"],["B","C","b"],["C","A","c"],["A","a","c"],["B","b","a"],["C","c","b"],["a","b","p"],["b","c","p"],["c","a","p"]],"boundary":["A","B","C"],"root_edge":["A","B"]}
+      ];
+      const exampleControl = root.querySelector("[data-tn-example]");
+      const labelControl = root.querySelector("[data-tn-labels]");
+      const stepControl = root.querySelector("[data-tn-step]");
+      const stepLabel = root.querySelector("[data-tn-step-label]");
+      const metrics = root.querySelector("[data-tn-metrics]");
+      const detail = root.querySelector("[data-tn-detail]");
+      const stage = root.querySelector("[data-tn-stage]");
+      const svg = root.querySelector("[data-tn-graph]");
+      const edgeKey = (u, v) => JSON.stringify([u, v].sort());
+      function numberGraph(graph) {
+        const incidence = new Map();
+        graph.bounded_faces.forEach((face, index) => face.forEach((u, j) => {
+          const v = face[(j + 1) % 3];
+          const key = edgeKey(u, v);
+          if (!incidence.has(key)) incidence.set(key, []);
+          incidence.get(key).push(index);
+        }));
+        const rootIndex = graph.bounded_faces.findIndex(face => face.some((u, j) => u === graph.root_edge[0] && face[(j + 1) % 3] === graph.root_edge[1]));
+        const faceIds = new Map([[rootIndex, "f0"]]);
+        const vertexIds = new Map();
+        const edgeIds = new Map();
+        const queue = [{ index: rootIndex, entry: graph.root_edge }];
+        const numberedFaces = [];
+        for (let head = 0; head < queue.length; head += 1) {
+          const { index, entry } = queue[head];
+          const face = graph.bounded_faces[index];
+          const start = face.findIndex((u, j) => u === entry[0] && face[(j + 1) % 3] === entry[1]);
+          const ordered = [face[start], face[(start + 1) % 3], face[(start + 2) % 3]];
+          ordered.forEach(u => { if (!vertexIds.has(u)) vertexIds.set(u, `v${vertexIds.size}`); });
+          const keys = ordered.map((u, j) => edgeKey(u, ordered[(j + 1) % 3]));
+          keys.forEach(key => { if (!edgeIds.has(key)) edgeIds.set(key, `e${edgeIds.size}`); });
+          const neighbors = ordered.map((u, j) => {
+            const v = ordered[(j + 1) % 3];
+            const other = incidence.get(edgeKey(u, v)).find(i => i !== index);
+            if (other === undefined) return "F∞";
+            if (!faceIds.has(other)) {
+              faceIds.set(other, `f${faceIds.size}`);
+              queue.push({ index: other, entry: [v, u] });
+            }
+            return faceIds.get(other);
+          });
+          numberedFaces.push({ face_id: faceIds.get(index), source_face: index, entry_edge: entry.slice(), source_vertices: ordered, vertices: ordered.map(u => vertexIds.get(u)), edges: keys.map(key => edgeIds.get(key)), neighbors });
+        }
+        return { vertexIds, edgeIds, faces: numberedFaces };
+      }
+      const examples = source.map(graph => ({ ...graph, numbering: numberGraph(graph) }));
+      let state = { example: "wheel6", selectedFace: 0, labels: "both" };
+      let graph = examples[0];
+      let drawnWidth = 0;
+      function applyState(snapshot) {
+        const saved = snapshot && (snapshot.modelContent || snapshot);
+        if (!saved || !examples.some(item => item.id === saved.example)) return;
+        state.example = saved.example;
+        state.labels = ["both", "vertices", "faces"].includes(saved.labels) ? saved.labels : "both";
+        state.selectedFace = Number.isInteger(saved.selectedFace) ? saved.selectedFace : 0;
+      }
+      function save() {
+        if (window.openai && typeof window.openai.setWidgetState === "function") {
+          Promise.resolve(window.openai.setWidgetState({ modelContent: { ...state }, privateContent: null })).catch(() => {});
+        }
+      }
+      function el(name, attrs, text) {
+        const item = document.createElementNS("http://www.w3.org/2000/svg", name);
+        Object.entries(attrs).forEach(([key, value]) => item.setAttribute(key, value));
+        if (text !== undefined) item.textContent = text;
+        return item;
+      }
+      function render() {
+        graph = examples.find(item => item.id === state.example);
+        state.selectedFace = Math.max(0, Math.min(graph.numbering.faces.length - 1, state.selectedFace));
+        exampleControl.value = state.example;
+        labelControl.value = state.labels;
+        stepControl.max = String(graph.numbering.faces.length - 1);
+        stepControl.value = String(state.selectedFace);
+        const selected = graph.numbering.faces[state.selectedFace];
+        stepLabel.textContent = `${selected.face_id} / f${graph.numbering.faces.length - 1}`;
+        const degree = new Map(graph.vertices.map(v => [v.source_id, 0]));
+        graph.numbering.edgeIds.forEach((_, key) => JSON.parse(key).forEach(id => degree.set(id, degree.get(id) + 1)));
+        const inside = graph.vertices.filter(v => !graph.boundary.includes(v.source_id));
+        const degreeCounts = new Map();
+        inside.forEach(v => degreeCounts.set(degree.get(v.source_id), (degreeCounts.get(degree.get(v.source_id)) || 0) + 1));
+        const interior = [...degreeCounts].sort((a, b) => a[0] - b[0]).map(([d, count]) => count === 1 ? String(d) : `${d}×${count}`).join("、");
+        metrics.replaceChildren(...[`V ${graph.vertices.length}`, `E ${graph.numbering.edgeIds.size}`, `t ${graph.bounded_faces.length}`, `b ${graph.boundary.length}`, `內點度數 ${interior}`].map(value => {
+          const span = document.createElement("span");
+          span.textContent = value;
+          return span;
+        }));
+        detail.textContent = `${selected.face_id}: (${selected.vertices.join(", ")}) · 邊 ${selected.edges.join(", ")} · 鄰 ${selected.neighbors.join(", ")}`;
+        draw();
+      }
+      function draw() {
+        const width = Math.max(250, stage.getBoundingClientRect().width);
+        drawnWidth = width;
+        const height = Math.max(250, Math.min(420, width * 0.72));
+        svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+        svg.setAttribute("height", height);
+        const xs = graph.vertices.map(v => v.x);
+        const ys = graph.vertices.map(v => v.y);
+        const xMin = Math.min(...xs), xMax = Math.max(...xs), yMin = Math.min(...ys), yMax = Math.max(...ys);
+        const scale = Math.min((width - 72) / (xMax - xMin), (height - 66) / (yMax - yMin));
+        const xCenter = (xMin + xMax) / 2;
+        const yCenter = (yMin + yMax) / 2;
+        const points = new Map(graph.vertices.map(v => [v.source_id, { x: width / 2 + (v.x - xCenter) * scale, y: height / 2 - (v.y - yCenter) * scale }]));
+        svg.replaceChildren(el("title", { id: "tn-graph-title" }, graph.name), el("desc", { id: "tn-graph-desc" }, `${graph.vertices.length} 個頂點，${graph.numbering.edgeIds.size} 條邊，${graph.bounded_faces.length} 個有界三角面。箭頭為根邊 v0 到 v1；陰影是 ${graph.numbering.faces[state.selectedFace].face_id}；外面記為 F∞。`));
+        const defs = el("defs", {});
+        const marker = el("marker", { id: "tn-root-arrow-20261025", viewBox: "0 0 10 10", refX: "8", refY: "5", markerWidth: "5", markerHeight: "5", orient: "auto-start-reverse" });
+        marker.append(el("path", { d: "M 0 0 L 10 5 L 0 10 Z", fill: "var(--viz-series-1)" }));
+        defs.append(marker); svg.append(defs);
+        graph.numbering.faces.forEach((face, index) => {
+          svg.append(el("polygon", { points: face.source_vertices.map(id => `${points.get(id).x},${points.get(id).y}`).join(" "), class: `tn-face${index === state.selectedFace ? " tn-face-selected" : ""}` }));
+        });
+        graph.numbering.edgeIds.forEach((id, key) => {
+          const [u, v] = JSON.parse(key).map(sourceId => points.get(sourceId));
+          svg.append(el("line", { x1: u.x, y1: u.y, x2: v.x, y2: v.y, class: "tn-edge" }));
+        });
+        const rootU = points.get(graph.root_edge[0]), rootV = points.get(graph.root_edge[1]);
+        svg.append(el("line", { x1: rootU.x + (rootV.x - rootU.x) * 0.25, y1: rootU.y + (rootV.y - rootU.y) * 0.25, x2: rootU.x + (rootV.x - rootU.x) * 0.7, y2: rootU.y + (rootV.y - rootU.y) * 0.7, class: "tn-root", "marker-end": "url(#tn-root-arrow-20261025)" }));
+        if (state.labels !== "vertices") graph.numbering.faces.forEach((face, index) => {
+          if (width < 500 && index !== state.selectedFace) return;
+          const facePoints = face.source_vertices.map(id => points.get(id));
+          const x = facePoints.reduce((sum, p) => sum + p.x, 0) / 3;
+          const y = facePoints.reduce((sum, p) => sum + p.y, 0) / 3;
+          svg.append(el("text", { x, y, "text-anchor": "middle", "dominant-baseline": "middle", class: `tn-label tn-face-label text-small${index === state.selectedFace ? " tn-active-label" : ""}` }, face.face_id));
+        });
+        graph.vertices.forEach(vertex => {
+          const p = points.get(vertex.source_id);
+          svg.append(el("circle", { cx: p.x, cy: p.y, r: "3", class: "tn-node" }));
+          if (state.labels === "faces") return;
+          const boundary = graph.boundary.includes(vertex.source_id);
+          const dx = p.x - width / 2, dy = p.y - height / 2;
+          const length = Math.hypot(dx, dy) || 1;
+          const offsetX = boundary ? dx / length * 17 : 12;
+          const offsetY = boundary ? dy / length * 17 : -12;
+          svg.append(el("text", { x: p.x + offsetX, y: p.y + offsetY, "text-anchor": boundary ? (offsetX > 6 ? "start" : offsetX < -6 ? "end" : "middle") : "start", "dominant-baseline": "middle", class: "tn-label text-small" }, graph.numbering.vertexIds.get(vertex.source_id)));
+        });
+        const boundaryPoints = graph.boundary.map(id => points.get(id));
+        const topY = Math.min(...boundaryPoints.map(p => p.y));
+        svg.append(el("text", { x: width / 2 + 35, y: Math.max(14, topY - 14), class: "tn-label tn-face-label text-small" }, "F∞"));
+      }
+      exampleControl.addEventListener("change", () => { state.example = exampleControl.value; state.selectedFace = 0; render(); save(); });
+      labelControl.addEventListener("change", () => { state.labels = labelControl.value; render(); save(); });
+      stepControl.addEventListener("input", () => { state.selectedFace = Number(stepControl.value); render(); save(); });
+      window.addEventListener("openai:set_globals", event => {
+        const snapshot = event.detail && event.detail.globals && event.detail.globals.widgetState;
+        if (snapshot) { applyState(snapshot); render(); }
+      });
+      applyState(window.openai && window.openai.widgetState);
+      render();
+      new ResizeObserver(() => {
+        const width = Math.max(250, stage.getBoundingClientRect().width);
+        if (Math.abs(width - drawnWidth) > 0.25) draw();
+      }).observe(stage);
+    })();
+  </script>
+</div>

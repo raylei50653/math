@@ -1,0 +1,2212 @@
+{
+  "schema_version": 1,
+  "coordinate_system": "Cartesian x right, y up; boundary and bounded_faces are CCW",
+  "numbering_method": "Face BFS rooted at the bounded face to the left of root_edge. The root local triple begins with root_edge. Each newly discovered face enters on the reversed shared edge. Visit local CCW edges in order; number faces upon discovery and vertices and undirected edges on first visit, in BFS queue order. The outer face F∞ is not queued. Rooting fixes this traversal, without asserting isomorphism canonicality or numbering stability under graph extension.",
+  "examples": [
+    {
+      "id": "wheel6",
+      "name": "六片相接",
+      "vertices": [
+        {
+          "source_id": "b0",
+          "x": -0.5,
+          "y": -0.866025
+        },
+        {
+          "source_id": "b1",
+          "x": 0.5,
+          "y": -0.866025
+        },
+        {
+          "source_id": "b2",
+          "x": 1,
+          "y": 0
+        },
+        {
+          "source_id": "b3",
+          "x": 0.5,
+          "y": 0.866025
+        },
+        {
+          "source_id": "b4",
+          "x": -0.5,
+          "y": 0.866025
+        },
+        {
+          "source_id": "b5",
+          "x": -1,
+          "y": 0
+        },
+        {
+          "source_id": "o",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "bounded_faces": [
+        [
+          "b0",
+          "b1",
+          "o"
+        ],
+        [
+          "b1",
+          "b2",
+          "o"
+        ],
+        [
+          "b2",
+          "b3",
+          "o"
+        ],
+        [
+          "b3",
+          "b4",
+          "o"
+        ],
+        [
+          "b4",
+          "b5",
+          "o"
+        ],
+        [
+          "b5",
+          "b0",
+          "o"
+        ]
+      ],
+      "boundary": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5"
+      ],
+      "root_edge": [
+        "b0",
+        "b1"
+      ],
+      "numbering": {
+        "vertices": [
+          {
+            "source_id": "b0",
+            "vertex_id": "v0"
+          },
+          {
+            "source_id": "b1",
+            "vertex_id": "v1"
+          },
+          {
+            "source_id": "o",
+            "vertex_id": "v2"
+          },
+          {
+            "source_id": "b2",
+            "vertex_id": "v3"
+          },
+          {
+            "source_id": "b5",
+            "vertex_id": "v4"
+          },
+          {
+            "source_id": "b3",
+            "vertex_id": "v5"
+          },
+          {
+            "source_id": "b4",
+            "vertex_id": "v6"
+          }
+        ],
+        "edges": [
+          {
+            "source_vertices": [
+              "b0",
+              "b1"
+            ],
+            "edge_id": "e0"
+          },
+          {
+            "source_vertices": [
+              "b1",
+              "o"
+            ],
+            "edge_id": "e1"
+          },
+          {
+            "source_vertices": [
+              "b0",
+              "o"
+            ],
+            "edge_id": "e2"
+          },
+          {
+            "source_vertices": [
+              "b1",
+              "b2"
+            ],
+            "edge_id": "e3"
+          },
+          {
+            "source_vertices": [
+              "b2",
+              "o"
+            ],
+            "edge_id": "e4"
+          },
+          {
+            "source_vertices": [
+              "b5",
+              "o"
+            ],
+            "edge_id": "e5"
+          },
+          {
+            "source_vertices": [
+              "b0",
+              "b5"
+            ],
+            "edge_id": "e6"
+          },
+          {
+            "source_vertices": [
+              "b2",
+              "b3"
+            ],
+            "edge_id": "e7"
+          },
+          {
+            "source_vertices": [
+              "b3",
+              "o"
+            ],
+            "edge_id": "e8"
+          },
+          {
+            "source_vertices": [
+              "b4",
+              "o"
+            ],
+            "edge_id": "e9"
+          },
+          {
+            "source_vertices": [
+              "b4",
+              "b5"
+            ],
+            "edge_id": "e10"
+          },
+          {
+            "source_vertices": [
+              "b3",
+              "b4"
+            ],
+            "edge_id": "e11"
+          }
+        ],
+        "faces": [
+          {
+            "face_id": "f0",
+            "source_face": 0,
+            "entry_edge": [
+              "b0",
+              "b1"
+            ],
+            "source_vertices": [
+              "b0",
+              "b1",
+              "o"
+            ],
+            "vertices": [
+              "v0",
+              "v1",
+              "v2"
+            ],
+            "edges": [
+              "e0",
+              "e1",
+              "e2"
+            ],
+            "neighbors": [
+              "F∞",
+              "f1",
+              "f2"
+            ]
+          },
+          {
+            "face_id": "f1",
+            "source_face": 1,
+            "entry_edge": [
+              "o",
+              "b1"
+            ],
+            "source_vertices": [
+              "o",
+              "b1",
+              "b2"
+            ],
+            "vertices": [
+              "v2",
+              "v1",
+              "v3"
+            ],
+            "edges": [
+              "e1",
+              "e3",
+              "e4"
+            ],
+            "neighbors": [
+              "f0",
+              "F∞",
+              "f3"
+            ]
+          },
+          {
+            "face_id": "f2",
+            "source_face": 5,
+            "entry_edge": [
+              "b0",
+              "o"
+            ],
+            "source_vertices": [
+              "b0",
+              "o",
+              "b5"
+            ],
+            "vertices": [
+              "v0",
+              "v2",
+              "v4"
+            ],
+            "edges": [
+              "e2",
+              "e5",
+              "e6"
+            ],
+            "neighbors": [
+              "f0",
+              "f4",
+              "F∞"
+            ]
+          },
+          {
+            "face_id": "f3",
+            "source_face": 2,
+            "entry_edge": [
+              "o",
+              "b2"
+            ],
+            "source_vertices": [
+              "o",
+              "b2",
+              "b3"
+            ],
+            "vertices": [
+              "v2",
+              "v3",
+              "v5"
+            ],
+            "edges": [
+              "e4",
+              "e7",
+              "e8"
+            ],
+            "neighbors": [
+              "f1",
+              "F∞",
+              "f5"
+            ]
+          },
+          {
+            "face_id": "f4",
+            "source_face": 4,
+            "entry_edge": [
+              "b5",
+              "o"
+            ],
+            "source_vertices": [
+              "b5",
+              "o",
+              "b4"
+            ],
+            "vertices": [
+              "v4",
+              "v2",
+              "v6"
+            ],
+            "edges": [
+              "e5",
+              "e9",
+              "e10"
+            ],
+            "neighbors": [
+              "f2",
+              "f5",
+              "F∞"
+            ]
+          },
+          {
+            "face_id": "f5",
+            "source_face": 3,
+            "entry_edge": [
+              "o",
+              "b3"
+            ],
+            "source_vertices": [
+              "o",
+              "b3",
+              "b4"
+            ],
+            "vertices": [
+              "v2",
+              "v5",
+              "v6"
+            ],
+            "edges": [
+              "e8",
+              "e11",
+              "e9"
+            ],
+            "neighbors": [
+              "f3",
+              "F∞",
+              "f4"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "wheel5",
+      "name": "五片相接",
+      "vertices": [
+        {
+          "source_id": "b0",
+          "x": -0.809017,
+          "y": -0.587785
+        },
+        {
+          "source_id": "b1",
+          "x": 0.309017,
+          "y": -0.951057
+        },
+        {
+          "source_id": "b2",
+          "x": 1,
+          "y": 0
+        },
+        {
+          "source_id": "b3",
+          "x": 0.309017,
+          "y": 0.951057
+        },
+        {
+          "source_id": "b4",
+          "x": -0.809017,
+          "y": 0.587785
+        },
+        {
+          "source_id": "o",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "bounded_faces": [
+        [
+          "b0",
+          "b1",
+          "o"
+        ],
+        [
+          "b1",
+          "b2",
+          "o"
+        ],
+        [
+          "b2",
+          "b3",
+          "o"
+        ],
+        [
+          "b3",
+          "b4",
+          "o"
+        ],
+        [
+          "b4",
+          "b0",
+          "o"
+        ]
+      ],
+      "boundary": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "root_edge": [
+        "b0",
+        "b1"
+      ],
+      "numbering": {
+        "vertices": [
+          {
+            "source_id": "b0",
+            "vertex_id": "v0"
+          },
+          {
+            "source_id": "b1",
+            "vertex_id": "v1"
+          },
+          {
+            "source_id": "o",
+            "vertex_id": "v2"
+          },
+          {
+            "source_id": "b2",
+            "vertex_id": "v3"
+          },
+          {
+            "source_id": "b4",
+            "vertex_id": "v4"
+          },
+          {
+            "source_id": "b3",
+            "vertex_id": "v5"
+          }
+        ],
+        "edges": [
+          {
+            "source_vertices": [
+              "b0",
+              "b1"
+            ],
+            "edge_id": "e0"
+          },
+          {
+            "source_vertices": [
+              "b1",
+              "o"
+            ],
+            "edge_id": "e1"
+          },
+          {
+            "source_vertices": [
+              "b0",
+              "o"
+            ],
+            "edge_id": "e2"
+          },
+          {
+            "source_vertices": [
+              "b1",
+              "b2"
+            ],
+            "edge_id": "e3"
+          },
+          {
+            "source_vertices": [
+              "b2",
+              "o"
+            ],
+            "edge_id": "e4"
+          },
+          {
+            "source_vertices": [
+              "b4",
+              "o"
+            ],
+            "edge_id": "e5"
+          },
+          {
+            "source_vertices": [
+              "b0",
+              "b4"
+            ],
+            "edge_id": "e6"
+          },
+          {
+            "source_vertices": [
+              "b2",
+              "b3"
+            ],
+            "edge_id": "e7"
+          },
+          {
+            "source_vertices": [
+              "b3",
+              "o"
+            ],
+            "edge_id": "e8"
+          },
+          {
+            "source_vertices": [
+              "b3",
+              "b4"
+            ],
+            "edge_id": "e9"
+          }
+        ],
+        "faces": [
+          {
+            "face_id": "f0",
+            "source_face": 0,
+            "entry_edge": [
+              "b0",
+              "b1"
+            ],
+            "source_vertices": [
+              "b0",
+              "b1",
+              "o"
+            ],
+            "vertices": [
+              "v0",
+              "v1",
+              "v2"
+            ],
+            "edges": [
+              "e0",
+              "e1",
+              "e2"
+            ],
+            "neighbors": [
+              "F∞",
+              "f1",
+              "f2"
+            ]
+          },
+          {
+            "face_id": "f1",
+            "source_face": 1,
+            "entry_edge": [
+              "o",
+              "b1"
+            ],
+            "source_vertices": [
+              "o",
+              "b1",
+              "b2"
+            ],
+            "vertices": [
+              "v2",
+              "v1",
+              "v3"
+            ],
+            "edges": [
+              "e1",
+              "e3",
+              "e4"
+            ],
+            "neighbors": [
+              "f0",
+              "F∞",
+              "f3"
+            ]
+          },
+          {
+            "face_id": "f2",
+            "source_face": 4,
+            "entry_edge": [
+              "b0",
+              "o"
+            ],
+            "source_vertices": [
+              "b0",
+              "o",
+              "b4"
+            ],
+            "vertices": [
+              "v0",
+              "v2",
+              "v4"
+            ],
+            "edges": [
+              "e2",
+              "e5",
+              "e6"
+            ],
+            "neighbors": [
+              "f0",
+              "f4",
+              "F∞"
+            ]
+          },
+          {
+            "face_id": "f3",
+            "source_face": 2,
+            "entry_edge": [
+              "o",
+              "b2"
+            ],
+            "source_vertices": [
+              "o",
+              "b2",
+              "b3"
+            ],
+            "vertices": [
+              "v2",
+              "v3",
+              "v5"
+            ],
+            "edges": [
+              "e4",
+              "e7",
+              "e8"
+            ],
+            "neighbors": [
+              "f1",
+              "F∞",
+              "f4"
+            ]
+          },
+          {
+            "face_id": "f4",
+            "source_face": 3,
+            "entry_edge": [
+              "b4",
+              "o"
+            ],
+            "source_vertices": [
+              "b4",
+              "o",
+              "b3"
+            ],
+            "vertices": [
+              "v4",
+              "v2",
+              "v5"
+            ],
+            "edges": [
+              "e5",
+              "e8",
+              "e9"
+            ],
+            "neighbors": [
+              "f2",
+              "f3",
+              "F∞"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "wheel7",
+      "name": "七片相接",
+      "vertices": [
+        {
+          "source_id": "b0",
+          "x": -0.62349,
+          "y": -0.781831
+        },
+        {
+          "source_id": "b1",
+          "x": 0.222521,
+          "y": -0.974928
+        },
+        {
+          "source_id": "b2",
+          "x": 0.900969,
+          "y": -0.433884
+        },
+        {
+          "source_id": "b3",
+          "x": 0.900969,
+          "y": 0.433884
+        },
+        {
+          "source_id": "b4",
+          "x": 0.222521,
+          "y": 0.974928
+        },
+        {
+          "source_id": "b5",
+          "x": -0.62349,
+          "y": 0.781831
+        },
+        {
+          "source_id": "b6",
+          "x": -1,
+          "y": 0
+        },
+        {
+          "source_id": "o",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "bounded_faces": [
+        [
+          "b0",
+          "b1",
+          "o"
+        ],
+        [
+          "b1",
+          "b2",
+          "o"
+        ],
+        [
+          "b2",
+          "b3",
+          "o"
+        ],
+        [
+          "b3",
+          "b4",
+          "o"
+        ],
+        [
+          "b4",
+          "b5",
+          "o"
+        ],
+        [
+          "b5",
+          "b6",
+          "o"
+        ],
+        [
+          "b6",
+          "b0",
+          "o"
+        ]
+      ],
+      "boundary": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
+      "root_edge": [
+        "b0",
+        "b1"
+      ],
+      "numbering": {
+        "vertices": [
+          {
+            "source_id": "b0",
+            "vertex_id": "v0"
+          },
+          {
+            "source_id": "b1",
+            "vertex_id": "v1"
+          },
+          {
+            "source_id": "o",
+            "vertex_id": "v2"
+          },
+          {
+            "source_id": "b2",
+            "vertex_id": "v3"
+          },
+          {
+            "source_id": "b6",
+            "vertex_id": "v4"
+          },
+          {
+            "source_id": "b3",
+            "vertex_id": "v5"
+          },
+          {
+            "source_id": "b5",
+            "vertex_id": "v6"
+          },
+          {
+            "source_id": "b4",
+            "vertex_id": "v7"
+          }
+        ],
+        "edges": [
+          {
+            "source_vertices": [
+              "b0",
+              "b1"
+            ],
+            "edge_id": "e0"
+          },
+          {
+            "source_vertices": [
+              "b1",
+              "o"
+            ],
+            "edge_id": "e1"
+          },
+          {
+            "source_vertices": [
+              "b0",
+              "o"
+            ],
+            "edge_id": "e2"
+          },
+          {
+            "source_vertices": [
+              "b1",
+              "b2"
+            ],
+            "edge_id": "e3"
+          },
+          {
+            "source_vertices": [
+              "b2",
+              "o"
+            ],
+            "edge_id": "e4"
+          },
+          {
+            "source_vertices": [
+              "b6",
+              "o"
+            ],
+            "edge_id": "e5"
+          },
+          {
+            "source_vertices": [
+              "b0",
+              "b6"
+            ],
+            "edge_id": "e6"
+          },
+          {
+            "source_vertices": [
+              "b2",
+              "b3"
+            ],
+            "edge_id": "e7"
+          },
+          {
+            "source_vertices": [
+              "b3",
+              "o"
+            ],
+            "edge_id": "e8"
+          },
+          {
+            "source_vertices": [
+              "b5",
+              "o"
+            ],
+            "edge_id": "e9"
+          },
+          {
+            "source_vertices": [
+              "b5",
+              "b6"
+            ],
+            "edge_id": "e10"
+          },
+          {
+            "source_vertices": [
+              "b3",
+              "b4"
+            ],
+            "edge_id": "e11"
+          },
+          {
+            "source_vertices": [
+              "b4",
+              "o"
+            ],
+            "edge_id": "e12"
+          },
+          {
+            "source_vertices": [
+              "b4",
+              "b5"
+            ],
+            "edge_id": "e13"
+          }
+        ],
+        "faces": [
+          {
+            "face_id": "f0",
+            "source_face": 0,
+            "entry_edge": [
+              "b0",
+              "b1"
+            ],
+            "source_vertices": [
+              "b0",
+              "b1",
+              "o"
+            ],
+            "vertices": [
+              "v0",
+              "v1",
+              "v2"
+            ],
+            "edges": [
+              "e0",
+              "e1",
+              "e2"
+            ],
+            "neighbors": [
+              "F∞",
+              "f1",
+              "f2"
+            ]
+          },
+          {
+            "face_id": "f1",
+            "source_face": 1,
+            "entry_edge": [
+              "o",
+              "b1"
+            ],
+            "source_vertices": [
+              "o",
+              "b1",
+              "b2"
+            ],
+            "vertices": [
+              "v2",
+              "v1",
+              "v3"
+            ],
+            "edges": [
+              "e1",
+              "e3",
+              "e4"
+            ],
+            "neighbors": [
+              "f0",
+              "F∞",
+              "f3"
+            ]
+          },
+          {
+            "face_id": "f2",
+            "source_face": 6,
+            "entry_edge": [
+              "b0",
+              "o"
+            ],
+            "source_vertices": [
+              "b0",
+              "o",
+              "b6"
+            ],
+            "vertices": [
+              "v0",
+              "v2",
+              "v4"
+            ],
+            "edges": [
+              "e2",
+              "e5",
+              "e6"
+            ],
+            "neighbors": [
+              "f0",
+              "f4",
+              "F∞"
+            ]
+          },
+          {
+            "face_id": "f3",
+            "source_face": 2,
+            "entry_edge": [
+              "o",
+              "b2"
+            ],
+            "source_vertices": [
+              "o",
+              "b2",
+              "b3"
+            ],
+            "vertices": [
+              "v2",
+              "v3",
+              "v5"
+            ],
+            "edges": [
+              "e4",
+              "e7",
+              "e8"
+            ],
+            "neighbors": [
+              "f1",
+              "F∞",
+              "f5"
+            ]
+          },
+          {
+            "face_id": "f4",
+            "source_face": 5,
+            "entry_edge": [
+              "b6",
+              "o"
+            ],
+            "source_vertices": [
+              "b6",
+              "o",
+              "b5"
+            ],
+            "vertices": [
+              "v4",
+              "v2",
+              "v6"
+            ],
+            "edges": [
+              "e5",
+              "e9",
+              "e10"
+            ],
+            "neighbors": [
+              "f2",
+              "f6",
+              "F∞"
+            ]
+          },
+          {
+            "face_id": "f5",
+            "source_face": 3,
+            "entry_edge": [
+              "o",
+              "b3"
+            ],
+            "source_vertices": [
+              "o",
+              "b3",
+              "b4"
+            ],
+            "vertices": [
+              "v2",
+              "v5",
+              "v7"
+            ],
+            "edges": [
+              "e8",
+              "e11",
+              "e12"
+            ],
+            "neighbors": [
+              "f3",
+              "F∞",
+              "f6"
+            ]
+          },
+          {
+            "face_id": "f6",
+            "source_face": 4,
+            "entry_edge": [
+              "b5",
+              "o"
+            ],
+            "source_vertices": [
+              "b5",
+              "o",
+              "b4"
+            ],
+            "vertices": [
+              "v6",
+              "v2",
+              "v7"
+            ],
+            "edges": [
+              "e9",
+              "e12",
+              "e13"
+            ],
+            "neighbors": [
+              "f4",
+              "f5",
+              "F∞"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "k4",
+      "name": "K₄：三角外框與內點",
+      "vertices": [
+        {
+          "source_id": "A",
+          "x": -1,
+          "y": -0.7
+        },
+        {
+          "source_id": "B",
+          "x": 1,
+          "y": -0.7
+        },
+        {
+          "source_id": "C",
+          "x": 0,
+          "y": 1
+        },
+        {
+          "source_id": "p",
+          "x": 0,
+          "y": -0.05
+        }
+      ],
+      "bounded_faces": [
+        [
+          "A",
+          "B",
+          "p"
+        ],
+        [
+          "B",
+          "C",
+          "p"
+        ],
+        [
+          "C",
+          "A",
+          "p"
+        ]
+      ],
+      "boundary": [
+        "A",
+        "B",
+        "C"
+      ],
+      "root_edge": [
+        "A",
+        "B"
+      ],
+      "numbering": {
+        "vertices": [
+          {
+            "source_id": "A",
+            "vertex_id": "v0"
+          },
+          {
+            "source_id": "B",
+            "vertex_id": "v1"
+          },
+          {
+            "source_id": "p",
+            "vertex_id": "v2"
+          },
+          {
+            "source_id": "C",
+            "vertex_id": "v3"
+          }
+        ],
+        "edges": [
+          {
+            "source_vertices": [
+              "A",
+              "B"
+            ],
+            "edge_id": "e0"
+          },
+          {
+            "source_vertices": [
+              "B",
+              "p"
+            ],
+            "edge_id": "e1"
+          },
+          {
+            "source_vertices": [
+              "A",
+              "p"
+            ],
+            "edge_id": "e2"
+          },
+          {
+            "source_vertices": [
+              "B",
+              "C"
+            ],
+            "edge_id": "e3"
+          },
+          {
+            "source_vertices": [
+              "C",
+              "p"
+            ],
+            "edge_id": "e4"
+          },
+          {
+            "source_vertices": [
+              "A",
+              "C"
+            ],
+            "edge_id": "e5"
+          }
+        ],
+        "faces": [
+          {
+            "face_id": "f0",
+            "source_face": 0,
+            "entry_edge": [
+              "A",
+              "B"
+            ],
+            "source_vertices": [
+              "A",
+              "B",
+              "p"
+            ],
+            "vertices": [
+              "v0",
+              "v1",
+              "v2"
+            ],
+            "edges": [
+              "e0",
+              "e1",
+              "e2"
+            ],
+            "neighbors": [
+              "F∞",
+              "f1",
+              "f2"
+            ]
+          },
+          {
+            "face_id": "f1",
+            "source_face": 1,
+            "entry_edge": [
+              "p",
+              "B"
+            ],
+            "source_vertices": [
+              "p",
+              "B",
+              "C"
+            ],
+            "vertices": [
+              "v2",
+              "v1",
+              "v3"
+            ],
+            "edges": [
+              "e1",
+              "e3",
+              "e4"
+            ],
+            "neighbors": [
+              "f0",
+              "F∞",
+              "f2"
+            ]
+          },
+          {
+            "face_id": "f2",
+            "source_face": 2,
+            "entry_edge": [
+              "A",
+              "p"
+            ],
+            "source_vertices": [
+              "A",
+              "p",
+              "C"
+            ],
+            "vertices": [
+              "v0",
+              "v2",
+              "v3"
+            ],
+            "edges": [
+              "e2",
+              "e4",
+              "e5"
+            ],
+            "neighbors": [
+              "f0",
+              "f1",
+              "F∞"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "octahedron",
+      "name": "八面體平面嵌入",
+      "vertices": [
+        {
+          "source_id": "A",
+          "x": -1,
+          "y": -0.7
+        },
+        {
+          "source_id": "B",
+          "x": 1,
+          "y": -0.7
+        },
+        {
+          "source_id": "C",
+          "x": 0,
+          "y": 1
+        },
+        {
+          "source_id": "a",
+          "x": 0,
+          "y": -0.3
+        },
+        {
+          "source_id": "b",
+          "x": 0.3,
+          "y": 0.25
+        },
+        {
+          "source_id": "c",
+          "x": -0.3,
+          "y": 0.25
+        }
+      ],
+      "bounded_faces": [
+        [
+          "A",
+          "B",
+          "a"
+        ],
+        [
+          "B",
+          "C",
+          "b"
+        ],
+        [
+          "C",
+          "A",
+          "c"
+        ],
+        [
+          "A",
+          "a",
+          "c"
+        ],
+        [
+          "B",
+          "b",
+          "a"
+        ],
+        [
+          "C",
+          "c",
+          "b"
+        ],
+        [
+          "a",
+          "b",
+          "c"
+        ]
+      ],
+      "boundary": [
+        "A",
+        "B",
+        "C"
+      ],
+      "root_edge": [
+        "A",
+        "B"
+      ],
+      "numbering": {
+        "vertices": [
+          {
+            "source_id": "A",
+            "vertex_id": "v0"
+          },
+          {
+            "source_id": "B",
+            "vertex_id": "v1"
+          },
+          {
+            "source_id": "a",
+            "vertex_id": "v2"
+          },
+          {
+            "source_id": "b",
+            "vertex_id": "v3"
+          },
+          {
+            "source_id": "c",
+            "vertex_id": "v4"
+          },
+          {
+            "source_id": "C",
+            "vertex_id": "v5"
+          }
+        ],
+        "edges": [
+          {
+            "source_vertices": [
+              "A",
+              "B"
+            ],
+            "edge_id": "e0"
+          },
+          {
+            "source_vertices": [
+              "B",
+              "a"
+            ],
+            "edge_id": "e1"
+          },
+          {
+            "source_vertices": [
+              "A",
+              "a"
+            ],
+            "edge_id": "e2"
+          },
+          {
+            "source_vertices": [
+              "B",
+              "b"
+            ],
+            "edge_id": "e3"
+          },
+          {
+            "source_vertices": [
+              "a",
+              "b"
+            ],
+            "edge_id": "e4"
+          },
+          {
+            "source_vertices": [
+              "a",
+              "c"
+            ],
+            "edge_id": "e5"
+          },
+          {
+            "source_vertices": [
+              "A",
+              "c"
+            ],
+            "edge_id": "e6"
+          },
+          {
+            "source_vertices": [
+              "B",
+              "C"
+            ],
+            "edge_id": "e7"
+          },
+          {
+            "source_vertices": [
+              "C",
+              "b"
+            ],
+            "edge_id": "e8"
+          },
+          {
+            "source_vertices": [
+              "b",
+              "c"
+            ],
+            "edge_id": "e9"
+          },
+          {
+            "source_vertices": [
+              "C",
+              "c"
+            ],
+            "edge_id": "e10"
+          },
+          {
+            "source_vertices": [
+              "A",
+              "C"
+            ],
+            "edge_id": "e11"
+          }
+        ],
+        "faces": [
+          {
+            "face_id": "f0",
+            "source_face": 0,
+            "entry_edge": [
+              "A",
+              "B"
+            ],
+            "source_vertices": [
+              "A",
+              "B",
+              "a"
+            ],
+            "vertices": [
+              "v0",
+              "v1",
+              "v2"
+            ],
+            "edges": [
+              "e0",
+              "e1",
+              "e2"
+            ],
+            "neighbors": [
+              "F∞",
+              "f1",
+              "f2"
+            ]
+          },
+          {
+            "face_id": "f1",
+            "source_face": 4,
+            "entry_edge": [
+              "a",
+              "B"
+            ],
+            "source_vertices": [
+              "a",
+              "B",
+              "b"
+            ],
+            "vertices": [
+              "v2",
+              "v1",
+              "v3"
+            ],
+            "edges": [
+              "e1",
+              "e3",
+              "e4"
+            ],
+            "neighbors": [
+              "f0",
+              "f3",
+              "f4"
+            ]
+          },
+          {
+            "face_id": "f2",
+            "source_face": 3,
+            "entry_edge": [
+              "A",
+              "a"
+            ],
+            "source_vertices": [
+              "A",
+              "a",
+              "c"
+            ],
+            "vertices": [
+              "v0",
+              "v2",
+              "v4"
+            ],
+            "edges": [
+              "e2",
+              "e5",
+              "e6"
+            ],
+            "neighbors": [
+              "f0",
+              "f4",
+              "f5"
+            ]
+          },
+          {
+            "face_id": "f3",
+            "source_face": 1,
+            "entry_edge": [
+              "b",
+              "B"
+            ],
+            "source_vertices": [
+              "b",
+              "B",
+              "C"
+            ],
+            "vertices": [
+              "v3",
+              "v1",
+              "v5"
+            ],
+            "edges": [
+              "e3",
+              "e7",
+              "e8"
+            ],
+            "neighbors": [
+              "f1",
+              "F∞",
+              "f6"
+            ]
+          },
+          {
+            "face_id": "f4",
+            "source_face": 6,
+            "entry_edge": [
+              "a",
+              "b"
+            ],
+            "source_vertices": [
+              "a",
+              "b",
+              "c"
+            ],
+            "vertices": [
+              "v2",
+              "v3",
+              "v4"
+            ],
+            "edges": [
+              "e4",
+              "e9",
+              "e5"
+            ],
+            "neighbors": [
+              "f1",
+              "f6",
+              "f2"
+            ]
+          },
+          {
+            "face_id": "f5",
+            "source_face": 2,
+            "entry_edge": [
+              "A",
+              "c"
+            ],
+            "source_vertices": [
+              "A",
+              "c",
+              "C"
+            ],
+            "vertices": [
+              "v0",
+              "v4",
+              "v5"
+            ],
+            "edges": [
+              "e6",
+              "e10",
+              "e11"
+            ],
+            "neighbors": [
+              "f2",
+              "f6",
+              "F∞"
+            ]
+          },
+          {
+            "face_id": "f6",
+            "source_face": 5,
+            "entry_edge": [
+              "b",
+              "C"
+            ],
+            "source_vertices": [
+              "b",
+              "C",
+              "c"
+            ],
+            "vertices": [
+              "v3",
+              "v5",
+              "v4"
+            ],
+            "edges": [
+              "e8",
+              "e10",
+              "e9"
+            ],
+            "neighbors": [
+              "f3",
+              "f5",
+              "f4"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "octahedron-insert",
+      "name": "八面體內面插點",
+      "vertices": [
+        {
+          "source_id": "A",
+          "x": -1,
+          "y": -0.7
+        },
+        {
+          "source_id": "B",
+          "x": 1,
+          "y": -0.7
+        },
+        {
+          "source_id": "C",
+          "x": 0,
+          "y": 1
+        },
+        {
+          "source_id": "a",
+          "x": 0,
+          "y": -0.3
+        },
+        {
+          "source_id": "b",
+          "x": 0.3,
+          "y": 0.25
+        },
+        {
+          "source_id": "c",
+          "x": -0.3,
+          "y": 0.25
+        },
+        {
+          "source_id": "p",
+          "x": 0,
+          "y": 0.066667
+        }
+      ],
+      "bounded_faces": [
+        [
+          "A",
+          "B",
+          "a"
+        ],
+        [
+          "B",
+          "C",
+          "b"
+        ],
+        [
+          "C",
+          "A",
+          "c"
+        ],
+        [
+          "A",
+          "a",
+          "c"
+        ],
+        [
+          "B",
+          "b",
+          "a"
+        ],
+        [
+          "C",
+          "c",
+          "b"
+        ],
+        [
+          "a",
+          "b",
+          "p"
+        ],
+        [
+          "b",
+          "c",
+          "p"
+        ],
+        [
+          "c",
+          "a",
+          "p"
+        ]
+      ],
+      "boundary": [
+        "A",
+        "B",
+        "C"
+      ],
+      "root_edge": [
+        "A",
+        "B"
+      ],
+      "numbering": {
+        "vertices": [
+          {
+            "source_id": "A",
+            "vertex_id": "v0"
+          },
+          {
+            "source_id": "B",
+            "vertex_id": "v1"
+          },
+          {
+            "source_id": "a",
+            "vertex_id": "v2"
+          },
+          {
+            "source_id": "b",
+            "vertex_id": "v3"
+          },
+          {
+            "source_id": "c",
+            "vertex_id": "v4"
+          },
+          {
+            "source_id": "C",
+            "vertex_id": "v5"
+          },
+          {
+            "source_id": "p",
+            "vertex_id": "v6"
+          }
+        ],
+        "edges": [
+          {
+            "source_vertices": [
+              "A",
+              "B"
+            ],
+            "edge_id": "e0"
+          },
+          {
+            "source_vertices": [
+              "B",
+              "a"
+            ],
+            "edge_id": "e1"
+          },
+          {
+            "source_vertices": [
+              "A",
+              "a"
+            ],
+            "edge_id": "e2"
+          },
+          {
+            "source_vertices": [
+              "B",
+              "b"
+            ],
+            "edge_id": "e3"
+          },
+          {
+            "source_vertices": [
+              "a",
+              "b"
+            ],
+            "edge_id": "e4"
+          },
+          {
+            "source_vertices": [
+              "a",
+              "c"
+            ],
+            "edge_id": "e5"
+          },
+          {
+            "source_vertices": [
+              "A",
+              "c"
+            ],
+            "edge_id": "e6"
+          },
+          {
+            "source_vertices": [
+              "B",
+              "C"
+            ],
+            "edge_id": "e7"
+          },
+          {
+            "source_vertices": [
+              "C",
+              "b"
+            ],
+            "edge_id": "e8"
+          },
+          {
+            "source_vertices": [
+              "b",
+              "p"
+            ],
+            "edge_id": "e9"
+          },
+          {
+            "source_vertices": [
+              "a",
+              "p"
+            ],
+            "edge_id": "e10"
+          },
+          {
+            "source_vertices": [
+              "c",
+              "p"
+            ],
+            "edge_id": "e11"
+          },
+          {
+            "source_vertices": [
+              "C",
+              "c"
+            ],
+            "edge_id": "e12"
+          },
+          {
+            "source_vertices": [
+              "A",
+              "C"
+            ],
+            "edge_id": "e13"
+          },
+          {
+            "source_vertices": [
+              "b",
+              "c"
+            ],
+            "edge_id": "e14"
+          }
+        ],
+        "faces": [
+          {
+            "face_id": "f0",
+            "source_face": 0,
+            "entry_edge": [
+              "A",
+              "B"
+            ],
+            "source_vertices": [
+              "A",
+              "B",
+              "a"
+            ],
+            "vertices": [
+              "v0",
+              "v1",
+              "v2"
+            ],
+            "edges": [
+              "e0",
+              "e1",
+              "e2"
+            ],
+            "neighbors": [
+              "F∞",
+              "f1",
+              "f2"
+            ]
+          },
+          {
+            "face_id": "f1",
+            "source_face": 4,
+            "entry_edge": [
+              "a",
+              "B"
+            ],
+            "source_vertices": [
+              "a",
+              "B",
+              "b"
+            ],
+            "vertices": [
+              "v2",
+              "v1",
+              "v3"
+            ],
+            "edges": [
+              "e1",
+              "e3",
+              "e4"
+            ],
+            "neighbors": [
+              "f0",
+              "f3",
+              "f4"
+            ]
+          },
+          {
+            "face_id": "f2",
+            "source_face": 3,
+            "entry_edge": [
+              "A",
+              "a"
+            ],
+            "source_vertices": [
+              "A",
+              "a",
+              "c"
+            ],
+            "vertices": [
+              "v0",
+              "v2",
+              "v4"
+            ],
+            "edges": [
+              "e2",
+              "e5",
+              "e6"
+            ],
+            "neighbors": [
+              "f0",
+              "f5",
+              "f6"
+            ]
+          },
+          {
+            "face_id": "f3",
+            "source_face": 1,
+            "entry_edge": [
+              "b",
+              "B"
+            ],
+            "source_vertices": [
+              "b",
+              "B",
+              "C"
+            ],
+            "vertices": [
+              "v3",
+              "v1",
+              "v5"
+            ],
+            "edges": [
+              "e3",
+              "e7",
+              "e8"
+            ],
+            "neighbors": [
+              "f1",
+              "F∞",
+              "f7"
+            ]
+          },
+          {
+            "face_id": "f4",
+            "source_face": 6,
+            "entry_edge": [
+              "a",
+              "b"
+            ],
+            "source_vertices": [
+              "a",
+              "b",
+              "p"
+            ],
+            "vertices": [
+              "v2",
+              "v3",
+              "v6"
+            ],
+            "edges": [
+              "e4",
+              "e9",
+              "e10"
+            ],
+            "neighbors": [
+              "f1",
+              "f8",
+              "f5"
+            ]
+          },
+          {
+            "face_id": "f5",
+            "source_face": 8,
+            "entry_edge": [
+              "c",
+              "a"
+            ],
+            "source_vertices": [
+              "c",
+              "a",
+              "p"
+            ],
+            "vertices": [
+              "v4",
+              "v2",
+              "v6"
+            ],
+            "edges": [
+              "e5",
+              "e10",
+              "e11"
+            ],
+            "neighbors": [
+              "f2",
+              "f4",
+              "f8"
+            ]
+          },
+          {
+            "face_id": "f6",
+            "source_face": 2,
+            "entry_edge": [
+              "A",
+              "c"
+            ],
+            "source_vertices": [
+              "A",
+              "c",
+              "C"
+            ],
+            "vertices": [
+              "v0",
+              "v4",
+              "v5"
+            ],
+            "edges": [
+              "e6",
+              "e12",
+              "e13"
+            ],
+            "neighbors": [
+              "f2",
+              "f7",
+              "F∞"
+            ]
+          },
+          {
+            "face_id": "f7",
+            "source_face": 5,
+            "entry_edge": [
+              "b",
+              "C"
+            ],
+            "source_vertices": [
+              "b",
+              "C",
+              "c"
+            ],
+            "vertices": [
+              "v3",
+              "v5",
+              "v4"
+            ],
+            "edges": [
+              "e8",
+              "e12",
+              "e14"
+            ],
+            "neighbors": [
+              "f3",
+              "f6",
+              "f8"
+            ]
+          },
+          {
+            "face_id": "f8",
+            "source_face": 7,
+            "entry_edge": [
+              "p",
+              "b"
+            ],
+            "source_vertices": [
+              "p",
+              "b",
+              "c"
+            ],
+            "vertices": [
+              "v6",
+              "v3",
+              "v4"
+            ],
+            "edges": [
+              "e9",
+              "e14",
+              "e11"
+            ],
+            "neighbors": [
+              "f4",
+              "f7",
+              "f5"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

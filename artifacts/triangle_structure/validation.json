@@ -1,0 +1,131 @@
+{
+  "scope": "Six explicit finite simple triangulations of a disk with a simple outer cycle; not enumeration or a new general colouring theorem.",
+  "examples_sha256": "295c4ad4695dde000582b4d5f1941731c11b62a146d21883c04437f74b01a9c3",
+  "checker_sha256": "fc0b08fc15bca770ae66c368927c74d53e175f88340d7de356ac59a1710bf9e0",
+  "external_sources": [
+    {
+      "url": "https://arxiv.org/html/1605.01688v4",
+      "use": "Theorem 3: internally even near-triangulations are exactly the 3-colourable ones."
+    },
+    {
+      "url": "https://users.cecs.anu.edu.au/~bdm/plantri/plantri-guide.txt",
+      "use": "Plane embedding requires cyclic orders; disk triangulation generation is available."
+    }
+  ],
+  "numbering_contract": "Root oriented boundary edge and orientation fixed; face-dual BFS; reuse original vertex identity; separate vertex, edge and face IDs. Numbering depends on root and graph.",
+  "results": [
+    {
+      "id": "wheel6",
+      "V": 7,
+      "E": 12,
+      "bounded_triangles": 6,
+      "boundary_length": 6,
+      "interior_degrees": [
+        6
+      ],
+      "disk_curvature_sum": 6,
+      "proper_vertex_colourings_with_named_colours": {
+        "3": 6,
+        "4": 264
+      },
+      "nonfacial_triangle_cycles": [],
+      "checks": "CCW incidence, disk links, areas, noncrossing edges, Euler, curvature, numbering, dual BFS levels, exhaustive colour counts"
+    },
+    {
+      "id": "wheel5",
+      "V": 6,
+      "E": 10,
+      "bounded_triangles": 5,
+      "boundary_length": 5,
+      "interior_degrees": [
+        5
+      ],
+      "disk_curvature_sum": 6,
+      "proper_vertex_colourings_with_named_colours": {
+        "3": 0,
+        "4": 120
+      },
+      "nonfacial_triangle_cycles": [],
+      "checks": "CCW incidence, disk links, areas, noncrossing edges, Euler, curvature, numbering, dual BFS levels, exhaustive colour counts"
+    },
+    {
+      "id": "wheel7",
+      "V": 8,
+      "E": 14,
+      "bounded_triangles": 7,
+      "boundary_length": 7,
+      "interior_degrees": [
+        7
+      ],
+      "disk_curvature_sum": 6,
+      "proper_vertex_colourings_with_named_colours": {
+        "3": 0,
+        "4": 504
+      },
+      "nonfacial_triangle_cycles": [],
+      "checks": "CCW incidence, disk links, areas, noncrossing edges, Euler, curvature, numbering, dual BFS levels, exhaustive colour counts"
+    },
+    {
+      "id": "k4",
+      "V": 4,
+      "E": 6,
+      "bounded_triangles": 3,
+      "boundary_length": 3,
+      "interior_degrees": [
+        3
+      ],
+      "disk_curvature_sum": 6,
+      "proper_vertex_colourings_with_named_colours": {
+        "3": 0,
+        "4": 24
+      },
+      "nonfacial_triangle_cycles": [],
+      "checks": "CCW incidence, disk links, areas, noncrossing edges, Euler, curvature, numbering, dual BFS levels, exhaustive colour counts"
+    },
+    {
+      "id": "octahedron",
+      "V": 6,
+      "E": 12,
+      "bounded_triangles": 7,
+      "boundary_length": 3,
+      "interior_degrees": [
+        4,
+        4,
+        4
+      ],
+      "disk_curvature_sum": 6,
+      "proper_vertex_colourings_with_named_colours": {
+        "3": 6,
+        "4": 96
+      },
+      "nonfacial_triangle_cycles": [],
+      "checks": "CCW incidence, disk links, areas, noncrossing edges, Euler, curvature, numbering, dual BFS levels, exhaustive colour counts"
+    },
+    {
+      "id": "octahedron-insert",
+      "V": 7,
+      "E": 15,
+      "bounded_triangles": 9,
+      "boundary_length": 3,
+      "interior_degrees": [
+        3,
+        5,
+        5,
+        5
+      ],
+      "disk_curvature_sum": 6,
+      "proper_vertex_colourings_with_named_colours": {
+        "3": 0,
+        "4": 96
+      },
+      "nonfacial_triangle_cycles": [
+        [
+          "a",
+          "b",
+          "c"
+        ]
+      ],
+      "checks": "CCW incidence, disk links, areas, noncrossing edges, Euler, curvature, numbering, dual BFS levels, exhaustive colour counts"
+    }
+  ]
+}
