@@ -1,0 +1,103 @@
+{
+  "base_commit": "b783475a1cc24ff126c09ad276816a3b7eb4e8d8",
+  "checks": {
+    "artifact-policy": {
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "output": "Generated artifact policy OK: 10854 indexed files, 193 large files with documented exceptions, 166 registered outputs.\n"
+    },
+    "docgraph-docs": {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes\n"
+    },
+    "docs": {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "output": "OK: 750 Markdown files, 9989 local links; anchors, index, handoff, guide progress checked\n"
+    },
+    "staged-whitespace": {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  },
+  "independent_reviews": [
+    "subtree-domain symmetry and inverse writeback",
+    "critical obstruction quantifiers and planar contraction",
+    "source custody and saved original-edge witnesses"
+  ],
+  "not_run": [
+    "Lean build: no Lean source changed",
+    "whole-worktree DocGraph: docs-only result is reported separately"
+  ],
+  "staged_paths_before_final_receipt_update": [
+    "audits/2026-10-26-four-color-critical-obstructions-b783475/cut_patterns.py",
+    "audits/2026-10-26-four-color-critical-obstructions-b783475/cut_report.json",
+    "audits/2026-10-26-four-color-critical-obstructions-b783475/replay.py",
+    "audits/2026-10-26-four-color-critical-obstructions-b783475/report.json",
+    "audits/2026-10-26-four-color-critical-obstructions-b783475/timing.json",
+    "audits/2026-10-26-four-color-critical-obstructions-b783475/verification.json",
+    "audits/2026-10-26-four-color-local-symmetry-b783475/baseline-source/four_color_lab.py",
+    "audits/2026-10-26-four-color-local-symmetry-b783475/baseline-source/four_color_local_messages.py",
+    "audits/2026-10-26-four-color-local-symmetry-b783475/baseline-source/four_color_serialization.py",
+    "audits/2026-10-26-four-color-local-symmetry-b783475/replay.py",
+    "audits/2026-10-26-four-color-local-symmetry-b783475/report.json",
+    "audits/2026-10-26-four-color-local-symmetry-b783475/source/four_color_lab.py",
+    "audits/2026-10-26-four-color-local-symmetry-b783475/source/four_color_local_messages.py",
+    "audits/2026-10-26-four-color-local-symmetry-b783475/source/four_color_serialization.py",
+    "audits/2026-10-26-four-color-local-symmetry-b783475/timing.json",
+    "audits/2026-10-26-four-color-local-symmetry-b783475/verification.json",
+    "docs/4ct_guide.md",
+    "docs/STATUS.md",
+    "docs/four_color_completeness.md",
+    "docs/four_color_critical_obstructions.md",
+    "docs/four_color_guide.md",
+    "docs/four_color_local_information.md",
+    "docs/four_color_local_symmetry.md",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/checks.json",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/critical-normal.log",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/critical-seed17.log",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/custody.json",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/cut-normal.log",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/cut-seed17.log",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/local-frozen-seed17.log",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/local-normal.log",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/pre-critical-docs/STATUS.md.txt",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/pre-critical-docs/four_color_guide.md.txt",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/pre-publication-docs/4ct_guide.md.txt",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/pre-publication-docs/STATUS.md.txt",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/pre-publication-docs/four_color_completeness.md.txt",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/pre-publication-docs/four_color_critical_obstructions.md.txt",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/pre-publication-docs/four_color_guide.md.txt",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/pre-publication-docs/four_color_local_information.md.txt",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/pre-publication-docs/four_color_local_symmetry.md.txt",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/replays.json",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/tool-tests-python314.json",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/tool-tests-python314.log",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/tool-tests.json",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publication/tool-tests.log",
+    "docs/history/2026-10-26-four-color-symmetry-obstructions-publish.md",
+    "scripts/four_color_local_messages.py",
+    "tools/tests/test_four_color_local_message_symmetry.py"
+  ],
+  "staged_scope_verified": true,
+  "status": "passed"
+}

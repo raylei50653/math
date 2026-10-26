@@ -26,7 +26,8 @@ class _Limit(Exception):
 
 def solve_local_messages(graph, *, domains=None, max_checks=1000000,
                          max_messages=100000, max_cache_entries=100000,
-                         transcript_limit=100000, audit_metadata=False):
+                         transcript_limit=100000, audit_metadata=False,
+                         color_symmetry=False):
     """Decide finite graph colouring by lazy, exact tree-separator queries.
 
     ``graph`` uses the laboratory's vertices/edges/fixed dictionary format.
@@ -50,12 +51,21 @@ def solve_local_messages(graph, *, domains=None, max_checks=1000000,
     ``audit_metadata=True`` additionally exports private bags and allocated
     original edges for independent replay.  Default metadata only describes
     bag identifiers, interface vertices, tree links, and bag sizes.
+
+    ``color_symmetry=True`` shares completed cache entries under permutations
+    preserving every effective domain in the queried subtree, including its
+    separator.  Messages retain literal colours.  Private owner witnesses are
+    stored in the canonical frame and inverted during final writeback.  This
+    optional quotient can cost more than it saves on easy positive queries;
+    the historical literal-cache algorithm remains the default.
     """
     for value in (max_checks, max_messages, max_cache_entries, transcript_limit):
         if type(value) is not int or value < 0:
             raise ValueError("limits must be nonnegative integers")
     if type(audit_metadata) is not bool:
         raise ValueError("audit_metadata must be a boolean")
+    if type(color_symmetry) is not bool:
+        raise ValueError("color_symmetry must be a boolean")
     g = normalize_graph(graph)
     vertices = g["vertices"]
     n = len(vertices)
@@ -89,7 +99,8 @@ def solve_local_messages(graph, *, domains=None, max_checks=1000000,
                  cache_entries=0, unique_queries=0, max_bag_size=0,
                  max_separator_size=0, potential_separator_rows=0,
                  table_rows_exported=0, writeback_vertices=0,
-                 candidate_rows=0, max_stack_depth=0)
+                 candidate_rows=0, max_stack_depth=0,
+                 symmetry_bags=0, symmetry_cache_hits=0)
     transcript = []
     decomposition = None
     private_cache = {}
@@ -117,6 +128,7 @@ def solve_local_messages(graph, *, domains=None, max_checks=1000000,
                     transcript_truncated=len(transcript) < stats["messages"],
                     eager_tables_built=False,
                     cache_declared_complete=False,
+                    color_symmetry=color_symmetry,
                     relation_representation="original constraints plus exact lazy query procedure")
 
     try:
@@ -207,6 +219,75 @@ def solve_local_messages(graph, *, domains=None, max_checks=1000000,
         stats["max_bag_size"] = max(map(len, bags), default=0)
         stats["max_separator_size"] = max(map(len, separators), default=0)
         stats["potential_separator_rows"] = sum(4 ** len(sep) for sep in separators)
+
+        # A colour pair can be swapped precisely when both colours have the
+        # same membership in every domain in the subtree scope.  Intersecting
+        # these six bits over a bag and its children avoids visiting all
+        # descendants.  Children have smaller IDs in the elimination forest.
+        # These groups are nested: H_parent is a subgroup of H_child.
+        colour_classes = []
+        if color_symmetry:
+            pairs = tuple(combinations(range(4), 2))
+            domain_swaps = {}
+            for values in sorted(set(allowed)):
+                mask = 0
+                for bit, (left, right) in enumerate(pairs):
+                    charge("symmetry_domain_pair")
+                    if (left in values) == (right in values):
+                        mask |= 1 << bit
+                domain_swaps[values] = mask
+            subtree_swaps = []
+            for b, bag in enumerate(bags):
+                mask = (1 << len(pairs)) - 1
+                for v in bag:
+                    charge("symmetry_scope_domain")
+                    mask &= domain_swaps[allowed[v]]
+                for child in children[b]:
+                    charge("symmetry_scope_child")
+                    mask &= subtree_swaps[child]
+                subtree_swaps.append(mask)
+                classes = [[c] for c in range(4)]
+                for bit, (left, right) in enumerate(pairs):
+                    charge("symmetry_class_pair")
+                    if mask & (1 << bit):
+                        classes[left].append(right)
+                        classes[right].append(left)
+                colour_classes.append(tuple(tuple(sorted(cs)) for cs in classes))
+                stats["symmetry_bags"] += mask != 0
+
+        def cache_frame(b, boundary):
+            if not color_symmetry:
+                return boundary, (0, 1, 2, 3), (0, 1, 2, 3)
+            # Each class supports all its permutations.  Its first encountered
+            # colour maps to its smallest member, the next distinct colour to
+            # its next member.  Complete the unused colours to get a bijection
+            # even when an owner colour does not occur on the separator.
+            classes = colour_classes[b]
+            permutation = [None] * 4
+            used = [False] * 4
+            canonical = []
+            for colour in boundary:
+                charge("symmetry_boundary_colour")
+                if permutation[colour] is None:
+                    for target in classes[colour]:
+                        if not used[target]:
+                            permutation[colour] = target
+                            used[target] = True
+                            break
+                canonical.append(permutation[colour])
+            for colour in range(4):
+                charge("symmetry_complete_colour")
+                if permutation[colour] is None:
+                    for target in classes[colour]:
+                        if not used[target]:
+                            permutation[colour] = target
+                            used[target] = True
+                            break
+            inverse = [None] * 4
+            for colour, target in enumerate(permutation):
+                inverse[target] = colour
+            return tuple(canonical), tuple(permutation), tuple(inverse)
+
         phase = "query_checks"
         stack = []
 
@@ -226,7 +307,7 @@ def solve_local_messages(graph, *, domains=None, max_checks=1000000,
         def finish(possible, owner_colour=None, cached=False):
             frame = stack[-1]
             bag, row = frame["bag"], frame["boundary"]
-            key = (bag, row)
+            key = (bag, frame["canonical"])
             if not cached and len(private_cache) >= max_cache_entries:
                 raise _Limit("max_cache_entries")
             charge("completed_reply")
@@ -236,7 +317,9 @@ def solve_local_messages(graph, *, domains=None, max_checks=1000000,
                          colors=list(row), possible=possible, cached=cached)
             emit(event)
             if not cached:
-                private_cache[key] = (possible, owner_colour)
+                canonical_owner = (frame["permutation"][owner_colour]
+                                   if possible else None)
+                private_cache[key] = (possible, canonical_owner, row)
                 stats["cache_entries"] = len(private_cache)
             stats["replies"] += 1
             stats["positive_replies" if possible else "negative_replies"] += 1
@@ -253,10 +336,14 @@ def solve_local_messages(graph, *, domains=None, max_checks=1000000,
                 b, boundary = frame["bag"], frame["boundary"]
                 owner = order[b]
                 if frame["stage"] == "start":
+                    canonical, permutation, _ = cache_frame(b, boundary)
+                    frame.update(canonical=canonical, permutation=permutation)
                     charge("cache_lookup")
-                    cached = private_cache.get((b, boundary))
+                    cached = private_cache.get((b, canonical))
                     if cached is not None:
                         stats["cache_hits"] += 1
+                        if color_symmetry and boundary != cached[2]:
+                            stats["symmetry_cache_hits"] += 1
                         root_result = finish(cached[0], cached=True)
                         continue
                     boundary_ok = True
@@ -314,9 +401,11 @@ def solve_local_messages(graph, *, domains=None, max_checks=1000000,
         while pending:
             b, boundary = pending.pop()
             charge("writeback_owner")
-            possible, colour = private_cache[(b, boundary)]
+            canonical, _, inverse = cache_frame(b, boundary)
+            possible, canonical_owner, _ = private_cache[(b, canonical)]
             if not possible:
                 raise AssertionError("writeback reached a negative query")
+            colour = inverse[canonical_owner]
             row = dict(zip(separators[b], boundary))
             row[order[b]] = colour
             colours[order[b]] = colour

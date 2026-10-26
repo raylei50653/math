@@ -1,0 +1,136 @@
+{
+  "baseline_commit": "b783475a1cc24ff126c09ad276816a3b7eb4e8d8",
+  "baseline_sources": {
+    "four_color_lab.py": "977658a9c8ae2c6108942916797babca95b7ab0a6d9480e846b4bba3bfb11ea1",
+    "four_color_local_messages.py": "1357504c5dea2fba0628e2604985fd985ab4f6664783a1732fa3e2da66d1098a",
+    "four_color_serialization.py": "fb254335ab427e1c6e12297edf792dd8827a10a8a21a6d280770881967f084b4"
+  },
+  "documentation_sha256": {
+    "docs/STATUS.md": "3cfe91bd097ac4f0ccc6ed2ca983d18707b25385bf508c36864701891dd58c90",
+    "docs/four_color_guide.md": "9655c5b28f550ab265e34fa976693f9d39d4d6322b07a01d37b5ef3cfc38fe73",
+    "docs/four_color_local_information.md": "a656bbf8859daddb0b846c4989261c4b209a9763ae72788f8e1666864c2f8785",
+    "docs/four_color_local_symmetry.md": "a5dc6e07c31a204a56f327b5207f85b91b20b1c8bf4f281401c289dcaa2e8b4e"
+  },
+  "driver_sha256": "62cb6e06f4281b0b3afdcabf436372f44cdb1e6640adf4f8d70a1fbd306f3493",
+  "final_checks": {
+    "docs": {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "output": "OK: 748 Markdown files, 9962 local links; anchors, index, handoff, guide progress checked\n"
+    },
+    "docs_only_docgraph": {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes\n"
+    },
+    "generated_artifact_policy": {
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "output": "Generated artifact policy OK: 10845 indexed files, 193 large files with documented exceptions, 166 registered outputs.\n"
+    },
+    "staged_whitespace": {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    "worktree_whitespace": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  },
+  "frozen_sources": {
+    "four_color_lab.py": "977658a9c8ae2c6108942916797babca95b7ab0a6d9480e846b4bba3bfb11ea1",
+    "four_color_local_messages.py": "631ab029bab710bef786ffcaa464e03caf8abdd4e7378e10bf5f9c95b6b5368c",
+    "four_color_serialization.py": "fb254335ab427e1c6e12297edf792dd8827a10a8a21a6d280770881967f084b4"
+  },
+  "frozen_sources_match_report_and_current": true,
+  "replay": {
+    "additional_same_default_budget_control": true,
+    "command": "PYTHONHASHSEED=17 python3 audits/2026-10-26-four-color-local-symmetry-b783475/replay.py --source audits/2026-10-26-four-color-local-symmetry-b783475/source --out /tmp/four-color-local-symmetry-frozen-seed17.json --timing-out /tmp/four-color-local-symmetry-frozen-seed17-timing.json",
+    "frozen_source_seed17_byte_identical": true,
+    "full_table_reply_semantic_cases": 14,
+    "modes_per_case": 3,
+    "named_cases": 17,
+    "normal_and_current_seed17_byte_identical": true,
+    "wide_cases_with_final_original_edge_oracle_only": 3
+  },
+  "report_sha256": "d669fceb56dbba334f4b8f8ecc40cfe18beacd267ee209d778445bda2abc1a04",
+  "review": {
+    "algorithm_and_documentation_independently_reviewed": true,
+    "main_solver_fibres_api_replaced": false,
+    "new_lean_claim": false,
+    "whole_tree_docgraph_run": false
+  },
+  "source_snapshot_directory": "source",
+  "status": "passed",
+  "temporary_index_checks": {
+    "generated_artifact_policy": {
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "output": "Generated artifact policy OK: 10845 indexed files, 193 large files with documented exceptions, 166 registered outputs.\n"
+    },
+    "real_git_index_unchanged": true,
+    "scope": [
+      "scripts/four_color_local_messages.py",
+      "tools/tests/test_four_color_local_message_symmetry.py",
+      "docs/four_color_local_symmetry.md",
+      "docs/four_color_local_information.md",
+      "docs/four_color_guide.md",
+      "docs/STATUS.md",
+      "audits/2026-10-26-four-color-local-symmetry-b783475"
+    ],
+    "staged_whitespace": {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  },
+  "test_sources": {
+    "tools/tests/test_four_color_local_message_symmetry.py": "77efc20205c67f4fdd08d20451a6a29c3404f9ce736f0a4af0162a4d0ab8edb0",
+    "tools/tests/test_four_color_local_messages.py": "825f6fac17eea2d4379346fc52a3df3b774f486c943553b90edf1ca0faa7fed9"
+  },
+  "tests": [
+    {
+      "command": "python3 -m unittest discover -s tools/tests -p 'test_four_color*.py'",
+      "completion": "Ran 322 tests in 31.582s; OK",
+      "exit_code": 0,
+      "tests": 322
+    },
+    {
+      "command": "uv run --with-requirements requirements.txt python -m unittest discover -s tools/tests -p 'test_*.py'",
+      "completion": "Ran 416 tests in 37.682s; OK",
+      "exit_code": 0,
+      "tests": 416
+    }
+  ]
+}

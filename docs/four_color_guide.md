@@ -6,22 +6,22 @@
 
 | 欄位 | 現況 |
 | --- | --- |
-| 階段／生命週期 | 完整消元已有完備性紙證；新增獨立按需接口原型，精確求一解而不預先建立全部表，無固定寬度或固定資源保證。 |
-| 最近研究更新 | 2026-10-26：[按需局部訊息](four_color_local_information.md#2026-10-26按需查詢局部接口)只詢問一組完整接口顏色，內部見證留待根部成功後回填。 |
-| 上次完成 | 6×7格圖41組不同接口查詢完成；14點裸圖71組、固定色反例281組，全部答覆與同袋完整表獨立對照一致。 |
-| 目前停止點 | 九份具名條件及200小圖條件核對完成；這是局部試探與隱式完整來源，未提供密碼學隱私、全部fibres列舉或一般加速。 |
-| 下一步 | 接續時比較較寬接口與大量否定查詢的成本；是否接入主引擎須保留其完整fibres與資源契約。 |
-| 接手入口 | [按需接口契約與對照](four_color_local_information.md#2026-10-26按需查詢局部接口)、[歸一化比較](four_color_logic_optimization.md#2026-10-26等色類與共同色群歸一化)、[反例修復](four_color_guarantee_gap.md#2026-10-26修復與保留範圍)。 |
+| 階段／生命週期 | 精確求解與無解必要結構並行；按需接口有可選換色快取，新增共同阻擋、小邊割紙證與原圖證書，無一般加速或平面必可染證明。 |
+| 最近研究更新 | 2026-10-26：[小邊割必要條件](four_color_critical_obstructions.md)證假設裸平面最小反例的兩側各至少兩點時，需至少六條跨邊。 |
+| 上次完成 | 2857份至多五跨邊色型配對完整核對；六張原圖保存39份刪點、105份刪邊判定與同染色路證書，含量詞／固定色負控制。 |
+| 目前停止點 | 六跨邊出現2×3禁色障礙，不能再迫出全四色側；真實平面來源限制及932排除仍OPEN。 |
+| 下一步 | 接續時研究六跨邊共同障礙的同源平面限制，並對照既有可約性判準；與沿環六點的接口契約分開。 |
+| 接手入口 | [必要條件、證書與停止點](four_color_critical_obstructions.md)、[按需完整接口](four_color_local_information.md#2026-10-26按需查詢局部接口)、[換色快取](four_color_local_symmetry.md)。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
 | 2026-10-25／引擎與完整性 | [逐點試色](four_color_lab.md)、[完整關係消元](four_color_constraints.md)建立原圖追蹤與倒序回填；[完備性紙證](four_color_completeness.md)涵蓋無資源限制的任意有限輸入。 |
-| 2026-10-25／共同條件與構型限制 | [條件接口](four_color_cycle_contexts.md)及[部分輻條](four_color_partial_spokes.md)補上十二／九點提前判否；[共同限制登記](four_color_joint_constraints.md)與[自動找型](four_color_joint_propagation.md)接入三點等色表。 |
 | 2026-10-25／流程與RAM | [增量接口與精確枚舉](four_color_flow_optimization.md)減少重複工作；[容量](four_color_memory_optimization.md)補齊最後一例，再以[RAM索引](four_color_ram_indexes.md)換取速度。 |
 | 2026-10-26／消元邏輯與表示 | [前綴剪枝](four_color_logic_optimization.md)提前排除不相容後綴；[回填mask](four_color_retention.md)無損保存全部選項，任意刪邊界列則有反例。 |
-| 2026-10-26／歸一化與按需訊息 | [等色類與色群歸一化](four_color_logic_optimization.md#2026-10-26等色類與共同色群歸一化)減少指定查詢步數；[按需接口](four_color_local_information.md#2026-10-26按需查詢局部接口)另以完整隱式來源逐列查詢，最後回填一解。 |
+| 2026-10-26／歸一化與按需訊息 | [完整隱式接口](four_color_local_information.md#2026-10-26按需查詢局部接口)逐列詢問；[子樹換色快取](four_color_local_symmetry.md)在保域色群下共用答案，最後逆換色回填。 |
+| 2026-10-26／無解必要結構 | [最小核心與小邊割](four_color_critical_obstructions.md)保存每原邊三路見證；共同換色迫平面最小反例的非平凡分塊至少六跨邊，六邊新障礙仍OPEN。 |
 
 下表依問題列出權威報告；各報告保留當輪數字、來源快照及歷史模式，不以後續版本改寫。
 
@@ -46,6 +46,8 @@
 | 已知充分矛盾子型及完整星形 fibres | [衝突子型](four_color_conflicts.md) | 核對原子圖與當前候選域；沒有一般衝突分類。 |
 | 五環雙向支援、唯一逃逸、雙中心等色 | [C₅ 結構自約束](four_color_c5_structure.md) | 精確局部支援；等色因子仍與全部原約束共同使用。 |
 | 接口接合、按需訊息與低階投影反例 | [局部資訊外推](four_color_local_information.md) | 樹形完整接口可逐列詢問；九例每份答覆核對，6×7格圖僅41組查詢，低階投影仍不可代替共同接口。 |
+| 較寬接口與換色快取 | [子樹換色](four_color_local_symmetry.md) | 17例兩模式核對，14例逐答覆核完整表；子樹保域群與見證逆換色保持同一字面接口，易解圖可能增加成本。 |
+| 無解核心與小邊割 | [共同阻擋必要條件](four_color_critical_obstructions.md) | 每條必要原邊有同染色三路；假設裸平面最小反例的非平凡分塊至少六跨邊。必要條件非充分，六跨邊及932仍OPEN。 |
 | 共同接口整列交集及衝突優先控制 | [交集傳播](four_color_intersections.md) | 保留多列，不混接各欄的不同見證。 |
 | 長鏈、分支、長環及固定色三角剖分 | [較大原圖](four_color_larger_structures.md) | 三十六份具名條件；結構投影與隨機指定見證分開核對。 |
 | 交集與同一原環反覆回饋 | [共同傳播](four_color_combined_cycles.md) | 三十六份條件、三模式；有界基本環搜尋不等於全部環。 |

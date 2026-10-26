@@ -1,0 +1,116 @@
+{
+  "baseline_commit_for_workspace_provenance": "b783475a1cc24ff126c09ad276816a3b7eb4e8d8",
+  "checks": {
+    "docs": {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "output": "OK: 749 Markdown files, 9975 local links; anchors, index, handoff, guide progress checked\n"
+    },
+    "docs_only_docgraph": {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes\n"
+    },
+    "generated_artifact_policy": {
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "output": "Generated artifact policy OK: 10849 indexed files, 193 large files with documented exceptions, 166 registered outputs.\n"
+    },
+    "staged_whitespace": {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    "worktree_whitespace": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  },
+  "documentation_sha256": {
+    "docs/4ct_guide.md": "bc71d36a438b1196064745dba665ef350da95614ac8cbedaa49cb4492c1a337f",
+    "docs/STATUS.md": "d9d76fe6c7593df6c54109b52b1a5538a4e702682756a5239f06e812253b5fc3",
+    "docs/four_color_completeness.md": "3b4fb9e883f666960820a260c04ee227ec432df4acaff14937be28cd2b89defb",
+    "docs/four_color_critical_obstructions.md": "72476a97d3e9c9be0e611033ae846bd73a221479f8945430e0fa70eac6eaf4bc",
+    "docs/four_color_guide.md": "372b90921faf52e805ee5935fc7138952b2a134d9a4e294062fdf4c72931add7"
+  },
+  "files_sha256": {
+    "cut_patterns.py": "e4a0570415b38a7fb118eed81c739591ffd303d9616e5dbb4542daf937ad2a13",
+    "cut_report.json": "2d43a27e6b8e59776320bd2e0b0266f092821dedd5959d3ca9146883b10f8345",
+    "replay.py": "df2cf2e772284fa35825852be962c78d7fde60163a21848313b921b04ed730ba",
+    "report.json": "ffaf36c7485554eda7f3709099bb6f4a26cdc9d1f75964b21d05dd37af0c5fda"
+  },
+  "finite_scope": {
+    "all_edge_deleted_graph_solutions_enumerated": false,
+    "all_six_incidence_pairs_enumerated": false,
+    "complete_cut_pattern_pairs_through_five": 2857,
+    "edge_deletions": 105,
+    "named_graphs": 6,
+    "named_six_incidence_controls": 1,
+    "saved_necessary_paths": 300,
+    "vertex_deletions": 39
+  },
+  "not_run_this_round": [
+    "existing tool test suite",
+    "Lean build",
+    "whole-worktree DocGraph"
+  ],
+  "production_solver_modified_this_round": false,
+  "replays": [
+    {
+      "byte_identical_to_saved_normal_report": true,
+      "command": "PYTHONHASHSEED=17 python3 audits/2026-10-26-four-color-critical-obstructions-b783475/replay.py --out /tmp/critical-obstructions-root-seed17.json",
+      "exit_code": 0
+    },
+    {
+      "byte_identical_to_saved_normal_report": true,
+      "command": "PYTHONHASHSEED=17 python3 audits/2026-10-26-four-color-critical-obstructions-b783475/cut_patterns.py --out /tmp/critical-cut-patterns-root-seed17.json",
+      "exit_code": 0
+    }
+  ],
+  "review": {
+    "no_new_932_exclusion_or_reducibility_certificate": true,
+    "paper_proof_and_quantifiers_independently_reviewed": true,
+    "small_cut_theorem_needs_edge_minimality": false,
+    "small_cut_theorem_needs_global_planar_vertex_minimality": true,
+    "three_kempe_paths_need_edge_deletion_colorability_and_bare_four_colors": true
+  },
+  "status": "passed",
+  "temporary_index": {
+    "paths": [
+      "scripts/four_color_local_messages.py",
+      "tools/tests/test_four_color_local_message_symmetry.py",
+      "docs/four_color_local_symmetry.md",
+      "docs/four_color_local_information.md",
+      "docs/four_color_guide.md",
+      "docs/STATUS.md",
+      "docs/4ct_guide.md",
+      "docs/four_color_completeness.md",
+      "docs/four_color_critical_obstructions.md",
+      "audits/2026-10-26-four-color-local-symmetry-b783475",
+      "audits/2026-10-26-four-color-critical-obstructions-b783475"
+    ],
+    "real_git_index_unchanged": true
+  }
+}
