@@ -135,11 +135,14 @@ def totals_for(records):
 
 def experiment(out_dir, *, solver_source, inputs=FROZEN_INPUT, names=None,
                check_planarity=True, max_table_rows=None, measure_peak_rss=False,
-               interface_cache=None, interface_cache_max_rows=1_000_000):
+               interface_cache=None, interface_cache_max_rows=1_000_000,
+               bucket_method=None):
     if max_table_rows is not None and (type(max_table_rows) is not int or max_table_rows < 0):
         raise ValueError("max_table_rows must be a nonnegative integer or None")
     if interface_cache is not None and type(interface_cache) is not bool:
         raise ValueError("interface_cache must be bool or None")
+    if bucket_method is not None and bucket_method not in ("anchor", "prefix"):
+        raise ValueError("bucket_method must be anchor or prefix")
     if type(interface_cache_max_rows) is not int or interface_cache_max_rows < 0:
         raise ValueError("interface_cache_max_rows must be a nonnegative integer")
     solver_source = solver_source.resolve()
@@ -147,6 +150,12 @@ def experiment(out_dir, *, solver_source, inputs=FROZEN_INPUT, names=None,
     options = dict(OPTIONS)
     solver_options = dict(options)
     solver_parameters = inspect.signature(helpers["four_color_constraints"].solve_constraints).parameters
+    if bucket_method is not None:
+        options["bucket_method"] = bucket_method
+        if "bucket_method" in solver_parameters:
+            solver_options["bucket_method"] = bucket_method
+        elif bucket_method != "anchor":
+            raise ValueError("selected solver does not support prefix bucket enumeration")
     if max_table_rows is not None:
         options["max_table_rows"] = max_table_rows
         if "max_table_rows" in solver_parameters:
@@ -352,6 +361,8 @@ def main():
                         help="explicit acceleration-cache mode; omitted preserves solver default")
     parser.add_argument("--interface-cache-max-rows", type=int, default=1_000_000,
                         help="acceleration-cache capacity, separate from the complete-record storage cap")
+    parser.add_argument("--bucket-method", choices=("anchor", "prefix"),
+                        help="explicit exact bucket enumeration; omitted preserves solver default")
     args = parser.parse_args()
     names = [name for group in (args.cases or []) for name in group]
     report = experiment(args.out_dir, solver_source=args.solver_source,
@@ -359,7 +370,8 @@ def main():
                         check_planarity=not args.skip_planarity,
                         max_table_rows=args.max_table_rows, measure_peak_rss=args.measure_peak_rss,
                         interface_cache=None if args.interface_cache is None else args.interface_cache == "on",
-                        interface_cache_max_rows=args.interface_cache_max_rows)
+                        interface_cache_max_rows=args.interface_cache_max_rows,
+                        bucket_method=args.bucket_method)
     print(json.dumps(report["totals"], ensure_ascii=False, sort_keys=True), flush=True)
 
 

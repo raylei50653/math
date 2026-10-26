@@ -380,6 +380,8 @@ def main():
     run.add_argument("--c5-max-cycles", type=int, default=128)
     run.add_argument("--c5-max-scan-steps", type=int, default=200000)
     run.add_argument("--max-checks", type=int, default=1000000, help="constraints engine work budget")
+    run.add_argument("--bucket-method", choices=("anchor", "prefix"), default="anchor",
+                     help="constraints engine: enumerate complete anchor extensions (default), or prune prefixes when a complete input factor fails")
     run.add_argument("--max-table-rows", type=int,
                      help="constraints engine generated-table and complete-record row budget; default min(max-checks, 100000)")
     run.add_argument("--interface-cache", action="store_true",
@@ -432,6 +434,7 @@ def main():
                 from four_color_constraints import solve_constraints
                 r = solve_constraints(json.loads(args.input.read_text()), not args.edges_only,
                                       args.max_checks, args.trace_limit, use_c5=args.c5 or args.c5_local,
+                                      bucket_method=args.bucket_method,
                                       max_table_rows=args.max_table_rows,
                                       use_interface_cache=args.interface_cache,
                                       interface_cache_max_rows=args.interface_cache_max_rows,
@@ -449,7 +452,7 @@ def main():
                                       joint_max_matches=args.joint_max_matches,
                                       joint_max_scan_steps=args.joint_max_scan_steps)
             else:
-                if args.edges_only or args.c5 or args.c5_local or args.no_conflicts or args.intersections or args.cycles or args.cycle_contexts or args.cycle_context_search != "neighbours" or args.joint_constraints or args.max_table_rows is not None or args.interface_cache or args.interface_cache_max_rows != 1000000:
+                if args.edges_only or args.c5 or args.c5_local or args.no_conflicts or args.intersections or args.cycles or args.cycle_contexts or args.cycle_context_search != "neighbours" or args.joint_constraints or args.max_table_rows is not None or args.interface_cache or args.interface_cache_max_rows != 1000000 or args.bucket_method != "anchor":
                     raise ValueError("constraint feature flags require --engine constraints")
                 r = solve(json.loads(args.input.read_text()), args.strategy, not args.no_propagation,
                           not args.no_backtracking, args.max_steps, args.trace_limit)

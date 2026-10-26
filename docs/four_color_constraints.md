@@ -22,6 +22,10 @@
 讓交集與實際原環的新限制反覆回饋，穩定後才消元及回填。
 可再用 `--cycle-contexts` 啟用[共同條件接口](four_color_cycle_contexts.md)，
 保留同一中心色完成原環閉合，將完整二／三元投影交回交集；仍不提前選色。
+消元內可用 `--bucket-method prefix` 啟用[完整因子前綴剪枝](four_color_logic_optimization.md)，
+提前排除已不相容的部分組合，保留全部聯合fibres與解釋；預設仍為原 `anchor` 流程。
+內部回填色已採[無損4-bit表示](four_color_retention.md)，完整邊界與全部回填選項均保留；
+公開紀錄仍列出所有色。該報告另區分每列一個見證與任意刪除邊界列的不同保證。
 
 ## 使用
 

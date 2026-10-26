@@ -2,26 +2,26 @@
 
 ## 最新進度
 
-現況核對：2026-10-25。這是獨立有限圖演算法實驗；研究線排程以 [HANDOFF](HANDOFF.md) 為準。
+現況核對：2026-10-26。這是獨立有限圖演算法實驗；研究線排程以 [HANDOFF](HANDOFF.md) 為準。
 
 | 欄位 | 現況 |
 | --- | --- |
-| 階段／生命週期 | 完整消元已有無資源限制下的完備性紙證；流程與RAM優化完成有限核對，一般消元前傳播完備性仍未證。 |
-| 最近研究更新 | 2026-10-25：[完整消元完備性](four_color_completeness.md)明列全解保留、有限終止及共同回寫；[RAM索引](four_color_ram_indexes.md)減少重算。 |
-| 上次完成 | 有解必可回寫、無解必判否的演算法證明；同四十例27可解／13無解／0超限，效能範圍見RAM報告。 |
-| 目前停止點 | 本批全部完成；局部非空仍不保證全圖有共同延伸，見[精確停止點](#精確停止點)。 |
+| 階段／生命週期 | 完整消元已有無資源限制下的完備性紙證；前綴剪枝與無損回填壓縮完成有限核對，一般消元前傳播完備性仍未證。 |
+| 最近研究更新 | 2026-10-26：[回填可能性與無損壓縮](four_color_retention.md)核對完整邊界／單見證契約，採4-bit保留全部回填色；[前綴剪枝](four_color_logic_optimization.md)另減少無效候選。 |
+| 上次完成 | 2,240份小圖條件與原四十例核對縮減契約；無損回填map估計物件體積少28.89%，完整公開輸出相同，非整體RSS降幅。 |
+| 目前停止點 | 本批實作與指定有限核對完成；局部非空仍不保證全圖有共同延伸，見[精確停止點](#精確停止點)。 |
 | 下一步 | 較大／新起始族的效能與一般條件關係學習仍待選定；沒有普遍免消元或一般加速保證。 |
-| 接手入口 | [完備性證明](four_color_completeness.md)、[約束語義](four_color_constraints.md)、[保證與局部缺口](four_color_guarantee_gap.md)、[重播](#使用與重播)。 |
+| 接手入口 | [可能性保留與壓縮](four_color_retention.md)、[前綴剪枝比較](four_color_logic_optimization.md)、[完備性證明](four_color_completeness.md)、[重播](#使用與重播)。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
 | 2026-10-25／引擎與完整性 | [逐點試色](four_color_lab.md)、[完整關係消元](four_color_constraints.md)建立原圖追蹤與倒序回填；[完備性紙證](four_color_completeness.md)涵蓋無資源限制的任意有限輸入。 |
-| 2026-10-25／跨區交集 | [共同接口](four_color_intersections.md)傳過[長鏈與分支](four_color_larger_structures.md)，長奇環仍有缺口。 |
-| 2026-10-25／原環閉合 | [共同傳播](four_color_combined_cycles.md)識別該批十一無解例；[新反例](four_color_guarantee_gap.md)否定一般保證。 |
+| 2026-10-25／跨區交集與原環閉合 | [共同接口](four_color_intersections.md)傳過[長鏈與分支](four_color_larger_structures.md)；[共同傳播](four_color_combined_cycles.md)識別十一無解例，[新反例](four_color_guarantee_gap.md)仍否定一般保證。 |
 | 2026-10-25／共同條件與構型限制 | [條件接口](four_color_cycle_contexts.md)及[部分輻條](four_color_partial_spokes.md)補上十二／九點提前判否；[共同限制登記](four_color_joint_constraints.md)與[自動找型](four_color_joint_propagation.md)接入三點等色表。 |
 | 2026-10-25／流程與RAM | [增量接口與精確枚舉](four_color_flow_optimization.md)減少重複工作；[容量](four_color_memory_optimization.md)補齊最後一例，再以[RAM索引](four_color_ram_indexes.md)換取速度。 |
+| 2026-10-26／消元邏輯與表示 | [前綴剪枝](four_color_logic_optimization.md)提前排除不相容後綴；[回填mask](four_color_retention.md)無損保存全部選項，任意刪邊界列則有反例。 |
 
 下表依問題列出權威報告；各報告保留當輪數字、來源快照及歷史模式，不以後續版本改寫。
 
@@ -40,6 +40,7 @@
 | --- | --- | --- |
 | 選點、唯一色強迫、回退與原圖衝突追蹤 | [四色實驗](four_color_lab.md) | 完整搜尋、分支失敗與固定色無延伸分開。 |
 | 完整聯合關係消元及倒序回填 | [約束引擎](four_color_constraints.md) | 全部消元成功可構造共同見證；表格可能指數成長。 |
+| 保留多少可能性仍可回填 | [完整邊界與回填色](four_color_retention.md) | 每完整邊界一個見證可保求一解；主程式採無損4-bit保留全解，任意截斷邊界列不安全。 |
 | 有解必可回寫及完整有解／無解判定 | [完備性證明](four_color_completeness.md) | 無資源限制下的任意有限簡單無向圖；可靠傳播、完整表及空接口契約明列，屬紙面演算法證明。 |
 | 240 列索引、無弦五環與有界找環 | [C₅ 推導與查表](four_color_c5.md) | 掃描截斷只略過可選推理，不代表沒有五環。 |
 | 已知充分矛盾子型及完整星形 fibres | [衝突子型](four_color_conflicts.md) | 核對原子圖與當前候選域；沒有一般衝突分類。 |
@@ -56,6 +57,7 @@
 | 減少重複查詢及消元候選 | [流程優化](four_color_flow_optimization.md) | 同四十例超限10→1、總檢查減80.04%；最後一例受完整紀錄十萬列上限限制，一般效率仍無保證。 |
 | 以可設容量保留完整紀錄 | [記憶體優化](four_color_memory_optimization.md) | 百萬列容量下同四十例全部完成；原工作預算、完整fibres及獨立核對保留，RSS／時間另存。 |
 | 保留中間索引以換取速度 | [RAM索引](four_color_ram_indexes.md) | 同四十例、同預算求解15.27→12.82秒，求解後峰值103.6→106.2 MiB；完整fibres及判定逐份一致。 |
+| 提早排除消元內不相容前綴 | [完整因子前綴剪枝](four_color_logic_optimization.md) | 同四十例工作少12.82%，完整語義輸出相同；164新圖全解及空fibres核對，模式可選，無一般加速保證。 |
 
 ## 精確停止點
 

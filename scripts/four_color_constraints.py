@@ -4,6 +4,8 @@ No unknown vertex receives a colour during reduction.  Eliminating a variable
 stores the *complete joint* frontier relation, including every possible colour
 of the eliminated variable for each allowed frontier tuple.  Reverse lookup is
 therefore witness reconstruction, not a search over guessed assignments.
+Internal reconstruction fibres use four-bit masks; public records still expose
+every literal colour in sorted lists.  No boundary tuple or colour is dropped.
 
 ``checks`` counts candidate attempts, relation-row filtering/membership tests,
 and enabled C5 index operations.  ``max_checks`` bounds that sum; a separate row
@@ -14,6 +16,9 @@ limit means unsatisfiable.  Graph bookkeeping and final witness verification
 are not charged as relation checks.  General variable elimination remains
 exponential in frontier width.  Optional induced-C5 discovery has its own
 cycle/scan-step limits; a truncated discovery only omits redundant propagators.
+The optional prefix bucket method counts each attempted prefix extension as a
+candidate check and rejects it as soon as a complete input factor fails.  It
+preserves the same full join, fibres, original provenance and atomic records.
 """
 
 from __future__ import annotations
@@ -70,6 +75,11 @@ class _WorkLimit(Exception):
     pass
 
 
+def _fiber_colors(mask):
+    """Decode a lossless four-colour fibre for the public evidence/trace."""
+    return [color for color in range(4) if mask & (1 << color)]
+
+
 def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                       trace_limit=5000, record_relations=True, use_c5=False,
                       c5_max_cycles=128, c5_max_scan_steps=200000,
@@ -81,7 +91,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                       cycle_context_search="neighbours", use_joint_constraints=False,
                       joint_max_matches=128, joint_max_scan_steps=200000,
                       max_table_rows=None, use_interface_cache=False,
-                      interface_cache_max_rows=1000000):
+                      interface_cache_max_rows=1000000, bucket_method="anchor"):
     """Solve exactly, or return ``limit`` without asserting nonexistence.
 
     Recorded rows equal the join of ``input_relations`` under the explicitly
@@ -118,6 +128,13 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
     ``use_interface_cache`` retains complete shared-interface row-group indexes
     in RAM for reuse across different factor pairs. Its independent row-reference
     budget evicts optional indexes rather than limiting the exact solver.
+    ``bucket_method="anchor"`` preserves the historical complete-candidate
+    enumeration.  ``"prefix"`` checks each input factor once all its variables
+    are present in the current prefix, pruning only prefixes with no possible
+    extension.  It counts actual prefix extensions in ``candidate_checks``
+    (or one complete candidate when there are no free coordinates).  Both
+    methods retain all joint fibres and provenance, leave live colours unwritten,
+    and commit an elimination record only after its entire join is complete.
     """
     from four_color_lab import graph_fingerprint, normalize_graph, verify_coloring
     from four_color_c5 import C5_ROWS, find_induced_c5, find_local_c5, query_c5
@@ -127,6 +144,8 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
     g = normalize_graph(graph)
     if any(type(value) is not bool for value in (use_substructures, record_relations, use_c5, use_conflicts, use_intersections, use_cycles, use_cycle_contexts, use_joint_constraints, use_interface_cache)):
         raise ValueError("constraint feature flags must be booleans")
+    if type(bucket_method) is not str or bucket_method not in ("anchor", "prefix"):
+        raise ValueError("bucket_method must be anchor or prefix")
     if use_interface_cache and not use_intersections:
         raise ValueError("interface cache requires use_intersections=True")
     if use_cycle_contexts and not (use_intersections and use_cycles):
@@ -1129,35 +1148,88 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                             yield boundary, color
                     return
                 free = tuple(w for w in frontier if w not in anchor.scope)
-                anchor_offsets = {w: offset for offset, w in enumerate(anchor.scope)}
+                if bucket_method == "anchor":
+                    anchor_offsets = {w: offset for offset, w in enumerate(anchor.scope)}
+                    for row in sorted(anchor.rows):
+                        check("relation_checks")
+                        if any(color not in domains[w] for w, color in zip(anchor.scope, row)):
+                            continue
+                        for extension in product(*(sorted(domains[w]) for w in free)):
+                            check("candidate_checks")
+                            assignment = dict(zip(free, extension))
+                            assignment.update(zip(anchor.scope, row))
+                            yield tuple(assignment[w] for w in frontier), row[anchor_offsets[v]]
+                    return
+
+                # A factor becomes decidable when its last free coordinate is
+                # present.  A failed complete tuple rejects every extension of
+                # that prefix; accepted prefixes still visit every later colour.
+                free_positions = {w: depth + 1 for depth, w in enumerate(free)}
+                ready = [[] for _ in range(len(free) + 1)]
+                for factor, _ in prepared:
+                    depth = max((free_positions.get(w, 0) for w in factor.scope), default=0)
+                    ready[depth].append(factor)
+                values = [tuple(sorted(domains[w])) for w in free]
+
+                def accepted(depth, assignment):
+                    for factor in ready[depth]:
+                        check("relation_checks")
+                        if tuple(assignment[w] for w in factor.scope) not in factor.rows:
+                            return False
+                    return True
+
                 for row in sorted(anchor.rows):
                     check("relation_checks")
                     if any(color not in domains[w] for w, color in zip(anchor.scope, row)):
                         continue
-                    for extension in product(*(sorted(domains[w]) for w in free)):
+                    assignment = dict(zip(anchor.scope, row))
+                    if not accepted(0, assignment):
+                        continue
+                    if not free:
                         check("candidate_checks")
-                        assignment = dict(zip(free, extension))
-                        assignment.update(zip(anchor.scope, row))
-                        yield tuple(assignment[w] for w in frontier), row[anchor_offsets[v]]
+                        yield tuple(assignment[w] for w in frontier), assignment[v]
+                        continue
+                    # Iterative depth-first extension has no recursion limit.
+                    choices = [0] * len(free)
+                    depth = 0
+                    while depth >= 0:
+                        if choices[depth] == len(values[depth]):
+                            choices[depth] = 0
+                            assignment.pop(free[depth], None)
+                            depth -= 1
+                            continue
+                        color = values[depth][choices[depth]]
+                        choices[depth] += 1
+                        check("candidate_checks")
+                        assignment[free[depth]] = color
+                        if not accepted(depth + 1, assignment):
+                            continue
+                        if depth + 1 == len(free):
+                            yield tuple(assignment[w] for w in frontier), assignment[v]
+                        else:
+                            depth += 1
 
             table = {}
             for boundary, color in bucket_candidates():
                 valid = True
-                for factor, positions in prepared:
-                    check("relation_checks")
-                    row = tuple(color if offset == -1 else boundary[offset] for offset in positions)
-                    if row not in factor.rows:
-                        valid = False
-                        break
+                if bucket_method == "anchor":
+                    for factor, positions in prepared:
+                        check("relation_checks")
+                        row = tuple(color if offset == -1 else boundary[offset] for offset in positions)
+                        if row not in factor.rows:
+                            valid = False
+                            break
                 if valid:
                     if boundary in table:
-                        table[boundary].append(color)
+                        table[boundary] |= 1 << color
                         continue
                     if stats["table_rows"] + stats["cycle_context_rows"] + stats["joint_rows"] >= max_table_rows:
                         raise _WorkLimit(f"完整關係表已達 {max_table_rows} 列儲存上限；尚未判定。")
-                    table[boundary] = [color]
+                    table[boundary] = 1 << color
                     stats["table_rows"] += 1
-            table = {boundary: tuple(sorted(choices)) for boundary, choices in sorted(table.items())}
+            # All four possible colours fit in one integer, just as a single
+            # chosen witness would, while preserving the complete fibre.
+            table = dict(sorted(table.items()))
 
             projected = _Factor(frontier, frozenset(table), source_edges, source_vertices)
             record = dict(vertex=vertices[v], scope=[vertices[w] for w in frontier],
@@ -1170,8 +1242,8 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                 if stats["certificate_rows"] + snapshot_rows > max_table_rows:
                     raise _WorkLimit(f"完整關係記錄已達 {max_table_rows} 列儲存上限；尚未判定。")
                 stats["certificate_rows"] += snapshot_rows
-                record["rows"] = [dict(boundary=list(boundary), colors=list(choices))
-                                  for boundary, choices in table.items()]
+                record["rows"] = [dict(boundary=list(boundary), colors=_fiber_colors(mask))
+                                  for boundary, mask in table.items()]
                 record["source_domains"] = [dict(vertex=vertices[w], colors=sorted(domains[w]))
                                             for w in union_scope]
                 record["input_relations"] = [snapshot_factor(factor) for factor in bucket]
@@ -1190,8 +1262,8 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
             stats["eliminations"] += 1
             counts["C2"] += 1
             stats["peak_rows"] = max(stats["peak_rows"], sum(len(factor.rows) for factor in factors))
-            preview = [dict(boundary=list(boundary), colors=list(choices))
-                       for boundary, choices in islice(table.items(), 8)] if len(events) < trace_limit else []
+            preview = [dict(boundary=list(boundary), colors=_fiber_colors(mask))
+                       for boundary, mask in islice(table.items(), 8)] if len(events) < trace_limit else []
             emit("eliminate", "C2", vertices[v],
                  detail=f"消去點 {vertices[v]}：保存 {len(table)} 個完整邊界色組及其所有可用色；尚未寫色。",
                  frontier=[vertices[w] for w in frontier], relation_preview=preview,
@@ -1207,7 +1279,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                 boundary = tuple(colors[w] for w in frontier)
                 if any(color < 0 for color in boundary) or boundary not in table:
                     raise AssertionError("missing complete frontier witness during writeback")
-                choices = table[boundary]
+                choices = _fiber_colors(table[boundary])
                 if colors[v] >= 0:
                     if colors[v] not in choices:
                         raise AssertionError("fixed colour lost during reconstruction")
@@ -1263,6 +1335,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
         conflict_scan_truncated=conflict_index.last_scan_truncated if conflict_index else False,
         conflict_scan_coverage="bounded sufficient motifs; no completeness claim",
         record_relations=record_relations, max_checks=max_checks, max_table_rows=max_table_rows,
+        bucket_method=bucket_method,
         substructures=substructures, elimination_records=records,
         relation_contract="exact allowed rows of the join of input_relations under source_domains; absent boundary tuples have empty fibres; source_edges alone are provenance",
     )
