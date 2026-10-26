@@ -1,0 +1,70 @@
+{
+  "artifact_policy": {
+    "exit_code": 0,
+    "index": "actual Git index",
+    "output": "Generated artifact policy OK: 10863 indexed files, 193 large files with documented exceptions, 166 registered outputs."
+  },
+  "axioms": {
+    "command": "lake env lean audits/2026-10-26-four-color-mathematical-model-8d28acc/axioms.lean",
+    "declarations": 9,
+    "exit_code": 0,
+    "log": "axioms.log",
+    "maximum_axioms": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "base_commit": "8d28accea79cf8c6418cdb6da4d94010c1c975bf",
+  "docs_only_docgraph": {
+    "exit_code": 0,
+    "output": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+  },
+  "documentation": {
+    "exit_code": 0,
+    "output": "OK: 754 Markdown files, 10047 local links; anchors, index, handoff, guide progress checked"
+  },
+  "lean": {
+    "command": "lake build --no-ansi",
+    "existing_linter_warnings_replayed": true,
+    "exit_code": 0,
+    "jobs": 8833,
+    "log": "lean-build.log"
+  },
+  "mathematical_stop": "Specified C6-C8 interface/single-split locking route stopped with zero added exclusions; no new graph enumeration.",
+  "not_run": [
+    "whole-worktree DocGraph",
+    "block-count computation",
+    "RSST dual program",
+    "remote CI before push"
+  ],
+  "pending": [],
+  "replays": {
+    "all_byte_equal": true,
+    "exit_code": 0,
+    "receipt": "replays.json",
+    "runs": 6
+  },
+  "source_custody": {
+    "bindings": 41,
+    "exit_code": 0,
+    "historical_document_bindings": 3,
+    "receipt": "custody.json"
+  },
+  "staged_whitespace": {
+    "exit_code": 0,
+    "log": "staged-whitespace.log"
+  },
+  "status": "complete",
+  "tool_tests": {
+    "dependencies": {
+      "networkx": "3.5",
+      "numpy": "2.4.3",
+      "rustworkx": "0.17.1"
+    },
+    "executable": "/home/ray/developer/ai/math/.venv/bin/python",
+    "exit_code": 0,
+    "python": "3.14.8 (main, Oct  2 2026, 10:23:31) [GCC 16.2.1 20260810]",
+    "test_command": "uv run --python 3.14 --with-requirements requirements.txt python -B -m unittest discover -s tools/tests -p 'test_*.py'",
+    "tests": 416
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "base_commit": "8d28accea79cf8c6418cdb6da4d94010c1c975bf",
+  "checks": {
+    "blocking_induced_same_colour_locks": {
+      "adjacent_5_5": 34,
+      "notes": "Counts exclude same-component pairs already forced before conditioning on the blocking set.",
+      "wheel_6": 0,
+      "wheel_7": 0,
+      "wheel_8": 0
+    },
+    "c5": {
+      "c5_consistent_nonempty_masks": 153,
+      "c5_greatest_fixed_point_checked_for_all_1024_accepted_masks": true,
+      "c5_obligations_match": true,
+      "c5_pattern_order_matches": true,
+      "c5_unrestricted_nonempty_masks": 1023,
+      "crossing_negative_control": true,
+      "literal_pattern_orbits_checked_through_ring_length": 8,
+      "unrestricted_singleton_orbit_controls_through_ring_length": 8
+    },
+    "derived_lock_comparison": "Every round removal mask and final residual mask equal to Boolean D; zero extra partition or state deletions.",
+    "docs_only_docgraph": {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "summary": "98 documents, 386 relations, 12 families; 0 errors, 0 notes."
+    },
+    "documentation": {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 0,
+      "summary": "753 Markdown files; 10028 local links; anchors, index, handoff and guide progress checked."
+    },
+    "embedding": "All five integer disk drawings passed original-edge, face-incidence, orientation, area, crossing, connectivity and Euler checks; six broken inputs rejected.",
+    "generated_artifacts": {
+      "exit_code": 0,
+      "index": "Temporary index only; real Git index remains unstaged.",
+      "summary": "Generated artifact policy OK: 10856 indexed files, 193 large files with documented exceptions, 166 registered outputs."
+    },
+    "independent_partitions": [
+      {
+        "bell_partitions": 52,
+        "complete_partition_options": 70,
+        "independent_options_equal": true,
+        "k": 5,
+        "noncrossing_partitions": 42,
+        "pattern_split_queries": 30
+      },
+      {
+        "bell_partitions": 203,
+        "complete_partition_options": 400,
+        "independent_options_equal": true,
+        "k": 6,
+        "noncrossing_partitions": 132,
+        "pattern_split_queries": 93
+      },
+      {
+        "bell_partitions": 877,
+        "complete_partition_options": 1785,
+        "independent_options_equal": true,
+        "k": 7,
+        "noncrossing_partitions": 429,
+        "pattern_split_queries": 273
+      },
+      {
+        "bell_partitions": 4140,
+        "complete_partition_options": 9820,
+        "independent_options_equal": true,
+        "k": 8,
+        "noncrossing_partitions": 1430,
+        "pattern_split_queries": 822
+      }
+    ],
+    "interfaces": {
+      "all_match_independent_original_edges": true,
+      "constraint_engine_calls": 458,
+      "fixed_patches": 5,
+      "limit_results": 0
+    },
+    "normal_replay": {
+      "command": "python3 audits/2026-10-26-ck-d-lock-comparison-8d28acc/replay.py --out audits/2026-10-26-ck-d-lock-comparison-8d28acc/report.json",
+      "exit_code": 0
+    },
+    "seed17_replay": {
+      "byte_equal_to_saved_report": true,
+      "command": "PYTHONHASHSEED=17 python3 audits/2026-10-26-ck-d-lock-comparison-8d28acc/replay.py --out /tmp/ck-d-lock-comparison-seed17.json",
+      "exit_code": 0
+    },
+    "source_hash_check": {
+      "all_recorded_sources_match": true,
+      "exit_code": 0
+    },
+    "whitespace": {
+      "exit_code": 0,
+      "scope": "Tracked diff and all new task files through the temporary index."
+    }
+  },
+  "date": "2026-10-26",
+  "implementation_notes": [
+    "An initial negative-control expectation of same-orbit/different-connectivity witnesses had no example in the tested range and was removed. The final audit instead checks a concrete single-support witness against an admissible alternative.",
+    "The complete JSON report is deterministically compact to retain all certificates below the generated-file threshold; no evidence was removed."
+  ],
+  "not_claimed": [
+    "4CT assumed or proved",
+    "a new reducibility result",
+    "realizability of any abstract surviving exterior",
+    "all future same-source or cross-split constraints reduce to D",
+    "commit or push"
+  ],
+  "not_run": [
+    "full existing tool-test suite",
+    "Lean build this turn",
+    "whole-worktree DocGraph",
+    "RSST dual program",
+    "block-count implementation",
+    "remote CI"
+  ],
+  "proof_and_stop": {
+    "block_count": "Not implemented or claimed, since these conditions already reduce to Boolean D.",
+    "classical_baseline": "Compared with Steinberger section 3 vertex signed-path arrangements; RSST dual executable was not run.",
+    "newly_excluded_D_survivors": 0,
+    "no_further_graph_enumeration": true,
+    "paper": "LOCK-NO-GAIN holds for every current B: derived common connectivity is already present in every admissible D partition.",
+    "remaining_open": "Additional cross-split same-source structural constraints, general reducibility, unavoidability, six-edge-cut exclusion and 932.",
+    "stop_condition_triggered": true
+  },
+  "report_sha256": "ca6ec292454c923cc944b4bca5e79545413939f5881c965a591c2490c8bf7b23",
+  "results": [
+    {
+      "D_residual": 0,
+      "accepted": 16,
+      "name": "birkhoff_diamond",
+      "residual_after_derived_locks": 0,
+      "ring_length": 6
+    },
+    {
+      "D_residual": 16,
+      "accepted": 13,
+      "name": "adjacent_5_5",
+      "residual_after_derived_locks": 16,
+      "ring_length": 6
+    },
+    {
+      "D_residual": 20,
+      "accepted": 11,
+      "name": "wheel_6",
+      "residual_after_derived_locks": 20,
+      "ring_length": 6
+    },
+    {
+      "D_residual": 70,
+      "accepted": 21,
+      "name": "wheel_7",
+      "residual_after_derived_locks": 70,
+      "ring_length": 7
+    },
+    {
+      "D_residual": 231,
+      "accepted": 43,
+      "name": "wheel_8",
+      "residual_after_derived_locks": 231,
+      "ring_length": 8
+    }
+  ],
+  "review": {
+    "independent": "The core full-partition API, independent partition audit, lock quantifiers and paper scope were reviewed without edits by a separate agent.",
+    "propagation_stop": "L2: the specified method branch stops; parent Four Color Theorem obligations remain OPEN.",
+    "reviewed_unchanged": [
+      "HANDOFF: same research lines and activity tags",
+      "Lean sources: no changes this turn"
+    ],
+    "updated": [
+      "Canonical report and evidence",
+      "four_color_guide and STATUS",
+      "4ct_guide as direct parent",
+      "c5_kempe_screen dated successor link"
+    ]
+  },
+  "scope": "M1 fixed controls and M2 audit of complete interfaces plus blocking-induced single-split connectivity; five named ordered disk patches only.",
+  "source_sha256": {
+    "audits/2026-10-26-ck-d-lock-comparison-8d28acc/configurations.py": "c7115c00db577bde96a3dbe3904a43e3a42180abbba42a1af60f0ad86c842730",
+    "audits/2026-10-26-ck-d-lock-comparison-8d28acc/replay.py": "04976c33c075a7a9358f6125b38298c9593480c30c163e926ca4dadf5bfd1c45",
+    "audits/2026-10-26-ck-d-lock-comparison-8d28acc/report.json": "ca6ec292454c923cc944b4bca5e79545413939f5881c965a591c2490c8bf7b23",
+    "docs/4ct_guide.md": "749e5f98a45deb8b0f62fd66a72117bfaa61edc6372fc8fa7d85ccbdd57a2dc8",
+    "docs/STATUS.md": "6a5f9c75b6da06a20b8a38d4d1f5c163c5ee030b8ea5ca5d7eda58b1b9a01b0c",
+    "docs/c5_kempe_screen.md": "a361f630e532cd8565794e9ec89adcf7ecd64ac8cc536f705cd1c3520b9fd2b0",
+    "docs/ck_d_lock_comparison.md": "87982689898e4f0a94d83863237628aae4d08751894c27761f7af021788fd0ca",
+    "docs/four_color_guide.md": "ec53706bf2017be60b0f14e9c5e1744ec575f8ff71cc66d82e42e430bcfd0721",
+    "scripts/ck_kempe_obstruction.py": "99fcd1799d86afd9999821ad32332af1db7d32ec833d9f3d35d9135ddb4cc4ae"
+  },
+  "status": "complete"
+}

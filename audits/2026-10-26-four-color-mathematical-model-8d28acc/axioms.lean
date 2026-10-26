@@ -1,0 +1,11 @@
+import Math.ColoringElimination
+
+#print axioms ColoringElimination.eliminate_iff_nonempty_fibre
+#print axioms ColoringElimination.join_restrict
+#print axioms ColoringElimination.solutionEquiv
+#print axioms ColoringElimination.reconstruct
+#print axioms ColoringElimination.satisfiable_iff_eliminate
+#print axioms ColoringElimination.eliminate_bucket_iff
+#print axioms ColoringElimination.eliminate_congr
+#print axioms ColoringElimination.reduceAll_iff_exists
+#print axioms ColoringElimination.reduceAll_fourColoring_iff

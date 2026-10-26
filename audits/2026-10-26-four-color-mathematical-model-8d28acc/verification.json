@@ -1,0 +1,125 @@
+{
+  "base_commit": "8d28accea79cf8c6418cdb6da4d94010c1c975bf",
+  "checks": {
+    "axioms": {
+      "command": "lake env lean audits/2026-10-26-four-color-mathematical-model-8d28acc/axioms.lean",
+      "declarations": 9,
+      "exit_code": 0,
+      "log": "axioms.log",
+      "maximum_dependencies": [
+        "propext",
+        "Quot.sound"
+      ],
+      "no_Classical_choice": true,
+      "no_native_decide": true,
+      "no_sorryAx": true
+    },
+    "default_lean_build": {
+      "command": "lake build --no-ansi",
+      "completion_log": "lean-build-completion.log",
+      "exit_code": 0,
+      "jobs": 8833,
+      "notes": "Earlier output replayed existing linter warnings in AttachmentOrder and SymRelabel; the new module built without warnings."
+    },
+    "docs_only_docgraph": {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "summary": "98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+    },
+    "documentation": {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 0,
+      "summary": "752 Markdown files; 10019 local links; anchors, index, handoff and guide progress checked"
+    },
+    "mathematical_model_finite_audit": {
+      "complete_assignments_checked": 21844,
+      "counting_control": {
+        "complete_solutions": 36,
+        "invalid_single_branch_products": [
+          48,
+          32
+        ]
+      },
+      "incomplete_history_controls": 3,
+      "mismatches": 0,
+      "normal_seed17_saved_report_byte_equal": true,
+      "report_sha256": "b509ee2128eaf6f210e05b63b22af560ad0f1b953d8de74a060cceb2a1e5c833",
+      "successful_runs": 28
+    },
+    "report_sources": {
+      "exit_code": 0,
+      "summary": "Both finite reports match the recorded hashes of their current sources."
+    },
+    "six_edge_cut_finite_audit": {
+      "incompatible": 1690,
+      "negative_controls": [
+        "same colour multiplicities with different incidence positions",
+        "sixteen-vertex straight-line planar source with a bad selected pair but a three-colouring",
+        "fixed-colour restriction"
+      ],
+      "nonstar_rectangles": 120,
+      "normal_seed17_saved_report_byte_equal": true,
+      "ordered_pattern_pairs": 34969,
+      "report_sha256": "94a2e649d656fde541aa96712391ef4254720fd29eda0cc9a3851725f5513015",
+      "star": 1570
+    },
+    "whitespace_and_generated_artifact_policy": {
+      "exit_code": 0,
+      "index": "temporary index containing only connected changes; real Git index not staged",
+      "summary": "Final temporary index, including the receipt and logs, passed whitespace and generated-artifact policy; real index remains unstaged."
+    }
+  },
+  "completed_scope": [
+    "Paper model of the full solution space, complete historical fibres, counting semantics and static eager/lazy interface equivalence.",
+    "Lean relation semantics: full solution/fibre equivalence, exact bucket projection, reconstruction, congruence and finite-coordinate elimination.",
+    "Conditional paper six-edge-cut classification, compressed-boundary orientation and same-colouring Kempe connectivity."
+  ],
+  "date": "2026-10-26",
+  "not_claimed": [
+    "Python formal refinement or executable decision-procedure verification",
+    "dynamic min-fill schedule formalization",
+    "paper historical-fibre and tree-gluing theorems formalized in Lean",
+    "general efficiency or bounded-width theorem",
+    "six-edge-cut exclusion",
+    "932 exclusion",
+    "Four Color Theorem proof",
+    "commit or push"
+  ],
+  "not_run": [
+    "complete existing Python tool-test suite",
+    "whole-worktree DocGraph",
+    "remote CI"
+  ],
+  "review": {
+    "concurrent_worktree_change_preserved": "docs/4ct_guide.md changed independently during final checks; preserved and excluded from this change set.",
+    "independent_mathematical_review": "Both new reports and the Lean scope reviewed; totalized historical W_i outside saved tables to the empty set; clarified incidence blocks and fixed-colour permutations.",
+    "propagation_stop": "L2: no closure of a planar-source or Four Color Theorem obligation.",
+    "reviewed_unchanged": [
+      "HANDOFF: same research lines and activity tags"
+    ],
+    "routing_not_triggered": "README unchanged: no L3 routing change required.",
+    "updated": [
+      "new source reports and evidence",
+      "four_color_guide and STATUS entries",
+      "lean_guide and Math.lean",
+      "direct completeness and critical-obstruction consumers"
+    ]
+  },
+  "source_sha256": {
+    "Math.lean": "8c2b5348b455e2aef7ca90e1cd626da391bf9432947ff28b07afb9c17606e3b1",
+    "Math/ColoringElimination.lean": "2bbd8d3c83abf5b62f67116a04553303e8933c21e10ff10ac7eea3382603b603",
+    "audits/2026-10-26-four-color-mathematical-model-8d28acc/axioms.lean": "02724ad50c0c76a4f268854366cbad51f2f13a2d7f9e929bdae01077f3b73b85",
+    "audits/2026-10-26-four-color-mathematical-model-8d28acc/replay.py": "4c91c12eba09f9993703fb09d1627552d8ad6d271d9ac3ef7173b9c69d716a0e",
+    "audits/2026-10-26-four-color-mathematical-model-8d28acc/report.json": "b509ee2128eaf6f210e05b63b22af560ad0f1b953d8de74a060cceb2a1e5c833",
+    "audits/2026-10-26-four-color-six-edge-cuts-8d28acc/replay.py": "471c770e88875ab7de97002b1f399e40dde689ba7029c8bd62b9c19b0a51d04d",
+    "audits/2026-10-26-four-color-six-edge-cuts-8d28acc/report.json": "94a2e649d656fde541aa96712391ef4254720fd29eda0cc9a3851725f5513015",
+    "docs/STATUS.md": "253cbaee3bce1e129ef5830dd232239b33b64de780e44b2d91c3dee9ab1ed8ab",
+    "docs/four_color_completeness.md": "4eac97ffac46c38d0b6cb39bd701b7459206b7de31f59bd10bc0b1b2fb59a252",
+    "docs/four_color_critical_obstructions.md": "ff1240ba25ee8edcca72937de071c9a6ba1508921128e6abe3da3eef0f0018dd",
+    "docs/four_color_guide.md": "8f9ceebb6fcee8b7d2ddf4908b784997ea19c436db2a71e14296f6d5afc9e0cb",
+    "docs/four_color_mathematical_model.md": "d32a33c02d3bb2a66d0b73933db920ffe536fd9a3ceedaec9a572c04ce16b93b",
+    "docs/four_color_six_edge_cuts.md": "2cac3edda1172d725939c76e88b328ffb5a38f1672811baf941dc0790643a6e1",
+    "docs/lean_guide.md": "9ec0f00a4728db769a1e345a6ab4e9c1d2cda3317650967df52dae4232e9e5ed"
+  },
+  "status": "complete"
+}

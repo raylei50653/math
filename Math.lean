@@ -54,3 +54,4 @@ import Math.CommonRepair
 import Math.SealedFourPort
 import Math.NamedRepair
 import Math.NamedRepairReplacement
+import Math.ColoringElimination

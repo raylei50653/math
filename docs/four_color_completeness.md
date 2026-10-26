@@ -11,7 +11,9 @@
 這是下列明確契約下的演算法紙證。現行來源為
 [`solve_constraints`](../scripts/four_color_constraints.py)，最後的直接核對使用
 [`four_color_lab.py` 的 `verify_coloring`](../scripts/four_color_lab.py)。
-紙證與整份 Python 程式的形式化驗證不同；本頁沒有新增 Lean 定理。
+紙證與整份 Python 程式的形式化驗證不同。
+2026-10-26後續：[完整解空間與接口語義](four_color_mathematical_model.md)將投影、
+完整fibre解分解及固定座標的有限次消元接入Lean；下列傳播、終止與實作契約仍為紙證。
 
 ## 輸入、因子與完整解
 

@@ -2,26 +2,26 @@
 
 ## 最新進度
 
-現況核對：2026-10-14；兩核心 D₁₃ 首層具名替換已接到完整 J／指定框 P。
+現況核對：2026-10-26；新增著色關係核心，既有 D₁₃／LC 範圍不變。
 
 | 欄位 | 現況 |
 | --- | --- |
-| 階段／生命週期 | 可重用普通定理、具名 repair、首層來源替換及固定 LC soundness 已有完成項；任意層數、枚舉 completeness 與拓撲仍待形式化。 |
-| 最近研究更新 | 2026-10-14：[兩核心 D₁₃ 具名替換](lean_named_replacement.md)完成 A、B 單側與雙側各一次的完整外部關係、J／指定框 P 及 repair 傳遞。 |
-| 上次完成 | 首層替換由實際接線保持同一十三點外部 row，再保原 U 的 J、指定框 P、十五組極小 repairs 與 r*=4；普通證明及公理審計見報告。 |
-| 目前停止點 | D₁₃ 任意層數圖結構、disk 可用框仍未形式化；LC 尚未匯入預設 Math.lean／CI；Gallai、來源 minors 及一般枚舉 completeness 保留。 |
-| 下一步 | 接續時定義 D₁₃ 指定下一中心與 rim 的遞迴實際接線，將首層關係保持接成任意有限層數；disk／框可用性另證。 |
-| 接手入口 | [具名替換](lean_named_replacement.md)→ [NamedRepair](lean_named_repair.md)／[密封替換](lean_sealed_four_port.md)；LC 顯式 build／axiom audit 見本頁 §4。 |
+| 階段／生命週期 | 著色關係語義、具名 repair、首層來源替換及固定 LC soundness 已有完成項；實作精化、任意層數、枚舉 completeness 與拓撲仍待形式化。 |
+| 最近研究更新 | 2026-10-26：[著色解空間](four_color_mathematical_model.md)新增完整fibre解分解、投影及有限座標消元的普通Lean核心，接入Math.lean。 |
+| 上次完成 | 一般關係完整解與接口／fibre一一對應；逐座標消元存在等價特化到原邊及固定色四色模型，公理與驗證見報告。 |
+| 目前停止點 | 著色Python與動態排程未形式化；D₁₃任意層數、disk可用框、Gallai與一般枚舉completeness保留；LC仍未匯入Math.lean。 |
+| 下一步 | 接續時分別補著色程式到關係語義的逐步精化，或既有D₁₃下一中心與rim的遞迴接線；disk／框可用性另證。 |
+| 接手入口 | [著色模型與公理](four_color_mathematical_model.md)、[具名替換](lean_named_replacement.md)；LC顯式build／axiom audit見本頁§4。 |
 
 ### 近期里程碑
 
 | 日期／階段 | 進展與來源 |
 | --- | --- |
-| 2026-09-18／共同接合 | [RootInterfaces](lean_root_interfaces.md)提供十五個普通 theorem，支援完整 root 關係接合；來源 minor／disk 層未形式化。 |
 | 2026-09-28／原圖到 lists | [BoundaryDegree](lean_boundary_degree.md)以十三個普通 theorem 接通原圖延拓、degree 拆分與拒絕迫緊，lists 保留實際 attachments。 |
 | 2026-10-02／具名 repair | [CommonRepair](lean_common_repair.md)、[SealedFourPort](lean_sealed_four_port.md)及[NamedRepair](lean_named_repair.md)接通抽象判準、D₁₃ 外部關係與兩核心實例；來源替換接線仍待補。 |
 | 2026-10-04／固定來源證書 | [LC](c5_excess_two_lean_certificates.md)完成 179 張 soundness 證書；顯式建置、公理與未涵蓋 completeness／topology 分別記錄。 |
 | 2026-10-14／具名首層替換 | [NamedRepairReplacement](lean_named_replacement.md)將兩核心實際附件接到 D₁₃ 等價；保完整外部關係、J／指定框 P 與 repair 分類。 |
+| 2026-10-26／著色關係核心 | [ColoringElimination](four_color_mathematical_model.md)證完整fibre解分解、bucket投影與有限次消元；不含Python實作或平面必可染。 |
 
 研究線標記見 [HANDOFF](HANDOFF.md)，完整索引見 [STATUS](STATUS.md)，
 共通信任界線見 [DOCUMENTATION](DOCUMENTATION.md)。
@@ -35,6 +35,7 @@
 
 | 項目 | 已知結果與未涵蓋範圍 | 報告入口 |
 | --- | --- | --- |
+| 著色解空間與精確消元 | 一般關係的完整fibre分解、共同回寫、bucket投影及Fin n消元存在等價；原邊與固定色模型特化到Fin 4。已接Math.lean；Python精化、執行終止及平面必可染未形式化 | [數學模型與驗證](four_color_mathematical_model.md) |
 | 共同 repair 判準 | 27 個普通 theorem：W／C 雙向判準、極小修復／極大失敗、唯一最少解、退化支及具名投影介面；兩核心指定框前提由後續實例完成；其餘四圖與拓撲未形式化 | [CommonRepair](lean_common_repair.md) |
 | D₁₃ 四接點與密封替換 | 22 個普通 theorem：原圖完整關係、三型構造延拓、全部外部染色保留及密封／缺邊控制；disk 與來源族未匯入 Lean；核心 repair 見下列實例 | [SealedFourPort](lean_sealed_four_port.md) |
 | 具名來源 repair 實例 | 34 個普通 theorem：兩方向原35邊 J、指定兩框 P、完整 W／C、各15組極小 repairs、唯一最少對及 r*=4；首層替換由後續完成，任意層數與 disk 框仍保留 | [NamedRepair](lean_named_repair.md) |
