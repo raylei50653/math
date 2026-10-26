@@ -1,0 +1,77 @@
+{
+  "python": "3.14.8 (main, Oct  2 2026, 10:23:31) [GCC 16.2.1 20260810]",
+  "int_max_str_digits": 4300,
+  "records": [
+    {
+      "engine": "solve_constraints",
+      "vertex_expression": "10**4299",
+      "decimal_digits": 4300,
+      "input_accepted_by_normalize_graph": true,
+      "known_witness_colors": [
+        0
+      ],
+      "vertices": 1,
+      "edges": 0,
+      "options": {
+        "trace_limit": 0
+      },
+      "status": "colored",
+      "colors": [
+        0
+      ]
+    },
+    {
+      "engine": "solve",
+      "vertex_expression": "10**4299",
+      "decimal_digits": 4300,
+      "input_accepted_by_normalize_graph": true,
+      "known_witness_colors": [
+        0
+      ],
+      "vertices": 1,
+      "edges": 0,
+      "options": {
+        "trace_limit": 0
+      },
+      "status": "colored",
+      "colors": [
+        0
+      ]
+    },
+    {
+      "engine": "solve_constraints",
+      "vertex_expression": "10**4300",
+      "decimal_digits": 4301,
+      "input_accepted_by_normalize_graph": true,
+      "known_witness_colors": [
+        0
+      ],
+      "vertices": 1,
+      "edges": 0,
+      "options": {
+        "trace_limit": 0
+      },
+      "exception_type": "ValueError",
+      "error": "Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit",
+      "traceback": "Traceback (most recent call last):\n  File \"/tmp/semantic_four_color_large_label.py\", line 24, in <module>\n    r=engine(graph,trace_limit=0)\n  File \"/home/ray/developer/ai/math/scripts/four_color_constraints.py\", line 1268, in solve_constraints\n    detail=f\"\u6d88\u53bb\u9ede {vertices[v]}\uff1a\u4fdd\u5b58 {len(table)} \u500b\u5b8c\u6574\u908a\u754c\u8272\u7d44\u53ca\u5176\u6240\u6709\u53ef\u7528\u8272\uff1b\u5c1a\u672a\u5beb\u8272\u3002\",\n                    ^^^^^^^^^^^^^\nValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit\n"
+    },
+    {
+      "engine": "solve",
+      "vertex_expression": "10**4300",
+      "decimal_digits": 4301,
+      "input_accepted_by_normalize_graph": true,
+      "known_witness_colors": [
+        0
+      ],
+      "vertices": 1,
+      "edges": 0,
+      "options": {
+        "trace_limit": 0
+      },
+      "exception_type": "ValueError",
+      "error": "Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit",
+      "traceback": "Traceback (most recent call last):\n  File \"/tmp/semantic_four_color_large_label.py\", line 24, in <module>\n    r=engine(graph,trace_limit=0)\n  File \"/home/ray/developer/ai/math/scripts/four_color_lab.py\", line 279, in solve\n    assign(i, choices[0])\n    ~~~~~~^^^^^^^^^^^^^^^\n  File \"/home/ray/developer/ai/math/scripts/four_color_lab.py\", line 201, in assign\n    f\"\u9ede {vertices[i]} {'\u53ea\u5269\u552f\u4e00\u8272\uff0c\u586b\u5165' if forced else '\u8a66\u7528'}\u8272 {c + 1}\u3002\")\n         ^^^^^^^^^^^^^\nValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit\n"
+    }
+  ],
+  "classification": "API input-label serialization exception; not an incorrect four-color decision"
+}

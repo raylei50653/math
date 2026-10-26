@@ -109,6 +109,7 @@ def experiment(*, corpora=DEFAULT_CORPORA, repeats=5, seed=0,
         "current_bitset": ROOT / "scripts/four_color_c5.py",
         "graph_generator": ROOT / "scripts/four_color_examples.py",
         "normalizer": ROOT / "scripts/four_color_lab.py",
+        "serialization": ROOT / "scripts/four_color_serialization.py",
         "benchmark": Path(__file__).resolve(),
     }
     source_bytes = {name: path.read_bytes() for name, path in paths.items()}

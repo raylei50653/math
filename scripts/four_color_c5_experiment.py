@@ -84,6 +84,7 @@ def experiment(count=100, size=30, seed=0, max_checks=1000000):
                        for k in sorted(rows[0]["stats"])},
                 graphs_with_c5_prunes=sum(r["stats"].get("c5_prunes", 0) > 0 for r in rows))
     files = ("four_color_c5.py", "four_color_c5_experiment.py", "four_color_constraints.py",
+             "four_color_serialization.py", "four_color_joint_consistency.py", "four_color_triangle_equalities.py",
              "four_color_examples.py", "four_color_lab.py")
     return dict(count=count, vertices=size, seed=seed, max_checks=max_checks, totals=totals, records=records,
                 lookup=lookup_benchmark(), python=sys.version.split()[0], networkx=nx.__version__,

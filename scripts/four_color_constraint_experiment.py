@@ -66,5 +66,6 @@ def experiment(count=100, size=30, seed=0, max_checks=1000000):
                 both_constraint_modes_completed=len(paired), paired_totals=paired_totals,
                 sources={name: hashlib.sha256((Path(__file__).parent / name).read_bytes()).hexdigest()
                          for name in ("four_color_constraints.py", "four_color_examples.py",
+                                      "four_color_serialization.py", "four_color_joint_consistency.py", "four_color_triangle_equalities.py",
                                       "four_color_lab.py", "four_color_constraint_experiment.py")},
                 python=sys.version.split()[0], networkx=nx.__version__, totals=totals, records=records)

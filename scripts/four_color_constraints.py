@@ -10,7 +10,7 @@ every literal colour in sorted lists.  No boundary tuple or colour is dropped.
 ``checks`` counts candidate attempts, relation-row filtering/membership tests,
 and enabled C5 index operations.  ``max_checks`` bounds that sum; a separate row
 budget bounds cumulative generated tables and optional certificate snapshots.
-It defaults to ``min(max_checks, 100000)``; explicit ``max_table_rows`` can use
+It defaults to ``min(max_checks, 1000000)``; explicit ``max_table_rows`` can use
 more memory without increasing the work budget.  Neither
 limit means unsatisfiable.  Graph bookkeeping and final witness verification
 are not charged as relation checks.  General variable elimination remains
@@ -38,7 +38,7 @@ CONSTRAINT_RULES = [
 EDGE_ROWS = frozenset(permutations(range(4), 2))
 TRIANGLE_ROWS = frozenset(permutations(range(4), 3))
 K4_ROWS = frozenset(permutations(range(4), 4))
-TABLE_ROW_CEILING = 100000
+TABLE_ROW_CEILING = 1_000_000
 
 
 def substructure_catalogue():
@@ -91,7 +91,8 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                       cycle_context_search="neighbours", use_joint_constraints=False,
                       joint_max_matches=128, joint_max_scan_steps=200000,
                       max_table_rows=None, use_interface_cache=False,
-                      interface_cache_max_rows=1000000, bucket_method="anchor"):
+                      interface_cache_max_rows=1000000, bucket_method="anchor",
+                      use_joint_consistency=False, joint_consistency_max_checks=200000):
     """Solve exactly, or return ``limit`` without asserting nonexistence.
 
     Recorded rows equal the join of ``input_relations`` under the explicitly
@@ -122,7 +123,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
     original-edge pattern and install its complete three-point equality factor
     before any elimination. Discovery is charged and bounded; omitted matches
     leave the original exact solver intact. No colour is chosen by the factor.
-    ``max_table_rows=None`` preserves the historical storage ceiling. An explicit
+    ``max_table_rows=None`` uses min(max_checks, 1_000_000) rows. An explicit
     nonnegative integer independently bounds generated rows and complete
     certificate snapshots, without changing ``max_checks`` or omitting rows.
     ``use_interface_cache`` retains complete shared-interface row-group indexes
@@ -135,14 +136,25 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
     (or one complete candidate when there are no free coordinates).  Both
     methods retain all joint fibres and provenance, leave live colours unwritten,
     and commit an elimination record only after its entire join is complete.
+    Optional joint consistency first closes three-colour double-triangle
+    equalities and palette exclusions on temporary equality classes. Later it
+    joins incident factors and projects their common support without elimination.
+    Hard joins can use one certified common colour-permutation group, restoring
+    every literal support row before committing. Small joins avoid that overhead.
+    This may cover the entire graph; it is charged joint computation, not a
+    general bounded-width propagation guarantee. ``joint_consistency_max_checks``
+    bounds the combined optional join work across this solve. An incomplete query
+    commits nothing; when this extra allowance is exhausted, ordinary exact
+    elimination continues. The main work budget remains authoritative.
     """
     from four_color_lab import graph_fingerprint, normalize_graph, verify_coloring
+    from four_color_serialization import int_text
     from four_color_c5 import C5_ROWS, find_induced_c5, find_local_c5, query_c5
     from four_color_conflicts import KnownConflictIndex, conflict_catalogue
     from four_color_intersections import SharedInterfaceIndex, intersect_on_shared
 
     g = normalize_graph(graph)
-    if any(type(value) is not bool for value in (use_substructures, record_relations, use_c5, use_conflicts, use_intersections, use_cycles, use_cycle_contexts, use_joint_constraints, use_interface_cache)):
+    if any(type(value) is not bool for value in (use_substructures, record_relations, use_c5, use_conflicts, use_intersections, use_cycles, use_cycle_contexts, use_joint_constraints, use_interface_cache, use_joint_consistency)):
         raise ValueError("constraint feature flags must be booleans")
     if type(bucket_method) is not str or bucket_method not in ("anchor", "prefix"):
         raise ValueError("bucket_method must be anchor or prefix")
@@ -160,7 +172,8 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
            for value in (max_checks, trace_limit, c5_max_cycles, c5_max_scan_steps,
                          cycle_max_cycles, cycle_max_scan_steps,
                          cycle_context_max_contexts, cycle_context_max_scan_steps,
-                         joint_max_matches, joint_max_scan_steps, interface_cache_max_rows)):
+                         joint_max_matches, joint_max_scan_steps, interface_cache_max_rows,
+                         joint_consistency_max_checks)):
         raise ValueError("limits must be nonnegative integers")
     if max_table_rows is not None and (type(max_table_rows) is not int or max_table_rows < 0):
         raise ValueError("max_table_rows must be a nonnegative integer or None")
@@ -184,6 +197,8 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                       coverage="bounded fundamental cycles of active original graph and domain-induced subgraphs; not all cycles")
     cycle_contexts, cycle_context_last_domains, context_interface_factors = {}, {}, {}
     factor_last_domains = {}
+    joint_consistency_seen = {}
+    triangle_equality_signature = None
     intersection_index = SharedInterfaceIndex(
         cache_max_rows=interface_cache_max_rows if use_interface_cache else 0)
     cycle_context_discovery_signature = None
@@ -321,6 +336,16 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                  joint_factors=0, joint_rows=0,
                  decisions=0, backtracks=0, assignments=0)
     counts = dict.fromkeys((rule["id"] for rule in CONSTRAINT_RULES), 0)
+    if use_joint_consistency:
+        stats.update(joint_consistency_checks=0, joint_consistency_queries=0,
+                     joint_consistency_incomplete=0, joint_consistency_cache_hits=0,
+                     joint_consistency_row_prunes=0, joint_consistency_prunes=0,
+                     joint_consistency_peak_scope=0, joint_support_checks=0,
+                     joint_symmetry_checks=0, joint_normalized_queries=0,
+                     joint_restarted_checks=0,
+                     triangle_equality_checks=0, triangle_equality_queries=0,
+                     triangle_equality_incomplete=0, triangle_equality_cache_hits=0,
+                     triangle_equality_prunes=0, triangle_equality_merges=0)
     events, records, witness_maps, eliminated = [], [], [], []
     active = set(range(len(vertices)))
     emitted = 0
@@ -390,7 +415,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                 constraint, name="九點構型三點等色", boundary=constraint["frontier"],
                 vertices=constraint["source_vertices"], edges=constraint["source_edges"],
                 condition="九個互異原頂點的21條必要原邊全部存在。",
-                conclusion=f"同一原九點構型推出 {'、'.join(map(str, constraint['frontier']))} 三點同色；共同字面色尚未選定。",
+                conclusion=f"同一原九點構型推出 {'、'.join(map(int_text, constraint['frontier']))} 三點同色；共同字面色尚未選定。",
                 scope="original-subgraph", relation="equality",
                 relation_contract=constraint["contract"])
             factors.append(_Factor(scope, frozenset(rows),
@@ -460,19 +485,19 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                         stats["prunes"] += 1
                         counts["C1"] += 1
                         changed = True
-                        emit("propagate", "C1", detail=f"原邊 {vertices[u]}–{vertices[v]}：點 {vertices[u]} 只剩色 {color + 1}，故另一端排除此色；尚未寫色。",
+                        emit("propagate", "C1", detail=f"原邊 {int_text(vertices[u])}–{int_text(vertices[v])}：點 {int_text(vertices[u])} 只剩色 {color + 1}，故另一端排除此色；尚未寫色。",
                              frontier=[vertices[u], vertices[v]],
                              causal_edges=[list(edge) for edge in sorted(domain_edges[v])],
                              causal_vertices=sorted(domain_vertices[v]))
         return True
 
-    def contradiction(factor, detail, vertex=None):
+    def contradiction(factor, detail, vertex=None, **extra):
         stats["conflicts"] += 1
         emit("conflict", vertex=vertex, detail=detail,
              conflict_edges=[list(edge) for edge in sorted(factor.source_edges)],
              frontier=[vertices[v] for v in factor.scope],
              relation_rows=0,
-             conflict_shape="empty_joint_relation", **explain(factor))
+             conflict_shape="empty_joint_relation", **explain(factor), **extra)
 
     def propagate_c5():
         """Exact local support by structure or table; this pass adds no factors."""
@@ -536,7 +561,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                     rule["edge"] = [vertices[cycle[position]] for position in rule["edge"]]
                 if rule.get("id") == "cycle_path_consistency":
                     rule["anchor_vertex"] = vertices[cycle[0]]
-                    rule["condition"] = f"逐一固定原環首點 {vertices[cycle[0]]} 的候選色，沿四邊路徑計數，再核對閉合邊。"
+                    rule["condition"] = f"逐一固定原環首點 {int_text(vertices[cycle[0]])} 的候選色，沿四邊路徑計數，再核對閉合邊。"
                 structural_rules.append(rule)
             fields["structural_rules"] = structural_rules
             if not answer["row_count"]:
@@ -972,14 +997,180 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                 stats["cycle_context_conflicts"] += 1
                 stats["conflicts"] += 1
                 emit("conflict", "C1",
-                     detail=f"保留共同點 {vertices[hub]} 的每個候選色後，原 {len(cycle)} 點環皆無法閉合；完整局部關係為空，尚未寫色。",
+                     detail=f"保留共同點 {int_text(vertices[hub])} 的每個候選色後，原 {len(cycle)} 點環皆無法閉合；完整局部關係為空，尚未寫色。",
                      conflict_shape="empty_cycle_context",
                      conflict_edges=[list(edge) for edge in sorted(source_edges)], **fields)
                 return False, changed
             emit("cycle_context", "C1",
-                 detail=f"共同點 {vertices[hub]} 與原 {len(cycle)} 點環保留 {count_decimal} 個完整局部色組；導出 {len(plans)} 份完整二／三元接口投影，交回接口交集，尚未寫色。",
+                 detail=f"共同點 {int_text(vertices[hub])} 與原 {len(cycle)} 點環保留 {count_decimal} 個完整局部色組；導出 {len(plans)} 份完整二／三元接口投影，交回接口交集，尚未寫色。",
                  **fields)
         return True, changed
+
+    def propagate_triangle_equalities():
+        """Close small three-colour rules on temporary equality classes."""
+        nonlocal triangle_equality_signature
+        from four_color_triangle_equalities import derive_triangle_equalities
+
+        remaining = joint_consistency_max_checks - stats["joint_consistency_checks"]
+        if remaining <= 0:
+            return True, False
+        ordered = tuple(sorted(active))
+        signature = (ordered, tuple(tuple(sorted(domains[v])) for v in ordered))
+        if signature == triangle_equality_signature:
+            stats["triangle_equality_cache_hits"] += 1
+            return True, False
+        literal_vertices = [vertices[v] for v in ordered]
+        literal_set = set(literal_vertices)
+        literal_edges = [edge for edge in g["edges"] if all(v in literal_set for v in edge)]
+
+        def charge():
+            check("relation_checks")
+            stats["joint_consistency_checks"] += 1
+            stats["triangle_equality_checks"] += 1
+
+        stats["triangle_equality_queries"] += 1
+        answer = derive_triangle_equalities(
+            literal_vertices, literal_edges, {vertices[v]: domains[v] for v in ordered},
+            max_checks=remaining, charge=charge)
+        triangle_equality_signature = signature
+        if not answer["complete"]:
+            stats["triangle_equality_incomplete"] += 1
+            stats["joint_consistency_incomplete"] += 1
+            return True, False
+        merges = sum(step["kind"] == "three_color_double_triangle"
+                     for step in answer["proof_steps"])
+        stats["triangle_equality_merges"] += merges
+        if not answer["proof_steps"] and answer["consistent"]:
+            return True, False
+        source_edges = frozenset(
+            {tuple(sorted(edge)) for edge in answer["source_edges"]} |
+            {edge for v in ordered for edge in domain_edges[v]})
+        source_vertices = frozenset(literal_vertices) | frozenset(
+            vertex for v in ordered for vertex in domain_vertices[v])
+        if not answer["consistent"]:
+            counts["C1"] += 1
+            contradiction(
+                _Factor(ordered, frozenset(), source_edges, source_vertices),
+                "三色三角的等色類合併與鄰色排除推出原邊矛盾；未枚舉全圖色組、未寫色。",
+                propagation_kind="triangle_equalities", structural_proof=answer["proof_steps"],
+                equality_classes=[list(group) for group in answer["classes"]],
+                structural_conflict=answer["conflict"], structural_query_checks=answer["checks"])
+            return False, False
+        prunes = 0
+        for v in ordered:
+            supported = set(answer["domains"][vertices[v]])
+            if supported != domains[v]:
+                prunes += len(domains[v]) - len(supported)
+                domains[v] = supported
+                domain_edges[v].update(source_edges)
+                domain_vertices[v].update(source_vertices)
+        if prunes:
+            stats["prunes"] += prunes
+            stats["triangle_equality_prunes"] += prunes
+            counts["C1"] += 1
+            emit("triangle_equalities", "C1",
+                 detail=f"三色三角等色類推理刪去 {prunes} 個候選色；未改原圖、未寫色。",
+                 structural_proof=answer["proof_steps"],
+                 equality_classes=[list(group) for group in answer["classes"]],
+                 structural_query_checks=answer["checks"],
+                 causal_vertices=sorted(source_vertices),
+                 causal_edges=[list(edge) for edge in sorted(source_edges)])
+        return True, bool(prunes)
+
+    def propagate_joint_consistency():
+        """Project complete incident-factor joins; never commit partial support."""
+        from four_color_joint_consistency import joint_supports
+
+        def charge():
+            check("relation_checks")
+            stats["joint_consistency_checks"] += 1
+            stats["joint_support_checks"] += 1
+
+        for retired in set(joint_consistency_seen) - active:
+            del joint_consistency_seen[retired]
+        for center in sorted(active):
+            remaining = joint_consistency_max_checks - stats["joint_consistency_checks"]
+            if remaining <= 0:
+                # No future query can use these retained factor identities.
+                joint_consistency_seen.clear()
+                return True, False
+            bucket = tuple(factor for factor in factors if center in factor.scope)
+            if len(bucket) < 2:
+                continue
+            scope = tuple(sorted({v for factor in bucket for v in factor.scope}))
+
+            def signature():
+                return (tuple((id(factor), factor.revision) for factor in bucket),
+                        tuple(tuple(sorted(domains[v])) for v in scope))
+
+            previous = joint_consistency_seen.get(center)
+            if previous is not None and previous[1] == signature():
+                # Strong references prevent retired factor ids being reused.
+                stats["joint_consistency_cache_hits"] += 1
+                continue
+            stats["joint_consistency_queries"] += 1
+            stats["joint_consistency_peak_scope"] = max(
+                stats["joint_consistency_peak_scope"], len(scope))
+            answer = joint_supports(
+                [(factor.scope, factor.rows) for factor in bucket], domains,
+                max_checks=remaining,
+                max_support_rows=max_table_rows, charge=charge)
+            stats["joint_symmetry_checks"] += answer["symmetry_checks"]
+            stats["joint_restarted_checks"] += answer["restarted_checks"]
+            stats["joint_normalized_queries"] += answer["symmetry_group_size"] > 1
+            joint_consistency_seen[center] = (bucket, signature())
+            if not answer["complete"]:
+                stats["joint_consistency_incomplete"] += 1
+                continue
+            source_edges = frozenset(
+                {edge for factor in bucket for edge in factor.source_edges} |
+                {edge for v in scope for edge in domain_edges[v]})
+            source_vertices = frozenset(
+                {vertex for factor in bucket for vertex in factor.source_vertices} |
+                {vertices[v] for v in scope} |
+                {vertex for v in scope for vertex in domain_vertices[v]})
+            if not answer["consistent"]:
+                counts["C1"] += 1
+                contradiction(
+                    _Factor(scope, frozenset(), source_edges, source_vertices),
+                    f"點 {int_text(vertices[center])} 的相交關係合併後為空；"
+                    f"本次共同檢查涵蓋 {len(scope)} 點，未消元、未寫色。",
+                    vertices[center], propagation_kind="joint_consistency",
+                    joint_scope_size=len(scope), joint_query_checks=answer["checks"])
+                return False, False
+            row_prunes = color_prunes = 0
+            for factor, supported in zip(bucket, answer["rows"]):
+                if factor.rows != supported:
+                    row_prunes += len(factor.rows) - len(supported)
+                    factor.rows = supported
+                    factor.revision += 1
+                    factor.source_edges = source_edges
+                    factor.source_vertices = source_vertices
+            for v in scope:
+                supported = set(answer["domains"][v])
+                if domains[v] != supported:
+                    color_prunes += len(domains[v]) - len(supported)
+                    domains[v] = supported
+                    domain_edges[v].update(source_edges)
+                    domain_vertices[v].update(source_vertices)
+            # Projection onto every input is idempotent for this completed join.
+            joint_consistency_seen[center] = (bucket, signature())
+            if row_prunes or color_prunes:
+                stats["row_prunes"] += row_prunes
+                stats["prunes"] += color_prunes
+                stats["joint_consistency_row_prunes"] += row_prunes
+                stats["joint_consistency_prunes"] += color_prunes
+                counts["C1"] += 1
+                emit("joint_consistency", "C1", vertices[center],
+                     detail=f"完整合併 {len(scope)} 點的相交關係後，刪去 "
+                            f"{row_prunes} 列及 {color_prunes} 個候選色；未消元、未寫色。",
+                     frontier=[vertices[v] for v in scope],
+                     joint_scope_size=len(scope), joint_query_checks=answer["checks"],
+                     relation_rows=answer["support_rows"],
+                     causal_vertices=sorted(source_vertices),
+                     causal_edges=[list(edge) for edge in sorted(source_edges)])
+                return True, True
+        return True, False
 
     def propagate():
         """Domain consistency, plus optional complete shared-tuple filtering."""
@@ -1062,6 +1253,15 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                 if not compatible:
                     return False
                 changed = changed or c5_changed
+            if use_joint_consistency:
+                if changed:
+                    continue
+                compatible, equality_changed = propagate_triangle_equalities()
+                if not compatible:
+                    return False
+                if equality_changed:
+                    changed = True
+                    continue
             if use_cycles:
                 # First settle the ordinary factors and whole-interface
                 # intersections, so their new domains guide cycle discovery.
@@ -1081,6 +1281,13 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                     # The next indexed sync discovers new pairs while keeping
                     # completed signatures of unchanged, surviving factors.
                     changed = True
+            if use_joint_consistency:
+                if changed:
+                    continue
+                compatible, joint_changed = propagate_joint_consistency()
+                if not compatible:
+                    return False
+                changed = changed or joint_changed
         return True
 
     def select_vertex():
@@ -1249,7 +1456,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                 record["input_relations"] = [snapshot_factor(factor) for factor in bucket]
             records.append(record)
             if not table:
-                contradiction(projected, f"消去點 {vertices[v]} 時，沒有任何完整邊界色組可以共同延伸。", vertices[v])
+                contradiction(projected, f"消去點 {int_text(vertices[v])} 時，沒有任何完整邊界色組可以共同延伸。", vertices[v])
                 status = "unsatisfiable"
                 break
 
@@ -1265,7 +1472,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
             preview = [dict(boundary=list(boundary), colors=_fiber_colors(mask))
                        for boundary, mask in islice(table.items(), 8)] if len(events) < trace_limit else []
             emit("eliminate", "C2", vertices[v],
-                 detail=f"消去點 {vertices[v]}：保存 {len(table)} 個完整邊界色組及其所有可用色；尚未寫色。",
+                 detail=f"消去點 {int_text(vertices[v])}：保存 {len(table)} 個完整邊界色組及其所有可用色；尚未寫色。",
                  frontier=[vertices[w] for w in frontier], relation_preview=preview,
                  relation_rows=len(table),
                  **explain(projected))
@@ -1289,7 +1496,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                 stats["assignments"] += 1
                 counts["C3"] += 1
                 emit("writeback", "C3", vertices[v], colors[v],
-                     detail=f"完整邊界色組查表成功，將點 {vertices[v]} 寫為色 {colors[v] + 1}。",
+                     detail=f"完整邊界色組查表成功，將點 {int_text(vertices[v])} 寫為色 {colors[v] + 1}。",
                      phase="writeback", frontier=[vertices[w] for w in frontier],
                      relation_rows=len(table),
                      relation_preview=[dict(boundary=list(boundary), colors=list(choices))])
@@ -1327,6 +1534,8 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
         cycle_context_search=cycle_context_search,
         cycle_context_scan=cycle_context_scan,
         use_joint_constraints=use_joint_constraints, joint_max_matches=joint_max_matches,
+        use_joint_consistency=use_joint_consistency,
+        joint_consistency_max_checks=joint_consistency_max_checks,
         joint_max_scan_steps=joint_max_scan_steps, joint_scan=joint_scan,
         conflict_catalogue=conflict_catalogue(include_rows=False),
         conflict_subgraphs=conflict_subgraphs,

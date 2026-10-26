@@ -1,0 +1,228 @@
+{
+  "schema": "four-color-counterexample-search-v1",
+  "date": "2026-10-26",
+  "base_commit": "f30cd6f166ed0eb05935ee08c6784bb2f8115cc6",
+  "scope": "Finite executable audits of the current exact solver, propagation, resource defaults, and accepted integer labels. Production solver unchanged.",
+  "findings": [
+    {
+      "kind": "local_propagation_gap",
+      "graph_file": "propagation/inputs.json",
+      "n": 14,
+      "m": 36,
+      "planar": true,
+      "fixed": [
+        [
+          9,
+          2
+        ],
+        [
+          11,
+          2
+        ]
+      ],
+      "bare_solutions": 624,
+      "fixed_solutions": 0,
+      "complete_pair_relation": "c(9) != c(11); 12 literal rows, 52 full extensions per row; all four equal-color fibres empty",
+      "initial_consistent": true,
+      "nonempty_factors": 354,
+      "scan_truncated": false,
+      "all_cycles_complete": false,
+      "all_contexts_complete": false,
+      "exact_status": "unsatisfiable",
+      "candidate_checks": 54,
+      "successful_eliminations": 0,
+      "conditions": [
+        "合法原圖與合法固定色，同一字面色框",
+        "獨立原邊窮盡證明該固定色無延伸",
+        "初始傳播已穩定，仍無空候選域、空表或已報矛盾",
+        "區分搜尋覆蓋、預算中止與完整消元；未截斷不等於全部環覆蓋"
+      ]
+    },
+    {
+      "kind": "default_storage_limit",
+      "graph_file": "grid_6x7.json",
+      "n": 42,
+      "m": 71,
+      "planar": true,
+      "fixed": [],
+      "witness": "v=7*r+c, color=(r+c)%2",
+      "default_status": "limit",
+      "default_checks": 492861,
+      "raised_max_table_rows": 1000000,
+      "raised_status": "colored",
+      "raised_checks": 497859,
+      "complete_certificate_rows": 103661,
+      "conditions": [
+        "合法且有明確完整染色見證",
+        "指定資源設定下完整中間表或證書超過上限",
+        "limit只反駁該資源設定保證完成，不能當無解或錯判"
+      ]
+    },
+    {
+      "kind": "accepted_integer_label_exception",
+      "n": 1,
+      "m": 0,
+      "vertex_expression": "10**4300",
+      "known_witness": [
+        0
+      ],
+      "int_max_str_digits": 4300,
+      "exception": "ValueError",
+      "trace_limit": 0,
+      "control_vertex_expression": "10**4299",
+      "control_status": "colored",
+      "conditions": [
+        "由Python API傳入整數原頂點編號",
+        "十進位位數超過啟用中的Python轉換限制",
+        "執行到事件文字格式化，trace_limit=0仍會預先格式化"
+      ],
+      "classification": "Input representation and logging failure; not a false four-color verdict."
+    }
+  ],
+  "counterexample_requirements": {
+    "false_unsatisfiable": [
+      "輸入符合有限簡單無向圖及固定色契約",
+      "提供同原圖、同fixed、同色框的完整合法染色",
+      "求解器實際回unsatisfiable，而非limit/stuck"
+    ],
+    "false_colored": [
+      "求解器回colored",
+      "輸出缺點、色值非法、原邊同色或違反固定色之一，須直接核原輸入"
+    ],
+    "internal_exactness": [
+      "可靠傳播必保留所有完整解",
+      "每次bucket必收齊全部含消元點的因子",
+      "完整有序邊界的非空與空fibres均保留",
+      "倒序回寫必使用同一份已確定的完整邊界共同見證"
+    ],
+    "planar_uncolorability": [
+      "需無固定色的合法平面原圖及可核對平面嵌入",
+      "獨立證明整張原圖不存在任何四色染色",
+      "固定色無延伸、資源超限、局部穩定或抽象932關係均不足以成立"
+    ]
+  },
+  "validation": {
+    "atlas": {
+      "graphs": 1253,
+      "planar_graphs": 1016,
+      "conditions": 3755,
+      "planar_conditions": 3044,
+      "oracle_colored": 3093,
+      "solver_calls": 7510,
+      "oracle_unsatisfiable": 662
+    },
+    "random": {
+      "runs": 3300,
+      "colored": 2702,
+      "graphs_sat": 2703,
+      "fibre_records": 436,
+      "graphs": 1500,
+      "unsatisfiable": 597,
+      "graphs_unsat": 597,
+      "limit": 1
+    },
+    "all_solution_preservation": {
+      "colored": 107,
+      "solution_fibre_checks": 640840,
+      "fibres": 702,
+      "solution_event_checks": 1602655,
+      "graphs": 120,
+      "solutions": 86217,
+      "unsatisfiable": 13
+    },
+    "existing_tests": 248,
+    "existing_tests_passed": true,
+    "ordinary_label_wrong_verdicts_found": 0,
+    "note": "All atlas calls completed. One random run returned limit and remains inconclusive. Finite checks do not prove universal Python correctness."
+  },
+  "replay_commands": [
+    ".venv/bin/python audits/2026-10-26-four-color-counterexamples-f30cd6f/atlas_audit.py --out /tmp/atlas-replay.json",
+    ".venv/bin/python audits/2026-10-26-four-color-counterexamples-f30cd6f/propagation/reproduce.py --out /tmp/propagation-replay.json",
+    "python3 audits/2026-10-26-four-color-counterexamples-f30cd6f/grid_replay.py --out /tmp/grid-replay.json",
+    "python3 audits/2026-10-26-four-color-counterexamples-f30cd6f/semantic_four_color_audit.py",
+    "python3 audits/2026-10-26-four-color-counterexamples-f30cd6f/semantic_four_color_preservation.py",
+    "python3 audits/2026-10-26-four-color-counterexamples-f30cd6f/semantic_four_color_large_label.py"
+  ],
+  "replay_output_note": "Random and all-solution scripts write matching /tmp/semantic_four_color_*.json files. Large-label script prints JSON. Commands run from repository root; NetworkX is in .venv.",
+  "python": "3.14.8 (main, Oct  2 2026, 10:23:31) [GCC 16.2.1 20260810]",
+  "source_sha256": {
+    "scripts/four_color_c5.py": "f038d1e79f3a21c50983fe2a876d2dd6a3ca4fb9a62f8611a606d63539b37324",
+    "scripts/four_color_c5_experiment.py": "10f62c954f33f71140c2be72a9926a3ba1eb3e40ef102313469500762c21598a",
+    "scripts/four_color_c5_profile.py": "cff179b63505eb7150c86794e68238fbfc59a1192e83a2dd5c079d60e4ace223",
+    "scripts/four_color_c5_scan_experiment.py": "75f9b6cdd4a06a00ad51f8f8f56468e30a889ef7f0256dde3c512df0aa692599",
+    "scripts/four_color_combined_experiment.py": "0ad1ba9c0ab37091ca0c8a66e083a1073825277aebb7a10ebd9dcddb0272bc2f",
+    "scripts/four_color_conflict_priority.py": "903fe32c6981de7b6935d3d285027d8dd5d45e949cd8f8efa5c65efb7f8e1df1",
+    "scripts/four_color_conflicts.py": "043b2f612fabe0ff27b296b528cb705e0225d6d0df98d60aafc994ca2b741912",
+    "scripts/four_color_constraint_experiment.py": "56f9c57191abf9fb4ad3aab44b53906d7b54ae3f5c64fa406cf966f04ee4a61b",
+    "scripts/four_color_constraints.py": "6cfeceb5d13601cadbcf07f4d2fea2a033bafb22725416f5156d4fc802923c1a",
+    "scripts/four_color_cycle_context_experiment.py": "b6dfd2cb00600916c29ae556ace3610261db6812c493ec696674ce1d72701a05",
+    "scripts/four_color_cycle_contexts.py": "bcd8e12a9511922954aaba6ba95293cf248182132b8fb56b54e33e09535cbd1a",
+    "scripts/four_color_cycle_propagation.py": "8eed1efbcadca544cde2297e79cc790bf707f10726a2b715dffa4d35bf1e7328",
+    "scripts/four_color_cycle_structure.py": "184ec00531b9eb61181a52496c459335ed2442d4781cfad4dc9ac6391726dc96",
+    "scripts/four_color_examples.py": "cfa9f761475072e2e0e57e0b3afc3b527141e1e8b4b9b65e20f239228eafa953",
+    "scripts/four_color_flow_experiment.py": "f159838439d192c8fe6c74178738a4d44d9ffbf9b380578eeb2636aa6affb146",
+    "scripts/four_color_guarantee_audit.py": "1f6b528fe07e441aa32cbfd3299b3354a3bee9d4dea9ec0d6a546e044350ea96",
+    "scripts/four_color_intersection_experiment.py": "9dec577848df71d9599122f37544ec1bbbac7e8c2e4768b43ebcef511eb5260e",
+    "scripts/four_color_intersections.py": "b944d8b15e0e38ce4aa174c4c3db63b4f599901a9840489449ab0e025b228cda",
+    "scripts/four_color_joint_constraint_audit.py": "4f3510e1148bcae3d067cc60e755dba9a1c98489137eb2ec122283f3b851ac45",
+    "scripts/four_color_joint_patterns.py": "94409698e729563b366a432822a16e1953077c9420517c1fe918b42ebb3ec926",
+    "scripts/four_color_joint_propagation_experiment.py": "a51b680569c5848a8629d9391719058d34a7909b19fcee4223748310bc42fb09",
+    "scripts/four_color_lab.py": "62204fcfce3122cedd20fe915230fa274f2fcaf39aace4a057fd4d9eb67914d4",
+    "scripts/four_color_larger_cases.py": "3121e10d7b33bd8dcfd9472040aaea87d12739fab39ddcc57f4d9e64cc53eddf",
+    "scripts/four_color_larger_experiment.py": "034643493152a937de31ef8751879653ed29f6c035cbecd176676ee216e26394",
+    "scripts/four_color_larger_random.py": "736f74367c2f4489c6b405777be01990d273f614632c4fa0fbe7b256e9c7b24e",
+    "scripts/four_color_local_information.py": "82475ee576d9ae2101dd289a57f778c270b68aa827be2403b9ca1f7fb8057c89",
+    "scripts/four_color_logic_experiment.py": "a94662b5e472ee0099bbb8edfc49f6c004ce882884ff55b7381c0c46fb629494",
+    "scripts/four_color_memory_experiment.py": "688457b89688bd073a3f7b1a693fad67a3630e14ba1e54597a4a74d2366babf5",
+    "scripts/four_color_retention_audit.py": "c343f7e25fb505f2fbca77b8e00ec39f4b78c43035dfe06106b8279bfe1148da"
+  },
+  "evidence_sha256": {
+    "atlas_audit.py": "d55cc48e211a3abe85709b4c37494a3cfef2ab65ca6c285832d4ea794896f112",
+    "atlas_results.json": "894ce0207748527a0e1d0dd140600fd65b47f1fb24b538a7fc14acc9a50e63d4",
+    "grid_6x7.json": "07f1d4b1ddaf489757314b3dd5366a08b9f1fe8f17ac8cc52e108433c4619b24",
+    "grid_comparison.json": "16fc3e12968a083125eee272711d0320d6fc67f4842cbefaadb92573eb967bdc",
+    "grid_replay.py": "c31af41fae1b315d84ca210511abd1a5a3be44324bd2fa0208b090a68d31e0bf",
+    "propagation/inputs.json": "1900a958989bca8e9fa644219595e66894a409ae451c33ca92e761cff0c3a0ee",
+    "propagation/report.json": "3cc6a3a3e2c18fd4c063a159c1f3571041667febfbce10a342b12a652dee7a31",
+    "propagation/reproduce.py": "b671d25f3793c58d063a9c6c64321067503825ab46627b38bcbebe778f51eea1",
+    "regression.log": "cd763c91a596f0ce7eb289e8a1b3c0ea7324f7fe99d46a9d55d33067fe6b956b",
+    "semantic_four_color_audit.json": "56bad30d5344fd97aaf17e54f4e50177b7ade38a4001b5db2512c182c812316d",
+    "semantic_four_color_audit.py": "e608745bd223f5b054c7d4b90760537bfe444b7da5d14675b15d5f526911c6e9",
+    "semantic_four_color_large_label.json": "4bab7d878c8bf5b783c34c6bc7fc651b5922a16b56296d35bc371e0747310acb",
+    "semantic_four_color_large_label.py": "a5cea49dfc45d3c2e84f5838ce03ef579d22eed7ebb28ad0fd032f028afcf518",
+    "semantic_four_color_preservation.json": "defa3cf7d66dc620bfc78d6c3eb7483cd0a1471c76ea2578989dede4368e2435",
+    "semantic_four_color_preservation.py": "8b5ad3cd0320ff8748a0dd2896a2677d13fbd6d8a57a69dce7d565b8b61d7f0b"
+  },
+  "documentation_scope": {
+    "updated": [
+      "docs/four_color_guarantee_gap.md",
+      "docs/four_color_guide.md",
+      "docs/STATUS.md"
+    ],
+    "reviewed_unchanged": [
+      "docs/four_color_completeness.md: algorithmic proof under stated contracts is unchanged; input serialization failure is not a join/projection failure",
+      "docs/HANDOFF.md: research-line routing unchanged"
+    ],
+    "remaining_open": [
+      "General early-propagation coverage and efficiency",
+      "Ordinary-label implementation errors outside finite tests",
+      "Independent planar structural bridge beyond existing 932 obligation"
+    ]
+  },
+  "verification": {
+    "parent_replayed": [
+      "grid cases",
+      "random differential",
+      "all-solution preservation",
+      "large integer labels",
+      "14-point propagation gap"
+    ],
+    "seed17_propagation_report_equal": true,
+    "seed17_report_sha256": "3cc6a3a3e2c18fd4c063a159c1f3571041667febfbce10a342b12a652dee7a31",
+    "source_and_evidence_sha256_verified": true,
+    "docs_only_docgraph": "98 documents, 386 relations, 12 families; 0 errors",
+    "generated_artifact_policy": "PASS",
+    "git_diff_check": "PASS",
+    "production_solver_changed": false
+  }
+}

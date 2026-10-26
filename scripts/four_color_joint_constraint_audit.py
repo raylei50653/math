@@ -42,6 +42,7 @@ FROZEN_INPUT_SHA256 = "624fa536d4d2fe060cb024252cfae18c66f928ac2931d8a301b12ccc0
 FIXED_GRAPH_SHA256 = "10eb7febb228531089f53d33ab7a9351c4acbdcb17ea502f5271804b178b5cd7"
 UNFIXED_GRAPH_SHA256 = "b2fcb9682b4ccf5be9c106dc3106baaad30d673a5f1a5edc4f2e9541387fd85e"
 SOURCE_PATHS = ("scripts/four_color_joint_constraint_audit.py", "scripts/four_color_lab.py",
+                "scripts/four_color_serialization.py",
                 "tools/tests/test_four_color_joint_constraints.py")
 
 

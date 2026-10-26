@@ -8,10 +8,11 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import json
 import math
 from pathlib import Path
 import sys
+
+from four_color_serialization import browser_payload, int_text, json_dumps, json_loads
 
 
 RULES = [
@@ -89,7 +90,7 @@ def graph_fingerprint(graph):
     """Hash ordered vertices, original edges, and literal fixed colors."""
     g = normalize_graph(graph)
     source = {k: g[k] for k in ("vertices", "edges", "fixed")}
-    return hashlib.sha256(json.dumps(source, separators=(",", ":")).encode()).hexdigest()
+    return hashlib.sha256(json_dumps(source, separators=(",", ":")).encode()).hexdigest()
 
 
 def solve(graph, strategy="dsatur", propagation=True, backtracking=True,
@@ -163,7 +164,7 @@ def solve(graph, strategy="dsatur", propagation=True, backtracking=True,
                     visited.add(parent)
                     pending.append(parent)
         emit("conflict", vertex=vertices[i],
-             detail=f"點 {vertices[i]} 沒有候選色：鄰點已分別佔用色 1、2、3、4。這是目前分支的死路。")
+             detail=f"點 {int_text(vertices[i])} 沒有候選色：鄰點已分別佔用色 1、2、3、4。這是目前分支的死路。")
         if events and len(events) == emitted:
             from four_color_conflicts import find_known_conflict
             witness = find_known_conflict(
@@ -198,14 +199,14 @@ def solve(graph, strategy="dsatur", propagation=True, backtracking=True,
         counts[rule] += 1
         stats["max_depth"] = max(stats["max_depth"], len(stack))
         emit(kind, rule, vertices[i], c,
-             f"點 {vertices[i]} {'只剩唯一色，填入' if forced else '試用'}色 {c + 1}。")
+             f"點 {int_text(vertices[i])} {'只剩唯一色，填入' if forced else '試用'}色 {c + 1}。")
         after = domains()
         removed = sum(len(before[j]) - len(after[j]) for j in range(len(vertices)) if colors[j] < 0)
         if removed:
             stats["prunes"] += removed
             counts["R1"] += removed
             emit("prune", "R1", vertices[i], c,
-                 f"點 {vertices[i]} 的色 {c + 1}，合計刪去未染鄰點的 {removed} 個候選色。")
+                 f"點 {int_text(vertices[i])} 的色 {c + 1}，合計刪去未染鄰點的 {removed} 個候選色。")
 
     emit("start", detail="從指定固定色開始。顏色數字為 1–4；未染點顯示候選色。")
     initial_removed = sum(4 - len(d) for i, d in enumerate(domains()) if colors[i] < 0)
@@ -217,7 +218,7 @@ def solve(graph, strategy="dsatur", propagation=True, backtracking=True,
                      if colors[index[u]] >= 0 and colors[index[u]] == colors[index[v]]), None)
     if bad_edge:
         stats["conflicts"] += 1
-        emit("conflict", detail=f"固定色在原邊 {bad_edge[0]}–{bad_edge[1]} 兩端相同，不能延伸。")
+        emit("conflict", detail=f"固定色在原邊 {int_text(bad_edge[0])}–{int_text(bad_edge[1])} 兩端相同，不能延伸。")
         if events and len(events) == emitted:
             from four_color_conflicts import find_known_conflict
             witness = find_known_conflict(list(bad_edge), [list(bad_edge)],
@@ -246,7 +247,7 @@ def solve(graph, strategy="dsatur", propagation=True, backtracking=True,
                 stats["backtracks"] += 1
                 counts["R4"] += 1
                 emit("backtrack", "R4", vertices[frame["vertex"]],
-                     detail=f"還原到點 {vertices[frame['vertex']]} 試色前，撤銷該次試色與全部後果。")
+                     detail=f"還原到點 {int_text(vertices[frame['vertex']])} 試色前，撤銷該次試色與全部後果。")
                 if frame["remaining"]:
                     if stats["steps"] >= max_steps:
                         status = "limit"
@@ -295,7 +296,7 @@ def solve(graph, strategy="dsatur", propagation=True, backtracking=True,
 
 def write_html(path, payload):
     template = Path(__file__).resolve().parents[1] / "tools/four_color_lab_viewer.html"
-    encoded = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+    encoded = json_dumps(browser_payload(payload), ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(template.read_text().replace("__FOUR_COLOR_DATA__", encoded), encoding="utf-8")
 
@@ -370,6 +371,10 @@ def main():
                      help="constraints engine: search neighbour cycles (default) or allow partial actual spokes; requires --cycle-contexts")
     run.add_argument("--joint-constraints", action="store_true",
                      help="constraints engine: automatically match registered original-edge patterns and propagate their joint relations")
+    run.add_argument("--joint-consistency", action="store_true",
+                     help="constraints engine: filter each variable's incident factors by their complete joint support before elimination")
+    run.add_argument("--joint-consistency-max-checks", type=int, default=200000,
+                     help="optional joint-support work budget for the whole solve; unfinished queries add no restrictions")
     run.add_argument("--joint-max-matches", type=int, default=128)
     run.add_argument("--joint-max-scan-steps", type=int, default=200000)
     run.add_argument("--c5-method", choices=("structure", "table"), default="structure",
@@ -383,7 +388,7 @@ def main():
     run.add_argument("--bucket-method", choices=("anchor", "prefix"), default="anchor",
                      help="constraints engine: enumerate complete anchor extensions (default), or prune prefixes when a complete input factor fails")
     run.add_argument("--max-table-rows", type=int,
-                     help="constraints engine generated-table and complete-record row budget; default min(max-checks, 100000)")
+                     help="constraints engine generated-table and complete-record row budget; default min(max-checks, 1000000)")
     run.add_argument("--interface-cache", action="store_true",
                      help="constraints engine: retain complete shared-interface indexes in RAM; requires --intersections")
     run.add_argument("--interface-cache-max-rows", type=int, default=1000000,
@@ -432,7 +437,7 @@ def main():
                 if args.no_propagation or args.no_backtracking or args.strategy != "dsatur":
                     raise ValueError("constraints mode uses relation propagation and min-fill elimination; search flags do not apply")
                 from four_color_constraints import solve_constraints
-                r = solve_constraints(json.loads(args.input.read_text()), not args.edges_only,
+                r = solve_constraints(json_loads(args.input.read_text()), not args.edges_only,
                                       args.max_checks, args.trace_limit, use_c5=args.c5 or args.c5_local,
                                       bucket_method=args.bucket_method,
                                       max_table_rows=args.max_table_rows,
@@ -449,19 +454,21 @@ def main():
                                       cycle_context_max_scan_steps=args.cycle_context_max_scan_steps,
                                       cycle_context_search=args.cycle_context_search,
                                       use_joint_constraints=args.joint_constraints,
+                                      use_joint_consistency=args.joint_consistency,
+                                      joint_consistency_max_checks=args.joint_consistency_max_checks,
                                       joint_max_matches=args.joint_max_matches,
                                       joint_max_scan_steps=args.joint_max_scan_steps)
             else:
-                if args.edges_only or args.c5 or args.c5_local or args.no_conflicts or args.intersections or args.cycles or args.cycle_contexts or args.cycle_context_search != "neighbours" or args.joint_constraints or args.max_table_rows is not None or args.interface_cache or args.interface_cache_max_rows != 1000000 or args.bucket_method != "anchor":
+                if args.edges_only or args.c5 or args.c5_local or args.no_conflicts or args.intersections or args.cycles or args.cycle_contexts or args.cycle_context_search != "neighbours" or args.joint_constraints or args.joint_consistency or args.joint_consistency_max_checks != 200000 or args.max_table_rows is not None or args.interface_cache or args.interface_cache_max_rows != 1000000 or args.bucket_method != "anchor":
                     raise ValueError("constraint feature flags require --engine constraints")
-                r = solve(json.loads(args.input.read_text()), args.strategy, not args.no_propagation,
+                r = solve(json_loads(args.input.read_text()), args.strategy, not args.no_propagation,
                           not args.no_backtracking, args.max_steps, args.trace_limit)
             if args.json:
                 args.json.parent.mkdir(parents=True, exist_ok=True)
-                args.json.write_text(json.dumps(r, ensure_ascii=False, indent=2) + "\n")
+                args.json.write_text(json_dumps(r, ensure_ascii=False, indent=2) + "\n")
             if args.html:
                 write_html(args.html, dict(rules=r.get("rules", RULES), runs=[viewer_run(r)]))
-            print(json.dumps({k: r[k] for k in ("status", "colors", "stats", "rule_counts", "trace_truncated")},
+            print(json_dumps({k: r[k] for k in ("status", "colors", "stats", "rule_counts", "trace_truncated")},
                              ensure_ascii=False, indent=2))
         elif args.command == "demo":
             from four_color_examples import examples
@@ -474,29 +481,29 @@ def main():
                     runs.append(r)
             args.out.mkdir(parents=True, exist_ok=True)
             for i, g in enumerate(graphs):
-                (args.out / f"example-{i}.json").write_text(json.dumps(g, ensure_ascii=False, indent=2) + "\n")
+                (args.out / f"example-{i}.json").write_text(json_dumps(g, ensure_ascii=False, indent=2) + "\n")
             write_html(args.out / "index.html", dict(rules=RULES, runs=runs))
             summary = [{k: r[k] for k in ("name", "strategy", "propagation", "backtracking", "status", "stats", "rule_counts")}
                        for r in runs]
-            (args.out / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n")
+            (args.out / "summary.json").write_text(json_dumps(summary, ensure_ascii=False, indent=2) + "\n")
             print(f"{len(graphs)} graphs / {len(runs)} runs: {args.out / 'index.html'}")
         elif args.command == "constraint-demo":
             from four_color_constraints import CONSTRAINT_RULES, solve_constraints, substructure_catalogue
             from four_color_examples import constraint_examples
             args.out.mkdir(parents=True, exist_ok=True)
-            (args.out / "library.json").write_text(json.dumps(substructure_catalogue(), ensure_ascii=False, indent=2) + "\n")
+            (args.out / "library.json").write_text(json_dumps(substructure_catalogue(), ensure_ascii=False, indent=2) + "\n")
             runs, summary = [], []
             for i, g in enumerate(constraint_examples()):
-                (args.out / f"example-{i}.json").write_text(json.dumps(g, ensure_ascii=False, indent=2) + "\n")
+                (args.out / f"example-{i}.json").write_text(json_dumps(g, ensure_ascii=False, indent=2) + "\n")
                 for motifs in (False, True):
                     r = solve_constraints(g, use_substructures=motifs, use_conflicts=False)
                     tag = f"run-{i}-{'substructures' if motifs else 'edges'}"
-                    (args.out / f"{tag}.json").write_text(json.dumps(r, ensure_ascii=False, separators=(",", ":")) + "\n")
+                    (args.out / f"{tag}.json").write_text(json_dumps(r, ensure_ascii=False, separators=(",", ":")) + "\n")
                     runs.append(viewer_run(r))
                     summary.append({k: r[k] for k in ("name", "engine", "use_substructures", "status",
                                                         "stats", "substructures", "graph_sha256")})
             write_html(args.out / "index.html", dict(rules=CONSTRAINT_RULES, runs=runs))
-            (args.out / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n")
+            (args.out / "summary.json").write_text(json_dumps(summary, ensure_ascii=False, indent=2) + "\n")
             print(f"{len(runs)} constraint runs: {args.out / 'index.html'}")
         elif args.command == "conflict-demo":
             from four_color_conflicts import conflict_catalogue
@@ -510,10 +517,10 @@ def main():
                               fixed=[[30, 2], [-7, 2]])
             graphs = [fixed_edge] + [selected[name] for name in names]
             args.out.mkdir(parents=True, exist_ok=True)
-            (args.out / "library.json").write_text(json.dumps(conflict_catalogue(), ensure_ascii=False, indent=2) + "\n")
+            (args.out / "library.json").write_text(json_dumps(conflict_catalogue(), ensure_ascii=False, indent=2) + "\n")
             runs, summary = [], []
             for i, graph in enumerate(graphs):
-                (args.out / f"example-{i}.json").write_text(json.dumps(graph, ensure_ascii=False, indent=2) + "\n")
+                (args.out / f"example-{i}.json").write_text(json_dumps(graph, ensure_ascii=False, indent=2) + "\n")
                 modes = [("guards", dict(use_conflicts=True)),
                          ("baseline", dict(use_conflicts=False))]
                 if graph["name"].startswith("c5_"):
@@ -527,7 +534,7 @@ def main():
                         raise AssertionError("conflict demo lost original-edge witness")
                     result["comparison_mode"] = mode
                     (args.out / f"run-{i}-{mode}.json").write_text(
-                        json.dumps(result, ensure_ascii=False, separators=(",", ":")) + "\n")
+                        json_dumps(result, ensure_ascii=False, separators=(",", ":")) + "\n")
                     runs.append(viewer_run(result))
                     summary.append({key: result[key] for key in (
                         "name", "status", "comparison_mode", "stats", "graph_sha256",
@@ -538,18 +545,18 @@ def main():
                            propagation=False, backtracking=True)
             branch["comparison_mode"] = "branch"
             runs.append(branch)
-            (args.out / "run-branch.json").write_text(json.dumps(branch, ensure_ascii=False, separators=(",", ":")) + "\n")
+            (args.out / "run-branch.json").write_text(json_dumps(branch, ensure_ascii=False, separators=(",", ":")) + "\n")
             write_html(args.out / "index.html", dict(rules=CONSTRAINT_RULES, runs=runs))
-            (args.out / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n")
+            (args.out / "summary.json").write_text(json_dumps(summary, ensure_ascii=False, indent=2) + "\n")
             print(f"{len(graphs)} graphs / {len(runs)} runs: {args.out / 'index.html'}")
         elif args.command == "c5-scan":
             from four_color_c5 import find_induced_c5, find_local_c5
-            g = normalize_graph(json.loads(args.input.read_text()))
+            g = normalize_graph(json_loads(args.input.read_text()))
             finder = find_local_c5 if args.local else find_induced_c5
             result = finder(g, args.max_cycles, args.max_scan_steps)
             result.update(graph_sha256=graph_fingerprint(g), count=len(result["cycles"]),
                           ordering="cyclic order; first vertex and orientation canonical by input vertex order")
-            encoded = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
+            encoded = json_dumps(result, ensure_ascii=False, indent=2) + "\n"
             if args.out:
                 args.out.parent.mkdir(parents=True, exist_ok=True)
                 args.out.write_text(encoded)
@@ -559,21 +566,21 @@ def main():
             from four_color_constraints import CONSTRAINT_RULES, solve_constraints
             from four_color_examples import c5_examples
             args.out.mkdir(parents=True, exist_ok=True)
-            (args.out / "library.json").write_text(json.dumps(c5_catalogue(), ensure_ascii=False, indent=2) + "\n")
+            (args.out / "library.json").write_text(json_dumps(c5_catalogue(), ensure_ascii=False, indent=2) + "\n")
             runs, summary = [], []
             for i, g in enumerate(c5_examples()):
-                (args.out / f"example-{i}.json").write_text(json.dumps(g, ensure_ascii=False, indent=2) + "\n")
+                (args.out / f"example-{i}.json").write_text(json_dumps(g, ensure_ascii=False, indent=2) + "\n")
                 for mode in ("base", "c5", "local"):
                     r = solve_constraints(g, use_c5=mode != "base",
                                           c5_scan_method="local" if mode == "local" else "complete",
                                           use_conflicts=False, c5_method="table")
                     tag = f"run-{i}-{mode}"
-                    (args.out / f"{tag}.json").write_text(json.dumps(r, ensure_ascii=False, separators=(",", ":")) + "\n")
+                    (args.out / f"{tag}.json").write_text(json_dumps(r, ensure_ascii=False, separators=(",", ":")) + "\n")
                     runs.append(viewer_run(r))
                     summary.append({k: r[k] for k in ("name", "engine", "use_substructures", "use_c5", "c5_scan_method", "status",
                                                        "stats", "substructures", "graph_sha256")})
             write_html(args.out / "index.html", dict(rules=CONSTRAINT_RULES, runs=runs))
-            (args.out / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n")
+            (args.out / "summary.json").write_text(json_dumps(summary, ensure_ascii=False, indent=2) + "\n")
             print(f"{len(runs)} C5 comparison runs: {args.out / 'index.html'}")
         elif args.command in ("constraint-experiment", "c5-experiment"):
             if args.count < 1 or args.vertices < 4 or args.max_checks < 0:
@@ -584,17 +591,17 @@ def main():
                 from four_color_constraint_experiment import experiment as compare_constraints
             result = compare_constraints(args.count, args.vertices, args.seed, args.max_checks)
             args.out.parent.mkdir(parents=True, exist_ok=True)
-            args.out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
-            print(json.dumps(result["totals"], ensure_ascii=False, indent=2))
+            args.out.write_text(json_dumps(result, ensure_ascii=False, indent=2) + "\n")
+            print(json_dumps(result["totals"], ensure_ascii=False, indent=2))
             if "lookup" in result:
-                print(json.dumps(result["lookup"], ensure_ascii=False, indent=2))
+                print(json_dumps(result["lookup"], ensure_ascii=False, indent=2))
         else:
             if args.count < 1 or args.vertices < 4 or args.max_steps < 0:
                 raise ValueError("count >= 1, vertices >= 4, max-steps >= 0 required")
             result = experiment(args.count, args.vertices, args.seed, args.max_steps)
             args.out.parent.mkdir(parents=True, exist_ok=True)
-            args.out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
-            print(json.dumps(result["totals"], ensure_ascii=False, indent=2))
+            args.out.write_text(json_dumps(result, ensure_ascii=False, indent=2) + "\n")
+            print(json_dumps(result["totals"], ensure_ascii=False, indent=2))
     except (ValueError, OSError) as exc:
         parser.error(str(exc))
 
