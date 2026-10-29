@@ -1,0 +1,68 @@
+{
+  "all_checks_passed": true,
+  "source_manifest_verified": true,
+  "replays": [
+    {
+      "command": [
+        "python3",
+        "scripts/four_color_counts_face.py",
+        "--check",
+        "audits/2026-10-29-counts-surgery-continuation/pentagram-automaton.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.3,
+      "output": "{\"colorings\": 30, \"directed_transitions\": 150, \"genus_histogram\": {\"1\": 40, \"2\": 664, \"3\": 320}, \"support_mask\": 932}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/four_color_port_order_obstruction.py",
+        "--check",
+        "audits/2026-10-29-counts-surgery-continuation/port-orders.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.055,
+      "output": "{\"colorings\": 30, \"crossing_order_negative_controls\": 100, \"dihedral_classes\": 12, \"disk_support_mask\": 91, \"genuine_disk_orders\": 10, \"labeled_port_orders\": 120, \"non_disk_noncrossing_mask\": 932, \"non_disk_noncrossing_orders\": 10, \"noncrossing_orders\": 20, \"state_system_checks\": 10800}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/four_color_shared_cut_obstruction.py",
+        "--check",
+        "audits/2026-10-29-counts-surgery-continuation/shared-cut.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.118,
+      "output": "{\"negative_actions\": 150, \"noncrossing_failures\": 90, \"positive_actions\": 150, \"positive_feasible_histogram\": {\"1\": 150}, \"shared_side_failures\": 60}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/four_color_surgery_continuation.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.334,
+      "output": "{\"boundary_rooted_literal_separation_word\": 4, \"collision_buckets\": 26, \"colorings\": 491, \"first_boundary_equal\": true, \"first_full_partitions_equal\": false, \"first_path_edges\": 22, \"full_partition_states\": 465, \"second_boundary_equal\": false, \"shortest_boundary_rooted_pairing_word\": 3, \"witnesses\": 2}\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.14",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "scripts/four_color_shelling_fan_verification.py",
+        "--out",
+        "/tmp/math-shelling-publication-2izzg0cm/fans.json"
+      ],
+      "exit_code": 0,
+      "seconds": 2.075,
+      "output": "{\"exact_relation_cases\": 9, \"exact_relation_stages\": 38, \"explicit_family_cases\": 12, \"first_opposite_pair_repairs\": 15, \"forward_replay_cases\": 10, \"geometry_cases\": 15, \"same_witness_lift_obstructions\": 74, \"same_witness_lift_requests\": 946, \"second_opposite_pair_repairs\": 5, \"small_fan_prefix_colorings\": 158}\n",
+      "bytes_equal": true,
+      "certificate_sha256": "cf625f585b1015c8d13ec7612e60a089daa78295ae3814b09f5cc1449d9a956d"
+    }
+  ]
+}

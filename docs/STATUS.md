@@ -21,8 +21,9 @@
 | [四項突破提案的分別驗證](four_color_four_fronts_verification.md) | 2026-10-29：七邊排除；兩步瓶頸及三角anchor成立，維度界限須限原邊來源；剝殼給單環但不給存在性；計數錐仍容許932，手術須完整切開接口。 |
 | [七邊割獨立驗證](four_color_seven_cut_verification.md) | 修正一項過強分量斷言後，紙證非平凡邊割至少八；2,520對雙側一步必要篩選零存活。八的普遍緊性未證，932仍OPEN。 |
 | [兩步消元候選驗證](four_color_two_step_verification.md) | 保留Group A的單邊容量與triangle t=2成立；原邊來源scope下界成立，四元表拒24/256。原anchor無漏約束，未接入原型或新增Lean。 |
-| [Canonical shelling驗證](four_color_shelling_verification.md) | 外部選序定理給剩餘圖單環與精確關係遞推；15例113前綴核幾何。環長可任意大，共同解存在性仍OPEN。 |
+| [Canonical shelling驗證](four_color_shelling_verification.md) | 單環契約、middle-tree fan計數及至多四鄰點正向還原；五點反例否定忽略累積關係的換色，同一見證提升條件已明列。環長無常數界、一般共同解存在性仍OPEN。 |
 | [計數錐與手術驗證](four_color_counts_surgery_verification.md) | 獨立非負邊際與D等價；標準B5仍容許932，180式有整數證書。完整切開接口可更新手術，邊界三pairings不足；LOCK-NO-GAIN不變。 |
+| [計數／手術共同切口續進](four_color_counts_surgery_continuation.md) | 同一非disk五角星的完整932交換模型通過B5；共同切口拒其150條actions。真disk全具名分量仍不充分，純boundary四步區分；一般932仍OPEN。 |
 | [有限色域的精確分解消元](four_color_bounded_projection.md) | 2026-10-29：至多q因子空交證書、anchor及完整fibre已有普通Lean；1,142輸入與2,664中斷狀態逐份核原解／剩餘投影。十葉首步少列，六葉整次反而超限；獨立原型，無一般加速或4CT結論。 |
 | [四色實作數學分析與新候選](four_color_mathematical_optimization.md) | 2026-10-27：四色mask join同1,576桶完整fibres相等；原邊外側域簽章256接口歸15問題、324解全保。另有加權過濾與固定關係交錯成本界；獨立原型，未接主引擎或建立一般加速。 |
 | [四色求解方案橫向比較](four_color_method_comparison.md) | 2026-10-27：整理適用條件、成本與退步；同來源七組各40例皆27可解／13無解，單項對照扣除模式／成本計數後完整紀錄一致。none＋prefix＋快取＋delta本次較快，information少檢查但略慢，非一般速度保證。 |
@@ -1012,6 +1013,10 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 所有「已完成」均限於原報告前提；來源排除與指定列延拓不互換。
 
 ## 歷史紀錄與舊連結
+
+- [2026-10-29：共同切口與剝殼 fan 續進整理發布](history/2026-10-29-continuations-publication.md)
+- [2026-10-29：剝殼 fan、完整關係與換色提升續推](history/2026-10-29-shelling-fan-continuation.md)
+- [2026-10-29：計數／手術共同切口續進](history/2026-10-29-counts-surgery-continuation.md)
 
 - [2026-10-29：四項突破驗證整理發布](history/2026-10-29-four-fronts-verification-publication.md)
 - [2026-10-29：四色消元、有限域分解與六邊割進展整理發布](history/2026-10-29-four-color-progress-publication.md)

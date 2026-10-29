@@ -1,0 +1,51 @@
+[
+  {
+    "name": "docs",
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "returncode": 0,
+    "log": "audits/2026-10-29-counts-surgery-continuation/checks/docs.log",
+    "last_line": "OK: 774 Markdown files, 10315 local links; anchors, index, handoff, guide progress checked",
+    "duplicate_id_errors": 0
+  },
+  {
+    "name": "docgraph-docs",
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "returncode": 0,
+    "log": "audits/2026-10-29-counts-surgery-continuation/checks/docgraph-docs.log",
+    "last_line": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes",
+    "duplicate_id_errors": 0
+  },
+  {
+    "name": "docgraph-whole",
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "returncode": 1,
+    "log": "audits/2026-10-29-counts-surgery-continuation/checks/docgraph-whole.log",
+    "last_line": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes",
+    "duplicate_id_errors": 72
+  },
+  {
+    "name": "whitespace",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "returncode": 0,
+    "log": "audits/2026-10-29-counts-surgery-continuation/checks/whitespace.log",
+    "last_line": "",
+    "duplicate_id_errors": 0
+  }
+]

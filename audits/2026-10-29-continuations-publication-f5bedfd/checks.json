@@ -1,0 +1,164 @@
+{
+  "base_commit": "f5bedfd7f32ef4542700ab5623535ed056963022",
+  "required_checks_passed": true,
+  "whole_tree_docgraph": "known historical duplicate IDs; diagnostics identical to original research log",
+  "checks": [
+    {
+      "name": "docs",
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.806,
+      "log": "audits/2026-10-29-continuations-publication-f5bedfd/docs.log",
+      "last_line": "OK: 775 Markdown files, 10328 local links; anchors, index, handoff, guide progress checked",
+      "duplicate_id_errors": 0
+    },
+    {
+      "name": "docgraph-docs",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.096,
+      "log": "audits/2026-10-29-continuations-publication-f5bedfd/docgraph-docs.log",
+      "last_line": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes",
+      "duplicate_id_errors": 0
+    },
+    {
+      "name": "docgraph-whole",
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "seconds": 1.871,
+      "log": "audits/2026-10-29-continuations-publication-f5bedfd/docgraph-whole.log",
+      "last_line": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes",
+      "duplicate_id_errors": 72,
+      "same_as_original_research_log": true
+    },
+    {
+      "name": "artifact-policy",
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.77,
+      "log": "audits/2026-10-29-continuations-publication-f5bedfd/artifact-policy.log",
+      "last_line": "Generated artifact policy OK: 11055 indexed files, 225 large files with documented exceptions, 166 registered outputs.",
+      "duplicate_id_errors": 0
+    },
+    {
+      "name": "whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.029,
+      "log": "audits/2026-10-29-continuations-publication-f5bedfd/whitespace.log",
+      "last_line": "",
+      "duplicate_id_errors": 0
+    }
+  ],
+  "tool_tests": {
+    "command": [
+      "uv",
+      "run",
+      "--python",
+      "3.14",
+      "--with-requirements",
+      "requirements.txt",
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "tests": 515,
+    "seconds": 45.004,
+    "log": "audits/2026-10-29-continuations-publication-f5bedfd/tool-tests.log"
+  },
+  "certificate_dependencies": [
+    {
+      "path": "artifacts/c5_cells/edge_states.json",
+      "sha256": "75d0905fdb18e852a7053fabc17cab7c374735216589ca753fcb7d4027cc42db",
+      "storage": "existing archived MANIFEST artifact"
+    },
+    {
+      "path": "scripts/c5_adjacent_singleton_counts.py",
+      "sha256": "546fa7cce5eb9d7bc8e62e74db6055b8d52a545580ec47a9e41b6aeb0cecb595",
+      "storage": "Git index"
+    },
+    {
+      "path": "scripts/c5_dual_path_surgery.py",
+      "sha256": "b6e9854b4ac311efe5ab3270b1f8adee0c6244cf6b41338b5cc5300d5270530b",
+      "storage": "Git index"
+    },
+    {
+      "path": "scripts/c5_kempe_connectivity.py",
+      "sha256": "c6666671a8c00930d815b5bcce082be1933933a14e6dd3cb4fde3e2d840b7a92",
+      "storage": "Git index"
+    },
+    {
+      "path": "scripts/c5_kempe_screen.py",
+      "sha256": "033fd7d6d2ff673ca1f7b78b8958b729351942092d58e027ea7d6b8713560a70",
+      "storage": "Git index"
+    },
+    {
+      "path": "scripts/ck_kempe_obstruction.py",
+      "sha256": "99fcd1799d86afd9999821ad32332af1db7d32ec833d9f3d35d9135ddb4cc4ae",
+      "storage": "Git index"
+    },
+    {
+      "path": "scripts/four_color_counts_cone_verification.py",
+      "sha256": "b260525ad1fc326e8b0fe3ee22891b793fb790f0d68e6c112083dd7282988616",
+      "storage": "Git index"
+    },
+    {
+      "path": "scripts/four_color_counts_face.py",
+      "sha256": "7d3abe8301405673fd32ff93eec2dc793b0092f3cf2b1d608e4481274f0c691d",
+      "storage": "Git index"
+    },
+    {
+      "path": "scripts/four_color_port_order_obstruction.py",
+      "sha256": "c6536eef044480b4356e361c42e04527c4b0fc554234ef41604951d9c7928a57",
+      "storage": "Git index"
+    },
+    {
+      "path": "scripts/four_color_shared_cut_obstruction.py",
+      "sha256": "4810279f4c4c65d121b5364db64c9d6220671c061abd19f54075da15e665b88e",
+      "storage": "Git index"
+    },
+    {
+      "path": "scripts/four_color_shelling_fan_verification.py",
+      "sha256": "e54a91689cae4e4c64895be842086e682cd874fe38fc5a08ef3c7861a92d4812",
+      "storage": "Git index"
+    },
+    {
+      "path": "scripts/four_color_shelling_verification.py",
+      "sha256": "1f6d7cec30f8a88e14cac3003c63ed9b2572be406423bbcebfec0a5874c65cd1",
+      "storage": "Git index"
+    },
+    {
+      "path": "scripts/four_color_surgery_continuation.py",
+      "sha256": "07ba07aaabff1084962027b762198150ece164ca54c8c76ea32315e38fb9b8c6",
+      "storage": "Git index"
+    }
+  ],
+  "lean": "unchanged; build not rerun"
+}
