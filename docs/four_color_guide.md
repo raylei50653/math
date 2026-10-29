@@ -1,6 +1,8 @@
 # 四色求解與共同約束實驗導覽
 
-## 最新進度
+<a id="最新進度"></a>
+
+## 研究概況與閱讀入口
 
 這條線研究如何逐步處理圖的著色限制，保留所有可行的組合，最後接回一份完整染色。
 它提供[4CT主線](4ct_guide.md#精確消元主線的研究契約)使用的求解與核對工具；
@@ -31,7 +33,7 @@
 
 ## 報告與證據入口
 
-下表按想理解的問題分組。它提供閱讀路徑；各報告維護自己的前提、結論、證據與後續來源。
+下表按想理解的問題分組，保留影響方法選擇的短限定；完整前提、結論、證據與後續來源由各報告維護。
 
 ### 語義、完整性與表示
 
@@ -41,9 +43,9 @@
 | 為什麼有解能回填、無解能判否，需要哪些條件 | [完整消元的完備性](four_color_completeness.md) |
 | 全部解、完整接口與回填選項如何對應 | [解空間與接口語義](four_color_mathematical_model.md) |
 | 要保留多少選項，壓縮時不能丟掉什麼 | [可能性保留與回填壓縮](four_color_retention.md) |
-| 中途停止後如何表示原問題的全部解 | [部分消元歷史](four_color_partial_history.md) |
-| 一次大投影能否由多個較小投影精確表達 | [有限域分解消元](four_color_bounded_projection.md) |
-| 不展開完整大表，如何逐次詢問接口 | [局部資訊與按需查詢](four_color_local_information.md#2026-10-26按需查詢局部接口) |
+| 中途停止後如何表示原問題的全部解 | [部分消元歷史](four_color_partial_history.md)：獨立原型，未接主求解器。 |
+| 一次大投影能否由多個較小投影精確表達 | [有限域分解消元](four_color_bounded_projection.md#lean文獻與研究界線)：獨立原型，未整合；整次成本可能退步。 |
+| 不展開完整大表，如何逐次詢問接口 | [局部資訊與按需查詢](four_color_local_information.md#2026-10-26按需查詢局部接口)：獨立原型，未列舉全部fibres。 |
 
 ### 傳播與找型
 
@@ -66,13 +68,13 @@
 | 想查的問題 | 來源 |
 | --- | --- |
 | 各種方法的適用條件、額外成本及退步例 | [方案橫向比較](four_color_method_comparison.md) |
-| 數學分析提出哪些運算候選 | [數學優化候選](four_color_mathematical_optimization.md) |
-| 先分區再接邊界會如何影響工作量 | [分區消元策略](four_color_partition.md) |
-| 能否依當前限制調整分區 | [動態訊息分區](four_color_information_partition.md) |
-| 如何減少傳播時的重複處理 | [delta傳播](four_color_delta_propagation.md) |
-| 如何沿完整接口支援的流失繼續傳播 | [完整支援流失](four_color_support_loss.md) |
-| 圈區與掃描次序如何影響接口訊息 | [圈區與實際接口訊息](four_color_region_messages.md) |
-| 哪些換色對稱能重用子樹的查詢答案 | [子樹換色快取](four_color_local_symmetry.md) |
+| 數學分析提出哪些運算候選 | [數學優化候選](four_color_mathematical_optimization.md)：獨立原型，未接主引擎。 |
+| 先分區再接邊界會如何影響工作量 | [分區消元策略](four_color_partition.md#同40例結果)：可選；固定批次整體退步，保留原預設。 |
+| 能否依當前限制調整分區 | [動態訊息分區](four_color_information_partition.md#固定40例完整比較)：已整合，本批未見整體加速。 |
+| 如何減少傳播時的重複處理 | [delta傳播](four_color_delta_propagation.md#最終結果)：有限比較有改善，保留scan預設。 |
+| 如何沿完整接口支援的流失繼續傳播 | [完整支援流失](four_color_support_loss.md#同40例比較未見整體加速)：可選，本批未見整體改善。 |
+| 圈區與掃描次序如何影響接口訊息 | [圈區與實際接口訊息](four_color_region_messages.md)：求一解原型，有限樣本有收益也有退步。 |
+| 哪些換色對稱能重用子樹的查詢答案 | [子樹換色快取](four_color_local_symmetry.md#保留邊界)：未接主引擎；求一解，未列舉全部fibres。 |
 | 較大原圖中的工作量與見證如何核對 | [較大原圖](four_color_larger_structures.md) |
 | 流程中如何減少重複查詢與候選枚舉 | [流程優化](four_color_flow_optimization.md) |
 | 工作上限與完整紀錄容量如何分開設定 | [記憶體與紀錄容量](four_color_memory_optimization.md) |
@@ -83,7 +85,7 @@
 
 | 想查的問題 | 來源 |
 | --- | --- |
-| 完整接口與交換鎖定能否增加既有D判準的排除 | [D與鎖定比較及停止裁決](ck_d_lock_comparison.md) |
+| 完整接口與交換鎖定能否增加既有D判準的排除 | [D與鎖定比較及停止裁決](ck_d_lock_comparison.md#證據層重播與停止範圍)：指定鎖定條件無增益，已停止擴枚舉。 |
 | 最小無解核心對原邊與小邊割有什麼要求 | [最小核心與小邊割](four_color_critical_obstructions.md) |
 | 六跨邊的換色障礙如何分類 | [六跨邊分類](four_color_six_edge_cuts.md) |
 | 平面來源如何補上六邊割排除，後續缺口在哪裡 | [hub輪圈與六邊割排除](four_color_six_cut_exclusion.md) |

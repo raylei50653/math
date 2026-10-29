@@ -9,8 +9,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
 from check_docs import check, check_guide_progress
 
 
-def guide(summary, milestones=None):
-    text = "# 研究導覽\n\n## 最新進度\n\n" + summary + "\n"
+HEADINGS = ("研究概況與閱讀入口", "最新進度")
+
+
+def guide(summary, milestones=None, heading=HEADINGS[0]):
+    text = f"# 研究導覽\n\n## {heading}\n\n" + summary + "\n"
     if milestones is not None:
         text += "\n### 近期里程碑\n\n" + milestones + "\n"
     return text + "\n## 研究契約\n\n這裡是唯一研究契約。\n"
@@ -21,10 +24,12 @@ class GuideProgressTests(unittest.TestCase):
         return check_guide_progress(text, "test_guide.md")
 
     def test_natural_introduction_needs_no_fields_or_milestones(self):
-        for destination in ("source.md", "source.md#停止點", "#研究契約"):
-            with self.subTest(destination=destination):
-                self.assertEqual([], self.errors(guide(
-                    f"本線先理解共同接口，再依[研究契約]({destination})接續。")))
+        for heading in HEADINGS:
+            for destination in ("source.md", "source.md#停止點", "#研究契約"):
+                with self.subTest(heading=heading, destination=destination):
+                    self.assertEqual([], self.errors(guide(
+                        f"本線先理解共同接口，再依[研究契約]({destination})接續。",
+                        heading=heading)))
 
     def test_missing_empty_and_link_only_introductions_fail(self):
         for summary in ("", "- [現況](source.md)\n- [契約](#研究契約)",
@@ -33,7 +38,7 @@ class GuideProgressTests(unittest.TestCase):
             with self.subTest(summary=summary):
                 self.assertTrue(any("reader explanation" in error
                                     for error in self.errors(guide(summary))))
-        self.assertTrue(any("missing 最新進度" in error
+        self.assertTrue(any("missing guide introduction" in error
                             for error in self.errors("# 研究導覽\n")))
 
     def test_explanation_needs_local_markdown_or_section_link(self):
@@ -51,13 +56,17 @@ class GuideProgressTests(unittest.TestCase):
         self.assertTrue(any("local Markdown" in error for error in self.errors(text)))
 
     def test_heading_must_be_unique_and_near_top(self):
-        text = guide("本線參考[來源](source.md)。")
-        self.assertTrue(any("exactly once" in error
-                            for error in self.errors(text + "\n## 最新進度\n")))
-        self.assertFalse(any("first 12" in error
-                             for error in self.errors("\n" * 9 + text)))
-        self.assertTrue(any("first 12" in error
-                            for error in self.errors("\n" * 10 + text)))
+        for heading in HEADINGS:
+            text = guide("本線參考[來源](source.md)。", heading=heading)
+            for duplicate in HEADINGS:
+                with self.subTest(heading=heading, duplicate=duplicate):
+                    self.assertTrue(any("exactly once" in error
+                                        for error in self.errors(text + f"\n## {duplicate}\n")))
+            with self.subTest(heading=heading):
+                self.assertFalse(any("first 12" in error
+                                     for error in self.errors("\n" * 9 + text)))
+                self.assertTrue(any("first 12" in error
+                                    for error in self.errors("\n" * 10 + text)))
 
     def test_summary_remains_bounded_in_length(self):
         text = guide("本線參考[來源](source.md)。\n" * 40)

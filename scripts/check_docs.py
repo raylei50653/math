@@ -111,25 +111,27 @@ def check_handoff(text: str) -> list[str]:
 def check_guide_progress(text: str, label: str) -> list[str]:
     """Check a short reading introduction, without interpreting research claims."""
     visible = prose(text)
-    heading = re.search(r"^## 最新進度\s*$", visible, re.MULTILINE)
-    if not heading:
-        return [f"{label}: missing 最新進度 handoff summary"]
+    headings = list(re.finditer(r"^## (研究概況與閱讀入口|最新進度)[ \t]*$", visible, re.MULTILINE))
+    if not headings:
+        return [f"{label}: missing guide introduction (研究概況與閱讀入口 or 最新進度)"]
+    heading = headings[0]
+    title = heading[1]
     errors = []
-    if len(re.findall(r"^## 最新進度\s*$", visible, re.MULTILINE)) != 1:
-        errors.append(f"{label}: 最新進度 must occur exactly once")
+    if len(headings) != 1:
+        errors.append(f"{label}: guide introduction must occur exactly once; choose one heading")
     if len(visible[:heading.start()].splitlines()) >= 12:
-        errors.append(f"{label}: 最新進度 must start within the first 12 lines")
+        errors.append(f"{label}: {title} must start within the first 12 lines")
     rest = visible[heading.end():]
     end = re.search(r"^## ", rest, re.MULTILINE)
     section = rest[:end.start()] if end else rest
     if len(section.strip().splitlines()) + 1 > 40:
-        errors.append(f"{label}: 最新進度 exceeds 40 lines; link to detailed sections")
+        errors.append(f"{label}: {title} exceeds 40 lines; link to detailed sections")
     milestone = re.search(r"^### 近期里程碑\s*$", section, re.MULTILINE)
     summary = section[:milestone.start()] if milestone else section
     if not has_reader_explanation(summary):
-        errors.append(f"{label}: 最新進度 needs a reader explanation, not only links")
+        errors.append(f"{label}: {title} needs a reader explanation, not only links")
     if not has_local_markdown_link(summary):
-        errors.append(f"{label}: 最新進度 must link to a local Markdown source or section")
+        errors.append(f"{label}: {title} must link to a local Markdown source or section")
     if milestone:
         body = section[milestone.end():]
         following = re.search(r"^### ", body, re.MULTILINE)
