@@ -1,5 +1,9 @@
 # C₆–C₈：完整接口與交換鎖定沒有超過布林 D
 
+2026-10-29後續：[計數錐與跨 split 手術驗證](four_color_counts_surgery_verification.md)
+區分非負邊際、標準 block-count 及完整切開接口；932 在標準 B5 錐仍有可行證書。
+本頁單 split 無增益裁決不變。
+
 2026-10-26。執行 [4CT 導覽 §7 提議 A′](4ct_guide.md#7-停止點與候選路線)的
 M1 基準重播與 M2 新意審計。使用[著色關係語義](four_color_mathematical_model.md)，
 將原有 [C₅ 必要條件](c5_kempe_screen.md#2-kempe-必要性為何與內點數量無關)推到有序 Cₖ。

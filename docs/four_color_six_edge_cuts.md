@@ -3,7 +3,8 @@
 **2026-10-29後續。** [hub 輪圈與六邊割排除](four_color_six_cut_exclusion.md)
 補上本頁 SIX-SOURCE 的平面來源缺口：在較小收縮圖補輪圈，再於同份原側染色
 交換實際分量取得三色邊界，排除裸平面全體頂點最小反例的非平凡六邊割，
-將下界提高為七。以下保留2026-10-26的必要條件、證據及當時停止點；932仍OPEN。
+將下界提高為七；同日[七邊驗證](four_color_seven_cut_verification.md)再提高為八。
+以下保留2026-10-26的必要條件、證據及當時停止點；932仍OPEN。
 
 2026-10-26。接續[最小核心與小邊割](four_color_critical_obstructions.md)，
 補齊其六跨邊停止點；[四色導覽](four_color_guide.md)維護目前接續入口。

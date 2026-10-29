@@ -12,6 +12,7 @@
 要查已有成果的精確範圍，可從[解空間與接口](four_color_mathematical_model.md)、
 [有限域分解](four_color_bounded_projection.md)及[六邊割來源](four_color_six_cut_exclusion.md)進入。
 各項結果、未解義務與實測數字以原報告為準；其他問題依[報告入口](#報告與證據入口)查找。
+同日提出的四項突破與必要修正，見[分別驗證](four_color_four_fronts_verification.md)。
 
 ## 目標與範圍
 
@@ -101,7 +102,7 @@
 各方法的成本與退步例由[橫向比較](four_color_method_comparison.md)及原報告維護。
 
 平面結構的目標、未解義務與第一個研究工作見[4CT研究契約](4ct_guide.md#精確消元主線的研究契約)；
-六邊來源與七邊前沿見[邊割報告](four_color_six_cut_exclusion.md)。
+六邊來源見[hub輪圈報告](four_color_six_cut_exclusion.md)，最新下界八見[七邊驗證](four_color_seven_cut_verification.md)。
 
 <a id="近期里程碑"></a>
 

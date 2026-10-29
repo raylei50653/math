@@ -1,0 +1,58 @@
+{
+  "baseline_commit": "4476049e71dfb6eb86538052f9730e6d57b928b0",
+  "checks": [
+    {
+      "command": ".venv/bin/python -m unittest discover -s tools/tests -p test_*.py",
+      "exit_code": 0,
+      "log": "tool-tests.log",
+      "tests": 515
+    },
+    {
+      "command": "lake build --no-ansi",
+      "exit_code": 0,
+      "jobs": 8834,
+      "log": "lean-build.log"
+    },
+    {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 0,
+      "log": "docs.log"
+    },
+    {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "log": "docgraph-docs.log"
+    },
+    {
+      "command": "python3 tools/check_generated_artifacts.py",
+      "exit_code": 0,
+      "log": "artifacts.log",
+      "scope": "actual staged Git index"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exit_code": 0,
+      "log": "whitespace.log"
+    },
+    {
+      "command": "python3 tools/docgraph check",
+      "exit_code": 1,
+      "log": "docgraph-whole.log",
+      "retained_duplicate_id_errors": 72
+    }
+  ],
+  "log_sha256": {
+    "artifacts.log": "30bfd069afa8fbe285779b6a396e1ccea36b23ec5d280a88c5d5d7e4156bbb64",
+    "docgraph-docs.log": "04256ec95518ab5137d0a8d90f3515e5eaa9cc9abb6056d3cfa8da89954e37ba",
+    "docgraph-whole.log": "4fa4d33f73a0d0fe18b580d708bacedfb3108d73fe0fb6855350b0a7283ba67d",
+    "docs.log": "d766803ecd5d69c77ea207dfa4d78f453c66d7678d61fa39c1be749af700b3a0",
+    "lean-build.log": "2b63c2494b3cabeb9cb9af01b088423a105f3f549460b398612d496f89fbb995",
+    "tool-tests.log": "cc07762a88c757163f36659431c2c9c526d911edea059dcba4fbe9ffe3cead10",
+    "whitespace.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "remote_CI": "check separately after push; local validation is not remote CI acceptance",
+  "research_receipt": "../verification.json",
+  "research_receipt_hash_entries_verified_against_git_index": 19,
+  "schema": "four-fronts-publication-v1",
+  "scope": "original four-fronts verification bundle and direct publication evidence; later unrelated changes excluded"
+}

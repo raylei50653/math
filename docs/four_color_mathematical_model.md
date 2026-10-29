@@ -224,4 +224,5 @@ git diff --check
 要證明平面最小反例的完整接口不可能全部阻塞，仍需來源結構定理；同輪
 [六跨邊必要條件](four_color_six_edge_cuts.md)當時只收緊此義務；2026-10-29後續
 [hub 輪圈紙證](four_color_six_cut_exclusion.md)已排除裸平面全體頂點最小反例的非平凡六邊割。
-七邊以上與932仍OPEN；新增拓撲論證不在本頁Lean涵蓋範圍，亦沒有將平面必可染寫入上述任何前提。
+同日[雙側七邊割驗證](four_color_seven_cut_verification.md)進一步將下界提高為八。
+八邊以上與932仍OPEN；新增拓撲論證不在本頁Lean涵蓋範圍，亦沒有將平面必可染寫入上述任何前提。

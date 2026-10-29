@@ -1,0 +1,91 @@
+{
+  "baseline_commit": "4476049e71dfb6eb86538052f9730e6d57b928b0",
+  "checks": [
+    {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 0,
+      "scope": "Markdown links, anchors, direct index, handoff and guides"
+    },
+    {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "scope": "docs-only DocGraph"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "scope": "tracked diff whitespace"
+    },
+    {
+      "command": "lake env lean Math/ColoringBoundedProjection.lean",
+      "exit_code": 0,
+      "scope": "existing finite-domain/anchor relation theorems"
+    },
+    {
+      "command": "lake env lean Math/C5CountsAudit.lean",
+      "exit_code": 0,
+      "performed_by": "counts_surgery delegate",
+      "scope": "existing count algebra axiom audit"
+    },
+    {
+      "command": "lake env lean Math/KempeSurgeryAudit.lean",
+      "exit_code": 0,
+      "performed_by": "counts_surgery delegate",
+      "scope": "existing surgery axiom audit"
+    },
+    {
+      "command": ".venv/bin/python scripts/c5_cut_interfaces.py --check",
+      "exit_code": 0,
+      "performed_by": "counts_surgery delegate",
+      "scope": "196 transitions, 588 systems; original-source history controls"
+    },
+    {
+      "command": "scripts/four_color_seven_cut_verification.py --out <fresh-output>",
+      "exit_code": 0,
+      "scope": "complete declared finite domain; bytewise equal to saved JSON"
+    },
+    {
+      "command": "scripts/four_color_two_step_verification.py --out <fresh-output>",
+      "exit_code": 0,
+      "scope": "complete declared finite domain; bytewise equal to saved JSON"
+    },
+    {
+      "command": "scripts/four_color_shelling_verification.py --out <fresh-output>",
+      "exit_code": 0,
+      "scope": "complete declared finite domain; bytewise equal to saved JSON"
+    },
+    {
+      "command": "scripts/four_color_counts_cone_verification.py --out <fresh-output>",
+      "exit_code": 0,
+      "scope": "complete declared finite domain; bytewise equal to saved JSON"
+    }
+  ],
+  "document_sha256": {
+    "docs/four_color_counts_surgery_verification.md": "571370cf692974eb818fa0007b5b1f2873bea10384699979427aac600ddc9a71",
+    "docs/four_color_four_fronts_verification.md": "f73821d30654d519d6d9fd306b39d44fad7b317fd45fd57c4856e80207127fee",
+    "docs/four_color_seven_cut_verification.md": "d93a310059d16d7fb6a73aff91d553838722e0f641e0b2151c430bec98ab5e71",
+    "docs/four_color_shelling_verification.md": "f466da07c3d1c13e1524765a304ca3b77f8d39fb28cd02ff599d75e316cca6f7",
+    "docs/four_color_two_step_verification.md": "d6ba3388c95942687f6b05691d8fe3d7e10b71caa74a01889cadb2c8e3070d87"
+  },
+  "evidence_boundary": "New general statements are paper proofs or external canonical-order theorem applications, not new Lean theorems. Finite audits do not enumerate arbitrary planar sources. No solver implementation modified.",
+  "report_sha256": {
+    "audits/2026-10-29-four-fronts-verification-4476049/counts-cone.json": "b72e7fcd9619479ef69ad04f51623eeda61c0375b2717e04c61685072a9369c9",
+    "audits/2026-10-29-four-fronts-verification-4476049/seven-cut.json": "b4969af78b36aa9ae8d92104abefcd56fa5b83353513eac727834f147b3ea99f",
+    "audits/2026-10-29-four-fronts-verification-4476049/shelling.json": "7f61aa8410e44f2433d42d30f9727d0ccccf8580e17e9f0f312edc698037486e",
+    "audits/2026-10-29-four-fronts-verification-4476049/two-step.json": "2d32bcf1f2ac699a10d6cb3c8c4962ec9061e28c6860d1960b379879eae1bf9e"
+  },
+  "routing_review": "Updated direct guide/index and small-cut consumers; HANDOFF/README unchanged because no research-line or active-status change. Original frozen audits preserved.",
+  "schema": "four-fronts-verification-receipt-v1",
+  "source_sha256": {
+    "Math/C5Counts.lean": "ee27f1c36731afbc21411dfb52fcd84c24d2523dcb16f1a47641ec0b9d1ec17a",
+    "Math/C5ParityWord.lean": "2969c8fc35583d8683ab00134e221ec6a41dbcac86763fa0f860fa0fcca83dad",
+    "Math/ColoringBoundedProjection.lean": "6dba7ad3cb5b9ad39295828f33d06e2ea56e8f097e8bcdcd681fcdc6b42bed51",
+    "Math/KempeSurgery.lean": "6deec3581f45b4ae94a74b4754f507c493e4bed919ac252683ba63cf74071640",
+    "scripts/c5_cut_interfaces.py": "3fd669e78a2e64ed8a9f4ad699472cb41aeb2904dc0cf43c0a905eb06dfc4ccf",
+    "scripts/ck_kempe_obstruction.py": "99fcd1799d86afd9999821ad32332af1db7d32ec833d9f3d35d9135ddb4cc4ae",
+    "scripts/four_color_counts_cone_verification.py": "b260525ad1fc326e8b0fe3ee22891b793fb790f0d68e6c112083dd7282988616",
+    "scripts/four_color_seven_cut_verification.py": "11e9e98194fdf06f0ab54d1a60b8e3cb438859bda119d6bdb9f69645ea0ee064",
+    "scripts/four_color_shelling_verification.py": "1f6d7cec30f8a88e14cac3003c63ed9b2572be406423bbcebfec0a5874c65cd1",
+    "scripts/four_color_two_step_verification.py": "af041166af9e0fedb443f9c469e7dad2d48de14555b84b7ab87aed0c95e6dc8c"
+  }
+}
