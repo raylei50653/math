@@ -109,7 +109,7 @@ def check_handoff(text: str) -> list[str]:
 
 
 def check_guide_progress(text: str, label: str) -> list[str]:
-    """Check the small handoff summary, without interpreting research claims."""
+    """Check a short reading introduction, without interpreting research claims."""
     visible = prose(text)
     heading = re.search(r"^## 最新進度\s*$", visible, re.MULTILINE)
     if not heading:
@@ -126,26 +126,70 @@ def check_guide_progress(text: str, label: str) -> list[str]:
         errors.append(f"{label}: 最新進度 exceeds 40 lines; link to detailed sections")
     milestone = re.search(r"^### 近期里程碑\s*$", section, re.MULTILINE)
     summary = section[:milestone.start()] if milestone else section
-    for field in ("階段／生命週期", "最近研究更新", "上次完成", "目前停止點", "下一步", "接手入口"):
-        cells = re.findall(rf"^\|\s*{re.escape(field)}\s*\|\s*(.*?)\s*\|\s*$", summary, re.MULTILINE)
-        if len(cells) != 1 or not cells[0].strip():
-            errors.append(f"{label}: expected one nonempty 最新進度 field: {field}")
-    if not milestone:
-        errors.append(f"{label}: missing 近期里程碑")
-    else:
-        rows = []
-        for line in section[milestone.end():].splitlines():
-            cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
-            if not line.startswith("|") or not cells[0] or cells[0] == "日期／階段":
-                continue
-            if all(re.fullmatch(r":?-+:?", cell) for cell in cells):
-                continue
-            rows.append(line)
-        if not 3 <= len(rows) <= 5:
-            errors.append(f"{label}: 近期里程碑 must contain 3–5 entries")
-        if any(not list(links(row)) for row in rows):
+    if not has_reader_explanation(summary):
+        errors.append(f"{label}: 最新進度 needs a reader explanation, not only links")
+    if not has_local_markdown_link(summary):
+        errors.append(f"{label}: 最新進度 must link to a local Markdown source or section")
+    if milestone:
+        body = section[milestone.end():]
+        following = re.search(r"^### ", body, re.MULTILINE)
+        if following:
+            body = body[:following.start()]
+        entries = progress_entries(body)
+        if not entries:
+            errors.append(f"{label}: 近期里程碑 must not be empty")
+        if any(not has_local_markdown_link(entry) for entry in entries):
             errors.append(f"{label}: each 近期里程碑 entry must link to its source")
     return errors
+
+
+def has_local_markdown_link(text: str) -> bool:
+    """Recognize source links; the main checker validates paths and anchors."""
+    for _, destination in links(text):
+        url = urlsplit(destination)
+        path = unquote(url.path)
+        if (not url.scheme and not url.netloc and not Path(path).is_absolute()
+                and (path.endswith(".md") or (not path and url.fragment))):
+            return True
+    return False
+
+
+def has_reader_explanation(text: str) -> bool:
+    """Reject bare navigation; this does not judge the quality of the prose."""
+    text = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
+    for line in text.splitlines():
+        if re.match(r"^\s*(?:#{1,6}\s|\[[^\]]+\]:)", line):
+            continue
+        line = re.sub(r"!?\[[^\]]*\]\([^)]*\)", "", line)
+        line = re.sub(r"!?\[[^\]]*\](?:\[[^\]]*\])?", "", line)
+        line = re.sub(r"<[^>]*>", "", line)
+        if any(unicodedata.category(char).startswith("L") for char in line):
+            return True
+    return False
+
+
+def progress_entries(text: str) -> list[str]:
+    """Read optional milestones as paragraphs, list items or table rows."""
+    lines = text.strip().splitlines()
+    entries = []
+    pending = []
+    separator = re.compile(r"\s*\|?\s*:?-+:?\s*(?:\|\s*:?-+:?\s*)*\|?\s*").fullmatch
+    table = any("|" in line and separator(line) for line in lines)
+    for number, line in enumerate(lines):
+        if table and not line.lstrip().startswith("|"):
+            continue
+        # A table heading belongs to its following separator, not an event.
+        if separator(line) or (number + 1 < len(lines) and separator(lines[number + 1])):
+            continue
+        if not line.strip() or re.match(r"^\s*(?:[-+*]\s|\d+[.)]\s|\|)", line):
+            if pending:
+                entries.append("\n".join(pending))
+                pending = []
+        if line.strip():
+            pending.append(line)
+    if pending:
+        entries.append("\n".join(pending))
+    return entries
 
 
 def check(root: Path) -> tuple[list[str], int, int]:

@@ -1,55 +1,48 @@
 # math
 
-完整邊界著色關係、精確消元、有限證書與 Lean 形式化研究。
-2026-10-24 起研究主目標為四色定理（4CT）；**2026-10-29 起主攻從精確消元流程抽取平面結構不變量**，
-先保留完整共同關係與fibres，最後回寫。研究契約、首個接續工作與未證義務見 [4CT 導覽](docs/4ct_guide.md)。
-原主命題 `K∞=K≤5`（蘊含 4CT）仍未證；C5／Kempe分類、可約性與邊割各線保留為工具與子問題。
+研究如何逐步處理圖的著色限制，保留可行的組合，最後回填完整染色。
+主目標是四色定理（4CT）：每個有限平面圖都能用四種顏色著色，使相鄰頂點異色。
+目前從消元流程尋找平面結構帶來的規律；已有工具與尚缺的論證見[4CT導覽](docs/4ct_guide.md)。
 
 ## 研究入口
 
-| 文件 | 用途 |
+先由導覽理解問題、核心想法與成果之間的關係；精確定義、完整前提、證明與證據按需求查閱。
+
+| 閱讀需求 | 入口 |
 | --- | --- |
-| [研究線入口](docs/HANDOFF.md) | 新對話先讀；選擇研究線導覽，進行中以 tag 標記 |
-| [4CT／精確消元與平面不變量](docs/4ct_guide.md) | 目前主攻的來源契約、跨步消元候選與成敗標準；另保留強歸納／可約性工具及舊路線停止裁決 |
-| [完整文件索引](docs/STATUS.md) | 查找專題報告、短狀態、後續關係與歷史 |
-| [C₅ 組合與結構分類圖譜](docs/c5_combinatorial_atlas.md) | 1,023 個原始 masks／135 個 D₅ 類的可重播分類與五種視圖；24 類已有 disk witness、2 類 OPEN，保留原 Σ 與接合對齊 |
-| [Weak-deletion 開放葉 ledger](docs/c5_open_leaf_ledger.md) | 共鄰 P₃ 固定具名目錄的葉數、關閉事件、階段趨勢與每日觀測入口 |
-| [C₅ 全線進展與高階假設](docs/c5_research_synthesis.md) | 跨線成果、同源關係／臨界預算／幾何框架、三個可反駁假設及階數初驗 |
-| [Phase B 共通引理候選分析](docs/c5_phase_b_common_lemmas.md) | U1–U4／Weak-deletion、Excess／Mixed／No-mixed、Relation／Repair／State 的精確候選、前提、反例、證明義務與分支效益；條件容量推廣與小型重播 |
-| [C₅ class 兩點重疊](docs/c5_two_vertex_overlap_guide.md) | 具名八點接合、拓撲、混合外框與關係修復；現況、停止點及重播入口 |
-| [Degree-5／R 系列](docs/c5_degree5_guide.md) | 二連通單缺額定理已完成紙面查證；45／54 的適用性須核實際 core 前提，R31／一般三環及完整來源分類保留 |
-| [猜想 E／ε=2 三點弧主攻入口](docs/c5_kempe_guide.md) | 原域 1≤\|Q\|≤4；ε≤1 已證、ε≥3 自動滿足。N2-BRIDGE已排原E4完整來源契約的廣義N2，包含932；E-ARC2仍剩N1及相鄰分支，未Lean化。W5／外圈來源的現況亦由導覽維護 |
-| [ε=2 有限搜尋與雙實作對照](docs/c5_excess_two_independent_search.md) | ES／ER 三種 root 型 k≤9 的 q／critical orbit 集合逐層一致，共179個 critical orbits，無猜想 E 反例；[LC](docs/c5_excess_two_lean_certificates.md) 提供179／179個 Lean soundness 證書，有限完整性與任意大小定理分開 |
-| [No-mixed 實驗總覽](docs/c5_no_mixed_span_budget.md) | 十五類證據總表、共同跨度結構及推廣界線 |
-| [No-mixed 搬運與介面驗證](docs/c5_no_mixed_hypothesis_audit.md) | 逐 root 不可搬運界、精確接合介面與守恆禁色的證據界線 |
-| [No-mixed 統一局部篩選](docs/c5_no_mixed_local_screen.md) | 禁色增長、守恆／非守恆規則與仍依必要表的共同接合 |
-| [No-mixed 無增長共同分離](docs/c5_no_mixed_no_growth.md) | 短側弧與色交換不變性的紙面證明、checker 及證據界線 |
-| [No-mixed 增長完備性與共同分離](docs/c5_no_mixed_growth_completion.md) | 三個側弧位置的固定框弧配方、免查支援表的存在性證明與重播 |
-| [Mixed 容量與三點介面](docs/c5_mixed_capacity_contacts.md) | 逐欄容量、十八側型、各一 incidence 的完整關係界與最小三點控制 |
-| [Mixed P₃ 對稱分支](docs/c5_mixed_p3_symmetric.md) | 原五環空內側、完整側支援與五跨度來源排除；不需 T4／Gallai |
-| [Mixed P₃ 非對稱分支](docs/c5_mixed_p3_asymmetric.md) | 容許一色側零跨度的六跨度排除，完成兩端各一 root 接線；紙面證明與固定域重播 |
-| [Mixed P₃ 中點／端點接線](docs/c5_mixed_p3_middle_endpoint.md) | 保留原末端附件的四區塊證明、完整關係與固定域重播 |
-| [Mixed 共鄰 P₃ 的雙扇區](docs/c5_mixed_p3_common_endpoint.md) | 原必要表及 rotation 控制保存；後續 C-W／D₆ 完成 C §1 前提下整個分支的來源排除，固定3500-key ledger 已為0；現況見 weak-deletion 導覽 |
-| [共鄰 P₃ 單框點三接點 unary](docs/c5_mixed_p3_one_color_ternary_unary.md) | 固定 C₂ 身份的原 triangle 化約、外路 K₅ 來源排除及完整 witnesses |
-| [共鄰 P₃ 雙框點三接點 unary](docs/c5_mixed_p3_two_frame_ternary_unary.md) | 固定 C₃ 身份的新非接點葉 K₅、原 bridges／完整 tuples 控制與葉數證明 |
-| [共鄰 P₃ 雙框點兩份 unary](docs/c5_mixed_p3_two_frame_two_unary.md) | 固定 C₄ join60 的逐份完整 relation 排除、九份自身支援配置及原 bridges 控制 |
-| [研究目標](docs/c5_boundary_relations.md) | 主命題、最小反例路線與局部壓縮的區別 |
-| [最小來源度數界與五度鄰環](docs/c5_saturation_degree_bound.md) | 全域最小目錄外來源的度數界及五度鄰環；[C5→C4來源橋](docs/c5_c4_boundary_pivot.md)接外部計算提高為一般k≥23，[h=3完整剝層](docs/c5_c8_peeling.md)只留RING；任意大小來源仍OPEN |
-| [無四色定理前提路線](docs/tasks/c5_no4ct_handoff.md) | C5→C4來源橋接外部完整≤28點計算得K≤22=K≤5；三支外圈／C8、C9-932及W5結構另保留；無界三支及一般主命題仍OPEN |
-| [文件治理與工作約定](docs/DOCUMENTATION.md) | 文件分工、信任界線、更新及驗證流程 |
+| 選擇研究線，查看進行中標記 | [研究線入口](docs/HANDOFF.md) |
+| 理解目前主攻與已有成果如何銜接 | [4CT／精確消元與平面不變量](docs/4ct_guide.md) |
+| 理解求解流程、消元與最後共同回填 | [四色工具導覽](docs/four_color_guide.md) |
+| 查精確研究契約與第一個接續工作 | [消元研究契約](docs/4ct_guide.md#精確消元主線的研究契約) |
+| 尋找特定報告、後續來源或歷史紀錄 | [完整文件索引](docs/STATUS.md) |
 
-項目現況、精確停止點與重播入口由各研究線導覽維護；完整論證與證書見原報告。
-ε=2 的E3–E6與C44″覆蓋表、精確前提及保留缺口由[Kempe導覽](docs/c5_kempe_guide.md#3-停止點與保留缺口)維護；
-共鄰P₃的C-W／D₆結論及後續接線由[weak-deletion導覽](docs/c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)維護。
-U2–U4及M4／M5證據的整批重播與發布範圍見[2026-10-08紀錄](docs/history/2026-10-08-core44-batch-publish.md)。
-前序K′／E3–E6整合見[2026-10-04紀錄](docs/history/2026-10-04-kprime-excess-two-progress-publish.md)。
+### 其他主題與查找入口
 
-W7六模板、專用算子與60秒數值試跑的相連發布見[2026-10-21紀錄](docs/history/2026-10-21-w7-operator-publish.md)；計數錐仍OPEN。
-後續原接觸結構、u3v／u1v兩批八型排除與24型停止點見[結構成果發布紀錄](docs/history/2026-10-21-w7-structural-publish.md)。
-最新單障礙、同一E完整接合與L短路／長路見[本次發布紀錄](docs/history/2026-10-21-w7-L-path-publish.md)；原profiles仍排38／40，L整支仍OPEN。
-短型I的03／02長路、私有交錯點與唯一後繼見[共同義務發布紀錄](docs/history/2026-10-21-w7-I-joint-publish.md)；八配對同源性仍OPEN。
+舊C5分類、換色與結構成果依研究問題選讀；各題結論、適用範圍與未解義務沿來源查閱。
 
-前序A₄／B₄／C₄的固定快照、獨立驗收與scope ledger見[D₅](audits/2026-10-04-task-d5/REPORT.md)；
+| 想查的問題 | 入口 |
+| --- | --- |
+| C₅著色關係如何分類與查看 | [C₅組合與結構圖譜](docs/c5_combinatorial_atlas.md) |
+| Weak-deletion具名分支的葉數與關閉事件 | [開放葉ledger](docs/c5_open_leaf_ledger.md) |
+| 跨線成果有哪些關係與研究假設 | [研究綜合](docs/c5_research_synthesis.md) |
+| 哪些共通引理可能連起不同分支 | [Phase B共通引理分析](docs/c5_phase_b_common_lemmas.md) |
+| 兩點重疊時如何接合並修復關係 | [兩點重疊導覽](docs/c5_two_vertex_overlap_guide.md) |
+| Degree-5來源與R系列如何組織 | [Degree-5導覽](docs/c5_degree5_guide.md) |
+| 換色、重接與猜想E的研究入口 | [Kempe導覽](docs/c5_kempe_guide.md) |
+| ε=2有限搜尋如何獨立核對 | [雙實作對照](docs/c5_excess_two_independent_search.md)、[Lean有限證書](docs/c5_excess_two_lean_certificates.md) |
+| No-mixed各方法如何銜接 | [實驗總覽](docs/c5_no_mixed_span_budget.md) |
+| 局部關係搬運需要哪些介面條件 | [搬運與介面驗證](docs/c5_no_mixed_hypothesis_audit.md) |
+| No-mixed局部篩選如何運作 | [統一局部篩選](docs/c5_no_mixed_local_screen.md) |
+| 無增長與有增長分支如何分離 | [無增長共同分離](docs/c5_no_mixed_no_growth.md)、[增長完備性](docs/c5_no_mixed_growth_completion.md) |
+| Mixed容量與三接點介面如何處理 | [容量與介面](docs/c5_mixed_capacity_contacts.md) |
+| Mixed三點弧的對稱與非對稱接線 | [對稱分支](docs/c5_mixed_p3_symmetric.md)、[非對稱分支](docs/c5_mixed_p3_asymmetric.md)、[中點／端點](docs/c5_mixed_p3_middle_endpoint.md) |
+| 共鄰三點弧的雙扇區與後續來源 | [雙扇區](docs/c5_mixed_p3_common_endpoint.md)、[Weak-deletion導覽](docs/c5_weak_deletion_guide.md) |
+| 具名單框點與雙框點如何接線 | [單框點三接點](docs/c5_mixed_p3_one_color_ternary_unary.md)、[雙框點三接點](docs/c5_mixed_p3_two_frame_ternary_unary.md)、[雙框點兩份unary](docs/c5_mixed_p3_two_frame_two_unary.md) |
+| 原C5分類目標與最小來源的關係 | [研究目標](docs/c5_boundary_relations.md)、[度數界](docs/c5_saturation_degree_bound.md)、[C5→C4來源橋](docs/c5_c4_boundary_pivot.md)、[完整剝層](docs/c5_c8_peeling.md) |
+| 不假設四色定理的原分類證明鏈 | [無4CT前提路線](docs/tasks/c5_no4ct_handoff.md) |
+| 文件如何分工、更新與驗證 | [文件維護規則](docs/DOCUMENTATION.md) |
+
+各輪研究與發布詳情由[歷史入口](docs/STATUS.md#歷史紀錄與舊連結)查閱。
 歷史artifacts、完整relations／空fibres／witnesses及所有hash失敗保留。
 新checkout先執行 `python3 tools/audit_archive.py restore --artifacts`，還原凍結快照及完整
 稽核輸出；原SHA256、歷史失敗與replay命令見[封存還原說明](audits/README.md)。
