@@ -136,7 +136,8 @@ def totals_for(records):
 def experiment(out_dir, *, solver_source, inputs=FROZEN_INPUT, names=None,
                check_planarity=True, max_table_rows=None, measure_peak_rss=False,
                interface_cache=None, interface_cache_max_rows=1_000_000,
-               bucket_method=None):
+               bucket_method=None, partition_strategy=None, partition_block_size=12,
+               propagation_method=None):
     if max_table_rows is not None and (type(max_table_rows) is not int or max_table_rows < 0):
         raise ValueError("max_table_rows must be a nonnegative integer or None")
     if interface_cache is not None and type(interface_cache) is not bool:
@@ -150,6 +151,18 @@ def experiment(out_dir, *, solver_source, inputs=FROZEN_INPUT, names=None,
     options = dict(OPTIONS)
     solver_options = dict(options)
     solver_parameters = inspect.signature(helpers["four_color_constraints"].solve_constraints).parameters
+    if propagation_method is not None:
+        if "propagation_method" not in solver_parameters:
+            raise ValueError("selected solver does not support configurable propagation")
+        options["propagation_method"] = propagation_method
+        solver_options["propagation_method"] = propagation_method
+    if partition_strategy is not None:
+        if "partition_strategy" not in solver_parameters:
+            raise ValueError("selected solver does not support partition scheduling")
+        partition_options = dict(partition_strategy=partition_strategy,
+                                 partition_block_size=partition_block_size)
+        options.update(partition_options)
+        solver_options.update(partition_options)
     if bucket_method is not None:
         options["bucket_method"] = bucket_method
         if "bucket_method" in solver_parameters:
@@ -363,6 +376,9 @@ def main():
                         help="acceleration-cache capacity, separate from the complete-record storage cap")
     parser.add_argument("--bucket-method", choices=("anchor", "prefix"),
                         help="explicit exact bucket enumeration; omitted preserves solver default")
+    parser.add_argument("--partition", choices=("none", "components", "articulation", "bfs", "adaptive", "information", "message"))
+    parser.add_argument("--partition-block-size", type=int, default=12)
+    parser.add_argument("--propagation-method", choices=("scan", "delta", "support"))
     args = parser.parse_args()
     names = [name for group in (args.cases or []) for name in group]
     report = experiment(args.out_dir, solver_source=args.solver_source,
@@ -371,7 +387,8 @@ def main():
                         max_table_rows=args.max_table_rows, measure_peak_rss=args.measure_peak_rss,
                         interface_cache=None if args.interface_cache is None else args.interface_cache == "on",
                         interface_cache_max_rows=args.interface_cache_max_rows,
-                        bucket_method=args.bucket_method)
+                        bucket_method=args.bucket_method, partition_strategy=args.partition,
+                        partition_block_size=args.partition_block_size, propagation_method=args.propagation_method)
     print(json.dumps(report["totals"], ensure_ascii=False, sort_keys=True), flush=True)
 
 

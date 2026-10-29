@@ -92,7 +92,9 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                       joint_max_matches=128, joint_max_scan_steps=200000,
                       max_table_rows=None, use_interface_cache=False,
                       interface_cache_max_rows=1000000, bucket_method="anchor",
-                      use_joint_consistency=False, joint_consistency_max_checks=200000):
+                      use_joint_consistency=False, joint_consistency_max_checks=200000,
+                      partition_strategy="none", partition_block_size=12,
+                      propagation_method="scan"):
     """Solve exactly, or return ``limit`` without asserting nonexistence.
 
     Recorded rows equal the join of ``input_relations`` under the explicitly
@@ -146,8 +148,19 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
     bounds the combined optional join work across this solve. An incomplete query
     commits nothing; when this extra allowance is exhausted, ordinary exact
     elimination continues. The main work budget remains authoritative.
+    Optional partition schedules retain every live factor. Static partitions
+    eliminate interiors before separators. Dynamic adaptive/information work
+    regions use current scopes, domains and table sizes with a min-fill/width
+    guard; message mode prioritizes estimated join work without that guard.
+    Planning is included in runtime, outside the relation-check counter.
+    ``propagation_method="delta"`` requires intersections, queues only dirty
+    factor pairs in the original pass order, and exploits monotone row deletion
+    to reuse complete shared support. Full-scope projection is an identity view.
+    Unchanged cycle contexts skip whole-graph mask construction. ``scan`` keeps
+    the prior algorithm. Both publish only completed relations and witnesses.
     """
     from four_color_lab import graph_fingerprint, normalize_graph, verify_coloring
+    from four_color_partition import partition_plan, InformationScheduler, DYNAMIC_STRATEGIES
     from four_color_serialization import int_text
     from four_color_c5 import C5_ROWS, find_induced_c5, find_local_c5, query_c5
     from four_color_conflicts import KnownConflictIndex, conflict_catalogue
@@ -158,6 +171,10 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
         raise ValueError("constraint feature flags must be booleans")
     if type(bucket_method) is not str or bucket_method not in ("anchor", "prefix"):
         raise ValueError("bucket_method must be anchor or prefix")
+    if type(propagation_method) is not str or propagation_method not in ("scan", "delta", "support"):
+        raise ValueError("propagation_method must be scan, delta or support")
+    if propagation_method in ("delta", "support") and not use_intersections:
+        raise ValueError("incremental propagation requires use_intersections=True")
     if use_interface_cache and not use_intersections:
         raise ValueError("interface cache requires use_intersections=True")
     if use_cycle_contexts and not (use_intersections and use_cycles):
@@ -182,7 +199,10 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
     if c5_scan_method == "local" and not use_c5:
         raise ValueError("local C5 scanning requires use_c5=True")
 
+    plan = partition_plan(g, partition_strategy, partition_block_size)
+    group_rank = {v: rank for rank, group in enumerate(plan["groups"]) for v in group}
     vertices = g["vertices"]
+    scheduler = InformationScheduler(plan, vertices) if partition_strategy in DYNAMIC_STRATEGIES else None
     index = {vertex: position for position, vertex in enumerate(vertices)}
     finder = find_local_c5 if c5_scan_method == "local" else find_induced_c5
     c5_scan = finder(g, c5_max_cycles, c5_max_scan_steps) if use_c5 else {
@@ -200,7 +220,9 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
     joint_consistency_seen = {}
     triangle_equality_signature = None
     intersection_index = SharedInterfaceIndex(
-        cache_max_rows=interface_cache_max_rows if use_interface_cache else 0)
+        cache_max_rows=interface_cache_max_rows if use_interface_cache else 0,
+        monotone_updates=propagation_method in ("delta", "support"),
+        support_loss=propagation_method == "support")
     cycle_context_discovery_signature = None
     cycle_context_scan = dict(contexts=[], scan_steps=0, discoveries=0,
                               truncated=False, all_contexts_complete=False,
@@ -320,6 +342,8 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                  self_constraints=len(self_constraints),
                  intersection_checks=0, intersection_pairs=0, intersection_prunes=0,
                  intersection_cache_hits=0, factor_cache_hits=0,
+                 propagation_pair_visits=0, propagation_queue_pushes=0,
+                 propagation_support_reuses=0, propagation_full_scope_views=0,
                  interface_cache_hits=0, interface_cache_builds=0,
                  interface_cache_rows=0, interface_cache_peak_rows=0,
                  interface_cache_entries=0, interface_cache_evictions=0,
@@ -335,6 +359,7 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                  joint_scan_steps=0, joint_checks=0, joint_matches=0,
                  joint_factors=0, joint_rows=0,
                  decisions=0, backtracks=0, assignments=0)
+    stats.update({f"propagation_{key}": 0 for key in intersection_index.delta_stats})
     counts = dict.fromkeys((rule["id"] for rule in CONSTRAINT_RULES), 0)
     if use_joint_consistency:
         stats.update(joint_consistency_checks=0, joint_consistency_queries=0,
@@ -596,6 +621,10 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
         stats["intersection_checks"] += 1
 
     def refresh_interface_cache_stats():
+        for key, value in intersection_index.delta_stats.items():
+            stats[f"propagation_{key}"] = value
+        if propagation_method in ("delta", "support"):
+            stats["intersection_cache_hits"] = intersection_index.skipped_pair_queries
         if not use_interface_cache:
             return
         for key, value in intersection_index.cache_stats.items():
@@ -608,14 +637,14 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
         # signatures across eliminations; list positions are not cache keys.
         intersection_index.sync(factors, charge=intersection_charge)
         refresh_interface_cache_stats()
-        pairs = (intersection_index.pending_pairs() if use_interface_cache
+        pairs = (intersection_index.pending_pairs() if use_interface_cache or propagation_method in ("delta", "support")
                  else intersection_index.pairs())
         for left, right in pairs:
-            if not use_interface_cache and intersection_index.seen(left, right):
+            if not use_interface_cache and propagation_method == "scan" and intersection_index.seen(left, right):
                 stats["intersection_cache_hits"] += 1
                 continue
             stats["intersection_pairs"] += 1
-            if use_interface_cache:
+            if use_interface_cache or propagation_method in ("delta", "support"):
                 answer = intersection_index.intersect(left, right, charge=intersection_charge)
                 refresh_interface_cache_stats()
             else:
@@ -652,7 +681,8 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
                 if not answer["common_rows"]:
                     contradiction(left, "兩張完整關係在共同接口上的交集為空；沒有共同延伸。")
                     return False, changed
-            intersection_index.mark_seen(left, right)
+            intersection_index.mark_seen(left, right, support_count=len(answer["common_rows"]),
+                                         common_rows=answer["common_rows"], common_scope=answer["scope"])
             refresh_interface_cache_stats()
         refresh_interface_cache_stats()
         return True, changed
@@ -864,11 +894,20 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
             if any(v not in active for v in scope):
                 stats["cycle_context_inactive_skips"] += 1
                 continue
-            current_masks = tuple(sum(1 << color for color in domain) for domain in domains)
-            local_signature = tuple(current_masks[v] for v in scope)
+            if propagation_method in ("delta", "support"):
+                # Most retained contexts have unchanged local domains. Check
+                # only their actual scope before constructing a whole-graph
+                # query payload. Read live domains so earlier queries in this
+                # pass can still wake a later overlapping context.
+                local_signature = tuple(sum(1 << color for color in domains[v]) for v in scope)
+            else:
+                current_masks = tuple(sum(1 << color for color in domain) for domain in domains)
+                local_signature = tuple(current_masks[v] for v in scope)
             if cycle_context_last_domains.get((hub, cycle)) == local_signature:
                 stats["cycle_context_skips"] += 1
                 continue
+            if propagation_method in ("delta", "support"):
+                current_masks = tuple(sum(1 << color for color in domain) for domain in domains)
             stats["cycle_context_queries"] += 1
             answer = derive_cycle_context(
                 g, literal_cycle, vertices[hub], current_masks, charge=charge_context)
@@ -1301,7 +1340,13 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
             missing = sum(b not in primal[a] for a, b in combinations(sorted(neighbors), 2))
             return missing, len(neighbors), v
 
-        return min(active, key=priority)
+        if scheduler is not None:
+            return scheduler.select(primal, {v: priority(v) for v in active}, factors, domains)
+        candidates = active
+        if partition_strategy != "none":
+            first = min(group_rank[vertices[v]] for v in active)
+            candidates = (v for v in active if group_rank[vertices[v]] == first)
+        return min(candidates, key=priority)
 
     def snapshot_factor(factor):
         return dict(scope=[vertices[v] for v in factor.scope],
@@ -1545,6 +1590,8 @@ def solve_constraints(graph, use_substructures=True, max_checks=1000000,
         conflict_scan_coverage="bounded sufficient motifs; no completeness claim",
         record_relations=record_relations, max_checks=max_checks, max_table_rows=max_table_rows,
         bucket_method=bucket_method,
+        propagation_method=propagation_method,
+        partition_plan=plan,
         substructures=substructures, elimination_records=records,
         relation_contract="exact allowed rows of the join of input_relations under source_domains; absent boundary tuples have empty fibres; source_edges alone are provenance",
     )

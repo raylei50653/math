@@ -2,7 +2,7 @@
 
 <a id="2-精確停止點與下一個窄問題"></a>
 
-- [四色定理（4CT）主目標與可約性路線](4ct_guide.md) #進行中
+- [四色定理（4CT）／精確消元與平面不變量](4ct_guide.md) #進行中
 - [Weak-deletion／單側與共同出口](c5_weak_deletion_guide.md)
 - [C₅ class／兩點重疊與後繼](c5_two_vertex_overlap_guide.md)
 - [全 degree-4／block 化約](c5_degree4_guide.md)

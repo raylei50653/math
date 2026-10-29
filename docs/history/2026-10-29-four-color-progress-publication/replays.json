@@ -1,0 +1,58 @@
+{
+  "runs": 7,
+  "comparisons": [
+    {
+      "name": "bounded",
+      "normal": "bounded-replay.json",
+      "seed17": "bounded-seed17.json",
+      "sha256": "96951d0e1b2675e22cf0bf272bd19dba4d25ba8273b5b86b2a7fe83aa21d4516",
+      "byte_equal": true
+    },
+    {
+      "name": "six-cut",
+      "normal": "six-cut-replay.json",
+      "seed17": "six-cut-seed17.json",
+      "sha256": "9d1b5fe905d6bc35da7e36611de250cbb9fba81c9fe06b3741c0abd4e47b4c7a",
+      "byte_equal": true
+    },
+    {
+      "name": "partial-history",
+      "normal": "partial-history-replay.json",
+      "seed17": "partial-history-seed17.json",
+      "sha256": "9fa209d6ddd7cdac20497f5c4f1f3b63ab1c7f6fe52d85b9f37e2651376f4557",
+      "byte_equal": true
+    },
+    {
+      "name": "bounded-historical",
+      "replay": "bounded-replay.json",
+      "original": "audits/2026-10-29-four-color-bounded-projection-aec8920/report.json",
+      "sha256": "96951d0e1b2675e22cf0bf272bd19dba4d25ba8273b5b86b2a7fe83aa21d4516",
+      "byte_equal": true
+    },
+    {
+      "name": "six-cut-historical",
+      "replay": "six-cut-replay.json",
+      "original": "audits/2026-10-29-four-color-six-cut-exclusion-aec8920/report.json",
+      "sha256": "9d1b5fe905d6bc35da7e36611de250cbb9fba81c9fe06b3741c0abd4e47b4c7a",
+      "byte_equal": true
+    },
+    {
+      "name": "region-historical",
+      "replay": "region-verify.json",
+      "original": "audits/2026-10-27-four-color-region-messages-aec8920/verification.json",
+      "sha256": "87544deb144a64d304581f8a69f8eebc42efaf006e11dbf90bfc933507cc2da0",
+      "byte_equal": true
+    },
+    {
+      "name": "partial-history-historical",
+      "data_equal_except": [
+        "sources_sha256.scripts/four_color_lab.py"
+      ],
+      "historical_lab_sha256": "977658a9c8ae2c6108942916797babca95b7ab0a6d9480e846b4bba3bfb11ea1",
+      "current_lab_sha256": "10c0c82eb5044db26d079d71c19d05fe1383b4544eb95303f96215be251695e6",
+      "historical_source": "audits/2026-10-26-four-color-local-messages-f30cd6f/source/four_color_lab.py"
+    }
+  ],
+  "exit_code": 0,
+  "all_replays_succeeded": true
+}

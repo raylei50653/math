@@ -142,4 +142,65 @@ theorem reduceAll_fourColoring_iff (n : Nat) (adj : Fin n → Fin n → Prop)
     reduceAll n (FourColoring adj fixed) ↔ ∃ s, FourColoring adj fixed s :=
   reduceAll_iff_exists n (FourColoring adj fixed)
 
+section InterfaceLoss
+
+variable {A : Type u} {B : Type v} {I : Type w}
+
+/-- A whole ordered interface row has support when one complete row projects to it.
+The maps encode the fixed literal coordinate order; no marginal splicing occurs. -/
+def interfaceSupport (p : A → I) (R : A → Prop) (s : I) : Prop :=
+  ∃ a, R a ∧ p a = s
+
+/-- Loss of the last support, not the projection of an arbitrary deleted row. -/
+def interfaceLoss (p : A → I) (old new : A → Prop) (s : I) : Prop :=
+  interfaceSupport p old s ∧ ¬ interfaceSupport p new s
+
+theorem interfaceSupport_mono (p : A → I) (old new : A → Prop)
+    (h : ∀ a, new a → old a) (s : I) :
+    interfaceSupport p new s → interfaceSupport p old s := by
+  rintro ⟨a, ha, hp⟩
+  exact ⟨a, h a ha, hp⟩
+
+/-- At a completed common-support checkpoint, deleting both sides' lost
+supports gives exactly the new intersection. Finiteness is not required. -/
+theorem common_support_after_losses (p : A → I) (q : B → I)
+    (L L' : A → Prop) (R R' : B → Prop)
+    (hL : ∀ a, L' a → L a) (_hR : ∀ b, R' b → R b)
+    (hS : ∀ s, interfaceSupport p L s ↔ interfaceSupport q R s) (s : I) :
+    (interfaceSupport p L' s ∧ interfaceSupport q R' s) ↔
+      (interfaceSupport p L s ∧ ¬ (interfaceLoss p L L' s ∨ interfaceLoss q R R' s)) := by
+  classical
+  constructor
+  · rintro ⟨hLeft, hRight⟩
+    refine ⟨interfaceSupport_mono p L L' hL s hLeft, ?_⟩
+    rintro (hLost | hLost)
+    · exact hLost.2 hLeft
+    · exact hLost.2 hRight
+  · rintro ⟨hOld, hNotLost⟩
+    constructor
+    · by_contra hMissing
+      exact hNotLost (Or.inl ⟨hOld, hMissing⟩)
+    · by_contra hMissing
+      exact hNotLost (Or.inr ⟨(hS s).mp hOld, hMissing⟩)
+
+/-- Filtering complete left rows by lost RIGHT support equals the usual
+semijoin against the current right relation. Private coordinates are retained. -/
+theorem semijoin_by_lost_support (p : A → I) (q : B → I)
+    (L L' : A → Prop) (R R' : B → Prop)
+    (hL : ∀ a, L' a → L a)
+    (hS : ∀ s, interfaceSupport p L s ↔ interfaceSupport q R s) (a : A) :
+    (L' a ∧ ¬ interfaceLoss q R R' (p a)) ↔
+      (L' a ∧ interfaceSupport q R' (p a)) := by
+  classical
+  constructor
+  · rintro ⟨ha, hNotLost⟩
+    refine ⟨ha, ?_⟩
+    by_contra hMissing
+    have hOld : interfaceSupport p L (p a) := ⟨a, hL a ha, rfl⟩
+    exact hNotLost ⟨(hS (p a)).mp hOld, hMissing⟩
+  · rintro ⟨ha, hSupport⟩
+    exact ⟨ha, fun hLost => hLost.2 hSupport⟩
+
+end InterfaceLoss
+
 end ColoringElimination

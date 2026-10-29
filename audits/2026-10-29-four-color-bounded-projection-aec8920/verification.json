@@ -1,0 +1,151 @@
+{
+  "artifact_policy_scope": "Existing Git index; newly generated evidence files are all below the large-file threshold.",
+  "base_commit": "aec89209e1f889f7ddaefe35fbdfd0b97691e9ee",
+  "checks": {
+    "artifact-policy": {
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "elapsed_seconds": 3.1964,
+      "exit_code": 0,
+      "log": "artifact-policy.log"
+    },
+    "axioms": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "audits/2026-10-29-four-color-bounded-projection-aec8920/axioms.lean"
+      ],
+      "elapsed_seconds": 1.2337,
+      "exit_code": 0,
+      "log": "axioms.log"
+    },
+    "docgraph-docs": {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "elapsed_seconds": 0.0959,
+      "exit_code": 0,
+      "log": "docgraph-docs.log"
+    },
+    "docs-check": {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "elapsed_seconds": 0.922,
+      "exit_code": 0,
+      "log": "docs-check.log"
+    },
+    "lean-build": {
+      "command": [
+        "lake",
+        "build",
+        "--no-ansi"
+      ],
+      "elapsed_seconds": 7.7544,
+      "exit_code": 0,
+      "log": "lean-build.log"
+    },
+    "replay": {
+      "command": [
+        "python3",
+        "audits/2026-10-29-four-color-bounded-projection-aec8920/replay.py",
+        "--out",
+        "audits/2026-10-29-four-color-bounded-projection-aec8920/report.json"
+      ],
+      "elapsed_seconds": 21.384,
+      "exit_code": 0,
+      "log": "replay.log"
+    },
+    "seed17": {
+      "command": [
+        "env",
+        "PYTHONHASHSEED=17",
+        "python3",
+        "audits/2026-10-29-four-color-bounded-projection-aec8920/replay.py",
+        "--out",
+        "audits/2026-10-29-four-color-bounded-projection-aec8920/report-seed17.json"
+      ],
+      "elapsed_seconds": 20.5034,
+      "exit_code": 0,
+      "log": "seed17.log"
+    },
+    "tests": {
+      "command": [
+        "uv",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "elapsed_seconds": 44.7666,
+      "exit_code": 0,
+      "log": "tests.log"
+    },
+    "whitespace": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "elapsed_seconds": 0.0221,
+      "exit_code": 0,
+      "log": "whitespace.log"
+    }
+  },
+  "closure_scope": "Exact q-factor and anchored projection semantics, complete historical fibres, finite tests and atomic work limits.",
+  "current_source_hashes_verified": true,
+  "initial_report_note": "report-initial.json preserves exploration before uniform cap audit and final documentation corrections; final report.json and snapshot supersede it.",
+  "normal_seed17_byte_equal": true,
+  "propagation_stop": "L2: direct coloring and Lean parents updated; HANDOFF and README routes unchanged.",
+  "remaining_open": [
+    "Python refinement",
+    "adaptive representation selection",
+    "general efficiency",
+    "planar four-color existence proof"
+  ],
+  "report_sha256": "96951d0e1b2675e22cf0bf272bd19dba4d25ba8273b5b86b2a7fe83aa21d4516",
+  "reviewed_unchanged_by_this_work": [
+    "docs/four_color_completeness.md: original complete-projection contract still applies",
+    "docs/four_color_mathematical_model.md: factorized exact relation retains full ordered semantics",
+    "docs/4ct_guide.md: no new planar existence or reducibility claim"
+  ],
+  "scope": "Finite-domain relation theorem, standalone prototype, finite original-edge/residual audits; no production integration.",
+  "source_sha256": {
+    "Math.lean": "6db23572dfe14c2d26e268688bb14a74aad6180f82b6e9f1dfc131c5776e122e",
+    "Math/ColoringBoundedProjection.lean": "6dba7ad3cb5b9ad39295828f33d06e2ea56e8f097e8bcdcd681fcdc6b42bed51",
+    "Math/ColoringElimination.lean": "1c35f237cb75585234c088eb3b0d82ae7b360964470bb4e64f9152209fca0acb",
+    "audits/2026-10-29-four-color-bounded-projection-aec8920/axioms.lean": "c7300d127872b81ba69ce51da92119d4715459b709fba71e6ae2d24ba7233f17",
+    "audits/2026-10-29-four-color-bounded-projection-aec8920/replay.py": "4319debb8e6e858fb5c6378eeed2c1036562761393779f0d3351c070e01d4b69",
+    "audits/2026-10-29-four-color-bounded-projection-aec8920/structure.py": "dfdfd0253a5bd6236dcaf9585a46bc219dbddeba98bd78f65aa113700f176b95",
+    "scripts/four_color_bounded_projection.py": "f0d3ac5d24910b164a3a7f30a8befc2016b11e5453dfe0eb8cad99766623e50c",
+    "scripts/four_color_lab.py": "10c0c82eb5044db26d079d71c19d05fe1383b4544eb95303f96215be251695e6",
+    "scripts/four_color_partial_history.py": "a0e4db2182401e9ee16ae3cda92bb7db69d311d6535973916ae47f9b783b567e",
+    "scripts/four_color_serialization.py": "fb254335ab427e1c6e12297edf792dd8827a10a8a21a6d280770881967f084b4",
+    "tools/tests/test_four_color_bounded_projection.py": "adb1558409550b1a3688a37c030d2453be694562f7bcd72182490899c5ffed50"
+  },
+  "source_snapshot_verified": true,
+  "state": "passed",
+  "test_count": 504,
+  "updated": [
+    "docs/four_color_bounded_projection.md",
+    "docs/four_color_guide.md",
+    "docs/lean_guide.md",
+    "docs/STATUS.md",
+    "Math.lean"
+  ]
+}

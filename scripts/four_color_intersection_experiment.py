@@ -185,7 +185,7 @@ def experiment(count=30, size=30, seed=0, max_checks=1000000, repeats=3):
     source_names = (
         "four_color_intersection_experiment.py", "four_color_intersections.py",
         "four_color_constraints.py", "four_color_examples.py", "four_color_lab.py",
-        "four_color_serialization.py", "four_color_joint_consistency.py", "four_color_triangle_equalities.py",
+        "four_color_serialization.py", "four_color_joint_consistency.py", "four_color_triangle_equalities.py", "four_color_partition.py",
         "four_color_c5.py", "four_color_conflicts.py")
     source_dir = Path(__file__).resolve().parent
     return dict(

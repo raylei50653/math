@@ -1,0 +1,5 @@
+import Math.ColoringElimination
+
+#print axioms ColoringElimination.interfaceSupport_mono
+#print axioms ColoringElimination.common_support_after_losses
+#print axioms ColoringElimination.semijoin_by_lost_support

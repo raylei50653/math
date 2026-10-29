@@ -1,0 +1,94 @@
+{
+  "amortized": {
+    "counts": {
+      "estimate": 30,
+      "filter": 586,
+      "materialize": 496
+    },
+    "decisions": {
+      "copy-delete": 28,
+      "empty": 1,
+      "retain": 3
+    },
+    "final_rows": 0,
+    "initial_rows": 32,
+    "interpretation": "Only n row removals, yet explicit immutable outputs enumerate n(n-1)/2 retained rows. No linear whole-query amortized claim.",
+    "removed_rows_over_epoch": 32,
+    "selector_length_reads_bound": 32,
+    "unavoidable_explicit_output_rows": 496
+  },
+  "exhaustive": {
+    "coverage": "All 256 binary 3-coordinate relations x 16 interface masks; full private rows and reversed interface order.",
+    "decisions": {
+      "empty": 609,
+      "identity": 625,
+      "retain": 2862
+    },
+    "exact_conditions": 4096
+  },
+  "interruptions": [
+    {
+      "full_cost": 484,
+      "interrupted_prefixes": 484,
+      "plan": "copy-delete"
+    },
+    {
+      "full_cost": 46,
+      "interrupted_prefixes": 46,
+      "plan": "retain"
+    }
+  ],
+  "last_support": {
+    "correct_lost_supports": 0,
+    "plan": "identity",
+    "retained_right_rows": 2,
+    "wrongly_projected_deleted_rows": 1
+  },
+  "mathematical_contract": "A complete-group length query, including hash lookup and O(1) len, is one metadata unit. During filtering, one group lookup or one full-row insertion/copy/deletion is one unit. Given cached complete groups and already-discovered opposite-side support losses F, with f=|F|, k retained support keys, p retained rows / r removed rows, n=p+r: C_keep=k+p, C_drop=n+f+r. If k<=f, retain dominates without planning. Otherwise f complete-group length queries give r and p; selector plus selected filter costs <=2 min(C_keep,C_drop). F can contain currently absent keys. Projection/group construction, support-loss discovery and final immutable materialization remain separate.",
+  "pair_histories": {
+    "coverage": "Both sides may shrink; exact full-row results agree with the existing pure semijoin, including private coordinates and unequal scope orders.",
+    "monotone_pair_conditions": 320,
+    "seed": 17
+  },
+  "schema": "weighted-full-group-filter-control-v1",
+  "scope": "Independent exact relation controls. Main engine unchanged; no timing benchmark, no universal speed or academic novelty claim.",
+  "sources": {
+    "audits/2026-10-27-four-color-math-analysis-aec8920/support/weighted_filter.py": "a619e936b3ddc4af91cd0e22508db8099ac3f68011f5af115b6da3b119cd9daf",
+    "docs/four_color_support_loss.md": "5071ef1bc79f8f1b02486602ad3b8f4d8fa0648049327977b64688c8e9f80314",
+    "scripts/four_color_intersections.py": "9041ddc5e42754144999f8055846895d10c8f293bd3482708d2a1c9700ae4f1e"
+  },
+  "sparse_heavy_loss": {
+    "cardinality_rule_plan": "copy-delete",
+    "counts": {
+      "estimate": 1,
+      "filter": 30,
+      "materialize": 15
+    },
+    "d": 1,
+    "drop_cost": 528,
+    "f": 1,
+    "k": 15,
+    "keep_cost": 30,
+    "n": 271,
+    "p": 15,
+    "plan": "retain",
+    "r": 256
+  },
+  "sparse_light_loss": {
+    "cardinality_rule_plan": "copy-delete",
+    "counts": {
+      "estimate": 1,
+      "filter": 3843,
+      "materialize": 3840
+    },
+    "d": 1,
+    "drop_cost": 3843,
+    "f": 1,
+    "k": 15,
+    "keep_cost": 3855,
+    "n": 3841,
+    "p": 3840,
+    "plan": "copy-delete",
+    "r": 1
+  }
+}

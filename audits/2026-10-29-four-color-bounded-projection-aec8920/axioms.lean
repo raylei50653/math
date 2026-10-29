@@ -1,0 +1,9 @@
+import Math.ColoringBoundedProjection
+
+#print axioms ColoringBoundedProjection.exists_small_obstruction
+#print axioms ColoringBoundedProjection.exists_forall_iff_bounded_subfamilies
+#print axioms ColoringBoundedProjection.completeFibre_nonempty_iff
+#print axioms ColoringBoundedProjection.relation_iff_bounded_projection_and_fibre
+#print axioms ColoringBoundedProjection.fourColor_projection_iff
+#print axioms ColoringBoundedProjection.exists_anchor_iff_bounded_subfamilies
+#print axioms ColoringBoundedProjection.finite_domain_bound_tight

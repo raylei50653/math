@@ -1,0 +1,77 @@
+{
+  "commands": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /home/ray/.cache/uv/archive-v0/N0wsPiV4uzbRq3VI/bin/python scripts/four_color_propagation_experiment.py --out-dir artifacts/four_color_support_loss/none --partition none --methods delta support",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /home/ray/.cache/uv/archive-v0/N0wsPiV4uzbRq3VI/bin/python scripts/four_color_propagation_experiment.py --out-dir artifacts/four_color_support_loss/information --partition information --methods delta support",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /home/ray/.cache/uv/archive-v0/N0wsPiV4uzbRq3VI/bin/python -m unittest discover -s tools/tests -p \"test_four_color*.py\"",
+      "exit_code": 0,
+      "log": "tests.log",
+      "tests": 387
+    },
+    {
+      "command": "lake build Math.ColoringElimination",
+      "exit_code": 0,
+      "log": "lean-build.log"
+    },
+    {
+      "command": "lake env lean artifacts/four_color_support_loss/axioms.lean",
+      "exit_code": 0,
+      "log": "axioms.log"
+    },
+    {
+      "command": "python3 -B artifacts/four_color_support_loss/control.py --out artifacts/four_color_support_loss/control.json",
+      "exit_code": 0,
+      "result": "control.json"
+    },
+    {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 0,
+      "log": "docs-check.log"
+    },
+    {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "log": "docgraph-check.log"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "log": "diff-check.log"
+    }
+  ],
+  "evidence_sha256": {
+    "axioms.log": "57f6c01f086285ea10ec3ff8ceaa3f738197aaa81b911216fa4eacdc6fdfc648",
+    "diff-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docgraph-check.log": "04256ec95518ab5137d0a8d90f3515e5eaa9cc9abb6056d3cfa8da89954e37ba",
+    "docs-check.log": "26b7560947bc4053b405adb53868dfcec8815dcafe28cec33600fb2edb7d4520",
+    "lean-build.log": "a43c5c72a6c2b8fa30bc4165a75473e845785ceaf52373ed491de94f750508de",
+    "lean-check.log": "7a306589c8b00f9b7ad5ccc0e76a063f970639746afb772057049c3bc6013c5e",
+    "tests.log": "fca3f828700a4f9e1012a84615b004ab0e7f8f56c917b2f0e7dae31bddf855a9"
+  },
+  "recorded_utc": "2026-10-27T06:34:29.874572+00:00",
+  "schema": "four-color-support-loss-verification-v1",
+  "scope": "Finite exact full-record comparisons; relation-semantics Lean kernel only; no Python refinement or universal speed claim.",
+  "snapshots_match_current": {
+    "information": {
+      "comparison_sha256": "b5a23e72a526667a43ff14ef665cc44aa5726a8e0aae5380eb4c8e120be9d4de",
+      "files_verified": 38
+    },
+    "none": {
+      "comparison_sha256": "3ab02f934c3e3b0829ebdd91fc4fcdc8d3be7a6d2f2e920ed8cad9a02af7e84d",
+      "files_verified": 38
+    }
+  },
+  "sources": {
+    "Math/ColoringElimination.lean": "1c35f237cb75585234c088eb3b0d82ae7b360964470bb4e64f9152209fca0acb",
+    "scripts/four_color_constraints.py": "65d837bf7f986079d507f4aaff929755d7abf01173f0fc527bd6ba55f9718f77",
+    "scripts/four_color_intersections.py": "9041ddc5e42754144999f8055846895d10c8f293bd3482708d2a1c9700ae4f1e",
+    "scripts/four_color_propagation_experiment.py": "91a4dd8530c082e65a2375fa3d53837bd3b6552e94d802e227b2bcfcbf3f37fc",
+    "tools/tests/test_four_color_support_loss.py": "4e08d09ec7f4cb3708f8197bb030449a0bfdee2f5cda76c9b84c2557b90345d2"
+  }
+}

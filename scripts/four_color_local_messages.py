@@ -27,7 +27,7 @@ class _Limit(Exception):
 def solve_local_messages(graph, *, domains=None, max_checks=1000000,
                          max_messages=100000, max_cache_entries=100000,
                          transcript_limit=100000, audit_metadata=False,
-                         color_symmetry=False):
+                         color_symmetry=False, elimination_order=None):
     """Decide finite graph colouring by lazy, exact tree-separator queries.
 
     ``graph`` uses the laboratory's vertices/edges/fixed dictionary format.
@@ -58,6 +58,12 @@ def solve_local_messages(graph, *, domains=None, max_checks=1000000,
     stored in the canonical frame and inverted during final writeback.  This
     optional quotient can cost more than it saves on easy positive queries;
     the historical literal-cache algorithm remains the default.
+
+    ``elimination_order`` optionally supplies a complete permutation of the
+    original integer vertex IDs. It changes the bag decomposition only; all
+    original constraints and the decomposition checks remain in force. Its
+    planning cost belongs to the caller; replaying it, fill edges and bag
+    validation are charged here. None preserves historical min-fill behavior.
     """
     for value in (max_checks, max_messages, max_cache_entries, transcript_limit):
         if type(value) is not int or value < 0:
@@ -70,6 +76,17 @@ def solve_local_messages(graph, *, domains=None, max_checks=1000000,
     vertices = g["vertices"]
     n = len(vertices)
     index = {v: i for i, v in enumerate(vertices)}
+    supplied_order = None
+    if elimination_order is not None:
+        try:
+            supplied_order = list(elimination_order)
+        except TypeError as exc:
+            raise ValueError("elimination_order must be a complete vertex permutation") from exc
+        if (len(supplied_order) != n or
+                any(type(v) is not int or v not in index for v in supplied_order) or
+                len(set(supplied_order)) != n):
+            raise ValueError("elimination_order must be a complete vertex permutation")
+        supplied_order = [index[v] for v in supplied_order]
     allowed = [set(range(4)) for _ in vertices]
     if domains is not None:
         if not isinstance(domains, Mapping):
@@ -141,7 +158,13 @@ def solve_local_messages(graph, *, domains=None, max_checks=1000000,
             best = None
             selected = None
             selected_neighbours = None
-            for v in sorted(remaining):
+            candidates = (sorted(remaining) if supplied_order is None
+                          else (supplied_order[len(order)],))
+            for v in candidates:
+                if supplied_order is not None:
+                    charge("supplied_order_vertex")
+                    selected, selected_neighbours = v, sorted(filled[v] & remaining)
+                    break
                 charge("minfill_candidate")
                 ns = sorted(filled[v] & remaining)
                 missing = 0

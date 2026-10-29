@@ -52,6 +52,7 @@ SOURCE_PATHS = (
     "scripts/four_color_serialization.py",
     "scripts/four_color_joint_consistency.py",
     "scripts/four_color_triangle_equalities.py",
+    "scripts/four_color_partition.py",
     "scripts/four_color_intersections.py",
     "scripts/four_color_conflict_priority.py",
     "scripts/four_color_intersection_experiment.py",

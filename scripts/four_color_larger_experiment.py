@@ -224,7 +224,7 @@ def experiment(out_dir, *, inputs=None, max_checks=5_000_000, oracle_max_rows=10
         "four_color_larger_experiment.py", "four_color_larger_cases.py", "four_color_larger_random.py",
         "four_color_conflict_priority.py", "four_color_intersection_experiment.py",
         "four_color_intersections.py", "four_color_constraints.py", "four_color_lab.py",
-        "four_color_serialization.py", "four_color_joint_consistency.py", "four_color_triangle_equalities.py",
+        "four_color_serialization.py", "four_color_joint_consistency.py", "four_color_triangle_equalities.py", "four_color_partition.py",
         "four_color_examples.py", "four_color_c5.py", "four_color_conflicts.py")]
     sources.append("tools/tests/test_four_color_larger_cases.py")
     report = dict(schema="four-color-larger-conflict-priority-v1", cases=records, totals=totals,

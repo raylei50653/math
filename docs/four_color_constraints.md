@@ -28,6 +28,21 @@
 提前排除已不相容的部分組合，保留全部聯合fibres與解釋；預設仍為原 `anchor` 流程。
 內部回填色已採[無損4-bit表示](four_color_retention.md)，完整邊界與全部回填選項均保留；
 公開紀錄仍列出所有色。該報告另區分每列一個見證與任意刪除邊界列的不同保證。
+2026-10-27另加入[分區消元策略](four_color_partition.md)：`--partition components`、
+`articulation`或`bfs`會先處理各區內部，再處理分隔點；區內仍以當前因子作min-fill。
+完整因子與fibres保留，最後才共同回填。`--partition-block-size 12`為細分停止門檻，
+不是邊界大小保證。同40例割點／BFS分別有6／15例超限，預設仍為`--partition none`。
+後續可選`adaptive`／`information`／`message`以[當前訊息建立動態工作區](four_color_information_partition.md)，
+考慮目前因子範圍、完整列數與域大小；同40例全部完成，但最佳檢查僅少0.41%、耗時略增。
+動態模式的`--partition-block-size`限制工作區成員數，不限制接口大小；預設仍不分區。
+新增[後續傳播優化](four_color_delta_propagation.md)：`--intersections --propagation-method delta`
+只排程變動接口，重用單調刪列的完整支援及整表接口，未變的共同環避免建立全圖快照。
+同40例完整語義輸出一致，原排程實測12.86→11.71秒；可與`--interface-cache`及資訊分區併用。
+預設仍為`--propagation-method scan`，保留舊流程作比較。
+再新增可選[完整支援流失](four_color_support_loss.md)：
+`--intersections --interface-cache --propagation-method support`保存完整接口訊息，
+只刪依賴對側已失去最後支援的原列。與delta的完整紀錄相等，但同40例未見整體省工，
+仍屬實驗選項；容量為零或訊息淘汰時使用完整delta查詢。
 
 ## 使用
 

@@ -1,0 +1,103 @@
+1384:             offsets = {w: offset for offset, w in enumerate(frontier)}
+1385:             # Every satisfying bucket assignment restricts to exactly one row
+1386:             # of any chosen input factor.  Start with the sparsest complete
+1387:             # factor and enumerate only its uncovered frontier coordinates.
+1388:             # This is the same full join, without testing assignments already
+1389:             # excluded by that factor.  No live vertex is assigned a colour.
+1390:             anchor = min(bucket, key=lambda factor: len(factor.rows) * prod(
+1391:                 len(domains[w]) for w in frontier if w not in factor.scope)) if bucket else None
+1392:             prepared = [(factor, tuple(-1 if w == v else offsets[w] for w in factor.scope))
+1393:                         for factor in bucket if factor is not anchor]
+1394: 
+1395:             def bucket_candidates():
+1396:                 if anchor is None:
+1397:                     for boundary in product(*(sorted(domains[w]) for w in frontier)):
+1398:                         for color in sorted(domains[v]):
+1399:                             check("candidate_checks")
+1400:                             yield boundary, color
+1401:                     return
+1402:                 free = tuple(w for w in frontier if w not in anchor.scope)
+1403:                 if bucket_method == "anchor":
+1404:                     anchor_offsets = {w: offset for offset, w in enumerate(anchor.scope)}
+1405:                     for row in sorted(anchor.rows):
+1406:                         check("relation_checks")
+1407:                         if any(color not in domains[w] for w, color in zip(anchor.scope, row)):
+1408:                             continue
+1409:                         for extension in product(*(sorted(domains[w]) for w in free)):
+1410:                             check("candidate_checks")
+1411:                             assignment = dict(zip(free, extension))
+1412:                             assignment.update(zip(anchor.scope, row))
+1413:                             yield tuple(assignment[w] for w in frontier), row[anchor_offsets[v]]
+1414:                     return
+1415: 
+1416:                 # A factor becomes decidable when its last free coordinate is
+1417:                 # present.  A failed complete tuple rejects every extension of
+1418:                 # that prefix; accepted prefixes still visit every later colour.
+1419:                 free_positions = {w: depth + 1 for depth, w in enumerate(free)}
+1420:                 ready = [[] for _ in range(len(free) + 1)]
+1421:                 for factor, _ in prepared:
+1422:                     depth = max((free_positions.get(w, 0) for w in factor.scope), default=0)
+1423:                     ready[depth].append(factor)
+1424:                 values = [tuple(sorted(domains[w])) for w in free]
+1425: 
+1426:                 def accepted(depth, assignment):
+1427:                     for factor in ready[depth]:
+1428:                         check("relation_checks")
+1429:                         if tuple(assignment[w] for w in factor.scope) not in factor.rows:
+1430:                             return False
+1431:                     return True
+1432: 
+1433:                 for row in sorted(anchor.rows):
+1434:                     check("relation_checks")
+1435:                     if any(color not in domains[w] for w, color in zip(anchor.scope, row)):
+1436:                         continue
+1437:                     assignment = dict(zip(anchor.scope, row))
+1438:                     if not accepted(0, assignment):
+1439:                         continue
+1440:                     if not free:
+1441:                         check("candidate_checks")
+1442:                         yield tuple(assignment[w] for w in frontier), assignment[v]
+1443:                         continue
+1444:                     # Iterative depth-first extension has no recursion limit.
+1445:                     choices = [0] * len(free)
+1446:                     depth = 0
+1447:                     while depth >= 0:
+1448:                         if choices[depth] == len(values[depth]):
+1449:                             choices[depth] = 0
+1450:                             assignment.pop(free[depth], None)
+1451:                             depth -= 1
+1452:                             continue
+1453:                         color = values[depth][choices[depth]]
+1454:                         choices[depth] += 1
+1455:                         check("candidate_checks")
+1456:                         assignment[free[depth]] = color
+1457:                         if not accepted(depth + 1, assignment):
+1458:                             continue
+1459:                         if depth + 1 == len(free):
+1460:                             yield tuple(assignment[w] for w in frontier), assignment[v]
+1461:                         else:
+1462:                             depth += 1
+1463: 
+1464:             table = {}
+1465:             for boundary, color in bucket_candidates():
+1466:                 valid = True
+1467:                 if bucket_method == "anchor":
+1468:                     for factor, positions in prepared:
+1469:                         check("relation_checks")
+1470:                         row = tuple(color if offset == -1 else boundary[offset] for offset in positions)
+1471:                         if row not in factor.rows:
+1472:                             valid = False
+1473:                             break
+1474:                 if valid:
+1475:                     if boundary in table:
+1476:                         table[boundary] |= 1 << color
+1477:                         continue
+1478:                     if stats["table_rows"] + stats["cycle_context_rows"] + stats["joint_rows"] >= max_table_rows:
+1479:                         raise _WorkLimit(f"完整關係表已達 {max_table_rows} 列儲存上限；尚未判定。")
+1480:                     table[boundary] = 1 << color
+1481:                     stats["table_rows"] += 1
+1482:             # All four possible colours fit in one integer, just as a single
+1483:             # chosen witness would, while preserving the complete fibre.
+1484:             table = dict(sorted(table.items()))
+1485: 
+1486:             projected = _Factor(frontier, frozenset(table), source_edges, source_vertices)

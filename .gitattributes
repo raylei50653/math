@@ -3,3 +3,7 @@ audits/2026-10-11-n2-long-mask-sync/high-contact/observations_corrupted_negative
 
 # Preserve the checked CSV writer's CRLF bytes while still checking real trailing whitespace.
 artifacts/c5_cell_flip_distances/distances.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Frozen numbered source excerpts retain the separator space on blank source lines.
+audits/2026-10-27-four-color-math-analysis-aec8920/mask_join/results-current-bucket-excerpt.txt whitespace=-blank-at-eol
+audits/2026-10-27-four-color-math-analysis-aec8920/validation/mask_join/results-current-bucket-excerpt.txt whitespace=-blank-at-eol

@@ -1,0 +1,107 @@
+{
+  "status": "local verification complete",
+  "base_commit": "aec89209e1f889f7ddaefe35fbdfd0b97691e9ee",
+  "tool_tests": {
+    "exit_code": 0,
+    "tests": 504,
+    "command": "uv run --python 3.14 --with-requirements requirements.txt python -B -m unittest discover -s tools/tests -p 'test_*.py'",
+    "log": "tool-tests.log"
+  },
+  "lean": {
+    "exit_code": 0,
+    "jobs": 8834,
+    "command": "lake build --no-ansi",
+    "log": "lean-build.log"
+  },
+  "axioms": {
+    "exit_code": 0,
+    "bounded_declarations": 7,
+    "interface_declarations": 3,
+    "maximum_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "logs": [
+      "axioms.log",
+      "interface-axioms.log"
+    ]
+  },
+  "replays": {
+    "exit_code": 0,
+    "runs": 7,
+    "receipt": "replays.json"
+  },
+  "whole_tree_docgraph": {
+    "exit_code": 1,
+    "duplicate_id_errors": 72,
+    "source": "retained archives and scratch",
+    "log": "docgraph-whole-tree.log"
+  },
+  "not_run": [
+    "full historical timing experiments",
+    "new graph enumeration",
+    "complete-reply reference oracle during region receipt replay",
+    "remote CI before push"
+  ],
+  "documentation": {
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "log": "documentation-final.log",
+    "output": "OK: 765 Markdown files, 10247 local links; anchors, index, handoff, guide progress checked"
+  },
+  "docs_only_docgraph": {
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "log": "docgraph-docs-final.log",
+    "output": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+  },
+  "artifact_policy": {
+    "command": [
+      "python3",
+      "tools/check_generated_artifacts.py"
+    ],
+    "exit_code": 0,
+    "log": "artifact-policy.log",
+    "output": "Generated artifact policy OK: 11041 indexed files, 225 large files with documented exceptions, 166 registered outputs."
+  },
+  "staged_whitespace": {
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "staged-whitespace.log",
+    "output": "",
+    "frozen_path_exceptions": [
+      "audits/2026-10-27-four-color-math-analysis-aec8920/mask_join/results-current-bucket-excerpt.txt",
+      "audits/2026-10-27-four-color-math-analysis-aec8920/validation/mask_join/results-current-bucket-excerpt.txt"
+    ]
+  },
+  "source_custody": {
+    "exit_code": 0,
+    "checker": "custody.py",
+    "receipt": "custody.json",
+    "flow_reports": 28,
+    "compressed_records": 1120,
+    "comparison_bindings": 680,
+    "large_frozen_json": 32
+  },
+  "excluded_concurrent_untracked": [
+    "artifacts/research_lines/2026-10-29/preview.html",
+    "artifacts/research_lines/2026-10-29/research-lines.html",
+    "artifacts/research_lines/2026-10-29/research-lines.svg"
+  ],
+  "worktree_boundary": "All tracked changes belong to the staged publication; research_lines outputs appeared during publication and remain outside the reviewed entry whitelist."
+}

@@ -1,0 +1,308 @@
+{
+  "budget_checks": {
+    "all_eliminated": 9,
+    "assignment_checks": 9216,
+    "representations": 36,
+    "valid_writebacks": 36,
+    "work_limit": 27
+  },
+  "case_evidence_sha256": "4b3d04e33b7e960d4ddd785ef7b00b7b55e79b6bd1e6d72e6ffc1c3c55a6a3be",
+  "decisions": {
+    "satisfiable": 2760,
+    "undetermined": 10314,
+    "unsatisfiable": 957
+  },
+  "encoding_examples": [
+    {
+      "graph": {
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "fixed": [],
+        "vertices": [
+          0,
+          1
+        ]
+      },
+      "name": "leaf",
+      "representations": {
+        "mixed": {
+          "active_vertices": 1,
+          "completed_steps": 1,
+          "json_bytes": 608,
+          "recipe_steps": 0,
+          "retained_factor_table_rows": 4,
+          "stored_fibre_rows": 4
+        },
+        "recipe": {
+          "active_vertices": 1,
+          "completed_steps": 1,
+          "json_bytes": 583,
+          "recipe_steps": 1,
+          "retained_factor_table_rows": 4,
+          "stored_fibre_rows": 0
+        },
+        "table": {
+          "active_vertices": 1,
+          "completed_steps": 1,
+          "json_bytes": 608,
+          "recipe_steps": 0,
+          "retained_factor_table_rows": 4,
+          "stored_fibre_rows": 4
+        }
+      },
+      "stop_after": 1
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "fixed": [],
+        "vertices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "name": "star_center",
+      "representations": {
+        "mixed": {
+          "active_vertices": 4,
+          "completed_steps": 1,
+          "json_bytes": 11519,
+          "recipe_steps": 0,
+          "retained_factor_table_rows": 232,
+          "stored_fibre_rows": 232
+        },
+        "recipe": {
+          "active_vertices": 4,
+          "completed_steps": 1,
+          "json_bytes": 3209,
+          "recipe_steps": 1,
+          "retained_factor_table_rows": 232,
+          "stored_fibre_rows": 0
+        },
+        "table": {
+          "active_vertices": 4,
+          "completed_steps": 1,
+          "json_bytes": 11519,
+          "recipe_steps": 0,
+          "retained_factor_table_rows": 232,
+          "stored_fibre_rows": 232
+        }
+      },
+      "stop_after": 1
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "fixed": [],
+        "vertices": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "name": "K4_complete",
+      "representations": {
+        "mixed": {
+          "active_vertices": 0,
+          "completed_steps": 4,
+          "json_bytes": 3810,
+          "recipe_steps": 2,
+          "retained_factor_table_rows": 69,
+          "stored_fibre_rows": 68
+        },
+        "recipe": {
+          "active_vertices": 0,
+          "completed_steps": 4,
+          "json_bytes": 1857,
+          "recipe_steps": 4,
+          "retained_factor_table_rows": 85,
+          "stored_fibre_rows": 0
+        },
+        "table": {
+          "active_vertices": 0,
+          "completed_steps": 4,
+          "json_bytes": 3542,
+          "recipe_steps": 0,
+          "retained_factor_table_rows": 1,
+          "stored_fibre_rows": 85
+        }
+      },
+      "stop_after": 4
+    }
+  ],
+  "groups": {
+    "all_graphs_n0_to_n4": {
+      "assignment_checks": 252219,
+      "inputs": 76,
+      "partial_representations": 630,
+      "representations": 1083,
+      "satisfiable_inputs": 76,
+      "valid_writebacks": 1083
+    },
+    "all_nonempty_partial_fixed_n1_to_n3": {
+      "assignment_checks": 768864,
+      "inputs": 1044,
+      "partial_representations": 6096,
+      "representations": 12360,
+      "satisfiable_inputs": 820,
+      "unsatisfiable_inputs": 224,
+      "valid_writebacks": 9684
+    },
+    "named_controls_two_orders": {
+      "assignment_checks": 365568,
+      "inputs": 8,
+      "partial_representations": 180,
+      "representations": 276,
+      "satisfiable_inputs": 5,
+      "unsatisfiable_inputs": 3,
+      "valid_writebacks": 180
+    },
+    "seeded_n5_n6_literal_frames": {
+      "assignment_checks": 835584,
+      "inputs": 16,
+      "partial_representations": 216,
+      "representations": 312,
+      "satisfiable_inputs": 14,
+      "unsatisfiable_inputs": 2,
+      "valid_writebacks": 270
+    }
+  },
+  "negative_controls": [
+    {
+      "broken_accepts": true,
+      "colors": [
+        0,
+        0
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "fixed": [],
+        "vertices": [
+          0,
+          1
+        ]
+      },
+      "kind": "forget_fibre_constraint",
+      "original_accepts": false
+    },
+    {
+      "broken_accepts": true,
+      "colors": [
+        0,
+        0,
+        0
+      ],
+      "graph": {
+        "edges": [
+          [
+            1,
+            2
+          ]
+        ],
+        "fixed": [],
+        "vertices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "kind": "drop_residual_constraints",
+      "original_accepts": false
+    },
+    {
+      "broken_accepts": false,
+      "colors": [
+        2,
+        0
+      ],
+      "graph": {
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "fixed": [],
+        "vertices": [
+          0,
+          1
+        ]
+      },
+      "kind": "keep_only_one_support",
+      "original_accepts": true
+    }
+  ],
+  "python": "3.14.8",
+  "schema": "four-color-partial-history-audit-v1",
+  "scope": "Finite exact-membership and deferred-writeback audit of an independent prototype. Table, recipe and mixed modes are tested at every requested prefix. No general speed, memory, production integration or planar-colorability claim. JSON byte counts measure the complete serialized prototype state, not process RSS. Recipe mode omits historical fibre rows but may retain projected factor tables.",
+  "sources_sha256": {
+    "scripts/four_color_lab.py": "10c0c82eb5044db26d079d71c19d05fe1383b4544eb95303f96215be251695e6",
+    "scripts/four_color_partial_history.py": "a0e4db2182401e9ee16ae3cda92bb7db69d311d6535973916ae47f9b783b567e",
+    "scripts/four_color_partial_history_audit.py": "b93834b262926bc6df623f7abb83d22f4e151a6e870a8ea54b753c7c044a39fe",
+    "scripts/four_color_serialization.py": "fb254335ab427e1c6e12297edf792dd8827a10a8a21a6d280770881967f084b4"
+  },
+  "totals": {
+    "assignment_checks": 2222235,
+    "inputs": 1144,
+    "partial_representations": 7122,
+    "representations": 14031,
+    "satisfiable_inputs": 915,
+    "unsatisfiable_inputs": 229,
+    "valid_writebacks": 11217
+  }
+}

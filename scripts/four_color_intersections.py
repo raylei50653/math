@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from collections import OrderedDict
 from itertools import combinations
+from heapq import heappop, heappush
 
 
 class SharedInterfaceIndex:
@@ -22,9 +23,29 @@ class SharedInterfaceIndex:
     complete index and its revision stamps unchanged.
     """
 
-    def __init__(self, cache_max_rows=0):
+    def __init__(self, cache_max_rows=0, *, monotone_updates=False, support_loss=False):
         if type(cache_max_rows) is not int or cache_max_rows < 0:
             raise ValueError("cache_max_rows must be a nonnegative integer")
+        if type(monotone_updates) is not bool:
+            raise ValueError("monotone_updates must be boolean")
+        if type(support_loss) is not bool or support_loss and not monotone_updates:
+            raise ValueError("support_loss must be boolean and requires monotone_updates")
+        self._support_loss = support_loss
+        self._messages = OrderedDict()
+        # Opt-in contract: an existing factor may only lose rows. Growth or a
+        # scope change requires a new factor identity. The solver obeys this.
+        self._monotone_updates = monotone_updates
+        self._support_counts = {}
+        self._pending = set()
+        self._incident_pairs = {}
+        self._known_revisions = {}
+        self._pair_rank = {}
+        self._heap = None
+        self._queued = set()
+        self._cursor = -1
+        self.delta_stats = dict(pair_visits=0, queue_pushes=0, support_reuses=0, full_scope_views=0,
+                               loss_queries=0, loss_empty=0, loss_tuples=0,
+                               loss_rows_removed=0, message_builds=0, message_evictions=0)
         self._factors = {}
         self._identities = {}
         self._scopes = {}
@@ -58,6 +79,8 @@ class SharedInterfaceIndex:
                 for serial, factor in zip(self._order, live)):
             for serial in tuple(self._factor_cache_keys):
                 self._discard_stale_indexes(serial)
+            if self._monotone_updates:
+                self._notice_revisions()
             return
         identities, factor_map, scopes, order = {}, {}, {}, []
         next_serial = self._next_serial
@@ -116,8 +139,39 @@ class SharedInterfaceIndex:
         self._ordered_pairs = tuple(
             (key, factor_map[left], factor_map[right], left == key[0])
             for key, left, right in ordered)
+        for key in tuple(self._messages):
+            if key not in pair_keys:
+                self._remove_message(key)
+        if self._monotone_updates:
+            self._support_counts = {key: count for key, count in self._support_counts.items()
+                                    if key in pair_keys}
+            self._pending.intersection_update(pair_keys)
+            self._pending.update(pair_keys - self._seen.keys())
+            self._incident_pairs = {serial: set() for serial in order}
+            self._pair_rank = {}
+            for rank, (key, _, _, _) in enumerate(self._ordered_pairs):
+                self._pair_rank[key] = rank
+                for serial in key:
+                    self._incident_pairs[serial].add(key)
+            self._known_revisions = {serial: rev for serial, rev in self._known_revisions.items()
+                                     if serial in factor_map}
+            self._notice_revisions()
         for serial in tuple(self._factor_cache_keys):
             self._discard_stale_indexes(serial)
+
+    def _notice_revisions(self, serials=None):
+        for serial in self._order if serials is None else serials:
+            revision = self._factors[serial].revision
+            if self._known_revisions.get(serial) == revision:
+                continue
+            self._known_revisions[serial] = revision
+            for key in self._incident_pairs[serial]:
+                self._pending.add(key)
+                rank = self._pair_rank[key]
+                if self._heap is not None and rank > self._cursor and key not in self._queued:
+                    heappush(self._heap, (rank, key))
+                    self._queued.add(key)
+                    self.delta_stats["queue_pushes"] += 1
 
     def pairs(self):
         """Yield factor pairs in the current live list's lexicographic order."""
@@ -132,6 +186,9 @@ class SharedInterfaceIndex:
         subsequent entries, so pruning can awaken a later pair in this pass.
         Topology synchronization must happen between complete pair passes.
         """
+        if self._monotone_updates:
+            yield from self._pending_delta_pairs()
+            return
         for key, left, right, forward in self._ordered_pairs:
             signature = self._seen.get(key)
             if signature is not None:
@@ -140,6 +197,37 @@ class SharedInterfaceIndex:
                     self.skipped_pair_queries += 1
                     continue
             yield left, right
+
+    def _pending_delta_pairs(self):
+        """Preserve pass order: changes behind the cursor wait until next pass.
+
+        Call mark_seen after committing each yielded pair. Other row changes
+        are discovered by sync between passes. Unfinished queries stay pending.
+        """
+        self._notice_revisions()
+        self._heap, self._queued, self._cursor = [], set(), -1
+        yielded = 0
+        for key in self._pending:
+            heappush(self._heap, (self._pair_rank[key], key))
+            self._queued.add(key)
+            self.delta_stats["queue_pushes"] += 1
+        try:
+            while self._heap:
+                rank, key = heappop(self._heap)
+                self._queued.remove(key)
+                self._cursor = rank
+                if key not in self._pending:
+                    continue
+                if self._seen.get(key) == self._signature(key):
+                    self._pending.discard(key)
+                    continue
+                _, left, right, _ = self._ordered_pairs[rank]
+                self.delta_stats["pair_visits"] += 1
+                yielded += 1
+                yield left, right
+            self.skipped_pair_queries += len(self._ordered_pairs) - yielded
+        finally:
+            self._heap, self._queued, self._cursor = None, set(), -1
 
     def _key(self, left, right):
         left_serial = self._identities.get(id(left))
@@ -159,14 +247,56 @@ class SharedInterfaceIndex:
         key = self._key(left, right)
         return key is not None and self._seen.get(key) == self._signature(key)
 
-    def mark_seen(self, left, right):
-        """Record current revisions after a complete pair query and commit."""
+    def mark_seen(self, left, right, support_count=None, *, common_rows=None, common_scope=None):
+        """Record revisions after a complete pair query and commit.
+
+        With monotone_updates, support_count must be the cardinality of the
+        completed common projection, after BOTH filtered relations commit.
+        Omit it to disable the support shortcut for this pair.
+        """
         key = self._key(left, right)
         if key is None:
             raise ValueError("pair must be registered with a shared interface")
         self._seen[key] = self._signature(key)
+        if self._monotone_updates:
+            if support_count is None:
+                self._support_counts.pop(key, None)
+            else:
+                self._support_counts[key] = support_count
+            self._notice_revisions(key)
+            self._pending.discard(key)
         for serial in key:
             self._discard_stale_indexes(serial)
+        if self._support_loss:
+            if key in self._messages:
+                self._remove_message(key)
+            if common_rows is not None and common_scope is not None:
+                # Called only after the complete semijoin and both commits.
+                # Retain the already constructed immutable support, not a
+                # truncated sample. Messages share the group-cache row cap.
+                rows = frozenset(common_rows)
+                if self._cache_max_rows and len(rows) <= self._cache_max_rows:
+                    self._make_room(len(rows))
+                    self._messages[key] = (tuple(common_scope), rows, self._signature(key))
+                    self.cache_stats["rows"] += len(rows)
+                    self.cache_stats["entries"] += 1
+                    self.cache_stats["peak_rows"] = max(self.cache_stats["peak_rows"], self.cache_stats["rows"])
+                    self.delta_stats["message_builds"] += 1
+
+    def _remove_message(self, key, *, eviction=False):
+        _, rows, _ = self._messages.pop(key)
+        self.cache_stats["rows"] -= len(rows)
+        self.cache_stats["entries"] -= 1
+        if eviction:
+            self.cache_stats["evictions"] += 1
+            self.delta_stats["message_evictions"] += 1
+
+    def _make_room(self, rows):
+        while self.cache_stats["rows"] + rows > self._cache_max_rows:
+            if self._group_cache:
+                self._remove_group_index(next(iter(self._group_cache)), eviction=True)
+            else:
+                self._remove_message(next(iter(self._messages)), eviction=True)
 
     def _remove_group_index(self, key, *, eviction=False):
         entry = self._group_cache.pop(key)
@@ -198,6 +328,12 @@ class SharedInterfaceIndex:
         self._discard_stale_indexes(serial)
         key = (serial, factor.revision, shared)
         tick()
+        if (self._monotone_updates and isinstance(factor.rows, frozenset)
+                and offsets == tuple(range(len(factor.scope)))):
+            # The ordered interface IS this whole relation: projection is
+            # the identity. Reuse it rather than build a second row index.
+            self.delta_stats["full_scope_views"] += 1
+            return factor.rows, None
         entry = self._group_cache.get(key)
         if entry is not None:
             self.cache_stats["hits"] += 1
@@ -224,8 +360,7 @@ class SharedInterfaceIndex:
         # No incomplete entry or speculative eviction is published if any
         # charge interrupts the build.  Capacity counts retained references;
         # the current query may also hold completed temporary entry objects.
-        while self.cache_stats["rows"] + entry[2] > self._cache_max_rows:
-            self._remove_group_index(next(iter(self._group_cache)), eviction=True)
+        self._make_room(entry[2])
         self._group_cache[key] = entry
         self._factor_cache_keys.setdefault(serial, set()).add(key)
         self.cache_stats["builds"] += 1
@@ -247,7 +382,7 @@ class SharedInterfaceIndex:
         """
         if charge is not None and not callable(charge):
             raise ValueError("charge must be callable or None")
-        if not self._cache_max_rows:
+        if not self._cache_max_rows and not self._monotone_updates:
             return intersect_on_shared(left.scope, left.rows, right.scope, right.rows,
                                        charge=charge)
         left_serial = self._identities.get(id(left))
@@ -268,20 +403,59 @@ class SharedInterfaceIndex:
             if charge is not None:
                 charge()
 
-        left_projection, left_groups = self._group_index(
-            left, left_serial, shared, left_offsets, tick)
-        right_projection, right_groups = self._group_index(
-            right, right_serial, shared, right_positions, tick)
-        smaller, larger = sorted((left_projection, right_projection), key=len)
-        common = set()
-        for row in sorted(smaller):
+        key = self._key(left, right)
+        message = self._messages.get(key) if self._support_loss else None
+        if message is not None and message[0] == shared:
+            self._messages.move_to_end(key)
+            return self._intersect_losses(left, right, left_serial, right_serial,
+                                          shared, left_offsets, right_positions, key, message, tick)
+        seen = self._seen.get(key)
+        old_count = self._support_counts.get(key)
+        unchanged = {}
+        if self._monotone_updates and seen is not None and old_count is not None:
+            unchanged = {serial: self._factors[serial].revision == revision
+                         for serial, revision in zip(key, seen)}
+        if unchanged.get(left_serial) or unchanged.get(right_serial):
+            # Previously both projections equalled S. With row deletion only,
+            # if one side is unchanged, the other's projection T is a subset
+            # of S. Hence common = T, with no second intersection needed.
+            changed_left = unchanged.get(right_serial, False)
+            factor = left if changed_left else right
+            serial = left_serial if changed_left else right_serial
+            offsets = left_offsets if changed_left else right_positions
+            common, groups = self._group_index(factor, serial, shared, offsets, tick)
             tick()
-            if row in larger:
-                common.add(row)
+            self.delta_stats["support_reuses"] += 1
+            if len(common) == old_count:
+                return dict(scope=shared, common_rows=common,
+                            left_rows=left.rows if isinstance(left.rows, frozenset) else frozenset(left.rows),
+                            right_rows=right.rows if isinstance(right.rows, frozenset) else frozenset(right.rows))
+            if changed_left:
+                left_projection, left_groups = common, groups
+                right_projection, right_groups = self._group_index(
+                    right, right_serial, shared, right_positions, tick)
+            else:
+                right_projection, right_groups = common, groups
+                left_projection, left_groups = self._group_index(
+                    left, left_serial, shared, left_offsets, tick)
+        else:
+            left_projection, left_groups = self._group_index(
+                left, left_serial, shared, left_offsets, tick)
+            right_projection, right_groups = self._group_index(
+                right, right_serial, shared, right_positions, tick)
+            smaller, larger = sorted((left_projection, right_projection), key=len)
+            common = set()
+            for row in sorted(smaller):
+                tick()
+                if row in larger:
+                    common.add(row)
 
         def keep(factor, offsets, projection, groups):
             if len(common) == len(projection):
                 return factor.rows if isinstance(factor.rows, frozenset) else frozenset(factor.rows)
+            if self._monotone_updates and offsets == tuple(range(len(factor.scope))):
+                tick()
+                return frozenset(common)
             kept = set()
             if groups is None:
                 for row in sorted(factor.rows):
@@ -299,6 +473,73 @@ class SharedInterfaceIndex:
         return dict(scope=shared, common_rows=frozenset(common),
                     left_rows=keep(left, left_offsets, left_projection, left_groups),
                     right_rows=keep(right, right_positions, right_projection, right_groups))
+
+    def _intersect_losses(self, left, right, left_serial, right_serial,
+                          shared, left_offsets, right_offsets, key, message, tick):
+        """Remove only rows whose whole interface lost its LAST support.
+
+        At the saved pair checkpoint both projections equal S. Current rows
+        only shrink, so new common support is S minus both support losses.
+        Current projections are exact; loss is NOT projection(deleted rows).
+        All temporary sets remain private until the caller commits both rows.
+        """
+        _, previous, revisions = message
+        versions = dict(zip(key, revisions))
+        indexes = {}
+
+        def current(factor, serial, offsets):
+            if serial not in indexes:
+                indexes[serial] = self._group_index(factor, serial, shared, offsets, tick)
+            return indexes[serial]
+
+        def lost(factor, serial, offsets):
+            tick()
+            if versions[serial] == factor.revision:
+                return frozenset()
+            projection, _ = current(factor, serial, offsets)
+            # Monotone inclusion makes equal cardinality sufficient here.
+            if len(projection) == len(previous):
+                return frozenset()
+            missing = set()
+            for row in sorted(previous):
+                tick()
+                if row not in projection:
+                    missing.add(row)
+            return frozenset(missing)
+
+        left_loss = lost(left, left_serial, left_offsets)
+        right_loss = lost(right, right_serial, right_offsets)
+        common = previous.difference(left_loss, right_loss)
+
+        def remove_lost(factor, serial, offsets, forbidden):
+            if not forbidden:
+                return factor.rows
+            if offsets == tuple(range(len(factor.scope))):
+                for _ in sorted(forbidden):
+                    tick()
+                return factor.rows.difference(forbidden)
+            _, groups = current(factor, serial, offsets)
+            removed = set()
+            if groups is None:
+                for row in sorted(factor.rows):
+                    tick()
+                    if tuple(row[i] for i in offsets) in forbidden:
+                        removed.add(row)
+            else:
+                for support in sorted(forbidden):
+                    tick()
+                    for row in groups.get(support, ()):
+                        tick()
+                        removed.add(row)
+            return factor.rows.difference(removed) if removed else factor.rows
+
+        left_rows = frozenset(remove_lost(left, left_serial, left_offsets, right_loss))
+        right_rows = frozenset(remove_lost(right, right_serial, right_offsets, left_loss))
+        self.delta_stats["loss_queries"] += 1
+        self.delta_stats["loss_tuples"] += len(left_loss) + len(right_loss)
+        self.delta_stats["loss_empty"] += not (left_loss or right_loss)
+        self.delta_stats["loss_rows_removed"] += len(left.rows) + len(right.rows) - len(left_rows) - len(right_rows)
+        return dict(scope=shared, common_rows=frozenset(common), left_rows=left_rows, right_rows=right_rows)
 
 
 def intersect_on_shared(left_scope, left_rows, right_scope, right_rows, *, charge=None):

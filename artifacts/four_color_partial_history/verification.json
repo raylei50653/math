@@ -1,0 +1,61 @@
+{
+  "audit_runs": [
+    {
+      "command": "python3 scripts/four_color_partial_history_audit.py --out artifacts/four_color_partial_history/summary.json",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 scripts/four_color_partial_history_audit.py --out /tmp/four-color-partial-history-final-seed17.json",
+      "exit_code": 0
+    }
+  ],
+  "base_commit": "aec89209e1f889f7ddaefe35fbdfd0b97691e9ee",
+  "date": "2026-10-27",
+  "documentation_checks": [
+    {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 0,
+      "local_links": 10057,
+      "markdown_files": 755
+    },
+    {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "documents": 98,
+      "errors": 0,
+      "exit_code": 0,
+      "families": 12,
+      "relations": 386
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "documentation_sha256": {
+    "docs/STATUS.md": "b39f054a6edd360d6b627010fc5d46addb8860e1fc362d6cdd746d7fc99ead28",
+    "docs/four_color_guide.md": "12f427bfe0ba9918c8fb13287a8975df8d422be9e13301453bca9c67e8070c9b",
+    "docs/four_color_mathematical_model.md": "6f5f020ecb1e836d8542478482e23e3ce9dea608d6770c74769ac01d4e1d4afa",
+    "docs/four_color_partial_history.md": "a17707e029ab7f4242afab8b42fea3424abf1fc850064d67bcd231fe8d0d38cf"
+  },
+  "new_file_checks": {
+    "artifact_files_below_1000000_bytes": true,
+    "json_parse": true,
+    "trailing_whitespace": false
+  },
+  "schema": "four-color-partial-history-verification-v1",
+  "scope": "Independent prototype; no production solver, Lean, or planar-colorability change.",
+  "seed17_byte_identical": true,
+  "sources_sha256": {
+    "scripts/four_color_lab.py": "977658a9c8ae2c6108942916797babca95b7ab0a6d9480e846b4bba3bfb11ea1",
+    "scripts/four_color_partial_history.py": "a0e4db2182401e9ee16ae3cda92bb7db69d311d6535973916ae47f9b783b567e",
+    "scripts/four_color_partial_history_audit.py": "b93834b262926bc6df623f7abb83d22f4e151a6e870a8ea54b753c7c044a39fe",
+    "scripts/four_color_serialization.py": "fb254335ab427e1c6e12297edf792dd8827a10a8a21a6d280770881967f084b4",
+    "tools/tests/test_four_color_partial_history.py": "8182caac66a024490c98f36dada9fe77e894db72969fd1c48674d1ae9cd24260"
+  },
+  "summary_sha256": "14842396241cc1ba36a50b21da5eca948a285c8ba1baadf742628c50616419e3",
+  "tests": {
+    "command": "python3 -m unittest discover -s tools/tests -p 'test_four_color_partial_history.py' -v",
+    "exit_code": 0,
+    "passed": 11
+  }
+}
