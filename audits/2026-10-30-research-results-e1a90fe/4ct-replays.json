@@ -1,0 +1,110 @@
+{
+  "schema": "publication-research-readonly-replays-v1",
+  "date": "2026-10-30",
+  "checks": [
+    {
+      "command": "python3 scripts/four_color_three_step_annotation_replay.py --results audits/2026-10-30-three-step-annotation-projection-e1a90fe/results.json",
+      "exit_code": 0,
+      "duration_seconds": null,
+      "timing_note": "Started with PTY async yield; total process duration not measured",
+      "output": {
+        "accepted_patterns": 13,
+        "annotation_states": 864,
+        "complete_projection_families": 64,
+        "controls": {
+          "planar_kernel": {
+            "empty": 3364,
+            "lifts": 936,
+            "nonempty": 732,
+            "proper_empty_word": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              1
+            ]
+          },
+          "zv": {
+            "accepted": 6564,
+            "complete_old_counts_retained": true,
+            "constructive_extension_rechecked": true,
+            "literal_lifts": 1529784,
+            "proper": 6564
+          },
+          "zv_complete_outer_counts_independently_recomputed": true
+        },
+        "exact_source_realization": "OPEN",
+        "literal_rows": 384,
+        "manifest": {
+          "result_hash": true,
+          "source_hashes": 5
+        },
+        "proper_patterns": 31,
+        "residual_patterns": 16,
+        "status": "PASS",
+        "transitions": {
+          "edges": 46752,
+          "groups": 23424,
+          "sha256": "97bbf96766e2e38378c8e4fdac26ab93bd1d87a2c08d22d9295c08e350906c22"
+        }
+      }
+    },
+    {
+      "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_twelve_cut_nine_side_review.py --input audits/2026-10-30-twelve-cut-nine-side-e1a90fe/nine-side.json.gz --out /tmp/nine-side-publication-review-20261030.json",
+      "exit_code": 0,
+      "duration_seconds": null,
+      "timing_note": "Started with PTY async yield; total process duration not measured",
+      "output": {
+        "all_26_same_Y_reductions_pass": true,
+        "all_35_profiles_full_fibres_equal": true,
+        "all_54_normalized_paper_table_branches_verified": true,
+        "complete_boundary_rows_reviewed": 143360,
+        "complete_original_colourings": 39624,
+        "complete_reduced_colourings": 2232,
+        "input_sha256": "516c60ed34dac6de2adaa47924acf151b98d834e836b67136a2d42faa623530f",
+        "original_X_complete_colourings": 432,
+        "original_X_literal_assignments_examined": 262144,
+        "reviewer_sha256": "cbd75b74e149014b65c8bda8f169f66fbcab53c3a53d0235b82d8a429c894265",
+        "schema": "four-color-twelve-cut-nine-side-independent-review-v1"
+      }
+    },
+    {
+      "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_no_hub_three_branch_verification.py --out /tmp/no-hub-three-branch-publication-review-20261030.json",
+      "exit_code": 0,
+      "duration_seconds": null,
+      "timing_note": "Started with PTY async yield; total process duration not measured",
+      "output": {
+        "all_boundary_fibres": 12928,
+        "all_transition_masks": 5248,
+        "common_exterior_assignments": 27288,
+        "complete_branch_interface_rows": 1248,
+        "complete_original_witnesses": 20664,
+        "empty_boundary_fibres": 10408,
+        "empty_branch_interface_rows": 504,
+        "explicit_normalized_templates": 16,
+        "fixed_root_ear_transitions": 10,
+        "fixed_root_states": 10,
+        "marginal_nonempty_joint_empty_rows": 120,
+        "new_support_rows_lifted": 624,
+        "original_graphs": 2,
+        "same_witness_old_support_row_lifts": 1248,
+        "short_cycles_checked": 336,
+        "supported_boundary_rows": 912,
+        "zero_transition_masks": 3904
+      }
+    }
+  ],
+  "comparisons": {
+    "three_branch": {
+      "byte_equal": true,
+      "sha256": "0b3aa5f807f4d985b21694ccaa6225cc40027222c5a8a5ad88d18292edf5e888"
+    },
+    "nine_side_review": {
+      "counts_equal": true,
+      "only_difference": "input_sha256 refers to compressed container rather than raw JSON; all other fields equal",
+      "raw_input_sha256": "6009e3931b4a8168421620e4628296681bb2f3b61c7b37f529936aa12c868699",
+      "compressed_input_sha256": "516c60ed34dac6de2adaa47924acf151b98d834e836b67136a2d42faa623530f"
+    }
+  }
+}

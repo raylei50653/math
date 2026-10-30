@@ -1,0 +1,164 @@
+{
+  "authoritative_sources_sha256": {
+    "docs/c5_five_reference_source_exclusion.md": "206a0dbf54a43759bc40377616f28c7e2d8e7fe6c209718d26c5f579a05a8dd8",
+    "docs/ck_bernhart_endpoint_ray_continuation.md": "af4ec15d077e16b65aca82e5e6ef4627756de1c918ca0084b9b356750e2fcc18",
+    "docs/four_color_no_hub_bipyramid_continuation.md": "0059213c2e2677416f2618fe0e83a6cf609b2c24e1c0e2ff80583b9c6554dfba",
+    "docs/four_color_three_step_relation_control.md": "f6bc48d80707241cf27bece8ada7188e5fd1f8b86c527f5ba7d17316fb50b509",
+    "docs/four_color_twelve_cut_w5_ear_reduction.md": "404ff84ba7bfcf8ed098f8e74bf3e7a91dee1cfa4dfe01af5b74c00f71d486c1"
+  },
+  "base_commit": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "checks": {
+    "candidate": {
+      "checks": [
+        {
+          "command": [
+            "python3",
+            "tools/check_generated_artifacts.py"
+          ],
+          "exit_code": 0,
+          "log": "candidate-artifacts.log",
+          "name": "candidate-artifacts"
+        },
+        {
+          "command": [
+            "git",
+            "diff",
+            "--cached",
+            "--check"
+          ],
+          "exit_code": 0,
+          "log": "candidate-whitespace.log",
+          "name": "candidate-whitespace"
+        }
+      ],
+      "isolated_index_only": true,
+      "real_index_unchanged": true
+    },
+    "docs": {
+      "exit_code": 0,
+      "log": "check-docs.log",
+      "summary": "OK: 795 Markdown files, 10618 local links; anchors, index, handoff, guide progress checked"
+    },
+    "formal_docgraph": {
+      "exit_code": 0,
+      "log": "docgraph-docs.log",
+      "summary": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+    },
+    "sources": {
+      "record": "source-verification.json",
+      "scope": "52 current proof/script/artifact hashes; 6 mutable historical routing/archive entries separately classified",
+      "status": "PASS"
+    },
+    "whitespace": {
+      "exit_code": 0,
+      "log": "diff-check.log"
+    },
+    "whole_docgraph": {
+      "exit_code": 1,
+      "log": "docgraph-whole-tree.log",
+      "scope": "72 existing duplicate IDs in preserved frozen/scratch copies; no historical copies changed",
+      "summary": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes"
+    }
+  },
+  "cross_reviews": {
+    "bernhart": {
+      "result": "Both new --check PASS; full RIP endpoints and all-source marked six-leaf reduction sound. Target B6 feasible and token model is not actual graph realizability; no whole rays or zeros excluded.",
+      "reviewer": "bernhart_benchmark"
+    },
+    "five_reference": {
+      "result": "New --check PASS; all-reference singleton union and source separation proofs sound. 200 true-disk actions preserved, no strict gain or general old-cut implication proved.",
+      "reviewer": "parity_shared_cut"
+    },
+    "no_hub": {
+      "result": "Explicit canonical source, complete pole/path fibres, all legal endpoint-ear closures and same-witness support read. Root certificate replay byte equal. Original rim vertices degree four.",
+      "reviewer": "root"
+    },
+    "three_step": {
+      "result": "Independent stdlib replay PASS; C_alg same-input scope sound, genuine C0 18-to-16 fixed point, full exterior problems differ. Four-port Boolean saturation rules out more same-core Boolean searches.",
+      "reviewer": "reverse_shelling"
+    },
+    "twelve_cut": {
+      "result": "Five incidence profiles, reflected three representatives, noncrossing chords and full eight-row universal lift read and checked. Root certificate replay byte equal.",
+      "reviewer": "root"
+    }
+  },
+  "date": "2026-10-29",
+  "evidence_layers": {
+    "lean": "No new Lean proof; build not run.",
+    "paper": "Read and cross-reviewed five supplied proofs; ordinary cut-parity scope corollary independently checked. Next-round conjectures remain tasks.",
+    "python": "Replayed existing frozen domains only; no generator expansion or next-round search."
+  },
+  "ordinary_parity_scope_review": "review-notes.md",
+  "ordinary_scope_correction": {
+    "record": "review-notes.md",
+    "result": "Under existing Tait-source hypotheses all nonfacial triangles are excluded by ordinary cut parity; handle chords first. Not a new five-reference mechanism; no new enumeration.",
+    "reviewers": [
+      "root",
+      "parity_shared_cut"
+    ]
+  },
+  "propagation": {
+    "reviewed_unchanged": [
+      "Five canonical source reports and their frozen evidence",
+      "Main 4CT contract scope and first research direction",
+      "C5 parity task/guide direct source links",
+      "Other concurrent research including blocked-realizability source",
+      "HANDOFF research lines and tags; README"
+    ],
+    "stop": "Direct synthesis/routing; no parent 4CT or general source closure",
+    "updated": [
+      "docs/four_color_four_fronts_verification.md: second-round synthesis and five task descriptions",
+      "docs/4ct_guide.md: latest task navigation only",
+      "docs/four_color_guide.md: latest task navigation only",
+      "docs/STATUS.md: latest synthesis entry only",
+      ".gitignore and audits/ARCHIVE.json: one supplied large certificate appended with immutable source bytes"
+    ]
+  },
+  "publication": "No commit or push.",
+  "replay_checks": [
+    {
+      "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_twelve_cut_w5_ear_verification.py --out /tmp/round2-root-w5-ear.json",
+      "executor": "root",
+      "exit_code": 0,
+      "result": "saved decompressed certificate byte equal"
+    },
+    {
+      "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_no_hub_bipyramid_verification.py --out /tmp/round2-root-no-hub-bipyramid.json",
+      "executor": "root",
+      "exit_code": 0,
+      "result": "saved certificate byte equal"
+    },
+    {
+      "command": "python3 scripts/four_color_three_step_relation_replay.py --results audits/2026-10-29-three-step-relation-control-e1a90fe/results.json",
+      "executor": "delegate reverse_shelling",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/ck_retained_endpoint_parity.py --check audits/2026-10-29-bernhart-endpoint-ray/endpoint-parity.json",
+      "executor": "delegate bernhart_benchmark",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/ck_bernhart_ray_source_support.py --check audits/2026-10-29-bernhart-endpoint-ray/r2-support-actions.json",
+      "executor": "delegate bernhart_benchmark",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 audits/2026-10-29-five-reference-source-e1a90fe/verify.py --check audits/2026-10-29-five-reference-source-e1a90fe/verification.json",
+      "executor": "delegate parity_shared_cut",
+      "exit_code": 0
+    }
+  ],
+  "routing_after_sha256": {
+    "docs/4ct_guide.md": "0947117af6678ba4c0635d56836c374550638c8b9d5cc8f7c0a997c961ea2784",
+    "docs/STATUS.md": "e55a9d6aa6c6179bdaffe99e1cd5800516f04fc04496ddb5de6d51fbc7a06293",
+    "docs/four_color_four_fronts_verification.md": "ed7549e310365b14f37de071dc8a86e803a2078910d28b19cce2831dd780241f",
+    "docs/four_color_guide.md": "adfdf81c73b6251270164cc9d0896bcb87cce90a618efa7255cff885ff90313b"
+  },
+  "schema": "five-results-round2-integration-v1",
+  "scope": "Read and cross-review five results, replay frozen checks, record ordinary cut-parity scope correction and organize five next tasks; no next-round search.",
+  "source_verification": "source-verification.json",
+  "status": "cross-review and next-task organization complete; historical whole-tree DocGraph failure retained",
+  "storage_verification": "storage-verification.json",
+  "unchanged_real_index": true
+}

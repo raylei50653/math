@@ -1,0 +1,72 @@
+{
+  "archive": {
+    "blob": {
+      "bytes": 282624,
+      "path": "audits/.archive/blobs/e66ad47e24a2e4fc2ae36ef02cd3b5395564a5b7184cc6c71dec8fd7e96deebf.gz",
+      "sha256": "e5315185eea6982daaccc2e4f9a4c584c4e402cdd2a368aa3914b309e1692470"
+    },
+    "compressed_and_raw_sha256_verified": true,
+    "path": "audits/2026-10-29-bernhart-retained-parity/rotation-controls.json",
+    "prior_blob_records_preserved": 3130,
+    "prior_file_records_preserved": 6155,
+    "record": {
+      "bytes": 7687306,
+      "mode": 420,
+      "reason": "explicit",
+      "sha256": "e66ad47e24a2e4fc2ae36ef02cd3b5395564a5b7184cc6c71dec8fd7e96deebf"
+    }
+  },
+  "checks": [
+    {
+      "command": "PYTHONHASHSEED=17 python3 scripts/ck_bernhart_ray_local_witnesses.py --check audits/2026-10-29-bernhart-retained-parity/ray-local.json",
+      "exit_code": 0,
+      "result": "2 rays, 4 actions; 40 checked parity pairs, 16 shared-endpoint pairs uncovered; 2 rotation negatives rejected; no rays or coordinates excluded"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 scripts/ck_retained_intersection_parity.py --check audits/2026-10-29-bernhart-retained-parity/rotation-controls.json",
+      "exit_code": 0,
+      "result": "theta genera 0/1; 86 normalized colorings, 688 actions, 7124 checked and 2992 shared-endpoint pairs uncovered"
+    },
+    {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 0,
+      "result": "788 Markdown files, 10495 local links"
+    },
+    {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "result": "98 documents, 386 relations, 12 families; 0 errors"
+    },
+    {
+      "command": "python3 tools/docgraph check",
+      "exit_code": 1,
+      "full_output": "audits/2026-10-29-bernhart-retained-parity/docgraph-full.log",
+      "result": "72 duplicate-id errors from preserved frozen audits/scratch documents"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "commit_push": false,
+  "date": "2026-10-29",
+  "excluded_coordinates": [],
+  "excluded_positive_scale_rays": [],
+  "head_at_verification": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "new_Lean": false,
+  "remaining_open": [
+    "Force a failing actual retained wiring in every positive-scale source of either ray",
+    "Any new coordinate zero on the full 76-row residual face",
+    "All blocking sources and reducibility"
+  ],
+  "scope": "Original-edge retained intersection parity and two explicit local plane controls; no all-positive-scale ray exclusion",
+  "sources_sha256": {
+    "audits/2026-10-29-bernhart-retained-parity/docgraph-full.log": "4fa4d33f73a0d0fe18b580d708bacedfb3108d73fe0fb6855350b0a7283ba67d",
+    "audits/2026-10-29-bernhart-retained-parity/ray-local.json": "4a8c66df532561fd7dea04177fe0b1d199ad7bedbbf898969ced130d3fe08498",
+    "audits/2026-10-29-bernhart-retained-parity/rotation-controls.json": "e66ad47e24a2e4fc2ae36ef02cd3b5395564a5b7184cc6c71dec8fd7e96deebf",
+    "docs/ck_bernhart_retained_intersection.md": "1cb9e827161b9148d37f293a07158d32372a9eca05b9481ce60c2b1f9c6909bb",
+    "docs/history/2026-10-29-bernhart-retained-parity.md": "3b27807a6ebed4be48e757b5b44cadb77a84af3a5b9ec8d16f359f81a1bc7d68",
+    "scripts/ck_bernhart_ray_local_witnesses.py": "1192e6456f8e1144b24b001a059c9495b18529031dc583a2d95fd45527f8e516",
+    "scripts/ck_retained_intersection_parity.py": "5cbf88e1f76f7e1c13713df235f078f85aae498d22775746b75e441a01702fdf"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "cwd": "/home/ray/developer/ai/math",
+  "scope": "Read-only independent finite C5 publication replays; no full source classification rerun; no Lean build",
+  "results": [
+    {
+      "name": "face",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/c5_period4_face_constraints.py",
+        "--check"
+      ],
+      "started_utc": "2026-10-30T02:59:52.599038+00:00",
+      "duration_seconds": 0.1202,
+      "exit_code": 0,
+      "log": "audits/2026-10-30-research-results-e1a90fe/c5-logs/face.log",
+      "log_sha256": "22009d3920f1b8df6ce5643e793cff062ffb94869167cd279d30d923ae95d6db"
+    },
+    {
+      "name": "d2-independent",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/c5_d2_separation_review.py",
+        "--check"
+      ],
+      "started_utc": "2026-10-30T02:59:52.719333+00:00",
+      "duration_seconds": 0.1525,
+      "exit_code": 0,
+      "log": "audits/2026-10-30-research-results-e1a90fe/c5-logs/d2-independent.log",
+      "log_sha256": "0dc39658d39b7437ab8b632ede62a1343f2d111d77e0fd5c9f4c9c2abefbd2fc"
+    },
+    {
+      "name": "six-independent",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/c5_six_cross_round_review.py",
+        "--check"
+      ],
+      "started_utc": "2026-10-30T02:59:52.871885+00:00",
+      "duration_seconds": 0.2695,
+      "exit_code": 0,
+      "log": "audits/2026-10-30-research-results-e1a90fe/c5-logs/six-independent.log",
+      "log_sha256": "b2922c7662e4d6755c462c0471198b038f5f619a65b7e529d7ed5abb8f4dddb1"
+    },
+    {
+      "name": "two-gap",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/c5_nonfacial_two_gap_verification.py",
+        "--check",
+        "audits/2026-10-30-five-reference-two-gap/verification.json"
+      ],
+      "started_utc": "2026-10-30T02:59:53.141485+00:00",
+      "duration_seconds": 4.266,
+      "exit_code": 0,
+      "log": "audits/2026-10-30-research-results-e1a90fe/c5-logs/two-gap.log",
+      "log_sha256": "6b137c476d9d305148cc97713d27e88c590a55e04a702a6c2005987b63927ed2"
+    },
+    {
+      "name": "three-gap",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/c5_nonfacial_three_gap_verification.py",
+        "--check",
+        "audits/2026-10-30-five-reference-three-gap/verification.json"
+      ],
+      "started_utc": "2026-10-30T02:59:57.407584+00:00",
+      "duration_seconds": 5.9365,
+      "exit_code": 0,
+      "log": "audits/2026-10-30-research-results-e1a90fe/c5-logs/three-gap.log",
+      "log_sha256": "69b4b4653cf7cb25ef6554e6a9194ee46241469d15eb78bd638118679bf524b6"
+    }
+  ]
+}

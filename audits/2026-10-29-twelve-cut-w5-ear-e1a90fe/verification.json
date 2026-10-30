@@ -1,0 +1,104 @@
+{
+  "artifact": {
+    "decompressed_bytes": 5033895,
+    "decompressed_sha256": "6be5729135f195e6c452a55ec23c85aa10973225105a3a8b9db658f505915a8d",
+    "gzip_bytes": 154747,
+    "gzip_sha256": "7df963216a4ddf38069b7750c191a4e470eb797feab9eff3e40b44c141f7b26b",
+    "path": "w5-ear.json.gz",
+    "roundtrip_byte_identical": true,
+    "seed17_byte_identical": true
+  },
+  "baseline": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "closure": {
+    "canonical_source": "docs/four_color_twelve_cut_w5_ear_reduction.md",
+    "propagation_stop": "L2 and the directly affected 4CT guide paragraph only; parent existence remains OPEN and global routing is unchanged.",
+    "remaining_open": [
+      "Both sides at least eight vertices and chordless in the double-C6 twelve-cut",
+      "Two-point eight-cut",
+      "Degree-five facial-triangle nine-cut",
+      "General 4CT and 932"
+    ],
+    "reviewed_unchanged": [
+      "docs/HANDOFF.md: no research-line or active-tag change",
+      "README.md and other research lines: no routing or upstream existence theorem change"
+    ],
+    "scope": "All seven-vertex W5-plus-ear side sources under the original delta>=5, S34/S5, ordered double-C6 twelve-cut contract.",
+    "updated": [
+      "docs/four_color_twelve_cut_c6_sources.md: dated follow-up, original evidence and dated OPEN retained",
+      "docs/four_color_guide.md: seven-point two-type closure and remaining source class",
+      "docs/4ct_guide.md: remaining twelve-cut sources",
+      "docs/STATUS.md: new direct report index and short source status",
+      "docs/four_color_four_fronts_verification.md: task 4 delivery and remaining obligations",
+      "docs/four_color_bond_perimeter_small_cuts.md: downstream C-reduction status"
+    ]
+  },
+  "commands": [
+    {
+      "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_twelve_cut_w5_ear_verification.py --out /tmp/w5-ear.json",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONHASHSEED=17 uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_twelve_cut_w5_ear_verification.py --out /tmp/w5-ear-seed17.json",
+      "exit_code": 0
+    }
+  ],
+  "current_source_hashes": {
+    "docs/four_color_twelve_cut_w5_ear_reduction.md": "404ff84ba7bfcf8ed098f8e74bf3e7a91dee1cfa4dfe01af5b74c00f71d486c1",
+    "scripts/four_color_twelve_cut_w5_ear_verification.py": "34bd875e5a363e9b88765123a7553c47a75899e994915afd3ae9a4eea1686ca3"
+  },
+  "date": "2026-10-29",
+  "documentation": {
+    "final_check_docs": {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 0,
+      "output": "OK: 789 Markdown files, 10522 local links; anchors, index, handoff, guide progress checked"
+    },
+    "formal_docs_docgraph": {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "output": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+    },
+    "initial_check_docs": {
+      "exit_code": 1,
+      "reason": "New report linked the certificate and this receipt before those files were written; rerun below after materializing them."
+    },
+    "whitespace": {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    "whole_tree_docgraph": {
+      "command": "python3 tools/docgraph check",
+      "exit_code": 1,
+      "output_summary": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes",
+      "reason": "Pre-existing duplicate IDs in retained audits and scratch copies, including c5.adjacent-degree5-interfaces. No snapshot was removed or edited."
+    }
+  },
+  "evidence_layers": {
+    "external_four_colour_oracle": false,
+    "lean": "No new Lean proof.",
+    "paper": "Five necessary profiles, exact attachment reflection, empty-disk triangulation, exhaustive eight-row lift and bare-planar vertex-minimality contradiction.",
+    "python": "Complete five-profile literal fibres, paper table, 48 fixed original sides and all 3456 reduced full colourings."
+  },
+  "independent_review": "Separate mathematical review checked the paper table, the two exact attachment reflections, arbitrary-Y embedding, existing-edge handling, unchanged full opposite witnesses and bare-planar minimality; no substantive defect found.",
+  "publication": "No commit or push; unrelated pre-existing work preserved.",
+  "scope": "Seven-vertex W5-plus-triangular-ear side of the double-C6 twelve-cut; arbitrary-source proof in the linked report.",
+  "sources_sha256": {
+    "audits/2026-10-29-twelve-cut-c6-e1a90fe/c6-sources.json.gz": "56bdf75ba43ec30a46f3892af3a8a30a489bb058765940e492c48c0dfda8d0bd",
+    "scripts/four_color_bond_perimeter_small_cuts.py": "41b1829ac1568a4a71fde34e30bad785f32535be9aaa715e14425555aab79449",
+    "scripts/four_color_twelve_cut_c6_verification.py": "c18c50ea73080694d8d3db0855ce1258996734c04bb09c203d9a510fd7710acd",
+    "scripts/four_color_twelve_cut_w5_ear_verification.py": "34bd875e5a363e9b88765123a7553c47a75899e994915afd3ae9a4eea1686ca3"
+  },
+  "summary": {
+    "complete_seven_vertex_lifts": 6624,
+    "empty_rows": 17612,
+    "fixed_original_sides": 48,
+    "literal_rows": 20480,
+    "nonempty_rows": 2868,
+    "paper_table_cells": 24,
+    "profiles": 5,
+    "reduced_boundary_rows": 960,
+    "reduced_full_colourings": 3456,
+    "reduced_graphs_with_existing_added_chord": 24,
+    "reflections": 2
+  }
+}

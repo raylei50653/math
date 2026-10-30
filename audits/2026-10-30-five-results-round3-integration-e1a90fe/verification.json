@@ -1,0 +1,171 @@
+{
+  "base_commit": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "canonical_sources_sha256": {
+    "docs/c5_nonfacial_two_gap_exclusion.md": "c7dd57dcfc227c13358eff306d91dc5125d1b293d8967f369f869d93d9610dbf",
+    "docs/ck_bernhart_marked_separation.md": "b86284ea496a292ca46f60a8f11c35c31746c3b06c535b1cb04d08227ba0671e",
+    "docs/four_color_no_hub_min5_continuation.md": "96b82aa2b1e739ddfb8ff1221b6d28b83544344bc26f94abe987e7e2de393de3",
+    "docs/four_color_three_step_shared_exterior.md": "bac76dfaa2dcaff41d6e283c40e22cd97e60666f8f78c2f329617c8bb41de4d7",
+    "docs/four_color_twelve_cut_eight_side_classification.md": "ab584f18b75680ca09e6714d08e5c79eabe8b550c51323bdd3ee449330f59f6b"
+  },
+  "checks": {
+    "candidate": {
+      "full_worktree_artifact_check": {
+        "cause": "Unarchived >1MB output from separate concurrent c5-d2-separation work; no outside file changed.",
+        "exit_code": 1,
+        "log": "candidate-artifacts-full.log"
+      },
+      "isolated_index_only": true,
+      "real_index_unchanged": true,
+      "scoped_candidate_excluded_paths": [
+        "audits/2026-10-30-c5-d2-separation/controls.json"
+      ],
+      "scoped_checks": [
+        {
+          "command": [
+            "python3",
+            "tools/check_generated_artifacts.py"
+          ],
+          "exit_code": 0,
+          "log": "candidate-artifacts-scoped.log",
+          "name": "candidate-artifacts-scoped"
+        },
+        {
+          "command": [
+            "git",
+            "diff",
+            "--cached",
+            "--check"
+          ],
+          "exit_code": 0,
+          "log": "candidate-whitespace-scoped.log",
+          "name": "candidate-whitespace-scoped"
+        }
+      ]
+    },
+    "docs": {
+      "exit_code": 0,
+      "log": "check-docs.log",
+      "summary": "OK: 802 Markdown files, 10722 local links; anchors, index, handoff, guide progress checked"
+    },
+    "formal_docgraph": {
+      "exit_code": 0,
+      "log": "docgraph-docs.log",
+      "summary": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+    },
+    "source_hashes": {
+      "record": "source-verification.json",
+      "result": "PASS 37 current source hashes; min5 complete replay and three-step output hash"
+    },
+    "whitespace": {
+      "exit_code": 0,
+      "log": "diff-check.log"
+    },
+    "whole_docgraph": {
+      "exit_code": 1,
+      "log": "docgraph-whole-tree.log",
+      "scope": "72 existing duplicate IDs in frozen/scratch copies; none modified",
+      "summary": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes"
+    }
+  },
+  "date": "2026-10-30",
+  "evidence_layers": {
+    "lean": "No new Lean proof or build; no main solver edits.",
+    "paper": "Cross-review supplied five results; next tasks remain conjectures and obligations.",
+    "python": "Frozen-domain replays and hashes only; no next-round searches or producer expansion."
+  },
+  "excluded_bernhart_rays": 0,
+  "head_and_real_index_unchanged": true,
+  "new_bernhart_zero_coordinates": 0,
+  "next_task_boundaries": [
+    "Quantify over all annotations vs one forged arrow",
+    "Target containing-f bond existence vs conditional transfer",
+    "FullGamma three-gap C5 vs weaker sharp plane control",
+    "Nine-point original12-edge R_d profile vs generic degree-five-triangle nine-cut",
+    "First branched remaining weak dual vs known fan/periodic whole-graph colouring"
+  ],
+  "outside_artifact_registration_at_final": false,
+  "propagation": {
+    "reviewed_unchanged": [
+      "Five canonical source reports/scripts/receipts",
+      "Main 4CT contract direction/general existence",
+      "HANDOFF/README",
+      "Other concurrent research incl. c5-d2-separation and period-four S5"
+    ],
+    "stop": "Direct synthesis/routing; no general source existence or strict-gain closure.",
+    "updated": [
+      "four-fronts synthesis: latest five tasks and source boundaries",
+      "4CT guide and solver guide: latest task navigation only",
+      "STATUS: synthesis index only",
+      "Existing archive policy: one supplied compressed certificate archived with exact source bytes"
+    ]
+  },
+  "publication": "No commit or push.",
+  "replays": [
+    {
+      "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_no_hub_min5_verification.py --out /tmp/round3-root-no-hub-min5.json",
+      "executor": "root",
+      "exit_code": 0
+    },
+    {
+      "checker": "scripts/four_color_twelve_cut_eight_side_verification.py",
+      "executor": "delegate reverse_shelling",
+      "result": "Temporary output byte equal original saved gzip; no enumeration expansion"
+    },
+    {
+      "command": "python3 scripts/ck_bernhart_marked_separation.py --check audits/2026-10-30-bernhart-marked-separation/verification.json",
+      "executor": "delegate bernhart_benchmark",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/c5_nonfacial_two_gap_verification.py --check audits/2026-10-30-five-reference-two-gap/verification.json",
+      "executor": "delegate parity_shared_cut",
+      "exit_code": 0
+    },
+    {
+      "checker": "scripts/four_color_three_step_shared_exterior_replay.py",
+      "executor": "delegate reverse_shelling",
+      "scope": "Partial independent replay described in reviews.three_step; full exchange loop inherited, not rerun"
+    }
+  ],
+  "reviews": {
+    "bernhart": {
+      "paper": "Conditional containing-f two-edge bond has leaf-free side and sound exact transfer; existence remains OPEN. MC40 rejects automatic mark inheritance only and lacks target full lift. Equal-color sector does not control newly cut unequal-color fibres.",
+      "replay": "Existing --check PASS.",
+      "reviewer": "bernhart_benchmark"
+    },
+    "eight_side": {
+      "paper": "Unique disk, 17-to-15 coverage, chord/identification universal lifts sound. >=9 conclusion limited to original large-side double-C6 source.",
+      "replay": "Original checker to temporary file byte equal saved gzip; all source/raw/gzip hashes PASS; 960 reduced and 10,680 original colorings.",
+      "reviewers": [
+        "root",
+        "reverse_shelling"
+      ]
+    },
+    "five_reference": {
+      "paper": "General nonfacial odd-cycle >=3 singleton-hit omissions sound, including chord incidences. C1 alternate proof retains ordinary parity for isolated inward branch. Sharp plane control lacks fullGamma; old shared-cut strict gain unproved.",
+      "replay": "Existing --check PASS.",
+      "reviewer": "parity_shared_cut"
+    },
+    "min5": {
+      "paper": "Degree/short-cycle/canonical source, full cyclic-strip fibres, alternating support and all ear branches read. Whole original class has explicit C-type reduction.",
+      "replay": "Original-edge checker output byte equal decompressed 63,534,000-byte saved certificate.",
+      "reviewer": "root"
+    },
+    "three_step": {
+      "paper": "zv enters third bucket; all-acceptance construction sound. Glue and exact swap are generic-graph semantics except inherited NC. Forged annotation rejection is not relation-family rejection.",
+      "replay": "Independent original-edge embedding, full neighborhoods/buckets, all 4^10 kernel assignments, complete history/projections/outer rows and source/output hashes PASS. Full 1,429,332 exchange loop not rerun in integration; saved replay and UF/BFS implementations reviewed.",
+      "reviewer": "reverse_shelling"
+    }
+  },
+  "routing_after_sha256": {
+    "docs/4ct_guide.md": "23f89a4514e6c5ab9d9db32baaf3577e3843b50a42d239ac128b57ea3df0fc7e",
+    "docs/STATUS.md": "4f52729a9de3398f2cf1878132cb19df72dcee6f3ab15571992ce016c6b0dcd0",
+    "docs/four_color_four_fronts_verification.md": "95286ca6fcc7c1acc94b5b8985287b5526bbfdc157be0dc8433afac1ad11d12e",
+    "docs/four_color_guide.md": "6a8a6dd047c9f8780943bce234b3e8b96d5794c2157318421c9d116577674d20"
+  },
+  "schema": "five-results-round3-integration-v1",
+  "scope": "Cross-review five delivered results and organize five next tasks. No next-round research or enumeration.",
+  "source_verification": "source-verification.json",
+  "status": "Five results cross-reviewed and next five tasks organized; historical/global checks retain explicit limitations.",
+  "storage_verification": "storage-verification.json"
+}

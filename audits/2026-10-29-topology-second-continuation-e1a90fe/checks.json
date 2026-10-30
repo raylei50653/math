@@ -1,0 +1,56 @@
+[
+  {
+    "argv": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "log": "check-0.log",
+    "summary": "OK: 782 Markdown files, 10429 local links; anchors, index, handoff, guide progress checked"
+  },
+  {
+    "argv": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "log": "check-1.log",
+    "summary": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+  },
+  {
+    "argv": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "exit_code": 1,
+    "log": "check-2.log",
+    "summary": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "check-3.log",
+    "summary": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-m",
+      "py_compile",
+      "scripts/four_color_bond_perimeter_small_cuts.py",
+      "scripts/c5_two_reference_parity_verification.py",
+      "scripts/ck_bernhart_cross_split_audit.py"
+    ],
+    "exit_code": 0,
+    "log": "check-4.log",
+    "summary": ""
+  }
+]

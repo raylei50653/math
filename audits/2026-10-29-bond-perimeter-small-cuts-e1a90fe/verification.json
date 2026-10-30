@@ -1,0 +1,82 @@
+{
+  "base_commit": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "commands": [
+    {
+      "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_bond_perimeter_small_cuts.py --out audits/2026-10-29-bond-perimeter-small-cuts-e1a90fe/small-cuts.json",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONHASHSEED=17 uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_bond_perimeter_small_cuts.py --out /tmp/bond-perimeter-small-cuts-seed17.json",
+      "exit_code": 0
+    },
+    {
+      "command": "cmp audits/2026-10-29-bond-perimeter-small-cuts-e1a90fe/small-cuts.json /tmp/bond-perimeter-small-cuts-seed17.json",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m py_compile scripts/four_color_bond_perimeter_small_cuts.py",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check -- docs/four_color_bond_perimeter_small_cuts.md scripts/four_color_bond_perimeter_small_cuts.py",
+      "exit_code": 0
+    }
+  ],
+  "date": "2026-10-29",
+  "not_run": [
+    "Lean",
+    "Whole-doc checks and root integration checks"
+  ],
+  "paper_scope": [
+    "Sphere simple triangulation and minimum degree five imply global edge connectivity at least five via a minimum bond.",
+    "With S34, both sides of size at least two imply cut at least eight; both size at least three and cut at most twelve imply connected sides.",
+    "With S34, sides at least four imply cut at least ten; nine cuts with sides at least three have a facial degree-five triangle side.",
+    "With S34/S5, exterior perimeter five has exactly triangle-plus-bridge, triangulated-pentagon, or W5 shape when the other side has at least two vertices.",
+    "With S34/S5, sides at least seven imply cut at least twelve; equality has perimeters six and six.",
+    "At cut twelve with both sides at least seven, repeated perimeter-six facewalks would decompose as 3+3, 4+2, or 2+2+2 and S34 gives at most five vertices; hence both interfaces are simple C6 and equal the original distinct cut-endpoint sets."
+  ],
+  "python_scope": {
+    "connected_bonds_with_original_rotation_facewalk": 18731,
+    "original_graphs": [
+      "icosahedron",
+      "capped-antiprism-6",
+      "capped-antiprism-7"
+    ],
+    "short_cycle_side_checks": 434,
+    "small_cuts_sides_ge_three": 748,
+    "twelve_cut_two_simple_C6_endpoint_sets": 32,
+    "unordered_vertex_partitions": 43005
+  },
+  "remaining_open": [
+    "Reducibility of facial 5-5-5 triangles or twelve cuts",
+    "Larger perimeter restrictions",
+    "Joint two-side history closure",
+    "E932",
+    "4CT"
+  ],
+  "schema": "bond-perimeter-small-cuts-receipt-v1",
+  "sources": {
+    "audits/2026-10-29-bond-perimeter-small-cuts-e1a90fe/PROPOSAL.md": {
+      "bytes": 1145,
+      "sha256": "a33efd5c77548a2ba0efe3415dda3f51395532d20f23371a722d212f1a2d1ce6"
+    },
+    "audits/2026-10-29-bond-perimeter-small-cuts-e1a90fe/small-cuts.json": {
+      "bytes": 763312,
+      "sha256": "256360fd407aebdb2563c956f4b13c8dd925285296ff1a4144cc3ce507e4b804"
+    },
+    "docs/four_color_bond_perimeter_small_cuts.md": {
+      "bytes": 11661,
+      "sha256": "317dfecbe993c19f05c9c4b0440bb0e29434ef01852c0e55ba946b557cc0f207"
+    },
+    "docs/four_color_eight_cut_three_step_continuation.md": {
+      "bytes": 10130,
+      "sha256": "89c8f5fc956a501f8ce7502180ace8ba30f6a0b86d5f69c83bf5380a9e384811"
+    },
+    "scripts/four_color_bond_perimeter_small_cuts.py": {
+      "bytes": 11769,
+      "sha256": "41b1829ac1568a4a71fde34e30bad785f32535be9aaa715e14425555aab79449"
+    }
+  },
+  "trust": "Paper topology is not Lean formalized. S34/S5 are explicit structural hypotheses; their inherited minimum-counterexample applicability uses the previously cited classical lemmas. No 4CT oracle.",
+  "unchanged": "Previous round report and receipt sources preserved. No commit or push."
+}

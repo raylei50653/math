@@ -1,0 +1,131 @@
+{
+  "archive": {
+    "blob": "audits/.archive/blobs/45553c568258dd15fd75466daaffb4e6c3955614f411a3013a19298373986d96.gz",
+    "byte_identity_verified": true,
+    "compressed_bytes": 52003,
+    "path": "audits/2026-10-30-bernhart-marked-bond-obstruction/verification.json",
+    "raw_bytes": 1796470,
+    "sha256": "45553c568258dd15fd75466daaffb4e6c3955614f411a3013a19298373986d96"
+  },
+  "base_commit": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "canonical_source": "docs/ck_bernhart_marked_bond_existence.md",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "scripts/ck_bernhart_marked_bond_obstruction.py",
+        "--check",
+        "audits/2026-10-30-bernhart-marked-bond-obstruction/verification.json"
+      ],
+      "exit_code": 0,
+      "log": "audits/2026-10-30-bernhart-marked-bond-obstruction/math.log",
+      "name": "math",
+      "summary": "{\"edge_disjoint_paths\": 3, \"excluded_rays\": [], \"literal_word_coordinates\": 729, \"marked_cycle_checks\": 2304, \"marked_edge_pair_deletions\": 74, \"multiplier\": 2, \"new_forced_zero_coordinates\": 0, \"original_complete_colorings\": 576, \"projection_fibres\": 576, \"signed_signature_coordinates\": 191, \"target_counterexample\": false, \"transformed_complete_colorings\": 1152}"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 1,
+      "log": "audits/2026-10-30-bernhart-marked-bond-obstruction/docs.log",
+      "name": "docs",
+      "summary": "missing path: docs/four_color_three_step_annotation_projection.md:220: ../audits/2026-10-30-three-step-annotation-projection-e1a90fe/checks.json\nnot directly indexed by STATUS: docs/four_color_three_step_annotation_projection.md\nnot directly indexed by STATUS: docs/four_color_no_hub_three_branch_continuation.md\nFAIL: 3 errors (806 Markdown files, 10753 local links)"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": "audits/2026-10-30-bernhart-marked-bond-obstruction/docgraph-docs.log",
+      "name": "docgraph-docs",
+      "summary": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "log": "audits/2026-10-30-bernhart-marked-bond-obstruction/docgraph-full.log",
+      "name": "docgraph-full",
+      "summary": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "audits/2026-10-30-bernhart-marked-bond-obstruction/whitespace.log",
+      "name": "whitespace",
+      "summary": "PASS; no diagnostics"
+    }
+  ],
+  "closure": {
+    "propagation_stop": "Direct source and consumers; no source exclusion or research-line status changes.",
+    "reviewed_unchanged": [
+      "docs/ck_bernhart_endpoint_ray_continuation.md",
+      "docs/HANDOFF.md"
+    ],
+    "updated": [
+      "docs/ck_bernhart_marked_separation.md",
+      "docs/ck_bernhart_marked_bond_existence.md",
+      "docs/4ct_guide.md",
+      "docs/STATUS.md",
+      "docs/four_color_four_fronts_verification.md"
+    ]
+  },
+  "date": "2026-10-30",
+  "evidence": {
+    "actual_positive_signatures": 13,
+    "actual_positive_words": 48,
+    "complete_projection_fibres": 576,
+    "edge_disjoint_marked_endpoint_paths": 3,
+    "extensions_per_fibre": 2,
+    "literal_word_coordinates": 729,
+    "marked_cycle_checks": 2304,
+    "marked_endpoints_connected_in_all_pair_deletions": true,
+    "marked_pair_deletions": 74,
+    "signed_signature_coordinates": 191,
+    "source_colorings": 576,
+    "target_positive_signatures": 23,
+    "target_positive_words": 81,
+    "transformed_colorings": 1152,
+    "unrelated_bridge_deletions_disconnecting_whole_graph": 10
+  },
+  "independent_paper_review": "Passed; original graph/rotation, complete fibres, all-scale quantifiers, marked cycles, three disjoint paths, and acceptance boundary checked.",
+  "limitations": [
+    "No actual target source was constructed; MC40 and its insertion remain non-target controls.",
+    "The complete eight-leaf lift is not inferred from the equal-color sector after cutting the marked edge.",
+    "Conditional theorem does not settle a fixed-scale or vertex-minimal variant.",
+    "Pre-existing worktree changes preserved; no commit or push.",
+    "Global docs check failed on three unrelated concurrent document link/index errors; no errors were reported for this work.",
+    "Full-worktree DocGraph failed on 72 historical duplicate-id errors; formal docs DocGraph passed."
+  ],
+  "outcomes": {
+    "complete_target_counterexample": false,
+    "conditional_diamond_theorem": "PROVED on paper for every input size and scale; output scale 2*mu",
+    "general_unmarked_separation": "OPEN",
+    "new_Lean": false,
+    "new_forced_zero_coordinates": 0,
+    "r2_exclusion": "OPEN",
+    "target_source_existence": "OPEN",
+    "universal_bond_statement": "Equivalent to target-source emptiness; OPEN"
+  },
+  "sources_sha256": {
+    "audits/2026-10-29-bernhart-endpoint-ray/r2-support-actions.json": "0e97903b47001cebd1553adcd8733a6a01e249d874ccfb60861d7c5f807debd8",
+    "audits/2026-10-30-bernhart-marked-bond-obstruction/verification.json": "45553c568258dd15fd75466daaffb4e6c3955614f411a3013a19298373986d96",
+    "audits/2026-10-30-bernhart-marked-separation/control-input.json": "84155f849945a94963de983b9f0becb8a70a83c020023e137756dd3302bb1f70",
+    "docs/ck_bernhart_marked_bond_existence.md": "0c1bfcb405fe403c4c996f2196befd3167888ebd6a8d2e93f156fed46b27c249",
+    "scripts/ck_bernhart_marked_bond_obstruction.py": "6a24b0fbe7f66a3826bd0fbd34a74a4b238df16c902edb30edb2271fe8a2730f",
+    "scripts/ck_bernhart_marked_separation.py": "344f6b5811effb7da4cde38954a807640d1410cb2f9ad4cd7b5cc67387c47e41",
+    "scripts/four_color_counts_cone_verification.py": "b260525ad1fc326e8b0fe3ee22891b793fb790f0d68e6c112083dd7282988616"
+  }
+}

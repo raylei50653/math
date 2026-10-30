@@ -1,0 +1,34 @@
+{
+  "full_worktree_artifact_check": {
+    "cause": "Unarchived >1MB output from separate concurrent c5-d2-separation work; no outside file changed.",
+    "exit_code": 1,
+    "log": "candidate-artifacts-full.log"
+  },
+  "isolated_index_only": true,
+  "real_index_unchanged": true,
+  "scoped_candidate_excluded_paths": [
+    "audits/2026-10-30-c5-d2-separation/controls.json"
+  ],
+  "scoped_checks": [
+    {
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "log": "candidate-artifacts-scoped.log",
+      "name": "candidate-artifacts-scoped"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "candidate-whitespace-scoped.log",
+      "name": "candidate-whitespace-scoped"
+    }
+  ]
+}

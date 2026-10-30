@@ -1,0 +1,140 @@
+{
+  "checks": [
+    {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check > audits/2026-10-30-three-step-shared-exterior-e1a90fe/docgraph-docs.log 2>&1",
+      "exit_code": 0,
+      "log": "docgraph-docs.log",
+      "log_sha256": "04256ec95518ab5137d0a8d90f3515e5eaa9cc9abb6056d3cfa8da89954e37ba",
+      "name": "docgraph-docs"
+    },
+    {
+      "command": "python3 scripts/check_docs.py > audits/2026-10-30-three-step-shared-exterior-e1a90fe/docs.log 2>&1",
+      "exit_code": 1,
+      "log": "docs.log",
+      "log_sha256": "29ded4ba775491558f03d7c7f0755e950d5b7a212b6deaf3adb46958ff89f1be",
+      "name": "docs"
+    },
+    {
+      "command": "git diff --check > audits/2026-10-30-three-step-shared-exterior-e1a90fe/whitespace.log 2>&1",
+      "exit_code": 0,
+      "log": "whitespace.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "whitespace"
+    },
+    {
+      "command": "python3 tools/docgraph --include 'docs/four_color_three_step_shared_exterior.md' --include 'docs/four_color_three_step_relation_control.md' check > audits/2026-10-30-three-step-shared-exterior-e1a90fe/docgraph-branch.log 2>&1",
+      "exit_code": 0,
+      "log": "docgraph-branch.log",
+      "log_sha256": "54d64e8f9baf27a73a3e192d1a307d712380add0052cd5068d60b6d75b95565f",
+      "name": "docgraph-branch"
+    },
+    {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 1,
+      "log": "docs-final.log",
+      "log_sha256": "04d9851027e85e98c21d78a2fb9c0610130528efe1b60f071783e9bf46c5d4b7",
+      "name": "docs-final"
+    }
+  ],
+  "independent_replay": {
+    "cross_row": {
+      "component_swaps": 1429332,
+      "core_outer_gluing_checks": 382446,
+      "distinct_anchored_outer_rows": 4851,
+      "distinct_anchored_remaining_rows": 63741,
+      "gluing_checks": 382446,
+      "joint_noncrossing_splits": 191223,
+      "pair_partitions": 382446,
+      "partition_sha256": "8029f525210db34dfd19be3581db9aeaa9fbb4c640d5be0d5e6784c3a7db6d52",
+      "states": 63741,
+      "swaps_changing_outer_row": 979599,
+      "swaps_preserving_outer_row": 449733,
+      "transition_sha256": "03927a5e8fe1ec629a69987f052a6c3f91ddf3fa307addc2984fe81c81143732"
+    },
+    "forged_transition_rejected": true,
+    "full_S4_representatives": 63741,
+    "history": [
+      [
+        784,
+        240
+      ],
+      [
+        2728,
+        1368
+      ],
+      [
+        10084,
+        6300
+      ]
+    ],
+    "kernel": {
+      "empty": 14044,
+      "lifts": 2808,
+      "nonempty": 2340,
+      "projection_rows": 31237,
+      "projection_tables": 128
+    },
+    "old_control": {
+      "deletion_rounds": 1,
+      "inner_accepted": 13,
+      "inner_blocked_fixed_point": 16
+    },
+    "outer": {
+      "accepted": 6564,
+      "max_lifts": 324,
+      "min_lifts": 174,
+      "patterns": 274,
+      "proper": 6564,
+      "total_lifts": 1529784
+    },
+    "results_sha256": "c281a4a50fa80fedb749501c1b85e9563c4edc7bf46c5ce6301a6494823aad65",
+    "status": "PASS",
+    "verifier": "standard-library independent original-edge replay"
+  },
+  "new_branch_files": {
+    "docs/four_color_three_step_shared_exterior.md": "bac76dfaa2dcaff41d6e283c40e22cd97e60666f8f78c2f329617c8bb41de4d7",
+    "scripts/four_color_three_step_shared_exterior.py": "3a71a954c9aba091cd9fde7bf719f86d011ff1e510ad544fb1158f1c87dd9931",
+    "scripts/four_color_three_step_shared_exterior_replay.py": "b0db8e1c701e604b0e8225997d376c5faef5eda9434da122cdeb9f0850def1cd"
+  },
+  "new_files_whitespace": "PASS",
+  "new_report_links": "PASS",
+  "propagation": {
+    "reviewed_unchanged": [
+      "docs/HANDOFF.md",
+      "docs/four_color_three_step_source_invariant.md"
+    ],
+    "stop": "Direct parent only; relation-family acceptance and general existence remain OPEN.",
+    "updated": [
+      "docs/four_color_three_step_relation_control.md",
+      "docs/4ct_guide.md",
+      "docs/four_color_guide.md",
+      "docs/STATUS.md",
+      "docs/four_color_four_fronts_verification.md"
+    ]
+  },
+  "retained_historical_controls": {
+    "controls": [
+      {
+        "name": "historical_adjacent9",
+        "nonempty_fibres": 2256,
+        "solution_count": 7776
+      },
+      {
+        "name": "historical_tree9",
+        "nonempty_fibres": 4096,
+        "solution_count": 26244
+      }
+    ],
+    "replayed_this_round": false,
+    "sha256": "d2c8654a6cccac680187c88fdd730eb5a8b47a492bf6defd7d753c9b7b1531fd",
+    "source": "audits/2026-10-29-three-step-relation-control-e1a90fe/results.json"
+  },
+  "scope": "ZV-17 only. Mathematical replay passes; unrelated workspace work is preserved.",
+  "selected_archive": {
+    "compressed_bytes": 232206,
+    "path": "audits/2026-10-30-three-step-shared-exterior-e1a90fe/results.json",
+    "sha256": "c281a4a50fa80fedb749501c1b85e9563c4edc7bf46c5ce6301a6494823aad65",
+    "status": "PASS"
+  },
+  "source_and_output_hashes": "PASS"
+}

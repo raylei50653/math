@@ -1,0 +1,59 @@
+{
+  "docgraph-docs": {
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "lines": 1,
+    "log": "docgraph-docs.log",
+    "sha256": "04256ec95518ab5137d0a8d90f3515e5eaa9cc9abb6056d3cfa8da89954e37ba"
+  },
+  "docgraph-whole": {
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "exit_code": 1,
+    "lines": 73,
+    "log": "docgraph-whole.log",
+    "sha256": "4fa4d33f73a0d0fe18b580d708bacedfb3108d73fe0fb6855350b0a7283ba67d"
+  },
+  "docs": {
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 1,
+    "lines": 3,
+    "log": "docs.log",
+    "sha256": "3f1941ecfd609bbc73f3c06cbab6bb4808677f6a78908b3914acaa7c3b07f0a9"
+  },
+  "independent-replay": {
+    "command": [
+      "python3",
+      "scripts/four_color_three_step_relation_replay.py",
+      "--results",
+      "audits/2026-10-29-three-step-relation-control-e1a90fe/results.json"
+    ],
+    "exit_code": 0,
+    "log": "replay.json",
+    "sha256": "58c4f4b631e8fb39fb5997f731041b7d06d47df80b80fe8c8578ce9544e99340"
+  },
+  "scope": "New branch evidence only. Full-worktree documentation failures are retained separately; no unrelated files repaired.",
+  "whitespace": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "lines": 0,
+    "log": "whitespace.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

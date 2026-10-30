@@ -1,0 +1,31 @@
+{
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "log": "candidate-artifacts.log",
+      "name": "candidate-artifacts"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "candidate-whitespace.log",
+      "name": "candidate-whitespace"
+    }
+  ],
+  "initial_failures": [
+    "candidate-artifacts-initial.log",
+    "candidate-artifacts-storage-metadata.log"
+  ],
+  "isolated_index_only": true,
+  "real_index_unchanged": true,
+  "resolution": "Existing supplied large certificate archived; new metadata compacted to hash and length."
+}

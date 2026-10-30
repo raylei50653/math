@@ -1,0 +1,36 @@
+[
+  {
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.863,
+    "log": "audits/2026-10-30-research-results-e1a90fe/docs.log",
+    "log_sha256": "d0d229ccd5824d3daf12e262d5c2e3281b0c75bf6d2b5f5e5f0e657e73c1179c"
+  },
+  {
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.094,
+    "log": "audits/2026-10-30-research-results-e1a90fe/docgraph-docs.log",
+    "log_sha256": "04256ec95518ab5137d0a8d90f3515e5eaa9cc9abb6056d3cfa8da89954e37ba"
+  },
+  {
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "exit_code": 1,
+    "duration_seconds": 1.902,
+    "log": "audits/2026-10-30-research-results-e1a90fe/docgraph-whole.log",
+    "log_sha256": "b9def5264820e46a80712ed0d125b2a507b19e00c8f2327b17252cb61e0600ab"
+  }
+]

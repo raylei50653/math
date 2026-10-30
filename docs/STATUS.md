@@ -1,6 +1,6 @@
 # 文件狀態與可能變化追蹤
 
-更新：2026-10-29。四色定理主攻改為**從精確消元流程抽取平面結構不變量**；研究契約與接續工作見 [4CT導覽](4ct_guide.md#精確消元主線的研究契約)。方向調整本身沒有新增結構定理；同日[四項提案驗證](four_color_four_fronts_verification.md)補上七邊排除及限定兩步引理。舊分類保留為工具，D無增益停止裁決不變。
+更新：2026-10-30。四色定理主攻為**從精確消元流程抽取平面結構不變量**；研究契約與接續工作見 [4CT導覽](4ct_guide.md#精確消元主線的研究契約)。[本批成果整理](history/2026-10-30-research-results.md)連入十二割九點側還原、三步註記無增益、C₅來源限制及Bernhart無標記來源化約等最新報告。共同存在性仍缺，一般932／4CT仍OPEN，D無增益停止裁決不變。
 
 2026-10-23成果及本次核對：第五輪證原h=4 C9-932至少一single、兩深點及真Q弦限制；933新合法k−8換框圖H*支持限271／314／319，迫兩個16-fibre OR正族與非crossed掛橋C的原長02路；941第七輪以154入口的完整有限共同星證書排空支七資源的兩N／一N一K，只餘d≠U、K0+K2密封K8；21份K8完整fibres得72安全候選，四類原接受殘餘30／85／116／108，後續同一外側將隔一型縮至115、21 cap總殘餘1710→1704，整支替換OPEN；第六輪非空九外點、空支T8十外點保留；空支／11型共同八外點、非單M2十外點保留；一般wrong-side沿無框附枝與共b3／U星停止點。11整型、一般三支及實際較小bad仍OPEN，共同k≥23不變。W7原40型已排38型、餘0／1；profile0的K=1僅L未排，短型I的03／02八配對已得至少四邊替代路、混合分支私有交錯點與U02單翻後唯一03，未排配對；II僅B／U=w窄排除，兩短整型與長路大cell仍OPEN，父W7未解。941最後拒絕仍為J1兩項／J2六項完整fibres；J1原W5三邊路的n≥6 induced C11已由132項完整計數守恆排除，合n=5完成整支，type III的12色n–L路皆至少五邊。兩完整補圈的5／5／5條件型已用四點交替十圈修復；一般來源度數型覆蓋仍OPEN。P/R保未來四列支援等價完整十列相等；一般計數代表命題已被真disk反駁，一般支援覆蓋仍OPEN。
 同候選一般三拒絕排除、嚴格較小bad、W110+W101>0、omega_e=0及完整319仍OPEN；一般K≤22、固定r6的k≥25不變，無新Lean。研究線標記見 [HANDOFF](HANDOFF.md)；精確停止點與重播由各線導覽連入權威來源查閱。
@@ -18,7 +18,40 @@
 
 | 報告入口 | 指定範圍結果與停止點 |
 | --- | --- |
-| [四項突破提案的分別驗證](four_color_four_fronts_verification.md) | 2026-10-29：七邊排除；兩步瓶頸及三角anchor成立，維度界限須限原邊來源；剝殼給單環但不給存在性；計數錐仍容許932，手術須完整切開接口。 |
+| [完全二分圖交叉數與局部重畫](zarankiewicz_local_redrawing.md)（[導覽](zarankiewicz_guide.md)；[旋轉超額接續](zarankiewicz_rotation_excess.md)） | 整星重畫帳目、缺額與旋轉超額預算；完整整數計數仍有共同殘餘，固定證書被旋轉相容性排除。一般不可避免性OPEN；外部完整證明及Lean檢查另列來源。 |
+| [五度原星的封鎖來源與緩衝區](c5_kempe_blocked_realizability.md) | 同源三角面迫回返週期為偶數，精確F2證書再排週期二；封鎖fibre必偶數且≥4。拒D允許的薄傳輸模型，保留完整O核一／二層遠端重接；一般932與逐分量存在命題OPEN。 |
+| [S5 與五步回返週期四](c5_kempe_period4_s5.md) | 五個共同原面給S5三邊捷徑與完整附件五環排除；固定五環對H²差異有剛性。保存有限來源搜尋、Errera負控制及獨立重播，一般週期四／全封鎖仍OPEN。 |
+| [兩輪差異的原附件分隔](c5_d2_attachment_separation.md) | 每差異分量的全部附件含固定原簡單分隔環且長≥6，排除至多五附件核心。真S5兩輪前綴有固定六接口，未封鎖／未四輪閉合；一般迫五環及P₄仍OPEN。 |
+| [無弦六附件核心的跨輪限制](c5_six_attachment_cross_round.md) | 六附件等號迫原無弦六環，Q恰佔完整開側；小核心可獨立切換，首次指定步失敗有同態互補交換出口。保存兩組差異、二十步接合與完整盤fibres／獨立重播；尚未迫出一般逃逸，六附件分支、P₄及Q5仍OPEN。 |
+| [四項突破提案的分別驗證](four_color_four_fronts_verification.md) | 原驗證與後續綜合；[最新成果整理](history/2026-10-30-research-results.md)含有限註記無增益、三缺子型排除、九點側還原、指定三支來源延伸及Bernhart通用標記。舊四份階段紀錄保留當時語境；一般存在性仍OPEN。 |
+| [反向剝殼非空定位](four_color_reverse_shelling_continuation.md) | m≥3逐列保非空；首次失敗只在全頂點m=2後綴。9圖7,424 fibres核對；普遍不鎖定仍等強於4CT。 |
+| [共同原hub的飽和後綴](four_color_saturated_hub_continuation.md) | 已非空且原hub連滿外環時，完整三色支援與fibre乘積經收口保留，排除該類整段後綴鎖定；一般來源覆蓋仍OPEN。 |
+| [無hub雙錐連弧收口](four_color_no_hub_bipyramid_continuation.md) | 原雙錐連弧來源的完整路fibres經所有合法m=2保留，支持端點異色舊整列；仍受古典四度點化約涵蓋，一般來源及不鎖定OPEN。 |
+| [原最小度五的無hub收口](four_color_no_hub_min5_continuation.md) | 偶環雙帽反稜柱滿足S34／S5且實際可達；完整環帶fibres與交替弧支援經所有合法耳收口保留。保留雙錐的面填區候選不存在；有效新類仍有C還原，一般來源及不鎖定OPEN。 |
+| [首次三支匯合的共同接口](four_color_no_hub_three_branch_continuation.md) | 同一最小度五原圖類的六點三支來源實際可達；八型與兩欄構造支持全部192份局部四色列，同根全部耳步保留完整共同見證，含空fibres及fan退化。原整圖C還原仍適用；一般三支初始支援OPEN。 |
+| [五葉匹配與共同切口](c5_parity_shared_cut_continuation.md) | P1–P3局部啟動：六項PM式、精確重接、五葉C1與≤2正收益區域。五參考共同排除OPEN，P4未開始。 |
+| [Bernhart靶標與B₈對照](ck_bernhart_benchmark.md) | 正確6–6圖D154／B₈最大76；5–5另一圖D160／B₈130。整數primal／dual及古典C還原重播；未有新可約性。 |
+| [八割與三步匯合](four_color_eight_cut_three_step_continuation.md) | 原面周長紙證三角化兩側≥3的割≥9；二點八割保留。有限鬆弛5392→36→20，三步雙中心完整fibres核對；一般平面排斥仍缺。 |
+| [三步共同原附件不變量](four_color_three_step_source_invariant.md) | 指定雙輪圈／外框來源的原附件非交錯與三步證書保留；排除全部給定前驅 split 非交叉檢查仍通過的 ALT-OUTER-17。相同空 fibre 有平面來源，關係列限制及一般存在性 OPEN。 |
+| [三步完整關係族控制](four_color_three_step_relation_control.md) | ALT／平面 twin 共用全部生成表、完整核心 fibres 及其關係閉包；完整剩餘問題仍不同。原 C₀ 完整分割固定點仍留16型，新增刪列為0；共同外側限制仍OPEN。 |
+| [三步實際 zv 通道與跨 lift 交換](four_color_three_step_shared_exterior.md) | 新邊確入第三 bucket；七點接口2,808 lifts，外框仍全接受。六對分量接合及1,429,332次交換完整重播；拒絕混接註記，新增解列排除0，關係族正向驗收仍OPEN。 |
+| [共同交換註記投影與停止](four_color_three_step_annotation_projection.md) | 真正C₀上六對分量traces／完整交換立方存在量化恰回舊分量分割閉包；16型、864份共同註記全存活，停止此有限公理。完整共同原圖實現與關係增益仍OPEN。 |
+| [BOND周長十／十二下界](four_color_bond_perimeter_small_cuts.md) | S34下兩側≥4的割≥10，九割有facial555側；加S5後兩側≥7的割≥12，等號為雙簡單C₆框。43,005分割核對，未擴9–11抽象D表。 |
+| [十二割雙C₆來源與接合](four_color_twelve_cut_c6_sources.md) | 有序十二附件及完整族；S5迫跨度≤3，有弦側恰W₅加耳。七點、[八點側](four_color_twelve_cut_eight_side_classification.md)及[九點側](four_color_twelve_cut_nine_side_classification.md)完成C還原；裸最小反例只餘兩側至少十點的無弦十二割，一般十二割OPEN。 |
+| [十二割七點W₅加耳C還原](four_color_twelve_cut_w5_ear_reduction.md) | 五個必要附件型、三型補弦及八列表證每份縮圖染色保同一對側見證還原；裸平面頂點最小性排除此側。48原耳側、3,456份完整縮圖染色核對。 |
+| [十二割八點側分類與C還原](four_color_twelve_cut_eight_side_classification.md) | 唯一原誘導盤，17個度數候選中兩型違反S5，其餘15型均可實現；14型補三弦、均勻型識別相對框點，960份縮圖染色保同一對側見證還原。裸最小反例只餘兩側至少九點，一般十二割OPEN。 |
+| [十二割九點側分類與限定附件還原](four_color_twelve_cut_nine_side_classification.md) | 唯一原五度三角面盤，35個必要附件排9型、26型皆有真來源；全部4096框列與完整R_d保留。25型補三弦、均勻型識別框點，2,232份縮圖染色保同一對側見證。裸最小反例此割兩側至少十點；一般九割及十二割OPEN。 |
+| [雙偶補參考與奇環](c5_two_reference_parity_continuation.md) | 證奇環雙命中及至少兩條跨組K段；舊F4定向凍結真disk九環，該條件仍不迫偶補。五參考共同排除OPEN。 |
+| [五參考共同奇環輪轉](c5_five_reference_common_rotation.md) | 共同側字迫跨側命中數偶、內交錯段奇長；拒具名輪轉／五鏈接口候選，保九環及三族負控制。未超過完整共同切口、E932仍OPEN。 |
+| [五參考來源子類排除](c5_five_reference_source_exclusion.md) | 原單命中缺邊界與完整Γ端葉三角排除；缺邊界現由下列二缺邊接續提高至三。九環／三族及完整舊切口控制保留，嚴格增益與一般E932仍OPEN。 |
+| [非面五環二缺邊排除](c5_nonfacial_two_gap_exclusion.md) | 內側完整回返奇偶將非面奇環單命中缺邊界提高至三，排空五環二缺子類；極小來源另有完整C1證明。保留三缺邊真來源及舊控制，一般五族／E932仍OPEN。 |
+| [非面五環恰三缺邊相容性](c5_nonfacial_three_gap_compatibility.md) | 極小性迫唯一側字11000及五種必要命中，完整Γ排除雙直接端葉子型；含內弦真控制及普通PM／odd消去轉移保留，其餘三缺、四／五缺與E932仍OPEN。 |
+| [Bernhart跨split語意稽核](ck_bernhart_cross_split_audit.md) | 76列精確拆成兩個41列full-lift極射線；真C₈同n/y而Z不同，PM式不能直接套y。本輪額外刪0列。 |
+| [Bernhart retained共同原邊交會](ck_bernhart_retained_intersection.md) | 兩個41列子靶各補具名局部真來源、完整切口及 rotation 奇偶必要式；只排除指定接線，全部正比例來源仍OPEN，新增必零列0。 |
+| [Bernhart共同端點補證與r₂來源](ck_bernhart_endpoint_ray_continuation.md) | 完成 RIP 推離／邊界修正，16＋2,992舊分支全核；r₂全來源可封口為指定六葉lift。全部正偶比例排除OPEN，新增必零列0。[驗證紀錄](history/2026-10-29-bernhart-endpoint-ray.md)。 |
+| [Bernhart標記六葉與安全分離](ck_bernhart_marked_separation.md) | 完整二端fibres／三split signatures及倍率契約；含f二邊割若存在必有無葉側。576染色真控制否定替換後自動保閉圈標記，但不符目標lift；一般無標記分離及r₂仍OPEN。 |
+| [Bernhart含標記bond存在性](ck_bernhart_marked_bond_existence.md) | 任一目標來源可作完整lift乘二的diamond插入，輸出標記不在任何二邊割內；故全稱bond命題與目標來源類空等價。未提供目標完整反例，原題及r₂仍OPEN，新增必零列0。 |
+| [Bernhart通用標記與來源限制](ck_bernhart_universal_marking.md) | 無標記n=μh自動有完整y=μk，固定構件乘12給無含標記二邊bond的目標；free分支也可正向化約。最小來源化為簡單3-edge-connected cubic core的同面六邊插葉；K₆分離及外部28 cubic點下界，原題／r₂仍OPEN，新增必零列0。 |
 | [七邊割獨立驗證](four_color_seven_cut_verification.md) | 修正一項過強分量斷言後，紙證非平凡邊割至少八；2,520對雙側一步必要篩選零存活。八的普遍緊性未證，932仍OPEN。 |
 | [兩步消元候選驗證](four_color_two_step_verification.md) | 保留Group A的單邊容量與triangle t=2成立；原邊來源scope下界成立，四元表拒24/256。原anchor無漏約束，未接入原型或新增Lean。 |
 | [Canonical shelling驗證](four_color_shelling_verification.md) | 單環契約、middle-tree fan計數及至多四鄰點正向還原；五點反例否定忽略累積關係的換色，同一見證提升條件已明列。環長無常數界、一般共同解存在性仍OPEN。 |
@@ -1014,6 +1047,8 @@ R31 來源 minors 見 [degree-5](c5_degree5_guide.md)，
 
 ## 歷史紀錄與舊連結
 
+- [2026-10-30：本批研究成果、證據與提交範圍](history/2026-10-30-research-results.md)
+- [2026-10-29：Bernhart retained 原邊奇偶與局部來源](history/2026-10-29-bernhart-retained-parity.md)
 - [2026-10-29：共同切口與剝殼 fan 續進整理發布](history/2026-10-29-continuations-publication.md)
 - [2026-10-29：剝殼 fan、完整關係與換色提升續推](history/2026-10-29-shelling-fan-continuation.md)
 - [2026-10-29：計數／手術共同切口續進](history/2026-10-29-counts-surgery-continuation.md)

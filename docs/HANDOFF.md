@@ -12,6 +12,7 @@
 - [State／grammar／topology 與枚舉](c5_state_guide.md)
 - [四色染色實驗與約束傳播](four_color_guide.md)
 - [Lean 形式化](lean_guide.md)
+- [完全二分圖交叉數與局部重畫](zarankiewicz_guide.md)
 
 `#進行中` 標記正在推進的研究線；無標記不代表完成，列表順序不代表優先級。
 先由各線導覽頁首導讀理解問題與想法；現況、精確描述及接續工作沿來源入口按需查閱。

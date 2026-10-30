@@ -1,0 +1,151 @@
+{
+  "artifact": {
+    "bytes": 202123,
+    "gzip_mtime": 0,
+    "path": "audits/2026-10-29-twelve-cut-c6-e1a90fe/c6-sources.json.gz",
+    "sha256": "56bdf75ba43ec30a46f3892af3a8a30a489bb058765940e492c48c0dfda8d0bd"
+  },
+  "baseline": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "commands": [
+    {
+      "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_twelve_cut_c6_verification.py --out /tmp/twelve-cut-c6.json",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONHASHSEED=17 uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_twelve_cut_c6_verification.py --out /tmp/twelve-cut-c6-seed17.json",
+      "exit_code": 0
+    },
+    {
+      "command": "compare both JSON bytes and all certificate source SHA256 values; deterministic gzip roundtrip",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m py_compile scripts/four_color_twelve_cut_c6_verification.py",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "output": "OK:98 documents,386 relations,12 families;0 errors,0 notes"
+    },
+    {
+      "command": "python3 tools/docgraph check",
+      "exit_code": 1,
+      "output": "FAIL:98 documents,371 relations,12 families;72 duplicate-id errors in preserved audits/frozen/scratch copies;0 notes"
+    },
+    {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 1,
+      "output": [
+        "missing path: docs/c5_five_reference_common_rotation.md:195: ../audits/2026-10-29-five-reference-rotation-e1a90fe/REPORT.md",
+        "missing path: docs/four_color_saturated_hub_continuation.md:197: ../audits/2026-10-29-saturated-hub-e1a90fe/verification.json",
+        "not directly indexed by STATUS: docs/c5_five_reference_common_rotation.md"
+      ]
+    },
+    {
+      "command": "scoped local links/anchors, STATUS indexing, and guide introduction check using scripts/check_docs.py functions",
+      "exit_code": 0,
+      "files": [
+        "docs/four_color_twelve_cut_c6_sources.md",
+        "docs/four_color_bond_perimeter_small_cuts.md",
+        "docs/four_color_guide.md",
+        "docs/4ct_guide.md",
+        "docs/STATUS.md",
+        "audits/2026-10-29-twelve-cut-c6-e1a90fe/PROPOSAL.md"
+      ],
+      "local_links_checked": 1267
+    },
+    {
+      "command": "focused local-link/anchor recheck after documenting exact chorded-side fibre formula",
+      "exit_code": 0,
+      "local_links": 5
+    }
+  ],
+  "date": "2026-10-29",
+  "document_source_hashes": {
+    "audits/2026-10-29-twelve-cut-c6-e1a90fe/PROPOSAL.md": "697fb2c90bfeebffc6a32759c505e1c3ed5403b9bc1e7fd51169e2b37f6db96a",
+    "docs/4ct_guide.md": "a14a0e9c28320dbb67e09b570b23eb89585af692cd8c9c69e7bd36b039c42af2",
+    "docs/STATUS.md": "7d43658c1a5c36e46b8a01717924752166de6dce5fa4041e9985032d13dc316e",
+    "docs/four_color_bond_perimeter_small_cuts.md": "6d78a6bffb008dcd12c8673ae07ef2ecba3412b47eb2556e731653f1458b3bd2",
+    "docs/four_color_guide.md": "e8472a091f1d838317164ea4277cbaefcfa86cd13e712bc89f6ca9602fc66772",
+    "docs/four_color_twelve_cut_c6_sources.md": "cf17d9bebf4c271d9d69ef1653359c4633114c2896f27d1d6ca07516fdc6d197"
+  },
+  "not_run": [
+    "Lean build: no Lean changes",
+    "Main solver tests: no main solver changes"
+  ],
+  "paper_scope": [
+    "Fixed original double-C6 source, ordered12 crossedges and exact full-family join",
+    "S5 implies every cross endpoint degree is at most3; degrees1 and3 occur equally often",
+    "Chorded C6 sides are exactly W5 plus triangular ear; sides at least8 have chordless boundary",
+    "W6-side forces alternating belt; deleting7 vertices and adding opposite alternate triangle gives C-reduction preserving arbitrary original Y coloring"
+  ],
+  "propagation": {
+    "reviewed_unchanged": [
+      "four_color_four_fronts_verification small-cut row: structural bound remains unchanged",
+      "HANDOFF: no research-line or active-tag change"
+    ],
+    "stop": "L2: local W6 source excluded; general12-cut and4CT parents stay OPEN",
+    "updated": [
+      "Canonical new report and replay certificate",
+      "BOND-PERIMETER report dated follow-up",
+      "4ct_guide relevant source paragraph",
+      "four_color_guide source navigation",
+      "STATUS direct report index"
+    ]
+  },
+  "publication": "No commit or push. Existing unrelated working-tree changes preserved.",
+  "python_scope": {
+    "C6_CHORD_side_counts": {
+      "W5_plus_triangular_ear": 48,
+      "W6": 2,
+      "large_chordless": 14
+    },
+    "all_reduced_colorings_per_reduction": 24,
+    "complete_literal_side_fibres": 262144,
+    "empty_side_fibres": 245920,
+    "exact_full_join_equals_original_edge_set": true,
+    "local_empty_proper_C6_rows": 288,
+    "local_literal_boundary_assignments": 4096,
+    "local_proper_C6_rows": 732,
+    "local_triangle_rows_all_lifted": 192,
+    "observed_W6_reductions": 2,
+    "ordered_side_families": 64,
+    "original_cuts": 32,
+    "side_internal_lifts": 16416
+  },
+  "remaining_open": [
+    "All12-cuts without a W6 side, including7-point W5-plus-ear and both sides at least8",
+    "Two-point8-cut reducibility",
+    "Facial degree5 triple9-cut reducibility",
+    "E932",
+    "4CT"
+  ],
+  "review": {
+    "implementation_review": "Root reviewed exact local-family generation, original-face reconstruction, all-solution-set joins, source hashing, and every-coloring reduction checks.",
+    "independent_paper_reviews": 2,
+    "reviewed_claims": [
+      "Mixed-face cycle ordered incidence contract",
+      "S5 five-cycle disk formed by original Y disk plus three original mixed faces",
+      "C6 chord disk classification",
+      "W6 min-degree source forces alternating annulus",
+      "Planar smaller graph even-triangle and universal source lift",
+      "Complete fibre join and explicit open boundaries"
+    ]
+  },
+  "schema": "twelve-cut-c6-receipt-v1",
+  "sources_sha256": {
+    "audits/2026-10-29-bond-perimeter-small-cuts-e1a90fe/small-cuts.json": "256360fd407aebdb2563c956f4b13c8dd925285296ff1a4144cc3ce507e4b804",
+    "scripts/four_color_bond_perimeter_small_cuts.py": "41b1829ac1568a4a71fde34e30bad785f32535be9aaa715e14425555aab79449",
+    "scripts/four_color_twelve_cut_c6_verification.py": "c18c50ea73080694d8d3db0855ce1258996734c04bb09c203d9a510fd7710acd"
+  },
+  "trust": "General lemmas are paper proofs, independently reviewed. Python checks fixed original graphs; no 4CT oracle or new Lean. S34/S5 are inherited explicit hypotheses.",
+  "uncompressed_certificate": {
+    "bytes": 7611567,
+    "sha256": "633100515317f79ed8200bdd581b5454dea7a53d8d2f5bc123382449c6ffda5c"
+  }
+}

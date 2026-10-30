@@ -2,6 +2,17 @@
 
 ## 最新進度
 
+五度原星的[逐分量來源研究](c5_kempe_blocked_realizability.md)固定較強量詞，補完整回返的偶週期≥4限制及保留全 O 的一／二層緩衝控制；support 932 仍 OPEN。
+其 [S5／週期四接續](c5_kempe_period4_s5.md)以五個共同原面與固定五環限制兩輪差異，
+排除原鄰點皆五度的來源分支；[兩輪差異附件分隔](c5_d2_attachment_separation.md)再排除
+全部至多五附件的差異核心；[六附件跨輪研究](c5_six_attachment_cross_round.md)補原無弦六環與完整開側，
+並給首次指定步失敗的條件逃逸及完整二十步控制。六附件排除、一般週期四與封鎖分量仍 OPEN。
+
+2026-10-29 支線更新：[去奇偶與共同切口](c5_parity_shared_cut_continuation.md)開始 P1–P3 局部證明，
+補六項PM式、奇偶重接及五葉C1；五參考平面排除與一般(E)仍OPEN，舊933／941停止點不變。
+同日[雙偶補參考續進](c5_two_reference_parity_continuation.md)證奇環雙命中與兩條跨組保留段，
+並凍結真disk九環單交換失敗；此必要形狀仍不保證偶補。
+
 現況核對：2026-10-25；[第五輪三線接續](../audits/2026-10-23-three-mask-round5-cb8f859/REPORT.md)的932原Q與933換框圖結果保留。[941同一外側接續](../audits/2026-10-23-941-k8-exterior-78375cc/REPORT.md)將隔一雙六度K8的接受殘餘116→115，全部21份cap的canonical總數1710→1704；四類現為30／85／115／108。七個C5列的共同必要固定點重現同一24字面態排除，無新增排除；同一實際外側E跨六個重疊色對與交換歷史的實現、K8整支替換仍OPEN。第七輪七資源含N全排、非空M2九外點、空支T8十外點保留；全11型共同八外點、非單M2十外點及k≥23不變。一般wrong-side沿無框附枝與U框割點停止點；11整型及父題OPEN。
 
 W7既有[短型I的03／02共同義務](../audits/2026-10-21-w7-I-joint-2c38d1d/REPORT.md)證各替代路至少四邊、混合配對迫私有色2／3交錯點；02第2／4型翻U02後03唯一，二步必要審核仍留2／4型，八配對同源性OPEN。[L短路／長路](../audits/2026-10-21-w7-L-path-30dde27/REPORT.md)的II窄排除與五邊七型保留；兩短整型及長路大cell仍OPEN。原40 profiles仍排38、餘0／1，一般W7、必要計數錐與J1／J2仍OPEN，無新Lean、來源實現或較小bad。
@@ -120,8 +131,20 @@ W7既有[短型I的03／02共同義務](../audits/2026-10-21-w7-I-joint-2c38d1d/
 完成條件：任一分支得到同 H 四列證書的較小 bad，或給出同一外側不能分離的具名障礙。
 停止條件：若只得到新的局部必要表而未改變 (S)／六 fibre／九列表的判定，記為診斷，不再沿同一子支加界。
 被延後的實驗：941 Γ8 逐輪外點下界、W7 剩餘 profiles 的新枚舉。R5 與強化假設 U 只作記錄，未排程。
-(M) 方向的四份探索任務見[去掉奇偶任務](tasks/c5_parity_relaxation_tasks.md)：F2 有不交交錯路草稿與 433 次隨機觸發驗證，完整證明列入 P1；
-F3 據此把反例障礙定位於補圖奇偶。F4 指定參考族的一次差集交換及 Γ 的強 Plücker 封閉性各有小圖／目錄反例。四項任務尚未開始。
+(M) 方向的四份探索任務見[去掉奇偶任務](tasks/c5_parity_relaxation_tasks.md)。
+2026-10-29 [P1–P3局部續進](c5_parity_shared_cut_continuation.md)補完整交錯路、六項PM計數式、
+精確奇偶重接與五葉C1；五個偶補參考的共同平面阻斷仍缺，各任務未全驗收，P4未開始。
+F3 把反例障礙定位於補圖奇偶；F4 指定參考族的一次差集交換及 Γ 的強 Plücker 封閉性各有反例。
+[雙參考接續](c5_two_reference_parity_continuation.md)已將既有F4 seed5前綴的一個完整失敗來源凍結，
+保存其兩條差集路、全部目標候選與奇環的實際保留段；不是全部F4失敗或五參考共同排除。
+[五參考共同輪轉](c5_five_reference_common_rotation.md)再把每份命中與完整交錯段對齊同一奇環的
+內外側，給出側別奇偶限制及具名候選排除；真五族如何迫出違規側字仍缺。
+其[來源子類接續](c5_five_reference_source_exclusion.md)由來源連通性迫面界，
+排除非面單命中覆蓋與非面端葉三角環；一般來源仍未迫入這些子類，未證超過舊切口。
+[非面五環二缺邊](c5_nonfacial_two_gap_exclusion.md)再由同一內部頂點奇偶排空該子類，
+將非面奇環的缺邊界提高至三；完整多命中及一般五參考來源仍 OPEN。
+[恰三缺邊相容性](c5_nonfacial_three_gap_compatibility.md)已分類唯一側字與全部必要單／雙命中，
+並排除雙直接端葉子型；其餘三缺來源仍 OPEN，含內弦真控制與普通 PM／odd 轉移保留。
 
 **第五輪的具名停止點（2026-10-23）。** 原全域最小r6／933兩星來源下，[933新換框圖](../audits/2026-10-23-three-mask-round5-cb8f859/933/REPORT.md)在同一原D外面識別a=c，再於新空五面識別A=R，外框改為(A,s,v,w,t)，完成k−8。完整支持限271／314／319，迫01021／01201／01231三族正，前兩族全部原rxy回填皆空；具名36-target測試後，各留下16-fibre OR必正，未算可行。原bph回填精確iff n=q且唯一；非crossed掛橋C還迫至少五邊原02 r–a/c路，五邊時為原induced C7，否則至少七邊，V crossed例外保留。六D fibre全空與[第三輪兩新k−2圖](../audits/2026-10-23-three-mask-round3-cb8f859/933/REPORT.md)的較小bad義務仍OPEN；H*本身在K132，固定Q1／Q2／fan-B方法不重啟。
 [932原Q接續](../audits/2026-10-23-three-mask-round5-cb8f859/932/REPORT.md)在原h=4分支以同一完整C9–Q9環帶、全部C lifts及原Q whole-Kempe排二十份s=0，得s≥1、d≥2、Q長至少10。每真弦兩側皆深點，端點C contacts最小距離≥3；23點局部反控制仍有Q弦。一般s的空band row必保留，不可把Q當induced。原s≥1零pair、h≥5及一般932仍OPEN，共同k≥23不變。

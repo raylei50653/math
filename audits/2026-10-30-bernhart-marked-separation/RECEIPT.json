@@ -1,0 +1,121 @@
+{
+  "canonical_source": "docs/ck_bernhart_marked_separation.md",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "scripts/ck_bernhart_marked_separation.py",
+        "--check",
+        "audits/2026-10-30-bernhart-marked-separation/verification.json"
+      ],
+      "exit_code": 0,
+      "log": "audits/2026-10-30-bernhart-marked-separation/math.log",
+      "name": "math",
+      "summary": "{\"determinant\": 1, \"excluded_rays\": [], \"marked_control_complete_colorings\": 576, \"marked_control_multiplier\": 12, \"marked_control_orbits\": 96, \"proper_leaf_subset_witnesses\": 62, \"rank\": 23, \"two_terminal_controls\": 3}"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "log": "audits/2026-10-30-bernhart-marked-separation/docs.log",
+      "name": "docs",
+      "summary": "OK: 801 Markdown files, 10699 local links; anchors, index, handoff, guide progress checked"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": "audits/2026-10-30-bernhart-marked-separation/docgraph-docs.log",
+      "name": "docgraph-docs",
+      "summary": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "log": "audits/2026-10-30-bernhart-marked-separation/docgraph-full.log",
+      "name": "docgraph-full",
+      "summary": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "audits/2026-10-30-bernhart-marked-separation/whitespace.log",
+      "name": "whitespace",
+      "summary": "PASS; no diagnostics"
+    }
+  ],
+  "closure": {
+    "propagation_stop": "Direct consumers; general existence and ray exclusion stay OPEN",
+    "reviewed_unchanged": [
+      "docs/HANDOFF.md"
+    ],
+    "updated": [
+      "docs/ck_bernhart_endpoint_ray_continuation.md",
+      "docs/four_color_four_fronts_verification.md",
+      "docs/4ct_guide.md",
+      "docs/STATUS.md"
+    ]
+  },
+  "date": "2026-10-30",
+  "evidence": {
+    "control_full_colorings": 576,
+    "edge_pair_deletions_checked": 2346,
+    "extension_multiplier": 12,
+    "marked_cycle_checks": 1152,
+    "marked_exchange_six_cycles": 96,
+    "proper_leaf_subset_witnesses": 62,
+    "reduced_tree_colorings": 48,
+    "region_complement_components": 2,
+    "region_cut_edges": [
+      59,
+      64
+    ],
+    "region_cut_edges_are_bridges": true,
+    "three_additional_controls": [
+      132,
+      132,
+      264
+    ]
+  },
+  "limitations": [
+    "MC40 does not realize the target six-lift and does not refute unmarked separator existence.",
+    "A complete factorization may retain f inside its writeback factor; the countercontrol concerns eliminating that factor into a single edge.",
+    "Splitting f may add unequal-color fibres; no full reverse r2 realization is claimed.",
+    "Full-worktree DocGraph retains 72 historical duplicate-id errors; formal docs pass.",
+    "Existing unrelated worktree changes preserved. No commit or push."
+  ],
+  "outcomes": {
+    "excluded_coordinates": [],
+    "full_two_terminal_contract": "All complete fibres and all three signed signature tuples; positive-even multiplier for nonempty colorable region",
+    "general_unmarked_separation": "OPEN",
+    "marked_single_edge_replacement": "MC40-G45-Y33 refutes automatic marked-edge inheritance outside target lift",
+    "new_Lean": false,
+    "r2_exclusion": "OPEN",
+    "rank_23": "det=+1; controls only equal-color sector after opening f",
+    "target_cut_theorem": "Any actual cut delta(A) of size two containing f has a leaf-free side; existence of such cut not proved",
+    "target_lift_separation": "OPEN"
+  },
+  "sources_sha256": {
+    "audits/2026-10-29-bernhart-endpoint-ray/r2-support-actions.json": "0e97903b47001cebd1553adcd8733a6a01e249d874ccfb60861d7c5f807debd8",
+    "audits/2026-10-30-bernhart-marked-separation/control-input.json": "84155f849945a94963de983b9f0becb8a70a83c020023e137756dd3302bb1f70",
+    "audits/2026-10-30-bernhart-marked-separation/verification.json": "fea7f1a19ecf78656aecbc3f81e21f24b04ba9181866ab6b92631bd66c335ef5",
+    "docs/ck_bernhart_marked_separation.md": "b86284ea496a292ca46f60a8f11c35c31746c3b06c535b1cb04d08227ba0671e",
+    "scripts/ck_bernhart_marked_separation.py": "344f6b5811effb7da4cde38954a807640d1410cb2f9ad4cd7b5cc67387c47e41",
+    "scripts/four_color_counts_cone_verification.py": "b260525ad1fc326e8b0fe3ee22891b793fb790f0d68e6c112083dd7282988616"
+  }
+}

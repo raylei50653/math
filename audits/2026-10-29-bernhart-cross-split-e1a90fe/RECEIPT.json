@@ -1,0 +1,63 @@
+{
+  "base": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "commands": [
+    {
+      "command": "python3 scripts/ck_bernhart_cross_split_audit.py --out audits/2026-10-29-bernhart-cross-split-e1a90fe/verification.json",
+      "result": "PASS"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 scripts/ck_bernhart_cross_split_audit.py --check audits/2026-10-29-bernhart-cross-split-e1a90fe/verification.json",
+      "result": "PASS; byte-identical recomputed certificate"
+    },
+    {
+      "command": "python3 -m py_compile scripts/ck_bernhart_cross_split_audit.py",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS at branch completion"
+    }
+  ],
+  "date": "2026-10-29",
+  "evidence_layers": {
+    "Lean": "none",
+    "Python": "exact finite certificates and independent graph enumeration; no floating point or LP discovery",
+    "paper": [
+      "exact PM-to-y weighted even-complement formula",
+      "binary-popcount necessary lower bound",
+      "formal transport projection",
+      "lift extremality on positive coordinate face",
+      "plane Y-to-triangle transformation and hidden odd PM"
+    ]
+  },
+  "governance": {
+    "HANDOFF": "unchanged research lines and active tags",
+    "L1_guide_STATUS": "root integrates after branch completion",
+    "full_docs_checks": "root integrator runs after concurrent branches are present",
+    "old_hash_sources": "Only read, checked against prior receipt; unchanged"
+  },
+  "not_claimed": [
+    "Bernhart graph realization or nonrealization",
+    "extremality of projected count components",
+    "shared-cut history from signed signatures",
+    "new reducibility",
+    "4CT"
+  ],
+  "proposal_first": "docs/ck_bernhart_cross_split_audit.md experimental registration and appended Y-to-triangle control precede respective computations",
+  "publication": "not committed or pushed",
+  "scope": {
+    "Bernhart_observation": "76 n coordinates, 88 y coordinates, all 4923 equations",
+    "actual_plane_controls": "C8 wheel and one face stack; all original edges, exact integer embeddings, all PM and independent primal color enumerations",
+    "formal_PM_tables": "128 even exposed sets; uniform levels3,4 each satisfy all560 six-term equations; bad same-y extension violates70",
+    "formal_transport": "453 nonzero words, 522 total mass; two distinct joint couplings with identical marginals",
+    "full_lift_extreme_parts": "each 87 positive columns, rank86; n projection extremality not established",
+    "new_Bernhart_coordinate_deletions": 0,
+    "non_extremality": "164 columns, rank162, two nonproportional 41-coordinate count parts",
+    "plane_same_observation": "n43 coordinates and y47 coordinates identical; ordinaryPM47 to55, even-complementPM47 to47; 8 families change including Z17=0 to1"
+  },
+  "sources_sha256": {
+    "audits/2026-10-29-bernhart-cross-split-e1a90fe/verification.json": "78444ebbc81ac1b5dc5e4c5ec19d48338627a92a6be67f827df3d3ee63dd3009",
+    "docs/ck_bernhart_cross_split_audit.md": "25b36a016d0e4c9055d7bc523dbac62a5b58173bc3cf3679f55bf3aae26fabf2",
+    "scripts/ck_bernhart_cross_split_audit.py": "7740407eff64f2b0bfa9dbbe0ea00452dbdaffe939e8c161903fe8b80746d07f"
+  }
+}

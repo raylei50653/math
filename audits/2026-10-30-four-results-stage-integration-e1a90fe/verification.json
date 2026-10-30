@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-30",
+  "status": "stage_synthesis_complete",
+  "head": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "returned_reports": [
+    "docs/four_color_three_step_annotation_projection.md",
+    "docs/c5_nonfacial_three_gap_compatibility.md",
+    "docs/four_color_twelve_cut_nine_side_classification.md",
+    "docs/four_color_no_hub_three_branch_continuation.md"
+  ],
+  "fifth_result": "Pending user return. Bernhart line limited to previously returned marked-separation baseline; no new Bernhart result adopted.",
+  "mathematical_review": {
+    "annotation_projection": {
+      "reviewer": "bernhart_benchmark",
+      "paper_review": "PASS within declared A_boundary; no common-H reconstruction required in this finite relaxation",
+      "independent_replay": "PASS",
+      "output": "three-step-replay.json",
+      "counts": {
+        "literal_rows": 384,
+        "annotation_states": 864,
+        "complete_cubes": 2592,
+        "target_supports": 46752
+      },
+      "new_exclusions": 0,
+      "open": "Full A_src realizability/exclusion; arbitrary join/intersection closure not claimed"
+    },
+    "c5_three_gap": {
+      "reviewer": "parity_shared_cut",
+      "paper_review": "PASS: unique side/hit classification, all-family two-direct-leaf exclusion, complete ordinary PM/odd digon transfer",
+      "replay": "Existing --check PASS as reported by delegated reviewer; authoritative full certificate left unchanged",
+      "command": "python3 scripts/c5_nonfacial_three_gap_verification.py --check audits/2026-10-30-five-reference-three-gap/verification.json",
+      "open": "Zero/one direct leaf; general two-terminal cap; facial cycles; four/five gaps; general E932; no strict old-common-cut gain claimed"
+    },
+    "nine_side": {
+      "reviewer": "reverse_shelling",
+      "paper_review": "PASS: Euler source coverage, 35 to 26, all same-Y C reductions",
+      "independent_replay": "PASS",
+      "output": "nine-side-review.json",
+      "complete_fibres": 143360,
+      "complete_reduced_colourings": 2232,
+      "scope": "Both sides >=10 proved under original double-C6/twelve-attachment entry. Reducibility of ten or more point sides remains OPEN."
+    },
+    "no_hub_three_branch": {
+      "reviewer": "reverse_shelling",
+      "paper_review": "PASS for specified even A_n, all 192 proper local rows; arbitrary weak-dual preservation conditional on certified initial inclusion",
+      "replay": "PASS, original raw-edge verifier rerun and byte equal to saved gzip payload",
+      "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_no_hub_three_branch_verification.py --out /tmp/no-hub-three-branch-cross-review-20261030.json",
+      "replay_bytes": 5735926,
+      "replay_sha256": "0b3aa5f807f4d985b21694ccaa6225cc40027222c5a8a5ad88d18292edf5e888",
+      "saved_gzip_payload_equal": true,
+      "summary_log": "nine-side-and-three-branch-replay.log",
+      "empty_fibres": 10408,
+      "same_witness_old_lifts": 1248,
+      "marginal_nonempty_joint_empty_controls": 120,
+      "open": "Initial support and coverage for arbitrary minimum-degree-five three-branch sources; family remains C reducible"
+    }
+  },
+  "propagation": {
+    "updated": [
+      "docs/four_color_four_fronts_verification.md",
+      "docs/4ct_guide.md",
+      "docs/four_color_guide.md",
+      "docs/STATUS.md"
+    ],
+    "canonical_source_policy": "Four reports, named scripts and receipts retained byte-for-byte; see source-verification.json",
+    "reviewed_unchanged": [
+      "docs/HANDOFF.md",
+      "README.md"
+    ],
+    "stop": "Stage synthesis and direct navigation only; no next-round tasks allocated"
+  },
+  "checks": [
+    {
+      "command": "python3 scripts/check_docs.py",
+      "exit_code": 1,
+      "log": "check-docs.log",
+      "log_bytes": 243,
+      "log_sha256": "1fecf77068e7a4d29f642ab2a722a63284ac45207a0a05eba1a2d43bcb5a7cf2",
+      "last_line": "FAIL: 2 errors (811 Markdown files, 10847 local links)"
+    },
+    {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "exit_code": 0,
+      "log": "docgraph-docs.log",
+      "log_bytes": 64,
+      "log_sha256": "04256ec95518ab5137d0a8d90f3515e5eaa9cc9abb6056d3cfa8da89954e37ba",
+      "last_line": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+    },
+    {
+      "command": "python3 tools/docgraph check",
+      "exit_code": 1,
+      "log": "docgraph-whole-tree.log",
+      "log_bytes": 107689,
+      "log_sha256": "4fa4d33f73a0d0fe18b580d708bacedfb3108d73fe0fb6855350b0a7283ba67d",
+      "last_line": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "log": "diff-check.log",
+      "log_bytes": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "last_line": ""
+    }
+  ],
+  "global_doc_errors": [
+    "Concurrent docs/ck_bernhart_universal_marking.md references missing RECEIPT.json and lacked direct STATUS index at check time",
+    "Whole-tree DocGraph: 72 historical duplicate IDs; preserved snapshots"
+  ],
+  "source_verification": "source-verification.json",
+  "new_research": false,
+  "new_lean": false,
+  "main_solver_changes": false,
+  "new_task_allocation": false,
+  "commit_push": false,
+  "not_run": [
+    "Generated-artifact publication gate",
+    "Lean build",
+    "New mathematical searches"
+  ],
+  "source_ambiguity_note": "Nine-side report final OPEN line is read consistently with theorem: >=10 size bound proved; classification/reducibility of sides with >=10 vertices remains OPEN. Canonical source not edited."
+}

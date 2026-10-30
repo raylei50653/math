@@ -1,0 +1,96 @@
+{
+  "base": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "commands": [
+    {
+      "command": "uv run --with-requirements requirements.txt --with scipy python scripts/ck_bernhart_benchmark.py --solve-lp --out audits/2026-10-29-bernhart-benchmark-e1a90fe/report.json",
+      "result": "PASS; SciPy 1.18.1; exact integer primal and dual validated"
+    },
+    {
+      "command": "python3 scripts/ck_bernhart_benchmark.py --out audits/2026-10-29-bernhart-benchmark-e1a90fe/report.json",
+      "result": "PASS; stdlib replay, full graph enumeration and independent constraint solver; four corrupt-certificate controls rejected"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 python3 scripts/ck_bernhart_benchmark.py --out /tmp/bernhart-replay.json",
+      "result": "PASS; full report byte-identical to stored report by cmp"
+    },
+    {
+      "command": "python3 -m py_compile scripts/ck_bernhart_benchmark.py",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS at branch completion; root integration still ongoing"
+    }
+  ],
+  "date": "2026-10-29",
+  "documentation": {
+    "full_document_checks": "Root integrator runs after all concurrent reports are present",
+    "reviewed_unchanged": [
+      "HANDOFF research lines and active tags",
+      "single-split LOCK-NO-GAIN theorem"
+    ],
+    "root_integration_pending": [
+      "docs/4ct_guide.md",
+      "docs/STATUS.md"
+    ],
+    "updated": [
+      "docs/ck_bernhart_benchmark.md",
+      "docs/ck_d_lock_comparison.md"
+    ]
+  },
+  "evidence_layers": {
+    "Lean": "none",
+    "external_theorem": "Dvorak-Lidicky Theorem 5 only; no use of their 4CT equivalence as an oracle; Bernhart 1948 identity and historical reducibility verified in author-uploaded original text",
+    "paper": "C replacement planarity and loop safety under minimum-counterexample contract; integer LP dual implication",
+    "python": "literal disks, complete fibres, D and primal/dual integer checks"
+  },
+  "finite_scope": {
+    "B8_maximal_supports": [
+      76,
+      130
+    ],
+    "C_replacement_D_survivors": [
+      0,
+      11
+    ],
+    "C_replacement_rows": 18,
+    "D_residuals": [
+      154,
+      160
+    ],
+    "bounded_triangles_each": 14,
+    "canonical_boundary_rows_each": 274,
+    "cone_word_pair_equations_each": 4923,
+    "disks": 2,
+    "edges_each": 25,
+    "internal_assignments_each_row": 256,
+    "signed_signatures": 1961,
+    "vertices_each": 12
+  },
+  "not_claimed": [
+    "new reducibility",
+    "realizable obstructing exterior",
+    "shared-cut compression soundness",
+    "4CT",
+    "new Lean"
+  ],
+  "primary_sources": [
+    {
+      "read_scope": "author-uploaded original article text pp.144-146; no full PDF archived",
+      "title": "Arthur Bernhart, Another Reducible Edge Configuration, American Journal of Mathematics 70 (1948), 144-146",
+      "url": "https://www.researchgate.net/publication/239412990_Another_reducible_edge_configuration"
+    },
+    {
+      "read_scope": "Sections 1.1,1.2,2; Observation3, signatures, common weights, Theorem5",
+      "title": "Dvorak and Lidicky, Coloring count cones of planar graphs, arXiv:1907.04066v2",
+      "url": "https://arxiv.org/pdf/1907.04066"
+    }
+  ],
+  "source_sha256": {
+    "audits/2026-10-29-bernhart-benchmark-e1a90fe/alternative_55_diagonal-b8-certificate.json": "f21a3ad53d89b01f4d559898748acc41c7b564f274073115ebea18b75aeb7cfa",
+    "audits/2026-10-29-bernhart-benchmark-e1a90fe/bernhart_66_diagonal-b8-certificate.json": "7395c13f9e07c2df8882933a44e3a7af044e790bacfa32abfb7961276dc18ea9",
+    "audits/2026-10-29-bernhart-benchmark-e1a90fe/report.json": "75c2ade3647fd5a35e400725f5cb831d511a75203473fcc15a997619c02149ad",
+    "docs/ck_bernhart_benchmark.md": "6a2c5e183d5197d91f46cde2ab75e490de2b47b632189b37205fbe9cd8b2aa63",
+    "scripts/ck_bernhart_benchmark.py": "ccaf5a467be9c34097f3c581b6bd506cbe7a3b56b324dae86be2d49a09bed23e"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "checks": [
+    {
+      "argv": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 1,
+      "log": "docs.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": "docgraph-docs.log"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "whitespace.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "log": "docgraph-whole.log",
+      "limitation": "Existing duplicate IDs in historical audits and scratch; run before final docs prose edits."
+    },
+    {
+      "selected_archive_roundtrip": "PASS",
+      "source_output_hashes": "PASS"
+    }
+  ],
+  "initial_docs_check": {
+    "exit_code": 0,
+    "files": 786,
+    "local_links": 10473
+  },
+  "scope": "Current branch verification; parallel workspace edits remain independent. No Lean or production solver changes."
+}

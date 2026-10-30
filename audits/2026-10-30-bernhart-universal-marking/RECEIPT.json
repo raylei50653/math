@@ -1,0 +1,198 @@
+{
+  "archive": [
+    {
+      "blob": "audits/.archive/blobs/d53b05c6a98c5b558f7e5191ab742668763596b98968eda2ec5b0a9b1848fe4a.gz",
+      "byte_identity_verified": true,
+      "bytes": 1581924,
+      "path": "audits/2026-10-30-bernhart-universal-marking/verification.json",
+      "sha256": "d53b05c6a98c5b558f7e5191ab742668763596b98968eda2ec5b0a9b1848fe4a"
+    },
+    {
+      "blob": "audits/.archive/blobs/b47f6091ccc3de39bc133ccbdbd0ec74e9a2f4d807e71492d406cb2979bb6d64.gz",
+      "byte_identity_verified": true,
+      "bytes": 2097152,
+      "path": "audits/2026-10-30-bernhart-universal-marking/author-proof-archive-prefix.tar.bz2",
+      "sha256": "b47f6091ccc3de39bc133ccbdbd0ec74e9a2f4d807e71492d406cb2979bb6d64"
+    }
+  ],
+  "base_commit": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "canonical_source": "docs/ck_bernhart_universal_marking.md",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "scripts/ck_bernhart_universal_marking.py",
+        "--check",
+        "audits/2026-10-30-bernhart-universal-marking/verification.json"
+      ],
+      "exit_code": 0,
+      "log": "audits/2026-10-30-bernhart-universal-marking/marking.log",
+      "name": "marking",
+      "summary": {
+        "complete_projection_fibres": 66,
+        "control_colorings": 66,
+        "edge_disjoint_paths": 3,
+        "excluded_rays": [],
+        "extensions_per_terminal_color": 12,
+        "literal_word_coordinates": 729,
+        "local_extensions": 36,
+        "local_marked_cycle_checks": 72,
+        "local_marked_pair_deletions": 60,
+        "multiplier": 12,
+        "new_forced_zero_coordinates": 0,
+        "signed_signature_coordinates": 191,
+        "target_counterexample": false,
+        "transformed_colorings": 792,
+        "transformed_marked_cycle_checks": 1584,
+        "transformed_marked_pair_deletions": 71
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/ck_bernhart_k6_separation.py",
+        "--check",
+        "audits/2026-10-30-bernhart-universal-marking/k6-separation.json"
+      ],
+      "exit_code": 0,
+      "log": "audits/2026-10-30-bernhart-universal-marking/k6.log",
+      "name": "k6",
+      "summary": {
+        "full_author_closure_replayed": false,
+        "functional_target_value": 0,
+        "minimum_ray_functional_value": 1,
+        "new_forced_zero_coordinates": 0,
+        "parity_orbits": 31,
+        "published_K6_rays": 102,
+        "target_in_K6": false,
+        "target_source_existence": "OPEN",
+        "target_zero_orbits": 17
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/ck_bernhart_six_source_reductions.py",
+        "--check",
+        "audits/2026-10-30-bernhart-universal-marking/six-source-reductions.json"
+      ],
+      "exit_code": 0,
+      "log": "audits/2026-10-30-bernhart-universal-marking/reductions.log",
+      "name": "reductions",
+      "summary": "{\"actual_source_existence\": \"OPEN\", \"bridge_compatible_leaf_subsets\": 12, \"cross_H_leaf_pair_exclusions\": 15, \"eligible_signatures\": 23, \"four_pole_representatives\": 4, \"new_forced_zero_coordinates\": 0, \"projective_minor_determinant\": -1, \"projective_rank\": 22, \"three_three_cut_exclusions\": 20, \"zero_signature_exclusions\": 168}"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "log": "audits/2026-10-30-bernhart-universal-marking/docs.log",
+      "name": "docs",
+      "summary": "OK: 811 Markdown files, 10854 local links; anchors, index, handoff, guide progress checked"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": "audits/2026-10-30-bernhart-universal-marking/docgraph-docs.log",
+      "name": "docgraph-docs",
+      "summary": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "log": "audits/2026-10-30-bernhart-universal-marking/docgraph-full.log",
+      "name": "docgraph-full",
+      "summary": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "audits/2026-10-30-bernhart-universal-marking/whitespace.log",
+      "name": "whitespace",
+      "summary": "PASS; no diagnostics"
+    }
+  ],
+  "closure": {
+    "propagation_stop": "Direct sources and consumers; all-source existence/exclusion and research-line status unchanged",
+    "reviewed_unchanged": [
+      "docs/HANDOFF.md"
+    ],
+    "updated": [
+      "docs/ck_bernhart_universal_marking.md",
+      "docs/ck_bernhart_marked_bond_existence.md",
+      "docs/ck_bernhart_marked_separation.md",
+      "docs/ck_bernhart_endpoint_ray_continuation.md",
+      "docs/4ct_guide.md",
+      "docs/STATUS.md",
+      "docs/four_color_four_fronts_verification.md"
+    ]
+  },
+  "date": "2026-10-30",
+  "evidence_layers": {
+    "external_bound": "Relies on published computer-assisted Lemma12 and Lemmas13-19; complete author closure certificate not replayed",
+    "general_insertions_and_normal_form": "Paper proof with independent review",
+    "linear_algebra": "Exact integer/Fraction finite certificate and paper argument",
+    "local_gadget": "Complete exact Python finite certificate",
+    "published_K6_rays": "Pinned original author byte-prefix re-extraction; all102 rays checked"
+  },
+  "independent_reviews": [
+    "Universal local marking, arbitrary outer bridge/leafedge insertion, and r2/free-edge quantifiers reviewed.",
+    "Two-leaf count decomposition, projected extremality, and existence-only reduction contract reviewed.",
+    "Minimal source suppression, parallel edges, and simple 3-edge-connected cubic core normal form reviewed."
+  ],
+  "limitations": [
+    "No actual target source was supplied. MC40 and C6 are used only for local gadget and non-target insertion controls.",
+    "Two-leaf-side reduction preserves existence on the target ray, not a fixed scale, original marking, or a whole-fibre writeback bijection.",
+    "Adding an independent free edge gives a full r2 source only when disconnected eight-leaf sources are allowed. No full reverse inference from the equal-color cut sector is used.",
+    "The published K6 cone is not an all-plane-source classification; full author closure was not downloaded or replayed.",
+    "No H22 target-colouring enumeration was run.",
+    "Unrelated worktree changes retained. No commit or push.",
+    "Full-worktree DocGraph retains 72 historical duplicate-id failures; formal docs and global link/index checks passed."
+  ],
+  "outcomes": {
+    "K6": "Target outside the published 102-ray cone; this cone is not proved to cover all plane sources",
+    "complete_target_counterexample": false,
+    "count_only_lift": "n=mu*h forces y=mu*k; h is an extreme ray in the projected B6 cone",
+    "external_cubic_vertex_lower_bound": 28,
+    "minimal_source_normal_form": "Subdivide six distinct edges of one face in a simple 3-edge-connected plane cubic graph, and add the six leaves",
+    "new_Lean": false,
+    "new_forced_zero_coordinates": 0,
+    "r2_exclusion": "OPEN",
+    "target_source_existence": "OPEN",
+    "three_three_two_edge_cuts": "Excluded for every source and scale",
+    "two_four_bonds": "Existence reduction in a vertex-minimal unmarked source; not a whole-fibre writeback map",
+    "universal_marked_bond_existence": "Equivalent to unmarked h-source emptiness; OPEN",
+    "universal_marking": "Fixed 40-cubic two-pole; multiplier12; locally double-closed outer marking in no two-edge cut"
+  },
+  "sources_sha256": {
+    "audits/2026-10-29-bernhart-endpoint-ray/r2-support-actions.json": "0e97903b47001cebd1553adcd8733a6a01e249d874ccfb60861d7c5f807debd8",
+    "audits/2026-10-30-bernhart-marked-separation/control-input.json": "84155f849945a94963de983b9f0becb8a70a83c020023e137756dd3302bb1f70",
+    "audits/2026-10-30-bernhart-universal-marking/author-k6-rays.json": "a0c9aedd161d9967e1730bd9514bc15d1dab0f938c2f82f3149badec225eb301",
+    "audits/2026-10-30-bernhart-universal-marking/author-proof-archive-prefix.tar.bz2": "b47f6091ccc3de39bc133ccbdbd0ec74e9a2f4d807e71492d406cb2979bb6d64",
+    "audits/2026-10-30-bernhart-universal-marking/k6-separation.json": "bd8507758ef95f1fde585a731a8da1000742d90ba6ac84f271ff70f32e3a3364",
+    "audits/2026-10-30-bernhart-universal-marking/six-source-reductions.json": "0957f691085250a407cf92aa1ed7bc3d8a5f174352c3ce5cf616174b2aa38041",
+    "audits/2026-10-30-bernhart-universal-marking/verification.json": "d53b05c6a98c5b558f7e5191ab742668763596b98968eda2ec5b0a9b1848fe4a",
+    "docs/ck_bernhart_universal_marking.md": "f749833782cc1e44883eff6e93517a5043a92f3440fe8c1081e6b8816c864b95",
+    "scripts/ck_bernhart_k6_separation.py": "a0cc4604c5945869381f664a6972348a0c85ce86ec26d60e8cc649ba8d6b1aef",
+    "scripts/ck_bernhart_marked_bond_obstruction.py": "6a24b0fbe7f66a3826bd0fbd34a74a4b238df16c902edb30edb2271fe8a2730f",
+    "scripts/ck_bernhart_marked_separation.py": "344f6b5811effb7da4cde38954a807640d1410cb2f9ad4cd7b5cc67387c47e41",
+    "scripts/ck_bernhart_six_source_reductions.py": "a38484ff772b65710d8d83ba1b67175b197aaa48f2de97af81314b9891b880f0",
+    "scripts/ck_bernhart_universal_marking.py": "b06dd1429229d6d7a1fc524d226a87adf08d48a26cfe520f498842046c55ca98",
+    "scripts/four_color_counts_cone_verification.py": "b260525ad1fc326e8b0fe3ee22891b793fb790f0d68e6c112083dd7282988616"
+  }
+}

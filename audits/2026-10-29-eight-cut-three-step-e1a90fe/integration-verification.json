@@ -1,0 +1,48 @@
+{
+  "archive": {
+    "all_three_gzip_original_bytes_equal": true,
+    "new_paths": [
+      "audits/2026-10-29-bernhart-benchmark-e1a90fe/report.json",
+      "audits/2026-10-29-eight-cut-three-step-e1a90fe/results.json",
+      "audits/2026-10-29-reverse-shelling-e1a90fe/reverse-shelling.json"
+    ],
+    "old_blob_records_unchanged": 3125,
+    "old_file_records_unchanged": 6150
+  },
+  "baseline": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "document_checks": {
+    "check_docs": "PASS",
+    "diff_check": "PASS",
+    "formal_docs_docgraph": "PASS",
+    "whole_tree_docgraph": "FAIL: 72 duplicate-id errors in retained historical snapshots"
+  },
+  "not_run": [
+    "Lean build",
+    "main solver regression suite; main solver unchanged"
+  ],
+  "paper_review": {
+    "checker_necessary_relaxation": "root plus reverse_shelling reviewed",
+    "claim": "Triangulation with inherited short-cycle conditions: cuts with both sides of size at least 3 have size at least 9; no new reducible configuration.",
+    "eight_cut_perimeter": "root plus reverse_shelling and parity_shared_cut independently reviewed"
+  },
+  "publication": "No commit or push",
+  "replay": {
+    "bernhart_results_byte_identical": true,
+    "eight_cut_results_byte_identical_with_seed17": true,
+    "parity_source_and_result_check": "PASS",
+    "reverse_shelling_results_byte_identical": true
+  },
+  "source_sha256": {
+    "docs/4ct_guide.md": "4f6cfc594787812ab2f933b7e6851a1bbaca975085e6723526d107ab1a51af27",
+    "docs/STATUS.md": "795a70e851b47c6132af57db493353d3e172a2cdd803b00faa70c17afa62e476",
+    "docs/four_color_eight_cut_three_step_continuation.md": "89c8f5fc956a501f8ce7502180ace8ba30f6a0b86d5f69c83bf5380a9e384811",
+    "docs/four_color_four_fronts_verification.md": "d28f3ea4e281c1a9d7194a7d947ac6cbfc6a6491e47fa22aed98e234e47778d6",
+    "scripts/four_color_eight_cut_three_step_verification.py": "10c55388e2046befb833f4fd13b288288f85dba389ada2c836b979c829da34bf"
+  },
+  "storage_check": {
+    "candidate_whitespace_check": "PASS",
+    "generated_artifact_check": "PASS",
+    "real_index_unchanged": true,
+    "temporary_index_including_all_changes": true
+  }
+}

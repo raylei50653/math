@@ -1,0 +1,30 @@
+{
+  "docs": {
+    "command": "python3 scripts/check_docs.py",
+    "exit_code": 1,
+    "output": "not directly indexed by STATUS: docs/four_color_no_hub_three_branch_continuation.md\nFAIL: 1 errors (806 Markdown files, 10758 local links)\n"
+  },
+  "docgraph_docs": {
+    "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+    "exit_code": 0,
+    "output": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes\n"
+  },
+  "docgraph_whole": {
+    "command": "python3 tools/docgraph check",
+    "exit_code": 1,
+    "output": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes. All reported diagnostics are duplicate-id in retained audit/scratch snapshots; see whole-docgraph.log for complete output.",
+    "log": "whole-docgraph.log"
+  },
+  "whitespace": {
+    "command": "git diff --check",
+    "exit_code": 0,
+    "output": ""
+  },
+  "scope": {
+    "new_report_links_and_index": "No diagnostics for this task",
+    "unrelated_docs_failure": "docs/four_color_no_hub_three_branch_continuation.md is not directly indexed by STATUS",
+    "mathematical_replay": "PASS; replay.json",
+    "mathematical_review": "PASS; finite trace theorem, exact-source OPEN, and witness-preservation scope independently reviewed",
+    "publication": "Not committed or pushed"
+  }
+}

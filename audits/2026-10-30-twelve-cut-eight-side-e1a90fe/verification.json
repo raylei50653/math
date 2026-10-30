@@ -1,0 +1,78 @@
+{
+  "artifact": "audits/2026-10-30-twelve-cut-eight-side-e1a90fe/eight-side.json.gz",
+  "baseline": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_twelve_cut_eight_side_verification.py --out /tmp/eight-side.json",
+  "compressed_sha256": "9ca051812ef044be4e33cc86849ed593b369937fccba318c67cfe81b4f4af701",
+  "date": "2026-10-30",
+  "determinism": {
+    "PYTHONHASHSEED=17_byte_identical": true
+  },
+  "documentation_checks": {
+    "check_docs": {
+      "errors_outside_this_task": [
+        "missing path: docs/c5_kempe_period4_s5.md:172: ../audits/2026-10-30-c5-period4-s5/VERIFICATION.md",
+        "missing path: docs/four_color_three_step_shared_exterior.md:220: ../audits/2026-10-30-three-step-shared-exterior-e1a90fe/checks.json"
+      ],
+      "log": "audits/2026-10-30-twelve-cut-eight-side-e1a90fe/check-docs.log",
+      "passed": false
+    },
+    "docgraph_all": {
+      "cause": "72 duplicate IDs in retained audits/scratch snapshots; no snapshots modified",
+      "log": "audits/2026-10-30-twelve-cut-eight-side-e1a90fe/docgraph-all.log",
+      "passed": false,
+      "summary": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes"
+    },
+    "docgraph_formal_docs": {
+      "log": "audits/2026-10-30-twelve-cut-eight-side-e1a90fe/docgraph-docs.log",
+      "passed": true,
+      "summary": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+    },
+    "git_diff_check": {
+      "log": "audits/2026-10-30-twelve-cut-eight-side-e1a90fe/diff-check.log",
+      "passed": true
+    }
+  },
+  "evidence_boundary": "Universal source classification and C reduction are paper proofs; Python checks finite exact source, complete fibres, joins, and all reduced colourings. No new Lean; general twelve-cuts and both sides >=9 remain OPEN.",
+  "independent_review": {
+    "all_46_table_cells_and_complete_normalization": true,
+    "blocking_issues": [],
+    "short_cycle_trace_arithmetic": true,
+    "simple_planar_strictly_smaller_and_same_Y_pullback": true,
+    "universal_source_classification": true
+  },
+  "networkx_version": "3.5",
+  "results": {
+    "all_15_sources_exact_short_cycle_trace_identity_pass": true,
+    "all_17_local_Y_frame_rows": 69632,
+    "all_17_local_complete_eight_point_lifts": 29904,
+    "all_17_local_empty_rows": 59156,
+    "all_17_local_nonempty_rows": 10476,
+    "all_original_joins_equal_direct": true,
+    "all_reduced_colourings_preserve_same_opposite_witness": true,
+    "chord_reduction_literal_rows_per_type": 192,
+    "complete_X_boundary_rows_per_profile": 4096,
+    "complete_reduced_colourings": 960,
+    "degree_profiles": 17,
+    "direct_original_colourings": 10680,
+    "identification_literal_rows": 144,
+    "induced_spoke_pairs_checked": 225,
+    "intrinsic_X_complete_lifts": 312,
+    "intrinsic_X_empty_rows": 3796,
+    "intrinsic_X_nonempty_rows": 300,
+    "mixed_S5_exclusions": 2,
+    "paper_table_cells": 46,
+    "planar_facial_six_labelled_cases": 6,
+    "realizable_profiles": 15,
+    "source_side_sizes": {
+      "8+8": 13,
+      "8+9": 2
+    }
+  },
+  "schema": "four-color-twelve-cut-eight-side-receipt-v1",
+  "sources_sha256": {
+    "scripts/four_color_bond_perimeter_small_cuts.py": "41b1829ac1568a4a71fde34e30bad785f32535be9aaa715e14425555aab79449",
+    "scripts/four_color_twelve_cut_c6_verification.py": "c18c50ea73080694d8d3db0855ce1258996734c04bb09c203d9a510fd7710acd",
+    "scripts/four_color_twelve_cut_eight_side_verification.py": "a90346e3ae7e1b5e599956411004b05592248e8185e126f36b467e64a0856fee"
+  },
+  "uncompressed_sha256": "1a951be6c8b495973f933755654a964bf6aa4bad128853a5f6ccb7145e0a6ba7"
+}

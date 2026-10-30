@@ -1,0 +1,154 @@
+{
+  "archive": {
+    "append_only_existing_records_unchanged": true,
+    "compressed_bytes": 300400,
+    "gzip_original_byte_equality": "PASS",
+    "raw_bytes": 10728523
+  },
+  "base_commit": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "certificate": {
+    "bytes": 10728523,
+    "mode": 420,
+    "reason": "explicit",
+    "sha256": "f466b3dff1f5869d4a14fb5975f09e8221ca1f3b50d96994da0332496ee962d5"
+  },
+  "checks": {
+    "canonical_source_and_full_original_edge_audit": "PASS",
+    "docs_links_and_index": {
+      "errors": [
+        "missing path: docs/ck_bernhart_endpoint_ray_continuation.md:206: history/2026-10-29-bernhart-endpoint-ray.md"
+      ],
+      "exit_code": 1,
+      "local_links": 10596,
+      "markdown_files": 794
+    },
+    "formal_docs_docgraph": {
+      "exit_code": 0,
+      "summary": "98 documents,386 relations,12 families;0 errors,0 notes"
+    },
+    "git_diff_check": "PASS",
+    "independent_paper_and_checker_review": "PASS",
+    "python_compile": "PASS",
+    "seed17_byte_equality": "PASS",
+    "task_source_and_routing_links_and_index": {
+      "checked_paths": [
+        "docs/four_color_no_hub_bipyramid_continuation.md",
+        "docs/four_color_saturated_hub_continuation.md",
+        "docs/four_color_reverse_shelling_continuation.md",
+        "docs/4ct_guide.md",
+        "docs/four_color_four_fronts_verification.md",
+        "docs/STATUS.md"
+      ],
+      "status": "PASS"
+    },
+    "whole_worktree_docgraph": {
+      "exit_code": 1,
+      "first_line": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes",
+      "summary": "72 duplicate-id errors in preserved audits/scratch snapshots; no historical files removed."
+    }
+  },
+  "commands": [
+    "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_no_hub_bipyramid_verification.py --out audits/2026-10-29-no-hub-bipyramid-e1a90fe/no-hub-bipyramid.json",
+    "PYTHONHASHSEED=17 uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_no_hub_bipyramid_verification.py --out /tmp/no-hub-bipyramid-seed17.json",
+    "cmp audits/2026-10-29-no-hub-bipyramid-e1a90fe/no-hub-bipyramid.json /tmp/no-hub-bipyramid-seed17.json",
+    "python3 -m py_compile scripts/four_color_no_hub_bipyramid_verification.py",
+    "python3 tools/audit_archive.py append --paths audits/2026-10-29-no-hub-bipyramid-e1a90fe/no-hub-bipyramid.json",
+    "git diff --check",
+    "python3 scripts/check_docs.py",
+    "python3 tools/docgraph --include 'docs/**/*.md' check",
+    "python3 tools/docgraph check"
+  ],
+  "date": "2026-10-29",
+  "evidence_layers": {
+    "external": "Inherited canonical-ordering existence theorem only; explicit orders independently checked in original rotations.",
+    "lean": "Not run; no new Lean theorem.",
+    "paper": [
+      "Explicit actual canonical order reaches a nonempty first saturated source via wheel and m=3.",
+      "All states lack a common processed original hub.",
+      "Full exterior fibres are disjoint unions of processed-pole color and complete hidden-path strings, including empty fibres.",
+      "The full two-pole path formula and equal-pole support family survive either lawful end-ear closure.",
+      "Endpoint-distinct support is a full old row with its same original exterior witnesses.",
+      "Classical degree-four opposite-pole identification covers this entire source class."
+    ],
+    "python": "C4-C7, all end-ear descendants of one fixed first saturated arc per rim length; raw original-edge enumeration equals every full fibre set. Every closure has its own compatible same-root canonical geometry."
+  },
+  "finite_totals": {
+    "actual_canonical_saturated_states": 34,
+    "all_left_and_right_ear_closures": 40,
+    "complete_boundary_fibre_entries_including_zero": 38272,
+    "complete_original_edge_colorings": 12576,
+    "complete_transition_masks_including_zero": 18688,
+    "equal_pole_complete_witnesses": 11136,
+    "equal_pole_same_witness_old_row_lifts": 2016,
+    "equal_pole_supported_boundary_rows": 2352,
+    "initial_wheel_to_first_saturation_m3_transitions": 4,
+    "original_graphs": 4,
+    "rim_sizes": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "states_accepting_some_four_color_row": 20,
+    "states_rejecting_some_proper_Q012_row": 20,
+    "states_without_common_original_hub": 34,
+    "zero_boundary_fibres": 34852,
+    "zero_transition_masks": 15904
+  },
+  "not_claimed": [
+    "All labelled cyclic arc rotations in the finite audit",
+    "General source coverage",
+    "General no-lock (equivalent in strength to 4CT)",
+    "4CT",
+    "932",
+    "New exclusion beyond classical minimal-counterexample reductions"
+  ],
+  "publication": "No commit or push performed.",
+  "routing_review": {
+    "propagation_stop": "Direct parent; no general closure or D no-gain ruling changes.",
+    "reviewed_unchanged": [
+      "General existence boundary in shelling and solver guides",
+      "HANDOFF research lines and active tags",
+      "General source coverage and 4CT-equivalent universal no-lock ruling"
+    ],
+    "updated": [
+      "Authoritative no-hub bipyramid report and evidence",
+      "Both direct parent source follow-up entries",
+      "4CT guide source link",
+      "Task-five follow-up in four-fronts report",
+      "STATUS source index"
+    ]
+  },
+  "schema": "four-color-no-hub-bipyramid-receipt-v1",
+  "scope": "Original bipyramids C_l (l>=4) with one remaining pole and a contiguous original rim arc: all lawful m=2 closures preserve the complete path-fibre invariant and an endpoint-distinct old full row.",
+  "sources": {
+    "docs/four_color_no_hub_bipyramid_continuation.md": {
+      "bytes": 13196,
+      "sha256": "0059213c2e2677416f2618fe0e83a6cf609b2c24e1c0e2ff80583b9c6554dfba"
+    },
+    "docs/four_color_reverse_shelling_continuation.md": {
+      "bytes": 10390,
+      "sha256": "741a4728e1e48fcd5980ed36fc4c5eba3f7a61629f7a2acf58cf818d963b8023"
+    },
+    "docs/four_color_saturated_hub_continuation.md": {
+      "bytes": 13235,
+      "sha256": "59f4a58b5234cbdd61a0447636662b4542366ff7884a126b321be21725d6e292"
+    },
+    "scripts/four_color_no_hub_bipyramid_verification.py": {
+      "bytes": 21492,
+      "sha256": "1d4fcb13cda720f632fd7a78571db42acad9937c234eeb12d75476abfd120324"
+    },
+    "scripts/four_color_saturated_hub_verification.py": {
+      "bytes": 21476,
+      "sha256": "dfe1dfedde637ca92da7d318fc1297f4f081566dcece1f2f0d512ec3892c2e4a"
+    },
+    "scripts/four_color_shelling_fan_verification.py": {
+      "bytes": 21486,
+      "sha256": "e54a91689cae4e4c64895be842086e682cd874fe38fc5a08ef3c7861a92d4812"
+    },
+    "scripts/four_color_shelling_verification.py": {
+      "bytes": 5501,
+      "sha256": "1f6d7cec30f8a88e14cac3003c63ed9b2572be406423bbcebfec0a5874c65cd1"
+    }
+  }
+}

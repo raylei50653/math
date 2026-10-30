@@ -1,0 +1,89 @@
+{
+  "base_commit": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "commands": [
+    {
+      "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_reverse_shelling_verification.py --out audits/2026-10-29-reverse-shelling-e1a90fe/reverse-shelling.json",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONHASHSEED=17 uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_reverse_shelling_verification.py --out /tmp/reverse-shelling-seed17.json",
+      "exit_code": 0
+    },
+    {
+      "command": "cmp audits/2026-10-29-reverse-shelling-e1a90fe/reverse-shelling.json /tmp/reverse-shelling-seed17.json",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m py_compile scripts/four_color_reverse_shelling_verification.py",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check -- docs/four_color_shelling_verification.md docs/four_color_reverse_shelling_continuation.md scripts/four_color_reverse_shelling_verification.py",
+      "exit_code": 0
+    }
+  ],
+  "date": "2026-10-29",
+  "evidence_layers": {
+    "external": "Inherited canonical ordering existence theorem; no new literature claim.",
+    "lean": "Not run; no new Lean theorem.",
+    "paper": [
+      "Exterior chordless disk lemma under canonical-order geometry.",
+      "Rowwise same-witness extension for m>=3.",
+      "Exact equality-lock criterion for m=2.",
+      "Vertex-minimal saturation/pure-closure suffix.",
+      "No-separating-triangle terminal T-e identification for n>4.",
+      "Universal no-lock on the source class is equivalent in strength to 4CT."
+    ],
+    "python": "Only the listed 9 original graphs, complete exterior colorings, 7424 fibres, fixed endpoint paths, and two negative controls."
+  },
+  "integration_checks": "Guide/STATUS/whole-doc checks belong to root integration; not claimed passed in this receipt.",
+  "publication": "No commit or push performed.",
+  "remaining_open": [
+    "Universal no-lock",
+    "4CT",
+    "E932",
+    "A new source invariant excluding a named joint obstruction"
+  ],
+  "schema": "four-color-reverse-shelling-verification-receipt-v1",
+  "sources": {
+    "audits/2026-10-29-reverse-shelling-e1a90fe/PROPOSAL.md": {
+      "bytes": 1160,
+      "sha256": "06b9f9fe9cd632085c5cd2705611c8585d4dc4e2b05bd6d0196ced59b280ef1a"
+    },
+    "audits/2026-10-29-reverse-shelling-e1a90fe/reverse-shelling.json": {
+      "bytes": 1143849,
+      "sha256": "db83332c057ee566daccbc46e1d864bb1eb025e0fe53fa6b1f111cc2971a34bf"
+    },
+    "docs/four_color_reverse_shelling_continuation.md": {
+      "bytes": 9712,
+      "sha256": "ba9e304c0ec837465eb1ed953a5f58aa3676d86d2472faac3b4d8717b438a045"
+    },
+    "docs/four_color_shelling_verification.md": {
+      "bytes": 15378,
+      "sha256": "b0a40881ea38045fa2a93896a2c988f131c314d87c03510fc6709787616d4ba7"
+    },
+    "scripts/four_color_reverse_shelling_verification.py": {
+      "bytes": 14697,
+      "sha256": "9890dbd86eade6d92b42adc7904b04fde1af70126efb65ab28581e37d8022768"
+    },
+    "scripts/four_color_shelling_fan_verification.py": {
+      "bytes": 21486,
+      "sha256": "e54a91689cae4e4c64895be842086e682cd874fe38fc5a08ef3c7861a92d4812"
+    },
+    "scripts/four_color_shelling_verification.py": {
+      "bytes": 5501,
+      "sha256": "1f6d7cec30f8a88e14cac3003c63ed9b2572be406423bbcebfec0a5874c65cd1"
+    }
+  },
+  "totals": {
+    "complete_fibre_masks_including_zero": 7424,
+    "endpoint_path_checks": 252,
+    "exterior_stages": 29,
+    "m_eq_2_transitions": 16,
+    "m_ge_3_transitions": 4,
+    "original_graphs": 9,
+    "same_witness_row_extensions": 324,
+    "transitions": 20,
+    "zero_fibre_masks": 6140
+  }
+}

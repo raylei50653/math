@@ -1,0 +1,135 @@
+{
+  "base_head": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "date": "2026-10-30",
+  "scope": "n=6,8 finite complete relation/fibre replay; general proof in new report",
+  "totals": {
+    "actual_canonical_saturated_states": 31,
+    "all_left_and_right_ear_closures": 42,
+    "complete_boundary_fibre_entries_including_zero": 123520,
+    "complete_original_edge_colorings": 79248,
+    "complete_transition_masks_including_zero": 61440,
+    "first_saturation_m3_openings": 2,
+    "identification_reduction_smaller_colorings_lifted": 288,
+    "original_graphs": 2,
+    "original_short_cycles_checked": 336,
+    "periodic_complete_original_patterns_per_graph": 96,
+    "periodic_same_witness_old_row_lifts": 1008,
+    "rim_sizes": [
+      6,
+      8
+    ],
+    "states_accepting_some_four_color_row": 21,
+    "states_rejecting_some_proper_Q012_row": 7,
+    "states_without_common_original_hub": 31,
+    "triangle_reduction_complete_original_lifts": 192,
+    "triangle_reduction_smaller_colorings_lifted": 48,
+    "zero_boundary_fibres": 111388,
+    "zero_transition_masks": 51792
+  },
+  "commands": [
+    {
+      "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_no_hub_min5_verification.py --out /tmp/no-hub-min5.json",
+      "result": "PASS"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_no_hub_min5_verification.py --out /tmp/no-hub-min5-seed17.json",
+      "result": "PASS"
+    },
+    {
+      "command": "cmp /tmp/no-hub-min5.json /tmp/no-hub-min5-seed17.json",
+      "result": "PASS: byte identical"
+    }
+  ],
+  "certificate": {
+    "path": "min5.json.gz",
+    "uncompressed_sha256": "f015257ef247306594c31f7829b49a200b561ed6dee700fb09a0dfd0022bbcbc",
+    "uncompressed_bytes": 63534000,
+    "gzip_sha256": "0f4884105f393eeedbd3007cebfdc828ff5924d24ac6571b2ebae367ff49d239",
+    "gzip_bytes": 1575347
+  },
+  "source_sha256": {
+    "scripts/four_color_bond_perimeter_small_cuts.py": "41b1829ac1568a4a71fde34e30bad785f32535be9aaa715e14425555aab79449",
+    "scripts/four_color_no_hub_min5_verification.py": "879031861e77037fd673ed91ed76ba919e437164576a5954f179a2368f4fbe50",
+    "scripts/four_color_saturated_hub_verification.py": "dfe1dfedde637ca92da7d318fc1297f4f081566dcece1f2f0d512ec3892c2e4a",
+    "scripts/four_color_shelling_fan_verification.py": "e54a91689cae4e4c64895be842086e682cd874fe38fc5a08ef3c7861a92d4812",
+    "scripts/four_color_shelling_verification.py": "1f6d7cec30f8a88e14cac3003c63ed9b2572be406423bbcebfec0a5874c65cd1"
+  },
+  "closure": "Even n>=6 original capped antiprism contiguous-arc fan subclass only, all legal ear closures; original geometry/parity support, not defined by final colourability. Whole-family C reduction excludes this candidate under additional minimal-bad hypothesis.",
+  "remaining_open": [
+    "General original min-degree-five source coverage",
+    "General no-hub no-locking",
+    "932",
+    "4CT"
+  ],
+  "evidence_layers": {
+    "paper": "general source geometry, S34/S5, canonical order, closed-word exact fibres, support and all-ear preservation, C reductions",
+    "python": "fixed two graphs complete original-edge replay",
+    "lean": "not run",
+    "4CT_oracle": false
+  },
+  "documentation_checks": {
+    "local_report_links_anchors_index": {
+      "result": "PASS",
+      "command": "scripts.check_docs.check(Path.cwd()), filter errors for new report and direct parent",
+      "errors": []
+    },
+    "check_docs_global": {
+      "result": "PASS",
+      "files": 800,
+      "local_links": 10688,
+      "errors": []
+    },
+    "live_docgraph": {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes\n"
+    },
+    "whitespace": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  },
+  "default_docgraph_repository_scan": {
+    "result": "FAIL: frozen archive and scratch copies duplicate live metadata IDs",
+    "error_count": 72,
+    "scope": "python3 tools/docgraph check (default repository-wide scan); live docs scope passes",
+    "policy": "historical snapshots unchanged"
+  },
+  "output_report_sha256": "96b82aa2b1e739ddfb8ff1221b6d28b83544344bc26f94abe987e7e2de393de3",
+  "replay_archive_checks": {
+    "gzip_roundtrip": "PASS",
+    "default_and_seed17_bytes_equal": "PASS",
+    "all_producer_and_imported_source_hashes_current": "PASS"
+  },
+  "runtime": {
+    "python": "3.14.8",
+    "networkx": "3.5",
+    "environment": "uv run --python 3.14 --with-requirements requirements.txt"
+  },
+  "documentation_responsibility": {
+    "updated": [
+      "docs/four_color_no_hub_min5_continuation.md",
+      "docs/four_color_no_hub_bipyramid_continuation.md (dated onward link)",
+      "docs/4ct_guide.md (narrow class onward link)",
+      "docs/STATUS.md (single new source row)"
+    ],
+    "reviewed_unchanged": [
+      "docs/four_color_four_fronts_verification.md task-five/shared contract: original acceptance obligations retained",
+      "docs/four_color_reverse_shelling_continuation.md: general no-locking remains OPEN",
+      "docs/four_color_saturated_hub_continuation.md: distinct common-hub scope retained",
+      "docs/HANDOFF.md: research lines unchanged"
+    ],
+    "propagation_stop": "Direct parent source and corresponding guide/index; no general theorem or D exclusions changed"
+  }
+}

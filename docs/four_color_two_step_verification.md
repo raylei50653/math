@@ -4,6 +4,10 @@
 沒有修改求解器或新增 Lean 定理。依據既有[有限域分解契約](four_color_bounded_projection.md)
 及 [ColoringBoundedProjection.lean](../Math/ColoringBoundedProjection.lean)。
 
+**同日 e1a90fe 後續。** [三步匯合完整控制](four_color_eight_cut_three_step_continuation.md#3-三步匯合可同時禁兩色但不等於新的平面排斥)
+保存兩中心在第三點匯合的全部 fibres，確可共同禁兩色；指定空 fibre 仍可有真平面來源。
+本頁原兩步容量命題不變。
+
 ## 單邊瓶頸：成立，但原 anchor 表示沒有語義缺漏
 
 消去 x，另一點為 y；假定唯一同時含 x、y 的原因子是異色邊 x≠y。

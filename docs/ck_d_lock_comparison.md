@@ -4,6 +4,11 @@
 區分非負邊際、標準 block-count 及完整切開接口；932 在標準 B5 錐仍有可行證書。
 本頁單 split 無增益裁決不變。
 
+2026-10-29後續：[Bernhart C₈ 靶標與 B₈ 對照](ck_bernhart_benchmark.md)
+更正兩種 `{5,5,6,6}` diamond 的對角線身份；古典 Bernhart 圖以六度點共對角線，
+其 D／標準 B₈ 殘餘為 154／76。另附指定替換的古典 C 正控制；不是新可約性，
+也不重開本頁已停止的單 split 鎖定條件。
+
 2026-10-26。執行 [4CT 導覽 §7 提議 A′](4ct_guide.md#7-停止點與候選路線)的
 M1 基準重播與 M2 新意審計。使用[著色關係語義](four_color_mathematical_model.md)，
 將原有 [C₅ 必要條件](c5_kempe_screen.md#2-kempe-必要性為何與內點數量無關)推到有序 Cₖ。

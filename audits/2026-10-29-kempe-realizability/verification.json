@@ -1,0 +1,154 @@
+{
+  "base_head": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "results": [
+    {
+      "command": [
+        "python3",
+        "audits/2026-10-14-c5-c4-boundary-pivot-77fbd5d/controls/check_transfer.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output_sha256": "68f7135acc942f4ebddac0ae4b7a92a7229f38f744c1571b641837b79eeda965",
+      "output": "{\n  \"ok\": true,\n  \"real_sources\": 132,\n  \"whole_fibre_comparisons\": 528,\n  \"abstract_C4_masks\": [\n    3,\n    11,\n    11\n  ],\n  \"matrix_shape\": [\n    4,\n    10\n  ],\n  \"all_input_supports\": 1024,\n  \"external_census_replayed\": false\n}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "audits/2026-10-14-c5-c4-boundary-pivot-77fbd5d/review/check_independent.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output_sha256": "05a38df63da6934721f79135ed9c574582c474d6a2f9eb6fe15d93a07df555eb",
+      "output": "{\"PASS\": true, \"queries\": 430080, \"cap_lifts\": 1080, \"control_summary\": [{\"name\": \"W5_scope_and_empty_fibre_control\", \"g_counts\": [1, 1, 0, 1, 1, 0, 1, 0, 0, 0], \"g_mask\": 91, \"h_counts\": [0, 1, 2, 3], \"h_mask\": 14, \"full_h_lifts\": 144}, {\"name\": \"icosahedron_minus_degree5_root\", \"g_counts\": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2], \"g_mask\": 1023, \"h_counts\": [4, 6, 4, 6], \"h_mask\": 15, \"full_h_lifts\": 432}], \"negative_control\": true, \"actual_target_sources\": 0}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/c5_kempe_class_counts.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output_sha256": "4b984ff42f78aa88278aeca13676f804be40ccfb433fdc52e52fc1330270684c",
+      "output": "{\"classes\": 132, \"control_classes\": 10, \"local_equalities\": 350, \"multiple_class_witnesses\": 0, \"witnesses\": 132}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/c5_blocked_transport_return.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output_sha256": "4f6282b221981bc0f5e32dd165c98d62a6feb94466a5decd3bd0b7a409f84aea",
+      "output": "{\"D_mask\": 932, \"check\": \"OK\", \"history_triangles\": 0, \"labelled_states\": 120, \"named_obstruction\": \"SINGLE-FIBRE-5\", \"point_histories\": 6}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/c5_blocked_history_homology.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output_sha256": "a0c03a941d876d480eb4d70242fdf9d20cbccd1373cc0b2bdf45fe4efcf9704d",
+      "output": "{\"check\": \"OK\", \"periods\": [{\"boundary_cocycle_sum\": 1, \"edges\": 5, \"histories\": 6, \"k\": 1, \"triangles\": 0}, {\"boundary_cocycle_sum\": 1, \"edges\": 195, \"histories\": 46, \"k\": 2, \"triangles\": 200}, {\"boundary_cocycle_sum\": 1, \"edges\": 3611, \"histories\": 309, \"k\": 3, \"triangles\": 5324}]}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/c5_blocked_source_controls.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output_sha256": "015f344e38c7ffcb213af565e39f8f1d6b73a517b7930bd4548bcd92ca9de401",
+      "output": "{\"controls\": [{\"H_cycle_lengths\": [4], \"Kempe_classes\": 1, \"legal\": false, \"literal_states\": 2400, \"name\": \"ERRERA-RETURN4-S34\", \"normalized_states\": 100}, {\"H_cycle_lengths\": [], \"Kempe_classes\": 1, \"legal\": true, \"literal_states\": 1632, \"name\": \"ERRERA-FLIP-5-10-S5\", \"normalized_states\": 68}, {\"H_cycle_lengths\": [], \"Kempe_classes\": 1, \"legal\": true, \"literal_states\": 1632, \"name\": \"ERRERA-FLIP-5-11-S5\", \"normalized_states\": 68}, {\"H_cycle_lengths\": [], \"Kempe_classes\": 1, \"legal\": true, \"literal_states\": 1632, \"name\": \"ERRERA-FLIP-9-10-S5\", \"normalized_states\": 68}, {\"H_cycle_lengths\": [], \"Kempe_classes\": 1, \"legal\": true, \"literal_states\": 1632, \"name\": \"ERRERA-FLIP-9-15-S5\", \"normalized_states\": 68}, {\"H_cycle_lengths\": [], \"Kempe_classes\": 1, \"legal\": true, \"literal_states\": 1632, \"name\": \"ERRERA-FLIP-11-15-S5\", \"normalized_states\": 68}], \"status\": \"CHECK OK\"}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/c5_blocked_source_history_review.py"
+      ],
+      "exit_code": 0,
+      "output_sha256": "a0a3fcfdbafdd7f22a62d89b020f4b614704138788f21a1a7efd5fb594f0f907",
+      "output": "{\"actual_period4_filling\": {\"S5\": false, \"boundary_chain_verified\": true, \"distinct_history_vertices\": 16, \"filling_triangles\": 25, \"original_faces\": 25, \"period\": 4, \"source\": \"ERRERA-RETURN4-S34\"}, \"all_odd_periods_excluded_by_third_vertex\": true, \"cocycles\": [{\"boundary_pairing\": 1, \"cocycle_support\": 1, \"edges\": 5, \"histories\": 6, \"period\": 1, \"triangles\": 0}, {\"boundary_pairing\": 1, \"cocycle_support\": 40, \"edges\": 195, \"histories\": 46, \"period\": 2, \"triangles\": 200}, {\"boundary_pairing\": 1, \"cocycle_support\": 1, \"edges\": 3611, \"histories\": 309, \"period\": 3, \"triangles\": 5324}], \"exterior_face_third_words\": [[[0, 0, 0, 0, 2, 2], 1], [[1, 1, 3, 3, 3, 3], 0]], \"input_sha256\": {\"audits/2026-10-29-kempe-realizability/history-cocycles.json\": \"cf9cf2a3f405357d0c7b311e63ab80d231ade52b17479f9d7de0a2ab7f632237\", \"audits/2026-10-29-kempe-realizability/source/controls.json\": \"f6b2ebd125c23ea72bb2ebfdb796c1a3bb443ba89a6449b350af4db750216098\"}, \"status\": \"INDEPENDENT CHECK OK\", \"transfer_matrix\": [[3, 2, 3, 1], [2, 1, 2, 1], [1, 1, 1, 1], [3, 2, 3, 1]]}\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--with",
+        "networkx==3.5",
+        "python",
+        "-B",
+        "scripts/c5_blocked_buffer_probe.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output_sha256": "cb0189ca96a3d1d618ee5d87dda94fca61a5b02613cab092e6c8f8fad58524a2",
+      "output": "{\"cases\": [{\"S5\": true, \"classes\": 1, \"full_states\": 20, \"local_A_states\": [50, 20], \"local_A_without_E\": [30, 0], \"name\": \"icosahedron\", \"remote_reconnections\": [40, 0], \"return_periods\": [], \"valid_five_transfers\": 0}, {\"S5\": true, \"classes\": 1, \"full_states\": 40, \"local_A_states\": [88, 40], \"local_A_without_E\": [48, 0], \"name\": \"capped-antiprism-6\", \"remote_reconnections\": [74, 0], \"return_periods\": [], \"valid_five_transfers\": 0}, {\"S5\": true, \"classes\": 1, \"full_states\": 68, \"local_A_states\": [188, 68], \"local_A_without_E\": [126, 0], \"name\": \"capped-antiprism-7\", \"remote_reconnections\": [192, 0], \"return_periods\": [], \"valid_five_transfers\": 0}, {\"S5\": false, \"classes\": 1, \"full_states\": 100, \"local_A_states\": [50, 260], \"local_A_without_E\": [0, 160], \"name\": \"Errera-v0\", \"remote_reconnections\": [120, 160], \"return_periods\": [4], \"valid_five_transfers\": 4}], \"check\": \"OK\"}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "output_sha256": "15d57bfbaabc7a7e42c17d0a18c9cc816588832727cf5e91e09874f471997fbe",
+      "output": "OK: 795 Markdown files, 10602 local links; anchors, index, handoff, guide progress checked\n"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "output_sha256": "04256ec95518ab5137d0a8d90f3515e5eaa9cc9abb6056d3cfa8da89954e37ba",
+      "output": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes\n"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "output_sha256": "b9def5264820e46a80712ed0d125b2a507b19e00c8f2327b17252cb61e0600ab",
+      "output_summary": "FAIL: whole-tree DocGraph; 72 historical duplicate-id diagnostics; 0 other ERROR diagnostics",
+      "duplicate_id_lines": 72,
+      "other_error_lines": []
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": ""
+    }
+  ],
+  "source_hashes": {
+    "docs/c5_kempe_blocked_realizability.md": "9f1a520f1a5a4d49a1a4d6a5e2ce4909442e88393033e8e76b9a4bdc8075b90c",
+    "scripts/c5_blocked_buffer_probe.py": "91b9734d41a99924f1b044e6f3658e6d2b4d904a60b4436959754c838c2833c3",
+    "scripts/c5_blocked_history_homology.py": "f8fa417cfec96772497f8f38830d5ce68f24c1fca8bb7dc57609c1b688002459",
+    "scripts/c5_blocked_source_controls.py": "53b2f2c564d8c3538288cf8c1075ada04dc293d91a3f66dd3487dd97333e67c7",
+    "scripts/c5_blocked_source_history_review.py": "456761e12ca9cf21f7fbff8f0c08aeaeffe260fa7de3a847b728798a05c44cf0",
+    "scripts/c5_blocked_transport_return.py": "2ac3c012180705ab1a88d08de65ef7fbd5dd1d744ba0d998793db7881af2881a",
+    "audits/2026-10-29-kempe-realizability/buffer/REPORT.md": "b41404af021cbfb05c422c9150f40e1bab00feed3f70ff024fa8fc60355d802e",
+    "audits/2026-10-29-kempe-realizability/buffer/certificate.json": "b80a33d913a6bd18c08f31af06ccce91b20225635b93fdeda89b5948992b9e5e",
+    "audits/2026-10-29-kempe-realizability/history-cocycles.json": "cf9cf2a3f405357d0c7b311e63ab80d231ade52b17479f9d7de0a2ab7f632237",
+    "audits/2026-10-29-kempe-realizability/source/PROOF.md": "036b9a548dfaba3cc517ef1087908cf51853b67913242c316c5a11ad908c2320",
+    "audits/2026-10-29-kempe-realizability/source/controls.json": "f6b2ebd125c23ea72bb2ebfdb796c1a3bb443ba89a6449b350af4db750216098",
+    "audits/2026-10-29-kempe-realizability/source/independent-review.json": "a0a3fcfdbafdd7f22a62d89b020f4b614704138788f21a1a7efd5fb594f0f907",
+    "audits/2026-10-29-kempe-realizability/transport/HOMOLOGY_REVIEW.md": "1fa9c256b9077e234d853eb9260d805705f5c5d86f76a04031bd7bb688f01bdb",
+    "audits/2026-10-29-kempe-realizability/transport/PROOF.md": "27825ce14ed55eae739787f602aaf74ac705099873e44c174b3a57864803736d",
+    "audits/2026-10-29-kempe-realizability/transport/return-certificate.json": "ff90206f59eb7a8890c7208e784c0bf42c5e25023fe668a7fbe7fb85b54354c2",
+    "audits/2026-10-29-kempe-realizability/VERIFICATION.md": "16ac3cdf19661a801c077fed68e6e97f7bbd91ab8a24681cb1aa567d66c4abb2"
+  },
+  "mathematical_scope": "All odd H periods paper-excluded via same face attachment; period2 F2 cocycle plus independent replay; D-allowed SINGLE-FIBRE-5 excluded. Larger even fibres and Q5 OPEN.",
+  "archive": "Two large certificates archived with audit_archive append; original live bytes kept.",
+  "other_workspace_changes": "Pre-existing and concurrent unrelated changes preserved; no commit or push.",
+  "archive_verification": "Both new gzip blobs decompress byte-for-byte to their live JSON certificates."
+}

@@ -1,0 +1,100 @@
+{
+  "base_head": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "certificate": {
+    "gzip_bytes": 653721,
+    "gzip_sha256": "8d5bc04ee09ce0dd0ec3a9aee7709ddf09366069cc62721546042a885f32e42b",
+    "path": "three-branch.json.gz",
+    "uncompressed_bytes": 5735926,
+    "uncompressed_sha256": "0b3aa5f807f4d985b21694ccaa6225cc40027222c5a8a5ad88d18292edf5e888"
+  },
+  "classical_reduction": "Parent whole-A_n C reductions remain applicable; new universal extension is also a C reduction to induced U0 (6 vertices).",
+  "commands": [
+    {
+      "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_no_hub_three_branch_verification.py --out /tmp/no-hub-three-branch.json",
+      "result": "PASS"
+    },
+    {
+      "command": "PYTHONHASHSEED=17 uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_no_hub_three_branch_verification.py --out /tmp/no-hub-three-branch-seed17.json",
+      "result": "PASS"
+    },
+    {
+      "command": "compare default/seed17 and gzip roundtrip bytes; verify imported-source SHA256 values",
+      "result": "PASS: byte-identical; all hashes current"
+    }
+  ],
+  "date": "2026-10-30",
+  "documentation_checks": {
+    "check_docs": {
+      "command": "python3 scripts/check_docs.py",
+      "result": "PASS: 808 Markdown files, 10799 local links"
+    },
+    "live_docgraph": {
+      "command": "python3 tools/docgraph --include 'docs/**/*.md' check",
+      "result": "PASS: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+    },
+    "whitespace": {
+      "command": "git diff --check plus new-file trailing-whitespace scan",
+      "result": "PASS"
+    }
+  },
+  "documentation_responsibility": {
+    "propagation_stop": "Direct parent and topic guide/index; no arbitrary-source closure or D exclusion.",
+    "reviewed_unchanged": [
+      "shared task-five assignment and general-source acceptance gate",
+      "reverse-shelling universal OPEN",
+      "HANDOFF research lines"
+    ],
+    "updated": [
+      "new source/evidence report",
+      "direct parent min5 onward link",
+      "4ct guide onward link",
+      "STATUS single new source row"
+    ]
+  },
+  "evidence_layers": {
+    "4CT_oracle": false,
+    "Lean": "not run",
+    "paper": "Explicit source/order, diagonal shared-witness interfaces, all-proper-local support, eight-case templates and symbolic two-rung repetition, all-ear preservation including degeneration.",
+    "python": "Full original D-edge enumeration independent of common-omega branch join and transition recurrence; explicit template witnesses independently checked."
+  },
+  "output_report_sha256": "14412a891017b10cc1209c37e6702cca5c55e01bb9625fb93dc9b87ea89dcbb9",
+  "remaining_open": [
+    "Arbitrary min-degree-five S34/S5 three-branch source initial nonemptiness",
+    "General no-hub no-locking",
+    "932",
+    "4CT"
+  ],
+  "runtime": {
+    "environment": "uv run --python 3.14 --with-requirements requirements.txt",
+    "networkx": "3.5",
+    "python": "3.14.8"
+  },
+  "scope": "General paper theorem for specified A_n six-vertex three-branch source, every even n>=6; fixed Python replay n=6,8. Arbitrary three-branch initial support OPEN.",
+  "source_sha256": {
+    "scripts/four_color_bond_perimeter_small_cuts.py": "41b1829ac1568a4a71fde34e30bad785f32535be9aaa715e14425555aab79449",
+    "scripts/four_color_no_hub_three_branch_support.py": "96b0c13938611b14dd1658810b65b6285b18f52e484de8b275eae6e42c2f3986",
+    "scripts/four_color_no_hub_three_branch_verification.py": "9a04d44e7d51141b4c3c4cb9aaf7a8146af8b377a6dc222631c63c1380d8370a",
+    "scripts/four_color_saturated_hub_verification.py": "dfe1dfedde637ca92da7d318fc1297f4f081566dcece1f2f0d512ec3892c2e4a",
+    "scripts/four_color_shelling_fan_verification.py": "e54a91689cae4e4c64895be842086e682cd874fe38fc5a08ef3c7861a92d4812",
+    "scripts/four_color_shelling_verification.py": "1f6d7cec30f8a88e14cac3003c63ed9b2572be406423bbcebfec0a5874c65cd1"
+  },
+  "totals": {
+    "all_boundary_fibres": 12928,
+    "all_transition_masks": 5248,
+    "common_exterior_assignments": 27288,
+    "complete_branch_interface_rows": 1248,
+    "complete_original_witnesses": 20664,
+    "empty_boundary_fibres": 10408,
+    "empty_branch_interface_rows": 504,
+    "explicit_normalized_templates": 16,
+    "fixed_root_ear_transitions": 10,
+    "fixed_root_states": 10,
+    "marginal_nonempty_joint_empty_rows": 120,
+    "new_support_rows_lifted": 624,
+    "original_graphs": 2,
+    "same_witness_old_support_row_lifts": 1248,
+    "short_cycles_checked": 336,
+    "supported_boundary_rows": 912,
+    "zero_transition_masks": 3904
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "authoritative_sources_sha256": {
+    "docs/c5_five_reference_common_rotation.md": "cd540cb87a49494823400adda7ae75dd7c6ce8e65c1163a5c7a314a17fcc953f",
+    "docs/ck_bernhart_retained_intersection.md": "1cb9e827161b9148d37f293a07158d32372a9eca05b9481ce60c2b1f9c6909bb",
+    "docs/four_color_saturated_hub_continuation.md": "38449af0f04953383d04931f6e19f2bf9a7784e0e0b444710d584e9af4eb6c74",
+    "docs/four_color_three_step_source_invariant.md": "2d83e18d70a8f4c9f3357a556ef3608b71cb561b885a3dec790d4dd73d0de528",
+    "docs/four_color_twelve_cut_c6_sources.md": "cf17d9bebf4c271d9d69ef1653359c4633114c2896f27d1d6ca07516fdc6d197"
+  },
+  "base_commit": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "candidate_checks": [
+    {
+      "command": [
+        "python3",
+        "tools/check_generated_artifacts.py"
+      ],
+      "exit_code": 0,
+      "log": "candidate-artifacts.log",
+      "name": "candidate-artifacts"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "candidate-whitespace.log",
+      "name": "candidate-whitespace"
+    }
+  ],
+  "candidate_checks_record": "candidate-checks.json",
+  "checks": {
+    "docs": {
+      "exit_code": 0,
+      "log": "check-docs.log",
+      "summary": "OK: 788 Markdown files, 10507 local links; anchors, index, handoff, guide progress checked"
+    },
+    "formal_docgraph": {
+      "exit_code": 0,
+      "log": "docgraph-docs.log",
+      "summary": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+    },
+    "source_hashes": {
+      "record": "source-verification.json",
+      "result": "PASS: 30 current non-routing records; 3 historical routing records excluded from current-byte claims"
+    },
+    "whitespace": {
+      "exit_code": 0,
+      "log": "diff-check.log"
+    },
+    "whole_docgraph": {
+      "cause": "72 existing duplicate IDs in preserved frozen/scratch copies; no copies changed",
+      "exit_code": 1,
+      "log": "docgraph-whole-tree.log",
+      "summary": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes"
+    }
+  },
+  "cross_reviews": {
+    "bernhart": {
+      "result": "RIP sound in four-distinct-endpoint or closed-component scope. All even positive scales remain OPEN; no rays or coordinates excluded. Two --check replays passed.",
+      "reviewer": "bernhart_benchmark"
+    },
+    "five_reference": {
+      "result": "R5-SIDE/SEG/ONEHIT sound; F5-CHAIN9 abstract only; complete five-family control already rejected by old shared cut. Main --check passed.",
+      "reviewer": "parity_shared_cut"
+    },
+    "hub": {
+      "result": "Seed-supported triangular-sector gluing, exact complete fibres and K preservation checked. Class does not cover general exteriors and is classically reducible under minimal-counterexample premises.",
+      "reviewer": "root"
+    },
+    "three_step": {
+      "result": "P source proof sound; preservation is source-certificate preservation. ALT excludes named source candidate only; no D/planarity/exact-elimination gain claimed.",
+      "reviewer": "reverse_shelling"
+    },
+    "twelve_cut": {
+      "result": "Ordered-annulus, C6-CROSS-3 and chord classification read; smaller planar graph and universal lift formula checked. Other twelve-cuts stay OPEN.",
+      "reviewer": "root"
+    }
+  },
+  "date": "2026-10-29",
+  "evidence_layers": {
+    "lean": "No new Lean proof; build not run.",
+    "paper": "Read and cross-reviewed the five supplied proofs; no new theorem added.",
+    "python": "Root replayed three frozen branches; delegates replayed Bernhart retained pair of checkers and five-reference checker."
+  },
+  "excluded_bernhart_rays": 0,
+  "mathematical_replays": [
+    {
+      "command": "uv run --with-requirements requirements.txt python scripts/four_color_three_step_source_invariant.py --out-dir /tmp/five-results-root-three-step-source",
+      "executor": "root",
+      "exit_code": 0,
+      "result": "All results.json bytes equal saved certificate"
+    },
+    {
+      "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_twelve_cut_c6_verification.py --out /tmp/five-results-root-twelve-cut-c6.json",
+      "executor": "root",
+      "exit_code": 0,
+      "result": "Uncompressed saved certificate bytes equal"
+    },
+    {
+      "command": "uv run --python 3.14 --with-requirements requirements.txt python scripts/four_color_saturated_hub_verification.py --out /tmp/five-results-root-saturated-hub.json",
+      "executor": "root",
+      "exit_code": 0,
+      "result": "Saved certificate bytes equal"
+    },
+    {
+      "command": "python3 scripts/ck_bernhart_ray_local_witnesses.py --check audits/2026-10-29-bernhart-retained-parity/ray-local.json",
+      "executor": "delegate bernhart_benchmark",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/ck_retained_intersection_parity.py --check audits/2026-10-29-bernhart-retained-parity/rotation-controls.json",
+      "executor": "delegate bernhart_benchmark",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/c5_five_reference_rotation_verification.py --check audits/2026-10-29-five-reference-rotation-e1a90fe/verification.json",
+      "executor": "delegate parity_shared_cut",
+      "exit_code": 0
+    }
+  ],
+  "new_bernhart_zero_coordinates": 0,
+  "propagation": {
+    "reviewed_unchanged": [
+      "Five canonical reports/scripts and their existing evidence/receipts",
+      "4CT contract first task and general OPEN duties",
+      "C5 tasks and guide: accurate current source links and no closed five-family claim",
+      "HANDOFF: research lines and tags",
+      "README"
+    ],
+    "stop": "Direct synthesis and relevant routing only; no new research conclusions, no historical-receipt rewrites",
+    "updated": [
+      "docs/four_color_four_fronts_verification.md: linked source-bounded synthesis and five independent next tasks",
+      "docs/4ct_guide.md: direct synthesis link only",
+      "docs/four_color_guide.md: direct synthesis link only",
+      "docs/STATUS.md: synthesis index description",
+      ".gitignore: archive ignore entry only",
+      "audits/ARCHIVE.json: one file and one blob appended",
+      "audits/.archive/blobs/3d480525dc67b243875f1110d1f255666c0eccbc700b51cfbe598abb4bed9a02.gz: supplied five-reference certificate"
+    ]
+  },
+  "publication": "No commit or push.",
+  "remaining_open": [
+    "Relation-family restriction beyond three-step source certificate",
+    "All positive-scale Bernhart ray sources and any zero on full 76-row face",
+    "Real-source five-family common rotation obstruction and gain beyond full old shared-cut",
+    "W5 plus ear or larger chordless twelve-cut sides; two-point eight-cut and facial degree-five triple nine-cut reducibility",
+    "Non-hub source coverage and general no-lock; E932/4CT"
+  ],
+  "routing_after_sha256": {
+    "docs/4ct_guide.md": "482d5d6cbd8792f3974f04a096def8f493e6364c8c9b1dfe2665577bf8747737",
+    "docs/STATUS.md": "7b4fc6ee498975075de855855d5b20f31c399dcc450bec18a979a02d0caa28ed",
+    "docs/four_color_four_fronts_verification.md": "cb9ee34e33199718437953795f3321c6649831ee41a978a893bbacd792790a89",
+    "docs/four_color_guide.md": "424ab601d9f53590dd5f6d35c727f7ebfa10294aded4e491bb12e8cfc599c4ab"
+  },
+  "schema": "five-results-integration-v1",
+  "scope": "Five reports cross-review and handoff organization only; no new mathematical research. Existing archive policy applied to one supplied large certificate with exact original bytes preserved.",
+  "status": "review and integration complete; whole-worktree historical DocGraph failure retained",
+  "storage_verification": "storage-verification.json"
+}

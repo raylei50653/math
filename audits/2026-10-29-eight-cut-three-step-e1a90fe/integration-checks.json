@@ -1,0 +1,63 @@
+[
+  {
+    "argv": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "log": "integration-check-0.log",
+    "summary": [
+      "OK: 779 Markdown files, 10389 local links; anchors, index, handoff, guide progress checked"
+    ]
+  },
+  {
+    "argv": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "log": "integration-check-1.log",
+    "summary": [
+      "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+    ]
+  },
+  {
+    "argv": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "exit_code": 1,
+    "log": "integration-check-2.log",
+    "summary": [
+      "ERROR [duplicate-id] id 'c5.w5-three-color-support' is declared by audits/2026-10-18-abstraction-bottleneck-9f1fe84/A/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-18-smaller-source-9f1fe84/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-j1-c11-1148ce0/frozen/audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-j1-c11-1148ce0/frozen/audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-j1-five-edge-417732f/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-j1-five-edge-417732f/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-j1-five-edge-417732f/frozen/audits/2026-10-20-r6-941-j1-c11-1148ce0/frozen/audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-j1-five-edge-417732f/frozen/audits/2026-10-20-r6-941-j1-c11-1148ce0/frozen/audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-j1-w5-9c36e3c/frozen/audits/2026-10-20-r6-941-fibre-continuation-9c36e3c/frozen/audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-counts-e1617a2/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, audits/2026-10-20-r6-941-last-rejection-f13eb4d/frozen/audits/2026-10-19-r6-941-existence-f13eb4d/frozen/audits/2026-10-18-smaller-bad-e1617a2/frozen/docs/c5_w5_three_color_support.md, docs/c5_w5_three_color_support.md"
+    ]
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "integration-check-3.log",
+    "summary": []
+  },
+  {
+    "argv": [
+      "python3",
+      "-m",
+      "py_compile",
+      "scripts/four_color_reverse_shelling_verification.py",
+      "scripts/c5_parity_shared_cut_verification.py",
+      "scripts/ck_bernhart_benchmark.py",
+      "scripts/four_color_eight_cut_three_step_verification.py"
+    ],
+    "exit_code": 0,
+    "log": "integration-check-4.log",
+    "summary": []
+  }
+]

@@ -1,0 +1,118 @@
+{
+  "baseline": "e1a90fea41702d7c98747716a5960198aecbecb3",
+  "canonical_report": "docs/four_color_twelve_cut_nine_side_classification.md",
+  "certificate": {
+    "bytes_compressed": 1043308,
+    "bytes_uncompressed": 43064002,
+    "compressed_sha256": "516c60ed34dac6de2adaa47924acf151b98d834e836b67136a2d42faa623530f",
+    "path": "nine-side.json.gz",
+    "uncompressed_sha256": "6009e3931b4a8168421620e4628296681bb2f3b61c7b37f529936aa12c868699"
+  },
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "scripts/check_docs.py"
+      ],
+      "exit_code": 0,
+      "log": "check-docs.log",
+      "name": "links_and_index",
+      "summary": "OK: 808 Markdown files, 10799 local links; anchors, index, handoff, guide progress checked"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "--include",
+        "docs/**/*.md",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": "docgraph-docs.log",
+      "name": "formal_docs_graph",
+      "summary": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/docgraph",
+        "check"
+      ],
+      "exit_code": 1,
+      "log": "docgraph-all.log",
+      "name": "whole_tree_graph",
+      "summary": "FAIL: 98 documents, 371 relations, 12 families; 72 errors, 0 notes"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "diff-check.log",
+      "name": "diff_whitespace",
+      "summary": "PASS"
+    }
+  ],
+  "date_utc": "2026-10-30T02:29:23.912550+00:00",
+  "determinism": {
+    "complete_output_byte_identical": true,
+    "seed": 17
+  },
+  "independent_review": {
+    "all_54_paper_branches_and_4944_literal_reduction_rows": true,
+    "complete_143360_fibres_equal": true,
+    "complete_2232_reduced_colourings_preserve_same_Y": true,
+    "complete_39624_original_colourings_equal": true,
+    "input_is_uncompressed_certificate": true,
+    "path": "independent-review.json",
+    "reviewer_sha256": "cbd75b74e149014b65c8bda8f169f66fbcab53c3a53d0235b82d8a429c894265"
+  },
+  "propagation": {
+    "reviewed_unchanged": {
+      "HANDOFF": "same research lines and active tags",
+      "ear and eight-side evidence": "unchanged frozen certificates",
+      "small-cut lower bounds": "unchanged proof"
+    },
+    "stop": "L2 direct sources and consumers; parent general twelve-cut remains OPEN",
+    "updated": [
+      "eight-side parent",
+      "C6 parent",
+      "W5-ear followup",
+      "bond-perimeter followup",
+      "4ct guide",
+      "four-color guide",
+      "four-fronts task4",
+      "STATUS"
+    ]
+  },
+  "publication": "No commit or push; unrelated worktree changes preserved",
+  "schema": "four-color-twelve-cut-nine-side-verification-v1",
+  "scope": "Complete original twelve attachments with one nine-point side. All26types C-reducible; general nine-cuts,twelve-cuts,932,4CT remain OPEN.",
+  "source_hashes_match_current_files": true,
+  "source_sha256": {
+    "scripts/four_color_bond_perimeter_small_cuts.py": "41b1829ac1568a4a71fde34e30bad785f32535be9aaa715e14425555aab79449",
+    "scripts/four_color_twelve_cut_c6_verification.py": "c18c50ea73080694d8d3db0855ce1258996734c04bb09c203d9a510fd7710acd",
+    "scripts/four_color_twelve_cut_eight_side_verification.py": "a90346e3ae7e1b5e599956411004b05592248e8185e126f36b467e64a0856fee",
+    "scripts/four_color_twelve_cut_nine_side_reduction.py": "ffeceaa7b1a635d32837dce2d80413bd54815f18eea4c34f27f66544be0833f5",
+    "scripts/four_color_twelve_cut_nine_side_verification.py": "e75d98dedaf67a8b83dd4f86ee4eff8e1cfda8fedb9fe72489236b011fee4caf"
+  },
+  "statistics": {
+    "all_R_complete_lifts": 81168,
+    "all_R_empty_rows": 120752,
+    "all_R_nonempty_rows": 22608,
+    "all_R_rows": 143360,
+    "degree_profiles": 35,
+    "excluded_by_original_mixed_S5": 9,
+    "realizable_R_complete_lifts": 59712,
+    "realizable_R_empty_rows": 89468,
+    "realizable_R_nonempty_rows": 17028,
+    "realizable_R_rows": 106496,
+    "realizable_profiles": 26,
+    "source_Y_sizes": {
+      "10": 3,
+      "9": 23
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "schema": "research-publication-readonly-replays-v1",
+  "date": "2026-10-30",
+  "checkout_root": "/home/ray/developer/ai/math",
+  "agent": "/root/review_bernhart_z",
+  "scope": "Read-only replay commands actually executed during research-result review; no timing reruns or file edits.",
+  "duration_policy": "Durations unmeasured; no wall-clock or runtime claims.",
+  "output_hash_policy": "Full-output hashes were not captured; output_sha256 is null, and the result fields below are observed output summaries rather than reconstructed output bytes.",
+  "runs": [
+    {
+      "command": "python3 scripts/ck_bernhart_six_source_reductions.py --check audits/2026-10-30-bernhart-universal-marking/six-source-reductions.json",
+      "exit_code": 0,
+      "duration_seconds": null,
+      "output_sha256": null,
+      "observed_output": {
+        "actual_source_existence": "OPEN",
+        "bridge_compatible_leaf_subsets": 12,
+        "cross_H_leaf_pair_exclusions": 15,
+        "eligible_signatures": 23,
+        "four_pole_representatives": 4,
+        "new_forced_zero_coordinates": 0,
+        "projective_minor_determinant": -1,
+        "projective_rank": 22,
+        "three_three_cut_exclusions": 20,
+        "zero_signature_exclusions": 168
+      }
+    },
+    {
+      "command": "python3 scripts/ck_bernhart_k6_separation.py --check audits/2026-10-30-bernhart-universal-marking/k6-separation.json",
+      "exit_code": 0,
+      "duration_seconds": null,
+      "output_sha256": null,
+      "observed_output": {
+        "full_author_closure_replayed": false,
+        "functional_target_value": 0,
+        "minimum_ray_functional_value": 1,
+        "new_forced_zero_coordinates": 0,
+        "parity_orbits": 31,
+        "published_K6_rays": 102,
+        "target_in_K6": false,
+        "target_source_existence": "OPEN",
+        "target_zero_orbits": 17
+      }
+    },
+    {
+      "command": "python3 scripts/ck_bernhart_universal_marking.py --check audits/2026-10-30-bernhart-universal-marking/verification.json",
+      "exit_code": 0,
+      "duration_seconds": null,
+      "output_sha256": null,
+      "observed_output": {
+        "complete_projection_fibres": 66,
+        "control_colorings": 66,
+        "edge_disjoint_paths": 3,
+        "excluded_rays": [],
+        "extensions_per_terminal_color": 12,
+        "literal_word_coordinates": 729,
+        "local_extensions": 36,
+        "local_marked_cycle_checks": 72,
+        "local_marked_pair_deletions": 60,
+        "multiplier": 12,
+        "new_forced_zero_coordinates": 0,
+        "signed_signature_coordinates": 191,
+        "target_counterexample": false,
+        "transformed_colorings": 792,
+        "transformed_marked_cycle_checks": 1584,
+        "transformed_marked_pair_deletions": 71
+      }
+    },
+    {
+      "command": "python3 scripts/ck_bernhart_marked_bond_obstruction.py --check audits/2026-10-30-bernhart-marked-bond-obstruction/verification.json",
+      "exit_code": 0,
+      "duration_seconds": null,
+      "output_sha256": null,
+      "observed_output": {
+        "edge_disjoint_paths": 3,
+        "excluded_rays": [],
+        "literal_word_coordinates": 729,
+        "marked_cycle_checks": 2304,
+        "marked_edge_pair_deletions": 74,
+        "multiplier": 2,
+        "new_forced_zero_coordinates": 0,
+        "original_complete_colorings": 576,
+        "projection_fibres": 576,
+        "signed_signature_coordinates": 191,
+        "target_counterexample": false,
+        "transformed_complete_colorings": 1152
+      }
+    },
+    {
+      "command": "python3 scripts/zarankiewicz_integer_replay.py",
+      "exit_code": 0,
+      "duration_seconds": null,
+      "output_sha256": null,
+      "observed_summary": {
+        "status": "PASS",
+        "scope": "finite collapsed integer counting relaxation; no drawing realization",
+        "certificate_sha256": "88209d5afb347413c153e44d1bfaa662fb15a5b278de7c0040f7cc2f4083c63b",
+        "m": 7,
+        "n": 7,
+        "C": 79,
+        "Z": 81,
+        "d": 2,
+        "binary_tensor_entries": 441,
+        "unique_retained_four_endpoint_labels": 79,
+        "proper_labelled_subset_lower_bound_checks": 16383,
+        "induced_K33_odd_parity_checks": 1225,
+        "induced_odd_by_odd_parity_checks_including_full": 4096,
+        "both_sides_total_slack": 17,
+        "geometric_counterexample": false
+      }
+    },
+    {
+      "command": "python3 scripts/zarankiewicz_rotation_lift.py",
+      "exit_code": 0,
+      "duration_seconds": null,
+      "output_sha256": null,
+      "observed_summary": {
+        "status": "INTEGER_PASS_ROTATION_LIFT_REJECTED",
+        "certificate_sha256": "88209d5afb347413c153e44d1bfaa662fb15a5b278de7c0040f7cc2f4083c63b",
+        "scope": "exact finite obstruction to necessary triple-parity rotation lift of this tensor only",
+        "both_sides_compatible_full_rotation_assignments": 0,
+        "root_orders_exhausted_per_side": 720,
+        "both_sides_four_by_four_obstruction": true,
+        "drawing_realization": false,
+        "all_integer_tensors_excluded": false,
+        "general_unavoidability": "OPEN"
+      }
+    },
+    {
+      "command": "python3 scripts/zarankiewicz_rotation_budget.py",
+      "exit_code": 0,
+      "duration_seconds": null,
+      "output_sha256": null,
+      "observed_summary": {
+        "scope": "exact finite label obstruction, no drawing realization",
+        "cyclic_order_graphs": [
+          {
+            "m": 5,
+            "vertices": 24,
+            "diameter_from_identity": 4,
+            "unique_antipode": true,
+            "bipartite": true
+          },
+          {
+            "m": 7,
+            "vertices": 720,
+            "diameter_from_identity": 9,
+            "unique_antipode": true,
+            "bipartite": true
+          }
+        ],
+        "independent_augmented_state_relation_checks": 756,
+        "four_star_antisum": 21,
+        "four_star_permissive_label_compatible": false,
+        "four_star_proved_non_pseudo_tight": true,
+        "four_star_necessary_excess_units": 1,
+        "four_star_crossing_lower_bound": 23,
+        "positive_repeated_rotation_control_compatible": true,
+        "abstract_cover_control_scope": "abstract family only, not sourced rotation obstructions"
+      }
+    },
+    {
+      "command": "python3 scripts/zarankiewicz_redraw_bounds.py --help",
+      "argv_note": "This script has no argument parser; the actual invocation above ran and printed its finite arithmetic replay instead of help. No second invocation was made.",
+      "exit_code": 0,
+      "duration_seconds": null,
+      "output_sha256": null,
+      "observed_summary": {
+        "scope": "finite exact arithmetic; no drawing realization or topology proof",
+        "sector_minimum_checks": 100,
+        "even_deletion_identity_checks": 4900,
+        "odd_parity_formula_checks": 2500,
+        "standard_model_ordered_pair_checks": 11070,
+        "standard_model_row_identity_checks": 891,
+        "fractional_control": {
+          "m": 7,
+          "n": 7,
+          "C": 79,
+          "Z": 81,
+          "proper_subset_size_checks": 63,
+          "local_K33_parity_satisfied": false,
+          "geometric_counterexample": false
+        }
+      }
+    },
+    {
+      "command": "python3 scripts/zarankiewicz_planarization.py",
+      "exit_code": 0,
+      "duration_seconds": null,
+      "output_sha256": null,
+      "observed_summary": {
+        "scope": "complete labelled finite patterns; oriented planarization check",
+        "positive_controls": 7,
+        "positive_controls_all_accepted": true,
+        "negative_controls": 4,
+        "negative_controls_all_rejected": true,
+        "negative_control_names": [
+          "nonalternating_crossing",
+          "one_sided_crossing_label",
+          "same_K2_3_rotations_on_torus",
+          "one_edge_order_transposition"
+        ],
+        "general_unavoidability": "OPEN"
+      }
+    }
+  ]
+}
