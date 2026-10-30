@@ -5,7 +5,7 @@ on:
   pull_request:
   workflow_dispatch:
 
-# Single self-hosted runner: cancel superseded runs on the same ref.
+# Cancel superseded runs on the same ref.
 concurrency:
   group: lean-ci-${{ github.ref }}
   cancel-in-progress: true
@@ -15,20 +15,31 @@ permissions:
 
 jobs:
   build:
-    # Never run fork PRs on the self-hosted runner: untrusted code could persist on it.
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: [self-hosted, lean]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
 
     steps:
+      - name: Make room for Lean and Mathlib
+        # This job does not use the preinstalled Android SDK.
+        run: |
+          sudo rm -rf /usr/local/lib/android
+          df -h /
+
       - uses: actions/checkout@v5
 
-      - name: Use elan toolchain
-        run: |
-          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-          "$HOME/.elan/bin/elan" show
+      - name: Cache Lean toolchain
+        uses: actions/cache@v5
+        with:
+          path: ~/.elan/toolchains
+          key: elan-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain') }}
 
-      - name: Fetch Mathlib cache
-        run: lake exe cache get
-
-      - name: Build
-        run: lake build --no-ansi
+      - name: Build with Mathlib and project caches
+        uses: leanprover/lean-action@v1
+        with:
+          auto-config: false
+          build: true
+          build-args: "--no-ansi"
+          use-mathlib-cache: true
+          # Cache .lake by OS, architecture, toolchain, manifest and commit,
+          # with a fallback to earlier commits using the same dependencies.
+          use-github-cache: true

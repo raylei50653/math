@@ -89,6 +89,17 @@ lake update
 lake exe cache get
 ```
 
+## Lean CI
+
+[`Lean CI`](.github/workflows/lean_action_ci.yml) 在 push、PR 或手動觸發時，
+使用 GitHub 雲端 Ubuntu 24.04 runner 執行 `lake build --no-ansi`。
+Lean 工具鏈按 `lean-toolchain` 快取；`leanprover/lean-action` 下載 Mathlib 編譯快取，
+並快取 `.lake`（依賴及專案編譯產物）。`.lake` 快取依 OS、架構、工具鏈、
+`lake-manifest.json` 與 commit 區分，同依賴的後續提交可沿用前次產物。
+首次執行或快取失效時會下載及重建；每次仍執行 Lake 的建置檢查。
+建置範圍為預設 `Math` target；未匯入 `Math.lean` 的獨立證書仍須顯式建置。
+執行紀錄見 [GitHub Actions](https://github.com/raylei50653/math/actions/workflows/lean_action_ci.yml)。
+
 ## Python 產生器與大型 artifacts
 
 [四色染色實驗與約束傳播](docs/four_color_guide.md)提供求解器、有限比較及逐步播放器。
