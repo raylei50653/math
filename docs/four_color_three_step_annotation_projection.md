@@ -1,5 +1,9 @@
 # 三步共同交換註記：投影恰回舊分量分割閉包
 
+**2026-10-30 後續。** [跨 split 受困交換](four_color_three_step_cross_split_exclusion.md)
+由共同原圖的雙連接反轉迫框外同一分量循環秩至少二，排除總秩≤1及逐分量至多單圈來源的
+`PAIR-C0-D16` 實現；一般含多圈分量的外圖仍 OPEN。以下有限公理無增益裁決保留。
+
 2026-10-30，BASE `e1a90fe` 加既有未提交研究。接續
 [共享外側](four_color_three_step_shared_exterior.md)及
 [任務一](four_color_four_fronts_verification.md#任務一忘掉交換註記後關係層是否仍有增益)。

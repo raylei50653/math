@@ -97,6 +97,10 @@ Bernhart基準與三角化八割的來源排除；一般共同存在性仍缺。
 | 八邊割與三步匯合還需要哪些原來源條件 | [八割與三步續進](four_color_eight_cut_three_step_continuation.md)：三角化兩側至少三點割≥9；二點八割與三步平面排斥OPEN。 |
 | 改變實際附件後如何核共同外側的跨列交換 | [zv 新接口與完整重播](four_color_three_step_shared_exterior.md)：新增原邊進第三 bucket；外框仍全接受，跨 lift 交換須指向同一原圖的精確目標。 |
 | 忘掉六對共同交換註記後是否有關係增益 | [註記量化停止裁決](four_color_three_step_annotation_projection.md)：邊界 traces 加完整 split 交換立方仍恰等於舊分量分割閉包；16型全部存活，完整共同原圖實現仍 OPEN。 |
+| 共同原圖的跨split連接能否排除D16來源 | [受困交換與來源子類排除](four_color_three_step_cross_split_exclusion.md)：雙反轉迫框外同一分量含兩個獨立圈，排除逐分量至多單圈來源；一般含多圈分量外圖及共同存在性仍OPEN。 |
+| 切開分隔路後如何保留全部接法與遠端交換 | [同切口完整fibres](four_color_three_step_separator_fibres.md)：任意相容兩側lifts重接給九列／六列必要限制，遠端鄰域式提供具體逃逸；一般同切口存在性仍OPEN。 |
+| 如何從遠端交換迫原框間連通的必要接法 | [全割準則](four_color_three_step_remote_cut.md)：每道分隔割須有同一遠端分量的雙向附件；固定框列全部lifts通過指定測試仍不充分，其他框列的共同限制OPEN。 |
+| 舊遠端鄰點式能否單獨排除完整關係 | [原邊K₄附件](four_color_three_step_attachment_decoration.md)：每份完整fibre乘二、外框關係及原框間雙色連通不變，卻自動滿足鄰點式；此單獨條件無關係增益。 |
 | 非D的正控制如何與既有計數強化比較 | [Bernhart與B₈對照](ck_bernhart_benchmark.md)：正確圖身份及既有C還原重播，未有新可約性。 |
 | 小周長是否已控制9–11邊割 | [BOND周長推論](four_color_bond_perimeter_small_cuts.md)：短環前提下兩側≥7的割≥12，沒有擴大抽象D表。 |
 | 十二割的雙C₆如何共同接合 | [有序來源與完整族](four_color_twelve_cut_c6_sources.md)及[七點耳側還原](four_color_twelve_cut_w5_ear_reduction.md)：七點側、[八點側](four_color_twelve_cut_eight_side_classification.md)及[九點側](four_color_twelve_cut_nine_side_classification.md)皆完成保同一對側見證的C還原；裸頂點最小反例只餘兩側至少十點，一般十二割及一般五度三角面九割仍OPEN。 |

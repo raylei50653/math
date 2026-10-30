@@ -1,0 +1,80 @@
+[
+  {
+    "command": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "exit_code": 0,
+    "log": "check-1.txt"
+  },
+  {
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "--include",
+      "docs/**/*.md",
+      "check"
+    ],
+    "exit_code": 0,
+    "log": "check-2.txt"
+  },
+  {
+    "command": [
+      "python3",
+      "tools/docgraph",
+      "check"
+    ],
+    "exit_code": 1,
+    "log": "check-3.txt"
+  },
+  {
+    "command": [
+      "python3",
+      "tools/check_generated_artifacts.py"
+    ],
+    "exit_code": 0,
+    "log": "check-4.txt"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "check-5.txt"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--with-requirements",
+      "requirements.txt",
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "tests": 515,
+    "elapsed_seconds": 48.304
+  },
+  {
+    "independent_replays": 7,
+    "exit_code": 0,
+    "logs": "replay/1.json through replay/7.json"
+  },
+  {
+    "historical_v1_regeneration": "all four JSON files byte-identical; exact producer hash matched",
+    "exit_code": 0
+  },
+  {
+    "research_archive_internal_hashes": "all match",
+    "exit_code": 0
+  }
+]

@@ -36,6 +36,10 @@
 | [三步完整關係族控制](four_color_three_step_relation_control.md) | ALT／平面 twin 共用全部生成表、完整核心 fibres 及其關係閉包；完整剩餘問題仍不同。原 C₀ 完整分割固定點仍留16型，新增刪列為0；共同外側限制仍OPEN。 |
 | [三步實際 zv 通道與跨 lift 交換](four_color_three_step_shared_exterior.md) | 新邊確入第三 bucket；七點接口2,808 lifts，外框仍全接受。六對分量接合及1,429,332次交換完整重播；拒絕混接註記，新增解列排除0，關係族正向驗收仍OPEN。 |
 | [共同交換註記投影與停止](four_color_three_step_annotation_projection.md) | 真正C₀上六對分量traces／完整交換立方存在量化恰回舊分量分割閉包；16型、864份共同註記全存活，停止此有限公理。完整共同原圖實現與關係增益仍OPEN。 |
+| [三步跨split受困交換與D16來源子類排除](four_color_three_step_cross_split_exclusion.md) | 同一外圖雙反轉迫框外同一分量循環秩≥2；排除總秩≤1及逐分量至多單圈來源的全部D16註記，D／B₆仍接受。真秩2反控制阻止直接推廣；一般多圈外圖及存在性OPEN。 |
+| [三步原分隔路與完整fibres](four_color_three_step_separator_fibres.md) | 同一切口兩側全部lifts重接迫九列／六列必要限制，遠端鄰域式給具體逃逸；三控制完整接合及交換圖核對。一般同切口見證存在性與D16排除仍OPEN。 |
+| [三步遠端交換的全割準則](four_color_three_step_remote_cut.md)（[發布核對](history/2026-10-30-three-step-d16-publication.md)） | 全部遠端方向保持指定連通等價每割由同一原分量雙向跨過；跨split有限核對及真平面耳控制。單框列全部lifts測試仍不充分，一般跨列矛盾／D16排除OPEN。 |
+| [三步原邊K₄附件與鄰點式停止](four_color_three_step_attachment_decoration.md) | 任意來源沿za接K₄，每份完整fibre乘二，原關係及原框雙色連通不變，所有相關lifts自動滿足舊鄰點式；停止此單獨條件的關係排除。 |
 | [BOND周長十／十二下界](four_color_bond_perimeter_small_cuts.md) | S34下兩側≥4的割≥10，九割有facial555側；加S5後兩側≥7的割≥12，等號為雙簡單C₆框。43,005分割核對，未擴9–11抽象D表。 |
 | [十二割雙C₆來源與接合](four_color_twelve_cut_c6_sources.md) | 有序十二附件及完整族；S5迫跨度≤3，有弦側恰W₅加耳。七點、[八點側](four_color_twelve_cut_eight_side_classification.md)及[九點側](four_color_twelve_cut_nine_side_classification.md)完成C還原；裸最小反例只餘兩側至少十點的無弦十二割，一般十二割OPEN。 |
 | [十二割七點W₅加耳C還原](four_color_twelve_cut_w5_ear_reduction.md) | 五個必要附件型、三型補弦及八列表證每份縮圖染色保同一對側見證還原；裸平面頂點最小性排除此側。48原耳側、3,456份完整縮圖染色核對。 |
