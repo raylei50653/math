@@ -7,7 +7,7 @@
 
 ## 成果與證據層
 
-[報告](../c5_adjacent_degree5_mixed_edge_same_endpoint.md) 保留原三角形 zwu、
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_same_endpoint.md) 保留原三角形 zwu、
 原 uv、u 的一條與 v 的三條 boundary 邊及各 unary 完整有序關係。
 q 下 v 強迫 3，u 可用 T={0,1,2}∖{h}；完整 uv-tuples 恰為 T×{3}。
 五種 residual 組合及逐邊 minimality 給 240 筆必要正常形。

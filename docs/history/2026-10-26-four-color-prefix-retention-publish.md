@@ -1,16 +1,16 @@
 # 四色前綴剪枝與無損回填壓縮整理發布
 
-2026-10-26。所屬研究線：[四色求解導覽](../four_color_guide.md)。
+2026-10-26。所屬研究線：[四色求解導覽](../tools/four_color_guide.md)。
 發布前基準為 `ad82986cae9713f0d4aa08e8c9458e499b341c78`；實際提交與遠端身份以Git核對為準。
 
 ## 本次進展
 
-- [完整因子前綴剪枝](../four_color_logic_optimization.md)：新增可選 `bucket_method="prefix"`
+- [完整因子前綴剪枝](../tools/solver/four_color_logic_optimization.md)：新增可選 `bucket_method="prefix"`
   及 `--bucket-method prefix`。當一張完整因子的座標都已補齊，立即核對並排除不相容後綴；
   預設仍為 `anchor`，全部有序邊界、完整fibres、來源與最後共同回寫保持。
   同四十例仍為27可解／13無解／0超限，工作檢查11,968,026→10,433,208，減12.82%。
   工作計數單位及單輪時間各有限制，不能推成一般加速比例。
-- [回填可能性與無損壓縮](../four_color_retention.md)：完整邊界每列留一個合法見證可保求一解，
+- [回填可能性與無損壓縮](../tools/solver/four_color_retention.md)：完整邊界每列留一個合法見證可保求一解，
   但一般不保全部原解；主程式採4-bit mask保存每列全部色，公開紀錄仍列完整排序色列表。
   原四十例共149,040個邊界列、201,747個回填色選項均保留；重建回填map的估計物件體積
   30,351,392→21,583,496 bytes，減28.89%，不是程序RSS或整體記憶體降幅。
@@ -58,7 +58,7 @@ python3 docs/history/2026-10-26-four-color-prefix-retention-publication/audit_ar
 ## 範圍與停止點
 
 - Closure scope：只完成指定消元流程／表示改動及有限核對；完整消元的一般演算法證明仍見
-  [原完備性報告](../four_color_completeness.md)，本批沒有整份Python形式化驗證。
+  [原完備性報告](../tools/solver/four_color_completeness.md)，本批沒有整份Python形式化驗證。
 - Updated：四色導覽、STATUS、約束引擎使用入口與兩份專題報告；發布紀錄由STATUS歷史區連入。
 - Reviewed-unchanged：README／HANDOFF入口與研究線排程未變；C₅／W7／J1／J2來源義務未受影響。
 - Remaining OPEN：一般消元前傳播完備性、一般效率、固定小接口充分性，以及從同一平面來源

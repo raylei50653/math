@@ -2,7 +2,7 @@
 
 Git 基準 `47ebbbc`，接手時工作區乾淨。使用者要求推進 B–E class；本輪
 完成此型及整圖 root 交換型的指定雙列分離，成果留在工作區，未 commit／push。
-完整前提、任意大小必要化約與證據界線見 [B–E 報告](../c5_adjacent_degree5_no_mixed_be.md)。
+完整前提、任意大小必要化約與證據界線見 [B–E 報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_be.md)。
 
 ## 成果與停止點
 

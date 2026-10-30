@@ -17,7 +17,7 @@
 
 ## 核實的現況與計數
 
-BR-SD-1a／1c／1e／1g均已正式採納；原audit的candidate/pending措辭留作歷史。LONG-S後續限定採納已完成，不以較早JOINT calibration的OPEN描述代替現況。來源：[N45 canonical](../../docs/c5_excess_two_nonadjacent_unit_core45.md) §2.9–2.11及其具名adoption history／review。
+BR-SD-1a／1c／1e／1g均已正式採納；原audit的candidate/pending措辭留作歷史。LONG-S後續限定採納已完成，不以較早JOINT calibration的OPEN描述代替現況。來源：[N45 canonical](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md) §2.9–2.11及其具名adoption history／review。
 
 本inventory有13個焦點端點（U-LP/SS2、LOW/HIGH5、LONG2、BR4）、4個前置排除、3個SD二連通適用性subset，合20筆來源排除／適用性記錄；另列4個composition。它們不是20個互斥來源families或20項新closure。canonical33行是bundles；LONG-S61原labels也不是61定理。
 

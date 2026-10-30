@@ -8,7 +8,7 @@ ternary／quaternary 未提交成果，接續使用者交接的 (2,2)、mixed-(1
 
 ## 窄結論與保存範圍
 
-[新報告](../c5_excess_two_mixed_core_four_spoke_equal_pair.md)／
+[新報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_equal_pair.md)／
 [checker](../../scripts/c5_excess_two_mixed_core_four_spoke_equal_pair.py)／
 [joint helper](../../scripts/c5_excess_two_four_spoke_equal_pair_joint_controls.py)
 完成原共用 spoke-pair 排除，含指定 a5／b6、spokes=01／01 及 root

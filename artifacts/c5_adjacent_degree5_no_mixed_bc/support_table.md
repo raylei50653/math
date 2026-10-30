@@ -613,4 +613,4 @@
 | 606 | 2924 | 34 / 23 / 4 / 14 / 12 | source_excluded |  |
 | 607 | 2931 | 34 / 23 / 4 / 14 / 12 | source_excluded |  |
 
-[完整證書](observations.json)；[前提與界線](../../docs/c5_adjacent_degree5_no_mixed_bc.md)。
+[完整證書](observations.json)；[前提與界線](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_bc.md)。

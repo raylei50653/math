@@ -6,8 +6,8 @@
 記憶中的 ε=1 停止點已過時，以即時 HANDOFF、STATUS、Kempe 導覽及
 工作樹為準。本輪先重播最新雙 binary checker，再接續其指定窄題。
 
-成果見 [專題報告](../c5_excess_two_two_unary.md)，現況與下一入口見
-[Kempe 導覽](../c5_kempe_guide.md)。研究線未增減，依文件治理維持
+成果見 [專題報告](../archive/reports/c5/excess/other/c5_excess_two_two_unary.md)，現況與下一入口見
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)。研究線未增減，依文件治理維持
 HANDOFF 薄索引；README、STATUS、導覽及前序報告補上後續關係。
 
 ## 本輪結果

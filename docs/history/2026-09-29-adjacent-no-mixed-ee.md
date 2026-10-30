@@ -3,7 +3,7 @@
 Git 基準 `47ebbbc`。接手時已有 B–E checker、artifacts、報告及相關文件的
 未提交成果，本輪保留並接續。使用者要求推進 E–E class；完成本型的
 任意大小 disk 來源排除，未 commit／push。完整前提及證據界線見
-[E–E 報告](../c5_adjacent_degree5_no_mixed_ee.md)。
+[E–E 報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_ee.md)。
 
 ## 成果與停止點
 

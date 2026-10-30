@@ -3,7 +3,7 @@
 研究 BASE `dc8e9aa7d6fccb51f63d30aa3f9c132296d44744`。
 使用者明確要求「整理目前進展commit + push」；本輪整理已採納的相連成果，
 提交至 main並推送origin。最終commit／遠端狀態以Git即時回讀為準。
-當前數學權威仍是[原unit省略45／54身份](../c5_excess_two_nonadjacent_unit_core45.md)，
+當前數學權威仍是[原unit省略45／54身份](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)，
 完整本輪清單與actual執行收據见[發布報告](../../audits/2026-10-10-n45-publication/REPORT.md)。
 
 | 已採納進展 | 精確覆蓋與證據 |

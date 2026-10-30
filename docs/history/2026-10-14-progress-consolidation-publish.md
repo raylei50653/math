@@ -9,18 +9,18 @@
 
 ## 整理成果與保留界線
 
-[跨線總覽的目前進展](../c5_research_synthesis.md#目前進展)集中呈現：
+[跨線總覽的目前進展](../archive/reports/c5/shared-results/c5_research_synthesis.md#目前進展)集中呈現：
 
-- [C5→C4](../c5_c4_boundary_pivot.md)接外部完整 ≤28 總點計算得
+- [C5→C4](../archive/reports/c5/structure/c5_c4_boundary_pivot.md)接外部完整 ≤28 總點計算得
   `K≤22=K≤5=K132`；no4ct 全域最小目錄外來源三支共同 `k≥23`。
-- [C4 的 T／T0 化約](../c5_c4_triangle_core.md)及原 `b0,b1,b3` 皆四度時
+- [C4 的 T／T0 化約](../archive/reports/c5/structure/c5_c4_triangle_core.md)及原 `b0,b1,b3` 皆四度時
   R 的完整 C4 關係 mask13；六接點必保同份 full lift，mask13 尚未排除。
-- [T1-CROSSCUT](../c5_c8_peeling.md#t1-crosscut)的 `h=3⇒p=0`，第一剝層
+- [T1-CROSSCUT](../archive/reports/c5/structure/c5_c8_peeling.md#t1-crosscut)的 `h=3⇒p=0`，第一剝層
   只留 RING；[W5 no4ct 橋](../../audits/2026-10-13-w5-no4ct-bridge-d521163/REPORT.md)
   在全域最少內點、再最多邊的目錄外來源契約下，給任取合法輪的私人圈秩至少五。
-- [廣義 N2](../c5_excess_two_n2_bridge.md)只在原 E4 來源契約內收尾；
+- [廣義 N2](../archive/reports/c5/excess/n2/c5_excess_two_n2_bridge.md)只在原 E4 來源契約內收尾；
   E-ARC2 仍留 N1／相鄰 roots，基本 LL-CUT 未獨立證成。
-- [具名首層替換](../lean_named_replacement.md)的32個普通 theorem 保完整
+- [具名首層替換](../verification/lean_named_replacement.md)的32個普通 theorem 保完整
   外部接受關係、原 J／指定 P、repair 分類及 r*=4；任意層數與 disk 框仍待形式化。
 
 每項分開紙面、Python 有限控制、外部計算及 Lean；當輪局部 `k≥18／19`

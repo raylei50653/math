@@ -1,6 +1,6 @@
 # 2026-10-03：四-spoke (3,1) 一原 binary 的 marked-leaf 必要化約
 
-接續使用者交接的 [兩單接點 unary 排除](../c5_excess_two_mixed_core_four_spoke_singles.md)，
+接續使用者交接的 [兩單接點 unary 排除](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_singles.md)，
 推進所選 mixed-(1,1) 加一原 binary unary。接手基準
 `b63a0965434d68a28292994638b2c98e848585b8`，工作目錄
 `/home/ray/developer/ai/math`；main 比 origin/main 多一份既有提交，
@@ -9,7 +9,7 @@
 
 ## 本輪結果與證據界線
 
-[新報告](../c5_excess_two_mixed_core_four_spoke_binary.md)、
+[新報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_binary.md)、
 [checker](../../scripts/c5_excess_two_mixed_core_four_spoke_binary.py)及
 [joint helper](../../scripts/c5_excess_two_four_spoke_binary_joint_controls.py)
 保持固定 933／941 完整 Σ、每條非框邊 Σ-critical、有序 induced-C₅

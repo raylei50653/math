@@ -12,7 +12,7 @@
 提出高階整合假設，可以先做初步驗證、後續再實驗。未要求commit／push，
 本輪未開子代理，未新增圖或class-pair搜尋。
 
-成果見[全線整合](../c5_research_synthesis.md)及[關係階數](../c5_relation_arity.md)。
+成果見[全線整合](../archive/reports/c5/shared-results/c5_research_synthesis.md)及[關係階數](../reference/c5/c5_relation_arity.md)。
 README與STATUS加入跨線入口；state／兩點重疊導覽加入新階數結果。
 依[文件治理](../DOCUMENTATION.md)，研究線與tag不變，HANDOFF保留原清單。
 各線現有停止點沒有被實驗提案取代。

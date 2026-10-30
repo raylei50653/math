@@ -2,19 +2,19 @@
 
 2026-10-29。從基準 `aec89209e1f889f7ddaefe35fbdfd0b97691e9ee` 整理相連程式、
 完整實驗紀錄、來源快照、紙證及 Lean 核心。當前入口為
-[4CT導覽](../4ct_guide.md)、[求解工具導覽](../four_color_guide.md)及[Lean導覽](../lean_guide.md)。
+[4CT導覽](../research/4ct_guide.md)、[求解工具導覽](../tools/four_color_guide.md)及[Lean導覽](../verification/lean_guide.md)。
 本頁保存本輪發布範圍與驗證；commit、push及遠端CI以即時Git／GitHub核對為準。
 
 ## 成果與證據範圍
 
 | 工作 | 本批成果 | 停止點與限制 |
 | --- | --- | --- |
-| 分區與增量傳播 | [分區](../four_color_partition.md)、[動態訊息分區](../four_color_information_partition.md)、[delta](../four_color_delta_propagation.md)與[支援流失](../four_color_support_loss.md)接入可選模式，保留完整有序接口、全部fibres及共同回寫；完整支援流失等價式有普通Lean。 | 固定40例有改善也有退步／超限；保留原預設，沒有一般加速保證。 |
-| 全解表示及方案分析 | [部分歷史](../four_color_partial_history.md)以精確前綴、剩餘問題及可重算fibres表示全部解；[圈區訊息](../four_color_region_messages.md)、[數學優化候選](../four_color_mathematical_optimization.md)及[方案比較](../four_color_method_comparison.md)保留來源、反控制與完整紀錄。 | 原型與主引擎的整合範圍各自明列；查詢／傳播／建構checks不可混比，歷史牆鐘不當一般成本界。 |
-| 有限域精確分解 | [有限色域報告](../four_color_bounded_projection.md)：至多q因子空交證書、anchor與完整fibre有普通Lean；獨立Python原型逐份核原解、剩餘投影及原子中斷。 | 未形式化Python精化；十葉首步省列但六葉整次可超限，沒有一般效率、固定寬度或4CT結論。 |
-| 平面六邊割來源 | [hub輪圈與六割排除](../four_color_six_cut_exclusion.md)：在裸平面全體頂點最小反例的前提下，非平凡邊割至少七；同份原側換色與兩端點例外有紙證，另有有限Python控制。 | 一般拓撲論證未Lean化；七邊全族來源、932與完整4CT仍OPEN。 |
+| 分區與增量傳播 | [分區](../tools/solver/four_color_partition.md)、[動態訊息分區](../tools/solver/four_color_information_partition.md)、[delta](../tools/solver/four_color_delta_propagation.md)與[支援流失](../tools/solver/four_color_support_loss.md)接入可選模式，保留完整有序接口、全部fibres及共同回寫；完整支援流失等價式有普通Lean。 | 固定40例有改善也有退步／超限；保留原預設，沒有一般加速保證。 |
+| 全解表示及方案分析 | [部分歷史](../tools/solver/four_color_partial_history.md)以精確前綴、剩餘問題及可重算fibres表示全部解；[圈區訊息](../tools/solver/four_color_region_messages.md)、[數學優化候選](../tools/solver/four_color_mathematical_optimization.md)及[方案比較](../tools/solver/four_color_method_comparison.md)保留來源、反控制與完整紀錄。 | 原型與主引擎的整合範圍各自明列；查詢／傳播／建構checks不可混比，歷史牆鐘不當一般成本界。 |
+| 有限域精確分解 | [有限色域報告](../tools/solver/four_color_bounded_projection.md)：至多q因子空交證書、anchor與完整fibre有普通Lean；獨立Python原型逐份核原解、剩餘投影及原子中斷。 | 未形式化Python精化；十葉首步省列但六葉整次可超限，沒有一般效率、固定寬度或4CT結論。 |
+| 平面六邊割來源 | [hub輪圈與六割排除](../archive/reports/planar-sources/four_color_six_cut_exclusion.md)：在裸平面全體頂點最小反例的前提下，非平凡邊割至少七；同份原側換色與兩端點例外有紙證，另有有限Python控制。 | 一般拓撲論證未Lean化；七邊全族來源、932與完整4CT仍OPEN。 |
 
-主攻方向已在[精確消元研究契約](../4ct_guide.md#精確消元主線的研究契約)採納：
+主攻方向已在[精確消元研究契約](../research/4ct_guide.md#精確消元主線的研究契約)採納：
 從原平面嵌入與實際接點出發，尋找跨指定消元規則保留的結構不變量。
 本次整理未新增這項不變量或封閉定理；舊D／單split無增益停止裁決保留。
 完整關係保解不自行提供平面共同非空性，其他C₅來源分支的OPEN邊界不變。

@@ -2,10 +2,10 @@
 
 2026-09-29，起始 Git `98b26b7fff528f0c792c80275dccec7a035f5c78`，工作樹乾淨。
 研究完成時未開 sub-agents，未 commit／push；後續授權發布見本文末節。證明直接補入
-[既有 hypothesis audit §3.1–3.3](../c5_no_mixed_hypothesis_audit.md#31-逐-root-不可搬運界)，
-前置為[跨度預算](../c5_no_mixed_span_budget.md)與
+[既有 hypothesis audit §3.1–3.3](../archive/reports/c5/weak-deletion/c5_no_mixed_hypothesis_audit.md#31-逐-root-不可搬運界)，
+前置為[跨度預算](../archive/reports/c5/weak-deletion/c5_no_mixed_span_budget.md)與
 [前輪三假設驗證](2026-09-29-no-mixed-hypothesis-audit.md)，目前入口與後續
-窄問題見[weak-deletion 導覽](../c5_weak_deletion_guide.md)。
+窄問題見[weak-deletion 導覽](../archive/guides/c5_weak_deletion_guide.md)。
 
 ## 本輪結論與範圍
 

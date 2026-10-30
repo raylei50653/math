@@ -7,7 +7,7 @@
 
 ## 成果與界線
 
-[新報告](../c5_adjacent_degree5_singleton_end_arc.md) 證明在明列 disk、T4、
+[新報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_singleton_end_arc.md) 證明在明列 disk、T4、
 minimal q-core 及完整 degree 前提下，唯一 mixed 共鄰 singleton x
 接 34 或 40 的來源不存在。34 的 q 色框為 T={0,3}、私有外色 {1,2}，
 沿用原三角形外側次序與原 r–x–B 的 K5 任意大小化約。
@@ -39,7 +39,7 @@ minor 論證仍為紙面＋外部定理，有限域及拓撲 skeleton 由 Python
 未新增 Lean theorem。
 
 結合同側限制與 01／12／23 分離，唯一 mixed 共鄰 singleton 全部 x 支援
-已接回 [條件式出口](../c5_single_sided_exit.md)；第七類已移除支援限制。
+已接回 [條件式出口](../archive/reports/c5/structure/c5_single_sided_exit.md)；第七類已移除支援限制。
 完整 Σ(M)=Ω∖{q} 仍使用雙缺失來源與刪邊繼承，不只從 T4 推出。
 
 ## 實際驗證

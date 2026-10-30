@@ -9,7 +9,7 @@
 
 ## 理論與證據邊界
 
-[預算報告](../c5_root_degree_excess.md) 補齊精確消去、source spokes
+[預算報告](../archive/reports/c5/structure/c5_root_degree_excess.md) 補齊精確消去、source spokes
 異色、F⊆A、一般 root 的 |E_r|≤deg_Q(r)，包括 Q 單點的證明。
 得到 D+O+κ=degree−4 及總超額公式。樹上 edge-minimal list obstruction
 等價於 incident 邊標色互異且其聯集恰為 E_r，故樹骨架 κ=0。
@@ -28,7 +28,7 @@
 
 ## 原 136 份資料與新的停止點
 
-[支援報告](../c5_adjacent_degree5_no_mixed_t2_t1.md)、
+[支援報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t1.md)、
 [checker](../../scripts/c5_adjacent_degree5_no_mixed_t2_t1.py)、
 [JSON](../../artifacts/c5_adjacent_degree5_no_mixed_t2_t1/observations.json) 及
 [表格](../../artifacts/c5_adjacent_degree5_no_mixed_t2_t1/support_table.md)

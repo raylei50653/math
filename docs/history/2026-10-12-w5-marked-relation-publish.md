@@ -2,7 +2,7 @@
 
 2026-10-12。使用者授權「整理目前進展 commit + push」。起點 HEAD 與遠端 main
 均為 `e299ae987fcc4cdeb55dd41bede0a3a7c9d9db86`；起始工作樹只有本輪 W5 隔離包未追蹤。
-本次以 [具名完整關係縮減](../c5_w5_marked_relation.md) 為正式來源入口。
+本次以 [具名完整關係縮減](../archive/reports/c5/structure/c5_w5_marked_relation.md) 為正式來源入口。
 
 ## 採納範圍
 

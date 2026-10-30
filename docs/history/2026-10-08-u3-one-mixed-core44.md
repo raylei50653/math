@@ -3,8 +3,8 @@
 基準 `main @ 2971d46d715d213f25f534958bdab499d2573b69`。
 使用者要求「推進 U3」。從 HANDOFF、STATUS、Git 與 Kempe 導覽的既有窄提議接續；
 工作區已有 U2 及 audits／scratch 變更，全部保留。
-證明與依賴見 [U3 mixed11 報告](../c5_excess_two_nonadjacent_one_mixed_core44.md)，
-目前停止點由 [Kempe 導覽](../c5_kempe_guide.md#3-停止點與保留缺口)維護。
+證明與依賴見 [U3 mixed11 報告](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_one_mixed_core44.md)，
+目前停止點由 [Kempe 導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)維護。
 
 ## 成果與精確範圍
 

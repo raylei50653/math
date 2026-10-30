@@ -1,6 +1,6 @@
 # 2026-09-27：single-spoke (2,2) 必要分類
 
-研究報告見 [(2,2) 完整關係／實際支援分類](../c5_single_spoke_two_two.md)。
+研究報告見 [(2,2) 完整關係／實際支援分類](../archive/reports/c5/single-spoke/c5_single_spoke_two_two.md)。
 本輪只處理兩個二接點分量；未重開 (2,1,1)、未生成來源圖 catalog。
 
 任意大小化約先保留兩份原 ordered tuple relations、各點 attachments、

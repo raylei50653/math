@@ -9,7 +9,7 @@
 
 ## 成果、具名入口與證據層
 
-[A₂ 報告](../c5_excess_two_mixed_core_four_spoke_mixed12_01_12.md)在
+[A₂ 報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed12_01_12.md)在
 A 的固定完整 Σ933／941、Σ edge-minimal induced-C₅ disk、有效 H
 連通、ε=2、相鄰兩個完整 degree-5 roots、其餘有效內點 degree 四、
 唯一 mixed C incidence=(1,2)、a 側一原單接點 unary U、spokes 各二

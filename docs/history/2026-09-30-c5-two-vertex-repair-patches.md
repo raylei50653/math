@@ -3,8 +3,8 @@
 接手 HEAD `6f8b3c3`；共同 repair lemma 與來源充分定理的未提交成果
 已在工作樹，全部保留。使用者要求推進不能作私有度數三消去的來源
 代表。本輪未 commit／push，未開 sub-agents，未搜尋新 class pair。
-現況見[研究線導覽](../c5_two_vertex_overlap_guide.md)，完整前提、證明及
-反例見[補片報告](../c5_two_vertex_repair_patches.md)。
+現況見[研究線導覽](../archive/guides/c5_two_vertex_overlap_guide.md)，完整前提、證明及
+反例見[補片報告](../archive/reports/c5/two-vertex/c5_two_vertex_repair_patches.md)。
 
 ## 新成果及證據邊界
 

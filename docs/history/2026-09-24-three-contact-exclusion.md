@@ -1,6 +1,6 @@
 # 2026-09-24：兩-spoke 三接點的同圖 K5 排除
 
-成果見 [完整證明](../c5_two_spoke_three_contacts.md)。本輪從相鄰 S={b0,b1}
+成果見 [完整證明](../archive/reports/c5/structure/c5_two_spoke_three_contacts.md)。本輪從相鄰 S={b0,b1}
 的 (3) 核心出發，保留同圖三接點、六邊形區域與實際 boundary attachments。
 兩個 q 禁色的 block palette 差強迫一個 triangle 加三條同 parity bridge
 arms；三個 triangle 頂點各有實際 boundary tether，連同 z 的 spokes 給

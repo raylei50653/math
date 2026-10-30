@@ -6,9 +6,9 @@
 
 | 提交 | 內容與精確邊界 |
 | --- | --- |
-| `9bff346` | [四色求解與共同約束實驗](../four_color_guide.md)：求解器／播放器、十一報告及凍結證據整包；十二點例8→0消元，九點例仍4；無一般傳播完備性或新Lean。 |
+| `9bff346` | [四色求解與共同約束實驗](../tools/four_color_guide.md)：求解器／播放器、十一報告及凍結證據整包；十二點例8→0消元，九點例仍4；無一般傳播完備性或新Lean。 |
 | `8a3a6bc` | [941 K8同一外側接續](2026-10-25-941-k8-publish.md)：隔一型116→115，21 cap總1710→1704；七列無新增排除、明列替換庫新覆蓋零，同一實際E與K8整支OPEN。 |
-| `ee42fab` | [六份圓盤三角化與逐面編號](../triangle_structure.md)：原圖嵌入／身份／有限染色數與只讀checker；歷史72次擾動缺重播來源，不稱本次重跑。 |
+| `ee42fab` | [六份圓盤三角化與逐面編號](../tools/solver/triangle_structure.md)：原圖嵌入／身份／有限染色數與只讀checker；歷史72次擾動缺重播來源，不稱本次重跑。 |
 
 本地原有四項提交`b6b3c2c`、`02356f8`、`698fcf8`、`494208f`保留原SHA，一併發布。
 它們分別是三支等價表述、大k有限隨機搜尋、P1–P4任務登記及前提／失敗審核更正；
@@ -29,4 +29,4 @@ STATUS合併主目標及本次直接來源索引；4CT導覽只增有限工具�
 
 推送後以即時`HEAD`、`origin/main`、`git ls-remote origin refs/heads/main`核SHA及乾淨工作樹；
 遠端CI另查實際執行狀態，push成功不代表CI成功。本檔在推送前提交，不預稱遠端結果。
-目前研究目標及下一義務分別由[4CT](../4ct_guide.md)、[四色實驗](../four_color_guide.md)及[Kempe](../c5_kempe_guide.md)導覽維護。
+目前研究目標及下一義務分別由[4CT](../research/4ct_guide.md)、[四色實驗](../tools/four_color_guide.md)及[Kempe](../archive/guides/c5_kempe_guide.md)導覽維護。

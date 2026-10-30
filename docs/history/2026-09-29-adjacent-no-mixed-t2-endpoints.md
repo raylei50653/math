@@ -5,7 +5,7 @@ bridge checker／artifacts／報告與入口更新。先讀 HANDOFF、STATUS、G
 確認 580／644 已證及 record 5／p₂ 停止點。完整保留接手成果；未開 sub-agents、
 Graphify 或來源圖枚舉。使用者未要求 commit／push，本輪未執行。
 
-成果：[報告](../c5_adjacent_degree5_no_mixed_t2_endpoints.md)、
+成果：[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_endpoints.md)、
 [checker](../../scripts/c5_adjacent_degree5_no_mixed_t2_endpoints.py)、
 [JSON](../../artifacts/c5_adjacent_degree5_no_mixed_t2_endpoints/observations.json)、
 [完整套表](../../artifacts/c5_adjacent_degree5_no_mixed_t2_endpoints/support_table.md)。

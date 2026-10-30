@@ -15,9 +15,9 @@ README、HANDOFF、STATUS、前序報告通知與 single-sided exit 定理。
 | 層 | 新增延拓 | 累計 target 已證 | 雙列皆證 | 未決查詢 |
 | --- | ---: | ---: | ---: | ---: |
 | 已提交的原支援／環序表 | — | 512／644 | 206 | 132 |
-| [原 bridge／固定框弧](../c5_adjacent_degree5_no_mixed_t2_bridge.md) | 68 | 580／644 | 258 | 64 |
-| [原雙端點](../c5_adjacent_degree5_no_mixed_t2_endpoints.md) | 60 | 640／644 | 318 | 4 |
-| [整條原路徑 palettes](../c5_adjacent_degree5_no_mixed_t2_path_palettes.md) | 4 | 644／644 | 322 | 0 |
+| [原 bridge／固定框弧](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_bridge.md) | 68 | 580／644 | 258 | 64 |
+| [原雙端點](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_endpoints.md) | 60 | 640／644 | 318 | 4 |
+| [整條原路徑 palettes](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_path_palettes.md) | 4 | 644／644 | 322 | 0 |
 
 本次合計新增 132 個延拓，原 322 份全保留，新增來源排除為 0。
 原 IDs、88 份 frontier／side 記錄、完整 q schemas、placements、
@@ -25,7 +25,7 @@ README、HANDOFF、STATUS、前序報告通知與 single-sided exit 定理。
 SHA256；完整 joins 與失敗候選的證據鏈保留。
 
 指定圖類的無 mixed 兩側 t=2,(2) 已完成雙列分離，接入
-[條件式出口](../c5_single_sided_exit.md) 第九類。完整 Σ(M)=Ω\{q}
+[條件式出口](../archive/reports/c5/structure/c5_single_sided_exit.md) 第九類。完整 Σ(M)=Ω\{q}
 仍另用來源雙缺失與刪邊繼承。不需 T4；證據為任意大小紙面證明、
 外部 degree-list 定理與 Python 有限控制，未新增 Lean theorem。
 必要表可實現性、一般單側／共同出口及 `K∞=K≤5` 仍未證。

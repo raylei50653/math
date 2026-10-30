@@ -2,11 +2,11 @@
 
 本輪承接第一混合框 R255 的未提交成果，只計算同一反向見證的另一
 五邊形面 `(a0,b4,b0,a2,a1)`。未 commit／push；發布狀態以即時 Git
-為準。現況與下一窄題由[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)維護。
+為準。現況與下一窄題由[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)維護。
 
 ## 成果與界線
 
-- 新增[報告](../c5_two_vertex_second_mixed_frame.md)、
+- 新增[報告](../archive/reports/c5/two-vertex/c5_two_vertex_second_mixed_frame.md)、
   [checker](../../scripts/c5_two_vertex_second_mixed_frame.py)及
   [完整證書](../../artifacts/c5_two_vertex_overlap/second_mixed_frame_relation.json)。
   沿用原十五點三十五邊圖、原八點 J 及反向 rotation，將外面由 19

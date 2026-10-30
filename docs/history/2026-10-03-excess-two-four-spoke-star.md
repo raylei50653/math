@@ -7,7 +7,7 @@
 
 ## 結果與本輪證據
 
-[新報告](../c5_excess_two_mixed_core_four_spoke_star.md)與
+[新報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_star.md)與
 [checker](../../scripts/c5_excess_two_four_spoke_binary_star.py)先關閉指定
 入口：原連通 C 與 a 都接 b₀、b₁、b₂，加外側 apex 給 K₃,₃ minor。
 所以不需在這份不可能的原支援上推導跨列 palette 等式。

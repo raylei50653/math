@@ -3,7 +3,7 @@
 2026-10-04，Git 基準 `0e3812712b68f57927df86f30a07bb8074e090f9`。
 工作目錄 `/home/ray/developer/ai/math`；起始已有多輪四-spoke／共鄰 P₃
 研究與索引未提交變更。本輪只新增這份 C₂ 證據及相連索引，未 commit／push。
-完整前提與任意大小證明見[報告](../c5_mixed_p3_one_color_ternary_unary.md)。
+完整前提與任意大小證明見[報告](../archive/reports/c5/weak-deletion/c5_mixed_p3_one_color_ternary_unary.md)。
 
 ## 結果與精確來源身份
 
@@ -99,7 +99,7 @@ C₂ 所指定的一份原三接點身份已 source 排除，沒有未決的 una
 完整 triples、side IDs=(8,1)、兩側禁色及三接點身份；自身支援改為
 A_z={b₁,b₂}、A_w={b₂,b₄}。它的原 geometry identity 保存在新 artifact。
 非接點可同時碰兩框點而內度二，原單框點葉數論證不能直接套用；本輪未研究。
-目前入口以[weak-deletion §3](../c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)為準。
+目前入口以[weak-deletion §3](../archive/guides/c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)為準。
 
 > 先讀 docs/HANDOFF.md、docs/STATUS.md 與 weak-deletion guide §3。
 > C₂ 已排除 CPP-134-1／geometry30／side_join20：z 原 unary own support={b1}、

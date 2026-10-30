@@ -7,12 +7,12 @@
 
 ## 採納範圍
 
-- [K13-COLLAR](../c5_k13_collar.md)：一般有序 disk-C₅ 完整關係
+- [K13-COLLAR](../archive/reports/c5/structure/c5_k13_collar.md)：一般有序 disk-C₅ 完整關係
   `K≤13=K≤5=K132`；目錄外來源至少十四內點。h=4 的41份根圖（含兩份有弦圖）、
   h=5 的4份根圖（均兩條內弦）全部 Σ=1023；h=6／7 由紙面普遍排除並與
   完備分類吻合。全域最小來源化約、外部 Brinkmann–McKay 生成完備性定理、
   C 實作及完整有限證書分層；不是僅由零觸發外推。
-- [W5 contractible 圈秩三](../c5_w5_private_rank3_contractible.md)：在全部
+- [W5 contractible 圈秩三](../archive/reports/c5/structure/c5_w5_private_rank3_contractible.md)：在全部
   目錄外 disk-C₅ 圖中先最小化內點、再最大化邊數取 G。任取合法全內部
   induced W5，固定原中心 v、原循環 U、外框 B、十 pins 及原輪面，令
   `P=V(G)\(B∪U∪{v})`，則 `ρ(G[P])≥4`。contractible 的 c=1／c=2

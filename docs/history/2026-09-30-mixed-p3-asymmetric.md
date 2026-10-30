@@ -2,8 +2,8 @@
 
 2026-09-30，Git 基準 `d72b6cb`；起始工作樹乾淨，main 與本地
 origin/main 一致。本輪未作遠端查詢，未 commit／push。
-依 [weak-deletion 導覽](../c5_weak_deletion_guide.md)的窄問題接續，
-完整成果見[專題報告](../c5_mixed_p3_asymmetric.md)。
+依 [weak-deletion 導覽](../archive/guides/c5_weak_deletion_guide.md)的窄問題接續，
+完整成果見[專題報告](../archive/reports/c5/weak-deletion/c5_mixed_p3_asymmetric.md)。
 
 ## 結果與證據界線
 

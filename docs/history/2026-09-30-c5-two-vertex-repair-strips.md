@@ -3,8 +3,8 @@
 接手 HEAD `6f8b3c3`；共同 repair、來源及密封補片成果已在未提交工作樹，
 全部保留。本輪沿使用者指定的「不含指定核心或化約後不同骨架」缺口，
 處理前一支的明列任意長度來源族。未 commit／push、未開 sub-agents，
-未重啟來源大枚舉。現況見[導覽](../c5_two_vertex_overlap_guide.md)，
-完整前提及證明見[奇偶定理](../c5_two_vertex_repair_strips.md)。
+未重啟來源大枚舉。現況見[導覽](../archive/guides/c5_two_vertex_overlap_guide.md)，
+完整前提及證明見[奇偶定理](../archive/reports/c5/two-vertex/c5_two_vertex_repair_strips.md)。
 
 ## 新成果及界線
 

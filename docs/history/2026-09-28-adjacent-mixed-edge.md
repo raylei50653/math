@@ -7,7 +7,7 @@
 
 ## 結果與界線
 
-[證明報告](../c5_adjacent_degree5_mixed_edge.md) 先給任意大小的完整關係
+[證明報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge.md) 先給任意大小的完整關係
 與逐類 minimality，再保存有限必要域。q 下 K2 的兩端 list 不同且都含
 3，mixed 恰禁唯一 (d,e)，d≠e。root-edge 刪後同色見證使兩側 residual
 只能為 ({d},{d,e}) 或 ({d,e},{e})。

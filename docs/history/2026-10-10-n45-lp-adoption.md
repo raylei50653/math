@@ -7,7 +7,7 @@
 
 2026-10-10。PG／PR／PC及PA／PGA／PCA三份獨立增量已限定驗收；
 [監督採納](../../audits/2026-10-10-n45-p-supervision/REPORT.md)正式關閉N45-U-LP。
-[當前N45權威入口](../c5_excess_two_nonadjacent_unit_core45.md)保留全部前提、信任界與OPEN。
+[當前N45權威入口](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)保留全部前提、信任界與OPEN。
 這是任意大小paper＋明列BASE／外部Gallai；19 N2／7整U仍0觸發，4 N1另列校準，沒有新Lean。
 
 原三交付／三稽核的封存不改。原第二批任務頭的九個pins及未啟動文字保留當輪語境，

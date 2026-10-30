@@ -7,19 +7,19 @@
 
 ## 1. 成果鏈與精確範圍
 
-共同目標及紙面等價見 [synthesis §8.1](../c5_research_synthesis.md#81-猜想-e超額拒絕定律)。
+共同目標及紙面等價見 [synthesis §8.1](../archive/reports/c5/shared-results/c5_research_synthesis.md#81-猜想-e超額拒絕定律)。
 在原域 `1≤|Q|≤4` 中，沿用已證 ε≤1 層後，完整猜想 E 等價於
 `ε=2 ⇒ Q 包含於連續三點弧`。給定 ε≥3 的來源自動滿足 E 的數值下界；
 這不等於已證完整 Σ933／941 的來源必有 ε≥3。Q=B／932 屬另列的較強版本。
 
 | 權威來源 | 已證結果與接入範圍 |
 | --- | --- |
-| [真子圖單拒絕](../c5_excess_two_arc_pair_critical.md) | 原域反例的每個有效真子圖至多拒絕一列；任意兩個不同拒絕列的 minimal cores 聯集為原 G。沿用低 ε、兩-root44排除及至多一列單-root例外 |
-| [原分量共同重色](../c5_excess_two_arc_component_slack.md) | 同一原分量的重色 slack 至多涉及一個拒絕列；完整 N2 前提接 N45-U 後，全部原分量及 incident 邊必留，真 core 只省一條原 root-spoke |
-| [末端 block 與全部真核心排除](../c5_excess_two_arc_spoke_closure.md) | 完整 N2 的全部45／54真 cores已排；每條非框邊刪除全收，每個拒絕列只以有效原 G 作55 minimal core。無 unary 時，以同一 H 二連通及兩次 SD-A 排 spoke；含 unary 時逐項核既有完整契約 |
-| [原55大小界](../c5_excess_two_arc_size_bound.md) | 同一完整 N2 域的 H 為中央 block 加至多兩個 root 葉 blocks，內度二點至多五個，原 C 為 bridge／奇環 cactus；有效 `|H|≤35−6u−3t` |
+| [真子圖單拒絕](../archive/reports/c5/excess/other/c5_excess_two_arc_pair_critical.md) | 原域反例的每個有效真子圖至多拒絕一列；任意兩個不同拒絕列的 minimal cores 聯集為原 G。沿用低 ε、兩-root44排除及至多一列單-root例外 |
+| [原分量共同重色](../archive/reports/c5/excess/other/c5_excess_two_arc_component_slack.md) | 同一原分量的重色 slack 至多涉及一個拒絕列；完整 N2 前提接 N45-U 後，全部原分量及 incident 邊必留，真 core 只省一條原 root-spoke |
+| [末端 block 與全部真核心排除](../archive/reports/c5/excess/other/c5_excess_two_arc_spoke_closure.md) | 完整 N2 的全部45／54真 cores已排；每條非框邊刪除全收，每個拒絕列只以有效原 G 作55 minimal core。無 unary 時，以同一 H 二連通及兩次 SD-A 排 spoke；含 unary 時逐項核既有完整契約 |
+| [原55大小界](../archive/reports/c5/excess/other/c5_excess_two_arc_size_bound.md) | 同一完整 N2 域的 H 為中央 block 加至多兩個 root 葉 blocks，內度二點至多五個，原 C 為 bridge／奇環 cactus；有效 `|H|≤35−6u−3t` |
 
-這裡完整 N2 的所有原來源契約以 [spoke 報告 §1](../c5_excess_two_arc_spoke_closure.md#1-完整來源前提與依賴)
+這裡完整 N2 的所有原來源契約以 [spoke 報告 §1](../archive/reports/c5/excess/other/c5_excess_two_arc_spoke_closure.md#1-完整來源前提與依賴)
 為準：非相鄰雙 degree-5、恰兩份原 mixed、one-sided 原 pieces、完整 Σ933／941
 或整圖共同 D₅ 像、全部原附件／ownership／rotation／bridges，以及同一色框的完整 relations／fibres／full lifts。
 u 是原 unary 數，t 是兩 roots 的原 boundary-spokes 總數；自由孤立內點仍保留完整染色因子，
@@ -28,7 +28,7 @@ u 是原 unary 數，t 是兩 roots 的原 boundary-spokes 總數；自由孤立
 **Remaining OPEN：** 界內原55的同圖共同矛盾、完整 N2 來源排除、N1／相鄰 roots／
 一般單-root例外、一般 E-ARC2、一般出口與 `K∞=K≤5`；新論證未 Lean 化。
 既有至多九內點搜尋不覆蓋35點界，本輪未搜尋10–35點。當前下一窄義務見
-[Kempe 導覽 §3](../c5_kempe_guide.md#3-停止點與保留缺口)，本記錄不接管排程。
+[Kempe 導覽 §3](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)，本記錄不接管排程。
 
 ## 2. 相連產物與驗證
 

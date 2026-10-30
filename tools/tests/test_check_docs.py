@@ -124,5 +124,60 @@ class GuideProgressTests(unittest.TestCase):
             self.assertTrue(any("missing path" in error for error in check(root)[0]))
 
 
+class CatalogIndexTests(unittest.TestCase):
+    def write_fixture(self, root):
+        files = {
+            "README.md": "[研究入口](docs/HANDOFF.md)\n",
+            "docs/HANDOFF.md": "- [研究線](topic/test_guide.md)\n",
+            "docs/STATUS.md": ("[入口](HANDOFF.md)\n[導覽](topic/test_guide.md)\n"
+                               "[歷史索引](archive/catalog.md#索引)\n"),
+            "docs/topic/test_guide.md": guide("本線參考[來源](source.md#停止點)。"),
+            "docs/topic/source.md": "# 來源\n\n## 停止點\n",
+            "docs/archive/catalog.md": "# 索引\n\n[分支索引](nested/catalog.md)\n",
+            "docs/archive/nested/catalog.md": "# 分支\n\n[來源](../../topic/source.md#停止點)\n",
+        }
+        for relative, text in files.items():
+            path = root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(text)
+
+    def test_nested_linked_catalogs_provide_direct_coverage(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.write_fixture(root)
+            self.assertEqual([], check(root)[0])
+
+    def test_unlinked_catalog_or_report_link_cannot_provide_coverage(self):
+        for through_report in (False, True):
+            with self.subTest(through_report=through_report), TemporaryDirectory() as directory:
+                root = Path(directory)
+                self.write_fixture(root)
+                status = root / "docs/STATUS.md"
+                status.write_text("[入口](HANDOFF.md)\n[導覽](topic/test_guide.md)\n")
+                if through_report:
+                    (root / "docs/report.md").write_text("[索引](archive/catalog.md)\n")
+                    status.write_text(status.read_text() + "[報告](report.md)\n")
+                self.assertTrue(any("not indexed" in error and error.endswith("docs/topic/source.md")
+                                    for error in check(root)[0]))
+
+    def test_catalog_links_still_validate_files_and_anchors(self):
+        for destination, expected in (("../../topic/missing.md", "missing path"),
+                                      ("../../topic/source.md#錯誤錨點", "missing anchor")):
+            with self.subTest(destination=destination), TemporaryDirectory() as directory:
+                root = Path(directory)
+                self.write_fixture(root)
+                (root / "docs/archive/nested/catalog.md").write_text(f"[來源]({destination})\n")
+                self.assertTrue(any(expected in error and "archive/nested/catalog.md" in error
+                                    for error in check(root)[0]))
+
+    def test_handoff_checks_guide_introduction_across_subdirectories(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.write_fixture(root)
+            (root / "docs/topic/test_guide.md").write_text("# 導覽\n\n[來源](source.md#停止點)\n")
+            self.assertTrue(any("docs/topic/test_guide.md: missing guide introduction" in error
+                                for error in check(root)[0]))
+
+
 if __name__ == "__main__":
     unittest.main()

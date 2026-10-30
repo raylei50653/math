@@ -7,7 +7,7 @@
 
 ## 結果與證據層
 
-[報告](../c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md) 核對無 root-spoke
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md) 核對無 root-spoke
 的局部支援下界、K4-free 與原 diamond 外側環序。原 r–u–b_i 恢復每份
 unary 的外部 hub；w 的二接點不能夾住另一單接點分量。兩套同序幾何
 算法保留 actual support 間隙及共享框點，並與原正常形／完整 schemas 接合。

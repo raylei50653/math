@@ -10,7 +10,7 @@ origin/main 與遠端 main 三者相同。本紀錄保存提交前的範圍與�
 - [Issue #4 試點](2026-10-09-issue4-documentation-pilot.md)：DOCUMENTATION
   的責任分工／L0–L3 契約、weak-deletion 現況整理、STATUS 對應條目與
   [8 個隔離案例](../../artifacts/docs_issue4_pilot/fixtures.json)。
-- 接手時已存在的 [Phase B 分析](../c5_phase_b_common_lemmas.md)、
+- 接手時已存在的 [Phase B 分析](../archive/reports/c5/shared-results/c5_phase_b_common_lemmas.md)、
   [小型 checker](../../scripts/c5_phase_b_controls.py)、兩份容量輸入／控制證書，
   以及 README、HANDOFF、STATUS、common-language 與相關 guide 的相連入口。
 - 本發布紀錄及 STATUS 的歷史索引。明確列檔 staging，不納入 scratch、

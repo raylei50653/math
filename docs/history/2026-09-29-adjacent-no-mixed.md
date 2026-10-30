@@ -7,7 +7,7 @@
 
 ## 成果與界線
 
-[新報告](../c5_adjacent_degree5_no_mixed.md) 完成：
+[新報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed.md) 完成：
 
 1. 無 mixed 使刪 zw 的完整關係恰為乘積；非空對角乘積迫使
    E_z(q)=E_w(q)={c}。不預設 c=3。

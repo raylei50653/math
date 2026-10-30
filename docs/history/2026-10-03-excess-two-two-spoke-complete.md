@@ -12,7 +12,7 @@
 
 ## 成果與適用前提
 
-[t=2 合成報告](../c5_excess_two_two_spoke_complete.md)完成全部五分拆。
+[t=2 合成報告](../archive/reports/c5/excess/other/c5_excess_two_two_spoke_complete.md)完成全部五分拆。
 共同前提是固定完整 Σ 為 933／941 或整圖 D₅ 像、edge-minimal
 induced-C₅ disk 來源、ε=2、唯一完整 degree-6 root，其餘有效內點
 完整 degree 四。連同 t=1，現在同一前提下 **t∉{1,2}**。

@@ -34,7 +34,7 @@ Updated：Kempe／state 導覽及 STATUS 的精確停止點與直接後續索引
 舊 C11 介面段落明列當輪範圍，避免把本次具名子支排除擴大到其他介面。
 Reviewed-unchanged：README／HANDOFF 的入口與活躍標記；研究線並未增減。
 Propagation stop：L2，兩條父研究線與全域主命題仍 OPEN。
-接續入口為 [Kempe 導覽](../c5_kempe_guide.md)及 [state 導覽](../c5_state_guide.md)。
+接續入口為 [Kempe 導覽](../archive/guides/c5_kempe_guide.md)及 [state 導覽](../archive/guides/c5_state_guide.md)。
 
 ## 本次驗證
 

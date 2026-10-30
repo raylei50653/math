@@ -8,7 +8,7 @@
 
 - 新增[checker](../../scripts/c5_two_vertex_private_topology.py)、
   [companion artifact](../../artifacts/c5_two_vertex_overlap/private_topology.json)
-  及[報告](../c5_two_vertex_private_topology.md)，只處理既有
+  及[報告](../archive/reports/c5/two-vertex/c5_two_vertex_private_topology.md)，只處理既有
   `private_interiors` 的十五點三十五邊與七個原私有內點。
 - 完整環序見證有 22 面、70 條有向邊，Euler=2。指定六邊形外面後，
   兩來源各在自己的原 disk 內，兩 disk 內部互斥，只共用識別的兩點。
@@ -22,7 +22,7 @@
   研究路徑與 HANDOFF 進行中標記不變，依 DOCUMENTATION 不逐輪改寫。
 
 新 artifact 為 52,791 bytes，未達大型檔門檻。原點對、六例接合與
-主例拓撲 artifacts 都未重寫。下一窄題由[導覽](../c5_two_vertex_overlap_guide.md)
+主例拓撲 artifacts 都未重寫。下一窄題由[導覽](../archive/guides/c5_two_vertex_overlap_guide.md)
 維護：反向雙射 `private_interiors_reverse` 的具名拓撲核對；保留其與
 正向完整 J 不同的事實，不從相同軌道數或投影 mask 合併兩例。
 

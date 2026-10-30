@@ -3,7 +3,7 @@
 Git 基準 `f2496f5`，接手時工作區乾淨。依使用者指定順序：先對原 236 份
 IDs／sides 建立支援／環序必要覆蓋，保留兩個 binary schemas 與兩個 unary
 relations 接合完整 targets，最後只處理剩餘失敗候選。研究完成時成果先留在工作區；後續使用者要求 commit／push。
-提交包含本輪 checker、JSON／支援表、報告、導覽、STATUS、出口與範圍文件。[報告](../c5_adjacent_degree5_no_mixed_bb.md)保存完整前提及證據界線。
+提交包含本輪 checker、JSON／支援表、報告、導覽、STATUS、出口與範圍文件。[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_bb.md)保存完整前提及證據界線。
 
 ## 成果
 

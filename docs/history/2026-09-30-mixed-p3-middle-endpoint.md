@@ -1,9 +1,9 @@
 # Mixed P₃ 中點／端點接線：保留原末端的六跨度來源排除
 
 2026-09-30，Git 基準 `d72b6cb`。起始 main 與本地 origin/main 一致，
-工作樹已有未提交的[非對稱分支](../c5_mixed_p3_asymmetric.md)成果及
+工作樹已有未提交的[非對稱分支](../archive/reports/c5/weak-deletion/c5_mixed_p3_asymmetric.md)成果及
 相連文件；本輪在其上接續，未覆寫舊 artifacts，未作遠端查詢或 commit／push。
-完整結論、前提與證明見[專題報告](../c5_mixed_p3_middle_endpoint.md)。
+完整結論、前提與證明見[專題報告](../archive/reports/c5/weak-deletion/c5_mixed_p3_middle_endpoint.md)。
 
 ## 結果及證據界線
 

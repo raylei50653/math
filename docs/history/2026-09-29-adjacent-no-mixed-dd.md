@@ -1,7 +1,7 @@
 # 2026-09-29：D–D 四飽和原分量與統一框邊 K5
 
 依使用者「推進 D-D class」接續工作區 C–E 成果，未 commit／push。
-[報告](../c5_adjacent_degree5_no_mixed_dd.md)、新 checker 與 artifacts 保存證據。
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_dd.md)、新 checker 與 artifacts 保存證據。
 144 份原接合接 240 份幾何得到 352 份必要支援，全部 source K5；
 80 個原 IDs 無相容支援。四正跨度總和≤5，至少三份支援恰為一條框邊。
 選任一這樣的飽和原分量，其兩框點與補弧給統一 minor，同側另一原分量

@@ -3,7 +3,7 @@
 2026-10-15。依使用者「整理並commit」整合16個隔離audit；研究與提交父BASE為
 `6ddea32a81349821ad3724ae1652bddb9c6a7b04`。本次只建立本地提交。
 最新權威整合為[第四輪報告](../../audits/2026-10-15-route-round4-6ddea32/REPORT.md)，
-目前接續義務由[Kempe導覽](../c5_kempe_guide.md#3-停止點與保留缺口)維護。
+目前接續義務由[Kempe導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)維護。
 
 ## 採納範圍與證據層
 

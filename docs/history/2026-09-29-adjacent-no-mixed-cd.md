@@ -1,7 +1,7 @@
 # 2026-09-29：C–D 三飽和原分量來源排除
 
 依使用者「推進 C-D class」接續工作區 C–C 成果，未 commit／push。
-[報告](../c5_adjacent_degree5_no_mixed_cd.md)、新 checker 及 artifacts 保存證據。
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_cd.md)、新 checker 及 artifacts 保存證據。
 144 份正向原接合接上 240 份幾何，得到 640 份必要支援，全 source K5；
 72 個原 IDs 無相容支援。576 份三個飽和分量各有見證，其餘 64 份各有
 兩個；固定只查 z 側、Cw、Dw 分別漏 32、16、16 份。兩 root 均無

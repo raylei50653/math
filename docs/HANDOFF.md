@@ -1,19 +1,18 @@
-# 研究線入口
+# 研究工作入口
+
+初次接手先讀[研究總覽](research_overview.md)；已有問題時，直接選要完成的工作。
+當前採納結論、適用範圍與 OPEN 統一查[採納結論](research/CONCLUSIONS.md)。
 
 <a id="2-精確停止點與下一個窄問題"></a>
 
-- [四色定理（4CT）／精確消元與平面不變量](4ct_guide.md) #進行中
-- [Weak-deletion／單側與共同出口](c5_weak_deletion_guide.md)
-- [C₅ class／兩點重疊與後繼](c5_two_vertex_overlap_guide.md)
-- [全 degree-4／block 化約](c5_degree4_guide.md)
-- [Degree-5／R 系列來源結構](c5_degree5_guide.md)
-- [Sector／雙拒絕分類](c5_sector_3903_guide.md)
-- [猜想 E／Kempe／最小來源與重接計數](c5_kempe_guide.md)
-- [State／grammar／topology 與枚舉](c5_state_guide.md)
-- [四色染色實驗與約束傳播](four_color_guide.md)
-- [Lean 形式化](lean_guide.md)
-- [完全二分圖交叉數與局部重畫](zarankiewicz_guide.md)
+- [接續四色證明研究：問題、契約與第一個工作](research/4ct_guide.md) #進行中
+- [執行求解與實驗：消元、共同回填及比較](tools/four_color_guide.md)
+- [驗證證據：Lean 定理、公理與形式化範圍](verification/lean_guide.md)
+- [調用既有成果：接口、結構引理及使用前提](reference/results_guide.md)
+- [查閱封存：歷史工作、原始報告與後續涵蓋](archive/archive_guide.md)
+- [接續獨立交叉數研究：局部重畫與旋轉限制](research/crossing/zarankiewicz_guide.md)
 
-`#進行中` 標記正在推進的研究線；無標記不代表完成，列表順序不代表優先級。
-先由各線導覽頁首導讀理解問題與想法；現況、精確描述及接續工作沿來源入口按需查閱。
-[完整文件索引](STATUS.md) · [Phase B 共通引理分析](c5_phase_b_common_lemmas.md) · [文件治理與工作約定](DOCUMENTATION.md)
+`#進行中` 標記正在推進的研究線；工具、驗證與成果查找供當輪按需使用。
+C₅ 各線的完整導覽由成果查找入口連入；原報告保留完整論證，現行採納狀態以採納結論為準。
+完整研究檔核對後同輪整合並封存；未核實或有缺口者可暫留，期限不作完成裁決。
+[完整文件索引](STATUS.md) · [文件治理與工作約定](DOCUMENTATION.md)

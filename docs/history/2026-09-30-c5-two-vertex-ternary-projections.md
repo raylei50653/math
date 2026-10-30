@@ -2,11 +2,11 @@
 
 本輪接續兩框共同拉回的未提交成果，只處理原反向十五點三十五邊圖
 的完整八點 J。未 commit／push；發布狀態以即時 Git 為準。
-目前停止點與下一題由[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)維護。
+目前停止點與下一題由[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)維護。
 
 ## 成果與範圍
 
-- 新增[報告](../c5_two_vertex_ternary_projections.md)、
+- 新增[報告](../archive/reports/c5/two-vertex/c5_two_vertex_ternary_projections.md)、
   [checker](../../scripts/c5_two_vertex_ternary_projections.py)及
   [完整證書](../../artifacts/c5_two_vertex_overlap/ternary_projections.json)。
   所有計算保留原 U 欄序、兩個混合框、實際原邊及共同顏色集合。

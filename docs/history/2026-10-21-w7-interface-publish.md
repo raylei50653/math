@@ -38,4 +38,4 @@ Reviewed-unchanged：前輪38型排除、兩型清單、一般J1兩項／J2六�
 Remaining OPEN：profiles0／1來源排除、精確必要計數錐、原E條件替換、來源實現、
 一般W7／C7多內點／J1／J2、嚴格較小bad及主命題；沒有新Lean定理。
 Propagation stop：L1；沒有新增profile closure，父題邊界未改。
-目前停止點與接續入口由[Kempe導覽](../c5_kempe_guide.md)維護。
+目前停止點與接續入口由[Kempe導覽](../archive/guides/c5_kempe_guide.md)維護。

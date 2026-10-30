@@ -2,7 +2,7 @@
 
 研究基準 `f29b899`，工作目錄為專案根目錄。接續進場時已有的
 t2-t1 bridge／endpoints 未提交 bundle；未改寫其 scripts／artifacts。
-本輪新增 checker、JSON／逐筆表、[報告](../c5_adjacent_degree5_no_mixed_t2_t0_singles.md)，
+本輪新增 checker、JSON／逐筆表、[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t0_singles.md)，
 更新出口第九類、README、STATUS、HANDOFF 及前輪報告的後續入口；未 commit／push。
 
 ## 成果與證據
@@ -28,7 +28,7 @@ zw 及共同色框完整保留。w 無 spoke 時，C_z 的外部路徑改由原 
 
 24 個上界查詢只需 C_z 的全部五種容量／穩定子候選，w 側三份完整關係
 皆精確搬運；逐項可取 w=3、z≠3。沒有用新 target minor 或 T4 排除。
-此型及整圖 root 交換型接入 [出口第九類](../c5_single_sided_exit.md#1-定義與定理)；
+此型及整圖 root 交換型接入 [出口第九類](../archive/reports/c5/structure/c5_single_sided_exit.md#1-定義與定理)；
 完整 Σ 仍使用來源雙缺失與刪邊繼承，沒有從兩個 target 自動外推。
 
 任意大小覆蓋由紙面 annulus／實際外部路徑論證及外部 degree-list 定理承擔。

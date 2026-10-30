@@ -47,4 +47,4 @@ Reviewed-unchanged：HANDOFF活躍研究線、原frozen證據、State導覽、�
 Remaining OPEN：L四型共同來源、兩短型／pinched aliases、長路多內點cell、
 profile1與K≥2、完整計數錐、較小bad及主命題。
 Propagation stop：L2；父W7仍OPEN，未觸發更高層結論變動。
-目前接續入口由[Kempe導覽](../c5_kempe_guide.md)維護；即時發布狀態以Git為準。
+目前接續入口由[Kempe導覽](../archive/guides/c5_kempe_guide.md)維護；即時發布狀態以Git為準。

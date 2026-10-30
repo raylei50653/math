@@ -8,7 +8,7 @@ commit／push，後續整合發布見文末。
 
 ## 紙面審核與結果
 
-[報告](../c5_adjacent_degree5_mixed_edge_shared_t1_pair.md) §2–4 補齊兩段
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_shared_t1_pair.md) §2–4 補齊兩段
 任意大小搬運。C_w 二接點若夾住 spoke，原 contact cycle 的 Jordan
 分隔會阻止 spoke 或 diamond 的 u、v 抵達 B；兩接點因此是一個原區塊。
 annulus crosscut 使五個原單位同序，保留共享框點、間隙及非最短 hull。

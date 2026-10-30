@@ -18,7 +18,7 @@ C₄只新增(CPP-134-1,34,60)、side IDs=(27,1)；九份自身支援配置及27
 diff、保存及交付封存結果和實際命令見D₅報告。
 
 停止於三項條件式驗收與整合。下一具名未稽核入口由
-[Kempe](../c5_kempe_guide.md#3-停止點與保留缺口)及
-[weak-deletion](../c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)維護。
+[Kempe](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)及
+[weak-deletion](../archive/guides/c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)維護。
 未擴張研究，未commit／push；mixed12／mixed22整型、ε≥3、來源實現、一般
 出口及K∞=K≤5仍未證。

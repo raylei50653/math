@@ -14,13 +14,13 @@
 
 | 核對項 | 結果與出處 |
 | --- | --- |
-| 完整 Σ 的相鄰 m=1 | [spokes](../c5_excess_two_mixed_core_spokes.md) 身份表，加 [spoke＋unary](../c5_excess_two_mixed_core_spoke_unary.md)、[雙 unary](../c5_excess_two_mixed_core_two_unary.md)、[mixed 省略](../c5_excess_two_mixed_omission.md)，已有兩-root44全排；不依賴K′。 |
+| 完整 Σ 的相鄰 m=1 | [spokes](../archive/reports/c5/excess/other/c5_excess_two_mixed_core_spokes.md) 身份表，加 [spoke＋unary](../archive/reports/c5/excess/other/c5_excess_two_mixed_core_spoke_unary.md)、[雙 unary](../archive/reports/c5/excess/other/c5_excess_two_mixed_core_two_unary.md)、[mixed 省略](../archive/reports/c5/excess/other/c5_excess_two_mixed_omission.md)，已有兩-root44全排；不依賴K′。 |
 | E5 的 G1 任務邊界 | [E5 §2](../../artifacts/c5_excess_two_e5/REPORT.md#2-依賴項-×-分支狀態表)明說精確941／933角色滿足舊輸入，保留G1是要求新證明；更正C44″把這些缺口只歸因於三列前提的措辭。既有覆蓋不完成那項新證明。 |
-| U1 no-mixed 記帳 | [全degree-4分類](../c5_k4_blocks.md#4-合成全-degree-4-的單缺失結論)給core內部最大度≤3；保留unary、刪spoke的root有內度5−t_r，故t_r≥2。結合[E6-D](../../artifacts/c5_excess_two_e6/REPORT.md#4-e6-dno-mixed-的整側預算與精確殘留)，雙spoke身份縮為(2,2)，spoke＋unary為(2,3)含交換，三spoke側僅941／013型。沒有排除來源。 |
+| U1 no-mixed 記帳 | [全degree-4分類](../archive/reports/c5/structure/c5_k4_blocks.md#4-合成全-degree-4-的單缺失結論)給core內部最大度≤3；保留unary、刪spoke的root有內度5−t_r，故t_r≥2。結合[E6-D](../../artifacts/c5_excess_two_e6/REPORT.md#4-e6-dno-mixed-的整側預算與精確殘留)，雙spoke身份縮為(2,2)，spoke＋unary為(2,3)含交換，三spoke側僅941／013型。沒有排除來源。 |
 | U2 相鄰 m=2 | [E6 §3](../../artifacts/c5_excess_two_e6/REPORT.md#3-e6-bcj6-的共同-core欄位與框邊預算)給恰省略一份mixed11、保留另一份共用contact；現有結果未排此身份。 |
 | U3／U4 非相鄰 | [E4](../../artifacts/c5_excess_two_e4/REPORT.md)的N1 incidence11／12／21與N2五族保留；補入[CORE_CONSTRAINTS §4](../../artifacts/c5_excess_two_e4/CORE_CONSTRAINTS.md#4-三列-private-spoke-和-n2-精確-qcore-身份)的024／124禁型及N2的44拒絕列兩側spokes不得重色。 |
 | 具名 AD-012-034 core | [C44](../../artifacts/c5_excess_two_c44/REPORT.md)、[C44′](../../artifacts/c5_excess_two_c44p/REPORT.md)的core邊／附件與軌道相符；更正「C44P-AD2沒有來源」為「未提供完整Σ933／941的來源構造」。兩-root44與單-root讀法分開。 |
-| root 刪除與控制 | [原root刪除](../c5_excess_two_root_deletions.md)及E4的N1單-root例外保持；[E4C](../../artifacts/c5_excess_two_e4c/REPORT.md)沒有44／root-deletion觸發控制，[D₉](../../audits/2026-10-06-task-d9/REPORT.md)的63圖均未觸發指定三拒絕列，不能提升為来源排除的實验驗證。 |
+| root 刪除與控制 | [原root刪除](../archive/reports/c5/excess/other/c5_excess_two_root_deletions.md)及E4的N1單-root例外保持；[E4C](../../artifacts/c5_excess_two_e4c/REPORT.md)沒有44／root-deletion觸發控制，[D₉](../../audits/2026-10-06-task-d9/REPORT.md)的63圖均未觸發指定三拒絕列，不能提升為来源排除的實验驗證。 |
 
 沒有發現使既有排除失效的前提錯置。修訂的是任務範圍措辭與既有必要限制，
 沒有新來源排除、Python證書、Lean theorem或來源實現構造。
@@ -42,4 +42,4 @@ HANDOFF的研究線與tag未變，依[文件治理](../DOCUMENTATION.md)保持�
 
 本輪為紙面覆蓋表與文件整理，未重播研究producer、ES／ER搜尋或舊稽核，
 未執行lake build；數學證據仍沿用各原報告明列的紙面／有限證書信任邊界。
-目前停止點與未啟動窄提議由[Kempe導覽](../c5_kempe_guide.md#3-停止點與保留缺口)維護。
+目前停止點與未啟動窄提議由[Kempe導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)維護。

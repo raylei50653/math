@@ -1,7 +1,7 @@
 # (2,2) 相鄰支援對與外部路徑排除表
 
 由 [checker](../../scripts/c5_single_spoke_two_two_external.py) 產生；
-任意大小證明與界線見 [報告](../../docs/c5_single_spoke_two_two_external.md)。
+任意大小證明與界線見 [報告](../../docs/archive/reports/c5/single-spoke/c5_single_spoke_two_two_external.md)。
 
 210 筆新排除含交換分量名字；每筆僅顯示第一份充分 witness。
 完整來源 relation schemas、placements、反射及全部 witness 在 observations.json。

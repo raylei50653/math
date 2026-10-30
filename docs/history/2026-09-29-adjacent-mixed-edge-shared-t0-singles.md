@@ -7,7 +7,7 @@ t_w=1、(1,1) 與 t_w=0、(2,1) 尚未提交的 checker、證書與文件變更�
 
 ## 結果與證據層
 
-[報告](../c5_adjacent_degree5_mixed_edge_shared_t0_singles.md) 保留原 diamond
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_shared_t0_singles.md) 保留原 diamond
 zw、wu、uv、vz、zu，C_z 的兩個具名接點與 w 的三份不同單接點分量。
 每份 unary 支援至少見兩個 q 色；三份 w 禁色恰分割 U∖{e}，所以
 有一份禁 {3}，其 actual support 必看見全部三個 q 色。

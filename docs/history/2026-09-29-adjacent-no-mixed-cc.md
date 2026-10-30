@@ -1,7 +1,7 @@
 # 2026-09-29：C–C 無 spoke 四分量來源排除
 
 依使用者「推進 C-C class」接續工作區既有 B–E／E–E／B–C／B–D 成果，
-未 commit／push。[報告](../c5_adjacent_degree5_no_mixed_cc.md)、新 checker 與 artifacts
+未 commit／push。[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_cc.md)、新 checker 與 artifacts
 保存本輪證據。144 份原接合接上 240 份幾何，得到 1,176 份必要支援，
 全由 source K5 排除；36 個原 IDs 是無相容 disk 支援的空纖維。
 1,112 份兩側各有見證，另各 32 份只由其中一側的固定框弧規則排除。

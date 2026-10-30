@@ -3,11 +3,11 @@
 本輪承接兩混合框的未提交成果，只比較同一反向接合圖的完整
 R255／R1022 共同拉回與原八點 J。未 commit／push；發布狀態以
 即時 Git 為準。目前停止點與下一題由
-[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)維護。
+[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)維護。
 
 ## 成果與範圍
 
-- 新增[報告](../c5_two_vertex_mixed_pullback.md)、
+- 新增[報告](../archive/reports/c5/two-vertex/c5_two_vertex_mixed_pullback.md)、
   [checker](../../scripts/c5_two_vertex_mixed_pullback.py)及
   [完整證書](../../artifacts/c5_two_vertex_overlap/mixed_frame_pullback.json)。
   沿用同一十五點三十五邊原圖、具名 U、兩來源與兩混合框映射；

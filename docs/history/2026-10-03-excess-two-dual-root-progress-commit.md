@@ -18,15 +18,15 @@ attachments／supports、ownership、嵌入環序與同一字面色框保持。
 
 | 報告 | 本批完成範圍與固定核對 |
 | --- | --- |
-| [原 root 刪除](../c5_excess_two_root_deletions.md) | 至少一個刪 root 圖全收，另一個至多缺一列；相鄰 mixed 兩者均全收。64 原雙 triangle 核心／512 接回、400 條件分量 relations、60 刪 root 等式 |
-| [原路徑接回 zw](../c5_excess_two_path_edge.md) | 原樹／偶數路徑由共同原框鄰點及原環給 apex K₅；14 固定原路徑／226 接回與 minor、2,260 完整色對查詢 |
-| [單 triangle 接回](../c5_excess_two_triangle_edge.md) | 保留原 z,w 的 528 必要正常形，392 T4 全收者仍只有原單缺失；280 同枝 K₅。連同前序完成相鄰 mixed 的 Σ(G−zw)=Ω |
-| [原省略身份與雙 spoke](../c5_excess_two_mixed_core_spokes.md) | 196 incidence 配置／7,442 子集核對 proper core 原身份；126 必要正常形／6,068 雙 spoke 接回全無兩候選像 |
-| [spoke＋原 unary](../c5_excess_two_mixed_core_spoke_unary.md) | 37,320 目標比較；89,088 同一原支援 transport 比較及 2,640 明示收縮星 subdivisions 全排，含 root 交換 |
-| [兩側原 unary](../c5_excess_two_mixed_core_two_unary.md) | 5,700 目標比較；2,184,192 必要支援對比較，386,048 互異查詢保存 proofs／assignments；3,180 雙收縮星 subdivisions 全排 |
-| [省略原 mixed](../c5_excess_two_mixed_omission.md) | 344 保留原 roots 的必要核心／3,440 目標比較；9,152 固定支援比較，8,508 跨列衝突，其餘 644 由 188 subdivisions 全排。完成相鄰唯一 mixed 的所有 (4,4) q-core 身份 |
-| [單 spoke 原附件化約](../c5_excess_two_mixed_core_single_spoke.md) | 省略圖若拒絕，自己是唯一 degree-5 minimal q-core；666 骨架／58 subdivisions，當輪上界為 933≤4、941≤5，留下四組941附件及 root 交換 |
-| [原 leaf 色纖維](../c5_excess_two_mixed_core_leaf_fibers.md) | 相鄰唯一 mixed 分支的八份附件一次整圖搬運到998／1004；完整 (b,a,y,u) joint、同一 unary 雙列 palette 與原圖 K₅ 全排五-spoke 型。450 全圖 joins／7,200 pinned 纖維及24 extracted K₅ 控制；該分支的兩候選總 spokes 都≤4 |
+| [原 root 刪除](../archive/reports/c5/excess/other/c5_excess_two_root_deletions.md) | 至少一個刪 root 圖全收，另一個至多缺一列；相鄰 mixed 兩者均全收。64 原雙 triangle 核心／512 接回、400 條件分量 relations、60 刪 root 等式 |
+| [原路徑接回 zw](../archive/reports/c5/excess/other/c5_excess_two_path_edge.md) | 原樹／偶數路徑由共同原框鄰點及原環給 apex K₅；14 固定原路徑／226 接回與 minor、2,260 完整色對查詢 |
+| [單 triangle 接回](../archive/reports/c5/excess/other/c5_excess_two_triangle_edge.md) | 保留原 z,w 的 528 必要正常形，392 T4 全收者仍只有原單缺失；280 同枝 K₅。連同前序完成相鄰 mixed 的 Σ(G−zw)=Ω |
+| [原省略身份與雙 spoke](../archive/reports/c5/excess/other/c5_excess_two_mixed_core_spokes.md) | 196 incidence 配置／7,442 子集核對 proper core 原身份；126 必要正常形／6,068 雙 spoke 接回全無兩候選像 |
+| [spoke＋原 unary](../archive/reports/c5/excess/other/c5_excess_two_mixed_core_spoke_unary.md) | 37,320 目標比較；89,088 同一原支援 transport 比較及 2,640 明示收縮星 subdivisions 全排，含 root 交換 |
+| [兩側原 unary](../archive/reports/c5/excess/other/c5_excess_two_mixed_core_two_unary.md) | 5,700 目標比較；2,184,192 必要支援對比較，386,048 互異查詢保存 proofs／assignments；3,180 雙收縮星 subdivisions 全排 |
+| [省略原 mixed](../archive/reports/c5/excess/other/c5_excess_two_mixed_omission.md) | 344 保留原 roots 的必要核心／3,440 目標比較；9,152 固定支援比較，8,508 跨列衝突，其餘 644 由 188 subdivisions 全排。完成相鄰唯一 mixed 的所有 (4,4) q-core 身份 |
+| [單 spoke 原附件化約](../archive/reports/c5/excess/other/c5_excess_two_mixed_core_single_spoke.md) | 省略圖若拒絕，自己是唯一 degree-5 minimal q-core；666 骨架／58 subdivisions，當輪上界為 933≤4、941≤5，留下四組941附件及 root 交換 |
+| [原 leaf 色纖維](../archive/reports/c5/excess/other/c5_excess_two_mixed_core_leaf_fibers.md) | 相鄰唯一 mixed 分支的八份附件一次整圖搬運到998／1004；完整 (b,a,y,u) joint、同一 unary 雙列 palette 與原圖 K₅ 全排五-spoke 型。450 全圖 joins／7,200 pinned 纖維及24 extracted K₅ 控制；該分支的兩候選總 spokes 都≤4 |
 
 **共同下界仍是 ε≥2，ε≥3 未證。** 任意大小來源化約、外部
 degree-list／Gallai 依賴、原 block palettes、實際 tethers、Jordan
@@ -118,7 +118,7 @@ HANDOFF 的研究線及進行中標記維持，依治理保留薄索引；各輪
 
 ## 停止點與貼用摘要
 
-即時停止點由 [Kempe 導覽](../c5_kempe_guide.md#3-停止點與保留缺口)
+即時停止點由 [Kempe 導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)
 維護；本次沒有啟動四-spoke 新搜尋。
 
 ```text

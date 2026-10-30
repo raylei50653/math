@@ -7,7 +7,7 @@
 
 ## 結果與證據
 
-[新報告](../c5_excess_two_mixed_core_four_spoke_quaternary.md)／
+[新報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_quaternary.md)／
 [checker](../../scripts/c5_excess_two_mixed_core_four_spoke_quaternary.py)／
 [joint helper](../../scripts/c5_excess_two_four_spoke_quaternary_joint_controls.py)
 完成原 incidence-(1,3) 無 unary 的來源排除，含 root 交換。

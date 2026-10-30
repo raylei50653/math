@@ -1,20 +1,20 @@
 # degree-5 link 的三份可獨立發布任務
 
 2026-10-12。以下保存原 BASE 的三份獨立任務規格。
-後續 [交付與目前界線](../c5_degree5_link_reductions.md) 已採納 A 的九種位置／pinned
+後續 [交付與目前界線](../archive/reports/c5/degree5/c5_degree5_link_reductions.md) 已採納 A 的九種位置／pinned
 替換契約、B 的 1,020 項固定域重接控制及 C 的全部 132² cap joins。
 三份分別驗收；一般五度縮減仍 OPEN。
 
-2026-10-12 後續狀態：[完整外圈限制](../c5_neartri_boundary_collar.md) 已在本頁
+2026-10-12 後續狀態：[完整外圈限制](../archive/reports/c5/structure/c5_neartri_boundary_collar.md) 已在本頁
 同一最小來源契約下排除所有 `b_i–v–b_(i+2)`，並提高五度點下界為 933 的九、
 941 的八。因此任務 C 的具名來源子域，以及另一 C4＋C6 非相鄰兩框接點方向，
 均已由較直接的 crosscut 定理排除；其另訂 132² cap joins 另由任務 C 獨立完成。
 以下保留原任務規格；目前已保證全內部五輪，後續轉入 annulus 完整關係與縮減義務。
 
-本批的數學基準是 [度數界權威報告](../c5_saturation_degree_bound.md)，證據入口為
+本批的數學基準是 [度數界權威報告](../archive/reports/c5/structure/c5_saturation_degree_bound.md)，證據入口為
 [隔離研究包](../../audits/2026-10-12-c5-saturation-degree-bound/REPORT.md)。
 較早的正規形、目錄及十二內點界見
-[共面識別正規形](../c5_cofacial_normal_form.md)。
+[共面識別正規形](../archive/reports/c5/structure/c5_cofacial_normal_form.md)。
 
 ## 共用 BASE、來源契約與交付規則
 

@@ -29,7 +29,7 @@ folded rank-one。一般s的proper Q row即使無C環帶lift，也不能從原J�
 本批五輪原域為738檔、69,861,223 bytes；精確bytes／SHA見
 [發布BASE](../../audits/2026-10-23-three-mask-publish-cb8f859/BASE.json)。
 所有原檔及歷史「未commit／push」敘述均保留，後續發布狀態以Git為準。
-另納入原先已變動的[共通語言單向回填接口](../c5_common_language.md#31-保壞下降一份接受見證與三個單向回填)，
+另納入原先已變動的[共通語言單向回填接口](../reference/c5/c5_common_language.md#31-保壞下降一份接受見證與三個單向回填)，
 其來源存在性仍OPEN；同一實際外側的接受見證與三個單向完整回填必須兼容。
 
 發布核對、精確命令及失敗／適配邊界由
@@ -49,4 +49,4 @@ Updated：Kempe導覽、C8剝層與no4ct直接父入口、STATUS簡短索引、�
 Reviewed-unchanged：README用途／閱讀路徑、HANDOFF研究線／進行中標記、全部原738檔。
 Remaining OPEN：h=4的一般s≥1來源、h≥5、933六fibres與兩OR族、941八配對、W7／J1／J2及一般主命題。
 Propagation stop：L2；直接父題已同步，較高層共同界與主命題狀態未變。
-目前接續由[Kempe導覽](../c5_kempe_guide.md)維護。
+目前接續由[Kempe導覽](../archive/guides/c5_kempe_guide.md)維護。

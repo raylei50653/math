@@ -6,8 +6,8 @@ STATUS、Kempe 導覽、Git 及原停止點報告，選定相鄰 mixed、原 N=G
 仍拒絕、N 的全 degree-4 內部是單 triangle 加原樹枝的窄問題。
 使用 math-research-handoff-publish 工作流程，未使用 Graphify、
 sub-agents，未 commit／push。成果見
-[專題報告](../c5_excess_two_triangle_edge.md)，當前停止點由
-[Kempe 導覽](../c5_kempe_guide.md) 維護。
+[專題報告](../archive/reports/c5/excess/other/c5_excess_two_triangle_edge.md)，當前停止點由
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md) 維護。
 
 ## 任意大小推進
 

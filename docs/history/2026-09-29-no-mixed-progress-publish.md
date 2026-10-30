@@ -13,11 +13,11 @@ SSH 驗證失敗後改用現有 GitHub CLI 登入與單次 HTTPS 設定，未改
 
 | 成果 | 結論與證據入口 |
 | --- | --- |
-| t_z=2、t_w=1 原外部路徑／首橋 | [record 14](../c5_adjacent_degree5_no_mixed_t2_t1_bridge.md) 新增 52 個延拓，1,054／1,120 已證 |
-| t_z=2、t_w=1 原雙端點 | [record 22 及整型](../c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md) 關閉其餘 66 個查詢，560 份支援的 1,120 查詢全證，0 新來源排除 |
-| t_w=0,(2,1,1) 四分量型 | [完整支援與雙列](../c5_adjacent_degree5_no_mixed_t2_t0_singles.md)：96 份原資料接成 120 份支援，240 查詢全接受 |
-| 交換或幾何阻斷範圍 | [25 格分類](../c5_exchange_geometry_scope.md) 與 1,920 份抽象路徑控制；原三類／552 份快照保留 |
-| t_w=0,(2,2) 缺額型 | [D_w=1、O_w=0](../c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)：96 份原資料接成 364 份支援，source K5 排除 340，保留 24 份的 48 查詢全證 |
+| t_z=2、t_w=1 原外部路徑／首橋 | [record 14](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t1_bridge.md) 新增 52 個延拓，1,054／1,120 已證 |
+| t_z=2、t_w=1 原雙端點 | [record 22 及整型](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md) 關閉其餘 66 個查詢，560 份支援的 1,120 查詢全證，0 新來源排除 |
+| t_w=0,(2,1,1) 四分量型 | [完整支援與雙列](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t0_singles.md)：96 份原資料接成 120 份支援，240 查詢全接受 |
+| 交換或幾何阻斷範圍 | [25 格分類](../archive/reports/c5/structure/c5_exchange_geometry_scope.md) 與 1,920 份抽象路徑控制；原三類／552 份快照保留 |
+| t_w=0,(2,2) 缺額型 | [D_w=1、O_w=0](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)：96 份原資料接成 364 份支援，source K5 排除 340，保留 24 份的 48 查詢全證 |
 
 一併提交五份 checker、五份 JSON、五份生成表、五份報告與逐輪歷史，
 並連接 README、STATUS、HANDOFF、root 預算與出口第九類。整理階段沒有

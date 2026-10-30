@@ -8,10 +8,10 @@
 
 | 成果與權威入口 | 本次確認 | 剩餘界線 |
 | --- | --- | --- |
-| [十四內點界](../c5_k14_sphere.md) | 一般有序 disk-C₅ 的 `K≤14=K≤5`；73球面嵌入、1,001根圖及180,228完整 lifts 主／獨立一致 | K≤15、K∞、任意大小933／941 |
-| [C₈ 紙面加強](../c5_k14_sphere.md) | 原h=3八项完整契約必k≥16，沿用原面配對／無葉點證明 | 八項任意大小來源仍留；不採納一般h≥4 |
-| [W5 圈秩四](../c5_w5_private_rank4.md) | 完整全域最小內點／最大邊數來源下，任取合法全內部W5，私人ρ≥5；contractible 6,389及essential 2,872完整模板重播 | ρ≥5一般排除／縮減、annulus小代表及R³保存 |
-| [組合圖譜](../c5_combinatorial_atlas.md) | 1,023原始masks／135 D₅類；24已知disk類、2 OPEN類；132原witness重播 | 不把必要screen、兩側交集或canonical索引當單側來源實現 |
+| [十四內點界](../archive/reports/c5/structure/c5_k14_sphere.md) | 一般有序 disk-C₅ 的 `K≤14=K≤5`；73球面嵌入、1,001根圖及180,228完整 lifts 主／獨立一致 | K≤15、K∞、任意大小933／941 |
+| [C₈ 紙面加強](../archive/reports/c5/structure/c5_k14_sphere.md) | 原h=3八项完整契約必k≥16，沿用原面配對／無葉點證明 | 八項任意大小來源仍留；不採納一般h≥4 |
+| [W5 圈秩四](../archive/reports/c5/structure/c5_w5_private_rank4.md) | 完整全域最小內點／最大邊數來源下，任取合法全內部W5，私人ρ≥5；contractible 6,389及essential 2,872完整模板重播 | ρ≥5一般排除／縮減、annulus小代表及R³保存 |
+| [組合圖譜](../archive/reports/c5/structure/c5_combinatorial_atlas.md) | 1,023原始masks／135 D₅類；24已知disk類、2 OPEN類；132原witness重播 | 不把必要screen、兩側交集或canonical索引當單側來源實現 |
 
 紙面、外部定理、生成器完備性及Python完整有限證書分層。保留同一原圖、
 有序色框、實際附件、rotation、全部fibres／空格及full lifts。

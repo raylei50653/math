@@ -5,7 +5,7 @@
 [LOW1原交付](../../audits/2026-10-10-n45-s-low1/REPORT.md)六項完整契約內的任意大小paper排除。
 [L1A](../../audits/2026-10-10-n45-l1a/REPORT.md)與[L1R](../../audits/2026-10-10-n45-l1r/REPORT.md)
 各核紙面／原圖完整關係，沒有額外前提；[L1C](../../audits/2026-10-10-n45-l1c/REPORT.md)只核工具封存。
-唯一當前權威入口是[N45](../c5_excess_two_nonadjacent_unit_core45.md)。
+唯一當前權威入口是[N45](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)。
 
 只關原U incidence1在r、原兩short、僅刪rb_i且X=M的LOW1。
 U完整保留，實際C=H_X−s唯一連通；完整join／精確F接回BASE三接點原K₅，外部Gallai另列。

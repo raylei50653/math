@@ -1,14 +1,14 @@
 # 2026-10-02：t=3、(2,1) 原 binary 省略分支排除
 
 接手基準 `bbd900ac88571fc2f0ed6aaea5695677e8b9ff88`。工作樹已有
-[三原 unary 排除](../c5_excess_two_three_unary.md)及相連報告／索引修改，
+[三原 unary 排除](../archive/reports/c5/excess/other/c5_excess_two_three_unary.md)及相連報告／索引修改，
 本輪先重播並保留它們。記憶中的 ε=1 停止點已被實際文件與 Git 後續
 涵蓋；依 HANDOFF／STATUS／Kempe 導覽選擇 t=3、(2,1) binary 省略分支。
 使用 math-research-handoff-publish 流程，未使用 Graphify、子代理、commit 或 push。
 
 ## 新成果與適用範圍
 
-[新報告](../c5_excess_two_binary_omission.md)證明：固定完整 Σ 為 933／941
+[新報告](../archive/reports/c5/excess/other/c5_excess_two_binary_omission.md)證明：固定完整 Σ 為 933／941
 或其整圖 D₅ 像的 edge-minimal C₅ disk 來源，ε=2、唯一 degree-6 root、
 t=3、原分量分拆 (2,1) 時，刪除整份原 binary C₂ 必全收 Ω。
 
@@ -65,7 +65,7 @@ HANDOFF 研究線及進行中標記未變，依文件治理保留薄索引。接
 下一窄題是 t=2、(2,2)，省略一份 binary 後仍拒絕 singleton 列。
 保留剩餘原 triangle 的 (r,x,y)、省略分量的 (u,v) 及全部附件，
 比較兩份 binary 省略圖的單缺失與已知雙 spoke 全收；目前排程由
-[Kempe 導覽](../c5_kempe_guide.md)維護。
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)維護。
 
 可貼：
 

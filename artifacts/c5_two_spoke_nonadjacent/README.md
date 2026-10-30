@@ -1,6 +1,6 @@
 # Nonadjacent two-spoke exit-separation certificate
 
-See the [paper reduction and scope](../../docs/c5_two_spoke_nonadjacent.md)
+See the [paper reduction and scope](../../docs/archive/reports/c5/structure/c5_two_spoke_nonadjacent.md)
 and [actual verification record](../../docs/history/2026-09-27-nonadjacent-two-spoke.md).
 
 `observations.json` records:

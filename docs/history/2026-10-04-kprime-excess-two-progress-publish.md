@@ -10,16 +10,16 @@
 
 | 項目 | 已完成範圍 | 保留界線 |
 | --- | --- | --- |
-| [K′](../c5_kempe_diagonal_transport.md) | 同一 G−p 的拒絕見證下，紙面引理1–6及Jordan側別迫兩條對角鏈皆斷；L2仍有933：192、941：384一致指派，同ψ多鏈交換無新排除 | 局部資料與可實現1012／935控制同型；K′未決，K型局部工作停止 |
+| [K′](../archive/reports/c5/structure/c5_kempe_diagonal_transport.md) | 同一 G−p 的拒絕見證下，紙面引理1–6及Jordan側別迫兩條對角鏈皆斷；L2仍有933：192、941：384一致指派，同ψ多鏈交換無新排除 | 局部資料與可實現1012／935控制同型；K′未決，K型局部工作停止 |
 | [E3](../../artifacts/c5_excess_two_e3/REPORT.md)／[D₈](../../audits/2026-10-04-task-d8/REPORT.md) | ε=2反例約化為拒絕q₀、q₁、q₃，triple-critical及唯一degree-6排除 | 必須引用DG6-1的100份相對spoke位置補表；雙degree-5保留；A前序依賴更正已記於E3 §10 |
 | [E4](../../artifacts/c5_excess_two_e4/REPORT.md)／[E5](../../artifacts/c5_excess_two_e5/REPORT.md)／[E6](../../artifacts/c5_excess_two_e6/REPORT.md) | 非相鄰／相鄰mixed數m≤2；N3及J6的m≥3關閉；941／933／940／932四分支的G2–G4與no-mixed收窄 | N1／N2、G1–G4、J6的m≤2、no-mixed、J4及較少spokes／原(5,5)core未全排 |
 | [E4C](../../artifacts/c5_excess_two_e4c/REPORT.md) | 54個NA critical orbits×60項不用三列的步驟；42項有控制、18項未觸發前提，0反例 | singleton盾弧、root刪除例外、(4,4)core、根間bridge整側及單重色core仍缺實際控制 |
-| [ES](../c5_excess_two_finite_search.md)／[ER](../c5_excess_two_independent_search.md) | 三種root型k≤9的q／critical orbit集合、計數及Q分布逐層一致；179個critical orbits（NA54／AD9／D6 116），無\|Q\|+c(Q)>4 | 有限雙實作完整性證據；ER依賴plantri；不提升為任意大小定理；k≥10未搜尋 |
-| [LC](../c5_excess_two_lean_certificates.md) | 179／179個Lean soundness證書，558項axioms audit無sorryAx | 拒絕列用native_decide，raw Σ另繼承既有S₄ cover native信任；只證所列圖為真及組合嵌入，不證枚舉完整性、軌道互異或拓撲disk定理；未接入Math.lean／CI |
+| [ES](../archive/reports/c5/excess/other/c5_excess_two_finite_search.md)／[ER](../archive/reports/c5/excess/other/c5_excess_two_independent_search.md) | 三種root型k≤9的q／critical orbit集合、計數及Q分布逐層一致；179個critical orbits（NA54／AD9／D6 116），無\|Q\|+c(Q)>4 | 有限雙實作完整性證據；ER依賴plantri；不提升為任意大小定理；k≥10未搜尋 |
+| [LC](../archive/reports/c5/excess/other/c5_excess_two_lean_certificates.md) | 179／179個Lean soundness證書，558項axioms audit無sorryAx | 拒絕列用native_decide，raw Σ另繼承既有S₄ cover native信任；只證所列圖為真及組合嵌入，不證枚舉完整性、軌道互異或拓撲disk定理；未接入Math.lean／CI |
 
 共同 ε≥2維持；ε≥3、猜想E的任意大小版、一般單側／共同出口與K∞=K≤5未證。
 目前未派提議為D₉紙面稽核及C44的minimal-core統計／條件化證明，
-精確停止點由[Kempe導覽](../c5_kempe_guide.md#3-停止點與保留缺口)維護。
+精確停止點由[Kempe導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)維護。
 已在main的C-W／D₆共鄰P₃排除及cw-v1 ledger=0沿用既有結果，
 本次只校正README／synthesis的摘要，沒有重驗或擴張其結論。
 

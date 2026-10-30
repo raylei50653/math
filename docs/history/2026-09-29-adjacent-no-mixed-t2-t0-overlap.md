@@ -8,7 +8,7 @@ Git 基準 `c1be8fb`；接手時工作區乾淨。使用者要求繼續推進交
 
 ## 成果與證據界線
 
-- [新報告](../c5_adjacent_degree5_no_mixed_t2_t0_overlap.md) 與 checker 逐 ID／SHA
+- [新報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t0_overlap.md) 與 checker 逐 ID／SHA
   綁定原 96 份接合；直接從兩個相交 pair 的完整禁色式獨立重建同一集合。
 - lifts 與兩側 hull 算法重算同得 910 份幾何，接上本輪完整 schemas 得 212
   份支援；40 份原資料有支援、56 份纖維空。未沿用缺額型的支援保留表。

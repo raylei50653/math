@@ -8,7 +8,7 @@ HEAD=`0e3812712b68f57927df86f30a07bb8074e090f9`，
 cwd=`/home/ray/developer/ai/math`；原工作樹多輪未提交成果全部保留。
 本輪未 commit／push。
 
-[B₃報告](../c5_excess_two_mixed_core_four_spoke_mixed22_long_face.md)、
+[B₃報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed22_long_face.md)、
 [checker](../../scripts/c5_excess_two_mixed_core_four_spoke_mixed22_long_face.py)、
 [helper](../../scripts/c5_excess_two_four_spoke_mixed22_long_face_controls.py)、
 [observations](../../artifacts/c5_excess_two_mixed_core_four_spoke_mixed22_long_face/observations.json)
@@ -43,7 +43,7 @@ B₂ 短 face 與本輪長 face 是兩份獨立證明；合用後才封閉這兩
 其他骨架未排，沒有把必要表改成來源 catalogue。完整 R_C、joint、
 fibres、actual 附件與原 paths 保持；minor 不作其不變量。
 未證 mixed22 整型、ε≥3、來源實現、一般出口或 K∞=K≤5，未新增
-Lean theorem。**在此停止**；目前入口由 [Kempe導覽](../c5_kempe_guide.md)維護。
+Lean theorem。**在此停止**；目前入口由 [Kempe導覽](../archive/guides/c5_kempe_guide.md)維護。
 933原04／12長 face 的 shared 附件{4}是不同骨架，仍保留，不續做。
 
 ## 固定證書實際覆蓋

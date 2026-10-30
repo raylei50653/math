@@ -5,8 +5,8 @@ commit／push。接手時已有三原 unary 與 t=3 binary 省略兩組未提交
 及 README／STATUS／Kempe 導覽等修改；全部保留，於其停止點接續。
 記憶中的 ε=1 停止點已過時，本輪以即時文件及工作樹為準。
 
-成果見 [專題報告](../c5_excess_two_two_binary.md)，現況與下一入口見
-[Kempe 導覽](../c5_kempe_guide.md)。研究線未增減，HANDOFF 保持薄索引。
+成果見 [專題報告](../archive/reports/c5/excess/other/c5_excess_two_two_binary.md)，現況與下一入口見
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)。研究線未增減，HANDOFF 保持薄索引。
 
 ## 本輪結論
 

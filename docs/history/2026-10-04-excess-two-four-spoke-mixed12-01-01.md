@@ -9,7 +9,7 @@ relation與完整六角色joint，不直接套mixed11 sealed triangle結論。
 
 ## 成果與證據層
 
-[A₃報告](../c5_excess_two_mixed_core_four_spoke_mixed12_01_01.md)在A的
+[A₃報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed12_01_01.md)在A的
 固定完整Σ933／941、Σ edge-minimal induced-C₅ disk、連通有效H、ε=2、
 相鄰兩個完整degree-5 roots、其他有效內點degree四、唯一mixed C
 incidence=(1,2)、a側一原單接點unary U與原ab的前提下，排除
@@ -125,7 +125,7 @@ A₃檔案的尾端空白及最後換行，全部合格。
 ## 停止点與貼用摘要
 
 停止於原01／01及root交換來源排除；其他具名入口未登記新排除。
-目前窄入口由[Kempe導覽§3](../c5_kempe_guide.md#3-停止點與保留缺口)維護。
+目前窄入口由[Kempe導覽§3](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)維護。
 Mixed12整型、來源實現、ε≥3、一般出口與K∞=K≤5均未證。
 
 > A₃已完成mixed12共用01／01，含root交換。四rotations中原C只在

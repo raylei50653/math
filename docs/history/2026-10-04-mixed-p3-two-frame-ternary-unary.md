@@ -3,7 +3,7 @@
 2026-10-04，Git 基準 `0e3812712b68f57927df86f30a07bb8074e090f9`。
 工作目錄 `/home/ray/developer/ai/math`；起始已有四-spoke、共鄰 P₃、D₂
 整合及索引的未提交成果。本輪新增固定 C₃ 證據與相連文件，未 commit／push。
-完整前提與任意大小證明見[報告](../c5_mixed_p3_two_frame_ternary_unary.md)。
+完整前提與任意大小證明見[報告](../archive/reports/c5/weak-deletion/c5_mixed_p3_two_frame_ternary_unary.md)。
 
 ## 結論及具名來源
 
@@ -114,7 +114,7 @@ w 側仍是原三接點、禁色 {0,2}、無 spoke，兩側 residuals {1}/{1,3}�
 下一型未分析，須保留各分量自身支援、原接點、完整 tuples、bridges 及原外路。
 原整側支援 {b₁,b₂}/{b₂,b₄} 不能任意分派給兩份 z unary。
 其他 w 角色／geometry 的同引理覆蓋亦未另行逐份證書化。
-目前入口見 [weak-deletion §3](../c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)。
+目前入口見 [weak-deletion §3](../archive/guides/c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)。
 
 > 先讀 docs/HANDOFF.md、docs/STATUS.md 與 weak-deletion guide §3。
 > C₃ 已排除 CPP-134-1／geometry34／side_join20 的原三接點 unary：

@@ -8,10 +8,10 @@ ahead／behind 均為零。原 remote 設定保持不變。
 
 ## 本次提交範圍
 
-- [Root degree 超額預算](../c5_root_degree_excess.md)：同源完整消去、
+- [Root degree 超額預算](../archive/reports/c5/structure/c5_root_degree_excess.md)：同源完整消去、
   D+O+κ=degree−4、樹上 edge-minimal list 拒絕的邊色描述、完整半樹
   關係遞迴；三層跨列工作假設與已證結論分開。
-- [t_z=2、t_w=1 支援覆蓋](../c5_adjacent_degree5_no_mixed_t2_t1.md)：
+- [t_z=2、t_w=1 支援覆蓋](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t1.md)：
   原 136 份資料、同源實際支援與具名 rotations、完整 schemas、
   source 預算、逐候選拒絕原因及關閉機制。
 - 兩套 checker、兩份 JSON、支援表、[研究紀錄](2026-09-29-root-degree-excess.md)，

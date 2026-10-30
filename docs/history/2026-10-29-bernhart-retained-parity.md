@@ -1,6 +1,6 @@
 # Bernhart retained 原邊交會與局部來源紀錄
 
-2026-10-29；權威來源為 [retained 交會奇偶報告](../ck_bernhart_retained_intersection.md)。
+2026-10-29；權威來源為 [retained 交會奇偶報告](../archive/reports/counting/ck_bernhart_retained_intersection.md)。
 接續兩個 41 列 full-lift 子靶，沒有 commit／push 或改寫舊證書。
 
 ## 成果及保留範圍

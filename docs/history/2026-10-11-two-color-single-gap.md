@@ -5,7 +5,7 @@
 
 ## 1. 成果與證據層
 
-權威新論證為 [雙色唯一缺口的 bridge 路徑定理](../c5_two_color_single_gap_bridge.md)。
+權威新論證為 [雙色唯一缺口的 bridge 路徑定理](../archive/reports/c5/structure/c5_two_color_single_gap_bridge.md)。
 在任意有限連通簡單圖的不可著色 degree lists 下，S 是 C−r 的完整分量，
 S−{q} 的 lists 均含 T、D，而 q 含 T 缺 D，則 r 只有一個 S-contact，
 且 r–q 的全部路徑 blocks 都是原 bridges。色集不必限四色。

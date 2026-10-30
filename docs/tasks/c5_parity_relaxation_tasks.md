@@ -1,25 +1,25 @@
 # 去掉奇偶：五端點偶補匹配的探索任務
 
-2026-10-23。本頁是由[三支共同目標的等價表述](../c5_equivalent_formulations.md)
-衍生的探索任務規格，依 [Kempe 導覽 §3](../c5_kempe_guide.md#3-停止點與保留缺口) 的提議排程。
+2026-10-23。本頁是由[三支共同目標的等價表述](../reference/c5/c5_equivalent_formulations.md)
+衍生的探索任務規格，依 [Kempe 導覽 §3](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口) 的提議排程。
 目的不是再加一個分支界，而是確認：把偶補條件拿掉後 (E) 為何成立，
 以及奇偶究竟在哪一步、以什麼結構擋住證明。
 
 **2026-10-29：P1–P3 已開始局部證明與有限校準，P4 未開始。**
-[本輪權威來源](../c5_parity_shared_cut_continuation.md)證去奇偶交錯路／六項計數式、完整段奇偶重接及五葉固定字完整區域界；
+[本輪權威來源](../archive/reports/c5/connections/c5_parity_shared_cut_continuation.md)證去奇偶交錯路／六項計數式、完整段奇偶重接及五葉固定字完整區域界；
 三項完整驗收仍有未涵蓋義務，詳見該頁停止點。去奇偶版本成立不推出 (E)，
 任何任務結束都不得宣告 `K∞=K≤5`、排除 932／933／941，或觸及 4CT 等價部分。
 
-同日[雙偶補參考接續](../c5_two_reference_parity_continuation.md)補P2的雙命中／共同保留段引理，
+同日[雙偶補參考接續](../archive/reports/c5/connections/c5_two_reference_parity_continuation.md)補P2的雙命中／共同保留段引理，
 定向凍結既有F4的一個真disk九環失敗來源；全部F4分類及五參考共同平面排除仍缺。
-同日[五參考共同輪轉](../c5_five_reference_common_rotation.md)證側別命中奇偶／完整交錯段限制，
+同日[五參考共同輪轉](../archive/reports/c5/connections/c5_five_reference_common_rotation.md)證側別命中奇偶／完整交錯段限制，
 列盡固定控制的全部參考與十對組合；尚未由五族集中迫出真來源的違規輪轉。
 這未啟動P4的全體凍結與多步延伸。
-任務三的[來源子類驗收](../c5_five_reference_source_exclusion.md)已證非面單命中覆蓋及
+任務三的[來源子類驗收](../archive/reports/c5/connections/c5_five_reference_source_exclusion.md)已證非面單命中覆蓋及
 非面端葉三角環不可能；未假設相反錨點，未解一般五參考共同阻擋。
-2026-10-30 的[二缺邊接續](../c5_nonfacial_two_gap_exclusion.md)排空非面五環二缺邊子類，
+2026-10-30 的[二缺邊接續](../archive/reports/c5/connections/c5_nonfacial_two_gap_exclusion.md)排空非面五環二缺邊子類，
 並證一般非面奇環至少缺三條單命中邊；全部多命中及一般五族排除仍 OPEN。
-同日[恰三缺邊相容性](../c5_nonfacial_three_gap_compatibility.md)完成側字／命中分類並排除雙直接端葉子型，
+同日[恰三缺邊相容性](../archive/reports/c5/connections/c5_nonfacial_three_gap_compatibility.md)完成側字／命中分類並排除雙直接端葉子型，
 另證內弦消去的完整普通 PM／odd 轉移；零或一直接端葉的三缺來源仍 OPEN。
 
 ## 共用 BASE、記號與交付規則

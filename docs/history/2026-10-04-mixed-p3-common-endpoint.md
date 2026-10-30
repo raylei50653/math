@@ -4,7 +4,7 @@
 起始工作樹已有四-spoke 線的未提交檔案與 README／STATUS／manifest
 變更；本輪只新增共鄰 P₃ 證據並窄更新相連索引，未覆寫其他研究檔案，
 未 commit／push。既有變更亦在本輪期間持續增加。
-完整前提、紙面證明與殘留清單見[報告](../c5_mixed_p3_common_endpoint.md)。
+完整前提、紙面證明與殘留清單見[報告](../archive/reports/c5/weak-deletion/c5_mixed_p3_common_endpoint.md)。
 
 ## 結果及信任界線
 

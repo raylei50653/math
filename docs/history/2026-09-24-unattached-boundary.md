@@ -1,7 +1,7 @@
 # 2026-09-24：未接內點引理與兩-spoke 非相鄰型分離
 
 接續 HEAD `9792201` 上前輪尚未提交的兩-spoke 區域成果，保留全部既有變更。
-新證明見 [未接內點 boundary 引理](../c5_unattached_boundary.md)。
+新證明見 [未接內點 boundary 引理](../archive/reports/c5/structure/c5_unattached_boundary.md)。
 
 指定窄問題 (3)、S={b0,b3} 已完成任意大小分離：其 b4 沒有內鄰點，
 接受 T4 即強迫接受全部 singleton 不在 b4 的三色列，因此恰只缺 q。

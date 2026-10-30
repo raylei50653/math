@@ -2,14 +2,14 @@
 
 接手基準 `bbd900ac88571fc2f0ed6aaea5695677e8b9ff88`，當時工作區乾淨。
 由 [HANDOFF](../HANDOFF.md)、[STATUS](../STATUS.md)及
-[Kempe 導覽](../c5_kempe_guide.md)確認：兩候選均已有 ε≥2，t=3
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)確認：兩候選均已有 ε≥2，t=3
 spoke＋unary 省略的原 triangle 位置已排除，下一題為 path／tail。
 本輪採用 math-research-handoff-publish 工作流程；未使用 Graphify，
 未開子代理、未提交或推送。
 
 ## 成果與證據
 
-[新報告](../c5_excess_two_three_unary.md)直接排除 t=3 三份原 unary，
+[新報告](../archive/reports/c5/excess/other/c5_excess_two_three_unary.md)直接排除 t=3 三份原 unary，
 從而關閉 path／tail 分支。原分量任意大小、實際附件、spoke 與省略
 身份全部保留；沒有縮路徑或枚舉圖。
 
@@ -67,7 +67,7 @@ spoke＋unary 省略全收結論。共同 ε≥2 下界未提高，一般來源�
 下一窄題：唯一 degree-6、t=3、(2,1) 分拆，省略原 binary C₂
 後仍拒絕一列。保留 (r,x,y,v)、原 V、全部附件及三條 spokes，
 比較 G−C₂ 與已知雙 spoke／spoke＋unary 省略全收限制。
-現行入口由 [Kempe 導覽](../c5_kempe_guide.md)維護。
+現行入口由 [Kempe 導覽](../archive/guides/c5_kempe_guide.md)維護。
 
 跨對話可貼：
 

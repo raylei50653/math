@@ -7,7 +7,7 @@ source、artifact 與文件變更。本輪沿 HANDOFF 的 record 104 入口推�
 
 ## 結果與停止點
 
-[新報告](../c5_single_spoke_two_two_external.md) 完成另一原分量 C0 的
+[新報告](../archive/reports/c5/single-spoke/c5_single_spoke_two_two_external.md) 完成另一原分量 C0 的
 z–b1 實際路徑，接合 C1 的剩餘 J 與補弧 b1–b2–b3。C1 的相鄰兩個
 路徑塊都接 b0、b4；五個連通、不交 branch sets 給十條原邊鄰接，
 所以 record 104 及交換名字後的 record 148 都被 K5 minor 排除。

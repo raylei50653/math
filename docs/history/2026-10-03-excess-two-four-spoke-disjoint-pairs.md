@@ -7,7 +7,7 @@ cwd=`/home/ray/developer/ai/math`，保留既有未提交短／長face成果，
 
 ## 整個原子型完成
 
-[完成報告](../c5_excess_two_mixed_core_four_spoke_disjoint_pairs.md)、
+[完成報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_disjoint_pairs.md)、
 [checker](../../scripts/c5_excess_two_mixed_core_four_spoke_disjoint_pairs.py)、
 [artifact](../../artifacts/c5_excess_two_mixed_core_four_spoke_disjoint_pairs/observations.json)
 在固定完整Σ933／941／整圖D₅像、Σ edge-minimal induced-C₅ disk、
@@ -17,9 +17,9 @@ cwd=`/home/ray/developer/ai/math`，保留既有未提交短／長face成果，
 原contacts可共鄰但不複製頂點；全部原C/U/V、actual supports、附件、
 bridges、旁支、ownership、環序及共同字面色框保持。
 
-先由原[unary crosscut](../c5_excess_two_mixed_core_four_spoke_crosscut.md)
+先由原[unary crosscut](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_crosscut.md)
 新排8／16，unequal22／40→14／24。再以
-[短框弧完整joint](../c5_excess_two_mixed_core_four_spoke_short_arc.md)
+[短框弧完整joint](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_short_arc.md)
 排941最後六份共用框點，至14／18。最後不相交pairs分成：
 
 - 933的4份、941的8份有一側全部incident faces短，原接線非critical。
@@ -91,7 +91,7 @@ Crosscut／shortarc原bytes與hash見各自紀錄；三份新產物本地保留�
 先核對一條原spoke省略後的core身份與原disk接線，再接回原relation。
 Mixed22無unary、較少spokes、單省略、(5,5)q-core、多mixed／no-mixed、
 非相鄰及unary側例外保留；共同下界ε≥2，ε≥3／來源實現／一般出口／
-K∞=K≤5未證，最新停止點見[Kempe導覽](../c5_kempe_guide.md)。
+K∞=K≤5未證，最新停止點見[Kempe導覽](../archive/guides/c5_kempe_guide.md)。
 
 ```text
 cwd=/home/ray/developer/ai/math；先讀HANDOFF/STATUS/Kempe導覽和git status。

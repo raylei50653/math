@@ -4,7 +4,7 @@
 本輪只推進交接指定的 t_z=t_w=2、兩側 (2)，保留進場時其他研究變更。
 使用者未要求 commit／push，本輪未執行；未啟動 sub-agents 或 Graphify。
 
-成果入口：[專題報告](../c5_adjacent_degree5_no_mixed_t2.md)、
+成果入口：[專題報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2.md)、
 [checker](../../scripts/c5_adjacent_degree5_no_mixed_t2.py)、
 [JSON](../../artifacts/c5_adjacent_degree5_no_mixed_t2/observations.json)、
 [支援及原資料纖維表](../../artifacts/c5_adjacent_degree5_no_mixed_t2/support_table.md)。

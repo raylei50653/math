@@ -5,10 +5,10 @@
 
 ## 範圍與數學界線
 
-本批包含[跨 split 雙反轉](../four_color_three_step_cross_split_exclusion.md)、
-[固定分隔路完整 fibres](../four_color_three_step_separator_fibres.md)、
-[全部遠端交換的全割／方向一致路條件](../four_color_three_step_remote_cut.md)、
-[原邊 K₄ 附件無增益](../four_color_three_step_attachment_decoration.md)，
+本批包含[跨 split 雙反轉](../archive/reports/planar-sources/four_color_three_step_cross_split_exclusion.md)、
+[固定分隔路完整 fibres](../archive/reports/planar-sources/four_color_three_step_separator_fibres.md)、
+[全部遠端交換的全割／方向一致路條件](../archive/reports/planar-sources/four_color_three_step_remote_cut.md)、
+[原邊 K₄ 附件無增益](../archive/reports/planar-sources/four_color_three_step_attachment_decoration.md)，
 及其 producer、獨立 replay、完整證書、凍結來源、導覽與 STATUS。
 
 雙反轉排除限於框外逐分量至多單圈的來源；一般來源的全割／分離條件為必要要求，

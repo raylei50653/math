@@ -1,8 +1,8 @@
 # C₅ 舊化約之外的完整四接點輪環替換
 
 日期：2026-09-30。接續私有路徑奇偶定理；目前狀態由
-[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)維護，完整證明見
-[輪環報告](../c5_two_vertex_repair_rings.md)。
+[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)維護，完整證明見
+[輪環報告](../archive/reports/c5/two-vertex/c5_two_vertex_repair_rings.md)。
 
 ## 本輪成果
 

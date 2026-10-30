@@ -2,7 +2,7 @@
 
 使用者負責發布任務並回傳結果，本對話負責範圍、依賴、驗收與缺口管理。
 本表以 **部分研究成果分支合併至 main** 為目標，並非宣告猜想 E 或一般出口完成。
-研究停止點仍由 [Kempe 導覽](../c5_kempe_guide.md#3-停止點與保留缺口) 維護。
+研究停止點仍由 [Kempe 導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口) 維護。
 以下是派工及驗收要求；未完成項不表示已經執行，也不表示 GitHub 設有相同保護規則。
 
 ## 接手基準與本次確認
@@ -61,7 +61,7 @@ HANDOFF保持薄入口；沒有研究線變更就不增加摘要。不得改寫�
 ## M2：U1 的独立稽核
 
 **可直接發布的任務：** 對 M1候選 SHA 的
-[U1報告](../c5_excess_two_no_mixed_core44.md) 作獨立稽核，不推進U2–U4，
+[U1報告](../archive/reports/c5/excess/other/c5_excess_two_no_mixed_core44.md) 作獨立稽核，不推進U2–U4，
 不修原報告／checker／證書。新輸出放獨立 audit 目錄；不import原checker決策邏輯。
 
 紙面核對須逐項指出來源前提及依賴：原zw保留、piece全取／全不取、省略身份完備性；

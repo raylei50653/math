@@ -9,9 +9,9 @@
 
 | 來源 | 本次發布的精確成果 | 保留界線 |
 | --- | --- | --- |
-| [C5→C4 來源橋](../c5_c4_boundary_pivot.md) | 原 G 全部頂點與邊保留，只加外側四-spoke 點；完整 fibres 雙射給 `n_H(ABCB)=y0+y1=0`。正規形／度數使 H 為非 diamond 4-candidate，總點數 k+6；接外部完整≤28總點計算得 `K≤22=K≤5`、三支共同 k≥23 | 紙面＋本地有限控制＋外部計算；未重跑外部枚舉、無新 Lean，無界具名 C4 子類及 `K∞=K≤5` OPEN |
-| [T1-CROSSCUT](../c5_c8_peeling.md#t1-crosscut) | 原 no4ct 全域最小來源契約下 h=3⇒p=0，全部 PINCH／BRIDGE 排除，不限單接點數或兩片大小；完整共同支援與安全矩形證書保留 | 紙面＋Python，無新 Lean；RING、h≥4、一般來源縮減 OPEN。剝層自身 k≥19、T2自身 k≥18 與當前共同 k≥23 分開 |
-| [Lean 具名首層替換](../lean_named_replacement.md) | 兩方向、A單側、B單側及雙側各一次替換，32個普通 theorem 保十三點外部完整接受關係、原 U 的 J、指定框 P、repair 分類及 r*=4；實際原邊表與既有六份首層圖一致 | 無 `native_decide` 或新增公理；沒有宣稱內部 fibre 數量相等。任意層數接線／ownership、disk 嵌入與全部可用框、一般分類 OPEN |
+| [C5→C4 來源橋](../archive/reports/c5/structure/c5_c4_boundary_pivot.md) | 原 G 全部頂點與邊保留，只加外側四-spoke 點；完整 fibres 雙射給 `n_H(ABCB)=y0+y1=0`。正規形／度數使 H 為非 diamond 4-candidate，總點數 k+6；接外部完整≤28總點計算得 `K≤22=K≤5`、三支共同 k≥23 | 紙面＋本地有限控制＋外部計算；未重跑外部枚舉、無新 Lean，無界具名 C4 子類及 `K∞=K≤5` OPEN |
+| [T1-CROSSCUT](../archive/reports/c5/structure/c5_c8_peeling.md#t1-crosscut) | 原 no4ct 全域最小來源契約下 h=3⇒p=0，全部 PINCH／BRIDGE 排除，不限單接點數或兩片大小；完整共同支援與安全矩形證書保留 | 紙面＋Python，無新 Lean；RING、h≥4、一般來源縮減 OPEN。剝層自身 k≥19、T2自身 k≥18 與當前共同 k≥23 分開 |
+| [Lean 具名首層替換](../verification/lean_named_replacement.md) | 兩方向、A單側、B單側及雙側各一次替換，32個普通 theorem 保十三點外部完整接受關係、原 U 的 J、指定框 P、repair 分類及 r*=4；實際原邊表與既有六份首層圖一致 | 無 `native_decide` 或新增公理；沒有宣稱內部 fibre 數量相等。任意層數接線／ownership、disk 嵌入與全部可用框、一般分類 OPEN |
 
 W5 任取合法輪的私人圈秩至少五、C9-932 的20項較高度數來源及
 E-ARC2 的 N1／相鄰 roots／基本 LL-CUT 均保留原契約，不由本次有界結論關閉。

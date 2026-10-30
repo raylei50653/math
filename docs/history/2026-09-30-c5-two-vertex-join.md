@@ -9,7 +9,7 @@ README、HANDOFF、STATUS、state 導覽的修改，以及點對 checker／artif
 
 - 新增[具名 evaluator](../../scripts/c5_two_vertex_join.py)、
   [完整八點 artifact](../../artifacts/c5_two_vertex_overlap/eight_point_joins.json)及
-  [報告](../c5_two_vertex_join.md)。支援任選既有 class IDs、兩點有序雙射
+  [報告](../archive/reports/c5/two-vertex/c5_two_vertex_join.md)。支援任選既有 class IDs、兩點有序雙射
   的單次求值；預設只重播六份固定控制。
 - 主例 A=B=R1023、A `(0,2)` 接 B `(0,1)` 的 J 有 140 色軌道／3,360
   具名賦色，回投影 A=R1016、B=R1023。反向雙射與自由點對另存。
@@ -58,7 +58,7 @@ CLI 輸入（缺參數、目錄外 ID、重複點、越界點）均明確拒絕�
 ## 停止點與保留界線
 
 一次八點語義與同圖核對已完成。接下來沿用主例分開檢查抽象平面性、
-指定 A／B disk 外框及兩份 disk 區域的側別規則，見[導覽](../c5_two_vertex_overlap_guide.md)。
+指定 A／B disk 外框及兩份 disk 區域的側別規則，見[導覽](../archive/guides/c5_two_vertex_overlap_guide.md)。
 本輪只記錄共同邊身份，未跑 planarity／embedding；各拓撲欄保持 unknown。
 沒有重跑來源大枚舉、其他研究家族、弱刪除證書或目錄最小性。
 完整八點後繼表、拓撲分類、多步充分性與 `K∞=K≤5` 均未完成。

@@ -13,16 +13,16 @@ registry，也不裁決新數學命題。治理契約由 [DOCUMENTATION](../DOCU
 
 | 責任 | Weak-deletion／共鄰端點 P₃ | Kempe／固定完整 Σ 的兩-root44 |
 | --- | --- | --- |
-| Routing | HANDOFF → [weak-deletion guide](../c5_weak_deletion_guide.md)；STATUS 直接索引 | HANDOFF → [Kempe guide](../c5_kempe_guide.md)；STATUS 直接索引 |
+| Routing | HANDOFF → [weak-deletion guide](../archive/guides/c5_weak_deletion_guide.md)；STATUS 直接索引 | HANDOFF → [Kempe guide](../archive/guides/c5_kempe_guide.md)；STATUS 直接索引 |
 | Summary | guide 的目的、現況表、§3 停止點／保留義務 | guide §3 的兩-root44 收尾與 45／54 等 OPEN 義務 |
-| Source | [C-W](../c5_qcore_shield_budget.md) §1、§4–5、§8；由 §8 導向 D₆ 補證 | [C44″](../../artifacts/c5_excess_two_c44pp/REPORT.md)的逐格前提／前序入口，加 guide §3 連向 U1–U4 互補原報告 |
-| Evidence | C-W checker／verdicts、[D₆](../../audits/2026-10-04-task-d6/REPORT.md)、[cw-v1 ledger](../c5_open_leaf_ledger.md) | 各 U 報告的 scripts／artifacts／獨立 auditor；[U4 §5](../c5_excess_two_nonadjacent_two_mixed_core44.md#5-證書實際控制與信任界線)明列紙面／Python／Lean 界線 |
+| Source | [C-W](../archive/reports/c5/shared-results/c5_qcore_shield_budget.md) §1、§4–5、§8；由 §8 導向 D₆ 補證 | [C44″](../../artifacts/c5_excess_two_c44pp/REPORT.md)的逐格前提／前序入口，加 guide §3 連向 U1–U4 互補原報告 |
+| Evidence | C-W checker／verdicts、[D₆](../../audits/2026-10-04-task-d6/REPORT.md)、[cw-v1 ledger](../archive/reports/c5/shared-results/c5_open_leaf_ledger.md) | 各 U 報告的 scripts／artifacts／獨立 auditor；[U4 §5](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_two_mixed_core44.md#5-證書實際控制與信任界線)明列紙面／Python／Lean 界線 |
 | History | C₂–C₄、W、D₃–D₆ 原截點與發布紀錄 | C44″ 當輪覆蓋表與 U1–U4 各輪紀錄；不把當年的 OPEN 當作現況 |
 
 **實際漏失。** 接手的 weak-deletion guide 是 287 行，頁首先稱「3497 葉未關閉」，
 再接 W 的完成公告；現況表仍稱共鄰 P₃「36 residual、未證出口」，§3 又先給
 geometry35 待辦、後面才說被取代；§4 仍以「另外3497keys未關閉」開場。
-來源 [C-W §8](../c5_qcore_shield_budget.md#8-稽核後更正與補證2026-10-04d₆-之後)
+來源 [C-W §8](../archive/reports/c5/shared-results/c5_qcore_shield_budget.md#8-稽核後更正與補證2026-10-04d₆-之後)
 及 cw-v1 已確認該指定分支完成排除。錯誤是當前 Summary 保留舊待辦，
 不是原必要表必須被刪除。一般出口仍 OPEN，不能把來源排除改稱一般出口證明。
 
@@ -76,7 +76,7 @@ one-sided、每份自身支援／避開自身外路、零-unary 的補證，以�
 ### 一般局部更新的範圍試點
 
 F1 以接手時已存在的 Phase B B-C2 紙面條件容量式作局部更新演練，對回
-[Phase B §3.2](../c5_phase_b_common_lemmas.md#32-b-c2任意两自由roots的條件逐欄容量定理)：
+[Phase B §3.2](../archive/reports/c5/shared-results/c5_phase_b_common_lemmas.md#32-b-c2任意两自由roots的條件逐欄容量定理)：
 同一 proper boundary row、其他 roots 的共同 pins、兩自由 roots、完整 tuples，
 拒絕完整接合且另一側非空。這是必要容量式，沒有新增 target／來源排除。
 Evidence 核對既有 controls 的入口與限制：只計算相鄰兩 roots、唯一 shared
@@ -99,12 +99,12 @@ F2 的 closure scope 是 C44″ 所列：有限簡單有序 induced-C₅ disk、
 完成依據是任意大小紙面化約與互補分類／接回證據，不是有限搜尋沒找到來源。
 
 權威入口是 [C44″](../../artifacts/c5_excess_two_c44pp/REPORT.md)與
-[Kempe §3](../c5_kempe_guide.md#3-停止點與保留缺口)的來源映射：
-[U1](../c5_excess_two_no_mixed_core44.md)、
-[U2](../c5_excess_two_adjacent_two_mixed_core44.md)、
-[U3 incidence11](../c5_excess_two_nonadjacent_one_mixed_core44.md)、
-[U3 incidence12／21](../c5_excess_two_nonadjacent_mixed12_core44.md)（22 沿用 E4）、
-[U4](../c5_excess_two_nonadjacent_two_mixed_core44.md)，及前序相鄰唯一 mixed 排除。
+[Kempe §3](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)的來源映射：
+[U1](../archive/reports/c5/excess/other/c5_excess_two_no_mixed_core44.md)、
+[U2](../archive/reports/c5/excess/other/c5_excess_two_adjacent_two_mixed_core44.md)、
+[U3 incidence11](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_one_mixed_core44.md)、
+[U3 incidence12／21](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_mixed12_core44.md)（22 沿用 E4）、
+[U4](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_two_mixed_core44.md)，及前序相鄰唯一 mixed 排除。
 Sources 各自連 scripts／artifacts；紙面、Python、指定稽核與 Lean 界線分開。
 
 在 `docs/*.md`／README 搜尋這五份 U 報告與 C44″ 的直接 Markdown 引用，

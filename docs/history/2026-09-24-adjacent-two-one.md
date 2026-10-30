@@ -1,7 +1,7 @@
 # 2026-09-24: adjacent two-spoke (2,1), separate-component obstruction
 
 Scope: S={b0,b1}, q=01012, both singleton forbidden-color orders, C₂ and
-C₁ distinct in the long boundary region. The [report](../c5_two_spoke_adjacent_21.md)
+C₁ distinct in the long boundary region. The [report](../archive/reports/c5/structure/c5_two_spoke_adjacent_21.md)
 proves that neither configuration is planar under the stated minimal-core
 and complete-degree hypotheses. T4 and second-row rejection are unnecessary.
 

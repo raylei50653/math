@@ -5,7 +5,7 @@ Git 基準 `f29b899`，工作目錄為專案根目錄。承接使用者「繼續
 保留進場既有未提交成果及原 scripts／artifacts；未 commit／push。
 新增 [checker](../../scripts/c5_adjacent_degree5_no_mixed_t2_t0_pairs.py)、
 [JSON／支援表](../../artifacts/c5_adjacent_degree5_no_mixed_t2_t0_pairs/support_table.md)、
-[報告](../c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)，接回出口第九類及文件入口。
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)，接回出口第九類及文件入口。
 
 ## 結果
 
@@ -36,7 +36,7 @@ source 340 份排除與 target 8 份候選反證分開記錄。
 
 ## 範圍更新
 
-新 JSON 的 coverage_extension 綁定前輪 [範圍表](../c5_exchange_geometry_scope.md)
+新 JSON 的 coverage_extension 綁定前輪 [範圍表](../archive/reports/c5/structure/c5_exchange_geometry_scope.md)
 及原 no-mixed 資料，加入本型正反向 192 個 IDs，與原 552 份互不相交。
 現為四種 root 交換型／744 份原接合已覆蓋；11 種／2,804 份仍開放。
 未改寫前輪 snapshot checker／artifacts。一般 A 完備性、完整 Σ、共同出口及

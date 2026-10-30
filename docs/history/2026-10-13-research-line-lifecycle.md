@@ -12,14 +12,14 @@
 
 | 導覽 | 最近研究更新與範圍 |
 | --- | --- |
-| [Weak-deletion](../c5_weak_deletion_guide.md#最新進度) | 10-08 接口採納；一般出口與逐染色 repair 仍 OPEN |
-| [兩點重疊](../c5_two_vertex_overlap_guide.md#最新進度) | 10-08 接口採納；來源族與全部 disk 框未端到端形式化 |
-| [degree-4](../c5_degree4_guide.md#最新進度) | 09-18 R9 指定分支完成；一般主命題不由此完成 |
-| [degree-5](../c5_degree5_guide.md#最新進度) | 10-13 指定 N2 後續；一般 R31 任意長來源 minor 保留 |
-| [Sector](../c5_sector_3903_guide.md#最新進度) | 09-28 形式化補充；五目標紙面排除收尾為 09-24 |
-| [Kempe](../c5_kempe_guide.md#最新進度) | 10-13 N2／no4ct／C8／W5／跨邊成果；原契約與並行 OPEN 分開 |
-| [State](../c5_state_guide.md#最新進度) | 10-13 域外構造；F／Z 原來源域未初驗 |
-| [Lean](../lean_guide.md#最新進度) | 10-04 LC 固定 soundness 證書；completeness／topology 未形式化 |
+| [Weak-deletion](../archive/guides/c5_weak_deletion_guide.md#最新進度) | 10-08 接口採納；一般出口與逐染色 repair 仍 OPEN |
+| [兩點重疊](../archive/guides/c5_two_vertex_overlap_guide.md#最新進度) | 10-08 接口採納；來源族與全部 disk 框未端到端形式化 |
+| [degree-4](../archive/guides/c5_degree4_guide.md#最新進度) | 09-18 R9 指定分支完成；一般主命題不由此完成 |
+| [degree-5](../archive/guides/c5_degree5_guide.md#最新進度) | 10-13 指定 N2 後續；一般 R31 任意長來源 minor 保留 |
+| [Sector](../archive/guides/c5_sector_3903_guide.md#最新進度) | 09-28 形式化補充；五目標紙面排除收尾為 09-24 |
+| [Kempe](../archive/guides/c5_kempe_guide.md#最新進度) | 10-13 N2／no4ct／C8／W5／跨邊成果；原契約與並行 OPEN 分開 |
+| [State](../archive/guides/c5_state_guide.md#最新進度) | 10-13 域外構造；F／Z 原來源域未初驗 |
+| [Lean](../verification/lean_guide.md#最新進度) | 10-04 LC 固定 soundness 證書；completeness／topology 未形式化 |
 
 所有日期都由既有報告或採納紀錄核對，不把本輪入口整理日當成最新成果日。
 原編號章節與錨點保留；Kempe 舊發布／驗收入口移入原閱讀與重播章節。

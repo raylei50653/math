@@ -5,7 +5,7 @@
 
 ## 權威與範圍
 
-目前數學狀態以 [N45 canonical](../../docs/c5_excess_two_nonadjacent_unit_core45.md)、其具名採納 review／history 為準；原 worker 的 candidate、pending、舊 residual 敘述保留當輪語境。
+目前數學狀態以 [N45 canonical](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)、其具名採納 review／history 為準；原 worker 的 candidate、pending、舊 residual 敘述保留當輪語境。
 已核對 HANDOFF、STATUS、Git HEAD 與 canonical。既有文件足以說明跨檔依賴，本輪未使用 Graphify。
 
 只整理 N45 已採納窄命題、BR-SD-1a／1c／1e／1g、直接 degree-list／Gallai／palette／minimality 依賴，以及共用這些步驟的 U／LOW／HIGH／LONG 結構。

@@ -1,8 +1,8 @@
 # 共同切口與剝殼 fan 續進整理發布
 
 2026-10-29。依使用者要求，從基準 `f5bedfd7f32ef4542700ab5623535ed056963022`
-整理[計數／手術共同切口](../four_color_counts_surgery_continuation.md)與
-[剝殼 fan 續進](../four_color_shelling_verification.md#fan-與-middle-tree-的縮窄)，
+整理[計數／手術共同切口](../archive/reports/four-color/four_color_counts_surgery_continuation.md)與
+[剝殼 fan 續進](../archive/reports/planar-sources/four_color_shelling_verification.md#fan-與-middle-tree-的縮窄)，
 連同五支 checker、完整小型證書及直接文件更新一同發布。
 
 共同切口拒絕的是指定非 disk 的 932 完整交換模型；真 disk 的反例則否定指定分量摘要的

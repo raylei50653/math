@@ -3,11 +3,11 @@
 接續四點最少個數與唯一組合，固定原反向十五點三十五邊圖、
 八點 U、完整 J 與基底 P。接手時工作樹乾淨，分支 main。
 研究完成時尚未 commit／push；同日提交整理見文末，發布狀態以即時 Git 為準。目前入口見
-[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)。
+[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)。
 
 ## 成果與證據
 
-- 新增[專題報告](../c5_two_vertex_minimal_repairs.md)、
+- 新增[專題報告](../archive/reports/c5/two-vertex/c5_two_vertex_minimal_repairs.md)、
   [checker](../../scripts/c5_two_vertex_minimal_repairs.py)與
   [完整證書](../../artifacts/c5_two_vertex_overlap/minimal_repairs.json)。
 - 以既有 x 迫 S_A；含 S_B 時極小性只容許唯一二份解。

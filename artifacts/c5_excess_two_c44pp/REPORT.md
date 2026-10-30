@@ -1,26 +1,26 @@
 # 任務 C44″：兩-root (4,4) 拒絕 q-core 的既有排除覆蓋表
 
-**後續（2026-10-08，U4完成）。** [非相鄰兩mixed的U4](../../docs/c5_excess_two_nonadjacent_two_mixed_core44.md)
+**後續（2026-10-08，U4完成）。** [非相鄰兩mixed的U4](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_two_mixed_core44.md)
 由原盾弧／star、保留marker的任意長run化約及828份完整joint接回全排。
 U1–U4現已完成固定完整Σ933／941下兩-root44身份；下文當輪覆蓋表保留，
 45／54／55、單-root例外、E5新證明要求與ε≥3仍保留。
 
-**後續（2026-10-08，U3完成）。** [非相鄰sole mixed12／21](../../docs/c5_excess_two_nonadjacent_mixed12_core44.md)
+**後續（2026-10-08，U3完成）。** [非相鄰sole mixed12／21](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_mixed12_core44.md)
 由原star面與重色列slack排容量一、六內點完整接回排容量二。
 連同前輪mixed11及E4的mixed22，U3兩-root44身份完成；完整Σ下44殘留只剩U4。
 下文保留各輪原覆蓋表；其他core型、單-root例外與ε≥3保留。
 
-**後續（2026-10-08，U3）。** [非相鄰 sole mixed11](../../docs/c5_excess_two_nonadjacent_one_mixed_core44.md)
+**後續（2026-10-08，U3）。** [非相鄰 sole mixed11](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_one_mixed_core44.md)
 的兩側 unit 省略44身份已全排：容量11給原apex K₃,₃、22違反原直接bridge，
 12／21容量由原star face及重色列的完整slack延拓排除。
 完整Σ下44殘留為U3 incidence12／21及U4；下文當輪incidence11未覆蓋狀態保留。
 
-**後續（2026-10-08）。** [相鄰兩mixed44](../../docs/c5_excess_two_adjacent_two_mixed_core44.md)
+**後續（2026-10-08）。** [相鄰兩mixed44](../../docs/archive/reports/c5/excess/other/c5_excess_two_adjacent_two_mixed_core44.md)
 已排U2：原mixed11省略圖全收Ω；126份triangle正常形／570標記的完整關係、固定支援
 與同源收縮星全排，獨立支援計算一致。因此完整Σ下兩-root44目前只剩非相鄰U3／U4。
 下文保留當輪覆蓋表及U1更正；其他core型與E5新證明要求保留。
 
-**後續（2026-10-07）。** [no-mixed44](../../docs/c5_excess_two_no_mixed_core44.md)
+**後續（2026-10-07）。** [no-mixed44](../../docs/archive/reports/c5/excess/other/c5_excess_two_no_mixed_core44.md)
 以 triangle palette 衝突排 U1 的spoke＋unary，並以344份bridge-marker核心的
 3,498次完整接回排雙spoke，因此本頁當輪四類44殘留現只剩U2–U4。
 本輪亦更正§5的941雙spoke身份收窄：E6-D容許941三-spoke側，不能一律代入t_r≤2；
@@ -28,14 +28,14 @@ U1–U4現已完成固定完整Σ933／941下兩-root44身份；下文當輪覆�
 [唯一 mixed 指定稽核](../../audits/2026-10-07-c44pp-mixed-audit/REPORT.md)
 亦已核對四份舊報告的化約及固定排除域；沿用上游分類，未重稽核全部上游枚舉。
 E5的新證明要求及其他core型仍保留。下文保留C44″當輪覆蓋表與稽核狀態，
-目前停止點見[Kempe導覽](../../docs/c5_kempe_guide.md#3-停止點與保留缺口)。
+目前停止點見[Kempe導覽](../../docs/archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)。
 
 2026-10-06。基準 `integrate-kprime-e3 @ c9f89f0`；分支 `task-c44pp-coverage`，
 worktree `/home/ray/developer/ai/math-task-c44pp`。**純紙面整理，沒有新增計算、
 新引理或新證明。** 本頁只把既有結果的精確前提對齊到完整 Σ=933／941 來源的各雙 root
 分支，標出每格「已排」「部分」「未覆蓋」，並用三份具名 core 逐格檢驗。
 研究導覽的停止點由整合者在
-[Kempe 導覽 §3](../../docs/c5_kempe_guide.md#3-停止點與保留缺口)更新；本任務未改導覽。
+[Kempe 導覽 §3](../../docs/archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)更新；本任務未改導覽。
 
 **整合覆核（2026-10-07）。** 更正下文 E5／E6 保留 G1 的任務範圍措辭：
 完整 Σ 分支可沿用舊證書，但 E5 另要求新證明，兩種完成標準不能混稱。
@@ -84,14 +84,14 @@ worktree `/home/ray/developer/ai/math-task-c44pp`。**純紙面整理，沒有�
 
 | 舊報告（前提：完整 Σ=933／941 或 D₅ 像、Σ-critical、disk、ε=2、相鄰、恰一份 mixed） | 結論 |
 | --- | --- |
-| [雙 spoke 與原省略身份表](../../docs/c5_excess_two_mixed_core_spokes.md) | 保留 mixed 的 (4,4) core 不能省略兩條 spokes；§2 身份表、§3 保留的 C 兩側共用 x |
-| [spoke＋unary](../../docs/c5_excess_two_mixed_core_spoke_unary.md) | 一側省略 spoke、另一側省略單接點 unary 的圖全收 Ω |
-| [雙 unary](../../docs/c5_excess_two_mixed_core_two_unary.md) | 兩側各省略單接點 unary 的圖全收 Ω |
-| [只省略 mixed11](../../docs/c5_excess_two_mixed_omission.md) | Σ(G−C)=Ω；**此來源沒有任何 (4,4) core** |
-| [單 spoke 化約](../../docs/c5_excess_two_mixed_core_single_spoke.md)、[五-spoke leaf fibres](../../docs/c5_excess_two_mixed_core_leaf_fibers.md) | 兩側不能同時有三條 spokes；兩候選的總 spokes 都≤4 |
+| [雙 spoke 與原省略身份表](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_core_spokes.md) | 保留 mixed 的 (4,4) core 不能省略兩條 spokes；§2 身份表、§3 保留的 C 兩側共用 x |
+| [spoke＋unary](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_core_spoke_unary.md) | 一側省略 spoke、另一側省略單接點 unary 的圖全收 Ω |
+| [雙 unary](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_core_two_unary.md) | 兩側各省略單接點 unary 的圖全收 Ω |
+| [只省略 mixed11](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_omission.md) | Σ(G−C)=Ω；**此來源沒有任何 (4,4) core** |
+| [單 spoke 化約](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_core_single_spoke.md)、[五-spoke leaf fibres](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_core_leaf_fibers.md) | 兩側不能同時有三條 spokes；兩候選的總 spokes 都≤4 |
 
 這些報告的前序條件包括 Σ(G−zw)=Ω 與兩個刪 root 圖全收，
-見 [root 刪除 §3–§4](../../docs/c5_excess_two_root_deletions.md)。
+見 [root 刪除 §3–§4](../../docs/archive/reports/c5/excess/other/c5_excess_two_root_deletions.md)。
 E3 可移植性表把它們列為「直接」。
 
 **稽核狀態。** E4／E5／E6 的引用引理由 [D₉](../../audits/2026-10-06-task-d9/REPORT.md)
@@ -105,13 +105,13 @@ byte replay（兩份文件 hash FAIL，數學 payload 未變），**沒有獨立
 
 下列身份是各分支共用的介面。它們來自原 degree-4 飽和，
 以及每個 root 的 loss 屬於 {0,1}：
-[mixed-core spokes §2](../../docs/c5_excess_two_mixed_core_spokes.md#2-全部-proper-core-的具名省略表)、
+[mixed-core spokes §2](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_core_spokes.md#2-全部-proper-core-的具名省略表)、
 [E3 nonadjacent §5](../c5_excess_two_e3/REPORT.md#5-第-2-步-ii-a先處理非相鄰雙-roots)、
 [E6 §3](../c5_excess_two_e6/REPORT.md#3-e6-bcj6-的共同-core欄位與框邊預算)。
 
 - **保留全部 mixed：** 兩側各省略一個單容量因子，即一條原 spoke，或一整份 capacity-one unary。
 - **省略一份 mixed：** 被省略的那份 incidence 必為 (1,1)，且不得再省略任何其他因子。
-- **全 degree-4 分類**（[k4 blocks §4](../../docs/c5_k4_blocks.md#4-合成全-degree-4-的單缺失結論)）：
+- **全 degree-4 分類**（[k4 blocks §4](../../docs/archive/reports/c5/structure/c5_k4_blocks.md#4-合成全-degree-4-的單缺失結論)）：
   所有簡單環都是 triangle。所以兩-root (4,4) core 至多保留一份 mixed。
   相鄰時，保留的那份 C 兩側必共用同一 contact x，構成原 triangle zwx；
   非相鄰時，每側至多兩個 contacts。
@@ -125,20 +125,20 @@ byte replay（兩份文件 hash FAIL，數學 payload 未變），**沒有獨立
 | --- | --- | --- | --- | --- |
 | 唯一 degree-6 | 無兩個原 roots，不定義兩-root core | **已排（整個來源）** | [E3 §4](../c5_excess_two_e3/REPORT.md#4-第-2-步-i唯一-degree-6-全部分拆) t=0–3 全分拆，t=1 的 (4,1)／(3,2) 須連同 [D₈ DG6-1 補表](../../audits/2026-10-04-task-d8/REPORT.md) | 同左 |
 | 相鄰 m≥3 | 依 §2 本無 (4,4) core | **已排（整個來源）** | [E6-A](../c5_excess_two_e6/REPORT.md#2-e6-a四條原路證明相鄰-m≤2)：zw 加三條 mixed 路隔離整份 mixed，違反 N-empty；D₉ holds | 同左 |
-| 相鄰 m=2 | 省略一份 C₁₁，保留另一份 C₁₁ 並共用 x（zwx triangle），不得再省略其他因子 | **部分** | [root 刪除式 (7)](../../docs/c5_excess_two_root_deletions.md#4-相鄰-mixed刪原-root-邊的全-degree-4-化約)：Σ(G−zw)=Ω、兩刪 root 圖全收；[E6 §3](../c5_excess_two_e6/REPORT.md#3-e6-bcj6-的共同-core欄位與框邊預算) 的身份限制；E6-A 附帶：含 B 的面由兩條 mixed 路圍成，zw 在有界側。**沒有任何結果排除這個身份** | E6「J6 m=2 限」 |
-| 相鄰 m=1，C incidence≠(1,1) | 依 §2 本無 (4,4) core（保留 C 須單 contact x；省略 C 須 (1,1)） | **已排** | [mixed-core spokes §2–§3](../../docs/c5_excess_two_mixed_core_spokes.md) | 同左（E6 §3） |
-| 相鄰 m=1，保留 C₁₁：雙 spoke | 兩側各省略一條 spoke | **已排** | [mixed-core spokes §4–§5](../../docs/c5_excess_two_mixed_core_spokes.md)；E3 把它列為「三列」可用 | 已排（E3 表） |
-| 相鄰 m=1，保留 C₁₁：spoke＋unary | 一側 spoke、一側單接點 unary，含 root 交換 | **已排** | [spoke＋unary](../../docs/c5_excess_two_mixed_core_spoke_unary.md)（Σ₀ 精確 target） | J1／G1：E6-H 只化到 G2 二邊 U 或 J4 入口 |
-| 相鄰 m=1，保留 C₁₁：雙 unary | 兩側各省略單接點 unary | **已排** | [雙 unary](../../docs/c5_excess_two_mixed_core_two_unary.md)（Σ₀，不經 K′） | 長 C 由六邊預算排除；短 singleton 待 K′（E3 §6） |
-| 相鄰 m=1，只省略 C₁₁ | G−C | **已排** | [mixed 省略](../../docs/c5_excess_two_mixed_omission.md)：Σ(G−C)=Ω | J1／G1：E6 §7 的 J2／J3／J4／J6 原族，Ω 未證 |
-| 相鄰 m=0（no-mixed） | 兩側各省略一個單容量因子；恰一份 U_z、一份 U_w；U_r 可省略 ⇔ t_r=3 | **部分** | [E6-D](../c5_excess_two_e6/REPORT.md#4-e6-dno-mixed-的整側預算與精確殘留)：兩側不能都三 spokes；t_r=3 只在 941 且 S_r=013（U 支援 123 或 034）。[盾弧定理 A(4)](../../docs/c5_unary_shield_budget.md#3-定理-a全圖至多兩份-unary-分量)：全部 spokes 落在 3 或 2 個指定框點。刪 root 至多一側只缺一列 | 同左（E6「no-mixed 限」） |
+| 相鄰 m=2 | 省略一份 C₁₁，保留另一份 C₁₁ 並共用 x（zwx triangle），不得再省略其他因子 | **部分** | [root 刪除式 (7)](../../docs/archive/reports/c5/excess/other/c5_excess_two_root_deletions.md#4-相鄰-mixed刪原-root-邊的全-degree-4-化約)：Σ(G−zw)=Ω、兩刪 root 圖全收；[E6 §3](../c5_excess_two_e6/REPORT.md#3-e6-bcj6-的共同-core欄位與框邊預算) 的身份限制；E6-A 附帶：含 B 的面由兩條 mixed 路圍成，zw 在有界側。**沒有任何結果排除這個身份** | E6「J6 m=2 限」 |
+| 相鄰 m=1，C incidence≠(1,1) | 依 §2 本無 (4,4) core（保留 C 須單 contact x；省略 C 須 (1,1)） | **已排** | [mixed-core spokes §2–§3](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_core_spokes.md) | 同左（E6 §3） |
+| 相鄰 m=1，保留 C₁₁：雙 spoke | 兩側各省略一條 spoke | **已排** | [mixed-core spokes §4–§5](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_core_spokes.md)；E3 把它列為「三列」可用 | 已排（E3 表） |
+| 相鄰 m=1，保留 C₁₁：spoke＋unary | 一側 spoke、一側單接點 unary，含 root 交換 | **已排** | [spoke＋unary](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_core_spoke_unary.md)（Σ₀ 精確 target） | J1／G1：E6-H 只化到 G2 二邊 U 或 J4 入口 |
+| 相鄰 m=1，保留 C₁₁：雙 unary | 兩側各省略單接點 unary | **已排** | [雙 unary](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_core_two_unary.md)（Σ₀，不經 K′） | 長 C 由六邊預算排除；短 singleton 待 K′（E3 §6） |
+| 相鄰 m=1，只省略 C₁₁ | G−C | **已排** | [mixed 省略](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_omission.md)：Σ(G−C)=Ω | J1／G1：E6 §7 的 J2／J3／J4／J6 原族，Ω 未證 |
+| 相鄰 m=0（no-mixed） | 兩側各省略一個單容量因子；恰一份 U_z、一份 U_w；U_r 可省略 ⇔ t_r=3 | **部分** | [E6-D](../c5_excess_two_e6/REPORT.md#4-e6-dno-mixed-的整側預算與精確殘留)：兩側不能都三 spokes；t_r=3 只在 941 且 S_r=013（U 支援 123 或 034）。[盾弧定理 A(4)](../../docs/archive/reports/c5/shared-results/c5_unary_shield_budget.md#3-定理-a全圖至多兩份-unary-分量)：全部 spokes 落在 3 或 2 個指定框點。刪 root 至多一側只缺一列 | 同左（E6「no-mixed 限」） |
 | 非相鄰 m=0 | — | **已排（不存在）** | H 連通迫 m≥1（[E3 §5](../c5_excess_two_e3/REPORT.md#5-第-2-步-ii-a先處理非相鄰雙-roots)） | 同左 |
 | 非相鄰 N3（m≥3） | 依 §2 本無 (4,4) core | **已排（整個來源）** | [E4 N-theta／N3](../c5_excess_two_e4/REPORT.md#5-n3theta-排除全部-m≥3)；D₉ holds | 同左 |
 | 非相鄰 N1（m=1，separating C），C incidence (2,2) | 兩側各省略一個 unit（spoke 或 capacity-one unary），sole C 不可省略 | **已排** | [E4 N1-22-44](../c5_excess_two_e4/REPORT.md#3-n1-主攻22-mixed-加-44-core-整類排除)；D₉ holds | 同左 |
 | 非相鄰 N1，C incidence (1,1)／(1,2)／(2,1) | 同上 | **未覆蓋** | E4 §3.4、§6 只保留完整原 relation 介面；unary≤2，至多一個 root 省略例外列 | 同左 |
 | 非相鄰 N2（m=2），兩份都短且無 unary | 省略一份 C₁₁，保留另一份 | **已排（整個來源）** | [E4 N2-short-no-unary](../c5_excess_two_e4/REPORT.md#42-n2-short-no-unary整類接受全部三色列)；D₉ holds | 同左 |
 | 非相鄰 N2，其餘 (ℓ,u) | 同上；兩刪 root 圖全收 | **部分（剩五族）** | [E4 §4.3](../c5_excess_two_e4/REPORT.md#43-n2-精確殘留)：ℓ+u≤2；全短時拒絕列兩側 E 互斥；同一 (4,4) 原省略圖只缺一列 | 同左 |
-| root 刪除例外 | 不是兩-root core，型為 (4,absent) | **不適用** | [root 刪除 §3](../../docs/c5_excess_two_root_deletions.md)：相鄰有 mixed、非相鄰 m_z,m_w≥2 時兩者全收；其餘情形至多一列例外，且 core＝原 S_r | 同左 |
+| root 刪除例外 | 不是兩-root core，型為 (4,absent) | **不適用** | [root 刪除 §3](../../docs/archive/reports/c5/excess/other/c5_excess_two_root_deletions.md)：相鄰有 mixed、非相鄰 m_z,m_w≥2 時兩者全收；其餘情形至多一列例外，且 core＝原 S_r | 同左 |
 
 非相鄰時的完整 relation 介面（R_P、A_P、E_r、J_G 及刪邊 witness）見
 [E4 §6](../c5_excess_two_e4/REPORT.md#6-完整原-relation-的參數化交付與-core-身份)。
@@ -188,7 +188,7 @@ C44-AD3 來源為 Σ956，正是 (i) 型；C44P-AD2 未提供完整 Σ=933／941
 C44P-MIXED3-001 來自同一個 Σ956 AD3 來源的 G−45−46：保留 mixed 單點 7，
 triangle 為 567，spokes 為 5→{2,3}、6→{0,1}、7→{1,2}。
 它的身份是「相鄰 m=1、保留 C₁₁、雙 spoke」，Σ₀ 下由
-[mixed-core spokes §5](../../docs/c5_excess_two_mixed_core_spokes.md#5-完整同框接回及結果) 排除；
+[mixed-core spokes §5](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_core_spokes.md#5-完整同框接回及結果) 排除；
 依 E3 可移植性表，Σ₃ 下也排除。
 
 ### 4.4 旁註：單-root 讀法
@@ -218,7 +218,7 @@ unary 單點 {s}，另一個 root w 完全省略。此時 core 型為 (4,absent)
 | U3 | 非相鄰 N1 | C incidence (1,1)、(1,2)、(2,1)；兩側各省略一個 unit | unary≤2；每側 contacts≤2；至多一 root 省略例外；原三-spoke set 不可為 024／124 |
 | U4 | 非相鄰 N2 | 省略一份 C₁₁、保留另一份；(ℓ,u)∈{(2,0),(1,0),(1,1),(0,1),(0,2)} | 兩刪 root 圖全收；ℓ+u≤2 及盾弧總長≤5；全短時拒絕列 E_z∩E_w=∅；原三-spoke set 不可為 024／124；該 core 所拒絕列的兩側原 spokes 均不得重色 |
 
-U1 的細化只代入[全 degree-4 core 分類](../../docs/c5_k4_blocks.md#4-合成全-degree-4-的單缺失結論)：
+U1 的細化只代入[全 degree-4 core 分類](../../docs/archive/reports/c5/structure/c5_k4_blocks.md#4-合成全-degree-4-的單缺失結論)：
 其內部最大度至多三。no-mixed 恰一份 U_r、incidence k_r=4−t_r；
 省略 spoke 而保留 U_r 與 zw 時，deg_(H_M)(r)=1+k_r=5−t_r≤3，故 t_r≥2。
 結合 E6-D 的 t_r≤2 得 t_r=2；省略 unit U 的另一側則有 k_r=1、t_r=3。
@@ -227,7 +227,7 @@ U1 的細化只代入[全 degree-4 core 分類](../../docs/c5_k4_blocks.md#4-合
 **更正（2026-10-07）。** 上段「結合E6-D的t_r≤2」只適用933／940，
 不適用941。941的t_r=3側可以保留unit U並省略spoke，此時core內度為2，
 最大度≤3的限制並未排除它；因此當輪U1雙spoke仍須保留(2,3)含交换。
-[後續no-mixed44](../../docs/c5_excess_two_no_mixed_core44.md)已用全部344份
+[後續no-mixed44](../../docs/archive/reports/c5/excess/other/c5_excess_two_no_mixed_core44.md)已用全部344份
 bridge-marker核心的3,498次接回排雙spoke，不依此收窄；spoke＋unary亦已另排。
 這是必要身份論證的更正，沒有提供新增身份的來源實例。
 U3／U4 新列出的 private-spoke 與重色限制見

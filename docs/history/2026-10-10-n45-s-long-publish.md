@@ -11,7 +11,7 @@ BASE `0d76c4c887033e565eaa0ca4d2a515619d7c97f3`。
 另限定 U owner=r，實際 sole C、X 自己的 witnesses與精確 F 接回 BASE(5)/(4)/(3)，
 pair／singleton S 皆排除。紙面依 BASE／外部 Gallai；有限介面校準來源仍 not triggered，
 沒有新 Lean theorem。U owner=s 的 actual C/U、無 U 的 long／兩 long、其他 core 與一般 N2／E仍 OPEN。
-目前停止點見 [Kempe 導覽](../c5_kempe_guide.md)。
+目前停止點見 [Kempe 導覽](../archive/guides/c5_kempe_guide.md)。
 
 ## 原 bytes 封存與重播
 

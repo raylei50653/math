@@ -12,8 +12,8 @@ Python `/home/ray/developer/ai/math/.venv/bin/python`（3.14；networkx 3.5）�
 ## 1. 來源、精確前提與證據層
 
 對照 [E4 REPORT](../c5_excess_two_e4/REPORT.md)、[CORE_CONSTRAINTS](../c5_excess_two_e4/CORE_CONSTRAINTS.md)、
-[E3 非相鄰 notes](../c5_excess_two_e3/nonadjacent_notes.md)、[盾弧原則](../../docs/c5_unary_shield_budget.md)、
-[Kempe 導覽](../../docs/c5_kempe_guide.md)及 [ES 報告](../../docs/c5_excess_two_finite_search.md)。
+[E3 非相鄰 notes](../c5_excess_two_e3/nonadjacent_notes.md)、[盾弧原則](../../docs/archive/reports/c5/shared-results/c5_unary_shield_budget.md)、
+[Kempe 導覽](../../docs/archive/guides/c5_kempe_guide.md)及 [ES 報告](../../docs/archive/reports/c5/excess/other/c5_excess_two_finite_search.md)。
 逐一讀取 `NA_k{6,7,8,9}_validate/crit_orbits/orbit_*.json` 的全部 54 個具名代表；不擴大圖族搜尋，不把 D₅ 搬運所得代表的 Q 或 Σ 混在一起。
 NA6-1＝NA6-0002、NA6-2＝NA6-0003、NA6-3＝NA6-0001；checker 逐邊核對導覽列出的兩份 hex 邊集，並驗 NA6-2 由 NA6-1 的 06 改為 36。
 

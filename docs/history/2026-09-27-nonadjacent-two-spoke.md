@@ -2,8 +2,8 @@
 
 接手本地 main／origin tracking 為 `18cb826`，工作樹起初乾淨；本輪未查遠端
 即時 SHA，未 commit／push。研究報告見
-[非相鄰分離](../c5_two_spoke_nonadjacent.md)，整合見
-[單側出口](../c5_single_sided_exit.md)。
+[非相鄰分離](../archive/reports/c5/structure/c5_two_spoke_nonadjacent.md)，整合見
+[單側出口](../archive/reports/c5/structure/c5_single_sided_exit.md)。
 
 ## 成果與證據範圍
 

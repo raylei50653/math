@@ -9,12 +9,12 @@
 
 | 成果 | 本次保留的精確結論 |
 | --- | --- |
-| [局部 residual](../c5_single_spoke_residual_locality.md) | record 90／282 的 p₂ 已證；single-spoke (2,2) 來源排除仍 278，保留 102 筆／51 型全部雙列已證，0 查詢未決 |
-| [(3,1) 排除](../c5_single_spoke_three_one.md) | 三接點 active triangle、原 boundary tethers 與唯一 spoke 給來源 K5；不需 T4 |
-| [(4) 排除](../c5_single_spoke_four.md) | 三拒絕共同結構給兩 triangle 加單 bridge，再給原圖 K5；全部 t=1 接回條件式出口 |
-| [No-spoke 外部連通](../c5_no_spoke_exterior.md) | 六種 t=0 分拆排除四種；保留 (2,2,1)、(2,1,1,1)，多分量皆 K4-free |
-| [No-spoke 環狀支援](../c5_no_spoke_supports.md) | (2,1,1,1) 的 48 筆全部指定雙列延拓；唯一 degree-5 的失敗側只剩 (2,2,1) |
-| [No-spoke 原外部路徑 K5](../c5_no_spoke_path_minor.md) | 616 筆排除 500 筆來源，再新增 104 個延拓；剩 116 筆，108 筆雙列已證、12 個未決查詢 |
+| [局部 residual](../archive/reports/c5/single-spoke/c5_single_spoke_residual_locality.md) | record 90／282 的 p₂ 已證；single-spoke (2,2) 來源排除仍 278，保留 102 筆／51 型全部雙列已證，0 查詢未決 |
+| [(3,1) 排除](../archive/reports/c5/single-spoke/c5_single_spoke_three_one.md) | 三接點 active triangle、原 boundary tethers 與唯一 spoke 給來源 K5；不需 T4 |
+| [(4) 排除](../archive/reports/c5/single-spoke/c5_single_spoke_four.md) | 三拒絕共同結構給兩 triangle 加單 bridge，再給原圖 K5；全部 t=1 接回條件式出口 |
+| [No-spoke 外部連通](../archive/reports/c5/structure/c5_no_spoke_exterior.md) | 六種 t=0 分拆排除四種；保留 (2,2,1)、(2,1,1,1)，多分量皆 K4-free |
+| [No-spoke 環狀支援](../archive/reports/c5/structure/c5_no_spoke_supports.md) | (2,1,1,1) 的 48 筆全部指定雙列延拓；唯一 degree-5 的失敗側只剩 (2,2,1) |
+| [No-spoke 原外部路徑 K5](../archive/reports/c5/structure/c5_no_spoke_path_minor.md) | 616 筆排除 500 筆來源，再新增 104 個延拓；剩 116 筆，108 筆雙列已證、12 個未決查詢 |
 
 下一入口仍是 **record 84／p₁**：q=01012，支援 (014,123,34)，
 q 禁色 ({0},{2,3},{1})；p₂=01212 可取 z=2。p₁=01021 拒絕候選只剩

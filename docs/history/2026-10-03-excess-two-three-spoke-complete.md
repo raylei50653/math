@@ -8,7 +8,7 @@
 HANDOFF、STATUS、Kempe 導覽與 Git，確認當前窄題是唯一 degree-6
 root 的 t=3、(2,1) 整型來源；t=1、t=2 已完成全分拆。本輪沿用原
 支援與 complete-relation 工具，沒有來源圖 catalogue 搜尋，沒有
-commit／push。成果見 [t=3 合成報告](../c5_excess_two_three_spoke_complete.md)。
+commit／push。成果見 [t=3 合成報告](../archive/reports/c5/excess/other/c5_excess_two_three_spoke_complete.md)。
 
 ## 成果、適用前提與證據界線
 

@@ -2,11 +2,11 @@
 
 本輪接續三點投影的未提交成果，固定原反向十五點三十五邊圖、
 同一完整八點 J 及兩框拉回 P。未 commit／push；發布狀態以即時 Git
-為準。目前停止點見[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)。
+為準。目前停止點見[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)。
 
 ## 成果與證據
 
-- 新增[報告](../c5_two_vertex_quaternary_repairs.md)、
+- 新增[報告](../archive/reports/c5/two-vertex/c5_two_vertex_quaternary_repairs.md)、
   [checker](../../scripts/c5_two_vertex_quaternary_repairs.py)與
   [完整證書](../../artifacts/c5_two_vertex_overlap/quaternary_repairs.json)。
   原 J 從原邊及七內點回溯重建，全部投影由完整 J 計算。

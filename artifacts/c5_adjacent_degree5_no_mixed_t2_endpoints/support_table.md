@@ -329,4 +329,4 @@
 | 321 | [145, 145] | 34/2/4/14/2/4 | A/A | A/A |
 
 原資料、完整 schemas／rotations、所有 joins、雙端點族與原圖 minor 見 [JSON](observations.json)。
-論證、四個未決項及信任界線見 [研究報告](../../docs/c5_adjacent_degree5_no_mixed_t2_endpoints.md)。
+論證、四個未決項及信任界線見 [研究報告](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_endpoints.md)。

@@ -1,6 +1,6 @@
 # C₇ 共同計數排除 941 的最後 h=2 外圈
 
-2026-10-13。[權威入口](../c5_neartri_boundary_collar.md)／
+2026-10-13。[權威入口](../archive/reports/c5/structure/c5_neartri_boundary_collar.md)／
 [完整證明與證據](../../audits/2026-10-13-c7-joint-kempe-19209f4c/REPORT.md)。
 後續整理與發布見[同日整批紀錄](2026-10-13-progress-publish.md)；
 下文「本輪沒有commit／push」是本次數學交付當時的狀態。

@@ -7,7 +7,7 @@
 
 ## 結果、原圖與證據
 
-[新報告](../c5_excess_two_mixed_core_four_spoke_hubs.md)／
+[新報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_hubs.md)／
 [checker](../../scripts/c5_excess_two_four_spoke_binary_hubs.py)先關閉
 指定入口：q=01021 下原完整 U 禁1，與原框點4同色。原拒絕
 degree lists tight，故原 contacts u、v 不接框點4。將

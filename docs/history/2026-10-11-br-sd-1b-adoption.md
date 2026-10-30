@@ -11,7 +11,7 @@ BR-SD-1a 的執行 HEAD `0f181045…` 與 source BASE `4dd11f4…` 是原 audit 
 
 ## 採納審查與證據界線
 
-Canonical Source： [N45§2.11](../c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)。
+Canonical Source： [N45§2.11](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)。
 Evidence：原 [REPORT](../../audits/2026-10-11-br-sd-1a-0f181045/REPORT.md)、
 [PROOF](../../audits/2026-10-11-br-sd-1a-0f181045/PROOF.md)、
 [逐前提 MAPPING](../../audits/2026-10-11-br-sd-1a-0f181045/agents/mapping/MAPPING.md)。
@@ -71,7 +71,7 @@ STATUS 的 BR-SD-1a 直接索引、N45 條目、degree-5 短狀態及本紀錄�
 
 Reviewed-unchanged：N45§1及既有 LOW／HIGH／LONG／U；degree-5 interfaces§7 的 SD-A 定理與
 四 component queries 語義；degree-5 guide 的 R9–R31 表與 R31 任意長來源義務；
-[Phase B 共通引理§2.1](../c5_phase_b_common_lemmas.md) 的 B-S0 前提及
+[Phase B 共通引理§2.1](../archive/reports/c5/shared-results/c5_phase_b_common_lemmas.md) 的 B-S0 前提及
 無 U long／兩 long 父身份 OPEN，均未受此 subset 採納改變。原 audit、certificates、hashes、
 negative controls、失敗代次及既有歷史文件保持原 bytes；STATUS 歷史條目的「待獨立封存」保留當輪語境。
 
@@ -100,7 +100,7 @@ regular files 共10,780,527,468 bytes；SHA256／size／mode 與 symlink targets
 
 ## BR-SD-1c 候選研究義務
 
-目前候選入口由 [degree-5 guide§4](../c5_degree5_guide.md#4-r31-保留缺口與重播入口) 維護。
+目前候選入口由 [degree-5 guide§4](../archive/guides/c5_degree5_guide.md#4-r31-保留缺口與重播入口) 維護。
 在保留同一原 G／β／完整 degree／contacts／ownership／完整關係的條件下，先限定含具名旁支
 或另一種 Gallai block 接線的子域，判定兩個非割點、非 s-contact 的原 witnesses 是否仍存在，
 或另證同一 D 必進入相交 blocks 的兩個 palettes。旁支破壞 witness 選取時，保留具名障礙與

@@ -41,4 +41,4 @@ HANDOFF研究線及README；一般J1兩項／J2六項與Lean邊界不變。
 Remaining OPEN：兩型較高度數來源、精確必要計數錐、來源實現、具體較小
 替換、一般W7／C7多內點／J1／J2、strict smaller bad及主命題。
 Propagation stop：L2；具名子型排除沒有關閉父W7，沒有新Lean定理。
-目前接續入口由[Kempe導覽](../c5_kempe_guide.md)維護。
+目前接續入口由[Kempe導覽](../archive/guides/c5_kempe_guide.md)維護。

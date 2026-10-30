@@ -1,7 +1,7 @@
 # 2026-09-27：單接點未用色守恆與指定 p₂ 延拓
 
 接續既有未提交的五輪 single-spoke 成果；原成果保留，未 commit／push。
-研究報告：[單接點未用色守恆](../c5_single_spoke_root_conservation.md)。
+研究報告：[單接點未用色守恆](../archive/reports/c5/single-spoke/c5_single_spoke_root_conservation.md)。
 
 完成 (012,04,234)、禁 3 者二接點的指定入口：C₁ 在 p₂ 不禁 3，
 與原 completion 合用可取 z=3。任意大小論證由 block-tree 固定色歸納承擔，

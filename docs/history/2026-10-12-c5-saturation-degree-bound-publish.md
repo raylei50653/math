@@ -6,7 +6,7 @@
 
 ## 採納範圍
 
-[權威入口](../c5_saturation_degree_bound.md) 接續已發布的共面正規形與十二內點界，
+[權威入口](../archive/reports/c5/structure/c5_saturation_degree_bound.md) 接續已發布的共面正規形與十二內點界，
 採納條件性 C4 三內點代表、全域最小目錄外來源的邊界度數≥4、內部≥5、n5≥6。
 [證據包](../../audits/2026-10-12-c5-saturation-degree-bound/REPORT.md) 凍結五份輸入，
 保存兩個反控制、全部 labelled fibres、可重播 checker 與獨立 conditional PASS 審查。

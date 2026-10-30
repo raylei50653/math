@@ -10,14 +10,14 @@ fetch 後 `main=origin/main`，工作樹包含 t=2 研究的三份新 checker、
 
 在 933／941 固定完整 Σ（含整圖 D₅ 像）、edge-minimal induced-C₅
 disk 來源、ε=2、唯一完整 degree-6 root、其餘有效內點完整 degree 四
-的前提下，[t=2 合成報告](../c5_excess_two_two_spoke_complete.md)完成
+的前提下，[t=2 合成報告](../archive/reports/c5/excess/other/c5_excess_two_two_spoke_complete.md)完成
 全部五分拆；連同前序 t=1，得到 **t∉{1,2}**。
 
 | 分拆 | 完成範圍 |
 | --- | --- |
-| (2,2) | [兩原 binary／首橋](../c5_excess_two_two_spoke_binary.md)：40 具名扇區位置、400 查詢全排；純 pair 層留下的 20 份完整十列抽象控制保留，加入同一首橋共用 β 及局部 residual 跨列搬運後全排 |
-| (3,1) | [Ternary／unary](../c5_excess_two_two_spoke_ternary.md)：復用 t=1 singleton profiles，16 具名位置、107,296 profile 對全無目標，不需 D 身份篩選 |
-| (4) | [四接點／共同 active forest](../c5_excess_two_two_spoke_four.md)：200 查詢全排；100 份三禁色 K₅、100 份固定兩末端袋支援不能並排 |
+| (2,2) | [兩原 binary／首橋](../archive/reports/c5/excess/other/c5_excess_two_two_spoke_binary.md)：40 具名扇區位置、400 查詢全排；純 pair 層留下的 20 份完整十列抽象控制保留，加入同一首橋共用 β 及局部 residual 跨列搬運後全排 |
+| (3,1) | [Ternary／unary](../archive/reports/c5/excess/other/c5_excess_two_two_spoke_ternary.md)：復用 t=1 singleton profiles，16 具名位置、107,296 profile 對全無目標，不需 D 身份篩選 |
+| (4) | [四接點／共同 active forest](../archive/reports/c5/excess/other/c5_excess_two_two_spoke_four.md)：200 查詢全排；100 份三禁色 K₅、100 份固定兩末端袋支援不能並排 |
 | (2,1,1)／四 unary | 前序短支援引理的固定跨度下界分別迫六／八跨度，超出五段框邊；原省略與四 unary 證書保留 |
 
 原分量、有序 contacts、全部原邊與實際 attachments、ownership、
@@ -71,7 +71,7 @@ handoff；DocGraph 通過 62 documents、213 relations、5 families，
 
 ## 停止點與跨對話接手
 
-下一窄題由 [Kempe 導覽](../c5_kempe_guide.md#3-停止點與保留缺口)
+下一窄題由 [Kempe 導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)
 維護：**t=3、(2,1) 整型來源**。保留兩原分量、有序 contacts、
 三條 spokes 的共同扇區、實際支援端點及同一色框，檢查原首橋／
 局部 residual 工具是否適用；停止於可證整型排除或具名必要殘留，

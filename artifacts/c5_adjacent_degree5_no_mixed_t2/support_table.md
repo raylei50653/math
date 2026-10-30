@@ -423,4 +423,4 @@
 
 全部 placements、具名 root rotations、完整 q schemas、逐候選 joins 及未決見證見
 [JSON](observations.json)；任意大小覆蓋與界線見
-[研究報告](../../docs/c5_adjacent_degree5_no_mixed_t2.md)。
+[研究報告](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2.md)。

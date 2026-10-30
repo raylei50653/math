@@ -7,8 +7,8 @@ origin/main 為 `5d70a39940182ea37c9ca5d36d9ebb7f612160ad`。
 
 ## 採納與精確界線
 
-[全內部五輪及 A／B／C 入口](../c5_degree5_link_reductions.md) 接入四份隔離交付；
-[完整外圈入口](../c5_neartri_boundary_collar.md) 接入近三角化來源限制。
+[全內部五輪及 A／B／C 入口](../archive/reports/c5/degree5/c5_degree5_link_reductions.md) 接入四份隔離交付；
+[完整外圈入口](../archive/reports/c5/structure/c5_neartri_boundary_collar.md) 接入近三角化來源限制。
 所有原 BASE、凍結副本、v1／v2 證書、失敗及負控制保存原 bytes。
 
 - 最小來源必有全內部 induced W5；每個 C4 的有界內部空、proper C5 最多包住一個輪中心。

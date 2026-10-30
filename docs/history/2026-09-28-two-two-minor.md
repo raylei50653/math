@@ -7,7 +7,7 @@
 
 ## 結果與停止點
 
-[新報告](../c5_single_spoke_two_two_minor.md) 證雙禁色原 bridge 路徑的每個
+[新報告](../archive/reports/c5/single-spoke/c5_single_spoke_two_two_minor.md) 證雙禁色原 bridge 路徑的每個
 連通旁支塊，其 residual 色對受實際支援穩定子保持。當 s=0、F_C(q)={1,2}
 且 C 不接 b1，每塊都必接 b3、b4；相鄰兩塊、剩餘 J、spoke 與原框邊
 給五份連通且互不相交 branch sets，十條原邊鄰接完成 K5 minor。

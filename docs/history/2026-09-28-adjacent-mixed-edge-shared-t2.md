@@ -6,7 +6,7 @@
 
 ## 結果與證明界線
 
-[報告](../c5_adjacent_degree5_mixed_edge_shared_t2.md) 先給任意大小的來源化約。
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_shared_t2.md) 先給任意大小的來源化約。
 C_z 禁色非空、容量二，原 z–u–B 外部 hub 排除 K4，degree-list 緊性
 與 Gallai 葉塊迫使 actual support 至少見兩個 q 色。C_w 恰禁 {3}，
 支援穩定子迫使見三個 q 色。外部依賴為

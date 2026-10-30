@@ -36,7 +36,7 @@ Sigma-critical 原 contact 邊的刪邊完整染色給该原分量的 private fo
 | 所有 >=3 原分量的分拆 | 每份 fixed original shield length>=2，共同互斥 | 僅以來源 full-B touch／private witness 使用舊 933/941 前提 | 直接 2+2+2>5，毋須 profiles／省略 core 表 |
 | 原 double-spoke 省略 rb_s,rb_t；spoke+unary 省略 rb_s,V；binary 省略 C2；two-unary 省略 U,V | 全 degree4 飽和、原 q-core、接點保持 transfer 是一般局部工具 | 原最終「省略後全收」是完整 source target 的十列必要比較；canonical 941 包含 indices0、3 的額外接受身份，933 包含 index0；原 q4-aligned first/second core 保留 original base/root IDs 才能接合 | E3 不引用這些全收結論；保留它們為精確 mask 工具，原 rb_s/rb_t/V/C2/U identities 不冒充本輪一般省略身份 |
 
-歷史省略工具詳細入口：[double-spoke](../../docs/c5_excess_two_double_spoke.md)、[spoke+unary](../../docs/c5_excess_two_spoke_unary.md)、[t3 binary](../../docs/c5_excess_two_binary_omission.md)、[t2 binary](../../docs/c5_excess_two_two_binary.md)、[two-unary](../../docs/c5_excess_two_two_unary.md)、[t1 binary](../../docs/c5_excess_two_single_spoke_binary.md)、[t1 two-unary](../../docs/c5_excess_two_single_spoke_two_unary.md)。本輪沒有讀舊「0 target hits」當一般來源排除，也沒有重新跑其 398 原 root positions 或 3497 open keys。
+歷史省略工具詳細入口：[double-spoke](../../docs/archive/reports/c5/excess/other/c5_excess_two_double_spoke.md)、[spoke+unary](../../docs/archive/reports/c5/excess/other/c5_excess_two_spoke_unary.md)、[t3 binary](../../docs/archive/reports/c5/excess/other/c5_excess_two_binary_omission.md)、[t2 binary](../../docs/archive/reports/c5/excess/other/c5_excess_two_two_binary.md)、[two-unary](../../docs/archive/reports/c5/excess/other/c5_excess_two_two_unary.md)、[t1 binary](../../docs/archive/reports/c5/excess/other/c5_excess_two_single_spoke_binary.md)、[t1 two-unary](../../docs/archive/reports/c5/excess/other/c5_excess_two_single_spoke_two_unary.md)。本輪沒有讀舊「0 target hits」當一般來源排除，也沒有重新跑其 398 原 root positions 或 3497 open keys。
 
 ## 3. 全部分拆表
 
@@ -63,7 +63,7 @@ Sigma-critical 原 contact 邊的刪邊完整染色給该原分量的 private fo
 
 只保留三列＋T4、同一原 binary pair path／first-bridge 及 full relation 的同框 equivariance，不套任何「省略全收」，較弱必要域剩兩份，只差原 A、C ownership。共同座標為 spokes02，短 A envelope012、長 C envelope2340；原 tuple／支持位置都一起搬運。兩份 abstract necessary controls 保存完整八列 forbidden profiles，未指定 indices0、3，不聲稱 disk source 可實現。
 
-在 q1=01202(index4) 有 F_A={D}、F_C={1,D}。原 K=G-A 是連通 all-degree4 圖，繼承 T4 和 disk，拒絕 q1。任取 minimal q1-core，在 K 的 degree4 飽和沿 H_K 傳播，得到整張 K，所以 K 自身 q1-critical。K 的 r 有兩原 contacts x,y、兩 spokes02，C 連通使 r 位於 cycle。K 不碰 singleton b1（C actual support 包含於2340、r spokes02）。[Unattached-singleton cyclic lemma](../../docs/c5_two_spoke_split_support.md#2-a-useful-consequence-of-the-existing-degree-four-classification) 因而使原 H_K 恰為 triangle 或兩 disjoint triangles 加直接 bridge。兩型都令 C 的原 contacts x,y 相鄰。q1 pair 原-path 定理進一步確定 xy 是 C 的一條原 bridge，接點間原 path 長度恰一。
+在 q1=01202(index4) 有 F_A={D}、F_C={1,D}。原 K=G-A 是連通 all-degree4 圖，繼承 T4 和 disk，拒絕 q1。任取 minimal q1-core，在 K 的 degree4 飽和沿 H_K 傳播，得到整張 K，所以 K 自身 q1-critical。K 的 r 有兩原 contacts x,y、兩 spokes02，C 連通使 r 位於 cycle。K 不碰 singleton b1（C actual support 包含於2340、r spokes02）。[Unattached-singleton cyclic lemma](../../docs/archive/reports/c5/structure/c5_two_spoke_split_support.md#2-a-useful-consequence-of-the-existing-degree-four-classification) 因而使原 H_K 恰為 triangle 或兩 disjoint triangles 加直接 bridge。兩型都令 C 的原 contacts x,y 相鄰。q1 pair 原-path 定理進一步確定 xy 是 C 的一條原 bridge，接點間原 path 長度恰一。
 
 切 xy 得兩份固定原 bags W_x、W_y；每袋只含自己那個原 root contact，其餘私有點不接 r。E_x(q)、E_y(q) 是在該原 bag 內、尚未扣原 root 色的 **exact attainable contact-color query**，而不是一個 palette 上界或 endpoint marginal。原 q1 pair lemma 給 E_x(q1)=E_y(q1)={1,D}。
 

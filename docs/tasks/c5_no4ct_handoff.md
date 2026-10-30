@@ -14,12 +14,12 @@ docgraph:
 # K∞＝K≤5 無四色定理前提路線：研究交接
 
 2026-10-14。**尚未補完一般 `K∞=K≤5`。** 已完成的是不把四色定理當前提的
-`K≤22=K≤5=K132` 推導：[C5→C4 完整來源橋](../c5_c4_boundary_pivot.md)
+`K≤22=K≤5=K132` 推導：[C5→C4 完整來源橋](../archive/reports/c5/structure/c5_c4_boundary_pivot.md)
 將三支共同的 y0=y1=0 轉為具名 C4 對角拒絕，接外部完整 ≤28 點計算。
 本地化約不用 4CT，外部生成與計算信任另列；本輪未重播該枚舉。無界三支仍須處理。
 同日已採納 **T1-CROSSCUT：原 no4ct 全域最小來源下 `h=3⇒p=0`**；
 全部 PINCH／BRIDGE 已排除，不限制單接點數及兩側內點數，第一剝層只留 RING。
-權威入口為 [C8 剝層](../c5_c8_peeling.md)，證明與完整重播見
+權威入口為 [C8 剝層](../archive/reports/c5/structure/c5_c8_peeling.md)，證明與完整重播見
 [一般正對切口採納審查](../../audits/2026-10-14-t1-crosscut-review-77fbd5d/REPORT.md)。
 
 工作根目錄 `/home/ray/developer/ai/math`；研究 BASE 為
@@ -49,11 +49,11 @@ docgraph:
 
 | 讀序／權威入口 | 真正使用的前置與結論 | 證據入口 |
 | --- | --- | --- |
-| 1. [Kempe／外側 screen](../c5_kempe_screen.md)及 [count-cone 翻譯](../c5_count_cone_bridge.md) | 原完整關係的 Kempe 必要性；4CT 給外側黏合非空，留下 933／941；primal／dual 計數翻譯及 Cor20 的嚴格 `<30` 界 | [screen 證據](../../artifacts/c5_cells/kempe_screen.json)、[外部界線](../../audits/2026-10-12-cofacial-uniform-separation-eb6b2303/EXTERNAL.md) |
-| 2. [共面正規形](../c5_cofacial_normal_form.md) | K 的小 witnesses／聯集封閉、全域最小 k／再最大邊數與原 screen，給不增 k 的近三角正規形；Cor20 得 K≤12 | [完整紙面及有限核對](../../audits/2026-10-12-cofacial-uniform-separation-eb6b2303/REPORT.md) |
-| 3. [最小來源度數界](../c5_saturation_degree_bound.md) | 原 screen 給普遍 C4 三內點代表；正規形／K≤12／全域最小性給邊界≥4、內部≥5、n5≥6 | [凍結證據與覆核](../../audits/2026-10-12-c5-saturation-degree-bound/REPORT.md) |
-| 4. [全內部 W5／A–C 交付](../c5_degree5_link_reductions.md)與 [完整外圈](../c5_neartri_boundary_collar.md) | 兩個結構分支承接度數界；全內部 induced W5 的 cap／原框計數論證，及外圈 crosscut／共同計數給 h≥3、n5≥9 | [W5 紙面報告](../../audits/2026-10-12-c5-deep-five-wheel-01a12ffa/REPORT.md)、[原外圈證據](../../audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/REPORT.md)與[最後 C7 共同計數排除](../../audits/2026-10-13-c7-joint-kempe-19209f4c/REPORT.md)；A／B／C 各自證據由專題表定位 |
-| 5. [K13](../c5_k13_collar.md) → [K14](../c5_k14_sphere.md) → [K15](../c5_k15_sphere.md) | 原 K13 外圈分支再用 [C8 apex](../c5_c8_apex_degree.md)；K14／K15 由相應較小階數界、度數與 cone 接完整球面根圖，得 K≤15 | 三份專題的 primary／independent 證書及生成來源；[球面依賴表](../../audits/2026-10-13-c5-no4ct-degrees-6cafdfb/SPHERE_DEPENDENCIES.md)另核對全部根點覆蓋 |
+| 1. [Kempe／外側 screen](../archive/reports/c5/structure/c5_kempe_screen.md)及 [count-cone 翻譯](../archive/reports/c5/structure/c5_count_cone_bridge.md) | 原完整關係的 Kempe 必要性；4CT 給外側黏合非空，留下 933／941；primal／dual 計數翻譯及 Cor20 的嚴格 `<30` 界 | [screen 證據](../../artifacts/c5_cells/kempe_screen.json)、[外部界線](../../audits/2026-10-12-cofacial-uniform-separation-eb6b2303/EXTERNAL.md) |
+| 2. [共面正規形](../archive/reports/c5/structure/c5_cofacial_normal_form.md) | K 的小 witnesses／聯集封閉、全域最小 k／再最大邊數與原 screen，給不增 k 的近三角正規形；Cor20 得 K≤12 | [完整紙面及有限核對](../../audits/2026-10-12-cofacial-uniform-separation-eb6b2303/REPORT.md) |
+| 3. [最小來源度數界](../archive/reports/c5/structure/c5_saturation_degree_bound.md) | 原 screen 給普遍 C4 三內點代表；正規形／K≤12／全域最小性給邊界≥4、內部≥5、n5≥6 | [凍結證據與覆核](../../audits/2026-10-12-c5-saturation-degree-bound/REPORT.md) |
+| 4. [全內部 W5／A–C 交付](../archive/reports/c5/degree5/c5_degree5_link_reductions.md)與 [完整外圈](../archive/reports/c5/structure/c5_neartri_boundary_collar.md) | 兩個結構分支承接度數界；全內部 induced W5 的 cap／原框計數論證，及外圈 crosscut／共同計數給 h≥3、n5≥9 | [W5 紙面報告](../../audits/2026-10-12-c5-deep-five-wheel-01a12ffa/REPORT.md)、[原外圈證據](../../audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/REPORT.md)與[最後 C7 共同計數排除](../../audits/2026-10-13-c7-joint-kempe-19209f4c/REPORT.md)；A／B／C 各自證據由專題表定位 |
+| 5. [K13](../archive/reports/c5/structure/c5_k13_collar.md) → [K14](../archive/reports/c5/structure/c5_k14_sphere.md) → [K15](../archive/reports/c5/structure/c5_k15_sphere.md) | 原 K13 外圈分支再用 [C8 apex](../archive/reports/c5/structure/c5_c8_apex_degree.md)；K14／K15 由相應較小階數界、度數與 cone 接完整球面根圖，得 K≤15 | 三份專題的 primary／independent 證書及生成來源；[球面依賴表](../../audits/2026-10-13-c5-no4ct-degrees-6cafdfb/SPHERE_DEPENDENCIES.md)另核對全部根點覆蓋 |
 
 第 4 列是平行閱讀的結構分支，不表示 W5 是外圈定理的前置。
 第 5 列是原報告的逐階敘事；替代鏈採用完整球面域的另一條接入證明。
@@ -81,9 +81,9 @@ DocGraph 中各專題的 `requires`／`derives_from` 記原證明鏈的實際前
 未有 metadata 的前置由正文連結核對；零反向邊不表示不存在依賴。
 
 後續報告依序補上先前停止點；各原報告保留當輪語境。
-現有共享 [共面正規形](../c5_cofacial_normal_form.md)、[度數界](../c5_saturation_degree_bound.md)
+現有共享 [共面正規形](../archive/reports/c5/structure/c5_cofacial_normal_form.md)、[度數界](../archive/reports/c5/structure/c5_saturation_degree_bound.md)
 及 K13–K15 權威文仍保留原證明鏈；不能把舊文的普遍前提直接標成已去除 4CT。
-本線導覽：[Kempe 導覽](../c5_kempe_guide.md)。
+本線導覽：[Kempe 導覽](../archive/guides/c5_kempe_guide.md)。
 
 ## 2. 接手必須保留的精確契約
 
@@ -158,7 +158,7 @@ d(B)\ge4,\quad d(V\setminus B)\ge5,\quad h\ge3,\quad n_5\ge9.
 | 任意大小 932 來源排除 | **OPEN**。`不存在 Σ=932 的 disk ⇔ 4CT`；不可再用 wheel＋4CT 提前刪除此支 |
 | 任意大小 933／941 來源排除 | **OPEN**。既有具名局部分支結果只在其原完整契約內成立 |
 | 一般 `K∞=K≤5` | **OPEN**。主命題自身蘊含 4CT；無循環證明須承擔這部分內容 |
-| 三支共同等價目標 | **改寫已證，命題 OPEN**。[等價表述](../c5_equivalent_formulations.md)：四列延拓 (E) ⇔ 偶補匹配 (M) ⇔ `K∞=K≤5`；DLM 受限 D₄ ⇔ (E) ∧ R5 |
+| 三支共同等價目標 | **改寫已證，命題 OPEN**。[等價表述](../reference/c5/c5_equivalent_formulations.md)：四列延拓 (E) ⇔ 偶補匹配 (M) ⇔ `K∞=K≤5`；DLM 受限 D₄ ⇔ (E) ∧ R5 |
 | h≥3、n5≥9 的新三支版本 | **已接入**；932 另有 h≥4、n5≥10，不提高三支共同界 |
 | C8 八項分類及其後續大小界 | **已接入**。932 的 h=3 全排，原八項必要條件殘留及 h=3⇒k≥19 保留；無界來源仍 OPEN |
 | h=3 的全部 PINCH／BRIDGE | **已排除**；[T1-CROSSCUT](../../audits/2026-10-14-t1-crosscut-review-77fbd5d/REPORT.md) 證 p=0，不限 s 或兩片內點數；一般 RING 仍 **OPEN**。剝層自身給k≥19，當前另接C4共同k≥23 |
@@ -172,7 +172,7 @@ d(B)\ge4,\quad d(V\setminus B)\ge5,\quad h\ge3,\quad n_5\ge9.
 
 ## 5. 建議的第一個窄任務
 
-新方向先讀 [C4 來源橋](../c5_c4_boundary_pivot.md)及[四連通 T／T0 化約](../c5_c4_triangle_core.md)。
+新方向先讀 [C4 來源橋](../archive/reports/c5/structure/c5_c4_boundary_pivot.md)及[四連通 T／T0 化約](../archive/reports/c5/structure/c5_c4_triangle_core.md)。
 後者已將原 b 四度分支壓到同一 T0 的兩個具名三角面色集合差異，
 另一支保留 T 的 b 出口；兩支仍 OPEN。原 b0、b1、b3 皆四度子支中，
 較小 R 的完整 C4 關係已縮至 mask13；[JOINT6續進](../../audits/2026-10-14-c4-mask13-joint6-fdd3e22/REPORT.md)
@@ -196,7 +196,7 @@ d(B)\ge4,\quad d(V\setminus B)\ge5,\quad h\ge3,\quad n_5\ge9.
 整個 edge-Kempe 類鎖定仍不能代表全部完整染色鎖定。無界來源排除及合法最小性接回 OPEN。
 
 C8 方向先讀 [T1-CROSSCUT](../../audits/2026-10-14-t1-crosscut-review-77fbd5d/REPORT.md)
-的任意來源覆蓋與雙 C6 完整接合，再由 [C8 剝層](../c5_c8_peeling.md) 接續
+的任意來源覆蓋與雙 C6 完整接合，再由 [C8 剝層](../archive/reports/c5/structure/c5_c8_peeling.md) 接續
 **RING（p=0）**：保留同一原 C8、原八份具名 collar／完整 target、原面及
 全部 separator fibres，研究同一 H 的完整支援或合法嚴格縮減。
 一般 RING 仍 OPEN，剝層自身給 h=3⇒k≥19，當前共同 C4 界為 k≥23；下一層度數、無弦及接點前提

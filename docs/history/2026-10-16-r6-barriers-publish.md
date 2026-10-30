@@ -3,7 +3,7 @@
 2026-10-16。依使用者「整理目前進展commit + push」整合三個連續 audit。
 研究與提交父 BASE 為 `c4c3d99c59cfe4f85b3e33f6831da955a8efcbc7`。
 最新權威來源為 [R6-CHORDED-FIVE](../../audits/2026-10-16-r6-chorded-five-c4c3d99/REPORT.md)，
-接續義務由 [Kempe 導覽](../c5_kempe_guide.md#3-停止點與保留缺口)維護。
+接續義務由 [Kempe 導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)維護。
 
 ## 採納範圍
 

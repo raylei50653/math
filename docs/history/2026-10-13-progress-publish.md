@@ -8,12 +8,12 @@
 
 | 主題 | 本次整理的精確結果 | 保留界線 |
 | --- | --- | --- |
-| [N2 一long](../c5_excess_two_n2_one_long_closure.md) | 原末端block minors與固定root完整接回排除完整原55 `(1,0)`；九格八格覆蓋 | 原55 `(2,0)`、一般N2及E-ARC2 OPEN |
-| [N2 雙long](../c5_excess_two_n2_double_long_joint.md) | 共同容量接回排 `t=0,1`；剩 `{3,3},t=2/3` 或 `{3,4},t=2`，有效H≤29 | LL-CUT、同一列原完整joint仍缺，不能把可行矩陣當來源 |
-| [W5 三色支援](../c5_w5_three_color_support.md) | 同槽位R³相等恰給保B/U pins的雙向total full-lift對照；最小來源私人森林排除，另有特定 `r_min=2` 構造與來源專用商圖no-go | 對照不是fibre雙射；私人含環來源的合法 `r≤6` 代表存在性OPEN |
-| [C₇ 外圈](../c5_neartri_boundary_collar.md) | 同圖共同延伸計數排最後具名55列上界；933／941均必 `h≥3,n5≥9` | `h≥3` 來源、十三內點以上一般排除OPEN |
-| [跨邊 Kempe](../c5_cross_edge_kempe.md) | 五度輪逐lift雙射、相鄰中心共同缺陷搬運、計數式與單步escape判準 | 普遍同步、一般多步escape與933／941來源排除OPEN |
-| [強迫異色](../c5_forced_inequality_transport.md) | 一般平面圖距離無界、證書寬度≤5；分叉／交錯限制及clique分隔枝塊透明 | 原低超額critical C₅來源未觸發；F／Z原域OPEN |
+| [N2 一long](../archive/reports/c5/excess/n2/c5_excess_two_n2_one_long_closure.md) | 原末端block minors與固定root完整接回排除完整原55 `(1,0)`；九格八格覆蓋 | 原55 `(2,0)`、一般N2及E-ARC2 OPEN |
+| [N2 雙long](../archive/reports/c5/excess/n2/c5_excess_two_n2_double_long_joint.md) | 共同容量接回排 `t=0,1`；剩 `{3,3},t=2/3` 或 `{3,4},t=2`，有效H≤29 | LL-CUT、同一列原完整joint仍缺，不能把可行矩陣當來源 |
+| [W5 三色支援](../archive/reports/c5/structure/c5_w5_three_color_support.md) | 同槽位R³相等恰給保B/U pins的雙向total full-lift對照；最小來源私人森林排除，另有特定 `r_min=2` 構造與來源專用商圖no-go | 對照不是fibre雙射；私人含環來源的合法 `r≤6` 代表存在性OPEN |
+| [C₇ 外圈](../archive/reports/c5/structure/c5_neartri_boundary_collar.md) | 同圖共同延伸計數排最後具名55列上界；933／941均必 `h≥3,n5≥9` | `h≥3` 來源、十三內點以上一般排除OPEN |
+| [跨邊 Kempe](../archive/reports/c5/structure/c5_cross_edge_kempe.md) | 五度輪逐lift雙射、相鄰中心共同缺陷搬運、計數式與單步escape判準 | 普遍同步、一般多步escape與933／941來源排除OPEN |
+| [強迫異色](../archive/reports/c5/structure/c5_forced_inequality_transport.md) | 一般平面圖距離無界、證書寬度≤5；分叉／交錯限制及clique分隔枝塊透明 | 原低超額critical C₅來源未觸發；F／Z原域OPEN |
 
 各普遍命題依各來源的紙面證明及明列外部依賴；有限完整fibres與負控制校準
 明列圖域。真正最小933／941與完整N2目標仍標 `not triggered`，零觸發不是

@@ -7,7 +7,7 @@
 cwd=`/home/ray/developer/ai/math`；原工作樹已有多輪未提交成果，全數保留。
 本輪未 commit／push。
 
-[B₂ 報告](../c5_excess_two_mixed_core_four_spoke_mixed22_short_face.md)、
+[B₂ 報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed22_short_face.md)、
 [checker](../../scripts/c5_excess_two_mixed_core_four_spoke_mixed22_short_face.py)、
 [helper](../../scripts/c5_excess_two_four_spoke_mixed22_short_face_controls.py)、
 [observations](../../artifacts/c5_excess_two_mixed_core_four_spoke_mixed22_short_face/observations.json)
@@ -38,7 +38,7 @@ private 點內度≤3，完整 degree 四迫它有實際外部邊。四側互斥
 保留，原20／20必要骨架不因一個 face 排除而刪整筆。
 未證 mixed22 整型、ε≥3、來源實現、一般出口或 K∞=K≤5，未新增
 Lean theorem。下一窄入口為同一原骨架長 face 的完整 C／共享 contact
-實際框附件與 leaf bridge；目前排程由 [Kempe 導覽](../c5_kempe_guide.md)維護。
+實際框附件與 leaf bridge；目前排程由 [Kempe 導覽](../archive/guides/c5_kempe_guide.md)維護。
 
 ## 固定證書的實際覆蓋
 

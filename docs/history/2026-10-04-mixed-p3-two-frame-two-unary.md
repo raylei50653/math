@@ -3,7 +3,7 @@
 2026-10-04，Git 基準 `0e3812712b68f57927df86f30a07bb8074e090f9`。
 工作目錄 `/home/ray/developer/ai/math`；起始已有四-spoke、C／C₂／C₃、D₂–D₄
 稽核及索引的未提交研究成果。本輪新增固定 C₄ 證據與相連入口；未 commit／push。
-完整前提與任意大小證明見[報告](../c5_mixed_p3_two_frame_two_unary.md)。
+完整前提與任意大小證明見[報告](../archive/reports/c5/weak-deletion/c5_mixed_p3_two_frame_two_unary.md)。
 
 ## 固定身份及結論
 
@@ -93,7 +93,7 @@ R 系列、atlas／profiles／閉包、Lean axiom audit 及 D₂–D₄ 全輪�
 只新增固定 key **(CPP-134-1,34,60)** 的來源排除。原 C₂ key (30,20)、
 C₃ key (34,20) 的證據及稽核快照保持，全部其他 joins 仍留在原表，
 不登記整份 case、geometry35、root 交換型或同一 z 角色的其他 keys 完成。
-目前精確入口見 [weak-deletion §3](../c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)。
+目前精確入口見 [weak-deletion §3](../archive/guides/c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)。
 更新報告、C₃ 頁首後續、weak-deletion guide、README／STATUS 及本紀錄。
 HANDOFF 的研究線及 tag 未變，按文件治理不改其導覽清單。
 工作樹原有未提交成果保留；本輪未 commit／push。

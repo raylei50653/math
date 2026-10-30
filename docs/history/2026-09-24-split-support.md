@@ -1,6 +1,6 @@
 # 2026-09-24：split-support 相鄰 (2,1) 完整列分類
 
-研究報告：[完整列關係](../c5_two_spoke_split_support.md)。當前優先序見
+研究報告：[完整列關係](../archive/reports/c5/structure/c5_two_spoke_split_support.md)。當前優先序見
 [HANDOFF](../HANDOFF.md)，此頁保存本輪範圍，發布狀態以即時 Git 為準。
 
 ## 結果與覆蓋

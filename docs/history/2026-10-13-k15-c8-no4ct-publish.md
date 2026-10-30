@@ -8,8 +8,8 @@
 
 | 權威入口 | 本次採納 | 剩餘界線 |
 | --- | --- | --- |
-| [K15-SPHERE](../c5_k15_sphere.md) | 一般有限簡單有序 disk-C5 的 K≤15=K≤5；192球面／2,714根圖／624,617完整lifts | K≤16、任意大小来源及K∞ |
-| [C8 剝層](../c5_c8_peeling.md) | 任意大小第一層RING／PINCH／BRIDGE、完整separator轉移；m=10三族16H接八collars全Σ1023，h=3⇒k≥19 | 八項任意大小同圖實現矛盾、m≥11、固定寬度壓縮及h≥4 |
+| [K15-SPHERE](../archive/reports/c5/structure/c5_k15_sphere.md) | 一般有限簡單有序 disk-C5 的 K≤15=K≤5；192球面／2,714根圖／624,617完整lifts | K≤16、任意大小来源及K∞ |
+| [C8 剝層](../archive/reports/c5/structure/c5_c8_peeling.md) | 任意大小第一層RING／PINCH／BRIDGE、完整separator轉移；m=10三族16H接八collars全Σ1023，h=3⇒k≥19 | 八項任意大小同圖實現矛盾、m≥11、固定寬度壓縮及h≥4 |
 | [無四色定理前提交接](../tasks/c5_no4ct_handoff.md) | 零內點cap下降、受限s<k的C4、直接球面接入K≤15；三支crosscut／外圈與C8依賴修復 | 無界932／933／941、一般主命題及Lean |
 | [三支 C8 完整報告](../../audits/2026-10-13-c5-no4ct-c8-6cafdfb/REPORT.md) | 105查詢排97／留原八項；共同h≥3,n5≥9；932必h≥4,n5≥10；相對N≤k+5商圖可染性接入h=3⇒k≥19 | 必要殘留不是來源實現；h=3界不套到h≥4，不能刪除一般932 |
 | [W5 小代表](../../audits/2026-10-13-w5-small-representatives-6cafdfb/REPORT.md) | 最弱保存為補中心後完整Σ=pr_B R³；102份合法小代表、兩族嚴格替換及χ反控制 | 一般r′≤9存在性、真正最小目錄外來源的縮減；相關構造／條件等價仍明列4CT |

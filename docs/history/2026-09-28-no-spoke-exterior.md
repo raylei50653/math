@@ -6,7 +6,7 @@ three-one、four 的 checker／artifacts／報告／歷史及文件修改。
 
 ## 結果與信任界線
 
-[新報告](../c5_no_spoke_exterior.md) 完成 t=0 的任意大小必要化約：
+[新報告](../archive/reports/c5/structure/c5_no_spoke_exterior.md) 完成 t=0 的任意大小必要化約：
 
 1. 多分量的每份 F 非空且非全四色。沒有 boundary 支援的分量有完整
    S₄ 對稱，故不可能；另一原分量遂提供避開指定 C 的實際 z–B 路徑。

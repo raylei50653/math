@@ -7,7 +7,7 @@
 
 ## 採納範圍
 
-[權威入口](../c5_cofacial_normal_form.md) 採納隔離研究的三項紙面結果：
+[權威入口](../archive/reports/c5/structure/c5_cofacial_normal_form.md) 採納隔離研究的三項紙面結果：
 
 - 聯集封閉目錄與 equality/disequality 分解迫最小來源共面完備。
 - global 最少內點、最多邊來源可選成簡單二連通近三角化圖，不增加內點。

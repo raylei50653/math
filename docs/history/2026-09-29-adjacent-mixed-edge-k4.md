@@ -7,7 +7,7 @@ P*ᶻ=P*ʷ={u,v}。未重開大圖枚舉、未使用 Graphify、未開 sub-agent
 
 ## 結果與來源論證
 
-[報告](../c5_adjacent_degree5_mixed_edge_k4.md) 完成此型的**一般平面來源
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_k4.md) 完成此型的**一般平面來源
 排除**。原 zw、uv、zu、zv、wu、wv 已形成 K4；u、v 各保留一條
 boundary 邊，z、w 各有兩條離開 K4 的原邊。
 

@@ -7,7 +7,7 @@
 
 ## 紙面與有限證據
 
-[報告](../c5_adjacent_degree5_mixed_edge_shared_t1_singles.md) 保留 C_z 的完整
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_shared_t1_singles.md) 保留 C_z 的完整
 有序二接點關係、w 的兩份不同單接點分量、原 diamond／chord zu 及 spoke。
 局部 degree-list／K4-free 論證適用每份原 unary，不要求另一 root 為 degree-4。
 三份支援各至少見兩個 q 色，禁 3 的 w 分量另須見三色。原 diamond 外側

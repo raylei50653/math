@@ -7,7 +7,7 @@
 後續依使用者要求，兩批續進一同整理提交；[發布紀錄](2026-10-29-continuations-publication.md)
 保存本次重播、封存與檢查。以上「未提交」仍記原研究階段，發布狀態以即時 Git 為準。
 
-權威來源：[共同切口與完整分量反例](../four_color_counts_surgery_continuation.md)。
+權威來源：[共同切口與完整分量反例](../archive/reports/four-color/four_color_counts_surgery_continuation.md)。
 
 ## 成果與信任範圍
 

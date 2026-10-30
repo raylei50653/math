@@ -17,4 +17,4 @@
 | t2_t1 | 560 | 3148 | 1120 | 146 |
 | t2_t0_singles | 120 | 336 | 240 | 0 |
 
-機制前提、未覆蓋領域與重播見 [報告](../../docs/c5_exchange_geometry_scope.md)。
+機制前提、未覆蓋領域與重播見 [報告](../../docs/archive/reports/c5/structure/c5_exchange_geometry_scope.md)。

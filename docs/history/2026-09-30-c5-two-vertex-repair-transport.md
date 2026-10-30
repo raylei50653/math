@@ -2,8 +2,8 @@
 
 接手時 main 工作樹乾淨。依使用者要求，只審核既有六份具名接合圖，
 未搜尋新 class pair、未修改 Lean；研究階段未 commit／push，同日提交整理見文末。
-目前入口見[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)，
-完整數字及推論見[專題報告](../c5_two_vertex_repair_transport.md)。
+目前入口見[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)，
+完整數字及推論見[專題報告](../archive/reports/c5/two-vertex/c5_two_vertex_repair_transport.md)。
 
 ## 範圍與結果
 

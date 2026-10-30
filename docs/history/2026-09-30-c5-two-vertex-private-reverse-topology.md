@@ -8,7 +8,7 @@
 
 - 新增[反向 checker](../../scripts/c5_two_vertex_private_reverse_topology.py)、
   [完整 companion](../../artifacts/c5_two_vertex_overlap/private_reverse_topology.json)
-  及[報告](../c5_two_vertex_private_reverse_topology.md)。只核對既有
+  及[報告](../archive/reports/c5/two-vertex/c5_two_vertex_private_reverse_topology.md)。只核對既有
   `private_interiors_reverse` 的原十五點三十五邊與七個私有內點。
 - R127 `(0,2)` 接 R167 `(3,1)`，即 a0=b3、a2=b1。反向 B 原框是
   `(b0,a2,b2,a0,b4)`；全部原映射、來源邊與具名環序重新核對。
@@ -26,7 +26,7 @@
   拒絕的具名染色控制，正例另存全圖染色。
 - 原框阻斷不排除混合 C₅ 作整圖外界；本見證已提供一個。下一窄題
   是沿同圖、同外面核對該混合框的完整 relation，詳見
-  [導覽](../c5_two_vertex_overlap_guide.md)。本輪尚未計算此新五點投影。
+  [導覽](../archive/guides/c5_two_vertex_overlap_guide.md)。本輪尚未計算此新五點投影。
 
 新 artifact 為 62,617 bytes，未達大型檔門檻。未改寫原點對、六例
 接合、主例拓撲或正向私有內點 artifacts。新 checker 只匯入舊 checker

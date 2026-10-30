@@ -5,8 +5,8 @@
 STATUS、Kempe 導覽、原 root 刪除報告與 Git，選定其窄停止點：相鄰
 degree-5 roots，恰一份原 mixed，N=G−zw 仍拒絕 singleton 列，N 的
 全 degree-4 內部為樹／偶數頂點路徑。本輪沒有 commit／push。
-成果見 [專題報告](../c5_excess_two_path_edge.md)，當前接手點由
-[Kempe 導覽](../c5_kempe_guide.md) 維護。
+成果見 [專題報告](../archive/reports/c5/excess/other/c5_excess_two_path_edge.md)，當前接手點由
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md) 維護。
 
 ## 任意長度原圖排除
 

@@ -1,7 +1,7 @@
 # 2026-10-11：BR-SD-1f J3／q 外臂單一原旁支 canonical 採納與 residual 對帳
 
 本輪為 adoption／reconciliation：將已獨立紙面審查、封存及發布的 BR-SD-1e
-接入 [N45 canonical§2.11](../c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)。
+接入 [N45 canonical§2.11](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)。
 沒有重證1e、新枚舉、擴大來源排除或新增 Lean theorem。起始 actual HEAD、origin/main、
 `git ls-remote origin refs/heads/main` 均為發布基準 `0edb05b42d7b096103cdf241df7fb81e08dc16c7`，
 工作樹乾淨，沒有 HEAD 前進的其他成果須避讓。
@@ -172,7 +172,7 @@ Propagation stop：完成 L0／L1與直接父主題／consumer的 L2對帳；沒
 
 ## BR-SD-1g只保存窄研究義務
 
-當前入口由 [degree-5 guide§4](../c5_degree5_guide.md#4-r31-保留缺口與重播入口)維護。
+當前入口由 [degree-5 guide§4](../archive/guides/c5_degree5_guide.md#4-r31-保留缺口與重播入口)維護。
 候選限定同一原三環單 bridge骨架有兩份來源自己的原旁支：
 W1接 J1 triangle唯一 private witness，W2接 J3或 q外臂。
 這可能同時破壞原 J1/J2雙 witness保證與未改動 J3 terminal lemma前提；

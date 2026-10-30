@@ -58,4 +58,4 @@ E1／E2／D₇、C-W／D₆、舊A／B／C、R系列及其他Lean模組的独立
 
 本輪停止於review、精確ignore修正、fresh驗證封存、同名分支commit／push，
 以及local／tracking／remote SHA一致與乾淨工作目錄確認。
-精確SHA與發布狀態以Git為準；研究停止點仍由[Kempe導覽](../c5_kempe_guide.md#3-停止點與保留缺口)維護。
+精確SHA與發布狀態以Git為準；研究停止點仍由[Kempe導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)維護。

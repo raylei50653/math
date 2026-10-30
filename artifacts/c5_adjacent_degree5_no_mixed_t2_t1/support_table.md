@@ -709,4 +709,4 @@ A 表示所有完整禁色上界接合皆接受；? 是未決，均未證來源�
 | 135 | (148, 132) | 0 |
 
 逐候選拒絕原因、完整 schemas、五接點 rotations 與原 ID／SHA 見 [JSON](observations.json)。
-任意大小覆蓋及界線見 [研究報告](../../docs/c5_adjacent_degree5_no_mixed_t2_t1.md)。
+任意大小覆蓋及界線見 [研究報告](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t1.md)。

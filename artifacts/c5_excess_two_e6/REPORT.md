@@ -23,8 +23,8 @@ q₂=`01201`（row 3）、q₄=`01012`（row 0）不預填接受性。
 [E3 相鄰審查](../c5_excess_two_e3/adjacent_notes.md)、
 [E5 L1–L8](../c5_excess_two_e5/REPORT.md)、
 [E4 N-empty-separating、N-theta](../c5_excess_two_e4/REPORT.md)、
-[原盾弧／hub 原則](../../docs/c5_unary_shield_budget.md)、
-[單接點固定色守恆 §2](../../docs/c5_single_spoke_root_conservation.md)。
+[原盾弧／hub 原則](../../docs/archive/reports/c5/shared-results/c5_unary_shield_budget.md)、
+[單接點固定色守恆 §2](../../docs/archive/reports/c5/single-spoke/c5_single_spoke_root_conservation.md)。
 E3 對 A 前序的過強依賴已在其 §10 更正，這裡直接使用 E5 L6。
 
 紙面論證負責任意大小的 Jordan、Gallai、原 core 分類與 hub 推導。
@@ -203,7 +203,7 @@ singleton relation 必固定，故 d_q 是已見色。E6-F 又禁止 endpoint �
 
 每個所選 q 下固定 owner=d_q，U 都有真實拒絕 tight degree lists。
 同一原 U 只有 contact u；全部非 contact 的 lists 始終含未用色 D=3。
-[單接點固定色引理 §2](../../docs/c5_single_spoke_root_conservation.md#2-單接點固定色引理)
+[單接點固定色引理 §2](../../docs/archive/reports/c5/single-spoke/c5_single_spoke_root_conservation.md#2-單接點固定色引理)
 的同一原 block-tree 歸納，迫 contact 的 D-membership 在這三份實際拒絕 assignments 相同。
 所以全部 d_q≠3。再用 E6-F，三色列的 singleton 只能是其 actual 支援內點色。
 

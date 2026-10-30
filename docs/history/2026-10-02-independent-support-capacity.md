@@ -5,8 +5,8 @@ disk sources，建立 degree-excess → forbidden-colour capacity → boundary-s
 span 的第一個可證下界，優先尋找 ≥6 障礙，不做新大枚舉。
 本輪採固定完整 Σ 的逐邊極小性；與固定拒絕列 q 的 minimal core 分開。
 
-成果見 [專題報告](../c5_independent_support_capacity.md)，目前停止點由
-[Kempe 導覽](../c5_kempe_guide.md)維護；HANDOFF 將本線加上進行中標記。
+成果見 [專題報告](../archive/reports/c5/structure/c5_independent_support_capacity.md)，目前停止點由
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)維護；HANDOFF 將本線加上進行中標記。
 
 ## 成果與界線
 

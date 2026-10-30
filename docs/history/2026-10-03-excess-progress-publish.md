@@ -15,11 +15,11 @@ fetch 後 `main=origin/main`，工作樹包含 2026-10-02 至 10-03 的連續
 
 | 成果 | 完成範圍及報告 |
 | --- | --- |
-| t=1 全七分拆整型排除 | [總報告](../c5_excess_two_single_spoke_complete.md)完成 (5)、(4,1)、(3,2)、(3,1,1)、(2,2,1)、(2,1,1,1) 及五 unary；不以無全 degree-4 真子核心代替整型排除 |
-| 通用短支援 | [兩／三外部 hubs 引理](../c5_short_support_singleton.md)不限原接點數，迫每份原分量至少兩段跨度；另保留[四接點 pair 獨立證明](../c5_short_support_four_contact.md) |
-| t=2 整型排除 | (2,1,1) 由短支援引理六跨度排除；[四 unary](../c5_excess_two_four_unary.md)由固定三點支援排除 |
-| t=2、(2,2) 及 t=3、(2,1) | [雙 binary 省略](../c5_excess_two_two_binary.md)及 [binary 省略](../c5_excess_two_binary_omission.md)均全收，兩型無全 degree-4 真子核心；整型仍保留 |
-| t=3 spoke＋unary 省略 | [三 unary 共同扇區](../c5_excess_two_three_unary.md)關閉 path／tail，連同前序原 triangle 結果完成該條件分支 |
+| t=1 全七分拆整型排除 | [總報告](../archive/reports/c5/excess/other/c5_excess_two_single_spoke_complete.md)完成 (5)、(4,1)、(3,2)、(3,1,1)、(2,2,1)、(2,1,1,1) 及五 unary；不以無全 degree-4 真子核心代替整型排除 |
+| 通用短支援 | [兩／三外部 hubs 引理](../archive/reports/c5/structure/c5_short_support_singleton.md)不限原接點數，迫每份原分量至少兩段跨度；另保留[四接點 pair 獨立證明](../archive/reports/c5/structure/c5_short_support_four_contact.md) |
+| t=2 整型排除 | (2,1,1) 由短支援引理六跨度排除；[四 unary](../archive/reports/c5/excess/other/c5_excess_two_four_unary.md)由固定三點支援排除 |
+| t=2、(2,2) 及 t=3、(2,1) | [雙 binary 省略](../archive/reports/c5/excess/other/c5_excess_two_two_binary.md)及 [binary 省略](../archive/reports/c5/excess/other/c5_excess_two_binary_omission.md)均全收，兩型無全 degree-4 真子核心；整型仍保留 |
+| t=3 spoke＋unary 省略 | [三 unary 共同扇區](../archive/reports/c5/excess/other/c5_excess_two_three_unary.md)關閉 path／tail，連同前序原 triangle 結果完成該條件分支 |
 
 t=1 原 binary／兩 unary 及 t=2 原 binary／兩 unary 的省略證書
 仍一併保留，可獨立重播。新結果為任意大小紙面論證與 Python 固定
@@ -77,7 +77,7 @@ Lean axiom audits。前序依賴沿用原報告證據；`lake build` 不表示�
 
 ## 停止點與跨對話接手
 
-目前窄入口由 [Kempe 導覽](../c5_kempe_guide.md#3-停止點與保留缺口)
+目前窄入口由 [Kempe 導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)
 維護：ε=2、唯一 degree-6 root、t=2、(2,2) 的整型來源。保留兩份
 原 binary、有序原接點、共同色框、全部實際支援及省略身份；停止於
 可證整型排除或具名必要殘留，不重開來源圖枚舉。其他 t、兩個

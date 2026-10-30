@@ -2,13 +2,13 @@
 
 使用者在「繼續推進 ε ≥ 3」工作中再要求「繼續」。HEAD=`0e38127`，
 cwd=`/home/ray/developer/ai/math`，沿用同輪已完成的
-[原 crosscut](../c5_excess_two_mixed_core_four_spoke_crosscut.md)及既有
+[原 crosscut](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_crosscut.md)及既有
 短／長face成果，處理941原02／03 indices155／175，不重開來源catalogue。
 沒有commit／push，前序artifacts未覆寫。
 
 ## 原身份、完成範圍與證據
 
-[報告](../c5_excess_two_mixed_core_four_spoke_short_arc.md)、
+[報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_short_arc.md)、
 [checker](../../scripts/c5_excess_two_mixed_core_four_spoke_short_arc.py)、
 [joint helper](../../scripts/c5_excess_two_four_spoke_short_arc_joint_controls.py)、
 [artifact](../../artifacts/c5_excess_two_mixed_core_four_spoke_short_arc/observations.json)
@@ -32,7 +32,7 @@ R_U對2↔3不變可避A=2，固定任一原V witness色W後選D∈{1,3}∖{W}�
 
 Unequal從14／24到14／18，共用一框點從0／6到0／0，剩餘全不相交pairs。
 此時整個mixed11+兩unary子型仍未完成；後續由
-[不相交pairs報告](../c5_excess_two_mixed_core_four_spoke_disjoint_pairs.md)處理。
+[不相交pairs報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_disjoint_pairs.md)處理。
 不宣稱C延拓全部不同rootpairs：sharedsingleton四外色及triangle
 swappedseenpair拒絕控制保留；ab收縮不保持完整來源Σ。
 

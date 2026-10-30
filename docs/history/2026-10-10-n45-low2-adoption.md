@@ -6,7 +6,7 @@
 [L2A紙面／覆蓋](../../audits/2026-10-10-n45-l2a/REPORT.md)與
 [L2R原圖／完整關係](../../audits/2026-10-10-n45-l2r/REPORT.md)各核六項，無額外前提；
 [L2C封存](../../audits/2026-10-10-n45-l2c/REPORT.md)只裁工具完整性。
-目前權威入口是[N45](../c5_excess_two_nonadjacent_unit_core45.md)。
+目前權威入口是[N45](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)。
 
 U兩原r-contacts、原cycle及全部附件全留；只刪唯一rb_i，X=M自己β-minimal。
 r無框邊的實際sole C、雙U-contact完整join、精確F、actual tethers及原K₅十對鄰接逐項成立。

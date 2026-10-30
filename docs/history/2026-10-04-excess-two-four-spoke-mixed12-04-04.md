@@ -11,7 +11,7 @@ joint；逐項核對互異色、完整 degree-list 與原外部路徑前提。
 
 ## 成果、原前提與證據層
 
-[A₄ 報告](../c5_excess_two_mixed_core_four_spoke_mixed12_04_04.md)只在
+[A₄ 報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed12_04_04.md)只在
 A 的固定完整 Σ933／941、Σ edge-minimal induced-C₅ disk、連通有效
 H、ε=2、相鄰兩完整 degree-5 roots、其餘有效內點完整 degree 四、
 唯一 mixed C incidence=(1,2)、a 側一原 unary U 與原 ab 前提下，
@@ -160,7 +160,7 @@ README、Kempe 導覽、STATUS 及 A₃ 頁首接上本輪；HANDOFF 仍為同�
 
 停止於原 04／04 及 root 交換來源排除；其餘 16／20 完整具名 frames
 與 40／58 supports、50／84 schedules 保留。後續入口由
-[Kempe 導覽 §3](../c5_kempe_guide.md#3-停止點與保留缺口)維護；可再固定
+[Kempe 導覽 §3](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)維護；可再固定
 原 12／12 及 root 交換，重新核對原 rotations、actual supports、完整
 ternary 與 degree-list 前提，本輪不登記它的來源排除。
 Mixed12 整型、來源實現、ε≥3、一般出口與 K∞=K≤5 均未證。

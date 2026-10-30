@@ -1,8 +1,8 @@
 # C₅ 輪環與偶長雙扇之外的十三點非對稱四接點 disk
 
 日期：2026-09-30。接續偶長雙扇定理；目前狀態由
-[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)維護，完整接線、前提及
-紙面證明見[D₁₃ 報告](../c5_two_vertex_repair_caps.md)。
+[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)維護，完整接線、前提及
+紙面證明見[D₁₃ 報告](../archive/reports/c5/two-vertex/c5_two_vertex_repair_caps.md)。
 
 ## 本輪成果
 

@@ -9,8 +9,8 @@
 再沿 Kempe 導覽選定唯一 degree-6 root 的雙 spoke 條件分支。
 使用者要求「確認接手狀態並選方向開始推進」，未要求 commit／push。
 
-成果見[專題報告](../c5_excess_two_double_spoke.md)，目前停止點見
-[Kempe 導覽](../c5_kempe_guide.md)。保留原工作樹成果，未改寫舊 checker
+成果見[專題報告](../archive/reports/c5/excess/other/c5_excess_two_double_spoke.md)，目前停止點見
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)。保留原工作樹成果，未改寫舊 checker
 或舊 artifact；未使用 Graphify、未開子代理、未查詢或改寫遠端、
 未 commit／push。當前發布狀態以 Git 為準。
 

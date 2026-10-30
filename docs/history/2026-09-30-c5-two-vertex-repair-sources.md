@@ -3,8 +3,8 @@
 接手 HEAD `6f8b3c3`，共同 repair lemma 的 checker、證書與文件已在工作樹，
 尚未提交。本輪保留該批成果，依使用者指示推進保證 W／C 的可檢查來源
 結構。未 commit／push，未開 sub-agents，未新增 class-pair 搜尋。
-現況由[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)維護；
-完整前提與證明見[來源報告](../c5_two_vertex_repair_sources.md)。
+現況由[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)維護；
+完整前提與證明見[來源報告](../archive/reports/c5/two-vertex/c5_two_vertex_repair_sources.md)。
 
 ## 新成果
 

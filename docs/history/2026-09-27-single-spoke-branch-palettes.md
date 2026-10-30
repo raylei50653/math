@@ -4,7 +4,7 @@
 completion、bridge-path 三輪未提交 source／artifacts／文件，本輪全部保留。
 即時文件已記錄 3703 與唯一 degree-5 的 t=2 指定問題完成，沒有重開舊目標。
 
-[新報告](../c5_single_spoke_branch_palettes.md) 接續 (01,04,1234) 二接點
+[新報告](../archive/reports/c5/single-spoke/c5_single_spoke_branch_palettes.md) 接續 (01,04,1234) 二接點
 入口：以 rooted palette 唯一性證明同圖旁支的色 0、3 守恆，給 q 路徑
 交替限制，以及五種旁支入口配對所需的 b1／b2／b4 實際接線。
 任意大小由紙面歸納承擔，沿用外部 degree-list 定理；局部 Python 證書

@@ -1,7 +1,7 @@
 # 2026-09-24：唯一 degree-5 的兩-spoke 區域化約
 
 從乾淨 HEAD `9792201` 接續 HANDOFF 指定的 t=2、(3)／(2,1) 缺口。
-成果見 [必要位置定理](../c5_degree5_two_spoke_sectors.md)。
+成果見 [必要位置定理](../archive/reports/c5/degree5/c5_degree5_two_spoke_sectors.md)。
 未重啟圖 catalogue 或 R31 長來源問題。
 
 新增同圖色置換搬運引理及可重播位置反證：80 個具名配置中，36 個因

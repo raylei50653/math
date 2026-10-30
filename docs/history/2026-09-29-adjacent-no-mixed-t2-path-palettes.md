@@ -5,7 +5,7 @@ endpoint 的未提交 checker、artifacts、報告及入口更新。讀 HANDOFF�
 與 Git 狀態後，從 record 54／p₁ 的 β=2 停止點推進。保留既有成果與
 原證書 bytes；未開 sub-agents、Graphify、全圖枚舉，未 commit／push。
 
-成果：[報告](../c5_adjacent_degree5_no_mixed_t2_path_palettes.md)、
+成果：[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_path_palettes.md)、
 [checker](../../scripts/c5_adjacent_degree5_no_mixed_t2_path_palettes.py)、
 [JSON](../../artifacts/c5_adjacent_degree5_no_mixed_t2_path_palettes/observations.json)、
 [完整表](../../artifacts/c5_adjacent_degree5_no_mixed_t2_path_palettes/support_table.md)。

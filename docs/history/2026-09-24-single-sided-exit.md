@@ -1,6 +1,6 @@
 # 2026-09-24：五目標到單側出口的接合
 
-從乾淨 `8333c62` 接手。成果見 [接合定理](../c5_single_sided_exit.md)。
+從乾淨 `8333c62` 接手。成果見 [接合定理](../archive/reports/c5/structure/c5_single_sided_exit.md)。
 完成三-spoke 核心繼承 sector 假設、五目標 Boolean 窮盡性、核心分離，
 以及沿刪向核心序列取得第一個只釋放 p 的 strict step。
 

@@ -1,6 +1,6 @@
 # 2026-09-27：single-spoke 剩餘二接點上界分類
 
-結果與任意大小證明見 [專題報告](../c5_single_spoke_two_contact_bounds.md)。
+結果與任意大小證明見 [專題報告](../archive/reports/c5/single-spoke/c5_single_spoke_two_contact_bounds.md)。
 從 root sweep 的 34 個 open_queries 只抽出 component 0 有未知上界的
 18 個，保留 actual supports、兩份單接點次序、完整 relation 語意及路徑來源。
 

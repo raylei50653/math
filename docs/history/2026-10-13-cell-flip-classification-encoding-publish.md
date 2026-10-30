@@ -7,11 +7,11 @@
 
 ## 成果及界線
 
-- [翻邊引理、工具與編碼](../c5_cell_flip.md)：同一共同刪邊圖的四格完整 lifts
+- [翻邊引理、工具與編碼](../archive/reports/c5/state/c5_cell_flip.md)：同一共同刪邊圖的四格完整 lifts
   給出保 Σ 充要條件；`891→987` 與一內點同關係代表分開核對。
   五格加五格座標使邊界旋轉及加弦成 bit 操作；兩組具名反例說明相同 Σ，
   甚至相同十列延伸數，仍不決定相同局部 flip 的結果。
-- [三步距離與分類](../c5_cell_flip_classification.md)：132 份目錄代表保留實圖
+- [三步距離與分類](../archive/reports/c5/state/c5_cell_flip_classification.md)：132 份目錄代表保留實圖
   作深度三 BFS，20,531 個狀態、132×132 有向距離表及 29 組有限特徵。
   最短性限工具選取的 disk rotation；`>3` 不作全域不可達宣稱。
 

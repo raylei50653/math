@@ -1,6 +1,6 @@
 # 2026-09-27：single-spoke 覆蓋、支援與接點次序
 
-研究報告：[single-spoke cores](../c5_single_spoke_cores.md)。
+研究報告：[single-spoke cores](../archive/reports/c5/single-spoke/c5_single_spoke_cores.md)。
 本輪先以紙面證明任意大小的必要條件，再產生有限支援證書，沒有一般圖枚舉。
 
 - 四種接點分拆的三色不可刪減覆蓋；二接點雙禁色的完整關係、單禁色的

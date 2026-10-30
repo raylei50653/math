@@ -8,7 +8,7 @@
 報告及入口更新。使用者要求「推進 t = 0」。先讀 HANDOFF、STATUS、
 Kempe 導覽及 Git，確認前序 t=1、2、3 已完成，唯一 degree-6 root
 僅剩無 spoke 的六原接點。本輪保留接手時變更，沒有 commit／push。
-成果及任意大小證明見 [t=0 全分拆報告](../c5_excess_two_no_spoke_complete.md)。
+成果及任意大小證明見 [t=0 全分拆報告](../archive/reports/c5/excess/other/c5_excess_two_no_spoke_complete.md)。
 
 ## 成果與證據界線
 

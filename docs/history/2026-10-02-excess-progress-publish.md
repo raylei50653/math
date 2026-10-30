@@ -14,10 +14,10 @@
 
 | 成果 | 已完成範圍 | 報告 |
 | --- | --- | --- |
-| 933／941 共同 ε≥2 | 941 的 ε=1、t=2／3 經原接點關係保持及全部具名接回排除，接上既有 t=1；933 沿用四容量子覆蓋下界 | [Two-spoke](../c5_941_two_spoke.md)、[three-spoke](../c5_941_three_spoke.md) |
-| ε=2 雙 spoke 省略分支 | 唯一 degree-6 root；刪兩條原 spokes 仍拒絕列的條件分支，148 marked cores／888 次接回全排除兩候選 | [雙 spoke](../c5_excess_two_double_spoke.md) |
-| ε=2、t=2 spoke＋unary 省略分支 | 完整五接點接合保留任意大小原 V；592 次接回、5,920 次候選比較全部排除 | [t=2 spoke＋unary](../c5_excess_two_spoke_unary.md) |
-| ε=2、t=3 triangle root 的同種省略 | 完整四接點接合及共享省略限制；11,940 次比較全排除，兩色存活留下的 1,254 個由同一 binary 省略圖排除 1,200、雙 spoke 省略排除 54 | [t=3 triangle](../c5_excess_two_three_spoke_unary.md) |
+| 933／941 共同 ε≥2 | 941 的 ε=1、t=2／3 經原接點關係保持及全部具名接回排除，接上既有 t=1；933 沿用四容量子覆蓋下界 | [Two-spoke](../archive/reports/c5/structure/c5_941_two_spoke.md)、[three-spoke](../archive/reports/c5/structure/c5_941_three_spoke.md) |
+| ε=2 雙 spoke 省略分支 | 唯一 degree-6 root；刪兩條原 spokes 仍拒絕列的條件分支，148 marked cores／888 次接回全排除兩候選 | [雙 spoke](../archive/reports/c5/excess/other/c5_excess_two_double_spoke.md) |
+| ε=2、t=2 spoke＋unary 省略分支 | 完整五接點接合保留任意大小原 V；592 次接回、5,920 次候選比較全部排除 | [t=2 spoke＋unary](../archive/reports/c5/excess/other/c5_excess_two_spoke_unary.md) |
+| ε=2、t=3 triangle root 的同種省略 | 完整四接點接合及共享省略限制；11,940 次比較全排除，兩色存活留下的 1,254 個由同一 binary 省略圖排除 1,200、雙 spoke 省略排除 54 | [t=3 triangle](../archive/reports/c5/excess/other/c5_excess_two_three_spoke_unary.md) |
 
 任意大小涵蓋及共享省略論證是紙面推論，沿用全 degree-4 分類、外部
 degree-list 定理及既有拓撲證據；Python 重播驗證固定必要域及具名
@@ -65,7 +65,7 @@ fingerprints／依賴及 `.gitignore` 登錄，checker 與報告一併發布。
 
 ## 精確停止點與接手
 
-當前入口由 [Kempe 導覽](../c5_kempe_guide.md#3-停止點與保留缺口)維護。
+當前入口由 [Kempe 導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)維護。
 下一個窄問題是同一 ε=2、唯一 degree-6 root、t=3 的 spoke＋unary
 省略分支，改限 r 位於全 degree-4 核心的 path／tail。保留原 G−r 的
 U₁、U₂、V 三份 unary、全部附件、三條 spokes 與共享省略身份；若需

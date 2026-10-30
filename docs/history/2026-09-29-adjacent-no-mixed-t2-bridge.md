@@ -5,7 +5,7 @@
 及現行報告，沿交接 record 4／p₁ 推進。未啟動 sub-agents 或 Graphify；
 使用者未要求 commit／push，本輪未執行。
 
-成果：[報告](../c5_adjacent_degree5_no_mixed_t2_bridge.md)、
+成果：[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_bridge.md)、
 [checker](../../scripts/c5_adjacent_degree5_no_mixed_t2_bridge.py)、
 [JSON](../../artifacts/c5_adjacent_degree5_no_mixed_t2_bridge/observations.json)、
 [完整套表](../../artifacts/c5_adjacent_degree5_no_mixed_t2_bridge/support_table.md)。

@@ -3,18 +3,18 @@
 依使用者要求整理目前進展並 commit + push。本次發布包接續本地
 `e751c4b`（具名八點接合與同圖重播），涵蓋八份後續報告、checker、
 證書、逐輪歷史及研究導覽；發布完成狀態以即時 Git 為準。
-目前研究入口為[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)。
+目前研究入口為[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)。
 
 ## 成果與適用範圍
 
 | 階段 | 已完成的固定範圍 | 報告 |
 | --- | --- | --- |
-| 八點接合基礎 | 132 類／1,320 點對索引、六份完整接合及同代表整圖重播；主例 140 軌道 | [具名接合](../c5_two_vertex_join.md) |
-| 主例拓撲 | 八點十邊圖的 36 組環序／24 份外面配置，四種 disk 區域關係有見證，無八點 simple 外框 | [主例拓撲](../c5_two_vertex_join_topology.md) |
-| 私有內點拓撲 | 正反向十五點三十五邊圖皆有平面及來源 disk 內部互斥見證；兩原框皆被原交錯路徑阻斷 | [正向](../c5_two_vertex_private_topology.md)、[反向](../c5_two_vertex_private_reverse_topology.md) |
-| 反向兩混合外框 | 指定兩個五邊形面的完整 relation 為 R255／R1022，分別等於既有單／雙內點 disk 代表 | [第一框](../c5_two_vertex_mixed_frame.md)、[第二框](../c5_two_vertex_second_mixed_frame.md) |
-| 共同拉回 | 原 J 為 60 軌道，兩框拉回 P 為 114；補回原邊後仍多 16 軌道 | [完整差集與修復](../c5_two_vertex_mixed_pullback.md) |
-| 三點不足與四點最小修復 | 全部 56 份三點投影仍多 16 軌道；70 份四點投影及 2,415 配對中，最少兩份且組合唯一 | [三點下界](../c5_two_vertex_ternary_projections.md)、[四點最小組合](../c5_two_vertex_quaternary_repairs.md) |
+| 八點接合基礎 | 132 類／1,320 點對索引、六份完整接合及同代表整圖重播；主例 140 軌道 | [具名接合](../archive/reports/c5/two-vertex/c5_two_vertex_join.md) |
+| 主例拓撲 | 八點十邊圖的 36 組環序／24 份外面配置，四種 disk 區域關係有見證，無八點 simple 外框 | [主例拓撲](../archive/reports/c5/two-vertex/c5_two_vertex_join_topology.md) |
+| 私有內點拓撲 | 正反向十五點三十五邊圖皆有平面及來源 disk 內部互斥見證；兩原框皆被原交錯路徑阻斷 | [正向](../archive/reports/c5/two-vertex/c5_two_vertex_private_topology.md)、[反向](../archive/reports/c5/two-vertex/c5_two_vertex_private_reverse_topology.md) |
+| 反向兩混合外框 | 指定兩個五邊形面的完整 relation 為 R255／R1022，分別等於既有單／雙內點 disk 代表 | [第一框](../archive/reports/c5/two-vertex/c5_two_vertex_mixed_frame.md)、[第二框](../archive/reports/c5/two-vertex/c5_two_vertex_second_mixed_frame.md) |
+| 共同拉回 | 原 J 為 60 軌道，兩框拉回 P 為 114；補回原邊後仍多 16 軌道 | [完整差集與修復](../archive/reports/c5/two-vertex/c5_two_vertex_mixed_pullback.md) |
+| 三點不足與四點最小修復 | 全部 56 份三點投影仍多 16 軌道；70 份四點投影及 2,415 配對中，最少兩份且組合唯一 | [三點下界](../archive/reports/c5/two-vertex/c5_two_vertex_ternary_projections.md)、[四點最小組合](../archive/reports/c5/two-vertex/c5_two_vertex_quaternary_repairs.md) |
 
 最後兩項固定原反向圖、同一 U 與共同色框，以 P 單獨為基底，
 只允許原 U 上無輔助變數的局部條件合取。唯一兩份最小組合為
@@ -53,7 +53,7 @@ python3 tools/artifacts.py status
 
 Python 3.14.7 下，本線十個 `--check` 全通過；八個新增 checker
 亦全部以 `PYTHONHASHSEED=17` 通過逐 byte 重播。完整重播命令
-見[導覽](../c5_two_vertex_overlap_guide.md#4-閱讀與重播入口)。
+見[導覽](../archive/guides/c5_two_vertex_overlap_guide.md#4-閱讀與重播入口)。
 檢查包含原圖完整 J、來源 hash 鏈、實際原邊延拓、完整差集、
 全部三／四點投影及 checker 內建負控制。
 

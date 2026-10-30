@@ -1,13 +1,13 @@
 # D₁₃ 首層具名替換的 Lean 驗證紀錄
 
 日期：2026-10-14。基準 HEAD=`77fbd5d`；起始工作樹已有其他研究及工具的未提交變更，
-本輪保留這些變更，接續 [Lean 導覽](../lean_guide.md)所列的具名 D₁₃ 替換缺口。
+本輪保留這些變更，接續 [Lean 導覽](../verification/lean_guide.md)所列的具名 D₁₃ 替換缺口。
 本輪未 commit／push、未更新 Lean／mathlib 鎖檔、未重新生成原來源 artifacts。
 
 同日後續：[C4／T1／Lean 整理發布](2026-10-14-c4-t1-lean-progress-publish.md)
 記錄本次使用者授權的 commit＋push 與重播；下文保留形式化當輪語境。
 
-成果與完整前提見 [具名首層替換](../lean_named_replacement.md)。
+成果與完整前提見 [具名首層替換](../verification/lean_named_replacement.md)。
 實作為 [NamedRepairReplacement.lean](../../Math/NamedRepairReplacement.lean)，
 公理清單為 [NamedRepairReplacementAudit.lean](../../Math/NamedRepairReplacementAudit.lean)，
 原始審計輸出見 [lean-audit.txt](../../artifacts/lean_named_replacement/lean-audit.txt)。

@@ -1,7 +1,7 @@
 # 2026-09-29：C–E 五正跨度與原路徑來源排除
 
 依使用者「推進 C-E class」接續工作區 C–D 成果，未 commit／push。
-[報告](../c5_adjacent_degree5_no_mixed_ce.md)、新 checker 及 artifacts 保存證據。
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_ce.md)、新 checker 及 artifacts 保存證據。
 144 份正向接合接 60 份幾何得到 96 份必要支援，全部 source K5；108 個
 原 IDs 無相容支援。五正跨度恰用完 C5，各支援皆為一條框邊；z 側唯一
 飽和分量的兩框點和補弧提供統一 minor，同側另一原分量供原外部路徑。

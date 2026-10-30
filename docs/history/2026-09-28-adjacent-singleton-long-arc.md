@@ -7,9 +7,9 @@
 
 ## 成果
 
-[報告](../c5_adjacent_degree5_singleton_long_arc.md) 證 x 接 {b0,b1} 長弧的
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_singleton_long_arc.md) 證 x 接 {b0,b1} 長弧的
 指定雙列延拓，完整來源反射另給 {b2,b3}。兩位置接入
-[條件式單側出口](../c5_single_sided_exit.md) 第七類；這裡另明用來源雙缺失
+[條件式單側出口](../archive/reports/c5/structure/c5_single_sided_exit.md) 第七類；這裡另明用來源雙缺失
 與刪邊繼承，沒有只由 T4／指定雙列推完整 Σ。
 
 原三角形 xzw 的內側無 unary 分量，外側 annulus 給兩 root 區塊及各側

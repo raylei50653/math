@@ -8,8 +8,8 @@
 
 | 入口 | 本次採納 | 保留界線 |
 | --- | --- | --- |
-| [N2-BRIDGE](../c5_excess_two_n2_bridge.md) | 原E4完整來源契約的廣義N2排除：父三列域恰多932，以U4三列移植、五列slack、完整分量刪除witness、unit-U排除及UC3修補接回OL／LL | E-ARC2仍OPEN，保留N1、相鄰零mixed、相鄰單mixed四spokes的mixed12＋unit-unary、相鄰單mixed至多三spokes、相鄰兩mixed；各自core／單-root4例外由父ledger維護。932與ε≥3不是原E-ARC2另項義務 |
-| [W5 私人雙環排除](../c5_w5_private_rank2.md) | 指定完整最小來源前提下任取合法全內部W5，ρ(G[P])≥3；四型及全部essential位置紙面覆蓋，theta完備化為974模板，四個實際annulus代表嚴格縮減 | 代表只保完整Σ、不保R³，r′=0或4，減少3或7–10內點。圈秩二無殘留，下一域為ρ=3分類與保Σ縮減；一般代表仍OPEN |
+| [N2-BRIDGE](../archive/reports/c5/excess/n2/c5_excess_two_n2_bridge.md) | 原E4完整來源契約的廣義N2排除：父三列域恰多932，以U4三列移植、五列slack、完整分量刪除witness、unit-U排除及UC3修補接回OL／LL | E-ARC2仍OPEN，保留N1、相鄰零mixed、相鄰單mixed四spokes的mixed12＋unit-unary、相鄰單mixed至多三spokes、相鄰兩mixed；各自core／單-root4例外由父ledger維護。932與ε≥3不是原E-ARC2另項義務 |
+| [W5 私人雙環排除](../archive/reports/c5/structure/c5_w5_private_rank2.md) | 指定完整最小來源前提下任取合法全內部W5，ρ(G[P])≥3；四型及全部essential位置紙面覆蓋，theta完備化為974模板，四個實際annulus代表嚴格縮減 | 代表只保完整Σ、不保R³，r′=0或4，減少3或7–10內點。圈秩二無殘留，下一域為ρ=3分類與保Σ縮減；一般代表仍OPEN |
 | [C8-STRUCT](../../audits/2026-10-13-c8-struct-243a125/REPORT.md) | 原小C4／C5 cap定理、C8無內弦及cofacial識別排c16-941、c32-941；累計62／70排除。可逆Kempe計數使c15／c20-941各迫零兩個完整fibres，173→171 | 933留c15／c18；941留c04／c07／c15／c18／c20／c30。仍缺同一原H跨三组色對的共同分量、交換、原面及完整計數實現；h≥3、n₅≥9不變 |
 
 上述來源排除由紙面證明、完備化約及明列上游／有限核心承擔。

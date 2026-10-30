@@ -5,7 +5,7 @@
 mixed incidence=(2,2)、沒有 unary。接手 HEAD=`0e38127`，
 cwd=`/home/ray/developer/ai/math`；保留原未提交工作樹，本輪未 commit／push。
 
-[B 報告](../c5_excess_two_mixed_core_four_spoke_mixed22.md)、
+[B 報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed22.md)、
 [checker](../../scripts/c5_excess_two_mixed_core_four_spoke_mixed22.py)、
 [完整 joint helper](../../scripts/c5_excess_two_four_spoke_mixed22_joint_controls.py)、
 [observations](../../artifacts/c5_excess_two_mixed_core_four_spoke_mixed22/observations.json)
@@ -84,7 +84,7 @@ R系列、一般出口／Kempe閉包或Lean axiom audit；沿用其原報告依�
 > face共享contact附件{4}的leaf bridge。先讀B報告，重播
 > `python3 scripts/c5_excess_two_mixed_core_four_spoke_mixed22.py --check`。
 
-目前停止點及任務A/B入口由 [Kempe 導覽](../c5_kempe_guide.md)維護。
+目前停止點及任務A/B入口由 [Kempe 導覽](../archive/guides/c5_kempe_guide.md)維護。
 
 ## 文件與artifact檢查現況
 

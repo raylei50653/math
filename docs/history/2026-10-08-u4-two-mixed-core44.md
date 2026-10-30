@@ -3,8 +3,8 @@
 基準 `main @ 2971d46d715d213f25f534958bdab499d2573b69`。
 使用者要求「推進 U4」，接續HANDOFF、STATUS、Git與Kempe導覽的N2原mixed11省略身份。
 接手時U2／U3及audits、scratch、MANIFEST已有未提交變更，本輪保留。
-完整前提、紙面證明與停止點見[U4報告](../c5_excess_two_nonadjacent_two_mixed_core44.md)
-及[Kempe導覽](../c5_kempe_guide.md#3-停止點與保留缺口)。
+完整前提、紙面證明與停止點見[U4報告](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_two_mixed_core44.md)
+及[Kempe導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)。
 
 ## 結果及證據範圍
 

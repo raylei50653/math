@@ -330,4 +330,4 @@ A 為已證接受，? 為上界候選未決；必要資料及 minor skeletons �
 
 完整同源記錄、schemas、placements、rotations、160 份失敗候選、
 首橋共用 β 與固定框弧 witnesses 見 [JSON](observations.json)。
-紙面論證與精確停止點見 [研究報告](../../docs/c5_adjacent_degree5_no_mixed_t2_bridge.md)。
+紙面論證與精確停止點見 [研究報告](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_bridge.md)。

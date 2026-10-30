@@ -9,7 +9,7 @@
 
 ## 交付與分類結論
 
-新增[正式入口](../c5_combinatorial_atlas.md)、
+新增[正式入口](../archive/reports/c5/structure/c5_combinatorial_atlas.md)、
 [產生器／checker](../../scripts/c5_combinatorial_atlas.py)及
 [圖譜產物](../../artifacts/c5_combinatorial_atlas/atlas.json)。
 圖表、HTML、CSV 與核對報告由同一份生成資料產生；原研究程式、witness 圖及
@@ -50,9 +50,9 @@ chord-compatible、同原框包含／交集／聯集，以及保存witness的att
 adjacent-singleton lemma仍未證。已知429具有非相鄰二點support且不全收T4，
 故不能拿掉该前提。抽象Kempe partitions／計數向量不構成來源實現。
 
-現有[十三內點界](../c5_k13_collar.md)`K≤13=K≤5`及其紙面／外部定理／
+現有[十三內點界](../archive/reports/c5/structure/c5_k13_collar.md)`K≤13=K≤5`及其紙面／外部定理／
 原有限證書保留，圖譜未重證該結果。一般來源、`K≤14`、`K∞=K≤5`、
-E-ARC2與其他父題仍依[Kempe導覽](../c5_kempe_guide.md)維持OPEN。
+E-ARC2與其他父題仍依[Kempe導覽](../archive/guides/c5_kempe_guide.md)維持OPEN。
 本次無新來源排除、無新Lean theorem。
 
 ## 重播紀錄

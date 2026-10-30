@@ -1,8 +1,8 @@
 # C₅ 輪環逆化約之外的完整四接點偶長雙扇替換
 
 日期：2026-09-30。接續輪環定理；目前狀態由
-[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)維護，完整前提與證明見
-[雙扇報告](../c5_two_vertex_repair_fans.md)。
+[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)維護，完整前提與證明見
+[雙扇報告](../archive/reports/c5/two-vertex/c5_two_vertex_repair_fans.md)。
 
 ## 本輪成果
 

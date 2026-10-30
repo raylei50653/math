@@ -567,4 +567,4 @@
 | 559 | [145, 129] | 34/2/4/14/12/4 | A/A | A/A |
 
 完整原資料、schemas、rotations、joins 及證書見 [JSON](observations.json)。
-任意大小論證、record 22 與信任界線見 [研究報告](../../docs/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md)。
+任意大小論證、record 22 與信任界線見 [研究報告](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md)。

@@ -1,6 +1,6 @@
 # 2026-09-27：single-spoke 剩餘單接點上界分類
 
-研究報告：[root 接線與禁色角色守恆](../c5_single_spoke_single_contact_bounds.md)。
+研究報告：[root 接線與禁色角色守恆](../archive/reports/c5/single-spoke/c5_single_spoke_single_contact_bounds.md)。
 
 從前輪 artifact 的 16 個 open_queries 出發，沒有重啟來源圖枚舉。
 同圖單 root block-palette 歸納給未用色角色守恆 `a=c iff d=c`。

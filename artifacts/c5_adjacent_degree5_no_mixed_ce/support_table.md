@@ -250,4 +250,4 @@
 | 1302 | 0 | no_compatible_disk_support |
 | 1303 | 0 | no_compatible_disk_support |
 
-[完整證書](observations.json)；[前提與證明](../../docs/c5_adjacent_degree5_no_mixed_ce.md)。
+[完整證書](observations.json)；[前提與證明](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_ce.md)。

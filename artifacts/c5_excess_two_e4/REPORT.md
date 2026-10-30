@@ -1,7 +1,7 @@
 # 任務 E4：猜想 E 的 ε=2 層，非相鄰雙 degree-5 roots
 
 **後續（2026-10-11，N45-S-LONG-S限定採納）。**
-[N45§2.10](../../docs/c5_excess_two_nonadjacent_unit_core45.md#210-n45-s-long-s完整-cu-與原-r-fibre-恢復的限定覆蓋)
+[N45§2.10](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md#210-n45-s-long-s完整-cu-與原-r-fibre-恢復的限定覆蓋)
 在完整K1–K12、保原U／long／short、只刪原spoke且X=M自身同β minimal內排除U在s身份。
 四direct profiles及餘兩profiles的singleton／pair splits化約，加原4及本輪3／7／14個schedules
 的完整原r-fibre恢復或retained K₅，給全部28必要schedules的限定覆蓋；與已採U在r分支合成。
@@ -11,7 +11,7 @@
 
 **後續（2026-10-10，HIGH2／HIGH3及限定兩short S覆蓋採納）。**
 [本輪監督驗收](../../audits/2026-10-10-n45-high23-supervision/REPORT.md)
-在[N45各自完整契約](../../docs/c5_excess_two_nonadjacent_unit_core45.md)內排除HIGH2／HIGH3。
+在[N45各自完整契約](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)內排除HIGH2／HIGH3。
 HIGH2保完整雙U-contact／W assignments與r fibres，原G lifts恢復e；未用Dγ構造明限proper三色γ，
 原過寬量詞由兩paper稽核及父端保finding。HIGH3原s無spoke、實際C/U=(2,3)接回BASE原K₅排除。
 LOW兩支與HIGH三支逐契約互斥窮盡，只全排§1精確spoke省略X=M的兩原mixed都short身份。
@@ -19,20 +19,20 @@ S含long、其他省略／core、原55、無45／54來源及一般N2／E仍OPEN�
 同期outside custody FAIL、62duplicate-ID及歷史FAIL保留；下列有日期正文與本頁原三列量詞不改。
 
 **後續（2026-10-10，HIGH1限定採納）。** [HIGH1監督驗收](../../audits/2026-10-10-n45-high1-supervision/REPORT.md)
-在[N45全部H1–H13](../../docs/c5_excess_two_nonadjacent_unit_core45.md)內，排除原U incidence1在s、
+在[N45全部H1–H13](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)內，排除原U incidence1在s、
 s兩spokes全留且只刪原r-spoke、X=M的HIGH1。H1A／H1R各核十claims；原G K₃,₃及同列
 未用D的完整G lifts成立，BASE／Gallai與工具分層。HIGH2／HIGH3、long、其他cores／原55及N2／E仍OPEN。
 無新有限來源或Lean；下列有日期的歷史正文及FAIL保留，原三列量詞未提升。
 
 **後續（2026-10-10，LOW2與限定LOW覆蓋採納）。** [LOW2監督驗收](../../audits/2026-10-10-n45-low2-supervision/REPORT.md)
-在[N45完整LOW2契約](../../docs/c5_excess_two_nonadjacent_unit_core45.md#24-n45-s-low2-與指定-low-身份的完整覆蓋)內，
+在[N45完整LOW2契約](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md#24-n45-s-low2-與指定-low-身份的完整覆蓋)內，
 排除原U incidence2在r、兩contacts及cycle全留、僅刪唯一r-spoke且X=M的任意大小身份。
 L2A／L2R各核六項；BASE／外部Gallai與工具分層。L2A另核LOW1／LOW2逐項契約與窮盡，
 只合成關閉§1精確S-SHORT-U-LOW；HIGH／long、其他cores／原55及一般N2／E仍OPEN。
 無新LOW2來源或Lean；既存FAIL及下列有日期的歷史正文保留。本頁原三列量詞未提升。
 
 **後續（2026-10-10，N45-S-LOW1限定採納）。** [LOW1監督驗收](../../audits/2026-10-10-n45-low1-supervision/REPORT.md)
-在[N45完整LOW1契約](../../docs/c5_excess_two_nonadjacent_unit_core45.md)內，排除原U incidence1在降度側、
+在[N45完整LOW1契約](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)內，排除原U incidence1在降度側、
 僅刪原r-spoke且X=M的任意大小來源。U／兩short完整保留，X−s actual sole C與完整join，
 s二異色spokes及精確F接回BASE三接點原K₅排除；L1A／L1R各核六項，外部Gallai另列。
 LOW incidence2／HIGH／long、其他cores／原55及一般N2／E仍OPEN，沒有新LOW1來源或Lean。
@@ -40,35 +40,35 @@ LOW incidence2／HIGH／long、其他cores／原55及一般N2／E仍OPEN，沒�
 
 **後續（2026-10-10，SS與指定N45-U合成採納）。** [SS監督驗收](../../audits/2026-10-10-n45-ss-supervision/REPORT.md)
 在完整SS契約內排除singleton-support S的三盾費身份；加既有U化約及LP，
-完成[N45§1精確整U省略45／54身份](../../docs/c5_excess_two_nonadjacent_unit_core45.md#22-n45-u-ss-與指定整-u-身份的完整覆蓋)。
+完成[N45§1精確整U省略45／54身份](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md#22-n45-u-ss-與指定整-u-身份的完整覆蓋)。
 限定X=M、unique原rx、保原兩mixed及全部同源前提；紙面／BASE／外部Gallai與封存工具分層，
 無新Lean或SS來源計算。S的LOW／HIGH／long、其他core／原55及一般N2／E仍OPEN。
 下列有日期的當輪殘留與FAIL保留，沒有把完整Σ的窄排除推升為本頁三列一般量詞。
 
 **後續（2026-10-10，N45-U-LP已採納）。** [第二批監督驗收](../../audits/2026-10-10-n45-p-supervision/REPORT.md)
-在[N45全部原前提](../../docs/c5_excess_two_nonadjacent_unit_core45.md)內，排除唯一U＋long L＋
+在[N45全部原前提](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)內，排除唯一U＋long L＋
 真框邊pair S、整U省略45／54 core。原盾中點／同圖T4改色／實際sole C接回BASE單-root
 三分；paper、外部Gallai、finite與Lean分層。U的singleton-support S及S的LOW／HIGH／long
 仍OPEN；本頁原三列量詞、原55、無45／54來源與一般N2／E維持原界線，舊正文及FAIL保留。
 
-**後續（2026-10-09，N45已採納）。** [N2原unit省略45／54](../../docs/c5_excess_two_nonadjacent_unit_core45.md)
+**後續（2026-10-09，N45已採納）。** [N2原unit省略45／54](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)
 在完整Σ933／941及整圖D5像、指定β-minimal原spoke／整unit unary省略身份下，
 排除兩原unary；整unary省略另排兩short mixed。S的LOW／HIGH／long及U的
 唯一U＋long／short仍OPEN；本頁當輪三列前提、原55及一般N2未因此關閉。
 新paper、獨立稽核及固定finite證據由該入口分層連入，舊證書／歷史FAIL不改。
 
-**後續（2026-10-08，U4完成）。** [N2原mixed11省略的兩-root44](../../docs/c5_excess_two_nonadjacent_two_mixed_core44.md)
+**後續（2026-10-08，U4完成）。** [N2原mixed11省略的兩-root44](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_two_mixed_core44.md)
 在固定完整Σ933／941及整圖D₅像下全排；與U3一起完成本頁N1／N2的兩-root44身份。
 本頁原三列前提與當輪停止點保留，45／54／55及單-root例外仍未覆蓋。
 
-**後續（2026-10-08，mixed12／21）。** [U3 mixed12／21兩-root44](../../docs/c5_excess_two_nonadjacent_mixed12_core44.md)
+**後續（2026-10-08，mixed12／21）。** [U3 mixed12／21兩-root44](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_mixed12_core44.md)
 在完整Σ933／941及D₅像下全排，連同mixed11與本頁mixed22完成U3的44身份。
 N1無44 core的來源與單-root例外仍保留，沒有完成三列一般推廣。
 
-**後續（2026-10-08）。** [U3 sole mixed11 兩-root44](../../docs/c5_excess_two_nonadjacent_one_mixed_core44.md)
+**後續（2026-10-08）。** [U3 sole mixed11 兩-root44](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_one_mixed_core44.md)
 已在完整Σ933／941及D₅像前提下排除全部兩側unit省略身份。
 本頁三列前提的原停止點保留；新結果不自動提升為三列的一般推廣。
-N1 mixed12／21及其他core型、N2殘留仍見[Kempe導覽](../../docs/c5_kempe_guide.md#3-停止點與保留缺口)。
+N1 mixed12／21及其他core型、N2殘留仍見[Kempe導覽](../../docs/archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)。
 
 2026-10-04；基準 `integrate-kprime-e3 @ 2ac279b6144cdfcf4ececd7b72f5d287a6f4b4ac`。
 隔離 worktree `/home/ray/developer/ai/math-task-e4`，分支 `task-e4-nonadjacent`。
@@ -106,8 +106,8 @@ T4 索引為 `{2,5,7,8,9}`。E3 已證的 triple-critical、原 root 刪除至�
 **G 並非每個指定列都自己的 minimal core。**
 
 已閱讀 [E2 REPORT §5](../c5_excess_one_e2/REPORT.md)、
-[盾弧與 hub 原則](../../docs/c5_unary_shield_budget.md)、
-[q-core 盾弧版本](../../docs/c5_qcore_shield_budget.md)。本輪沒有重跑 E2／E3 大枚舉。
+[盾弧與 hub 原則](../../docs/archive/reports/c5/shared-results/c5_unary_shield_budget.md)、
+[q-core 盾弧版本](../../docs/archive/reports/c5/shared-results/c5_qcore_shield_budget.md)。本輪沒有重跑 E2／E3 大枚舉。
 依賴外部 degree-list tightness、Gallai block-palette 刻畫與 K₅ 不可平面性，
 沿用上述文件的精確版本，不把它們算成 Python 成果；未使用四色定理 oracle。
 
@@ -242,7 +242,7 @@ a、d 各有兩個實際框附件，b、c 各一個；這些 degree 包含原全
 tightness 使每個 C 點在每袋至多一個鄰點，收縮保持原 degree 和 lists。
 其餘袋點的輔助顏色不進 C 的 lists。
 因此原 hub/Gallai／四條 tethers／K₅ 證明照用，沒有假造外部合法染色。
-這正沿用[短支援 §4](../../docs/c5_short_support_singleton.md#4-三-hub-引理排除未見色接點數不設上限)
+這正沿用[短支援 §4](../../docs/archive/reports/c5/structure/c5_short_support_singleton.md#4-三-hub-引理排除未見色接點數不設上限)
 中不要求保留外部完整染色的輔助 hub 色論證。
 
 具體取 `K=H−C`。它原連通，且每個 B∖{h,k} 框點都有 K 的原附件。
@@ -267,7 +267,7 @@ tightness 使每個 C 點在每袋至多一個鄰點，收縮保持原 degree �
 ### 4.3 N2 精確殘留
 
 2026-10-09後續：以下表保留本輪三列前提的原殘留；在完整Σ933／941的指定45／54
-原unit省略身份內，窄子型已由[N45](../../docs/c5_excess_two_nonadjacent_unit_core45.md#3-精確-open-與下一個窄分支)
+原unit省略身份內，窄子型已由[N45](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md#3-精確-open-與下一個窄分支)
 排除或縮成LOW／HIGH；指定整U省略身份經LP、SS及覆蓋核對合成全排，見頁首2026-10-10後續。
 不能把此窄結果套到整張原族表。
 

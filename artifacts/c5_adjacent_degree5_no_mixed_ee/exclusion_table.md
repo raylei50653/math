@@ -150,4 +150,4 @@
 | 143 | 2115 | (87, 87) | 0 | [[3], [2], [1]] | [[3], [2], [1]] | 6 > 5 |
 
 [完整 schemas、具名接點及逐筆來源](observations.json)。
-[紙面證明與證據界線](../../docs/c5_adjacent_degree5_no_mixed_ee.md)。
+[紙面證明與證據界線](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_ee.md)。

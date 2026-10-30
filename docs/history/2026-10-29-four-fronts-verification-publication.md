@@ -1,7 +1,7 @@
 # 四項突破驗證整理發布
 
 2026-10-29。依使用者要求，從基準 `4476049e71dfb6eb86538052f9730e6d57b928b0`
-提交[四項分別驗證](../four_color_four_fronts_verification.md)、四份獨立腳本、完整小型證書
+提交[四項分別驗證](../archive/reports/four-color/four_color_four_fronts_verification.md)、四份獨立腳本、完整小型證書
 及直接文件更新。研究階段原收據與「未提交」文字保留當時語境；目前發布狀態以 Git 為準。
 
 七邊結果是在全體頂點最小裸平面反例前提下的紙證，非平凡邊割下界提高為八。

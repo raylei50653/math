@@ -9,10 +9,10 @@ U2／U3與四包交付稽核，連同U4完整來源、證書及文件整合為�
 
 | 成果 | 來源、完整證書及當輪紀錄 |
 | --- | --- |
-| U2 相鄰兩mixed44 | [專題報告](../c5_excess_two_adjacent_two_mixed_core44.md)、[研究紀錄](2026-10-08-u2-two-mixed-core44.md) |
-| U3 非相鄰sole mixed11 | [專題報告](../c5_excess_two_nonadjacent_one_mixed_core44.md)、[研究紀錄](2026-10-08-u3-one-mixed-core44.md) |
-| U3 sole mixed12／21 | [專題報告](../c5_excess_two_nonadjacent_mixed12_core44.md)、[研究紀錄](2026-10-08-u3-mixed12-core44.md) |
-| U4 非相鄰兩mixed | [專題報告](../c5_excess_two_nonadjacent_two_mixed_core44.md)、[研究紀錄](2026-10-08-u4-two-mixed-core44.md) |
+| U2 相鄰兩mixed44 | [專題報告](../archive/reports/c5/excess/other/c5_excess_two_adjacent_two_mixed_core44.md)、[研究紀錄](2026-10-08-u2-two-mixed-core44.md) |
+| U3 非相鄰sole mixed11 | [專題報告](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_one_mixed_core44.md)、[研究紀錄](2026-10-08-u3-one-mixed-core44.md) |
+| U3 sole mixed12／21 | [專題報告](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_mixed12_core44.md)、[研究紀錄](2026-10-08-u3-mixed12-core44.md) |
+| U4 非相鄰兩mixed | [專題報告](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_two_mixed_core44.md)、[研究紀錄](2026-10-08-u4-two-mixed-core44.md) |
 | M4-L監督 | [原報告](../../audits/2026-10-07-m4-supervisor/REPORT.md)，141檔／7,894,140 bytes |
 | M4-R交付 | [原報告](../../audits/2026-10-07-m4-remote/REPORT.md)，342檔／8,811,898 bytes |
 | M4-R監督 | [原報告](../../audits/2026-10-07-m4-remote-supervisor/REPORT.md)，40檔／99,008 bytes |
@@ -31,7 +31,7 @@ ordered contacts、ownership、原附件及完整tuple／含空fibres／witnesse
 
 紙面化約、Python必要有限域與Lean狀態分開。本批未新增Lean theorem；
 無44 core來源、單-root、45／54／55、E5新證明、三列一般推廣、ε≥3、一般出口及
-`K∞=K≤5`仍保留。精確停止點與後續入口由[Kempe導覽](../c5_kempe_guide.md#3-停止點與保留缺口)維護。
+`K∞=K≤5`仍保留。精確停止點與後續入口由[Kempe導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)維護。
 
 ## 原bytes保存與新checkout
 

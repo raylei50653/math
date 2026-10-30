@@ -6,7 +6,7 @@ singleton 與 mixed K2 成果；依 HANDOFF 處理 P*ᶻ={u,v}、P*ʷ={u}。
 
 ## 結果與信任界線
 
-[新報告](../c5_adjacent_degree5_mixed_edge_shared.md) 先給任意大小的紙面
+[新報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_shared.md) 先給任意大小的紙面
 關係與 minimality 充要式，再建立有限控制。u 原接 z,w,v，故只剩
 一條 boundary 邊；v 接 z,u，故有兩條 boundary 邊。共享 u 使用同一
 變數，完整關係為存在同一 (s,t) 且 s≠t、s≠a,b、t≠a。

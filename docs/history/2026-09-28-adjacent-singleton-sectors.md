@@ -6,7 +6,7 @@
 
 ## 結果與適用範圍
 
-[新報告](../c5_adjacent_degree5_singleton_sectors.md) 完成原定兩個 target
+[新報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_singleton_sectors.md) 完成原定兩個 target
 重色支援的來源排除，並處理全部非相鄰 x 支援。新增論證明確使用 induced-C5
 disk、T4 接受、minimal q-core 與原共鄰單點；不宣稱同樣排除一般 planar
 或不接受 T4 的來源。前輪每側 (2)／(2,1) 的必要化約與 240 筆資料保持原範圍。

@@ -1,6 +1,6 @@
 # 2026-09-27：C5 循環流重述與整數 orbit 覆蓋
 
-報告見 [C5 循環流](../c5_circulation.md)。依使用者提出的五點有向圖模型，
+報告見 [C5 循環流](../archive/reports/c5/structure/c5_circulation.md)。依使用者提出的五點有向圖模型，
 從現有 pattern order、partition screen 與計數程式獨立重算；貼文 sandbox
 檔案未在此環境取得，沒有把它們列為已重播來源。
 

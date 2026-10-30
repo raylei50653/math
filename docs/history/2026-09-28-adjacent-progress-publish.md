@@ -13,15 +13,15 @@
 
 | 成果 | 本次保留的精確結論 |
 | --- | --- |
-| [唯一共鄰單點化約](../c5_adjacent_degree5_shared_singleton.md) | 每側 t≤1，只剩 (2)／(2,1)；375 筆關係資料經原 x 路徑 K5 留 240 筆必要資料 |
-| [共鄰單點同側限制](../c5_adjacent_degree5_singleton_sectors.md) | 20 個支援／側位置排除 14，03 唯一保留側只缺 q；5 個相鄰長弧由後續完成 |
-| [01／23 長弧](../c5_adjacent_degree5_singleton_long_arc.md) | 692 筆必要支援，K5／T4 排除 356／40；296 筆、592 查詢全接受，整張來源反射至 23 |
-| [12 長弧](../c5_adjacent_degree5_singleton_middle_arc.md) | 728 筆必要支援，K5／T4 排除 320／112；296 筆、592 查詢全接受，保留 p₂ 的 x list={0,3} |
-| [34／40 長弧](../c5_adjacent_degree5_singleton_end_arc.md) | 每位置 152 筆，K5／T4 排除 120／32；結合前序完成 singleton 全支援，接入出口第七類 |
-| [Mixed K2 各一接點化約](../c5_adjacent_degree5_mixed_edge.md) | 完整關係與逐邊 minimality 強迫一色／兩色 residual；816 筆資料經原路徑 K5 留 576 筆 |
-| [原四環次序排除](../c5_adjacent_degree5_mixed_edge_order.md) | 576 筆中 552 筆超周長，24 筆飽和次序矛盾；各一接點型全部 disk 來源排除，不需 T4 |
-| [Mixed K2 共鄰端點化約](../c5_adjacent_degree5_mixed_edge_shared.md) | 原 root incidences 恰為 zu、zv、wu；z 無 spoke、唯一二接點 unary，w 容量飽和；306 筆留 288 筆，9,312 完整 q schemas 保持 |
-| [共鄰端點 w 側兩條 spoke](../c5_adjacent_degree5_mixed_edge_shared_t2.md) | t_w=2、(1) 的原 18 筆接合 280 份幾何成 38 筆必要支援；76 查詢及 202 組完整禁色候選全接受，不需 T4，接入出口第八類 |
+| [唯一共鄰單點化約](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_shared_singleton.md) | 每側 t≤1，只剩 (2)／(2,1)；375 筆關係資料經原 x 路徑 K5 留 240 筆必要資料 |
+| [共鄰單點同側限制](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_singleton_sectors.md) | 20 個支援／側位置排除 14，03 唯一保留側只缺 q；5 個相鄰長弧由後續完成 |
+| [01／23 長弧](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_singleton_long_arc.md) | 692 筆必要支援，K5／T4 排除 356／40；296 筆、592 查詢全接受，整張來源反射至 23 |
+| [12 長弧](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_singleton_middle_arc.md) | 728 筆必要支援，K5／T4 排除 320／112；296 筆、592 查詢全接受，保留 p₂ 的 x list={0,3} |
+| [34／40 長弧](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_singleton_end_arc.md) | 每位置 152 筆，K5／T4 排除 120／32；結合前序完成 singleton 全支援，接入出口第七類 |
+| [Mixed K2 各一接點化約](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge.md) | 完整關係與逐邊 minimality 強迫一色／兩色 residual；816 筆資料經原路徑 K5 留 576 筆 |
+| [原四環次序排除](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_order.md) | 576 筆中 552 筆超周長，24 筆飽和次序矛盾；各一接點型全部 disk 來源排除，不需 T4 |
+| [Mixed K2 共鄰端點化約](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_shared.md) | 原 root incidences 恰為 zu、zv、wu；z 無 spoke、唯一二接點 unary，w 容量飽和；306 筆留 288 筆，9,312 完整 q schemas 保持 |
+| [共鄰端點 w 側兩條 spoke](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_shared_t2.md) | t_w=2、(1) 的原 18 筆接合 280 份幾何成 38 筆必要支援；76 查詢及 202 組完整禁色候選全接受，不需 T4，接入出口第八類 |
 
 下一窄入口仍是 **共鄰端點型 t_w=1、(2) 的 36 筆**。保留兩份二接點
 完整關係、原 diamond 外側環序與 w-spoke，再用飽和雙禁色的原 bridge／

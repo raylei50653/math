@@ -4,8 +4,8 @@
 先讀 HANDOFF、STATUS、Kempe 導覽與 Git，沿用唯一 degree-6 的 ε=2
 分支已全排之停止點，把本輪目標定為推進共同 ε≥3：核對雙 degree-5
 roots 的完整 Σ 來源，而不把固定 q-core 出口當成來源排除。
-本輪沒有 commit／push；成果見 [專題報告](../c5_excess_two_root_deletions.md)，
-目前停止點由 [Kempe 導覽](../c5_kempe_guide.md) 維護。
+本輪沒有 commit／push；成果見 [專題報告](../archive/reports/c5/excess/other/c5_excess_two_root_deletions.md)，
+目前停止點由 [Kempe 導覽](../archive/guides/c5_kempe_guide.md) 維護。
 
 ## 任意大小必要化約與窄排除
 

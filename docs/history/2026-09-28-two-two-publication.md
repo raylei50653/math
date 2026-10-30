@@ -1,8 +1,8 @@
 # 2026-09-28：(2,2) 兩輪 K5 排除整合發布
 
 接手基準為 `0f474d8`。依使用者要求「整理後 commit + push」，整合既有
-[路徑塊支援排除](../c5_single_spoke_two_two_minor.md) 與
-[外部路徑接合](../c5_single_spoke_two_two_external.md) 的程式、JSON、支援表、
+[路徑塊支援排除](../archive/reports/c5/single-spoke/c5_single_spoke_two_two_minor.md) 與
+[外部路徑接合](../archive/reports/c5/single-spoke/c5_single_spoke_two_two_external.md) 的程式、JSON、支援表、
 報告及研究紀錄，連同 README／HANDOFF／STATUS 的後續入口一併提交。
 本輪只整理與重播，沒有新增研究排除、改寫原必要表或重啟來源圖枚舉。
 採 document-first，未使用 Graphify，未開 sub-agents。

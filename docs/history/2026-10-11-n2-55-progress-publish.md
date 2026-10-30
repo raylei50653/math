@@ -20,10 +20,10 @@ actual attachments、rotation、bridges、字面色框、完整 relations／空 
 
 | 權威報告 | 本次發布範圍 |
 | --- | --- |
-| [殘餘統一](../c5_excess_two_n2_residual_unification.md) | 原55逐欄容量為1、singleton mixed迫u=t=0、兩unary子族排除；精確大小式 `|H|=35−6u−3t−Δ`，有限下界10不直接矛盾 |
-| [unary 三列候選](../c5_excess_two_n2_unary_three_row_escape.md) | 原接線2／3的任意大小 block-tree case split、字面 palette signatures及局部完整 fibres；保留候選輪語境 |
-| [獨立 diagonal 採納](../c5_excess_two_n2_diagonal_three_row.md) | unary出口及同列兩short完整lifts排(0,1)，第三relation族原55全排，九格六格增至七格；shared contact及k≤3 long限定縮減 |
-| [long 同步與 tree](../c5_excess_two_n2_long_synchrony.md) | 兩long都k≤3全排；無U的全葉接點tree long任意k排除；含U低接點Eq／Diff異類同列接回，同類縮七個必要字面弧模板 |
+| [殘餘統一](../archive/reports/c5/excess/n2/c5_excess_two_n2_residual_unification.md) | 原55逐欄容量為1、singleton mixed迫u=t=0、兩unary子族排除；精確大小式 `|H|=35−6u−3t−Δ`，有限下界10不直接矛盾 |
+| [unary 三列候選](../archive/reports/c5/excess/n2/c5_excess_two_n2_unary_three_row_escape.md) | 原接線2／3的任意大小 block-tree case split、字面 palette signatures及局部完整 fibres；保留候選輪語境 |
+| [獨立 diagonal 採納](../archive/reports/c5/excess/n2/c5_excess_two_n2_diagonal_three_row.md) | unary出口及同列兩short完整lifts排(0,1)，第三relation族原55全排，九格六格增至七格；shared contact及k≤3 long限定縮減 |
+| [long 同步與 tree](../archive/reports/c5/excess/n2/c5_excess_two_n2_long_synchrony.md) | 兩long都k≤3全排；無U的全葉接點tree long任意k排除；含U低接點Eq／Diff異類同列接回，同類縮七個必要字面弧模板 |
 
 證據是任意大小紙面證明、既有外部 Gallai／degree-list 輸入及另人獨立審查。
 有限 Python 控制只核具名原圖、完整 tuple equality、minor bags及字面算術。
@@ -33,7 +33,7 @@ actual attachments、rotation、bridges、字面色框、完整 relations／空 
 k≥4 long含cycle或原cutpoint接root；(1,1)高接點或低接點七個同類弧模板。
 一般原55／N2／E-ARC2、N1／相鄰／單-root例外、一般出口及 K∞=K≤5 都未完成。
 大小與 Δ 门檻不改，未搜尋10–35點；當前窄入口由
-[Kempe 導覽](../c5_kempe_guide.md#3-停止點與保留缺口)維護。
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)維護。
 
 ## 2. 相連證據與驗證
 

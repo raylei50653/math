@@ -7,8 +7,8 @@
 
 驗收與本輪文件更新的 BASE：`f2692089ad4259808e27d9b7e882ac09505b180a`。
 使用者要求收尾；本輪將已完成的獨立驗收接回研究文件，未commit／push／PR。
-目前研究入口為[Kempe導覽](../c5_kempe_guide.md#3-停止點與保留缺口)，
-當前權威來源為[N45§2.10](../c5_excess_two_nonadjacent_unit_core45.md#210-n45-s-long-s完整-cu-與原-r-fibre-恢復的限定覆蓋)。
+目前研究入口為[Kempe導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)，
+當前權威來源為[N45§2.10](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md#210-n45-s-long-s完整-cu-與原-r-fibre-恢復的限定覆蓋)。
 本頁保存這次採納與驗證範圍，不另維護下一輪排程。
 
 ## 限定收尾範圍

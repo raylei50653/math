@@ -4,8 +4,8 @@
 commit／push。先讀 HANDOFF、STATUS、Kempe 導覽及原 binary 省略報告，
 接續明列的 t=2、(1,1,1,1) 四原 unary 問題。
 
-成果見 [專題報告](../c5_excess_two_four_unary.md)，目前停止點見
-[Kempe 導覽](../c5_kempe_guide.md)。研究線與進行中 tag 未改，依文件
+成果見 [專題報告](../archive/reports/c5/excess/other/c5_excess_two_four_unary.md)，目前停止點見
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)。研究線與進行中 tag 未改，依文件
 治理保留 HANDOFF 薄索引；更新 README、STATUS、導覽、研究綜述及
 前序 binary 省略報告的後續連結。
 

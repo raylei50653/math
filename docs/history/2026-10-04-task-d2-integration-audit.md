@@ -9,8 +9,8 @@
 H1固定来源前提、mixed11完成／其他incidence保留、四／五／六角色
 投影與joint界線、合法搬運rotation與canonical重新選取的差異分開。
 歷史正文、舊輪次、原checkers／artifacts及原D稽核包不覆寫。
-HANDOFF仍是薄索引；A／B停止點歸[Kempe guide](../c5_kempe_guide.md)，
-C停止點歸[weak-deletion guide](../c5_weak_deletion_guide.md)。
+HANDOFF仍是薄索引；A／B停止點歸[Kempe guide](../archive/guides/c5_kempe_guide.md)，
+C停止點歸[weak-deletion guide](../archive/guides/c5_weak_deletion_guide.md)。
 整合期間新增A₂／B₂／C₂亦納入：A₂原01／12全排後保存20／24，
 B₂只排W933-101／W941-139短face、同骨架長face與其他20／20骨架
 保留，C₂只關閉geometry30／side20窄支，下一入口轉geometry34。

@@ -1,7 +1,7 @@
 # MATH-CONSOLIDATE-1：Theorem inventory
 
 日期：2026-10-11；固定 HEAD：`8c56b76922a1c7ac4c011096f2041b49c4a67cc8`。
-狀態權威為 [目前 N45 canonical](../../docs/c5_excess_two_nonadjacent_unit_core45.md) 與其後正式採納 review／history。此文件是整編索引；候選包裝或新名稱不成為新採納。
+狀態權威為 [目前 N45 canonical](../../docs/archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md) 與其後正式採納 review／history。此文件是整編索引；候選包裝或新名稱不成為新採納。
 
 ## 口徑、量詞與證據等級
 
@@ -264,7 +264,7 @@ T2q2 derives β-local L and S seed assignments at **different r values**, then t
 
 | ID／完整量詞及最小已知充分前提 | 結論、依賴與來源 | 證據／目前狀態 |
 | --- | --- | --- |
-| SD-A：∀有限簡單 ordered induced-C5 disk M，H=M−B 二連通且至少3點，恰一原內點 s 完整 M-degree5、其餘完整4；∀proper 四色 β，若 M 拒 β | d_H(s)=2 且 H−s 為 Gallai tree。完整 degree 含 B 附件；不需 minimality、T4、Σ933/941 或先驗 tight lists。Cranston–Rabern 正式 Main Lemma／Theorem B + 同圖 K4/B→K5 + Gallai。見 [interfaces§7](../../docs/c5_degree5_interfaces.md)、[SD-A報告§1–7](../../audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/REPORT.md) | A+正式期刊 E；960 assignments、758 minor controls 為 F；actual disk minor target not triggered；新Lean0 |
+| SD-A：∀有限簡單 ordered induced-C5 disk M，H=M−B 二連通且至少3點，恰一原內點 s 完整 M-degree5、其餘完整4；∀proper 四色 β，若 M 拒 β | d_H(s)=2 且 H−s 為 Gallai tree。完整 degree 含 B 附件；不需 minimality、T4、Σ933/941 或先驗 tight lists。Cranston–Rabern 正式 Main Lemma／Theorem B + 同圖 K4/B→K5 + Gallai。見 [interfaces§7](../../docs/archive/reports/c5/degree5/c5_degree5_interfaces.md)、[SD-A報告§1–7](../../audits/2026-10-11-c5-single-deficit-biconnected-5e7a5ffd/REPORT.md) | A+正式期刊 E；960 assignments、758 minor controls 為 F；actual disk minor target not triggered；新Lean0 |
 | APP-LL：∀C_S、原U=0、兩原mixed都long；另供 actual X=M 自身同β minimal／拒絕、完整4/5/4與 H_M 二連通 | 原三-spoke star 的長3面無法容兩份≥2盾弧，迫 s內度≥3；SD-A迫內度2，矛盾。原盾費仍收原G，不從X繼承幾何 | A限定subset，父兩long仍OPEN。canonical:432；[適用性表](../../audits/2026-10-11-single-deficit-applicability-804e3b0b1b/APPLICABILITY.md)凍結的 A待驗conditional措辭保留 |
 | APP-LS1：∀同上完整非相鄰來源，但一long L／singleton-support short S、原U=0、actual X=M、完整4/5/4及 H_M 二連通 | SD-A給 s-contact各1；r每側≤2，S總incidence≤3。S04／S3在完整原full-B／critical-contact前提下與最小拒絕衝突 | A限定subset；非二連通與完整父身份仍OPEN。canonical:433，適用性表10–11 |
 | APP-AD2：∀有限簡單原ordered induced-C5 disk G，完整Σ933/941或整圖D5像、Σ-critical、ε=2，有效H連通full-B；原相鄰degree5 roots r/s（保原rs）、其餘有效內點完整4，H−{r,s}恰兩完整one-sided mixed且原support非空、兩側positive contacts；具名單側unit spoke或整unit省略保rs與兩mixed。另供actual X=M自身同一properβ minimal／拒絕、M中s唯一完整5而其餘有效內點完整4、H_M二連通；全部原ordered/shared資料、附件、witnesses及full lifts保留 | 原 rs及兩mixed contacts迫 d_H(s)≥3，與SD-A的2矛盾。原adjacent合同沿[適用性報告](../../audits/2026-10-11-single-deficit-applicability-804e3b0b1b/REPORT.md)逐项保留；此條不套 C_S 的rs不存在前提 | A限定adjacent subset；不新增完整AD2／N45閉合。canonical:437–438 |

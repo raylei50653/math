@@ -4,7 +4,7 @@
 整合 M2／M3 與監督補件，限定本地提交。
 完整例外、追回證據、來源 hash、portable 命令與未跑項見
 [M4-L 報告](../../audits/2026-10-07-m4-local/REPORT.md)。
-現行數學停止點維持 [Kempe 導覽](../c5_kempe_guide.md)，
+現行數學停止點維持 [Kempe 導覽](../archive/guides/c5_kempe_guide.md)，
 沒有新的研究線或結論，HANDOFF 與 README 不作逐輪修改。
 
 | 欄位 | 內容 |

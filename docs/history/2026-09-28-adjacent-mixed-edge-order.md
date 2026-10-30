@@ -7,7 +7,7 @@
 
 ## 結果與證據界線
 
-[證明報告](../c5_adjacent_degree5_mixed_edge_order.md) 給來源排除：
+[證明報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_order.md) 給來源排除：
 有限簡單 induced-C5 disk、q=01012、edge-minimal q-obstruction，恰兩個
 相鄰完整 degree-5 roots z、w，其餘內點 degree=4；唯一 mixed 原分量
 為 uv，root incidence 恰為 zu、wv。**此來源不存在，不需 T4。**

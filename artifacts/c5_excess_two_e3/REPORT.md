@@ -215,7 +215,7 @@ t≥4 已由 T4 排除。
 q₁ 下 spokes 禁0、2，而長C_l禁1、D，故原K=G−C_s拒絕q₁。
 全degree4飽和使K自己是q₁-core，完整Σ只缺q₁。
 K實際不碰singleton b₁；r有原cycle，且內部degree二。
-沿用 [unattached-singleton cyclic lemma](../../docs/c5_two_spoke_split_support.md#2-a-useful-consequence-of-the-existing-degree-four-classification)
+沿用 [unattached-singleton cyclic lemma](../../docs/archive/reports/c5/structure/c5_two_spoke_split_support.md#2-a-useful-consequence-of-the-existing-degree-four-classification)
 的**實際原圖**分類：K是原triangle，或兩個互斥triangles以直接bridge相連，無tails。
 因此長C_l的兩個原r-contacts x,y之间就是一條原邊 xy。
 

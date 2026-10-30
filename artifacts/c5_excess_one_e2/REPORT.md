@@ -12,7 +12,7 @@
 均可排除。不是從有限構造沒有找到反例，推斷任意大小結論。
 各分支的大小無關論證、有限必要域及依賴界線分別寫在 §4–5。
 整合與現行排程仍由
-[Kempe 導覽](../../docs/c5_kempe_guide.md#3-停止點與保留缺口) 維護。
+[Kempe 導覽](../../docs/archive/guides/c5_kempe_guide.md#3-停止點與保留缺口) 維護。
 
 ## 1. 完整前提與證據層
 
@@ -22,7 +22,7 @@ S₄ 色名置換軌道，T4 的索引為 {2,5,7,8,9}，mask 第 i 位是
 `pattern_order[i]`；不先商掉 D₅ 框位置。G 接受全部 T4，且每條非框邊 e
 滿足 Σ(G−e)⊋Σ(G)。Q 是拒絕的三色 singleton 位置集合。
 
-沿用[容量報告](../../docs/c5_independent_support_capacity.md#1-兩種-minimality-與來源的基本結構)
+沿用[容量報告](../../docs/archive/reports/c5/structure/c5_independent_support_capacity.md#1-兩種-minimality-與來源的基本結構)
 的**有效內點**慣例：忽略孤立私有頂點，H 是其誘導圖，
 ε=Σ_{v∈H}(deg_G(v)−4)。這是必需的定義校準：邊 minimality 不會刪除
 孤立頂點；若把任意添加的孤立點也算進 ε，每個會貢獻 −4，低 ε 陳述便
@@ -55,7 +55,7 @@ S₄ 色名置換軌道，T4 的索引為 {2,5,7,8,9}，mask 第 i 位是
 它的 actual support 必含 B∖{b_i}。否則，對未碰內部且不是 singleton 的
 框點 v，將 q_i(v) 改成未用色 D，所得 proper 列恰用四色；延拓後只將 v
 改回原色，便得到 q_i 的同圖完整染色。這是
-[未接內點引理](../../docs/c5_unattached_boundary.md#1-不依賴-degree-或-disk-的改色引理)。
+[未接內點引理](../../docs/archive/reports/c5/structure/c5_unattached_boundary.md#1-不依賴-degree-或-disk-的改色引理)。
 所以拒絕一列需至少四個框接點；拒絕兩個不同 singleton 列，G 必碰齊五框點。
 
 **H 連通。** 對每個 H 分量 C，令 G_C 保留 B、C 及全部 C–B 附件。
@@ -91,7 +91,7 @@ M_q 含至少一個有效內點 v，否則只有 induced 框 B，必可延拓 q�
 
 現在 G 自己是接受 T4、全部有效內點完整 degree=4 的 disk minimal
 q-obstruction，符合
-[全 degree-4 結論的完整前提](../../docs/c5_degree4_guide.md#1-完成的結論與完整前提)。
+[全 degree-4 結論的完整前提](../../docs/archive/guides/c5_degree4_guide.md#1-完成的結論與完整前提)。
 因此 Σ(G)=Ω∖{q}，Q 恰為一點。連同 Q=∅ 的情形，得到
 **ε=0 ⇒ |Q|≤1**。此段沒有把「H 連通」或「degree≥4」當額外假設，
 而是從來源 criticality、T4、disk 推出；也沒有假設 P 獨立。
@@ -108,13 +108,13 @@ core 中 r 的 degree 只能為 4 或 5。若是 5，所有原分量、全部 sp
 
 對具名單容量因子 i，G∖i 若拒絕 q，自己就是全 degree-4 core，
 故 Σ(G∖i)=Ω∖{q}。**不同拒絕列不能共用同一原省略身份。**
-這是[四容量子覆蓋 §1](../../docs/c5_excess_one_subcovers.md#1-同源因子真子核心與省略區域)
+這是[四容量子覆蓋 §1](../../docs/archive/reports/c5/excess/other/c5_excess_one_subcovers.md#1-同源因子真子核心與省略區域)
 的推廣，保留同一原圖與因子身份。
 
 ### 3.2 盾弧工具在新 masks 的適用範圍
 
 當 |Q|≥2，§2 已給 H 連通、碰齊 B、degree≥4。因此
-[盾弧引理 1、2 與定理 A](../../docs/c5_unary_shield_budget.md)
+[盾弧引理 1、2 與定理 A](../../docs/archive/reports/c5/shared-results/c5_unary_shield_budget.md)
 在本輪唯一 root 設定中的證明可逐步重用：每份 H−r 原分量是 unary、
 one-sided；取其原接點邊的 critical witness 得非空禁色，再用避開該
 分量的 r–B 原路徑及短支援引理，排除支援包含於一條框邊。
@@ -135,9 +135,9 @@ T4／minimal-q 來源分類，而非原 933／941 的特殊 core 身份表：
 
 | root-spokes t | 全部容量分拆的處理 | 本輪需處理的剩餘 |
 | --- | --- | --- |
-| 0 | [no-spoke §4–5](../../docs/c5_no_spoke_exterior.md) 排除 (5)、(4,1)、(3,2)、(3,1,1)；(2,2,1)、(2,1,1,1) 違反 §3.2 的至多兩分量 | 無 |
-| 1 | [(4)](../../docs/c5_single_spoke_four.md) 與 [(3,1)](../../docs/c5_single_spoke_three_one.md) 已作來源排除；(2,1,1) 違反 §3.2 | (2,2) |
-| 2 | [(3) 的排除](../../docs/c5_two_spoke_three_contacts.md#5-second-rows-scope-and-remaining-cases)允許任意位置的兩條異色 spokes；(1,1,1) 不能讓三份分量各有 private colour | (2,1) |
+| 0 | [no-spoke §4–5](../../docs/archive/reports/c5/structure/c5_no_spoke_exterior.md) 排除 (5)、(4,1)、(3,2)、(3,1,1)；(2,2,1)、(2,1,1,1) 違反 §3.2 的至多兩分量 | 無 |
+| 1 | [(4)](../../docs/archive/reports/c5/single-spoke/c5_single_spoke_four.md) 與 [(3,1)](../../docs/archive/reports/c5/single-spoke/c5_single_spoke_three_one.md) 已作來源排除；(2,1,1) 違反 §3.2 | (2,2) |
+| 2 | [(3) 的排除](../../docs/archive/reports/c5/structure/c5_two_spoke_three_contacts.md#5-second-rows-scope-and-remaining-cases)允許任意位置的兩條異色 spokes；(1,1,1) 不能讓三份分量各有 private colour | (2,1) |
 | 3 | full minimal q 的 root 只有一個可用色，不可由兩份分量各承擔私有色 | (2) |
 
 這些紙面來源排除只需 minimal-q、連通 H、指定 disk 框與完整 degrees；
@@ -150,14 +150,14 @@ T4／minimal-q 來源分類，而非原 933／941 的特殊 core 身份表：
 ## 4. 935：ε=1 的三點弧 Q 排除
 
 每個三點弧中的位置都有拒絕的框鄰點。
-[四容量子覆蓋 §2](../../docs/c5_excess_one_subcovers.md#2-只用-t4-的-minimal-degree-5-相鄰列分離)
+[四容量子覆蓋 §2](../../docs/archive/reports/c5/excess/other/c5_excess_one_subcovers.md#2-只用-t4-的-minimal-degree-5-相鄰列分離)
 已核對：接受 T4 的唯一 degree-5 minimal q_i-core 接受兩個相鄰
 singleton 列。其來源分離引理不要求 P 獨立，不要求完整 Σ 恰缺兩列。
 所以本題三個拒絕列都不能以 G 自己作 minimal core，必各有真子核心，
 三份原省略身份互斥。
 
 若所有因子容量一，
-[跨列未用色守恆與五單容量論證](../../docs/c5_excess_one_subcovers.md#5-五個單容量因子不可能拒絕三個-singleton-列)
+[跨列未用色守恆與五單容量論證](../../docs/archive/reports/c5/excess/other/c5_excess_one_subcovers.md#5-五個單容量因子不可能拒絕三個-singleton-列)
 給 |Q|≤2，矛盾。這個推導使用同一原 unary 的 D／非 D 身份、三個不同
 拒絕列及省略身份不重用，沒有使用 P 獨立。
 
@@ -174,8 +174,8 @@ D₅ 搬運及 S₄ 換色將它的拒絕列對齊 q₄=01012；之後所有原�
 attachments、components、rows 同時搬運，不獨立正規化各 relation。
 
 原 r 在 G−e 的內部 degree 分別為三或二。沿用
-[two-spoke 的原接點保持 transfer](../../docs/c5_941_two_spoke.md#3-從-bridge-保持提升到原接點保持)
-與[three-spoke 的 binary joint 接回](../../docs/c5_941_three_spoke.md#3-保持同一-c₂-的有序-relation-後接回)：
+[two-spoke 的原接點保持 transfer](../../docs/archive/reports/c5/structure/c5_941_two_spoke.md#3-從-bridge-保持提升到原接點保持)
+與[three-spoke 的 binary joint 接回](../../docs/archive/reports/c5/structure/c5_941_three_spoke.md#3-保持同一-c₂-的有序-relation-後接回)：
 任意長 path tails 可縮至既有 endpoint bases，保持每個 proper boundary
 row 的原首點全部可取色；按原 parent 色接合，保持 ordered
 (r,x,y,u) 或 (r,x,y) **共同 relation**。接回 e 僅過濾 r≠b(e)，
@@ -274,7 +274,7 @@ H∖{u,v} 經 r 仍連通；用上面的同五袋 K₅ minor 全排，包含兩�
 ### 5.2 一-spoke：(2,2)，兩列皆以 G 為 core
 
 本節的色表是同一來源的**必要介面**；不假設每份抽象表可實現為圖。
-沿用[通用來源表 §4](../../docs/c5_single_spoke_residual_locality.md#4-完整表與條件式出口的接合)
+沿用[通用來源表 §4](../../docs/archive/reports/c5/single-spoke/c5_single_spoke_residual_locality.md#4-完整表與條件式出口的接合)
 的最後 102 records。它只需 T4／minimal-q，已用來源排除刪去 pair／pair
 型，剩 51 份禁色大小 (1,2) 與 51 份 (2,1)。**不是**從 ε 預算本身
 推得這個限制：不可刪减四色覆蓋本來容許兩份 binary 禁色 pair 重疊。
@@ -300,7 +300,7 @@ rooted-palette 唯一性使任何固定 t(T_j) 的色置換都保持 residual。
 取原首橋 x₀x₁ 的 W₀、W₁，令 J 是 path 加兩原 r-contact 邊的 cycle。
 W₀、W₁、{b₃}、{b₄}、(V(J)∖{x₀,x₁})∪{b₀,b₁,b₂}
 是五個原 K₅ branch sets；最後一袋經 rb₀ 連通，其十條鄰接正是
-[原首橋 minor](../../docs/c5_single_spoke_residual_locality.md#3-record-90-的兩個共用-β)
+[原首橋 minor](../../docs/archive/reports/c5/single-spoke/c5_single_spoke_residual_locality.md#3-record-90-的兩個共用-β)
 的接線。必要支援表及同一原首橋 minor 先排 36 個 schedules，留下 18。
 
 **內部橋的 carrier 變換。** 對其中 14 個 schedules，有同一原 binary
@@ -368,16 +368,16 @@ r 邊與那條 path 邊，完整 degree=4 只允許兩個直接框附件，不�
 
 ### 5.3 兩-spoke：(2,1)，兩列皆以 G 為 core
 
-相鄰 spokes 的既有來源排除／[split-support 定理](../../docs/c5_two_spoke_split_support.md#1-source-contacts-and-proof-boundary)
+相鄰 spokes 的既有來源排除／[split-support 定理](../../docs/archive/reports/c5/structure/c5_two_spoke_split_support.md#1-source-contacts-and-proof-boundary)
 已給 singleton-only Σ；其前提只需 T4／minimal-q，未借用來源恰缺兩列。
-另見[兩-spoke 完整分類範圍](../../docs/c5_two_spoke_nonadjacent.md#7-exit-integration-and-exact-scope)。
+另見[兩-spoke 完整分類範圍](../../docs/archive/reports/c5/structure/c5_two_spoke_nonadjacent.md#7-exit-integration-and-exact-scope)。
 只剩非相鄰 spokes。對 q=q₄=01012，遠列為 p=q₁=01202 時共同異色
 spoke pair 只有 14；遠列 q₂=01201 時只有 24。後者經兩列共用的
 幾何反射 φ(i)=3−i mod5，再對各整圖列作共同 S₄ 色名搬運，成為前者。
 所有附件、原 contacts、tuple 座標及兩份分量同時搬運；從未分別
 正規化原分量。新有限證書核對兩個朝向及 160 份完整 tuple 搬運。
 
-沿用[必要區域定理](../../docs/c5_degree5_two_spoke_sectors.md)，短區域 piece
+沿用[必要區域定理](../../docs/archive/reports/c5/degree5/c5_degree5_two_spoke_sectors.md)，短區域 piece
 J 的實際支援為 014，長區域 L 的支援包含於 1234。兩列在 014 上逐點
 相同，故 J 的**完整有序 relation** 相同。兩 spokes 均禁止 1、2。
 q／p-criticality 要每份 piece 有私有禁色，所以 J、L 在兩列分別禁
@@ -458,7 +458,7 @@ i↦2−i mod5，將 C340 搬到 C234、保留 U012，並對整份 q 同時交�
 r 的可用色為 1、D；U012 同樣不能禁 D，所以只須證 C 在 p 允許 r=D。
 
 K 不碰 q 的 singleton-1，且原 r 加 C 的兩 contacts 有 cycle。
-[Unattached-singleton cyclic lemma](../../docs/c5_two_spoke_split_support.md#2-a-useful-consequence-of-the-existing-degree-four-classification)
+[Unattached-singleton cyclic lemma](../../docs/archive/reports/c5/structure/c5_two_spoke_split_support.md#2-a-useful-consequence-of-the-existing-degree-four-classification)
 逐項沿用已有 degree-4 **實際原圖**分類，迫 K 的內部是 triangle，
 或兩個互斥 triangles 以一條直接 bridge 連接，沒有 tails。r 的內部
 degree=2，故 C 只有兩點原 edge，或五點（二點 path 末端接 triangle）。

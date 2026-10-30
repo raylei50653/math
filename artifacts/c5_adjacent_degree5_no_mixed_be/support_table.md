@@ -336,4 +336,4 @@
 | 179 | 3027 | (132, 87) | 0 |
 
 [完整關係、rotations 與證書](observations.json)。
-[前提、紙面覆蓋及證據界線](../../docs/c5_adjacent_degree5_no_mixed_be.md)。
+[前提、紙面覆蓋及證據界線](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_be.md)。

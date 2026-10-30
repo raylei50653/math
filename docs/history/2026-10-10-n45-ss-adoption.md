@@ -6,7 +6,7 @@
 [SSG](../../audits/2026-10-10-n45-ssg/REPORT.md)四幾何／改色claim、
 [SSC](../../audits/2026-10-10-n45-ssc/REPORT.md)封存完整性各依自身範圍驗收。
 SSG五份copied metadata被較廣排除的原FAIL保留，由監督補充manifest與fulltree另綁，原封存不改。
-當前唯一權威入口是[N45](../c5_excess_two_nonadjacent_unit_core45.md)。
+當前唯一權威入口是[N45](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)。
 
 SS的原U/L盾費(2,2)、(2,3)、(3,2)皆排；沿明列BASE／外部Gallai紙面依賴，
 沒有新SS finite來源、trigger數、source realization或Lean。加上已採納U-U2／SHORT／S3／RES與LP，

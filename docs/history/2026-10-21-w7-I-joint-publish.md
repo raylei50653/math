@@ -40,4 +40,4 @@ Updated：Kempe導覽、STATUS直接索引、README及封存入口的發布連�
 Reviewed-unchanged：HANDOFF研究線／活躍標記、原frozen證據、ARCHIVE及例外政策。
 Remaining OPEN：型I八配對、pinched alias、型II、長路大cell、一般W7／J1／J2及較小bad。
 Propagation stop：L1；未有子分支closure，不提升父題結論。
-目前接續由[Kempe導覽](../c5_kempe_guide.md)維護，即時發布狀態以Git為準。
+目前接續由[Kempe導覽](../archive/guides/c5_kempe_guide.md)維護，即時發布狀態以Git為準。

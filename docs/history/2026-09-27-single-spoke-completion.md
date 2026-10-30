@@ -1,6 +1,6 @@
 # 2026-09-27：single-spoke 外部雙路徑 completion
 
-報告：[外部雙路徑 completion](../c5_single_spoke_completion.md)。
+報告：[外部雙路徑 completion](../archive/reports/c5/single-spoke/c5_single_spoke_completion.md)。
 接手 HEAD 為 `4f26efe`；當時已有尚未提交的 single-spoke 覆蓋、支援表、
 checker／artifact 與文件變更。本輪接續這些成果，保留原支援 artifact 及歷史。
 

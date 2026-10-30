@@ -320,4 +320,4 @@ Cw、Dw 各自的完整關係、路徑與具名接點保留；必要配置和 mi
 | 95 | (148, 63) | 0 |
 
 全部 schemas、rotations、原路徑與固定框弧見 [JSON](observations.json)。
-任意大小覆蓋與信任界線見 [報告](../../docs/c5_adjacent_degree5_no_mixed_t2_t0_overlap.md)。
+任意大小覆蓋與信任界線見 [報告](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t0_overlap.md)。

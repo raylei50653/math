@@ -17,7 +17,7 @@ PW／TERM是canonical已明確採納的局部引理；其餘新名稱表示已�
 **完整命題。** 對每個proper literal γ及全部ambient tuples／pins，將每個完整Y assignment限制到各因子，是到同色shared坐標上的**完整因子assignment natural join**的雙射；其逆為compatible union。限制pin／tuple的每個fibre同樣雙射，包含空cells。逐邊合法性由它所在因子保證；原shared頂點只有一色，因此union唯一。Z因子不能省略，任何中途投影須保其完整preimages。
 
 **原命題映射。** LOW1/LOW2-JOIN在同一r色接U/P/Q，兩U-contact同時限制同一f_U；HIGH1/2/3在同一s色接C/U且保r座標；SL-R-JOIN、SD-JOIN、SF-JOIN、TF-X是各自actual factorization；TF-FIBRES是同一雙射的ordered-tuple限制。TF-BLOCK的vertex/block recurrence按actual incidence tree重複用此restriction/union，不供非空性。
-來源：[R10§1](../../docs/c5_degree5_interfaces.md)、[D proof review](../../audits/2026-10-11-n45-s-long-s-block-transfer-review/D-proof-review.md)、[D採納](../../audits/2026-10-11-n45-s-long-s-block-transfer-review/REPORT.md):8–20。
+來源：[R10§1](../../docs/archive/reports/c5/degree5/c5_degree5_interfaces.md)、[D proof review](../../audits/2026-10-11-n45-s-long-s-block-transfer-review/D-proof-review.md)、[D採納](../../audits/2026-10-11-n45-s-long-s-block-transfer-review/REPORT.md):8–20。
 
 ## C2：原一條 spoke 的完整 filter
 
@@ -36,7 +36,7 @@ PW／TERM是canonical已明確採納的局部引理；其餘新名稱表示已�
 **最小已知充分接口／完整命題。** ∀有限非空connected simple C與lists L，若∀v `|L(v)|≥d_C(v)`且∃w strict，則C可L-coloring。以w為根的生成樹按距離由遠而近染；每個非根仍有未染parent，最後w多一色。singleton也包含。故不可染degree assignment逐點tight。
 
 不需planarity／Gallai／minimality。對實際H_Y−s完整degree4分量，未固定s色的boundary lists在每個s-contact多一色，且有contact時給**unpinned**C assignments非空；不推全部root pins非空。完整外鄰與原degree式必須先核。
-映射：所有CORE/F中的tightness或unpinned非空、q2 U strict-slack、incident-edge release。來源：[R10§2](../../docs/c5_degree5_interfaces.md):118–129；外部GA的Lemma7為同一已知slack結果。
+映射：所有CORE/F中的tightness或unpinned非空、q2 U strict-slack、incident-edge release。來源：[R10§2](../../docs/archive/reports/c5/degree5/c5_degree5_interfaces.md):118–129；外部GA的Lemma7為同一已知slack結果。
 
 ## C4：incident-edge release、own-β minimal cover 與sole-C特化
 
@@ -51,13 +51,13 @@ PW／TERM是canonical已明確採納的局部引理；其餘新名稱表示已�
 反向等價須另保原spokesβ色互異、每個原區域的release前提與所有非框edges恰上述區域edges／s-spokes，見R10原iff；這些不省略。刪contact sp full witness在該contact色=s色a，其餘contacts避a；每edge見證選到的a不必相同。原Σ-critical G不供給Y的同βwitness。
 
 **sole-C特化。** 只有一實際C時，C3給R_C非空，`F_C=A`；若s完整degree5、有t條β異色spokes，則 `|P|=5−t`、`|F_C|=4−t`。LOW1/2的兩spokes、U-LP/SS與LONG-R的0/1/2分流是同一數學接口；HIGH／LONG-S為兩分量，須保各自private及actual contact counts。
-來源：[R10§3–4](../../docs/c5_degree5_interfaces.md):143–190、[PA](../../audits/2026-10-10-n45-pa/REPORT.md):105–131、[LONG-R](../../audits/2026-10-10-n45-s-long-r-map/REPORT.md):78–91。
+來源：[R10§3–4](../../docs/archive/reports/c5/degree5/c5_degree5_interfaces.md):143–190、[PA](../../audits/2026-10-10-n45-pa/REPORT.md):105–131、[LONG-R](../../audits/2026-10-10-n45-s-long-r-map/REPORT.md):78–91。
 
 ## C5：sole-C 的(5)/(4)/(3)分流包裝
 
 **完整量詞／充分接口。** ∀有限簡單induced-C5 disk Y、proper三色literalβ，Y自己同β edge-minimal拒絕；唯一完整degree5內點s，其餘有效內點完整4；H_Y−s為實際sole connected C；有t∈{0,1,2}條原retained s-spokes、β色互異，5−t個互異ordered contacts，完整attachments／rotation／assignments；ignored因子也保留。由C4得精確F_C。
 
-一次共同D5/S4把β搬到BASE q，**不改C、contacts或edges**；t0引用[no-spoke§4](../../docs/c5_no_spoke_exterior.md)，t1引用[single-spoke(4)](../../docs/c5_single_spoke_four.md)，t2引用[two-spoke(3)](../../docs/c5_two_spoke_three_contacts.md)。各得到原Y矛盾。t2允許任意兩個β異色位置；原映射／reviews已核此較廣來源接口。
+一次共同D5/S4把β搬到BASE q，**不改C、contacts或edges**；t0引用[no-spoke§4](../../docs/archive/reports/c5/structure/c5_no_spoke_exterior.md)，t1引用[single-spoke(4)](../../docs/archive/reports/c5/single-spoke/c5_single_spoke_four.md)，t2引用[two-spoke(3)](../../docs/archive/reports/c5/structure/c5_two_spoke_three_contacts.md)。各得到原Y矛盾。t2允許任意兩個β異色位置；原映射／reviews已核此較廣來源接口。
 
 這是三個已知定理的dispatch wrapper，不是新uniform分類：t0的五葉奇偶允許K4、不借外hub；t1/t2仍需各原retained spoke及原tethers供K5鄰接。不存在以t0為0-spoke K5強行統一的短證明。
 
@@ -70,7 +70,7 @@ PW／TERM是canonical已明確採納的局部引理；其餘新名稱表示已�
 若同一actual C上兩不可染degree assignments M_a/M_b的全vertex indicator差是`1_P(e_b−e_a)`，GA給原同一blocks上的palettes；I injective迫每block只有a/b互換或不變、其他色membership相同。三份以上pin lists且同一右側給共同係數τ；不能分別挑三張pairwise active trees。
 
 **映射與不合併。** BASE3/LOW1/2及DIRECT三contact得到一triangle+三任意/零長原arms；BASE4/相關DIRECT四contact使用三份拒絕才得兩triangle+一bridge；BASE5/LONG-R t0用四份拒絕得偶葉矛盾。共同的是I獨立與差異式，active分類的前提／結論各不同；原tethers／inactive branch填色／bags仍分別引用。
-來源：[BASE3§2](../../docs/c5_two_spoke_three_contacts.md):71–106、[BASE4§2](../../docs/c5_single_spoke_four.md):75–107、[BASE5§4](../../docs/c5_no_spoke_exterior.md):139–176。
+來源：[BASE3§2](../../docs/archive/reports/c5/structure/c5_two_spoke_three_contacts.md):71–106、[BASE4§2](../../docs/archive/reports/c5/single-spoke/c5_single_spoke_four.md):75–107、[BASE5§4](../../docs/archive/reports/c5/structure/c5_no_spoke_exterior.md):139–176。
 
 ## C7：support-compatible完整色搬運
 

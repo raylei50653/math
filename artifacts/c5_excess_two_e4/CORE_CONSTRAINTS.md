@@ -27,8 +27,8 @@ nonadjacent 5+5／T4 全收／Σ-critical／ε2 正控制，不能從有限搜�
 使用 [E3 REPORT §1、§2](../c5_excess_two_e3/REPORT.md)、
 [nonadjacent notes §1–5](../c5_excess_two_e3/nonadjacent_notes.md)、
 [E2 REPORT §5](../c5_excess_one_e2/REPORT.md)、
-[unary shield](../../docs/c5_unary_shield_budget.md)、
-[q-core shield](../../docs/c5_qcore_shield_budget.md)。
+[unary shield](../../docs/archive/reports/c5/shared-results/c5_unary_shield_budget.md)、
+[q-core shield](../../docs/archive/reports/c5/shared-results/c5_qcore_shield_budget.md)。
 
 G 有限簡單；指定有序 induced-C₅ B 圍 disk 外面；T4 全收；每條非框邊
 對自身完整 Σ critical；ε2；z,w 非相鄰 degree5，其他有效內點 degree4。

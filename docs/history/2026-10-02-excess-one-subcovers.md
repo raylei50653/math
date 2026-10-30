@@ -10,8 +10,8 @@
 本輪在該工作區繼續，保留全部既有變更。使用者要求沿 ε=1、同源十列的
 四容量子覆蓋與共享限制推進，未要求 commit／push。
 
-成果見 [專題報告](../c5_excess_one_subcovers.md)，目前停止點由
-[Kempe 導覽](../c5_kempe_guide.md)維護。HANDOFF 的 Kempe 進行中標記已符合
+成果見 [專題報告](../archive/reports/c5/excess/other/c5_excess_one_subcovers.md)，目前停止點由
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)維護。HANDOFF 的 Kempe 進行中標記已符合
 目前狀態，沿用前輪修改，沒有加入詳細研究結果。
 
 ## 成果與證據界線

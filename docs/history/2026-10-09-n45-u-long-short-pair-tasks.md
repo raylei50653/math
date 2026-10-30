@@ -6,7 +6,7 @@
 
 2026-10-09。第一批與SU-A／SU-J增量已分層驗收，見
 [採納裁決](../../audits/2026-10-09-n45-su-supervision/REPORT.md)及
-[權威入口](../c5_excess_two_nonadjacent_unit_core45.md)。
+[權威入口](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)。
 只選 **N45-U-LP**：指定整份原unit U省略的45／54 core、唯一原U、
 一long mixed L、一short edge-pair mixed S。幾何、跨列關係與來源契約工具
 三路各自從已採納前提出發，沒有互相等待的新結論依賴。

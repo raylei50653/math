@@ -8,7 +8,7 @@ face 成果；記憶停止點已落後，以即時 HANDOFF／STATUS／Kempe 導�
 
 ## 窄結果與原來源身份
 
-[報告](../c5_excess_two_mixed_core_four_spoke_crosscut.md)、
+[報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_crosscut.md)、
 [checker](../../scripts/c5_excess_two_mixed_core_four_spoke_crosscut.py)、
 [joint helper](../../scripts/c5_excess_two_four_spoke_crosscut_joint_controls.py)、
 [artifact](../../artifacts/c5_excess_two_mixed_core_four_spoke_crosscut/observations.json)
@@ -102,7 +102,7 @@ supports必含{0,2}／{0,3}；C在原0ab三角或共同短框弧{2,3}。
 研究mixed與兩unary的共同限制。其他incidence、較少spokes、單省略、
 (5,5)q-core、多mixed／no-mixed／非相鄰與unary側例外保留。
 來源實現、新Lean theorem、一般出口及K∞=K≤5仍未證。
-即時停止點見[Kempe導覽](../c5_kempe_guide.md)。
+即時停止點見[Kempe導覽](../archive/guides/c5_kempe_guide.md)。
 
 ```text
 cwd=/home/ray/developer/ai/math；先讀HANDOFF/STATUS/Kempe導覽與即時Git。

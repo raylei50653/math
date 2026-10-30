@@ -3,8 +3,8 @@
 2026-09-29，前層報告的研究基準為 `773cdf8`；本輪驗證時核對 Git
 `11335c15de58aa123ba2b364fb500a8573533e01`（artifacts 工具的另項提交）。
 工作樹已有未提交的 mixed 容量 checker／證書／報告及入口更新；保留它們，
-接續[導覽](../c5_weak_deletion_guide.md)指定的 P₃ 對稱兩色分支。
-新證明見[專題報告](../c5_mixed_p3_symmetric.md)。
+接續[導覽](../archive/guides/c5_weak_deletion_guide.md)指定的 P₃ 對稱兩色分支。
+新證明見[專題報告](../archive/reports/c5/weak-deletion/c5_mixed_p3_symmetric.md)。
 
 ## 結果與證據層
 

@@ -9,8 +9,8 @@
 及 Kempe 導覽，再選其指定的下一個窄分支。使用者要求「確認接手狀態
 並選方向開始推進」，未要求 commit／push。
 
-成果見[專題報告](../c5_excess_two_spoke_unary.md)，目前停止點見
-[Kempe 導覽](../c5_kempe_guide.md)。沿用原工作樹，未改寫既有 checker
+成果見[專題報告](../archive/reports/c5/excess/other/c5_excess_two_spoke_unary.md)，目前停止點見
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)。沿用原工作樹，未改寫既有 checker
 或證書；未使用 Graphify、未開子代理、未查詢或改寫遠端、未 commit／push。
 即時發布狀態以 Git 為準，本地 tracking ref 並非遠端即時核對。
 

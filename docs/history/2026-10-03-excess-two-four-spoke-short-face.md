@@ -7,7 +7,7 @@ cwd=`/home/ray/developer/ai/math`。本輪依 Kempe 導覽處理原
 
 ## 結果與原身份
 
-[新報告](../c5_excess_two_mixed_core_four_spoke_short_face.md)、
+[新報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_short_face.md)、
 [checker](../../scripts/c5_excess_two_mixed_core_four_spoke_short_face.py)、
 [joint helper](../../scripts/c5_excess_two_four_spoke_short_face_joint_controls.py)、
 [證書](../../artifacts/c5_excess_two_mixed_core_four_spoke_short_face/observations.json)
@@ -98,7 +98,7 @@ root 交換=126／195；兩側都仍有長 face，不能套所有 incident
 faces 都短的前提。其他 incidence、較少 spokes、單省略、原
 (5,5) q-core、多 mixed／no-mixed／非相鄰 roots 及 unary 側例外
 保留。一般出口、來源實現及 K∞=K≤5 未證；目前排程見
-[Kempe 導覽](../c5_kempe_guide.md)。
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)。
 
 ```text
 cwd=/home/ray/developer/ai/math；先讀HANDOFF/STATUS/Kempe導覽，再查即時Git。

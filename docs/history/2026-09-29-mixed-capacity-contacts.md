@@ -1,9 +1,9 @@
 # Mixed 容量、十八側型與最小三點接線
 
 2026-09-29，起始 Git `773cdf86e26dbb57a1e79bf017d632019853311c`，工作樹乾淨。
-依[交接導覽](../c5_weak_deletion_guide.md)接續較大 mixed 的容量與接點化約；
+依[交接導覽](../archive/guides/c5_weak_deletion_guide.md)接續較大 mixed 的容量與接點化約；
 未重啟 no-mixed 支援枚舉。專題證明見
-[mixed 容量報告](../c5_mixed_capacity_contacts.md)。
+[mixed 容量報告](../archive/reports/c5/structure/c5_mixed_capacity_contacts.md)。
 
 ## 結果與信任界線
 

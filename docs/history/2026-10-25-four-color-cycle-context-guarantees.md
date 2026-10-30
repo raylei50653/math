@@ -1,6 +1,6 @@
 # 共同條件接口的數學保障整理與發布
 
-2026-10-25。權威來源：[共同條件接口的數學保障](../four_color_cycle_contexts.md#數學保障範圍)。
+2026-10-25。權威來源：[共同條件接口的數學保障](../tools/solver/four_color_cycle_contexts.md#數學保障範圍)。
 本次整理已實作操作的紙面論證與停止點，不改求解器、不重建凍結實驗資料。
 發布前基準為 `cb5adc6c6b769902dadb5b982c4fadffecbe6c34`；開始時工作樹乾淨，
 fetch 後本地與 `origin/main` 相同。

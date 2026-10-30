@@ -26,8 +26,8 @@ artifacts、checkers、全部relations／空fibres／witnesses與失敗紀錄保
 獨立三份稽核、root重播、文件、DocGraph、artifact、diff與保存結果及
 實際命令詳見D₄報告；原四份文件hash漂移仍存在，不改寫成PASS。
 
-最新窄入口由[Kempe](../c5_kempe_guide.md#3-停止點與保留缺口)及
-[weak-deletion](../c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)維護：
+最新窄入口由[Kempe](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)及
+[weak-deletion](../archive/guides/c5_weak_deletion_guide.md#3-精確停止點與下一個窄問題)維護：
 A保留原04／04及root交換候選；B保留933原04／12shared附件{4}；
 C接CPP-134-1／geometry34／join60，保留各原分量自己的支援／完整關係。
 ε≥3、mixed12／mixed22整型、來源實現、一般出口及`K∞=K≤5`未證。

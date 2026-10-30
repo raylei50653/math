@@ -8,7 +8,7 @@ cwd=`/home/ray/developer/ai/math`，沿用既有未提交的短 face 成果，
 
 ## 結果與同源身份
 
-[新報告](../c5_excess_two_mixed_core_four_spoke_long_face.md)、
+[新報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_long_face.md)、
 [checker](../../scripts/c5_excess_two_mixed_core_four_spoke_long_face.py)、
 [joint helper](../../scripts/c5_excess_two_four_spoke_long_face_joint_controls.py)、
 [artifact](../../artifacts/c5_excess_two_mixed_core_four_spoke_long_face/observations.json)
@@ -107,7 +107,7 @@ C／U／V、同一六角色joint與actual supports，分析原unary
 crosscut封住C的位置與可保degree的少數hub化約。其他incidence、
 較少spokes、單省略、(5,5)q-core、多mixed／no-mixed／非相鄰
 及unary側例外均保留；來源實現、一般出口、新Lean theorem及
-K∞=K≤5未證，最新停止點见[Kempe導覽](../c5_kempe_guide.md)。
+K∞=K≤5未證，最新停止點见[Kempe導覽](../archive/guides/c5_kempe_guide.md)。
 
 ```text
 cwd=/home/ray/developer/ai/math；先讀HANDOFF/STATUS/Kempe導覽及即時Git。

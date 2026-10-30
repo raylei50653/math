@@ -7,7 +7,7 @@ commit／push，沒有來源圖新枚舉。
 
 ## 結果與證據
 
-[新報告](../c5_excess_two_mixed_core_four_spoke_ternary.md)／
+[新報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_ternary.md)／
 [checker](../../scripts/c5_excess_two_mixed_core_four_spoke_ternary.py)
 完成四-spoke (3,1)、mixed-(1,2) 加一原單接點 unary 的來源排除，
 含 root 交換。先固定原 a=6、b=5、a-spokes=012、b-spoke=2、q=01021。

@@ -18,7 +18,7 @@
 `W110+W101>0`、`omega_e=0`、完整319及主命題仍OPEN。
 沒有新Lean theorem；紙證、固定域整數證書與`lake build`分開。
 完整研究結果及下一入口見[原報告](../../audits/2026-10-20-r6-941-j1-five-edge-417732f/REPORT.md)、
-[Kempe導覽](../c5_kempe_guide.md)與[State導覽](../c5_state_guide.md)。
+[Kempe導覽](../archive/guides/c5_kempe_guide.md)與[State導覽](../archive/guides/c5_state_guide.md)。
 
 ## 原始bytes、封存與提交範圍
 

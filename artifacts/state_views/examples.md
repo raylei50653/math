@@ -45,6 +45,6 @@ L=R91，R=R935，F=R767，U=全部 proper C5；Γ=(b1=b4 ∧ b0!=b2)。
 ## 幾何與證明狀態
 
 本觀察表的 join 統一標示 geometry=unknown。既有特定一內一外 witness 的幾何結果見
-[boundary_relations.md](../../docs/boundary_relations.md)；不能轉用到任意同側接線。
+[boundary_relations.md](../../docs/reference/interfaces/boundary_relations.md)；不能轉用到任意同側接線。
 Γ 對 R767 的 conditional forcing 另有既有 Lean native finite 證明，
 見 `Math/C5PairForcing.lean`；這次只重驗 Python 關係與觀察輸出。

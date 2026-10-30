@@ -5,7 +5,7 @@
 
 ## 成果
 
-[報告](../c5_adjacent_degree5_interfaces.md) 固定原 H−{z,w} 分量及實際
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_interfaces.md) 固定原 H−{z,w} 分量及實際
 boundary／root 接線，用同一個接點 tuple 同時避開有序 root 色對。
 共鄰點保留一個頂點身份、兩條 incidence；全部 boundary rows 共用原圖。
 

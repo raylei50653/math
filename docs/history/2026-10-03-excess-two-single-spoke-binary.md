@@ -3,8 +3,8 @@
 接手基準 `main@bbd900a`，保留前輪未提交成果；未要求或執行
 commit／push。先讀 HANDOFF、STATUS、Kempe 導覽及前輪報告，
 接續 t=1、(2,2,1) 原 binary 省略。成果見
-[專題報告](../c5_excess_two_single_spoke_binary.md)，目前停止點見
-[Kempe 導覽](../c5_kempe_guide.md)。研究線與 tag 未變，依治理保留
+[專題報告](../archive/reports/c5/excess/other/c5_excess_two_single_spoke_binary.md)，目前停止點見
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)。研究線與 tag 未變，依治理保留
 HANDOFF 薄索引，更新 README、STATUS、導覽、綜述與前報後續入口。
 
 ## 結果

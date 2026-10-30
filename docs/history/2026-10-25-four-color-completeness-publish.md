@@ -1,18 +1,18 @@
 # 四色完整消元證明與流程優化整理發布
 
-2026-10-25。所屬研究線：[四色求解導覽](../four_color_guide.md)。
+2026-10-25。所屬研究線：[四色求解導覽](../tools/four_color_guide.md)。
 發布前基準為 `bcfae258dd81e6eeec99a1de999a13f35b8b7b38`；實際發布身份以Git及遠端核對為準。
 
 ## 本次整理範圍
 
-- [完整消元與回寫的完備性證明](../four_color_completeness.md)：任意有限簡單無向圖、
+- [完整消元與回寫的完備性證明](../tools/solver/four_color_completeness.md)：任意有限簡單無向圖、
   部分固定色、全部含點因子的精確投影、可靠且有限次傳播、倒序共同回填及空接口。
   在給足資源的演算法前提下，有解必可構造、無解必判否；紙面證明與Python形式化驗證分開。
-- [流程優化](../four_color_flow_optimization.md)：增量傳播、共同接口查詢重用及完整因子起始的
+- [流程優化](../tools/solver/four_color_flow_optimization.md)：增量傳播、共同接口查詢重用及完整因子起始的
   精確桶枚舉，同四十例超限10→1。
-- [儲存容量](../four_color_memory_optimization.md)：生成表及完整紀錄容量可獨立設定；
+- [儲存容量](../tools/solver/four_color_memory_optimization.md)：生成表及完整紀錄容量可獨立設定；
   百萬列容量下同四十例27可解／13無解／0超限。
-- [RAM索引](../four_color_ram_indexes.md)：完整接口分組、涵蓋因子索引及穩定配對；
+- [RAM索引](../tools/solver/four_color_ram_indexes.md)：完整接口分組、涵蓋因子索引及穩定配對；
   同四十例求解15.27→12.82秒、求解後峰值103.6→106.2 MiB，屬當輪有限比較。
 
 原有流程、容量及RAM實驗的來源快照、失敗／超限基準與驗證收據原樣發布。

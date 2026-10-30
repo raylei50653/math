@@ -329,4 +329,4 @@
 | 321 | [145, 145] | 34/2/4/14/2/4 | A/A | A/A |
 
 原記錄、完整 schemas／rotations、joins、palettes 與 minor 證書見 [JSON](observations.json)。
-任意大小證明、出口接合及信任界線見 [報告](../../docs/c5_adjacent_degree5_no_mixed_t2_path_palettes.md)。
+任意大小證明、出口接合及信任界線見 [報告](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_path_palettes.md)。

@@ -10,14 +10,14 @@
 全部 PINCH／BRIDGE 排除，不限制單接點數或兩側內點數。
 原 s≥2 逐級任務被一般定理涵蓋，第一剝層改從 RING 接續。
 
-**Canonical Source + Evidence：** [C8 剝層／T1-CROSSCUT](../c5_c8_peeling.md#t1-crosscut)
+**Canonical Source + Evidence：** [C8 剝層／T1-CROSSCUT](../archive/reports/c5/structure/c5_c8_peeling.md#t1-crosscut)
 為權威入口，[採納記錄](../../audits/2026-10-14-t1-crosscut-review-77fbd5d/ADOPTION.md)
 接原來源覆蓋、完整支援論證及有限證書。核心32項／512,568矩形足夠；
 含額外控制的64項／701,020矩形、59,156份 P lifts 全通過，共同缺失
 接受列為01232。證据是紙面＋Python；沒有新增 Lean theorem。
 
 **Updated：** C8 權威頁、[no4ct 交接](../tasks/c5_no4ct_handoff.md)、
-[Kempe 導覽](../c5_kempe_guide.md)、[STATUS](../STATUS.md)已更新採納狀態、
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)、[STATUS](../STATUS.md)已更新採納狀態、
 停止點及重播入口。原 audit 的161份封存證據和舊 T1 歷史結果未改寫；
 97份大型、凍結或重複 payload 接入既有 archive，保留精確 bytes。
 

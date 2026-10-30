@@ -1,7 +1,7 @@
 # 2026-09-29：B–D 雙飽和原分量來源排除
 
 依使用者「推進 B–D class」接續既有未提交 B–E／E–E／B–C 成果，未 commit／push。
-[報告](../c5_adjacent_degree5_no_mixed_bd.md)、新 checker 及 artifacts 保存本輪證據。
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_bd.md)、新 checker 及 artifacts 保存本輪證據。
 180 份原接合接上 780 份幾何，得到 312 份必要支援，全部 source K5 排除；
 108 個原 IDs 無相容支援。288 份在兩個 pair 各有見證，另各 12 份只能由
 其中一個 pair 的本規則排除。八份沒有原 spoke-route 見證，必須保留另一

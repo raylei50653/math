@@ -8,7 +8,7 @@
 
 - 新增[拓撲 checker](../../scripts/c5_two_vertex_join_topology.py)、
   [companion artifact](../../artifacts/c5_two_vertex_overlap/reference_topology.json)
-  及[報告](../c5_two_vertex_join_topology.md)。只讀取既有 `reference`
+  及[報告](../archive/reports/c5/two-vertex/c5_two_vertex_join_topology.md)。只讀取既有 `reference`
   的同一八點十邊圖；舊接合與點對 artifacts 未重寫。
 - 四條原路徑的全部 36 組端點環序中，六份為球面嵌入。各指定四種
   外面，得到 24 份具名配置：內部互斥 8、B⊊A 4、A⊊B 4、真正重疊 8。
@@ -55,5 +55,5 @@ linter warnings。沒有新增或修改 Lean 檔案，未跑 axiom audit。
 主例固定圖的抽象平面性、原 A／B disk 外框及區域側別已完成。
 下一個窄題是既有 `private_interiors`：R127 `(0,2)` 接 R167 `(1,3)`，
 保留十五點三十五邊與七個原私有內點，判定兩原框可行性；見
-[導覽](../c5_two_vertex_overlap_guide.md)。一般接合政策、多步充分性、
+[導覽](../archive/guides/c5_two_vertex_overlap_guide.md)。一般接合政策、多步充分性、
 任意大小目錄完備性及 `K∞=K≤5` 保留。

@@ -4,7 +4,7 @@
 已存證書、報告、研究紀錄與 README／HANDOFF／STATUS／degree-5 導讀。
 各輪「未提交」文字保留當時語境；提交與遠端狀態以即時 Git 為準。
 
-最新結論與停止點見 [單接點未用色守恆](../c5_single_spoke_root_conservation.md)
+最新結論與停止點見 [單接點未用色守恆](../archive/reports/c5/single-spoke/c5_single_spoke_root_conservation.md)
 及 [HANDOFF](../HANDOFF.md)：114 筆具名配置中 66 筆兩列已證，
 18 筆只證 p₁、30 筆只證 p₂，尚餘 48 個查詢。未擴大研究範圍。
 

@@ -1,6 +1,6 @@
 # 2026-09-27：單接點未用色守恆掃過 114 筆
 
-研究報告：[root 守恆全表掃描](../c5_single_spoke_root_sweep.md)。
+研究報告：[root 守恆全表掃描](../archive/reports/c5/single-spoke/c5_single_spoke_root_sweep.md)。
 接續 [root 守恆](2026-09-27-single-spoke-root-conservation.md) 的下一步；未 commit／push。
 
 將「單接點分量、d≠a、d 不在 q、p 的支援色中 ⇒ d∉F_C(p)」套用到原 114 筆

@@ -7,7 +7,7 @@
 
 ## 成果與精確停止點
 
-[權威入口](../c5_c4_triangle_core.md)與[原報告](../../audits/2026-10-14-c4-triangle-core-b66f592/REPORT.md)
+[權威入口](../archive/reports/c5/structure/c5_c4_triangle_core.md)與[原報告](../../audits/2026-10-14-c4-triangle-core-b66f592/REPORT.md)
 保留 no4ct 全域最小來源、原圖接線與 rotation、全部空 fibres 及共同色名。
 一般來源經指定同色點識別，化約為四連通 T 的固定三角指定 b 出口，或
 四連通 T0 的兩個指定三角面能否在同一份完整染色中使用不同色集合。

@@ -7,9 +7,9 @@ HANDOFF／STATUS／Kempe 導覽及 Git 狀態，確認這是 933／941 固定
 
 ## 成果與證據邊界
 
-[t=1 合成報告](../c5_excess_two_single_spoke_complete.md)列出全部七個
+[t=1 合成報告](../archive/reports/c5/excess/other/c5_excess_two_single_spoke_complete.md)列出全部七個
 原接點分拆，均作整型來源排除。核心共同工具是
-[短支援兩／三 hubs](../c5_short_support_singleton.md)：原 degree-4
+[短支援兩／三 hubs](../archive/reports/c5/structure/c5_short_support_singleton.md)：原 degree-4
 分量不能只有單條框邊支援，否則原外部路徑與 Gallai leaf block
 給 K₅。每份原分量因而至少耗兩段，三份以上原分量均不可能。
 

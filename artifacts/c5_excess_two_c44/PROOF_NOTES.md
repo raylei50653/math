@@ -4,7 +4,7 @@
 for the first small counterexample. The task's statistics, saved graph certificate,
 brute-force comparison and validation are recorded in [REPORT](REPORT.md).
 The current research stopping point remains in the
-[Kempe guide](../../docs/c5_kempe_guide.md#3-停止點與保留缺口).
+[Kempe guide](../../docs/archive/guides/c5_kempe_guide.md#3-停止點與保留缺口).
 
 ## 1. Definitions and sources
 
@@ -12,7 +12,7 @@ The source graph has a fixed ordered induced boundary cycle
 `B=(0,1,2,3,4)`. A proper boundary row is interpreted in one shared literal
 four-colour frame. Its acceptance means that it extends to a proper colouring of
 the entire graph. The ten-row order and the singleton-position map are those of
-[ES §1](../../docs/c5_excess_two_finite_search.md#1-完整前提與計數範圍).
+[ES §1](../../docs/archive/reports/c5/excess/other/c5_excess_two_finite_search.md#1-完整前提與計數範圍).
 All boundary edges are retained in every core.
 
 For a source rejection row `q`, a **q-core** is a subgraph containing `B` that
@@ -21,8 +21,8 @@ among these subgraphs, after ignoring isolated interior vertices. This is
 subgraph minimality, so edges as well as interior vertices may be deleted; it
 does not mean a vertex-induced subgraph or a minimum-cardinality obstruction.
 The sources are
-[independent-support capacity §1](../../docs/c5_independent_support_capacity.md#1-兩種-minimality-與來源的基本結構)
-and [q-core shield §1](../../docs/c5_qcore_shield_budget.md#1-原定義依賴與證據層).
+[independent-support capacity §1](../../docs/archive/reports/c5/structure/c5_independent_support_capacity.md#1-兩種-minimality-與來源的基本結構)
+and [q-core shield §1](../../docs/archive/reports/c5/shared-results/c5_qcore_shield_budget.md#1-原定義依賴與證據層).
 The latter explicitly states the equivalent test: `M` rejects `q` and every
 nonboundary edge deletion `M-e` accepts `q`. Indeed, any proper edge subgraph is
 contained in some `M-e`, and accepting colourings survive subsequent deletion.
@@ -32,8 +32,8 @@ Every minimal core inherits the source's accepted T4 rows, while its complete
 NA and AD have two **original named roots**, `5,6`, of source degree five;
 they are respectively nonadjacent and adjacent. D6 has the single original
 named root `5`, of source degree six. These labels are fixed by
-[ES §1](../../docs/c5_excess_two_finite_search.md#1-完整前提與計數範圍)
-and [ER §1](../../docs/c5_excess_two_independent_search.md#1-問題群作用與獨立性界線).
+[ES §1](../../docs/archive/reports/c5/excess/other/c5_excess_two_finite_search.md#1-完整前提與計數範圍)
+and [ER §1](../../docs/archive/reports/c5/excess/other/c5_excess_two_independent_search.md#1-問題群作用與獨立性界線).
 The **core root degree pair** for NA/AD is
 `(deg_M(5),deg_M(6))`, measured in the core and including all retained boundary
 attachments and interior edges. A missing root is recorded as absent, not as
@@ -81,7 +81,7 @@ so the original disk and Σ-critical conditions are checked on this same
 named graph. Its ER representation differs from the ES representation of
 the orbit: ER uses its own refinement adjacency code, whereas ES minimizes
 the complete edge list. This distinction is stated in
-[ER §3](../../docs/c5_excess_two_independent_search.md#3-σcriticalitycanonical-與小域控制).
+[ER §3](../../docs/archive/reports/c5/excess/other/c5_excess_two_independent_search.md#3-σcriticalitycanonical-與小域控制).
 One must transport the graph and row together when switching representatives.
 
 Take row index `0`, the literal row `q=01012`, whose singleton is position `4`.
@@ -154,7 +154,7 @@ so it cannot be a D5 image of `933`, which rejects four. Its three rejected
 positions form one cyclic arc, whereas the rejected positions of `941`
 have two cyclic components; this invariant excludes a D5 image of `941`.
 The target assumption is essential to the existing mixed-core series. For
-example, [mixed omission §1](../../docs/c5_excess_two_mixed_omission.md#1-同一原來源與省略圖)
+example, [mixed omission §1](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_omission.md#1-同一原來源與省略圖)
 explicitly assumes complete `Σ=933/941`, so it does not imply that `G-7`
 accepts every row in the present graph.
 

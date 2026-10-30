@@ -14,8 +14,8 @@ spoke＋unary 的未提交程式、報告與產物登錄。先核對 HANDOFF、S
 commit／push。沒有使用 Graphify 或子代理；現有文件已足以說明依賴。
 本地 tracking ref 不是遠端即時核對，發布狀態仍以 Git 為準。
 
-成果見[專題報告](../c5_excess_two_three_spoke_unary.md)，目前停止點見
-[Kempe 導覽](../c5_kempe_guide.md)。
+成果見[專題報告](../archive/reports/c5/excess/other/c5_excess_two_three_spoke_unary.md)，目前停止點見
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)。
 
 ## 新進展與界線
 

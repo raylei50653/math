@@ -4,15 +4,15 @@
 `4dd11f422c6fa49265a412085116b088786d0344`。
 原A/B兩audit保持封存bytes，當輪未共享更新／未commit的欄位保持原語境。
 新階段的進展、重播及Git發布界線見[publication report](../../audits/2026-10-11-single-deficit-publication/REPORT.md)。
-本頁只保存整理紀錄，下一步由[degree-5導讀](../c5_degree5_guide.md)及
-[Kempe導讀](../c5_kempe_guide.md#3-停止點與保留缺口)維護。
+本頁只保存整理紀錄，下一步由[degree-5導讀](../archive/guides/c5_degree5_guide.md)及
+[Kempe導讀](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)維護。
 
 ## 本輪範圍與停止點
 
 A指定前提的二連通單缺額定理已完成紙面查證，無須補minimality／T4／lists全緊；
 960色指派及758minor控制是有限校準，無界量詞依外部正式定理與原圖branch sets。
 B適用性仍須actual X=M、M原degree與H_M二連通；三項subset排除與p–q鏈缩減
-接回[N45§2.11](../c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)。
+接回[N45§2.11](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)。
 完整OPEN身份新增無條件關閉0，精確來源控制not triggered，無新Lean。
 
 BR-SD-1a只保存指定無旁支共用r雙環的D-palette screening與

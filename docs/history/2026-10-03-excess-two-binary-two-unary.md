@@ -4,8 +4,8 @@
 未要求 commit／push，本輪亦未執行。先核對 HANDOFF、STATUS、Kempe
 導覽與工作樹，重播兩 unary 證書後，接續其明列的 binary 省略分支。
 
-成果見 [專題報告](../c5_excess_two_binary_two_unary.md)，目前接手入口見
-[Kempe 導覽](../c5_kempe_guide.md)。研究線及進行中狀態未改，依文件治理
+成果見 [專題報告](../archive/reports/c5/excess/other/c5_excess_two_binary_two_unary.md)，目前接手入口見
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)。研究線及進行中狀態未改，依文件治理
 保留 HANDOFF 薄索引；更新 README、STATUS、導覽與前序的後續關係。
 
 ## 結果與證據

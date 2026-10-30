@@ -1,6 +1,6 @@
 # 2026-09-24：q-preserving 反射與下一相鄰 orbit
 
-本輪接手時工作樹乾淨。成果見 [專題報告](../c5_two_spoke_reflection.md)，
+本輪接手時工作樹乾淨。成果見 [專題報告](../archive/reports/c5/structure/c5_two_spoke_reflection.md)，
 優先序見 [HANDOFF](../HANDOFF.md)。研究階段未 commit／push；後續依使用者
 要求將 Lean、checker、artifact、證明與 README／HANDOFF／STATUS 整包提交發布。
 提交識別與遠端同步以 Git 為準。

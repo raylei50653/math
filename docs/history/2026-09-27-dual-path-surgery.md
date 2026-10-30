@@ -1,6 +1,6 @@
 # 2026-09-27：同染色 dual 路徑有序重接
 
-報告見 [共同路徑與 record 110](../c5_dual_path_surgery.md)。接續當時已有、
+報告見 [共同路徑與 record 110](../archive/reports/c5/structure/c5_dual_path_surgery.md)。接續當時已有、
 尚未提交的 edge-pair 座標工作，保留其檔案及 HANDOFF／STATUS 變更。
 
 本輪完成任意大小 dual 雙色路徑的一步更新：保留共同 ordered cut ports，

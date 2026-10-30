@@ -7,7 +7,7 @@
 
 ## 結果與同源界線
 
-[報告](../c5_adjacent_degree5_no_mixed_t2_t1_bridge.md)、
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t1_bridge.md)、
 [checker](../../scripts/c5_adjacent_degree5_no_mixed_t2_t1_bridge.py)、
 [JSON](../../artifacts/c5_adjacent_degree5_no_mixed_t2_t1_bridge/observations.json) 與
 [逐筆表](../../artifacts/c5_adjacent_degree5_no_mixed_t2_t1_bridge/support_table.md)

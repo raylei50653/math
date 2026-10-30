@@ -472,4 +472,4 @@
 | 95 | (148, 59) | 2 | 0 |
 
 完整 schemas、rotations、原路徑見證與 target joins 見 [JSON](observations.json)。
-任意大小覆蓋及信任界線見 [報告](../../docs/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)。
+任意大小覆蓋及信任界線見 [報告](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t0_pairs.md)。

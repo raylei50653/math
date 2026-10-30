@@ -7,7 +7,7 @@
 
 ## 成果與界線
 
-[新報告](../c5_adjacent_degree5_singleton_middle_arc.md) 證在明列 disk、T4、
+[新報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_singleton_middle_arc.md) 證在明列 disk、T4、
 minimal q-core 與完整 degree 前提下，唯一 mixed singleton x 接 {b1,b2}
 必接受 p₁=01021、p₂=01212。q=01012 固定，以新長弧 (2,3,4,0,1)
 重算原 supports；沒有旋轉支援卻忘記 q 色框。
@@ -38,7 +38,7 @@ minimal q-core 與完整 degree 前提下，唯一 mixed singleton x 接 {b1,b2}
 實現性；新 artifact 另存，前輪 source／artifact 保持原內容。
 
 在出口的雙缺失來源與刪邊繼承前提下，新增 12 分離給 Σ(M)=Ω∖{q}，
-故 [條件式出口](../c5_single_sided_exit.md) 第七類擴為 01／12／23。
+故 [條件式出口](../archive/reports/c5/structure/c5_single_sided_exit.md) 第七類擴為 01／12／23。
 一般 T4 來源本輪只證指定雙列，未另分類完整 Σ。
 
 ## 實際驗證

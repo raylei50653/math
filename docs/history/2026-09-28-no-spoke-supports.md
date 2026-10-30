@@ -6,7 +6,7 @@
 
 ## 結果與證據
 
-[新報告](../c5_no_spoke_supports.md) 從 72 份必要禁色覆蓋推進：
+[新報告](../archive/reports/c5/structure/c5_no_spoke_supports.md) 從 72 份必要禁色覆蓋推進：
 
 1. 任意大小的 annulus／Jordan 論證保留原分量、五個原接點與全部實際
    boundary 附件，給跨度總和≤5 的環狀區塊序；沒有添加 spoke。

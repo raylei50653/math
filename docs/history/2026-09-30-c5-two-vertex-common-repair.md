@@ -3,8 +3,8 @@
 接手基準 `6f8b3c3`，工作樹乾淨。依使用者選定方向，將六例 transport
 audit 的共同公式抽成 witness／覆蓋前提明確的 lemma，四個 P=J 案例
 保留為退化支。未搜尋新 class pair，未修改 Lean，未 commit／push。
-現況由[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)維護；
-完整前提與證明見[專題報告](../c5_two_vertex_common_repair.md)。
+現況由[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)維護；
+完整前提與證明見[專題報告](../archive/reports/c5/two-vertex/c5_two_vertex_common_repair.md)。
 
 ## 成果與證據
 

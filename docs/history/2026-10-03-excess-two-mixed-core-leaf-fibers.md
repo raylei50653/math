@@ -4,8 +4,8 @@
 HANDOFF、STATUS、即時 Git、單 spoke 原附件報告、非相鄰 two-spoke
 分離及相關記憶，使用 math-research-handoff-publish。保留前序未提交
 bundle；未用 Graphify／sub-agents，未 commit／push。
-成果見 [專題報告](../c5_excess_two_mixed_core_leaf_fibers.md)，目前停止點
-由 [Kempe 導覽](../c5_kempe_guide.md)維護。
+成果見 [專題報告](../archive/reports/c5/excess/other/c5_excess_two_mixed_core_leaf_fibers.md)，目前停止點
+由 [Kempe 導覽](../archive/guides/c5_kempe_guide.md)維護。
 
 ## 新結論與證據界線
 

@@ -10,9 +10,9 @@
 
 ## 保存內容
 
-- [專題報告](../c5_two_vertex_overlap.md)保存使用者指定的「兩個 C₅
+- [專題報告](../archive/reports/c5/two-vertex/c5_two_vertex_overlap.md)保存使用者指定的「兩個 C₅
   各取兩點識別」、接合前提、完整八點語義、單側投影公式與拓撲界線。
-- [導覽](../c5_two_vertex_overlap_guide.md)維護停止點及一次精確接合的
+- [導覽](../archive/guides/c5_two_vertex_overlap_guide.md)維護停止點及一次精確接合的
   下一步；HANDOFF 新增此研究線，既有 weak-deletion 標記保留。
 - [Checker](../../scripts/c5_two_vertex_overlap.py)及
   [artifact](../../artifacts/c5_two_vertex_overlap/pair_interfaces.json)保存

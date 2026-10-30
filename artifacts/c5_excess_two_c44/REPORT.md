@@ -9,7 +9,7 @@ does not refute the more restrictive statement with that additional hypothesis.
 No source satisfying the target complete-Sigma hypothesis occurs in this finite
 input domain, so that restrictive statement has no actual antecedent control here.
 
-The [Kempe guide stopping point](../../docs/c5_kempe_guide.md#3-停止點與保留缺口)
+The [Kempe guide stopping point](../../docs/archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)
 is unchanged. This report and one STATUS index line are the only documentation
 integration changes; historical certificates are unchanged. No push or merge.
 
@@ -17,10 +17,10 @@ integration changes; historical certificates are unchanged. No push or merge.
 
 | Term | Exact definition used | Definition source |
 | --- | --- | --- |
-| Boundary and Sigma | Ordered induced cycle B=(0,1,2,3,4), retaining its five edges. Sigma is the accepting subset of the ten proper rows in the established REPS order, modulo one shared S4 colour permutation. A row is rejected exactly when no full proper four-colouring extends that literal row. | [ES section 1](../../docs/c5_excess_two_finite_search.md#1-完整前提與計數範圍), [ER section 1](../../docs/c5_excess_two_independent_search.md#1-問題群作用與獨立性界線) |
-| q-core | A subgraph M of the source G retaining B and its five frame edges and rejecting the same fixed literal row q. Sigma(M) can be strictly larger than Sigma(G). | [Support-capacity section 1](../../docs/c5_independent_support_capacity.md#1-兩種-minimality-與來源的基本結構) |
-| Minimal core | Inclusion-minimal among those subgraphs, permitting edge and private-vertex deletions and ignoring isolated private vertices. Equivalently, M rejects q and every nonframe edge deletion M-e accepts q. This is not minimum cardinality or vertex-induced minimality. | [q-core shield section 1](../../docs/c5_qcore_shield_budget.md#1-原定義依賴與證據層), [E4C section 2](../c5_excess_two_e4c/REPORT.md#2-實算摘要) |
-| Original roots | NA and AD have source roots 5,6 of full degree five, respectively nonadjacent and adjacent. D6 has the single source root 5 of full degree six. Every other source private vertex has full degree four. | [ES section 1](../../docs/c5_excess_two_finite_search.md#1-完整前提與計數範圍) |
+| Boundary and Sigma | Ordered induced cycle B=(0,1,2,3,4), retaining its five edges. Sigma is the accepting subset of the ten proper rows in the established REPS order, modulo one shared S4 colour permutation. A row is rejected exactly when no full proper four-colouring extends that literal row. | [ES section 1](../../docs/archive/reports/c5/excess/other/c5_excess_two_finite_search.md#1-完整前提與計數範圍), [ER section 1](../../docs/archive/reports/c5/excess/other/c5_excess_two_independent_search.md#1-問題群作用與獨立性界線) |
+| q-core | A subgraph M of the source G retaining B and its five frame edges and rejecting the same fixed literal row q. Sigma(M) can be strictly larger than Sigma(G). | [Support-capacity section 1](../../docs/archive/reports/c5/structure/c5_independent_support_capacity.md#1-兩種-minimality-與來源的基本結構) |
+| Minimal core | Inclusion-minimal among those subgraphs, permitting edge and private-vertex deletions and ignoring isolated private vertices. Equivalently, M rejects q and every nonframe edge deletion M-e accepts q. This is not minimum cardinality or vertex-induced minimality. | [q-core shield section 1](../../docs/archive/reports/c5/shared-results/c5_qcore_shield_budget.md#1-原定義依賴與證據層), [E4C section 2](../c5_excess_two_e4c/REPORT.md#2-實算摘要) |
+| Original roots | NA and AD have source roots 5,6 of full degree five, respectively nonadjacent and adjacent. D6 has the single source root 5 of full degree six. Every other source private vertex has full degree four. | [ES section 1](../../docs/archive/reports/c5/excess/other/c5_excess_two_finite_search.md#1-完整前提與計數範圍) |
 | Root degree type in a core | Ordered degrees (deg_M(5),deg_M(6)) for NA/AD, counting all retained spokes and interior edges. Record an omitted root as null/absent. Aggregate (4,5) with (5,4) under root swap, retaining the ordered values in each row record. D6 has one entry. | [E3 nonadjacent section 5](../c5_excess_two_e3/nonadjacent_notes.md#5-每列-q-core-的完整原省略分類), [E4C D5-D7/D13-D14](../c5_excess_two_e4c/REPORT.md#3-全部引理中間步驟的前提與結論) |
 | Core size | Save both the number of effective private vertices and total vertex size, which is five larger. | Effective-interior convention in the two definition sources above |
 | Mixed component | A component of the core's effective interior after removing the original named roots, with a retained contact to both roots. Roots retain their source identity even when their core degrees fall to four. There is no two-root mixed component for D6. | Original-piece ownership in [E3 nonadjacent section 2](../c5_excess_two_e3/nonadjacent_notes.md#2-原分量刪-root-與例外全部可直接移植) and [E4C D5/D6](../c5_excess_two_e4c/REPORT.md#3-全部引理中間步驟的前提與結論) |
@@ -35,8 +35,8 @@ used in the JSON.
 
 ## 2. Inputs and finite coverage
 
-Read the specified [ES](../../docs/c5_excess_two_finite_search.md),
-[ER](../../docs/c5_excess_two_independent_search.md),
+Read the specified [ES](../../docs/archive/reports/c5/excess/other/c5_excess_two_finite_search.md),
+[ER](../../docs/archive/reports/c5/excess/other/c5_excess_two_independent_search.md),
 [E4C](../c5_excess_two_e4c/REPORT.md), and
 [E4 N1-22-44](../c5_excess_two_e4/REPORT.md#3-n1-主攻22-mixed-加-44-core-整類排除).
 Use all 54 saved ER q-orbit chunks in its 21 layers, k=3,...,9. The smaller
@@ -83,7 +83,7 @@ for every rejected row, with memoization by the entire named edge set.
    four until stable. Every colouring of the remainder extends greedily in
    reverse removal order. Thus peeling preserves each row's acceptance, and
    cannot remove any minimal core contained in the current graph. This uses
-   the elementary [W1 degree argument](../../docs/c5_qcore_shield_budget.md#22-非空連通與-degree-四下界), not a topology oracle.
+   the elementary [W1 degree argument](../../docs/archive/reports/c5/shared-results/c5_qcore_shield_budget.md#22-非空連通與-degree-四下界), not a topology oracle.
 2. **One-pass criticality.** Fixed-q assignments with zero monochromatic
    nonframe edges colour the parent; assignments with exactly one such edge e
    colour precisely the deletion G-e. Enumerate all assignments with at most
@@ -91,7 +91,7 @@ for every rejected row, with memoization by the entire named edge set.
    Accepted rows persist under deletion; combining the passes for the original
    rejected rows therefore supplies every complete Sigma(G-e) at once, without
    separate edge-by-edge colouring searches. The elementary equivalence is
-   the one audited in [ES section 2.3](../../docs/c5_excess_two_finite_search.md#23-一次-criticality-的精確性).
+   the one audited in [ES section 2.3](../../docs/archive/reports/c5/excess/other/c5_excess_two_finite_search.md#23-一次-criticality-的精確性).
 3. **Correct monotone direction.** Edge deletion enlarges the extension set.
    If a child accepts q, every subgraph of it accepts q and its entire downward
    branch is discarded. A rejecting child is retained. No inference from a

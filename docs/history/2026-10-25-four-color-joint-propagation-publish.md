@@ -1,16 +1,16 @@
 # 九點共同限制與自動傳播整理發布
 
-2026-10-25。入口：[四色實驗導覽](../four_color_guide.md)。
+2026-10-25。入口：[四色實驗導覽](../tools/four_color_guide.md)。
 發布前基準 `f823b2fb4ea1f8d62bc8b25e852d1f9cabbdf187`；fetch後本地與`origin/main`相同。
 本次依使用者要求，整理並發布本對話連續三輪的程式、文件、完整來源及有限證據。
 
 ## 結果與邊界
 
-- [部分輻條搜尋](../four_color_partial_spokes.md)補上指定九點固定色的零消元判否；
+- [部分輻條搜尋](../tools/solver/four_color_partial_spokes.md)補上指定九點固定色的零消元判否；
   四十例模式為17可解／13無解／10工作超限，超限保留為未判定，歷史模式仍為預設。
-- [共同限制登記](../four_color_joint_constraints.md)證明九個互異原頂點及21條必要原邊
+- [共同限制登記](../tools/solver/four_color_joint_constraints.md)證明九個互異原頂點及21條必要原邊
   迫`u=v=h`，本例為`0=6=9`；保存全部64份三元fibres，含60空列及四列各12份完整延伸。
-- [自動找型與主傳播](../four_color_joint_propagation.md)將同一必要三元表接入主因子網路；
+- [自動找型與主傳播](../tools/solver/four_color_joint_propagation.md)將同一必要三元表接入主因子網路；
   未固定主例在事件1推出等色表，首次消元在事件24，仍未選共同字面色。
   30份條件、兩模式60份完整執行，3,168份原邊解記錄全保留；原主例48／48份解保留。
 - 異色固定及額外`0–6`原邊例皆由4次消元提前到0次；額外原邊例另使用完整接口交集。

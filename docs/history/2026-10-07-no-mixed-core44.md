@@ -13,7 +13,7 @@ Kempe導覽的未提交修訂，以及前輪整合紀錄、scratch副本；均�
 368,859份UNSAT proofs與6,008份明示subdivisions，全部通過。
 上游全部分類／拓撲枚舉未重新稽核；E5的新證明要求仍保留。
 
-[U1新報告](../c5_excess_two_no_mixed_core44.md) 排除相鄰no-mixed的兩-root44身份：
+[U1新報告](../archive/reports/c5/excess/other/c5_excess_two_no_mixed_core44.md) 排除相鄰no-mixed的兩-root44身份：
 
 | 原spokes身份 | 本輪排除 |
 | --- | --- |
@@ -33,7 +33,7 @@ Kempe導覽的未提交修訂，以及前輪整合紀錄、scratch副本；均�
 完整Σ前提的44殘留由四族縮為三族：U2相鄰m=2、U3非相鄰N1 incidence11／12／21、
 U4非相鄰N2五族。no-mixed其他core型、單-root刪除例外、三列推廣與ε≥3未完成。
 更新專題報告後續提示、Kempe導覽與STATUS；HANDOFF與README沿用入口。
-當前窄提議由[Kempe導覽](../c5_kempe_guide.md#3-停止點與保留缺口)維護。
+當前窄提議由[Kempe導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)維護。
 
 ## 實際驗證
 

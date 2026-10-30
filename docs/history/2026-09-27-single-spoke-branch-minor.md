@@ -3,7 +3,7 @@
 2026-09-27。接手時工作樹已有 cores、completion、bridge-path、branch-palettes
 四輪未提交成果，本輪保留。未 commit／push。
 
-[新報告](../c5_single_spoke_branch_minor.md) 證明指定 (01,04,1234)、禁 3
+[新報告](../archive/reports/c5/single-spoke/c5_single_spoke_branch_minor.md) 證明指定 (01,04,1234)、禁 3
 者二接點分支接受 p₁。主路徑任一奇數位置 bridge 的兩端，連同各自的
 全部旁支，都碰到 b2 及同一 b1／b4；其餘 cycle 路徑與其他兩分量的
 實際 z–b1、z–b4 路徑完成同圖 K5 minor。所有 b3 旁支均可保留在

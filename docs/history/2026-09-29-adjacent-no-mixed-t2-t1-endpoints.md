@@ -4,7 +4,7 @@
 繼續推進 record 22，未要求 commit／push；保留進場時 record 14 的 checker、
 artifacts 與文件變更。本輪新增獨立 endpoints 層，不覆寫前層證書。
 目前優先序見 [HANDOFF](../HANDOFF.md)，完整證明見
-[原雙端點報告](../c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md)。
+[原雙端點報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t1_endpoints.md)。
 
 ## 本輪結論
 

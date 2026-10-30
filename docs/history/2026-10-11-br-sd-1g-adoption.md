@@ -8,7 +8,7 @@
 ## 1. 採納範圍與不變界線
 
 **BR-SD-1g scoped exclusion（雙原旁支／J2 屏障）正式 ACCEPTED，限
-[N45 canonical §2.11](../c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)
+[N45 canonical §2.11](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)
 列出的完整八項來源合同。** 依據是
 [精確量詞提案](../../audits/2026-10-11-br-sd-1g-adopt-6eae3597/CANONICAL_DELTA_PROPOSAL.md)、
 [獨立 proof review](../../audits/2026-10-11-br-sd-1g-adopt-6eae3597/REVIEW.md)、

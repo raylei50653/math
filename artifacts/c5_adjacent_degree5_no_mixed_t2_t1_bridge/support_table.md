@@ -568,4 +568,4 @@ A 表示已證延拓，? 表示候選未決；沒有新增來源排除或 disk �
 | 559 | [145, 129] | 34 / 2 / 4 / 14 / 12 / 4 | A/A | transport_and_capacity_bound | complete_relation_transport |
 
 完整原記錄、schemas、rotations、146 組失敗候選及每筆反證見 [JSON](observations.json)。
-紙面證明、record 14 及 record 22 停止點見 [研究報告](../../docs/c5_adjacent_degree5_no_mixed_t2_t1_bridge.md)。
+紙面證明、record 14 及 record 22 停止點見 [研究報告](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2_t1_bridge.md)。

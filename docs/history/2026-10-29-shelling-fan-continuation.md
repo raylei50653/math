@@ -1,6 +1,6 @@
 # 2026-10-29：剝殼 fan、完整關係與換色提升續推
 
-權威來源為[剝殼報告](../four_color_shelling_verification.md#fan-與-middle-tree-的縮窄)；
+權威來源為[剝殼報告](../archive/reports/planar-sources/four_color_shelling_verification.md#fan-與-middle-tree-的縮窄)；
 本頁只保存當輪驗證範圍，不另維護主題裁決。
 
 後續[整理發布紀錄](2026-10-29-continuations-publication.md)保存本次獨立重播、

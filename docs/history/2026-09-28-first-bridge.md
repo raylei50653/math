@@ -1,7 +1,7 @@
 # 2026-09-28：singleton-source 首橋相容性、record 87 與 18→2 查詢
 
 接手 HEAD 為 `b770d21`，工作樹乾淨。依使用者訊息先獨立核對首橋引理，
-再建立 [報告](../c5_single_spoke_first_bridge.md)、
+再建立 [報告](../archive/reports/c5/single-spoke/c5_single_spoke_first_bridge.md)、
 [checker](../../scripts/c5_single_spoke_first_bridge.py)、新 JSON／套表並重播。
 研究階段未 commit／push；其後使用者明確要求發布，核對範圍見末節。
 本輪未改 Lean source、舊 checkers 或舊 artifacts。

@@ -4,9 +4,9 @@
 D₁₃ 的未提交模組與文件，並非乾淨工作樹。保留全部既有變更，繼續使用者
 指定的「具名來源 J/P 與 W／C 實例」，未開 sub-agent、未 commit／push。
 
-成果報告見 [NamedRepair](../lean_named_repair.md)，
-目前停止點由 [Lean 導覽](../lean_guide.md)及
-[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)維護。
+成果報告見 [NamedRepair](../verification/lean_named_repair.md)，
+目前停止點由 [Lean 導覽](../verification/lean_guide.md)及
+[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)維護。
 
 ## 成果與證據
 

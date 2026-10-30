@@ -76,4 +76,4 @@ python3 -B tools/docgraph --include 'docs/**/*.md' check
 python3 -B tools/check_generated_artifacts.py
 ```
 
-目前接續入口由[state導覽](../c5_state_guide.md#3-停止點與保留缺口)維護。
+目前接續入口由[state導覽](../archive/guides/c5_state_guide.md#3-停止點與保留缺口)維護。

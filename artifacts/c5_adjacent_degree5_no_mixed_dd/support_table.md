@@ -506,4 +506,4 @@
 | 1400 | 6, 15, 19, 23, 51, 143, 155 | source_K5_excluded |
 | 1401 | 7, 11, 175, 187 | source_K5_excluded |
 
-[完整證書](observations.json)；[前提與證明](../../docs/c5_adjacent_degree5_no_mixed_dd.md)。
+[完整證書](observations.json)；[前提與證明](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_dd.md)。

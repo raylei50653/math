@@ -41,4 +41,4 @@ Reviewed-unchanged：HANDOFF研究線、State導覽、一般來源與Lean狀態�
 Remaining OPEN：其餘24型、一般W7、原必要計數錐、C7多內點、type I／更長路、
 一般J1／J2、嚴格較小bad與主命題；沒有新Lean定理。
 Propagation stop：L2；父W7沒有closure，無法上推一般主命題。
-下一個窄義務由[Kempe導覽](../c5_kempe_guide.md)維護。
+下一個窄義務由[Kempe導覽](../archive/guides/c5_kempe_guide.md)維護。

@@ -12,9 +12,9 @@ commit／push。接手時既有 README、STATUS、state guide、未追蹤圖譜�
 
 | 精確結果 | Canonical Source + Evidence | 未涵蓋範圍 |
 |---|---|---|
-| 一般disk-C₅的K≤14=K≤5 | [K14入口](../c5_k14_sphere.md)、[隔離完整報告](../../audits/2026-10-13-k14-sphere-acd2b1b/REPORT.md) | K≤15及一般K∞ |
-| 原h=3八項契約必k≥16 | [同一入口](../c5_k14_sphere.md)、[原面配對／無葉點證明](../../audits/2026-10-13-k14-sphere-acd2b1b/independent/C8_PROOF.md) | 八項無界來源、h≥4 |
-| 任取合法W5私人ρ≥5 | [圈秩四合併入口](../c5_w5_private_rank4.md)、[新essential證據](../../audits/2026-10-13-w5-rank4-essential-acd2b1b/REPORT.md)、[既有contractible證據](../../audits/2026-10-13-w5-rank4-contractible-acd2b1b/REPORT.md) | ρ≥5來源、一般小代表／R³縮減 |
+| 一般disk-C₅的K≤14=K≤5 | [K14入口](../archive/reports/c5/structure/c5_k14_sphere.md)、[隔離完整報告](../../audits/2026-10-13-k14-sphere-acd2b1b/REPORT.md) | K≤15及一般K∞ |
+| 原h=3八項契約必k≥16 | [同一入口](../archive/reports/c5/structure/c5_k14_sphere.md)、[原面配對／無葉點證明](../../audits/2026-10-13-k14-sphere-acd2b1b/independent/C8_PROOF.md) | 八項無界來源、h≥4 |
+| 任取合法W5私人ρ≥5 | [圈秩四合併入口](../archive/reports/c5/structure/c5_w5_private_rank4.md)、[新essential證據](../../audits/2026-10-13-w5-rank4-essential-acd2b1b/REPORT.md)、[既有contractible證據](../../audits/2026-10-13-w5-rank4-contractible-acd2b1b/REPORT.md) | ρ≥5來源、一般小代表／R³縮減 |
 
 每項沿用全部目錄外來源的全域最小內點／最大邊數契約，不能替換為N2、
 edge-critical或固定mask極小來源。E-ARC2的一組組合性收窄只保存為

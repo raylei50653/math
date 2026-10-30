@@ -18,13 +18,13 @@ contacts、全部實際 attachments／supports、ownership、嵌入環序
 
 | 本批報告 | 最新完成範圍與後續關係 |
 | --- | --- |
-| [兩原 unary](../c5_excess_two_mixed_core_four_spoke_singles.md) | (3,1)、mixed-(1,1) 加兩單接點 unary：共同支援六跨度來源排除，含 root 交換 |
-| [一原 binary](../c5_excess_two_mixed_core_four_spoke_binary.md) | 完整 leaf 反像保留 116／256 必要域；後由原 star 及同列端點 hub 全排，當輪證書保留 |
-| [原 star](../c5_excess_two_mixed_core_four_spoke_star.md) | 116／256 縮為 32／64，276 個 K₃,₃ subdivisions；殘留已由同列 hub 涵蓋 |
-| [同列端點 hub](../c5_excess_two_mixed_core_four_spoke_hubs.md) | 原 32／64 全排，完成 mixed-(1,1) 加一原 binary；192 queries、10,752 完整 U schemas、2,208 tightness 控制 |
-| [原三接點](../c5_excess_two_mixed_core_four_spoke_ternary.md) | mixed-(1,2) 加一 unary 全排；20／60 框架、50 完整 degree 圖、1,500 joints／24,000 fibres |
-| [原四接點](../c5_excess_two_mixed_core_four_spoke_quaternary.md) | mixed-(1,3) 無 unary 全排；20／60 框架、80 完整 degree 圖、2,400 全圖貪婪 witnesses；結合前三子型完成 (3,1) 全 incidence 分拆 |
-| [共用原 pair](../c5_excess_two_mixed_core_four_spoke_equal_pair.md) | (2,2)、mixed-(1,1) 加各側一 unary：同 pair 的 7／9 份全排，仍有 40／66 unequal-pair 必要框架；36 完整 degree 圖、2,520 joints／40,320 fibres |
+| [兩原 unary](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_singles.md) | (3,1)、mixed-(1,1) 加兩單接點 unary：共同支援六跨度來源排除，含 root 交換 |
+| [一原 binary](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_binary.md) | 完整 leaf 反像保留 116／256 必要域；後由原 star 及同列端點 hub 全排，當輪證書保留 |
+| [原 star](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_star.md) | 116／256 縮為 32／64，276 個 K₃,₃ subdivisions；殘留已由同列 hub 涵蓋 |
+| [同列端點 hub](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_hubs.md) | 原 32／64 全排，完成 mixed-(1,1) 加一原 binary；192 queries、10,752 完整 U schemas、2,208 tightness 控制 |
+| [原三接點](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_ternary.md) | mixed-(1,2) 加一 unary 全排；20／60 框架、50 完整 degree 圖、1,500 joints／24,000 fibres |
+| [原四接點](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_quaternary.md) | mixed-(1,3) 無 unary 全排；20／60 框架、80 完整 degree 圖、2,400 全圖貪婪 witnesses；結合前三子型完成 (3,1) 全 incidence 分拆 |
+| [共用原 pair](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_equal_pair.md) | (2,2)、mixed-(1,1) 加各側一 unary：同 pair 的 7／9 份全排，仍有 40／66 unequal-pair 必要框架；36 完整 degree 圖、2,520 joints／40,320 fibres |
 
 **共同下界仍是 ε≥2，ε≥3 未證。** 任意大小來源排除由各報告
 紙面證明及明列外部引理承擔；Python 保存完整固定域 relations、

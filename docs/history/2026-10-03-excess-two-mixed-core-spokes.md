@@ -5,8 +5,8 @@
 STATUS、Kempe 導覽、Git 與相關記憶，再選定現行唯一 mixed、
 N=G−zw 全收分支的 proper core 原省略身份問題。
 使用 math-research-handoff-publish 流程，未用 Graphify 或 sub-agents，
-未 commit／push。成果見 [專題報告](../c5_excess_two_mixed_core_spokes.md)，
-當前停止點由 [Kempe 導覽](../c5_kempe_guide.md) 維護。
+未 commit／push。成果見 [專題報告](../archive/reports/c5/excess/other/c5_excess_two_mixed_core_spokes.md)，
+當前停止點由 [Kempe 導覽](../archive/guides/c5_kempe_guide.md) 維護。
 
 ## 任意大小進展及精確結論
 

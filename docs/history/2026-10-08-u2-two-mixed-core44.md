@@ -3,8 +3,8 @@
 基準 `main @ 2971d46d715d213f25f534958bdab499d2573b69`。
 使用者要求「推進U2」。先讀HANDOFF、STATUS、Kempe導覽與C44″當輪身份，
 沿原mixed11省略缺口推進；未啟動逐來源key或更大k枚舉。
-證明及限制見 [U2報告](../c5_excess_two_adjacent_two_mixed_core44.md)，
-目前停止點由 [Kempe導覽](../c5_kempe_guide.md#3-停止點與保留缺口)維護。
+證明及限制見 [U2報告](../archive/reports/c5/excess/other/c5_excess_two_adjacent_two_mixed_core44.md)，
+目前停止點由 [Kempe導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)維護。
 
 ## 成果與精確界線
 

@@ -15,7 +15,7 @@
   [H3G](../../audits/2026-10-10-n45-h3g/REPORT.md)獨立核回 X 自己的 minimality、
   原 s 無 spoke、實際 C/U contacts=(2,3)、同列完整禁色覆蓋與原 X 的 K₅。
   逐前提接回 BASE no-spoke exterior §§1–3、5，不使用省略 e。
-- 精確 [canonical §1 S 身份](../c5_excess_two_nonadjacent_unit_core45.md)的兩原 mixed 都 short：
+- 精確 [canonical §1 S 身份](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)的兩原 mixed 都 short：
   S05／S06 給唯一原 unary及兩真框邊支援。LOW 兩支、HIGH 三支互斥窮盡，
   各自滿足完整 source 契約、X=G−e=M 自己 β-minimal及所有原資料，故這個限定身份已全排。
 

@@ -6,7 +6,7 @@ HEAD 與本地 origin/main 相同；本輪未讀取遠端 SHA，也未 commit／
 
 ## 本輪成果與證據界線
 
-[新報告](../c5_single_spoke_residual_locality.md) 證同一原路徑塊上若 boundary
+[新報告](../archive/reports/c5/single-spoke/c5_single_spoke_residual_locality.md) 證同一原路徑塊上若 boundary
 列相同，旁支 palette 唯一性與 root 實際附件給相同局部 residual E。
 record 90 的 q／p₂ 只差 b2；首橋 β=0 兩端的 E 不同，故兩塊必接 b2，
 配必接 b3 給原圖 K5。β=2 沿用 b3、b4；交換分量涵蓋 record 282。
@@ -21,7 +21,7 @@ record 90 的 q／p₂ 只差 b2；首橋 β=0 兩端的 E 不同，故兩塊必
 定理原文已重讀；finite skeletons 不是 degree/list 來源或可實現性證書。
 未新增 Lean theorem。
 
-[出口接合](../c5_single_sided_exit.md) 新增 single-spoke (2,1,1)／(2,2)
+[出口接合](../archive/reports/c5/structure/c5_single_sided_exit.md) 新增 single-spoke (2,1,1)／(2,2)
 核心類；完整 Σ=Ω\{q} 使用來源雙缺失及刪邊繼承，不只靠 T4 acceptance。
 失敗側唯一 degree-5 現剩 t=0 六型、t=1 的 (3,1)／(4)。
 

@@ -7,7 +7,7 @@
 HEAD=`0e3812712b68f57927df86f30a07bb8074e090f9`；原工作樹多輪未提交
 成果全部保持。本輪未 commit／push。
 
-[B₄報告](../c5_excess_two_mixed_core_four_spoke_mixed22_shared4.md)、
+[B₄報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed22_shared4.md)、
 [checker](../../scripts/c5_excess_two_mixed_core_four_spoke_mixed22_shared4.py)、
 [helper](../../scripts/c5_excess_two_four_spoke_mixed22_shared4_controls.py)、
 [observations](../../artifacts/c5_excess_two_mixed_core_four_spoke_mixed22_shared4/observations.json)

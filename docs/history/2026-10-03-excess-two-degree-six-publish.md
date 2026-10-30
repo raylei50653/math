@@ -15,8 +15,8 @@ ownership、同一嵌入的環序及同一字面四色框保持。
 
 | 分支 | 本批完成範圍 |
 | --- | --- |
-| [t=3 全三分拆](../c5_excess_two_three_spoke_complete.md) | (2,1) 十份具名 span-two 配置／8,250 同源 S₄ profiles 無目標；(3) 的 100 容量比較及 (1,1,1) 六跨度矛盾完成整型 |
-| [t=0 全十一分拆](../c5_excess_two_no_spoke_complete.md) | 多分量的真實外部路徑恢復跨度與容量論證；(6) 飽和兩原 K₄ 給 K₅；(4,2) 的 200 查詢先留 7,200 弱 profiles，再由 160 同源原 binary 路徑框弧 K₅ 證書全排 |
+| [t=3 全三分拆](../archive/reports/c5/excess/other/c5_excess_two_three_spoke_complete.md) | (2,1) 十份具名 span-two 配置／8,250 同源 S₄ profiles 無目標；(3) 的 100 容量比較及 (1,1,1) 六跨度矛盾完成整型 |
+| [t=0 全十一分拆](../archive/reports/c5/excess/other/c5_excess_two_no_spoke_complete.md) | 多分量的真實外部路徑恢復跨度與容量論證；(6) 飽和兩原 K₄ 給 K₅；(4,2) 的 200 查詢先留 7,200 弱 profiles，再由 160 同源原 binary 路徑框弧 K₅ 證書全排 |
 
 連同前序 t=1、2 及 T4 的 t≤3，唯一 degree-6 的 ε=2 分支全部排除。
 **同一來源若 ε=2，只剩兩個完整 degree-5 roots。** 共同下界維持
@@ -73,7 +73,7 @@ handoff；DocGraph 通過 62 documents、213 relations、5 families，
 
 ## 停止點與接手摘要
 
-目前停止點由 [Kempe 導覽](../c5_kempe_guide.md#3-停止點與保留缺口)
+目前停止點由 [Kempe 導覽](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口)
 維護；本次發布沒有推進雙 degree-5 的新研究。
 
 ```text

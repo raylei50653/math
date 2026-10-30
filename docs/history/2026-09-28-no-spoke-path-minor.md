@@ -7,7 +7,7 @@ no-spoke-supports 的產物與文件修改。本輪沒有 commit／push。
 
 ## 結果
 
-[新報告](../c5_no_spoke_path_minor.md) 接續 record 599／p₂，得到更強結論：
+[新報告](../archive/reports/c5/structure/c5_no_spoke_path_minor.md) 接續 record 599／p₂，得到更強結論：
 q 下 C₁ 的 pair {0,2} 與實際支援 04 迫使所有原路徑塊都碰 b0、b4。
 C₀ 到 b1 的原路徑將 z 接到補框弧，構成來源 K5；因此 record 599
 直接排除，不另計 p₂ 延拓。任意大小、原五接點與完整分量身份均保留。

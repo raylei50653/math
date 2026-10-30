@@ -5,7 +5,7 @@ Git 基準 `f29b899`，工作目錄為專案根目錄。
 保留進場已有的 t2-t1 bridge／endpoints、t2-t0 singles 未提交 bundle。
 新增 [checker](../../scripts/c5_exchange_geometry_scope.py)、
 [JSON／生成表](../../artifacts/c5_exchange_geometry_scope/scope_table.md) 與
-[報告](../c5_exchange_geometry_scope.md)，接入 root 預算、README、STATUS、HANDOFF。
+[報告](../archive/reports/c5/structure/c5_exchange_geometry_scope.md)，接入 root 預算、README、STATUS、HANDOFF。
 未修改既有 scripts／artifacts，未 commit／push。
 
 ## 結果與界線

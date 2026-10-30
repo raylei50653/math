@@ -12,7 +12,7 @@
 roots 的 spokes 分拆 (3,1)。選定原 mixed incidence-(1,1)，
 一-spoke 側有兩份原單接點 unary U、V，含 root 交換。
 
-[新報告](../c5_excess_two_mixed_core_four_spoke_singles.md)完成此整份
+[新報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_singles.md)完成此整份
 選定子型的任意大小來源排除。原 H−b 恰為 K=C∪{a}、U、V：
 K 保留原三-spoke root a，支援跨度至少二；原 bu、bv 的整圖
 Σ-critical witnesses 各迫 unary 有非空禁色見證。若 unary 支援

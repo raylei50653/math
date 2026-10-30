@@ -5,8 +5,8 @@
 README／STATUS／導覽／前層報告變更，全部保留並在其上推進。
 本輪未 fetch、未開 sub-agents、未 commit／push。
 
-專題證明見[無增長報告](../c5_no_mixed_no_growth.md)，目前停止點由
-[weak-deletion 導覽](../c5_weak_deletion_guide.md)維護。
+專題證明見[無增長報告](../archive/reports/c5/shared-results/c5_no_mixed_no_growth.md)，目前停止點由
+[weak-deletion 導覽](../archive/guides/c5_weak_deletion_guide.md)維護。
 
 ## 本輪結果
 

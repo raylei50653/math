@@ -6,7 +6,7 @@
 
 ## 結果與證據
 
-[報告](../c5_adjacent_degree5_shared_singleton.md) 接續雙 root 完整介面，
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_shared_singleton.md) 接續雙 root 完整介面，
 固定同一原來源、共鄰點身份、全部接點及共同色框。
 
 1. 單 root 分量的禁色為完整 tuple 關係的精確投影；mixed 分量每欄／每行

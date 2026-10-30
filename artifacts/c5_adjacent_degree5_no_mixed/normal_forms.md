@@ -156,4 +156,4 @@ z、w 必使用同一個 c；同接點數的各欄仍是不同具名原分量。
 | 148 | 0 | [3, 4] | [2] | [[3]] | [[3]] | 保留，未證實現 |
 
 完整接合數及證書見 [JSON](observations.json)；一般證明與界線見
-[研究報告](../../docs/c5_adjacent_degree5_no_mixed.md)。
+[研究報告](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed.md)。

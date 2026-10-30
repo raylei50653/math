@@ -47,7 +47,7 @@ P 始終是原 H−{z,w} 的完整連通分量；保存所有原 contacts、shar
 所以 nonadjacent no-mixed 分支直接不可能。這一步沒有用任何指定拒絕列。
 
 令 S_z 是 B、z、全部 unary-at-z 原分量與其全部原邊、附件；S_w 對称。
-[刪 root 報告 §2–3](../../docs/c5_excess_two_root_deletions.md)的證明不讀精確 mask：
+[刪 root 報告 §2–3](../../docs/archive/reports/c5/excess/other/c5_excess_two_root_deletions.md)的證明不讀精確 mask：
 
 - 對同一字面 boundary row，刪 w 後所有原 w-contact 留有 degree slack，
   mixed 與 unary-at-w 各能填入，保留原 z 色；故 `Σ(G−w)=Σ(S_z)`。
@@ -73,7 +73,7 @@ minimal core 皆含兩 roots。
 - `m≥2`：刪任一 mixed 仍有另一份原 mixed 給 z–w 路徑；
   unary 也接回 root，所以所有原 pieces 都 one-sided。
 
-[盾弧引理 1、2、定理 A](../../docs/c5_unary_shield_budget.md)的證明只需本題已推導的
+[盾弧引理 1、2、定理 A](../../docs/archive/reports/c5/shared-results/c5_unary_shield_budget.md)的證明只需本題已推導的
 H 連通、全框被碰、完整 degree 四及原 critical 拒絕見證。
 故每份 unary 的原盾弧至少兩邊，總數至多兩份。
 兩份時長度 `(2,2)` 或 `(2,3)`，所有 root spokes、所有 mixed actual support
@@ -103,7 +103,7 @@ H 連通、全框被碰、完整 degree 四及原 critical 拒絕見證。
 每袋在 N(P) 上只見自己 root 的色，两色不同。
 
 若 ψ 不可延拓 P，由完整 degree 四的 lists 及拒絕 tightness，
-[hub 原則 B](../../docs/c5_unary_shield_budget.md#4-定理-bhub-原則)给 K₅ minor，矛盾。
+[hub 原則 B](../../docs/archive/reports/c5/shared-results/c5_unary_shield_budget.md#4-定理-bhub-原則)给 K₅ minor，矛盾。
 因此全部 ψ 都延拓。若 e 是 P 的任一 contact 邊，G−e 新接受的染色限制到
 G−P，再填回完整 P，会让 G 接受同一列，與 criticality 矛盾。
 

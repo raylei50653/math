@@ -8,7 +8,7 @@ cwd=`/home/ray/developer/ai/math`；保留前輪未提交成果及同工作區
 
 ## 完成範圍與原身份
 
-[新報告](../c5_excess_two_mixed_core_four_spoke_mixed12.md)、
+[新報告](../archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed12.md)、
 [固定 checker](../../scripts/c5_excess_two_mixed_core_four_spoke_mixed12.py)、
 [artifact](../../artifacts/c5_excess_two_mixed_core_four_spoke_mixed12/observations.json)
 在固定完整 Σ=933／941／整圖 D₅ 像、Σ edge-minimal induced-C₅ disk、

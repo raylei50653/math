@@ -5,14 +5,14 @@ lemma、來源充分條件、密封補片、私有路徑、輪環、偶長雙扇
 七份 checker／證書／專題報告／研究紀錄，連同導覽與 STATUS 更新。
 本次推送亦包含既有本地提交 `6f8b3c3` 的六例 transport audit；
 發布完成狀態以即時 Git 為準。目前入口及停止點見
-[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)。
+[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)。
 
 ## 範圍與證據界線
 
-[共同 lemma](../c5_two_vertex_common_repair.md)以完整 witness／覆蓋
-條件刻畫全部極小 repairs；[來源定理](../c5_two_vertex_repair_sources.md)
+[共同 lemma](../archive/reports/c5/two-vertex/c5_two_vertex_common_repair.md)以完整 witness／覆蓋
+條件刻畫全部極小 repairs；[來源定理](../archive/reports/c5/two-vertex/c5_two_vertex_repair_sources.md)
 及後續指定替換族保留完整 J/P、十五組 repairs 與 r*=4。
-最前沿為[D₁₃ 完整四接點替換](../c5_two_vertex_repair_caps.md)；
+最前沿為[D₁₃ 完整四接點替換](../archive/reports/c5/two-vertex/c5_two_vertex_repair_caps.md)；
 加入該規則後的其他骨架、全部代表必要分類與改寫完備性仍未完成。
 一般大小結論由各報告紙面證明負責，Python 證書只核對明列有限控制；
 沒有新增 Lean theorem。一般出口與 `K∞=K≤5` 仍未證。

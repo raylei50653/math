@@ -6,7 +6,7 @@
 
 ## 成果與停止點
 
-- 新增[報告](../c5_two_vertex_mixed_frame.md)、
+- 新增[報告](../archive/reports/c5/two-vertex/c5_two_vertex_mixed_frame.md)、
   [checker](../../scripts/c5_two_vertex_mixed_frame.py)與
   [完整證書](../../artifacts/c5_two_vertex_overlap/mixed_frame_relation.json)。
   沿用反向原十五點三十五邊圖與面 19，不改原圖或既有 artifacts。
@@ -24,7 +24,7 @@
   無條件替換；一般政策仍 unknown，未 Lean 化。
 - 全部十組點對投影的合取仍接受 240 份，誤收上述 48 份，作為
   高階條件不可省略的負控制。下一個窄入口是同見證另一五邊形面
-  `(a0,b4,b0,a2,a1)` 的完整 relation，詳見[導覽](../c5_two_vertex_overlap_guide.md)。
+  `(a0,b4,b0,a2,a1)` 的完整 relation，詳見[導覽](../archive/guides/c5_two_vertex_overlap_guide.md)。
 
 新 artifact 為 128,303 bytes，未達大型檔門檻。更新反向報告後續狀態、
 兩點／state 導覽與 STATUS 報告／歷史直接索引。README 的入口與

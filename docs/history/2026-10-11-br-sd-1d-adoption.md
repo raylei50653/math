@@ -1,7 +1,7 @@
 # 2026-10-11：BR-SD-1d 單一原旁支 canonical 採納與 residual 對帳
 
 本輪為 adoption／reconciliation：將已獨立紙面審查、封存及發布的 BR-SD-1c 精確排除
-接入 [N45 canonical§2.11](../c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)。
+接入 [N45 canonical§2.11](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md#211-單缺額查證與無-u-二連通子域)。
 沒有重證1c、擴大數學結論、新枚舉或 Lean theorem；1a／1b 與原 audit 全部唯讀。
 起始 actual HEAD、origin/main、`git ls-remote origin refs/heads/main` 均為發布基準
 `46cd053b2b320d380eb0ee9326bf126551dd8a41`，工作樹乾淨，沒有後續 HEAD 成果須避讓。
@@ -150,7 +150,7 @@ MAPPING§3／§5及原抽象反例，先核 actual pair support、degree、未�
 臂的 bridge 身份、正長 q 末端無額外 C 邊等哪一條必要前提首先失效；
 再問其他 private witness 或合法 palette routing 能否恢復矛盾。
 完整原 G／Σ與 witnesses、M 自身同 β minimal、原 contacts／附件／ownership／rotation／完整 lifts
-仍是依賴入口，不能只提供抽象 palette。當前入口由 [degree-5 guide§4](../c5_degree5_guide.md#4-r31-保留缺口與重播入口) 維護。
+仍是依賴入口，不能只提供抽象 palette。當前入口由 [degree-5 guide§4](../archive/guides/c5_degree5_guide.md#4-r31-保留缺口與重播入口) 維護。
 本輪只記錄此義務，沒有開始新證明、指定新來源或枚舉。
 
 ## 採納文件發布階段

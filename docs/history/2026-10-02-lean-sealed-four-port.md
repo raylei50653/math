@@ -5,9 +5,9 @@
 導覽及最新 CommonRepair 形式化報告後，選定 D₁₃ 的局部圖關係與
 密封替換，未重啟 class-pair 或來源骨架枚舉。
 
-專題報告見 [Lean 四接點與密封替換](../lean_sealed_four_port.md)，
-下一接口及圖論停止點由 [Lean 導覽](../lean_guide.md)與
-[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)維護。
+專題報告見 [Lean 四接點與密封替換](../verification/lean_sealed_four_port.md)，
+下一接口及圖論停止點由 [Lean 導覽](../verification/lean_guide.md)與
+[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)維護。
 
 ## 成果與證據界線
 

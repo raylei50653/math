@@ -13,20 +13,20 @@ embeddings, complete relations, matching target images and witnesses. Neither
 is a construction of a source whose complete Sigma is 933/941. The arbitrary-size
 target-source absence statement remains unproved. Generalization stops here,
 as requested. Current research navigation remains in the
-[Kempe guide section 3](../../docs/c5_kempe_guide.md#3-停止點與保留缺口);
+[Kempe guide section 3](../../docs/archive/guides/c5_kempe_guide.md#3-停止點與保留缺口);
 the guide is intentionally unchanged for the integrator.
 
 ## 1. Definitions and their sources
 
 | Term | Exact convention | Source |
 | --- | --- | --- |
-| Frame | The named induced cycle B=(0,1,2,3,4), retaining edges 01,12,23,34,04. Private vertices lie inside this disk boundary. | [ES section 1](../../docs/c5_excess_two_finite_search.md#1-完整前提與計數範圍) |
-| Sigma | The subset of ten proper boundary rows that extend to a proper four-colouring of the entire literal graph. One common S4 permutation acts on the whole colouring; frame vertices and attachments remain named. | [ES section 1](../../docs/c5_excess_two_finite_search.md#1-完整前提與計數範圍), [REPS definition](../../scripts/c5_kempe_screen.py) |
-| q-core and minimality | A subgraph containing B and rejecting the same literal row q. Inclusion-minimality permits nonframe-edge and private-vertex deletion, ignoring isolated private vertices. Equivalently, rejection persists in M but every M-e accepts q for each nonframe edge e. | [C44 definitions](../c5_excess_two_c44/REPORT.md#1-definitions-fixed-before-implementation), [C44 proof notes](../c5_excess_two_c44/PROOF_NOTES.md#1-definitions-and-sources), [q-core definitions](../../docs/c5_qcore_shield_budget.md#1-原定義依賴與證據層) |
+| Frame | The named induced cycle B=(0,1,2,3,4), retaining edges 01,12,23,34,04. Private vertices lie inside this disk boundary. | [ES section 1](../../docs/archive/reports/c5/excess/other/c5_excess_two_finite_search.md#1-完整前提與計數範圍) |
+| Sigma | The subset of ten proper boundary rows that extend to a proper four-colouring of the entire literal graph. One common S4 permutation acts on the whole colouring; frame vertices and attachments remain named. | [ES section 1](../../docs/archive/reports/c5/excess/other/c5_excess_two_finite_search.md#1-完整前提與計數範圍), [REPS definition](../../scripts/c5_kempe_screen.py) |
+| q-core and minimality | A subgraph containing B and rejecting the same literal row q. Inclusion-minimality permits nonframe-edge and private-vertex deletion, ignoring isolated private vertices. Equivalently, rejection persists in M but every M-e accepts q for each nonframe edge e. | [C44 definitions](../c5_excess_two_c44/REPORT.md#1-definitions-fixed-before-implementation), [C44 proof notes](../c5_excess_two_c44/PROOF_NOTES.md#1-definitions-and-sources), [q-core definitions](../../docs/archive/reports/c5/shared-results/c5_qcore_shield_budget.md#1-原定義依賴與證據層) |
 | Original roots in part (a) | Labels 5,6 from the original AD/NA source, even after their degrees fall to four in the core. AD/NA describes the source's root adjacency. A core of an AD source can have lost edge 56. | [C44 definitions](../c5_excess_two_c44/REPORT.md#1-definitions-fixed-before-implementation) |
 | Core size and mixed | Private size is the number of effective vertices outside B; total size is five larger. A mixed component is a component after removing B and the two named original roots, retaining contacts to both roots. | [C44 proof notes](../c5_excess_two_c44/PROOF_NOTES.md#1-definitions-and-sources) |
 | Duplicate core in part (a) | Exactly the same sorted full literal edge set, including frame and private labels. No private relabelling or graph-isomorphism quotient is imposed. All occurrences retain their source and literal rejection row. | This task's requested duplicate convention |
-| D5 and compatibility | All maps g(i)=(s*i+r) mod 5, s in {1,-1}, r in {0,...,4}, act simultaneously on the frame. A core is compatible if at least one transported full 933/941 row set is contained in Sigma(M). | [C44′ proposal](../../docs/c5_kempe_guide.md#3-停止點與保留缺口), this task's inclusion definition |
+| D5 and compatibility | All maps g(i)=(s*i+r) mod 5, s in {1,-1}, r in {0,...,4}, act simultaneously on the frame. A core is compatible if at least one transported full 933/941 row set is contained in Sigma(M). | [C44′ proposal](../../docs/archive/guides/c5_kempe_guide.md#3-停止點與保留缺口), this task's inclusion definition |
 
 The REPS row order is fixed as follows; a mask has bit i precisely when row i
 is accepted. All implementation copies are cross-checked against this order.

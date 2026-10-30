@@ -4,8 +4,8 @@
 工作樹乾淨，本地 HEAD 與 origin/main 相同。本輪未 fetch 遠端，
 未開 sub-agents，未 commit／push。
 
-專題證明及數字見[局部篩選報告](../c5_no_mixed_local_screen.md)；
-目前停止點由[weak-deletion 導覽](../c5_weak_deletion_guide.md)維護。
+專題證明及數字見[局部篩選報告](../archive/reports/c5/weak-deletion/c5_no_mixed_local_screen.md)；
+目前停止點由[weak-deletion 導覽](../archive/guides/c5_weak_deletion_guide.md)維護。
 接手先確認 no-mixed 全十五類及逐 root 界已完成，沒有沿用舊記憶中
 B–B 尚待處理的優先序，也沒有重新枚舉來源圖。
 

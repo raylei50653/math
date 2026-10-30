@@ -7,7 +7,7 @@
 
 ## 結果與推理界線
 
-[新報告](../c5_single_spoke_four.md) 完成 single-spoke (4) 任意大小排除。
+[新報告](../archive/reports/c5/single-spoke/c5_single_spoke_four.md) 完成 single-spoke (4) 任意大小排除。
 先在同一原 C 的三份拒絕 lists 上，由 block incidence matrix 欄獨立性
 證三組差異共用 τ。τ=+1 的 palette 必為 A\{d}，故正 block 不能是
 bridge；四葉共同樹遂只剩兩個正 triangle 與一條負 bridge，沒有外臂，
@@ -19,7 +19,7 @@ bridge；四葉共同樹遂只剩兩個正 triangle 與一條負 bridge，沒有
 B 加 tethers 五組給 K5。此 minor 只作非平面性反證，不保持完整 Σ。
 
 結論不需 T4、第二列拒絕或來源大小界。t=1 的 (3,1)、(4) 無來源，
-(2,1,1)、(2,2) 接受出口所需指定 p，故 [條件式出口](../c5_single_sided_exit.md)
+(2,1,1)、(2,2) 接受出口所需指定 p，故 [條件式出口](../archive/reports/c5/structure/c5_single_sided_exit.md)
 第五類已刪去分拆限制。失敗側唯一 degree-5 現只剩 t=0 六型。
 既有 (2,2) 的 278 筆來源排除、102 筆／51 型雙列及 (2,1,1) 的 114 筆
 雙列結果不變；未重寫前序 artifacts。

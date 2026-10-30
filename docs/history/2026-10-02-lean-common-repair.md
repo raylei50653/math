@@ -2,8 +2,8 @@
 
 日期：2026-10-02。使用者要求補形式化證明，本輪沿最新共同 repair 研究，
 補齊抽象集合判準與分類推論，不擴大來源枚舉。專題報告見
-[Lean 共同 repair 判準](../lean_common_repair.md)，目前入口見
-[Lean 導覽](../lean_guide.md)及[兩點重疊導覽](../c5_two_vertex_overlap_guide.md)。
+[Lean 共同 repair 判準](../verification/lean_common_repair.md)，目前入口見
+[Lean 導覽](../verification/lean_guide.md)及[兩點重疊導覽](../archive/guides/c5_two_vertex_overlap_guide.md)。
 
 ## 成果及界線
 

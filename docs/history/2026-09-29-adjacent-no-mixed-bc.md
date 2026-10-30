@@ -1,7 +1,7 @@
 # 2026-09-29：B–C 飽和原路徑與雙列分離
 
 本輪依使用者「推進 B–C class」接續既有未提交 B–E／E–E 成果，未 commit／push。
-[報告](../c5_adjacent_degree5_no_mixed_bc.md) 與新 checker／artifacts 保存完整證據。
+[報告](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_bc.md) 與新 checker／artifacts 保存完整證據。
 180 個原 IDs 接上 780 份幾何，608 必要支援中 584 source K5 排除；
 保留 24 份的 48 個 target 全由搬運／容量上界接受，0 未決。
 新增正反向 360 個原 IDs，累計九類／2,036 份覆蓋、六類／1,512 份保留。

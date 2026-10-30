@@ -42,9 +42,9 @@
 目前四列均為 `(0,1,1,1)`；接同一個 R 後為 91、603，四列分別為
 `(0,1,1,1)`、`(1,1,1,1)`。
 
-這批資料與 [state／grammar 導覽](../../c5_state_guide.md)、
-[完整 relation 語言](../../state_language.md)及
-[C₅ 組合圖譜](../../c5_combinatorial_atlas.md)相接。
+這批資料與 [state／grammar 導覽](../../archive/guides/c5_state_guide.md)、
+[完整 relation 語言](../../reference/interfaces/state_language.md)及
+[C₅ 組合圖譜](../../archive/reports/c5/structure/c5_combinatorial_atlas.md)相接。
 四列目標的原來源問題另見
 [較寬替換接口](../../../audits/2026-10-18-abstraction-bottleneck-9f1fe84/REPORT.md)；
 此處的文法族排除不替代該處所需的同一合法較小 disk、完整接合及來源證明。
@@ -83,4 +83,4 @@ P 改變目前外框的頂點身份，不能直接套用固定原 B 的保壞或
 一般 C₅ disk／指定剩餘 r6 來源是否有此文法中的行為代表，以及主命題
 `K∞=K≤5`，仍為 **OPEN**；本次沒有新增 Lean theorem 或文獻新穎性判定。
 若接續驗證此包，先補齊上述原始程式與規格，再核對操作語義、完整 fibres 及原測試；
-本研究線的當前停止點仍由 [state 導覽](../../c5_state_guide.md#3-停止點與保留缺口)維護。
+本研究線的當前停止點仍由 [state 導覽](../../archive/guides/c5_state_guide.md#3-停止點與保留缺口)維護。

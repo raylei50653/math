@@ -1,6 +1,6 @@
 # Bernhart 共同端點補證與 r₂ 來源研究紀錄
 
-2026-10-29。當前權威來源為 [RIP 補證及 r₂ 來源報告](../ck_bernhart_endpoint_ray_continuation.md)。
+2026-10-29。當前權威來源為 [RIP 補證及 r₂ 來源報告](../archive/reports/counting/ck_bernhart_endpoint_ray_continuation.md)。
 接續 [原 retained 紀錄](2026-10-29-bernhart-retained-parity.md)，未 commit／push。
 
 ## 分開驗收

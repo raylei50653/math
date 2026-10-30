@@ -2,8 +2,8 @@
 
 2026-09-29，起始 Git `0ab88ce`。使用者要求開三個 agent 分別驗證先前
 提出的三項假設；主 agent 審閱、補獨立 pair-domain 核對並整合本輪證據。
-成果及目前界線見[專題報告](../c5_no_mixed_hypothesis_audit.md)，研究線
-入口見[導覽](../c5_weak_deletion_guide.md)。
+成果及目前界線見[專題報告](../archive/reports/c5/weak-deletion/c5_no_mixed_hypothesis_audit.md)，研究線
+入口見[導覽](../archive/guides/c5_weak_deletion_guide.md)。
 
 ## 分工與結果
 

@@ -6,10 +6,10 @@
 
 ## 採納範圍
 
-- [W5 圈秩三 essential 排除](../c5_w5_private_rank3_essential.md)：完整最小來源
+- [W5 圈秩三 essential 排除](../archive/reports/c5/structure/c5_w5_private_rank3_essential.md)：完整最小來源
   若私人圖含分隔 B/U 的環，則圈秩至少四。任意大小完備化約的 1,283 模板
   全 Σ=1023；圈秩三只剩 contractible、7≤r≤11。一般圈秩下界仍為三。
-- [C₈ apex 度數](../c5_c8_apex_degree.md)：八項來源契約的 40 個具名 apex-H
+- [C₈ apex 度數](../archive/reports/c5/structure/c5_c8_apex_degree.md)：八項來源契約的 40 個具名 apex-H
   三度子域全排除，原 apex 度數皆至少六，且 h=3⇒k≥14。八項整體仍保留；
   一般 k≥13、h≥3、n₅≥9 不提高，K≤13=K≤5 未證。
 

@@ -1,6 +1,6 @@
 # 2026-09-24：S={b1,b2} 兩個 (2,1) 次序排除
 
-本輪結果見 [專題證明](../c5_two_spoke_middle_21.md)。接手時工作樹乾淨；
+本輪結果見 [專題證明](../archive/reports/c5/structure/c5_two_spoke_middle_21.md)。接手時工作樹乾淨；
 研究階段未 commit／push；後續依使用者要求將 checker、artifact、證明及
 README／HANDOFF／STATUS 整包提交發布。提交識別與遠端同步以 Git 為準。
 優先序見 [HANDOFF](../HANDOFF.md)。

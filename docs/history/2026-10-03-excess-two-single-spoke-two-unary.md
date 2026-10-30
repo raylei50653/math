@@ -4,8 +4,8 @@
 commit／push。先讀 HANDOFF、STATUS、Kempe 導覽及原四 unary 報告，
 接續指定的 t=1、(2,1,1,1) 兩原 unary 省略分支。
 
-成果見 [專題報告](../c5_excess_two_single_spoke_two_unary.md)，目前停止點見
-[Kempe 導覽](../c5_kempe_guide.md)。研究線與 tag 未變，依治理保留
+成果見 [專題報告](../archive/reports/c5/excess/other/c5_excess_two_single_spoke_two_unary.md)，目前停止點見
+[Kempe 導覽](../archive/guides/c5_kempe_guide.md)。研究線與 tag 未變，依治理保留
 HANDOFF 薄索引；更新 README、STATUS、導覽、綜述及前報後續連結。
 
 ## 結果與證據

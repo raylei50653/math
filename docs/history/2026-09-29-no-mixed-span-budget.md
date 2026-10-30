@@ -6,7 +6,7 @@ D–E、E–E 的 scripts／artifacts／報告／歷史未追蹤，六份既有�
 
 ## 本輪產出
 
-- [統整報告](../c5_no_mixed_span_budget.md)：source 側跨度下界
+- [統整報告](../archive/reports/c5/weak-deletion/c5_no_mixed_span_budget.md)：source 側跨度下界
   A/B/C/D/E=2/2/3/4/3，紙面必要式 m+s+a≤5 統一八類來源排除。
   推得至少一條 root-spoke、兩側無 source 重疊、至多一個飽和二禁色分量。
 - [Checker](../../scripts/c5_no_mixed_span_budget.py)與
@@ -63,7 +63,7 @@ git diff --check
 degree-5 全表、interfaces 初層、雙拒絕 atlas、R 系列、profiles／閉包、
 舊範圍遍歷的抽象路徑控制或 Lean axiom audit；沒有 Graphify 或 sub-agents。
 
-目前入口更新到 [weak-deletion 導覽](../c5_weak_deletion_guide.md)，
+目前入口更新到 [weak-deletion 導覽](../archive/guides/c5_weak_deletion_guide.md)，
 README 增加總覽閱讀入口，STATUS 增加專題及本紀錄直接索引。
 HANDOFF 的研究線及進行中標記未變，依文件治理保留其短入口。
 一般交換機制、較大／多 mixed、root 樹、一般／共同出口與 K∞=K≤5

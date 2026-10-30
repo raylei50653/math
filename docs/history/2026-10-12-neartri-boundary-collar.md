@@ -1,6 +1,6 @@
 # 近三角化完整外圈：本輪結果與交付範圍
 
-2026-10-12。[權威入口](../c5_neartri_boundary_collar.md)／
+2026-10-12。[權威入口](../archive/reports/c5/structure/c5_neartri_boundary_collar.md)／
 [隔離證據包](../../audits/2026-10-12-neartri-complete-relation-reductions-5d70a399/REPORT.md)。
 本輪未 commit／push。初始 BASE 為 `5d70a39940182ea37c9ca5d36d9ebb7f612160ad`；
 執行期間另一路提交 `bc7c0820e6b5e585869b8a59e04f52da0dad2d33` 的度數界與任務。

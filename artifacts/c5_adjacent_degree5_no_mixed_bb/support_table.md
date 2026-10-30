@@ -1137,4 +1137,4 @@
 | 235 | (132, 132) | 0 |
 
 逐候選拒絕原因、完整 schemas、六接點 rotations 與原 ID／SHA 見 [JSON](observations.json)。
-任意大小覆蓋及界線見 [研究報告](../../docs/c5_adjacent_degree5_no_mixed_bb.md)。
+任意大小覆蓋及界線見 [研究報告](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_bb.md)。

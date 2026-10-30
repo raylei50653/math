@@ -33,7 +33,7 @@ checker 與政策門檻不變。凍結依賴、失敗探索及既有負控制保
 Updated：Kempe／state 導覽及 STATUS 的對應索引、停止點；STATUS 頁首壓縮為當前摘要，
 發布紀錄移入歷史區。Reviewed-unchanged：README／HANDOFF 的研究入口、研究線與進行中標記。
 Propagation stop：L2；已完成者限於具名子案，兩條父研究線仍 OPEN，未改全域命題。
-目前研究接續以 [Kempe 導覽](../c5_kempe_guide.md)與 [state 導覽](../c5_state_guide.md)為準。
+目前研究接續以 [Kempe 導覽](../archive/guides/c5_kempe_guide.md)與 [state 導覽](../archive/guides/c5_state_guide.md)為準。
 
 ## 本次驗證
 

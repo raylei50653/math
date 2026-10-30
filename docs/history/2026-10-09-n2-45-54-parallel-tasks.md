@@ -4,7 +4,7 @@
 初次準備時尚未收到開工或結果；2026-10-09四份及SU-A／SU-J均已回報且限定scope驗收，
 S／U窄排除正式採納，見§3。[第二批](2026-10-09-n45-u-long-short-pair-tasks.md)只選U的long／short pair residual。
 數學停止點與本線下一步由
-[Kempe 導覽 §3](../c5_kempe_guide.md#3-停止點與保留缺口) 維護。
+[Kempe 導覽 §3](../archive/guides/c5_kempe_guide.md#3-停止點與保留缺口) 維護。
 這是指定缺口的派工紀錄，不建立全研究案例帳目，也不宣告猜想 E 完成。
 
 ## 1. 選線、基準與本次實查
@@ -12,7 +12,7 @@ S／U窄排除正式採納，見§3。[第二批](2026-10-09-n45-u-long-short-pa
 選擇 **非相鄰雙 degree-5 roots、恰兩份原 mixed（N2），拒絕列 core 為
 degree-(4,5)／(5,4)，恰省略一個原 side unit**。
 此入口由 [E4 原 relation 與省略身份](../../artifacts/c5_excess_two_e4/REPORT.md#6-完整原-relation-的參數化交付與-core-身份)
-及 [Phase B 分析](../c5_phase_b_common_lemmas.md) 指定。
+及 [Phase B 分析](../archive/reports/c5/shared-results/c5_phase_b_common_lemmas.md) 指定。
 可拆成兩種互斥的省略身份，另由完整 joint 工具與前提稽核支援。
 固定完整 Σ 下的兩-root44身份已有 U1–U4 排除，毋須重派。
 
@@ -38,9 +38,9 @@ degree-(4,5)／(5,4)，恰省略一個原 side unit**。
 [E3 nonadjacent notes](../../artifacts/c5_excess_two_e3/nonadjacent_notes.md)、
 [E4 REPORT](../../artifacts/c5_excess_two_e4/REPORT.md)、
 [CORE_CONSTRAINTS](../../artifacts/c5_excess_two_e4/CORE_CONSTRAINTS.md)、
-[U4](../c5_excess_two_nonadjacent_two_mixed_core44.md)、
+[U4](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_two_mixed_core44.md)、
 [E4C REPORT](../../artifacts/c5_excess_two_e4c/REPORT.md)、
-[Phase B](../c5_phase_b_common_lemmas.md)、
+[Phase B](../archive/reports/c5/shared-results/c5_phase_b_common_lemmas.md)、
 [原capacity checker](../../scripts/c5_phase_b_controls.py)。任務頭已指定讀BASE版本。
 
 ## 2. 共用任務頭
@@ -140,7 +140,7 @@ S-spoke/u2、U-whole/u2、U-whole/two-short窄子型正式排除，必要化約�
 SU-J7952指定整圖pins／690relations／2986piece lifts／102欄正常与seed17重播通過；
 兩份exactinventory、S/U/J原交付與432declared BASE reads對回87unique路徑bytes／mtime零漂移。
 紙面、finite、來源實現、Lean分層；完整目標仍0觸發，歷史FAIL保留。
-權威入口為[N45原unit省略45／54](../c5_excess_two_nonadjacent_unit_core45.md)；
+權威入口為[N45原unit省略45／54](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)；
 直接父E4與Phase B效益更新，父N2仍OPEN，傳播停L2。
 第二批只選唯一U＋long／short pair，见[三份可併行任務](2026-10-09-n45-u-long-short-pair-tasks.md)。
 LOW／HIGH／long、singleton short與原55／一般N2等仍OPEN；未commit／push。
@@ -173,7 +173,7 @@ Phase B §2.1／§2.2／§3.2；U4 §2只用來判別44專用前提。
 
 接續共用任務頭。只寫 `audits/2026-10-09-n45-u/`。
 讀E3 nonadjacent notes §5、E4 REPORT §4／§6、CORE_CONSTRAINTS §2、
-[原unary盾弧](../c5_unary_shield_budget.md)、Phase B §2.1／§3.2及U4 §2的下界依賴。
+[原unary盾弧](../archive/reports/c5/shared-results/c5_unary_shield_budget.md)、Phase B §2.1／§3.2及U4 §2的下界依賴。
 
 固定完整原unary U，唯一原root-contact為 `rx`；`X=G−V(U)=M` 是某拒絕列β的45／54 minimal core。
 U任意大小，每個U點在原G完整degree4；涵蓋root交換，兩mixed全保留。

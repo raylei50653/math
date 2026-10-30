@@ -7,7 +7,7 @@
 各自獨立裁紙面／原圖與完整關係，沒有新增充分前提或gap；
 [H1C](../../audits/2026-10-10-n45-h1c/REPORT.md)只接受artifact integrity。
 [監督接受紀錄](../../audits/2026-10-10-n45-high1-supervision/acceptance.json)逐字保十三項前提，
-[權威頁§2.5](../c5_excess_two_nonadjacent_unit_core45.md)保原G K₃,₃、U盾弧及同列未用D full lifts。
+[權威頁§2.5](../archive/reports/c5/excess/other/c5_excess_two_nonadjacent_unit_core45.md)保原G K₃,₃、U盾弧及同列未用D full lifts。
 任意大小paper依賴BASE與外部Gallai；toy／封存不承擔source排除，沒有HIGH1有限來源、trigger數或新Lean。
 只關HIGH1；HIGH2／HIGH3、long、原55、其他cores及一般N2／E仍OPEN。
 本輪只更新五份相连共享文件加本歷史紀錄，停止L2；無commit／push。

@@ -5,8 +5,8 @@
 歷史與 README／STATUS／導覽／前層報告變更，全部保留並接續。
 本輪未開 sub-agents、未 fetch、未 commit／push，未更新 Codex 記憶。
 
-專題證明見[增長完備性](../c5_no_mixed_growth_completion.md)，目前停止點
-由 [weak-deletion 導覽](../c5_weak_deletion_guide.md)維護。
+專題證明見[增長完備性](../archive/reports/c5/shared-results/c5_no_mixed_growth_completion.md)，目前停止點
+由 [weak-deletion 導覽](../archive/guides/c5_weak_deletion_guide.md)維護。
 
 ## 本輪結果與證據界線
 

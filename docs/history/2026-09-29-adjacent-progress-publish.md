@@ -9,13 +9,13 @@
 
 | 報告 | 結果與界線 |
 | --- | --- |
-| [共鄰端點 t_w=1、(1,1)](../c5_adjacent_degree5_mixed_edge_shared_t1_singles.md) | 原 72 份接成 32 份必要支援，64 個 target 全接受；不需 T4 |
-| [共鄰端點 t_w=0、(2,1)](../c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md) | 102 份的 204 個 target 全接受；另以原路徑 K5 排除 94、保留 8 |
-| [共鄰端點 t_w=0、(1,1,1)](../c5_adjacent_degree5_mixed_edge_shared_t0_singles.md) | 原 108 份皆由所需跨度至少 6>5 排除；0 target 查詢 |
-| [K2 同端點型](../c5_adjacent_degree5_mixed_edge_same_endpoint.md) | 原 240 份由 K5／跨度／原 v-star 排除 105／123／12；整型 disk 來源不存在 |
-| [K2 四 incidence 型](../c5_adjacent_degree5_mixed_edge_k4.md) | 原 K4 與實際外部路徑排除一般平面來源；完成唯一 mixed K2 全接線，出口第八類移除接線限制 |
-| [無 mixed 必要化約](../c5_adjacent_degree5_no_mixed.md) | 同色 singleton residual、逐邊 minimality、容量缺額加重疊恰一；平面每側剩四型，118 份側資料／3,548 份共同色框接合 |
-| [無 mixed 兩側 t=2,(2)](../c5_adjacent_degree5_no_mixed_t2.md) | 原 88 份中 42 份有相容支援，接成 322 份必要資料；206 份雙列已證，512／644 個 target 接受、132 個未決 |
+| [共鄰端點 t_w=1、(1,1)](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_shared_t1_singles.md) | 原 72 份接成 32 份必要支援，64 個 target 全接受；不需 T4 |
+| [共鄰端點 t_w=0、(2,1)](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_shared_t0_pair_single.md) | 102 份的 204 個 target 全接受；另以原路徑 K5 排除 94、保留 8 |
+| [共鄰端點 t_w=0、(1,1,1)](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_shared_t0_singles.md) | 原 108 份皆由所需跨度至少 6>5 排除；0 target 查詢 |
+| [K2 同端點型](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_same_endpoint.md) | 原 240 份由 K5／跨度／原 v-star 排除 105／123／12；整型 disk 來源不存在 |
+| [K2 四 incidence 型](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_mixed_edge_k4.md) | 原 K4 與實際外部路徑排除一般平面來源；完成唯一 mixed K2 全接線，出口第八類移除接線限制 |
+| [無 mixed 必要化約](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed.md) | 同色 singleton residual、逐邊 minimality、容量缺額加重疊恰一；平面每側剩四型，118 份側資料／3,548 份共同色框接合 |
+| [無 mixed 兩側 t=2,(2)](../archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_t2.md) | 原 88 份中 42 份有相容支援，接成 322 份必要資料；206 份雙列已證，512／644 個 target 接受、132 個未決 |
 
 必要支援、完整 relation schemas 與有限 minor 子圖仍不等於 disk 實現。
 任意大小論證為紙面證明；適用處沿用外部 degree-list 定理，Python 重播

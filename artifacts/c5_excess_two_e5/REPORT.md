@@ -378,27 +378,27 @@ tracked-file零改動及worktree head確認。所有scripts與交付文件初次
 ## 9. 紙面依據與證據層
 
 - [E2低ε飽和與非相鄰pair](../c5_excess_one_e2/REPORT.md#3-a-ε0-的完整飽和段落)、
-  [唯一degree5最小q接受兩鄰列](../../docs/c5_excess_one_subcovers.md#2-只用-t4-的-minimal-degree-5-相鄰列分離)。
-- [原proper-core incidence與retained mixed身份](../../docs/c5_excess_two_mixed_core_spokes.md#3-44-且保留-mixed原形比-contact-數更受限)、
-  [全四通用分類](../../docs/c5_k4_blocks.md#4-合成全-degree-4-的單缺失結論)。
-- [原spoke+unary](../../docs/c5_excess_two_mixed_core_spoke_unary.md)、
-  [只省略mixed](../../docs/c5_excess_two_mixed_omission.md)、
-  [原五-spoke](../../docs/c5_excess_two_mixed_core_leaf_fibers.md)。
-- [binary完整leaf反像](../../docs/c5_excess_two_mixed_core_four_spoke_binary.md)、
-  [star](../../docs/c5_excess_two_mixed_core_four_spoke_star.md)、
-  [端點hubs](../../docs/c5_excess_two_mixed_core_four_spoke_hubs.md)、
-  [ternary完整joint](../../docs/c5_excess_two_mixed_core_four_spoke_ternary.md)。
-- [single-spoke三接點任意大小定理](../../docs/c5_single_spoke_three_one.md)、
-  [two-spoke三接點原K₅與一般異色spokes適用](../../docs/c5_two_spoke_three_contacts.md#5-second-rows-scope-and-remaining-cases)。
-- [A](../../docs/c5_excess_two_mixed_core_four_spoke_mixed12.md)、
-  [A₂](../../docs/c5_excess_two_mixed_core_four_spoke_mixed12_01_12.md)、
-  [A₃](../../docs/c5_excess_two_mixed_core_four_spoke_mixed12_01_01.md)、
-  [A₄](../../docs/c5_excess_two_mixed_core_four_spoke_mixed12_04_04.md)。
-- [B tightness／owner編碼／共同faces](../../docs/c5_excess_two_mixed_core_four_spoke_mixed22.md)、
-  [B₂](../../docs/c5_excess_two_mixed_core_four_spoke_mixed22_short_face.md)、
-  [B₃](../../docs/c5_excess_two_mixed_core_four_spoke_mixed22_long_face.md)、
-  [B₄原cut parity](../../docs/c5_excess_two_mixed_core_four_spoke_mixed22_shared4.md)、
-  [三-hub引理](../../docs/c5_short_support_singleton.md#4-三-hub-引理排除未見色接點數不設上限)。
+  [唯一degree5最小q接受兩鄰列](../../docs/archive/reports/c5/excess/other/c5_excess_one_subcovers.md#2-只用-t4-的-minimal-degree-5-相鄰列分離)。
+- [原proper-core incidence與retained mixed身份](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_core_spokes.md#3-44-且保留-mixed原形比-contact-數更受限)、
+  [全四通用分類](../../docs/archive/reports/c5/structure/c5_k4_blocks.md#4-合成全-degree-4-的單缺失結論)。
+- [原spoke+unary](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_core_spoke_unary.md)、
+  [只省略mixed](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_omission.md)、
+  [原五-spoke](../../docs/archive/reports/c5/excess/other/c5_excess_two_mixed_core_leaf_fibers.md)。
+- [binary完整leaf反像](../../docs/archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_binary.md)、
+  [star](../../docs/archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_star.md)、
+  [端點hubs](../../docs/archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_hubs.md)、
+  [ternary完整joint](../../docs/archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_ternary.md)。
+- [single-spoke三接點任意大小定理](../../docs/archive/reports/c5/single-spoke/c5_single_spoke_three_one.md)、
+  [two-spoke三接點原K₅與一般異色spokes適用](../../docs/archive/reports/c5/structure/c5_two_spoke_three_contacts.md#5-second-rows-scope-and-remaining-cases)。
+- [A](../../docs/archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed12.md)、
+  [A₂](../../docs/archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed12_01_12.md)、
+  [A₃](../../docs/archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed12_01_01.md)、
+  [A₄](../../docs/archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed12_04_04.md)。
+- [B tightness／owner編碼／共同faces](../../docs/archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed22.md)、
+  [B₂](../../docs/archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed22_short_face.md)、
+  [B₃](../../docs/archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed22_long_face.md)、
+  [B₄原cut parity](../../docs/archive/reports/c5/excess/four-spoke/c5_excess_two_mixed_core_four_spoke_mixed22_shared4.md)、
+  [三-hub引理](../../docs/archive/reports/c5/structure/c5_short_support_singleton.md#4-三-hub-引理排除未見色接點數不設上限)。
 
 以上degree-list tightness／Gallai blockwise palettes是既有紙面外部定理依賴；
 K₅ minor不可平面亦為外部標準定理。三個新Python只核對有限列／sets／原固定控制／paths，

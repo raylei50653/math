@@ -645,4 +645,4 @@
 | 638 | 745 | 34 / 23 / 14 / 12 | X | X | X |
 | 639 | 916 | 34 / 23 / 14 / 12 | X | X | X |
 
-[完整證書](observations.json)；[前提與證明](../../docs/c5_adjacent_degree5_no_mixed_cd.md)。
+[完整證書](observations.json)；[前提與證明](../../docs/archive/reports/c5/adjacent-degree5/c5_adjacent_degree5_no_mixed_cd.md)。

@@ -202,33 +202,52 @@ def check(root: Path) -> tuple[list[str], int, int]:
     cache = {}
     count = 0
     indexed = set()
+    local_targets = {}
+    catalog_edges = {}
+    docs_root = (root / "docs").resolve()
     manifest = root / "artifacts/MANIFEST.json"
     # large JSON kept out of git and rebuilt by tools/artifacts.py count as present
     reproducible = {(root / path).resolve() for path in json.loads(manifest.read_text())["files"]} \
         if manifest.exists() else set()
     for source in files:
+        source_key = source.resolve()
+        local_targets[source_key] = set()
+        catalog_edges[source_key] = set()
         for number, destination in links(source.read_text()):
             url = urlsplit(destination)
             if url.scheme or url.netloc:
                 continue
             count += 1
-            target = (source.parent / unquote(url.path)).resolve() if url.path else source
+            target = (source.parent / unquote(url.path)).resolve() if url.path else source_key
             label = f"{source.relative_to(root)}:{number}: {destination}"
             if not target.exists() and target not in reproducible:
                 errors.append(f"missing path: {label}")
                 continue
-            if source == root / "docs/STATUS.md":
-                indexed.add(target)
+            local_targets[source_key].add(target)
+            if (target.name == "catalog.md" and target.is_relative_to(docs_root)
+                    and not Path(unquote(url.path)).is_absolute()):
+                catalog_edges[source_key].add(target)
             if url.fragment and target.suffix == ".md":
                 if target not in cache:
                     cache[target] = anchors(target.read_text())
                 if unquote(url.fragment) not in cache[target]:
                     errors.append(f"missing anchor: {label}")
+    # STATUS may delegate direct coverage only to explicitly linked catalogs.
+    # Ordinary reports never contribute their outgoing links to index coverage.
+    pending = [(root / "docs/STATUS.md").resolve()]
+    visited = set()
+    while pending:
+        source = pending.pop()
+        if source in visited:
+            continue
+        visited.add(source)
+        indexed.update(local_targets.get(source, ()))
+        pending.extend(catalog_edges.get(source, ()))
     for target in (root / "docs").rglob("*.md"):
         if target.name == "STATUS.md":
             continue
         if target.resolve() not in indexed:
-            errors.append(f"not directly indexed by STATUS: {target.relative_to(root)}")
+            errors.append(f"not indexed by STATUS or a linked catalog: {target.relative_to(root)}")
     handoff = (root / "docs/HANDOFF.md").read_text()
     errors.extend(check_handoff(handoff))
     for _, destination in links(handoff):
