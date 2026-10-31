@@ -75,6 +75,7 @@
 | [後續傳播與完整支援重用](../tools/solver/four_color_delta_propagation.md) | 2026-10-27：delta佇列、單側支援、整表引用與局部簽章；同40例完整輸出一致，原排程實測12.86→11.71秒，資訊分區13.35→12.09秒；有限比較，保留scan預設。 |
 | [完整接口支援流失](../tools/solver/four_color_support_loss.md) | 2026-10-27：support模式保留完整訊息、依失去最後支援刪列；等價式已有Lean核心。與delta同40例完整紀錄相等，但接口檢查增加2.25%／2.14%，未見整體加速；稀疏流失控制省工，密集流失退步。 |
 | [C₆–C₈ D與鎖定比較](reports/counting/ck_d_lock_comparison.md) | 五圖458份完整接口與原邊枚舉一致；Birkhoff拒絕15型五輪排空，5-5／W₆／W₇／W₈餘16／20／70／231型。LOCK-NO-GAIN證指定交換鎖定已含於布林D，無增益停止；未實作block-count。 |
+| [RSST免換色contract篩選](reports/counting/rsst_kempe_free_contracts.md) | 2026-10-31：633構形、22,110,409個RSST規格contract無一滿足A(K/X)⊆A(K)；RSST 384個contract亦全需Kempe。去Kempe版reduce.c、不剪枝列舉、見證重播與輪形控制全過；停止，不擴大規格。 |
 | [C₅查表與局部掃描](../tools/solver/four_color_c5.md) | 裸環240列／10型；局部742／4013環、110／115圖命中。找環加速不等於整體加速或disk來源覆蓋。 |
 | [已知衝突子型](../tools/solver/four_color_conflicts.md) | 核原頂點／原邊／候選域；固定色或分支無延伸不擴大為裸子圖無解。 |
 | [局部資訊外推](../tools/solver/four_color_local_information.md) | 完整接口可隱式保存並按需查詢；獨立原型九例答覆皆符合同袋完整表，6×7格圖41組查詢完成。200小圖條件核對，未提供一般固定寬度／加速／隱私或全部fibres列舉。 |

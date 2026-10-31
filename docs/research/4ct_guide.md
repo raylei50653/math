@@ -421,6 +421,9 @@ Birkhoff拒絕15型經五輪排空。四個阻擋例重加由完整swap支援推
 - **不主張。** 這些構形的可約性已由 RSST 證明，本篩選不計為 §6 新可約構形；通過者只在 RSST 最小反例契約下免換色，
   不自動給出演算法。有限計算屬 computationally observed，依 RSST contract 引理解讀，不使用 4CT。
 - **讓位。** 本提議排在其他新實驗之前；D16 關係層主攻的工作檔與停止點不變。
+- **執行與停止裁決（2026-10-31）。** [報告](../archive/reports/counting/rsst_kempe_free_contracts.md)：633 構形、22,110,409 個合法 contract
+  無一免換色，RSST 自己的 384 個 contract 亦全需 Kempe；四項核對與控制全過。最接近者如 Birkhoff diamond 仍剩 1 個壞環著色。
+  依停止條件不擴大規格；跨構形攜帶的邊界條件（強化歸納）與非 RSST 規格的 reducer 仍 OPEN。
 
 ### 與原C5分類主命題的關係
 
