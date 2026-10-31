@@ -84,6 +84,7 @@
 | [分隔路完整 fibres](../archive/reports/planar-sources/four_color_three_step_separator_fibres.md) | 同切口全部兩側 lifts 重接給九列／六列必要限制；保留遠端分量後，原秩3控制已有兩步逃逸。 |
 | [遠端交換全割準則](../archive/reports/planar-sources/four_color_three_step_remote_cut.md) | 每個分隔割須有同一遠端分量的雙向附件。固定框列的全部 fibres 通過指定測試仍有後續觸框交換逃逸，尚不充分。 |
 | [原邊 K₄ 附件](../archive/reports/planar-sources/four_color_three_step_attachment_decoration.md) | 可保持原完整關係卻自動滿足舊鄰點式，故該單獨條件無關係增益。 |
+| [強度與稀疏化約](../archive/reports/planar-sources/four_color_d16_strength_sparse_reduction.md) | 一般 D16 排除與 5–6 半邊合取恰等價 4CT；化約來源 `|F|≥5`、`e(F)≥2|F|−3`，排除無三角形等稀疏 H°。屬整體可染性化約，非關係層增益；二十面體使計數界取等號。 |
 
 **下一個窄義務：從同一對原側圖的全部 fibres 及交換後的全割要求，迫出不相容接法。**
 只核起點或繼續提高圈秩仍不足；一般 D16 排除與共同解存在性均缺。驗收規格如下。
@@ -108,7 +109,13 @@
 
 <a id="提議-d16-強度定位與稀疏來源化約"></a>
 
-**提議 D16-R（2026-10-31 提出；優先於新的 D16 有限控制與枚舉）：一般 D16 排除的強度定位及稀疏來源的極小化約。**
+**提議 D16-R（2026-10-31 提出並完成；優先於新的 D16 有限控制與枚舉）：一般 D16 排除的強度定位及稀疏來源的極小化約。**
+
+- **裁決（2026-10-31）。** 三項預期全部由紙證及有限核對完成，見[報告](../archive/reports/planar-sources/four_color_d16_strength_sparse_reduction.md)。
+  另得化約來源 `|F|≥5`（依賴 4,440 張等號圖窮舉），以及七環 D 殘餘 65 型全存。
+  停止以圈秩或稀疏度擴充 D16 子類，也停止尋找 D16 來源的有限搜尋（等同尋找 4CT 反例）。
+  接續只剩兩條路：在稠密化約來源上仍有效的關係層 P，或路線 A 的 5–5 邊局部不可避免集。
+  下列「被延後的實驗」不恢復。
 
 - **問題。** 一般 D16 排除（不存在平面外圖 H 使 `R(H)=S`）的精確強度為何？
   能否不用新的 Kempe 註記，而以「刪點仍為 D16 來源」的極小化與 Euler 計數，排除比

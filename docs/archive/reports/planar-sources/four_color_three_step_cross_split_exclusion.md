@@ -2,6 +2,10 @@
 
 發布紀錄：[2026-10-30 連動提交核對](../../../history/2026-10-30-three-step-d16-publication.md)。
 
+**2026-10-31 後續。** [強度與稀疏化約](four_color_d16_strength_sparse_reduction.md)以 Kempe 度四化約及 Euler 計數，
+重證本頁的 pseudoforest 子類排除，並擴大到 H° 無三角形等稀疏情形。
+一般 D16 排除與 5–6 半邊合取恰等價 4CT。本頁的 P 及其 witness 保留契約不受影響。
+
 **2026-10-30 後續。** [固定原分隔路的完整 fibres](four_color_three_step_separator_fibres.md)
 把同一切口的任意兩側 lifts 重接轉成九列／六列必要限制，另給含全部遠端分量的鄰域必要式。
 `BUFFER-2STEP-19` 只核邊界立方的兩步存活並不包含遠端交換；完整交換圖已有兩步逃逸。

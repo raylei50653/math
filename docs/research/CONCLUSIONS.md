@@ -27,8 +27,19 @@
 來源與證據：[註記投影](../archive/reports/planar-sources/four_color_three_step_annotation_projection.md)的任意初始關係紙證，
 加上固定候選的完整註記／獨立 Python 重播；沒有新增 Lean。
 
-**OPEN：** 一般 D16 共同原圖實現／排除、保留新來源限制的消元與回寫契約、目標來源覆蓋，
-以及由來源結構推出共同解存在性。來源子類排除不能直接提升為本路線的獨立 4CT 證明。
+**強度與稀疏化約（2026-10-31）。** 一般 D16 排除恰等於相鄰五度點對的著色可約性：
+外圖可四色蘊含 G 可四色。它與相鄰 5–6 點對（七環）的同型命題合取後恰等價 4CT；
+七環的 D 殘餘是全部 65 個拒絕型。因此任一 D16 來源的 G 都是不可四色的平面圖。
+D16 來源對「刪去 H° 中度至多四的點」及「刪去分隔三角內部」封閉，化約來源滿足 `|F|≥5`、`e(F)≥2|F|−3`；
+`|F|≥5` 依賴 4,440 張等號圖的有限窮舉，紙面密度推導先給 `|F|≥4`。
+所以若 H° 的每個至少五點誘導子圖都有 `e≤2|F|−4`（例如無三角形或 pseudoforest），就沒有 D16 來源。
+這是用整體可染性化約得到的來源類排除，不是關係層增益；二十面體控制使計數界同時取等號。
+來源：[強度與稀疏化約](../archive/reports/planar-sources/four_color_d16_strength_sparse_reduction.md)，
+紙面推導加 Python 有限證書；上述一般誘導子圖條件含 `|F|≥5` 的計算依賴，無三角形等具名排除不需該窮舉。
+Franklin 界只作外部旁註，沒有新增 Lean。
+
+**OPEN：** 稠密化約來源的一般 D16 共同原圖實現／排除、5–6 的另一半、保留新來源限制的消元與回寫契約、
+目標來源覆蓋，以及由來源結構推出共同解存在性。來源子類排除不能直接提升為本路線的獨立 4CT 證明。
 
 ## 精確求解語義與最後共同回填
 
@@ -60,7 +71,8 @@
 [原紙證](../archive/reports/planar-sources/four_color_three_step_cross_split_exclusion.md)處理任意大小；JSON 原固定來源類採總秩至多一，
 有限控制不承擔較廣量詞。完整同 separator fibres 的重接與[遠端全割準則](../archive/reports/planar-sources/four_color_three_step_remote_cut.md)
 提供進一步必要限制；[K₄ 附件裝飾](../archive/reports/planar-sources/four_color_three_step_attachment_decoration.md)則證舊鄰點式單獨無關係增益。
-一般多圈外圖仍 OPEN；固定框列整份 fibre 通過指定測試也不足以排除後續逃逸。
+以圈秩或稀疏度界定的子類，已由[稀疏化約](../archive/reports/planar-sources/four_color_d16_strength_sparse_reduction.md#5-稀疏外圖的排除)涵蓋並擴大到無三角形的 H°；
+稠密化約來源仍 OPEN。固定框列整份 fibre 通過指定測試，也不足以排除後續逃逸。
 
 **反向剝殼與三支接口。** [合法外環契約下的 `m≥3` 步](../archive/reports/planar-sources/four_color_reverse_shelling_continuation.md)
 逐列保非空；裸頂點最小反例的首次失敗可定位於全原點已進入的 `m=2` 後綴。

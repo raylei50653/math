@@ -1,0 +1,15 @@
+{
+ "runs": {
+  "default_seed": "results sha256 55cea0a49da4039e906bfef374f8a6324e90481f334a1b4b9563dfc3bcd8282d",
+  "PYTHONHASHSEED=29": "byte-identical results.json"
+ },
+ "command": "uv run --with-requirements requirements.txt python scripts/four_color_d16_strength_reduction.py --out-dir <new dir>",
+ "doc_checks": {
+  "scripts/check_docs.py": "OK: 825 Markdown files, 11231 local links; anchors, index, handoff, guide progress checked (first pass failed only on the not-yet-written link to this checks.json)",
+  "tools/docgraph --include docs/**/*.md check": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes",
+  "unittest test_check_docs.py": "OK",
+  "git diff --check": "clean",
+  "tools/check_generated_artifacts.py": "Generated artifact policy OK: 11225 indexed files, 227 large files with documented exceptions, 166 registered outputs."
+ },
+ "scope": "Whole-worktree DocGraph not rerun; prior snapshot duplicate-ID diagnostics unchanged."
+}
