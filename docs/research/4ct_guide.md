@@ -403,6 +403,25 @@ Birkhoff拒絕15型經五輪排空。四個阻擋例重加由完整swap支援推
 每輪及最終阻擋均不變。LOCK-NO-GAIN紙證將這類條件化回布林D，故依要求停止，
 沒有繼續擴圖或實作block-count。額外跨split共同來源定理尚未建立，此裁決不排除它的可能作用。
 
+**提議 KF（2026-10-31提出，優先於新實驗）：免換色 C-可約篩選。**
+
+- **問題。** RSST 633 構形中，有多少在 RSST 原 contract 規格（`1≤|X|≤4`、不含環邊、sparse、`|X|=4` 須有 triad）下
+  滿足 \(A(K/X)\subseteq A(K)\)：縮圖的每份環著色都直接延伸，不需 Kempe 交換。通過者是「填色規則可提前處理」的部分，
+  其餘為殘餘集。
+- **理由。** 以局部平面約束寫成的填色規則就是 reducer；RSST 的 C-可約只要求 \(A(K/X)\) 落在 D 閉包內，
+  本條件把閉包換成 \(A(K)\) 本身。[線性時間四色演算法](https://arxiv.org/abs/2610.39753)的瓶頸正是 \(O(\log n)\) 次 Kempe 交換。
+- **方法。** 資料取 [arXiv:1401.6481](https://arxiv.org/abs/1401.6481) 附檔 `unavoidable.conf`（sha256 記於腳本）。
+  對每個 \(c\notin A(K)\) 枚舉內點著色，單色邊集即被 c 擊中的候選 X；以存活 contract 的子集閉包剪枝，不逐一 X 重算。
+- **核對。** (1) 633 筆 \(|A(K)|\) 與檔案第二行的 RSST extending-colouring 數逐筆相符；
+  (2) RSST 指定 contract 的判定，與去掉 Kempe 迭代的原 `reduce.c` `checkcontract` 一致；
+  (3) 環長 ≤9 的構形以不剪枝的 Python 列舉重算全部 contract，逐筆一致；
+  (4) 控制：單一四度點有 \(|X|=2\) 的免換色 contract，單一五度點沒有。
+- **完成／停止。** 633 筆分類（存在與否、最小 \(|X|\)、存活 contract 數）與殘餘清單完成即停。
+  不擴大 contract 規格（\(|X|>4\)、非縮邊 reducer），不做 discharging，不處理 obstructing cycle 的免換色黏合。
+- **不主張。** 這些構形的可約性已由 RSST 證明，本篩選不計為 §6 新可約構形；通過者只在 RSST 最小反例契約下免換色，
+  不自動給出演算法。有限計算屬 computationally observed，依 RSST contract 引理解讀，不使用 4CT。
+- **讓位。** 本提議排在其他新實驗之前；D16 關係層主攻的工作檔與停止點不變。
+
 ### 與原C5分類主命題的關係
 
 - `K∞=K≤5` 蘊含 4CT（[無 4CT 前提路線](../tasks/c5_no4ct_handoff.md) 的 OPEN 表）；
