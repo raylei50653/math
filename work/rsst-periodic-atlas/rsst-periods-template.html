@@ -1,0 +1,114 @@
+<div id="rsst-period-explorer">
+  <h2>RSST 構形的週期拼接</h2>
+  <div class="viz-controls">
+    <label class="form-label">構形<select id="rp-specimen" class="form-select"></select></label>
+    <label class="form-label">染色週期域<select id="rp-period" class="form-select"></select></label>
+  </div>
+  <div class="viz-row">
+    <label class="form-label">觀看<select id="rp-view" class="form-select"><option value="plane">重複拼接</option><option value="source">原構形圓盤</option></select></label>
+    <button type="button" id="rp-shift-x" class="btn">沿第一方向平移一格</button>
+    <button type="button" id="rp-shift-y" class="btn">沿第二方向平移一格</button>
+  </div>
+  <div id="rp-summary" class="text-small" aria-live="polite"></div>
+  <div id="rp-map"></div>
+  <div class="viz-row text-small" id="rp-legend">
+    <span class="rp-key"><span class="rp-swatch rp-s0">●</span>色 0</span>
+    <span class="rp-key"><span class="rp-swatch rp-s1">■</span>色 1</span>
+    <span class="rp-key"><span class="rp-swatch rp-s2">▲</span>色 2</span>
+    <span class="rp-key"><span class="rp-swatch rp-s3">◆</span>色 3</span>
+    <span class="rp-key"><span class="rp-geom-key"></span>幾何單元</span>
+    <span class="rp-key"><span class="rp-color-key"></span>指定染色週期域</span>
+  </div>
+  <div id="rp-status" class="text-small" aria-live="polite"></div>
+  <style>
+    #rsst-period-explorer {display:flex; flex-direction:column; gap:calc(var(--font-size-base) * .75); min-width:0}
+    #rsst-period-explorer #rp-map {min-width:0; width:100%}
+    #rsst-period-explorer .rp-map {display:block; width:100%; overflow:hidden}
+    #rsst-period-explorer .rp-key {display:inline-flex; align-items:center; gap:calc(var(--font-size-base) * .3)}
+    #rsst-period-explorer .rp-s0 {color:var(--viz-series-1)}
+    #rsst-period-explorer .rp-s1 {color:var(--viz-series-2)}
+    #rsst-period-explorer .rp-s2 {color:var(--viz-series-3)}
+    #rsst-period-explorer .rp-s3 {color:var(--viz-series-4)}
+    #rsst-period-explorer .rp-geom-key {display:inline-block; width:22px; height:0; border-top:1px dashed var(--muted-foreground)}
+    #rsst-period-explorer .rp-color-key {display:inline-block; width:22px; height:0; border-top:2px solid var(--viz-series-1)}
+    #rsst-period-explorer .rp-edges {fill:none; stroke:var(--muted-foreground); stroke-width:1; opacity:.65}
+    #rsst-period-explorer .rp-geom {fill:none; stroke:var(--muted-foreground); stroke-width:1; stroke-dasharray:4 4; opacity:.55}
+    #rsst-period-explorer .rp-colorcell {fill:color-mix(in srgb,var(--viz-series-1) 5%,transparent); stroke:var(--viz-series-1); stroke-width:2}
+    #rsst-period-explorer .rp-label {fill:var(--foreground); font-family:inherit}
+    #rsst-period-explorer .rp-node-label {fill:var(--foreground); font-family:inherit; paint-order:stroke; stroke:var(--background); stroke-width:3}
+    @media (prefers-reduced-motion:no-preference) {#rsst-period-explorer .rp-node {transition:fill .2s ease}}
+  </style>
+  <script id="rp-data" type="application/json">__ATLAS_JSON__</script>
+  <script>
+  (() => {
+    const root=document.getElementById('rsst-period-explorer');
+    const $=s=>root.querySelector(s);
+    const data=JSON.parse($('#rp-data').textContent), examples=data.examples;
+    const ns='http://www.w3.org/2000/svg';
+    const node=(tag,attrs={})=>{const el=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,String(v));return el};
+    const mod=(x,n)=>(x%n+n)%n;
+    const key=p=>[p.a,p.b,p.d].join(',');
+    const state={id:examples[0].id,period:null,view:'plane',sx:0,sy:0};
+    const current=()=>examples.find(e=>e.id===state.id)||examples[0];
+    const period=()=>current().periods.find(p=>key(p)===state.period)||current().periods.find(p=>p.status==='SAT')||current().periods[0];
+    function canonical(x,y,p){const q=Math.floor(y/p.d);return [mod(x-q*p.b,p.a),mod(y,p.d)]}
+    function colorAt(e,p,v,x,y){const [xx,yy]=canonical(x,y,p);return p.witness.colors[(yy*p.a+xx)*e.points.length+v]}
+    function physical(e,point){return [point[0]*e.basis[0][0]+point[1]*e.basis[1][0],point[0]*e.basis[0][1]+point[1]*e.basis[1][1]]}
+    function saved(value){if(!value)return;const s=value.privateContent||value.modelContent||value;if(examples.some(e=>e.id===s.id))state.id=s.id;if(s.period!==undefined)state.period=s.period;if(['source','plane'].includes(s.view))state.view=s.view;state.sx=Number.isInteger(s.sx)?s.sx:0;state.sy=Number.isInteger(s.sy)?s.sy:0}
+    function save(){if(window.openai?.setWidgetState)window.openai.setWidgetState({modelContent:{id:state.id,source_name:current().source_name,period:state.period,view:state.view,sx:state.sx,sy:state.sy},privateContent:{...state}}).catch(()=>{})}
+    function options(){const e=current();$('#rp-specimen').value=e.id;$('#rp-period').replaceChildren();for(const p of e.periods){const o=document.createElement('option');o.value=key(p);o.textContent=`${p.index} 格 · (${p.a},0), (${p.b},${p.d}) · ${p.status==='SAT'?'可行':'此週期不可行'}`;$('#rp-period').append(o)}if(!e.periods.some(p=>key(p)===state.period)){state.period=(e.preferred_period||[]).join(',');if(!e.periods.some(p=>key(p)===state.period))state.period=key(e.periods.find(p=>p.status==='SAT')||e.periods[0])}$('#rp-period').value=state.period;$('#rp-view').value=state.view}
+    for(const e of examples){const o=document.createElement('option');o.value=e.id;o.textContent=`${e.name} · #${e.source_index} ${e.source_name}`;$('#rp-specimen').append(o)}
+    function mark(svg,x,y,c,attrs,r){let el;if(c===0)el=node('circle',{cx:x,cy:y,r});else if(c===1)el=node('rect',{x:x-r,y:y-r,width:2*r,height:2*r});else if(c===2)el=node('path',{d:`M${x},${y-r*1.25}L${x+r*1.1},${y+r}L${x-r*1.1},${y+r}Z`});else el=node('path',{d:`M${x},${y-r*1.35}L${x+r*1.2},${y}L${x},${y+r*1.35}L${x-r*1.2},${y}Z`});el.setAttribute('fill',`var(--viz-series-${c+1})`);el.setAttribute('class','rp-node');for(const[k,v]of Object.entries(attrs))el.setAttribute(k,v);svg.append(el)}
+    function draw(){
+      const e=current(),p=period(),sat=p.status==='SAT'&&p.witness;
+      const source=state.view==='source',width=Math.max(260,$('#rp-map').getBoundingClientRect().width),height=source?Math.min(500,width*.8+60):Math.min(550,width*.65+150);
+      const svg=node('svg',{viewBox:`0 0 ${width} ${height}`,width,height,class:'rp-map',role:'img','aria-label':`${e.name}，${source?'原構形圓盤':'週期三角化'}；${sat?'合法四色見證':'此指定週期無解'}`});
+      const defs=node('defs'),clip=node('clipPath',{id:'rp-clip'});clip.append(node('rect',{x:8,y:8,width:width-16,height:height-16}));defs.append(clip);svg.append(defs);
+      const g=node('g',{'clip-path':'url(#rp-clip)'});svg.append(g);
+      const corners=source?e.source_patch.points.slice(0,e.ring_size):[[-.9,-.9],[p.a+p.b+.9,-.9],[p.a+p.b+.9,p.d+.9],[-.9,p.d+.9]];
+      const phys=corners.map(x=>physical(e,x)),xs=phys.map(x=>x[0]),ys=phys.map(x=>x[1]);
+      const lo=[Math.min(...xs),Math.min(...ys)],hi=[Math.max(...xs),Math.max(...ys)];
+      const scale=Math.min((width-52)/(hi[0]-lo[0]),(height-52)/(hi[1]-lo[1]));
+      const project=point=>{const z=physical(e,point);return [width/2+(z[0]-(lo[0]+hi[0])/2)*scale,height/2-(z[1]-(lo[1]+hi[1])/2)*scale]};
+      const poly=pts=>pts.map(project).map(z=>z.join(',')).join(' ');
+      function polygon(pts,cl){const el=node('polygon',{points:poly(pts),class:cl});g.append(el);return el}
+      function pathEdge(a,b){const aa=project(a),bb=project(b);return `M${aa[0]},${aa[1]}L${bb[0]},${bb[1]}`}
+      const edgePaths=[];
+      if(source){polygon(e.source_patch.points.slice(0,e.ring_size),'rp-geom');for(const[u,v]of e.source_patch.edges)edgePaths.push(pathEdge(e.source_patch.points[u],e.source_patch.points[v]));}
+      else{
+        const nx=p.a+p.b+3,ny=p.d+3;
+        for(let y=-2;y<=ny;y++)for(let x=-2;x<=nx;x++){
+          const boundary=e.source_patch.points.slice(0,e.ring_size).map(z=>[z[0]+x,z[1]+y]);polygon(boundary,'rp-geom');
+          for(const[u,v,dx,dy]of e.edges)edgePaths.push(pathEdge([e.points[u][0]+x,e.points[u][1]+y],[e.points[v][0]+x+dx,e.points[v][1]+y+dy]));
+        }
+        polygon([[0,0],[p.a,0],[p.a+p.b,p.d],[p.b,p.d]],'rp-colorcell');
+      }
+      g.append(node('path',{d:edgePaths.join(''),class:'rp-edges'}));
+      const radius=source?5:Math.max(2.5,Math.min(4.3,scale*.026));
+      function drawOne(v,x,y,point,label){const [px,py]=project(point);if(px<10||px>width-10||py<10||py>height-10)return;const c=sat?colorAt(e,p,v,x-state.sx,y-state.sy):null;const attrs={'data-vertex':[v,x,y].join(','),'data-tooltip':`${label||`原胞點 ${v}`} · 平移 (${x},${y})${sat?` · 色 ${c}`:''}`};if(sat){attrs['data-color']=c;mark(g,px,py,c,attrs,radius)}else g.append(node('circle',{cx:px,cy:py,r:radius,fill:'var(--muted-foreground)',...attrs}));if(label&&source){const t=node('text',{x:px+9,y:py-8,class:'rp-node-label text-small'});t.textContent=label;g.append(t)}}
+      if(source){e.source_patch.points.forEach((point,i)=>{const[v,x,y]=e.source_patch.map[i];drawOne(v,x,y,point,String(i+1))})}
+      else{for(let y=-2;y<=p.d+3;y++)for(let x=-2;x<=p.a+p.b+3;x++)e.points.forEach((point,v)=>drawOne(v,x,y,[point[0]+x,point[1]+y]));}
+      $('#rp-map').replaceChildren(svg);
+      const min=e.minimum_index==null?'尚無':'至少一種最小';
+      $('#rp-summary').textContent=`環長 ${e.ring_size} · 內點 ${e.source_n-e.ring_size} · 拼接後每格 ${e.points.length} 點 · 最小染色域 ${e.minimum_index==null?'未找到':e.minimum_index+' 格'}`;
+      let status;
+      if(!sat)status='此指定週期不可行；其他週期仍分別判定。';
+      else{
+        let same=true,consistent=true;const mapping=new Map();for(let y=0;y<p.d;y++)for(let x=0;x<p.a;x++)for(let v=0;v<e.points.length;v++){const a=colorAt(e,p,v,x,y),b=colorAt(e,p,v,x-state.sx,y-state.sy);same&&=a===b;if(mapping.has(a)&&mapping.get(a)!==b)consistent=false;mapping.set(a,b)}
+        consistent&&=new Set(mapping.values()).size===mapping.size;
+        const detail=same?'原色完全重合':consistent?`整體換色後重合 · ${[...mapping].sort((a,b)=>a[0]-b[0]).map(([a,b])=>`${a}→${b}`).join('，')}`:'平移後的變化無法由一個全域換色表示';
+        status=`平移 (${state.sx},${state.sy}) · ${detail}`;
+      }
+      $('#rp-status').textContent=status;$('#rp-shift-x').disabled=!sat;$('#rp-shift-y').disabled=!sat;
+    }
+    $('#rp-specimen').addEventListener('change',()=>{state.id=$('#rp-specimen').value;state.period=null;state.sx=state.sy=0;options();draw();save()});
+    $('#rp-period').addEventListener('change',()=>{state.period=$('#rp-period').value;state.sx=state.sy=0;draw();save()});
+    $('#rp-view').addEventListener('change',()=>{state.view=$('#rp-view').value;draw();save()});
+    $('#rp-shift-x').addEventListener('click',()=>{state.sx++;draw();save()});
+    $('#rp-shift-y').addEventListener('click',()=>{state.sy++;draw();save()});
+    saved(window.openai?.widgetState);options();draw();
+    window.addEventListener('openai:set_globals',event=>{if(event.detail?.globals?.widgetState){saved(event.detail.globals.widgetState);options();draw()}});
+    new ResizeObserver(()=>draw()).observe($('#rp-map'));
+  })();
+  </script>
+</div>

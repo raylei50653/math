@@ -1,0 +1,43 @@
+{
+  "schema": "rsst-periodic-publication-checks/1",
+  "branch": "research/periodic-triangle-atlas",
+  "validation_base": "9d1c6273b4dcb658f119833a6271a9fbfa4913a6",
+  "scope": "Periodic study and its committed RSST parser prerequisites only. Uncommitted D16 work in the primary main checkout was not copied.",
+  "checks": {
+    "independent_periodic_replay": "PASS",
+    "tool_tests": {
+      "status": "PASS",
+      "count": 519,
+      "command": "uv run --with-requirements requirements.txt python -m unittest discover -s tools/tests -p test_*.py"
+    },
+    "lean_build": {
+      "status": "PASS",
+      "jobs": 8834,
+      "command": "lake build --no-ansi",
+      "cwd": "/home/ray/developer/ai/math",
+      "scope": "Cached primary checkout; Math sources, toolchain and Lake manifests verified identical to publication branch. Existing linter warnings remain."
+    },
+    "generated_artifact_policy": "PASS: full witness snapshots retained with exact frozen size and SHA256 exceptions",
+    "docs_docgraph": "PASS: 98 documents, 386 relations, 12 families",
+    "staged_whitespace": "PASS",
+    "clean_checkout_docs": {
+      "status": "BASELINE_DIAGNOSTICS_UNCHANGED",
+      "errors": 18,
+      "missing_historical_targets": [
+        "audits/2026-10-10-n45-h3a/frozen/authority/common-contract.md",
+        "audits/2026-10-10-n45-high1-supervision/REPORT.md",
+        "audits/2026-10-10-n45-low2-supervision/REPORT.md",
+        "audits/2026-10-10-n45-pa/REPORT.md"
+      ],
+      "restored_archived_inputs": 24,
+      "comparison": "After restoring exact archived link targets, normalized diagnostics before and after the periodic additions are equal. New report paths and anchors pass. Four historical targets are ignored but absent from the archive index; this publication does not claim a full clean-checkout docs PASS."
+    }
+  },
+  "evidence_sha256": {
+    "work/rsst-periodic-atlas/atlas.json": "a76706a13a86939e4ee46b5dde478908e2aad595a3d795c5b068df448d3a2e1f",
+    "work/rsst-periodic-atlas/replay-checks.json": "f2646defe1fd5f3e655866eac0f50e7b6c718f4c469a3c4fd31c52bc8aa3c07f",
+    "work/periodic-triangle-atlas/equivariant-periods.json": "7f381a428c600e215fe2e180c1e1c7a596d95138256653ad881f9ca8d31370ad",
+    "work/rsst-periodic-atlas/visual-checks.json": "cab528f2792375e80e51fcaf990a2efe3a119a12810666fbd341f7ae3fb68c02"
+  },
+  "ci": "Remote workflow status is checked separately after push; local verification is not remote CI."
+}

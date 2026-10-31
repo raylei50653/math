@@ -1,0 +1,145 @@
+{
+  "schema": "rsst-periodic-replay/1",
+  "status": "PASS",
+  "command": "python3 -I work/rsst-periodic-atlas/replay.py",
+  "inputs_sha256": {
+    "sources/unavoidable.conf": "1c92fc280a9b384f736b94077fc59aac75e3d830d441ffd2d18683ee4b524e84",
+    "atlas.json": "a76706a13a86939e4ee46b5dde478908e2aad595a3d795c5b068df448d3a2e1f",
+    "replay.py": "6d1e91b985639294246e26a10dc61de6b6145570552d02337a4cb131388bef62"
+  },
+  "checks": {
+    "source_parser_independent_of_generator": true,
+    "polygon_seams_reconstructed_independently": true,
+    "all_source_edges_and_faces_retained": true,
+    "all_one_cell_decisions_independent_dsatur": true,
+    "all_saved_hnf_sat_witnesses_checked_on_original_source": true,
+    "selected_equivariant_sat_witnesses_checked_on_original_source": true,
+    "display_colors_match_verified_hnf_witnesses": true,
+    "all_claimed_minima_checked_by_one_cell_decision_and_sat_witness": true,
+    "two_k5_obstructions_checked_against_original_source_edges": true,
+    "known_answer_graph_controls": true
+  },
+  "counts": {
+    "inventory_one_cell_decisions": 349,
+    "inventory_hnf_sat_witnesses": 4991,
+    "inventory_source_edge_instances": 771573,
+    "inventory_minimum_2": 223,
+    "inventory_one_cell_loops": 1,
+    "odd_ring_not_tested": 284,
+    "inventory_minimum_1": 126,
+    "selected_one_cell_decisions": 7,
+    "selected_hnf_sat_witnesses": 100,
+    "selected_hnf_source_edge_instances": 10961,
+    "selected_equivariant_sat_witnesses": 687,
+    "selected_equivariant_source_edge_instances": 133079
+  },
+  "k5_certificates": [
+    {
+      "example": "R001-hexagon",
+      "clique": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "source_edges_1_based": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "checked_clique_edges": 10
+    },
+    {
+      "example": "R024-square",
+      "clique": [
+        0,
+        1,
+        3,
+        5,
+        6
+      ],
+      "source_edges_1_based": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "checked_clique_edges": 10
+    }
+  ],
+  "scope": "One-cell SAT and UNSAT decisions and minima 1 or 2 independently redecided. All stored SAT witnesses replayed against source edges. Larger-quotient and equivariant UNSAT decisions remain the original solver results, without formal UNSAT certificates. No general four-color or reducibility claim."
+}

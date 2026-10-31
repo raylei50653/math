@@ -35,6 +35,19 @@ P05 的 3×1 與 P09 的 2×1 染法可展示「平移後整體換色」與「�
 各標本都有實際奇數鄰點環，局部排除三色；現有四色見證因此給出各標本色數為 4。
 生成、染色與這些限定不依賴四色定理，沒有新增 Lean 證明。
 
+2026-10-31 斜週期補充
+
+equivariant_periods.py 與 equivariant-periods.json 另保存全部指數1至4的15個
+HNF子晶格判定，以及全部120個可交換的 S4 置換生成對。12標本共180個商圖與
+1,440個置換對。這些補充不改寫原72個矩形測試及188份見證。
+相對選定幾何晶格的最小染色指數為 P01=3、P05=2、P09=2，其餘九例=1。
+P05的新兩格斜域由 (2,0)、(1,1) 生成；原六矩形中的最小面積3沒有窮盡此斜域。
+每個 SAT 保存完整見證並逐來源邊和三角面核對；UNSAT 沒有形式化不可滿足證書。
+完整推理及RSST構形接合見
+../../docs/archive/reports/planar-sources/rsst_geometric_coloring_periods.md。
+補充重播：
+uv run --with python-sat==1.9.dev17 python work/periodic-triangle-atlas/equivariant_periods.py
+
 從 repository 根目錄重播
 
 uv run --with scipy==1.18.1 --with numpy==2.4.3 python work/periodic-triangle-atlas/generate.py
