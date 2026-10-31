@@ -1,0 +1,15 @@
+{
+ "runs": {
+  "threads=32": "results sha256 6cb19ae1bfdce7a179c237a0c30d4e88e59f8ee9d8f3267aa411e33d0d9ad9fd",
+  "threads=16": "byte-identical results.json"
+ },
+ "command": "python3 -I scripts/four_color_kempe_free_contracts.py --conf unavoidable.conf --reduce-c reduce.c --out-dir <new dir> --threads 32",
+ "wall_seconds_threads32": 78.5,
+ "doc_checks": {
+  "scripts/check_docs.py": "OK: 829 Markdown files, 11286 local links; anchors, index, handoff, guide progress checked",
+  "tools/docgraph --include docs/**/*.md check": "OK: 98 documents, 386 relations, 12 families; 0 errors, 0 notes",
+  "tools/check_generated_artifacts.py": "Generated artifact policy OK",
+  "git diff --check (guide, catalog)": "clean"
+ },
+ "proposal_commit": "12e2604"
+}
